@@ -14,7 +14,7 @@ public abstract class BaseDialog extends JDialog {
     setLayout(new BorderLayout());
     add(createComponent(), BorderLayout.CENTER);
 
-    JPanel buttonsPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 2, 5));
+    JPanel buttonsPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 2, 2));
     JButton[] buttons = createButtons();
     JPanel innerButtonsPanel = new JPanel(new GridLayout(1, buttons.length, 5, 30));
     for (JButton button : buttons) {
