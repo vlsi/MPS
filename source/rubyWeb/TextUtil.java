@@ -104,6 +104,10 @@ public class TextUtil {
           tag.setText(toText(model, elem));
           tag.setName(elem.getChild("h").getText());
         }
+        if ("tbd".equals(name)) {
+          tag = TBDTag.newInstance(model);
+          tag.setText(toText(model, elem));
+        }
         if (tag != null) {
           sentence.addWord(tag);
         }
@@ -254,6 +258,13 @@ public class TextUtil {
       FigureTag tag = (FigureTag) word;
       Element target = new Element("figure");
       target.setAttribute("src", tag.getSource());
+      element.addContent(target);
+      return;
+    }
+    if (word instanceof TBDTag) {
+      TBDTag tag = (TBDTag) word;
+      Element target = new Element("tbd");
+      toElement(tag.getText(), target);
       element.addContent(target);
       return;
     }
