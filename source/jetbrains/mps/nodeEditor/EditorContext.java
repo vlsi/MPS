@@ -31,7 +31,7 @@ public class EditorContext {
 
   public EditorCell createNodeCell(SemanticNode node) {
     EditorCell nodeCell = myEditorManager.createEditorCell(node);
-    IStatus status = (IStatus) node.getUserObject(SemanticModel.NODE_STATUS);
+    IStatus status = (IStatus) node.getUserObject(SemanticNode.ERROR_STATUS);
     if(status != null) {
       nodeCell.setHighlighted(true);
     }

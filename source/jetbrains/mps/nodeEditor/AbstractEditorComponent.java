@@ -420,7 +420,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       if (getSelectedCell() != null) {
         SemanticNode selectedNode = getSelectedCell().getSemanticNode();
         while (selectedNode != null) {
-          final IStatus status = (IStatus) selectedNode.getUserObject(SemanticModel.NODE_STATUS);
+          final IStatus status = (IStatus) selectedNode.getUserObject(SemanticNode.ERROR_STATUS);
           if (status != null) {
             final SemanticNode selectedNode1 = selectedNode;
             SwingUtilities.invokeLater(new Runnable() {
@@ -660,14 +660,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           System.out.println("--- Type: " + status.getTypeObject());
         } else if (status.isErrorComposite()) {
           System.out.println("--- TYPE CHECK STATUS: ERROR COMPOSITE");
-          List<TSStatus> errors = status.getErrors();
+          List<TSStatus> errors = status.getAllErrors();
           for (int i = 0; i < errors.size(); i++) {
             TSStatus error = errors.get(i);
-            System.out.println((i + 1) + ". --- Messge: " + error.getMessage());
+            System.out.println((i + 1) + ". --- Message: " + error.getMessage());
           }
         } else {
           System.out.println("--- TYPE CHECK STATUS: ERROR");
-          System.out.println("--- Messge: " + status.getMessage());
+          System.out.println("--- Message: " + status.getMessage());
         }
         keyEvent.consume();
         return;
