@@ -282,8 +282,8 @@
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="fieldDeclaration" />
-      <link role="target" targetNodeId="1068390468200" />
       <link role="specializedLink" targetNodeId="1068581517664" />
+      <link role="target" targetNodeId="1068390468200" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1068580123159">
@@ -372,8 +372,8 @@
     <link role="extends" targetNodeId="1068498886296" />
     <node role="semanticLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration" id="1070568296581">
       <property name="role" value="localVariableDeclaration" />
-      <link role="target" targetNodeId="1068581242863" />
       <link role="specializedLink" targetNodeId="1068581517664" />
+      <link role="target" targetNodeId="1068581242863" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1068581242867">
@@ -411,8 +411,8 @@
     <link role="extends" targetNodeId="1068498886296" />
     <node role="semanticLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration" id="1070567982819">
       <property name="role" value="parameterDeclaration" />
-      <link role="specializedLink" targetNodeId="1068581517664" />
       <link role="target" targetNodeId="1068498886292" />
+      <link role="specializedLink" targetNodeId="1068581517664" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1068581242875">
@@ -562,8 +562,8 @@
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="instanceMethodDeclaration" />
-      <link role="specializedLink" targetNodeId="1068499141037" />
       <link role="target" targetNodeId="1068580123165" />
+      <link role="specializedLink" targetNodeId="1068499141037" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1073239437375">
@@ -828,10 +828,6 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1095950406618">
     <property name="name" value="DivExpression" />
     <link role="extends" targetNodeId="1081773326031" />
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1096971587935">
-    <property name="name" value="BlockVariableDeclaration" />
-    <link role="extends" targetNodeId="1068581242863" />
   </node>
 </semanticModel>
 
