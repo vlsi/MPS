@@ -50,26 +50,26 @@ public class NameUtil {
     return sb.toString();
   }
 
-  public static String modelName(String modelFQName) {
-    if (modelFQName == null) {
-      return null;
+  public static String nameFromFQName(String fqName) {
+    if (fqName == null) {
+      return fqName;
     }
-    int offset = modelFQName.lastIndexOf('.');
+    int offset = fqName.lastIndexOf('.');
     if (offset < 0) {
-      return modelFQName;
+      return fqName;
     }
-    return modelFQName.substring(offset + 1);
+    return fqName.substring(offset + 1);
   }
 
-  public static String modelNamespace(String modelFQName) {
-    if (modelFQName == null) {
-      return null;
+  public static String namespaceFromFQName(String fqName) {
+    if (fqName == null) {
+      return fqName;
     }
-    int offset = modelFQName.indexOf('.');
+    int offset = fqName.lastIndexOf('.');
     if (offset < 0) {
       return "";
     }
-    return modelFQName.substring(0, offset);
+    return fqName.substring(0, offset);
   }
 
   public static String nodeFQName(SemanticNode node) {
