@@ -2,6 +2,7 @@ package jetbrains.mps.datatransfer;
 
 import jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.semanticModel.SemanticModel;
@@ -147,9 +148,13 @@ public class PasteUtil {
     while (metalinks.hasNext()) {
       SemanticLinkDeclaration metalink = metalinks.next();
       if (SemanticModelUtil.isAssignableType(metalink.getTarget(), targetMetatype)) {
-        String sourceCardinality = metalink.getSourceCardinality();
-        if (SemanticLinkDeclaration.CARDINALITY_0_N.equals(sourceCardinality) ||
-                SemanticLinkDeclaration.CARDINALITY_1_N.equals(sourceCardinality)) {
+//        String sourceCardinality = metalink.getSourceCardinality();
+//        if (SemanticLinkDeclaration.CARDINALITY_0_N.equals(sourceCardinality) ||
+//                SemanticLinkDeclaration.CARDINALITY_1_N.equals(sourceCardinality)) {
+//          return metalink;
+//        }
+        Cardinality sourceCardinality = metalink.getSourceCardinality();
+        if (sourceCardinality == Cardinality._0_n || sourceCardinality == Cardinality._1_n) {
           return metalink;
         }
       }

@@ -1,6 +1,8 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
+import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.semanticModel.SemanticModel;
 import jetbrains.mps.semanticModel.SemanticModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
@@ -21,9 +23,11 @@ public class CellAction_DeleteReference extends EditorCellAction {
   public boolean canExecute(EditorContext context) {
     SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(mySource, myRole);
     if (linkDeclaration != null) {
-      String sourceCardinality = linkDeclaration.getSourceCardinality();
-      return (SemanticLinkDeclaration.CARDINALITY_0_1.equals(sourceCardinality) ||
-              SemanticLinkDeclaration.CARDINALITY_1.equals(sourceCardinality));
+//      String sourceCardinality = linkDeclaration.getSourceCardinality();
+//      return (SemanticLinkDeclaration.CARDINALITY_0_1.equals(sourceCardinality) ||
+//              SemanticLinkDeclaration.CARDINALITY_1.equals(sourceCardinality));
+      Cardinality sourceCardinality = linkDeclaration.getSourceCardinality();
+      return (sourceCardinality == Cardinality._0_1 || sourceCardinality == Cardinality._1);
     }
 
     return false;
@@ -31,7 +35,8 @@ public class CellAction_DeleteReference extends EditorCellAction {
 
   public void execute(EditorContext context) {
     SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(mySource, myRole);
-    if (SemanticLinkDeclaration.AGGREGATION.equals(linkDeclaration)) {
+//    if (SemanticLinkDeclaration.AGGREGATION.equals(linkDeclaration)) {
+    if (linkDeclaration.getMetaClass() == LinkMetaclass.aggregation) {
       SemanticNode referent = mySource.getReferent(SemanticModelUtil.getGenuineLinkRole(linkDeclaration), (SemanticNode) null);
       referent.delete();
     } else {
