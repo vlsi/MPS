@@ -12,12 +12,15 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 public class ContinueStatement_Editor extends DefaultNodeEditor {
   public static String MATCHING_TEXT = "continue";
 
-  public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
-    return this.createConstantCell(editorContext, node, "continue;");
+  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+    return this.createConstantCell(context, node, "continue;");
   }
-  public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
+  public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
     return editorCell;
   }
 }

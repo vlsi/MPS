@@ -8,39 +8,47 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
-import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class ExpressionStatement_Editor extends DefaultNodeEditor {
   public static String PRESENTATION_NAME = "expression statement";
 
-  public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
-    return this.createStatementBox(editorContext, node);
+  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+    return this.createStatementBox(context, node);
   }
-  public EditorCell createStatementBox(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+  public EditorCell createStatementBox(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createExpressionCell(editorContext, node));
-    editorCell.addEditorCell(this.createConstantCell(editorContext, node, ";"));
+    editorCell.addEditorCell(this.createExpressionCell(context, node));
+    editorCell.addEditorCell(this.createConstantCell(context, node, ";"));
     return editorCell;
   }
-  public EditorCell createExpressionCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode expression = node.getChild("expression");
-    EditorCell editorCell = null;
-    if(expression != null) {
-      editorCell = editorContext.createNodeCell(expression);
-      editorCell.setSelectable(true);
-    } else 
-    {
-      editorCell = EditorCell_Error.create(editorContext, node, null);
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+  public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  public EditorCell createExpressionCell(EditorContext context, SemanticNode node) {
+    SemanticNode referencedNode = null;
+    referencedNode = node.getChild("expression");
+    if(referencedNode == null) {
+      {
+        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "expression");
+        noRefCell.setEditable(true);
+        noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        return noRefCell;
+      }
     }
-    return editorCell;
-  }
-  public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
+    EditorCell editorCell = context.createNodeCell(referencedNode);
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     return editorCell;
   }
 }

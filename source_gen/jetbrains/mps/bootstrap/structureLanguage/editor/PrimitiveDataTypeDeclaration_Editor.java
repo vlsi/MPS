@@ -9,7 +9,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 import java.awt.Color;
@@ -18,35 +17,40 @@ import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
 
 public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
-    return this.createNodeBox(editorContext, node);
+  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+    return this.createNodeBox(context, node);
   }
-  public EditorCell createNodeBox(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+  public EditorCell createNodeBox(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createHeaderRow(editorContext, node));
+    editorCell.addEditorCell(this.createHeaderRow(context, node));
     return editorCell;
   }
-  public EditorCell createHeaderRow(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+  public EditorCell createHeaderRow(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createConstantCell(editorContext, node, "Primitive Data Type"));
-    editorCell.addEditorCell(this.createNameCell(editorContext, node));
+    editorCell.addEditorCell(this.createConstantCell(context, node, "Primitive Data Type"));
+    editorCell.addEditorCell(this.createNameCell(context, node));
     return editorCell;
   }
-  public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
+  public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setEditable(false);
+    editorCell.setDefaultText("");
     return editorCell;
   }
-  public EditorCell createNameCell(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = new PropertyAccessor(node, "name", false, false);
-    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
+  public EditorCell createNameCell(EditorContext context, SemanticNode node) {
+    PropertyAccessor propertyAccessor = new PropertyAccessor(node, "name", false, false);
+    EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(true);
     editorCell.setDefaultText("<no name>");
     editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
     editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);

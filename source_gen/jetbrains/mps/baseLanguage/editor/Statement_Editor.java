@@ -11,11 +11,14 @@ import jetbrains.mps.nodeEditor.EditorCell_Error;
 
 public class Statement_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
-    return this.createNodeBox(editorContext, node);
+  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+    return this.createNodeBox(context, node);
   }
-  public EditorCell createNodeBox(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Error editorCell = EditorCell_Error.create(editorContext, node, "<statement>");
+  public EditorCell createNodeBox(EditorContext context, SemanticNode node) {
+    EditorCell_Error editorCell = EditorCell_Error.create(context, node, "<statement>");
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(true);
     return editorCell;
   }
 }

@@ -9,7 +9,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.EditorCellAction;
@@ -19,34 +18,45 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
   public static String MATCHING_TEXT = "\"";
   public static String PRESENTATION_NAME = "string literal";
 
-  public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
-    return this.createRowCell(editorContext, node);
+  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+    return this.createRowCell(context, node);
   }
-  public EditorCell createRowCell(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+  public EditorCell createRowCell(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
     editorCell.addKeyMap(new _Expression_KeyMap());
-    editorCell.addEditorCell(this.createConstantCell(editorContext, node, "\""));
-    editorCell.addEditorCell(this.createValueCell(editorContext, node));
-    editorCell.addEditorCell(this.createConstantCell1(editorContext, node, "\""));
+    editorCell.addEditorCell(this.createConstantCell(context, node, "\""));
+    editorCell.addEditorCell(this.createValueCell(context, node));
+    editorCell.addEditorCell(this.createConstantCell1(context, node, "\""));
     return editorCell;
   }
-  public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
-    return editorCell;
-  }
-  public EditorCell createValueCell(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = new PropertyAccessor(node, "value", false, false);
-    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
+  public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
-    editorCell.setEditable(true);
-    editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "value"));
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
     return editorCell;
   }
-  public EditorCell createConstantCell1(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
+  public EditorCell createConstantCell1(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
     __ExpressionClosingParethesis_ActionSet.setCellActions(editorCell, node);
+    return editorCell;
+  }
+  public EditorCell createValueCell(EditorContext context, SemanticNode node) {
+    PropertyAccessor propertyAccessor = new PropertyAccessor(node, "value", false, false);
+    EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(true);
+    editorCell.setDefaultText("");
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "value"));
     return editorCell;
   }
 }

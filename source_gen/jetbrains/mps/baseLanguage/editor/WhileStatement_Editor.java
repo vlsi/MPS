@@ -16,81 +16,111 @@ import jetbrains.mps.nodeEditor.CellAction_Empty;
 public class WhileStatement_Editor extends DefaultNodeEditor {
   public static String MATCHING_TEXT = "while";
 
-  public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
-    return this.createColumnCell(editorContext, node);
+  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+    return this.createColumnCell(context, node);
   }
-  public EditorCell createColumnCell(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+  public EditorCell createColumnCell(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createRowCell(editorContext, node));
-    editorCell.addEditorCell(this.createRowCell1(editorContext, node));
-    editorCell.addEditorCell(this.createRowCell2(editorContext, node));
+    editorCell.addEditorCell(this.createRowCell(context, node));
+    editorCell.addEditorCell(this.createRowCell1(context, node));
+    editorCell.addEditorCell(this.createRowCell2(context, node));
     return editorCell;
   }
-  public EditorCell createRowCell(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+  public EditorCell createRowCell(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createConstantCell(editorContext, node, "while ("));
-    editorCell.addEditorCell(this.createConditionCell(editorContext, node));
-    editorCell.addEditorCell(this.createConstantCell1(editorContext, node, ") {"));
+    editorCell.addEditorCell(this.createConstantCell(context, node, "while ("));
+    editorCell.addEditorCell(this.createConditionCell(context, node));
+    editorCell.addEditorCell(this.createConstantCell1(context, node, ") {"));
     return editorCell;
   }
-  public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
+  public EditorCell createRowCell1(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setGridLayout(false);
+    editorCell.addEditorCell(this.createConstantCell2(context, node, "  "));
+    editorCell.addEditorCell(this.createBodyCell(context, node));
     return editorCell;
   }
-  public EditorCell createConditionCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode condition = node.getChild("condition");
-    EditorCell editorCell = null;
-    if(condition != null) {
-      editorCell = editorContext.createNodeCell(condition);
-      WhileStatement_ConditionCellActions.setCellActions(editorCell, node);
-      editorCell.addKeyMap(new _Expression_KeyMap());
-    } else 
-    {
-      editorCell = EditorCell_Error.create(editorContext, node, null);
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-      WhileStatement_ConditionCellActions.setCellActions(editorCell, node);
-      _DefErrorActions.setCellActions(editorCell, node);
-      editorCell.addKeyMap(new _Expression_KeyMap());
+  public EditorCell createRowCell2(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setGridLayout(false);
+    editorCell.addEditorCell(this.createConstantCell3(context, node, "}"));
+    return editorCell;
+  }
+  public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell1(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell2(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell3(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  public EditorCell createConditionCell(EditorContext context, SemanticNode node) {
+    SemanticNode referencedNode = null;
+    referencedNode = node.getChild("condition");
+    if(referencedNode == null) {
+      {
+        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "condition");
+        noRefCell.setEditable(true);
+        noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        WhileStatement_ConditionCellActions.setCellActions(noRefCell, node);
+        _DefErrorActions.setCellActions(noRefCell, node);
+        noRefCell.addKeyMap(new _Expression_KeyMap());
+        return noRefCell;
+      }
     }
+    EditorCell editorCell = context.createNodeCell(referencedNode);
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    WhileStatement_ConditionCellActions.setCellActions(editorCell, node);
+    editorCell.addKeyMap(new _Expression_KeyMap());
     return editorCell;
   }
-  public EditorCell createConstantCell1(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
-    return editorCell;
-  }
-  public EditorCell createRowCell1(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createConstantCell2(editorContext, node, "  "));
-    editorCell.addEditorCell(this.createBodyCell(editorContext, node));
-    return editorCell;
-  }
-  public EditorCell createConstantCell2(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
-    return editorCell;
-  }
-  public EditorCell createBodyCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode body = node.getChild("body");
-    EditorCell editorCell = null;
-    if(body != null) {
-      editorCell = editorContext.createNodeCell(body);
-    } else 
-    {
-      editorCell = EditorCell_Error.create(editorContext, node, null);
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+  public EditorCell createBodyCell(EditorContext context, SemanticNode node) {
+    SemanticNode referencedNode = null;
+    referencedNode = node.getChild("body");
+    if(referencedNode == null) {
+      {
+        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "body");
+        noRefCell.setEditable(true);
+        noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        return noRefCell;
+      }
     }
-    return editorCell;
-  }
-  public EditorCell createRowCell2(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createConstantCell3(editorContext, node, "}"));
-    return editorCell;
-  }
-  public EditorCell createConstantCell3(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
+    EditorCell editorCell = context.createNodeCell(referencedNode);
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     return editorCell;
   }
 }

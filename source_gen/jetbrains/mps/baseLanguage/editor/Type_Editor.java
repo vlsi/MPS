@@ -12,11 +12,14 @@ import jetbrains.mps.nodeEditor.EditorCell_Error;
 public class Type_Editor extends DefaultNodeEditor {
   public static String PRESENTATION_NAME = "abstract type";
 
-  public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
-    return this.createErrorCell(editorContext, node);
+  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+    return this.createErrorCell(context, node);
   }
-  public EditorCell createErrorCell(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Error editorCell = EditorCell_Error.create(editorContext, node, "<type>");
+  public EditorCell createErrorCell(EditorContext context, SemanticNode node) {
+    EditorCell_Error editorCell = EditorCell_Error.create(context, node, "<type>");
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(true);
     return editorCell;
   }
 }

@@ -12,17 +12,20 @@ import jetbrains.mps.nodeEditor.EditorCell_Collection;
 
 public class StatementList_Editor extends DefaultNodeEditor {
 
-  private EditorCellListHandler myStatementListHandler;
+  EditorCellListHandler myStatementListHandler;
 
-  public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
-    return this.createStatementList(editorContext, node);
+  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+    return this.createStatementList(context, node);
   }
-  public EditorCell createStatementList(EditorContext editorContext, SemanticNode node) {
+  public EditorCell createStatementList(EditorContext context, SemanticNode node) {
     if(this.myStatementListHandler == null) {
       this.myStatementListHandler = new StatementList_Editor_StatementListHandler(node, "statement", true);
     }
-    EditorCell_Collection cellCollection = this.myStatementListHandler.createCells_Vertical(editorContext);
-    cellCollection.setGridLayout(false);
-    return cellCollection;
+    EditorCell_Collection editorCell = null;
+    editorCell = this.myStatementListHandler.createCells_Vertical(context);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setGridLayout(false);
+    return editorCell;
   }
 }

@@ -17,56 +17,72 @@ public class CastExpression_Editor extends DefaultNodeEditor {
   public static String MATCHING_TEXT = "(type)";
   public static String PRESENTATION_NAME = "type cast";
 
-  public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
-    return this.createRowCell(editorContext, node);
+  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+    return this.createRowCell(context, node);
   }
-  public EditorCell createRowCell(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+  public EditorCell createRowCell(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
     CastExpression_NodeBoxActions.setCellActions(editorCell, node);
     editorCell.addKeyMap(new _Expression_KeyMap());
-    editorCell.addEditorCell(this.createConstantCell(editorContext, node, "("));
-    editorCell.addEditorCell(this.createTypeCell(editorContext, node));
-    editorCell.addEditorCell(this.createConstantCell1(editorContext, node, ")"));
-    editorCell.addEditorCell(this.createExpressionCell(editorContext, node));
+    editorCell.addEditorCell(this.createConstantCell(context, node, "("));
+    editorCell.addEditorCell(this.createTypeCell(context, node));
+    editorCell.addEditorCell(this.createConstantCell1(context, node, ")"));
+    editorCell.addEditorCell(this.createExpressionCell(context, node));
     return editorCell;
   }
-  public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
+  public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
     return editorCell;
   }
-  public EditorCell createTypeCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode type = node.getChild("type");
-    EditorCell editorCell = null;
-    if(type != null) {
-      editorCell = editorContext.createNodeCell(type);
-      CastExpression_CastTypeActions.setCellActions(editorCell, node);
-    } else 
-    {
-      editorCell = EditorCell_Error.create(editorContext, node, null);
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-      CastExpression_CastTypeActions.setCellActions(editorCell, node);
-      _DefErrorActions.setCellActions(editorCell, node);
+  public EditorCell createConstantCell1(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  public EditorCell createTypeCell(EditorContext context, SemanticNode node) {
+    SemanticNode referencedNode = null;
+    referencedNode = node.getChild("type");
+    if(referencedNode == null) {
+      {
+        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "type");
+        noRefCell.setEditable(true);
+        noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        CastExpression_CastTypeActions.setCellActions(noRefCell, node);
+        _DefErrorActions.setCellActions(noRefCell, node);
+        return noRefCell;
+      }
     }
+    EditorCell editorCell = context.createNodeCell(referencedNode);
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    CastExpression_CastTypeActions.setCellActions(editorCell, node);
     return editorCell;
   }
-  public EditorCell createConstantCell1(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
-    return editorCell;
-  }
-  public EditorCell createExpressionCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode expression = node.getChild("expression");
-    EditorCell editorCell = null;
-    if(expression != null) {
-      editorCell = editorContext.createNodeCell(expression);
-      CastExpression_CastExpressionActions.setCellActions(editorCell, node);
-    } else 
-    {
-      editorCell = EditorCell_Error.create(editorContext, node, null);
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-      CastExpression_CastExpressionActions.setCellActions(editorCell, node);
-      _DefErrorActions.setCellActions(editorCell, node);
+  public EditorCell createExpressionCell(EditorContext context, SemanticNode node) {
+    SemanticNode referencedNode = null;
+    referencedNode = node.getChild("expression");
+    if(referencedNode == null) {
+      {
+        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "expression");
+        noRefCell.setEditable(true);
+        noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        CastExpression_CastExpressionActions.setCellActions(noRefCell, node);
+        _DefErrorActions.setCellActions(noRefCell, node);
+        return noRefCell;
+      }
     }
+    EditorCell editorCell = context.createNodeCell(referencedNode);
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    CastExpression_CastExpressionActions.setCellActions(editorCell, node);
     return editorCell;
   }
 }

@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.EditorCellAction;
@@ -18,150 +17,211 @@ import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
 
 public class EnumClass_Editor extends DefaultNodeEditor {
 
-  private EditorCellListHandler myEnumConstantListHandler;
-  private EditorCellListHandler myFieldListHandler;
-  private EditorCellListHandler myConstructorListHandler;
-  private EditorCellListHandler myMethodListHandler;
-  private EditorCellListHandler myStaticMethodListHandler;
+  EditorCellListHandler myEnumConstantListHandler;
+  EditorCellListHandler myFieldListHandler;
+  EditorCellListHandler myConstructorListHandler;
+  EditorCellListHandler myMethodListHandler;
+  EditorCellListHandler myStaticMethodListHandler;
 
-  public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
-    return this.createColumnCell(editorContext, node);
+  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+    return this.createColumnCell(context, node);
   }
-  public EditorCell createColumnCell(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createRowCell(editorContext, node));
-    editorCell.addEditorCell(this.createRowCell1(editorContext, node));
-    editorCell.addEditorCell(this.createRowCell2(editorContext, node));
-    editorCell.addEditorCell(this.createRowCell3(editorContext, node));
-    editorCell.addEditorCell(this.createRowCell4(editorContext, node));
-    editorCell.addEditorCell(this.createRowCell5(editorContext, node));
-    editorCell.addEditorCell(this.createConstantCell12(editorContext, node, "}"));
-    return editorCell;
-  }
-  public EditorCell createRowCell(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createConstantCell(editorContext, node, "enum"));
-    editorCell.addEditorCell(this.createNameCell(editorContext, node));
-    editorCell.addEditorCell(this.createConstantCell1(editorContext, node, "{"));
-    return editorCell;
-  }
-  public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
-    editorCell.setSelectable(false);
-    return editorCell;
-  }
-  public EditorCell createNameCell(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = new PropertyAccessor(node, "name", false, false);
-    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
+  public EditorCell createColumnCell(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setGridLayout(false);
+    editorCell.addEditorCell(this.createRowCell(context, node));
+    editorCell.addEditorCell(this.createRowCell1(context, node));
+    editorCell.addEditorCell(this.createRowCell2(context, node));
+    editorCell.addEditorCell(this.createRowCell3(context, node));
+    editorCell.addEditorCell(this.createRowCell4(context, node));
+    editorCell.addEditorCell(this.createRowCell5(context, node));
+    editorCell.addEditorCell(this.createConstantCell12(context, node, "}"));
+    return editorCell;
+  }
+  public EditorCell createRowCell(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setGridLayout(false);
+    editorCell.addEditorCell(this.createConstantCell(context, node, "enum"));
+    editorCell.addEditorCell(this.createNameCell(context, node));
+    editorCell.addEditorCell(this.createConstantCell1(context, node, "{"));
+    return editorCell;
+  }
+  public EditorCell createRowCell1(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setGridLayout(false);
+    editorCell.addEditorCell(this.createConstantCell2(context, node, "    "));
+    editorCell.addEditorCell(this.createEnumConstantList(context, node));
+    return editorCell;
+  }
+  public EditorCell createRowCell2(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setGridLayout(false);
+    editorCell.addEditorCell(this.createConstantCell4(context, node, "    "));
+    editorCell.addEditorCell(this.createFieldList(context, node));
+    return editorCell;
+  }
+  public EditorCell createRowCell3(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setGridLayout(false);
+    editorCell.addEditorCell(this.createConstantCell6(context, node, "    "));
+    editorCell.addEditorCell(this.createConstructorList(context, node));
+    return editorCell;
+  }
+  public EditorCell createRowCell4(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setGridLayout(false);
+    editorCell.addEditorCell(this.createConstantCell8(context, node, "    "));
+    editorCell.addEditorCell(this.createMethodList(context, node));
+    return editorCell;
+  }
+  public EditorCell createRowCell5(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setGridLayout(false);
+    editorCell.addEditorCell(this.createConstantCell10(context, node, "    "));
+    editorCell.addEditorCell(this.createStaticMethodList(context, node));
+    return editorCell;
+  }
+  public EditorCell createConstantCell12(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell1(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell2(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell4(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell6(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell8(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell10(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  public EditorCell createNameCell(EditorContext context, SemanticNode node) {
+    PropertyAccessor propertyAccessor = new PropertyAccessor(node, "name", false, false);
+    EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(true);
+    editorCell.setDefaultText("");
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
     return editorCell;
   }
-  public EditorCell createConstantCell1(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
-    editorCell.setSelectable(false);
-    return editorCell;
-  }
-  public EditorCell createRowCell1(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createConstantCell2(editorContext, node, "    "));
-    editorCell.addEditorCell(this.createEnumConstantList(editorContext, node));
-    return editorCell;
-  }
-  public EditorCell createConstantCell2(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
-    return editorCell;
-  }
-  public EditorCell createEnumConstantList(EditorContext editorContext, SemanticNode node) {
+  public EditorCell createEnumConstantList(EditorContext context, SemanticNode node) {
     if(this.myEnumConstantListHandler == null) {
       this.myEnumConstantListHandler = new EnumClass_Editor_EnumConstantListHandler(node, "enumConstant", true);
     }
-    EditorCell_Collection cellCollection = this.myEnumConstantListHandler.createCells_Vertical(editorContext);
-    cellCollection.setGridLayout(false);
-    return cellCollection;
-  }
-  public EditorCell createRowCell2(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = null;
+    editorCell = this.myEnumConstantListHandler.createCells_Vertical(context);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createConstantCell4(editorContext, node, "    "));
-    editorCell.addEditorCell(this.createFieldList(editorContext, node));
     return editorCell;
   }
-  public EditorCell createConstantCell4(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
-    return editorCell;
-  }
-  public EditorCell createFieldList(EditorContext editorContext, SemanticNode node) {
+  public EditorCell createFieldList(EditorContext context, SemanticNode node) {
     if(this.myFieldListHandler == null) {
       this.myFieldListHandler = new EnumClass_Editor_FieldListHandler(node, "field", true);
     }
-    EditorCell_Collection cellCollection = this.myFieldListHandler.createCells_Vertical(editorContext);
-    cellCollection.setGridLayout(false);
-    return cellCollection;
-  }
-  public EditorCell createRowCell3(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = null;
+    editorCell = this.myFieldListHandler.createCells_Vertical(context);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createConstantCell6(editorContext, node, "    "));
-    editorCell.addEditorCell(this.createConstructorList(editorContext, node));
     return editorCell;
   }
-  public EditorCell createConstantCell6(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
-    return editorCell;
-  }
-  public EditorCell createConstructorList(EditorContext editorContext, SemanticNode node) {
+  public EditorCell createConstructorList(EditorContext context, SemanticNode node) {
     if(this.myConstructorListHandler == null) {
       this.myConstructorListHandler = new EnumClass_Editor_ConstructorListHandler(node, "constructor", true);
     }
-    EditorCell_Collection cellCollection = this.myConstructorListHandler.createCells_Vertical(editorContext);
-    cellCollection.setGridLayout(false);
-    return cellCollection;
-  }
-  public EditorCell createRowCell4(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = null;
+    editorCell = this.myConstructorListHandler.createCells_Vertical(context);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createConstantCell8(editorContext, node, "    "));
-    editorCell.addEditorCell(this.createMethodList(editorContext, node));
     return editorCell;
   }
-  public EditorCell createConstantCell8(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
-    return editorCell;
-  }
-  public EditorCell createMethodList(EditorContext editorContext, SemanticNode node) {
+  public EditorCell createMethodList(EditorContext context, SemanticNode node) {
     if(this.myMethodListHandler == null) {
       this.myMethodListHandler = new EnumClass_Editor_MethodListHandler(node, "method", true);
     }
-    EditorCell_Collection cellCollection = this.myMethodListHandler.createCells_Vertical(editorContext);
-    cellCollection.setGridLayout(false);
-    return cellCollection;
-  }
-  public EditorCell createRowCell5(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = null;
+    editorCell = this.myMethodListHandler.createCells_Vertical(context);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createConstantCell10(editorContext, node, "    "));
-    editorCell.addEditorCell(this.createStaticMethodList(editorContext, node));
     return editorCell;
   }
-  public EditorCell createConstantCell10(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
-    return editorCell;
-  }
-  public EditorCell createStaticMethodList(EditorContext editorContext, SemanticNode node) {
+  public EditorCell createStaticMethodList(EditorContext context, SemanticNode node) {
     if(this.myStaticMethodListHandler == null) {
       this.myStaticMethodListHandler = new EnumClass_Editor_StaticMethodListHandler(node, "staticMethod", true);
     }
-    EditorCell_Collection cellCollection = this.myStaticMethodListHandler.createCells_Vertical(editorContext);
-    cellCollection.setGridLayout(false);
-    return cellCollection;
-  }
-  public EditorCell createConstantCell12(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
-    editorCell.setSelectable(false);
+    EditorCell_Collection editorCell = null;
+    editorCell = this.myStaticMethodListHandler.createCells_Vertical(context);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setGridLayout(false);
     return editorCell;
   }
 }

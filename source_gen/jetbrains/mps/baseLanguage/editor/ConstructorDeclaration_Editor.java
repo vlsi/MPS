@@ -9,6 +9,7 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration;
 import jetbrains.mps.semanticModel.SemanticModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
@@ -16,98 +17,122 @@ import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorUtil;
-import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
-  private AbstractCellProvider my_BaseMethodParmListEditor;
+  AbstractCellProvider my_BaseMethodParmListEditor;
 
-  public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
-    return this.createMethodBox(editorContext, node);
+  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+    return this.createMethodBox(context, node);
   }
-  public EditorCell createMethodBox(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+  public EditorCell createMethodBox(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createHeaderRow(editorContext, node));
-    editorCell.addEditorCell(this.createBodyArea(editorContext, node));
-    editorCell.addEditorCell(this.createConstantCell2(editorContext, node, "}"));
+    editorCell.addEditorCell(this.createHeaderRow(context, node));
+    editorCell.addEditorCell(this.createBodyArea(context, node));
+    editorCell.addEditorCell(this.createConstantCell2(context, node, "}"));
     return editorCell;
   }
-  public EditorCell createHeaderRow(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+  public EditorCell createHeaderRow(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createJavaClassReferenceCell(editorContext, node));
-    editorCell.addEditorCell(this.createConstantCell(editorContext, node, "("));
-    editorCell.addEditorCell(this.create_BaseMethodParmListEditorCell(editorContext, node));
-    editorCell.addEditorCell(this.createConstantCell1(editorContext, node, ") {"));
+    editorCell.addEditorCell(this.createJavaClassReferenceCell(context, node));
+    editorCell.addEditorCell(this.createConstantCell(context, node, "("));
+    editorCell.addEditorCell(this.create_BaseMethodParmListEditorCell(context, node));
+    editorCell.addEditorCell(this.createConstantCell1(context, node, ") {"));
     return editorCell;
   }
-  public EditorCell createJavaClassReferenceCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode effectiveNode = node.getReferent("javaClass");
-    SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(node, "javaClass");
-    if(effectiveNode == null) {
-      EditorCell_Error errorCell = EditorCell_Error.create(editorContext, node, null);
-      errorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-      errorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
-      errorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
-      errorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
-      return errorCell;
-    }
-    AbstractCellProvider javaClass_InlineComponent = new ConstructorDeclaration_Editor_javaClass_InlineComponent(effectiveNode);
-    EditorCell editorCell = javaClass_InlineComponent.createEditorCell(editorContext);
-    EditorUtil.setSemanticNodeToCells(editorCell, node);
-    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-    editorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
-    editorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
-    editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
-    return editorCell;
-  }
-  public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
+  public EditorCell createBodyArea(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(false);
+    editorCell.setDrawBorder(true);
+    editorCell.setGridLayout(false);
+    editorCell.addEditorCell(this.createIndentCell(context, node, "  "));
+    editorCell.addEditorCell(this.createBodyCell(context, node));
     return editorCell;
   }
-  public EditorCell create_BaseMethodParmListEditorCell(EditorContext editorContext, SemanticNode node) {
+  public EditorCell create_BaseMethodParmListEditorCell(EditorContext context, SemanticNode node) {
     if(this.my_BaseMethodParmListEditor == null) {
       this.my_BaseMethodParmListEditor = new _BaseMethodParmListEditor(node);
     }
-    EditorCell editorCell = this.my_BaseMethodParmListEditor.createEditorCell(editorContext);
+    EditorCell editorCell = this.my_BaseMethodParmListEditor.createEditorCell(context);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     return editorCell;
   }
-  public EditorCell createConstantCell1(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
+  public EditorCell createConstantCell2(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(false);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
     return editorCell;
   }
-  public EditorCell createBodyArea(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+  public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(false);
-    editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createIndentCell(editorContext, node, "  "));
-    editorCell.addEditorCell(this.createBodyCell(editorContext, node));
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
     return editorCell;
   }
-  public EditorCell createIndentCell(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
+  public EditorCell createConstantCell1(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
     return editorCell;
   }
-  public EditorCell createBodyCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode body = node.getChild("body");
-    EditorCell editorCell = null;
-    if(body != null) {
-      editorCell = editorContext.createNodeCell(body);
-    } else 
-    {
-      editorCell = EditorCell_Error.create(editorContext, node, null);
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+  public EditorCell createIndentCell(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  public EditorCell createJavaClassReferenceCell(EditorContext context, SemanticNode node) {
+    SemanticNode effectiveNode = null;
+    effectiveNode = node.getReferent("javaClass");
+    SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(node, "javaClass");
+    if(effectiveNode == null) {
+      {
+        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
+        noRefCell.setEditable(true);
+        noRefCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
+        noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
+        noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
+        return noRefCell;
+      }
     }
+    AbstractCellProvider inlineComponent = new ConstructorDeclaration_Editor_javaClass_InlineComponent(effectiveNode);
+    EditorCell editorCell = inlineComponent.createEditorCell(context);
+    EditorUtil.setSemanticNodeToCells(editorCell, node);
+    editorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
+    editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    editorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
     return editorCell;
   }
-  public EditorCell createConstantCell2(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
-    editorCell.setSelectable(false);
+  public EditorCell createBodyCell(EditorContext context, SemanticNode node) {
+    SemanticNode referencedNode = null;
+    referencedNode = node.getChild("body");
+    if(referencedNode == null) {
+      {
+        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "body");
+        noRefCell.setEditable(true);
+        noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        return noRefCell;
+      }
+    }
+    EditorCell editorCell = context.createNodeCell(referencedNode);
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     return editorCell;
   }
 }

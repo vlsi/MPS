@@ -8,46 +8,53 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.EditorCell_Error;
-import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.nodeEditor.CellAction_Empty;
-import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
+import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
+import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.nodeEditor.CellAction_Empty;
 
 public class ParameterDeclaration_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
-    return this.createDeclarationBox(editorContext, node);
+  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+    return this.createDeclarationBox(context, node);
   }
-  public EditorCell createDeclarationBox(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+  public EditorCell createDeclarationBox(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createTypeCell(editorContext, node));
-    editorCell.addEditorCell(this.createNameCell(editorContext, node));
+    editorCell.addEditorCell(this.createTypeCell(context, node));
+    editorCell.addEditorCell(this.createNameCell(context, node));
     return editorCell;
   }
-  public EditorCell createTypeCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode type = node.getChild("type");
-    EditorCell editorCell = null;
-    if(type != null) {
-      editorCell = editorContext.createNodeCell(type);
-      ParameterDeclaration_TypeCellActions.setCellActions(editorCell, node);
-    } else 
-    {
-      editorCell = EditorCell_Error.create(editorContext, node, "<no type>");
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-      ParameterDeclaration_TypeCellActions.setCellActions(editorCell, node);
-    }
-    return editorCell;
-  }
-  public EditorCell createNameCell(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = new PropertyAccessor(node, "name", false, false);
-    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
+  public EditorCell createNameCell(EditorContext context, SemanticNode node) {
+    PropertyAccessor propertyAccessor = new PropertyAccessor(node, "name", false, false);
+    EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(true);
     editorCell.setDefaultText("<no name>");
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
     ParameterDeclaration_NameCellActions.setCellActions(editorCell, node);
+    return editorCell;
+  }
+  public EditorCell createTypeCell(EditorContext context, SemanticNode node) {
+    SemanticNode referencedNode = null;
+    referencedNode = node.getChild("type");
+    if(referencedNode == null) {
+      {
+        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "type");
+        noRefCell.setEditable(true);
+        noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        ParameterDeclaration_TypeCellActions.setCellActions(noRefCell, node);
+        return noRefCell;
+      }
+    }
+    EditorCell editorCell = context.createNodeCell(referencedNode);
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    ParameterDeclaration_TypeCellActions.setCellActions(editorCell, node);
     return editorCell;
   }
 }

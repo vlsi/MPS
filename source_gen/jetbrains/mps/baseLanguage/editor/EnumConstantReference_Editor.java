@@ -8,12 +8,12 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.EditorCell_Error;
-import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration;
 import jetbrains.mps.semanticModel.SemanticModelUtil;
+import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.EditorUtil;
@@ -22,55 +22,68 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
   public static String MATCHING_TEXT = ". <enum constant>";
   public static String PRESENTATION_NAME = "enum constant";
 
-  public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
-    return this.createRowCell(editorContext, node);
+  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+    return this.createRowCell(context, node);
   }
-  public EditorCell createRowCell(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+  public EditorCell createRowCell(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createJavaClassTypeCell(editorContext, node));
-    editorCell.addEditorCell(this.createConstantCell(editorContext, node, "."));
-    editorCell.addEditorCell(this.createEnumConstantDeclarationReferenceCell(editorContext, node));
+    editorCell.addEditorCell(this.createJavaClassTypeCell(context, node));
+    editorCell.addEditorCell(this.createConstantCell(context, node, "."));
+    editorCell.addEditorCell(this.createEnumConstantDeclarationReferenceCell(context, node));
     return editorCell;
   }
-  public EditorCell createJavaClassTypeCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode javaClassType = node.getChild("javaClassType");
-    EditorCell editorCell = null;
-    if(javaClassType != null) {
-      editorCell = editorContext.createNodeCell(javaClassType);
-      EnumConstantReference_TypeActions.setCellActions(editorCell, node);
-    } else 
-    {
-      editorCell = EditorCell_Error.create(editorContext, node, null);
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-      EnumConstantReference_TypeActions.setCellActions(editorCell, node);
-    }
+  public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
     return editorCell;
   }
-  public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
-    return editorCell;
-  }
-  public EditorCell createEnumConstantDeclarationReferenceCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode effectiveNode = node.getReferent("enumConstantDeclaration");
+  public EditorCell createEnumConstantDeclarationReferenceCell(EditorContext context, SemanticNode node) {
+    SemanticNode effectiveNode = null;
+    effectiveNode = node.getReferent("enumConstantDeclaration");
     SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(node, "enumConstantDeclaration");
     if(effectiveNode == null) {
-      EditorCell_Error errorCell = EditorCell_Error.create(editorContext, node, null);
-      errorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-      errorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
-      EnumConstantReference_ConstantNameActions.setCellActions(errorCell, node);
-      errorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
-      errorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
-      return errorCell;
+      {
+        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
+        noRefCell.setEditable(true);
+        noRefCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
+        noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
+        noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
+        EnumConstantReference_ConstantNameActions.setCellActions(noRefCell, node);
+        return noRefCell;
+      }
     }
-    AbstractCellProvider enumConstantDeclaration_InlineComponent = new EnumConstantReference_Editor_enumConstantDeclaration_InlineComponent(effectiveNode);
-    EditorCell editorCell = enumConstantDeclaration_InlineComponent.createEditorCell(editorContext);
+    AbstractCellProvider inlineComponent = new EnumConstantReference_Editor_enumConstantDeclaration_InlineComponent(effectiveNode);
+    EditorCell editorCell = inlineComponent.createEditorCell(context);
     EditorUtil.setSemanticNodeToCells(editorCell, node);
+    editorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
+    editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     editorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
     EnumConstantReference_ConstantNameActions.setCellActions(editorCell, node);
-    editorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
-    editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
+    return editorCell;
+  }
+  public EditorCell createJavaClassTypeCell(EditorContext context, SemanticNode node) {
+    SemanticNode referencedNode = null;
+    referencedNode = node.getChild("javaClassType");
+    if(referencedNode == null) {
+      {
+        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "javaClassType");
+        noRefCell.setEditable(true);
+        noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        EnumConstantReference_TypeActions.setCellActions(noRefCell, node);
+        return noRefCell;
+      }
+    }
+    EditorCell editorCell = context.createNodeCell(referencedNode);
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    EnumConstantReference_TypeActions.setCellActions(editorCell, node);
     return editorCell;
   }
 }

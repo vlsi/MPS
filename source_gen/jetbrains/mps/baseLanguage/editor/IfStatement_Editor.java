@@ -13,115 +13,147 @@ import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.baseLanguage.IfStatement;
 
 public class IfStatement_Editor extends DefaultNodeEditor {
   public static String MATCHING_TEXT = "if";
 
-  public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
-    return this.createStatementBox(editorContext, node);
+  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+    return this.createStatementBox(context, node);
   }
-  public EditorCell createStatementBox(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+  public EditorCell createStatementBox(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createHeaderRow(editorContext, node));
-    editorCell.addEditorCell(this.createIfTrueBox(editorContext, node));
+    editorCell.addEditorCell(this.createHeaderRow(context, node));
+    editorCell.addEditorCell(this.createIfTrueBox(context, node));
     if(this.handleConditionalQuery_1075379536707(node)) {
-      editorCell.addEditorCell(this.createIfFalseBranch(editorContext, node));
+      editorCell.addEditorCell(this.createIfFalseBranch(context, node));
     }
     if(this.handleConditionalQuery_1075379580458(node)) {
-      editorCell.addEditorCell(this.createConstantCell3(editorContext, node, "}"));
+      editorCell.addEditorCell(this.createConstantCell3(context, node, "}"));
     }
     return editorCell;
   }
-  public EditorCell createHeaderRow(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createConstantCell(editorContext, node, "if ("));
-    editorCell.addEditorCell(this.createConditionCell(editorContext, node));
-    editorCell.addEditorCell(this.createConstantCell1(editorContext, node, ") {"));
-    return editorCell;
-  }
-  public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
-    return editorCell;
-  }
-  public EditorCell createConditionCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode condition = node.getChild("condition");
-    EditorCell editorCell = null;
-    if(condition != null) {
-      editorCell = editorContext.createNodeCell(condition);
-      IfStatement_ConditionCellActions.setCellActions(editorCell, node);
-    } else 
-    {
-      editorCell = EditorCell_Error.create(editorContext, node, null);
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-      IfStatement_ConditionCellActions.setCellActions(editorCell, node);
-      _DefErrorActions.setCellActions(editorCell, node);
-    }
-    return editorCell;
-  }
-  public EditorCell createConstantCell1(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
-    return editorCell;
-  }
-  public EditorCell createIfTrueBox(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createIndentCell(editorContext, node, "  "));
-    editorCell.addEditorCell(this.createIfTrueCell(editorContext, node));
-    return editorCell;
-  }
-  public EditorCell createIndentCell(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
-    return editorCell;
-  }
-  public EditorCell createIfTrueCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode ifTrue = node.getChild("ifTrue");
-    EditorCell editorCell = null;
-    if(ifTrue != null) {
-      editorCell = editorContext.createNodeCell(ifTrue);
-    } else 
-    {
-      editorCell = EditorCell_Error.create(editorContext, node, null);
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-    }
-    return editorCell;
-  }
-  public EditorCell createIfFalseBranch(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setSelectable(false);
-    editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createConstantCell2(editorContext, node, "} else"));
-    editorCell.addEditorCell(this.createIfFalseStatementCell(editorContext, node));
-    return editorCell;
-  }
-  public EditorCell createConstantCell2(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
-    return editorCell;
-  }
-  public EditorCell createIfFalseStatementCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode ifFalseStatement = node.getChild("ifFalseStatement");
-    EditorCell editorCell = null;
-    if(ifFalseStatement != null) {
-      editorCell = editorContext.createNodeCell(ifFalseStatement);
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(ifFalseStatement));
-      IfStatement_ElseStatementActions.setCellActions(editorCell, node);
-    } else 
-    {
-      editorCell = EditorCell_Constant.create(editorContext, node, null, true);
-      ((EditorCell_Label)editorCell).setEditable(true);
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-      IfStatement_ElseStatementActions.setCellActions(editorCell, node);
-    }
-    return editorCell;
-  }
-  public EditorCell createConstantCell3(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
+  public EditorCell createHeaderRow(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setGridLayout(false);
+    editorCell.addEditorCell(this.createConstantCell(context, node, "if ("));
+    editorCell.addEditorCell(this.createConditionCell(context, node));
+    editorCell.addEditorCell(this.createConstantCell1(context, node, ") {"));
+    return editorCell;
+  }
+  public EditorCell createIfTrueBox(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setGridLayout(false);
+    editorCell.addEditorCell(this.createIndentCell(context, node, "  "));
+    editorCell.addEditorCell(this.createIfTrueCell(context, node));
+    return editorCell;
+  }
+  public EditorCell createIfFalseBranch(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(true);
+    editorCell.setGridLayout(false);
+    editorCell.addEditorCell(this.createConstantCell2(context, node, "} else"));
+    editorCell.addEditorCell(this.createIfFalseStatementCell(context, node));
+    return editorCell;
+  }
+  public EditorCell createConstantCell3(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.setEditable(false);
+    editorCell.setDefaultText("");
     IfStatement_IfClosingBracketActions.setCellActions(editorCell, node);
+    return editorCell;
+  }
+  public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell1(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  public EditorCell createIndentCell(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell2(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  public EditorCell createConditionCell(EditorContext context, SemanticNode node) {
+    SemanticNode referencedNode = null;
+    referencedNode = node.getChild("condition");
+    if(referencedNode == null) {
+      {
+        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "condition");
+        noRefCell.setEditable(true);
+        noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        IfStatement_ConditionCellActions.setCellActions(noRefCell, node);
+        _DefErrorActions.setCellActions(noRefCell, node);
+        return noRefCell;
+      }
+    }
+    EditorCell editorCell = context.createNodeCell(referencedNode);
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    IfStatement_ConditionCellActions.setCellActions(editorCell, node);
+    return editorCell;
+  }
+  public EditorCell createIfTrueCell(EditorContext context, SemanticNode node) {
+    SemanticNode referencedNode = null;
+    referencedNode = node.getChild("ifTrue");
+    if(referencedNode == null) {
+      {
+        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "ifTrue");
+        noRefCell.setEditable(true);
+        noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        return noRefCell;
+      }
+    }
+    EditorCell editorCell = context.createNodeCell(referencedNode);
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    return editorCell;
+  }
+  public EditorCell createIfFalseStatementCell(EditorContext context, SemanticNode node) {
+    SemanticNode referencedNode = null;
+    referencedNode = node.getChild("ifFalseStatement");
+    if(referencedNode == null) {
+      {
+        EditorCell_Constant noRefCell = EditorCell_Constant.create(context, node, null, true);
+        noRefCell.setDefaultText("");
+        noRefCell.setEditable(true);
+        noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        IfStatement_ElseStatementActions.setCellActions(noRefCell, node);
+        return noRefCell;
+      }
+    }
+    EditorCell editorCell = context.createNodeCell(referencedNode);
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(node));
+    IfStatement_ElseStatementActions.setCellActions(editorCell, node);
     return editorCell;
   }
   public boolean handleConditionalQuery_1075379536707(SemanticNode node) {

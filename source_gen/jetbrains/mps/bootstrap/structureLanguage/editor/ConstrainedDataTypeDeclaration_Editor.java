@@ -10,103 +10,116 @@ import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.ModelAccessor;
-import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
+import jetbrains.mps.nodeEditor.PropertyAccessor;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.nodeEditor.EditorCell_Error;
 
 public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
-    return this.createNodeBox(editorContext, node);
+  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+    return this.createNodeBox(context, node);
   }
-  public EditorCell createNodeBox(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+  public EditorCell createNodeBox(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createHeaderRow(editorContext, node));
-    editorCell.addEditorCell(this.createRowCell(editorContext, node));
-    editorCell.addEditorCell(this.createSeparator(editorContext, node, "  "));
-    editorCell.addEditorCell(this.createRowCell1(editorContext, node));
+    editorCell.addEditorCell(this.createHeaderRow(context, node));
+    editorCell.addEditorCell(this.createRowCell(context, node));
+    editorCell.addEditorCell(this.createSeparator(context, node, "  "));
+    editorCell.addEditorCell(this.createRowCell1(context, node));
     return editorCell;
   }
-  public EditorCell createHeaderRow(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+  public EditorCell createHeaderRow(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createConstantCell(editorContext, node, "Simple Data Type"));
-    editorCell.addEditorCell(this.createNameCell(editorContext, node));
+    editorCell.addEditorCell(this.createConstantCell(context, node, "Simple Data Type"));
+    editorCell.addEditorCell(this.createNameCell(context, node));
     return editorCell;
   }
-  public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
+  public EditorCell createRowCell(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setGridLayout(false);
+    editorCell.addEditorCell(this.createConstantCell1(context, node, "    extends:"));
+    editorCell.addEditorCell(this.createSimpleDataType_ExtendedDataTypeNameCell(context, node));
+    return editorCell;
+  }
+  public EditorCell createRowCell1(EditorContext context, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setGridLayout(false);
+    editorCell.addEditorCell(this.createConstantCell2(context, node, "    constraint:"));
+    editorCell.addEditorCell(this.createConstraintCell(context, node));
+    return editorCell;
+  }
+  public EditorCell createSeparator(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setEditable(false);
+    editorCell.setDefaultText("");
     return editorCell;
   }
-  public EditorCell createNameCell(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = new PropertyAccessor(node, "name", false, false);
-    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
+  public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell1(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell2(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  public EditorCell createSimpleDataType_ExtendedDataTypeNameCell(EditorContext context, SemanticNode node) {
+    ModelAccessor modelAccessor = Aspects.createModelAccessor_SimpleDataType_ExtendedDataTypeName(node);
+    EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(true);
+    editorCell.setDefaultText("<none>");
+    ConstrainedDataTypeDeclaration_ExtendsCellActions.setCellActions(editorCell, node);
+    return editorCell;
+  }
+  public EditorCell createNameCell(EditorContext context, SemanticNode node) {
+    PropertyAccessor propertyAccessor = new PropertyAccessor(node, "name", false, false);
+    EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(true);
     editorCell.setDefaultText("<no name>");
     editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
     editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
     return editorCell;
   }
-  public EditorCell createRowCell(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createConstantCell1(editorContext, node, "    extends:"));
-    editorCell.addEditorCell(this.createSimpleDataType_ExtendedDataTypeNameCell(editorContext, node));
-    return editorCell;
-  }
-  public EditorCell createConstantCell1(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
-    editorCell.setDrawBorder(false);
-    return editorCell;
-  }
-  public EditorCell createSimpleDataType_ExtendedDataTypeNameCell(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = Aspects.createModelAccessor_SimpleDataType_ExtendedDataTypeName(node);
-    EditorCell editorCell = null;
-    if(modelAccessor != null) {
-      editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
-      ((EditorCell_Label)editorCell).setDefaultText("<none>");
-    } else 
-    {
-      editorCell = EditorCell_Error.create(editorContext, node, "<none>");
-    }
-    ConstrainedDataTypeDeclaration_ExtendsCellActions.setCellActions(editorCell, node);
-    return editorCell;
-  }
-  public EditorCell createSeparator(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
-    editorCell.setDrawBorder(false);
-    return editorCell;
-  }
-  public EditorCell createRowCell1(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createConstantCell2(editorContext, node, "    constraint:"));
-    editorCell.addEditorCell(this.createConstraintCell(editorContext, node));
-    return editorCell;
-  }
-  public EditorCell createConstantCell2(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
-    editorCell.setDrawBorder(false);
-    return editorCell;
-  }
-  public EditorCell createConstraintCell(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = new PropertyAccessor(node, "constraint", false, false);
-    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
+  public EditorCell createConstraintCell(EditorContext context, SemanticNode node) {
+    PropertyAccessor propertyAccessor = new PropertyAccessor(node, "constraint", false, false);
+    EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(true);
+    editorCell.setDefaultText("");
     editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
     editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "constraint"));
