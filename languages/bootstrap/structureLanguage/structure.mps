@@ -231,8 +231,8 @@
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="integerConceptPropertyDeclaration" />
-      <link role="target" targetNodeId="1105725141344" />
       <link role="specializedLink" targetNodeId="1105725439818" />
+      <link role="target" targetNodeId="1105725141344" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1105725574259">
@@ -242,8 +242,8 @@
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="booleanConceptPropertyDeclaration" />
-      <link role="target" targetNodeId="1105725240314" />
       <link role="specializedLink" targetNodeId="1105725439818" />
+      <link role="target" targetNodeId="1105725240314" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1105725638761">
@@ -308,8 +308,8 @@
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="aggregationConceptLinkDeclaration" />
-      <link role="target" targetNodeId="1105741535888" />
       <link role="specializedLink" targetNodeId="1105736734721" />
+      <link role="target" targetNodeId="1105741535888" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1105736901241">
       <property name="sourceCardinality" value="1" />

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model namespace="jetbrains.mps.baseLanguage">
-  <maxReferenceID value="33" />
+  <maxReferenceID value="35" />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <import referenceID="4" name="structure" namespace="jetbrains.mps.core" />
+  <import referenceID="34" name="library" namespace="jetbrains.mps.bootstrap.structureLanguage" />
+  <import referenceID="35" name="structure" namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068498886294">
     <property name="name" value="AssignmentExpression" />
     <link role="extends" targetNodeId="1068431790191" />
@@ -387,8 +389,8 @@
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="methodDeclaration" />
-      <link role="specializedLink" targetNodeId="1068499141037" />
       <link role="target" targetNodeId="1068390468204" />
+      <link role="specializedLink" targetNodeId="1068499141037" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068581242869">
@@ -491,8 +493,8 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1070568178160">
       <property name="role" value="staticFieldDeclaration" />
-      <link role="target" targetNodeId="1070462154015" />
       <link role="specializedLink" targetNodeId="1068581517664" />
+      <link role="target" targetNodeId="1070462154015" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1070533982221">
@@ -630,8 +632,8 @@
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="staticMethodDeclaration" />
-      <link role="specializedLink" targetNodeId="1068499141037" />
       <link role="target" targetNodeId="1081236700938" />
+      <link role="specializedLink" targetNodeId="1068499141037" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1081236700938">
@@ -780,8 +782,8 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration" id="1084374412312">
     <property name="name" value="Visibility" />
-    <link role="defaultMember" targetNodeId="1084374412313" />
     <link role="memberDataType" targetNodeId="4.1082983041843" />
+    <link role="defaultMember" targetNodeId="1084374412313" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1084374412313">
       <property name="externalValue" value="public" />
       <property name="internalValue" value="public" />
@@ -833,6 +835,31 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1106155080112">
     <property name="name" value="FeatureCompositionDeclaration" />
     <link role="extends" targetNodeId="1068390468198" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1106178123235">
+      <property name="sourceCardinality" value="1..n" />
+      <property name="targetCardinality" value="1" />
+      <property name="role" value="featureConstructor" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1106176710759" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1106176536146">
+    <property name="name" value="FeatureConcept" />
+    <link role="extends" targetNodeId="4.1078489098625" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1106176952154">
+      <link role="conceptLinkDeclaration" targetNodeId="34.1105994381173" />
+      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLinkDeclaration" id="1106176963296">
+        <property name="name" value="FeatureConstructorLink" />
+        <link role="targetType" targetNodeId="35.1071489090640" />
+      </node>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1106176708570">
+      <link role="conceptLinkDeclaration" targetNodeId="34.1105994302389" />
+      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1106176710759">
+        <property name="name" value="FeatureConstructor" />
+        <link role="extends" targetNodeId="4.1078489098625" />
+      </node>
+    </node>
   </node>
 </model>
 

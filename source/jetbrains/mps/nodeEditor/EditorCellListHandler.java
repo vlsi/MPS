@@ -112,7 +112,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
   protected EditorCell createEmptyCell(EditorContext editorContext) {
     EditorCell_Constant emptyCell = EditorCell_Constant.create(editorContext, getOwner(), " << ... >>", true);
     // empty list - don't delete the list owner
-    emptyCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+//    emptyCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     return emptyCell;
   }
 
@@ -159,6 +159,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
   private void setDefaultCellListActions(EditorCell_Collection cellList) {
     cellList.setAction(EditorCellAction.INSERT, new CellAction_Insert(this, false));
     cellList.setAction(EditorCellAction.INSERT_BEFORE, new CellAction_Insert(this, true));
+    cellList.setAction(EditorCellAction.DELETE, new CellAction_Empty());
   }
 
   private EditorCell createNodeCell_internal(EditorContext editorContext, SemanticNode node) {
