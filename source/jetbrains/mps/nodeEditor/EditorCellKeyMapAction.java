@@ -14,4 +14,8 @@ public abstract class EditorCellKeyMapAction {
   public String getDescriptionText() {
     return "no description";
   }
+
+  public KeyMapActionType getKeyMapActionType() {
+    return KeyMapActionType.WHEN_SELECTED;
+  }
 }
