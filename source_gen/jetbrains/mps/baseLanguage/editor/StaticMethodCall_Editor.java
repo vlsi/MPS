@@ -15,6 +15,7 @@ import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration;
 import jetbrains.mps.semanticModel.SemanticModelUtil;
+import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorUtil;
 
 public class StaticMethodCall_Editor extends SemanticNodeEditor {
@@ -61,11 +62,12 @@ public class StaticMethodCall_Editor extends SemanticNodeEditor {
   }
   public EditorCell createBaseMethodDeclarationReferenceCell(EditorContext editorContext, SemanticNode node) {
     SemanticNode effectiveNode = node.getReferent("baseMethodDeclaration");
+    SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(node, "baseMethodDeclaration");
     if(effectiveNode == null) {
       EditorCell_Error errorCell = EditorCell_Error.create(editorContext, node, "<no method>");
       errorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+      errorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
       StaticMethodCall_MethodNameActions.setCellActions(errorCell, node);
-      SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(node, "baseMethodDeclaration");
       errorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
       errorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
       return errorCell;
@@ -73,8 +75,9 @@ public class StaticMethodCall_Editor extends SemanticNodeEditor {
     AbstractCellProvider baseMethodDeclaration_InlineComponent = new StaticMethodCall_Editor_baseMethodDeclaration_InlineComponent(effectiveNode);
     EditorCell editorCell = baseMethodDeclaration_InlineComponent.createEditorCell(editorContext);
     EditorUtil.setSemanticNodeToCells(editorCell, node);
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    editorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
     StaticMethodCall_MethodNameActions.setCellActions(editorCell, node);
-    SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(node, "baseMethodDeclaration");
     editorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
     editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
     return editorCell;

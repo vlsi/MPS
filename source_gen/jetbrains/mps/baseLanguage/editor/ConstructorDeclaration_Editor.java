@@ -9,11 +9,12 @@ import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration;
+import jetbrains.mps.semanticModel.SemanticModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
-import jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration;
-import jetbrains.mps.semanticModel.SemanticModelUtil;
+import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
@@ -48,10 +49,11 @@ public class ConstructorDeclaration_Editor extends SemanticNodeEditor {
   }
   public EditorCell createJavaClassReferenceCell(EditorContext editorContext, SemanticNode node) {
     SemanticNode effectiveNode = node.getReferent("javaClass");
+    SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(node, "javaClass");
     if(effectiveNode == null) {
       EditorCell_Error errorCell = EditorCell_Error.create(editorContext, node, null);
       errorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-      SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(node, "javaClass");
+      errorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
       errorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
       errorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
       return errorCell;
@@ -59,7 +61,8 @@ public class ConstructorDeclaration_Editor extends SemanticNodeEditor {
     AbstractCellProvider javaClass_InlineComponent = new ConstructorDeclaration_Editor_javaClass_InlineComponent(effectiveNode);
     EditorCell editorCell = javaClass_InlineComponent.createEditorCell(editorContext);
     EditorUtil.setSemanticNodeToCells(editorCell, node);
-    SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(node, "javaClass");
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    editorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
     editorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
     editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
     return editorCell;

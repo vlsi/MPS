@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 
 public class LocalVariableDeclaration_Editor extends SemanticNodeEditor {
+  public static String MATCHING_TEXT = "local variable";
   public static String PRESENTATION_NAME = "local variable declaration";
 
   public void setSemanticNode(SemanticNode node) {
