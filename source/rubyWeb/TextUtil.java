@@ -53,42 +53,39 @@ public class TextUtil {
         Element elem = (Element) part;
         Sentence sentence = Sentence.newInstance(model);
         String name = elem.getName();
+        Tag tag = null;
         if ("b".equals(name) || "B".equals(name)) {
-          BoldTag tag = BoldTag.newInstance(model);
+          tag = BoldTag.newInstance(model);
           tag.setText(toText(model, elem));
-          sentence.addWord(tag);
         }
         if ("i".equals(name) || "I".equals(name)) {
-          ItalicTag tag = ItalicTag.newInstance(model);
+          tag = ItalicTag.newInstance(model);
           tag.setText(toText(model, elem));
-          sentence.addWord(tag);
         }
         if ("term".equals(name)) {
-          TermTag tag = TermTag.newInstance(model);
+          tag = TermTag.newInstance(model);
           tag.setText(toText(model, elem));
-          sentence.addWord(tag);
         }
         if ("cite".equals(name)) {
-          CiteTag tag = CiteTag.newInstance(model);
+          tag = CiteTag.newInstance(model);
           tag.setText(toText(model, elem));
           tag.putUserObject(ResolveUtil.ID_TO_RESOLVE, elem.getAttributeValue("name"));
-          sentence.addWord(tag);
         }
         if ("xref".equals(name)) {
-          XRefTag tag = XRefTag.newInstance(model);
+          tag = XRefTag.newInstance(model);
           tag.setText(toText(model, elem));
           tag.putUserObject(ResolveUtil.ID_TO_RESOLVE, elem.getAttributeValue("targetID"));
-          sentence.addWord(tag);
         }
         if ("xref-target".equals(name)) {
-          XRefTargetTag tag = XRefTargetTag.newInstance(model);
+          tag = XRefTargetTag.newInstance(model);
           tag.setName(elem.getAttributeValue("ID"));
           tag.setText(toText(model, elem));
-          sentence.addWord(tag);
         }
         if ("patternRef".equals(name)) {
-          PatternRefTag tag = PatternRefTag.newInstance(model);
+          tag = PatternRefTag.newInstance(model);
           tag.putUserObject(ResolveUtil.ID_TO_RESOLVE, elem.getAttributeValue("name"));
+        }
+        if (tag != null) {
           sentence.addWord(tag);
         }
         result.addSentence(sentence);
