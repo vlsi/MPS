@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.editor;
 
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.EditorCellListHandler;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -20,6 +21,7 @@ import jetbrains.mps.nodeEditor.CellLayout_Vertical;
 
 public class Interface_Editor extends DefaultNodeEditor {
 
+  AbstractCellProvider my_GenericDeclaration_TypeVariables_Component;
   EditorCellListHandler myExtendedInterfaceListHandler;
   EditorCellListHandler myMethodListHandler;
 
@@ -49,6 +51,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createConstantCell(context, node, "interface"));
     editorCell.addEditorCell(this.createNameCell(context, node));
+    editorCell.addEditorCell(this.create_GenericDeclaration_TypeVariables_ComponentCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "extends"));
     editorCell.addEditorCell(this.createExtendedInterfaceList(context, node));
     editorCell.addEditorCell(this.createConstantCell3(context, node, "{"));
@@ -63,6 +66,17 @@ public class Interface_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createMethodsIndentCell(context, node, "    "));
     editorCell.addEditorCell(this.createMethodsList(context, node));
+    return editorCell;
+  }
+  public EditorCell create_GenericDeclaration_TypeVariables_ComponentCell(EditorContext context, SemanticNode node) {
+    if(this.my_GenericDeclaration_TypeVariables_Component == null) {
+      this.my_GenericDeclaration_TypeVariables_Component = new _GenericDeclaration_TypeVariables_Component(node);
+    }
+    EditorCell editorCell = this.my_GenericDeclaration_TypeVariables_Component.createEditorCell(context);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
   public EditorCell createConstantCell4(EditorContext context, SemanticNode node, String text) {

@@ -196,5 +196,14 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1109202040316" />
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.Interface" id="1109281248484">
+    <property name="name" value="MyGenericInterface" />
+    <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1109281830015">
+      <property name="name" value="T" />
+    </node>
+    <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1109281834454">
+      <property name="name" value="E" />
+    </node>
+  </node>
 </model>
 

@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.editor;
 
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.EditorCellListHandler;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -20,13 +21,13 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.nodeEditor.CellAction_DeleteReferenceToNode;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
 
 public class ClassConcept_Editor extends DefaultNodeEditor {
 
+  AbstractCellProvider my_GenericDeclaration_TypeVariables_Component;
   EditorCellListHandler myImplementedInterfaceListHandler;
   EditorCellListHandler myFieldListHandler;
   EditorCellListHandler myStaticFieldListHandler;
@@ -65,6 +66,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createConstantCell(context, node, "class"));
     editorCell.addEditorCell(this.createNameCell(context, node));
+    editorCell.addEditorCell(this.create_GenericDeclaration_TypeVariables_ComponentCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "extends"));
     editorCell.addEditorCell(this.createExtendedClassReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell2(context, node, "implements"));
@@ -125,6 +127,17 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createMethodsIndentCell1(context, node, "    "));
     editorCell.addEditorCell(this.createStaticMethodList(context, node));
+    return editorCell;
+  }
+  public EditorCell create_GenericDeclaration_TypeVariables_ComponentCell(EditorContext context, SemanticNode node) {
+    if(this.my_GenericDeclaration_TypeVariables_Component == null) {
+      this.my_GenericDeclaration_TypeVariables_Component = new _GenericDeclaration_TypeVariables_Component(node);
+    }
+    EditorCell editorCell = this.my_GenericDeclaration_TypeVariables_Component.createEditorCell(context);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
   public EditorCell createConstantCell8(EditorContext context, SemanticNode node, String text) {
