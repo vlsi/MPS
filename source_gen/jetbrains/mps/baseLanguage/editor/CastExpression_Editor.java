@@ -27,7 +27,7 @@ public class CastExpression_Editor extends SemanticNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setGridLayout(false);
     CastExpression_NodeBoxActions.setCellActions(editorCell, node);
-    editorCell.setKeyMap(new _Expression_KeyMap());
+    editorCell.addKeyMap(new _Expression_KeyMap());
     editorCell.addEditorCell(this.createConstantCell(editorContext, node, "("));
     editorCell.addEditorCell(this.createTypeCell(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell1(editorContext, node, ")"));

@@ -6,7 +6,13 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.ide.command.CommandProcessor;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.util.List;
 
 public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
@@ -14,28 +20,43 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     return false;
   }
 
-  public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
+  public boolean processKeyPressed(final EditorContext editorContext, final KeyEvent keyEvent) {
     AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
     EditorCell selectedCell = editor.getSelectedCell();
 
     // precess cell keymaps first
     if (selectedCell != null /*&& EditorUtil.isValidCell(selectedCell)*/) {
       //test
-      if(keyEvent.getKeyCode() == KeyEvent.VK_M) {
+      if (keyEvent.getKeyCode() == KeyEvent.VK_M) {
         System.out.println("key pressed:" + keyEvent);
       }
-      EditorCell actionCell = selectedCell;
-      EditorCellKeyMapAction cellKeyMapAction = EditorUtil.getCellKeyMapAction(actionCell, keyEvent, editorContext);
-      while (cellKeyMapAction == null && actionCell.getParent() != null) {
-        actionCell = actionCell.getParent();
-        cellKeyMapAction = EditorUtil.getCellKeyMapAction(actionCell, keyEvent, editorContext);
-      }
-      if (cellKeyMapAction != null) {
-//        editor.changeSelection(actionCell);
-//        if (cellKeyMapAction.canExecute(keyEvent, editorContext)) {
-          cellKeyMapAction.execute(keyEvent, editorContext);
+      List<EditorCellKeyMapAction> actions = EditorUtil.getKeyMapActionsForEvent(selectedCell, keyEvent, editorContext);
+      if (actions != null) {
+        if (actions.size() == 1) {
+          actions.get(0).execute(keyEvent, editorContext);
           return true;
-//        }
+        } else {
+          // show menu
+          JPopupMenu menu = new JPopupMenu();
+          for (int i = 0; i < actions.size(); i++) {
+            final EditorCellKeyMapAction keyMapAction = actions.get(i);
+            JMenuItem menuItem = new JMenuItem(keyMapAction.getDescriptionText());
+            menuItem.addActionListener(new ActionListener() {
+              public void actionPerformed(ActionEvent e) {
+                CommandProcessor commandProcessor = CommandProcessor.instance();
+                commandProcessor.executeCommand(new Runnable() {
+                  public void run() {
+                    keyMapAction.execute(keyEvent, editorContext);
+                  }
+                }, keyMapAction.getDescriptionText());
+              }
+            });
+            menu.add(menuItem);
+          }
+          AbstractEditorComponent component = editorContext.getNodeEditorComponent();
+          menu.show(component, selectedCell.getX(), selectedCell.getY() + selectedCell.getHeight());
+          return true;
+        }
       }
     }
 

@@ -57,20 +57,63 @@ public class EditorCellKeyMap {
   } // static init
 
   private HashMap<ActionKey, EditorCellKeyMapAction> myActionMap;
+  private List<EditorCellKeyMap> myChildKeyMaps;
 
   public EditorCellKeyMap() {
     myActionMap = new HashMap<ActionKey, EditorCellKeyMapAction>();
+  }
+
+  public void addKeyMap(EditorCellKeyMap keyMap) {
+    if (myChildKeyMaps == null) {
+      myChildKeyMaps = new LinkedList<EditorCellKeyMap>();
+    }
+    myChildKeyMaps.add(keyMap);
   }
 
   public void putAction(String modifiers, String keyCode, EditorCellKeyMapAction action) {
     myActionMap.put(new ActionKey(modifiers, keyCode), action);
   }
 
-  public EditorCellKeyMapAction getAction(KeyEvent event) {
+  public boolean hasActions(KeyEvent event) {
+    if (findAction(this, event) != null) {
+      return true;
+    }
+    if (myChildKeyMaps != null) {
+      Iterator<EditorCellKeyMap> iterator = myChildKeyMaps.iterator();
+      while (iterator.hasNext()) {
+        EditorCellKeyMap childKeyMap = iterator.next();
+        if (findAction(childKeyMap, event) != null) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  public List<EditorCellKeyMapAction> getActions(KeyEvent event) {
+    List<EditorCellKeyMapAction> list = new LinkedList<EditorCellKeyMapAction>();
+    EditorCellKeyMapAction keyMapAction = findAction(this, event);
+    if (keyMapAction != null) {
+      list.add(keyMapAction);
+    }
+    if (myChildKeyMaps != null) {
+      Iterator<EditorCellKeyMap> iterator = myChildKeyMaps.iterator();
+      while (iterator.hasNext()) {
+        EditorCellKeyMap childKeyMap = iterator.next();
+        keyMapAction = findAction(childKeyMap, event);
+        if (keyMapAction != null) {
+          list.add(keyMapAction);
+        }
+      }
+    }
+    return list;
+  }
+
+  private static EditorCellKeyMapAction findAction(EditorCellKeyMap keyMap, KeyEvent event) {
     List<ActionKey> actionKeies = keyEvent2ActionKey(event);
     for (int i = 0; i < actionKeies.size(); i++) {
       ActionKey actionKey = actionKeies.get(i);
-      EditorCellKeyMapAction editorCellAction = myActionMap.get(actionKey);
+      EditorCellKeyMapAction editorCellAction = keyMap.myActionMap.get(actionKey);
       if (editorCellAction != null) {
         System.out.println("keymap action found for key: " + actionKey);
         return editorCellAction;
@@ -79,7 +122,7 @@ public class EditorCellKeyMap {
     return null;
   }
 
-  private List<ActionKey> keyEvent2ActionKey(KeyEvent event) {
+  private static List<ActionKey> keyEvent2ActionKey(KeyEvent event) {
     List<ActionKey> keys = new LinkedList<ActionKey>();
     List<String> modifiers = modifiersForEvent(event);
     List<String> keyCodes = keyCodesForEvent(event);
@@ -97,7 +140,7 @@ public class EditorCellKeyMap {
     return keys;
   }
 
-  private List<String> modifiersForEvent(KeyEvent event) {
+  private static List<String> modifiersForEvent(KeyEvent event) {
     List<String> modifiers = new LinkedList<String>();
     if (event.getModifiers() == 0) {
       modifiers.add(KEY_MODIFIERS_NONE);
@@ -121,7 +164,7 @@ public class EditorCellKeyMap {
     return modifiers;
   }
 
-  private List<String> keyCodesForEvent(KeyEvent event) {
+  private static List<String> keyCodesForEvent(KeyEvent event) {
     List<String> keyCodes = new LinkedList<String>();
 
     int keyCode = event.getKeyCode();

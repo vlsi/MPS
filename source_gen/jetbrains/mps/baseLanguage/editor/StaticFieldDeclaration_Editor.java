@@ -84,13 +84,13 @@ public class StaticFieldDeclaration_Editor extends SemanticNodeEditor {
       editorCell = editorContext.createNodeCell(initializer);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(initializer));
       __VariableInitializer_ActionSet.setCellActions(editorCell, node);
-      editorCell.setKeyMap(new _Expression_KeyMap());
+      editorCell.addKeyMap(new _Expression_KeyMap());
     } else {
       editorCell = EditorCell_Constant.create(editorContext, node, null, true);
       ((EditorCell_Label)editorCell).setEditable(true);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       __VariableInitializer_ActionSet.setCellActions(editorCell, node);
-      editorCell.setKeyMap(new _Expression_KeyMap());
+      editorCell.addKeyMap(new _Expression_KeyMap());
     }
     return editorCell;
   }

@@ -48,13 +48,13 @@ public class WhileStatement_Editor extends SemanticNodeEditor {
     if(condition != null) {
       editorCell = editorContext.createNodeCell(condition);
       WhileStatement_ConditionCellActions.setCellActions(editorCell, node);
-      editorCell.setKeyMap(new _Expression_KeyMap());
+      editorCell.addKeyMap(new _Expression_KeyMap());
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       WhileStatement_ConditionCellActions.setCellActions(editorCell, node);
       _DefErrorActions.setCellActions(editorCell, node);
-      editorCell.setKeyMap(new _Expression_KeyMap());
+      editorCell.addKeyMap(new _Expression_KeyMap());
     }
     return editorCell;
   }

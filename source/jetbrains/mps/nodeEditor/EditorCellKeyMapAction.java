@@ -10,4 +10,8 @@ public abstract class EditorCellKeyMapAction {
   public abstract boolean canExecute(KeyEvent keyEvent, EditorContext context);
 
   public abstract void execute(KeyEvent keyEvent, EditorContext context);
+
+  public String getDescriptionText() {
+    return "no description";
+  }
 }

@@ -26,7 +26,7 @@ public class NotExpression_Editor extends SemanticNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setGridLayout(false);
     NotExpression_NodeBoxActions.setCellActions(editorCell, node);
-    editorCell.setKeyMap(new _Expression_KeyMap());
+    editorCell.addKeyMap(new _Expression_KeyMap());
     editorCell.addEditorCell(this.createConstantCell(editorContext, node, "!("));
     editorCell.addEditorCell(this.createExpressionCell(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell1(editorContext, node, ")"));

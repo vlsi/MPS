@@ -23,7 +23,7 @@ public class NullLiteral_Editor extends SemanticNodeEditor {
     editorCell.setSelectable(true);
     editorCell.setEditable(true);
     NullLiteral_NodeBoxActions.setCellActions(editorCell, node);
-    editorCell.setKeyMap(new _Expression_KeyMap());
+    editorCell.addKeyMap(new _Expression_KeyMap());
     return editorCell;
   }
 }

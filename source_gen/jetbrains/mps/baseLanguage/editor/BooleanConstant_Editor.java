@@ -29,7 +29,7 @@ public class BooleanConstant_Editor extends SemanticNodeEditor {
     editorCell.setSubstituteInfo(new BooleanPropertySubstituteInfo(node, "value"));
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "value"));
     BooleanConstant_NodeBoxActions.setCellActions(editorCell, node);
-    editorCell.setKeyMap(new _Expression_KeyMap());
+    editorCell.addKeyMap(new _Expression_KeyMap());
     return editorCell;
   }
 }

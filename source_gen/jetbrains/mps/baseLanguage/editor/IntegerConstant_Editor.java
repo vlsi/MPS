@@ -28,7 +28,7 @@ public class IntegerConstant_Editor extends SemanticNodeEditor {
     editorCell.setDefaultText("<int constant>");
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "value"));
     IntegerConstant_NodeBoxActions.setCellActions(editorCell, node);
-    editorCell.setKeyMap(new _Expression_KeyMap());
+    editorCell.addKeyMap(new _Expression_KeyMap());
     return editorCell;
   }
 }
