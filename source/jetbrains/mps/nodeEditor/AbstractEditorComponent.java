@@ -52,11 +52,18 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private List<ICellSelectionListener> mySelectionListeners = new LinkedList<ICellSelectionListener>();
   private KeyListener myKeyListener;
+  private Component myPreviousFocusOwner = null;
 
   private IdeMain myIdeMain;
 
 
   public AbstractEditorComponent(IdeMain ideMain) {
+    addFocusListener(new FocusAdapter() {
+      public void focusGained(FocusEvent e) {
+        myPreviousFocusOwner = e.getOppositeComponent();
+      }
+    });
+
     myIdeMain = ideMain;
 
     setDoubleBuffered(true);
@@ -103,6 +110,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     registerKeyboardAction(new GoByReferenceAction(), KeyStroke.getKeyStroke("control B"), WHEN_FOCUSED);
     registerKeyboardAction(new GoToDefinitionAction(), KeyStroke.getKeyStroke("control S"), WHEN_FOCUSED);
     registerKeyboardAction(new GoToEditorAction(), KeyStroke.getKeyStroke("control E"), WHEN_FOCUSED);
+    registerKeyboardAction(new FindUsagesAction(), KeyStroke.getKeyStroke("alt F7"), WHEN_FOCUSED);
+    registerKeyboardAction(new ReturnToPreviousComponent(), KeyStroke.getKeyStroke("ESCAPE"), WHEN_FOCUSED);
 
     addMouseListener(new MouseAdapter() {
       public void mousePressed(final MouseEvent e) {
@@ -1091,6 +1100,22 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         SemanticNode node = mySelectedCell.getSemanticNode();
         ConceptDeclaration declaration = (ConceptDeclaration) Language.findTypeDeclaration(node.getSemanticModel(), node.getNodeTypeName());
         createGoToEditorAction(declaration).actionPerformed(e);
+      }
+    }
+  }
+
+  private class FindUsagesAction extends AbstractAction {
+    public void actionPerformed(ActionEvent e) {
+      if (mySelectedCell != null && mySelectedCell.getSemanticNode() != null) {
+        createFindUsagesAction(mySelectedCell.getSemanticNode()).actionPerformed(e);
+      }
+    }
+  }
+
+  private class ReturnToPreviousComponent extends AbstractAction {
+    public void actionPerformed(ActionEvent e) {
+      if (myPreviousFocusOwner != null) {
+        myPreviousFocusOwner.requestFocus();
       }
     }
   }
