@@ -10,6 +10,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class ThisExpression_Editor extends SemanticNodeEditor {
+  public static String MATCHING_TEXT = "this";
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);

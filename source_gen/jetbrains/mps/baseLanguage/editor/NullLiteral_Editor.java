@@ -10,6 +10,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class NullLiteral_Editor extends SemanticNodeEditor {
+  public static String MATCHING_TEXT = "null";
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);

@@ -9,17 +9,16 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 
-public class Statement_Editor extends SemanticNodeEditor {
+public class StaticFieldReference_Editor extends SemanticNodeEditor {
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);
   }
   public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
-    return this.createNodeBox(editorContext, node);
+    return this.createErrorCell(editorContext, node);
   }
-  public EditorCell createNodeBox(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Error editorCell = EditorCell_Error.create(editorContext, node, "<statement>");
-    Statement_NodeBoxActions.setCellActions(editorCell, node);
+  public EditorCell createErrorCell(EditorContext editorContext, SemanticNode node) {
+    EditorCell_Error editorCell = EditorCell_Error.create(editorContext, node, "StaticFieldReference editor under construction");
     return editorCell;
   }
 }

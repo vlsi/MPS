@@ -13,6 +13,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 
 public class IfStatement_Editor extends SemanticNodeEditor {
+  public static String MATCHING_TEXT = "if";
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);

@@ -13,6 +13,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 
 public class BooleanConstant_Editor extends SemanticNodeEditor {
+  public static String MATCHING_TEXT = "literal boolean";
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);

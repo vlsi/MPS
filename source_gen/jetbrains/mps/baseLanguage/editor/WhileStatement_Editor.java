@@ -12,6 +12,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 
 public class WhileStatement_Editor extends SemanticNodeEditor {
+  public static String MATCHING_TEXT = "while";
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);
