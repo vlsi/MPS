@@ -21,7 +21,10 @@ public class EditorManager {
   public EditorCell createEditorCell(SemanticNode node) {
     SemanticNodeEditor editor = getEditor(node);
     EditorCell nodeCell = createEditorCell(editor, node);
-    if (node.getReferenceCount(NODE_TO_PLACE_AFTER) == 0) {
+//    if (node.getReferenceCount_old(NODE_TO_PLACE_AFTER) == 0) {
+//      return nodeCell;
+//    }
+    if (node.getChildCount(NODE_TO_PLACE_AFTER) == 0) {
       return nodeCell;
     }
 
