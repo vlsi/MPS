@@ -111,8 +111,9 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1108073009517">
           <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1108073015535">
-            <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1108073009516">
-              <link role="variableDeclaration" targetNodeId="1107804739566" />
+            <link role="baseMethodDeclaration" targetNodeId="1108072220361" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1108073640437">
+              <link role="variableDeclaration" targetNodeId="1107804621959" />
             </node>
           </node>
         </node>
@@ -120,8 +121,8 @@
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1108057766847" />
           <node role="condition" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1108057337281">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1108057339799" />
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1108059856235">
-              <link role="variableDeclaration" targetNodeId="1107804718170" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1108073660376">
+              <link role="variableDeclaration" targetNodeId="1107804621959" />
             </node>
           </node>
         </node>
