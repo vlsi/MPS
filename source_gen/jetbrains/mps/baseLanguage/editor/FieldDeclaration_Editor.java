@@ -39,7 +39,7 @@ public class FieldDeclaration_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createTypeCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode type = node.getReferent("type", (SemanticNode)null);
+    SemanticNode type = node.getChild("type");
     EditorCell editorCell = null;
     if(type != null) {
       editorCell = editorContext.createNodeCell(type);
@@ -73,7 +73,7 @@ public class FieldDeclaration_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createInitializerCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode initializer = node.getReferent("initializer", (SemanticNode)null);
+    SemanticNode initializer = node.getChild("initializer");
     EditorCell editorCell = null;
     if(initializer != null) {
       editorCell = editorContext.createNodeCell(initializer);

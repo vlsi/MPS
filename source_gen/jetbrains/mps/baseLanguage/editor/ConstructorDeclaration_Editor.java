@@ -47,7 +47,7 @@ public class ConstructorDeclaration_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createJavaClassReferenceCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode effectiveNode = node.getReferent("javaClass", (SemanticNode)null);
+    SemanticNode effectiveNode = node.getReferent("javaClass");
     if(effectiveNode == null) {
       EditorCell_Error errorCell = EditorCell_Error.create(editorContext, node, null);
       errorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
@@ -94,7 +94,7 @@ public class ConstructorDeclaration_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createBodyCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode body = node.getReferent("body", (SemanticNode)null);
+    SemanticNode body = node.getChild("body");
     EditorCell editorCell = null;
     if(body != null) {
       editorCell = editorContext.createNodeCell(body);

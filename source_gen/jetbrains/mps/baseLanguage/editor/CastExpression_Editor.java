@@ -39,7 +39,7 @@ public class CastExpression_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createTypeCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode type = node.getReferent("type", (SemanticNode)null);
+    SemanticNode type = node.getChild("type");
     EditorCell editorCell = null;
     if(type != null) {
       editorCell = editorContext.createNodeCell(type);
@@ -58,7 +58,7 @@ public class CastExpression_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createExpressionCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode expression = node.getReferent("expression", (SemanticNode)null);
+    SemanticNode expression = node.getChild("expression");
     EditorCell editorCell = null;
     if(expression != null) {
       editorCell = editorContext.createNodeCell(expression);

@@ -37,7 +37,7 @@ public class NotExpression_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createExpressionCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode expression = node.getReferent("expression", (SemanticNode)null);
+    SemanticNode expression = node.getChild("expression");
     EditorCell editorCell = null;
     if(expression != null) {
       editorCell = editorContext.createNodeCell(expression);

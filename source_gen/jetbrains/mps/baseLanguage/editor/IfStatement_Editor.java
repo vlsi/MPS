@@ -51,7 +51,7 @@ public class IfStatement_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createConditionCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode condition = node.getReferent("condition", (SemanticNode)null);
+    SemanticNode condition = node.getChild("condition");
     EditorCell editorCell = null;
     if(condition != null) {
       editorCell = editorContext.createNodeCell(condition);
@@ -81,7 +81,7 @@ public class IfStatement_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createIfTrueCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode ifTrue = node.getReferent("ifTrue", (SemanticNode)null);
+    SemanticNode ifTrue = node.getChild("ifTrue");
     EditorCell editorCell = null;
     if(ifTrue != null) {
       editorCell = editorContext.createNodeCell(ifTrue);
@@ -105,7 +105,7 @@ public class IfStatement_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createIfFalseStatementCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode ifFalseStatement = node.getReferent("ifFalseStatement", (SemanticNode)null);
+    SemanticNode ifFalseStatement = node.getChild("ifFalseStatement");
     EditorCell editorCell = null;
     if(ifFalseStatement != null) {
       editorCell = editorContext.createNodeCell(ifFalseStatement);

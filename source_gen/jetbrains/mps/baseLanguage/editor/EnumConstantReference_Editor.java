@@ -36,7 +36,7 @@ public class EnumConstantReference_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createJavaClassTypeCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode javaClassType = node.getReferent("javaClassType", (SemanticNode)null);
+    SemanticNode javaClassType = node.getChild("javaClassType");
     EditorCell editorCell = null;
     if(javaClassType != null) {
       editorCell = editorContext.createNodeCell(javaClassType);
@@ -54,7 +54,7 @@ public class EnumConstantReference_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createEnumConstantDeclarationReferenceCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode effectiveNode = node.getReferent("enumConstantDeclaration", (SemanticNode)null);
+    SemanticNode effectiveNode = node.getReferent("enumConstantDeclaration");
     if(effectiveNode == null) {
       EditorCell_Error errorCell = EditorCell_Error.create(editorContext, node, null);
       errorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());

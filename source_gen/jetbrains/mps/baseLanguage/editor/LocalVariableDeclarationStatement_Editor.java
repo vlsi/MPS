@@ -30,7 +30,7 @@ public class LocalVariableDeclarationStatement_Editor extends SemanticNodeEditor
     return editorCell;
   }
   public EditorCell createLocalVariableDeclarationCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode localVariableDeclaration = node.getReferent("localVariableDeclaration", (SemanticNode)null);
+    SemanticNode localVariableDeclaration = node.getChild("localVariableDeclaration");
     EditorCell editorCell = null;
     if(localVariableDeclaration != null) {
       editorCell = editorContext.createNodeCell(localVariableDeclaration);

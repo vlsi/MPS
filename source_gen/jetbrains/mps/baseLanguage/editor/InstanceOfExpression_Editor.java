@@ -31,7 +31,7 @@ public class InstanceOfExpression_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createLeftExpressionCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode leftExpression = node.getReferent("leftExpression", (SemanticNode)null);
+    SemanticNode leftExpression = node.getChild("leftExpression");
     EditorCell editorCell = null;
     if(leftExpression != null) {
       editorCell = editorContext.createNodeCell(leftExpression);
@@ -51,7 +51,7 @@ public class InstanceOfExpression_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createJavaClassTypeCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode javaClassType = node.getReferent("javaClassType", (SemanticNode)null);
+    SemanticNode javaClassType = node.getChild("javaClassType");
     EditorCell editorCell = null;
     if(javaClassType != null) {
       editorCell = editorContext.createNodeCell(javaClassType);

@@ -54,7 +54,7 @@ public class StaticMethodDeclaration_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createReturnType(EditorContext editorContext, SemanticNode node) {
-    SemanticNode returnType = node.getReferent("returnType", (SemanticNode)null);
+    SemanticNode returnType = node.getChild("returnType");
     EditorCell editorCell = null;
     if(returnType != null) {
       editorCell = editorContext.createNodeCell(returnType);
@@ -104,7 +104,7 @@ public class StaticMethodDeclaration_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createBodyCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode body = node.getReferent("body", (SemanticNode)null);
+    SemanticNode body = node.getChild("body");
     EditorCell editorCell = null;
     if(body != null) {
       editorCell = editorContext.createNodeCell(body);

@@ -32,7 +32,7 @@ public class ParameterDeclaration_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createTypeCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode type = node.getReferent("type", (SemanticNode)null);
+    SemanticNode type = node.getChild("type");
     EditorCell editorCell = null;
     if(type != null) {
       editorCell = editorContext.createNodeCell(type);
