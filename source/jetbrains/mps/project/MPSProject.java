@@ -1,9 +1,9 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.semanticModel.SemanticModel;
-import jetbrains.mps.semanticModel.SemanticModels;
 import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.semanticModel.ModelRoot;
+import jetbrains.mps.semanticModel.SemanticModel;
+import jetbrains.mps.semanticModel.SemanticModels;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.PathManager;
 import org.jdom.Document;
@@ -11,10 +11,10 @@ import org.jdom.Element;
 import org.jdom.JDOMException;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.FilenameFilter;
-import java.util.Iterator;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Author: Sergey Dmitriev
@@ -191,6 +191,7 @@ public class MPSProject extends AbstractMPSProject {
     for (int i = 0; i < files.length; i++) {
       File file = files[i];
       Language language = Language.loadFromFile(file, this);
+      System.out.println("MPSProject add language : " + language.getNamespace());
       addLanguage(language.getNamespace(), language);
     }
     File[] dirs = dir.listFiles();

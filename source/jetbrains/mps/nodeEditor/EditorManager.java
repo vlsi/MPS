@@ -8,12 +8,14 @@ import jetbrains.mps.semanticModel.SemanticModel;
 import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.project.AbstractMPSProject;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.diagnostic.Logger;
 
 /**
  * Author: Sergey Dmitriev.
  * Time: Nov 7, 2003 7:06:31 PM
  */
 public class EditorManager {
+  private static Logger LOG = Logger.getInstance("jetbrains.mps.nodeEditor.EditorManager");
   public static String NODE_TO_PLACE_AFTER = "nodeToPlaceAfter";
 
   private EditorContext myEditorContext;
@@ -164,6 +166,7 @@ public class EditorManager {
     //todo - the project should be passed as parameter here
     AbstractMPSProject mpsProject = IdeMain.instance().getProject();
     Language language = mpsProject.getLanguageByStructureModel(typeDeclaration.getSemanticModel());
+    LOG.assertNotNull(language, "Couldn't find language for structure model \"" + typeDeclaration.getSemanticModel().getFQName() + "\"");
     SemanticModel languageEditor = language.getLanguageEditor();
     if (languageEditor != null) {
       String packageName = JavaNameUtil.packageNameForModel(languageEditor);
