@@ -15,8 +15,11 @@ import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
+import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
+import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
@@ -128,6 +131,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createReturnType(EditorContext context, SemanticNode node) {
     SemanticNode referencedNode = null;
     referencedNode = node.getChild("returnType");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "returnType");
     if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "returnType");
@@ -137,6 +141,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setDrawBrackets(false);
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
         InstanceMethodDeclaration_ReturnTypeCellActions.setCellActions(noRefCell, node);
         return noRefCell;
       }
@@ -147,12 +152,16 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    if(editorCell.getSubstituteInfo() == null) {
+      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+    }
     InstanceMethodDeclaration_ReturnTypeCellActions.setCellActions(editorCell, node);
     return editorCell;
   }
   public EditorCell createBodyCell(EditorContext context, SemanticNode node) {
     SemanticNode referencedNode = null;
     referencedNode = node.getChild("body");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "body");
     if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "body");
@@ -162,6 +171,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setDrawBrackets(false);
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
         return noRefCell;
       }
     }
@@ -171,6 +181,9 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    if(editorCell.getSubstituteInfo() == null) {
+      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+    }
     return editorCell;
   }
 }

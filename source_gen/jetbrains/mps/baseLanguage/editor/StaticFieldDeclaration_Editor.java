@@ -16,8 +16,11 @@ import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
+import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
+import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 
 public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
@@ -102,6 +105,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createTypeCell(EditorContext context, SemanticNode node) {
     SemanticNode referencedNode = null;
     referencedNode = node.getChild("type");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "type");
     if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "type");
@@ -111,6 +115,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setDrawBrackets(false);
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
         StaticFieldDeclaration_TypeCellActions.setCellActions(noRefCell, node);
         return noRefCell;
       }
@@ -121,12 +126,16 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    if(editorCell.getSubstituteInfo() == null) {
+      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+    }
     StaticFieldDeclaration_TypeCellActions.setCellActions(editorCell, node);
     return editorCell;
   }
   public EditorCell createInitializerCell(EditorContext context, SemanticNode node) {
     SemanticNode referencedNode = null;
     referencedNode = node.getChild("initializer");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "initializer");
     if(referencedNode == null) {
       {
         EditorCell_Constant noRefCell = EditorCell_Constant.create(context, node, null, true);
@@ -137,6 +146,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setDrawBrackets(false);
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
         __VariableInitializer_ActionSet.setCellActions(noRefCell, node);
         noRefCell.addKeyMap(new _Expression_KeyMap());
         return noRefCell;
@@ -148,11 +158,14 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(referencedNode));
+    if(editorCell.getSubstituteInfo() == null) {
+      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+    }
     __VariableInitializer_ActionSet.setCellActions(editorCell, node);
     editorCell.addKeyMap(new _Expression_KeyMap());
     return editorCell;
   }
   public boolean handleConditionalQuery_1084188979616(SemanticNode node) {
-    return FreeMethodsUtil_baseLanguage_editor_context._SemanticNodeCondition_HasInitializer(node);
+    return FreeMethodsUtil_jetbrains_mps_baseLanguage_editor_context._SemanticNodeCondition_HasInitializer(node);
   }
 }

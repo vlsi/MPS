@@ -18,6 +18,7 @@ import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorUtil;
+import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class StaticMethodCall_Editor extends DefaultNodeEditor {
   public static String MATCHING_TEXT = ". <static method>";
@@ -121,6 +122,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
   public EditorCell createClassTypeCell(EditorContext context, SemanticNode node) {
     SemanticNode referencedNode = null;
     referencedNode = node.getChild("classType");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "classType");
     if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "classType");
@@ -130,6 +132,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
         noRefCell.setDrawBrackets(false);
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
         StaticMethodCall_TypeActions.setCellActions(noRefCell, node);
         return noRefCell;
       }
@@ -140,6 +143,9 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    if(editorCell.getSubstituteInfo() == null) {
+      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+    }
     StaticMethodCall_TypeActions.setCellActions(editorCell, node);
     return editorCell;
   }

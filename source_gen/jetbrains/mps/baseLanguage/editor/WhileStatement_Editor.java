@@ -11,9 +11,12 @@ import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
+import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class WhileStatement_Editor extends DefaultNodeEditor {
   public static String MATCHING_TEXT = "while";
@@ -121,6 +124,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   public EditorCell createConditionCell(EditorContext context, SemanticNode node) {
     SemanticNode referencedNode = null;
     referencedNode = node.getChild("condition");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "condition");
     if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "condition");
@@ -130,6 +134,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
         noRefCell.setDrawBrackets(false);
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
         WhileStatement_ConditionCellActions.setCellActions(noRefCell, node);
         _DefErrorActions.setCellActions(noRefCell, node);
         noRefCell.addKeyMap(new _Expression_KeyMap());
@@ -142,6 +147,9 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    if(editorCell.getSubstituteInfo() == null) {
+      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+    }
     WhileStatement_ConditionCellActions.setCellActions(editorCell, node);
     editorCell.addKeyMap(new _Expression_KeyMap());
     return editorCell;
@@ -149,6 +157,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   public EditorCell createBodyCell(EditorContext context, SemanticNode node) {
     SemanticNode referencedNode = null;
     referencedNode = node.getChild("body");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "body");
     if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "body");
@@ -158,6 +167,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
         noRefCell.setDrawBrackets(false);
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
         return noRefCell;
       }
     }
@@ -167,6 +177,9 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    if(editorCell.getSubstituteInfo() == null) {
+      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+    }
     return editorCell;
   }
 }

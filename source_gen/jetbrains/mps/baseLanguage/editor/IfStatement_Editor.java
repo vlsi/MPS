@@ -11,9 +11,12 @@ import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
+import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.baseLanguage.IfStatement;
 
@@ -151,6 +154,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   public EditorCell createConditionCell(EditorContext context, SemanticNode node) {
     SemanticNode referencedNode = null;
     referencedNode = node.getChild("condition");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "condition");
     if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "condition");
@@ -160,6 +164,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
         noRefCell.setDrawBrackets(false);
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
         IfStatement_ConditionCellActions.setCellActions(noRefCell, node);
         _DefErrorActions.setCellActions(noRefCell, node);
         return noRefCell;
@@ -171,12 +176,16 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    if(editorCell.getSubstituteInfo() == null) {
+      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+    }
     IfStatement_ConditionCellActions.setCellActions(editorCell, node);
     return editorCell;
   }
   public EditorCell createIfTrueCell(EditorContext context, SemanticNode node) {
     SemanticNode referencedNode = null;
     referencedNode = node.getChild("ifTrue");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "ifTrue");
     if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "ifTrue");
@@ -186,6 +195,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
         noRefCell.setDrawBrackets(false);
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
         return noRefCell;
       }
     }
@@ -195,11 +205,15 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    if(editorCell.getSubstituteInfo() == null) {
+      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+    }
     return editorCell;
   }
   public EditorCell createIfFalseStatementCell(EditorContext context, SemanticNode node) {
     SemanticNode referencedNode = null;
     referencedNode = node.getChild("ifFalseStatement");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "ifFalseStatement");
     if(referencedNode == null) {
       {
         EditorCell_Constant noRefCell = EditorCell_Constant.create(context, node, null, true);
@@ -210,6 +224,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
         noRefCell.setDrawBrackets(false);
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
         IfStatement_ElseStatementActions.setCellActions(noRefCell, node);
         return noRefCell;
       }
@@ -220,6 +235,9 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(referencedNode));
+    if(editorCell.getSubstituteInfo() == null) {
+      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+    }
     IfStatement_ElseStatementActions.setCellActions(editorCell, node);
     return editorCell;
   }

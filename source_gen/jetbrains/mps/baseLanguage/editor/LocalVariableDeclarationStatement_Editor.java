@@ -10,9 +10,12 @@ import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
+import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class LocalVariableDeclarationStatement_Editor extends DefaultNodeEditor {
   public static String MATCHING_TEXT = "local variable";
@@ -45,6 +48,7 @@ public class LocalVariableDeclarationStatement_Editor extends DefaultNodeEditor 
   public EditorCell createLocalVariableDeclarationCell(EditorContext context, SemanticNode node) {
     SemanticNode referencedNode = null;
     referencedNode = node.getChild("localVariableDeclaration");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "localVariableDeclaration");
     if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "localVariableDeclaration");
@@ -54,6 +58,7 @@ public class LocalVariableDeclarationStatement_Editor extends DefaultNodeEditor 
         noRefCell.setDrawBrackets(false);
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
         return noRefCell;
       }
     }
@@ -63,6 +68,9 @@ public class LocalVariableDeclarationStatement_Editor extends DefaultNodeEditor 
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    if(editorCell.getSubstituteInfo() == null) {
+      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+    }
     return editorCell;
   }
 }
