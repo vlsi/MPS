@@ -7,7 +7,7 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.semanticModel.SModel;
-import jetbrains.mps.semanticModel.SemanticModelUtil;
+import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.semanticModel.Language;
 
@@ -153,7 +153,7 @@ public class PasteUtil {
     Iterator<LinkDeclaration> metalinks = sourceMetatype.linkDeclarations();
     while (metalinks.hasNext()) {
       LinkDeclaration metalink = metalinks.next();
-      if (SemanticModelUtil.isAssignableType(metalink.getTarget(), targetMetatype)) {
+      if (SModelUtil.isAssignableType(metalink.getTarget(), targetMetatype)) {
 //        String sourceCardinality = metalink.getSourceCardinality();
 //        if (LinkDeclaration.CARDINALITY_0_N.equals(sourceCardinality) ||
 //                LinkDeclaration.CARDINALITY_1_N.equals(sourceCardinality)) {

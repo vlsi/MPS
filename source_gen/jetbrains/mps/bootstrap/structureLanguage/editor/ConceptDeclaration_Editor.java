@@ -17,7 +17,7 @@ import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
 import jetbrains.mps.nodeEditor.BooleanPropertySubstituteInfo;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.semanticModel.SemanticModelUtil;
+import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
@@ -186,7 +186,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createExtendsReferenceCell(EditorContext context, SemanticNode node) {
     SemanticNode effectiveNode = null;
     effectiveNode = node.getReferent("extends");
-    LinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(node, "extends");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "extends");
     if(effectiveNode == null) {
       {
         EditorCell_Constant noRefCell = EditorCell_Constant.create(context, node, null, true);

@@ -16,7 +16,7 @@ import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.semanticModel.SemanticModelUtil;
+import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
@@ -169,7 +169,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createTargetReferenceCell(EditorContext context, SemanticNode node) {
     SemanticNode effectiveNode = null;
     effectiveNode = node.getReferent("target");
-    LinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(node, "target");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "target");
     if(effectiveNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "<no target>");

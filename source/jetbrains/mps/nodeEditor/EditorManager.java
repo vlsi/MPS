@@ -7,7 +7,7 @@ import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.diagnostic.Logger;
 import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.semanticModel.SModel;
-import jetbrains.mps.semanticModel.SemanticModelUtil;
+import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.project.MPSProject;
 
@@ -71,7 +71,7 @@ public class EditorManager {
       (new RuntimeException("Error loading editor for node \"" + node.getDebugText() + "\" : couldn't find language.")).printStackTrace();
       return null;
     }
-    ConceptDeclaration typeDeclaration = language.findTypeDeclaration(SemanticModelUtil.getNodeTypeName(node));
+    ConceptDeclaration typeDeclaration = language.findTypeDeclaration(SModelUtil.getNodeTypeName(node));
     if (typeDeclaration == null) {
       (new RuntimeException("Error loading editor for node \"" + node.getDebugText() + "\" : couldn't find the type declaration.")).printStackTrace();
       return null;

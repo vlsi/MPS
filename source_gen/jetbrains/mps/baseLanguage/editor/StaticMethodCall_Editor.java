@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.semanticModel.SemanticModelUtil;
+import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
@@ -89,7 +89,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
   public EditorCell createBaseMethodDeclarationReferenceCell(EditorContext context, SemanticNode node) {
     SemanticNode effectiveNode = null;
     effectiveNode = node.getReferent("baseMethodDeclaration");
-    LinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(node, "baseMethodDeclaration");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "baseMethodDeclaration");
     if(effectiveNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "<no method>");

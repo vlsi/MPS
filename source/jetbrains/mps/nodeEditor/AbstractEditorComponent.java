@@ -336,7 +336,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       String actionText = "[" + reference.getRole() + "] " + targetNode.getDebugText();
       AbstractAction action = new AbstractAction(actionText) {
         public void actionPerformed(ActionEvent e) {
-          SemanticNode toOpenNode = SemanticModelUtil.getRootParent(targetNode);
+          SemanticNode toOpenNode = SModelUtil.getRootParent(targetNode);
           AbstractEditorComponent editor = myMPSProject.getComponent(EditorsPane.class).openEditor(toOpenNode, LEFT);
           editor.selectNode(targetNode);
         }
@@ -437,7 +437,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 //          SemanticNode child = children.next();
 //          if(child.getModel() != targetModel) {
 //            System.err.println("after copy error! node: " + copy.getDebugText() );
-//            SemanticModelUtil.dumpNodePath(child, 0, System.err);
+//            SModelUtil.dumpNodePath(child, 0, System.err);
 //          }
 //        }
 //        //test
@@ -475,9 +475,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
 
       private ClassConcept toModelClass(ClassConcept tmpClass, SModel targetModel, MPSProject project) {
-        ClassConcept modelClass = SemanticModelUtil.findJavaClass(NameUtil.nodeFQName(tmpClass), getContext().getProject());
+        ClassConcept modelClass = SModelUtil.findJavaClass(NameUtil.nodeFQName(tmpClass), getContext().getProject());
         if (modelClass == null) {
-          modelClass = SemanticModelUtil.findJavaClass("java.lang.Object", project);
+          modelClass = SModelUtil.findJavaClass("java.lang.Object", project);
         }
         if (modelClass != null && targetModel != modelClass.getModel()) {
           targetModel.addImportedModel(modelClass.getModel());
@@ -1152,7 +1152,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   // ---- semantic model listener
 
-  private class MyModelListener implements SemanticModelListener {
+  private class MyModelListener implements SModelListener {
     public void modelChanged(SModel semanticModel) {
       myRootCell.updateView();
       relayout();
@@ -1206,5 +1206,5 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         textLine.setCaretPosition(textLine.getText().length());
       }
     }
-  } // private class MyModelListener implements SemanticModelListener
+  } // private class MyModelListener implements SModelListener
 }

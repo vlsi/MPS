@@ -7,7 +7,7 @@ import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.semanticModel.SemanticModelUtil;
+import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.util.Condition;
 
@@ -60,9 +60,9 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   private List<SemanticNode> createTargetNodesList() {
     final ConceptDeclaration targetType = myLinkDeclaration.getTarget();
-    List<SemanticNode> list = SemanticModelUtil.allNodes(mySourceNode.getModel(), true, new Condition<SemanticNode>() {
+    List<SemanticNode> list = SModelUtil.allNodes(mySourceNode.getModel(), true, new Condition<SemanticNode>() {
       public boolean met(SemanticNode node) {
-        return SemanticModelUtil.isInstanceOfType(node, targetType);
+        return SModelUtil.isInstanceOfType(node, targetType);
       }
     });
     return list;

@@ -11,7 +11,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.semanticModel.SemanticModelUtil;
+import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
@@ -51,7 +51,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
   public EditorCell createEnumConstantDeclarationReferenceCell(EditorContext context, SemanticNode node) {
     SemanticNode effectiveNode = null;
     effectiveNode = node.getReferent("enumConstantDeclaration");
-    LinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(node, "enumConstantDeclaration");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "enumConstantDeclaration");
     if(effectiveNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");

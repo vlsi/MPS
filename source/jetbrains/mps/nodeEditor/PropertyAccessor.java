@@ -1,7 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration;
-import jetbrains.mps.semanticModel.SemanticModelUtil;
+import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.semanticModel.PropertySupport;
 
@@ -22,7 +22,7 @@ public class PropertyAccessor implements ModelAccessor {
     myReadOnly = readOnly;
     myAllowEmptyText = allowEmptyText;
 
-    myPropertyDeclaration = SemanticModelUtil.getPropertyDeclaration(node, propertyName);
+    myPropertyDeclaration = SModelUtil.getPropertyDeclaration(node, propertyName);
   }
 
   public String getPropertyName() {
