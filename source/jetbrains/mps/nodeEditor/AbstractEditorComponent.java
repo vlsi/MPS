@@ -146,7 +146,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     registerKeyboardAction(new ShowTypeAction(), KeyStroke.getKeyStroke("control T"), WHEN_FOCUSED);
     registerKeyboardAction(new ShowInProjectAction(), KeyStroke.getKeyStroke("control P"), WHEN_FOCUSED);
     registerKeyboardAction(new GoByReferenceAction(), KeyStroke.getKeyStroke("control B"), WHEN_FOCUSED);
-    registerKeyboardAction(new GoToDefinitionAction(), KeyStroke.getKeyStroke("control S"), WHEN_FOCUSED);
+    registerKeyboardAction(new GoToDefinitionAction(), KeyStroke.getKeyStroke("control shift S"), WHEN_FOCUSED);
     registerKeyboardAction(new GoToEditorAction(), KeyStroke.getKeyStroke("control shift E"), WHEN_FOCUSED);
     registerKeyboardAction(new GoToConceptEditorAction(), KeyStroke.getKeyStroke("control E"), WHEN_FOCUSED);
     registerKeyboardAction(new FindUsagesAction(), KeyStroke.getKeyStroke("alt F7"), WHEN_FOCUSED);
