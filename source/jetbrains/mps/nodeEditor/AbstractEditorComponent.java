@@ -10,6 +10,8 @@ import jetbrains.mps.ide.ui.SmartFileChooser;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
+import jetbrains.mps.ide.command.undo.IUndoableAction;
+import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
 import jetbrains.mps.ide.usageView.UsagesModel_BackReferences;
 import jetbrains.mps.ide.usageView.UsagesModel_SemanticNode;
 import jetbrains.mps.project.MPSProject;
@@ -815,13 +817,20 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   protected void startRecording() {
     requestFocus();
-    SemanticNode root = getRootCell().getSemanticNode();
-    SemanticNode copy = GeneratorUtil.copy(root);
-    root.getSemanticModel().addRoot(copy);
+    final SemanticNode root = getRootCell().getSemanticNode();
+    final SemanticNode[] copy = new SemanticNode[1];
+
+    CommandProcessor.instance().executeCommand(getContext(), new Runnable() {
+      public void run() {
+        copy[0] = GeneratorUtil.copy(root);
+      }
+    }, "node copy");
+
+    root.getSemanticModel().addRoot(copy[0]);
     selectNode(null);
     myRecorder = new EventRecorder();
     IdeMain.instance().getInspectorPane().getInspector().setEventRecorder(myRecorder);
-    myRecorder.startRecording(copy, root);
+    myRecorder.startRecording(copy[0], root);
   }
 
   protected void stopRecordingIfPossible() {
