@@ -11,7 +11,7 @@ import java.beans.PropertyChangeEvent;
  * @author Kostik
  */
 public class HeaderWrapper extends JPanel {
-  public static final Color ACTIVE_COLOR = new Color(150, 180, 200);
+  public static final Color ACTIVE_COLOR = new Color(120, 150, 180);
   public static final Color NOT_ACTIVE_COLOR = new Color(150, 150, 150);
 
   private JComponent myComponent;
