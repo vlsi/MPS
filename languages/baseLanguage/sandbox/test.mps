@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model namespace="jetbrains.mps.baseLanguage.sandbox">
-  <maxReferenceID value="0" />
+  <maxReferenceID value="1" />
   <language namespace="jetbrains.mps.baseLanguage" />
+  <import referenceID="1" name="lang" namespace="java" />
   <node type="jetbrains.mps.baseLanguage.Interface" id="1107798112109">
     <property name="name" value="MyInterface1" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1108072220361">
@@ -149,6 +150,50 @@
     </node>
     <node role="implementedInterface" type="jetbrains.mps.baseLanguage.InterfaceType" id="1107799712220">
       <link role="classifier" targetNodeId="1107798291253" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1109202018158">
+    <property name="name" value="Test_Generics" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1109202040317">
+      <property name="name" value="method" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1109202043552">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1109202122479">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1109202116963">
+            <property name="name" value="aaa" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1109202106383">
+              <link role="classifier" targetNodeId="1109202018158" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.ClassType" id="1109202116337">
+                <link role="classifier" targetNodeId="1107799696578" />
+              </node>
+              <node role="parameter" type="jetbrains.mps.baseLanguage.ClassType" id="1109204654375">
+                <link role="classifier" targetNodeId="1.1087811447849" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1109204730681">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1109204664284">
+            <property name="name" value="bbb" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1109204664283">
+              <link role="classifier" targetNodeId="1109202018158" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.BooleanType" id="1109204699926" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.ClassType" id="1109204729321">
+                <link role="classifier" targetNodeId="1.1087811447849" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1109204785532">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1109204778810">
+            <property name="name" value="iii" />
+            <node role="type" type="jetbrains.mps.baseLanguage.InterfaceType" id="1109204778809">
+              <link role="classifier" targetNodeId="1107798112109" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.ByteType" id="1109204784953" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1109202040316" />
     </node>
   </node>
 </model>
