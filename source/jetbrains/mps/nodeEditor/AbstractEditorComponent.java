@@ -101,6 +101,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     registerKeyboardAction(new ShowTypeAction(), KeyStroke.getKeyStroke("control T"), WHEN_FOCUSED);
     registerKeyboardAction(new ShowInProjectAction(), KeyStroke.getKeyStroke("control P"), WHEN_FOCUSED);
     registerKeyboardAction(new GoByReferenceAction(), KeyStroke.getKeyStroke("control B"), WHEN_FOCUSED);
+    registerKeyboardAction(new GoToDefinitionAction(), KeyStroke.getKeyStroke("control S"), WHEN_FOCUSED);
+    registerKeyboardAction(new GoToEditorAction(), KeyStroke.getKeyStroke("control E"), WHEN_FOCUSED);
 
     addMouseListener(new MouseAdapter() {
       public void mousePressed(final MouseEvent e) {
@@ -1070,6 +1072,25 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             editor.selectNode(targetNode);
           }
         }
+      }
+    }
+  }
+
+  private class GoToDefinitionAction extends AbstractAction {
+    public void actionPerformed(ActionEvent e) {
+      if (mySelectedCell != null && mySelectedCell.getSemanticNode() != null) {
+        SemanticNode node = mySelectedCell.getSemanticNode();
+        myIdeMain.getEditorsPane().openEditor(Language.findTypeDeclaration(node.getSemanticModel(), node.getNodeTypeName()));
+      }
+    }
+  }
+
+  private class GoToEditorAction extends AbstractAction {
+    public void actionPerformed(ActionEvent e) {
+      if (mySelectedCell != null && mySelectedCell.getSemanticNode() != null) {
+        SemanticNode node = mySelectedCell.getSemanticNode();
+        ConceptDeclaration declaration = (ConceptDeclaration) Language.findTypeDeclaration(node.getSemanticModel(), node.getNodeTypeName());
+        createGoToEditorAction(declaration).actionPerformed(e);
       }
     }
   }
