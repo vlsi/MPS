@@ -175,7 +175,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         AbstractMPSProject project = IdeMain.instance().getProject();
         SemanticModel languageStructure = node.getSemanticModel();
         Language language = project.getLanguageByStructureModel(languageStructure);
-        if(language == null) {
+        if (language == null) {
           JOptionPane.showMessageDialog(getExternalComponent(), "Couldn't find Language for structure model " + languageStructure.getFQName());
           return;
         }
@@ -800,34 +800,48 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return true;
     }
 
-    if (editorCell != null && editorCell.getSubstituteInfo() != null) {
-      NodeSubstitutePatternEditor patternEditor = editorCell.createSubstitutePatternEditor();
-      if (resetPattern) {
-        patternEditor.setCaretPosition(0);
-      }
-      String pattern = patternEditor.getPattern();
-
-      INodeSubstituteInfo substituteInfo = editorCell.getSubstituteInfo();
-      boolean trySubstituteNow =
-              !patternEditor.getText().equals(substituteInfo.getOriginalText()) || // user changed text or cell has no text
-              pattern.equals(patternEditor.getText()); // caret at the end
-
-      // 1st - try to do substitution with current pattern (id cursor at the end of text)
-      if (trySubstituteNow) {
-        List<INodeSubstituteItem> matchingActions = substituteInfo.getMatchingItems(pattern, false);
-        if (matchingActions.size() == 1) {
-          CommandUtil.substituteNode(matchingActions.get(0), pattern, substituteInfo, this.getContext());
-          return true;
+    // try to obtain substitute info
+    INodeSubstituteInfo substituteInfo = null;
+    if (editorCell != null) {
+      SemanticNode cellNode = editorCell.getSemanticNode();
+      EditorCell infoCell = editorCell;
+      while (substituteInfo == null) {
+        substituteInfo = infoCell.getSubstituteInfo();
+        infoCell = infoCell.getParent();
+        if (infoCell == null || infoCell.getSemanticNode() != cellNode) {
+          break;
         }
       }
-
-      myNodeSubstituteChooser.setNodeSubstituteInfo(editorCell.getSubstituteInfo());
-      myNodeSubstituteChooser.setPatternEditor(patternEditor);
-      myNodeSubstituteChooser.setLocationRelative(editorCell);
-      myNodeSubstituteChooser.setVisible(true);
-      return true;
     }
-    return false;
+
+    if (substituteInfo == null) {
+      return false;
+    }
+
+    // do substitute...
+    NodeSubstitutePatternEditor patternEditor = editorCell.createSubstitutePatternEditor();
+    if (resetPattern) {
+      patternEditor.setCaretPosition(0);
+    }
+    String pattern = patternEditor.getPattern();
+    boolean trySubstituteNow =
+            !patternEditor.getText().equals(substituteInfo.getOriginalText()) || // user changed text or cell has no text
+            pattern.equals(patternEditor.getText()); // caret at the end
+
+    // 1st - try to do substitution with current pattern (id cursor at the end of text)
+    if (trySubstituteNow) {
+      List<INodeSubstituteItem> matchingActions = substituteInfo.getMatchingItems(pattern, false);
+      if (matchingActions.size() == 1) {
+        CommandUtil.substituteNode(matchingActions.get(0), pattern, substituteInfo, this.getContext());
+        return true;
+      }
+    }
+
+    myNodeSubstituteChooser.setNodeSubstituteInfo(substituteInfo);
+    myNodeSubstituteChooser.setPatternEditor(patternEditor);
+    myNodeSubstituteChooser.setLocationRelative(editorCell);
+    myNodeSubstituteChooser.setVisible(true);
+    return true;
   }
 
   public void paint(Graphics g) {
