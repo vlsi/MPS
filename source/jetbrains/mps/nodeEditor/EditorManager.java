@@ -110,40 +110,26 @@ public class EditorManager {
    * @deprecated
    */
   public static Class getNodeEditorClass(ConceptDeclaration typeDeclaration) throws ClassNotFoundException {
-
-//    // 1 st try "trial" editors
-//    String editorClassName = getNodeEditorClassName(typeDeclaration, true);
-//    if (editorClassName == null) {
-//      return null;
-//    }
-//    try {
-//      Class trialEditorClass = Class.forName(editorClassName);
-//      System.out.println("*USE GENERATED EDITOR FOR TYPE : " + typeDeclaration.getDebugText());
-//      return trialEditorClass;
-//    } catch (ClassNotFoundException e) {
-//    }
-
-    // else load "normal editor"
-    String editorClassName = getNodeEditorClassName(typeDeclaration, false);
+    String editorClassName = getNodeEditorClassName(typeDeclaration);
     if (editorClassName == null) {
       return null;
     }
     return Class.forName(editorClassName);
   }
 
-  private static String getNodeEditorClassName(ConceptDeclaration typeDeclaration, boolean trialEditor) {
+  private static String getNodeEditorClassName(ConceptDeclaration typeDeclaration) {
     String typeName = typeDeclaration.getName();
     //todo - the project should be passed as parameter here
     MPSProject mpsProject = IdeMain.instance().getProject();
     Language language = mpsProject.getLanguageByStructureModel(typeDeclaration.getSemanticModel());
-    LOG.assertNotNull(language, "Couldn't find language for structure model \"" + typeDeclaration.getSemanticModel().getFQName() + "\"");
-    SemanticModel languageEditor = language.getLanguageEditor();
-    if (languageEditor != null) {
-      String packageName = JavaNameUtil.packageNameForModel(languageEditor);
-      if (trialEditor) {
-        return packageName + ".Trial_" + typeName + "_Editor";
+    if (language == null) {
+      System.err.println("ERROR: Couldn't find language for structure model \"" + typeDeclaration.getSemanticModel().getFQName() + "\"");
+    } else {
+      SemanticModel languageEditor = language.getLanguageEditor();
+      if (languageEditor != null) {
+        String packageName = JavaNameUtil.packageNameForModel(languageEditor);
+        return packageName + "." + typeName + "_Editor";
       }
-      return packageName + "." + typeName + "_Editor";
     }
 
     return null;
