@@ -4,7 +4,7 @@ import jetbrains.mps.generator.ContextUtil;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.ILanguagePlugin;
 import jetbrains.mps.modelExecute.ExecutionManager;
-import jetbrains.mps.semanticModel.ExecutionPoint;
+import jetbrains.mps.modelExecute.ExecutionPoint;
 import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.semanticModel.SemanticModel;
 import jetbrains.mps.semanticModel.SemanticModels;
