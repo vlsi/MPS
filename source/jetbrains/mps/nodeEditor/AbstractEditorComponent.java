@@ -5,6 +5,7 @@ import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ProjectPane;
+import jetbrains.mps.ide.ui.SpeedSearchBase;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
@@ -88,6 +89,25 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myActionMap.put(EditorCellAction.PASTE_BEFORE, new CellAction_PasteNodeRelative(true));
     myActionMap.put(EditorCellAction.PASTE_AFTER, new CellAction_PasteNodeRelative(false));
 
+
+    new SpeedSearchBase(this, true) {
+      protected int getSelectedIndex() {
+        return getNamedNodes().indexOf(getSelectedCell().getSemanticNode());
+      }
+
+      protected Object[] getAllElements() {
+        return getNamedNodes().toArray();
+      }
+
+      protected String getElementText(Object element) {
+        return element.toString();
+      }
+
+      protected void selectElement(Object element, String selectedText) {
+        selectNode((SemanticNode) element);
+      }
+    };
+
     addMouseListener(new MouseAdapter() {
       public void mousePressed(final MouseEvent e) {
         processMousePressed(e);
@@ -135,6 +155,24 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       public void focusLost(FocusEvent e) {
       }
     });
+  }
+
+  private List<SemanticNode> getNamedNodes() {
+    return getNamedNodes(getRootCell().getSemanticNode());
+  }
+
+  private List<SemanticNode> getNamedNodes(SemanticNode root) {
+    List<SemanticNode> result = new ArrayList<SemanticNode>();
+
+    if (root.getName() != null && root.getName().length() > 0) {
+      result.add(root);
+    }
+
+    for (SemanticNode child : root.getChildren()) {
+      result.addAll(getNamedNodes(child));
+    }
+
+    return result;
   }
 
   private void showPopupMenu(MouseEvent e) {
@@ -744,7 +782,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void processKeyPressed(final KeyEvent keyEvent) {
-
     // hardcoded actions which should be excuted outside command
 
     // hardcoded undo/redo action
