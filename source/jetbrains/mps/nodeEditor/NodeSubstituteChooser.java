@@ -1,16 +1,15 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.semanticModel.SemanticNode;
-import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.command.CommandUtil;
+import jetbrains.mps.semanticModel.SemanticNode;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseEvent;
 import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.*;
 import java.util.List;
 
@@ -113,15 +112,19 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     String pattern = getPatternEditor().getPattern();
     List<INodeSubstituteItem> matchingActions = myNodeSubstituteInfo.getMatchingItems(pattern, false);
 
-    Collections.sort(matchingActions, new Comparator<INodeSubstituteItem>() {
-      public int compare(INodeSubstituteItem iNodeSubstituteItem, INodeSubstituteItem iNodeSubstituteItem1) {
-        String s1 = iNodeSubstituteItem.getMatchingText(null);
-        String s2 = iNodeSubstituteItem1.getMatchingText(null);
-        if (s1 == null) s1 = "";
-        if (s2 == null) s2 = "";
-        return s1.compareTo(s2);
-      }
-    });
+    try {
+      Collections.sort(matchingActions, new Comparator<INodeSubstituteItem>() {
+        public int compare(INodeSubstituteItem iNodeSubstituteItem, INodeSubstituteItem iNodeSubstituteItem1) {
+          String s1 = iNodeSubstituteItem.getMatchingText(null);
+          String s2 = iNodeSubstituteItem1.getMatchingText(null);
+          if (s1 == null) s1 = "";
+          if (s2 == null) s2 = "";
+          return s1.compareTo(s2);
+        }
+      });
+    } catch (Exception e) {
+      e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+    }
     myMenuSubstituteEntries = new LinkedList<INodeSubstituteItem>(matchingActions);
     if (myMenuSubstituteEntries.size() == 0) {
       myMenuEmpty = true;
