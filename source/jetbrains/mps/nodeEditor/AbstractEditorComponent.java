@@ -676,8 +676,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       Iterator<SemanticNode> nodes = myCellRangeSelection.getNodes().iterator();
       while (nodes.hasNext()) {
         EditorCell cell = findNodeCell(nodes.next());
-        g.drawRect(cell.getX(), cell.getY(), cell.getWidth(), cell.getHeight());
-        g.drawRect(cell.getX() - 1, cell.getY() - 1, cell.getWidth() + 2, cell.getHeight() + 2);
+        if (cell != null) { // the paint may happen when the editor content is aldeary changed 
+          g.drawRect(cell.getX(), cell.getY(), cell.getWidth(), cell.getHeight());
+          g.drawRect(cell.getX() - 1, cell.getY() - 1, cell.getWidth() + 2, cell.getHeight() + 2);
+        }
       }
     }
   }
