@@ -86,9 +86,9 @@ public class EditorManager {
 
 
     String stereotype = node.getModel().getStereotype();
-    String languageEditorFQName = language.getLanguageEditorFQName(stereotype);
+    String languageEditorFQName = language.getEditorFQName(stereotype);
     if (languageEditorFQName == null) {
-      languageEditorFQName = language.getLanguageEditorFQName();
+      languageEditorFQName = language.getEditorFQName();
       if (languageEditorFQName == null) {
         (new RuntimeException("Error loading editor for node \"" + node.getDebugText() + "\" <<" + stereotype + ">> : no editor model.")).printStackTrace();
         return null;
@@ -134,7 +134,7 @@ public class EditorManager {
 //    if (language == null) {
 //      System.err.println("ERROR: Couldn't find language for structure model \"" + typeDeclaration.getModel().getFQName() + "\"");
 //    } else {
-//      SModel languageEditor = language.getLanguageEditor();
+//      SModel languageEditor = language.getEditorModel();
 //      if (languageEditor != null) {
 //        String packageName = JavaNameUtil.packageNameForModel(languageEditor);
 //        return packageName + "." + typeName + "_Editor";

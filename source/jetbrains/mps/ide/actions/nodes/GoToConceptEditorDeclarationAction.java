@@ -43,7 +43,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
       JOptionPane.showMessageDialog(null, "Couldn't find Language for structure model " + languageStructure.getFQName());
       return;
     }
-    SModel languageEditor = language.getLanguageEditor();
+    SModel languageEditor = language.getEditorModel();
     if (languageEditor != null) {
       Iterator<SemanticNode> iterator = languageEditor.roots();
       while (iterator.hasNext()) {

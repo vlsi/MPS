@@ -206,7 +206,7 @@ public class MPSProject implements ModelLocator {
   }
 
   public ILanguagePlugin getLanguagePlugin(Language language) {
-    SModel languageStructure = language.getLanguageStructure();
+    SModel languageStructure = language.getStructureModel();
     String packageName = JavaNameUtil.packageNameForLanguageStructure(languageStructure);
     String className = packageName + ".LanguagePlugin";
     try {
@@ -227,7 +227,7 @@ public class MPSProject implements ModelLocator {
     Collection<Language> languages = myNamespaceToLanguageMap.values();
     for (Iterator iterator = languages.iterator(); iterator.hasNext();) {
       Language language = (Language)iterator.next();
-      SModel structureModel = language.getLanguageStructure();
+      SModel structureModel = language.getStructureModel();
       if(structureModel == semanticModel) {
         return language;
       }
