@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
@@ -25,6 +26,8 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createNameCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, ":"));
     editorCell.addEditorCell(this.createPropertyDeclaration_DataTypeNameCell(context, node));
@@ -32,11 +35,12 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
   public EditorCell createPropertyDeclaration_DataTypeNameCell(EditorContext context, SemanticNode node) {
@@ -46,17 +50,20 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(true);
     editorCell.setEditable(true);
     editorCell.setDefaultText("<no data type>");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     PropertyDeclaration_DataTypeActions.setCellActions(editorCell, node);
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext context, SemanticNode node) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "name", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(true);
     editorCell.setDefaultText("<no name>");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
     return editorCell;
   }

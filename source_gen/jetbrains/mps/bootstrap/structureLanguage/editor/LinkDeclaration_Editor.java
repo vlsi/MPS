@@ -8,10 +8,10 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
@@ -33,6 +33,8 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createRoleCell(context, node));
     if(Aspects.semanticNodeCondition_LinkDeclaration_NotSpecializes(node)) {
       editorCell.addEditorCell(this.createMetaClassCell(context, node));
@@ -60,20 +62,22 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
   public EditorCell createLinkDeclaration_SpecializedMetaclassCell(EditorContext context, SemanticNode node) {
@@ -83,6 +87,8 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(true);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextBackgroundColor(Color.lightGray);
     LinkDeclaration_DisableDelete_Actions.setCellActions(editorCell, node);
     return editorCell;
@@ -94,6 +100,8 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(true);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextBackgroundColor(Color.lightGray);
     LinkDeclaration_DisableDelete_Actions.setCellActions(editorCell, node);
     return editorCell;
@@ -105,6 +113,8 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(true);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextBackgroundColor(Color.lightGray);
     LinkDeclaration_DisableDelete_Actions.setCellActions(editorCell, node);
     return editorCell;
@@ -116,28 +126,32 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(true);
     editorCell.setEditable(true);
     editorCell.setDefaultText("<none>");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     LinkDeclaration_SpecializedLink_Actions.setCellActions(editorCell, node);
     return editorCell;
   }
   public EditorCell createRoleCell(EditorContext context, SemanticNode node) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "role", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(true);
     editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "role"));
     return editorCell;
   }
   public EditorCell createMetaClassCell(EditorContext context, SemanticNode node) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "metaClass", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(true);
     editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.setSubstituteInfo(new LinkMetaclass_PropertySubstituteInfo(node, "metaClass"));
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "metaClass"));
     return editorCell;
@@ -145,11 +159,12 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createSourceCardinalityCell(EditorContext context, SemanticNode node) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "sourceCardinality", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(true);
     editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.setSubstituteInfo(new Cardinality_PropertySubstituteInfo(node, "sourceCardinality"));
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "sourceCardinality"));
     return editorCell;
@@ -157,11 +172,12 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createTargetCardinalityCell(EditorContext context, SemanticNode node) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "targetCardinality", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(true);
     editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.setSubstituteInfo(new Cardinality_PropertySubstituteInfo(node, "targetCardinality"));
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "targetCardinality"));
     return editorCell;
@@ -174,6 +190,8 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "<no target>");
         noRefCell.setEditable(true);
+        noRefCell.setDrawBrackets(false);
+        noRefCell.setBracketsColor(Color.black);
         noRefCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
         noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
@@ -184,6 +202,10 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     AbstractCellProvider inlineComponent = new LinkDeclaration_Editor_target_InlineComponent(effectiveNode);
     EditorCell editorCell = inlineComponent.createEditorCell(context);
     EditorUtil.setSemanticNodeToCells(editorCell, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
     editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());

@@ -8,11 +8,11 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.PropertyAccessor;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
 
@@ -26,6 +26,8 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createConstantCell(context, node, "constant:"));
     editorCell.addEditorCell(this.createNameCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "("));
@@ -39,47 +41,52 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
   public EditorCell createConstantCell2(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
   public EditorCell createConstantCell3(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
   public EditorCell createConstantCell4(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
   public EditorCell createEnumMember_IsDefaultCell(EditorContext context, SemanticNode node) {
@@ -89,17 +96,20 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(true);
     editorCell.setEditable(true);
     editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     EnumerationMemberDeclaration_IsDefaultActions.setCellActions(editorCell, node);
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext context, SemanticNode node) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "name", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(true);
     editorCell.setDefaultText("<no name>");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
     editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
@@ -108,11 +118,12 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createExternalValueCell(EditorContext context, SemanticNode node) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "externalValue", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(true);
     editorCell.setDefaultText("<no external value>");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextBackgroundColor(Color.cyan);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "externalValue"));
     return editorCell;
@@ -120,11 +131,12 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createInternalValueCell(EditorContext context, SemanticNode node) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "internalValue", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(true);
     editorCell.setDefaultText("NULL");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
     editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "internalValue"));

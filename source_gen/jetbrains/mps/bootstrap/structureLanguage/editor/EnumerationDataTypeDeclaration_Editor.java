@@ -9,11 +9,11 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.PropertyAccessor;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
 
@@ -29,6 +29,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createHeaderRow(context, node));
     editorCell.addEditorCell(this.createColumnCell(context, node));
     editorCell.addEditorCell(this.createRowCell3(context, node));
@@ -39,6 +41,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createConstantCell(context, node, "Enumeration Data Type"));
     editorCell.addEditorCell(this.createNameCell(context, node));
     return editorCell;
@@ -48,6 +52,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(true);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createRowCell(context, node));
     editorCell.addEditorCell(this.createRowCell1(context, node));
     editorCell.addEditorCell(this.createRowCell2(context, node));
@@ -58,6 +64,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createIndent3(context, node, "        "));
     editorCell.addEditorCell(this.createMemberList(context, node));
     return editorCell;
@@ -67,6 +75,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createIndent(context, node, "    "));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "member type:"));
     editorCell.addEditorCell(this.createEnumDataType_MemberDataTypeNameCell(context, node));
@@ -77,6 +87,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createIndent1(context, node, "    "));
     return editorCell;
   }
@@ -85,71 +97,80 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createIndent2(context, node, "    "));
     editorCell.addEditorCell(this.createConstantCell2(context, node, "members:"));
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
   public EditorCell createIndent(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
   public EditorCell createIndent1(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
   public EditorCell createIndent2(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
   public EditorCell createConstantCell2(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
   public EditorCell createIndent3(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
   public EditorCell createEnumDataType_MemberDataTypeNameCell(EditorContext context, SemanticNode node) {
@@ -159,17 +180,20 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(true);
     editorCell.setEditable(true);
     editorCell.setDefaultText("<no data type>");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     EnumerationDataTypeDeclaration_MemberDataTypeActions.setCellActions(editorCell, node);
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext context, SemanticNode node) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "name", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(true);
     editorCell.setDefaultText("<no name>");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
     editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
@@ -184,6 +208,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(true);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
 }

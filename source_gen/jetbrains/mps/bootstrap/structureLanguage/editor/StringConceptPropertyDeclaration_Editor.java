@@ -15,29 +15,19 @@ import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
 
-public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
+public class StringConceptPropertyDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
     return this.createNodeBox(context, node);
   }
   public EditorCell createNodeBox(EditorContext context, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.addEditorCell(this.createHeaderRow(context, node));
-    return editorCell;
-  }
-  public EditorCell createHeaderRow(EditorContext context, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "Primitive Data Type"));
+    editorCell.addEditorCell(this.createConstantCell(context, node, "string concept property declaration"));
     editorCell.addEditorCell(this.createNameCell(context, node));
     return editorCell;
   }
@@ -57,11 +47,9 @@ public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(true);
-    editorCell.setDefaultText("<no name>");
+    editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
-    editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
     return editorCell;
   }
