@@ -37,21 +37,13 @@ public class MPSProject implements ModelLocator {
   private ExecutionPoint myEntryPoint;
   private HashMap<String, Language> myNamespaceToLanguageMap = new HashMap<String, Language>();
   private Map<Class, Object> myComponents = new HashMap<Class, Object>();
-  private RootManager myRootManager;
+  private RootManager myRootManager = new RootManager(this);
 
   public MPSProject(File file) {
-    myProjectFile = file;
-    myRootManager = new RootManager(this);
-
     initComponent();
-
+    myProjectFile = file;
     if (myProjectFile != null) {
-      myRootManager.loadFromFile();
-      if (file.getName().equals("RubyWeb.mpr")) {
-        rubyWeb.bibliography.PersistenceUtil.loadRubyWebBibliography(this);
-        rubyWeb.patternList.PersistenceUtil.loadRubyWebPatternList(this);
-        rubyWeb.paper.PersistenceUtil.loadRubyWebPaper(this);
-      }
+      read(myProjectFile);
     }
   }
 
@@ -89,15 +81,15 @@ public class MPSProject implements ModelLocator {
     myComponents.put(interfaceClass, instance);
   }
 
-  //  public void read(File file) {
-  //    myRootManager.read(file);
-  //
-  //    if (file.getName().equals("RubyWeb.mpr")) {
-  //      rubyWeb.bibliography.PersistenceUtil.loadRubyWebBibliography(this);
-  //      rubyWeb.patternList.PersistenceUtil.loadRubyWebPatternList(this);
-  //      rubyWeb.paper.PersistenceUtil.loadRubyWebPaper(this);
-  //    }
-  //  }
+  public void read(File file) {
+    myRootManager.read(file);
+
+    if (file.getName().equals("RubyWeb.mpr")) {
+      rubyWeb.bibliography.PersistenceUtil.loadRubyWebBibliography(this);
+      rubyWeb.patternList.PersistenceUtil.loadRubyWebPatternList(this);
+      rubyWeb.paper.PersistenceUtil.loadRubyWebPaper(this);
+    }
+  }
 
   public void readComponents() {
     myWorkspaceFile = new File(myProjectFile.getParent(), myProjectFile.getName().replaceAll(".mpr", ".mws"));
