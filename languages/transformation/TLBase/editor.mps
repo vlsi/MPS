@@ -85,8 +85,10 @@
           <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1096887967146">
             <link role="conceptDeclaration" targetNodeId="1.1096887421657" />
             <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1096888004884">
+              <property name="textBgColor" value="yellow" />
               <property name="defaultText" value="&lt;no name&gt;" />
               <property name="readOnly" value="true" />
+              <property name="textBgColorSelected" value="cyan" />
               <link role="propertyDeclaration" targetNodeId="4.1078489098626" />
             </node>
           </node>
@@ -288,8 +290,8 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1092135992437">
         <property name="nullText" value="&lt;no content node&gt;" />
-        <link role="actionSet" targetNodeId="1092137340906" />
         <link role="linkDeclaration" targetNodeId="1.1092060348987" />
+        <link role="actionSet" targetNodeId="1092137340906" />
       </node>
     </node>
   </node>
@@ -411,7 +413,7 @@
         <property name="selectable" value="true" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1095419687662">
-        <property name="textBgColor" value="yellow" />
+        <property name="textBgColor" value="orange" />
         <property name="defaultText" value="&lt;no rule name&gt;" />
         <property name="textBgColorSelected" value="cyan" />
         <link role="propertyDeclaration" targetNodeId="4.1078489098626" />
@@ -528,6 +530,18 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1095672654002">
         <property name="text" value="&lt;Template Fragment&gt;" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1100694221900">
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1100694221901">
+          <property name="text" value="mapping name" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1100694221902">
+          <property name="textBgColor" value="orange" />
+          <property name="defaultText" value="&lt;no name&gt;" />
+          <property name="textBgColorSelected" value="cyan" />
+          <link role="propertyDeclaration" targetNodeId="4.1078489098626" />
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1096887822344">
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1096887822345">
@@ -540,8 +554,10 @@
           <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1096887753624">
             <link role="conceptDeclaration" targetNodeId="1.1096887421657" />
             <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1096887822347">
+              <property name="textBgColor" value="yellow" />
               <property name="defaultText" value="&lt;no name&gt;" />
               <property name="readOnly" value="true" />
+              <property name="textBgColorSelected" value="cyan" />
               <link role="propertyDeclaration" targetNodeId="4.1078489098626" />
             </node>
           </node>
@@ -567,6 +583,12 @@
         <property name="text" value="&lt;TF" />
         <property name="textBgColorSelected" value="magenta" />
         <property name="selectable" value="true" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1100694105555">
+        <property name="textBgColor" value="orange" />
+        <property name="conditionId" value="SemanticNode_HasName" />
+        <property name="textBgColorSelected" value="cyan" />
+        <link role="propertyDeclaration" targetNodeId="4.1078489098626" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1096906918212">
         <property name="nullText" value="&lt;no tag&gt;" />

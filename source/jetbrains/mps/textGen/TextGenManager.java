@@ -62,6 +62,6 @@ public class TextGenManager {
     } catch (IllegalAccessException e) {
       e.printStackTrace();
     }
-    return null;
+    return new DefaultTextGen();
   }
 }
