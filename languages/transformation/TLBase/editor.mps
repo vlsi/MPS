@@ -392,8 +392,8 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1092135992437">
         <property name="nullText" value="&lt;no content node&gt;" />
         <property name="name" />
-        <link role="linkDeclaration" targetNodeId="1.1092060348987" />
         <link role="actionSet" targetNodeId="1092137340906" />
+        <link role="linkDeclaration" targetNodeId="1.1092060348987" />
       </node>
     </node>
   </node>
@@ -667,29 +667,44 @@
         <property name="name" />
         <property name="selectable" value="true" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1095421134219">
-        <property name="nullText" value="&lt;no target template&gt;" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1095676786799">
         <property name="name" />
-        <link role="linkDeclaration" targetNodeId="1.1095418098242" />
-        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1095421134220">
+        <property name="vertical" value="true" />
+        <property name="gridLayout" value="true" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1095676812694">
+          <property name="nullText" value="&lt;no target template&gt;" />
           <property name="name" />
-          <link role="semanticTypeDeclaration" targetNodeId="1.1092059087312" />
-          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1095421134221">
-            <property name="defaultText" value="&lt;no name&gt;" />
-            <property name="readOnly" value="true" />
+          <link role="linkDeclaration" targetNodeId="1.1095418098242" />
+          <link role="linkDeclaration" targetNodeId="1.1095418098242" />
+          <link role="linkDeclaration" targetNodeId="1.1095418098242" />
+          <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1095676812695">
             <property name="name" />
-            <link role="propertyDeclaration" targetNodeId="4.1078489098626" />
+            <link role="semanticTypeDeclaration" targetNodeId="1.1092059087312" />
+            <link role="semanticTypeDeclaration" targetNodeId="1.1092059087312" />
+            <link role="semanticTypeDeclaration" targetNodeId="1.1092059087312" />
+            <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1095676812696">
+              <property name="defaultText" value="&lt;no name&gt;" />
+              <property name="readOnly" value="true" />
+              <property name="name" />
+              <link role="propertyDeclaration" targetNodeId="4.1078489098626" />
+              <link role="propertyDeclaration" targetNodeId="4.1078489098626" />
+              <link role="propertyDeclaration" targetNodeId="4.1078489098626" />
+            </node>
           </node>
         </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1095421134224">
-        <property name="text" value="context:" />
-        <property name="name" />
-        <property name="selectable" value="true" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1095421134225">
-        <property name="name" />
-        <property name="cellProviderId" value="templateWeavingRule_Context_CellProvider" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1095676835588">
+          <property name="name" />
+          <property name="vertical" value="false" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1095676835589">
+            <property name="text" value="context:" />
+            <property name="name" />
+            <property name="selectable" value="true" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1095676835590">
+            <property name="name" />
+            <property name="cellProviderId" value="templateWeavingRule_Context_CellProvider" />
+          </node>
+        </node>
       </node>
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1095422932671">
@@ -726,6 +741,25 @@
           <property name="text" value="()" />
           <property name="name" />
         </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1095672501074">
+    <property name="name" value="TemplateFragment_Editor" />
+    <link role="semanticTypeDeclaration" targetNodeId="1.1095672379244" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1095672622281">
+      <property name="textBgColor" value="pink" />
+      <property name="text" value="&lt;TF" />
+      <property name="name" />
+      <property name="selectable" value="true" />
+      <property name="textBgColorSelected" value="magenta" />
+    </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1095672654001">
+      <property name="name" />
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1095672654002">
+        <property name="text" value="&lt;Template Fragment&gt;" />
+        <property name="name" />
       </node>
     </node>
   </node>

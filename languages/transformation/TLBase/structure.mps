@@ -146,5 +146,9 @@
       <link role="target" targetNodeId="1092059087312" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1095672379244">
+    <property name="name" value="TemplateFragment" />
+    <link role="extends" targetNodeId="2.1078489098625" />
+  </node>
 </semanticModel>
 
