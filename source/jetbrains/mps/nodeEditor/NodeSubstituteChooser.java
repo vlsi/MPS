@@ -319,7 +319,6 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
                 doSubstitute();
               }
             }, "Substitute");
-
           }
         }
       });
