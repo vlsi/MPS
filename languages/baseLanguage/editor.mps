@@ -39,12 +39,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994769">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994770">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994771">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927994772">
@@ -272,12 +272,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995149">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995150">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995151">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927995152">
@@ -325,7 +325,7 @@
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995367">
                 <property name="name" value="myItemObject" />
                 <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995368">
-                  <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                  <property name="name" value="jetbrains.mps.core.BaseConcept" />
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
               </node>
@@ -382,12 +382,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995342">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995343">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995344">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927995345">
@@ -553,12 +553,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995686">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995687">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995688">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927995689">
@@ -649,12 +649,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996162">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996163">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996164">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927996165">
@@ -754,12 +754,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994660">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994661">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994662">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927994663">
@@ -857,12 +857,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994746">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994747">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994748">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927994749">
@@ -927,12 +927,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995731">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995732">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995733">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927995734">
@@ -1034,12 +1034,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995437">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995438">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995439">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927995440">
@@ -1084,7 +1084,7 @@
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995655">
                 <property name="name" value="myItemObject" />
                 <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995656">
-                  <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                  <property name="name" value="jetbrains.mps.core.BaseConcept" />
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
               </node>
@@ -1141,12 +1141,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995630">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995631">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995632">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927995633">
@@ -1224,12 +1224,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996021">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996022">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996023">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927996024">
@@ -1274,7 +1274,7 @@
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996131">
                 <property name="name" value="myItemObject" />
                 <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996132">
-                  <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                  <property name="name" value="jetbrains.mps.core.BaseConcept" />
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
               </node>
@@ -1331,12 +1331,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996106">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996107">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996108">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927996109">
@@ -1456,7 +1456,7 @@
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994543">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927994544">
@@ -1498,7 +1498,7 @@
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994655">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927994656">
@@ -1830,12 +1830,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995398">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995399">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995400">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927995401">
@@ -1877,12 +1877,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082542128691">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082542128692">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082542128693">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1082542128501">
@@ -2114,12 +2114,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995847">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995848">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995849">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927995850">
@@ -2187,7 +2187,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996752">
               <property name="name" value="myItemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996753">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -2256,7 +2256,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996764">
               <property name="name" value="itemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996765">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -2265,7 +2265,7 @@
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249704865" />
             </node>
             <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996768">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927996769">
@@ -2297,7 +2297,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996782">
               <property name="name" value="myItemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996783">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -2460,7 +2460,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996819">
               <property name="name" value="myItemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996820">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -2529,7 +2529,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996831">
               <property name="name" value="itemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996832">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -2538,7 +2538,7 @@
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249704866" />
             </node>
             <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996835">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927996836">
@@ -2570,7 +2570,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996849">
               <property name="name" value="myItemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996850">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -2725,12 +2725,12 @@
         <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996877">
           <property name="name" value="object" />
           <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996878">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
         </node>
         <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996879">
-          <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+          <property name="name" value="jetbrains.mps.core.BaseConcept" />
           <link role="javaClass" targetNodeId="18.1086856195743" />
         </node>
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927996880">
@@ -2789,7 +2789,7 @@
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082380828597">
                 <property name="name" value="itemObject" />
                 <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082380828598">
-                  <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                  <property name="name" value="jetbrains.mps.core.BaseConcept" />
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
               </node>
@@ -2798,7 +2798,7 @@
                 <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439769" />
               </node>
               <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082380828601">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1082380828602">
@@ -2862,7 +2862,7 @@
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995934">
                 <property name="name" value="itemObject" />
                 <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995935">
-                  <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                  <property name="name" value="jetbrains.mps.core.BaseConcept" />
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
               </node>
@@ -2871,7 +2871,7 @@
                 <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439770" />
               </node>
               <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995938">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927995939">
@@ -2911,7 +2911,7 @@
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995970">
                 <property name="name" value="itemObject" />
                 <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995971">
-                  <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                  <property name="name" value="jetbrains.mps.core.BaseConcept" />
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
               </node>
@@ -2920,7 +2920,7 @@
                 <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439771" />
               </node>
               <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995974">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927995975">
@@ -2960,7 +2960,7 @@
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995988">
                 <property name="name" value="itemObject" />
                 <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995989">
-                  <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                  <property name="name" value="jetbrains.mps.core.BaseConcept" />
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
               </node>
@@ -2969,7 +2969,7 @@
                 <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439772" />
               </node>
               <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996007">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927996008">
@@ -3008,7 +3008,7 @@
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082648409707">
                 <property name="name" value="itemObject" />
                 <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082648409708">
-                  <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                  <property name="name" value="jetbrains.mps.core.BaseConcept" />
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
               </node>
@@ -3017,7 +3017,7 @@
                 <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439773" />
               </node>
               <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082648409711">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1082648409712">
@@ -3064,12 +3064,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995891">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995892">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995893">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927995894">
@@ -3217,7 +3217,7 @@
                 </node>
               </node>
               <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996895">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927996896">
@@ -3330,7 +3330,7 @@
                 </node>
               </node>
               <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996925">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927996926">
@@ -3419,12 +3419,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996884">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996885">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996886">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927996887">
@@ -3543,7 +3543,7 @@
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1095167470547">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1095167470541">
@@ -3603,12 +3603,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995854">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995855">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995856">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927995857">
@@ -3648,12 +3648,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995861">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995862">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995863">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927995864">
@@ -3723,7 +3723,7 @@
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995797">
                 <property name="name" value="myItemObject" />
                 <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995798">
-                  <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                  <property name="name" value="jetbrains.mps.core.BaseConcept" />
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
               </node>
@@ -3780,12 +3780,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995772">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995773">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995774">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927995775">
@@ -3856,12 +3856,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994739">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994740">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994741">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927994742">
@@ -3953,12 +3953,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996169">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996170">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996171">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927996172">
@@ -3995,12 +3995,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996192">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996193">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996194">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927996195">
@@ -4061,12 +4061,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995868">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995869">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995870">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927995871">
@@ -4156,7 +4156,7 @@
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927997272">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927997273">
@@ -4207,7 +4207,7 @@
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927997279">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927997280">
@@ -4261,12 +4261,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1095254471173">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1095254471174">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1095254471175">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1095254471169">
@@ -4530,12 +4530,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082740734723">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082740734724">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082740734725">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1082740734502">
@@ -4621,7 +4621,7 @@
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082742196996">
                 <property name="name" value="myItemObject" />
                 <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082742196997">
-                  <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                  <property name="name" value="jetbrains.mps.core.BaseConcept" />
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
               </node>
@@ -4678,12 +4678,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082742196977">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082742196978">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082742196979">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1082742196817">
@@ -4852,12 +4852,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995059">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995060">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995061">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927995062">
@@ -4932,12 +4932,12 @@
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082387503956">
             <property name="name" value="object" />
             <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082387503957">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082387503958">
-            <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+            <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1082387503959">
@@ -5118,7 +5118,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996206">
               <property name="name" value="itemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996207">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -5127,7 +5127,7 @@
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439790" />
             </node>
             <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996210">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927996211">
@@ -5159,7 +5159,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996224">
               <property name="name" value="myItemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996225">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -5230,7 +5230,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996236">
               <property name="name" value="itemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996237">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -5239,7 +5239,7 @@
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439791" />
             </node>
             <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996240">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927996241">
@@ -5271,7 +5271,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996254">
               <property name="name" value="myItemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996255">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -5340,7 +5340,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996266">
               <property name="name" value="itemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996267">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -5349,7 +5349,7 @@
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439792" />
             </node>
             <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996270">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927996271">
@@ -5381,7 +5381,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996284">
               <property name="name" value="myItemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996285">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -5450,7 +5450,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996296">
               <property name="name" value="itemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996297">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -5459,7 +5459,7 @@
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439793" />
             </node>
             <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996300">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927996301">
@@ -5491,7 +5491,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996314">
               <property name="name" value="myItemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996315">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -5560,7 +5560,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996326">
               <property name="name" value="itemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996327">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -5569,7 +5569,7 @@
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439794" />
             </node>
             <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996330">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927996331">
@@ -5601,7 +5601,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996344">
               <property name="name" value="myItemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996345">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -5665,7 +5665,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082131184583">
               <property name="name" value="itemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082131184584">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -5674,7 +5674,7 @@
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439811" />
             </node>
             <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082131184587">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1082131184588">
@@ -5743,7 +5743,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996356">
               <property name="name" value="itemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996357">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -5752,7 +5752,7 @@
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439812" />
             </node>
             <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996360">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927996361">
@@ -5792,7 +5792,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996374">
               <property name="name" value="itemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996375">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -5801,7 +5801,7 @@
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439813" />
             </node>
             <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996378">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927996379">
@@ -5845,7 +5845,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996392">
               <property name="name" value="itemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996393">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -5854,7 +5854,7 @@
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439814" />
             </node>
             <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996396">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927996397">
@@ -6092,7 +6092,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082043423439">
               <property name="name" value="itemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082043423440">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -6101,7 +6101,7 @@
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249704899" />
             </node>
             <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082043423443">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1082043423204">
@@ -6168,7 +6168,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082043423461">
               <property name="name" value="itemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082043423462">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -6177,7 +6177,7 @@
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249704900" />
             </node>
             <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082043423465">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1082043423212">
@@ -6248,7 +6248,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994830">
               <property name="name" value="itemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994831">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -6257,7 +6257,7 @@
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249704901" />
             </node>
             <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994834">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927994835">
@@ -6289,7 +6289,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994848">
               <property name="name" value="myItemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994849">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -6359,7 +6359,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994860">
               <property name="name" value="itemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994861">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -6368,7 +6368,7 @@
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249704902" />
             </node>
             <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994864">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927994865">
@@ -6400,7 +6400,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994878">
               <property name="name" value="myItemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994879">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -6471,7 +6471,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994890">
               <property name="name" value="itemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994891">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -6480,7 +6480,7 @@
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249704903" />
             </node>
             <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994894">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927994895">
@@ -6512,7 +6512,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994908">
               <property name="name" value="myItemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994909">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -6584,7 +6584,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994920">
               <property name="name" value="itemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994921">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -6593,7 +6593,7 @@
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249704904" />
             </node>
             <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994924">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927994925">
@@ -6625,7 +6625,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994938">
               <property name="name" value="myItemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994939">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -6695,7 +6695,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994950">
               <property name="name" value="itemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994951">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -6704,7 +6704,7 @@
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249704905" />
             </node>
             <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994954">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927994955">
@@ -6736,7 +6736,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994968">
               <property name="name" value="myItemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994969">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -6806,7 +6806,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994980">
               <property name="name" value="itemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994981">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -6815,7 +6815,7 @@
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249704906" />
             </node>
             <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994984">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927994985">
@@ -6847,7 +6847,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994998">
               <property name="name" value="myItemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994999">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -6922,7 +6922,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995010">
               <property name="name" value="itemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995011">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -6931,7 +6931,7 @@
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249704907" />
             </node>
             <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995014">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1081927995015">
@@ -6963,7 +6963,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995028">
               <property name="name" value="myItemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995029">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -7033,7 +7033,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082657798342">
               <property name="name" value="itemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082657798343">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -7042,7 +7042,7 @@
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439816" />
             </node>
             <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082657798346">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1082657798347">
@@ -7306,7 +7306,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082741457142">
               <property name="name" value="itemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082741457143">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -7315,7 +7315,7 @@
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439818" />
             </node>
             <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082741457146">
-              <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+              <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1082741457147">
@@ -7347,7 +7347,7 @@
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082741457160">
               <property name="name" value="myItemObject" />
               <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082741457161">
-                <property name="name" value="jetbrains.mps.core.BaseSemanticType" />
+                <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>

@@ -3,7 +3,7 @@
   <maxReferenceID value="23" />
   <language namespace="bootstrap.structureLanguage" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1078489098625">
-    <property name="name" value="BaseSemanticType" />
+    <property name="name" value="BaseConcept" />
     <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration" id="1078489098626">
       <property name="propertyType" value="string" />
       <property name="name" value="name" />
