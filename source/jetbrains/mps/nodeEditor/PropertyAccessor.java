@@ -20,8 +20,9 @@ public class PropertyAccessor implements ModelAccessor {
   }
 
   public String getText() {
-    String value = myNode.getProperty(myPropertyName);
-    return value == null ? myDefaultValue : value;
+//    String value = myNode.getProperty(myPropertyName);
+//    return value == null ? myDefaultValue : value;
+    return myNode.getProperty(myPropertyName);
   }
 
   public void setText(String text) {
