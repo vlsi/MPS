@@ -32,9 +32,9 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
 
   public void startInsertMode(EditorContext editorContext, EditorCell anchorCell, boolean insertBefore) {
     SemanticNode anchorNode = (anchorCell != null ? anchorCell.getSemanticNode() : null);
-    if(anchorNode != null) {
+    if (anchorNode != null) {
       // anchor should be directly referenced from "list owner"
-      while(anchorNode != null && anchorNode.getParent() != myOwnerNode) {
+      while (anchorNode != null && anchorNode.getParent() != myOwnerNode) {
         anchorNode = anchorNode.getParent();
       }
     }
@@ -45,13 +45,13 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
     editor.pushKeyboardHandler(this);
     editor.rebuildEditorContent();
     EditorCell selectableLeaf = myInsertCell.findFirstSelectableLeaf();
-    if(selectableLeaf != null) {
+    if (selectableLeaf != null) {
       editor.changeSelection(selectableLeaf);
     }
   }
 
   private void finishInsertMode(EditorContext editorContext) {
-    if(isInsertMode()) {
+    if (isInsertMode()) {
       editorContext.getNodeEditorComponent().popKeyboardHandler(); // remove this handler from stack.
 
       EditorCell prevCell = myListEditorCell_Collection.getPrevCell(myInsertCell);
@@ -66,7 +66,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
   }
 
   private void cancelInsertMode(EditorContext editorContext) {
-    if(isInsertMode()) {
+    if (isInsertMode()) {
       editorContext.getNodeEditorComponent().popKeyboardHandler(); // remove this handler from stack.
       myInsertedNode.delete();
 
@@ -114,7 +114,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
   }
 
   private EditorCell_Collection createCells(EditorContext editorContext) {
-    if(isVertical()) {
+    if (isVertical()) {
       myListEditorCell_Collection = EditorCell_Collection.createVertical(editorContext, myOwnerNode);
     } else {
       myListEditorCell_Collection = EditorCell_Collection.createHorizontal(editorContext, myOwnerNode);
@@ -122,11 +122,11 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
     myListEditorCell_Collection.setSelectable(false);
 
     Iterator<SemanticNode> listNodes = myOwnerNode.referents(myReferenceRole);
-    if(!listNodes.hasNext()) {
+    if (!listNodes.hasNext()) {
       myListEditorCell_Collection.addEditorCell(createEmptyCell(editorContext));
     } else {
       EditorCell separatorCell = null;
-      while(listNodes.hasNext()) {
+      while (listNodes.hasNext()) {
         separatorCell = addSeparatorCell(editorContext, separatorCell);
         SemanticNode node = listNodes.next();
         myListEditorCell_Collection.addEditorCell(createNodeCell_internal(editorContext, node));
@@ -143,8 +143,8 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
 
   private EditorCell createNodeCell_internal(EditorContext editorContext, SemanticNode node) {
     EditorCell nodeCell = createNodeCell(editorContext, node);
-    if(node == myInsertedNode) {
-      if(myInsertCell == null) {
+    if (node == myInsertedNode) {
+      if (myInsertCell == null) {
         myInsertedNodeCell = nodeCell;
         myInsertCell = createInsertCell_internal(editorContext, myInsertedNodeCell);
       }
@@ -162,7 +162,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
   }
 
   private EditorCell addSeparatorCell(EditorContext editorContext, EditorCell separatorCell) {
-    if(separatorCell != null) {
+    if (separatorCell != null) {
       myListEditorCell_Collection.addEditorCell(separatorCell);
     }
     separatorCell = createSeparatorCell(editorContext);
@@ -172,8 +172,8 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
   public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
     AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
     String actionType = editor.getActionType(keyEvent, editorContext);
-    if(EditorCellAction.INSERT.equals(actionType) ||
-        EditorCellAction.INSERT_BEFORE.equals(actionType)) {
+    if (EditorCellAction.INSERT.equals(actionType) ||
+            EditorCellAction.INSERT_BEFORE.equals(actionType)) {
       cancelInsertMode(editorContext);
       editor.executeAction(myListEditorCell_Collection.getParent(), actionType);
     } else {
@@ -187,8 +187,9 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
   public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
     AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
     String actionType = editor.getActionType(keyEvent, editorContext);
-    if(!(EditorCellAction.INSERT.equals(actionType) ||
-        EditorCellAction.INSERT_BEFORE.equals(actionType))) {
+    if (!(EditorCellAction.INSERT.equals(actionType) ||
+            EditorCellAction.INSERT_BEFORE.equals(actionType)) ||
+            keyEvent.getModifiers() == 0) { // disable this feature if 'insert' keystroke doesn't contain modifiers
       finishInsertMode(editorContext);
       return true;
     }
