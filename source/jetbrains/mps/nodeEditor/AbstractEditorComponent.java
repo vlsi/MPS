@@ -824,7 +824,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       public void run() {
         copy[0] = GeneratorUtil.copy(root);
       }
-    }, "node copy");
+    }, "node copyAndAddToRoots");
 
     root.getSemanticModel().addRoot(copy[0]);
     selectNode(null);
