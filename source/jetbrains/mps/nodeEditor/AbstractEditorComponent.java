@@ -138,7 +138,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void showPopupMenu(MouseEvent e) {
-    SemanticNode selectedNode = getSelectedCell().getSemanticNode();
+    final SemanticNode selectedNode = getSelectedCell().getSemanticNode();
     selectNode(selectedNode);
     JPopupMenu popupMenu = new JPopupMenu();
     String header = JavaNameUtil.shortName(selectedNode.getClass().getName());
@@ -155,6 +155,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     popupMenu.addSeparator();
     popupMenu.add(createGoByReferenceMenu(selectedNode));
     popupMenu.add(createFindUsagesAction(selectedNode));
+    popupMenu.addSeparator();
+    popupMenu.add(createShowTypeInfoAction(selectedNode));
+
     popupMenu.show(AbstractEditorComponent.this, e.getX(), e.getY());
   }
 
@@ -168,7 +171,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private Action createGoToEditorAction(final SemanticTypeDeclaration node) {
-
     final String editorName = node.getName() + "_Editor";
     return new AbstractAction("Go To " + editorName) {
       public void actionPerformed(ActionEvent e) {
@@ -229,6 +231,42 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     };
   }
+
+  private Action createShowTypeInfoAction(final SemanticNode node) {
+    return new AbstractAction("Show Type Info...") {
+      public void actionPerformed(ActionEvent e) {
+        ITypeChecker typeChecker = TypeCheckerAccess.instance().getTypeChecker();
+        StringBuffer sb = new StringBuffer(node.getDebugText());
+        TSStatus status = typeChecker.checkNodeType(node);
+        if (status.isOk()) {
+          sb.append("\nStatus: OK");
+          ITypeObject typeObject = status.getTypeObject();
+          if (typeObject != null) {
+            sb.append("\nType: ").append(typeObject.getSignature());
+          } else {
+            sb.append("\nType: <no type>");
+          }
+        } else if (status.isErrorComposite()) {
+          sb.append("\nStatus: ERROR COMPOSITE");
+          List<TSStatus> errors = status.getAllErrors();
+          for (int i = 0; i < errors.size(); i++) {
+            TSStatus error = errors.get(i);
+            sb.append("\n" + (i + 1)).append(" : ").append(error.getMessage());
+            if (i > 15) {
+              sb.append("\n...more " + (errors.size() - i) + " errors...");
+              break;
+            }
+          }
+        } else {
+          sb.append("\nStatus: ERROR");
+          sb.append("\nMessage: " + status.getMessage());
+        }
+
+        JOptionPane.showMessageDialog(myContainer, sb.toString(), "Type System Info", JOptionPane.INFORMATION_MESSAGE);
+      }
+    };
+  }
+
 
   public JComponent getExternalComponent() {
     return myContainer;
@@ -752,39 +790,39 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 //      }
 //    }
 
-    // print type info (from typesystem)
-    if (keyEvent.getKeyCode() == KeyEvent.VK_T && keyEvent.isControlDown()) {
-      if (mySelectedCell != null) {
-        SemanticNode selectedNode = mySelectedCell.getSemanticNode();
-//        SemanticModelTypeChecker typeChecker = new SemanticModelTypeChecker(selectedNode.getSemanticModel(), IdeMain.instance().getProject());
-        ITypeChecker typeChecker = TypeCheckerAccess.instance().getTypeChecker();
-        System.out.println("--- Type System Info:");
-        System.out.println("--- Node: " + selectedNode.getDebugText());
-        TSStatus status = typeChecker.checkNodeType(selectedNode);
-        if (status.isOk()) {
-          System.out.println("--- TYPE CHECK STATUS: OK");
-          ITypeObject typeObject = status.getTypeObject();
-          if (typeObject != null) {
-            System.out.println("--- Type: " + typeObject);
-          } else {
-            System.out.println("--- NO TYPE");
-          }
-        } else if (status.isErrorComposite()) {
-          System.out.println("--- TYPE CHECK STATUS: ERROR COMPOSITE");
-          List<TSStatus> errors = status.getAllErrors();
-          for (int i = 0; i < errors.size(); i++) {
-            TSStatus error = errors.get(i);
-            System.out.println((i + 1) + ". --- Message: " + error.getMessage());
-          }
-        } else {
-          System.out.println("--- TYPE CHECK STATUS: ERROR");
-          System.out.println("--- Message: " + status.getMessage());
-        }
-        System.out.println("--------------------------");
-        keyEvent.consume();
-//        return;
-      }
-    }
+//    // print type info (from typesystem)
+//    if (keyEvent.getKeyCode() == KeyEvent.VK_T && keyEvent.isControlDown()) {
+//      if (mySelectedCell != null) {
+//        SemanticNode selectedNode = mySelectedCell.getSemanticNode();
+////        SemanticModelTypeChecker typeChecker = new SemanticModelTypeChecker(selectedNode.getSemanticModel(), IdeMain.instance().getProject());
+//        ITypeChecker typeChecker = TypeCheckerAccess.instance().getTypeChecker();
+//        System.out.println("--- Type System Info:");
+//        System.out.println("--- Node: " + selectedNode.getDebugText());
+//        TSStatus status = typeChecker.checkNodeType(selectedNode);
+//        if (status.isOk()) {
+//          System.out.println("--- TYPE CHECK STATUS: OK");
+//          ITypeObject typeObject = status.getTypeObject();
+//          if (typeObject != null) {
+//            System.out.println("--- Type: " + typeObject);
+//          } else {
+//            System.out.println("--- NO TYPE");
+//          }
+//        } else if (status.isErrorComposite()) {
+//          System.out.println("--- TYPE CHECK STATUS: ERROR COMPOSITE");
+//          List<TSStatus> errors = status.getAllErrors();
+//          for (int i = 0; i < errors.size(); i++) {
+//            TSStatus error = errors.get(i);
+//            System.out.println((i + 1) + ". --- Message: " + error.getMessage());
+//          }
+//        } else {
+//          System.out.println("--- TYPE CHECK STATUS: ERROR");
+//          System.out.println("--- Message: " + status.getMessage());
+//        }
+//        System.out.println("--------------------------");
+//        keyEvent.consume();
+////        return;
+//      }
+//    }
 
 
 
