@@ -62,6 +62,10 @@ public class TextUtil {
           tag = ItalicTag.newInstance(model);
           tag.setText(toText(model, elem));
         }
+        if ("p".equals(name) || "P".equals(name)) {
+          tag = ParagraphTag.newInstance(model);
+          tag.setText(toText(model, elem));
+        }
         if ("term".equals(name)) {
           tag = TermTag.newInstance(model);
           tag.setText(toText(model, elem));
@@ -102,7 +106,9 @@ public class TextUtil {
         if ("section".equals(name)) {
           tag = SectionTag.newInstance(model);
           tag.setText(toText(model, elem));
-          tag.setName(elem.getChild("h").getText());
+          if (elem.getChild("h") != null) {
+            tag.setName(elem.getChild("h").getText());
+          }
         }
         if ("tbd".equals(name)) {
           tag = TBDTag.newInstance(model);
@@ -196,6 +202,13 @@ public class TextUtil {
     if (word instanceof BoldTag) {
       BoldTag tag = (BoldTag) word;
       Element bold = new Element("b");
+      element.addContent(bold);
+      toElement(tag.getText(), bold);
+      return;
+    }
+    if (word instanceof ParagraphTag) {
+      ParagraphTag tag = (ParagraphTag) word;
+      Element bold = new Element("p");
       element.addContent(bold);
       toElement(tag.getText(), bold);
       return;
