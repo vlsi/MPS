@@ -129,6 +129,11 @@
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1107804605393" />
     </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1108145568859">
+      <property name="name" value="test2" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1108145581503" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1108145576814" />
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1107804569312">
       <property name="name" value="c1_method1" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1107804672136" />
