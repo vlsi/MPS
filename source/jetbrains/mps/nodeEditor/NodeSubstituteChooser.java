@@ -341,7 +341,6 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       setSelectionIndex(oldIndex);
       myList.ensureIndexIsVisible(getSelectionIndex());
 
-
       int maxY = getLocation().y + getHeight();
       setSize(
               Math.max(PREFERRED_WIDTH, myList.getPreferredSize().width) + 30,
@@ -349,6 +348,12 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
       if (getPosition() == PopupWindowPosition.TOP) {
         setLocation(getX(), maxY - getHeight());
+      }
+
+
+      int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+      if (getWidth() + getX() > screenWidth) {
+        setLocation(screenWidth - getWidth(),  getY());
       }
 
       validateTree();
