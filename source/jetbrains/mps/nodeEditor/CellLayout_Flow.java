@@ -113,14 +113,11 @@ hStart |--------|                  |  | hEnd
     if (!new Rectangle(editorCells.getX(), editorCells.getY(), editorCells.getWidth(), editorCells.getHeight()).contains(x, y)) {
       return null;
     }
-
-    System.out.println("Finding cell");
     for (int i = 0; i < editorCells.getChildCount(); i++) {
       EditorCell cell = editorCells.getChildAt(i);
       Rectangle rectangle = new Rectangle(cell.getX(), cell.getY(), cell.getWidth(), cell.getHeight());
       if (rectangle.contains(x, y)) return cell.findCell(x, y);
     }
-    System.out.println("");
     return null;
   }
 }
