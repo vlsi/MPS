@@ -32,6 +32,7 @@ public class ComponentsUtil {
     String model = nodeElement.getAttributeValue(MODEL);
     String id = nodeElement.getAttributeValue(ID);
     SModel semanticModel = project.getModels().getModel(model);
+    if (semanticModel == null) return null;
     SemanticNode semanticNode = semanticModel.findNode(id);
     return semanticNode;
   }

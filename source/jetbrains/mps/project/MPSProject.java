@@ -22,6 +22,8 @@ import org.jdom.Element;
 import java.io.File;
 import java.util.*;
 
+import rubyWeb.PersistenceUtil;
+
 /**
  * Author: Sergey Dmitriev
  * Created Apr 29, 2004
@@ -83,6 +85,10 @@ public class MPSProject implements ModelLocator {
 
   public void read(File file) {
     myRootManager.read(file);
+
+    if (file.getName().equals("RubyWeb.mpr")) {
+      PersistenceUtil.loadRubyWeb(this);
+    }
   }
                                        
   public void readComponents() {
