@@ -149,7 +149,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     registerNodeAction(new FindUsagesNodeAction(), "alt F7");
     registerNodeAction(new ShowInProjectAction(), "control P");
     registerNodeAction(new GoByReferenceAction(), "control B");
-    registerNodeAction(new GoToDefinitionAction(), "control shift S");
+    registerNodeAction(new GoToConceptDeclarationAction(), "control shift S");
     registerNodeAction(new GoToEditorAction(), "control shift E");
     registerNodeAction(new GoToConceptEditorDeclarationAction(), "control E");
 
