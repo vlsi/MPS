@@ -21,7 +21,7 @@ public class EditorContext {
     mySemanticModel = semanticModel;
     myEditorManager = new EditorManager(this);
 
-    myLanguages = new SemanticLanguage[3];
+    myLanguages = new SemanticLanguage[4];
     myLanguages[0] = new SemanticLanguage("jetbrains.mps.bootstrap.structureLanguage");
     myLanguages[1] = new SemanticLanguage("jetbrains.mps.bootstrap.editorLanguage");
     myLanguages[2] = new SemanticLanguage("jetbrains.mps.baseLanguage") {
@@ -32,6 +32,7 @@ public class EditorContext {
         return super.supports(node);
       }
     };
+    myLanguages[3] = new SemanticLanguage("jetbrains.mps.REL");
   }
 
   public AbstractEditorComponent getNodeEditorComponent() {
