@@ -105,6 +105,9 @@ public class TextUtil {
         if ("xref-target".equals(name)) {
           tag = XRefTargetTag.newInstance(model);
           tag.setName(elem.getAttributeValue("ID"));
+          if (elem.getAttributeValue("paper") != null) {
+            tag.putUserObject(ResolveUtil.ID_TO_RESOLVE, elem.getAttributeValue("paper"));
+          }
           tag.setText(toText(model, elem));
         }
         if ("patternRef".equals(name)) {
@@ -304,7 +307,9 @@ public class TextUtil {
       XRefTargetTag tag = (XRefTargetTag) word;
       Element target = new Element("xref-target");
       target.setAttribute("ID", tag.getName());
-      target.setAttribute("file", "paper.xml");
+      if (tag.getPaper() != null) {
+        target.setAttribute("paper", tag.getPaper().getName());
+      }
       toElement(tag.getText(), target);
       element.addContent(target);
       return;
