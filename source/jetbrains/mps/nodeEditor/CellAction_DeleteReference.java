@@ -41,7 +41,10 @@ public class CellAction_DeleteReference extends EditorCellAction {
       child.delete();
     } else {
       SemanticModel semanticModel = mySource.getSemanticModel();
-      mySource.removeReferences(myRole, null);
+      SemanticNode referent = mySource.getReferent(myRole);
+      if (referent != null) {
+        mySource.removeReferent(myRole, referent);
+      }
       semanticModel.fireNodeDeletedEvent(mySource);
     }
   }

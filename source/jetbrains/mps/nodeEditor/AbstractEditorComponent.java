@@ -142,8 +142,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     selectNode(selectedNode);
     JPopupMenu popupMenu = new JPopupMenu();
     String header = JavaNameUtil.shortName(selectedNode.getClass().getName());
-    if(selectedNode.getName() != null) {
-      header = header + " \"" + selectedNode.getName() +  "\"";
+    if (selectedNode.getName() != null) {
+      header = header + " \"" + selectedNode.getName() + "\"";
     }
 //    String header = selectedNode.getDebugText();
     popupMenu.add(JavaNameUtil.shortName(header));
@@ -218,7 +218,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return new AbstractAction("Find Usages") {
       public void actionPerformed(ActionEvent e) {
         UsagesModel_SemanticNode usageModel = new UsagesModel_BackReferences(node);
-        ((IdeMain)IdeMain.instance()).showUsagesView(usageModel);
+        ((IdeMain) IdeMain.instance()).showUsagesView(usageModel);
       }
     };
   }
@@ -847,27 +847,43 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private class MyModelListener implements SemanticModelListener {
     public void modelChanged(SemanticModel semanticModel) {
-      myRootCell.updateView();
-      relayout();
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          myRootCell.updateView();
+          relayout();
+        }
+      });
     }
 
     public void modelChangedDramatically(SemanticModel semanticModel) {
-      rebuildEditorContent();
-    }
-
-    public void nodeAdded(SemanticModel semanticModel, SemanticNode child) {
-      rebuildEditorContent();
-      handleNodelAdded(child);
-    }
-
-    public void nodeDeleted(SemanticModel semanticModel, SemanticNode container) {
-      rebuildEditorContent();
-      if (mySelectedCell == null) {
-        EditorCell changedNodeCell = findNodeCell(container);
-        if (changedNodeCell != null) {
-          changeSelection(changedNodeCell);
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          rebuildEditorContent();
         }
-      }
+      });
+    }
+
+    public void nodeAdded(SemanticModel semanticModel, final SemanticNode child) {
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          rebuildEditorContent();
+          handleNodelAdded(child);
+        }
+      });
+    }
+
+    public void nodeDeleted(SemanticModel semanticModel, final SemanticNode container) {
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          rebuildEditorContent();
+          if (mySelectedCell == null) {
+            EditorCell changedNodeCell = findNodeCell(container);
+            if (changedNodeCell != null) {
+              changeSelection(changedNodeCell);
+            }
+          }
+        }
+      });
     }
 
     private void handleNodelAdded(SemanticNode child) {

@@ -40,7 +40,12 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
       }
     }
     myInsertedNode = createNodeToInsert();
-    getOwner().insertReference(anchorNode, insertBefore, myReferenceRole, myInsertedNode, myRefernceMetaclass);
+//    getOwner().insertReference(anchorNode, insertBefore, myReferenceRole, myInsertedNode, myRefernceMetaclass);
+    if(LinkMetaclass.parseValue(myRefernceMetaclass) == LinkMetaclass.aggregation) {
+      getOwner().insertChild(anchorNode, insertBefore, myReferenceRole, myInsertedNode);
+    } else {
+      getOwner().insertReferent(anchorNode, insertBefore, myReferenceRole, myInsertedNode);
+    }
 
     AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
     editor.pushKeyboardHandler(this);
