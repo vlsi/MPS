@@ -16,4 +16,14 @@
       <implementation-class>jetbrains.mps.plugin.MPSRenamer</implementation-class>
     </component>
   </project-components>
+
+  <actions>
+    <action class="jetbrains.mps.plugin.FindAspectMethodUsages" text="Find Aspect Method Usages" id="MPSPlugin.findAspectMethodUsages" />
+
+    <group>
+      <separator />
+      <reference id="MPSPlugin.findAspectMethodUsages" />
+      <add-to-group anchor="last" group-id="EditorPopupMenu" />
+    </group>
+  </actions>
 </idea-plugin>
