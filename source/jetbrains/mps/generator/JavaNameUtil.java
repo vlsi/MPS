@@ -11,15 +11,16 @@ public class JavaNameUtil {
   public static String classNameForNode(SemanticNode semanticNode, SemanticModel currentModel) {
     SemanticModel semanticModel = semanticNode.getSemanticModel();
     String packageName = packageNameForModel(semanticModel);
-    if(packageName.equals(packageNameForModel(currentModel))) {
+    if(currentModel != null && packageName.equals(packageNameForModel(currentModel))) {
       return semanticNode.getName();
     }
     return packageName + "." + semanticNode.getName();
   }
 
   public static String packageNameForModel(SemanticModel semanticModel) {
+    String namespace = semanticModel.getNamespace();
     return "jetbrains.mps." +
-        semanticModel.getNamespace() + "." +
+        (namespace.length() > 0 ? namespace + "." : "") +
         semanticModel.getName();
   }
 
