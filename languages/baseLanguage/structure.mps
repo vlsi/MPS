@@ -372,8 +372,8 @@
     <link role="extends" targetNodeId="1068498886296" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1070568296581">
       <property name="role" value="localVariableDeclaration" />
-      <link role="target" targetNodeId="1068581242863" />
       <link role="specializedLink" targetNodeId="1068581517664" />
+      <link role="target" targetNodeId="1068581242863" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068581242867">
@@ -534,6 +534,7 @@
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..1" />
       <property name="role" value="componentType" />
+      <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1068431790189" />
     </node>
   </node>

@@ -92,7 +92,8 @@ public class EditorManager {
       Class editorClass = Class.forName(editorClassName);
       return (INodeEditor) editorClass.newInstance();
     } catch (ClassNotFoundException e) {
-      e.printStackTrace();  //To change body of catch statement use Options | File Templates.
+      System.err.println("Couldn't load editor " + editorClassName + " : Class Not Found!");
+//      e.printStackTrace();  //To change body of catch statement use Options | File Templates.
     } catch (InstantiationException e) {
       e.printStackTrace();  //To change body of catch statement use Options | File Templates.
     } catch (IllegalAccessException e) {
