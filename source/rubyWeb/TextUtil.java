@@ -71,6 +71,7 @@ public class TextUtil {
         if ("cite".equals(name)) {
           CiteTag tag = CiteTag.newInstance(model);
           tag.setText(toText(model, elem));
+          tag.putUserObject(ResolveUtil.ID_TO_RESOLVE, elem.getAttributeValue("name"));
           sentence.addWord(tag);
         }
         if ("xref".equals(name)) {
