@@ -20,6 +20,7 @@ import jetbrains.mps.typesystem.TSStatus;
 import jetbrains.mps.typesystem.TypeCheckerAccess;
 import jetbrains.mps.nodeEditor.test.EventRecorder;
 import jetbrains.mps.nodeEditor.test.EventPlayer;
+import jetbrains.mps.cml.generator.GeneratorUtil;
 
 import javax.swing.*;
 import java.awt.*;
@@ -813,9 +814,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   protected void startRecording() {
+    requestFocus();
+    SemanticNode root = getRootCell().getSemanticNode();
+    SemanticNode copy = GeneratorUtil.copy(root);
+    root.getSemanticModel().addRoot(copy);
+    selectNode(null);
     myRecorder = new EventRecorder();
     IdeMain.instance().getInspectorPane().getInspector().setEventRecorder(myRecorder);
-    myRecorder.startRecording();
+    myRecorder.startRecording(copy, root);
   }
 
   protected void stopRecordingIfPossible() {
@@ -927,8 +933,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return true;
   }
 
-  public Thread playScript(File file) {
-    return new EventPlayer(file).replay(AbstractEditorComponent.this, IdeMain.instance().getInspectorPane().getInspector());
+  public void playScript(File file) {
+    new EventPlayer(file).replay();
   }
 
   public void paint(Graphics g) {
@@ -1107,18 +1113,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       if (myPreviousFocusOwner != null) {
         myPreviousFocusOwner.requestFocus();
       }
-    }
-  }
-
-  protected class StartRecordingAction extends AbstractAction {
-    public void actionPerformed(ActionEvent e) {
-      startRecording();
-    }
-  }
-
-  protected class StopRecordingAction extends AbstractAction {
-    public void actionPerformed(ActionEvent e) {
-      stopRecordingIfPossible();
     }
   }
 
