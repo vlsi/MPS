@@ -59,8 +59,8 @@
             <property name="textBgColor" value="orange" />
             <property name="text" value="${" />
             <property name="name" />
-            <property name="textBgColorSelected" value="magenta" />
             <property name="selectable" value="true" />
+            <property name="textBgColorSelected" value="magenta" />
           </node>
         </link>
         <property name="name" />
@@ -218,8 +218,8 @@
         <property name="textBgColor" value="orange" />
         <property name="text" value="$${" />
         <property name="name" />
-        <property name="selectable" value="true" />
         <property name="textBgColorSelected" value="magenta" />
+        <property name="selectable" value="true" />
       </node>
     </link>
     <property name="name" value="NodeMacro_Editor" />
@@ -239,6 +239,13 @@
         <property name="keycode" value="VK_F" />
         <property name="name" />
         <property name="actionProviderId" value="TemplateFragmentSwitch" />
+      </node>
+    </link>
+    <link role="entry" metaClass="aggregation">
+      <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1092914936281">
+        <property name="modifiers" value="ctrl+shift" />
+        <property name="keycode" value="VK_T" />
+        <property name="actionProviderId" value="TemplateReferenceSwitch" />
       </node>
     </link>
     <property name="name" value="_NodeMacroSwitch_KeyMap" />
@@ -323,8 +330,8 @@
             <property name="textBgColor" value="orange" />
             <property name="text" value="-&gt;${" />
             <property name="name" />
-            <property name="textBgColorSelected" value="magenta" />
             <property name="selectable" value="true" />
+            <property name="textBgColorSelected" value="magenta" />
           </node>
         </link>
         <property name="name" />
@@ -451,9 +458,11 @@
                   <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1092826515649">
                     <property name="text" value="convert to macro" />
                     <property name="drawBorder" value="false" />
+                    <property name="name" />
                   </node>
                 </link>
                 <property name="drawBorder" value="false" />
+                <property name="name" />
                 <property name="vertical" value="false" />
                 <property name="selectable" value="false" />
               </node>
@@ -505,9 +514,10 @@
               </node>
             </link>
             <property name="drawBorder" value="false" />
+            <property name="name" />
             <property name="vertical" value="true" />
-            <property name="gridLayout" value="true" />
             <property name="selectable" value="false" />
+            <property name="gridLayout" value="true" />
           </node>
         </link>
         <link role="childCellModel" metaClass="aggregation">
@@ -589,6 +599,88 @@
       </node>
     </link>
     <property name="name" value="TemplateParameterReference_Editor" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1092912261941">
+    <link role="semanticTypeDeclaration" targetNodeId="1.1092912125040" />
+    <link role="actionSetDeclaration" metaClass="aggregation">
+      <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1092912993455">
+        <link role="actionDeclaration" metaClass="aggregation">
+          <node type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_DeleteProperty" id="1092912993456">
+            <link role="propertyDeclaration" targetNodeId="1.1092912125041" />
+            <property name="name" />
+          </node>
+        </link>
+        <property name="name" value="SourceQueryActions" />
+      </node>
+    </link>
+    <link role="actionSetDeclaration" metaClass="aggregation">
+      <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1092912993457">
+        <link role="actionDeclaration" metaClass="aggregation">
+          <node type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_DeleteProperty" id="1092912993458">
+            <link role="propertyDeclaration" targetNodeId="1.1092912125042" />
+            <property name="name" />
+          </node>
+        </link>
+        <property name="name" value="ParametersBuilderActions" />
+      </node>
+    </link>
+    <link role="cellModel" metaClass="aggregation">
+      <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1092912261942">
+        <link role="childCellModel" metaClass="aggregation">
+          <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1092912261943">
+            <link role="childCellModel" metaClass="aggregation">
+              <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1092912261944">
+                <property name="text" value="templateSourceQuery_" />
+                <property name="name" />
+              </node>
+            </link>
+            <link role="childCellModel" metaClass="aggregation">
+              <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1092912261945">
+                <link role="actionSet" targetNodeId="1092912993455" />
+                <property name="name" />
+                <property name="cellProviderId" value="templateSourceQuery_CellProvider" />
+              </node>
+            </link>
+            <link role="childCellModel" metaClass="aggregation">
+              <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1092912261947">
+                <property name="text" value="(..)" />
+                <property name="name" />
+              </node>
+            </link>
+            <property name="name" />
+            <property name="vertical" value="false" />
+          </node>
+        </link>
+        <link role="childCellModel" metaClass="aggregation">
+          <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1092912261948">
+            <link role="childCellModel" metaClass="aggregation">
+              <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1092912261949">
+                <property name="text" value="templateParametersBuilder_" />
+                <property name="name" />
+              </node>
+            </link>
+            <link role="childCellModel" metaClass="aggregation">
+              <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1092912261950">
+                <link role="actionSet" targetNodeId="1092912993457" />
+                <property name="name" />
+                <property name="cellProviderId" value="templateParametersBuilder_CellProvider" />
+              </node>
+            </link>
+            <link role="childCellModel" metaClass="aggregation">
+              <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1092912261952">
+                <property name="text" value="(..)" />
+                <property name="name" />
+              </node>
+            </link>
+            <property name="name" />
+            <property name="vertical" value="false" />
+          </node>
+        </link>
+        <property name="name" />
+        <property name="vertical" value="true" />
+      </node>
+    </link>
+    <property name="name" value="TemplateReferenceMacro_Editor" />
   </node>
 </semanticModel>
 

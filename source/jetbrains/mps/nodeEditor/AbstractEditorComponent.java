@@ -184,7 +184,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           Iterator<SemanticNode> iterator = languageEditor.roots();
           while (iterator.hasNext()) {
             SemanticNode root = iterator.next();
-            System.out.println("compare editor name " + editorName + " vs " + root.getName() + " equals:" + editorName.equals(root.getName()));
+//            System.out.println("compare editor name " + editorName + " vs " + root.getName() + " equals:" + editorName.equals(root.getName()));
             if (editorName.equals(root.getName())) {
               AbstractEditorComponent editor = IdeMain.instance().getEditorsPane().openEditor(root, LEFT);
               editor.selectNode(root);
@@ -737,20 +737,20 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         EditorUtil.dumpCellsDown(mySelectedCell, 0);
         System.out.println("--- end dump ---");
         keyEvent.consume();
-        return;
+//        return;
       }
     }
 
-    // print "usages" of selected node
-    if (keyEvent.getKeyCode() == KeyEvent.VK_U && keyEvent.isControlDown()) {
-      if (mySelectedCell != null) {
-        System.out.println("--- Usages of " + mySelectedCell.getSemanticNode().getDebugText() + " ---");
-        EditorUtil.dumpUsages(mySelectedCell.getSemanticNode());
-        System.out.println("--- end dump ---");
-        keyEvent.consume();
-        return;
-      }
-    }
+//    // print "usages" of selected node
+//    if (keyEvent.getKeyCode() == KeyEvent.VK_U && keyEvent.isControlDown()) {
+//      if (mySelectedCell != null) {
+//        System.out.println("--- Usages of " + mySelectedCell.getSemanticNode().getDebugText() + " ---");
+//        EditorUtil.dumpUsages(mySelectedCell.getSemanticNode());
+//        System.out.println("--- end dump ---");
+//        keyEvent.consume();
+//        return;
+//      }
+//    }
 
     // print type info (from typesystem)
     if (keyEvent.getKeyCode() == KeyEvent.VK_T && keyEvent.isControlDown()) {
@@ -775,7 +775,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           System.out.println("--- Message: " + status.getMessage());
         }
         keyEvent.consume();
-        return;
+//        return;
       }
     }
 

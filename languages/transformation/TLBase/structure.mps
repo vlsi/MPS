@@ -99,5 +99,21 @@
     </link>
     <property name="name" value="TemplateParameterReference" />
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1092912125040">
+    <link role="extends" targetNodeId="2.1078489098625" />
+    <link role="semanticPropertyDeclaration" metaClass="aggregation">
+      <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration" id="1092912125041">
+        <link role="dataType" targetNodeId="2.1082983041843" />
+        <property name="name" value="sourceQueryAspectMethodName" />
+      </node>
+    </link>
+    <link role="semanticPropertyDeclaration" metaClass="aggregation">
+      <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration" id="1092912125042">
+        <link role="dataType" targetNodeId="2.1082983041843" />
+        <property name="name" value="templateParametersBuilderAspectMethodName" />
+      </node>
+    </link>
+    <property name="name" value="TemplateReferenceMacro" />
+  </node>
 </semanticModel>
 
