@@ -85,6 +85,15 @@ public class TextUtil {
           tag = PatternRefTag.newInstance(model);
           tag.putUserObject(ResolveUtil.ID_TO_RESOLVE, elem.getAttributeValue("name"));
         }
+        if ("figure".equals(name)) {
+          tag = FigureTag.newInstance(model);
+          ((FigureTag) tag).setSource(elem.getAttributeValue("src"));
+        }
+        if ("figureRef".equals(name)) {
+          tag = FigureRefTag.newInstance(model);
+          tag.setText(toText(model, elem));
+          tag.putUserObject(ResolveUtil.ID_TO_RESOLVE, elem.getAttributeValue("ref"));
+        }
         if (tag != null) {
           sentence.addWord(tag);
         }
@@ -216,7 +225,23 @@ public class TextUtil {
       element.addContent(target);
       return;
     }
-
+    if (word instanceof FigureTag) {
+      FigureTag tag = (FigureTag) word;
+      Element target = new Element("figure");
+      target.setAttribute("src", tag.getSource());
+      element.addContent(target);
+      return;
+    }
+    if (word instanceof FigureRefTag) {
+      FigureRefTag tag = (FigureRefTag) word;
+      Element target = new Element("figureRef");
+      if (tag.getFigure() != null) {
+        target.setAttribute("ref", tag.getFigure().getSource());
+      }
+      toElement(tag.getText(), target);
+      element.addContent(target);
+      return;
+    }
 
     element.addContent(word.getValue());
   }
