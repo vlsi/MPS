@@ -13,7 +13,7 @@ import java.util.List;
  * Author: Sergey Dmitriev.
  * Created Sep 16, 2003
  */
-public class NodeSubstituteChooser {
+public class NodeSubstituteChooser implements IKeyboardHandler {
   static final int MAX_MENU_LEN = 30;
   static final int SCROLLER_WIDTH = 7;
 
@@ -82,6 +82,7 @@ public class NodeSubstituteChooser {
   public void setVisible(boolean b) {
     if(isChooserActivated != b) {
       if(b) {
+        myEditorComponent.pushKeyboardHandler(this);
         getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize);
         myNodeSubstituteInfo.invalidateActions();
         rebuildMenuEntries();
@@ -93,6 +94,7 @@ public class NodeSubstituteChooser {
         getPopupWindow().setVisible(false);
         getPatternEditor().done();
         isPopupActivated = false;
+        myEditorComponent.popKeyboardHandler();
       }
     }
     isChooserActivated = b;
@@ -128,7 +130,11 @@ public class NodeSubstituteChooser {
     return myStrings;
   }
 
-  public boolean processKeyPressed(KeyEvent keyEvent) {
+  public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
+    return false;
+  }
+
+  public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
 
     if(getPatternEditor().processKeyPressed(keyEvent)) {
       if(isPopupActivated) {

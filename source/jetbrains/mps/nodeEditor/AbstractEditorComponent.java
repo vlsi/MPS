@@ -20,7 +20,7 @@ import java.util.List;
  * Author: Sergey Dmitriev
  * Created Sep 14, 2003
  */
-public abstract class AbstractEditorComponent extends JComponent implements Scrollable, IKeyboardHandler {
+public abstract class AbstractEditorComponent extends JComponent implements Scrollable {
 
   private JScrollPane myScrollPane;
   private JComponent myContainer;
@@ -57,7 +57,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     // --- keyboard handling ---
     myKbdHandlersStack = new Stack<IKeyboardHandler>();
-    myKbdHandlersStack.push((IKeyboardHandler) this);
+    myKbdHandlersStack.push(new EditorComponentKeyboardHandler());
 
     // --- init action map --
     myActionMap = new HashMap();
@@ -164,11 +164,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if(keyEvent.getKeyCode() == KeyEvent.VK_DOWN && keyEvent.getModifiers() == 0) {
       return EditorCellAction.DOWN;
     }
-//    if (keyEvent.getKeyCode() == KeyEvent.VK_INSERT && keyEvent.isControlDown() && keyEvent.isShiftDown()) {
     if(keyEvent.getKeyCode() == KeyEvent.VK_INSERT && keyEvent.getModifiers() == 0) {
       return EditorCellAction.INSERT_BEFORE;
     }
-//    if (keyEvent.getKeyCode() == KeyEvent.VK_INSERT && keyEvent.isControlDown()) {
     if(keyEvent.getKeyCode() == KeyEvent.VK_ENTER && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
       return EditorCellAction.INSERT;
     }
@@ -205,7 +203,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       // caret at the end of text ?
       String text = labelCell.getText();
       int caretPosition = labelCell.getTextLine().getCaretPosition();
-      System.out.println("text:" + text + " len:" + text.length() + "caret at:" + caretPosition);
+      //System.out.println("text:" + text + " len:" + text.length() + "caret at:" + caretPosition);
       if(caretPosition == text.length()) {
         return EditorCellAction.RIGHT_TRANSFORM;
       }
@@ -230,6 +228,18 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     return null;
+  }
+
+  boolean executeComponentAction(String actionType) {
+    if(actionType == null) {
+      return false;
+    }
+    EditorCellAction action = (EditorCellAction) myActionMap.get(actionType);
+    if(action != null && action.canExecute(getContext())) {
+      action.execute(getContext());
+      return true;
+    }
+    return false;
   }
 
   public void relayout() {
@@ -372,43 +382,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return cell;
   }
 
-  public boolean executeAction(EditorCell cell, String actionType) {
-    if(executeCellAction(cell, actionType)) {
-      return true;
-    }
-    return executeGlobalAction(actionType);
-  }
-
-  private boolean executeCellAction(EditorCell cell, String actionType) {
-    EditorCellAction action = getCellAction(cell, actionType);
-    if(action != null) {
-      action.execute(getContext());
-      return true;
-    }
-    return false;
-  }
-
-  private boolean executeGlobalAction(String actionType) {
-    EditorCellAction action = getGlobalAction(actionType);
-    if(action != null) {
-      action.execute(getContext());
-      return true;
-    }
-    return false;
-  }
-
-  private void dumpCells(EditorCell cell, int level) {
-    char[] prefix = new char[level * 2];
-    Arrays.fill(prefix, ' ');
-    System.out.println(String.valueOf(prefix) + cell.getDebugText());
-    if(cell instanceof EditorCell_Collection) {
-      Iterator<EditorCell> iterator = ((EditorCell_Collection) cell).cells();
-      while(iterator.hasNext()) {
-        dumpCells(iterator.next(), level + 1);
-      }
-    }
-  }
-
   private void processMousePressed(MouseEvent mouseEvent) {
     requestFocus();
     processCoordSelection(mouseEvent, true);
@@ -544,31 +517,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return mySelectedCell;
   }
 
-  // ----- actions map -----
-
-  private EditorCellAction getGlobalAction(String type) {
-    if(type == null) {
-      return null;
-    }
-    EditorCellAction action = (EditorCellAction) myActionMap.get(type);
-    if(action != null && action.canExecute(getContext())) {
-      return action;
-    }
-    return null;
-  }
-
-  private EditorCellAction getCellAction(EditorCell cell, String type) {
-    if(cell != null) {
-      EditorCellAction action = cell.getAction(type);
-      if(action != null && ((EditorCellAction) action).canExecute(getContext())) {
-        System.out.println("AbstractEditorComponent - action:" + type + " from cell:" + cell.getDebugText());
-        return action;
-      }
-      return getCellAction(cell.getParent(), type);
-    }
-    return null;
-  }
-
   public IKeyboardHandler peekKeyboardHandler() {
     return myKbdHandlersStack.peek();
   }
@@ -625,17 +573,21 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if(keyEvent.getKeyCode() == KeyEvent.VK_D && keyEvent.isControlDown()) {
       if(mySelectedCell != null) {
         System.out.println("--- Dump cells ---");
-        dumpCells(mySelectedCell, 0);
+        EditorUtil.dumpCells(mySelectedCell, 0);
         keyEvent.consume();
         return;
       }
     }
+
+    // multiple selection of adjacent cells
+    //if()
 
     // all other processing should be performed inside command
 
     CommandProcessor.instance().executeCommand(getContext(), new Runnable() {
       public void run() {
         if(peekKeyboardHandler().processKeyPressed(getContext(), keyEvent) == true) {
+          keyEvent.consume();
           return;
         }
       }
@@ -644,159 +596,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return;
   }
 
-  /**
-   * from IKeyboardHandler
-   */
-  public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
-    return false;
-  }
-
-  /**
-   * from IKeyboardHandler
-   */
-  public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
-    if(myNodeSubstituteChooser.isVisible()) {
-      if(myNodeSubstituteChooser.processKeyPressed(keyEvent)) {
-        keyEvent.consume();
-        return true;
-      }
-    }
-
-    String actionType = getActionType(keyEvent, editorContext);
-
-    // pre-process action
-
-    if(mySelectedCell != null) {
-      boolean endEditKeystroke = (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && !(keyEvent.isControlDown() || keyEvent.isAltDown() || keyEvent.isShiftDown()));
-      boolean deleteKeystroke = (keyEvent.getKeyCode() == KeyEvent.VK_DELETE && !(keyEvent.isControlDown() || keyEvent.isAltDown() || keyEvent.isShiftDown()));
-
-      if(endEditKeystroke ||
-          actionType == EditorCellAction.RIGHT_TRANSFORM ||
-          actionType == EditorCellAction.INSERT ||
-          actionType == EditorCellAction.INSERT_BEFORE) {
-        if(!isValidCell(mySelectedCell) &&
-            !validateCell(mySelectedCell)) {  // !side effect: can change selection!
-          keyEvent.consume();
-          return true;
-        }
-
-        // no selection any more - very strange
-        if(mySelectedCell == null) {
-          keyEvent.consume();
-          return true;
-        }
-      }
-
-      // we may want to change action Type as result of pre-processing
-      if(endEditKeystroke) {
-        actionType = EditorCellAction.NEXT;
-        keyEvent.consume();
-
-      } else if(deleteKeystroke) {
-        if(!(mySelectedCell instanceof EditorCell_Label &&
-            ((EditorCell_Label) mySelectedCell).isEditable())) {
-          actionType = EditorCellAction.DELETE;
-          keyEvent.consume();
-        }
-
-      } else if(actionType == EditorCellAction.RIGHT_TRANSFORM &&
-          getCellAction(mySelectedCell, actionType) == null) {
-        if(mySelectedCell instanceof EditorCell_Constant) {
-          actionType = EditorCellAction.RIGHT_SPECIAL;
-          keyEvent.consume();
-        }
-        if(mySelectedCell instanceof EditorCell_Property) {
-          String text = ((EditorCell_Property) mySelectedCell).getText();
-          if(!((EditorCell_Property) mySelectedCell).getModelAccessor().isValidText(text + " ")) {
-            actionType = EditorCellAction.RIGHT_SPECIAL;
-            keyEvent.consume();
-          }
-        }
-      }
-    }
-
-    // process action
-
-    if(mySelectedCell != null) {
-
-      if(actionType != null) {
-        if(executeCellAction(mySelectedCell, actionType)) {
-          keyEvent.consume();
-          return true;
-        }
-      }
-
-      if(!keyEvent.isConsumed()) {
-
-        EditorCell oldSelection = mySelectedCell;
-        if(mySelectedCell.processKeyPressed(keyEvent) == true) {
-          if(oldSelection != mySelectedCell) {
-            mySelectedStack.removeAllElements();
-          }
-          keyEvent.consume();
-          return true;
-        }
-
-        // auto-completion (AKA node substitution)
-        if((keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown() && !(keyEvent.isAltDown() || keyEvent.isShiftDown())) ||
-            (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && keyEvent.isAltDown() && !(keyEvent.isControlDown() || keyEvent.isShiftDown()))) {
-          if(activateNodeSubstituteChooser(mySelectedCell, keyEvent.getKeyCode() == KeyEvent.VK_ENTER)) {
-            keyEvent.consume();
-            System.out.println("SUBSTITUTE");
-            return true;
-          }
-          System.out.println("NO SUBSTITUTE");
-        }
-
-      } // if (!keyEvent.isConsumed())
-    } // if (mySelectedCell != null)
-
-    if(actionType != null) {
-      if(executeGlobalAction(actionType)) {
-        keyEvent.consume();
-        return true;
-      }
-    }
-
-    // special case - don't allow kbd focus to leave editor area
-    if(keyEvent.getKeyCode() == KeyEvent.VK_UP && keyEvent.isControlDown()) {
-      keyEvent.consume();
-    }
-
-    return false;
-  }
-
-  private boolean isValidCell(EditorCell cell) {
-    if(cell instanceof EditorCell_Label) {
-      EditorCell_Label labelCell = (EditorCell_Label) cell;
-      if(labelCell.isErrorState()) {
-        return false;
-      }
-    }
-    return true;
-  }
-
-  private boolean validateCell(EditorCell cell) {
-    INodeSubstituteInfo substituteInfo = cell.getSubstituteInfo();
-    if(substituteInfo == null) {
-      return false;
-    }
-
-    String pattern = "";
-    if(cell instanceof EditorCell_Label) {
-      pattern = ((EditorCell_Label) cell).getText();
-    }
-    List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(pattern);
-    if(matchingActions.size() != 1) {
-      activateNodeSubstituteChooser(cell, false);
-      return false;
-    }
-
-    CommandUtil.substituteNode(matchingActions.get(0), pattern, substituteInfo, this.getContext());
-    return true;
-  }
-
-  private boolean activateNodeSubstituteChooser(EditorCell editorCell, boolean resetPattern) {
+  boolean activateNodeSubstituteChooser(EditorCell editorCell, boolean resetPattern) {
     if(myNodeSubstituteChooser.isVisible()) {
       return true;
     }
