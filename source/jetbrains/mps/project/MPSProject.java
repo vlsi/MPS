@@ -63,6 +63,7 @@ public class MPSProject implements ModelLocator {
     addComponent(ProjectModels.class, new ProjectModels(this));
     addComponent(ExecutionManager.class, new ExecutionManager());
     addComponent(RootManager.class, myRootManager);
+    addComponent(GeneratorConfigurationManager.class, new GeneratorConfigurationManager());
   }
 
   public List<Object> getComponents() {
