@@ -93,5 +93,58 @@
       <link role="dataType" targetNodeId="2.1082983041843" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1095416546421">
+    <property name="name" value="TemplateMappingConfiguration" />
+    <link role="extends" targetNodeId="2.1078489098625" />
+    <node role="semanticLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration" id="1095416692159">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="targetCardinality" value="1" />
+      <property name="role" value="mappingRule" />
+      <property name="metaClass" value="aggregation" />
+      <property name="name" />
+      <link role="target" targetNodeId="1095416572297" />
+    </node>
+    <node role="semanticLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration" id="1095416692160">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="targetCardinality" value="1" />
+      <property name="role" value="weavingRule" />
+      <property name="metaClass" value="aggregation" />
+      <property name="name" />
+      <link role="target" targetNodeId="1095416624611" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1095416572297">
+    <property name="name" value="TemplateMappingRule" />
+    <link role="extends" targetNodeId="2.1078489098625" />
+    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration" id="1095440741546">
+      <property name="name" value="sourceQueryAspectId" />
+      <link role="dataType" targetNodeId="2.1082983041843" />
+    </node>
+    <node role="semanticLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration" id="1095417265990">
+      <property name="sourceCardinality" value="1" />
+      <property name="targetCardinality" value="0..n" />
+      <property name="role" value="templateNode" />
+      <property name="name" />
+      <link role="target" targetNodeId="2.1078489098625" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1095416624611">
+    <property name="name" value="TemplateWeavingRule" />
+    <link role="extends" targetNodeId="2.1078489098625" />
+    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration" id="1095418755477">
+      <property name="name" value="sourceQueryAspectId" />
+      <link role="dataType" targetNodeId="2.1082983041843" />
+    </node>
+    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration" id="1095418755478">
+      <property name="name" value="contextProviderAspectId" />
+      <link role="dataType" targetNodeId="2.1082983041843" />
+    </node>
+    <node role="semanticLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration" id="1095418098242">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="template" />
+      <property name="name" />
+      <link role="target" targetNodeId="1092059087312" />
+    </node>
+  </node>
 </semanticModel>
 
