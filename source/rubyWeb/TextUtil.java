@@ -217,6 +217,7 @@ public class TextUtil {
       }
       toElement(tag.getText(), target);
       element.addContent(target);
+      return;
     }
     if (word instanceof CiteTag) {
       CiteTag tag = (CiteTag) word;
