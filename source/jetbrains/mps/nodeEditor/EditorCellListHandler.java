@@ -94,7 +94,10 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
   }
 
   protected EditorCell createEmptyCell(EditorContext editorContext) {
-    return EditorCell_Constant.create(editorContext, getOwner(), " << " + myReferenceRole + " >>", true);
+    EditorCell_Constant emptyCell = EditorCell_Constant.create(editorContext, getOwner(), " << " + myReferenceRole + " >>", true);
+    // empty list - don't delete the list owner
+    emptyCell.setAction(EditorCellAction.DELETE, new Empty_CellAction());
+    return emptyCell;
   }
 
   public abstract SemanticNode createNodeToInsert();
