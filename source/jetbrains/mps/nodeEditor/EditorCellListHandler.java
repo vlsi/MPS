@@ -1,6 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration;
 
 import java.awt.event.KeyEvent;
 import java.util.Iterator;
@@ -94,7 +95,6 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
   }
 
   protected EditorCell createEmptyCell(EditorContext editorContext) {
-    //EditorCell_Constant emptyCell = EditorCell_Constant.create(editorContext, getOwner(), " << " + myReferenceRole + " >>", true);
     EditorCell_Constant emptyCell = EditorCell_Constant.create(editorContext, getOwner(), " << ... >>", true);
     // empty list - don't delete the list owner
     emptyCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
@@ -150,6 +150,22 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
       }
       return myInsertCell;
     }
+
+//    // if not aggregation - register internal delete action
+//    if(!SemanticLinkDeclaration.AGGREGATION.equals(myRefernceMetaclass)) {
+//      nodeCell.setAction(EditorCellAction.DELETE, new EditorCellAction(){
+//        public boolean canExecute(EditorContext context) {
+//          return true;
+//        }
+//
+//        public void execute(EditorContext context) {
+//          SemanticNode elementNode = context.getNodeEditorComponent().getSelectedCell().getSemanticNode();
+//          myOwnerNode.removeReferences(myReferenceRole, elementNode);
+//          myOwnerNode.getSemanticModel().fireModelChangedDramaticallyEvent();
+//        }
+//      });
+//    }
+
     return nodeCell;
   }
 

@@ -121,7 +121,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     myRootCell = rootCell;
-    System.out.println("setRootCell root node: " + (myRootCell.getSemanticNode() != null ? myRootCell.getSemanticNode().getDebugText() : "NULL"));
+//    System.out.println("setRootCell root node: " + (myRootCell.getSemanticNode() != null ? myRootCell.getSemanticNode().getDebugText() : "NULL"));
     myRootCell.setX(myShiftX);
     myRootCell.setY(myShiftY);
     myRootCell.relayout();
@@ -345,7 +345,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     mySelectedStack.clear();
 
     setRootCell(createRootCell());
-    System.out.println("rebuildEditorContent root node: " + (myRootCell.getSemanticNode() != null ? myRootCell.getSemanticNode().getDebugText() : "NULL"));
+//    System.out.println("rebuildEditorContent root node: " + (myRootCell.getSemanticNode() != null ? myRootCell.getSemanticNode().getDebugText() : "NULL"));
 
     EditorCell newSelection = null;
     if (selectionPoint != null) {
