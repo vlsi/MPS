@@ -9,9 +9,7 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
-import jetbrains.mps.nodeEditor.ModelAccessor;
-import jetbrains.mps.nodeEditor.PropertyAccessor;
-import jetbrains.mps.nodeEditor.EditorCell_Property;
+import jetbrains.mps.sample.ParameterDeclaration_Editor_Template;
 
 public class ParameterDeclaration_Editor extends SemanticNodeEditor {
 
@@ -26,7 +24,7 @@ public class ParameterDeclaration_Editor extends SemanticNodeEditor {
     editorCell.setGridLayout(false);
     ParameterDeclaration_NodeBoxActions.setCellActions(editorCell, node);
     editorCell.addEditorCell(this.createTypeCell(editorContext, node));
-    editorCell.addEditorCell(this.createNameCell(editorContext, node));
+    editorCell.addEditorCell(this.createTemplateCell(editorContext, node));
     return editorCell;
   }
   public EditorCell createTypeCell(EditorContext editorContext, SemanticNode node) {
@@ -41,10 +39,15 @@ public class ParameterDeclaration_Editor extends SemanticNodeEditor {
     }
     return editorCell;
   }
+<<<<<<< ParameterDeclaration_Editor.java
+  public EditorCell createTemplateCell(EditorContext editorContext, SemanticNode node) {
+    EditorCell editorCell = ParameterDeclaration_Editor_Template.create(editorContext, node);
+=======
   public EditorCell createNameCell(EditorContext editorContext, SemanticNode node) {
     ModelAccessor modelAccessor = new PropertyAccessor(node, "name", true);
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node, true);
     editorCell.setDefaultText("?");
+>>>>>>> 1.14
     return editorCell;
   }
 }

@@ -10,9 +10,7 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
-import jetbrains.mps.nodeEditor.ModelAccessor;
-import jetbrains.mps.nodeEditor.PropertyAccessor;
-import jetbrains.mps.nodeEditor.EditorCell_Property;
+import jetbrains.mps.sample.InstanceMethodDeclaration_Editor_Template;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class InstanceMethodDeclaration_Editor extends SemanticNodeEditor {
@@ -41,7 +39,7 @@ public class InstanceMethodDeclaration_Editor extends SemanticNodeEditor {
     editorCell.setSelectable(true);
     editorCell.setGridLayout(false);
     editorCell.addEditorCell(this.createReturnType(editorContext, node));
-    editorCell.addEditorCell(this.createMethodName(editorContext, node));
+    editorCell.addEditorCell(this.createTemplateCell(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell(editorContext, node, "("));
     editorCell.addEditorCell(this.createParametersList(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell1(editorContext, node, ")"));
@@ -59,10 +57,15 @@ public class InstanceMethodDeclaration_Editor extends SemanticNodeEditor {
     }
     return editorCell;
   }
+<<<<<<< InstanceMethodDeclaration_Editor.java
+  public EditorCell createTemplateCell(EditorContext editorContext, SemanticNode node) {
+    EditorCell editorCell = InstanceMethodDeclaration_Editor_Template.create(editorContext, node);
+=======
   public EditorCell createMethodName(EditorContext editorContext, SemanticNode node) {
     ModelAccessor modelAccessor = new PropertyAccessor(node, "name", true);
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node, true);
     editorCell.setDefaultText("?");
+>>>>>>> 1.14
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
