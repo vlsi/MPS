@@ -24,10 +24,6 @@
           <property name="queryId" value="TemplateParameters" />
           <property name="textProviderId" value="SemanticNodeNameText" />
         </node>
-        <node role="substituteQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1092152998378">
-          <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1092152998379" />
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1092152998380" />
-        </node>
       </node>
     </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1087903454704">
@@ -83,10 +79,6 @@
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1096644905071">
           <property name="name" value="templateFragment" />
           <property name="queryId" value="TemplateFragments" />
-        </node>
-        <node role="substituteQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1096644838035">
-          <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1096644852287" />
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1096644852288" />
         </node>
       </node>
     </node>
@@ -191,10 +183,6 @@
           <property name="queryId" value="TemplateParameters" />
           <property name="textProviderId" value="SemanticNodeNameText" />
         </node>
-        <node role="substituteQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1092144702154">
-          <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1092144702155" />
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1092144702156" />
-        </node>
       </node>
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1088763040904">
@@ -250,10 +238,6 @@
           <property name="descriptionProviderId" value="SemanticNode_ModelFQName" />
           <property name="queryId" value="Language_SemanticTypeDeclarations" />
           <property name="textProviderId" value="SemanticNodeNameText" />
-        </node>
-        <node role="substituteQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1092137340909">
-          <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1092137340910" />
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1092137340911" />
         </node>
       </node>
     </node>
