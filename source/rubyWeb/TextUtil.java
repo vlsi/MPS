@@ -1,13 +1,11 @@
 package rubyWeb;
 
 import jetbrains.textLanguage.*;
+import jetbrains.textLanguage.Tag;
 import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.util.CollectionUtil;
 import org.jdom.Element;
-import rubyWeb.paper.BoldTag;
-import rubyWeb.paper.ItalicTag;
-import rubyWeb.paper.TermTag;
-import rubyWeb.paper.CiteTag;
+import rubyWeb.paper.*;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -170,6 +168,27 @@ public class TextUtil {
       Element italic = new Element("cite");
       element.addContent(italic);
       toElement(tag.getText(), italic);
+      return;
+    }
+
+    if (word instanceof XRefTag) {
+      XRefTag tag = (XRefTag) word;
+      Element xref = new Element("xref");
+      if (tag.getTarget() != null) {
+        xref.setAttribute("targetID", tag.getTarget().getName());
+      }
+      toElement(tag.getText(), xref);
+      element.addContent(xref);
+      return;
+    }
+
+    if (word instanceof XRefTargetTag) {
+      XRefTargetTag tag = (XRefTargetTag) word;
+      Element target = new Element("xref-target");
+      target.setAttribute("ID", tag.getName());
+      target.setAttribute("file", "paper.xml");
+      toElement(tag.getText(), target);
+      element.addContent(target);
       return;
     }
 
