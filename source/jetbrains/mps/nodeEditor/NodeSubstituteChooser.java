@@ -168,10 +168,6 @@ public class NodeSubstituteChooser {
             changedNode.getSemanticModel().fireNodeAddedEvent(changedNode);
           }
         }
-//        if(keyEvent.getKeyCode() == KeyEvent.VK_SPACE) {
-//          // don't consume the event - lets node editor process it with new context
-//          return false;
-//        }
       }
       return true;
     }
@@ -212,10 +208,6 @@ public class NodeSubstituteChooser {
             changedNode.getSemanticModel().fireNodeAddedEvent(changedNode);
           }
         }
-//        if(keyEvent.getKeyCode() == KeyEvent.VK_SPACE) {
-//          // don't consume the event - lets node editor process it with new context
-//          return false;
-//        }
       }
       return true;
     }

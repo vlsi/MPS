@@ -368,7 +368,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public void processKeyPressed(final KeyEvent keyEvent) {
 
-    // hardcoded undo/redo action should be performed outside command
+    // hardcoded actions which should be excuted outside command
+
+    // hardcoded undo/redo action
     if(keyEvent.getKeyCode() == KeyEvent.VK_Z && keyEvent.isControlDown()) {
       if(keyEvent.isShiftDown()) {
         if(UndoManager.instance().isRedoAvailable(getContext())) {
@@ -383,18 +385,29 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return;
     }
 
+    // hardcoded "update" action
+    if(keyEvent.getKeyCode() == KeyEvent.VK_F5) {
+      rebuildEditorContent();
+      keyEvent.consume();
+      return;
+    }
+
+    // dump cells tree starting from current
+    if(keyEvent.getKeyCode() == KeyEvent.VK_D && keyEvent.isControlDown()) {
+      if(mySelectedCell != null) {
+        System.out.println("--- Dump cells ---");
+        dumpCells(mySelectedCell, 0);
+        keyEvent.consume();
+        return;
+      }
+    }
+
     // all other processing should be performed inside command
+
     CommandProcessor.instance().executeCommand(getContext(), new Runnable() {
       public void run() {
         if(peekKeyboardHandler().processKeyPressed(getContext(), keyEvent) == true) {
           return;
-        }
-
-        String actionType = getActionType(keyEvent);
-        if(actionType != null) {
-          if(executeAction(mySelectedCell, actionType)) {
-            keyEvent.consume();
-          }
         }
       }
     }, null);
@@ -403,10 +416,31 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public boolean executeAction(EditorCell cell, String actionType) {
-    EditorCellAction action = getCellAction(cell, actionType);
-    if(action == null) {
-      action = getAction(actionType);
+//    EditorCellAction action = getCellAction(cell, actionType);
+//    if(action == null) {
+//      action = getGlobalAction(actionType);
+//    }
+//    if(action != null) {
+//      action.execute(getContext());
+//      return true;
+//    }
+    if(executeCellAction(cell, actionType)) {
+      return true;
     }
+    return executeGlobalAction(actionType);
+  }
+
+  private boolean executeCellAction(EditorCell cell, String actionType) {
+    EditorCellAction action = getCellAction(cell, actionType);
+    if(action != null) {
+      action.execute(getContext());
+      return true;
+    }
+    return false;
+  }
+
+  private boolean executeGlobalAction(String actionType) {
+    EditorCellAction action = getGlobalAction(actionType);
     if(action != null) {
       action.execute(getContext());
       return true;
@@ -600,7 +634,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   // ----- actions map -----
 
-  private EditorCellAction getAction(String type) {
+  private EditorCellAction getGlobalAction(String type) {
     if(type == null) {
       return null;
     }
@@ -752,6 +786,15 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
       }
 
+      // process registered cell's actions
+      String actionType = getActionType(keyEvent);
+      if(actionType != null) {
+        if(executeCellAction(mySelectedCell, actionType)) {
+          keyEvent.consume();
+          return true;
+        }
+      }
+
       if(mySelectedCell != null) {
         EditorCell oldSelection = mySelectedCell;
         if(mySelectedCell.processKeyPressed(keyEvent) == true) {
@@ -761,34 +804,23 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           keyEvent.consume();
           return true;
         }
-      }
 
-      if(keyEvent.getKeyCode() == KeyEvent.VK_F5) {
-        rebuildEditorContent();
-        keyEvent.consume();
-        return true;
-      }
-
-      if(mySelectedCell == null) {
-        return false;
-      }
-
-      // auto-completion (i.e. node substitution)
-      if((keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown()) ||
-          (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && !keyEvent.isControlDown())) {
-        if(activateNodeSubstituteChooser(mySelectedCell, keyEvent.getKeyCode() == KeyEvent.VK_ENTER)) {
-          keyEvent.consume();
-          System.out.println("SUBSTITUTE");
-          return true;
+        // auto-completion (i.e. node substitution)
+        if((keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown()) ||
+            (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && !keyEvent.isControlDown())) {
+          if(activateNodeSubstituteChooser(mySelectedCell, keyEvent.getKeyCode() == KeyEvent.VK_ENTER)) {
+            keyEvent.consume();
+            System.out.println("SUBSTITUTE");
+            return true;
+          }
+          System.out.println("NO SUBSTITUTE");
         }
-        System.out.println("NO SUBSTITUTE");
       }
 
-      // dump cells tree starting from current
-      if(keyEvent.getKeyCode() == KeyEvent.VK_D && keyEvent.isControlDown()) {
-        if(mySelectedCell != null) {
-          System.out.println("--- Dump cells ---");
-          dumpCells(mySelectedCell, 0);
+      if(actionType != null) {
+        if(executeGlobalAction(actionType)) {
+          keyEvent.consume();
+          return true;
         }
       }
       return false;

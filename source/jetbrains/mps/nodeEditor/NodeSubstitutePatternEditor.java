@@ -177,9 +177,6 @@ public class NodeSubstitutePatternEditor {
       }
 
       char keyChar = keyEvent.getKeyChar();
-      if(keyChar == KeyEvent.VK_SPACE && keyEvent.getModifiers() == 0) {
-        return true;
-      }
       if(KeyboardUtil.isDefaultAction(keyEvent.getKeyCode(), keyChar)) {
         changeText(myText.substring(0, caretPosition) + keyChar/* + myText.substring(caretPosition)*/);
         myTextLine.setCaretPosition(caretPosition + 1);
