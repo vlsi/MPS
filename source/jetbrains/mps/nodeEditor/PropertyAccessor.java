@@ -25,6 +25,10 @@ public class PropertyAccessor implements ModelAccessor {
     myPropertyDeclaration = SemanticModelUtil.getPropertyDeclaration(node, propertyName);
   }
 
+  public String getPropertyName() {
+    return myPropertyName;
+  }
+
   public String getText() {
     String value = myNode.getProperty(myPropertyName);
     return fromInternal(value);

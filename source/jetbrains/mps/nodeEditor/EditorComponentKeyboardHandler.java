@@ -20,13 +20,10 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
     // precess cell keymaps first
     if (selectedCell != null && EditorUtil.isValidCell(selectedCell)) {
-      EditorCellKeyMap keyMap = selectedCell.getKeyMap();
-      if (keyMap != null) {
-        EditorCellKeyMapAction keyMapAction = keyMap.getAction(keyEvent);
-        if (keyMapAction != null && keyMapAction.canExecute(keyEvent, editorContext)) {
-          keyMapAction.execute(keyEvent, editorContext);
-          return true;
-        }
+      EditorCellKeyMapAction cellKeyMapAction = EditorUtil.getCellKeyMapAction(selectedCell, keyEvent, editorContext);
+      if (cellKeyMapAction != null) {
+        cellKeyMapAction.execute(keyEvent, editorContext);
+        return true;
       }
     }
 
