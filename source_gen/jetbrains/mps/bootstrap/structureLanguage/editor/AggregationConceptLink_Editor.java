@@ -33,13 +33,13 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createConceptLinkDeclarationReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "="));
-    editorCell.addEditorCell(this.createTargetReferenceCell(context, node));
+    editorCell.addEditorCell(this.createTargetCell(context, node));
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
@@ -78,32 +78,29 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     AggregationConceptLink_ConceptLinks_Menu.setCellActions(editorCell, node);
     return editorCell;
   }
-  public EditorCell createTargetReferenceCell(EditorContext context, SemanticNode node) {
-    SemanticNode effectiveNode = null;
-    effectiveNode = node.getChild("target");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "target");
-    if(effectiveNode == null) {
+  public EditorCell createTargetCell(EditorContext context, SemanticNode node) {
+    SemanticNode referencedNode = null;
+    referencedNode = node.getChild("target");
+    if(referencedNode == null) {
       {
-        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "<no target>");
+        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "target");
         noRefCell.setEditable(true);
+        noRefCell.setSelectable(true);
+        noRefCell.setDrawBorder(false);
         noRefCell.setDrawBrackets(false);
         noRefCell.setBracketsColor(Color.black);
-        noRefCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
-        noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        AggregationConceptLink_ConceptLinkTargets_Menu.setCellActions(noRefCell, node);
         return noRefCell;
       }
     }
-    AbstractCellProvider inlineComponent = new AggregationConceptLink_Editor_target_InlineComponent(effectiveNode);
-    EditorCell editorCell = inlineComponent.createEditorCell(context);
-    EditorUtil.setSemanticNodeToCells(editorCell, node);
+    EditorCell editorCell = context.createNodeCell(referencedNode);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
-    editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    AggregationConceptLink_ConceptLinkTargets_Menu.setCellActions(editorCell, node);
     return editorCell;
   }
 }
