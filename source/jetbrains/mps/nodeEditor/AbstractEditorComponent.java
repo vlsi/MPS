@@ -194,7 +194,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private JMenu createGoByReferenceMenu(SemanticNode node) {
     JMenu menu = new JMenu("Go By Reference");
-    List<SemanticReference> references = node.getReferences__old();
+    List<SemanticReference> references = node.getReferences();
     if (references.size() == 0) {
       menu.add("no references");
     }
