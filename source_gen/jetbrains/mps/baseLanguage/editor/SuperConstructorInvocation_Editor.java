@@ -29,7 +29,7 @@ public class SuperConstructorInvocation_Editor extends SemanticNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.addEditorCell(this.createConstantCell(editorContext, node, "super("));
     editorCell.addEditorCell(this.createActualArgumentList(editorContext, node));
-    editorCell.addEditorCell(this.createConstantCell2(editorContext, node, ")"));
+    editorCell.addEditorCell(this.createConstantCell2(editorContext, node, ");"));
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
