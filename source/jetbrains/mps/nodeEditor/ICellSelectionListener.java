@@ -7,5 +7,5 @@
 package jetbrains.mps.nodeEditor;
 
 public interface ICellSelectionListener {
-  void selectionChanged(EditorCell oldSelection, EditorCell newSelection);
+  void selectionChanged(AbstractEditorComponent editor, EditorCell oldSelection, EditorCell newSelection);
 }

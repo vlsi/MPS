@@ -492,7 +492,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     Iterator<ICellSelectionListener> iterator = mySelectionListeners.iterator();
     while (iterator.hasNext()) {
       ICellSelectionListener cellSelectionListener = iterator.next();
-      cellSelectionListener.selectionChanged(oldSelection, newSelection);
+      cellSelectionListener.selectionChanged(this, oldSelection, newSelection);
     }
   }
 

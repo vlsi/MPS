@@ -47,4 +47,8 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
     }
     return getContext().createInspectedCell(myInspectedNode);
   }
+
+  public SemanticNode getInspectedNode() {
+    return myInspectedNode;
+  }
 }

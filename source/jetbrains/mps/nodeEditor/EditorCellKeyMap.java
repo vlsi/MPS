@@ -72,7 +72,7 @@ public class EditorCellKeyMap {
       ActionKey actionKey = actionKeies.get(i);
       EditorCellKeyMapAction editorCellAction = myActionMap.get(actionKey);
       if (editorCellAction != null) {
-        System.out.println("key map action found for key: " + actionKey);
+        System.out.println("keymap action found for key: " + actionKey);
         return editorCellAction;
       }
     }
@@ -89,7 +89,7 @@ public class EditorCellKeyMap {
         for (int iKey = 0; iKey < keyCodes.size(); iKey++) {
           String keyKode = keyCodes.get(iKey);
           ActionKey actionKey = new ActionKey(modifier, keyKode);
-          System.out.println("key map add action key: " + actionKey);
+//          System.out.println("key map add action key: " + actionKey);
           keys.add(actionKey);
         }
       }
