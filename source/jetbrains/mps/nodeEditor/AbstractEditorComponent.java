@@ -864,6 +864,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     // do substitute...
+    System.out.println("substitute info : " + substituteInfo);
     NodeSubstitutePatternEditor patternEditor = editorCell.createSubstitutePatternEditor();
     if (resetPattern) {
       patternEditor.setCaretPosition(0);

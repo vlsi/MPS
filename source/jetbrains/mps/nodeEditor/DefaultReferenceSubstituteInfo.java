@@ -7,8 +7,6 @@ import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration;
-import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.semanticModel.SemanticModel;
 import jetbrains.mps.semanticModel.SemanticModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
 
@@ -27,6 +25,10 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
     if (linkDeclaration.getMetaClass() == LinkMetaclass.aggregation) {
       throw new RuntimeException("Only reference links are allowed here.");
     }
+    Cardinality sourceCardinality = myLinkDeclaration.getSourceCardinality();
+    if (sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._0_1) {
+      throw new RuntimeException("Only cardinalities 1 or 0..1 are allowed here.");
+    }
   }
 
   public List<INodeSubstituteItem> createActions() {
@@ -36,17 +38,10 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
     for (final SemanticNode targetNode : targetSemanticNodes) {
       list.add(new AbstractNodeSubstituteItem() {
         public String getMatchingText(String pattern) {
-//          if(targetNode instanceof SemanticTypeDeclaration) {
-//            return EditorUtil.matchingTextForType((SemanticTypeDeclaration)targetNode);
-//          }
           return targetNode.getName();
         }
 
         public String getDescriptionText(String pattern) {
-//          if (targetNode instanceof SemanticTypeDeclaration) {
-//            return EditorUtil.presentableNameForType((SemanticTypeDeclaration) targetNode);
-//          }
-//          return JavaNameUtil.shortName(targetNode.getClass().getName());
           return targetNode.getSemanticModel().getFQName();
         }
 
@@ -79,28 +74,6 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
         list.add(node);
       }
     }
-
-//    // look through roots in current model
-//    SemanticModel sourceModel = mySourceNode.getSemanticModel();
-//    Iterator roots = sourceModel.roots();
-//    while (roots.hasNext()) {
-//      SemanticNode node = (SemanticNode) roots.next();
-//      if (!list.contains(node) && SemanticModelUtil.isInstanceOfType(node, targetType)) {
-//        list.add(node);
-//      }
-//    }
-//    // look through imported models
-//    Iterator importedModels = sourceModel.importedModels();
-//    while (importedModels.hasNext()) {
-//      SemanticModel importedModel = (SemanticModel) importedModels.next();
-//      Iterator importedRoots = importedModel.roots();
-//      while (importedRoots.hasNext()) {
-//        SemanticNode importedRoot = (SemanticNode) importedRoots.next();
-//        if (!list.contains(importedRoot) && SemanticModelUtil.isInstanceOfType(importedRoot, targetType)) {
-//          list.add(importedRoot);
-//        }
-//      }
-//    }
 
     list.addAll(SemanticModelUtil.allInstancesOfType(targetType, mySourceNode.getSemanticModel()));
     return list;
