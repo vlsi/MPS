@@ -182,9 +182,11 @@ public class TextUtil {
 
     if (word instanceof CiteTag) {
       CiteTag tag = (CiteTag) word;
-      Element italic = new Element("cite");
-      element.addContent(italic);
-      toElement(tag.getText(), italic);
+      Element target = new Element("cite");
+      if (tag.getBibliographyReference() != null) {
+        target.setAttribute("name", tag.getBibliographyReference().getName());
+      }
+      element.addContent(target);
       return;
     }
 
@@ -216,6 +218,7 @@ public class TextUtil {
       element.addContent(target);
       return;
     }
+
 
     element.addContent(word.getValue());
   }
