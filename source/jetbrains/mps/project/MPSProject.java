@@ -147,6 +147,10 @@ public class MPSProject implements ModelLocator {
     if (modelPath != null && (new File(modelPath)).exists()) {
       return modelPath;
     }
+    modelPath = PathManager.findModelPath(myRootManager.getLanguagesModelRoots(), modelFQName);
+    if (modelPath != null && (new File(modelPath)).exists()) {
+      return modelPath;
+    }
     return null;
   }
 
