@@ -93,7 +93,7 @@ public class PasteUtil {
       if(!reallyPaste) {
         return (pasteAfter != null);
       }
-      actualPasteTarget = pasteAfter.getContainer();
+      actualPasteTarget = pasteAfter.getParent();
     }
     if(actualPasteTarget == null) {
       return false;
@@ -104,7 +104,7 @@ public class PasteUtil {
 
   private static SemanticNode defineNodeToPasteAfter(SemanticNode pasteTarget, SemanticNode pasteNode) {
     while(pasteTarget != null) {
-      SemanticNode container = pasteTarget.getContainer();
+      SemanticNode container = pasteTarget.getParent();
       if(container == null) {
         break;
       }

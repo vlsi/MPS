@@ -34,8 +34,8 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
     SemanticNode anchorNode = (anchorCell != null ? anchorCell.getSemanticNode() : null);
     if(anchorNode != null) {
       // anchor should be directly referenced from "list owner"
-      while(anchorNode != null && anchorNode.getContainer() != myOwnerNode) {
-        anchorNode = anchorNode.getContainer();
+      while(anchorNode != null && anchorNode.getParent() != myOwnerNode) {
+        anchorNode = anchorNode.getParent();
       }
     }
     myInsertedNode = createNodeToInsert();
@@ -187,7 +187,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
 //    int index = elementsList.indexOf(myNodeToInsert);
 //    if(index < elementsList.size() - 1) {
 //      SemanticNode anchorNode = elementsList.getJavaClass(index + 1);
-//      SemanticNode container = myNodeToInsert.getContainer();
+//      SemanticNode container = myNodeToInsert.getParent();
 //      container.removeChild(myNodeToInsert);
 //      container.insertReference(anchorNode, myReferenceRole, myNodeToInsert, myRefernceMetaclass);
 //      return true;
@@ -205,7 +205,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
 //      } else {
 //        anchorNode = elementsList.getJavaClass(index - 2);
 //      }
-//      SemanticNode container = myNodeToInsert.getContainer();
+//      SemanticNode container = myNodeToInsert.getParent();
 //      container.removeChild(myNodeToInsert);
 //      container.insertReference(anchorNode, myReferenceRole, myNodeToInsert, myRefernceMetaclass);
 //      return true;
