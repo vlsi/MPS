@@ -28,12 +28,12 @@ public class EnumerationMemberDeclaration_Editor extends SemanticNodeEditor {
   public EditorCell createRowCell(EditorContext editorContext, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createConstantCell(editorContext, node, "name:"));
+    editorCell.addEditorCell(this.createConstantCell(editorContext, node, "constant:"));
     editorCell.addEditorCell(this.createNameCell(editorContext, node));
-    editorCell.addEditorCell(this.createConstantCell1(editorContext, node, "constant:"));
-    editorCell.addEditorCell(this.createIdentifierCell(editorContext, node));
-    editorCell.addEditorCell(this.createConstantCell2(editorContext, node, "("));
-    editorCell.addEditorCell(this.createValueCell(editorContext, node));
+    editorCell.addEditorCell(this.createConstantCell1(editorContext, node, "("));
+    editorCell.addEditorCell(this.createExternalValueCell(editorContext, node));
+    editorCell.addEditorCell(this.createConstantCell2(editorContext, node, ","));
+    editorCell.addEditorCell(this.createInternalValueCell(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell3(editorContext, node, ")"));
     editorCell.addEditorCell(this.createConstantCell4(editorContext, node, "default:"));
     editorCell.addEditorCell(this.createEnumMember_IsDefaultCell(editorContext, node));
@@ -56,26 +56,26 @@ public class EnumerationMemberDeclaration_Editor extends SemanticNodeEditor {
     EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
     return editorCell;
   }
-  public EditorCell createIdentifierCell(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = new PropertyAccessor(node, "identifier", true, false);
+  public EditorCell createExternalValueCell(EditorContext editorContext, SemanticNode node) {
+    ModelAccessor modelAccessor = new PropertyAccessor(node, "externalValue", true, false);
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
-    editorCell.setDefaultText("<no identifier>");
+    editorCell.setDefaultText("<no external value>");
     editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
     editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
-    editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "identifier"));
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "externalValue"));
     return editorCell;
   }
   public EditorCell createConstantCell2(EditorContext editorContext, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
     return editorCell;
   }
-  public EditorCell createValueCell(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = new PropertyAccessor(node, "value", true, false);
+  public EditorCell createInternalValueCell(EditorContext editorContext, SemanticNode node) {
+    ModelAccessor modelAccessor = new PropertyAccessor(node, "internalValue", true, false);
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     editorCell.setDefaultText("NULL");
     editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
     editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
-    editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "value"));
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "internalValue"));
     return editorCell;
   }
   public EditorCell createConstantCell3(EditorContext editorContext, SemanticNode node, String text) {
