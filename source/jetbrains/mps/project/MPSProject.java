@@ -6,6 +6,8 @@ import jetbrains.mps.util.PathManager;
 import jetbrains.mps.modelExecute.ExecutionPoint;
 import jetbrains.mps.modelExecute.ExecutionManager;
 import jetbrains.mps.ide.ILanguagePlugin;
+import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.components.EditorsPaneComponent;
 import jetbrains.mps.generator.JavaNameUtil;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -61,6 +63,7 @@ public class MPSProject implements ModelLocator {
 
   private void initComponent() {
     addComponent(MPSProject.class, this);
+    addComponent(EditorsPaneComponent.class, new EditorsPaneComponent(this));
   }
 
   public List<Object> getComponents() {
@@ -145,21 +148,24 @@ public class MPSProject implements ModelLocator {
     readModels(myProjectModelRoots, myProjectModels);
 
     mySemanticModels.flushModelInfos();
-    readComponents();
   }
 
-  private void readComponents() {
-    myWorkspaceFile = new File(myProjectFile.getParent(), myProjectFile.getName().replaceAll(".mpr", ".mws"));    
+  public void readComponents() {
+    myWorkspaceFile = new File(myProjectFile.getParent(), myProjectFile.getName().replaceAll(".mpr", ".mws"));
     try {
       if (myWorkspaceFile.exists()) {
         Document document = JDOMUtil.loadDocument(myWorkspaceFile);
         Element rootElement = document.getRootElement();
         List<Element> components = rootElement.getChildren(COMPONENT);
         for (Element component : components) {
-          String className = component.getAttributeValue(CLASS);
-          Class cls = Class.forName(className);
-          if (getComponent(cls) != null && getComponent(cls) instanceof ExternalizableComponent) {
-            ((ExternalizableComponent) getComponent(cls)).read(component);
+          try {
+            String className = component.getAttributeValue(CLASS);
+            Class cls = Class.forName(className);
+            if (getComponent(cls) != null && getComponent(cls) instanceof ExternalizableComponent) {
+              ((ExternalizableComponent) getComponent(cls)).read(component);
+            }
+          } catch (Exception e) {
+            e.printStackTrace();
           }
         }
       }
@@ -254,7 +260,6 @@ public class MPSProject implements ModelLocator {
   public void save() {
     mySemanticModels.saveAll();
 
-    saveComponents();
 /*
     Element rootElement = new Element(PROJECT);
     Document document = new Document();
@@ -298,7 +303,7 @@ public class MPSProject implements ModelLocator {
 */
   }
 
-  private void saveComponents() {
+  public void saveComponents() {
     try {
       if (!myWorkspaceFile.exists()) {
         myWorkspaceFile.createNewFile();
