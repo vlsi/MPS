@@ -50,9 +50,6 @@ hStart |--------|                  |  | hEnd
     int y = editorCells.getY();
     int maxRightX = x;
     int maxRowHeight = myHStart;
-    if(editorCells.getSemanticNode() instanceof ExpressionStatement) {
-      System.out.println("aaa");
-    }
     for (Iterator iterator = editorCells.iterator(); iterator.hasNext();) {
       EditorCell childEditorCell = (EditorCell) iterator.next();
       CellLayout_Flow cellLayout_flow = getFlowLayout(childEditorCell);
