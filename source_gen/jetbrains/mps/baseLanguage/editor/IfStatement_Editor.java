@@ -11,6 +11,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.baseLanguage.IfStatement;
 
 public class IfStatement_Editor extends SemanticNodeEditor {
   public static String MATCHING_TEXT = "if";
@@ -121,6 +122,7 @@ public class IfStatement_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public boolean handleConditionalQuery_1075379536707(SemanticNode node) {
+    IfStatement ifStatement = (IfStatement)node;
     return FreeMethodsUtil_baseLanguage_context._SemanticNodeCondition_HasFalseBranch(node);
   }
 }

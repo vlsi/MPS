@@ -48,6 +48,9 @@ public class ParenthesizedExpression_Editor extends SemanticNodeEditor {
   }
   public EditorCell createConstantCell1(EditorContext editorContext, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setEditable(false);
+    __ExpressionClosingParethesis_ActionSet.setCellActions(editorCell, node);
     return editorCell;
   }
 }
