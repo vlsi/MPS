@@ -120,7 +120,7 @@ public class EditorManager {
     SemanticNodeEditor semanticNodeEditor;
     String className = node.getClass().getName();
     className = className.substring(className.lastIndexOf('.') + 1);
-    String editorClassName = language.getEditorsNamespace(node) + ".Gen_" + className + "_Editor";
+    String editorClassName = language.getEditorsNamespace(node) + ".Trial_" + className + "_Editor";
     try {
       Class nodeClass = Class.forName(editorClassName);
       semanticNodeEditor = (SemanticNodeEditor) nodeClass.newInstance();
