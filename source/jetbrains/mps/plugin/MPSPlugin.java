@@ -60,6 +60,14 @@ public class MPSPlugin {
     myClient.execute("MPSSupport.createAspectMethod", params);
   }
 
+  public void openMethod(String namespace, String name) throws IOException, XmlRpcException {
+    Vector<String> params = new Vector<String>();
+    params.add(namespace);
+    params.add(name);
+
+    myClient.execute("MPSSupport.openMethod", params);
+  }
+
   public void addImport(String namespace, String fqName) throws IOException, XmlRpcException {
     Vector<String> params = new Vector<String>();
     params.add(namespace);
@@ -70,6 +78,6 @@ public class MPSPlugin {
 
   public static void main(String[] args) throws Exception {
     MPSPlugin client = new MPSPlugin();
-    client.addImport("jetbrains.mps.rulez", "javax.swing.JComponent");
+    client.openMethod("jetbrains.mps.rulez", "test_something");
   }
 }

@@ -3,6 +3,7 @@ package jetbrains.mps.plugin;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.application.Application;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -68,6 +69,26 @@ public class MPSSupportHandler {
         }
       }
     });
+    return "OK";
+  }
+
+  public String openMethod(final String namespace, final String name) {
+    if (!isAspectsClassExist(namespace)) createAspectClass(namespace);
+    executeWriteAction(new Runnable() {
+      public void run() {
+        PsiClass aspects = getAspectsClass(namespace);
+        PsiMethod[] methods = aspects.getMethods();
+        for (int i = 0; i < methods.length; i++) {
+          PsiMethod method = methods[i];
+          if (method.getName().equals(name)) {
+            method.navigate(true);
+            return;
+          }
+        }
+      }
+    });
+
+
     return "OK";
   }
 
