@@ -44,7 +44,7 @@ public class EnumerationDataTypeDeclaration_Editor extends SemanticNodeEditor {
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createConstantCell(editorContext, node, "Enumeration Data Type Declaration"));
+    editorCell.addEditorCell(this.createConstantCell(editorContext, node, "Enumeration Data Type"));
     editorCell.addEditorCell(this.createNameCell(editorContext, node));
     return editorCell;
   }
