@@ -10,6 +10,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 
 public class IfStatement_Editor extends SemanticNodeEditor {
 
@@ -109,7 +110,8 @@ public class IfStatement_Editor extends SemanticNodeEditor {
     if(ifFalse != null) {
       editorCell = this.nodeCell(editorContext, ifFalse);
     } else {
-      editorCell = EditorCell_Constant.create(editorContext, node, "<none>", true);
+      editorCell = EditorCell_Constant.create(editorContext, node, "", true);
+      ((EditorCell_Label)editorCell).setEditable(true);
     }
     return editorCell;
   }

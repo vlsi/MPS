@@ -13,6 +13,7 @@ import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 
 public class LocalVariableDeclaration_Editor extends SemanticNodeEditor {
 
@@ -70,7 +71,8 @@ public class LocalVariableDeclaration_Editor extends SemanticNodeEditor {
       editorCell = this.nodeCell(editorContext, initializer);
       _VariableInitializer_ActionSet.setCellActions(editorCell, node);
     } else {
-      editorCell = EditorCell_Constant.create(editorContext, node, "<none>", true);
+      editorCell = EditorCell_Constant.create(editorContext, node, "", true);
+      ((EditorCell_Label)editorCell).setEditable(true);
       _VariableInitializer_ActionSet.setCellActions(editorCell, node);
     }
     return editorCell;
