@@ -55,6 +55,14 @@ public class TextGenBuffer {
     return myUserObjects.get(key);
   }
 
+  public String getDefaultBufferText() {
+    return myBuffers[DEFAULT].toString();
+  }
+
+  public String getTopBufferText() {
+    return myBuffers[DEFAULT].toString();
+  }
+
   public int getDefaultBufferLength() {
     return getBufferLength(DEFAULT);
   }
