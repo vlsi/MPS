@@ -30,7 +30,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createLeftExpressionCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "instanceof"));
-    editorCell.addEditorCell(this.createJavaClassTypeCell(context, node));
+    editorCell.addEditorCell(this.createClassTypeCell(context, node));
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
@@ -70,12 +70,12 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     InstanceOfExpression_LeftExpressionsActions.setCellActions(editorCell, node);
     return editorCell;
   }
-  public EditorCell createJavaClassTypeCell(EditorContext context, SemanticNode node) {
+  public EditorCell createClassTypeCell(EditorContext context, SemanticNode node) {
     SemanticNode referencedNode = null;
-    referencedNode = node.getChild("javaClassType");
+    referencedNode = node.getChild("classType");
     if(referencedNode == null) {
       {
-        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "javaClassType");
+        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "classType");
         noRefCell.setEditable(true);
         noRefCell.setSelectable(true);
         noRefCell.setDrawBorder(true);

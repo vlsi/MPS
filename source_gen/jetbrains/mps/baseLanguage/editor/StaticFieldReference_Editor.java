@@ -34,7 +34,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.addKeyMap(new _Expression_KeyMap());
-    editorCell.addEditorCell(this.createJavaClassTypeCell(context, node));
+    editorCell.addEditorCell(this.createClassTypeCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "."));
     editorCell.addEditorCell(this.createVariableDeclarationReferenceCell(context, node));
     return editorCell;
@@ -81,12 +81,12 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     StaticFieldReference_FieldNameActions.setCellActions(editorCell, node);
     return editorCell;
   }
-  public EditorCell createJavaClassTypeCell(EditorContext context, SemanticNode node) {
+  public EditorCell createClassTypeCell(EditorContext context, SemanticNode node) {
     SemanticNode referencedNode = null;
-    referencedNode = node.getChild("javaClassType");
+    referencedNode = node.getChild("classType");
     if(referencedNode == null) {
       {
-        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "javaClassType");
+        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "classType");
         noRefCell.setEditable(true);
         noRefCell.setSelectable(true);
         noRefCell.setDrawBorder(true);

@@ -2444,7 +2444,7 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1090608741584">
                 <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1090608741585">
                   <link role="baseMethodDeclaration" targetNodeId="15.1086945615417" />
-                  <node role="javaClassType" type="jetbrains.mps.baseLanguage.ClassType" id="1090608741586">
+                  <node role="classType" type="jetbrains.mps.baseLanguage.ClassType" id="1090608741586">
                     <link role="javaClass" targetNodeId="15.1086945615339" />
                   </node>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1090608741588">
@@ -2715,7 +2715,7 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1090608741616">
                 <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1090608741617">
                   <link role="baseMethodDeclaration" targetNodeId="15.1086945615417" />
-                  <node role="javaClassType" type="jetbrains.mps.baseLanguage.ClassType" id="1090608741618">
+                  <node role="classType" type="jetbrains.mps.baseLanguage.ClassType" id="1090608741618">
                     <link role="javaClass" targetNodeId="15.1086945615339" />
                   </node>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1090608741620">
@@ -3093,7 +3093,7 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1082648736070">
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1082648736071">
                     <link role="baseMethodDeclaration" targetNodeId="13.1081508093215" />
-                    <node role="javaClassType" type="jetbrains.mps.baseLanguage.ClassType" id="1082648736072">
+                    <node role="classType" type="jetbrains.mps.baseLanguage.ClassType" id="1082648736072">
                       <property name="name" value="InstanceOfExpression" />
                       <link role="javaClass" targetNodeId="13.1081508093211" />
                     </node>
@@ -5953,7 +5953,7 @@
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1083144100788">
                     <link role="baseMethodDeclaration" targetNodeId="13.1081508092044" />
-                    <node role="javaClassType" type="jetbrains.mps.baseLanguage.ClassType" id="1083144100789">
+                    <node role="classType" type="jetbrains.mps.baseLanguage.ClassType" id="1083144100789">
                       <property name="name" value="IntegerConstant" />
                       <link role="javaClass" targetNodeId="13.1081508092040" />
                     </node>
@@ -6015,7 +6015,7 @@
                   <property name="name" value="intConstantType" />
                   <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1095091330727">
                     <link role="baseMethodDeclaration" targetNodeId="15.1086945614672" />
-                    <node role="javaClassType" type="jetbrains.mps.baseLanguage.ClassType" id="1095091330728">
+                    <node role="classType" type="jetbrains.mps.baseLanguage.ClassType" id="1095091330728">
                       <link role="javaClass" targetNodeId="15.1086945614633" />
                     </node>
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1095091330730">
@@ -6038,7 +6038,7 @@
                   <property name="name" value="propDeclaration" />
                   <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1095093597721">
                     <link role="baseMethodDeclaration" targetNodeId="15.1086945615379" />
-                    <node role="javaClassType" type="jetbrains.mps.baseLanguage.ClassType" id="1095093597722">
+                    <node role="classType" type="jetbrains.mps.baseLanguage.ClassType" id="1095093597722">
                       <link role="javaClass" targetNodeId="15.1086945615339" />
                     </node>
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1095093597724">
@@ -6061,7 +6061,7 @@
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1095093597730">
                     <link role="baseMethodDeclaration" targetNodeId="15.1086945615755" />
-                    <node role="javaClassType" type="jetbrains.mps.baseLanguage.ClassType" id="1095093597731">
+                    <node role="classType" type="jetbrains.mps.baseLanguage.ClassType" id="1095093597731">
                       <link role="javaClass" targetNodeId="15.1086945615739" />
                     </node>
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1095093597733">
