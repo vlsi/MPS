@@ -2,6 +2,8 @@ package jetbrains.mps.plugin;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.vfs.VirtualFileSystem;
+import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.search.GlobalSearchScope;
@@ -28,6 +30,16 @@ public class MPSSupportHandler {
     });
 
     return aspects[0] != null;
+  }
 
+  public String createAspectFile(final String namespace) {
+
+    ApplicationManager.getApplication().runWriteAction(new Runnable() {
+      public void run() {
+
+      }
+    });
+
+    return "OK";
   }
 }
