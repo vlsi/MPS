@@ -41,6 +41,10 @@ public class NodeSubstitutePatternEditor {
     }
   }
 
+  public int getCaretPosition() {
+    return myEditorWindow.myTextLine.getCaretPosition();
+  }
+
   public boolean processKeyPressed(KeyEvent keyEvent) {
     if(isEditorActivated) {
       return myEditorWindow.processKeyPressed(keyEvent);

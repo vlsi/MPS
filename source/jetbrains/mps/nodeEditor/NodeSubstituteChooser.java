@@ -274,9 +274,11 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   }
 
   private void updatePatternEditor() {
+
     if (!myMenuEmpty) {
-      myPatternEditor.setText(getPopupWindow().getSelectedText());
-      myPatternEditor.setCaretPosition(getPopupWindow().getSelectedText().length());
+      int oldPosition = myPatternEditor.getCaretPosition();
+      myPatternEditor.setText(getPopupWindow().getSelectedText());      
+      myPatternEditor.setCaretPosition(Math.min(getPopupWindow().getSelectedText().length(), oldPosition));
     }
   }
 
