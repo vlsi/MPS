@@ -64,22 +64,22 @@ public class JavaNameUtil {
     return "";
   }
 
-  public static boolean needImportName(JavaClass javaClass) {
-    String name = javaClass.getName();
-    int offset = name.lastIndexOf(".");
-    if (offset < 0) {
-      return false;
-    }
-    String packageName = name.substring(0, offset);
-    if (packageName.startsWith("java.lang")) {
-      return false;
-    }
-    String currPackage = packageNameForModel(javaClass.getSemanticModel());
-//    if(!currPackage.equals(packageName)) {
-//      System.out.println("!!! import class: " + name + " curr pack:" + currPackage);
+//  public static boolean needImportName(JavaClass javaClass) {
+//    String name = javaClass.getName();
+//    int offset = name.lastIndexOf(".");
+//    if (offset < 0) {
+//      return false;
 //    }
-    return !currPackage.equals(packageName);
-  }
+//    String packageName = name.substring(0, offset);
+//    if (packageName.startsWith("java.lang")) {
+//      return false;
+//    }
+//    String currPackage = packageNameForModel(javaClass.getSemanticModel());
+////    if(!currPackage.equals(packageName)) {
+////      System.out.println("!!! import class: " + name + " curr pack:" + currPackage);
+////    }
+//    return !currPackage.equals(packageName);
+//  }
 
   public static String packageName(String fqName) {
     if (fqName == null) {

@@ -127,7 +127,11 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     int descriptionIndent = 2;
     for (int i = 0; i < myMenuSubstituteEntries.size(); i++) {
       INodeSubstituteItem entry = myMenuSubstituteEntries.get(i);
-      myMatchingStrings[i] = entry.getMatchingText(null);
+      try {
+        myMatchingStrings[i] = entry.getMatchingText(null);
+      } catch (Exception e) {
+        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+      }
       if (myMatchingStrings[i] != null) {
         descriptionIndent = Math.max(descriptionIndent, myMatchingStrings[i].length() + 2);
       }
