@@ -15,17 +15,6 @@
         <link role="propertyDeclaration" targetNodeId="1.1087833392642" />
       </node>
     </node>
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1092152998375">
-      <property name="name" value="ParameterActions" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1092152998376">
-        <property name="substituteHandlerId" value="PropertyMacro_SetTemplateParameter" />
-        <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1092152998377">
-          <property name="name" value="templateParameter" />
-          <property name="queryId" value="TemplateParameters" />
-          <property name="textProviderId" value="SemanticNodeNameText" />
-        </node>
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1087903454704">
       <property name="vertical" value="false" />
       <property name="selectable" value="false" />
@@ -72,16 +61,6 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1087926271843">
     <property name="name" value="NodeMacro_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="1.1087833466690" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1096644804142">
-      <property name="name" value="TemplateFragmentReferenceActions" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1096644852286">
-        <property name="substituteHandlerId" value="NodeMacro_SetTemplateFragmentName" />
-        <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1096644905071">
-          <property name="name" value="templateFragment" />
-          <property name="queryId" value="TemplateFragments" />
-        </node>
-      </node>
-    </node>
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1088501636843">
       <property name="name" value="SourceQueryActions" />
       <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_DeleteProperty" id="1088501636844">
@@ -192,17 +171,6 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1088762125437">
     <property name="name" value="ReferenceMacro_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="1.1088761943574" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1092144702151">
-      <property name="name" value="ParameterActions" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1092144702152">
-        <property name="substituteHandlerId" value="ReferenceMacro_SetTemplateParameter" />
-        <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1092144702153">
-          <property name="name" value="templateParameter" />
-          <property name="queryId" value="TemplateParameters" />
-          <property name="textProviderId" value="SemanticNodeNameText" />
-        </node>
-      </node>
-    </node>
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1088763040904">
       <property name="vertical" value="true" />
       <property name="selectable" value="false" />
@@ -359,8 +327,8 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1092135992437">
         <property name="nullText" value="&lt;no content node&gt;" />
-        <link role="actionSet" targetNodeId="1092137340906" />
         <link role="linkDeclaration" targetNodeId="1.1092060348987" />
+        <link role="actionSet" targetNodeId="1092137340906" />
       </node>
     </node>
   </node>
