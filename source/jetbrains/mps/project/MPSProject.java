@@ -56,18 +56,7 @@ public class MPSProject implements ModelLocator {
     addComponent(MainFrameComponent.class, new MainFrameComponent());
     addComponent(SemanticModels.class, new SemanticModels(this));
     addComponent(ExecutionManager.class, new ExecutionManager());
-  }
-
-  public List<ModelRoot> getProjectModelRoots() {
-    return myRootManager.getProjectModelRoots();
-  }
-
-  public List<ModelRoot> getLibraryModelRoots() {
-    return myRootManager.getLibraryModelRoots();
-  }
-
-  public List<File> getLanguageRoots() {
-    return myRootManager.getLanguageRoots();
+    addComponent(RootManager.class, myRootManager);
   }
 
   public List<Object> getComponents() {
@@ -113,6 +102,7 @@ public class MPSProject implements ModelLocator {
   public void save() {
     getSemanticModels().saveAll();
 
+    myRootManager.save(myProjectFile);
   }
 
   public void saveComponents() {
