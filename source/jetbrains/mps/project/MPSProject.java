@@ -4,6 +4,7 @@ import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.modelExecute.ExecutionManager;
+import jetbrains.mps.generator.ContextUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -69,6 +70,18 @@ public class MPSProject {
         System.out.println("MPSProject addModel from: " + modelFileName);
         mySemanticModels.loadModel(modelFileName);
       }
+
+      SemanticModel[] semanticModels = mySemanticModels.semanticModels();
+      for (int i = 0; i < semanticModels.length; i++) {
+        SemanticModel semanticModel = semanticModels[i];
+        try {
+          ContextUtil.initGlobalContext(semanticModel, this);
+          ContextUtil.initLocalContext(semanticModel, this);
+        } catch (Exception e) {
+          System.out.println("No context for model: " + semanticModel.getNamespace() + "." + semanticModel.getName());
+        }
+      }
+
       mySemanticModels.flushModelInfos();
     }
   }
