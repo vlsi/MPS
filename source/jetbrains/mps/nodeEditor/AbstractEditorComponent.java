@@ -972,13 +972,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   // ---- keyboard handling ---
 
-  public void processKeyEvent(KeyEvent keyEvent) {
+  public void sendKeyEvent(KeyEvent keyEvent) {
     if (keyEvent.getID() == KeyEvent.KEY_PRESSED) {
       processKeyPressed(keyEvent);
     } else if (keyEvent.getID() == KeyEvent.KEY_RELEASED) {
       processKeyReleased(keyEvent);
-    } else {
-      System.out.println("shit!");
     }
   }
 
