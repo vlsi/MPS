@@ -12,7 +12,6 @@ import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class NullLiteral_Editor extends DefaultNodeEditor {
-  public static String MATCHING_TEXT = "null";
 
   public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
     return this.createConstantCell(context, node, "null");
@@ -20,7 +19,7 @@ public class NullLiteral_Editor extends DefaultNodeEditor {
   public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setEditable(true);
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);

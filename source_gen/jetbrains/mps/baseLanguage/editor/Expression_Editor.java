@@ -18,7 +18,7 @@ public class Expression_Editor extends DefaultNodeEditor {
   public EditorCell createErrorCell(EditorContext context, SemanticNode node) {
     EditorCell_Error editorCell = EditorCell_Error.create(context, node, "<expression>");
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setEditable(true);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);

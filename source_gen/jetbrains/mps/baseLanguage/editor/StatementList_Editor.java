@@ -25,7 +25,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myStatementListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);

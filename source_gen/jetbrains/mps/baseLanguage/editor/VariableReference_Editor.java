@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.EditorCell_Error;
 import java.awt.Color;
 
 public class VariableReference_Editor extends DefaultNodeEditor {
-  public static String MATCHING_TEXT = "<VariableReference>";
 
   public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
     return this.createErrorCell(context, node);
@@ -19,7 +18,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
   public EditorCell createErrorCell(EditorContext context, SemanticNode node) {
     EditorCell_Error editorCell = EditorCell_Error.create(context, node, "<collection>");
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setEditable(true);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);

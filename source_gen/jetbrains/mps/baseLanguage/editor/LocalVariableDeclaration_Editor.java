@@ -22,8 +22,6 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 
 public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
-  public static String MATCHING_TEXT = "local variable";
-  public static String PRESENTATION_NAME = "local variable declaration";
 
   public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
     return this.createDeclarationBox(context, node);
@@ -31,7 +29,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createDeclarationBox(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
@@ -45,7 +43,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createInitializerArea(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(false);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
@@ -56,7 +54,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
@@ -67,7 +65,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "name", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setEditable(true);
     editorCell.setDefaultText("<no name>");
     editorCell.setDrawBrackets(false);
@@ -85,7 +83,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "type");
         noRefCell.setEditable(true);
         noRefCell.setSelectable(true);
-        noRefCell.setDrawBorder(true);
+        noRefCell.setDrawBorder(false);
         noRefCell.setDrawBrackets(false);
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
@@ -96,7 +94,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     }
     EditorCell editorCell = context.createNodeCell(referencedNode);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
@@ -116,7 +114,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setDefaultText("");
         noRefCell.setEditable(true);
         noRefCell.setSelectable(true);
-        noRefCell.setDrawBorder(true);
+        noRefCell.setDrawBorder(false);
         noRefCell.setDrawBrackets(false);
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
@@ -127,7 +125,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     }
     EditorCell editorCell = context.createNodeCell(referencedNode);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(referencedNode));

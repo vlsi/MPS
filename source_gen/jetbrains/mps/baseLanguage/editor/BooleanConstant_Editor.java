@@ -17,7 +17,6 @@ import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
 
 public class BooleanConstant_Editor extends DefaultNodeEditor {
-  public static String PRESENTATION_NAME = "boolean constant";
 
   public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
     return this.createValueCell(context, node);
@@ -26,7 +25,7 @@ public class BooleanConstant_Editor extends DefaultNodeEditor {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "value", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setEditable(true);
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);

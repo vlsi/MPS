@@ -18,8 +18,6 @@ import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
 
 public class StringLiteral_Editor extends DefaultNodeEditor {
-  public static String MATCHING_TEXT = "\"";
-  public static String PRESENTATION_NAME = "string literal";
 
   public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
     return this.createRowCell(context, node);
@@ -27,7 +25,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
   public EditorCell createRowCell(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
@@ -40,7 +38,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
   public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
@@ -52,7 +50,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
   public EditorCell createConstantCell1(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
@@ -66,7 +64,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "value", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setEditable(true);
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);

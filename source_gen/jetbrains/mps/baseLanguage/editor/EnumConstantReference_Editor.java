@@ -21,8 +21,6 @@ import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class EnumConstantReference_Editor extends DefaultNodeEditor {
-  public static String MATCHING_TEXT = ". <enum constant>";
-  public static String PRESENTATION_NAME = "enum constant";
 
   public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
     return this.createRowCell(context, node);
@@ -30,7 +28,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
   public EditorCell createRowCell(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
@@ -42,7 +40,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
   public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
@@ -71,7 +69,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     EditorCell editorCell = inlineComponent.createEditorCell(context);
     EditorUtil.setSemanticNodeToCells(editorCell, node);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
@@ -90,7 +88,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "classType");
         noRefCell.setEditable(true);
         noRefCell.setSelectable(true);
-        noRefCell.setDrawBorder(true);
+        noRefCell.setDrawBorder(false);
         noRefCell.setDrawBrackets(false);
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
@@ -101,7 +99,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     }
     EditorCell editorCell = context.createNodeCell(referencedNode);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
