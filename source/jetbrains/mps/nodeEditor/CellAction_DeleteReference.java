@@ -1,10 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
-import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.semanticModel.SemanticModel;
-import jetbrains.mps.semanticModel.SemanticModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
 
 /**
@@ -21,27 +17,14 @@ public class CellAction_DeleteReference extends EditorCellAction {
   }
 
   public boolean canExecute(EditorContext context) {
-    SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(mySource, myRole);
-    if (linkDeclaration != null) {
-      Cardinality sourceCardinality = linkDeclaration.getSourceCardinality();
-      return (sourceCardinality == Cardinality._0_1 || sourceCardinality == Cardinality._1);
-    }
-
-    return false;
+    return true;
   }
 
   public void execute(EditorContext context) {
-    // todo: isChild ???
-    SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(mySource, myRole);
-    if (linkDeclaration.getMetaClass() == LinkMetaclass.aggregation) {
-      SemanticNode child = mySource.getChild(SemanticModelUtil.getGenuineLinkRole(linkDeclaration));
-      child.delete();
-    } else {
-      SemanticModel semanticModel = mySource.getSemanticModel();
-      SemanticNode referent = mySource.getReferent(myRole);
-      if (referent != null) {
-        mySource.removeReferent(myRole, referent);
-      }
+    SemanticModel semanticModel = mySource.getSemanticModel();
+    SemanticNode referent = mySource.getReferent(myRole);
+    if (referent != null) {
+      mySource.removeReferent(myRole, referent);
       semanticModel.fireNodeDeletedEvent(mySource);
     }
   }
