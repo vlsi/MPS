@@ -6,7 +6,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1071489090640">
     <property name="name" value="ConceptDeclaration" />
     <link role="extends" targetNodeId="1.1078489098625" />
-    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration" id="1096454100552">
+    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1096454100552">
       <property name="name" value="rootable" />
       <link role="dataType" targetNodeId="1.1082983657063" />
     </node>
@@ -34,22 +34,22 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1071489288298">
     <property name="name" value="LinkDeclaration" />
     <link role="extends" targetNodeId="1.1078489098625" />
-    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration" id="1071599776563">
+    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1071599776563">
       <property name="propertyType" value="string" />
       <property name="name" value="role" />
       <link role="dataType" targetNodeId="1.1082983041843" />
     </node>
-    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration" id="1071599937831">
+    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1071599937831">
       <property name="propertyType" value="string" />
       <property name="name" value="metaClass" />
       <link role="dataType" targetNodeId="1084199179703" />
     </node>
-    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration" id="1071599893252">
+    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1071599893252">
       <property name="propertyType" value="string" />
       <property name="name" value="sourceCardinality" />
       <link role="dataType" targetNodeId="1084197782722" />
     </node>
-    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration" id="1071599937832">
+    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1071599937832">
       <property name="propertyType" value="string" />
       <property name="name" value="targetCardinality" />
       <link role="dataType" targetNodeId="1084197782722" />
@@ -68,7 +68,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1071489288299">
-    <property name="name" value="SemanticPropertyDeclaration" />
+    <property name="name" value="PropertyDeclaration" />
     <link role="extends" targetNodeId="1.1078489098625" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1082985295845">
       <property name="sourceCardinality" value="1" />
@@ -113,7 +113,7 @@
       <property name="role" value="extends" />
       <link role="target" targetNodeId="1083243159079" />
     </node>
-    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration" id="1083066089218">
+    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1083066089218">
       <property name="propertyType" value="string" />
       <property name="name" value="constraint" />
       <link role="dataType" targetNodeId="1.1082983041843" />
@@ -122,12 +122,12 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1083171877298">
     <property name="name" value="EnumerationMemberDeclaration" />
     <link role="extends" targetNodeId="1.1078489098625" />
-    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration" id="1083923523171">
+    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1083923523171">
       <property name="propertyType" value="string" />
       <property name="name" value="internalValue" />
       <link role="dataType" targetNodeId="1.1082983041843" />
     </node>
-    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration" id="1083923523172">
+    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1083923523172">
       <property name="propertyType" value="string" />
       <property name="name" value="externalValue" />
       <link role="dataType" targetNodeId="1.1082983041843" />
@@ -164,8 +164,8 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration" id="1084199179703">
     <property name="name" value="LinkMetaclass" />
-    <link role="defaultMember" targetNodeId="1084199179704" />
     <link role="memberDataType" targetNodeId="1.1082983041843" />
+    <link role="defaultMember" targetNodeId="1084199179704" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1084199179704">
       <property name="externalValue" value="&lt;no metaclass&gt;" />
       <property name="name" value="none" />
