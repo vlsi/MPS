@@ -178,4 +178,37 @@ public class PathManager {
     absolutePath = absolutePath + File.separator + modelName + ".mps";
     return absolutePath;
   }
+
+  public static String getAbsolutePathByRelational(File baseFile, String relationalPath) {
+    File relationalFile = new File(relationalPath);
+    if(relationalFile.isAbsolute()) {
+      return relationalPath;
+    }
+    if(!baseFile.isDirectory()) {
+      baseFile = baseFile.getParentFile();
+    }
+    return baseFile.getAbsolutePath() + File.separatorChar + relationalPath;
+  }
+
+  public static String getRelationalPathByAbsolute(File baseFile, String absolutePath) {
+    File absoluteFile = new File(absolutePath);
+    if(!absoluteFile.isAbsolute()) {
+      return absolutePath;
+    }
+    if(!baseFile.isDirectory()) {
+      baseFile = baseFile.getParentFile();
+    }
+    StringBuffer relativePath = new StringBuffer(absoluteFile.getName());
+    File parent = absoluteFile.getParentFile();
+    while(parent != null) {
+      if(baseFile.equals(parent)) {
+        break;
+      }
+      relativePath.insert(0, File.separator);
+      relativePath.insert(0, parent.getName());
+      parent = parent.getParentFile();
+    }
+    return relativePath.toString();
+  }
+
 }
