@@ -1,15 +1,14 @@
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
-import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.semanticModel.SemanticModel;
 import jetbrains.mps.semanticModel.SemanticModelListener;
 import jetbrains.mps.semanticModel.SemanticNode;
-import jetbrains.mps.semanticModel.Language;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.typesystem.Typesystem;
 import jetbrains.mps.typesystem.ITypesystem;
 import jetbrains.mps.typesystem.TSStatus;
 
@@ -634,10 +633,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         Language language = Language.getLanguage(mySelectedCell.getSemanticNode(), project);
         ITypesystem typesystem = language.getTypesystem();
         TSStatus status = typesystem.checkNodeType(mySelectedCell.getSemanticNode());
-        if(status.isOk()) {
-          System.out.println("--- check status OK. Type: " + status.getTypeObject());
+        if (status.isOk()) {
+          System.out.println("--- TYPE CHECK STATUS: OK");
+          System.out.println("--- Type: " + status.getTypeObject());
         } else {
-          System.out.println("--- check status ERROR: " + status.getMessage());
+          System.out.println("--- TYPE CHECK STATUS: ERROR");
+          System.out.println("--- Messge: " + status.getMessage());
         }
         keyEvent.consume();
         return;
