@@ -10,6 +10,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 
 public class VariableReference_Editor extends SemanticNodeEditor {
+  public static String MATCHING_TEXT = "<VariableReference>";
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);
