@@ -1,11 +1,9 @@
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration;
+import jetbrains.mps.semanticModel.SemanticModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.semanticModel.SemanticPropertySupport;
-import jetbrains.mps.semanticModel.SemanticModelUtil;
-import jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.DataTypeDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration;
 
 /**
  * User: Dmitriev.
@@ -60,7 +58,7 @@ public class PropertyAccessor implements ModelAccessor {
   private String fromInternal(String value) {
     if (myPropertyDeclaration != null) {
       SemanticPropertySupport propertySupport = SemanticPropertySupport.getPropertySupport(myPropertyDeclaration);
-      return propertySupport.fromInternal(value);
+      return propertySupport.fromInternalValue(value);
     }
     return value;
   }
@@ -68,7 +66,7 @@ public class PropertyAccessor implements ModelAccessor {
   private String toInternal(String value) {
     if (myPropertyDeclaration != null) {
       SemanticPropertySupport propertySupport = SemanticPropertySupport.getPropertySupport(myPropertyDeclaration);
-      return propertySupport.toInternal(value);
+      return propertySupport.toInternalValue(value);
     }
     return value;
   }
