@@ -27,7 +27,7 @@ public class IfStatement_Editor extends SemanticNodeEditor {
     IfStatement_NodeBoxActions.setCellActions(editorCell, node);
     editorCell.addEditorCell(this.createHeaderRow(editorContext, node));
     editorCell.addEditorCell(this.createIfTrueBox(editorContext, node));
-    if(Aspects.semanticNodeCondition_HasFalseBranch(node)) {
+    if(this.handleConditionalQuery_1075379536707(node)) {
       editorCell.addEditorCell(this.createIfFalseBranch(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstantCell3(editorContext, node, "}"));
@@ -119,5 +119,8 @@ public class IfStatement_Editor extends SemanticNodeEditor {
   public EditorCell createConstantCell3(EditorContext editorContext, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
     return editorCell;
+  }
+  public boolean handleConditionalQuery_1075379536707(SemanticNode node) {
+    return MethodDeclarationsUtil._SemanticNodeCondition_HasFalseBranch(node);
   }
 }

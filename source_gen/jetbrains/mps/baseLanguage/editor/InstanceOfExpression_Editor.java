@@ -24,13 +24,13 @@ public class InstanceOfExpression_Editor extends SemanticNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setGridLayout(false);
     InstanceOfExpression_NodeBoxActions.setCellActions(editorCell, node);
-    if(Aspects.semanticNodeCondition_ParentIsExpression(node)) {
+    if(this.handleConditionalQuery_1081257097745(node)) {
       editorCell.addEditorCell(this.createConstantCell(editorContext, node, "("));
     }
     editorCell.addEditorCell(this.createLeftExpressionCell(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell1(editorContext, node, "instanceof"));
     editorCell.addEditorCell(this.createJavaClassTypeCell(editorContext, node));
-    if(Aspects.semanticNodeCondition_ParentIsExpression(node)) {
+    if(this.handleConditionalQuery_1081257097749(node)) {
       editorCell.addEditorCell(this.createConstantCell2(editorContext, node, ")"));
     }
     return editorCell;
@@ -76,5 +76,11 @@ public class InstanceOfExpression_Editor extends SemanticNodeEditor {
     EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
     editorCell.setSelectable(false);
     return editorCell;
+  }
+  public boolean handleConditionalQuery_1081257097745(SemanticNode node) {
+    return MethodDeclarationsUtil._SemanticNodeCondition_ParentIsExpression(node);
+  }
+  public boolean handleConditionalQuery_1081257097749(SemanticNode node) {
+    return MethodDeclarationsUtil._SemanticNodeCondition_ParentIsExpression(node);
   }
 }

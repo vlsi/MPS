@@ -29,7 +29,7 @@ public class FieldDeclaration_Editor extends SemanticNodeEditor {
     FieldDeclaration_NodeBoxActions.setCellActions(editorCell, node);
     editorCell.addEditorCell(this.createTypeCell(editorContext, node));
     editorCell.addEditorCell(this.createNameCell(editorContext, node));
-    if(Aspects.semanticNodeCondition_HasInitializer(node)) {
+    if(this.handleConditionalQuery_1075290206265(node)) {
       editorCell.addEditorCell(this.createInitializerArea(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstantCell1(editorContext, node, ";"));
@@ -82,5 +82,8 @@ public class FieldDeclaration_Editor extends SemanticNodeEditor {
   public EditorCell createConstantCell1(EditorContext editorContext, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
     return editorCell;
+  }
+  public boolean handleConditionalQuery_1075290206265(SemanticNode node) {
+    return MethodDeclarationsUtil._SemanticNodeCondition_HasInitializer(node);
   }
 }

@@ -29,7 +29,7 @@ public class LocalVariableDeclaration_Editor extends SemanticNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.addEditorCell(this.createTypeCell(editorContext, node));
     editorCell.addEditorCell(this.createNameCell(editorContext, node));
-    if(Aspects.semanticNodeCondition_HasInitializer(node)) {
+    if(this.handleConditionalQuery_1075303160504(node)) {
       editorCell.addEditorCell(this.createInitializerArea(editorContext, node));
     }
     return editorCell;
@@ -77,5 +77,8 @@ public class LocalVariableDeclaration_Editor extends SemanticNodeEditor {
       _VariableInitializer_ActionSet.setCellActions(editorCell, node);
     }
     return editorCell;
+  }
+  public boolean handleConditionalQuery_1075303160504(SemanticNode node) {
+    return MethodDeclarationsUtil._SemanticNodeCondition_HasInitializer(node);
   }
 }
