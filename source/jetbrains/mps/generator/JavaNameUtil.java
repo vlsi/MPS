@@ -59,15 +59,4 @@ public class JavaNameUtil {
     }
     return fqName.substring(offset + 1);
   }
-
-  public static String actionsClassNameForTypeEditor(SemanticTypeEditorDeclaration typeEditor) {
-    String editorsPackageName = JavaNameUtil.packageNameForModel(typeEditor.getSemanticModel());
-    String editorActionsClassName = typeEditor.getSemanticTypeDeclaration().getName() + "_Actions";
-    if(editorsPackageName.length() > 0) {
-      return editorsPackageName + "." + editorActionsClassName;
-    }
-    return editorActionsClassName;
-  }
-
-
 }
