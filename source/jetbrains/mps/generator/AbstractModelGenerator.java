@@ -33,6 +33,10 @@ public abstract class AbstractModelGenerator implements IModelGenerator {
     return mySourceModel;
   }
 
+  protected void setSourceModel(SemanticModel sourceModel) {
+    mySourceModel = sourceModel;
+  }
+
   public SemanticModel getTargetModel() {
     return myTargetModel;
   }
