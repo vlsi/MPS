@@ -11,10 +11,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseAdapter;
-import java.util.LinkedList;
+import java.util.*;
 import java.util.List;
-import java.util.Arrays;
-import java.util.Collections;
 
 /**
  * Author: Sergey Dmitriev.
@@ -114,6 +112,16 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     myMenuEmpty = false;
     String pattern = getPatternEditor().getPattern();
     List<INodeSubstituteItem> matchingActions = myNodeSubstituteInfo.getMatchingItems(pattern, false);
+
+    Collections.sort(matchingActions, new Comparator<INodeSubstituteItem>() {
+      public int compare(INodeSubstituteItem iNodeSubstituteItem, INodeSubstituteItem iNodeSubstituteItem1) {
+        String s1 = iNodeSubstituteItem.getMatchingText(null);
+        String s2 = iNodeSubstituteItem1.getMatchingText(null);
+        if (s1 == null) s1 = "";
+        if (s2 == null) s2 = "";
+        return s1.compareTo(s2);
+      }
+    });
     myMenuSubstituteEntries = new LinkedList<INodeSubstituteItem>(matchingActions);
     if (myMenuSubstituteEntries.size() == 0) {
       myMenuEmpty = true;
@@ -362,9 +370,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
       model.removeAllElements();
 
-      List<String> strings = Arrays.asList(getStrings());
-      Collections.sort(strings);
-      for (String value : strings) {
+      for (String value : getStrings()) {
         model.addElement(value);
       }
 
