@@ -30,7 +30,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
     return myOwnerNode;
   }
 
-  public void startInsertMode(EditorContext editorContext, EditorCell anchorCell) {
+  public void startInsertMode(EditorContext editorContext, EditorCell anchorCell, boolean insertBefore) {
     SemanticNode anchorNode = (anchorCell != null ? anchorCell.getSemanticNode() : null);
     if(anchorNode != null) {
       // anchor should be directly referenced from "list owner"
@@ -39,7 +39,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
       }
     }
     myInsertedNode = createNodeToInsert();
-    getOwner().insertReference(anchorNode, myReferenceRole, myInsertedNode, myRefernceMetaclass);
+    getOwner().insertReference(anchorNode, insertBefore, myReferenceRole, myInsertedNode, myRefernceMetaclass);
 
     NodeEditor editor = editorContext.getComponent();
     editor.pushKeyboardHandler(this);
@@ -133,7 +133,8 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
   }
 
   private void setDefaultCellListActions(EditorCell_Collection cellList) {
-    cellList.setAction(EditorCellAction.INSERT, new Insert_CellAction(this));
+    cellList.setAction(EditorCellAction.INSERT, new Insert_CellAction(this, false));
+    cellList.setAction(EditorCellAction.INSERT_BEFORE, new Insert_CellAction(this, true));
   }
 
   private EditorCell createNodeCell_internal(EditorContext editorContext, SemanticNode node) {
@@ -153,24 +154,6 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
     insertCell.setSelectable(false);
     insertCell.setHighlighted(true);
     insertCell.addEditorCell(insertedNodeCell);
-    // install actions
-////    insertCell.setAction(EditorCellAction.LEFT, new Empty_CellAction());
-////    insertCell.setAction(EditorCellAction.RIGHT, new Empty_CellAction());
-////    insertCell.setAction(EditorCellAction.UP, new Empty_CellAction());
-////    insertCell.setAction(EditorCellAction.DOWN, new Empty_CellAction());
-////    insertCell.setAction(EditorCellAction.NEXT, new Empty_CellAction());
-////    insertCell.setAction(EditorCellAction.PREV, new Empty_CellAction());
-////    insertCell.setAction(EditorCellAction.LEFT_SPECIAL, new Empty_CellAction());
-////    insertCell.setAction(EditorCellAction.RIGHT_SPECIAL, new Empty_CellAction());
-////    insertCell.setAction(EditorCellAction.UP_SPECIAL, new Empty_CellAction());
-////    insertCell.setAction(EditorCellAction.DOWN_SPECIAL, new Empty_CellAction());
-//    if(isVertical()) {
-//      insertCell.setAction(EditorCellAction.UP_SPECIAL, new MoveAnchorToPrevPos());
-//      insertCell.setAction(EditorCellAction.DOWN_SPECIAL, new MoveAnchorToNextPos());
-//    } else {
-//      insertCell.setAction(EditorCellAction.LEFT_SPECIAL, new MoveAnchorToPrevPos());
-//      insertCell.setAction(EditorCellAction.RIGHT_SPECIAL, new MoveAnchorToNextPos());
-//    }
     return insertCell;
   }
 
@@ -182,67 +165,11 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
     return separatorCell;
   }
 
-//  public boolean moveAnchorToNextPos() {
-//    List<SemanticNode> elementsList = createElementsList();
-//    int index = elementsList.indexOf(myNodeToInsert);
-//    if(index < elementsList.size() - 1) {
-//      SemanticNode anchorNode = elementsList.getJavaClass(index + 1);
-//      SemanticNode container = myNodeToInsert.getParent();
-//      container.removeChild(myNodeToInsert);
-//      container.insertReference(anchorNode, myReferenceRole, myNodeToInsert, myRefernceMetaclass);
-//      return true;
-//    }
-//    return false;
-//  }
-
-//  public boolean moveAnchorToPrevPos() {
-//    List<SemanticNode> elementsList = createElementsList();
-//    int index = elementsList.indexOf(myNodeToInsert);
-//    if(index > 0) {
-//      SemanticNode anchorNode;
-//      if(index <= 1) {
-//        anchorNode = null;
-//      } else {
-//        anchorNode = elementsList.getJavaClass(index - 2);
-//      }
-//      SemanticNode container = myNodeToInsert.getParent();
-//      container.removeChild(myNodeToInsert);
-//      container.insertReference(anchorNode, myReferenceRole, myNodeToInsert, myRefernceMetaclass);
-//      return true;
-//    }
-//    return false;
-//  }
-
-//  private class MoveAnchorToNextPos extends EditorCellAction {
-//    public boolean canExecute(EditorContext context) {
-//      return true; // allways true to prevent navigation by other actions
-//    }
-//
-//    public void execute(EditorContext context) {
-//      EditorCell selectedCell = context.getComponent().getSelectedCell();
-//      moveAnchorToNextPos();
-//      context.getComponent().rebuildEditorContent();
-//      context.getComponent().changeSelection(selectedCell);
-//    }
-//  }
-
-//  private class MoveAnchorToPrevPos extends EditorCellAction {
-//    public boolean canExecute(EditorContext context) {
-//      return true; // allways true to prevent navigation by other actions
-//    }
-//
-//    public void execute(EditorContext context) {
-//      EditorCell selectedCell = context.getComponent().getSelectedCell();
-//      moveAnchorToPrevPos();
-//      context.getComponent().rebuildEditorContent();
-//      context.getComponent().changeSelection(selectedCell);
-//    }
-//  }
-
   public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
     NodeEditor editor = editorContext.getComponent();
     String actionType = editor.getActionType(keyEvent);
-    if(EditorCellAction.INSERT.equals(actionType)) {
+    if(EditorCellAction.INSERT.equals(actionType) ||
+        EditorCellAction.INSERT_BEFORE.equals(actionType)) {
       cancelInsertMode(editorContext);
       editor.executeAction(myListEditorCell_Collection.getParent(), actionType);
     } else {
@@ -256,7 +183,8 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
   public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
     NodeEditor editor = editorContext.getComponent();
     String actionType = editor.getActionType(keyEvent);
-    if(!EditorCellAction.INSERT.equals(actionType)) {
+    if(!(EditorCellAction.INSERT.equals(actionType) ||
+        EditorCellAction.INSERT_BEFORE.equals(actionType))) {
       finishInsertMode(editorContext);
       return true;
     }

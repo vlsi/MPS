@@ -6,6 +6,7 @@ package jetbrains.mps.nodeEditor;
  */
 public abstract class EditorCellAction {
   public static final String INSERT = "INSERT";
+  public static final String INSERT_BEFORE = "INSERT_BEFORE";
   public static final String DELETE = "DELETE";
   public static final String COPY = "COPY";
   public static final String PASTE = "PASTE";
