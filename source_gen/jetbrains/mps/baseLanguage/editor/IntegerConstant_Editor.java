@@ -21,7 +21,7 @@ public class IntegerConstant_Editor extends SemanticNodeEditor {
     return this.createValueCell(editorContext, node);
   }
   public EditorCell createValueCell(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = Aspects.createModelAccessor_IntegerConstantValue(node);
+    ModelAccessor modelAccessor = new IntegerConstant_Editor_IntegerConstantValue_Query(node);
     EditorCell editorCell = null;
     if(modelAccessor != null) {
       editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);

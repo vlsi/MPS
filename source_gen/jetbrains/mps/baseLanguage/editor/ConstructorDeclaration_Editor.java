@@ -47,7 +47,7 @@ public class ConstructorDeclaration_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createConstructorName(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = Aspects.createModelAccessor_ConstructorDeclarationName(node);
+    ModelAccessor modelAccessor = new ConstructorDeclaration_Editor_ConstructorDeclarationName_Query(node);
     EditorCell editorCell = null;
     if(modelAccessor != null) {
       editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);

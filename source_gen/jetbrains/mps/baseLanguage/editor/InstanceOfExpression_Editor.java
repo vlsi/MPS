@@ -28,7 +28,7 @@ public class InstanceOfExpression_Editor extends SemanticNodeEditor {
     }
     editorCell.addEditorCell(this.createLeftExpressionCell(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell1(editorContext, node, "instanceof"));
-    editorCell.addEditorCell(this.createRightExpressionCell(editorContext, node));
+    editorCell.addEditorCell(this.createJavaClassTypeCell(editorContext, node));
     if(Aspects.semanticNodeCondition_ParentIsExpression(node)) {
       editorCell.addEditorCell(this.createConstantCell2(editorContext, node, ")"));
     }
@@ -57,16 +57,16 @@ public class InstanceOfExpression_Editor extends SemanticNodeEditor {
     EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
     return editorCell;
   }
-  public EditorCell createRightExpressionCell(EditorContext editorContext, SemanticNode node) {
-    SemanticNode rightExpression = node.getReferent("rightExpression", (SemanticNode)null);
+  public EditorCell createJavaClassTypeCell(EditorContext editorContext, SemanticNode node) {
+    SemanticNode javaClassType = node.getReferent("javaClassType", (SemanticNode)null);
     EditorCell editorCell = null;
-    if(rightExpression != null) {
-      editorCell = this.nodeCell(editorContext, rightExpression);
+    if(javaClassType != null) {
+      editorCell = this.nodeCell(editorContext, javaClassType);
       editorCell.setSelectable(true);
-      AndExpression_RightExpressionsActions.setCellActions(editorCell, node);
+      InstanceOfExpression_InstanceOfTypes.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
-      AndExpression_RightExpressionsActions.setCellActions(editorCell, node);
+      InstanceOfExpression_InstanceOfTypes.setCellActions(editorCell, node);
       _DefErrorActions.setCellActions(editorCell, node);
     }
     return editorCell;

@@ -53,7 +53,7 @@ public class StaticMethodCall_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createMethodCallNameCell(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = Aspects.createModelAccessor_MethodCallName(node);
+    ModelAccessor modelAccessor = new StaticMethodCall_Editor_MethodCallName_Query(node);
     EditorCell editorCell = null;
     if(modelAccessor != null) {
       editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
