@@ -1,6 +1,9 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SemanticPropertySupport;
+import jetbrains.mps.semanticModel.SemanticModelUtil;
+import jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration;
 
 /**
  * User: Dmitriev.
@@ -11,16 +14,15 @@ public class PropertyAccessor implements ModelAccessor {
   private String myPropertyName;
   private boolean myWritable;
   private boolean myAllowEmptyText;
-
-  public PropertyAccessor(SemanticNode node, String propertyName, boolean writable) {
-    this(node, propertyName, writable, false);
-  }
+  private SemanticPropertyDeclaration myPropertyDeclaration;
 
   public PropertyAccessor(SemanticNode node, String propertyName, boolean writable, boolean allowEmptyText) {
     myNode = node;
     myPropertyName = propertyName;
     myWritable = writable;
     myAllowEmptyText = allowEmptyText;
+
+    myPropertyDeclaration = SemanticModelUtil.getPropertyDeclaration(node, propertyName);
   }
 
   public String getText() {
@@ -28,14 +30,19 @@ public class PropertyAccessor implements ModelAccessor {
   }
 
   public void setText(String text) {
-    if(myWritable) {
-      if(!myAllowEmptyText && text != null && text.length() == 0) {
+    if (myWritable) {
+      if (!myAllowEmptyText && text != null && text.length() == 0) {
         text = null;
       }
       myNode.setProperty(myPropertyName, text);
     }
   }
+
   public boolean isValidText(String text) {
+    if (myPropertyDeclaration != null) {
+      SemanticPropertySupport propertySupport = SemanticPropertySupport.getPropertySupport(myPropertyDeclaration);
+      return propertySupport.canSetValue(text);
+    }
     return true;
   }
 }
