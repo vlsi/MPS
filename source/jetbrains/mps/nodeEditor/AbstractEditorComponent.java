@@ -972,6 +972,16 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   // ---- keyboard handling ---
 
+  public void processKeyEvent(KeyEvent keyEvent) {
+    if (keyEvent.getID() == KeyEvent.KEY_PRESSED) {
+      processKeyPressed(keyEvent);
+    } else if (keyEvent.getID() == KeyEvent.KEY_RELEASED) {
+      processKeyReleased(keyEvent);
+    } else {
+      System.out.println("shit!");
+    }
+  }
+
   private void processKeyReleased(KeyEvent keyEvent) {
     peekKeyboardHandler().processKeyReleased(getContext(), keyEvent);
   }
@@ -1101,14 +1111,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myNodeSubstituteChooser.setLocationRelative(editorCell);
     myNodeSubstituteChooser.setVisible(true);
     return true;
-  }
-
-  public void playScript(final File file) {
-    new Thread() {
-      public void run() {
-        new EventPlayer(file, getProject()).replay(true);
-      }
-    }.run();
   }
 
   public void paint(Graphics g) {
