@@ -5,8 +5,7 @@ import jetbrains.mps.semanticModel.SemanticNode;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -26,8 +25,7 @@ public class NodeSubstituteChooser {
   private String[] myStrings;
   private NodeSubstitutePatternEditor myPatternEditor;
   private INodeSubstituteInfo myNodeSubstituteInfo;
-  private List<INodeSubstituteAction> myMenuSubstituteEntries = new ArrayList<INodeSubstituteAction>();
-  private INodeSubstituteActionList myNodeSubstituteActionsList;
+  private List<INodeSubstituteAction> myMenuSubstituteEntries;
   private boolean myMenuEmpty;
 
   public NodeSubstituteChooser(AbstractEditorComponent editorComponent) {
@@ -35,7 +33,7 @@ public class NodeSubstituteChooser {
   }
 
   private PopupWindow getPopupWindow() {
-    if(myPopupWindow == null) {
+    if (myPopupWindow == null) {
       myPopupWindow = new PopupWindow(getEditorWindow());
     }
     return myPopupWindow;
@@ -43,7 +41,7 @@ public class NodeSubstituteChooser {
 
   private Window getEditorWindow() {
     Component component = myEditorComponent;
-    while(!(component instanceof Window)) {
+    while (!(component instanceof Window)) {
       component = component.getParent();
     }
     return (Window) component;
@@ -61,10 +59,6 @@ public class NodeSubstituteChooser {
 
   public void setNodeSubstituteInfo(INodeSubstituteInfo nodeSubstituteInfo) {
     myNodeSubstituteInfo = nodeSubstituteInfo;
-    myNodeSubstituteActionsList = null;
-    if(nodeSubstituteInfo instanceof INodeSubstituteActionList) {
-      myNodeSubstituteActionsList = (INodeSubstituteActionList) nodeSubstituteInfo;
-    }
   }
 
   public void setPatternEditor(NodeSubstitutePatternEditor patternEditor) {
@@ -72,7 +66,7 @@ public class NodeSubstituteChooser {
   }
 
   protected NodeSubstitutePatternEditor getPatternEditor() {
-    if(myPatternEditor == null) {
+    if (myPatternEditor == null) {
       myPatternEditor = new NodeSubstitutePatternEditor();
     }
     return myPatternEditor;
@@ -83,17 +77,15 @@ public class NodeSubstituteChooser {
   }
 
   public void setVisible(boolean b) {
-    if(isChooserActivated != b) {
-      if(b) {
+    if (isChooserActivated != b) {
+      if (b) {
         getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize);
-        if(myNodeSubstituteActionsList != null) {
-          myNodeSubstituteActionsList.invalidate();
-          rebuildMenuEntries();
-          getPopupWindow().setSelectionIndex(0);
-          getPopupWindow().relayout();
-          getPopupWindow().setVisible(true);
-          isPopupActivated = true;
-        }
+        myNodeSubstituteInfo.invalidateActions();
+        rebuildMenuEntries();
+        getPopupWindow().setSelectionIndex(0);
+        getPopupWindow().relayout();
+        getPopupWindow().setVisible(true);
+        isPopupActivated = true;
       } else {
         getPopupWindow().setVisible(false);
         getPatternEditor().done();
@@ -105,15 +97,10 @@ public class NodeSubstituteChooser {
 
   private void rebuildMenuEntries() {
     myMenuEmpty = false;
-    myMenuSubstituteEntries.clear();
     String pattern = getPatternEditor().getPattern();
-    for(Iterator<INodeSubstituteAction> i = myNodeSubstituteActionsList.actions(); i.hasNext();) {
-      INodeSubstituteAction entry = i.next();
-      if(entry.canSubstitute(pattern)) {
-        myMenuSubstituteEntries.add(entry);
-      }
-    }
-    if(myMenuSubstituteEntries.size() == 0) {
+    List<INodeSubstituteAction> matchingActions = myNodeSubstituteInfo.getMatchingActions(pattern);
+    myMenuSubstituteEntries = new LinkedList<INodeSubstituteAction>(matchingActions);
+    if (myMenuSubstituteEntries.size() == 0) {
       myMenuEmpty = true;
       myMenuSubstituteEntries.add(new AbstractNodeSubstituteAction() {
         public String getName() {
@@ -128,7 +115,7 @@ public class NodeSubstituteChooser {
 
     // cache strings
     myStrings = new String[myMenuSubstituteEntries.size()];
-    for(int i = 0; i < myMenuSubstituteEntries.size(); i++) {
+    for (int i = 0; i < myMenuSubstituteEntries.size(); i++) {
       INodeSubstituteAction entry = myMenuSubstituteEntries.get(i);
       myStrings[i] = entry.getName();
     }
@@ -140,8 +127,8 @@ public class NodeSubstituteChooser {
 
   public boolean processKeyPressed(KeyEvent keyEvent) {
 
-    if(getPatternEditor().processKeyPressed(keyEvent)) {
-      if(isPopupActivated) {
+    if (getPatternEditor().processKeyPressed(keyEvent)) {
+      if (isPopupActivated) {
         rebuildMenuEntries();
         getPopupWindow().relayout();
         repaintPopupMenu();
@@ -149,25 +136,24 @@ public class NodeSubstituteChooser {
       return true;
     }
 
-    if(keyEvent.getKeyCode() == KeyEvent.VK_ESCAPE) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_ESCAPE) {
       setVisible(false);
       return true;
     }
 
-    if(isPopupActivated) {
+    if (isPopupActivated) {
       return menu_processKeyPressed(keyEvent);
     }
 
-    if(keyEvent.getKeyCode() == KeyEvent.VK_ENTER || (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown())) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER || (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown())) {
       String pattern = getPatternEditor().getPattern();
-      if(myNodeSubstituteInfo.canSubstitute(pattern)) {
+      List<INodeSubstituteAction> matchingActions = myNodeSubstituteInfo.getMatchingActions(pattern);
+      if (matchingActions.size() == 1) {
         setVisible(false);
-//        if(!myNodeSubstituteInfo.equalsOutcome(pattern)) {
-          SemanticNode changedNode = myNodeSubstituteInfo.doSubstitute(pattern);
-          if(changedNode != null) {
-            changedNode.getSemanticModel().fireNodeAddedEvent(changedNode);
-          }
-//        }
+        SemanticNode changedNode = matchingActions.get(0).doSubstitute(pattern);
+        if (changedNode != null) {
+          changedNode.getSemanticModel().fireNodeAddedEvent(changedNode);
+        }
       }
       return true;
     }
@@ -176,20 +162,20 @@ public class NodeSubstituteChooser {
 
   private boolean menu_processKeyPressed(KeyEvent keyEvent) {
     String[] strings = getStrings();
-    if(strings.length > 0) {
-      if(keyEvent.getKeyCode() == KeyEvent.VK_UP) {
+    if (strings.length > 0) {
+      if (keyEvent.getKeyCode() == KeyEvent.VK_UP) {
         getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() - 1);
         repaintPopupMenu();
-        if(!myMenuEmpty) {
+        if (!myMenuEmpty) {
           myPatternEditor.setText(getPopupWindow().getSelectedText());
           myPatternEditor.setCaretPosition(getPopupWindow().getSelectedText().length());
         }
         return true;
       }
-      if(keyEvent.getKeyCode() == KeyEvent.VK_DOWN) {
+      if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN) {
         getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() + 1);
         repaintPopupMenu();
-        if(!myMenuEmpty) {
+        if (!myMenuEmpty) {
           myPatternEditor.setText(getPopupWindow().getSelectedText());
           myPatternEditor.setCaretPosition(getPopupWindow().getSelectedText().length());
         }
@@ -197,17 +183,15 @@ public class NodeSubstituteChooser {
       }
     }
 
-    if(keyEvent.getKeyCode() == KeyEvent.VK_ENTER || (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown())) {
-      if(!myMenuEmpty) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER || (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown())) {
+      if (!myMenuEmpty) {
         String pattern = getPatternEditor().getPattern();
         INodeSubstituteAction entry = myMenuSubstituteEntries.get(myPopupWindow.getSelectionIndex());
         setVisible(false);
-//        if(!entry.equalsOutcome(myNodeSubstituteInfo.getOriginalNode(), myNodeSubstituteInfo.getOriginalText(), pattern)) {
-          SemanticNode changedNode = entry.doSubstitute(pattern);
-          if(changedNode != null) {
-            changedNode.getSemanticModel().fireNodeAddedEvent(changedNode);
-          }
-//        }
+        SemanticNode changedNode = entry.doSubstitute(pattern);
+        if (changedNode != null) {
+          changedNode.getSemanticModel().fireNodeAddedEvent(changedNode);
+        }
       }
       return true;
     }
@@ -215,7 +199,7 @@ public class NodeSubstituteChooser {
   }
 
   private void repaintPopupMenu() {
-    if(isPopupActivated) {
+    if (isPopupActivated) {
       getPopupWindow().repaint();
     }
   }
@@ -232,10 +216,10 @@ public class NodeSubstituteChooser {
     }
 
     public void setSelectionIndex(int index) {
-      if(index < 0) {
+      if (index < 0) {
         index = 0;
       }
-      if(index >= getStrings().length) {
+      if (index >= getStrings().length) {
         index = getStrings().length - 1;
       }
       this.selectionIndex = index;
@@ -246,7 +230,7 @@ public class NodeSubstituteChooser {
       String[] types = getStrings();
       int h = 0;
       int w = getWidth();
-      for(int i = 0; i < types.length; i++) {
+      for (int i = 0; i < types.length; i++) {
         String type = types[i];
         TextLine textLine = new TextLine(type, this);
         textLine.relayout();
@@ -271,7 +255,7 @@ public class NodeSubstituteChooser {
       String[] types = getStrings();
       int shiftX = 0;
       int shiftY = 0;
-      for(int i = 0; i < types.length; i++) {
+      for (int i = 0; i < types.length; i++) {
         String type = types[i];
         TextLine textLine = new TextLine(type, this);
         textLine.setSelectedBackgroundColor(Color.blue);

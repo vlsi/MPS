@@ -439,26 +439,27 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       String pattern = patternEditor.getPattern();
 
       INodeSubstituteInfo substituteInfo = editorCell.getSubstituteInfo();
-      boolean trySubstituteNow = !(substituteInfo instanceof INodeSubstituteActionList) || // not popup menu
+      boolean trySubstituteNow =
               !patternEditor.getText().equals(substituteInfo.getOriginalText()) || // user changed text or cell has no text
               pattern.equals(patternEditor.getText()); // caret at the end
 
       // 1st - try to do substitution with current pattern (id cursor at the end of text)
-      if (trySubstituteNow && substituteInfo.canSubstitute(pattern)) {
-//        if (!substituteInfo.equalsOutcome(pattern)) {
-          SemanticNode semanticNode = substituteInfo.doSubstitute(pattern);
+      if (trySubstituteNow) {
+        List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(pattern);
+        if (matchingActions.size() == 1) {
+          SemanticNode semanticNode = matchingActions.get(0).doSubstitute(pattern);
           if (semanticNode != null) {
             semanticNode.getSemanticModel().fireNodeAddedEvent(semanticNode);
           }
           return true;
-//        }
-      } else {
-        myNodeSubstituteChooser.setNodeSubstituteInfo(editorCell.getSubstituteInfo());
-        myNodeSubstituteChooser.setPatternEditor(patternEditor);
-        myNodeSubstituteChooser.setLocationRelative(editorCell);
-        myNodeSubstituteChooser.setVisible(true);
-        return true;
+        }
       }
+
+      myNodeSubstituteChooser.setNodeSubstituteInfo(editorCell.getSubstituteInfo());
+      myNodeSubstituteChooser.setPatternEditor(patternEditor);
+      myNodeSubstituteChooser.setLocationRelative(editorCell);
+      myNodeSubstituteChooser.setVisible(true);
+      return true;
     }
     return false;
   }

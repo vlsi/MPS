@@ -2,11 +2,16 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.semanticModel.SemanticNode;
 
+import java.util.List;
+import java.util.Iterator;
+import java.util.ArrayList;
+
 /**
  * Author: Sergey Dmitriev.
  * Time: Oct 29, 2003 2:17:38 PM
  */
 public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo {
+  private List<INodeSubstituteAction> myCachedActionList;
   private SemanticNode myOriginalNode;
   private String myOriginalText;
 
@@ -26,15 +31,36 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
     return myOriginalText;
   }
 
-  public String getName() {
-    return "";
+  protected List<INodeSubstituteAction> createActions() {
+    return createSubstituteEntries();
   }
 
-//  public boolean equalsOutcome(SemanticNode originalNode, String originalText, String pattern) {
-//    return (originalText != null && originalText.length() > 0 && originalText.equals(pattern));
-//  }
+  /**
+   * @deprecated
+   * @return
+   */
+  protected abstract List<INodeSubstituteAction> createSubstituteEntries();
 
-//  public boolean equalsOutcome(String pattern) {
-//    return equalsOutcome(getOriginalNode(), getOriginalText(), pattern);
-//  }
+  public void invalidateActions() {
+    myCachedActionList = null;
+  }
+
+  public List<INodeSubstituteAction> getMatchingActions(String pattern) {
+    List<INodeSubstituteAction> list = new ArrayList<INodeSubstituteAction>();
+    Iterator<INodeSubstituteAction> iterator = actions();
+    while (iterator.hasNext()) {
+      INodeSubstituteAction entry = iterator.next();
+      if (entry.canSubstitute(pattern)) {
+        list.add(entry);
+      }
+    }
+    return list;
+  }
+
+  protected Iterator<INodeSubstituteAction> actions() {
+    if (myCachedActionList == null) {
+      myCachedActionList = createActions();
+    }
+    return myCachedActionList.iterator();
+  }
 }
