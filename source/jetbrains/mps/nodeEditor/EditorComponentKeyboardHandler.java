@@ -160,7 +160,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
         if (selectedCell.processKeyPressed(keyEvent) == true) {
           boolean cellWasValid = EditorUtil.isValidCell(selectedCell);
           if (!cellWasValid) {
-            EditorUtil.validateCell(selectedCell, editorContext, true);
+            EditorUtil.validateCell(selectedCell, editorContext, false);
           }
           return true;
         }
