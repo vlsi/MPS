@@ -31,7 +31,9 @@ public class EditorCellKeyMap {
   public static final String KEY_CODE_SPACE = "space char";
 
   private static HashMap<Integer, String> ourJavaKeycodesMap = new HashMap<Integer, String>();
-  private static List<String> ourVirtualKeycodeNames;
+  private static List<String> ourVirtualKeycodes;
+  private static List<String> ourKeycodeCategories;
+  private static List<String> ourModifiers;
 
   static {
     Field[] declaredFields = KeyEvent.class.getDeclaredFields();
@@ -52,20 +54,23 @@ public class EditorCellKeyMap {
         }
       }
     }
+  } // static init
+
+  private HashMap<ActionKey, EditorCellKeyMapAction> myActionMap;
+
+  public EditorCellKeyMap() {
+    myActionMap = new HashMap<ActionKey, EditorCellKeyMapAction>();
   }
 
-  private HashMap<ActionKey, EditorCellAction> myActionMap = new HashMap<ActionKey, EditorCellAction>();
-
-
-  public void putAction(String modifiers, String keyCode, EditorCellAction action) {
+  public void putAction(String modifiers, String keyCode, EditorCellKeyMapAction action) {
     myActionMap.put(new ActionKey(modifiers, keyCode), action);
   }
 
-  public EditorCellAction getAction(KeyEvent event) {
+  public EditorCellKeyMapAction getAction(KeyEvent event) {
     List<ActionKey> actionKeies = keyEvent2ActionKey(event);
     for (int i = 0; i < actionKeies.size(); i++) {
       ActionKey actionKey = actionKeies.get(i);
-      EditorCellAction editorCellAction = myActionMap.get(actionKey);
+      EditorCellKeyMapAction editorCellAction = myActionMap.get(actionKey);
       if (editorCellAction != null) {
         System.out.println("key map action found for key: " + actionKey);
         return editorCellAction;
@@ -149,19 +154,76 @@ public class EditorCellKeyMap {
   }
 
   public static List<String> getVirtualKeycodes() {
-    if(ourVirtualKeycodeNames == null) {
-      ourVirtualKeycodeNames = new LinkedList<String>();
+    if (ourVirtualKeycodes == null) {
+      ourVirtualKeycodes = new LinkedList<String>();
       Iterator<Integer> iterator = ourJavaKeycodesMap.keySet().iterator();
       while (iterator.hasNext()) {
         Integer keyCode = iterator.next();
-        ourVirtualKeycodeNames.add(ourJavaKeycodesMap.get(keyCode));
+        ourVirtualKeycodes.add(ourJavaKeycodesMap.get(keyCode));
       }
     }
-    return ourVirtualKeycodeNames;
+    return ourVirtualKeycodes;
+  }
+
+  public static List<String> getModifiers() {
+    if (ourModifiers == null) {
+      ourModifiers = new LinkedList<String>();
+      Field[] fields = EditorCellKeyMap.class.getFields();
+      for (int i = 0; i < fields.length; i++) {
+        Field field = fields[i];
+        String name = field.getName();
+        if (name.startsWith("KEY_MODIFIERS_")) {
+          try {
+            String value = field.get(null).toString();
+            ourModifiers.add(value);
+          } catch (IllegalAccessException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+          }
+        }
+      }
+    }
+    return ourModifiers;
+  }
+
+  public static List<String> getKeycodeCategories() {
+    if (ourKeycodeCategories == null) {
+      ourKeycodeCategories = new LinkedList<String>();
+      Field[] fields = EditorCellKeyMap.class.getFields();
+      for (int i = 0; i < fields.length; i++) {
+        Field field = fields[i];
+        String name = field.getName();
+        if (name.startsWith("KEY_CODE_")) {
+          try {
+            String value = field.get(null).toString();
+            ourKeycodeCategories.add(value);
+          } catch (IllegalAccessException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+          }
+        }
+      }
+    }
+    return ourKeycodeCategories;
+  }
+
+  public static boolean isValidModifiers(String modifiers) {
+    List<String> ourModifiers = getModifiers();
+    return ourModifiers.contains(modifiers);
+  }
+
+  public static boolean isValidKeycode(String keycode) {
+    if (keycode == null || keycode.length() == 0) {
+      return false;
+    }
+    if (keycode.length() == 1) {
+      return true;
+    }
+
+    List<String> ourVirtualKeycodes = getVirtualKeycodes();
+    List<String> ourKeycodeCategories = getKeycodeCategories();
+    return ourKeycodeCategories.contains(keycode) || ourVirtualKeycodes.contains(keycode);
   }
 
 
-  
   private static class ActionKey {
     private String myModifiers;
     private String myKeyCode;

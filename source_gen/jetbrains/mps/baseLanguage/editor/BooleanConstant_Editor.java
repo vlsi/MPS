@@ -30,6 +30,7 @@ public class BooleanConstant_Editor extends SemanticNodeEditor {
       editorCell = EditorCell_Error.create(editorContext, node, null);
     }
     BooleanConstant_NodeBoxActions.setCellActions(editorCell, node);
+    editorCell.setKeyMap(new _Expression_KeyMap());
     return editorCell;
   }
 }

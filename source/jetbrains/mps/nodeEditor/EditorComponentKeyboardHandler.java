@@ -19,11 +19,14 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     EditorCell selectedCell = editor.getSelectedCell();
 
     // precess cell keymaps first
-    if(selectedCell != null && EditorUtil.isValidCell(selectedCell)) {
-      EditorCellAction actionFromCellKeyMap = EditorUtil.getActionFromCellKeyMap(selectedCell, keyEvent);
-      if(actionFromCellKeyMap != null && actionFromCellKeyMap.canExecute(editorContext)) {
-        actionFromCellKeyMap.execute(editorContext);
-        return true;
+    if (selectedCell != null && EditorUtil.isValidCell(selectedCell)) {
+      EditorCellKeyMap keyMap = selectedCell.getKeyMap();
+      if (keyMap != null) {
+        EditorCellKeyMapAction keyMapAction = keyMap.getAction(keyEvent);
+        if (keyMapAction != null && keyMapAction.canExecute(keyEvent, editorContext)) {
+          keyMapAction.execute(keyEvent, editorContext);
+          return true;
+        }
       }
     }
 
@@ -66,13 +69,13 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
         }
 
       } else if (actionType == EditorCellAction.RIGHT_TRANSFORM) {
-        if(selectedCell instanceof EditorCell_Label && ((EditorCell_Label)selectedCell).isErrorState()) {
+        if (selectedCell instanceof EditorCell_Label && ((EditorCell_Label) selectedCell).isErrorState()) {
           // stop here
           return true;
         }
-        if(selectedCell instanceof EditorCell_Property) {
-          String text = ((EditorCell_Property)selectedCell).getModelAccessor().getText();
-          if(text == null || text.length() == 0) {  // tmp: consider it as not quite valid state
+        if (selectedCell instanceof EditorCell_Property) {
+          String text = ((EditorCell_Property) selectedCell).getModelAccessor().getText();
+          if (text == null || text.length() == 0) {  // tmp: consider it as not quite valid state
             // stop here
             return true;
           }
