@@ -73,6 +73,18 @@ public class TextUtil {
           tag.setText(toText(model, elem));
           sentence.addWord(tag);
         }
+        if ("xref".equals(name)) {
+          XRefTag tag = XRefTag.newInstance(model);
+          tag.setText(toText(model, elem));
+          tag.putUserObject(ResolveUtil.ID_TO_RESOLVE, elem.getAttributeValue("targetID"));
+          sentence.addWord(tag);
+        }
+        if ("xref-target".equals(name)) {
+          XRefTargetTag tag = XRefTargetTag.newInstance(model);
+          tag.setName(elem.getAttributeValue("ID"));
+          tag.setText(toText(model, elem));
+          sentence.addWord(tag);
+        }
         result.addSentence(sentence);
         continue;
       }
