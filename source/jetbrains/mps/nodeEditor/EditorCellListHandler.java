@@ -128,7 +128,12 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
         myListEditorCell_Collection.addEditorCell(createNodeCell_internal(editorContext, node));
       }
     }
+    setDefaultCellListActions(myListEditorCell_Collection);
     return myListEditorCell_Collection;
+  }
+
+  private void setDefaultCellListActions(EditorCell_Collection cellList) {
+    cellList.setAction(EditorCellAction.INSERT, new Insert_CellAction(this));
   }
 
   private EditorCell createNodeCell_internal(EditorContext editorContext, SemanticNode node) {
