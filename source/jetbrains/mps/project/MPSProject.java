@@ -79,7 +79,7 @@ public class MPSProject {
     document.setRootElement(rootElement);
     Element semanticModelsElement = new Element(SEMANTIC_MODELS);
     rootElement.addContent(semanticModelsElement);
-    // TODO: this code fails to on convertation of absolut path to relational path
+    // TODO: this code fails to convert some absolute paths to relational paths
     // TODO: why save ALL dependent models in MPR file ???
 //    SemanticModel[] semanticModels = mySemanticModels.semanticModels();
 //    for (int i = 0; i < semanticModels.length; i++) {
