@@ -45,6 +45,8 @@
             <node role="initializer" type="jetbrains.mps.baseLanguage.NewExpression" id="1107805405538">
               <node role="constructorCall" type="jetbrains.mps.baseLanguage.ConstructorCall" id="1107804725031">
                 <link role="baseMethodDeclaration" targetNodeId="1107804670837" />
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.IntegerType" id="1109289558610" />
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.LongType" id="1109289563096" />
               </node>
             </node>
           </node>
@@ -169,6 +171,11 @@
                 <link role="classifier" targetNodeId="1.1087811447849" />
               </node>
             </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.NewExpression" id="1109285161287">
+              <node role="constructorCall" type="jetbrains.mps.baseLanguage.ConstructorCall" id="1109284134252">
+                <link role="baseMethodDeclaration" targetNodeId="1107804670837" />
+              </node>
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1109204730681">
@@ -202,6 +209,15 @@
       <property name="name" value="T" />
     </node>
     <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1109281834454">
+      <property name="name" value="E" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1109283012469">
+    <property name="name" value="MyGenericClass" />
+    <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1109283024127">
+      <property name="name" value="T" />
+    </node>
+    <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1109283029378">
       <property name="name" value="E" />
     </node>
   </node>
