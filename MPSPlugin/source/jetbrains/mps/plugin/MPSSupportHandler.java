@@ -1,29 +1,23 @@
 package jetbrains.mps.plugin;
 
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.application.Application;
-import com.intellij.openapi.vfs.VirtualFileSystem;
-import com.intellij.openapi.vfs.VirtualFileManager;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.roots.ProjectRootManager;
-import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.command.CommandProcessor;
-import com.intellij.openapi.fileEditor.FileEditorManager;
-import com.intellij.openapi.fileEditor.FileEditor;
-import com.intellij.openapi.wm.WindowManager;
-import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.module.Module;
+import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.module.ModuleType;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.wm.WindowManager;
 import com.intellij.psi.*;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.IncorrectOperationException;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.io.File;
+import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Kostik
@@ -118,9 +112,11 @@ public class MPSSupportHandler {
   }
 
   private void activateProjectWindow() {
-    Window window = WindowManager.getInstance().suggestParentWindow(myProject);
+    Frame window = (Frame) WindowManager.getInstance().suggestParentWindow(myProject);
     if (window == null) return;
     window.toFront();
+    window.setExtendedState(JFrame.ICONIFIED);
+    window.setExtendedState(JFrame.MAXIMIZED_BOTH);
   }
 
 

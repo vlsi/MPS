@@ -24,7 +24,6 @@ hStart |--------|                  |  | hEnd
   private int myWEnd = 0;
   private int myHEnd = 0;
   private int myRowCount = 1;
-  private int myMaxX = 400;
 
 
   public void setWStart(int WStart) {
@@ -43,6 +42,9 @@ hStart |--------|                  |  | hEnd
     myHEnd = HEnd;
   }
 
+  private int getMaxX() {
+    return 400;
+  }
 
 
   public void doLayout(EditorCell_Collection editorCells) {
@@ -76,7 +78,7 @@ hStart |--------|                  |  | hEnd
         childEditorCell.setX(x);
         childEditorCell.setY(y);
         childEditorCell.relayout();
-        if(x+childEditorCell.getWidth() >= myMaxX && maxRowHeight != 0) {
+        if(x+childEditorCell.getWidth() >= getMaxX() && maxRowHeight != 0) {
           x = editorCells.getX();
           y += maxRowHeight;
           childEditorCell.moveTo(x, y);
