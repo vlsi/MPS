@@ -26,10 +26,6 @@
       <property name="role" value="referencedTag" />
       <link role="target" targetNodeId="1096887421657" />
     </node>
-    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration" id="1096649555385">
-      <property name="name" value="templateFragmentName" />
-      <link role="dataType" targetNodeId="2.1082983041843" />
-    </node>
     <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration" id="1090493180053">
       <property name="name" value="sourceQueryAspectMethodName" />
       <link role="dataType" targetNodeId="2.1082983041843" />
