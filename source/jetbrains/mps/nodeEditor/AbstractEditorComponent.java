@@ -586,6 +586,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
 
   public void rebuildEditorContent() {
+    removeAll();
+
     Point selectionPoint = null;
     Point prevSelectablePoint = null;
     int caretX = 0;
