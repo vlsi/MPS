@@ -2,11 +2,11 @@
 <semanticModel namespace="transformation.TLBase">
   <maxReferenceID value="3" />
   <language namespace="bootstrap.editorLanguage" />
-  <import referenceID="1" name="TLBase" namespace="transformation" />
+  <import referenceID="1" name="structure" namespace="transformation.TLBase" />
   <import referenceID="2" name="structure" namespace="baseLanguage" />
   <import referenceID="3" name="editor_context" namespace="transformation.TLBase" />
   <import referenceID="4" name="structure" namespace="core" />
-  <import referenceID="5" name="structureLanguage" namespace="bootstrap" />
+  <import referenceID="5" name="structure" namespace="bootstrap.structureLanguage" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1087903454703">
     <link role="semanticTypeDeclaration" targetNodeId="1.1087833241328" />
     <link role="actionSetDeclaration" metaClass="aggregation">

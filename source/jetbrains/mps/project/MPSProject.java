@@ -90,41 +90,49 @@ public class MPSProject extends AbstractMPSProject {
 
 
     Element libraryModelsElement = rootElement.getChild(LIBRARY_MODELS);
-    readModels(myLibraryModelRoots, myLibraryModels, libraryModelsElement, false);
+    readModelRoots(myLibraryModelRoots, libraryModelsElement);
     Element projectModelsElement = rootElement.getChild(PROJECT_MODELS);
-    readModels(myProjectModelRoots, myProjectModels, projectModelsElement, true);
+    readModelRoots(myProjectModelRoots, projectModelsElement);
+
+    readModels(myLibraryModelRoots, myLibraryModels);
+    readModels(myProjectModelRoots, myProjectModels);
 
     mySemanticModels.flushModelInfos();
   }
 
-  private void readModels(ArrayList<ModelRoot> modelRoots, ArrayList<SemanticModel> models, Element modelsElement, boolean toInitModels) {
+  private void readModels(ArrayList<ModelRoot> modelRoots, ArrayList<SemanticModel> models) {
+    for (Iterator<ModelRoot> iterator = modelRoots.iterator(); iterator.hasNext();) {
+      ModelRoot modelRoot = iterator.next();
+      File dir = modelRoot.root;
+      if (dir.exists()) {
+        readModels(models, dir);
+      } else {
+        throw new RuntimeException("Couldn't load models from " + dir.getAbsolutePath() +
+                "\nDirectory doesn't exist: " + dir.getAbsolutePath());
+      }
+    }
+  }
+
+  private void readModelRoots(ArrayList<ModelRoot> modelRoots, Element modelsElement) {
     if (modelsElement == null) {
       return;
     }
-      Iterator modelRootElements = modelsElement.getChildren(MODEL_ROOT).iterator();
-      while (modelRootElements.hasNext()) {
-        Element modelRootElement = (Element) modelRootElements.next();
-        String rootFileName = modelRootElement.getAttributeValue(ROOT_PATH);
-        String rootAbsolutePath = null;
-        if (rootFileName.startsWith(PATH_MACRO_PROJECT)) {
-          String modelRelativePath = rootFileName.substring(PATH_MACRO_PROJECT.length());
-          rootAbsolutePath = PathManager.getAbsolutePathByRelational(myProjectFile, modelRelativePath);
-        } else { // default
-          rootAbsolutePath = PathManager.getAbsolutePathByRelational(myProjectFile, rootFileName);
-        }
-        File dir = new File(rootAbsolutePath);
-        String namespacePrefix = modelRootElement.getAttributeValue(NAMESPACE_PREFIX);
-        ModelRoot modelRoot = new ModelRoot(namespacePrefix, dir);
-        modelRoots.add(modelRoot);
-        if (toInitModels) {
-          if (dir.exists()) {
-            readModels(models, dir);
-          } else {
-            throw new RuntimeException("Couldn't load models from " + rootAbsolutePath +
-                    "\nDirectory doesn't exist: " + rootAbsolutePath);
-          }
-        }
+    Iterator modelRootElements = modelsElement.getChildren(MODEL_ROOT).iterator();
+    while (modelRootElements.hasNext()) {
+      Element modelRootElement = (Element) modelRootElements.next();
+      String rootFileName = modelRootElement.getAttributeValue(ROOT_PATH);
+      String rootAbsolutePath = null;
+      if (rootFileName.startsWith(PATH_MACRO_PROJECT)) {
+        String modelRelativePath = rootFileName.substring(PATH_MACRO_PROJECT.length());
+        rootAbsolutePath = PathManager.getAbsolutePathByRelational(myProjectFile, modelRelativePath);
+      } else { // default
+        rootAbsolutePath = PathManager.getAbsolutePathByRelational(myProjectFile, rootFileName);
       }
+      File dir = new File(rootAbsolutePath);
+      String namespacePrefix = modelRootElement.getAttributeValue(NAMESPACE_PREFIX);
+      ModelRoot modelRoot = new ModelRoot(namespacePrefix, dir);
+      modelRoots.add(modelRoot);
+    }
   }
 
   private void readModels(ArrayList<SemanticModel> models, File dir) {
