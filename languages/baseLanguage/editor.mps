@@ -8163,7 +8163,6 @@
         <link role="substituteQueryBody" targetNodeId="1090851654836" />
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1090851716672">
           <property name="name" value="javaClassType" />
-          <link role="substituteMatcherQueryBody" targetNodeId="1090851900761" />
           <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090851900769" />
           <link role="substituteMatcherQueryBody" targetNodeId="1090851900761" />
           <link role="substituteHandlerQueryBody" targetNodeId="1090851900744" />
