@@ -41,7 +41,12 @@ public class NodeComparator {
   private boolean compareProperties(SemanticNode one, SemanticNode another) {
     if (one.getProperties().size() != another.getProperties().size()) return false;
     for (String key : one.getProperties().keySet()) {
-      if (!one.getProperties().get(key).equals(another.getProperties().get(key))) return false;
+      if (!one.getProperties().get(key).equals(another.getProperties().get(key))) {
+        System.err.println("one = " + one);
+        System.err.println("another =" + another);
+        new Throwable().printStackTrace();
+        return false;
+      }
     }
     return true;
   }
@@ -50,7 +55,9 @@ public class NodeComparator {
     if (one.getChildren().size() != another.getChildren().size()) return false;
 
     for (int i = 0; i < one.getChildren().size(); i++) {
-      if (!compareNodes(one.getChildren().get(i), another.getChildren().get(i))) return false;
+      if (!compareNodes(one.getChildren().get(i), another.getChildren().get(i))) {
+        return false;
+      }
     }
     return true;
   }
@@ -74,6 +81,9 @@ public class NodeComparator {
   private boolean compareTargets(SemanticNode one, SemanticNode another) {
     if (one == another) return true;
     if (myNodeMap.get(one) == another) return true;
+    System.err.println("one = " + one);
+    System.err.println("another =" + another);
+    new Throwable().printStackTrace();
     return false;
   }
 }
