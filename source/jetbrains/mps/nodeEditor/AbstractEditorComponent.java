@@ -98,43 +98,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myActionMap.put(EditorCellAction.PASTE_BEFORE, new CellAction_PasteNodeRelative(true));
     myActionMap.put(EditorCellAction.PASTE_AFTER, new CellAction_PasteNodeRelative(false));
 
-    registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        if (mySelectedCell != null && mySelectedCell.getSemanticNode() != null) {
-          createShowTypeInfoAction(mySelectedCell.getSemanticNode()).actionPerformed(e);
-        }
-      }
-    }, KeyStroke.getKeyStroke("control T"), WHEN_FOCUSED);
-    registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        if (mySelectedCell != null && mySelectedCell.getSemanticNode() != null) {
-          SemanticNode node = mySelectedCell.getSemanticNode();
-          ProjectPane projectPane = myIdeMain.getProjectPane();
-          projectPane.selectNode(node);
-          projectPane.getTree().requestFocus();          
-        }
-      }
-    }, KeyStroke.getKeyStroke("control P"), WHEN_FOCUSED);
-
-    registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        if (mySelectedCell != null && mySelectedCell.getSemanticNode() != null) {
-          SemanticNode selectedNode = mySelectedCell.getSemanticNode();
-          for (SemanticReference reference : selectedNode.getReferences()) {
-            SemanticNode targetNode = reference.getTargetNode();
-            SemanticNode rootNode = myRootCell.getSemanticNode();
-
-            if (rootNode.isAncestorOf(targetNode)) {
-              selectNode(targetNode);
-            } else {
-              AbstractEditorComponent editor = myIdeMain.getEditorsPane().openEditor(targetNode.getContainingRoot());
-              editor.selectNode(targetNode);
-            }
-          }
-        }
-      }
-    }, KeyStroke.getKeyStroke("control B"), WHEN_FOCUSED);
-
+    registerKeyboardAction(new ShowTypeAction(), KeyStroke.getKeyStroke("control T"), WHEN_FOCUSED);
+    registerKeyboardAction(new ShowInProjectAction(), KeyStroke.getKeyStroke("control P"), WHEN_FOCUSED);
+    registerKeyboardAction(new GoByReferenceAction(), KeyStroke.getKeyStroke("control B"), WHEN_FOCUSED);
 
     addMouseListener(new MouseAdapter() {
       public void mousePressed(final MouseEvent e) {
@@ -1057,4 +1023,54 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }
   } // private class MyModelListener implements SemanticModelListener
+
+  private class ShowTypeAction extends AbstractAction {
+    public ShowTypeAction() {
+      super("show type");
+    }
+
+    public void actionPerformed(ActionEvent e) {
+      if (mySelectedCell != null && mySelectedCell.getSemanticNode() != null) {
+        createShowTypeInfoAction(mySelectedCell.getSemanticNode()).actionPerformed(e);
+      }
+    }
+  }
+
+  private class ShowInProjectAction extends AbstractAction {
+    public ShowInProjectAction() {
+      super("show in project");
+    }
+
+    public void actionPerformed(ActionEvent e) {
+      if (mySelectedCell != null && mySelectedCell.getSemanticNode() != null) {
+        SemanticNode node = mySelectedCell.getSemanticNode();
+        ProjectPane projectPane = myIdeMain.getProjectPane();
+        projectPane.selectNode(node);
+        projectPane.getTree().requestFocus();
+      }
+    }
+  }
+
+  private class GoByReferenceAction extends AbstractAction {
+    public GoByReferenceAction() {
+      super("go by reference");
+    }
+
+    public void actionPerformed(ActionEvent e) {
+      if (mySelectedCell != null && mySelectedCell.getSemanticNode() != null) {
+        SemanticNode selectedNode = mySelectedCell.getSemanticNode();
+        for (SemanticReference reference : selectedNode.getReferences()) {
+          SemanticNode targetNode = reference.getTargetNode();
+          SemanticNode rootNode = myRootCell.getSemanticNode();
+
+          if (rootNode.isAncestorOf(targetNode)) {
+            selectNode(targetNode);
+          } else {
+            AbstractEditorComponent editor = myIdeMain.getEditorsPane().openEditor(targetNode.getContainingRoot());
+            editor.selectNode(targetNode);
+          }
+        }
+      }
+    }
+  }
 }
