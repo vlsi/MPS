@@ -1,7 +1,7 @@
 package jetbrains.mps.textGen;
 
 
-import jetbrains.mps.textGen.naming.ContextStack;
+import jetbrains.mps.textGen.naming.Names;
 
 import java.util.HashMap;
 
