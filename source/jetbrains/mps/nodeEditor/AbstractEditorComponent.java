@@ -6,6 +6,7 @@ import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ProjectPane;
 import jetbrains.mps.ide.usageView.UsagesModel_SemanticNode;
+import jetbrains.mps.ide.usageView.UsagesModel_BackReferences;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.undo.UndoManager;
@@ -216,7 +217,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private Action createFindUsagesAction(final SemanticNode node) {
     return new AbstractAction("Find Usages") {
       public void actionPerformed(ActionEvent e) {
-        UsagesModel_SemanticNode usageModel = new UsagesModel_SemanticNode(node);
+        UsagesModel_SemanticNode usageModel = new UsagesModel_BackReferences(node);
         ((IdeMain)IdeMain.instance()).showUsagesView(usageModel);
       }
     };
