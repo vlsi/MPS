@@ -268,6 +268,7 @@ public class MPSProject implements ModelLocator {
   public void save() {
     getSemanticModels().saveAll();
 
+/**
     Element rootElement = new Element(PROJECT);
     Document document = new Document();
     document.setRootElement(rootElement);
@@ -330,7 +331,7 @@ public class MPSProject implements ModelLocator {
         modelRootElement.setAttribute(NAMESPACE_PREFIX, modelRoot.namespacePrefix);
       }
       modelsElement.addContent(modelRootElement);
-    }
+    } **/
   }
 
   public void saveComponents() {
