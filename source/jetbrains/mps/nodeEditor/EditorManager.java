@@ -86,17 +86,16 @@ public class EditorManager {
       return null;
     }
 
-    String languageEditorFQName = language.getLanguageEditorFQName();
+    String stereotype = node.getSemanticModel().getStereotype();
+    String languageEditorFQName = language.getLanguageEditorFQName(stereotype);
     if (languageEditorFQName == null) {
-      (new RuntimeException("Error loading editor for node \"" + node.getDebugText() + "\" : no editor model.")).printStackTrace();
+      (new RuntimeException("Error loading editor for node \"" + node.getDebugText() + "\" <<" + stereotype + ">> : no editor model.")).printStackTrace();
       return null;
     }
 
-    String editorClassPackageName = "jetbrains.mps." + languageEditorFQName;
-    String editorClassName = typeDeclaration.getName() + "_Editor";
-
+    String editorClassName = "jetbrains.mps." + languageEditorFQName + "." + typeDeclaration.getName() + "_Editor";
     try {
-      Class editorClass = Class.forName(editorClassPackageName + '.' + editorClassName);
+      Class editorClass = Class.forName(editorClassName);
       return (INodeEditor) editorClass.newInstance();
     } catch (ClassNotFoundException e) {
       e.printStackTrace();  //To change body of catch statement use Options | File Templates.
