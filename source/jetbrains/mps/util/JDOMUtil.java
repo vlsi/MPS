@@ -15,7 +15,15 @@ public class JDOMUtil {
 
   public static Document loadDocument(File file) throws JDOMException, IOException {
     SAXBuilder saxBuilder = createBuilder();
-    return saxBuilder.build(new InputStreamReader(new FileInputStream(file), ENCODING));
+    try {
+      return saxBuilder.build(new InputStreamReader(new FileInputStream(file), ENCODING));
+    } catch (JDOMException e) {
+      System.err.println("FAILED TO LOAD FILE : " + file.getAbsolutePath());
+      throw e;
+    } catch (IOException e) {
+      System.err.println("FAILED TO LOAD FILE : " + file.getAbsolutePath());
+      throw e;
+    }
   }
 
   public static Document loadDocument(InputStream stream) throws JDOMException, IOException {
