@@ -25,7 +25,7 @@ public class EditorManager {
   }
 
   public EditorCell createEditorCell(SemanticNode node) {
-    SemanticNodeEditor editor = getEditor(node);
+    DefaultNodeEditor editor = getEditor(node);
     EditorCell nodeCell = createEditorCell(editor, node);
     if (node.getChildCount(NODE_TO_PLACE_AFTER) == 0) {
       return nodeCell;
@@ -39,7 +39,7 @@ public class EditorManager {
     return rowWrapper;
   }
 
-  private EditorCell createEditorCell(SemanticNodeEditor editor, SemanticNode node) {
+  private EditorCell createEditorCell(DefaultNodeEditor editor, SemanticNode node) {
     if (editor != null) {
       return editor.createEditorCell(myEditorContext, node);
     }
@@ -47,7 +47,7 @@ public class EditorManager {
   }
 
   public EditorCell createInspectedCell(SemanticNode node) {
-    SemanticNodeEditor editor = getEditor(node);
+    DefaultNodeEditor editor = getEditor(node);
     if (editor != null) {
       EditorCell inspectedCell = editor.createInspectedCell(myEditorContext, node);
       if (inspectedCell != null) {
@@ -57,8 +57,8 @@ public class EditorManager {
     return EditorCell_Constant.create(myEditorContext, node, node.getDebugText(), true);
   }
 
-  private SemanticNodeEditor getEditor(SemanticNode node) {
-    SemanticNodeEditor semanticNodeEditor = (SemanticNodeEditor) node.getUserObject(this.getClass());
+  private DefaultNodeEditor getEditor(SemanticNode node) {
+    DefaultNodeEditor semanticNodeEditor = (DefaultNodeEditor) node.getUserObject(this.getClass());
     if (semanticNodeEditor != null) {
       return semanticNodeEditor;
     }
@@ -68,7 +68,7 @@ public class EditorManager {
     return semanticNodeEditor;
   }
 
-  private SemanticNodeEditor loadEditor(SemanticNode node) {
+  private DefaultNodeEditor loadEditor(SemanticNode node) {
 
     SemanticTypeDeclaration typeDeclaration = SemanticModelUtil.getTypeDeclaration(node);
     if (typeDeclaration == null) {
@@ -78,7 +78,7 @@ public class EditorManager {
 
     try {
       Class nodeEditorClass = getNodeEditorClass(typeDeclaration);
-      SemanticNodeEditor semanticNodeEditor = (SemanticNodeEditor) nodeEditorClass.newInstance();
+      DefaultNodeEditor semanticNodeEditor = (DefaultNodeEditor) nodeEditorClass.newInstance();
       semanticNodeEditor.setSemanticNode(node);
       return semanticNodeEditor;
     } catch (ClassNotFoundException e) {
@@ -90,54 +90,9 @@ public class EditorManager {
     } catch (Exception e) {
       e.printStackTrace();
     }
-//
-//
-//    SemanticNodeEditor semanticNodeEditor = tryLoadTrialEditor(typeDeclaration, node);
-//    if (semanticNodeEditor != null) {
-//      return semanticNodeEditor;
-//    }
-//
-//    String editorClassName = getNodeEditorClassName(typeDeclaration, false);
-//    try {
-//      Class nodeClass = Class.forName(editorClassName);
-//      semanticNodeEditor = (SemanticNodeEditor) nodeClass.newInstance();
-//      semanticNodeEditor.setSemanticNode(node);
-//      return semanticNodeEditor;
-//    } catch (ClassNotFoundException e) {
-//      e.printStackTrace();  //To change body of catch statement use Options | File Templates.
-//    } catch (InstantiationException e) {
-//      e.printStackTrace();  //To change body of catch statement use Options | File Templates.
-//    } catch (IllegalAccessException e) {
-//      e.printStackTrace();  //To change body of catch statement use Options | File Templates.
-//    }
-//
+
     return null;
   }
-
-//  /**
-//   * tmp
-//   * tries to load *generated* editor by name: Gen_<editorName>
-//   *
-//   * @param node
-//   * @return
-//   */
-//  private SemanticNodeEditor tryLoadTrialEditor(SemanticTypeDeclaration typeDeclaration, SemanticNode node) {
-//    SemanticNodeEditor semanticNodeEditor;
-//
-//    String editorClassName = getNodeEditorClassName(typeDeclaration, true);
-//    try {
-//      Class nodeClass = Class.forName(editorClassName);
-//      semanticNodeEditor = (SemanticNodeEditor) nodeClass.newInstance();
-//      semanticNodeEditor.setSemanticNode(node);
-//      System.out.println("*USE GENERATED EDITOR FOR NODE : " + node.getDebugText());
-//      return semanticNodeEditor;
-//    } catch (ClassNotFoundException e) {
-//    } catch (InstantiationException e) {
-//    } catch (IllegalAccessException e) {
-//    }
-//
-//    return null;
-//  }
 
   public static Class getNodeEditorClass(SemanticTypeDeclaration typeDeclaration) throws ClassNotFoundException {
 
