@@ -22,6 +22,10 @@ public class PathManager {
   private static String ourModelPath;
   private static String ourHelpPath;
 
+  public static void resetHomePath() {
+    ourHomePath = null;
+  }
+
   public static String getHomePath() {
     if (ourHomePath != null) return ourHomePath;
 
