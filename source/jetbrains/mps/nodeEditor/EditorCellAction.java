@@ -10,6 +10,9 @@ public abstract class EditorCellAction {
   public static final String DELETE = "DELETE";
   public static final String COPY = "COPY";
   public static final String PASTE = "PASTE";
+  public static final String PASTE_BEFORE = "PASTE_BEFORE";
+  public static final String PASTE_AFTER = "PASTE_AFTER";
+  
   // -- navigation
   public static final String LEFT = "LEFT";
   public static final String RIGHT = "RIGHT";

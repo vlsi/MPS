@@ -74,6 +74,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     // ----
     myActionMap.put(EditorCellAction.COPY, new CopyNode_CellAction());
     myActionMap.put(EditorCellAction.PASTE, new PasteNode_CellAction());
+    myActionMap.put(EditorCellAction.PASTE_BEFORE, new PasteNodeRelative_CellAction(true));
+    myActionMap.put(EditorCellAction.PASTE_AFTER, new PasteNodeRelative_CellAction(false));
 
     addMouseListener(new MouseAdapter() {
       public void mousePressed(final MouseEvent e) {
@@ -183,6 +185,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return EditorCellAction.COPY;
     }
     if(keyEvent.getKeyCode() == KeyEvent.VK_V && keyEvent.isControlDown()) {
+      if(keyEvent.isShiftDown() && !keyEvent.isAltDown()) {
+        return EditorCellAction.PASTE_BEFORE;
+      } else if(!keyEvent.isShiftDown() && keyEvent.isAltDown()) {
+        return EditorCellAction.PASTE_AFTER;
+      }
       return EditorCellAction.PASTE;
     }
 

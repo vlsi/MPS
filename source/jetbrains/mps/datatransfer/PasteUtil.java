@@ -53,9 +53,9 @@ public class PasteUtil {
   public static void paste(SemanticNode pasteTarget, SemanticNode pasteNode) {
     int status = canPaste_internal(pasteTarget, pasteNode);
     if(status == PASTE_TO_TAREGT) {
-      pasteToTarget(pasteTarget, pasteNode, null);
+      pasteToTarget(pasteTarget, pasteNode, null, false);
     } else if(status == PASTE_TO_PARENT) {
-      pasteToParent(pasteTarget, pasteNode);
+      pasteToParent(pasteTarget, pasteNode, false);
     } else if(status == PASTE_TO_ROOT) {
       CommandUtil.addRootNode(pasteNode);
     }
@@ -79,14 +79,14 @@ public class PasteUtil {
   }
 
   private static boolean canPasteToTarget(SemanticNode pasteTarget, SemanticNode pasteNode) {
-    return pasteToTarget_internal(pasteTarget, pasteNode, null, false);
+    return pasteToTarget_internal(pasteTarget, pasteNode, null, false, false);
   }
 
-  private static void pasteToTarget(final SemanticNode pasteTarget, final SemanticNode pasteNode, final SemanticNode pasteAfter) {
-    pasteToTarget_internal(pasteTarget, pasteNode, pasteAfter, true);
+  private static void pasteToTarget(SemanticNode pasteTarget, SemanticNode pasteNode, SemanticNode anchorNode, boolean pasteBefore) {
+    pasteToTarget_internal(pasteTarget, pasteNode, anchorNode, pasteBefore, true);
   }
 
-  private static boolean pasteToTarget_internal(final SemanticNode pasteTarget, final SemanticNode pasteNode, final SemanticNode pasteAfter, boolean reallyPaste) {
+  private static boolean pasteToTarget_internal(final SemanticNode pasteTarget, final SemanticNode pasteNode, final SemanticNode anchorNode, final boolean pasteBefore, boolean reallyPaste) {
     SemanticTypeDeclaration pasteTargetType = SemanticModelUtil.getTypeDeclaration(pasteTarget);
     SemanticTypeDeclaration pasteNodeType = SemanticModelUtil.getTypeDeclaration(pasteNode);
     if(pasteTargetType == null || pasteNodeType == null) {
@@ -99,47 +99,45 @@ public class PasteUtil {
     if(reallyPaste) {
       CommandProcessor.instance().executeCommand(null, new Runnable() {
         public void run() {
-          //pasteTarget.insertReference(pasteAfter, metalink.getRole(), pasteNode, metalink.getMetaClass());
-          CommandUtil.addNodeRefernce(pasteTarget, pasteNode, metalink.getRole(), metalink.getMetaClass(), pasteAfter);
+          CommandUtil.addNodeRefernce(pasteTarget, pasteNode, metalink.getRole(), metalink.getMetaClass(), anchorNode, pasteBefore);
         }
       }, "paste");
     }
     return true;
   }
 
-  private static boolean canPasteToParent(SemanticNode pasteTarget, SemanticNode pasteNode) {
-    return pasteToParent_internal(pasteTarget, pasteNode, false);
+  private static boolean canPasteToParent(SemanticNode anchorNode, SemanticNode pasteNode) {
+    return pasteToParent_internal(anchorNode, pasteNode, false, false);
   }
 
-  private static void pasteToParent(SemanticNode pasteTarget, SemanticNode pasteNode) {
-    pasteToParent_internal(pasteTarget, pasteNode, true);
+  private static void pasteToParent(SemanticNode pasteTarget, SemanticNode pasteNode, boolean pasteBefore) {
+    pasteToParent_internal(pasteTarget, pasteNode, pasteBefore, true);
   }
 
-  private static boolean pasteToParent_internal(SemanticNode pasteTarget, SemanticNode pasteNode, boolean reallyPaste) {
+  private static boolean pasteToParent_internal(SemanticNode anchorNode, SemanticNode pasteNode, boolean pasteBefore, boolean reallyPaste) {
     SemanticNode actualPasteTarget = null;
-    SemanticNode pasteAfter = null;
-    pasteAfter = defineNodeToPasteAfter(pasteTarget, pasteNode);
+    SemanticNode actualAnchorNode = defineActualAnchorNode(anchorNode, pasteNode);
     if(!reallyPaste) {
-      return (pasteAfter != null);
+      return (actualAnchorNode != null);
     }
-    actualPasteTarget = pasteAfter.getParent();
+    actualPasteTarget = actualAnchorNode.getParent();
     if(actualPasteTarget == null) {
       return false;
     }
-    PasteUtil.pasteToTarget(actualPasteTarget, pasteNode, pasteAfter);
+    PasteUtil.pasteToTarget(actualPasteTarget, pasteNode, actualAnchorNode, pasteBefore);
     return true;
   }
 
-  private static SemanticNode defineNodeToPasteAfter(SemanticNode pasteTarget, SemanticNode pasteNode) {
-    while(pasteTarget != null) {
-      SemanticNode container = pasteTarget.getParent();
+  private static SemanticNode defineActualAnchorNode(SemanticNode anchorNode, SemanticNode pasteNode) {
+    while(anchorNode != null) {
+      SemanticNode container = anchorNode.getParent();
       if(container == null) {
         break;
       }
       if(PasteUtil.canPasteToTarget(container, pasteNode)) {
-        return pasteTarget;
+        return anchorNode;
       }
-      pasteTarget = container;
+      anchorNode = container;
     }
     return null;
   }
@@ -157,5 +155,13 @@ public class PasteUtil {
       }
     }
     return null;
+  }
+
+  public static boolean canPasteRelative(SemanticNode anchorNode, SemanticNode pasteNode) {
+    return canPasteToParent(anchorNode, pasteNode);
+  }
+
+  public static void pasteRelative(SemanticNode anchorNode, SemanticNode pasteNode, boolean pasteBefore) {
+    pasteToParent(anchorNode, pasteNode, pasteBefore);
   }
 }
