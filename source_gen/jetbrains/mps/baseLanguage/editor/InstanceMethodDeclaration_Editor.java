@@ -60,8 +60,9 @@ public class InstanceMethodDeclaration_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createMethodName(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = new PropertyAccessor(node, "name", "?", true);
-    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
+    ModelAccessor modelAccessor = new PropertyAccessor(node, "name", true);
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node, true);
+    editorCell.setDefaultText("?");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
