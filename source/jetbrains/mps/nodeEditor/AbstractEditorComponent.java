@@ -75,8 +75,36 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     myIdeMain = ideMain;
 
-    setDoubleBuffered(true);
+    setFocusTraversalPolicyProvider(true);
+    setFocusCycleRoot(true);
+    setFocusTraversalPolicy(new FocusTraversalPolicy() {
+      public Component getComponentAfter(Container aContainer, Component aComponent) {
+        System.out.println("After!");
+        executeComponentAction(EditorCellAction.NEXT);
+        return aContainer;
+      }
+
+      public Component getComponentBefore(Container aContainer, Component aComponent) {
+        System.out.println("Before!");
+        executeComponentAction(EditorCellAction.PREV);
+        return aContainer;
+      }
+
+      public Component getFirstComponent(Container aContainer) {
+        return aContainer;
+      }
+
+      public Component getLastComponent(Container aContainer) {
+        return aContainer;
+      }
+
+      public Component getDefaultComponent(Container aContainer) {
+        return aContainer;
+      }
+    });
     setFocusTraversalKeysEnabled(false);
+
+    setDoubleBuffered(true);
     myScrollPane = new JScrollPane();
     myScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
     myScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
