@@ -297,7 +297,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
     private JList myList = new JList(new DefaultListModel());
     private PopupWindowPosition myPosition = PopupWindowPosition.BOTTOM;
-    private JScrollPane myScroller = new JScrollPane(myList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);;
+    private JScrollPane myScroller = new JScrollPane(myList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);;
     private EditorCell myRelativeCell;
 
     public PopupWindow(Window owner, EditorCell cell) {
@@ -392,11 +392,19 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
         newLocation = new Point(newLocation.x, newLocation.y - getHeight() - myRelativeCell.getHeight());
       }
 
-
       int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+      if (getWidth() >= screenWidth) {
+        setSize(screenWidth, getSize().height + myList.getFontMetrics(myList.getFont()).getHeight());
+      }
+
+      if (newLocation.x < 0) {
+        newLocation.x = 0;
+      }
+
       if (getWidth() + newLocation.x > screenWidth) {
         newLocation = new Point(screenWidth - getWidth(),  newLocation.y);
       }
+
 
       setLocation(newLocation);
 
