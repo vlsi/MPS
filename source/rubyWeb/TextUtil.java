@@ -94,6 +94,11 @@ public class TextUtil {
           tag.setText(toText(model, elem));
           tag.putUserObject(ResolveUtil.ID_TO_RESOLVE, elem.getAttributeValue("ref"));
         }
+        if ("section".equals(name)) {
+          tag = SectionTag.newInstance(model);
+          tag.setText(toText(model, elem));
+          tag.setName(elem.getChild("h").getText());
+        }
         if (tag != null) {
           sentence.addWord(tag);
         }
@@ -136,6 +141,7 @@ public class TextUtil {
     StringBuilder result = new StringBuilder();
     for (Sentence sentence : CollectionUtil.iteratorAsIterable(text.sentences())) {
       result.append(toString(sentence));
+      if (sentence.getWordsCount() == 0) sentence.delete();
     }
     return result.toString();
   }
@@ -163,6 +169,16 @@ public class TextUtil {
   }
 
   public static void toElement(Word word, Element element) {
+    if (word instanceof SectionTag) {
+      SectionTag tag = (SectionTag) word;
+      Element target = new Element("section");
+      Element header = new Element("h");
+      header.setText(tag.getName());
+      target.addContent(header);
+      toElement(tag.getText(), target);
+      element.addContent(target);
+      return;
+    }
     if (word instanceof BoldTag) {
       BoldTag tag = (BoldTag) word;
       Element bold = new Element("b");
@@ -170,7 +186,6 @@ public class TextUtil {
       toElement(tag.getText(), bold);
       return;
     }
-
     if (word instanceof ItalicTag) {
       ItalicTag tag = (ItalicTag) word;
       Element italic = new Element("i");
@@ -178,7 +193,6 @@ public class TextUtil {
       toElement(tag.getText(), italic);
       return;
     }
-
     if (word instanceof TermTag) {
       TermTag tag = (TermTag) word;
       Element italic = new Element("term");
@@ -186,7 +200,6 @@ public class TextUtil {
       toElement(tag.getText(), italic);
       return;
     }
-
     if (word instanceof CiteTag) {
       CiteTag tag = (CiteTag) word;
       Element target = new Element("cite");
@@ -196,7 +209,6 @@ public class TextUtil {
       element.addContent(target);
       return;
     }
-
     if (word instanceof XRefTag) {
       XRefTag tag = (XRefTag) word;
       Element xref = new Element("xref");
@@ -207,7 +219,6 @@ public class TextUtil {
       element.addContent(xref);
       return;
     }
-
     if (word instanceof XRefTargetTag) {
       XRefTargetTag tag = (XRefTargetTag) word;
       Element target = new Element("xref-target");
@@ -217,7 +228,6 @@ public class TextUtil {
       element.addContent(target);
       return;
     }
-
     if (word instanceof PatternRefTag) {
       PatternRefTag tag = (PatternRefTag) word;
       Element target = new Element("patternRef");
@@ -242,7 +252,6 @@ public class TextUtil {
       element.addContent(target);
       return;
     }
-
     element.addContent(word.getValue());
   }
 }
