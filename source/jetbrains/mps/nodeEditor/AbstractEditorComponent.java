@@ -303,7 +303,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 //    String header = selectedNode.getDebugText();
     popupMenu.add(JavaNameUtil.shortName(header));
     popupMenu.addSeparator();
-    popupMenu.add(createGoByReferenceMenu(selectedNode));
 
     ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS).addGroup(popupMenu, new ActionContext(getProject().getComponent(IdeMain.class), selectedNode));
 
@@ -327,29 +326,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (cell == null) return;
     changeSelection(cell);
   }
-
-  private JMenu createGoByReferenceMenu(SemanticNode node) {
-    JMenu menu = new JMenu("Go By Reference");
-    List<SemanticReference> references = node.getReferences();
-    if (references.size() == 0) {
-      menu.add("no references");
-    }
-    for (int i = 0; i < references.size(); i++) {
-      SemanticReference reference = references.get(i);
-      final SemanticNode targetNode = reference.getTargetNode();
-      String actionText = "[" + reference.getRole() + "] " + targetNode.getDebugText();
-      AbstractAction action = new AbstractAction(actionText) {
-        public void actionPerformed(ActionEvent e) {
-          SemanticNode toOpenNode = SModelUtil.getRootParent(targetNode);
-          AbstractEditorComponent editor = myMPSProject.getComponent(EditorsPane.class).openEditor(toOpenNode, LEFT);
-          editor.selectNode(targetNode);
-        }
-      };
-      menu.add(action);
-    }
-    return menu;
-  }
-
 
   private Action createGenStubFromClassFileAction(final ClassConcept targetClass) {
     return new AbstractAction("Generate Stub From Class File") {
