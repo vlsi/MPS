@@ -1,0 +1,118 @@
+package jetbrains.mps.nodeEditor;
+
+import jetbrains.mps.semanticModel.SemanticModel;
+import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.UndefinedOperator;
+
+import java.awt.*;
+
+/**
+ * Author: Sergey Dmitriev
+ * Created Sep 14, 2003
+ */
+public class EditorContext {
+  private NodeEditor myComponent;
+  private SemanticModel mySemanticModel;
+  private EditorManager myEditorManager;
+  private SemanticLanguage[] myLanguages;
+
+  public EditorContext(NodeEditor component, SemanticModel semanticModel) {
+    myComponent = component;
+    mySemanticModel = semanticModel;
+    myEditorManager = new EditorManager(this);
+
+    myLanguages = new SemanticLanguage[3];
+    myLanguages[0] = new SemanticLanguage("jetbrains.mps.bootstrap.structureLanguage");
+    myLanguages[1] = new SemanticLanguage("jetbrains.mps.bootstrap.editorLanguage");
+    myLanguages[2] = new SemanticLanguage("jetbrains.mps.baseLanguage") {
+      public boolean supports(SemanticNode node) {
+        if(node instanceof UndefinedOperator) {
+          return true;
+        }
+        return super.supports(node);
+      }
+    };
+  }
+
+  public NodeEditor getComponent() {
+    return myComponent;
+  }
+
+  public void setComponent(NodeEditor component) {
+    myComponent = component;
+  }
+
+  public SemanticModel getSemanticModel() {
+    return mySemanticModel;
+  }
+
+  public EditorManager getEditorManager() {
+    return myEditorManager;
+  }
+
+  public SemanticLanguage[] getLanguages() {
+    return myLanguages;
+  }
+
+  public Object createMemento() {
+    return new Memento(this);
+  }
+
+  public boolean isMementoApplicable(Object o) {
+    if(o instanceof Memento) {
+      return myComponent == ((Memento) o).nodeEditor;
+    }
+    return false;
+  }
+
+  public boolean setMemento(Object o) {
+    if(o instanceof Memento) {
+      Memento memento = (Memento) o;
+      if(myComponent == memento.nodeEditor) {
+        if(memento.selectionPosition != null) {
+          EditorCell nearestCell = myComponent.findNearestCell(memento.selectionPosition.x, memento.selectionPosition.y);
+          myComponent.changeSelection(nearestCell);
+          if(nearestCell != null) {
+            nearestCell.setCaretX(memento.caretX.intValue());
+          } else {
+            System.err.println("ERROR EditorContext: coudn't find cell at: " + memento.selectionPosition);
+          }
+        } else {
+          //myComponent.changeSelection(null);
+        }
+        return true;
+      }
+    }
+    return false;
+  }
+
+  private static class Memento {
+    private NodeEditor nodeEditor;
+    private Point selectionPosition;
+    private Integer caretX;
+
+    public Memento(EditorContext context) {
+      nodeEditor = context.getComponent();
+      EditorCell selectedCell = nodeEditor.getSelectedCell();
+      if(selectedCell != null) {
+        selectionPosition = new Point(selectedCell.getX(), selectedCell.getY());
+        caretX = new Integer(selectedCell.getCaretX());
+      }
+    }
+
+    public boolean equals(Object object) {
+      if(object == this) return true;
+      if(object.hashCode() == this.hashCode()) return true;
+      if(object instanceof EditorContext) {
+        return ((EditorContext) object).createMemento().equals(this);
+      }
+      return false;
+    }
+
+    public int hashCode() {
+      return nodeEditor.hashCode() +
+              (selectionPosition != null ? selectionPosition.hashCode() : 0) +
+              (caretX != null ? caretX.hashCode() : 0);
+    }
+  } // private static class Memento
+}
