@@ -19,7 +19,7 @@ import java.util.List;
  * Author: Sergey Dmitriev
  * Created Sep 14, 2003
  */
-public abstract class AbstractEditorComponent extends JComponent implements Scrollable {
+public abstract class AbstractEditorComponent extends JComponent implements Scrollable, IKeyboardHandler {
 
   private JScrollPane myScrollPane;
   private JComponent myContainer;
@@ -56,7 +56,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     // --- keyboard handling ---
     myKbdHandlersStack = new Stack<IKeyboardHandler>();
-    myKbdHandlersStack.push(new MyKeyboardHandler());
+    myKbdHandlersStack.push((IKeyboardHandler) this);
 
     // --- init action map --
     myActionMap = new HashMap();
@@ -136,7 +136,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return myRootCell;
   }
 
-  public String getActionType(KeyEvent keyEvent) {
+  public String getActionType(KeyEvent keyEvent, EditorContext editorContext) {
     if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && keyEvent.getModifiers() == 0) {
       return EditorCellAction.LEFT;
     }
@@ -173,13 +173,32 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (keyEvent.getKeyCode() == KeyEvent.VK_TAB && keyEvent.isShiftDown()) {
       return EditorCellAction.PREV;
     }
+
     // ---
-    if (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && (keyEvent.getModifiers() == 0 || keyEvent.isShiftDown())) {
-      return EditorCellAction.RIGHT_TRANSFORM;
+    if (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.getModifiers() == 0) {
+      EditorCell selectedCell = editorContext.getNodeEditorComponent().getSelectedCell();
+      if (!(selectedCell instanceof EditorCell_Label)) {
+        return EditorCellAction.RIGHT_TRANSFORM;
+      }
+      EditorCell_Label labelCell = (EditorCell_Label) selectedCell;
+      if (!labelCell.isEditable()) {
+        return EditorCellAction.RIGHT_TRANSFORM;
+      }
+
+      // caret at the end of text ?
+      String text = labelCell.getText();
+      int caretPosition = labelCell.getTextLine().getCaretPosition();
+      System.out.println("text:" + text + " len:" + text.length() + "caret at:" + caretPosition);
+      if (caretPosition == text.length()) {
+        return EditorCellAction.RIGHT_TRANSFORM;
+      }
     }
+
+
     if (keyEvent.getKeyCode() == KeyEvent.VK_DELETE && keyEvent.isControlDown()) {
       return EditorCellAction.DELETE;
     }
+
     // ---
     if (keyEvent.getKeyCode() == KeyEvent.VK_C && keyEvent.isControlDown()) {
       return EditorCellAction.COPY;
@@ -336,59 +355,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return cell;
   }
 
-  private void processKeyReleased(KeyEvent keyEvent) {
-    peekKeyboardHandler().processKeyReleased(getContext(), keyEvent);
-  }
-
-  public void processKeyPressed(final KeyEvent keyEvent) {
-
-    // hardcoded actions which should be excuted outside command
-
-    // hardcoded undo/redo action
-    if (keyEvent.getKeyCode() == KeyEvent.VK_Z && keyEvent.isControlDown()) {
-      if (keyEvent.isShiftDown()) {
-        if (UndoManager.instance().isRedoAvailable(getContext())) {
-          UndoManager.instance().redo(getContext());
-        }
-      } else {
-        if (UndoManager.instance().isUndoAvailable(getContext())) {
-          UndoManager.instance().undo(getContext());
-        }
-      }
-      keyEvent.consume();
-      return;
-    }
-
-    // hardcoded "update" action
-    if (keyEvent.getKeyCode() == KeyEvent.VK_F5) {
-      rebuildEditorContent();
-      keyEvent.consume();
-      return;
-    }
-
-    // dump cells tree starting from current
-    if (keyEvent.getKeyCode() == KeyEvent.VK_D && keyEvent.isControlDown()) {
-      if (mySelectedCell != null) {
-        System.out.println("--- Dump cells ---");
-        dumpCells(mySelectedCell, 0);
-        keyEvent.consume();
-        return;
-      }
-    }
-
-    // all other processing should be performed inside command
-
-    CommandProcessor.instance().executeCommand(getContext(), new Runnable() {
-      public void run() {
-        if (peekKeyboardHandler().processKeyPressed(getContext(), keyEvent) == true) {
-          return;
-        }
-      }
-    }, null);
-
-    return;
-  }
-
   public boolean executeAction(EditorCell cell, String actionType) {
     if (executeCellAction(cell, actionType)) {
       return true;
@@ -424,44 +390,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         dumpCells(iterator.next(), level + 1);
       }
     }
-  }
-
-  private boolean activateNodeSubstituteChooser(EditorCell editorCell, boolean resetPattern) {
-    if (myNodeSubstituteChooser.isVisible()) {
-      return true;
-    }
-
-    if (editorCell != null && editorCell.getSubstituteInfo() != null) {
-      NodeSubstitutePatternEditor patternEditor = editorCell.createSubstitutePatternEditor();
-      if (resetPattern) {
-        patternEditor.setCaretPosition(0);
-      }
-      String pattern = patternEditor.getPattern();
-
-      INodeSubstituteInfo substituteInfo = editorCell.getSubstituteInfo();
-      boolean trySubstituteNow =
-              !patternEditor.getText().equals(substituteInfo.getOriginalText()) || // user changed text or cell has no text
-              pattern.equals(patternEditor.getText()); // caret at the end
-
-      // 1st - try to do substitution with current pattern (id cursor at the end of text)
-      if (trySubstituteNow) {
-        List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(pattern);
-        if (matchingActions.size() == 1) {
-          SemanticNode semanticNode = matchingActions.get(0).doSubstitute(pattern);
-          if (semanticNode != null) {
-            semanticNode.getSemanticModel().fireNodeAddedEvent(semanticNode);
-          }
-          return true;
-        }
-      }
-
-      myNodeSubstituteChooser.setNodeSubstituteInfo(editorCell.getSubstituteInfo());
-      myNodeSubstituteChooser.setPatternEditor(patternEditor);
-      myNodeSubstituteChooser.setLocationRelative(editorCell);
-      myNodeSubstituteChooser.setVisible(true);
-      return true;
-    }
-    return false;
   }
 
   private void processMousePressed(MouseEvent mouseEvent) {
@@ -644,6 +572,211 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myUserDataMap.put(key, data);
   }
 
+  // ---- keyboard handling ---
+
+  private void processKeyReleased(KeyEvent keyEvent) {
+    peekKeyboardHandler().processKeyReleased(getContext(), keyEvent);
+  }
+
+  public void processKeyPressed(final KeyEvent keyEvent) {
+
+    // hardcoded actions which should be excuted outside command
+
+    // hardcoded undo/redo action
+    if (keyEvent.getKeyCode() == KeyEvent.VK_Z && keyEvent.isControlDown()) {
+      if (keyEvent.isShiftDown()) {
+        if (UndoManager.instance().isRedoAvailable(getContext())) {
+          UndoManager.instance().redo(getContext());
+        }
+      } else {
+        if (UndoManager.instance().isUndoAvailable(getContext())) {
+          UndoManager.instance().undo(getContext());
+        }
+      }
+      keyEvent.consume();
+      return;
+    }
+
+    // hardcoded "update" action
+    if (keyEvent.getKeyCode() == KeyEvent.VK_F5) {
+      rebuildEditorContent();
+      keyEvent.consume();
+      return;
+    }
+
+    // dump cells tree starting from current
+    if (keyEvent.getKeyCode() == KeyEvent.VK_D && keyEvent.isControlDown()) {
+      if (mySelectedCell != null) {
+        System.out.println("--- Dump cells ---");
+        dumpCells(mySelectedCell, 0);
+        keyEvent.consume();
+        return;
+      }
+    }
+
+    // all other processing should be performed inside command
+
+    CommandProcessor.instance().executeCommand(getContext(), new Runnable() {
+      public void run() {
+        if (peekKeyboardHandler().processKeyPressed(getContext(), keyEvent) == true) {
+          return;
+        }
+      }
+    }, null);
+
+    return;
+  }
+
+  /**
+   * from IKeyboardHandler
+   */
+  public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
+    return false;
+  }
+
+  /**
+   * from IKeyboardHandler
+   */
+  public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
+    if (myNodeSubstituteChooser.isVisible()) {
+      if (myNodeSubstituteChooser.processKeyPressed(keyEvent)) {
+        keyEvent.consume();
+        return true;
+      }
+    }
+
+    String actionType = getActionType(keyEvent, editorContext);
+
+    // pre-process action
+    boolean executeCellCommand = true;
+    if (actionType == EditorCellAction.RIGHT_TRANSFORM &&
+            mySelectedCell != null &&
+            getCellAction(mySelectedCell, actionType) != null) {
+      executeCellCommand = validateCellBeforeTransform(mySelectedCell);
+    }
+
+
+    // process action
+    if (mySelectedCell != null) {
+
+      if (actionType != null) {
+        if (executeCellCommand) {
+          if (executeCellAction(mySelectedCell, actionType)) {
+            keyEvent.consume();
+            return true;
+          }
+        }
+      }
+
+      EditorCell oldSelection = mySelectedCell;
+      if (mySelectedCell.processKeyPressed(keyEvent) == true) {
+        if (oldSelection != mySelectedCell) {
+          mySelectedStack.removeAllElements();
+        }
+        keyEvent.consume();
+        return true;
+      }
+
+      // auto-completion (i.e. node substitution)
+      if ((keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown()) ||
+              (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && !keyEvent.isControlDown())) {
+        if (activateNodeSubstituteChooser(mySelectedCell, keyEvent.getKeyCode() == KeyEvent.VK_ENTER)) {
+          keyEvent.consume();
+          System.out.println("SUBSTITUTE");
+          return true;
+        }
+        System.out.println("NO SUBSTITUTE");
+      }
+
+    } // if (mySelectedCell != null)
+
+    if (actionType != null) {
+      if (executeGlobalAction(actionType)) {
+        keyEvent.consume();
+        return true;
+      }
+    }
+
+    // special case - don't allow kbd focus to leave editor area
+    if (keyEvent.getKeyCode() == KeyEvent.VK_UP && keyEvent.isControlDown()) {
+      keyEvent.consume();
+    }
+
+    return false;
+  }
+
+  private boolean validateCellBeforeTransform(EditorCell cell) {
+    if (!(cell instanceof EditorCell_Label)) {
+      return true;
+    }
+    EditorCell_Label labelCell = (EditorCell_Label) cell;
+    if (!labelCell.isErrorState()) {
+      return true;
+    }
+
+    INodeSubstituteInfo substituteInfo = labelCell.getSubstituteInfo();
+    if (substituteInfo == null) {
+      return true;
+    }
+
+    List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(labelCell.getText());
+    if (matchingActions.size() == 0) {
+      return false;
+    }
+    if (matchingActions.size() > 1) {
+      activateNodeSubstituteChooser(labelCell, false);
+      return false;
+    }
+
+    SemanticNode newNode = matchingActions.get(0).doSubstitute(labelCell.getText());
+    if (newNode != null) {
+      newNode.getSemanticModel().fireNodeAddedEvent(newNode);
+      EditorCell newNodeCell = this.findNodeCell(newNode);
+      this.changeSelection(newNodeCell);
+    }
+    return true;
+  }
+
+  private boolean activateNodeSubstituteChooser(EditorCell editorCell, boolean resetPattern) {
+    if (myNodeSubstituteChooser.isVisible()) {
+      return true;
+    }
+
+    if (editorCell != null && editorCell.getSubstituteInfo() != null) {
+      NodeSubstitutePatternEditor patternEditor = editorCell.createSubstitutePatternEditor();
+      if (resetPattern) {
+        patternEditor.setCaretPosition(0);
+      }
+      String pattern = patternEditor.getPattern();
+
+      INodeSubstituteInfo substituteInfo = editorCell.getSubstituteInfo();
+      boolean trySubstituteNow =
+              !patternEditor.getText().equals(substituteInfo.getOriginalText()) || // user changed text or cell has no text
+              pattern.equals(patternEditor.getText()); // caret at the end
+
+      // 1st - try to do substitution with current pattern (id cursor at the end of text)
+      if (trySubstituteNow) {
+        List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(pattern);
+        if (matchingActions.size() == 1) {
+          SemanticNode semanticNode = matchingActions.get(0).doSubstitute(pattern);
+          if (semanticNode != null) {
+            semanticNode.getSemanticModel().fireNodeAddedEvent(semanticNode);
+          }
+          return true;
+        }
+      }
+
+      myNodeSubstituteChooser.setNodeSubstituteInfo(editorCell.getSubstituteInfo());
+      myNodeSubstituteChooser.setPatternEditor(patternEditor);
+      myNodeSubstituteChooser.setLocationRelative(editorCell);
+      myNodeSubstituteChooser.setVisible(true);
+      return true;
+    }
+    return false;
+  }
+
+
+
   // ---- semantic model listener
 
   private class MyModelListener implements SemanticModelListener {
@@ -706,67 +839,4 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }
   } // private class MyModelListener implements SemanticModelListener
-
-
-  // ---- keyboard handler ----
-
-  private class MyKeyboardHandler implements IKeyboardHandler {
-    public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
-      return false;
-    }
-
-    public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
-      if (myNodeSubstituteChooser.isVisible()) {
-        if (myNodeSubstituteChooser.processKeyPressed(keyEvent)) {
-          keyEvent.consume();
-          return true;
-        }
-      }
-
-      // process registered cell's actions
-      String actionType = getActionType(keyEvent);
-      if (actionType != null) {
-        if (executeCellAction(mySelectedCell, actionType)) {
-          keyEvent.consume();
-          return true;
-        }
-      }
-
-      if (mySelectedCell != null) {
-        EditorCell oldSelection = mySelectedCell;
-        if (mySelectedCell.processKeyPressed(keyEvent) == true) {
-          if (oldSelection != mySelectedCell) {
-            mySelectedStack.removeAllElements();
-          }
-          keyEvent.consume();
-          return true;
-        }
-
-        // auto-completion (i.e. node substitution)
-        if ((keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown()) ||
-                (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && !keyEvent.isControlDown())) {
-          if (activateNodeSubstituteChooser(mySelectedCell, keyEvent.getKeyCode() == KeyEvent.VK_ENTER)) {
-            keyEvent.consume();
-            System.out.println("SUBSTITUTE");
-            return true;
-          }
-          System.out.println("NO SUBSTITUTE");
-        }
-      }
-
-      if (actionType != null) {
-        if (executeGlobalAction(actionType)) {
-          keyEvent.consume();
-          return true;
-        }
-      }
-
-      // special case - don't allow kbd focus to leave editor area
-      if (keyEvent.getKeyCode() == KeyEvent.VK_UP && keyEvent.isControlDown()) {
-        keyEvent.consume();
-      }
-
-      return false;
-    }
-  } // private class MyKeyboardHandler implements IKeyboardHandler
 }

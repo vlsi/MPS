@@ -171,7 +171,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
 
   public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
     AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
-    String actionType = editor.getActionType(keyEvent);
+    String actionType = editor.getActionType(keyEvent, editorContext);
     if(EditorCellAction.INSERT.equals(actionType) ||
         EditorCellAction.INSERT_BEFORE.equals(actionType)) {
       cancelInsertMode(editorContext);
@@ -186,7 +186,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
 
   public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
     AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
-    String actionType = editor.getActionType(keyEvent);
+    String actionType = editor.getActionType(keyEvent, editorContext);
     if(!(EditorCellAction.INSERT.equals(actionType) ||
         EditorCellAction.INSERT_BEFORE.equals(actionType))) {
       finishInsertMode(editorContext);
