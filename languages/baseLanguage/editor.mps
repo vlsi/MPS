@@ -101,8 +101,8 @@
     </link>
     <link role="cellModel" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1073416106126">
-        <link role="linkDeclaration" targetNodeId="8.1068581517665" />
         <link role="elementActionSet" targetNodeId="1081788832468" />
+        <link role="linkDeclaration" targetNodeId="8.1068581517665" />
         <link role="emptyCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1079958242049">
             <link role="actionSet" targetNodeId="1077017490551" />
@@ -260,8 +260,8 @@
             </link>
             <link role="childCellModel" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1074867634396">
-                <link role="linkDeclaration" targetNodeId="8.1068390468201" />
                 <link role="nodeFactoryQueryBody" targetNodeId="1082026262708" />
+                <link role="linkDeclaration" targetNodeId="8.1068390468201" />
                 <link role="emptyCellModel" metaClass="aggregation">
                   <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1074867634397">
                     <link role="actionSet" targetNodeId="1076938177026" />
@@ -492,10 +492,10 @@
             <link role="substituteQueryBody" targetNodeId="1081927995345" />
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1080143775377">
-                <link role="substituteTextQueryBody" targetNodeId="1081927995370" />
                 <link role="substituteModelQueryBody" targetNodeId="1081927995375" />
-                <link role="substituteTextQueryMethod" targetNodeId="1081927995364" />
                 <link role="substituteModelQueryMethod" targetNodeId="1081927995371" />
+                <link role="substituteTextQueryBody" targetNodeId="1081927995370" />
+                <link role="substituteTextQueryMethod" targetNodeId="1081927995364" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984016">
                     <link role="method" metaClass="aggregation">
@@ -683,8 +683,8 @@
         <link role="keyMap" targetNodeId="1081427357000" />
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1080138264330">
-            <link role="linkDeclaration" targetNodeId="8.1080137532343" />
             <link role="actionSet" targetNodeId="1080138413255" />
+            <link role="linkDeclaration" targetNodeId="8.1080137532343" />
             <property name="name" />
           </node>
         </link>
@@ -741,9 +741,9 @@
     </link>
     <link role="cellModel" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1088427419930">
-        <link role="linkDeclaration" targetNodeId="8.1068581517664" />
         <link role="keyMap" targetNodeId="1081427357000" />
         <link role="actionSet" targetNodeId="1076950734725" />
+        <link role="linkDeclaration" targetNodeId="8.1068581517664" />
         <link role="editorComponent" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1088427419931">
             <link role="semanticTypeDeclaration" targetNodeId="8.1068431474542" />
@@ -780,8 +780,8 @@
     <link role="cellModel" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1088426751220">
         <link role="linkDeclaration" targetNodeId="8.1068581517664" />
-        <link role="actionSet" targetNodeId="1076939756687" />
         <link role="keyMap" targetNodeId="1081427357000" />
+        <link role="actionSet" targetNodeId="1076939756687" />
         <link role="editorComponent" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1088426751221">
             <link role="semanticTypeDeclaration" targetNodeId="8.1068431474542" />
@@ -1305,8 +1305,8 @@
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1075289941063">
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075289941064">
-            <link role="linkDeclaration" targetNodeId="8.1068431790188" />
             <link role="actionSet" targetNodeId="1076932322494" />
+            <link role="linkDeclaration" targetNodeId="8.1068431790188" />
             <property name="nullRefText" value="&lt;no type&gt;" />
             <property name="actionSetId" />
             <property name="nullText" value="&lt;no type&gt;" />
@@ -1316,8 +1316,8 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1075289970878">
-            <link role="propertyDeclaration" targetNodeId="9.1078489098626" />
             <link role="actionSet" targetNodeId="1076781056865" />
+            <link role="propertyDeclaration" targetNodeId="9.1078489098626" />
             <property name="writable" value="true" />
             <property name="defaultText" value="&lt;no name&gt;" />
             <property name="defaultValue" value="?" />
@@ -1624,8 +1624,8 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1075303160503">
-            <link role="propertyDeclaration" targetNodeId="9.1078489098626" />
             <link role="actionSet" targetNodeId="1076938982020" />
+            <link role="propertyDeclaration" targetNodeId="9.1078489098626" />
             <property name="writable" value="true" />
             <property name="defaultText" value="&lt;no name&gt;" />
             <property name="defaultValue" value="?" />
@@ -1644,8 +1644,8 @@
             </link>
             <link role="childCellModel" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075303160506">
-                <link role="actionSet" targetNodeId="1077124145703" />
                 <link role="linkDeclaration" targetNodeId="8.1068431790190" />
+                <link role="actionSet" targetNodeId="1077124145703" />
                 <property name="actionSetId" />
                 <property name="name" />
               </node>
@@ -1791,10 +1791,10 @@
             <link role="substituteQueryBody" targetNodeId="1081927995633" />
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1076935149134">
-                <link role="substituteTextQueryBody" targetNodeId="1081927995658" />
-                <link role="substituteModelQueryMethod" targetNodeId="1081927995659" />
-                <link role="substituteTextQueryMethod" targetNodeId="1081927995652" />
                 <link role="substituteModelQueryBody" targetNodeId="1081927995663" />
+                <link role="substituteModelQueryMethod" targetNodeId="1081927995659" />
+                <link role="substituteTextQueryBody" targetNodeId="1081927995658" />
+                <link role="substituteTextQueryMethod" targetNodeId="1081927995652" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984033">
                     <link role="method" metaClass="aggregation">
@@ -1982,8 +1982,8 @@
         <link role="keyMap" targetNodeId="1081427357000" />
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075308068515">
-            <link role="actionSet" targetNodeId="1076936461312" />
             <link role="linkDeclaration" targetNodeId="8.1068580123164" />
+            <link role="actionSet" targetNodeId="1076936461312" />
             <property name="actionSetId" />
             <property name="name" />
           </node>
@@ -1996,8 +1996,8 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1088426063979">
-            <link role="actionSet" targetNodeId="1076935149131" />
             <link role="linkDeclaration" targetNodeId="8.1068499141037" />
+            <link role="actionSet" targetNodeId="1076935149131" />
             <link role="editorComponent" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1088426063980">
                 <link role="semanticTypeDeclaration" targetNodeId="8.1068580123132" />
@@ -2128,9 +2128,9 @@
             <link role="substituteQueryBody" targetNodeId="1081927996109" />
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1081149733743">
+                <link role="substituteModelQueryBody" targetNodeId="1081927996139" />
                 <link role="substituteTextQueryMethod" targetNodeId="1081927996128" />
                 <link role="substituteModelQueryMethod" targetNodeId="1081927996135" />
-                <link role="substituteModelQueryBody" targetNodeId="1081927996139" />
                 <link role="substituteTextQueryBody" targetNodeId="1081927996134" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984049">
@@ -2319,8 +2319,8 @@
         <link role="keyMap" targetNodeId="1081427357000" />
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081149310029">
-            <link role="linkDeclaration" targetNodeId="8.1081236769986" />
             <link role="actionSet" targetNodeId="1081149570776" />
+            <link role="linkDeclaration" targetNodeId="8.1081236769986" />
             <property name="nullText" value="&lt;no type&gt;" />
             <property name="name" />
           </node>
@@ -2333,8 +2333,8 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1088427863670">
-            <link role="actionSet" targetNodeId="1081149733740" />
             <link role="linkDeclaration" targetNodeId="8.1068499141037" />
+            <link role="actionSet" targetNodeId="1081149733740" />
             <link role="editorComponent" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1088427863671">
                 <link role="semanticTypeDeclaration" targetNodeId="8.1068580123132" />
@@ -2422,8 +2422,8 @@
         <property name="actionSet" value="RightTransform" />
         <property name="name" value="expressionBox" />
         <property name="vertical" value="false" />
-        <property name="selectable" value="true" />
         <property name="gridLayout" value="true" />
+        <property name="selectable" value="true" />
       </node>
     </link>
     <property name="matchingText" value="==" />
@@ -2596,9 +2596,9 @@
         <link role="actionSet" targetNodeId="1076676161734" />
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075310480284">
-            <link role="actionSet" targetNodeId="1076587264182" />
             <link role="linkDeclaration" targetNodeId="8.1068498886295" />
             <link role="errorActionSet" targetNodeId="1077284637890" />
+            <link role="actionSet" targetNodeId="1076587264182" />
             <property name="actionSetId" />
             <property name="actionSet" value="LeftExpression" />
             <property name="name" />
@@ -2627,8 +2627,8 @@
         <property name="actionSet" value="RightTransform" />
         <property name="name" value="expressionBox" />
         <property name="vertical" value="false" />
-        <property name="gridLayout" value="true" />
         <property name="selectable" value="true" />
+        <property name="gridLayout" value="true" />
       </node>
     </link>
     <property name="matchingText" value="=" />
@@ -2675,8 +2675,8 @@
         <property name="actionSet" value="RightTransform" />
         <property name="name" value="expressionBox" />
         <property name="vertical" value="false" />
-        <property name="gridLayout" value="true" />
         <property name="selectable" value="true" />
+        <property name="gridLayout" value="true" />
       </node>
     </link>
     <property name="matchingText" value="-" />
@@ -2723,8 +2723,8 @@
         <property name="actionSet" value="RightTransform" />
         <property name="name" value="expressionBox" />
         <property name="vertical" value="false" />
-        <property name="selectable" value="true" />
         <property name="gridLayout" value="true" />
+        <property name="selectable" value="true" />
       </node>
     </link>
     <property name="matchingText" value="+" />
@@ -2877,9 +2877,9 @@
     </link>
     <link role="cellModel" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1083091696640">
-        <link role="actionSet" targetNodeId="1076937947068" />
-        <link role="keyMap" targetNodeId="1081427357000" />
         <link role="propertyDeclaration" targetNodeId="8.1068580320021" />
+        <link role="keyMap" targetNodeId="1081427357000" />
+        <link role="actionSet" targetNodeId="1076937947068" />
         <property name="defaultText" value="&lt;int constant&gt;" />
         <property name="name" />
       </node>
@@ -2903,8 +2903,8 @@
     <link role="cellModel" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1088424970609">
         <link role="propertyDeclaration" targetNodeId="8.1068580123138" />
-        <link role="actionSet" targetNodeId="1076700301115" />
         <link role="keyMap" targetNodeId="1081427357000" />
+        <link role="actionSet" targetNodeId="1076700301115" />
         <property name="name" />
       </node>
     </link>
@@ -3267,8 +3267,8 @@
             <link role="childCellModel" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075379700788">
                 <link role="linkDeclaration" targetNodeId="8.1068580123160" />
-                <link role="actionSet" targetNodeId="1076934492296" />
                 <link role="errorActionSet" targetNodeId="1077284637890" />
+                <link role="actionSet" targetNodeId="1076934492296" />
                 <property name="actionSetId" />
                 <property name="name" />
               </node>
@@ -3411,8 +3411,8 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075379580458">
-            <link role="conditionalQueryBody" targetNodeId="1082031373147" />
             <link role="actionSet" targetNodeId="1082467477265" />
+            <link role="conditionalQueryBody" targetNodeId="1082031373147" />
             <link role="conditionalQueryMethod" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1082031373143">
                 <link role="parameter" metaClass="aggregation">
@@ -3626,9 +3626,9 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075380723767">
+            <link role="linkDeclaration" targetNodeId="8.1068581517676" />
             <link role="actionSet" targetNodeId="1076951358050" />
             <link role="errorActionSet" targetNodeId="1077284637890" />
-            <link role="linkDeclaration" targetNodeId="8.1068581517676" />
             <property name="actionSetId" />
             <property name="name" />
           </node>
@@ -3662,10 +3662,10 @@
       <node type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1076932037579">
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1077043168877">
-            <link role="substituteModelQueryMethod" targetNodeId="1081927996756" />
             <link role="substituteTextQueryMethod" targetNodeId="1081927996749" />
-            <link role="substituteModelQueryBody" targetNodeId="1081927996760" />
+            <link role="substituteModelQueryMethod" targetNodeId="1081927996756" />
             <link role="substituteTextQueryBody" targetNodeId="1081927996755" />
+            <link role="substituteModelQueryBody" targetNodeId="1081927996760" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984066">
                 <link role="method" metaClass="aggregation">
@@ -3782,12 +3782,12 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1076932272477">
-            <link role="substituteTextQueryMethod" targetNodeId="1081927996779" />
-            <link role="substituteHandlerQueryBody" targetNodeId="1081927996769" />
             <link role="substituteTextQueryBody" targetNodeId="1081927996785" />
             <link role="substituteModelQueryBody" targetNodeId="1081927996790" />
-            <link role="substituteHandlerQueryMethod" targetNodeId="1081927996761" />
             <link role="substituteModelQueryMethod" targetNodeId="1081927996786" />
+            <link role="substituteHandlerQueryBody" targetNodeId="1081927996769" />
+            <link role="substituteHandlerQueryMethod" targetNodeId="1081927996761" />
+            <link role="substituteTextQueryMethod" targetNodeId="1081927996779" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984067">
                 <link role="method" metaClass="aggregation">
@@ -3982,10 +3982,10 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_Simple" id="1090608741568">
+            <link role="substituteMatcherQueryBody" targetNodeId="1090608741599" />
+            <link role="substituteMatcherQueryMethod" targetNodeId="1090608741591" />
             <link role="substituteHandlerQueryBody" targetNodeId="1090608741578" />
             <link role="substituteHandlerQueryMethod" targetNodeId="1090608741570" />
-            <link role="substituteMatcherQueryMethod" targetNodeId="1090608741591" />
-            <link role="substituteMatcherQueryBody" targetNodeId="1090608741599" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1090608741569">
                 <link role="method" metaClass="aggregation">
@@ -4286,11 +4286,11 @@
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1076939411270">
             <link role="substituteHandlerQueryMethod" targetNodeId="1081927996828" />
-            <link role="substituteHandlerQueryBody" targetNodeId="1081927996836" />
-            <link role="substituteModelQueryBody" targetNodeId="1081927996857" />
-            <link role="substituteTextQueryBody" targetNodeId="1081927996852" />
-            <link role="substituteTextQueryMethod" targetNodeId="1081927996846" />
             <link role="substituteModelQueryMethod" targetNodeId="1081927996853" />
+            <link role="substituteModelQueryBody" targetNodeId="1081927996857" />
+            <link role="substituteTextQueryMethod" targetNodeId="1081927996846" />
+            <link role="substituteTextQueryBody" targetNodeId="1081927996852" />
+            <link role="substituteHandlerQueryBody" targetNodeId="1081927996836" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984069">
                 <link role="method" metaClass="aggregation">
@@ -4485,9 +4485,9 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_Simple" id="1090608741600">
-            <link role="substituteHandlerQueryMethod" targetNodeId="1090608741602" />
-            <link role="substituteMatcherQueryMethod" targetNodeId="1090608741623" />
             <link role="substituteHandlerQueryBody" targetNodeId="1090608741610" />
+            <link role="substituteMatcherQueryMethod" targetNodeId="1090608741623" />
+            <link role="substituteHandlerQueryMethod" targetNodeId="1090608741602" />
             <link role="substituteMatcherQueryBody" targetNodeId="1090608741631" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1090608741601">
@@ -4770,10 +4770,10 @@
             <link role="substituteQueryBody" targetNodeId="1081927995894" />
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082380741937">
-                <link role="substituteHandlerQueryBody" targetNodeId="1082380828602" />
-                <link role="substituteHandlerQueryMethod" targetNodeId="1082380828594" />
                 <link role="substituteModelQueryBody" targetNodeId="1082380828623" />
+                <link role="substituteHandlerQueryMethod" targetNodeId="1082380828594" />
                 <link role="substituteModelQueryMethod" targetNodeId="1082380828619" />
+                <link role="substituteHandlerQueryBody" targetNodeId="1082380828602" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984070">
                     <link role="method" metaClass="aggregation">
@@ -5498,11 +5498,11 @@
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1079955099623">
                 <link role="substituteHandlerQueryMethod" targetNodeId="1081927996888" />
-                <link role="substituteTextQueryBody" targetNodeId="1081927996912" />
-                <link role="substituteModelQueryBody" targetNodeId="1081927996917" />
+                <link role="substituteHandlerQueryBody" targetNodeId="1081927996896" />
                 <link role="substituteTextQueryMethod" targetNodeId="1081927996906" />
                 <link role="substituteModelQueryMethod" targetNodeId="1081927996913" />
-                <link role="substituteHandlerQueryBody" targetNodeId="1081927996896" />
+                <link role="substituteModelQueryBody" targetNodeId="1081927996917" />
+                <link role="substituteTextQueryBody" targetNodeId="1081927996912" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984075">
                     <link role="method" metaClass="aggregation">
@@ -5698,12 +5698,12 @@
             </link>
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1079955337155">
-                <link role="substituteModelQueryMethod" targetNodeId="1081927996943" />
+                <link role="substituteHandlerQueryMethod" targetNodeId="1081927996918" />
                 <link role="substituteHandlerQueryBody" targetNodeId="1081927996926" />
                 <link role="substituteTextQueryBody" targetNodeId="1081927996942" />
-                <link role="substituteHandlerQueryMethod" targetNodeId="1081927996918" />
-                <link role="substituteModelQueryBody" targetNodeId="1081927996947" />
+                <link role="substituteModelQueryMethod" targetNodeId="1081927996943" />
                 <link role="substituteTextQueryMethod" targetNodeId="1081927996936" />
+                <link role="substituteModelQueryBody" targetNodeId="1081927996947" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984076">
                     <link role="method" metaClass="aggregation">
@@ -6438,9 +6438,9 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1080902646662">
-            <link role="actionSet" targetNodeId="1080903478359" />
-            <link role="errorActionSet" targetNodeId="1077284637890" />
             <link role="linkDeclaration" targetNodeId="8.1070534934091" />
+            <link role="errorActionSet" targetNodeId="1077284637890" />
+            <link role="actionSet" targetNodeId="1080903478359" />
             <property name="name" />
           </node>
         </link>
@@ -6452,9 +6452,9 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1080902646664">
+            <link role="linkDeclaration" targetNodeId="8.1070534934092" />
             <link role="actionSet" targetNodeId="1080903734783" />
             <link role="errorActionSet" targetNodeId="1077284637890" />
-            <link role="linkDeclaration" targetNodeId="8.1070534934092" />
             <property name="name" />
           </node>
         </link>
@@ -6475,8 +6475,8 @@
             <link role="substituteQueryBody" targetNodeId="1081927995775" />
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1076940714067">
-                <link role="substituteTextQueryBody" targetNodeId="1081927995800" />
                 <link role="substituteTextQueryMethod" targetNodeId="1081927995794" />
+                <link role="substituteTextQueryBody" targetNodeId="1081927995800" />
                 <link role="substituteModelQueryMethod" targetNodeId="1081927995801" />
                 <link role="substituteModelQueryBody" targetNodeId="1081927995805" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
@@ -6666,9 +6666,9 @@
         <link role="keyMap" targetNodeId="1081427357000" />
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1088426839520">
-            <link role="keyMap" targetNodeId="1081427357000" />
-            <link role="linkDeclaration" targetNodeId="8.1068499141037" />
             <link role="actionSet" targetNodeId="1076940714064" />
+            <link role="linkDeclaration" targetNodeId="8.1068499141037" />
+            <link role="keyMap" targetNodeId="1081427357000" />
             <link role="editorComponent" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1088426839521">
                 <link role="semanticTypeDeclaration" targetNodeId="8.1068580123132" />
@@ -7029,8 +7029,8 @@
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081257097746">
             <link role="actionSet" targetNodeId="1081257125113" />
-            <link role="errorActionSet" targetNodeId="1077284637890" />
             <link role="linkDeclaration" targetNodeId="8.1081256993304" />
+            <link role="errorActionSet" targetNodeId="1077284637890" />
             <property name="name" />
             <property name="selectable" value="true" />
           </node>
@@ -7043,9 +7043,9 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081257097748">
-            <link role="actionSet" targetNodeId="1081257125115" />
             <link role="errorActionSet" targetNodeId="1077284637890" />
             <link role="linkDeclaration" targetNodeId="8.1081256993305" />
+            <link role="actionSet" targetNodeId="1081257125115" />
             <property name="name" />
             <property name="selectable" value="true" />
           </node>
@@ -7145,10 +7145,10 @@
             </link>
             <link role="childCellModel" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081264296766">
-                <link role="actionSet" targetNodeId="1081264222445" />
-                <link role="linkDeclaration" targetNodeId="8.1076505808688" />
                 <link role="keyMap" targetNodeId="1081427357000" />
                 <link role="errorActionSet" targetNodeId="1077284637890" />
+                <link role="linkDeclaration" targetNodeId="8.1076505808688" />
+                <link role="actionSet" targetNodeId="1081264222445" />
                 <property name="name" />
               </node>
             </link>
@@ -7295,8 +7295,8 @@
     <link role="cellModel" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081776360032">
         <link role="actionSet" targetNodeId="1081776374361" />
-        <link role="linkDeclaration" targetNodeId="8.1081773367580" />
         <link role="errorActionSet" targetNodeId="1077284637890" />
+        <link role="linkDeclaration" targetNodeId="8.1081773367580" />
         <property name="name" />
       </node>
     </link>
@@ -7380,9 +7380,9 @@
     </link>
     <link role="cellModel" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081776482710">
-        <link role="linkDeclaration" targetNodeId="8.1081773367579" />
-        <link role="actionSet" targetNodeId="1081776482708" />
         <link role="errorActionSet" targetNodeId="1077284637890" />
+        <link role="actionSet" targetNodeId="1081776482708" />
+        <link role="linkDeclaration" targetNodeId="8.1081773367579" />
         <property name="name" />
       </node>
     </link>
@@ -7523,16 +7523,16 @@
             <link role="substituteQueryBody" targetNodeId="1091709481236" />
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1091709481237">
-                <link role="substituteTextQueryBody" targetNodeId="1091709481243" />
-                <link role="substituteTextQueryMethod" targetNodeId="1091709481242" />
-                <link role="substituteMatcherQueryMethod" targetNodeId="1091709481240" />
                 <link role="substituteHandlerQueryBody" targetNodeId="1091709481239" />
-                <link role="substituteHandlerQueryMethod" targetNodeId="1091709481238" />
                 <link role="substituteDescriptionTextQueryMethod" targetNodeId="1091709481244" />
+                <link role="substituteMatcherQueryMethod" targetNodeId="1091709481240" />
                 <link role="substituteModelQueryBody" targetNodeId="1091709481247" />
+                <link role="substituteTextQueryMethod" targetNodeId="1091709481242" />
+                <link role="substituteMatcherQueryBody" targetNodeId="1091709481241" />
                 <link role="substituteModelQueryMethod" targetNodeId="1091709481246" />
                 <link role="substituteDescriptionTextQueryBody" targetNodeId="1091709481245" />
-                <link role="substituteMatcherQueryBody" targetNodeId="1091709481241" />
+                <link role="substituteHandlerQueryMethod" targetNodeId="1091709481238" />
+                <link role="substituteTextQueryBody" targetNodeId="1091709481243" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1091709481248">
                     <link role="method" metaClass="aggregation">
@@ -7855,8 +7855,8 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1091709481300">
-            <link role="linkDeclaration" targetNodeId="8.1068499141037" />
             <link role="actionSet" targetNodeId="1091709481234" />
+            <link role="linkDeclaration" targetNodeId="8.1068499141037" />
             <link role="editorComponent" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1091709481301">
                 <link role="semanticTypeDeclaration" targetNodeId="8.1068580123132" />
@@ -8066,9 +8066,9 @@
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082742081261">
                 <link role="substituteTextQueryBody" targetNodeId="1082742196813" />
-                <link role="substituteModelQueryBody" targetNodeId="1082742196815" />
                 <link role="substituteTextQueryMethod" targetNodeId="1082742196812" />
                 <link role="substituteModelQueryMethod" targetNodeId="1082742196814" />
+                <link role="substituteModelQueryBody" targetNodeId="1082742196815" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984078">
                     <link role="method" metaClass="aggregation">
@@ -8378,10 +8378,10 @@
             <link role="substituteQueryBody" targetNodeId="1081927995062" />
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1076775456753">
-                <link role="substituteTextQueryBody" targetNodeId="1081927995087" />
                 <link role="substituteTextQueryMethod" targetNodeId="1081927995081" />
-                <link role="substituteModelQueryMethod" targetNodeId="1081927995088" />
                 <link role="substituteModelQueryBody" targetNodeId="1081927995092" />
+                <link role="substituteTextQueryBody" targetNodeId="1081927995087" />
+                <link role="substituteModelQueryMethod" targetNodeId="1081927995088" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984095">
                     <link role="method" metaClass="aggregation">
@@ -8569,8 +8569,8 @@
         <link role="keyMap" targetNodeId="1081427357000" />
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1088425374189">
-            <link role="actionSet" targetNodeId="1076775400609" />
             <link role="linkDeclaration" targetNodeId="8.1068499141037" />
+            <link role="actionSet" targetNodeId="1076775400609" />
             <link role="editorComponent" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1088425374190">
                 <link role="semanticTypeDeclaration" targetNodeId="8.1068580123140" />
@@ -8713,8 +8713,8 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081880010411">
-            <link role="linkDeclaration" targetNodeId="8.1079359253376" />
             <link role="actionSet" targetNodeId="1082386043671" />
+            <link role="linkDeclaration" targetNodeId="8.1079359253376" />
             <property name="name" />
           </node>
         </link>
@@ -8774,8 +8774,8 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081930071609">
-            <link role="linkDeclaration" targetNodeId="8.1081516765348" />
             <link role="actionSet" targetNodeId="1081931088319" />
+            <link role="linkDeclaration" targetNodeId="8.1081516765348" />
             <property name="name" />
           </node>
         </link>
@@ -8920,12 +8920,12 @@
       <node type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1082130590766">
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082130590767">
-            <link role="substituteHandlerQueryBody" targetNodeId="1081927996211" />
-            <link role="substituteModelQueryBody" targetNodeId="1081927996232" />
-            <link role="substituteHandlerQueryMethod" targetNodeId="1081927996203" />
-            <link role="substituteTextQueryMethod" targetNodeId="1081927996221" />
-            <link role="substituteModelQueryMethod" targetNodeId="1081927996228" />
             <link role="substituteTextQueryBody" targetNodeId="1081927996227" />
+            <link role="substituteModelQueryBody" targetNodeId="1081927996232" />
+            <link role="substituteHandlerQueryBody" targetNodeId="1081927996211" />
+            <link role="substituteHandlerQueryMethod" targetNodeId="1081927996203" />
+            <link role="substituteModelQueryMethod" targetNodeId="1081927996228" />
+            <link role="substituteTextQueryMethod" targetNodeId="1081927996221" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984096">
                 <link role="method" metaClass="aggregation">
@@ -9120,11 +9120,11 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082130590768">
-            <link role="substituteHandlerQueryMethod" targetNodeId="1081927996233" />
             <link role="substituteTextQueryBody" targetNodeId="1081927996257" />
             <link role="substituteHandlerQueryBody" targetNodeId="1081927996241" />
-            <link role="substituteModelQueryMethod" targetNodeId="1081927996258" />
             <link role="substituteModelQueryBody" targetNodeId="1081927996262" />
+            <link role="substituteHandlerQueryMethod" targetNodeId="1081927996233" />
+            <link role="substituteModelQueryMethod" targetNodeId="1081927996258" />
             <link role="substituteTextQueryMethod" targetNodeId="1081927996251" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984097">
@@ -9320,12 +9320,12 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082130590769">
-            <link role="substituteTextQueryBody" targetNodeId="1081927996287" />
             <link role="substituteHandlerQueryMethod" targetNodeId="1081927996263" />
-            <link role="substituteTextQueryMethod" targetNodeId="1081927996281" />
-            <link role="substituteModelQueryMethod" targetNodeId="1081927996288" />
-            <link role="substituteHandlerQueryBody" targetNodeId="1081927996271" />
             <link role="substituteModelQueryBody" targetNodeId="1081927996292" />
+            <link role="substituteModelQueryMethod" targetNodeId="1081927996288" />
+            <link role="substituteTextQueryMethod" targetNodeId="1081927996281" />
+            <link role="substituteHandlerQueryBody" targetNodeId="1081927996271" />
+            <link role="substituteTextQueryBody" targetNodeId="1081927996287" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984098">
                 <link role="method" metaClass="aggregation">
@@ -9520,12 +9520,12 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082130590770">
-            <link role="substituteModelQueryBody" targetNodeId="1081927996322" />
-            <link role="substituteModelQueryMethod" targetNodeId="1081927996318" />
-            <link role="substituteHandlerQueryBody" targetNodeId="1081927996301" />
-            <link role="substituteTextQueryMethod" targetNodeId="1081927996311" />
-            <link role="substituteTextQueryBody" targetNodeId="1081927996317" />
             <link role="substituteHandlerQueryMethod" targetNodeId="1081927996293" />
+            <link role="substituteTextQueryBody" targetNodeId="1081927996317" />
+            <link role="substituteTextQueryMethod" targetNodeId="1081927996311" />
+            <link role="substituteModelQueryMethod" targetNodeId="1081927996318" />
+            <link role="substituteModelQueryBody" targetNodeId="1081927996322" />
+            <link role="substituteHandlerQueryBody" targetNodeId="1081927996301" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984099">
                 <link role="method" metaClass="aggregation">
@@ -9721,11 +9721,11 @@
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082130590771">
             <link role="substituteModelQueryBody" targetNodeId="1081927996352" />
+            <link role="substituteModelQueryMethod" targetNodeId="1081927996348" />
+            <link role="substituteHandlerQueryBody" targetNodeId="1081927996331" />
+            <link role="substituteTextQueryBody" targetNodeId="1081927996347" />
             <link role="substituteHandlerQueryMethod" targetNodeId="1081927996323" />
             <link role="substituteTextQueryMethod" targetNodeId="1081927996341" />
-            <link role="substituteModelQueryMethod" targetNodeId="1081927996348" />
-            <link role="substituteTextQueryBody" targetNodeId="1081927996347" />
-            <link role="substituteHandlerQueryBody" targetNodeId="1081927996331" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984100">
                 <link role="method" metaClass="aggregation">
@@ -9920,10 +9920,10 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082130899953">
+            <link role="substituteHandlerQueryBody" targetNodeId="1082131184588" />
+            <link role="substituteModelQueryBody" targetNodeId="1082131184617" />
             <link role="substituteHandlerQueryMethod" targetNodeId="1082131184580" />
             <link role="substituteModelQueryMethod" targetNodeId="1082131184613" />
-            <link role="substituteModelQueryBody" targetNodeId="1082131184617" />
-            <link role="substituteHandlerQueryBody" targetNodeId="1082131184588" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984101">
                 <link role="method" metaClass="aggregation">
@@ -10062,8 +10062,8 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_Simple" id="1082132100375">
-            <link role="substituteHandlerQueryBody" targetNodeId="1081927996361" />
             <link role="substituteHandlerQueryMethod" targetNodeId="1081927996353" />
+            <link role="substituteHandlerQueryBody" targetNodeId="1081927996361" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984102">
                 <link role="method" metaClass="aggregation">
@@ -10244,10 +10244,10 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_Simple" id="1082132100377">
-            <link role="substituteHandlerQueryBody" targetNodeId="1081927996397" />
             <link role="substituteMatcherQueryMethod" targetNodeId="1081927996398" />
-            <link role="substituteHandlerQueryMethod" targetNodeId="1081927996389" />
             <link role="substituteMatcherQueryBody" targetNodeId="1081927996406" />
+            <link role="substituteHandlerQueryMethod" targetNodeId="1081927996389" />
+            <link role="substituteHandlerQueryBody" targetNodeId="1081927996397" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984104">
                 <link role="method" metaClass="aggregation">
@@ -10677,10 +10677,10 @@
         <link role="substituteQueryBody" targetNodeId="1081927994772" />
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082541996939">
-            <link role="substituteHandlerQueryBody" targetNodeId="1082043423204" />
-            <link role="substituteModelQueryMethod" targetNodeId="1082043423209" />
-            <link role="substituteHandlerQueryMethod" targetNodeId="1082043423203" />
             <link role="substituteModelQueryBody" targetNodeId="1082043423210" />
+            <link role="substituteHandlerQueryMethod" targetNodeId="1082043423203" />
+            <link role="substituteModelQueryMethod" targetNodeId="1082043423209" />
+            <link role="substituteHandlerQueryBody" targetNodeId="1082043423204" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984105">
                 <link role="method" metaClass="aggregation">
@@ -10814,9 +10814,9 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082541996940">
-            <link role="substituteHandlerQueryMethod" targetNodeId="1082043423211" />
-            <link role="substituteModelQueryMethod" targetNodeId="1082043423217" />
             <link role="substituteModelQueryBody" targetNodeId="1082043423218" />
+            <link role="substituteModelQueryMethod" targetNodeId="1082043423217" />
+            <link role="substituteHandlerQueryMethod" targetNodeId="1082043423211" />
             <link role="substituteHandlerQueryBody" targetNodeId="1082043423212" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984106">
@@ -10953,10 +10953,10 @@
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082541996941">
             <link role="substituteTextQueryMethod" targetNodeId="1081927994845" />
             <link role="substituteHandlerQueryMethod" targetNodeId="1081927994827" />
-            <link role="substituteModelQueryBody" targetNodeId="1081927994856" />
             <link role="substituteHandlerQueryBody" targetNodeId="1081927994835" />
             <link role="substituteTextQueryBody" targetNodeId="1081927994851" />
             <link role="substituteModelQueryMethod" targetNodeId="1081927994852" />
+            <link role="substituteModelQueryBody" targetNodeId="1081927994856" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984107">
                 <link role="method" metaClass="aggregation">
@@ -11145,8 +11145,8 @@
             </link>
             <property name="handlerId" value="MethodCallFactory" />
             <property name="name" value="freeMethods" />
-            <property name="descriptionProviderId" value="JavaElementDescriptionText" />
             <property name="queryId" value="FreeMethods" />
+            <property name="descriptionProviderId" value="JavaElementDescriptionText" />
             <property name="textProviderId" value="JavaElementMatchingText" />
           </node>
         </link>
@@ -11346,19 +11346,19 @@
             </link>
             <property name="handlerId" value="ThisInstanceMethodCallFactory" />
             <property name="name" value="contextMethods" />
-            <property name="descriptionProviderId" value="JavaElementDescriptionText" />
             <property name="queryId" value="JavaClassMethods" />
+            <property name="descriptionProviderId" value="JavaElementDescriptionText" />
             <property name="textProviderId" value="JavaElementMatchingText" />
           </node>
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082541996943">
-            <link role="substituteModelQueryMethod" targetNodeId="1081927994912" />
             <link role="substituteTextQueryBody" targetNodeId="1081927994911" />
-            <link role="substituteHandlerQueryMethod" targetNodeId="1081927994887" />
-            <link role="substituteModelQueryBody" targetNodeId="1081927994916" />
             <link role="substituteHandlerQueryBody" targetNodeId="1081927994895" />
+            <link role="substituteModelQueryMethod" targetNodeId="1081927994912" />
+            <link role="substituteModelQueryBody" targetNodeId="1081927994916" />
             <link role="substituteTextQueryMethod" targetNodeId="1081927994905" />
+            <link role="substituteHandlerQueryMethod" targetNodeId="1081927994887" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984109">
                 <link role="method" metaClass="aggregation">
@@ -11553,11 +11553,11 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082541996944">
-            <link role="substituteModelQueryMethod" targetNodeId="1081927994942" />
-            <link role="substituteTextQueryMethod" targetNodeId="1081927994935" />
-            <link role="substituteHandlerQueryMethod" targetNodeId="1081927994917" />
             <link role="substituteTextQueryBody" targetNodeId="1081927994941" />
             <link role="substituteHandlerQueryBody" targetNodeId="1081927994925" />
+            <link role="substituteTextQueryMethod" targetNodeId="1081927994935" />
+            <link role="substituteHandlerQueryMethod" targetNodeId="1081927994917" />
+            <link role="substituteModelQueryMethod" targetNodeId="1081927994942" />
             <link role="substituteModelQueryBody" targetNodeId="1081927994946" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984110">
@@ -11753,12 +11753,12 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082541996945">
-            <link role="substituteTextQueryMethod" targetNodeId="1081927994965" />
-            <link role="substituteHandlerQueryMethod" targetNodeId="1081927994947" />
-            <link role="substituteHandlerQueryBody" targetNodeId="1081927994955" />
-            <link role="substituteModelQueryBody" targetNodeId="1081927994976" />
             <link role="substituteModelQueryMethod" targetNodeId="1081927994972" />
+            <link role="substituteTextQueryMethod" targetNodeId="1081927994965" />
+            <link role="substituteModelQueryBody" targetNodeId="1081927994976" />
+            <link role="substituteHandlerQueryBody" targetNodeId="1081927994955" />
             <link role="substituteTextQueryBody" targetNodeId="1081927994971" />
+            <link role="substituteHandlerQueryMethod" targetNodeId="1081927994947" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984111">
                 <link role="method" metaClass="aggregation">
@@ -11947,19 +11947,19 @@
             </link>
             <property name="handlerId" value="JavaVariableReferenceFactory" />
             <property name="name" value="parameterRefs" />
-            <property name="descriptionProviderId" value="JavaElementDescriptionText" />
             <property name="queryId" value="JavaMethodParameters" />
+            <property name="descriptionProviderId" value="JavaElementDescriptionText" />
             <property name="textProviderId" value="JavaElementMatchingText" />
           </node>
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082541996946">
             <link role="substituteHandlerQueryMethod" targetNodeId="1081927994977" />
-            <link role="substituteTextQueryMethod" targetNodeId="1081927994995" />
             <link role="substituteHandlerQueryBody" targetNodeId="1081927994985" />
-            <link role="substituteModelQueryMethod" targetNodeId="1081927995002" />
             <link role="substituteTextQueryBody" targetNodeId="1081927995001" />
+            <link role="substituteTextQueryMethod" targetNodeId="1081927994995" />
             <link role="substituteModelQueryBody" targetNodeId="1081927995006" />
+            <link role="substituteModelQueryMethod" targetNodeId="1081927995002" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984112">
                 <link role="method" metaClass="aggregation">
@@ -12148,8 +12148,8 @@
             </link>
             <property name="handlerId" value="JavaVariableReferenceFactory" />
             <property name="name" value="localVarRefs" />
-            <property name="descriptionProviderId" value="JavaElementDescriptionText" />
             <property name="queryId" value="JavaLocalVariables" />
+            <property name="descriptionProviderId" value="JavaElementDescriptionText" />
             <property name="textProviderId" value="JavaElementMatchingText" />
           </node>
         </link>
@@ -12165,9 +12165,9 @@
             <link role="substituteHandlerQueryBody" targetNodeId="1081927995015" />
             <link role="substituteModelQueryBody" targetNodeId="1081927995036" />
             <link role="substituteModelQueryMethod" targetNodeId="1081927995032" />
+            <link role="substituteTextQueryBody" targetNodeId="1081927995031" />
             <link role="substituteHandlerQueryMethod" targetNodeId="1081927995007" />
             <link role="substituteTextQueryMethod" targetNodeId="1081927995025" />
-            <link role="substituteTextQueryBody" targetNodeId="1081927995031" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984113">
                 <link role="method" metaClass="aggregation">
@@ -12356,8 +12356,8 @@
             </link>
             <property name="handlerId" value="JavaVariableReferenceFactory" />
             <property name="name" value="fieldRefs" />
-            <property name="descriptionProviderId" value="JavaElementDescriptionText" />
             <property name="queryId" value="JavaClassFields" />
+            <property name="descriptionProviderId" value="JavaElementDescriptionText" />
             <property name="textProviderId" value="JavaElementMatchingText" />
           </node>
         </link>
@@ -12373,10 +12373,10 @@
         <link role="substituteQueryBody" targetNodeId="1082657798338" />
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082657774877">
-            <link role="substituteHandlerQueryMethod" targetNodeId="1082657798339" />
             <link role="substituteHandlerQueryBody" targetNodeId="1082657798347" />
-            <link role="substituteModelQueryBody" targetNodeId="1082657798383" />
             <link role="substituteModelQueryMethod" targetNodeId="1082657798364" />
+            <link role="substituteModelQueryBody" targetNodeId="1082657798383" />
+            <link role="substituteHandlerQueryMethod" targetNodeId="1082657798339" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984129">
                 <link role="method" metaClass="aggregation">
@@ -12897,12 +12897,12 @@
       <node type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1082741406449">
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082741406450">
-            <link role="substituteModelQueryBody" targetNodeId="1082741457168" />
-            <link role="substituteHandlerQueryMethod" targetNodeId="1082741457139" />
             <link role="substituteTextQueryBody" targetNodeId="1082741457163" />
-            <link role="substituteHandlerQueryBody" targetNodeId="1082741457147" />
+            <link role="substituteModelQueryBody" targetNodeId="1082741457168" />
             <link role="substituteTextQueryMethod" targetNodeId="1082741457157" />
+            <link role="substituteHandlerQueryMethod" targetNodeId="1082741457139" />
             <link role="substituteModelQueryMethod" targetNodeId="1082741457164" />
+            <link role="substituteHandlerQueryBody" targetNodeId="1082741457147" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984130">
                 <link role="method" metaClass="aggregation">
@@ -13262,16 +13262,16 @@
             <link role="substituteQueryBody" targetNodeId="1090928601352" />
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1090928601297">
-                <link role="substituteHandlerQueryMethod" targetNodeId="1090928601299" />
-                <link role="substituteTextQueryMethod" targetNodeId="1090928601317" />
-                <link role="substituteHandlerQueryBody" targetNodeId="1090928601307" />
+                <link role="substituteModelQueryMethod" targetNodeId="1090928601337" />
                 <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090928601330" />
+                <link role="substituteTextQueryMethod" targetNodeId="1090928601317" />
                 <link role="substituteMatcherQueryMethod" targetNodeId="1090928601308" />
                 <link role="substituteDescriptionTextQueryBody" targetNodeId="1090928601336" />
-                <link role="substituteModelQueryBody" targetNodeId="1090928601341" />
-                <link role="substituteModelQueryMethod" targetNodeId="1090928601337" />
-                <link role="substituteMatcherQueryBody" targetNodeId="1090928601316" />
+                <link role="substituteHandlerQueryBody" targetNodeId="1090928601307" />
                 <link role="substituteTextQueryBody" targetNodeId="1090928601323" />
+                <link role="substituteMatcherQueryBody" targetNodeId="1090928601316" />
+                <link role="substituteHandlerQueryMethod" targetNodeId="1090928601299" />
+                <link role="substituteModelQueryBody" targetNodeId="1090928601341" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1090928601298">
                     <link role="method" metaClass="aggregation">
@@ -13663,8 +13663,8 @@
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1090928601376">
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1090928601377">
-            <link role="actionSet" targetNodeId="1090928601262" />
             <link role="linkDeclaration" targetNodeId="8.1083260308425" />
+            <link role="actionSet" targetNodeId="1090928601262" />
             <property name="name" />
           </node>
         </link>
@@ -13676,8 +13676,8 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1090928601379">
-            <link role="linkDeclaration" targetNodeId="8.1083260308426" />
             <link role="actionSet" targetNodeId="1090928601294" />
+            <link role="linkDeclaration" targetNodeId="8.1083260308426" />
             <link role="editorComponent" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1090928601380">
                 <link role="semanticTypeDeclaration" targetNodeId="8.1083245299891" />
@@ -13720,8 +13720,8 @@
         <link role="specializes" targetNodeId="1076939411259" />
         <link role="actionDeclaration" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1084188979612">
-            <link role="substituteQueryMethod" targetNodeId="1081927994657" />
             <link role="substituteQueryBody" targetNodeId="1081927994663" />
+            <link role="substituteQueryMethod" targetNodeId="1081927994657" />
             <property name="substituteHandlerId" value="VariableDeclarationTypeAcceptor" />
             <property name="name" />
           </node>
@@ -13739,8 +13739,8 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1084188979614">
-            <link role="linkDeclaration" targetNodeId="8.1068431790188" />
             <link role="actionSet" targetNodeId="1084188979611" />
+            <link role="linkDeclaration" targetNodeId="8.1068431790188" />
             <property name="nullRefText" value="&lt;no type&gt;" />
             <property name="actionSetId" />
             <property name="nullText" value="&lt;no type&gt;" />
@@ -13750,8 +13750,8 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1084188979615">
-            <link role="actionSet" targetNodeId="1084188979609" />
             <link role="propertyDeclaration" targetNodeId="9.1078489098626" />
+            <link role="actionSet" targetNodeId="1084188979609" />
             <property name="writable" value="true" />
             <property name="defaultText" value="&lt;no name&gt;" />
             <property name="defaultValue" value="?" />
@@ -13761,8 +13761,8 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1084188979616">
-            <link role="conditionalQueryMethod" targetNodeId="1082097601654" />
             <link role="conditionalQueryBody" targetNodeId="1082097601658" />
+            <link role="conditionalQueryMethod" targetNodeId="1082097601654" />
             <link role="childCellModel" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1084188979617">
                 <property name="text" value="=" />
@@ -13771,8 +13771,8 @@
             </link>
             <link role="childCellModel" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1084188979618">
-                <link role="keyMap" targetNodeId="1081427357000" />
                 <link role="linkDeclaration" targetNodeId="8.1068431790190" />
+                <link role="keyMap" targetNodeId="1081427357000" />
                 <link role="actionSet" targetNodeId="1077124145703" />
                 <property name="actionSetId" />
                 <property name="name" />
@@ -13903,8 +13903,8 @@
             </link>
             <link role="childCellModel" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1085483457772">
-                <link role="nodeFactoryQueryBody" targetNodeId="1085485817063" />
                 <link role="linkDeclaration" targetNodeId="8.1068390468201" />
+                <link role="nodeFactoryQueryBody" targetNodeId="1085485817063" />
                 <link role="emptyCellModel" metaClass="aggregation">
                   <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1085483457773">
                     <link role="actionSet" targetNodeId="1085483457768" />
@@ -14036,19 +14036,87 @@
     <link role="semanticTypeDeclaration" targetNodeId="8.1083245299891" />
     <link role="actionSetDeclaration" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1085485112425">
-        <link role="specializes" targetNodeId="1082130590765" />
+        <link role="specializes" targetNodeId="1095257479496" />
         <link role="actionDeclaration" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_DeleteNode" id="1085485112426">
             <property name="disabled" value="true" />
             <property name="name" />
           </node>
         </link>
+        <property name="name" value="NoArgumentsActions" />
+      </node>
+    </link>
+    <link role="actionSetDeclaration" metaClass="aggregation">
+      <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1095257479496">
+        <link role="specializes" targetNodeId="1082130590765" />
         <link role="actionDeclaration" metaClass="aggregation">
-          <node type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1085485112427">
+          <node type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1095257566411">
+            <link role="substituteQueryBody" targetNodeId="1095257566412" />
+            <link role="substituteQueryMethod" metaClass="aggregation">
+              <node type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1095257566413">
+                <link role="parameter" metaClass="aggregation">
+                  <node type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1095257566414">
+                    <link role="type" metaClass="aggregation">
+                      <node type="jetbrains.mps.baseLanguage.JavaClassType" id="1095257566415">
+                        <link role="javaClass" targetNodeId="18.1086856195743" />
+                        <property name="name" />
+                      </node>
+                    </link>
+                    <property name="name" value="node" />
+                  </node>
+                </link>
+                <link role="parameter" metaClass="aggregation">
+                  <node type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1095257566416">
+                    <link role="type" metaClass="aggregation">
+                      <node type="jetbrains.mps.baseLanguage.JavaClassType" id="1095257566417">
+                        <link role="javaClass" targetNodeId="14.1086945614093" />
+                        <property name="name" />
+                      </node>
+                    </link>
+                    <property name="name" value="object" />
+                  </node>
+                </link>
+                <link role="body" metaClass="aggregation">
+                  <node type="jetbrains.mps.baseLanguage.StatementList" id="1095257566412">
+                    <link role="statement" metaClass="aggregation">
+                      <node type="jetbrains.mps.baseLanguage.ReturnStatement" id="1095257566418">
+                        <link role="expression" metaClass="aggregation">
+                          <node type="jetbrains.mps.baseLanguage.MethodCall" id="1095257566419">
+                            <link role="baseMethodDeclaration" targetNodeId="13.1095256076504" />
+                            <link role="actualArgument" metaClass="aggregation">
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1095257566420">
+                                <link role="variableDeclaration" targetNodeId="1095257566414" />
+                                <property name="name" />
+                              </node>
+                            </link>
+                            <link role="actualArgument" metaClass="aggregation">
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1095257566421">
+                                <link role="variableDeclaration" targetNodeId="1095257566416" />
+                                <property name="name" />
+                              </node>
+                            </link>
+                            <property name="name" />
+                          </node>
+                        </link>
+                        <property name="name" />
+                      </node>
+                    </link>
+                    <property name="name" />
+                  </node>
+                </link>
+                <link role="returnType" metaClass="aggregation">
+                  <node type="jetbrains.mps.baseLanguage.JavaClassType" id="1095257566422">
+                    <link role="javaClass" targetNodeId="18.1086856195743" />
+                    <property name="name" />
+                  </node>
+                </link>
+                <property name="name" value="substituteAcceptor_Query" />
+              </node>
+            </link>
             <property name="name" />
           </node>
         </link>
-        <property name="name" value="EmptyListAction" />
+        <property name="name" value="ArgumentActions" />
       </node>
     </link>
     <link role="cellModel" metaClass="aggregation">
@@ -14068,6 +14136,15 @@
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1085485112431">
             <link role="linkDeclaration" targetNodeId="8.1083245396909" />
+            <link role="elementActionSet" targetNodeId="1095257479496" />
+            <link role="emptyCellModel" metaClass="aggregation">
+              <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1095257566423">
+                <link role="actionSet" targetNodeId="1085485112425" />
+                <property name="editable" value="true" />
+                <property name="name" />
+                <property name="selectable" value="true" />
+              </node>
+            </link>
             <property name="separatorText" value="," />
             <property name="name" />
             <property name="vertical" value="false" />
@@ -14094,16 +14171,16 @@
             <link role="substituteQueryBody" targetNodeId="1090841311401" />
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1090842242324">
-                <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090842795869" />
-                <link role="substituteModelQueryBody" targetNodeId="1090842795880" />
-                <link role="substituteHandlerQueryMethod" targetNodeId="1090842795844" />
-                <link role="substituteModelQueryMethod" targetNodeId="1090842795876" />
-                <link role="substituteMatcherQueryMethod" targetNodeId="1090842795853" />
                 <link role="substituteHandlerQueryBody" targetNodeId="1090842795852" />
+                <link role="substituteMatcherQueryMethod" targetNodeId="1090842795853" />
+                <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090842795869" />
                 <link role="substituteTextQueryBody" targetNodeId="1090842795868" />
                 <link role="substituteDescriptionTextQueryBody" targetNodeId="1090842795875" />
-                <link role="substituteTextQueryMethod" targetNodeId="1090842795862" />
+                <link role="substituteModelQueryMethod" targetNodeId="1090842795876" />
+                <link role="substituteHandlerQueryMethod" targetNodeId="1090842795844" />
+                <link role="substituteModelQueryBody" targetNodeId="1090842795880" />
                 <link role="substituteMatcherQueryBody" targetNodeId="1090842795861" />
+                <link role="substituteTextQueryMethod" targetNodeId="1090842795862" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1090842795843">
                     <link role="method" metaClass="aggregation">
@@ -14476,16 +14553,16 @@
             <link role="substituteQueryBody" targetNodeId="1090851654836" />
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1090851716672">
-                <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090851900769" />
+                <link role="substituteHandlerQueryBody" targetNodeId="1090851900744" />
                 <link role="substituteDescriptionTextQueryBody" targetNodeId="1090851900775" />
+                <link role="substituteHandlerQueryMethod" targetNodeId="1090851900736" />
+                <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090851900769" />
+                <link role="substituteTextQueryBody" targetNodeId="1090851900768" />
+                <link role="substituteMatcherQueryMethod" targetNodeId="1090851900753" />
+                <link role="substituteModelQueryMethod" targetNodeId="1090851900776" />
                 <link role="substituteTextQueryMethod" targetNodeId="1090851900762" />
                 <link role="substituteModelQueryBody" targetNodeId="1090851900780" />
-                <link role="substituteTextQueryBody" targetNodeId="1090851900768" />
-                <link role="substituteHandlerQueryBody" targetNodeId="1090851900744" />
-                <link role="substituteHandlerQueryMethod" targetNodeId="1090851900736" />
                 <link role="substituteMatcherQueryBody" targetNodeId="1090851900761" />
-                <link role="substituteModelQueryMethod" targetNodeId="1090851900776" />
-                <link role="substituteMatcherQueryMethod" targetNodeId="1090851900753" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1090851900735">
                     <link role="method" metaClass="aggregation">
@@ -14870,16 +14947,16 @@
             <link role="substituteQueryBody" targetNodeId="1090857631648" />
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1090857639696">
-                <link role="substituteModelQueryBody" targetNodeId="1090857639748" />
                 <link role="substituteHandlerQueryBody" targetNodeId="1090857639706" />
                 <link role="substituteModelQueryMethod" targetNodeId="1090857639744" />
-                <link role="substituteMatcherQueryMethod" targetNodeId="1090857639715" />
-                <link role="substituteTextQueryMethod" targetNodeId="1090857639724" />
-                <link role="substituteDescriptionTextQueryBody" targetNodeId="1090857639743" />
-                <link role="substituteMatcherQueryBody" targetNodeId="1090857639723" />
-                <link role="substituteTextQueryBody" targetNodeId="1090857639730" />
                 <link role="substituteHandlerQueryMethod" targetNodeId="1090857639698" />
                 <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090857639737" />
+                <link role="substituteTextQueryBody" targetNodeId="1090857639730" />
+                <link role="substituteTextQueryMethod" targetNodeId="1090857639724" />
+                <link role="substituteMatcherQueryBody" targetNodeId="1090857639723" />
+                <link role="substituteModelQueryBody" targetNodeId="1090857639748" />
+                <link role="substituteMatcherQueryMethod" targetNodeId="1090857639715" />
+                <link role="substituteDescriptionTextQueryBody" targetNodeId="1090857639743" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1090857639697">
                     <link role="method" metaClass="aggregation">
@@ -15363,8 +15440,8 @@
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1090581771772">
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1090581771773">
-            <link role="linkDeclaration" targetNodeId="8.1068581242862" />
             <link role="actionSet" targetNodeId="1090841286734" />
+            <link role="linkDeclaration" targetNodeId="8.1068581242862" />
             <link role="editorComponent" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1090581771774">
                 <link role="semanticTypeDeclaration" targetNodeId="8.1068390468198" />

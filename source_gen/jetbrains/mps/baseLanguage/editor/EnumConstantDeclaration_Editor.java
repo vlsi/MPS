@@ -33,7 +33,7 @@ public class EnumConstantDeclaration_Editor extends SemanticNodeEditor {
     editorCell.addEditorCell(this.createNameCell(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell(editorContext, node, "("));
     editorCell.addEditorCell(this.createActualArgumentList(editorContext, node));
-    editorCell.addEditorCell(this.createConstantCell1(editorContext, node, ")"));
+    editorCell.addEditorCell(this.createConstantCell2(editorContext, node, ")"));
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext editorContext, SemanticNode node) {
@@ -51,7 +51,7 @@ public class EnumConstantDeclaration_Editor extends SemanticNodeEditor {
     cellCollection.setGridLayout(false);
     return cellCollection;
   }
-  public EditorCell createConstantCell1(EditorContext editorContext, SemanticNode node, String text) {
+  public EditorCell createConstantCell2(EditorContext editorContext, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
     return editorCell;
   }
