@@ -94,6 +94,26 @@ public class MPSProject extends AbstractMPSProject {
     Element projectModelsElement = rootElement.getChild(PROJECT_MODELS);
     readModelRoots(myProjectModelRoots, projectModelsElement);
 
+    // check roots consistency
+    Iterator<ModelRoot> projectModelRoots = myProjectModelRoots.iterator();
+    while (projectModelRoots.hasNext()) {
+      ModelRoot modelRoot = projectModelRoots.next();
+      String error = modelRoot.checkConsistency();
+      if (error != null) {
+        (new Exception("Error reading project " + myProjectFile.getAbsolutePath() + ". Inconsistent project model root:\n" + error)).printStackTrace();
+        projectModelRoots.remove();
+      }
+    }
+    Iterator<ModelRoot> libraryModelRoots = myLibraryModelRoots.iterator();
+    while (libraryModelRoots.hasNext()) {
+      ModelRoot modelRoot = libraryModelRoots.next();
+      String error = modelRoot.checkConsistency();
+      if (error != null) {
+        (new Exception("Error reading project " + myProjectFile.getAbsolutePath() + ". Inconsistent library model root:\n" + error)).printStackTrace();
+        libraryModelRoots.remove();
+      }
+    }
+
 //    readModels(myLibraryModelRoots, myLibraryModels);
     readModels(myProjectModelRoots, myProjectModels);
 
@@ -136,14 +156,14 @@ public class MPSProject extends AbstractMPSProject {
   }
 
   private void readModels(ArrayList<SemanticModel> models, File dir) {
-    if(!dir.isDirectory()) {
+    if (!dir.isDirectory()) {
       return;
     }
     File[] files = dir.listFiles(new FilenameFilter() {
-          public boolean accept(File dir, String name) {
-            return name.endsWith(".mps");
-          }
-        });
+      public boolean accept(File dir, String name) {
+        return name.endsWith(".mps");
+      }
+    });
     for (int i = 0; i < files.length; i++) {
       File file = files[i];
       SemanticModel semanticModel = loadModel(file.getAbsolutePath());
@@ -152,7 +172,7 @@ public class MPSProject extends AbstractMPSProject {
     File[] dirs = dir.listFiles();
     for (int i = 0; i < dirs.length; i++) {
       File childDir = dirs[i];
-      if(childDir.isDirectory()) {
+      if (childDir.isDirectory()) {
         readModels(models, childDir);
       }
     }
@@ -160,14 +180,14 @@ public class MPSProject extends AbstractMPSProject {
   }
 
   private void readLanguageDescriptors(File dir) {
-    if(!dir.isDirectory()) {
+    if (!dir.isDirectory()) {
       return;
     }
     File[] files = dir.listFiles(new FilenameFilter() {
-          public boolean accept(File dir, String name) {
-            return name.endsWith(".mpl");
-          }
-        });
+      public boolean accept(File dir, String name) {
+        return name.endsWith(".mpl");
+      }
+    });
     for (int i = 0; i < files.length; i++) {
       File file = files[i];
       Language language = Language.loadFromFile(file, this);
@@ -176,7 +196,7 @@ public class MPSProject extends AbstractMPSProject {
     File[] dirs = dir.listFiles();
     for (int i = 0; i < dirs.length; i++) {
       File childDir = dirs[i];
-      if(childDir.isDirectory()) {
+      if (childDir.isDirectory()) {
         readLanguageDescriptors(childDir);
       }
     }
@@ -231,11 +251,11 @@ public class MPSProject extends AbstractMPSProject {
 
   public String findPath(String modelFQName) {
     String modelPath = PathManager.findModelPath(myProjectModelRoots, modelFQName);
-    if(modelPath != null && (new File(modelPath)).exists()) {
+    if (modelPath != null && (new File(modelPath)).exists()) {
       return modelPath;
     }
     modelPath = PathManager.findModelPath(myLibraryModelRoots, modelFQName);
-    if(modelPath != null && (new File(modelPath)).exists()) {
+    if (modelPath != null && (new File(modelPath)).exists()) {
       return modelPath;
     }
     return null;
