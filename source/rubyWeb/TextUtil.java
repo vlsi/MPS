@@ -31,6 +31,37 @@ public class TextUtil {
     return result;
   }
 
+  public static Text toText(SModel model, Element text) {
+    Text result = Text.newInstance(model);
+    for (Object part : text.getContent()) {
+      if (part instanceof org.jdom.Text) {
+        org.jdom.Text textPart = (org.jdom.Text) part;
+        for (String sentence : splitToSentences(textPart.getText())) {
+          result.addSentence(toSentence(model, sentence));
+        }
+        continue;
+      }
+      if (part instanceof Element) {
+        Element elem = (Element) part;
+        Sentence sentence = Sentence.newInstance(model);
+        String name = elem.getName();
+        if ("b".equals(name) || "B".equals(name)) {
+          BoldTag tag = BoldTag.newInstance(model);
+          tag.setText(toText(model, elem));
+          sentence.addWord(tag);
+        }
+        if ("i".equals(name) || "I".equals(name)) {
+          ItalicTag tag = ItalicTag.newInstance(model);
+          tag.setText(toText(model, elem));
+          sentence.addWord(tag);
+        }
+        result.addSentence(sentence);
+        continue;
+      }
+    }
+    return result;
+  }
+
   public static Sentence toSentence(SModel model, String sentence) {
     Sentence result = Sentence.newInstance(model);
 
