@@ -6,6 +6,9 @@ import jetbrains.textLanguage.Text;
 import jetbrains.textLanguage.WordValue_PropertySupport;
 import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.util.CollectionUtil;
+import org.jdom.Element;
+import rubyWeb.paper.BoldTag;
+import rubyWeb.paper.ItalicTag;
 
 /**
  * @author Kostik
@@ -62,5 +65,39 @@ public class TextUtil {
       result.append(toString(sentence));
     }
     return result.toString();
+  }
+
+  public static void toElement(Text text, Element element) {
+    for (Sentence sentence : CollectionUtil.iteratorAsIterable(text.sentences())) {
+      toElement(sentence, element);
+    }
+  }
+
+  public static void toElement(Sentence sentence, Element element) {
+    for (Word word : CollectionUtil.iteratorAsIterable(sentence.words())) {
+      toElement(word, element);
+      element.addContent(" ");
+    }
+    element.addContent(".");
+  }
+
+  public static void toElement(Word word, Element element) {
+    if (word instanceof BoldTag) {
+      BoldTag tag = (BoldTag) word;
+      Element bold = new Element("b");
+      element.addContent(bold);
+      toElement(tag.getText(), bold);
+      return;
+    }
+
+    if (word instanceof ItalicTag) {
+      ItalicTag tag = (ItalicTag) word;
+      Element italic = new Element("i");
+      element.addContent(italic);
+      toElement(tag.getText(), italic);
+      return;
+    }
+
+    element.addContent(word.getValue());
   }
 }
