@@ -1,9 +1,8 @@
 package jetbrains.mps.util;
 
-import java.util.Set;
-import java.util.HashSet;
-import java.util.TreeSet;
 import java.io.File;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * @author Kostik
