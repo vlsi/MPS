@@ -32,6 +32,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    __Expression_RTransform_ActionSet.setCellActions(editorCell, node);
     editorCell.addKeyMap(new _Expression_KeyMap());
     editorCell.addEditorCell(this.createClassTypeCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "."));
