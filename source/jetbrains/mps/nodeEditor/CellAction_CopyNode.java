@@ -20,7 +20,7 @@ public class CellAction_CopyNode extends EditorCellAction {
   public void execute(EditorContext context) {
     List<SemanticNode> nodeList = new LinkedList<SemanticNode>();
     AbstractEditorComponent editorComponent = context.getNodeEditorComponent();
-    EditorCellRangeSelection cellRangeSelection = editorComponent.getCellRangeSelection();
+    NodeRangeSelection cellRangeSelection = editorComponent.getNodeRangeSelection();
     if (cellRangeSelection.isActive()) {
       nodeList.addAll(cellRangeSelection.getNodes());
       System.out.println("Copy " + nodeList.size() + " nodes : ");

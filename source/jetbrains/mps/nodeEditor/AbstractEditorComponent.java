@@ -9,7 +9,6 @@ import jetbrains.mps.generator.ContextUtil;
 import jetbrains.mps.generator.JavaClassMap;
 import jetbrains.mps.generator.JavaClassMaps;
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.InspectorPane;
@@ -35,8 +34,6 @@ import java.beans.PropertyChangeListener;
 import java.util.*;
 import java.util.List;
 
-import static jetbrains.mps.ide.EditorsPane.EditorPosition.*;
-
 /**
  * Author: Sergey Dmitriev
  * Created Sep 14, 2003
@@ -55,7 +52,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private int myShiftX = 10;
   private int myShiftY = 10;
 
-  private EditorCellRangeSelection myCellRangeSelection;
+  private NodeRangeSelection myNodeRangeSelection;
 
   private Stack<EditorCell> mySelectedStack = new Stack<EditorCell>();
   private Stack<IKeyboardHandler> myKbdHandlersStack;
@@ -123,7 +120,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myContainer.add(myScrollPane, BorderLayout.CENTER);
 
     myNodeSubstituteChooser = new NodeSubstituteChooser(this);
-    myCellRangeSelection = new EditorCellRangeSelection(this);
+    myNodeRangeSelection = new NodeRangeSelection(this);
 
     // --- keyboard handling ---
     myKbdHandlersStack = new Stack<IKeyboardHandler>();
@@ -824,7 +821,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return;
     }
     myNodeSubstituteChooser.setVisible(false);
-    myCellRangeSelection.deactivate();
+    myNodeRangeSelection.deactivate();
 
     EditorCell oldSelection = mySelectedCell;
     if (mySelectedCell != null) {
@@ -1103,9 +1100,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public void paint(Graphics g) {
     super.paint(g);
-    if (myCellRangeSelection.isActive()) {
+    if (myNodeRangeSelection.isActive()) {
       g.setColor(Color.magenta);
-      Iterator<SemanticNode> nodes = myCellRangeSelection.getNodes().iterator();
+      Iterator<SemanticNode> nodes = myNodeRangeSelection.getNodes().iterator();
       while (nodes.hasNext()) {
         EditorCell cell = findNodeCell(nodes.next());
         if (cell != null) { // the paint may happen when the editor content is aldeary changed 
@@ -1116,8 +1113,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
   }
 
-  EditorCellRangeSelection getCellRangeSelection() {
-    return myCellRangeSelection;
+  NodeRangeSelection getNodeRangeSelection() {
+    return myNodeRangeSelection;
   }
 
   // last caret X

@@ -157,8 +157,8 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
           }
         }
 
-        if (editor.getCellRangeSelection().isSelectionKeystroke(keyEvent)) {
-          if (editor.getCellRangeSelection().activate(keyEvent)) {
+        if (editor.getNodeRangeSelection().isSelectionKeystroke(keyEvent)) {
+          if (editor.getNodeRangeSelection().activate(keyEvent)) {
             return true;
           }
         }
