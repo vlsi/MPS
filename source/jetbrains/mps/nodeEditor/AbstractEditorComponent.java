@@ -53,8 +53,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private List<ICellSelectionListener> mySelectionListeners = new LinkedList<ICellSelectionListener>();
   private KeyListener myKeyListener;
 
+  private IdeMain myIdeMain;
 
-  public AbstractEditorComponent() {
+
+  public AbstractEditorComponent(IdeMain ideMain) {
+    myIdeMain = ideMain;
+
     setDoubleBuffered(true);
     setFocusTraversalKeysEnabled(false);
     myScrollPane = new JScrollPane();
@@ -105,7 +109,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       public void actionPerformed(ActionEvent e) {
         if (mySelectedCell != null && mySelectedCell.getSemanticNode() != null) {
           SemanticNode node = mySelectedCell.getSemanticNode();
-          ProjectPane projectPane = IdeMain.instance().getProjectPane();
+          ProjectPane projectPane = myIdeMain.getProjectPane();
           projectPane.selectNode(node);
           projectPane.getTree().requestFocus();          
         }
@@ -123,7 +127,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             if (rootNode.isAncestorOf(targetNode)) {
               selectNode(targetNode);
             } else {
-              AbstractEditorComponent editor = IdeMain.instance().getEditorsPane().openEditor(targetNode.getContainingRoot());
+              AbstractEditorComponent editor = myIdeMain.getEditorsPane().openEditor(targetNode.getContainingRoot());
               editor.selectNode(targetNode);
             }
           }
@@ -222,7 +226,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private Action createGoToProjectAction(final SemanticNode node) {
     return new AbstractAction("Go To Project") {
       public void actionPerformed(ActionEvent e) {
-        ProjectPane projectPane = IdeMain.instance().getProjectPane();
+        ProjectPane projectPane = myIdeMain.getProjectPane();
         projectPane.selectNode(node);
       }
     };
@@ -232,7 +236,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     final String editorName = node.getName() + "_Editor";
     return new AbstractAction("Go To " + editorName) {
       public void actionPerformed(ActionEvent e) {
-        MPSProject project = IdeMain.instance().getProject();
+        MPSProject project = myIdeMain.getProject();
         SemanticModel languageStructure = node.getSemanticModel();
         Language language = project.getLanguageByStructureModel(languageStructure);
         if (language == null) {
@@ -246,7 +250,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             SemanticNode root = iterator.next();
 //            System.out.println("compare editor name " + editorName + " vs " + root.getName() + " equals:" + editorName.equals(root.getName()));
             if (editorName.equals(root.getName())) {
-              AbstractEditorComponent editor = IdeMain.instance().getEditorsPane().openEditor(root, LEFT);
+              AbstractEditorComponent editor = myIdeMain.getEditorsPane().openEditor(root, LEFT);
               editor.selectNode(root);
               return;
             }
@@ -272,7 +276,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       AbstractAction action = new AbstractAction(actionText) {
         public void actionPerformed(ActionEvent e) {
           SemanticNode toOpenNode = SemanticModelUtil.getRootParent(targetNode);
-          AbstractEditorComponent editor = IdeMain.instance().getEditorsPane().openEditor(toOpenNode, LEFT);
+          AbstractEditorComponent editor = myIdeMain.getEditorsPane().openEditor(toOpenNode, LEFT);
           editor.selectNode(targetNode);
         }
       };
@@ -285,7 +289,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return new AbstractAction("Find Usages") {
       public void actionPerformed(ActionEvent e) {
         UsagesModel_SemanticNode usageModel = new UsagesModel_BackReferences(node);
-        ((IdeMain) IdeMain.instance()).showUsagesView(usageModel);
+        myIdeMain.showUsagesView(usageModel);
       }
     };
   }
@@ -293,7 +297,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private Action createGoToDeclarationAction(final SemanticNode node) {
     return new AbstractAction("Go to semantic type declaration") {
       public void actionPerformed(ActionEvent e) {
-        IdeMain.instance().getEditorsPane().openEditor(Language.findTypeDeclaration(node.getSemanticModel(), node.getNodeTypeName()));
+        myIdeMain.getEditorsPane().openEditor(Language.findTypeDeclaration(node.getSemanticModel(), node.getNodeTypeName()));
       }
     };
   }

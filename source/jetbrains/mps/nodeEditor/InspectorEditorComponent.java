@@ -8,13 +8,15 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.IdeMain;
 
 public class InspectorEditorComponent extends AbstractEditorComponent {
   private EditorContext myEditorContext;
   private SemanticNode myInspectedNode;
   private MPSProject myProject;
 
-  public InspectorEditorComponent() {
+  public InspectorEditorComponent(IdeMain ideMain) {
+    super(ideMain);
     reinitEditor();
     rebuildEditorContent();
   }
