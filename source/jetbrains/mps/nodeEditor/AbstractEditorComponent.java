@@ -12,9 +12,7 @@ import jetbrains.mps.ide.usageView.UsagesModel_BackReferences;
 import jetbrains.mps.ide.usageView.UsagesModel_SemanticNode;
 import jetbrains.mps.project.AbstractMPSProject;
 import jetbrains.mps.semanticModel.*;
-import jetbrains.mps.typesystem.ITypeObject;
-import jetbrains.mps.typesystem.SemanticModelTypeChecker;
-import jetbrains.mps.typesystem.TSStatus;
+import jetbrains.mps.typesystem.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -758,7 +756,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (keyEvent.getKeyCode() == KeyEvent.VK_T && keyEvent.isControlDown()) {
       if (mySelectedCell != null) {
         SemanticNode selectedNode = mySelectedCell.getSemanticNode();
-        SemanticModelTypeChecker typeChecker = new SemanticModelTypeChecker(selectedNode.getSemanticModel(), IdeMain.instance().getProject());
+//        SemanticModelTypeChecker typeChecker = new SemanticModelTypeChecker(selectedNode.getSemanticModel(), IdeMain.instance().getProject());
+        ITypeChecker typeChecker = TypeCheckerAccess.instance().getTypeChecker();
         System.out.println("--- Type System Info:");
         System.out.println("--- Node: " + selectedNode.getDebugText());
         TSStatus status = typeChecker.checkNodeType(selectedNode);
