@@ -10,6 +10,7 @@ import java.awt.event.KeyEvent;
 import java.util.HashMap;
 import java.util.List;
 import java.util.LinkedList;
+import java.util.Iterator;
 import java.lang.reflect.Field;
 
 public class EditorCellKeyMap {
@@ -29,7 +30,8 @@ public class EditorCellKeyMap {
   public static final String KEY_CODE_LETTER_OR_DIGIT = "letter or digit";
   public static final String KEY_CODE_SPACE = "space char";
 
-  private static HashMap<Integer, String> ourJavaKeyCodesMap = new HashMap<Integer, String>();
+  private static HashMap<Integer, String> ourJavaKeycodesMap = new HashMap<Integer, String>();
+  private static List<String> ourVirtualKeycodeNames;
 
   static {
     Field[] declaredFields = KeyEvent.class.getDeclaredFields();
@@ -37,9 +39,14 @@ public class EditorCellKeyMap {
       Field field = declaredFields[i];
       String name = field.getName();
       if (name.startsWith("VK_")) {
+        if (name.equals("VK_CONTROL") ||
+                name.equals("VK_ALT") ||
+                name.equals("VK_SHIFT")) {
+          continue;
+        }
         try {
           int value = field.getInt(null);
-          ourJavaKeyCodesMap.put(new Integer(value), name);
+          ourJavaKeycodesMap.put(new Integer(value), name);
         } catch (IllegalAccessException e) {
           e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
@@ -120,7 +127,7 @@ public class EditorCellKeyMap {
     if (keyCode != KeyEvent.VK_CONTROL &&
             keyCode != KeyEvent.VK_ALT &&
             keyCode != KeyEvent.VK_SHIFT) {
-      String keyCodeName = ourJavaKeyCodesMap.get(new Integer(keyCode));
+      String keyCodeName = ourJavaKeycodesMap.get(new Integer(keyCode));
       keyCodes.add(keyCodeName);
     }
 
@@ -141,7 +148,20 @@ public class EditorCellKeyMap {
     return keyCodes;
   }
 
+  public static List<String> getVirtualKeycodes() {
+    if(ourVirtualKeycodeNames == null) {
+      ourVirtualKeycodeNames = new LinkedList<String>();
+      Iterator<Integer> iterator = ourJavaKeycodesMap.keySet().iterator();
+      while (iterator.hasNext()) {
+        Integer keyCode = iterator.next();
+        ourVirtualKeycodeNames.add(ourJavaKeycodesMap.get(keyCode));
+      }
+    }
+    return ourVirtualKeycodeNames;
+  }
 
+
+  
   private static class ActionKey {
     private String myModifiers;
     private String myKeyCode;
