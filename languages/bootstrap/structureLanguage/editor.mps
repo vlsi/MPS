@@ -101,16 +101,6 @@
         <property name="nullText" value="&lt;no data type&gt;" />
         <link role="actionSet" targetNodeId="1082986003078" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1082985570616">
-        <property name="text" value="(deprecated type" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1082985570617">
-        <property name="defaultText" value="&lt;none&gt;" />
-        <link role="propertyDeclaration" targetNodeId="1.1071662428250" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1082985570618">
-        <property name="text" value=")" />
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1082985852447">
