@@ -81,7 +81,8 @@ public class ConstrainedDataTypeDeclaration_Editor extends SemanticNodeEditor {
     if(modelAccessor != null) {
       editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
       ((EditorCell_Label)editorCell).setDefaultText("<none>");
-    } else {
+    } else 
+    {
       editorCell = EditorCell_Error.create(editorContext, node, "<none>");
     }
     ConstrainedDataTypeDeclaration_ExtendsCellActions.setCellActions(editorCell, node);

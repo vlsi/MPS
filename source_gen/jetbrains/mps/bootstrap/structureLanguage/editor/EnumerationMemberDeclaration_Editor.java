@@ -91,7 +91,8 @@ public class EnumerationMemberDeclaration_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(modelAccessor != null) {
       editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
-    } else {
+    } else 
+    {
       editorCell = EditorCell_Error.create(editorContext, node, null);
     }
     EnumerationMemberDeclaration_IsDefaultActions.setCellActions(editorCell, node);

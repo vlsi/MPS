@@ -1,12 +1,11 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.semanticModel.SemanticNode;
-import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 
 import java.awt.event.KeyEvent;
 import java.util.Iterator;
-import java.util.List;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Author: Sergey Dmitriev.
@@ -22,13 +21,6 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
   private boolean myVertical;
   private SemanticNode myInsertedNode;
   private EditorCell myInsertedNodeCell;
-
-  /**
-   * @deprecated
-   */
-  public EditorCellListHandler(SemanticNode ownerNode, String referenceRole, String referenceMetaclass) {
-    this(ownerNode, referenceRole, LinkMetaclass.parseValue(referenceMetaclass) == LinkMetaclass.aggregation);
-  }
 
   public EditorCellListHandler(SemanticNode ownerNode, String referenceRole, boolean isAggregation) {
     myOwnerNode = ownerNode;

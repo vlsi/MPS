@@ -25,7 +25,7 @@ public class EnumerationDataTypeDeclaration_Editor extends SemanticNodeEditor {
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);
-    myMemberListHandler = new EnumerationDataTypeDeclaration_Editor_MemberListHandler(node, "member", "aggregation");
+    myMemberListHandler = new EnumerationDataTypeDeclaration_Editor_MemberListHandler(node, "member", true);
   }
   public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
     return this.createNodeBox(editorContext, node);
@@ -100,7 +100,8 @@ public class EnumerationDataTypeDeclaration_Editor extends SemanticNodeEditor {
     if(modelAccessor != null) {
       editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
       ((EditorCell_Label)editorCell).setDefaultText("<no data type>");
-    } else {
+    } else 
+    {
       editorCell = EditorCell_Error.create(editorContext, node, "<no data type>");
     }
     EnumerationDataTypeDeclaration_MemberDataTypeActions.setCellActions(editorCell, node);
