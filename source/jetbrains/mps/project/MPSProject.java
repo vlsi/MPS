@@ -89,6 +89,7 @@ public class MPSProject implements ModelLocator {
     if (file.getName().equals("RubyWeb.mpr")) {
       rubyWeb.bibliography.PersistenceUtil.loadRubyWebBibliography(this);
       rubyWeb.patternList.PersistenceUtil.loadRubyWebPatternList(this);
+      rubyWeb.paper.PersistenceUtil.loadRubyWebPaper(this);
     }
   }
                                        
