@@ -47,11 +47,13 @@ public class LocalVariableDeclaration_Editor extends SemanticNodeEditor {
   public EditorCell createNameCell(EditorContext editorContext, SemanticNode node) {
     ModelAccessor modelAccessor = new PropertyAccessor(node, "name", true, false);
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
+    editorCell.setDefaultText("<no name>");
     LocalVariableDeclaration_NameCellActions.setCellActions(editorCell, node);
     return editorCell;
   }
   public EditorCell createInitializerArea(EditorContext editorContext, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setSelectable(false);
     editorCell.setGridLayout(false);
     editorCell.addEditorCell(this.createConstantCell(editorContext, node, "="));
     editorCell.addEditorCell(this.createInitializerCell(editorContext, node));
