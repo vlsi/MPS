@@ -20,6 +20,7 @@ public class ThisExpression_Editor extends SemanticNodeEditor {
   public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
     editorCell.setSelectable(true);
+    editorCell.setEditable(true);
     ThisExpression_NodeBoxActions.setCellActions(editorCell, node);
     return editorCell;
   }
