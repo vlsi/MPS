@@ -3,6 +3,7 @@ package rubyWeb;
 import jetbrains.textLanguage.*;
 import jetbrains.textLanguage.Tag;
 import jetbrains.mps.semanticModel.SModel;
+import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.util.CollectionUtil;
 import org.jdom.Element;
 import rubyWeb.paper.*;
@@ -68,7 +69,7 @@ public class TextUtil {
           tag.setText(toText(model, elem));
         }
         if ("br".equals(name) || "BR".equals(name)) {
-          tag = BRTag.newInstance(model);          
+          tag = BRTag.newInstance(model);
         }
         if ("i".equals(name) || "I".equals(name)) {
           tag = ItalicTag.newInstance(model);
