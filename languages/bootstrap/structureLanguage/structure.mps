@@ -153,8 +153,8 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration" id="1084197782722">
     <property name="name" value="Cardinality" />
-    <link role="memberDataType" targetNodeId="1.1082983041843" />
     <link role="defaultMember" targetNodeId="1084197782723" />
+    <link role="memberDataType" targetNodeId="1.1082983041843" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1084197782723">
       <property name="externalValue" value="0..1" />
       <property name="internalValue" value="0..1" />
@@ -178,11 +178,11 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration" id="1084199179703">
     <property name="name" value="LinkMetaclass" />
-    <link role="defaultMember" targetNodeId="1084199179704" />
     <link role="memberDataType" targetNodeId="1.1082983041843" />
+    <link role="defaultMember" targetNodeId="1084199179704" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1084199179704">
-      <property name="externalValue" value="&lt;no metaclass&gt;" />
-      <property name="name" value="none" />
+      <property name="externalValue" value="reference" />
+      <property name="name" value="reference" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1084199179705">
       <property name="externalValue" value="aggregation" />
@@ -231,8 +231,8 @@
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="integerConceptPropertyDeclaration" />
-      <link role="specializedLink" targetNodeId="1105725439818" />
       <link role="target" targetNodeId="1105725141344" />
+      <link role="specializedLink" targetNodeId="1105725439818" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1105725574259">
@@ -242,8 +242,8 @@
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="booleanConceptPropertyDeclaration" />
-      <link role="specializedLink" targetNodeId="1105725439818" />
       <link role="target" targetNodeId="1105725240314" />
+      <link role="specializedLink" targetNodeId="1105725439818" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1105725638761">
@@ -257,8 +257,8 @@
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="stringConceptPropertyDeclaration" />
-      <link role="target" targetNodeId="1105725281956" />
       <link role="specializedLink" targetNodeId="1105725439818" />
+      <link role="target" targetNodeId="1105725281956" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1105736576531">
@@ -290,8 +290,8 @@
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="referenceConceptLinkDeclaration" />
-      <link role="target" targetNodeId="1105741578420" />
       <link role="specializedLink" targetNodeId="1105736734721" />
+      <link role="target" targetNodeId="1105741578420" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1105736807942">
       <property name="sourceCardinality" value="1" />
@@ -308,8 +308,8 @@
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="aggregationConceptLinkDeclaration" />
-      <link role="specializedLink" targetNodeId="1105736734721" />
       <link role="target" targetNodeId="1105741535888" />
+      <link role="specializedLink" targetNodeId="1105736734721" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1105736901241">
       <property name="sourceCardinality" value="1" />
