@@ -38,7 +38,7 @@ public class MPSSupportHandler {
         VirtualFile[] contentRoots = ProjectRootManager.getInstance(myProject).getContentRoots();
         for (int i = 0; i < contentRoots.length; i++) {
           VirtualFile contentRoot = contentRoots[i];
-          contentRoot.refresh(true, true);
+          contentRoot.refresh(false, true);
         }
       }
     });
