@@ -12,6 +12,7 @@ import jetbrains.mps.typesystem.ITypesystem;
 import jetbrains.mps.typesystem.TSStatus;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
+import jetbrains.mps.util.NameUtil;
 
 import javax.swing.*;
 import java.awt.*;
@@ -138,6 +139,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     SemanticNode selectedNode = getSelectedCell().getSemanticNode();
     selectNode(selectedNode);
     JPopupMenu popupMenu = new JPopupMenu();
+    popupMenu.add(JavaNameUtil.shortName(selectedNode.getClass().getName()));
+    popupMenu.addSeparator();
     popupMenu.add(createGoByReferenceMenu(selectedNode));
     popupMenu.add(createGoByBackReferenceMenu(selectedNode));
     popupMenu.show(AbstractEditorComponent.this, e.getX(), e.getY());
