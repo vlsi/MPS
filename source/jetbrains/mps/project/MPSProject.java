@@ -48,11 +48,13 @@ public class MPSProject implements ModelLocator {
   }
 
   private void initComponent() {
+    IdeMain ide = IdeMain.instance();
+
     addComponent(MPSProject.class, this);
-    addComponent(IdeMain.class, IdeMain.instance());
-    addComponent(ProjectPane.class, IdeMain.instance().getProjectPane());
-    addComponent(EditorsPane.class, IdeMain.instance().getEditorsPane());
-    addComponent(InspectorPane.class, IdeMain.instance().getInspectorPane());
+    addComponent(IdeMain.class, ide);
+    addComponent(ProjectPane.class, ide.getProjectPane());
+    addComponent(EditorsPane.class, ide.getEditorsPane());
+    addComponent(InspectorPane.class, ide.getInspectorPane());
     addComponent(EditorManager.class, new EditorManager());
     addComponent(UndoManager.class, UndoManager.instance());
     addComponent(EditorsPaneComponent.class, new EditorsPaneComponent(this));

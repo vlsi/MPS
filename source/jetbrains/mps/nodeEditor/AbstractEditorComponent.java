@@ -254,7 +254,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     registerKeyboardAction(new AbstractAction(action.getName()) {
       public void actionPerformed(ActionEvent e) {
         if (mySelectedCell != null && mySelectedCell.getSemanticNode() != null) {
-          action.execute(new ActionContext(mySelectedCell.getSemanticNode()));
+          action.execute(new ActionContext(getProject().getComponent(IdeMain.class), mySelectedCell.getSemanticNode()));
         }
       }
     }, KeyStroke.getKeyStroke(keyStroke), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
@@ -307,7 +307,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     popupMenu.add(createGoByReferenceMenu(selectedNode));
     popupMenu.addSeparator();
 
-    ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS).addGroup(popupMenu, new ActionContext(selectedNode));
+    ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS).addGroup(popupMenu, new ActionContext(getProject().getComponent(IdeMain.class),selectedNode));
 
     if (selectedNode instanceof ClassConcept) {
       popupMenu.addSeparator();
