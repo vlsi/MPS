@@ -125,9 +125,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-    if(editorCell.getSubstituteInfo() == null) {
-      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-    }
+    editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
     StaticFieldDeclaration_TypeCellActions.setCellActions(editorCell, node);
     return editorCell;
   }
@@ -157,9 +155,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(referencedNode));
-    if(editorCell.getSubstituteInfo() == null) {
-      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-    }
+    editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
     __VariableInitializer_ActionSet.setCellActions(editorCell, node);
     editorCell.addKeyMap(new _Expression_KeyMap());
     return editorCell;

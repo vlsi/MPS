@@ -178,9 +178,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-    if(editorCell.getSubstituteInfo() == null) {
-      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-    }
+    editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
     IfStatement_ConditionCellActions.setCellActions(editorCell, node);
     return editorCell;
   }
@@ -207,9 +205,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-    if(editorCell.getSubstituteInfo() == null) {
-      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-    }
+    editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
     return editorCell;
   }
   public EditorCell createIfFalseStatementCell(EditorContext context, SemanticNode node) {
@@ -237,9 +233,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(referencedNode));
-    if(editorCell.getSubstituteInfo() == null) {
-      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-    }
+    editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
     IfStatement_ElseStatementActions.setCellActions(editorCell, node);
     return editorCell;
   }

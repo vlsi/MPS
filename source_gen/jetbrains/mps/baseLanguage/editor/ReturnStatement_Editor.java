@@ -81,9 +81,7 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-    if(editorCell.getSubstituteInfo() == null) {
-      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-    }
+    editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
     ReturnStatement_ExpressionCellActions.setCellActions(editorCell, node);
     return editorCell;
   }
