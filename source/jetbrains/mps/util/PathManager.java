@@ -3,6 +3,7 @@ package jetbrains.mps.util;
 import jetbrains.mps.semanticModel.ModelRoot;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.Collection;
 
@@ -236,6 +237,7 @@ public class PathManager {
     if (!baseFile.isDirectory()) {
       baseFile = baseFile.getParentFile();
     }
+    if (baseFile.getPath().equals(absoluteFile.getPath())) return ".";
     StringBuffer relativePath = new StringBuffer(absoluteFile.getName());
     File parent = absoluteFile.getParentFile();
     while (parent != null) {
