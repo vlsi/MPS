@@ -59,7 +59,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private Component myPreviousFocusOwner = null;
 
   private IdeMain myIdeMain;
-  private EventRecorder myRecorder = new EventRecorder();
+  private EventRecorder myRecorder = null;
 
   public AbstractEditorComponent(IdeMain ideMain) {
     addFocusListener(new FocusAdapter() {
@@ -116,9 +116,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     registerKeyboardAction(new GoToEditorAction(), KeyStroke.getKeyStroke("control E"), WHEN_FOCUSED);
     registerKeyboardAction(new FindUsagesAction(), KeyStroke.getKeyStroke("alt F7"), WHEN_FOCUSED);
     registerKeyboardAction(new ReturnToPreviousComponentAction(), KeyStroke.getKeyStroke("ESCAPE"), WHEN_FOCUSED);
-    registerKeyboardAction(new StartRecordingAction(), KeyStroke.getKeyStroke("control R"), WHEN_FOCUSED);
-    registerKeyboardAction(new StopRecordingAction(), KeyStroke.getKeyStroke("control shift R"), WHEN_FOCUSED);
-    registerKeyboardAction(new ReplayScriptAction(), KeyStroke.getKeyStroke("control shift P"), WHEN_FOCUSED);
 
     addMouseListener(new MouseAdapter() {
       public void mousePressed(final MouseEvent e) {
@@ -139,12 +136,16 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     myKeyListener = new KeyAdapter() {
       public void keyPressed(final KeyEvent e) {
-        myRecorder.record(e);
+        if (myRecorder != null) {
+          myRecorder.record(e, AbstractEditorComponent.this instanceof InspectorEditorComponent);
+        }
         processKeyPressed(e);
       }
 
       public void keyReleased(final KeyEvent e) {
-        myRecorder.record(e);
+        if (myRecorder != null) {
+          myRecorder.record(e, AbstractEditorComponent.this instanceof InspectorEditorComponent);
+        }
         processKeyReleased(e);
       }
     };
@@ -174,6 +175,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         myNodeSubstituteChooser.setVisible(false);
       }
     });
+  }
+
+  public void setEventRecorder(EventRecorder recorder) {
+    myRecorder = recorder;
   }
 
   private void processPopupMenu(MouseEvent e) {
@@ -801,6 +806,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     peekKeyboardHandler().processKeyReleased(getContext(), keyEvent);
   }
 
+  private void stopRecordingIfPossible() {
+    if (myRecorder != null) {
+      myRecorder.stopRecording();
+      myRecorder = null;
+    }
+  }
+
   public void processKeyPressed(final KeyEvent keyEvent) {
     // hardcoded actions which should be excuted outside command
 
@@ -1081,24 +1093,26 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
   }
 
-  private class StartRecordingAction extends AbstractAction {
+  protected class StartRecordingAction extends AbstractAction {
     public void actionPerformed(ActionEvent e) {
+      myRecorder = new EventRecorder();
+      IdeMain.instance().getInspectorPane().getInspector().setEventRecorder(myRecorder);
       myRecorder.startRecording();
     }
   }
 
-  private class StopRecordingAction extends AbstractAction {
+  protected class StopRecordingAction extends AbstractAction {
     public void actionPerformed(ActionEvent e) {
-      myRecorder.stopRecording();
+      stopRecordingIfPossible();
     }
   }
 
-  private class ReplayScriptAction extends AbstractAction {
+  protected class ReplayScriptAction extends AbstractAction {
     public void actionPerformed(ActionEvent e) {
       JFileChooser chooser = new SmartFileChooser() { };
       if (chooser.showOpenDialog(IdeMain.instance().getMainFrame()) == JFileChooser.APPROVE_OPTION) {
-        myRecorder.stopRecording();
-        new EventPlayer(chooser.getSelectedFile()).replay(AbstractEditorComponent.this);
+        stopRecordingIfPossible();
+        new EventPlayer(chooser.getSelectedFile()).replay(AbstractEditorComponent.this, IdeMain.instance().getInspectorPane().getInspector());
       }
     }
   }
