@@ -250,7 +250,9 @@ public class TextUtil {
     if (word instanceof ATag) {
       ATag tag = (ATag) word;
       Element target = new Element("a");
-      target.setAttribute("href", ((ATag) word).getHref());
+      if (tag.getHref() != null) {
+        target.setAttribute("href", ((ATag) word).getHref());
+      }
       element.addContent(target);
       toElement(tag.getText(), target);
       return;
