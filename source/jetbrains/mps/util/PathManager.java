@@ -1,10 +1,12 @@
 package jetbrains.mps.util;
 
-import jetbrains.mps.semanticModel.ModelRoot;
+import jetbrains.mps.projectLanguage.ModelRoot;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.Collection;
+import java.util.Iterator;
 
 /**
  * Author: Sergey Dmitriev
@@ -113,7 +115,7 @@ public class PathManager {
    */
   private static String extractRoot(URL resourceURL, String resourcePath) {
     if (!(resourcePath.startsWith("/") || resourcePath.startsWith("\\"))) {
-      System.err.println("precondition failed");
+      System.err.println("PathManager.extractRoot: precondition failed for"+resourcePath);
       return null;
     }
     String protocol = resourceURL.getProtocol();
@@ -156,9 +158,20 @@ public class PathManager {
     return null;
   }
 
+  public static String findModelPath(Iterator<ModelRoot> modelRoots, String modelFQName) {
+    while (modelRoots.hasNext()) {
+      ModelRoot modelRoot = modelRoots.next();
+      String path = findModelPath(modelRoot, modelFQName);
+      if(path != null) {
+        return path;
+      }
+    }
+    return null;
+  }
+
   public static String findModelPath(ModelRoot modelRoot, String modelFQName) {
     String name = modelFQName;
-    String packagePrefix = modelRoot.namespacePrefix;
+    String packagePrefix = modelRoot.getPrefix();
     if(packagePrefix != null && packagePrefix.length() > 0) {
       if(modelFQName.startsWith(packagePrefix + '.')) {
         name = modelFQName.substring(packagePrefix.length());
@@ -167,34 +180,16 @@ public class PathManager {
         return null;
       }
     }
-    File root = modelRoot.root;
     String path = name.replace('.', File.separatorChar);
     if(!path.startsWith(File.separator)) {
       path = File.separator + path;
     }
-    path = root.getAbsolutePath() + path + ".mps";
+    path = modelRoot.getPath() + path + ".mps";
     if(!(new File(path)).exists()) {
       return null;
     }
     return path;
   }
-
-
-//  /**
-//   * @param modelName
-//   * @param modelNamespace
-//   * @return absolute path of model file (one with extention "mps")
-//   */
-//  public static String getModelFilePath(String modelName, String modelNamespace) {
-//    String modelPath = getModelPath();
-//    String namespaceSegment = modelNamespace.replace('.', File.separatorChar);
-//    String absolutePath = modelPath;
-//    if (namespaceSegment.length() > 0) {
-//      absolutePath = absolutePath + File.separator + namespaceSegment;
-//    }
-//    absolutePath = absolutePath + File.separator + modelName + ".mps";
-//    return absolutePath;
-//  }
 
   public static String getAbsolutePathByRelational(File baseFile, String relationalPath) {
     File relationalFile = new File(relationalPath);
@@ -227,5 +222,25 @@ public class PathManager {
       parent = parent.getParentFile();
     }
     return relativePath.toString();
+  }
+
+  public static String getModelFQName(File modelFile, File root, String namespacePrefix) {
+    try {
+      String modelPath = modelFile.getCanonicalPath();
+      String rootPath = root.getCanonicalPath();
+      if(!modelPath.startsWith(rootPath)) {
+        throw new RuntimeException("getModelFQName failed for " + modelPath + " root= " + rootPath);
+      }
+      String fqName = modelPath.substring(rootPath.length());
+      fqName = fqName.substring(0, fqName.lastIndexOf("."));
+      fqName = fqName.replace(File.separatorChar, '.');
+      if(namespacePrefix != null && namespacePrefix.length() > 0) {
+        fqName = namespacePrefix + "." + fqName;
+      }
+      return fqName;
+    } catch (IOException e) {
+      e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+    }
+    return null;
   }
 }
