@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="bootstrap.structureLanguage">
   <modelRoot rootPath="." namespacePrefix="bootstrap.structureLanguage"/>
+  <modelRoot rootPath="..\..\..\models" />
   <structure>
     <model fqName="bootstrap.structureLanguage.structure"/>
   </structure>

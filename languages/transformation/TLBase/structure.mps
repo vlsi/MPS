@@ -3,7 +3,7 @@
   <maxReferenceID value="3" />
   <language namespace="bootstrap.structureLanguage" />
   <import referenceID="2" name="structure" namespace="core" />
-  <import referenceID="3" name="structureLanguage" namespace="bootstrap" />
+  <import referenceID="3" name="structure" namespace="bootstrap.structureLanguage" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1087833241328">
     <link role="extends" targetNodeId="2.1078489098625" />
     <link role="semanticPropertyDeclaration" metaClass="aggregation">
