@@ -13,16 +13,17 @@ import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.InspectorPane;
 import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.MPSAction;
-import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.actions.nodes.*;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
+import jetbrains.mps.nodeEditor.rerform.CellRangeSelection;
 import jetbrains.mps.nodeEditor.test.EventRecorder;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.util.NameUtil;
 
@@ -53,6 +54,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private int myShiftY = 10;
 
   private NodeRangeSelection myNodeRangeSelection;
+  private CellRangeSelection myCellRangeSelection;
 
   private Stack<EditorCell> mySelectedStack = new Stack<EditorCell>();
   private Stack<IKeyboardHandler> myKbdHandlersStack;
@@ -112,8 +114,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
     myScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     myScrollPane.setViewportView(this);
-//    myScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-//    myScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+    //    myScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+    //    myScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 
     myContainer = new JPanel();
     myContainer.setLayout(new BorderLayout());
@@ -121,6 +123,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     myNodeSubstituteChooser = new NodeSubstituteChooser(this);
     myNodeRangeSelection = new NodeRangeSelection(this);
+    myCellRangeSelection = new CellRangeSelection(this);
 
     // --- keyboard handling ---
     myKbdHandlersStack = new Stack<IKeyboardHandler>();
@@ -216,7 +219,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
       public void focusLost(FocusEvent e) {
         if (myNodeSubstituteChooser.getWindow() != null &&
-                (myNodeSubstituteChooser.getWindow().isAncestorOf(e.getOppositeComponent()) || myNodeSubstituteChooser.getWindow() == e.getOppositeComponent()))
+                    (myNodeSubstituteChooser.getWindow().isAncestorOf(e.getOppositeComponent()) || myNodeSubstituteChooser.getWindow() == e.getOppositeComponent()))
           return;
         myNodeSubstituteChooser.setVisible(false);
       }
@@ -293,7 +296,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private void showPopupMenu(MouseEvent e) {
     final SemanticNode selectedNode = getSelectedCell().getSemanticNode();
     if (selectedNode == null) return;
-//    selectNode(selectedNode);
+    //    selectNode(selectedNode);
     JPopupMenu popupMenu = new JPopupMenu();
     ActionGroup group = ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS);
     group.add(popupMenu, new ActionContext(ApplicationComponents.getInstance().getComponent(IdeMain.class), selectedNode));
@@ -304,7 +307,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     if (selectedNode instanceof BaseEditorComponent ||
-            selectedNode instanceof EditorCellModel) {
+                            selectedNode instanceof EditorCellModel) {
       popupMenu.addSeparator();
       popupMenu.add(EditorLanguageUtil.createTurnCellBordersOnOffAction(selectedNode, true, getContext().getProject()));
       popupMenu.add(EditorLanguageUtil.createTurnCellBordersOnOffAction(selectedNode, false, getContext().getProject()));
@@ -324,95 +327,95 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       public void actionPerformed(ActionEvent e) {
         CommandProcessor.instance().executeCommand(getContext(),
                 new Runnable() {
-                  public void run() {
-                    MPSProject project = getContext().getProject();
-                    SModel targetModel = targetClass.getModel();
-                    String fqName = targetModel.getFQName();
-                    String name = targetClass.getName();
-                    String className = fqName + '.' + name;
-                    SModel tmpModel = new SModel();
-                    tmpModel.setLoading(true);
-                    targetModel.addImportedModel(tmpModel);
+          public void run() {
+            MPSProject project = getContext().getProject();
+            SModel targetModel = targetClass.getModel();
+            String fqName = targetModel.getFQName();
+            String name = targetClass.getName();
+            String className = fqName + '.' + name;
+            SModel tmpModel = new SModel();
+            tmpModel.setLoading(true);
+            targetModel.addImportedModel(tmpModel);
 
-                    try {
-                      JavaClassMap javaClassMap = JavaClassMaps.getJavaClassMap(tmpModel);
-                      ClassConcept tmpClass = null;
-                      try {
-                        tmpClass = (ClassConcept) javaClassMap.get(className);
-                      } catch (Exception e1) {
-                        e1.printStackTrace();
-                      }
-                      if (tmpClass == null) {
-                        JOptionPane.showMessageDialog(myContainer, "Class not found:\n" + className, "Class Not Found", JOptionPane.ERROR_MESSAGE);
-                        return;
-                      }
-                      targetClass.setExtendedClass(toModelClass(tmpClass.getExtendedClass(), targetModel, project));
+            try {
+              JavaClassMap javaClassMap = JavaClassMaps.getJavaClassMap(tmpModel);
+              ClassConcept tmpClass = null;
+              try {
+                tmpClass = (ClassConcept) javaClassMap.get(className);
+              } catch (Exception e1) {
+                e1.printStackTrace();
+              }
+              if (tmpClass == null) {
+                JOptionPane.showMessageDialog(myContainer, "Class not found:\n" + className, "Class Not Found", JOptionPane.ERROR_MESSAGE);
+                return;
+              }
+              targetClass.setExtendedClass(toModelClass(tmpClass.getExtendedClass(), targetModel, project));
 
-                      Iterator<StaticFieldDeclaration> staticFields = tmpClass.staticFields();
-                      while (staticFields.hasNext()) {
-                        StaticFieldDeclaration staticFieldDeclaration = staticFields.next();
-                        StaticFieldDeclaration copy = (StaticFieldDeclaration) createValidCopy(staticFieldDeclaration, targetModel, project);
-                        targetClass.addStaticField(copy);
-                      }
+              Iterator<StaticFieldDeclaration> staticFields = tmpClass.staticFields();
+              while (staticFields.hasNext()) {
+                StaticFieldDeclaration staticFieldDeclaration = staticFields.next();
+                StaticFieldDeclaration copy = (StaticFieldDeclaration) createValidCopy(staticFieldDeclaration, targetModel, project);
+                targetClass.addStaticField(copy);
+              }
 
-                      Iterator<FieldDeclaration> fields = tmpClass.fields();
-                      while (fields.hasNext()) {
-                        FieldDeclaration fieldDeclaration = fields.next();
-                        FieldDeclaration copy = (FieldDeclaration) createValidCopy(fieldDeclaration, targetModel, project);
-                        targetClass.addField(copy);
-                      }
+              Iterator<FieldDeclaration> fields = tmpClass.fields();
+              while (fields.hasNext()) {
+                FieldDeclaration fieldDeclaration = fields.next();
+                FieldDeclaration copy = (FieldDeclaration) createValidCopy(fieldDeclaration, targetModel, project);
+                targetClass.addField(copy);
+              }
 
-                      Iterator<ConstructorDeclaration> constructors = tmpClass.constructors();
-                      while (constructors.hasNext()) {
-                        ConstructorDeclaration constructorDeclaration = constructors.next();
-                        ConstructorDeclaration copy = (ConstructorDeclaration) createValidCopy(constructorDeclaration, targetModel, project);
-                        targetClass.addConstructor(copy);
-                      }
+              Iterator<ConstructorDeclaration> constructors = tmpClass.constructors();
+              while (constructors.hasNext()) {
+                ConstructorDeclaration constructorDeclaration = constructors.next();
+                ConstructorDeclaration copy = (ConstructorDeclaration) createValidCopy(constructorDeclaration, targetModel, project);
+                targetClass.addConstructor(copy);
+              }
 
-                      Iterator<InstanceMethodDeclaration> methods = tmpClass.methods();
-                      while (methods.hasNext()) {
-                        InstanceMethodDeclaration instanceMethodDeclaration = methods.next();
-                        InstanceMethodDeclaration copy = (InstanceMethodDeclaration) createValidCopy(instanceMethodDeclaration, targetModel, project);
-                        targetClass.addMethod(copy);
-                      }
+              Iterator<InstanceMethodDeclaration> methods = tmpClass.methods();
+              while (methods.hasNext()) {
+                InstanceMethodDeclaration instanceMethodDeclaration = methods.next();
+                InstanceMethodDeclaration copy = (InstanceMethodDeclaration) createValidCopy(instanceMethodDeclaration, targetModel, project);
+                targetClass.addMethod(copy);
+              }
 
-                      Iterator<StaticMethodDeclaration> staticMethods = tmpClass.staticMethods();
-                      while (staticMethods.hasNext()) {
-                        StaticMethodDeclaration staticMethodDeclaration = staticMethods.next();
-                        StaticMethodDeclaration copy = (StaticMethodDeclaration) createValidCopy(staticMethodDeclaration, targetModel, project);
-                        targetClass.addStaticMethod(copy);
-                      }
+              Iterator<StaticMethodDeclaration> staticMethods = tmpClass.staticMethods();
+              while (staticMethods.hasNext()) {
+                StaticMethodDeclaration staticMethodDeclaration = staticMethods.next();
+                StaticMethodDeclaration copy = (StaticMethodDeclaration) createValidCopy(staticMethodDeclaration, targetModel, project);
+                targetClass.addStaticMethod(copy);
+              }
 
-                      targetModel.fireModelChangedDramaticallyEvent();
-                      JOptionPane.showMessageDialog(myContainer, "Added:\n" +
-                              tmpClass.getStaticFieldsCount() + " static fields\n" +
-                              tmpClass.getFieldsCount() + " fields\n" +
-                              tmpClass.getConstructorsCount() + " constructors\n" +
-                              tmpClass.getMethodsCount() + " methods\n" +
-                              tmpClass.getStaticMethodsCount() + " static methods",
-                              "Class Has Been Generated", JOptionPane.INFORMATION_MESSAGE);
-                      tmpClass.delete();
+              targetModel.fireModelChangedDramaticallyEvent();
+              JOptionPane.showMessageDialog(myContainer, "Added:\n" +
+                      tmpClass.getStaticFieldsCount() + " static fields\n" +
+                      tmpClass.getFieldsCount() + " fields\n" +
+                      tmpClass.getConstructorsCount() + " constructors\n" +
+                      tmpClass.getMethodsCount() + " methods\n" +
+                      tmpClass.getStaticMethodsCount() + " static methods",
+                      "Class Has Been Generated", JOptionPane.INFORMATION_MESSAGE);
+              tmpClass.delete();
 
-                    } finally {
-                      targetModel.deleteImportedModel(tmpModel);
-                    }
-                  }
-                },
+            } finally {
+              targetModel.deleteImportedModel(tmpModel);
+            }
+          }
+        },
                 "Generate Stab from Class File");
       }
 
       private SemanticNode createValidCopy(SemanticNode node, SModel targetModel, MPSProject project) {
         SemanticNode copy = ContextUtil.copyNode(node, targetModel, project);
-//        //test
-//        Iterator<SemanticNode> children = copy.depthFirstChildren();
-//        while (children.hasNext()) {
-//          SemanticNode child = children.next();
-//          if(child.getModel() != targetModel) {
-//            System.err.println("after copy error! node: " + copy.getDebugText() );
-//            SModelUtil.dumpNodePath(child, 0, System.err);
-//          }
-//        }
-//        //test
+        //        //test
+        //        Iterator<SemanticNode> children = copy.depthFirstChildren();
+        //        while (children.hasNext()) {
+        //          SemanticNode child = children.next();
+        //          if(child.getModel() != targetModel) {
+        //            System.err.println("after copy error! node: " + copy.getDebugText() );
+        //            SModelUtil.dumpNodePath(child, 0, System.err);
+        //          }
+        //        }
+        //        //test
 
         replaceClasses(copy, targetModel, project);
         if (copy instanceof BaseMethodDeclaration) {
@@ -485,7 +488,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     myRootCell = rootCell;
-//    System.out.println("setRootCell root node: " + (myRootCell.getSemanticNode() != null ? myRootCell.getSemanticNode().getDebugText() : "NULL"));
+    //    System.out.println("setRootCell root node: " + (myRootCell.getSemanticNode() != null ? myRootCell.getSemanticNode().getDebugText() : "NULL"));
     myRootCell.setX(myShiftX);
     myRootCell.setY(myShiftY);
     myRootCell.relayout();
@@ -724,7 +727,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     mySelectedStack.clear();
 
     setRootCell(createRootCell());
-//    System.out.println("rebuildEditorContent root node: " + (myRootCell.getSemanticNode() != null ? myRootCell.getSemanticNode().getDebugText() : "NULL"));
+    //    System.out.println("rebuildEditorContent root node: " + (myRootCell.getSemanticNode() != null ? myRootCell.getSemanticNode().getDebugText() : "NULL"));
 
     EditorCell newSelection = null;
     if (selectionPoint != null) {
@@ -822,6 +825,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
     myNodeSubstituteChooser.setVisible(false);
     myNodeRangeSelection.deactivate();
+    myCellRangeSelection.deactivate();
 
     EditorCell oldSelection = mySelectedCell;
     if (mySelectedCell != null) {
@@ -1017,7 +1021,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         EditorUtil.dumpCellsDown(mySelectedCell, 0);
         System.out.println("--- end dump ---");
         keyEvent.consume();
-//        return;
+        //        return;
       }
     }
 
@@ -1058,7 +1062,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     // try to obtain substitute info
     INodeSubstituteInfo substituteInfo = null;
     if (editorCell != null) {
-      SemanticNode cellNode = editorCell.getSemanticNode();
       EditorCell infoCell = editorCell;
       substituteInfo = infoCell.getSurroundWithSubstituteInfo();
     }
@@ -1101,20 +1104,19 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public void paint(Graphics g) {
     super.paint(g);
     if (myNodeRangeSelection.isActive()) {
-      g.setColor(Color.magenta);
-      Iterator<SemanticNode> nodes = myNodeRangeSelection.getNodes().iterator();
-      while (nodes.hasNext()) {
-        EditorCell cell = findNodeCell(nodes.next());
-        if (cell != null) { // the paint may happen when the editor content is aldeary changed 
-          g.drawRect(cell.getX(), cell.getY(), cell.getWidth(), cell.getHeight());
-          g.drawRect(cell.getX() - 1, cell.getY() - 1, cell.getWidth() + 2, cell.getHeight() + 2);
-        }
-      }
+      myNodeRangeSelection.paint(g);
+    }
+    if (myCellRangeSelection.isActive()) {
+      myCellRangeSelection.paint(g);
     }
   }
 
   NodeRangeSelection getNodeRangeSelection() {
     return myNodeRangeSelection;
+  }
+
+  CellRangeSelection getCellRangeSelection() {
+    return myCellRangeSelection;
   }
 
   // last caret X

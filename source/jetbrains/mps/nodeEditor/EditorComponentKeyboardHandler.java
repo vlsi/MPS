@@ -163,6 +163,12 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
           }
         }
 
+        if (editor.getCellRangeSelection().isSelectionKeystroke(keyEvent)) {
+          if (editor.getCellRangeSelection().activate(keyEvent)) {
+            return true;
+          }
+        }
+
         // allow selected cell to process event.
         if (selectedCell.processKeyPressed(keyEvent) == true) {
           boolean cellWasValid = EditorUtil.isValidCell(selectedCell);

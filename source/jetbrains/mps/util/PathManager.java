@@ -231,7 +231,11 @@ public class PathManager {
       if(!modelPath.startsWith(rootPath)) {
         throw new RuntimeException("getModelFQName failed for " + modelPath + " root= " + rootPath);
       }
-      String fqName = modelPath.substring(rootPath.length());
+      int length = rootPath.length();
+      if(rootPath.endsWith(File.separator)) {
+        length--;
+      }
+      String fqName = modelPath.substring(length+1);
       fqName = fqName.substring(0, fqName.lastIndexOf("."));
       fqName = fqName.replace(File.separatorChar, '.');
       if(namespacePrefix != null && namespacePrefix.length() > 0) {
@@ -239,7 +243,7 @@ public class PathManager {
       }
       return fqName;
     } catch (IOException e) {
-      e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+      e.printStackTrace();
     }
     return null;
   }

@@ -12,6 +12,7 @@ import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
 
 import java.awt.event.KeyEvent;
+import java.awt.*;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -185,6 +186,18 @@ public class NodeRangeSelection implements IKeyboardHandler {
       EditorCellAction action = nodeCell.getAction(EditorCellAction.DELETE);
       if (action != null && action.canExecute(editorContext)) {
         action.execute(editorContext);
+      }
+    }
+  }
+
+  public void paint(Graphics g) {
+    g.setColor(Color.magenta);
+    Iterator<SemanticNode> nodes = getNodes().iterator();
+    while (nodes.hasNext()) {
+      EditorCell cell = myEditorComponent.findNodeCell(nodes.next());
+      if (cell != null) { // the paint may happen when the editor content is aldeary changed
+        g.drawRect(cell.getX(), cell.getY(), cell.getWidth(), cell.getHeight());
+        g.drawRect(cell.getX() - 1, cell.getY() - 1, cell.getWidth() + 2, cell.getHeight() + 2);
       }
     }
   }
