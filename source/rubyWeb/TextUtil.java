@@ -85,6 +85,10 @@ public class TextUtil {
           tag.setText(toText(model, elem));
           sentence.addWord(tag);
         }
+        if ("patternRef".equals(name)) {
+          PatternRefTag ref = PatternRefTag.newInstance(model);
+          sentence.addWord(ref);
+        }
         result.addSentence(sentence);
         continue;
       }
@@ -199,6 +203,15 @@ public class TextUtil {
       Element target = new Element("xref-target");
       target.setAttribute("ID", tag.getName());
       target.setAttribute("file", "paper.xml");
+      toElement(tag.getText(), target);
+      element.addContent(target);
+      return;
+    }
+
+    if (word instanceof PatternRefTag) {
+      PatternRefTag tag = (PatternRefTag) word;
+      Element target = new Element("patternRef");
+      target.setAttribute("name", tag.getPattern().getName());
       toElement(tag.getText(), target);
       element.addContent(target);
       return;
