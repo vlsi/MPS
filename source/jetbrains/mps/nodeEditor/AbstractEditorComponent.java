@@ -942,8 +942,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return true;
   }
 
-  public void playScript(File file) {
-    new EventPlayer(file).replay();
+  public void playScript(final File file) {
+    new Thread() {
+      public void run() {
+        new EventPlayer(file).replay(true);
+      }
+    }.run();
   }
 
   public void paint(Graphics g) {
