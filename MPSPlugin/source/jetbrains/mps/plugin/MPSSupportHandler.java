@@ -8,10 +8,14 @@ import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.roots.ProjectRootManager;
+import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.wm.WindowManager;
+import com.intellij.openapi.module.ModuleManager;
+import com.intellij.openapi.module.Module;
+import com.intellij.openapi.module.ModuleType;
 import com.intellij.psi.*;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.IncorrectOperationException;
@@ -124,9 +128,26 @@ public class MPSSupportHandler {
     executeWriteAction(new Runnable() {
       public void run() {
         final PsiManager psiManager = PsiManager.getInstance(myProject);
-        final ProjectRootManager rootManager = ProjectRootManager.getInstance(myProject);
         VirtualFile sourceDir = null;
-        VirtualFile[] sourceRoots = rootManager.getContentSourceRoots();
+        ModuleManager manager = ModuleManager.getInstance(myProject);
+
+        Module module = null;
+        Module[] allModules = manager.getModules();
+        for (int i = 0; i < allModules.length; i++) {
+          if (allModules[i].getModuleType() == ModuleType.JAVA) {
+            module = allModules[i];
+            break;
+          }
+        }
+
+        if (module == null) {
+          System.out.println("I can't find suitable module");
+          return;
+        }
+
+
+        ModuleRootManager rootManager = ModuleRootManager.getInstance(module);
+        VirtualFile[] sourceRoots = rootManager.getSourceRoots();
         for (int i = 0; i < sourceRoots.length; i++) {
           VirtualFile file = sourceRoots[i];
           if (file.getName().equals("source")) sourceDir = file;
