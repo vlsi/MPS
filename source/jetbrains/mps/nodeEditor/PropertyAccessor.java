@@ -34,7 +34,9 @@ public class PropertyAccessor implements ModelAccessor {
       if (!myAllowEmptyText && text != null && text.length() == 0) {
         text = null;
       }
-      myNode.setProperty(myPropertyName, text);
+      if (isValidText(text)) {
+        myNode.setProperty(myPropertyName, text);
+      }
     }
   }
 

@@ -25,6 +25,7 @@ public class IntegerConstant_Editor extends SemanticNodeEditor {
   public EditorCell createValueCell(EditorContext editorContext, SemanticNode node) {
     ModelAccessor modelAccessor = new PropertyAccessor(node, "value", true, false);
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
+    editorCell.setDefaultText("<int constant>");
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "value"));
     IntegerConstant_NodeBoxActions.setCellActions(editorCell, node);
     return editorCell;
