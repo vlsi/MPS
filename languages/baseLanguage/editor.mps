@@ -57,8 +57,8 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1073416106126">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="true" />
-      <link role="elementActionSet" targetNodeId="1081788832468" />
       <link role="linkDeclaration" targetNodeId="8.1068581517665" />
+      <link role="elementActionSet" targetNodeId="1081788832468" />
       <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1079958242049">
         <property name="editable" value="true" />
         <property name="textFgColor" value="darkGray" />
@@ -344,10 +344,10 @@
           <property name="name" value="instanceFields" />
           <property name="queryId" value="ContextInstanceFields" />
           <property name="textProviderId" value="JavaElementText" />
-          <link role="substituteTextQueryMethod" targetNodeId="1081927995364" />
-          <link role="substituteModelQueryMethod" targetNodeId="1081927995371" />
           <link role="substituteTextQueryBody" targetNodeId="1081927995370" />
           <link role="substituteModelQueryBody" targetNodeId="1081927995375" />
+          <link role="substituteTextQueryMethod" targetNodeId="1081927995364" />
+          <link role="substituteModelQueryMethod" targetNodeId="1081927995371" />
           <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984016">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927995364">
               <property name="name" value="substituteItemText_Query" />
@@ -443,8 +443,8 @@
       <link role="keyMap" targetNodeId="1081427357000" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1080138264330">
         <property name="drawBorder" value="false" />
-        <link role="actionSet" targetNodeId="1080138413255" />
         <link role="linkDeclaration" targetNodeId="8.1080137532343" />
+        <link role="actionSet" targetNodeId="1080138413255" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1080138264331">
         <property name="text" value="." />
@@ -474,9 +474,9 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1088427419930">
       <property name="drawBorder" value="false" />
       <property name="nullText" value="&lt;no parm&gt;" />
+      <link role="linkDeclaration" targetNodeId="8.1068581517664" />
       <link role="keyMap" targetNodeId="1081427357000" />
       <link role="actionSet" targetNodeId="1107375429415" />
-      <link role="linkDeclaration" targetNodeId="8.1068581517664" />
       <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1088427419931">
         <link role="conceptDeclaration" targetNodeId="8.1068431474542" />
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1088427419932">
@@ -498,8 +498,8 @@
         <property name="drawBorder" value="false" />
         <property name="name" value="name1" />
         <link role="actionSet" targetNodeId="1107375429415" />
-        <link role="keyMap" targetNodeId="1081427357000" />
         <link role="linkDeclaration" targetNodeId="8.1068581517664" />
+        <link role="keyMap" targetNodeId="1081427357000" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1101312805792">
           <link role="conceptDeclaration" targetNodeId="8.1068431474542" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1101313179499">
@@ -514,8 +514,8 @@
       <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1101313067670">
         <property name="drawBorder" value="false" />
         <link role="keyMap" targetNodeId="1081427357000" />
-        <link role="linkDeclaration" targetNodeId="8.1068581517664" />
         <link role="actionSet" targetNodeId="1107375429415" />
+        <link role="linkDeclaration" targetNodeId="8.1068581517664" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1101312825918">
           <link role="conceptDeclaration" targetNodeId="8.1068431474542" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1101313179500">
@@ -862,11 +862,11 @@
         <property name="textFgColor" value="DARK_MAGENTA" />
         <property name="writable" value="true" />
         <property name="defaultText" value="&lt;no name&gt;" />
-        <property name="defaultValue" value="?" />
         <property name="fontStyle" value="BOLD" />
+        <property name="defaultValue" value="?" />
         <property name="drawBorder" value="false" />
-        <link role="actionSet" targetNodeId="1076781056865" />
         <link role="propertyDeclaration" targetNodeId="9.1078489098626" />
+        <link role="actionSet" targetNodeId="1076781056865" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1075290206265">
         <property name="drawBorder" value="false" />
@@ -1036,8 +1036,8 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075303160502">
         <property name="drawBorder" value="false" />
         <property name="nullText" value="&lt;no type&gt;" />
-        <link role="linkDeclaration" targetNodeId="8.1068431790188" />
         <link role="actionSet" targetNodeId="1076938908095" />
+        <link role="linkDeclaration" targetNodeId="8.1068431790188" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1075303160503">
         <property name="writable" value="true" />
@@ -1045,8 +1045,8 @@
         <property name="defaultValue" value="?" />
         <property name="drawBorder" value="false" />
         <link role="propertyDeclaration" targetNodeId="9.1078489098626" />
-        <link role="actionSet" targetNodeId="1076938982020" />
         <link role="keyMap" targetNodeId="1107341785237" />
+        <link role="actionSet" targetNodeId="1076938982020" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1075303160504">
         <property name="drawBorder" value="false" />
@@ -1061,8 +1061,8 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075303160506">
           <property name="drawBorder" value="false" />
-          <link role="linkDeclaration" targetNodeId="8.1068431790190" />
           <link role="actionSet" targetNodeId="1077124145703" />
+          <link role="linkDeclaration" targetNodeId="8.1068431790190" />
         </node>
         <node role="conditionalQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1082097602077">
           <property name="name" value="conditionalQuery" />
@@ -1140,10 +1140,10 @@
           <property name="name" value="instanceMethods" />
           <property name="queryId" value="ContextInstanceMethods" />
           <property name="textProviderId" value="JavaElementText" />
-          <link role="substituteTextQueryMethod" targetNodeId="1081927995652" />
-          <link role="substituteTextQueryBody" targetNodeId="1081927995658" />
-          <link role="substituteModelQueryMethod" targetNodeId="1081927995659" />
           <link role="substituteModelQueryBody" targetNodeId="1081927995663" />
+          <link role="substituteModelQueryMethod" targetNodeId="1081927995659" />
+          <link role="substituteTextQueryBody" targetNodeId="1081927995658" />
+          <link role="substituteTextQueryMethod" targetNodeId="1081927995652" />
           <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984033">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927995652">
               <property name="name" value="substituteItemText_Query" />
@@ -1238,8 +1238,8 @@
       <link role="keyMap" targetNodeId="1081427357000" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075308068515">
         <property name="drawBorder" value="false" />
-        <link role="actionSet" targetNodeId="1076936461312" />
         <link role="linkDeclaration" targetNodeId="8.1068580123164" />
+        <link role="actionSet" targetNodeId="1076936461312" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075308084251">
         <property name="text" value="." />
@@ -1328,8 +1328,8 @@
           <property name="textProviderId" value="JavaElementText" />
           <link role="substituteTextQueryMethod" targetNodeId="1081927996128" />
           <link role="substituteTextQueryBody" targetNodeId="1081927996134" />
-          <link role="substituteModelQueryMethod" targetNodeId="1081927996135" />
           <link role="substituteModelQueryBody" targetNodeId="1081927996139" />
+          <link role="substituteModelQueryMethod" targetNodeId="1081927996135" />
           <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984049">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927996128">
               <property name="name" value="substituteItemText_Query" />
@@ -1424,8 +1424,8 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081149310029">
         <property name="drawBorder" value="false" />
         <property name="nullText" value="&lt;no type&gt;" />
-        <link role="linkDeclaration" targetNodeId="8.1081236769986" />
         <link role="actionSet" targetNodeId="1081149570776" />
+        <link role="linkDeclaration" targetNodeId="8.1081236769986" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1081149570778">
         <property name="text" value="." />
@@ -1468,11 +1468,11 @@
     <link role="conceptDeclaration" targetNodeId="8.1068580123152" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1075310191003">
       <property name="drawBorder" value="false" />
-      <property name="actionSet" value="RightTransform" />
       <property name="name" value="expressionBox" />
+      <property name="actionSet" value="RightTransform" />
       <property name="vertical" value="false" />
-      <property name="gridLayout" value="true" />
       <property name="selectable" value="true" />
+      <property name="gridLayout" value="true" />
       <link role="actionSet" targetNodeId="1107375429415" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1081777074470">
         <property name="drawBorder" value="false" />
@@ -1574,19 +1574,19 @@
     </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1075310480282">
       <property name="drawBorder" value="false" />
-      <property name="actionSet" value="RightTransform" />
       <property name="name" value="expressionBox" />
+      <property name="actionSet" value="RightTransform" />
       <property name="vertical" value="false" />
-      <property name="selectable" value="true" />
       <property name="gridLayout" value="true" />
+      <property name="selectable" value="true" />
       <link role="actionSet" targetNodeId="1107375429415" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075310480284">
         <property name="drawBorder" value="false" />
         <property name="actionSet" value="LeftExpression" />
         <property name="selectable" value="true" />
+        <link role="errorActionSet" targetNodeId="1077284637890" />
         <link role="linkDeclaration" targetNodeId="8.1068498886295" />
         <link role="actionSet" targetNodeId="1076587264182" />
-        <link role="errorActionSet" targetNodeId="1077284637890" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075310480285">
         <property name="text" value="=" />
@@ -1597,9 +1597,9 @@
         <property name="drawBorder" value="false" />
         <property name="actionSet" value="RightExpression" />
         <property name="selectable" value="true" />
-        <link role="linkDeclaration" targetNodeId="8.1068498886297" />
         <link role="errorActionSet" targetNodeId="1077284637890" />
         <link role="actionSet" targetNodeId="1076699801734" />
+        <link role="linkDeclaration" targetNodeId="8.1068498886297" />
       </node>
     </node>
   </node>
@@ -1608,11 +1608,11 @@
     <link role="conceptDeclaration" targetNodeId="8.1068581242869" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1075310659938">
       <property name="drawBorder" value="false" />
-      <property name="actionSet" value="RightTransform" />
       <property name="name" value="expressionBox" />
+      <property name="actionSet" value="RightTransform" />
       <property name="vertical" value="false" />
-      <property name="selectable" value="true" />
       <property name="gridLayout" value="true" />
+      <property name="selectable" value="true" />
       <link role="actionSet" targetNodeId="1107375429415" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1081777125800">
         <property name="drawBorder" value="false" />
@@ -1636,11 +1636,11 @@
     <link role="conceptDeclaration" targetNodeId="8.1068581242875" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1075310695836">
       <property name="drawBorder" value="false" />
-      <property name="actionSet" value="RightTransform" />
       <property name="name" value="expressionBox" />
+      <property name="actionSet" value="RightTransform" />
       <property name="vertical" value="false" />
-      <property name="gridLayout" value="true" />
       <property name="selectable" value="true" />
+      <property name="gridLayout" value="true" />
       <link role="actionSet" targetNodeId="1107375429415" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1081776530461">
         <property name="drawBorder" value="false" />
@@ -1790,8 +1790,8 @@
       <property name="textFgColor" value="blue" />
       <property name="defaultText" value="&lt;int constant&gt;" />
       <property name="drawBorder" value="false" />
-      <link role="keyMap" targetNodeId="1081427357000" />
       <link role="actionSet" targetNodeId="1107375429415" />
+      <link role="keyMap" targetNodeId="1081427357000" />
       <link role="propertyDeclaration" targetNodeId="8.1068580320021" />
     </node>
   </node>
@@ -1802,9 +1802,9 @@
       <property name="textFgColor" value="DARK_BLUE" />
       <property name="fontStyle" value="BOLD" />
       <property name="drawBorder" value="false" />
+      <link role="actionSet" targetNodeId="1107375429415" />
       <link role="keyMap" targetNodeId="1081427357000" />
       <link role="propertyDeclaration" targetNodeId="8.1068580123138" />
-      <link role="actionSet" targetNodeId="1107375429415" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075374365333">
@@ -1855,8 +1855,8 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1075376431437">
       <property name="text" value="&lt;expression&gt;" />
       <property name="drawBorder" value="false" />
-      <link role="actionSet" targetNodeId="1076780136970" />
       <link role="keyMap" targetNodeId="1081427357000" />
+      <link role="actionSet" targetNodeId="1076780136970" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075379141234">
@@ -1873,8 +1873,8 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075379141236">
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
-        <link role="actionSet" targetNodeId="1100970304815" />
         <link role="linkDeclaration" targetNodeId="8.1068580123156" />
+        <link role="actionSet" targetNodeId="1100970304815" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075379141237">
         <property name="text" value=";" />
@@ -2059,8 +2059,8 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1082541374921">
           <property name="drawBorder" value="false" />
-          <link role="linkDeclaration" targetNodeId="8.1082485599094" />
           <link role="actionSet" targetNodeId="1082542109276" />
+          <link role="linkDeclaration" targetNodeId="8.1082485599094" />
         </node>
         <node role="conditionalQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1082097601951">
           <property name="name" value="conditionalQuery" />
@@ -2109,8 +2109,8 @@
         <property name="text" value="}" />
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
-        <link role="conditionalQueryBody" targetNodeId="1082031373147" />
         <link role="actionSet" targetNodeId="1082467477265" />
+        <link role="conditionalQueryBody" targetNodeId="1082031373147" />
         <node role="conditionalQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1082031373143">
           <property name="name" value="conditionalQuery" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082031373144">
@@ -2227,8 +2227,8 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075380723767">
         <property name="drawBorder" value="false" />
         <link role="errorActionSet" targetNodeId="1077284637890" />
-        <link role="linkDeclaration" targetNodeId="8.1068581517676" />
         <link role="actionSet" targetNodeId="1076951358050" />
+        <link role="linkDeclaration" targetNodeId="8.1068581517676" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075380723768">
         <property name="text" value=";" />
@@ -2251,12 +2251,12 @@
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1076932272477">
         <property name="handlerId" value="CreateClassifierType" />
         <property name="name" value="classifiers" />
-        <property name="queryId" value="Classifiers" />
         <property name="descriptionProviderId" value="SemanticNode_ModelFQName" />
+        <property name="queryId" value="Classifiers" />
         <property name="textProviderId" value="SemanticNode_Name" />
+        <link role="substituteModelQueryMethod" targetNodeId="1081927996786" />
         <link role="substituteHandlerQueryBody" targetNodeId="1081927996769" />
         <link role="substituteTextQueryMethod" targetNodeId="1081927996779" />
-        <link role="substituteModelQueryMethod" targetNodeId="1081927996786" />
         <link role="substituteModelQueryBody" targetNodeId="1081927996790" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1081927996761" />
         <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984067">
@@ -2398,8 +2398,8 @@
           <property name="name" value="binaryExpressions" />
           <link role="substituteHandlerQueryMethod" targetNodeId="1082380828594" />
           <link role="substituteModelQueryBody" targetNodeId="1082380828623" />
-          <link role="substituteHandlerQueryBody" targetNodeId="1082380828602" />
           <link role="substituteModelQueryMethod" targetNodeId="1082380828619" />
+          <link role="substituteHandlerQueryBody" targetNodeId="1082380828602" />
           <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984070">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1082380828594">
               <property name="name" value="substituteItemHandler_Query" />
@@ -2466,8 +2466,8 @@
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_Simple" id="1079117057851">
           <property name="text" value="=" />
           <property name="handlerId" value="AssignmentExpressionFactory" />
-          <link role="substituteHandlerQueryBody" targetNodeId="1081927995939" />
           <link role="substituteHandlerQueryMethod" targetNodeId="1081927995931" />
+          <link role="substituteHandlerQueryBody" targetNodeId="1081927995939" />
           <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984071">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927995931">
               <property name="name" value="substituteItemHandler_Query" />
@@ -2512,8 +2512,8 @@
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_Simple" id="1080212710468">
           <property name="text" value=". &lt;method&gt;" />
           <property name="handlerId" value="InstanceMethodCallFactory" />
-          <link role="substituteHandlerQueryBody" targetNodeId="1081927995975" />
           <link role="substituteHandlerQueryMethod" targetNodeId="1081927995967" />
+          <link role="substituteHandlerQueryBody" targetNodeId="1081927995975" />
           <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984072">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927995967">
               <property name="name" value="substituteItemHandler_Query" />
@@ -2739,8 +2739,8 @@
       <property name="text" value="null" />
       <property name="drawBorder" value="false" />
       <property name="selectable" value="true" />
-      <link role="keyMap" targetNodeId="1081427357000" />
       <link role="actionSet" targetNodeId="1107375429415" />
+      <link role="keyMap" targetNodeId="1081427357000" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1079622224907">
@@ -2791,12 +2791,12 @@
           <property name="name" value="primitiveTypeParms" />
           <property name="queryId" value="AllVariablePrimitiveTypes" />
           <property name="textProviderId" value="ParmDeclarationText" />
-          <link role="substituteModelQueryBody" targetNodeId="1081927996917" />
           <link role="substituteModelQueryMethod" targetNodeId="1081927996913" />
           <link role="substituteHandlerQueryBody" targetNodeId="1081927996896" />
           <link role="substituteHandlerQueryMethod" targetNodeId="1081927996888" />
-          <link role="substituteTextQueryMethod" targetNodeId="1081927996906" />
           <link role="substituteTextQueryBody" targetNodeId="1081927996912" />
+          <link role="substituteModelQueryBody" targetNodeId="1081927996917" />
+          <link role="substituteTextQueryMethod" targetNodeId="1081927996906" />
           <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984075">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927996888">
               <property name="name" value="substituteItemHandler_Query" />
@@ -2898,10 +2898,10 @@
           <property name="textProviderId" value="ParmDeclarationText" />
           <link role="substituteModelQueryMethod" targetNodeId="1081927996943" />
           <link role="substituteHandlerQueryBody" targetNodeId="1081927996926" />
-          <link role="substituteModelQueryBody" targetNodeId="1081927996947" />
-          <link role="substituteTextQueryMethod" targetNodeId="1081927996936" />
-          <link role="substituteHandlerQueryMethod" targetNodeId="1081927996918" />
           <link role="substituteTextQueryBody" targetNodeId="1081927996942" />
+          <link role="substituteHandlerQueryMethod" targetNodeId="1081927996918" />
+          <link role="substituteTextQueryMethod" targetNodeId="1081927996936" />
+          <link role="substituteModelQueryBody" targetNodeId="1081927996947" />
           <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984076">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927996918">
               <property name="name" value="substituteItemHandler_Query" />
@@ -3145,8 +3145,8 @@
       <property name="separatorText" value="," />
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <link role="elementActionSet" targetNodeId="1095167443093" />
       <link role="linkDeclaration" targetNodeId="8.1068499141038" />
+      <link role="elementActionSet" targetNodeId="1095167443093" />
       <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1080128409627">
         <property name="editable" value="true" />
         <property name="drawBorder" value="false" />
@@ -3239,16 +3239,16 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1080902646660">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <link role="keyMap" targetNodeId="1081427357000" />
       <link role="actionSet" targetNodeId="1107375429415" />
+      <link role="keyMap" targetNodeId="1081427357000" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1080902646661">
         <property name="text" value="(" />
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1080902646662">
         <property name="drawBorder" value="false" />
-        <link role="linkDeclaration" targetNodeId="8.1070534934091" />
         <link role="errorActionSet" targetNodeId="1077284637890" />
+        <link role="linkDeclaration" targetNodeId="8.1070534934091" />
         <link role="actionSet" targetNodeId="1080903478359" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1080902646663">
@@ -3257,9 +3257,9 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1080902646664">
         <property name="drawBorder" value="false" />
-        <link role="errorActionSet" targetNodeId="1077284637890" />
         <link role="linkDeclaration" targetNodeId="8.1070534934092" />
         <link role="actionSet" targetNodeId="1080903734783" />
+        <link role="errorActionSet" targetNodeId="1077284637890" />
       </node>
     </node>
   </node>
@@ -3275,8 +3275,8 @@
           <property name="name" value="methods" />
           <property name="queryId" value="FreeMethods" />
           <property name="textProviderId" value="JavaElementText" />
-          <link role="substituteTextQueryMethod" targetNodeId="1081927995794" />
           <link role="substituteModelQueryBody" targetNodeId="1081927995805" />
+          <link role="substituteTextQueryMethod" targetNodeId="1081927995794" />
           <link role="substituteTextQueryBody" targetNodeId="1081927995800" />
           <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984077">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927995794">
@@ -3373,9 +3373,9 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1088426839520">
         <property name="drawBorder" value="false" />
         <property name="nullText" value="&lt;no method&gt;" />
+        <link role="linkDeclaration" targetNodeId="8.1068499141037" />
         <link role="actionSet" targetNodeId="1076940714064" />
         <link role="keyMap" targetNodeId="1081427357000" />
-        <link role="linkDeclaration" targetNodeId="8.1068499141037" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1088426839521">
           <link role="conceptDeclaration" targetNodeId="8.1068580123132" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1088426839522">
@@ -3594,9 +3594,9 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081257097746">
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
-        <link role="linkDeclaration" targetNodeId="8.1081256993304" />
-        <link role="errorActionSet" targetNodeId="1077284637890" />
         <link role="actionSet" targetNodeId="1081257125113" />
+        <link role="errorActionSet" targetNodeId="1077284637890" />
+        <link role="linkDeclaration" targetNodeId="8.1081256993304" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1081257097747">
         <property name="textFgColor" value="DARK_BLUE" />
@@ -3607,8 +3607,8 @@
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
         <link role="errorActionSet" targetNodeId="1077284637890" />
-        <link role="actionSet" targetNodeId="1081257125115" />
         <link role="linkDeclaration" targetNodeId="8.1081256993305" />
+        <link role="actionSet" targetNodeId="1081257125115" />
       </node>
     </node>
   </node>
@@ -3672,9 +3672,9 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081264296766">
           <property name="drawBorder" value="false" />
           <link role="errorActionSet" targetNodeId="1077284637890" />
+          <link role="actionSet" targetNodeId="1081264222445" />
           <link role="linkDeclaration" targetNodeId="8.1076505808688" />
           <link role="keyMap" targetNodeId="1081427357000" />
-          <link role="actionSet" targetNodeId="1081264222445" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1081264296767">
           <property name="text" value=") {" />
@@ -3776,9 +3776,9 @@
     </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081776360032">
       <property name="drawBorder" value="false" />
-      <link role="linkDeclaration" targetNodeId="8.1081773367580" />
-      <link role="actionSet" targetNodeId="1081776374361" />
       <link role="errorActionSet" targetNodeId="1077284637890" />
+      <link role="actionSet" targetNodeId="1081776374361" />
+      <link role="linkDeclaration" targetNodeId="8.1081773367580" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.EditorComponentDeclaration" id="1081776482707">
@@ -3826,8 +3826,8 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081776482710">
       <property name="drawBorder" value="false" />
       <link role="actionSet" targetNodeId="1081776482708" />
-      <link role="linkDeclaration" targetNodeId="8.1081773367579" />
       <link role="errorActionSet" targetNodeId="1077284637890" />
+      <link role="linkDeclaration" targetNodeId="8.1081773367579" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1081790432906">
@@ -3890,8 +3890,8 @@
         <property name="separatorText" value="," />
         <property name="drawBorder" value="false" />
         <property name="vertical" value="false" />
-        <link role="linkDeclaration" targetNodeId="8.1070475587104" />
         <link role="elementActionSet" targetNodeId="1095254423832" />
+        <link role="linkDeclaration" targetNodeId="8.1070475587104" />
         <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1085475861769">
           <property name="editable" value="true" />
           <property name="drawBorder" value="false" />
@@ -3914,17 +3914,17 @@
         <link role="substituteQueryBody" targetNodeId="1091709481236" />
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1091709481237">
           <property name="name" value="superMethods" />
-          <link role="substituteModelQueryMethod" targetNodeId="1091709481246" />
-          <link role="substituteTextQueryMethod" targetNodeId="1091709481242" />
           <link role="substituteHandlerQueryBody" targetNodeId="1091709481239" />
-          <link role="substituteMatcherQueryBody" targetNodeId="1091709481241" />
           <link role="substituteModelQueryBody" targetNodeId="1091709481247" />
+          <link role="substituteDescriptionTextQueryBody" targetNodeId="1091709481245" />
+          <link role="substituteTextQueryBody" targetNodeId="1091709481243" />
+          <link role="substituteModelQueryMethod" targetNodeId="1091709481246" />
           <link role="substituteTextQueryMethod" targetNodeId="1091709481242" />
           <link role="substituteDescriptionTextQueryMethod" targetNodeId="1091709481244" />
-          <link role="substituteTextQueryBody" targetNodeId="1091709481243" />
+          <link role="substituteMatcherQueryBody" targetNodeId="1091709481241" />
+          <link role="substituteTextQueryMethod" targetNodeId="1091709481242" />
           <link role="substituteHandlerQueryMethod" targetNodeId="1091709481238" />
           <link role="substituteModelQueryMethod" targetNodeId="1091709481246" />
-          <link role="substituteDescriptionTextQueryBody" targetNodeId="1091709481245" />
           <link role="substituteMatcherQueryMethod" targetNodeId="1091709481240" />
           <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1091709481248">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1091709481238">
@@ -4202,10 +4202,10 @@
         <link role="substituteQueryBody" targetNodeId="1082742196817" />
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082742081261">
           <property name="name" value="fields" />
-          <link role="substituteTextQueryBody" targetNodeId="1082742196813" />
           <link role="substituteTextQueryMethod" targetNodeId="1082742196812" />
           <link role="substituteModelQueryMethod" targetNodeId="1082742196814" />
           <link role="substituteModelQueryBody" targetNodeId="1082742196815" />
+          <link role="substituteTextQueryBody" targetNodeId="1082742196813" />
           <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984078">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1082742196812">
               <property name="name" value="substituteItemText_Query" />
@@ -4370,8 +4370,8 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1088425374189">
         <property name="drawBorder" value="false" />
         <property name="nullText" value="&lt;no constructor declaration&gt;" />
-        <link role="linkDeclaration" targetNodeId="8.1070567750949" />
         <link role="actionSet" targetNodeId="1106930001705" />
+        <link role="linkDeclaration" targetNodeId="8.1070567750949" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1088425374190">
           <link role="conceptDeclaration" targetNodeId="8.1068580123140" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1107465798583">
@@ -4445,8 +4445,8 @@
       <property name="drawBorder" value="false" />
       <property name="name" value="nodeBox" />
       <property name="vertical" value="false" />
-      <link role="keyMap" targetNodeId="1081427357000" />
       <link role="actionSet" targetNodeId="1107375429415" />
+      <link role="keyMap" targetNodeId="1081427357000" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1081880010410">
         <property name="text" value="(" />
         <property name="drawBorder" value="false" />
@@ -4462,8 +4462,8 @@
         <property name="text" value=")" />
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
-        <link role="keyMap" targetNodeId="1107347562215" />
         <link role="actionSet" targetNodeId="1082463574819" />
+        <link role="keyMap" targetNodeId="1107347562215" />
       </node>
     </node>
   </node>
@@ -4482,8 +4482,8 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1081929706295">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <link role="keyMap" targetNodeId="1081427357000" />
       <link role="actionSet" targetNodeId="1107375429415" />
+      <link role="keyMap" targetNodeId="1081427357000" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1081930071608">
         <property name="text" value="!(" />
         <property name="drawBorder" value="false" />
@@ -4603,12 +4603,12 @@
         <property name="name" value="fields" />
         <property name="queryId" value="JavaClassFields" />
         <property name="textProviderId" value="JavaElementText" />
-        <link role="substituteTextQueryMethod" targetNodeId="1081927996221" />
-        <link role="substituteHandlerQueryMethod" targetNodeId="1081927996203" />
-        <link role="substituteModelQueryMethod" targetNodeId="1081927996228" />
         <link role="substituteHandlerQueryBody" targetNodeId="1081927996211" />
+        <link role="substituteTextQueryMethod" targetNodeId="1081927996221" />
         <link role="substituteModelQueryBody" targetNodeId="1081927996232" />
         <link role="substituteTextQueryBody" targetNodeId="1081927996227" />
+        <link role="substituteModelQueryMethod" targetNodeId="1081927996228" />
+        <link role="substituteHandlerQueryMethod" targetNodeId="1081927996203" />
         <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984096">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927996203">
             <property name="name" value="substituteItemHandler_Query" />
@@ -4707,13 +4707,13 @@
         <property name="queryId" value="JavaMethodParameters" />
         <property name="textProviderId" value="JavaElementText" />
         <link role="substituteModelQueryMethod" targetNodeId="1081927996258" />
-        <link role="substituteModelQueryMethod" targetNodeId="1081927996258" />
-        <link role="substituteTextQueryMethod" targetNodeId="1081927996251" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1081927996233" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1081927996233" />
-        <link role="substituteHandlerQueryBody" targetNodeId="1081927996241" />
         <link role="substituteTextQueryBody" targetNodeId="1081927996257" />
         <link role="substituteModelQueryBody" targetNodeId="1081927996262" />
+        <link role="substituteTextQueryMethod" targetNodeId="1081927996251" />
+        <link role="substituteModelQueryMethod" targetNodeId="1081927996258" />
+        <link role="substituteHandlerQueryBody" targetNodeId="1081927996241" />
         <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984097">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927996233">
             <property name="name" value="substituteItemHandler_Query" />
@@ -4811,12 +4811,12 @@
         <property name="name" value="localVariables" />
         <property name="queryId" value="JavaLocalVariables" />
         <property name="textProviderId" value="JavaElementText" />
-        <link role="substituteTextQueryMethod" targetNodeId="1081927996281" />
-        <link role="substituteHandlerQueryBody" targetNodeId="1081927996271" />
-        <link role="substituteHandlerQueryMethod" targetNodeId="1081927996263" />
         <link role="substituteModelQueryBody" targetNodeId="1081927996292" />
-        <link role="substituteModelQueryMethod" targetNodeId="1081927996288" />
+        <link role="substituteHandlerQueryBody" targetNodeId="1081927996271" />
+        <link role="substituteTextQueryMethod" targetNodeId="1081927996281" />
+        <link role="substituteHandlerQueryMethod" targetNodeId="1081927996263" />
         <link role="substituteTextQueryBody" targetNodeId="1081927996287" />
+        <link role="substituteModelQueryMethod" targetNodeId="1081927996288" />
         <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984098">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927996263">
             <property name="name" value="substituteItemHandler_Query" />
@@ -4915,11 +4915,11 @@
         <property name="queryId" value="FreeMethods" />
         <property name="textProviderId" value="JavaElementText" />
         <link role="substituteModelQueryBody" targetNodeId="1081927996322" />
-        <link role="substituteHandlerQueryMethod" targetNodeId="1081927996293" />
         <link role="substituteHandlerQueryBody" targetNodeId="1081927996301" />
+        <link role="substituteHandlerQueryMethod" targetNodeId="1081927996293" />
         <link role="substituteTextQueryMethod" targetNodeId="1081927996311" />
-        <link role="substituteModelQueryMethod" targetNodeId="1081927996318" />
         <link role="substituteTextQueryBody" targetNodeId="1081927996317" />
+        <link role="substituteModelQueryMethod" targetNodeId="1081927996318" />
         <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984099">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927996293">
             <property name="name" value="substituteItemHandler_Query" />
@@ -5017,12 +5017,12 @@
         <property name="name" value="instanceMethods" />
         <property name="queryId" value="JavaClassMethods" />
         <property name="textProviderId" value="JavaElementText" />
-        <link role="substituteHandlerQueryMethod" targetNodeId="1081927996323" />
         <link role="substituteModelQueryMethod" targetNodeId="1081927996348" />
-        <link role="substituteHandlerQueryBody" targetNodeId="1081927996331" />
-        <link role="substituteTextQueryMethod" targetNodeId="1081927996341" />
-        <link role="substituteModelQueryBody" targetNodeId="1081927996352" />
         <link role="substituteTextQueryBody" targetNodeId="1081927996347" />
+        <link role="substituteModelQueryBody" targetNodeId="1081927996352" />
+        <link role="substituteTextQueryMethod" targetNodeId="1081927996341" />
+        <link role="substituteHandlerQueryMethod" targetNodeId="1081927996323" />
+        <link role="substituteHandlerQueryBody" targetNodeId="1081927996331" />
         <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984100">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927996323">
             <property name="name" value="substituteItemHandler_Query" />
@@ -5117,10 +5117,10 @@
       </node>
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082130899953">
         <property name="name" value="expressionTypes" />
+        <link role="substituteModelQueryMethod" targetNodeId="1082131184613" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1082131184580" />
         <link role="substituteHandlerQueryBody" targetNodeId="1082131184588" />
         <link role="substituteModelQueryBody" targetNodeId="1082131184617" />
-        <link role="substituteModelQueryMethod" targetNodeId="1082131184613" />
         <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984101">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1082131184580">
             <property name="name" value="substituteItemHandler_Query" />
@@ -5192,8 +5192,8 @@
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_Simple" id="1082132100375">
         <property name="text" value="false" />
         <property name="handlerId" value="FalseLiteralFactory" />
-        <link role="substituteHandlerQueryMethod" targetNodeId="1081927996353" />
         <link role="substituteHandlerQueryBody" targetNodeId="1081927996361" />
+        <link role="substituteHandlerQueryMethod" targetNodeId="1081927996353" />
         <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984102">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927996353">
             <property name="name" value="substituteItemHandler_Query" />
@@ -5238,8 +5238,8 @@
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_Simple" id="1082132100376">
         <property name="text" value="true" />
         <property name="handlerId" value="TrueLiteralFactory" />
-        <link role="substituteHandlerQueryMethod" targetNodeId="1081927996371" />
         <link role="substituteHandlerQueryBody" targetNodeId="1081927996379" />
+        <link role="substituteHandlerQueryMethod" targetNodeId="1081927996371" />
         <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984103">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927996371">
             <property name="name" value="substituteItemHandler_Query" />
@@ -5286,10 +5286,10 @@
         <property name="text" value="integer constant" />
         <property name="handlerId" value="IntegerLiteralFactory" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1081927996389" />
-        <link role="substituteMatcherQueryMethod" targetNodeId="1081927996398" />
-        <link role="substituteHandlerQueryMethod" targetNodeId="1081927996389" />
         <link role="substituteHandlerQueryBody" targetNodeId="1081927996397" />
         <link role="substituteMatcherQueryBody" targetNodeId="1081927996406" />
+        <link role="substituteHandlerQueryMethod" targetNodeId="1081927996389" />
+        <link role="substituteMatcherQueryMethod" targetNodeId="1081927996398" />
         <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984104">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927996389">
             <property name="name" value="substituteItemHandler_Query" />
@@ -5533,15 +5533,15 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1082541979437">
     <property name="name" value="_Statement_ActionSet" />
     <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1082541996938">
-      <link role="substituteQueryMethod" targetNodeId="1081927994766" />
       <link role="substituteQueryBody" targetNodeId="1081927994772" />
+      <link role="substituteQueryMethod" targetNodeId="1081927994766" />
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082541996939">
         <property name="name" value="statements" />
         <property name="queryId" value="AllStatementTypes" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1082043423203" />
         <link role="substituteModelQueryBody" targetNodeId="1082043423210" />
-        <link role="substituteHandlerQueryBody" targetNodeId="1082043423204" />
         <link role="substituteModelQueryMethod" targetNodeId="1082043423209" />
+        <link role="substituteHandlerQueryBody" targetNodeId="1082043423204" />
         <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984105">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1082043423203">
             <property name="name" value="substituteItemHandler_Query" />
@@ -5598,10 +5598,10 @@
       </node>
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082541996940">
         <property name="name" value="expressions" />
-        <link role="substituteModelQueryBody" targetNodeId="1082043423218" />
-        <link role="substituteHandlerQueryBody" targetNodeId="1082043423212" />
-        <link role="substituteHandlerQueryMethod" targetNodeId="1082043423211" />
         <link role="substituteModelQueryMethod" targetNodeId="1082043423217" />
+        <link role="substituteHandlerQueryBody" targetNodeId="1082043423212" />
+        <link role="substituteModelQueryBody" targetNodeId="1082043423218" />
+        <link role="substituteHandlerQueryMethod" targetNodeId="1082043423211" />
         <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984106">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1082043423211">
             <property name="name" value="substituteItemHandler_Query" />
@@ -5667,12 +5667,12 @@
       </node>
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082541996941">
         <property name="name" value="freeMethods" />
-        <link role="substituteModelQueryBody" targetNodeId="1081927994856" />
-        <link role="substituteTextQueryMethod" targetNodeId="1081927994845" />
-        <link role="substituteTextQueryBody" targetNodeId="1081927994851" />
-        <link role="substituteHandlerQueryBody" targetNodeId="1081927994835" />
-        <link role="substituteModelQueryMethod" targetNodeId="1081927994852" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1081927994827" />
+        <link role="substituteTextQueryBody" targetNodeId="1081927994851" />
+        <link role="substituteModelQueryBody" targetNodeId="1081927994856" />
+        <link role="substituteHandlerQueryBody" targetNodeId="1081927994835" />
+        <link role="substituteTextQueryMethod" targetNodeId="1081927994845" />
+        <link role="substituteModelQueryMethod" targetNodeId="1081927994852" />
         <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984107">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927994827">
             <property name="name" value="substituteItemHandler_Query" />
@@ -5767,12 +5767,12 @@
       </node>
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082541996942">
         <property name="name" value="contextMethods" />
+        <link role="substituteHandlerQueryBody" targetNodeId="1081927994865" />
         <link role="substituteModelQueryMethod" targetNodeId="1081927994882" />
-        <link role="substituteModelQueryBody" targetNodeId="1081927994886" />
-        <link role="substituteTextQueryBody" targetNodeId="1081927994881" />
         <link role="substituteTextQueryMethod" targetNodeId="1081927994875" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1081927994857" />
-        <link role="substituteHandlerQueryBody" targetNodeId="1081927994865" />
+        <link role="substituteModelQueryBody" targetNodeId="1081927994886" />
+        <link role="substituteTextQueryBody" targetNodeId="1081927994881" />
         <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984108">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927994857">
             <property name="name" value="substituteItemHandler_Query" />
@@ -5867,14 +5867,14 @@
       </node>
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082541996943">
         <property name="name" value="primitiveVarDeclarations" />
-        <link role="substituteHandlerQueryBody" targetNodeId="1081927994895" />
         <link role="substituteModelQueryMethod" targetNodeId="1081927994912" />
-        <link role="substituteTextQueryMethod" targetNodeId="1081927994905" />
         <link role="substituteModelQueryMethod" targetNodeId="1081927994912" />
         <link role="substituteModelQueryBody" targetNodeId="1081927994916" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1081927994887" />
-        <link role="substituteTextQueryBody" targetNodeId="1081927994911" />
         <link role="substituteModelQueryMethod" targetNodeId="1081927994912" />
+        <link role="substituteHandlerQueryBody" targetNodeId="1081927994895" />
+        <link role="substituteTextQueryMethod" targetNodeId="1081927994905" />
+        <link role="substituteTextQueryBody" targetNodeId="1081927994911" />
         <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984109">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927994887">
             <property name="name" value="substituteItemHandler_Query" />
@@ -5970,17 +5970,17 @@
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082541996944">
         <property name="handlerId" value="Classifier_CreateLocalVariableDeclarationStatement" />
         <property name="name" value="classifiers" />
-        <property name="descriptionProviderId" value="SemanticNode_ModelFQName" />
         <property name="queryId" value="Classifiers" />
+        <property name="descriptionProviderId" value="SemanticNode_ModelFQName" />
         <property name="textProviderId" value="SemanticNode_Name" />
+        <link role="substituteTextQueryMethod" targetNodeId="1081927994935" />
+        <link role="substituteModelQueryMethod" targetNodeId="1081927994942" />
+        <link role="substituteHandlerQueryMethod" targetNodeId="1081927994917" />
+        <link role="substituteTextQueryMethod" targetNodeId="1081927994935" />
         <link role="substituteTextQueryBody" targetNodeId="1081927994941" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1081927994917" />
-        <link role="substituteTextQueryMethod" targetNodeId="1081927994935" />
-        <link role="substituteHandlerQueryMethod" targetNodeId="1081927994917" />
+        <link role="substituteModelQueryMethod" targetNodeId="1081927994942" />
         <link role="substituteHandlerQueryBody" targetNodeId="1081927994925" />
-        <link role="substituteTextQueryMethod" targetNodeId="1081927994935" />
-        <link role="substituteModelQueryMethod" targetNodeId="1081927994942" />
-        <link role="substituteModelQueryMethod" targetNodeId="1081927994942" />
         <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984110">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927994917">
             <property name="name" value="substituteItemHandler_Query" />
@@ -6054,10 +6054,10 @@
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082541996945">
         <property name="name" value="parameterRefs" />
         <link role="substituteHandlerQueryBody" targetNodeId="1081927994955" />
-        <link role="substituteTextQueryMethod" targetNodeId="1081927994965" />
-        <link role="substituteHandlerQueryMethod" targetNodeId="1081927994947" />
-        <link role="substituteTextQueryBody" targetNodeId="1081927994971" />
         <link role="substituteModelQueryBody" targetNodeId="1081927994976" />
+        <link role="substituteTextQueryMethod" targetNodeId="1081927994965" />
+        <link role="substituteTextQueryBody" targetNodeId="1081927994971" />
+        <link role="substituteHandlerQueryMethod" targetNodeId="1081927994947" />
         <link role="substituteModelQueryMethod" targetNodeId="1081927994972" />
         <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984111">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927994947">
@@ -6153,12 +6153,12 @@
       </node>
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082541996946">
         <property name="name" value="localVarRefs" />
+        <link role="substituteModelQueryMethod" targetNodeId="1081927995002" />
         <link role="substituteModelQueryBody" targetNodeId="1081927995006" />
+        <link role="substituteTextQueryBody" targetNodeId="1081927995001" />
         <link role="substituteHandlerQueryBody" targetNodeId="1081927994985" />
         <link role="substituteTextQueryMethod" targetNodeId="1081927994995" />
-        <link role="substituteTextQueryBody" targetNodeId="1081927995001" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1081927994977" />
-        <link role="substituteModelQueryMethod" targetNodeId="1081927995002" />
         <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984112">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927994977">
             <property name="name" value="substituteItemHandler_Query" />
@@ -6258,12 +6258,12 @@
       </node>
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082541996947">
         <property name="name" value="fieldRefs" />
-        <link role="substituteTextQueryBody" targetNodeId="1081927995031" />
+        <link role="substituteHandlerQueryBody" targetNodeId="1081927995015" />
+        <link role="substituteHandlerQueryMethod" targetNodeId="1081927995007" />
         <link role="substituteTextQueryMethod" targetNodeId="1081927995025" />
         <link role="substituteModelQueryMethod" targetNodeId="1081927995032" />
-        <link role="substituteHandlerQueryMethod" targetNodeId="1081927995007" />
+        <link role="substituteTextQueryBody" targetNodeId="1081927995031" />
         <link role="substituteModelQueryBody" targetNodeId="1081927995036" />
-        <link role="substituteHandlerQueryBody" targetNodeId="1081927995015" />
         <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984113">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927995007">
             <property name="name" value="substituteItemHandler_Query" />
@@ -6377,10 +6377,10 @@
     <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1082741406449">
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082741406450">
         <property name="name" value="classTypes" />
+        <link role="substituteTextQueryMethod" targetNodeId="1082741457157" />
+        <link role="substituteHandlerQueryMethod" targetNodeId="1082741457139" />
         <link role="substituteTextQueryBody" targetNodeId="1082741457163" />
         <link role="substituteModelQueryMethod" targetNodeId="1082741457164" />
-        <link role="substituteHandlerQueryMethod" targetNodeId="1082741457139" />
-        <link role="substituteTextQueryMethod" targetNodeId="1082741457157" />
         <link role="substituteHandlerQueryBody" targetNodeId="1082741457147" />
         <link role="substituteModelQueryBody" targetNodeId="1082741457168" />
         <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984130">
@@ -6562,16 +6562,16 @@
         <link role="substituteQueryBody" targetNodeId="1090928601352" />
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1090928601297">
           <property name="name" value="constants" />
+          <link role="substituteMatcherQueryMethod" targetNodeId="1090928601308" />
+          <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090928601330" />
+          <link role="substituteHandlerQueryBody" targetNodeId="1090928601307" />
+          <link role="substituteHandlerQueryMethod" targetNodeId="1090928601299" />
+          <link role="substituteTextQueryBody" targetNodeId="1090928601323" />
+          <link role="substituteTextQueryMethod" targetNodeId="1090928601317" />
           <link role="substituteMatcherQueryBody" targetNodeId="1090928601316" />
           <link role="substituteTextQueryMethod" targetNodeId="1090928601317" />
-          <link role="substituteDescriptionTextQueryBody" targetNodeId="1090928601336" />
           <link role="substituteModelQueryBody" targetNodeId="1090928601341" />
-          <link role="substituteMatcherQueryMethod" targetNodeId="1090928601308" />
-          <link role="substituteTextQueryBody" targetNodeId="1090928601323" />
-          <link role="substituteHandlerQueryMethod" targetNodeId="1090928601299" />
-          <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090928601330" />
-          <link role="substituteTextQueryMethod" targetNodeId="1090928601317" />
-          <link role="substituteHandlerQueryBody" targetNodeId="1090928601307" />
+          <link role="substituteDescriptionTextQueryBody" targetNodeId="1090928601336" />
           <link role="substituteModelQueryMethod" targetNodeId="1090928601337" />
           <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1090928601298">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1090928601299">
@@ -6763,8 +6763,8 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1090928601377">
         <property name="drawBorder" value="false" />
-        <link role="linkDeclaration" targetNodeId="8.1083260308425" />
         <link role="actionSet" targetNodeId="1090928601262" />
+        <link role="linkDeclaration" targetNodeId="8.1083260308425" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1090928601378">
         <property name="text" value="." />
@@ -6772,8 +6772,8 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1090928601379">
         <property name="drawBorder" value="false" />
-        <link role="linkDeclaration" targetNodeId="8.1083260308426" />
         <link role="actionSet" targetNodeId="1090928601294" />
+        <link role="linkDeclaration" targetNodeId="8.1083260308426" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1090928601380">
           <link role="conceptDeclaration" targetNodeId="8.1083245299891" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1090928601381">
@@ -6798,8 +6798,8 @@
       <link role="specializes" targetNodeId="1076932037578" />
       <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1084188979612">
         <property name="substituteHandlerId" value="VariableDeclarationTypeAcceptor" />
-        <link role="substituteQueryMethod" targetNodeId="1081927994657" />
         <link role="substituteQueryBody" targetNodeId="1081927994663" />
+        <link role="substituteQueryMethod" targetNodeId="1081927994657" />
       </node>
     </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1084188901669">
@@ -6814,15 +6814,15 @@
         <property name="nullRefText" value="&lt;no type&gt;" />
         <property name="drawBorder" value="false" />
         <property name="nullText" value="&lt;no type&gt;" />
-        <link role="actionSet" targetNodeId="1084188979611" />
         <link role="linkDeclaration" targetNodeId="8.1068431790188" />
+        <link role="actionSet" targetNodeId="1084188979611" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1084188979615">
         <property name="textFgColor" value="DARK_MAGENTA" />
         <property name="writable" value="true" />
         <property name="defaultText" value="&lt;no name&gt;" />
-        <property name="defaultValue" value="?" />
         <property name="fontStyle" value="BOLD_ITALIC" />
+        <property name="defaultValue" value="?" />
         <property name="drawBorder" value="false" />
         <link role="propertyDeclaration" targetNodeId="9.1078489098626" />
         <link role="actionSet" targetNodeId="1084188979609" />
@@ -6932,8 +6932,8 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1085483457772">
           <property name="drawBorder" value="false" />
           <property name="vertical" value="true" />
-          <link role="nodeFactoryQueryBody" targetNodeId="1085485817063" />
           <link role="linkDeclaration" targetNodeId="8.1068390468201" />
+          <link role="nodeFactoryQueryBody" targetNodeId="1085485817063" />
           <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1085483457773">
             <property name="text" value="&lt;&lt; constructors &gt;&gt;" />
             <property name="drawBorder" value="false" />
@@ -7078,688 +7078,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1089739775734">
-    <property name="name" value="GenericType_Editor" />
-    <link role="conceptDeclaration" targetNodeId="8.1068665472695" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1090841286734">
-      <property name="name" value="JavaClassActions" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1090841286735">
-        <link role="substituteQueryBody" targetNodeId="1090841311401" />
-        <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1090842242324">
-          <property name="name" value="javaClass" />
-          <link role="substituteMatcherQueryBody" targetNodeId="1090842795861" />
-          <link role="substituteDescriptionTextQueryBody" targetNodeId="1090842795875" />
-          <link role="substituteModelQueryMethod" targetNodeId="1090842795876" />
-          <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090842795869" />
-          <link role="substituteModelQueryBody" targetNodeId="1090842795880" />
-          <link role="substituteMatcherQueryMethod" targetNodeId="1090842795853" />
-          <link role="substituteHandlerQueryMethod" targetNodeId="1090842795844" />
-          <link role="substituteHandlerQueryBody" targetNodeId="1090842795852" />
-          <link role="substituteTextQueryBody" targetNodeId="1090842795868" />
-          <link role="substituteTextQueryMethod" targetNodeId="1090842795862" />
-          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1090842795843">
-            <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1090842795844">
-              <property name="name" value="substituteItemHandler_Query" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090842795845">
-                <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090842795846">
-                  <link role="classifier" targetNodeId="13.1081508092423" />
-                </node>
-              </node>
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090842795847">
-                <property name="name" value="itemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090842795848">
-                  <link role="classifier" targetNodeId="18.1086856195743" />
-                </node>
-              </node>
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090842795849">
-                <property name="name" value="pattern" />
-                <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1090842795850" />
-              </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1090842795851">
-                <link role="classifier" targetNodeId="18.1086856195743" />
-              </node>
-              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090842795852" />
-            </node>
-            <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1090842795853">
-              <property name="name" value="substituteItemMatcher_Query" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090842795854">
-                <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090842795855">
-                  <link role="classifier" targetNodeId="13.1081508092423" />
-                </node>
-              </node>
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090842795856">
-                <property name="name" value="itemNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090842795857">
-                  <link role="classifier" targetNodeId="18.1086856195743" />
-                </node>
-              </node>
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090842795858">
-                <property name="name" value="pattern" />
-                <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1090842795859" />
-              </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.BooleanType" id="1090842795860">
-                <property name="name" value="boolean" />
-              </node>
-              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090842795861" />
-            </node>
-            <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1090842795862">
-              <property name="name" value="substituteItemText_Query" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090842795863">
-                <property name="name" value="mySourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090842795864">
-                  <link role="classifier" targetNodeId="13.1081508092423" />
-                </node>
-              </node>
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090842795865">
-                <property name="name" value="myItemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090842795866">
-                  <link role="classifier" targetNodeId="14.1086945614093" />
-                </node>
-              </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.StringType" id="1090842795867" />
-              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090842795868">
-                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1090850220046">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.MethodCall" id="1090850220047">
-                    <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090850220049">
-                      <link role="variableDeclaration" targetNodeId="1090842795863" />
-                    </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090850220051">
-                      <link role="variableDeclaration" targetNodeId="1090842795865" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1090842795869">
-              <property name="name" value="substituteItemDescriptionText_Query" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090842795870">
-                <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090842795871">
-                  <link role="classifier" targetNodeId="13.1081508092423" />
-                </node>
-              </node>
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090842795872">
-                <property name="name" value="itemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090842795873">
-                  <link role="classifier" targetNodeId="14.1086945614093" />
-                </node>
-              </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.StringType" id="1090842795874" />
-              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090842795875" />
-            </node>
-            <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1090842795876">
-              <property name="name" value="substituteItemModel_Query" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090842795877">
-                <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090842795878">
-                  <link role="classifier" targetNodeId="13.1081508092423" />
-                </node>
-              </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1090842795879">
-                <link role="classifier" targetNodeId="16.1087811448220" />
-              </node>
-              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090842795880">
-                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1090850220052">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.MethodCall" id="1090850220053">
-                    <link role="baseMethodDeclaration" targetNodeId="13.1081514252720" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090850220055">
-                      <link role="variableDeclaration" targetNodeId="1090842795877" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="substituteQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1090841311395">
-          <property name="name" value="substituteAcceptor_Query" />
-          <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090841311396">
-            <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090841311397">
-              <link role="classifier" targetNodeId="13.1081508092423" />
-            </node>
-          </node>
-          <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090841311398">
-            <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090841311399">
-              <link role="classifier" targetNodeId="15.1086945614627" />
-            </node>
-          </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1090841311400">
-            <link role="classifier" targetNodeId="15.1086945614627" />
-          </node>
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090841311401">
-            <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1090841520777">
-              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1090841520778">
-                <property name="name" value="genericType" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090841520779">
-                  <link role="classifier" targetNodeId="13.1081508092423" />
-                </node>
-                <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1090841520780">
-                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090841520781">
-                    <link role="classifier" targetNodeId="13.1081508092423" />
-                  </node>
-                  <node role="expression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090841520782">
-                    <link role="variableDeclaration" targetNodeId="1090841311396" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1090841520783">
-              <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1090841520784">
-                <link role="baseMethodDeclaration" targetNodeId="19.1108062824451" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1090841520785">
-                  <link role="variableDeclaration" targetNodeId="1090841520778" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1090841520787">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090841520789">
-                    <link role="variableDeclaration" targetNodeId="1090841311398" />
-                  </node>
-                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1108063933010">
-                    <link role="classifier" targetNodeId="19.1108062933074" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1090841520790">
-              <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1090841520791" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1090851481093">
-      <property name="name" value="EmptyParmActions" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1090851654829">
-        <link role="substituteQueryBody" targetNodeId="1090851654836" />
-        <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1090851716672">
-          <property name="name" value="javaClassType" />
-          <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090851900769" />
-          <link role="substituteTextQueryMethod" targetNodeId="1090851900762" />
-          <link role="substituteHandlerQueryMethod" targetNodeId="1090851900736" />
-          <link role="substituteModelQueryMethod" targetNodeId="1090851900776" />
-          <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090851900769" />
-          <link role="substituteHandlerQueryMethod" targetNodeId="1090851900736" />
-          <link role="substituteModelQueryBody" targetNodeId="1090851900780" />
-          <link role="substituteMatcherQueryBody" targetNodeId="1090851900761" />
-          <link role="substituteTextQueryBody" targetNodeId="1090851900768" />
-          <link role="substituteModelQueryMethod" targetNodeId="1090851900776" />
-          <link role="substituteDescriptionTextQueryBody" targetNodeId="1090851900775" />
-          <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090851900769" />
-          <link role="substituteHandlerQueryBody" targetNodeId="1090851900744" />
-          <link role="substituteMatcherQueryMethod" targetNodeId="1090851900753" />
-          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1090851900735">
-            <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1090851900736">
-              <property name="name" value="substituteItemHandler_Query" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090851900737">
-                <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090851900738">
-                  <link role="classifier" targetNodeId="13.1081508092423" />
-                </node>
-              </node>
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090851900739">
-                <property name="name" value="itemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090851900740">
-                  <link role="classifier" targetNodeId="18.1086856195743" />
-                </node>
-              </node>
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090851900741">
-                <property name="name" value="pattern" />
-                <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1090851900742" />
-              </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1090851900743">
-                <link role="classifier" targetNodeId="18.1086856195743" />
-              </node>
-              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090851900744">
-                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1090851900745">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.MethodCall" id="1090851900746">
-                    <link role="baseMethodDeclaration" targetNodeId="13.1081940361950" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090851900748">
-                      <link role="variableDeclaration" targetNodeId="1090851900737" />
-                    </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090851900750">
-                      <link role="variableDeclaration" targetNodeId="1090851900739" />
-                    </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090851900752">
-                      <link role="variableDeclaration" targetNodeId="1090851900741" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1090851900753">
-              <property name="name" value="substituteItemMatcher_Query" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090851900754">
-                <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090851900755">
-                  <link role="classifier" targetNodeId="13.1081508092423" />
-                </node>
-              </node>
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090851900756">
-                <property name="name" value="itemNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090851900757">
-                  <link role="classifier" targetNodeId="18.1086856195743" />
-                </node>
-              </node>
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090851900758">
-                <property name="name" value="pattern" />
-                <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1090851900759" />
-              </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.BooleanType" id="1090851900760">
-                <property name="name" value="boolean" />
-              </node>
-              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090851900761" />
-            </node>
-            <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1090851900762">
-              <property name="name" value="substituteItemText_Query" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090851900763">
-                <property name="name" value="mySourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090851900764">
-                  <link role="classifier" targetNodeId="13.1081508092423" />
-                </node>
-              </node>
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090851900765">
-                <property name="name" value="myItemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090851900766">
-                  <link role="classifier" targetNodeId="14.1086945614093" />
-                </node>
-              </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.StringType" id="1090851900767" />
-              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090851900768">
-                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1090851991707">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.MethodCall" id="1090851991708">
-                    <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090851991710">
-                      <link role="variableDeclaration" targetNodeId="1090851900763" />
-                    </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090851991712">
-                      <link role="variableDeclaration" targetNodeId="1090851900765" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1090851900769">
-              <property name="name" value="substituteItemDescriptionText_Query" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090851900770">
-                <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090851900771">
-                  <link role="classifier" targetNodeId="13.1081508092423" />
-                </node>
-              </node>
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090851900772">
-                <property name="name" value="itemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090851900773">
-                  <link role="classifier" targetNodeId="14.1086945614093" />
-                </node>
-              </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.StringType" id="1090851900774" />
-              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090851900775" />
-            </node>
-            <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1090851900776">
-              <property name="name" value="substituteItemModel_Query" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090851900777">
-                <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090851900778">
-                  <link role="classifier" targetNodeId="13.1081508092423" />
-                </node>
-              </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1090851900779">
-                <link role="classifier" targetNodeId="16.1087811448220" />
-              </node>
-              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090851900780">
-                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1090851900781">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.MethodCall" id="1090851900782">
-                    <link role="baseMethodDeclaration" targetNodeId="13.1081514252720" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090851900784">
-                      <link role="variableDeclaration" targetNodeId="1090851900777" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="substituteQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1090851654830">
-          <property name="name" value="substituteAcceptor_Query" />
-          <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090851654831">
-            <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090851654832">
-              <link role="classifier" targetNodeId="13.1081508092423" />
-            </node>
-          </node>
-          <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090851654833">
-            <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090851654834">
-              <link role="classifier" targetNodeId="15.1086945614627" />
-            </node>
-          </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1090851654835">
-            <link role="classifier" targetNodeId="15.1086945614627" />
-          </node>
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090851654836">
-            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1090853906203">
-              <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1090853906204">
-                <link role="baseMethodDeclaration" targetNodeId="13.1081508092458" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1090853906205">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.CastExpression" id="1090853906206">
-                    <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090853906207">
-                      <link role="classifier" targetNodeId="13.1081508092423" />
-                    </node>
-                    <node role="expression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090853906208">
-                      <link role="variableDeclaration" targetNodeId="1090851654831" />
-                    </node>
-                  </node>
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1090853977469">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090853977471">
-                    <link role="variableDeclaration" targetNodeId="1090851654833" />
-                  </node>
-                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1108063933011">
-                    <link role="classifier" targetNodeId="19.1108062816180" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1090855555093">
-              <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1090855555094" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1090857631640">
-      <property name="name" value="ParmActions" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1090857631641">
-        <link role="substituteQueryBody" targetNodeId="1090857631648" />
-        <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1090857639696">
-          <property name="name" value="javaClassType" />
-          <link role="substituteDescriptionTextQueryBody" targetNodeId="1090857639743" />
-          <link role="substituteMatcherQueryBody" targetNodeId="1090857639723" />
-          <link role="substituteHandlerQueryBody" targetNodeId="1090857639706" />
-          <link role="substituteHandlerQueryMethod" targetNodeId="1090857639698" />
-          <link role="substituteModelQueryBody" targetNodeId="1090857639748" />
-          <link role="substituteMatcherQueryMethod" targetNodeId="1090857639715" />
-          <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090857639737" />
-          <link role="substituteTextQueryBody" targetNodeId="1090857639730" />
-          <link role="substituteTextQueryMethod" targetNodeId="1090857639724" />
-          <link role="substituteModelQueryMethod" targetNodeId="1090857639744" />
-          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1090857639697">
-            <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1090857639698">
-              <property name="name" value="substituteItemHandler_Query" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090857639699">
-                <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857639700">
-                  <link role="classifier" targetNodeId="13.1081508092423" />
-                </node>
-              </node>
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090857639701">
-                <property name="name" value="itemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857639702">
-                  <link role="classifier" targetNodeId="18.1086856195743" />
-                </node>
-              </node>
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090857639703">
-                <property name="name" value="pattern" />
-                <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1090857639704" />
-              </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1090857639705">
-                <link role="classifier" targetNodeId="18.1086856195743" />
-              </node>
-              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090857639706">
-                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1090857639707">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.MethodCall" id="1090857639708">
-                    <link role="baseMethodDeclaration" targetNodeId="13.1081940361950" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090857639710">
-                      <link role="variableDeclaration" targetNodeId="1090857639699" />
-                    </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090857639712">
-                      <link role="variableDeclaration" targetNodeId="1090857639701" />
-                    </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090857639714">
-                      <link role="variableDeclaration" targetNodeId="1090857639703" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1090857639715">
-              <property name="name" value="substituteItemMatcher_Query" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090857639716">
-                <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857639717">
-                  <link role="classifier" targetNodeId="13.1081508092423" />
-                </node>
-              </node>
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090857639718">
-                <property name="name" value="itemNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857639719">
-                  <link role="classifier" targetNodeId="18.1086856195743" />
-                </node>
-              </node>
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090857639720">
-                <property name="name" value="pattern" />
-                <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1090857639721" />
-              </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.BooleanType" id="1090857639722">
-                <property name="name" value="boolean" />
-              </node>
-              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090857639723" />
-            </node>
-            <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1090857639724">
-              <property name="name" value="substituteItemText_Query" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090857639725">
-                <property name="name" value="mySourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857639726">
-                  <link role="classifier" targetNodeId="13.1081508092423" />
-                </node>
-              </node>
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090857639727">
-                <property name="name" value="myItemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857639728">
-                  <link role="classifier" targetNodeId="14.1086945614093" />
-                </node>
-              </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.StringType" id="1090857639729" />
-              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090857639730">
-                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1090857639731">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.MethodCall" id="1090857639732">
-                    <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090857639734">
-                      <link role="variableDeclaration" targetNodeId="1090857639725" />
-                    </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090857639736">
-                      <link role="variableDeclaration" targetNodeId="1090857639727" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1090857639737">
-              <property name="name" value="substituteItemDescriptionText_Query" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090857639738">
-                <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857639739">
-                  <link role="classifier" targetNodeId="13.1081508092423" />
-                </node>
-              </node>
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090857639740">
-                <property name="name" value="itemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857639741">
-                  <link role="classifier" targetNodeId="14.1086945614093" />
-                </node>
-              </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.StringType" id="1090857639742" />
-              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090857639743" />
-            </node>
-            <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1090857639744">
-              <property name="name" value="substituteItemModel_Query" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090857639745">
-                <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857639746">
-                  <link role="classifier" targetNodeId="13.1081508092423" />
-                </node>
-              </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1090857639747">
-                <link role="classifier" targetNodeId="16.1087811448220" />
-              </node>
-              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090857639748">
-                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1090857639749">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.MethodCall" id="1090857639750">
-                    <link role="baseMethodDeclaration" targetNodeId="13.1081514252720" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090857639752">
-                      <link role="variableDeclaration" targetNodeId="1090857639745" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="substituteQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1090857631642">
-          <property name="name" value="substituteAcceptor_Query" />
-          <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090857631643">
-            <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857631644">
-              <link role="classifier" targetNodeId="13.1081508092423" />
-            </node>
-          </node>
-          <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090857631645">
-            <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857631646">
-              <link role="classifier" targetNodeId="15.1086945614627" />
-            </node>
-          </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1090857631647">
-            <link role="classifier" targetNodeId="15.1086945614627" />
-          </node>
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090857631648">
-            <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1090857631649">
-              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1090857631650">
-                <property name="name" value="newParmType" />
-                <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1090857631652">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090857631654">
-                    <link role="variableDeclaration" targetNodeId="1090857631645" />
-                  </node>
-                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1108063933012">
-                    <link role="classifier" targetNodeId="19.1108062816180" />
-                  </node>
-                </node>
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1108063933013">
-                  <link role="classifier" targetNodeId="19.1108062816180" />
-                </node>
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1090857631655">
-              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1090857631656">
-                <property name="name" value="oldParmType" />
-                <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1090857631658">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090857631660">
-                    <link role="variableDeclaration" targetNodeId="1090857631643" />
-                  </node>
-                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1108063933014">
-                    <link role="classifier" targetNodeId="19.1108062816180" />
-                  </node>
-                </node>
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1108063933015">
-                  <link role="classifier" targetNodeId="19.1108062816180" />
-                </node>
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1090857631661">
-              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1090857631662">
-                <property name="name" value="genericType" />
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857631663">
-                  <link role="classifier" targetNodeId="13.1081508092423" />
-                </node>
-                <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1090857631664">
-                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857631665">
-                    <link role="classifier" targetNodeId="13.1081508092423" />
-                  </node>
-                  <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1090857631666">
-                    <link role="baseMethodDeclaration" targetNodeId="15.1086945615661" />
-                    <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1090857631667">
-                      <link role="variableDeclaration" targetNodeId="1090857631656" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1090857631668">
-              <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1090857631669">
-                <link role="baseMethodDeclaration" targetNodeId="13.1081508092452" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1090857631670">
-                  <link role="variableDeclaration" targetNodeId="1090857631662" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1090857631672">
-                  <link role="variableDeclaration" targetNodeId="1090857631656" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1090857631674">
-                  <link role="variableDeclaration" targetNodeId="1090857631650" />
-                </node>
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1090857631675">
-              <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1090857631676">
-                <link role="baseMethodDeclaration" targetNodeId="15.1086945615671" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1090857631677">
-                  <link role="variableDeclaration" targetNodeId="1090857631656" />
-                </node>
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1090857631678">
-              <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1090857631679">
-                <link role="variableDeclaration" targetNodeId="1090857631650" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1090581771772">
-      <property name="drawBorder" value="false" />
-      <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1090581771773">
-        <property name="drawBorder" value="false" />
-        <property name="nullText" value="&lt;no class&gt;" />
-        <link role="linkDeclaration" targetNodeId="8.1107535924139" />
-        <link role="actionSet" targetNodeId="1090841286734" />
-        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1090581771774">
-          <link role="conceptDeclaration" targetNodeId="8.1107461130800" />
-          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1090581771775">
-            <property name="defaultText" value="&lt;no class name&gt;" />
-            <property name="drawBorder" value="false" />
-            <property name="readOnly" value="true" />
-            <link role="propertyDeclaration" targetNodeId="8.1075300953595" />
-          </node>
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1090581810979">
-        <property name="text" value="&lt;" />
-        <property name="drawBorder" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1090581860231">
-        <property name="separatorText" value="," />
-        <property name="drawBorder" value="false" />
-        <property name="vertical" value="false" />
-        <link role="linkDeclaration" targetNodeId="8.1068665472696" />
-        <link role="elementActionSet" targetNodeId="1090857631640" />
-        <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1090841600136">
-          <property name="text" value="?" />
-          <property name="drawBorder" value="false" />
-          <link role="actionSet" targetNodeId="1090851481093" />
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1090581810980">
-        <property name="text" value="&gt;" />
-        <property name="drawBorder" value="false" />
-        <property name="selectable" value="true" />
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1090242255906">
     <property name="name" value="VariableReference_Editor" />
     <link role="conceptDeclaration" targetNodeId="8.1068498886296" />
@@ -7819,9 +7137,9 @@
       <link role="substituteQueryBody" targetNodeId="1106930111082" />
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1106930092923">
         <property name="name" value="constructors" />
+        <link role="substituteTextQueryBody" targetNodeId="1106930111084" />
         <link role="substituteModelQueryBody" targetNodeId="1106930111086" />
         <link role="substituteTextQueryMethod" targetNodeId="1106930111085" />
-        <link role="substituteTextQueryBody" targetNodeId="1106930111084" />
         <link role="substituteModelQueryMethod" targetNodeId="1106930111083" />
         <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1106930111087">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1106930111085">
@@ -7907,8 +7225,8 @@
       <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1107192630536">
         <property name="drawBorder" value="false" />
         <property name="vertical" value="true" />
-        <property name="gridLayout" value="true" />
         <property name="selectable" value="false" />
+        <property name="gridLayout" value="true" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1107192796429">
           <property name="drawBorder" value="false" />
           <property name="vertical" value="false" />
@@ -7941,15 +7259,15 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1107214220284">
       <property name="drawBorder" value="false" />
       <property name="nullText" value="&lt;no ref to block parameter&gt;" />
-      <link role="linkDeclaration" targetNodeId="8.1107136391389" />
       <link role="keyMap" targetNodeId="1081427357000" />
+      <link role="linkDeclaration" targetNodeId="8.1107136391389" />
       <link role="actionSet" targetNodeId="1107375429415" />
       <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1107214174736">
         <link role="conceptDeclaration" targetNodeId="8.1107135704075" />
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ModelAccess" id="1107214220285">
           <property name="textFgColor" value="DARK_BLUE" />
-          <property name="modelAccessorId" value="Node_DefaultText" />
           <property name="fontStyle" value="ITALIC" />
+          <property name="modelAccessorId" value="Node_DefaultText" />
           <property name="drawBorder" value="false" />
         </node>
       </node>
@@ -8017,15 +7335,15 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ModelAccess" id="1107384111588">
         <property name="textFgColor" value="DARK_BLUE" />
-        <property name="fontStyle" value="BOLD_ITALIC" />
         <property name="modelAccessorId" value="Node_DefaultText" />
+        <property name="fontStyle" value="BOLD_ITALIC" />
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1107384111589">
         <property name="drawBorder" value="false" />
         <property name="conditionId" value="ParentIsCodeBlockWhichReturnsAValue" />
-        <link role="linkDeclaration" targetNodeId="8.1107383540437" />
         <link role="actionSet" targetNodeId="1107385818494" />
+        <link role="linkDeclaration" targetNodeId="8.1107383540437" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1107384111590">
         <property name="text" value=";" />
