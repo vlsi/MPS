@@ -1,6 +1,5 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.EditorsPane;
