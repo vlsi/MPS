@@ -333,7 +333,7 @@
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1084195486322">
           <property name="name" value="dataTypes" />
           <property name="queryId" value="LinkDeclaration_SpecializableLinks" />
-          <property name="textProviderId" value="SemanticLinkRoleText" />
+          <property name="textProviderId" value="LinkRoleText" />
         </node>
       </node>
     </node>
