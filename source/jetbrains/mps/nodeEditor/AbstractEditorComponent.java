@@ -649,46 +649,63 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     String actionType = getActionType(keyEvent, editorContext);
 
     // pre-process action
-    boolean executeCellCommand = true;
-    if (actionType == EditorCellAction.RIGHT_TRANSFORM &&
-            mySelectedCell != null &&
-            getCellAction(mySelectedCell, actionType) != null) {
-      executeCellCommand = validateCellBeforeTransform(mySelectedCell);
-    }
+    if (mySelectedCell != null &&
+            actionType == EditorCellAction.RIGHT_TRANSFORM) {
+      if (!isValidCell(mySelectedCell) &&
+              !validateCell(mySelectedCell)) {  // !side effect: can change selection!
+        keyEvent.consume();
+        return true;
+      }
 
+      // todo: hardcoded condition
+      if (mySelectedCell != null && getCellAction(mySelectedCell, EditorCellAction.RIGHT_TRANSFORM) == null) {
+        if (mySelectedCell instanceof EditorCell_Constant) {
+          actionType = EditorCellAction.RIGHT_SPECIAL;
+          keyEvent.consume();
+        }
+        if (mySelectedCell instanceof EditorCell_Property) {
+          String text = ((EditorCell_Property) mySelectedCell).getText();
+          if (!((EditorCell_Property) mySelectedCell).getModelAccessor().isValidText(text + " ")) {
+            actionType = EditorCellAction.RIGHT_SPECIAL;
+            keyEvent.consume();
+          }
+        }
+      }
+    }
 
     // process action
     if (mySelectedCell != null) {
 
       if (actionType != null) {
-        if (executeCellCommand) {
-          if (executeCellAction(mySelectedCell, actionType)) {
-            keyEvent.consume();
-            return true;
-          }
-        }
-      }
-
-      EditorCell oldSelection = mySelectedCell;
-      if (mySelectedCell.processKeyPressed(keyEvent) == true) {
-        if (oldSelection != mySelectedCell) {
-          mySelectedStack.removeAllElements();
-        }
-        keyEvent.consume();
-        return true;
-      }
-
-      // auto-completion (i.e. node substitution)
-      if ((keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown()) ||
-              (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && !keyEvent.isControlDown())) {
-        if (activateNodeSubstituteChooser(mySelectedCell, keyEvent.getKeyCode() == KeyEvent.VK_ENTER)) {
+        if (executeCellAction(mySelectedCell, actionType)) {
           keyEvent.consume();
-          System.out.println("SUBSTITUTE");
           return true;
         }
-        System.out.println("NO SUBSTITUTE");
       }
 
+      if (!keyEvent.isConsumed()) {
+
+        EditorCell oldSelection = mySelectedCell;
+        if (mySelectedCell.processKeyPressed(keyEvent) == true) {
+          if (oldSelection != mySelectedCell) {
+            mySelectedStack.removeAllElements();
+          }
+          keyEvent.consume();
+          return true;
+        }
+
+        // auto-completion (AKA node substitution)
+        if ((keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown()) ||
+                (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && !keyEvent.isControlDown())) {
+          if (activateNodeSubstituteChooser(mySelectedCell, keyEvent.getKeyCode() == KeyEvent.VK_ENTER)) {
+            keyEvent.consume();
+            System.out.println("SUBSTITUTE");
+            return true;
+          }
+          System.out.println("NO SUBSTITUTE");
+        }
+
+      } // if (!keyEvent.isConsumed())
     } // if (mySelectedCell != null)
 
     if (actionType != null) {
@@ -706,30 +723,33 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return false;
   }
 
-  private boolean validateCellBeforeTransform(EditorCell cell) {
-    if (!(cell instanceof EditorCell_Label)) {
-      return true;
+  private boolean isValidCell(EditorCell cell) {
+    if (cell instanceof EditorCell_Label) {
+      EditorCell_Label labelCell = (EditorCell_Label) cell;
+      if (labelCell.isErrorState()) {
+        return false;
+      }
     }
-    EditorCell_Label labelCell = (EditorCell_Label) cell;
-    if (!labelCell.isErrorState()) {
-      return true;
-    }
+    return true;
+  }
 
-    INodeSubstituteInfo substituteInfo = labelCell.getSubstituteInfo();
+  private boolean validateCell(EditorCell cell) {
+    INodeSubstituteInfo substituteInfo = cell.getSubstituteInfo();
     if (substituteInfo == null) {
-      return true;
-    }
-
-    List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(labelCell.getText());
-    if (matchingActions.size() == 0) {
-      return false;
-    }
-    if (matchingActions.size() > 1) {
-      activateNodeSubstituteChooser(labelCell, false);
       return false;
     }
 
-    CommandUtil.substituteNode(matchingActions.get(0), labelCell.getText(), substituteInfo, this.getContext());
+    String pattern = "";
+    if (cell instanceof EditorCell_Label) {
+      pattern = ((EditorCell_Label) cell).getText();
+    }
+    List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(pattern);
+    if (matchingActions.size() != 1) {
+      activateNodeSubstituteChooser(cell, false);
+      return false;
+    }
+
+    CommandUtil.substituteNode(matchingActions.get(0), pattern, substituteInfo, this.getContext());
     return true;
   }
 
