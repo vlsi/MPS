@@ -18,14 +18,16 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   private SemanticNode mySourceNode;
   private LinkDeclaration myLinkDeclaration;
+  private LinkDeclaration myGenuineLinkDeclaration;
 
   public DefaultReferenceSubstituteInfo(SemanticNode sourceNode, LinkDeclaration linkDeclaration) {
     mySourceNode = sourceNode;
     myLinkDeclaration = linkDeclaration;
+    myGenuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
     if (linkDeclaration.getMetaClass() == LinkMetaclass.aggregation) {
       throw new RuntimeException("Only reference links are allowed here.");
     }
-    Cardinality sourceCardinality = myLinkDeclaration.getSourceCardinality();
+    Cardinality sourceCardinality = myGenuineLinkDeclaration.getSourceCardinality();
     if (!(sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._0_1)) {
       throw new RuntimeException("Only cardinalities 1 or 0..1 are allowed here.");
     }
@@ -46,7 +48,7 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
         }
 
         public SemanticNode doSubstitute(String pattern) {
-          mySourceNode.setReferent(myLinkDeclaration.getRole(), targetNode);
+          mySourceNode.setReferent(myGenuineLinkDeclaration.getRole(), targetNode);
           return null;
         }
       });
