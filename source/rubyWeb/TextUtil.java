@@ -1,9 +1,6 @@
 package rubyWeb;
 
-import jetbrains.textLanguage.Sentence;
-import jetbrains.textLanguage.Word;
-import jetbrains.textLanguage.Text;
-import jetbrains.textLanguage.WordValue_PropertySupport;
+import jetbrains.textLanguage.*;
 import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.util.CollectionUtil;
 import org.jdom.Element;
@@ -120,14 +117,16 @@ public class TextUtil {
 
   public static void toElement(Sentence sentence, Element element) {
     List<Word> words = CollectionUtil.iteratorAsList(sentence.words());
+    boolean lastIsTag = false;
     for (int i = 0; i < words.size(); i++) {
       Word word = words.get(i);
       toElement(word, element);
       if (i != words.size() - 1) {
         element.addContent(" ");
       }
+      lastIsTag = word instanceof Tag;
     }
-    if (sentence.getWordsCount() != 0) {
+    if (sentence.getWordsCount() != 0 && !lastIsTag) {
       element.addContent(".");
     } else {
       System.out.println("Skiping");
