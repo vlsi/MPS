@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class NullLiteral_Editor extends DefaultNodeEditor {
@@ -18,11 +19,12 @@ public class NullLiteral_Editor extends DefaultNodeEditor {
   }
   public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(true);
     editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     NullLiteral_NodeBoxActions.setCellActions(editorCell, node);
     editorCell.addKeyMap(new _Expression_KeyMap());

@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.EditorCellAction;
@@ -22,10 +23,11 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createDeclarationBox(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createTypeCell(context, node));
     editorCell.addEditorCell(this.createNameCell(context, node));
     return editorCell;
@@ -33,11 +35,12 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createNameCell(EditorContext context, SemanticNode node) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "name", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(true);
     editorCell.setDefaultText("<no name>");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
     ParameterDeclaration_NameCellActions.setCellActions(editorCell, node);
     return editorCell;
@@ -49,18 +52,20 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "type");
         noRefCell.setEditable(true);
-        noRefCell.setDrawBrackets(false);
         noRefCell.setSelectable(true);
         noRefCell.setDrawBorder(true);
+        noRefCell.setDrawBrackets(false);
+        noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         ParameterDeclaration_TypeCellActions.setCellActions(noRefCell, node);
         return noRefCell;
       }
     }
     EditorCell editorCell = context.createNodeCell(referencedNode);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     ParameterDeclaration_TypeCellActions.setCellActions(editorCell, node);
     return editorCell;

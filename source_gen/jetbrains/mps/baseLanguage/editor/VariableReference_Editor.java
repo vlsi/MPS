@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import java.awt.Color;
 
 public class VariableReference_Editor extends DefaultNodeEditor {
   public static String MATCHING_TEXT = "<VariableReference>";
@@ -17,10 +18,11 @@ public class VariableReference_Editor extends DefaultNodeEditor {
   }
   public EditorCell createErrorCell(EditorContext context, SemanticNode node) {
     EditorCell_Error editorCell = EditorCell_Error.create(context, node, "<collection>");
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(true);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     VariableReference_NodeBoxActions.setCellActions(editorCell, node);
     return editorCell;
   }

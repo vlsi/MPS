@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
@@ -22,10 +23,11 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
   }
   public EditorCell createExpressionBox(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createLeftExpressionCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "instanceof"));
     editorCell.addEditorCell(this.createJavaClassTypeCell(context, node));
@@ -33,11 +35,12 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
   }
   public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     return editorCell;
   }
@@ -48,9 +51,10 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "leftExpression");
         noRefCell.setEditable(true);
-        noRefCell.setDrawBrackets(false);
         noRefCell.setSelectable(true);
         noRefCell.setDrawBorder(true);
+        noRefCell.setDrawBrackets(false);
+        noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         InstanceOfExpression_LeftExpressionsActions.setCellActions(noRefCell, node);
         _DefErrorActions.setCellActions(noRefCell, node);
@@ -58,9 +62,10 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
       }
     }
     EditorCell editorCell = context.createNodeCell(referencedNode);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     InstanceOfExpression_LeftExpressionsActions.setCellActions(editorCell, node);
     return editorCell;
@@ -72,9 +77,10 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "javaClassType");
         noRefCell.setEditable(true);
-        noRefCell.setDrawBrackets(false);
         noRefCell.setSelectable(true);
         noRefCell.setDrawBorder(true);
+        noRefCell.setDrawBrackets(false);
+        noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         InstanceOfExpression_InstanceOfTypes.setCellActions(noRefCell, node);
         _DefErrorActions.setCellActions(noRefCell, node);
@@ -82,9 +88,10 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
       }
     }
     EditorCell editorCell = context.createNodeCell(referencedNode);
-    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     InstanceOfExpression_InstanceOfTypes.setCellActions(editorCell, node);
     return editorCell;

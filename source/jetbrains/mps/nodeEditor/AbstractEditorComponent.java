@@ -299,9 +299,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     IdeMain.instance().getProject().getComponent(ActionManager.class).getGroup(EDITOR_POPUP_MENU_ACTIONS).addGroup(popupMenu, new ActionContext(selectedNode));
 
-    if (selectedNode instanceof JavaClass) {
+    if (selectedNode instanceof ClassConcept) {
       popupMenu.addSeparator();
-      popupMenu.add(createGenStubFromClassFileAction((JavaClass) selectedNode));
+      popupMenu.add(createGenStubFromClassFileAction((ClassConcept) selectedNode));
     }
 
     popupMenu.show(AbstractEditorComponent.this, e.getX(), e.getY());
@@ -336,7 +336,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
 
-  private Action createGenStubFromClassFileAction(final JavaClass targetClass) {
+  private Action createGenStubFromClassFileAction(final ClassConcept targetClass) {
     return new AbstractAction("Generate Stub From Class File") {
       public void actionPerformed(ActionEvent e) {
         CommandProcessor.instance().executeCommand(getContext(),
@@ -353,7 +353,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
                     try {
                       JavaClassMap javaClassMap = JavaClassMaps.getJavaClassMap(tmpModel);
-                      JavaClass tmpClass = null;
+                      ClassConcept tmpClass = null;
                       try {
                         tmpClass = javaClassMap.get(className);
                       } catch (Exception e1) {
@@ -449,8 +449,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         for (int i = 0; i < references.size(); i++) {
           SemanticReference reference = references.get(i);
           SemanticNode referent = reference.getTargetNode();
-          if (referent instanceof JavaClass) {
-            JavaClass classInModel = toModelClass((JavaClass) referent, targetModel, project);
+          if (referent instanceof ClassConcept) {
+            ClassConcept classInModel = toModelClass((ClassConcept) referent, targetModel, project);
             node.insertReferent(referent, reference.getRole(), classInModel);
             node.removeReferent(reference.getRole(), referent);
           }
@@ -463,8 +463,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
       }
 
-      private JavaClass toModelClass(JavaClass tmpClass, SemanticModel targetModel, MPSProject project) {
-        JavaClass modelClass = SemanticModelUtil.findJavaClass(NameUtil.nodeFQName(tmpClass), getContext().getProject());
+      private ClassConcept toModelClass(ClassConcept tmpClass, SemanticModel targetModel, MPSProject project) {
+        ClassConcept modelClass = SemanticModelUtil.findJavaClass(NameUtil.nodeFQName(tmpClass), getContext().getProject());
         if (modelClass == null) {
           modelClass = SemanticModelUtil.findJavaClass("java.lang.Object", project);
         }

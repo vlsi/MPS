@@ -48,7 +48,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068390468198">
     <property name="rootable" value="true" />
-    <property name="name" value="JavaClass" />
+    <property name="name" value="ClassConcept" />
     <link role="extends" targetNodeId="4.1078489098625" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1075300953593">
       <property name="propertyType" value="string" />
@@ -343,7 +343,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068580320022">
-    <property name="name" value="JavaClassType" />
+    <property name="name" value="ClassType" />
     <link role="extends" targetNodeId="1068431790189" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1068581242862">
       <property name="sourceCardinality" value="1" />

@@ -31,19 +31,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994767">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994768">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994768">
               <property name="name" value="StatementList" />
               <link role="javaClass" targetNodeId="13.1081508091130" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994769">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994770">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994770">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994771">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994771">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -76,7 +76,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1074794490343">
-    <property name="name" value="JavaClass_Editor" />
+    <property name="matchingText" value="class" />
+    <property name="name" value="ClassConcept_Editor" />
     <link role="conceptDeclaration" targetNodeId="8.1068390468198" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1076938177026">
       <property name="name" value="EmptyListActions" />
@@ -183,12 +184,12 @@
             <property name="name" value="nodeFactoryQuery" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082026262903">
               <property name="name" value="listOwner" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082026262904">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082026262904">
                 <property name="name" value="jetbrains.mps.semanticModel.SemanticNode" />
                 <link role="javaClass" targetNodeId="15.1086945614627" />
               </node>
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082026262905">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1082026262905">
               <property name="name" value="jetbrains.mps.semanticModel.SemanticNode" />
               <link role="javaClass" targetNodeId="15.1086945614627" />
             </node>
@@ -266,19 +267,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995147">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995148">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995148">
               <property name="name" value="FieldReference" />
               <link role="javaClass" targetNodeId="13.1081508091408" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995149">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995150">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995150">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995151">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995151">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -314,19 +315,19 @@
           <link role="substituteTextQueryBody" targetNodeId="1081927995370" />
           <link role="substituteTextQueryMethod" targetNodeId="1081927995364" />
           <link role="substituteModelQueryBody" targetNodeId="1081927995375" />
-          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984016">
+          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984016">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927995364">
               <property name="name" value="substituteItemText_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995365">
                 <property name="name" value="mySourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995366">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995366">
                   <property name="name" value="FieldReference" />
                   <link role="javaClass" targetNodeId="13.1081508091408" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995367">
                 <property name="name" value="myItemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995368">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995368">
                   <property name="name" value="jetbrains.mps.core.BaseConcept" />
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
@@ -350,12 +351,12 @@
               <property name="name" value="substituteItemModel_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995372">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995373">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995373">
                   <property name="name" value="FieldReference" />
                   <link role="javaClass" targetNodeId="13.1081508091408" />
                 </node>
               </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995374">
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995374">
                 <property name="name" value="java.util.LinkedList" />
                 <link role="javaClass" targetNodeId="16.1087811448220" />
               </node>
@@ -376,19 +377,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995340">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995341">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995341">
               <property name="name" value="FieldReference" />
               <link role="javaClass" targetNodeId="13.1081508091408" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995342">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995343">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995343">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995344">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995344">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -448,9 +449,9 @@
     </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1088427419930">
       <property name="nullText" value="&lt;no parm&gt;" />
-      <link role="actionSet" targetNodeId="1076950734725" />
       <link role="linkDeclaration" targetNodeId="8.1068581517664" />
       <link role="keyMap" targetNodeId="1081427357000" />
+      <link role="actionSet" targetNodeId="1076950734725" />
       <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1088427419931">
         <link role="conceptDeclaration" targetNodeId="8.1068431474542" />
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1088427419932">
@@ -489,9 +490,9 @@
         </node>
       </node>
       <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1101313067670">
+        <link role="linkDeclaration" targetNodeId="8.1068581517664" />
         <link role="keyMap" targetNodeId="1081427357000" />
         <link role="actionSet" targetNodeId="1076939756687" />
-        <link role="linkDeclaration" targetNodeId="8.1068581517664" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1101312825918">
           <link role="conceptDeclaration" targetNodeId="8.1068431474542" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1101313179500">
@@ -567,19 +568,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995684">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995685">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995685">
               <property name="name" value="InstanceMethodDeclaration" />
               <link role="javaClass" targetNodeId="13.1081508090865" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995686">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995687">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995687">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995688">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995688">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -663,19 +664,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996160">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996161">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996161">
               <property name="name" value="StaticMethodDeclaration" />
               <link role="javaClass" targetNodeId="13.1081508093035" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996162">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996163">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996163">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996164">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996164">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -770,19 +771,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994658">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994659">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994659">
               <property name="name" value="FieldDeclaration" />
               <link role="javaClass" targetNodeId="13.1081508090771" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994660">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994661">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994661">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994662">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994662">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -837,7 +838,7 @@
           <property name="name" value="conditionalQuery" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082097601655">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082097601656">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082097601656">
               <property name="name" value="jetbrains.mps.semanticModel.SemanticNode" />
               <link role="javaClass" targetNodeId="15.1086945614627" />
             </node>
@@ -875,19 +876,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994744">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994745">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994745">
               <property name="name" value="ParameterDeclaration" />
               <link role="javaClass" targetNodeId="13.1081508090558" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994746">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994747">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994747">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994748">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994748">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -945,19 +946,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995729">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995730">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995730">
               <property name="name" value="LocalVariableDeclaration" />
               <link role="javaClass" targetNodeId="13.1081508092118" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995731">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995732">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995732">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995733">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995733">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -1015,7 +1016,7 @@
           <property name="name" value="conditionalQuery" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082097602078">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082097602079">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082097602079">
               <property name="name" value="jetbrains.mps.semanticModel.SemanticNode" />
               <link role="javaClass" targetNodeId="15.1086945614627" />
             </node>
@@ -1052,19 +1053,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995435">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995436">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995436">
               <property name="name" value="InstanceMethodCall" />
               <link role="javaClass" targetNodeId="13.1081508091738" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995437">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995438">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995438">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995439">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995439">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -1097,19 +1098,19 @@
           <link role="substituteTextQueryBody" targetNodeId="1081927995658" />
           <link role="substituteModelQueryBody" targetNodeId="1081927995663" />
           <link role="substituteModelQueryMethod" targetNodeId="1081927995659" />
-          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984033">
+          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984033">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927995652">
               <property name="name" value="substituteItemText_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995653">
                 <property name="name" value="mySourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995654">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995654">
                   <property name="name" value="InstanceMethodCall" />
                   <link role="javaClass" targetNodeId="13.1081508091738" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995655">
                 <property name="name" value="myItemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995656">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995656">
                   <property name="name" value="jetbrains.mps.core.BaseConcept" />
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
@@ -1133,12 +1134,12 @@
               <property name="name" value="substituteItemModel_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995660">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995661">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995661">
                   <property name="name" value="InstanceMethodCall" />
                   <link role="javaClass" targetNodeId="13.1081508091738" />
                 </node>
               </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995662">
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995662">
                 <property name="name" value="java.util.LinkedList" />
                 <link role="javaClass" targetNodeId="16.1087811448220" />
               </node>
@@ -1159,19 +1160,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995628">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995629">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995629">
               <property name="name" value="InstanceMethodCall" />
               <link role="javaClass" targetNodeId="13.1081508091738" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995630">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995631">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995631">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995632">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995632">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -1242,19 +1243,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996019">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996020">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996020">
               <property name="name" value="StaticMethodCall" />
               <link role="javaClass" targetNodeId="13.1081508093016" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996021">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996022">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996022">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996023">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996023">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -1287,19 +1288,19 @@
           <link role="substituteModelQueryMethod" targetNodeId="1081927996135" />
           <link role="substituteTextQueryMethod" targetNodeId="1081927996128" />
           <link role="substituteModelQueryBody" targetNodeId="1081927996139" />
-          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984049">
+          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984049">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927996128">
               <property name="name" value="substituteItemText_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996129">
                 <property name="name" value="mySourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996130">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996130">
                   <property name="name" value="StaticMethodCall" />
                   <link role="javaClass" targetNodeId="13.1081508093016" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996131">
                 <property name="name" value="myItemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996132">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996132">
                   <property name="name" value="jetbrains.mps.core.BaseConcept" />
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
@@ -1323,12 +1324,12 @@
               <property name="name" value="substituteItemModel_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996136">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996137">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996137">
                   <property name="name" value="StaticMethodCall" />
                   <link role="javaClass" targetNodeId="13.1081508093016" />
                 </node>
               </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996138">
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996138">
                 <property name="name" value="java.util.LinkedList" />
                 <link role="javaClass" targetNodeId="16.1087811448220" />
               </node>
@@ -1349,19 +1350,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996104">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996105">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996105">
               <property name="name" value="StaticMethodCall" />
               <link role="javaClass" targetNodeId="13.1081508093016" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996106">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996107">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996107">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996108">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996108">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -1470,19 +1471,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994539">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994540">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994540">
               <property name="name" value="AssignmentExpression" />
               <link role="javaClass" targetNodeId="13.1081508090580" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994541">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1086342303579">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1086342303579">
               <property name="name" value="java.lang.Object" />
               <link role="javaClass" targetNodeId="14.1086945614093" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994543">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994543">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -1512,19 +1513,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994651">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994652">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994652">
               <property name="name" value="AssignmentExpression" />
               <link role="javaClass" targetNodeId="13.1081508090580" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994653">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1086342468196">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1086342468196">
               <property name="name" value="java.lang.Object" />
               <link role="javaClass" targetNodeId="14.1086945614093" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994655">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994655">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -1723,7 +1724,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311823660">
-    <property name="name" value="JavaClassType_Editor" />
+    <property name="name" value="ClassType_Editor" />
     <link role="conceptDeclaration" targetNodeId="8.1068580320022" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1088426602576">
       <link role="linkDeclaration" targetNodeId="8.1068581242862" />
@@ -1750,9 +1751,9 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1083091696640">
       <property name="textFgColor" value="blue" />
       <property name="defaultText" value="&lt;int constant&gt;" />
-      <link role="keyMap" targetNodeId="1081427357000" />
       <link role="actionSet" targetNodeId="1076937947068" />
       <link role="propertyDeclaration" targetNodeId="8.1068580320021" />
+      <link role="keyMap" targetNodeId="1081427357000" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075374106049">
@@ -1867,19 +1868,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995396">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995397">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995397">
               <property name="name" value="IfStatement" />
               <link role="javaClass" targetNodeId="13.1081508091696" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995398">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995399">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995399">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995400">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995400">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -1914,19 +1915,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082542128689">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082542128690">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082542128690">
               <property name="name" value="IfStatement" />
               <link role="javaClass" targetNodeId="13.1081508091696" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082542128691">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082542128692">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082542128692">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082542128693">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1082542128693">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -1934,12 +1935,12 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1082542279453">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1082542279454">
                 <property name="name" value="ifStatement" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082542279455">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082542279455">
                   <property name="name" value="IfStatement" />
                   <link role="javaClass" targetNodeId="13.1081508091696" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1082542279456">
-                  <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082542279457">
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082542279457">
                     <property name="name" value="IfStatement" />
                     <link role="javaClass" targetNodeId="13.1081508091696" />
                   </node>
@@ -1956,7 +1957,7 @@
                   <link role="variableDeclaration" targetNodeId="1082542279454" />
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1082542279463">
-                  <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082542279464">
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082542279464">
                     <property name="name" value="Statement" />
                     <link role="javaClass" targetNodeId="13.1081508091148" />
                   </node>
@@ -1968,7 +1969,7 @@
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1082542279466">
               <node role="expression" type="jetbrains.mps.baseLanguage.CastExpression" id="1082542279467">
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082542279468">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082542279468">
                   <property name="name" value="Statement" />
                   <link role="javaClass" targetNodeId="13.1081508091148" />
                 </node>
@@ -2033,7 +2034,7 @@
           <property name="name" value="conditionalQuery" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082097601952">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082097601953">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082097601953">
               <property name="name" value="jetbrains.mps.semanticModel.SemanticNode" />
               <link role="javaClass" targetNodeId="15.1086945614627" />
             </node>
@@ -2045,12 +2046,12 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1082463311172">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1082463311173">
                 <property name="name" value="ifStatement" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082463311174">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082463311174">
                   <property name="name" value="IfStatement" />
                   <link role="javaClass" targetNodeId="13.1081508091696" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1082463311175">
-                  <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082463311176">
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082463311176">
                     <property name="name" value="IfStatement" />
                     <link role="javaClass" targetNodeId="13.1081508091696" />
                   </node>
@@ -2084,7 +2085,7 @@
           <property name="name" value="conditionalQuery" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082031373144">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082031373145">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082031373145">
               <property name="name" value="jetbrains.mps.semanticModel.SemanticNode" />
               <link role="javaClass" targetNodeId="15.1086945614627" />
             </node>
@@ -2096,12 +2097,12 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1082488483416">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1082488483417">
                 <property name="name" value="ifStatement" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082488483418">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082488483418">
                   <property name="name" value="IfStatement" />
                   <link role="javaClass" targetNodeId="13.1081508091696" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1082488483419">
-                  <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082488483420">
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082488483420">
                     <property name="name" value="IfStatement" />
                     <link role="javaClass" targetNodeId="13.1081508091696" />
                   </node>
@@ -2158,19 +2159,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995845">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995846">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995846">
               <property name="name" value="ReturnStatement" />
               <link role="javaClass" targetNodeId="13.1081508092391" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995847">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995848">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995848">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995849">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995849">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -2199,9 +2200,9 @@
         <property name="selectable" value="true" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075380723767">
+        <link role="linkDeclaration" targetNodeId="8.1068581517676" />
         <link role="errorActionSet" targetNodeId="1077284637890" />
         <link role="actionSet" targetNodeId="1076951358050" />
-        <link role="linkDeclaration" targetNodeId="8.1068581517676" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075380723768">
         <property name="text" value=";" />
@@ -2223,23 +2224,23 @@
         <property name="name" value="primitiveTypes" />
         <property name="queryId" value="AllPrimitiveTypes" />
         <property name="textProviderId" value="JavaElementText" />
-        <link role="substituteTextQueryMethod" targetNodeId="1081927996749" />
-        <link role="substituteTextQueryBody" targetNodeId="1081927996755" />
         <link role="substituteModelQueryBody" targetNodeId="1081927996760" />
         <link role="substituteModelQueryMethod" targetNodeId="1081927996756" />
-        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984066">
+        <link role="substituteTextQueryMethod" targetNodeId="1081927996749" />
+        <link role="substituteTextQueryBody" targetNodeId="1081927996755" />
+        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984066">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927996749">
             <property name="name" value="substituteItemText_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996750">
               <property name="name" value="mySourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996751">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996751">
                 <property name="name" value="Type_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093813" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996752">
               <property name="name" value="myItemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996753">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996753">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -2263,12 +2264,12 @@
             <property name="name" value="substituteItemModel_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996757">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996758">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996758">
                 <property name="name" value="Type_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093813" />
               </node>
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996759">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996759">
               <property name="name" value="java.util.LinkedList" />
               <link role="javaClass" targetNodeId="16.1087811448220" />
             </node>
@@ -2291,24 +2292,24 @@
         <property name="queryId" value="AllJavaClasses" />
         <property name="textProviderId" value="JavaElementText" />
         <link role="substituteTextQueryMethod" targetNodeId="1081927996779" />
-        <link role="substituteModelQueryBody" targetNodeId="1081927996790" />
-        <link role="substituteModelQueryMethod" targetNodeId="1081927996786" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1081927996761" />
-        <link role="substituteTextQueryBody" targetNodeId="1081927996785" />
+        <link role="substituteModelQueryMethod" targetNodeId="1081927996786" />
         <link role="substituteHandlerQueryBody" targetNodeId="1081927996769" />
-        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984067">
+        <link role="substituteTextQueryBody" targetNodeId="1081927996785" />
+        <link role="substituteModelQueryBody" targetNodeId="1081927996790" />
+        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984067">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927996761">
             <property name="name" value="substituteItemHandler_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996762">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996763">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996763">
                 <property name="name" value="Type_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093813" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996764">
               <property name="name" value="itemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996765">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996765">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -2317,7 +2318,7 @@
               <property name="name" value="pattern" />
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249704865" />
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996768">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996768">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
@@ -2342,14 +2343,14 @@
             <property name="name" value="substituteItemText_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996780">
               <property name="name" value="mySourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996781">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996781">
                 <property name="name" value="Type_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093813" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996782">
               <property name="name" value="myItemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996783">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996783">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -2373,12 +2374,12 @@
             <property name="name" value="substituteItemModel_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996787">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996788">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996788">
                 <property name="name" value="Type_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093813" />
               </node>
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996789">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996789">
               <property name="name" value="java.util.LinkedList" />
               <link role="javaClass" targetNodeId="16.1087811448220" />
             </node>
@@ -2397,24 +2398,24 @@
       </node>
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_Simple" id="1090608741568">
         <property name="text" value="generic type &lt;..&gt;" />
-        <link role="substituteHandlerQueryMethod" targetNodeId="1090608741570" />
         <link role="substituteMatcherQueryMethod" targetNodeId="1090608741591" />
-        <link role="substituteHandlerQueryMethod" targetNodeId="1090608741570" />
         <link role="substituteMatcherQueryBody" targetNodeId="1090608741599" />
+        <link role="substituteHandlerQueryMethod" targetNodeId="1090608741570" />
+        <link role="substituteHandlerQueryMethod" targetNodeId="1090608741570" />
         <link role="substituteHandlerQueryBody" targetNodeId="1090608741578" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1090608741570" />
-        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1090608741569">
+        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1090608741569">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1090608741570">
             <property name="name" value="substituteItemHandler_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090608741571">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090608741572">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090608741572">
                 <link role="javaClass" targetNodeId="15.1086945614627" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090608741573">
               <property name="name" value="itemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090608741574">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090608741574">
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -2422,14 +2423,14 @@
               <property name="name" value="pattern" />
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1090608741576" />
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090608741577">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1090608741577">
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090608741578">
               <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1090608741579">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1090608741580">
                   <property name="name" value="model" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090608741581">
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090608741581">
                     <link role="javaClass" targetNodeId="15.1086945614636" />
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1090608741582">
@@ -2443,7 +2444,7 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1090608741584">
                 <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1090608741585">
                   <link role="baseMethodDeclaration" targetNodeId="15.1086945615417" />
-                  <node role="javaClassType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090608741586">
+                  <node role="javaClassType" type="jetbrains.mps.baseLanguage.ClassType" id="1090608741586">
                     <link role="javaClass" targetNodeId="15.1086945615339" />
                   </node>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1090608741588">
@@ -2460,13 +2461,13 @@
             <property name="name" value="substituteItemMatcher_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090608741592">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090608741593">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090608741593">
                 <link role="javaClass" targetNodeId="15.1086945614627" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090608741594">
               <property name="name" value="itemNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090608741595">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090608741595">
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -2500,19 +2501,19 @@
         <link role="substituteModelQueryBody" targetNodeId="1081927996827" />
         <link role="substituteTextQueryBody" targetNodeId="1081927996822" />
         <link role="substituteTextQueryMethod" targetNodeId="1081927996816" />
-        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984068">
+        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984068">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927996816">
             <property name="name" value="substituteItemText_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996817">
               <property name="name" value="mySourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996818">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996818">
                 <property name="name" value="VarType_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093896" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996819">
               <property name="name" value="myItemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996820">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996820">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -2536,12 +2537,12 @@
             <property name="name" value="substituteItemModel_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996824">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996825">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996825">
                 <property name="name" value="VarType_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093896" />
               </node>
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996826">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996826">
               <property name="name" value="java.util.LinkedList" />
               <link role="javaClass" targetNodeId="16.1087811448220" />
             </node>
@@ -2563,25 +2564,25 @@
         <property name="name" value="referenceTypes" />
         <property name="queryId" value="AllJavaClasses" />
         <property name="textProviderId" value="JavaElementText" />
+        <link role="substituteTextQueryBody" targetNodeId="1081927996852" />
+        <link role="substituteModelQueryBody" targetNodeId="1081927996857" />
+        <link role="substituteHandlerQueryBody" targetNodeId="1081927996836" />
         <link role="substituteTextQueryMethod" targetNodeId="1081927996846" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1081927996828" />
-        <link role="substituteModelQueryBody" targetNodeId="1081927996857" />
         <link role="substituteModelQueryMethod" targetNodeId="1081927996853" />
-        <link role="substituteHandlerQueryBody" targetNodeId="1081927996836" />
-        <link role="substituteTextQueryBody" targetNodeId="1081927996852" />
-        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984069">
+        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984069">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927996828">
             <property name="name" value="substituteItemHandler_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996829">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996830">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996830">
                 <property name="name" value="VarType_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093896" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996831">
               <property name="name" value="itemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996832">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996832">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -2590,7 +2591,7 @@
               <property name="name" value="pattern" />
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249704866" />
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996835">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996835">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
@@ -2615,14 +2616,14 @@
             <property name="name" value="substituteItemText_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996847">
               <property name="name" value="mySourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996848">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996848">
                 <property name="name" value="VarType_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093896" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996849">
               <property name="name" value="myItemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996850">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996850">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -2646,12 +2647,12 @@
             <property name="name" value="substituteItemModel_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996854">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996855">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996855">
                 <property name="name" value="VarType_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093896" />
               </node>
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996856">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996856">
               <property name="name" value="java.util.LinkedList" />
               <link role="javaClass" targetNodeId="16.1087811448220" />
             </node>
@@ -2674,18 +2675,18 @@
         <link role="substituteHandlerQueryMethod" targetNodeId="1090608741602" />
         <link role="substituteMatcherQueryBody" targetNodeId="1090608741631" />
         <link role="substituteHandlerQueryBody" targetNodeId="1090608741610" />
-        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1090608741601">
+        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1090608741601">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1090608741602">
             <property name="name" value="substituteItemHandler_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090608741603">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090608741604">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090608741604">
                 <link role="javaClass" targetNodeId="15.1086945614627" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090608741605">
               <property name="name" value="itemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090608741606">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090608741606">
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -2693,14 +2694,14 @@
               <property name="name" value="pattern" />
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1090608741608" />
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090608741609">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1090608741609">
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090608741610">
               <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1090608741611">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1090608741612">
                   <property name="name" value="model" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090608741613">
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090608741613">
                     <link role="javaClass" targetNodeId="15.1086945614636" />
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1090608741614">
@@ -2714,7 +2715,7 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1090608741616">
                 <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1090608741617">
                   <link role="baseMethodDeclaration" targetNodeId="15.1086945615417" />
-                  <node role="javaClassType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090608741618">
+                  <node role="javaClassType" type="jetbrains.mps.baseLanguage.ClassType" id="1090608741618">
                     <link role="javaClass" targetNodeId="15.1086945615339" />
                   </node>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1090608741620">
@@ -2731,13 +2732,13 @@
             <property name="name" value="substituteItemMatcher_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090608741624">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090608741625">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090608741625">
                 <link role="javaClass" targetNodeId="15.1086945614627" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090608741626">
               <property name="name" value="itemNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090608741627">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090608741627">
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -2770,19 +2771,19 @@
         <property name="name" value="substituteAcceptor_Query" />
         <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996875">
           <property name="name" value="node" />
-          <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996876">
+          <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996876">
             <property name="name" value="VariableInitializer_ActionSet" />
             <link role="javaClass" targetNodeId="13.1081508094467" />
           </node>
         </node>
         <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996877">
           <property name="name" value="object" />
-          <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996878">
+          <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996878">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
         </node>
-        <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996879">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996879">
           <property name="name" value="jetbrains.mps.core.BaseConcept" />
           <link role="javaClass" targetNodeId="18.1086856195743" />
         </node>
@@ -2829,19 +2830,19 @@
           <link role="substituteModelQueryBody" targetNodeId="1082380828623" />
           <link role="substituteHandlerQueryBody" targetNodeId="1082380828602" />
           <link role="substituteModelQueryMethod" targetNodeId="1082380828619" />
-          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984070">
+          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984070">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1082380828594">
               <property name="name" value="substituteItemHandler_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082380828595">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082380828596">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082380828596">
                   <property name="name" value="UndefinedOperator" />
                   <link role="javaClass" targetNodeId="13.1081508092789" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082380828597">
                 <property name="name" value="itemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082380828598">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082380828598">
                   <property name="name" value="jetbrains.mps.core.BaseConcept" />
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
@@ -2850,7 +2851,7 @@
                 <property name="name" value="pattern" />
                 <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439769" />
               </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082380828601">
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1082380828601">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -2875,12 +2876,12 @@
               <property name="name" value="substituteItemModel_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082380828620">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082380828621">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082380828621">
                   <property name="name" value="UndefinedOperator" />
                   <link role="javaClass" targetNodeId="13.1081508092789" />
                 </node>
               </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082380828622">
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1082380828622">
                 <property name="name" value="java.util.LinkedList" />
                 <link role="javaClass" targetNodeId="16.1087811448220" />
               </node>
@@ -2902,19 +2903,19 @@
           <property name="handlerId" value="AssignmentExpressionFactory" />
           <link role="substituteHandlerQueryMethod" targetNodeId="1081927995931" />
           <link role="substituteHandlerQueryBody" targetNodeId="1081927995939" />
-          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984071">
+          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984071">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927995931">
               <property name="name" value="substituteItemHandler_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995932">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995933">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995933">
                   <property name="name" value="UndefinedOperator" />
                   <link role="javaClass" targetNodeId="13.1081508092789" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995934">
                 <property name="name" value="itemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995935">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995935">
                   <property name="name" value="jetbrains.mps.core.BaseConcept" />
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
@@ -2923,7 +2924,7 @@
                 <property name="name" value="pattern" />
                 <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439770" />
               </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995938">
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995938">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -2951,19 +2952,19 @@
           <property name="handlerId" value="InstanceMethodCallFactory" />
           <link role="substituteHandlerQueryMethod" targetNodeId="1081927995967" />
           <link role="substituteHandlerQueryBody" targetNodeId="1081927995975" />
-          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984072">
+          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984072">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927995967">
               <property name="name" value="substituteItemHandler_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995968">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995969">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995969">
                   <property name="name" value="UndefinedOperator" />
                   <link role="javaClass" targetNodeId="13.1081508092789" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995970">
                 <property name="name" value="itemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995971">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995971">
                   <property name="name" value="jetbrains.mps.core.BaseConcept" />
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
@@ -2972,7 +2973,7 @@
                 <property name="name" value="pattern" />
                 <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439771" />
               </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995974">
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995974">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -3000,19 +3001,19 @@
           <property name="handlerId" value="FieldReferenceFactory" />
           <link role="substituteHandlerQueryBody" targetNodeId="1081927996008" />
           <link role="substituteHandlerQueryMethod" targetNodeId="1081927995985" />
-          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984073">
+          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984073">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927995985">
               <property name="name" value="substituteItemHandler_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995986">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995987">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995987">
                   <property name="name" value="UndefinedOperator" />
                   <link role="javaClass" targetNodeId="13.1081508092789" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995988">
                 <property name="name" value="itemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995989">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995989">
                   <property name="name" value="jetbrains.mps.core.BaseConcept" />
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
@@ -3021,7 +3022,7 @@
                 <property name="name" value="pattern" />
                 <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439772" />
               </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996007">
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996007">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -3048,19 +3049,19 @@
           <property name="text" value="instanceof" />
           <link role="substituteHandlerQueryBody" targetNodeId="1082648409712" />
           <link role="substituteHandlerQueryMethod" targetNodeId="1082648409704" />
-          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984074">
+          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984074">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1082648409704">
               <property name="name" value="substituteItemHandler_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082648409705">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082648409706">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082648409706">
                   <property name="name" value="UndefinedOperator" />
                   <link role="javaClass" targetNodeId="13.1081508092789" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082648409707">
                 <property name="name" value="itemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082648409708">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082648409708">
                   <property name="name" value="jetbrains.mps.core.BaseConcept" />
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
@@ -3069,7 +3070,7 @@
                 <property name="name" value="pattern" />
                 <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439773" />
               </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082648409711">
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1082648409711">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -3077,7 +3078,7 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1082648736065">
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1082648736066">
                     <property name="name" value="semanticModel" />
-                    <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082648736067">
+                    <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082648736067">
                       <property name="name" value="jetbrains.mps.semanticModel.SemanticModel" />
                       <link role="javaClass" targetNodeId="15.1086945614636" />
                     </node>
@@ -3092,7 +3093,7 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1082648736070">
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1082648736071">
                     <link role="baseMethodDeclaration" targetNodeId="13.1081508093215" />
-                    <node role="javaClassType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082648736072">
+                    <node role="javaClassType" type="jetbrains.mps.baseLanguage.ClassType" id="1082648736072">
                       <property name="name" value="InstanceOfExpression" />
                       <link role="javaClass" targetNodeId="13.1081508093211" />
                     </node>
@@ -3109,19 +3110,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995889">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995890">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995890">
               <property name="name" value="UndefinedOperator" />
               <link role="javaClass" targetNodeId="13.1081508092789" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995891">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995892">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995892">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995893">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995893">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -3247,37 +3248,37 @@
           <property name="name" value="primitiveTypeParms" />
           <property name="queryId" value="AllVariablePrimitiveTypes" />
           <property name="textProviderId" value="ParmDeclarationText" />
-          <link role="substituteHandlerQueryBody" targetNodeId="1081927996896" />
-          <link role="substituteTextQueryBody" targetNodeId="1081927996912" />
-          <link role="substituteModelQueryMethod" targetNodeId="1081927996913" />
           <link role="substituteTextQueryMethod" targetNodeId="1081927996906" />
           <link role="substituteHandlerQueryMethod" targetNodeId="1081927996888" />
+          <link role="substituteTextQueryBody" targetNodeId="1081927996912" />
           <link role="substituteModelQueryBody" targetNodeId="1081927996917" />
-          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984075">
+          <link role="substituteModelQueryMethod" targetNodeId="1081927996913" />
+          <link role="substituteHandlerQueryBody" targetNodeId="1081927996896" />
+          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984075">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927996888">
               <property name="name" value="substituteItemHandler_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996889">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996890">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996890">
                   <property name="name" value="EmptyParmListActions" />
                   <link role="javaClass" targetNodeId="13.1081508094475" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996891">
                 <property name="name" value="itemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1086342816658">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1086342816658">
                   <property name="name" value="java.lang.Object" />
                   <link role="javaClass" targetNodeId="14.1086945614093" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996893">
                 <property name="name" value="pattern" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1086342816659">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1086342816659">
                   <property name="name" value="java.lang.String" />
                   <link role="javaClass" targetNodeId="14.1086945614127" />
                 </node>
               </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996895">
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996895">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -3302,14 +3303,14 @@
               <property name="name" value="substituteItemText_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996907">
                 <property name="name" value="mySourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996908">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996908">
                   <property name="name" value="EmptyParmListActions" />
                   <link role="javaClass" targetNodeId="13.1081508094475" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996909">
                 <property name="name" value="myItemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1086342816662">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1086342816662">
                   <property name="name" value="java.lang.Object" />
                   <link role="javaClass" targetNodeId="14.1086945614093" />
                 </node>
@@ -3333,12 +3334,12 @@
               <property name="name" value="substituteItemModel_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996914">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996915">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996915">
                   <property name="name" value="EmptyParmListActions" />
                   <link role="javaClass" targetNodeId="13.1081508094475" />
                 </node>
               </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996916">
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996916">
                 <property name="name" value="java.util.LinkedList" />
                 <link role="javaClass" targetNodeId="16.1087811448220" />
               </node>
@@ -3360,37 +3361,37 @@
           <property name="name" value="classTypeParms" />
           <property name="queryId" value="AllJavaClasses" />
           <property name="textProviderId" value="ParmDeclarationText" />
-          <link role="substituteHandlerQueryMethod" targetNodeId="1081927996918" />
           <link role="substituteTextQueryBody" targetNodeId="1081927996942" />
+          <link role="substituteModelQueryBody" targetNodeId="1081927996947" />
           <link role="substituteModelQueryMethod" targetNodeId="1081927996943" />
+          <link role="substituteHandlerQueryMethod" targetNodeId="1081927996918" />
           <link role="substituteTextQueryMethod" targetNodeId="1081927996936" />
           <link role="substituteHandlerQueryBody" targetNodeId="1081927996926" />
-          <link role="substituteModelQueryBody" targetNodeId="1081927996947" />
-          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984076">
+          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984076">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927996918">
               <property name="name" value="substituteItemHandler_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996919">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996920">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996920">
                   <property name="name" value="EmptyParmListActions" />
                   <link role="javaClass" targetNodeId="13.1081508094475" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996921">
                 <property name="name" value="itemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1086342816664">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1086342816664">
                   <property name="name" value="java.lang.Object" />
                   <link role="javaClass" targetNodeId="14.1086945614093" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996923">
                 <property name="name" value="pattern" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1086342816665">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1086342816665">
                   <property name="name" value="java.lang.String" />
                   <link role="javaClass" targetNodeId="14.1086945614127" />
                 </node>
               </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996925">
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996925">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -3415,14 +3416,14 @@
               <property name="name" value="substituteItemText_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996937">
                 <property name="name" value="mySourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996938">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996938">
                   <property name="name" value="EmptyParmListActions" />
                   <link role="javaClass" targetNodeId="13.1081508094475" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996939">
                 <property name="name" value="myItemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1086342816668">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1086342816668">
                   <property name="name" value="java.lang.Object" />
                   <link role="javaClass" targetNodeId="14.1086945614093" />
                 </node>
@@ -3446,12 +3447,12 @@
               <property name="name" value="substituteItemModel_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996944">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996945">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996945">
                   <property name="name" value="EmptyParmListActions" />
                   <link role="javaClass" targetNodeId="13.1081508094475" />
                 </node>
               </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996946">
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996946">
                 <property name="name" value="java.util.LinkedList" />
                 <link role="javaClass" targetNodeId="16.1087811448220" />
               </node>
@@ -3472,19 +3473,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996882">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996883">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996883">
               <property name="name" value="EmptyParmListActions" />
               <link role="javaClass" targetNodeId="13.1081508094475" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996884">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996885">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996885">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996886">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996886">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -3591,19 +3592,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1095167470543">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1095167470544">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1095167470544">
               <property name="name" value="EmptyArgListActions" />
               <link role="javaClass" targetNodeId="13.1081508094543" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1095167470545">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1095167470546">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1095167470546">
               <property name="name" value="java.lang.Object" />
               <link role="javaClass" targetNodeId="14.1086945614093" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1095167470547">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1095167470547">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -3656,19 +3657,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995852">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995853">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995853">
               <property name="name" value="CastExpression" />
               <link role="javaClass" targetNodeId="13.1081508092645" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995854">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995855">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995855">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995856">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995856">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -3701,19 +3702,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995859">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995860">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995860">
               <property name="name" value="CastExpression" />
               <link role="javaClass" targetNodeId="13.1081508092645" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995861">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995862">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995862">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995863">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995863">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -3741,17 +3742,17 @@
         <property name="text" value="(" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1080902646662">
-        <link role="linkDeclaration" targetNodeId="8.1070534934091" />
         <link role="errorActionSet" targetNodeId="1077284637890" />
         <link role="actionSet" targetNodeId="1080903478359" />
+        <link role="linkDeclaration" targetNodeId="8.1070534934091" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1080902646663">
         <property name="text" value=")" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1080902646664">
-        <link role="errorActionSet" targetNodeId="1077284637890" />
         <link role="linkDeclaration" targetNodeId="8.1070534934092" />
         <link role="actionSet" targetNodeId="1080903734783" />
+        <link role="errorActionSet" targetNodeId="1077284637890" />
       </node>
     </node>
   </node>
@@ -3771,19 +3772,19 @@
           <link role="substituteTextQueryBody" targetNodeId="1081927995800" />
           <link role="substituteTextQueryMethod" targetNodeId="1081927995794" />
           <link role="substituteModelQueryBody" targetNodeId="1081927995805" />
-          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984077">
+          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984077">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927995794">
               <property name="name" value="substituteItemText_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995795">
                 <property name="name" value="mySourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995796">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995796">
                   <property name="name" value="MethodCall" />
                   <link role="javaClass" targetNodeId="13.1081508092191" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995797">
                 <property name="name" value="myItemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995798">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995798">
                   <property name="name" value="jetbrains.mps.core.BaseConcept" />
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
@@ -3807,12 +3808,12 @@
               <property name="name" value="substituteItemModel_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995802">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995803">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995803">
                   <property name="name" value="MethodCall" />
                   <link role="javaClass" targetNodeId="13.1081508092191" />
                 </node>
               </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995804">
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995804">
                 <property name="name" value="java.util.LinkedList" />
                 <link role="javaClass" targetNodeId="16.1087811448220" />
               </node>
@@ -3833,19 +3834,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995770">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995771">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995771">
               <property name="name" value="MethodCall" />
               <link role="javaClass" targetNodeId="13.1081508092191" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995772">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995773">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995773">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995774">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995774">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -3909,19 +3910,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994737">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994738">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994738">
               <property name="name" value="MethodDeclaration" />
               <link role="javaClass" targetNodeId="13.1081508090903" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994739">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994740">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994740">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994741">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994741">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -4006,19 +4007,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996167">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996168">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996168">
               <property name="name" value="InstanceOfExpression" />
               <link role="javaClass" targetNodeId="13.1081508093211" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996169">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996170">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996170">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996171">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996171">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -4048,19 +4049,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996190">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996191">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996191">
               <property name="name" value="InstanceOfExpression" />
               <link role="javaClass" targetNodeId="13.1081508093211" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996192">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996193">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996193">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996194">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996194">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -4095,9 +4096,9 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081257097748">
         <property name="selectable" value="true" />
-        <link role="actionSet" targetNodeId="1081257125115" />
         <link role="errorActionSet" targetNodeId="1077284637890" />
         <link role="linkDeclaration" targetNodeId="8.1081256993305" />
+        <link role="actionSet" targetNodeId="1081257125115" />
       </node>
     </node>
   </node>
@@ -4115,19 +4116,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995866">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995867">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995867">
               <property name="name" value="WhileStatement" />
               <link role="javaClass" targetNodeId="13.1081508092756" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995868">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995869">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995869">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995870">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995870">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -4159,10 +4160,10 @@
           <property name="text" value="(" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081264296766">
-          <link role="errorActionSet" targetNodeId="1077284637890" />
-          <link role="linkDeclaration" targetNodeId="8.1076505808688" />
-          <link role="keyMap" targetNodeId="1081427357000" />
           <link role="actionSet" targetNodeId="1081264222445" />
+          <link role="errorActionSet" targetNodeId="1077284637890" />
+          <link role="keyMap" targetNodeId="1081427357000" />
+          <link role="linkDeclaration" targetNodeId="8.1076505808688" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1081264296767">
           <property name="text" value=") {" />
@@ -4209,19 +4210,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927997268">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927997269">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927997269">
               <property name="name" value="Actions" />
               <link role="javaClass" targetNodeId="13.1081926010613" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927997270">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1086342816685">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1086342816685">
               <property name="name" value="java.lang.Object" />
               <link role="javaClass" targetNodeId="14.1086945614093" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927997272">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927997272">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -4260,19 +4261,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927997275">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927997276">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927997276">
               <property name="name" value="Actions" />
               <link role="javaClass" targetNodeId="13.1081926010613" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927997277">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1086342816687">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1086342816687">
               <property name="name" value="java.lang.Object" />
               <link role="javaClass" targetNodeId="14.1086945614093" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927997279">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927997279">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -4293,9 +4294,9 @@
       </node>
     </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081776482710">
+      <link role="linkDeclaration" targetNodeId="8.1081773367579" />
       <link role="actionSet" targetNodeId="1081776482708" />
       <link role="errorActionSet" targetNodeId="1077284637890" />
-      <link role="linkDeclaration" targetNodeId="8.1081773367579" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1081790432906">
@@ -4319,19 +4320,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1095254471171">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1095254471172">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1095254471172">
               <property name="name" value="SuperConstructorInvocation" />
               <link role="javaClass" targetNodeId="13.1081508092498" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1095254471173">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1095254471174">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1095254471174">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1095254471175">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1095254471175">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -4384,30 +4385,30 @@
         <link role="substituteQueryBody" targetNodeId="1091709481236" />
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1091709481237">
           <property name="name" value="superMethods" />
-          <link role="substituteDescriptionTextQueryMethod" targetNodeId="1091709481244" />
-          <link role="substituteHandlerQueryBody" targetNodeId="1091709481239" />
-          <link role="substituteDescriptionTextQueryBody" targetNodeId="1091709481245" />
+          <link role="substituteTextQueryMethod" targetNodeId="1091709481242" />
           <link role="substituteMatcherQueryBody" targetNodeId="1091709481241" />
+          <link role="substituteTextQueryMethod" targetNodeId="1091709481242" />
+          <link role="substituteDescriptionTextQueryBody" targetNodeId="1091709481245" />
+          <link role="substituteHandlerQueryBody" targetNodeId="1091709481239" />
+          <link role="substituteModelQueryMethod" targetNodeId="1091709481246" />
+          <link role="substituteDescriptionTextQueryMethod" targetNodeId="1091709481244" />
+          <link role="substituteMatcherQueryMethod" targetNodeId="1091709481240" />
           <link role="substituteModelQueryMethod" targetNodeId="1091709481246" />
           <link role="substituteHandlerQueryMethod" targetNodeId="1091709481238" />
-          <link role="substituteTextQueryMethod" targetNodeId="1091709481242" />
-          <link role="substituteMatcherQueryMethod" targetNodeId="1091709481240" />
-          <link role="substituteModelQueryBody" targetNodeId="1091709481247" />
-          <link role="substituteTextQueryMethod" targetNodeId="1091709481242" />
-          <link role="substituteModelQueryMethod" targetNodeId="1091709481246" />
           <link role="substituteTextQueryBody" targetNodeId="1091709481243" />
-          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1091709481248">
+          <link role="substituteModelQueryBody" targetNodeId="1091709481247" />
+          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1091709481248">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1091709481238">
               <property name="name" value="substituteItemHandler_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1091709481249">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1091709481250">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1091709481250">
                   <link role="javaClass" targetNodeId="13.1081508092685" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1091709481251">
                 <property name="name" value="itemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1091709481252">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1091709481252">
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
               </node>
@@ -4415,7 +4416,7 @@
                 <property name="name" value="pattern" />
                 <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1091709481254" />
               </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1091709481255">
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1091709481255">
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1091709481239" />
@@ -4424,13 +4425,13 @@
               <property name="name" value="substituteItemMatcher_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1091709481256">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1091709481257">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1091709481257">
                   <link role="javaClass" targetNodeId="13.1081508092685" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1091709481258">
                 <property name="name" value="itemNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1091709481259">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1091709481259">
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
               </node>
@@ -4447,13 +4448,13 @@
               <property name="name" value="substituteItemText_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1091709481263">
                 <property name="name" value="mySourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1091709481264">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1091709481264">
                   <link role="javaClass" targetNodeId="13.1081508092685" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1091709481265">
                 <property name="name" value="myItemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1091709481266">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1091709481266">
                   <link role="javaClass" targetNodeId="14.1086945614093" />
                 </node>
               </node>
@@ -4476,13 +4477,13 @@
               <property name="name" value="substituteItemDescriptionText_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1091709481274">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1091709481275">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1091709481275">
                   <link role="javaClass" targetNodeId="13.1081508092685" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1091709481276">
                 <property name="name" value="itemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1091709481277">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1091709481277">
                   <link role="javaClass" targetNodeId="14.1086945614093" />
                 </node>
               </node>
@@ -4493,11 +4494,11 @@
               <property name="name" value="substituteItemModel_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1091709481279">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1091709481280">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1091709481280">
                   <link role="javaClass" targetNodeId="13.1081508092685" />
                 </node>
               </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1091709481281">
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1091709481281">
                 <link role="javaClass" targetNodeId="16.1087811448220" />
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1091709481247">
@@ -4517,17 +4518,17 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1091709481287">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1091709481288">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1091709481288">
               <link role="javaClass" targetNodeId="13.1081508092685" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1091709481289">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1091709481290">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1091709481290">
               <link role="javaClass" targetNodeId="15.1086945614627" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1091709481291">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1091709481291">
             <link role="javaClass" targetNodeId="15.1086945614627" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1091709481236">
@@ -4593,19 +4594,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082740734721">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082740734722">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082740734722">
               <property name="name" value="StaticFieldReference" />
               <link role="javaClass" targetNodeId="13.1081508092550" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082740734723">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082740734724">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082740734724">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082740734725">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1082740734725">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -4613,12 +4614,12 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1082741878874">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1082741878875">
                 <property name="name" value="classType" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082741878876">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082741878876">
                   <property name="name" value="JavaClassType" />
                   <link role="javaClass" targetNodeId="13.1081508091231" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1082741878877">
-                  <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082741878878">
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082741878878">
                     <property name="name" value="JavaClassType" />
                     <link role="javaClass" targetNodeId="13.1081508091231" />
                   </node>
@@ -4631,12 +4632,12 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1082741878880">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1082741878881">
                 <property name="name" value="staticFieldReference" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082741878882">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082741878882">
                   <property name="name" value="StaticFieldReference" />
                   <link role="javaClass" targetNodeId="13.1081508092550" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1082741878883">
-                  <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082741878884">
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082741878884">
                     <property name="name" value="StaticFieldReference" />
                     <link role="javaClass" targetNodeId="13.1081508092550" />
                   </node>
@@ -4675,23 +4676,23 @@
         <link role="substituteQueryBody" targetNodeId="1082742196817" />
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082742081261">
           <property name="name" value="fields" />
-          <link role="substituteModelQueryMethod" targetNodeId="1082742196814" />
           <link role="substituteTextQueryBody" targetNodeId="1082742196813" />
-          <link role="substituteTextQueryMethod" targetNodeId="1082742196812" />
           <link role="substituteModelQueryBody" targetNodeId="1082742196815" />
-          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984078">
+          <link role="substituteTextQueryMethod" targetNodeId="1082742196812" />
+          <link role="substituteModelQueryMethod" targetNodeId="1082742196814" />
+          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984078">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1082742196812">
               <property name="name" value="substituteItemText_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082742196994">
                 <property name="name" value="mySourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082742196995">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082742196995">
                   <property name="name" value="StaticFieldReference" />
                   <link role="javaClass" targetNodeId="13.1081508092550" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082742196996">
                 <property name="name" value="myItemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082742196997">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082742196997">
                   <property name="name" value="jetbrains.mps.core.BaseConcept" />
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
@@ -4715,12 +4716,12 @@
               <property name="name" value="substituteItemModel_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082742196999">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082742197000">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082742197000">
                   <property name="name" value="StaticFieldReference" />
                   <link role="javaClass" targetNodeId="13.1081508092550" />
                 </node>
               </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082742197001">
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1082742197001">
                 <property name="name" value="java.util.LinkedList" />
                 <link role="javaClass" targetNodeId="16.1087811448220" />
               </node>
@@ -4741,19 +4742,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082742196975">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082742196976">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082742196976">
               <property name="name" value="StaticFieldReference" />
               <link role="javaClass" targetNodeId="13.1081508092550" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082742196977">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082742196978">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082742196978">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082742196979">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1082742196979">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -4761,12 +4762,12 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1082742343080">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1082742343081">
                 <property name="name" value="staticField" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082742343082">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082742343082">
                   <property name="name" value="StaticFieldDeclaration" />
                   <link role="javaClass" targetNodeId="13.1081508090884" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1082742343083">
-                  <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082742343084">
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082742343084">
                     <property name="name" value="StaticFieldDeclaration" />
                     <link role="javaClass" targetNodeId="13.1081508090884" />
                   </node>
@@ -4779,12 +4780,12 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1082742343086">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1082742343087">
                 <property name="name" value="staticFieldReference" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082742343088">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082742343088">
                   <property name="name" value="StaticFieldReference" />
                   <link role="javaClass" targetNodeId="13.1081508092550" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1082742343089">
-                  <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082742343090">
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082742343090">
                     <property name="name" value="StaticFieldReference" />
                     <link role="javaClass" targetNodeId="13.1081508092550" />
                   </node>
@@ -4851,23 +4852,23 @@
           <property name="name" value="constructors" />
           <property name="queryId" value="AllConstructors" />
           <property name="textProviderId" value="JavaElementText" />
-          <link role="substituteTextQueryMethod" targetNodeId="1081927995081" />
           <link role="substituteTextQueryBody" targetNodeId="1081927995087" />
-          <link role="substituteModelQueryBody" targetNodeId="1081927995092" />
+          <link role="substituteTextQueryMethod" targetNodeId="1081927995081" />
           <link role="substituteModelQueryMethod" targetNodeId="1081927995088" />
-          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984095">
+          <link role="substituteModelQueryBody" targetNodeId="1081927995092" />
+          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984095">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927995081">
               <property name="name" value="substituteItemText_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995082">
                 <property name="name" value="mySourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995083">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995083">
                   <property name="name" value="ConstructorCall" />
                   <link role="javaClass" targetNodeId="13.1081508091211" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995084">
                 <property name="name" value="myItemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1086342816546">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1086342816546">
                   <property name="name" value="java.lang.Object" />
                   <link role="javaClass" targetNodeId="14.1086945614093" />
                 </node>
@@ -4891,12 +4892,12 @@
               <property name="name" value="substituteItemModel_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995089">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995090">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995090">
                   <property name="name" value="ConstructorCall" />
                   <link role="javaClass" targetNodeId="13.1081508091211" />
                 </node>
               </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995091">
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995091">
                 <property name="name" value="java.util.LinkedList" />
                 <link role="javaClass" targetNodeId="16.1087811448220" />
               </node>
@@ -4917,19 +4918,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995057">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995058">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995058">
               <property name="name" value="ConstructorCall" />
               <link role="javaClass" targetNodeId="13.1081508091211" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995059">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995060">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995060">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995061">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995061">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -4997,19 +4998,19 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082387503954">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082387503955">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082387503955">
               <property name="name" value="ParenthesizedExpression" />
               <link role="javaClass" targetNodeId="13.1081508092912" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082387503956">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082387503957">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082387503957">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082387503958">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1082387503958">
             <property name="name" value="jetbrains.mps.core.BaseConcept" />
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
@@ -5184,25 +5185,25 @@
         <property name="name" value="fields" />
         <property name="queryId" value="JavaClassFields" />
         <property name="textProviderId" value="JavaElementText" />
-        <link role="substituteHandlerQueryBody" targetNodeId="1081927996211" />
-        <link role="substituteModelQueryMethod" targetNodeId="1081927996228" />
-        <link role="substituteModelQueryBody" targetNodeId="1081927996232" />
-        <link role="substituteTextQueryBody" targetNodeId="1081927996227" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1081927996203" />
         <link role="substituteTextQueryMethod" targetNodeId="1081927996221" />
-        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984096">
+        <link role="substituteModelQueryMethod" targetNodeId="1081927996228" />
+        <link role="substituteTextQueryBody" targetNodeId="1081927996227" />
+        <link role="substituteModelQueryBody" targetNodeId="1081927996232" />
+        <link role="substituteHandlerQueryBody" targetNodeId="1081927996211" />
+        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984096">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927996203">
             <property name="name" value="substituteItemHandler_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996204">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996205">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996205">
                 <property name="name" value="Expression_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093331" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996206">
               <property name="name" value="itemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996207">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996207">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -5211,7 +5212,7 @@
               <property name="name" value="pattern" />
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439790" />
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996210">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996210">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
@@ -5236,14 +5237,14 @@
             <property name="name" value="substituteItemText_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996222">
               <property name="name" value="mySourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996223">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996223">
                 <property name="name" value="Expression_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093331" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996224">
               <property name="name" value="myItemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996225">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996225">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -5267,12 +5268,12 @@
             <property name="name" value="substituteItemModel_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996229">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996230">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996230">
                 <property name="name" value="Expression_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093331" />
               </node>
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996231">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996231">
               <property name="name" value="java.util.LinkedList" />
               <link role="javaClass" targetNodeId="16.1087811448220" />
             </node>
@@ -5294,27 +5295,27 @@
         <property name="name" value="parameters" />
         <property name="queryId" value="JavaMethodParameters" />
         <property name="textProviderId" value="JavaElementText" />
-        <link role="substituteTextQueryMethod" targetNodeId="1081927996251" />
+        <link role="substituteHandlerQueryMethod" targetNodeId="1081927996233" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1081927996233" />
         <link role="substituteModelQueryMethod" targetNodeId="1081927996258" />
         <link role="substituteModelQueryBody" targetNodeId="1081927996262" />
-        <link role="substituteTextQueryBody" targetNodeId="1081927996257" />
-        <link role="substituteHandlerQueryBody" targetNodeId="1081927996241" />
         <link role="substituteModelQueryMethod" targetNodeId="1081927996258" />
-        <link role="substituteHandlerQueryMethod" targetNodeId="1081927996233" />
-        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984097">
+        <link role="substituteHandlerQueryBody" targetNodeId="1081927996241" />
+        <link role="substituteTextQueryMethod" targetNodeId="1081927996251" />
+        <link role="substituteTextQueryBody" targetNodeId="1081927996257" />
+        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984097">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927996233">
             <property name="name" value="substituteItemHandler_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996234">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996235">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996235">
                 <property name="name" value="Expression_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093331" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996236">
               <property name="name" value="itemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996237">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996237">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -5323,7 +5324,7 @@
               <property name="name" value="pattern" />
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439791" />
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996240">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996240">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
@@ -5348,14 +5349,14 @@
             <property name="name" value="substituteItemText_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996252">
               <property name="name" value="mySourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996253">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996253">
                 <property name="name" value="Expression_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093331" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996254">
               <property name="name" value="myItemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996255">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996255">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -5379,12 +5380,12 @@
             <property name="name" value="substituteItemModel_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996259">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996260">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996260">
                 <property name="name" value="Expression_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093331" />
               </node>
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996261">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996261">
               <property name="name" value="java.util.LinkedList" />
               <link role="javaClass" targetNodeId="16.1087811448220" />
             </node>
@@ -5412,19 +5413,19 @@
         <link role="substituteHandlerQueryMethod" targetNodeId="1081927996263" />
         <link role="substituteModelQueryBody" targetNodeId="1081927996292" />
         <link role="substituteTextQueryMethod" targetNodeId="1081927996281" />
-        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984098">
+        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984098">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927996263">
             <property name="name" value="substituteItemHandler_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996264">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996265">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996265">
                 <property name="name" value="Expression_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093331" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996266">
               <property name="name" value="itemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996267">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996267">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -5433,7 +5434,7 @@
               <property name="name" value="pattern" />
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439792" />
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996270">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996270">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
@@ -5458,14 +5459,14 @@
             <property name="name" value="substituteItemText_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996282">
               <property name="name" value="mySourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996283">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996283">
                 <property name="name" value="Expression_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093331" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996284">
               <property name="name" value="myItemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996285">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996285">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -5489,12 +5490,12 @@
             <property name="name" value="substituteItemModel_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996289">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996290">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996290">
                 <property name="name" value="Expression_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093331" />
               </node>
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996291">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996291">
               <property name="name" value="java.util.LinkedList" />
               <link role="javaClass" targetNodeId="16.1087811448220" />
             </node>
@@ -5517,24 +5518,24 @@
         <property name="queryId" value="FreeMethods" />
         <property name="textProviderId" value="JavaElementText" />
         <link role="substituteModelQueryBody" targetNodeId="1081927996322" />
-        <link role="substituteTextQueryMethod" targetNodeId="1081927996311" />
+        <link role="substituteTextQueryBody" targetNodeId="1081927996317" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1081927996293" />
         <link role="substituteModelQueryMethod" targetNodeId="1081927996318" />
-        <link role="substituteTextQueryBody" targetNodeId="1081927996317" />
         <link role="substituteHandlerQueryBody" targetNodeId="1081927996301" />
-        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984099">
+        <link role="substituteTextQueryMethod" targetNodeId="1081927996311" />
+        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984099">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927996293">
             <property name="name" value="substituteItemHandler_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996294">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996295">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996295">
                 <property name="name" value="Expression_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093331" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996296">
               <property name="name" value="itemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996297">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996297">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -5543,7 +5544,7 @@
               <property name="name" value="pattern" />
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439793" />
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996300">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996300">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
@@ -5568,14 +5569,14 @@
             <property name="name" value="substituteItemText_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996312">
               <property name="name" value="mySourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996313">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996313">
                 <property name="name" value="Expression_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093331" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996314">
               <property name="name" value="myItemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996315">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996315">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -5599,12 +5600,12 @@
             <property name="name" value="substituteItemModel_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996319">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996320">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996320">
                 <property name="name" value="Expression_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093331" />
               </node>
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996321">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996321">
               <property name="name" value="java.util.LinkedList" />
               <link role="javaClass" targetNodeId="16.1087811448220" />
             </node>
@@ -5626,25 +5627,25 @@
         <property name="name" value="instanceMethods" />
         <property name="queryId" value="JavaClassMethods" />
         <property name="textProviderId" value="JavaElementText" />
-        <link role="substituteTextQueryMethod" targetNodeId="1081927996341" />
-        <link role="substituteTextQueryBody" targetNodeId="1081927996347" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1081927996323" />
+        <link role="substituteTextQueryBody" targetNodeId="1081927996347" />
         <link role="substituteModelQueryBody" targetNodeId="1081927996352" />
+        <link role="substituteTextQueryMethod" targetNodeId="1081927996341" />
         <link role="substituteModelQueryMethod" targetNodeId="1081927996348" />
         <link role="substituteHandlerQueryBody" targetNodeId="1081927996331" />
-        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984100">
+        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984100">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927996323">
             <property name="name" value="substituteItemHandler_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996324">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996325">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996325">
                 <property name="name" value="Expression_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093331" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996326">
               <property name="name" value="itemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996327">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996327">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -5653,7 +5654,7 @@
               <property name="name" value="pattern" />
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439794" />
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996330">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996330">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
@@ -5678,14 +5679,14 @@
             <property name="name" value="substituteItemText_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996342">
               <property name="name" value="mySourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996343">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996343">
                 <property name="name" value="Expression_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093331" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996344">
               <property name="name" value="myItemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996345">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996345">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -5709,12 +5710,12 @@
             <property name="name" value="substituteItemModel_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996349">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996350">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996350">
                 <property name="name" value="Expression_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093331" />
               </node>
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996351">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996351">
               <property name="name" value="java.util.LinkedList" />
               <link role="javaClass" targetNodeId="16.1087811448220" />
             </node>
@@ -5734,22 +5735,22 @@
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082130899953">
         <property name="name" value="expressionTypes" />
         <link role="substituteModelQueryBody" targetNodeId="1082131184617" />
+        <link role="substituteModelQueryMethod" targetNodeId="1082131184613" />
         <link role="substituteHandlerQueryBody" targetNodeId="1082131184588" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1082131184580" />
-        <link role="substituteModelQueryMethod" targetNodeId="1082131184613" />
-        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984101">
+        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984101">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1082131184580">
             <property name="name" value="substituteItemHandler_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082131184581">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082131184582">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082131184582">
                 <property name="name" value="_Expression_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1082131184579" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082131184583">
               <property name="name" value="itemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082131184584">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082131184584">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -5758,7 +5759,7 @@
               <property name="name" value="pattern" />
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439811" />
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082131184587">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1082131184587">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
@@ -5783,12 +5784,12 @@
             <property name="name" value="substituteItemModel_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082131184614">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082131184615">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082131184615">
                 <property name="name" value="_Expression_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1082131184579" />
               </node>
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082131184616">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1082131184616">
               <property name="name" value="java.util.LinkedList" />
               <link role="javaClass" targetNodeId="16.1087811448220" />
             </node>
@@ -5815,19 +5816,19 @@
         <property name="handlerId" value="FalseLiteralFactory" />
         <link role="substituteHandlerQueryBody" targetNodeId="1081927996361" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1081927996353" />
-        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984102">
+        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984102">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927996353">
             <property name="name" value="substituteItemHandler_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996354">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996355">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996355">
                 <property name="name" value="Expression_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093331" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996356">
               <property name="name" value="itemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996357">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996357">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -5836,7 +5837,7 @@
               <property name="name" value="pattern" />
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439812" />
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996360">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996360">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
@@ -5864,19 +5865,19 @@
         <property name="handlerId" value="TrueLiteralFactory" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1081927996371" />
         <link role="substituteHandlerQueryBody" targetNodeId="1081927996379" />
-        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984103">
+        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984103">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927996371">
             <property name="name" value="substituteItemHandler_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996372">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996373">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996373">
                 <property name="name" value="Expression_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093331" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996374">
               <property name="name" value="itemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996375">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996375">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -5885,7 +5886,7 @@
               <property name="name" value="pattern" />
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439813" />
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996378">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996378">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
@@ -5912,24 +5913,24 @@
         <property name="matcherId" value="IntegerLiteralMatcher" />
         <property name="text" value="integer constant" />
         <property name="handlerId" value="IntegerLiteralFactory" />
-        <link role="substituteMatcherQueryBody" targetNodeId="1081927996406" />
-        <link role="substituteMatcherQueryMethod" targetNodeId="1081927996398" />
-        <link role="substituteHandlerQueryMethod" targetNodeId="1081927996389" />
         <link role="substituteHandlerQueryBody" targetNodeId="1081927996397" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1081927996389" />
-        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984104">
+        <link role="substituteMatcherQueryMethod" targetNodeId="1081927996398" />
+        <link role="substituteMatcherQueryBody" targetNodeId="1081927996406" />
+        <link role="substituteHandlerQueryMethod" targetNodeId="1081927996389" />
+        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984104">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927996389">
             <property name="name" value="substituteItemHandler_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996390">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996391">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996391">
                 <property name="name" value="Expression_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093331" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996392">
               <property name="name" value="itemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996393">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996393">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -5938,7 +5939,7 @@
               <property name="name" value="pattern" />
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439814" />
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996396">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996396">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
@@ -5946,13 +5947,13 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1083144100785">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1083144100786">
                   <property name="name" value="intLiteral" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1083144100787">
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1083144100787">
                     <property name="name" value="IntegerConstant" />
                     <link role="javaClass" targetNodeId="13.1081508092040" />
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1083144100788">
                     <link role="baseMethodDeclaration" targetNodeId="13.1081508092044" />
-                    <node role="javaClassType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1083144100789">
+                    <node role="javaClassType" type="jetbrains.mps.baseLanguage.ClassType" id="1083144100789">
                       <property name="name" value="IntegerConstant" />
                       <link role="javaClass" targetNodeId="13.1081508092040" />
                     </node>
@@ -5990,14 +5991,14 @@
             <property name="name" value="substituteItemMatcher_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996399">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927996400">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927996400">
                 <property name="name" value="Expression_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1081508093331" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927996401">
               <property name="name" value="itemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1095091330723">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1095091330723">
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
             </node>
@@ -6014,7 +6015,7 @@
                   <property name="name" value="intConstantType" />
                   <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1095091330727">
                     <link role="baseMethodDeclaration" targetNodeId="15.1086945614672" />
-                    <node role="javaClassType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1095091330728">
+                    <node role="javaClassType" type="jetbrains.mps.baseLanguage.ClassType" id="1095091330728">
                       <link role="javaClass" targetNodeId="15.1086945614633" />
                     </node>
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1095091330730">
@@ -6027,7 +6028,7 @@
                       <property name="value" value="IntegerConstant" />
                     </node>
                   </node>
-                  <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1100543115633">
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1100543115633">
                     <link role="javaClass" targetNodeId="17.1086945615917" />
                   </node>
                 </node>
@@ -6037,7 +6038,7 @@
                   <property name="name" value="propDeclaration" />
                   <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1095093597721">
                     <link role="baseMethodDeclaration" targetNodeId="15.1086945615379" />
-                    <node role="javaClassType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1095093597722">
+                    <node role="javaClassType" type="jetbrains.mps.baseLanguage.ClassType" id="1095093597722">
                       <link role="javaClass" targetNodeId="15.1086945615339" />
                     </node>
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1095093597724">
@@ -6047,7 +6048,7 @@
                       <property name="value" value="value" />
                     </node>
                   </node>
-                  <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1100543115634">
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1100543115634">
                     <link role="javaClass" targetNodeId="17.1100542739192" />
                   </node>
                 </node>
@@ -6055,12 +6056,12 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1095093597727">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1095093597728">
                   <property name="name" value="propSupport" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1095093597729">
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1095093597729">
                     <link role="javaClass" targetNodeId="15.1086945615739" />
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1095093597730">
                     <link role="baseMethodDeclaration" targetNodeId="15.1086945615755" />
-                    <node role="javaClassType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1095093597731">
+                    <node role="javaClassType" type="jetbrains.mps.baseLanguage.ClassType" id="1095093597731">
                       <link role="javaClass" targetNodeId="15.1086945615739" />
                     </node>
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1095093597733">
@@ -6160,23 +6161,23 @@
         <property name="handlerId" value="GenericNodeInstanceFactory" />
         <property name="name" value="statements" />
         <property name="queryId" value="AllStatementTypes" />
-        <link role="substituteHandlerQueryMethod" targetNodeId="1082043423203" />
         <link role="substituteModelQueryMethod" targetNodeId="1082043423209" />
-        <link role="substituteModelQueryBody" targetNodeId="1082043423210" />
+        <link role="substituteHandlerQueryMethod" targetNodeId="1082043423203" />
         <link role="substituteHandlerQueryBody" targetNodeId="1082043423204" />
-        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984105">
+        <link role="substituteModelQueryBody" targetNodeId="1082043423210" />
+        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984105">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1082043423203">
             <property name="name" value="substituteItemHandler_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082043423437">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082043423438">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082043423438">
                 <property name="name" value="StatementList" />
                 <link role="javaClass" targetNodeId="13.1081508091130" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082043423439">
               <property name="name" value="itemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082043423440">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082043423440">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -6185,7 +6186,7 @@
               <property name="name" value="pattern" />
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249704899" />
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082043423443">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1082043423443">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
@@ -6210,12 +6211,12 @@
             <property name="name" value="substituteItemModel_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082043423456">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082043423457">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082043423457">
                 <property name="name" value="StatementList" />
                 <link role="javaClass" targetNodeId="13.1081508091130" />
               </node>
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082043423458">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1082043423458">
               <property name="name" value="java.util.LinkedList" />
               <link role="javaClass" targetNodeId="16.1087811448220" />
             </node>
@@ -6236,23 +6237,23 @@
         <property name="handlerId" value="GenericNodeInstanceFactory" />
         <property name="name" value="expressions" />
         <property name="queryId" value="ExpressionTypes_LeafOnly_Instantiatable_NoBinary" />
-        <link role="substituteModelQueryBody" targetNodeId="1082043423218" />
         <link role="substituteHandlerQueryBody" targetNodeId="1082043423212" />
-        <link role="substituteModelQueryMethod" targetNodeId="1082043423217" />
+        <link role="substituteModelQueryBody" targetNodeId="1082043423218" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1082043423211" />
-        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984106">
+        <link role="substituteModelQueryMethod" targetNodeId="1082043423217" />
+        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984106">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1082043423211">
             <property name="name" value="substituteItemHandler_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082043423459">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082043423460">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082043423460">
                 <property name="name" value="StatementList" />
                 <link role="javaClass" targetNodeId="13.1081508091130" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082043423461">
               <property name="name" value="itemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082043423462">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082043423462">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -6261,7 +6262,7 @@
               <property name="name" value="pattern" />
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249704900" />
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082043423465">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1082043423465">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
@@ -6286,12 +6287,12 @@
             <property name="name" value="substituteItemModel_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082043423478">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082043423479">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082043423479">
                 <property name="name" value="StatementList" />
                 <link role="javaClass" targetNodeId="13.1081508091130" />
               </node>
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082043423480">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1082043423480">
               <property name="name" value="java.util.LinkedList" />
               <link role="javaClass" targetNodeId="16.1087811448220" />
             </node>
@@ -6314,25 +6315,25 @@
         <property name="descriptionProviderId" value="JavaElementDescriptionText" />
         <property name="queryId" value="FreeMethods" />
         <property name="textProviderId" value="JavaElementMatchingText" />
-        <link role="substituteModelQueryBody" targetNodeId="1081927994856" />
-        <link role="substituteTextQueryBody" targetNodeId="1081927994851" />
-        <link role="substituteHandlerQueryMethod" targetNodeId="1081927994827" />
-        <link role="substituteTextQueryMethod" targetNodeId="1081927994845" />
         <link role="substituteModelQueryMethod" targetNodeId="1081927994852" />
+        <link role="substituteTextQueryBody" targetNodeId="1081927994851" />
+        <link role="substituteTextQueryMethod" targetNodeId="1081927994845" />
+        <link role="substituteHandlerQueryMethod" targetNodeId="1081927994827" />
+        <link role="substituteModelQueryBody" targetNodeId="1081927994856" />
         <link role="substituteHandlerQueryBody" targetNodeId="1081927994835" />
-        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984107">
+        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984107">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927994827">
             <property name="name" value="substituteItemHandler_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994828">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994829">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994829">
                 <property name="name" value="StatementList" />
                 <link role="javaClass" targetNodeId="13.1081508091130" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994830">
               <property name="name" value="itemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994831">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994831">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -6341,7 +6342,7 @@
               <property name="name" value="pattern" />
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249704901" />
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994834">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994834">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
@@ -6366,14 +6367,14 @@
             <property name="name" value="substituteItemText_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994846">
               <property name="name" value="mySourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994847">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994847">
                 <property name="name" value="StatementList" />
                 <link role="javaClass" targetNodeId="13.1081508091130" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994848">
               <property name="name" value="myItemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994849">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994849">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -6397,12 +6398,12 @@
             <property name="name" value="substituteItemModel_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994853">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994854">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994854">
                 <property name="name" value="StatementList" />
                 <link role="javaClass" targetNodeId="13.1081508091130" />
               </node>
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994855">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994855">
               <property name="name" value="java.util.LinkedList" />
               <link role="javaClass" targetNodeId="16.1087811448220" />
             </node>
@@ -6426,24 +6427,24 @@
         <property name="queryId" value="JavaClassMethods" />
         <property name="textProviderId" value="JavaElementMatchingText" />
         <link role="substituteModelQueryMethod" targetNodeId="1081927994882" />
-        <link role="substituteModelQueryBody" targetNodeId="1081927994886" />
-        <link role="substituteHandlerQueryBody" targetNodeId="1081927994865" />
-        <link role="substituteTextQueryMethod" targetNodeId="1081927994875" />
         <link role="substituteTextQueryBody" targetNodeId="1081927994881" />
+        <link role="substituteTextQueryMethod" targetNodeId="1081927994875" />
+        <link role="substituteHandlerQueryBody" targetNodeId="1081927994865" />
+        <link role="substituteModelQueryBody" targetNodeId="1081927994886" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1081927994857" />
-        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984108">
+        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984108">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927994857">
             <property name="name" value="substituteItemHandler_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994858">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994859">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994859">
                 <property name="name" value="StatementList" />
                 <link role="javaClass" targetNodeId="13.1081508091130" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994860">
               <property name="name" value="itemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994861">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994861">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -6452,7 +6453,7 @@
               <property name="name" value="pattern" />
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249704902" />
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994864">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994864">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
@@ -6477,14 +6478,14 @@
             <property name="name" value="substituteItemText_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994876">
               <property name="name" value="mySourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994877">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994877">
                 <property name="name" value="StatementList" />
                 <link role="javaClass" targetNodeId="13.1081508091130" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994878">
               <property name="name" value="myItemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994879">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994879">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -6508,12 +6509,12 @@
             <property name="name" value="substituteItemModel_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994883">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994884">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994884">
                 <property name="name" value="StatementList" />
                 <link role="javaClass" targetNodeId="13.1081508091130" />
               </node>
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994885">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994885">
               <property name="name" value="java.util.LinkedList" />
               <link role="javaClass" targetNodeId="16.1087811448220" />
             </node>
@@ -6535,27 +6536,27 @@
         <property name="name" value="primitiveVarDeclarations" />
         <property name="queryId" value="AllVariablePrimitiveTypes" />
         <property name="textProviderId" value="VarDeclarationStatementText" />
-        <link role="substituteTextQueryMethod" targetNodeId="1081927994905" />
-        <link role="substituteTextQueryBody" targetNodeId="1081927994911" />
         <link role="substituteModelQueryMethod" targetNodeId="1081927994912" />
-        <link role="substituteHandlerQueryMethod" targetNodeId="1081927994887" />
+        <link role="substituteModelQueryMethod" targetNodeId="1081927994912" />
         <link role="substituteHandlerQueryBody" targetNodeId="1081927994895" />
-        <link role="substituteModelQueryMethod" targetNodeId="1081927994912" />
+        <link role="substituteTextQueryBody" targetNodeId="1081927994911" />
+        <link role="substituteTextQueryMethod" targetNodeId="1081927994905" />
+        <link role="substituteHandlerQueryMethod" targetNodeId="1081927994887" />
         <link role="substituteModelQueryMethod" targetNodeId="1081927994912" />
         <link role="substituteModelQueryBody" targetNodeId="1081927994916" />
-        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984109">
+        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984109">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927994887">
             <property name="name" value="substituteItemHandler_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994888">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994889">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994889">
                 <property name="name" value="StatementList" />
                 <link role="javaClass" targetNodeId="13.1081508091130" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994890">
               <property name="name" value="itemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994891">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994891">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -6564,7 +6565,7 @@
               <property name="name" value="pattern" />
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249704903" />
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994894">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994894">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
@@ -6589,14 +6590,14 @@
             <property name="name" value="substituteItemText_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994906">
               <property name="name" value="mySourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994907">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994907">
                 <property name="name" value="StatementList" />
                 <link role="javaClass" targetNodeId="13.1081508091130" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994908">
               <property name="name" value="myItemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994909">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994909">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -6620,12 +6621,12 @@
             <property name="name" value="substituteItemModel_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994913">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994914">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994914">
                 <property name="name" value="StatementList" />
                 <link role="javaClass" targetNodeId="13.1081508091130" />
               </node>
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994915">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994915">
               <property name="name" value="java.util.LinkedList" />
               <link role="javaClass" targetNodeId="16.1087811448220" />
             </node>
@@ -6647,28 +6648,28 @@
         <property name="name" value="classTypeVarDeclarations" />
         <property name="queryId" value="AllJavaClasses" />
         <property name="textProviderId" value="VarDeclarationStatementText" />
-        <link role="substituteModelQueryMethod" targetNodeId="1081927994942" />
-        <link role="substituteTextQueryBody" targetNodeId="1081927994941" />
-        <link role="substituteTextQueryMethod" targetNodeId="1081927994935" />
-        <link role="substituteTextQueryMethod" targetNodeId="1081927994935" />
-        <link role="substituteHandlerQueryMethod" targetNodeId="1081927994917" />
-        <link role="substituteModelQueryMethod" targetNodeId="1081927994942" />
         <link role="substituteModelQueryBody" targetNodeId="1081927994946" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1081927994917" />
+        <link role="substituteTextQueryMethod" targetNodeId="1081927994935" />
+        <link role="substituteModelQueryMethod" targetNodeId="1081927994942" />
+        <link role="substituteTextQueryBody" targetNodeId="1081927994941" />
+        <link role="substituteModelQueryMethod" targetNodeId="1081927994942" />
+        <link role="substituteTextQueryMethod" targetNodeId="1081927994935" />
         <link role="substituteHandlerQueryBody" targetNodeId="1081927994925" />
-        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984110">
+        <link role="substituteHandlerQueryMethod" targetNodeId="1081927994917" />
+        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984110">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927994917">
             <property name="name" value="substituteItemHandler_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994918">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994919">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994919">
                 <property name="name" value="StatementList" />
                 <link role="javaClass" targetNodeId="13.1081508091130" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994920">
               <property name="name" value="itemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994921">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994921">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -6677,7 +6678,7 @@
               <property name="name" value="pattern" />
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249704904" />
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994924">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994924">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
@@ -6702,14 +6703,14 @@
             <property name="name" value="substituteItemText_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994936">
               <property name="name" value="mySourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994937">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994937">
                 <property name="name" value="StatementList" />
                 <link role="javaClass" targetNodeId="13.1081508091130" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994938">
               <property name="name" value="myItemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994939">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994939">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -6733,12 +6734,12 @@
             <property name="name" value="substituteItemModel_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994943">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994944">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994944">
                 <property name="name" value="StatementList" />
                 <link role="javaClass" targetNodeId="13.1081508091130" />
               </node>
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994945">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994945">
               <property name="name" value="java.util.LinkedList" />
               <link role="javaClass" targetNodeId="16.1087811448220" />
             </node>
@@ -6772,19 +6773,19 @@
         <link role="substituteModelQueryMethod" targetNodeId="1081927994972" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1081927994947" />
         <link role="substituteModelQueryBody" targetNodeId="1081927994976" />
-        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984111">
+        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984111">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927994947">
             <property name="name" value="substituteItemHandler_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994948">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994949">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994949">
                 <property name="name" value="StatementList" />
                 <link role="javaClass" targetNodeId="13.1081508091130" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994950">
               <property name="name" value="itemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994951">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994951">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -6793,7 +6794,7 @@
               <property name="name" value="pattern" />
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249704905" />
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994954">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994954">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
@@ -6818,14 +6819,14 @@
             <property name="name" value="substituteItemText_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994966">
               <property name="name" value="mySourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994967">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994967">
                 <property name="name" value="StatementList" />
                 <link role="javaClass" targetNodeId="13.1081508091130" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994968">
               <property name="name" value="myItemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994969">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994969">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -6849,12 +6850,12 @@
             <property name="name" value="substituteItemModel_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994973">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994974">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994974">
                 <property name="name" value="StatementList" />
                 <link role="javaClass" targetNodeId="13.1081508091130" />
               </node>
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994975">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994975">
               <property name="name" value="java.util.LinkedList" />
               <link role="javaClass" targetNodeId="16.1087811448220" />
             </node>
@@ -6877,25 +6878,25 @@
         <property name="descriptionProviderId" value="JavaElementDescriptionText" />
         <property name="queryId" value="JavaLocalVariables" />
         <property name="textProviderId" value="JavaElementMatchingText" />
-        <link role="substituteModelQueryBody" targetNodeId="1081927995006" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1081927994977" />
         <link role="substituteModelQueryMethod" targetNodeId="1081927995002" />
+        <link role="substituteModelQueryBody" targetNodeId="1081927995006" />
         <link role="substituteHandlerQueryBody" targetNodeId="1081927994985" />
         <link role="substituteTextQueryMethod" targetNodeId="1081927994995" />
         <link role="substituteTextQueryBody" targetNodeId="1081927995001" />
-        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984112">
+        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984112">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927994977">
             <property name="name" value="substituteItemHandler_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994978">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994979">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994979">
                 <property name="name" value="StatementList" />
                 <link role="javaClass" targetNodeId="13.1081508091130" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994980">
               <property name="name" value="itemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994981">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994981">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -6904,7 +6905,7 @@
               <property name="name" value="pattern" />
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249704906" />
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994984">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994984">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
@@ -6929,14 +6930,14 @@
             <property name="name" value="substituteItemText_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994996">
               <property name="name" value="mySourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994997">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994997">
                 <property name="name" value="StatementList" />
                 <link role="javaClass" targetNodeId="13.1081508091130" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927994998">
               <property name="name" value="myItemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927994999">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927994999">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -6960,12 +6961,12 @@
             <property name="name" value="substituteItemModel_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995003">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995004">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995004">
                 <property name="name" value="StatementList" />
                 <link role="javaClass" targetNodeId="13.1081508091130" />
               </node>
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995005">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995005">
               <property name="name" value="java.util.LinkedList" />
               <link role="javaClass" targetNodeId="16.1087811448220" />
             </node>
@@ -6994,24 +6995,24 @@
         <property name="queryId" value="JavaClassFields" />
         <property name="textProviderId" value="JavaElementMatchingText" />
         <link role="substituteModelQueryMethod" targetNodeId="1081927995032" />
-        <link role="substituteHandlerQueryBody" targetNodeId="1081927995015" />
-        <link role="substituteHandlerQueryMethod" targetNodeId="1081927995007" />
         <link role="substituteTextQueryBody" targetNodeId="1081927995031" />
-        <link role="substituteTextQueryMethod" targetNodeId="1081927995025" />
+        <link role="substituteHandlerQueryMethod" targetNodeId="1081927995007" />
+        <link role="substituteHandlerQueryBody" targetNodeId="1081927995015" />
         <link role="substituteModelQueryBody" targetNodeId="1081927995036" />
-        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984113">
+        <link role="substituteTextQueryMethod" targetNodeId="1081927995025" />
+        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984113">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927995007">
             <property name="name" value="substituteItemHandler_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995008">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995009">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995009">
                 <property name="name" value="StatementList" />
                 <link role="javaClass" targetNodeId="13.1081508091130" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995010">
               <property name="name" value="itemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995011">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995011">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -7020,7 +7021,7 @@
               <property name="name" value="pattern" />
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249704907" />
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995014">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995014">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
@@ -7045,14 +7046,14 @@
             <property name="name" value="substituteItemText_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995026">
               <property name="name" value="mySourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995027">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995027">
                 <property name="name" value="StatementList" />
                 <link role="javaClass" targetNodeId="13.1081508091130" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995028">
               <property name="name" value="myItemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995029">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995029">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -7076,12 +7077,12 @@
             <property name="name" value="substituteItemModel_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995033">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995034">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995034">
                 <property name="name" value="StatementList" />
                 <link role="javaClass" targetNodeId="13.1081508091130" />
               </node>
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1081927995035">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1081927995035">
               <property name="name" value="java.util.LinkedList" />
               <link role="javaClass" targetNodeId="16.1087811448220" />
             </node>
@@ -7107,22 +7108,22 @@
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082657774877">
         <property name="name" value="binaryOperators" />
         <link role="substituteHandlerQueryBody" targetNodeId="1082657798347" />
-        <link role="substituteModelQueryBody" targetNodeId="1082657798383" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1082657798339" />
         <link role="substituteModelQueryMethod" targetNodeId="1082657798364" />
-        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984129">
+        <link role="substituteModelQueryBody" targetNodeId="1082657798383" />
+        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984129">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1082657798339">
             <property name="name" value="substituteItemHandler_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082657798340">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082657798341">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082657798341">
                 <property name="name" value="_BinaryOperation_Operator_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1082657798331" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082657798342">
               <property name="name" value="itemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082657798343">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082657798343">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -7131,7 +7132,7 @@
               <property name="name" value="pattern" />
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439816" />
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082657798346">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1082657798346">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
@@ -7156,12 +7157,12 @@
             <property name="name" value="substituteItemModel_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082657798365">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082657798366">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082657798366">
                 <property name="name" value="_BinaryOperation_Operator_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1082657798331" />
               </node>
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082657798367">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1082657798367">
               <property name="name" value="java.util.LinkedList" />
               <link role="javaClass" targetNodeId="16.1087811448220" />
             </node>
@@ -7182,13 +7183,13 @@
         <property name="name" value="substituteAcceptor_Query" />
         <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082657798333">
           <property name="name" value="node" />
-          <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1095249439817">
+          <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1095249439817">
             <link role="javaClass" targetNodeId="15.1086945614627" />
           </node>
         </node>
         <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082657798335">
           <property name="name" value="object" />
-          <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1091213547203">
+          <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1091213547203">
             <link role="javaClass" targetNodeId="15.1086945614627" />
           </node>
         </node>
@@ -7196,12 +7197,12 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1082718871906">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1082718871907">
               <property name="name" value="oldBinaryOperation" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082718871908">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082718871908">
                 <property name="name" value="BinaryOperation" />
                 <link role="javaClass" targetNodeId="13.1082399013933" />
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1082718871909">
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082718871910">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082718871910">
                   <property name="name" value="BinaryOperation" />
                   <link role="javaClass" targetNodeId="13.1082399013933" />
                 </node>
@@ -7214,7 +7215,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1082718871912">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1082718871913">
               <property name="name" value="leftOperand" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082718871914">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082718871914">
                 <property name="name" value="Expression" />
                 <link role="javaClass" targetNodeId="13.1081508090568" />
               </node>
@@ -7229,7 +7230,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1082718871917">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1082718871918">
               <property name="name" value="rightOperand" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082718871919">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082718871919">
                 <property name="name" value="Expression" />
                 <link role="javaClass" targetNodeId="13.1081508090568" />
               </node>
@@ -7250,7 +7251,7 @@
                   <link role="variableDeclaration" targetNodeId="1082718871907" />
                 </node>
               </node>
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1091213547204">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1091213547204">
                 <link role="javaClass" targetNodeId="15.1086945614627" />
               </node>
             </node>
@@ -7258,14 +7259,14 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1082718871927">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1082718871928">
               <property name="name" value="role" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1091213547205">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1091213547205">
                 <link role="javaClass" targetNodeId="14.1086945614127" />
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1091213547206">
                 <link role="baseMethodDeclaration" targetNodeId="15.1091213216518" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1091213547207">
                   <node role="expression" type="jetbrains.mps.baseLanguage.CastExpression" id="1091213547208">
-                    <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1091213547209">
+                    <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1091213547209">
                       <link role="javaClass" targetNodeId="15.1086945614627" />
                     </node>
                     <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1091213547210">
@@ -7279,12 +7280,12 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1082718871933">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1082718871934">
               <property name="name" value="newBinaryOperation" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082718871935">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082718871935">
                 <property name="name" value="BinaryOperation" />
                 <link role="javaClass" targetNodeId="13.1082399013933" />
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1082718871936">
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082718871937">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082718871937">
                   <property name="name" value="BinaryOperation" />
                   <link role="javaClass" targetNodeId="13.1082399013933" />
                 </node>
@@ -7366,7 +7367,7 @@
             </node>
           </node>
         </node>
-        <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1091213547211">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1091213547211">
           <link role="javaClass" targetNodeId="15.1086945614627" />
         </node>
       </node>
@@ -7378,24 +7379,24 @@
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082741406450">
         <property name="name" value="classTypes" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1082741457139" />
-        <link role="substituteTextQueryBody" targetNodeId="1082741457163" />
-        <link role="substituteTextQueryMethod" targetNodeId="1082741457157" />
         <link role="substituteHandlerQueryBody" targetNodeId="1082741457147" />
-        <link role="substituteModelQueryMethod" targetNodeId="1082741457164" />
+        <link role="substituteTextQueryMethod" targetNodeId="1082741457157" />
         <link role="substituteModelQueryBody" targetNodeId="1082741457168" />
-        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984130">
+        <link role="substituteModelQueryMethod" targetNodeId="1082741457164" />
+        <link role="substituteTextQueryBody" targetNodeId="1082741457163" />
+        <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1089820984130">
           <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1082741457139">
             <property name="name" value="substituteItemHandler_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082741457140">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082741457141">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082741457141">
                 <property name="name" value="_ClassType_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1082741457131" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082741457142">
               <property name="name" value="itemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082741457143">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082741457143">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -7404,7 +7405,7 @@
               <property name="name" value="pattern" />
               <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1095249439818" />
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082741457146">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1082741457146">
               <property name="name" value="jetbrains.mps.core.BaseConcept" />
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
@@ -7429,14 +7430,14 @@
             <property name="name" value="substituteItemText_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082741457158">
               <property name="name" value="mySourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082741457159">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082741457159">
                 <property name="name" value="_ClassType_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1082741457131" />
               </node>
             </node>
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082741457160">
               <property name="name" value="myItemObject" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082741457161">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082741457161">
                 <property name="name" value="jetbrains.mps.core.BaseConcept" />
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
@@ -7460,12 +7461,12 @@
             <property name="name" value="substituteItemModel_Query" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1082741457165">
               <property name="name" value="sourceNode" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082741457166">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082741457166">
                 <property name="name" value="_ClassType_ActionSet" />
                 <link role="javaClass" targetNodeId="13.1082741457131" />
               </node>
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1082741457167">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1082741457167">
               <property name="name" value="java.util.LinkedList" />
               <link role="javaClass" targetNodeId="16.1087811448220" />
             </node>
@@ -7498,31 +7499,31 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090928601265">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090928601266">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090928601266">
               <link role="javaClass" targetNodeId="13.1083928002953" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090928601267">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090928601268">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090928601268">
               <link role="javaClass" targetNodeId="15.1086945614627" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090928601269">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1090928601269">
             <link role="javaClass" targetNodeId="15.1086945614627" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090928601270">
             <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1090928601271">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1090928601272">
                 <property name="name" value="classType" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090928601273">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090928601273">
                   <link role="javaClass" targetNodeId="13.1081508091231" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1090928601274">
                   <node role="expression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090928601275">
                     <link role="variableDeclaration" targetNodeId="1090928601267" />
                   </node>
-                  <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090928601276">
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090928601276">
                     <link role="javaClass" targetNodeId="13.1081508091231" />
                   </node>
                 </node>
@@ -7531,11 +7532,11 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1090928601277">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1090928601278">
                 <property name="name" value="reference" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090928601279">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090928601279">
                   <link role="javaClass" targetNodeId="13.1083928002953" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1090928601280">
-                  <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090928601281">
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090928601281">
                     <link role="javaClass" targetNodeId="13.1083928002953" />
                   </node>
                   <node role="expression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090928601282">
@@ -7573,29 +7574,29 @@
         <link role="substituteQueryBody" targetNodeId="1090928601352" />
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1090928601297">
           <property name="name" value="constants" />
-          <link role="substituteMatcherQueryBody" targetNodeId="1090928601316" />
-          <link role="substituteHandlerQueryMethod" targetNodeId="1090928601299" />
+          <link role="substituteTextQueryMethod" targetNodeId="1090928601317" />
           <link role="substituteHandlerQueryBody" targetNodeId="1090928601307" />
-          <link role="substituteTextQueryMethod" targetNodeId="1090928601317" />
-          <link role="substituteModelQueryBody" targetNodeId="1090928601341" />
-          <link role="substituteMatcherQueryMethod" targetNodeId="1090928601308" />
-          <link role="substituteModelQueryMethod" targetNodeId="1090928601337" />
           <link role="substituteTextQueryBody" targetNodeId="1090928601323" />
-          <link role="substituteTextQueryMethod" targetNodeId="1090928601317" />
           <link role="substituteDescriptionTextQueryBody" targetNodeId="1090928601336" />
+          <link role="substituteModelQueryBody" targetNodeId="1090928601341" />
           <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090928601330" />
-          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1090928601298">
+          <link role="substituteMatcherQueryMethod" targetNodeId="1090928601308" />
+          <link role="substituteHandlerQueryMethod" targetNodeId="1090928601299" />
+          <link role="substituteTextQueryMethod" targetNodeId="1090928601317" />
+          <link role="substituteMatcherQueryBody" targetNodeId="1090928601316" />
+          <link role="substituteModelQueryMethod" targetNodeId="1090928601337" />
+          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1090928601298">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1090928601299">
               <property name="name" value="substituteItemHandler_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090928601300">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090928601301">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090928601301">
                   <link role="javaClass" targetNodeId="13.1083928002953" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090928601302">
                 <property name="name" value="itemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090928601303">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090928601303">
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
               </node>
@@ -7603,7 +7604,7 @@
                 <property name="name" value="pattern" />
                 <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1090928601305" />
               </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090928601306">
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1090928601306">
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090928601307" />
@@ -7612,13 +7613,13 @@
               <property name="name" value="substituteItemMatcher_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090928601309">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090928601310">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090928601310">
                   <link role="javaClass" targetNodeId="13.1083928002953" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090928601311">
                 <property name="name" value="itemNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090928601312">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090928601312">
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
               </node>
@@ -7635,13 +7636,13 @@
               <property name="name" value="substituteItemText_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090928601318">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090928601319">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090928601319">
                   <link role="javaClass" targetNodeId="13.1083928002953" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090928601320">
                 <property name="name" value="itemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090928601321">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090928601321">
                   <link role="javaClass" targetNodeId="14.1086945614093" />
                 </node>
               </node>
@@ -7664,13 +7665,13 @@
               <property name="name" value="substituteItemDescriptionText_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090928601331">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090928601332">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090928601332">
                   <link role="javaClass" targetNodeId="13.1083928002953" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090928601333">
                 <property name="name" value="itemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090928601334">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090928601334">
                   <link role="javaClass" targetNodeId="14.1086945614093" />
                 </node>
               </node>
@@ -7681,11 +7682,11 @@
               <property name="name" value="substituteItemModel_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090928601338">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090928601339">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090928601339">
                   <link role="javaClass" targetNodeId="13.1083928002953" />
                 </node>
               </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090928601340">
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1090928601340">
                 <link role="javaClass" targetNodeId="16.1087811448220" />
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090928601341">
@@ -7705,28 +7706,28 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090928601347">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090928601348">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090928601348">
               <link role="javaClass" targetNodeId="13.1083928002953" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090928601349">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090928601350">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090928601350">
               <link role="javaClass" targetNodeId="15.1086945614627" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090928601351">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1090928601351">
             <link role="javaClass" targetNodeId="15.1086945614627" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090928601352">
             <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1090928601353">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1090928601354">
                 <property name="name" value="declaration" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090928601355">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090928601355">
                   <link role="javaClass" targetNodeId="13.1085485817124" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1090928601356">
-                  <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090928601357">
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090928601357">
                     <link role="javaClass" targetNodeId="13.1085485817124" />
                   </node>
                   <node role="expression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090928601358">
@@ -7738,11 +7739,11 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1090928601359">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1090928601360">
                 <property name="name" value="reference" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090928601361">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090928601361">
                   <link role="javaClass" targetNodeId="13.1083928002953" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1090928601362">
-                  <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090928601363">
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090928601363">
                     <link role="javaClass" targetNodeId="13.1083928002953" />
                   </node>
                   <node role="expression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090928601364">
@@ -7841,9 +7842,9 @@
           <property name="text" value="=" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1084188979618">
-          <link role="linkDeclaration" targetNodeId="8.1068431790190" />
           <link role="keyMap" targetNodeId="1081427357000" />
           <link role="actionSet" targetNodeId="1077124145703" />
+          <link role="linkDeclaration" targetNodeId="8.1068431790190" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1084188979619">
@@ -7926,12 +7927,12 @@
             <property name="name" value="nodeFactoryQuery" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1085485817060">
               <property name="name" value="listOwner" />
-              <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1085485817061">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1085485817061">
                 <property name="name" value="jetbrains.mps.semanticModel.SemanticNode" />
                 <link role="javaClass" targetNodeId="15.1086945614627" />
               </node>
             </node>
-            <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1085485817062">
+            <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1085485817062">
               <property name="name" value="jetbrains.mps.semanticModel.SemanticNode" />
               <link role="javaClass" targetNodeId="15.1086945614627" />
             </node>
@@ -8003,13 +8004,13 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1095257566414">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1095257566415">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1095257566415">
               <link role="javaClass" targetNodeId="18.1086856195743" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1095257566416">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1095257566417">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1095257566417">
               <link role="javaClass" targetNodeId="14.1086945614093" />
             </node>
           </node>
@@ -8026,7 +8027,7 @@
               </node>
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1095257566422">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1095257566422">
             <link role="javaClass" targetNodeId="18.1086856195743" />
           </node>
         </node>
@@ -8067,28 +8068,28 @@
         <link role="substituteQueryBody" targetNodeId="1090841311401" />
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1090842242324">
           <property name="name" value="javaClass" />
-          <link role="substituteHandlerQueryBody" targetNodeId="1090842795852" />
           <link role="substituteMatcherQueryBody" targetNodeId="1090842795861" />
-          <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090842795869" />
-          <link role="substituteTextQueryMethod" targetNodeId="1090842795862" />
-          <link role="substituteMatcherQueryMethod" targetNodeId="1090842795853" />
-          <link role="substituteDescriptionTextQueryBody" targetNodeId="1090842795875" />
-          <link role="substituteHandlerQueryMethod" targetNodeId="1090842795844" />
-          <link role="substituteTextQueryBody" targetNodeId="1090842795868" />
           <link role="substituteModelQueryMethod" targetNodeId="1090842795876" />
+          <link role="substituteMatcherQueryMethod" targetNodeId="1090842795853" />
+          <link role="substituteHandlerQueryBody" targetNodeId="1090842795852" />
+          <link role="substituteDescriptionTextQueryBody" targetNodeId="1090842795875" />
+          <link role="substituteTextQueryBody" targetNodeId="1090842795868" />
+          <link role="substituteTextQueryMethod" targetNodeId="1090842795862" />
           <link role="substituteModelQueryBody" targetNodeId="1090842795880" />
-          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1090842795843">
+          <link role="substituteHandlerQueryMethod" targetNodeId="1090842795844" />
+          <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090842795869" />
+          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1090842795843">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1090842795844">
               <property name="name" value="substituteItemHandler_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090842795845">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090842795846">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090842795846">
                   <link role="javaClass" targetNodeId="13.1081508092423" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090842795847">
                 <property name="name" value="itemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090842795848">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090842795848">
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
               </node>
@@ -8096,7 +8097,7 @@
                 <property name="name" value="pattern" />
                 <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1090842795850" />
               </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090842795851">
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1090842795851">
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090842795852" />
@@ -8105,13 +8106,13 @@
               <property name="name" value="substituteItemMatcher_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090842795854">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090842795855">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090842795855">
                   <link role="javaClass" targetNodeId="13.1081508092423" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090842795856">
                 <property name="name" value="itemNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090842795857">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090842795857">
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
               </node>
@@ -8128,13 +8129,13 @@
               <property name="name" value="substituteItemText_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090842795863">
                 <property name="name" value="mySourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090842795864">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090842795864">
                   <link role="javaClass" targetNodeId="13.1081508092423" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090842795865">
                 <property name="name" value="myItemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090842795866">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090842795866">
                   <link role="javaClass" targetNodeId="14.1086945614093" />
                 </node>
               </node>
@@ -8157,13 +8158,13 @@
               <property name="name" value="substituteItemDescriptionText_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090842795870">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090842795871">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090842795871">
                   <link role="javaClass" targetNodeId="13.1081508092423" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090842795872">
                 <property name="name" value="itemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090842795873">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090842795873">
                   <link role="javaClass" targetNodeId="14.1086945614093" />
                 </node>
               </node>
@@ -8174,11 +8175,11 @@
               <property name="name" value="substituteItemModel_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090842795877">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090842795878">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090842795878">
                   <link role="javaClass" targetNodeId="13.1081508092423" />
                 </node>
               </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090842795879">
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1090842795879">
                 <link role="javaClass" targetNodeId="16.1087811448220" />
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090842795880">
@@ -8198,28 +8199,28 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090841311396">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090841311397">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090841311397">
               <link role="javaClass" targetNodeId="13.1081508092423" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090841311398">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090841311399">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090841311399">
               <link role="javaClass" targetNodeId="15.1086945614627" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090841311400">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1090841311400">
             <link role="javaClass" targetNodeId="15.1086945614627" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090841311401">
             <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1090841520777">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1090841520778">
                 <property name="name" value="genericType" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090841520779">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090841520779">
                   <link role="javaClass" targetNodeId="13.1081508092423" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1090841520780">
-                  <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090841520781">
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090841520781">
                     <link role="javaClass" targetNodeId="13.1081508092423" />
                   </node>
                   <node role="expression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090841520782">
@@ -8235,7 +8236,7 @@
                   <link role="variableDeclaration" targetNodeId="1090841520778" />
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1090841520787">
-                  <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090841520788">
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090841520788">
                     <link role="javaClass" targetNodeId="13.1081508090787" />
                   </node>
                   <node role="expression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090841520789">
@@ -8257,32 +8258,32 @@
         <link role="substituteQueryBody" targetNodeId="1090851654836" />
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1090851716672">
           <property name="name" value="javaClassType" />
-          <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090851900769" />
-          <link role="substituteMatcherQueryMethod" targetNodeId="1090851900753" />
-          <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090851900769" />
-          <link role="substituteTextQueryBody" targetNodeId="1090851900768" />
-          <link role="substituteDescriptionTextQueryBody" targetNodeId="1090851900775" />
           <link role="substituteTextQueryMethod" targetNodeId="1090851900762" />
+          <link role="substituteMatcherQueryBody" targetNodeId="1090851900761" />
+          <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090851900769" />
           <link role="substituteModelQueryMethod" targetNodeId="1090851900776" />
+          <link role="substituteHandlerQueryMethod" targetNodeId="1090851900736" />
+          <link role="substituteDescriptionTextQueryBody" targetNodeId="1090851900775" />
+          <link role="substituteModelQueryMethod" targetNodeId="1090851900776" />
+          <link role="substituteModelQueryBody" targetNodeId="1090851900780" />
           <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090851900769" />
           <link role="substituteHandlerQueryBody" targetNodeId="1090851900744" />
-          <link role="substituteMatcherQueryBody" targetNodeId="1090851900761" />
-          <link role="substituteModelQueryBody" targetNodeId="1090851900780" />
-          <link role="substituteModelQueryMethod" targetNodeId="1090851900776" />
           <link role="substituteHandlerQueryMethod" targetNodeId="1090851900736" />
-          <link role="substituteHandlerQueryMethod" targetNodeId="1090851900736" />
-          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1090851900735">
+          <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090851900769" />
+          <link role="substituteMatcherQueryMethod" targetNodeId="1090851900753" />
+          <link role="substituteTextQueryBody" targetNodeId="1090851900768" />
+          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1090851900735">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1090851900736">
               <property name="name" value="substituteItemHandler_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090851900737">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090851900738">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090851900738">
                   <link role="javaClass" targetNodeId="13.1081508092423" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090851900739">
                 <property name="name" value="itemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090851900740">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090851900740">
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
               </node>
@@ -8290,7 +8291,7 @@
                 <property name="name" value="pattern" />
                 <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1090851900742" />
               </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090851900743">
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1090851900743">
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090851900744">
@@ -8314,13 +8315,13 @@
               <property name="name" value="substituteItemMatcher_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090851900754">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090851900755">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090851900755">
                   <link role="javaClass" targetNodeId="13.1081508092423" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090851900756">
                 <property name="name" value="itemNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090851900757">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090851900757">
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
               </node>
@@ -8337,13 +8338,13 @@
               <property name="name" value="substituteItemText_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090851900763">
                 <property name="name" value="mySourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090851900764">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090851900764">
                   <link role="javaClass" targetNodeId="13.1081508092423" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090851900765">
                 <property name="name" value="myItemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090851900766">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090851900766">
                   <link role="javaClass" targetNodeId="14.1086945614093" />
                 </node>
               </node>
@@ -8366,13 +8367,13 @@
               <property name="name" value="substituteItemDescriptionText_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090851900770">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090851900771">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090851900771">
                   <link role="javaClass" targetNodeId="13.1081508092423" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090851900772">
                 <property name="name" value="itemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090851900773">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090851900773">
                   <link role="javaClass" targetNodeId="14.1086945614093" />
                 </node>
               </node>
@@ -8383,11 +8384,11 @@
               <property name="name" value="substituteItemModel_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090851900777">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090851900778">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090851900778">
                   <link role="javaClass" targetNodeId="13.1081508092423" />
                 </node>
               </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090851900779">
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1090851900779">
                 <link role="javaClass" targetNodeId="16.1087811448220" />
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090851900780">
@@ -8407,17 +8408,17 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090851654831">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090851654832">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090851654832">
               <link role="javaClass" targetNodeId="13.1081508092423" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090851654833">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090851654834">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090851654834">
               <link role="javaClass" targetNodeId="15.1086945614627" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090851654835">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1090851654835">
             <link role="javaClass" targetNodeId="15.1086945614627" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090851654836">
@@ -8426,7 +8427,7 @@
                 <link role="baseMethodDeclaration" targetNodeId="13.1081508092458" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1090853906205">
                   <node role="expression" type="jetbrains.mps.baseLanguage.CastExpression" id="1090853906206">
-                    <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090853906207">
+                    <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090853906207">
                       <link role="javaClass" targetNodeId="13.1081508092423" />
                     </node>
                     <node role="expression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090853906208">
@@ -8435,7 +8436,7 @@
                   </node>
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1090853977469">
-                  <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090853977470">
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090853977470">
                     <link role="javaClass" targetNodeId="13.1081508091231" />
                   </node>
                   <node role="expression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090853977471">
@@ -8457,28 +8458,28 @@
         <link role="substituteQueryBody" targetNodeId="1090857631648" />
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1090857639696">
           <property name="name" value="javaClassType" />
-          <link role="substituteHandlerQueryMethod" targetNodeId="1090857639698" />
-          <link role="substituteModelQueryMethod" targetNodeId="1090857639744" />
-          <link role="substituteTextQueryMethod" targetNodeId="1090857639724" />
-          <link role="substituteHandlerQueryBody" targetNodeId="1090857639706" />
-          <link role="substituteDescriptionTextQueryBody" targetNodeId="1090857639743" />
           <link role="substituteTextQueryBody" targetNodeId="1090857639730" />
-          <link role="substituteMatcherQueryMethod" targetNodeId="1090857639715" />
           <link role="substituteModelQueryBody" targetNodeId="1090857639748" />
+          <link role="substituteTextQueryMethod" targetNodeId="1090857639724" />
           <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090857639737" />
           <link role="substituteMatcherQueryBody" targetNodeId="1090857639723" />
-          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.JavaClass" id="1090857639697">
+          <link role="substituteHandlerQueryMethod" targetNodeId="1090857639698" />
+          <link role="substituteMatcherQueryMethod" targetNodeId="1090857639715" />
+          <link role="substituteModelQueryMethod" targetNodeId="1090857639744" />
+          <link role="substituteHandlerQueryBody" targetNodeId="1090857639706" />
+          <link role="substituteDescriptionTextQueryBody" targetNodeId="1090857639743" />
+          <node role="nodeSubstituteItemClass" type="jetbrains.mps.baseLanguage.ClassConcept" id="1090857639697">
             <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1090857639698">
               <property name="name" value="substituteItemHandler_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090857639699">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090857639700">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857639700">
                   <link role="javaClass" targetNodeId="13.1081508092423" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090857639701">
                 <property name="name" value="itemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090857639702">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857639702">
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
               </node>
@@ -8486,7 +8487,7 @@
                 <property name="name" value="pattern" />
                 <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1090857639704" />
               </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090857639705">
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1090857639705">
                 <link role="javaClass" targetNodeId="18.1086856195743" />
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090857639706">
@@ -8510,13 +8511,13 @@
               <property name="name" value="substituteItemMatcher_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090857639716">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090857639717">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857639717">
                   <link role="javaClass" targetNodeId="13.1081508092423" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090857639718">
                 <property name="name" value="itemNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090857639719">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857639719">
                   <link role="javaClass" targetNodeId="18.1086856195743" />
                 </node>
               </node>
@@ -8533,13 +8534,13 @@
               <property name="name" value="substituteItemText_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090857639725">
                 <property name="name" value="mySourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090857639726">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857639726">
                   <link role="javaClass" targetNodeId="13.1081508092423" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090857639727">
                 <property name="name" value="myItemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090857639728">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857639728">
                   <link role="javaClass" targetNodeId="14.1086945614093" />
                 </node>
               </node>
@@ -8562,13 +8563,13 @@
               <property name="name" value="substituteItemDescriptionText_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090857639738">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090857639739">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857639739">
                   <link role="javaClass" targetNodeId="13.1081508092423" />
                 </node>
               </node>
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090857639740">
                 <property name="name" value="itemObject" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090857639741">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857639741">
                   <link role="javaClass" targetNodeId="14.1086945614093" />
                 </node>
               </node>
@@ -8579,11 +8580,11 @@
               <property name="name" value="substituteItemModel_Query" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090857639745">
                 <property name="name" value="sourceNode" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090857639746">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857639746">
                   <link role="javaClass" targetNodeId="13.1081508092423" />
                 </node>
               </node>
-              <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090857639747">
+              <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1090857639747">
                 <link role="javaClass" targetNodeId="16.1087811448220" />
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090857639748">
@@ -8603,28 +8604,28 @@
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090857631643">
             <property name="name" value="node" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090857631644">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857631644">
               <link role="javaClass" targetNodeId="13.1081508092423" />
             </node>
           </node>
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1090857631645">
             <property name="name" value="object" />
-            <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090857631646">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857631646">
               <link role="javaClass" targetNodeId="15.1086945614627" />
             </node>
           </node>
-          <node role="returnType" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090857631647">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.ClassType" id="1090857631647">
             <link role="javaClass" targetNodeId="15.1086945614627" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1090857631648">
             <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1090857631649">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1090857631650">
                 <property name="name" value="newParmType" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090857631651">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857631651">
                   <link role="javaClass" targetNodeId="13.1081508091231" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1090857631652">
-                  <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090857631653">
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857631653">
                     <link role="javaClass" targetNodeId="13.1081508091231" />
                   </node>
                   <node role="expression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090857631654">
@@ -8636,11 +8637,11 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1090857631655">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1090857631656">
                 <property name="name" value="oldParmType" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090857631657">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857631657">
                   <link role="javaClass" targetNodeId="13.1081508091231" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1090857631658">
-                  <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090857631659">
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857631659">
                     <link role="javaClass" targetNodeId="13.1081508091231" />
                   </node>
                   <node role="expression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1090857631660">
@@ -8652,11 +8653,11 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1090857631661">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1090857631662">
                 <property name="name" value="genericType" />
-                <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090857631663">
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857631663">
                   <link role="javaClass" targetNodeId="13.1081508092423" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1090857631664">
-                  <node role="type" type="jetbrains.mps.baseLanguage.JavaClassType" id="1090857631665">
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1090857631665">
                     <link role="javaClass" targetNodeId="13.1081508092423" />
                   </node>
                   <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1090857631666">
