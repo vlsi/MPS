@@ -22,12 +22,13 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     super("Go To Concept Editor Declaration");
   }
 
-  public boolean isVisible(ActionContext context) {
-    return context.getNode() instanceof ConceptDeclaration;
-  }
-
   public String getKeyStroke() {
     return "control shift E";
+  }
+
+  public void update(ActionContext context) {
+    super.update(context);
+    setVisible(context.getNode() instanceof ConceptDeclaration);
   }
 
   public void execute(ActionContext context) {
