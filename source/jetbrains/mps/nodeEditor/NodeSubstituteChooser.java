@@ -1,6 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.ide.command.CommandUtil;
 
 import javax.swing.*;
 import java.awt.*;
@@ -150,10 +151,7 @@ public class NodeSubstituteChooser {
       List<INodeSubstituteAction> matchingActions = myNodeSubstituteInfo.getMatchingActions(pattern);
       if (matchingActions.size() == 1) {
         setVisible(false);
-        SemanticNode changedNode = matchingActions.get(0).doSubstitute(pattern);
-        if (changedNode != null) {
-          changedNode.getSemanticModel().fireNodeAddedEvent(changedNode);
-        }
+        CommandUtil.substituteNode(matchingActions.get(0), pattern, myNodeSubstituteInfo, myEditorComponent.getContext());
       }
       return true;
     }
@@ -188,10 +186,7 @@ public class NodeSubstituteChooser {
         String pattern = getPatternEditor().getPattern();
         INodeSubstituteAction entry = myMenuSubstituteEntries.get(myPopupWindow.getSelectionIndex());
         setVisible(false);
-        SemanticNode changedNode = entry.doSubstitute(pattern);
-        if (changedNode != null) {
-          changedNode.getSemanticModel().fireNodeAddedEvent(changedNode);
-        }
+        CommandUtil.substituteNode(entry, pattern, myNodeSubstituteInfo, myEditorComponent.getContext());
       }
       return true;
     }

@@ -1,6 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.semanticModel.SemanticModelListener;
 import jetbrains.mps.semanticModel.SemanticNode;
@@ -728,12 +729,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return false;
     }
 
-    SemanticNode newNode = matchingActions.get(0).doSubstitute(labelCell.getText());
-    if (newNode != null) {
-      newNode.getSemanticModel().fireNodeAddedEvent(newNode);
-      EditorCell newNodeCell = this.findNodeCell(newNode);
-      this.changeSelection(newNodeCell);
-    }
+    CommandUtil.substituteNode(matchingActions.get(0), labelCell.getText(), substituteInfo, this.getContext());
     return true;
   }
 
@@ -758,10 +754,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       if (trySubstituteNow) {
         List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(pattern);
         if (matchingActions.size() == 1) {
-          SemanticNode semanticNode = matchingActions.get(0).doSubstitute(pattern);
-          if (semanticNode != null) {
-            semanticNode.getSemanticModel().fireNodeAddedEvent(semanticNode);
-          }
+          CommandUtil.substituteNode(matchingActions.get(0), pattern, substituteInfo, this.getContext());
           return true;
         }
       }
