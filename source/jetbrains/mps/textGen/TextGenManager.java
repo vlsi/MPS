@@ -12,6 +12,14 @@ public class TextGenManager {
   private static Logger LOG = Logger.getInstance("jetbrains.mps.textGen.TextGenManager");
   private static TextGenManager myInstance;
 
+  public static void setMappingTextGenManager() {
+    myInstance = new MappingTextGenManager();
+  }
+
+  public static void reset() {
+    myInstance = null;
+  }
+
   public static TextGenManager instance() {
     if(myInstance == null) {
       myInstance = new TextGenManager();
