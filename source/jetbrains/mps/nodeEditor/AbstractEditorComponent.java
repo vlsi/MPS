@@ -877,7 +877,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           if (selectableLeaf != null) {
             changeSelection(selectableLeaf);
             childSelected = true;
+          } else {
+            changeSelection(childCell);
           }
+        } else {
+          changeSelection(childCell);
         }
       }
 
