@@ -99,6 +99,7 @@
     </link>
     <link role="semanticPropertyDeclaration" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration" id="1071662428250">
+        <link role="dataType" targetNodeId="1.1082983041843" />
         <property name="propertyType" value="string" />
         <property name="name" value="propertyType" />
       </node>
@@ -217,8 +218,8 @@
     <property name="name" value="Cardinality" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration" id="1084199179703">
-    <link role="memberDataType" targetNodeId="1.1082983041843" />
     <link role="defaultMember" targetNodeId="1084199179704" />
+    <link role="memberDataType" targetNodeId="1.1082983041843" />
     <link role="member" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1084199179704">
         <property name="externalValue" value="&lt;no metaclass&gt;" />
