@@ -59,13 +59,25 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   }
 
   public void setLocationRelative(EditorCell cell) {
-    myPopupWindow = new PopupWindow(getEditorWindow(), cell);
-
-    getPopupWindow().relayout();
+    myPopupWindow = new PopupWindow(getEditorWindow());
 
     Component component = cell.getEditorContext().getNodeEditorComponent();
     Point anchor = component.getLocationOnScreen();
-    
+    Point location = new Point(anchor.x + cell.getX(), anchor.y + cell.getY() + cell.getHeight());
+
+    int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
+    if (location.getY() + PopupWindow.PREFERRED_HEIGHT > screenHeight - 150) {
+      location = new Point(location.x, location.y - PopupWindow.PREFERRED_HEIGHT - cell.getHeight());
+      getPopupWindow().setPosition(PopupWindowPosition.TOP);
+    } else {
+      getPopupWindow().setPosition(PopupWindowPosition.BOTTOM);
+    }
+
+
+
+    getPopupWindow().setLocation(location);
+    getPopupWindow().relayout();
+
     myPatternEditorLocation = new Point(anchor.x + cell.getX(), anchor.y + +cell.getY());
     myPatternEditorSize = new Dimension(cell.getWidth() + 1, cell.getHeight());
   }
@@ -287,11 +299,9 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     private JList myList = new JList(new DefaultListModel());
     private PopupWindowPosition myPosition = PopupWindowPosition.BOTTOM;
     private JScrollPane myScroller = new JScrollPane(myList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);;
-    private EditorCell myRelativeCell;
 
-    public PopupWindow(Window owner, EditorCell relativeTo) {
+    public PopupWindow(Window owner) {
       super(owner);
-      myRelativeCell = relativeTo;
       myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
       myList.setFont(new TextLine("", null).getFont());
       myList.setBackground(new Color(255, 255, 200));
@@ -341,21 +351,6 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     }
 
     public void relayout() {
-      Component component = myRelativeCell.getEditorContext().getNodeEditorComponent();
-      Point anchor = component.getLocationOnScreen();
-      Point location = new Point(anchor.x + myRelativeCell.getX(), anchor.y + myRelativeCell.getY() + myRelativeCell.getHeight());
-
-      int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
-      if (location.getY() + PopupWindow.PREFERRED_HEIGHT > screenHeight - 150) {
-        location = new Point(location.x, location.y - PopupWindow.PREFERRED_HEIGHT - myRelativeCell.getHeight());
-        getPopupWindow().setPosition(PopupWindowPosition.TOP);
-      } else {
-        getPopupWindow().setPosition(PopupWindowPosition.BOTTOM);
-      }
-
-      getPopupWindow().setLocation(location);
-
-
       DefaultListModel model = (DefaultListModel) myList.getModel();
       int oldIndex = getSelectionIndex();
 
