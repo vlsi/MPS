@@ -131,6 +131,9 @@ public class EditorManager {
 
     // else load "normal editor"
     String editorClassName = getNodeEditorClassName(typeDeclaration, false);
+    if (editorClassName == null) {
+      return null;
+    }
     return Class.forName(editorClassName);
   }
 
