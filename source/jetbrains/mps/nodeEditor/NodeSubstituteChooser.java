@@ -386,7 +386,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       int scrollerBorderHeight = insets.top + insets.bottom;
       setSize(
               Math.max(PREFERRED_WIDTH, myList.getPreferredSize().width + 50),
-              Math.min(PREFERRED_HEIGHT, myList.getPreferredSize().height + scrollerBorderHeight));
+              Math.min(PREFERRED_HEIGHT, myList.getPreferredSize().height) + getVerticalScrollerHeight());
 
       if (getPosition() == PopupWindowPosition.TOP) {
         newLocation = new Point(newLocation.x, newLocation.y - getHeight() - myRelativeCell.getHeight());
@@ -410,6 +410,15 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
       validateTree();
       repaint();
+    }
+
+    private int getVerticalScrollerHeight() {
+      JScrollBar scrollbar = myScroller.getHorizontalScrollBar();
+      if (scrollbar != null && scrollbar.isVisible()) {
+        return scrollbar.getHeight();
+      }
+      Insets insets = myScroller.getBorder().getBorderInsets(myScroller);
+      return insets.top + insets.bottom + 1;
     }
 
     public PopupWindowPosition getPosition() {
