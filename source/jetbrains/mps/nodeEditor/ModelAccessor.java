@@ -7,4 +7,5 @@ package jetbrains.mps.nodeEditor;
 public interface ModelAccessor {
   String getText();
   void setText(String text);
+  boolean isValidText(String text);
 }

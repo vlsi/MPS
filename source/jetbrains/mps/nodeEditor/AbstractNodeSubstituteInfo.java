@@ -30,11 +30,11 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
     return "";
   }
 
-  public boolean equalsOutcome(SemanticNode originalNode, String originalText, String pattern) {
-    return (originalText != null && originalText.length() > 0 && originalText.equals(pattern));
-  }
+//  public boolean equalsOutcome(SemanticNode originalNode, String originalText, String pattern) {
+//    return (originalText != null && originalText.length() > 0 && originalText.equals(pattern));
+//  }
 
-  public boolean equalsOutcome(String pattern) {
-    return equalsOutcome(getOriginalNode(), getOriginalText(), pattern);
-  }
+//  public boolean equalsOutcome(String pattern) {
+//    return equalsOutcome(getOriginalNode(), getOriginalText(), pattern);
+//  }
 }

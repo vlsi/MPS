@@ -12,5 +12,5 @@ public interface INodeSubstituteInfo extends INodeSubstituteAction {
   SemanticNode getOriginalNode();
   void setOriginalText(String text);
   String getOriginalText();
-  boolean equalsOutcome(String pattern);
+//  boolean equalsOutcome(String pattern);
 }

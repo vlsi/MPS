@@ -162,12 +162,12 @@ public class NodeSubstituteChooser {
       String pattern = getPatternEditor().getPattern();
       if(myNodeSubstituteInfo.canSubstitute(pattern)) {
         setVisible(false);
-        if(!myNodeSubstituteInfo.equalsOutcome(pattern)) {
+//        if(!myNodeSubstituteInfo.equalsOutcome(pattern)) {
           SemanticNode changedNode = myNodeSubstituteInfo.doSubstitute(pattern);
           if(changedNode != null) {
             changedNode.getSemanticModel().fireNodeAddedEvent(changedNode);
           }
-        }
+//        }
       }
       return true;
     }
@@ -202,12 +202,12 @@ public class NodeSubstituteChooser {
         String pattern = getPatternEditor().getPattern();
         INodeSubstituteAction entry = myMenuSubstituteEntries.get(myPopupWindow.getSelectionIndex());
         setVisible(false);
-        if(!entry.equalsOutcome(myNodeSubstituteInfo.getOriginalNode(), myNodeSubstituteInfo.getOriginalText(), pattern)) {
+//        if(!entry.equalsOutcome(myNodeSubstituteInfo.getOriginalNode(), myNodeSubstituteInfo.getOriginalText(), pattern)) {
           SemanticNode changedNode = entry.doSubstitute(pattern);
           if(changedNode != null) {
             changedNode.getSemanticModel().fireNodeAddedEvent(changedNode);
           }
-        }
+//        }
       }
       return true;
     }

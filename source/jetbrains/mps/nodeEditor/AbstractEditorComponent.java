@@ -445,13 +445,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
       // 1st - try to do substitution with current pattern (id cursor at the end of text)
       if (trySubstituteNow && substituteInfo.canSubstitute(pattern)) {
-        if (!substituteInfo.equalsOutcome(pattern)) {
+//        if (!substituteInfo.equalsOutcome(pattern)) {
           SemanticNode semanticNode = substituteInfo.doSubstitute(pattern);
           if (semanticNode != null) {
             semanticNode.getSemanticModel().fireNodeAddedEvent(semanticNode);
           }
           return true;
-        }
+//        }
       } else {
         myNodeSubstituteChooser.setNodeSubstituteInfo(editorCell.getSubstituteInfo());
         myNodeSubstituteChooser.setPatternEditor(patternEditor);

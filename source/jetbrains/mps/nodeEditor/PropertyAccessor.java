@@ -35,4 +35,7 @@ public class PropertyAccessor implements ModelAccessor {
       myNode.setProperty(myPropertyName, text);
     }
   }
+  public boolean isValidText(String text) {
+    return true;
+  }
 }
