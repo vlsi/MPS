@@ -45,8 +45,11 @@
             <node role="initializer" type="jetbrains.mps.baseLanguage.NewExpression" id="1107805405538">
               <node role="constructorCall" type="jetbrains.mps.baseLanguage.ConstructorCall" id="1107804725031">
                 <link role="baseMethodDeclaration" targetNodeId="1107804670837" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.IntegerType" id="1109289558610" />
-                <node role="typeParameter" type="jetbrains.mps.baseLanguage.LongType" id="1109289563096" />
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.IntegerType" id="1109289665204" />
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.ClassType" id="1109289675971">
+                  <link role="classifier" targetNodeId="1107799696578" />
+                </node>
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.ClassType" id="1109292009005" />
               </node>
             </node>
           </node>
