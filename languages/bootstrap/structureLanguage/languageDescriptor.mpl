@@ -12,8 +12,6 @@
   </editor>
   <library>
     <model fqName="jetbrains.mps.bootstrap.structureLanguage.library"/>
-  </library>
-  <autoImport>
     <model fqName="jetbrains.mps.core.structure" />
-  </autoImport>
+  </library>
 </language>
