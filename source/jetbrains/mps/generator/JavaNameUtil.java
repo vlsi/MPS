@@ -11,6 +11,14 @@ import jetbrains.mps.semanticModel.SemanticNode;
  */
 public class JavaNameUtil {
 
+  public static String fqClassName(SemanticNode semanticNode) {
+    if(semanticNode.getName() == null) {
+      return semanticNode.getClass().getName();
+    } else {
+      return fqClassName(semanticNode, semanticNode.getName());
+    }
+  }
+
   public static String fqClassName(SemanticNode semanticNode, String shortClassName) {
     return fqClassName(semanticNode.getSemanticModel(), shortClassName);
   }
