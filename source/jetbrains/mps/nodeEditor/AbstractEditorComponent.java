@@ -1,24 +1,25 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.baseLanguage.*;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.editorLanguage.BaseEditorComponent;
+import jetbrains.mps.bootstrap.editorLanguage.EditorCellModel;
+import jetbrains.mps.bootstrap.editorLanguage.EditorLanguageUtil;
 import jetbrains.mps.cml.generator.GeneratorUtil;
 import jetbrains.mps.generator.ContextUtil;
 import jetbrains.mps.generator.JavaClassMap;
 import jetbrains.mps.generator.JavaClassMaps;
 import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.InspectorPane;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.action.ActionManager;
+import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.actions.nodes.*;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
-import jetbrains.mps.nodeEditor.test.EventPlayer;
 import jetbrains.mps.nodeEditor.test.EventRecorder;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.semanticModel.*;
@@ -29,10 +30,8 @@ import java.awt.*;
 import java.awt.event.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.io.File;
 import java.util.*;
 import java.util.List;
-import java.lang.reflect.InvocationTargetException;
 
 import static jetbrains.mps.ide.EditorsPane.EditorPosition.*;
 
@@ -307,11 +306,18 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     popupMenu.addSeparator();
     popupMenu.add(createGoByReferenceMenu(selectedNode));
 
-    ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS).addGroup(popupMenu, new ActionContext(getProject().getComponent(IdeMain.class),selectedNode));
+    ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS).addGroup(popupMenu, new ActionContext(getProject().getComponent(IdeMain.class), selectedNode));
 
     if (selectedNode instanceof ClassConcept) {
       popupMenu.addSeparator();
       popupMenu.add(createGenStubFromClassFileAction((ClassConcept) selectedNode));
+    }
+
+    if (selectedNode instanceof BaseEditorComponent ||
+            selectedNode instanceof EditorCellModel) {
+      popupMenu.addSeparator();
+      popupMenu.add(EditorLanguageUtil.createTurnCellBordersOnOffAction(selectedNode, true, getContext().getProject()));
+      popupMenu.add(EditorLanguageUtil.createTurnCellBordersOnOffAction(selectedNode, false, getContext().getProject()));
     }
 
     popupMenu.show(AbstractEditorComponent.this, e.getX(), e.getY());
