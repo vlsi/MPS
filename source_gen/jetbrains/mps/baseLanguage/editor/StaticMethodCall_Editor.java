@@ -15,6 +15,7 @@ import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration;
 import jetbrains.mps.semanticModel.SemanticModelUtil;
+import jetbrains.mps.nodeEditor.EditorUtil;
 
 public class StaticMethodCall_Editor extends SemanticNodeEditor {
   public static String MATCHING_TEXT = ". <static method>";
@@ -70,6 +71,7 @@ public class StaticMethodCall_Editor extends SemanticNodeEditor {
     }
     AbstractCellProvider baseMethodDeclaration_InlineComponent = new StaticMethodCall_Editor_baseMethodDeclaration_InlineComponent(effectiveNode);
     EditorCell editorCell = baseMethodDeclaration_InlineComponent.createEditorCell(editorContext);
+    EditorUtil.setSemanticNodeToCells(editorCell, node);
     StaticMethodCall_MethodNameActions.setCellActions(editorCell, node);
     SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(node, "baseMethodDeclaration");
     editorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);

@@ -15,6 +15,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration;
 import jetbrains.mps.semanticModel.SemanticModelUtil;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.EditorUtil;
 
 public class StaticFieldReference_Editor extends SemanticNodeEditor {
   public static String MATCHING_TEXT = ". <static field>";
@@ -65,6 +66,7 @@ public class StaticFieldReference_Editor extends SemanticNodeEditor {
     }
     AbstractCellProvider variableDeclaration_InlineComponent = new StaticFieldReference_Editor_variableDeclaration_InlineComponent(effectiveNode);
     EditorCell editorCell = variableDeclaration_InlineComponent.createEditorCell(editorContext);
+    EditorUtil.setSemanticNodeToCells(editorCell, node);
     StaticFieldReference_FieldNameActions.setCellActions(editorCell, node);
     SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(node, "variableDeclaration");
     editorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);

@@ -14,6 +14,7 @@ import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration;
 import jetbrains.mps.semanticModel.SemanticModelUtil;
+import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class ConstructorDeclaration_Editor extends SemanticNodeEditor {
@@ -57,6 +58,7 @@ public class ConstructorDeclaration_Editor extends SemanticNodeEditor {
     }
     AbstractCellProvider javaClass_InlineComponent = new ConstructorDeclaration_Editor_javaClass_InlineComponent(effectiveNode);
     EditorCell editorCell = javaClass_InlineComponent.createEditorCell(editorContext);
+    EditorUtil.setSemanticNodeToCells(editorCell, node);
     SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(node, "javaClass");
     editorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
     editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
