@@ -15,7 +15,7 @@ import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 
 public class StaticMethodCall_Editor extends SemanticNodeEditor {
-  public static String MATCHING_TEXT = ".<static method>";
+  public static String MATCHING_TEXT = ". <static method>";
   public static String PRESENTATION_NAME = "static method call";
 
   private AbstractCellProvider my_BaseMethodCallArgListEditor;
