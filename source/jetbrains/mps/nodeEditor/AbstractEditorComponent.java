@@ -509,6 +509,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public Dimension getPreferredSize() {
     JViewport viewport = myScrollPane.getViewport();
     Rectangle viewRect = viewport.getViewRect();
+    if(myRootCell == null) {
+      return new Dimension(viewRect.width, viewRect.height);
+    }
     return new Dimension(Math.max(viewRect.width, myRootCell.getWidth() + 100),
             Math.max(viewRect.height, myRootCell.getHeight() + 100));
   }
