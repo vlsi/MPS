@@ -235,7 +235,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public void addNotify() {
     super.addNotify();
-
     KeyboardFocusManager.getCurrentKeyboardFocusManager().addPropertyChangeListener("focusOwner", myFocusListener = new PropertyChangeListener() {
       public void propertyChange(PropertyChangeEvent evt) {
         Component focusOwner = KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
@@ -250,6 +249,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     });
   }
 
+  public void removeNotify() {
+    KeyboardFocusManager.getCurrentKeyboardFocusManager().removePropertyChangeListener("focusOwner", myFocusListener);
+    super.removeNotify();
+  }
+
   protected void registerNodeAction(final MPSAction action, String keyStroke) {
     registerKeyboardAction(new AbstractAction(action.getName()) {
       public void actionPerformed(ActionEvent e) {
@@ -258,11 +262,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
       }
     }, KeyStroke.getKeyStroke(keyStroke), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-  }
-
-  public void removeNotify() {
-    KeyboardFocusManager.getCurrentKeyboardFocusManager().removePropertyChangeListener(myFocusListener);
-    super.removeNotify();
   }
 
   private EditorCell_Component findCellForComponent(Component component, EditorCell root) {
@@ -613,7 +612,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (keyEvent.getKeyCode() == KeyEvent.VK_DELETE && keyEvent.isControlDown()) {
       return EditorCellAction.DELETE;
     }
-    
+
     // ---
     if (keyEvent.getKeyCode() == KeyEvent.VK_C && keyEvent.isControlDown()) {
       return EditorCellAction.COPY;
