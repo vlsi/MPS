@@ -29,7 +29,7 @@ public class IntegerConstant_Editor extends SemanticNodeEditor {
       ((EditorCell_Label)editorCell).setEditable(true);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
-}
+    }
     IntegerConstant_NodeBoxActions.setCellActions(editorCell, node);
     return editorCell;
   }

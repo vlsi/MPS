@@ -10,10 +10,14 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
+import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
 
 public class StaticMethodDeclaration_Editor extends SemanticNodeEditor {
 
@@ -56,18 +60,21 @@ public class StaticMethodDeclaration_Editor extends SemanticNodeEditor {
     SemanticNode returnType = node.getReferent("returnType", (SemanticNode)null);
     EditorCell editorCell = null;
     if(returnType != null) {
-      editorCell = this.nodeCell(editorContext, returnType);
+      editorCell = editorContext.createNodeCell(returnType);
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(returnType));
       MethodDeclaration_ReturnTypeCellActions.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       MethodDeclaration_ReturnTypeCellActions.setCellActions(editorCell, node);
-}
+    }
     return editorCell;
   }
   public EditorCell createMethodName(EditorContext editorContext, SemanticNode node) {
     ModelAccessor modelAccessor = new PropertyAccessor(node, "name", true, false);
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     editorCell.setDefaultText("<no name>");
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext editorContext, SemanticNode node, String text) {
@@ -100,10 +107,12 @@ public class StaticMethodDeclaration_Editor extends SemanticNodeEditor {
     SemanticNode body = node.getReferent("body", (SemanticNode)null);
     EditorCell editorCell = null;
     if(body != null) {
-      editorCell = this.nodeCell(editorContext, body);
+      editorCell = editorContext.createNodeCell(body);
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(body));
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
-}
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    }
     return editorCell;
   }
   public EditorCell createConstantCell3(EditorContext editorContext, SemanticNode node, String text) {

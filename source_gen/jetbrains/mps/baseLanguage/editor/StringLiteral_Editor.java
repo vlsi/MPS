@@ -12,6 +12,8 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
 
 public class StringLiteral_Editor extends SemanticNodeEditor {
   public static String MATCHING_TEXT = "\"";
@@ -40,6 +42,7 @@ public class StringLiteral_Editor extends SemanticNodeEditor {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     editorCell.setSelectable(true);
     editorCell.setEditable(true);
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "value"));
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext editorContext, SemanticNode node, String text) {

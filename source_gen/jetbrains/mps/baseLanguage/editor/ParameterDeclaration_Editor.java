@@ -8,10 +8,14 @@ import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
+import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
 
 public class ParameterDeclaration_Editor extends SemanticNodeEditor {
 
@@ -33,18 +37,21 @@ public class ParameterDeclaration_Editor extends SemanticNodeEditor {
     SemanticNode type = node.getReferent("type", (SemanticNode)null);
     EditorCell editorCell = null;
     if(type != null) {
-      editorCell = this.nodeCell(editorContext, type);
+      editorCell = editorContext.createNodeCell(type);
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(type));
       ParameterDeclaration_TypeCellActions.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       ParameterDeclaration_TypeCellActions.setCellActions(editorCell, node);
-}
+    }
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext editorContext, SemanticNode node) {
     ModelAccessor modelAccessor = new PropertyAccessor(node, "name", true, false);
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     editorCell.setDefaultText("<no name>");
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
     ParameterDeclaration_NameCellActions.setCellActions(editorCell, node);
     return editorCell;
   }

@@ -8,7 +8,10 @@ import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class ExpressionStatement_Editor extends SemanticNodeEditor {
@@ -32,13 +35,15 @@ public class ExpressionStatement_Editor extends SemanticNodeEditor {
     SemanticNode expression = node.getReferent("expression", (SemanticNode)null);
     EditorCell editorCell = null;
     if(expression != null) {
-      editorCell = this.nodeCell(editorContext, expression);
+      editorCell = editorContext.createNodeCell(expression);
       editorCell.setSelectable(true);
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(expression));
       ExpressionStatement_ExpressionActions.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       ExpressionStatement_ExpressionActions.setCellActions(editorCell, node);
-}
+    }
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {

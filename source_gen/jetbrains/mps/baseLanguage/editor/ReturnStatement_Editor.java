@@ -9,7 +9,10 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.nodeEditor.CellAction_Empty;
 
 public class ReturnStatement_Editor extends SemanticNodeEditor {
   public static String MATCHING_TEXT = "return";
@@ -37,13 +40,15 @@ public class ReturnStatement_Editor extends SemanticNodeEditor {
     SemanticNode expression = node.getReferent("expression", (SemanticNode)null);
     EditorCell editorCell = null;
     if(expression != null) {
-      editorCell = this.nodeCell(editorContext, expression);
+      editorCell = editorContext.createNodeCell(expression);
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(expression));
       ReturnStatement_ExpressionCellActions.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       ReturnStatement_ExpressionCellActions.setCellActions(editorCell, node);
       _DefErrorActions.setCellActions(editorCell, node);
-}
+    }
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext editorContext, SemanticNode node, String text) {

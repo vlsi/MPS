@@ -8,7 +8,10 @@ import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class InstanceOfExpression_Editor extends SemanticNodeEditor {
@@ -33,14 +36,16 @@ public class InstanceOfExpression_Editor extends SemanticNodeEditor {
     SemanticNode leftExpression = node.getReferent("leftExpression", (SemanticNode)null);
     EditorCell editorCell = null;
     if(leftExpression != null) {
-      editorCell = this.nodeCell(editorContext, leftExpression);
+      editorCell = editorContext.createNodeCell(leftExpression);
       editorCell.setSelectable(true);
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(leftExpression));
       InstanceOfExpression_LeftExpressionsActions.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       InstanceOfExpression_LeftExpressionsActions.setCellActions(editorCell, node);
       _DefErrorActions.setCellActions(editorCell, node);
-}
+    }
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
@@ -51,14 +56,16 @@ public class InstanceOfExpression_Editor extends SemanticNodeEditor {
     SemanticNode javaClassType = node.getReferent("javaClassType", (SemanticNode)null);
     EditorCell editorCell = null;
     if(javaClassType != null) {
-      editorCell = this.nodeCell(editorContext, javaClassType);
+      editorCell = editorContext.createNodeCell(javaClassType);
       editorCell.setSelectable(true);
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(javaClassType));
       InstanceOfExpression_InstanceOfTypes.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       InstanceOfExpression_InstanceOfTypes.setCellActions(editorCell, node);
       _DefErrorActions.setCellActions(editorCell, node);
-}
+    }
     return editorCell;
   }
 }

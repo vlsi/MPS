@@ -9,10 +9,14 @@ import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 
 public class StaticMethodCall_Editor extends SemanticNodeEditor {
   public static String MATCHING_TEXT = ". <static method>";
@@ -42,12 +46,14 @@ public class StaticMethodCall_Editor extends SemanticNodeEditor {
     SemanticNode javaClassType = node.getReferent("javaClassType", (SemanticNode)null);
     EditorCell editorCell = null;
     if(javaClassType != null) {
-      editorCell = this.nodeCell(editorContext, javaClassType);
+      editorCell = editorContext.createNodeCell(javaClassType);
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(javaClassType));
       StaticMethodCall_StaticMethodCellActions.setCellActions(editorCell, node);
     } else {
-      editorCell = EditorCell_Error.create(editorContext, node, null);
+      editorCell = EditorCell_Error.create(editorContext, node, "<no type>");
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       StaticMethodCall_StaticMethodCellActions.setCellActions(editorCell, node);
-}
+    }
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
@@ -59,9 +65,10 @@ public class StaticMethodCall_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(modelAccessor != null) {
       editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
+      ((EditorCell_Label)editorCell).setDefaultText("<no method>");
     } else {
-      editorCell = EditorCell_Error.create(editorContext, node, null);
-}
+      editorCell = EditorCell_Error.create(editorContext, node, "<no method>");
+    }
     StaticMethodCall_NameCellActions.setCellActions(editorCell, node);
     return editorCell;
   }

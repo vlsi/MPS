@@ -14,6 +14,9 @@ import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
+import jetbrains.mps.nodeEditor.CellAction_Empty;
 
 public class ConstructorDeclaration_Editor extends SemanticNodeEditor {
 
@@ -55,7 +58,7 @@ public class ConstructorDeclaration_Editor extends SemanticNodeEditor {
       ((EditorCell_Label)editorCell).setEditable(false);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
-}
+    }
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
@@ -88,10 +91,12 @@ public class ConstructorDeclaration_Editor extends SemanticNodeEditor {
     SemanticNode body = node.getReferent("body", (SemanticNode)null);
     EditorCell editorCell = null;
     if(body != null) {
-      editorCell = this.nodeCell(editorContext, body);
+      editorCell = editorContext.createNodeCell(body);
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(body));
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
-}
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    }
     return editorCell;
   }
   public EditorCell createConstantCell2(EditorContext editorContext, SemanticNode node, String text) {
