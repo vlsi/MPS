@@ -2,6 +2,7 @@ package jetbrains.mps.ide;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 
 /**
  * @author Kostik
@@ -22,6 +23,12 @@ public abstract class BaseDialog extends JDialog {
     }
     buttonsPanel.add(innerButtonsPanel);
     add(buttonsPanel, BorderLayout.SOUTH);
+
+    ((JComponent) getContentPane()).registerKeyboardAction(new AbstractAction("Dispose dialog") {
+      public void actionPerformed(ActionEvent e) {
+        dispose();
+      }
+    }, KeyStroke.getKeyStroke("ESCAPE"), JComponent.WHEN_IN_FOCUSED_WINDOW);
 
     setDefaultCloseOperation(DISPOSE_ON_CLOSE);
   }
