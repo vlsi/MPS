@@ -241,6 +241,7 @@ public class MPSProject extends AbstractMPSProject {
     return null;
   }
 
+/*
   private void saveModelRoots(ArrayList<ModelRoot> modelRoots, Element modelsElement) {
     for (Iterator<ModelRoot> iterator = modelRoots.iterator(); iterator.hasNext();) {
       ModelRoot modelRoot = iterator.next();
@@ -261,6 +262,7 @@ public class MPSProject extends AbstractMPSProject {
       modelsElement.addContent(modelRootElement);
     }
   }
+*/
 
   public void setProjectFile(File projectFile) {
     myProjectFile = projectFile;

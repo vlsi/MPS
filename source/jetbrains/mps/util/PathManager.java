@@ -167,11 +167,6 @@ public class PathManager {
     return resultPath;
   }
 
-  public static boolean modelFileExists(String modelName, String modelNamespace) {
-    File file = new File(getModelFilePath(modelName, modelNamespace));
-    return file.exists();
-  }
-
   public static String findModelPath(Collection<ModelRoot> modelRoots, String modelFQName) {
     for (ModelRoot modelRoot : modelRoots) {
       String path = findModelPath(modelRoot, modelFQName);
