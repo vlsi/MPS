@@ -61,7 +61,7 @@ public class MPSProject implements ModelLocator {
     addComponent(ProjectPaneComponent.class, new ProjectPaneComponent(this));
     addComponent(UsagesViewComponent.class, new UsagesViewComponent(this));
     addComponent(IdeMain.IdeMainComponent.class, new IdeMain.IdeMainComponent(this));
-    addComponent(ProjectModels.class, new ProjectModels(this));
+    addComponent(SModelRepository.class, new SModelRepository(this));
     addComponent(ExecutionManager.class, new ExecutionManager());
     addComponent(RootManager.class, myRootManager);
     addComponent(GeneratorConfigurationManager.class, new GeneratorConfigurationManager());
@@ -180,8 +180,8 @@ public class MPSProject implements ModelLocator {
     myNamespaceToLanguageMap.put(language.getNamespace(), language);
   }
 
-  public ProjectModels getModels() {
-    return getComponent(ProjectModels.class);
+  public SModelRepository getModels() {
+    return getComponent(SModelRepository.class);
   }
 
   public SModel loadModel(String fileName) {
