@@ -23,9 +23,6 @@ public class CellAction_DeleteReference extends EditorCellAction {
   public boolean canExecute(EditorContext context) {
     SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(mySource, myRole);
     if (linkDeclaration != null) {
-//      String sourceCardinality = linkDeclaration.getSourceCardinality();
-//      return (SemanticLinkDeclaration.CARDINALITY_0_1.equals(sourceCardinality) ||
-//              SemanticLinkDeclaration.CARDINALITY_1.equals(sourceCardinality));
       Cardinality sourceCardinality = linkDeclaration.getSourceCardinality();
       return (sourceCardinality == Cardinality._0_1 || sourceCardinality == Cardinality._1);
     }
