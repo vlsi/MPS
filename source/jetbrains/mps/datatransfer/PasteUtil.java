@@ -9,6 +9,7 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.semanticModel.SemanticModel;
 import jetbrains.mps.semanticModel.SemanticModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.Language;
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
@@ -89,8 +90,8 @@ public class PasteUtil {
   }
 
   private static boolean pasteToTarget_internal(final SemanticNode pasteTarget, final SemanticNode pasteNode, final SemanticNode anchorNode, final boolean pasteBefore, boolean reallyPaste) {
-    SemanticTypeDeclaration pasteTargetType = SemanticModelUtil.getTypeDeclaration(pasteTarget);
-    SemanticTypeDeclaration pasteNodeType = SemanticModelUtil.getTypeDeclaration(pasteNode);
+    SemanticTypeDeclaration pasteTargetType = Language.getTypeDeclaration(pasteTarget);
+    SemanticTypeDeclaration pasteNodeType = Language.getTypeDeclaration(pasteNode);
     if (pasteTargetType == null || pasteNodeType == null) {
       return false;
     }
