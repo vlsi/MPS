@@ -1,7 +1,10 @@
 package jetbrains.mps.util;
 
+import jetbrains.mps.semanticModel.ModelRoot;
+
 import java.io.File;
 import java.net.URL;
+import java.util.Collection;
 
 /**
  * Author: Sergey Dmitriev
@@ -70,6 +73,8 @@ public class PathManager {
 
     return ourConfigPath;
   }
+
+
 
   public static String getModelPath() {
     if (ourModelPath != null) return ourModelPath;
@@ -166,6 +171,40 @@ public class PathManager {
     File file = new File(getModelFilePath(modelName, modelNamespace));
     return file.exists();
   }
+
+  public static String findModelPath(Collection<ModelRoot> modelRoots, String modelFQName) {
+    for (ModelRoot modelRoot : modelRoots) {
+      String path = findModelPath(modelRoot, modelFQName);
+      if(path != null) {
+        return path;
+      }
+    }
+    return null;
+  }
+
+  public static String findModelPath(ModelRoot modelRoot, String modelFQName) {
+    String name = modelFQName;
+    String packagePrefix = modelRoot.namespacePrefix;
+    if(packagePrefix != null) {
+      if(modelFQName.startsWith(packagePrefix)) {
+        name = modelFQName.substring(packagePrefix.length());
+      }
+      else {
+        return null;
+      }
+    }
+    File root = modelRoot.root;
+    String path = name.replace('.', File.separatorChar);
+    if(!path.startsWith(File.separator)) {
+      path = File.separator + path;
+    }
+    path = root.getAbsolutePath() + path + ".mps";
+    if(!(new File(path)).exists()) {
+      return null;
+    }
+    return path;
+  }
+
 
   /**
    * @param modelName

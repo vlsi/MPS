@@ -1,9 +1,9 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.generator.ContextUtil;
 import jetbrains.mps.semanticModel.SemanticModel;
 import jetbrains.mps.semanticModel.SemanticModels;
-import jetbrains.mps.semanticModel.LanguageDescriptor;
+import jetbrains.mps.semanticModel.Language;
+import jetbrains.mps.semanticModel.ModelRoot;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.PathManager;
 import org.jdom.Document;
@@ -14,7 +14,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.FilenameFilter;
 import java.util.Iterator;
-import java.util.HashMap;
+import java.util.ArrayList;
 
 /**
  * Author: Sergey Dmitriev
@@ -22,18 +22,24 @@ import java.util.HashMap;
  */
 public class MPSProject extends AbstractMPSProject {
   private File myProjectFile;
+  private ArrayList<SemanticModel> myProjectModels = new ArrayList<SemanticModel>();
+  private ArrayList<SemanticModel> myLibraryModels = new ArrayList<SemanticModel>();
+  private ArrayList<ModelRoot> myProjectModelRoots = new ArrayList<ModelRoot>();
+  private ArrayList<ModelRoot> myLibraryModelRoots = new ArrayList<ModelRoot>();
 
-  private static final String LANGUAGE_ROOTS = "languageRoots";
+  private ArrayList<File> myLanguageRoots = new ArrayList<File>();
+
+  private static final String LANGUAGES = "languages";
   private static final String LANGUAGE_ROOT = "languageRoot";
-  private static final String SEMANTIC_MODELS = "semanticModels";
-  private static final String SEMANTIC_MODEL = "semanticModel";
-  private static final String FILE = "file";
+  private static final String PROJECT_MODELS = "projectModels";
+  private static final String LIBRARY_MODELS = "libraryModels";
+  private static final String MODEL_ROOT = "modelRoot";
   private static final String PROJECT = "project";
-  private static final String NAME = "name";
 
   private static final String PATH_MACRO_MODELS_ROOT = "${models_root}" + File.separatorChar;
   private static final String PATH_MACRO_PROJECT = "${project}" + File.separatorChar;
-  private HashMap<String, LanguageDescriptor> myLanguageDescriptors = new HashMap<String, LanguageDescriptor>();
+  private static final String NAMESPACE_PREFIX = "namespacePrefix";
+  private static final String ROOT_PATH = "rootPath";
 
   public MPSProject(File file) {
     myProjectFile = file;
@@ -58,12 +64,12 @@ public class MPSProject extends AbstractMPSProject {
     }
     Element rootElement = document.getRootElement();
 
-    Element languageRootsElement = rootElement.getChild(LANGUAGE_ROOTS);
+    Element languageRootsElement = rootElement.getChild(LANGUAGES);
     if (languageRootsElement != null) {
-      Iterator languageRoots = languageRootsElement.getChildren(LANGUAGE_ROOT).iterator();
-      while (languageRoots.hasNext()) {
-        Element element = (Element) languageRoots.next();
-        String rootFileName = element.getAttributeValue(NAME);
+      Iterator languageRootElements = languageRootsElement.getChildren(LANGUAGE_ROOT).iterator();
+      while (languageRootElements.hasNext()) {
+        Element element = (Element) languageRootElements.next();
+        String rootFileName = element.getAttributeValue(ROOT_PATH);
         String rootAbsolutePath = null;
         if (rootFileName.startsWith(PATH_MACRO_PROJECT)) {
           String modelRelativePath = rootFileName.substring(PATH_MACRO_PROJECT.length());
@@ -72,8 +78,9 @@ public class MPSProject extends AbstractMPSProject {
           rootAbsolutePath = PathManager.getAbsolutePathByRelational(myProjectFile, rootFileName);
         }
         File dir = new File(rootAbsolutePath);
+        myLanguageRoots.add(dir);
         if (dir.exists()) {
-          loadLanguageDescriptors(dir);
+          readLanguageDescriptors(dir);
         } else {
           throw new RuntimeException("Couldn't load languages from " + rootAbsolutePath +
                   "\nDirectory doesn't exist: " + rootAbsolutePath);
@@ -81,49 +88,68 @@ public class MPSProject extends AbstractMPSProject {
       }
     }
 
-    Element modelElement = rootElement.getChild(SEMANTIC_MODELS);
-    if (modelElement != null) {
-      Iterator models = modelElement.getChildren(SEMANTIC_MODEL).iterator();
-      while (models.hasNext()) {
-        Element element = (Element) models.next();
-        Element modelFileElement = element.getChild(FILE);
-        String modelFileName = modelFileElement.getAttributeValue(NAME);
-        String modelAbsolutePath = null;
-        if (modelFileName.startsWith(PATH_MACRO_MODELS_ROOT)) {
-          String modelRelativePath = modelFileName.substring(PATH_MACRO_MODELS_ROOT.length());
-          modelAbsolutePath = PathManager.getAbsolutePathByRelational(new File(PathManager.getModelPath()), modelRelativePath);
-        } else if (modelFileName.startsWith(PATH_MACRO_PROJECT)) {
-          String modelRelativePath = modelFileName.substring(PATH_MACRO_PROJECT.length());
-          modelAbsolutePath = PathManager.getAbsolutePathByRelational(myProjectFile, modelRelativePath);
-        } else { // default
-          modelAbsolutePath = PathManager.getAbsolutePathByRelational(myProjectFile, modelFileName);
-        }
-        if ((new File(modelAbsolutePath)).exists()) {
-          System.out.println("MPSProject addNewModel from: " + modelAbsolutePath);
-          mySemanticModels.loadModel(modelAbsolutePath);
-        } else {
-          throw new RuntimeException("Couldn't load model from " + modelFileName +
-                  "\nFile doesn't exist: " + modelAbsolutePath);
-        }
-      }
 
-      SemanticModel[] semanticModels = mySemanticModels.semanticModels();
-      for (int i = 0; i < semanticModels.length; i++) {
-        SemanticModel semanticModel = semanticModels[i];
-        try {
-          ContextUtil.initGlobalContext(semanticModel, this);
-          ContextUtil.initLocalContext(semanticModel, this);
-        } catch (Exception e) {
-          System.out.println("No context for model: " + semanticModel.getNamespace() + "." + semanticModel.getName());
-          e.printStackTrace();
-        }
-      }
+    Element projectModelsElement = rootElement.getChild(PROJECT_MODELS);
+    readModels(myProjectModelRoots, myProjectModels, projectModelsElement);
+    Element libraryModelsElement = rootElement.getChild(LIBRARY_MODELS);
+    readModels(myLibraryModelRoots, myLibraryModels, libraryModelsElement);
 
-      mySemanticModels.flushModelInfos();
-    }
+    mySemanticModels.flushModelInfos();
   }
 
-  private void loadLanguageDescriptors(File dir) {
+  private void readModels(ArrayList<ModelRoot> modelRoots, ArrayList<SemanticModel> models, Element projectModelsElement) {
+    if (projectModelsElement == null) {
+      return;
+    }
+      Iterator modelRootElements = projectModelsElement.getChildren(MODEL_ROOT).iterator();
+      while (modelRootElements.hasNext()) {
+        Element modelRootElement = (Element) modelRootElements.next();
+        String rootFileName = modelRootElement.getAttributeValue(ROOT_PATH);
+        String rootAbsolutePath = null;
+        if (rootFileName.startsWith(PATH_MACRO_PROJECT)) {
+          String modelRelativePath = rootFileName.substring(PATH_MACRO_PROJECT.length());
+          rootAbsolutePath = PathManager.getAbsolutePathByRelational(myProjectFile, modelRelativePath);
+        } else { // default
+          rootAbsolutePath = PathManager.getAbsolutePathByRelational(myProjectFile, rootFileName);
+        }
+        File dir = new File(rootAbsolutePath);
+        String namespacePrefix = modelRootElement.getAttributeValue(NAMESPACE_PREFIX);
+        ModelRoot modelRoot = new ModelRoot(namespacePrefix, dir);
+        modelRoots.add(modelRoot);
+        if (dir.exists()) {
+          readModels(models, dir);
+        } else {
+          throw new RuntimeException("Couldn't load models from " + rootAbsolutePath +
+                  "\nDirectory doesn't exist: " + rootAbsolutePath);
+        }
+      }
+  }
+
+  private void readModels(ArrayList<SemanticModel> models, File dir) {
+    if(!dir.isDirectory()) {
+      return;
+    }
+    File[] files = dir.listFiles(new FilenameFilter() {
+          public boolean accept(File dir, String name) {
+            return name.endsWith(".mps");
+          }
+        });
+    for (int i = 0; i < files.length; i++) {
+      File file = files[i];
+      SemanticModel semanticModel = loadModel(file.getAbsolutePath());
+      models.add(semanticModel);
+    }
+    File[] dirs = dir.listFiles();
+    for (int i = 0; i < dirs.length; i++) {
+      File childDir = dirs[i];
+      if(childDir.isDirectory()) {
+        readModels(models, childDir);
+      }
+    }
+
+  }
+
+  private void readLanguageDescriptors(File dir) {
     if(!dir.isDirectory()) {
       return;
     }
@@ -134,14 +160,14 @@ public class MPSProject extends AbstractMPSProject {
         });
     for (int i = 0; i < files.length; i++) {
       File file = files[i];
-      LanguageDescriptor languageDescriptor = LanguageDescriptor.loadFromFile(file, this);
-      myLanguageDescriptors.put(languageDescriptor.getNameSpace(), languageDescriptor);
+      Language language = Language.loadFromFile(file, this);
+      addLanguage(language.getNamespace(), language);
     }
     File[] dirs = dir.listFiles();
     for (int i = 0; i < dirs.length; i++) {
       File childDir = dirs[i];
       if(childDir.isDirectory()) {
-        loadLanguageDescriptors(childDir);
+        readLanguageDescriptors(childDir);
       }
     }
 
@@ -153,26 +179,28 @@ public class MPSProject extends AbstractMPSProject {
     Element rootElement = new Element(PROJECT);
     Document document = new Document();
     document.setRootElement(rootElement);
-    Element semanticModelsElement = new Element(SEMANTIC_MODELS);
-    rootElement.addContent(semanticModelsElement);
-    SemanticModel[] semanticModels = mySemanticModels.semanticModels();
-    for (int i = 0; i < semanticModels.length; i++) {
-      SemanticModel semanticModel = semanticModels[i];
-      Element modelElement = new Element(SEMANTIC_MODEL);
-      semanticModelsElement.addContent(modelElement);
-      Element fileElement = new Element(FILE);
-      modelElement.addContent(fileElement);
-      String modelAbsolutePath = mySemanticModels.getFileName(semanticModel);
-      String modelFileName = null;
-      if (modelAbsolutePath.startsWith(myProjectFile.getParent())) {
-        String modelRelationalPath = PathManager.getRelationalPathByAbsolute(myProjectFile, modelAbsolutePath);
-        modelFileName = PATH_MACRO_PROJECT + modelRelationalPath;
+
+    for (Iterator<File> iterator = myLanguageRoots.iterator(); iterator.hasNext();) {
+      File languageRoot = iterator.next();
+      String absolutePath = languageRoot.getAbsolutePath();
+      String fileName = null;
+      if (absolutePath.startsWith(myProjectFile.getParent())) {
+        String modelRelationalPath = PathManager.getRelationalPathByAbsolute(myProjectFile, absolutePath);
+        fileName = PATH_MACRO_PROJECT + modelRelationalPath;
       } else {
-        String modelRelationalPath = PathManager.getRelationalPathByAbsolute(new File(PathManager.getModelPath()), modelAbsolutePath);
-        modelFileName = PATH_MACRO_MODELS_ROOT + modelRelationalPath;
+        String modelRelationalPath = PathManager.getRelationalPathByAbsolute(new File(PathManager.getModelPath()), absolutePath);
+        fileName = PATH_MACRO_MODELS_ROOT + modelRelationalPath;
       }
-      fileElement.setAttribute(NAME, modelFileName);
+      Element languageRootElement = new Element(LANGUAGE_ROOT);
+      languageRootElement.setAttribute(ROOT_PATH, fileName);
     }
+
+    Element projectModelsElement = new Element(PROJECT_MODELS);
+    saveModelRoots(myProjectModelRoots, projectModelsElement);
+    rootElement.addContent(projectModelsElement);
+    Element libraryModelsElement = new Element(LIBRARY_MODELS);
+    saveModelRoots(myProjectModelRoots, libraryModelsElement);
+    rootElement.addContent(libraryModelsElement);
 
     if (!myProjectFile.exists()) {
       try {
@@ -189,6 +217,40 @@ public class MPSProject extends AbstractMPSProject {
     }
   }
 
+
+  public String findPath(String modelFQName) {
+    String modelPath = PathManager.findModelPath(myProjectModelRoots, modelFQName);
+    if(modelPath != null && (new File(modelPath)).exists()) {
+      return modelPath;
+    }
+    modelPath = PathManager.findModelPath(myLibraryModelRoots, modelFQName);
+    if(modelPath != null && (new File(modelPath)).exists()) {
+      return modelPath;
+    }
+    return null;
+  }
+
+  private void saveModelRoots(ArrayList<ModelRoot> modelRoots, Element modelsElement) {
+    for (Iterator<ModelRoot> iterator = modelRoots.iterator(); iterator.hasNext();) {
+      ModelRoot modelRoot = iterator.next();
+      String absolutePath = modelRoot.root.getAbsolutePath();
+      String fileName = null;
+      if (absolutePath.startsWith(myProjectFile.getParent())) {
+        String modelRelationalPath = PathManager.getRelationalPathByAbsolute(myProjectFile, absolutePath);
+        fileName = PATH_MACRO_PROJECT + modelRelationalPath;
+      } else {
+        String modelRelationalPath = PathManager.getRelationalPathByAbsolute(new File(PathManager.getModelPath()), absolutePath);
+        fileName = PATH_MACRO_MODELS_ROOT + modelRelationalPath;
+      }
+      Element modelRootElement = new Element(MODEL_ROOT);
+      modelRootElement.setAttribute(ROOT_PATH, fileName);
+      if(modelRoot.namespacePrefix != null) {
+        modelRootElement.setAttribute(NAMESPACE_PREFIX, modelRoot.namespacePrefix);
+      }
+      modelsElement.addContent(modelRootElement);
+    }
+  }
+
   public void setProjectFile(File projectFile) {
     myProjectFile = projectFile;
   }
@@ -201,7 +263,4 @@ public class MPSProject extends AbstractMPSProject {
     return myProjectFile;
   }
 
-  public LanguageDescriptor getLanguageDescriptor(String namespace) {
-    return myLanguageDescriptors.get(namespace);
-  }
 }

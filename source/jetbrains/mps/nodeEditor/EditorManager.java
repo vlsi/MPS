@@ -4,6 +4,10 @@ import jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.semanticModel.SemanticModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SemanticModel;
+import jetbrains.mps.semanticModel.Language;
+import jetbrains.mps.project.AbstractMPSProject;
+import jetbrains.mps.ide.IdeMain;
 
 /**
  * Author: Sergey Dmitriev.
@@ -152,7 +156,10 @@ public class EditorManager {
 
   private static String getNodeEditorClassName(SemanticTypeDeclaration typeDeclaration, boolean trialEditor) {
     String typeName = typeDeclaration.getName();
-    String packageName = JavaNameUtil.packageNameForModel(typeDeclaration.getSemanticModel()) + ".editor";
+    //todo - the project should ber passed as parameter here
+    AbstractMPSProject mpsProject = IdeMain.instance().getProject();
+    Language language = mpsProject.getLanguageByStructureModel(typeDeclaration.getSemanticModel());
+    String packageName = JavaNameUtil.packageNameForModel(language.getLanguageEditor());
     if (trialEditor) {
       return packageName + ".Trial_" + typeName + "_Editor";
     }

@@ -20,6 +20,15 @@ public class JavaNameUtil {
     }
   }
 
+  public static String fqClassNameByNamespace(SemanticNode semanticNode, String shortClassName) {
+    SemanticModel model = semanticNode.getSemanticModel();
+    String modelFqName = model.getNamespace();
+    if (modelFqName.startsWith("jetbrains.mps.") || modelFqName.startsWith("java.")) {
+      return modelFqName;
+    }
+    return "jetbrains.mps." + modelFqName + "." + shortClassName;
+  }
+
   public static String fqClassName(SemanticNode semanticNode, String shortClassName) {
     return fqClassName(semanticNode.getSemanticModel(), shortClassName);
   }
@@ -33,30 +42,14 @@ public class JavaNameUtil {
   }
 
   public static String packageNameForModel(SemanticModel semanticModel) {
-    String packageName = "jetbrains.mps";
-    String uniquePackageSegment = uniquePackageSegmentForModel(semanticModel);
-    if (uniquePackageSegment.length() > 0) {
-      if (uniquePackageSegment.startsWith("jetbrains.mps") || uniquePackageSegment.startsWith("java.")) {
-        return uniquePackageSegment;
-      }
-      return packageName + '.' + uniquePackageSegment;
+    String modelFqName = semanticModel.getFQName();
+    if (modelFqName.startsWith("jetbrains.mps.") || modelFqName.startsWith("java.")) {
+      return modelFqName;
     }
-    return packageName;
+    return "jetbrains.mps." + modelFqName;
   }
 
-  public static String uniquePackageSegmentForModel(SemanticModel semanticModel) {
-
-    String namespace = semanticModel.getNamespace();
-    String name = semanticModel.getName();
-    String result = namespace;
-    if (result.length() > 0 && name.length() > 0) {
-      result += ".";
-    }
-    result += name;
-    return result;
-  }
-
-  public static String uniquePackageSegment(String packageName) {
+  public static String modelFqNameForPackage(String packageName) {
     String packageHead = "jetbrains.mps.";
     if (packageName.startsWith(packageHead)) {
       return packageName.substring(packageHead.length());
