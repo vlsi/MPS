@@ -1,6 +1,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.baseLanguage.JavaClass;
+import jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration;
 import jetbrains.mps.semanticModel.SemanticModel;
 import jetbrains.mps.semanticModel.SemanticNode;
 
@@ -9,37 +10,21 @@ import jetbrains.mps.semanticModel.SemanticNode;
  * Date: Jan 13, 2004
  */
 public class JavaNameUtil {
-//  public static String classNameForNode(SemanticNode semanticNode, SemanticModel currentModel) {
-//    SemanticModel semanticModel = semanticNode.getSemanticModel();
-//    String packageName = packageNameForModel(semanticModel);
-//    if(currentModel != null && packageName.equals(packageNameForModel(currentModel))) {
-//      return semanticNode.getName();
-//    }
-//    return packageName + "." + semanticNode.getName();
-//  }
 
-  public static String fqClassNameForNode(SemanticNode semanticNode) {
-    SemanticModel semanticModel = semanticNode.getSemanticModel();
+  public static String fqClassName(SemanticNode semanticNode, String shortClassName) {
+    return fqClassName(semanticNode.getSemanticModel(), shortClassName);
+  }
+
+  public static String fqClassName(SemanticModel semanticModel, String shortClassName) {
     String packageName = packageNameForModel(semanticModel);
     if(packageName == null || packageName.length() == 0) {
-      return semanticNode.getName();
+      return shortClassName;
     }
-    return packageName + "." + semanticNode.getName();
+    return packageName + "." + shortClassName;
   }
 
   public static String packageNameForModel(SemanticModel semanticModel) {
-
     String packageName = "jetbrains.mps";
-//    String namespace = semanticModel.getNamespace();
-//    String name = semanticModel.getName();
-//    String tail = namespace;
-//    if(tail.length() > 0 && name.length() > 0) {
-//      tail += ".";
-//    }
-//    tail += name;
-//    if(tail.length() > 0) {
-//      packageName = packageName + "." + tail;
-//    }
     String uniquePackageSegment = uniquePackageSegmentForModel(semanticModel);
     if(uniquePackageSegment.length() > 0) {
       return packageName + '.' + uniquePackageSegment;
