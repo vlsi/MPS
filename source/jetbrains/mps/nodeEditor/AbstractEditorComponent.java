@@ -136,10 +136,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private void addImportedModelsToListener(SemanticModel semanticModel) {
     Iterator<SemanticModel> importedModels = semanticModel.importedModels();
-    if(importedModels != null) {
+    if (importedModels != null) {
       while (importedModels.hasNext()) {
         SemanticModel importedModel = importedModels.next();
-        if(importedModel.hasSemanticModelListener(mySemanticModelListener)) continue;
+        if (importedModel.hasSemanticModelListener(mySemanticModelListener)) continue;
 
         importedModel.addSemanticModelListener(mySemanticModelListener);
         addImportedModelsToListener(importedModel);
@@ -164,10 +164,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN && keyEvent.getModifiers() == 0) {
       return EditorCellAction.DOWN;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_INSERT && keyEvent.isControlDown() && keyEvent.isShiftDown()) {
+//    if (keyEvent.getKeyCode() == KeyEvent.VK_INSERT && keyEvent.isControlDown() && keyEvent.isShiftDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_INSERT && keyEvent.getModifiers() == 0) {
       return EditorCellAction.INSERT_BEFORE;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_INSERT && keyEvent.isControlDown()) {
+//    if (keyEvent.getKeyCode() == KeyEvent.VK_INSERT && keyEvent.isControlDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
       return EditorCellAction.INSERT;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && keyEvent.isControlDown()) {
@@ -663,31 +665,52 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     String actionType = getActionType(keyEvent, editorContext);
 
     // pre-process action
-    if (mySelectedCell != null &&
-            actionType == EditorCellAction.RIGHT_TRANSFORM) {
-      if (!isValidCell(mySelectedCell) &&
-              !validateCell(mySelectedCell)) {  // !side effect: can change selection!
-        keyEvent.consume();
-        return true;
+
+    if (mySelectedCell != null) {
+      boolean endEditKeystroke = (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && !(keyEvent.isControlDown() || keyEvent.isAltDown() || keyEvent.isShiftDown()));
+      boolean deleteKeystroke = (keyEvent.getKeyCode() == KeyEvent.VK_DELETE && !(keyEvent.isControlDown() || keyEvent.isAltDown() || keyEvent.isShiftDown()));
+
+      if (actionType == EditorCellAction.RIGHT_TRANSFORM || endEditKeystroke) {
+        if (!isValidCell(mySelectedCell) &&
+                !validateCell(mySelectedCell)) {  // !side effect: can change selection!
+          keyEvent.consume();
+          return true;
+        }
       }
 
-      // todo: hardcoded condition
-      if (mySelectedCell != null && getCellAction(mySelectedCell, EditorCellAction.RIGHT_TRANSFORM) == null) {
-        if (mySelectedCell instanceof EditorCell_Constant) {
-          actionType = EditorCellAction.RIGHT_SPECIAL;
+      // may be change actionType to be processed
+      if (mySelectedCell != null) {
+        // todo: too mach hardcoded conditions
+        if (endEditKeystroke) {
+          actionType = EditorCellAction.NEXT;
           keyEvent.consume();
-        }
-        if (mySelectedCell instanceof EditorCell_Property) {
-          String text = ((EditorCell_Property) mySelectedCell).getText();
-          if (!((EditorCell_Property) mySelectedCell).getModelAccessor().isValidText(text + " ")) {
+
+        } else if (deleteKeystroke) {
+          if (!(mySelectedCell instanceof EditorCell_Label &&
+                  ((EditorCell_Label) mySelectedCell).isEditable())) {
+            actionType = EditorCellAction.DELETE;
+            keyEvent.consume();
+          }
+
+        } else if (actionType == EditorCellAction.RIGHT_TRANSFORM &&
+                getCellAction(mySelectedCell, actionType) == null) {
+          if (mySelectedCell instanceof EditorCell_Constant) {
             actionType = EditorCellAction.RIGHT_SPECIAL;
             keyEvent.consume();
+          }
+          if (mySelectedCell instanceof EditorCell_Property) {
+            String text = ((EditorCell_Property) mySelectedCell).getText();
+            if (!((EditorCell_Property) mySelectedCell).getModelAccessor().isValidText(text + " ")) {
+              actionType = EditorCellAction.RIGHT_SPECIAL;
+              keyEvent.consume();
+            }
           }
         }
       }
     }
 
     // process action
+
     if (mySelectedCell != null) {
 
       if (actionType != null) {
@@ -709,8 +732,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
 
         // auto-completion (AKA node substitution)
-        if ((keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown()) ||
-                (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && !keyEvent.isControlDown())) {
+        if ((keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown() && !(keyEvent.isAltDown() || keyEvent.isShiftDown())) ||
+                (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && keyEvent.isAltDown() && !(keyEvent.isControlDown() || keyEvent.isShiftDown()))) {
           if (activateNodeSubstituteChooser(mySelectedCell, keyEvent.getKeyCode() == KeyEvent.VK_ENTER)) {
             keyEvent.consume();
             System.out.println("SUBSTITUTE");
