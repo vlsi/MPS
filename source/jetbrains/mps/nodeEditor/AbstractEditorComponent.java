@@ -11,8 +11,9 @@ import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ProjectPane;
 import jetbrains.mps.ide.actions.*;
-import jetbrains.mps.ide.action.NodeAction;
+import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.action.ActionManager;
+import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
@@ -245,11 +246,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     });
   }
 
-  protected void registerNodeAction(final NodeAction action, String keyStroke) {
+  protected void registerNodeAction(final MPSAction action, String keyStroke) {
     registerKeyboardAction(new AbstractAction(action.getName()) {
       public void actionPerformed(ActionEvent e) {
         if (mySelectedCell != null && mySelectedCell.getSemanticNode() != null) {
-          action.execute(mySelectedCell.getSemanticNode());
+          action.execute(new ActionContext(mySelectedCell.getSemanticNode()));
         }
       }
     }, KeyStroke.getKeyStroke(keyStroke), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
