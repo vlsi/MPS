@@ -43,10 +43,11 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
         }
 
         public String getDescriptionText(String pattern) {
-          if (targetNode instanceof SemanticTypeDeclaration) {
-            return EditorUtil.presentableNameForType((SemanticTypeDeclaration) targetNode);
-          }
-          return JavaNameUtil.shortName(targetNode.getClass().getName());
+//          if (targetNode instanceof SemanticTypeDeclaration) {
+//            return EditorUtil.presentableNameForType((SemanticTypeDeclaration) targetNode);
+//          }
+//          return JavaNameUtil.shortName(targetNode.getClass().getName());
+          return targetNode.getSemanticModel().getFQName();
         }
 
         public SemanticNode doSubstitute(String pattern) {
@@ -66,37 +67,42 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
     List<SemanticNode> list = new LinkedList<SemanticNode>();
     SemanticTypeDeclaration targetType = myLinkDeclaration.getTarget();
 
-    // look through parents
-    SemanticNode parentNode = mySourceNode.getParent();
-    while (parentNode != null) {
-      if (SemanticModelUtil.isInstanceOfType(parentNode, targetType)) {
-        list.add(parentNode);
-      }
+    // look through all node declared in parent
+    SemanticNode parentNode = mySourceNode;
+    while (parentNode != null && parentNode.getParent() != null) {
       parentNode = parentNode.getParent();
     }
-
-    // look through roots in current model
-    SemanticModel sourceModel = mySourceNode.getSemanticModel();
-    Iterator roots = sourceModel.roots();
-    while (roots.hasNext()) {
-      SemanticNode node = (SemanticNode) roots.next();
-      if (!list.contains(node) && SemanticModelUtil.isInstanceOfType(node, targetType)) {
+    Iterator<SemanticNode> iterator = parentNode.depthFirstChildren();
+    while (iterator.hasNext()) {
+      SemanticNode node = iterator.next();
+      if (SemanticModelUtil.isInstanceOfType(node, targetType)) {
         list.add(node);
       }
     }
-    // look through imported models
-    Iterator importedModels = sourceModel.importedModels();
-    while (importedModels.hasNext()) {
-      SemanticModel importedModel = (SemanticModel) importedModels.next();
-      Iterator importedRoots = importedModel.roots();
-      while (importedRoots.hasNext()) {
-        SemanticNode importedRoot = (SemanticNode) importedRoots.next();
-        if (!list.contains(importedRoot) && SemanticModelUtil.isInstanceOfType(importedRoot, targetType)) {
-          list.add(importedRoot);
-        }
-      }
-    }
 
+//    // look through roots in current model
+//    SemanticModel sourceModel = mySourceNode.getSemanticModel();
+//    Iterator roots = sourceModel.roots();
+//    while (roots.hasNext()) {
+//      SemanticNode node = (SemanticNode) roots.next();
+//      if (!list.contains(node) && SemanticModelUtil.isInstanceOfType(node, targetType)) {
+//        list.add(node);
+//      }
+//    }
+//    // look through imported models
+//    Iterator importedModels = sourceModel.importedModels();
+//    while (importedModels.hasNext()) {
+//      SemanticModel importedModel = (SemanticModel) importedModels.next();
+//      Iterator importedRoots = importedModel.roots();
+//      while (importedRoots.hasNext()) {
+//        SemanticNode importedRoot = (SemanticNode) importedRoots.next();
+//        if (!list.contains(importedRoot) && SemanticModelUtil.isInstanceOfType(importedRoot, targetType)) {
+//          list.add(importedRoot);
+//        }
+//      }
+//    }
+
+    list.addAll(SemanticModelUtil.allInstancesOfType(targetType, mySourceNode.getSemanticModel()));
     return list;
   }
 }

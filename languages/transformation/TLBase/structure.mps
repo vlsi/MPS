@@ -21,13 +21,6 @@
         <property name="name" />
       </node>
     </link>
-    <link role="semanticLinkDeclaration" metaClass="aggregation">
-      <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration" id="1092144039796">
-        <link role="target" targetNodeId="1092059087313" />
-        <property name="targetCardinality" value="0..n" />
-        <property name="role" value="parameter" />
-      </node>
-    </link>
     <property name="name" value="PropertyMacro" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1087833466690">
@@ -63,14 +56,6 @@
         <property name="name" />
       </node>
     </link>
-    <link role="semanticLinkDeclaration" metaClass="aggregation">
-      <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration" id="1092144067629">
-        <link role="target" targetNodeId="1092059087313" />
-        <property name="targetCardinality" value="0..n" />
-        <property name="role" value="parameter" />
-        <property name="name" />
-      </node>
-    </link>
     <property name="name" value="ReferenceMacro" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1092059087312">
@@ -95,11 +80,24 @@
         <property name="name" />
       </node>
     </link>
-    <property name="name" value="NodeTemplate" />
+    <property name="name" value="TemplateDeclaration" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1092059087313">
     <link role="extends" targetNodeId="2.1078489098625" />
-    <property name="name" value="TemplateParameter" />
+    <property name="name" value="TemplateParameterDeclaration" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1092676070468">
+    <link role="extends" targetNodeId="2.1078489098625" />
+    <link role="semanticLinkDeclaration" metaClass="aggregation">
+      <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration" id="1092676070469">
+        <link role="target" targetNodeId="1092059087313" />
+        <property name="sourceCardinality" value="1" />
+        <property name="targetCardinality" value="0..n" />
+        <property name="role" value="templateParameter" />
+        <property name="name" />
+      </node>
+    </link>
+    <property name="name" value="TemplateParameterReference" />
   </node>
 </semanticModel>
 

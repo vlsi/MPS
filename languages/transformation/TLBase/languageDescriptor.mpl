@@ -7,6 +7,5 @@
   </structure>
   <editor>
     <model   fqName="transformation.TLBase.editor"/>
-    <context fqName="transformation.TLBase.editor_context"/>
   </editor>
 </language>

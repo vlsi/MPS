@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <semanticModel namespace="transformation.TLBase">
-  <maxReferenceID value="3" />
+  <maxReferenceID value="5" />
   <language namespace="bootstrap.editorLanguage" />
   <import referenceID="1" name="structure" namespace="transformation.TLBase" />
   <import referenceID="2" name="structure" namespace="baseLanguage" />
-  <import referenceID="3" name="editor_context" namespace="transformation.TLBase" />
   <import referenceID="4" name="structure" namespace="core" />
   <import referenceID="5" name="structure" namespace="bootstrap.structureLanguage" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1087903454703">
@@ -55,12 +54,8 @@
     </link>
     <link role="cellModel" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1087903454704">
-        <link role="conditionalQueryMethod" targetNodeId="3.1087909825543" />
-        <link role="conditionalQueryBody" targetNodeId="3.1087909825544" />
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1087903454705">
-            <link role="conditionalQueryBody" targetNodeId="3.1087909825532" />
-            <link role="conditionalQueryMethod" targetNodeId="3.1087909825531" />
             <property name="textBgColor" value="orange" />
             <property name="text" value="${" />
             <property name="name" />
@@ -68,60 +63,23 @@
             <property name="textBgColorSelected" value="magenta" />
           </node>
         </link>
-        <link role="childCellModel" metaClass="aggregation">
-          <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1092144148880">
-            <link role="linkDeclaration" targetNodeId="1.1092144039796" />
-            <link role="actionSet" targetNodeId="1092152998375" />
-            <link role="editorComponent" metaClass="aggregation">
-              <node type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1092144148881">
-                <link role="semanticTypeDeclaration" targetNodeId="1.1092059087313" />
-                <link role="cellModel" metaClass="aggregation">
-                  <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1092144148882">
-                    <link role="propertyDeclaration" targetNodeId="4.1078489098626" />
-                    <property name="textBgColor" value="green" />
-                    <property name="defaultText" value="&lt;no name&gt;" />
-                    <property name="readOnly" value="true" />
-                    <property name="name" />
-                    <property name="textBgColorSelected" value="magenta" />
-                  </node>
-                </link>
-                <property name="name" />
-              </node>
-            </link>
-            <property name="nullText" value="&lt;noparm&gt;" />
-            <property name="name" />
-          </node>
-        </link>
-        <link role="childCellModel" metaClass="aggregation">
-          <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1092143620797">
-            <property name="text" value=":" />
-            <property name="name" />
-          </node>
-        </link>
         <property name="name" />
         <property name="vertical" value="false" />
+        <property name="selectable" value="false" />
       </node>
     </link>
     <link role="inspectedCellModel" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1087903454708">
-        <link role="conditionalQueryMethod" targetNodeId="3.1087909825555" />
-        <link role="conditionalQueryBody" targetNodeId="3.1087909825556" />
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1087907544521">
-            <link role="conditionalQueryBody" targetNodeId="3.1087909825546" />
-            <link role="conditionalQueryMethod" targetNodeId="3.1087909825545" />
             <property name="text" value="&lt; Property Macro &gt;" />
             <property name="name" />
           </node>
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1087907544522">
-            <link role="conditionalQueryBody" targetNodeId="3.1087909825554" />
-            <link role="conditionalQueryMethod" targetNodeId="3.1087909825553" />
             <link role="childCellModel" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1087907544523">
-                <link role="conditionalQueryBody" targetNodeId="3.1087909825548" />
-                <link role="conditionalQueryMethod" targetNodeId="3.1087909825547" />
                 <property name="text" value="propertyMacro_" />
                 <property name="name" />
               </node>
@@ -158,6 +116,14 @@
         <property name="actionProviderId" value="PropertyMacroSwitch" />
       </node>
     </link>
+    <link role="entry" metaClass="aggregation">
+      <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1092767355293">
+        <property name="modifiers" value="ctrl+shift" />
+        <property name="keycode" value="VK_P" />
+        <property name="name" />
+        <property name="actionProviderId" value="TemplateParameterSwitch" />
+      </node>
+    </link>
     <property name="name" value="_PropertyMacroSwitch_KeyMap" />
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1087926271843">
@@ -188,20 +154,14 @@
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1089126084078">
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1089126148391">
-            <link role="conditionalQueryBody" targetNodeId="3.1087909825546" />
-            <link role="conditionalQueryMethod" targetNodeId="3.1087909825545" />
             <property name="text" value="&lt; Node Macro &gt;" />
             <property name="name" />
           </node>
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1090493300946">
-            <link role="conditionalQueryMethod" targetNodeId="3.1087909825553" />
-            <link role="conditionalQueryBody" targetNodeId="3.1087909825554" />
             <link role="childCellModel" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1090493300947">
-                <link role="conditionalQueryBody" targetNodeId="3.1087909825548" />
-                <link role="conditionalQueryMethod" targetNodeId="3.1087909825547" />
                 <property name="text" value="templateSourceQuery_" />
                 <property name="name" />
               </node>
@@ -225,12 +185,8 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1090493300950">
-            <link role="conditionalQueryBody" targetNodeId="3.1087909825554" />
-            <link role="conditionalQueryMethod" targetNodeId="3.1087909825553" />
             <link role="childCellModel" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1090493300951">
-                <link role="conditionalQueryMethod" targetNodeId="3.1087909825547" />
-                <link role="conditionalQueryBody" targetNodeId="3.1087909825548" />
                 <property name="text" value="templateTargetBuilder_" />
                 <property name="name" />
               </node>
@@ -277,6 +233,14 @@
         <property name="actionProviderId" value="NodeMacroSwitch" />
       </node>
     </link>
+    <link role="entry" metaClass="aggregation">
+      <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1092767189260">
+        <property name="modifiers" value="ctrl+shift" />
+        <property name="keycode" value="VK_F" />
+        <property name="name" />
+        <property name="actionProviderId" value="TemplateFragmentSwitch" />
+      </node>
+    </link>
     <property name="name" value="_NodeMacroSwitch_KeyMap" />
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1088762125437">
@@ -318,20 +282,14 @@
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1088763040904">
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1088763156827">
-            <link role="conditionalQueryBody" targetNodeId="3.1087909825546" />
-            <link role="conditionalQueryMethod" targetNodeId="3.1087909825545" />
             <property name="text" value="&lt; Reference Macro &gt;" />
             <property name="name" />
           </node>
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1088763156828">
-            <link role="conditionalQueryBody" targetNodeId="3.1087909825554" />
-            <link role="conditionalQueryMethod" targetNodeId="3.1087909825553" />
             <link role="childCellModel" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1088763156829">
-                <link role="conditionalQueryMethod" targetNodeId="3.1087909825547" />
-                <link role="conditionalQueryBody" targetNodeId="3.1087909825548" />
                 <property name="text" value="referenceMacro_" />
                 <property name="name" />
               </node>
@@ -369,38 +327,9 @@
             <property name="textBgColorSelected" value="magenta" />
           </node>
         </link>
-        <link role="childCellModel" metaClass="aggregation">
-          <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1092144208461">
-            <link role="linkDeclaration" targetNodeId="1.1092144067629" />
-            <link role="actionSet" targetNodeId="1092144702151" />
-            <link role="editorComponent" metaClass="aggregation">
-              <node type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1092144208462">
-                <link role="semanticTypeDeclaration" targetNodeId="1.1092059087313" />
-                <link role="cellModel" metaClass="aggregation">
-                  <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1092144208463">
-                    <link role="propertyDeclaration" targetNodeId="4.1078489098626" />
-                    <property name="textBgColor" value="green" />
-                    <property name="defaultText" value="&lt;no name&gt;" />
-                    <property name="readOnly" value="true" />
-                    <property name="name" />
-                    <property name="textBgColorSelected" value="magenta" />
-                  </node>
-                </link>
-                <property name="name" />
-              </node>
-            </link>
-            <property name="nullText" value="&lt;noparm&gt;" />
-            <property name="name" />
-          </node>
-        </link>
-        <link role="childCellModel" metaClass="aggregation">
-          <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1092143726115">
-            <property name="text" value=":" />
-            <property name="name" />
-          </node>
-        </link>
         <property name="name" />
         <property name="vertical" value="false" />
+        <property name="selectable" value="false" />
       </node>
     </link>
     <property name="name" value="ReferenceMacro_Editor" />
@@ -443,7 +372,7 @@
                 <property name="name" />
               </node>
             </link>
-            <property name="substituteHandlerId" value="ParameterizedTemplate_SetContentNode" />
+            <property name="substituteHandlerId" value="TemplateDeclaration_SetContentNode" />
             <property name="name" />
           </node>
         </link>
@@ -507,6 +436,37 @@
           </node>
         </link>
         <link role="childCellModel" metaClass="aggregation">
+          <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1092766295473">
+            <property name="textBgColor" value="orange" />
+            <property name="text" value="Ctrl-Shift-M  - convert to a macro" />
+            <property name="drawBorder" value="false" />
+            <property name="name" value="help1" />
+          </node>
+        </link>
+        <link role="childCellModel" metaClass="aggregation">
+          <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1092766345615">
+            <property name="textBgColor" value="green" />
+            <property name="text" value="Ctrl-Shift-P  - convert to parameter reference" />
+            <property name="drawBorder" value="false" />
+            <property name="name" value="help2" />
+          </node>
+        </link>
+        <link role="childCellModel" metaClass="aggregation">
+          <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1092766405585">
+            <property name="textBgColor" value="pink" />
+            <property name="text" value="Ctrl-Shift-F  - convert to template fragment" />
+            <property name="drawBorder" value="false" />
+            <property name="name" value="help3" />
+          </node>
+        </link>
+        <link role="childCellModel" metaClass="aggregation">
+          <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1092766405586">
+            <property name="drawBorder" value="false" />
+            <property name="name" value="separator" />
+            <property name="selectable" />
+          </node>
+        </link>
+        <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1092061173513">
             <property name="text" value="Content node:" />
             <property name="drawBorder" value="false" />
@@ -516,8 +476,8 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1092135992437">
-            <link role="linkDeclaration" targetNodeId="1.1092060348987" />
             <link role="actionSet" targetNodeId="1092137340906" />
+            <link role="linkDeclaration" targetNodeId="1.1092060348987" />
             <property name="nullText" value="&lt;no content node&gt;" />
             <property name="name" />
           </node>
@@ -527,20 +487,57 @@
         <property name="vertical" value="true" />
       </node>
     </link>
-    <property name="matchingText" value="template" />
-    <property name="presentationName" value="context free template" />
-    <property name="name" value="NodeTemplate_Editor" />
+    <property name="matchingText" value="template declaration" />
+    <property name="presentationName" value="reusable template with parameters" />
+    <property name="name" value="TemplateDeclaration_Editor" />
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1092063475612">
     <link role="semanticTypeDeclaration" targetNodeId="1.1092059087313" />
     <link role="cellModel" metaClass="aggregation">
-      <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1092063475613">
+      <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1092667743968">
         <link role="propertyDeclaration" targetNodeId="4.1078489098626" />
+        <property name="textBgColor" value="yellow" />
         <property name="defaultText" value="&lt;no name&gt;" />
         <property name="name" />
+        <property name="textBgColorSelected" value="magenta" />
       </node>
     </link>
-    <property name="name" value="TemplateParameter_Editor" />
+    <property name="matchingText" />
+    <property name="presentationName" value="template parameter declaration" />
+    <property name="name" value="TemplateParameterDeclaration_Editor" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1092676136689">
+    <link role="semanticTypeDeclaration" targetNodeId="1.1092676070468" />
+    <link role="cellModel" metaClass="aggregation">
+      <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1092678982421">
+        <link role="childCellModel" metaClass="aggregation">
+          <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1092679042551">
+            <link role="linkDeclaration" targetNodeId="1.1092676070469" />
+            <link role="editorComponent" metaClass="aggregation">
+              <node type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1092679042552">
+                <link role="semanticTypeDeclaration" targetNodeId="1.1092059087313" />
+                <link role="cellModel" metaClass="aggregation">
+                  <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1092679042553">
+                    <link role="propertyDeclaration" targetNodeId="4.1078489098626" />
+                    <property name="textBgColor" value="green" />
+                    <property name="defaultText" value="&lt;no name&gt;" />
+                    <property name="readOnly" value="true" />
+                    <property name="name" />
+                    <property name="textBgColorSelected" value="magenta" />
+                  </node>
+                </link>
+                <property name="name" />
+              </node>
+            </link>
+            <property name="nullText" value="&lt;no parm&gt;" />
+            <property name="name" />
+          </node>
+        </link>
+        <property name="name" />
+        <property name="vertical" value="false" />
+      </node>
+    </link>
+    <property name="name" value="TemplateParameterReference_Editor" />
   </node>
 </semanticModel>
 

@@ -172,12 +172,19 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     final String editorName = node.getName() + "_Editor";
     return new AbstractAction("Go To " + editorName) {
       public void actionPerformed(ActionEvent e) {
-        Language language = Language.getLanguage(node, IdeMain.instance().getProject());
+        AbstractMPSProject project = IdeMain.instance().getProject();
+        SemanticModel languageStructure = node.getSemanticModel();
+        Language language = project.getLanguageByStructureModel(languageStructure);
+        if(language == null) {
+          JOptionPane.showMessageDialog(getExternalComponent(), "Couldn't find Language for structure model " + languageStructure.getFQName());
+          return;
+        }
         SemanticModel languageEditor = language.getLanguageEditor();
         if (languageEditor != null) {
           Iterator<SemanticNode> iterator = languageEditor.roots();
           while (iterator.hasNext()) {
             SemanticNode root = iterator.next();
+            System.out.println("compare editor name " + editorName + " vs " + root.getName() + " equals:" + editorName.equals(root.getName()));
             if (editorName.equals(root.getName())) {
               AbstractEditorComponent editor = IdeMain.instance().getEditorsPane().openEditor(root, LEFT);
               editor.selectNode(root);
