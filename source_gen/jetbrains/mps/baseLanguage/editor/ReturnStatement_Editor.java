@@ -57,6 +57,9 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "expression");
         noRefCell.setEditable(true);
+        noRefCell.setDrawBrackets(false);
+        noRefCell.setSelectable(true);
+        noRefCell.setDrawBorder(true);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         ReturnStatement_ExpressionCellActions.setCellActions(noRefCell, node);
         _DefErrorActions.setCellActions(noRefCell, node);
@@ -64,6 +67,9 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
       }
     }
     EditorCell editorCell = context.createNodeCell(referencedNode);
+    editorCell.setDrawBrackets(false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     ReturnStatement_ExpressionCellActions.setCellActions(editorCell, node);
     return editorCell;

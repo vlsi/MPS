@@ -122,12 +122,18 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "returnType");
         noRefCell.setEditable(true);
+        noRefCell.setDrawBrackets(false);
+        noRefCell.setSelectable(true);
+        noRefCell.setDrawBorder(true);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         InstanceMethodDeclaration_ReturnTypeCellActions.setCellActions(noRefCell, node);
         return noRefCell;
       }
     }
     EditorCell editorCell = context.createNodeCell(referencedNode);
+    editorCell.setDrawBrackets(false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     InstanceMethodDeclaration_ReturnTypeCellActions.setCellActions(editorCell, node);
     return editorCell;
@@ -139,11 +145,17 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "body");
         noRefCell.setEditable(true);
+        noRefCell.setDrawBrackets(false);
+        noRefCell.setSelectable(true);
+        noRefCell.setDrawBorder(true);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         return noRefCell;
       }
     }
     EditorCell editorCell = context.createNodeCell(referencedNode);
+    editorCell.setDrawBrackets(false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     return editorCell;
   }

@@ -115,6 +115,9 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "condition");
         noRefCell.setEditable(true);
+        noRefCell.setDrawBrackets(false);
+        noRefCell.setSelectable(true);
+        noRefCell.setDrawBorder(true);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         WhileStatement_ConditionCellActions.setCellActions(noRefCell, node);
         _DefErrorActions.setCellActions(noRefCell, node);
@@ -123,6 +126,9 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
       }
     }
     EditorCell editorCell = context.createNodeCell(referencedNode);
+    editorCell.setDrawBrackets(false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     WhileStatement_ConditionCellActions.setCellActions(editorCell, node);
     editorCell.addKeyMap(new _Expression_KeyMap());
@@ -135,11 +141,17 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "body");
         noRefCell.setEditable(true);
+        noRefCell.setDrawBrackets(false);
+        noRefCell.setSelectable(true);
+        noRefCell.setDrawBorder(true);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         return noRefCell;
       }
     }
     EditorCell editorCell = context.createNodeCell(referencedNode);
+    editorCell.setDrawBrackets(false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     return editorCell;
   }

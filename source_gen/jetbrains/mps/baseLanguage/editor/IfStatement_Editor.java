@@ -143,6 +143,9 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "condition");
         noRefCell.setEditable(true);
+        noRefCell.setDrawBrackets(false);
+        noRefCell.setSelectable(true);
+        noRefCell.setDrawBorder(true);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         IfStatement_ConditionCellActions.setCellActions(noRefCell, node);
         _DefErrorActions.setCellActions(noRefCell, node);
@@ -150,6 +153,9 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       }
     }
     EditorCell editorCell = context.createNodeCell(referencedNode);
+    editorCell.setDrawBrackets(false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     IfStatement_ConditionCellActions.setCellActions(editorCell, node);
     return editorCell;
@@ -161,11 +167,17 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "ifTrue");
         noRefCell.setEditable(true);
+        noRefCell.setDrawBrackets(false);
+        noRefCell.setSelectable(true);
+        noRefCell.setDrawBorder(true);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         return noRefCell;
       }
     }
     EditorCell editorCell = context.createNodeCell(referencedNode);
+    editorCell.setDrawBrackets(false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     return editorCell;
   }
@@ -177,12 +189,18 @@ public class IfStatement_Editor extends DefaultNodeEditor {
         EditorCell_Constant noRefCell = EditorCell_Constant.create(context, node, null, true);
         noRefCell.setDefaultText("");
         noRefCell.setEditable(true);
+        noRefCell.setDrawBrackets(false);
+        noRefCell.setSelectable(true);
+        noRefCell.setDrawBorder(true);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         IfStatement_ElseStatementActions.setCellActions(noRefCell, node);
         return noRefCell;
       }
     }
     EditorCell editorCell = context.createNodeCell(referencedNode);
+    editorCell.setDrawBrackets(false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(referencedNode));
     IfStatement_ElseStatementActions.setCellActions(editorCell, node);
     return editorCell;

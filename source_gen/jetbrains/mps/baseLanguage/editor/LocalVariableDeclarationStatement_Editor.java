@@ -46,11 +46,17 @@ public class LocalVariableDeclarationStatement_Editor extends DefaultNodeEditor 
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "localVariableDeclaration");
         noRefCell.setEditable(true);
+        noRefCell.setDrawBrackets(false);
+        noRefCell.setSelectable(false);
+        noRefCell.setDrawBorder(true);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         return noRefCell;
       }
     }
     EditorCell editorCell = context.createNodeCell(referencedNode);
+    editorCell.setDrawBrackets(false);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(true);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     return editorCell;
   }

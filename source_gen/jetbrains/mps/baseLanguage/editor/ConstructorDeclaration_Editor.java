@@ -112,6 +112,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);
+        noRefCell.setDrawBrackets(false);
         noRefCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
         noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
@@ -122,6 +123,9 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     AbstractCellProvider inlineComponent = new ConstructorDeclaration_Editor_javaClass_InlineComponent(effectiveNode);
     EditorCell editorCell = inlineComponent.createEditorCell(context);
     EditorUtil.setSemanticNodeToCells(editorCell, node);
+    editorCell.setDrawBrackets(false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
     editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
@@ -135,11 +139,17 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "body");
         noRefCell.setEditable(true);
+        noRefCell.setDrawBrackets(false);
+        noRefCell.setSelectable(true);
+        noRefCell.setDrawBorder(true);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         return noRefCell;
       }
     }
     EditorCell editorCell = context.createNodeCell(referencedNode);
+    editorCell.setDrawBrackets(false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     return editorCell;
   }

@@ -99,12 +99,18 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "type");
         noRefCell.setEditable(true);
+        noRefCell.setDrawBrackets(false);
+        noRefCell.setSelectable(true);
+        noRefCell.setDrawBorder(true);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         StaticFieldDeclaration_TypeCellActions.setCellActions(noRefCell, node);
         return noRefCell;
       }
     }
     EditorCell editorCell = context.createNodeCell(referencedNode);
+    editorCell.setDrawBrackets(false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     StaticFieldDeclaration_TypeCellActions.setCellActions(editorCell, node);
     return editorCell;
@@ -117,6 +123,9 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
         EditorCell_Constant noRefCell = EditorCell_Constant.create(context, node, null, true);
         noRefCell.setDefaultText("");
         noRefCell.setEditable(true);
+        noRefCell.setDrawBrackets(false);
+        noRefCell.setSelectable(true);
+        noRefCell.setDrawBorder(true);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         __VariableInitializer_ActionSet.setCellActions(noRefCell, node);
         noRefCell.addKeyMap(new _Expression_KeyMap());
@@ -124,6 +133,9 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
       }
     }
     EditorCell editorCell = context.createNodeCell(referencedNode);
+    editorCell.setDrawBrackets(false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(referencedNode));
     __VariableInitializer_ActionSet.setCellActions(editorCell, node);
     editorCell.addKeyMap(new _Expression_KeyMap());
