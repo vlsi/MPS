@@ -33,16 +33,25 @@ public class MPSSupportHandler {
   }
 
   public String refreshFS() {
-    ApplicationManager.getApplication().runReadAction(new Runnable() {
-      public void run() {
-        VirtualFile[] contentRoots = ProjectRootManager.getInstance(myProject).getContentRoots();
-        for (int i = 0; i < contentRoots.length; i++) {
-          VirtualFile contentRoot = contentRoots[i];
-          contentRoot.refresh(false, true);
+    try {
+      SwingUtilities.invokeAndWait(new Runnable() {
+        public void run() {
+          ApplicationManager.getApplication().runWriteAction(new Runnable() {
+            public void run() {
+              VirtualFile[] contentRoots = ProjectRootManager.getInstance(myProject).getContentRoots();
+              for (int i = 0; i < contentRoots.length; i++) {
+                VirtualFile contentRoot = contentRoots[i];
+                contentRoot.refresh(false, true);
+              }
+            }
+          });
         }
-      }
-    });
-
+      });
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    } catch (InvocationTargetException e) {
+      e.printStackTrace();
+    }
     return "OK";
   }
 
