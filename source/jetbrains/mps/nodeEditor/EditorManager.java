@@ -28,7 +28,7 @@ public class EditorManager {
     EditorCell_Collection rowWrapper = EditorCell_Collection.createHorizontal(myEditorContext, node);
     rowWrapper.setSelectable(false);
     rowWrapper.addEditorCell(nodeCell);
-    SemanticNode afterNode = node.getReferent(NODE_TO_PLACE_AFTER, (SemanticNode) null);
+    SemanticNode afterNode = node.getChild(NODE_TO_PLACE_AFTER);
     rowWrapper.addEditorCell(createEditorCell(getEditor(afterNode), afterNode));
     return rowWrapper;
   }

@@ -34,11 +34,11 @@ public class CellAction_DeleteReference extends EditorCellAction {
   }
 
   public void execute(EditorContext context) {
+    // todo: isChild ???
     SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(mySource, myRole);
-//    if (SemanticLinkDeclaration.AGGREGATION.equals(linkDeclaration)) {
     if (linkDeclaration.getMetaClass() == LinkMetaclass.aggregation) {
-      SemanticNode referent = mySource.getReferent(SemanticModelUtil.getGenuineLinkRole(linkDeclaration), (SemanticNode) null);
-      referent.delete();
+      SemanticNode child = mySource.getChild(SemanticModelUtil.getGenuineLinkRole(linkDeclaration));
+      child.delete();
     } else {
       SemanticModel semanticModel = mySource.getSemanticModel();
       mySource.removeReferences(myRole, null);
