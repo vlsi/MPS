@@ -42,6 +42,9 @@ import static jetbrains.mps.ide.EditorsPane.EditorPosition.*;
  */
 public abstract class AbstractEditorComponent extends JComponent implements Scrollable {
 
+  private boolean myHasLastCaretX = false;
+  private int myLastCaretX;
+
   private JScrollPane myScrollPane;
   private JComponent myContainer;
 
@@ -909,6 +912,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void changeSelection(EditorCell newSelectedCell) {
+    changeSelection(newSelectedCell, true);
+  }
+
+  void changeSelection(EditorCell newSelectedCell, boolean resetLastCaretX) {
+    if (resetLastCaretX) {
+      resetLastCaretX();
+    }
+
     if (newSelectedCell == mySelectedCell) {
       return;
     }
@@ -1193,6 +1204,24 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   EditorCellRangeSelection getCellRangeSelection() {
     return myCellRangeSelection;
+  }
+
+  // last caret X
+  boolean hasLastCaretX() {
+    return myHasLastCaretX;
+  }
+
+  int getLastCaretX() {
+    return myLastCaretX;
+  }
+
+  void resetLastCaretX() {
+    myHasLastCaretX = false;
+  }
+
+  void saveLastCaretX(int lastCaretX) {
+    myLastCaretX = lastCaretX;
+    myHasLastCaretX = true;
   }
 
 

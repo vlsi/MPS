@@ -44,40 +44,44 @@ public class NodeEditorActions {
   public static class UP extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      return selection != null && selection.getParent() != null && findTarget(selection) != null;
+      return selection != null && selection.getParent() != null && findTarget(selection, selection.getCaretX()) != null;
     }
 
     public void execute(EditorContext context) {
       context.getNodeEditorComponent().clearSelectionStack();
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
       int caretX = selection.getCaretX();
-      EditorCell target = findTarget(selection);
+      if (context.getNodeEditorComponent().hasLastCaretX()) caretX = context.getNodeEditorComponent().getLastCaretX();
+      context.getNodeEditorComponent().saveLastCaretX(caretX);
+      EditorCell target = findTarget(selection, caretX);
       target.setCaretX(caretX);
-      context.getNodeEditorComponent().changeSelection(target);
+      context.getNodeEditorComponent().changeSelection(target, false);
     }
 
-    private EditorCell findTarget(EditorCell cell) {
-      return cell.getParent().findNextToUp(cell.getCaretX(), cell.getY() - 1);
+    private EditorCell findTarget(EditorCell cell, int caretX) {
+      return cell.getParent().findNextToUp(caretX, cell.getY() - 1);
     }
   }
 
   public static class DOWN extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      return selection != null && selection.getParent() != null && findTarget(selection) != null;
+      return selection != null && selection.getParent() != null && findTarget(selection, selection.getCaretX()) != null;
     }
 
     public void execute(EditorContext context) {
       context.getNodeEditorComponent().clearSelectionStack();
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
       int caretX = selection.getCaretX();
-      EditorCell target = findTarget(selection);
+      if (context.getNodeEditorComponent().hasLastCaretX()) caretX = context.getNodeEditorComponent().getLastCaretX();
+      context.getNodeEditorComponent().saveLastCaretX(caretX);
+      EditorCell target = findTarget(selection, caretX);
       target.setCaretX(caretX);
-      context.getNodeEditorComponent().changeSelection(findTarget(selection));
+      context.getNodeEditorComponent().changeSelection(target, false);
     }
 
-    private EditorCell findTarget(EditorCell cell) {
-      return cell.getParent().findNextToDown(cell.getCaretX(), cell.getY() + cell.getHeight());
+    private EditorCell findTarget(EditorCell cell, int caretX) {
+      return cell.getParent().findNextToDown(caretX, cell.getY() + cell.getHeight());
     }
   }
 
