@@ -162,4 +162,20 @@ public class PathManager {
 
     return resultPath;
   }
+
+  /**
+   * @param modelName
+   * @param modelNamespace
+   * @return absolute path of model file (one with extention "mps")
+   */
+  public static String getModelFilePath(String modelName, String modelNamespace) {
+    String modelPath = getModelPath();
+    String namespaceSegment = modelNamespace.replace('.', File.separatorChar);
+    String absolutePath = modelPath;
+    if(namespaceSegment.length() > 0) {
+      absolutePath = absolutePath + File.separator + namespaceSegment;
+    }
+    absolutePath = absolutePath + File.separator + modelName + ".mps";
+    return absolutePath;
+  }
 }

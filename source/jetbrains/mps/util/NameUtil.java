@@ -51,17 +51,6 @@ public class NameUtil {
     return sb.toString();
   }
 
-  public static String shortName(String fqName) {
-    if(fqName == null) {
-      return fqName;
-    }
-    int offset = fqName.lastIndexOf('.');
-    if(offset < 0) {
-      return fqName;
-    }
-    return fqName.substring(offset + 1);
-  }
-
   public static String modelFQName(SemanticModel semanticModel) {
     return modelFQName(semanticModel.getName(), semanticModel.getNamespace());
   }
@@ -71,25 +60,24 @@ public class NameUtil {
   }
 
   public static String modelName(String modelFQName) {
-    return shortName(modelFQName);
+    if(modelFQName == null) {
+      return null;
+    }
+    int offset = modelFQName.lastIndexOf('.');
+    if(offset < 0) {
+      return modelFQName;
+    }
+    return modelFQName.substring(offset + 1);
   }
 
   public static String modelNamespace(String modelFQName) {
+    if(modelFQName == null) {
+      return null;
+    }
     int offset = modelFQName.indexOf('.');
     if(offset < 0) {
       return "";
     }
     return modelFQName.substring(0, offset);
-  }
-
-  public static String modeAbsolutePath(String modelName, String modelNamespace) {
-    String modelPath = PathManager.getModelPath();
-    String namespaceSegment = modelNamespace.replace('.', File.separatorChar);
-    String absolutePath = modelPath;
-    if(namespaceSegment.length() > 0) {
-      absolutePath = absolutePath + File.separator + namespaceSegment;
-    }
-    absolutePath = absolutePath + File.separator + modelName + ".mps";
-    return absolutePath;
   }
 }
