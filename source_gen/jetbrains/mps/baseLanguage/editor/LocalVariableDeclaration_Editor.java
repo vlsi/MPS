@@ -27,7 +27,7 @@ public class LocalVariableDeclaration_Editor extends SemanticNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.addEditorCell(this.createTypeCell(editorContext, node));
     editorCell.addEditorCell(this.createNameCell(editorContext, node));
-    if(LocalVariableDeclaration_Actions.isTrue_HasInitializer(node)) {
+    if(Aspects.semanticNodeCondition_HasInitializer(node)) {
       editorCell.addEditorCell(this.createInitializerArea(editorContext, node));
     }
     return editorCell;

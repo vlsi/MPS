@@ -25,7 +25,7 @@ public class IfStatement_Editor extends SemanticNodeEditor {
     IfStatement_NodeBoxActions.setCellActions(editorCell, node);
     editorCell.addEditorCell(this.createHeaderRow(editorContext, node));
     editorCell.addEditorCell(this.createIfTrueBox(editorContext, node));
-    if(IfStatement_Actions.isTrue_IfFalseDefined(node)) {
+    if(Aspects.semanticNodeCondition_HasFalseBranch(node)) {
       editorCell.addEditorCell(this.createIfFalseBranch(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstantCell3(editorContext, node, "}"));

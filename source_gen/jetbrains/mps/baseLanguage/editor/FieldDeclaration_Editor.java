@@ -28,7 +28,7 @@ public class FieldDeclaration_Editor extends SemanticNodeEditor {
     FieldDeclaration_NodeBoxActions.setCellActions(editorCell, node);
     editorCell.addEditorCell(this.createTypeCell(editorContext, node));
     editorCell.addEditorCell(this.createNameCell(editorContext, node));
-    if(FieldDeclaration_Actions.isTrue_HasInitializer(node)) {
+    if(Aspects.semanticNodeCondition_HasInitializer(node)) {
       editorCell.addEditorCell(this.createInitializerArea(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstantCell1(editorContext, node, ";"));
