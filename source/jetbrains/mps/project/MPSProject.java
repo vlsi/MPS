@@ -6,7 +6,6 @@ import jetbrains.mps.util.PathManager;
 import jetbrains.mps.modelExecute.ExecutionPoint;
 import jetbrains.mps.modelExecute.ExecutionManager;
 import jetbrains.mps.ide.ILanguagePlugin;
-import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.components.EditorsPaneComponent;
 import jetbrains.mps.ide.components.ProjectPaneComponent;
 import jetbrains.mps.generator.JavaNameUtil;
@@ -48,9 +47,7 @@ public class MPSProject implements ModelLocator {
   public static final String PATH_MACRO_PROJECT = "${project}" + File.separatorChar;
   public static final String NAMESPACE_PREFIX = "namespacePrefix";
   public static final String ROOT_PATH = "rootPath";
-  protected SemanticModels mySemanticModels = createSemanticModels();
   private ExecutionPoint myEntryPoint;
-  private ExecutionManager myExecutionManager = new ExecutionManager();
   private HashMap<String, Language> myNamespaceToLanguageMap = new HashMap<String, Language>();
   private Map<Class, Object> myComponents = new HashMap<Class, Object>();
 
@@ -66,6 +63,8 @@ public class MPSProject implements ModelLocator {
     addComponent(MPSProject.class, this);
     addComponent(EditorsPaneComponent.class, new EditorsPaneComponent(this));
     addComponent(ProjectPaneComponent.class, new ProjectPaneComponent(this));
+    addComponent(SemanticModels.class, new SemanticModels(this));
+    addComponent(ExecutionManager.class, new ExecutionManager());
   }
 
   public List<Object> getComponents() {
@@ -149,7 +148,7 @@ public class MPSProject implements ModelLocator {
 //    readModels(myLibraryModelRoots, myLibraryModels);
     readModels(myProjectModelRoots, myProjectModels);
 
-    mySemanticModels.flushModelInfos();
+    getSemanticModels().flushModelInfos();
   }
 
   public void readComponents() {
@@ -260,7 +259,7 @@ public class MPSProject implements ModelLocator {
   }
 
   public void save() {
-    mySemanticModels.saveAll();
+    getSemanticModels().saveAll();
 
 /*
     Element rootElement = new Element(PROJECT);
@@ -368,10 +367,6 @@ public class MPSProject implements ModelLocator {
     myProjectFile = projectFile;
   }
 
-  protected SemanticModels createSemanticModels() {
-    return new SemanticModels(this);
-  }
-
   public File getProjectFile() {
     return myProjectFile;
   }
@@ -389,15 +384,15 @@ public class MPSProject implements ModelLocator {
   }
 
   public SemanticModels getSemanticModels() {
-    return mySemanticModels;
+    return getComponent(SemanticModels.class);
   }
 
   public SemanticModel loadModel(String fileName) {
-    return mySemanticModels.loadModel(fileName, this);
+    return getSemanticModels().loadModel(fileName, this);
   }
 
   public boolean isProjectChanged() {
-    return mySemanticModels.wereChanges();
+    return getSemanticModels().wereChanges();
   }
 
   public ExecutionPoint getEntryPoint() {
@@ -409,7 +404,7 @@ public class MPSProject implements ModelLocator {
   }
 
   public ExecutionManager getExecutionManager() {
-    return myExecutionManager;
+    return getComponent(ExecutionManager.class);
   }
 
   public ILanguagePlugin getLanguagePlugin(Language language) {
