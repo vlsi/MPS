@@ -119,6 +119,24 @@
           <link role="actionSet" targetNodeId="1096644804142" />
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1096888004881">
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1096888004882">
+          <property name="text" value="referenced tag" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1096888004883">
+          <property name="nullText" value="&lt;no tag&gt;" />
+          <link role="linkDeclaration" targetNodeId="1.1096887838191" />
+          <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1096887967146">
+            <link role="semanticTypeDeclaration" targetNodeId="1.1096887421657" />
+            <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1096888004884">
+              <property name="defaultText" value="&lt;no name&gt;" />
+              <property name="readOnly" value="true" />
+              <link role="propertyDeclaration" targetNodeId="4.1078489098626" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1096644584231" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1090493300946">
         <property name="vertical" value="false" />
@@ -501,6 +519,34 @@
           </node>
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1096887650489">
+        <property name="name" value="separator" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1096887650490">
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1096887650491">
+          <property name="text" value="    " />
+          <property name="name" value="indent" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1096887650508">
+          <property name="vertical" value="true" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1096887650509">
+            <property name="text" value="Template tags:" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1096887650510">
+            <property name="vertical" value="false" />
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1096887650511">
+              <property name="text" value="    " />
+              <property name="name" value="indent" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1096887650512">
+              <property name="vertical" value="true" />
+              <property name="gridLayout" value="true" />
+              <link role="linkDeclaration" targetNodeId="1.1096887475611" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1095419606578">
@@ -649,6 +695,24 @@
           <link role="propertyDeclaration" targetNodeId="4.1078489098626" />
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1096887822344">
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1096887822345">
+          <property name="text" value="tag" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1096887822346">
+          <property name="nullText" value="&lt;no tag&gt;" />
+          <link role="linkDeclaration" targetNodeId="1.1096887682700" />
+          <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1096887753624">
+            <link role="semanticTypeDeclaration" targetNodeId="1.1096887421657" />
+            <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1096887822347">
+              <property name="defaultText" value="&lt;no name&gt;" />
+              <property name="readOnly" value="true" />
+              <link role="propertyDeclaration" targetNodeId="4.1078489098626" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1095757990766">
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1095757990767">
@@ -677,6 +741,16 @@
         <property name="textBgColorSelected" value="cyan" />
         <link role="propertyDeclaration" targetNodeId="4.1078489098626" />
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1096887515956">
+    <property name="name" value="TemplateTag_Editor" />
+    <link role="semanticTypeDeclaration" targetNodeId="1.1096887421657" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1096887587207">
+      <property name="textBgColor" value="yellow" />
+      <property name="defaultText" value="&lt;no name&gt;" />
+      <property name="textBgColorSelected" value="cyan" />
+      <link role="propertyDeclaration" targetNodeId="4.1078489098626" />
     </node>
   </node>
 </semanticModel>

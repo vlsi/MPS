@@ -9,8 +9,8 @@ import jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration;
 import jetbrains.mps.semanticModel.SemanticModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.util.Condition;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -59,23 +59,12 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
   }
 
   private List<SemanticNode> createTargetNodesList() {
-    List<SemanticNode> list = new LinkedList<SemanticNode>();
-    SemanticTypeDeclaration targetType = myLinkDeclaration.getTarget();
-
-    // look through all node declared in parent
-    SemanticNode parentNode = mySourceNode;
-    while (parentNode != null && parentNode.getParent() != null) {
-      parentNode = parentNode.getParent();
-    }
-    Iterator<SemanticNode> iterator = parentNode.depthFirstChildren();
-    while (iterator.hasNext()) {
-      SemanticNode node = iterator.next();
-      if (SemanticModelUtil.isInstanceOfType(node, targetType)) {
-        list.add(node);
+    final SemanticTypeDeclaration targetType = myLinkDeclaration.getTarget();
+    List<SemanticNode> list = SemanticModelUtil.allNodes(mySourceNode.getSemanticModel(), true, new Condition<SemanticNode>() {
+      public boolean met(SemanticNode node) {
+        return SemanticModelUtil.isInstanceOfType(node, targetType);
       }
-    }
-
-    list.addAll(SemanticModelUtil.allInstancesOfType(targetType, mySourceNode.getSemanticModel()));
+    });
     return list;
   }
 }
