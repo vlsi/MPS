@@ -22,6 +22,7 @@ public class LocalVariableDeclarationStatement_Editor extends jetbrains.mps.node
     jetbrains.mps.nodeEditor.EditorCell editorCell = null;
     if(localVariableDeclaration != null) {
       editorCell = this.nodeCell(editorContext, localVariableDeclaration);
+      editorCell.setSelectable(false);
     } else {
       editorCell = jetbrains.mps.nodeEditor.EditorCell_Error.create(editorContext, node, null);
     }

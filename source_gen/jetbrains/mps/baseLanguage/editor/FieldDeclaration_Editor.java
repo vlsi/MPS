@@ -40,6 +40,7 @@ public class FieldDeclaration_Editor extends jetbrains.mps.nodeEditor.SemanticNo
   }
   public jetbrains.mps.nodeEditor.EditorCell createInitializerArea(jetbrains.mps.nodeEditor.EditorContext editorContext, jetbrains.mps.semanticModel.SemanticNode node) {
     jetbrains.mps.nodeEditor.EditorCell_Collection editorCell = jetbrains.mps.nodeEditor.EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setSelectable(false);
     editorCell.setGridLayout(false);
     editorCell.addEditorCell(this.createConstantCell(editorContext, node, "="));
     editorCell.addEditorCell(this.createInitializerCell(editorContext, node));

@@ -22,6 +22,7 @@ public class ExpressionStatement_Editor extends jetbrains.mps.nodeEditor.Semanti
     jetbrains.mps.nodeEditor.EditorCell editorCell = null;
     if(expression != null) {
       editorCell = this.nodeCell(editorContext, expression);
+      editorCell.setSelectable(false);
     } else {
       editorCell = jetbrains.mps.nodeEditor.EditorCell_Error.create(editorContext, node, null);
     }
