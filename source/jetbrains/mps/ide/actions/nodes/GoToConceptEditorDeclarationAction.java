@@ -31,7 +31,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     if (!(node instanceof ConceptDeclaration)) return;
 
     final String editorName = node.getName() + "_Editor";
-    MPSProject project = IdeMain.instance().getProject();
+    MPSProject project = context.getProject();
     SemanticModel languageStructure = node.getSemanticModel();
     Language language = project.getLanguageByStructureModel(languageStructure);
     if (language == null) {
@@ -44,7 +44,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
       while (iterator.hasNext()) {
         SemanticNode root = iterator.next();
         if (editorName.equals(root.getName())) {
-          AbstractEditorComponent editor = IdeMain.instance().getEditorsPane().openEditor(root, EditorsPane.EditorPosition.LEFT);
+          AbstractEditorComponent editor = context.getIde().getEditorsPane().openEditor(root, EditorsPane.EditorPosition.LEFT);
           editor.selectNode(root);
           return;
         }
