@@ -5,6 +5,7 @@ import jetbrains.textLanguage.Word;
 import jetbrains.textLanguage.Text;
 import jetbrains.textLanguage.WordValue_PropertySupport;
 import jetbrains.mps.semanticModel.SModel;
+import jetbrains.mps.util.CollectionUtil;
 
 /**
  * @author Kostik
@@ -37,5 +38,29 @@ public class TextUtil {
     }
 
     return result;
+  }
+
+  public static String toString(Word word) {
+    return word.getProperty("value");
+  }
+
+  public static String toString(Sentence sentence) {
+    StringBuilder result = new StringBuilder();
+    for (Word word : CollectionUtil.iteratorAsIterable(sentence.words())) {
+      result.append(toString(word) + " ");
+    }
+    if (result.length() != 0) {
+      result.deleteCharAt(result.length() - 1);
+    }
+    result.append(".");
+    return result.toString();
+  }
+
+  public static String toString(Text text) {
+    StringBuilder result = new StringBuilder();
+    for (Sentence sentence : CollectionUtil.iteratorAsIterable(text.sentences())) {
+      result.append(toString(sentence));
+    }
+    return result.toString();
   }
 }
