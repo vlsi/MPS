@@ -55,7 +55,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
           }
           AbstractEditorComponent component = editorContext.getNodeEditorComponent();
           menu.show(component, selectedCell.getX(), selectedCell.getY() + selectedCell.getHeight());
-          return true;
+          return true;             
         }
       }
     }

@@ -43,6 +43,7 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.addKeyMap(new _LeftParen_KeyMap());
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SemanticNode node, String text) {
@@ -54,6 +55,7 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     __ExpressionClosingParethesis_ActionSet.setCellActions(editorCell, node);
+    editorCell.addKeyMap(new _RightParen_KeyMap());
     return editorCell;
   }
   public EditorCell createExpressionCell(EditorContext context, SemanticNode node) {
