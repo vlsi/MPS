@@ -12,6 +12,8 @@ import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration;
+import jetbrains.mps.semanticModel.SemanticModelUtil;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class StaticFieldReference_Editor extends SemanticNodeEditor {
@@ -56,11 +58,17 @@ public class StaticFieldReference_Editor extends SemanticNodeEditor {
       EditorCell_Error errorCell = EditorCell_Error.create(editorContext, node, "<no field>");
       errorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       StaticFieldReference_FieldNameActions.setCellActions(errorCell, node);
+      SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(node, "variableDeclaration");
+      errorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
+      errorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
       return errorCell;
     }
     AbstractCellProvider variableDeclaration_InlineComponent = new StaticFieldReference_Editor_variableDeclaration_InlineComponent(effectiveNode);
     EditorCell editorCell = variableDeclaration_InlineComponent.createEditorCell(editorContext);
     StaticFieldReference_FieldNameActions.setCellActions(editorCell, node);
+    SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(node, "variableDeclaration");
+    editorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
+    editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
     return editorCell;
   }
 }

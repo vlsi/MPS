@@ -60,7 +60,7 @@ public class TextGenBuffer {
   }
 
   public String getTopBufferText() {
-    return myBuffers[DEFAULT].toString();
+    return myBuffers[TOP].toString();
   }
 
   public int getDefaultBufferLength() {

@@ -12,6 +12,8 @@ import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
+import jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration;
+import jetbrains.mps.semanticModel.SemanticModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class ConstructorDeclaration_Editor extends SemanticNodeEditor {
@@ -48,10 +50,16 @@ public class ConstructorDeclaration_Editor extends SemanticNodeEditor {
     if(effectiveNode == null) {
       EditorCell_Error errorCell = EditorCell_Error.create(editorContext, node, null);
       errorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+      SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(node, "javaClass");
+      errorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
+      errorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
       return errorCell;
     }
     AbstractCellProvider javaClass_InlineComponent = new ConstructorDeclaration_Editor_javaClass_InlineComponent(effectiveNode);
     EditorCell editorCell = javaClass_InlineComponent.createEditorCell(editorContext);
+    SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(node, "javaClass");
+    editorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
+    editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
