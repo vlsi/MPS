@@ -32,9 +32,11 @@ public class ExpressionStatement_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(expression != null) {
       editorCell = this.nodeCell(editorContext, expression);
-      editorCell.setSelectable(false);
+      editorCell.setSelectable(true);
+      ExpressionStatement_ExpressionActions.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
+      ExpressionStatement_ExpressionActions.setCellActions(editorCell, node);
     }
     return editorCell;
   }
