@@ -12,17 +12,19 @@ import rubyWeb.paper.ItalicTag;
 import rubyWeb.paper.TermTag;
 import rubyWeb.paper.CiteTag;
 
+import java.util.List;
+
 /**
  * @author Kostik
  */
 public class TextUtil {
 
   static String[] splitToSentences(String text) {
-    return text.split("\\.\\s*");
+    return text.split("\\.\\s*+");
   }
 
   static String[] splitToWords(String sentence) {
-    return sentence.split("\\s+");
+    return sentence.split("\\s++");
   }
 
   public static Text toText(SModel model, String text) {
@@ -117,11 +119,19 @@ public class TextUtil {
   }
 
   public static void toElement(Sentence sentence, Element element) {
-    for (Word word : CollectionUtil.iteratorAsIterable(sentence.words())) {
+    List<Word> words = CollectionUtil.iteratorAsList(sentence.words());
+    for (int i = 0; i < words.size(); i++) {
+      Word word = words.get(i);
       toElement(word, element);
-      element.addContent(" ");
+      if (i != words.size() - 1) {
+        element.addContent(" ");
+      }
     }
-    element.addContent(".");
+    if (sentence.getWordsCount() != 0) {
+      element.addContent(".");
+    } else {
+      System.out.println("Skiping");
+    }
   }
 
   public static void toElement(Word word, Element element) {
@@ -140,7 +150,7 @@ public class TextUtil {
       toElement(tag.getText(), italic);
       return;
     }
-    
+
     if (word instanceof TermTag) {
       TermTag tag = (TermTag) word;
       Element italic = new Element("term");
