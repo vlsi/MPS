@@ -1,6 +1,5 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.semanticModel.SemanticModel;
 import jetbrains.mps.semanticModel.SemanticNode;
 
 import javax.swing.*;
@@ -23,7 +22,7 @@ public class NodeSubstituteChooser {
   private Point myPatternEditorLocation = new Point(10, 10);
   private Dimension myPatternEditorSize = new Dimension(50, 50);
 
-  private EditorContext myEditorContext;
+  private AbstractEditorComponent myEditorComponent;
   private String[] myStrings;
   private NodeSubstitutePatternEditor myPatternEditor;
   private INodeSubstituteInfo myNodeSubstituteInfo;
@@ -31,8 +30,8 @@ public class NodeSubstituteChooser {
   private INodeSubstituteActionList myNodeSubstituteActionsList;
   private boolean myMenuEmpty;
 
-  public NodeSubstituteChooser(EditorContext context) {
-    myEditorContext = context;
+  public NodeSubstituteChooser(AbstractEditorComponent editorComponent) {
+    myEditorComponent = editorComponent;
   }
 
   private PopupWindow getPopupWindow() {
@@ -43,7 +42,7 @@ public class NodeSubstituteChooser {
   }
 
   private Window getEditorWindow() {
-    Component component = myEditorContext.getComponent();
+    Component component = myEditorComponent;
     while(!(component instanceof Window)) {
       component = component.getParent();
     }
@@ -51,7 +50,7 @@ public class NodeSubstituteChooser {
   }
 
   public void setLocationRelative(EditorCell cell) {
-    Component component = cell.getEditorContext().getComponent();
+    Component component = cell.getEditorContext().getNodeEditorComponent();
     Point anchor = component.getLocationOnScreen();
     Point location = new Point(anchor.x + cell.getX(), anchor.y + cell.getY() + cell.getHeight());
     getPopupWindow().setLocation(location);
@@ -166,9 +165,7 @@ public class NodeSubstituteChooser {
         if(!myNodeSubstituteInfo.equalsOutcome(pattern)) {
           SemanticNode changedNode = myNodeSubstituteInfo.doSubstitute(pattern);
           if(changedNode != null) {
-            SemanticModel model = myEditorContext.getSemanticModel();
-            //model.fireNodeAddedEvent(changedNode, false);
-            model.fireNodeAddedEvent(changedNode);
+            changedNode.getSemanticModel().fireNodeAddedEvent(changedNode);
           }
         }
 //        if(keyEvent.getKeyCode() == KeyEvent.VK_SPACE) {
@@ -212,9 +209,7 @@ public class NodeSubstituteChooser {
         if(!entry.equalsOutcome(myNodeSubstituteInfo.getOriginalNode(), myNodeSubstituteInfo.getOriginalText(), pattern)) {
           SemanticNode changedNode = entry.doSubstitute(pattern);
           if(changedNode != null) {
-            SemanticModel model = myEditorContext.getSemanticModel();
-            //model.fireNodeAddedEvent(changedNode, false);
-            model.fireNodeAddedEvent(changedNode);
+            changedNode.getSemanticModel().fireNodeAddedEvent(changedNode);
           }
         }
 //        if(keyEvent.getKeyCode() == KeyEvent.VK_SPACE) {

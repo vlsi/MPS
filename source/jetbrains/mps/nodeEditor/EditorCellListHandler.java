@@ -41,7 +41,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
     myInsertedNode = createNodeToInsert();
     getOwner().insertReference(anchorNode, insertBefore, myReferenceRole, myInsertedNode, myRefernceMetaclass);
 
-    NodeEditor editor = editorContext.getComponent();
+    AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
     editor.pushKeyboardHandler(this);
     editor.rebuildEditorContent();
     EditorCell selectableLeaf = myInsertCell.findFirstSelectableLeaf();
@@ -52,7 +52,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
 
   private void finishInsertMode(EditorContext editorContext) {
     if(isInsertMode()) {
-      editorContext.getComponent().popKeyboardHandler(); // remove this handler from stack.
+      editorContext.getNodeEditorComponent().popKeyboardHandler(); // remove this handler from stack.
 
       EditorCell prevCell = myListEditorCell_Collection.getPrevCell(myInsertCell);
       myListEditorCell_Collection.removeCell(myInsertCell);
@@ -61,19 +61,19 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
       myInsertCell = null;
       myInsertedNode = null;
       myInsertedNodeCell = null;
-      editorContext.getComponent().relayout();
+      editorContext.getNodeEditorComponent().relayout();
     }
   }
 
   private void cancelInsertMode(EditorContext editorContext) {
     if(isInsertMode()) {
-      editorContext.getComponent().popKeyboardHandler(); // remove this handler from stack.
+      editorContext.getNodeEditorComponent().popKeyboardHandler(); // remove this handler from stack.
       myInsertedNode.delete();
 
       myInsertCell = null;
       myInsertedNode = null;
       myInsertedNodeCell = null;
-      editorContext.getComponent().rebuildEditorContent();
+      editorContext.getNodeEditorComponent().rebuildEditorContent();
     }
   }
 
@@ -86,7 +86,8 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
   }
 
   protected EditorCell createNodeCell(EditorContext editorContext, SemanticNode node) {
-    return editorContext.getEditorManager().createEditorCell(node);
+    //return editorContext.getEditorManager().createEditorCell(node);
+    return editorContext.createNodeCell(node);
   }
 
   protected EditorCell createSeparatorCell(EditorContext editorContext) {
@@ -170,7 +171,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
   }
 
   public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
-    NodeEditor editor = editorContext.getComponent();
+    AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
     String actionType = editor.getActionType(keyEvent);
     if(EditorCellAction.INSERT.equals(actionType) ||
         EditorCellAction.INSERT_BEFORE.equals(actionType)) {
@@ -185,7 +186,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
   }
 
   public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
-    NodeEditor editor = editorContext.getComponent();
+    AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
     String actionType = editor.getActionType(keyEvent);
     if(!(EditorCellAction.INSERT.equals(actionType) ||
         EditorCellAction.INSERT_BEFORE.equals(actionType))) {

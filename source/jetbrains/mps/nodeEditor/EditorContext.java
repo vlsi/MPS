@@ -11,13 +11,13 @@ import java.awt.*;
  * Created Sep 14, 2003
  */
 public class EditorContext {
-  private NodeEditor myComponent;
+  private AbstractEditorComponent myNodeEditorComponent;
   private SemanticModel mySemanticModel;
   private EditorManager myEditorManager;
   private SemanticLanguage[] myLanguages;
 
-  public EditorContext(NodeEditor component, SemanticModel semanticModel) {
-    myComponent = component;
+  public EditorContext(AbstractEditorComponent editorComponent, SemanticModel semanticModel) {
+    myNodeEditorComponent = editorComponent;
     mySemanticModel = semanticModel;
     myEditorManager = new EditorManager(this);
 
@@ -34,20 +34,24 @@ public class EditorContext {
     };
   }
 
-  public NodeEditor getComponent() {
-    return myComponent;
-  }
-
-  public void setComponent(NodeEditor component) {
-    myComponent = component;
+  public AbstractEditorComponent getNodeEditorComponent() {
+    return myNodeEditorComponent;
   }
 
   public SemanticModel getSemanticModel() {
     return mySemanticModel;
   }
 
-  public EditorManager getEditorManager() {
-    return myEditorManager;
+//  public EditorManager getEditorManager() {
+//    return myEditorManager;
+//  }
+
+  public EditorCell createNodeCell(SemanticNode node) {
+    return myEditorManager.createEditorCell(node);
+  }
+
+  public EditorCell createInspectedCell(SemanticNode inspectedNode) {
+    return EditorCell_Constant.create(this, inspectedNode, "inspected cell is not implemented", true);
   }
 
   public SemanticLanguage[] getLanguages() {
@@ -60,7 +64,7 @@ public class EditorContext {
 
   public boolean isMementoApplicable(Object o) {
     if(o instanceof Memento) {
-      return myComponent == ((Memento) o).nodeEditor;
+      return myNodeEditorComponent == ((Memento) o).nodeEditor;
     }
     return false;
   }
@@ -68,10 +72,10 @@ public class EditorContext {
   public boolean setMemento(Object o) {
     if(o instanceof Memento) {
       Memento memento = (Memento) o;
-      if(myComponent == memento.nodeEditor) {
+      if(myNodeEditorComponent == memento.nodeEditor) {
         if(memento.selectionPosition != null) {
-          EditorCell nearestCell = myComponent.findNearestCell(memento.selectionPosition.x, memento.selectionPosition.y);
-          myComponent.changeSelection(nearestCell);
+          EditorCell nearestCell = myNodeEditorComponent.findNearestCell(memento.selectionPosition.x, memento.selectionPosition.y);
+          myNodeEditorComponent.changeSelection(nearestCell);
           if(nearestCell != null) {
             nearestCell.setCaretX(memento.caretX.intValue());
           } else {
@@ -87,12 +91,12 @@ public class EditorContext {
   }
 
   private static class Memento {
-    private NodeEditor nodeEditor;
+    private AbstractEditorComponent nodeEditor;
     private Point selectionPosition;
     private Integer caretX;
 
     public Memento(EditorContext context) {
-      nodeEditor = context.getComponent();
+      nodeEditor = context.getNodeEditorComponent();
       EditorCell selectedCell = nodeEditor.getSelectedCell();
       if(selectedCell != null) {
         selectionPosition = new Point(selectedCell.getX(), selectedCell.getY());
