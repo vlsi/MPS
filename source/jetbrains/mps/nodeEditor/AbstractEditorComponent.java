@@ -9,10 +9,7 @@ import jetbrains.mps.semanticModel.SemanticNode;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.util.*;
 import java.util.List;
 
@@ -95,6 +92,28 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
       public void keyReleased(final KeyEvent e) {
         processKeyReleased(e);
+      }
+    });
+
+    addFocusListener(new FocusListener() {
+      public void focusGained(FocusEvent e) {
+        EditorCell selectedCell = getSelectedCell();
+        if (selectedCell == null) {
+          EditorCell rootCell = getRootCell();
+          if (rootCell instanceof EditorCell_Collection) {
+            EditorCell firstSelectableLeaf = ((EditorCell_Collection) rootCell).findFirstSelectableLeaf();
+            if (firstSelectableLeaf != null) {
+              changeSelection(firstSelectableLeaf);
+              return;
+            }
+          }
+          if (rootCell != null && rootCell.isSelectable()) {
+            changeSelection(rootCell);
+          }
+        }
+      }
+
+      public void focusLost(FocusEvent e) {
       }
     });
   }
