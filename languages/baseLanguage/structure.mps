@@ -327,8 +327,8 @@
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="instanceMethodDeclaration" />
-      <link role="target" targetNodeId="1068580123165" />
       <link role="specializedLink" targetNodeId="1068499141037" />
+      <link role="target" targetNodeId="1068580123165" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068580123165">
@@ -413,8 +413,8 @@
     <link role="extends" targetNodeId="1068498886296" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1070567982819">
       <property name="role" value="parameterDeclaration" />
-      <link role="target" targetNodeId="1068498886292" />
       <link role="specializedLink" targetNodeId="1068581517664" />
+      <link role="target" targetNodeId="1068498886292" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068581242875">
@@ -632,8 +632,8 @@
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="staticMethodDeclaration" />
-      <link role="target" targetNodeId="1081236700938" />
       <link role="specializedLink" targetNodeId="1068499141037" />
+      <link role="target" targetNodeId="1081236700938" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1081236700938">
@@ -795,35 +795,6 @@
       <property name="name" value="priv" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1090411652061">
-    <property name="name" value="CodeBlock" />
-    <link role="extends" targetNodeId="4.1078489098625" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1090411762145">
-      <property name="sourceCardinality" value="1" />
-      <property name="targetCardinality" value="1" />
-      <property name="role" value="beforeStatements" />
-      <link role="target" targetNodeId="1068580123136" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1090411652065">
-      <property name="sourceCardinality" value="1" />
-      <property name="targetCardinality" value="1" />
-      <property name="role" value="statements" />
-      <link role="target" targetNodeId="1068580123136" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1090411762146">
-      <property name="sourceCardinality" value="1" />
-      <property name="targetCardinality" value="1" />
-      <property name="role" value="afterStatements" />
-      <link role="target" targetNodeId="1068580123136" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1090411762147">
-      <property name="sourceCardinality" value="1" />
-      <property name="targetCardinality" value="1" />
-      <property name="role" value="containerStatements" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1068580123136" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1092119917967">
     <property name="name" value="MulExpression" />
     <link role="extends" targetNodeId="1081773326031" />
@@ -874,6 +845,45 @@
       <property name="role" value="feature" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1106176536146" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107134345596">
+    <property name="name" value="CodeBlock" />
+    <link role="extends" targetNodeId="4.1078489098625" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1107134797946">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="targetCardinality" value="0..1" />
+      <property name="role" value="statement" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1068580123157" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1107134369676">
+      <link role="conceptLinkDeclaration" targetNodeId="34.1105994381173" />
+      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLinkDeclaration" id="1107134676911">
+        <property name="name" value="CodeBlockReturnTypeLink" />
+        <link role="targetType" targetNodeId="1068431790189" />
+      </node>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1107135352261">
+      <link role="conceptLinkDeclaration" targetNodeId="34.1105994381173" />
+      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLinkDeclaration" id="1107135355043">
+        <property name="name" value="CodeBlockParameterLink" />
+        <link role="targetType" targetNodeId="1107135704075" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107135704075">
+    <property name="name" value="CodeBlockParameter" />
+    <link role="extends" targetNodeId="4.1078489098625" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107136355904">
+    <property name="name" value="CodeBlockParameterReference" />
+    <link role="extends" targetNodeId="4.1078489098625" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1107136391389">
+      <property name="sourceCardinality" value="1" />
+      <property name="targetCardinality" value="0..n" />
+      <property name="role" value="codeBlockParameter" />
+      <link role="target" targetNodeId="1107135704075" />
     </node>
   </node>
 </model>
