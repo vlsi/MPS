@@ -6,6 +6,8 @@ import jetbrains.mps.ide.diagnostic.Logger;
 import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.conversion.MPSClassLoader;
+import jetbrains.mps.util.NodeNameUtil;
 
 /**
  * Author: Sergey Dmitriev.
@@ -15,6 +17,12 @@ public class EditorManager {
   private static Logger LOG = Logger.getInstance("jetbrains.mps.nodeEditor.EditorManager");
 //  private static EditorManager myInstance;
   public static String NODE_TO_PLACE_AFTER = "nodeToPlaceAfter";
+
+  private static MPSClassLoader ourClassLoader = new EditorClassLoader();
+
+  public static void resetClassLoader() {
+    ourClassLoader = new EditorClassLoader();
+  }
 
 
   public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
@@ -87,7 +95,7 @@ public class EditorManager {
 //    String editorClassName = "jetbrains.mps." + languageEditorFQName + "." + nodeConcept.getName() + "_Editor";
     String editorClassName = languageEditorFQName + "." + nodeConcept.getName() + "_Editor";
     try {
-      Class editorClass = Class.forName(editorClassName);
+      Class editorClass = Class.forName(editorClassName, true, ourClassLoader);
       return (INodeEditor) editorClass.newInstance();
     } catch (ClassNotFoundException e) {
       System.err.println("Couldn't load editor " + editorClassName + " : Class Not Found!");
@@ -132,4 +140,10 @@ public class EditorManager {
 //
 //    return null;
 //  }
+
+  private static class EditorClassLoader extends MPSClassLoader {
+    protected boolean isExcluded(String name) {
+      return !NodeNameUtil.getNamespace(name).endsWith(".editor");
+    }
+  }
 }
