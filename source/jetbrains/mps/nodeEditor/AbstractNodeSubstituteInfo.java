@@ -53,7 +53,8 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
         INodeSubstituteItem substituteItem = iterator1.next();
         String matchingText = substituteItem.getMatchingText(pattern);
         if (matchingText != null) {
-          if (matchingText.equals(pattern)) {
+          //todo hack
+          if (matchingText.equals(pattern) || matchingText.equals("integer constant")) {
             continue;
           }
         }
