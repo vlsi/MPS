@@ -9,34 +9,27 @@ import jetbrains.mps.generator.JavaClassMaps;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.ProjectPane;
-import jetbrains.mps.ide.actions.*;
+import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.action.ActionManager;
-import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.actions.nodes.*;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
-import jetbrains.mps.ide.usageView.UsagesModel_BackReferences;
-import jetbrains.mps.ide.usageView.UsagesModel_SemanticNode;
 import jetbrains.mps.nodeEditor.test.EventPlayer;
 import jetbrains.mps.nodeEditor.test.EventRecorder;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.semanticModel.*;
-import jetbrains.mps.typesystem.ITypeChecker;
-import jetbrains.mps.typesystem.ITypeObject;
-import jetbrains.mps.typesystem.TSStatus;
-import jetbrains.mps.typesystem.TypeCheckerAccess;
 import jetbrains.mps.util.NameUtil;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.io.File;
 import java.util.*;
 import java.util.List;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeEvent;
 
 import static jetbrains.mps.ide.EditorsPane.EditorPosition.*;
 
@@ -45,6 +38,7 @@ import static jetbrains.mps.ide.EditorsPane.EditorPosition.*;
  * Created Sep 14, 2003
  */
 public abstract class AbstractEditorComponent extends JComponent implements Scrollable {
+  public static final String EDITOR_POPUP_MENU_ACTIONS = "editor-popup-menu-actions";
 
   private boolean myHasLastCaretX = false;
   private int myLastCaretX;
@@ -300,21 +294,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 //    String header = selectedNode.getDebugText();
     popupMenu.add(JavaNameUtil.shortName(header));
     popupMenu.addSeparator();
-    popupMenu.add(createGoToProjectAction(selectedNode));
-    if (selectedNode instanceof ConceptDeclaration) {
-      popupMenu.add(new GoToConceptEditorDeclarationAction().toAction(selectedNode));
-    }
-    popupMenu.addSeparator();
     popupMenu.add(createGoByReferenceMenu(selectedNode));
-    popupMenu.add(new FindUsagesNodeAction().toAction(selectedNode));
-    popupMenu.add(createGoToDeclarationAction(selectedNode));
-    popupMenu.add(new AbstractAction("Print node id") {
-      public void actionPerformed(ActionEvent e) {
-        System.out.println(selectedNode.getId());
-      }
-    });
     popupMenu.addSeparator();
-    popupMenu.add(new ShowNodeTypeAction().toAction(selectedNode));
+
+    IdeMain.instance().getProject().getComponent(ActionManager.class).getGroup(EDITOR_POPUP_MENU_ACTIONS).addGroup(popupMenu, new ActionContext(selectedNode));
 
     if (selectedNode instanceof JavaClass) {
       popupMenu.addSeparator();
@@ -328,15 +311,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     EditorCell_Component cell = findCellForComponent(component, myRootCell);
     if (cell == null) return;
     changeSelection(cell);
-  }
-
-  private Action createGoToProjectAction(final SemanticNode node) {
-    return new AbstractAction("Go To Project") {
-      public void actionPerformed(ActionEvent e) {
-        ProjectPane projectPane = myIdeMain.getProjectPane();
-        projectPane.selectNode(node);
-      }
-    };
   }
 
   private JMenu createGoByReferenceMenu(SemanticNode node) {
@@ -361,14 +335,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return menu;
   }
 
-
-  private Action createGoToDeclarationAction(final SemanticNode node) {
-    return new AbstractAction("Go to semantic type declaration") {
-      public void actionPerformed(ActionEvent e) {
-        myIdeMain.getEditorsPane().openEditor(Language.findTypeDeclaration(node.getSemanticModel(), node.getNodeTypeName()));
-      }
-    };
-  }
 
   private Action createGenStubFromClassFileAction(final JavaClass targetClass) {
     return new AbstractAction("Generate Stub From Class File") {
@@ -1246,5 +1212,4 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }
   } // private class MyModelListener implements SemanticModelListener
-
 }
