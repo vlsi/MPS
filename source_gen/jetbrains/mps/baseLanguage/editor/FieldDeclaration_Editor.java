@@ -47,7 +47,7 @@ public class FieldDeclaration_Editor extends SemanticNodeEditor {
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(type));
       FieldDeclaration_TypeCellActions.setCellActions(editorCell, node);
     } else {
-      editorCell = EditorCell_Error.create(editorContext, node, null);
+      editorCell = EditorCell_Error.create(editorContext, node, "<no type>");
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       FieldDeclaration_TypeCellActions.setCellActions(editorCell, node);
     }
@@ -81,7 +81,7 @@ public class FieldDeclaration_Editor extends SemanticNodeEditor {
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(initializer));
       __VariableInitializer_ActionSet.setCellActions(editorCell, node);
     } else {
-      editorCell = EditorCell_Constant.create(editorContext, node, "", true);
+      editorCell = EditorCell_Constant.create(editorContext, node, null, true);
       ((EditorCell_Label)editorCell).setEditable(true);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       __VariableInitializer_ActionSet.setCellActions(editorCell, node);
