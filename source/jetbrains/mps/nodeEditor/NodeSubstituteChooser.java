@@ -56,6 +56,15 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     Component component = cell.getEditorContext().getNodeEditorComponent();
     Point anchor = component.getLocationOnScreen();
     Point location = new Point(anchor.x + cell.getX(), anchor.y + cell.getY() + cell.getHeight());
+
+    int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
+    if (location.getY() + PopupWindow.PREFERRED_HEIGHT > screenHeight - 150) {
+      location = new Point(location.x, location.y - PopupWindow.PREFERRED_HEIGHT - cell.getHeight());
+      getPopupWindow().setPosition(PopupWindowPosition.TOP);
+    } else {
+      getPopupWindow().setPosition(PopupWindowPosition.BOTTOM);
+    }
+
     getPopupWindow().setLocation(location);
 
     myPatternEditorLocation = new Point(anchor.x + cell.getX(), anchor.y + +cell.getY());
@@ -88,8 +97,8 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
         getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize);
         myNodeSubstituteInfo.invalidateItems();
         rebuildMenuEntries();
-        getPopupWindow().setSelectionIndex(0);
         getPopupWindow().relayout();
+        getPopupWindow().setSelectionIndex(0);
         getPopupWindow().setVisible(true);
         isPopupActivated = true;
       } else {
@@ -276,103 +285,82 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     }
   }
 
+  private enum PopupWindowPosition {
+    TOP, BOTTOM
+  }
+
   private class PopupWindow extends JWindow {
-    private int selectionIndex = 0;
-    private int firstVisibleIndex = 0;
-    private int lastVisibleIndex = 0;
+    public static final int PREFERRED_WIDTH = 300;
+    public static final int PREFERRED_HEIGHT = 200;
+
+    private JList myList = new JList(new DefaultListModel());
+    private PopupWindowPosition myPosition = PopupWindowPosition.BOTTOM;
 
     public PopupWindow(Window owner) {
       super(owner);
+      myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+      myList.setFont(new TextLine("", null).getFont());
+      myList.setBackground(new Color(255, 255, 200));
+
+      add(new JScrollPane(myList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED));
+      myList.setFocusable(false);
+      setSize(PREFERRED_WIDTH, PREFERRED_HEIGHT);
     }
 
     public int getSelectionIndex() {
-      return selectionIndex;
+      return myList.getSelectedIndex();
     }
 
     public void setSelectionIndex(int index) {
       if (index < 0) {
         index = 0;
       }
-      int fullLength = getStrings().length;
-      if (index >= fullLength) {
-        index = fullLength - 1;
+      if (index >= myList.getModel().getSize()) {
+        myList.setSelectedIndex(myList.getModel().getSize() - 1);
       }
-
-      selectionIndex = index;
-      int listLength = Math.min(MAX_MENU_LEN, fullLength);
-      lastVisibleIndex = firstVisibleIndex + (listLength - 1);
-      if (index < firstVisibleIndex) {
-        firstVisibleIndex = index;
-        lastVisibleIndex = firstVisibleIndex + (listLength - 1);
-      } else if (index > lastVisibleIndex) {
-        lastVisibleIndex = index;
-        firstVisibleIndex = lastVisibleIndex - (listLength - 1);
-      }
-//      System.out.println("setSelection: selected=" + selectionIndex + " first=" + firstVisibleIndex + " last=" + lastVisibleIndex);
+      myList.setSelectedIndex(index);
     }
 
     public String getSelectedText() {
       String[] matchingStrings = getMatchingStrings();
-      if (matchingStrings[selectionIndex] != null) {
-        return matchingStrings[selectionIndex];
+      if (getSelectionIndex() != -1 && matchingStrings[getSelectionIndex()] != null) {
+        return matchingStrings[getSelectionIndex()];
       }
       return "";
     }
 
     public void relayout() {
-      setSelectionIndex(getSelectionIndex());
-      String[] types = getStrings();
-      int lineHeight = 0;
-      int w = getWidth()/* - SCROLLER_WIDTH*/;
-      for (int i = 0; i < types.length; i++) {
-        String type = types[i];
-        TextLine textLine = new TextLine(type, this);
-        textLine.relayout();
-        lineHeight = textLine.getHeight();
-        w = Math.max(w, textLine.getWidth());
+      DefaultListModel model = (DefaultListModel) myList.getModel();
+      int oldIndex = getSelectionIndex();
+
+      model.removeAllElements();
+      for (String value : getStrings()) {
+        model.addElement(value);
       }
 
-      int h = lineHeight * Math.min(MAX_MENU_LEN, types.length);
-      setSize(w/* + SCROLLER_WIDTH*/, h);
+      setSelectionIndex(oldIndex);
+      myList.ensureIndexIsVisible(getSelectionIndex());
+
+
+      int maxY = getLocation().y + getHeight();
+      setSize(
+              Math.max(PREFERRED_WIDTH, myList.getPreferredSize().width) + 30,
+              Math.min(PREFERRED_HEIGHT, myList.getPreferredSize().height) + 4);
+
+      if (getPosition() == PopupWindowPosition.TOP) {
+        setLocation(getX(), maxY - getHeight());
+      }
+
+      validateTree();
+      repaint();
     }
 
-    public void paint(Graphics g) {
-//      System.out.println("paint: selected=" + selectionIndex + " first=" + firstVisibleIndex + " last=" + lastVisibleIndex);
-      String[] types = getStrings();
-
-      Rectangle bounds = g.getClipBounds();
-      g.setColor(Color.CYAN);
-      g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
-      g.setColor(Color.GRAY);
-      g.drawRect(bounds.x, bounds.y, bounds.width - 1, bounds.height - 1);
-
-      boolean needScroller = firstVisibleIndex > 0 || lastVisibleIndex < (types.length - 1);
-      if (needScroller) {
-        int scrollerY = (int) (bounds.y + ((long) firstVisibleIndex * (long) bounds.height) / types.length);
-        int scrollerH = (int) (((long) (lastVisibleIndex - firstVisibleIndex + 1) * (long) bounds.height) / types.length);
-        Rectangle scrollerBounds = new Rectangle(bounds.x + bounds.width - SCROLLER_WIDTH, scrollerY, SCROLLER_WIDTH, scrollerH);
-        g.setColor(Color.LIGHT_GRAY);
-        g.fillRect(scrollerBounds.x, scrollerBounds.y, scrollerBounds.width, scrollerBounds.height);
-      }
-
-      int shiftY = 0;
-      for (int i = firstVisibleIndex; i <= lastVisibleIndex; i++) {
-        TextLine textLine = createTextLine(types[i]);
-        textLine.paint(g, 0, shiftY, i == selectionIndex, false);
-        shiftY += textLine.getHeight();
-      }
+    public PopupWindowPosition getPosition() {
+      return myPosition;
     }
 
-    private TextLine createTextLine(String text) {
-      TextLine textLine = new TextLine(text, this);
-      textLine.setSelectedBackgroundColor(Color.blue);
-      textLine.setSelectedTextColor(Color.white);
-      textLine.setTextColor(Color.black);
-      textLine.setSelectedBorderColor(null);
-      textLine.setBorderColor(null);
-      textLine.setCaretEnabled(false);
-      textLine.relayout();
-      return textLine;
+    public void setPosition(PopupWindowPosition position) {
+      myPosition = position;
     }
   }
 }
