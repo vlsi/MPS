@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.baseLanguage.ExpressionStatement;
 
 import java.util.Iterator;
+import java.awt.*;
 
 /**
  * User: Sergey Dmitriev
@@ -105,10 +106,21 @@ hStart |--------|                  |  | hEnd
   }
 
   public EditorCell findNearestCell(EditorCell_Collection editorCells, int x, int y, boolean isPrevious) {
-    return null;
+    return findCell(editorCells, x, y);
   }
 
   public EditorCell findCell(EditorCell_Collection editorCells, int x, int y) {
+    if (!new Rectangle(editorCells.getX(), editorCells.getY(), editorCells.getWidth(), editorCells.getHeight()).contains(x, y)) {
+      return null;
+    }
+
+    System.out.println("Finding cell");
+    for (int i = 0; i < editorCells.getChildCount(); i++) {
+      EditorCell cell = editorCells.getChildAt(i);
+      Rectangle rectangle = new Rectangle(cell.getX(), cell.getY(), cell.getWidth(), cell.getHeight());
+      if (rectangle.contains(x, y)) return cell.findCell(x, y);
+    }
+    System.out.println("");
     return null;
   }
 }
