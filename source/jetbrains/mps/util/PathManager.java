@@ -87,7 +87,7 @@ public class PathManager {
 
     try {
       File file = new File(ourModelPath);
-      file.mkdirs();
+//      file.mkdirs();
     } catch (Exception e) {
       e.printStackTrace();
     }
