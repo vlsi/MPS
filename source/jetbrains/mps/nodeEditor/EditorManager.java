@@ -5,11 +5,11 @@ import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.diagnostic.Logger;
-import jetbrains.mps.project.AbstractMPSProject;
 import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.semanticModel.SemanticModel;
 import jetbrains.mps.semanticModel.SemanticModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.project.MPSProject;
 
 /**
  * Author: Sergey Dmitriev.
@@ -142,7 +142,7 @@ public class EditorManager {
   private static String getNodeEditorClassName(SemanticTypeDeclaration typeDeclaration, boolean trialEditor) {
     String typeName = typeDeclaration.getName();
     //todo - the project should be passed as parameter here
-    AbstractMPSProject mpsProject = IdeMain.instance().getProject();
+    MPSProject mpsProject = IdeMain.instance().getProject();
     Language language = mpsProject.getLanguageByStructureModel(typeDeclaration.getSemanticModel());
     LOG.assertNotNull(language, "Couldn't find language for structure model \"" + typeDeclaration.getSemanticModel().getFQName() + "\"");
     SemanticModel languageEditor = language.getLanguageEditor();

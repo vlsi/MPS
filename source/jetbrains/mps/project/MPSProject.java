@@ -1,11 +1,12 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.semanticModel.Language;
-import jetbrains.mps.semanticModel.ModelRoot;
-import jetbrains.mps.semanticModel.SemanticModel;
-import jetbrains.mps.semanticModel.SemanticModels;
+import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.modelExecute.ExecutionPoint;
+import jetbrains.mps.modelExecute.ExecutionManager;
+import jetbrains.mps.ide.ILanguagePlugin;
+import jetbrains.mps.generator.JavaNameUtil;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -15,12 +16,14 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Collection;
+import java.util.HashMap;
 
 /**
  * Author: Sergey Dmitriev
  * Created Apr 29, 2004
  */
-public class MPSProject extends AbstractMPSProject {
+public class MPSProject implements ModelLocator {
   private File myProjectFile;
   private ArrayList<SemanticModel> myProjectModels = new ArrayList<SemanticModel>();
   private ArrayList<SemanticModel> myLibraryModels = new ArrayList<SemanticModel>();
@@ -40,6 +43,10 @@ public class MPSProject extends AbstractMPSProject {
   public static final String PATH_MACRO_PROJECT = "${project}" + File.separatorChar;
   public static final String NAMESPACE_PREFIX = "namespacePrefix";
   public static final String ROOT_PATH = "rootPath";
+  protected SemanticModels mySemanticModels = createSemanticModels();
+  private ExecutionPoint myEntryPoint;
+  private ExecutionManager myExecutionManager = new ExecutionManager();
+  private HashMap<String, Language> myNamespaceToLanguageMap = new HashMap<String, Language>();
 
   public MPSProject(File file) {
     myProjectFile = file;
@@ -296,4 +303,69 @@ public class MPSProject extends AbstractMPSProject {
     return myProjectFile;
   }
 
+  public Iterator<Language> languages() {
+    return myNamespaceToLanguageMap.values().iterator();
+  }
+
+  public Language getLanguage(String nameSpace) {
+    return myNamespaceToLanguageMap.get(nameSpace);
+  }
+
+  protected void addLanguage(String namespace, Language language) {
+    myNamespaceToLanguageMap.put(namespace, language);
+  }
+
+  public SemanticModels getSemanticModels() {
+    return mySemanticModels;
+  }
+
+  public SemanticModel loadModel(String fileName) {
+    return mySemanticModels.loadModel(fileName, this);
+  }
+
+  public boolean isProjectChanged() {
+    return mySemanticModels.wereChanges();
+  }
+
+  public ExecutionPoint getEntryPoint() {
+    return myEntryPoint;
+  }
+
+  public void setEntryPoint(ExecutionPoint entryPoint) {
+    myEntryPoint = entryPoint;
+  }
+
+  public ExecutionManager getExecutionManager() {
+    return myExecutionManager;
+  }
+
+  public ILanguagePlugin getLanguagePlugin(Language language) {
+    SemanticModel languageStructure = language.getLanguageStructure();
+    String packageName = JavaNameUtil.packageNameForLanguageStructure(languageStructure);
+    String className = packageName + ".LanguagePlugin";
+    try {
+      Class pluginClass = Class.forName(className);
+      return (ILanguagePlugin) pluginClass.newInstance();
+    } catch (ClassNotFoundException e) {
+      System.err.println("Language plugin for structure model " + languageStructure.getFQName() + " was not found.");
+      e.printStackTrace();
+    } catch (IllegalAccessException e) {
+      e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+    } catch (InstantiationException e) {
+      e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+    }
+    return null;
+  }
+
+  public Language getLanguageByStructureModel(SemanticModel semanticModel) {
+    Collection<Language> languages = myNamespaceToLanguageMap.values();
+    for (Iterator iterator = languages.iterator(); iterator.hasNext();) {
+      Language language = (Language)iterator.next();
+      SemanticModel structureModel = language.getLanguageStructure();
+      if(structureModel == semanticModel) {
+        return language;
+      }
+    }
+    return null;
+  }
 }

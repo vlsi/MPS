@@ -6,26 +6,26 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.project.AbstractMPSProject;
 import jetbrains.mps.semanticModel.SemanticModel;
 import jetbrains.mps.semanticModel.SemanticModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.project.MPSProject;
 
 import java.util.Iterator;
 import java.util.List;
 import java.util.LinkedList;
 
 public abstract class AbstractModelGenerator implements IModelGenerator {
-  private AbstractMPSProject myProject;
+  private MPSProject myProject;
   private SemanticModel mySourceModel;
   private SemanticModel myTargetModel;
 
-  protected AbstractModelGenerator(SemanticModel sourceModel, AbstractMPSProject project) {
+  protected AbstractModelGenerator(SemanticModel sourceModel, MPSProject project) {
     mySourceModel = sourceModel;
     myProject = project;
   }
 
-  public AbstractMPSProject getProject() {
+  public MPSProject getProject() {
     return myProject;
   }
 

@@ -11,9 +11,9 @@ import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.usageView.UsagesModel_BackReferences;
 import jetbrains.mps.ide.usageView.UsagesModel_SemanticNode;
-import jetbrains.mps.project.AbstractMPSProject;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.typesystem.*;
+import jetbrains.mps.project.MPSProject;
 
 import javax.swing.*;
 import java.awt.*;
@@ -212,7 +212,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     final String editorName = node.getName() + "_Editor";
     return new AbstractAction("Go To " + editorName) {
       public void actionPerformed(ActionEvent e) {
-        AbstractMPSProject project = IdeMain.instance().getProject();
+        MPSProject project = IdeMain.instance().getProject();
         SemanticModel languageStructure = node.getSemanticModel();
         Language language = project.getLanguageByStructureModel(languageStructure);
         if (language == null) {
