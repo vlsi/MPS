@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<semanticModel namespace="jetbrains.mps.transformation.TLBase">
+<model namespace="jetbrains.mps.transformation.TLBase">
   <maxReferenceID value="3" />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <import referenceID="2" name="structure" namespace="jetbrains.mps.core" />
@@ -139,5 +139,5 @@
     <property name="name" value="TemplateTag" />
     <link role="extends" targetNodeId="2.1078489098625" />
   </node>
-</semanticModel>
+</model>
 

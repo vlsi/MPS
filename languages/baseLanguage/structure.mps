@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<semanticModel namespace="jetbrains.mps.baseLanguage">
+<model namespace="jetbrains.mps.baseLanguage">
   <maxReferenceID value="33" />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <import referenceID="4" name="structure" namespace="jetbrains.mps.core" />
@@ -830,5 +830,5 @@
     <property name="name" value="DivExpression" />
     <link role="extends" targetNodeId="1081773326031" />
   </node>
-</semanticModel>
+</model>
 

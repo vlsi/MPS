@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<semanticModel namespace="jetbrains.mps.bootstrap.structureLanguage">
+<model namespace="jetbrains.mps.bootstrap.structureLanguage">
   <maxReferenceID value="3" />
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
   <import referenceID="1" name="structure" namespace="jetbrains.mps.bootstrap.structureLanguage" />
@@ -505,5 +505,5 @@
       </node>
     </node>
   </node>
-</semanticModel>
+</model>
 

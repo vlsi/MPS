@@ -3,7 +3,6 @@ package jetbrains.mps.util;
 import jetbrains.mps.semanticModel.ModelRoot;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.URL;
 import java.util.Collection;
 
@@ -77,24 +76,24 @@ public class PathManager {
 
 
 
-  public static String getModelPath() {
-    if (ourModelPath != null) return ourModelPath;
-
-    if (System.getProperty(PROPERTY_MODEL_PATH) != null) {
-      ourModelPath = getAbsolutePath(System.getProperty(PROPERTY_MODEL_PATH));
-    } else {
-      ourModelPath = getHomePath() + File.separator + "semanticModels";
-    }
-
-    try {
-      File file = new File(ourModelPath);
-//      file.mkdirs();
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-
-    return ourModelPath;
-  }
+//  public static String getModelPath() {
+//    if (ourModelPath != null) return ourModelPath;
+//
+//    if (System.getProperty(PROPERTY_MODEL_PATH) != null) {
+//      ourModelPath = getAbsolutePath(System.getProperty(PROPERTY_MODEL_PATH));
+//    } else {
+//      ourModelPath = getHomePath() + File.separator + "semanticModels";
+//    }
+//
+//    try {
+//      File file = new File(ourModelPath);
+////      file.mkdirs();
+//    } catch (Exception e) {
+//      e.printStackTrace();
+//    }
+//
+//    return ourModelPath;
+//  }
 
   public static String getHelpPath() {
     if (ourHelpPath != null) {
@@ -202,21 +201,21 @@ public class PathManager {
   }
 
 
-  /**
-   * @param modelName
-   * @param modelNamespace
-   * @return absolute path of model file (one with extention "mps")
-   */
-  public static String getModelFilePath(String modelName, String modelNamespace) {
-    String modelPath = getModelPath();
-    String namespaceSegment = modelNamespace.replace('.', File.separatorChar);
-    String absolutePath = modelPath;
-    if (namespaceSegment.length() > 0) {
-      absolutePath = absolutePath + File.separator + namespaceSegment;
-    }
-    absolutePath = absolutePath + File.separator + modelName + ".mps";
-    return absolutePath;
-  }
+//  /**
+//   * @param modelName
+//   * @param modelNamespace
+//   * @return absolute path of model file (one with extention "mps")
+//   */
+//  public static String getModelFilePath(String modelName, String modelNamespace) {
+//    String modelPath = getModelPath();
+//    String namespaceSegment = modelNamespace.replace('.', File.separatorChar);
+//    String absolutePath = modelPath;
+//    if (namespaceSegment.length() > 0) {
+//      absolutePath = absolutePath + File.separator + namespaceSegment;
+//    }
+//    absolutePath = absolutePath + File.separator + modelName + ".mps";
+//    return absolutePath;
+//  }
 
   public static String getAbsolutePathByRelational(File baseFile, String relationalPath) {
     File relationalFile = new File(relationalPath);

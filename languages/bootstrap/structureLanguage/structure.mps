@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<semanticModel namespace="jetbrains.mps.bootstrap.structureLanguage">
+<model namespace="jetbrains.mps.bootstrap.structureLanguage">
   <maxReferenceID value="2" />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <import referenceID="1" name="structure" namespace="jetbrains.mps.core" />
@@ -176,5 +176,5 @@
       <property name="name" value="aggregation" />
     </node>
   </node>
-</semanticModel>
+</model>
 

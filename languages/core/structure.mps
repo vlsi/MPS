@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<semanticModel namespace="jetbrains.mps.core">
+<model namespace="jetbrains.mps.core">
   <maxReferenceID value="23" />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1078489098625">
@@ -19,5 +19,5 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.PrimitiveDataTypeDeclaration" id="1082983657063">
     <property name="name" value="boolean" />
   </node>
-</semanticModel>
+</model>
 

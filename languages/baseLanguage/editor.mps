@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<semanticModel namespace="jetbrains.mps.baseLanguage">
+<model namespace="jetbrains.mps.baseLanguage">
   <maxReferenceID value="18" />
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
@@ -8588,5 +8588,5 @@
       </node>
     </node>
   </node>
-</semanticModel>
+</model>
 
