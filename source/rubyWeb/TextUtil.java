@@ -71,6 +71,11 @@ public class TextUtil {
           tag.setText(toText(model, elem));
           tag.putUserObject(ResolveUtil.ID_TO_RESOLVE, elem.getAttributeValue("name"));
         }
+        if ("quote".equals(name)) {
+          tag = QuoteTag.newInstance(model);
+          tag.setText(toText(model, elem));
+          tag.putUserObject(ResolveUtil.ID_TO_RESOLVE, elem.getAttributeValue("ref"));
+        }
         if ("xref".equals(name)) {
           tag = XRefTag.newInstance(model);
           tag.setText(toText(model, elem));
@@ -200,12 +205,22 @@ public class TextUtil {
       toElement(tag.getText(), italic);
       return;
     }
+    if (word instanceof QuoteTag) {
+      QuoteTag tag = (QuoteTag) word;
+      Element target = new Element("quote");
+      if (tag.getBibliographyReference() != null) {
+        target.setAttribute("ref", tag.getBibliographyReference().getName());
+      }
+      toElement(tag.getText(), target);
+      element.addContent(target);
+    }
     if (word instanceof CiteTag) {
       CiteTag tag = (CiteTag) word;
       Element target = new Element("cite");
       if (tag.getBibliographyReference() != null) {
         target.setAttribute("name", tag.getBibliographyReference().getName());
       }
+      toElement(tag.getText(), target);
       element.addContent(target);
       return;
     }
