@@ -841,7 +841,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     public void nodeAdded(SemanticModel semanticModel, SemanticNode child) {
       rebuildEditorContent();
-      handleChildAdderOrReplaced(child);
+      handleNodelAdded(child);
     }
 
     public void nodeDeleted(SemanticModel semanticModel, SemanticNode container) {
@@ -854,7 +854,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }
 
-    private void handleChildAdderOrReplaced(SemanticNode child) {
+    private void handleNodelAdded(SemanticNode child) {
       EditorCell childCell = findNodeCell(child);
       if (childCell == null) {
         // this editor doesn't contain this node.
@@ -862,35 +862,42 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
 
       // set selection to child
-      boolean childSelected = false;
-      if (mySelectedCell != null) {
-        EditorCell cell = mySelectedCell;
-        while (cell != null && cell.getSemanticNode() != child) {
-          cell = cell.getParent();
-        }
-        childSelected = (cell != null);
-      }
+//      boolean childSelected = false;
+//      if (mySelectedCell != null) {
+//        EditorCell cell = mySelectedCell;
+//        while (cell != null && cell.getSemanticNode() != child) {
+//          cell = cell.getParent();
+//        }
+//        childSelected = (cell != null);
+//      }
 
-      if (!childSelected) {
+//      if (!childSelected) {
         if (childCell instanceof EditorCell_Collection) {
-          EditorCell selectableLeaf = ((EditorCell_Collection) childCell).findFirstSelectableLeaf();
-          if (selectableLeaf != null) {
-            changeSelection(selectableLeaf);
-            childSelected = true;
+          EditorCell errorCell = ((EditorCell_Collection) childCell).findFirstErrorCell();
+          if (errorCell != null) {
+            changeSelection(errorCell);
+//            childSelected = true;
           } else {
-            changeSelection(childCell);
+            EditorCell selectableLeaf = ((EditorCell_Collection) childCell).findFirstSelectableLeaf();
+            if (selectableLeaf != null) {
+              changeSelection(selectableLeaf);
+//              childSelected = true;
+            } else {
+              changeSelection(childCell);
+//              childSelected = true;
+            }
           }
         } else {
           changeSelection(childCell);
         }
-      }
+//      }
 
-      if (childSelected) {
+//      if (childSelected) {
         if (mySelectedCell instanceof EditorCell_Label && ((EditorCell_Label) mySelectedCell).isEditable()) {
           TextLine textLine = ((EditorCell_Label) mySelectedCell).getTextLine();
           textLine.setCaretPosition(textLine.getText().length());
         }
-      }
+//      }
     }
   } // private class MyModelListener implements SemanticModelListener
 }
