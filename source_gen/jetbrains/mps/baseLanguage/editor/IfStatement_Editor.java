@@ -121,6 +121,6 @@ public class IfStatement_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public boolean handleConditionalQuery_1075379536707(SemanticNode node) {
-    return MethodDeclarationsUtil._SemanticNodeCondition_HasFalseBranch(node);
+    return FreeMethodsUtil_baseLanguage_context._SemanticNodeCondition_HasFalseBranch(node);
   }
 }
