@@ -29,6 +29,7 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    __Expression_RTransform_ActionSet.setCellActions(editorCell, node);
     editorCell.addKeyMap(new _Expression_KeyMap());
     editorCell.addEditorCell(this.createConstantCell(context, node, "("));
     editorCell.addEditorCell(this.createExpressionCell(context, node));
