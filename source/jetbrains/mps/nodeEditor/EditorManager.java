@@ -87,7 +87,8 @@ public class EditorManager {
       }
     }
 
-    String editorClassName = "jetbrains.mps." + languageEditorFQName + "." + typeDeclaration.getName() + "_Editor";
+//    String editorClassName = "jetbrains.mps." + languageEditorFQName + "." + typeDeclaration.getName() + "_Editor";
+    String editorClassName = languageEditorFQName + "." + typeDeclaration.getName() + "_Editor";
     try {
       Class editorClass = Class.forName(editorClassName);
       return (INodeEditor) editorClass.newInstance();

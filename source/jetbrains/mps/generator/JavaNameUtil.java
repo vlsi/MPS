@@ -15,10 +15,14 @@ public class JavaNameUtil {
 
   public static String fqClassNameByNamespace(SemanticModel model, String shortClassName) {
     String modelNamespace = model.getNamespace();
+    return modelNamespace + '.' + shortClassName;
+/*
+    String modelNamespace = model.getNamespace();
     if (modelNamespace.startsWith("jetbrains.mps.") || modelNamespace.startsWith("java.")) {
       return modelNamespace + '.' + shortClassName;
     }
     return "jetbrains.mps." + modelNamespace + "." + shortClassName;
+*/
   }
 
   public static String fqClassName(SemanticNode semanticNode, String shortClassName) {
@@ -32,16 +36,27 @@ public class JavaNameUtil {
     }
     return packageName + "." + shortClassName;
   }
-
+/**
+ * @deprecated
+ */
   public static String packageNameForLanguageStructure(SemanticModel structureModel) {
+    return structureModel.getNamespace();
+/*
     String modelNamespace = structureModel.getNamespace();
     if (modelNamespace.startsWith("jetbrains.mps.") || modelNamespace.startsWith("java.")) {
       return modelNamespace;
     }
     return "jetbrains.mps." + modelNamespace;
+*/
   }
 
   public static String packageNameForModel(SemanticModel semanticModel) {
+    String packageName = semanticModel.getFQName();
+    if(semanticModel.getName() == null || semanticModel.getName().length() == 0) {
+      packageName = semanticModel.getNamespace();
+    }
+    return packageName;
+/*
     String packageName = semanticModel.getFQName();
     if(semanticModel.getName() == null || semanticModel.getName().length() == 0) {
       packageName = semanticModel.getNamespace();
@@ -50,6 +65,7 @@ public class JavaNameUtil {
       return packageName;
     }
     return "jetbrains.mps." + packageName;
+*/
   }
 
 

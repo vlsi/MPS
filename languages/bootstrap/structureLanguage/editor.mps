@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<semanticModel namespace="bootstrap.structureLanguage">
+<semanticModel namespace="jetbrains.mps.bootstrap.structureLanguage">
   <maxReferenceID value="3" />
-  <language namespace="bootstrap.editorLanguage" />
-  <import referenceID="1" name="structure" namespace="bootstrap.structureLanguage" />
-  <import referenceID="2" name="structure" namespace="core" />
+  <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
+  <import referenceID="1" name="structure" namespace="jetbrains.mps.bootstrap.structureLanguage" />
+  <import referenceID="2" name="structure" namespace="jetbrains.mps.core" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1082979388796">
     <property name="name" value="ConstrainedDataTypeDeclaration_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1082978499127" />

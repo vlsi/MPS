@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<semanticModel namespace="transformation.TLBase">
+<semanticModel namespace="jetbrains.mps.transformation.TLBase">
   <maxReferenceID value="3" />
-  <language namespace="bootstrap.structureLanguage" />
-  <import referenceID="2" name="structure" namespace="core" />
-  <import referenceID="3" name="structure" namespace="bootstrap.structureLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
+  <import referenceID="2" name="structure" namespace="jetbrains.mps.core" />
+  <import referenceID="3" name="structure" namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1087833241328">
     <property name="name" value="PropertyMacro" />
     <link role="extends" targetNodeId="2.1078489098625" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<semanticModel namespace="core">
+<semanticModel namespace="jetbrains.mps.core">
   <maxReferenceID value="23" />
-  <language namespace="bootstrap.structureLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1078489098625">
     <property name="name" value="BaseConcept" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1078489098626">

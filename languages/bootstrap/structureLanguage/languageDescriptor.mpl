@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="bootstrap.structureLanguage">
-  <modelRoot rootPath="." namespacePrefix="bootstrap.structureLanguage"/>
+<language namespace="jetbrains.mps.bootstrap.structureLanguage">
+  <modelRoot rootPath="." namespacePrefix="jetbrains.mps.bootstrap.structureLanguage"/>
   <modelRoot rootPath="..\..\..\models" />
   <structure>
-    <model fqName="bootstrap.structureLanguage.structure"/>
+    <model fqName="jetbrains.mps.bootstrap.structureLanguage.structure"/>
   </structure>
   <editor>
-    <model fqName="bootstrap.structureLanguage.editor"/>
-    <context fqName="bootstrap.structureLanguage.editor_context"/>
+    <model fqName="jetbrains.mps.bootstrap.structureLanguage.editor"/>
+    <context fqName="jetbrains.mps.bootstrap.structureLanguage.editor_context"/>
   </editor>
 </language>

@@ -182,7 +182,7 @@ public class PathManager {
     String name = modelFQName;
     String packagePrefix = modelRoot.namespacePrefix;
     if(packagePrefix != null) {
-      if(modelFQName.startsWith(packagePrefix)) {
+      if(modelFQName.startsWith(packagePrefix + '.')) {
         name = modelFQName.substring(packagePrefix.length());
       }
       else {

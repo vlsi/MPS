@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<semanticModel namespace="transformation.TLBase">
+<semanticModel namespace="jetbrains.mps.transformation.TLBase">
   <maxReferenceID value="5" />
-  <language namespace="bootstrap.editorLanguage" />
-  <import referenceID="1" name="structure" namespace="transformation.TLBase" />
-  <import referenceID="2" name="structure" namespace="baseLanguage" />
-  <import referenceID="4" name="structure" namespace="core" />
-  <import referenceID="5" name="structure" namespace="bootstrap.structureLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
+  <import referenceID="1" name="structure" namespace="jetbrains.mps.transformation.TLBase" />
+  <import referenceID="2" name="structure" namespace="jetbrains.mps.baseLanguage" />
+  <import referenceID="4" name="structure" namespace="jetbrains.mps.core" />
+  <import referenceID="5" name="structure" namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1087903454703">
     <property name="name" value="PropertyMacro_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1087833241328" />

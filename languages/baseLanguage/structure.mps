@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<semanticModel namespace="baseLanguage">
+<semanticModel namespace="jetbrains.mps.baseLanguage">
   <maxReferenceID value="33" />
-  <language namespace="bootstrap.structureLanguage" />
-  <import referenceID="4" name="structure" namespace="core" />
+  <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
+  <import referenceID="4" name="structure" namespace="jetbrains.mps.core" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068498886294">
     <property name="name" value="AssignmentExpression" />
     <link role="extends" targetNodeId="1068431790191" />

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<semanticModel namespace="baseLanguage">
+<semanticModel namespace="jetbrains.mps.baseLanguage">
   <maxReferenceID value="18" />
-  <language namespace="bootstrap.editorLanguage" />
-  <language namespace="baseLanguage" />
-  <import referenceID="8" name="structure" namespace="baseLanguage" />
-  <import referenceID="9" name="structure" namespace="core" />
-  <import referenceID="13" name="editor_context" namespace="baseLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage" />
+  <import referenceID="8" name="structure" namespace="jetbrains.mps.baseLanguage" />
+  <import referenceID="9" name="structure" namespace="jetbrains.mps.core" />
+  <import referenceID="13" name="editor_context" namespace="jetbrains.mps.baseLanguage" />
   <import referenceID="14" name="lang" namespace="java" />
   <import referenceID="15" name="semanticModel" namespace="jetbrains.mps" />
   <import referenceID="16" name="util" namespace="java" />
