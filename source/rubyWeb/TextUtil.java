@@ -59,6 +59,10 @@ public class TextUtil {
           ((ATag) tag).setHref(elem.getAttributeValue("href"));
           tag.setText(toText(model, elem));
         }
+        if ("photo".equals(name)) {
+          tag = PhotoTag.newInstance(model);
+          ((PhotoTag) tag).setRef(elem.getAttributeValue("ref"));
+        }
         if ("b".equals(name) || "B".equals(name)) {
           tag = BoldTag.newInstance(model);
           tag.setText(toText(model, elem));
@@ -204,6 +208,13 @@ public class TextUtil {
       header.setText(tag.getName());
       target.addContent(header);
       toElement(tag.getText(), target);
+      element.addContent(target);
+      return;
+    }
+    if (word instanceof PhotoTag) {
+      PhotoTag tag = (PhotoTag) word;
+      Element target = new Element("photo");
+      target.setAttribute("ref", tag.getRef());
       element.addContent(target);
       return;
     }
