@@ -26,7 +26,7 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
       throw new RuntimeException("Only reference links are allowed here.");
     }
     Cardinality sourceCardinality = myLinkDeclaration.getSourceCardinality();
-    if (sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._0_1) {
+    if (!(sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._0_1)) {
       throw new RuntimeException("Only cardinalities 1 or 0..1 are allowed here.");
     }
   }
