@@ -243,7 +243,9 @@ public class TextUtil {
     if (word instanceof PhotoTag) {
       PhotoTag tag = (PhotoTag) word;
       Element target = new Element("photo");
-      target.setAttribute("ref", tag.getRef());
+      if (tag.getRef() != null) {
+        target.setAttribute("ref", tag.getRef());
+      }
       element.addContent(target);
       return;
     }
@@ -285,7 +287,9 @@ public class TextUtil {
     if (word instanceof BookTag) {
       BookTag tag = (BookTag) word;
       Element book = new Element("book");
-      book.setAttribute("isbn", tag.getIsbn());
+      if (tag.getIsbn() != null) {
+        book.setAttribute("isbn", tag.getIsbn());
+      }
       element.addContent(book);
       toElement(tag.getText(), book);
       return;
@@ -366,7 +370,9 @@ public class TextUtil {
     if (word instanceof FigureTag) {
       FigureTag tag = (FigureTag) word;
       Element target = new Element("figure");
-      target.setAttribute("src", tag.getSource());
+      if (tag.getSource() != null) {
+        target.setAttribute("src", tag.getSource());
+      }
       element.addContent(target);
       return;
     }
@@ -390,8 +396,12 @@ public class TextUtil {
     if (word instanceof InsertCodeTag) {
       InsertCodeTag tag = (InsertCodeTag) word;
       Element target = new Element("insertCode");
-      target.setAttribute("file", tag.getFile());
-      target.setAttribute("fragment", tag.getFragment());
+      if (tag.getFile() != null) {
+        target.setAttribute("file", tag.getFile());
+      }
+      if (tag.getFragment() != null) {
+        target.setAttribute("fragment", tag.getFragment());
+      }
       element.addContent(target);
       return;
     }
