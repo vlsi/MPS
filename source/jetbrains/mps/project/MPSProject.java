@@ -12,7 +12,6 @@ import jetbrains.mps.modelExecute.ExecutionPoint;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.semanticModel.ModelLocator;
-import jetbrains.mps.semanticModel.ProjectModels;
 import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.PathManager;
@@ -77,7 +76,7 @@ public class MPSProject implements ModelLocator {
     return result;
   }
 
-  private void addComponent(Class interfaceClass, Object instance) {
+  public void addComponent(Class interfaceClass, Object instance) {
     myComponents.put(interfaceClass, instance);
   }
 
