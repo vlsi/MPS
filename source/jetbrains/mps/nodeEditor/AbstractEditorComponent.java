@@ -7,15 +7,13 @@ import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.semanticModel.SemanticModel;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Stack;
+import java.awt.*;
+import java.util.*;
+import java.util.List;
 
 /**
  * Author: Sergey Dmitriev
@@ -39,6 +37,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private HashMap myUserDataMap = new HashMap();
 
   private MyModelListener mySemanticModelListener = new MyModelListener();
+
+  private List<ICellSelectionListener> mySelectionListeners = new LinkedList<ICellSelectionListener>();
 
   public AbstractEditorComponent() {
     setDoubleBuffered(true);
@@ -498,6 +498,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
     myNodeSubstituteChooser.setVisible(false);
 
+    EditorCell oldSelection = mySelectedCell;
     if(mySelectedCell != null) {
       mySelectedCell.setSelected(false);
     }
@@ -525,6 +526,24 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }
     repaint();
+
+    fireCellSelectionChanged(oldSelection, newSelectedCell);
+  }
+
+  public void addCellSelectionListener(ICellSelectionListener l) {
+    mySelectionListeners.add(l);
+  }
+
+  public void removeCellSelectionListener(ICellSelectionListener l) {
+    mySelectionListeners.remove(l);
+  }
+
+  protected void fireCellSelectionChanged(EditorCell oldSelection, EditorCell newSelection) {
+    Iterator<ICellSelectionListener> iterator = mySelectionListeners.iterator();
+    while(iterator.hasNext()) {
+      ICellSelectionListener cellSelectionListener = iterator.next();
+      cellSelectionListener.selectionChanged(oldSelection, newSelection);
+    }
   }
 
   protected void paintComponent(Graphics g) {
