@@ -152,6 +152,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createNameCell(EditorContext context, SemanticNode node) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "name", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
+    editorCell.setDrawBrackets(true);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(true);
