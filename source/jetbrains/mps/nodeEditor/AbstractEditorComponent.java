@@ -1,8 +1,12 @@
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
+import jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration;
+import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.ProjectPane;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
@@ -10,9 +14,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.typesystem.ITypesystem;
 import jetbrains.mps.typesystem.TSStatus;
-import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
-import jetbrains.mps.util.NameUtil;
 
 import javax.swing.*;
 import java.awt.*;
@@ -139,11 +140,55 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     SemanticNode selectedNode = getSelectedCell().getSemanticNode();
     selectNode(selectedNode);
     JPopupMenu popupMenu = new JPopupMenu();
-    popupMenu.add(JavaNameUtil.shortName(selectedNode.getClass().getName()));
+    String header = JavaNameUtil.shortName(selectedNode.getClass().getName());
+    if(selectedNode.getName() != null) {
+      header = header + " \"" + selectedNode.getName() +  "\"";
+    }
+//    String header = selectedNode.getDebugText();
+    popupMenu.add(JavaNameUtil.shortName(header));
+    popupMenu.addSeparator();
+    popupMenu.add(createGoToProjectAction(selectedNode));
+    if (selectedNode instanceof SemanticTypeDeclaration) {
+      popupMenu.add(createGoToEditorAction((SemanticTypeDeclaration) selectedNode));
+    }
     popupMenu.addSeparator();
     popupMenu.add(createGoByReferenceMenu(selectedNode));
     popupMenu.add(createGoByBackReferenceMenu(selectedNode));
     popupMenu.show(AbstractEditorComponent.this, e.getX(), e.getY());
+  }
+
+  private Action createGoToProjectAction(final SemanticNode node) {
+    return new AbstractAction("Go To Project") {
+      public void actionPerformed(ActionEvent e) {
+        ProjectPane projectPane = IdeMain.instance().getProjectPane();
+        projectPane.selectNode(node);
+      }
+    };
+  }
+
+  private Action createGoToEditorAction(final SemanticTypeDeclaration node) {
+
+    final String editorName = node.getName() + "_Editor";
+    return new AbstractAction("Go To " + editorName) {
+      public void actionPerformed(ActionEvent e) {
+        Language language = Language.getLanguage(node, IdeMain.instance().getProject());
+        SemanticModel languageEditor = language.getLanguageEditor();
+        if (languageEditor != null) {
+          Iterator<SemanticNode> iterator = languageEditor.roots();
+          while (iterator.hasNext()) {
+            SemanticNode root = iterator.next();
+            if (editorName.equals(root.getName())) {
+              AbstractEditorComponent editor = IdeMain.instance().getEditorsPane().openEditor(root, EditorsPane.LEFT);
+              editor.selectNode(root);
+              return;
+            }
+          }
+          JOptionPane.showMessageDialog(getExternalComponent(), "The " + editorName + " wasn't found in " + languageEditor.getFQName());
+        } else {
+          JOptionPane.showMessageDialog(getExternalComponent(), "Editor model for \"" + node.getSemanticModel().getFQName() + "\" is not in the project");
+        }
+      }
+    };
   }
 
   private JMenu createGoByReferenceMenu(SemanticNode node) {
