@@ -18,7 +18,8 @@ public class VariableReference_Editor extends SemanticNodeEditor {
     return this.createErrorCell(editorContext, node);
   }
   public EditorCell createErrorCell(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Error editorCell = EditorCell_Error.create(editorContext, node, "<select collection>");
+    EditorCell_Error editorCell = EditorCell_Error.create(editorContext, node, "<collection>");
+    VariableReference_NodeBoxActions.setCellActions(editorCell, node);
     return editorCell;
   }
 }
