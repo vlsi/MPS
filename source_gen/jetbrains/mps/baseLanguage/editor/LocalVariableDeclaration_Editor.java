@@ -72,6 +72,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
     LocalVariableDeclaration_NameCellActions.setCellActions(editorCell, node);
+    editorCell.addKeyMap(new _LocalVariableName_KeyMap());
     return editorCell;
   }
   public EditorCell createTypeCell(EditorContext context, SemanticNode node) {
