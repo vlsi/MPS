@@ -57,45 +57,12 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1092059087312">
     <property name="name" value="TemplateDeclaration" />
     <link role="extends" targetNodeId="2.1078489098625" />
-    <node role="semanticLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration" id="1092060348986">
-      <property name="sourceCardinality" value="0..n" />
-      <property name="targetCardinality" value="1" />
-      <property name="role" value="parameter" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1092059087313" />
-    </node>
     <node role="semanticLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration" id="1092060348987">
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="1" />
       <property name="role" value="contentNode" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="2.1078489098625" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1092059087313">
-    <property name="name" value="TemplateParameterDeclaration" />
-    <link role="extends" targetNodeId="2.1078489098625" />
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1092676070468">
-    <property name="name" value="TemplateParameterReference" />
-    <link role="extends" targetNodeId="2.1078489098625" />
-    <node role="semanticLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration" id="1092676070469">
-      <property name="sourceCardinality" value="1" />
-      <property name="targetCardinality" value="0..n" />
-      <property name="role" value="templateParameter" />
-      <link role="target" targetNodeId="1092059087313" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1092912125040">
-    <property name="name" value="TemplateReferenceMacro" />
-    <link role="extends" targetNodeId="2.1078489098625" />
-    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration" id="1092912125041">
-      <property name="name" value="sourceQueryAspectMethodName" />
-      <link role="dataType" targetNodeId="2.1082983041843" />
-    </node>
-    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration" id="1092912125042">
-      <property name="name" value="templateParametersBuilderAspectMethodName" />
-      <link role="dataType" targetNodeId="2.1082983041843" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1095416546421">
