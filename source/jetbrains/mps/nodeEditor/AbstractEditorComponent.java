@@ -959,7 +959,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     peekKeyboardHandler().processKeyReleased(getContext(), keyEvent);
   }
 
-  protected void startRecording() {
+  protected void startRecording(String scriptName) {
     requestFocus();
     final SemanticNode root = getRootCell().getSemanticNode();
     final SemanticNode[] copy = new SemanticNode[1];
@@ -974,7 +974,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     selectNode(null);
     myRecorder = new EventRecorder();
     myMPSProject.getComponent(InspectorPane.class).getInspector().setEventRecorder(myRecorder);
-    myRecorder.startRecording(copy[0], root);
+    myRecorder.startRecording(copy[0], root, scriptName);
   }
 
   protected void stopRecordingIfPossible() {
