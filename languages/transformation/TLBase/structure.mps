@@ -7,7 +7,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1087833241328">
     <property name="name" value="PropertyMacro" />
     <link role="extends" targetNodeId="2.1078489098625" />
-    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1087833392642">
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1087833392642">
       <property name="name" value="aspectMethodName" />
       <link role="dataType" targetNodeId="2.1082983041843" />
     </node>
@@ -31,11 +31,11 @@
       <property name="role" value="template" />
       <link role="target" targetNodeId="1092059087312" />
     </node>
-    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1090493180053">
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1090493180053">
       <property name="name" value="sourceQueryAspectMethodName" />
       <link role="dataType" targetNodeId="2.1082983041843" />
     </node>
-    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1090493180054">
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1090493180054">
       <property name="name" value="targetBuilderAspectMethodName" />
       <link role="dataType" targetNodeId="2.1082983041843" />
     </node>
@@ -43,7 +43,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1088761943574">
     <property name="name" value="ReferenceMacro" />
     <link role="extends" targetNodeId="2.1078489098625" />
-    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1088761950280">
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1088761950280">
       <property name="name" value="aspectMethodName" />
       <link role="dataType" targetNodeId="2.1082983041843" />
     </node>
@@ -93,7 +93,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1095416572297">
     <property name="name" value="TemplateMappingRule" />
     <link role="extends" targetNodeId="2.1078489098625" />
-    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1095440741546">
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1095440741546">
       <property name="name" value="sourceQueryAspectId" />
       <link role="dataType" targetNodeId="2.1082983041843" />
     </node>
@@ -107,11 +107,11 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1095416624611">
     <property name="name" value="TemplateWeavingRule" />
     <link role="extends" targetNodeId="2.1078489098625" />
-    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1095418755477">
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1095418755477">
       <property name="name" value="sourceQueryAspectId" />
       <link role="dataType" targetNodeId="2.1082983041843" />
     </node>
-    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1095418755478">
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1095418755478">
       <property name="name" value="contextProviderAspectId" />
       <link role="dataType" targetNodeId="2.1082983041843" />
     </node>
@@ -130,7 +130,7 @@
       <property name="role" value="tag" />
       <link role="target" targetNodeId="1096887421657" />
     </node>
-    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1095757900618">
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1095757900618">
       <property name="name" value="contextProviderAspectId" />
       <link role="dataType" targetNodeId="2.1082983041843" />
     </node>

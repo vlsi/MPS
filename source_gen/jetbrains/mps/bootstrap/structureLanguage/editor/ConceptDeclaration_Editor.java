@@ -27,7 +27,7 @@ import jetbrains.mps.nodeEditor.CellAction_DeleteReferenceToNode;
 public class ConceptDeclaration_Editor extends DefaultNodeEditor {
 
   EditorCellListHandler myLinkDeclarationListHandler;
-  EditorCellListHandler mySemanticPropertyDeclarationListHandler;
+  EditorCellListHandler myPropertyDeclarationListHandler;
 
   public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
     return this.createNodeBox(context, node);
@@ -47,7 +47,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createLinkDeclarationList(context, node));
     editorCell.addEditorCell(this.createSeparator3(context, node, ""));
     editorCell.addEditorCell(this.createConstantCell4(context, node, "Properties:"));
-    editorCell.addEditorCell(this.createSemanticPropertyDeclarationList(context, node));
+    editorCell.addEditorCell(this.createPropertyDeclarationList(context, node));
     return editorCell;
   }
   public EditorCell createHeaderRow(EditorContext context, SemanticNode node) {
@@ -208,12 +208,12 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     return editorCell;
   }
-  public EditorCell createSemanticPropertyDeclarationList(EditorContext context, SemanticNode node) {
-    if(this.mySemanticPropertyDeclarationListHandler == null) {
-      this.mySemanticPropertyDeclarationListHandler = new ConceptDeclaration_Editor_SemanticPropertyDeclarationListHandler(node, "semanticPropertyDeclaration", true);
+  public EditorCell createPropertyDeclarationList(EditorContext context, SemanticNode node) {
+    if(this.myPropertyDeclarationListHandler == null) {
+      this.myPropertyDeclarationListHandler = new ConceptDeclaration_Editor_PropertyDeclarationListHandler(node, "propertyDeclaration", true);
     }
     EditorCell_Collection editorCell = null;
-    editorCell = this.mySemanticPropertyDeclarationListHandler.createCells_Vertical(context);
+    editorCell = this.myPropertyDeclarationListHandler.createCells_Vertical(context);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(true);
