@@ -18,12 +18,11 @@ public class EditorManager {
 //  private static EditorManager myInstance;
   public static String NODE_TO_PLACE_AFTER = "nodeToPlaceAfter";
 
-  private static MPSClassLoader ourClassLoader = new EditorClassLoader();
+  private MPSClassLoader myClassLoader = new EditorClassLoader();
 
-  public static void resetClassLoader() {
-    ourClassLoader = new EditorClassLoader();
+  public void resetClassLoader() {
+    myClassLoader = new EditorClassLoader();
   }
-
 
   public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
     EditorCell editorCell = createEditorCell_internal(context, node);
@@ -56,6 +55,11 @@ public class EditorManager {
 
   private INodeEditor getEditor(EditorContext context, SemanticNode node) {
     INodeEditor editor = (INodeEditor) node.getUserObject(this.getClass());
+
+    if (editor != null && editor.getClass().getClassLoader() != myClassLoader) {
+      editor = null;
+    }
+
     if (editor != null) {
       return editor;
     }
@@ -69,7 +73,6 @@ public class EditorManager {
   }
 
   private INodeEditor loadEditor(EditorContext context, SemanticNode node) {
-
     Language language = Language.getLanguage(node, context.getProject());
     if (language == null) {
       (new RuntimeException("Error loading editor for node \"" + node.getDebugText() + "\" : couldn't find language.")).printStackTrace();
@@ -95,7 +98,7 @@ public class EditorManager {
 //    String editorClassName = "jetbrains.mps." + languageEditorFQName + "." + nodeConcept.getName() + "_Editor";
     String editorClassName = languageEditorFQName + "." + nodeConcept.getName() + "_Editor";
     try {
-      Class editorClass = Class.forName(editorClassName, true, ourClassLoader);
+      Class editorClass = Class.forName(editorClassName, true, myClassLoader);
       return (INodeEditor) editorClass.newInstance();
     } catch (ClassNotFoundException e) {
       System.err.println("Couldn't load editor " + editorClassName + " : Class Not Found!");
