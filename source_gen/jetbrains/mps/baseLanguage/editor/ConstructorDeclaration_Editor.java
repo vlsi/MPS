@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.editor;
 
 
 import jetbrains.mps.nodeEditor.SemanticNodeEditor;
-import jetbrains.mps.nodeEditor.EditorCellListHandler;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -17,11 +17,11 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class ConstructorDeclaration_Editor extends SemanticNodeEditor {
 
-  private EditorCellListHandler myParameterListHandler;
+  private AbstractCellProvider my_BaseMethodParmListEditor;
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);
-    myParameterListHandler = new ConstructorDeclaration_Editor_ParameterListHandler(node, "parameter", "aggregation");
+    my_BaseMethodParmListEditor = new _BaseMethodParmListEditor(node);
   }
   public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
     return this.createMethodBox(editorContext, node);
@@ -42,7 +42,7 @@ public class ConstructorDeclaration_Editor extends SemanticNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.addEditorCell(this.createConstructorName(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell(editorContext, node, "("));
-    editorCell.addEditorCell(this.createParametersList(editorContext, node));
+    editorCell.addEditorCell(this.create_BaseMethodParmListEditorCell(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell1(editorContext, node, ")"));
     return editorCell;
   }
@@ -63,10 +63,9 @@ public class ConstructorDeclaration_Editor extends SemanticNodeEditor {
     editorCell.setSelectable(false);
     return editorCell;
   }
-  public EditorCell createParametersList(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection cellCollection = myParameterListHandler.createCells_Horizontal(editorContext);
-    cellCollection.setGridLayout(false);
-    return cellCollection;
+  public EditorCell create_BaseMethodParmListEditorCell(EditorContext editorContext, SemanticNode node) {
+    EditorCell editorCell = my_BaseMethodParmListEditor.createEditorCell(editorContext);
+    return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext editorContext, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);

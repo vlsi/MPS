@@ -21,7 +21,7 @@ public class BooleanConstant_Editor extends SemanticNodeEditor {
     return this.createValueCell(editorContext, node);
   }
   public EditorCell createValueCell(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = Aspects.createModelAccessor_BooleanConstantValue(node);
+    ModelAccessor modelAccessor = new BooleanConstantValue_Query(node);
     EditorCell editorCell = null;
     if(modelAccessor != null) {
       editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
