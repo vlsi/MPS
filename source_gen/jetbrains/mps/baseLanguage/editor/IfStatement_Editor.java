@@ -9,7 +9,10 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.baseLanguage.IfStatement;
 
@@ -53,12 +56,14 @@ public class IfStatement_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(condition != null) {
       editorCell = this.nodeCell(editorContext, condition);
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(condition));
       IfStatement_ConditionCellActions.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       IfStatement_ConditionCellActions.setCellActions(editorCell, node);
       _DefErrorActions.setCellActions(editorCell, node);
-}
+    }
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext editorContext, SemanticNode node, String text) {
@@ -81,9 +86,11 @@ public class IfStatement_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(ifTrue != null) {
       editorCell = this.nodeCell(editorContext, ifTrue);
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(ifTrue));
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
-}
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    }
     return editorCell;
   }
   public EditorCell createIfFalseBranch(EditorContext editorContext, SemanticNode node) {
@@ -103,12 +110,14 @@ public class IfStatement_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(ifFalseStatement != null) {
       editorCell = this.nodeCell(editorContext, ifFalseStatement);
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(ifFalseStatement));
       IfStatement_ElseStatementActions.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Constant.create(editorContext, node, "", true);
       ((EditorCell_Label)editorCell).setEditable(true);
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       IfStatement_ElseStatementActions.setCellActions(editorCell, node);
-}
+    }
     return editorCell;
   }
   public EditorCell createConstantCell3(EditorContext editorContext, SemanticNode node, String text) {
