@@ -26,6 +26,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 import java.util.List;
+import java.io.File;
 
 import static jetbrains.mps.ide.EditorsPane.EditorPosition.*;
 
@@ -914,6 +915,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return true;
   }
 
+  public Thread playScript(File file) {
+    return new EventPlayer(file).replay(AbstractEditorComponent.this, IdeMain.instance().getInspectorPane().getInspector());
+  }
+
   public void paint(Graphics g) {
     super.paint(g);
     if (myCellRangeSelection.isActive()) {
@@ -1112,7 +1117,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       JFileChooser chooser = new SmartFileChooser() { };
       if (chooser.showOpenDialog(IdeMain.instance().getMainFrame()) == JFileChooser.APPROVE_OPTION) {
         stopRecordingIfPossible();
-        new EventPlayer(chooser.getSelectedFile()).replay(AbstractEditorComponent.this, IdeMain.instance().getInspectorPane().getInspector());
+        playScript(chooser.getSelectedFile());
       }
     }
   }
