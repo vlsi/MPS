@@ -1,6 +1,7 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.generator.GeneratorConfigurationManager;
 import jetbrains.mps.ide.*;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.components.EditorsPaneComponent;
