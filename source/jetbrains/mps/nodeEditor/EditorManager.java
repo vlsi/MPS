@@ -27,9 +27,6 @@ public class EditorManager {
   public EditorCell createEditorCell(SemanticNode node) {
     SemanticNodeEditor editor = getEditor(node);
     EditorCell nodeCell = createEditorCell(editor, node);
-//    if (node.getReferenceCount_old(NODE_TO_PLACE_AFTER) == 0) {
-//      return nodeCell;
-//    }
     if (node.getChildCount(NODE_TO_PLACE_AFTER) == 0) {
       return nodeCell;
     }
@@ -75,8 +72,8 @@ public class EditorManager {
 
     SemanticTypeDeclaration typeDeclaration = SemanticModelUtil.getTypeDeclaration(node);
     if (typeDeclaration == null) {
-      throw new RuntimeException("\nCouldn't find type declaration for node \"" + node.getDebugText() + "\"" +
-              "\nCheck languages for model \"" + node.getSemanticModel().getFQName() + "\"\n");
+      (new RuntimeException("Error loading editor for node \"" + node.getDebugText() + "\" : couldn't find the type declaration.")).printStackTrace();
+      return null;
     }
 
     try {
@@ -90,7 +87,7 @@ public class EditorManager {
       e.printStackTrace();  //To change body of catch statement use Options | File Templates.
     } catch (IllegalAccessException e) {
       e.printStackTrace();  //To change body of catch statement use Options | File Templates.
-    } catch(Exception e) {
+    } catch (Exception e) {
       e.printStackTrace();
     }
 //
@@ -146,7 +143,7 @@ public class EditorManager {
 
     // 1 st try "trial" editors
     String editorClassName = getNodeEditorClassName(typeDeclaration, true);
-    if(editorClassName == null) {
+    if (editorClassName == null) {
       return null;
     }
     try {

@@ -59,8 +59,8 @@
             <property name="textBgColor" value="orange" />
             <property name="text" value="${" />
             <property name="name" />
-            <property name="selectable" value="true" />
             <property name="textBgColorSelected" value="magenta" />
+            <property name="selectable" value="true" />
           </node>
         </link>
         <property name="name" />
@@ -218,8 +218,8 @@
         <property name="textBgColor" value="orange" />
         <property name="text" value="$${" />
         <property name="name" />
-        <property name="textBgColorSelected" value="magenta" />
         <property name="selectable" value="true" />
+        <property name="textBgColorSelected" value="magenta" />
       </node>
     </link>
     <property name="name" value="NodeMacro_Editor" />
@@ -323,8 +323,8 @@
             <property name="textBgColor" value="orange" />
             <property name="text" value="-&gt;${" />
             <property name="name" />
-            <property name="selectable" value="true" />
             <property name="textBgColorSelected" value="magenta" />
+            <property name="selectable" value="true" />
           </node>
         </link>
         <property name="name" />
@@ -436,27 +436,78 @@
           </node>
         </link>
         <link role="childCellModel" metaClass="aggregation">
-          <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1092766295473">
-            <property name="textBgColor" value="orange" />
-            <property name="text" value="Ctrl-Shift-M  - convert to a macro" />
+          <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1092826413145">
+            <link role="childCellModel" metaClass="aggregation">
+              <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1092826453896">
+                <link role="childCellModel" metaClass="aggregation">
+                  <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1092826515648">
+                    <property name="textBgColor" value="orange" />
+                    <property name="text" value="Ctrl-Shift-M" />
+                    <property name="drawBorder" value="false" />
+                    <property name="name" value="help1" />
+                  </node>
+                </link>
+                <link role="childCellModel" metaClass="aggregation">
+                  <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1092826515649">
+                    <property name="text" value="convert to macro" />
+                    <property name="drawBorder" value="false" />
+                  </node>
+                </link>
+                <property name="drawBorder" value="false" />
+                <property name="vertical" value="false" />
+                <property name="selectable" value="false" />
+              </node>
+            </link>
+            <link role="childCellModel" metaClass="aggregation">
+              <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1092826557994">
+                <link role="childCellModel" metaClass="aggregation">
+                  <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1092826557995">
+                    <property name="textBgColor" value="green" />
+                    <property name="text" value="Ctrl-Shift-P" />
+                    <property name="drawBorder" value="false" />
+                    <property name="name" value="help2" />
+                  </node>
+                </link>
+                <link role="childCellModel" metaClass="aggregation">
+                  <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1092826557996">
+                    <property name="text" value="add parameter reference" />
+                    <property name="drawBorder" value="false" />
+                    <property name="name" />
+                  </node>
+                </link>
+                <property name="drawBorder" value="false" />
+                <property name="name" />
+                <property name="vertical" value="false" />
+                <property name="selectable" value="false" />
+              </node>
+            </link>
+            <link role="childCellModel" metaClass="aggregation">
+              <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1092826609045">
+                <link role="childCellModel" metaClass="aggregation">
+                  <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1092826609046">
+                    <property name="textBgColor" value="pink" />
+                    <property name="text" value="Ctrl-Shift-F" />
+                    <property name="drawBorder" value="false" />
+                    <property name="name" value="help3" />
+                  </node>
+                </link>
+                <link role="childCellModel" metaClass="aggregation">
+                  <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1092826609047">
+                    <property name="text" value="convert to template fragment" />
+                    <property name="drawBorder" value="false" />
+                    <property name="name" />
+                  </node>
+                </link>
+                <property name="drawBorder" value="false" />
+                <property name="name" />
+                <property name="vertical" value="false" />
+                <property name="selectable" value="false" />
+              </node>
+            </link>
             <property name="drawBorder" value="false" />
-            <property name="name" value="help1" />
-          </node>
-        </link>
-        <link role="childCellModel" metaClass="aggregation">
-          <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1092766345615">
-            <property name="textBgColor" value="green" />
-            <property name="text" value="Ctrl-Shift-P  - convert to parameter reference" />
-            <property name="drawBorder" value="false" />
-            <property name="name" value="help2" />
-          </node>
-        </link>
-        <link role="childCellModel" metaClass="aggregation">
-          <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1092766405585">
-            <property name="textBgColor" value="pink" />
-            <property name="text" value="Ctrl-Shift-F  - convert to template fragment" />
-            <property name="drawBorder" value="false" />
-            <property name="name" value="help3" />
+            <property name="vertical" value="true" />
+            <property name="gridLayout" value="true" />
+            <property name="selectable" value="false" />
           </node>
         </link>
         <link role="childCellModel" metaClass="aggregation">
