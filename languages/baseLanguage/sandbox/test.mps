@@ -46,5 +46,14 @@
       <link role="classifier" targetNodeId="1107798112109" />
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1107799696578">
+    <property name="name" value="MyClass1" />
+    <node role="implementedInterface" type="jetbrains.mps.baseLanguage.InterfaceType" id="1107799709954">
+      <link role="classifier" targetNodeId="1107798112109" />
+    </node>
+    <node role="implementedInterface" type="jetbrains.mps.baseLanguage.InterfaceType" id="1107799712220">
+      <link role="classifier" targetNodeId="1107798291253" />
+    </node>
+  </node>
 </model>
 
