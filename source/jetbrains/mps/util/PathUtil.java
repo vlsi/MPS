@@ -8,6 +8,8 @@ import java.util.TreeSet;
  * @author Kostik
  */
 public class PathUtil {
+  public static final String SUFFIX = ".mps";
+
   public static Set<String> getModels(String prefix, File dir) {
     Set<String> result = new TreeSet<String>();
 
@@ -17,8 +19,8 @@ public class PathUtil {
         result.addAll(getModels(pfx + file.getName(), file));
       } else {
         String name = file.getName();
-        if (name.endsWith(".mps")) {
-          result.add(pfx + name.substring(0, name.length() - 4));
+        if (name.endsWith(SUFFIX)) {
+          result.add(pfx + name.substring(0, name.length() - SUFFIX.length()));
         }
       }
     }
