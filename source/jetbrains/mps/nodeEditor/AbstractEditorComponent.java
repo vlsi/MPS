@@ -308,15 +308,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     mySelectedCell = null;
     mySelectedStack.clear();
 
-//    SemanticNode rootNode = myRootCell.getSemanticNode();
-//    if(rootNode.getReferences().size() > 0 || rootNode.getSemanticModel().isRoot(rootNode)) {
-//      myRootCell = getContext().getEditorManager().createEditorCell(rootNode);
-//    } else {
-//      myRootCell = EditorCell_Property._NONE_.create(getContext(), rootNode);
-//    }
-//    myRootCell.setX(myShiftX);
-//    myRootCell.setY(myShiftY);
-//    relayout();
     setRootCell(createRootCell());
     System.out.println("rebuildEditorContent root node: " + (myRootCell.getSemanticNode() != null ? myRootCell.getSemanticNode().getDebugText() : "NULL"));
 
@@ -343,23 +334,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }
     return cell;
-  }
-
-  private EditorCell findErrorCell(EditorCell_Collection cellCollection) {
-    if (cellCollection != null) {
-      NodeCondition condition = new NodeCondition() {
-        public void checkLeafCell(EditorCell editorCell) {
-          if (editorCell instanceof EditorCell_Error) {
-            setFoundCell(editorCell);
-            setToStop(true);
-          }
-        }
-      };
-      cellCollection.iterateTreeUntilCondition(condition);
-      EditorCell errorCell = condition.getFoundCell();
-      return errorCell;
-    }
-    return null;
   }
 
   private void processKeyReleased(KeyEvent keyEvent) {
@@ -416,14 +390,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public boolean executeAction(EditorCell cell, String actionType) {
-//    EditorCellAction action = getCellAction(cell, actionType);
-//    if(action == null) {
-//      action = getGlobalAction(actionType);
-//    }
-//    if(action != null) {
-//      action.execute(getContext());
-//      return true;
-//    }
     if (executeCellAction(cell, actionType)) {
       return true;
     }
@@ -696,18 +662,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     public void nodeDeleted(SemanticModel semanticModel, SemanticNode container) {
       rebuildEditorContent();
-      if (mySelectedCell instanceof EditorCell_Error) {
-        return;
-      }
-
-      EditorCell changedNodeCell = findNodeCell(container);
-      if (changedNodeCell instanceof EditorCell_Collection) {
-        EditorCell_Error errorCell = (EditorCell_Error) findErrorCell((EditorCell_Collection) changedNodeCell);
-        if (errorCell != null) {
-          changeSelection(errorCell);
+      if (mySelectedCell == null) {
+        EditorCell changedNodeCell = findNodeCell(container);
+        if (changedNodeCell != null) {
+          changeSelection(changedNodeCell);
         }
-      } else if (changedNodeCell != null) {
-        changeSelection(changedNodeCell);
       }
     }
 
@@ -715,29 +674,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       EditorCell childCell = findNodeCell(child);
       if (childCell == null) {
         // this editor doesn't contain this node.
-        return;
-      }
-
-      // find error in child cell
-      EditorCell errorCell = null;
-      if (childCell instanceof EditorCell_Collection) {
-        errorCell = findErrorCell((EditorCell_Collection) childCell);
-      }
-
-      if (errorCell == null) {
-        // find neighbour errors
-        EditorCell_Collection collection = childCell.getParent();
-        while (errorCell == null && collection != null) {
-          errorCell = findErrorCell(collection);
-          collection = collection.getParent();
-        }
-      }
-
-      if (errorCell != null) {
-        changeSelection(errorCell);
-        if (((EditorCell_Error) errorCell).getText().length() > 0) {
-          activateNodeSubstituteChooser(errorCell, false);
-        }
         return;
       }
 
