@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model namespace="jetbrains.mps.transformation.TLBase">
-  <maxReferenceID value="3" />
+  <maxReferenceID value="4" />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <import referenceID="2" name="structure" namespace="jetbrains.mps.core" />
   <import referenceID="3" name="structure" namespace="jetbrains.mps.bootstrap.structureLanguage" />
+  <import referenceID="4" name="library" namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1087833241328">
     <property name="name" value="PropertyMacro" />
     <link role="extends" targetNodeId="2.1078489098625" />
@@ -63,6 +64,10 @@
       <property name="role" value="contentNode" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="2.1078489098625" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107223377516">
+      <property name="value" value="template declaration" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1095416546421">
