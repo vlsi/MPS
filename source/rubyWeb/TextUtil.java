@@ -86,8 +86,9 @@ public class TextUtil {
           sentence.addWord(tag);
         }
         if ("patternRef".equals(name)) {
-          PatternRefTag ref = PatternRefTag.newInstance(model);
-          sentence.addWord(ref);
+          PatternRefTag tag = PatternRefTag.newInstance(model);
+          tag.putUserObject(ResolveUtil.ID_TO_RESOLVE, elem.getAttributeValue("name"));
+          sentence.addWord(tag);
         }
         result.addSentence(sentence);
         continue;
@@ -211,8 +212,7 @@ public class TextUtil {
     if (word instanceof PatternRefTag) {
       PatternRefTag tag = (PatternRefTag) word;
       Element target = new Element("patternRef");
-      target.setAttribute("name", tag.getPattern().getName());
-      toElement(tag.getText(), target);
+      target.setAttribute("name", tag.getPattern().getKey());
       element.addContent(target);
       return;
     }
