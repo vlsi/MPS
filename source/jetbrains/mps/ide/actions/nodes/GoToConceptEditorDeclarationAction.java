@@ -26,6 +26,10 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     return context.getNode() instanceof ConceptDeclaration;
   }
 
+  public String getKeyStroke() {
+    return "control shift E";
+  }
+
   public void execute(ActionContext context) {
     SemanticNode node = context.getNode();
     if (!(node instanceof ConceptDeclaration)) return;
