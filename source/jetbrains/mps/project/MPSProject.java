@@ -39,6 +39,11 @@ public class MPSProject implements ModelLocator {
     }
     MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
     projects.addProject(this);
+    if (file != null && file.getName().equals("RubyWeb.mpr")) {
+      rubyWeb.bibliography.PersistenceUtil.loadRubyWebBibliography(this);
+      rubyWeb.patternList.PersistenceUtil.loadRubyWebPatternList(this);
+      rubyWeb.paper.PersistenceUtil.loadRubyWebPaper(this);
+    }
   }
 
   public List<Object> getComponents() {
@@ -57,12 +62,6 @@ public class MPSProject implements ModelLocator {
 
   public void read(File file) {
     myRootManager.read(file);
-
-    if (file.getName().equals("RubyWeb.mpr")) {
-      rubyWeb.bibliography.PersistenceUtil.loadRubyWebBibliography(this);
-      rubyWeb.patternList.PersistenceUtil.loadRubyWebPatternList(this);
-      rubyWeb.paper.PersistenceUtil.loadRubyWebPaper(this);
-    }
   }
 
   public void readComponents() {
