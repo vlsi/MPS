@@ -11,9 +11,11 @@ public abstract class BaseDialog extends JDialog {
 
   protected BaseDialog(String text) throws HeadlessException {
     super(IdeMain.instance().getMainFrame(), text, true);
+  }
 
+  public void showDialog() {
     setLayout(new BorderLayout());
-    add(createComponent(), BorderLayout.CENTER);
+    add(getMainComponent(), BorderLayout.CENTER);
 
     JPanel buttonsPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 2, 2));
     JButton[] buttons = createButtons();
@@ -31,10 +33,13 @@ public abstract class BaseDialog extends JDialog {
     }, KeyStroke.getKeyStroke("ESCAPE"), JComponent.WHEN_IN_FOCUSED_WINDOW);
 
     setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+
+    setVisible(true);
   }
+
 
 
   protected abstract JButton[] createButtons();
 
-  protected abstract JComponent createComponent();
+  protected abstract JComponent getMainComponent();
 }

@@ -17,6 +17,10 @@ public class UIEditorComponent extends AbstractEditorComponent {
   private SemanticNode mySemanticNode;
   private MPSProject myProject;
 
+  public UIEditorComponent() {
+    this(IdeMain.instance());
+  }
+
   public UIEditorComponent(IdeMain ideMain) {
     super(ideMain);
     myProject = ideMain.getProject();
