@@ -2,14 +2,14 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IStatus;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.diagnostic.Logger;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
-import jetbrains.mps.project.MPSProject;
 
 /**
  * Author: Sergey Dmitriev.
@@ -71,11 +71,12 @@ public class EditorManager {
       (new RuntimeException("Error loading editor for node \"" + node.getDebugText() + "\" : couldn't find language.")).printStackTrace();
       return null;
     }
-    ConceptDeclaration typeDeclaration = language.findTypeDeclaration(SModelUtil.getNodeTypeName(node));
-    if (typeDeclaration == null) {
+    ConceptDeclaration nodeConcept = language.findTypeDeclaration(SModelUtil.getNodeTypeName(node));
+    if (nodeConcept == null) {
       (new RuntimeException("Error loading editor for node \"" + node.getDebugText() + "\" : couldn't find the type declaration.")).printStackTrace();
       return null;
     }
+
 
     String stereotype = node.getModel().getStereotype();
     String languageEditorFQName = language.getLanguageEditorFQName(stereotype);
@@ -87,8 +88,8 @@ public class EditorManager {
       }
     }
 
-//    String editorClassName = "jetbrains.mps." + languageEditorFQName + "." + typeDeclaration.getName() + "_Editor";
-    String editorClassName = languageEditorFQName + "." + typeDeclaration.getName() + "_Editor";
+//    String editorClassName = "jetbrains.mps." + languageEditorFQName + "." + nodeConcept.getName() + "_Editor";
+    String editorClassName = languageEditorFQName + "." + nodeConcept.getName() + "_Editor";
     try {
       Class editorClass = Class.forName(editorClassName);
       return (INodeEditor) editorClass.newInstance();
