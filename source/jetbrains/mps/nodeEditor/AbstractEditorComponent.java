@@ -2,17 +2,16 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.semanticModel.Language;
-import jetbrains.mps.semanticModel.SemanticModel;
-import jetbrains.mps.semanticModel.SemanticModelListener;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.typesystem.ITypesystem;
 import jetbrains.mps.typesystem.TSStatus;
 import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 
 import javax.swing.*;
 import java.awt.*;
@@ -90,6 +89,16 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       public void mousePressed(final MouseEvent e) {
         processMousePressed(e);
       }
+
+      public void mouseReleased(MouseEvent e) {
+        if (e.isPopupTrigger()) {
+          EditorCell selectedCell = getSelectedCell();
+          if (selectedCell != null) {
+            showPopupMenu(e);
+          }
+        }
+        super.mouseReleased(e);
+      }
     });
 
     addKeyListener(new KeyAdapter() {
@@ -123,6 +132,65 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       public void focusLost(FocusEvent e) {
       }
     });
+  }
+
+  private void showPopupMenu(MouseEvent e) {
+    SemanticNode selectedNode = getSelectedCell().getSemanticNode();
+    selectNode(selectedNode);
+    JPopupMenu popupMenu = new JPopupMenu();
+    popupMenu.add(createGoByReferenceMenu(selectedNode));
+    popupMenu.add(createGoByBackReferenceMenu(selectedNode));
+    popupMenu.show(AbstractEditorComponent.this, e.getX(), e.getY());
+  }
+
+  private JMenu createGoByReferenceMenu(SemanticNode node) {
+    JMenu menu = new JMenu("Go By Reference");
+    List<SemanticReference> references = node.getReferences();
+    if (references.size() == 0) {
+      menu.add("no references");
+    }
+    for (int i = 0; i < references.size(); i++) {
+      SemanticReference reference = references.get(i);
+      final SemanticNode targetNode = reference.getTargetNode();
+      String actionText = "[" + reference.getRole() + "] " + targetNode.getDebugText();
+      AbstractAction action = new AbstractAction(actionText) {
+        public void actionPerformed(ActionEvent e) {
+          SemanticNode toOpenNode = SemanticModelUtil.getRootParent(targetNode);
+          AbstractEditorComponent editor = IdeMain.instance().getEditorsPane().openEditor(toOpenNode, EditorsPane.LEFT);
+          editor.selectNode(targetNode);
+        }
+      };
+      menu.add(action);
+    }
+    return menu;
+  }
+
+  private JMenu createGoByBackReferenceMenu(SemanticNode node) {
+    JMenu menu = new JMenu("Go To Usage");
+    int count = 0;
+    List<SemanticReference> backReferences = node.getBackReferences();
+    for (int i = 0; i < backReferences.size(); i++) {
+      SemanticReference reference = backReferences.get(i);
+      if (reference.getMetaClass() == LinkMetaclass.aggregation) {
+        continue; // ignore parents
+      }
+      count++;
+      final SemanticNode targetNode = reference.getSourceNode();
+      String actionText = "[" + reference.getRole() + "] " + targetNode.getDebugText();
+      AbstractAction action = new AbstractAction(actionText) {
+        public void actionPerformed(ActionEvent e) {
+          SemanticNode toOpenNode = SemanticModelUtil.getRootParent(targetNode);
+          AbstractEditorComponent editor = IdeMain.instance().getEditorsPane().openEditor(toOpenNode, EditorsPane.LEFT);
+          editor.selectNode(targetNode);
+        }
+      };
+      menu.add(action);
+    }
+
+    if (count == 0) {
+      menu.add("no usages found");
+    }
+    return menu;
   }
 
   public JComponent getExternalComponent() {
