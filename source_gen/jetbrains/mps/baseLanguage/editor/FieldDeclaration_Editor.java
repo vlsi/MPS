@@ -8,10 +8,14 @@ import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
+import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 
@@ -39,18 +43,21 @@ public class FieldDeclaration_Editor extends SemanticNodeEditor {
     SemanticNode type = node.getReferent("type", (SemanticNode)null);
     EditorCell editorCell = null;
     if(type != null) {
-      editorCell = this.nodeCell(editorContext, type);
+      editorCell = editorContext.createNodeCell(type);
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(type));
       FieldDeclaration_TypeCellActions.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       FieldDeclaration_TypeCellActions.setCellActions(editorCell, node);
-}
+    }
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext editorContext, SemanticNode node) {
     ModelAccessor modelAccessor = new PropertyAccessor(node, "name", true, false);
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     editorCell.setDefaultText("<no name>");
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
     FieldDeclaration_NameCellActions.setCellActions(editorCell, node);
     return editorCell;
   }
@@ -70,13 +77,15 @@ public class FieldDeclaration_Editor extends SemanticNodeEditor {
     SemanticNode initializer = node.getReferent("initializer", (SemanticNode)null);
     EditorCell editorCell = null;
     if(initializer != null) {
-      editorCell = this.nodeCell(editorContext, initializer);
+      editorCell = editorContext.createNodeCell(initializer);
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(initializer));
       __VariableInitializer_ActionSet.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Constant.create(editorContext, node, "", true);
       ((EditorCell_Label)editorCell).setEditable(true);
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       __VariableInitializer_ActionSet.setCellActions(editorCell, node);
-}
+    }
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext editorContext, SemanticNode node, String text) {
