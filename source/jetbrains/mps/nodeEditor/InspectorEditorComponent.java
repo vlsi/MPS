@@ -13,25 +13,21 @@ import jetbrains.mps.ide.IdeMain;
 public class InspectorEditorComponent extends AbstractEditorComponent {
   private EditorContext myEditorContext;
   private SemanticNode myInspectedNode;
-  private MPSProject myProject;
 
-  public InspectorEditorComponent(IdeMain ideMain) {
-    super(ideMain);
+  public InspectorEditorComponent(MPSProject project) {
+    super(project);
     reinitEditor();
     rebuildEditorContent();
   }
 
   private void reinitEditor() {
     if (myInspectedNode == null) {
-      myEditorContext = new EditorContext(this, null, myProject);
+      myEditorContext = new EditorContext(this, null, getProject());
     } else {
-      myEditorContext = new EditorContext(this, myInspectedNode.getSemanticModel(), myProject);
+      myEditorContext = new EditorContext(this, myInspectedNode.getSemanticModel(), getProject());
     }
   }
 
-  public void setProject(MPSProject project) {
-    myProject = project;
-  }
 
   public void inspectNode(SemanticNode semanticNode) {
     if (myInspectedNode == semanticNode) {
@@ -51,7 +47,7 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
     if (myInspectedNode == null || myInspectedNode.isDeleted()) {
       return EditorCell_Constant.create(getContext(), null, "<no inspect info>", true);
     }
-    return myProject.getComponent(EditorManager.class).createInspectedCell(getContext(), myInspectedNode);
+    return getProject().getComponent(EditorManager.class).createInspectedCell(getContext(), myInspectedNode);
   }
 
   public SemanticNode getInspectedNode() {

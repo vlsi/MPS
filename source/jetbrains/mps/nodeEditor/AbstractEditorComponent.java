@@ -9,6 +9,8 @@ import jetbrains.mps.generator.JavaClassMaps;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.InspectorPane;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.action.ActionManager;
@@ -67,17 +69,17 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private Component myPreviousFocusOwner = null;
   private PropertyChangeListener myFocusListener;
 
-  private IdeMain myIdeMain;
+  private MPSProject myMPSProject;
   private EventRecorder myRecorder = null;
 
-  public AbstractEditorComponent(IdeMain ideMain) {
+  public AbstractEditorComponent(MPSProject project) {
     addFocusListener(new FocusAdapter() {
       public void focusGained(FocusEvent e) {
         myPreviousFocusOwner = e.getOppositeComponent();
       }
     });
 
-    myIdeMain = ideMain;
+    myMPSProject = project;
 
     setFocusTraversalPolicyProvider(true);
     setFocusCycleRoot(true);
@@ -222,6 +224,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     });
   }
 
+  public MPSProject getProject() {
+    return myMPSProject;
+  }
+
+  public void setProject(MPSProject project) {
+    myMPSProject = project;
+  }
+
 
   public void addNotify() {
     super.addNotify();
@@ -326,7 +336,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       AbstractAction action = new AbstractAction(actionText) {
         public void actionPerformed(ActionEvent e) {
           SemanticNode toOpenNode = SemanticModelUtil.getRootParent(targetNode);
-          AbstractEditorComponent editor = myIdeMain.getEditorsPane().openEditor(toOpenNode, LEFT);
+          AbstractEditorComponent editor = myMPSProject.getComponent(EditorsPane.class).openEditor(toOpenNode, LEFT);
           editor.selectNode(targetNode);
         }
       };
@@ -980,14 +990,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     root.getSemanticModel().addRoot(copy[0]);
     selectNode(null);
     myRecorder = new EventRecorder();
-    IdeMain.instance().getInspectorPane().getInspector().setEventRecorder(myRecorder);
+    myMPSProject.getComponent(InspectorPane.class).getInspector().setEventRecorder(myRecorder);
     myRecorder.startRecording(copy[0], root);
   }
 
   protected void stopRecordingIfPossible() {
     if (myRecorder != null) {
       myRecorder.stopRecording();
-      IdeMain.instance().getInspectorPane().getInspector().setEventRecorder(null);
+      myMPSProject.getComponent(InspectorPane.class).getInspector().setEventRecorder(null);
       myRecorder = null;
     }
   }

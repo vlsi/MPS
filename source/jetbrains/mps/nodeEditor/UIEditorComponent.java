@@ -15,21 +15,15 @@ import java.awt.*;
 public class UIEditorComponent extends AbstractEditorComponent {
   private EditorContext myEditorContext;
   private SemanticNode mySemanticNode;
-  private MPSProject myProject;
-
-  public UIEditorComponent() {
-    this(IdeMain.instance().getProject());
-  }
 
   public UIEditorComponent(MPSProject project) {
-    super(IdeMain.instance());
-    myProject = project;
+    super(project);
     unregisterKeyboardAction(KeyStroke.getKeyStroke("ESCAPE"));
   }
 
   public void editNode(SemanticNode semanticNode) {
     mySemanticNode = semanticNode;
-    myEditorContext = new EditorContext(this, semanticNode.getSemanticModel(), myProject);
+    myEditorContext = new EditorContext(this, semanticNode.getSemanticModel(), getProject());
     rebuildEditorContent();
   }
 

@@ -5,8 +5,7 @@ import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.modelExecute.ExecutionPoint;
 import jetbrains.mps.modelExecute.ExecutionManager;
-import jetbrains.mps.ide.ILanguagePlugin;
-import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.*;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.components.EditorsPaneComponent;
@@ -50,11 +49,15 @@ public class MPSProject implements ModelLocator {
 
   private void initComponent() {
     addComponent(MPSProject.class, this);
+    addComponent(IdeMain.class, IdeMain.instance());
+    addComponent(ProjectPane.class, IdeMain.instance().getProjectPane());
+    addComponent(EditorsPane.class, IdeMain.instance().getEditorsPane());
+    addComponent(InspectorPane.class, IdeMain.instance().getInspectorPane());
     addComponent(EditorManager.class, new EditorManager());
     addComponent(UndoManager.class, UndoManager.instance());
     addComponent(EditorsPaneComponent.class, new EditorsPaneComponent(this));
     addComponent(ProjectPaneComponent.class, new ProjectPaneComponent(this));
-    addComponent(MainFrameComponent.class, new MainFrameComponent());
+    addComponent(MainFrameComponent.class, new MainFrameComponent(this));
     addComponent(SemanticModels.class, new SemanticModels(this));
     addComponent(ExecutionManager.class, new ExecutionManager());
     addComponent(RootManager.class, myRootManager);
@@ -65,7 +68,9 @@ public class MPSProject implements ModelLocator {
   }
 
   public<T> T getComponent(Class<T> interfaceClass) {
-    return (T) myComponents.get(interfaceClass);
+    T result =  (T) myComponents.get(interfaceClass);
+    if (result == null) throw new RuntimeException("I can't find component " + interfaceClass.getName());
+    return result;
   }
 
   private void addComponent(Class interfaceClass, Object instance) {
