@@ -851,24 +851,17 @@
     <property name="name" value="CodeBlock" />
     <link role="extends" targetNodeId="4.1078489098625" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1107134797946">
-      <property name="sourceCardinality" value="0..n" />
-      <property name="targetCardinality" value="0..1" />
-      <property name="role" value="statement" />
+      <property name="sourceCardinality" value="1" />
+      <property name="targetCardinality" value="1" />
+      <property name="role" value="statements" />
       <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1068580123157" />
+      <link role="target" targetNodeId="1068580123136" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1107134369676">
       <link role="conceptLinkDeclaration" targetNodeId="34.1105994381173" />
       <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLinkDeclaration" id="1107134676911">
         <property name="name" value="CodeBlockReturnTypeLink" />
         <link role="targetType" targetNodeId="1068431790189" />
-      </node>
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1107135352261">
-      <link role="conceptLinkDeclaration" targetNodeId="34.1105994381173" />
-      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLinkDeclaration" id="1107135355043">
-        <property name="name" value="CodeBlockParameterLink" />
-        <link role="targetType" targetNodeId="1107135704075" />
       </node>
     </node>
   </node>
