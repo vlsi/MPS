@@ -16,7 +16,7 @@ public class StatementList_Editor extends SemanticNodeEditor {
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);
-    myStatementListHandler = new StatementList_Editor_StatementListHandler(node, "statement", "aggregation");
+    myStatementListHandler = new StatementList_Editor_StatementListHandler(node, "statement", true);
   }
   public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
     return this.createStatementList(editorContext, node);

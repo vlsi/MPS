@@ -26,11 +26,11 @@ public class EnumClass_Editor extends SemanticNodeEditor {
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);
-    myEnumConstantListHandler = new EnumClass_Editor_EnumConstantListHandler(node, "enumConstant", "aggregation");
-    myFieldListHandler = new EnumClass_Editor_FieldListHandler(node, "field", "aggregation");
-    myConstructorListHandler = new EnumClass_Editor_ConstructorListHandler(node, "constructor", "aggregation");
-    myMethodListHandler = new EnumClass_Editor_MethodListHandler(node, "method", "aggregation");
-    myStaticMethodListHandler = new EnumClass_Editor_StaticMethodListHandler(node, "staticMethod", "aggregation");
+    myEnumConstantListHandler = new EnumClass_Editor_EnumConstantListHandler(node, "enumConstant", true);
+    myFieldListHandler = new EnumClass_Editor_FieldListHandler(node, "field", true);
+    myConstructorListHandler = new EnumClass_Editor_ConstructorListHandler(node, "constructor", true);
+    myMethodListHandler = new EnumClass_Editor_MethodListHandler(node, "method", true);
+    myStaticMethodListHandler = new EnumClass_Editor_StaticMethodListHandler(node, "staticMethod", true);
   }
   public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
     return this.createColumnCell(editorContext, node);

@@ -22,7 +22,7 @@ public class EnumConstantDeclaration_Editor extends SemanticNodeEditor {
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);
-    myActualArgumentListHandler = new EnumConstantDeclaration_Editor_ActualArgumentListHandler(node, "actualArgument", "aggregation");
+    myActualArgumentListHandler = new EnumConstantDeclaration_Editor_ActualArgumentListHandler(node, "actualArgument", true);
   }
   public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
     return this.createRowCell(editorContext, node);

@@ -19,7 +19,7 @@ public class SuperConstructorInvocation_Editor extends SemanticNodeEditor {
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);
-    myActualArgumentListHandler = new SuperConstructorInvocation_Editor_ActualArgumentListHandler(node, "actualArgument", "aggregation");
+    myActualArgumentListHandler = new SuperConstructorInvocation_Editor_ActualArgumentListHandler(node, "actualArgument", true);
   }
   public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
     return this.createRowCell(editorContext, node);

@@ -5,6 +5,8 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 
 import java.awt.event.KeyEvent;
 import java.util.Iterator;
+import java.util.List;
+import java.util.LinkedList;
 
 /**
  * Author: Sergey Dmitriev.
@@ -12,8 +14,8 @@ import java.util.Iterator;
  */
 public abstract class EditorCellListHandler implements IKeyboardHandler {
 
-  private String myReferenceRole;
-  private String myRefernceMetaclass;
+  private String myLinkRole;
+  private boolean myAggregation;
   private SemanticNode myOwnerNode;
   private EditorCell_Collection myListEditorCell_Collection;
   private EditorCell_Collection myInsertCell;
@@ -21,10 +23,17 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
   private SemanticNode myInsertedNode;
   private EditorCell myInsertedNodeCell;
 
+  /**
+   * @deprecated
+   */
   public EditorCellListHandler(SemanticNode ownerNode, String referenceRole, String referenceMetaclass) {
+    this(ownerNode, referenceRole, LinkMetaclass.parseValue(referenceMetaclass) == LinkMetaclass.aggregation);
+  }
+
+  public EditorCellListHandler(SemanticNode ownerNode, String referenceRole, boolean isAggregation) {
     myOwnerNode = ownerNode;
-    myReferenceRole = referenceRole;
-    myRefernceMetaclass = referenceMetaclass;
+    myLinkRole = referenceRole;
+    myAggregation = isAggregation;
   }
 
   public SemanticNode getOwner() {
@@ -34,17 +43,26 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
   public void startInsertMode(EditorContext editorContext, EditorCell anchorCell, boolean insertBefore) {
     SemanticNode anchorNode = (anchorCell != null ? anchorCell.getSemanticNode() : null);
     if (anchorNode != null) {
+      Iterator<SemanticNode> listElementsIter = null;
+      if (myAggregation) {
+        listElementsIter = getOwner().children(myLinkRole);
+      } else {
+        listElementsIter = getOwner().referents(myLinkRole);
+      }
+      List<SemanticNode> listElements = new LinkedList<SemanticNode>();
+      while (listElementsIter.hasNext()) {
+        listElements.add(listElementsIter.next());
+      }
       // anchor should be directly referenced from "list owner"
-      while (anchorNode != null && anchorNode.getParent() != myOwnerNode) {
+      while (anchorNode != null && !listElements.contains(anchorNode)) {
         anchorNode = anchorNode.getParent();
       }
     }
     myInsertedNode = createNodeToInsert();
-//    getOwner().insertReference(anchorNode, insertBefore, myReferenceRole, myInsertedNode, myRefernceMetaclass);
-    if(LinkMetaclass.parseValue(myRefernceMetaclass) == LinkMetaclass.aggregation) {
-      getOwner().insertChild(anchorNode, myReferenceRole, myInsertedNode, insertBefore);
+    if (myAggregation) {
+      getOwner().insertChild(anchorNode, myLinkRole, myInsertedNode, insertBefore);
     } else {
-      getOwner().insertReferent(anchorNode, myReferenceRole, myInsertedNode, insertBefore);
+      getOwner().insertReferent(anchorNode, myLinkRole, myInsertedNode, insertBefore);
     }
 
     AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
@@ -127,10 +145,10 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
     myListEditorCell_Collection.setSelectable(false);
 
     Iterator<SemanticNode> listNodes = null;
-    if (LinkMetaclass.parseValue(myRefernceMetaclass) == LinkMetaclass.aggregation) {
-      listNodes = myOwnerNode.children(myReferenceRole);
+    if (myAggregation) {
+      listNodes = myOwnerNode.children(myLinkRole);
     } else {
-      listNodes = myOwnerNode.referents(myReferenceRole);
+      listNodes = myOwnerNode.referents(myLinkRole);
     }
     if (!listNodes.hasNext()) {
       myListEditorCell_Collection.addEditorCell(createEmptyCell(editorContext));
@@ -160,21 +178,6 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
       }
       return myInsertCell;
     }
-
-//    // if not aggregation - register internal delete action
-//    if(!SemanticLinkDeclaration.AGGREGATION.equals(myRefernceMetaclass)) {
-//      nodeCell.setAction(EditorCellAction.DELETE, new EditorCellAction(){
-//        public boolean canExecute(EditorContext context) {
-//          return true;
-//        }
-//
-//        public void execute(EditorContext context) {
-//          SemanticNode elementNode = context.getNodeEditorComponent().getSelectedCell().getSemanticNode();
-//          myOwnerNode.removeReferences(myReferenceRole, elementNode);
-//          myOwnerNode.getObject().fireModelChangedDramaticallyEvent();
-//        }
-//      });
-//    }
 
     return nodeCell;
   }
