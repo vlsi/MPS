@@ -48,7 +48,8 @@ public class EnumerationMemberDeclaration_Editor extends SemanticNodeEditor {
     ModelAccessor modelAccessor = new PropertyAccessor(node, "name", true, false);
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     editorCell.setDefaultText("<no name>");
-    editorCell.getTextLine().setTextBackgroundColor(Color.cyan);
+    editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
+    editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
     return editorCell;
   }
@@ -60,8 +61,7 @@ public class EnumerationMemberDeclaration_Editor extends SemanticNodeEditor {
     ModelAccessor modelAccessor = new PropertyAccessor(node, "externalValue", true, false);
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     editorCell.setDefaultText("<no external value>");
-    editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
-    editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
+    editorCell.getTextLine().setTextBackgroundColor(Color.cyan);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "externalValue"));
     return editorCell;
   }
