@@ -66,7 +66,8 @@ public class MPSProject implements ModelLocator {
 
   public void readComponents() {
     String projectFileName = myProjectFile.getName();
-    String mwsFileName = projectFileName.substring(0, projectFileName.length()-".mpr".length()) + ".mws";
+    int dotIndex = projectFileName.lastIndexOf('.');
+    String mwsFileName = projectFileName.substring(0, dotIndex) + ".mws";
     myWorkspaceFile = new File(myProjectFile.getParent(), mwsFileName);
     try {
       if (myWorkspaceFile.exists()) {
