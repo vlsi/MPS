@@ -13,6 +13,7 @@ public class FieldDeclaration_Editor extends jetbrains.mps.nodeEditor.SemanticNo
   public jetbrains.mps.nodeEditor.EditorCell createDeclarationBox(jetbrains.mps.nodeEditor.EditorContext editorContext, jetbrains.mps.semanticModel.SemanticNode node) {
     jetbrains.mps.nodeEditor.EditorCell_Collection editorCell = jetbrains.mps.nodeEditor.EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setGridLayout(false);
+    jetbrains.mps.baseLanguage.editor.FieldDeclaration_Actions.setCellActions_NodeBoxActions(editorCell, node);
     editorCell.addEditorCell(this.createTypeCell(editorContext, node));
     editorCell.addEditorCell(this.createNameCell(editorContext, node));
     if(jetbrains.mps.baseLanguage.editor.FieldDeclaration_Actions.isTrue_HasInitializer(node)) {

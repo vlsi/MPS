@@ -18,7 +18,7 @@ public class IntegerConstant_Editor extends jetbrains.mps.nodeEditor.SemanticNod
     } else {
       editorCell = jetbrains.mps.nodeEditor.EditorCell_Error.create(editorContext, node, null);
     }
-    jetbrains.mps.baseLanguage.editor.IntegerConstant_Actions.setCellActions_RightTransform(editorCell, node);
+    jetbrains.mps.baseLanguage.editor.IntegerConstant_Actions.setCellActions_NodeBoxActions(editorCell, node);
     return editorCell;
   }
 }

@@ -18,7 +18,7 @@ public class BooleanConstant_Editor extends jetbrains.mps.nodeEditor.SemanticNod
     } else {
       editorCell = jetbrains.mps.nodeEditor.EditorCell_Error.create(editorContext, node, null);
     }
-    jetbrains.mps.baseLanguage.editor.BooleanConstant_Actions.setCellActions_RightTransform(editorCell, node);
+    jetbrains.mps.baseLanguage.editor.BooleanConstant_Actions.setCellActions_NodeBoxActions(editorCell, node);
     return editorCell;
   }
 }

@@ -17,6 +17,7 @@ public class InstanceMethodDeclaration_Editor extends jetbrains.mps.nodeEditor.S
     jetbrains.mps.nodeEditor.EditorCell_Collection editorCell = jetbrains.mps.nodeEditor.EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setSelectable(true);
     editorCell.setGridLayout(false);
+    jetbrains.mps.baseLanguage.editor.InstanceMethodDeclaration_Actions.setCellActions_NodeBoxActions(editorCell, node);
     editorCell.addEditorCell(this.createHeaderRow(editorContext, node));
     editorCell.addEditorCell(this.createBodyArea(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell2(editorContext, node, "}"));

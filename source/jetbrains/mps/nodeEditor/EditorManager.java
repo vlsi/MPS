@@ -44,9 +44,9 @@ public class EditorManager {
   }
 
   private void installDefaultActions(EditorCell cell) {
-    if(cell.getAction(EditorCellAction.DELETE) == null) {
-      cell.setAction(EditorCellAction.DELETE, new DeleteCellNode_CellAction());
-    }
+//    if(cell.getAction(EditorCellAction.DELETE) == null) {
+//      cell.setAction(EditorCellAction.DELETE, new DeleteCellNode_CellAction());
+//    }
   }
 
   private EditorCell createEditorCell(SemanticNodeEditor editor, SemanticNode node) {

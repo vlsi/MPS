@@ -13,6 +13,7 @@ public class IfStatement_Editor extends jetbrains.mps.nodeEditor.SemanticNodeEdi
   public jetbrains.mps.nodeEditor.EditorCell createStatementBox(jetbrains.mps.nodeEditor.EditorContext editorContext, jetbrains.mps.semanticModel.SemanticNode node) {
     jetbrains.mps.nodeEditor.EditorCell_Collection editorCell = jetbrains.mps.nodeEditor.EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setGridLayout(false);
+    jetbrains.mps.baseLanguage.editor.IfStatement_Actions.setCellActions_NodeBoxActions(editorCell, node);
     editorCell.addEditorCell(this.createHeaderRow(editorContext, node));
     editorCell.addEditorCell(this.createIfTrueBox(editorContext, node));
     if(jetbrains.mps.baseLanguage.editor.IfStatement_Actions.isTrue_IfFalseDefined(node)) {
