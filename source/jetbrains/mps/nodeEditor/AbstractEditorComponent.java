@@ -151,9 +151,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     registerNodeAction(new ShowNodeTypeAction(), "control T");
     registerNodeAction(new FindUsagesNodeAction(), "alt F7");
     registerNodeAction(new ShowInProjectAction(), "control P");
-    registerNodeAction(new GoByReferenceAction(), "control B");
+    registerNodeAction(new GoByFirstReferenceAction(), "control B");
     registerNodeAction(new GoToConceptDeclarationAction(), "control shift S");
-    registerNodeAction(new GoToEditorAction(), "control shift E");
+    registerNodeAction(new GoToEditorDeclarationAction(), "control shift E");
     registerNodeAction(new GoToConceptEditorDeclarationAction(), "control E");
 
     registerKeyboardAction(new AbstractAction() {
@@ -306,7 +306,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     popupMenu.add(JavaNameUtil.shortName(header));
     popupMenu.addSeparator();
     popupMenu.add(createGoByReferenceMenu(selectedNode));
-    popupMenu.addSeparator();
 
     ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS).addGroup(popupMenu, new ActionContext(getProject().getComponent(IdeMain.class),selectedNode));
 
