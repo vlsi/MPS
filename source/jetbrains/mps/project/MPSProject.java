@@ -11,7 +11,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.semanticModel.ModelLocator;
 import jetbrains.mps.semanticModel.SModel;
-import jetbrains.mps.semanticModel.SemanticModels;
+import jetbrains.mps.semanticModel.ProjectModels;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.PathManager;
 import org.jdom.Document;
@@ -58,7 +58,7 @@ public class MPSProject implements ModelLocator {
     addComponent(EditorsPaneComponent.class, new EditorsPaneComponent(this));
     addComponent(ProjectPaneComponent.class, new ProjectPaneComponent(this));
     addComponent(IdeMain.IdeMainComponent.class, new IdeMain.IdeMainComponent(this));
-    addComponent(SemanticModels.class, new SemanticModels(this));
+    addComponent(ProjectModels.class, new ProjectModels(this));
     addComponent(ExecutionManager.class, new ExecutionManager());
     addComponent(RootManager.class, myRootManager);
   }
@@ -166,8 +166,8 @@ public class MPSProject implements ModelLocator {
     myNamespaceToLanguageMap.put(namespace, language);
   }
 
-  public SemanticModels getModels() {
-    return getComponent(SemanticModels.class);
+  public ProjectModels getModels() {
+    return getComponent(ProjectModels.class);
   }
 
   public SModel loadModel(String fileName) {

@@ -33,13 +33,13 @@ public class PasteUtil {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     Transferable content = cb.getContents(null);
     if (content == null ||
-            !content.isDataFlavorSupported(SemanticModelDataFlavor.semanticNode)) {
+            !content.isDataFlavorSupported(SModelDataFlavor.semanticNode)) {
       return null;
     }
 
     SemanticNodeData nodeData = null;
     try {
-      nodeData = (SemanticNodeData) content.getTransferData(SemanticModelDataFlavor.semanticNode);
+      nodeData = (SemanticNodeData) content.getTransferData(SModelDataFlavor.semanticNode);
       return nodeData.createNodes(semanticModel);
     } catch (UnsupportedFlavorException e) {
       e.printStackTrace();  //To change body of catch statement use Options | File Templates.
