@@ -29,17 +29,17 @@ public class MPSProject extends AbstractMPSProject {
 
   private ArrayList<File> myLanguageRoots = new ArrayList<File>();
 
-  private static final String LANGUAGES = "languages";
-  private static final String LANGUAGE_ROOT = "languageRoot";
-  private static final String PROJECT_MODELS = "projectModels";
-  private static final String LIBRARY_MODELS = "libraryModels";
-  private static final String MODEL_ROOT = "modelRoot";
-  private static final String PROJECT = "project";
+  public static final String LANGUAGES = "languages";
+  public static final String LANGUAGE_ROOT = "languageRoot";
+  public static final String PROJECT_MODELS = "projectModels";
+  public static final String LIBRARY_MODELS = "libraryModels";
+  public static final String MODEL_ROOT = "modelRoot";
+  public static final String PROJECT = "project";
 
-  private static final String PATH_MACRO_MODELS_ROOT = "${models_root}" + File.separatorChar;
-  private static final String PATH_MACRO_PROJECT = "${project}" + File.separatorChar;
-  private static final String NAMESPACE_PREFIX = "namespacePrefix";
-  private static final String ROOT_PATH = "rootPath";
+  public static final String PATH_MACRO_MODELS_ROOT = "${models_root}" + File.separatorChar;
+  public static final String PATH_MACRO_PROJECT = "${project}" + File.separatorChar;
+  public static final String NAMESPACE_PREFIX = "namespacePrefix";
+  public static final String ROOT_PATH = "rootPath";
 
   public MPSProject(File file) {
     myProjectFile = file;
@@ -176,10 +176,9 @@ public class MPSProject extends AbstractMPSProject {
         readModels(models, childDir);
       }
     }
-
   }
 
-  private void readLanguageDescriptors(File dir) {
+  protected void readLanguageDescriptors(File dir) {
     if (!dir.isDirectory()) {
       return;
     }
