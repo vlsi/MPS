@@ -1,24 +1,13 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.baseLanguage.JavaClass;
-import jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration;
 import jetbrains.mps.semanticModel.SemanticModel;
 import jetbrains.mps.semanticModel.SemanticNode;
-import jetbrains.mps.semanticModel.SemanticModelUtil;
 
 /**
  * User: Dmitriev.
  * Date: Jan 13, 2004
  */
 public class JavaNameUtil {
-
-  public static String fqClassName(SemanticNode semanticNode) {
-    if (semanticNode.getName() == null) {
-      return semanticNode.getClass().getName();
-    } else {
-      return fqClassName(semanticNode, semanticNode.getName());
-    }
-  }
 
   public static String fqClassNameByNamespace(SemanticNode semanticNode, String shortClassName) {
     SemanticModel model = semanticNode.getSemanticModel();
@@ -39,6 +28,14 @@ public class JavaNameUtil {
       return shortClassName;
     }
     return packageName + "." + shortClassName;
+  }
+
+  public static String packageNameForModelNamespace(SemanticModel semanticModel) {
+    String modelFqName = semanticModel.getNamespace();
+    if (modelFqName.startsWith("jetbrains.mps.") || modelFqName.startsWith("java.")) {
+      return modelFqName;
+    }
+    return "jetbrains.mps." + modelFqName;
   }
 
   public static String packageNameForModel(SemanticModel semanticModel) {

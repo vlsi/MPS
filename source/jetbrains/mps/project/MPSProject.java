@@ -89,19 +89,19 @@ public class MPSProject extends AbstractMPSProject {
     }
 
 
-    Element projectModelsElement = rootElement.getChild(PROJECT_MODELS);
-    readModels(myProjectModelRoots, myProjectModels, projectModelsElement);
     Element libraryModelsElement = rootElement.getChild(LIBRARY_MODELS);
-    readModels(myLibraryModelRoots, myLibraryModels, libraryModelsElement);
+    readModels(myLibraryModelRoots, myLibraryModels, libraryModelsElement, false);
+    Element projectModelsElement = rootElement.getChild(PROJECT_MODELS);
+    readModels(myProjectModelRoots, myProjectModels, projectModelsElement, true);
 
     mySemanticModels.flushModelInfos();
   }
 
-  private void readModels(ArrayList<ModelRoot> modelRoots, ArrayList<SemanticModel> models, Element projectModelsElement) {
-    if (projectModelsElement == null) {
+  private void readModels(ArrayList<ModelRoot> modelRoots, ArrayList<SemanticModel> models, Element modelsElement, boolean toInitModels) {
+    if (modelsElement == null) {
       return;
     }
-      Iterator modelRootElements = projectModelsElement.getChildren(MODEL_ROOT).iterator();
+      Iterator modelRootElements = modelsElement.getChildren(MODEL_ROOT).iterator();
       while (modelRootElements.hasNext()) {
         Element modelRootElement = (Element) modelRootElements.next();
         String rootFileName = modelRootElement.getAttributeValue(ROOT_PATH);
@@ -116,11 +116,13 @@ public class MPSProject extends AbstractMPSProject {
         String namespacePrefix = modelRootElement.getAttributeValue(NAMESPACE_PREFIX);
         ModelRoot modelRoot = new ModelRoot(namespacePrefix, dir);
         modelRoots.add(modelRoot);
-        if (dir.exists()) {
-          readModels(models, dir);
-        } else {
-          throw new RuntimeException("Couldn't load models from " + rootAbsolutePath +
-                  "\nDirectory doesn't exist: " + rootAbsolutePath);
+        if (toInitModels) {
+          if (dir.exists()) {
+            readModels(models, dir);
+          } else {
+            throw new RuntimeException("Couldn't load models from " + rootAbsolutePath +
+                    "\nDirectory doesn't exist: " + rootAbsolutePath);
+          }
         }
       }
   }
