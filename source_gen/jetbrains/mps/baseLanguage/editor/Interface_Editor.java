@@ -21,9 +21,9 @@ import jetbrains.mps.nodeEditor.CellLayout_Vertical;
 
 public class Interface_Editor extends DefaultNodeEditor {
 
-  AbstractCellProvider my_GenericDeclaration_TypeVariables_Component;
-  EditorCellListHandler myExtendedInterfaceListHandler;
-  EditorCellListHandler myMethodListHandler;
+  public AbstractCellProvider my_GenericDeclaration_TypeVariables_Component;
+  public EditorCellListHandler myExtendedInterfaceListHandler;
+  public EditorCellListHandler myMethodListHandler;
 
   public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
     return this.createClassBox(context, node);

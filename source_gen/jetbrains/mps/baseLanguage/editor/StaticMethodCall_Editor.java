@@ -22,7 +22,7 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class StaticMethodCall_Editor extends DefaultNodeEditor {
 
-  AbstractCellProvider my_BaseMethodCallArgListEditor;
+  public AbstractCellProvider my_BaseMethodCallArgListEditor;
 
   public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
     return this.createRowCell(context, node);

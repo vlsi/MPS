@@ -15,7 +15,7 @@ import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
 
 public class _GenericDeclaration_TypeVariables_Component extends AbstractCellProvider {
 
-  EditorCellListHandler myTypeVariableDeclarationListHandler;
+  public EditorCellListHandler myTypeVariableDeclarationListHandler;
 
   public _GenericDeclaration_TypeVariables_Component(SemanticNode node) {
     super(node);

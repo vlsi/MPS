@@ -24,7 +24,7 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
-  AbstractCellProvider my_BaseMethodParmListEditor;
+  public AbstractCellProvider my_BaseMethodParmListEditor;
 
   public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
     return this.createMethodBox(context, node);

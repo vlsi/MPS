@@ -20,11 +20,11 @@ import jetbrains.mps.nodeEditor.CellLayout_Vertical;
 
 public class EnumClass_Editor extends DefaultNodeEditor {
 
-  EditorCellListHandler myEnumConstantListHandler;
-  EditorCellListHandler myFieldListHandler;
-  EditorCellListHandler myConstructorListHandler;
-  EditorCellListHandler myMethodListHandler;
-  EditorCellListHandler myStaticMethodListHandler;
+  public EditorCellListHandler myEnumConstantListHandler;
+  public EditorCellListHandler myFieldListHandler;
+  public EditorCellListHandler myConstructorListHandler;
+  public EditorCellListHandler myMethodListHandler;
+  public EditorCellListHandler myStaticMethodListHandler;
 
   public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
     return this.createColumnCell(context, node);

@@ -14,7 +14,7 @@ import java.awt.Color;
 
 public class StatementList_Editor extends DefaultNodeEditor {
 
-  EditorCellListHandler myStatementListHandler;
+  public EditorCellListHandler myStatementListHandler;
 
   public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
     return this.createStatementList(context, node);
