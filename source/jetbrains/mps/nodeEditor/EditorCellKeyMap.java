@@ -1,0 +1,166 @@
+/*
+ * Created by IntelliJ IDEA.
+ * User: alshan
+ * Date: Apr 6, 2004
+ * Time: 6:15:23 AM
+ */
+package jetbrains.mps.nodeEditor;
+
+import java.awt.event.KeyEvent;
+import java.util.HashMap;
+import java.util.List;
+import java.util.LinkedList;
+import java.lang.reflect.Field;
+
+public class EditorCellKeyMap {
+  public static final String KEY_MODIFIERS_NONE = "none";
+  public static final String KEY_MODIFIERS_ANY = "any";
+
+  public static final String KEY_MODIFIERS_CTRL = "ctrl";
+  public static final String KEY_MODIFIERS_ALT = "alt";
+  public static final String KEY_MODIFIERS_SHIFT = "shift";
+  public static final String KEY_MODIFIERS_CTRL_ALT = "ctrl+alt";
+  public static final String KEY_MODIFIERS_CTRL_SHIFT = "ctrl+shift";
+  public static final String KEY_MODIFIERS_CTRL_ALT_SHIFT = "ctrl+alt+shift";
+  public static final String KEY_MODIFIERS_ALT_SHIFT = "alt+shift";
+
+  public static final String KEY_CODE_DIGIT = "digit";
+  public static final String KEY_CODE_LETTER = "letter";
+  public static final String KEY_CODE_LETTER_OR_DIGIT = "letter or digit";
+  public static final String KEY_CODE_SPACE = "space char";
+
+  private static HashMap<Integer, String> ourJavaKeyCodesMap = new HashMap<Integer, String>();
+
+  static {
+    Field[] declaredFields = KeyEvent.class.getDeclaredFields();
+    for (int i = 0; i < declaredFields.length; i++) {
+      Field field = declaredFields[i];
+      String name = field.getName();
+      if (name.startsWith("VK_")) {
+        try {
+          int value = field.getInt(null);
+          ourJavaKeyCodesMap.put(new Integer(value), name);
+        } catch (IllegalAccessException e) {
+          e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+      }
+    }
+  }
+
+  private HashMap<ActionKey, EditorCellAction> myActionMap = new HashMap<ActionKey, EditorCellAction>();
+
+
+  public void putAction(String modifiers, String keyCode, EditorCellAction action) {
+    myActionMap.put(new ActionKey(modifiers, keyCode), action);
+  }
+
+  public EditorCellAction getAction(KeyEvent event) {
+    List<ActionKey> actionKeies = keyEvent2ActionKey(event);
+    for (int i = 0; i < actionKeies.size(); i++) {
+      ActionKey actionKey = actionKeies.get(i);
+      EditorCellAction editorCellAction = myActionMap.get(actionKey);
+      if (editorCellAction != null) {
+        System.out.println("key map action found for key: " + actionKey);
+        return editorCellAction;
+      }
+    }
+    return null;
+  }
+
+  private List<ActionKey> keyEvent2ActionKey(KeyEvent event) {
+    List<ActionKey> keys = new LinkedList<ActionKey>();
+    List<String> modifiers = modifiersForEvent(event);
+    List<String> keyCodes = keyCodesForEvent(event);
+    if (modifiers.size() > 0 && keyCodes.size() > 0) {
+      for (int iMod = 0; iMod < modifiers.size(); iMod++) {
+        String modifier = modifiers.get(iMod);
+        for (int iKey = 0; iKey < keyCodes.size(); iKey++) {
+          String keyKode = keyCodes.get(iKey);
+          ActionKey actionKey = new ActionKey(modifier, keyKode);
+          System.out.println("key map add action key: " + actionKey);
+          keys.add(actionKey);
+        }
+      }
+    }
+    return keys;
+  }
+
+  private List<String> modifiersForEvent(KeyEvent event) {
+    List<String> modifiers = new LinkedList<String>();
+    if (event.getModifiers() == 0) {
+      modifiers.add(KEY_MODIFIERS_NONE);
+    } else if (event.isControlDown() && !event.isAltDown() && !event.isShiftDown()) {
+      modifiers.add(KEY_MODIFIERS_CTRL);
+    } else if (!event.isControlDown() && event.isAltDown() && !event.isShiftDown()) {
+      modifiers.add(KEY_MODIFIERS_ALT);
+    } else if (!event.isControlDown() && !event.isAltDown() && event.isShiftDown()) {
+      modifiers.add(KEY_MODIFIERS_SHIFT);
+    } else if (event.isControlDown() && event.isAltDown() && !event.isShiftDown()) {
+      modifiers.add(KEY_MODIFIERS_CTRL_ALT);
+    } else if (event.isControlDown() && !event.isAltDown() && event.isShiftDown()) {
+      modifiers.add(KEY_MODIFIERS_CTRL_SHIFT);
+    } else if (event.isControlDown() && event.isAltDown() && event.isShiftDown()) {
+      modifiers.add(KEY_MODIFIERS_CTRL_ALT_SHIFT);
+    } else if (!event.isControlDown() && event.isAltDown() && event.isShiftDown()) {
+      modifiers.add(KEY_MODIFIERS_ALT_SHIFT);
+    }
+
+    modifiers.add(KEY_MODIFIERS_ANY);
+    return modifiers;
+  }
+
+  private List<String> keyCodesForEvent(KeyEvent event) {
+    List<String> keyCodes = new LinkedList<String>();
+
+    int keyCode = event.getKeyCode();
+    if (keyCode == KeyEvent.VK_UNDEFINED) {
+      return keyCodes;
+    }
+
+    if (keyCode != KeyEvent.VK_CONTROL &&
+            keyCode != KeyEvent.VK_ALT &&
+            keyCode != KeyEvent.VK_SHIFT) {
+      String keyCodeName = ourJavaKeyCodesMap.get(new Integer(keyCode));
+      keyCodes.add(keyCodeName);
+    }
+
+    char keyChar = event.getKeyChar();
+    if (keyChar != KeyEvent.CHAR_UNDEFINED) {
+      keyCodes.add("" + keyChar);
+
+      if (Character.isDigit(keyChar)) {
+        keyCodes.add(KEY_CODE_DIGIT);
+      } else if (Character.isLetter(keyChar)) {
+        keyCodes.add(KEY_CODE_LETTER);
+      } else if (Character.isLetterOrDigit(keyChar)) {
+        keyCodes.add(KEY_CODE_LETTER_OR_DIGIT);
+      } else if (Character.isSpaceChar(keyChar) || Character.isWhitespace(keyChar)) {
+        keyCodes.add(KEY_CODE_SPACE);
+      }
+    }
+    return keyCodes;
+  }
+
+
+  private static class ActionKey {
+    private String myModifiers;
+    private String myKeyCode;
+
+    public ActionKey(String modifiers, String keyCode) {
+      myModifiers = modifiers;
+      myKeyCode = keyCode;
+    }
+
+    public int hashCode() {
+      return myModifiers.hashCode() ^ myKeyCode.hashCode();
+    }
+
+    public boolean equals(Object o) {
+      return o != null && hashCode() == o.hashCode();
+    }
+
+    public String toString() {
+      return "action key: " + myModifiers + " + " + myKeyCode;
+    }
+  }
+}

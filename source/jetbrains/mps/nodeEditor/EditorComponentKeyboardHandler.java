@@ -16,11 +16,21 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
   public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
     AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
+    EditorCell selectedCell = editor.getSelectedCell();
+
+    // precess cell keymaps first
+    if(selectedCell != null && EditorUtil.isValidCell(selectedCell)) {
+      EditorCellAction actionFromCellKeyMap = EditorUtil.getActionFromCellKeyMap(selectedCell, keyEvent);
+      if(actionFromCellKeyMap != null && actionFromCellKeyMap.canExecute(editorContext)) {
+        actionFromCellKeyMap.execute(editorContext);
+        return true;
+      }
+    }
+
     String actionType = editor.getActionType(keyEvent, editorContext);
 
     // pre-process action
 
-    EditorCell selectedCell = editor.getSelectedCell();
     if (selectedCell != null) {
 
       boolean endEditKeystroke = (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && !(keyEvent.isControlDown() || keyEvent.isAltDown() || keyEvent.isShiftDown()));
