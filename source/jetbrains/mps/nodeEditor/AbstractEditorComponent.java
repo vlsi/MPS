@@ -5,15 +5,17 @@ import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ProjectPane;
-import jetbrains.mps.ide.ui.SpeedSearchBase;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.usageView.UsagesModel_BackReferences;
 import jetbrains.mps.ide.usageView.UsagesModel_SemanticNode;
-import jetbrains.mps.semanticModel.*;
-import jetbrains.mps.typesystem.*;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.semanticModel.*;
+import jetbrains.mps.typesystem.ITypeChecker;
+import jetbrains.mps.typesystem.ITypeObject;
+import jetbrains.mps.typesystem.TSStatus;
+import jetbrains.mps.typesystem.TypeCheckerAccess;
 
 import javax.swing.*;
 import java.awt.*;
@@ -121,7 +123,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             if (rootNode.isAncestorOf(targetNode)) {
               selectNode(targetNode);
             } else {
-              IdeMain.instance().getEditorsPane().openEditor(targetNode);
+              AbstractEditorComponent editor = IdeMain.instance().getEditorsPane().openEditor(targetNode.getContainingRoot());
+              editor.selectNode(targetNode);
             }
           }
         }
@@ -208,6 +211,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     popupMenu.addSeparator();
     popupMenu.add(createGoByReferenceMenu(selectedNode));
     popupMenu.add(createFindUsagesAction(selectedNode));
+    popupMenu.add(createGoToDeclarationAction(selectedNode));
     popupMenu.addSeparator();
     popupMenu.add(createShowTypeInfoAction(selectedNode));
 
@@ -281,6 +285,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       public void actionPerformed(ActionEvent e) {
         UsagesModel_SemanticNode usageModel = new UsagesModel_BackReferences(node);
         ((IdeMain) IdeMain.instance()).showUsagesView(usageModel);
+      }
+    };
+  }
+
+  private Action createGoToDeclarationAction(final SemanticNode node) {
+    return new AbstractAction("Go to semantic type declaration") {
+      public void actionPerformed(ActionEvent e) {
+        IdeMain.instance().getEditorsPane().openEditor(Language.findTypeDeclaration(node.getSemanticModel(), node.getNodeTypeName()));
       }
     };
   }
