@@ -22,7 +22,6 @@ public class EditorManager {
     SemanticNodeEditor editor = getEditor(node);
     EditorCell nodeCell = createEditorCell(editor, node);
     if(node.getReferenceCount(NODE_BEFORE) == 0 && node.getReferenceCount(NODE_AFTER) == 0) {
-      installDefaultActions(nodeCell);
       return nodeCell;
     }
 
@@ -39,14 +38,7 @@ public class EditorManager {
       SemanticNode afterNode = after.next();
       rowWrapper.addEditorCell(createEditorCell(getEditor(afterNode), afterNode));
     }
-    installDefaultActions(rowWrapper);
     return rowWrapper;
-  }
-
-  private void installDefaultActions(EditorCell cell) {
-//    if(cell.getAction(EditorCellAction.DELETE) == null) {
-//      cell.setAction(EditorCellAction.DELETE, new DeleteCellNode_CellAction());
-//    }
   }
 
   private EditorCell createEditorCell(SemanticNodeEditor editor, SemanticNode node) {
@@ -54,6 +46,17 @@ public class EditorManager {
       return editor.createEditorCell(myEditorContext, node);
     }
     return EditorCell_Error.create(myEditorContext, node, "no editor found");
+  }
+
+  public EditorCell createInspectedCell(SemanticNode node) {
+    SemanticNodeEditor editor = getEditor(node);
+    if(editor != null) {
+      EditorCell inspectedCell = editor.createInspectedCell(myEditorContext, node);
+      if(inspectedCell != null) {
+        return inspectedCell;
+      }
+    }
+    return EditorCell_Constant.create(myEditorContext, node, node.getDebugText(), true);
   }
 
   private SemanticNodeEditor getEditor(SemanticNode node) {
@@ -112,6 +115,7 @@ public class EditorManager {
   /**
    * tmp
    * tries to load *generated* editor by name: Gen_<editorName>
+   *
    * @param node
    * @param language
    * @return
@@ -134,4 +138,5 @@ public class EditorManager {
 
     return null;
   }
+
 }

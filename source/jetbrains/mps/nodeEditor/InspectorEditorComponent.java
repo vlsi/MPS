@@ -34,6 +34,7 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
     myInspectedNode = semanticNode;
     reinitEditor();
     rebuildEditorContent();
+    repaint();
   }
 
   public EditorContext getContext() {

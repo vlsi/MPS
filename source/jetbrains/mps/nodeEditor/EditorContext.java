@@ -42,16 +42,12 @@ public class EditorContext {
     return mySemanticModel;
   }
 
-//  public EditorManager getEditorManager() {
-//    return myEditorManager;
-//  }
-
   public EditorCell createNodeCell(SemanticNode node) {
     return myEditorManager.createEditorCell(node);
   }
 
-  public EditorCell createInspectedCell(SemanticNode inspectedNode) {
-    return EditorCell_Constant.create(this, inspectedNode, "inspected cell is not implemented", true);
+  public EditorCell createInspectedCell(SemanticNode node) {
+    return myEditorManager.createInspectedCell(node);
   }
 
   public SemanticLanguage[] getLanguages() {
