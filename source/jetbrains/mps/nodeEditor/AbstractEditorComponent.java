@@ -3,9 +3,15 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.semanticModel.SemanticModel;
 import jetbrains.mps.semanticModel.SemanticModelListener;
 import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.Language;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.typesystem.Typesystem;
+import jetbrains.mps.typesystem.ITypesystem;
+import jetbrains.mps.typesystem.TSStatus;
 
 import javax.swing.*;
 import java.awt.*;
@@ -619,6 +625,21 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         return;
       }
     }
+
+    // print type info (from typesystem)
+    if (keyEvent.getKeyCode() == KeyEvent.VK_T && keyEvent.isControlDown()) {
+      if (mySelectedCell != null) {
+        System.out.println("--- Type System Info " + mySelectedCell.getSemanticNode().getDebugText() + " ---");
+        MPSProject project = IdeMain.instance().getProject();
+        Language language = Language.getLanguage(mySelectedCell.getSemanticNode(), project);
+        ITypesystem typesystem = language.getTypesystem();
+        TSStatus status = typesystem.checkNodeType(mySelectedCell.getSemanticNode());
+        keyEvent.consume();
+        return;
+      }
+    }
+
+
 
     // all other processing should be performed inside command
 
