@@ -49,7 +49,8 @@ public class WhileStatement_Editor extends SemanticNodeEditor {
       editorCell = editorContext.createNodeCell(condition);
       WhileStatement_ConditionCellActions.setCellActions(editorCell, node);
       editorCell.addKeyMap(new _Expression_KeyMap());
-    } else {
+    } else 
+    {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       WhileStatement_ConditionCellActions.setCellActions(editorCell, node);
@@ -65,7 +66,12 @@ public class WhileStatement_Editor extends SemanticNodeEditor {
   public EditorCell createRowCell1(EditorContext editorContext, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setGridLayout(false);
+    editorCell.addEditorCell(this.createConstantCell2(editorContext, node, "  "));
     editorCell.addEditorCell(this.createBodyCell(editorContext, node));
+    return editorCell;
+  }
+  public EditorCell createConstantCell2(EditorContext editorContext, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
     return editorCell;
   }
   public EditorCell createBodyCell(EditorContext editorContext, SemanticNode node) {
@@ -73,7 +79,8 @@ public class WhileStatement_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(body != null) {
       editorCell = editorContext.createNodeCell(body);
-    } else {
+    } else 
+    {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     }
@@ -82,10 +89,10 @@ public class WhileStatement_Editor extends SemanticNodeEditor {
   public EditorCell createRowCell2(EditorContext editorContext, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createConstantCell2(editorContext, node, "}"));
+    editorCell.addEditorCell(this.createConstantCell3(editorContext, node, "}"));
     return editorCell;
   }
-  public EditorCell createConstantCell2(EditorContext editorContext, SemanticNode node, String text) {
+  public EditorCell createConstantCell3(EditorContext editorContext, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
     return editorCell;
   }

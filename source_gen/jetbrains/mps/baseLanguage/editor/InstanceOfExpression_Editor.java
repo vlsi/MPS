@@ -37,7 +37,8 @@ public class InstanceOfExpression_Editor extends SemanticNodeEditor {
       editorCell = editorContext.createNodeCell(leftExpression);
       editorCell.setSelectable(true);
       InstanceOfExpression_LeftExpressionsActions.setCellActions(editorCell, node);
-    } else {
+    } else 
+    {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       InstanceOfExpression_LeftExpressionsActions.setCellActions(editorCell, node);
@@ -56,7 +57,8 @@ public class InstanceOfExpression_Editor extends SemanticNodeEditor {
       editorCell = editorContext.createNodeCell(javaClassType);
       editorCell.setSelectable(true);
       InstanceOfExpression_InstanceOfTypes.setCellActions(editorCell, node);
-    } else {
+    } else 
+    {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       InstanceOfExpression_InstanceOfTypes.setCellActions(editorCell, node);

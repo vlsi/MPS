@@ -42,7 +42,8 @@ public class NotExpression_Editor extends SemanticNodeEditor {
     if(expression != null) {
       editorCell = editorContext.createNodeCell(expression);
       NotExpression_NotExpressionActions.setCellActions(editorCell, node);
-    } else {
+    } else 
+    {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       NotExpression_NotExpressionActions.setCellActions(editorCell, node);

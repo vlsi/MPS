@@ -44,7 +44,8 @@ public class CastExpression_Editor extends SemanticNodeEditor {
     if(type != null) {
       editorCell = editorContext.createNodeCell(type);
       CastExpression_CastTypeActions.setCellActions(editorCell, node);
-    } else {
+    } else 
+    {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       CastExpression_CastTypeActions.setCellActions(editorCell, node);
@@ -62,7 +63,8 @@ public class CastExpression_Editor extends SemanticNodeEditor {
     if(expression != null) {
       editorCell = editorContext.createNodeCell(expression);
       CastExpression_CastExpressionActions.setCellActions(editorCell, node);
-    } else {
+    } else 
+    {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       CastExpression_CastExpressionActions.setCellActions(editorCell, node);

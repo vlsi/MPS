@@ -35,7 +35,8 @@ public class ExpressionStatement_Editor extends SemanticNodeEditor {
     if(expression != null) {
       editorCell = editorContext.createNodeCell(expression);
       editorCell.setSelectable(true);
-    } else {
+    } else 
+    {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     }

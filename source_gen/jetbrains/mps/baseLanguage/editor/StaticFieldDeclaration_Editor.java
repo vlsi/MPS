@@ -50,7 +50,8 @@ public class StaticFieldDeclaration_Editor extends SemanticNodeEditor {
     if(type != null) {
       editorCell = editorContext.createNodeCell(type);
       StaticFieldDeclaration_TypeCellActions.setCellActions(editorCell, node);
-    } else {
+    } else 
+    {
       editorCell = EditorCell_Error.create(editorContext, node, "<no type>");
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       StaticFieldDeclaration_TypeCellActions.setCellActions(editorCell, node);
@@ -85,7 +86,8 @@ public class StaticFieldDeclaration_Editor extends SemanticNodeEditor {
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(initializer));
       __VariableInitializer_ActionSet.setCellActions(editorCell, node);
       editorCell.addKeyMap(new _Expression_KeyMap());
-    } else {
+    } else 
+    {
       editorCell = EditorCell_Constant.create(editorContext, node, null, true);
       ((EditorCell_Label)editorCell).setEditable(true);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());

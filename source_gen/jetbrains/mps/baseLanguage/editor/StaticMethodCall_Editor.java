@@ -47,7 +47,8 @@ public class StaticMethodCall_Editor extends SemanticNodeEditor {
     if(javaClassType != null) {
       editorCell = editorContext.createNodeCell(javaClassType);
       StaticMethodCall_TypeActions.setCellActions(editorCell, node);
-    } else {
+    } else 
+    {
       editorCell = EditorCell_Error.create(editorContext, node, "<no type>");
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       StaticMethodCall_TypeActions.setCellActions(editorCell, node);

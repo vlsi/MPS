@@ -37,7 +37,8 @@ public class ParameterDeclaration_Editor extends SemanticNodeEditor {
     if(type != null) {
       editorCell = editorContext.createNodeCell(type);
       ParameterDeclaration_TypeCellActions.setCellActions(editorCell, node);
-    } else {
+    } else 
+    {
       editorCell = EditorCell_Error.create(editorContext, node, "<no type>");
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       ParameterDeclaration_TypeCellActions.setCellActions(editorCell, node);

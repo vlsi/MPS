@@ -42,7 +42,8 @@ public class StaticFieldReference_Editor extends SemanticNodeEditor {
     if(javaClassType != null) {
       editorCell = editorContext.createNodeCell(javaClassType);
       StaticFieldReference_TypeActions.setCellActions(editorCell, node);
-    } else {
+    } else 
+    {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       StaticFieldReference_TypeActions.setCellActions(editorCell, node);

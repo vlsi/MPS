@@ -56,7 +56,8 @@ public class IfStatement_Editor extends SemanticNodeEditor {
     if(condition != null) {
       editorCell = editorContext.createNodeCell(condition);
       IfStatement_ConditionCellActions.setCellActions(editorCell, node);
-    } else {
+    } else 
+    {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       IfStatement_ConditionCellActions.setCellActions(editorCell, node);
@@ -84,7 +85,8 @@ public class IfStatement_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(ifTrue != null) {
       editorCell = editorContext.createNodeCell(ifTrue);
-    } else {
+    } else 
+    {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     }
@@ -109,7 +111,8 @@ public class IfStatement_Editor extends SemanticNodeEditor {
       editorCell = editorContext.createNodeCell(ifFalseStatement);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(ifFalseStatement));
       IfStatement_ElseStatementActions.setCellActions(editorCell, node);
-    } else {
+    } else 
+    {
       editorCell = EditorCell_Constant.create(editorContext, node, null, true);
       ((EditorCell_Label)editorCell).setEditable(true);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());

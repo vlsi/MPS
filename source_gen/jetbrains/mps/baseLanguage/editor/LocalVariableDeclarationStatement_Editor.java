@@ -35,7 +35,8 @@ public class LocalVariableDeclarationStatement_Editor extends SemanticNodeEditor
     if(localVariableDeclaration != null) {
       editorCell = editorContext.createNodeCell(localVariableDeclaration);
       editorCell.setSelectable(false);
-    } else {
+    } else 
+    {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     }
