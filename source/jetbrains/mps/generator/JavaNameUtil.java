@@ -13,7 +13,7 @@ import jetbrains.mps.semanticModel.SemanticModelUtil;
 public class JavaNameUtil {
 
   public static String fqClassName(SemanticNode semanticNode) {
-    if(semanticNode.getName() == null) {
+    if (semanticNode.getName() == null) {
       return semanticNode.getClass().getName();
     } else {
       return fqClassName(semanticNode, semanticNode.getName());
@@ -26,7 +26,7 @@ public class JavaNameUtil {
 
   public static String fqClassName(SemanticModel semanticModel, String shortClassName) {
     String packageName = packageNameForModel(semanticModel);
-    if(packageName == null || packageName.length() == 0) {
+    if (packageName == null || packageName.length() == 0) {
       return shortClassName;
     }
     return packageName + "." + shortClassName;
@@ -35,8 +35,8 @@ public class JavaNameUtil {
   public static String packageNameForModel(SemanticModel semanticModel) {
     String packageName = "jetbrains.mps";
     String uniquePackageSegment = uniquePackageSegmentForModel(semanticModel);
-    if(uniquePackageSegment.length() > 0) {
-      if(uniquePackageSegment.startsWith("jetbrains.mps") || uniquePackageSegment.startsWith("java.")) {
+    if (uniquePackageSegment.length() > 0) {
+      if (uniquePackageSegment.startsWith("jetbrains.mps") || uniquePackageSegment.startsWith("java.")) {
         return uniquePackageSegment;
       }
       return packageName + '.' + uniquePackageSegment;
@@ -49,7 +49,7 @@ public class JavaNameUtil {
     String namespace = semanticModel.getNamespace();
     String name = semanticModel.getName();
     String result = namespace;
-    if(result.length() > 0 && name.length() > 0) {
+    if (result.length() > 0 && name.length() > 0) {
       result += ".";
     }
     result += name;
@@ -58,7 +58,7 @@ public class JavaNameUtil {
 
   public static String uniquePackageSegment(String packageName) {
     String packageHead = "jetbrains.mps.";
-    if(packageName.startsWith(packageHead)) {
+    if (packageName.startsWith(packageHead)) {
       return packageName.substring(packageHead.length());
     }
     return "";
@@ -67,11 +67,11 @@ public class JavaNameUtil {
   public static boolean needImportName(JavaClass javaClass) {
     String name = javaClass.getName();
     int offset = name.lastIndexOf(".");
-    if(offset < 0) {
+    if (offset < 0) {
       return false;
     }
     String packageName = name.substring(0, offset);
-    if(packageName.startsWith("java.lang")) {
+    if (packageName.startsWith("java.lang")) {
       return false;
     }
     String currPackage = packageNameForModel(javaClass.getSemanticModel());
@@ -81,12 +81,23 @@ public class JavaNameUtil {
     return !currPackage.equals(packageName);
   }
 
-  public static String shortName(String fqName) {
-    if(fqName == null) {
+  public static String packageName(String fqName) {
+    if (fqName == null) {
       return fqName;
     }
     int offset = fqName.lastIndexOf('.');
-    if(offset < 0) {
+    if (offset < 0) {
+      return "";
+    }
+    return fqName.substring(0, offset);
+  }
+
+  public static String shortName(String fqName) {
+    if (fqName == null) {
+      return fqName;
+    }
+    int offset = fqName.lastIndexOf('.');
+    if (offset < 0) {
       return fqName;
     }
     return fqName.substring(offset + 1);
