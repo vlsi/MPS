@@ -6,7 +6,7 @@
   <import referenceID="2" name="structure" namespace="core" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1082979388796">
     <property name="name" value="ConstrainedDataTypeDeclaration_Editor" />
-    <link role="semanticTypeDeclaration" targetNodeId="1.1082978499127" />
+    <link role="conceptDeclaration" targetNodeId="1.1082978499127" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1083244010082">
       <property name="name" value="ExtendsCellActions" />
       <link role="specializes" targetNodeId="1083243818250" />
@@ -76,7 +76,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1082985570612">
     <property name="name" value="SemanticPropertyDeclaration_Editor" />
-    <link role="semanticTypeDeclaration" targetNodeId="1.1071489288299" />
+    <link role="conceptDeclaration" targetNodeId="1.1071489288299" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1082986003078">
       <property name="name" value="DataTypeActions" />
       <link role="specializes" targetNodeId="1082985852447" />
@@ -115,7 +115,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1083172239067">
     <property name="name" value="EnumerationMemberDeclaration_Editor" />
-    <link role="semanticTypeDeclaration" targetNodeId="1.1083171877298" />
+    <link role="conceptDeclaration" targetNodeId="1.1083171877298" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1083240246895">
       <property name="name" value="IsDefaultActions" />
       <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_DeleteNode" id="1083240246896">
@@ -171,7 +171,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1083172476027">
     <property name="name" value="EnumerationDataTypeDeclaration_Editor" />
-    <link role="semanticTypeDeclaration" targetNodeId="1.1082978164219" />
+    <link role="conceptDeclaration" targetNodeId="1.1082978164219" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1083173219365">
       <property name="name" value="MemberDataTypeActions" />
       <link role="specializes" targetNodeId="1083243818250" />
@@ -295,7 +295,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1083244251718">
     <property name="name" value="PrimitiveDataTypeDeclaration_Editor" />
-    <link role="semanticTypeDeclaration" targetNodeId="1.1083243159079" />
+    <link role="conceptDeclaration" targetNodeId="1.1083243159079" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1083244251719">
       <property name="drawBorder" value="false" />
       <property name="name" value="nodeBox" />
@@ -322,7 +322,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1084189569969">
     <property name="name" value="SemanticLinkDeclaration_Editor" />
-    <link role="semanticTypeDeclaration" targetNodeId="1.1071489288298" />
+    <link role="conceptDeclaration" targetNodeId="1.1071489288298" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1084195486320">
       <property name="name" value="SpecializedLink_Actions" />
       <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_DeleteReference" id="1084197079391">
@@ -388,7 +388,7 @@
         <property name="nullText" value="&lt;no target&gt;" />
         <link role="linkDeclaration" targetNodeId="1.1071599976176" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1096455220328">
-          <link role="semanticTypeDeclaration" targetNodeId="1.1071489090640" />
+          <link role="conceptDeclaration" targetNodeId="1.1071489090640" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1096455263455">
             <property name="defaultText" value="&lt;no name&gt;" />
             <property name="readOnly" value="true" />
@@ -408,7 +408,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1087215312703">
     <property name="name" value="ConceptDeclaration_Editor" />
-    <link role="semanticTypeDeclaration" targetNodeId="1.1071489090640" />
+    <link role="conceptDeclaration" targetNodeId="1.1071489090640" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1087215312704">
       <property name="drawBorder" value="false" />
       <property name="name" value="nodeBox" />
@@ -447,7 +447,7 @@
           <property name="nullText" value="&lt;none&gt;" />
           <link role="linkDeclaration" targetNodeId="1.1071489389519" />
           <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1096454835738">
-            <link role="semanticTypeDeclaration" targetNodeId="1.1071489090640" />
+            <link role="conceptDeclaration" targetNodeId="1.1071489090640" />
             <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1096454904084">
               <property name="defaultText" value="&lt;no name&gt;" />
               <property name="readOnly" value="true" />

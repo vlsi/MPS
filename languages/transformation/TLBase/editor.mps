@@ -8,7 +8,7 @@
   <import referenceID="5" name="structure" namespace="bootstrap.structureLanguage" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1087903454703">
     <property name="name" value="PropertyMacro_Editor" />
-    <link role="semanticTypeDeclaration" targetNodeId="1.1087833241328" />
+    <link role="conceptDeclaration" targetNodeId="1.1087833241328" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1088501636840">
       <property name="name" value="AccessorPropActions" />
       <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_DeleteProperty" id="1088501636841">
@@ -55,7 +55,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1087926271843">
     <property name="name" value="NodeMacro_Editor" />
-    <link role="semanticTypeDeclaration" targetNodeId="1.1087833466690" />
+    <link role="conceptDeclaration" targetNodeId="1.1087833466690" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1088501636843">
       <property name="name" value="SourceQueryActions" />
       <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_DeleteProperty" id="1088501636844">
@@ -83,7 +83,7 @@
           <property name="nullText" value="&lt;no tag&gt;" />
           <link role="linkDeclaration" targetNodeId="1.1096887838191" />
           <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1096887967146">
-            <link role="semanticTypeDeclaration" targetNodeId="1.1096887421657" />
+            <link role="conceptDeclaration" targetNodeId="1.1096887421657" />
             <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1096888004884">
               <property name="defaultText" value="&lt;no name&gt;" />
               <property name="readOnly" value="true" />
@@ -101,7 +101,7 @@
           <property name="nullText" value="&lt;no external template&gt;" />
           <link role="linkDeclaration" targetNodeId="1.1099331968397" />
           <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1099332034973">
-            <link role="semanticTypeDeclaration" targetNodeId="1.1092059087312" />
+            <link role="conceptDeclaration" targetNodeId="1.1092059087312" />
             <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1099332235086">
               <property name="defaultText" value="&lt;no name&gt;" />
               <property name="readOnly" value="true" />
@@ -160,7 +160,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1088762125437">
     <property name="name" value="ReferenceMacro_Editor" />
-    <link role="semanticTypeDeclaration" targetNodeId="1.1088761943574" />
+    <link role="conceptDeclaration" targetNodeId="1.1088761943574" />
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1088763040904">
       <property name="vertical" value="true" />
       <property name="selectable" value="false" />
@@ -203,7 +203,7 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1092060948911">
     <property name="matchingText" value="template declaration" />
     <property name="name" value="TemplateDeclaration_Editor" />
-    <link role="semanticTypeDeclaration" targetNodeId="1.1092059087312" />
+    <link role="conceptDeclaration" targetNodeId="1.1092059087312" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1092137340906">
       <property name="name" value="ContentNodeActions" />
       <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1092137340907">
@@ -295,7 +295,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1095419078589">
     <property name="name" value="TemplateMappingConfiguration_Editor" />
-    <link role="semanticTypeDeclaration" targetNodeId="1.1095416546421" />
+    <link role="conceptDeclaration" targetNodeId="1.1095416546421" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1095419078590">
       <property name="vertical" value="true" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1095419078591">
@@ -396,7 +396,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1095419606578">
     <property name="name" value="TemplateMappingRule_Editor" />
-    <link role="semanticTypeDeclaration" targetNodeId="1.1095416572297" />
+    <link role="conceptDeclaration" targetNodeId="1.1095416572297" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1095419606579">
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1095441898829">
@@ -424,7 +424,7 @@
         <property name="nullText" value="&lt;no template&gt;" />
         <link role="linkDeclaration" targetNodeId="1.1095417265990" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1095420084445">
-          <link role="semanticTypeDeclaration" targetNodeId="4.1078489098625" />
+          <link role="conceptDeclaration" targetNodeId="4.1078489098625" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1095420084446">
             <property name="defaultText" value="&lt;no name&gt;" />
             <property name="readOnly" value="true" />
@@ -451,7 +451,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1095420477103">
     <property name="name" value="TemplateWeavingRule_Editor" />
-    <link role="semanticTypeDeclaration" targetNodeId="1.1095416624611" />
+    <link role="conceptDeclaration" targetNodeId="1.1095416624611" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1095420477104">
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1095442717472">
@@ -472,7 +472,7 @@
           <property name="nullText" value="&lt;no target template&gt;" />
           <link role="linkDeclaration" targetNodeId="1.1095418098242" />
           <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1095676812695">
-            <link role="semanticTypeDeclaration" targetNodeId="1.1092059087312" />
+            <link role="conceptDeclaration" targetNodeId="1.1092059087312" />
             <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1095676812696">
               <property name="defaultText" value="&lt;no name&gt;" />
               <property name="readOnly" value="true" />
@@ -522,7 +522,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1095672501074">
     <property name="name" value="TemplateFragment_Editor" />
-    <link role="semanticTypeDeclaration" targetNodeId="1.1095672379244" />
+    <link role="conceptDeclaration" targetNodeId="1.1095672379244" />
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1095672654001">
       <property name="vertical" value="true" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1095672654002">
@@ -538,7 +538,7 @@
           <property name="name" value="tag_inspected" />
           <link role="linkDeclaration" targetNodeId="1.1096887682700" />
           <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1096887753624">
-            <link role="semanticTypeDeclaration" targetNodeId="1.1096887421657" />
+            <link role="conceptDeclaration" targetNodeId="1.1096887421657" />
             <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1096887822347">
               <property name="defaultText" value="&lt;no name&gt;" />
               <property name="readOnly" value="true" />
@@ -573,7 +573,7 @@
         <property name="conditionId" value="TemplateFragment_HasTag" />
         <link role="linkDeclaration" targetNodeId="1.1096887682700" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1096906874211">
-          <link role="semanticTypeDeclaration" targetNodeId="1.1096887421657" />
+          <link role="conceptDeclaration" targetNodeId="1.1096887421657" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1096906918213">
             <property name="textBgColor" value="yellow" />
             <property name="defaultText" value="&lt;no name&gt;" />
@@ -587,7 +587,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1096887515956">
     <property name="name" value="TemplateTag_Editor" />
-    <link role="semanticTypeDeclaration" targetNodeId="1.1096887421657" />
+    <link role="conceptDeclaration" targetNodeId="1.1096887421657" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1096887587207">
       <property name="textBgColor" value="yellow" />
       <property name="defaultText" value="&lt;no name&gt;" />
