@@ -94,7 +94,7 @@ public class MPSProject extends AbstractMPSProject {
     Element projectModelsElement = rootElement.getChild(PROJECT_MODELS);
     readModelRoots(myProjectModelRoots, projectModelsElement);
 
-    readModels(myLibraryModelRoots, myLibraryModels);
+//    readModels(myLibraryModelRoots, myLibraryModels);
     readModels(myProjectModelRoots, myProjectModels);
 
     mySemanticModels.flushModelInfos();
