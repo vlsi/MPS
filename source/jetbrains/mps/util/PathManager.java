@@ -159,7 +159,7 @@ public class PathManager {
   public static String findModelPath(ModelRoot modelRoot, String modelFQName) {
     String name = modelFQName;
     String packagePrefix = modelRoot.namespacePrefix;
-    if(packagePrefix != null) {
+    if(packagePrefix != null && packagePrefix.length() > 0) {
       if(modelFQName.startsWith(packagePrefix + '.')) {
         name = modelFQName.substring(packagePrefix.length());
       }
