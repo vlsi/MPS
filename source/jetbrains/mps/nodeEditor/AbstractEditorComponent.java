@@ -5,22 +5,24 @@ import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ProjectPane;
-import jetbrains.mps.ide.usageView.UsagesModel_SemanticNode;
-import jetbrains.mps.ide.usageView.UsagesModel_BackReferences;
-import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
+import jetbrains.mps.ide.usageView.UsagesModel_BackReferences;
+import jetbrains.mps.ide.usageView.UsagesModel_SemanticNode;
 import jetbrains.mps.project.AbstractMPSProject;
 import jetbrains.mps.semanticModel.*;
-import jetbrains.mps.typesystem.ITypesystem;
+import jetbrains.mps.typesystem.ITypeObject;
+import jetbrains.mps.typesystem.SemanticModelTypeChecker;
 import jetbrains.mps.typesystem.TSStatus;
-import static jetbrains.mps.ide.EditorsPane.EditorPosition.*;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 import java.util.List;
+
+import static jetbrains.mps.ide.EditorsPane.EditorPosition.*;
 
 /**
  * Author: Sergey Dmitriev
@@ -755,14 +757,19 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     // print type info (from typesystem)
     if (keyEvent.getKeyCode() == KeyEvent.VK_T && keyEvent.isControlDown()) {
       if (mySelectedCell != null) {
-        System.out.println("--- Type System Info " + mySelectedCell.getSemanticNode().getDebugText() + " ---");
-        AbstractMPSProject project = IdeMain.instance().getProject();
-        Language language = Language.getLanguage(mySelectedCell.getSemanticNode(), project);
-        ITypesystem typesystem = language.getTypesystem();
-        TSStatus status = typesystem.checkNodeType(mySelectedCell.getSemanticNode());
+        SemanticNode selectedNode = mySelectedCell.getSemanticNode();
+        SemanticModelTypeChecker typeChecker = new SemanticModelTypeChecker(selectedNode.getSemanticModel());
+        System.out.println("--- Type System Info:");
+        System.out.println("--- Node: " + selectedNode.getDebugText());
+        TSStatus status = typeChecker.checkNodeType(selectedNode);
         if (status.isOk()) {
           System.out.println("--- TYPE CHECK STATUS: OK");
-          System.out.println("--- Type: " + status.getTypeObject());
+          ITypeObject typeObject = status.getTypeObject();
+          if (typeObject != null) {
+            System.out.println("--- Type: " + typeObject);
+          } else {
+            System.out.println("--- NO TYPE");
+          }
         } else if (status.isErrorComposite()) {
           System.out.println("--- TYPE CHECK STATUS: ERROR COMPOSITE");
           List<TSStatus> errors = status.getAllErrors();
@@ -774,6 +781,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           System.out.println("--- TYPE CHECK STATUS: ERROR");
           System.out.println("--- Message: " + status.getMessage());
         }
+        System.out.println("--------------------------");
         keyEvent.consume();
 //        return;
       }
