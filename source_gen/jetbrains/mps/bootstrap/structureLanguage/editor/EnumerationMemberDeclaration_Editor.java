@@ -45,7 +45,7 @@ public class EnumerationMemberDeclaration_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = new PropertyAccessor(node, "name", true, false);
+    ModelAccessor modelAccessor = new PropertyAccessor(node, "name", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     editorCell.setDefaultText("<no name>");
     editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
@@ -58,7 +58,7 @@ public class EnumerationMemberDeclaration_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createExternalValueCell(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = new PropertyAccessor(node, "externalValue", true, false);
+    ModelAccessor modelAccessor = new PropertyAccessor(node, "externalValue", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     editorCell.setDefaultText("<no external value>");
     editorCell.getTextLine().setTextBackgroundColor(Color.cyan);
@@ -70,7 +70,7 @@ public class EnumerationMemberDeclaration_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createInternalValueCell(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = new PropertyAccessor(node, "internalValue", true, false);
+    ModelAccessor modelAccessor = new PropertyAccessor(node, "internalValue", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     editorCell.setDefaultText("NULL");
     editorCell.getTextLine().setTextBackgroundColor(Color.yellow);

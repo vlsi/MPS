@@ -38,7 +38,7 @@ public class StringLiteral_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createValueCell(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = new PropertyAccessor(node, "value", true, false);
+    ModelAccessor modelAccessor = new PropertyAccessor(node, "value", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     editorCell.setSelectable(true);
     editorCell.setEditable(true);

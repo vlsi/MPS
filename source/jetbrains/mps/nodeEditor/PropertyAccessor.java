@@ -12,14 +12,14 @@ import jetbrains.mps.semanticModel.SemanticPropertySupport;
 public class PropertyAccessor implements ModelAccessor {
   private SemanticNode myNode;
   private String myPropertyName;
-  private boolean myWritable;
+  private boolean myReadOnly;
   private boolean myAllowEmptyText;
   private SemanticPropertyDeclaration myPropertyDeclaration;
 
-  public PropertyAccessor(SemanticNode node, String propertyName, boolean writable, boolean allowEmptyText) {
+  public PropertyAccessor(SemanticNode node, String propertyName, boolean readOnly, boolean allowEmptyText) {
     myNode = node;
     myPropertyName = propertyName;
-    myWritable = writable;
+    myReadOnly = readOnly;
     myAllowEmptyText = allowEmptyText;
 
     myPropertyDeclaration = SemanticModelUtil.getPropertyDeclaration(node, propertyName);
@@ -35,7 +35,7 @@ public class PropertyAccessor implements ModelAccessor {
   }
 
   public void setText(String text) {
-    if (myWritable) {
+    if (!myReadOnly) {
       if (!myAllowEmptyText && text != null && text.length() == 0) {
         text = null;
       }
@@ -48,6 +48,11 @@ public class PropertyAccessor implements ModelAccessor {
   }
 
   public boolean isValidText(String text) {
+    if (myReadOnly) {
+      String propertyValue = myNode.getProperty(myPropertyName);
+      return (text == null && propertyValue == null) || (text != null && text.equals(propertyValue));
+    }
+
     if (myPropertyDeclaration != null) {
       if (!myAllowEmptyText && text != null && text.length() == 0) {
         text = null;

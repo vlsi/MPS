@@ -48,7 +48,7 @@ public class PrimitiveDataTypeDeclaration_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = new PropertyAccessor(node, "name", true, false);
+    ModelAccessor modelAccessor = new PropertyAccessor(node, "name", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     editorCell.setDefaultText("<no name>");
     editorCell.getTextLine().setTextBackgroundColor(Color.yellow);

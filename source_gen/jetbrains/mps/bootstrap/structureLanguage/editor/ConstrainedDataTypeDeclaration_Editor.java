@@ -53,7 +53,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = new PropertyAccessor(node, "name", true, false);
+    ModelAccessor modelAccessor = new PropertyAccessor(node, "name", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     editorCell.setDefaultText("<no name>");
     editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
@@ -107,7 +107,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createConstraintCell(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = new PropertyAccessor(node, "constraint", true, false);
+    ModelAccessor modelAccessor = new PropertyAccessor(node, "constraint", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
     editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
