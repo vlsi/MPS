@@ -51,12 +51,7 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
       Iterator<INodeSubstituteItem> iterator1 = list.iterator();
       while (iterator1.hasNext()) {
         INodeSubstituteItem substituteItem = iterator1.next();
-        String matchingText = substituteItem.getMatchingText(pattern);
-        if (matchingText != null) {
-          if (matchingText.equals(pattern) || matchingText.equals("integer constant")) {
-            continue;
-          }
-        }
+        if (substituteItem.canSubstituteStrictly(pattern)) continue;
         iterator1.remove();
       }
     }

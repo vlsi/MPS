@@ -176,6 +176,7 @@ public class EditorCellKeyMap {
             keyCode != KeyEvent.VK_ALT &&
             keyCode != KeyEvent.VK_SHIFT) {
       String keyCodeName = ourJavaKeycodesMap.get(new Integer(keyCode));
+      assert keyCodeName != null;
       keyCodes.add(keyCodeName);
     }
 
@@ -272,6 +273,8 @@ public class EditorCellKeyMap {
     private String myKeyCode;
 
     public ActionKey(String modifiers, String keyCode) {
+      assert modifiers != null;
+      assert keyCode != null;
       myModifiers = modifiers;
       myKeyCode = keyCode;
     }
