@@ -130,6 +130,20 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (semanticNode != null) {
       SemanticModel semanticModel = semanticNode.getSemanticModel();
       semanticModel.addSemanticModelListener(mySemanticModelListener);
+      addImportedModelsToListener(semanticModel);
+    }
+  }
+
+  private void addImportedModelsToListener(SemanticModel semanticModel) {
+    Iterator<SemanticModel> importedModels = semanticModel.importedModels();
+    if(importedModels != null) {
+      while (importedModels.hasNext()) {
+        SemanticModel importedModel = importedModels.next();
+        if(importedModel.hasSemanticModelListener(mySemanticModelListener)) continue;
+
+        importedModel.addSemanticModelListener(mySemanticModelListener);
+        addImportedModelsToListener(importedModel);
+      }
     }
   }
 
