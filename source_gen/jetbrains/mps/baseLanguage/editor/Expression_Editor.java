@@ -23,6 +23,7 @@ public class Expression_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     Expression_NodeBoxActions.setCellActions(editorCell, node);
+    editorCell.addKeyMap(new _Expression_KeyMap());
     return editorCell;
   }
 }
