@@ -45,7 +45,7 @@ public class EditorManager {
 
   private void installDefaultActions(EditorCell cell) {
     if(cell.getAction(EditorCellAction.DELETE) == null) {
-      cell.setAction(EditorCellAction.DELETE, new DeleteNode_CellAction());
+      cell.setAction(EditorCellAction.DELETE, new DeleteCellNode_CellAction());
     }
   }
 
