@@ -359,7 +359,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       Insets insets = border.getBorderInsets(myScroller);
       int scrollerBorderHeight = insets.top + insets.bottom;
       setSize(
-              Math.max(PREFERRED_WIDTH, myScroller.getPreferredSize().width + 50),
+              Math.max(PREFERRED_WIDTH, myList.getPreferredSize().width + 50),
               Math.min(PREFERRED_HEIGHT, myList.getPreferredSize().height + scrollerBorderHeight));
 
       if (getPosition() == PopupWindowPosition.TOP) {
