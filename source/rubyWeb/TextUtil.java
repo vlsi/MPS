@@ -54,6 +54,11 @@ public class TextUtil {
         Sentence sentence = Sentence.newInstance(model);
         String name = elem.getName();
         Tag tag = null;
+        if ("a".equals(name)) {
+          tag = ATag.newInstance(model);
+          ((ATag) tag).setHref(elem.getAttributeValue("href"));
+          tag.setText(toText(model, elem));
+        }
         if ("b".equals(name) || "B".equals(name)) {
           tag = BoldTag.newInstance(model);
           tag.setText(toText(model, elem));
@@ -200,6 +205,14 @@ public class TextUtil {
       target.addContent(header);
       toElement(tag.getText(), target);
       element.addContent(target);
+      return;
+    }
+    if (word instanceof ATag) {
+      ATag tag = (ATag) word;
+      Element target = new Element("a");
+      target.setAttribute("href", ((ATag) word).getHref());
+      element.addContent(target);
+      toElement(tag.getText(), target);
       return;
     }
     if (word instanceof BRTag) {
