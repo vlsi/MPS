@@ -6,7 +6,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.semanticModel.SemanticModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.util.Condition;
@@ -59,7 +59,7 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
   }
 
   private List<SemanticNode> createTargetNodesList() {
-    final SemanticTypeDeclaration targetType = myLinkDeclaration.getTarget();
+    final ConceptDeclaration targetType = myLinkDeclaration.getTarget();
     List<SemanticNode> list = SemanticModelUtil.allNodes(mySourceNode.getSemanticModel(), true, new Condition<SemanticNode>() {
       public boolean met(SemanticNode node) {
         return SemanticModelUtil.isInstanceOfType(node, targetType);

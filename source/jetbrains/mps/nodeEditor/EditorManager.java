@@ -1,6 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IStatus;
@@ -80,7 +80,7 @@ public class EditorManager {
       (new RuntimeException("Error loading editor for node \"" + node.getDebugText() + "\" : couldn't find language.")).printStackTrace();
       return null;
     }
-    SemanticTypeDeclaration typeDeclaration = language.findTypeDeclaration(SemanticModelUtil.getNodeTypeName(node));
+    ConceptDeclaration typeDeclaration = language.findTypeDeclaration(SemanticModelUtil.getNodeTypeName(node));
     if (typeDeclaration == null) {
       (new RuntimeException("Error loading editor for node \"" + node.getDebugText() + "\" : couldn't find the type declaration.")).printStackTrace();
       return null;
@@ -117,7 +117,7 @@ public class EditorManager {
   /**
    * @deprecated
    */
-  public static Class getNodeEditorClass(SemanticTypeDeclaration typeDeclaration) throws ClassNotFoundException {
+  public static Class getNodeEditorClass(ConceptDeclaration typeDeclaration) throws ClassNotFoundException {
 
 //    // 1 st try "trial" editors
 //    String editorClassName = getNodeEditorClassName(typeDeclaration, true);
@@ -139,7 +139,7 @@ public class EditorManager {
     return Class.forName(editorClassName);
   }
 
-  private static String getNodeEditorClassName(SemanticTypeDeclaration typeDeclaration, boolean trialEditor) {
+  private static String getNodeEditorClassName(ConceptDeclaration typeDeclaration, boolean trialEditor) {
     String typeName = typeDeclaration.getName();
     //todo - the project should be passed as parameter here
     MPSProject mpsProject = IdeMain.instance().getProject();

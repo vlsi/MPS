@@ -2,7 +2,7 @@
 <semanticModel namespace="core">
   <maxReferenceID value="23" />
   <language namespace="bootstrap.structureLanguage" />
-  <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1078489098625">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1078489098625">
     <property name="name" value="BaseSemanticType" />
     <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration" id="1078489098626">
       <property name="propertyType" value="string" />

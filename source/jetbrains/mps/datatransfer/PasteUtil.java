@@ -1,7 +1,7 @@
 package jetbrains.mps.datatransfer;
 
 import jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.ide.command.CommandUtil;
@@ -90,8 +90,8 @@ public class PasteUtil {
   }
 
   private static boolean pasteToTarget_internal(final SemanticNode pasteTarget, final SemanticNode pasteNode, final SemanticNode anchorNode, final boolean pasteBefore, boolean reallyPaste) {
-    SemanticTypeDeclaration pasteTargetType = Language.getTypeDeclaration(pasteTarget);
-    SemanticTypeDeclaration pasteNodeType = Language.getTypeDeclaration(pasteNode);
+    ConceptDeclaration pasteTargetType = Language.getTypeDeclaration(pasteTarget);
+    ConceptDeclaration pasteNodeType = Language.getTypeDeclaration(pasteNode);
     if (pasteTargetType == null || pasteNodeType == null) {
       return false;
     }
@@ -149,7 +149,7 @@ public class PasteUtil {
     return null;
   }
 
-  private static SemanticLinkDeclaration findListlikeMetalink(SemanticTypeDeclaration sourceMetatype, SemanticTypeDeclaration targetMetatype) {
+  private static SemanticLinkDeclaration findListlikeMetalink(ConceptDeclaration sourceMetatype, ConceptDeclaration targetMetatype) {
     Iterator<SemanticLinkDeclaration> metalinks = sourceMetatype.semanticLinkDeclarations();
     while (metalinks.hasNext()) {
       SemanticLinkDeclaration metalink = metalinks.next();
@@ -165,7 +165,7 @@ public class PasteUtil {
         }
       }
     }
-    SemanticTypeDeclaration anExtends = sourceMetatype.getExtends();
+    ConceptDeclaration anExtends = sourceMetatype.getExtends();
     if (anExtends != null) {
       return findListlikeMetalink(anExtends, targetMetatype);
     }

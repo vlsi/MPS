@@ -3,8 +3,8 @@
   <maxReferenceID value="2" />
   <language namespace="bootstrap.structureLanguage" />
   <import referenceID="1" name="structure" namespace="core" />
-  <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1071489090640">
-    <property name="name" value="SemanticTypeDeclaration" />
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1071489090640">
+    <property name="name" value="ConceptDeclaration" />
     <link role="extends" targetNodeId="1.1078489098625" />
     <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration" id="1096454100552">
       <property name="name" value="rootable" />
@@ -31,7 +31,7 @@
       <link role="target" targetNodeId="1071489288299" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1071489288298">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1071489288298">
     <property name="name" value="SemanticLinkDeclaration" />
     <link role="extends" targetNodeId="1.1078489098625" />
     <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration" id="1071599776563">
@@ -67,7 +67,7 @@
       <link role="target" targetNodeId="1071489090640" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1071489288299">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1071489288299">
     <property name="name" value="SemanticPropertyDeclaration" />
     <link role="extends" targetNodeId="1.1078489098625" />
     <node role="semanticLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration" id="1082985295845">
@@ -77,11 +77,11 @@
       <link role="target" targetNodeId="1082978164218" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1082978164218">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1082978164218">
     <property name="name" value="DataTypeDeclaration" />
     <link role="extends" targetNodeId="1.1078489098625" />
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1082978164219">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1082978164219">
     <property name="name" value="EnumerationDataTypeDeclaration" />
     <link role="extends" targetNodeId="1082978164218" />
     <node role="semanticLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration" id="1083171729157">
@@ -104,7 +104,7 @@
       <link role="target" targetNodeId="1083171877298" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1082978499127">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1082978499127">
     <property name="name" value="ConstrainedDataTypeDeclaration" />
     <link role="extends" targetNodeId="1082978164218" />
     <node role="semanticLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration" id="1083243265939">
@@ -119,7 +119,7 @@
       <link role="dataType" targetNodeId="1.1082983041843" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1083171877298">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1083171877298">
     <property name="name" value="EnumerationMemberDeclaration" />
     <link role="extends" targetNodeId="1.1078489098625" />
     <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration" id="1083923523171">
@@ -133,7 +133,7 @@
       <link role="dataType" targetNodeId="1.1082983041843" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1083243159079">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1083243159079">
     <property name="name" value="PrimitiveDataTypeDeclaration" />
     <link role="extends" targetNodeId="1082978164218" />
   </node>

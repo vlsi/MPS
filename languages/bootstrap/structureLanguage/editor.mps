@@ -407,7 +407,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1087215312703">
-    <property name="name" value="SemanticTypeDeclaration_Editor" />
+    <property name="name" value="ConceptDeclaration_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="1.1071489090640" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1087215312704">
       <property name="drawBorder" value="false" />
@@ -419,7 +419,7 @@
         <property name="vertical" value="false" />
         <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1087215312706">
-          <property name="text" value="Semantic Type Declaration" />
+          <property name="text" value="Concept Declaration" />
           <property name="drawBorder" value="false" />
           <property name="selectable" value="true" />
         </node>
@@ -478,7 +478,7 @@
         <property name="name" value="separator" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1087215799263">
-        <property name="text" value="Semantic Links:" />
+        <property name="text" value="Links:" />
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
       </node>
@@ -493,7 +493,7 @@
         <property name="name" value="separator" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1087215835644">
-        <property name="text" value="Semantic Properties:" />
+        <property name="text" value="Properties:" />
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
       </node>

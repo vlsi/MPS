@@ -1,6 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.IdeMain;
@@ -205,8 +205,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     popupMenu.add(JavaNameUtil.shortName(header));
     popupMenu.addSeparator();
     popupMenu.add(createGoToProjectAction(selectedNode));
-    if (selectedNode instanceof SemanticTypeDeclaration) {
-      popupMenu.add(createGoToEditorAction((SemanticTypeDeclaration) selectedNode));
+    if (selectedNode instanceof ConceptDeclaration) {
+      popupMenu.add(createGoToEditorAction((ConceptDeclaration) selectedNode));
     }
     popupMenu.addSeparator();
     popupMenu.add(createGoByReferenceMenu(selectedNode));
@@ -227,7 +227,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     };
   }
 
-  private Action createGoToEditorAction(final SemanticTypeDeclaration node) {
+  private Action createGoToEditorAction(final ConceptDeclaration node) {
     final String editorName = node.getName() + "_Editor";
     return new AbstractAction("Go To " + editorName) {
       public void actionPerformed(ActionEvent e) {
