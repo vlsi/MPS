@@ -4,23 +4,80 @@ package jetbrains.mps.baseLanguage.editor;
 
 
 import jetbrains.mps.nodeEditor.SemanticNodeEditor;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.CellAction_Empty;
+import jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration;
+import jetbrains.mps.semanticModel.SemanticModelUtil;
+import jetbrains.mps.nodeEditor.EditorUtil;
 
 public class SuperMethodCall_Editor extends SemanticNodeEditor {
   public static String MATCHING_TEXT = "super.<method>";
   public static String PRESENTATION_NAME = "super method call";
 
+  private AbstractCellProvider my_BaseMethodCallArgListEditor;
+
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);
   }
   public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
-    return this.createErrorCell(editorContext, node);
+    return this.createRowCell(editorContext, node);
   }
-  public EditorCell createErrorCell(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Error editorCell = EditorCell_Error.create(editorContext, node, "SuperMethodCall editor under construction ");
+  public EditorCell createRowCell(EditorContext editorContext, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setGridLayout(false);
+    editorCell.addKeyMap(new _Expression_KeyMap());
+    editorCell.addEditorCell(this.createConstantCell(editorContext, node, "super."));
+    editorCell.addEditorCell(this.createBaseMethodDeclarationReferenceCell(editorContext, node));
+    editorCell.addEditorCell(this.createConstantCell1(editorContext, node, "("));
+    editorCell.addEditorCell(this.create_BaseMethodCallArgListEditorCell(editorContext, node));
+    editorCell.addEditorCell(this.createConstantCell2(editorContext, node, ")"));
+    return editorCell;
+  }
+  public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
+    return editorCell;
+  }
+  public EditorCell createBaseMethodDeclarationReferenceCell(EditorContext editorContext, SemanticNode node) {
+    SemanticNode effectiveNode = node.getReferent("baseMethodDeclaration");
+    if(effectiveNode == null) {
+      EditorCell_Error errorCell = EditorCell_Error.create(editorContext, node, null);
+      errorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+      SuperMethodCall_NameCellActions.setCellActions(errorCell, node);
+      SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(node, "baseMethodDeclaration");
+      errorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
+      errorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
+      return errorCell;
+    }
+    AbstractCellProvider baseMethodDeclaration_InlineComponent = new SuperMethodCall_Editor_baseMethodDeclaration_InlineComponent(effectiveNode);
+    EditorCell editorCell = baseMethodDeclaration_InlineComponent.createEditorCell(editorContext);
+    EditorUtil.setSemanticNodeToCells(editorCell, node);
+    SuperMethodCall_NameCellActions.setCellActions(editorCell, node);
+    SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(node, "baseMethodDeclaration");
+    editorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
+    editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
+    return editorCell;
+  }
+  public EditorCell createConstantCell1(EditorContext editorContext, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
+    return editorCell;
+  }
+  public EditorCell create_BaseMethodCallArgListEditorCell(EditorContext editorContext, SemanticNode node) {
+    if(my_BaseMethodCallArgListEditor == null) {
+      my_BaseMethodCallArgListEditor = new _BaseMethodCallArgListEditor(node);
+    }
+    EditorCell editorCell = my_BaseMethodCallArgListEditor.createEditorCell(editorContext);
+    return editorCell;
+  }
+  public EditorCell createConstantCell2(EditorContext editorContext, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
+    __ExpressionClosingParethesis_ActionSet.setCellActions(editorCell, node);
     return editorCell;
   }
 }
