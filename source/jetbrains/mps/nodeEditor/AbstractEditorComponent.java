@@ -153,6 +153,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
 
       public void focusLost(FocusEvent e) {
+        myNodeSubstituteChooser.setVisible(false);
       }
     });
   }
