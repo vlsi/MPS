@@ -103,9 +103,16 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1108056261008">
           <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1108056266135">
-            <link role="baseMethodDeclaration" targetNodeId="1107804569312" />
+            <link role="baseMethodDeclaration" targetNodeId="1107798125190" />
             <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1108056261007">
               <link role="variableDeclaration" targetNodeId="1107804718170" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1108073009517">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1108073015535">
+            <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1108073009516">
+              <link role="variableDeclaration" targetNodeId="1107804739566" />
             </node>
           </node>
         </node>
