@@ -349,8 +349,6 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
       int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
       if (location.getY() + PopupWindow.PREFERRED_HEIGHT > screenHeight - 150) {
-        System.out.println("Top!");
-        location = new Point(location.x, location.y - PopupWindow.PREFERRED_HEIGHT - myRelativeCell.getHeight());
         getPopupWindow().setPosition(PopupWindowPosition.TOP);
       } else {
         getPopupWindow().setPosition(PopupWindowPosition.BOTTOM);
@@ -376,10 +374,9 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       setSize(
               Math.max(PREFERRED_WIDTH, myList.getPreferredSize().width + 50),
               Math.min(PREFERRED_HEIGHT, myList.getPreferredSize().height + scrollerBorderHeight));
-      int maxY = newLocation.y + getHeight();
 
       if (getPosition() == PopupWindowPosition.TOP) {
-        newLocation = new Point(newLocation.x, maxY - getHeight());
+        newLocation = new Point(newLocation.x, newLocation.y - getHeight() - myRelativeCell.getHeight());
       }
 
 
