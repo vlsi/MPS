@@ -247,7 +247,9 @@
         <property name="substituteHandlerId" value="TemplateDeclaration_SetContentNode" />
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1092137340908">
           <property name="name" value="languageNode" />
-          <property name="queryId" value="Language_RootableSemanticTypeDeclarations" />
+          <property name="descriptionProviderId" value="SemanticNode_ModelFQName" />
+          <property name="queryId" value="Language_SemanticTypeDeclarations" />
+          <property name="textProviderId" value="SemanticNodeNameText" />
         </node>
         <node role="substituteQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1092137340909">
           <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1092137340910" />
@@ -355,8 +357,8 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1092135992437">
         <property name="nullText" value="&lt;no content node&gt;" />
-        <link role="actionSet" targetNodeId="1092137340906" />
         <link role="linkDeclaration" targetNodeId="1.1092060348987" />
+        <link role="actionSet" targetNodeId="1092137340906" />
       </node>
     </node>
   </node>
