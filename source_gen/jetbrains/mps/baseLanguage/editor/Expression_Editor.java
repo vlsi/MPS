@@ -18,7 +18,7 @@ public class Expression_Editor extends SemanticNodeEditor {
     return this.createErrorCell(editorContext, node);
   }
   public EditorCell createErrorCell(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Error editorCell = EditorCell_Error.create(editorContext, node, "expression");
+    EditorCell_Error editorCell = EditorCell_Error.create(editorContext, node, "<expression>");
     Expression_NodeBoxActions.setCellActions(editorCell, node);
     return editorCell;
   }

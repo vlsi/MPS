@@ -30,20 +30,24 @@ public class JavaNameUtil {
   public static String packageNameForModel(SemanticModel semanticModel) {
 
     String packageName = "jetbrains.mps";
-    String namespace = semanticModel.getNamespace();
-    String name = semanticModel.getName();
-    String tail = namespace;
-    if(tail.length() > 0 && name.length() > 0) {
-      tail += ".";
-    }
-    tail += name;
-    if(tail.length() > 0) {
-      packageName = packageName + "." + tail;
+//    String namespace = semanticModel.getNamespace();
+//    String name = semanticModel.getName();
+//    String tail = namespace;
+//    if(tail.length() > 0 && name.length() > 0) {
+//      tail += ".";
+//    }
+//    tail += name;
+//    if(tail.length() > 0) {
+//      packageName = packageName + "." + tail;
+//    }
+    String uniquePackageSegment = uniquePackageSegmentForModel(semanticModel);
+    if(uniquePackageSegment.length() > 0) {
+      return packageName + '.' + uniquePackageSegment;
     }
     return packageName;
   }
 
-  public static String packageUniquePartForModel(SemanticModel semanticModel) {
+  public static String uniquePackageSegmentForModel(SemanticModel semanticModel) {
 
     String namespace = semanticModel.getNamespace();
     String name = semanticModel.getName();
@@ -53,6 +57,14 @@ public class JavaNameUtil {
     }
     result += name;
     return result;
+  }
+
+  public static String uniquePackageSegment(String packageName) {
+    String packageHead = "jetbrains.mps.";
+    if(packageName.startsWith(packageHead)) {
+      return packageName.substring(packageHead.length());
+    }
+    return "";
   }
 
   public static boolean needImportName(JavaClass javaClass) {
