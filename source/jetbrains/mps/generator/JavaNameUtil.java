@@ -2,6 +2,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.semanticModel.SemanticModel;
 import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration;
 
 /**
  * User: Dmitriev.
@@ -33,5 +34,14 @@ public class JavaNameUtil {
       return fqName;
     }
     return fqName.substring(offset + 1);
+  }
+
+  public static String actionsClassNameForTypeEditor(SemanticTypeEditorDeclaration typeEditor) {
+    String editorsPackageName = JavaNameUtil.packageNameForModel(typeEditor.getSemanticModel());
+    String editorActionsClassName = typeEditor.getSemanticTypeDeclaration().getName() + "_Actions";
+    if(editorsPackageName.length() > 0) {
+      return editorsPackageName + "." + editorActionsClassName;
+    }
+    return editorActionsClassName;
   }
 }
