@@ -683,6 +683,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         changeSelection(childCell);
       }
 
+      // put caret at the end of text
       if(mySelectedCell instanceof EditorCell_Label && ((EditorCell_Label) mySelectedCell).isEditable()) {
         TextLine textLine = ((EditorCell_Label) mySelectedCell).getTextLine();
         textLine.setCaretPosition(textLine.getText().length());

@@ -25,13 +25,13 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
       boolean endEditKeystroke = (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && !(keyEvent.isControlDown() || keyEvent.isAltDown() || keyEvent.isShiftDown()));
       boolean deleteKeystroke = (keyEvent.getKeyCode() == KeyEvent.VK_DELETE && !(keyEvent.isControlDown() || keyEvent.isAltDown() || keyEvent.isShiftDown()));
-      boolean cellWasInvalid = !EditorUtil.isValidCell(selectedCell);
+      boolean cellWasValid = EditorUtil.isValidCell(selectedCell);
 
       if(endEditKeystroke ||
           actionType == EditorCellAction.RIGHT_TRANSFORM ||
           actionType == EditorCellAction.INSERT ||
           actionType == EditorCellAction.INSERT_BEFORE) {
-        if(cellWasInvalid &&
+        if(!cellWasValid &&
             !EditorUtil.validateCell(selectedCell, editorContext)) {  // !side effect: can change selection!
           return true;
         }
@@ -56,17 +56,18 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
         }
 
       } else if(actionType == EditorCellAction.RIGHT_TRANSFORM &&
-          (cellWasInvalid || EditorUtil.getCellAction(selectedCell, actionType, editorContext) == null)) {
+          (!cellWasValid || EditorUtil.getCellAction(selectedCell, actionType, editorContext) == null)) {
         if(selectedCell instanceof EditorCell_Constant) {
           actionType = EditorCellAction.RIGHT_SPECIAL;
           keyEvent.consume();
-        }
-        if(selectedCell instanceof EditorCell_Property) {
+        } else if(selectedCell instanceof EditorCell_Property) {
           String text = ((EditorCell_Property) selectedCell).getText();
           if(!((EditorCell_Property) selectedCell).getModelAccessor().isValidText(text + " ")) {
             actionType = EditorCellAction.RIGHT_SPECIAL;
             keyEvent.consume();
           }
+        } else {
+          return true;
         }
       }
     }
