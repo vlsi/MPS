@@ -37,7 +37,7 @@ public class PropertyAccessor implements ModelAccessor {
       }
       if (isValidText(text)) {
         String propertyValue = toInternal(text);
-        System.out.println("set internal value: " + myPropertyName + " = " + propertyValue);
+//        System.out.println("set internal value: " + myPropertyName + " = " + propertyValue);
         myNode.setProperty(myPropertyName, propertyValue);
       }
     }
