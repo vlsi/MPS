@@ -8,6 +8,7 @@ import jetbrains.mps.modelExecute.ExecutionManager;
 import jetbrains.mps.ide.ILanguagePlugin;
 import jetbrains.mps.ide.components.EditorsPaneComponent;
 import jetbrains.mps.ide.components.ProjectPaneComponent;
+import jetbrains.mps.ide.components.MainFrameComponent;
 import jetbrains.mps.generator.JavaNameUtil;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -63,6 +64,7 @@ public class MPSProject implements ModelLocator {
     addComponent(MPSProject.class, this);
     addComponent(EditorsPaneComponent.class, new EditorsPaneComponent(this));
     addComponent(ProjectPaneComponent.class, new ProjectPaneComponent(this));
+    addComponent(MainFrameComponent.class, new MainFrameComponent());
     addComponent(SemanticModels.class, new SemanticModels(this));
     addComponent(ExecutionManager.class, new ExecutionManager());
   }
