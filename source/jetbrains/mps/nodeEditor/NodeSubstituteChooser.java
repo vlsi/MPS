@@ -4,6 +4,7 @@ import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.ide.command.CommandUtil;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.LinkedList;
@@ -30,7 +31,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   private INodeSubstituteInfo myNodeSubstituteInfo;
   private List<INodeSubstituteItem> myMenuSubstituteEntries;
   private boolean myMenuEmpty;
-  private String[] myStrings;
+  private String[] myStrings = new String[0];
   private String[] myMatchingStrings;
 
   public NodeSubstituteChooser(AbstractEditorComponent editorComponent) {
@@ -38,9 +39,6 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   }
 
   private PopupWindow getPopupWindow() {
-    if (myPopupWindow == null) {
-      myPopupWindow = new PopupWindow(getEditorWindow());
-    }
     return myPopupWindow;
   }
 
@@ -53,6 +51,8 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   }
 
   public void setLocationRelative(EditorCell cell) {
+    myPopupWindow = new PopupWindow(getEditorWindow());
+
     Component component = cell.getEditorContext().getNodeEditorComponent();
     Point anchor = component.getLocationOnScreen();
     Point location = new Point(anchor.x + cell.getX(), anchor.y + cell.getY() + cell.getHeight());
@@ -65,10 +65,14 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       getPopupWindow().setPosition(PopupWindowPosition.BOTTOM);
     }
 
+
+
     getPopupWindow().setLocation(location);
+    getPopupWindow().relayout();
 
     myPatternEditorLocation = new Point(anchor.x + cell.getX(), anchor.y + +cell.getY());
     myPatternEditorSize = new Dimension(cell.getWidth() + 1, cell.getHeight());
+
   }
 
   public void setNodeSubstituteInfo(INodeSubstituteInfo nodeSubstituteInfo) {
@@ -295,6 +299,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
     private JList myList = new JList(new DefaultListModel());
     private PopupWindowPosition myPosition = PopupWindowPosition.BOTTOM;
+    private JScrollPane myScroller = new JScrollPane(myList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);;
 
     public PopupWindow(Window owner) {
       super(owner);
@@ -302,7 +307,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       myList.setFont(new TextLine("", null).getFont());
       myList.setBackground(new Color(255, 255, 200));
 
-      add(new JScrollPane(myList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED));
+      add(myScroller);
       myList.setFocusable(false);
       setSize(PREFERRED_WIDTH, PREFERRED_HEIGHT);
     }
@@ -342,9 +347,14 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       myList.ensureIndexIsVisible(getSelectionIndex());
 
       int maxY = getLocation().y + getHeight();
+
+
+      Border border = myScroller.getBorder();
+      Insets insets = border.getBorderInsets(myScroller);
+      int scrollerBorderHeight = insets.top + insets.bottom;
       setSize(
-              Math.max(PREFERRED_WIDTH, myList.getPreferredSize().width) + 30,
-              Math.min(PREFERRED_HEIGHT, myList.getPreferredSize().height) + 4);
+              Math.max(PREFERRED_WIDTH, myScroller.getPreferredSize().width),
+              Math.min(PREFERRED_HEIGHT, myList.getPreferredSize().height + scrollerBorderHeight));
 
       if (getPosition() == PopupWindowPosition.TOP) {
         setLocation(getX(), maxY - getHeight());
