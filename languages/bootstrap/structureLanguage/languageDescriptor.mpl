@@ -2,6 +2,7 @@
 <language namespace="jetbrains.mps.bootstrap.structureLanguage">
   <modelRoot rootPath="." namespacePrefix="jetbrains.mps.bootstrap.structureLanguage"/>
   <modelRoot rootPath="..\..\..\models" />
+  <modelRoot rootPath="${language_descriptor}..\..\core" namespacePrefix="jetbrains.mps.core" />
   <structure>
     <model fqName="jetbrains.mps.bootstrap.structureLanguage.structure"/>
   </structure>
