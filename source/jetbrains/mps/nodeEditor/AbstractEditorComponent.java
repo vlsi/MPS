@@ -89,6 +89,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myActionMap.put(EditorCellAction.PASTE_BEFORE, new CellAction_PasteNodeRelative(true));
     myActionMap.put(EditorCellAction.PASTE_AFTER, new CellAction_PasteNodeRelative(false));
 
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        if (mySelectedCell.getSemanticNode() != null) {
+          createShowTypeInfoAction(mySelectedCell.getSemanticNode()).actionPerformed(e);          
+        }
+      }
+    }, KeyStroke.getKeyStroke("control T"), WHEN_FOCUSED);
+
 
     new SpeedSearchBase(this, true) {
       protected int getSelectedIndex() {
