@@ -653,7 +653,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
       // 1st - try to do substitution with current pattern (id cursor at the end of text)
       if (trySubstituteNow) {
-        List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(pattern);
+        List<INodeSubstituteItem> matchingActions = substituteInfo.getMatchingActions(pattern);
         if (matchingActions.size() == 1) {
           CommandUtil.substituteNode(matchingActions.get(0), pattern, substituteInfo, this.getContext());
           return true;

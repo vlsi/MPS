@@ -10,7 +10,7 @@ import java.util.List;
  * Time: Oct 15, 2003 12:21:00 PM
  */
 public interface INodeSubstituteInfo {
-  List<INodeSubstituteAction> getMatchingActions(String pattern);
+  List<INodeSubstituteItem> getMatchingActions(String pattern);
 
   void invalidateActions();
 

@@ -28,7 +28,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   private AbstractEditorComponent myEditorComponent;
   private NodeSubstitutePatternEditor myPatternEditor;
   private INodeSubstituteInfo myNodeSubstituteInfo;
-  private List<INodeSubstituteAction> myMenuSubstituteEntries;
+  private List<INodeSubstituteItem> myMenuSubstituteEntries;
   private boolean myMenuEmpty;
   private String[] myStrings;
   private String[] myMatchingStrings;
@@ -105,12 +105,12 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   private void rebuildMenuEntries() {
     myMenuEmpty = false;
     String pattern = getPatternEditor().getPattern();
-    List<INodeSubstituteAction> matchingActions = myNodeSubstituteInfo.getMatchingActions(pattern);
-    myMenuSubstituteEntries = new LinkedList<INodeSubstituteAction>(matchingActions);
+    List<INodeSubstituteItem> matchingActions = myNodeSubstituteInfo.getMatchingActions(pattern);
+    myMenuSubstituteEntries = new LinkedList<INodeSubstituteItem>(matchingActions);
     if (myMenuSubstituteEntries.size() == 0) {
       myMenuEmpty = true;
-      myMenuSubstituteEntries.add(new AbstractNodeSubstituteAction() {
-        public String getName() {
+      myMenuSubstituteEntries.add(new AbstractNodeSubstituteItem() {
+        public String getMatchingText(String pattern) {
           return "No variants for \"" + getPatternEditor().getPattern() + "\"";
         }
 
@@ -126,7 +126,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     String[] descriptionStrings = new String[myMenuSubstituteEntries.size()];
     int descriptionIndent = 2;
     for (int i = 0; i < myMenuSubstituteEntries.size(); i++) {
-      INodeSubstituteAction entry = myMenuSubstituteEntries.get(i);
+      INodeSubstituteItem entry = myMenuSubstituteEntries.get(i);
       myMatchingStrings[i] = entry.getMatchingText(null);
       if (myMatchingStrings[i] != null) {
         descriptionIndent = Math.max(descriptionIndent, myMatchingStrings[i].length() + 2);
@@ -184,7 +184,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
     if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER || (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown())) {
       String pattern = getPatternEditor().getPattern();
-      List<INodeSubstituteAction> matchingActions = myNodeSubstituteInfo.getMatchingActions(pattern);
+      List<INodeSubstituteItem> matchingActions = myNodeSubstituteInfo.getMatchingActions(pattern);
       if (matchingActions.size() == 1) {
         setVisible(false);
         CommandUtil.substituteNode(matchingActions.get(0), pattern, myNodeSubstituteInfo, myEditorComponent.getContext());
@@ -256,7 +256,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER || (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown())) {
       if (!myMenuEmpty) {
         String pattern = getPatternEditor().getPattern();
-        INodeSubstituteAction entry = myMenuSubstituteEntries.get(myPopupWindow.getSelectionIndex());
+        INodeSubstituteItem entry = myMenuSubstituteEntries.get(myPopupWindow.getSelectionIndex());
         setVisible(false);
         CommandUtil.substituteNode(entry, pattern, myNodeSubstituteInfo, myEditorComponent.getContext());
       }

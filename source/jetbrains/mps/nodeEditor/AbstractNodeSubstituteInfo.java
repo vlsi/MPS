@@ -11,7 +11,7 @@ import java.util.List;
  * Time: Oct 29, 2003 2:17:38 PM
  */
 public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo {
-  private List<INodeSubstituteAction> myCachedActionList;
+  private List<INodeSubstituteItem> myCachedActionList;
   private SemanticNode myOriginalNode;
   private String myOriginalText;
 
@@ -31,17 +31,17 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
     return myOriginalText;
   }
 
-  protected abstract List<INodeSubstituteAction> createActions();
+  protected abstract List<INodeSubstituteItem> createActions();
 
   public void invalidateActions() {
     myCachedActionList = null;
   }
 
-  public List<INodeSubstituteAction> getMatchingActions(String pattern) {
-    List<INodeSubstituteAction> list = new ArrayList<INodeSubstituteAction>();
-    Iterator<INodeSubstituteAction> iterator = actions();
+  public List<INodeSubstituteItem> getMatchingActions(String pattern) {
+    List<INodeSubstituteItem> list = new ArrayList<INodeSubstituteItem>();
+    Iterator<INodeSubstituteItem> iterator = actions();
     while (iterator.hasNext()) {
-      INodeSubstituteAction entry = iterator.next();
+      INodeSubstituteItem entry = iterator.next();
       if (entry.canSubstitute(pattern)) {
         list.add(entry);
       }
@@ -49,7 +49,7 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
     return list;
   }
 
-  protected Iterator<INodeSubstituteAction> actions() {
+  protected Iterator<INodeSubstituteItem> actions() {
     if (myCachedActionList == null) {
       myCachedActionList = createActions();
     }
