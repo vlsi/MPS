@@ -89,8 +89,11 @@ public class EditorManager {
     String stereotype = node.getSemanticModel().getStereotype();
     String languageEditorFQName = language.getLanguageEditorFQName(stereotype);
     if (languageEditorFQName == null) {
-      (new RuntimeException("Error loading editor for node \"" + node.getDebugText() + "\" <<" + stereotype + ">> : no editor model.")).printStackTrace();
-      return null;
+      languageEditorFQName = language.getLanguageEditorFQName();
+      if (languageEditorFQName == null) {
+        (new RuntimeException("Error loading editor for node \"" + node.getDebugText() + "\" <<" + stereotype + ">> : no editor model.")).printStackTrace();
+        return null;
+      }
     }
 
     String editorClassName = "jetbrains.mps." + languageEditorFQName + "." + typeDeclaration.getName() + "_Editor";
