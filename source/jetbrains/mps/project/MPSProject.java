@@ -6,10 +6,12 @@ import jetbrains.mps.util.PathManager;
 import jetbrains.mps.modelExecute.ExecutionPoint;
 import jetbrains.mps.modelExecute.ExecutionManager;
 import jetbrains.mps.ide.ILanguagePlugin;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.components.EditorsPaneComponent;
 import jetbrains.mps.ide.components.ProjectPaneComponent;
 import jetbrains.mps.ide.components.MainFrameComponent;
 import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.nodeEditor.EditorManager;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -62,6 +64,8 @@ public class MPSProject implements ModelLocator {
 
   private void initComponent() {
     addComponent(MPSProject.class, this);
+    addComponent(IdeMain.class, IdeMain.instance());
+    addComponent(EditorManager.class, new EditorManager());
     addComponent(EditorsPaneComponent.class, new EditorsPaneComponent(this));
     addComponent(ProjectPaneComponent.class, new ProjectPaneComponent(this));
     addComponent(MainFrameComponent.class, new MainFrameComponent());
@@ -70,7 +74,7 @@ public class MPSProject implements ModelLocator {
   }
 
   public List<Object> getComponents() {
-    return new ArrayList(myComponents.values());
+    return new ArrayList<Object>(myComponents.values());
   }
 
   public<T> T getComponent(Class<T> interfaceClass) {

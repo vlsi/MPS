@@ -34,7 +34,7 @@ public class EditorContext {
   }
 
   public EditorCell createNodeCell(SemanticNode node) {
-    return EditorManager.instance().createEditorCell(this, node);
+    return myProject.getComponent(EditorManager.class).createEditorCell(this, node);
   }
 
 

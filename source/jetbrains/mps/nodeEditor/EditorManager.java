@@ -20,15 +20,6 @@ public class EditorManager {
   private static EditorManager myInstance;
   public static String NODE_TO_PLACE_AFTER = "nodeToPlaceAfter";
 
-  private EditorManager() {
-  }
-
-  public static EditorManager instance() {
-    if (myInstance == null) {
-      myInstance = new EditorManager();
-    }
-    return myInstance;
-  }
 
   public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
     EditorCell editorCell = createEditorCell_internal(context, node);
