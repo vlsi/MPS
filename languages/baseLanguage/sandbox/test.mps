@@ -4,6 +4,11 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <node type="jetbrains.mps.baseLanguage.Interface" id="1107798112109">
     <property name="name" value="MyInterface1" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1108072220361">
+      <property name="name" value="c1_method1" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1108072230878" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1108072220360" />
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1107798125190">
       <property name="name" value="i1_method1" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1107798236213" />
