@@ -70,7 +70,7 @@ public class MPSProject extends AbstractMPSProject {
           modelAbsolutePath = PathManager.getAbsolutePathByRelational(myProjectFile, modelFileName);
         }
         if ((new File(modelAbsolutePath)).exists()) {
-          System.out.println("MPSProject addModel from: " + modelAbsolutePath);
+          System.out.println("MPSProject addNewModel from: " + modelAbsolutePath);
           mySemanticModels.loadModel(modelAbsolutePath);
         } else {
           throw new RuntimeException("Couldn't load model from " + modelFileName +
