@@ -8,9 +8,9 @@ import java.net.URL;
  * Created Nov 9, 2003
  */
 public class PathManager {
-  private static final String PROPERTY_CONFIG_PATH = "mps.config.path";
-  private static final String PROPERTY_HOME_PATH = "mps.home.path";
-  private static final String PROPERTY_MODEL_PATH = "mps.model.path";
+  public static final String PROPERTY_CONFIG_PATH = "mps.config.path";
+  public static final String PROPERTY_HOME_PATH = "mps.home.path";
+  public static final String PROPERTY_MODEL_PATH = "mps.model.path";
 
   private static final String FILE = "file";
   private static final String JAR = "jar";
