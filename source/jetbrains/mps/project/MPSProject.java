@@ -1,7 +1,7 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.generator.GeneratorConfigurationManager;
+import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.*;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.components.EditorsPaneComponent;
@@ -12,8 +12,8 @@ import jetbrains.mps.modelExecute.ExecutionPoint;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.semanticModel.ModelLocator;
-import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.semanticModel.ProjectModels;
+import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.PathManager;
 import org.jdom.Document;
@@ -21,8 +21,6 @@ import org.jdom.Element;
 
 import java.io.File;
 import java.util.*;
-
-import rubyWeb.bibliography.PersistenceUtil;
 
 /**
  * Author: Sergey Dmitriev
@@ -73,8 +71,8 @@ public class MPSProject implements ModelLocator {
     return new ArrayList<Object>(myComponents.values());
   }
 
-  public<T> T getComponent(Class<T> interfaceClass) {
-    T result =  (T) myComponents.get(interfaceClass);
+  public <T> T getComponent(Class<T> interfaceClass) {
+    T result = (T) myComponents.get(interfaceClass);
     if (result == null) throw new RuntimeException("I can't find component " + interfaceClass.getName());
     return result;
   }
@@ -92,7 +90,7 @@ public class MPSProject implements ModelLocator {
       rubyWeb.paper.PersistenceUtil.loadRubyWebPaper(this);
     }
   }
-                                       
+
   public void readComponents() {
     myWorkspaceFile = new File(myProjectFile.getParent(), myProjectFile.getName().replaceAll(".mpr", ".mws"));
     try {
@@ -178,8 +176,8 @@ public class MPSProject implements ModelLocator {
     return myNamespaceToLanguageMap.get(nameSpace);
   }
 
-  protected void addLanguage(String namespace, Language language) {
-    myNamespaceToLanguageMap.put(namespace, language);
+  protected void addLanguage(Language language) {
+    myNamespaceToLanguageMap.put(language.getNamespace(), language);
   }
 
   public ProjectModels getModels() {
@@ -227,9 +225,9 @@ public class MPSProject implements ModelLocator {
   public Language getLanguageByStructureModel(SModel semanticModel) {
     Collection<Language> languages = myNamespaceToLanguageMap.values();
     for (Iterator iterator = languages.iterator(); iterator.hasNext();) {
-      Language language = (Language)iterator.next();
+      Language language = (Language) iterator.next();
       SModel structureModel = language.getStructureModel();
-      if(structureModel == semanticModel) {
+      if (structureModel == semanticModel) {
         return language;
       }
     }
