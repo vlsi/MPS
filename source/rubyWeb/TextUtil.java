@@ -3,7 +3,6 @@ package rubyWeb;
 import jetbrains.textLanguage.*;
 import jetbrains.textLanguage.Tag;
 import jetbrains.mps.semanticModel.SModel;
-import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.util.CollectionUtil;
 import org.jdom.Element;
 import rubyWeb.paper.*;
@@ -46,7 +45,10 @@ public class TextUtil {
       if (part instanceof org.jdom.Text) {
         org.jdom.Text textPart = (org.jdom.Text) part;
         for (String sentence : splitToSentences(textPart.getText())) {
-          result.addSentence(toSentence(model, sentence));
+          Sentence s = toSentence(model, sentence);
+          if (s.getWordsCount() > 0) {
+            result.addSentence(s);
+          }
         }
         continue;
       }
@@ -96,6 +98,10 @@ public class TextUtil {
           tag = QuoteTag.newInstance(model);
           tag.setText(toText(model, elem));
           tag.putUserObject(ResolveUtil.ID_TO_RESOLVE, elem.getAttributeValue("ref"));
+        }
+        if ("code".equals(name)) {
+          tag = CodeTag.newInstance(model);
+          tag.setText(toText(model, elem));
         }
         if ("xref".equals(name)) {
           tag = XRefTag.newInstance(model);
@@ -268,9 +274,16 @@ public class TextUtil {
     }
     if (word instanceof TermTag) {
       TermTag tag = (TermTag) word;
-      Element italic = new Element("term");
-      element.addContent(italic);
-      toElement(tag.getText(), italic);
+      Element term = new Element("term");
+      element.addContent(term);
+      toElement(tag.getText(), term);
+      return;
+    }
+    if (word instanceof CodeTag) {
+      CodeTag tag = (CodeTag) word;
+      Element code = new Element("code");
+      element.addContent(code);
+      toElement(tag.getText(), code);
       return;
     }
     if (word instanceof QuoteTag) {
