@@ -57,16 +57,14 @@ public class PathManager {
 
     if (System.getProperty(PROPERTY_CONFIG_PATH) != null) {
       ourConfigPath = getAbsolutePath(System.getProperty(PROPERTY_CONFIG_PATH));
-    }
-    else {
+    } else {
       ourConfigPath = getHomePath() + File.separator + "config";
     }
 
     try {
       File file = new File(ourConfigPath);
       file.mkdirs();
-    }
-    catch (Exception e) {
+    } catch (Exception e) {
       e.printStackTrace();
     }
 
@@ -78,16 +76,14 @@ public class PathManager {
 
     if (System.getProperty(PROPERTY_MODEL_PATH) != null) {
       ourModelPath = getAbsolutePath(System.getProperty(PROPERTY_MODEL_PATH));
-    }
-    else {
+    } else {
       ourModelPath = getHomePath() + File.separator + "semanticModels";
     }
 
     try {
       File file = new File(ourModelPath);
       file.mkdirs();
-    }
-    catch (Exception e) {
+    } catch (Exception e) {
       e.printStackTrace();
     }
 
@@ -146,8 +142,7 @@ public class PathManager {
       if (testPath.endsWith(testResourcePath)) {
         resultPath = path.substring(0, path.length() - resourcePath.length());
       }
-    }
-    else if (JAR.equals(protocol)) {
+    } else if (JAR.equals(protocol)) {
       String fullPath = resourceURL.getFile();
       int delimiter = fullPath.indexOf(JAR_DELIMITER);
       if (delimiter >= 0) {
@@ -167,6 +162,11 @@ public class PathManager {
     return resultPath;
   }
 
+  public static boolean modelFileExists(String modelName, String modelNamespace) {
+    File file = new File(getModelFilePath(modelName, modelNamespace));
+    return file.exists();
+  }
+
   /**
    * @param modelName
    * @param modelNamespace
@@ -176,7 +176,7 @@ public class PathManager {
     String modelPath = getModelPath();
     String namespaceSegment = modelNamespace.replace('.', File.separatorChar);
     String absolutePath = modelPath;
-    if(namespaceSegment.length() > 0) {
+    if (namespaceSegment.length() > 0) {
       absolutePath = absolutePath + File.separator + namespaceSegment;
     }
     absolutePath = absolutePath + File.separator + modelName + ".mps";
@@ -185,10 +185,10 @@ public class PathManager {
 
   public static String getAbsolutePathByRelational(File baseFile, String relationalPath) {
     File relationalFile = new File(relationalPath);
-    if(relationalFile.isAbsolute()) {
+    if (relationalFile.isAbsolute()) {
       return relationalPath;
     }
-    if(!baseFile.isDirectory()) {
+    if (!baseFile.isDirectory()) {
       baseFile = baseFile.getParentFile();
     }
     return baseFile.getAbsolutePath() + File.separatorChar + relationalPath;
@@ -196,16 +196,16 @@ public class PathManager {
 
   public static String getRelationalPathByAbsolute(File baseFile, String absolutePath) {
     File absoluteFile = new File(absolutePath);
-    if(!absoluteFile.isAbsolute()) {
+    if (!absoluteFile.isAbsolute()) {
       return absolutePath;
     }
-    if(!baseFile.isDirectory()) {
+    if (!baseFile.isDirectory()) {
       baseFile = baseFile.getParentFile();
     }
     StringBuffer relativePath = new StringBuffer(absoluteFile.getName());
     File parent = absoluteFile.getParentFile();
-    while(parent != null) {
-      if(baseFile.equals(parent)) {
+    while (parent != null) {
+      if (baseFile.equals(parent)) {
         break;
       }
       relativePath.insert(0, File.separator);
