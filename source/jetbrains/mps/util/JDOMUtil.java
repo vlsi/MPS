@@ -68,7 +68,7 @@ public class JDOMUtil {
   }
 
   public static void writeDocument(Document document, OutputStream stream) throws IOException {
-    writeDocument(document, new OutputStreamWriter(stream));
+    writeDocument(document, new OutputStreamWriter(stream, ENCODING));
   }
 
 
