@@ -185,7 +185,7 @@ public class MPSProject implements ModelLocator {
       return (ILanguagePlugin) pluginClass.newInstance();
     } catch (ClassNotFoundException e) {
       System.err.println("Language plugin for structure model " + languageStructure.getFQName() + " was not found.");
-      e.printStackTrace();
+//      e.printStackTrace();
     } catch (IllegalAccessException e) {
       e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
     } catch (InstantiationException e) {
