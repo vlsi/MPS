@@ -3,6 +3,7 @@ package jetbrains.mps.datatransfer;
 import jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.semanticModel.SemanticModel;
 import jetbrains.mps.semanticModel.SemanticModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
@@ -56,7 +57,7 @@ public class PasteUtil {
     } else if(status == PASTE_TO_PARENT) {
       pasteToParent(pasteTarget, pasteNode);
     } else if(status == PASTE_TO_ROOT) {
-      pasteTarget.getSemanticModel().addRoot(pasteNode);
+      CommandUtil.addRootNode(pasteNode);
     }
   }
 
@@ -98,7 +99,8 @@ public class PasteUtil {
     if(reallyPaste) {
       CommandProcessor.instance().executeCommand(null, new Runnable() {
         public void run() {
-          pasteTarget.insertReference(pasteAfter, metalink.getRole(), pasteNode, metalink.getMetaClass());
+          //pasteTarget.insertReference(pasteAfter, metalink.getRole(), pasteNode, metalink.getMetaClass());
+          CommandUtil.addNodeRefernce(pasteTarget, pasteNode, metalink.getRole(), metalink.getMetaClass(), pasteAfter);
         }
       }, "paste");
     }
