@@ -509,7 +509,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public Dimension getPreferredSize() {
     JViewport viewport = myScrollPane.getViewport();
     Rectangle viewRect = viewport.getViewRect();
-    if(myRootCell == null) {
+    if (myRootCell == null) {
       return new Dimension(viewRect.width, viewRect.height);
     }
     return new Dimension(Math.max(viewRect.width, myRootCell.getWidth() + 100),
@@ -603,6 +603,17 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         EditorUtil.dumpCellsUp(mySelectedCell, 0);
         System.out.println("--- Selected cell children ---");
         EditorUtil.dumpCellsDown(mySelectedCell, 0);
+        System.out.println("--- end dump ---");
+        keyEvent.consume();
+        return;
+      }
+    }
+
+    // print "usages" of selected node
+    if (keyEvent.getKeyCode() == KeyEvent.VK_U && keyEvent.isControlDown()) {
+      if (mySelectedCell != null) {
+        System.out.println("--- Usages of " + mySelectedCell.getSemanticNode().getDebugText() + " ---");
+        EditorUtil.dumpUsages(mySelectedCell.getSemanticNode());
         System.out.println("--- end dump ---");
         keyEvent.consume();
         return;
