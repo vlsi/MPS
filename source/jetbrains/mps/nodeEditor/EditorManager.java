@@ -88,6 +88,8 @@ public class EditorManager {
       e.printStackTrace();  //To change body of catch statement use Options | File Templates.
     } catch (IllegalAccessException e) {
       e.printStackTrace();  //To change body of catch statement use Options | File Templates.
+    } catch(Exception e) {
+      e.printStackTrace();
     }
 //
 //
@@ -142,6 +144,9 @@ public class EditorManager {
 
     // 1 st try "trial" editors
     String editorClassName = getNodeEditorClassName(typeDeclaration, true);
+    if(editorClassName == null) {
+      return null;
+    }
     try {
       Class trialEditorClass = Class.forName(editorClassName);
       System.out.println("*USE GENERATED EDITOR FOR TYPE : " + typeDeclaration.getDebugText());
@@ -156,13 +161,18 @@ public class EditorManager {
 
   private static String getNodeEditorClassName(SemanticTypeDeclaration typeDeclaration, boolean trialEditor) {
     String typeName = typeDeclaration.getName();
-    //todo - the project should ber passed as parameter here
+    //todo - the project should be passed as parameter here
     AbstractMPSProject mpsProject = IdeMain.instance().getProject();
     Language language = mpsProject.getLanguageByStructureModel(typeDeclaration.getSemanticModel());
-    String packageName = JavaNameUtil.packageNameForModel(language.getLanguageEditor());
-    if (trialEditor) {
-      return packageName + ".Trial_" + typeName + "_Editor";
+    SemanticModel languageEditor = language.getLanguageEditor();
+    if (languageEditor != null) {
+      String packageName = JavaNameUtil.packageNameForModel(languageEditor);
+      if (trialEditor) {
+        return packageName + ".Trial_" + typeName + "_Editor";
+      }
+      return packageName + "." + typeName + "_Editor";
     }
-    return packageName + "." + typeName + "_Editor";
+
+    return null;
   }
 }
