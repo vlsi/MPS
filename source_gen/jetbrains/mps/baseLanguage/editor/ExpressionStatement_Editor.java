@@ -49,7 +49,7 @@ public class ExpressionStatement_Editor extends DefaultNodeEditor {
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "expression");
     if(referencedNode == null) {
       {
-        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "expression");
+        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);
         noRefCell.setSelectable(true);
         noRefCell.setDrawBorder(false);

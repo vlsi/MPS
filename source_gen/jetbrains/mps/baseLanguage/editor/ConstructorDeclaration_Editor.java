@@ -131,7 +131,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "body");
     if(referencedNode == null) {
       {
-        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "body");
+        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);
         noRefCell.setSelectable(true);
         noRefCell.setDrawBorder(false);

@@ -86,7 +86,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "classType");
     if(referencedNode == null) {
       {
-        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "classType");
+        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);
         noRefCell.setSelectable(true);
         noRefCell.setDrawBorder(false);

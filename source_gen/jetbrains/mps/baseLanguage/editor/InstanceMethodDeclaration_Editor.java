@@ -134,7 +134,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "returnType");
     if(referencedNode == null) {
       {
-        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "returnType");
+        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "<no return type>");
         noRefCell.setEditable(true);
         noRefCell.setSelectable(true);
         noRefCell.setDrawBorder(false);
@@ -164,7 +164,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "body");
     if(referencedNode == null) {
       {
-        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "body");
+        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);
         noRefCell.setSelectable(true);
         noRefCell.setDrawBorder(false);

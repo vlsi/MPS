@@ -49,7 +49,7 @@ public class LocalVariableDeclarationStatement_Editor extends DefaultNodeEditor 
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "localVariableDeclaration");
     if(referencedNode == null) {
       {
-        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "localVariableDeclaration");
+        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);
         noRefCell.setSelectable(false);
         noRefCell.setDrawBorder(false);

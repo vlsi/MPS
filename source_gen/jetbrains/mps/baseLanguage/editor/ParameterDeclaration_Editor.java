@@ -54,7 +54,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "type");
     if(referencedNode == null) {
       {
-        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "type");
+        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "<no type>");
         noRefCell.setEditable(true);
         noRefCell.setSelectable(true);
         noRefCell.setDrawBorder(false);
