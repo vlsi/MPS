@@ -19,7 +19,7 @@ import java.util.Iterator;
  */
 public class GoToConceptEditorDeclarationAction extends MPSAction {
   public GoToConceptEditorDeclarationAction() {
-    super("Go to concept declaration");
+    super("Go to concept editor declaration");
   }
 
   public boolean isVisible(ActionContext context) {
