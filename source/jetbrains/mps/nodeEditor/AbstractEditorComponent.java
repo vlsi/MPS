@@ -980,7 +980,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
   }
 
-  private void processKeyReleased(KeyEvent keyEvent) {
+  public void processKeyReleased(KeyEvent keyEvent) {
     peekKeyboardHandler().processKeyReleased(getContext(), keyEvent);
   }
 
