@@ -10,9 +10,9 @@ import java.util.List;
  * Time: Oct 15, 2003 12:21:00 PM
  */
 public interface INodeSubstituteInfo {
-  List<INodeSubstituteItem> getMatchingActions(String pattern);
+  List<INodeSubstituteItem> getMatchingItems(String pattern, boolean strictMatching);
 
-  void invalidateActions();
+  void invalidateItems();
 
   void setOriginalNode(SemanticNode node);
 

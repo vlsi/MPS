@@ -86,7 +86,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       if (b) {
         myEditorComponent.pushKeyboardHandler(this);
         getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize);
-        myNodeSubstituteInfo.invalidateActions();
+        myNodeSubstituteInfo.invalidateItems();
         rebuildMenuEntries();
         getPopupWindow().setSelectionIndex(0);
         getPopupWindow().relayout();
@@ -105,7 +105,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   private void rebuildMenuEntries() {
     myMenuEmpty = false;
     String pattern = getPatternEditor().getPattern();
-    List<INodeSubstituteItem> matchingActions = myNodeSubstituteInfo.getMatchingActions(pattern);
+    List<INodeSubstituteItem> matchingActions = myNodeSubstituteInfo.getMatchingItems(pattern, false);
     myMenuSubstituteEntries = new LinkedList<INodeSubstituteItem>(matchingActions);
     if (myMenuSubstituteEntries.size() == 0) {
       myMenuEmpty = true;
@@ -184,7 +184,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
     if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER || (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown())) {
       String pattern = getPatternEditor().getPattern();
-      List<INodeSubstituteItem> matchingActions = myNodeSubstituteInfo.getMatchingActions(pattern);
+      List<INodeSubstituteItem> matchingActions = myNodeSubstituteInfo.getMatchingItems(pattern, false);
       if (matchingActions.size() == 1) {
         setVisible(false);
         CommandUtil.substituteNode(matchingActions.get(0), pattern, myNodeSubstituteInfo, myEditorComponent.getContext());

@@ -39,13 +39,14 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
       boolean endEditKeystroke = (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && !(keyEvent.isControlDown() || keyEvent.isAltDown() || keyEvent.isShiftDown()));
       boolean deleteKeystroke = (keyEvent.getKeyCode() == KeyEvent.VK_DELETE && !(keyEvent.isControlDown() || keyEvent.isAltDown() || keyEvent.isShiftDown()));
       boolean cellWasValid = EditorUtil.isValidCell(selectedCell);
+      boolean strictMatching = endEditKeystroke || actionType == EditorCellAction.RIGHT_TRANSFORM;
 
       if (endEditKeystroke ||
               actionType == EditorCellAction.RIGHT_TRANSFORM ||
               actionType == EditorCellAction.INSERT ||
               actionType == EditorCellAction.INSERT_BEFORE) {
         if (!cellWasValid &&
-                !EditorUtil.validateCell(selectedCell, editorContext)) {  // !side effect: can change selection!
+                !EditorUtil.validateCell(selectedCell, editorContext, strictMatching)) {  // !side effect: can change selection!
           return true;
         }
         selectedCell = editor.getSelectedCell();

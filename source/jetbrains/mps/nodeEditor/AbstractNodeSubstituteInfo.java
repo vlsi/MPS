@@ -11,7 +11,7 @@ import java.util.List;
  * Time: Oct 29, 2003 2:17:38 PM
  */
 public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo {
-  private List<INodeSubstituteItem> myCachedActionList;
+  private List<INodeSubstituteItem> myCachedItemList;
   private SemanticNode myOriginalNode;
   private String myOriginalText;
 
@@ -33,26 +33,40 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
 
   protected abstract List<INodeSubstituteItem> createActions();
 
-  public void invalidateActions() {
-    myCachedActionList = null;
+  public void invalidateItems() {
+    myCachedItemList = null;
   }
 
-  public List<INodeSubstituteItem> getMatchingActions(String pattern) {
+  public List<INodeSubstituteItem> getMatchingItems(String pattern, boolean strictMatching) {
     List<INodeSubstituteItem> list = new ArrayList<INodeSubstituteItem>();
-    Iterator<INodeSubstituteItem> iterator = actions();
+    Iterator<INodeSubstituteItem> iterator = items();
     while (iterator.hasNext()) {
       INodeSubstituteItem entry = iterator.next();
       if (entry.canSubstitute(pattern)) {
         list.add(entry);
       }
     }
+
+    if(strictMatching) {
+      Iterator<INodeSubstituteItem> iterator1 = list.iterator();
+      while (iterator1.hasNext()) {
+        INodeSubstituteItem substituteItem = iterator1.next();
+        String matchingText = substituteItem.getMatchingText(pattern);
+        if(matchingText != null) {
+          if(matchingText.equals(pattern)) {
+            continue;
+          }
+        }
+       iterator1.remove();
+      }
+    }
     return list;
   }
 
-  protected Iterator<INodeSubstituteItem> actions() {
-    if (myCachedActionList == null) {
-      myCachedActionList = createActions();
+  protected Iterator<INodeSubstituteItem> items() {
+    if (myCachedItemList == null) {
+      myCachedItemList = createActions();
     }
-    return myCachedActionList.iterator();
+    return myCachedItemList.iterator();
   }
 }
