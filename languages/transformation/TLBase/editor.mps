@@ -214,7 +214,7 @@
         <property name="substituteHandlerId" value="TemplateDeclaration_SetContentNode" />
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1092137340908">
           <property name="name" value="languageNode" />
-          <property name="queryId" value="AllLanguageSemanticTypeDeclarations" />
+          <property name="queryId" value="Language_RootableSemanticTypeDeclarations" />
         </node>
         <node role="substituteQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1092137340909">
           <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1092137340910" />

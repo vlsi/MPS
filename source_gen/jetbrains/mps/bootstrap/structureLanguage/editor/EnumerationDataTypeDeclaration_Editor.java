@@ -25,7 +25,7 @@ public class EnumerationDataTypeDeclaration_Editor extends SemanticNodeEditor {
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);
-    myMemberListHandler = new EnumerationDataTypeDeclaration_Editor_MemberListHandler(node, "member", true);
+    this.myMemberListHandler = new EnumerationDataTypeDeclaration_Editor_MemberListHandler(node, "member", true);
   }
   public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
     return this.createNodeBox(editorContext, node);
@@ -157,7 +157,7 @@ public class EnumerationDataTypeDeclaration_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell createMemberList(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection cellCollection = myMemberListHandler.createCells_Vertical(editorContext);
+    EditorCell_Collection cellCollection = this.myMemberListHandler.createCells_Vertical(editorContext);
     cellCollection.setGridLayout(true);
     return cellCollection;
   }
