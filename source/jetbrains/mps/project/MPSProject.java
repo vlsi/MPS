@@ -268,11 +268,11 @@ public class MPSProject implements ModelLocator {
   public void save() {
     getSemanticModels().saveAll();
 
-/*
     Element rootElement = new Element(PROJECT);
     Document document = new Document();
     document.setRootElement(rootElement);
 
+    Element languages = new Element(LANGUAGES);
     for (Iterator<File> iterator = myLanguageRoots.iterator(); iterator.hasNext();) {
       File languageRoot = iterator.next();
       String absolutePath = languageRoot.getAbsolutePath();
@@ -286,7 +286,9 @@ public class MPSProject implements ModelLocator {
       }
       Element languageRootElement = new Element(LANGUAGE_ROOT);
       languageRootElement.setAttribute(ROOT_PATH, fileName);
+      languages.addContent(languageRootElement);
     }
+    rootElement.addContent(languages);
 
     Element projectModelsElement = new Element(PROJECT_MODELS);
     saveModelRoots(myProjectModelRoots, projectModelsElement);
@@ -308,7 +310,27 @@ public class MPSProject implements ModelLocator {
     } catch (IOException e) {
       e.printStackTrace();
     }
-*/
+  }
+
+  private void saveModelRoots(ArrayList<ModelRoot> modelRoots, Element modelsElement) {
+    for (Iterator<ModelRoot> iterator = modelRoots.iterator(); iterator.hasNext();) {
+      ModelRoot modelRoot = iterator.next();
+      String absolutePath = modelRoot.root.getAbsolutePath();
+      String fileName = null;
+      if (absolutePath.startsWith(myProjectFile.getParent())) {
+        String modelRelationalPath = PathManager.getRelationalPathByAbsolute(myProjectFile, absolutePath);
+        fileName = PATH_MACRO_PROJECT + modelRelationalPath;
+      } else {
+        String modelRelationalPath = PathManager.getRelationalPathByAbsolute(new File(PathManager.getModelPath()), absolutePath);
+        fileName = PATH_MACRO_MODELS_ROOT + modelRelationalPath;
+      }
+      Element modelRootElement = new Element(MODEL_ROOT);
+      modelRootElement.setAttribute(ROOT_PATH, fileName);
+      if(modelRoot.namespacePrefix != null) {
+        modelRootElement.setAttribute(NAMESPACE_PREFIX, modelRoot.namespacePrefix);
+      }
+      modelsElement.addContent(modelRootElement);
+    }
   }
 
   public void saveComponents() {
@@ -345,29 +367,6 @@ public class MPSProject implements ModelLocator {
     }
     return null;
   }
-
-/*
-  private void saveModelRoots(ArrayList<ModelRoot> modelRoots, Element modelsElement) {
-    for (Iterator<ModelRoot> iterator = modelRoots.iterator(); iterator.hasNext();) {
-      ModelRoot modelRoot = iterator.next();
-      String absolutePath = modelRoot.root.getAbsolutePath();
-      String fileName = null;
-      if (absolutePath.startsWith(myProjectFile.getParent())) {
-        String modelRelationalPath = PathManager.getRelationalPathByAbsolute(myProjectFile, absolutePath);
-        fileName = PATH_MACRO_PROJECT + modelRelationalPath;
-      } else {
-        String modelRelationalPath = PathManager.getRelationalPathByAbsolute(new File(PathManager.getModelPath()), absolutePath);
-        fileName = PATH_MACRO_MODELS_ROOT + modelRelationalPath;
-      }
-      Element modelRootElement = new Element(MODEL_ROOT);
-      modelRootElement.setAttribute(ROOT_PATH, fileName);
-      if(modelRoot.namespacePrefix != null) {
-        modelRootElement.setAttribute(NAMESPACE_PREFIX, modelRoot.namespacePrefix);
-      }
-      modelsElement.addContent(modelRootElement);
-    }
-  }
-*/
 
   public void setProjectFile(File projectFile) {
     myProjectFile = projectFile;
