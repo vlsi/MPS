@@ -14,10 +14,7 @@ import org.jdom.JDOMException;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Collection;
-import java.util.HashMap;
+import java.util.*;
 
 /**
  * Author: Sergey Dmitriev
@@ -25,6 +22,7 @@ import java.util.HashMap;
  */
 public class MPSProject implements ModelLocator {
   private File myProjectFile;
+  private File myWorkspaceFile;
   private ArrayList<SemanticModel> myProjectModels = new ArrayList<SemanticModel>();
   private ArrayList<SemanticModel> myLibraryModels = new ArrayList<SemanticModel>();
   private ArrayList<ModelRoot> myProjectModelRoots = new ArrayList<ModelRoot>();
@@ -39,6 +37,10 @@ public class MPSProject implements ModelLocator {
   public static final String MODEL_ROOT = "modelRoot";
   public static final String PROJECT = "project";
 
+  public static final String COMPONENTS = "components";
+  public static final String COMPONENT = "component";
+  public static final String CLASS = "class";
+
   public static final String PATH_MACRO_MODELS_ROOT = "${models_root}" + File.separatorChar;
   public static final String PATH_MACRO_PROJECT = "${project}" + File.separatorChar;
   public static final String NAMESPACE_PREFIX = "namespacePrefix";
@@ -47,12 +49,30 @@ public class MPSProject implements ModelLocator {
   private ExecutionPoint myEntryPoint;
   private ExecutionManager myExecutionManager = new ExecutionManager();
   private HashMap<String, Language> myNamespaceToLanguageMap = new HashMap<String, Language>();
+  private Map<Class, Object> myComponents = new HashMap<Class, Object>();
 
   public MPSProject(File file) {
+    initComponent();
     myProjectFile = file;
     if (myProjectFile != null) {
       read(myProjectFile);
     }
+  }
+
+  private void initComponent() {
+    addComponent(MPSProject.class, this);
+  }
+
+  public List<Object> getComponents() {
+    return new ArrayList(myComponents.values());
+  }
+
+  public<T> T getComponent(Class<T> interfaceClass) {
+    return (T) myComponents.get(interfaceClass);
+  }
+
+  private void addComponent(Class interfaceClass, Object instance) {
+    myComponents.put(interfaceClass, instance);
   }
 
   public void read(File file) {
@@ -125,6 +145,27 @@ public class MPSProject implements ModelLocator {
     readModels(myProjectModelRoots, myProjectModels);
 
     mySemanticModels.flushModelInfos();
+    readComponents();
+  }
+
+  private void readComponents() {
+    myWorkspaceFile = new File(myProjectFile.getParent(), myProjectFile.getName().replaceAll(".mpr", ".mws"));    
+    try {
+      if (myWorkspaceFile.exists()) {
+        Document document = JDOMUtil.loadDocument(myWorkspaceFile);
+        Element rootElement = document.getRootElement();
+        List<Element> components = rootElement.getChildren(COMPONENT);
+        for (Element component : components) {
+          String className = component.getAttributeValue(CLASS);
+          Class cls = Class.forName(className);
+          if (getComponent(cls) != null && getComponent(cls) instanceof ExternalizableComponent) {
+            ((ExternalizableComponent) getComponent(cls)).read(component);
+          }
+        }
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
   }
 
   private void readModels(ArrayList<ModelRoot> modelRoots, ArrayList<SemanticModel> models) {
@@ -212,6 +253,8 @@ public class MPSProject implements ModelLocator {
 
   public void save() {
     mySemanticModels.saveAll();
+
+    saveComponents();
 /*
     Element rootElement = new Element(PROJECT);
     Document document = new Document();
@@ -253,6 +296,28 @@ public class MPSProject implements ModelLocator {
       e.printStackTrace();
     }
 */
+  }
+
+  private void saveComponents() {
+    try {
+      if (!myWorkspaceFile.exists()) {
+        myWorkspaceFile.createNewFile();
+      }
+      Element root = new Element(COMPONENTS);
+      for (Class cls : myComponents.keySet()) {
+        Object component = myComponents.get(cls);
+        if (component instanceof ExternalizableComponent) {
+          Element componentElement = new Element(COMPONENT);
+          componentElement.setAttribute(CLASS, cls.getName());
+          ((ExternalizableComponent) component).write(componentElement);
+          root.addContent(componentElement);
+        }
+      }
+      Document document = new Document(root);
+      JDOMUtil.writeDocument(document, myWorkspaceFile);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
   }
 
 
