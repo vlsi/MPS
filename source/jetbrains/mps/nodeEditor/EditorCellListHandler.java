@@ -201,7 +201,6 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
       finishInsertMode(editorContext);
       editor.processKeyPressed(keyEvent);
     }
-
     return true;
   }
 

@@ -5,6 +5,8 @@ import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ProjectPane;
+import jetbrains.mps.ide.DialogUtils;
+import jetbrains.mps.ide.ui.SmartFileChooser;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
@@ -16,6 +18,8 @@ import jetbrains.mps.typesystem.ITypeChecker;
 import jetbrains.mps.typesystem.ITypeObject;
 import jetbrains.mps.typesystem.TSStatus;
 import jetbrains.mps.typesystem.TypeCheckerAccess;
+import jetbrains.mps.nodeEditor.test.EventRecorder;
+import jetbrains.mps.nodeEditor.test.EventPlayer;
 
 import javax.swing.*;
 import java.awt.*;
@@ -55,7 +59,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private Component myPreviousFocusOwner = null;
 
   private IdeMain myIdeMain;
-
+  private EventRecorder myRecorder = new EventRecorder();
 
   public AbstractEditorComponent(IdeMain ideMain) {
     addFocusListener(new FocusAdapter() {
@@ -111,7 +115,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     registerKeyboardAction(new GoToDefinitionAction(), KeyStroke.getKeyStroke("control S"), WHEN_FOCUSED);
     registerKeyboardAction(new GoToEditorAction(), KeyStroke.getKeyStroke("control E"), WHEN_FOCUSED);
     registerKeyboardAction(new FindUsagesAction(), KeyStroke.getKeyStroke("alt F7"), WHEN_FOCUSED);
-    registerKeyboardAction(new ReturnToPreviousComponent(), KeyStroke.getKeyStroke("ESCAPE"), WHEN_FOCUSED);    
+    registerKeyboardAction(new ReturnToPreviousComponentAction(), KeyStroke.getKeyStroke("ESCAPE"), WHEN_FOCUSED);
+    registerKeyboardAction(new StartRecordingAction(), KeyStroke.getKeyStroke("control R"), WHEN_FOCUSED);
+    registerKeyboardAction(new StopRecordingAction(), KeyStroke.getKeyStroke("control shift R"), WHEN_FOCUSED);
+    registerKeyboardAction(new ReplayScriptAction(), KeyStroke.getKeyStroke("control shift P"), WHEN_FOCUSED);
 
     addMouseListener(new MouseAdapter() {
       public void mousePressed(final MouseEvent e) {
@@ -132,10 +139,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     myKeyListener = new KeyAdapter() {
       public void keyPressed(final KeyEvent e) {
+        myRecorder.record(e);
         processKeyPressed(e);
       }
 
       public void keyReleased(final KeyEvent e) {
+        myRecorder.record(e);
         processKeyReleased(e);
       }
     };
@@ -830,55 +839,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }
 
-//    // print "usages" of selected node
-//    if (keyEvent.getKeyCode() == KeyEvent.VK_U && keyEvent.isControlDown()) {
-//      if (mySelectedCell != null) {
-//        System.out.println("--- Usages of " + mySelectedCell.getSemanticNode().getDebugText() + " ---");
-//        EditorUtil.dumpUsages(mySelectedCell.getSemanticNode());
-//        System.out.println("--- end dump ---");
-//        keyEvent.consume();
-//        return;
-//      }
-//    }
-
-//    // print type info (from typesystem)
-//    if (keyEvent.getKeyCode() == KeyEvent.VK_T && keyEvent.isControlDown()) {
-//      if (mySelectedCell != null) {
-//        SemanticNode selectedNode = mySelectedCell.getSemanticNode();
-////        SemanticModelTypeChecker typeChecker = new SemanticModelTypeChecker(selectedNode.getSemanticModel(), IdeMain.instance().getProject());
-//        ITypeChecker typeChecker = TypeCheckerAccess.instance().getTypeChecker();
-//        System.out.println("--- Type System Info:");
-//        System.out.println("--- Node: " + selectedNode.getDebugText());
-//        TSStatus status = typeChecker.checkNodeType(selectedNode);
-//        if (status.isOk()) {
-//          System.out.println("--- TYPE CHECK STATUS: OK");
-//          ITypeObject typeObject = status.getTypeObject();
-//          if (typeObject != null) {
-//            System.out.println("--- Type: " + typeObject);
-//          } else {
-//            System.out.println("--- NO TYPE");
-//          }
-//        } else if (status.isErrorComposite()) {
-//          System.out.println("--- TYPE CHECK STATUS: ERROR COMPOSITE");
-//          List<TSStatus> errors = status.getAllErrors();
-//          for (int i = 0; i < errors.size(); i++) {
-//            TSStatus error = errors.get(i);
-//            System.out.println((i + 1) + ". --- Message: " + error.getMessage());
-//          }
-//        } else {
-//          System.out.println("--- TYPE CHECK STATUS: ERROR");
-//          System.out.println("--- Message: " + status.getMessage());
-//        }
-//        System.out.println("--------------------------");
-//        keyEvent.consume();
-////        return;
-//      }
-//    }
-
-
-
     // all other processing should be performed inside command
-
     CommandProcessor.instance().executeCommand(getContext(), new Runnable() {
       public void run() {
         if (peekKeyboardHandler().processKeyPressed(getContext(), keyEvent) == true) {
@@ -1112,10 +1073,32 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
   }
 
-  private class ReturnToPreviousComponent extends AbstractAction {
+  private class ReturnToPreviousComponentAction extends AbstractAction {
     public void actionPerformed(ActionEvent e) {
       if (myPreviousFocusOwner != null) {
         myPreviousFocusOwner.requestFocus();
+      }
+    }
+  }
+
+  private class StartRecordingAction extends AbstractAction {
+    public void actionPerformed(ActionEvent e) {
+      myRecorder.startRecording();
+    }
+  }
+
+  private class StopRecordingAction extends AbstractAction {
+    public void actionPerformed(ActionEvent e) {
+      myRecorder.stopRecording();
+    }
+  }
+
+  private class ReplayScriptAction extends AbstractAction {
+    public void actionPerformed(ActionEvent e) {
+      JFileChooser chooser = new SmartFileChooser() { };
+      if (chooser.showOpenDialog(IdeMain.instance().getMainFrame()) == JFileChooser.APPROVE_OPTION) {
+        myRecorder.stopRecording();
+        new EventPlayer(chooser.getSelectedFile()).replay(AbstractEditorComponent.this);
       }
     }
   }
