@@ -112,13 +112,20 @@ hStart |--------|                  |  | hEnd
   }
 
   public EditorCell findCell(EditorCell_Collection editorCells, int x, int y) {
-    if (!new Rectangle(editorCells.getX(), editorCells.getY(), editorCells.getWidth(), editorCells.getHeight()).contains(x, y)) {
-      return null;
-    }
-    for (int i = 0; i < editorCells.getChildCount(); i++) {
-      EditorCell cell = editorCells.getChildAt(i);
-      Rectangle rectangle = new Rectangle(cell.getX(), cell.getY(), cell.getWidth(), cell.getHeight());
-      if (rectangle.contains(x, y)) return cell.findCell(x, y);
+    return findCell_internal(editorCells, x, y);
+  }
+
+  public EditorCell findCell_internal(EditorCell root, int x, int y) {
+    if (root instanceof EditorCell_Collection) {
+      EditorCell_Collection collection = (EditorCell_Collection) root;
+      for (int i = 0; i < collection.getChildCount(); i++) {
+        EditorCell child = collection.getChildAt(i);
+        EditorCell cell = findCell_internal(child, x, y);
+        if (cell != null) return cell;
+      }
+    } else {
+      Rectangle r = new Rectangle(root.getX(), root.getY(), root.getWidth(), root.getHeight());
+      if (r.contains(x, y)) return root;
     }
     return null;
   }
