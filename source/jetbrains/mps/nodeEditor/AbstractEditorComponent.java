@@ -12,6 +12,7 @@ import jetbrains.mps.semanticModel.SemanticModelListener;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.typesystem.ITypesystem;
 import jetbrains.mps.typesystem.TSStatus;
+import jetbrains.mps.generator.JavaNameUtil;
 
 import javax.swing.*;
 import java.awt.*;
@@ -421,9 +422,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         while (selectedNode != null) {
           final IStatus status = (IStatus) selectedNode.getUserObject(SemanticModel.NODE_STATUS);
           if (status != null) {
+            final SemanticNode selectedNode1 = selectedNode;
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
-                JOptionPane.showMessageDialog(getExternalComponent(), status.getMessage(), "Node Status", JOptionPane.ERROR_MESSAGE);
+                String nodeClasName = JavaNameUtil.shortName(selectedNode1.getClass().getName());
+                JOptionPane.showMessageDialog(getExternalComponent(), status.getMessage(), nodeClasName + " status", JOptionPane.ERROR_MESSAGE);
               }
             });
             return;
