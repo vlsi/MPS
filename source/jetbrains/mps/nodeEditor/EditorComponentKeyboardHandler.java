@@ -66,8 +66,8 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
     if (selectedCell != null) {
 
-      boolean endEditKeystroke = (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && !(keyEvent.isControlDown() || keyEvent.isAltDown() || keyEvent.isShiftDown()));
-      boolean deleteKeystroke = (keyEvent.getKeyCode() == KeyEvent.VK_DELETE && !(keyEvent.isControlDown() || keyEvent.isAltDown() || keyEvent.isShiftDown()));
+      boolean endEditKeystroke = isEndEditKeystroke(keyEvent);
+      boolean deleteKeystroke = isDeleteKeystroke(keyEvent, selectedCell);
       boolean cellWasValid = EditorUtil.isValidCell(selectedCell);
       boolean strictMatching = endEditKeystroke || actionType == EditorCellAction.RIGHT_TRANSFORM;
 
@@ -179,5 +179,13 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     }
 
     return false;
+  }
+
+  private boolean isDeleteKeystroke(final KeyEvent keyEvent, EditorCell cell) {
+    return (keyEvent.getKeyCode() == KeyEvent.VK_DELETE && !(keyEvent.isControlDown() || keyEvent.isAltDown() || keyEvent.isShiftDown()));
+  }
+
+  private boolean isEndEditKeystroke(final KeyEvent keyEvent) {
+    return (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && !(keyEvent.isControlDown() || keyEvent.isAltDown() || keyEvent.isShiftDown()));
   }
 }
