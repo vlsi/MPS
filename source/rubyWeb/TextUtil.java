@@ -108,6 +108,11 @@ public class TextUtil {
           tag = TBDTag.newInstance(model);
           tag.setText(toText(model, elem));
         }
+        if ("insertCode".equals(name)) {
+          tag = InsertCodeTag.newInstance(model);
+          ((InsertCodeTag) tag).setFile(elem.getAttributeValue("file"));
+          ((InsertCodeTag) tag).setFragment(elem.getAttributeValue("fragment"));
+        }
         if (tag != null) {
           sentence.addWord(tag);
         }
@@ -276,6 +281,14 @@ public class TextUtil {
         target.setAttribute("ref", tag.getFigure().getSource());
       }
       toElement(tag.getText(), target);
+      element.addContent(target);
+      return;
+    }
+    if (word instanceof InsertCodeTag) {
+      InsertCodeTag tag = (InsertCodeTag) word;
+      Element target = new Element("insertCode");
+      target.setAttribute("file", tag.getFile());
+      target.setAttribute("fragment", tag.getFragment());
       element.addContent(target);
       return;
     }
