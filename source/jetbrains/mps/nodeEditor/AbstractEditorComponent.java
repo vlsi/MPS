@@ -3,16 +3,16 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
+import jetbrains.mps.semanticModel.SemanticModel;
 import jetbrains.mps.semanticModel.SemanticModelListener;
 import jetbrains.mps.semanticModel.SemanticNode;
-import jetbrains.mps.semanticModel.SemanticModel;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.*;
 import java.util.*;
 import java.util.List;
 
@@ -30,6 +30,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private int myShiftX = 10;
   private int myShiftY = 10;
 
+  private EditorCellRangeSelection myCellRangeSelection;
+
   private Stack<EditorCell> mySelectedStack = new Stack<EditorCell>();
   private Stack<IKeyboardHandler> myKbdHandlersStack;
   private HashMap myActionMap;
@@ -40,6 +42,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private MyModelListener mySemanticModelListener = new MyModelListener();
 
   private List<ICellSelectionListener> mySelectionListeners = new LinkedList<ICellSelectionListener>();
+
 
   public AbstractEditorComponent() {
     setDoubleBuffered(true);
@@ -54,6 +57,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myContainer.add(myScrollPane, BorderLayout.CENTER);
 
     myNodeSubstituteChooser = new NodeSubstituteChooser(this);
+    myCellRangeSelection = new EditorCellRangeSelection(this);
 
     // --- keyboard handling ---
     myKbdHandlersStack = new Stack<IKeyboardHandler>();
@@ -105,16 +109,16 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public void clear() {
     SemanticNode semanticNode = myRootCell.getSemanticNode();
-    if(semanticNode != null) {
+    if (semanticNode != null) {
       SemanticModel semanticModel = semanticNode.getSemanticModel();
       semanticModel.removeSemanticModelListener(mySemanticModelListener);
     }
   }
 
   private void setRootCell(EditorCell rootCell) {
-    if(myRootCell != null) {
+    if (myRootCell != null) {
       SemanticNode semanticNode = myRootCell.getSemanticNode();
-      if(semanticNode != null) {
+      if (semanticNode != null) {
         SemanticModel semanticModel = semanticNode.getSemanticModel();
         semanticModel.removeSemanticModelListener(mySemanticModelListener);
       }
@@ -127,7 +131,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myRootCell.relayout();
 
     SemanticNode semanticNode = myRootCell.getSemanticNode();
-    if(semanticNode != null) {
+    if (semanticNode != null) {
       SemanticModel semanticModel = semanticNode.getSemanticModel();
       semanticModel.addSemanticModelListener(mySemanticModelListener);
       addImportedModelsToListener(semanticModel);
@@ -136,10 +140,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private void addImportedModelsToListener(SemanticModel semanticModel) {
     Iterator<SemanticModel> importedModels = semanticModel.importedModels();
-    if(importedModels != null) {
-      while(importedModels.hasNext()) {
+    if (importedModels != null) {
+      while (importedModels.hasNext()) {
         SemanticModel importedModel = importedModels.next();
-        if(importedModel.hasSemanticModelListener(mySemanticModelListener)) continue;
+        if (importedModel.hasSemanticModelListener(mySemanticModelListener)) continue;
 
         importedModel.addSemanticModelListener(mySemanticModelListener);
         addImportedModelsToListener(importedModel);
@@ -152,51 +156,51 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public String getActionType(KeyEvent keyEvent, EditorContext editorContext) {
-    if(keyEvent.getKeyCode() == KeyEvent.VK_LEFT && keyEvent.getModifiers() == 0) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && keyEvent.getModifiers() == 0) {
       return EditorCellAction.LEFT;
     }
-    if(keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && keyEvent.getModifiers() == 0) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && keyEvent.getModifiers() == 0) {
       return EditorCellAction.RIGHT;
     }
-    if(keyEvent.getKeyCode() == KeyEvent.VK_UP && keyEvent.getModifiers() == 0) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_UP && keyEvent.getModifiers() == 0) {
       return EditorCellAction.UP;
     }
-    if(keyEvent.getKeyCode() == KeyEvent.VK_DOWN && keyEvent.getModifiers() == 0) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN && keyEvent.getModifiers() == 0) {
       return EditorCellAction.DOWN;
     }
-    if(keyEvent.getKeyCode() == KeyEvent.VK_INSERT && keyEvent.getModifiers() == 0) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_INSERT && keyEvent.getModifiers() == 0) {
       return EditorCellAction.INSERT_BEFORE;
     }
-    if(keyEvent.getKeyCode() == KeyEvent.VK_ENTER && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
       return EditorCellAction.INSERT;
     }
-    if(keyEvent.getKeyCode() == KeyEvent.VK_LEFT && keyEvent.isControlDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && keyEvent.isControlDown()) {
       return EditorCellAction.LEFT_SPECIAL;
     }
-    if(keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && keyEvent.isControlDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && keyEvent.isControlDown()) {
       return EditorCellAction.RIGHT_SPECIAL;
     }
-    if(keyEvent.getKeyCode() == KeyEvent.VK_UP && keyEvent.isControlDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_UP && keyEvent.isControlDown()) {
       return EditorCellAction.UP_SPECIAL;
     }
-    if(keyEvent.getKeyCode() == KeyEvent.VK_DOWN && keyEvent.isControlDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN && keyEvent.isControlDown()) {
       return EditorCellAction.DOWN_SPECIAL;
     }
-    if(keyEvent.getKeyCode() == KeyEvent.VK_TAB && keyEvent.getModifiers() == 0) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_TAB && keyEvent.getModifiers() == 0) {
       return EditorCellAction.NEXT;
     }
-    if(keyEvent.getKeyCode() == KeyEvent.VK_TAB && keyEvent.isShiftDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_TAB && keyEvent.isShiftDown()) {
       return EditorCellAction.PREV;
     }
 
     // ---
-    if(keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.getModifiers() == 0) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.getModifiers() == 0) {
       EditorCell selectedCell = editorContext.getNodeEditorComponent().getSelectedCell();
-      if(!(selectedCell instanceof EditorCell_Label)) {
+      if (!(selectedCell instanceof EditorCell_Label)) {
         return EditorCellAction.RIGHT_TRANSFORM;
       }
       EditorCell_Label labelCell = (EditorCell_Label) selectedCell;
-      if(!labelCell.isEditable()) {
+      if (!labelCell.isEditable()) {
         return EditorCellAction.RIGHT_TRANSFORM;
       }
 
@@ -204,24 +208,24 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       String text = labelCell.getText();
       int caretPosition = labelCell.getTextLine().getCaretPosition();
       //System.out.println("text:" + text + " len:" + text.length() + "caret at:" + caretPosition);
-      if(caretPosition == text.length()) {
+      if (caretPosition == text.length()) {
         return EditorCellAction.RIGHT_TRANSFORM;
       }
     }
 
 
-    if(keyEvent.getKeyCode() == KeyEvent.VK_DELETE && keyEvent.isControlDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_DELETE && keyEvent.isControlDown()) {
       return EditorCellAction.DELETE;
     }
 
     // ---
-    if(keyEvent.getKeyCode() == KeyEvent.VK_C && keyEvent.isControlDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_C && keyEvent.isControlDown()) {
       return EditorCellAction.COPY;
     }
-    if(keyEvent.getKeyCode() == KeyEvent.VK_V && keyEvent.isControlDown()) {
-      if(keyEvent.isShiftDown() && !keyEvent.isAltDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_V && keyEvent.isControlDown()) {
+      if (keyEvent.isShiftDown() && !keyEvent.isAltDown()) {
         return EditorCellAction.PASTE_BEFORE;
-      } else if(!keyEvent.isShiftDown() && keyEvent.isAltDown()) {
+      } else if (!keyEvent.isShiftDown() && keyEvent.isAltDown()) {
         return EditorCellAction.PASTE_AFTER;
       }
       return EditorCellAction.PASTE;
@@ -231,11 +235,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   boolean executeComponentAction(String actionType) {
-    if(actionType == null) {
+    if (actionType == null) {
       return false;
     }
     EditorCellAction action = (EditorCellAction) myActionMap.get(actionType);
-    if(action != null && action.canExecute(getContext())) {
+    if (action != null && action.canExecute(getContext())) {
       action.execute(getContext());
       return true;
     }
@@ -252,10 +256,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public EditorCell findNodeCell(final SemanticNode node) {
-    if(myRootCell.getSemanticNode() == node) {
+    if (myRootCell.getSemanticNode() == node) {
       return myRootCell;
     }
-    if(node == null || !(myRootCell instanceof EditorCell_Collection)) {
+    if (node == null || !(myRootCell instanceof EditorCell_Collection)) {
       return null;
     }
     EditorCell_Collection cellCollection = (EditorCell_Collection) myRootCell;
@@ -265,7 +269,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
 
       public boolean checkNotLeafCell(EditorCell editorCell) {
-        if(editorCell.getSemanticNode() == node) {
+        if (editorCell.getSemanticNode() == node) {
           setFoundCell(editorCell);
           setToStop(true);
         }
@@ -278,7 +282,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public EditorCell findNextSelectableCell(final EditorCell cell) {
-    if(!(myRootCell instanceof EditorCell_Collection)) {
+    if (!(myRootCell instanceof EditorCell_Collection)) {
       return null;
     }
     EditorCell_Collection cellCollection = (EditorCell_Collection) myRootCell;
@@ -286,7 +290,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       private boolean toStart = false;
 
       public boolean checkNotLeafCell(EditorCell editorCell) {
-        if(editorCell == cell) {
+        if (editorCell == cell) {
           toStart = true;
           return false;
         }
@@ -294,11 +298,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
 
       public void checkLeafCell(EditorCell editorCell) {
-        if(editorCell == cell) {
+        if (editorCell == cell) {
           toStart = true;
           return;
         }
-        if(toStart && editorCell.isSelectable()) {
+        if (toStart && editorCell.isSelectable()) {
           setFoundCell(editorCell);
           setToStop(true);
         }
@@ -310,25 +314,25 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public EditorCell findPrevSelectableCell(final EditorCell cell) {
-    if(!(myRootCell instanceof EditorCell_Collection)) {
+    if (!(myRootCell instanceof EditorCell_Collection)) {
       return null;
     }
     EditorCell_Collection cellCollection = (EditorCell_Collection) myRootCell;
     class SelectNodeCondition extends NodeCondition {
       public boolean checkNotLeafCell(EditorCell editorCell) {
-        if(editorCell == cell) {
+        if (editorCell == cell) {
           setToStop(true);
-        } else if(editorCell.isSelectable() && editorCell.getParent() == cell.getParent()) {
+        } else if (editorCell.isSelectable() && editorCell.getParent() == cell.getParent()) {
           setFoundCell(editorCell);
         }
         return true;
       }
 
       public void checkLeafCell(EditorCell editorCell) {
-        if(editorCell == cell) {
+        if (editorCell == cell) {
           setToStop(true);
           return;
-        } else if(editorCell.isSelectable()) {
+        } else if (editorCell.isSelectable()) {
           setFoundCell(editorCell);
         }
       }
@@ -343,10 +347,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     Point selectionPoint = null;
     Point prevSelectablePoint = null;
     int caretX = 0;
-    if(mySelectedCell != null) {
+    if (mySelectedCell != null) {
       selectionPoint = new Point(mySelectedCell.getX(), mySelectedCell.getY());
       EditorCell prevSelectableCell = findPrevSelectableCell(findNodeCell(mySelectedCell.getSemanticNode()));
-      if(prevSelectableCell != null) {
+      if (prevSelectableCell != null) {
         prevSelectablePoint = new Point(prevSelectableCell.getX(), prevSelectableCell.getY());
       }
       caretX = mySelectedCell.getCaretX();
@@ -358,13 +362,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 //    System.out.println("rebuildEditorContent root node: " + (myRootCell.getSemanticNode() != null ? myRootCell.getSemanticNode().getDebugText() : "NULL"));
 
     EditorCell newSelection = null;
-    if(selectionPoint != null) {
+    if (selectionPoint != null) {
       newSelection = findNearestCell(selectionPoint.x, selectionPoint.y);
     }
-    if(newSelection == null && prevSelectablePoint != null) {
+    if (newSelection == null && prevSelectablePoint != null) {
       newSelection = findNearestCell(prevSelectablePoint.x, prevSelectablePoint.y);
     }
-    if(newSelection != null) {
+    if (newSelection != null) {
       changeSelection(newSelection);
       newSelection.setCaretX(caretX);
     }
@@ -373,9 +377,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public EditorCell findNearestCell(int x, int y) {
     EditorCell cell = null;
     myRootCell.findCell(x, y);
-    if(cell == null) {
+    if (cell == null) {
       cell = myRootCell.findNearestCell(x, y, true);
-      if(cell == null) {
+      if (cell == null) {
         cell = myRootCell.findNearestCell(x, y, false);
       }
     }
@@ -389,7 +393,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private void processCoordSelection(MouseEvent mouseEvent, boolean isPrevious) {
     EditorCell newSelectedCell = myRootCell.findNearestCell(mouseEvent.getX(), mouseEvent.getY(), isPrevious);
-    if(newSelectedCell != null) {
+    if (newSelectedCell != null) {
       changeSelection(newSelectedCell);
       mySelectedCell.processMousePressed(mouseEvent);
     }
@@ -405,34 +409,35 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public EditorCell popSelection() {
-    if(!mySelectedStack.isEmpty()) {
+    if (!mySelectedStack.isEmpty()) {
       return mySelectedStack.pop();
     }
     return null;
   }
 
   public EditorCell peekSelection() {
-    if(!mySelectedStack.isEmpty()) {
+    if (!mySelectedStack.isEmpty()) {
       return mySelectedStack.peek();
     }
     return null;
   }
 
   public void changeSelection(EditorCell newSelectedCell) {
-    if(newSelectedCell == mySelectedCell) {
+    if (newSelectedCell == mySelectedCell) {
       return;
     }
     myNodeSubstituteChooser.setVisible(false);
+    myCellRangeSelection.deactivate();
 
     EditorCell oldSelection = mySelectedCell;
-    if(mySelectedCell != null) {
+    if (mySelectedCell != null) {
       mySelectedCell.setSelected(false);
     }
     mySelectedCell = newSelectedCell;
-    if(mySelectedCell != null) {
+    if (mySelectedCell != null) {
       mySelectedCell.setSelected(true);
     }
-    if(mySelectedCell != null) {
+    if (mySelectedCell != null) {
       JScrollBar hScrollBar = myScrollPane.getHorizontalScrollBar();
       JScrollBar vScrollBar = myScrollPane.getVerticalScrollBar();
       Rectangle viewRect = myScrollPane.getViewport().getViewRect();
@@ -440,14 +445,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       int y = mySelectedCell.getY() - 20;
       int w = mySelectedCell.getWidth() + 40;
       int h = mySelectedCell.getHeight() + 40;
-      if(x < viewRect.x) {
+      if (x < viewRect.x) {
         hScrollBar.setValue(x);
-      } else if(x + w > viewRect.x + viewRect.width) {
+      } else if (x + w > viewRect.x + viewRect.width) {
         hScrollBar.setValue(x + w - viewRect.width);
       }
-      if(y < viewRect.y) {
+      if (y < viewRect.y) {
         vScrollBar.setValue(y);
-      } else if(y + h > viewRect.y + viewRect.height) {
+      } else if (y + h > viewRect.y + viewRect.height) {
         vScrollBar.setValue(y + h - viewRect.height);
       }
     }
@@ -466,7 +471,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   protected void fireCellSelectionChanged(EditorCell oldSelection, EditorCell newSelection) {
     Iterator<ICellSelectionListener> iterator = mySelectionListeners.iterator();
-    while(iterator.hasNext()) {
+    while (iterator.hasNext()) {
       ICellSelectionListener cellSelectionListener = iterator.next();
       cellSelectionListener.selectionChanged(oldSelection, newSelection);
     }
@@ -477,7 +482,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     Rectangle bounds = g.getClipBounds();
     g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
     myRootCell.paint(g);
-    if(mySelectedCell != null) {
+    if (mySelectedCell != null) {
       mySelectedCell.paint(g);
     }
   }
@@ -486,7 +491,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     JViewport viewport = myScrollPane.getViewport();
     Rectangle viewRect = viewport.getViewRect();
     return new Dimension(Math.max(viewRect.width, myRootCell.getWidth() + 100),
-        Math.max(viewRect.height, myRootCell.getHeight() + 100));
+            Math.max(viewRect.height, myRootCell.getHeight() + 100));
   }
 
   public Dimension getPreferredScrollableViewportSize() {
@@ -494,7 +499,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public int getScrollableUnitIncrement(Rectangle visibleRect, int orientation, int direction) {
-    if(orientation == SwingConstants.VERTICAL) {
+    if (orientation == SwingConstants.VERTICAL) {
       return 20;
     } else { // if orientation == SwingConstants.HORIZONTAL
       return 20;
@@ -548,13 +553,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     // hardcoded actions which should be excuted outside command
 
     // hardcoded undo/redo action
-    if(keyEvent.getKeyCode() == KeyEvent.VK_Z && keyEvent.isControlDown()) {
-      if(keyEvent.isShiftDown()) {
-        if(UndoManager.instance().isRedoAvailable(getContext())) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_Z && keyEvent.isControlDown()) {
+      if (keyEvent.isShiftDown()) {
+        if (UndoManager.instance().isRedoAvailable(getContext())) {
           UndoManager.instance().redo(getContext());
         }
       } else {
-        if(UndoManager.instance().isUndoAvailable(getContext())) {
+        if (UndoManager.instance().isUndoAvailable(getContext())) {
           UndoManager.instance().undo(getContext());
         }
       }
@@ -563,15 +568,15 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     // hardcoded "update" action
-    if(keyEvent.getKeyCode() == KeyEvent.VK_F5) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_F5) {
       rebuildEditorContent();
       keyEvent.consume();
       return;
     }
 
     // dump cells tree starting from current
-    if(keyEvent.getKeyCode() == KeyEvent.VK_D && keyEvent.isControlDown()) {
-      if(mySelectedCell != null) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_D && keyEvent.isControlDown()) {
+      if (mySelectedCell != null) {
         System.out.println("--- Dump cells ---");
         EditorUtil.dumpCells(mySelectedCell, 0);
         keyEvent.consume();
@@ -579,14 +584,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }
 
-    // multiple selection of adjacent cells
-    //if()
-
     // all other processing should be performed inside command
 
     CommandProcessor.instance().executeCommand(getContext(), new Runnable() {
       public void run() {
-        if(peekKeyboardHandler().processKeyPressed(getContext(), keyEvent) == true) {
+        if (peekKeyboardHandler().processKeyPressed(getContext(), keyEvent) == true) {
           keyEvent.consume();
           return;
         }
@@ -597,26 +599,26 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   boolean activateNodeSubstituteChooser(EditorCell editorCell, boolean resetPattern) {
-    if(myNodeSubstituteChooser.isVisible()) {
+    if (myNodeSubstituteChooser.isVisible()) {
       return true;
     }
 
-    if(editorCell != null && editorCell.getSubstituteInfo() != null) {
+    if (editorCell != null && editorCell.getSubstituteInfo() != null) {
       NodeSubstitutePatternEditor patternEditor = editorCell.createSubstitutePatternEditor();
-      if(resetPattern) {
+      if (resetPattern) {
         patternEditor.setCaretPosition(0);
       }
       String pattern = patternEditor.getPattern();
 
       INodeSubstituteInfo substituteInfo = editorCell.getSubstituteInfo();
       boolean trySubstituteNow =
-          !patternEditor.getText().equals(substituteInfo.getOriginalText()) || // user changed text or cell has no text
-          pattern.equals(patternEditor.getText()); // caret at the end
+              !patternEditor.getText().equals(substituteInfo.getOriginalText()) || // user changed text or cell has no text
+              pattern.equals(patternEditor.getText()); // caret at the end
 
       // 1st - try to do substitution with current pattern (id cursor at the end of text)
-      if(trySubstituteNow) {
+      if (trySubstituteNow) {
         List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(pattern);
-        if(matchingActions.size() == 1) {
+        if (matchingActions.size() == 1) {
           CommandUtil.substituteNode(matchingActions.get(0), pattern, substituteInfo, this.getContext());
           return true;
         }
@@ -631,6 +633,22 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return false;
   }
 
+  public void paint(Graphics g) {
+    super.paint(g);
+    if (myCellRangeSelection.isActive()) {
+      g.setColor(Color.magenta);
+      Iterator<SemanticNode> nodes = myCellRangeSelection.getNodes().iterator();
+      while (nodes.hasNext()) {
+        EditorCell cell = findNodeCell(nodes.next());
+        g.drawRect(cell.getX(), cell.getY(), cell.getWidth(), cell.getHeight());
+        g.drawRect(cell.getX() - 1, cell.getY() - 1, cell.getWidth() + 2, cell.getHeight() + 2);
+      }
+    }
+  }
+
+  EditorCellRangeSelection getCellRangeSelection() {
+    return myCellRangeSelection;
+  }
 
 
   // ---- semantic model listener
@@ -652,9 +670,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     public void nodeDeleted(SemanticModel semanticModel, SemanticNode container) {
       rebuildEditorContent();
-      if(mySelectedCell == null) {
+      if (mySelectedCell == null) {
         EditorCell changedNodeCell = findNodeCell(container);
-        if(changedNodeCell != null) {
+        if (changedNodeCell != null) {
           changeSelection(changedNodeCell);
         }
       }
@@ -662,18 +680,18 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     private void handleNodelAdded(SemanticNode child) {
       EditorCell childCell = findNodeCell(child);
-      if(childCell == null) {
+      if (childCell == null) {
         // this editor doesn't contain this node.
         return;
       }
 
-      if(childCell instanceof EditorCell_Collection) {
+      if (childCell instanceof EditorCell_Collection) {
         EditorCell errorCell = ((EditorCell_Collection) childCell).findFirstErrorCell();
-        if(errorCell != null) {
+        if (errorCell != null) {
           changeSelection(errorCell);
         } else {
           EditorCell selectableLeaf = ((EditorCell_Collection) childCell).findFirstSelectableLeaf();
-          if(selectableLeaf != null) {
+          if (selectableLeaf != null) {
             changeSelection(selectableLeaf);
           } else {
             changeSelection(childCell);
@@ -684,7 +702,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
 
       // put caret at the end of text
-      if(mySelectedCell instanceof EditorCell_Label && ((EditorCell_Label) mySelectedCell).isEditable()) {
+      if (mySelectedCell instanceof EditorCell_Label && ((EditorCell_Label) mySelectedCell).isEditable()) {
         TextLine textLine = ((EditorCell_Label) mySelectedCell).getTextLine();
         textLine.setCaretPosition(textLine.getText().length());
       }
