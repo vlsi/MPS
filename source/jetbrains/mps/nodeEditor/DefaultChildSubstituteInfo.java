@@ -46,18 +46,14 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
         }
 
         public SemanticNode doSubstitute(String pattern) {
-          Cardinality sourceCardinality = myLinkDeclaration.getSourceCardinality();
-          if (sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._0_1) {
-            SemanticNode childNode = SModelUtil.instantiateConceptDeclaration(childType, mySourceNode.getModel());
-            String role = myLinkDeclaration.getRole();
-            SemanticNode oldChild = mySourceNode.getChild(role);
-            if (oldChild != null) {
-              oldChild.delete();
-            }
-            mySourceNode.setChild(role, childNode);
-            return childNode;
+          SemanticNode childNode = SModelUtil.instantiateConceptDeclaration(childType, mySourceNode.getModel());
+          String role = myLinkDeclaration.getRole();
+          SemanticNode oldChild = mySourceNode.getChild(role);
+          if (oldChild != null) {
+            oldChild.delete();
           }
-          return null;
+          mySourceNode.setChild(role, childNode);
+          return childNode;
         }
       });
     }

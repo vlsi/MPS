@@ -46,10 +46,7 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
         }
 
         public SemanticNode doSubstitute(String pattern) {
-          Cardinality sourceCardinality = myLinkDeclaration.getSourceCardinality();
-          if (sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._0_1) {
-            mySourceNode.setReferent(myLinkDeclaration.getRole(), targetNode);
-          }
+          mySourceNode.setReferent(myLinkDeclaration.getRole(), targetNode);
           return null;
         }
       });
