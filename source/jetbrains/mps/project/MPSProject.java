@@ -3,6 +3,7 @@ package jetbrains.mps.project;
 import jetbrains.mps.generator.ContextUtil;
 import jetbrains.mps.semanticModel.SemanticModel;
 import jetbrains.mps.semanticModel.SemanticModels;
+import jetbrains.mps.semanticModel.LanguageDescriptor;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.PathManager;
 import org.jdom.Document;
@@ -11,7 +12,9 @@ import org.jdom.JDOMException;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.FilenameFilter;
 import java.util.Iterator;
+import java.util.HashMap;
 
 /**
  * Author: Sergey Dmitriev
@@ -20,6 +23,8 @@ import java.util.Iterator;
 public class MPSProject extends AbstractMPSProject {
   private File myProjectFile;
 
+  private static final String LANGUAGE_ROOTS = "languageRoots";
+  private static final String LANGUAGE_ROOT = "languageRoot";
   private static final String SEMANTIC_MODELS = "semanticModels";
   private static final String SEMANTIC_MODEL = "semanticModel";
   private static final String FILE = "file";
@@ -28,6 +33,7 @@ public class MPSProject extends AbstractMPSProject {
 
   private static final String PATH_MACRO_MODELS_ROOT = "${models_root}" + File.separatorChar;
   private static final String PATH_MACRO_PROJECT = "${project}" + File.separatorChar;
+  private HashMap<String, LanguageDescriptor> myLanguageDescriptors = new HashMap<String, LanguageDescriptor>();
 
   public MPSProject(File file) {
     myProjectFile = file;
@@ -50,8 +56,31 @@ public class MPSProject extends AbstractMPSProject {
       e.printStackTrace();
       return;
     }
-
     Element rootElement = document.getRootElement();
+
+    Element languageRootsElement = rootElement.getChild(LANGUAGE_ROOTS);
+    if (languageRootsElement != null) {
+      Iterator languageRoots = languageRootsElement.getChildren(LANGUAGE_ROOT).iterator();
+      while (languageRoots.hasNext()) {
+        Element element = (Element) languageRoots.next();
+        String rootFileName = element.getAttributeValue(NAME);
+        String rootAbsolutePath = null;
+        if (rootFileName.startsWith(PATH_MACRO_PROJECT)) {
+          String modelRelativePath = rootFileName.substring(PATH_MACRO_PROJECT.length());
+          rootAbsolutePath = PathManager.getAbsolutePathByRelational(myProjectFile, modelRelativePath);
+        } else { // default
+          rootAbsolutePath = PathManager.getAbsolutePathByRelational(myProjectFile, rootFileName);
+        }
+        File dir = new File(rootAbsolutePath);
+        if (dir.exists()) {
+          loadLanguageDescriptors(dir);
+        } else {
+          throw new RuntimeException("Couldn't load languages from " + rootAbsolutePath +
+                  "\nDirectory doesn't exist: " + rootAbsolutePath);
+        }
+      }
+    }
+
     Element modelElement = rootElement.getChild(SEMANTIC_MODELS);
     if (modelElement != null) {
       Iterator models = modelElement.getChildren(SEMANTIC_MODEL).iterator();
@@ -92,6 +121,30 @@ public class MPSProject extends AbstractMPSProject {
 
       mySemanticModels.flushModelInfos();
     }
+  }
+
+  private void loadLanguageDescriptors(File dir) {
+    if(!dir.isDirectory()) {
+      return;
+    }
+    File[] files = dir.listFiles(new FilenameFilter() {
+          public boolean accept(File dir, String name) {
+            return name.endsWith(".mpl");
+          }
+        });
+    for (int i = 0; i < files.length; i++) {
+      File file = files[i];
+      LanguageDescriptor languageDescriptor = LanguageDescriptor.loadFromFile(file, this);
+      myLanguageDescriptors.put(languageDescriptor.getNameSpace(), languageDescriptor);
+    }
+    File[] dirs = dir.listFiles();
+    for (int i = 0; i < dirs.length; i++) {
+      File childDir = dirs[i];
+      if(childDir.isDirectory()) {
+        loadLanguageDescriptors(childDir);
+      }
+    }
+
   }
 
   public void save() {
@@ -148,4 +201,7 @@ public class MPSProject extends AbstractMPSProject {
     return myProjectFile;
   }
 
+  public LanguageDescriptor getLanguageDescriptor(String namespace) {
+    return myLanguageDescriptors.get(namespace);
+  }
 }
