@@ -30,7 +30,7 @@ public class SuperConstructorInvocation_Editor extends SemanticNodeEditor {
     SuperConstructorInvocation_NodeBoxActions.setCellActions(editorCell, node);
     editorCell.addEditorCell(this.createConstantCell(editorContext, node, "super("));
     editorCell.addEditorCell(this.createActualArgumentList(editorContext, node));
-    editorCell.addEditorCell(this.createConstantCell1(editorContext, node, ")"));
+    editorCell.addEditorCell(this.createConstantCell2(editorContext, node, ")"));
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
@@ -42,7 +42,7 @@ public class SuperConstructorInvocation_Editor extends SemanticNodeEditor {
     cellCollection.setGridLayout(false);
     return cellCollection;
   }
-  public EditorCell createConstantCell1(EditorContext editorContext, SemanticNode node, String text) {
+  public EditorCell createConstantCell2(EditorContext editorContext, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
     return editorCell;
   }
