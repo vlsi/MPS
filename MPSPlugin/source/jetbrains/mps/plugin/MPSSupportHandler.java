@@ -8,6 +8,8 @@ import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.fileEditor.FileEditorManager;
+import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.psi.*;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.IncorrectOperationException;
@@ -52,12 +54,14 @@ public class MPSSupportHandler {
 
   public String createAspectMethod(final String namespace, final String name, final String returnType, final String params) {
     if (!isAspectsClassExist(namespace)) createAspectClass(namespace);
+
     executeWriteAction(new Runnable() {
       public void run() {
         PsiClass cls = getAspectsClass(namespace);
         try {
           PsiMethod method = getPsiElementFactory().createMethodFromText("public static " + returnType + " " + name + "(" + params + ")  { }", cls);
-          cls.add(method);
+          method = (PsiMethod) cls.add(method);
+          method.navigate(true);
         } catch (IncorrectOperationException e) {
           e.printStackTrace();
         }
