@@ -634,6 +634,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         Language language = Language.getLanguage(mySelectedCell.getSemanticNode(), project);
         ITypesystem typesystem = language.getTypesystem();
         TSStatus status = typesystem.checkNodeType(mySelectedCell.getSemanticNode());
+        if(status.isOk()) {
+          System.out.println("--- check status OK. Type: " + status.getTypeObject());
+        } else {
+          System.out.println("--- check status ERROR: " + status.getMessage());
+        }
         keyEvent.consume();
         return;
       }
