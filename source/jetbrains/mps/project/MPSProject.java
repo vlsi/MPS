@@ -306,7 +306,6 @@ public class MPSProject implements ModelLocator {
 
   public void saveComponents() {
     try {
-      if (myWorkspaceFile == null) return;
       if (!myWorkspaceFile.exists()) {
         myWorkspaceFile.createNewFile();
       }
