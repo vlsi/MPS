@@ -154,7 +154,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
     popupMenu.addSeparator();
     popupMenu.add(createGoByReferenceMenu(selectedNode));
-    popupMenu.add(createGoByBackReferenceMenu(selectedNode));
     popupMenu.add(createFindUsagesAction(selectedNode));
     popupMenu.show(AbstractEditorComponent.this, e.getX(), e.getY());
   }
@@ -222,34 +221,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         ((IdeMain)IdeMain.instance()).showUsagesView(usageModel);
       }
     };
-  }
-
-  private JMenu createGoByBackReferenceMenu(SemanticNode node) {
-    JMenu menu = new JMenu("Go To Usage");
-    int count = 0;
-    List<SemanticReference> backReferences = node.getBackReferences();
-    for (int i = 0; i < backReferences.size(); i++) {
-      SemanticReference reference = backReferences.get(i);
-      if (reference.getMetaClass() == LinkMetaclass.aggregation) {
-        continue; // ignore parents
-      }
-      count++;
-      final SemanticNode targetNode = reference.getSourceNode();
-      String actionText = "[" + reference.getRole() + "] " + targetNode.getDebugText();
-      AbstractAction action = new AbstractAction(actionText) {
-        public void actionPerformed(ActionEvent e) {
-          SemanticNode toOpenNode = SemanticModelUtil.getRootParent(targetNode);
-          AbstractEditorComponent editor = IdeMain.instance().getEditorsPane().openEditor(toOpenNode, EditorsPane.LEFT);
-          editor.selectNode(targetNode);
-        }
-      };
-      menu.add(action);
-    }
-
-    if (count == 0) {
-      menu.add("no usages found");
-    }
-    return menu;
   }
 
   public JComponent getExternalComponent() {
