@@ -19,20 +19,6 @@ public class CellAction_DeleteReference extends EditorCellAction {
   }
 
   public boolean canExecute(EditorContext context) {
-//    SemanticTypeDeclaration typeDeclaration = SemanticModelUtil.getTypeDeclaration(mySource);
-//    Iterator<SemanticLinkDeclaration> iterator = typeDeclaration.semanticLinkDeclarations();
-//    while(iterator.hasNext()) {
-//      SemanticLinkDeclaration linkDeclaration = iterator.next();
-//      if(linkDeclaration.getRole().equals(myRole)) {
-//        String sourceCardinality = linkDeclaration.getSourceCardinality();
-//        if(SemanticLinkDeclaration.CARDINALITY_0_1.equals(sourceCardinality) ||
-//            SemanticLinkDeclaration.CARDINALITY_1.equals(sourceCardinality)) {
-//          return true;
-//        } else {
-//          return false;
-//        }
-//      }
-//    }
     SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(mySource, myRole);
     if(linkDeclaration != null) {
       String sourceCardinality = linkDeclaration.getSourceCardinality();
