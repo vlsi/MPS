@@ -33,7 +33,6 @@ public class MPSProject implements ModelLocator {
   private ArrayList<SemanticModel> myLibraryModels = new ArrayList<SemanticModel>();
   private ArrayList<ModelRoot> myProjectModelRoots = new ArrayList<ModelRoot>();
   private ArrayList<ModelRoot> myLibraryModelRoots = new ArrayList<ModelRoot>();
-
   private ArrayList<File> myLanguageRoots = new ArrayList<File>();
 
   public static final String LANGUAGES = "languages";
@@ -72,6 +71,18 @@ public class MPSProject implements ModelLocator {
     addComponent(MainFrameComponent.class, new MainFrameComponent());
     addComponent(SemanticModels.class, new SemanticModels(this));
     addComponent(ExecutionManager.class, new ExecutionManager());
+  }
+
+  public List<ModelRoot> getProjectModelRoots() {
+    return Collections.unmodifiableList(myProjectModelRoots);
+  }
+
+  public List<ModelRoot> getLibraryModelRoots() {
+    return Collections.unmodifiableList(myLibraryModelRoots);
+  }
+
+  public List<File> getLanguageRoots() {
+    return Collections.unmodifiableList(myLanguageRoots);
   }
 
   public List<Object> getComponents() {
