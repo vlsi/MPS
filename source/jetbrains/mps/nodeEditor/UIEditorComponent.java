@@ -20,6 +20,8 @@ public class UIEditorComponent extends AbstractEditorComponent {
   public UIEditorComponent(IdeMain ideMain) {
     super(ideMain);
     myProject = ideMain.getProject();
+
+    unregisterKeyboardAction(KeyStroke.getKeyStroke("ESCAPE"));
   }
   
   public void editNode(SemanticNode semanticNode) {
