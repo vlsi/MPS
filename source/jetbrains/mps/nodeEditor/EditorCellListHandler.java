@@ -18,7 +18,6 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
   private SemanticNode myOwnerNode;
   private EditorCell_Collection myListEditorCell_Collection;
   private EditorCell_Collection myInsertCell;
-  private boolean myVertical;
   private SemanticNode myInsertedNode;
   private EditorCell myInsertedNodeCell;
 
@@ -97,10 +96,6 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
     return myInsertedNode != null;
   }
 
-  private boolean isVertical() {
-    return myVertical;
-  }
-
   protected EditorCell createNodeCell(EditorContext editorContext, SemanticNode node) {
     return editorContext.createNodeCell(node);
   }
@@ -119,21 +114,14 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
   public abstract SemanticNode createNodeToInsert();
 
   public EditorCell_Collection createCells_Vertical(EditorContext editorContext) {
-    myVertical = true;
-    return createCells(editorContext);
+    return createCells(editorContext, new CellLayout_Vertical());
   }
 
   public EditorCell_Collection createCells_Horizontal(EditorContext editorContext) {
-    myVertical = false;
-    return createCells(editorContext);
+    return createCells(editorContext, new CellLayout_Horizontal());
   }
-
-  private EditorCell_Collection createCells(EditorContext editorContext) {
-    if (isVertical()) {
-      myListEditorCell_Collection = EditorCell_Collection.createVertical(editorContext, myOwnerNode);
-    } else {
-      myListEditorCell_Collection = EditorCell_Collection.createHorizontal(editorContext, myOwnerNode);
-    }
+  public EditorCell_Collection createCells(EditorContext editorContext, CellLayout cellLayout) {
+    myListEditorCell_Collection = EditorCell_Collection.create(editorContext, myOwnerNode, cellLayout);
     myListEditorCell_Collection.setSelectable(false);
 
     Iterator<SemanticNode> listNodes = null;
