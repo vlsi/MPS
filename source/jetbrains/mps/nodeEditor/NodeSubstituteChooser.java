@@ -2,6 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.ide.command.CommandUtil;
+import jetbrains.mps.ide.command.CommandProcessor;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -187,7 +188,6 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   }
 
   public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
-
     if (getPatternEditor().processKeyPressed(keyEvent)) {
       if (isPopupActivated) {
         rebuildMenuEntries();
@@ -310,6 +310,17 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
         public void mousePressed(MouseEvent e) {
           repaintPopupMenu();
           updatePatternEditor();
+        }
+
+        public void mouseClicked(MouseEvent e) {
+          if (e.getClickCount() == 2) {
+            CommandProcessor.instance().executeCommand(new Runnable() {
+              public void run() {
+                doSubstitute();
+              }
+            }, "Substitute");
+
+          }
         }
       });
 
