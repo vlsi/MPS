@@ -30,8 +30,8 @@ public class JavaNameUtil {
     return packageName + "." + shortClassName;
   }
 
-  public static String packageNameForModelNamespace(SemanticModel semanticModel) {
-    String modelFqName = semanticModel.getNamespace();
+  public static String packageNameForLanguageStrurcture(SemanticModel structureModel) {
+    String modelFqName = structureModel.getNamespace();
     if (modelFqName.startsWith("jetbrains.mps.") || modelFqName.startsWith("java.")) {
       return modelFqName;
     }
