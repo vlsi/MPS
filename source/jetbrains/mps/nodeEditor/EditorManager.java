@@ -1,12 +1,12 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.conversion.MPSClassLoader;
+import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.diagnostic.Logger;
 import jetbrains.mps.semanticModel.Language;
-import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
-import jetbrains.mps.conversion.MPSClassLoader;
 import jetbrains.mps.util.NodeNameUtil;
 
 /**
@@ -78,7 +78,8 @@ public class EditorManager {
       (new RuntimeException("Error loading editor for node \"" + node.getDebugText() + "\" : couldn't find language.")).printStackTrace();
       return null;
     }
-    ConceptDeclaration nodeConcept = language.findTypeDeclaration(SModelUtil.getNodeTypeName(node));
+    String conceptName = JavaNameUtil.shortName(node.getClass().getName());
+    ConceptDeclaration nodeConcept = language.findTypeDeclaration(conceptName);
     if (nodeConcept == null) {
       (new RuntimeException("Error loading editor for node \"" + node.getDebugText() + "\" : couldn't find the type declaration.")).printStackTrace();
       return null;

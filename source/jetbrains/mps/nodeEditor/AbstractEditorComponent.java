@@ -449,9 +449,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
 
       private ClassConcept toModelClass(ClassConcept tmpClass, SModel targetModel, MPSProject project) {
-        ClassConcept modelClass = SModelUtil.findJavaClass(NameUtil.nodeFQName(tmpClass), getContext().getProject());
+        ClassConcept modelClass = (ClassConcept) SModelUtil.findNodeByFQName(NameUtil.nodeFQName(tmpClass), getContext().getProject());
         if (modelClass == null) {
-          modelClass = SModelUtil.findJavaClass("java.lang.Object", project);
+          modelClass = (ClassConcept) SModelUtil.findNodeByFQName("java.lang.Object", project);
         }
         if (modelClass != null && targetModel != modelClass.getModel()) {
           targetModel.addImportedModel(modelClass.getModel());
