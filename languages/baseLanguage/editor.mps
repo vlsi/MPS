@@ -6,9 +6,9 @@
   <import referenceID="8" name="structure" namespace="baseLanguage" />
   <import referenceID="9" name="structure" namespace="core" />
   <import referenceID="13" name="editor_context" namespace="baseLanguage" />
-  <import referenceID="14" name="lang" namespace="java" />
-  <import referenceID="15" name="semanticModel" namespace="jetbrains.mps" />
-  <import referenceID="16" name="util" namespace="java" />
+  <import referenceID="14" name="structure" namespace="java.lang" />
+  <import referenceID="15" name="structure" namespace="jetbrains.mps.semanticModel" />
+  <import referenceID="16" name="structure" namespace="java.util" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1073416106125">
     <link role="semanticTypeDeclaration" targetNodeId="8.1068580123136" />
     <link role="actionSetDeclaration" metaClass="aggregation">
