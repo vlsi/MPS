@@ -2,6 +2,7 @@ package jetbrains.mps.textGen;
 
 import jetbrains.mps.ide.diagnostic.Logger;
 import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.mapping.MappingTextGenManager;
 
 /**
  * User: Dmitriev.
@@ -18,13 +19,14 @@ public class TextGenManager {
     return myInstance;
   }
 
+
   public String generateText(SemanticNode node) {
     TextGenBuffer buffer = new TextGenBuffer();
     appendNodeText(buffer, node);
     return buffer.getText();
   }
 
-  /*package*/ void appendNodeText(TextGenBuffer buffer, SemanticNode node) {
+  protected void appendNodeText(TextGenBuffer buffer, SemanticNode node) {
     if(node == null) {
       buffer.append("???");
       return;

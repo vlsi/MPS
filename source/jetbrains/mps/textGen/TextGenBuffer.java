@@ -55,6 +55,18 @@ public class TextGenBuffer {
     return myUserObjects.get(key);
   }
 
+  public int getDefaultBufferLength() {
+    return getBufferLength(DEFAULT);
+  }
+
+  public int getTopBufferLength() {
+    return getBufferLength(TOP);
+  }
+
+  public int getBufferLength(int partId) {
+    return myBuffers[partId].length();
+  }
+
   public int selectPart(int partId) {
     int currPartId = myCurrBuffer;
     myCurrBuffer = partId;
