@@ -150,6 +150,13 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
           System.out.println("NO SUBSTITUTE");
         }
 
+        // surround with substitution
+        if ((keyEvent.getKeyCode() == KeyEvent.VK_T && keyEvent.isControlDown() && keyEvent.isAltDown())) {
+          if (editor.activateSurroundWithSubstituteChooser(selectedCell, false)) {
+            return true;
+          }
+        }
+
         if (editor.getCellRangeSelection().isSelectionKeystroke(keyEvent)) {
           if (editor.getCellRangeSelection().activate(keyEvent)) {
             return true;
