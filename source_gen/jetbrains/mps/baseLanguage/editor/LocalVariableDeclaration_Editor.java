@@ -8,11 +8,11 @@ import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.EditorCell_Error;
 
 public class LocalVariableDeclaration_Editor extends SemanticNodeEditor {
 
@@ -38,7 +38,7 @@ public class LocalVariableDeclaration_Editor extends SemanticNodeEditor {
     if(type != null) {
       editorCell = this.nodeCell(editorContext, type);
     } else {
-      editorCell = LocalVariableDeclaration_Actions.createCustomCell_NullTypeCell(editorContext, node);
+      editorCell = EditorCell_Error.create(editorContext, node, null);
     }
     LocalVariableDeclaration_TypeCellActions.setCellActions(editorCell, node);
     return editorCell;
