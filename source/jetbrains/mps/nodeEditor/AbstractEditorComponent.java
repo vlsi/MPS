@@ -305,6 +305,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       semanticModel.addSemanticModelListener(mySemanticModelListener);
       addImportedModelsToListener(semanticModel);
     }
+
+    revalidate();
+    repaint();
   }
 
   private void addImportedModelsToListener(SemanticModel semanticModel) {
