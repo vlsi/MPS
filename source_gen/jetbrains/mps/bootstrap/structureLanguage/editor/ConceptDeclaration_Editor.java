@@ -26,7 +26,7 @@ import jetbrains.mps.nodeEditor.CellAction_DeleteReferenceToNode;
 
 public class ConceptDeclaration_Editor extends DefaultNodeEditor {
 
-  EditorCellListHandler mySemanticLinkDeclarationListHandler;
+  EditorCellListHandler myLinkDeclarationListHandler;
   EditorCellListHandler mySemanticPropertyDeclarationListHandler;
 
   public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
@@ -44,7 +44,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRowCell1(context, node));
     editorCell.addEditorCell(this.createSeparator2(context, node, ""));
     editorCell.addEditorCell(this.createConstantCell3(context, node, "Links:"));
-    editorCell.addEditorCell(this.createSemanticLinkDeclarationList(context, node));
+    editorCell.addEditorCell(this.createLinkDeclarationList(context, node));
     editorCell.addEditorCell(this.createSeparator3(context, node, ""));
     editorCell.addEditorCell(this.createConstantCell4(context, node, "Properties:"));
     editorCell.addEditorCell(this.createSemanticPropertyDeclarationList(context, node));
@@ -197,12 +197,12 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
     return editorCell;
   }
-  public EditorCell createSemanticLinkDeclarationList(EditorContext context, SemanticNode node) {
-    if(this.mySemanticLinkDeclarationListHandler == null) {
-      this.mySemanticLinkDeclarationListHandler = new ConceptDeclaration_Editor_SemanticLinkDeclarationListHandler(node, "semanticLinkDeclaration", true);
+  public EditorCell createLinkDeclarationList(EditorContext context, SemanticNode node) {
+    if(this.myLinkDeclarationListHandler == null) {
+      this.myLinkDeclarationListHandler = new ConceptDeclaration_Editor_LinkDeclarationListHandler(node, "linkDeclaration", true);
     }
     EditorCell_Collection editorCell = null;
-    editorCell = this.mySemanticLinkDeclarationListHandler.createCells_Vertical(context);
+    editorCell = this.myLinkDeclarationListHandler.createCells_Vertical(context);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(true);

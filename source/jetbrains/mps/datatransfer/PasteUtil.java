@@ -150,7 +150,7 @@ public class PasteUtil {
   }
 
   private static LinkDeclaration findListlikeMetalink(ConceptDeclaration sourceMetatype, ConceptDeclaration targetMetatype) {
-    Iterator<LinkDeclaration> metalinks = sourceMetatype.semanticLinkDeclarations();
+    Iterator<LinkDeclaration> metalinks = sourceMetatype.linkDeclarations();
     while (metalinks.hasNext()) {
       LinkDeclaration metalink = metalinks.next();
       if (SemanticModelUtil.isAssignableType(metalink.getTarget(), targetMetatype)) {
