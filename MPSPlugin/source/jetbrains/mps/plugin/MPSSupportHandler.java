@@ -20,6 +20,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * @author Kostik
@@ -46,18 +47,24 @@ public class MPSSupportHandler {
   }
 
   public String buildProject() {
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-          public void run() {
-            Module[] mods = ModuleManager.getInstance(myProject).getModules();
-            for (int i = 0; i < mods.length; i++) {
-              CompilerManager.getInstance(myProject).make(mods[i], null);
+    try {
+      SwingUtilities.invokeAndWait(new Runnable() {
+        public void run() {
+          ApplicationManager.getApplication().runWriteAction(new Runnable() {
+            public void run() {
+              Module[] mods = ModuleManager.getInstance(myProject).getModules();
+              for (int i = 0; i < mods.length; i++) {
+                CompilerManager.getInstance(myProject).make(mods[i], null);
+              }
             }
-          }
-        });
-      }
-    });
+          });
+        }
+      });
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    } catch (InvocationTargetException e) {
+      e.printStackTrace();
+    }
     return "OK";
   }
 
