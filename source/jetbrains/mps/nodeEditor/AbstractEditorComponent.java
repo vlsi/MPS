@@ -103,7 +103,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       public void actionPerformed(ActionEvent e) {
         if (mySelectedCell != null && mySelectedCell.getSemanticNode() != null) {
           SemanticNode node = mySelectedCell.getSemanticNode();
-          IdeMain.instance().getProjectPane().selectNode(node);
+          ProjectPane projectPane = IdeMain.instance().getProjectPane();
+          projectPane.selectNode(node);
+          projectPane.getTree().requestFocus();          
         }
       }
     }, KeyStroke.getKeyStroke("control P"), WHEN_FOCUSED);
