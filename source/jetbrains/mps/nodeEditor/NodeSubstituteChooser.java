@@ -59,23 +59,10 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   }
 
   public void setLocationRelative(EditorCell cell) {
-    myPopupWindow = new PopupWindow(getEditorWindow());
+    myPopupWindow = new PopupWindow(getEditorWindow(), cell);
 
     Component component = cell.getEditorContext().getNodeEditorComponent();
     Point anchor = component.getLocationOnScreen();
-    Point location = new Point(anchor.x + cell.getX(), anchor.y + cell.getY() + cell.getHeight());
-
-    int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
-    if (location.getY() + PopupWindow.PREFERRED_HEIGHT > screenHeight - 150) {
-      location = new Point(location.x, location.y - PopupWindow.PREFERRED_HEIGHT - cell.getHeight());
-      getPopupWindow().setPosition(PopupWindowPosition.TOP);
-    } else {
-      getPopupWindow().setPosition(PopupWindowPosition.BOTTOM);
-    }
-
-
-
-    getPopupWindow().setLocation(location);
     getPopupWindow().relayout();
 
     myPatternEditorLocation = new Point(anchor.x + cell.getX(), anchor.y + +cell.getY());
@@ -299,9 +286,12 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     private JList myList = new JList(new DefaultListModel());
     private PopupWindowPosition myPosition = PopupWindowPosition.BOTTOM;
     private JScrollPane myScroller = new JScrollPane(myList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);;
+    private EditorCell myRelativeCell;
 
-    public PopupWindow(Window owner) {
+    public PopupWindow(Window owner, EditorCell cell) {
       super(owner);
+      myRelativeCell = cell;
+
       myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
       myList.setFont(new TextLine("", null).getFont());
       myList.setBackground(new Color(255, 255, 200));
@@ -351,6 +341,23 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     }
 
     public void relayout() {
+      Point newLocation = new Point();
+
+      Component component = myRelativeCell.getEditorContext().getNodeEditorComponent();
+      Point anchor = component.getLocationOnScreen();
+      Point location = new Point(anchor.x + myRelativeCell.getX(), anchor.y + myRelativeCell.getY() + myRelativeCell.getHeight());
+
+      int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
+      if (location.getY() + PopupWindow.PREFERRED_HEIGHT > screenHeight - 150) {
+        System.out.println("Top!");
+        location = new Point(location.x, location.y - PopupWindow.PREFERRED_HEIGHT - myRelativeCell.getHeight());
+        getPopupWindow().setPosition(PopupWindowPosition.TOP);
+      } else {
+        getPopupWindow().setPosition(PopupWindowPosition.BOTTOM);
+      }
+
+      newLocation = location;
+
       DefaultListModel model = (DefaultListModel) myList.getModel();
       int oldIndex = getSelectionIndex();
 
@@ -362,8 +369,6 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       setSelectionIndex(oldIndex);
       myList.ensureIndexIsVisible(getSelectionIndex());
 
-      int maxY = getLocation().y + getHeight();
-
 
       Border border = myScroller.getBorder();
       Insets insets = border.getBorderInsets(myScroller);
@@ -371,16 +376,19 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       setSize(
               Math.max(PREFERRED_WIDTH, myList.getPreferredSize().width + 50),
               Math.min(PREFERRED_HEIGHT, myList.getPreferredSize().height + scrollerBorderHeight));
+      int maxY = newLocation.y + getHeight();
 
       if (getPosition() == PopupWindowPosition.TOP) {
-        setLocation(getX(), maxY - getHeight());
+        newLocation = new Point(newLocation.x, maxY - getHeight());
       }
 
 
       int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
-      if (getWidth() + getX() > screenWidth) {
-        setLocation(screenWidth - getWidth(),  getY());
+      if (getWidth() + newLocation.x > screenWidth) {
+        newLocation = new Point(screenWidth - getWidth(),  newLocation.y);
       }
+
+      setLocation(newLocation);
 
       validateTree();
       repaint();
