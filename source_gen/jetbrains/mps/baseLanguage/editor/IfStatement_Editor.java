@@ -48,10 +48,12 @@ public class IfStatement_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(condition != null) {
       editorCell = this.nodeCell(editorContext, condition);
+      IfStatement_ConditionCellActions.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
+      IfStatement_ConditionCellActions.setCellActions(editorCell, node);
+      _DefErrorActions.setCellActions(editorCell, node);
     }
-    IfStatement_ConditionCellActions.setCellActions(editorCell, node);
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext editorContext, SemanticNode node, String text) {

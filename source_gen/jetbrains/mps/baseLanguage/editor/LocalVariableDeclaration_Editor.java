@@ -37,10 +37,11 @@ public class LocalVariableDeclaration_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(type != null) {
       editorCell = this.nodeCell(editorContext, type);
+      LocalVariableDeclaration_TypeCellActions.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
+      LocalVariableDeclaration_TypeCellActions.setCellActions(editorCell, node);
     }
-    LocalVariableDeclaration_TypeCellActions.setCellActions(editorCell, node);
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext editorContext, SemanticNode node) {
@@ -65,10 +66,11 @@ public class LocalVariableDeclaration_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(initializer != null) {
       editorCell = this.nodeCell(editorContext, initializer);
+      _VariableInitializer_ActionSet.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
+      _VariableInitializer_ActionSet.setCellActions(editorCell, node);
     }
-    _VariableInitializer_ActionSet.setCellActions(editorCell, node);
     return editorCell;
   }
 }

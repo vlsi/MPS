@@ -37,10 +37,12 @@ public class ReturnStatement_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(expression != null) {
       editorCell = this.nodeCell(editorContext, expression);
+      ReturnStatement_ExpressionCellActions.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
+      ReturnStatement_ExpressionCellActions.setCellActions(editorCell, node);
+      _DefErrorActions.setCellActions(editorCell, node);
     }
-    ReturnStatement_ExpressionCellActions.setCellActions(editorCell, node);
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext editorContext, SemanticNode node, String text) {

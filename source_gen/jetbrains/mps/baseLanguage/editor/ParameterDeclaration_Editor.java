@@ -34,10 +34,11 @@ public class ParameterDeclaration_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(type != null) {
       editorCell = this.nodeCell(editorContext, type);
+      ParameterDeclaration_TypeCellActions.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
+      ParameterDeclaration_TypeCellActions.setCellActions(editorCell, node);
     }
-    ParameterDeclaration_TypeCellActions.setCellActions(editorCell, node);
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext editorContext, SemanticNode node) {

@@ -52,10 +52,11 @@ public class InstanceMethodDeclaration_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(returnType != null) {
       editorCell = this.nodeCell(editorContext, returnType);
+      InstanceMethodDeclaration_ReturnTypeCellActions.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
+      InstanceMethodDeclaration_ReturnTypeCellActions.setCellActions(editorCell, node);
     }
-    InstanceMethodDeclaration_ReturnTypeCellActions.setCellActions(editorCell, node);
     return editorCell;
   }
   public EditorCell createMethodName(EditorContext editorContext, SemanticNode node) {
