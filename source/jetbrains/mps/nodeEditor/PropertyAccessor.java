@@ -4,6 +4,8 @@ import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.semanticModel.SemanticPropertySupport;
 import jetbrains.mps.semanticModel.SemanticModelUtil;
 import jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.DataTypeDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration;
 
 /**
  * User: Dmitriev.
@@ -26,7 +28,8 @@ public class PropertyAccessor implements ModelAccessor {
   }
 
   public String getText() {
-    return myNode.getProperty(myPropertyName);
+    String value = myNode.getProperty(myPropertyName);
+    return fromInternal(value);
   }
 
   public void setText(String text) {
@@ -35,16 +38,38 @@ public class PropertyAccessor implements ModelAccessor {
         text = null;
       }
       if (isValidText(text)) {
-        myNode.setProperty(myPropertyName, text);
+        String propertyValue = toInternal(text);
+        System.out.println("set internal value: " + myPropertyName + " = " + propertyValue);
+        myNode.setProperty(myPropertyName, propertyValue);
       }
     }
   }
 
   public boolean isValidText(String text) {
     if (myPropertyDeclaration != null) {
+      if (!myAllowEmptyText && text != null && text.length() == 0) {
+        text = null;
+      }
+
       SemanticPropertySupport propertySupport = SemanticPropertySupport.getPropertySupport(myPropertyDeclaration);
       return propertySupport.canSetValue(text);
     }
     return true;
+  }
+
+  private String fromInternal(String value) {
+    if (myPropertyDeclaration != null) {
+      SemanticPropertySupport propertySupport = SemanticPropertySupport.getPropertySupport(myPropertyDeclaration);
+      return propertySupport.fromInternal(value);
+    }
+    return value;
+  }
+
+  private String toInternal(String value) {
+    if (myPropertyDeclaration != null) {
+      SemanticPropertySupport propertySupport = SemanticPropertySupport.getPropertySupport(myPropertyDeclaration);
+      return propertySupport.toInternal(value);
+    }
+    return value;
   }
 }
