@@ -98,19 +98,17 @@ public class MPSProject {
     document.setRootElement(rootElement);
     Element semanticModelsElement = new Element(SEMANTIC_MODELS);
     rootElement.addContent(semanticModelsElement);
-    // TODO: this code fails to convert some absolute paths to relational paths
-    // TODO: why save ALL dependent models in MPR file ???
-//    SemanticModel[] semanticModels = mySemanticModels.semanticModels();
-//    for (int i = 0; i < semanticModels.length; i++) {
-//      SemanticModel semanticModel = semanticModels[i];
-//      Element modelElement = new Element(SEMANTIC_MODEL);
-//      semanticModelsElement.addContent(modelElement);
-//      Element fileElement = new Element(FILE);
-//      modelElement.addContent(fileElement);
-//      String fileName = mySemanticModels.getFileName(semanticModel);
-//      fileName = PathManager.getRelationalPathByAbsolute(myProjectFile, fileName);
-//      fileElement.setAttribute(NAME, fileName);
-//    }
+    SemanticModel[] semanticModels = mySemanticModels.semanticModels();
+    for (int i = 0; i < semanticModels.length; i++) {
+      SemanticModel semanticModel = semanticModels[i];
+      Element modelElement = new Element(SEMANTIC_MODEL);
+      semanticModelsElement.addContent(modelElement);
+      Element fileElement = new Element(FILE);
+      modelElement.addContent(fileElement);
+      String fileName = mySemanticModels.getFileName(semanticModel);
+      fileName = PathManager.getRelationalPathByAbsolute(myProjectFile, fileName);
+      fileElement.setAttribute(NAME, fileName);
+    }
 
     if (!myProjectFile.exists()) {
       try {
@@ -119,18 +117,12 @@ public class MPSProject {
         e.printStackTrace();
       }
 
-      // tmp: moved here
-      try {
-        JDOMUtil.writeDocument(document, myProjectFile);
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
     }
-//    try {
-//      JDOMUtil.writeDocument(document, myProjectFile);
-//    } catch (IOException e) {
-//      e.printStackTrace();
-//    }
+    try {
+      JDOMUtil.writeDocument(document, myProjectFile);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 
   public void setProjectFile(File projectFile) {
