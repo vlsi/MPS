@@ -1,15 +1,9 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.generator.GeneratorConfigurationManager;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.*;
-import jetbrains.mps.ide.command.undo.UndoManager;
-import jetbrains.mps.ide.components.EditorsPaneComponent;
-import jetbrains.mps.ide.components.ProjectPaneComponent;
-import jetbrains.mps.ide.components.UsagesViewComponent;
 import jetbrains.mps.modelExecute.ExecutionManager;
 import jetbrains.mps.modelExecute.ExecutionPoint;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.semanticModel.ModelLocator;
 import jetbrains.mps.semanticModel.SModel;
@@ -39,31 +33,12 @@ public class MPSProject implements ModelLocator {
   private RootManager myRootManager = new RootManager(this);
 
   public MPSProject(File file) {
-    initComponent();
     myProjectFile = file;
     if (myProjectFile != null) {
       read(myProjectFile);
     }
-  }
-
-  private void initComponent() {
-    IdeMain ide = IdeMain.instance();
-
-    addComponent(MPSProject.class, this);
-    addComponent(IdeMain.class, ide);
-    addComponent(ProjectPane.class, ide.getProjectPane());
-    addComponent(EditorsPane.class, ide.getEditorsPane());
-    addComponent(InspectorPane.class, ide.getInspectorPane());
-    addComponent(EditorManager.class, new EditorManager());
-    addComponent(UndoManager.class, UndoManager.instance());
-    addComponent(EditorsPaneComponent.class, new EditorsPaneComponent(this));
-    addComponent(ProjectPaneComponent.class, new ProjectPaneComponent(this));
-    addComponent(UsagesViewComponent.class, new UsagesViewComponent(this));
-    addComponent(IdeMain.IdeMainComponent.class, new IdeMain.IdeMainComponent(this));
-    addComponent(SModelRepository.class, new SModelRepository(this));
-    addComponent(ExecutionManager.class, new ExecutionManager());
-    addComponent(RootManager.class, myRootManager);
-    addComponent(GeneratorConfigurationManager.class, new GeneratorConfigurationManager());
+    MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
+    projects.addProject(this);
   }
 
   public List<Object> getComponents() {
@@ -180,7 +155,7 @@ public class MPSProject implements ModelLocator {
   }
 
   public SModelRepository getModels() {
-    return getComponent(SModelRepository.class);
+    return ApplicationComponents.getInstance().getComponent(SModelRepository.class);
   }
 
   public SModel loadModel(String fileName) {
@@ -231,5 +206,9 @@ public class MPSProject implements ModelLocator {
       }
     }
     return null;
+  }
+
+  public RootManager getRootManager() {
+    return myRootManager;
   }
 }
