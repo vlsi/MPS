@@ -145,27 +145,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
 
       public void focusLost(FocusEvent e) {
+        if (myNodeSubstituteChooser.getWindow() != null &&
+                (myNodeSubstituteChooser.getWindow().isAncestorOf(e.getOppositeComponent()) || myNodeSubstituteChooser.getWindow() == e.getOppositeComponent())) return; 
         myNodeSubstituteChooser.setVisible(false);
       }
     });
-  }
-
-  private List<SemanticNode> getNamedNodes() {
-    return getNamedNodes(getRootCell().getSemanticNode());
-  }
-
-  private List<SemanticNode> getNamedNodes(SemanticNode root) {
-    List<SemanticNode> result = new ArrayList<SemanticNode>();
-
-    if (root.getName() != null && root.getName().length() > 0) {
-      result.add(root);
-    }
-
-    for (SemanticNode child : root.getChildren()) {
-      result.addAll(getNamedNodes(child));
-    }
-
-    return result;
   }
 
   private void showPopupMenu(MouseEvent e) {

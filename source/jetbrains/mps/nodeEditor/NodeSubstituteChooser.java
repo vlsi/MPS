@@ -7,6 +7,9 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseAdapter;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Arrays;
@@ -36,6 +39,10 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
   public NodeSubstituteChooser(AbstractEditorComponent editorComponent) {
     myEditorComponent = editorComponent;
+  }
+
+  Window getWindow() {
+    return myPopupWindow;
   }
 
   private PopupWindow getPopupWindow() {
@@ -72,7 +79,6 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
     myPatternEditorLocation = new Point(anchor.x + cell.getX(), anchor.y + +cell.getY());
     myPatternEditorSize = new Dimension(cell.getWidth() + 1, cell.getHeight());
-
   }
 
   public void setNodeSubstituteInfo(INodeSubstituteInfo nodeSubstituteInfo) {
@@ -200,15 +206,19 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     }
 
     if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER || (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown())) {
-      String pattern = getPatternEditor().getPattern();
-      List<INodeSubstituteItem> matchingActions = myNodeSubstituteInfo.getMatchingItems(pattern, false);
-      if (matchingActions.size() == 1) {
-        setVisible(false);
-        CommandUtil.substituteNode(matchingActions.get(0), pattern, myNodeSubstituteInfo, myEditorComponent.getContext());
-      }
-      return true;
+      return doSubstitute();
     }
     return false;
+  }
+
+  private boolean doSubstitute() {
+    String pattern = getPatternEditor().getPattern();
+    List<INodeSubstituteItem> matchingActions = myNodeSubstituteInfo.getMatchingItems(pattern, false);
+    if (matchingActions.size() == 1) {
+      setVisible(false);
+      CommandUtil.substituteNode(matchingActions.get(0), pattern, myNodeSubstituteInfo, myEditorComponent.getContext());
+    }
+    return true;
   }
 
   private boolean menu_processKeyPressed(KeyEvent keyEvent) {
@@ -217,55 +227,37 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       if (keyEvent.getKeyCode() == KeyEvent.VK_UP) {
         getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() - 1);
         repaintPopupMenu();
-        if (!myMenuEmpty) {
-          myPatternEditor.setText(getPopupWindow().getSelectedText());
-          myPatternEditor.setCaretPosition(getPopupWindow().getSelectedText().length());
-        }
+        updatePatternEditor();
         return true;
       }
       if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN) {
         getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() + 1);
         repaintPopupMenu();
-        if (!myMenuEmpty) {
-          myPatternEditor.setText(getPopupWindow().getSelectedText());
-          myPatternEditor.setCaretPosition(getPopupWindow().getSelectedText().length());
-        }
+        updatePatternEditor();
         return true;
       }
       if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_UP) {
         getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() - MAX_MENU_LEN);
         repaintPopupMenu();
-        if (!myMenuEmpty) {
-          myPatternEditor.setText(getPopupWindow().getSelectedText());
-          myPatternEditor.setCaretPosition(getPopupWindow().getSelectedText().length());
-        }
+        updatePatternEditor();
         return true;
       }
       if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_DOWN) {
         getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() + MAX_MENU_LEN);
         repaintPopupMenu();
-        if (!myMenuEmpty) {
-          myPatternEditor.setText(getPopupWindow().getSelectedText());
-          myPatternEditor.setCaretPosition(getPopupWindow().getSelectedText().length());
-        }
+        updatePatternEditor();
         return true;
       }
       if (keyEvent.getKeyCode() == KeyEvent.VK_HOME) {
         getPopupWindow().setSelectionIndex(0);
         repaintPopupMenu();
-        if (!myMenuEmpty) {
-          myPatternEditor.setText(getPopupWindow().getSelectedText());
-          myPatternEditor.setCaretPosition(getPopupWindow().getSelectedText().length());
-        }
+        updatePatternEditor();
         return true;
       }
       if (keyEvent.getKeyCode() == KeyEvent.VK_END) {
         getPopupWindow().setSelectionIndex(strings.length - 1);
         repaintPopupMenu();
-        if (!myMenuEmpty) {
-          myPatternEditor.setText(getPopupWindow().getSelectedText());
-          myPatternEditor.setCaretPosition(getPopupWindow().getSelectedText().length());
-        }
+        updatePatternEditor();
         return true;
       }
     }
@@ -280,6 +272,13 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       return true;
     }
     return false;
+  }
+
+  private void updatePatternEditor() {
+    if (!myMenuEmpty) {
+      myPatternEditor.setText(getPopupWindow().getSelectedText());
+      myPatternEditor.setCaretPosition(getPopupWindow().getSelectedText().length());
+    }
   }
 
   private void repaintPopupMenu() {
@@ -306,6 +305,13 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
       myList.setFont(new TextLine("", null).getFont());
       myList.setBackground(new Color(255, 255, 200));
+
+      myList.addMouseListener(new MouseAdapter() {
+        public void mousePressed(MouseEvent e) {
+          repaintPopupMenu();
+          updatePatternEditor();
+        }
+      });
 
       add(myScroller);
       myList.setFocusable(false);
