@@ -411,8 +411,8 @@
     <link role="extends" targetNodeId="1068498886296" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1070567982819">
       <property name="role" value="parameterDeclaration" />
-      <link role="specializedLink" targetNodeId="1068581517664" />
       <link role="target" targetNodeId="1068498886292" />
+      <link role="specializedLink" targetNodeId="1068581517664" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068581242875">
