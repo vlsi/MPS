@@ -10,9 +10,8 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.PropertyAccessor;
@@ -33,7 +32,6 @@ public class StaticMethodDeclaration_Editor extends SemanticNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setSelectable(true);
     editorCell.setGridLayout(false);
-    MethodDeclaration_NodeBoxActions.setCellActions(editorCell, node);
     editorCell.addEditorCell(this.createHeaderRow(editorContext, node));
     editorCell.addEditorCell(this.createBodyArea(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell3(editorContext, node, "}"));
@@ -60,7 +58,6 @@ public class StaticMethodDeclaration_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(returnType != null) {
       editorCell = editorContext.createNodeCell(returnType);
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(returnType));
       MethodDeclaration_ReturnTypeCellActions.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, "<no type>");
@@ -110,7 +107,6 @@ public class StaticMethodDeclaration_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(body != null) {
       editorCell = editorContext.createNodeCell(body);
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(body));
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());

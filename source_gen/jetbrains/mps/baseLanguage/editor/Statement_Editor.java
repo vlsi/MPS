@@ -19,7 +19,6 @@ public class Statement_Editor extends SemanticNodeEditor {
   }
   public EditorCell createNodeBox(EditorContext editorContext, SemanticNode node) {
     EditorCell_Error editorCell = EditorCell_Error.create(editorContext, node, "<statement>");
-    Statement_NodeBoxActions.setCellActions(editorCell, node);
     return editorCell;
   }
 }

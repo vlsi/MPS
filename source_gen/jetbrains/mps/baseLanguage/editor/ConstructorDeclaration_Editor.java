@@ -9,14 +9,10 @@ import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.ModelAccessor;
-import jetbrains.mps.nodeEditor.EditorCell_Property;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
-import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
+import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class ConstructorDeclaration_Editor extends SemanticNodeEditor {
 
@@ -32,7 +28,6 @@ public class ConstructorDeclaration_Editor extends SemanticNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setSelectable(true);
     editorCell.setGridLayout(false);
-    ConstructorDeclaration_NodeBoxActions.setCellActions(editorCell, node);
     editorCell.addEditorCell(this.createHeaderRow(editorContext, node));
     editorCell.addEditorCell(this.createBodyArea(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell2(editorContext, node, "}"));
@@ -42,22 +37,21 @@ public class ConstructorDeclaration_Editor extends SemanticNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setSelectable(true);
     editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createConstructorName(editorContext, node));
+    editorCell.addEditorCell(this.createJavaClassReferenceCell(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell(editorContext, node, "("));
     editorCell.addEditorCell(this.create_BaseMethodParmListEditorCell(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell1(editorContext, node, ")"));
     return editorCell;
   }
-  public EditorCell createConstructorName(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = new ConstructorDeclaration_Editor_ConstructorDeclarationName_Query(node);
-    EditorCell editorCell = null;
-    if(modelAccessor != null) {
-      editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
-      editorCell.setSelectable(true);
-      ((EditorCell_Label)editorCell).setEditable(false);
-    } else {
-      editorCell = EditorCell_Error.create(editorContext, node, null);
+  public EditorCell createJavaClassReferenceCell(EditorContext editorContext, SemanticNode node) {
+    SemanticNode effectiveNode = node.getReferent("javaClass", (SemanticNode)null);
+    if(effectiveNode == null) {
+      EditorCell_Error errorCell = EditorCell_Error.create(editorContext, node, null);
+      errorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+      return errorCell;
     }
+    AbstractCellProvider javaClass_InlineComponent = new ConstructorDeclaration_Editor_javaClass_InlineComponent(effectiveNode);
+    EditorCell editorCell = javaClass_InlineComponent.createEditorCell(editorContext);
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
@@ -94,7 +88,6 @@ public class ConstructorDeclaration_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(body != null) {
       editorCell = editorContext.createNodeCell(body);
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(body));
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());

@@ -9,9 +9,8 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 
 public class WhileStatement_Editor extends SemanticNodeEditor {
@@ -26,7 +25,6 @@ public class WhileStatement_Editor extends SemanticNodeEditor {
   public EditorCell createColumnCell(EditorContext editorContext, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setGridLayout(false);
-    WhileStatement_NodeBoxActions.setCellActions(editorCell, node);
     editorCell.addEditorCell(this.createRowCell(editorContext, node));
     editorCell.addEditorCell(this.createRowCell1(editorContext, node));
     editorCell.addEditorCell(this.createRowCell2(editorContext, node));
@@ -49,13 +47,14 @@ public class WhileStatement_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(condition != null) {
       editorCell = editorContext.createNodeCell(condition);
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(condition));
       WhileStatement_ConditionCellActions.setCellActions(editorCell, node);
+      editorCell.setKeyMap(new _Expression_KeyMap());
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       WhileStatement_ConditionCellActions.setCellActions(editorCell, node);
       _DefErrorActions.setCellActions(editorCell, node);
+      editorCell.setKeyMap(new _Expression_KeyMap());
     }
     return editorCell;
   }
@@ -74,7 +73,6 @@ public class WhileStatement_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(body != null) {
       editorCell = editorContext.createNodeCell(body);
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(body));
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());

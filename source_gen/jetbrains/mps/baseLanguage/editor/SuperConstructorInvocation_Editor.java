@@ -27,7 +27,6 @@ public class SuperConstructorInvocation_Editor extends SemanticNodeEditor {
   public EditorCell createRowCell(EditorContext editorContext, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setGridLayout(false);
-    SuperConstructorInvocation_NodeBoxActions.setCellActions(editorCell, node);
     editorCell.addEditorCell(this.createConstantCell(editorContext, node, "super("));
     editorCell.addEditorCell(this.createActualArgumentList(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell2(editorContext, node, ")"));

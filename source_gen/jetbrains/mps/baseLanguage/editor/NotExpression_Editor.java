@@ -9,9 +9,8 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 
 public class NotExpression_Editor extends SemanticNodeEditor {
@@ -26,6 +25,8 @@ public class NotExpression_Editor extends SemanticNodeEditor {
   public EditorCell createRowCell(EditorContext editorContext, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setGridLayout(false);
+    NotExpression_NodeBoxActions.setCellActions(editorCell, node);
+    editorCell.setKeyMap(new _Expression_KeyMap());
     editorCell.addEditorCell(this.createConstantCell(editorContext, node, "!("));
     editorCell.addEditorCell(this.createExpressionCell(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell1(editorContext, node, ")"));
@@ -40,7 +41,6 @@ public class NotExpression_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(expression != null) {
       editorCell = editorContext.createNodeCell(expression);
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(expression));
       NotExpression_NotExpressionActions.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
@@ -51,6 +51,7 @@ public class NotExpression_Editor extends SemanticNodeEditor {
   }
   public EditorCell createConstantCell1(EditorContext editorContext, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
+    editorCell.setSelectable(true);
     return editorCell;
   }
 }

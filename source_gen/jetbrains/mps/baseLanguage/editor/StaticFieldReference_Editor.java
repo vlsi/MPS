@@ -8,14 +8,11 @@ import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.ModelAccessor;
-import jetbrains.mps.nodeEditor.EditorCell_Property;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class StaticFieldReference_Editor extends SemanticNodeEditor {
   public static String MATCHING_TEXT = ". <static field>";
@@ -30,9 +27,10 @@ public class StaticFieldReference_Editor extends SemanticNodeEditor {
   public EditorCell createRowCell(EditorContext editorContext, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setGridLayout(false);
+    editorCell.setKeyMap(new _Expression_KeyMap());
     editorCell.addEditorCell(this.createJavaClassTypeCell(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell(editorContext, node, "."));
-    editorCell.addEditorCell(this.createFieldNameCell(editorContext, node));
+    editorCell.addEditorCell(this.createVariableDeclarationReferenceCell(editorContext, node));
     return editorCell;
   }
   public EditorCell createJavaClassTypeCell(EditorContext editorContext, SemanticNode node) {
@@ -40,7 +38,6 @@ public class StaticFieldReference_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(javaClassType != null) {
       editorCell = editorContext.createNodeCell(javaClassType);
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(javaClassType));
       StaticFieldReference_TypeActions.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
@@ -53,15 +50,16 @@ public class StaticFieldReference_Editor extends SemanticNodeEditor {
     EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
     return editorCell;
   }
-  public EditorCell createFieldNameCell(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = new StaticFieldReference_Editor_fieldName_Query(node);
-    EditorCell editorCell = null;
-    if(modelAccessor != null) {
-      editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
-      ((EditorCell_Label)editorCell).setDefaultText("<no field>");
-    } else {
-      editorCell = EditorCell_Error.create(editorContext, node, "<no field>");
+  public EditorCell createVariableDeclarationReferenceCell(EditorContext editorContext, SemanticNode node) {
+    SemanticNode effectiveNode = node.getReferent("variableDeclaration", (SemanticNode)null);
+    if(effectiveNode == null) {
+      EditorCell_Error errorCell = EditorCell_Error.create(editorContext, node, "<no field>");
+      errorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+      StaticFieldReference_FieldNameActions.setCellActions(errorCell, node);
+      return errorCell;
     }
+    AbstractCellProvider variableDeclaration_InlineComponent = new StaticFieldReference_Editor_variableDeclaration_InlineComponent(effectiveNode);
+    EditorCell editorCell = variableDeclaration_InlineComponent.createEditorCell(editorContext);
     StaticFieldReference_FieldNameActions.setCellActions(editorCell, node);
     return editorCell;
   }

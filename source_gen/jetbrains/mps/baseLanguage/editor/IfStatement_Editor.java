@@ -9,10 +9,10 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
+import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.baseLanguage.IfStatement;
 
@@ -28,7 +28,6 @@ public class IfStatement_Editor extends SemanticNodeEditor {
   public EditorCell createStatementBox(EditorContext editorContext, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setGridLayout(false);
-    IfStatement_NodeBoxActions.setCellActions(editorCell, node);
     editorCell.addEditorCell(this.createHeaderRow(editorContext, node));
     editorCell.addEditorCell(this.createIfTrueBox(editorContext, node));
     if(this.handleConditionalQuery_1075379536707(node)) {
@@ -56,7 +55,6 @@ public class IfStatement_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(condition != null) {
       editorCell = editorContext.createNodeCell(condition);
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(condition));
       IfStatement_ConditionCellActions.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
@@ -86,7 +84,6 @@ public class IfStatement_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(ifTrue != null) {
       editorCell = editorContext.createNodeCell(ifTrue);
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(ifTrue));
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());

@@ -9,9 +9,8 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 
 public class CastExpression_Editor extends SemanticNodeEditor {
@@ -27,6 +26,8 @@ public class CastExpression_Editor extends SemanticNodeEditor {
   public EditorCell createRowCell(EditorContext editorContext, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setGridLayout(false);
+    CastExpression_NodeBoxActions.setCellActions(editorCell, node);
+    editorCell.setKeyMap(new _Expression_KeyMap());
     editorCell.addEditorCell(this.createConstantCell(editorContext, node, "("));
     editorCell.addEditorCell(this.createTypeCell(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell1(editorContext, node, ")"));
@@ -42,7 +43,6 @@ public class CastExpression_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(type != null) {
       editorCell = editorContext.createNodeCell(type);
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(type));
       CastExpression_CastTypeActions.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
@@ -61,7 +61,6 @@ public class CastExpression_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(expression != null) {
       editorCell = editorContext.createNodeCell(expression);
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(expression));
       CastExpression_CastExpressionActions.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);

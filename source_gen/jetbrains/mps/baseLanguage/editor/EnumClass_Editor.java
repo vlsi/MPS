@@ -38,7 +38,6 @@ public class EnumClass_Editor extends SemanticNodeEditor {
   public EditorCell createColumnCell(EditorContext editorContext, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setGridLayout(false);
-    EnumClass_NodeBoxActions.setCellActions(editorCell, node);
     editorCell.addEditorCell(this.createRowCell(editorContext, node));
     editorCell.addEditorCell(this.createRowCell1(editorContext, node));
     editorCell.addEditorCell(this.createRowCell2(editorContext, node));

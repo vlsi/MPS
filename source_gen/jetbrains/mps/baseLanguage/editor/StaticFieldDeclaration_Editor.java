@@ -9,17 +9,18 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
+import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 
 public class StaticFieldDeclaration_Editor extends SemanticNodeEditor {
+  public static String PRESENTATION_NAME = "static field declaration";
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);
@@ -30,7 +31,6 @@ public class StaticFieldDeclaration_Editor extends SemanticNodeEditor {
   public EditorCell createRowCell(EditorContext editorContext, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setGridLayout(false);
-    StaticFieldDeclaration_NodeBoxActions.setCellActions(editorCell, node);
     editorCell.addEditorCell(this.createConstantCell(editorContext, node, "static"));
     editorCell.addEditorCell(this.createTypeCell(editorContext, node));
     editorCell.addEditorCell(this.createNameCell(editorContext, node));
@@ -49,7 +49,6 @@ public class StaticFieldDeclaration_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(type != null) {
       editorCell = editorContext.createNodeCell(type);
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(type));
       StaticFieldDeclaration_TypeCellActions.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, "<no type>");
@@ -85,11 +84,13 @@ public class StaticFieldDeclaration_Editor extends SemanticNodeEditor {
       editorCell = editorContext.createNodeCell(initializer);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(initializer));
       __VariableInitializer_ActionSet.setCellActions(editorCell, node);
+      editorCell.setKeyMap(new _Expression_KeyMap());
     } else {
       editorCell = EditorCell_Constant.create(editorContext, node, null, true);
       ((EditorCell_Label)editorCell).setEditable(true);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       __VariableInitializer_ActionSet.setCellActions(editorCell, node);
+      editorCell.setKeyMap(new _Expression_KeyMap());
     }
     return editorCell;
   }

@@ -9,14 +9,10 @@ import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.ModelAccessor;
-import jetbrains.mps.nodeEditor.EditorCell_Property;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
 
 public class StaticMethodCall_Editor extends SemanticNodeEditor {
   public static String MATCHING_TEXT = ". <static method>";
@@ -33,9 +29,10 @@ public class StaticMethodCall_Editor extends SemanticNodeEditor {
   public EditorCell createRowCell(EditorContext editorContext, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setGridLayout(false);
+    editorCell.setKeyMap(new _Expression_KeyMap());
     editorCell.addEditorCell(this.createJavaClassTypeCell(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell(editorContext, node, "."));
-    editorCell.addEditorCell(this.createMethodNameCell(editorContext, node));
+    editorCell.addEditorCell(this.createBaseMethodDeclarationReferenceCell(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell1(editorContext, node, "("));
     editorCell.addEditorCell(this.create_BaseMethodCallArgListEditorCell(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell2(editorContext, node, ")"));
@@ -46,7 +43,6 @@ public class StaticMethodCall_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(javaClassType != null) {
       editorCell = editorContext.createNodeCell(javaClassType);
-      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(javaClassType));
       StaticMethodCall_TypeActions.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, "<no type>");
@@ -59,15 +55,16 @@ public class StaticMethodCall_Editor extends SemanticNodeEditor {
     EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
     return editorCell;
   }
-  public EditorCell createMethodNameCell(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = new StaticMethodCall_Editor_methodName_Query(node);
-    EditorCell editorCell = null;
-    if(modelAccessor != null) {
-      editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
-      ((EditorCell_Label)editorCell).setDefaultText("<no method>");
-    } else {
-      editorCell = EditorCell_Error.create(editorContext, node, "<no method>");
+  public EditorCell createBaseMethodDeclarationReferenceCell(EditorContext editorContext, SemanticNode node) {
+    SemanticNode effectiveNode = node.getReferent("baseMethodDeclaration", (SemanticNode)null);
+    if(effectiveNode == null) {
+      EditorCell_Error errorCell = EditorCell_Error.create(editorContext, node, "<no method>");
+      errorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+      StaticMethodCall_MethodNameActions.setCellActions(errorCell, node);
+      return errorCell;
     }
+    AbstractCellProvider baseMethodDeclaration_InlineComponent = new StaticMethodCall_Editor_baseMethodDeclaration_InlineComponent(effectiveNode);
+    EditorCell editorCell = baseMethodDeclaration_InlineComponent.createEditorCell(editorContext);
     StaticMethodCall_MethodNameActions.setCellActions(editorCell, node);
     return editorCell;
   }

@@ -8,9 +8,11 @@ import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.ModelAccessor;
+import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.nodeEditor.BooleanPropertySubstituteInfo;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
 
 public class BooleanConstant_Editor extends SemanticNodeEditor {
   public static String PRESENTATION_NAME = "boolean constant";
@@ -22,14 +24,10 @@ public class BooleanConstant_Editor extends SemanticNodeEditor {
     return this.createValueCell(editorContext, node);
   }
   public EditorCell createValueCell(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = new BooleanConstant_Editor_BooleanConstantValue_Query(node);
-    EditorCell editorCell = null;
-    if(modelAccessor != null) {
-      editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
-      ((EditorCell_Label)editorCell).setEditable(true);
-    } else {
-      editorCell = EditorCell_Error.create(editorContext, node, null);
-    }
+    ModelAccessor modelAccessor = new PropertyAccessor(node, "value", false, false);
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
+    editorCell.setSubstituteInfo(new BooleanPropertySubstituteInfo(node, "value"));
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "value"));
     BooleanConstant_NodeBoxActions.setCellActions(editorCell, node);
     editorCell.setKeyMap(new _Expression_KeyMap());
     return editorCell;

@@ -23,6 +23,7 @@ public class ThisExpression_Editor extends SemanticNodeEditor {
     editorCell.setSelectable(true);
     editorCell.setEditable(true);
     ThisExpression_NodeBoxActions.setCellActions(editorCell, node);
+    editorCell.setKeyMap(new _Expression_KeyMap());
     return editorCell;
   }
 }
