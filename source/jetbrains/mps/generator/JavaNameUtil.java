@@ -4,6 +4,7 @@ import jetbrains.mps.baseLanguage.JavaClass;
 import jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration;
 import jetbrains.mps.semanticModel.SemanticModel;
 import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SemanticModelUtil;
 
 /**
  * User: Dmitriev.
