@@ -49,6 +49,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private MyModelListener mySemanticModelListener = new MyModelListener();
 
   private List<ICellSelectionListener> mySelectionListeners = new LinkedList<ICellSelectionListener>();
+  private KeyListener myKeyListener;
 
 
   public AbstractEditorComponent() {
@@ -92,29 +93,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
         if (mySelectedCell.getSemanticNode() != null) {
-          createShowTypeInfoAction(mySelectedCell.getSemanticNode()).actionPerformed(e);          
+          createShowTypeInfoAction(mySelectedCell.getSemanticNode()).actionPerformed(e);
         }
       }
     }, KeyStroke.getKeyStroke("control T"), WHEN_FOCUSED);
 
-
-    new SpeedSearchBase(this, true) {
-      protected int getSelectedIndex() {
-        return getNamedNodes().indexOf(getSelectedCell().getSemanticNode());
-      }
-
-      protected Object[] getAllElements() {
-        return getNamedNodes().toArray();
-      }
-
-      protected String getElementText(Object element) {
-        return element.toString();
-      }
-
-      protected void selectElement(Object element, String selectedText) {
-        selectNode((SemanticNode) element);
-      }
-    };
 
     addMouseListener(new MouseAdapter() {
       public void mousePressed(final MouseEvent e) {
@@ -132,7 +115,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     });
 
-    addKeyListener(new KeyAdapter() {
+    myKeyListener = new KeyAdapter() {
       public void keyPressed(final KeyEvent e) {
         processKeyPressed(e);
       }
@@ -140,7 +123,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       public void keyReleased(final KeyEvent e) {
         processKeyReleased(e);
       }
-    });
+    };
+    addKeyListener(myKeyListener);
 
     addFocusListener(new FocusListener() {
       public void focusGained(FocusEvent e) {
