@@ -9,21 +9,7 @@ import jetbrains.mps.semanticModel.SemanticNode;
 public class PropertyAccessor implements ModelAccessor {
   private SemanticNode myNode;
   private String myPropertyName;
-  /**
-   * @deprecated
-   */
-  private String myDefaultValue;
   private boolean myWritable;
-
-  /**
-   * @deprecated
-   */
-  public PropertyAccessor(SemanticNode node, String propertyName, String defaultValue, boolean writable) {
-    myNode = node;
-    myPropertyName = propertyName;
-    myDefaultValue = defaultValue;
-    myWritable = writable;
-  }
 
   public PropertyAccessor(SemanticNode node, String propertyName, boolean writable) {
     myNode = node;
@@ -32,8 +18,6 @@ public class PropertyAccessor implements ModelAccessor {
   }
 
   public String getText() {
-//    String value = myNode.getProperty(myPropertyName);
-//    return value == null ? myDefaultValue : value;
     return myNode.getProperty(myPropertyName);
   }
 
