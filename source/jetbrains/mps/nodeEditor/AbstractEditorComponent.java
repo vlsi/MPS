@@ -209,6 +209,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     popupMenu.add(createGoByReferenceMenu(selectedNode));
     popupMenu.add(createFindUsagesAction(selectedNode));
     popupMenu.add(createGoToDeclarationAction(selectedNode));
+    popupMenu.add(new AbstractAction("Print node id") {
+      public void actionPerformed(ActionEvent e) {
+        System.out.println(selectedNode.getId());
+      }
+    });
     popupMenu.addSeparator();
     popupMenu.add(createShowTypeInfoAction(selectedNode));
 
