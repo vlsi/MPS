@@ -59,7 +59,9 @@ public class MPSSupportHandler {
         PsiClass aspectClass = getAspectsClass(namespace);
         PsiJavaFile file = (PsiJavaFile) aspectClass.getContainingFile();
         try {
-          PsiImportStatement importStatement = getPsiElementFactory().createImportStatement(manager.findClass(fqName, GlobalSearchScope.projectScope(myProject)));
+          if (file.getImportList().findSingleClassImportStatement(fqName) != null) return;
+          PsiClass cls = manager.findClass(fqName, GlobalSearchScope.allScope(myProject));
+          PsiImportStatement importStatement = getPsiElementFactory().createImportStatement(cls);
           file.getImportList().add(importStatement);
         } catch (IncorrectOperationException e) {
           e.printStackTrace();
