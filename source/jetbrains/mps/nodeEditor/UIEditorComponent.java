@@ -23,11 +23,10 @@ public class UIEditorComponent extends AbstractEditorComponent {
 
   public UIEditorComponent(IdeMain ideMain) {
     super(ideMain);
-    myProject = ideMain.getProject();
-
+    myProject  = IdeMain.instance().getProject();
     unregisterKeyboardAction(KeyStroke.getKeyStroke("ESCAPE"));
   }
-  
+
   public void editNode(SemanticNode semanticNode) {
     mySemanticNode = semanticNode;
     myEditorContext = new EditorContext(this, semanticNode.getSemanticModel(), myProject);
