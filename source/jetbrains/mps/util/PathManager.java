@@ -248,5 +248,4 @@ public class PathManager {
     }
     return relativePath.toString();
   }
-
 }
