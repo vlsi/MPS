@@ -2,7 +2,6 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ProjectPane;
@@ -14,6 +13,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.typesystem.ITypesystem;
 import jetbrains.mps.typesystem.TSStatus;
+import static jetbrains.mps.ide.EditorsPane.EditorPosition;
 
 import javax.swing.*;
 import java.awt.*;
@@ -178,7 +178,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           while (iterator.hasNext()) {
             SemanticNode root = iterator.next();
             if (editorName.equals(root.getName())) {
-              AbstractEditorComponent editor = IdeMain.instance().getEditorsPane().openEditor(root, EditorsPane.LEFT);
+              AbstractEditorComponent editor = IdeMain.instance().getEditorsPane().openEditor(root, EditorPosition.LEFT);
               editor.selectNode(root);
               return;
             }
@@ -204,7 +204,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       AbstractAction action = new AbstractAction(actionText) {
         public void actionPerformed(ActionEvent e) {
           SemanticNode toOpenNode = SemanticModelUtil.getRootParent(targetNode);
-          AbstractEditorComponent editor = IdeMain.instance().getEditorsPane().openEditor(toOpenNode, EditorsPane.LEFT);
+          AbstractEditorComponent editor = IdeMain.instance().getEditorsPane().openEditor(toOpenNode, EditorPosition.LEFT);
           editor.selectNode(targetNode);
         }
       };
