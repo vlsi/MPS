@@ -36,7 +36,7 @@ public class StaticMethodCall_Editor extends SemanticNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.addEditorCell(this.createJavaClassTypeCell(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell(editorContext, node, "."));
-    editorCell.addEditorCell(this.createMethodCallNameCell(editorContext, node));
+    editorCell.addEditorCell(this.createMethodNameCell(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell1(editorContext, node, "("));
     editorCell.addEditorCell(this.create_BaseMethodCallArgListEditorCell(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell2(editorContext, node, ")"));
@@ -48,11 +48,11 @@ public class StaticMethodCall_Editor extends SemanticNodeEditor {
     if(javaClassType != null) {
       editorCell = editorContext.createNodeCell(javaClassType);
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(javaClassType));
-      StaticMethodCall_StaticMethodCellActions.setCellActions(editorCell, node);
+      StaticMethodCall_TypeActions.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, "<no type>");
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-      StaticMethodCall_StaticMethodCellActions.setCellActions(editorCell, node);
+      StaticMethodCall_TypeActions.setCellActions(editorCell, node);
     }
     return editorCell;
   }
@@ -60,8 +60,8 @@ public class StaticMethodCall_Editor extends SemanticNodeEditor {
     EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
     return editorCell;
   }
-  public EditorCell createMethodCallNameCell(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = new StaticMethodCall_Editor_MethodCallName_Query(node);
+  public EditorCell createMethodNameCell(EditorContext editorContext, SemanticNode node) {
+    ModelAccessor modelAccessor = new StaticMethodCall_Editor_methodName_Query(node);
     EditorCell editorCell = null;
     if(modelAccessor != null) {
       editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
@@ -69,7 +69,7 @@ public class StaticMethodCall_Editor extends SemanticNodeEditor {
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, "<no method>");
     }
-    StaticMethodCall_NameCellActions.setCellActions(editorCell, node);
+    StaticMethodCall_MethodNameActions.setCellActions(editorCell, node);
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext editorContext, SemanticNode node, String text) {
