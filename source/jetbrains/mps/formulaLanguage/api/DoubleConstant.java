@@ -1,6 +1,6 @@
 package jetbrains.mps.formulaLanguage.api;
 
-import jetbrains.mps.formulaLanguage.api.AbstractExpression;
+import jetbrains.mps.formulaLanguage.api.Function;
 
 /**
  * Created by IntelliJ IDEA.
@@ -9,7 +9,7 @@ import jetbrains.mps.formulaLanguage.api.AbstractExpression;
  * Time: 12:21:53 PM
  * To change this template use File | Settings | File Templates.
  */
-public class DoubleConstant extends AbstractExpression <Double> {
+public class DoubleConstant implements Function <Double> {
   private Double myDouble;
 
   public DoubleConstant(double d) {
