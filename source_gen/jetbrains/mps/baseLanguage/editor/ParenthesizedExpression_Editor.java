@@ -39,8 +39,10 @@ public class ParenthesizedExpression_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(expression != null) {
       editorCell = this.nodeCell(editorContext, expression);
+      ParenthesizedExpression_ExpressionActions.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
+      ParenthesizedExpression_ExpressionActions.setCellActions(editorCell, node);
     }
     return editorCell;
   }
