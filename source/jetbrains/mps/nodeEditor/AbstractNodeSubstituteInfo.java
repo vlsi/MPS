@@ -47,17 +47,17 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
       }
     }
 
-    if(strictMatching) {
+    if (strictMatching) {
       Iterator<INodeSubstituteItem> iterator1 = list.iterator();
       while (iterator1.hasNext()) {
         INodeSubstituteItem substituteItem = iterator1.next();
         String matchingText = substituteItem.getMatchingText(pattern);
-        if(matchingText != null) {
-          if(matchingText.equals(pattern)) {
+        if (matchingText != null) {
+          if (matchingText.equals(pattern)) {
             continue;
           }
         }
-       iterator1.remove();
+        iterator1.remove();
       }
     }
     return list;
@@ -68,5 +68,9 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
       myCachedItemList = createActions();
     }
     return myCachedItemList.iterator();
+  }
+
+  public SemanticNode handleSubstituteAction(SemanticNode node, Object substituteObject) {
+    return null;
   }
 }
