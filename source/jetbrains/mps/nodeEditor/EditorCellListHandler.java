@@ -86,7 +86,6 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
   }
 
   protected EditorCell createNodeCell(EditorContext editorContext, SemanticNode node) {
-    //return editorContext.getEditorManager().createEditorCell(node);
     return editorContext.createNodeCell(node);
   }
 

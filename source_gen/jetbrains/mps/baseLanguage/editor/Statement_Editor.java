@@ -7,9 +7,7 @@ import jetbrains.mps.nodeEditor.SemanticNodeEditor;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
-import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class Statement_Editor extends SemanticNodeEditor {
 
@@ -17,22 +15,10 @@ public class Statement_Editor extends SemanticNodeEditor {
     super.setSemanticNode(node);
   }
   public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
-    return this.createStatementBox(editorContext, node);
-  }
-  public EditorCell createStatementBox(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createErrorCell(editorContext, node));
-    editorCell.addEditorCell(this.createConstantCell(editorContext, node, ";"));
-    return editorCell;
+    return this.createErrorCell(editorContext, node);
   }
   public EditorCell createErrorCell(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Error editorCell = EditorCell_Error.create(editorContext, node, "statement");
-    Statement_StatementCellActions.setCellActions(editorCell, node);
-    return editorCell;
-  }
-  public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
+    EditorCell_Error editorCell = EditorCell_Error.create(editorContext, node, "<statement>");
     return editorCell;
   }
 }
