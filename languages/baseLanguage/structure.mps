@@ -76,7 +76,7 @@
     </link>
     <link role="semanticPropertyDeclaration" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration" id="1075300953595">
-        <link role="dataType" targetNodeId="1083145286484" />
+        <link role="dataType" targetNodeId="1083065718921" />
         <property name="propertyType" value="string" />
         <property name="name" value="name" />
       </node>
@@ -295,8 +295,8 @@
     <link role="extends" targetNodeId="1068499141036" />
     <link role="semanticLinkDeclaration" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration" id="1070567750949">
-        <link role="target" targetNodeId="1068580123140" />
         <link role="specializedLink" targetNodeId="1068499141037" />
+        <link role="target" targetNodeId="1068580123140" />
         <property name="role" value="constructorDeclaration" />
         <property name="name" />
       </node>
@@ -528,8 +528,8 @@
     <link role="extends" targetNodeId="1068498886296" />
     <link role="semanticLinkDeclaration" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration" id="1070567982819">
-        <link role="target" targetNodeId="1068498886292" />
         <link role="specializedLink" targetNodeId="1068581517664" />
+        <link role="target" targetNodeId="1068498886292" />
         <property name="role" value="parameterDeclaration" />
         <property name="name" />
       </node>
@@ -919,16 +919,11 @@
     <property name="constraint" value="[a-zA-Z[_]][a-zA-Z0-9[_]]*" />
     <property name="name" value="_Identifier_String" />
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConstrainedDataTypeDeclaration" id="1083145286484">
-    <link role="extends" targetNodeId="4.1082983041843" />
-    <property name="constraint" value="[a-zA-Z[_]][a-zA-Z0-9[._]]*" />
-    <property name="name" value="_ClassName_String" />
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1083245097125">
     <link role="extends" targetNodeId="1068390468198" />
     <link role="semanticPropertyDeclaration" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration" id="1090923492515">
-        <link role="dataType" targetNodeId="1083145286484" />
+        <link role="dataType" targetNodeId="1083065718921" />
         <property name="propertyType" value="string" />
         <property name="name" value="name" />
       </node>
