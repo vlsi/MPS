@@ -636,6 +636,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         if (status.isOk()) {
           System.out.println("--- TYPE CHECK STATUS: OK");
           System.out.println("--- Type: " + status.getTypeObject());
+        } else if (status.isErrorComposite()) {
+          System.out.println("--- TYPE CHECK STATUS: ERROR COMPOSITE");
+          List<TSStatus> errors = status.getErrors();
+          for (int i = 0; i < errors.size(); i++) {
+            TSStatus error = errors.get(i);
+            System.out.println((i + 1) + ". --- Messge: " + error.getMessage());
+          }
         } else {
           System.out.println("--- TYPE CHECK STATUS: ERROR");
           System.out.println("--- Messge: " + status.getMessage());
