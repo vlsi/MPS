@@ -7,6 +7,7 @@ import jetbrains.mps.modelExecute.ExecutionPoint;
 import jetbrains.mps.modelExecute.ExecutionManager;
 import jetbrains.mps.ide.ILanguagePlugin;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.components.EditorsPaneComponent;
 import jetbrains.mps.ide.components.ProjectPaneComponent;
@@ -57,6 +58,7 @@ public class MPSProject implements ModelLocator {
     addComponent(SemanticModels.class, new SemanticModels(this));
     addComponent(ExecutionManager.class, new ExecutionManager());
     addComponent(RootManager.class, myRootManager);
+    addComponent(ActionManager.class, new ActionManager());
   }
 
   public List<Object> getComponents() {

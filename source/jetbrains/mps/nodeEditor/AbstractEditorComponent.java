@@ -10,6 +10,9 @@ import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ProjectPane;
+import jetbrains.mps.ide.actions.*;
+import jetbrains.mps.ide.action.NodeAction;
+import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
@@ -146,14 +149,22 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myActionMap.put(EditorCellAction.PASTE_BEFORE, new CellAction_PasteNodeRelative(true));
     myActionMap.put(EditorCellAction.PASTE_AFTER, new CellAction_PasteNodeRelative(false));
 
-    registerKeyboardAction(new ShowTypeAction(), KeyStroke.getKeyStroke("control T"), WHEN_FOCUSED);
-    registerKeyboardAction(new ShowInProjectAction(), KeyStroke.getKeyStroke("control P"), WHEN_FOCUSED);
-    registerKeyboardAction(new GoByReferenceAction(), KeyStroke.getKeyStroke("control B"), WHEN_FOCUSED);
-    registerKeyboardAction(new GoToDefinitionAction(), KeyStroke.getKeyStroke("control shift S"), WHEN_FOCUSED);
-    registerKeyboardAction(new GoToEditorAction(), KeyStroke.getKeyStroke("control shift E"), WHEN_FOCUSED);
-    registerKeyboardAction(new GoToConceptEditorAction(), KeyStroke.getKeyStroke("control E"), WHEN_FOCUSED);
-    registerKeyboardAction(new FindUsagesAction(), KeyStroke.getKeyStroke("alt F7"), WHEN_FOCUSED);
-    registerKeyboardAction(new ReturnToPreviousComponentAction(), KeyStroke.getKeyStroke("ESCAPE"), WHEN_FOCUSED);
+
+    registerNodeAction(new ShowNodeTypeAction(), "control T");
+    registerNodeAction(new FindUsagesNodeAction(), "alt F7");
+    registerNodeAction(new ShowInProjectAction(), "control P");
+    registerNodeAction(new GoByReferenceAction(), "control B");
+    registerNodeAction(new GoToDefinitionAction(), "control shift S");
+    registerNodeAction(new GoToEditorAction(), "control shift E");
+    registerNodeAction(new GoToConceptEditorDeclarationAction(), "control E");
+
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        if (myPreviousFocusOwner != null) {
+          myPreviousFocusOwner.requestFocus();
+        }
+      }
+    }, KeyStroke.getKeyStroke("ESCAPE"), WHEN_FOCUSED);
 
     addMouseListener(new MouseAdapter() {
       public void mousePressed(final MouseEvent e) {
@@ -234,6 +245,16 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     });
   }
 
+  protected void registerNodeAction(final NodeAction action, String keyStroke) {
+    registerKeyboardAction(new AbstractAction(action.getName()) {
+      public void actionPerformed(ActionEvent e) {
+        if (mySelectedCell != null && mySelectedCell.getSemanticNode() != null) {
+          action.execute(mySelectedCell.getSemanticNode());
+        }
+      }
+    }, KeyStroke.getKeyStroke(keyStroke), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+  }
+
   public void removeNotify() {
     KeyboardFocusManager.getCurrentKeyboardFocusManager().removePropertyChangeListener(myFocusListener);
     super.removeNotify();
@@ -280,11 +301,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     popupMenu.addSeparator();
     popupMenu.add(createGoToProjectAction(selectedNode));
     if (selectedNode instanceof ConceptDeclaration) {
-      popupMenu.add(createGoToEditorAction((ConceptDeclaration) selectedNode));
+      popupMenu.add(new GoToConceptEditorDeclarationAction().toAction(selectedNode));
     }
     popupMenu.addSeparator();
     popupMenu.add(createGoByReferenceMenu(selectedNode));
-    popupMenu.add(createFindUsagesAction(selectedNode));
+    popupMenu.add(new FindUsagesNodeAction().toAction(selectedNode));
     popupMenu.add(createGoToDeclarationAction(selectedNode));
     popupMenu.add(new AbstractAction("Print node id") {
       public void actionPerformed(ActionEvent e) {
@@ -292,7 +313,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     });
     popupMenu.addSeparator();
-    popupMenu.add(createShowTypeInfoAction(selectedNode));
+    popupMenu.add(new ShowNodeTypeAction().toAction(selectedNode));
 
     if (selectedNode instanceof JavaClass) {
       popupMenu.addSeparator();
@@ -313,37 +334,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       public void actionPerformed(ActionEvent e) {
         ProjectPane projectPane = myIdeMain.getProjectPane();
         projectPane.selectNode(node);
-      }
-    };
-  }
-
-  private Action createGoToEditorAction(final ConceptDeclaration node) {
-    final String editorName = node.getName() + "_Editor";
-    return new AbstractAction("Go To " + editorName) {
-      public void actionPerformed(ActionEvent e) {
-        MPSProject project = myIdeMain.getProject();
-        SemanticModel languageStructure = node.getSemanticModel();
-        Language language = project.getLanguageByStructureModel(languageStructure);
-        if (language == null) {
-          JOptionPane.showMessageDialog(getExternalComponent(), "Couldn't find Language for structure model " + languageStructure.getFQName());
-          return;
-        }
-        SemanticModel languageEditor = language.getLanguageEditor();
-        if (languageEditor != null) {
-          Iterator<SemanticNode> iterator = languageEditor.roots();
-          while (iterator.hasNext()) {
-            SemanticNode root = iterator.next();
-//            System.out.println("compare editor name " + editorName + " vs " + root.getName() + " equals:" + editorName.equals(root.getName()));
-            if (editorName.equals(root.getName())) {
-              AbstractEditorComponent editor = myIdeMain.getEditorsPane().openEditor(root, LEFT);
-              editor.selectNode(root);
-              return;
-            }
-          }
-          JOptionPane.showMessageDialog(getExternalComponent(), "The " + editorName + " wasn't found in " + languageEditor.getFQName());
-        } else {
-          JOptionPane.showMessageDialog(getExternalComponent(), "Editor model for \"" + node.getSemanticModel().getFQName() + "\" is not in the project");
-        }
       }
     };
   }
@@ -370,54 +360,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return menu;
   }
 
-  private Action createFindUsagesAction(final SemanticNode node) {
-    return new AbstractAction("Find Usages") {
-      public void actionPerformed(ActionEvent e) {
-        UsagesModel_SemanticNode usageModel = new UsagesModel_BackReferences(node);
-        myIdeMain.showUsagesView(usageModel);
-      }
-    };
-  }
 
   private Action createGoToDeclarationAction(final SemanticNode node) {
     return new AbstractAction("Go to semantic type declaration") {
       public void actionPerformed(ActionEvent e) {
         myIdeMain.getEditorsPane().openEditor(Language.findTypeDeclaration(node.getSemanticModel(), node.getNodeTypeName()));
-      }
-    };
-  }
-
-  private Action createShowTypeInfoAction(final SemanticNode node) {
-    return new AbstractAction("Show Type Info...") {
-      public void actionPerformed(ActionEvent e) {
-        ITypeChecker typeChecker = TypeCheckerAccess.instance().getTypeChecker();
-        StringBuffer sb = new StringBuffer(node.getDebugText());
-        TSStatus status = typeChecker.checkNodeType(node);
-        if (status.isOk()) {
-          sb.append("\nStatus: OK");
-          ITypeObject typeObject = status.getTypeObject();
-          if (typeObject != null) {
-            sb.append("\nType: ").append(typeObject.getSignature());
-          } else {
-            sb.append("\nType: <no type>");
-          }
-        } else if (status.isErrorComposite()) {
-          sb.append("\nStatus: ERROR COMPOSITE");
-          List<TSStatus> errors = status.getAllErrors();
-          for (int i = 0; i < errors.size(); i++) {
-            TSStatus error = errors.get(i);
-            sb.append("\n" + (i + 1)).append(" : ").append(error.getMessage());
-            if (i > 15) {
-              sb.append("\n...more " + (errors.size() - i) + " errors...");
-              break;
-            }
-          }
-        } else {
-          sb.append("\nStatus: ERROR");
-          sb.append("\nMessage: " + status.getMessage());
-        }
-
-        JOptionPane.showMessageDialog(myContainer, sb.toString(), "Type System Info", JOptionPane.INFORMATION_MESSAGE);
       }
     };
   }
@@ -1299,96 +1246,4 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
   } // private class MyModelListener implements SemanticModelListener
 
-  private class ShowTypeAction extends AbstractAction {
-    public ShowTypeAction() {
-      super("show type");
-    }
-
-    public void actionPerformed(ActionEvent e) {
-      if (mySelectedCell != null && mySelectedCell.getSemanticNode() != null) {
-        createShowTypeInfoAction(mySelectedCell.getSemanticNode()).actionPerformed(e);
-      }
-    }
-  }
-
-  private class ShowInProjectAction extends AbstractAction {
-    public ShowInProjectAction() {
-      super("show in project");
-    }
-
-    public void actionPerformed(ActionEvent e) {
-      if (mySelectedCell != null && mySelectedCell.getSemanticNode() != null) {
-        SemanticNode node = mySelectedCell.getSemanticNode();
-        ProjectPane projectPane = myIdeMain.getProjectPane();
-        projectPane.selectNode(node);
-        projectPane.getTree().requestFocus();
-      }
-    }
-  }
-
-  private class GoByReferenceAction extends AbstractAction {
-    public GoByReferenceAction() {
-      super("go by reference");
-    }
-
-    public void actionPerformed(ActionEvent e) {
-      if (mySelectedCell != null && mySelectedCell.getSemanticNode() != null) {
-        SemanticNode selectedNode = mySelectedCell.getSemanticNode();
-        for (SemanticReference reference : selectedNode.getReferences()) {
-          SemanticNode targetNode = reference.getTargetNode();
-          SemanticNode rootNode = myRootCell.getSemanticNode();
-
-          if (rootNode.isAncestorOf(targetNode)) {
-            selectNode(targetNode);
-          } else {
-            AbstractEditorComponent editor = myIdeMain.getEditorsPane().openEditor(targetNode.getContainingRoot());
-            editor.selectNode(targetNode);
-          }
-        }
-      }
-    }
-  }
-
-  private class GoToDefinitionAction extends AbstractAction {
-    public void actionPerformed(ActionEvent e) {
-      if (mySelectedCell != null && mySelectedCell.getSemanticNode() != null) {
-        SemanticNode node = mySelectedCell.getSemanticNode();
-        myIdeMain.getEditorsPane().openEditor(Language.findTypeDeclaration(node.getSemanticModel(), node.getNodeTypeName()));
-      }
-    }
-  }
-
-  private class GoToEditorAction extends AbstractAction {
-    public void actionPerformed(ActionEvent e) {
-      if (mySelectedCell != null && mySelectedCell.getSemanticNode() != null) {
-        SemanticNode node = mySelectedCell.getSemanticNode();
-        ConceptDeclaration declaration = (ConceptDeclaration) Language.findTypeDeclaration(node.getSemanticModel(), node.getNodeTypeName());
-        createGoToEditorAction(declaration).actionPerformed(e);
-      }
-    }
-  }
-
-  private class GoToConceptEditorAction extends AbstractAction {
-    public void actionPerformed(ActionEvent e) {
-      if (getRootCell().getSemanticNode() instanceof ConceptDeclaration) {
-        createGoToEditorAction((ConceptDeclaration) getRootCell().getSemanticNode()).actionPerformed(e);
-      }
-    }
-  }
-
-  private class FindUsagesAction extends AbstractAction {
-    public void actionPerformed(ActionEvent e) {
-      if (mySelectedCell != null && mySelectedCell.getSemanticNode() != null) {
-        createFindUsagesAction(mySelectedCell.getSemanticNode()).actionPerformed(e);
-      }
-    }
-  }
-
-  private class ReturnToPreviousComponentAction extends AbstractAction {
-    public void actionPerformed(ActionEvent e) {
-      if (myPreviousFocusOwner != null) {
-        myPreviousFocusOwner.requestFocus();
-      }
-    }
-  }
 }
