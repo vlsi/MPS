@@ -68,6 +68,10 @@ public class EditorContext {
     return false;
   }
 
+  public EditorManager getEditorManager() {
+    return myEditorManager;
+  }
+
   private static class Memento {
     private AbstractEditorComponent nodeEditor;
     private Point selectionPosition;
