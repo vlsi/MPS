@@ -68,7 +68,7 @@ public class LocalVariableDeclaration_Editor extends SemanticNodeEditor {
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
     }
-    LocalVariableDeclaration_InitializerCellActions.setCellActions(editorCell, node);
+    _VariableInitializer_ActionSet.setCellActions(editorCell, node);
     return editorCell;
   }
 }
