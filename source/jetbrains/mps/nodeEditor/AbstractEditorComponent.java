@@ -195,6 +195,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private void showPopupMenu(MouseEvent e) {
     final SemanticNode selectedNode = getSelectedCell().getSemanticNode();
+    if (selectedNode == null) return;
 //    selectNode(selectedNode);
     JPopupMenu popupMenu = new JPopupMenu();
     String header = JavaNameUtil.shortName(selectedNode.getClass().getName());
