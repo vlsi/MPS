@@ -25,7 +25,6 @@ public class InstanceMethodDeclaration_Editor extends SemanticNodeEditor {
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);
-    my_BaseMethodParmListEditor = new _BaseMethodParmListEditor(node);
   }
   public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
     return this.createMethodBox(editorContext, node);
@@ -78,6 +77,9 @@ public class InstanceMethodDeclaration_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell create_BaseMethodParmListEditorCell(EditorContext editorContext, SemanticNode node) {
+    if(my_BaseMethodParmListEditor == null) {
+      my_BaseMethodParmListEditor = new _BaseMethodParmListEditor(node);
+    }
     EditorCell editorCell = my_BaseMethodParmListEditor.createEditorCell(editorContext);
     return editorCell;
   }

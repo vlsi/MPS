@@ -26,7 +26,6 @@ public class StaticMethodCall_Editor extends SemanticNodeEditor {
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);
-    my_BaseMethodCallArgListEditor = new _BaseMethodCallArgListEditor(node);
   }
   public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
     return this.createRowCell(editorContext, node);
@@ -77,6 +76,9 @@ public class StaticMethodCall_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public EditorCell create_BaseMethodCallArgListEditorCell(EditorContext editorContext, SemanticNode node) {
+    if(my_BaseMethodCallArgListEditor == null) {
+      my_BaseMethodCallArgListEditor = new _BaseMethodCallArgListEditor(node);
+    }
     EditorCell editorCell = my_BaseMethodCallArgListEditor.createEditorCell(editorContext);
     return editorCell;
   }

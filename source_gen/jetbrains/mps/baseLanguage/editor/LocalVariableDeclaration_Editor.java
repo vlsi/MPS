@@ -88,6 +88,6 @@ public class LocalVariableDeclaration_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public boolean handleConditionalQuery_1075303160504(SemanticNode node) {
-    return FreeMethodsUtil_baseLanguage_context._SemanticNodeCondition_HasInitializer(node);
+    return FreeMethodsUtil_baseLanguage_editor_context._SemanticNodeCondition_HasInitializer(node);
   }
 }

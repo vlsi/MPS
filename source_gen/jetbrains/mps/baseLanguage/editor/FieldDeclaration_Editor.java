@@ -93,6 +93,6 @@ public class FieldDeclaration_Editor extends SemanticNodeEditor {
     return editorCell;
   }
   public boolean handleConditionalQuery_1075290206265(SemanticNode node) {
-    return FreeMethodsUtil_baseLanguage_context._SemanticNodeCondition_HasInitializer(node);
+    return FreeMethodsUtil_baseLanguage_editor_context._SemanticNodeCondition_HasInitializer(node);
   }
 }
