@@ -84,7 +84,7 @@ public class MPSProject implements ModelLocator {
   public void read(File file) {
     myRootManager.read(file);
   }
-
+                                       
   public void readComponents() {
     myWorkspaceFile = new File(myProjectFile.getParent(), myProjectFile.getName().replaceAll(".mpr", ".mws"));
     try {
