@@ -26,27 +26,13 @@ public class MPSSupportHandler {
     myProject = project;
   }
 
-  public boolean isAspectFileExist(final String namespace) {
-
-    final PsiClass[] aspects = new PsiClass[1];
-
-    ApplicationManager.getApplication().runReadAction(new Runnable() {
-      public void run() {
-        final PsiManager psiManager = PsiManager.getInstance(myProject);
-        aspects[0] = psiManager.findClass(namespace + ".Aspects", GlobalSearchScope.projectScope(myProject));
-      }
-    });
-
-    return aspects[0] != null;
-  }
-
   public String getAspectMethodIds(final String namespace, final String prefix) {
     final List list = new ArrayList();
     ApplicationManager.getApplication().runReadAction(new Runnable() {
       public void run() {
         final PsiManager psiManager = PsiManager.getInstance(myProject);
+        if (!isAspectsClassExist(namespace)) return;
         PsiClass aspects = psiManager.findClass(namespace + ".Aspects", GlobalSearchScope.projectScope(myProject));
-
         PsiMethod[] methods = aspects.getMethods();
         for (int i = 0; i < methods.length; i++) {
           PsiMethod method = methods[i];
@@ -64,38 +50,47 @@ public class MPSSupportHandler {
   }
 
 
-  public String createAspectClass(final String namespace) {
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+  public String createAspectMethod(final String namespace, final String name, final String returnType, final String params) {
+    if (!isAspectsClassExist(namespace)) createAspectClass(namespace);
+    executeWriteAction(new Runnable() {
       public void run() {
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-          public void run() {
-            CommandProcessor.getInstance().executeCommand(myProject, new Runnable() {
-              public void run() {
-                final PsiManager psiManager = PsiManager.getInstance(myProject);
-                final ProjectRootManager rootManager = ProjectRootManager.getInstance(myProject);
-                VirtualFile sourceDir = null;
-                VirtualFile[] sourceRoots = rootManager.getContentSourceRoots();
-                for (int i = 0; i < sourceRoots.length; i++) {
-                  VirtualFile file = sourceRoots[i];
-                  if (file.getName().equals("source")) sourceDir = file;
-                  if (file.getName().equals("src")) sourceDir = file;
-                }
-                if (sourceDir == null) {
-                  System.out.println("I can't find directory with sources.");
-                  return;
-                }
-                PsiDirectory rootDir = psiManager.findDirectory(sourceDir);
-                try {
-                  createPackagesForNamespace(rootDir, namespace).createClass("Aspects");
-                } catch (IncorrectOperationException e) {
-                  e.printStackTrace();
-                }
-              }
-            }, "createAspectClass", "MPSPlugin");
-          }
-        });
+        PsiClass cls = getAspectsClass(namespace);
+        try {
+          PsiMethod method = getPsiElementFactory().createMethodFromText("public static " + returnType + " " + name + "(" + params + ")  { }", cls);
+          cls.add(method);
+        } catch (IncorrectOperationException e) {
+          e.printStackTrace();
+        }
       }
-    }, ModalityState.NON_MMODAL);
+    });
+    return "OK";
+  }
+
+
+  public String createAspectClass(final String namespace) {
+    executeWriteAction(new Runnable() {
+      public void run() {
+        final PsiManager psiManager = PsiManager.getInstance(myProject);
+        final ProjectRootManager rootManager = ProjectRootManager.getInstance(myProject);
+        VirtualFile sourceDir = null;
+        VirtualFile[] sourceRoots = rootManager.getContentSourceRoots();
+        for (int i = 0; i < sourceRoots.length; i++) {
+          VirtualFile file = sourceRoots[i];
+          if (file.getName().equals("source")) sourceDir = file;
+          if (file.getName().equals("src")) sourceDir = file;
+        }
+        if (sourceDir == null) {
+          System.out.println("I can't find directory with sources.");
+          return;
+        }
+        PsiDirectory rootDir = psiManager.findDirectory(sourceDir);
+        try {
+          createPackagesForNamespace(rootDir, namespace).createClass("Aspects");
+        } catch (IncorrectOperationException e) {
+          e.printStackTrace();
+        }
+      }
+    });
     return "OK";
   }
 
@@ -115,5 +110,37 @@ public class MPSSupportHandler {
       e.printStackTrace();
     }
     return current;
+  }
+
+  private PsiClass getAspectsClass(final String namespace) {
+    final PsiClass[] aspects = new PsiClass[1];
+    ApplicationManager.getApplication().runReadAction(new Runnable() {
+      public void run() {
+        final PsiManager psiManager = PsiManager.getInstance(myProject);
+        aspects[0] = psiManager.findClass(namespace + ".Aspects", GlobalSearchScope.projectScope(myProject));
+      }
+    });
+    return aspects[0];
+  }
+
+  public boolean isAspectsClassExist(final String namespace) {
+    return getAspectsClass(namespace) != null;
+  }
+
+
+  private void executeWriteAction(final Runnable runnable) {
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+      public void run() {
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          public void run() {
+            CommandProcessor.getInstance().executeCommand(myProject, runnable, "command", "MPSPlugin");
+          }
+        });
+      }
+    }, ModalityState.NON_MMODAL);
+  }
+
+  private PsiElementFactory getPsiElementFactory() {
+    return PsiManager.getInstance(myProject).getElementFactory();
   }
 }
