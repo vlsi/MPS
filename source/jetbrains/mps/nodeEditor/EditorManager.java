@@ -68,7 +68,7 @@ public class EditorManager {
     SemanticTypeDeclaration typeDeclaration = SemanticModelUtil.getTypeDeclaration(node);
     if (typeDeclaration == null) {
       throw new RuntimeException("\nCouldn't find type declaration for node \"" + node.getDebugText() + "\"" +
-              "\nCheck languages for model \"" + NameUtil.modelFQName(node.getSemanticModel()) + "\"\n");
+              "\nCheck languages for model \"" + node.getSemanticModel().getFQName() + "\"\n");
     }
 
     try {

@@ -51,10 +51,6 @@ public class NameUtil {
     return sb.toString();
   }
 
-  public static String modelFQName(SemanticModel semanticModel) {
-    return modelFQName(semanticModel.getName(), semanticModel.getNamespace());
-  }
-
   public static String modelFQName(String modelName, String modelNamespace) {
     return modelNamespace + "." + modelName;
   }

@@ -67,8 +67,9 @@ public class MPSProject {
         String modelFileName = modelFileElement.getAttributeValue(NAME);
         modelFileName = PathManager.getAbsolutePathByRelational(myProjectFile, modelFileName);
         System.out.println("MPSProject addModel from: " + modelFileName);
-        mySemanticModels.addModel(modelFileName);
+        mySemanticModels.loadModel(modelFileName);
       }
+      mySemanticModels.flushModelInfos();
     }
   }
 
