@@ -12,6 +12,8 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 
 public class CastExpression_Editor extends SemanticNodeEditor {
+  public static String MATCHING_TEXT = "(type)";
+  public static String PRESENTATION_NAME = "type cast";
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);

@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class ExpressionStatement_Editor extends SemanticNodeEditor {
-  public static String MATCHING_TEXT = "expression statement";
+  public static String PRESENTATION_NAME = "expression statement";
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);

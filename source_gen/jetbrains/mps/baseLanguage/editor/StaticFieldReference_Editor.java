@@ -10,6 +10,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 
 public class StaticFieldReference_Editor extends SemanticNodeEditor {
+  public static String PRESENTATION_NAME = "static field reference";
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);

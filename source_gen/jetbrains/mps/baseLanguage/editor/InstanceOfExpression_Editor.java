@@ -12,6 +12,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 
 public class InstanceOfExpression_Editor extends SemanticNodeEditor {
+  public static String MATCHING_TEXT = "instanceof";
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);

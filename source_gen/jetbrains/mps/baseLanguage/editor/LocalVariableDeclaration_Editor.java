@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 
 public class LocalVariableDeclaration_Editor extends SemanticNodeEditor {
+  public static String PRESENTATION_NAME = "local variable declaration";
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);

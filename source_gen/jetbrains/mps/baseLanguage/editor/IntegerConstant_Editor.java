@@ -13,6 +13,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 
 public class IntegerConstant_Editor extends SemanticNodeEditor {
+  public static String PRESENTATION_NAME = "integer constant";
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);

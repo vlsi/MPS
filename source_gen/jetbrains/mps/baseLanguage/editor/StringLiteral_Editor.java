@@ -14,6 +14,8 @@ import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 
 public class StringLiteral_Editor extends SemanticNodeEditor {
+  public static String MATCHING_TEXT = "\"";
+  public static String PRESENTATION_NAME = "string literal";
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);

@@ -10,7 +10,8 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 
 public class SuperConstructorInvocation_Editor extends SemanticNodeEditor {
-  public static String MATCHING_TEXT = "super constructor invocation";
+  public static String MATCHING_TEXT = "super";
+  public static String PRESENTATION_NAME = "super constructor call";
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);

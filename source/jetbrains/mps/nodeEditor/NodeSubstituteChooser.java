@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Arrays;
 
 /**
  * Author: Sergey Dmitriev.
@@ -25,18 +26,19 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   private Dimension myPatternEditorSize = new Dimension(50, 50);
 
   private AbstractEditorComponent myEditorComponent;
-  private String[] myStrings;
   private NodeSubstitutePatternEditor myPatternEditor;
   private INodeSubstituteInfo myNodeSubstituteInfo;
   private List<INodeSubstituteAction> myMenuSubstituteEntries;
   private boolean myMenuEmpty;
+  private String[] myStrings;
+  private String[] myMatchingStrings;
 
   public NodeSubstituteChooser(AbstractEditorComponent editorComponent) {
     myEditorComponent = editorComponent;
   }
 
   private PopupWindow getPopupWindow() {
-    if(myPopupWindow == null) {
+    if (myPopupWindow == null) {
       myPopupWindow = new PopupWindow(getEditorWindow());
     }
     return myPopupWindow;
@@ -44,7 +46,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
   private Window getEditorWindow() {
     Component component = myEditorComponent;
-    while(!(component instanceof Window)) {
+    while (!(component instanceof Window)) {
       component = component.getParent();
     }
     return (Window) component;
@@ -69,7 +71,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   }
 
   protected NodeSubstitutePatternEditor getPatternEditor() {
-    if(myPatternEditor == null) {
+    if (myPatternEditor == null) {
       myPatternEditor = new NodeSubstitutePatternEditor();
     }
     return myPatternEditor;
@@ -80,8 +82,8 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   }
 
   public void setVisible(boolean b) {
-    if(isChooserActivated != b) {
-      if(b) {
+    if (isChooserActivated != b) {
+      if (b) {
         myEditorComponent.pushKeyboardHandler(this);
         getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize);
         myNodeSubstituteInfo.invalidateActions();
@@ -105,7 +107,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     String pattern = getPatternEditor().getPattern();
     List<INodeSubstituteAction> matchingActions = myNodeSubstituteInfo.getMatchingActions(pattern);
     myMenuSubstituteEntries = new LinkedList<INodeSubstituteAction>(matchingActions);
-    if(myMenuSubstituteEntries.size() == 0) {
+    if (myMenuSubstituteEntries.size() == 0) {
       myMenuEmpty = true;
       myMenuSubstituteEntries.add(new AbstractNodeSubstituteAction() {
         public String getName() {
@@ -120,14 +122,41 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
     // cache strings
     myStrings = new String[myMenuSubstituteEntries.size()];
-    for(int i = 0; i < myMenuSubstituteEntries.size(); i++) {
+    myMatchingStrings = new String[myMenuSubstituteEntries.size()];
+    String[] descriptionStrings = new String[myMenuSubstituteEntries.size()];
+    int descriptionIndent = 2;
+    for (int i = 0; i < myMenuSubstituteEntries.size(); i++) {
       INodeSubstituteAction entry = myMenuSubstituteEntries.get(i);
-      myStrings[i] = entry.getName();
+      myMatchingStrings[i] = entry.getMatchingText(null);
+      if (myMatchingStrings[i] != null) {
+        descriptionIndent = Math.max(descriptionIndent, myMatchingStrings[i].length() + 2);
+      }
+      descriptionStrings[i] = entry.getDescriptionText(null);
+    }
+
+    for (int i = 0; i < myMenuSubstituteEntries.size(); i++) {
+      StringBuffer sb = new StringBuffer();
+      int indentSize = descriptionIndent;
+      if (myMatchingStrings[i] != null) {
+        sb.append(myMatchingStrings[i]);
+        indentSize = descriptionIndent - myMatchingStrings[i].length();
+      }
+      if (descriptionStrings[i] != null) {
+        char[] indent = new char[indentSize];
+        Arrays.fill(indent, ' ');
+        sb.append(indent);
+        sb.append(descriptionStrings[i]);
+      }
+      myStrings[i] = sb.toString();
     }
   }
 
   protected String[] getStrings() {
     return myStrings;
+  }
+
+  protected String[] getMatchingStrings() {
+    return myMatchingStrings;
   }
 
   public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
@@ -136,27 +165,27 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
   public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
 
-    if(getPatternEditor().processKeyPressed(keyEvent)) {
-      if(isPopupActivated) {
+    if (getPatternEditor().processKeyPressed(keyEvent)) {
+      if (isPopupActivated) {
         rebuildMenuEntries();
         repaintPopupMenu();
       }
       return true;
     }
 
-    if(keyEvent.getKeyCode() == KeyEvent.VK_ESCAPE) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_ESCAPE) {
       setVisible(false);
       return true;
     }
 
-    if(isPopupActivated) {
+    if (isPopupActivated) {
       return menu_processKeyPressed(keyEvent);
     }
 
-    if(keyEvent.getKeyCode() == KeyEvent.VK_ENTER || (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown())) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER || (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown())) {
       String pattern = getPatternEditor().getPattern();
       List<INodeSubstituteAction> matchingActions = myNodeSubstituteInfo.getMatchingActions(pattern);
-      if(matchingActions.size() == 1) {
+      if (matchingActions.size() == 1) {
         setVisible(false);
         CommandUtil.substituteNode(matchingActions.get(0), pattern, myNodeSubstituteInfo, myEditorComponent.getContext());
       }
@@ -167,56 +196,56 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
   private boolean menu_processKeyPressed(KeyEvent keyEvent) {
     String[] strings = getStrings();
-    if(strings.length > 0) {
-      if(keyEvent.getKeyCode() == KeyEvent.VK_UP) {
+    if (strings.length > 0) {
+      if (keyEvent.getKeyCode() == KeyEvent.VK_UP) {
         getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() - 1);
         repaintPopupMenu();
-        if(!myMenuEmpty) {
+        if (!myMenuEmpty) {
           myPatternEditor.setText(getPopupWindow().getSelectedText());
           myPatternEditor.setCaretPosition(getPopupWindow().getSelectedText().length());
         }
         return true;
       }
-      if(keyEvent.getKeyCode() == KeyEvent.VK_DOWN) {
+      if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN) {
         getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() + 1);
         repaintPopupMenu();
-        if(!myMenuEmpty) {
+        if (!myMenuEmpty) {
           myPatternEditor.setText(getPopupWindow().getSelectedText());
           myPatternEditor.setCaretPosition(getPopupWindow().getSelectedText().length());
         }
         return true;
       }
-      if(keyEvent.getKeyCode() == KeyEvent.VK_PAGE_UP) {
+      if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_UP) {
         getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() - MAX_MENU_LEN);
         repaintPopupMenu();
-        if(!myMenuEmpty) {
+        if (!myMenuEmpty) {
           myPatternEditor.setText(getPopupWindow().getSelectedText());
           myPatternEditor.setCaretPosition(getPopupWindow().getSelectedText().length());
         }
         return true;
       }
-      if(keyEvent.getKeyCode() == KeyEvent.VK_PAGE_DOWN) {
+      if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_DOWN) {
         getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() + MAX_MENU_LEN);
         repaintPopupMenu();
-        if(!myMenuEmpty) {
+        if (!myMenuEmpty) {
           myPatternEditor.setText(getPopupWindow().getSelectedText());
           myPatternEditor.setCaretPosition(getPopupWindow().getSelectedText().length());
         }
         return true;
       }
-      if(keyEvent.getKeyCode() == KeyEvent.VK_HOME) {
+      if (keyEvent.getKeyCode() == KeyEvent.VK_HOME) {
         getPopupWindow().setSelectionIndex(0);
         repaintPopupMenu();
-        if(!myMenuEmpty) {
+        if (!myMenuEmpty) {
           myPatternEditor.setText(getPopupWindow().getSelectedText());
           myPatternEditor.setCaretPosition(getPopupWindow().getSelectedText().length());
         }
         return true;
       }
-      if(keyEvent.getKeyCode() == KeyEvent.VK_END) {
+      if (keyEvent.getKeyCode() == KeyEvent.VK_END) {
         getPopupWindow().setSelectionIndex(strings.length - 1);
         repaintPopupMenu();
-        if(!myMenuEmpty) {
+        if (!myMenuEmpty) {
           myPatternEditor.setText(getPopupWindow().getSelectedText());
           myPatternEditor.setCaretPosition(getPopupWindow().getSelectedText().length());
         }
@@ -224,8 +253,8 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       }
     }
 
-    if(keyEvent.getKeyCode() == KeyEvent.VK_ENTER || (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown())) {
-      if(!myMenuEmpty) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER || (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown())) {
+      if (!myMenuEmpty) {
         String pattern = getPatternEditor().getPattern();
         INodeSubstituteAction entry = myMenuSubstituteEntries.get(myPopupWindow.getSelectionIndex());
         setVisible(false);
@@ -237,7 +266,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   }
 
   private void repaintPopupMenu() {
-    if(isPopupActivated) {
+    if (isPopupActivated) {
       getPopupWindow().relayout();
       getPopupWindow().repaint();
     }
@@ -257,21 +286,21 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     }
 
     public void setSelectionIndex(int index) {
-      if(index < 0) {
+      if (index < 0) {
         index = 0;
       }
       int fullLength = getStrings().length;
-      if(index >= fullLength) {
+      if (index >= fullLength) {
         index = fullLength - 1;
       }
 
       selectionIndex = index;
       int listLength = Math.min(MAX_MENU_LEN, fullLength);
       lastVisibleIndex = firstVisibleIndex + (listLength - 1);
-      if(index < firstVisibleIndex) {
+      if (index < firstVisibleIndex) {
         firstVisibleIndex = index;
         lastVisibleIndex = firstVisibleIndex + (listLength - 1);
-      } else if(index > lastVisibleIndex) {
+      } else if (index > lastVisibleIndex) {
         lastVisibleIndex = index;
         firstVisibleIndex = lastVisibleIndex - (listLength - 1);
       }
@@ -279,8 +308,11 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     }
 
     public String getSelectedText() {
-      String[] types = getStrings();
-      return types[selectionIndex];
+      String[] matchingStrings = getMatchingStrings();
+      if (matchingStrings[selectionIndex] != null) {
+        return matchingStrings[selectionIndex];
+      }
+      return "";
     }
 
     public void relayout() {
@@ -288,7 +320,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       String[] types = getStrings();
       int lineHeight = 0;
       int w = getWidth()/* - SCROLLER_WIDTH*/;
-      for(int i = 0; i < types.length; i++) {
+      for (int i = 0; i < types.length; i++) {
         String type = types[i];
         TextLine textLine = new TextLine(type, this);
         textLine.relayout();
@@ -297,14 +329,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       }
 
       int h = lineHeight * Math.min(MAX_MENU_LEN, types.length);
-//      if(firstVisibleIndex > 0) {
-//        h += lineHeight;
-//      }
-//      if(lastVisibleIndex < (types.length - 1)) {
-//        h += lineHeight;
-//      }
       setSize(w/* + SCROLLER_WIDTH*/, h);
-//      System.out.println("relayout : w=" + w + " h=" + h + " line h=" + lineHeight);
     }
 
     public void paint(Graphics g) {
@@ -318,7 +343,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       g.drawRect(bounds.x, bounds.y, bounds.width - 1, bounds.height - 1);
 
       boolean needScroller = firstVisibleIndex > 0 || lastVisibleIndex < (types.length - 1);
-      if(needScroller) {
+      if (needScroller) {
         int scrollerY = (int) (bounds.y + ((long) firstVisibleIndex * (long) bounds.height) / types.length);
         int scrollerH = (int) (((long) (lastVisibleIndex - firstVisibleIndex + 1) * (long) bounds.height) / types.length);
         Rectangle scrollerBounds = new Rectangle(bounds.x + bounds.width - SCROLLER_WIDTH, scrollerY, SCROLLER_WIDTH, scrollerH);
@@ -327,24 +352,11 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       }
 
       int shiftY = 0;
-//      if(firstVisibleIndex > 0) {
-//        TextLine textLine = createTextLine("   ...   ");
-//        textLine.paint(g, 0, shiftY, false, false);
-//        shiftY += textLine.getHeight();
-//        needScroller = true;
-//      }
-
-      for(int i = firstVisibleIndex; i <= lastVisibleIndex; i++) {
+      for (int i = firstVisibleIndex; i <= lastVisibleIndex; i++) {
         TextLine textLine = createTextLine(types[i]);
         textLine.paint(g, 0, shiftY, i == selectionIndex, false);
         shiftY += textLine.getHeight();
       }
-
-//      if(lastVisibleIndex < (types.length - 1)) {
-//        TextLine textLine = createTextLine("   ...   ");
-//        textLine.paint(g, 0, shiftY, false, false);
-//        needScroller = true;
-//      }
     }
 
     private TextLine createTextLine(String text) {
