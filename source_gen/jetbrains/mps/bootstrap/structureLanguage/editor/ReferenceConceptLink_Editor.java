@@ -39,7 +39,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
   public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
@@ -92,6 +92,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
         noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
+        ReferenceConceptLink_ConceptLinkTargets_Menu.setCellActions(noRefCell, node);
         return noRefCell;
       }
     }
@@ -106,6 +107,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     editorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
+    ReferenceConceptLink_ConceptLinkTargets_Menu.setCellActions(editorCell, node);
     return editorCell;
   }
 }

@@ -334,7 +334,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = null;
     editorCell = this.myConceptPropertyListHandler.createCells_Vertical(context);
     editorCell.setSelectable(false);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setGridLayout(true);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
@@ -347,7 +347,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = null;
     editorCell = this.myConceptLinkListHandler.createCells_Vertical(context);
     editorCell.setSelectable(false);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setGridLayout(true);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
