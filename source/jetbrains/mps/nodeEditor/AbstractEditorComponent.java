@@ -1,5 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
@@ -413,6 +414,24 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private void processMousePressed(MouseEvent mouseEvent) {
     requestFocus();
     processCoordSelection(mouseEvent, true);
+
+    if (mouseEvent.isControlDown()) {
+      if (getSelectedCell() != null) {
+        SemanticNode selectedNode = getSelectedCell().getSemanticNode();
+        while (selectedNode != null) {
+          final IStatus status = (IStatus) selectedNode.getUserObject(SemanticModel.NODE_STATUS);
+          if (status != null) {
+            SwingUtilities.invokeLater(new Runnable() {
+              public void run() {
+                JOptionPane.showMessageDialog(getExternalComponent(), status.getMessage(), "Node Status", JOptionPane.ERROR_MESSAGE);
+              }
+            });
+            return;
+          }
+          selectedNode = selectedNode.getParent();
+        }
+      }
+    }
   }
 
   private void processCoordSelection(MouseEvent mouseEvent, boolean isPrevious) {

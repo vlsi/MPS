@@ -1,10 +1,9 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.semanticModel.SemanticNode;
-import jetbrains.mps.semanticModel.SemanticModelUtil;
-import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.semanticModel.SemanticModelUtil;
+import jetbrains.mps.semanticModel.SemanticNode;
 
 /**
  * Author: Sergey Dmitriev.

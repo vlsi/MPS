@@ -2,6 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.semanticModel.SemanticModel;
 import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.ide.IStatus;
 
 import java.awt.*;
 
@@ -29,7 +30,12 @@ public class EditorContext {
   }
 
   public EditorCell createNodeCell(SemanticNode node) {
-    return myEditorManager.createEditorCell(node);
+    EditorCell nodeCell = myEditorManager.createEditorCell(node);
+    IStatus status = (IStatus) node.getUserObject(SemanticModel.NODE_STATUS);
+    if(status != null) {
+      nodeCell.setHighlighted(true);
+    }
+    return nodeCell;
   }
 
   public EditorCell createInspectedCell(SemanticNode node) {
