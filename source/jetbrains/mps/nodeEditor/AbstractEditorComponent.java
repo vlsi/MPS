@@ -32,6 +32,7 @@ import java.beans.PropertyChangeListener;
 import java.io.File;
 import java.util.*;
 import java.util.List;
+import java.lang.reflect.InvocationTargetException;
 
 import static jetbrains.mps.ide.EditorsPane.EditorPosition.*;
 
@@ -1153,43 +1154,27 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private class MyModelListener implements SemanticModelListener {
     public void modelChanged(SemanticModel semanticModel) {
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          myRootCell.updateView();
-          relayout();
-        }
-      });
+      myRootCell.updateView();
+      relayout();
     }
 
     public void modelChangedDramatically(SemanticModel semanticModel) {
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          rebuildEditorContent();
-        }
-      });
+      rebuildEditorContent();
     }
 
     public void nodeAdded(SemanticModel semanticModel, final SemanticNode child) {
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          rebuildEditorContent();
-          handleNodelAdded(child);
-        }
-      });
+      rebuildEditorContent();
+      handleNodelAdded(child);
     }
 
     public void nodeDeleted(SemanticModel semanticModel, final SemanticNode container) {
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          rebuildEditorContent();
-          if (mySelectedCell == null) {
-            EditorCell changedNodeCell = findNodeCell(container);
-            if (changedNodeCell != null) {
-              changeSelection(changedNodeCell);
-            }
-          }
+      rebuildEditorContent();
+      if (mySelectedCell == null) {
+        EditorCell changedNodeCell = findNodeCell(container);
+        if (changedNodeCell != null) {
+          changeSelection(changedNodeCell);
         }
-      });
+      }
     }
 
     private void handleNodelAdded(SemanticNode child) {
