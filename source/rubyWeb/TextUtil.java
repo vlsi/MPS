@@ -78,6 +78,10 @@ public class TextUtil {
           tag = ParagraphTag.newInstance(model);
           tag.setText(toText(model, elem));
         }
+        if ("pre".equals(name)) {
+          tag = PreTag.newInstance(model);
+          tag.setText(toText(model, elem));
+        }
         if ("term".equals(name)) {
           tag = TermTag.newInstance(model);
           tag.setText(toText(model, elem));
@@ -233,6 +237,13 @@ public class TextUtil {
     if (word instanceof BoldTag) {
       BoldTag tag = (BoldTag) word;
       Element bold = new Element("b");
+      element.addContent(bold);
+      toElement(tag.getText(), bold);
+      return;
+    }
+    if (word instanceof PreTag) {
+      PreTag tag = (PreTag) word;
+      Element bold = new Element("pre");
       element.addContent(bold);
       toElement(tag.getText(), bold);
       return;
