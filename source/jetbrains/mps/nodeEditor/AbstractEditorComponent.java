@@ -72,10 +72,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myActionMap.put(EditorCellAction.UP_SPECIAL, new NodeEditorActions.UP_SPECIAL());
     myActionMap.put(EditorCellAction.DOWN_SPECIAL, new NodeEditorActions.DOWN_SPECIAL());
     // ----
-    myActionMap.put(EditorCellAction.COPY, new CopyNode_CellAction());
-    myActionMap.put(EditorCellAction.PASTE, new PasteNode_CellAction());
-    myActionMap.put(EditorCellAction.PASTE_BEFORE, new PasteNodeRelative_CellAction(true));
-    myActionMap.put(EditorCellAction.PASTE_AFTER, new PasteNodeRelative_CellAction(false));
+    myActionMap.put(EditorCellAction.COPY, new CellAction_CopyNode());
+    myActionMap.put(EditorCellAction.PASTE, new CellAction_PasteNode());
+    myActionMap.put(EditorCellAction.PASTE_BEFORE, new CellAction_PasteNodeRelative(true));
+    myActionMap.put(EditorCellAction.PASTE_AFTER, new CellAction_PasteNodeRelative(false));
 
     addMouseListener(new MouseAdapter() {
       public void mousePressed(final MouseEvent e) {

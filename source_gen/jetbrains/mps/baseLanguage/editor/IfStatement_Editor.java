@@ -109,7 +109,7 @@ public class IfStatement_Editor extends SemanticNodeEditor {
     if(ifFalse != null) {
       editorCell = this.nodeCell(editorContext, ifFalse);
     } else {
-      editorCell = EditorCell_Error.create(editorContext, node, null);
+      editorCell = EditorCell_Constant.create(editorContext, node, "<none>", true);
     }
     return editorCell;
   }
