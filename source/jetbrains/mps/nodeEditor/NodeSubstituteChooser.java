@@ -14,6 +14,7 @@ import java.awt.event.MouseAdapter;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * Author: Sergey Dmitriev.
@@ -360,7 +361,10 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       int oldIndex = getSelectionIndex();
 
       model.removeAllElements();
-      for (String value : getStrings()) {
+
+      List<String> strings = Arrays.asList(getStrings());
+      Collections.sort(strings);
+      for (String value : strings) {
         model.addElement(value);
       }
 
