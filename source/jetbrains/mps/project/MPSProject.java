@@ -1,11 +1,6 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.generator.ContextUtil;
-import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.ide.ILanguagePlugin;
-import jetbrains.mps.modelExecute.ExecutionManager;
-import jetbrains.mps.modelExecute.ExecutionPoint;
-import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.semanticModel.SemanticModel;
 import jetbrains.mps.semanticModel.SemanticModels;
 import jetbrains.mps.util.JDOMUtil;
@@ -17,19 +12,13 @@ import org.jdom.JDOMException;
 import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
-import java.util.HashMap;
 
 /**
  * Author: Sergey Dmitriev
  * Created Apr 29, 2004
  */
-public class MPSProject {
+public class MPSProject extends AbstractMPSProject {
   private File myProjectFile;
-
-  private SemanticModels mySemanticModels = new SemanticModels(this);
-
-  private ExecutionPoint myEntryPoint;
-  private ExecutionManager myExecutionManager = new ExecutionManager();
 
   private static final String SEMANTIC_MODELS = "semanticModels";
   private static final String SEMANTIC_MODEL = "semanticModel";
@@ -40,27 +29,11 @@ public class MPSProject {
   private static final String PATH_MACRO_MODELS_ROOT = "${models_root}" + File.separatorChar;
   private static final String PATH_MACRO_PROJECT = "${project}" + File.separatorChar;
 
-  private HashMap<String, Language> myFQNameToLanguageMap = new HashMap<String, Language>();
-
   public MPSProject(File file) {
     myProjectFile = file;
     if (myProjectFile != null) {
       read(myProjectFile);
     }
-  }
-
-  public Language getLanguage(String name, String nameSpace) {
-    String fqName = nameSpace + '.' + name;
-    Language language = myFQNameToLanguageMap.get(fqName);
-    if (language == null) {
-      language = new Language(name, nameSpace, this);
-      myFQNameToLanguageMap.put(fqName, language);
-    }
-    return language;
-  }
-
-  public SemanticModels getSemanticModels() {
-    return mySemanticModels;
   }
 
   public void read(File file) {
@@ -167,41 +140,12 @@ public class MPSProject {
     myProjectFile = projectFile;
   }
 
+  protected SemanticModels createSemanticModels() {
+    return new SemanticModels(this);
+  }
+
   public File getProjectFile() {
     return myProjectFile;
   }
 
-  public boolean isProjectChanged() {
-    return mySemanticModels.wereChanges();
-  }
-
-  public ExecutionPoint getEntryPoint() {
-    return myEntryPoint;
-  }
-
-  public void setEntryPoint(ExecutionPoint entryPoint) {
-    myEntryPoint = entryPoint;
-  }
-
-  public ExecutionManager getExecutionManager() {
-    return myExecutionManager;
-  }
-
-  public ILanguagePlugin getLanguagePlugin(Language language) {
-    SemanticModel languageStructure = language.getLanguageStructure();
-    String packageName = JavaNameUtil.packageNameForModel(languageStructure);
-    String className = packageName + ".LanguagePlugin";
-    try {
-      Class pluginClass = Class.forName(className);
-      return (ILanguagePlugin) pluginClass.newInstance();
-    } catch (ClassNotFoundException e) {
-      System.err.println("Language plugin for structure model " + languageStructure.getFQName() + " was not found.");
-      e.printStackTrace();
-    } catch (IllegalAccessException e) {
-      e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-    } catch (InstantiationException e) {
-      e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-    }
-    return null;
-  }
 }

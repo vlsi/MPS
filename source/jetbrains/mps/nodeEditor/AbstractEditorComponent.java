@@ -9,7 +9,7 @@ import jetbrains.mps.ide.usageView.UsagesModel_SemanticNode;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.AbstractMPSProject;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.typesystem.ITypesystem;
 import jetbrains.mps.typesystem.TSStatus;
@@ -748,7 +748,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (keyEvent.getKeyCode() == KeyEvent.VK_T && keyEvent.isControlDown()) {
       if (mySelectedCell != null) {
         System.out.println("--- Type System Info " + mySelectedCell.getSemanticNode().getDebugText() + " ---");
-        MPSProject project = IdeMain.instance().getProject();
+        AbstractMPSProject project = IdeMain.instance().getProject();
         Language language = Language.getLanguage(mySelectedCell.getSemanticNode(), project);
         ITypesystem typesystem = language.getTypesystem();
         TSStatus status = typesystem.checkNodeType(mySelectedCell.getSemanticNode());
