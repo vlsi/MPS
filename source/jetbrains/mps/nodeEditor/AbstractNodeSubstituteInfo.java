@@ -31,15 +31,17 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
     return myOriginalText;
   }
 
-  protected List<INodeSubstituteAction> createActions() {
+  protected /*abstract*/ List<INodeSubstituteAction> createActions() {
     return createSubstituteEntries();
   }
 
   /**
-   * @deprecated
    * @return
+   * @deprecated
    */
-  protected abstract List<INodeSubstituteAction> createSubstituteEntries();
+  protected /*abstract*/ List<INodeSubstituteAction> createSubstituteEntries() {
+    return null;
+  }
 
   public void invalidateActions() {
     myCachedActionList = null;
