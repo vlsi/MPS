@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.semanticModel.SemanticModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.nodeEditor.EditorCellAction;
@@ -47,7 +47,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
   public EditorCell createVariableDeclarationReferenceCell(EditorContext context, SemanticNode node) {
     SemanticNode effectiveNode = null;
     effectiveNode = node.getReferent("variableDeclaration");
-    SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(node, "variableDeclaration");
+    LinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(node, "variableDeclaration");
     if(effectiveNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "<no field>");

@@ -5,7 +5,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
-import jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.semanticModel.SemanticModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
@@ -17,9 +17,9 @@ import java.util.List;
 public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   private SemanticNode mySourceNode;
-  private SemanticLinkDeclaration myLinkDeclaration;
+  private LinkDeclaration myLinkDeclaration;
 
-  public DefaultReferenceSubstituteInfo(SemanticNode sourceNode, SemanticLinkDeclaration linkDeclaration) {
+  public DefaultReferenceSubstituteInfo(SemanticNode sourceNode, LinkDeclaration linkDeclaration) {
     mySourceNode = sourceNode;
     myLinkDeclaration = linkDeclaration;
     if (linkDeclaration.getMetaClass() == LinkMetaclass.aggregation) {

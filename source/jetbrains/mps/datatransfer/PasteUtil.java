@@ -1,6 +1,6 @@
 package jetbrains.mps.datatransfer;
 
-import jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
@@ -95,7 +95,7 @@ public class PasteUtil {
     if (pasteTargetType == null || pasteNodeType == null) {
       return false;
     }
-    final SemanticLinkDeclaration linkDeclaration = findListlikeMetalink(pasteTargetType, pasteNodeType);
+    final LinkDeclaration linkDeclaration = findListlikeMetalink(pasteTargetType, pasteNodeType);
     if (linkDeclaration == null) {
       return false;
     }
@@ -149,14 +149,14 @@ public class PasteUtil {
     return null;
   }
 
-  private static SemanticLinkDeclaration findListlikeMetalink(ConceptDeclaration sourceMetatype, ConceptDeclaration targetMetatype) {
-    Iterator<SemanticLinkDeclaration> metalinks = sourceMetatype.semanticLinkDeclarations();
+  private static LinkDeclaration findListlikeMetalink(ConceptDeclaration sourceMetatype, ConceptDeclaration targetMetatype) {
+    Iterator<LinkDeclaration> metalinks = sourceMetatype.semanticLinkDeclarations();
     while (metalinks.hasNext()) {
-      SemanticLinkDeclaration metalink = metalinks.next();
+      LinkDeclaration metalink = metalinks.next();
       if (SemanticModelUtil.isAssignableType(metalink.getTarget(), targetMetatype)) {
 //        String sourceCardinality = metalink.getSourceCardinality();
-//        if (SemanticLinkDeclaration.CARDINALITY_0_N.equals(sourceCardinality) ||
-//                SemanticLinkDeclaration.CARDINALITY_1_N.equals(sourceCardinality)) {
+//        if (LinkDeclaration.CARDINALITY_0_N.equals(sourceCardinality) ||
+//                LinkDeclaration.CARDINALITY_1_N.equals(sourceCardinality)) {
 //          return metalink;
 //        }
         Cardinality sourceCardinality = metalink.getSourceCardinality();
