@@ -157,6 +157,12 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1112730955130">
     <property name="name" value="ConditionalTemplate" />
     <link role="extends" targetNodeId="2.1078489098625" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1112804745009">
+      <property name="sourceCardinality" value="1" />
+      <property name="targetCardinality" value="0..n" />
+      <property name="role" value="template" />
+      <link role="target" targetNodeId="1092059087312" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1112731289399">
       <property name="value" value="conditional template" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
@@ -164,13 +170,6 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1112731143975">
       <property name="name" value="conditionAspectId" />
       <link role="dataType" targetNodeId="2.1082983041843" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1112731001474">
-      <property name="sourceCardinality" value="1" />
-      <property name="targetCardinality" value="1" />
-      <property name="role" value="content" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="2.1078489098625" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1112731569622">
