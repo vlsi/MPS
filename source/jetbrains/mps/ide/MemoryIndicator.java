@@ -23,6 +23,10 @@ public class MemoryIndicator extends JPanel {
       g.drawRect(0, 0, getWidth() - 1, getHeight() - 1);
       super.paintComponent(g);
     }
+
+    public Dimension getPreferredSize() {
+      return new Dimension(getFontMetrics(getFont()).stringWidth("MMMMMMMMMMMMMMM"), super.getPreferredSize().height);
+    }
   };
   private Timer myTimer = new Timer(1000, new AbstractAction() {
     public void actionPerformed(ActionEvent e) {
