@@ -51,7 +51,7 @@ public class WhileStatement_Editor extends SemanticNodeEditor {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       WhileStatement_ConditionCellActions.setCellActions(editorCell, node);
       _DefErrorActions.setCellActions(editorCell, node);
-    }
+}
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext editorContext, SemanticNode node, String text) {
@@ -71,7 +71,7 @@ public class WhileStatement_Editor extends SemanticNodeEditor {
       editorCell = this.nodeCell(editorContext, body);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
-    }
+}
     return editorCell;
   }
   public EditorCell createRowCell2(EditorContext editorContext, SemanticNode node) {

@@ -20,6 +20,8 @@ public class NullLiteral_Editor extends SemanticNodeEditor {
   }
   public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setEditable(true);
     NullLiteral_NodeBoxActions.setCellActions(editorCell, node);
     return editorCell;
   }

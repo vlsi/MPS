@@ -41,7 +41,7 @@ public class NotExpression_Editor extends SemanticNodeEditor {
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       NotExpression_NotExpressionActions.setCellActions(editorCell, node);
-    }
+}
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext editorContext, SemanticNode node, String text) {

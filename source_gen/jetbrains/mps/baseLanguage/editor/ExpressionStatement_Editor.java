@@ -38,7 +38,7 @@ public class ExpressionStatement_Editor extends SemanticNodeEditor {
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       ExpressionStatement_ExpressionActions.setCellActions(editorCell, node);
-    }
+}
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {

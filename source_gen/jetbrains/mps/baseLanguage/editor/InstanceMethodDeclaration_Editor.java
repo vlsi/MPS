@@ -56,7 +56,7 @@ public class InstanceMethodDeclaration_Editor extends SemanticNodeEditor {
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       InstanceMethodDeclaration_ReturnTypeCellActions.setCellActions(editorCell, node);
-    }
+}
     return editorCell;
   }
   public EditorCell createMethodName(EditorContext editorContext, SemanticNode node) {
@@ -98,7 +98,7 @@ public class InstanceMethodDeclaration_Editor extends SemanticNodeEditor {
       editorCell = this.nodeCell(editorContext, body);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
-    }
+}
     return editorCell;
   }
   public EditorCell createConstantCell2(EditorContext editorContext, SemanticNode node, String text) {

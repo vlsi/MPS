@@ -55,7 +55,7 @@ public class ConstructorDeclaration_Editor extends SemanticNodeEditor {
       ((EditorCell_Label)editorCell).setEditable(false);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
-    }
+}
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
@@ -91,7 +91,7 @@ public class ConstructorDeclaration_Editor extends SemanticNodeEditor {
       editorCell = this.nodeCell(editorContext, body);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
-    }
+}
     return editorCell;
   }
   public EditorCell createConstantCell2(EditorContext editorContext, SemanticNode node, String text) {

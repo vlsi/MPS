@@ -40,7 +40,7 @@ public class InstanceOfExpression_Editor extends SemanticNodeEditor {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       InstanceOfExpression_LeftExpressionsActions.setCellActions(editorCell, node);
       _DefErrorActions.setCellActions(editorCell, node);
-    }
+}
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
@@ -58,7 +58,7 @@ public class InstanceOfExpression_Editor extends SemanticNodeEditor {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       InstanceOfExpression_InstanceOfTypes.setCellActions(editorCell, node);
       _DefErrorActions.setCellActions(editorCell, node);
-    }
+}
     return editorCell;
   }
 }

@@ -38,7 +38,7 @@ public class ParameterDeclaration_Editor extends SemanticNodeEditor {
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       ParameterDeclaration_TypeCellActions.setCellActions(editorCell, node);
-    }
+}
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext editorContext, SemanticNode node) {

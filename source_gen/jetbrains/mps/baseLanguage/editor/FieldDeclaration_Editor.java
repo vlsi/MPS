@@ -44,7 +44,7 @@ public class FieldDeclaration_Editor extends SemanticNodeEditor {
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       FieldDeclaration_TypeCellActions.setCellActions(editorCell, node);
-    }
+}
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext editorContext, SemanticNode node) {
@@ -76,7 +76,7 @@ public class FieldDeclaration_Editor extends SemanticNodeEditor {
       editorCell = EditorCell_Constant.create(editorContext, node, "", true);
       ((EditorCell_Label)editorCell).setEditable(true);
       __VariableInitializer_ActionSet.setCellActions(editorCell, node);
-    }
+}
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext editorContext, SemanticNode node, String text) {

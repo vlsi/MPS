@@ -47,7 +47,7 @@ public class StaticMethodCall_Editor extends SemanticNodeEditor {
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
       StaticMethodCall_StaticMethodCellActions.setCellActions(editorCell, node);
-    }
+}
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
@@ -61,7 +61,7 @@ public class StaticMethodCall_Editor extends SemanticNodeEditor {
       editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
-    }
+}
     StaticMethodCall_NameCellActions.setCellActions(editorCell, node);
     return editorCell;
   }

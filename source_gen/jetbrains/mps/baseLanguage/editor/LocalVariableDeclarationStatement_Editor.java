@@ -36,7 +36,7 @@ public class LocalVariableDeclarationStatement_Editor extends SemanticNodeEditor
       editorCell.setSelectable(false);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
-    }
+}
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
