@@ -17,7 +17,7 @@ import jetbrains.mps.project.MPSProject;
  */
 public class EditorManager {
   private static Logger LOG = Logger.getInstance("jetbrains.mps.nodeEditor.EditorManager");
-  private static EditorManager myInstance;
+//  private static EditorManager myInstance;
   public static String NODE_TO_PLACE_AFTER = "nodeToPlaceAfter";
 
 
