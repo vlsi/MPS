@@ -1,18 +1,22 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.semanticModel.*;
+import jetbrains.mps.generator.ContextUtil;
+import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.ide.ILanguagePlugin;
+import jetbrains.mps.modelExecute.ExecutionManager;
+import jetbrains.mps.semanticModel.ExecutionPoint;
+import jetbrains.mps.semanticModel.Language;
+import jetbrains.mps.semanticModel.SemanticModel;
+import jetbrains.mps.semanticModel.SemanticModels;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.modelExecute.ExecutionManager;
-import jetbrains.mps.generator.ContextUtil;
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.JDOMException;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
-
-import org.jdom.Document;
-import org.jdom.JDOMException;
-import org.jdom.Element;
 
 /**
  * Author: Sergey Dmitriev
@@ -153,4 +157,21 @@ public class MPSProject {
     return myExecutionManager;
   }
 
+  public ILanguagePlugin getLanguagePlugin(Language language) {
+    SemanticModel languageStructure = language.getLanguageStructure();
+    String packageName = JavaNameUtil.packageNameForModel(languageStructure);
+    String className = packageName + ".LanguagePlugin";
+    try {
+      Class pluginClass = Class.forName(className);
+      return (ILanguagePlugin) pluginClass.newInstance();
+    } catch (ClassNotFoundException e) {
+      System.err.println("Language plugin for structure model " + languageStructure.getFQName() + " was not found.");
+      e.printStackTrace();
+    } catch (IllegalAccessException e) {
+      e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+    } catch (InstantiationException e) {
+      e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+    }
+    return null;
+  }
 }
