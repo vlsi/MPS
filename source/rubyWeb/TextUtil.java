@@ -103,6 +103,13 @@ public class TextUtil {
           tag = CodeTag.newInstance(model);
           tag.setText(toText(model, elem));
         }
+        if ("book".equals(name)) {
+          tag = BookTag.newInstance(model);
+          tag.setText(toText(model, elem));
+          if (elem.getAttributeValue("isbn") != null) {
+            ((BookTag) tag).setIsbn(elem.getAttributeValue("isbn"));
+          }
+        }
         if ("xref".equals(name)) {
           tag = XRefTag.newInstance(model);
           tag.setText(toText(model, elem));
@@ -261,16 +268,24 @@ public class TextUtil {
     }
     if (word instanceof PreTag) {
       PreTag tag = (PreTag) word;
-      Element bold = new Element("pre");
-      element.addContent(bold);
-      toElement(tag.getText(), bold);
+      Element pre = new Element("pre");
+      element.addContent(pre);
+      toElement(tag.getText(), pre);
       return;
     }
     if (word instanceof ParagraphTag) {
       ParagraphTag tag = (ParagraphTag) word;
-      Element bold = new Element("p");
-      element.addContent(bold);
-      toElement(tag.getText(), bold);
+      Element p = new Element("p");
+      element.addContent(p);
+      toElement(tag.getText(), p);
+      return;
+    }
+    if (word instanceof BookTag) {
+      BookTag tag = (BookTag) word;
+      Element book = new Element("book");
+      book.setAttribute("isbn", tag.getIsbn());
+      element.addContent(book);
+      toElement(tag.getText(), book);
       return;
     }
     if (word instanceof ItalicTag) {
