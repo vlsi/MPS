@@ -17,7 +17,7 @@ public class InstanceMethodDeclaration_Editor extends jetbrains.mps.nodeEditor.S
     jetbrains.mps.nodeEditor.EditorCell_Collection editorCell = jetbrains.mps.nodeEditor.EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setSelectable(true);
     editorCell.setGridLayout(false);
-    jetbrains.mps.baseLanguage.editor.InstanceMethodDeclaration_Actions.setCellActions_NodeBoxActions(editorCell, node);
+    InstanceMethodDeclaration_NodeBoxActions.setCellActions(editorCell, node);
     editorCell.addEditorCell(this.createHeaderRow(editorContext, node));
     editorCell.addEditorCell(this.createBodyArea(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell2(editorContext, node, "}"));
@@ -42,7 +42,7 @@ public class InstanceMethodDeclaration_Editor extends jetbrains.mps.nodeEditor.S
     } else {
       editorCell = jetbrains.mps.nodeEditor.EditorCell_Error.create(editorContext, node, null);
     }
-    jetbrains.mps.baseLanguage.editor.InstanceMethodDeclaration_Actions.setCellActions_ReturnTypeActions(editorCell, node);
+    InstanceMethodDeclaration_ReturnTypeCellActions.setCellActions(editorCell, node);
     return editorCell;
   }
   public jetbrains.mps.nodeEditor.EditorCell createMethodName(jetbrains.mps.nodeEditor.EditorContext editorContext, jetbrains.mps.semanticModel.SemanticNode node) {

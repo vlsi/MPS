@@ -13,7 +13,7 @@ public class ReturnStatement_Editor extends jetbrains.mps.nodeEditor.SemanticNod
   public jetbrains.mps.nodeEditor.EditorCell createStatementBox(jetbrains.mps.nodeEditor.EditorContext editorContext, jetbrains.mps.semanticModel.SemanticNode node) {
     jetbrains.mps.nodeEditor.EditorCell_Collection editorCell = jetbrains.mps.nodeEditor.EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setGridLayout(false);
-    jetbrains.mps.baseLanguage.editor.ReturnStatement_Actions.setCellActions_NodeBoxActions(editorCell, node);
+    ReturnStatement_NodeBoxActions.setCellActions(editorCell, node);
     editorCell.addEditorCell(this.createConstantCell(editorContext, node, "return"));
     editorCell.addEditorCell(this.createExpressionCell(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell1(editorContext, node, ";"));
@@ -31,7 +31,7 @@ public class ReturnStatement_Editor extends jetbrains.mps.nodeEditor.SemanticNod
     } else {
       editorCell = jetbrains.mps.nodeEditor.EditorCell_Error.create(editorContext, node, null);
     }
-    jetbrains.mps.baseLanguage.editor.ReturnStatement_Actions.setCellActions_ExpressionActions(editorCell, node);
+    ReturnStatement_ExpressionCellActions.setCellActions(editorCell, node);
     return editorCell;
   }
   public jetbrains.mps.nodeEditor.EditorCell createConstantCell1(jetbrains.mps.nodeEditor.EditorContext editorContext, jetbrains.mps.semanticModel.SemanticNode node, java.lang.String text) {

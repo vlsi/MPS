@@ -17,7 +17,7 @@ public class ConstructorDeclaration_Editor extends jetbrains.mps.nodeEditor.Sema
     jetbrains.mps.nodeEditor.EditorCell_Collection editorCell = jetbrains.mps.nodeEditor.EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setSelectable(true);
     editorCell.setGridLayout(false);
-    jetbrains.mps.baseLanguage.editor.ConstructorDeclaration_Actions.setCellActions_NodeBoxActions(editorCell, node);
+    ConstructorDeclaration_NodeBoxActions.setCellActions(editorCell, node);
     editorCell.addEditorCell(this.createHeaderRow(editorContext, node));
     editorCell.addEditorCell(this.createBodyArea(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell2(editorContext, node, "}"));

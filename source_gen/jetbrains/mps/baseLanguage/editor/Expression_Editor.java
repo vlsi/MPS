@@ -12,7 +12,7 @@ public class Expression_Editor extends jetbrains.mps.nodeEditor.SemanticNodeEdit
   }
   public jetbrains.mps.nodeEditor.EditorCell createErrorCell(jetbrains.mps.nodeEditor.EditorContext editorContext, jetbrains.mps.semanticModel.SemanticNode node) {
     jetbrains.mps.nodeEditor.EditorCell_Error editorCell = jetbrains.mps.nodeEditor.EditorCell_Error.create(editorContext, node, "expression");
-    jetbrains.mps.baseLanguage.editor.Expression_Actions.setCellActions_ExpressionActions(editorCell, node);
+    Expression_NodeBoxActions.setCellActions(editorCell, node);
     return editorCell;
   }
 }

@@ -19,7 +19,7 @@ public class Statement_Editor extends jetbrains.mps.nodeEditor.SemanticNodeEdito
   }
   public jetbrains.mps.nodeEditor.EditorCell createErrorCell(jetbrains.mps.nodeEditor.EditorContext editorContext, jetbrains.mps.semanticModel.SemanticNode node) {
     jetbrains.mps.nodeEditor.EditorCell_Error editorCell = jetbrains.mps.nodeEditor.EditorCell_Error.create(editorContext, node, "statement");
-    jetbrains.mps.baseLanguage.editor.Statement_Actions.setCellActions_StatementActions(editorCell, node);
+    Statement_StatementCellActions.setCellActions(editorCell, node);
     return editorCell;
   }
   public jetbrains.mps.nodeEditor.EditorCell createConstantCell(jetbrains.mps.nodeEditor.EditorContext editorContext, jetbrains.mps.semanticModel.SemanticNode node, java.lang.String text) {

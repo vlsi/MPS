@@ -13,7 +13,7 @@ public class ParameterDeclaration_Editor extends jetbrains.mps.nodeEditor.Semant
   public jetbrains.mps.nodeEditor.EditorCell createDeclarationBox(jetbrains.mps.nodeEditor.EditorContext editorContext, jetbrains.mps.semanticModel.SemanticNode node) {
     jetbrains.mps.nodeEditor.EditorCell_Collection editorCell = jetbrains.mps.nodeEditor.EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setGridLayout(false);
-    jetbrains.mps.baseLanguage.editor.ParameterDeclaration_Actions.setCellActions_NodeBoxActions(editorCell, node);
+    ParameterDeclaration_NodeBoxActions.setCellActions(editorCell, node);
     editorCell.addEditorCell(this.createTypeCell(editorContext, node));
     editorCell.addEditorCell(this.createNameCell(editorContext, node));
     return editorCell;
@@ -26,13 +26,12 @@ public class ParameterDeclaration_Editor extends jetbrains.mps.nodeEditor.Semant
     } else {
       editorCell = jetbrains.mps.nodeEditor.EditorCell_Error.create(editorContext, node, null);
     }
-    jetbrains.mps.baseLanguage.editor.ParameterDeclaration_Actions.setCellActions_TypeActions(editorCell, node);
+    ParameterDeclaration_TypeCellActions.setCellActions(editorCell, node);
     return editorCell;
   }
   public jetbrains.mps.nodeEditor.EditorCell createNameCell(jetbrains.mps.nodeEditor.EditorContext editorContext, jetbrains.mps.semanticModel.SemanticNode node) {
     jetbrains.mps.nodeEditor.ModelAccessor modelAccessor = new jetbrains.mps.nodeEditor.PropertyAccessor(node, "name", "?", true);
     jetbrains.mps.nodeEditor.EditorCell_Property editorCell = jetbrains.mps.nodeEditor.EditorCell_Property.create(editorContext, modelAccessor, node);
-    jetbrains.mps.baseLanguage.editor.ParameterDeclaration_Actions.setCellActions_NameActions(editorCell, node);
     return editorCell;
   }
 }

@@ -13,7 +13,7 @@ public class ThisExpression_Editor extends jetbrains.mps.nodeEditor.SemanticNode
   public jetbrains.mps.nodeEditor.EditorCell createConstantCell(jetbrains.mps.nodeEditor.EditorContext editorContext, jetbrains.mps.semanticModel.SemanticNode node, java.lang.String text) {
     jetbrains.mps.nodeEditor.EditorCell_Constant editorCell = jetbrains.mps.nodeEditor.EditorCell_Constant.create(editorContext, node, text, false);
     editorCell.setSelectable(true);
-    jetbrains.mps.baseLanguage.editor.ThisExpression_Actions.setCellActions_NodeBoxActions(editorCell, node);
+    ThisExpression_NodeBoxActions.setCellActions(editorCell, node);
     return editorCell;
   }
 }

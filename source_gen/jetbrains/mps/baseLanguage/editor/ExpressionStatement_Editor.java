@@ -13,7 +13,7 @@ public class ExpressionStatement_Editor extends jetbrains.mps.nodeEditor.Semanti
   public jetbrains.mps.nodeEditor.EditorCell createStatementBox(jetbrains.mps.nodeEditor.EditorContext editorContext, jetbrains.mps.semanticModel.SemanticNode node) {
     jetbrains.mps.nodeEditor.EditorCell_Collection editorCell = jetbrains.mps.nodeEditor.EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setGridLayout(false);
-    jetbrains.mps.baseLanguage.editor.ExpressionStatement_Actions.setCellActions_NodeBoxActions(editorCell, node);
+    ExpressionStatement_NodeBoxActions.setCellActions(editorCell, node);
     editorCell.addEditorCell(this.createExpressionCell(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell(editorContext, node, ";"));
     return editorCell;

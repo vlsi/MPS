@@ -13,7 +13,6 @@ public class LocalVariableDeclaration_Editor extends jetbrains.mps.nodeEditor.Se
   public jetbrains.mps.nodeEditor.EditorCell createDeclarationBox(jetbrains.mps.nodeEditor.EditorContext editorContext, jetbrains.mps.semanticModel.SemanticNode node) {
     jetbrains.mps.nodeEditor.EditorCell_Collection editorCell = jetbrains.mps.nodeEditor.EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setGridLayout(false);
-    jetbrains.mps.baseLanguage.editor.LocalVariableDeclaration_Actions.setCellActions_NodeBoxActions(editorCell, node);
     editorCell.addEditorCell(this.createTypeCell(editorContext, node));
     editorCell.addEditorCell(this.createNameCell(editorContext, node));
     if(jetbrains.mps.baseLanguage.editor.LocalVariableDeclaration_Actions.isTrue_HasInitializer(node)) {
@@ -29,13 +28,13 @@ public class LocalVariableDeclaration_Editor extends jetbrains.mps.nodeEditor.Se
     } else {
       editorCell = jetbrains.mps.baseLanguage.editor.LocalVariableDeclaration_Actions.createCustomCell_NullTypeCell(editorContext, node);
     }
-    jetbrains.mps.baseLanguage.editor.LocalVariableDeclaration_Actions.setCellActions_TypeActions(editorCell, node);
+    LocalVariableDeclaration_TypeCellActions.setCellActions(editorCell, node);
     return editorCell;
   }
   public jetbrains.mps.nodeEditor.EditorCell createNameCell(jetbrains.mps.nodeEditor.EditorContext editorContext, jetbrains.mps.semanticModel.SemanticNode node) {
     jetbrains.mps.nodeEditor.ModelAccessor modelAccessor = new jetbrains.mps.nodeEditor.PropertyAccessor(node, "name", "?", true);
     jetbrains.mps.nodeEditor.EditorCell_Property editorCell = jetbrains.mps.nodeEditor.EditorCell_Property.create(editorContext, modelAccessor, node);
-    jetbrains.mps.baseLanguage.editor.LocalVariableDeclaration_Actions.setCellActions_NameActions(editorCell, node);
+    LocalVariableDeclaration_NameCellActions.setCellActions(editorCell, node);
     return editorCell;
   }
   public jetbrains.mps.nodeEditor.EditorCell createInitializerArea(jetbrains.mps.nodeEditor.EditorContext editorContext, jetbrains.mps.semanticModel.SemanticNode node) {
@@ -57,7 +56,7 @@ public class LocalVariableDeclaration_Editor extends jetbrains.mps.nodeEditor.Se
     } else {
       editorCell = jetbrains.mps.nodeEditor.EditorCell_Error.create(editorContext, node, null);
     }
-    jetbrains.mps.baseLanguage.editor.LocalVariableDeclaration_Actions.setCellActions_InitializerActions(editorCell, node);
+    LocalVariableDeclaration_InitializerCellActions.setCellActions(editorCell, node);
     return editorCell;
   }
 }

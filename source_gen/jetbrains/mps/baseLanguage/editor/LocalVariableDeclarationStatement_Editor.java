@@ -13,7 +13,7 @@ public class LocalVariableDeclarationStatement_Editor extends jetbrains.mps.node
   public jetbrains.mps.nodeEditor.EditorCell createStatementBox(jetbrains.mps.nodeEditor.EditorContext editorContext, jetbrains.mps.semanticModel.SemanticNode node) {
     jetbrains.mps.nodeEditor.EditorCell_Collection editorCell = jetbrains.mps.nodeEditor.EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setGridLayout(false);
-    jetbrains.mps.baseLanguage.editor.LocalVariableDeclarationStatement_Actions.setCellActions_NodeBoxActions(editorCell, node);
+    LocalVariableDeclarationStatement_NodeBoxActions.setCellActions(editorCell, node);
     editorCell.addEditorCell(this.createLocalVariableDeclarationCell(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell(editorContext, node, ";"));
     return editorCell;
