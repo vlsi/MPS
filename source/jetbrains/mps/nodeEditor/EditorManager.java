@@ -1,16 +1,17 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.semanticModel.SemanticNode;
-
-import java.util.Iterator;
+import jetbrains.mps.semanticModel.SemanticModelUtil;
+import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration;
+import jetbrains.mps.util.NameUtil;
 
 /**
  * Author: Sergey Dmitriev.
  * Time: Nov 7, 2003 7:06:31 PM
  */
 public class EditorManager {
-  public static String NODE_BEFORE = "nodeBefore";
-  public static String NODE_AFTER = "nodeAfter";
+  public static String NODE_TO_PLACE_AFTER = "nodeToPlaceAfter";
 
   private EditorContext myEditorContext;
 
@@ -21,23 +22,15 @@ public class EditorManager {
   public EditorCell createEditorCell(SemanticNode node) {
     SemanticNodeEditor editor = getEditor(node);
     EditorCell nodeCell = createEditorCell(editor, node);
-    if(node.getReferenceCount(NODE_BEFORE) == 0 && node.getReferenceCount(NODE_AFTER) == 0) {
+    if(node.getReferenceCount(NODE_TO_PLACE_AFTER) == 0) {
       return nodeCell;
     }
 
     EditorCell_Collection rowWrapper = EditorCell_Collection.createHorizontal(myEditorContext, node);
     rowWrapper.setSelectable(false);
-    Iterator<SemanticNode> before = node.referents(NODE_BEFORE);
-    while(before.hasNext()) {
-      SemanticNode beforeNode = before.next();
-      rowWrapper.addEditorCell(createEditorCell(getEditor(beforeNode), beforeNode));
-    }
     rowWrapper.addEditorCell(nodeCell);
-    Iterator<SemanticNode> after = node.referents(NODE_AFTER);
-    while(after.hasNext()) {
-      SemanticNode afterNode = after.next();
-      rowWrapper.addEditorCell(createEditorCell(getEditor(afterNode), afterNode));
-    }
+    SemanticNode afterNode = node.getReferent(NODE_TO_PLACE_AFTER, (SemanticNode) null);
+    rowWrapper.addEditorCell(createEditorCell(getEditor(afterNode), afterNode));
     return rowWrapper;
   }
 
@@ -65,37 +58,20 @@ public class EditorManager {
       return semanticNodeEditor;
     }
 
-    SemanticLanguage[] languages = myEditorContext.getLanguages();
-    SemanticLanguage supportingLanguage = null;
-    for(int i = 0; i < languages.length; i++) {
-      SemanticLanguage language = languages[i];
-      if(language.supports(node)) {
-        supportingLanguage = language;
-        break;
-      }
-    }
-
-    if(supportingLanguage == null) {
-      System.err.println("Couldn't find supporting language for node : " + node.getDebugText());
-      return null;
-    }
-
-    semanticNodeEditor = loadEditor(node, supportingLanguage);
+    semanticNodeEditor = loadEditor(node);
     if(semanticNodeEditor != null) {
       node.putUserObject(this.getClass(), semanticNodeEditor);
     }
     return semanticNodeEditor;
   }
 
-  private SemanticNodeEditor loadEditor(SemanticNode node, SemanticLanguage language) {
-    SemanticNodeEditor semanticNodeEditor = tryLoadGenEditor(node, language);
+  private SemanticNodeEditor loadEditor(SemanticNode node) {
+    SemanticNodeEditor semanticNodeEditor = tryLoadTrialEditor(node);
     if(semanticNodeEditor != null) {
       return semanticNodeEditor;
     }
-    String className = node.getClass().getName();
-    className = className.substring(className.lastIndexOf('.') + 1);
-    String editorClassName = language.getEditorsNamespace(node) + "." + className + "_Editor";
 
+    String editorClassName = getEditorClassName(node, false);
     try {
       Class nodeClass = Class.forName(editorClassName);
       semanticNodeEditor = (SemanticNodeEditor) nodeClass.newInstance();
@@ -117,14 +93,15 @@ public class EditorManager {
    * tries to load *generated* editor by name: Gen_<editorName>
    *
    * @param node
-   * @param language
    * @return
    */
-  private SemanticNodeEditor tryLoadGenEditor(SemanticNode node, SemanticLanguage language) {
+  private SemanticNodeEditor tryLoadTrialEditor(SemanticNode node) {
     SemanticNodeEditor semanticNodeEditor;
-    String className = node.getClass().getName();
-    className = className.substring(className.lastIndexOf('.') + 1);
-    String editorClassName = language.getEditorsNamespace(node) + ".Trial_" + className + "_Editor";
+//    String className = node.getClass().getName();
+//    className = className.substring(className.lastIndexOf('.') + 1);
+//    String editorClassName = language.getEditorsNamespace(node) + ".Trial_" + className + "_Editor";
+
+    String editorClassName = getEditorClassName(node, true);
     try {
       Class nodeClass = Class.forName(editorClassName);
       semanticNodeEditor = (SemanticNodeEditor) nodeClass.newInstance();
@@ -139,4 +116,18 @@ public class EditorManager {
     return null;
   }
 
+  private String getEditorClassName(SemanticNode node, boolean trialEditor) {
+    SemanticTypeDeclaration typeDeclaration = SemanticModelUtil.getTypeDeclaration(node);
+    if(typeDeclaration == null) {
+      throw new RuntimeException("\nCouldn't find type declaration for node \"" + node.getDebugText() + "\"" +
+          "\nCheck languages for model \"" + NameUtil.modelFQName(node.getSemanticModel()) + "\"\n");
+    }
+
+    String typeName = typeDeclaration.getName();
+    String packageName = JavaNameUtil.packageNameForModel(typeDeclaration.getSemanticModel()) + ".editor";
+    if(trialEditor) {
+      return packageName + ".Trial_" + typeName + "_Editor";
+    }
+    return packageName + "." + typeName + "_Editor";
+  }
 }

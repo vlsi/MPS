@@ -2,7 +2,6 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.semanticModel.SemanticModel;
 import jetbrains.mps.semanticModel.SemanticNode;
-import jetbrains.mps.semanticModel.UndefinedOperator;
 
 import java.awt.*;
 
@@ -14,28 +13,11 @@ public class EditorContext {
   private AbstractEditorComponent myNodeEditorComponent;
   private SemanticModel mySemanticModel;
   private EditorManager myEditorManager;
-  private SemanticLanguage[] myLanguages;
 
   public EditorContext(AbstractEditorComponent editorComponent, SemanticModel semanticModel) {
     myNodeEditorComponent = editorComponent;
     mySemanticModel = semanticModel;
     myEditorManager = new EditorManager(this);
-
-    myLanguages = new SemanticLanguage[5];
-    myLanguages[0] = new SemanticLanguage("jetbrains.mps.bootstrap.structureLanguage");
-    myLanguages[1] = new SemanticLanguage("jetbrains.mps.bootstrap.editorLanguage");
-
-    myLanguages[2] = new SemanticLanguage("jetbrains.mps.bootstrap.transformationLanguage");
-
-    myLanguages[3] = new SemanticLanguage("jetbrains.mps.baseLanguage") {
-      public boolean supports(SemanticNode node) {
-        if(node instanceof UndefinedOperator) {
-          return true;
-        }
-        return super.supports(node);
-      }
-    };
-    myLanguages[4] = new SemanticLanguage("jetbrains.mps.REL");
   }
 
   public AbstractEditorComponent getNodeEditorComponent() {
@@ -52,10 +34,6 @@ public class EditorContext {
 
   public EditorCell createInspectedCell(SemanticNode node) {
     return myEditorManager.createInspectedCell(node);
-  }
-
-  public SemanticLanguage[] getLanguages() {
-    return myLanguages;
   }
 
   public Object createMemento() {
@@ -115,8 +93,8 @@ public class EditorContext {
 
     public int hashCode() {
       return nodeEditor.hashCode() +
-              (selectionPosition != null ? selectionPosition.hashCode() : 0) +
-              (caretX != null ? caretX.hashCode() : 0);
+          (selectionPosition != null ? selectionPosition.hashCode() : 0) +
+          (caretX != null ? caretX.hashCode() : 0);
     }
   } // private static class Memento
 }
