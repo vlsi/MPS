@@ -65,7 +65,9 @@ public class MPSProject implements ModelLocator {
   }
 
   public void readComponents() {
-    myWorkspaceFile = new File(myProjectFile.getParent(), myProjectFile.getName().replaceAll(".mpr", ".mws"));
+    String projectFileName = myProjectFile.getName();
+    String mwsFileName = projectFileName.substring(0, projectFileName.length()-".mpr".length()) + ".mws";
+    myWorkspaceFile = new File(myProjectFile.getParent(), mwsFileName);
     try {
       if (myWorkspaceFile.exists()) {
         Document document = JDOMUtil.loadDocument(myWorkspaceFile);
@@ -155,6 +157,10 @@ public class MPSProject implements ModelLocator {
 
   public SModelRepository getModels() {
     return ApplicationComponents.getInstance().getComponent(SModelRepository.class);
+  }
+
+  public SModel[] getProjectModels() {
+    return new SModel[0];
   }
 
   public SModel loadModel(String fileName) {
