@@ -36,8 +36,8 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1087903454705">
         <property name="textBgColor" value="orange" />
         <property name="text" value="${" />
-        <property name="textBgColorSelected" value="magenta" />
         <property name="selectable" value="true" />
+        <property name="textBgColorSelected" value="magenta" />
       </node>
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1087903454708">
@@ -76,6 +76,20 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1087926271843">
     <property name="name" value="NodeMacro_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="1.1087833466690" />
+    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1096644804142">
+      <property name="name" value="TemplateFragmentReferenceActions" />
+      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1096644852286">
+        <property name="substituteHandlerId" value="NodeMacro_SetTemplateFragmentName" />
+        <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1096644905071">
+          <property name="name" value="templateFragment" />
+          <property name="queryId" value="TemplateFragments" />
+        </node>
+        <node role="substituteQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1096644838035">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1096644852287" />
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1096644852288" />
+        </node>
+      </node>
+    </node>
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1088501636843">
       <property name="name" value="SourceQueryActions" />
       <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_DeleteProperty" id="1088501636844">
@@ -94,6 +108,18 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1089126148391">
         <property name="text" value="&lt; Node Macro &gt;" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1096644584226">
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1096644584227">
+          <property name="text" value="template fragment name" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1096649732541">
+          <property name="defaultText" value="&lt;none&gt;" />
+          <link role="propertyDeclaration" targetNodeId="1.1096649555385" />
+          <link role="actionSet" targetNodeId="1096644804142" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1096644584231" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1090493300946">
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1090493300947">
@@ -124,8 +150,8 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1089126148396">
       <property name="textBgColor" value="orange" />
       <property name="text" value="$${" />
-      <property name="selectable" value="true" />
       <property name="textBgColorSelected" value="magenta" />
+      <property name="selectable" value="true" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1087927878702">
@@ -190,8 +216,8 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1092143726113">
         <property name="textBgColor" value="orange" />
         <property name="text" value="-&gt;${" />
-        <property name="textBgColorSelected" value="magenta" />
         <property name="selectable" value="true" />
+        <property name="textBgColorSelected" value="magenta" />
       </node>
     </node>
   </node>
@@ -263,8 +289,8 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1092826413145">
         <property name="drawBorder" value="false" />
         <property name="vertical" value="true" />
-        <property name="gridLayout" value="true" />
         <property name="selectable" value="false" />
+        <property name="gridLayout" value="true" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1092826453896">
           <property name="drawBorder" value="false" />
           <property name="vertical" value="false" />
@@ -322,8 +348,8 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1092135992437">
         <property name="nullText" value="&lt;no content node&gt;" />
-        <link role="linkDeclaration" targetNodeId="1.1092060348987" />
         <link role="actionSet" targetNodeId="1092137340906" />
+        <link role="linkDeclaration" targetNodeId="1.1092060348987" />
       </node>
     </node>
   </node>
@@ -641,8 +667,8 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1096109764800">
         <property name="textBgColor" value="pink" />
         <property name="text" value="&lt;TF" />
-        <property name="textBgColorSelected" value="magenta" />
         <property name="selectable" value="true" />
+        <property name="textBgColorSelected" value="magenta" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1096109764801">
         <property name="textBgColor" value="yellow" />
