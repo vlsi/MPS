@@ -10,7 +10,6 @@ import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.components.EditorsPaneComponent;
 import jetbrains.mps.ide.components.ProjectPaneComponent;
-import jetbrains.mps.ide.components.MainFrameComponent;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.nodeEditor.EditorManager;
 import org.jdom.Document;
@@ -59,7 +58,7 @@ public class MPSProject implements ModelLocator {
     addComponent(UndoManager.class, UndoManager.instance());
     addComponent(EditorsPaneComponent.class, new EditorsPaneComponent(this));
     addComponent(ProjectPaneComponent.class, new ProjectPaneComponent(this));
-    addComponent(MainFrameComponent.class, new MainFrameComponent(this));
+    addComponent(IdeMain.IdeMainComponent.class, new IdeMain.IdeMainComponent(this));
     addComponent(SemanticModels.class, new SemanticModels(this));
     addComponent(ExecutionManager.class, new ExecutionManager());
     addComponent(RootManager.class, myRootManager);
