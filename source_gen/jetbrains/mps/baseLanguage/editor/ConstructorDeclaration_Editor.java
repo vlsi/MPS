@@ -11,6 +11,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
@@ -49,8 +50,9 @@ public class ConstructorDeclaration_Editor extends SemanticNodeEditor {
     ModelAccessor modelAccessor = Aspects.createModelAccessor_ConstructorDeclarationName(node);
     EditorCell editorCell = null;
     if(modelAccessor != null) {
-      editorCell = EditorCell_Property.create(editorContext, modelAccessor, node, false);
+      editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
       editorCell.setSelectable(true);
+      ((EditorCell_Label)editorCell).setEditable(false);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
     }

@@ -43,7 +43,7 @@ public class ParameterDeclaration_Editor extends SemanticNodeEditor {
   }
   public EditorCell createNameCell(EditorContext editorContext, SemanticNode node) {
     ModelAccessor modelAccessor = new PropertyAccessor(node, "name", true, false);
-    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node, true);
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     return editorCell;
   }
 }

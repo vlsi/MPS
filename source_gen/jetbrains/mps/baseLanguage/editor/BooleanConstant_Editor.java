@@ -9,6 +9,7 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 
 public class BooleanConstant_Editor extends SemanticNodeEditor {
@@ -23,7 +24,8 @@ public class BooleanConstant_Editor extends SemanticNodeEditor {
     ModelAccessor modelAccessor = Aspects.createModelAccessor_BooleanConstantValue(node);
     EditorCell editorCell = null;
     if(modelAccessor != null) {
-      editorCell = EditorCell_Property.create(editorContext, modelAccessor, node, false);
+      editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
+      ((EditorCell_Label)editorCell).setEditable(true);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
     }

@@ -48,7 +48,7 @@ public class FieldDeclaration_Editor extends SemanticNodeEditor {
   }
   public EditorCell createNameCell(EditorContext editorContext, SemanticNode node) {
     ModelAccessor modelAccessor = new PropertyAccessor(node, "name", true, false);
-    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node, true);
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     editorCell.setDefaultText("<no name>");
     FieldDeclaration_NameCellActions.setCellActions(editorCell, node);
     return editorCell;
