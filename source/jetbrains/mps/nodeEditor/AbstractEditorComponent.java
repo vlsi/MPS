@@ -31,6 +31,8 @@ import java.awt.event.*;
 import java.io.File;
 import java.util.*;
 import java.util.List;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeEvent;
 
 import static jetbrains.mps.ide.EditorsPane.EditorPosition.*;
 
@@ -62,6 +64,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private List<ICellSelectionListener> mySelectionListeners = new LinkedList<ICellSelectionListener>();
   private KeyListener myKeyListener;
   private Component myPreviousFocusOwner = null;
+  private PropertyChangeListener myFocusListener;
 
   private IdeMain myIdeMain;
   private EventRecorder myRecorder = null;
@@ -79,13 +82,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     setFocusCycleRoot(true);
     setFocusTraversalPolicy(new FocusTraversalPolicy() {
       public Component getComponentAfter(Container aContainer, Component aComponent) {
-        System.out.println("After!");
         executeComponentAction(EditorCellAction.NEXT);
         return aContainer;
       }
 
       public Component getComponentBefore(Container aContainer, Component aComponent) {
-        System.out.println("Before!");
         executeComponentAction(EditorCellAction.PREV);
         return aContainer;
       }
@@ -212,6 +213,45 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     });
   }
 
+
+  public void addNotify() {
+    super.addNotify();
+
+    KeyboardFocusManager.getCurrentKeyboardFocusManager().addPropertyChangeListener("focusOwner", myFocusListener = new PropertyChangeListener() {
+      public void propertyChange(PropertyChangeEvent evt) {
+        Component focusOwner = KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
+        if (AbstractEditorComponent.this.isAncestorOf(focusOwner)) {
+          Component current = focusOwner;
+          while (current.getParent() != AbstractEditorComponent.this) {
+            current = current.getParent();
+          }
+          selectComponentCell(current);
+        }
+      }
+    });
+  }
+
+  public void removeNotify() {
+    KeyboardFocusManager.getCurrentKeyboardFocusManager().removePropertyChangeListener(myFocusListener);
+    super.removeNotify();
+  }
+
+  private EditorCell_Component findCellForComponent(Component component, EditorCell root) {
+    if (root instanceof EditorCell_Component && ((EditorCell_Component) root).getComponent() == component) {
+      return (EditorCell_Component) root;
+    }
+
+    if (root instanceof EditorCell_Collection) {
+      EditorCell_Collection collection = (EditorCell_Collection) root;
+      for (EditorCell cell : collection) {
+        EditorCell_Component result = findCellForComponent(component, cell);
+        if (result != null) return result;
+      }
+    }
+
+    return null;
+  }
+
   public void setEventRecorder(EventRecorder recorder) {
     myRecorder = recorder;
   }
@@ -257,6 +297,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     popupMenu.show(AbstractEditorComponent.this, e.getX(), e.getY());
+  }
+
+  private void selectComponentCell(Component component) {
+    EditorCell_Component cell = findCellForComponent(component, myRootCell);
+    if (cell == null) return;
+    changeSelection(cell);
   }
 
   private Action createGoToProjectAction(final SemanticNode node) {
