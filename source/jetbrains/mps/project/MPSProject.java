@@ -58,7 +58,6 @@ public class MPSProject implements ModelLocator {
     addComponent(SemanticModels.class, new SemanticModels(this));
     addComponent(ExecutionManager.class, new ExecutionManager());
     addComponent(RootManager.class, myRootManager);
-    addComponent(ActionManager.class, new ActionManager());
   }
 
   public List<Object> getComponents() {

@@ -297,7 +297,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     popupMenu.add(createGoByReferenceMenu(selectedNode));
     popupMenu.addSeparator();
 
-    IdeMain.instance().getProject().getComponent(ActionManager.class).getGroup(EDITOR_POPUP_MENU_ACTIONS).addGroup(popupMenu, new ActionContext(selectedNode));
+    ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS).addGroup(popupMenu, new ActionContext(selectedNode));
 
     if (selectedNode instanceof ClassConcept) {
       popupMenu.addSeparator();
