@@ -10,12 +10,15 @@ import jetbrains.mps.semanticModel.SemanticNode;
 public class JavaNameUtil {
 
   public static String fqClassNameByNamespace(SemanticNode semanticNode, String shortClassName) {
-    SemanticModel model = semanticNode.getSemanticModel();
-    String modelFqName = model.getNamespace();
-    if (modelFqName.startsWith("jetbrains.mps.") || modelFqName.startsWith("java.")) {
-      return modelFqName;
+    return fqClassNameByNamespace(semanticNode.getSemanticModel(), shortClassName);
+  }
+
+  public static String fqClassNameByNamespace(SemanticModel model, String shortClassName) {
+    String modelNamespace = model.getNamespace();
+    if (modelNamespace.startsWith("jetbrains.mps.") || modelNamespace.startsWith("java.")) {
+      return modelNamespace + '.' + shortClassName;
     }
-    return "jetbrains.mps." + modelFqName + "." + shortClassName;
+    return "jetbrains.mps." + modelNamespace + "." + shortClassName;
   }
 
   public static String fqClassName(SemanticNode semanticNode, String shortClassName) {
@@ -31,45 +34,24 @@ public class JavaNameUtil {
   }
 
   public static String packageNameForLanguageStrurcture(SemanticModel structureModel) {
-    String modelFqName = structureModel.getNamespace();
-    if (modelFqName.startsWith("jetbrains.mps.") || modelFqName.startsWith("java.")) {
-      return modelFqName;
+    String modelNamespace = structureModel.getNamespace();
+    if (modelNamespace.startsWith("jetbrains.mps.") || modelNamespace.startsWith("java.")) {
+      return modelNamespace;
     }
-    return "jetbrains.mps." + modelFqName;
+    return "jetbrains.mps." + modelNamespace;
   }
 
   public static String packageNameForModel(SemanticModel semanticModel) {
-    String modelFqName = semanticModel.getFQName();
-    if (modelFqName.startsWith("jetbrains.mps.") || modelFqName.startsWith("java.")) {
-      return modelFqName;
+    String packageName = semanticModel.getFQName();
+    if(semanticModel.getName() == null || semanticModel.getName().length() == 0) {
+      packageName = semanticModel.getNamespace();
     }
-    return "jetbrains.mps." + modelFqName;
+    if (packageName.startsWith("jetbrains.mps.") || packageName.startsWith("java.")) {
+      return packageName;
+    }
+    return "jetbrains.mps." + packageName;
   }
 
-  public static String modelFqNameForPackage(String packageName) {
-    String packageHead = "jetbrains.mps.";
-    if (packageName.startsWith(packageHead)) {
-      return packageName.substring(packageHead.length());
-    }
-    return "";
-  }
-
-//  public static boolean needImportName(JavaClass javaClass) {
-//    String name = javaClass.getName();
-//    int offset = name.lastIndexOf(".");
-//    if (offset < 0) {
-//      return false;
-//    }
-//    String packageName = name.substring(0, offset);
-//    if (packageName.startsWith("java.lang")) {
-//      return false;
-//    }
-//    String currPackage = packageNameForModel(javaClass.getSemanticModel());
-////    if(!currPackage.equals(packageName)) {
-////      System.out.println("!!! import class: " + name + " curr pack:" + currPackage);
-////    }
-//    return !currPackage.equals(packageName);
-//  }
 
   public static String packageName(String fqName) {
     if (fqName == null) {
