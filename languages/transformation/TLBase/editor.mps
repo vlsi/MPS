@@ -6,7 +6,7 @@
   <import referenceID="2" name="structure" namespace="baseLanguage" />
   <import referenceID="4" name="structure" namespace="core" />
   <import referenceID="5" name="structure" namespace="bootstrap.structureLanguage" />
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1087903454703">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1087903454703">
     <property name="name" value="PropertyMacro_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="1.1087833241328" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1088501636840">
@@ -53,7 +53,7 @@
       <property name="actionProviderId" value="PropertyMacroSwitch" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1087926271843">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1087926271843">
     <property name="name" value="NodeMacro_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="1.1087833466690" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1088501636843">
@@ -158,7 +158,7 @@
       <property name="actionProviderId" value="TemplateFragmentSwitch" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1088762125437">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1088762125437">
     <property name="name" value="ReferenceMacro_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="1.1088761943574" />
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1088763040904">
@@ -200,7 +200,7 @@
       <property name="actionProviderId" value="ReferenceMacroSwitch" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1092060948911">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1092060948911">
     <property name="matchingText" value="template declaration" />
     <property name="name" value="TemplateDeclaration_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="1.1092059087312" />
@@ -293,7 +293,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1095419078589">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1095419078589">
     <property name="name" value="TemplateMappingConfiguration_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="1.1095416546421" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1095419078590">
@@ -394,7 +394,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1095419606578">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1095419606578">
     <property name="name" value="TemplateMappingRule_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="1.1095416572297" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1095419606579">
@@ -449,7 +449,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1095420477103">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1095420477103">
     <property name="name" value="TemplateWeavingRule_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="1.1095416624611" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1095420477104">
@@ -520,7 +520,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1095672501074">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1095672501074">
     <property name="name" value="TemplateFragment_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="1.1095672379244" />
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1095672654001">
@@ -585,7 +585,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1096887515956">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1096887515956">
     <property name="name" value="TemplateTag_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="1.1096887421657" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1096887587207">

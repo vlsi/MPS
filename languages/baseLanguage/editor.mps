@@ -11,7 +11,7 @@
   <import referenceID="16" name="util" namespace="java" />
   <import referenceID="17" name="structureLanguage" namespace="jetbrains.mps.bootstrap" />
   <import referenceID="18" name="core" namespace="jetbrains.mps" />
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1073416106125">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1073416106125">
     <property name="name" value="StatementList_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068580123136" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1077017490551">
@@ -75,7 +75,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1074794490343">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1074794490343">
     <property name="name" value="JavaClass_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068390468198" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1076938177026">
@@ -249,7 +249,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1074887681312">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1074887681312">
     <property name="matchingText" value=". &lt;field&gt;" />
     <property name="presentationName" value="field reference" />
     <property name="name" value="FieldReference_Editor" />
@@ -432,7 +432,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075038120000">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075038120000">
     <property name="presentationName" value="parameter reference" />
     <property name="name" value="ParameterReference_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068581242874" />
@@ -456,7 +456,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075038182859">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075038182859">
     <property name="presentationName" value="local variable reference" />
     <property name="name" value="LocalVariableReference_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068581242866" />
@@ -480,7 +480,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075139052656">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075139052656">
     <property name="name" value="ConstructorDeclaration_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068580123140" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1075139052657">
@@ -532,7 +532,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075233459437">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075233459437">
     <property name="name" value="InstanceMethodDeclaration_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068580123165" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1076937272595">
@@ -628,7 +628,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075287750843">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075287750843">
     <property name="name" value="StaticMethodDeclaration_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1081236700938" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1076941599931">
@@ -727,7 +727,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075289941062">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075289941062">
     <property name="name" value="FieldDeclaration_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068390468200" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1076781056865">
@@ -836,7 +836,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075302295734">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075302295734">
     <property name="name" value="ParameterDeclaration_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068498886292" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1076950581786">
@@ -904,7 +904,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075303160500">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075303160500">
     <property name="matchingText" value="local variable" />
     <property name="presentationName" value="local variable declaration" />
     <property name="name" value="LocalVariableDeclaration_Editor" />
@@ -1011,7 +1011,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075307690078">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075307690078">
     <property name="matchingText" value=". &lt;instance method&gt;" />
     <property name="presentationName" value="instance method call" />
     <property name="name" value="InstanceMethodCall_Editor" />
@@ -1202,7 +1202,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075308772515">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075308772515">
     <property name="matchingText" value=". &lt;static method&gt;" />
     <property name="presentationName" value="static method call" />
     <property name="name" value="StaticMethodCall_Editor" />
@@ -1392,7 +1392,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075310191002">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075310191002">
     <property name="matchingText" value="==" />
     <property name="name" value="EqualsExpression_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068580123152" />
@@ -1423,7 +1423,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075310480281">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075310480281">
     <property name="matchingText" value="=" />
     <property name="name" value="AssignmentExpression_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068498886294" />
@@ -1544,7 +1544,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075310659937">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075310659937">
     <property name="matchingText" value="-" />
     <property name="name" value="MinusExpression_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068581242869" />
@@ -1575,7 +1575,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075310695835">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075310695835">
     <property name="matchingText" value="+" />
     <property name="name" value="PlusExpression_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068581242875" />
@@ -1606,7 +1606,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075311148296">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311148296">
     <property name="name" value="BooleanType_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1070534644030" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075311148297">
@@ -1615,7 +1615,7 @@
       <property name="selectable" value="true" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075311184611">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311184611">
     <property name="name" value="ByteType_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1070534604311" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075311184612">
@@ -1624,7 +1624,7 @@
       <property name="selectable" value="true" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075311208800">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311208800">
     <property name="name" value="CharType_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1070534555686" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075311208801">
@@ -1633,7 +1633,7 @@
       <property name="selectable" value="true" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075311246068">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311246068">
     <property name="name" value="FloatType_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1070534436861" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075311246069">
@@ -1642,7 +1642,7 @@
       <property name="selectable" value="true" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075311278508">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311278508">
     <property name="name" value="IntegerType_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1070534370425" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075311278509">
@@ -1651,7 +1651,7 @@
       <property name="selectable" value="true" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075311329197">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311329197">
     <property name="name" value="LongType_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068581242867" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075311329198">
@@ -1660,7 +1660,7 @@
       <property name="selectable" value="true" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075311365246">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311365246">
     <property name="name" value="ShortType_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1070533982221" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075311365247">
@@ -1669,7 +1669,7 @@
       <property name="selectable" value="true" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075311403842">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311403842">
     <property name="name" value="VoidType_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068581517677" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075311403843">
@@ -1678,7 +1678,7 @@
       <property name="selectable" value="true" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075311808095">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311808095">
     <property name="name" value="DoubleType_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1070534513062" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075311808096">
@@ -1687,7 +1687,7 @@
       <property name="selectable" value="true" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075311823660">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311823660">
     <property name="name" value="JavaClassType_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068580320022" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1088426602576">
@@ -1702,7 +1702,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075374082688">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075374082688">
     <property name="presentationName" value="integer constant" />
     <property name="name" value="IntegerConstant_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068580320020" />
@@ -1719,7 +1719,7 @@
       <link role="actionSet" targetNodeId="1076937947068" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075374106049">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075374106049">
     <property name="presentationName" value="boolean constant" />
     <property name="name" value="BooleanConstant_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068580123137" />
@@ -1735,7 +1735,7 @@
       <link role="propertyDeclaration" targetNodeId="8.1068580123138" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075374365333">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075374365333">
     <property name="matchingText" value="this" />
     <property name="name" value="ThisExpression_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1070475354124" />
@@ -1753,7 +1753,7 @@
       <link role="actionSet" targetNodeId="1080132908281" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075374525819">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075374525819">
     <property name="matchingText" value="new" />
     <property name="name" value="NewExpression_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068581242872" />
@@ -1778,7 +1778,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075376169046">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075376169046">
     <property name="name" value="Expression_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068431790191" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1076780136970">
@@ -1792,7 +1792,7 @@
       <link role="actionSet" targetNodeId="1076780136970" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075379141234">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075379141234">
     <property name="presentationName" value="expression statement" />
     <property name="name" value="ExpressionStatement_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068580123155" />
@@ -1808,7 +1808,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075379419312">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075379419312">
     <property name="matchingText" value="if" />
     <property name="name" value="IfStatement_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068580123159" />
@@ -2075,7 +2075,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075380566828">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075380566828">
     <property name="matchingText" value="local variable" />
     <property name="presentationName" value="variable declaration" />
     <property name="name" value="LocalVariableDeclarationStatement_Editor" />
@@ -2092,7 +2092,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075380723765">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075380723765">
     <property name="matchingText" value="return" />
     <property name="name" value="ReturnStatement_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068581242878" />
@@ -2155,7 +2155,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075381298843">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075381298843">
     <property name="name" value="Statement_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068580123157" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1078746085984">
@@ -2758,7 +2758,7 @@
       <property name="disabled" value="true" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1079116706078">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1079116706078">
     <property name="name" value="UndefinedOperator_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1079115200860" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1079116733033">
@@ -3093,7 +3093,7 @@
       <link role="actionSet" targetNodeId="1079116733033" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1079354856500">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1079354856500">
     <property name="name" value="StringType_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1079352774609" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1079354856501">
@@ -3101,7 +3101,7 @@
       <property name="selectable" value="true" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1079605217732">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1079605217732">
     <property name="matchingText" value="!=" />
     <property name="name" value="NotEqualsExpression_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1073239437375" />
@@ -3128,7 +3128,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1079605716538">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1079605716538">
     <property name="matchingText" value="null" />
     <property name="name" value="NullLiteral_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1070534058343" />
@@ -3146,7 +3146,7 @@
       <link role="keyMap" targetNodeId="1081427357000" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1079622224907">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1079622224907">
     <property name="matchingText" value="\&quot;" />
     <property name="presentationName" value="string literal" />
     <property name="name" value="StringLiteral_Editor" />
@@ -3454,7 +3454,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1080122476251">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1080122476251">
     <property name="matchingText" value="&amp;&amp;" />
     <property name="name" value="AndExpression_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1080120340718" />
@@ -3483,7 +3483,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1080223480640">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1080223480640">
     <property name="matchingText" value="||" />
     <property name="name" value="OrExpression_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1080223426719" />
@@ -3574,7 +3574,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1080902646656">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1080902646656">
     <property name="matchingText" value="(type)" />
     <property name="presentationName" value="type cast" />
     <property name="name" value="CastExpression_Editor" />
@@ -3694,7 +3694,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075308772515">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075308772515">
     <property name="presentationName" value="method call" />
     <property name="name" value="MethodCall_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068581242868" />
@@ -3835,7 +3835,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075287750843">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075287750843">
     <property name="name" value="MethodDeclaration_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068390468204" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1076941599931">
@@ -3931,7 +3931,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1081257049503">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1081257049503">
     <property name="matchingText" value="instanceof" />
     <property name="name" value="InstanceOfExpression_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1081256982272" />
@@ -4039,7 +4039,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1081264157973">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1081264157973">
     <property name="matchingText" value="while" />
     <property name="name" value="WhileStatement_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1076505808687" />
@@ -4232,7 +4232,7 @@
       <link role="actionSet" targetNodeId="1081776482708" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1081790432906">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1081790432906">
     <property name="matchingText" value="super" />
     <property name="presentationName" value="super constructor call" />
     <property name="name" value="SuperConstructorInvocation_Editor" />
@@ -4306,7 +4306,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1081792356328">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1081792356328">
     <property name="matchingText" value="super.&lt;method&gt;" />
     <property name="presentationName" value="super method call" />
     <property name="name" value="SuperMethodCall_Editor" />
@@ -4508,7 +4508,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1081792505531">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1081792505531">
     <property name="matchingText" value=". &lt;static field&gt;" />
     <property name="presentationName" value="static field reference" />
     <property name="name" value="StaticFieldReference_Editor" />
@@ -4765,7 +4765,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1075306216359">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075306216359">
     <property name="presentationName" value="constructor call" />
     <property name="name" value="ConstructorCall_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068580123139" />
@@ -4910,7 +4910,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1081880010406">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1081880010406">
     <property name="matchingText" value="(expr)" />
     <property name="presentationName" value="parenthesis" />
     <property name="name" value="ParenthesizedExpression_Editor" />
@@ -4975,7 +4975,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1081929659485">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1081929659485">
     <property name="matchingText" value="!" />
     <property name="name" value="NotExpression_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1081516740877" />
@@ -5011,7 +5011,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1081930071611">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1081930071611">
     <property name="matchingText" value="&gt;" />
     <property name="name" value="GreaterThanExpression_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1081506762703" />
@@ -5038,7 +5038,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1081930092606">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1081930092606">
     <property name="matchingText" value="&lt;" />
     <property name="name" value="LessThanExpression_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1081506773034" />
@@ -5065,7 +5065,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1081933895507">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1081933895507">
     <property name="matchingText" value="break" />
     <property name="name" value="BreakStatement_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1081855346303" />
@@ -5074,7 +5074,7 @@
       <property name="selectable" value="true" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1081942381484">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1081942381484">
     <property name="presentationName" value="abstract type" />
     <property name="name" value="Type_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068431790189" />
@@ -5082,7 +5082,7 @@
       <property name="text" value="&lt;type&gt;" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1082114095844">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1082114095844">
     <property name="matchingText" value="continue" />
     <property name="name" value="ContinueStatement_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1082113931046" />
@@ -6001,7 +6001,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1082381396722">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1082381396722">
     <property name="presentationName" value="abstract binary operation" />
     <property name="name" value="BinaryOperation_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1081773326031" />
@@ -6018,7 +6018,7 @@
       <property name="actionProviderId" value="Expression" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1082485734863">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1082485734863">
     <property name="matchingText" value="{...}" />
     <property name="presentationName" value="block" />
     <property name="name" value="Block_Editor" />
@@ -7394,7 +7394,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1083262769250">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1083262769250">
     <property name="matchingText" value=". &lt;enum constant&gt;" />
     <property name="presentationName" value="enum constant" />
     <property name="name" value="EnumConstantReference_Editor" />
@@ -7700,7 +7700,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1084188901668">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1084188901668">
     <property name="presentationName" value="static field declaration" />
     <property name="name" value="StaticFieldDeclaration_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1070462154015" />
@@ -7758,7 +7758,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1085483277582">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1085483277582">
     <property name="name" value="EnumClass_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1083245097125" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1085483457768">
@@ -7890,7 +7890,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1085485112422">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1085485112422">
     <property name="name" value="EnumConstantDeclaration_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1083245299891" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1085485112425">
@@ -7962,7 +7962,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1089739775734">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1089739775734">
     <property name="matchingText" value="type &lt;..&gt;" />
     <property name="presentationName" value="generic type" />
     <property name="name" value="GenericType_Editor" />
@@ -8639,7 +8639,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1090242255906">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1090242255906">
     <property name="matchingText" value="&lt;VariableReference&gt;" />
     <property name="name" value="VariableReference_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1068498886296" />
@@ -8654,7 +8654,7 @@
       <link role="actionSet" targetNodeId="1090310064233" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1090411652060">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1090411652060">
     <property name="matchingText" value="block" />
     <property name="presentationName" value="block of code" />
     <property name="name" value="CodeBlock_Editor" />
@@ -8672,7 +8672,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1092120339522">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1092120339522">
     <property name="matchingText" value="*" />
     <property name="presentationName" value="*" />
     <property name="name" value="MulExpression_Editor" />
@@ -8698,7 +8698,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1095950539781">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1095950539781">
     <property name="matchingText" value="/" />
     <property name="name" value="DivExpression_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="8.1095950406618" />

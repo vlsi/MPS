@@ -4,7 +4,7 @@
   <language namespace="bootstrap.editorLanguage" />
   <import referenceID="1" name="structure" namespace="bootstrap.structureLanguage" />
   <import referenceID="2" name="structure" namespace="core" />
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1082979388796">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1082979388796">
     <property name="name" value="ConstrainedDataTypeDeclaration_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="1.1082978499127" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1083244010082">
@@ -74,7 +74,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1082985570612">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1082985570612">
     <property name="name" value="SemanticPropertyDeclaration_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="1.1071489288299" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1082986003078">
@@ -113,7 +113,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1083172239067">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1083172239067">
     <property name="name" value="EnumerationMemberDeclaration_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="1.1083171877298" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1083240246895">
@@ -169,7 +169,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1083172476027">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1083172476027">
     <property name="name" value="EnumerationDataTypeDeclaration_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="1.1082978164219" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1083173219365">
@@ -293,7 +293,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1083244251718">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1083244251718">
     <property name="name" value="PrimitiveDataTypeDeclaration_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="1.1083243159079" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1083244251719">
@@ -320,7 +320,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1084189569969">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1084189569969">
     <property name="name" value="SemanticLinkDeclaration_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="1.1071489288298" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1084195486320">
@@ -406,7 +406,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.SemanticTypeEditorDeclaration" id="1087215312703">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1087215312703">
     <property name="name" value="ConceptDeclaration_Editor" />
     <link role="semanticTypeDeclaration" targetNodeId="1.1071489090640" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1087215312704">
