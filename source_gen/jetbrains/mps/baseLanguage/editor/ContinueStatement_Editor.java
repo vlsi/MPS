@@ -17,6 +17,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
   }
   public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
+    editorCell.setSelectable(true);
     return editorCell;
   }
 }
