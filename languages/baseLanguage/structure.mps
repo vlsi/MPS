@@ -284,8 +284,8 @@
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="fieldDeclaration" />
-      <link role="specializedLink" targetNodeId="1068581517664" />
       <link role="target" targetNodeId="1068390468200" />
+      <link role="specializedLink" targetNodeId="1068581517664" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068580123159">
@@ -493,8 +493,8 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1070568178160">
       <property name="role" value="staticFieldDeclaration" />
-      <link role="specializedLink" targetNodeId="1068581517664" />
       <link role="target" targetNodeId="1070462154015" />
+      <link role="specializedLink" targetNodeId="1068581517664" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1070533982221">
@@ -565,8 +565,8 @@
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="instanceMethodDeclaration" />
-      <link role="target" targetNodeId="1068580123165" />
       <link role="specializedLink" targetNodeId="1068499141037" />
+      <link role="target" targetNodeId="1068580123165" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1073239437375">
@@ -857,6 +857,24 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1106250402230">
     <property name="name" value="FeatureConstructor" />
     <link role="extends" targetNodeId="4.1078489098625" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1106353916888">
+    <property name="name" value="FeatureCompositionType" />
+    <link role="extends" targetNodeId="1068580320022" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1106353969077">
+      <property name="sourceCardinality" value="1" />
+      <property name="targetCardinality" value="0..n" />
+      <property name="role" value="featureCompositionDeclaration" />
+      <link role="target" targetNodeId="1106155080112" />
+      <link role="specializedLink" targetNodeId="1068581242862" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1106354127000">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="targetCardinality" value="1" />
+      <property name="role" value="feature" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1106176536146" />
+    </node>
   </node>
 </model>
 

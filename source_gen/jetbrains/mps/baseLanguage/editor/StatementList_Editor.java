@@ -9,6 +9,7 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.CellLayout_Vertical;
 import java.awt.Color;
 
 public class StatementList_Editor extends DefaultNodeEditor {
@@ -22,8 +23,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
     if(this.myStatementListHandler == null) {
       this.myStatementListHandler = new StatementList_Editor_StatementListHandler(node, "statement", true);
     }
-    EditorCell_Collection editorCell = null;
-    editorCell = this.myStatementListHandler.createCells_Vertical(context);
+    EditorCell_Collection editorCell = this.myStatementListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);

@@ -23,6 +23,7 @@ import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.nodeEditor.CellAction_DeleteReferenceToNode;
+import jetbrains.mps.nodeEditor.CellLayout_Vertical;
 
 public class ClassConcept_Editor extends DefaultNodeEditor {
   public static String MATCHING_TEXT = "class";
@@ -293,8 +294,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     if(this.myFieldListHandler == null) {
       this.myFieldListHandler = new ClassConcept_Editor_FieldListHandler(node, "field", true);
     }
-    EditorCell_Collection editorCell = null;
-    editorCell = this.myFieldListHandler.createCells_Vertical(context);
+    EditorCell_Collection editorCell = this.myFieldListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -306,8 +306,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     if(this.myStaticFieldListHandler == null) {
       this.myStaticFieldListHandler = new ClassConcept_Editor_StaticFieldListHandler(node, "staticField", true);
     }
-    EditorCell_Collection editorCell = null;
-    editorCell = this.myStaticFieldListHandler.createCells_Vertical(context);
+    EditorCell_Collection editorCell = this.myStaticFieldListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -319,8 +318,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     if(this.myConstructorListHandler == null) {
       this.myConstructorListHandler = new ClassConcept_Editor_ConstructorListHandler(node, "constructor", true);
     }
-    EditorCell_Collection editorCell = null;
-    editorCell = this.myConstructorListHandler.createCells_Vertical(context);
+    EditorCell_Collection editorCell = this.myConstructorListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -332,8 +330,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     if(this.myMethodListHandler == null) {
       this.myMethodListHandler = new ClassConcept_Editor_MethodListHandler(node, "method", true);
     }
-    EditorCell_Collection editorCell = null;
-    editorCell = this.myMethodListHandler.createCells_Vertical(context);
+    EditorCell_Collection editorCell = this.myMethodListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -345,8 +342,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     if(this.myStaticMethodListHandler == null) {
       this.myStaticMethodListHandler = new ClassConcept_Editor_StaticMethodListHandler(node, "staticMethod", true);
     }
-    EditorCell_Collection editorCell = null;
-    editorCell = this.myStaticMethodListHandler.createCells_Vertical(context);
+    EditorCell_Collection editorCell = this.myStaticMethodListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);

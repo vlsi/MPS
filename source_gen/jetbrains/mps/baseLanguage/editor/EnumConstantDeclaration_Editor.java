@@ -15,6 +15,7 @@ import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
+import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
 
 public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
 
@@ -72,8 +73,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
     if(this.myActualArgumentListHandler == null) {
       this.myActualArgumentListHandler = new EnumConstantDeclaration_Editor_ActualArgumentListHandler(node, "actualArgument", true);
     }
-    EditorCell_Collection editorCell = null;
-    editorCell = this.myActualArgumentListHandler.createCells_Horizontal(context);
+    EditorCell_Collection editorCell = this.myActualArgumentListHandler.createCells(context, new CellLayout_Horizontal());
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);

@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
+import jetbrains.mps.nodeEditor.CellLayout_Vertical;
 
 public class EnumClass_Editor extends DefaultNodeEditor {
 
@@ -208,8 +209,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     if(this.myEnumConstantListHandler == null) {
       this.myEnumConstantListHandler = new EnumClass_Editor_EnumConstantListHandler(node, "enumConstant", true);
     }
-    EditorCell_Collection editorCell = null;
-    editorCell = this.myEnumConstantListHandler.createCells_Vertical(context);
+    EditorCell_Collection editorCell = this.myEnumConstantListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -221,8 +221,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     if(this.myFieldListHandler == null) {
       this.myFieldListHandler = new EnumClass_Editor_FieldListHandler(node, "field", true);
     }
-    EditorCell_Collection editorCell = null;
-    editorCell = this.myFieldListHandler.createCells_Vertical(context);
+    EditorCell_Collection editorCell = this.myFieldListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -234,8 +233,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     if(this.myConstructorListHandler == null) {
       this.myConstructorListHandler = new EnumClass_Editor_ConstructorListHandler(node, "constructor", true);
     }
-    EditorCell_Collection editorCell = null;
-    editorCell = this.myConstructorListHandler.createCells_Vertical(context);
+    EditorCell_Collection editorCell = this.myConstructorListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -247,8 +245,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     if(this.myMethodListHandler == null) {
       this.myMethodListHandler = new EnumClass_Editor_MethodListHandler(node, "method", true);
     }
-    EditorCell_Collection editorCell = null;
-    editorCell = this.myMethodListHandler.createCells_Vertical(context);
+    EditorCell_Collection editorCell = this.myMethodListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -260,8 +257,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     if(this.myStaticMethodListHandler == null) {
       this.myStaticMethodListHandler = new EnumClass_Editor_StaticMethodListHandler(node, "staticMethod", true);
     }
-    EditorCell_Collection editorCell = null;
-    editorCell = this.myStaticMethodListHandler.createCells_Vertical(context);
+    EditorCell_Collection editorCell = this.myStaticMethodListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);

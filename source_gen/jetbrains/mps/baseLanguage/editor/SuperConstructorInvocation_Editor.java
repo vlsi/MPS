@@ -12,6 +12,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
 
 public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
   public static String MATCHING_TEXT = "super";
@@ -59,8 +60,7 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
     if(this.myActualArgumentListHandler == null) {
       this.myActualArgumentListHandler = new SuperConstructorInvocation_Editor_ActualArgumentListHandler(node, "actualArgument", true);
     }
-    EditorCell_Collection editorCell = null;
-    editorCell = this.myActualArgumentListHandler.createCells_Horizontal(context);
+    EditorCell_Collection editorCell = this.myActualArgumentListHandler.createCells(context, new CellLayout_Horizontal());
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
