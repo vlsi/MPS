@@ -14,7 +14,7 @@ public class TextGenManager {
 
   public static TextGenManager instance() {
     if(myInstance == null) {
-      myInstance = new MappingTextGenManager();
+      myInstance = new TextGenManager();
     }
     return myInstance;
   }
