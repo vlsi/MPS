@@ -45,10 +45,10 @@ public class InstanceOfExpression_Editor extends SemanticNodeEditor {
     if(leftExpression != null) {
       editorCell = this.nodeCell(editorContext, leftExpression);
       editorCell.setSelectable(true);
-      AndExpression_LeftExpressionsActions.setCellActions(editorCell, node);
+      InstanceOfExpression_LeftExpressionsActions.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Error.create(editorContext, node, null);
-      AndExpression_LeftExpressionsActions.setCellActions(editorCell, node);
+      InstanceOfExpression_LeftExpressionsActions.setCellActions(editorCell, node);
       _DefErrorActions.setCellActions(editorCell, node);
     }
     return editorCell;
