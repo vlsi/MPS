@@ -58,6 +58,9 @@ public class TextUtil {
           tag = BoldTag.newInstance(model);
           tag.setText(toText(model, elem));
         }
+        if ("br".equals(name) || "BR".equals(name)) {
+          tag = BRTag.newInstance(model);          
+        }
         if ("i".equals(name) || "I".equals(name)) {
           tag = ItalicTag.newInstance(model);
           tag.setText(toText(model, elem));
@@ -199,6 +202,10 @@ public class TextUtil {
       element.addContent(target);
       return;
     }
+    if (word instanceof BRTag) {
+      element.addContent(new Element("br"));
+      return;
+    }
     if (word instanceof BoldTag) {
       BoldTag tag = (BoldTag) word;
       Element bold = new Element("b");
@@ -269,7 +276,11 @@ public class TextUtil {
     if (word instanceof PatternRefTag) {
       PatternRefTag tag = (PatternRefTag) word;
       Element target = new Element("patternRef");
-      target.setAttribute("name", tag.getPattern().getKey());
+      if (tag.getPattern() != null) {
+        target.setAttribute("name", tag.getPattern().getKey());
+      } else {
+        target.setAttribute("name", "");
+      }
       element.addContent(target);
       return;
     }
