@@ -99,13 +99,13 @@ public class MPSProject implements ModelLocator {
     }
   }
 
-  public void save() {
+  public void saveModels() {
     getSemanticModels().saveAll();
-
-    myRootManager.save(myProjectFile);
   }
 
-  public void saveComponents() {
+  public void save() {
+    myRootManager.save(myProjectFile);
+
     try {
       if (!myWorkspaceFile.exists()) {
         myWorkspaceFile.createNewFile();
