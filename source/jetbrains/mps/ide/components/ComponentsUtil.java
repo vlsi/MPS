@@ -45,7 +45,7 @@ public class ComponentsUtil {
       result.setAttribute(HEIGHT, "" + rect.height);
       return result;
   }
-
+                       
   public static Rectangle elementToRectangle(Element e) {
       assert e.getName().equals(RECTANGLE);
       try {

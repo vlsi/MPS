@@ -94,11 +94,19 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        if (mySelectedCell.getSemanticNode() != null) {
+        if (mySelectedCell != null && mySelectedCell.getSemanticNode() != null) {
           createShowTypeInfoAction(mySelectedCell.getSemanticNode()).actionPerformed(e);
         }
       }
     }, KeyStroke.getKeyStroke("control T"), WHEN_FOCUSED);
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        if (mySelectedCell != null && mySelectedCell.getSemanticNode() != null) {
+          SemanticNode node = mySelectedCell.getSemanticNode();
+          IdeMain.instance().getProjectPane().selectNode(node);
+        }
+      }
+    }, KeyStroke.getKeyStroke("control P"), WHEN_FOCUSED);
 
 
     addMouseListener(new MouseAdapter() {
