@@ -36,7 +36,7 @@ public class EnumerationDataTypeDeclaration_Editor extends SemanticNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.addEditorCell(this.createHeaderRow(editorContext, node));
     editorCell.addEditorCell(this.createColumnCell(editorContext, node));
-    editorCell.addEditorCell(this.createRowCell4(editorContext, node));
+    editorCell.addEditorCell(this.createRowCell3(editorContext, node));
     return editorCell;
   }
   public EditorCell createHeaderRow(EditorContext editorContext, SemanticNode node) {
@@ -71,7 +71,6 @@ public class EnumerationDataTypeDeclaration_Editor extends SemanticNodeEditor {
     editorCell.addEditorCell(this.createRowCell(editorContext, node));
     editorCell.addEditorCell(this.createRowCell1(editorContext, node));
     editorCell.addEditorCell(this.createRowCell2(editorContext, node));
-    editorCell.addEditorCell(this.createRowCell3(editorContext, node));
     return editorCell;
   }
   public EditorCell createRowCell(EditorContext editorContext, SemanticNode node) {
@@ -113,11 +112,24 @@ public class EnumerationDataTypeDeclaration_Editor extends SemanticNodeEditor {
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
     editorCell.addEditorCell(this.createIndent1(editorContext, node, "    "));
-    editorCell.addEditorCell(this.createConstantCell2(editorContext, node, "null name:"));
-    editorCell.addEditorCell(this.createNullNameCell(editorContext, node));
     return editorCell;
   }
   public EditorCell createIndent1(EditorContext editorContext, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    return editorCell;
+  }
+  public EditorCell createRowCell2(EditorContext editorContext, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setGridLayout(false);
+    editorCell.addEditorCell(this.createIndent2(editorContext, node, "    "));
+    editorCell.addEditorCell(this.createConstantCell2(editorContext, node, "members:"));
+    return editorCell;
+  }
+  public EditorCell createIndent2(EditorContext editorContext, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -128,58 +140,16 @@ public class EnumerationDataTypeDeclaration_Editor extends SemanticNodeEditor {
     editorCell.setDrawBorder(false);
     return editorCell;
   }
-  public EditorCell createNullNameCell(EditorContext editorContext, SemanticNode node) {
-    ModelAccessor modelAccessor = new PropertyAccessor(node, "nullName", true, false);
-    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
-    editorCell.setDefaultText("<none>");
-    editorCell.getTextLine().setTextBackgroundColor(Color.cyan);
-    editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "nullName"));
-    return editorCell;
-  }
-  public EditorCell createRowCell2(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createIndent2(editorContext, node, "    "));
-    return editorCell;
-  }
-  public EditorCell createIndent2(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    return editorCell;
-  }
   public EditorCell createRowCell3(EditorContext editorContext, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createIndent3(editorContext, node, "    "));
-    editorCell.addEditorCell(this.createConstantCell3(editorContext, node, "members:"));
-    return editorCell;
-  }
-  public EditorCell createIndent3(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    return editorCell;
-  }
-  public EditorCell createConstantCell3(EditorContext editorContext, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
-    editorCell.setDrawBorder(false);
-    return editorCell;
-  }
-  public EditorCell createRowCell4(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createIndent4(editorContext, node, "        "));
+    editorCell.addEditorCell(this.createIndent3(editorContext, node, "        "));
     editorCell.addEditorCell(this.createMemberList(editorContext, node));
     return editorCell;
   }
-  public EditorCell createIndent4(EditorContext editorContext, SemanticNode node, String text) {
+  public EditorCell createIndent3(EditorContext editorContext, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
