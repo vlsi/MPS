@@ -160,7 +160,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
 //        public void execute(EditorContext context) {
 //          SemanticNode elementNode = context.getNodeEditorComponent().getSelectedCell().getSemanticNode();
 //          myOwnerNode.removeReferences(myReferenceRole, elementNode);
-//          myOwnerNode.getSemanticModel().fireModelChangedDramaticallyEvent();
+//          myOwnerNode.getObject().fireModelChangedDramaticallyEvent();
 //        }
 //      });
 //    }
