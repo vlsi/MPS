@@ -17,7 +17,7 @@ public class JavaNameUtil {
     return packageName + "." + semanticNode.getName();
   }
 
-  private static String packageNameForModel(SemanticModel semanticModel) {
+  public static String packageNameForModel(SemanticModel semanticModel) {
     return "jetbrains.mps." +
         semanticModel.getNamespace() + "." +
         semanticModel.getName();
