@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class NullLiteral_Editor extends DefaultNodeEditor {
   public static String MATCHING_TEXT = "null";
@@ -21,6 +22,7 @@ public class NullLiteral_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(true);
     editorCell.setEditable(true);
     editorCell.setDefaultText("");
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     NullLiteral_NodeBoxActions.setCellActions(editorCell, node);
     editorCell.addKeyMap(new _Expression_KeyMap());
     return editorCell;

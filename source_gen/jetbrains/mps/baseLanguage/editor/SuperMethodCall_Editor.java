@@ -10,6 +10,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.semanticModel.SemanticModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
@@ -33,11 +34,12 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
     editorCell.addKeyMap(new _Expression_KeyMap());
-    editorCell.addEditorCell(this.createConstantCell(context, node, "super."));
+    editorCell.addEditorCell(this.createConstantCell(context, node, "super"));
+    editorCell.addEditorCell(this.createConstantCell1(context, node, "."));
     editorCell.addEditorCell(this.createBaseMethodDeclarationReferenceCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell1(context, node, "("));
+    editorCell.addEditorCell(this.createConstantCell2(context, node, "("));
     editorCell.addEditorCell(this.create_BaseMethodCallArgListEditorCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell2(context, node, ")"));
+    editorCell.addEditorCell(this.createConstantCell3(context, node, ")"));
     return editorCell;
   }
   public EditorCell create_BaseMethodCallArgListEditorCell(EditorContext context, SemanticNode node) {
@@ -55,6 +57,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(true);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SemanticNode node, String text) {
@@ -66,6 +69,14 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createConstantCell2(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(true);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell3(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
