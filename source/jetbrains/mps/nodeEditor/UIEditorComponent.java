@@ -18,12 +18,12 @@ public class UIEditorComponent extends AbstractEditorComponent {
   private MPSProject myProject;
 
   public UIEditorComponent() {
-    this(IdeMain.instance());
+    this(IdeMain.instance().getProject());
   }
 
-  public UIEditorComponent(IdeMain ideMain) {
-    super(ideMain);
-    myProject  = IdeMain.instance().getProject();
+  public UIEditorComponent(MPSProject project) {
+    super(IdeMain.instance());
+    myProject = project;
     unregisterKeyboardAction(KeyStroke.getKeyStroke("ESCAPE"));
   }
 
