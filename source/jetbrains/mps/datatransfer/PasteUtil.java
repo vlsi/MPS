@@ -1,10 +1,10 @@
 package jetbrains.mps.datatransfer;
 
-import jetbrains.mps.baseLanguage.*;
 import jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.semanticModel.SemanticModel;
+import jetbrains.mps.semanticModel.SemanticModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
 
 import java.awt.*;
@@ -12,28 +12,23 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 
 /**
  * Author: Sergey Dmitriev.
  * Time: Nov 25, 2003 7:27:37 PM
  */
 public class PasteUtil {
-  private static SemanticModel model;
-  private static Map<String, SemanticTypeDeclaration> myTypesMap = new HashMap<String, SemanticTypeDeclaration>();
-
-  static {
-    model = new SemanticModel();
-    model.setLoading(true);
-  }
+  private static final int PASTE_N_A = 0;
+  private static final int PASTE_TO_TAREGT = 1;
+  private static final int PASTE_TO_PARENT = 2;
+  private static final int PASTE_TO_ROOT = 3;
 
   public static SemanticNode getNodeFromClipboard(SemanticModel semanticModel) {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     Transferable content = cb.getContents(null);
     if(content == null ||
-            !content.isDataFlavorSupported(SemanticModelDataFlavor.semanticNode)) {
+        !content.isDataFlavorSupported(SemanticModelDataFlavor.semanticNode)) {
       return null;
     }
 
@@ -51,54 +46,85 @@ public class PasteUtil {
   }
 
   public static boolean canPaste(SemanticNode pasteTarget, SemanticNode pasteNode) {
-    SemanticTypeDeclaration pasteTargetMeta = getMetatype(pasteTarget);
-    SemanticTypeDeclaration pasteNodeMeta = getMetatype(pasteNode);
-    if(pasteTargetMeta == null || pasteNodeMeta == null) {
+    return (canPaste_internal(pasteTarget, pasteNode) != PASTE_N_A);
+  }
+
+  public static void paste(SemanticNode pasteTarget, SemanticNode pasteNode) {
+    int status = canPaste_internal(pasteTarget, pasteNode);
+    if(status == PASTE_TO_TAREGT) {
+      pasteToTarget(pasteTarget, pasteNode, null);
+    } else if(status == PASTE_TO_PARENT) {
+      pasteToParent(pasteTarget, pasteNode);
+    } else if(status == PASTE_TO_ROOT) {
+      pasteTarget.getSemanticModel().addRoot(pasteNode);
+    }
+  }
+
+  private static int canPaste_internal(SemanticNode pasteTarget, SemanticNode pasteNode) {
+    if(pasteTarget.getSemanticModel() != pasteNode.getSemanticModel()) {
+      return PASTE_N_A;
+    }
+    if(canPasteToTarget(pasteTarget, pasteNode)) {
+      return PASTE_TO_TAREGT;
+    }
+    // if target is root node - paste to model root
+    if(pasteTarget.getParent() == null) {
+      return PASTE_TO_ROOT;
+    }
+    if(canPasteToParent(pasteTarget, pasteNode)) {
+      return PASTE_TO_PARENT;
+    }
+    return PASTE_N_A;
+  }
+
+  private static boolean canPasteToTarget(SemanticNode pasteTarget, SemanticNode pasteNode) {
+    return pasteToTarget_internal(pasteTarget, pasteNode, null, false);
+  }
+
+  private static void pasteToTarget(final SemanticNode pasteTarget, final SemanticNode pasteNode, final SemanticNode pasteAfter) {
+    pasteToTarget_internal(pasteTarget, pasteNode, pasteAfter, true);
+  }
+
+  private static boolean pasteToTarget_internal(final SemanticNode pasteTarget, final SemanticNode pasteNode, final SemanticNode pasteAfter, boolean reallyPaste) {
+    SemanticTypeDeclaration pasteTargetType = SemanticModelUtil.getTypeDeclaration(pasteTarget);
+    SemanticTypeDeclaration pasteNodeType = SemanticModelUtil.getTypeDeclaration(pasteNode);
+    if(pasteTargetType == null || pasteNodeType == null) {
       return false;
     }
-    SemanticLinkDeclaration metalink = findListlikeMetalink(pasteTargetMeta, pasteNodeMeta);
-    return metalink != null;
+    final SemanticLinkDeclaration metalink = findListlikeMetalink(pasteTargetType, pasteNodeType);
+    if(metalink == null) {
+      return false;
+    }
+    if(reallyPaste) {
+      CommandProcessor.instance().executeCommand(null, new Runnable() {
+        public void run() {
+          pasteTarget.insertReference(pasteAfter, metalink.getRole(), pasteNode, metalink.getMetaClass());
+        }
+      }, "paste");
+    }
+    return true;
   }
 
-  public static void paste(final SemanticNode pasteTarget, final SemanticNode pasteNode, final SemanticNode pasteAfter) {
-    SemanticTypeDeclaration pasteTargetMeta = getMetatype(pasteTarget);
-    SemanticTypeDeclaration pasteNodeMeta = getMetatype(pasteNode);
-    final SemanticLinkDeclaration metalink = findListlikeMetalink(pasteTargetMeta, pasteNodeMeta);
-
-    CommandProcessor.instance().executeCommand(null, new Runnable() {
-      public void run() {
-        pasteTarget.insertReference(pasteAfter, metalink.getRole(), pasteNode, metalink.getMetaClass());
-      }
-    }, "paste");
+  private static boolean canPasteToParent(SemanticNode pasteTarget, SemanticNode pasteNode) {
+    return pasteToParent_internal(pasteTarget, pasteNode, false);
   }
 
-  public static boolean canPasteToContainer(SemanticNode pasteTarget, SemanticNode pasteNode) {
-    return pasteToContainer_internal(pasteTarget, pasteNode, false);
+  private static void pasteToParent(SemanticNode pasteTarget, SemanticNode pasteNode) {
+    pasteToParent_internal(pasteTarget, pasteNode, true);
   }
 
-  public static void pasteToContainer(SemanticNode pasteTarget, SemanticNode pasteNode) {
-    pasteToContainer_internal(pasteTarget, pasteNode, true);
-  }
-
-  private static boolean pasteToContainer_internal(SemanticNode pasteTarget, SemanticNode pasteNode, boolean reallyPaste) {
+  private static boolean pasteToParent_internal(SemanticNode pasteTarget, SemanticNode pasteNode, boolean reallyPaste) {
     SemanticNode actualPasteTarget = null;
     SemanticNode pasteAfter = null;
-    if(PasteUtil.canPaste(pasteTarget, pasteNode)) {
-      actualPasteTarget = pasteTarget;
-      if(!reallyPaste) {
-        return true;
-      }
-    } else {
-      pasteAfter = defineNodeToPasteAfter(pasteTarget, pasteNode);
-      if(!reallyPaste) {
-        return (pasteAfter != null);
-      }
-      actualPasteTarget = pasteAfter.getParent();
+    pasteAfter = defineNodeToPasteAfter(pasteTarget, pasteNode);
+    if(!reallyPaste) {
+      return (pasteAfter != null);
     }
+    actualPasteTarget = pasteAfter.getParent();
     if(actualPasteTarget == null) {
       return false;
     }
-    PasteUtil.paste(actualPasteTarget, pasteNode, pasteAfter);
+    PasteUtil.pasteToTarget(actualPasteTarget, pasteNode, pasteAfter);
     return true;
   }
 
@@ -108,7 +134,7 @@ public class PasteUtil {
       if(container == null) {
         break;
       }
-      if(PasteUtil.canPaste(container, pasteNode)) {
+      if(PasteUtil.canPasteToTarget(container, pasteNode)) {
         return pasteTarget;
       }
       pasteTarget = container;
@@ -120,130 +146,14 @@ public class PasteUtil {
     Iterator<SemanticLinkDeclaration> metalinks = sourceMetatype.semanticLinkDeclarations();
     while(metalinks.hasNext()) {
       SemanticLinkDeclaration metalink = metalinks.next();
-      if(metalink.getTarget() == targetMetatype) {
+      if(SemanticModelUtil.isAssignableType(metalink.getTarget(), targetMetatype)) {
         String sourceCardinality = metalink.getSourceCardinality();
         if(SemanticLinkDeclaration.CARDINALITY_0_N.equals(sourceCardinality) ||
-                SemanticLinkDeclaration.CARDINALITY_1_N.equals(sourceCardinality)) {
+            SemanticLinkDeclaration.CARDINALITY_1_N.equals(sourceCardinality)) {
           return metalink;
         }
       }
     }
     return null;
-  }
-
-
-  private static SemanticTypeDeclaration getMetatype(SemanticNode target) {
-    if(target instanceof StatementList) {
-      return getMetatype("StatementList");
-    }
-    if(target instanceof Statement) {
-      return getMetatype("Statement");
-    }
-    if(target instanceof JavaClass) {
-      return getMetatype("JavaClass");
-    }
-    if(target instanceof FieldDeclaration) {
-      return getMetatype("FieldDeclaration");
-    }
-    if(target instanceof ConstructorDeclaration) {
-      return getMetatype("ConstructorDeclaration");
-    }
-    if(target instanceof InstanceMethodDeclaration) {
-      return getMetatype("InstanceMethodDeclaration");
-    }
-    return null;
-  }
-
-  private static SemanticTypeDeclaration getMetatype(String name) {
-    if(myTypesMap.get(name) == null) {
-      if(name.equals("StatementList")) {
-        myTypesMap.put("StatementList", createStatementListMetatype());
-      }
-      if(name.equals("Statement")) {
-        myTypesMap.put("Statement", createStatementMetatype());
-      }
-      if(name.equals("JavaClass")) {
-        myTypesMap.put("JavaClass", createJavaClassMetatype());
-      }
-      if(name.equals("FieldDeclaration")) {
-        myTypesMap.put("FieldDeclaration", createFieldDeclarationMetatype());
-      }
-      if(name.equals("ConstructorDeclaration")) {
-        myTypesMap.put("ConstructorDeclaration", createConstructorDeclarationMetatype());
-      }
-      if(name.equals("InstanceMethodDeclaration")) {
-        myTypesMap.put("InstanceMethodDeclaration", createInstanceMethodDeclarationMetatype());
-      }
-    }
-    return myTypesMap.get(name);
-  }
-
-  private static SemanticTypeDeclaration createStatementListMetatype() {
-    SemanticTypeDeclaration metatype = SemanticTypeDeclaration.newInstance(model);
-    metatype.setName("StatementList");
-    // --- links ---
-    SemanticLinkDeclaration metalink = SemanticLinkDeclaration.newInstance(model);
-    metalink.setRole(StatementList.STATEMENT);
-    metalink.setMetaClass(SemanticNode.AGGREGATION);
-    metalink.setSourceCardinality(SemanticLinkDeclaration.CARDINALITY_0_N);
-    metalink.setTargetCardinality(SemanticLinkDeclaration.CARDINALITY_1);
-    metalink.setTarget(getMetatype("Statement"));
-    metatype.addSemanticLinkDeclaration(metalink);
-    return metatype;
-  }
-
-  private static SemanticTypeDeclaration createStatementMetatype() {
-    SemanticTypeDeclaration metatype = SemanticTypeDeclaration.newInstance(model);
-    metatype.setName("Statement");
-    return metatype;
-  }
-
-  private static SemanticTypeDeclaration createJavaClassMetatype() {
-    SemanticTypeDeclaration metatype = SemanticTypeDeclaration.newInstance(model);
-    metatype.setName("JavaClass");
-    // --- links ---
-    // fields
-    SemanticLinkDeclaration fieldMetalink = SemanticLinkDeclaration.newInstance(model);
-    fieldMetalink.setRole(JavaClass.FIELD);
-    fieldMetalink.setMetaClass(SemanticNode.AGGREGATION);
-    fieldMetalink.setSourceCardinality(SemanticLinkDeclaration.CARDINALITY_0_N);
-    fieldMetalink.setTargetCardinality(SemanticLinkDeclaration.CARDINALITY_1);
-    fieldMetalink.setTarget(getMetatype("FieldDeclaration"));
-    metatype.addSemanticLinkDeclaration(fieldMetalink);
-    // constructors
-    SemanticLinkDeclaration constructorMetalink = SemanticLinkDeclaration.newInstance(model);
-    constructorMetalink.setRole(JavaClass.CONSTRUCTOR);
-    constructorMetalink.setMetaClass(SemanticNode.AGGREGATION);
-    constructorMetalink.setSourceCardinality(SemanticLinkDeclaration.CARDINALITY_0_N);
-    constructorMetalink.setTargetCardinality(SemanticLinkDeclaration.CARDINALITY_1);
-    constructorMetalink.setTarget(getMetatype("ConstructorDeclaration"));
-    metatype.addSemanticLinkDeclaration(constructorMetalink);
-    // methods
-    SemanticLinkDeclaration methodMetalink = SemanticLinkDeclaration.newInstance(model);
-    methodMetalink.setRole(JavaClass.METHOD);
-    methodMetalink.setMetaClass(SemanticNode.AGGREGATION);
-    methodMetalink.setSourceCardinality(SemanticLinkDeclaration.CARDINALITY_0_N);
-    methodMetalink.setTargetCardinality(SemanticLinkDeclaration.CARDINALITY_1);
-    methodMetalink.setTarget(getMetatype("InstanceMethodDeclaration"));
-    metatype.addSemanticLinkDeclaration(methodMetalink);
-    return metatype;
-  }
-
-  private static SemanticTypeDeclaration createFieldDeclarationMetatype() {
-    SemanticTypeDeclaration metatype = SemanticTypeDeclaration.newInstance(model);
-    metatype.setName("FieldDeclaration");
-    return metatype;
-  }
-
-  private static SemanticTypeDeclaration createConstructorDeclarationMetatype() {
-    SemanticTypeDeclaration metatype = SemanticTypeDeclaration.newInstance(model);
-    metatype.setName("ConstructorDeclaration");
-    return metatype;
-  }
-
-  private static SemanticTypeDeclaration createInstanceMethodDeclarationMetatype() {
-    SemanticTypeDeclaration metatype = SemanticTypeDeclaration.newInstance(model);
-    metatype.setName("InstanceMethodDeclaration");
-    return metatype;
   }
 }
