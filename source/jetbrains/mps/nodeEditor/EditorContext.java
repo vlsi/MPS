@@ -12,12 +12,12 @@ import java.awt.*;
  */
 public class EditorContext {
   private AbstractEditorComponent myNodeEditorComponent;
-  private SemanticModel mySemanticModel;
+  private SemanticModel myModel;
   private MPSProject myProject;
 
-  public EditorContext(AbstractEditorComponent editorComponent, SemanticModel semanticModel, MPSProject project) {
+  public EditorContext(AbstractEditorComponent editorComponent, SemanticModel model, MPSProject project) {
     myNodeEditorComponent = editorComponent;
-    mySemanticModel = semanticModel;
+    myModel = model;
     myProject = project;
   }
 
@@ -25,8 +25,8 @@ public class EditorContext {
     return myNodeEditorComponent;
   }
 
-  public SemanticModel getSemanticModel() {
-    return mySemanticModel;
+  public SemanticModel getModel() {
+    return myModel;
   }
 
   public MPSProject getProject() {

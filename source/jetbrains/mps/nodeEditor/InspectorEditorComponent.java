@@ -24,7 +24,7 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
     if (myInspectedNode == null) {
       myEditorContext = new EditorContext(this, null, getProject());
     } else {
-      myEditorContext = new EditorContext(this, myInspectedNode.getSemanticModel(), getProject());
+      myEditorContext = new EditorContext(this, myInspectedNode.getModel(), getProject());
     }
   }
 

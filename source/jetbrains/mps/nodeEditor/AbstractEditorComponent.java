@@ -354,7 +354,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
                 new Runnable() {
                   public void run() {
                     MPSProject project = getContext().getProject();
-                    SemanticModel targetModel = targetClass.getSemanticModel();
+                    SemanticModel targetModel = targetClass.getModel();
                     String fqName = targetModel.getFQName();
                     String name = targetClass.getName();
                     String className = fqName + '.' + name;
@@ -435,7 +435,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 //        Iterator<SemanticNode> children = copy.depthFirstChildren();
 //        while (children.hasNext()) {
 //          SemanticNode child = children.next();
-//          if(child.getSemanticModel() != targetModel) {
+//          if(child.getModel() != targetModel) {
 //            System.err.println("after copy error! node: " + copy.getDebugText() );
 //            SemanticModelUtil.dumpNodePath(child, 0, System.err);
 //          }
@@ -479,8 +479,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         if (modelClass == null) {
           modelClass = SemanticModelUtil.findJavaClass("java.lang.Object", project);
         }
-        if (modelClass != null && targetModel != modelClass.getSemanticModel()) {
-          targetModel.addImportedModel(modelClass.getSemanticModel());
+        if (modelClass != null && targetModel != modelClass.getModel()) {
+          targetModel.addImportedModel(modelClass.getModel());
         }
         return modelClass;
       }
@@ -498,7 +498,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public void clear() {
     SemanticNode semanticNode = myRootCell.getSemanticNode();
     if (semanticNode != null) {
-      SemanticModel semanticModel = semanticNode.getSemanticModel();
+      SemanticModel semanticModel = semanticNode.getModel();
       semanticModel.removeSemanticModelListener(mySemanticModelListener);
     }
   }
@@ -507,7 +507,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (myRootCell != null) {
       SemanticNode semanticNode = myRootCell.getSemanticNode();
       if (semanticNode != null) {
-        SemanticModel semanticModel = semanticNode.getSemanticModel();
+        SemanticModel semanticModel = semanticNode.getModel();
         semanticModel.removeSemanticModelListener(mySemanticModelListener);
       }
     }
@@ -520,7 +520,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     SemanticNode semanticNode = myRootCell.getSemanticNode();
     if (semanticNode != null) {
-      SemanticModel semanticModel = semanticNode.getSemanticModel();
+      SemanticModel semanticModel = semanticNode.getModel();
       semanticModel.addSemanticModelListener(mySemanticModelListener);
       addImportedModelsToListener(semanticModel);
     }
@@ -988,7 +988,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }, "node copyAndAddToRoots");
 
-    root.getSemanticModel().addRoot(copy[0]);
+    root.getModel().addRoot(copy[0]);
     selectNode(null);
     myRecorder = new EventRecorder();
     myMPSProject.getComponent(InspectorPane.class).getInspector().setEventRecorder(myRecorder);

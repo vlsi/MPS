@@ -16,7 +16,7 @@ public class CellAction_PasteNode extends EditorCellAction {
       return false;
     }
     SemanticNode selectedNode = selectedCell.getSemanticNode();
-    List<SemanticNode> pasteNodes = PasteUtil.getNodesFromClipboard(selectedNode.getSemanticModel());
+    List<SemanticNode> pasteNodes = PasteUtil.getNodesFromClipboard(selectedNode.getModel());
     if (pasteNodes == null || pasteNodes.size() == 0) {
       return false;
     }
@@ -31,7 +31,7 @@ public class CellAction_PasteNode extends EditorCellAction {
   public void execute(EditorContext context) {
     EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
     SemanticNode selectedNode = selectedCell.getSemanticNode();
-    List<SemanticNode> pasteNodes = PasteUtil.getNodesFromClipboard(selectedNode.getSemanticModel());
+    List<SemanticNode> pasteNodes = PasteUtil.getNodesFromClipboard(selectedNode.getModel());
     PasteUtil.paste(selectedNode, pasteNodes.get(0));
     SemanticNode anchor = pasteNodes.get(0);
     for (int i = 1; i < pasteNodes.size(); i++) {
@@ -40,6 +40,6 @@ public class CellAction_PasteNode extends EditorCellAction {
       anchor = node;
     }
 
-    selectedNode.getSemanticModel().fireModelChangedDramaticallyEvent();
+    selectedNode.getModel().fireModelChangedDramaticallyEvent();
   }
 }

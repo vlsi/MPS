@@ -32,7 +32,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
 
     final String editorName = node.getName() + "_Editor";
     MPSProject project = context.getProject();
-    SemanticModel languageStructure = node.getSemanticModel();
+    SemanticModel languageStructure = node.getModel();
     Language language = project.getLanguageByStructureModel(languageStructure);
     if (language == null) {
       JOptionPane.showMessageDialog(null, "Couldn't find Language for structure model " + languageStructure.getFQName());
@@ -51,7 +51,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
       }
       JOptionPane.showMessageDialog(null, "The " + editorName + " wasn't found in " + languageEditor.getFQName());
     } else {
-      JOptionPane.showMessageDialog(null, "Editor model for \"" + node.getSemanticModel().getFQName() + "\" is not in the project");
+      JOptionPane.showMessageDialog(null, "Editor model for \"" + node.getModel().getFQName() + "\" is not in the project");
     }
   }
 }

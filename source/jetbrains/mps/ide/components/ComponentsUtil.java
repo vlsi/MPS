@@ -23,7 +23,7 @@ public class ComponentsUtil {
 
   public static Element nodeToElement(SemanticNode node) {
     Element nodeElement = new Element(NODE);
-    nodeElement.setAttribute(MODEL, node.getSemanticModel().getFQName());
+    nodeElement.setAttribute(MODEL, node.getModel().getFQName());
     nodeElement.setAttribute(ID, node.getId());
     return nodeElement;
   }
@@ -31,7 +31,7 @@ public class ComponentsUtil {
   public static SemanticNode nodeFromElement(MPSProject project, Element nodeElement) {
     String model = nodeElement.getAttributeValue(MODEL);
     String id = nodeElement.getAttributeValue(ID);
-    SemanticModel semanticModel = project.getSemanticModels().getModel(model);
+    SemanticModel semanticModel = project.getModels().getModel(model);
     SemanticNode semanticNode = semanticModel.findNode(id);
     return semanticNode;
   }

@@ -23,7 +23,7 @@ public class UIEditorComponent extends AbstractEditorComponent {
 
   public void editNode(SemanticNode semanticNode) {
     mySemanticNode = semanticNode;
-    myEditorContext = new EditorContext(this, semanticNode.getSemanticModel(), getProject());
+    myEditorContext = new EditorContext(this, semanticNode.getModel(), getProject());
     rebuildEditorContent();
   }
 

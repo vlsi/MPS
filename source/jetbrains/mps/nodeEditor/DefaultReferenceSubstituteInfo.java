@@ -42,7 +42,7 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
         }
 
         public String getDescriptionText(String pattern) {
-          return targetNode.getSemanticModel().getFQName();
+          return targetNode.getModel().getFQName();
         }
 
         public SemanticNode doSubstitute(String pattern) {
@@ -60,7 +60,7 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   private List<SemanticNode> createTargetNodesList() {
     final ConceptDeclaration targetType = myLinkDeclaration.getTarget();
-    List<SemanticNode> list = SemanticModelUtil.allNodes(mySourceNode.getSemanticModel(), true, new Condition<SemanticNode>() {
+    List<SemanticNode> list = SemanticModelUtil.allNodes(mySourceNode.getModel(), true, new Condition<SemanticNode>() {
       public boolean met(SemanticNode node) {
         return SemanticModelUtil.isInstanceOfType(node, targetType);
       }

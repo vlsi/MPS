@@ -22,7 +22,6 @@ public class PathManager {
 
   private static String ourHomePath;
   private static String ourConfigPath;
-  private static String ourModelPath;
   private static String ourHelpPath;
 
   public static void resetHomePath() {
@@ -74,26 +73,6 @@ public class PathManager {
     return ourConfigPath;
   }
 
-
-
-//  public static String getModelPath() {
-//    if (ourModelPath != null) return ourModelPath;
-//
-//    if (System.getProperty(PROPERTY_MODEL_PATH) != null) {
-//      ourModelPath = getAbsolutePath(System.getProperty(PROPERTY_MODEL_PATH));
-//    } else {
-//      ourModelPath = getHomePath() + File.separator + "semanticModels";
-//    }
-//
-//    try {
-//      File file = new File(ourModelPath);
-////      file.mkdirs();
-//    } catch (Exception e) {
-//      e.printStackTrace();
-//    }
-//
-//    return ourModelPath;
-//  }
 
   public static String getHelpPath() {
     if (ourHelpPath != null) {

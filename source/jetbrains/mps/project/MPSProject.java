@@ -1,24 +1,23 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.semanticModel.*;
-import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.util.PathManager;
-import jetbrains.mps.modelExecute.ExecutionPoint;
-import jetbrains.mps.modelExecute.ExecutionManager;
+import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.*;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.components.EditorsPaneComponent;
 import jetbrains.mps.ide.components.ProjectPaneComponent;
-import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.modelExecute.ExecutionManager;
+import jetbrains.mps.modelExecute.ExecutionPoint;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.semanticModel.Language;
+import jetbrains.mps.semanticModel.ModelLocator;
+import jetbrains.mps.semanticModel.SemanticModel;
+import jetbrains.mps.semanticModel.SemanticModels;
+import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.util.PathManager;
 import org.jdom.Document;
 import org.jdom.Element;
-import org.jdom.JDOMException;
 
 import java.io.File;
-import java.io.FilenameFilter;
-import java.io.IOException;
 import java.util.*;
 
 /**
@@ -107,7 +106,7 @@ public class MPSProject implements ModelLocator {
   }
 
   public void saveModels() {
-    getSemanticModels().saveAll();
+    getModels().saveAll();
   }
 
   public void save() {
@@ -167,16 +166,16 @@ public class MPSProject implements ModelLocator {
     myNamespaceToLanguageMap.put(namespace, language);
   }
 
-  public SemanticModels getSemanticModels() {
+  public SemanticModels getModels() {
     return getComponent(SemanticModels.class);
   }
 
   public SemanticModel loadModel(String fileName) {
-    return getSemanticModels().loadModel(fileName, this);
+    return getModels().loadModel(fileName, this);
   }
 
   public boolean isProjectChanged() {
-    return getSemanticModels().wereChanges();
+    return getModels().wereChanges();
   }
 
   public ExecutionPoint getEntryPoint() {

@@ -77,7 +77,7 @@ public class EditorManager {
       return null;
     }
 
-    String stereotype = node.getSemanticModel().getStereotype();
+    String stereotype = node.getModel().getStereotype();
     String languageEditorFQName = language.getLanguageEditorFQName(stereotype);
     if (languageEditorFQName == null) {
       languageEditorFQName = language.getLanguageEditorFQName();
@@ -122,9 +122,9 @@ public class EditorManager {
     String typeName = typeDeclaration.getName();
     //todo - the project should be passed as parameter here
     MPSProject mpsProject = IdeMain.instance().getProject();
-    Language language = mpsProject.getLanguageByStructureModel(typeDeclaration.getSemanticModel());
+    Language language = mpsProject.getLanguageByStructureModel(typeDeclaration.getModel());
     if (language == null) {
-      System.err.println("ERROR: Couldn't find language for structure model \"" + typeDeclaration.getSemanticModel().getFQName() + "\"");
+      System.err.println("ERROR: Couldn't find language for structure model \"" + typeDeclaration.getModel().getFQName() + "\"");
     } else {
       SemanticModel languageEditor = language.getLanguageEditor();
       if (languageEditor != null) {

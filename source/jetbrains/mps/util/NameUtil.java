@@ -80,6 +80,6 @@ public class NameUtil {
       return name;
     }
 
-    return node.getSemanticModel().getFQName() + "." + (name != null ? name : "");
+    return node.getModel().getFQName() + "." + (name != null ? name : "");
   }
 }

@@ -10,7 +10,7 @@ import jetbrains.mps.semanticModel.SemanticNode;
 public class JavaNameUtil {
 
   public static String fqClassNameByNamespace(SemanticNode semanticNode, String shortClassName) {
-    return fqClassNameByNamespace(semanticNode.getSemanticModel(), shortClassName);
+    return fqClassNameByNamespace(semanticNode.getModel(), shortClassName);
   }
 
   public static String fqClassNameByNamespace(SemanticModel model, String shortClassName) {
@@ -26,7 +26,7 @@ public class JavaNameUtil {
   }
 
   public static String fqClassName(SemanticNode semanticNode, String shortClassName) {
-    return fqClassName(semanticNode.getSemanticModel(), shortClassName);
+    return fqClassName(semanticNode.getModel(), shortClassName);
   }
 
   public static String fqClassName(SemanticModel semanticModel, String shortClassName) {

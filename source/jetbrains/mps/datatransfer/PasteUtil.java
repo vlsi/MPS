@@ -65,7 +65,7 @@ public class PasteUtil {
   }
 
   private static int canPaste_internal(SemanticNode pasteTarget, SemanticNode pasteNode) {
-    if (pasteTarget.getSemanticModel() != pasteNode.getSemanticModel()) {
+    if (pasteTarget.getModel() != pasteNode.getModel()) {
       return PASTE_N_A;
     }
     if (canPasteToTarget(pasteTarget, pasteNode)) {
