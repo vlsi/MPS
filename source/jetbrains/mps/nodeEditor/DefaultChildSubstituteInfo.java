@@ -38,8 +38,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     for (final ConceptDeclaration childType : childTypes) {
       list.add(new AbstractNodeSubstituteItem() {
         public String getMatchingText(String pattern) {
-//          return childType.getName();
-          return EditorUtil.matchingTextForType(childType);
+          return EditorUtil.getMatchingText(childType);
         }
 
         public String getDescriptionText(String pattern) {

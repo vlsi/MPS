@@ -1,13 +1,9 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.IStatus;
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.diagnostic.Logger;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.semanticModel.Language;
-import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
 
@@ -108,32 +104,32 @@ public class EditorManager {
   }
 
 
-  /**
-   * @deprecated
-   */
-  public static Class getNodeEditorClass(ConceptDeclaration typeDeclaration) throws ClassNotFoundException {
-    String editorClassName = getNodeEditorClassName(typeDeclaration);
-    if (editorClassName == null) {
-      return null;
-    }
-    return Class.forName(editorClassName);
-  }
+//  /**
+//   * @deprecated
+//   */
+//  public static Class getNodeEditorClass(ConceptDeclaration typeDeclaration) throws ClassNotFoundException {
+//    String editorClassName = getNodeEditorClassName(typeDeclaration);
+//    if (editorClassName == null) {
+//      return null;
+//    }
+//    return Class.forName(editorClassName);
+//  }
 
-  private static String getNodeEditorClassName(ConceptDeclaration typeDeclaration) {
-    String typeName = typeDeclaration.getName();
-    //todo - the project should be passed as parameter here
-    MPSProject mpsProject = IdeMain.instance().getProject();
-    Language language = mpsProject.getLanguageByStructureModel(typeDeclaration.getModel());
-    if (language == null) {
-      System.err.println("ERROR: Couldn't find language for structure model \"" + typeDeclaration.getModel().getFQName() + "\"");
-    } else {
-      SModel languageEditor = language.getLanguageEditor();
-      if (languageEditor != null) {
-        String packageName = JavaNameUtil.packageNameForModel(languageEditor);
-        return packageName + "." + typeName + "_Editor";
-      }
-    }
-
-    return null;
-  }
+//  private static String getNodeEditorClassName(ConceptDeclaration typeDeclaration) {
+//    String typeName = typeDeclaration.getName();
+//    //todo - the project should be passed as parameter here
+//    MPSProject mpsProject = IdeMain.instance().getProject();
+//    Language language = mpsProject.getLanguageByStructureModel(typeDeclaration.getModel());
+//    if (language == null) {
+//      System.err.println("ERROR: Couldn't find language for structure model \"" + typeDeclaration.getModel().getFQName() + "\"");
+//    } else {
+//      SModel languageEditor = language.getLanguageEditor();
+//      if (languageEditor != null) {
+//        String packageName = JavaNameUtil.packageNameForModel(languageEditor);
+//        return packageName + "." + typeName + "_Editor";
+//      }
+//    }
+//
+//    return null;
+//  }
 }
