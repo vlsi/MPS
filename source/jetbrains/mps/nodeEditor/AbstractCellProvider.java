@@ -20,4 +20,8 @@ public abstract class AbstractCellProvider {
   }
 
   public abstract EditorCell createEditorCell(EditorContext editorContext);
+
+  protected EditorCell nodeCell(EditorContext editorContext, SemanticNode node) {
+    return editorContext.createNodeCell(node);
+  }
 }
