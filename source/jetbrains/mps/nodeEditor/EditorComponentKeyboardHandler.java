@@ -20,6 +20,10 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
     // precess cell keymaps first
     if (selectedCell != null /*&& EditorUtil.isValidCell(selectedCell)*/) {
+      //test
+      if(keyEvent.getKeyCode() == KeyEvent.VK_M) {
+        System.out.println("key pressed:" + keyEvent);
+      }
       EditorCell actionCell = selectedCell;
       EditorCellKeyMapAction cellKeyMapAction = EditorUtil.getCellKeyMapAction(actionCell, keyEvent, editorContext);
       while (cellKeyMapAction == null && actionCell.getParent() != null) {
