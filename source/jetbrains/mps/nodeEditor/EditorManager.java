@@ -15,7 +15,7 @@ import jetbrains.mps.util.NodeNameUtil;
  */
 public class EditorManager {
   private static Logger LOG = Logger.getInstance("jetbrains.mps.nodeEditor.EditorManager");
-//  private static EditorManager myInstance;
+  //  private static EditorManager myInstance;
   public static String NODE_TO_PLACE_AFTER = "nodeToPlaceAfter";
 
   private MPSClassLoader myClassLoader = new EditorClassLoader();
@@ -96,14 +96,14 @@ public class EditorManager {
       }
     }
 
-//    String editorClassName = "jetbrains.mps." + languageEditorFQName + "." + nodeConcept.getName() + "_Editor";
+    //    String editorClassName = "jetbrains.mps." + languageEditorFQName + "." + nodeConcept.getName() + "_Editor";
     String editorClassName = languageEditorFQName + "." + nodeConcept.getName() + "_Editor";
     try {
       Class editorClass = Class.forName(editorClassName, true, myClassLoader);
       return (INodeEditor) editorClass.newInstance();
     } catch (ClassNotFoundException e) {
       System.err.println("Couldn't load editor " + editorClassName + " : Class Not Found!");
-//      e.printStackTrace();  //To change body of catch statement use Options | File Templates.
+      //      e.printStackTrace();  //To change body of catch statement use Options | File Templates.
     } catch (InstantiationException e) {
       e.printStackTrace();  //To change body of catch statement use Options | File Templates.
     } catch (IllegalAccessException e) {
@@ -116,34 +116,34 @@ public class EditorManager {
   }
 
 
-//  /**
-//   * @deprecated
-//   */
-//  public static Class getNodeEditorClass(ConceptDeclaration typeDeclaration) throws ClassNotFoundException {
-//    String editorClassName = getNodeEditorClassName(typeDeclaration);
-//    if (editorClassName == null) {
-//      return null;
-//    }
-//    return Class.forName(editorClassName);
-//  }
+  //  /**
+  //   * @deprecated
+  //   */
+  //  public static Class getNodeEditorClass(ConceptDeclaration typeDeclaration) throws ClassNotFoundException {
+  //    String editorClassName = getNodeEditorClassName(typeDeclaration);
+  //    if (editorClassName == null) {
+  //      return null;
+  //    }
+  //    return Class.forName(editorClassName);
+  //  }
 
-//  private static String getNodeEditorClassName(ConceptDeclaration typeDeclaration) {
-//    String typeName = typeDeclaration.getName();
-//    //todo - the project should be passed as parameter here
-//    MPSProject mpsProject = IdeMain.instance().getProject();
-//    Language language = mpsProject.getLanguageByStructureModel(typeDeclaration.getModel());
-//    if (language == null) {
-//      System.err.println("ERROR: Couldn't find language for structure model \"" + typeDeclaration.getModel().getFQName() + "\"");
-//    } else {
-//      SModel languageEditor = language.getEditorModel();
-//      if (languageEditor != null) {
-//        String packageName = JavaNameUtil.packageNameForModel(languageEditor);
-//        return packageName + "." + typeName + "_Editor";
-//      }
-//    }
-//
-//    return null;
-//  }
+  //  private static String getNodeEditorClassName(ConceptDeclaration typeDeclaration) {
+  //    String typeName = typeDeclaration.getName();
+  //    //todo - the project should be passed as parameter here
+  //    MPSProject mpsProject = IdeMain.instance().getProject();
+  //    Language language = mpsProject.getLanguageByStructureModel(typeDeclaration.getModel());
+  //    if (language == null) {
+  //      System.err.println("ERROR: Couldn't find language for structure model \"" + typeDeclaration.getModel().getFQName() + "\"");
+  //    } else {
+  //      SModel languageEditor = language.getEditorModel();
+  //      if (languageEditor != null) {
+  //        String packageName = JavaNameUtil.packageNameForModel(languageEditor);
+  //        return packageName + "." + typeName + "_Editor";
+  //      }
+  //    }
+  //
+  //    return null;
+  //  }
 
   private static class EditorClassLoader extends MPSClassLoader {
     protected boolean isExcluded(String name) {
