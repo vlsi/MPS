@@ -117,20 +117,20 @@ public class EditorManager {
    */
   public static Class getNodeEditorClass(SemanticTypeDeclaration typeDeclaration) throws ClassNotFoundException {
 
-    // 1 st try "trial" editors
-    String editorClassName = getNodeEditorClassName(typeDeclaration, true);
-    if (editorClassName == null) {
-      return null;
-    }
-    try {
-      Class trialEditorClass = Class.forName(editorClassName);
-      System.out.println("*USE GENERATED EDITOR FOR TYPE : " + typeDeclaration.getDebugText());
-      return trialEditorClass;
-    } catch (ClassNotFoundException e) {
-    }
+//    // 1 st try "trial" editors
+//    String editorClassName = getNodeEditorClassName(typeDeclaration, true);
+//    if (editorClassName == null) {
+//      return null;
+//    }
+//    try {
+//      Class trialEditorClass = Class.forName(editorClassName);
+//      System.out.println("*USE GENERATED EDITOR FOR TYPE : " + typeDeclaration.getDebugText());
+//      return trialEditorClass;
+//    } catch (ClassNotFoundException e) {
+//    }
 
     // else load "normal editor"
-    editorClassName = getNodeEditorClassName(typeDeclaration, false);
+    String editorClassName = getNodeEditorClassName(typeDeclaration, false);
     return Class.forName(editorClassName);
   }
 
