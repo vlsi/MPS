@@ -9,6 +9,8 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.datatransfer.PasteUtil;
 
+import java.util.List;
+
 public class CellAction_PasteNodeRelative extends EditorCellAction {
   private boolean myPasteBefore;
 
@@ -18,16 +20,16 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
 
   public boolean canExecute(EditorContext context) {
     EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
-    if(selectedCell == null) {
+    if (selectedCell == null) {
       return false;
     }
     SemanticNode anchorNode = selectedCell.getSemanticNode();
-    SemanticNode pasteNode = PasteUtil.getNodeFromClipboard(anchorNode.getSemanticModel());
-    if(pasteNode == null) {
+    List<SemanticNode> pasteNodes = PasteUtil.getNodesFromClipboard(anchorNode.getSemanticModel());
+    if (pasteNodes == null) {
       return false;
     }
 
-    if(!PasteUtil.canPasteRelative(anchorNode, pasteNode)) {
+    if (!PasteUtil.canPasteRelative(anchorNode, pasteNodes.get(0))) {
       System.out.println("Couldn't paste node relative");
       return false;
     }
@@ -37,8 +39,15 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
   public void execute(EditorContext context) {
     EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
     SemanticNode anchorNode = selectedCell.getSemanticNode();
-    SemanticNode pasteNode = PasteUtil.getNodeFromClipboard(anchorNode.getSemanticModel());
-    PasteUtil.pasteRelative(anchorNode, pasteNode, myPasteBefore);
+    List<SemanticNode> pasteNodes = PasteUtil.getNodesFromClipboard(anchorNode.getSemanticModel());
+    PasteUtil.pasteRelative(anchorNode, pasteNodes.get(0), myPasteBefore);
+    anchorNode = pasteNodes.get(0);
+    for (int i = 1; i < pasteNodes.size(); i++) {
+      SemanticNode node = pasteNodes.get(i);
+      PasteUtil.pasteRelative(anchorNode, node, false);
+      anchorNode = node;
+    }
+
     anchorNode.getSemanticModel().fireModelChangedDramaticallyEvent();
   }
 }

@@ -13,7 +13,8 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
-import java.util.Iterator;
+import java.util.*;
+import java.util.List;
 
 /**
  * Author: Sergey Dmitriev.
@@ -25,19 +26,18 @@ public class PasteUtil {
   private static final int PASTE_TO_PARENT = 2;
   private static final int PASTE_TO_ROOT = 3;
 
-  public static SemanticNode getNodeFromClipboard(SemanticModel semanticModel) {
+  public static List<SemanticNode> getNodesFromClipboard(SemanticModel semanticModel) {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     Transferable content = cb.getContents(null);
-    if(content == null ||
-        !content.isDataFlavorSupported(SemanticModelDataFlavor.semanticNode)) {
+    if (content == null ||
+            !content.isDataFlavorSupported(SemanticModelDataFlavor.semanticNode)) {
       return null;
     }
 
     SemanticNodeData nodeData = null;
     try {
       nodeData = (SemanticNodeData) content.getTransferData(SemanticModelDataFlavor.semanticNode);
-      SemanticNode node = nodeData.createNode(semanticModel);
-      return node;
+      return nodeData.createNodes(semanticModel);
     } catch (UnsupportedFlavorException e) {
       e.printStackTrace();  //To change body of catch statement use Options | File Templates.
     } catch (IOException e) {
@@ -52,27 +52,27 @@ public class PasteUtil {
 
   public static void paste(SemanticNode pasteTarget, SemanticNode pasteNode) {
     int status = canPaste_internal(pasteTarget, pasteNode);
-    if(status == PASTE_TO_TAREGT) {
+    if (status == PASTE_TO_TAREGT) {
       pasteToTarget(pasteTarget, pasteNode, null, false);
-    } else if(status == PASTE_TO_PARENT) {
+    } else if (status == PASTE_TO_PARENT) {
       pasteToParent(pasteTarget, pasteNode, false);
-    } else if(status == PASTE_TO_ROOT) {
+    } else if (status == PASTE_TO_ROOT) {
       CommandUtil.addRootNode(pasteNode);
     }
   }
 
   private static int canPaste_internal(SemanticNode pasteTarget, SemanticNode pasteNode) {
-    if(pasteTarget.getSemanticModel() != pasteNode.getSemanticModel()) {
+    if (pasteTarget.getSemanticModel() != pasteNode.getSemanticModel()) {
       return PASTE_N_A;
     }
-    if(canPasteToTarget(pasteTarget, pasteNode)) {
+    if (canPasteToTarget(pasteTarget, pasteNode)) {
       return PASTE_TO_TAREGT;
     }
     // if target is root node - paste to model root
-    if(pasteTarget.getParent() == null) {
+    if (pasteTarget.getParent() == null) {
       return PASTE_TO_ROOT;
     }
-    if(canPasteToParent(pasteTarget, pasteNode)) {
+    if (canPasteToParent(pasteTarget, pasteNode)) {
       return PASTE_TO_PARENT;
     }
     return PASTE_N_A;
@@ -89,14 +89,14 @@ public class PasteUtil {
   private static boolean pasteToTarget_internal(final SemanticNode pasteTarget, final SemanticNode pasteNode, final SemanticNode anchorNode, final boolean pasteBefore, boolean reallyPaste) {
     SemanticTypeDeclaration pasteTargetType = SemanticModelUtil.getTypeDeclaration(pasteTarget);
     SemanticTypeDeclaration pasteNodeType = SemanticModelUtil.getTypeDeclaration(pasteNode);
-    if(pasteTargetType == null || pasteNodeType == null) {
+    if (pasteTargetType == null || pasteNodeType == null) {
       return false;
     }
     final SemanticLinkDeclaration metalink = findListlikeMetalink(pasteTargetType, pasteNodeType);
-    if(metalink == null) {
+    if (metalink == null) {
       return false;
     }
-    if(reallyPaste) {
+    if (reallyPaste) {
       CommandProcessor.instance().executeCommand(null, new Runnable() {
         public void run() {
           CommandUtil.addNodeRefernce(pasteTarget, pasteNode, metalink.getRole(), metalink.getMetaClass(), anchorNode, pasteBefore);
@@ -117,11 +117,11 @@ public class PasteUtil {
   private static boolean pasteToParent_internal(SemanticNode anchorNode, SemanticNode pasteNode, boolean pasteBefore, boolean reallyPaste) {
     SemanticNode actualPasteTarget = null;
     SemanticNode actualAnchorNode = defineActualAnchorNode(anchorNode, pasteNode);
-    if(!reallyPaste) {
+    if (!reallyPaste) {
       return (actualAnchorNode != null);
     }
     actualPasteTarget = actualAnchorNode.getParent();
-    if(actualPasteTarget == null) {
+    if (actualPasteTarget == null) {
       return false;
     }
     PasteUtil.pasteToTarget(actualPasteTarget, pasteNode, actualAnchorNode, pasteBefore);
@@ -129,12 +129,12 @@ public class PasteUtil {
   }
 
   private static SemanticNode defineActualAnchorNode(SemanticNode anchorNode, SemanticNode pasteNode) {
-    while(anchorNode != null) {
+    while (anchorNode != null) {
       SemanticNode container = anchorNode.getParent();
-      if(container == null) {
+      if (container == null) {
         break;
       }
-      if(PasteUtil.canPasteToTarget(container, pasteNode)) {
+      if (PasteUtil.canPasteToTarget(container, pasteNode)) {
         return anchorNode;
       }
       anchorNode = container;
@@ -144,15 +144,19 @@ public class PasteUtil {
 
   private static SemanticLinkDeclaration findListlikeMetalink(SemanticTypeDeclaration sourceMetatype, SemanticTypeDeclaration targetMetatype) {
     Iterator<SemanticLinkDeclaration> metalinks = sourceMetatype.semanticLinkDeclarations();
-    while(metalinks.hasNext()) {
+    while (metalinks.hasNext()) {
       SemanticLinkDeclaration metalink = metalinks.next();
-      if(SemanticModelUtil.isAssignableType(metalink.getTarget(), targetMetatype)) {
+      if (SemanticModelUtil.isAssignableType(metalink.getTarget(), targetMetatype)) {
         String sourceCardinality = metalink.getSourceCardinality();
-        if(SemanticLinkDeclaration.CARDINALITY_0_N.equals(sourceCardinality) ||
-            SemanticLinkDeclaration.CARDINALITY_1_N.equals(sourceCardinality)) {
+        if (SemanticLinkDeclaration.CARDINALITY_0_N.equals(sourceCardinality) ||
+                SemanticLinkDeclaration.CARDINALITY_1_N.equals(sourceCardinality)) {
           return metalink;
         }
       }
+    }
+    SemanticTypeDeclaration anExtends = sourceMetatype.getExtends();
+    if (anExtends != null) {
+      return findListlikeMetalink(anExtends, targetMetatype);
     }
     return null;
   }
