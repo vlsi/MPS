@@ -77,6 +77,14 @@ public class MPSPlugin {
     myClient.execute("MPSSupport.addImport", params);
   }
 
+  public void refreshFS() throws IOException, XmlRpcException {
+    myClient.execute("MPSSupport.refreshFS", new Vector());
+  }
+
+  public void buildProject() throws IOException, XmlRpcException {
+    myClient.execute("MPSSupport.buildProject", new Vector());
+  }
+
   public static void main(String[] args) throws Exception {
     MPSPlugin client = new MPSPlugin();
     client.openMethod("jetbrains.mps.rulez", "test_something");

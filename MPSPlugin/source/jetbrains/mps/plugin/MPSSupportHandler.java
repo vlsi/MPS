@@ -8,8 +8,10 @@ import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.module.ModuleType;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.WindowManager;
+import com.intellij.openapi.compiler.CompilerManager;
 import com.intellij.psi.*;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.IncorrectOperationException;
@@ -27,6 +29,36 @@ public class MPSSupportHandler {
 
   public MPSSupportHandler(Project project) {
     myProject = project;
+  }
+
+  public String refreshFS() {
+    ApplicationManager.getApplication().runReadAction(new Runnable() {
+      public void run() {
+        VirtualFile[] contentRoots = ProjectRootManager.getInstance(myProject).getContentRoots();
+        for (int i = 0; i < contentRoots.length; i++) {
+          VirtualFile contentRoot = contentRoots[i];
+          contentRoot.refresh(true, true);
+        }
+      }
+    });
+
+    return "OK";
+  }
+
+  public String buildProject() {
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          public void run() {
+            Module[] mods = ModuleManager.getInstance(myProject).getModules();
+            for (int i = 0; i < mods.length; i++) {
+              CompilerManager.getInstance(myProject).make(mods[i], null);
+            }
+          }
+        });
+      }
+    });
+    return "OK";
   }
 
   public String getAspectMethodIds(final String namespace, final String prefix) {
