@@ -45,7 +45,7 @@ public class InstanceMethodDeclaration_Editor extends SemanticNodeEditor {
     editorCell.addEditorCell(this.createMethodName(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell(editorContext, node, "("));
     editorCell.addEditorCell(this.create_BaseMethodParmListEditorCell(editorContext, node));
-    editorCell.addEditorCell(this.createConstantCell1(editorContext, node, ")"));
+    editorCell.addEditorCell(this.createConstantCell1(editorContext, node, ") {"));
     return editorCell;
   }
   public EditorCell createReturnType(EditorContext editorContext, SemanticNode node) {
