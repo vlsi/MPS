@@ -12,7 +12,7 @@ public abstract class EditorCellKeyMapAction {
   public abstract void execute(KeyEvent keyEvent, EditorContext context);
 
   public String getDescriptionText() {
-    return "no description";
+    return "no description : " + this.getClass().getName();
   }
 
   public KeyMapActionType getKeyMapActionType() {
