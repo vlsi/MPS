@@ -142,6 +142,11 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1112730859144">
     <property name="name" value="TemplateSwitch" />
     <link role="extends" targetNodeId="2.1078489098625" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1112820671508">
+      <property name="targetCardinality" value="0..n" />
+      <property name="role" value="modifiedSwitch" />
+      <link role="target" targetNodeId="1112730859144" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1112731491355">
       <property name="value" value="template switch" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
