@@ -43,7 +43,7 @@ public class ConstructorDeclaration_Editor extends SemanticNodeEditor {
     editorCell.addEditorCell(this.createJavaClassReferenceCell(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell(editorContext, node, "("));
     editorCell.addEditorCell(this.create_BaseMethodParmListEditorCell(editorContext, node));
-    editorCell.addEditorCell(this.createConstantCell1(editorContext, node, ")"));
+    editorCell.addEditorCell(this.createConstantCell1(editorContext, node, ") {"));
     return editorCell;
   }
   public EditorCell createJavaClassReferenceCell(EditorContext editorContext, SemanticNode node) {

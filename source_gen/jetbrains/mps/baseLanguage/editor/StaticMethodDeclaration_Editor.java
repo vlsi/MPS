@@ -46,7 +46,7 @@ public class StaticMethodDeclaration_Editor extends SemanticNodeEditor {
     editorCell.addEditorCell(this.createMethodName(editorContext, node));
     editorCell.addEditorCell(this.createConstantCell1(editorContext, node, "("));
     editorCell.addEditorCell(this.create_BaseMethodParmListEditorCell(editorContext, node));
-    editorCell.addEditorCell(this.createConstantCell2(editorContext, node, ")"));
+    editorCell.addEditorCell(this.createConstantCell2(editorContext, node, ") {"));
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
