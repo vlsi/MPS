@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
+import jetbrains.mps.nodeEditor.CellLayout_Vertical;
 
 public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
@@ -203,8 +204,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     if(this.myMemberListHandler == null) {
       this.myMemberListHandler = new EnumerationDataTypeDeclaration_Editor_MemberListHandler(node, "member", true);
     }
-    EditorCell_Collection editorCell = null;
-    editorCell = this.myMemberListHandler.createCells_Vertical(context);
+    EditorCell_Collection editorCell = this.myMemberListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(true);

@@ -23,6 +23,7 @@ import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.nodeEditor.CellAction_DeleteReferenceToNode;
+import jetbrains.mps.nodeEditor.CellLayout_Vertical;
 
 public class ConceptDeclaration_Editor extends DefaultNodeEditor {
 
@@ -305,8 +306,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     if(this.myPropertyDeclarationListHandler == null) {
       this.myPropertyDeclarationListHandler = new ConceptDeclaration_Editor_PropertyDeclarationListHandler(node, "propertyDeclaration", true);
     }
-    EditorCell_Collection editorCell = null;
-    editorCell = this.myPropertyDeclarationListHandler.createCells_Vertical(context);
+    EditorCell_Collection editorCell = this.myPropertyDeclarationListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(true);
@@ -318,8 +318,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     if(this.myLinkDeclarationListHandler == null) {
       this.myLinkDeclarationListHandler = new ConceptDeclaration_Editor_LinkDeclarationListHandler(node, "linkDeclaration", true);
     }
-    EditorCell_Collection editorCell = null;
-    editorCell = this.myLinkDeclarationListHandler.createCells_Vertical(context);
+    EditorCell_Collection editorCell = this.myLinkDeclarationListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(true);
@@ -331,8 +330,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     if(this.myConceptPropertyListHandler == null) {
       this.myConceptPropertyListHandler = new ConceptDeclaration_Editor_ConceptPropertyListHandler(node, "conceptProperty", true);
     }
-    EditorCell_Collection editorCell = null;
-    editorCell = this.myConceptPropertyListHandler.createCells_Vertical(context);
+    EditorCell_Collection editorCell = this.myConceptPropertyListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(true);
@@ -344,8 +342,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     if(this.myConceptLinkListHandler == null) {
       this.myConceptLinkListHandler = new ConceptDeclaration_Editor_ConceptLinkListHandler(node, "conceptLink", true);
     }
-    EditorCell_Collection editorCell = null;
-    editorCell = this.myConceptLinkListHandler.createCells_Vertical(context);
+    EditorCell_Collection editorCell = this.myConceptLinkListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(true);

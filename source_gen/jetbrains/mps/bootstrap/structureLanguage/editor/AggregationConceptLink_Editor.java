@@ -18,6 +18,7 @@ import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.EditorUtil;
+import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class AggregationConceptLink_Editor extends DefaultNodeEditor {
 
@@ -81,6 +82,7 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
   public EditorCell createTargetCell(EditorContext context, SemanticNode node) {
     SemanticNode referencedNode = null;
     referencedNode = node.getChild("target");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "target");
     if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "target");
@@ -90,6 +92,7 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
         noRefCell.setDrawBrackets(false);
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
         AggregationConceptLink_ConceptLinkTargets_Menu.setCellActions(noRefCell, node);
         return noRefCell;
       }
@@ -100,6 +103,9 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    if(editorCell.getSubstituteInfo() == null) {
+      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+    }
     AggregationConceptLink_ConceptLinkTargets_Menu.setCellActions(editorCell, node);
     return editorCell;
   }
