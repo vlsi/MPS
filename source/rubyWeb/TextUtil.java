@@ -9,6 +9,8 @@ import jetbrains.mps.util.CollectionUtil;
 import org.jdom.Element;
 import rubyWeb.paper.BoldTag;
 import rubyWeb.paper.ItalicTag;
+import rubyWeb.paper.TermTag;
+import rubyWeb.paper.CiteTag;
 
 /**
  * @author Kostik
@@ -52,6 +54,16 @@ public class TextUtil {
         }
         if ("i".equals(name) || "I".equals(name)) {
           ItalicTag tag = ItalicTag.newInstance(model);
+          tag.setText(toText(model, elem));
+          sentence.addWord(tag);
+        }
+        if ("term".equals(name)) {
+          TermTag tag = TermTag.newInstance(model);
+          tag.setText(toText(model, elem));
+          sentence.addWord(tag);
+        }
+        if ("cite".equals(name)) {
+          CiteTag tag = CiteTag.newInstance(model);
           tag.setText(toText(model, elem));
           sentence.addWord(tag);
         }
@@ -124,6 +136,22 @@ public class TextUtil {
     if (word instanceof ItalicTag) {
       ItalicTag tag = (ItalicTag) word;
       Element italic = new Element("i");
+      element.addContent(italic);
+      toElement(tag.getText(), italic);
+      return;
+    }
+    
+    if (word instanceof TermTag) {
+      TermTag tag = (TermTag) word;
+      Element italic = new Element("term");
+      element.addContent(italic);
+      toElement(tag.getText(), italic);
+      return;
+    }
+
+    if (word instanceof CiteTag) {
+      CiteTag tag = (CiteTag) word;
+      Element italic = new Element("cite");
       element.addContent(italic);
       toElement(tag.getText(), italic);
       return;
