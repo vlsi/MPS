@@ -26,9 +26,10 @@ import jetbrains.mps.nodeEditor.CellAction_DeleteReferenceToNode;
 
 public class ConceptDeclaration_Editor extends DefaultNodeEditor {
 
-  EditorCellListHandler myLinkDeclarationListHandler;
   EditorCellListHandler myPropertyDeclarationListHandler;
+  EditorCellListHandler myLinkDeclarationListHandler;
   EditorCellListHandler myConceptPropertyListHandler;
+  EditorCellListHandler myConceptLinkListHandler;
 
   public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
     return this.createNodeBox(context, node);
@@ -75,17 +76,19 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createRowCell1(context, node));
-    editorCell.addEditorCell(this.createSeparator1(context, node, ""));
     editorCell.addEditorCell(this.createRowCell2(context, node));
+    editorCell.addEditorCell(this.createSeparator1(context, node, ""));
+    editorCell.addEditorCell(this.createConstantCell3(context, node, "properties:"));
+    editorCell.addEditorCell(this.createPropertyDeclarationList(context, node));
     editorCell.addEditorCell(this.createSeparator2(context, node, ""));
-    editorCell.addEditorCell(this.createConstantCell3(context, node, "links:"));
+    editorCell.addEditorCell(this.createConstantCell4(context, node, "links:"));
     editorCell.addEditorCell(this.createLinkDeclarationList(context, node));
     editorCell.addEditorCell(this.createSeparator3(context, node, ""));
-    editorCell.addEditorCell(this.createConstantCell4(context, node, "properties:"));
-    editorCell.addEditorCell(this.createPropertyDeclarationList(context, node));
-    editorCell.addEditorCell(this.createSeparator4(context, node, ""));
     editorCell.addEditorCell(this.createConstantCell5(context, node, "concept properties:"));
     editorCell.addEditorCell(this.createConceptPropertyList(context, node));
+    editorCell.addEditorCell(this.createSeparator4(context, node, ""));
+    editorCell.addEditorCell(this.createConstantCell6(context, node, "concept links:"));
+    editorCell.addEditorCell(this.createConceptLinkList(context, node));
     return editorCell;
   }
   public EditorCell createRowCell1(EditorContext context, SemanticNode node) {
@@ -150,16 +153,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createSeparator2(EditorContext context, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    return editorCell;
-  }
   public EditorCell createConstantCell3(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
@@ -170,7 +163,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createSeparator3(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createSeparator2(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -190,7 +183,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createSeparator4(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createSeparator3(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -201,6 +194,26 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createConstantCell5(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    return editorCell;
+  }
+  public EditorCell createSeparator4(EditorContext context, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    return editorCell;
+  }
+  public EditorCell createConstantCell6(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -288,19 +301,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
     return editorCell;
   }
-  public EditorCell createLinkDeclarationList(EditorContext context, SemanticNode node) {
-    if(this.myLinkDeclarationListHandler == null) {
-      this.myLinkDeclarationListHandler = new ConceptDeclaration_Editor_LinkDeclarationListHandler(node, "linkDeclaration", true);
-    }
-    EditorCell_Collection editorCell = null;
-    editorCell = this.myLinkDeclarationListHandler.createCells_Vertical(context);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(true);
-    editorCell.setGridLayout(true);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    return editorCell;
-  }
   public EditorCell createPropertyDeclarationList(EditorContext context, SemanticNode node) {
     if(this.myPropertyDeclarationListHandler == null) {
       this.myPropertyDeclarationListHandler = new ConceptDeclaration_Editor_PropertyDeclarationListHandler(node, "propertyDeclaration", true);
@@ -314,12 +314,38 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
+  public EditorCell createLinkDeclarationList(EditorContext context, SemanticNode node) {
+    if(this.myLinkDeclarationListHandler == null) {
+      this.myLinkDeclarationListHandler = new ConceptDeclaration_Editor_LinkDeclarationListHandler(node, "linkDeclaration", true);
+    }
+    EditorCell_Collection editorCell = null;
+    editorCell = this.myLinkDeclarationListHandler.createCells_Vertical(context);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(true);
+    editorCell.setGridLayout(true);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    return editorCell;
+  }
   public EditorCell createConceptPropertyList(EditorContext context, SemanticNode node) {
     if(this.myConceptPropertyListHandler == null) {
       this.myConceptPropertyListHandler = new ConceptDeclaration_Editor_ConceptPropertyListHandler(node, "conceptProperty", true);
     }
     EditorCell_Collection editorCell = null;
     editorCell = this.myConceptPropertyListHandler.createCells_Vertical(context);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(true);
+    editorCell.setGridLayout(true);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    return editorCell;
+  }
+  public EditorCell createConceptLinkList(EditorContext context, SemanticNode node) {
+    if(this.myConceptLinkListHandler == null) {
+      this.myConceptLinkListHandler = new ConceptDeclaration_Editor_ConceptLinkListHandler(node, "conceptLink", true);
+    }
+    EditorCell_Collection editorCell = null;
+    editorCell = this.myConceptLinkListHandler.createCells_Vertical(context);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(true);
