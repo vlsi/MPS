@@ -10,11 +10,19 @@ import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.ModelAccessor;
-import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.PropertyAccessor;
+import jetbrains.mps.nodeEditor.EditorCell_Property;
+import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
+import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.semanticModel.SModelUtil;
+import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.nodeEditor.CellAction_Empty;
+import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.EditorUtil;
 
 public class PropertyDeclaration_Editor extends DefaultNodeEditor {
 
@@ -24,47 +32,67 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createRowCell(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createNameCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, ":"));
-    editorCell.addEditorCell(this.createPropertyDeclaration_DataTypeNameCell(context, node));
+    editorCell.addEditorCell(this.createDataTypeReferenceCell(context, node));
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setEditable(false);
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createPropertyDeclaration_DataTypeNameCell(EditorContext context, SemanticNode node) {
-    ModelAccessor modelAccessor = Aspects.createModelAccessor_PropertyDeclaration_DataTypeName(node);
-    EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
-    editorCell.setEditable(true);
-    editorCell.setDefaultText("<no data type>");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    PropertyDeclaration_DataTypeActions.setCellActions(editorCell, node);
-    return editorCell;
-  }
   public EditorCell createNameCell(EditorContext context, SemanticNode node) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "name", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setEditable(true);
     editorCell.setDefaultText("<no name>");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.getTextLine().setFontType(MPSFonts.BOLD);
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
+    return editorCell;
+  }
+  public EditorCell createDataTypeReferenceCell(EditorContext context, SemanticNode node) {
+    SemanticNode effectiveNode = null;
+    effectiveNode = node.getReferent("dataType");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "dataType");
+    if(effectiveNode == null) {
+      {
+        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "<no data type>");
+        noRefCell.setEditable(true);
+        noRefCell.setDrawBrackets(false);
+        noRefCell.setBracketsColor(Color.black);
+        noRefCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
+        noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
+        noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
+        return noRefCell;
+      }
+    }
+    AbstractCellProvider inlineComponent = new PropertyDeclaration_Editor_dataType_InlineComponent(effectiveNode);
+    EditorCell editorCell = inlineComponent.createEditorCell(context);
+    EditorUtil.setSemanticNodeToCells(editorCell, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
+    editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    editorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
     return editorCell;
   }
 }

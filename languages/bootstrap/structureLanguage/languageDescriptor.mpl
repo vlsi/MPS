@@ -9,4 +9,10 @@
     <model fqName="jetbrains.mps.bootstrap.structureLanguage.editor"/>
     <context fqName="jetbrains.mps.bootstrap.structureLanguage.editor_context"/>
   </editor>
+  <library>
+    <model fqName="jetbrains.mps.bootstrap.structureLanguage.library"/>
+  </library>
+  <autoImport>
+    <model fqName="jetbrains.mps.core.structure" />
+  </autoImport>
 </language>
