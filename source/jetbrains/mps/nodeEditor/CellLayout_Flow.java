@@ -78,7 +78,7 @@ hStart |--------|                  |  | hEnd
         childEditorCell.setX(x);
         childEditorCell.setY(y);
         childEditorCell.relayout();
-        if(x+childEditorCell.getWidth() >= getMaxX() && maxRowHeight != 0) {
+        if((x+childEditorCell.getWidth() >= getMaxX() && maxRowHeight != 0) || childEditorCell instanceof EditorCell_NewLine)  {
           x = editorCells.getX();
           y += maxRowHeight;
           childEditorCell.moveTo(x, y);
