@@ -370,7 +370,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
                       JavaClassMap javaClassMap = JavaClassMaps.getJavaClassMap(tmpModel);
                       ClassConcept tmpClass = null;
                       try {
-                        tmpClass = javaClassMap.get(className);
+                        tmpClass = (ClassConcept) javaClassMap.get(className);
                       } catch (Exception e1) {
                         e1.printStackTrace();
                       }
