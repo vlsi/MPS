@@ -17,6 +17,7 @@ import org.jdom.JDOMException;
 import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
+import java.util.HashMap;
 
 /**
  * Author: Sergey Dmitriev
@@ -39,11 +40,23 @@ public class MPSProject {
   private static final String PATH_MACRO_MODELS_ROOT = "${models_root}" + File.separatorChar;
   private static final String PATH_MACRO_PROJECT = "${project}" + File.separatorChar;
 
+  private HashMap<String, Language> myFQNameToLanguageMap = new HashMap<String, Language>();
+
   public MPSProject(File file) {
     myProjectFile = file;
     if (myProjectFile != null) {
       read(myProjectFile);
     }
+  }
+
+  public Language getLanguage(String name, String nameSpace) {
+    String fqName = nameSpace + '.' + name;
+    Language language = myFQNameToLanguageMap.get(fqName);
+    if (language == null) {
+      language = new Language(name, nameSpace, this);
+      myFQNameToLanguageMap.put(fqName, language);
+    }
+    return language;
   }
 
   public SemanticModels getSemanticModels() {
