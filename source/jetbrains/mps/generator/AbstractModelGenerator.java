@@ -6,7 +6,7 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.semanticModel.SemanticModel;
+import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.semanticModel.SemanticModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.project.MPSProject;
@@ -17,10 +17,10 @@ import java.util.LinkedList;
 
 public abstract class AbstractModelGenerator implements IModelGenerator {
   private MPSProject myProject;
-  private SemanticModel mySourceModel;
-  private SemanticModel myTargetModel;
+  private SModel mySourceModel;
+  private SModel myTargetModel;
 
-  protected AbstractModelGenerator(SemanticModel sourceModel, MPSProject project) {
+  protected AbstractModelGenerator(SModel sourceModel, MPSProject project) {
     mySourceModel = sourceModel;
     myProject = project;
   }
@@ -29,27 +29,27 @@ public abstract class AbstractModelGenerator implements IModelGenerator {
     return myProject;
   }
 
-  public SemanticModel getSourceModel() {
+  public SModel getSourceModel() {
     return mySourceModel;
   }
 
-  protected void setSourceModel(SemanticModel sourceModel) {
+  protected void setSourceModel(SModel sourceModel) {
     mySourceModel = sourceModel;
   }
 
-  public SemanticModel getTargetModel() {
+  public SModel getTargetModel() {
     return myTargetModel;
   }
 
-  protected void setTargetModel(SemanticModel targetModel) {
+  protected void setTargetModel(SModel targetModel) {
     myTargetModel = targetModel;
   }
 
-  protected void clearAllUserObjects(SemanticModel semanticModel) {
-    List<SemanticModel> modelsList = allDependentModels(semanticModel);
-    Iterator<SemanticModel> models = modelsList.iterator();
+  protected void clearAllUserObjects(SModel semanticModel) {
+    List<SModel> modelsList = allDependentModels(semanticModel);
+    Iterator<SModel> models = modelsList.iterator();
     while (models.hasNext()) {
-      SemanticModel model = models.next();
+      SModel model = models.next();
       Iterator<SemanticNode> nodes = SemanticModelUtil.allNodes(model).iterator();
       while (nodes.hasNext()) {
         SemanticNode node = nodes.next();
@@ -59,22 +59,22 @@ public abstract class AbstractModelGenerator implements IModelGenerator {
   }
 
 
-  private static List<SemanticModel> allDependentModels(SemanticModel semanticModel) {
-    return allDependentModels(semanticModel, new LinkedList<SemanticModel>());
+  private static List<SModel> allDependentModels(SModel semanticModel) {
+    return allDependentModels(semanticModel, new LinkedList<SModel>());
   }
 
-  private static List<SemanticModel> allDependentModels(SemanticModel semanticModel, List<SemanticModel> modelList) {
+  private static List<SModel> allDependentModels(SModel semanticModel, List<SModel> modelList) {
     modelList.add(semanticModel);
-    Iterator<SemanticModel> imports = semanticModel.importedModels();
+    Iterator<SModel> imports = semanticModel.importedModels();
     while (imports.hasNext()) {
-      SemanticModel imported = imports.next();
+      SModel imported = imports.next();
       if (!modelList.contains(imported)) {
         allDependentModels(imported, modelList);
       }
     }
-    Iterator<SemanticModel> languages = semanticModel.importedModels();
+    Iterator<SModel> languages = semanticModel.importedModels();
     while (languages.hasNext()) {
-      SemanticModel language = languages.next();
+      SModel language = languages.next();
       if (!modelList.contains(language)) {
         allDependentModels(language, modelList);
       }

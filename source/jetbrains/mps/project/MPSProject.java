@@ -10,7 +10,7 @@ import jetbrains.mps.modelExecute.ExecutionPoint;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.semanticModel.ModelLocator;
-import jetbrains.mps.semanticModel.SemanticModel;
+import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.semanticModel.SemanticModels;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.PathManager;
@@ -170,7 +170,7 @@ public class MPSProject implements ModelLocator {
     return getComponent(SemanticModels.class);
   }
 
-  public SemanticModel loadModel(String fileName) {
+  public SModel loadModel(String fileName) {
     return getModels().loadModel(fileName, this);
   }
 
@@ -191,7 +191,7 @@ public class MPSProject implements ModelLocator {
   }
 
   public ILanguagePlugin getLanguagePlugin(Language language) {
-    SemanticModel languageStructure = language.getLanguageStructure();
+    SModel languageStructure = language.getLanguageStructure();
     String packageName = JavaNameUtil.packageNameForLanguageStructure(languageStructure);
     String className = packageName + ".LanguagePlugin";
     try {
@@ -208,11 +208,11 @@ public class MPSProject implements ModelLocator {
     return null;
   }
 
-  public Language getLanguageByStructureModel(SemanticModel semanticModel) {
+  public Language getLanguageByStructureModel(SModel semanticModel) {
     Collection<Language> languages = myNamespaceToLanguageMap.values();
     for (Iterator iterator = languages.iterator(); iterator.hasNext();) {
       Language language = (Language)iterator.next();
-      SemanticModel structureModel = language.getLanguageStructure();
+      SModel structureModel = language.getLanguageStructure();
       if(structureModel == semanticModel) {
         return language;
       }

@@ -1,6 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.semanticModel.SemanticModel;
+import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.project.MPSProject;
 
@@ -12,10 +12,10 @@ import java.awt.*;
  */
 public class EditorContext {
   private AbstractEditorComponent myNodeEditorComponent;
-  private SemanticModel myModel;
+  private SModel myModel;
   private MPSProject myProject;
 
-  public EditorContext(AbstractEditorComponent editorComponent, SemanticModel model, MPSProject project) {
+  public EditorContext(AbstractEditorComponent editorComponent, SModel model, MPSProject project) {
     myNodeEditorComponent = editorComponent;
     myModel = model;
     myProject = project;
@@ -25,7 +25,7 @@ public class EditorContext {
     return myNodeEditorComponent;
   }
 
-  public SemanticModel getModel() {
+  public SModel getModel() {
     return myModel;
   }
 

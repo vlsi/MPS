@@ -354,11 +354,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
                 new Runnable() {
                   public void run() {
                     MPSProject project = getContext().getProject();
-                    SemanticModel targetModel = targetClass.getModel();
+                    SModel targetModel = targetClass.getModel();
                     String fqName = targetModel.getFQName();
                     String name = targetClass.getName();
                     String className = fqName + '.' + name;
-                    SemanticModel tmpModel = new SemanticModel();
+                    SModel tmpModel = new SModel();
                     tmpModel.setLoading(true);
                     targetModel.addImportedModel(tmpModel);
 
@@ -429,7 +429,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
                 "Generate Stab from Class File");
       }
 
-      private SemanticNode createValidCopy(SemanticNode node, SemanticModel targetModel, MPSProject project) {
+      private SemanticNode createValidCopy(SemanticNode node, SModel targetModel, MPSProject project) {
         SemanticNode copy = ContextUtil.copyNode(node, targetModel, project);
 //        //test
 //        Iterator<SemanticNode> children = copy.depthFirstChildren();
@@ -455,7 +455,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         return copy;
       }
 
-      private void replaceClasses(SemanticNode node, SemanticModel targetModel, MPSProject project) {
+      private void replaceClasses(SemanticNode node, SModel targetModel, MPSProject project) {
         List<SemanticReference> references = node.getReferences();
         for (int i = 0; i < references.size(); i++) {
           SemanticReference reference = references.get(i);
@@ -474,7 +474,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
       }
 
-      private ClassConcept toModelClass(ClassConcept tmpClass, SemanticModel targetModel, MPSProject project) {
+      private ClassConcept toModelClass(ClassConcept tmpClass, SModel targetModel, MPSProject project) {
         ClassConcept modelClass = SemanticModelUtil.findJavaClass(NameUtil.nodeFQName(tmpClass), getContext().getProject());
         if (modelClass == null) {
           modelClass = SemanticModelUtil.findJavaClass("java.lang.Object", project);
@@ -498,7 +498,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public void clear() {
     SemanticNode semanticNode = myRootCell.getSemanticNode();
     if (semanticNode != null) {
-      SemanticModel semanticModel = semanticNode.getModel();
+      SModel semanticModel = semanticNode.getModel();
       semanticModel.removeSemanticModelListener(mySemanticModelListener);
     }
   }
@@ -507,7 +507,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (myRootCell != null) {
       SemanticNode semanticNode = myRootCell.getSemanticNode();
       if (semanticNode != null) {
-        SemanticModel semanticModel = semanticNode.getModel();
+        SModel semanticModel = semanticNode.getModel();
         semanticModel.removeSemanticModelListener(mySemanticModelListener);
       }
     }
@@ -520,7 +520,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     SemanticNode semanticNode = myRootCell.getSemanticNode();
     if (semanticNode != null) {
-      SemanticModel semanticModel = semanticNode.getModel();
+      SModel semanticModel = semanticNode.getModel();
       semanticModel.addSemanticModelListener(mySemanticModelListener);
       addImportedModelsToListener(semanticModel);
     }
@@ -529,11 +529,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     repaint();
   }
 
-  private void addImportedModelsToListener(SemanticModel semanticModel) {
-    Iterator<SemanticModel> importedModels = semanticModel.importedModels();
+  private void addImportedModelsToListener(SModel semanticModel) {
+    Iterator<SModel> importedModels = semanticModel.importedModels();
     if (importedModels != null) {
       while (importedModels.hasNext()) {
-        SemanticModel importedModel = importedModels.next();
+        SModel importedModel = importedModels.next();
         if (importedModel.hasSemanticModelListener(mySemanticModelListener)) continue;
 
         importedModel.addSemanticModelListener(mySemanticModelListener);
@@ -1153,21 +1153,21 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   // ---- semantic model listener
 
   private class MyModelListener implements SemanticModelListener {
-    public void modelChanged(SemanticModel semanticModel) {
+    public void modelChanged(SModel semanticModel) {
       myRootCell.updateView();
       relayout();
     }
 
-    public void modelChangedDramatically(SemanticModel semanticModel) {
+    public void modelChangedDramatically(SModel semanticModel) {
       rebuildEditorContent();
     }
 
-    public void nodeAdded(SemanticModel semanticModel, final SemanticNode child) {
+    public void nodeAdded(SModel semanticModel, final SemanticNode child) {
       rebuildEditorContent();
       handleNodelAdded(child);
     }
 
-    public void nodeDeleted(SemanticModel semanticModel, final SemanticNode container) {
+    public void nodeDeleted(SModel semanticModel, final SemanticNode container) {
       rebuildEditorContent();
       if (mySelectedCell == null) {
         EditorCell changedNodeCell = findNodeCell(container);

@@ -6,7 +6,7 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.diagnostic.Logger;
 import jetbrains.mps.semanticModel.Language;
-import jetbrains.mps.semanticModel.SemanticModel;
+import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.semanticModel.SemanticModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.project.MPSProject;
@@ -126,7 +126,7 @@ public class EditorManager {
     if (language == null) {
       System.err.println("ERROR: Couldn't find language for structure model \"" + typeDeclaration.getModel().getFQName() + "\"");
     } else {
-      SemanticModel languageEditor = language.getLanguageEditor();
+      SModel languageEditor = language.getLanguageEditor();
       if (languageEditor != null) {
         String packageName = JavaNameUtil.packageNameForModel(languageEditor);
         return packageName + "." + typeName + "_Editor";

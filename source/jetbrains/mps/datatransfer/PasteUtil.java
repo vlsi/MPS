@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.semanticModel.SemanticModel;
+import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.semanticModel.SemanticModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.semanticModel.Language;
@@ -29,7 +29,7 @@ public class PasteUtil {
   private static final int PASTE_TO_PARENT = 2;
   private static final int PASTE_TO_ROOT = 3;
 
-  public static List<SemanticNode> getNodesFromClipboard(SemanticModel semanticModel) {
+  public static List<SemanticNode> getNodesFromClipboard(SModel semanticModel) {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     Transferable content = cb.getContents(null);
     if (content == null ||

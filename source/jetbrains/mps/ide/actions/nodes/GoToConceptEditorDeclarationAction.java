@@ -5,7 +5,7 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.semanticModel.SemanticNode;
-import jetbrains.mps.semanticModel.SemanticModel;
+import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.project.MPSProject;
@@ -32,13 +32,13 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
 
     final String editorName = node.getName() + "_Editor";
     MPSProject project = context.getProject();
-    SemanticModel languageStructure = node.getModel();
+    SModel languageStructure = node.getModel();
     Language language = project.getLanguageByStructureModel(languageStructure);
     if (language == null) {
       JOptionPane.showMessageDialog(null, "Couldn't find Language for structure model " + languageStructure.getFQName());
       return;
     }
-    SemanticModel languageEditor = language.getLanguageEditor();
+    SModel languageEditor = language.getLanguageEditor();
     if (languageEditor != null) {
       Iterator<SemanticNode> iterator = languageEditor.roots();
       while (iterator.hasNext()) {

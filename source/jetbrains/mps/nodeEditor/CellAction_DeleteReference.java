@@ -1,6 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.semanticModel.SemanticModel;
+import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.semanticModel.SemanticNode;
 
 /**
@@ -21,7 +21,7 @@ public class CellAction_DeleteReference extends EditorCellAction {
   }
 
   public void execute(EditorContext context) {
-    SemanticModel semanticModel = mySource.getModel();
+    SModel semanticModel = mySource.getModel();
     SemanticNode referent = mySource.getReferent(myRole);
     if (referent != null) {
       mySource.removeReferent(myRole, referent);

@@ -3,7 +3,7 @@ package jetbrains.mps.ide.components;
 import org.jdom.Element;
 import org.jdom.DataConversionException;
 import jetbrains.mps.semanticModel.SemanticNode;
-import jetbrains.mps.semanticModel.SemanticModel;
+import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.project.MPSProject;
 
 import java.awt.*;
@@ -31,7 +31,7 @@ public class ComponentsUtil {
   public static SemanticNode nodeFromElement(MPSProject project, Element nodeElement) {
     String model = nodeElement.getAttributeValue(MODEL);
     String id = nodeElement.getAttributeValue(ID);
-    SemanticModel semanticModel = project.getModels().getModel(model);
+    SModel semanticModel = project.getModels().getModel(model);
     SemanticNode semanticNode = semanticModel.findNode(id);
     return semanticNode;
   }

@@ -3092,7 +3092,7 @@
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1082648736066">
                     <property name="name" value="semanticModel" />
                     <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082648736067">
-                      <property name="name" value="jetbrains.mps.semanticModel.SemanticModel" />
+                      <property name="name" value="jetbrains.mps.semanticModel.SModel" />
                       <link role="javaClass" targetNodeId="15.1086945614636" />
                     </node>
                     <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1082648736068">

@@ -1,6 +1,6 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.semanticModel.SemanticModel;
+import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.semanticModel.SemanticNode;
 
 /**
@@ -13,7 +13,7 @@ public class JavaNameUtil {
     return fqClassNameByNamespace(semanticNode.getModel(), shortClassName);
   }
 
-  public static String fqClassNameByNamespace(SemanticModel model, String shortClassName) {
+  public static String fqClassNameByNamespace(SModel model, String shortClassName) {
     String modelNamespace = model.getNamespace();
     return modelNamespace + '.' + shortClassName;
 /*
@@ -29,7 +29,7 @@ public class JavaNameUtil {
     return fqClassName(semanticNode.getModel(), shortClassName);
   }
 
-  public static String fqClassName(SemanticModel semanticModel, String shortClassName) {
+  public static String fqClassName(SModel semanticModel, String shortClassName) {
     String packageName = packageNameForModel(semanticModel);
     if (packageName == null || packageName.length() == 0) {
       return shortClassName;
@@ -39,7 +39,7 @@ public class JavaNameUtil {
 /**
  * @deprecated
  */
-  public static String packageNameForLanguageStructure(SemanticModel structureModel) {
+  public static String packageNameForLanguageStructure(SModel structureModel) {
     return structureModel.getNamespace();
 /*
     String modelNamespace = structureModel.getNamespace();
@@ -50,7 +50,7 @@ public class JavaNameUtil {
 */
   }
 
-  public static String packageNameForModel(SemanticModel semanticModel) {
+  public static String packageNameForModel(SModel semanticModel) {
     String packageName = semanticModel.getFQName();
     if(semanticModel.getName() == null || semanticModel.getName().length() == 0) {
       packageName = semanticModel.getNamespace();
