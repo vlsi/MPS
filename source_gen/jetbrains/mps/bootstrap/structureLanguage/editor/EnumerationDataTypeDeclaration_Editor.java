@@ -5,9 +5,9 @@ package jetbrains.mps.bootstrap.structureLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCellListHandler;
-import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.ModelAccessor;
@@ -23,10 +23,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCellListHandler myMemberListHandler;
 
-  public void setSemanticNode(SemanticNode node) {
-    super.setSemanticNode(node);
-    this.myMemberListHandler = new EnumerationDataTypeDeclaration_Editor_MemberListHandler(node, "member", true);
-  }
   public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
     return this.createNodeBox(editorContext, node);
   }
@@ -157,6 +153,9 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createMemberList(EditorContext editorContext, SemanticNode node) {
+    if(this.myMemberListHandler == null) {
+      this.myMemberListHandler = new EnumerationDataTypeDeclaration_Editor_MemberListHandler(node, "member", true);
+    }
     EditorCell_Collection cellCollection = this.myMemberListHandler.createCells_Vertical(editorContext);
     cellCollection.setGridLayout(true);
     return cellCollection;

@@ -79,7 +79,7 @@ public class EditorManager {
     try {
       Class nodeEditorClass = getNodeEditorClass(typeDeclaration);
       DefaultNodeEditor semanticNodeEditor = (DefaultNodeEditor) nodeEditorClass.newInstance();
-      semanticNodeEditor.setSemanticNode(node);
+//      semanticNodeEditor.setSemanticNode(node);
       return semanticNodeEditor;
     } catch (ClassNotFoundException e) {
       e.printStackTrace();  //To change body of catch statement use Options | File Templates.

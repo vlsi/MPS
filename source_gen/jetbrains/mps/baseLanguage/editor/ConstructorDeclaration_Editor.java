@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.bootstrap.structureLanguage.SemanticLinkDeclaration;
 import jetbrains.mps.semanticModel.SemanticModelUtil;
@@ -22,9 +22,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
   private AbstractCellProvider my_BaseMethodParmListEditor;
 
-  public void setSemanticNode(SemanticNode node) {
-    super.setSemanticNode(node);
-  }
   public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
     return this.createMethodBox(editorContext, node);
   }

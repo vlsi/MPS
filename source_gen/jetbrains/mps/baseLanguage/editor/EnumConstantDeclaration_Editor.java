@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCellListHandler;
-import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.PropertyAccessor;
@@ -20,10 +20,6 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCellListHandler myActualArgumentListHandler;
 
-  public void setSemanticNode(SemanticNode node) {
-    super.setSemanticNode(node);
-    this.myActualArgumentListHandler = new EnumConstantDeclaration_Editor_ActualArgumentListHandler(node, "actualArgument", true);
-  }
   public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
     return this.createRowCell(editorContext, node);
   }
@@ -47,6 +43,9 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createActualArgumentList(EditorContext editorContext, SemanticNode node) {
+    if(this.myActualArgumentListHandler == null) {
+      this.myActualArgumentListHandler = new EnumConstantDeclaration_Editor_ActualArgumentListHandler(node, "actualArgument", true);
+    }
     EditorCell_Collection cellCollection = this.myActualArgumentListHandler.createCells_Horizontal(editorContext);
     cellCollection.setGridLayout(false);
     return cellCollection;

@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCellListHandler;
-import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.ModelAccessor;
@@ -24,14 +24,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   private EditorCellListHandler myMethodListHandler;
   private EditorCellListHandler myStaticMethodListHandler;
 
-  public void setSemanticNode(SemanticNode node) {
-    super.setSemanticNode(node);
-    this.myEnumConstantListHandler = new EnumClass_Editor_EnumConstantListHandler(node, "enumConstant", true);
-    this.myFieldListHandler = new EnumClass_Editor_FieldListHandler(node, "field", true);
-    this.myConstructorListHandler = new EnumClass_Editor_ConstructorListHandler(node, "constructor", true);
-    this.myMethodListHandler = new EnumClass_Editor_MethodListHandler(node, "method", true);
-    this.myStaticMethodListHandler = new EnumClass_Editor_StaticMethodListHandler(node, "staticMethod", true);
-  }
   public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
     return this.createColumnCell(editorContext, node);
   }
@@ -84,6 +76,9 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createEnumConstantList(EditorContext editorContext, SemanticNode node) {
+    if(this.myEnumConstantListHandler == null) {
+      this.myEnumConstantListHandler = new EnumClass_Editor_EnumConstantListHandler(node, "enumConstant", true);
+    }
     EditorCell_Collection cellCollection = this.myEnumConstantListHandler.createCells_Vertical(editorContext);
     cellCollection.setGridLayout(false);
     return cellCollection;
@@ -100,6 +95,9 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createFieldList(EditorContext editorContext, SemanticNode node) {
+    if(this.myFieldListHandler == null) {
+      this.myFieldListHandler = new EnumClass_Editor_FieldListHandler(node, "field", true);
+    }
     EditorCell_Collection cellCollection = this.myFieldListHandler.createCells_Vertical(editorContext);
     cellCollection.setGridLayout(false);
     return cellCollection;
@@ -116,6 +114,9 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createConstructorList(EditorContext editorContext, SemanticNode node) {
+    if(this.myConstructorListHandler == null) {
+      this.myConstructorListHandler = new EnumClass_Editor_ConstructorListHandler(node, "constructor", true);
+    }
     EditorCell_Collection cellCollection = this.myConstructorListHandler.createCells_Vertical(editorContext);
     cellCollection.setGridLayout(false);
     return cellCollection;
@@ -132,6 +133,9 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createMethodList(EditorContext editorContext, SemanticNode node) {
+    if(this.myMethodListHandler == null) {
+      this.myMethodListHandler = new EnumClass_Editor_MethodListHandler(node, "method", true);
+    }
     EditorCell_Collection cellCollection = this.myMethodListHandler.createCells_Vertical(editorContext);
     cellCollection.setGridLayout(false);
     return cellCollection;
@@ -148,6 +152,9 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createStaticMethodList(EditorContext editorContext, SemanticNode node) {
+    if(this.myStaticMethodListHandler == null) {
+      this.myStaticMethodListHandler = new EnumClass_Editor_StaticMethodListHandler(node, "staticMethod", true);
+    }
     EditorCell_Collection cellCollection = this.myStaticMethodListHandler.createCells_Vertical(editorContext);
     cellCollection.setGridLayout(false);
     return cellCollection;

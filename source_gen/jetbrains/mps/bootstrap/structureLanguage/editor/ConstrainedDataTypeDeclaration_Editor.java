@@ -4,9 +4,9 @@ package jetbrains.mps.bootstrap.structureLanguage.editor;
 
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
-import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.ModelAccessor;
@@ -20,9 +20,6 @@ import jetbrains.mps.nodeEditor.EditorCell_Error;
 
 public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
-  public void setSemanticNode(SemanticNode node) {
-    super.setSemanticNode(node);
-  }
   public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
     return this.createNodeBox(editorContext, node);
   }

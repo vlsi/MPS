@@ -4,9 +4,9 @@ package jetbrains.mps.baseLanguage.editor;
 
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
-import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.nodeEditor.EditorCellAction;
@@ -16,9 +16,6 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 public class ExpressionStatement_Editor extends DefaultNodeEditor {
   public static String PRESENTATION_NAME = "expression statement";
 
-  public void setSemanticNode(SemanticNode node) {
-    super.setSemanticNode(node);
-  }
   public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
     return this.createStatementBox(editorContext, node);
   }

@@ -5,23 +5,22 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCellListHandler;
-import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 
 public class StatementList_Editor extends DefaultNodeEditor {
 
   private EditorCellListHandler myStatementListHandler;
 
-  public void setSemanticNode(SemanticNode node) {
-    super.setSemanticNode(node);
-    this.myStatementListHandler = new StatementList_Editor_StatementListHandler(node, "statement", true);
-  }
   public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
     return this.createStatementList(editorContext, node);
   }
   public EditorCell createStatementList(EditorContext editorContext, SemanticNode node) {
+    if(this.myStatementListHandler == null) {
+      this.myStatementListHandler = new StatementList_Editor_StatementListHandler(node, "statement", true);
+    }
     EditorCell_Collection cellCollection = this.myStatementListHandler.createCells_Vertical(editorContext);
     cellCollection.setGridLayout(false);
     return cellCollection;
