@@ -10,8 +10,8 @@ import java.awt.event.ActionEvent;
 public abstract class BaseDialog extends JDialog {
   private JLabel myErrorLabel = new JLabel("");
 
-  protected BaseDialog(String text) throws HeadlessException {
-    super(IdeMain.instance().getMainFrame(), text, true);
+  protected BaseDialog(Frame mainFrame, String text) throws HeadlessException {
+    super(mainFrame, text, true);
   }
 
   public void showDialog() {
