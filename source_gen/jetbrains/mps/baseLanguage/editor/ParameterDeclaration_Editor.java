@@ -22,6 +22,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createDeclarationBox(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -32,6 +33,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createNameCell(EditorContext context, SemanticNode node) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "name", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(true);

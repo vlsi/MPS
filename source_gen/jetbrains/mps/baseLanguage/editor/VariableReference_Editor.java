@@ -17,6 +17,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
   }
   public EditorCell createErrorCell(EditorContext context, SemanticNode node) {
     EditorCell_Error editorCell = EditorCell_Error.create(context, node, "<collection>");
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(true);

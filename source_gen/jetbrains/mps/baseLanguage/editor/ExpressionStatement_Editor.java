@@ -21,6 +21,7 @@ public class ExpressionStatement_Editor extends DefaultNodeEditor {
   }
   public EditorCell createStatementBox(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);

@@ -26,6 +26,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createDeclarationBox(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -39,6 +40,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createInitializerArea(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -67,6 +69,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createNameCell(EditorContext context, SemanticNode node) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "name", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(true);
@@ -108,7 +111,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
       }
     }
     EditorCell editorCell = context.createNodeCell(referencedNode);
-    editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(node));
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(referencedNode));
     __VariableInitializer_ActionSet.setCellActions(editorCell, node);
     return editorCell;
   }

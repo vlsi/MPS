@@ -30,6 +30,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
   }
   public EditorCell createRowCell(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -47,6 +48,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
       this.my_BaseMethodCallArgListEditor = new _BaseMethodCallArgListEditor(node);
     }
     EditorCell editorCell = this.my_BaseMethodCallArgListEditor.createEditorCell(context);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     return editorCell;

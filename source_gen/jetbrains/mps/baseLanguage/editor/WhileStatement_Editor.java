@@ -22,6 +22,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   }
   public EditorCell createColumnCell(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -32,6 +33,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   }
   public EditorCell createRowCell(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -43,6 +45,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   }
   public EditorCell createRowCell1(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -52,6 +55,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   }
   public EditorCell createRowCell2(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);

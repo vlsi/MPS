@@ -16,6 +16,7 @@ public class Statement_Editor extends DefaultNodeEditor {
   }
   public EditorCell createNodeBox(EditorContext context, SemanticNode node) {
     EditorCell_Error editorCell = EditorCell_Error.create(context, node, "<statement>");
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(true);

@@ -28,6 +28,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createMethodBox(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -38,6 +39,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createHeaderRow(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -51,6 +53,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createBodyArea(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -63,6 +66,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
       this.my_BaseMethodParmListEditor = new _BaseMethodParmListEditor(node);
     }
     EditorCell editorCell = this.my_BaseMethodParmListEditor.createEditorCell(context);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     return editorCell;
@@ -116,6 +120,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createMethodName(EditorContext context, SemanticNode node) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "name", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(true);

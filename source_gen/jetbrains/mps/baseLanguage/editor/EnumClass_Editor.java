@@ -29,6 +29,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   }
   public EditorCell createColumnCell(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -43,6 +44,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   }
   public EditorCell createRowCell(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -53,6 +55,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   }
   public EditorCell createRowCell1(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -62,6 +65,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   }
   public EditorCell createRowCell2(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -71,6 +75,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   }
   public EditorCell createRowCell3(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -80,6 +85,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   }
   public EditorCell createRowCell4(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -89,6 +95,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   }
   public EditorCell createRowCell5(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -172,6 +179,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   public EditorCell createNameCell(EditorContext context, SemanticNode node) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "name", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setEditable(true);

@@ -24,6 +24,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   }
   public EditorCell createStatementBox(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -39,6 +40,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   }
   public EditorCell createHeaderRow(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -50,6 +52,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   }
   public EditorCell createIfTrueBox(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -59,6 +62,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   }
   public EditorCell createIfFalseBranch(EditorContext context, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setDrawBrackets(false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(true);
     editorCell.setGridLayout(false);
@@ -179,7 +183,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       }
     }
     EditorCell editorCell = context.createNodeCell(referencedNode);
-    editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(node));
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(referencedNode));
     IfStatement_ElseStatementActions.setCellActions(editorCell, node);
     return editorCell;
   }
