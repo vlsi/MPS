@@ -55,19 +55,32 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
           keyEvent.consume();
         }
 
-      } else if (actionType == EditorCellAction.RIGHT_TRANSFORM &&
-              (!cellWasValid || EditorUtil.getCellAction(selectedCell, actionType, editorContext) == null)) {
-        if (selectedCell instanceof EditorCell_Constant) {
-          actionType = EditorCellAction.RIGHT_SPECIAL;
-          keyEvent.consume();
-        } else if (selectedCell instanceof EditorCell_Property) {
-          String text = ((EditorCell_Property) selectedCell).getText();
-          if (!((EditorCell_Property) selectedCell).getModelAccessor().isValidText(text + " ")) {
+      } else if (actionType == EditorCellAction.RIGHT_TRANSFORM) {
+        if(selectedCell instanceof EditorCell_Label && ((EditorCell_Label)selectedCell).isErrorState()) {
+          // stop here
+          return true;
+        }
+        if(selectedCell instanceof EditorCell_Property) {
+          String text = ((EditorCell_Property)selectedCell).getModelAccessor().getText();
+          if(text == null || text.length() == 0) {  // tmp: consider it as not quite valid state
+            // stop here
+            return true;
+          }
+        }
+        if (EditorUtil.getCellAction(selectedCell, EditorCellAction.RIGHT_TRANSFORM, editorContext) == null) {
+          if (selectedCell instanceof EditorCell_Constant) {
             actionType = EditorCellAction.RIGHT_SPECIAL;
             keyEvent.consume();
+          } else if (selectedCell instanceof EditorCell_Property) {
+            String text = ((EditorCell_Property) selectedCell).getText();
+            if (!((EditorCell_Property) selectedCell).getModelAccessor().isValidText(text + " ")) {
+              actionType = EditorCellAction.RIGHT_SPECIAL;
+              keyEvent.consume();
+            }
+          } else {
+            // stop here
+            return true;
           }
-        } else {
-          return true;
         }
       }
     }
@@ -93,9 +106,9 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
           System.out.println("NO SUBSTITUTE");
         }
 
-        if(editor.getCellRangeSelection().isSelectionKeystroke(keyEvent)) {
-          if(editor.getCellRangeSelection().activate(keyEvent)) {
-             return true;
+        if (editor.getCellRangeSelection().isSelectionKeystroke(keyEvent)) {
+          if (editor.getCellRangeSelection().activate(keyEvent)) {
+            return true;
           }
         }
 

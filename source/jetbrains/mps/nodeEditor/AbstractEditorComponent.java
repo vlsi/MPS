@@ -709,7 +709,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         if (errorCell != null) {
           changeSelection(errorCell);
         } else {
-          EditorCell selectableLeaf = ((EditorCell_Collection) childCell).findFirstSelectableLeaf();
+          EditorCell selectableLeaf = ((EditorCell_Collection) childCell).findLastSelectableLeaf();
           if (selectableLeaf != null) {
             changeSelection(selectableLeaf);
           } else {
