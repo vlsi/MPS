@@ -16,6 +16,7 @@ import jetbrains.mps.ide.InspectorPane;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.MPSAction;
+import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.actions.nodes.*;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
@@ -296,15 +297,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (selectedNode == null) return;
 //    selectNode(selectedNode);
     JPopupMenu popupMenu = new JPopupMenu();
-    String header = JavaNameUtil.shortName(selectedNode.getClass().getName());
-    if (selectedNode.getName() != null) {
-      header = header + " \"" + selectedNode.getName() + "\"";
-    }
-//    String header = selectedNode.getDebugText();
-    popupMenu.add(JavaNameUtil.shortName(header));
-    popupMenu.addSeparator();
-
-    ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS).addGroup(popupMenu, new ActionContext(getProject().getComponent(IdeMain.class), selectedNode));
+    ActionGroup group = ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS);
+    group.add(popupMenu, new ActionContext(getProject().getComponent(IdeMain.class), selectedNode));
 
     if (selectedNode instanceof ClassConcept) {
       popupMenu.addSeparator();
