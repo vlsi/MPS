@@ -149,6 +149,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration" id="1095672379244">
     <property name="name" value="TemplateFragment" />
     <link role="extends" targetNodeId="2.1078489098625" />
+    <node role="semanticPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.SemanticPropertyDeclaration" id="1095757900618">
+      <property name="name" value="contextProviderAspectId" />
+      <link role="dataType" targetNodeId="2.1082983041843" />
+    </node>
   </node>
 </semanticModel>
 

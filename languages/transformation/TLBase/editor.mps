@@ -761,6 +761,22 @@
         <property name="text" value="&lt;Template Fragment&gt;" />
         <property name="name" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1095757990766">
+        <property name="name" />
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1095757990767">
+          <property name="text" value="templateFragment_Context_" />
+          <property name="name" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1095757990768">
+          <property name="name" />
+          <property name="cellProviderId" value="templateFragment_Context_CellProvider" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1095757990769">
+          <property name="text" value="()" />
+          <property name="name" />
+        </node>
+      </node>
     </node>
   </node>
 </semanticModel>
