@@ -36,6 +36,9 @@ public class MPSProject {
   private static final String PROJECT = "project";
   private static final String NAME = "name";
 
+  private static final String PATH_MACRO_MODELS_ROOT = "${models_root}" + File.separatorChar;
+  private static final String PATH_MACRO_PROJECT = "${project}" + File.separatorChar;
+
   public MPSProject(File file) {
     myProjectFile = file;
     if (myProjectFile != null) {
@@ -70,9 +73,23 @@ public class MPSProject {
         Element element = (Element) models.next();
         Element modelFileElement = element.getChild(FILE);
         String modelFileName = modelFileElement.getAttributeValue(NAME);
-        modelFileName = PathManager.getAbsolutePathByRelational(myProjectFile, modelFileName);
-        System.out.println("MPSProject addModel from: " + modelFileName);
-        mySemanticModels.loadModel(modelFileName);
+        String modelAbsolutePath = null;
+        if (modelFileName.startsWith(PATH_MACRO_MODELS_ROOT)) {
+          String modelRelativePath = modelFileName.substring(PATH_MACRO_MODELS_ROOT.length());
+          modelAbsolutePath = PathManager.getAbsolutePathByRelational(new File(PathManager.getModelPath()), modelRelativePath);
+        } else if (modelFileName.startsWith(PATH_MACRO_PROJECT)) {
+          String modelRelativePath = modelFileName.substring(PATH_MACRO_PROJECT.length());
+          modelAbsolutePath = PathManager.getAbsolutePathByRelational(myProjectFile, modelRelativePath);
+        } else { // default
+          modelAbsolutePath = PathManager.getAbsolutePathByRelational(myProjectFile, modelFileName);
+        }
+        if ((new File(modelAbsolutePath)).exists()) {
+          System.out.println("MPSProject addModel from: " + modelAbsolutePath);
+          mySemanticModels.loadModel(modelAbsolutePath);
+        } else {
+          throw new RuntimeException("Couldn't load model from " + modelFileName +
+                  "\nFile doesn't exist: " + modelAbsolutePath);
+        }
       }
 
       SemanticModel[] semanticModels = mySemanticModels.semanticModels();
@@ -105,9 +122,16 @@ public class MPSProject {
       semanticModelsElement.addContent(modelElement);
       Element fileElement = new Element(FILE);
       modelElement.addContent(fileElement);
-      String fileName = mySemanticModels.getFileName(semanticModel);
-      fileName = PathManager.getRelationalPathByAbsolute(myProjectFile, fileName);
-      fileElement.setAttribute(NAME, fileName);
+      String modelAbsolutePath = mySemanticModels.getFileName(semanticModel);
+      String modelFileName = null;
+      if (modelAbsolutePath.startsWith(myProjectFile.getParent())) {
+        String modelRelationalPath = PathManager.getRelationalPathByAbsolute(myProjectFile, modelAbsolutePath);
+        modelFileName = PATH_MACRO_PROJECT + modelRelationalPath;
+      } else {
+        String modelRelationalPath = PathManager.getRelationalPathByAbsolute(new File(PathManager.getModelPath()), modelAbsolutePath);
+        modelFileName = PATH_MACRO_MODELS_ROOT + modelRelationalPath;
+      }
+      fileElement.setAttribute(NAME, modelFileName);
     }
 
     if (!myProjectFile.exists()) {
