@@ -620,11 +620,17 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private void processCoordSelection(MouseEvent mouseEvent, boolean isPrevious) {
     EditorCell newSelectedCell = myRootCell.findNearestCell(mouseEvent.getX(), mouseEvent.getY(), isPrevious);
+
+
+    if (mouseEvent.getButton() != MouseEvent.BUTTON1) return;
+
+
     if (newSelectedCell != null) {
       changeSelection(newSelectedCell);
       mySelectedCell.processMousePressed(mouseEvent);
     }
   }
+
 
 
   public void clearSelectionStack() {
