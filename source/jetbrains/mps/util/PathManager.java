@@ -45,11 +45,11 @@ public class PathManager {
       root = root.getAbsoluteFile();
 
       if (!root.isDirectory() || root.getName().toLowerCase().endsWith(".zip") || root.getName().toLowerCase().endsWith(".jar")) {
-        root = new File(root.getParent()); // one step back to getCollectionJavaClass folder
+        root = new File(root.getParent()); // one step back to getCollectionClass folder
       }
       root = root.getAbsoluteFile();
 
-      ourHomePath = root.getParentFile().getAbsolutePath();    // one step back to getCollectionJavaClass rid of "lib" or "classes" folder
+      ourHomePath = root.getParentFile().getAbsolutePath();    // one step back to getCollectionClass rid of "lib" or "classes" folder
     }
 
     return ourHomePath;
