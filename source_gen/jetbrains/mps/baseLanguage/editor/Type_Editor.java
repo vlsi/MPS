@@ -9,9 +9,8 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 
-public class SuperConstructorInvocation_Editor extends SemanticNodeEditor {
-  public static String MATCHING_TEXT = "super";
-  public static String PRESENTATION_NAME = "super constructor call";
+public class Type_Editor extends SemanticNodeEditor {
+  public static String PRESENTATION_NAME = "abstract type";
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);
@@ -20,7 +19,7 @@ public class SuperConstructorInvocation_Editor extends SemanticNodeEditor {
     return this.createErrorCell(editorContext, node);
   }
   public EditorCell createErrorCell(EditorContext editorContext, SemanticNode node) {
-    EditorCell_Error editorCell = EditorCell_Error.create(editorContext, node, "SuperConstructorInvocation");
+    EditorCell_Error editorCell = EditorCell_Error.create(editorContext, node, "<type>");
     return editorCell;
   }
 }

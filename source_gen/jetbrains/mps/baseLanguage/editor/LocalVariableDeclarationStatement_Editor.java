@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
 public class LocalVariableDeclarationStatement_Editor extends SemanticNodeEditor {
-  public static String PRESENTATION_NAME = "local variable declaration stmt";
+  public static String PRESENTATION_NAME = "variable declaration";
 
   public void setSemanticNode(SemanticNode node) {
     super.setSemanticNode(node);
