@@ -145,6 +145,14 @@ public class TextUtil {
           ((InsertCodeTag) tag).setFile(elem.getAttributeValue("file"));
           ((InsertCodeTag) tag).setFragment(elem.getAttributeValue("fragment"));
         }
+        if ("ul".equals(name)) {
+          tag = ListTag.newInstance(model);
+          for (Element child : (List<Element>) elem.getChildren("li")) {
+            ListItem item = ListItem.newInstance(model);
+            item.setText(toText(model, child));
+            ((ListTag) tag).addItem(item);
+          }
+        }
         if (tag != null) {
           sentence.addWord(tag);
         }
@@ -367,6 +375,17 @@ public class TextUtil {
       Element target = new Element("insertCode");
       target.setAttribute("file", tag.getFile());
       target.setAttribute("fragment", tag.getFragment());
+      element.addContent(target);
+      return;
+    }
+    if (word instanceof ListTag) {
+      ListTag tag = (ListTag) word;
+      Element target = new Element("ul");
+      for (ListItem item : CollectionUtil.iteratorAsIterable(tag.items())) {
+        Element li = new Element("li");
+        toElement(item.getText(), li);        
+        target.addContent(li);
+      }
       element.addContent(target);
       return;
     }
