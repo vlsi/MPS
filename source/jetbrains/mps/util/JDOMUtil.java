@@ -46,6 +46,10 @@ public class JDOMUtil {
   }
 
   public static void writeDocument(Document document, File file) throws IOException {
+    if(!file.exists()) {
+      new File(file.getParent()).mkdirs();
+      file.createNewFile();
+    }
     OutputStream stream = new BufferedOutputStream(new FileOutputStream(file));
     try {
       writeDocument(document, stream);
