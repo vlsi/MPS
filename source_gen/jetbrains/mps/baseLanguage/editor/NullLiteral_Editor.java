@@ -25,7 +25,7 @@ public class NullLiteral_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    NullLiteral_NodeBoxActions.setCellActions(editorCell, node);
+    __Expression_RTransform_ActionSet.setCellActions(editorCell, node);
     editorCell.addKeyMap(new _Expression_KeyMap());
     return editorCell;
   }

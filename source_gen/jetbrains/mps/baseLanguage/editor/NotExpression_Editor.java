@@ -29,7 +29,7 @@ public class NotExpression_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    NotExpression_NodeBoxActions.setCellActions(editorCell, node);
+    __Expression_RTransform_ActionSet.setCellActions(editorCell, node);
     editorCell.addKeyMap(new _Expression_KeyMap());
     editorCell.addEditorCell(this.createConstantCell(context, node, "!("));
     editorCell.addEditorCell(this.createExpressionCell(context, node));

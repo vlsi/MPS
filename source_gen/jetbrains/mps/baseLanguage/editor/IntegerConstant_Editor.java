@@ -29,7 +29,7 @@ public class IntegerConstant_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(Color.blue);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "value"));
-    IntegerConstant_NodeBoxActions.setCellActions(editorCell, node);
+    __Expression_RTransform_ActionSet.setCellActions(editorCell, node);
     editorCell.addKeyMap(new _Expression_KeyMap());
     return editorCell;
   }
