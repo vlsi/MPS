@@ -1148,13 +1148,6 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1106176536146">
     <property name="name" value="Feature" />
     <link role="extends" targetNodeId="4.1078489098625" />
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1106176952154">
-      <link role="conceptLinkDeclaration" targetNodeId="34.1105994381173" />
-      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLinkDeclaration" id="1106176963296">
-        <property name="name" value="FeatureConstructorDeclaration" />
-        <link role="targetType" targetNodeId="35.1071489090640" />
-      </node>
-    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1107800091059">
       <link role="conceptLinkDeclaration" targetNodeId="34.1105994381173" />
       <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLinkDeclaration" id="1107800097919">
@@ -1166,6 +1159,9 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1106250402230">
     <property name="name" value="FeatureConstructor" />
     <link role="extends" targetNodeId="4.1078489098625" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1109196998598">
+      <link role="conceptPropertyDeclaration" targetNodeId="34.1107214854626" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1106353916888">
     <property name="name" value="FeatureCompositionType" />
