@@ -103,15 +103,16 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     addMouseListener(new MouseAdapter() {
       public void mousePressed(final MouseEvent e) {
-        processMousePressed(e);
+        if (e.isPopupTrigger()) {
+          processPopupMenu(e);
+        } else {
+          processMousePressed(e);
+        }
       }
 
       public void mouseReleased(MouseEvent e) {
         if (e.isPopupTrigger()) {
-          EditorCell selectedCell = getSelectedCell();
-          if (selectedCell != null) {
-            showPopupMenu(e);
-          }
+          processPopupMenu(e);
         }
         super.mouseReleased(e);
       }
@@ -154,9 +155,16 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     });
   }
 
+  private void processPopupMenu(MouseEvent e) {
+    EditorCell selectedCell = getSelectedCell();
+    if (selectedCell != null) {
+      showPopupMenu(e);
+    }
+  }
+
   private void showPopupMenu(MouseEvent e) {
     final SemanticNode selectedNode = getSelectedCell().getSemanticNode();
-    selectNode(selectedNode);
+//    selectNode(selectedNode);
     JPopupMenu popupMenu = new JPopupMenu();
     String header = JavaNameUtil.shortName(selectedNode.getClass().getName());
     if (selectedNode.getName() != null) {
