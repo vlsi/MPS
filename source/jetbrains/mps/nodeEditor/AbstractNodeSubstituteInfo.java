@@ -2,9 +2,9 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.semanticModel.SemanticNode;
 
-import java.util.List;
-import java.util.Iterator;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Author: Sergey Dmitriev.
@@ -31,17 +31,7 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
     return myOriginalText;
   }
 
-  protected /*abstract*/ List<INodeSubstituteAction> createActions() {
-    return createSubstituteEntries();
-  }
-
-  /**
-   * @return
-   * @deprecated
-   */
-  protected /*abstract*/ List<INodeSubstituteAction> createSubstituteEntries() {
-    return null;
-  }
+  protected abstract List<INodeSubstituteAction> createActions();
 
   public void invalidateActions() {
     myCachedActionList = null;
