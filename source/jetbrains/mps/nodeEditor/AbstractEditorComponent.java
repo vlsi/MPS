@@ -1128,14 +1128,4 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }
   }
-
-  protected class ReplayScriptAction extends AbstractAction {
-    public void actionPerformed(ActionEvent e) {
-      JFileChooser chooser = new SmartFileChooser() { };
-      if (chooser.showOpenDialog(IdeMain.instance().getMainFrame()) == JFileChooser.APPROVE_OPTION) {
-        stopRecordingIfPossible();
-        playScript(chooser.getSelectedFile());
-      }
-    }
-  }
 }
