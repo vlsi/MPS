@@ -4,6 +4,7 @@ package jetbrains.mps.plugin;
 import org.apache.xmlrpc.XmlRpcClient;
 import org.apache.xmlrpc.XmlRpcException;
 
+import javax.swing.*;
 import java.net.MalformedURLException;
 import java.util.Vector;
 import java.util.List;
@@ -80,4 +81,5 @@ public class MPSPlugin {
     MPSPlugin client = new MPSPlugin();
     client.openMethod("jetbrains.mps.rulez", "test_something");
   }
+
 }

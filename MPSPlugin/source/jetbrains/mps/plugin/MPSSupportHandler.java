@@ -11,6 +11,7 @@ import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.FileEditor;
+import com.intellij.openapi.wm.WindowManager;
 import com.intellij.psi.*;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.IncorrectOperationException;
@@ -18,6 +19,7 @@ import com.intellij.util.IncorrectOperationException;
 import java.util.List;
 import java.util.ArrayList;
 import java.io.File;
+import java.awt.*;
 
 /**
  * @author Kostik
@@ -82,13 +84,12 @@ public class MPSSupportHandler {
           PsiMethod method = methods[i];
           if (method.getName().equals(name)) {
             method.navigate(true);
+            activateProjectWindow();
             return;
           }
         }
       }
     });
-
-
     return "OK";
   }
 
@@ -103,12 +104,19 @@ public class MPSSupportHandler {
           PsiMethod method = getPsiElementFactory().createMethodFromText("public static " + returnType + " " + name + "(" + params + ")  { }", cls);
           method = (PsiMethod) cls.add(method);
           method.navigate(true);
+          activateProjectWindow();
         } catch (IncorrectOperationException e) {
           e.printStackTrace();
         }
       }
     });
     return "OK";
+  }
+
+  private void activateProjectWindow() {
+    Window window = WindowManager.getInstance().suggestParentWindow(myProject);
+    if (window == null) return;
+    window.toFront();
   }
 
 
