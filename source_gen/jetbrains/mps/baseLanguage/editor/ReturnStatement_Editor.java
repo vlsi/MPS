@@ -34,6 +34,7 @@ public class ReturnStatement_Editor extends SemanticNodeEditor {
   }
   public EditorCell createConstantCell(EditorContext editorContext, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
+    editorCell.setSelectable(true);
     return editorCell;
   }
   public EditorCell createExpressionCell(EditorContext editorContext, SemanticNode node) {

@@ -59,7 +59,7 @@ public class InstanceMethodDeclaration_Editor extends SemanticNodeEditor {
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(returnType));
       InstanceMethodDeclaration_ReturnTypeCellActions.setCellActions(editorCell, node);
     } else {
-      editorCell = EditorCell_Error.create(editorContext, node, null);
+      editorCell = EditorCell_Error.create(editorContext, node, "<no return type>");
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       InstanceMethodDeclaration_ReturnTypeCellActions.setCellActions(editorCell, node);
     }

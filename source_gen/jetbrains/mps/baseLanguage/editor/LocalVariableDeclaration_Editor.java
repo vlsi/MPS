@@ -46,7 +46,7 @@ public class LocalVariableDeclaration_Editor extends SemanticNodeEditor {
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(type));
       LocalVariableDeclaration_TypeCellActions.setCellActions(editorCell, node);
     } else {
-      editorCell = EditorCell_Error.create(editorContext, node, null);
+      editorCell = EditorCell_Error.create(editorContext, node, "<no type>");
       editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       LocalVariableDeclaration_TypeCellActions.setCellActions(editorCell, node);
     }
