@@ -177,7 +177,7 @@ public class MPSProject extends AbstractMPSProject {
 
   public void save() {
     mySemanticModels.saveAll();
-
+/*
     Element rootElement = new Element(PROJECT);
     Document document = new Document();
     document.setRootElement(rootElement);
@@ -217,6 +217,7 @@ public class MPSProject extends AbstractMPSProject {
     } catch (IOException e) {
       e.printStackTrace();
     }
+*/
   }
 
 
