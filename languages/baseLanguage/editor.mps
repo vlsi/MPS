@@ -69,25 +69,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081951587505">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081931639243" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951587506">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951587507">
-                                    <link role="variableDeclaration" targetNodeId="1081927994767" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951587507">
+                                <link role="variableDeclaration" targetNodeId="1081927994767" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951587508">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951587509">
-                                    <link role="variableDeclaration" targetNodeId="1081927994769" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951587509">
+                                <link role="variableDeclaration" targetNodeId="1081927994769" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -112,8 +101,8 @@
     </link>
     <link role="cellModel" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1073416106126">
-        <link role="linkDeclaration" targetNodeId="8.1068581517665" />
         <link role="elementActionSet" targetNodeId="1081788832468" />
+        <link role="linkDeclaration" targetNodeId="8.1068581517665" />
         <link role="emptyCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1079958242049">
             <link role="actionSet" targetNodeId="1077017490551" />
@@ -309,14 +298,8 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1082027510219">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081935632796" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082027510220">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081935615412" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082027510221">
-                                        <link role="variableDeclaration" targetNodeId="1082026262903" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082027510221">
+                                    <link role="variableDeclaration" targetNodeId="1082026262903" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -466,25 +449,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081950606556">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081934693627" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950606557">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950606558">
-                                    <link role="variableDeclaration" targetNodeId="1081927995147" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950606558">
+                                <link role="variableDeclaration" targetNodeId="1081927995147" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950606559">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950606560">
-                                    <link role="variableDeclaration" targetNodeId="1081927995149" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950606560">
+                                <link role="variableDeclaration" targetNodeId="1081927995149" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -521,8 +493,8 @@
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1080143775377">
                 <link role="substituteModelQueryBody" targetNodeId="1081927995375" />
-                <link role="substituteTextQueryMethod" targetNodeId="1081927995364" />
                 <link role="substituteModelQueryMethod" targetNodeId="1081927995371" />
+                <link role="substituteTextQueryMethod" targetNodeId="1081927995364" />
                 <link role="substituteTextQueryBody" targetNodeId="1081927995370" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984016">
@@ -563,25 +535,14 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081950795502">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950795503">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950795504">
-                                            <link role="variableDeclaration" targetNodeId="1081927995365" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950795504">
+                                        <link role="variableDeclaration" targetNodeId="1081927995365" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950795505">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950795506">
-                                            <link role="variableDeclaration" targetNodeId="1081927995367" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950795506">
+                                        <link role="variableDeclaration" targetNodeId="1081927995367" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -624,14 +585,8 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081950813414">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081936664765" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950813415">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081517954262" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950813416">
-                                            <link role="variableDeclaration" targetNodeId="1081927995372" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950813416">
+                                        <link role="variableDeclaration" targetNodeId="1081927995372" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -693,25 +648,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081950639296">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081935142567" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950639297">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950639298">
-                                    <link role="variableDeclaration" targetNodeId="1081927995340" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950639298">
+                                <link role="variableDeclaration" targetNodeId="1081927995340" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950639299">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950639300">
-                                    <link role="variableDeclaration" targetNodeId="1081927995342" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950639300">
+                                <link role="variableDeclaration" targetNodeId="1081927995342" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -739,8 +683,8 @@
         <link role="keyMap" targetNodeId="1081427357000" />
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1080138264330">
-            <link role="actionSet" targetNodeId="1080138413255" />
             <link role="linkDeclaration" targetNodeId="8.1080137532343" />
+            <link role="actionSet" targetNodeId="1080138413255" />
             <property name="name" />
           </node>
         </link>
@@ -752,8 +696,8 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1088425851836">
-            <link role="actionSet" targetNodeId="1080140075203" />
             <link role="linkDeclaration" targetNodeId="8.1068581517664" />
+            <link role="actionSet" targetNodeId="1080140075203" />
             <link role="editorComponent" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1088425851837">
                 <link role="semanticTypeDeclaration" targetNodeId="8.1068431474542" />
@@ -798,8 +742,8 @@
     <link role="cellModel" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1088427419930">
         <link role="linkDeclaration" targetNodeId="8.1068581517664" />
-        <link role="keyMap" targetNodeId="1081427357000" />
         <link role="actionSet" targetNodeId="1076950734725" />
+        <link role="keyMap" targetNodeId="1081427357000" />
         <link role="editorComponent" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1088427419931">
             <link role="semanticTypeDeclaration" targetNodeId="8.1068431474542" />
@@ -835,8 +779,8 @@
     </link>
     <link role="cellModel" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1088426751220">
-        <link role="linkDeclaration" targetNodeId="8.1068581517664" />
         <link role="actionSet" targetNodeId="1076939756687" />
+        <link role="linkDeclaration" targetNodeId="8.1068581517664" />
         <link role="keyMap" targetNodeId="1081427357000" />
         <link role="editorComponent" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1088426751221">
@@ -991,25 +935,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081951398353">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081934589260" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951398354">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951398355">
-                                    <link role="variableDeclaration" targetNodeId="1081927995684" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951398355">
+                                <link role="variableDeclaration" targetNodeId="1081927995684" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951398356">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951398357">
-                                    <link role="variableDeclaration" targetNodeId="1081927995686" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951398357">
+                                <link role="variableDeclaration" targetNodeId="1081927995686" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -1038,8 +971,8 @@
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1075233459439">
             <link role="childCellModel" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075233539828">
-                <link role="linkDeclaration" targetNodeId="8.1068580123133" />
                 <link role="actionSet" targetNodeId="1076937272595" />
+                <link role="linkDeclaration" targetNodeId="8.1068580123133" />
                 <property name="actionSetId" />
                 <property name="nullText" value="&lt;no return type&gt;" />
                 <property name="name" value="returnType" />
@@ -1161,25 +1094,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081952151289">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081934589260" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952151290">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952151291">
-                                    <link role="variableDeclaration" targetNodeId="1081927996160" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952151291">
+                                <link role="variableDeclaration" targetNodeId="1081927996160" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952151292">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952151293">
-                                    <link role="variableDeclaration" targetNodeId="1081927996162" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952151293">
+                                <link role="variableDeclaration" targetNodeId="1081927996162" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -1349,25 +1271,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081950597566">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081934892449" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950597567">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950597568">
-                                    <link role="variableDeclaration" targetNodeId="1081927994658" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950597568">
+                                <link role="variableDeclaration" targetNodeId="1081927994658" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950597569">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950597570">
-                                    <link role="variableDeclaration" targetNodeId="1081927994660" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950597570">
+                                <link role="variableDeclaration" targetNodeId="1081927994660" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -1457,14 +1368,8 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1082099647297">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081934839651" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082099647298">
-                                <link role="parameterDeclaration" targetNodeId="13.1081934839659" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082099722351">
-                                    <link role="variableDeclaration" targetNodeId="1082097601655" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082099722351">
+                                <link role="variableDeclaration" targetNodeId="1082097601655" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -1545,25 +1450,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081951541118">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081934892449" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951541119">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951541120">
-                                    <link role="variableDeclaration" targetNodeId="1081927994744" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951541120">
+                                <link role="variableDeclaration" targetNodeId="1081927994744" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951541121">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951541122">
-                                    <link role="variableDeclaration" targetNodeId="1081927994746" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951541122">
+                                <link role="variableDeclaration" targetNodeId="1081927994746" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -1602,8 +1496,8 @@
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1075302295735">
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075302295736">
-            <link role="linkDeclaration" targetNodeId="8.1068431790188" />
             <link role="actionSet" targetNodeId="1076950581786" />
+            <link role="linkDeclaration" targetNodeId="8.1068431790188" />
             <property name="actionSetId" />
             <property name="nullText" value="&lt;no type&gt;" />
             <property name="name" />
@@ -1612,8 +1506,8 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1075302295737">
-            <link role="propertyDeclaration" targetNodeId="9.1078489098626" />
             <link role="actionSet" targetNodeId="1080043594937" />
+            <link role="propertyDeclaration" targetNodeId="9.1078489098626" />
             <property name="writable" value="true" />
             <property name="defaultText" value="&lt;no name&gt;" />
             <property name="defaultValue" value="?" />
@@ -1674,25 +1568,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081951447387">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081934892449" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951447388">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951447389">
-                                    <link role="variableDeclaration" targetNodeId="1081927995729" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951447389">
+                                <link role="variableDeclaration" targetNodeId="1081927995729" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951447390">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951447391">
-                                    <link role="variableDeclaration" targetNodeId="1081927995731" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951447391">
+                                <link role="variableDeclaration" targetNodeId="1081927995731" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -1741,8 +1624,8 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1075303160503">
-            <link role="propertyDeclaration" targetNodeId="9.1078489098626" />
             <link role="actionSet" targetNodeId="1076938982020" />
+            <link role="propertyDeclaration" targetNodeId="9.1078489098626" />
             <property name="writable" value="true" />
             <property name="defaultText" value="&lt;no name&gt;" />
             <property name="defaultValue" value="?" />
@@ -1761,8 +1644,8 @@
             </link>
             <link role="childCellModel" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075303160506">
-                <link role="actionSet" targetNodeId="1077124145703" />
                 <link role="linkDeclaration" targetNodeId="8.1068431790190" />
+                <link role="actionSet" targetNodeId="1077124145703" />
                 <property name="actionSetId" />
                 <property name="name" />
               </node>
@@ -1793,14 +1676,8 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1082099699223">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081934839651" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082099699224">
-                                <link role="parameterDeclaration" targetNodeId="13.1081934839659" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082099722403">
-                                    <link role="variableDeclaration" targetNodeId="1082097602078" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082099722403">
+                                <link role="variableDeclaration" targetNodeId="1082097602078" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -1877,25 +1754,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081951098382">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081933653921" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951098383">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951098384">
-                                    <link role="variableDeclaration" targetNodeId="1081927995435" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951098384">
+                                <link role="variableDeclaration" targetNodeId="1081927995435" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951098385">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951098386">
-                                    <link role="variableDeclaration" targetNodeId="1081927995437" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951098386">
+                                <link role="variableDeclaration" targetNodeId="1081927995437" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -1925,9 +1791,9 @@
             <link role="substituteQueryBody" targetNodeId="1081927995633" />
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1076935149134">
-                <link role="substituteTextQueryBody" targetNodeId="1081927995658" />
-                <link role="substituteTextQueryMethod" targetNodeId="1081927995652" />
                 <link role="substituteModelQueryBody" targetNodeId="1081927995663" />
+                <link role="substituteTextQueryMethod" targetNodeId="1081927995652" />
+                <link role="substituteTextQueryBody" targetNodeId="1081927995658" />
                 <link role="substituteModelQueryMethod" targetNodeId="1081927995659" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984033">
@@ -1968,25 +1834,14 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081951145418">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951145419">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951145420">
-                                            <link role="variableDeclaration" targetNodeId="1081927995653" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951145420">
+                                        <link role="variableDeclaration" targetNodeId="1081927995653" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951145421">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951145422">
-                                            <link role="variableDeclaration" targetNodeId="1081927995655" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951145422">
+                                        <link role="variableDeclaration" targetNodeId="1081927995655" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -2029,14 +1884,8 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081951372046">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081860346467" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951372047">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081517954262" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951372048">
-                                            <link role="variableDeclaration" targetNodeId="1081927995660" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951372048">
+                                        <link role="variableDeclaration" targetNodeId="1081927995660" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -2098,25 +1947,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081951386785">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081933773204" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951386786">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951386787">
-                                    <link role="variableDeclaration" targetNodeId="1081927995628" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951386787">
+                                <link role="variableDeclaration" targetNodeId="1081927995628" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951386788">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951386789">
-                                    <link role="variableDeclaration" targetNodeId="1081927995630" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951386789">
+                                <link role="variableDeclaration" targetNodeId="1081927995630" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -2144,8 +1982,8 @@
         <link role="keyMap" targetNodeId="1081427357000" />
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075308068515">
-            <link role="actionSet" targetNodeId="1076936461312" />
             <link role="linkDeclaration" targetNodeId="8.1068580123164" />
+            <link role="actionSet" targetNodeId="1076936461312" />
             <property name="actionSetId" />
             <property name="name" />
           </node>
@@ -2253,25 +2091,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081951614995">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081933653926" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951614996">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951614997">
-                                    <link role="variableDeclaration" targetNodeId="1081927996019" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951614997">
+                                <link role="variableDeclaration" targetNodeId="1081927996019" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951614998">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951614999">
-                                    <link role="variableDeclaration" targetNodeId="1081927996021" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951614999">
+                                <link role="variableDeclaration" targetNodeId="1081927996021" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -2303,8 +2130,8 @@
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1081149733743">
                 <link role="substituteTextQueryBody" targetNodeId="1081927996134" />
                 <link role="substituteModelQueryBody" targetNodeId="1081927996139" />
-                <link role="substituteModelQueryMethod" targetNodeId="1081927996135" />
                 <link role="substituteTextQueryMethod" targetNodeId="1081927996128" />
+                <link role="substituteModelQueryMethod" targetNodeId="1081927996135" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984049">
                     <link role="method" metaClass="aggregation">
@@ -2344,25 +2171,14 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081951816950">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951816951">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951816952">
-                                            <link role="variableDeclaration" targetNodeId="1081927996129" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951816952">
+                                        <link role="variableDeclaration" targetNodeId="1081927996129" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951816953">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951816954">
-                                            <link role="variableDeclaration" targetNodeId="1081927996131" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951816954">
+                                        <link role="variableDeclaration" targetNodeId="1081927996131" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -2405,14 +2221,8 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081952122816">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081861708573" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952122817">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081508357650" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952122818">
-                                            <link role="variableDeclaration" targetNodeId="1081927996136" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952122818">
+                                        <link role="variableDeclaration" targetNodeId="1081927996136" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -2474,25 +2284,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081951629923">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081933773204" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951629924">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951629925">
-                                    <link role="variableDeclaration" targetNodeId="1081927996104" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951629925">
+                                <link role="variableDeclaration" targetNodeId="1081927996104" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951629926">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951629927">
-                                    <link role="variableDeclaration" targetNodeId="1081927996106" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951629927">
+                                <link role="variableDeclaration" targetNodeId="1081927996106" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -2534,8 +2333,8 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1088427863670">
-            <link role="actionSet" targetNodeId="1081149733740" />
             <link role="linkDeclaration" targetNodeId="8.1068499141037" />
+            <link role="actionSet" targetNodeId="1081149733740" />
             <link role="editorComponent" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1088427863671">
                 <link role="semanticTypeDeclaration" targetNodeId="8.1068580123132" />
@@ -2628,25 +2427,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081950385272">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081929156800" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950385273">
-                                <link role="parameterDeclaration" targetNodeId="13.1081929154848" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950385274">
-                                    <link role="variableDeclaration" targetNodeId="1081927994532" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950385274">
+                                <link role="variableDeclaration" targetNodeId="1081927994532" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950385275">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950385276">
-                                    <link role="variableDeclaration" targetNodeId="1081927994534" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950385276">
+                                <link role="variableDeclaration" targetNodeId="1081927994534" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -2727,8 +2515,8 @@
         <property name="actionSet" value="RightTransform" />
         <property name="name" value="expressionBox" />
         <property name="vertical" value="false" />
-        <property name="gridLayout" value="true" />
         <property name="selectable" value="true" />
+        <property name="gridLayout" value="true" />
       </node>
     </link>
     <property name="matchingText" value="==" />
@@ -2792,25 +2580,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081950393300">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081841647125" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950393301">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950393302">
-                                    <link role="variableDeclaration" targetNodeId="1081927994539" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950393302">
+                                <link role="variableDeclaration" targetNodeId="1081927994539" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950393303">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1086342571453">
-                                    <link role="variableDeclaration" targetNodeId="1081927994541" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1086342571453">
+                                <link role="variableDeclaration" targetNodeId="1081927994541" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -2877,25 +2654,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081950419056">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081842541483" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950419057">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950419058">
-                                    <link role="variableDeclaration" targetNodeId="1081927994651" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950419058">
+                                <link role="variableDeclaration" targetNodeId="1081927994651" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950419059">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1086342571463">
-                                    <link role="variableDeclaration" targetNodeId="1081927994653" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1086342571463">
+                                <link role="variableDeclaration" targetNodeId="1081927994653" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -2924,8 +2690,8 @@
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075310480284">
             <link role="linkDeclaration" targetNodeId="8.1068498886295" />
-            <link role="errorActionSet" targetNodeId="1077284637890" />
             <link role="actionSet" targetNodeId="1076587264182" />
+            <link role="errorActionSet" targetNodeId="1077284637890" />
             <property name="actionSetId" />
             <property name="actionSet" value="LeftExpression" />
             <property name="name" />
@@ -2942,8 +2708,8 @@
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075310480286">
             <link role="errorActionSet" targetNodeId="1077284637890" />
-            <link role="linkDeclaration" targetNodeId="8.1068498886297" />
             <link role="actionSet" targetNodeId="1076699801734" />
+            <link role="linkDeclaration" targetNodeId="8.1068498886297" />
             <property name="actionSetId" />
             <property name="actionSet" value="RightExpression" />
             <property name="name" />
@@ -2954,8 +2720,8 @@
         <property name="actionSet" value="RightTransform" />
         <property name="name" value="expressionBox" />
         <property name="vertical" value="false" />
-        <property name="selectable" value="true" />
         <property name="gridLayout" value="true" />
+        <property name="selectable" value="true" />
       </node>
     </link>
     <property name="matchingText" value="=" />
@@ -3002,8 +2768,8 @@
         <property name="actionSet" value="RightTransform" />
         <property name="name" value="expressionBox" />
         <property name="vertical" value="false" />
-        <property name="selectable" value="true" />
         <property name="gridLayout" value="true" />
+        <property name="selectable" value="true" />
       </node>
     </link>
     <property name="matchingText" value="-" />
@@ -3050,8 +2816,8 @@
         <property name="actionSet" value="RightTransform" />
         <property name="name" value="expressionBox" />
         <property name="vertical" value="false" />
-        <property name="gridLayout" value="true" />
         <property name="selectable" value="true" />
+        <property name="gridLayout" value="true" />
       </node>
     </link>
     <property name="matchingText" value="+" />
@@ -3204,9 +2970,9 @@
     </link>
     <link role="cellModel" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1083091696640">
+        <link role="propertyDeclaration" targetNodeId="8.1068580320021" />
         <link role="keyMap" targetNodeId="1081427357000" />
         <link role="actionSet" targetNodeId="1076937947068" />
-        <link role="propertyDeclaration" targetNodeId="8.1068580320021" />
         <property name="defaultText" value="&lt;int constant&gt;" />
         <property name="name" />
       </node>
@@ -3230,8 +2996,8 @@
     <link role="cellModel" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1088424970609">
         <link role="actionSet" targetNodeId="1076700301115" />
-        <link role="keyMap" targetNodeId="1081427357000" />
         <link role="propertyDeclaration" targetNodeId="8.1068580123138" />
+        <link role="keyMap" targetNodeId="1081427357000" />
         <property name="name" />
       </node>
     </link>
@@ -3281,8 +3047,8 @@
     </link>
     <link role="cellModel" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1075374525820">
-        <link role="keyMap" targetNodeId="1081427357000" />
         <link role="actionSet" targetNodeId="1076950267500" />
+        <link role="keyMap" targetNodeId="1081427357000" />
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075374525821">
             <property name="text" value="new" />
@@ -3401,25 +3167,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081950971594">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081935278472" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950971595">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950971596">
-                                    <link role="variableDeclaration" targetNodeId="1081927995396" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950971596">
+                                <link role="variableDeclaration" targetNodeId="1081927995396" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950971597">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950971598">
-                                    <link role="variableDeclaration" targetNodeId="1081927995398" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950971598">
+                                <link role="variableDeclaration" targetNodeId="1081927995398" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -3536,22 +3291,16 @@
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082542279462">
-                                <link role="parameterDeclaration" targetNodeId="13.1082486919663" />
+                              <node type="jetbrains.mps.baseLanguage.CastExpression" id="1082542279463">
+                                <link role="type" metaClass="aggregation">
+                                  <node type="jetbrains.mps.baseLanguage.JavaClassType" id="1082542279464">
+                                    <link role="javaClass" targetNodeId="13.1081508091148" />
+                                    <property name="name" value="Statement" />
+                                  </node>
+                                </link>
                                 <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.CastExpression" id="1082542279463">
-                                    <link role="type" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.JavaClassType" id="1082542279464">
-                                        <link role="javaClass" targetNodeId="13.1081508091148" />
-                                        <property name="name" value="Statement" />
-                                      </node>
-                                    </link>
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082542279465">
-                                        <link role="variableDeclaration" targetNodeId="1082542128691" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082542279465">
+                                    <link role="variableDeclaration" targetNodeId="1082542128691" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -3611,8 +3360,8 @@
             <link role="childCellModel" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075379700788">
                 <link role="errorActionSet" targetNodeId="1077284637890" />
-                <link role="linkDeclaration" targetNodeId="8.1068580123160" />
                 <link role="actionSet" targetNodeId="1076934492296" />
+                <link role="linkDeclaration" targetNodeId="8.1068580123160" />
                 <property name="actionSetId" />
                 <property name="name" />
               </node>
@@ -3656,8 +3405,8 @@
             </link>
             <link role="childCellModel" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1082541374921">
-                <link role="linkDeclaration" targetNodeId="8.1082485599094" />
                 <link role="actionSet" targetNodeId="1082542109276" />
+                <link role="linkDeclaration" targetNodeId="8.1082485599094" />
                 <property name="name" />
               </node>
             </link>
@@ -3929,25 +3678,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081951557796">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081929156805" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951557797">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951557798">
-                                    <link role="variableDeclaration" targetNodeId="1081927995845" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951557798">
+                                <link role="variableDeclaration" targetNodeId="1081927995845" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951557799">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951557800">
-                                    <link role="variableDeclaration" targetNodeId="1081927995847" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951557800">
+                                <link role="variableDeclaration" targetNodeId="1081927995847" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -3981,9 +3719,9 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075380723767">
+            <link role="actionSet" targetNodeId="1076951358050" />
             <link role="linkDeclaration" targetNodeId="8.1068581517676" />
             <link role="errorActionSet" targetNodeId="1077284637890" />
-            <link role="actionSet" targetNodeId="1076951358050" />
             <property name="actionSetId" />
             <property name="name" />
           </node>
@@ -4017,10 +3755,10 @@
       <node type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1076932037579">
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1077043168877">
-            <link role="substituteModelQueryBody" targetNodeId="1081927996760" />
             <link role="substituteTextQueryBody" targetNodeId="1081927996755" />
             <link role="substituteTextQueryMethod" targetNodeId="1081927996749" />
             <link role="substituteModelQueryMethod" targetNodeId="1081927996756" />
+            <link role="substituteModelQueryBody" targetNodeId="1081927996760" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984066">
                 <link role="method" metaClass="aggregation">
@@ -4060,25 +3798,14 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948161115">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948161116">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948161117">
-                                        <link role="variableDeclaration" targetNodeId="1081927996750" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948161117">
+                                    <link role="variableDeclaration" targetNodeId="1081927996750" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948161118">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948161119">
-                                        <link role="variableDeclaration" targetNodeId="1081927996752" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948161119">
+                                    <link role="variableDeclaration" targetNodeId="1081927996752" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -4121,14 +3848,8 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948020376">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081508357635" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948020377">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081508357638" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948020378">
-                                        <link role="variableDeclaration" targetNodeId="1081927996757" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948020378">
+                                    <link role="variableDeclaration" targetNodeId="1081927996757" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -4154,12 +3875,12 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1076932272477">
-            <link role="substituteTextQueryMethod" targetNodeId="1081927996779" />
-            <link role="substituteModelQueryMethod" targetNodeId="1081927996786" />
-            <link role="substituteModelQueryBody" targetNodeId="1081927996790" />
             <link role="substituteTextQueryBody" targetNodeId="1081927996785" />
-            <link role="substituteHandlerQueryMethod" targetNodeId="1081927996761" />
             <link role="substituteHandlerQueryBody" targetNodeId="1081927996769" />
+            <link role="substituteModelQueryBody" targetNodeId="1081927996790" />
+            <link role="substituteModelQueryMethod" targetNodeId="1081927996786" />
+            <link role="substituteHandlerQueryMethod" targetNodeId="1081927996761" />
+            <link role="substituteTextQueryMethod" targetNodeId="1081927996779" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984067">
                 <link role="method" metaClass="aggregation">
@@ -4211,36 +3932,20 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948161121">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081940361950" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948161122">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081940432047" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948161123">
-                                        <link role="variableDeclaration" targetNodeId="1081927996762" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948161123">
+                                    <link role="variableDeclaration" targetNodeId="1081927996762" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948161124">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948161125">
-                                        <link role="variableDeclaration" targetNodeId="1081927996764" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948161125">
+                                    <link role="variableDeclaration" targetNodeId="1081927996764" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948161126">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948161127">
-                                        <link role="variableDeclaration" targetNodeId="1081927996766" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948161127">
+                                    <link role="variableDeclaration" targetNodeId="1081927996766" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -4293,25 +3998,14 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948161129">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948161130">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948161131">
-                                        <link role="variableDeclaration" targetNodeId="1081927996780" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948161131">
+                                    <link role="variableDeclaration" targetNodeId="1081927996780" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948161132">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948161133">
-                                        <link role="variableDeclaration" targetNodeId="1081927996782" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948161133">
+                                    <link role="variableDeclaration" targetNodeId="1081927996782" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -4354,14 +4048,8 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948161135">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081514252720" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948161136">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081514252732" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948161137">
-                                        <link role="variableDeclaration" targetNodeId="1081927996787" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948161137">
+                                    <link role="variableDeclaration" targetNodeId="1081927996787" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -4388,10 +4076,10 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_Simple" id="1090608741568">
+            <link role="substituteMatcherQueryMethod" targetNodeId="1090608741591" />
             <link role="substituteHandlerQueryMethod" targetNodeId="1090608741570" />
             <link role="substituteHandlerQueryBody" targetNodeId="1090608741578" />
             <link role="substituteMatcherQueryBody" targetNodeId="1090608741599" />
-            <link role="substituteMatcherQueryMethod" targetNodeId="1090608741591" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1090608741569">
                 <link role="method" metaClass="aggregation">
@@ -4476,25 +4164,14 @@
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090608741587">
-                                    <link role="parameterDeclaration" targetNodeId="15.1086945615419" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.StringLiteral" id="1090608741588">
-                                        <property name="value" value="GenericType" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.StringLiteral" id="1090608741588">
+                                    <property name="value" value="GenericType" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090608741589">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1090608741590">
-                                        <link role="variableDeclaration" targetNodeId="1090608741580" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1090608741590">
+                                    <link role="variableDeclaration" targetNodeId="1090608741580" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -4582,10 +4259,10 @@
       <node type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1076939411261">
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1077043128312">
-            <link role="substituteTextQueryBody" targetNodeId="1081927996822" />
+            <link role="substituteModelQueryBody" targetNodeId="1081927996827" />
             <link role="substituteModelQueryMethod" targetNodeId="1081927996823" />
             <link role="substituteTextQueryMethod" targetNodeId="1081927996816" />
-            <link role="substituteModelQueryBody" targetNodeId="1081927996827" />
+            <link role="substituteTextQueryBody" targetNodeId="1081927996822" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984068">
                 <link role="method" metaClass="aggregation">
@@ -4625,25 +4302,14 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948296610">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948296611">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948296612">
-                                        <link role="variableDeclaration" targetNodeId="1081927996817" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948296612">
+                                    <link role="variableDeclaration" targetNodeId="1081927996817" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948296613">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948296614">
-                                        <link role="variableDeclaration" targetNodeId="1081927996819" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948296614">
+                                    <link role="variableDeclaration" targetNodeId="1081927996819" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -4686,14 +4352,8 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948442743">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081508357640" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948442744">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081508357638" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948442745">
-                                        <link role="variableDeclaration" targetNodeId="1081927996824" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948442745">
+                                    <link role="variableDeclaration" targetNodeId="1081927996824" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -4719,12 +4379,12 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1076939411270">
-            <link role="substituteModelQueryMethod" targetNodeId="1081927996853" />
             <link role="substituteHandlerQueryBody" targetNodeId="1081927996836" />
-            <link role="substituteTextQueryMethod" targetNodeId="1081927996846" />
-            <link role="substituteModelQueryBody" targetNodeId="1081927996857" />
-            <link role="substituteTextQueryBody" targetNodeId="1081927996852" />
             <link role="substituteHandlerQueryMethod" targetNodeId="1081927996828" />
+            <link role="substituteTextQueryBody" targetNodeId="1081927996852" />
+            <link role="substituteModelQueryMethod" targetNodeId="1081927996853" />
+            <link role="substituteModelQueryBody" targetNodeId="1081927996857" />
+            <link role="substituteTextQueryMethod" targetNodeId="1081927996846" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984069">
                 <link role="method" metaClass="aggregation">
@@ -4776,36 +4436,20 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948328220">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081940361950" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948328221">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081940432047" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948328222">
-                                        <link role="variableDeclaration" targetNodeId="1081927996829" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948328222">
+                                    <link role="variableDeclaration" targetNodeId="1081927996829" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948328223">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948328224">
-                                        <link role="variableDeclaration" targetNodeId="1081927996831" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948328224">
+                                    <link role="variableDeclaration" targetNodeId="1081927996831" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948328225">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948328226">
-                                        <link role="variableDeclaration" targetNodeId="1081927996833" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948328226">
+                                    <link role="variableDeclaration" targetNodeId="1081927996833" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -4858,25 +4502,14 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948308132">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948308133">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948308134">
-                                        <link role="variableDeclaration" targetNodeId="1081927996847" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948308134">
+                                    <link role="variableDeclaration" targetNodeId="1081927996847" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948308135">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948308136">
-                                        <link role="variableDeclaration" targetNodeId="1081927996849" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948308136">
+                                    <link role="variableDeclaration" targetNodeId="1081927996849" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -4919,14 +4552,8 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948316450">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081514252720" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948316451">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081514252732" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948316452">
-                                        <link role="variableDeclaration" targetNodeId="1081927996854" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948316452">
+                                    <link role="variableDeclaration" targetNodeId="1081927996854" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -4953,10 +4580,10 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_Simple" id="1090608741600">
-            <link role="substituteHandlerQueryMethod" targetNodeId="1090608741602" />
-            <link role="substituteMatcherQueryBody" targetNodeId="1090608741631" />
             <link role="substituteHandlerQueryBody" targetNodeId="1090608741610" />
             <link role="substituteMatcherQueryMethod" targetNodeId="1090608741623" />
+            <link role="substituteHandlerQueryMethod" targetNodeId="1090608741602" />
+            <link role="substituteMatcherQueryBody" targetNodeId="1090608741631" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1090608741601">
                 <link role="method" metaClass="aggregation">
@@ -5041,25 +4668,14 @@
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090608741619">
-                                    <link role="parameterDeclaration" targetNodeId="15.1086945615419" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.StringLiteral" id="1090608741620">
-                                        <property name="value" value="GenericType" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.StringLiteral" id="1090608741620">
+                                    <property name="value" value="GenericType" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090608741621">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1090608741622">
-                                        <link role="variableDeclaration" targetNodeId="1090608741612" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1090608741622">
+                                    <link role="variableDeclaration" targetNodeId="1090608741612" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -5185,25 +4801,14 @@
                       <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081952278818">
                         <link role="baseMethodDeclaration" targetNodeId="13.1081935090402" />
                         <link role="actualArgument" metaClass="aggregation">
-                          <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952278819">
-                            <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                            <link role="expression" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952278820">
-                                <link role="variableDeclaration" targetNodeId="1081927996875" />
-                                <property name="name" />
-                              </node>
-                            </link>
+                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952278820">
+                            <link role="variableDeclaration" targetNodeId="1081927996875" />
                             <property name="name" />
                           </node>
                         </link>
                         <link role="actualArgument" metaClass="aggregation">
-                          <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952278821">
-                            <link role="expression" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952278822">
-                                <link role="variableDeclaration" targetNodeId="1081927996877" />
-                                <property name="name" />
-                              </node>
-                            </link>
+                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952278822">
+                            <link role="variableDeclaration" targetNodeId="1081927996877" />
                             <property name="name" />
                           </node>
                         </link>
@@ -5261,9 +4866,9 @@
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082380741937">
                 <link role="substituteHandlerQueryBody" targetNodeId="1082380828602" />
-                <link role="substituteModelQueryBody" targetNodeId="1082380828623" />
-                <link role="substituteHandlerQueryMethod" targetNodeId="1082380828594" />
                 <link role="substituteModelQueryMethod" targetNodeId="1082380828619" />
+                <link role="substituteHandlerQueryMethod" targetNodeId="1082380828594" />
+                <link role="substituteModelQueryBody" targetNodeId="1082380828623" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984070">
                     <link role="method" metaClass="aggregation">
@@ -5315,36 +4920,20 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1082383864001">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081938404875" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082383864002">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081938273277" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082383864003">
-                                            <link role="variableDeclaration" targetNodeId="1082380828595" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082383864003">
+                                        <link role="variableDeclaration" targetNodeId="1082380828595" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082383864004">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082383864005">
-                                            <link role="variableDeclaration" targetNodeId="1082380828597" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082383864005">
+                                        <link role="variableDeclaration" targetNodeId="1082380828597" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082383864006">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082383864007">
-                                            <link role="variableDeclaration" targetNodeId="1082380828599" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082383864007">
+                                        <link role="variableDeclaration" targetNodeId="1082380828599" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -5387,14 +4976,8 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1082381212828">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081938130136" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082381212829">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081938130148" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082381212830">
-                                            <link role="variableDeclaration" targetNodeId="1082380828620" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082381212830">
+                                        <link role="variableDeclaration" targetNodeId="1082380828620" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -5418,8 +5001,8 @@
             </link>
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_Simple" id="1079117057851">
-                <link role="substituteHandlerQueryMethod" targetNodeId="1081927995931" />
                 <link role="substituteHandlerQueryBody" targetNodeId="1081927995939" />
+                <link role="substituteHandlerQueryMethod" targetNodeId="1081927995931" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984071">
                     <link role="method" metaClass="aggregation">
@@ -5471,35 +5054,20 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081952194520">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081939495543" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952194521">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952194522">
-                                            <link role="variableDeclaration" targetNodeId="1081927995932" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952194522">
+                                        <link role="variableDeclaration" targetNodeId="1081927995932" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952194523">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952194524">
-                                            <link role="variableDeclaration" targetNodeId="1081927995934" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952194524">
+                                        <link role="variableDeclaration" targetNodeId="1081927995934" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952194525">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952194526">
-                                            <link role="variableDeclaration" targetNodeId="1081927995936" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952194526">
+                                        <link role="variableDeclaration" targetNodeId="1081927995936" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -5525,8 +5093,8 @@
             </link>
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_Simple" id="1080212710468">
-                <link role="substituteHandlerQueryBody" targetNodeId="1081927995975" />
                 <link role="substituteHandlerQueryMethod" targetNodeId="1081927995967" />
+                <link role="substituteHandlerQueryBody" targetNodeId="1081927995975" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984072">
                     <link role="method" metaClass="aggregation">
@@ -5578,35 +5146,20 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081952218911">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1082396859062" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952218912">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952218913">
-                                            <link role="variableDeclaration" targetNodeId="1081927995968" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952218913">
+                                        <link role="variableDeclaration" targetNodeId="1081927995968" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952218914">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952218915">
-                                            <link role="variableDeclaration" targetNodeId="1081927995970" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952218915">
+                                        <link role="variableDeclaration" targetNodeId="1081927995970" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952218916">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952218917">
-                                            <link role="variableDeclaration" targetNodeId="1081927995972" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952218917">
+                                        <link role="variableDeclaration" targetNodeId="1081927995972" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -5685,35 +5238,20 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081952263685">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081940324732" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952263686">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952263687">
-                                            <link role="variableDeclaration" targetNodeId="1081927995986" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952263687">
+                                        <link role="variableDeclaration" targetNodeId="1081927995986" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952263688">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952263689">
-                                            <link role="variableDeclaration" targetNodeId="1081927995988" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952263689">
+                                        <link role="variableDeclaration" targetNodeId="1081927995988" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952263690">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952263691">
-                                            <link role="variableDeclaration" targetNodeId="1081927995990" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952263691">
+                                        <link role="variableDeclaration" targetNodeId="1081927995990" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -5739,8 +5277,8 @@
             </link>
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_Simple" id="1082648392046">
-                <link role="substituteHandlerQueryBody" targetNodeId="1082648409712" />
                 <link role="substituteHandlerQueryMethod" targetNodeId="1082648409704" />
+                <link role="substituteHandlerQueryBody" targetNodeId="1082648409712" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984074">
                     <link role="method" metaClass="aggregation">
@@ -5826,13 +5364,8 @@
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082648736073">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1082648736074">
-                                            <link role="variableDeclaration" targetNodeId="1082648736066" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1082648736074">
+                                        <link role="variableDeclaration" targetNodeId="1082648736066" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -5893,25 +5426,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081952170061">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081933024256" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952170062">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952170063">
-                                    <link role="variableDeclaration" targetNodeId="1081927995889" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952170063">
+                                <link role="variableDeclaration" targetNodeId="1081927995889" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952170064">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952170065">
-                                    <link role="variableDeclaration" targetNodeId="1081927995891" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952170065">
+                                <link role="variableDeclaration" targetNodeId="1081927995891" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -6013,8 +5535,8 @@
     </link>
     <link role="cellModel" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1079605716541">
-        <link role="actionSet" targetNodeId="1079605716539" />
         <link role="keyMap" targetNodeId="1081427357000" />
+        <link role="actionSet" targetNodeId="1079605716539" />
         <property name="editable" value="true" />
         <property name="text" value="null" />
         <property name="name" />
@@ -6075,12 +5597,12 @@
             <link role="substituteQueryBody" targetNodeId="1081927996887" />
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1079955099623">
-                <link role="substituteTextQueryMethod" targetNodeId="1081927996906" />
-                <link role="substituteTextQueryBody" targetNodeId="1081927996912" />
                 <link role="substituteHandlerQueryBody" targetNodeId="1081927996896" />
-                <link role="substituteHandlerQueryMethod" targetNodeId="1081927996888" />
-                <link role="substituteModelQueryBody" targetNodeId="1081927996917" />
+                <link role="substituteTextQueryBody" targetNodeId="1081927996912" />
                 <link role="substituteModelQueryMethod" targetNodeId="1081927996913" />
+                <link role="substituteModelQueryBody" targetNodeId="1081927996917" />
+                <link role="substituteTextQueryMethod" targetNodeId="1081927996906" />
+                <link role="substituteHandlerQueryMethod" targetNodeId="1081927996888" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984075">
                     <link role="method" metaClass="aggregation">
@@ -6132,36 +5654,20 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081952790060">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081932696648" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952790061">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081940432047" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952790062">
-                                            <link role="variableDeclaration" targetNodeId="1081927996889" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952790062">
+                                        <link role="variableDeclaration" targetNodeId="1081927996889" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952790063">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1086342816660">
-                                            <link role="variableDeclaration" targetNodeId="1081927996891" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1086342816660">
+                                        <link role="variableDeclaration" targetNodeId="1081927996891" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952790065">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1086342816661">
-                                            <link role="variableDeclaration" targetNodeId="1081927996893" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1086342816661">
+                                        <link role="variableDeclaration" targetNodeId="1081927996893" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -6214,25 +5720,14 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081952749649">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081932620479" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952749650">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952749651">
-                                            <link role="variableDeclaration" targetNodeId="1081927996907" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952749651">
+                                        <link role="variableDeclaration" targetNodeId="1081927996907" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952749652">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1086342816663">
-                                            <link role="variableDeclaration" targetNodeId="1081927996909" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1086342816663">
+                                        <link role="variableDeclaration" targetNodeId="1081927996909" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -6275,14 +5770,8 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081952731313">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081508357640" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952731314">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081508357638" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952731315">
-                                            <link role="variableDeclaration" targetNodeId="1081927996914" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952731315">
+                                        <link role="variableDeclaration" targetNodeId="1081927996914" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -6309,12 +5798,12 @@
             </link>
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1079955337155">
-                <link role="substituteHandlerQueryMethod" targetNodeId="1081927996918" />
                 <link role="substituteModelQueryMethod" targetNodeId="1081927996943" />
-                <link role="substituteTextQueryMethod" targetNodeId="1081927996936" />
-                <link role="substituteTextQueryBody" targetNodeId="1081927996942" />
                 <link role="substituteModelQueryBody" targetNodeId="1081927996947" />
                 <link role="substituteHandlerQueryBody" targetNodeId="1081927996926" />
+                <link role="substituteTextQueryBody" targetNodeId="1081927996942" />
+                <link role="substituteTextQueryMethod" targetNodeId="1081927996936" />
+                <link role="substituteHandlerQueryMethod" targetNodeId="1081927996918" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984076">
                     <link role="method" metaClass="aggregation">
@@ -6366,36 +5855,20 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081952767896">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081932696648" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952767897">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081940432047" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952767898">
-                                            <link role="variableDeclaration" targetNodeId="1081927996919" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952767898">
+                                        <link role="variableDeclaration" targetNodeId="1081927996919" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952767899">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1086342816666">
-                                            <link role="variableDeclaration" targetNodeId="1081927996921" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1086342816666">
+                                        <link role="variableDeclaration" targetNodeId="1081927996921" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952767901">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1086342816667">
-                                            <link role="variableDeclaration" targetNodeId="1081927996923" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1086342816667">
+                                        <link role="variableDeclaration" targetNodeId="1081927996923" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -6448,25 +5921,14 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081952760108">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081932620479" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952760109">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952760110">
-                                            <link role="variableDeclaration" targetNodeId="1081927996937" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952760110">
+                                        <link role="variableDeclaration" targetNodeId="1081927996937" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952760111">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1086342816669">
-                                            <link role="variableDeclaration" targetNodeId="1081927996939" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1086342816669">
+                                        <link role="variableDeclaration" targetNodeId="1081927996939" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -6509,14 +5971,8 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081952743426">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081514252720" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952743427">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081508357638" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952743428">
-                                            <link role="variableDeclaration" targetNodeId="1081927996944" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952743428">
+                                        <link role="variableDeclaration" targetNodeId="1081927996944" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -6579,25 +6035,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081952674117">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081933024230" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952674118">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952674119">
-                                    <link role="variableDeclaration" targetNodeId="1081927996882" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952674119">
+                                <link role="variableDeclaration" targetNodeId="1081927996882" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952674120">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952674121">
-                                    <link role="variableDeclaration" targetNodeId="1081927996884" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952674121">
+                                <link role="variableDeclaration" targetNodeId="1081927996884" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -6865,25 +6310,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1095167470549">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081934589207" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1095167470550">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1095167470551">
-                                    <link role="variableDeclaration" targetNodeId="1095167470543" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1095167470551">
+                                <link role="variableDeclaration" targetNodeId="1095167470543" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1095167470552">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1095167470553">
-                                    <link role="variableDeclaration" targetNodeId="1095167470545" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1095167470553">
+                                <link role="variableDeclaration" targetNodeId="1095167470545" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -6982,25 +6416,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081950522356">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081934968812" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950522357">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950522358">
-                                    <link role="variableDeclaration" targetNodeId="1081927995852" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950522358">
+                                <link role="variableDeclaration" targetNodeId="1081927995852" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950522359">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1095102191171">
-                                    <link role="variableDeclaration" targetNodeId="1081927995854" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1095102191171">
+                                <link role="variableDeclaration" targetNodeId="1081927995854" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -7073,25 +6496,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081950508694">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081842541483" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950508695">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950508696">
-                                    <link role="variableDeclaration" targetNodeId="1081927995859" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950508696">
+                                <link role="variableDeclaration" targetNodeId="1081927995859" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950508697">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950508698">
-                                    <link role="variableDeclaration" targetNodeId="1081927995861" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950508698">
+                                <link role="variableDeclaration" targetNodeId="1081927995861" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -7116,8 +6528,8 @@
     </link>
     <link role="cellModel" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1080902646660">
-        <link role="keyMap" targetNodeId="1081427357000" />
         <link role="actionSet" targetNodeId="1080902646657" />
+        <link role="keyMap" targetNodeId="1081427357000" />
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1080902646661">
             <property name="text" value="(" />
@@ -7126,9 +6538,9 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1080902646662">
-            <link role="actionSet" targetNodeId="1080903478359" />
             <link role="errorActionSet" targetNodeId="1077284637890" />
             <link role="linkDeclaration" targetNodeId="8.1070534934091" />
+            <link role="actionSet" targetNodeId="1080903478359" />
             <property name="name" />
           </node>
         </link>
@@ -7140,9 +6552,9 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1080902646664">
+            <link role="actionSet" targetNodeId="1080903734783" />
             <link role="errorActionSet" targetNodeId="1077284637890" />
             <link role="linkDeclaration" targetNodeId="8.1070534934092" />
-            <link role="actionSet" targetNodeId="1080903734783" />
             <property name="name" />
           </node>
         </link>
@@ -7164,9 +6576,9 @@
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1076940714067">
                 <link role="substituteTextQueryBody" targetNodeId="1081927995800" />
-                <link role="substituteModelQueryBody" targetNodeId="1081927995805" />
-                <link role="substituteModelQueryMethod" targetNodeId="1081927995801" />
                 <link role="substituteTextQueryMethod" targetNodeId="1081927995794" />
+                <link role="substituteModelQueryMethod" targetNodeId="1081927995801" />
+                <link role="substituteModelQueryBody" targetNodeId="1081927995805" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984077">
                     <link role="method" metaClass="aggregation">
@@ -7206,25 +6618,14 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081951493184">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951493185">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951493186">
-                                            <link role="variableDeclaration" targetNodeId="1081927995795" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951493186">
+                                        <link role="variableDeclaration" targetNodeId="1081927995795" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951493187">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951493188">
-                                            <link role="variableDeclaration" targetNodeId="1081927995797" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951493188">
+                                        <link role="variableDeclaration" targetNodeId="1081927995797" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -7267,14 +6668,8 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081951480180">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081518781441" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951480181">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081518781501" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951480182">
-                                            <link role="variableDeclaration" targetNodeId="1081927995802" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951480182">
+                                        <link role="variableDeclaration" targetNodeId="1081927995802" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -7336,25 +6731,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081951470596">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081933773204" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951470597">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951470598">
-                                    <link role="variableDeclaration" targetNodeId="1081927995770" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951470598">
+                                <link role="variableDeclaration" targetNodeId="1081927995770" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951470599">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951470600">
-                                    <link role="variableDeclaration" targetNodeId="1081927995772" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951470600">
+                                <link role="variableDeclaration" targetNodeId="1081927995772" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -7382,9 +6766,9 @@
         <link role="keyMap" targetNodeId="1081427357000" />
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1088426839520">
-            <link role="linkDeclaration" targetNodeId="8.1068499141037" />
             <link role="actionSet" targetNodeId="1076940714064" />
             <link role="keyMap" targetNodeId="1081427357000" />
+            <link role="linkDeclaration" targetNodeId="8.1068499141037" />
             <link role="editorComponent" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1088426839521">
                 <link role="semanticTypeDeclaration" targetNodeId="8.1068580123132" />
@@ -7477,25 +6861,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081951521003">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081934589260" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951521004">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951521005">
-                                    <link role="variableDeclaration" targetNodeId="1081927994737" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951521005">
+                                <link role="variableDeclaration" targetNodeId="1081927994737" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951521006">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951521007">
-                                    <link role="variableDeclaration" targetNodeId="1081927994739" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951521007">
+                                <link role="variableDeclaration" targetNodeId="1081927994739" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -7647,25 +7020,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081951406562">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081841647125" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951406563">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951406564">
-                                    <link role="variableDeclaration" targetNodeId="1081927996167" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951406564">
+                                <link role="variableDeclaration" targetNodeId="1081927996167" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951406565">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951406566">
-                                    <link role="variableDeclaration" targetNodeId="1081927996169" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951406566">
+                                <link role="variableDeclaration" targetNodeId="1081927996169" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -7732,25 +7094,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081951433772">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081935023138" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951433773">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951433774">
-                                    <link role="variableDeclaration" targetNodeId="1081927996190" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951433774">
+                                <link role="variableDeclaration" targetNodeId="1081927996190" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081951433775">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951433776">
-                                    <link role="variableDeclaration" targetNodeId="1081927996192" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081951433776">
+                                <link role="variableDeclaration" targetNodeId="1081927996192" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -7792,9 +7143,9 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081257097748">
+            <link role="errorActionSet" targetNodeId="1077284637890" />
             <link role="linkDeclaration" targetNodeId="8.1081256993305" />
             <link role="actionSet" targetNodeId="1081257125115" />
-            <link role="errorActionSet" targetNodeId="1077284637890" />
             <property name="name" />
             <property name="selectable" value="true" />
           </node>
@@ -7852,25 +7203,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081952286074">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081935214182" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952286075">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952286076">
-                                    <link role="variableDeclaration" targetNodeId="1081927995866" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952286076">
+                                <link role="variableDeclaration" targetNodeId="1081927995866" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081952286077">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952286078">
-                                    <link role="variableDeclaration" targetNodeId="1081927995868" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081952286078">
+                                <link role="variableDeclaration" targetNodeId="1081927995868" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -7905,10 +7245,10 @@
             </link>
             <link role="childCellModel" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081264296766">
-                <link role="linkDeclaration" targetNodeId="8.1076505808688" />
-                <link role="keyMap" targetNodeId="1081427357000" />
                 <link role="errorActionSet" targetNodeId="1077284637890" />
                 <link role="actionSet" targetNodeId="1081264222445" />
+                <link role="linkDeclaration" targetNodeId="8.1076505808688" />
+                <link role="keyMap" targetNodeId="1081427357000" />
                 <property name="name" />
               </node>
             </link>
@@ -8022,25 +7362,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081950385309">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081841647125" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950385310">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950385311">
-                                    <link role="variableDeclaration" targetNodeId="1081927997268" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950385311">
+                                <link role="variableDeclaration" targetNodeId="1081927997268" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950385312">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1086342816686">
-                                    <link role="variableDeclaration" targetNodeId="1081927997270" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1086342816686">
+                                <link role="variableDeclaration" targetNodeId="1081927997270" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -8065,9 +7394,9 @@
     </link>
     <link role="cellModel" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081776360032">
-        <link role="actionSet" targetNodeId="1081776374361" />
-        <link role="linkDeclaration" targetNodeId="8.1081773367580" />
         <link role="errorActionSet" targetNodeId="1077284637890" />
+        <link role="linkDeclaration" targetNodeId="8.1081773367580" />
+        <link role="actionSet" targetNodeId="1081776374361" />
         <property name="name" />
       </node>
     </link>
@@ -8119,25 +7448,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081950320891">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081842541483" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950320892">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950320893">
-                                    <link role="variableDeclaration" targetNodeId="1081927997275" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950320893">
+                                <link role="variableDeclaration" targetNodeId="1081927997275" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950320894">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950320895">
-                                    <link role="variableDeclaration" targetNodeId="1081927997277" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950320895">
+                                <link role="variableDeclaration" targetNodeId="1081927997277" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -8162,9 +7480,9 @@
     </link>
     <link role="cellModel" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081776482710">
+        <link role="actionSet" targetNodeId="1081776482708" />
         <link role="linkDeclaration" targetNodeId="8.1081773367579" />
         <link role="errorActionSet" targetNodeId="1077284637890" />
-        <link role="actionSet" targetNodeId="1081776482708" />
         <property name="name" />
       </node>
     </link>
@@ -8222,25 +7540,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1085480486782">
                             <link role="baseMethodDeclaration" targetNodeId="13.1085472235960" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1085480486783">
-                                <link role="parameterDeclaration" targetNodeId="13.1085472235968" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1085480486784">
-                                    <link role="variableDeclaration" targetNodeId="1085476438266" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1085480486784">
+                                <link role="variableDeclaration" targetNodeId="1085476438266" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1085480486785">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1085480486786">
-                                    <link role="variableDeclaration" targetNodeId="1085476438268" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1085480486786">
+                                <link role="variableDeclaration" targetNodeId="1085476438268" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -8309,16 +7616,16 @@
             <link role="substituteQueryBody" targetNodeId="1091709481236" />
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1091709481237">
-                <link role="substituteTextQueryBody" targetNodeId="1091709481243" />
+                <link role="substituteModelQueryMethod" targetNodeId="1091709481246" />
+                <link role="substituteMatcherQueryBody" targetNodeId="1091709481241" />
                 <link role="substituteMatcherQueryMethod" targetNodeId="1091709481240" />
-                <link role="substituteHandlerQueryMethod" targetNodeId="1091709481238" />
+                <link role="substituteModelQueryBody" targetNodeId="1091709481247" />
                 <link role="substituteHandlerQueryBody" targetNodeId="1091709481239" />
                 <link role="substituteDescriptionTextQueryBody" targetNodeId="1091709481245" />
+                <link role="substituteHandlerQueryMethod" targetNodeId="1091709481238" />
+                <link role="substituteTextQueryBody" targetNodeId="1091709481243" />
                 <link role="substituteTextQueryMethod" targetNodeId="1091709481242" />
-                <link role="substituteModelQueryBody" targetNodeId="1091709481247" />
                 <link role="substituteDescriptionTextQueryMethod" targetNodeId="1091709481244" />
-                <link role="substituteMatcherQueryBody" targetNodeId="1091709481241" />
-                <link role="substituteModelQueryMethod" targetNodeId="1091709481246" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1091709481248">
                     <link role="method" metaClass="aggregation">
@@ -8453,25 +7760,14 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1091709481269">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1091709481270">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1091709481271">
-                                            <link role="variableDeclaration" targetNodeId="1091709481263" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1091709481271">
+                                        <link role="variableDeclaration" targetNodeId="1091709481263" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1091709481272">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1091709481273">
-                                            <link role="variableDeclaration" targetNodeId="1091709481265" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1091709481273">
+                                        <link role="variableDeclaration" targetNodeId="1091709481265" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -8551,14 +7847,8 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1091709481283">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1091779328343" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1091709481284">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081860346480" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1091709481285">
-                                            <link role="variableDeclaration" targetNodeId="1091709481279" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1091709481285">
+                                        <link role="variableDeclaration" targetNodeId="1091709481279" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -8618,25 +7908,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1091709481293">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081933773204" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1091709481294">
-                                <link role="parameterDeclaration" targetNodeId="13.1081933813019" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1091709481295">
-                                    <link role="variableDeclaration" targetNodeId="1091709481287" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1091709481295">
+                                <link role="variableDeclaration" targetNodeId="1091709481287" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1091709481296">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1091709481297">
-                                    <link role="variableDeclaration" targetNodeId="1091709481289" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1091709481297">
+                                <link role="variableDeclaration" targetNodeId="1091709481289" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -8831,14 +8110,8 @@
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082741937255">
-                                <link role="parameterDeclaration" targetNodeId="13.1082741890190" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1082741937256">
-                                    <link role="variableDeclaration" targetNodeId="1082741878875" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1082741937256">
+                                <link role="variableDeclaration" targetNodeId="1082741878875" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -8885,10 +8158,10 @@
             <link role="substituteQueryBody" targetNodeId="1082742196817" />
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082742081261">
-                <link role="substituteTextQueryMethod" targetNodeId="1082742196812" />
-                <link role="substituteModelQueryBody" targetNodeId="1082742196815" />
                 <link role="substituteModelQueryMethod" targetNodeId="1082742196814" />
+                <link role="substituteModelQueryBody" targetNodeId="1082742196815" />
                 <link role="substituteTextQueryBody" targetNodeId="1082742196813" />
+                <link role="substituteTextQueryMethod" targetNodeId="1082742196812" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984078">
                     <link role="method" metaClass="aggregation">
@@ -8928,25 +8201,14 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1082743011475">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082743011476">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082743011477">
-                                            <link role="variableDeclaration" targetNodeId="1082742196994" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082743011477">
+                                        <link role="variableDeclaration" targetNodeId="1082742196994" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082743011478">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082743011479">
-                                            <link role="variableDeclaration" targetNodeId="1082742196996" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082743011479">
+                                        <link role="variableDeclaration" targetNodeId="1082742196996" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -8989,14 +8251,8 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1082742430397">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1082742596947" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082742430398">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081508357650" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082742946082">
-                                            <link role="variableDeclaration" targetNodeId="1082742196999" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082742946082">
+                                        <link role="variableDeclaration" targetNodeId="1082742196999" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -9128,14 +8384,8 @@
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082742343095">
-                                <link role="parameterDeclaration" targetNodeId="13.1081508092562" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1082742343096">
-                                    <link role="variableDeclaration" targetNodeId="1082742343081" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1082742343096">
+                                <link role="variableDeclaration" targetNodeId="1082742343081" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -9221,10 +8471,10 @@
             <link role="substituteQueryBody" targetNodeId="1081927995062" />
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1076775456753">
-                <link role="substituteModelQueryBody" targetNodeId="1081927995092" />
+                <link role="substituteModelQueryMethod" targetNodeId="1081927995088" />
                 <link role="substituteTextQueryMethod" targetNodeId="1081927995081" />
                 <link role="substituteTextQueryBody" targetNodeId="1081927995087" />
-                <link role="substituteModelQueryMethod" targetNodeId="1081927995088" />
+                <link role="substituteModelQueryBody" targetNodeId="1081927995092" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984095">
                     <link role="method" metaClass="aggregation">
@@ -9264,25 +8514,14 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081950551821">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950551822">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950551823">
-                                            <link role="variableDeclaration" targetNodeId="1081927995082" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950551823">
+                                        <link role="variableDeclaration" targetNodeId="1081927995082" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950551824">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1086342816547">
-                                            <link role="variableDeclaration" targetNodeId="1081927995084" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1086342816547">
+                                        <link role="variableDeclaration" targetNodeId="1081927995084" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -9325,14 +8564,8 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081950582327">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081933170718" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950582328">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081867426943" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950582329">
-                                            <link role="variableDeclaration" targetNodeId="1081927995089" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950582329">
+                                        <link role="variableDeclaration" targetNodeId="1081927995089" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -9394,25 +8627,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081950544675">
                             <link role="baseMethodDeclaration" targetNodeId="13.1081933773204" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950544676">
-                                <link role="parameterDeclaration" targetNodeId="13.1081842558251" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950544677">
-                                    <link role="variableDeclaration" targetNodeId="1081927995057" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950544677">
+                                <link role="variableDeclaration" targetNodeId="1081927995057" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081950544678">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950544679">
-                                    <link role="variableDeclaration" targetNodeId="1081927995059" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081950544679">
+                                <link role="variableDeclaration" targetNodeId="1081927995059" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -9544,25 +8766,14 @@
                           <node type="jetbrains.mps.baseLanguage.MethodCall" id="1082387682453">
                             <link role="baseMethodDeclaration" targetNodeId="13.1082387599241" />
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082387682454">
-                                <link role="parameterDeclaration" targetNodeId="13.1082387599242" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082387682455">
-                                    <link role="variableDeclaration" targetNodeId="1082387503954" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082387682455">
+                                <link role="variableDeclaration" targetNodeId="1082387503954" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082387682456">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082387682457">
-                                    <link role="variableDeclaration" targetNodeId="1082387503956" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082387682457">
+                                <link role="variableDeclaration" targetNodeId="1082387503956" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -9595,8 +8806,8 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081880010411">
-            <link role="actionSet" targetNodeId="1082386043671" />
             <link role="linkDeclaration" targetNodeId="8.1079359253376" />
+            <link role="actionSet" targetNodeId="1082386043671" />
             <property name="name" />
           </node>
         </link>
@@ -9635,8 +8846,8 @@
         <link role="specializes" targetNodeId="1082130590765" />
         <link role="actionDeclaration" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1081931088321">
-            <link role="substituteQueryMethod" targetNodeId="1081927995858" />
             <link role="substituteQueryBody" targetNodeId="1081927995864" />
+            <link role="substituteQueryMethod" targetNodeId="1081927995858" />
             <property name="substituteHandlerId" value="RightHandExpressionAcceptor" />
             <property name="name" />
           </node>
@@ -9802,12 +9013,12 @@
       <node type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1082130590766">
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082130590767">
-            <link role="substituteHandlerQueryMethod" targetNodeId="1081927996203" />
+            <link role="substituteModelQueryBody" targetNodeId="1081927996232" />
             <link role="substituteModelQueryMethod" targetNodeId="1081927996228" />
+            <link role="substituteHandlerQueryBody" targetNodeId="1081927996211" />
             <link role="substituteTextQueryBody" targetNodeId="1081927996227" />
             <link role="substituteTextQueryMethod" targetNodeId="1081927996221" />
-            <link role="substituteModelQueryBody" targetNodeId="1081927996232" />
-            <link role="substituteHandlerQueryBody" targetNodeId="1081927996211" />
+            <link role="substituteHandlerQueryMethod" targetNodeId="1081927996203" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984096">
                 <link role="method" metaClass="aggregation">
@@ -9859,36 +9070,20 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081949217854">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081938404892" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949217855">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081938447863" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949217856">
-                                        <link role="variableDeclaration" targetNodeId="1081927996204" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949217856">
+                                    <link role="variableDeclaration" targetNodeId="1081927996204" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949217857">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949217858">
-                                        <link role="variableDeclaration" targetNodeId="1081927996206" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949217858">
+                                    <link role="variableDeclaration" targetNodeId="1081927996206" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949217859">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949217860">
-                                        <link role="variableDeclaration" targetNodeId="1081927996208" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949217860">
+                                    <link role="variableDeclaration" targetNodeId="1081927996208" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -9941,25 +9136,14 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081949209880">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949209881">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949209882">
-                                        <link role="variableDeclaration" targetNodeId="1081927996222" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949209882">
+                                    <link role="variableDeclaration" targetNodeId="1081927996222" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949209883">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949209884">
-                                        <link role="variableDeclaration" targetNodeId="1081927996224" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949209884">
+                                    <link role="variableDeclaration" targetNodeId="1081927996224" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -10002,14 +9186,8 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081949203860">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081516598693" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949203861">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081516598703" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949203862">
-                                        <link role="variableDeclaration" targetNodeId="1081927996229" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949203862">
+                                    <link role="variableDeclaration" targetNodeId="1081927996229" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -10036,12 +9214,12 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082130590768">
-            <link role="substituteTextQueryBody" targetNodeId="1081927996257" />
-            <link role="substituteTextQueryMethod" targetNodeId="1081927996251" />
             <link role="substituteModelQueryBody" targetNodeId="1081927996262" />
-            <link role="substituteHandlerQueryBody" targetNodeId="1081927996241" />
             <link role="substituteModelQueryMethod" targetNodeId="1081927996258" />
+            <link role="substituteTextQueryBody" targetNodeId="1081927996257" />
             <link role="substituteHandlerQueryMethod" targetNodeId="1081927996233" />
+            <link role="substituteTextQueryMethod" targetNodeId="1081927996251" />
+            <link role="substituteHandlerQueryBody" targetNodeId="1081927996241" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984097">
                 <link role="method" metaClass="aggregation">
@@ -10093,36 +9271,20 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081949222175">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081938404892" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949222176">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081938447863" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949222177">
-                                        <link role="variableDeclaration" targetNodeId="1081927996234" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949222177">
+                                    <link role="variableDeclaration" targetNodeId="1081927996234" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949222178">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949222179">
-                                        <link role="variableDeclaration" targetNodeId="1081927996236" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949222179">
+                                    <link role="variableDeclaration" targetNodeId="1081927996236" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949222180">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949222181">
-                                        <link role="variableDeclaration" targetNodeId="1081927996238" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949222181">
+                                    <link role="variableDeclaration" targetNodeId="1081927996238" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -10175,25 +9337,14 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081949232378">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949232379">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949232380">
-                                        <link role="variableDeclaration" targetNodeId="1081927996252" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949232380">
+                                    <link role="variableDeclaration" targetNodeId="1081927996252" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949232381">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949232382">
-                                        <link role="variableDeclaration" targetNodeId="1081927996254" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949232382">
+                                    <link role="variableDeclaration" targetNodeId="1081927996254" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -10236,14 +9387,8 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081949304355">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081518338460" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949304356">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081518338463" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949304357">
-                                        <link role="variableDeclaration" targetNodeId="1081927996259" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949304357">
+                                    <link role="variableDeclaration" targetNodeId="1081927996259" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -10270,12 +9415,12 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082130590769">
-            <link role="substituteModelQueryBody" targetNodeId="1081927996292" />
-            <link role="substituteHandlerQueryMethod" targetNodeId="1081927996263" />
-            <link role="substituteTextQueryMethod" targetNodeId="1081927996281" />
-            <link role="substituteModelQueryMethod" targetNodeId="1081927996288" />
-            <link role="substituteHandlerQueryBody" targetNodeId="1081927996271" />
             <link role="substituteTextQueryBody" targetNodeId="1081927996287" />
+            <link role="substituteHandlerQueryBody" targetNodeId="1081927996271" />
+            <link role="substituteModelQueryMethod" targetNodeId="1081927996288" />
+            <link role="substituteTextQueryMethod" targetNodeId="1081927996281" />
+            <link role="substituteHandlerQueryMethod" targetNodeId="1081927996263" />
+            <link role="substituteModelQueryBody" targetNodeId="1081927996292" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984098">
                 <link role="method" metaClass="aggregation">
@@ -10327,36 +9472,20 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081949229183">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081938404892" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949229184">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081938447863" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949229185">
-                                        <link role="variableDeclaration" targetNodeId="1081927996264" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949229185">
+                                    <link role="variableDeclaration" targetNodeId="1081927996264" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949229186">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949229187">
-                                        <link role="variableDeclaration" targetNodeId="1081927996266" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949229187">
+                                    <link role="variableDeclaration" targetNodeId="1081927996266" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949229188">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949229189">
-                                        <link role="variableDeclaration" targetNodeId="1081927996268" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949229189">
+                                    <link role="variableDeclaration" targetNodeId="1081927996268" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -10409,25 +9538,14 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081949235150">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949235151">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949235152">
-                                        <link role="variableDeclaration" targetNodeId="1081927996282" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949235152">
+                                    <link role="variableDeclaration" targetNodeId="1081927996282" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949235153">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949235154">
-                                        <link role="variableDeclaration" targetNodeId="1081927996284" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949235154">
+                                    <link role="variableDeclaration" targetNodeId="1081927996284" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -10470,14 +9588,8 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081949315984">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081867426937" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949315985">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081867426943" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949315986">
-                                        <link role="variableDeclaration" targetNodeId="1081927996289" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949315986">
+                                    <link role="variableDeclaration" targetNodeId="1081927996289" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -10504,12 +9616,12 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082130590770">
-            <link role="substituteHandlerQueryBody" targetNodeId="1081927996301" />
-            <link role="substituteModelQueryMethod" targetNodeId="1081927996318" />
-            <link role="substituteTextQueryBody" targetNodeId="1081927996317" />
             <link role="substituteModelQueryBody" targetNodeId="1081927996322" />
-            <link role="substituteTextQueryMethod" targetNodeId="1081927996311" />
+            <link role="substituteModelQueryMethod" targetNodeId="1081927996318" />
+            <link role="substituteHandlerQueryBody" targetNodeId="1081927996301" />
+            <link role="substituteTextQueryBody" targetNodeId="1081927996317" />
             <link role="substituteHandlerQueryMethod" targetNodeId="1081927996293" />
+            <link role="substituteTextQueryMethod" targetNodeId="1081927996311" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984099">
                 <link role="method" metaClass="aggregation">
@@ -10561,35 +9673,20 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081949342289">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1082395746296" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949342290">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949342291">
-                                        <link role="variableDeclaration" targetNodeId="1081927996294" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949342291">
+                                    <link role="variableDeclaration" targetNodeId="1081927996294" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949342292">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949342293">
-                                        <link role="variableDeclaration" targetNodeId="1081927996296" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949342293">
+                                    <link role="variableDeclaration" targetNodeId="1081927996296" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949342294">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949342295">
-                                        <link role="variableDeclaration" targetNodeId="1081927996298" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949342295">
+                                    <link role="variableDeclaration" targetNodeId="1081927996298" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -10642,25 +9739,14 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081949237734">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949237735">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949237736">
-                                        <link role="variableDeclaration" targetNodeId="1081927996312" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949237736">
+                                    <link role="variableDeclaration" targetNodeId="1081927996312" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949237737">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949237738">
-                                        <link role="variableDeclaration" targetNodeId="1081927996314" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949237738">
+                                    <link role="variableDeclaration" targetNodeId="1081927996314" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -10703,14 +9789,8 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081949325113">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081518781441" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949325114">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081518781501" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949325115">
-                                        <link role="variableDeclaration" targetNodeId="1081927996319" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949325115">
+                                    <link role="variableDeclaration" targetNodeId="1081927996319" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -10737,12 +9817,12 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082130590771">
-            <link role="substituteModelQueryMethod" targetNodeId="1081927996348" />
             <link role="substituteTextQueryMethod" targetNodeId="1081927996341" />
-            <link role="substituteTextQueryBody" targetNodeId="1081927996347" />
-            <link role="substituteHandlerQueryMethod" targetNodeId="1081927996323" />
             <link role="substituteModelQueryBody" targetNodeId="1081927996352" />
+            <link role="substituteModelQueryMethod" targetNodeId="1081927996348" />
             <link role="substituteHandlerQueryBody" targetNodeId="1081927996331" />
+            <link role="substituteHandlerQueryMethod" targetNodeId="1081927996323" />
+            <link role="substituteTextQueryBody" targetNodeId="1081927996347" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984100">
                 <link role="method" metaClass="aggregation">
@@ -10794,36 +9874,20 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081949412169">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081939125302" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949412170">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081939206259" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949412171">
-                                        <link role="variableDeclaration" targetNodeId="1081927996324" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949412171">
+                                    <link role="variableDeclaration" targetNodeId="1081927996324" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949412172">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949412173">
-                                        <link role="variableDeclaration" targetNodeId="1081927996326" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949412173">
+                                    <link role="variableDeclaration" targetNodeId="1081927996326" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949412174">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949412175">
-                                        <link role="variableDeclaration" targetNodeId="1081927996328" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949412175">
+                                    <link role="variableDeclaration" targetNodeId="1081927996328" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -10876,25 +9940,14 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081949291303">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949291304">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949291305">
-                                        <link role="variableDeclaration" targetNodeId="1081927996342" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949291305">
+                                    <link role="variableDeclaration" targetNodeId="1081927996342" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949291306">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949291307">
-                                        <link role="variableDeclaration" targetNodeId="1081927996344" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949291307">
+                                    <link role="variableDeclaration" targetNodeId="1081927996344" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -10937,14 +9990,8 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081949354407">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081517954259" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949354408">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081517954262" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949354409">
-                                        <link role="variableDeclaration" targetNodeId="1081927996349" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949354409">
+                                    <link role="variableDeclaration" targetNodeId="1081927996349" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -10971,9 +10018,9 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082130899953">
-            <link role="substituteModelQueryBody" targetNodeId="1082131184617" />
             <link role="substituteHandlerQueryBody" targetNodeId="1082131184588" />
             <link role="substituteModelQueryMethod" targetNodeId="1082131184613" />
+            <link role="substituteModelQueryBody" targetNodeId="1082131184617" />
             <link role="substituteHandlerQueryMethod" targetNodeId="1082131184580" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984101">
@@ -11026,36 +10073,20 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1082131184590">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081938404875" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082131184591">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081938273277" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082131184592">
-                                        <link role="variableDeclaration" targetNodeId="1082131184581" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082131184592">
+                                    <link role="variableDeclaration" targetNodeId="1082131184581" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082131184593">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082131184594">
-                                        <link role="variableDeclaration" targetNodeId="1082131184583" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082131184594">
+                                    <link role="variableDeclaration" targetNodeId="1082131184583" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082131184595">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082131184596">
-                                        <link role="variableDeclaration" targetNodeId="1082131184585" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082131184596">
+                                    <link role="variableDeclaration" targetNodeId="1082131184585" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -11098,14 +10129,8 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1082131184619">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1082131328684" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082131184620">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081938130148" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082131184621">
-                                        <link role="variableDeclaration" targetNodeId="1082131184614" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082131184621">
+                                    <link role="variableDeclaration" targetNodeId="1082131184614" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -11189,36 +10214,20 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1082010676672">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081939206291" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082010676673">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081939269122" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082010676674">
-                                        <link role="variableDeclaration" targetNodeId="1081927996354" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082010676674">
+                                    <link role="variableDeclaration" targetNodeId="1081927996354" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082010676675">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082010676676">
-                                        <link role="variableDeclaration" targetNodeId="1081927996356" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082010676676">
+                                    <link role="variableDeclaration" targetNodeId="1081927996356" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082010676677">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082010676678">
-                                        <link role="variableDeclaration" targetNodeId="1081927996358" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082010676678">
+                                    <link role="variableDeclaration" targetNodeId="1081927996358" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -11244,8 +10253,8 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_Simple" id="1082132100376">
-            <link role="substituteHandlerQueryMethod" targetNodeId="1081927996371" />
             <link role="substituteHandlerQueryBody" targetNodeId="1081927996379" />
+            <link role="substituteHandlerQueryMethod" targetNodeId="1081927996371" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984103">
                 <link role="method" metaClass="aggregation">
@@ -11297,36 +10306,20 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081949440193">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081939269143" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949440194">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081939269122" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949440195">
-                                        <link role="variableDeclaration" targetNodeId="1081927996372" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949440195">
+                                    <link role="variableDeclaration" targetNodeId="1081927996372" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949440196">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949440197">
-                                        <link role="variableDeclaration" targetNodeId="1081927996374" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949440197">
+                                    <link role="variableDeclaration" targetNodeId="1081927996374" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081949440198">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949440199">
-                                        <link role="variableDeclaration" targetNodeId="1081927996376" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081949440199">
+                                    <link role="variableDeclaration" targetNodeId="1081927996376" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -11352,10 +10345,10 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_Simple" id="1082132100377">
-            <link role="substituteHandlerQueryMethod" targetNodeId="1081927996389" />
             <link role="substituteMatcherQueryBody" targetNodeId="1081927996406" />
-            <link role="substituteHandlerQueryBody" targetNodeId="1081927996397" />
             <link role="substituteMatcherQueryMethod" targetNodeId="1081927996398" />
+            <link role="substituteHandlerQueryMethod" targetNodeId="1081927996389" />
+            <link role="substituteHandlerQueryBody" targetNodeId="1081927996397" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984104">
                 <link role="method" metaClass="aggregation">
@@ -11421,17 +10414,11 @@
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1083144100790">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081508092046" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1083144100791">
-                                            <link role="baseMethodDeclaration" targetNodeId="15.1086945615528" />
-                                            <link role="instance" metaClass="aggregation">
-                                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1083144100792">
-                                                <link role="variableDeclaration" targetNodeId="1081927996390" />
-                                                <property name="name" />
-                                              </node>
-                                            </link>
+                                      <node type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1083144100791">
+                                        <link role="baseMethodDeclaration" targetNodeId="15.1086945615528" />
+                                        <link role="instance" metaClass="aggregation">
+                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1083144100792">
+                                            <link role="variableDeclaration" targetNodeId="1081927996390" />
                                             <property name="name" />
                                           </node>
                                         </link>
@@ -11453,24 +10440,14 @@
                               <node type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1083144100794">
                                 <link role="baseMethodDeclaration" targetNodeId="15.1086945615647" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1095091330721">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.StringLiteral" id="1095091330722">
-                                        <property name="value" value="value" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.StringLiteral" id="1095091330722">
+                                    <property name="value" value="value" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1083144100797">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1083144100798">
-                                        <link role="variableDeclaration" targetNodeId="1081927996394" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1083144100798">
+                                    <link role="variableDeclaration" targetNodeId="1081927996394" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -11565,17 +10542,11 @@
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1095091330729">
-                                        <link role="parameterDeclaration" targetNodeId="15.1086945614674" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1095091330730">
-                                            <link role="baseMethodDeclaration" targetNodeId="15.1086945615528" />
-                                            <link role="instance" metaClass="aggregation">
-                                              <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1095091330731">
-                                                <link role="variableDeclaration" targetNodeId="1081927996399" />
-                                                <property name="name" />
-                                              </node>
-                                            </link>
+                                      <node type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1095091330730">
+                                        <link role="baseMethodDeclaration" targetNodeId="15.1086945615528" />
+                                        <link role="instance" metaClass="aggregation">
+                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1095091330731">
+                                            <link role="variableDeclaration" targetNodeId="1081927996399" />
                                             <property name="name" />
                                           </node>
                                         </link>
@@ -11583,13 +10554,8 @@
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1095091330732">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.StringLiteral" id="1095091330733">
-                                            <property name="value" value="IntegerConstant" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.StringLiteral" id="1095091330733">
+                                        <property name="value" value="IntegerConstant" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -11622,25 +10588,14 @@
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1095093597723">
-                                        <link role="parameterDeclaration" targetNodeId="15.1086945615381" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1095093597724">
-                                            <link role="variableDeclaration" targetNodeId="1095091330725" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1095093597724">
+                                        <link role="variableDeclaration" targetNodeId="1095091330725" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1095093597725">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.StringLiteral" id="1095093597726">
-                                            <property name="value" value="value" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.StringLiteral" id="1095093597726">
+                                        <property name="value" value="value" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -11673,14 +10628,8 @@
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1095093597732">
-                                        <link role="parameterDeclaration" targetNodeId="15.1086945615757" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1095093597733">
-                                            <link role="variableDeclaration" targetNodeId="1095093597719" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1095093597733">
+                                        <link role="variableDeclaration" targetNodeId="1095093597719" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -11699,14 +10648,8 @@
                               <node type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1095093597735">
                                 <link role="baseMethodDeclaration" targetNodeId="15.1086945615743" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1095093597736">
-                                    <link role="parameterDeclaration" targetNodeId="13.1083146401252" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1095093597737">
-                                        <link role="variableDeclaration" targetNodeId="1081927996403" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1095093597737">
+                                    <link role="variableDeclaration" targetNodeId="1081927996403" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -11833,14 +10776,14 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1082541979437">
     <link role="actionDeclaration" metaClass="aggregation">
       <node type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1082541996938">
-        <link role="substituteQueryMethod" targetNodeId="1081927994766" />
         <link role="substituteQueryBody" targetNodeId="1081927994772" />
+        <link role="substituteQueryMethod" targetNodeId="1081927994766" />
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082541996939">
-            <link role="substituteModelQueryMethod" targetNodeId="1082043423209" />
-            <link role="substituteHandlerQueryMethod" targetNodeId="1082043423203" />
-            <link role="substituteModelQueryBody" targetNodeId="1082043423210" />
             <link role="substituteHandlerQueryBody" targetNodeId="1082043423204" />
+            <link role="substituteModelQueryMethod" targetNodeId="1082043423209" />
+            <link role="substituteModelQueryBody" targetNodeId="1082043423210" />
+            <link role="substituteHandlerQueryMethod" targetNodeId="1082043423203" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984105">
                 <link role="method" metaClass="aggregation">
@@ -11892,36 +10835,20 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1082043689204">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081938404875" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082043689205">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081938273277" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082043689206">
-                                        <link role="variableDeclaration" targetNodeId="1082043423437" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082043689206">
+                                    <link role="variableDeclaration" targetNodeId="1082043423437" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082043689207">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082043689208">
-                                        <link role="variableDeclaration" targetNodeId="1082043423439" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082043689208">
+                                    <link role="variableDeclaration" targetNodeId="1082043423439" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082043689209">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082043689210">
-                                        <link role="variableDeclaration" targetNodeId="1082043423441" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082043689210">
+                                    <link role="variableDeclaration" targetNodeId="1082043423441" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -11964,14 +10891,8 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1082043689212">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081936056821" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082043689213">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081936056830" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082043689214">
-                                        <link role="variableDeclaration" targetNodeId="1082043423456" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082043689214">
+                                    <link role="variableDeclaration" targetNodeId="1082043423456" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -11997,10 +10918,10 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082541996940">
-            <link role="substituteHandlerQueryBody" targetNodeId="1082043423212" />
+            <link role="substituteHandlerQueryMethod" targetNodeId="1082043423211" />
             <link role="substituteModelQueryMethod" targetNodeId="1082043423217" />
             <link role="substituteModelQueryBody" targetNodeId="1082043423218" />
-            <link role="substituteHandlerQueryMethod" targetNodeId="1082043423211" />
+            <link role="substituteHandlerQueryBody" targetNodeId="1082043423212" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984106">
                 <link role="method" metaClass="aggregation">
@@ -12052,36 +10973,20 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1082043810606">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081938404875" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082043810607">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081938273277" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082043810608">
-                                        <link role="variableDeclaration" targetNodeId="1082043423459" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082043810608">
+                                    <link role="variableDeclaration" targetNodeId="1082043423459" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082043810609">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082043810610">
-                                        <link role="variableDeclaration" targetNodeId="1082043423461" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082043810610">
+                                    <link role="variableDeclaration" targetNodeId="1082043423461" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082043810611">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082043810612">
-                                        <link role="variableDeclaration" targetNodeId="1082043423463" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082043810612">
+                                    <link role="variableDeclaration" targetNodeId="1082043423463" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -12124,14 +11029,8 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1082043810614">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1082131328684" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082043810615">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081938130148" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090600087281">
-                                        <link role="variableDeclaration" targetNodeId="1082043423478" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090600087281">
+                                    <link role="variableDeclaration" targetNodeId="1082043423478" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -12157,12 +11056,12 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082541996941">
-            <link role="substituteModelQueryBody" targetNodeId="1081927994856" />
-            <link role="substituteTextQueryBody" targetNodeId="1081927994851" />
-            <link role="substituteModelQueryMethod" targetNodeId="1081927994852" />
             <link role="substituteHandlerQueryBody" targetNodeId="1081927994835" />
             <link role="substituteHandlerQueryMethod" targetNodeId="1081927994827" />
             <link role="substituteTextQueryMethod" targetNodeId="1081927994845" />
+            <link role="substituteTextQueryBody" targetNodeId="1081927994851" />
+            <link role="substituteModelQueryMethod" targetNodeId="1081927994852" />
+            <link role="substituteModelQueryBody" targetNodeId="1081927994856" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984107">
                 <link role="method" metaClass="aggregation">
@@ -12214,35 +11113,20 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948663637">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1082395746296" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948663638">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663639">
-                                        <link role="variableDeclaration" targetNodeId="1081927994828" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663639">
+                                    <link role="variableDeclaration" targetNodeId="1081927994828" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948663640">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663641">
-                                        <link role="variableDeclaration" targetNodeId="1081927994830" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663641">
+                                    <link role="variableDeclaration" targetNodeId="1081927994830" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948663642">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663643">
-                                        <link role="variableDeclaration" targetNodeId="1081927994832" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663643">
+                                    <link role="variableDeclaration" targetNodeId="1081927994832" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -12295,25 +11179,14 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948446044">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948446045">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948446046">
-                                        <link role="variableDeclaration" targetNodeId="1081927994846" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948446046">
+                                    <link role="variableDeclaration" targetNodeId="1081927994846" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948446047">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948446048">
-                                        <link role="variableDeclaration" targetNodeId="1081927994848" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948446048">
+                                    <link role="variableDeclaration" targetNodeId="1081927994848" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -12356,14 +11229,8 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948663645">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081518781441" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948663646">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081518781501" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663647">
-                                        <link role="variableDeclaration" targetNodeId="1081927994853" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663647">
+                                    <link role="variableDeclaration" targetNodeId="1081927994853" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -12384,19 +11251,19 @@
             </link>
             <property name="handlerId" value="MethodCallFactory" />
             <property name="name" value="freeMethods" />
-            <property name="queryId" value="FreeMethods" />
             <property name="descriptionProviderId" value="JavaElementDescriptionText" />
+            <property name="queryId" value="FreeMethods" />
             <property name="textProviderId" value="JavaElementMatchingText" />
           </node>
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082541996942">
-            <link role="substituteHandlerQueryMethod" targetNodeId="1081927994857" />
             <link role="substituteHandlerQueryBody" targetNodeId="1081927994865" />
-            <link role="substituteTextQueryMethod" targetNodeId="1081927994875" />
             <link role="substituteTextQueryBody" targetNodeId="1081927994881" />
-            <link role="substituteModelQueryBody" targetNodeId="1081927994886" />
+            <link role="substituteTextQueryMethod" targetNodeId="1081927994875" />
             <link role="substituteModelQueryMethod" targetNodeId="1081927994882" />
+            <link role="substituteModelQueryBody" targetNodeId="1081927994886" />
+            <link role="substituteHandlerQueryMethod" targetNodeId="1081927994857" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984108">
                 <link role="method" metaClass="aggregation">
@@ -12448,36 +11315,20 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948663649">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081939125302" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948663650">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081939206259" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663651">
-                                        <link role="variableDeclaration" targetNodeId="1081927994858" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663651">
+                                    <link role="variableDeclaration" targetNodeId="1081927994858" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948663652">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663653">
-                                        <link role="variableDeclaration" targetNodeId="1081927994860" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663653">
+                                    <link role="variableDeclaration" targetNodeId="1081927994860" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948663654">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663655">
-                                        <link role="variableDeclaration" targetNodeId="1081927994862" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663655">
+                                    <link role="variableDeclaration" targetNodeId="1081927994862" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -12530,25 +11381,14 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948449097">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948449098">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948449099">
-                                        <link role="variableDeclaration" targetNodeId="1081927994876" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948449099">
+                                    <link role="variableDeclaration" targetNodeId="1081927994876" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948449100">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948449101">
-                                        <link role="variableDeclaration" targetNodeId="1081927994878" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948449101">
+                                    <link role="variableDeclaration" targetNodeId="1081927994878" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -12591,14 +11431,8 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948663657">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081517954259" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948663658">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081517954262" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663659">
-                                        <link role="variableDeclaration" targetNodeId="1081927994883" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663659">
+                                    <link role="variableDeclaration" targetNodeId="1081927994883" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -12619,19 +11453,19 @@
             </link>
             <property name="handlerId" value="ThisInstanceMethodCallFactory" />
             <property name="name" value="contextMethods" />
-            <property name="queryId" value="JavaClassMethods" />
             <property name="descriptionProviderId" value="JavaElementDescriptionText" />
+            <property name="queryId" value="JavaClassMethods" />
             <property name="textProviderId" value="JavaElementMatchingText" />
           </node>
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082541996943">
-            <link role="substituteHandlerQueryBody" targetNodeId="1081927994895" />
-            <link role="substituteTextQueryMethod" targetNodeId="1081927994905" />
             <link role="substituteHandlerQueryMethod" targetNodeId="1081927994887" />
-            <link role="substituteModelQueryBody" targetNodeId="1081927994916" />
+            <link role="substituteTextQueryMethod" targetNodeId="1081927994905" />
             <link role="substituteModelQueryMethod" targetNodeId="1081927994912" />
+            <link role="substituteModelQueryBody" targetNodeId="1081927994916" />
             <link role="substituteTextQueryBody" targetNodeId="1081927994911" />
+            <link role="substituteHandlerQueryBody" targetNodeId="1081927994895" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984109">
                 <link role="method" metaClass="aggregation">
@@ -12683,36 +11517,20 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948663661">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081932030554" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948663662">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081932168370" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663663">
-                                        <link role="variableDeclaration" targetNodeId="1081927994888" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663663">
+                                    <link role="variableDeclaration" targetNodeId="1081927994888" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948663664">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663665">
-                                        <link role="variableDeclaration" targetNodeId="1081927994890" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663665">
+                                    <link role="variableDeclaration" targetNodeId="1081927994890" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948663666">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663667">
-                                        <link role="variableDeclaration" targetNodeId="1081927994892" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663667">
+                                    <link role="variableDeclaration" targetNodeId="1081927994892" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -12765,25 +11583,14 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1082100601672">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081932030542" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082100601673">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081932030551" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082100601674">
-                                        <link role="variableDeclaration" targetNodeId="1081927994906" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082100601674">
+                                    <link role="variableDeclaration" targetNodeId="1081927994906" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082100601675">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082100601676">
-                                        <link role="variableDeclaration" targetNodeId="1081927994908" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082100601676">
+                                    <link role="variableDeclaration" targetNodeId="1081927994908" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -12826,14 +11633,8 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948663669">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081508357640" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948663670">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081508357650" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663671">
-                                        <link role="variableDeclaration" targetNodeId="1081927994913" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663671">
+                                    <link role="variableDeclaration" targetNodeId="1081927994913" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -12860,12 +11661,12 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082541996944">
+            <link role="substituteModelQueryMethod" targetNodeId="1081927994942" />
             <link role="substituteHandlerQueryMethod" targetNodeId="1081927994917" />
-            <link role="substituteHandlerQueryBody" targetNodeId="1081927994925" />
+            <link role="substituteTextQueryMethod" targetNodeId="1081927994935" />
             <link role="substituteModelQueryBody" targetNodeId="1081927994946" />
             <link role="substituteTextQueryBody" targetNodeId="1081927994941" />
-            <link role="substituteModelQueryMethod" targetNodeId="1081927994942" />
-            <link role="substituteTextQueryMethod" targetNodeId="1081927994935" />
+            <link role="substituteHandlerQueryBody" targetNodeId="1081927994925" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984110">
                 <link role="method" metaClass="aggregation">
@@ -12917,36 +11718,20 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948677153">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081932030554" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948677154">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081932168370" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948677155">
-                                        <link role="variableDeclaration" targetNodeId="1081927994918" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948677155">
+                                    <link role="variableDeclaration" targetNodeId="1081927994918" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948677156">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948677157">
-                                        <link role="variableDeclaration" targetNodeId="1081927994920" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948677157">
+                                    <link role="variableDeclaration" targetNodeId="1081927994920" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948677158">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948677159">
-                                        <link role="variableDeclaration" targetNodeId="1081927994922" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948677159">
+                                    <link role="variableDeclaration" targetNodeId="1081927994922" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -12999,25 +11784,14 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948669944">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081932030542" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948669945">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081932030551" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948669946">
-                                        <link role="variableDeclaration" targetNodeId="1081927994936" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948669946">
+                                    <link role="variableDeclaration" targetNodeId="1081927994936" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948669947">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948669948">
-                                        <link role="variableDeclaration" targetNodeId="1081927994938" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948669948">
+                                    <link role="variableDeclaration" targetNodeId="1081927994938" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -13060,14 +11834,8 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948731732">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081514252720" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948731733">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081508357650" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948731734">
-                                        <link role="variableDeclaration" targetNodeId="1081927994943" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948731734">
+                                    <link role="variableDeclaration" targetNodeId="1081927994943" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -13094,12 +11862,12 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082541996945">
-            <link role="substituteTextQueryMethod" targetNodeId="1081927994965" />
-            <link role="substituteHandlerQueryBody" targetNodeId="1081927994955" />
-            <link role="substituteHandlerQueryMethod" targetNodeId="1081927994947" />
-            <link role="substituteModelQueryBody" targetNodeId="1081927994976" />
-            <link role="substituteTextQueryBody" targetNodeId="1081927994971" />
             <link role="substituteModelQueryMethod" targetNodeId="1081927994972" />
+            <link role="substituteTextQueryMethod" targetNodeId="1081927994965" />
+            <link role="substituteModelQueryBody" targetNodeId="1081927994976" />
+            <link role="substituteHandlerQueryBody" targetNodeId="1081927994955" />
+            <link role="substituteTextQueryBody" targetNodeId="1081927994971" />
+            <link role="substituteHandlerQueryMethod" targetNodeId="1081927994947" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984111">
                 <link role="method" metaClass="aggregation">
@@ -13151,36 +11919,20 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948727708">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081938404892" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948727709">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081938447863" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948727710">
-                                        <link role="variableDeclaration" targetNodeId="1081927994948" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948727710">
+                                    <link role="variableDeclaration" targetNodeId="1081927994948" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948727711">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948727712">
-                                        <link role="variableDeclaration" targetNodeId="1081927994950" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948727712">
+                                    <link role="variableDeclaration" targetNodeId="1081927994950" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948727713">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948727714">
-                                        <link role="variableDeclaration" targetNodeId="1081927994952" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948727714">
+                                    <link role="variableDeclaration" targetNodeId="1081927994952" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -13233,25 +11985,14 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948453181">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948453182">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948453183">
-                                        <link role="variableDeclaration" targetNodeId="1081927994966" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948453183">
+                                    <link role="variableDeclaration" targetNodeId="1081927994966" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948453184">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948453185">
-                                        <link role="variableDeclaration" targetNodeId="1081927994968" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948453185">
+                                    <link role="variableDeclaration" targetNodeId="1081927994968" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -13294,14 +12035,8 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948793838">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081518338460" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948793839">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081518338463" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948793840">
-                                        <link role="variableDeclaration" targetNodeId="1081927994973" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948793840">
+                                    <link role="variableDeclaration" targetNodeId="1081927994973" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -13322,19 +12057,19 @@
             </link>
             <property name="handlerId" value="JavaVariableReferenceFactory" />
             <property name="name" value="parameterRefs" />
-            <property name="queryId" value="JavaMethodParameters" />
             <property name="descriptionProviderId" value="JavaElementDescriptionText" />
+            <property name="queryId" value="JavaMethodParameters" />
             <property name="textProviderId" value="JavaElementMatchingText" />
           </node>
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082541996946">
-            <link role="substituteTextQueryMethod" targetNodeId="1081927994995" />
-            <link role="substituteModelQueryBody" targetNodeId="1081927995006" />
             <link role="substituteTextQueryBody" targetNodeId="1081927995001" />
+            <link role="substituteTextQueryMethod" targetNodeId="1081927994995" />
+            <link role="substituteHandlerQueryBody" targetNodeId="1081927994985" />
+            <link role="substituteModelQueryBody" targetNodeId="1081927995006" />
             <link role="substituteHandlerQueryMethod" targetNodeId="1081927994977" />
             <link role="substituteModelQueryMethod" targetNodeId="1081927995002" />
-            <link role="substituteHandlerQueryBody" targetNodeId="1081927994985" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984112">
                 <link role="method" metaClass="aggregation">
@@ -13386,36 +12121,20 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948734548">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081938404892" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948734549">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081938447863" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948734550">
-                                        <link role="variableDeclaration" targetNodeId="1081927994978" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948734550">
+                                    <link role="variableDeclaration" targetNodeId="1081927994978" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948734551">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948734552">
-                                        <link role="variableDeclaration" targetNodeId="1081927994980" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948734552">
+                                    <link role="variableDeclaration" targetNodeId="1081927994980" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948734553">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948734554">
-                                        <link role="variableDeclaration" targetNodeId="1081927994982" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948734554">
+                                    <link role="variableDeclaration" targetNodeId="1081927994982" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -13468,25 +12187,14 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948455562">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948455563">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948455564">
-                                        <link role="variableDeclaration" targetNodeId="1081927994996" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948455564">
+                                    <link role="variableDeclaration" targetNodeId="1081927994996" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948455565">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948455566">
-                                        <link role="variableDeclaration" targetNodeId="1081927994998" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948455566">
+                                    <link role="variableDeclaration" targetNodeId="1081927994998" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -13529,14 +12237,8 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948793842">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081867426937" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948793843">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081867426943" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948793844">
-                                        <link role="variableDeclaration" targetNodeId="1081927995003" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948793844">
+                                    <link role="variableDeclaration" targetNodeId="1081927995003" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -13557,8 +12259,8 @@
             </link>
             <property name="handlerId" value="JavaVariableReferenceFactory" />
             <property name="name" value="localVarRefs" />
-            <property name="queryId" value="JavaLocalVariables" />
             <property name="descriptionProviderId" value="JavaElementDescriptionText" />
+            <property name="queryId" value="JavaLocalVariables" />
             <property name="textProviderId" value="JavaElementMatchingText" />
           </node>
         </link>
@@ -13571,11 +12273,11 @@
         </link>
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082541996947">
-            <link role="substituteTextQueryBody" targetNodeId="1081927995031" />
-            <link role="substituteHandlerQueryBody" targetNodeId="1081927995015" />
-            <link role="substituteModelQueryMethod" targetNodeId="1081927995032" />
             <link role="substituteTextQueryMethod" targetNodeId="1081927995025" />
             <link role="substituteHandlerQueryMethod" targetNodeId="1081927995007" />
+            <link role="substituteHandlerQueryBody" targetNodeId="1081927995015" />
+            <link role="substituteTextQueryBody" targetNodeId="1081927995031" />
+            <link role="substituteModelQueryMethod" targetNodeId="1081927995032" />
             <link role="substituteModelQueryBody" targetNodeId="1081927995036" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984113">
@@ -13628,36 +12330,20 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948793861">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081938404892" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948793862">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081938447863" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948793863">
-                                        <link role="variableDeclaration" targetNodeId="1081927995008" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948793863">
+                                    <link role="variableDeclaration" targetNodeId="1081927995008" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948793864">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948793865">
-                                        <link role="variableDeclaration" targetNodeId="1081927995010" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948793865">
+                                    <link role="variableDeclaration" targetNodeId="1081927995010" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948793866">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948793867">
-                                        <link role="variableDeclaration" targetNodeId="1081927995012" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948793867">
+                                    <link role="variableDeclaration" targetNodeId="1081927995012" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -13710,25 +12396,14 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948663673">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948663674">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663675">
-                                        <link role="variableDeclaration" targetNodeId="1081927995026" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663675">
+                                    <link role="variableDeclaration" targetNodeId="1081927995026" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948663676">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663677">
-                                        <link role="variableDeclaration" targetNodeId="1081927995028" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948663677">
+                                    <link role="variableDeclaration" targetNodeId="1081927995028" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -13771,14 +12446,8 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1081948793869">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081516598693" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1081948793870">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081516598703" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948793871">
-                                        <link role="variableDeclaration" targetNodeId="1081927995033" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1081948793871">
+                                    <link role="variableDeclaration" targetNodeId="1081927995033" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -13799,8 +12468,8 @@
             </link>
             <property name="handlerId" value="JavaVariableReferenceFactory" />
             <property name="name" value="fieldRefs" />
-            <property name="queryId" value="JavaClassFields" />
             <property name="descriptionProviderId" value="JavaElementDescriptionText" />
+            <property name="queryId" value="JavaClassFields" />
             <property name="textProviderId" value="JavaElementMatchingText" />
           </node>
         </link>
@@ -13816,10 +12485,10 @@
         <link role="substituteQueryBody" targetNodeId="1082657798338" />
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082657774877">
-            <link role="substituteModelQueryMethod" targetNodeId="1082657798364" />
-            <link role="substituteHandlerQueryBody" targetNodeId="1082657798347" />
-            <link role="substituteModelQueryBody" targetNodeId="1082657798383" />
             <link role="substituteHandlerQueryMethod" targetNodeId="1082657798339" />
+            <link role="substituteModelQueryMethod" targetNodeId="1082657798364" />
+            <link role="substituteModelQueryBody" targetNodeId="1082657798383" />
+            <link role="substituteHandlerQueryBody" targetNodeId="1082657798347" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984129">
                 <link role="method" metaClass="aggregation">
@@ -13871,36 +12540,20 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1082719046099">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081938404875" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082719046100">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081938273277" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082719046101">
-                                        <link role="variableDeclaration" targetNodeId="1082657798340" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082719046101">
+                                    <link role="variableDeclaration" targetNodeId="1082657798340" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082719046102">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082719046118">
-                                        <link role="variableDeclaration" targetNodeId="1082657798342" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082719046118">
+                                    <link role="variableDeclaration" targetNodeId="1082657798342" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082719046119">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082719046120">
-                                        <link role="variableDeclaration" targetNodeId="1082657798344" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082719046120">
+                                    <link role="variableDeclaration" targetNodeId="1082657798344" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -13943,14 +12596,8 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1082658303204">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081938130136" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082658303205">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081938130148" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082658303206">
-                                        <link role="variableDeclaration" targetNodeId="1082657798365" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082658303206">
+                                    <link role="variableDeclaration" targetNodeId="1082657798365" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -14204,14 +12851,8 @@
                           </node>
                         </link>
                         <link role="actualArgument" metaClass="aggregation">
-                          <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082718871942">
-                            <link role="parameterDeclaration" targetNodeId="13.1081844524192" />
-                            <link role="expression" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1082718871943">
-                                <link role="variableDeclaration" targetNodeId="1082718871913" />
-                                <property name="name" />
-                              </node>
-                            </link>
+                          <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1082718871943">
+                            <link role="variableDeclaration" targetNodeId="1082718871913" />
                             <property name="name" />
                           </node>
                         </link>
@@ -14233,14 +12874,8 @@
                           </node>
                         </link>
                         <link role="actualArgument" metaClass="aggregation">
-                          <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082718871947">
-                            <link role="parameterDeclaration" targetNodeId="13.1081844524192" />
-                            <link role="expression" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1082718871948">
-                                <link role="variableDeclaration" targetNodeId="1082718871918" />
-                                <property name="name" />
-                              </node>
-                            </link>
+                          <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1082718871948">
+                            <link role="variableDeclaration" targetNodeId="1082718871918" />
                             <property name="name" />
                           </node>
                         </link>
@@ -14279,14 +12914,8 @@
                           </node>
                         </link>
                         <link role="actualArgument" metaClass="aggregation">
-                          <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082718871955">
-                            <link role="parameterDeclaration" targetNodeId="13.1082399639198" />
-                            <link role="expression" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1082718871956">
-                                <link role="variableDeclaration" targetNodeId="1082718871913" />
-                                <property name="name" />
-                              </node>
-                            </link>
+                          <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1082718871956">
+                            <link role="variableDeclaration" targetNodeId="1082718871913" />
                             <property name="name" />
                           </node>
                         </link>
@@ -14308,14 +12937,8 @@
                           </node>
                         </link>
                         <link role="actualArgument" metaClass="aggregation">
-                          <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082718871960">
-                            <link role="parameterDeclaration" targetNodeId="13.1082399619315" />
-                            <link role="expression" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1082718871961">
-                                <link role="variableDeclaration" targetNodeId="1082718871918" />
-                                <property name="name" />
-                              </node>
-                            </link>
+                          <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1082718871961">
+                            <link role="variableDeclaration" targetNodeId="1082718871918" />
                             <property name="name" />
                           </node>
                         </link>
@@ -14337,25 +12960,14 @@
                           </node>
                         </link>
                         <link role="actualArgument" metaClass="aggregation">
-                          <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082718871965">
-                            <link role="parameterDeclaration" targetNodeId="13.1081508090453" />
-                            <link role="expression" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1091461977984">
-                                <link role="variableDeclaration" targetNodeId="1082718871928" />
-                                <property name="name" />
-                              </node>
-                            </link>
+                          <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1091461977984">
+                            <link role="variableDeclaration" targetNodeId="1082718871928" />
                             <property name="name" />
                           </node>
                         </link>
                         <link role="actualArgument" metaClass="aggregation">
-                          <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082718871967">
-                            <link role="expression" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1082718871968">
-                                <link role="variableDeclaration" targetNodeId="1082718871934" />
-                                <property name="name" />
-                              </node>
-                            </link>
+                          <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1082718871968">
+                            <link role="variableDeclaration" targetNodeId="1082718871934" />
                             <property name="name" />
                           </node>
                         </link>
@@ -14398,12 +13010,12 @@
       <node type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1082741406449">
         <link role="item" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082741406450">
-            <link role="substituteTextQueryMethod" targetNodeId="1082741457157" />
             <link role="substituteModelQueryMethod" targetNodeId="1082741457164" />
-            <link role="substituteHandlerQueryMethod" targetNodeId="1082741457139" />
+            <link role="substituteTextQueryMethod" targetNodeId="1082741457157" />
+            <link role="substituteTextQueryBody" targetNodeId="1082741457163" />
             <link role="substituteModelQueryBody" targetNodeId="1082741457168" />
             <link role="substituteHandlerQueryBody" targetNodeId="1082741457147" />
-            <link role="substituteTextQueryBody" targetNodeId="1082741457163" />
+            <link role="substituteHandlerQueryMethod" targetNodeId="1082741457139" />
             <link role="nodeSubstituteItemClass" metaClass="aggregation">
               <node type="jetbrains.mps.baseLanguage.JavaClass" id="1089820984130">
                 <link role="method" metaClass="aggregation">
@@ -14455,36 +13067,20 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1082741566033">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081940361950" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082741566034">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081940432047" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082741566035">
-                                        <link role="variableDeclaration" targetNodeId="1082741457140" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082741566035">
+                                    <link role="variableDeclaration" targetNodeId="1082741457140" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082741566036">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082741566037">
-                                        <link role="variableDeclaration" targetNodeId="1082741457142" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082741566037">
+                                    <link role="variableDeclaration" targetNodeId="1082741457142" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082741566038">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082741566039">
-                                        <link role="variableDeclaration" targetNodeId="1082741457144" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082741566039">
+                                    <link role="variableDeclaration" targetNodeId="1082741457144" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -14537,25 +13133,14 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1082741580025">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082741580026">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082741580027">
-                                        <link role="variableDeclaration" targetNodeId="1082741457158" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082741580027">
+                                    <link role="variableDeclaration" targetNodeId="1082741457158" />
                                     <property name="name" />
                                   </node>
                                 </link>
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082741580028">
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082741580029">
-                                        <link role="variableDeclaration" targetNodeId="1082741457160" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082741580029">
+                                    <link role="variableDeclaration" targetNodeId="1082741457160" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -14598,14 +13183,8 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1082741491873">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081514252720" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1082741491874">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081514252732" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082741491875">
-                                        <link role="variableDeclaration" targetNodeId="1082741457165" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1082741491875">
+                                    <link role="variableDeclaration" targetNodeId="1082741457165" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -14750,13 +13329,8 @@
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090928601288">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1090928601289">
-                                    <link role="variableDeclaration" targetNodeId="1090928601272" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1090928601289">
+                                <link role="variableDeclaration" targetNodeId="1090928601272" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -14802,16 +13376,16 @@
             <link role="substituteQueryBody" targetNodeId="1090928601352" />
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1090928601297">
-                <link role="substituteMatcherQueryMethod" targetNodeId="1090928601308" />
-                <link role="substituteHandlerQueryBody" targetNodeId="1090928601307" />
-                <link role="substituteTextQueryBody" targetNodeId="1090928601323" />
-                <link role="substituteModelQueryBody" targetNodeId="1090928601341" />
                 <link role="substituteDescriptionTextQueryBody" targetNodeId="1090928601336" />
-                <link role="substituteMatcherQueryBody" targetNodeId="1090928601316" />
-                <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090928601330" />
+                <link role="substituteModelQueryBody" targetNodeId="1090928601341" />
+                <link role="substituteMatcherQueryMethod" targetNodeId="1090928601308" />
                 <link role="substituteModelQueryMethod" targetNodeId="1090928601337" />
+                <link role="substituteHandlerQueryBody" targetNodeId="1090928601307" />
                 <link role="substituteTextQueryMethod" targetNodeId="1090928601317" />
                 <link role="substituteHandlerQueryMethod" targetNodeId="1090928601299" />
+                <link role="substituteTextQueryBody" targetNodeId="1090928601323" />
+                <link role="substituteMatcherQueryBody" targetNodeId="1090928601316" />
+                <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090928601330" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1090928601298">
                     <link role="method" metaClass="aggregation">
@@ -14946,25 +13520,14 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1090930967329">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090930967330">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090930967331">
-                                            <link role="variableDeclaration" targetNodeId="1082742196994" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090930967331">
+                                        <link role="variableDeclaration" targetNodeId="1082742196994" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090930967332">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090930967333">
-                                            <link role="variableDeclaration" targetNodeId="1082742196996" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090930967333">
+                                        <link role="variableDeclaration" targetNodeId="1082742196996" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -15044,14 +13607,8 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1090928601343">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1090928600718" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090928601344">
-                                        <link role="parameterDeclaration" targetNodeId="13.1090928600731" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090928601345">
-                                            <link role="variableDeclaration" targetNodeId="1090928601338" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090928601345">
+                                        <link role="variableDeclaration" targetNodeId="1090928601338" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -15183,14 +13740,8 @@
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1091461667092">
-                                <link role="parameterDeclaration" targetNodeId="13.1091461631976" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1091461667093">
-                                    <link role="variableDeclaration" targetNodeId="1090928601354" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1091461667093">
+                                <link role="variableDeclaration" targetNodeId="1090928601354" />
                                 <property name="name" />
                               </node>
                             </link>
@@ -15226,8 +13777,8 @@
       <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1090928601376">
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1090928601377">
-            <link role="linkDeclaration" targetNodeId="8.1083260308425" />
             <link role="actionSet" targetNodeId="1090928601262" />
+            <link role="linkDeclaration" targetNodeId="8.1083260308425" />
             <property name="name" />
           </node>
         </link>
@@ -15239,8 +13790,8 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1090928601379">
-            <link role="linkDeclaration" targetNodeId="8.1083260308426" />
             <link role="actionSet" targetNodeId="1090928601294" />
+            <link role="linkDeclaration" targetNodeId="8.1083260308426" />
             <link role="editorComponent" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1090928601380">
                 <link role="semanticTypeDeclaration" targetNodeId="8.1083245299891" />
@@ -15313,8 +13864,8 @@
         </link>
         <link role="childCellModel" metaClass="aggregation">
           <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1084188979615">
-            <link role="propertyDeclaration" targetNodeId="9.1078489098626" />
             <link role="actionSet" targetNodeId="1084188979609" />
+            <link role="propertyDeclaration" targetNodeId="9.1078489098626" />
             <property name="writable" value="true" />
             <property name="defaultText" value="&lt;no name&gt;" />
             <property name="defaultValue" value="?" />
@@ -15334,9 +13885,9 @@
             </link>
             <link role="childCellModel" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1084188979618">
+                <link role="linkDeclaration" targetNodeId="8.1068431790190" />
                 <link role="keyMap" targetNodeId="1081427357000" />
                 <link role="actionSet" targetNodeId="1077124145703" />
-                <link role="linkDeclaration" targetNodeId="8.1068431790190" />
                 <property name="actionSetId" />
                 <property name="name" />
               </node>
@@ -15503,14 +14054,8 @@
                               <node type="jetbrains.mps.baseLanguage.MethodCall" id="1087818910136">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1081935632796" />
                                 <link role="actualArgument" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1087818910137">
-                                    <link role="parameterDeclaration" targetNodeId="13.1081935615412" />
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1087818910138">
-                                        <link role="variableDeclaration" targetNodeId="1085485817060" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1087818910138">
+                                    <link role="variableDeclaration" targetNodeId="1085485817060" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -15663,16 +14208,16 @@
             <link role="substituteQueryBody" targetNodeId="1090841311401" />
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1090842242324">
-                <link role="substituteHandlerQueryBody" targetNodeId="1090842795852" />
-                <link role="substituteModelQueryBody" targetNodeId="1090842795880" />
-                <link role="substituteMatcherQueryBody" targetNodeId="1090842795861" />
-                <link role="substituteTextQueryBody" targetNodeId="1090842795868" />
-                <link role="substituteMatcherQueryMethod" targetNodeId="1090842795853" />
-                <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090842795869" />
-                <link role="substituteDescriptionTextQueryBody" targetNodeId="1090842795875" />
-                <link role="substituteModelQueryMethod" targetNodeId="1090842795876" />
                 <link role="substituteHandlerQueryMethod" targetNodeId="1090842795844" />
+                <link role="substituteMatcherQueryBody" targetNodeId="1090842795861" />
                 <link role="substituteTextQueryMethod" targetNodeId="1090842795862" />
+                <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090842795869" />
+                <link role="substituteHandlerQueryBody" targetNodeId="1090842795852" />
+                <link role="substituteDescriptionTextQueryBody" targetNodeId="1090842795875" />
+                <link role="substituteModelQueryBody" targetNodeId="1090842795880" />
+                <link role="substituteMatcherQueryMethod" targetNodeId="1090842795853" />
+                <link role="substituteModelQueryMethod" targetNodeId="1090842795876" />
+                <link role="substituteTextQueryBody" targetNodeId="1090842795868" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1090842795843">
                     <link role="method" metaClass="aggregation">
@@ -15807,25 +14352,14 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1090850220047">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090850220048">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090850220049">
-                                            <link role="variableDeclaration" targetNodeId="1090842795863" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090850220049">
+                                        <link role="variableDeclaration" targetNodeId="1090842795863" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090850220050">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090850220051">
-                                            <link role="variableDeclaration" targetNodeId="1090842795865" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090850220051">
+                                        <link role="variableDeclaration" targetNodeId="1090842795865" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -15905,14 +14439,8 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1090850220053">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081514252720" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090850220054">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081514252732" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090850220055">
-                                            <link role="variableDeclaration" targetNodeId="1090842795877" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090850220055">
+                                        <link role="variableDeclaration" targetNodeId="1090842795877" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -16011,22 +14539,16 @@
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090841520786">
-                                <link role="parameterDeclaration" targetNodeId="13.1081508092090" />
+                              <node type="jetbrains.mps.baseLanguage.CastExpression" id="1090841520787">
+                                <link role="type" metaClass="aggregation">
+                                  <node type="jetbrains.mps.baseLanguage.JavaClassType" id="1090841520788">
+                                    <link role="javaClass" targetNodeId="13.1081508090787" />
+                                    <property name="name" />
+                                  </node>
+                                </link>
                                 <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.CastExpression" id="1090841520787">
-                                    <link role="type" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.JavaClassType" id="1090841520788">
-                                        <link role="javaClass" targetNodeId="13.1081508090787" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090841520789">
-                                        <link role="variableDeclaration" targetNodeId="1090841311398" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090841520789">
+                                    <link role="variableDeclaration" targetNodeId="1090841311398" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -16068,16 +14590,16 @@
             <link role="substituteQueryBody" targetNodeId="1090851654836" />
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1090851716672">
-                <link role="substituteModelQueryBody" targetNodeId="1090851900780" />
-                <link role="substituteHandlerQueryBody" targetNodeId="1090851900744" />
-                <link role="substituteMatcherQueryMethod" targetNodeId="1090851900753" />
-                <link role="substituteDescriptionTextQueryBody" targetNodeId="1090851900775" />
-                <link role="substituteHandlerQueryMethod" targetNodeId="1090851900736" />
                 <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090851900769" />
-                <link role="substituteModelQueryMethod" targetNodeId="1090851900776" />
                 <link role="substituteTextQueryMethod" targetNodeId="1090851900762" />
+                <link role="substituteModelQueryBody" targetNodeId="1090851900780" />
                 <link role="substituteMatcherQueryBody" targetNodeId="1090851900761" />
+                <link role="substituteHandlerQueryBody" targetNodeId="1090851900744" />
+                <link role="substituteModelQueryMethod" targetNodeId="1090851900776" />
+                <link role="substituteDescriptionTextQueryBody" targetNodeId="1090851900775" />
+                <link role="substituteMatcherQueryMethod" targetNodeId="1090851900753" />
                 <link role="substituteTextQueryBody" targetNodeId="1090851900768" />
+                <link role="substituteHandlerQueryMethod" targetNodeId="1090851900736" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1090851900735">
                     <link role="method" metaClass="aggregation">
@@ -16128,36 +14650,20 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1090851900746">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081940361950" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090851900747">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081940432047" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090851900748">
-                                            <link role="variableDeclaration" targetNodeId="1090851900737" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090851900748">
+                                        <link role="variableDeclaration" targetNodeId="1090851900737" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090851900749">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090851900750">
-                                            <link role="variableDeclaration" targetNodeId="1090851900739" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090851900750">
+                                        <link role="variableDeclaration" targetNodeId="1090851900739" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090851900751">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090851900752">
-                                            <link role="variableDeclaration" targetNodeId="1090851900741" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090851900752">
+                                        <link role="variableDeclaration" targetNodeId="1090851900741" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -16257,25 +14763,14 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1090851991708">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090851991709">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090851991710">
-                                            <link role="variableDeclaration" targetNodeId="1090851900763" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090851991710">
+                                        <link role="variableDeclaration" targetNodeId="1090851900763" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090851991711">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090851991712">
-                                            <link role="variableDeclaration" targetNodeId="1090851900765" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090851991712">
+                                        <link role="variableDeclaration" targetNodeId="1090851900765" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -16355,14 +14850,8 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1090851900782">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081514252720" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090851900783">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081514252732" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090851900784">
-                                            <link role="variableDeclaration" targetNodeId="1090851900777" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090851900784">
+                                        <link role="variableDeclaration" targetNodeId="1090851900777" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -16444,22 +14933,16 @@
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090853977468">
-                                <link role="parameterDeclaration" targetNodeId="13.1081508092460" />
+                              <node type="jetbrains.mps.baseLanguage.CastExpression" id="1090853977469">
+                                <link role="type" metaClass="aggregation">
+                                  <node type="jetbrains.mps.baseLanguage.JavaClassType" id="1090853977470">
+                                    <link role="javaClass" targetNodeId="13.1081508091231" />
+                                    <property name="name" />
+                                  </node>
+                                </link>
                                 <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.CastExpression" id="1090853977469">
-                                    <link role="type" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.JavaClassType" id="1090853977470">
-                                        <link role="javaClass" targetNodeId="13.1081508091231" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
-                                    <link role="expression" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090853977471">
-                                        <link role="variableDeclaration" targetNodeId="1090851654833" />
-                                        <property name="name" />
-                                      </node>
-                                    </link>
+                                  <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090853977471">
+                                    <link role="variableDeclaration" targetNodeId="1090851654833" />
                                     <property name="name" />
                                   </node>
                                 </link>
@@ -16501,16 +14984,16 @@
             <link role="substituteQueryBody" targetNodeId="1090857631648" />
             <link role="item" metaClass="aggregation">
               <node type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1090857639696">
-                <link role="substituteModelQueryMethod" targetNodeId="1090857639744" />
-                <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090857639737" />
-                <link role="substituteMatcherQueryMethod" targetNodeId="1090857639715" />
-                <link role="substituteHandlerQueryBody" targetNodeId="1090857639706" />
-                <link role="substituteModelQueryBody" targetNodeId="1090857639748" />
                 <link role="substituteDescriptionTextQueryBody" targetNodeId="1090857639743" />
-                <link role="substituteHandlerQueryMethod" targetNodeId="1090857639698" />
+                <link role="substituteMatcherQueryMethod" targetNodeId="1090857639715" />
                 <link role="substituteTextQueryMethod" targetNodeId="1090857639724" />
-                <link role="substituteTextQueryBody" targetNodeId="1090857639730" />
                 <link role="substituteMatcherQueryBody" targetNodeId="1090857639723" />
+                <link role="substituteDescriptionTextQueryMethod" targetNodeId="1090857639737" />
+                <link role="substituteHandlerQueryMethod" targetNodeId="1090857639698" />
+                <link role="substituteTextQueryBody" targetNodeId="1090857639730" />
+                <link role="substituteModelQueryBody" targetNodeId="1090857639748" />
+                <link role="substituteModelQueryMethod" targetNodeId="1090857639744" />
+                <link role="substituteHandlerQueryBody" targetNodeId="1090857639706" />
                 <link role="nodeSubstituteItemClass" metaClass="aggregation">
                   <node type="jetbrains.mps.baseLanguage.JavaClass" id="1090857639697">
                     <link role="method" metaClass="aggregation">
@@ -16561,36 +15044,20 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1090857639708">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081940361950" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090857639709">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081940432047" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090857639710">
-                                            <link role="variableDeclaration" targetNodeId="1090857639699" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090857639710">
+                                        <link role="variableDeclaration" targetNodeId="1090857639699" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090857639711">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090857639712">
-                                            <link role="variableDeclaration" targetNodeId="1090857639701" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090857639712">
+                                        <link role="variableDeclaration" targetNodeId="1090857639701" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090857639713">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090857639714">
-                                            <link role="variableDeclaration" targetNodeId="1090857639703" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090857639714">
+                                        <link role="variableDeclaration" targetNodeId="1090857639703" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -16690,25 +15157,14 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1090857639732">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081508889798" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090857639733">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081508889801" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090857639734">
-                                            <link role="variableDeclaration" targetNodeId="1090857639725" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090857639734">
+                                        <link role="variableDeclaration" targetNodeId="1090857639725" />
                                         <property name="name" />
                                       </node>
                                     </link>
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090857639735">
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090857639736">
-                                            <link role="variableDeclaration" targetNodeId="1090857639727" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090857639736">
+                                        <link role="variableDeclaration" targetNodeId="1090857639727" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -16788,14 +15244,8 @@
                                   <node type="jetbrains.mps.baseLanguage.MethodCall" id="1090857639750">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1081514252720" />
                                     <link role="actualArgument" metaClass="aggregation">
-                                      <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090857639751">
-                                        <link role="parameterDeclaration" targetNodeId="13.1081514252732" />
-                                        <link role="expression" metaClass="aggregation">
-                                          <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090857639752">
-                                            <link role="variableDeclaration" targetNodeId="1090857639745" />
-                                            <property name="name" />
-                                          </node>
-                                        </link>
+                                      <node type="jetbrains.mps.baseLanguage.ParameterReference" id="1090857639752">
+                                        <link role="variableDeclaration" targetNodeId="1090857639745" />
                                         <property name="name" />
                                       </node>
                                     </link>
@@ -16966,25 +15416,14 @@
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090857631671">
-                                <link role="parameterDeclaration" targetNodeId="13.1081508092454" />
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1090857631672">
-                                    <link role="variableDeclaration" targetNodeId="1090857631656" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1090857631672">
+                                <link role="variableDeclaration" targetNodeId="1090857631656" />
                                 <property name="name" />
                               </node>
                             </link>
                             <link role="actualArgument" metaClass="aggregation">
-                              <node type="jetbrains.mps.baseLanguage.ActualArgument" id="1090857631673">
-                                <link role="expression" metaClass="aggregation">
-                                  <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1090857631674">
-                                    <link role="variableDeclaration" targetNodeId="1090857631650" />
-                                    <property name="name" />
-                                  </node>
-                                </link>
+                              <node type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1090857631674">
+                                <link role="variableDeclaration" targetNodeId="1090857631650" />
                                 <property name="name" />
                               </node>
                             </link>
