@@ -7,6 +7,7 @@ import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ProjectPane;
+import jetbrains.mps.ide.usageView.UsagesModel_SemanticNode;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
@@ -154,6 +155,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     popupMenu.addSeparator();
     popupMenu.add(createGoByReferenceMenu(selectedNode));
     popupMenu.add(createGoByBackReferenceMenu(selectedNode));
+    popupMenu.add(createFindUsagesAction(selectedNode));
     popupMenu.show(AbstractEditorComponent.this, e.getX(), e.getY());
   }
 
@@ -211,6 +213,15 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       menu.add(action);
     }
     return menu;
+  }
+
+  private Action createFindUsagesAction(final SemanticNode node) {
+    return new AbstractAction("Find Usages") {
+      public void actionPerformed(ActionEvent e) {
+        UsagesModel_SemanticNode usageModel = new UsagesModel_SemanticNode(node);
+        ((IdeMain)IdeMain.instance()).showUsagesView(usageModel);
+      }
+    };
   }
 
   private JMenu createGoByBackReferenceMenu(SemanticNode node) {
