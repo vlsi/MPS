@@ -37,8 +37,6 @@ public abstract class BaseDialog extends JDialog {
     setVisible(true);
   }
 
-
-
   protected abstract JButton[] createButtons();
 
   protected abstract JComponent getMainComponent();
