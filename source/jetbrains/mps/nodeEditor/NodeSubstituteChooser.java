@@ -14,6 +14,8 @@ import java.util.List;
  * Created Sep 16, 2003
  */
 public class NodeSubstituteChooser {
+  static final int MAX_MENU_LEN = 30;
+  static final int SCROLLER_WIDTH = 7;
 
   private PopupWindow myPopupWindow = null;
   private boolean isChooserActivated = false;
@@ -34,7 +36,7 @@ public class NodeSubstituteChooser {
   }
 
   private PopupWindow getPopupWindow() {
-    if (myPopupWindow == null) {
+    if(myPopupWindow == null) {
       myPopupWindow = new PopupWindow(getEditorWindow());
     }
     return myPopupWindow;
@@ -42,7 +44,7 @@ public class NodeSubstituteChooser {
 
   private Window getEditorWindow() {
     Component component = myEditorComponent;
-    while (!(component instanceof Window)) {
+    while(!(component instanceof Window)) {
       component = component.getParent();
     }
     return (Window) component;
@@ -67,7 +69,7 @@ public class NodeSubstituteChooser {
   }
 
   protected NodeSubstitutePatternEditor getPatternEditor() {
-    if (myPatternEditor == null) {
+    if(myPatternEditor == null) {
       myPatternEditor = new NodeSubstitutePatternEditor();
     }
     return myPatternEditor;
@@ -78,8 +80,8 @@ public class NodeSubstituteChooser {
   }
 
   public void setVisible(boolean b) {
-    if (isChooserActivated != b) {
-      if (b) {
+    if(isChooserActivated != b) {
+      if(b) {
         getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize);
         myNodeSubstituteInfo.invalidateActions();
         rebuildMenuEntries();
@@ -101,7 +103,7 @@ public class NodeSubstituteChooser {
     String pattern = getPatternEditor().getPattern();
     List<INodeSubstituteAction> matchingActions = myNodeSubstituteInfo.getMatchingActions(pattern);
     myMenuSubstituteEntries = new LinkedList<INodeSubstituteAction>(matchingActions);
-    if (myMenuSubstituteEntries.size() == 0) {
+    if(myMenuSubstituteEntries.size() == 0) {
       myMenuEmpty = true;
       myMenuSubstituteEntries.add(new AbstractNodeSubstituteAction() {
         public String getName() {
@@ -116,7 +118,7 @@ public class NodeSubstituteChooser {
 
     // cache strings
     myStrings = new String[myMenuSubstituteEntries.size()];
-    for (int i = 0; i < myMenuSubstituteEntries.size(); i++) {
+    for(int i = 0; i < myMenuSubstituteEntries.size(); i++) {
       INodeSubstituteAction entry = myMenuSubstituteEntries.get(i);
       myStrings[i] = entry.getName();
     }
@@ -128,28 +130,27 @@ public class NodeSubstituteChooser {
 
   public boolean processKeyPressed(KeyEvent keyEvent) {
 
-    if (getPatternEditor().processKeyPressed(keyEvent)) {
-      if (isPopupActivated) {
+    if(getPatternEditor().processKeyPressed(keyEvent)) {
+      if(isPopupActivated) {
         rebuildMenuEntries();
-        getPopupWindow().relayout();
         repaintPopupMenu();
       }
       return true;
     }
 
-    if (keyEvent.getKeyCode() == KeyEvent.VK_ESCAPE) {
+    if(keyEvent.getKeyCode() == KeyEvent.VK_ESCAPE) {
       setVisible(false);
       return true;
     }
 
-    if (isPopupActivated) {
+    if(isPopupActivated) {
       return menu_processKeyPressed(keyEvent);
     }
 
-    if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER || (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown())) {
+    if(keyEvent.getKeyCode() == KeyEvent.VK_ENTER || (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown())) {
       String pattern = getPatternEditor().getPattern();
       List<INodeSubstituteAction> matchingActions = myNodeSubstituteInfo.getMatchingActions(pattern);
-      if (matchingActions.size() == 1) {
+      if(matchingActions.size() == 1) {
         setVisible(false);
         CommandUtil.substituteNode(matchingActions.get(0), pattern, myNodeSubstituteInfo, myEditorComponent.getContext());
       }
@@ -160,20 +161,56 @@ public class NodeSubstituteChooser {
 
   private boolean menu_processKeyPressed(KeyEvent keyEvent) {
     String[] strings = getStrings();
-    if (strings.length > 0) {
-      if (keyEvent.getKeyCode() == KeyEvent.VK_UP) {
+    if(strings.length > 0) {
+      if(keyEvent.getKeyCode() == KeyEvent.VK_UP) {
         getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() - 1);
         repaintPopupMenu();
-        if (!myMenuEmpty) {
+        if(!myMenuEmpty) {
           myPatternEditor.setText(getPopupWindow().getSelectedText());
           myPatternEditor.setCaretPosition(getPopupWindow().getSelectedText().length());
         }
         return true;
       }
-      if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN) {
+      if(keyEvent.getKeyCode() == KeyEvent.VK_DOWN) {
         getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() + 1);
         repaintPopupMenu();
-        if (!myMenuEmpty) {
+        if(!myMenuEmpty) {
+          myPatternEditor.setText(getPopupWindow().getSelectedText());
+          myPatternEditor.setCaretPosition(getPopupWindow().getSelectedText().length());
+        }
+        return true;
+      }
+      if(keyEvent.getKeyCode() == KeyEvent.VK_PAGE_UP) {
+        getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() - MAX_MENU_LEN);
+        repaintPopupMenu();
+        if(!myMenuEmpty) {
+          myPatternEditor.setText(getPopupWindow().getSelectedText());
+          myPatternEditor.setCaretPosition(getPopupWindow().getSelectedText().length());
+        }
+        return true;
+      }
+      if(keyEvent.getKeyCode() == KeyEvent.VK_PAGE_DOWN) {
+        getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() + MAX_MENU_LEN);
+        repaintPopupMenu();
+        if(!myMenuEmpty) {
+          myPatternEditor.setText(getPopupWindow().getSelectedText());
+          myPatternEditor.setCaretPosition(getPopupWindow().getSelectedText().length());
+        }
+        return true;
+      }
+      if(keyEvent.getKeyCode() == KeyEvent.VK_HOME) {
+        getPopupWindow().setSelectionIndex(0);
+        repaintPopupMenu();
+        if(!myMenuEmpty) {
+          myPatternEditor.setText(getPopupWindow().getSelectedText());
+          myPatternEditor.setCaretPosition(getPopupWindow().getSelectedText().length());
+        }
+        return true;
+      }
+      if(keyEvent.getKeyCode() == KeyEvent.VK_END) {
+        getPopupWindow().setSelectionIndex(strings.length - 1);
+        repaintPopupMenu();
+        if(!myMenuEmpty) {
           myPatternEditor.setText(getPopupWindow().getSelectedText());
           myPatternEditor.setCaretPosition(getPopupWindow().getSelectedText().length());
         }
@@ -181,8 +218,8 @@ public class NodeSubstituteChooser {
       }
     }
 
-    if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER || (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown())) {
-      if (!myMenuEmpty) {
+    if(keyEvent.getKeyCode() == KeyEvent.VK_ENTER || (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown())) {
+      if(!myMenuEmpty) {
         String pattern = getPatternEditor().getPattern();
         INodeSubstituteAction entry = myMenuSubstituteEntries.get(myPopupWindow.getSelectionIndex());
         setVisible(false);
@@ -194,13 +231,16 @@ public class NodeSubstituteChooser {
   }
 
   private void repaintPopupMenu() {
-    if (isPopupActivated) {
+    if(isPopupActivated) {
+      getPopupWindow().relayout();
       getPopupWindow().repaint();
     }
   }
 
   private class PopupWindow extends JWindow {
     private int selectionIndex = 0;
+    private int firstVisibleIndex = 0;
+    private int lastVisibleIndex = 0;
 
     public PopupWindow(Window owner) {
       super(owner);
@@ -211,28 +251,25 @@ public class NodeSubstituteChooser {
     }
 
     public void setSelectionIndex(int index) {
-      if (index < 0) {
+      if(index < 0) {
         index = 0;
       }
-      if (index >= getStrings().length) {
-        index = getStrings().length - 1;
+      int fullLength = getStrings().length;
+      if(index >= fullLength) {
+        index = fullLength - 1;
       }
-      this.selectionIndex = index;
-    }
 
-    public void relayout() {
-      setSelectionIndex(getSelectionIndex());
-      String[] types = getStrings();
-      int h = 0;
-      int w = getWidth();
-      for (int i = 0; i < types.length; i++) {
-        String type = types[i];
-        TextLine textLine = new TextLine(type, this);
-        textLine.relayout();
-        h += textLine.getHeight();
-        w = Math.max(w, textLine.getWidth());
+      selectionIndex = index;
+      int listLength = Math.min(MAX_MENU_LEN, fullLength);
+      lastVisibleIndex = firstVisibleIndex + (listLength - 1);
+      if(index < firstVisibleIndex) {
+        firstVisibleIndex = index;
+        lastVisibleIndex = firstVisibleIndex + (listLength - 1);
+      } else if(index > lastVisibleIndex) {
+        lastVisibleIndex = index;
+        firstVisibleIndex = lastVisibleIndex - (listLength - 1);
       }
-      setSize(w, h);
+//      System.out.println("setSelection: selected=" + selectionIndex + " first=" + firstVisibleIndex + " last=" + lastVisibleIndex);
     }
 
     public String getSelectedText() {
@@ -240,29 +277,80 @@ public class NodeSubstituteChooser {
       return types[selectionIndex];
     }
 
+    public void relayout() {
+      setSelectionIndex(getSelectionIndex());
+      String[] types = getStrings();
+      int lineHeight = 0;
+      int w = getWidth()/* - SCROLLER_WIDTH*/;
+      for(int i = 0; i < types.length; i++) {
+        String type = types[i];
+        TextLine textLine = new TextLine(type, this);
+        textLine.relayout();
+        lineHeight = textLine.getHeight();
+        w = Math.max(w, textLine.getWidth());
+      }
+
+      int h = lineHeight * Math.min(MAX_MENU_LEN, types.length);
+//      if(firstVisibleIndex > 0) {
+//        h += lineHeight;
+//      }
+//      if(lastVisibleIndex < (types.length - 1)) {
+//        h += lineHeight;
+//      }
+      setSize(w/* + SCROLLER_WIDTH*/, h);
+//      System.out.println("relayout : w=" + w + " h=" + h + " line h=" + lineHeight);
+    }
+
     public void paint(Graphics g) {
+//      System.out.println("paint: selected=" + selectionIndex + " first=" + firstVisibleIndex + " last=" + lastVisibleIndex);
+      String[] types = getStrings();
+
       Rectangle bounds = g.getClipBounds();
       g.setColor(Color.CYAN);
       g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
       g.setColor(Color.GRAY);
       g.drawRect(bounds.x, bounds.y, bounds.width - 1, bounds.height - 1);
 
-      String[] types = getStrings();
-      int shiftX = 0;
+      boolean needScroller = firstVisibleIndex > 0 || lastVisibleIndex < (types.length - 1);
+      if(needScroller) {
+        int scrollerY = (int) (bounds.y + ((long) firstVisibleIndex * (long) bounds.height) / types.length);
+        int scrollerH = (int) (((long) (lastVisibleIndex - firstVisibleIndex + 1) * (long) bounds.height) / types.length);
+        Rectangle scrollerBounds = new Rectangle(bounds.x + bounds.width - SCROLLER_WIDTH, scrollerY, SCROLLER_WIDTH, scrollerH);
+        g.setColor(Color.LIGHT_GRAY);
+        g.fillRect(scrollerBounds.x, scrollerBounds.y, scrollerBounds.width, scrollerBounds.height);
+      }
+
       int shiftY = 0;
-      for (int i = 0; i < types.length; i++) {
-        String type = types[i];
-        TextLine textLine = new TextLine(type, this);
-        textLine.setSelectedBackgroundColor(Color.blue);
-        textLine.setSelectedTextColor(Color.white);
-        textLine.setTextColor(Color.black);
-        textLine.setSelectedBorderColor(null);
-        textLine.setBorderColor(null);
-        textLine.setCaretEnabled(false);
-        textLine.relayout();
-        textLine.paint(g, shiftX, shiftY, i == selectionIndex, false);
+//      if(firstVisibleIndex > 0) {
+//        TextLine textLine = createTextLine("   ...   ");
+//        textLine.paint(g, 0, shiftY, false, false);
+//        shiftY += textLine.getHeight();
+//        needScroller = true;
+//      }
+
+      for(int i = firstVisibleIndex; i <= lastVisibleIndex; i++) {
+        TextLine textLine = createTextLine(types[i]);
+        textLine.paint(g, 0, shiftY, i == selectionIndex, false);
         shiftY += textLine.getHeight();
       }
+
+//      if(lastVisibleIndex < (types.length - 1)) {
+//        TextLine textLine = createTextLine("   ...   ");
+//        textLine.paint(g, 0, shiftY, false, false);
+//        needScroller = true;
+//      }
+    }
+
+    private TextLine createTextLine(String text) {
+      TextLine textLine = new TextLine(text, this);
+      textLine.setSelectedBackgroundColor(Color.blue);
+      textLine.setSelectedTextColor(Color.white);
+      textLine.setTextColor(Color.black);
+      textLine.setSelectedBorderColor(null);
+      textLine.setBorderColor(null);
+      textLine.setCaretEnabled(false);
+      textLine.relayout();
+      return textLine;
     }
   }
 }
