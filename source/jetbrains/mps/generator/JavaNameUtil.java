@@ -36,6 +36,9 @@ public class JavaNameUtil {
     String packageName = "jetbrains.mps";
     String uniquePackageSegment = uniquePackageSegmentForModel(semanticModel);
     if(uniquePackageSegment.length() > 0) {
+      if(uniquePackageSegment.startsWith("jetbrains.mps") || uniquePackageSegment.startsWith("java.")) {
+        return uniquePackageSegment;
+      }
       return packageName + '.' + uniquePackageSegment;
     }
     return packageName;
