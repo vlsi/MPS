@@ -2,11 +2,19 @@ package jetbrains.mps.plugin;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.openapi.vfs.VirtualFileManager;
-import com.intellij.psi.PsiManager;
-import com.intellij.psi.PsiClass;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.roots.ProjectRootManager;
+import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.psi.*;
 import com.intellij.psi.search.GlobalSearchScope;
+import com.intellij.util.IncorrectOperationException;
+
+import java.util.List;
+import java.util.ArrayList;
+import java.io.File;
 
 /**
  * @author Kostik
@@ -32,14 +40,80 @@ public class MPSSupportHandler {
     return aspects[0] != null;
   }
 
-  public String createAspectFile(final String namespace) {
-
-    ApplicationManager.getApplication().runWriteAction(new Runnable() {
+  public String getAspectMethodIds(final String namespace, final String prefix) {
+    final List list = new ArrayList();
+    ApplicationManager.getApplication().runReadAction(new Runnable() {
       public void run() {
+        final PsiManager psiManager = PsiManager.getInstance(myProject);
+        PsiClass aspects = psiManager.findClass(namespace + ".Aspects", GlobalSearchScope.projectScope(myProject));
 
+        PsiMethod[] methods = aspects.getMethods();
+        for (int i = 0; i < methods.length; i++) {
+          PsiMethod method = methods[i];
+          if (!method.hasModifierProperty(PsiModifier.STATIC)) continue;
+          if (!method.getName().startsWith(prefix)) continue;
+          list.add(method.getName().substring(prefix.length()));
+        }
       }
     });
+    String result = "";
+    for (int i = 0; i < list.size(); i++) {
+      result += list.get(i).toString() + ";";
+    }
+    return result;
+  }
 
+
+  public String createAspectClass(final String namespace) {
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+      public void run() {
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          public void run() {
+            CommandProcessor.getInstance().executeCommand(myProject, new Runnable() {
+              public void run() {
+                final PsiManager psiManager = PsiManager.getInstance(myProject);
+                final ProjectRootManager rootManager = ProjectRootManager.getInstance(myProject);
+                VirtualFile sourceDir = null;
+                VirtualFile[] sourceRoots = rootManager.getContentSourceRoots();
+                for (int i = 0; i < sourceRoots.length; i++) {
+                  VirtualFile file = sourceRoots[i];
+                  if (file.getName().equals("source")) sourceDir = file;
+                  if (file.getName().equals("src")) sourceDir = file;
+                }
+                if (sourceDir == null) {
+                  System.out.println("I can't find directory with sources.");
+                  return;
+                }
+                PsiDirectory rootDir = psiManager.findDirectory(sourceDir);
+                try {
+                  createPackagesForNamespace(rootDir, namespace).createClass("Aspects");
+                } catch (IncorrectOperationException e) {
+                  e.printStackTrace();
+                }
+              }
+            }, "createAspectClass", "MPSPlugin");
+          }
+        });
+      }
+    }, ModalityState.NON_MMODAL);
     return "OK";
+  }
+
+  private PsiDirectory createPackagesForNamespace(PsiDirectory dir, String namespace) {
+    PsiDirectory current = dir;
+    try {
+      String[] elements = namespace.split("\\.");
+      for (int i = 0; i < elements.length; i++) {
+        String el = elements[i];
+        PsiDirectory next = current.findSubdirectory(el);
+        if (next == null) {
+          next = current.createSubdirectory(el);
+        }
+        current = next;
+      }
+    } catch (IncorrectOperationException e) {
+      e.printStackTrace();
+    }
+    return current;
   }
 }
