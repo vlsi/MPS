@@ -14,11 +14,10 @@ public class TextGenManager {
 
   public static TextGenManager instance() {
     if(myInstance == null) {
-      myInstance = new TextGenManager();
+      myInstance = new MappingTextGenManager();
     }
     return myInstance;
   }
-
 
   public String generateText(SemanticNode node) {
     TextGenBuffer buffer = new TextGenBuffer();
