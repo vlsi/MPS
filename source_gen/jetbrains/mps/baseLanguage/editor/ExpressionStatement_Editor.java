@@ -44,11 +44,13 @@ public class ExpressionStatement_Editor extends DefaultNodeEditor {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "expression");
         noRefCell.setEditable(true);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+        ExpressionStatement_DeleteNode.setCellActions(noRefCell, node);
         return noRefCell;
       }
     }
     EditorCell editorCell = context.createNodeCell(referencedNode);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    ExpressionStatement_DeleteNode.setCellActions(editorCell, node);
     return editorCell;
   }
 }
