@@ -96,6 +96,7 @@ public class MPSProject implements ModelLocator {
               ((ExternalizableComponent) getComponent(cls)).read(component);
             }
           } catch (Exception e) {
+            e.printStackTrace();
           }
         }
       }
