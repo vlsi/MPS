@@ -33,7 +33,7 @@ public class MPSProject {
 
   public MPSProject(File file) {
     myProjectFile = file;
-    if(myProjectFile != null) {
+    if (myProjectFile != null) {
       read(myProjectFile);
     }
   }
@@ -43,7 +43,7 @@ public class MPSProject {
   }
 
   public void read(File file) {
-    if(!myProjectFile.exists()) {
+    if (!myProjectFile.exists()) {
       return;
     }
     Document document;
@@ -59,10 +59,10 @@ public class MPSProject {
 
     Element rootElement = document.getRootElement();
     Element modelElement = rootElement.getChild(SEMANTIC_MODELS);
-    if(modelElement != null) {
+    if (modelElement != null) {
       Iterator models = modelElement.getChildren(SEMANTIC_MODEL).iterator();
       while (models.hasNext()) {
-        Element element = (Element)models.next();
+        Element element = (Element) models.next();
         Element modelFileElement = element.getChild(FILE);
         String modelFileName = modelFileElement.getAttributeValue(NAME);
         modelFileName = PathManager.getAbsolutePathByRelational(myProjectFile, modelFileName);
@@ -72,35 +72,46 @@ public class MPSProject {
   }
 
   public void save() {
+    mySemanticModels.saveAll();
+
     Element rootElement = new Element(PROJECT);
     Document document = new Document();
     document.setRootElement(rootElement);
     Element semanticModelsElement = new Element(SEMANTIC_MODELS);
     rootElement.addContent(semanticModelsElement);
-    SemanticModel[] semanticModels = mySemanticModels.semanticModels();
-    for (int i = 0; i < semanticModels.length; i++) {
-      SemanticModel semanticModel = semanticModels[i];
-      Element modelElement = new Element(SEMANTIC_MODEL);
-      semanticModelsElement.addContent(modelElement);
-      Element fileElement = new Element(FILE);
-      modelElement.addContent(fileElement);
-      String fileName = mySemanticModels.getFileName(semanticModel);
-      fileName = PathManager.getRelationalPathByAbsolute(myProjectFile, fileName);
-      fileElement.setAttribute(NAME, fileName);
-    }
+    // TODO: this code fails to on convertation of absolut path to relational path
+    // TODO: why save ALL dependent models in MPR file ???
+//    SemanticModel[] semanticModels = mySemanticModels.semanticModels();
+//    for (int i = 0; i < semanticModels.length; i++) {
+//      SemanticModel semanticModel = semanticModels[i];
+//      Element modelElement = new Element(SEMANTIC_MODEL);
+//      semanticModelsElement.addContent(modelElement);
+//      Element fileElement = new Element(FILE);
+//      modelElement.addContent(fileElement);
+//      String fileName = mySemanticModels.getFileName(semanticModel);
+//      fileName = PathManager.getRelationalPathByAbsolute(myProjectFile, fileName);
+//      fileElement.setAttribute(NAME, fileName);
+//    }
 
-    if(!myProjectFile.exists()) {
+    if (!myProjectFile.exists()) {
       try {
         myProjectFile.createNewFile();
       } catch (IOException e) {
         e.printStackTrace();
       }
+
+      // tmp: moved here
+      try {
+        JDOMUtil.writeDocument(document, myProjectFile);
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
     }
-    try {
-      JDOMUtil.writeDocument(document, myProjectFile);
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+//    try {
+//      JDOMUtil.writeDocument(document, myProjectFile);
+//    } catch (IOException e) {
+//      e.printStackTrace();
+//    }
   }
 
   public void setProjectFile(File projectFile) {
