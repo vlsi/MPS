@@ -51,6 +51,24 @@ public class MPSSupportHandler {
     return result;
   }
 
+  public String addImport(final String namespace, final String fqName) {
+    if (!isAspectsClassExist(namespace)) createAspectClass(namespace);
+    executeWriteAction(new Runnable() {
+      public void run() {
+        PsiManager manager = PsiManager.getInstance(myProject);
+        PsiClass aspectClass = getAspectsClass(namespace);
+        PsiJavaFile file = (PsiJavaFile) aspectClass.getContainingFile();
+        try {
+          PsiImportStatement importStatement = getPsiElementFactory().createImportStatement(manager.findClass(fqName, GlobalSearchScope.projectScope(myProject)));
+          file.getImportList().add(importStatement);
+        } catch (IncorrectOperationException e) {
+          e.printStackTrace();
+        }
+      }
+    });
+    return "OK";
+  }
+
 
   public String createAspectMethod(final String namespace, final String name, final String returnType, final String params) {
     if (!isAspectsClassExist(namespace)) createAspectClass(namespace);
