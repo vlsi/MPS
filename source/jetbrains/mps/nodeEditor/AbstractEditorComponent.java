@@ -758,7 +758,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (keyEvent.getKeyCode() == KeyEvent.VK_T && keyEvent.isControlDown()) {
       if (mySelectedCell != null) {
         SemanticNode selectedNode = mySelectedCell.getSemanticNode();
-        SemanticModelTypeChecker typeChecker = new SemanticModelTypeChecker(selectedNode.getSemanticModel());
+        SemanticModelTypeChecker typeChecker = new SemanticModelTypeChecker(selectedNode.getSemanticModel(), IdeMain.instance().getProject());
         System.out.println("--- Type System Info:");
         System.out.println("--- Node: " + selectedNode.getDebugText());
         TSStatus status = typeChecker.checkNodeType(selectedNode);

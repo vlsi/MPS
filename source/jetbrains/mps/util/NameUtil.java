@@ -1,5 +1,6 @@
 package jetbrains.mps.util;
 
+import jetbrains.mps.semanticModel.SemanticNode;
 
 
 /**
@@ -27,9 +28,9 @@ public class NameUtil {
 
   /**
    * "aaaBBB" -> "AAA_BBB"
-   * 
-   * @param s 
-   * @return 
+   *
+   * @param s
+   * @return
    */
   public static String toConstantName(String s) {
     if (s == null) {
@@ -69,5 +70,10 @@ public class NameUtil {
       return "";
     }
     return modelFQName.substring(0, offset);
+  }
+
+  public static String nodeFQName(SemanticNode node) {
+    String name = node.getName();
+    return node.getSemanticModel().getFQName() + "." + (name != null ? name : "");
   }
 }
