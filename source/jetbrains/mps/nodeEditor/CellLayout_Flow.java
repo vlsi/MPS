@@ -23,7 +23,7 @@ hStart |--------|                  |  | hEnd
   private int myWEnd = 0;
   private int myHEnd = 0;
   private int myRowCount = 1;
-  private int myMaxX = 200;
+  private int myMaxX = 400;
 
 
   public void setWStart(int WStart) {
