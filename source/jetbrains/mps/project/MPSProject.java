@@ -100,6 +100,7 @@ public class MPSProject {
           ContextUtil.initLocalContext(semanticModel, this);
         } catch (Exception e) {
           System.out.println("No context for model: " + semanticModel.getNamespace() + "." + semanticModel.getName());
+          e.printStackTrace();
         }
       }
 
