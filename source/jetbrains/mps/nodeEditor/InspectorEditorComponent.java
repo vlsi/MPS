@@ -6,13 +6,13 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.project.AbstractMPSProject;
 import jetbrains.mps.semanticModel.SemanticNode;
-
-import java.awt.*;
 
 public class InspectorEditorComponent extends AbstractEditorComponent {
   private EditorContext myEditorContext;
   private SemanticNode myInspectedNode;
+  private AbstractMPSProject myProject;
 
   public InspectorEditorComponent() {
     reinitEditor();
@@ -20,15 +20,19 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
   }
 
   private void reinitEditor() {
-    if(myInspectedNode == null) {
-      myEditorContext = new EditorContext(this, null);
+    if (myInspectedNode == null) {
+      myEditorContext = new EditorContext(this, null, myProject);
     } else {
-      myEditorContext = new EditorContext(this, myInspectedNode.getSemanticModel());
+      myEditorContext = new EditorContext(this, myInspectedNode.getSemanticModel(), myProject);
     }
   }
 
+  public void setProject(AbstractMPSProject project) {
+    myProject = project;
+  }
+
   public void inspectNode(SemanticNode semanticNode) {
-    if(myInspectedNode == semanticNode) {
+    if (myInspectedNode == semanticNode) {
       return;
     }
     myInspectedNode = semanticNode;
@@ -42,10 +46,10 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
   }
 
   public EditorCell createRootCell() {
-    if(myInspectedNode == null || myInspectedNode.isDeleted()) {
-      return EditorCell_Constant.create(getContext(), myInspectedNode, "<no inspect info>", true);
+    if (myInspectedNode == null || myInspectedNode.isDeleted()) {
+      return EditorCell_Constant.create(getContext(), null, "<no inspect info>", true);
     }
-    return getContext().createInspectedCell(myInspectedNode);
+    return EditorManager.instance().createInspectedCell(getContext(), myInspectedNode);
   }
 
   public SemanticNode getInspectedNode() {

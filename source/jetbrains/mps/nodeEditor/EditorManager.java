@@ -2,13 +2,14 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.bootstrap.structureLanguage.SemanticTypeDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IStatus;
+import jetbrains.mps.ide.diagnostic.Logger;
+import jetbrains.mps.project.AbstractMPSProject;
+import jetbrains.mps.semanticModel.Language;
+import jetbrains.mps.semanticModel.SemanticModel;
 import jetbrains.mps.semanticModel.SemanticModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
-import jetbrains.mps.semanticModel.SemanticModel;
-import jetbrains.mps.semanticModel.Language;
-import jetbrains.mps.project.AbstractMPSProject;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.diagnostic.Logger;
 
 /**
  * Author: Sergey Dmitriev.
@@ -16,71 +17,87 @@ import jetbrains.mps.ide.diagnostic.Logger;
  */
 public class EditorManager {
   private static Logger LOG = Logger.getInstance("jetbrains.mps.nodeEditor.EditorManager");
+  private static EditorManager myInstance;
   public static String NODE_TO_PLACE_AFTER = "nodeToPlaceAfter";
 
-  private EditorContext myEditorContext;
-
-  public EditorManager(EditorContext editorContext) {
-    this.myEditorContext = editorContext;
+  private EditorManager() {
   }
 
-  public EditorCell createEditorCell(SemanticNode node) {
-    DefaultNodeEditor editor = getEditor(node);
-    EditorCell nodeCell = createEditorCell(editor, node);
+  public static EditorManager instance() {
+    if (myInstance == null) {
+      myInstance = new EditorManager();
+    }
+    return myInstance;
+  }
+
+  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+    EditorCell editorCell = createEditorCell_internal(context, node);
+    IStatus status = (IStatus) node.getUserObject(SemanticNode.ERROR_STATUS);
+    if (status != null) {
+      editorCell.setHighlighted(true);
+    }
+    return editorCell;
+  }
+
+  private EditorCell createEditorCell_internal(EditorContext context, SemanticNode node) {
+    INodeEditor editor = getEditor(context, node);
+    EditorCell nodeCell = editor.createEditorCell(context, node);
     if (node.getChildCount(NODE_TO_PLACE_AFTER) == 0) {
       return nodeCell;
     }
 
-    EditorCell_Collection rowWrapper = EditorCell_Collection.createHorizontal(myEditorContext, node);
+    EditorCell_Collection rowWrapper = EditorCell_Collection.createHorizontal(context, node);
     rowWrapper.setSelectable(false);
     rowWrapper.addEditorCell(nodeCell);
     SemanticNode afterNode = node.getChild(NODE_TO_PLACE_AFTER);
-    rowWrapper.addEditorCell(createEditorCell(getEditor(afterNode), afterNode));
+    rowWrapper.addEditorCell(getEditor(context, afterNode).createEditorCell(context, afterNode));
     return rowWrapper;
   }
 
-  private EditorCell createEditorCell(DefaultNodeEditor editor, SemanticNode node) {
+  public EditorCell createInspectedCell(EditorContext context, SemanticNode node) {
+    INodeEditor editor = getEditor(context, node);
+    return editor.createInspectedCell(context, node);
+  }
+
+  private INodeEditor getEditor(EditorContext context, SemanticNode node) {
+    INodeEditor editor = (INodeEditor) node.getUserObject(this.getClass());
     if (editor != null) {
-      return editor.createEditorCell(myEditorContext, node);
-    }
-    return EditorCell_Error.create(myEditorContext, node, "no editor found");
-  }
-
-  public EditorCell createInspectedCell(SemanticNode node) {
-    DefaultNodeEditor editor = getEditor(node);
-    if (editor != null) {
-      EditorCell inspectedCell = editor.createInspectedCell(myEditorContext, node);
-      if (inspectedCell != null) {
-        return inspectedCell;
-      }
-    }
-    return EditorCell_Constant.create(myEditorContext, node, node.getDebugText(), true);
-  }
-
-  private DefaultNodeEditor getEditor(SemanticNode node) {
-    DefaultNodeEditor semanticNodeEditor = (DefaultNodeEditor) node.getUserObject(this.getClass());
-    if (semanticNodeEditor != null) {
-      return semanticNodeEditor;
+      return editor;
     }
 
-    semanticNodeEditor = loadEditor(node);
-    node.putUserObject(this.getClass(), semanticNodeEditor);
-    return semanticNodeEditor;
+    editor = loadEditor(context, node);
+    if (editor == null) {
+      editor = new DefaultNodeEditor();
+    }
+    node.putUserObject(this.getClass(), editor);
+    return editor;
   }
 
-  private DefaultNodeEditor loadEditor(SemanticNode node) {
+  private INodeEditor loadEditor(EditorContext context, SemanticNode node) {
 
-    SemanticTypeDeclaration typeDeclaration = SemanticModelUtil.getTypeDeclaration(node);
+    Language language = Language.getLanguage(node, context.getProject());
+    if (language == null) {
+      (new RuntimeException("Error loading editor for node \"" + node.getDebugText() + "\" : couldn't find language.")).printStackTrace();
+      return null;
+    }
+    SemanticTypeDeclaration typeDeclaration = language.findTypeDeclaration(SemanticModelUtil.getNodeTypeName(node));
     if (typeDeclaration == null) {
       (new RuntimeException("Error loading editor for node \"" + node.getDebugText() + "\" : couldn't find the type declaration.")).printStackTrace();
       return null;
     }
 
+    String languageEditorFQName = language.getLanguageEditorFQName();
+    if (languageEditorFQName == null) {
+      (new RuntimeException("Error loading editor for node \"" + node.getDebugText() + "\" : no editor model.")).printStackTrace();
+      return null;
+    }
+
+    String editorClassPackageName = "jetbrains.mps." + languageEditorFQName;
+    String editorClassName = typeDeclaration.getName() + "_Editor";
+
     try {
-      Class nodeEditorClass = getNodeEditorClass(typeDeclaration);
-      DefaultNodeEditor semanticNodeEditor = (DefaultNodeEditor) nodeEditorClass.newInstance();
-//      semanticNodeEditor.setSemanticNode(node);
-      return semanticNodeEditor;
+      Class editorClass = Class.forName(editorClassPackageName + '.' + editorClassName);
+      return (INodeEditor) editorClass.newInstance();
     } catch (ClassNotFoundException e) {
       e.printStackTrace();  //To change body of catch statement use Options | File Templates.
     } catch (InstantiationException e) {
@@ -94,6 +111,10 @@ public class EditorManager {
     return null;
   }
 
+
+  /**
+   * @deprecated
+   */
   public static Class getNodeEditorClass(SemanticTypeDeclaration typeDeclaration) throws ClassNotFoundException {
 
     // 1 st try "trial" editors
