@@ -20,18 +20,24 @@ public class CellAction_DeleteReference extends EditorCellAction {
 
   public boolean canExecute(EditorContext context) {
     SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(mySource, myRole);
-    if(linkDeclaration != null) {
+    if (linkDeclaration != null) {
       String sourceCardinality = linkDeclaration.getSourceCardinality();
       return (SemanticLinkDeclaration.CARDINALITY_0_1.equals(sourceCardinality) ||
-          SemanticLinkDeclaration.CARDINALITY_1.equals(sourceCardinality));
+              SemanticLinkDeclaration.CARDINALITY_1.equals(sourceCardinality));
     }
 
     return false;
   }
 
   public void execute(EditorContext context) {
-    SemanticModel semanticModel = mySource.getSemanticModel();
-    mySource.removeReferences(myRole, null);
-    semanticModel.fireNodeDeletedEvent(mySource);
+    SemanticLinkDeclaration linkDeclaration = SemanticModelUtil.getLinkDeclaration(mySource, myRole);
+    if (SemanticLinkDeclaration.AGGREGATION.equals(linkDeclaration)) {
+      SemanticNode referent = mySource.getReferent(SemanticModelUtil.getGenuineLinkRole(linkDeclaration), (SemanticNode) null);
+      referent.delete();
+    } else {
+      SemanticModel semanticModel = mySource.getSemanticModel();
+      mySource.removeReferences(myRole, null);
+      semanticModel.fireNodeDeletedEvent(mySource);
+    }
   }
 }

@@ -31,7 +31,7 @@ public class IfStatement_Editor extends SemanticNodeEditor {
     if(this.handleConditionalQuery_1075379536707(node)) {
       editorCell.addEditorCell(this.createIfFalseBranch(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstantCell3(editorContext, node, "}"));
+    editorCell.addEditorCell(this.createConstantCell6(editorContext, node, "}"));
     return editorCell;
   }
   public EditorCell createHeaderRow(EditorContext editorContext, SemanticNode node) {
@@ -86,12 +86,59 @@ public class IfStatement_Editor extends SemanticNodeEditor {
   }
   public EditorCell createIfFalseBranch(EditorContext editorContext, SemanticNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setSelectable(false);
     editorCell.setGridLayout(false);
-    editorCell.addEditorCell(this.createConstantCell2(editorContext, node, "} else {"));
+    editorCell.addEditorCell(this.createRowCell(editorContext, node));
     editorCell.addEditorCell(this.createIfFalseBox(editorContext, node));
     return editorCell;
   }
+  public EditorCell createRowCell(EditorContext editorContext, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setGridLayout(false);
+    editorCell.addEditorCell(this.createConstantCell2(editorContext, node, "} else"));
+    if(this.handleConditionalQuery_1082465672377(node)) {
+      editorCell.addEditorCell(this.createRowCell1(editorContext, node));
+    }
+    editorCell.addEditorCell(this.createConstantCell5(editorContext, node, "{"));
+    return editorCell;
+  }
   public EditorCell createConstantCell2(EditorContext editorContext, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setEditable(true);
+    IfStatement_ElseKeywordActions.setCellActions(editorCell, node);
+    return editorCell;
+  }
+  public EditorCell createRowCell1(EditorContext editorContext, SemanticNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setGridLayout(false);
+    editorCell.addEditorCell(this.createConstantCell3(editorContext, node, "if("));
+    editorCell.addEditorCell(this.createElseConditionCell(editorContext, node));
+    editorCell.addEditorCell(this.createConstantCell4(editorContext, node, ")"));
+    return editorCell;
+  }
+  public EditorCell createConstantCell3(EditorContext editorContext, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
+    return editorCell;
+  }
+  public EditorCell createElseConditionCell(EditorContext editorContext, SemanticNode node) {
+    SemanticNode elseCondition = node.getReferent("elseCondition", (SemanticNode)null);
+    EditorCell editorCell = null;
+    if(elseCondition != null) {
+      editorCell = this.nodeCell(editorContext, elseCondition);
+      IfStatement_ElseConditionActions.setCellActions(editorCell, node);
+    } else {
+      editorCell = EditorCell_Constant.create(editorContext, node, "", true);
+      ((EditorCell_Label)editorCell).setEditable(true);
+      IfStatement_ElseConditionActions.setCellActions(editorCell, node);
+    }
+    return editorCell;
+  }
+  public EditorCell createConstantCell4(EditorContext editorContext, SemanticNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
+    return editorCell;
+  }
+  public EditorCell createConstantCell5(EditorContext editorContext, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
     return editorCell;
   }
@@ -117,12 +164,19 @@ public class IfStatement_Editor extends SemanticNodeEditor {
     }
     return editorCell;
   }
-  public EditorCell createConstantCell3(EditorContext editorContext, SemanticNode node, String text) {
+  public EditorCell createConstantCell6(EditorContext editorContext, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(editorContext, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setEditable(false);
+    IfStatement_IfClosingBracketActions.setCellActions(editorCell, node);
     return editorCell;
+  }
+  public boolean handleConditionalQuery_1082465672377(SemanticNode node) {
+    IfStatement ifStatement = (IfStatement)node;
+    return ifStatement.getElseCondition() != null;
   }
   public boolean handleConditionalQuery_1075379536707(SemanticNode node) {
     IfStatement ifStatement = (IfStatement)node;
-    return FreeMethodsUtil_baseLanguage_context._SemanticNodeCondition_HasFalseBranch(node);
+    return ifStatement.getIfFalse() != null;
   }
 }
