@@ -812,9 +812,16 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     peekKeyboardHandler().processKeyReleased(getContext(), keyEvent);
   }
 
-  private void stopRecordingIfPossible() {
+  protected void startRecording() {
+    myRecorder = new EventRecorder();
+    IdeMain.instance().getInspectorPane().getInspector().setEventRecorder(myRecorder);
+    myRecorder.startRecording();
+  }
+
+  protected void stopRecordingIfPossible() {
     if (myRecorder != null) {
       myRecorder.stopRecording();
+      IdeMain.instance().getInspectorPane().getInspector().setEventRecorder(null);
       myRecorder = null;
     }
   }
@@ -1105,9 +1112,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   protected class StartRecordingAction extends AbstractAction {
     public void actionPerformed(ActionEvent e) {
-      myRecorder = new EventRecorder();
-      IdeMain.instance().getInspectorPane().getInspector().setEventRecorder(myRecorder);
-      myRecorder.startRecording();
+      startRecording();
     }
   }
 
