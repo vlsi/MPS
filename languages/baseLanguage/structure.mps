@@ -263,8 +263,8 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1070567750949">
       <property name="role" value="constructorDeclaration" />
-      <link role="target" targetNodeId="1068580123140" />
       <link role="specializedLink" targetNodeId="1068499141037" />
+      <link role="target" targetNodeId="1068580123140" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1076339062843">
       <property name="sourceCardinality" value="0..n" />
@@ -316,7 +316,7 @@
     <property name="name" value="FieldReference" />
     <link role="extends" targetNodeId="1068498886296" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107216539974">
-      <property name="value" value=".&lt;field&gt;" />
+      <property name="value" value="." />
       <link role="conceptPropertyDeclaration" targetNodeId="34.1106346943066" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107216550555">
@@ -334,8 +334,8 @@
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="fieldDeclaration" />
-      <link role="specializedLink" targetNodeId="1068581517664" />
       <link role="target" targetNodeId="1068390468200" />
+      <link role="specializedLink" targetNodeId="1068581517664" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068580123159">
@@ -371,7 +371,7 @@
     <property name="name" value="InstanceMethodCall" />
     <link role="extends" targetNodeId="1068499141036" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107216670785">
-      <property name="value" value=".&lt;instance method&gt;" />
+      <property name="value" value="." />
       <link role="conceptPropertyDeclaration" targetNodeId="34.1106346943066" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107216711834">
@@ -389,8 +389,8 @@
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="instanceMethodDeclaration" />
-      <link role="target" targetNodeId="1068580123165" />
       <link role="specializedLink" targetNodeId="1068499141037" />
+      <link role="target" targetNodeId="1068580123165" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068580123165">
@@ -1085,8 +1085,8 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration" id="1084374412312">
     <property name="name" value="Visibility" />
-    <link role="defaultMember" targetNodeId="1084374412313" />
     <link role="memberDataType" targetNodeId="4.1082983041843" />
+    <link role="defaultMember" targetNodeId="1084374412313" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1084374412313">
       <property name="externalValue" value="public" />
       <property name="internalValue" value="public" />
@@ -1157,8 +1157,8 @@
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="featureCompositionDeclaration" />
-      <link role="specializedLink" targetNodeId="1107535970390" />
       <link role="target" targetNodeId="1106155080112" />
+      <link role="specializedLink" targetNodeId="1107535970390" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1106354127000">
       <property name="sourceCardinality" value="0..n" />
@@ -1362,8 +1362,8 @@
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="interface" />
-      <link role="specializedLink" targetNodeId="1107535924139" />
       <link role="target" targetNodeId="1107796713796" />
+      <link role="specializedLink" targetNodeId="1107535924139" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1108158822274">
