@@ -10,18 +10,27 @@ import rubyWeb.paper.TermTag;
 import rubyWeb.paper.CiteTag;
 
 import java.util.List;
+import java.util.ArrayList;
 
 /**
  * @author Kostik
  */
 public class TextUtil {
 
+  private static String[] removeEmptyStrings(String[] strings) {
+    List<String> result = new ArrayList<String>();
+    for (String s : strings) {
+      if (s != null && s.length() > 0) result.add(s);
+    }
+    return result.toArray(new String[result.size()]);
+  }
+
   static String[] splitToSentences(String text) {
-    return text.split("\\.\\s*+");
+    return removeEmptyStrings(text.split("\\.\\s*+"));
   }
 
   static String[] splitToWords(String sentence) {
-    return sentence.split("\\s++");
+    return removeEmptyStrings(sentence.split("\\s++"));
   }
 
   public static Text toText(SModel model, String text) {
@@ -128,8 +137,6 @@ public class TextUtil {
     }
     if (sentence.getWordsCount() != 0 && !lastIsTag) {
       element.addContent(".");
-    } else {
-      System.out.println("Skiping");
     }
   }
 
