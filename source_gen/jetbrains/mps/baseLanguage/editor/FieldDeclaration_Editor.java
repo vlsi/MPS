@@ -71,11 +71,11 @@ public class FieldDeclaration_Editor extends SemanticNodeEditor {
     EditorCell editorCell = null;
     if(initializer != null) {
       editorCell = this.nodeCell(editorContext, initializer);
-      _VariableInitializer_ActionSet.setCellActions(editorCell, node);
+      __VariableInitializer_ActionSet.setCellActions(editorCell, node);
     } else {
       editorCell = EditorCell_Constant.create(editorContext, node, "", true);
       ((EditorCell_Label)editorCell).setEditable(true);
-      _VariableInitializer_ActionSet.setCellActions(editorCell, node);
+      __VariableInitializer_ActionSet.setCellActions(editorCell, node);
     }
     return editorCell;
   }
