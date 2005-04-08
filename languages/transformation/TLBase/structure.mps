@@ -147,6 +147,13 @@
       <property name="role" value="modifiedSwitch" />
       <link role="target" targetNodeId="1112730859144" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1112910338334">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="targetCardinality" value="0..n" />
+      <property name="role" value="includedSwitch" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1112911581741" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1112731491355">
       <property name="value" value="template switch" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
@@ -189,6 +196,15 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1107214812281" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1112731629154">
+      <property name="sourceCardinality" value="1" />
+      <property name="targetCardinality" value="0..n" />
+      <property name="role" value="templateSwitch" />
+      <link role="target" targetNodeId="1112730859144" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1112911581741">
+    <property name="name" value="TemplateSwitchReference" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1112911598335">
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="templateSwitch" />
