@@ -130,7 +130,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
         // surround with substitution
         if ((keyEvent.getKeyCode() == KeyEvent.VK_T && keyEvent.isControlDown() && keyEvent.isAltDown())) {
-          if (editor.activateSurroundWithSubstituteChooser(selectedCell, false)) {
+          if (editor.activateSurroundWithSubstituteChooser(selectedCell, true)) {
             return true;
           }
         }

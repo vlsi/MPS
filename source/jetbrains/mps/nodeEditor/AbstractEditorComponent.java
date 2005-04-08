@@ -1069,7 +1069,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return activateNodeSubstituteChooser(editorCell, substituteInfo, resetPattern);
   }
 
-  private boolean activateNodeSubstituteChooser(EditorCell editorCell, INodeSubstituteInfo substituteInfo, boolean resetPattern) {
+  public boolean activateNodeSubstituteChooser(EditorCell editorCell, INodeSubstituteInfo substituteInfo, boolean resetPattern) {
     if (substituteInfo == null) {
       return false;
     }
@@ -1111,11 +1111,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
   }
 
-  NodeRangeSelection getNodeRangeSelection() {
+  public NodeRangeSelection getNodeRangeSelection() {
     return myNodeRangeSelection;
   }
 
-  CellRangeSelection getCellRangeSelection() {
+  public CellRangeSelection getCellRangeSelection() {
     return myCellRangeSelection;
   }
 
