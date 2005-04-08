@@ -6,11 +6,6 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.ide.command.CommandProcessor;
-
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.util.List;
 
@@ -37,25 +32,8 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
           return true;
         } else {
           // show menu
-          JPopupMenu menu = new JPopupMenu();
-          for (int i = 0; i < actions.size(); i++) {
-            final EditorCellKeyMapAction keyMapAction = actions.get(i);
-            JMenuItem menuItem = new JMenuItem(keyMapAction.getDescriptionText());
-            menuItem.addActionListener(new ActionListener() {
-              public void actionPerformed(ActionEvent e) {
-                CommandProcessor commandProcessor = CommandProcessor.instance();
-                commandProcessor.executeCommand(new Runnable() {
-                  public void run() {
-                    keyMapAction.execute(keyEvent, editorContext);
-                  }
-                }, keyMapAction.getDescriptionText());
-              }
-            });
-            menu.add(menuItem);
-          }
-          AbstractEditorComponent component = editorContext.getNodeEditorComponent();
-          menu.show(component, selectedCell.getX(), selectedCell.getY() + selectedCell.getHeight());
-          return true;             
+          EditorUtil.showActionsMenu(actions, keyEvent, editorContext, selectedCell);
+          return true;
         }
       }
     }

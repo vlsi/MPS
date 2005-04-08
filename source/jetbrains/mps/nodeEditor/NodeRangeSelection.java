@@ -16,6 +16,7 @@ import java.awt.*;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ArrayList;
 
 // ----- range selection ----
 
@@ -112,6 +113,25 @@ public class NodeRangeSelection implements IKeyboardHandler {
   }
 
   public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
+
+    if (getNodes().size() != 0) {
+      AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
+      SemanticNode node = getNodes().get(0);
+      EditorCell cell = editor.findNodeCell(node);
+      List<EditorCellKeyMapAction> actions = EditorUtil.getKeyMapActionsForEvent(cell, keyEvent, editorContext);
+      if (actions != null) {
+        if (actions.size() == 1) {
+          actions.get(0).execute(keyEvent, editorContext);
+          return true;
+        } else {
+          // show menu
+          EditorUtil.showActionsMenu(actions, keyEvent, editorContext, cell);
+          return true;
+        }
+      }
+    }
+
+
 
     String actionType = myEditorComponent.getActionType(keyEvent, editorContext);
     if (actionType == null) {
