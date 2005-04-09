@@ -73,6 +73,7 @@ public class NameUtil {
   }
 
   public static String nodeFQName(SemanticNode node) {
+    if(node == null) return null;
     String name = node.getName();
     // todo: dont set property NAME full name of a class
     // the name is actually "full name"?

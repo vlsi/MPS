@@ -335,7 +335,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             String className = fqName + '.' + name;
             SModel tmpModel = new SModel();
             tmpModel.setLoading(true);
-            targetModel.addImportedModel(tmpModel);
+            SimpleModelDescriptor tmpModelDescriptor = new SimpleModelDescriptor(tmpModel);
+            targetModel.addImportedModelDescriptor(tmpModelDescriptor);
 
             try {
               JavaClassMap javaClassMap = JavaClassMaps.getJavaClassMap(tmpModel);
@@ -397,7 +398,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
               tmpClass.delete();
 
             } finally {
-              targetModel.deleteImportedModel(tmpModel);
+              targetModel.deleteImportedModel(tmpModelDescriptor);
             }
           }
         },

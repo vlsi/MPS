@@ -3,8 +3,9 @@ package jetbrains.mps.ide.components;
 import org.jdom.Element;
 import org.jdom.DataConversionException;
 import jetbrains.mps.semanticModel.SemanticNode;
-import jetbrains.mps.semanticModel.SModel;
+import jetbrains.mps.semanticModel.SModelDescriptor;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.SModelRepository;
 
 import java.awt.*;
 
@@ -29,11 +30,11 @@ public class ComponentsUtil {
   }
 
   public static SemanticNode nodeFromElement(MPSProject project, Element nodeElement) {
-    String model = nodeElement.getAttributeValue(MODEL);
+    String fqName = nodeElement.getAttributeValue(MODEL);
     String id = nodeElement.getAttributeValue(ID);
-    SModel semanticModel = project.getModels().getModel(model);
-    if (semanticModel == null) return null;
-    SemanticNode semanticNode = semanticModel.findNode(id);
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(fqName);
+    if (modelDescriptor == null) return null;
+    SemanticNode semanticNode = modelDescriptor.getSModel().findNode(id);
     return semanticNode;
   }
 

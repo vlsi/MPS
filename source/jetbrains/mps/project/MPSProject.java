@@ -30,23 +30,64 @@ public class MPSProject implements ModelLocator {
 
   private ExecutionPoint myEntryPoint;
   private Map<Class, Object> myComponents = new HashMap<Class, Object>();
-  private RootManager myRootManager = new RootManager(this);
+  private RootManager myRootManager = null;
 
   public MPSProject(File file) {
     myProjectFile = file;
+  }
+
+  private void init() {
+    if(myRootManager != null) {
+      return;
+    }
+    myRootManager = new RootManager(this);
     if (myProjectFile != null) {
       read(myProjectFile);
     }
     MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
     projects.addProject(this);
-    if (file != null && file.getName().equals("RubyWeb.mpr")) {
+    if (myProjectFile != null && myProjectFile.getName().equals("RubyWeb.mpr")) {
       rubyWeb.bibliography.PersistenceUtil.loadRubyWebBibliography(this);
       rubyWeb.patternList.PersistenceUtil.loadRubyWebPatternList(this);
       rubyWeb.paper.PersistenceUtil.loadRubyWebPaper(this);
     }
   }
 
+  public Collection<Language> getProjectLanguages() {
+    init();
+    return Collections.unmodifiableCollection(myRootManager.getProjectLanguages());
+  }
+
+  public Collection<SModelDescriptor> getProjectModelDescriptors() {
+    init();
+    return Collections.unmodifiableCollection(myRootManager.getProjectModelDescriptors());
+  }
+
+  public Collection<SModelDescriptor> getLibraryModelDescriptors() {
+    init();
+    return Collections.unmodifiableCollection(myRootManager.getLibraryModelDescriptors());
+  }
+
+  public Collection<SModelDescriptor> getAllModelDescriptors() {
+    init();
+    ArrayList<SModelDescriptor> modelDescriptors = new ArrayList(myRootManager.getProjectModelDescriptors());
+    modelDescriptors.addAll(myRootManager.getLibraryModelDescriptors());
+    return modelDescriptors;
+  }
+
+  public Collection<Language> getLanguages() {
+    init();
+    return Collections.unmodifiableCollection(myRootManager.getLanguages());
+  }
+
+  public Language getLanguage(String nameSpace) {
+    init();
+    return myRootManager.getLanguage(nameSpace);
+  }
+
+
   public List<Object> getComponents() {
+    init();
     return new ArrayList<Object>(myComponents.values());
   }
 
@@ -61,6 +102,7 @@ public class MPSProject implements ModelLocator {
   }
 
   public void read(File file) {
+    init();
     myRootManager.read(file);
   }
 
@@ -92,10 +134,11 @@ public class MPSProject implements ModelLocator {
   }
 
   public void saveModels() {
-    getModels().saveAll();
+    ApplicationComponents.getInstance().getComponent(SModelRepository.class).saveAll();
   }
 
   public void save() {
+    init();
     myRootManager.save(myProjectFile);
 
     try {
@@ -121,6 +164,7 @@ public class MPSProject implements ModelLocator {
 
 
   public String findPath(String modelFQName) {
+    init();
     String modelPath = PathManager.findModelPath(myRootManager.getProjectModelRoots(), modelFQName);
     if (modelPath != null && (new File(modelPath)).exists()) {
       return modelPath;
@@ -132,36 +176,18 @@ public class MPSProject implements ModelLocator {
     return null;
   }
 
+
   public void setProjectFile(File projectFile) {
     myProjectFile = projectFile;
+    myRootManager = null;
   }
 
   public File getProjectFile() {
     return myProjectFile;
   }
 
-  public Iterator<Language> projectLanguages() {
-    return myRootManager.projectLanguages();
-  }
-
-  public Iterator<Language> languages() {
-    return myRootManager.languages();
-  }
-
-  public Language getLanguage(String nameSpace) {
-    return myRootManager.getLanguage(nameSpace);
-  }
-
-  public SModelRepository getModels() {
-    return ApplicationComponents.getInstance().getComponent(SModelRepository.class);
-  }
-
-  public SModel loadModel(String fileName) {
-    return getModels().loadModel(fileName, this);
-  }
-
   public boolean isProjectChanged() {
-    return getModels().wereChanges();
+    return ApplicationComponents.getInstance().getComponent(SModelRepository.class).wereChanges();
   }
 
   public ExecutionPoint getEntryPoint() {
@@ -187,17 +213,16 @@ public class MPSProject implements ModelLocator {
       System.err.println("Language plugin for structure model " + languageStructure.getFQName() + " was not found.");
 //      e.printStackTrace();
     } catch (IllegalAccessException e) {
-      e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+      e.printStackTrace();
     } catch (InstantiationException e) {
-      e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+      e.printStackTrace();
     }
     return null;
   }
 
   public Language getLanguageByStructureModel(SModel semanticModel) {
-    Iterator<Language> languages = myRootManager.languages();
-    while (languages.hasNext()) {
-      Language language = languages.next();
+    init();
+    for (Language language : myRootManager.getLanguages()) {
       SModelDescriptor structureModelDescriptor = language.getStructureModelDescriptor();
       if (structureModelDescriptor != null) {
         if (structureModelDescriptor.getSModel() == semanticModel) {
@@ -209,6 +234,17 @@ public class MPSProject implements ModelLocator {
   }
 
   public RootManager getRootManager() {
+    init();
     return myRootManager;
+  }
+
+  public void removeModel(SModelDescriptor modelDescriptor) {
+    init();
+    SModelRepository.getInstance().removeModel(modelDescriptor);
+    myRootManager.removeModel(modelDescriptor);
+  }
+
+  public SModelDescriptor getModelDescriptor(String fqName) {
+    return SModelRepository.getInstance().getModelDescriptor(fqName);
   }
 }
