@@ -248,4 +248,10 @@ public class MPSProject implements ModelLocator {
   public SModelDescriptor getModelDescriptor(String fqName) {
     return SModelRepository.getInstance().getModelDescriptor(fqName);
   }
+
+  public void releaseAll() {
+    myRootManager.releaseAll();
+  }
+
+
 }
