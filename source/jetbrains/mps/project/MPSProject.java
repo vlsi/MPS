@@ -92,6 +92,7 @@ public class MPSProject implements ModelLocator {
   }
 
   public <T> T getComponent(Class<T> interfaceClass) {
+    init();
     T result = (T) myComponents.get(interfaceClass);
     if (result == null) throw new RuntimeException("I can't find component " + interfaceClass.getName());
     return result;
