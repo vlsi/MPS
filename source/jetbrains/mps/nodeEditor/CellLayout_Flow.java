@@ -120,12 +120,14 @@ hStart |--------|                  |  | hEnd
       EditorCell_Collection collection = (EditorCell_Collection) root;
       for (int i = 0; i < collection.getChildCount(); i++) {
         EditorCell child = collection.getChildAt(i);
-        EditorCell cell = findCell_internal(child, x, y);
+        EditorCell cell = null;
+        if (collection.getBounds().contains(x, y)) {
+          cell = findCell_internal(child, x, y);
+        }
         if (cell != null) return cell;
       }
     } else {
-      Rectangle r = new Rectangle(root.getX(), root.getY(), root.getWidth(), root.getHeight());
-      if (r.contains(x, y)) return root;
+      if (root.getBounds().contains(x, y)) return root;
     }
     return null;
   }
