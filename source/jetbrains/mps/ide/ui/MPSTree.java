@@ -75,11 +75,14 @@ public abstract class MPSTree extends JTree {
         if (node.getNodeIdentifier().equals(component)) {
           current = node;
           path.add(current);
+          if (!current.initialized()) current.init();
           found = true;
           break;
         }
       }
-      if (!found) return null;
+      if (!found) {
+        return null;
+      }
     }
     return new TreePath(path.toArray());
   }
@@ -140,6 +143,15 @@ public abstract class MPSTree extends JTree {
     }
 
     protected abstract String getNodeIdentifier();
+
+
+    public boolean initialized() {
+      return true;
+    }
+
+    public void init() {
+    }
+
 
     public String toString() {
       return getNodeIdentifier();
