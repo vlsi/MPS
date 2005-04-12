@@ -251,6 +251,7 @@ public class MPSProject implements ModelLocator {
 
   public void releaseAll() {
     myRootManager.releaseAll();
+    SModelRepository.getInstance().unRegisterModelDescriptors(this);
   }
 
 
