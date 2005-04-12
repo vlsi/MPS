@@ -1436,7 +1436,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConstrainedDataTypeDeclaration" id="1113006251687">
-    <property name="constraint" value="-?[0-9]+(\\.[0-9]+)?" />
+    <property name="constraint" value="-?[0-9]+\\.[0-9]+" />
     <property name="name" value="_FPNumber_String" />
     <link role="extends" targetNodeId="4.1082983041843" />
   </node>
