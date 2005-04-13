@@ -10,14 +10,21 @@ import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.semanticModel.Language;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.textLanguage.Sentence;
+import jetbrains.textLanguage.Word;
+import jetbrains.textLanguage.Text;
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
+import java.awt.datatransfer.DataFlavor;
 import java.io.IOException;
 import java.util.*;
 import java.util.List;
+
+import rubyWeb.TextUtil;
 
 /**
  * Author: Sergey Dmitriev.
@@ -32,21 +39,51 @@ public class PasteUtil {
   public static List<SemanticNode> getNodesFromClipboard(SModel semanticModel) {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     Transferable content = cb.getContents(null);
-    if (content == null ||
-            !content.isDataFlavorSupported(SModelDataFlavor.semanticNode)) {
-      return null;
+    if (content == null) return null;
+
+    if (content.isDataFlavorSupported(SModelDataFlavor.semanticNode)) {
+      SemanticNodeData nodeData = null;
+      try {
+        nodeData = (SemanticNodeData) content.getTransferData(SModelDataFlavor.semanticNode);
+        return nodeData.createNodes(semanticModel);
+      } catch (UnsupportedFlavorException e) {
+        e.printStackTrace();  //To change body of catch statement use Options | File Templates.
+      } catch (IOException e) {
+        e.printStackTrace();  //To change body of catch statement use Options | File Templates.
+      }
     }
 
-    SemanticNodeData nodeData = null;
-    try {
-      nodeData = (SemanticNodeData) content.getTransferData(SModelDataFlavor.semanticNode);
-      return nodeData.createNodes(semanticModel);
-    } catch (UnsupportedFlavorException e) {
-      e.printStackTrace();  //To change body of catch statement use Options | File Templates.
-    } catch (IOException e) {
-      e.printStackTrace();  //To change body of catch statement use Options | File Templates.
+
+    if (content.isDataFlavorSupported(DataFlavor.stringFlavor)) {
+      return tryToPasteText(cb, semanticModel);
     }
+
     return null;
+  }
+
+  private static List<SemanticNode> tryToPasteText(Clipboard cb, SModel model) {
+    try {
+      String text = cb.getData(DataFlavor.stringFlavor).toString();
+
+      List<SemanticNode> result = new ArrayList<SemanticNode>();
+      if (text.contains(".")) { //sentence(s)
+        Text textNode = TextUtil.toText(model, text);
+        for (Sentence sentence : CollectionUtil.iteratorAsIterable(textNode.sentences())) {
+          textNode.removeChild(sentence);
+          result.add(sentence);
+        }
+      } else { //words
+        Sentence sentence = TextUtil.toSentence(model, text);
+        for (Word word : CollectionUtil.iteratorAsIterable(sentence.words())) {
+          sentence.removeChild(word);
+          result.add(word);
+        }
+      }
+      return result;
+    } catch (Exception e) {
+      e.printStackTrace();
+      return null;
+    }
   }
 
   public static boolean canPaste(SemanticNode pasteTarget, SemanticNode pasteNode) {
