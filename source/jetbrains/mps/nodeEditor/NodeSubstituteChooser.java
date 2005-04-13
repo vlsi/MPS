@@ -117,8 +117,11 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
         public int compare(INodeSubstituteItem iNodeSubstituteItem, INodeSubstituteItem iNodeSubstituteItem1) {
           String s1 = iNodeSubstituteItem.getMatchingText(null);
           String s2 = iNodeSubstituteItem1.getMatchingText(null);
-          if (s1 == null) s1 = "";
-          if (s2 == null) s2 = "";
+          boolean null_s1 = (s1 == null || s1.length() == 0);
+          boolean null_s2 = (s2 == null || s2.length() == 0);
+          if (null_s1 && null_s2) return 0;
+          if (null_s1) return 1;
+          if (null_s2) return -1;
           return s1.compareTo(s2);
         }
       });
@@ -277,7 +280,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
     if (!myMenuEmpty) {
       int oldPosition = myPatternEditor.getCaretPosition();
-      myPatternEditor.setText(getPopupWindow().getSelectedText());      
+      myPatternEditor.setText(getPopupWindow().getSelectedText());
       myPatternEditor.setCaretPosition(Math.min(getPopupWindow().getSelectedText().length(), oldPosition));
     }
   }
@@ -404,7 +407,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       }
 
       if (getWidth() + newLocation.x > screenWidth) {
-        newLocation = new Point(screenWidth - getWidth(),  newLocation.y);
+        newLocation = new Point(screenWidth - getWidth(), newLocation.y);
       }
 
 

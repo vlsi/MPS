@@ -5,6 +5,7 @@ import jetbrains.mps.semanticModel.SemanticNode;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Collections;
 
 /**
  * Author: Sergey Dmitriev.
@@ -38,12 +39,16 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
   }
 
   public List<INodeSubstituteItem> getMatchingItems(String pattern, boolean strictMatching) {
-    List<INodeSubstituteItem> list = new ArrayList<INodeSubstituteItem>();
-    Iterator<INodeSubstituteItem> iterator = items();
-    while (iterator.hasNext()) {
-      INodeSubstituteItem entry = iterator.next();
-      if (entry.canSubstitute(pattern)) {
-        list.add(entry);
+    List<INodeSubstituteItem> list = new ArrayList<INodeSubstituteItem>(items());
+    if (pattern.length() == 0) {
+      return list;
+    }
+
+    Iterator<INodeSubstituteItem> items = list.iterator();
+    while (items.hasNext()) {
+      INodeSubstituteItem item = items.next();
+      if (!item.canSubstitute(pattern)) {
+        items.remove();
       }
     }
 
@@ -58,11 +63,11 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
     return list;
   }
 
-  protected Iterator<INodeSubstituteItem> items() {
+  protected List<INodeSubstituteItem> items() {
     if (myCachedItemList == null) {
       myCachedItemList = createActions();
     }
-    return myCachedItemList.iterator();
+    return Collections.unmodifiableList(myCachedItemList);
   }
 
   public SemanticNode handleSubstituteAction(SemanticNode node, Object substituteObject) {

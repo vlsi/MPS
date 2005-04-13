@@ -47,24 +47,10 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     List<ConceptDeclaration> childTypes = createChildTypesList();
     for (final ConceptDeclaration childType : childTypes) {
       list.add(new DefaultChildNodeSubstituteAction(childType, mySourceNode, myCurrentTargetNode, myLinkDeclaration) {
-        //        public String getMatchingText(String pattern) {
-        //          return EditorUtil.getMatchingText(childType);
-        //        }
 
         public String getDescriptionText(String pattern) {
           return childType.getModel().getFQName();
         }
-
-        //        public SemanticNode doSubstitute(String pattern) {
-        //          SemanticNode childNode = SModelUtil.instantiateConceptDeclaration(childType, mySourceNode.getModel());
-        //          String role = SModelUtil.getGenuineLinkRole(myLinkDeclaration);
-        //          SemanticNode oldChild = mySourceNode.getChild(role);
-        //          if (oldChild != null) {
-        //            oldChild.delete();
-        //          }
-        //          mySourceNode.setChild(role, childNode);
-        //          return childNode;
-        //        }
       });
     }
 
