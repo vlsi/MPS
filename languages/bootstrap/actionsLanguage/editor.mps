@@ -64,6 +64,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1112119223812">
           <property name="vertical" value="true" />
+          <property name="gridLayout" value="true" />
           <link role="linkDeclaration" targetNodeId="1.1112058057696" />
         </node>
       </node>
