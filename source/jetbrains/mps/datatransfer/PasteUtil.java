@@ -136,7 +136,7 @@ public class PasteUtil {
     if (linkDeclaration == null) {
       return false;
     }
-    if (reallyPaste) {
+    if (reallyPaste) {       
       CommandProcessor.instance().executeCommand(null, new Runnable() {
         public void run() {
           if (linkDeclaration.getMetaClass() == LinkMetaclass.aggregation) {
