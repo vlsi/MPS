@@ -398,7 +398,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
               tmpClass.delete();
 
             } finally {
-              targetModel.deleteImportedModel(tmpModelDescriptor);
+              targetModel.deleteImportedModel(tmpModelDescriptor.getFQName());
             }
           }
         },

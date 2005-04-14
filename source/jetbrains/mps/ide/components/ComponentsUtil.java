@@ -34,7 +34,7 @@ public class ComponentsUtil {
     String id = nodeElement.getAttributeValue(ID);
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(fqName);
     if (modelDescriptor == null) return null;
-    SemanticNode semanticNode = modelDescriptor.getSModel().findNode(id);
+    SemanticNode semanticNode = modelDescriptor.getSModel().getNodeById(id);
     return semanticNode;
   }
 
