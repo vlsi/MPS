@@ -72,6 +72,13 @@ public class NameUtil {
     return fqName.substring(0, offset);
   }
 
+  public static String fqNameFromNamespaceAndName(String namespace, String name) {
+    if (namespace == null || namespace.length() == 0) {
+      return name;
+    }
+    return namespace + '.' + name;
+  }
+
   public static String nodeFQName(SemanticNode node) {
     if(node == null) return null;
     String name = node.getName();
