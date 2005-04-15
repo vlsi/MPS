@@ -4,10 +4,7 @@ import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.*;
 import jetbrains.mps.modelExecute.ExecutionManager;
 import jetbrains.mps.modelExecute.ExecutionPoint;
-import jetbrains.mps.semanticModel.Language;
-import jetbrains.mps.semanticModel.ModelLocator;
-import jetbrains.mps.semanticModel.SModel;
-import jetbrains.mps.semanticModel.SModelDescriptor;
+import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.PathManager;
 import org.jdom.Document;
@@ -20,7 +17,7 @@ import java.util.*;
  * Author: Sergey Dmitriev
  * Created Apr 29, 2004
  */
-public class MPSProject implements ModelLocator {
+public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
   private File myProjectFile;
   private File myWorkspaceFile;
 
