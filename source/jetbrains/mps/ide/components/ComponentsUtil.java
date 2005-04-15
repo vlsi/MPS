@@ -4,8 +4,8 @@ import org.jdom.Element;
 import org.jdom.DataConversionException;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.semanticModel.SModelDescriptor;
+import jetbrains.mps.semanticModel.SModelRepository;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.SModelRepository;
 
 import java.awt.*;
 
