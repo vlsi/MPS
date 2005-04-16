@@ -34,7 +34,7 @@ public class TextGenManager {
   }
 
   public boolean canGenerateTextFor(SemanticNode node) {
-    return loadNodeTextGen(node) != null;
+    return !(loadNodeTextGen(node) instanceof DefaultTextGen);
   }
 
   protected void appendNodeText(TextGenBuffer buffer, SemanticNode node) {
@@ -60,11 +60,8 @@ public class TextGenManager {
       SemanticNodeTextGen textGenerator = (SemanticNodeTextGen) textgenClass.newInstance();
       return textGenerator;
     } catch (ClassNotFoundException e) {
-      e.printStackTrace();
     } catch (InstantiationException e) {
-      e.printStackTrace();
     } catch (IllegalAccessException e) {
-      e.printStackTrace();
     }
     return new DefaultTextGen();
   }
