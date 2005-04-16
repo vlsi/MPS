@@ -33,6 +33,10 @@ public class TextGenManager {
     return buffer.getText();
   }
 
+  public boolean canGenerateTextFor(SemanticNode node) {
+    return loadNodeTextGen(node) != null;
+  }
+
   protected void appendNodeText(TextGenBuffer buffer, SemanticNode node) {
     if(node == null) {
       buffer.append("???");
