@@ -10,6 +10,7 @@ import java.util.ArrayList;
  * @author Kostik
  */
 public class CollectionUtil {
+
   public static <T> List<T> iteratorAsList(Iterator<T> i) {
     List<T> result = new ArrayList<T>();
     while (i.hasNext()) {
