@@ -1,6 +1,7 @@
 package jetbrains.mps.project;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * User: Sergey Dmitriev
@@ -15,6 +16,10 @@ public class MPSProjects {
     for(MPSProjectsListener listener : myMPSProjectsListeners) {
       listener.projectAdded(mpsProject);
     }
+  }
+
+  public List<MPSProject> getProjects() {
+    return new ArrayList<MPSProject>(myProjects);
   }
 
   public void removeProject(MPSProject mpsProject) {
