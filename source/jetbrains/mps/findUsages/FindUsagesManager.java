@@ -26,6 +26,7 @@ public class FindUsagesManager {
     Set<SModelDescriptor> models = scope.getModels();
     progress.start("Find Usages...", models.size());
     for (SModelDescriptor model : models) {
+      progress.setText("Finding usages in " + model.getFQName());
       result.addAll(model.findUsages(node));
       progress.advance(1);
     }
