@@ -6,6 +6,7 @@ import jetbrains.mps.semanticModel.SemanticReference;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.semanticModel.SModelDescriptor;
 import jetbrains.mps.semanticModel.Language;
+import jetbrains.mps.ide.progress.ProgressMonitor;
 
 import java.util.Set;
 import java.util.HashSet;
@@ -19,20 +20,22 @@ public class FindUsagesManager {
   }
 
 
-  public Set<SemanticReference> findUsages(SemanticNode node, Scope scope) {
-    Set<SModelDescriptor> models = new HashSet<SModelDescriptor>();
+  public Set<SemanticReference> findUsages(SemanticNode node, Scope scope, ProgressMonitor progress) {
+    if (progress == null) progress = ProgressMonitor.NULL_PROGRESS_MONITOR;
     Set<SemanticReference> result = new HashSet<SemanticReference>();
-
-    for (SModelDescriptor model : scope.getModels()) {
+    Set<SModelDescriptor> models = scope.getModels();
+    progress.start("Find Usages...", models.size());
+    for (SModelDescriptor model : models) {
       result.addAll(model.findUsages(node));
+      progress.advance(1);
     }
-
+    progress.finish();
     return result;
   }
 
 
-  public Set<SemanticReference> findUsages(SemanticNode node) {
-    return findUsages(node, globalScope());
+  public Set<SemanticReference> findUsages(SemanticNode node, ProgressMonitor progress) {
+    return findUsages(node, globalScope(), progress);
   }
 
   public Scope globalScope() {
