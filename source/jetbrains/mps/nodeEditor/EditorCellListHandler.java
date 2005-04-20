@@ -96,11 +96,11 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
     return myInsertedNode != null;
   }
 
-  protected EditorCell createNodeCell(EditorContext editorContext, SemanticNode node) {
+  public EditorCell createNodeCell(EditorContext editorContext, SemanticNode node) {
     return editorContext.createNodeCell(node);
   }
 
-  protected EditorCell createSeparatorCell(EditorContext editorContext) {
+  public EditorCell createSeparatorCell(EditorContext editorContext) {
     return null;
   }
 
