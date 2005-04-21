@@ -19,6 +19,7 @@ import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.CellAction_DeleteSmart;
 
 public class StaticFieldReference_Editor extends DefaultNodeEditor {
 
@@ -104,7 +105,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
     StaticFieldReference_TypeActions.setCellActions(editorCell, node);
     return editorCell;

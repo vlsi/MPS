@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.CellAction_DeleteSmart;
 
 public class CastExpression_Editor extends DefaultNodeEditor {
 
@@ -81,7 +82,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
     CastExpression_CastTypeActions.setCellActions(editorCell, node);
     return editorCell;
@@ -110,7 +111,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
     CastExpression_CastExpressionActions.setCellActions(editorCell, node);
     return editorCell;
