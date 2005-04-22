@@ -37,8 +37,8 @@ public class TemplateGenUtil {
       SemanticReference templateReference = iterator.next();
       SemanticNode templateReferentNode = templateReference.getTargetNode();
       if (templateReferentNode instanceof NodeMacro ||
-                              templateReferentNode instanceof ReferenceMacro ||
-                              templateReferentNode instanceof PropertyMacro) {
+              templateReferentNode instanceof ReferenceMacro ||
+              templateReferentNode instanceof PropertyMacro) {
         continue;
       }
 
@@ -113,7 +113,8 @@ public class TemplateGenUtil {
       Constructor[] constructors = builderClass.getDeclaredConstructors();
       // should be 1 constructor with parameters:
       // SemanticNode sourceNode, SemanticNode templateNode, ITemplateGenerator generator
-      INodeBuilder nodeBuilder = (INodeBuilder) constructors[0].newInstance(new Object[]{sourceNode, templateNode, mappingName, generator});
+      INodeBuilder nodeBuilder = (INodeBuilder) constructors[0].newInstance(new Object[]{sourceNode, templateNode,
+        mappingName, generator});
       return nodeBuilder;
     } catch (ClassNotFoundException e) {
       // ok
@@ -152,9 +153,9 @@ public class TemplateGenUtil {
   }
 
   // --------------------------------
-  // Macro Aspect methods invocation...
-  // --------------------------------
-  public static Object invokeAspectMethod(String methodName, Object[] arguments, SModel templatesModel) {
+          // Macro Aspect methods invocation...
+          // --------------------------------
+          public static Object invokeAspectMethod(String methodName, Object[] arguments, SModel templatesModel) {
     Class aspectsClass = null;
     //    String javaPackageName = JavaNameUtil.packageNameForModel(templatesModel.getTemplatesModel());
     String javaPackageName = JavaNameUtil.packageNameForModel(templatesModel);
@@ -248,6 +249,7 @@ public class TemplateGenUtil {
               (new RuntimeException(message)).printStackTrace();
               System.err.println("Source node trace:");
               SModelUtil.dumpNodePath(sourceNode, 0, System.err);
+//              System.err.println("TMP WARN: " + message);
             } else {
               toReplaceBuilder.getParent().replaceChildBuilder(toReplaceBuilder, fragmentBuilder);
               fragmentBuilder.setRoleInParent(toReplaceBuilder.getRoleInParent());
@@ -278,15 +280,15 @@ public class TemplateGenUtil {
     // in context node builder find "NodeMacro" referencing this fragment by the TAG
     // todo: fragment can be referenced from more then one place
     INodeBuilder nodeBuilder = ruleContextBuilder.findChildBuilder(new Condition<INodeBuilder>() {
-              public boolean met(INodeBuilder nodeBuilder) {
-                if (nodeBuilder.getSourceNode() == sourceNode) {
-                  SemanticNode templateNode = nodeBuilder.getTemplateNode();
-                  NodeMacro nodeMacro = (NodeMacro) templateNode.getChild(ITemplateLanguageConstants.ROLE_NODE_MAKRO);
-                  return (nodeMacro != null && nodeMacro.getReferencedTag() == tag);
-                }
-                return false;
-              }
-            });
+      public boolean met(INodeBuilder nodeBuilder) {
+        if (nodeBuilder.getSourceNode() == sourceNode) {
+          SemanticNode templateNode = nodeBuilder.getTemplateNode();
+          NodeMacro nodeMacro = (NodeMacro) templateNode.getChild(ITemplateLanguageConstants.ROLE_NODE_MAKRO);
+          return (nodeMacro != null && nodeMacro.getReferencedTag() == tag);
+        }
+        return false;
+      }
+    });
     return nodeBuilder;
   }
 
@@ -331,9 +333,9 @@ public class TemplateGenUtil {
   public static boolean isTemplateLanguageElement(SemanticNode templateNode) {
     String role = templateNode.getRole_();
     if (role.equals(ITemplateGenerator.ROLE_NODE_MAKRO) ||
-                role.equals(ITemplateGenerator.ROLE_TEMPLATE_FRAGMENT) ||
-                role.startsWith(ITemplateGenerator.ROLE_PREFIX_PROPERTY_MAKRO) ||
-                role.startsWith(ITemplateGenerator.ROLE_PREFIX_REFEENCE_MAKRO)) {
+            role.equals(ITemplateGenerator.ROLE_TEMPLATE_FRAGMENT) ||
+            role.startsWith(ITemplateGenerator.ROLE_PREFIX_PROPERTY_MAKRO) ||
+            role.startsWith(ITemplateGenerator.ROLE_PREFIX_REFEENCE_MAKRO)) {
       return true;
     }
     return false;
@@ -505,7 +507,7 @@ public class TemplateGenUtil {
     }
     INodeBuilder mappedNodeBuilder = map.get(templateNode);
     if (mappedNodeBuilder != null &&
-                mappedNodeBuilder != nodeBuilder) {
+            mappedNodeBuilder != nodeBuilder) {
       //      //      LOG.error("Couldn't put node builder to map, there is enother builder is in the map already" +
       //      //              "\nSource   node: " + sourceNode.getDebugText() +
       //      //              "\nTemplate node: " + templateNode.getDebugText(),
