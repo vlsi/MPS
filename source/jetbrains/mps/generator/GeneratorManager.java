@@ -10,15 +10,20 @@ import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textPresentation.TextPresentationManager;
+import jetbrains.mps.baseLanguage.Classifier;
 
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Iterator;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * @author Kostik
  */
 public class GeneratorManager {
+  public static final String STRUCTURE_SUFFIX = ".structure";
+
   private MPSProject myProject;
 
   public GeneratorManager(MPSProject project) {
@@ -43,34 +48,46 @@ public class GeneratorManager {
       System.out.println("Templates model is " + templatesModel.getFQName());
 
       for (SModelDescriptor model : models) {
-        generate_internal(model, generatorClass, templatesModel, generateText);
+        generate_internal(model, generatorClass, templatesModel, configuration.getOutputPath(), generateText);
       }
     }
   }
 
-  private void generate_internal(SModelDescriptor sourceModel, String generatorClassFQName, SModelDescriptor templatesModel, boolean generateText) {
+  private void generate_internal(SModelDescriptor sourceModel, String generatorClassFQName, SModelDescriptor templatesModel, String outputPath, boolean generateText) {
     System.out.println("Generating sourceModel " + sourceModel.getFQName());
     try {
       Class cls = Class.forName(generatorClassFQName);
       ITemplateGenerator generator = (ITemplateGenerator) cls.getConstructor(SModel.class, MPSProject.class).newInstance(sourceModel.getSModel(), myProject);
       SModel targetModel = JavaGenUtil.createTargetJavaModel(sourceModel.getSModel(), sourceModel.getFQName(), myProject);
       generator.generate(targetModel, templatesModel.getSModel());
-
       if (generateText) {
         generateText(targetModel);
       } else {
-        generateSource(targetModel);
+        generateSource(outputPath, sourceModel.getSModel(), targetModel);
       }
-
-
       JavaClassMaps.clearMaps();
     } catch (Exception e) {
       e.printStackTrace();
     }
   }
 
-  private void generateSource(SModel targetModel) {
-    System.err.println("Source generation isn't implemented yet");
+  private void generateSource(String outputPath, SModel sourceModel, SModel targetModel) {
+    if (outputPath == null) throw new RuntimeException("Unspecified output path. Please specify one.");
+    System.out.println("Generating to " + outputPath);
+    String fqName = sourceModel.getFQName();
+    if (fqName.endsWith(STRUCTURE_SUFFIX)) fqName = fqName.substring(fqName.length() - STRUCTURE_SUFFIX.length());
+    File outputPathFile = new File(outputPath + File.separator + fqName.replace('.', File.separatorChar));
+
+    if (!outputPathFile.exists()) {
+      outputPathFile.mkdirs();
+    }
+
+    JavaFileGenerator javaFileGenerator = new JavaFileGenerator(outputPathFile, sourceModel.getFQName(), false);
+    Iterator<SemanticNode> javaRoots = targetModel.roots();
+    while (javaRoots.hasNext()) {
+      SemanticNode node = javaRoots.next();
+      javaFileGenerator.generateJavaFile((Classifier) node);
+    }
   }
 
   private void generateText(SModel targetModel) {
