@@ -155,14 +155,14 @@ public class GeneratorManager {
     SModelRepository.getInstance().readModelDescriptors(roots, models, myProject);
 
     if (generator.getTemplatesModel() == null) {
-      throw new RuntimeException("Templates model is null!");
+      return null;
     }
 
     for (SModelDescriptor model : models) {
       if (model.getFQName().equals(generator.getTemplatesModel().getName())) return model;
     }
 
-    throw new RuntimeException("I can't find templates model " + generator.getTemplatesModel().getName());
+    return null;
   }
 
 }
