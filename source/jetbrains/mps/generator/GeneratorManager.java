@@ -15,8 +15,8 @@ import jetbrains.mps.baseLanguage.Classifier;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Iterator;
+import java.util.List;
 import java.io.File;
-import java.io.IOException;
 
 /**
  * @author Kostik
@@ -31,14 +31,18 @@ public class GeneratorManager {
   }
 
   public void generate(GeneratorConfiguration configuration, boolean generateText) {
+    generate(configuration, new HashSet<SModelDescriptor>(myProject.getProjectModelDescriptors()), generateText);
+  }
+
+  public void generate(GeneratorConfiguration configuration, Set<SModelDescriptor> modelDescriptors, boolean generateText) {
     System.out.println("Generating configuration " + configuration.getName());
     System.out.println("Output path is " + configuration.getOutputPath());
     System.out.println("");
     for (GeneratorConfigurationCommand cmd : CollectionUtil.iteratorAsIterable(configuration.commands())) {
       System.out.println("Executing " + cmd.getSourceLanguage().getName() + " -> " + cmd.getTargetLanguage());
-      Set<SModelDescriptor> models = findModelsWithLanguage(cmd.getSourceLanguage().getName());
+      Set<SModelDescriptor> modelsWithLanguage = findModelsWithLanguage(modelDescriptors, cmd.getSourceLanguage().getName());
 
-      System.out.println("Models to generate from " + models.toString());
+      System.out.println("Models to generate from " + modelsWithLanguage.toString());
       Generator generator = findGenerator(cmd.getSourceLanguage().getName(), cmd.getTargetLanguage().getName());
 
       String generatorClass = findGeneratorClass(generator);
@@ -47,7 +51,7 @@ public class GeneratorManager {
       SModelDescriptor templatesModel = loadTemplatesModel(generator);
       System.out.println("Templates model is " + templatesModel.getFQName());
 
-      for (SModelDescriptor model : models) {
+      for (SModelDescriptor model : modelsWithLanguage) {
         generate_internal(model, generatorClass, templatesModel, configuration.getOutputPath(), generateText);
       }
     }
@@ -109,9 +113,9 @@ public class GeneratorManager {
     }
   }
 
-  private Set<SModelDescriptor> findModelsWithLanguage(String fqName) {
+  private Set<SModelDescriptor> findModelsWithLanguage(Set<SModelDescriptor> models, String fqName) {
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
-    for (SModelDescriptor model : myProject.getRootManager().getProjectModelDescriptors()) {
+    for (SModelDescriptor model : models) {
       if (model.getSModel().importsLanguage(fqName)) {
         result.add(model);
       }
