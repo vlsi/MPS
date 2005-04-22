@@ -27,10 +27,10 @@ import jetbrains.mps.nodeEditor.CellLayout_Vertical;
 
 public class ConceptDeclaration_Editor extends DefaultNodeEditor {
 
-  EditorCellListHandler myPropertyDeclarationListHandler;
-  EditorCellListHandler myLinkDeclarationListHandler;
-  EditorCellListHandler myConceptPropertyListHandler;
-  EditorCellListHandler myConceptLinkListHandler;
+  public EditorCellListHandler myPropertyDeclarationListHandler;
+  public EditorCellListHandler myLinkDeclarationListHandler;
+  public EditorCellListHandler myConceptPropertyListHandler;
+  public EditorCellListHandler myConceptLinkListHandler;
 
   public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
     return this.createNodeBox(context, node);

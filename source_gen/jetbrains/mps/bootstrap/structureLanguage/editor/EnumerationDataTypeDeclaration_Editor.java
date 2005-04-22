@@ -20,7 +20,7 @@ import jetbrains.mps.nodeEditor.CellLayout_Vertical;
 
 public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
-  EditorCellListHandler myMemberListHandler;
+  public EditorCellListHandler myMemberListHandler;
 
   public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
     return this.createNodeBox(context, node);
