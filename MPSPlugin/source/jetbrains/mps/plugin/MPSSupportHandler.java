@@ -14,6 +14,8 @@ import com.intellij.openapi.wm.WindowManager;
 import com.intellij.openapi.compiler.CompilerManager;
 import com.intellij.psi.*;
 import com.intellij.psi.search.GlobalSearchScope;
+import com.intellij.psi.search.PsiSearchHelper;
+import com.intellij.psi.search.SearchScope;
 import com.intellij.util.IncorrectOperationException;
 
 import javax.swing.*;
@@ -98,6 +100,31 @@ public class MPSSupportHandler {
       result += list.get(i).toString() + ";";
     }
     return result;
+  }
+
+  public String getGeneratorClasses() {
+    final List list = new ArrayList();
+    ApplicationManager.getApplication().runReadAction(new Runnable() {
+      public void run() {
+        PsiManager manager = PsiManager.getInstance(myProject);
+        PsiClass cls = manager.findClass("jetbrains.mps.generator.template.ITemplateGenerator", GlobalSearchScope.projectProductionScope(myProject, false));
+        if (cls == null) return;
+        PsiSearchHelper helper = manager.getSearchHelper();
+        PsiClass[] result = helper.findInheritors(cls, GlobalSearchScope.projectScope(myProject), true);
+        for (int i = 0; i < result.length; i++) {
+          if (result[i].getQualifiedName() != null) {
+            list.add(result[i].getQualifiedName());
+          }
+        }
+      }
+    });
+
+    StringBuffer result = new StringBuffer();
+    for (int i = 0; i < list.size(); i++) {
+      result.append(list.get(i).toString());
+      if (i != list.size() - 1) result.append(";");
+    }
+    return result.toString();
   }
 
   public String addImport(final String namespace, final String fqName) {

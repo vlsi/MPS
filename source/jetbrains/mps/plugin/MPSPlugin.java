@@ -61,6 +61,10 @@ public class MPSPlugin {
     myClient.execute("MPSSupport.createAspectMethod", params);
   }
 
+  public String[] getGeneratorClasses() throws IOException, XmlRpcException {
+    return myClient.execute("MPSSupport.getGeneratorClasses", new Vector()).toString().split(";");
+  }
+
   public void openMethod(String namespace, String name) throws IOException, XmlRpcException {
     Vector<String> params = new Vector<String>();
     params.add(namespace);
@@ -87,7 +91,10 @@ public class MPSPlugin {
 
   public static void main(String[] args) throws Exception {
     MPSPlugin client = new MPSPlugin();
-    client.openMethod("jetbrains.mps.rulez", "test_something");
+    for (String s : client.getGeneratorClasses()) {
+      System.out.println(s);
+    }
+
   }
 
 }
