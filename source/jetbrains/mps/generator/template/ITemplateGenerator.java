@@ -13,12 +13,12 @@ import jetbrains.mps.transformation.TLBase.TemplateSwitch;
 import jetbrains.mps.transformation.TLBase.TemplateDeclaration;
 import jetbrains.mps.generator.template.INodeBuilder;
 import jetbrains.mps.generator.IModelGenerator;
+import jetbrains.mps.util.Condition;
 
 import java.util.Map;
 import java.util.List;
 
 public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageConstants {
-
   void setStartState();
 
   void advanceState();
@@ -39,7 +39,12 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   INodeBuilder findNodeBuilderForSource(SemanticNode sourceNode, String mappingName);
 
+  /**
+   * @deprecated
+   */
   List<INodeBuilder> getNodeBuildersForSource(SemanticNode sourceNode);
+
+  INodeBuilder findNodeBuilder(Condition<INodeBuilder> condition);
 
   SModel getTemplatesModel();
 

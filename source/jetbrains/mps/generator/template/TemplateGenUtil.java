@@ -508,15 +508,15 @@ public class TemplateGenUtil {
     INodeBuilder mappedNodeBuilder = map.get(templateNode);
     if (mappedNodeBuilder != null &&
             mappedNodeBuilder != nodeBuilder) {
-      //      //      LOG.error("Couldn't put node builder to map, there is enother builder is in the map already" +
-      //      //              "\nSource   node: " + sourceNode.getDebugText() +
-      //      //              "\nTemplate node: " + templateNode.getDebugText(),
-      //      //              new RuntimeException());
-      //      System.err.println("WARNING: Couldn't put node builder to map, there is enother builder is in the map already");
-      //      System.err.println("Source node  : " + sourceNode.getDebugText());
-      //      //      SModelUtil.dumpNodePath(sourceNode, 10, System.err);
-      //      System.err.println("Template node: " + templateNode.getDebugText());
-      //      //      SModelUtil.dumpNodePath(templateNode, 10, System.err);
+            //      LOG.error("Couldn't put node builder to map, there is enother builder is in the map already" +
+            //              "\nSource   node: " + sourceNode.getDebugText() +
+            //              "\nTemplate node: " + templateNode.getDebugText(),
+            //              new RuntimeException());
+            System.err.println("WARNING: Couldn't put node builder to map, there is enother builder is in the map already");
+            System.err.println("Source node  : " + sourceNode.getDebugText());
+            //      SModelUtil.dumpNodePath(sourceNode, 10, System.err);
+            System.err.println("Template node: " + templateNode.getDebugText());
+            //      SModelUtil.dumpNodePath(templateNode, 10, System.err);
 
     } else {
       map.put(templateNode, nodeBuilder);

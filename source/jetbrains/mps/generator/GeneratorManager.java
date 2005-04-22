@@ -162,6 +162,12 @@ public class GeneratorManager {
       if (model.getFQName().equals(generator.getTemplatesModel().getName())) return model;
     }
 
+    System.err.println("Couldn't find templates model " + generator.getTemplatesModel().getName());
+    System.err.println("specified roots:");
+    for (ModelRoot root : roots) {
+      System.err.println("-- " + root.getPath());
+    }
+    System.err.println("----------------");
     return null;
   }
 
