@@ -4,12 +4,14 @@ package jetbrains.mps.plugin;
 import org.apache.xmlrpc.XmlRpcClient;
 import org.apache.xmlrpc.XmlRpcException;
 
-import javax.swing.*;
 import java.net.MalformedURLException;
 import java.util.Vector;
 import java.util.List;
 import java.util.ArrayList;
 import java.io.IOException;
+
+import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.IModelGenerator;
 
 /**
  * @author Kostik
@@ -61,8 +63,19 @@ public class MPSPlugin {
     myClient.execute("MPSSupport.createAspectMethod", params);
   }
 
-  public String[] getGeneratorClasses() throws IOException, XmlRpcException {
-    return myClient.execute("MPSSupport.getGeneratorClasses", new Vector()).toString().split(";");
+  public List<String> findInheritors(Class cls) throws IOException, XmlRpcException {
+    return findInheritors(cls.getName());
+  }
+
+  public List<String> findInheritors(String fqName) throws IOException, XmlRpcException {
+    Vector params = new Vector();
+    params.add(fqName);
+    String[] names =  myClient.execute("MPSSupport.findInheritors", params).toString().split(";");
+    List<String> result = new ArrayList<String>();
+    for (String s : names) {
+      result.add(s);
+    }
+    return result;
   }
 
   public void openMethod(String namespace, String name) throws IOException, XmlRpcException {
@@ -91,7 +104,7 @@ public class MPSPlugin {
 
   public static void main(String[] args) throws Exception {
     MPSPlugin client = new MPSPlugin();
-    for (String s : client.getGeneratorClasses()) {
+    for (String s : client.findInheritors(IModelGenerator.class)) {
       System.out.println(s);
     }
 

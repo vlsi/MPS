@@ -102,17 +102,17 @@ public class MPSSupportHandler {
     return result;
   }
 
-  public String getGeneratorClasses() {
+  public String findInheritors(final String fqName) {
     final List list = new ArrayList();
     ApplicationManager.getApplication().runReadAction(new Runnable() {
       public void run() {
         PsiManager manager = PsiManager.getInstance(myProject);
-        PsiClass cls = manager.findClass("jetbrains.mps.generator.template.ITemplateGenerator", GlobalSearchScope.projectProductionScope(myProject, false));
+        PsiClass cls = manager.findClass(fqName, GlobalSearchScope.projectProductionScope(myProject, false));
         if (cls == null) return;
         PsiSearchHelper helper = manager.getSearchHelper();
         PsiClass[] result = helper.findInheritors(cls, GlobalSearchScope.projectScope(myProject), true);
         for (int i = 0; i < result.length; i++) {
-          if (result[i].getQualifiedName() != null) {
+          if (result[i].getQualifiedName() != null) {  //i.e anonymous class
             list.add(result[i].getQualifiedName());
           }
         }

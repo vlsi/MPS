@@ -57,9 +57,13 @@ public class GeneratorManager {
     System.out.println("Generating sourceModel " + sourceModel.getFQName());
     try {
       Class cls = Class.forName(generatorClassFQName);
-      ITemplateGenerator generator = (ITemplateGenerator) cls.getConstructor(SModel.class, MPSProject.class).newInstance(sourceModel.getSModel(), myProject);
+      IModelGenerator generator = (IModelGenerator) cls.getConstructor(SModel.class, MPSProject.class).newInstance(sourceModel.getSModel(), myProject);
       SModel targetModel = JavaGenUtil.createTargetJavaModel(sourceModel.getSModel(), sourceModel.getFQName(), myProject);
-      generator.generate(targetModel, templatesModel.getSModel());
+      if (generator instanceof ITemplateGenerator) {
+        ((ITemplateGenerator) generator).generate(targetModel, templatesModel.getSModel());
+      } else {
+        generator.generate(targetModel);
+      }
       if (generateText) {
         generateText(targetModel);
       } else {
