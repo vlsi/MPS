@@ -8,7 +8,6 @@ import jetbrains.mps.semanticModel.SemanticNode;
  * Date: Jan 13, 2004
  */
 public class JavaNameUtil {
-
   public static String fqClassNameByNamespace(SemanticNode semanticNode, String shortClassName) {
     return fqClassNameByNamespace(semanticNode.getModel(), shortClassName);
   }
@@ -28,6 +27,14 @@ public class JavaNameUtil {
       return shortClassName;
     }
     return packageName + "." + shortClassName;
+  }
+
+  public static String packageNameForModelFqName(String modelFqName) {
+    String packageName = modelFqName;
+    if (modelFqName.endsWith(".structure")) {
+      packageName = modelFqName.substring(0, modelFqName.lastIndexOf(".structure"));
+    }
+    return packageName;
   }
 
   /**

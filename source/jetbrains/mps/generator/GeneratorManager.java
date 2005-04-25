@@ -1,28 +1,27 @@
 package jetbrains.mps.generator;
 
+import jetbrains.mps.baseLanguage.Classifier;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.projectLanguage.Generator;
 import jetbrains.mps.projectLanguage.GeneratorConfiguration;
 import jetbrains.mps.projectLanguage.GeneratorConfigurationCommand;
-import jetbrains.mps.projectLanguage.Generator;
 import jetbrains.mps.projectLanguage.ModelRoot;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.semanticModel.*;
-import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textPresentation.TextPresentationManager;
-import jetbrains.mps.baseLanguage.Classifier;
+import jetbrains.mps.util.CollectionUtil;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.util.Iterator;
-import java.util.List;
 import java.io.File;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 /**
  * @author Kostik
  */
 public class GeneratorManager {
-  public static final String STRUCTURE_SUFFIX = ".structure";
+//  public static final String STRUCTURE_SUFFIX = ".structure";
 
   private MPSProject myProject;
 
@@ -53,7 +52,7 @@ public class GeneratorManager {
         System.out.println("Templates model is " + templatesModel.getFQName());
       }
 
-        for (SModelDescriptor model : modelsWithLanguage) {
+      for (SModelDescriptor model : modelsWithLanguage) {
         generate_internal(model, generatorClass, templatesModel, configuration.getOutputPath(), generateText);
       }
     }
@@ -64,7 +63,7 @@ public class GeneratorManager {
     try {
       Class cls = Class.forName(generatorClassFQName);
       IModelGenerator generator = (IModelGenerator) cls.getConstructor(SModel.class, MPSProject.class).newInstance(sourceModel.getSModel(), myProject);
-      SModel targetModel = JavaGenUtil.createTargetJavaModel(sourceModel.getSModel(), sourceModel.getFQName(), myProject);
+      SModel targetModel = JavaGenUtil.createTargetJavaModel(sourceModel.getSModel(), JavaNameUtil.packageNameForModelFqName(sourceModel.getFQName()), myProject);
       if (generator instanceof ITemplateGenerator) {
         ((ITemplateGenerator) generator).generate(targetModel, templatesModel.getSModel());
       } else {
@@ -83,16 +82,19 @@ public class GeneratorManager {
 
   private void generateSource(String outputPath, SModel sourceModel, SModel targetModel) {
     if (outputPath == null) throw new RuntimeException("Unspecified output path. Please specify one.");
-    System.out.println("Generating to " + outputPath);
-    String fqName = sourceModel.getFQName();
-    if (fqName.endsWith(STRUCTURE_SUFFIX)) fqName = fqName.substring(fqName.length() - STRUCTURE_SUFFIX.length());
-    File outputPathFile = new File(outputPath + File.separator + fqName.replace('.', File.separatorChar));
+    System.out.println("Generating to root: " + outputPath);
+    String packageName = JavaNameUtil.packageNameForModelFqName(sourceModel.getFQName());
+//    String fqName = sourceModel.getFQName();
+//    if (fqName.endsWith(STRUCTURE_SUFFIX)) fqName = fqName.substring(fqName.length() - STRUCTURE_SUFFIX.length());
+//    File outputPathFile = new File(outputPath + File.separator + fqName.replace('.', File.separatorChar));
+    File outputPathFile = new File(outputPath + File.separator + packageName.replace('.', File.separatorChar));
+    System.out.println("Generating to folder: " + outputPathFile.getAbsolutePath());
 
     if (!outputPathFile.exists()) {
       outputPathFile.mkdirs();
     }
 
-    JavaFileGenerator javaFileGenerator = new JavaFileGenerator(outputPathFile, sourceModel.getFQName(), false);
+    JavaFileGenerator javaFileGenerator = new JavaFileGenerator(outputPathFile, packageName, false);
     Iterator<SemanticNode> javaRoots = targetModel.roots();
     while (javaRoots.hasNext()) {
       SemanticNode node = javaRoots.next();
@@ -147,15 +149,17 @@ public class GeneratorManager {
   }
 
   private SModelDescriptor loadTemplatesModel(Generator generator) {
-    if (generator.getModelRoot() == null) return null;
+    if (generator.getModelRootsCount() == 0) return null;
 
     Set<ModelRoot> roots = new HashSet<ModelRoot>();
-    roots.add(generator.getModelRoot());
+    Iterator<ModelRoot> iterator = generator.modelRoots();
+    while (iterator.hasNext()) {
+      ModelRoot modelRoot = iterator.next();
+      roots.add(modelRoot);
+    }
 
     Set<SModelDescriptor> models = new HashSet<SModelDescriptor>();
-
     SModelRepository.getInstance().readModelDescriptors(roots, models, myProject);
-
     if (generator.getTemplatesModel() == null) {
       return null;
     }

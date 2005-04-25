@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model namespace="jetbrains.mps.transformation.TLBase">
-  <maxReferenceID value="5" />
+  <maxReferenceID value="6" />
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
   <import referenceID="1" name="structure" namespace="jetbrains.mps.transformation.TLBase" />
   <import referenceID="4" name="structure" namespace="jetbrains.mps.core" />
+  <import referenceID="6" name="structure" namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1087903454703">
     <property name="name" value="PropertyMacro_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1087833241328" />
@@ -22,8 +23,8 @@
         <property name="text" value="$" />
         <property name="fontStyle" value="BOLD_ITALIC" />
         <property name="drawBorder" value="false" />
-        <property name="selectable" value="true" />
         <property name="textBgColorSelected" value="cyan" />
+        <property name="selectable" value="true" />
       </node>
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1087903454708">
@@ -146,12 +147,13 @@
       </node>
     </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1089126148396">
+      <property name="editable" value="true" />
       <property name="textFgColor" value="DARK_BLUE" />
       <property name="text" value="$$" />
       <property name="fontStyle" value="BOLD_ITALIC" />
       <property name="drawBorder" value="false" />
-      <property name="textBgColorSelected" value="cyan" />
       <property name="selectable" value="true" />
+      <property name="textBgColorSelected" value="cyan" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1087927878702">
@@ -205,8 +207,8 @@
         <property name="text" value="-&gt;$" />
         <property name="fontStyle" value="BOLD_ITALIC" />
         <property name="drawBorder" value="false" />
-        <property name="selectable" value="true" />
         <property name="textBgColorSelected" value="cyan" />
+        <property name="selectable" value="true" />
       </node>
     </node>
   </node>
@@ -227,8 +229,8 @@
         <property name="substituteHandlerId" value="TemplateDeclaration_SetContentNode" />
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1092137340908">
           <property name="name" value="languageNode" />
-          <property name="descriptionProviderId" value="SemanticNode_ModelFQName" />
           <property name="queryId" value="Language_ConceptDeclarations" />
+          <property name="descriptionProviderId" value="SemanticNode_ModelFQName" />
           <property name="textProviderId" value="SemanticNodeNameText" />
         </node>
       </node>
@@ -262,8 +264,8 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1092826413145">
         <property name="drawBorder" value="false" />
         <property name="vertical" value="true" />
-        <property name="selectable" value="false" />
         <property name="gridLayout" value="true" />
+        <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1092826609045">
           <property name="drawBorder" value="false" />
           <property name="vertical" value="false" />
@@ -321,8 +323,9 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1095419078591">
         <property name="drawBorder" value="false" />
         <property name="vertical" value="false" />
+        <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1095419078592">
-          <property name="text" value="Template Mapping Configuration:" />
+          <property name="text" value="mapping configuration:" />
           <property name="drawBorder" value="false" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1095419078593">
@@ -334,29 +337,35 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1095419376938">
         <property name="drawBorder" value="false" />
         <property name="name" value="separator" />
+        <property name="selectable" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1095419376939">
         <property name="drawBorder" value="false" />
         <property name="vertical" value="false" />
+        <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1095419374859">
           <property name="text" value="    " />
           <property name="drawBorder" value="false" />
           <property name="name" value="indent" />
+          <property name="selectable" value="false" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1095419376940">
           <property name="drawBorder" value="false" />
           <property name="vertical" value="true" />
+          <property name="selectable" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1095419376941">
-            <property name="text" value="Template mapping rules:" />
+            <property name="text" value="mapping rules:" />
             <property name="drawBorder" value="false" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1095419376942">
             <property name="drawBorder" value="false" />
             <property name="vertical" value="false" />
+            <property name="selectable" value="false" />
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1095419418662">
               <property name="text" value="    " />
               <property name="drawBorder" value="false" />
               <property name="name" value="indent" />
+              <property name="selectable" value="false" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1095419418663">
               <property name="drawBorder" value="false" />
@@ -370,29 +379,35 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1095423905610">
         <property name="drawBorder" value="false" />
         <property name="name" value="separator" />
+        <property name="selectable" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1095419459743">
         <property name="drawBorder" value="false" />
         <property name="vertical" value="false" />
+        <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1095419459744">
           <property name="text" value="    " />
           <property name="drawBorder" value="false" />
           <property name="name" value="indent" />
+          <property name="selectable" value="false" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1095419459745">
           <property name="drawBorder" value="false" />
           <property name="vertical" value="true" />
+          <property name="selectable" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1095419459746">
-            <property name="text" value="Template weaving rules:" />
+            <property name="text" value="weaving rules:" />
             <property name="drawBorder" value="false" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1095419459747">
             <property name="drawBorder" value="false" />
             <property name="vertical" value="false" />
+            <property name="selectable" value="false" />
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1095419459748">
               <property name="text" value="    " />
               <property name="drawBorder" value="false" />
               <property name="name" value="indent" />
+              <property name="selectable" value="false" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1095419459749">
               <property name="drawBorder" value="false" />
@@ -406,18 +421,22 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1096887650489">
         <property name="drawBorder" value="false" />
         <property name="name" value="separator" />
+        <property name="selectable" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1096887650490">
         <property name="drawBorder" value="false" />
         <property name="vertical" value="false" />
+        <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1096887650491">
           <property name="text" value="    " />
           <property name="drawBorder" value="false" />
           <property name="name" value="indent" />
+          <property name="selectable" value="false" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1096887650508">
           <property name="drawBorder" value="false" />
           <property name="vertical" value="true" />
+          <property name="selectable" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1096887650509">
             <property name="text" value="Template tags:" />
             <property name="drawBorder" value="false" />
@@ -425,10 +444,12 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1096887650510">
             <property name="drawBorder" value="false" />
             <property name="vertical" value="false" />
+            <property name="selectable" value="false" />
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1096887650511">
               <property name="text" value="    " />
               <property name="drawBorder" value="false" />
               <property name="name" value="indent" />
+              <property name="selectable" value="false" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1096887650512">
               <property name="drawBorder" value="false" />
@@ -450,8 +471,8 @@
         <property name="substituteHandlerId" value="TemplateMappingRule_SetTemplateNode" />
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1111428726890">
           <property name="name" value="templateNode" />
-          <property name="queryId" value="TemplateNodes" />
           <property name="descriptionProviderId" value="Namespace" />
+          <property name="queryId" value="TemplateNodes" />
           <property name="textProviderId" value="Name" />
         </node>
       </node>
@@ -686,8 +707,8 @@
         <property name="textBgColor" value="pink" />
         <property name="text" value="&lt;TF" />
         <property name="drawBorder" value="false" />
-        <property name="selectable" value="true" />
         <property name="textBgColorSelected" value="magenta" />
+        <property name="selectable" value="true" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1100694105555">
         <property name="textBgColor" value="orange" />
@@ -780,6 +801,7 @@
       </node>
     </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1112737925990">
+      <property name="editable" value="true" />
       <property name="textFgColor" value="DARK_BLUE" />
       <property name="text" value="$SWITCH$" />
       <property name="fontStyle" value="BOLD_ITALIC" />
@@ -842,8 +864,8 @@
           <property name="separatorText" value=" " />
           <property name="drawBorder" value="false" />
           <property name="vertical" value="true" />
-          <property name="selectable" value="false" />
           <property name="gridLayout" value="true" />
+          <property name="selectable" value="false" />
           <link role="linkDeclaration" targetNodeId="1.1112731464728" />
         </node>
       </node>
@@ -896,6 +918,162 @@
           <link role="propertyDeclaration" targetNodeId="4.1078489098626" />
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1114457729459">
+    <link role="conceptDeclaration" targetNodeId="1.1114456200744" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1114457923509">
+      <property name="drawBorder" value="false" />
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1114457838820">
+        <property name="drawBorder" value="false" />
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1114457923510">
+          <property name="text" value="reduction configuration:" />
+          <property name="drawBorder" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1114457923511">
+          <property name="defaultText" value="&lt;no name&gt;" />
+          <property name="drawBorder" value="false" />
+          <link role="propertyDeclaration" targetNodeId="4.1078489098626" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1114457923512">
+          <property name="text" value="modifies" />
+          <property name="drawBorder" value="false" />
+          <property name="selectable" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1114457923513">
+          <property name="drawBorder" value="false" />
+          <property name="nullText" value="&lt;none&gt;" />
+          <link role="linkDeclaration" targetNodeId="1.1114456243651" />
+          <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1114457887664">
+            <link role="conceptDeclaration" targetNodeId="1.1114456200744" />
+            <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1114457923514">
+              <property name="defaultText" value="&lt;no name&gt;" />
+              <property name="drawBorder" value="false" />
+              <property name="readOnly" value="true" />
+              <link role="propertyDeclaration" targetNodeId="4.1078489098626" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1114457923515">
+        <property name="drawBorder" value="false" />
+        <property name="name" value="separator" />
+        <property name="selectable" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1114457923516">
+        <property name="drawBorder" value="false" />
+        <property name="vertical" value="false" />
+        <property name="selectable" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1114457923517">
+          <property name="text" value="    " />
+          <property name="drawBorder" value="false" />
+          <property name="name" value="indent" />
+          <property name="selectable" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1114457923518">
+          <property name="drawBorder" value="false" />
+          <property name="vertical" value="true" />
+          <property name="selectable" value="false" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1114457923519">
+            <property name="text" value="applicable root concepts:" />
+            <property name="drawBorder" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1114457923520">
+            <property name="drawBorder" value="false" />
+            <property name="vertical" value="false" />
+            <property name="selectable" value="false" />
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1114457923521">
+              <property name="text" value="    " />
+              <property name="drawBorder" value="false" />
+              <property name="name" value="indent" />
+              <property name="selectable" value="false" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1114457923522">
+              <property name="drawBorder" value="false" />
+              <property name="vertical" value="true" />
+              <property name="gridLayout" value="true" />
+              <link role="linkDeclaration" targetNodeId="1.1114456350559" />
+            </node>
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1114458516573">
+            <property name="drawBorder" value="false" />
+            <property name="name" value="separator" />
+            <property name="selectable" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1114458516574">
+            <property name="text" value="reduction rules:" />
+            <property name="drawBorder" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1114458516575">
+            <property name="drawBorder" value="false" />
+            <property name="vertical" value="false" />
+            <property name="selectable" value="false" />
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1114458516576">
+              <property name="text" value="    " />
+              <property name="drawBorder" value="false" />
+              <property name="name" value="indent" />
+              <property name="selectable" value="false" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1114458516577">
+              <property name="drawBorder" value="false" />
+              <property name="vertical" value="true" />
+              <property name="gridLayout" value="true" />
+              <link role="linkDeclaration" targetNodeId="1.1114456501997" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1114458549484">
+    <link role="conceptDeclaration" targetNodeId="1.1114458327664" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1114458600627">
+      <property name="drawBorder" value="false" />
+      <property name="nullText" value="&lt;choose concept declaration&gt;" />
+      <link role="linkDeclaration" targetNodeId="1.1114458346385" />
+      <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1114458566423">
+        <link role="conceptDeclaration" targetNodeId="6.1071489090640" />
+        <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1114458600628">
+          <property name="defaultText" value="&lt;no name&gt;" />
+          <property name="drawBorder" value="false" />
+          <property name="readOnly" value="true" />
+          <link role="propertyDeclaration" targetNodeId="4.1078489098626" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1114458648191">
+    <link role="conceptDeclaration" targetNodeId="1.1114456532170" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1114461204693">
+      <property name="drawBorder" value="false" />
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1114461360775">
+        <property name="text" value="case:" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1114461360776">
+        <property name="drawBorder" value="false" />
+        <property name="cellProviderId" value="reductionRuleCondition_AspectId" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1114461360777">
+        <property name="text" value="-&gt; commands:" />
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1114461411465">
+        <property name="drawBorder" value="false" />
+        <property name="vertical" value="true" />
+        <link role="linkDeclaration" targetNodeId="1.1114461325523" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1114461465404">
+    <link role="conceptDeclaration" targetNodeId="1.1114456602485" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1114461493983">
+      <property name="text" value="choose command" />
+      <property name="drawBorder" value="false" />
     </node>
   </node>
 </model>

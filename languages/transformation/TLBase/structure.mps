@@ -204,5 +204,59 @@
       <link role="target" targetNodeId="1112730859144" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1114456200744">
+    <property name="rootable" value="true" />
+    <property name="name" value="ReductionConfiguration" />
+    <link role="extends" targetNodeId="2.1078489098625" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1114456243651">
+      <property name="targetCardinality" value="0..n" />
+      <property name="role" value="modifiedReductionConfiguration" />
+      <link role="target" targetNodeId="1114456200744" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1114456350559">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="targetCardinality" value="1" />
+      <property name="role" value="reduceableRootConcept" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1114458327664" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1114456501997">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="targetCardinality" value="1" />
+      <property name="role" value="reductionRule" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1114456532170" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1114456532170">
+    <property name="name" value="ReductionRule" />
+    <link role="extends" targetNodeId="2.1078489098625" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1114461325523">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="targetCardinality" value="1" />
+      <property name="role" value="reductionCommand" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1114456602485" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1114456556796">
+      <property name="name" value="conditionAspectId" />
+      <link role="dataType" targetNodeId="2.1082983041843" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1114456602485">
+    <property name="name" value="ReductionCommand" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1114456622674">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1107214854626" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1114458327664">
+    <property name="name" value="ConceptDeclarationReference" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1114458346385">
+      <property name="sourceCardinality" value="1" />
+      <property name="targetCardinality" value="0..n" />
+      <property name="role" value="conceptDeclaration" />
+      <link role="target" targetNodeId="3.1071489090640" />
+    </node>
+  </node>
 </model>
 
