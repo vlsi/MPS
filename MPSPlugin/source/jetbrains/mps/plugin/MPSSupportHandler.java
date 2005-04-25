@@ -127,6 +127,19 @@ public class MPSSupportHandler {
     return result.toString();
   }
 
+  public String openClass(final String fqName) {
+    executeWriteAction(new Runnable() {
+      public void run() {
+        PsiManager manager = PsiManager.getInstance(myProject);
+        PsiClass cls = manager.findClass(fqName, GlobalSearchScope.projectProductionScope(myProject, false));
+        if (cls == null) return;
+        cls.navigate(true);
+        activateProjectWindow();
+      }
+    });
+    return "OK";
+  }
+
   public String addImport(final String namespace, final String fqName) {
     if (!isAspectsClassExist(namespace)) createAspectClass(namespace);
     executeWriteAction(new Runnable() {

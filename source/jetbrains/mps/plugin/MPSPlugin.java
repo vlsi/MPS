@@ -86,6 +86,13 @@ public class MPSPlugin {
     myClient.execute("MPSSupport.openMethod", params);
   }
 
+  public void openClass(String fqName) throws IOException, XmlRpcException {
+    Vector params = new Vector();
+    params.add(fqName);
+
+    myClient.execute("MPSSupport.openClass", params);
+  }
+
   public void addImport(String namespace, String fqName) throws IOException, XmlRpcException {
     Vector<String> params = new Vector<String>();
     params.add(namespace);
