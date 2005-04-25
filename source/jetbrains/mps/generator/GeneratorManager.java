@@ -49,9 +49,11 @@ public class GeneratorManager {
       System.out.println("Generator class is " + generatorClass);
 
       SModelDescriptor templatesModel = loadTemplatesModel(generator);
-      System.out.println("Templates model is " + templatesModel.getFQName());
+      if (templatesModel != null) {
+        System.out.println("Templates model is " + templatesModel.getFQName());
+      }
 
-      for (SModelDescriptor model : modelsWithLanguage) {
+        for (SModelDescriptor model : modelsWithLanguage) {
         generate_internal(model, generatorClass, templatesModel, configuration.getOutputPath(), generateText);
       }
     }
@@ -145,7 +147,7 @@ public class GeneratorManager {
   }
 
   private SModelDescriptor loadTemplatesModel(Generator generator) {
-    if (generator.getModelRoot() == null) throw new RuntimeException("Model root is null!");
+    if (generator.getModelRoot() == null) return null;
 
     Set<ModelRoot> roots = new HashSet<ModelRoot>();
     roots.add(generator.getModelRoot());
