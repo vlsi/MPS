@@ -105,7 +105,7 @@ public class TemplateGenUtil {
 
   private static INodeBuilder loadNodeBuilder(SemanticNode sourceNode, SemanticNode templateNode, String mappingName, ITemplateGenerator generator) {
     ConceptDeclaration typeDeclaration = Language.getTypeDeclaration(templateNode);
-    String modelPackageName = JavaNameUtil.packageNameForLanguageStructure(typeDeclaration.getModel());
+    String modelPackageName = JavaNameUtil.packageNameForModelFqName(typeDeclaration.getModel().getFQName());
     String buildersPackageName = modelPackageName + ".builder";
     String builderClassName = buildersPackageName + "." + typeDeclaration.getName() + "_NodeBuilder";
     try {
@@ -132,7 +132,7 @@ public class TemplateGenUtil {
   public static IReferenceResolver loadReferenceResolver(SemanticNode templateNode) {
     ConceptDeclaration conceptDeclaration = Language.getTypeDeclaration(templateNode);
     while (conceptDeclaration != null) {
-      String modelPackageName = JavaNameUtil.packageNameForLanguageStructure(conceptDeclaration.getModel());
+      String modelPackageName = JavaNameUtil.packageNameForModelFqName(conceptDeclaration.getModel().getFQName());
       String buildersPackageName = modelPackageName + ".builder";
       String resolverClassName = buildersPackageName + "." + conceptDeclaration.getName() + "_ReferenceResolver";
       try {
@@ -158,7 +158,7 @@ public class TemplateGenUtil {
           public static Object invokeAspectMethod(String methodName, Object[] arguments, SModel templatesModel) {
     Class aspectsClass = null;
     //    String javaPackageName = JavaNameUtil.packageNameForModel(templatesModel.getTemplatesModel());
-    String javaPackageName = JavaNameUtil.packageNameForModel(templatesModel);
+    String javaPackageName = JavaNameUtil.packageNameForModelFqName(templatesModel.getFQName());
     String aspectsClassName = "Aspects";
     if (javaPackageName.length() > 0) {
       aspectsClassName = javaPackageName + "." + aspectsClassName;

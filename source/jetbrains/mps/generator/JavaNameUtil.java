@@ -22,7 +22,7 @@ public class JavaNameUtil {
   }
 
   public static String fqClassName(SModel semanticModel, String shortClassName) {
-    String packageName = packageNameForModel(semanticModel);
+    String packageName = packageNameForModelFqName(semanticModel.getFQName());
     if (packageName == null || packageName.length() == 0) {
       return shortClassName;
     }
@@ -37,20 +37,20 @@ public class JavaNameUtil {
     return packageName;
   }
 
-  /**
-   * @deprecated
-   */
-  public static String packageNameForLanguageStructure(SModel structureModel) {
-    return structureModel.getNamespace();
-  }
+//  /**
+//   * @deprecated
+//   */
+//  public static String packageNameForLanguageStructure(SModel structureModel) {
+//    return structureModel.getNamespace();
+//  }
 
-  public static String packageNameForModel(SModel semanticModel) {
-    String packageName = semanticModel.getFQName();
-    if (semanticModel.getName() == null || semanticModel.getName().length() == 0) {
-      packageName = semanticModel.getNamespace();
-    }
-    return packageName;
-  }
+//  public static String packageNameForModel(SModel semanticModel) {
+//    String packageName = semanticModel.getFQName();
+//    if (semanticModel.getName() == null || semanticModel.getName().length() == 0) {
+//      packageName = semanticModel.getNamespace();
+//    }
+//    return packageName;
+//  }
 
 
   public static String packageName(String fqName) {
