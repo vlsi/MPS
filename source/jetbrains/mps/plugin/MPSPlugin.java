@@ -93,6 +93,10 @@ public class MPSPlugin {
     myClient.execute("MPSSupport.openClass", params);
   }
 
+  public void openClass(Class cls) throws IOException, XmlRpcException {
+    openClass(cls.getName());    
+  }
+
   public void addImport(String namespace, String fqName) throws IOException, XmlRpcException {
     Vector<String> params = new Vector<String>();
     params.add(namespace);
