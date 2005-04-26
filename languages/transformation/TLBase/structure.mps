@@ -258,5 +258,31 @@
       <link role="target" targetNodeId="3.1071489090640" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1114473802710">
+    <property name="name" value="ReductionCommand_CallAspect" />
+    <link role="extends" targetNodeId="1114456602485" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1114473991404">
+      <property name="value" value="call aspect" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1114473834054">
+      <property name="name" value="aspectId" />
+      <link role="dataType" targetNodeId="2.1082983041843" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1114473886493">
+    <property name="name" value="ReductionCommand_WeaveTemplate" />
+    <link role="extends" targetNodeId="1114456602485" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1114473970746">
+      <property name="value" value="weave template" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1114473942994">
+      <property name="sourceCardinality" value="1" />
+      <property name="targetCardinality" value="0..n" />
+      <property name="role" value="templateDeclaration" />
+      <link role="target" targetNodeId="1092059087312" />
+    </node>
+  </node>
 </model>
 

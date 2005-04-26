@@ -1076,5 +1076,63 @@
       <property name="drawBorder" value="false" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1114474020921">
+    <link role="conceptDeclaration" targetNodeId="1.1114473802710" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1114474035609">
+      <property name="drawBorder" value="false" />
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1114474278438">
+        <property name="textFgColor" value="DARK_BLUE" />
+        <property name="text" value="call aspect (" />
+        <property name="fontStyle" value="BOLD_ITALIC" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1114474278439">
+        <property name="drawBorder" value="false" />
+        <property name="cellProviderId" value="reductionCommand_CallAspect_AspectId" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1114474278440">
+        <property name="textFgColor" value="DARK_BLUE" />
+        <property name="text" value=")" />
+        <property name="fontStyle" value="BOLD_ITALIC" />
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="false" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1114474285801">
+    <link role="conceptDeclaration" targetNodeId="1.1114473886493" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1114474299724">
+      <property name="drawBorder" value="false" />
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1114474366788">
+        <property name="textFgColor" value="DARK_BLUE" />
+        <property name="text" value="weave template (" />
+        <property name="fontStyle" value="BOLD_ITALIC" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1114474366789">
+        <property name="drawBorder" value="false" />
+        <property name="nullText" value="choose template" />
+        <link role="linkDeclaration" targetNodeId="1.1114473942994" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1114474324225">
+          <link role="conceptDeclaration" targetNodeId="1.1092059087312" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1114474366790">
+            <property name="defaultText" value="&lt;no name&gt;" />
+            <property name="drawBorder" value="false" />
+            <property name="readOnly" value="true" />
+            <link role="propertyDeclaration" targetNodeId="4.1078489098626" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1114474830394">
+        <property name="textFgColor" value="DARK_BLUE" />
+        <property name="text" value=")" />
+        <property name="fontStyle" value="BOLD_ITALIC" />
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="false" />
+      </node>
+    </node>
+  </node>
 </model>
 
