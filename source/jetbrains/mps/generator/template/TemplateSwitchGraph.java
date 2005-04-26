@@ -19,7 +19,7 @@ import java.util.LinkedList;
  * To change this template use File | Settings | File Templates.
  */
 public class TemplateSwitchGraph {
-  private Map<TemplateSwitch, SwitchGraphNode> myTemplateSwitchToGraphNodeMap = new HashMap<TemplateSwitch, SwitchGraphNode>();
+  private Map<TemplateSwitch, TemplateSwitchGraphNode> myTemplateSwitchToGraphNodeMap = new HashMap<TemplateSwitch, TemplateSwitchGraphNode>();
 
   public TemplateSwitchGraph(SModel templatesModel) {
     init(templatesModel);
@@ -39,17 +39,17 @@ public class TemplateSwitchGraph {
     }
   }
 
-  private SwitchGraphNode addSwitch(TemplateSwitch templateSwitch) {
+  private TemplateSwitchGraphNode addSwitch(TemplateSwitch templateSwitch) {
     if (myTemplateSwitchToGraphNodeMap.get(templateSwitch) != null) {
       throw new RuntimeException("Couldn't add template switch more then once: " + templateSwitch.getDebugText());
     }
     //    System.out.println("add switch: " + templateSwitch.getDebugText());
 
-    SwitchGraphNode switchNode = new SwitchGraphNode(templateSwitch);
+    TemplateSwitchGraphNode switchNode = new TemplateSwitchGraphNode(templateSwitch);
     myTemplateSwitchToGraphNodeMap.put(templateSwitch, switchNode);
     TemplateSwitch modifiedSwitch = templateSwitch.getModifiedSwitch();
     if (modifiedSwitch != null) {
-      SwitchGraphNode modifiedSwitchNode = myTemplateSwitchToGraphNodeMap.get(modifiedSwitch);
+      TemplateSwitchGraphNode modifiedSwitchNode = myTemplateSwitchToGraphNodeMap.get(modifiedSwitch);
       if (modifiedSwitchNode == null) {
         modifiedSwitchNode = addSwitch(modifiedSwitch);
       }
@@ -61,25 +61,25 @@ public class TemplateSwitchGraph {
   }
 
   public List<TemplateSwitch> getSubgraphAsList(TemplateSwitch baseSwitch) {
-    SwitchGraphNode bottomSwitchNode = myTemplateSwitchToGraphNodeMap.get(baseSwitch);
+    TemplateSwitchGraphNode bottomSwitchNode = myTemplateSwitchToGraphNodeMap.get(baseSwitch);
     while (bottomSwitchNode.modifiedSwitchNode != null) {
       bottomSwitchNode = bottomSwitchNode.modifiedSwitchNode;
     }
-    List<SwitchGraphNode> graphNodes = new LinkedList<SwitchGraphNode>();
+    List<TemplateSwitchGraphNode> graphNodes = new LinkedList<TemplateSwitchGraphNode>();
     modifierSwitchesToList(bottomSwitchNode, graphNodes);
     graphNodes.add(bottomSwitchNode);
 
     List<TemplateSwitch> switches = new LinkedList<TemplateSwitch>();
-    for (SwitchGraphNode switchGraphNode : graphNodes) {
+    for (TemplateSwitchGraphNode switchGraphNode : graphNodes) {
       switches.add(switchGraphNode.templateSwitch);
     }
     return switches;
   }
 
-  private void modifierSwitchesToList(SwitchGraphNode switchNode, List<SwitchGraphNode> list) {
+  private void modifierSwitchesToList(TemplateSwitchGraphNode switchNode, List<TemplateSwitchGraphNode> list) {
     if (!switchNode.modifierSwitchNodes.isEmpty()) {
       list.addAll(switchNode.modifierSwitchNodes);
-      for (SwitchGraphNode modifierSwitchNode : switchNode.modifierSwitchNodes) {
+      for (TemplateSwitchGraphNode modifierSwitchNode : switchNode.modifierSwitchNodes) {
         modifierSwitchesToList(modifierSwitchNode, list);
       }
     }
