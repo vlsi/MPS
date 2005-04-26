@@ -8,17 +8,17 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.core.BaseConcept;
+import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.diagnostic.Logger;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.*;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
+import jetbrains.mps.util.AspectMethod;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.generator.JavaNameUtil;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.*;
 
 public class TemplateGenUtil {
@@ -152,44 +152,44 @@ public class TemplateGenUtil {
     return null;
   }
 
-  // --------------------------------
-          // Macro Aspect methods invocation...
-          // --------------------------------
-          public static Object invokeAspectMethod(String methodName, Object[] arguments, SModel templatesModel) {
-    Class aspectsClass = null;
-    //    String javaPackageName = JavaNameUtil.packageNameForModel(templatesModel.getTemplatesModel());
-    String javaPackageName = JavaNameUtil.packageNameForModelFqName(templatesModel.getFQName());
-    String aspectsClassName = "Aspects";
-    if (javaPackageName.length() > 0) {
-      aspectsClassName = javaPackageName + "." + aspectsClassName;
-    }
-    try {
-      //      aspectsClass = Class.forName(aspectsClassName, true, new MPSClassLoader() {
-      //                protected boolean isExcluded(String name) {
-      //                  return false;
-      //                }
-      //              });
-      aspectsClass = Class.forName(aspectsClassName);
-    } catch (ClassNotFoundException e) {
-      throw new RuntimeException(e);
-    }
-
-
-    Method[] declaredMethods = aspectsClass.getDeclaredMethods();
-    for (int i = 0; i < declaredMethods.length; i++) {
-      Method declaredMethod = declaredMethods[i];
-      if (declaredMethod.getName().equals(methodName)) {
-        try {
-          return declaredMethod.invoke(null, arguments);
-        } catch (IllegalAccessException e) {
-          throw new RuntimeException(e);
-        } catch (InvocationTargetException e) {
-          throw new RuntimeException(e);
-        }
-      }
-    }
-    throw new RuntimeException("Couldn't find method \"" + methodName + "\" in " + aspectsClass.getPackage().getName() + "." + aspectsClass.getName());
-  }
+//  // --------------------------------
+//  // Macro Aspect methods invocation...
+//  // --------------------------------
+//
+//  public static Object invokeAspectMethod(String methodName, Object[] arguments, SModel templatesModel) {
+//    Class aspectsClass = null;
+//    String javaPackageName = JavaNameUtil.packageNameForModelFqName(templatesModel.getFQName());
+//    String aspectsClassName = "Aspects";
+//    if (javaPackageName.length() > 0) {
+//      aspectsClassName = javaPackageName + "." + aspectsClassName;
+//    }
+//    try {
+//      //      aspectsClass = Class.forName(aspectsClassName, true, new MPSClassLoader() {
+//      //                protected boolean isExcluded(String name) {
+//      //                  return false;
+//      //                }
+//      //              });
+//      aspectsClass = Class.forName(aspectsClassName);
+//    } catch (ClassNotFoundException e) {
+//      throw new RuntimeException(e);
+//    }
+//
+//
+//    Method[] declaredMethods = aspectsClass.getDeclaredMethods();
+//    for (int i = 0; i < declaredMethods.length; i++) {
+//      Method declaredMethod = declaredMethods[i];
+//      if (declaredMethod.getName().equals(methodName)) {
+//        try {
+//          return declaredMethod.invoke(null, arguments);
+//        } catch (IllegalAccessException e) {
+//          throw new RuntimeException(e);
+//        } catch (InvocationTargetException e) {
+//          throw new RuntimeException(e);
+//        }
+//      }
+//    }
+//    throw new RuntimeException("Couldn't find method \"" + methodName + "\" in " + aspectsClass.getPackage().getName() + "." + aspectsClass.getName());
+//  }
 
   public static List<INodeBuilder> createNodeBuildersForTemplateMappingRule(TemplateMappingRule templateMappingRule, ITemplateGenerator generator) {
     List<INodeBuilder> builders = new LinkedList<INodeBuilder>();
@@ -209,11 +209,6 @@ public class TemplateGenUtil {
 
   public static void createNodeBuildersForTemplateWeavingingRule(TemplateWeavingRule templateWeavingRule, ITemplateGenerator generator) {
     TemplateDeclaration templateDeclaration = templateWeavingRule.getTemplate();
-    List<TemplateFragment> templateFragments = getTemplateFragments(templateDeclaration);
-    if (templateFragments.isEmpty()) {
-      System.err.println("WARN: no template fragments found in " + templateDeclaration.getDebugText());
-      return;
-    }
 
     List<SemanticNode> sourceNodes = createSourceNodeListForTemplateWeavingRule(templateWeavingRule, generator);
     for (SemanticNode sourceNode : sourceNodes) {
@@ -226,42 +221,52 @@ public class TemplateGenUtil {
         continue;
       }
 
-      // for each template fragment create node builder
-      for (TemplateFragment templateFragment : templateFragments) {
-        SemanticNode templateFragmentNode = templateFragment.getParent();
-        String mappingName = templateFragment.getName();
+      createNodeBuildersForTemplateDeclaration(sourceNode, templateDeclaration, ruleContextBuilder, generator);
+    }
+  }
 
-        List<INodeBuilder> fragmentNodeBuilders = createNodeBuildersForTemplate(sourceNode, templateFragmentNode, mappingName, generator);
-        for (INodeBuilder fragmentBuilder : fragmentNodeBuilders) {
-          TemplateTag templateFragmentTag = templateFragment.getTag();
-          if (templateFragmentTag != null) {
-            // in context find builder with this tag and replace it with our "fragmant builder"
-            INodeBuilder toReplaceBuilder = findTemplateTagReference(sourceNode, templateFragmentTag, ruleContextBuilder, generator);
-            if (toReplaceBuilder == null) {
-              String message = "Could't find reference on tagged template fragment." +
-                      "\nTag                    : " + templateFragmentTag.getName() +
-                      "\nSource node            : " + sourceNode.getDebugText() +
-                      "\nTemplate fragment      : " + templateFragmentNode.getDebugText() +
-                      "\nTemplate declaration   : " + SModelUtil.getRootParent(templateFragmentNode).getDebugText() +
-                      "\nContext source node    : " + ruleContextBuilder.getSourceNode().getDebugText() +
-                      "\nContext template node  : " + ruleContextBuilder.getTemplateNode().getDebugText() +
-                      "\nContext template parent: " + SModelUtil.getRootParent(ruleContextBuilder.getTemplateNode()).getDebugText();
-              (new RuntimeException(message)).printStackTrace();
-              System.err.println("Source node trace:");
-              SModelUtil.dumpNodePath(sourceNode, 0, System.err);
-//              System.err.println("TMP WARN: " + message);
-            } else {
-              toReplaceBuilder.getParent().replaceChildBuilder(toReplaceBuilder, fragmentBuilder);
-              fragmentBuilder.setRoleInParent(toReplaceBuilder.getRoleInParent());
-            }
+  public static void createNodeBuildersForTemplateDeclaration(SemanticNode sourceNode, TemplateDeclaration templateDeclaration, INodeBuilder contextBuilder, ITemplateGenerator generator) {
+    List<TemplateFragment> templateFragments = getTemplateFragments(templateDeclaration);
+    if (templateFragments.isEmpty()) {
+      System.err.println("WARN: no template fragments found in " + templateDeclaration.getDebugText());
+      return;
+    }
+
+    // for each template fragment create node builder
+    for (TemplateFragment templateFragment : templateFragments) {
+      SemanticNode templateFragmentNode = templateFragment.getParent();
+      String mappingName = templateFragment.getName();
+
+      List<INodeBuilder> fragmentNodeBuilders = createNodeBuildersForTemplateNode(sourceNode, templateFragmentNode, mappingName, generator);
+      for (INodeBuilder fragmentBuilder : fragmentNodeBuilders) {
+        TemplateTag templateFragmentTag = templateFragment.getTag();
+        if (templateFragmentTag != null) {
+          // in context find builder with this tag and replace it with our "fragmant builder"
+          INodeBuilder toReplaceBuilder = findTemplateTagReference(sourceNode, templateFragmentTag, contextBuilder, generator);
+          if (toReplaceBuilder == null) {
+            String message = "Could't find reference on tagged template fragment." +
+                    "\nTag                    : " + templateFragmentTag.getName() +
+                    "\nSource node            : " + sourceNode.getDebugText() +
+                    "\nTemplate fragment      : " + templateFragmentNode.getDebugText() +
+                    "\nTemplate declaration   : " + SModelUtil.getRootParent(templateFragmentNode).getDebugText() +
+                    "\nContext source node    : " + contextBuilder.getSourceNode().getDebugText() +
+                    "\nContext template node  : " + contextBuilder.getTemplateNode().getDebugText() +
+                    "\nContext template parent: " + SModelUtil.getRootParent(contextBuilder.getTemplateNode()).getDebugText();
+            (new RuntimeException(message)).printStackTrace();
+            System.err.println("Source node trace:");
+            SModelUtil.dumpNodePath(sourceNode, 0, System.err);
+            //              System.err.println("TMP WARN: " + message);
           } else {
-            // add our "fragmant builder" to context builder
-            INodeBuilder fragmentContextBuilder = getContextBuilderForTemplateFragment(templateFragmentNode, ruleContextBuilder, generator);
-            fragmentContextBuilder.addChildBuilder(fragmentBuilder);
+            toReplaceBuilder.getParent().replaceChildBuilder(toReplaceBuilder, fragmentBuilder);
+            fragmentBuilder.setRoleInParent(toReplaceBuilder.getRoleInParent());
           }
+        } else {
+          // add our "fragmant builder" to context builder
+          INodeBuilder fragmentContextBuilder = getContextBuilderForTemplateFragment(templateFragmentNode, contextBuilder, generator);
+          fragmentContextBuilder.addChildBuilder(fragmentBuilder);
         }
       }
-    } // for (SemanticNode sourceNode : sourceNodes)
+    }
   }
 
   private static List<TemplateFragment> getTemplateFragments(TemplateDeclaration template) {
@@ -300,7 +305,8 @@ public class TemplateGenUtil {
     if (aspectId != null) {
       String methodName = "templateFragment_Context_" + aspectId;
       Object[] args = new Object[]{templateFragmentNode, ruleContextBuilder, generator};
-      INodeBuilder nodeBuilder = (INodeBuilder) invokeAspectMethod(methodName, args, fragment.getModel());
+//      INodeBuilder nodeBuilder = (INodeBuilder) invokeAspectMethod(methodName, args, fragment.getModel());
+      INodeBuilder nodeBuilder = (INodeBuilder) AspectMethod.invoke(methodName, args, fragment.getModel());
       return nodeBuilder;
     }
 
@@ -312,14 +318,15 @@ public class TemplateGenUtil {
     String aspectId = templateWeavingRule.getContextProviderAspectId();
     String methodName = "templateWeavingRule_Context_" + aspectId;
     Object[] args = new Object[]{sourceNode, generator};
-    INodeBuilder nodeBuilder = (INodeBuilder) invokeAspectMethod(methodName, args, templateWeavingRule.getModel());
+//    INodeBuilder nodeBuilder = (INodeBuilder) invokeAspectMethod(methodName, args, templateWeavingRule.getModel());
+    INodeBuilder nodeBuilder = (INodeBuilder) AspectMethod.invoke(methodName, args, templateWeavingRule.getModel());
     return nodeBuilder;
   }
 
 
-  private static List<INodeBuilder> createNodeBuildersForTemplate(SemanticNode parentSourceNode, SemanticNode templateNode, String mappingName, ITemplateGenerator generator) {
+  private static List<INodeBuilder> createNodeBuildersForTemplateNode(SemanticNode parentSourceNode, SemanticNode templateNode, String mappingName, ITemplateGenerator generator) {
     List<INodeBuilder> builders = new LinkedList<INodeBuilder>();
-    List<SemanticNode> sourceNodes = createSourceNodeListForTemplate(parentSourceNode, templateNode, generator);
+    List<SemanticNode> sourceNodes = createSourceNodeListForTemplateNode(parentSourceNode, templateNode, generator);
     for (SemanticNode sourceNode : sourceNodes) {
       INodeBuilder nodeBuilder = createNodeBuilder(sourceNode, templateNode, mappingName, generator);
       registerNodeBuilder(nodeBuilder);
@@ -348,7 +355,7 @@ public class TemplateGenUtil {
     while (templateChildNodes.hasNext()) {
       SemanticNode templateChildNode = templateChildNodes.next();
       if (!isTemplateLanguageElement(templateChildNode)) {
-        List<INodeBuilder> childNodeBuilders = createNodeBuildersForTemplate(parentSourceNode, templateChildNode, null, parentNodeBuilder.getGenerator());
+        List<INodeBuilder> childNodeBuilders = createNodeBuildersForTemplateNode(parentSourceNode, templateChildNode, null, parentNodeBuilder.getGenerator());
         for (INodeBuilder childNodeBuilder : childNodeBuilders) {
           parentNodeBuilder.addChildBuilder(childNodeBuilder);
         }
@@ -360,7 +367,8 @@ public class TemplateGenUtil {
     String sourceQueryAspectId = templateMappingRule.getSourceQueryAspectId();
     String methodName = "templateMappingRule_SourceQuery_" + sourceQueryAspectId;
     Object[] args = new Object[]{generator};
-    List<SemanticNode> sourceNodes = (List<SemanticNode>) invokeAspectMethod(methodName, args, templateMappingRule.getModel());
+//    List<SemanticNode> sourceNodes = (List<SemanticNode>) invokeAspectMethod(methodName, args, templateMappingRule.getModel());
+    List<SemanticNode> sourceNodes = (List<SemanticNode>) AspectMethod.invoke(methodName, args, templateMappingRule.getModel());
     return sourceNodes;
   }
 
@@ -368,11 +376,12 @@ public class TemplateGenUtil {
     String sourceQueryAspectId = templateWeavingRule.getSourceQueryAspectId();
     String methodName = "templateWeavingRule_SourceQuery_" + sourceQueryAspectId;
     Object[] args = new Object[]{generator};
-    List<SemanticNode> sourceNodes = (List<SemanticNode>) invokeAspectMethod(methodName, args, templateWeavingRule.getModel());
+//    List<SemanticNode> sourceNodes = (List<SemanticNode>) invokeAspectMethod(methodName, args, templateWeavingRule.getModel());
+    List<SemanticNode> sourceNodes = (List<SemanticNode>) AspectMethod.invoke(methodName, args, templateWeavingRule.getModel());
     return sourceNodes;
   }
 
-  private static List<SemanticNode> createSourceNodeListForTemplate(SemanticNode parentSourceNode, SemanticNode templateNode, ITemplateGenerator generator) {
+  private static List<SemanticNode> createSourceNodeListForTemplateNode(SemanticNode parentSourceNode, SemanticNode templateNode, ITemplateGenerator generator) {
     NodeMacro nodeMacro = (NodeMacro) templateNode.getChild(ITemplateGenerator.ROLE_NODE_MAKRO);
     if (nodeMacro == null || nodeMacro.getSourceQueryAspectMethodName() == null) {
       // <default> : propagate  parent source node
@@ -385,7 +394,8 @@ public class TemplateGenUtil {
       String sourceQueryAspectMethodName = nodeMacro.getSourceQueryAspectMethodName();
       String methodName = "templateSourceQuery_" + sourceQueryAspectMethodName;
       Object[] args = new Object[]{parentSourceNode, generator};
-      List<SemanticNode> sourceNodes = (List<SemanticNode>) invokeAspectMethod(methodName, args, nodeMacro.getModel());
+//      List<SemanticNode> sourceNodes = (List<SemanticNode>) invokeAspectMethod(methodName, args, nodeMacro.getModel());
+      List<SemanticNode> sourceNodes = (List<SemanticNode>) AspectMethod.invoke(methodName, args, nodeMacro.getModel());
       return sourceNodes;
     } catch (Exception e) {
       System.err.println("ERROR computing source nodes for template: " + templateNode.getDebugText());
@@ -428,7 +438,8 @@ public class TemplateGenUtil {
         if (targetBuilderAspectMethodName != null) {
           String methodName = "templateTargetBuilder_" + targetBuilderAspectMethodName;
           Object[] args = new Object[]{sourceNode, templateNode, mappingName, generator};
-          builder = (INodeBuilder) invokeAspectMethod(methodName, args, nodeMacro.getModel());
+//          builder = (INodeBuilder) invokeAspectMethod(methodName, args, nodeMacro.getModel());
+          builder = (INodeBuilder) AspectMethod.invoke(methodName, args, nodeMacro.getModel());
         }
       }
     }
@@ -508,15 +519,15 @@ public class TemplateGenUtil {
     INodeBuilder mappedNodeBuilder = map.get(templateNode);
     if (mappedNodeBuilder != null &&
             mappedNodeBuilder != nodeBuilder) {
-            //      LOG.error("Couldn't put node builder to map, there is enother builder is in the map already" +
-            //              "\nSource   node: " + sourceNode.getDebugText() +
-            //              "\nTemplate node: " + templateNode.getDebugText(),
-            //              new RuntimeException());
-            System.err.println("WARNING: Couldn't put node builder to map, there is enother builder is in the map already");
-            System.err.println("Source node  : " + sourceNode.getDebugText());
-            //      SModelUtil.dumpNodePath(sourceNode, 10, System.err);
-            System.err.println("Template node: " + templateNode.getDebugText());
-            //      SModelUtil.dumpNodePath(templateNode, 10, System.err);
+      //      LOG.error("Couldn't put node builder to map, there is enother builder is in the map already" +
+      //              "\nSource   node: " + sourceNode.getDebugText() +
+      //              "\nTemplate node: " + templateNode.getDebugText(),
+      //              new RuntimeException());
+      System.err.println("WARNING: Couldn't put node builder to map, there is enother builder is in the map already");
+      System.err.println("Source node  : " + sourceNode.getDebugText());
+      //      SModelUtil.dumpNodePath(sourceNode, 10, System.err);
+      System.err.println("Template node: " + templateNode.getDebugText());
+      //      SModelUtil.dumpNodePath(templateNode, 10, System.err);
 
     } else {
       map.put(templateNode, nodeBuilder);
