@@ -286,6 +286,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
+        ConceptDeclaration_ExtendsActionSet.setCellActions(noRefCell, node);
         return noRefCell;
       }
     }
@@ -300,6 +301,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteReferenceToNode(node, "extends", effectiveNode));
     editorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
+    ConceptDeclaration_ExtendsActionSet.setCellActions(editorCell, node);
     return editorCell;
   }
   public EditorCell createPropertyDeclarationList(EditorContext context, SemanticNode node) {
