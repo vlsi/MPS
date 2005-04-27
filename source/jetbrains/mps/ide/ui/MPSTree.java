@@ -6,6 +6,7 @@ import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
+import javax.swing.tree.TreeNode;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Enumeration;
@@ -18,6 +19,17 @@ public abstract class MPSTree extends JTree {
   public static final String PATH = "path";
   public static final String SELECTION = "selection";
   public static final String EXPANSION = "expansion";
+
+  protected void selectNode(TreeNode node) {
+    List<TreeNode> nodes = new ArrayList<TreeNode>();
+    while (node != null) {
+      nodes.add(0, node);
+      node = node.getParent();
+    }
+    TreePath path = new TreePath(nodes.toArray());
+    setSelectionPath(path);
+  }
+
 
   protected List<String> getExpandedPaths() {
     List<String> result = new ArrayList<String>();
