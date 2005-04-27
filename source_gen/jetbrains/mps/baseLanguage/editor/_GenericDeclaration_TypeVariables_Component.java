@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.EditorCellListHandler;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.baseLanguage.editor.Aspects;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -22,9 +23,9 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
   }
 
   public EditorCell createEditorCell(EditorContext context) {
-    return this.createEditorCell1(context, this.getSemanticNode());
+    return this.createEditorCell(context, this.getSemanticNode());
   }
-  public EditorCell createEditorCell1(EditorContext context, SemanticNode node) {
+  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
     return this.createCellAlternation(context, node);
   }
   public EditorCell createCellAlternation(EditorContext context, SemanticNode node) {

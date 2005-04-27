@@ -51,6 +51,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1092059087312">
+    <property name="rootable" value="true" />
     <property name="name" value="TemplateDeclaration" />
     <link role="extends" targetNodeId="2.1078489098625" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1092060348987">
@@ -66,6 +67,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1095416546421">
+    <property name="rootable" value="true" />
     <property name="name" value="TemplateMappingConfiguration" />
     <link role="extends" targetNodeId="2.1078489098625" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1095416692159">
@@ -140,6 +142,7 @@
     <link role="extends" targetNodeId="2.1078489098625" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1112730859144">
+    <property name="rootable" value="true" />
     <property name="name" value="TemplateSwitch" />
     <link role="extends" targetNodeId="2.1078489098625" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1112820671508">
