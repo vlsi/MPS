@@ -15,10 +15,20 @@ import java.awt.*;
 public class UIEditorComponent extends AbstractEditorComponent {
   private EditorContext myEditorContext;
   private SemanticNode mySemanticNode;
+  private InspectorEditorComponent myInspector;
 
-  public UIEditorComponent(MPSProject project) {
+  public UIEditorComponent(MPSProject project, InspectorEditorComponent inspector) {
     super(project);
     unregisterKeyboardAction(KeyStroke.getKeyStroke("ESCAPE"));
+    myInspector = inspector;
+
+    addCellSelectionListener(new ICellSelectionListener() {
+      public void selectionChanged(AbstractEditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
+        if (newSelection != null) {
+          myInspector.inspectNode(newSelection.getSemanticNode());
+        }
+      }
+    });
   }
 
   public void editNode(SemanticNode semanticNode) {
