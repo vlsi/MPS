@@ -214,24 +214,6 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     return getComponent(ExecutionManager.class);
   }
 
-  public ILanguagePlugin getLanguagePlugin(Language language) {
-    SModelDescriptor languageStructure = language.getStructureModelDescriptor();
-    String packageName = JavaNameUtil.packageName(languageStructure.getFQName());
-    String className = packageName + ".LanguagePlugin";
-    try {
-      Class pluginClass = Class.forName(className);
-      return (ILanguagePlugin) pluginClass.newInstance();
-    } catch (ClassNotFoundException e) {
-      System.err.println("Language plugin for structure model " + languageStructure.getFQName() + " was not found.");
-//      e.printStackTrace();
-    } catch (IllegalAccessException e) {
-      e.printStackTrace();
-    } catch (InstantiationException e) {
-      e.printStackTrace();
-    }
-    return null;
-  }
-
   public Language getLanguageByStructureModel(SModel semanticModel) {
     init();
     for (Language language : myRootManager.getLanguages()) {
