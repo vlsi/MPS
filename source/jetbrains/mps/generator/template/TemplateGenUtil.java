@@ -152,45 +152,6 @@ public class TemplateGenUtil {
     return null;
   }
 
-//  // --------------------------------
-//  // Macro Aspect methods invocation...
-//  // --------------------------------
-//
-//  public static Object invokeAspectMethod(String methodName, Object[] arguments, SModel templatesModel) {
-//    Class aspectsClass = null;
-//    String javaPackageName = JavaNameUtil.packageNameForModelFqName(templatesModel.getFQName());
-//    String aspectsClassName = "Aspects";
-//    if (javaPackageName.length() > 0) {
-//      aspectsClassName = javaPackageName + "." + aspectsClassName;
-//    }
-//    try {
-//      //      aspectsClass = Class.forName(aspectsClassName, true, new MPSClassLoader() {
-//      //                protected boolean isExcluded(String name) {
-//      //                  return false;
-//      //                }
-//      //              });
-//      aspectsClass = Class.forName(aspectsClassName);
-//    } catch (ClassNotFoundException e) {
-//      throw new RuntimeException(e);
-//    }
-//
-//
-//    Method[] declaredMethods = aspectsClass.getDeclaredMethods();
-//    for (int i = 0; i < declaredMethods.length; i++) {
-//      Method declaredMethod = declaredMethods[i];
-//      if (declaredMethod.getName().equals(methodName)) {
-//        try {
-//          return declaredMethod.invoke(null, arguments);
-//        } catch (IllegalAccessException e) {
-//          throw new RuntimeException(e);
-//        } catch (InvocationTargetException e) {
-//          throw new RuntimeException(e);
-//        }
-//      }
-//    }
-//    throw new RuntimeException("Couldn't find method \"" + methodName + "\" in " + aspectsClass.getPackage().getName() + "." + aspectsClass.getName());
-//  }
-
   public static List<INodeBuilder> createNodeBuildersForTemplateMappingRule(TemplateMappingRule templateMappingRule, ITemplateGenerator generator) {
     List<INodeBuilder> builders = new LinkedList<INodeBuilder>();
     String ruleName = templateMappingRule.getName();
@@ -441,6 +402,18 @@ public class TemplateGenUtil {
           if (builder != null) {
             builder.setRoleInParent(templateNode.getRole_());
           }
+        }
+      }
+      if (nodeMacro instanceof CopySrcNodeMacro) {
+        CopySrcNodeMacro copySrcNodeMacro = ((CopySrcNodeMacro) nodeMacro);
+        String sourceNodeQueryId = copySrcNodeMacro.getSourceNodeQueryId();
+        String methodName = "templateSourceNodeQuery_" + sourceNodeQueryId;
+        Object[] args = new Object[]{sourceNode, generator};
+        SemanticNode srcNodeToCopy = (SemanticNode) AspectMethod.invoke(methodName, args, nodeMacro.getModel());
+        if (srcNodeToCopy != null) {
+          builder = TemplateGenUtil.createCopyingNodeBuilder(srcNodeToCopy, templateNode.getRole_(), generator);
+        } else {
+          builder = new Void_NodeBuilder(sourceNode, templateNode, mappingName, generator);
         }
       } else {
         // use user-defined node builder ?

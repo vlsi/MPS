@@ -287,5 +287,21 @@
       <link role="target" targetNodeId="1092059087312" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1114706874351">
+    <property name="name" value="CopySrcNodeMacro" />
+    <link role="extends" targetNodeId="1087833466690" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1114707257324">
+      <property name="value" value="COPYSRC" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1114707276513">
+      <property name="value" value="copy source node macro" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1107214812281" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1114706920383">
+      <property name="name" value="sourceNodeQueryId" />
+      <link role="dataType" targetNodeId="2.1082983041843" />
+    </node>
+  </node>
 </model>
 
