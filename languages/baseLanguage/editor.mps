@@ -1853,6 +1853,7 @@
     <link role="conceptDeclaration" targetNodeId="8.1068431790191" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1076780136970">
       <property name="name" value="NodeBoxActions" />
+      <link role="specializes" targetNodeId="1082130590765" />
       <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_RightTransform" id="1079526533375">
         <property name="disabled" value="true" />
       </node>
