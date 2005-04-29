@@ -2,23 +2,19 @@ package jetbrains.mps.findUsages;
 
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.RootManager;
-import jetbrains.mps.semanticModel.SemanticReference;
-import jetbrains.mps.semanticModel.SemanticNode;
-import jetbrains.mps.semanticModel.SModelDescriptor;
-import jetbrains.mps.semanticModel.Language;
+import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.ide.progress.ProgressMonitor;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 
-import java.util.Set;
-import java.util.HashSet;
+import java.util.*;
 
 public class FindUsagesManager {
-
   private MPSProject myProject;
 
   public FindUsagesManager(MPSProject project) {
     myProject = project;
   }
-
 
   public Set<SemanticReference> findUsages(SemanticNode node, Scope scope, ProgressMonitor progress) {
     if (progress == null) progress = ProgressMonitor.NULL_PROGRESS_MONITOR;
@@ -45,5 +41,59 @@ public class FindUsagesManager {
         return myProject.getAllModelDescriptors();
       }
     };
+  }
+
+
+
+  private static Map<ConceptDeclaration, List<ConceptDeclaration>> ourCache = new HashMap<ConceptDeclaration, List<ConceptDeclaration>>();
+
+  public static void invalidateCaches() {
+    ourCache.clear();
+  }
+
+  public static void registerStructureModel(SModelDescriptor descriptor) {
+    descriptor.addSModelListener(new SModelListener() {
+      public void modelChanged(SModel model) {
+        invalidateCaches();
+      }
+
+      public void modelChangedDramatically(SModel model) {
+        invalidateCaches();
+      }
+
+      public void nodeAdded(SModel model, SemanticNode child) {
+        invalidateCaches();
+      }
+
+      public void nodeDeleted(SModel model, SemanticNode container) {
+        invalidateCaches();
+      }
+    });
+  }
+
+  public static List<ConceptDeclaration> allSubtypes(ConceptDeclaration typeDeclaration) {
+    if (ourCache.get(typeDeclaration) != null) return Collections.unmodifiableList(ourCache.get(typeDeclaration));
+
+    List<ConceptDeclaration> list = new LinkedList<ConceptDeclaration>();
+
+    FindUsagesManager manager = IdeMain.instance().getProject().getComponent(FindUsagesManager.class);
+
+    Set<SemanticReference> usages = manager.findUsages(typeDeclaration, new FilterScope(manager.globalScope()) {
+      protected boolean accept(SModelDescriptor descriptor) {
+        return descriptor.getFQName().endsWith(".structure");
+      }
+    }, null);
+
+    for (SemanticReference ref : usages) {
+      if (ref.getRole().equals(ConceptDeclaration.EXTENDS)) {
+        ConceptDeclaration subtype = (ConceptDeclaration) ref.getSourceNode();
+        list.add(subtype);
+        list.addAll(allSubtypes(subtype));
+      }
+    }
+
+    ourCache.put(typeDeclaration, list);
+
+    return Collections.unmodifiableList(list);
   }
 }
