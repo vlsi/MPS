@@ -365,7 +365,6 @@ public class TemplateGenUtil {
       String sourceQueryAspectMethodName = nodeMacro.getSourceQueryAspectMethodName();
       String methodName = "templateSourceQuery_" + sourceQueryAspectMethodName;
       Object[] args = new Object[]{parentSourceNode, generator};
-//      List<SemanticNode> sourceNodes = (List<SemanticNode>) invokeAspectMethod(methodName, args, nodeMacro.getModel());
       List<SemanticNode> sourceNodes = (List<SemanticNode>) AspectMethod.invoke(methodName, args, nodeMacro.getModel());
       return sourceNodes;
     } catch (Exception e) {
@@ -403,8 +402,7 @@ public class TemplateGenUtil {
             builder.setRoleInParent(templateNode.getRole_());
           }
         }
-      }
-      if (nodeMacro instanceof CopySrcNodeMacro) {
+      } else if (nodeMacro instanceof CopySrcNodeMacro) {
         CopySrcNodeMacro copySrcNodeMacro = ((CopySrcNodeMacro) nodeMacro);
         String sourceNodeQueryId = copySrcNodeMacro.getSourceNodeQueryId();
         String methodName = "templateSourceNodeQuery_" + sourceNodeQueryId;
@@ -415,6 +413,9 @@ public class TemplateGenUtil {
         } else {
           builder = new Void_NodeBuilder(sourceNode, templateNode, mappingName, generator);
         }
+      } else if (nodeMacro instanceof CopySrcListMacro) {
+        // we don't need to invoke source query again . just create builder here
+        builder = TemplateGenUtil.createCopyingNodeBuilder(sourceNode, templateNode.getRole_(), generator);
       } else {
         // use user-defined node builder ?
         String targetBuilderAspectMethodName = nodeMacro.getTargetBuilderAspectMethodName();

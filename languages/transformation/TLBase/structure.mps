@@ -291,7 +291,7 @@
     <property name="name" value="CopySrcNodeMacro" />
     <link role="extends" targetNodeId="1087833466690" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1114707257324">
-      <property name="value" value="COPYSRC" />
+      <property name="value" value="COPY_SRC" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1114707276513">
@@ -301,6 +301,18 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1114706920383">
       <property name="name" value="sourceNodeQueryId" />
       <link role="dataType" targetNodeId="2.1082983041843" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1114729360583">
+    <property name="name" value="CopySrcListMacro" />
+    <link role="extends" targetNodeId="1087833466690" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1114729423554">
+      <property name="value" value="COPY_SRCL" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1114729449322">
+      <property name="value" value="copy list of nodes from source" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1107214812281" />
     </node>
   </node>
 </model>
