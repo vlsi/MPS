@@ -20,7 +20,7 @@ public abstract class MPSTree extends JTree {
   public static final String SELECTION = "selection";
   public static final String EXPANSION = "expansion";
 
-  public static final String TREE_PATH_SEPARATOR = "//";
+  public static final String TREE_PATH_SEPARATOR = "/";
 
   protected void selectNode(TreeNode node) {
     List<TreeNode> nodes = new ArrayList<TreeNode>();
@@ -180,7 +180,13 @@ public abstract class MPSTree extends JTree {
     }
 
     protected String getNodeIdentifier() {
+      return myText.replaceAll(TREE_PATH_SEPARATOR, " ");
+    }
+
+    public String toString() {
       return myText;
     }
+
+
   }
 }
