@@ -20,6 +20,8 @@ public abstract class MPSTree extends JTree {
   public static final String SELECTION = "selection";
   public static final String EXPANSION = "expansion";
 
+  public static final String TREE_PATH_SEPARATOR = "//";
+
   protected void selectNode(TreeNode node) {
     List<TreeNode> nodes = new ArrayList<TreeNode>();
     while (node != null) {
@@ -68,14 +70,14 @@ public abstract class MPSTree extends JTree {
     String result = "";
     for (int i = 1; i < path.getPathCount(); i++) {
       MPSTreeNode node = (MPSTreeNode) path.getPathComponent(i);
-      result += "/" + node.getNodeIdentifier();
+      result += TREE_PATH_SEPARATOR + node.getNodeIdentifier();
     }
-    if (result.equals("")) result = "/";
+    if (result.equals("")) result = TREE_PATH_SEPARATOR;
     return result;
   }
 
   public TreePath stringToPath(String pathString) {
-    String[] components = pathString.split("/");
+    String[] components = pathString.split(TREE_PATH_SEPARATOR);
     List<Object> path = new ArrayList<Object>();
     MPSTreeNode current = (MPSTreeNode) getModel().getRoot();
     path.add(current);

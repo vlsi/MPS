@@ -67,23 +67,26 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
 
   public Set<SModelDescriptor> getAllModelDescriptors() {
     init();
-    Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
 
-    RootManager rootManager = getRootManager();
+//    Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
+//
+//    RootManager rootManager = getRootManager();
+//
+//    result.addAll(rootManager.getProjectModelDescriptors());
+//    result.addAll(rootManager.getLibraryModelDescriptors());
+//
+//    for (Language l : rootManager.getLanguages()) {
+//      if (l.getActionsModelDescriptor() != null) result.add(l.getActionsModelDescriptor());
+//      if (l.getEditorContextModelDescriptor() != null) result.add(l.getEditorContextModelDescriptor());
+//      if (l.getEditorDescriptor() != null) result.add(l.getEditorDescriptor());
+//      if (l.getStructureModelDescriptor() != null) result.add(l.getStructureModelDescriptor());
+//      if (l.getTypesystemModelDescriptor() != null) result.add(l.getTypesystemModelDescriptor());
+//      result.addAll(l.getLibraryModels());
+//    }
 
-    result.addAll(rootManager.getProjectModelDescriptors());
-    result.addAll(rootManager.getLibraryModelDescriptors());
 
-    for (Language l : rootManager.getLanguages()) {
-      if (l.getActionsModelDescriptor() != null) result.add(l.getActionsModelDescriptor());
-      if (l.getEditorContextModelDescriptor() != null) result.add(l.getEditorContextModelDescriptor());
-      if (l.getEditorDescriptor() != null) result.add(l.getEditorDescriptor());
-      if (l.getStructureModelDescriptor() != null) result.add(l.getStructureModelDescriptor());
-      if (l.getTypesystemModelDescriptor() != null) result.add(l.getTypesystemModelDescriptor());
-      result.addAll(l.getLibraryModels());
-    }
 
-    return result;
+    return SModelRepository.getInstance().getAllModelDescriptors();
   }
 
   public Collection<Language> getLanguages() {
