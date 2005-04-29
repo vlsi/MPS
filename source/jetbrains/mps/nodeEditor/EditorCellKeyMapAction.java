@@ -16,6 +16,6 @@ public abstract class EditorCellKeyMapAction {
   }
 
   public KeyMapActionType getKeyMapActionType() {
-    return KeyMapActionType.WHEN_ANCESTOR_OF_SELECTED;
+    return KeyMapActionType.WHEN_SELECTED;
   }
 }
