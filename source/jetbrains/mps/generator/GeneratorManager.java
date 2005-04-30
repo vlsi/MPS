@@ -3,14 +3,14 @@ package jetbrains.mps.generator;
 import jetbrains.mps.baseLanguage.Classifier;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.projectLanguage.Generator;
-import jetbrains.mps.projectLanguage.GeneratorConfiguration;
-import jetbrains.mps.projectLanguage.GeneratorConfigurationCommand;
-import jetbrains.mps.projectLanguage.ModelRoot;
+import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.semanticModel.*;
+import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textPresentation.TextPresentationManager;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.cml.util.CommandRunnable;
 
 import java.io.File;
 import java.util.HashSet;
@@ -27,6 +27,50 @@ public class GeneratorManager {
 
   public GeneratorManager(MPSProject project) {
     myProject = project;
+  }
+
+  public void generate(final Language language) {
+    final SModel model = ApplicationComponents.getInstance().getComponent(ProjectModel.class).getSModel();
+
+    GeneratorConfiguration configuration = new CommandRunnable<GeneratorConfiguration>(model) {
+      protected GeneratorConfiguration onRun() {
+        GeneratorConfiguration conf = GeneratorConfiguration.newInstance(model);
+
+        conf.setOutputPath(language.getSourceDir().getAbsolutePath());
+        conf.addCommand(createCommand(model, "jetbrains.mps.bootstrap.structureLanguage", "jetbrains.mps.baseLanguage"));
+        conf.addCommand(createCommand(model, "jetbrains.mps.bootstrap.editorLanguage", "jetbrains.mps.baseLanguage"));
+        conf.addCommand(createCommand(model, "jetbrains.mps.typesystem.typesystemLanguage", "jetbrains.mps.baseLanguage"));
+
+        return conf;
+      }
+    }.run();
+
+    Set<SModelDescriptor> models = new HashSet<SModelDescriptor>();
+    models.add(language.getStructureModelDescriptor());
+    if (language.getEditorDescriptor() != null) {
+      models.add(language.getEditorDescriptor());
+    }
+    if (language.getTypesystemModelDescriptor() != null) {
+      models.add(language.getTypesystemModelDescriptor());
+    }
+
+
+    generate(configuration, models, false);
+  }
+
+  private GeneratorConfigurationCommand createCommand(final SModel model, final String fromLanguage, final String toLanguage) {
+    GeneratorConfigurationCommand command = GeneratorConfigurationCommand.newInstance(model);
+
+    jetbrains.mps.projectLanguage.Language from = jetbrains.mps.projectLanguage.Language.newInstance(model);
+    jetbrains.mps.projectLanguage.Language to = jetbrains.mps.projectLanguage.Language.newInstance(model);
+
+    from.setName(fromLanguage);
+    to.setName(toLanguage);
+
+    command.setSourceLanguage(from);
+    command.setTargetLanguage(to);
+
+    return command;
   }
 
   public void generate(GeneratorConfiguration configuration, boolean generateText) {
