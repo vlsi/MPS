@@ -69,9 +69,12 @@ public class GeneratorManager {
       } else {
         generator.generate(targetModel);
       }
+      System.out.println("Generation done.");
       if (generateText) {
+        System.out.println("Generating text...");
         generateText(targetModel);
       } else {
+        System.out.println("Generation source...");
         generateSource(outputPath, sourceModel.getSModel(), targetModel);
       }
       JavaClassMaps.clearMaps();
@@ -84,9 +87,6 @@ public class GeneratorManager {
     if (outputPath == null) throw new RuntimeException("Unspecified output path. Please specify one.");
     System.out.println("Generating to root: " + outputPath);
     String packageName = JavaNameUtil.packageNameForModelFqName(sourceModel.getFQName());
-//    String fqName = sourceModel.getFQName();
-//    if (fqName.endsWith(STRUCTURE_SUFFIX)) fqName = fqName.substring(fqName.length() - STRUCTURE_SUFFIX.length());
-//    File outputPathFile = new File(outputPath + File.separator + fqName.replace('.', File.separatorChar));
     File outputPathFile = new File(outputPath + File.separator + packageName.replace('.', File.separatorChar));
     System.out.println("Generating to folder: " + outputPathFile.getAbsolutePath());
 
