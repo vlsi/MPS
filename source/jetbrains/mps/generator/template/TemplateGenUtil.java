@@ -160,8 +160,8 @@ public class TemplateGenUtil {
     List<SemanticNode> sourceNodes = createSourceNodeListForTemplateMappingRule(templateMappingRule, generator);
     for (SemanticNode sourceNode : sourceNodes) {
       INodeBuilder nodeBuilder = createNodeBuilder(sourceNode, templateNode, ruleName, generator);
-      registerNodeBuilder(nodeBuilder);
-      createChildBuilders(nodeBuilder);
+//      registerNodeBuilder(nodeBuilder);
+//      createChildBuilders(nodeBuilder);
       builders.add(nodeBuilder);
     }
 
@@ -300,8 +300,8 @@ public class TemplateGenUtil {
     List<SemanticNode> sourceNodes = createSourceNodeListForTemplateNode(parentSourceNode, templateNode, generator);
     for (SemanticNode sourceNode : sourceNodes) {
       INodeBuilder nodeBuilder = createNodeBuilder(sourceNode, templateNode, mappingName, generator);
-      registerNodeBuilder(nodeBuilder);
-      createChildBuilders(nodeBuilder);
+//      registerNodeBuilder(nodeBuilder);
+//      createChildBuilders(nodeBuilder);
       builders.add(nodeBuilder);
     }
 
@@ -354,25 +354,34 @@ public class TemplateGenUtil {
 
   private static List<SemanticNode> createSourceNodeListForTemplateNode(SemanticNode parentSourceNode, SemanticNode templateNode, ITemplateGenerator generator) {
     NodeMacro nodeMacro = (NodeMacro) templateNode.getChild(ITemplateGenerator.ROLE_NODE_MAKRO);
-    if (nodeMacro == null || nodeMacro.getSourceQueryAspectMethodName() == null) {
-      // <default> : propagate  parent source node
+
+    if (nodeMacro instanceof CopySrcNodeMacro) {
+      CopySrcNodeMacro copySrcNodeMacro = ((CopySrcNodeMacro) nodeMacro);
+      String sourceNodeQueryId = copySrcNodeMacro.getSourceNodeQueryId();
+      String methodName = "templateSourceNodeQuery_" + sourceNodeQueryId;
+      Object[] args = new Object[]{parentSourceNode, generator};
+      SemanticNode srcNodeToCopy = (SemanticNode) AspectMethod.invoke(methodName, args, nodeMacro.getModel());
       List<SemanticNode> list = new LinkedList<SemanticNode>();
-      list.add(parentSourceNode);
+      if (srcNodeToCopy != null) {
+        list.add(srcNodeToCopy);
+      }
       return list;
     }
 
-    try {
+    if (nodeMacro != null) {
       String sourceQueryAspectMethodName = nodeMacro.getSourceQueryAspectMethodName();
-      String methodName = "templateSourceQuery_" + sourceQueryAspectMethodName;
-      Object[] args = new Object[]{parentSourceNode, generator};
-      List<SemanticNode> sourceNodes = (List<SemanticNode>) AspectMethod.invoke(methodName, args, nodeMacro.getModel());
-      return sourceNodes;
-    } catch (Exception e) {
-      System.err.println("ERROR computing source nodes for template: " + templateNode.getDebugText());
-      System.err.println("parent source: : " + parentSourceNode.getDebugText());
-      SModelUtil.dumpNodePath(parentSourceNode, 0, System.err);
-      throw new RuntimeException(e);
+      if (sourceQueryAspectMethodName != null) {
+        String methodName = "templateSourceQuery_" + sourceQueryAspectMethodName;
+        Object[] args = new Object[]{parentSourceNode, generator};
+        List<SemanticNode> sourceNodes = (List<SemanticNode>) AspectMethod.invoke(methodName, args, nodeMacro.getModel());
+        return sourceNodes;
+      }
     }
+
+    // <default> : propagate  parent source node
+    List<SemanticNode> list = new LinkedList<SemanticNode>();
+    list.add(parentSourceNode);
+    return list;
   }
 
   public static void registerNodeBuilder(INodeBuilder builder) {
@@ -389,8 +398,9 @@ public class TemplateGenUtil {
     templateNodeToBuilderMap_remove(builder);
   }
 
-  public static INodeBuilder createNodeBuilder(SemanticNode sourceNode, SemanticNode templateNode, String mappingName, ITemplateGenerator generator) {
+  private static INodeBuilder createNodeBuilder(SemanticNode sourceNode, SemanticNode templateNode, String mappingName, ITemplateGenerator generator) {
     INodeBuilder builder = null;
+    boolean needCreateChildBuilders = true;
     NodeMacro nodeMacro = (NodeMacro) templateNode.getChild(ITemplateGenerator.ROLE_NODE_MAKRO);
     if (nodeMacro != null) {
       if (nodeMacro instanceof SwitchMacro) {
@@ -400,22 +410,15 @@ public class TemplateGenUtil {
           builder = createNodeBuilder(sourceNode, templateNodeFromSwitch, mappingName, generator);
           if (builder != null) {
             builder.setRoleInParent(templateNode.getRole_());
+            needCreateChildBuilders = false;
           }
         }
       } else if (nodeMacro instanceof CopySrcNodeMacro) {
-        CopySrcNodeMacro copySrcNodeMacro = ((CopySrcNodeMacro) nodeMacro);
-        String sourceNodeQueryId = copySrcNodeMacro.getSourceNodeQueryId();
-        String methodName = "templateSourceNodeQuery_" + sourceNodeQueryId;
-        Object[] args = new Object[]{sourceNode, generator};
-        SemanticNode srcNodeToCopy = (SemanticNode) AspectMethod.invoke(methodName, args, nodeMacro.getModel());
-        if (srcNodeToCopy != null) {
-          builder = TemplateGenUtil.createCopyingNodeBuilder(srcNodeToCopy, templateNode.getRole_(), generator);
-        } else {
-          builder = new Void_NodeBuilder(sourceNode, templateNode, mappingName, generator);
-        }
-      } else if (nodeMacro instanceof CopySrcListMacro) {
-        // we don't need to invoke source query again . just create builder here
         builder = TemplateGenUtil.createCopyingNodeBuilder(sourceNode, templateNode.getRole_(), generator);
+        needCreateChildBuilders = false;
+      } else if (nodeMacro instanceof CopySrcListMacro) {
+        builder = TemplateGenUtil.createCopyingNodeBuilder(sourceNode, templateNode.getRole_(), generator);
+        needCreateChildBuilders = false;
       } else {
         // use user-defined node builder ?
         String targetBuilderAspectMethodName = nodeMacro.getTargetBuilderAspectMethodName();
@@ -427,11 +430,14 @@ public class TemplateGenUtil {
       }
     }
 
-    if (builder != null) {
-      return builder;
+    if (builder == null) {
+      builder = createDefaultNodeBuilder(sourceNode, templateNode, mappingName, generator);
     }
-
-    return createDefaultNodeBuilder(sourceNode, templateNode, mappingName, generator);
+    registerNodeBuilder(builder);
+    if (needCreateChildBuilders) {
+      createChildBuilders(builder);
+    }
+    return builder;
   }
 
   public static INodeBuilder createDefaultNodeBuilder(SemanticNode sourceNode, SemanticNode templateNode, String mappingName, ITemplateGenerator generator) {

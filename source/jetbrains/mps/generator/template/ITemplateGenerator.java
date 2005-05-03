@@ -25,7 +25,18 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   ITemplateGeneratorState getState();
 
-  void generate(SModel targetModel, SModel templatesModel);
+  void reset();
+
+//  /**
+//   * @deprecated
+//   */
+//  void generate(SModel targetModel, SModel templatesModel);
+
+  void generate(SModel sourceModel, SModel targetModel, SModel templatesModel);
+
+  int setupReduction(SModel sourceModel, SModel templatesModel);
+
+  void doReduction(SModel targetModel);
 
   void processPropertyMacros(SemanticNode sourceNode, SemanticNode templateNode, SemanticNode targetNode);
 
@@ -49,4 +60,5 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
   SModel getTemplatesModel();
 
   TemplateDeclaration getTemplateForSwitch(SemanticNode sourceNode, TemplateSwitch templateSwitch);
+
 }

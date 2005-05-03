@@ -1,28 +1,27 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.baseLanguage.Classifier;
+import jetbrains.mps.cml.util.CommandRunnable;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.ProjectPane;
 import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.RootManager;
 import jetbrains.mps.projectLanguage.*;
-import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.semanticModel.Language;
+import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textPresentation.TextPresentationManager;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.cml.util.CommandRunnable;
 
+import javax.swing.*;
 import java.io.File;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author Kostik
  */
 public class GeneratorManager {
-//  public static final String STRUCTURE_SUFFIX = ".structure";
-
   private MPSProject myProject;
 
   public GeneratorManager(MPSProject project) {
@@ -97,35 +96,35 @@ public class GeneratorManager {
       }
 
       for (SModelDescriptor model : modelsWithLanguage) {
-        generate_internal(model, generatorClass, templatesModel, configuration.getOutputPath(), generateText);
+        generate_internal_new(model, generatorClass, templatesModel, configuration.getOutputPath(), generateText);
       }
     }
   }
 
-  private void generate_internal(SModelDescriptor sourceModel, String generatorClassFQName, SModelDescriptor templatesModel, String outputPath, boolean generateText) {
-    System.out.println("Generating sourceModel " + sourceModel.getFQName());
-    try {
-      Class cls = Class.forName(generatorClassFQName);
-      IModelGenerator generator = (IModelGenerator) cls.getConstructor(SModel.class, MPSProject.class).newInstance(sourceModel.getSModel(), myProject);
-      SModel targetModel = JavaGenUtil.createTargetJavaModel(sourceModel.getSModel(), JavaNameUtil.packageNameForModelFqName(sourceModel.getFQName()), myProject);
-      if (generator instanceof ITemplateGenerator) {
-        ((ITemplateGenerator) generator).generate(targetModel, templatesModel.getSModel());
-      } else {
-        generator.generate(targetModel);
-      }
-      System.out.println("Generation done.");
-      if (generateText) {
-        System.out.println("Generating text...");
-        generateText(targetModel);
-      } else {
-        System.out.println("Generation source...");
-        generateSource(outputPath, sourceModel.getSModel(), targetModel);
-      }
-      JavaClassMaps.clearMaps();
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-  }
+//  private void generate_internal(SModelDescriptor sourceModel, String generatorClassFQName, SModelDescriptor templatesModel, String outputPath, boolean generateText) {
+//    System.out.println("Generating sourceModel " + sourceModel.getFQName());
+//    try {
+//      Class cls = Class.forName(generatorClassFQName);
+//      IModelGenerator generator = (IModelGenerator) cls.getConstructor(SModel.class, MPSProject.class).newInstance(sourceModel.getSModel(), myProject);
+//      SModel targetModel = JavaGenUtil.createTargetJavaModel(sourceModel.getSModel(), JavaNameUtil.packageNameForModelFqName(sourceModel.getFQName()), myProject);
+//      if (generator instanceof ITemplateGenerator) {
+//        ((ITemplateGenerator) generator).generate(targetModel, templatesModel.getSModel());
+//      } else {
+//        generator.generate(targetModel);
+//      }
+//      System.out.println("Generation done.");
+//      if (generateText) {
+//        System.out.println("Generating text...");
+//        generateText(targetModel);
+//      } else {
+//        System.out.println("Generation source...");
+//        generateSource(outputPath, sourceModel.getSModel(), targetModel);
+//      }
+//      JavaClassMaps.clearMaps();
+//    } catch (Exception e) {
+//      e.printStackTrace();
+//    }
+//  }
 
   private void generateSource(String outputPath, SModel sourceModel, SModel targetModel) {
     if (outputPath == null) throw new RuntimeException("Unspecified output path. Please specify one.");
@@ -219,6 +218,132 @@ public class GeneratorManager {
     }
     System.err.println("----------------");
     return null;
+  }
+
+  private void generate_internal_new(SModelDescriptor sourceModelDescr, String generatorClassFQName, SModelDescriptor templatesModel, String outputPath, boolean generateText) {
+    System.out.println("Generating sourceModel " + sourceModelDescr.getFQName());
+    IModelGenerator generator = null;
+    try {
+      Class cls = Class.forName(generatorClassFQName);
+//      generator = (IModelGenerator) cls.getConstructor(SModel.class, MPSProject.class).newInstance(sourceModelDescr.getSModel(), myProject);
+      generator = (IModelGenerator) cls.getConstructor(MPSProject.class).newInstance(myProject);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    if (generator == null) {
+      return;
+    }
+
+    SModel targetModel = JavaGenUtil.createTargetJavaModel(sourceModelDescr.getSModel(), JavaNameUtil.packageNameForModelFqName(sourceModelDescr.getFQName()), myProject);
+    try {
+      if (generator instanceof ITemplateGenerator) {
+        ((ITemplateGenerator) generator).generate(sourceModelDescr.getSModel(), targetModel, templatesModel.getSModel());
+//        generateByTemplateGenerator(sourceModelDescr, targetModel, templatesModel.getSModel(), (ITemplateGenerator) generator);
+      } else {
+        generator.generate(sourceModelDescr.getSModel(), targetModel);
+      }
+
+      if (generateText) {
+        generateText(targetModel);
+      } else {
+        generateSource(outputPath, sourceModelDescr.getSModel(), targetModel);
+      }
+
+      JavaClassMaps.clearMaps();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
+  // -- DO NOT DELETE PLS. 
+  private void generateByTemplateGenerator(SModelDescriptor sourceModelDescr, SModel targetModel, SModel templatesModel, final ITemplateGenerator generator) {
+    SModel originalSourceModel = sourceModelDescr.getSModel();
+    List<SModel> transientModels = new LinkedList<SModel>();
+
+    int iterationCount = 0;
+    SModel currentTargetModel = createTransientModel(originalSourceModel, iterationCount++);
+    transientModels.add(currentTargetModel);
+
+    // mapping
+    System.out.println("DO MAPPING from: " + originalSourceModel.getFQName() + " to " + currentTargetModel.getFQName());
+    generator.generate(originalSourceModel, targetModel, templatesModel);
+
+    // reductions...
+    while (true) {
+      generator.reset();
+      SModel currentSourceModel = currentTargetModel;
+      int numReductions = generator.setupReduction(currentSourceModel, templatesModel);
+      if (numReductions == 0) {
+        break;
+      }
+      currentTargetModel = createTransientModel(originalSourceModel, iterationCount);
+      generator.doReduction(currentTargetModel);
+      // next iteration ...
+      iterationCount++;
+      currentSourceModel = currentTargetModel;
+    }
+
+//    ReductionModelGenerator reductionGenerator = new ReductionModelGenerator(currentSourceModel, generator.getProject());
+//    while (reductionGenerator.hasReductionJob(templatesModel)) {
+//      currentTargetModel = createTransientModel(originalSourceModel, iterationCount);
+//      transientModels.add(currentTargetModel);
+//      System.out.println("DO REDUCTION (" + iterationCount + ") from: " + currentSourceModel.getFQName() + " to " + currentTargetModel.getFQName());
+//      reductionGenerator.doReduction(currentTargetModel, templatesModel);
+//
+//      // next iteration ...
+//      iterationCount++;
+//      currentSourceModel = currentTargetModel;
+//      reductionGenerator = new ReductionModelGenerator(currentSourceModel, generator.getProject());
+//    }
+
+    System.out.println("SAVE TRANSIENT MODELS ...");
+    String sourceModelDerectory = sourceModelDescr.getModelFile().getParent();
+    SModelRepository modelRepository = SModelRepository.getInstance();
+    for (SModel transientModel : transientModels) {
+      SModelDescriptor existingModel = modelRepository.getModelDescriptor(transientModel.getFQName());
+      if (existingModel != null) {
+        myProject.deleteModel(existingModel);
+      }
+
+      File transientModelFile = new File(sourceModelDerectory, transientModel.getName() + ".mps");
+      SModelDescriptor transientModelDescr = MPSFileModelDescriptor.getInstance(transientModelFile.getAbsolutePath(), transientModel, myProject);
+      myProject.getComponent(RootManager.class).addProjectModelDescriptor(transientModelDescr);
+      modelRepository.markChanged(transientModel);
+      System.out.println(" ---> " + transientModelDescr.getFQName() + " to file " + transientModelDescr.getModelFile().getAbsolutePath());
+    }
+
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        generator.getProject().getComponent(ProjectPane.class).rebuildTree();
+      }
+    });
+
+    targetModel.setLoading(true);
+    // todo: copy nodes ?
+    List<SemanticNode> roots = currentTargetModel.getRoots();
+    for (SemanticNode node : roots) {
+      targetModel.addRoot(node);
+    }
+    targetModel.setLoading(false);
+  }
+
+  private SModel createTransientModel(SModel sourceModel, int iterationCount) {
+    String transientModelFQName = sourceModel.getFQName() + "_transient_" + iterationCount;
+    SModel transientModel = new SModel(transientModelFQName);
+    transientModel.setLoading(true);
+    try {
+      List<Language> languages = sourceModel.getLanguages();
+      for (Language language : languages) {
+        transientModel.addLanguage(language);
+      }
+      Collection<String> imports = sourceModel.getImportedModelNames();
+      for (String modelFqName : imports) {
+        transientModel.addImportedModel(modelFqName);
+      }
+    } finally {
+      transientModel.setLoading(false);
+    }
+    return transientModel;
   }
 
 }
