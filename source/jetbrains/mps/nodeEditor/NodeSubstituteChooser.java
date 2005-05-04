@@ -266,14 +266,18 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
     if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER || (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown())) {
       if (!myMenuEmpty) {
-        String pattern = getPatternEditor().getPattern();
-        INodeSubstituteItem entry = myMenuSubstituteEntries.get(myPopupWindow.getSelectionIndex());
-        setVisible(false);
-        CommandUtil.substituteNode(entry, pattern, myNodeSubstituteInfo, myEditorComponent.getContext());
+        doSubstituteSelection();
       }
       return true;
     }
     return false;
+  }
+
+  private void doSubstituteSelection() {
+    String pattern = getPatternEditor().getPattern();
+    INodeSubstituteItem entry = myMenuSubstituteEntries.get(myPopupWindow.getSelectionIndex());
+    setVisible(false);
+    CommandUtil.substituteNode(entry, pattern, myNodeSubstituteInfo, myEditorComponent.getContext());
   }
 
   private void updatePatternEditor() {
@@ -323,7 +327,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
           if (e.getClickCount() == 2) {
             CommandProcessor.instance().executeCommand(new Runnable() {
               public void run() {
-                doSubstitute();
+                doSubstituteSelection();
               }
             }, "Substitute");
           }
