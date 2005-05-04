@@ -316,10 +316,8 @@ public class GeneratorManager {
     SModel outputModel = null;
     if (SAVE_TRANSIENT_MODELS) {
       outputModel = createOutputModel(outputModelNamespace, "", originalSourceModel, templatesModel);
-      System.out.println("DO VOID REDUCTION from: " + lastTransientModel.getFQName() + " to " + outputModel.getFQName());
-      generator.reset();
-      generator.setupReduction(lastTransientModel, templatesModel);
-      generator.doReduction(outputModel);
+      System.out.println("COPY MODEL from: " + lastTransientModel.getFQName() + " to " + outputModel.getFQName());
+      SModelUtil.cloneSModel(lastTransientModel, outputModel);
     } else {
       outputModel = lastTransientModel;
       outputModel.setNamespace(outputModelNamespace);
@@ -353,5 +351,4 @@ public class GeneratorManager {
     }
     return outputModel;
   }
-
 }
