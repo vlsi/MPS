@@ -55,7 +55,6 @@ public class GeneratorManager {
       models.add(language.getTypesystemModelDescriptor());
     }
 
-
     generate(configuration, models, false);
   }
 
