@@ -6,18 +6,17 @@
  */
 package jetbrains.mps.generator.template;
 
+import jetbrains.mps.generator.GenerationFailedException;
+import jetbrains.mps.generator.IModelGenerator;
 import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.transformation.ITemplateLanguageConstants;
-import jetbrains.mps.transformation.TLBase.TemplateSwitch;
 import jetbrains.mps.transformation.TLBase.TemplateDeclaration;
-import jetbrains.mps.generator.template.INodeBuilder;
-import jetbrains.mps.generator.IModelGenerator;
-import jetbrains.mps.generator.GenerationFailedException;
+import jetbrains.mps.transformation.TLBase.TemplateSwitch;
 import jetbrains.mps.util.Condition;
 
-import java.util.Map;
 import java.util.List;
+import java.util.Map;
 
 public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageConstants {
   void setStartState();
@@ -42,11 +41,6 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   INodeBuilder findNodeBuilderForTarget(SemanticNode targetNode);
 
-  /**
-   * @deprecated
-   */
-  INodeBuilder findNodeBuilderForSource(SemanticNode sourceNode, SemanticNode templateNode);
-
   INodeBuilder findNodeBuilderForSource(SemanticNode sourceNode, String mappingName);
 
   /**
@@ -55,6 +49,8 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
   List<INodeBuilder> getNodeBuildersForSource(SemanticNode sourceNode);
 
   INodeBuilder findNodeBuilder(Condition<INodeBuilder> condition);
+
+  INodeBuilder findNodeBuilder(INodeBuilder fromBuilder, Condition<INodeBuilder> condition);
 
   SModel getTemplatesModel();
 

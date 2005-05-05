@@ -9,8 +9,8 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.core.BaseConcept;
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.diagnostic.Logger;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.semanticModel.*;
@@ -348,15 +348,15 @@ public class TemplateGenUtil {
 
   public static void registerNodeBuilder(INodeBuilder builder) {
     templateNodeToBuilderMap_put(builder);
-    if (builder.getMappingName() != null) {
-      mappingNameToBuilderMap_put(builder);
-    }
+//    if (builder.getMappingName() != null) {
+//      mappingNameToBuilderMap_put(builder);
+//    }
   }
 
   public static void unregisterNodeBuilder(INodeBuilder builder) {
-    if (builder.getMappingName() != null) {
-      mappingNameToBuilderMap_remove(builder);
-    }
+//    if (builder.getMappingName() != null) {
+//      mappingNameToBuilderMap_remove(builder);
+//    }
     templateNodeToBuilderMap_remove(builder);
   }
 
@@ -446,36 +446,36 @@ public class TemplateGenUtil {
     return null;
   }
 
-  private static void mappingNameToBuilderMap_put(INodeBuilder nodeBuilder) {
-    SemanticNode sourceNode = nodeBuilder.getSourceNode();
-    String mappingName = nodeBuilder.getMappingName();
-    Map<String, INodeBuilder> map = (Map<String, INodeBuilder>) sourceNode.getUserObject("mappingNameToBuilderMap");
-    if (map == null) {
-      map = new HashMap<String, INodeBuilder>();
-      sourceNode.putUserObject("mappingNameToBuilderMap", map);
-    }
-    map.put(mappingName, nodeBuilder);
-    //    System.out.println("put " + mappingName + " in " + sourceNode.getDebugText());
-  }
+//  private static void mappingNameToBuilderMap_put(INodeBuilder nodeBuilder) {
+//    SemanticNode sourceNode = nodeBuilder.getSourceNode();
+//    String mappingName = nodeBuilder.getMappingName();
+//    Map<String, INodeBuilder> map = (Map<String, INodeBuilder>) sourceNode.getUserObject("mappingNameToBuilderMap");
+//    if (map == null) {
+//      map = new HashMap<String, INodeBuilder>();
+//      sourceNode.putUserObject("mappingNameToBuilderMap", map);
+//    }
+//    map.put(mappingName, nodeBuilder);
+//    //    System.out.println("put " + mappingName + " in " + sourceNode.getDebugText());
+//  }
+//
+//  private static void mappingNameToBuilderMap_remove(INodeBuilder nodeBuilder) {
+//    SemanticNode sourceNode = nodeBuilder.getSourceNode();
+//    String mappingName = nodeBuilder.getMappingName();
+//    Map<String, INodeBuilder> map = (Map<String, INodeBuilder>) sourceNode.getUserObject("mappingNameToBuilderMap");
+//    if (map != null) {
+//      map.remove(mappingName);
+//    }
+//    //    System.out.println("remove " + mappingName + " in " + sourceNode.getDebugText());
+//  }
 
-  private static void mappingNameToBuilderMap_remove(INodeBuilder nodeBuilder) {
-    SemanticNode sourceNode = nodeBuilder.getSourceNode();
-    String mappingName = nodeBuilder.getMappingName();
-    Map<String, INodeBuilder> map = (Map<String, INodeBuilder>) sourceNode.getUserObject("mappingNameToBuilderMap");
-    if (map != null) {
-      map.remove(mappingName);
-    }
-    //    System.out.println("remove " + mappingName + " in " + sourceNode.getDebugText());
-  }
-
-  public static INodeBuilder mappingNameToBuilderMap_get(SemanticNode sourceNode, String mappingName) {
-    //    System.out.println("get " + mappingName + " from " + sourceNode.getDebugText());
-    Map<String, INodeBuilder> map = (Map<String, INodeBuilder>) sourceNode.getUserObject("mappingNameToBuilderMap");
-    if (map != null) {
-      return map.get(mappingName);
-    }
-    return null;
-  }
+//  public static INodeBuilder mappingNameToBuilderMap_get(SemanticNode sourceNode, String mappingName) {
+//    //    System.out.println("get " + mappingName + " from " + sourceNode.getDebugText());
+//    Map<String, INodeBuilder> map = (Map<String, INodeBuilder>) sourceNode.getUserObject("mappingNameToBuilderMap");
+//    if (map != null) {
+//      return map.get(mappingName);
+//    }
+//    return null;
+//  }
 
   public static void templateNodeToBuilderMap_put(INodeBuilder nodeBuilder) {
     SemanticNode sourceNode = nodeBuilder.getSourceNode();
@@ -514,13 +514,13 @@ public class TemplateGenUtil {
     }
   }
 
-  public static INodeBuilder templateNodeToBuilderMap_get(SemanticNode sourceNode, SemanticNode templateNode) {
-    Map<SemanticNode, INodeBuilder> map = (Map<SemanticNode, INodeBuilder>) sourceNode.getUserObject("templateNodeToBuilderMap");
-    if (map != null) {
-      return map.get(templateNode);
-    }
-    return null;
-  }
+//  public static INodeBuilder templateNodeToBuilderMap_get(SemanticNode sourceNode, SemanticNode templateNode) {
+//    Map<SemanticNode, INodeBuilder> map = (Map<SemanticNode, INodeBuilder>) sourceNode.getUserObject("templateNodeToBuilderMap");
+//    if (map != null) {
+//      return map.get(templateNode);
+//    }
+//    return null;
+//  }
 
   public static List<INodeBuilder> getNodeBuildersForSource(SemanticNode sourceNode) {
     Map<SemanticNode, INodeBuilder> map = (Map<SemanticNode, INodeBuilder>) sourceNode.getUserObject("templateNodeToBuilderMap");
