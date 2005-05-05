@@ -49,6 +49,9 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   INodeBuilder findNodeBuilderForSource(SemanticNode sourceNode, SemanticNode templateNode);
 
+  /**
+   * @deprecated
+   */
   INodeBuilder findNodeBuilderForSource(SemanticNode sourceNode, String mappingName);
 
   /**
