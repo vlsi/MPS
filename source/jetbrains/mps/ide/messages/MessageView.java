@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.ActionEvent;
 
 /**
  * @author Kostik
@@ -28,13 +29,21 @@ public class MessageView {
     myComponent.setLayout(new BorderLayout());
     myComponent.add(new JScrollPane(myList), BorderLayout.CENTER);
 
+    myList.registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        openCurrentMessageNodeIfPossible();
+      }
+    }, KeyStroke.getKeyStroke("F4"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    myList.registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        openCurrentMessageNodeIfPossible();
+      }
+    }, KeyStroke.getKeyStroke("ENTER"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
     myList.addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
         if (e.getClickCount() == 2) {
-          Message selectedMessage = (Message) myList.getSelectedValue();
-          if (selectedMessage == null) return;
-          if (selectedMessage.getNode() == null) return;
-          myIde.openNode(selectedMessage.getNode(), true);
+          openCurrentMessageNodeIfPossible();
         }
       }
     });
@@ -65,6 +74,13 @@ public class MessageView {
     add(new Message(MessageKind.ERROR, "Bad user"));
     add(new Message(MessageKind.INFORMATION, "Bad user"));
     add(new Message(MessageKind.WARNING, "Bad user"));
+  }
+
+  private void openCurrentMessageNodeIfPossible() {
+    Message selectedMessage = (Message) myList.getSelectedValue();
+    if (selectedMessage == null) return;
+    if (selectedMessage.getNode() == null) return;
+    myIde.openNode(selectedMessage.getNode(), true);
   }
 
 
