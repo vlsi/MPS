@@ -154,7 +154,7 @@ public class TemplateGenUtil {
     return null;
   }
 
-  public static List<INodeBuilder> createNodeBuildersForTemplateMappingRule(TemplateMappingRule templateMappingRule, ITemplateGenerator generator) {
+  public static List<INodeBuilder> createNodeBuildersForTemplateMappingRule(MappingRule templateMappingRule, ITemplateGenerator generator) {
     List<INodeBuilder> builders = new LinkedList<INodeBuilder>();
     String ruleName = templateMappingRule.getName();
     LOG.assertNotNull(ruleName, "TemplateMappingRule mast have name");
@@ -170,7 +170,7 @@ public class TemplateGenUtil {
     return builders;
   }
 
-  public static void createNodeBuildersForTemplateWeavingingRule(TemplateWeavingRule templateWeavingRule, ITemplateGenerator generator) {
+  public static void createNodeBuildersForTemplateWeavingingRule(WeavingRule templateWeavingRule, ITemplateGenerator generator) {
     TemplateDeclaration templateDeclaration = templateWeavingRule.getTemplate();
 
     List<SemanticNode> sourceNodes = createSourceNodeListForTemplateWeavingRule(templateWeavingRule, generator);
@@ -248,7 +248,7 @@ public class TemplateGenUtil {
     return ruleContextBuilder;
   }
 
-  private static INodeBuilder getContextNodeBuilderForTemplateWeavingingRule(SemanticNode sourceNode, TemplateWeavingRule templateWeavingRule, ITemplateGenerator generator) {
+  private static INodeBuilder getContextNodeBuilderForTemplateWeavingingRule(SemanticNode sourceNode, WeavingRule templateWeavingRule, ITemplateGenerator generator) {
     String aspectId = templateWeavingRule.getContextProviderAspectId();
     String methodName = "templateWeavingRule_Context_" + aspectId;
     Object[] args = new Object[]{sourceNode, generator};
@@ -296,7 +296,7 @@ public class TemplateGenUtil {
     } // while (childTemplates.hasNext())
   }
 
-  private static List<SemanticNode> createSourceNodeListForTemplateMappingRule(TemplateMappingRule templateMappingRule, ITemplateGenerator generator) {
+  private static List<SemanticNode> createSourceNodeListForTemplateMappingRule(MappingRule templateMappingRule, ITemplateGenerator generator) {
     String sourceQueryAspectId = templateMappingRule.getSourceQueryAspectId();
     String methodName = "templateMappingRule_SourceQuery_" + sourceQueryAspectId;
     Object[] args = new Object[]{generator};
@@ -305,7 +305,7 @@ public class TemplateGenUtil {
     return sourceNodes;
   }
 
-  private static List<SemanticNode> createSourceNodeListForTemplateWeavingRule(TemplateWeavingRule templateWeavingRule, ITemplateGenerator generator) {
+  private static List<SemanticNode> createSourceNodeListForTemplateWeavingRule(WeavingRule templateWeavingRule, ITemplateGenerator generator) {
     String sourceQueryAspectId = templateWeavingRule.getSourceQueryAspectId();
     String methodName = "templateWeavingRule_SourceQuery_" + sourceQueryAspectId;
     Object[] args = new Object[]{generator};

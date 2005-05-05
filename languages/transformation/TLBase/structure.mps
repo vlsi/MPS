@@ -63,7 +63,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1095416546421">
     <property name="rootable" value="true" />
-    <property name="name" value="TemplateMappingConfiguration" />
+    <property name="name" value="MappingConfiguration" />
     <link role="extends" targetNodeId="2.1078489098625" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1095416692159">
       <property name="sourceCardinality" value="0..n" />
@@ -81,7 +81,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1095416572297">
-    <property name="name" value="TemplateMappingRule" />
+    <property name="name" value="MappingRule" />
     <link role="extends" targetNodeId="2.1078489098625" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1095440741546">
       <property name="name" value="sourceQueryAspectId" />
@@ -95,7 +95,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1095416624611">
-    <property name="name" value="TemplateWeavingRule" />
+    <property name="name" value="WeavingRule" />
     <link role="extends" targetNodeId="2.1078489098625" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1095418755477">
       <property name="name" value="sourceQueryAspectId" />
