@@ -28,11 +28,6 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   void reset();
 
-//  /**
-//   * @deprecated
-//   */
-//  void generate(SModel targetModel, SModel templatesModel);
-
   void generate(SModel sourceModel, SModel targetModel, SModel templatesModel) throws GenerationFailedException;
 
   int setupReduction(SModel sourceModel, SModel templatesModel);
@@ -47,11 +42,11 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   INodeBuilder findNodeBuilderForTarget(SemanticNode targetNode);
 
-  INodeBuilder findNodeBuilderForSource(SemanticNode sourceNode, SemanticNode templateNode);
-
   /**
    * @deprecated
    */
+  INodeBuilder findNodeBuilderForSource(SemanticNode sourceNode, SemanticNode templateNode);
+
   INodeBuilder findNodeBuilderForSource(SemanticNode sourceNode, String mappingName);
 
   /**
