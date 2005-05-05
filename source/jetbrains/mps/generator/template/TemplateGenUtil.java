@@ -346,19 +346,19 @@ public class TemplateGenUtil {
     return list;
   }
 
-  public static void registerNodeBuilder(INodeBuilder builder) {
-    templateNodeToBuilderMap_put(builder);
-//    if (builder.getMappingName() != null) {
-//      mappingNameToBuilderMap_put(builder);
-//    }
-  }
+//  public static void registerNodeBuilder(INodeBuilder builder) {
+////    templateNodeToBuilderMap_put(builder);
+////    if (builder.getMappingName() != null) {
+////      mappingNameToBuilderMap_put(builder);
+////    }
+//  }
 
-  public static void unregisterNodeBuilder(INodeBuilder builder) {
-//    if (builder.getMappingName() != null) {
-//      mappingNameToBuilderMap_remove(builder);
-//    }
-    templateNodeToBuilderMap_remove(builder);
-  }
+//  public static void unregisterNodeBuilder(INodeBuilder builder) {
+////    if (builder.getMappingName() != null) {
+////      mappingNameToBuilderMap_remove(builder);
+////    }
+////    templateNodeToBuilderMap_remove(builder);
+//  }
 
   private static INodeBuilder createNodeBuilder(SemanticNode sourceNode, SemanticNode templateNode, String mappingName, ITemplateGenerator generator) {
     INodeBuilder builder = null;
@@ -395,7 +395,7 @@ public class TemplateGenUtil {
     if (builder == null) {
       builder = createDefaultNodeBuilder(sourceNode, templateNode, mappingName, generator);
     }
-    registerNodeBuilder(builder);
+//    registerNodeBuilder(builder);
     if (needCreateChildBuilders) {
       createChildBuilders(builder);
     }
@@ -477,42 +477,42 @@ public class TemplateGenUtil {
 //    return null;
 //  }
 
-  public static void templateNodeToBuilderMap_put(INodeBuilder nodeBuilder) {
-    SemanticNode sourceNode = nodeBuilder.getSourceNode();
-    SemanticNode templateNode = nodeBuilder.getTemplateNode();
-    Map<SemanticNode, INodeBuilder> map = (Map<SemanticNode, INodeBuilder>) sourceNode.getUserObject("templateNodeToBuilderMap");
-    if (map == null) {
-      map = new HashMap<SemanticNode, INodeBuilder>();
-      sourceNode.putUserObject("templateNodeToBuilderMap", map);
-    }
-    INodeBuilder mappedNodeBuilder = map.get(templateNode);
-    if (mappedNodeBuilder != null &&
-            mappedNodeBuilder != nodeBuilder) {
-      //      LOG.error("Couldn't put node builder to map, there is enother builder is in the map already" +
-      //              "\nSource   node: " + sourceNode.getDebugText() +
-      //              "\nTemplate node: " + templateNode.getDebugText(),
-      //              new RuntimeException());
-      IdeMain.instance().getMessageView().add(new Message(MessageKind.WARNING, sourceNode, "WARNING: Couldn't put node builder to map, there is enother builder is in the map already"));
-
-      System.err.println("WARNING: Couldn't put node builder to map, there is enother builder is in the map already");
-      System.err.println("Source node  : " + sourceNode.getDebugText());
-      //      SModelUtil.dumpNodePath(sourceNode, 10, System.err);
-      System.err.println("Template node: " + templateNode.getDebugText());
-      //      SModelUtil.dumpNodePath(templateNode, 10, System.err);
-
-    } else {
-      map.put(templateNode, nodeBuilder);
-    }
-  }
-
-  public static void templateNodeToBuilderMap_remove(INodeBuilder nodeBuilder) {
-    SemanticNode sourceNode = nodeBuilder.getSourceNode();
-    SemanticNode templateNode = nodeBuilder.getTemplateNode();
-    Map<SemanticNode, INodeBuilder> map = (Map<SemanticNode, INodeBuilder>) sourceNode.getUserObject("templateNodeToBuilderMap");
-    if (map != null) {
-      map.remove(templateNode);
-    }
-  }
+//  public static void templateNodeToBuilderMap_put(INodeBuilder nodeBuilder) {
+//    SemanticNode sourceNode = nodeBuilder.getSourceNode();
+//    SemanticNode templateNode = nodeBuilder.getTemplateNode();
+//    Map<SemanticNode, INodeBuilder> map = (Map<SemanticNode, INodeBuilder>) sourceNode.getUserObject("templateNodeToBuilderMap");
+//    if (map == null) {
+//      map = new HashMap<SemanticNode, INodeBuilder>();
+//      sourceNode.putUserObject("templateNodeToBuilderMap", map);
+//    }
+//    INodeBuilder mappedNodeBuilder = map.get(templateNode);
+//    if (mappedNodeBuilder != null &&
+//            mappedNodeBuilder != nodeBuilder) {
+//      //      LOG.error("Couldn't put node builder to map, there is enother builder is in the map already" +
+//      //              "\nSource   node: " + sourceNode.getDebugText() +
+//      //              "\nTemplate node: " + templateNode.getDebugText(),
+//      //              new RuntimeException());
+//      IdeMain.instance().getMessageView().add(new Message(MessageKind.WARNING, sourceNode, "WARNING: Couldn't put node builder to map, there is enother builder is in the map already"));
+//
+//      System.err.println("WARNING: Couldn't put node builder to map, there is enother builder is in the map already");
+//      System.err.println("Source node  : " + sourceNode.getDebugText());
+//      //      SModelUtil.dumpNodePath(sourceNode, 10, System.err);
+//      System.err.println("Template node: " + templateNode.getDebugText());
+//      //      SModelUtil.dumpNodePath(templateNode, 10, System.err);
+//
+//    } else {
+//      map.put(templateNode, nodeBuilder);
+//    }
+//  }
+//
+//  public static void templateNodeToBuilderMap_remove(INodeBuilder nodeBuilder) {
+//    SemanticNode sourceNode = nodeBuilder.getSourceNode();
+//    SemanticNode templateNode = nodeBuilder.getTemplateNode();
+//    Map<SemanticNode, INodeBuilder> map = (Map<SemanticNode, INodeBuilder>) sourceNode.getUserObject("templateNodeToBuilderMap");
+//    if (map != null) {
+//      map.remove(templateNode);
+//    }
+//  }
 
 //  public static INodeBuilder templateNodeToBuilderMap_get(SemanticNode sourceNode, SemanticNode templateNode) {
 //    Map<SemanticNode, INodeBuilder> map = (Map<SemanticNode, INodeBuilder>) sourceNode.getUserObject("templateNodeToBuilderMap");
@@ -522,19 +522,19 @@ public class TemplateGenUtil {
 //    return null;
 //  }
 
-  public static List<INodeBuilder> getNodeBuildersForSource(SemanticNode sourceNode) {
-    Map<SemanticNode, INodeBuilder> map = (Map<SemanticNode, INodeBuilder>) sourceNode.getUserObject("templateNodeToBuilderMap");
-    if (map != null) {
-      List<INodeBuilder> list = new LinkedList<INodeBuilder>();
-      Iterator<SemanticNode> keys = map.keySet().iterator();
-      while (keys.hasNext()) {
-        INodeBuilder nodeBuilder = map.get(keys.next());
-        list.add(nodeBuilder);
-      }
-      return list;
-    }
-    return Collections.EMPTY_LIST;
-  }
+//  public static List<INodeBuilder> getNodeBuildersForSource(SemanticNode sourceNode) {
+//    Map<SemanticNode, INodeBuilder> map = (Map<SemanticNode, INodeBuilder>) sourceNode.getUserObject("templateNodeToBuilderMap");
+//    if (map != null) {
+//      List<INodeBuilder> list = new LinkedList<INodeBuilder>();
+//      Iterator<SemanticNode> keys = map.keySet().iterator();
+//      while (keys.hasNext()) {
+//        INodeBuilder nodeBuilder = map.get(keys.next());
+//        list.add(nodeBuilder);
+//      }
+//      return list;
+//    }
+//    return Collections.EMPTY_LIST;
+//  }
 
 
   public static void printBuildersTree(INodeBuilder builder, int depth) {
