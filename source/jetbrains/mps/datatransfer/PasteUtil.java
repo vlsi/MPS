@@ -63,6 +63,9 @@ public class PasteUtil {
 
   private static List<SemanticNode> tryToPasteText(Clipboard cb, SModel model) {
     try {
+
+      if (!model.importsLanguage("jetbrains.textLanguage")) return null;
+
       String text = cb.getData(DataFlavor.stringFlavor).toString();
 
       List<SemanticNode> result = new ArrayList<SemanticNode>();
