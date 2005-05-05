@@ -39,6 +39,7 @@ public class GeneratorManager {
     GeneratorConfiguration configuration = new CommandRunnable<GeneratorConfiguration>(model) {
       protected GeneratorConfiguration onRun() {
         GeneratorConfiguration conf = GeneratorConfiguration.newInstance(model);
+        conf.setName("Generate " + language.getNamespace() + " language.");
 
         conf.setOutputPath(language.getSourceDir().getAbsolutePath());
         conf.addCommand(createCommand(model, "jetbrains.mps.bootstrap.structureLanguage", "jetbrains.mps.baseLanguage"));
