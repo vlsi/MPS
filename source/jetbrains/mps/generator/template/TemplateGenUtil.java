@@ -10,6 +10,9 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.core.BaseConcept;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.diagnostic.Logger;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.messages.Message;
+import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.*;
@@ -530,6 +533,8 @@ public class TemplateGenUtil {
       //              "\nSource   node: " + sourceNode.getDebugText() +
       //              "\nTemplate node: " + templateNode.getDebugText(),
       //              new RuntimeException());
+      IdeMain.instance().getMessageView().add(new Message(MessageKind.WARNING, sourceNode, "WARNING: Couldn't put node builder to map, there is enother builder is in the map already"));
+
       System.err.println("WARNING: Couldn't put node builder to map, there is enother builder is in the map already");
       System.err.println("Source node  : " + sourceNode.getDebugText());
       //      SModelUtil.dumpNodePath(sourceNode, 10, System.err);

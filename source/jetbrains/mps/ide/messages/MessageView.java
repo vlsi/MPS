@@ -81,6 +81,9 @@ public class MessageView {
   }
 
   public void show() {
+    if (myModel.size() > 0) {
+      myList.setSelectedValue(myModel.getElementAt(myModel.size() - 1), true);
+    }
     myIde.showMessagesView();
   }
 }
