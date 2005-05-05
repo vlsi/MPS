@@ -9,8 +9,8 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.core.BaseConcept;
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.ide.diagnostic.Logger;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.diagnostic.Logger;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.semanticModel.*;
@@ -18,7 +18,6 @@ import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.*;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.AspectMethod;
-import jetbrains.mps.util.Condition;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -212,35 +211,11 @@ public class TemplateGenUtil {
     for (TemplateFragment templateFragment : templateFragments) {
       SemanticNode templateFragmentNode = templateFragment.getParent();
       String mappingName = templateFragment.getName();
-
       List<INodeBuilder> fragmentNodeBuilders = createNodeBuildersForTemplateNode(sourceNode, templateFragmentNode, mappingName, generator);
       for (INodeBuilder fragmentBuilder : fragmentNodeBuilders) {
-        TemplateTag templateFragmentTag = templateFragment.getTag();
-        if (templateFragmentTag != null) {
-          // in context find builder with this tag and replace it with our "fragmant builder"
-          INodeBuilder toReplaceBuilder = findTemplateTagReference(sourceNode, templateFragmentTag, contextBuilder, generator);
-          if (toReplaceBuilder == null) {
-            String message = "Could't find reference on tagged template fragment." +
-                    "\nTag                    : " + templateFragmentTag.getName() +
-                    "\nSource node            : " + sourceNode.getDebugText() +
-                    "\nTemplate fragment      : " + templateFragmentNode.getDebugText() +
-                    "\nTemplate declaration   : " + SModelUtil.getRootParent(templateFragmentNode).getDebugText() +
-                    "\nContext source node    : " + contextBuilder.getSourceNode().getDebugText() +
-                    "\nContext template node  : " + contextBuilder.getTemplateNode().getDebugText() +
-                    "\nContext template parent: " + SModelUtil.getRootParent(contextBuilder.getTemplateNode()).getDebugText();
-            (new RuntimeException(message)).printStackTrace();
-            System.err.println("Source node trace:");
-            SModelUtil.dumpNodePath(sourceNode, 0, System.err);
-            //              System.err.println("TMP WARN: " + message);
-          } else {
-            toReplaceBuilder.getParent().replaceChildBuilder(toReplaceBuilder, fragmentBuilder);
-            fragmentBuilder.setRoleInParent(toReplaceBuilder.getRoleInParent());
-          }
-        } else {
-          // add our "fragmant builder" to context builder
-          INodeBuilder fragmentContextBuilder = getContextBuilderForTemplateFragment(templateFragmentNode, contextBuilder, generator);
-          fragmentContextBuilder.addChildBuilder(fragmentBuilder);
-        }
+        // add our "fragmant builder" to context builder
+        INodeBuilder fragmentContextBuilder = getContextBuilderForTemplateFragment(templateFragmentNode, contextBuilder, generator);
+        fragmentContextBuilder.addChildBuilder(fragmentBuilder);
       }
     }
   }
@@ -255,22 +230,6 @@ public class TemplateGenUtil {
       }
     }
     return templateFragments;
-  }
-
-  private static INodeBuilder findTemplateTagReference(final SemanticNode sourceNode, final TemplateTag tag, INodeBuilder ruleContextBuilder, ITemplateGenerator generator) {
-    // in context node builder find "NodeMacro" referencing this fragment by the TAG
-    // todo: fragment can be referenced from more then one place
-    INodeBuilder nodeBuilder = ruleContextBuilder.findChildBuilder(new Condition<INodeBuilder>() {
-      public boolean met(INodeBuilder nodeBuilder) {
-        if (nodeBuilder.getSourceNode() == sourceNode) {
-          SemanticNode templateNode = nodeBuilder.getTemplateNode();
-          NodeMacro nodeMacro = (NodeMacro) templateNode.getChild(ITemplateLanguageConstants.ROLE_NODE_MAKRO);
-          return (nodeMacro != null && nodeMacro.getReferencedTag() == tag);
-        }
-        return false;
-      }
-    });
-    return nodeBuilder;
   }
 
   private static INodeBuilder getContextBuilderForTemplateFragment(SemanticNode templateFragmentNode, INodeBuilder ruleContextBuilder, ITemplateGenerator generator) {

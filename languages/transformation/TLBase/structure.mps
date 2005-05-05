@@ -22,11 +22,6 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1087833466690">
     <property name="name" value="NodeMacro" />
     <link role="extends" targetNodeId="2.1078489098625" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1096887838191">
-      <property name="targetCardinality" value="0..n" />
-      <property name="role" value="referencedTag" />
-      <link role="target" targetNodeId="1096887421657" />
-    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1090493180053">
       <property name="name" value="sourceQueryAspectMethodName" />
       <link role="dataType" targetNodeId="2.1082983041843" />
@@ -84,13 +79,6 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1095416624611" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1096887475611">
-      <property name="sourceCardinality" value="0..n" />
-      <property name="targetCardinality" value="1" />
-      <property name="role" value="templateTag" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1096887421657" />
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1095416572297">
     <property name="name" value="TemplateMappingRule" />
@@ -126,20 +114,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1095672379244">
     <property name="name" value="TemplateFragment" />
     <link role="extends" targetNodeId="2.1078489098625" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1096887682700">
-      <property name="sourceCardinality" value="0..1" />
-      <property name="targetCardinality" value="0..n" />
-      <property name="role" value="tag" />
-      <link role="target" targetNodeId="1096887421657" />
-    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1095757900618">
       <property name="name" value="contextProviderAspectId" />
       <link role="dataType" targetNodeId="2.1082983041843" />
     </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1096887421657">
-    <property name="name" value="TemplateTag" />
-    <link role="extends" targetNodeId="2.1078489098625" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1112730859144">
     <property name="rootable" value="true" />
