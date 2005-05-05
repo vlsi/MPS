@@ -10,6 +10,7 @@ import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.messages.MessageView;
 
 import java.util.Iterator;
 import java.util.List;
@@ -34,6 +35,10 @@ public abstract class AbstractModelGenerator implements IModelGenerator {
 
   public MPSProject getProject() {
     return myProject;
+  }
+
+  public MessageView getMessageView() {
+    return getProject().getComponent(MessageView.class);
   }
 
   public SModel getSourceModel() {

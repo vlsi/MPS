@@ -13,6 +13,7 @@ import jetbrains.mps.transformation.TLBase.TemplateSwitch;
 import jetbrains.mps.transformation.TLBase.TemplateDeclaration;
 import jetbrains.mps.generator.template.INodeBuilder;
 import jetbrains.mps.generator.IModelGenerator;
+import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.util.Condition;
 
 import java.util.Map;
@@ -32,7 +33,7 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 //   */
 //  void generate(SModel targetModel, SModel templatesModel);
 
-  void generate(SModel sourceModel, SModel targetModel, SModel templatesModel);
+  void generate(SModel sourceModel, SModel targetModel, SModel templatesModel) throws GenerationFailedException;
 
   int setupReduction(SModel sourceModel, SModel templatesModel);
 

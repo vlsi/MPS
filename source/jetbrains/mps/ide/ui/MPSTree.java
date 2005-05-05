@@ -32,7 +32,6 @@ public abstract class MPSTree extends JTree {
     setSelectionPath(path);
   }
 
-
   protected List<String> getExpandedPaths() {
     List<String> result = new ArrayList<String>();
     Enumeration<TreePath> expanded = getExpandedDescendants(new TreePath(new Object[] { getModel().getRoot() }));

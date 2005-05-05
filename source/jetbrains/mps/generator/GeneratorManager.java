@@ -4,6 +4,9 @@ import jetbrains.mps.baseLanguage.Classifier;
 import jetbrains.mps.cml.util.CommandRunnable;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.ide.ProjectPane;
+import jetbrains.mps.ide.messages.MessageView;
+import jetbrains.mps.ide.messages.Message;
+import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.RootManager;
@@ -78,6 +81,9 @@ public class GeneratorManager {
   }
 
   public void generate(GeneratorConfiguration configuration, Set<SModelDescriptor> modelDescriptors, boolean generateText) {
+    getMessageView().clear();
+    getMessageView().add(new Message(MessageKind.INFORMATION, null, "Generating configuration " + configuration.getName()));
+
     System.out.println("Generating configuration " + configuration.getName());
     System.out.println("Output path is " + configuration.getOutputPath());
     System.out.println("");
@@ -97,35 +103,28 @@ public class GeneratorManager {
       }
 
       for (SModelDescriptor model : modelsWithLanguage) {
-        generate_internal_new(model, generatorClass, templatesModel, configuration.getOutputPath(), generateText);
+        try {
+          generate_internal_new(model, generatorClass, templatesModel, configuration.getOutputPath(), generateText);
+        } catch (GenerationFailedException gfe) {
+          System.err.println(model.getFQName() + " generation failed");
+          gfe.printStackTrace();
+          getMessageView().add(new Message(MessageKind.ERROR, model.getFQName() + " model generation failed"));
+          getMessageView().show();
+          return;
+        }
+        getMessageView().add(new Message(MessageKind.INFORMATION, model.getFQName() + " model is generated"));
       }
     }
+
+    getMessageView().add(new Message(MessageKind.INFORMATION, "Generation finished"));
+    getMessageView().show();
   }
 
-//  private void generate_internal(SModelDescriptor sourceModel, String generatorClassFQName, SModelDescriptor templatesModel, String outputPath, boolean generateText) {
-//    System.out.println("Generating sourceModel " + sourceModel.getFQName());
-//    try {
-//      Class cls = Class.forName(generatorClassFQName);
-//      IModelGenerator generator = (IModelGenerator) cls.getConstructor(SModel.class, MPSProject.class).newInstance(sourceModel.getSModel(), myProject);
-//      SModel targetModel = JavaGenUtil.createTargetJavaModel(sourceModel.getSModel(), JavaNameUtil.packageNameForModelFqName(sourceModel.getFQName()), myProject);
-//      if (generator instanceof ITemplateGenerator) {
-//        ((ITemplateGenerator) generator).generate(targetModel, templatesModel.getSModel());
-//      } else {
-//        generator.generate(targetModel);
-//      }
-//      System.out.println("Generation done.");
-//      if (generateText) {
-//        System.out.println("Generating text...");
-//        generateText(targetModel);
-//      } else {
-//        System.out.println("Generation source...");
-//        generateSource(outputPath, sourceModel.getSModel(), targetModel);
-//      }
-//      JavaClassMaps.clearMaps();
-//    } catch (Exception e) {
-//      e.printStackTrace();
-//    }
-//  }
+  private MessageView getMessageView() {
+    MessageView messages = myProject.getComponent(MessageView.class);
+    return messages;
+  }
+
 
   private void generateSource(String outputPath, SModel sourceModel, SModel targetModel) {
     if (outputPath == null) throw new RuntimeException("Unspecified output path. Please specify one.");
@@ -211,13 +210,7 @@ public class GeneratorManager {
     for (SModelDescriptor model : models) {
       if (model.getFQName().equals(generator.getTemplatesModel().getName())) return model;
     }
-
-    System.err.println("Couldn't find templates model " + generator.getTemplatesModel().getName());
-    System.err.println("specified roots:");
-    for (ModelRoot root : roots) {
-      System.err.println("-- " + root.getPath());
-    }
-    System.err.println("----------------");
+    getMessageView().add(new Message(MessageKind.ERROR, "Couldn't find templates model " + generator.getTemplatesModel().getName()));
     return null;
   }
 
@@ -234,24 +227,21 @@ public class GeneratorManager {
       return;
     }
 
-    SModel targetModel = null;
     try {
+      SModel targetModel = null;
       if (generator instanceof ITemplateGenerator) {
         targetModel = generateByTemplateGenerator(sourceModelDescr, templatesModel.getSModel(), (ITemplateGenerator) generator);
       } else {
         targetModel = JavaGenUtil.createTargetJavaModel(sourceModelDescr.getSModel(), JavaNameUtil.packageNameForModelFqName(sourceModelDescr.getFQName()), myProject);
         generator.generate(sourceModelDescr.getSModel(), targetModel);
       }
-
       if (generateText) {
         generateText(targetModel);
       } else {
         generateSource(outputPath, sourceModelDescr.getSModel(), targetModel);
       }
-
+    } finally {
       JavaClassMaps.clearMaps();
-    } catch (Exception e) {
-      e.printStackTrace();
     }
   }
 
