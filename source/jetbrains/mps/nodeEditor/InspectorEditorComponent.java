@@ -7,12 +7,13 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNodeReference;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.IdeMain;
 
 public class InspectorEditorComponent extends AbstractEditorComponent {
   private EditorContext myEditorContext;
-  private SemanticNode myInspectedNode;
+  private SNodeReference myNodeReference = new SNodeReference(null);
 
   public InspectorEditorComponent(MPSProject project) {
     super(project);
@@ -20,20 +21,24 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
     rebuildEditorContent();
   }
 
+  public SemanticNode getNode() {
+    return myNodeReference.getNode();
+  }
+
   private void reinitEditor() {
-    if (myInspectedNode == null) {
+    if (getNode() == null) {
       myEditorContext = new EditorContext(this, null, getProject());
     } else {
-      myEditorContext = new EditorContext(this, myInspectedNode.getModel(), getProject());
+      myEditorContext = new EditorContext(this, getNode().getModel(), getProject());
     }
   }
 
 
   public void inspectNode(SemanticNode semanticNode) {
-    if (myInspectedNode == semanticNode) {
+    if (getNode() == semanticNode) {
       return;
     }
-    myInspectedNode = semanticNode;
+    myNodeReference = new SNodeReference(semanticNode);
     reinitEditor();
     rebuildEditorContent();
     repaint();
@@ -44,13 +49,13 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
   }
 
   public EditorCell createRootCell() {
-    if (myInspectedNode == null || myInspectedNode.isDeleted()) {
+    if (getNode() == null || getNode().isDeleted()) {
       return EditorCell_Constant.create(getContext(), null, "<no inspect info>", true);
     }
-    return getProject().getComponent(EditorManager.class).createInspectedCell(getContext(), myInspectedNode);
+    return getProject().getComponent(EditorManager.class).createInspectedCell(getContext(), getNode());
   }
 
   public SemanticNode getInspectedNode() {
-    return myInspectedNode;
+    return getNode();
   }
 }
