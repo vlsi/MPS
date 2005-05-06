@@ -71,9 +71,6 @@ public class MessageView {
       }
     });
 
-    add(new Message(MessageKind.ERROR, "Bad user"));
-    add(new Message(MessageKind.INFORMATION, "Bad user"));
-    add(new Message(MessageKind.WARNING, "Bad user"));
   }
 
   private void openCurrentMessageNodeIfPossible() {
