@@ -718,7 +718,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     int caretX = 0;
     if (mySelectedCell != null) {
       selectionPoint = new Point(mySelectedCell.getX(), mySelectedCell.getY());
-      EditorCell prevSelectableCell = findPrevSelectableCell(findNodeCell(mySelectedCell.getSemanticNode()));
+      EditorCell prevSelectableCell = null;
+      if (mySelectedCell.getSemanticNode() != null) {
+        prevSelectableCell = findPrevSelectableCell(findNodeCell(mySelectedCell.getSemanticNode()));
+      }
       if (prevSelectableCell != null) {
         prevSelectablePoint = new Point(prevSelectableCell.getX(), prevSelectableCell.getY());
       }

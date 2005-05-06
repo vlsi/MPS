@@ -3,6 +3,7 @@ package jetbrains.mps.textGen;
 import jetbrains.mps.ide.diagnostic.Logger;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.mapping.MappingTextGenManager;
+import jetbrains.mps.reloading.ClassLoaderManager;
 
 /**
  * User: Dmitriev.
@@ -56,7 +57,7 @@ public class TextGenManager {
     String textgenClassname = packageName + ".textGen." + className + "_TextGen";
 
     try {
-      Class textgenClass = Class.forName(textgenClassname);
+      Class textgenClass = Class.forName(textgenClassname, true, ClassLoaderManager.getInstance().getClassLoader());
       SemanticNodeTextGen textGenerator = (SemanticNodeTextGen) textgenClass.newInstance();
       return textGenerator;
     } catch (ClassNotFoundException e) {

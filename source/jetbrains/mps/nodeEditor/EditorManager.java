@@ -57,7 +57,7 @@ public class EditorManager {
   private INodeEditor getEditor(EditorContext context, SemanticNode node) {
     INodeEditor editor = (INodeEditor) node.getUserObject(this.getClass());
 
-    if (editor != null && editor.getClass().getClassLoader() != ClassLoaderManager.getInstance().getEditorsClassLoader()) {
+    if (editor != null && editor.getClass().getClassLoader() != ClassLoaderManager.getInstance().getClassLoader()) {
       editor = null;
     }
 
@@ -100,7 +100,7 @@ public class EditorManager {
     //    String editorClassName = "jetbrains.mps." + languageEditorFQName + "." + nodeConcept.getName() + "_Editor";
     String editorClassName = languageEditorFQName + "." + nodeConcept.getName() + "_Editor";
     try {
-      Class editorClass = Class.forName(editorClassName, true, ClassLoaderManager.getInstance().getEditorsClassLoader());
+      Class editorClass = Class.forName(editorClassName, true, ClassLoaderManager.getInstance().getClassLoader());
       return (INodeEditor) editorClass.newInstance();
     } catch (ClassNotFoundException e) {
       System.err.println("Couldn't load editor " + editorClassName + " : Class Not Found!");

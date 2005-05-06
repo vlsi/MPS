@@ -1,6 +1,9 @@
 package jetbrains.mps.reloading;
 
 import jetbrains.mps.util.NodeNameUtil;
+import jetbrains.mps.util.NameUtil;
+
+import java.lang.ClassLoader;
 
 /**
  * @author Kostik
@@ -13,46 +16,31 @@ public class ClassLoaderManager {
     return ourInstance;
   }
 
-  private MPSClassLoader myConverterClassLoader;
-  private MPSClassLoader myEditorsClassLoader;
-  private MPSClassLoader myTypesClassLoader;
+  private ClassLoader myClassLoader = null;
 
   public void reloadAll() {
-    myConverterClassLoader = null;
-    myEditorsClassLoader = null;
-    myTypesClassLoader = null;
+    myClassLoader = null;
   }
 
-  public ClassLoader getConverterClassLoader() {
-    if (myConverterClassLoader == null) myConverterClassLoader = new ConverterClassLoader();
-    return myConverterClassLoader;
+  public ClassLoader getClassLoader() {
+    if (myClassLoader == null) myClassLoader = new MyClassLoader();
+    return myClassLoader;
   }
 
-  public ClassLoader getEditorsClassLoader() {
-    if (myEditorsClassLoader == null) myEditorsClassLoader = new EditorClassLoader();
-    return myEditorsClassLoader;
-  }
 
-  public ClassLoader getTypesClassLoader() {
-    if (myTypesClassLoader == null) myTypesClassLoader = new TypesClassLoader();
-    return myTypesClassLoader;
-  }
-
-  private class ConverterClassLoader extends MPSClassLoader {
+  private class MyClassLoader extends MPSClassLoader {
     protected boolean isExcluded(String name) {
+      String pack = NodeNameUtil.getNamespace(name);
+
+      if (pack.endsWith(".editor")) return false;
+      if (pack.endsWith(".types")) return false;
+
+      if (name.endsWith(".Aspects")) return true;
+      if (name.contains(".Aspects$")) return false;
+
+      if (name.startsWith("jetbrains.mps.")) return true;
+
       return false;
-    }
-  }
-
-  private class EditorClassLoader extends MPSClassLoader {
-    protected boolean isExcluded(String name) {
-      return !NodeNameUtil.getNamespace(name).endsWith(".editor");
-    }
-  }
-
-  private class TypesClassLoader extends MPSClassLoader {
-    protected boolean isExcluded(String name) {
-      return !NodeNameUtil.getNamespace(name).endsWith(".types");
     }
   }
 

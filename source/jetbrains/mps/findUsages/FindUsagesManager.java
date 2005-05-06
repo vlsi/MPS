@@ -43,8 +43,6 @@ public class FindUsagesManager {
     };
   }
 
-
-
   private static Map<ConceptDeclaration, List<ConceptDeclaration>> ourCache = new HashMap<ConceptDeclaration, List<ConceptDeclaration>>();
 
   public static void invalidateCaches() {

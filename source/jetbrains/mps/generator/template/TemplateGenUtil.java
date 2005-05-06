@@ -73,6 +73,10 @@ public class TemplateGenUtil {
       StringBuffer buildersStack = new StringBuffer("    builders stack:\n");
       String indent = "\n    ";
       INodeBuilder currBuilder = nodeBuilder;
+
+
+      
+
       while (currBuilder != null) {
         buildersStack.append(indent);
         buildersStack.append(currBuilder.getTemplateNode().getDebugText());
