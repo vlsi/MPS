@@ -15,7 +15,6 @@ import jetbrains.mps.transformation.TLBase.TemplateDeclaration;
 import jetbrains.mps.transformation.TLBase.TemplateSwitch;
 import jetbrains.mps.util.Condition;
 
-import java.util.List;
 import java.util.Map;
 
 public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageConstants {
