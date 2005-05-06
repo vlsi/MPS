@@ -1,7 +1,8 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.conversion.MPSClassLoader;
+import jetbrains.mps.reloading.MPSClassLoader;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.diagnostic.Logger;
@@ -17,12 +18,6 @@ public class EditorManager {
   private static Logger LOG = Logger.getInstance("jetbrains.mps.nodeEditor.EditorManager");
   //  private static EditorManager myInstance;
   public static String NODE_TO_PLACE_AFTER = "nodeToPlaceAfter";
-
-  private MPSClassLoader myClassLoader = new EditorClassLoader();
-
-  public void resetClassLoader() {
-    myClassLoader = new EditorClassLoader();
-  }
 
   public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
     EditorCell editorCell = createEditorCell_internal(context, node);
@@ -62,7 +57,7 @@ public class EditorManager {
   private INodeEditor getEditor(EditorContext context, SemanticNode node) {
     INodeEditor editor = (INodeEditor) node.getUserObject(this.getClass());
 
-    if (editor != null && editor.getClass().getClassLoader() != myClassLoader) {
+    if (editor != null && editor.getClass().getClassLoader() != ClassLoaderManager.getInstance().getEditorsClassLoader()) {
       editor = null;
     }
 
@@ -105,7 +100,7 @@ public class EditorManager {
     //    String editorClassName = "jetbrains.mps." + languageEditorFQName + "." + nodeConcept.getName() + "_Editor";
     String editorClassName = languageEditorFQName + "." + nodeConcept.getName() + "_Editor";
     try {
-      Class editorClass = Class.forName(editorClassName, true, myClassLoader);
+      Class editorClass = Class.forName(editorClassName, true, ClassLoaderManager.getInstance().getEditorsClassLoader());
       return (INodeEditor) editorClass.newInstance();
     } catch (ClassNotFoundException e) {
       System.err.println("Couldn't load editor " + editorClassName + " : Class Not Found!");
@@ -119,11 +114,5 @@ public class EditorManager {
     }
 
     return null;
-  }
-
-  private static class EditorClassLoader extends MPSClassLoader {
-    protected boolean isExcluded(String name) {
-      return !NodeNameUtil.getNamespace(name).endsWith(".editor");
-    }
   }
 }
