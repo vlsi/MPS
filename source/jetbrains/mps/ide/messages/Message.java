@@ -1,18 +1,19 @@
 package jetbrains.mps.ide.messages;
 
 import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNodeReference;
 
 /**
  * @author Kostik
  */
 public class Message {
   private MessageKind myKind;
-  private SemanticNode myNode;
+  private SNodeReference myNodeReference;
   private String myText;
 
   public Message(MessageKind kind, SemanticNode node, String text) {
     myKind = kind;
-    myNode = node;
+    myNodeReference = new SNodeReference(node);
     myText = text;
   }
 
@@ -29,7 +30,7 @@ public class Message {
   }
 
   public SemanticNode getNode() {
-    return myNode;
+    return myNodeReference.getNode();
   }
 
   public String getText() {
