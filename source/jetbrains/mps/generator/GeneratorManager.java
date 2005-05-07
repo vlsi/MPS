@@ -16,6 +16,7 @@ import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textPresentation.TextPresentationManager;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.plugin.MPSPlugin;
 
 import javax.swing.*;
 import java.io.File;
@@ -118,6 +119,14 @@ public class GeneratorManager {
     }
 
     getMessageView().add(new Message(MessageKind.INFORMATION, "Generation finished"));
+
+    try {
+      MPSPlugin.getInstance().refreshFS();
+      MPSPlugin.getInstance().buildProject();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+
     getMessageView().show();
   }
 
