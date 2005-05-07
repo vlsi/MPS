@@ -9,6 +9,7 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.DiagnosticUtil;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -59,6 +60,9 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
     final ConceptDeclaration targetType = myLinkDeclaration.getTarget();
     List<SemanticNode> list = SModelUtil.allNodes(mySourceNode.getModel(), true, new Condition<SemanticNode>() {
               public boolean met(SemanticNode node) {
+                DiagnosticUtil.assertNodeValid(node);
+                DiagnosticUtil.assertNodeValid(targetType);
+
                 return node.getName() != null && SModelUtil.isInstanceOfType(node, targetType);
               }
             });
