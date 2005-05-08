@@ -2,6 +2,7 @@ package jetbrains.mps.reloading;
 
 import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.ide.IdeMain;
 
 import java.lang.ClassLoader;
 
@@ -23,12 +24,23 @@ public class ClassLoaderManager {
   }
 
   public ClassLoader getClassLoader() {
-    if (myClassLoader == null) myClassLoader = new MyClassLoader();
+    if (myClassLoader == null) {
+      IdeMain ideMain = IdeMain.instance();      
+      if (ideMain.getProject() == null) {
+        myClassLoader = new MyClassLoader("classes");
+      } else {
+        myClassLoader = new MyClassLoader(ideMain.getProject().getRootManager().getClassPath());
+      }
+    }
     return myClassLoader;
   }
 
 
   private class MyClassLoader extends MPSClassLoader {
+    public MyClassLoader(String classPath) {
+      super(classPath);
+    }
+
     protected boolean isExcluded(String name) {
       String pack = NodeNameUtil.getNamespace(name);
 
