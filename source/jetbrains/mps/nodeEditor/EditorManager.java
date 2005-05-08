@@ -1,7 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.reloading.MPSClassLoader;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.IStatus;
