@@ -39,6 +39,7 @@ public class ClassLoaderManager {
       if (name.contains(".Aspects$")) return false;
 
       if (name.startsWith("jetbrains.mps.")) return true;
+      if (name.startsWith("jetbrains.textLanguage.")) return true;
 
       return false;
     }
