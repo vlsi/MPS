@@ -88,6 +88,8 @@ public class GeneratorManager {
     getMessageView().clear();
     getMessageView().add(new Message(MessageKind.INFORMATION, null, "Generating configuration " + configuration.getName()));
 
+    compileAndReload();
+
     System.out.println("Generating configuration " + configuration.getName());
     System.out.println("Output path is " + configuration.getOutputPath());
     System.out.println("");
@@ -122,6 +124,12 @@ public class GeneratorManager {
 
     getMessageView().add(new Message(MessageKind.INFORMATION, "Generation finished"));
 
+    compileAndReload();
+
+    getMessageView().show();
+  }
+
+  private void compileAndReload() {
     try {
       MPSPlugin.getInstance().refreshFS();
       MPSPlugin.getInstance().buildProject();
@@ -131,8 +139,6 @@ public class GeneratorManager {
     } catch (Exception e) {
       e.printStackTrace();
     }
-
-    getMessageView().show();
   }
 
   private MessageView getMessageView() {

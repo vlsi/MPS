@@ -10,6 +10,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VfsUtil;
+import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.wm.WindowManager;
 import com.intellij.openapi.compiler.CompilerManager;
 import com.intellij.psi.*;
@@ -23,6 +25,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.lang.reflect.InvocationTargetException;
+import java.io.File;
 
 /**
  * @author Kostik
@@ -208,6 +211,25 @@ public class MPSSupportHandler {
   }
 
 
+  public String createLanguageModule(String namespace, final String path) {
+    executeWriteAction(new Runnable() {
+      public void run() {
+        ModuleManager manager = ModuleManager.getInstance(myProject);
+        final Module module = manager.newModule(path, ModuleType.JAVA);
+
+        ModuleRootManager rootManager = ModuleRootManager.getInstance(module);
+        LocalFileSystem localFileSystem = LocalFileSystem.getInstance();
+
+        rootManager.getModifiableModel().addContentEntry(localFileSystem.findFileByIoFile(new File(path, "source")));
+        rootManager.getModifiableModel().addContentEntry(localFileSystem.findFileByIoFile(new File(path, "source_gen")));
+
+
+        
+      }
+    });
+    return "OK";
+  }
+
   public String createAspectClass(final String namespace) {
     executeWriteAction(new Runnable() {
       public void run() {
@@ -225,12 +247,13 @@ public class MPSSupportHandler {
         }
 
         if (module == null) {
-          System.out.println("I can't find suitable module");
+          System.err.println("I can't find suitable module");
           return;
         }
 
-
         ModuleRootManager rootManager = ModuleRootManager.getInstance(module);
+
+
         VirtualFile[] sourceRoots = rootManager.getSourceRoots();
         for (int i = 0; i < sourceRoots.length; i++) {
           VirtualFile file = sourceRoots[i];
