@@ -56,7 +56,13 @@ public class EditorManager {
   private INodeEditor getEditor(EditorContext context, SemanticNode node) {
     INodeEditor editor = (INodeEditor) node.getUserObject(this.getClass());
 
-    if (editor != null && editor.getClass().getClassLoader() != ClassLoaderManager.getInstance().getClassLoader()) {
+    if (editor != null &&
+            editor.getClass().getClassLoader() != ClassLoaderManager.getInstance().getClassLoader() &&
+            editor.getClass().getClassLoader() != ClassLoader.getSystemClassLoader()) {
+      //some editors can be loaded from system class loader i
+      //and some editors may be reloaded (project language classses)
+      //if editor don't loaded from one of this classLoaders it has to be reloaded
+
       editor = null;
     }
 

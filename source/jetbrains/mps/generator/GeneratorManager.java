@@ -19,6 +19,7 @@ import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textPresentation.TextPresentationManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.plugin.MPSPlugin;
+import jetbrains.mps.reloading.ClassLoaderManager;
 
 import javax.swing.*;
 import java.io.File;
@@ -239,7 +240,7 @@ public class GeneratorManager {
     System.out.println("Generating sourceModel " + sourceModelDescr.getFQName());
     IModelGenerator generator = null;
     try {
-      Class cls = Class.forName(generatorClassFQName);
+      Class cls = Class.forName(generatorClassFQName, true, ClassLoaderManager.getInstance().getClassLoader());
       generator = (IModelGenerator) cls.getConstructor(MPSProject.class).newInstance(myProject);
     } catch (Exception e) {
       e.printStackTrace();

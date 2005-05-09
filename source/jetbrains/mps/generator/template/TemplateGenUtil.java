@@ -15,6 +15,7 @@ import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.*;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.AspectMethod;
+import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -115,7 +116,7 @@ public class TemplateGenUtil {
     String buildersPackageName = modelPackageName + ".builder";
     String builderClassName = buildersPackageName + "." + typeDeclaration.getName() + "_NodeBuilder";
     try {
-      Class builderClass = Class.forName(builderClassName);
+      Class builderClass = Class.forName(builderClassName, true, ClassLoaderManager.getInstance().getClassLoader());
       Constructor[] constructors = builderClass.getDeclaredConstructors();
       // should be 1 constructor with parameters:
       // SemanticNode sourceNode, SemanticNode templateNode, ITemplateGenerator generator
@@ -142,7 +143,7 @@ public class TemplateGenUtil {
       String buildersPackageName = modelPackageName + ".builder";
       String resolverClassName = buildersPackageName + "." + conceptDeclaration.getName() + "_ReferenceResolver";
       try {
-        Class resolverClass = Class.forName(resolverClassName);
+        Class resolverClass = Class.forName(resolverClassName, true, ClassLoaderManager.getInstance().getClassLoader());
         return (IReferenceResolver) resolverClass.newInstance();
       } catch (ClassNotFoundException e) {
         // ok
