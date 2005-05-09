@@ -25,7 +25,7 @@ public class ClassLoaderManager {
 
   public ClassLoader getClassLoader() {
     if (myClassLoader == null) {
-      IdeMain ideMain = IdeMain.instance();      
+      IdeMain ideMain = IdeMain.instance();
       if (ideMain.getProject() == null) {
         myClassLoader = new MyClassLoader("classes");
       } else {
@@ -33,6 +33,7 @@ public class ClassLoaderManager {
       }
     }
     return myClassLoader;
+//    return ClassLoader.getSystemClassLoader();
   }
 
 
