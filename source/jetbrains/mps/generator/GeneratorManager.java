@@ -135,7 +135,7 @@ public class GeneratorManager {
       MPSPlugin.getInstance().refreshFS();
       MPSPlugin.getInstance().buildProject();
 
-      ReloadUtils.reloadAll(IdeMain.instance());
+      ReloadUtils.reloadAll();
 
     } catch (Exception e) {
       e.printStackTrace();

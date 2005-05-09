@@ -14,6 +14,8 @@ import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.wm.WindowManager;
 import com.intellij.openapi.compiler.CompilerManager;
+import com.intellij.openapi.compiler.CompileScope;
+import com.intellij.openapi.compiler.CompileStatusNotification;
 import com.intellij.psi.*;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.PsiSearchHelper;
@@ -61,26 +63,44 @@ public class MPSSupportHandler {
   }
 
   public String buildProject() {
-    try {
-      SwingUtilities.invokeAndWait(new Runnable() {
-        public void run() {
-          ApplicationManager.getApplication().runWriteAction(new Runnable() {
-            public void run() {
-              Module[] mods = ModuleManager.getInstance(myProject).getModules();
-              for (int i = 0; i < mods.length; i++) {
-                CompilerManager.getInstance(myProject).make(mods[i], null);
-              }
-            }
-          });
-        }
-      });
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    } catch (InvocationTargetException e) {
-      e.printStackTrace();
+    final Module[][] modules = new Module[1][];
+
+    ApplicationManager.getApplication().runReadAction(new Runnable() {
+      public void run() {
+        modules[0] = ModuleManager.getInstance(myProject).getModules();
+      }
+    });
+
+    for (Module m : modules[0]) {
+      compileModule(m);
     }
+
     return "OK";
   }
+
+  public void compileModule(final Module m) {
+    final Object lock = new Object() { };
+    try {
+      synchronized (lock) {
+        executeWriteAction(new Runnable() {
+          public void run() {
+            CompilerManager.getInstance(myProject).make(m, new CompileStatusNotification() {
+              public void finished(boolean aborted, int errors, int warnings) {
+                synchronized(lock) {
+                  lock.notifyAll();
+                }
+              }
+            });
+          }
+        });
+        lock.wait();
+        
+      }
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+  }
+
 
   public String getAspectMethodIds(final String namespace, final String prefix) {
     final List list = new ArrayList();
