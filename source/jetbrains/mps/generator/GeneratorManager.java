@@ -4,7 +4,6 @@ import jetbrains.mps.baseLanguage.Classifier;
 import jetbrains.mps.cml.util.CommandRunnable;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.ide.ProjectPane;
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.messages.MessageView;
 import jetbrains.mps.ide.messages.Message;
@@ -135,7 +134,7 @@ public class GeneratorManager {
       MPSPlugin.getInstance().refreshFS();
       MPSPlugin.getInstance().buildProject();
 
-      ReloadUtils.reloadAll();
+      ReloadUtils.reloadAll(true);
 
     } catch (Exception e) {
       e.printStackTrace();
