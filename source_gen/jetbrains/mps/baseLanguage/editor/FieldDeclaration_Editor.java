@@ -23,6 +23,7 @@ import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.CellAction_DeleteSmart;
 import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
+import jetbrains.mps.baseLanguage.editor.__util;
 
 public class FieldDeclaration_Editor extends DefaultNodeEditor {
 
@@ -148,6 +149,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public boolean handleConditionalQuery_1075290206265(SemanticNode node) {
-    return FreeMethodsUtil_jetbrains_mps_baseLanguage_editor_context._SemanticNodeCondition_HasInitializer(node);
+    return __util._SemanticNodeCondition_HasInitializer(node);
   }
 }
