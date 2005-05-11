@@ -122,13 +122,6 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1107796918309" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1083141221687">
-      <property name="sourceCardinality" value="0..n" />
-      <property name="targetCardinality" value="1" />
-      <property name="role" value="tmpMethod" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1068390468204" />
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068390468204">
     <property name="rootable" value="true" />
@@ -885,7 +878,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1081236700938">
     <property name="name" value="StaticMethodDeclaration" />
-    <link role="extends" targetNodeId="1068390468204" />
+    <link role="extends" targetNodeId="1068580123132" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1081256982272">
     <property name="name" value="InstanceOfExpression" />
