@@ -5,6 +5,7 @@
   <import referenceID="1" name="structure" namespace="jetbrains.mps.core" />
   <import referenceID="2" name="structure" namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1112056943463">
+    <property name="rootable" value="true" />
     <property name="name" value="NodeSubstituteActions" />
     <link role="extends" targetNodeId="1.1078489098625" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1112058057696">

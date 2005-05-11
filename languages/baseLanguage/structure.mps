@@ -1324,6 +1324,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107796713796">
+    <property name="rootable" value="true" />
     <property name="name" value="Interface" />
     <link role="extends" targetNodeId="1107461130800" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107798030877">
