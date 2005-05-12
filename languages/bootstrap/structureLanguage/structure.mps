@@ -97,6 +97,7 @@
     <link role="extends" targetNodeId="1.1078489098625" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1082978164219">
+    <property name="rootable" value="true" />
     <property name="name" value="EnumerationDataTypeDeclaration" />
     <link role="extends" targetNodeId="1082978164218" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1083171729157">
