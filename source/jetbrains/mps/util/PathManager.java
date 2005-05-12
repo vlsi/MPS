@@ -221,6 +221,7 @@ public class PathManager {
       relativePath.insert(0, parent.getName());
       parent = parent.getParentFile();
     }
+    relativePath.insert(0, File.separator);
     return relativePath.toString();
   }
 
