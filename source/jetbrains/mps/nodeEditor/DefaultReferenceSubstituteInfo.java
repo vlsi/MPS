@@ -10,6 +10,7 @@ import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.DiagnosticUtil;
+import jetbrains.mps.util.NameUtil;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -39,10 +40,17 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
     for (final SemanticNode targetNode : targetSemanticNodes) {
       list.add(new AbstractNodeSubstituteItem() {
         public String getMatchingText(String pattern) {
+          if (targetNode instanceof LinkDeclaration) {
+            return ((LinkDeclaration) targetNode).getRole();
+          }
           return targetNode.getName();
         }
 
         public String getDescriptionText(String pattern) {
+          if (targetNode instanceof LinkDeclaration) {
+            SemanticNode containingRoot = targetNode.getContainingRoot();
+            return containingRoot.getName() + " (" + containingRoot.getModel().getFQName() + ")";
+          }
           return targetNode.getModel().getFQName();
         }
 
@@ -57,15 +65,16 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
   }
 
   private List<SemanticNode> createTargetNodesList() {
-    final ConceptDeclaration targetType = myLinkDeclaration.getTarget();
+    final ConceptDeclaration targetConcept = myLinkDeclaration.getTarget();
+    DiagnosticUtil.assertNodeValid(targetConcept);
+    final boolean searchLinks = NameUtil.nodeFQName(targetConcept).equals("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration");
     List<SemanticNode> list = SModelUtil.allNodes(mySourceNode.getModel(), true, new Condition<SemanticNode>() {
-              public boolean met(SemanticNode node) {
-                DiagnosticUtil.assertNodeValid(node);
-                DiagnosticUtil.assertNodeValid(targetType);
-
-                return node.getName() != null && SModelUtil.isInstanceOfType(node, targetType);
-              }
-            });
+      public boolean met(SemanticNode node) {
+        DiagnosticUtil.assertNodeValid(node);
+        if (searchLinks && (node instanceof LinkDeclaration)) return true;
+        return node.getName() != null && SModelUtil.isInstanceOfType(node, targetConcept);
+      }
+    });
     return list;
   }
 }
