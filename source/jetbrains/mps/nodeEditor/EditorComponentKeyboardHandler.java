@@ -10,7 +10,6 @@ import java.awt.event.KeyEvent;
 import java.util.List;
 
 public class EditorComponentKeyboardHandler implements IKeyboardHandler {
-
   public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
     return false;
   }
@@ -21,10 +20,11 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
     // precess cell keymaps first
     if (selectedCell != null /*&& EditorUtil.isValidCell(selectedCell)*/) {
-      //test
-      if (keyEvent.getKeyCode() == KeyEvent.VK_M) {
+      //test >
+      if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER) {
         System.out.println("key pressed:" + keyEvent);
       }
+      //test <
       List<EditorCellKeyMapAction> actions = EditorUtil.getKeyMapActionsForEvent(selectedCell, keyEvent, editorContext);
       if (actions != null) {
         if (actions.size() == 1) {
@@ -54,7 +54,8 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
               actionType == EditorCellAction.INSERT ||
               actionType == EditorCellAction.INSERT_BEFORE) {
         if (!cellWasValid &&
-                !EditorUtil.validateCell(selectedCell, editorContext, strictMatching)) {  // !side effect: can change selection!
+                !EditorUtil.validateCell(selectedCell, editorContext, strictMatching)) {
+          // !side effect: can change selection!
           return true;
         }
         selectedCell = editor.getSelectedCell();

@@ -16,6 +16,7 @@ public abstract class EditorCellKeyMapAction {
   }
 
   public KeyMapActionType getKeyMapActionType() {
-    return KeyMapActionType.WHEN_SELECTED;
+    // we generally relay on actions registered on parent cells
+    return KeyMapActionType.WHEN_ANCESTOR_OF_SELECTED;
   }
 }
