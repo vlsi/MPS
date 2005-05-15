@@ -68,25 +68,26 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
   public Set<SModelDescriptor> getAllModelDescriptors() {
     init();
 
-//    Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
-//
-//    RootManager rootManager = getRootManager();
-//
-//    result.addAll(rootManager.getProjectModelDescriptors());
-//    result.addAll(rootManager.getLibraryModelDescriptors());
-//
-//    for (Language l : rootManager.getLanguages()) {
-//      if (l.getActionsModelDescriptor() != null) result.add(l.getActionsModelDescriptor());
-//      if (l.getEditorContextModelDescriptor() != null) result.add(l.getEditorContextModelDescriptor());
-//      if (l.getEditorDescriptor() != null) result.add(l.getEditorDescriptor());
-//      if (l.getStructureModelDescriptor() != null) result.add(l.getStructureModelDescriptor());
-//      if (l.getTypesystemModelDescriptor() != null) result.add(l.getTypesystemModelDescriptor());
-//      result.addAll(l.getLibraryModels());
-//    }
+    //do not comment out this code
+    //language models loading different from project models
+    //languages load only needed models, so not all models may be listed here
+    Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
 
+    RootManager rootManager = getRootManager();
 
+    result.addAll(rootManager.getProjectModelDescriptors());
+    result.addAll(rootManager.getLibraryModelDescriptors());
 
-    return SModelRepository.getInstance().getAllModelDescriptors();
+    for (Language l : rootManager.getLanguages()) {
+      if (l.getActionsModelDescriptor() != null) result.add(l.getActionsModelDescriptor());
+      if (l.getEditorContextModelDescriptor() != null) result.add(l.getEditorContextModelDescriptor());
+      if (l.getEditorDescriptor() != null) result.add(l.getEditorDescriptor());
+      if (l.getStructureModelDescriptor() != null) result.add(l.getStructureModelDescriptor());
+      if (l.getTypesystemModelDescriptor() != null) result.add(l.getTypesystemModelDescriptor());
+      result.addAll(l.getLibraryModels());
+    }
+
+    return result;
   }
 
   public Collection<Language> getLanguages() {
