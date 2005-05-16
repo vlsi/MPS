@@ -16,6 +16,7 @@ import com.intellij.openapi.wm.WindowManager;
 import com.intellij.openapi.compiler.CompilerManager;
 import com.intellij.openapi.compiler.CompileScope;
 import com.intellij.openapi.compiler.CompileStatusNotification;
+import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.psi.*;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.PsiSearchHelper;
@@ -32,11 +33,35 @@ import java.io.File;
 /**
  * @author Kostik
  */
-public class MPSSupportHandler {
-  private Project myProject;
+public class MPSSupportHandler implements ProjectComponent {
 
-  public MPSSupportHandler(Project project) {
+  public final String MPS_SUPPORT_HANDLER_NAME = "MPSSupport";
+
+  private Project myProject;
+  private XMLRPCServer myServer;
+
+  public MPSSupportHandler(Project project, XMLRPCServer server) {
     myProject = project;
+    myServer = server;
+  }
+
+
+  public void projectOpened() {
+    myServer.addHandler(MPS_SUPPORT_HANDLER_NAME, this);
+  }
+
+  public void projectClosed() {
+    myServer.removeHandler(MPS_SUPPORT_HANDLER_NAME);
+  }
+
+  public String getComponentName() {
+    return "MPSSupport Handler";
+  }
+
+  public void initComponent() {
+  }
+
+  public void disposeComponent() {
   }
 
   public String refreshFS() {
@@ -71,10 +96,13 @@ public class MPSSupportHandler {
       }
     });
 
-    for (Module m : modules[0]) {
-      compileModule(m);
-    }
 
+
+    Module[] mods = modules[0];
+    for (int i = 0; i < mods.length; i++) {
+      compileModule(mods[i]);
+    }
+    
     return "OK";
   }
 

@@ -6,11 +6,14 @@
   <vendor>JetBrains</vendor>
   <idea-version since-build="3000"/>
 
-  <project-components>
+  <application-components>
     <component>
-      <interface-class>jetbrains.mps.plugin.Server</interface-class>
-      <implementation-class>jetbrains.mps.plugin.Server</implementation-class>
+      <interface-class>jetbrains.mps.plugin.XMLRPCServer</interface-class>
+      <implementation-class>jetbrains.mps.plugin.XMLRPCServer</implementation-class>
     </component>
+  </application-components>
+
+  <project-components>
     <component>
       <interface-class>jetbrains.mps.plugin.MPSRenamer</interface-class>
       <implementation-class>jetbrains.mps.plugin.MPSRenamer</implementation-class>
@@ -18,6 +21,10 @@
     <component>
       <interface-class>jetbrains.mps.plugin.BuildHandler</interface-class>
       <implementation-class>jetbrains.mps.plugin.BuildHandler</implementation-class>
+    </component>
+    <component>
+      <interface-class>jetbrains.mps.plugin.MPSSupportHandler</interface-class>
+      <implementation-class>jetbrains.mps.plugin.MPSSupportHandler</implementation-class>
     </component>
   </project-components>
 
