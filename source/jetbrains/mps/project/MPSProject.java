@@ -239,7 +239,7 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
   public void deleteModel(SModelDescriptor modelDescriptor) {
     init();
     SModelRepository.getInstance().removeModel(modelDescriptor);
-    myRootManager.removeModel(modelDescriptor);
+    myRootManager.removeModel(modelDescriptor);    
     modelDescriptor.getModelFile().delete();
   }
 
