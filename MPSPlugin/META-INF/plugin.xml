@@ -11,6 +11,10 @@
       <interface-class>jetbrains.mps.plugin.XMLRPCServer</interface-class>
       <implementation-class>jetbrains.mps.plugin.XMLRPCServer</implementation-class>
     </component>
+    <component>
+      <interface-class>jetbrains.mps.plugin.ProjectCreator</interface-class>
+      <implementation-class>jetbrains.mps.plugin.ProjectCreator</implementation-class>
+    </component>
   </application-components>
 
   <project-components>

@@ -113,6 +113,17 @@ public class MPSPlugin {
     myClient.execute("MPSSupport.buildProject", new Vector());
   }
 
+  public void closeProjects() throws IOException, XmlRpcException {
+    myClient.execute("ProjectCreator.closeAllProjects", new Vector());
+  }
+
+  public void createNewProject(String path, String name) throws IOException, XmlRpcException {
+    Vector<String> params = new Vector<String>();
+    params.add(path);
+    params.add(name);
+    myClient.execute("ProjectCreator.createNewProject", params);
+  }
+
   public static void main(String[] args) throws Exception {
     MPSPlugin client = new MPSPlugin();
     for (String s : client.findInheritors(IModelGenerator.class)) {
