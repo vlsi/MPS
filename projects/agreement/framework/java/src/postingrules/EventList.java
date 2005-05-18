@@ -17,6 +17,7 @@ public class EventList {
     }
     private void logProcessingError(AccountingEvent event, Exception exception) {
         processingErrors.add(event);
+        throw new RuntimeException(exception);
     }
     boolean hasProcessingErrors() {
         return !processingErrors.isEmpty();

@@ -116,4 +116,7 @@ public class AccountingEvent {
         adjustedEvent.setReplacementEvent(this);
     }
 
+    public ServiceAgreement getAgreement() {
+        return ((Customer) getSubject()).getServiceAgreement();
+    }
 }

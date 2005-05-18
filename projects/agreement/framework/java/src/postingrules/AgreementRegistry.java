@@ -6,11 +6,11 @@ import java.util.Map;
 import java.util.HashMap;
 
 public class AgreementRegistry {
-  Map<String, ServiceAgreement> agreementMap = new HashMap<String, ServiceAgreement>();
+  Map agreements = new HashMap();
   public void register(String name, ServiceAgreement agreement) {
-    agreementMap.put(name, agreement);
+    agreements.put(name, agreement);
   }
   public ServiceAgreement getAgreement(String name) {
-    return agreementMap.get(name);
+    return (ServiceAgreement) agreements.get(name);
   }
 }

@@ -8,8 +8,7 @@ public class SharedFixture {
     }
     private EventList eventList = new EventList();
     private Usage usageEvent;
-    private Customer watson, reggie, mycroft;
-    private AgreementRegistry agreementRegistry = new AgreementRegistry();
+    private Customer watson, reggie;
     public void prepareEventList() {
         setupCustomers();
         usageEvent = new Usage(Unit.KWH.amount(50),

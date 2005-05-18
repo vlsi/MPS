@@ -14,11 +14,6 @@ public class Usage extends AccountingEvent {
     }
 //</codeFragment>
 
-//<codeFragment name = "getRate">
-    double getRate() {
-        return ((Customer) getSubject()).getServiceAgreement().getRate(MfDate.today());
-    }
-//</codeFragment>
 
     public String toString() {
         return "Usage " + amount;

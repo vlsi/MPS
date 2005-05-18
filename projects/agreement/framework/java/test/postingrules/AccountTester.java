@@ -14,6 +14,7 @@ public class AccountTester extends junit.framework.TestCase {
         super(name);
     }
     public void setUp() {
+        MfDate.setToday(2001,1,1);
         receivables.addEntry(Money.dollars(500), new MfDate(1999, 12, 4));
         receivables.addEntry(Money.dollars(300), new MfDate(2000, 1, 4));
         receivables.addEntry(new Entry(Money.dollars(-400), new MfDate(2000, 2, 15)));

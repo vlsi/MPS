@@ -28,7 +28,6 @@ import mf.Unit;
 public class AgreementRegistryBuilder {
 
   public void setUp(AgreementRegistry registry) {
-    System.out.println("!!!!! setUp: " + this);
     registry.register("regular", this.setUpRegular());
     registry.register("lowPay", this.setUpLowPay());
   }

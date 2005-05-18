@@ -3,19 +3,15 @@ package postingrules;
 import mf.*;
 
 public class PoorCapPR extends PostingRule {
-    double rate;
-    Quantity usageLimit;
-    public PoorCapPR(AccountType type, double rate, Quantity usageLimit, boolean isTaxable) {
+    public PoorCapPR(AccountType type, boolean isTaxable) {
         super(type, isTaxable);
-        this.rate = rate;
-        this.usageLimit = usageLimit;
     }
     protected Money calculateAmount(AccountingEvent evt) {
-        Usage usageEvent = (Usage) evt;
-        Quantity amountUsed = usageEvent.getAmount();
-        Money amount;
+        Quantity amountUsed = ((Usage) evt).getAmount();
+        Quantity usageLimit = (Quantity) evt.getAgreement().getValue("CAP", evt.getWhenOccurred());
+        final double reducedRate = (Double) evt.getAgreement().getValue("REDUCED_RATE", evt.getWhenOccurred());
         return (amountUsed.isGreaterThan(usageLimit)) ?
-                Money.dollars(amountUsed.getAmount() * usageEvent.getRate()) :
-                Money.dollars(amountUsed.getAmount() * this.rate);
+                Money.dollars(amountUsed.getAmount() * (Double) evt.getAgreement().getValue("BASE_RATE", evt.getWhenOccurred())) :
+                Money.dollars(amountUsed.getAmount() * reducedRate);
     }
 }

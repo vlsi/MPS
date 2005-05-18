@@ -5,8 +5,11 @@ import mf.*;
 import java.util.*;
 
 public class ServiceAgreement {
-    //todo rate should use a temporal collection
-    private TemporalCollection rate = new SingleTemporalCollection();
+    private TemporalCollection rates = new SingleTemporalCollection();
+    private Map<String, TemporalCollection> values = new HashMap<String, TemporalCollection>();
+     public void registerValue(String key) {
+        values.put(key, new SingleTemporalCollection());
+    }
 //<codeFragment name = "postingRules">
     private Map postingRules = new HashMap();
     public void addPostingRule(EventType eventType, PostingRule rule, MfDate date) {
@@ -21,14 +24,10 @@ public class ServiceAgreement {
     }
 //</codeFragment>
 
-    public double getRate(MfDate date) {
-        return (Double) rate.get(date);
+    public double getRate(MfDate at) {
+        return (Double) values.get("base_rate").get(at);
     }
-    public void setRate(double newRate, MfDate startDate) {
-      // todo take notice of date - this is here just for API
-        rate.put(startDate, newRate);
-    }
-//<codeFragment name = "process">
+ //<codeFragment name = "process">
     public void process(AccountingEvent e) {
         getPostingRule(e).process(e);
     }
@@ -42,5 +41,12 @@ public class ServiceAgreement {
         }
     }
 //</codeFragment>
+
+    public void setValue(String key, Object value, MfDate effectiveDate) {
+        values.get(key).put(effectiveDate, value);
+    }
+    public Object getValue(String key, MfDate at) {
+        return values.get(key).get(at);
+    }
 
 }
