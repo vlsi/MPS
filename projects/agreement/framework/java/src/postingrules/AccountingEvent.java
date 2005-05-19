@@ -64,7 +64,7 @@ public class AccountingEvent {
     public MfDate getWhenNoticed() {
         return whenNoticed;
     }
-    MfDate getWhenOccurred() {
+    public MfDate getWhenOccurred() {
         return whenOccurred;
     }
     public boolean hasBeenAdjusted() {
