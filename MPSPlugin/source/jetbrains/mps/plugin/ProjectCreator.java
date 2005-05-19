@@ -62,7 +62,7 @@ public class ProjectCreator implements ApplicationComponent {
             ModuleRootManager rootManager = module.getComponent(ModuleRootManager.class);
             ModifiableRootModel rootModel = rootManager.getModifiableModel();
             VirtualFile contentRootFile = module.getModuleFile().getParent();
-            ContentEntry contentEntry = rootModel.addContentEntry(contentRootFile);
+            rootModel.addContentEntry(contentRootFile);
             rootModel.commit();
           }
         });
