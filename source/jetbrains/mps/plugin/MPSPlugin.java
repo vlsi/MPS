@@ -117,6 +117,12 @@ public class MPSPlugin {
     myClient.execute("ProjectCreator.closeAllProjects", new Vector());
   }
 
+  public void addSource(String path) throws IOException, XmlRpcException {
+    Vector<String> params = new Vector<String>();
+    params.add(path);
+    myClient.execute("MPSSupport.addSourceRoot", params);
+  }
+
   public void createNewProject(String path, String name) throws IOException, XmlRpcException {
     Vector<String> params = new Vector<String>();
     params.add(path);

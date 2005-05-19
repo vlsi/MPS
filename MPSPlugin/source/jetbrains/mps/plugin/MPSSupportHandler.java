@@ -9,6 +9,8 @@ import com.intellij.openapi.module.ModuleType;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.ProjectRootManager;
+import com.intellij.openapi.roots.ContentEntry;
+import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.LocalFileSystem;
@@ -29,6 +31,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.lang.reflect.InvocationTargetException;
 import java.io.File;
+import java.net.URL;
 
 /**
  * @author Kostik
@@ -62,6 +65,36 @@ public class MPSSupportHandler implements ProjectComponent {
   }
 
   public void disposeComponent() {
+  }
+
+  public String addSourceRoot(final String path) {
+
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+      public void run() {
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          public void run() {
+            Module module = myProject.getComponent(ModuleManager.class).getModules()[0];
+            ModifiableRootModel model = module.getComponent(ModuleRootManager.class).getModifiableModel();
+            ContentEntry entry = model.getContentEntries()[0];
+            entry.addSourceFolder(pathAsVFile(path), false);
+            model.commit();
+          }
+        });
+      }
+    }, ModalityState.NON_MMODAL);
+    return "OK";
+  }
+
+
+  public VirtualFile pathAsVFile(String path) {
+    try {
+      File file = new File(path);
+      URL url = file.toURL();
+      return VfsUtil.findFileByURL(url);
+    } catch (Exception e) {
+      e.printStackTrace();
+      return null;
+    }
   }
 
   public String refreshFS() {
@@ -270,9 +303,15 @@ public class MPSSupportHandler implements ProjectComponent {
 
         rootManager.getModifiableModel().addContentEntry(localFileSystem.findFileByIoFile(new File(path, "source")));
         rootManager.getModifiableModel().addContentEntry(localFileSystem.findFileByIoFile(new File(path, "source_gen")));
+      }
+    });
+    return "OK";
+  }
 
-
-        
+  public String addLanguageRoot(String path) {
+    executeWriteAction(new Runnable() {
+      public void run() {
+        ModuleManager manager = ModuleManager.getInstance(myProject);        
       }
     });
     return "OK";
