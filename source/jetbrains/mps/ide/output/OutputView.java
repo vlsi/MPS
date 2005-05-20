@@ -24,7 +24,7 @@ public class OutputView {
 
 
     myTextArea.append("Test");
-    myTextArea.setFont(new Font("Monospaced", 0, 14));
+    myTextArea.setFont(new Font("Monospaced", 0, 12));
 
     myTextArea.addMouseListener(new MouseAdapter() {
       public void mouseReleased(MouseEvent e) {
