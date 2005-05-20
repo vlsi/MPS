@@ -12,10 +12,13 @@ import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.roots.ContentEntry;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VfsUtil;
+import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.psi.impl.file.impl.RootManager;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 
 /**
  * @author Kostik
@@ -55,14 +58,17 @@ public class ProjectCreator implements ApplicationComponent {
       public void run() {
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
           public void run() {
+
+            LocalFileSystem lfs = LocalFileSystem.getInstance();
+
             Project project = myProjectManager.newProject(path + File.separator + name + ".ipr", true, false);
             myProjectManager.openProject(project);
             ModuleManager moduleManager = project.getComponent(ModuleManager.class);
             Module module = moduleManager.newModule(path + File.separator + name + ".iml", ModuleType.JAVA);
             ModuleRootManager rootManager = module.getComponent(ModuleRootManager.class);
             ModifiableRootModel rootModel = rootManager.getModifiableModel();
-            VirtualFile contentRootFile = module.getModuleFile().getParent();
-            rootModel.addContentEntry(contentRootFile);
+            VirtualFile contentRootFile = lfs.refreshAndFindFileByIoFile(new File(path));
+            ContentEntry contentEntry = rootModel.addContentEntry(contentRootFile);
             rootModel.commit();
           }
         });

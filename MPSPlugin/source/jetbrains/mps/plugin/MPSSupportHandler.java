@@ -68,7 +68,6 @@ public class MPSSupportHandler implements ProjectComponent {
   }
 
   public String addSourceRoot(final String path) {
-
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
@@ -76,7 +75,8 @@ public class MPSSupportHandler implements ProjectComponent {
             Module module = myProject.getComponent(ModuleManager.class).getModules()[0];
             ModifiableRootModel model = module.getComponent(ModuleRootManager.class).getModifiableModel();
             ContentEntry entry = model.getContentEntries()[0];
-            entry.addSourceFolder(pathAsVFile(path), false);
+            LocalFileSystem lfs = LocalFileSystem.getInstance();            
+            entry.addSourceFolder(lfs.refreshAndFindFileByIoFile(new File(path)), false);
             model.commit();
           }
         });
@@ -85,17 +85,6 @@ public class MPSSupportHandler implements ProjectComponent {
     return "OK";
   }
 
-
-  public VirtualFile pathAsVFile(String path) {
-    try {
-      File file = new File(path);
-      URL url = file.toURL();
-      return VfsUtil.findFileByURL(url);
-    } catch (Exception e) {
-      e.printStackTrace();
-      return null;
-    }
-  }
 
   public String refreshFS() {
     try {
