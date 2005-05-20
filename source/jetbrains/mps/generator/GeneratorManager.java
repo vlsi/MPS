@@ -5,27 +5,24 @@ import jetbrains.mps.cml.util.CommandRunnable;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.ide.ProjectPane;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
-import jetbrains.mps.ide.messages.MessageView;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
+import jetbrains.mps.ide.messages.MessageView;
+import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.RootManager;
 import jetbrains.mps.projectLanguage.*;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textPresentation.TextPresentationManager;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.plugin.MPSPlugin;
-import jetbrains.mps.reloading.ClassLoaderManager;
 
 import javax.swing.*;
 import java.io.File;
-import java.io.IOException;
 import java.util.*;
-
-import org.apache.xmlrpc.XmlRpcException;
 
 /**
  * @author Kostik
@@ -109,6 +106,11 @@ public class GeneratorManager {
       SModelDescriptor templatesModel = loadTemplatesModel(generator);
       if (templatesModel != null) {
         System.out.println("Templates model is " + templatesModel.getFQName());
+      } else {
+        System.err.println("ERR: templates model not found for CMD: " + cmd.getSourceLanguage().getName() + " -> " + cmd.getTargetLanguage());
+        getMessageView().add(new Message(MessageKind.ERROR, "templates model not found for CMD: " + cmd.getSourceLanguage().getName() + " -> " + cmd.getTargetLanguage()));
+        getMessageView().show();
+        return;
       }
 
       for (SModelDescriptor model : modelsWithLanguage) {
