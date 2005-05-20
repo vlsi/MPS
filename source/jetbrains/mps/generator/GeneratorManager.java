@@ -127,9 +127,11 @@ public class GeneratorManager {
       }
     }
 
-    getMessageView().add(new Message(MessageKind.INFORMATION, "Generation finished"));
+    if (!generateText) {
+      compileAndReload();
+    }
 
-    compileAndReload();
+    getMessageView().add(new Message(MessageKind.INFORMATION, "Generation finished"));
 
     getMessageView().show();
   }
