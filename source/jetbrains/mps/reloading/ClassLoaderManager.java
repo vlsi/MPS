@@ -47,6 +47,7 @@ public class ClassLoaderManager {
 
       if (pack.endsWith(".editor")) return false;
       if (pack.endsWith(".types")) return false;
+      if (pack.endsWith(".generator")) return false;
 
 
       if (name.endsWith(".Aspects")) return false;
