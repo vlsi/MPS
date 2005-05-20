@@ -4,6 +4,7 @@ import jetbrains.mps.baseLanguage.Classifier;
 import jetbrains.mps.cml.util.CommandRunnable;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.ide.ProjectPane;
+import jetbrains.mps.ide.output.OutputView;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
@@ -131,9 +132,11 @@ public class GeneratorManager {
       compileAndReload();
     }
 
-    getMessageView().add(new Message(MessageKind.INFORMATION, "Generation finished"));
 
-    getMessageView().show();
+    getMessageView().add(new Message(MessageKind.INFORMATION, "Generation finished"));
+    if (!generateText) {
+      getMessageView().show();
+    }
   }
 
   private void compileAndReload() {
@@ -174,6 +177,9 @@ public class GeneratorManager {
   }
 
   private void generateText(SModel targetModel) {
+    OutputView view = myProject.getComponent(OutputView.class);
+    view.clear();
+
     Iterator<SemanticNode> javaRoots = targetModel.roots();
     while (javaRoots.hasNext()) {
       SemanticNode node = javaRoots.next();
@@ -183,9 +189,12 @@ public class GeneratorManager {
       } else {
         nodeText = TextPresentationManager.generateTextPresentation(node);
       }
-      System.out.println(nodeText);
-      System.out.println("\r\n-------------------------------------------------------------------------------");
+      view.append(nodeText);
+      view.append("\n");
+      view.append("\r\n-------------------------------------------------------------------------------");
     }
+
+    view.activate();
   }
 
   private Set<SModelDescriptor> findModelsWithLanguage(Set<SModelDescriptor> models, String fqName) {
