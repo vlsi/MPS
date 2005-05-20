@@ -1434,5 +1434,15 @@
     <property name="name" value="_FPNumber_String" />
     <link role="extends" targetNodeId="4.1082983041843" />
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1116615150612">
+    <property name="name" value="ClassifierClassExpression" />
+    <link role="extends" targetNodeId="1068431790191" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1116615189566">
+      <property name="sourceCardinality" value="1" />
+      <property name="targetCardinality" value="0..n" />
+      <property name="role" value="classifier" />
+      <link role="target" targetNodeId="1107461130800" />
+    </node>
+  </node>
 </model>
 

@@ -157,7 +157,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-        MethodDeclaration_ReturnTypeCellActions.setCellActions(noRefCell, node);
+        StaticMethodDeclaration_ReturnTypeCellActions.setCellActions(noRefCell, node);
         return noRefCell;
       }
     }
@@ -168,7 +168,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-    MethodDeclaration_ReturnTypeCellActions.setCellActions(editorCell, node);
+    StaticMethodDeclaration_ReturnTypeCellActions.setCellActions(editorCell, node);
     return editorCell;
   }
   public EditorCell createBodyCell(EditorContext context, SemanticNode node) {

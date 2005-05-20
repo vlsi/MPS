@@ -108,10 +108,10 @@ public class GeneratorManager {
       if (templatesModel != null) {
         System.out.println("Templates model is " + templatesModel.getFQName());
       } else {
-        System.err.println("ERR: templates model not found for CMD: " + cmd.getSourceLanguage().getName() + " -> " + cmd.getTargetLanguage());
-        getMessageView().add(new Message(MessageKind.ERROR, "templates model not found for CMD: " + cmd.getSourceLanguage().getName() + " -> " + cmd.getTargetLanguage()));
-        getMessageView().show();
-        return;
+//        System.err.println("ERR: templates model not found for CMD: " + cmd.getSourceLanguage().getName() + " -> " + cmd.getTargetLanguage());
+//        getMessageView().add(new Message(MessageKind.ERROR, "templates model not found for CMD: " + cmd.getSourceLanguage().getName() + " -> " + cmd.getTargetLanguage()));
+//        getMessageView().show();
+//        return;
       }
 
       for (SModelDescriptor model : modelsWithLanguage) {

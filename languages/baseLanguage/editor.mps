@@ -15941,5 +15941,33 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1116615249130">
+    <link role="conceptDeclaration" targetNodeId="8.1116615150612" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1116615268507">
+      <property name="drawBorder" value="false" />
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1116615277650">
+        <property name="drawBorder" value="false" />
+        <property name="nullText" value="&lt;no classifier&gt;" />
+        <link role="linkDeclaration" targetNodeId="8.1116615189566" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1116615277651">
+          <link role="conceptDeclaration" targetNodeId="8.1107461130800" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1116615309371">
+            <property name="textFgColor" value="DARK_BLUE" />
+            <property name="defaultText" value="&lt;no name&gt;" />
+            <property name="fontStyle" value="ITALIC" />
+            <property name="readOnly" value="true" />
+            <link role="propertyDeclaration" targetNodeId="9.1078489098626" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1116615336905">
+        <property name="textFgColor" value="DARK_BLUE" />
+        <property name="text" value=".class" />
+        <property name="fontStyle" value="ITALIC" />
+        <property name="drawBorder" value="false" />
+      </node>
+    </node>
+  </node>
 </model>
 
