@@ -14,6 +14,8 @@ import com.intellij.openapi.roots.ContentEntry;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.projectRoots.ProjectJdk;
+import com.intellij.openapi.projectRoots.ProjectJdkTable;
 import com.intellij.psi.impl.file.impl.RootManager;
 
 import java.io.File;
@@ -67,6 +69,13 @@ public class ProjectCreator implements ApplicationComponent {
             Module module = moduleManager.newModule(path + File.separator + name + ".iml", ModuleType.JAVA);
             ModuleRootManager rootManager = module.getComponent(ModuleRootManager.class);
             ModifiableRootModel rootModel = rootManager.getModifiableModel();
+
+
+
+
+
+            rootModel.setJdk(findSuitableJDK());
+
             VirtualFile contentRootFile = lfs.refreshAndFindFileByIoFile(new File(path));
             ContentEntry contentEntry = rootModel.addContentEntry(contentRootFile);
             rootModel.commit();
@@ -76,6 +85,14 @@ public class ProjectCreator implements ApplicationComponent {
     }, ModalityState.NON_MMODAL);
 
     return "OK";
+  }
+
+  private ProjectJdk findSuitableJDK() {
+    for (ProjectJdk jdk : ProjectJdkTable.getInstance().getAllJdks()) {
+      System.err.println("Current JDK is " + jdk.getVersionString());
+      if (jdk.getVersionString().startsWith("java version \"1.5\"")) return jdk;
+    }
+    return null;
   }
 
   public void initComponent() {
