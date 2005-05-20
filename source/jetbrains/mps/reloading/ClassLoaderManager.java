@@ -48,7 +48,8 @@ public class ClassLoaderManager {
       if (pack.endsWith(".editor")) return false;
       if (pack.endsWith(".types")) return false;
 
-      if (name.endsWith(".Aspects")) return true;
+
+      if (name.endsWith(".Aspects")) return false;
       if (name.contains(".Aspects$")) return false;
 
       if (name.startsWith("jetbrains.mps.")) return true;
