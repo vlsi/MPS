@@ -22,7 +22,10 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 
 import javax.swing.*;
 import java.io.File;
+import java.io.IOException;
 import java.util.*;
+
+import org.apache.xmlrpc.XmlRpcException;
 
 /**
  * @author Kostik
