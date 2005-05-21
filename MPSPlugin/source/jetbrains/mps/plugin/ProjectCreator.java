@@ -11,12 +11,15 @@ import com.intellij.openapi.module.ModuleType;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.roots.ContentEntry;
+import com.intellij.openapi.roots.ProjectRootManager;
+import com.intellij.openapi.roots.ex.ProjectRootManagerEx;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.projectRoots.ProjectJdk;
 import com.intellij.openapi.projectRoots.ProjectJdkTable;
 import com.intellij.psi.impl.file.impl.RootManager;
+import com.intellij.pom.java.LanguageLevel;
 
 import java.io.File;
 import java.io.IOException;
@@ -65,6 +68,10 @@ public class ProjectCreator implements ApplicationComponent {
 
             Project project = myProjectManager.newProject(path + File.separator + name + ".ipr", true, false);
             myProjectManager.openProject(project);
+
+            ProjectRootManagerEx projectRootManager = (ProjectRootManagerEx) ProjectRootManagerEx.getInstance(project);
+            projectRootManager.setLanguageLevel(LanguageLevel.JDK_1_5);
+
             ModuleManager moduleManager = project.getComponent(ModuleManager.class);
             Module module = moduleManager.newModule(path + File.separator + name + ".iml", ModuleType.JAVA);
             ModuleRootManager rootManager = module.getComponent(ModuleRootManager.class);
