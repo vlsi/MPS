@@ -7,22 +7,21 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.module.ModuleType;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.roots.ModuleRootManager;
-import com.intellij.openapi.roots.ProjectRootManager;
-import com.intellij.openapi.roots.ContentEntry;
-import com.intellij.openapi.roots.ModifiableRootModel;
+import com.intellij.openapi.roots.*;
+import com.intellij.openapi.roots.libraries.LibraryTablesRegistrar;
+import com.intellij.openapi.roots.libraries.LibraryTable;
+import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.vfs.JarFileSystem;
+import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.wm.WindowManager;
 import com.intellij.openapi.compiler.CompilerManager;
-import com.intellij.openapi.compiler.CompileScope;
 import com.intellij.openapi.compiler.CompileStatusNotification;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.psi.*;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.PsiSearchHelper;
-import com.intellij.psi.search.SearchScope;
 import com.intellij.util.IncorrectOperationException;
 
 import javax.swing.*;
@@ -31,6 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.lang.reflect.InvocationTargetException;
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 
 /**
@@ -82,6 +82,31 @@ public class MPSSupportHandler implements ProjectComponent {
         });
       }
     }, ModalityState.NON_MMODAL);
+    return "OK";
+  }
+
+  public String addMPSJar(final String mpsHome) {
+    executeWriteAction(new Runnable() {
+      public void run() {
+        Module module = myProject.getComponent(ModuleManager.class).getModules()[0];
+        ModifiableRootModel rootModel = module.getComponent(ModuleRootManager.class).getModifiableModel();
+        LibraryTable table = LibraryTablesRegistrar.getInstance().getLibraryTable(myProject);
+        Library library = table.createLibrary("MPS");
+
+        Library.ModifiableModel libraryModel = library.getModifiableModel();
+        try {
+          File mpsJar = new File(mpsHome + File.separatorChar + "lib" + File.separatorChar + "mps.jar");
+
+          libraryModel.addRoot("jar://" + mpsJar.getCanonicalPath() + "!/", OrderRootType.CLASSES);
+          libraryModel.commit();
+
+          rootModel.addLibraryEntry(library);
+          rootModel.commit();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
+    });
     return "OK";
   }
 

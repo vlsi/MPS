@@ -69,15 +69,19 @@ public class ProjectCreator implements ApplicationComponent {
             Module module = moduleManager.newModule(path + File.separator + name + ".iml", ModuleType.JAVA);
             ModuleRootManager rootManager = module.getComponent(ModuleRootManager.class);
             ModifiableRootModel rootModel = rootManager.getModifiableModel();
-
-
-
-
-
             rootModel.setJdk(findSuitableJDK());
 
+
             VirtualFile contentRootFile = lfs.refreshAndFindFileByIoFile(new File(path));
-            ContentEntry contentEntry = rootModel.addContentEntry(contentRootFile);
+            rootModel.addContentEntry(contentRootFile);
+            try {
+              if (contentRootFile.findChild("classes") == null) {
+                contentRootFile.createChildDirectory(this, "classes");
+              }
+              rootModel.setCompilerOutputPath(contentRootFile.findChild("classes"));
+            } catch (IOException e) {
+              e.printStackTrace();
+            }
             rootModel.commit();
           }
         });
@@ -89,8 +93,7 @@ public class ProjectCreator implements ApplicationComponent {
 
   private ProjectJdk findSuitableJDK() {
     for (ProjectJdk jdk : ProjectJdkTable.getInstance().getAllJdks()) {
-      System.err.println("Current JDK is " + jdk.getVersionString());
-      if (jdk.getVersionString().startsWith("java version \"1.5\"")) return jdk;
+      if (jdk.getVersionString().startsWith("java version \"1.5")) return jdk;
     }
     return null;
   }

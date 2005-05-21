@@ -78,6 +78,12 @@ public class MPSPlugin {
     return result;
   }
 
+  public void addMPSJars(String mpsHome) throws IOException, XmlRpcException {
+    Vector<String> params = new Vector<String>();
+    params.add(mpsHome);
+    myClient.execute("MPSSupport.addMPSJar", params);
+  }
+
   public void openMethod(String namespace, String name) throws IOException, XmlRpcException {
     Vector<String> params = new Vector<String>();
     params.add(namespace);
