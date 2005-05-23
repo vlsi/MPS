@@ -43,6 +43,7 @@ public class GeneratorManager {
     GeneratorConfiguration configuration = new CommandRunnable<GeneratorConfiguration>(model) {
       protected GeneratorConfiguration onRun() {
         GeneratorConfiguration conf = GeneratorConfiguration.newInstance(model);
+
         conf.setName("Generate " + language.getNamespace() + " language.");
 
         conf.setOutputPath(language.getSourceDir().getAbsolutePath());
@@ -100,6 +101,10 @@ public class GeneratorManager {
 
       System.out.println("Models to generate from " + modelsWithLanguage.toString());
       Generator generator = findGenerator(cmd.getSourceLanguage().getName(), cmd.getTargetLanguage().getName());
+
+      for (jetbrains.mps.projectLanguage.Language l : CollectionUtil.iteratorAsIterable(generator.languages())) {
+        myProject.getLanguage(l.getName());
+      }
 
       String generatorClass = findGeneratorClass(generator);
       System.out.println("Generator class is " + generatorClass);
