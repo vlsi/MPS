@@ -102,10 +102,6 @@ public class GeneratorManager {
       System.out.println("Models to generate from " + modelsWithLanguage.toString());
       Generator generator = findGenerator(cmd.getSourceLanguage().getName(), cmd.getTargetLanguage().getName());
 
-      for (jetbrains.mps.projectLanguage.Language l : CollectionUtil.iteratorAsIterable(generator.languages())) {
-        myProject.getLanguage(l.getName());
-      }
-
       String generatorClass = findGeneratorClass(generator);
       System.out.println("Generator class is " + generatorClass);
 
