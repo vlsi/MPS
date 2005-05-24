@@ -58,6 +58,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="SemanticIP" />
     <orderEntryProperties />
   </component>
 </module>

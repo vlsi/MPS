@@ -13,6 +13,8 @@
       <modelRoot rootPath="${language_descriptor}\models\import" namespacePrefix="" />
       <modelRoot rootPath="${mps_home}\models" namespacePrefix="" />
       <modelRoot rootPath="${language_descriptor}\generator" namespacePrefix="readerConfigLanguage.generator" />
+      <languages rootPath="${mps_home}\languages\transformation\TLBase" />
+      <languages rootPath="${mps_home}\languages\baseLanguage" />
     </generator>
   </generators>
 </language>
