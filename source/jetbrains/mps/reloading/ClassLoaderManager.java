@@ -45,9 +45,12 @@ public class ClassLoaderManager {
     protected boolean isExcluded(String name) {
       String pack = NodeNameUtil.getNamespace(name);
 
+      if (pack.startsWith("jetbrains.mps.generator")) return true;
+      if (pack.startsWith("jetbrains.mps.baseLanguage.generator")) return true;
+
       if (pack.endsWith(".editor")) return false;
       if (pack.endsWith(".types")) return false;
-      if (pack.endsWith(".generator")) return false;
+      if (pack.contains(".generator")) return false;
 
 
       if (name.endsWith(".Aspects")) return false;
