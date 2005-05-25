@@ -16,14 +16,42 @@ public class OutputView {
   private JPanel myComponent = new JPanel();
   private JTextArea myTextArea = new JTextArea();
   private IdeMain myIde;
+  private String myLastSearchPattern = null;
+  private AbstractAction myFindAction;
+  private AbstractAction myFindNextAction;
 
   public OutputView(IdeMain ide) {
     myIde = ide;
 
     myTextArea.setEditable(false);
 
+    myFindAction = new AbstractActionWithEmptyIcon("Find") {
+      {
+        putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke("control F"));
+      }
 
-    myTextArea.append("Test");
+      public void actionPerformed(ActionEvent e) {
+        String pattern = JOptionPane.showInputDialog(myIde.getMainFrame(), "Enter pattern to find", myLastSearchPattern);
+        if (pattern == null) return;
+        find(pattern);
+      }
+    };
+    myFindNextAction = new AbstractActionWithEmptyIcon("Find Next") {
+      {
+        putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke("F3"));
+      }
+
+      public void actionPerformed(ActionEvent e) {
+        if (myLastSearchPattern != null) {
+          find(myLastSearchPattern);
+        }
+      }
+    };
+
+    myComponent.registerKeyboardAction(myFindAction, KeyStroke.getKeyStroke("control F"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    myComponent.registerKeyboardAction(myFindNextAction, KeyStroke.getKeyStroke("F3"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+
     myTextArea.setFont(new Font("Monospaced", 0, 12));
 
     myTextArea.addMouseListener(new MouseAdapter() {
@@ -43,6 +71,9 @@ public class OutputView {
               clear();
             }
           });
+          menu.addSeparator();
+          menu.add(myFindAction);
+          menu.add(myFindNextAction);
 
           menu.show(myTextArea, e.getX(), e.getY());
         }
@@ -51,6 +82,22 @@ public class OutputView {
 
     myComponent.setLayout(new BorderLayout());
     myComponent.add(new JScrollPane(myTextArea), BorderLayout.CENTER);
+  }
+
+  private void find(String pattern) {
+    int startIndex = 0;
+    if (myTextArea.getSelectedText() != null && myTextArea.getSelectedText().length() > 0) {
+      startIndex = myTextArea.getSelectionEnd();
+    }
+    int start = myTextArea.getText().indexOf(pattern, startIndex);
+    myLastSearchPattern = pattern;
+    if (start == -1) {
+      myTextArea.setSelectionStart(0);
+      myTextArea.setSelectionEnd(0);
+      return;
+    }
+    myTextArea.setSelectionStart(start);
+    myTextArea.setSelectionEnd(start + pattern.length());
   }
 
   public void append(String text) {
