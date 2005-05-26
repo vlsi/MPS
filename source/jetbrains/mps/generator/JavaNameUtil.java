@@ -37,22 +37,6 @@ public class JavaNameUtil {
     return packageName;
   }
 
-//  /**
-//   * @deprecated
-//   */
-//  public static String packageNameForLanguageStructure(SModel structureModel) {
-//    return structureModel.getNamespace();
-//  }
-
-//  public static String packageNameForModel(SModel semanticModel) {
-//    String packageName = semanticModel.getFQName();
-//    if (semanticModel.getName() == null || semanticModel.getName().length() == 0) {
-//      packageName = semanticModel.getNamespace();
-//    }
-//    return packageName;
-//  }
-
-
   public static String packageName(String fqName) {
     if (fqName == null) {
       return fqName;
