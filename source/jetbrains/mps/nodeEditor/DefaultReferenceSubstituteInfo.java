@@ -24,7 +24,7 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
     mySourceNode = sourceNode;
     myLinkDeclaration = linkDeclaration;
     myGenuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
-    if (linkDeclaration.getMetaClass() == LinkMetaclass.aggregation) {
+    if (myGenuineLinkDeclaration.getMetaClass() == LinkMetaclass.aggregation) {
       throw new RuntimeException("Only reference links are allowed here.");
     }
     Cardinality sourceCardinality = myGenuineLinkDeclaration.getSourceCardinality();
