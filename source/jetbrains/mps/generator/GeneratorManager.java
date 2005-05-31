@@ -234,7 +234,15 @@ public class GeneratorManager {
   }
 
   private SModelDescriptor loadTemplatesModel(Generator generator) {
-    if (generator.getModelRootsCount() == 0) return null;
+    if (generator.getTemplatesModel() == null) {
+      return null;
+    }
+
+    if (generator.getModelRootsCount() == 0) {
+      System.err.println("Couldn't find templates model " + generator.getTemplatesModel().getName() + " model roots aren't specified");
+      getMessageView().add(new Message(MessageKind.ERROR, "Couldn't find templates model " + generator.getTemplatesModel().getName() + " model roots aren't specified"));
+      return null;
+    }
 
     Set<ModelRoot> roots = new HashSet<ModelRoot>();
     Iterator<ModelRoot> iterator = generator.modelRoots();
@@ -245,13 +253,14 @@ public class GeneratorManager {
 
     Set<SModelDescriptor> models = new HashSet<SModelDescriptor>();
     SModelRepository.getInstance().readModelDescriptors(roots, models, myProject);
-    if (generator.getTemplatesModel() == null) {
-      return null;
-    }
+//    if (generator.getTemplatesModel() == null) {
+//      return null;
+//    }
 
     for (SModelDescriptor model : models) {
       if (model.getFQName().equals(generator.getTemplatesModel().getName())) return model;
     }
+    System.err.println("Couldn't find templates model " + generator.getTemplatesModel().getName());
     getMessageView().add(new Message(MessageKind.ERROR, "Couldn't find templates model " + generator.getTemplatesModel().getName()));
     return null;
   }
