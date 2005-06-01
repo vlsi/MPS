@@ -15,7 +15,11 @@ public class HeaderWrapper extends JPanel {
   public static final Color NOT_ACTIVE_COLOR = new Color(150, 150, 150);
 
   private JComponent myComponent;
-  private JLabel myLabel  = new JLabel("", JLabel.LEFT);;
+  private JLabel myLabel  = new JLabel("", JLabel.LEFT) {
+    public Dimension getMinimumSize() {
+      return new Dimension(0, 0);
+    }
+  };
 
   public HeaderWrapper(String text, JComponent component) {
     super(new BorderLayout());
