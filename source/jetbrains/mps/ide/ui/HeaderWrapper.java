@@ -44,6 +44,10 @@ public class HeaderWrapper extends JPanel {
      });
   }
 
+  public void setText(String text) {
+    myLabel.setText(text);
+  }
+
   private void updateLabel() {
     Component focusOwner = KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
     if (isAncestorOf(focusOwner)) {
