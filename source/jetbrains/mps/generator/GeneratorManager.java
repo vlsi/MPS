@@ -240,7 +240,7 @@ public class GeneratorManager {
 
     if (generator.getModelRootsCount() == 0) {
       System.err.println("Couldn't find templates model " + generator.getTemplatesModel().getName() + " model roots aren't specified");
-      getMessageView().add(new Message(MessageKind.ERROR, "Couldn't find templates model " + generator.getTemplatesModel().getName() + " model roots aren't specified"));
+      getMessageView().add(new Message(MessageKind.WARNING, "Couldn't find templates model " + generator.getTemplatesModel().getName() + " model roots aren't specified"));
       return null;
     }
 
@@ -261,7 +261,7 @@ public class GeneratorManager {
       if (model.getFQName().equals(generator.getTemplatesModel().getName())) return model;
     }
     System.err.println("Couldn't find templates model " + generator.getTemplatesModel().getName());
-    getMessageView().add(new Message(MessageKind.ERROR, "Couldn't find templates model " + generator.getTemplatesModel().getName()));
+    getMessageView().add(new Message(MessageKind.WARNING, "Couldn't find templates model " + generator.getTemplatesModel().getName()));
     return null;
   }
 

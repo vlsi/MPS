@@ -205,7 +205,7 @@ public class MPSSupportHandler implements ProjectComponent {
     ApplicationManager.getApplication().runReadAction(new Runnable() {
       public void run() {
         PsiManager manager = PsiManager.getInstance(myProject);
-        PsiClass cls = manager.findClass(fqName, GlobalSearchScope.projectProductionScope(myProject, false));
+        PsiClass cls = manager.findClass(fqName, GlobalSearchScope.allScope(myProject));
         if (cls == null) return;
         PsiSearchHelper helper = manager.getSearchHelper();
         PsiClass[] result = helper.findInheritors(cls, GlobalSearchScope.projectScope(myProject), true);
