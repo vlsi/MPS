@@ -1,6 +1,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.baseLanguage.Classifier;
+import jetbrains.mps.baseLanguage.generator.target.DefaultTemplateGenerator;
 import jetbrains.mps.cml.util.CommandRunnable;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.ide.ProjectPane;
@@ -107,6 +108,7 @@ public class GeneratorManager {
       }
 
       String generatorClass = findGeneratorClass(generator);
+      if (generatorClass == null) generatorClass = DefaultTemplateGenerator.class.getName();
       System.out.println("Generator class is " + generatorClass);
 
       SModelDescriptor templatesModel = loadTemplatesModel(generator);

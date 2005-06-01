@@ -208,7 +208,7 @@ public class MPSSupportHandler implements ProjectComponent {
         PsiClass cls = manager.findClass(fqName, GlobalSearchScope.allScope(myProject));
         if (cls == null) return;
         PsiSearchHelper helper = manager.getSearchHelper();
-        PsiClass[] result = helper.findInheritors(cls, GlobalSearchScope.projectScope(myProject), true);
+        PsiClass[] result = helper.findInheritors(cls, GlobalSearchScope.allScope(myProject), true);
         for (int i = 0; i < result.length; i++) {
           if (result[i].getQualifiedName() != null) {  //i.e anonymous class
             list.add(result[i].getQualifiedName());
@@ -229,7 +229,7 @@ public class MPSSupportHandler implements ProjectComponent {
     executeWriteAction(new Runnable() {
       public void run() {
         PsiManager manager = PsiManager.getInstance(myProject);
-        PsiClass cls = manager.findClass(fqName, GlobalSearchScope.projectProductionScope(myProject, false));
+        PsiClass cls = manager.findClass(fqName, GlobalSearchScope.allScope(myProject));
         if (cls == null) return;
         cls.navigate(true);
         activateProjectWindow();
