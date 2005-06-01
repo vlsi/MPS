@@ -58,6 +58,7 @@ public class ProjectCreator implements ApplicationComponent {
     return "OK";
   }
 
+
   public String createNewProject(final String path, final String name) {
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
@@ -86,10 +87,19 @@ public class ProjectCreator implements ApplicationComponent {
                 contentRootFile.createChildDirectory(this, "classes");
               }
               rootModel.setCompilerOutputPath(contentRootFile.findChild("classes"));
+              rootModel.setExcludeOutput(true);
             } catch (IOException e) {
               e.printStackTrace();
             }
             rootModel.commit();
+
+            String path = project.getProjectFilePath();
+            myProjectManager.closeProject(project);
+            try {
+              myProjectManager.openProject(myProjectManager.loadProject(path));
+            } catch (Exception e) {
+              e.printStackTrace();
+            }
           }
         });
       }
