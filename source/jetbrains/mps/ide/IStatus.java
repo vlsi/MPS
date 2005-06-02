@@ -8,16 +8,16 @@ package jetbrains.mps.ide;
 
 public interface IStatus {
   public static enum Code {
-    OK,ERROR,WARNING
+    OK,ERROR
   }
 
   boolean isOk();
 
   boolean isError();
 
-  boolean isWarning();
-
   Code getCode();
 
   String getMessage();
+
+  Object getUserObject();
 }

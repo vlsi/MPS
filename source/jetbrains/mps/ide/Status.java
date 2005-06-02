@@ -9,6 +9,7 @@ package jetbrains.mps.ide;
 public class Status implements IStatus {
   private Code myCode;
   private String myMessage;
+  private Object myUserObject;
 
   public Status(Code code, String message) {
     myCode = code;
@@ -23,10 +24,6 @@ public class Status implements IStatus {
     return myCode == Code.ERROR;
   }
 
-  public boolean isWarning() {
-    return myCode == Code.WARNING;
-  }
-
   public Code getCode() {
     return myCode;
   }
@@ -35,21 +32,28 @@ public class Status implements IStatus {
     return myMessage;
   }
 
+  public Object getUserObject() {
+    return myUserObject;
+  }
+
+  public void setUserObject(Object userObject) {
+    myUserObject = userObject;
+  }
+
   public static class OK extends Status {
-    public OK(String message) {
-      super(Code.OK, message);
+    public OK() {
+      super(Code.OK, "");
+    }
+
+    public OK(Object userObject) {
+      super(Code.OK, "");
+      setUserObject(userObject);
     }
   }
 
   public static class ERROR extends Status {
     public ERROR(String message) {
       super(Code.ERROR, message);
-    }
-  }
-
-  public static class WARNING extends Status {
-    public WARNING(String message) {
-      super(Code.WARNING, message);
     }
   }
 }
