@@ -10,6 +10,9 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.core.BaseConcept;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.diagnostic.Logger;
+import jetbrains.mps.ide.messages.MessageView;
+import jetbrains.mps.ide.messages.Message;
+import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.*;
@@ -162,7 +165,10 @@ public class TemplateGenUtil {
   public static List<INodeBuilder> createNodeBuildersForTemplateMappingRule(MappingRule templateMappingRule, ITemplateGenerator generator) {
     List<INodeBuilder> builders = new LinkedList<INodeBuilder>();
     String ruleName = templateMappingRule.getName();
-    LOG.assertNotNull(ruleName, "TemplateMappingRule mast have name");
+    if (ruleName == null) {
+      generator.getProject().getComponent(MessageView.class).add(new Message(MessageKind.ERROR, templateMappingRule, "TemplateMappingRule must have name"));
+    }
+    LOG.assertNotNull(ruleName, "TemplateMappingRule must have name");
     BaseConcept templateNode = templateMappingRule.getTemplateNode();
     List<SemanticNode> sourceNodes = createSourceNodeListForTemplateMappingRule(templateMappingRule, generator);
     for (SemanticNode sourceNode : sourceNodes) {
