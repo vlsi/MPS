@@ -3,6 +3,11 @@
   <structure>
     <model fqName="jetbrains.mps.core.structure" />
   </structure>
-  <modelRoot rootPath="." namespacePrefix="jetbrains.mps.core" />
+  <editor>
+    <model fqName="jetbrains.mps.core.editor" />
+  </editor>
+  <modelRoot rootPath="${language_descriptor}." namespacePrefix="jetbrains.mps.core" />
+  <library />
+  <generators />
 </language>
 
