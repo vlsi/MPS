@@ -8,7 +8,6 @@ import jetbrains.mps.semanticModel.SemanticNode;
  * Date: Dec 27, 2003
  */
 public class NameUtil {
-
   public static String capitalize(String s) {
     if (s.length() == 0) {
       return s;
@@ -72,6 +71,22 @@ public class NameUtil {
     return fqName.substring(0, offset);
   }
 
+  public static String namespaceFromConceptFQName(String fqName) {
+    if (fqName == null) {
+      return fqName;
+    }
+    int offset = fqName.lastIndexOf('.');
+    if (offset < 0) {
+      return "";
+    }
+    String namespace = fqName.substring(0, offset);
+    int i = namespace.lastIndexOf(".structure");
+    if (i >= 0) {
+      namespace = namespace.substring(0, i);
+    }
+    return namespace;
+  }
+
   public static String fqNameFromNamespaceAndName(String namespace, String name) {
     if (namespace == null || namespace.length() == 0) {
       return name;
@@ -80,7 +95,7 @@ public class NameUtil {
   }
 
   public static String nodeFQName(SemanticNode node) {
-    if(node == null) return null;
+    if (node == null) return null;
     String name = node.getName();
     // todo: dont set property NAME full name of a class
     // the name is actually "full name"?
