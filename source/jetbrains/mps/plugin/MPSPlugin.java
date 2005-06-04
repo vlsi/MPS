@@ -136,6 +136,15 @@ public class MPSPlugin {
     myClient.execute("ProjectCreator.createNewProject", params);
   }
 
+  public boolean isMPSPresent() {
+    try {
+      myClient.execute("ProjectCreator.ping", new Vector());
+      return true;
+    } catch (Exception e) {
+      return false;
+    }
+  }
+
   public static void main(String[] args) throws Exception {
     MPSPlugin client = new MPSPlugin();
     for (String s : client.findInheritors(IModelGenerator.class)) {

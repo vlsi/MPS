@@ -58,6 +58,10 @@ public class ProjectCreator implements ApplicationComponent {
     return "OK";
   }
 
+  public String ping() {
+    return "OK";
+  }
+
 
   public String createNewProject(final String path, final String name) {
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
