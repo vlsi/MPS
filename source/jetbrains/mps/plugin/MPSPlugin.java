@@ -136,7 +136,7 @@ public class MPSPlugin {
     myClient.execute("ProjectCreator.createNewProject", params);
   }
 
-  public boolean isMPSPresent() {
+  public boolean isIDEAPresent() {
     try {
       myClient.execute("ProjectCreator.ping", new Vector());
       return true;
