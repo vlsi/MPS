@@ -219,7 +219,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
       public void focusLost(FocusEvent e) {
         if (myNodeSubstituteChooser.getWindow() != null &&
-                    (myNodeSubstituteChooser.getWindow().isAncestorOf(e.getOppositeComponent()) || myNodeSubstituteChooser.getWindow() == e.getOppositeComponent()))
+                (myNodeSubstituteChooser.getWindow().isAncestorOf(e.getOppositeComponent()) || myNodeSubstituteChooser.getWindow() == e.getOppositeComponent()))
           return;
         myNodeSubstituteChooser.setVisible(false);
       }
@@ -307,7 +307,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     if (selectedNode instanceof BaseEditorComponent ||
-                            selectedNode instanceof EditorCellModel) {
+            selectedNode instanceof EditorCellModel) {
       popupMenu.addSeparator();
       popupMenu.add(EditorLanguageUtil.createTurnCellBordersOnOffAction(selectedNode, true, getContext().getProject()));
       popupMenu.add(EditorLanguageUtil.createTurnCellBordersOnOffAction(selectedNode, false, getContext().getProject()));
@@ -327,81 +327,81 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       public void actionPerformed(ActionEvent e) {
         CommandProcessor.instance().executeCommand(getContext(),
                 new Runnable() {
-          public void run() {
-            MPSProject project = getContext().getProject();
-            SModel targetModel = targetClass.getModel();
-            String fqName = targetModel.getFQName();
-            String name = targetClass.getName();
-            String className = fqName + '.' + name;
-            SModel tmpModel = new SModel();
-            tmpModel.setLoading(true);
-            SimpleModelDescriptor tmpModelDescriptor = new SimpleModelDescriptor(tmpModel);
-            targetModel.addImportedModelDescriptor(tmpModelDescriptor);
+                  public void run() {
+                    MPSProject project = getContext().getProject();
+                    SModel targetModel = targetClass.getModel();
+                    String fqName = targetModel.getFQName();
+                    String name = targetClass.getName();
+                    String className = fqName + '.' + name;
+                    SModel tmpModel = new SModel();
+                    tmpModel.setLoading(true);
+                    SimpleModelDescriptor tmpModelDescriptor = new SimpleModelDescriptor(tmpModel);
+                    targetModel.addImportedModelDescriptor(tmpModelDescriptor);
 
-            try {
-              JavaClassMap javaClassMap = JavaClassMaps.getJavaClassMap(tmpModel);
-              ClassConcept tmpClass = null;
-              try {
-                tmpClass = (ClassConcept) javaClassMap.get(className);
-              } catch (Exception e1) {
-                e1.printStackTrace();
-              }
-              if (tmpClass == null) {
-                JOptionPane.showMessageDialog(myContainer, "Class not found:\n" + className, "Class Not Found", JOptionPane.ERROR_MESSAGE);
-                return;
-              }
-              targetClass.setExtendedClass(toModelClass(tmpClass.getExtendedClass(), targetModel, project));
+                    try {
+                      JavaClassMap javaClassMap = JavaClassMaps.getJavaClassMap(tmpModel);
+                      ClassConcept tmpClass = null;
+                      try {
+                        tmpClass = (ClassConcept) javaClassMap.get(className);
+                      } catch (Exception e1) {
+                        e1.printStackTrace();
+                      }
+                      if (tmpClass == null) {
+                        JOptionPane.showMessageDialog(myContainer, "Class not found:\n" + className, "Class Not Found", JOptionPane.ERROR_MESSAGE);
+                        return;
+                      }
+                      targetClass.setExtendedClass(toModelClass(tmpClass.getExtendedClass(), targetModel, project));
 
-              Iterator<StaticFieldDeclaration> staticFields = tmpClass.staticFields();
-              while (staticFields.hasNext()) {
-                StaticFieldDeclaration staticFieldDeclaration = staticFields.next();
-                StaticFieldDeclaration copy = (StaticFieldDeclaration) createValidCopy(staticFieldDeclaration, targetModel, project);
-                targetClass.addStaticField(copy);
-              }
+                      Iterator<StaticFieldDeclaration> staticFields = tmpClass.staticFields();
+                      while (staticFields.hasNext()) {
+                        StaticFieldDeclaration staticFieldDeclaration = staticFields.next();
+                        StaticFieldDeclaration copy = (StaticFieldDeclaration) createValidCopy(staticFieldDeclaration, targetModel, project);
+                        targetClass.addStaticField(copy);
+                      }
 
-              Iterator<FieldDeclaration> fields = tmpClass.fields();
-              while (fields.hasNext()) {
-                FieldDeclaration fieldDeclaration = fields.next();
-                FieldDeclaration copy = (FieldDeclaration) createValidCopy(fieldDeclaration, targetModel, project);
-                targetClass.addField(copy);
-              }
+                      Iterator<FieldDeclaration> fields = tmpClass.fields();
+                      while (fields.hasNext()) {
+                        FieldDeclaration fieldDeclaration = fields.next();
+                        FieldDeclaration copy = (FieldDeclaration) createValidCopy(fieldDeclaration, targetModel, project);
+                        targetClass.addField(copy);
+                      }
 
-              Iterator<ConstructorDeclaration> constructors = tmpClass.constructors();
-              while (constructors.hasNext()) {
-                ConstructorDeclaration constructorDeclaration = constructors.next();
-                ConstructorDeclaration copy = (ConstructorDeclaration) createValidCopy(constructorDeclaration, targetModel, project);
-                targetClass.addConstructor(copy);
-              }
+                      Iterator<ConstructorDeclaration> constructors = tmpClass.constructors();
+                      while (constructors.hasNext()) {
+                        ConstructorDeclaration constructorDeclaration = constructors.next();
+                        ConstructorDeclaration copy = (ConstructorDeclaration) createValidCopy(constructorDeclaration, targetModel, project);
+                        targetClass.addConstructor(copy);
+                      }
 
-              Iterator<InstanceMethodDeclaration> methods = tmpClass.methods();
-              while (methods.hasNext()) {
-                InstanceMethodDeclaration instanceMethodDeclaration = methods.next();
-                InstanceMethodDeclaration copy = (InstanceMethodDeclaration) createValidCopy(instanceMethodDeclaration, targetModel, project);
-                targetClass.addMethod(copy);
-              }
+                      Iterator<InstanceMethodDeclaration> methods = tmpClass.methods();
+                      while (methods.hasNext()) {
+                        InstanceMethodDeclaration instanceMethodDeclaration = methods.next();
+                        InstanceMethodDeclaration copy = (InstanceMethodDeclaration) createValidCopy(instanceMethodDeclaration, targetModel, project);
+                        targetClass.addMethod(copy);
+                      }
 
-              Iterator<StaticMethodDeclaration> staticMethods = tmpClass.staticMethods();
-              while (staticMethods.hasNext()) {
-                StaticMethodDeclaration staticMethodDeclaration = staticMethods.next();
-                StaticMethodDeclaration copy = (StaticMethodDeclaration) createValidCopy(staticMethodDeclaration, targetModel, project);
-                targetClass.addStaticMethod(copy);
-              }
+                      Iterator<StaticMethodDeclaration> staticMethods = tmpClass.staticMethods();
+                      while (staticMethods.hasNext()) {
+                        StaticMethodDeclaration staticMethodDeclaration = staticMethods.next();
+                        StaticMethodDeclaration copy = (StaticMethodDeclaration) createValidCopy(staticMethodDeclaration, targetModel, project);
+                        targetClass.addStaticMethod(copy);
+                      }
 
-              targetModel.fireModelChangedDramaticallyEvent();
-              JOptionPane.showMessageDialog(myContainer, "Added:\n" +
-                      tmpClass.getStaticFieldsCount() + " static fields\n" +
-                      tmpClass.getFieldsCount() + " fields\n" +
-                      tmpClass.getConstructorsCount() + " constructors\n" +
-                      tmpClass.getMethodsCount() + " methods\n" +
-                      tmpClass.getStaticMethodsCount() + " static methods",
-                      "Class Has Been Generated", JOptionPane.INFORMATION_MESSAGE);
-              tmpClass.delete();
+                      targetModel.fireModelChangedDramaticallyEvent();
+                      JOptionPane.showMessageDialog(myContainer, "Added:\n" +
+                              tmpClass.getStaticFieldsCount() + " static fields\n" +
+                              tmpClass.getFieldsCount() + " fields\n" +
+                              tmpClass.getConstructorsCount() + " constructors\n" +
+                              tmpClass.getMethodsCount() + " methods\n" +
+                              tmpClass.getStaticMethodsCount() + " static methods",
+                              "Class Has Been Generated", JOptionPane.INFORMATION_MESSAGE);
+                      tmpClass.delete();
 
-            } finally {
-              targetModel.deleteImportedModel(tmpModelDescriptor.getFQName());
-            }
-          }
-        },
+                    } finally {
+                      targetModel.deleteImportedModel(tmpModelDescriptor.getFQName());
+                    }
+                  }
+                },
                 "Generate Stab from Class File");
       }
 
@@ -538,7 +538,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (keyEvent.getKeyCode() == KeyEvent.VK_INSERT && keyEvent.getModifiers() == 0) {
       return EditorCellAction.INSERT_BEFORE;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && keyEvent.isControlDown() && !(keyEvent.isShiftDown() || keyEvent.isAltDown()))
+    {
       return EditorCellAction.INSERT;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && keyEvent.isControlDown()) {
@@ -1073,7 +1074,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return activateNodeSubstituteChooser(editorCell, substituteInfo, resetPattern);
   }
 
-  public boolean activateNodeSubstituteChooser(EditorCell editorCell, INodeSubstituteInfo substituteInfo, boolean resetPattern) {
+  public boolean activateNodeSubstituteChooser(EditorCell editorCell, INodeSubstituteInfo substituteInfo, boolean resetPattern)
+  {
     if (substituteInfo == null) {
       return false;
     }
@@ -1087,7 +1089,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     String pattern = patternEditor.getPattern();
     boolean trySubstituteNow =
             !patternEditor.getText().equals(substituteInfo.getOriginalText()) || // user changed text or cell has no text
-            pattern.equals(patternEditor.getText()); // caret at the end
+                    pattern.equals(patternEditor.getText()); // caret at the end
 
     // 1st - try to do substitution with current pattern (id cursor at the end of text)
     if (trySubstituteNow) {
