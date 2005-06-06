@@ -58,8 +58,8 @@ public class GeneratorManager {
 
     Set<SModelDescriptor> models = new HashSet<SModelDescriptor>();
     models.add(language.getStructureModelDescriptor());
-    if (language.getEditorDescriptor() != null) {
-      models.add(language.getEditorDescriptor());
+    if (language.getEditorModelDescriptor() != null) {
+      models.add(language.getEditorModelDescriptor());
     }
     if (language.getTypesystemModelDescriptor() != null) {
       models.add(language.getTypesystemModelDescriptor());
