@@ -2058,7 +2058,7 @@
               <link role="classifier" targetNodeId="19.1108060339906" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1115664492376">
-              <link role="baseMethodDeclaration" targetNodeId="21.1091033147636" />
+              <link role="baseMethodDeclaration" targetNodeId="21.1117844019006" />
               <node role="classType" type="jetbrains.mps.baseLanguage.ClassType" id="1115664492377">
                 <link role="classifier" targetNodeId="21.1091033020742" />
               </node>
@@ -5283,7 +5283,7 @@
                   <link role="variableDeclaration" targetNodeId="1115664493460" />
                 </node>
                 <node role="rValue" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1115664493487">
-                  <link role="baseMethodDeclaration" targetNodeId="15.1090598157419" />
+                  <link role="baseMethodDeclaration" targetNodeId="15.1117844139426" />
                   <node role="classType" type="jetbrains.mps.baseLanguage.ClassType" id="1115664493488">
                     <link role="classifier" targetNodeId="15.1086945615339" />
                   </node>
@@ -5373,7 +5373,7 @@
               <link role="classifier" targetNodeId="19.1108060339906" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1115664493516">
-              <link role="baseMethodDeclaration" targetNodeId="21.1091033147636" />
+              <link role="baseMethodDeclaration" targetNodeId="21.1117844019006" />
               <node role="classType" type="jetbrains.mps.baseLanguage.ClassType" id="1115664493517">
                 <link role="classifier" targetNodeId="21.1091033020742" />
               </node>
@@ -5559,7 +5559,7 @@
                   <link role="variableDeclaration" targetNodeId="1115664493561" />
                 </node>
                 <node role="rValue" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1115664493588">
-                  <link role="baseMethodDeclaration" targetNodeId="15.1090598157419" />
+                  <link role="baseMethodDeclaration" targetNodeId="15.1117844139426" />
                   <node role="classType" type="jetbrains.mps.baseLanguage.ClassType" id="1115664493589">
                     <link role="classifier" targetNodeId="15.1086945615339" />
                   </node>
@@ -5667,7 +5667,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1115664493626">
           <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1115664493627">
-            <link role="baseMethodDeclaration" targetNodeId="15.1086945615431" />
+            <link role="baseMethodDeclaration" targetNodeId="15.1086945615417" />
             <node role="classType" type="jetbrains.mps.baseLanguage.ClassType" id="1115664493628">
               <link role="classifier" targetNodeId="15.1086945615339" />
             </node>
@@ -5710,7 +5710,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1115664493640">
         <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1115664493641">
           <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1115664493642">
-            <link role="baseMethodDeclaration" targetNodeId="21.1095086817546" />
+            <link role="baseMethodDeclaration" targetNodeId="21.1117844018907" />
             <node role="classType" type="jetbrains.mps.baseLanguage.ClassType" id="1115664493643">
               <link role="classifier" targetNodeId="21.1091033020742" />
             </node>
@@ -5990,7 +5990,7 @@
                   <link role="variableDeclaration" targetNodeId="1115664493715" />
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1115664493722">
-                  <link role="baseMethodDeclaration" targetNodeId="21.1095086817546" />
+                  <link role="baseMethodDeclaration" targetNodeId="21.1117844018907" />
                   <node role="classType" type="jetbrains.mps.baseLanguage.ClassType" id="1115664493723">
                     <link role="classifier" targetNodeId="21.1091033020742" />
                   </node>
@@ -6250,7 +6250,7 @@
                   <link role="variableDeclaration" targetNodeId="1115664493785" />
                 </node>
                 <node role="rValue" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1115664493812">
-                  <link role="baseMethodDeclaration" targetNodeId="15.1090598157419" />
+                  <link role="baseMethodDeclaration" targetNodeId="15.1117844139426" />
                   <node role="classType" type="jetbrains.mps.baseLanguage.ClassType" id="1115664493813">
                     <link role="classifier" targetNodeId="15.1086945615339" />
                   </node>
@@ -6344,7 +6344,7 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.ContinueStatement" id="1115664493847" />
               </node>
               <node role="condition" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1115664493848">
-                <link role="baseMethodDeclaration" targetNodeId="15.1086945615391" />
+                <link role="baseMethodDeclaration" targetNodeId="15.1117844139450" />
                 <node role="classType" type="jetbrains.mps.baseLanguage.ClassType" id="1115664493849">
                   <link role="classifier" targetNodeId="15.1086945615339" />
                 </node>
@@ -7770,7 +7770,7 @@
                     <node role="statement" type="jetbrains.mps.baseLanguage.BreakStatement" id="1115664494346" />
                   </node>
                   <node role="condition" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1115664494347">
-                    <link role="baseMethodDeclaration" targetNodeId="21.1108069473671" />
+                    <link role="baseMethodDeclaration" targetNodeId="21.1117844018988" />
                     <node role="classType" type="jetbrains.mps.baseLanguage.ClassType" id="1115664494348">
                       <link role="classifier" targetNodeId="21.1091033020742" />
                     </node>
@@ -13544,7 +13544,7 @@
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1095093597719">
                   <property name="name" value="propDeclaration" />
                   <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1095093597721">
-                    <link role="baseMethodDeclaration" targetNodeId="15.1086945615379" />
+                    <link role="baseMethodDeclaration" targetNodeId="15.1117844139438" />
                     <node role="classType" type="jetbrains.mps.baseLanguage.ClassType" id="1095093597722">
                       <link role="classifier" targetNodeId="15.1086945615339" />
                     </node>
@@ -13567,7 +13567,7 @@
                     <link role="classifier" targetNodeId="15.1086945615739" />
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1095093597730">
-                    <link role="baseMethodDeclaration" targetNodeId="15.1086945615755" />
+                    <link role="baseMethodDeclaration" targetNodeId="15.1117844135510" />
                     <node role="classType" type="jetbrains.mps.baseLanguage.ClassType" id="1095093597731">
                       <link role="classifier" targetNodeId="15.1086945615739" />
                     </node>
