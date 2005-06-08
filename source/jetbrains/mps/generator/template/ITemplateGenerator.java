@@ -14,6 +14,7 @@ import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.TemplateDeclaration;
 import jetbrains.mps.transformation.TLBase.TemplateSwitch;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.ide.progress.ProgressMonitor;
 
 import java.util.Map;
 
@@ -26,7 +27,7 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   void reset();
 
-  void generate(SModel sourceModel, SModel targetModel, SModel templatesModel) throws GenerationFailedException;
+  void generate(SModel sourceModel, SModel targetModel, SModel templatesModel, ProgressMonitor progressMonitor) throws GenerationFailedException;
 
   int setupReduction(SModel sourceModel, SModel templatesModel);
 

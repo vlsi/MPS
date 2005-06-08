@@ -21,6 +21,7 @@ import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textPresentation.TextPresentationManager;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.ide.progress.ProgressMonitor;
 
 import javax.swing.*;
 import java.io.File;
@@ -286,7 +287,7 @@ public class GeneratorManager {
         targetModel = generateByTemplateGenerator(sourceModelDescr, templatesModel.getSModel(), (ITemplateGenerator) generator);
       } else {
         targetModel = JavaGenUtil.createTargetJavaModel(sourceModelDescr.getSModel(), JavaNameUtil.packageNameForModelFqName(sourceModelDescr.getFQName()), myProject);
-        generator.generate(sourceModelDescr.getSModel(), targetModel);
+        generator.generate(sourceModelDescr.getSModel(), targetModel, ProgressMonitor.NULL_PROGRESS_MONITOR);
       }
       if (generateText) {
         generateText(targetModel);
@@ -310,7 +311,7 @@ public class GeneratorManager {
 
     // mapping
     System.out.println("DO MAPPING from: " + originalSourceModel.getFQName() + " to " + currentTargetModel.getFQName());
-    generator.generate(originalSourceModel, currentTargetModel, templatesModel);
+    generator.generate(originalSourceModel, currentTargetModel, templatesModel, ProgressMonitor.NULL_PROGRESS_MONITOR);
 
     // reductions...
     while (true) {
