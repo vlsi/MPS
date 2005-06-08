@@ -20,8 +20,8 @@ public class FindUsagesManager {
     Set<SemanticReference> result = new HashSet<SemanticReference>();
     Set<SModelDescriptor> models = scope.getModels();
     progress.start("Find Usages...", models.size());
+    progress.addText("Finding usages...");
     for (SModelDescriptor model : models) {
-      progress.addText("Finding usages in " + model.getFQName());
       result.addAll(model.findUsages(node));
       progress.advance(1);
     }
