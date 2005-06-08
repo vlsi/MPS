@@ -5,6 +5,7 @@ import jetbrains.mps.baseLanguage.generator.target.DefaultTemplateGenerator;
 import jetbrains.mps.cml.util.CommandRunnable;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.ide.ProjectPane;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.output.OutputView;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.messages.Message;
@@ -22,6 +23,7 @@ import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textPresentation.TextPresentationManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.ide.progress.ProgressMonitor;
+import jetbrains.mps.ide.progress.ProgressWindowProgressMonitor;
 
 import javax.swing.*;
 import java.io.File;
@@ -47,7 +49,6 @@ public class GeneratorManager {
         GeneratorConfiguration conf = GeneratorConfiguration.newInstance(model);
 
         conf.setName("Generate " + language.getNamespace() + " language.");
-
         conf.setOutputPath(language.getSourceDir().getAbsolutePath());
         conf.addCommand(createCommand(model, "jetbrains.mps.bootstrap.structureLanguage", "jetbrains.mps.baseLanguage"));
         conf.addCommand(createCommand(model, "jetbrains.mps.bootstrap.editorLanguage", "jetbrains.mps.baseLanguage"));
@@ -88,64 +89,100 @@ public class GeneratorManager {
     generate(configuration, new HashSet<SModelDescriptor>(myProject.getProjectModelDescriptors()), generateText);
   }
 
-  public void generate(GeneratorConfiguration configuration, Set<SModelDescriptor> modelDescriptors, boolean generateText) {
-    getMessageView().clear();
-    getMessageView().add(new Message(MessageKind.INFORMATION, null, "Generating configuration " + configuration.getName()));
-
-    
-    compileAndReload();
-
-    System.out.println("Generating configuration " + configuration.getName());
-    System.out.println("Output path is " + configuration.getOutputPath());
-    System.out.println("");
-    for (GeneratorConfigurationCommand cmd : CollectionUtil.iteratorAsIterable(configuration.commands())) {
-      System.out.println("Executing " + cmd.getSourceLanguage().getName() + " -> " + cmd.getTargetLanguage());
-      Set<SModelDescriptor> modelsWithLanguage = findModelsWithLanguage(modelDescriptors, cmd.getSourceLanguage().getName());
-
-      System.out.println("Models to generate from " + modelsWithLanguage.toString());
-      Generator generator = findGenerator(cmd.getSourceLanguage().getName(), cmd.getTargetLanguage().getName());
-
-      for (Root r : CollectionUtil.iteratorAsIterable(generator.languages())) {
-        myProject.getComponent(RootManager.class).readLanguageDescriptors(new File(r.getPath()));
+  private void addMessage(final Message msg) {
+    ThreadUtils.runInEventDispathThread(new Runnable() {
+      public void run() {
+        getMessageView().add(msg);
       }
+    });
+  }
 
-      String generatorClass = findGeneratorClass(generator);
-      if (generatorClass == null) generatorClass = DefaultTemplateGenerator.class.getName();
-      System.out.println("Generator class is " + generatorClass);
-
-      SModelDescriptor templatesModel = loadTemplatesModel(generator);
-      if (templatesModel != null) {
-        System.out.println("Templates model is " + templatesModel.getFQName());
-      } else {
-//        System.err.println("ERR: templates model not found for CMD: " + cmd.getSourceLanguage().getName() + " -> " + cmd.getTargetLanguage());
-//        getMessageView().add(new Message(MessageKind.ERROR, "templates model not found for CMD: " + cmd.getSourceLanguage().getName() + " -> " + cmd.getTargetLanguage()));
-//        getMessageView().show();
-//        return;
+  private void clearMessages() {
+    ThreadUtils.runInEventDispathThread(new Runnable() {
+      public void run() {
+        getMessageView().clear();
       }
+    });
+  }
 
-      for (SModelDescriptor model : modelsWithLanguage) {
-        try {
-          generate_internal_new(model, generatorClass, templatesModel, configuration.getOutputPath(), generateText);
-        } catch (GenerationFailedException gfe) {
-          System.err.println(model.getFQName() + " generation failed");
-          gfe.printStackTrace();
-          getMessageView().add(new Message(MessageKind.ERROR, model.getFQName() + " model generation failed"));
-          getMessageView().show();
-          return;
+  private void showMessageView() {
+    ThreadUtils.runInEventDispathThread(new Runnable() {
+      public void run() {
+        getMessageView().show();
+      }
+    });
+  }
+
+  public static final int AMOUNT_PER_MODEL = 100;
+
+  public void generate(final GeneratorConfiguration configuration, final Set<SModelDescriptor> modelDescriptors, final boolean generateText) {
+    new Thread() {
+      public void run() {
+        ProgressMonitor progress = new ProgressWindowProgressMonitor();
+
+        int modelCount = 0;
+        for (GeneratorConfigurationCommand cmd : CollectionUtil.iteratorAsIterable(configuration.commands())) {
+          modelCount += findModelsWithLanguage(modelDescriptors, cmd.getSourceLanguage().getName()).size();
         }
-        getMessageView().add(new Message(MessageKind.INFORMATION, model.getFQName() + " model is generated"));
+
+        int ideaCompilations = 0;
+        if (generateText) {
+          ideaCompilations = 1;
+        } else {
+          ideaCompilations = 2;
+        }
+
+        progress.start("Generating", (modelCount + ideaCompilations) * AMOUNT_PER_MODEL);
+
+        clearMessages();
+        addMessage(new Message(MessageKind.INFORMATION, null, "Generating configuration " + configuration.getName()));
+
+        progress.addText("Compiling in IDEA...");
+        compileAndReload();
+        progress.advance(AMOUNT_PER_MODEL);
+
+
+        for (GeneratorConfigurationCommand cmd : CollectionUtil.iteratorAsIterable(configuration.commands())) {
+          Set<SModelDescriptor> modelsWithLanguage = findModelsWithLanguage(modelDescriptors, cmd.getSourceLanguage().getName());
+          Generator generator = findGenerator(cmd.getSourceLanguage().getName(), cmd.getTargetLanguage().getName());
+          for (Root r : CollectionUtil.iteratorAsIterable(generator.languages())) {
+            myProject.getComponent(RootManager.class).readLanguageDescriptors(new File(r.getPath()));
+          }
+          String generatorClass = findGeneratorClass(generator);
+          if (generatorClass == null) generatorClass = DefaultTemplateGenerator.class.getName();
+          SModelDescriptor templatesModel = loadTemplatesModel(generator);
+          for (final SModelDescriptor model : modelsWithLanguage) {
+            try {
+              generate_internal_new(model, generatorClass, templatesModel, configuration.getOutputPath(), progress, generateText);
+            } catch (final GenerationFailedException gfe) {
+              System.err.println(model.getFQName() + " generation failed");
+              gfe.printStackTrace();
+              addMessage(new Message(MessageKind.ERROR, model.getFQName() + " model generation failed"));
+              showMessageView();
+              return;
+            }
+            addMessage(new Message(MessageKind.INFORMATION, model.getFQName() + " model is generated"));
+          }
+        }
+        if (!generateText) {
+          progress.addText("Compiling in IDEA...");
+          compileAndReload();
+          progress.advance(AMOUNT_PER_MODEL);
+        }
+        addMessage(new Message(MessageKind.INFORMATION, "Generation finished"));
+        if (!generateText) {
+          showMessageView();
+        }
+
+        progress.addText("Finished.");
+
+        try {
+          Thread.sleep(200);
+        } catch (Exception e) { }
+
+        progress.finish();
       }
-    }
-
-    if (!generateText) {
-      compileAndReload();
-    }
-
-
-    getMessageView().add(new Message(MessageKind.INFORMATION, "Generation finished"));
-    if (!generateText) {
-      getMessageView().show();
-    }
+    }.start();
   }
 
   private void compileAndReload() {
@@ -161,8 +198,7 @@ public class GeneratorManager {
   }
 
   private MessageView getMessageView() {
-    MessageView messages = myProject.getComponent(MessageView.class);
-    return messages;
+    return myProject.getComponent(MessageView.class);
   }
 
 
@@ -257,20 +293,15 @@ public class GeneratorManager {
 
     Set<SModelDescriptor> models = new HashSet<SModelDescriptor>();
     SModelRepository.getInstance().readModelDescriptors(roots, models, myProject);
-//    if (generator.getTemplatesModel() == null) {
-//      return null;
-//    }
 
     for (SModelDescriptor model : models) {
       if (model.getFQName().equals(generator.getTemplatesModel().getName())) return model;
     }
-    System.err.println("Couldn't find templates model " + generator.getTemplatesModel().getName());
     getMessageView().add(new Message(MessageKind.WARNING, "Couldn't find templates model " + generator.getTemplatesModel().getName()));
     return null;
   }
 
-  private void generate_internal_new(SModelDescriptor sourceModelDescr, String generatorClassFQName, SModelDescriptor templatesModel, String outputPath, boolean generateText) {
-    System.out.println("Generating sourceModel " + sourceModelDescr.getFQName());
+  private void generate_internal_new(SModelDescriptor sourceModelDescr, String generatorClassFQName, SModelDescriptor templatesModel, String outputPath, ProgressMonitor monitor, boolean generateText) {
     IModelGenerator generator = null;
     try {
       Class cls = Class.forName(generatorClassFQName, true, ClassLoaderManager.getInstance().getClassLoader());
@@ -284,12 +315,14 @@ public class GeneratorManager {
 
     try {
       SModel targetModel = null;
+      ProgressMonitor childMonitor = monitor.startSubTask(AMOUNT_PER_MODEL);
       if (generator instanceof ITemplateGenerator) {
-        targetModel = generateByTemplateGenerator(sourceModelDescr, templatesModel.getSModel(), (ITemplateGenerator) generator);
+        targetModel = generateByTemplateGenerator(sourceModelDescr, templatesModel.getSModel(), (ITemplateGenerator) generator, childMonitor);
       } else {
         targetModel = JavaGenUtil.createTargetJavaModel(sourceModelDescr.getSModel(), JavaNameUtil.packageNameForModelFqName(sourceModelDescr.getFQName()), myProject);
-        generator.generate(sourceModelDescr.getSModel(), targetModel, ProgressMonitor.NULL_PROGRESS_MONITOR);
+        generator.generate(sourceModelDescr.getSModel(), targetModel, monitor);
       }
+      childMonitor.finish();
       if (generateText) {
         generateText(targetModel);
       } else {
@@ -300,7 +333,7 @@ public class GeneratorManager {
     }
   }
 
-  private SModel generateByTemplateGenerator(SModelDescriptor sourceModelDescr, SModel templatesModel, final ITemplateGenerator generator) {
+  private SModel generateByTemplateGenerator(SModelDescriptor sourceModelDescr, SModel templatesModel, final ITemplateGenerator generator, ProgressMonitor monitor) {
     SModel originalSourceModel = sourceModelDescr.getSModel();
     String outputModelNamespace = JavaNameUtil.packageNameForModelFqName(originalSourceModel.getFQName());
     String transientModelNamePfx = originalSourceModel.getName() + "_transient_";
@@ -312,7 +345,7 @@ public class GeneratorManager {
 
     // mapping
     System.out.println("DO MAPPING from: " + originalSourceModel.getFQName() + " to " + currentTargetModel.getFQName());
-    generator.generate(originalSourceModel, currentTargetModel, templatesModel, ProgressMonitor.NULL_PROGRESS_MONITOR);
+    generator.generate(originalSourceModel, currentTargetModel, templatesModel, monitor);
 
     // reductions...
     while (true) {
