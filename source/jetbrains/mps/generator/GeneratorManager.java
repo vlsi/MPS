@@ -92,6 +92,7 @@ public class GeneratorManager {
     getMessageView().clear();
     getMessageView().add(new Message(MessageKind.INFORMATION, null, "Generating configuration " + configuration.getName()));
 
+    
     compileAndReload();
 
     System.out.println("Generating configuration " + configuration.getName());

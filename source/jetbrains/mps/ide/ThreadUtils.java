@@ -6,7 +6,7 @@ import javax.swing.*;
  * @author Kostik
  */
 public class ThreadUtils {
-  public static void runWriterAction(Runnable r) {
+  public static void runInEventDispathThread(Runnable r) {
     if (isEventDispatchThread()) {
       r.run();
     } else {

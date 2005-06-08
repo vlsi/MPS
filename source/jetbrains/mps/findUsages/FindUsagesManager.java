@@ -1,7 +1,6 @@
 package jetbrains.mps.findUsages;
 
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.RootManager;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.ide.progress.ProgressMonitor;
 import jetbrains.mps.ide.IdeMain;
@@ -22,7 +21,7 @@ public class FindUsagesManager {
     Set<SModelDescriptor> models = scope.getModels();
     progress.start("Find Usages...", models.size());
     for (SModelDescriptor model : models) {
-      progress.setText("Finding usages in " + model.getFQName());
+      progress.addText("Finding usages in " + model.getFQName());
       result.addAll(model.findUsages(node));
       progress.advance(1);
     }
