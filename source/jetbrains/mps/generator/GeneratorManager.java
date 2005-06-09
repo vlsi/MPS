@@ -154,6 +154,11 @@ public class GeneratorManager {
           for (final SModelDescriptor model : modelsWithLanguage) {
             try {
               generate_internal_new(model, generatorClass, templatesModel, configuration.getOutputPath(), progress, generateText);
+            } catch (final GenerationCanceledException e) {
+              addMessage(new Message(MessageKind.WARNING, "generation canceled"));
+              progress.finish();
+              showMessageView();
+              return;
             } catch (final GenerationFailedException gfe) {
               System.err.println(model.getFQName() + " generation failed");
               gfe.printStackTrace();

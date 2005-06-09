@@ -135,47 +135,13 @@ public class MPSSupportHandler implements ProjectComponent {
   }
 
   public String buildProject() {
-    final Module[][] modules = new Module[1][];
-
-    ApplicationManager.getApplication().runReadAction(new Runnable() {
+    executeWriteAction(new Runnable() {
       public void run() {
-        modules[0] = ModuleManager.getInstance(myProject).getModules();
+        myProject.getComponent(CompilerManager.class).make(null);
       }
     });
-
-
-
-    Module[] mods = modules[0];
-    for (int i = 0; i < mods.length; i++) {
-      compileModule(mods[i]);
-    }
-    
     return "OK";
   }
-
-  public void compileModule(final Module m) {
-    final Object lock = new Object() { };
-    try {
-      synchronized (lock) {
-        executeWriteAction(new Runnable() {
-          public void run() {
-            CompilerManager.getInstance(myProject).make(m, new CompileStatusNotification() {
-              public void finished(boolean aborted, int errors, int warnings) {
-                synchronized(lock) {
-                  lock.notifyAll();
-                }
-              }
-            });
-          }
-        });
-        lock.wait();
-        
-      }
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
-  }
-
 
   public String getAspectMethodIds(final String namespace, final String prefix) {
     final List list = new ArrayList();
