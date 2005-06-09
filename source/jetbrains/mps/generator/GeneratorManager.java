@@ -33,7 +33,7 @@ import java.util.*;
  * @author Kostik
  */
 public class GeneratorManager {
-  private static final boolean SAVE_TRANSIENT_MODELS = false;
+  private static final boolean SAVE_TRANSIENT_MODELS = true; //false;
 
   private MPSProject myProject;
 
@@ -70,7 +70,8 @@ public class GeneratorManager {
     generate(configuration, models, false);
   }
 
-  private GeneratorConfigurationCommand createCommand(final SModel model, final String fromLanguage, final String toLanguage) {
+  private GeneratorConfigurationCommand createCommand(final SModel model, final String fromLanguage, final String toLanguage)
+  {
     GeneratorConfigurationCommand command = GeneratorConfigurationCommand.newInstance(model);
 
     jetbrains.mps.projectLanguage.Language from = jetbrains.mps.projectLanguage.Language.newInstance(model);
@@ -115,7 +116,8 @@ public class GeneratorManager {
 
   public static final int AMOUNT_PER_MODEL = 100;
 
-  public void generate(final GeneratorConfiguration configuration, final Set<SModelDescriptor> modelDescriptors, final boolean generateText) {
+  public void generate(final GeneratorConfiguration configuration, final Set<SModelDescriptor> modelDescriptors, final boolean generateText)
+  {
     new Thread() {
       {
         setPriority(Thread.MAX_PRIORITY);
@@ -310,7 +312,8 @@ public class GeneratorManager {
     return null;
   }
 
-  private void generate_internal_new(SModelDescriptor sourceModelDescr, String generatorClassFQName, SModelDescriptor templatesModel, String outputPath, ProgressMonitor monitor, boolean generateText) {
+  private void generate_internal_new(SModelDescriptor sourceModelDescr, String generatorClassFQName, SModelDescriptor templatesModel, String outputPath, ProgressMonitor monitor, boolean generateText)
+  {
     IModelGenerator generator = null;
     try {
       Class cls = Class.forName(generatorClassFQName, true, ClassLoaderManager.getInstance().getClassLoader());
@@ -342,7 +345,8 @@ public class GeneratorManager {
     }
   }
 
-  private SModel generateByTemplateGenerator(SModelDescriptor sourceModelDescr, SModel templatesModel, final ITemplateGenerator generator, ProgressMonitor monitor) {
+  private SModel generateByTemplateGenerator(SModelDescriptor sourceModelDescr, SModel templatesModel, final ITemplateGenerator generator, ProgressMonitor monitor)
+  {
     SModel originalSourceModel = sourceModelDescr.getSModel();
     String outputModelNamespace = JavaNameUtil.packageNameForModelFqName(originalSourceModel.getFQName());
     String transientModelNamePfx = originalSourceModel.getName() + "_transient_";
@@ -371,7 +375,10 @@ public class GeneratorManager {
       System.out.println("DO REDUCTION (" + iterationCount + ") from: " + currentSourceModel.getFQName() + " to " + currentTargetModel.getFQName());
       generator.doReduction(currentTargetModel);
       // next iteration ...
-      iterationCount++;
+      if (++iterationCount > 9) {
+        System.err.println("Ruduction iteration count exceeded limit (10) - stop generation.");
+        break;
+      }
       currentSourceModel = currentTargetModel;
     }
 
