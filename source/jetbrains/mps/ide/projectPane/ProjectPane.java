@@ -832,10 +832,10 @@ public class ProjectPane extends JComponent {
   private static class SemanticNodeTreeRenderer extends DefaultTreeCellRenderer {
     public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus)
     {
+      JLabel label = (JLabel) super.getTreeCellRendererComponent(tree, value, selected, expanded, leaf, row, hasFocus);
       if (value instanceof SNodeTreeNode) {
         SemanticNode semanticNode = ((SNodeTreeNode) value).getSNode();
         if (semanticNode != null) {
-          JLabel label = (JLabel) super.getTreeCellRendererComponent(tree, value, selected, expanded, leaf, row, hasFocus);
 
           //typesystem
           {
@@ -851,19 +851,16 @@ public class ProjectPane extends JComponent {
             }
           }
 
-          //icons
-          {
-            if (semanticNode instanceof ClassConcept) label.setIcon(Icons.CLASS_ICON);
-            if (semanticNode instanceof Interface) label.setIcon(Icons.INTERFACE_ICON);
-            if (semanticNode instanceof FieldDeclaration || semanticNode instanceof StaticFieldDeclaration) label.setIcon(Icons.FIELD_ICON);
-            if (semanticNode instanceof BaseMethodDeclaration) label.setIcon(Icons.METHOD_ICON);
-          }
-
-          return label;
+          label.setIcon(NodeIcons.getIconFor(semanticNode));
+        }
+      } else {
+        if (expanded) {
+          label.setIcon(Icons.OPENED_FOLDER);
+        } else {
+          label.setIcon(Icons.CLOSED_FOLDER);
         }
       }
-
-      return super.getTreeCellRendererComponent(tree, value, selected, expanded, leaf, row, hasFocus);
+      return label;
     }
   }
 
