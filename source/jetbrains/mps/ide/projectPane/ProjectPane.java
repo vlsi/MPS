@@ -721,7 +721,7 @@ public class ProjectPane extends JComponent {
         fqName = "<font color=\"#000090\">" + fqName + "</font>";
       }
 
-      if (myProject.getComponent(RootManager.class).isImported(myModelDescriptor)) {
+      if (isImported()) {
         fqName = fqName + " <b>(imported)</b>";
       }
 
@@ -729,6 +729,10 @@ public class ProjectPane extends JComponent {
         return "<html><b>" + myLabel + "</b> : " + fqName;
       }
       return "<html>" + fqName;
+    }
+
+    private boolean isImported() {
+      return myProject.getComponent(RootManager.class).isImported(myModelDescriptor);
     }
 
     public boolean initialized() {
@@ -860,6 +864,7 @@ public class ProjectPane extends JComponent {
           label.setIcon(Icons.CLOSED_FOLDER);
         }
       }
+
       return label;
     }
   }
