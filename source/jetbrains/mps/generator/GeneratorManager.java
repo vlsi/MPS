@@ -33,7 +33,7 @@ import java.util.*;
  * @author Kostik
  */
 public class GeneratorManager {
-  private static final boolean SAVE_TRANSIENT_MODELS = true; //false;
+  private static final boolean SAVE_TRANSIENT_MODELS = false;
 
   private MPSProject myProject;
 
