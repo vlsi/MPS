@@ -16,21 +16,24 @@ public class FindUsagesManager {
   }
 
   public Set<SemanticReference> findUsages(SemanticNode node, Scope scope, ProgressMonitor progress) {
-    if (progress == null) progress = ProgressMonitor.NULL_PROGRESS_MONITOR;
-    Set<SemanticReference> result = new HashSet<SemanticReference>();
-    Set<SModelDescriptor> models = scope.getModels();
-    progress.start("Find Usages...", models.size());
-    progress.addText("Finding usages...");
-    for (SModelDescriptor model : models) {
-      result.addAll(model.findUsages(node));
-      if (progress.isCanceled()) {
-        progress.finish();
-        return result;
+    Set<SemanticReference> result;
+    try {
+      if (progress == null) progress = ProgressMonitor.NULL_PROGRESS_MONITOR;
+      result = new HashSet<SemanticReference>();
+      Set<SModelDescriptor> models = scope.getModels();
+      progress.start("Find Usages...", models.size());
+      progress.addText("Finding usages...");
+      for (SModelDescriptor model : models) {
+        result.addAll(model.findUsages(node));
+        if (progress.isCanceled()) {
+          return result;
+        }
+        progress.advance(1);
       }
-      progress.advance(1);
+      return result;
+    } finally {
+      progress.finish();
     }
-    progress.finish();
-    return result;
   }
 
 
