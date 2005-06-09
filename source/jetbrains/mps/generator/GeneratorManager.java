@@ -124,70 +124,72 @@ public class GeneratorManager {
       public void run() {
         ProgressMonitor progress = new ProgressWindowProgressMonitor(false);
 
-        int modelCount = 0;
-        for (GeneratorConfigurationCommand cmd : CollectionUtil.iteratorAsIterable(configuration.commands())) {
-          modelCount += findModelsWithLanguage(modelDescriptors, cmd.getSourceLanguage().getName()).size();
-        }
-
-        int ideaCompilations = 0;
-        if (generateText) {
-          ideaCompilations = 1;
-        } else {
-          ideaCompilations = 2;
-        }
-
-        progress.start("Generating", (modelCount + ideaCompilations) * AMOUNT_PER_MODEL);
-
-        clearMessages();
-        addMessage(new Message(MessageKind.INFORMATION, null, "Generating configuration " + configuration.getName()));
-
-        progress.addText("Compiling in IDEA...");
-        compileAndReload();
-        progress.advance(AMOUNT_PER_MODEL);
-
-
-        for (GeneratorConfigurationCommand cmd : CollectionUtil.iteratorAsIterable(configuration.commands())) {
-          Set<SModelDescriptor> modelsWithLanguage = findModelsWithLanguage(modelDescriptors, cmd.getSourceLanguage().getName());
-          Generator generator = findGenerator(cmd.getSourceLanguage().getName(), cmd.getTargetLanguage().getName());
-          for (Root r : CollectionUtil.iteratorAsIterable(generator.languages())) {
-            myProject.getComponent(RootManager.class).readLanguageDescriptors(new File(r.getPath()));
+        try {
+          int modelCount = 0;
+          for (GeneratorConfigurationCommand cmd : CollectionUtil.iteratorAsIterable(configuration.commands())) {
+            modelCount += findModelsWithLanguage(modelDescriptors, cmd.getSourceLanguage().getName()).size();
           }
-          String generatorClass = findGeneratorClass(generator);
-          if (generatorClass == null) generatorClass = DefaultTemplateGenerator.class.getName();
-          SModelDescriptor templatesModel = loadTemplatesModel(generator);
-          for (final SModelDescriptor model : modelsWithLanguage) {
-            try {
-              generate_internal_new(model, generatorClass, templatesModel, configuration.getOutputPath(), progress, generateText);
-            } catch (final GenerationCanceledException e) {
-              addMessage(new Message(MessageKind.WARNING, "generation canceled"));
-              progress.addText("Generation canceled");
-              progress.finish();
-              showMessageView();
-              return;
-            } catch (final GenerationFailedException gfe) {
-              System.err.println(model.getFQName() + " generation failed");
-              gfe.printStackTrace();
-              addMessage(new Message(MessageKind.ERROR, model.getFQName() + " model generation failed"));
-              showMessageView();
-              return;
-            } catch (Exception e) {
-              e.printStackTrace();
-            }
-            addMessage(new Message(MessageKind.INFORMATION, model.getFQName() + " model is generated"));
+
+          int ideaCompilations = 0;
+          if (generateText) {
+            ideaCompilations = 1;
+          } else {
+            ideaCompilations = 2;
           }
-        }
-        if (!generateText) {
+
+          progress.start("Generating", (modelCount + ideaCompilations) * AMOUNT_PER_MODEL);
+
+          clearMessages();
+          addMessage(new Message(MessageKind.INFORMATION, null, "Generating configuration " + configuration.getName()));
+
           progress.addText("Compiling in IDEA...");
           compileAndReload();
           progress.advance(AMOUNT_PER_MODEL);
-        }
-        addMessage(new Message(MessageKind.INFORMATION, "Generation finished"));
-        if (!generateText) {
-          showMessageView();
-        }
 
-        progress.addText("Finished.");
-        progress.finish();
+
+          for (GeneratorConfigurationCommand cmd : CollectionUtil.iteratorAsIterable(configuration.commands())) {
+            Set<SModelDescriptor> modelsWithLanguage = findModelsWithLanguage(modelDescriptors, cmd.getSourceLanguage().getName());
+            Generator generator = findGenerator(cmd.getSourceLanguage().getName(), cmd.getTargetLanguage().getName());
+            for (Root r : CollectionUtil.iteratorAsIterable(generator.languages())) {
+              myProject.getComponent(RootManager.class).readLanguageDescriptors(new File(r.getPath()));
+            }
+            String generatorClass = findGeneratorClass(generator);
+            if (generatorClass == null) generatorClass = DefaultTemplateGenerator.class.getName();
+            SModelDescriptor templatesModel = loadTemplatesModel(generator);
+            for (final SModelDescriptor model : modelsWithLanguage) {
+              try {
+                generate_internal_new(model, generatorClass, templatesModel, configuration.getOutputPath(), progress, generateText);
+              } catch (final GenerationCanceledException e) {
+                addMessage(new Message(MessageKind.WARNING, "generation canceled"));
+                progress.addText("Generation canceled");
+                showMessageView();
+                return;
+              } catch (final GenerationFailedException gfe) {
+                System.err.println(model.getFQName() + " generation failed");
+                gfe.printStackTrace();
+                addMessage(new Message(MessageKind.ERROR, model.getFQName() + " model generation failed"));
+                showMessageView();
+                return;
+              } catch (Exception e) {
+                e.printStackTrace();
+              }
+              addMessage(new Message(MessageKind.INFORMATION, model.getFQName() + " model is generated"));
+            }
+          }
+          if (!generateText) {
+            progress.addText("Compiling in IDEA...");
+            compileAndReload();
+            progress.advance(AMOUNT_PER_MODEL);
+          }
+          addMessage(new Message(MessageKind.INFORMATION, "Generation finished"));
+          if (!generateText) {
+            showMessageView();
+          }
+
+          progress.addText("Finished.");
+        } finally {
+          progress.finish();
+        }
       }
     }.start();
   }
