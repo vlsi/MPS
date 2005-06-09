@@ -118,7 +118,7 @@ public class GeneratorManager {
   public void generate(final GeneratorConfiguration configuration, final Set<SModelDescriptor> modelDescriptors, final boolean generateText) {
     new Thread() {
       public void run() {
-        ProgressMonitor progress = new ProgressWindowProgressMonitor();
+        ProgressMonitor progress = new ProgressWindowProgressMonitor(false);
 
         int modelCount = 0;
         for (GeneratorConfigurationCommand cmd : CollectionUtil.iteratorAsIterable(configuration.commands())) {
@@ -175,11 +175,6 @@ public class GeneratorManager {
         }
 
         progress.addText("Finished.");
-
-        try {
-          Thread.sleep(200);
-        } catch (Exception e) { }
-
         progress.finish();
       }
     }.start();

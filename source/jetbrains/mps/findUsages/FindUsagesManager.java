@@ -23,6 +23,7 @@ public class FindUsagesManager {
     progress.addText("Finding usages...");
     for (SModelDescriptor model : models) {
       result.addAll(model.findUsages(node));
+      if (progress.isCanceled()) return result;
       progress.advance(1);
     }
     progress.finish();
