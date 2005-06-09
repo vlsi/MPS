@@ -40,7 +40,7 @@ public class MemoryIndicator extends JPanel {
       }
     }) {
       public Dimension getPreferredSize() {
-        return new Dimension(50, myMemoryLabel.getPreferredSize().height);
+        return new Dimension(super.getPreferredSize().width, myMemoryLabel.getPreferredSize().height);
       }
 
     }, BorderLayout.EAST);
