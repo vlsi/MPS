@@ -11,6 +11,8 @@ public class Icons {
   public static final Icon METHOD_ICON = new ImageIcon(Icons.class.getResource("nodes/method.png"));
   public static final Icon FIELD_ICON = new ImageIcon(Icons.class.getResource("nodes/field.png"));
   public static final Icon DEFAULT_ICON = new ImageIcon(Icons.class.getResource("nodes/default.png"));
+  public static final Icon STRUCTURE_ICON = new ImageIcon(Icons.class.getResource("nodes/structure.png"));
+  public static final Icon ENUM_ICON = new ImageIcon(Icons.class.getResource("nodes/enum.png"));
 
   public static final Icon OPENED_FOLDER = new ImageIcon(Icons.class.getResource("other/openedFolder.png"));
   public static final Icon CLOSED_FOLDER = new ImageIcon(Icons.class.getResource("other/closedFolder.png"));
