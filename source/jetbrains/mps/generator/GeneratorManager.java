@@ -117,6 +117,10 @@ public class GeneratorManager {
 
   public void generate(final GeneratorConfiguration configuration, final Set<SModelDescriptor> modelDescriptors, final boolean generateText) {
     new Thread() {
+      {
+        setPriority(Thread.MAX_PRIORITY);
+      }
+
       public void run() {
         ProgressMonitor progress = new ProgressWindowProgressMonitor(false);
 
