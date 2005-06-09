@@ -74,16 +74,13 @@ public class TemplateGenUtil {
       //test
 
       // dump builders info
-      StringBuffer buildersStack = new StringBuffer("    builders stack:\n");
-      String indent = "\n    ";
+      StringBuffer buildersStack = new StringBuffer("    builders stack:");
+      String indent = "\n        ";
       INodeBuilder currBuilder = nodeBuilder;
-
-
-      
-
       while (currBuilder != null) {
         buildersStack.append(indent);
         buildersStack.append(currBuilder.getTemplateNode().getDebugText());
+        buildersStack.append(" (builder:" + currBuilder.getClass().getName() + ")");
         indent += "    ";
         currBuilder = currBuilder.getParent();
       }
