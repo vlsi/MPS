@@ -23,8 +23,7 @@ import jetbrains.mps.projectLanguage.GeneratorConfiguration;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.baseLanguage.ClassConcept;
-import jetbrains.mps.baseLanguage.Interface;
+import jetbrains.mps.baseLanguage.*;
 
 import javax.swing.*;
 import javax.swing.event.TreeExpansionEvent;
@@ -856,7 +855,8 @@ public class ProjectPane extends JComponent {
           {
             if (semanticNode instanceof ClassConcept) label.setIcon(Icons.CLASS_ICON);
             if (semanticNode instanceof Interface) label.setIcon(Icons.INTERFACE_ICON);
-
+            if (semanticNode instanceof FieldDeclaration || semanticNode instanceof StaticFieldDeclaration) label.setIcon(Icons.FIELD_ICON);
+            if (semanticNode instanceof BaseMethodDeclaration) label.setIcon(Icons.METHOD_ICON);
           }
 
           return label;
