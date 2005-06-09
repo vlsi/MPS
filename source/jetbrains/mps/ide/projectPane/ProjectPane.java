@@ -23,6 +23,8 @@ import jetbrains.mps.projectLanguage.GeneratorConfiguration;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.baseLanguage.ClassConcept;
+import jetbrains.mps.baseLanguage.Interface;
 
 import javax.swing.*;
 import javax.swing.event.TreeExpansionEvent;
@@ -834,28 +836,30 @@ public class ProjectPane extends JComponent {
       if (value instanceof SNodeTreeNode) {
         SemanticNode semanticNode = ((SNodeTreeNode) value).getSNode();
         if (semanticNode != null) {
+          JLabel label = (JLabel) super.getTreeCellRendererComponent(tree, value, selected, expanded, leaf, row, hasFocus);
+
           //typesystem
           {
             IStatus status = (IStatus) semanticNode.getUserObject(SemanticNode.ERROR_STATUS);
             if (status != null && status.isError()) {
-              JLabel label = (JLabel) super.getTreeCellRendererComponent(tree, value, selected, expanded, leaf, row, hasFocus);
               label.setForeground(Color.red);
-              return label;
             } else {
               status = (IStatus) semanticNode.getUserObject(SemanticNode.CHILDREN_ERROR_STATUS);
               if (status != null && status.isError()) {
-                JLabel label = (JLabel) super.getTreeCellRendererComponent(tree, value, selected, expanded, leaf, row, hasFocus);
                 label.setForeground(Color.red);
                 label.setText(label.getText() + " (" + status.getMessage() + ")");
-                return label;
               }
             }
           }
 
           //icons
           {
+            if (semanticNode instanceof ClassConcept) label.setIcon(Icons.CLASS_ICON);
+            if (semanticNode instanceof Interface) label.setIcon(Icons.INTERFACE_ICON);
 
           }
+
+          return label;
         }
       }
 
