@@ -156,6 +156,7 @@ public class GeneratorManager {
               generate_internal_new(model, generatorClass, templatesModel, configuration.getOutputPath(), progress, generateText);
             } catch (final GenerationCanceledException e) {
               addMessage(new Message(MessageKind.WARNING, "generation canceled"));
+              progress.addText("Generation canceled");
               progress.finish();
               showMessageView();
               return;
@@ -165,6 +166,8 @@ public class GeneratorManager {
               addMessage(new Message(MessageKind.ERROR, model.getFQName() + " model generation failed"));
               showMessageView();
               return;
+            } catch (Exception e) {
+              e.printStackTrace();
             }
             addMessage(new Message(MessageKind.INFORMATION, model.getFQName() + " model is generated"));
           }
