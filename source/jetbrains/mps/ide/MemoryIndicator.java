@@ -46,7 +46,7 @@ public class MemoryIndicator extends JPanel {
     }, BorderLayout.EAST);
   }
 
-  private void updateMemory() {
+  private void updateMemory() {               
     Runtime runtime = Runtime.getRuntime();
     myTotalMemory = runtime.totalMemory() / MEGABYTE;
     myUsedMemeory = myTotalMemory - runtime.freeMemory() / MEGABYTE;
