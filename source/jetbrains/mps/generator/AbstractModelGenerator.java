@@ -21,14 +21,6 @@ public abstract class AbstractModelGenerator implements IModelGenerator {
   private SModel mySourceModel;
   private SModel myTargetModel;
 
-//  /**
-//   * @deprecated
-//   */
-//  protected AbstractModelGenerator(SModel sourceModel, MPSProject project) {
-//    mySourceModel = sourceModel;
-//    myProject = project;
-//  }
-
   protected AbstractModelGenerator(MPSProject project) {
     myProject = project;
   }

@@ -51,4 +51,7 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   TemplateDeclaration getTemplateForSwitch(SemanticNode sourceNode, TemplateSwitch templateSwitch);
 
+  void showInformationMessage(SemanticNode node, String message);
+
+  void showErrorMessage(SemanticNode node, String message);
 }
