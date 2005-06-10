@@ -27,7 +27,7 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   void reset();
 
-  void generate(SModel sourceModel, SModel targetModel, SModel templatesModel, ProgressMonitor progressMonitor) throws GenerationFailedException;
+  void generate(SModel sourceModel, SModel targetModel, SModel templatesModel) throws GenerationFailedException;
 
   int setupReduction(SModel sourceModel, SModel templatesModel);
 

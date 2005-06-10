@@ -312,12 +312,15 @@ public class GeneratorManager {
     return null;
   }
 
-  private void generate_internal_new(SModelDescriptor sourceModelDescr, String generatorClassFQName, SModelDescriptor templatesModel, String outputPath, ProgressMonitor monitor, boolean generateText)
-  {
+  private void generate_internal_new(SModelDescriptor sourceModelDescr, String generatorClassFQName, SModelDescriptor templatesModel, String outputPath, ProgressMonitor monitor, boolean generateText) {
     IModelGenerator generator = null;
     try {
       Class cls = Class.forName(generatorClassFQName, true, ClassLoaderManager.getInstance().getClassLoader());
-      generator = (IModelGenerator) cls.getConstructor(MPSProject.class).newInstance(myProject);
+      if (ITemplateGenerator.class.isAssignableFrom(cls)) {
+        generator = (ITemplateGenerator) cls.getConstructor(MPSProject.class, ProgressMonitor.class).newInstance(myProject, monitor);
+      } else {
+        generator = (IModelGenerator) cls.getConstructor(MPSProject.class).newInstance(myProject);
+      }
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -327,14 +330,14 @@ public class GeneratorManager {
 
     try {
       SModel targetModel = null;
-      ProgressMonitor childMonitor = monitor.startSubTask(AMOUNT_PER_MODEL);
       if (generator instanceof ITemplateGenerator) {
-        targetModel = generateByTemplateGenerator(sourceModelDescr, templatesModel.getSModel(), (ITemplateGenerator) generator, childMonitor);
+        targetModel = generateByTemplateGenerator(sourceModelDescr, templatesModel.getSModel(), (ITemplateGenerator) generator);
       } else {
+        ProgressMonitor childMonitor = monitor.startSubTask(AMOUNT_PER_MODEL);
         targetModel = JavaGenUtil.createTargetJavaModel(sourceModelDescr.getSModel(), JavaNameUtil.packageNameForModelFqName(sourceModelDescr.getFQName()), myProject);
         generator.generate(sourceModelDescr.getSModel(), targetModel, monitor);
+        childMonitor.finish();
       }
-      childMonitor.finish();
       if (generateText) {
         generateText(targetModel);
       } else {
@@ -345,7 +348,7 @@ public class GeneratorManager {
     }
   }
 
-  private SModel generateByTemplateGenerator(SModelDescriptor sourceModelDescr, SModel templatesModel, final ITemplateGenerator generator, ProgressMonitor monitor)
+  private SModel generateByTemplateGenerator(SModelDescriptor sourceModelDescr, SModel templatesModel, final ITemplateGenerator generator)
   {
     SModel originalSourceModel = sourceModelDescr.getSModel();
     String outputModelNamespace = JavaNameUtil.packageNameForModelFqName(originalSourceModel.getFQName());
@@ -358,7 +361,7 @@ public class GeneratorManager {
 
     // mapping
     System.out.println("DO MAPPING from: " + originalSourceModel.getFQName() + " to " + currentTargetModel.getFQName());
-    generator.generate(originalSourceModel, currentTargetModel, templatesModel, monitor);
+    generator.generate(originalSourceModel, currentTargetModel, templatesModel);
 
     // reductions...
     while (true) {
