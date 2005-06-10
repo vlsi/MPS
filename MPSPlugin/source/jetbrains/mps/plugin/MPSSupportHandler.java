@@ -135,11 +135,29 @@ public class MPSSupportHandler implements ProjectComponent {
   }
 
   public String buildProject() {
-    executeWriteAction(new Runnable() {
-      public void run() {
-        myProject.getComponent(CompilerManager.class).make(null);
+    final Object lock = new Object() { };
+    synchronized(lock) {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+          public void run() {
+            ApplicationManager.getApplication().runWriteAction(new Runnable() {
+              public void run() {
+                myProject.getComponent(CompilerManager.class).make(new CompileStatusNotification() {
+                  public void finished(boolean aborted, int errors, int warnings) {
+                    synchronized(lock) {
+                      lock.notifyAll();
+                    }
+                  }
+                });
+              }
+            });
+          }
+      });
+      try {
+        lock.wait();
+      } catch (InterruptedException e) {
+        e.printStackTrace();
       }
-    });
+    }
     return "OK";
   }
 
