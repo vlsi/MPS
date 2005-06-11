@@ -721,10 +721,6 @@ public class ProjectPane extends JComponent {
         fqName = "<font color=\"#000090\">" + fqName + "</font>";
       }
 
-      if (isImported()) {
-        fqName = fqName + " <b>(imported)</b>";
-      }
-
       if (myLabel != null) {
         return "<html><b>" + myLabel + "</b> : " + fqName;
       }
@@ -837,6 +833,13 @@ public class ProjectPane extends JComponent {
     public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus)
     {
       JLabel label = (JLabel) super.getTreeCellRendererComponent(tree, value, selected, expanded, leaf, row, hasFocus);
+
+      if (expanded) {
+        label.setIcon(Icons.OPENED_FOLDER);
+      } else {
+        label.setIcon(Icons.CLOSED_FOLDER);
+      }
+
       if (value instanceof SNodeTreeNode) {
         SemanticNode semanticNode = ((SNodeTreeNode) value).getSNode();
         if (semanticNode != null) {
@@ -857,11 +860,15 @@ public class ProjectPane extends JComponent {
 
           label.setIcon(NodeIcons.getIconFor(semanticNode));
         }
-      } else {
-        if (expanded) {
-          label.setIcon(Icons.OPENED_FOLDER);
-        } else {
-          label.setIcon(Icons.CLOSED_FOLDER);
+      } else if (value instanceof SModelTreeNode) {
+        SModelTreeNode node = (SModelTreeNode) value;
+
+        if (node.isImported()) {
+          if (expanded) {
+            label.setIcon(Icons.JDK_OPENED_FOLDER);
+          } else {
+            label.setIcon(Icons.JDK_CLOSED_FOLDER);
+          }
         }
       }
 
