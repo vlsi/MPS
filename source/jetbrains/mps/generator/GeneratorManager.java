@@ -120,7 +120,7 @@ public class GeneratorManager {
   {
     new Thread() {
       {
-        setPriority(Thread.MAX_PRIORITY);
+        setPriority(Thread.MIN_PRIORITY);
       }
 
       public void run() {
