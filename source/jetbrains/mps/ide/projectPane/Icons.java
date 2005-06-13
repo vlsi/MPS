@@ -17,6 +17,7 @@ public class Icons {
   public static final Icon TEMPLATE_ICON = new ImageIcon(Icons.class.getResource("nodes/template.png"));
   public static final Icon MAPPING_ICON = new ImageIcon(Icons.class.getResource("nodes/mapping.png"));
   public static final Icon SWITCH_ICON = new ImageIcon(Icons.class.getResource("nodes/switch.png"));
+  public static final Icon MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/model.png"));
 
   public static final Icon OPENED_FOLDER = new ImageIcon(Icons.class.getResource("other/openedFolder.png"));
   public static final Icon CLOSED_FOLDER = new ImageIcon(Icons.class.getResource("other/closedFolder.png"));
