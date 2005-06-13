@@ -144,7 +144,7 @@ public class GeneratorManager {
           clearMessages();
           addMessage(new Message(MessageKind.INFORMATION, null, "Generating configuration " + configuration.getName()));
 
-          progress.addText("Compiling in IDEA...");
+          progress.addText("Compiling in IntelliJ IDEA...");
           compileAndReload();
           progress.advance(AMOUNT_PER_MODEL);
 
@@ -179,7 +179,7 @@ public class GeneratorManager {
             }
           }
           if (!generateText) {
-            progress.addText("Compiling in IDEA...");
+            progress.addText("Compiling in IntelliJ IDEA...");
             compileAndReload();
             progress.advance(AMOUNT_PER_MODEL);
           }
