@@ -10,15 +10,15 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.core.BaseConcept;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.diagnostic.Logger;
-import jetbrains.mps.ide.messages.MessageView;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
+import jetbrains.mps.ide.messages.MessageView;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.*;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.AspectMethod;
-import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -68,6 +68,7 @@ public class TemplateGenUtil {
         continue;
       }
 
+      nodeBuilder.getGenerator().showErrorMessage(templateNode, "Couldn't resolve template reference \"" + templateReference.getRole() + "\"");
       //test
       System.out.println("uhhh! error. set breakpoint here, referenceResolver:" + referenceResolver);
       referenceResolver.resolveTarget(templateReference, nodeBuilder);
@@ -330,6 +331,21 @@ public class TemplateGenUtil {
         list.add(srcNodeToCopy);
       }
       return list;
+    } else if (nodeMacro instanceof IfMacro) {
+      IfMacro ifMacro = (IfMacro) nodeMacro;
+      String conditionAspectId = ifMacro.getConditionAspectId();
+      if (conditionAspectId == null) {
+        generator.showErrorMessage(nodeMacro, "Condition is not defined");
+      } else {
+        String methodName = "semanticNodeCondition_" + conditionAspectId;
+        Object[] args = new Object[]{parentSourceNode};
+        Boolean conditionStatus = (Boolean) AspectMethod.invoke(methodName, args, nodeMacro.getModel());
+        List<SemanticNode> sourceNodes = new LinkedList<SemanticNode>();
+        if (conditionStatus) {
+          sourceNodes.add(parentSourceNode);
+        }
+        return sourceNodes;
+      }
     }
 
     if (nodeMacro != null) {

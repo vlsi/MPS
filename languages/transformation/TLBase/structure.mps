@@ -288,5 +288,21 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1107214812281" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1118773211870">
+    <property name="name" value="IfMacro" />
+    <link role="extends" targetNodeId="1087833466690" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1118773211871">
+      <property name="value" value="IF" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1118773211872">
+      <property name="value" value="conditional macro" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1107214812281" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1118773281249">
+      <property name="name" value="conditionAspectId" />
+      <link role="dataType" targetNodeId="2.1082983041843" />
+    </node>
+  </node>
 </model>
 
