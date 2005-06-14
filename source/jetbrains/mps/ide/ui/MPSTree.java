@@ -3,13 +3,13 @@ package jetbrains.mps.ide.ui;
 import org.jdom.Element;
 
 import javax.swing.*;
-import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.DefaultTreeModel;
-import javax.swing.tree.TreePath;
-import javax.swing.tree.TreeNode;
+import javax.swing.tree.*;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Enumeration;
+import java.awt.*;
+
+import jetbrains.mps.ide.projectPane.Icons;
 
 /**
  * @author Kostik
@@ -21,6 +21,19 @@ public abstract class MPSTree extends JTree {
   public static final String EXPANSION = "expansion";
 
   public static final String TREE_PATH_SEPARATOR = "/";
+
+  protected MPSTree() {
+    setCellRenderer(new DefaultTreeCellRenderer() {
+      public Component getTreeCellRendererComponent(JTree tree, Object value, boolean sel, boolean expanded, boolean leaf, int row, boolean hasFocus) {
+        super.getTreeCellRendererComponent(tree, value, sel, expanded, leaf, row, hasFocus);
+        if (value instanceof MPSTreeNode) {
+          MPSTreeNode node = (MPSTreeNode) value;
+          setIcon(node.getIcon(expanded));
+        }        
+        return this;
+      }
+    });
+  }
 
   protected void selectNode(TreeNode node) {
     List<TreeNode> nodes = new ArrayList<TreeNode>();
@@ -165,6 +178,13 @@ public abstract class MPSTree extends JTree {
     public void init() {
     }
 
+    public Icon getIcon(boolean expanded) {
+      if (expanded) {
+        return Icons.OPENED_FOLDER;
+      } else {
+        return Icons.CLOSED_FOLDER;
+      }
+    }
 
     public String toString() {
       return getNodeIdentifier();

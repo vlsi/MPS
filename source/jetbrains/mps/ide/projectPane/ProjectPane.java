@@ -53,7 +53,6 @@ public class ProjectPane extends JComponent {
     myIDE = ide;
     setLayout(new BorderLayout());
 
-    myTree.setCellRenderer(new SemanticNodeTreeRenderer());
     new TreeWithSemanticNodesSpeedSearch(myTree);
 
     myHeader = new HeaderWrapper("Project", new JScrollPane(myTree));
@@ -615,6 +614,10 @@ public class ProjectPane extends JComponent {
     public ProjectTreeNode() {
     }
 
+    public Icon getIcon(boolean expanded) {
+      return Icons.PROJECT_ICON;
+    }
+
     protected String getNodeIdentifier() {
       return "Project";
     }
@@ -641,6 +644,10 @@ public class ProjectPane extends JComponent {
   private class LibraryModelsTreeNode extends MPSTree.TextTreeNode {
     public LibraryModelsTreeNode() {
       super("Library Models");
+    }
+
+    public Icon getIcon(boolean expanded) {
+      return Icons.LIB_ICON;
     }
   }
 
@@ -670,8 +677,17 @@ public class ProjectPane extends JComponent {
       return getSNode().getModel();
     }
 
+    public Icon getIcon(boolean expanded) {
+      if (myNodeReference.getNode() != null) {
+        return IconManager.getIconFor(myNodeReference.getNode());
+      } else {
+        return super.getIcon(expanded);
+      }
+    }
+
     public String toString() {
       StringBuffer output = new StringBuffer("<html>");
+
       if (myRole != null) {
         output.append("<b>" + myRole + "</b> : ");
       }
@@ -679,6 +695,20 @@ public class ProjectPane extends JComponent {
       if (getSNode() != null) {
         output.append(getSNode().toString());
       }
+
+      if (getSNode() != null) {
+        IStatus status = (IStatus) getSNode().getUserObject(SemanticNode.ERROR_STATUS);
+        if (status != null && status.isError()) {
+          output.append("<font color=\"red\">");
+        } else {
+          status = (IStatus) getSNode().getUserObject(SemanticNode.CHILDREN_ERROR_STATUS);
+          if (status != null && status.isError()) {
+            output.append("<font color=\"red\">");
+            output.append(" (" + status.getMessage() + ")");
+          }
+        }
+      }
+
       return output.toString();
     }
   }
@@ -695,6 +725,10 @@ public class ProjectPane extends JComponent {
 
     public SModelTreeNode(SModelDescriptor modelDescriptor) {
       this(modelDescriptor, null);
+    }
+
+    public Icon getIcon(boolean expanded) {
+      return Icons.MODEL_ICON;
     }
 
     public SModel getSModel() {
@@ -787,6 +821,10 @@ public class ProjectPane extends JComponent {
       myLanguage = language;
     }
 
+    public Icon getIcon(boolean expanded) {
+      return Icons.PROJECT_LANGUAGE_ICON;
+    }
+
     public Language getLanguage() {
       return myLanguage;
     }
@@ -811,6 +849,10 @@ public class ProjectPane extends JComponent {
       myLanguage = language;
     }
 
+    public Icon getIcon(boolean expanded) {
+      return Icons.LANGUAGE_ICON;
+    }
+
     protected String getNodeIdentifier() {
       return myLanguage.getNamespace();
     }
@@ -830,56 +872,44 @@ public class ProjectPane extends JComponent {
     }
   }
 
-  private static class SemanticNodeTreeRenderer extends DefaultTreeCellRenderer {
-    public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus)
-    {
-      JLabel label = (JLabel) super.getTreeCellRendererComponent(tree, value, selected, expanded, leaf, row, hasFocus);
-
-      if (expanded) {
-        label.setIcon(Icons.OPENED_FOLDER);
-      } else {
-        label.setIcon(Icons.CLOSED_FOLDER);
-      }
-
-      if (value instanceof SNodeTreeNode) {
-        SemanticNode semanticNode = ((SNodeTreeNode) value).getSNode();
-        if (semanticNode != null) {
-
-          //typesystem
-          {
-            IStatus status = (IStatus) semanticNode.getUserObject(SemanticNode.ERROR_STATUS);
-            if (status != null && status.isError()) {
-              label.setForeground(Color.red);
-            } else {
-              status = (IStatus) semanticNode.getUserObject(SemanticNode.CHILDREN_ERROR_STATUS);
-              if (status != null && status.isError()) {
-                label.setForeground(Color.red);
-                label.setText(label.getText() + " (" + status.getMessage() + ")");
-              }
-            }
-          }
-
-          label.setIcon(IconManager.getIconFor(semanticNode));
-        }
-      } else if (value instanceof SModelTreeNode) {
-        SModelTreeNode node = (SModelTreeNode) value;
-        label.setIcon(Icons.MODEL_ICON);
-
-        if (node.isImported()) {
-          label.setIcon(Icons.createMarkedIcon(label.getIcon(), Icons.JAVA_ICON));
-        }
-
-      } else if (value instanceof LanguageTreeNode) {
-        label.setIcon(Icons.LANGUAGE_ICON);
-      } else if (value instanceof ProjectLanguageTreeNode) {
-        label.setIcon(Icons.PROJECT_LANGUAGE_ICON);
-      } else if (value instanceof LibraryModelsTreeNode) {
-        label.setIcon(Icons.LIB_ICON);
-      }
-
-      return label;
-    }
-  }
+//  private static class SemanticNodeTreeRenderer extends DefaultTreeCellRenderer {
+//    public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus)
+//    {
+//      JLabel label = (JLabel) super.getTreeCellRendererComponent(tree, value, selected, expanded, leaf, row, hasFocus);
+//
+//      if (expanded) {
+//        label.setIcon(Icons.OPENED_FOLDER);
+//      } else {
+//        label.setIcon(Icons.CLOSED_FOLDER);
+//      }
+//
+//      if (value instanceof SNodeTreeNode) {
+//        SemanticNode semanticNode = ((SNodeTreeNode) value).getSNode();
+//        if (semanticNode != null) {
+//
+//          typesystem
+//
+//          label.setIcon(IconManager.getIconFor(semanticNode));
+//        }
+//      } else if (value instanceof SModelTreeNode) {
+//        SModelTreeNode node = (SModelTreeNode) value;
+//        label.setIcon(Icons.MODEL_ICON);
+//
+//        if (node.isImported()) {
+//          label.setIcon(Icons.createMarkedIcon(label.getIcon(), Icons.JAVA_ICON));
+//        }
+//
+//      } else if (value instanceof LanguageTreeNode) {
+//        label.setIcon(Icons.LANGUAGE_ICON);
+//      } else if (value instanceof ProjectLanguageTreeNode) {
+//        label.setIcon(Icons.PROJECT_LANGUAGE_ICON);
+//      } else if (value instanceof LibraryModelsTreeNode) {
+//        label.setIcon(Icons.LIB_ICON);
+//      }
+//
+//      return label;
+//    }
+//  }
 
   private class MyTree extends MPSTree {
     private Set<SModelTreeNode> mySModelTreeNodes = new HashSet<SModelTreeNode>();
@@ -997,7 +1027,11 @@ public class ProjectPane extends JComponent {
         addNodeIfModelNotNull(node, actionsModelDescriptor, "Actions");
       }
 
-      TextTreeNode libraries = new TextTreeNode("<html><b>Library Models</b>");
+      TextTreeNode libraries = new TextTreeNode("<html><b>Library Models</b>") {
+        public Icon getIcon(boolean expanded) {
+          return Icons.LIB_ICON;
+        }
+      };
       List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
       for (SModelDescriptor model : CollectionUtil.iteratorAsIterable(language.libraryModels())) {
         models.add(model);
@@ -1020,7 +1054,11 @@ public class ProjectPane extends JComponent {
       addNodeIfModelNotNull(node, language.getActionsModelDescriptor(), "Actions");
 
 
-      TextTreeNode libraries = new TextTreeNode("<html><b>Library Models</b>");
+      TextTreeNode libraries = new TextTreeNode("<html><b>Library Models</b>") {
+        public Icon getIcon(boolean expanded) {
+          return Icons.LIB_ICON;
+        }
+      };
 
       List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
       Iterator<SModelDescriptor> libraryModelIterator = language.libraryModels();
