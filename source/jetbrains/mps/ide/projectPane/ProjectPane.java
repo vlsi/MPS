@@ -872,6 +872,8 @@ public class ProjectPane extends JComponent {
         label.setIcon(Icons.LANGUAGE_ICON);
       } else if (value instanceof ProjectLanguageTreeNode) {
         label.setIcon(Icons.PROJECT_LANGUAGE_ICON);
+      } else if (value instanceof LibraryModelsTreeNode) {
+        label.setIcon(Icons.LIB_ICON);
       }
 
       return label;
