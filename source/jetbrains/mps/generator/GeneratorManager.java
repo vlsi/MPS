@@ -6,6 +6,7 @@ import jetbrains.mps.cml.util.CommandRunnable;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.output.OutputView;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.messages.Message;
@@ -29,10 +30,14 @@ import javax.swing.*;
 import java.io.File;
 import java.util.*;
 
+import org.apache.log4j.Logger;
+
 /**
  * @author Kostik
  */
 public class GeneratorManager {
+  public static final Logger LOG = Logger.getLogger(GeneratorManager.class);
+
   private static final boolean SAVE_TRANSIENT_MODELS = false;
 
   private MPSProject myProject;
@@ -116,8 +121,7 @@ public class GeneratorManager {
 
   public static final int AMOUNT_PER_MODEL = 100;
 
-  public void generate(final GeneratorConfiguration configuration, final Set<SModelDescriptor> modelDescriptors, final boolean generateText)
-  {
+  public void generate(final GeneratorConfiguration configuration, final Set<SModelDescriptor> modelDescriptors, final boolean generateText) {
     new Thread() {
       {
         setPriority(Thread.MIN_PRIORITY);
@@ -145,11 +149,17 @@ public class GeneratorManager {
           addMessage(new Message(MessageKind.INFORMATION, null, "Generating configuration " + configuration.getName()));
 
           progress.addText("Compiling in IntelliJ IDEA...");
+
+
+          LOG.debug("Compiling in IDE before generation ");
+
           compileAndReload();
           progress.advance(AMOUNT_PER_MODEL);
 
 
           for (GeneratorConfigurationCommand cmd : CollectionUtil.iteratorAsIterable(configuration.commands())) {
+            LOG.debug("Executing command : " + cmd.getSourceLanguage().getName() + " -> " + cmd.getTargetLanguage().getName());
+
             Set<SModelDescriptor> modelsWithLanguage = findModelsWithLanguage(modelDescriptors, cmd.getSourceLanguage().getName());
             Generator generator = findGenerator(cmd.getSourceLanguage().getName(), cmd.getTargetLanguage().getName());
             for (Root r : CollectionUtil.iteratorAsIterable(generator.languages())) {
@@ -179,6 +189,9 @@ public class GeneratorManager {
             }
           }
           if (!generateText) {
+
+            LOG.debug("Compiling in IDE after generation");
+
             progress.addText("Compiling in IntelliJ IDEA...");
             compileAndReload();
             progress.advance(AMOUNT_PER_MODEL);
@@ -215,10 +228,13 @@ public class GeneratorManager {
 
   private void generateSource(String outputPath, SModel sourceModel, SModel targetModel) {
     if (outputPath == null) throw new RuntimeException("Unspecified output path. Please specify one.");
-    System.out.println("Generating to root: " + outputPath);
+
+    LOG.debug("Generating to root : " + outputPath);
+
     String packageName = JavaNameUtil.packageNameForModelFqName(sourceModel.getFQName());
     File outputPathFile = new File(outputPath + File.separator + packageName.replace('.', File.separatorChar));
-    System.out.println("Generating to folder: " + outputPathFile.getAbsolutePath());
+
+    LOG.debug("Generating to folder : " + outputPathFile.getAbsolutePath());
 
     if (!outputPathFile.exists()) {
       outputPathFile.mkdirs();
@@ -264,8 +280,11 @@ public class GeneratorManager {
   }
 
   private Generator findGenerator(String sourceLanguage, String targetLanguage) {
-    Language source = myProject.getLanguage(sourceLanguage);
+    Language source = LanguageRepository.getInstance().getLanguage(sourceLanguage);
     Generator result = null;
+
+    LOG.assertLog(source != null, "Source language must be not null. Can't find language " + sourceLanguage);
+
     for (Generator gen : CollectionUtil.iteratorAsIterable(source.getLanguageDescriptor().generators())) {
       if (gen.getTargetLanguage().getName().equals(targetLanguage)) {
         result = gen;
@@ -343,7 +362,9 @@ public class GeneratorManager {
       } else {
         generateSource(outputPath, sourceModelDescr.getSModel(), targetModel);
       }
-    } finally {
+    } catch (Exception e) {
+      monitor.addText("Exception during generation " + e.getMessage());
+    } finally {      
       JavaClassMaps.clearMaps();
     }
   }
