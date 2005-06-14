@@ -24,13 +24,10 @@ public class IconManager {
       String packageName = node.getClass().getPackage().getName();
       String iconsClass = packageName + ".icons.Icons";
 
-      LOG.debug("Trying to load class " + iconsClass);
-
       try {
         Class icons = Class.forName(iconsClass, true, ClassLoaderManager.getInstance().getClassLoader());
 
-
-        Icon icon = (Icon) icons.getMethod("getIconFor" + className, SemanticNode.class).invoke(null);
+        Icon icon = (Icon) icons.getMethod("getIconFor" + className, SemanticNode.class).invoke(null, node);
         return icon;
       } catch (Exception e) {
       }
