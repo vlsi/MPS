@@ -33,7 +33,7 @@ public class TemplateSwitchGraph {
         }
       }
     }
-    
+
     Iterator<SModel> iterator = templatesModel.importedModels();
     while (iterator.hasNext()) {
       SModel importedModel = iterator.next();
@@ -41,17 +41,6 @@ public class TemplateSwitchGraph {
         processTemplatesModel(importedModel, processedModes);
       }
     }
-//    List<SemanticNode> templateSwitches = SModelUtil.allNodes(templatesModel, new Condition<SemanticNode>() {
-//              public boolean met(SemanticNode node) {
-//                return (node instanceof TemplateSwitch);
-//              }
-//            });
-//
-//    for (SemanticNode templateSwitch : templateSwitches) {
-//      if (myTemplateSwitchToGraphNodeMap.get((TemplateSwitch) templateSwitch) == null) {
-//        addSwitch((TemplateSwitch) templateSwitch);
-//      }
-//    }
   }
 
   private TemplateSwitchGraphNode addSwitch(TemplateSwitch templateSwitch) {

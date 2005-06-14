@@ -304,5 +304,17 @@
       <link role="dataType" targetNodeId="2.1082983041843" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1118786554307">
+    <property name="name" value="LoopMacro" />
+    <link role="extends" targetNodeId="1087833466690" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1118786554308">
+      <property name="value" value="LOOP" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1118786554309">
+      <property name="value" value="loop macro" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1107214812281" />
+    </node>
+  </node>
 </model>
 
