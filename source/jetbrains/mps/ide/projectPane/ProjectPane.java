@@ -639,6 +639,21 @@ public class ProjectPane extends JComponent {
     public ProjectModelsTreeNode() {
       super("Project Models");
     }
+
+    public Icon getIcon(boolean expanded) {
+      return Icons.PROJECT_MODELS_ICON;
+    }
+  }
+
+  private class LanguageEditorsTreeNode extends MPSTree.TextTreeNode {
+
+    public LanguageEditorsTreeNode(String text){
+      super(text);
+    }
+
+    public Icon getIcon(boolean expanded) {
+      return Icons.EDITORS_ICON;
+    }
   }
 
   private class LibraryModelsTreeNode extends MPSTree.TextTreeNode {
@@ -728,6 +743,13 @@ public class ProjectPane extends JComponent {
     }
 
     public Icon getIcon(boolean expanded) {
+      if (myLabel != null){
+        if (myLabel.startsWith("<html><b>Editor</b>") || myLabel.startsWith("Editor")){
+          return Icons.EDITOR_MODEL_ICON;
+        } else if (myLabel.startsWith("Structure")){
+          return Icons.STRUCTURE_MODEL_ICON;
+        }
+      }
       return Icons.MODEL_ICON;
     }
 
@@ -870,7 +892,23 @@ public class ProjectPane extends JComponent {
     public ProjectLanguagesTreeNode() {
       super("Project Languages");
     }
+
+    public Icon getIcon(boolean expanded) {
+      return Icons.PROJECT_LANGUAGES_ICON;
+    }
   }
+
+  private static class LanguagesTreeNode extends MPSTree.TextTreeNode {
+    public LanguagesTreeNode() {
+      super("Languages");
+    }
+
+    public Icon getIcon(boolean expanded) {
+      return Icons.LANGUAGES_ICON;
+    }
+  }
+
+
 
 //  private static class SemanticNodeTreeRenderer extends DefaultTreeCellRenderer {
 //    public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus)
@@ -973,7 +1011,7 @@ public class ProjectPane extends JComponent {
         initProjectLanguageNode(node, language);
       }
 
-      DefaultMutableTreeNode languagesNode = new TextTreeNode("Languages");
+      DefaultMutableTreeNode languagesNode = new LanguagesTreeNode();
       for (Language language : myProject.getLanguages()) {
         LanguageTreeNode node = new LanguageTreeNode(language);
         languagesNode.add(node);
@@ -995,7 +1033,7 @@ public class ProjectPane extends JComponent {
       while (editorDescriptors.hasNext()) {
         SModelDescriptor editor = editorDescriptors.next();
         String stereotypeName = language.getEditorStereotype(editor);
-        TextTreeNode stereotype = new TextTreeNode("<html><b>Editor " + ((stereotypeName != null) ? stereotypeName : "") + "</b>");
+        TextTreeNode stereotype = new LanguageEditorsTreeNode("<html><b>Editor " + ((stereotypeName != null) ? stereotypeName : "") + "</b>");
         addNodeIfModelNotNull(stereotype, language.getEditorDescriptor(stereotypeName), "<html><b>Editor</b>");
         node.add(stereotype);
       }
