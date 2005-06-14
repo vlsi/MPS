@@ -16,6 +16,7 @@ import jetbrains.mps.ide.ui.HeaderWrapper;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.TreeWithSemanticNodesSpeedSearch;
 import jetbrains.mps.ide.*;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.RootManager;
 import jetbrains.mps.projectLanguage.Generator;
@@ -858,7 +859,7 @@ public class ProjectPane extends JComponent {
             }
           }
 
-          label.setIcon(NodeIcons.getIconFor(semanticNode));
+          label.setIcon(IconManager.getIconFor(semanticNode));
         }
       } else if (value instanceof SModelTreeNode) {
         SModelTreeNode node = (SModelTreeNode) value;
