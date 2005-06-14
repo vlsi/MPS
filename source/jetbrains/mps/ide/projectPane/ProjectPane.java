@@ -798,7 +798,7 @@ public class ProjectPane extends JComponent {
       if (myLanguage.isUpToDate()) {
         return "<html>" + myLanguage.getNamespace() + "  <b>(up-to-date)</b>";
       } else {
-        return "<html>" + myLanguage.getNamespace() + "  <b>(generation needed)</b>";
+        return "<html>" + myLanguage.getNamespace() + "  <b>(generation required)</b>";
       }
     }
   }
