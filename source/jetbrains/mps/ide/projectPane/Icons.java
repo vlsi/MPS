@@ -30,11 +30,6 @@ public class Icons {
   public static final Icon JDK_OPENED_FOLDER = new ImageIcon(Icons.class.getResource("nodes/ppJdkOpen.png"));
   public static final Icon JDK_CLOSED_FOLDER = new ImageIcon(Icons.class.getResource("nodes/ppJdkClosed.png"));
 
-  public static final Icon EPIGRAM_DATA_WHERE_DECL_ICON = new ImageIcon(Icons.class.getResource("epigram/data.png"));
-  public static final Icon EPIGRAM_LET_DECL_ICON = new ImageIcon(Icons.class.getResource("epigram/let.png"));
-  public static final Icon EPIGRAM_INSPECT_ICON = new ImageIcon(Icons.class.getResource("epigram/inspect.png"));
-  public static final Icon EPIGRAM_SIGNATURE_ICON = new ImageIcon(Icons.class.getResource("epigram/signature.png"));
-
   public static Icon createMarkedIcon(final Icon icon, final Icon mark) {
     return new Icon() {
       public void paintIcon(Component c, Graphics g, int x, int y) {
