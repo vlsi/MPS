@@ -22,6 +22,7 @@ public class Icons {
   public static final Icon PROJECT_LANGUAGE_ICON = new ImageIcon(Icons.class.getResource("nodes/projectLanguage.png"));
   public static final Icon JAVA_ICON = new ImageIcon(Icons.class.getResource("nodes/java.png"));
   public static final Icon LIB_ICON = new ImageIcon(Icons.class.getResource("nodes/ppLib.png"));
+  public static final Icon EDITOR_ICON = new ImageIcon(Icons.class.getResource("nodes/editor.png"));
 
   public static final Icon OPENED_FOLDER = new ImageIcon(Icons.class.getResource("other/openedFolder.png"));
   public static final Icon CLOSED_FOLDER = new ImageIcon(Icons.class.getResource("other/closedFolder.png"));
