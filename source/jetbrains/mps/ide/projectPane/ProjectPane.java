@@ -864,6 +864,8 @@ public class ProjectPane extends JComponent {
         SModelTreeNode node = (SModelTreeNode) value;
 
         label.setIcon(Icons.MODEL_ICON);
+      } else if (value instanceof LanguageTreeNode) {
+        label.setIcon(Icons.LANGUAGE_ICON);
       }
 
       return label;
