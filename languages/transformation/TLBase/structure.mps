@@ -189,11 +189,6 @@
     <property name="rootable" value="true" />
     <property name="name" value="ReductionConfiguration" />
     <link role="extends" targetNodeId="2.1078489098625" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1114456243651">
-      <property name="targetCardinality" value="0..n" />
-      <property name="role" value="modifiedReductionConfiguration" />
-      <link role="target" targetNodeId="1114456200744" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1114456350559">
       <property name="sourceCardinality" value="0..n" />
       <property name="targetCardinality" value="1" />
