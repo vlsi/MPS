@@ -862,10 +862,16 @@ public class ProjectPane extends JComponent {
         }
       } else if (value instanceof SModelTreeNode) {
         SModelTreeNode node = (SModelTreeNode) value;
-
         label.setIcon(Icons.MODEL_ICON);
+
+        if (node.isImported()) {
+          label.setIcon(Icons.createMarkedIcon(label.getIcon(), Icons.JAVA_ICON));
+        }
+
       } else if (value instanceof LanguageTreeNode) {
         label.setIcon(Icons.LANGUAGE_ICON);
+      } else if (value instanceof ProjectLanguageTreeNode) {
+        label.setIcon(Icons.PROJECT_LANGUAGE_ICON);
       }
 
       return label;
