@@ -748,6 +748,12 @@ public class ProjectPane extends JComponent {
           return Icons.EDITOR_MODEL_ICON;
         } else if (myLabel.startsWith("Structure")){
           return Icons.STRUCTURE_MODEL_ICON;
+        } else if (myLabel.startsWith("Templates")){
+          return Icons.TEMPLATES_MODEL_ICON;
+        } else if (myLabel.startsWith("Actions")) {
+          return Icons.ACTIONS_MODEL_ICON;
+        } else if (myLabel.startsWith("Typesystem")) {
+          return Icons.TYPESYSTEM_MODEL_ICON;
         }
       }
       return Icons.MODEL_ICON;
@@ -908,6 +914,16 @@ public class ProjectPane extends JComponent {
     }
   }
 
+  private class GeneratorsTreeNode extends MPSTree.TextTreeNode {
+    public GeneratorsTreeNode(String text){
+      super(text);
+    }
+
+    public Icon getIcon(boolean expanded) {
+      return Icons.GENERATORS_ICON;
+    }
+  }
+
 
 
 //  private static class SemanticNodeTreeRenderer extends DefaultTreeCellRenderer {
@@ -1042,7 +1058,7 @@ public class ProjectPane extends JComponent {
       Iterator<Generator> generators = language.getLanguageDescriptor().generators();
       while (generators.hasNext()) {
         Generator generator = generators.next();
-        TextTreeNode generatorNode = new TextTreeNode("<html><b>Generator " + generator.getName() + "</b>");
+        TextTreeNode generatorNode = new GeneratorsTreeNode("<html><b>Generator " + generator.getName() + "</b>");
 
         SModelDescriptor templatesModel = null;
 
