@@ -364,7 +364,10 @@ public class GeneratorManager {
       }
     } catch (Exception e) {
       monitor.addText("Exception during generation " + e.getMessage());
-    } finally {      
+
+      LOG.error("Errors during generation", e);
+
+    } finally {
       JavaClassMaps.clearMaps();
     }
   }
