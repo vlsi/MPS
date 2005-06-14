@@ -1,15 +1,10 @@
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.transformation.TLBase.TemplateSwitch;
 import jetbrains.mps.semanticModel.SModel;
-import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
-import jetbrains.mps.util.Condition;
+import jetbrains.mps.transformation.TLBase.TemplateSwitch;
 
-import java.util.Map;
-import java.util.HashMap;
-import java.util.List;
-import java.util.LinkedList;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -22,21 +17,41 @@ public class TemplateSwitchGraph {
   private Map<TemplateSwitch, TemplateSwitchGraphNode> myTemplateSwitchToGraphNodeMap = new HashMap<TemplateSwitch, TemplateSwitchGraphNode>();
 
   public TemplateSwitchGraph(SModel templatesModel) {
-    init(templatesModel);
+    processTemplatesModel(templatesModel, new HashSet<String>());
   }
 
-  private void init(SModel templatesModel) {
-    List<SemanticNode> templateSwitches = SModelUtil.allNodes(templatesModel, new Condition<SemanticNode>() {
-              public boolean met(SemanticNode node) {
-                return (node instanceof TemplateSwitch);
-              }
-            });
+  private void processTemplatesModel(SModel templatesModel, HashSet<String> processedModes) {
+    if (processedModes.contains(templatesModel.getFQName())) {
+      return;
+    }
+    processedModes.add(templatesModel.getFQName());
 
-    for (SemanticNode templateSwitch : templateSwitches) {
-      if (myTemplateSwitchToGraphNodeMap.get((TemplateSwitch) templateSwitch) == null) {
-        addSwitch((TemplateSwitch) templateSwitch);
+    for (SemanticNode root : templatesModel.getRoots()) {
+      if (root instanceof TemplateSwitch) {
+        if (myTemplateSwitchToGraphNodeMap.get((TemplateSwitch) root) == null) {
+          addSwitch((TemplateSwitch) root);
+        }
       }
     }
+    
+    Iterator<SModel> iterator = templatesModel.importedModels();
+    while (iterator.hasNext()) {
+      SModel importedModel = iterator.next();
+      if (importedModel.importsLanguage("jetbrains.mps.transformation.TLBase")) {
+        processTemplatesModel(importedModel, processedModes);
+      }
+    }
+//    List<SemanticNode> templateSwitches = SModelUtil.allNodes(templatesModel, new Condition<SemanticNode>() {
+//              public boolean met(SemanticNode node) {
+//                return (node instanceof TemplateSwitch);
+//              }
+//            });
+//
+//    for (SemanticNode templateSwitch : templateSwitches) {
+//      if (myTemplateSwitchToGraphNodeMap.get((TemplateSwitch) templateSwitch) == null) {
+//        addSwitch((TemplateSwitch) templateSwitch);
+//      }
+//    }
   }
 
   private TemplateSwitchGraphNode addSwitch(TemplateSwitch templateSwitch) {
