@@ -379,7 +379,7 @@ public class ProjectPane extends JComponent {
       String languageName = language.getNamespace();
 
       JMenu langRootsMenu = new JMenu(languageName);
-      langRootsMenu.setIcon(MPSAction.EMPTY_ICON);
+      langRootsMenu.setIcon(IconManager.getIconFor(language.getNamespace()));
       rootPopupMenu.add(langRootsMenu);
 
       Iterator<ConceptDeclaration> iterator = language.semanticTypes();

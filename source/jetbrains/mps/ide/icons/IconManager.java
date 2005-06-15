@@ -3,11 +3,14 @@ package jetbrains.mps.ide.icons;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.collectionLanguage.CollectionDeclaration;
 
 import javax.swing.*;
 
 import org.apache.log4j.Logger;
+
+import java.awt.*;
 
 /**
  * @author Kostik
@@ -36,6 +39,19 @@ public class IconManager {
     }
 
     return Icons.DEFAULT_ICON;
+  }
+
+  public static Icon getIconFor(String namespace) {
+    String className = namespace + ".icons.Icons";
+    try {
+      Class icons = Class.forName(className, true, ClassLoaderManager.getInstance().getClassLoader());
+      Icon icon = (Icon) icons.getMethod("getLanguageIcon").invoke(null);
+      if (icon != null) return icon;
+    } catch (Exception e){
+    }
+
+    return MPSAction.EMPTY_ICON;
+        
   }
 
 }
