@@ -27,7 +27,7 @@ public class IconManager {
       try {
         Class icons = Class.forName(iconsClass, true, ClassLoaderManager.getInstance().getClassLoader());
         Icon icon = (Icon) icons.getMethod("getIconFor" + className, SemanticNode.class).invoke(null, node);
-        return icon;
+        if (icon != null) return icon;
       } catch (Exception e) {
       }
 
