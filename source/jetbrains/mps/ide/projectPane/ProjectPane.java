@@ -19,8 +19,10 @@ import jetbrains.mps.ide.*;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.RootManager;
+import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.projectLanguage.Generator;
 import jetbrains.mps.projectLanguage.GeneratorConfiguration;
+import jetbrains.mps.projectLanguage.ProjectModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.util.CollectionUtil;
@@ -395,7 +397,17 @@ public class ProjectPane extends JComponent {
           }
 
           if (cls != null) {
-            langRootsMenu.add(new AbstractActionWithEmptyIcon(typeDeclaration.getName()) {
+            langRootsMenu.add(new AbstractAction(typeDeclaration.getName()) {
+              {
+                CommandProcessor.instance().executeCommand(new Runnable() {
+                  public void run() {
+                    SemanticNode node = SModelUtil.instantiateConceptDeclaration(typeDeclaration, ApplicationComponents.getInstance().getComponent(ProjectModel.class).getSModel());
+                    LOG.assertLog(node != null, "Node isn't null");
+                    putValue(Action.SMALL_ICON, NodeIcons.getIconFor(node));
+                  }
+                }, "find icon for " + typeDeclaration.getName());
+              }
+
               public void actionPerformed(ActionEvent e) {
                 CommandProcessor.instance().executeCommand(new Runnable() {
                   public void run() {
