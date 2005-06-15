@@ -54,4 +54,6 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
   void showInformationMessage(SemanticNode node, String message);
 
   void showErrorMessage(SemanticNode node, String message);
+
+  void showErrorMessage(SemanticNode sourceNode, SemanticNode templateNode, String message);
 }
