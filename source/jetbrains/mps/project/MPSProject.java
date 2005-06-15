@@ -7,6 +7,8 @@ import jetbrains.mps.modelExecute.ExecutionPoint;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.cml.util.CommandRunnable;
+import jetbrains.mps.projectLanguage.ProjectModel;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -98,9 +100,15 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     myComponents.put(interfaceClass, instance);
   }
 
-  public void read(File file) {
+  public void read(final File file) {
     init();
-    myRootManager.read(file);
+    new CommandRunnable(ApplicationComponents.getInstance().getComponent(ProjectModel.class).getSModel()) {
+      protected Object onRun() {
+        myRootManager.read(file);
+        return null;
+      }
+    }.run();
+
   }
 
   public void readWorkspaceSettings() {
