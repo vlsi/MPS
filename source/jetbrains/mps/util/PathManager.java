@@ -8,11 +8,15 @@ import java.net.URL;
 import java.util.Collection;
 import java.util.Iterator;
 
+import org.apache.log4j.Logger;
+
 /**
  * Author: Sergey Dmitriev
  * Created Nov 9, 2003
  */
 public class PathManager {
+  private static final Logger LOG = Logger.getLogger(PathManager.class);
+
   public static final String PROPERTY_CONFIG_PATH = "mps.config.path";
   public static final String PROPERTY_HOME_PATH = "mps.home.path";
   public static final String PROPERTY_MODEL_PATH = "mps.model.path";
@@ -115,7 +119,7 @@ public class PathManager {
    */
   private static String extractRoot(URL resourceURL, String resourcePath) {
     if (!(resourcePath.startsWith("/") || resourcePath.startsWith("\\"))) {
-      System.err.println("PathManager.extractRoot: precondition failed for"+resourcePath);
+      LOG.error("precondition failed for"+resourcePath);
       return null;
     }
     String protocol = resourceURL.getProtocol();

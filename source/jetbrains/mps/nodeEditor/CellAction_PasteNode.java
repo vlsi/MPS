@@ -5,11 +5,15 @@ import jetbrains.mps.semanticModel.SemanticNode;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 /**
  * Author: Sergey Dmitriev.
  * Time: Nov 26, 2003 2:06:41 PM
  */
 public class CellAction_PasteNode extends EditorCellAction {
+  private static final Logger LOG = Logger.getLogger(CellAction_PasteNode.class);
+  
   public boolean canExecute(EditorContext context) {
     EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
     if (selectedCell == null) {
@@ -22,7 +26,7 @@ public class CellAction_PasteNode extends EditorCellAction {
     }
 
     if (!PasteUtil.canPaste(selectedNode, pasteNodes.get(0))) {
-      System.out.println("Couldn't paste node here");
+      LOG.debug("Couldn't paste node here");
       return false;
     }
     return true;

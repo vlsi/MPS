@@ -6,11 +6,15 @@ import jetbrains.mps.project.MPSProject;
 
 import java.awt.*;
 
+import org.apache.log4j.Logger;
+
 /**
  * Author: Sergey Dmitriev
  * Created Sep 14, 2003
  */
 public class EditorContext {
+  private static final Logger LOG = Logger.getLogger(EditorContext.class);
+
   private AbstractEditorComponent myNodeEditorComponent;
   private SModel myModel;
   private MPSProject myProject;
@@ -59,7 +63,7 @@ public class EditorContext {
           if (nearestCell != null) {
             nearestCell.setCaretX(memento.caretX.intValue());
           } else {
-            System.err.println("ERROR EditorContext: coudn't find cell at: " + memento.selectionPosition);
+            LOG.error("ERROR EditorContext: coudn't find cell at: " + memento.selectionPosition);
           }
         } else {
           //myComponent.changeSelection(null);

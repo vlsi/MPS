@@ -11,7 +11,11 @@ import jetbrains.mps.datatransfer.PasteUtil;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 public class CellAction_PasteNodeRelative extends EditorCellAction {
+  private static final Logger LOG = Logger.getLogger(CellAction_PasteNodeRelative.class);
+
   private boolean myPasteBefore;
 
   public CellAction_PasteNodeRelative(boolean pasteBefore) {
@@ -30,7 +34,7 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
     }
 
     if (!PasteUtil.canPasteRelative(anchorNode, pasteNodes.get(0))) {
-      System.out.println("Couldn't paste node relative");
+      LOG.debug("Couldn't paste node relative");
       return false;
     }
     return true;

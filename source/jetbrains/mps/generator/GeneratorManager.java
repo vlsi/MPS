@@ -177,13 +177,13 @@ public class GeneratorManager {
                 showMessageView();
                 return;
               } catch (final GenerationFailedException gfe) {
-                System.err.println(model.getFQName() + " generation failed");
+                LOG.error(model.getFQName() + " generation failed", gfe);
                 gfe.printStackTrace();
                 addMessage(new Message(MessageKind.ERROR, model.getFQName() + " model generation failed"));
                 showMessageView();
                 return;
               } catch (Exception e) {
-                e.printStackTrace();
+                LOG.error("Exception ", e);
               }
               addMessage(new Message(MessageKind.INFORMATION, model.getFQName() + " model is generated"));
             }
@@ -309,7 +309,7 @@ public class GeneratorManager {
     }
 
     if (generator.getModelRootsCount() == 0) {
-      System.err.println("Couldn't find templates model " + generator.getTemplatesModel().getName() + " model roots aren't specified");
+      LOG.error("Couldn't find templates model " + generator.getTemplatesModel().getName() + " model roots aren't specified");
       getMessageView().add(new Message(MessageKind.WARNING, "Couldn't find templates model " + generator.getTemplatesModel().getName() + " model roots aren't specified"));
       return null;
     }
@@ -384,33 +384,33 @@ public class GeneratorManager {
     transientModels.add(currentTargetModel);
 
     // mapping
-    System.out.println("DO MAPPING from: " + originalSourceModel.getFQName() + " to " + currentTargetModel.getFQName());
+    LOG.debug("DO MAPPING from: " + originalSourceModel.getFQName() + " to " + currentTargetModel.getFQName());
     generator.generate(originalSourceModel, currentTargetModel, templatesModel);
 
     // reductions...
     while (true) {
       generator.reset();
       SModel currentSourceModel = currentTargetModel;
-      System.out.println("CHECK NEED REDUCTION (" + iterationCount + ") in: " + currentSourceModel.getFQName());
+      LOG.debug("CHECK NEED REDUCTION (" + iterationCount + ") in: " + currentSourceModel.getFQName());
       int numReductions = generator.setupReduction(currentSourceModel, templatesModel);
-      System.out.println("FOUND " + numReductions + " REDUCTIONS");
+      LOG.debug("FOUND " + numReductions + " REDUCTIONS");
       if (numReductions == 0) {
         break;
       }
       currentTargetModel = createOutputModel(outputModelNamespace, transientModelNamePfx + iterationCount, originalSourceModel, templatesModel);
       transientModels.add(currentTargetModel);
-      System.out.println("DO REDUCTION (" + iterationCount + ") from: " + currentSourceModel.getFQName() + " to " + currentTargetModel.getFQName());
+      LOG.debug("DO REDUCTION (" + iterationCount + ") from: " + currentSourceModel.getFQName() + " to " + currentTargetModel.getFQName());
       generator.doReduction(currentTargetModel);
       // next iteration ...
       if (++iterationCount > 9) {
-        System.err.println("Ruduction iteration count exceeded limit (10) - stop generation.");
+        LOG.debug("Reduction iteration count exceeded limit (10) - stop generation.");
         break;
       }
       currentSourceModel = currentTargetModel;
     }
 
     if (SAVE_TRANSIENT_MODELS) {
-      System.out.println("SAVE TRANSIENT MODELS ...");
+      LOG.debug("SAVE TRANSIENT MODELS ...");
       String sourceModelDerectory = sourceModelDescr.getModelFile().getParent();
       SModelRepository modelRepository = SModelRepository.getInstance();
       for (SModel transientModel : transientModels) {
@@ -423,7 +423,7 @@ public class GeneratorManager {
         SModelDescriptor transientModelDescr = MPSFileModelDescriptor.getInstance(transientModelFile.getAbsolutePath(), transientModel, myProject);
         myProject.getComponent(RootManager.class).addProjectModelDescriptor(transientModelDescr);
         modelRepository.markChanged(transientModel);
-        System.out.println(" ---> " + transientModelDescr.getFQName() + " to file " + transientModelDescr.getModelFile().getAbsolutePath());
+        LOG.debug(" ---> " + transientModelDescr.getFQName() + " to file " + transientModelDescr.getModelFile().getAbsolutePath());
       }
 
       SwingUtilities.invokeLater(new Runnable() {
@@ -437,7 +437,7 @@ public class GeneratorManager {
     SModel outputModel = null;
     if (SAVE_TRANSIENT_MODELS) {
       outputModel = createOutputModel(outputModelNamespace, "", originalSourceModel, templatesModel);
-      System.out.println("COPY MODEL from: " + lastTransientModel.getFQName() + " to " + outputModel.getFQName());
+      LOG.debug("COPY MODEL from: " + lastTransientModel.getFQName() + " to " + outputModel.getFQName());
       SModelUtil.cloneSModel(lastTransientModel, outputModel);
     } else {
       outputModel = lastTransientModel;

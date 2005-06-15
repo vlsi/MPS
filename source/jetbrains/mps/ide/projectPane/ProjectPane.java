@@ -37,11 +37,15 @@ import java.awt.event.*;
 import java.util.*;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 /**
  * Author: Sergey Dmitriev
  * Created Oct 25, 2003
  */
 public class ProjectPane extends JComponent {
+  private static final Logger LOG = Logger.getLogger(ProjectPane.class);
+
   public static String PROJECT_PANE_NODE_ACTIONS = "project-pane-node-actions";
 
   private MyTree myTree = new MyTree();
@@ -183,7 +187,7 @@ public class ProjectPane extends JComponent {
             {
               SModelDescriptor model = getSelectedModel();
               myProject.deleteModel(model);
-              System.out.println("deleting " + model.getModelFile());
+              LOG.debug("deleting " + model.getModelFile());
               rebuildTree();
             }
           }
@@ -540,7 +544,7 @@ public class ProjectPane extends JComponent {
       myTree.setSelectionPath(treePath);
       myTree.scrollPathToVisible(treePath);
     } else {
-      System.err.println("Couldn't select node " + semanticNode.getDebugText() + " : tree node not found.");
+      LOG.warn("Couldn't select node " + semanticNode.getDebugText() + " : tree node not found.");
     }
   }
 
@@ -978,7 +982,7 @@ public class ProjectPane extends JComponent {
     }
 
     public void rebuildTree(SModel model) {
-      System.out.println("Rebuild tree node (model)");
+      LOG.debug("Rebuild tree node (model = " + model.getFQName() + ")");
       String modelFqName = model.getFQName();
       List<String> expansion = getExpandedPaths();
       List<String> selection = getSelectedPaths();

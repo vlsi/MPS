@@ -28,7 +28,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class TemplateGenUtil {
-  private static final Logger LOG = Logger.getInstance("jetbrains.mps.generator.template.TemplateGenUtil");
+  private static final org.apache.log4j.Logger LOG = org.apache.log4j.Logger.getLogger(TemplateGenUtil.class);
 
   public static SemanticNode instantiateNodeForTemplate(SemanticNode templateNode, SModel targetModel) {
     ConceptDeclaration conceptDeclaration = Language.getTypeDeclaration(templateNode);
@@ -70,7 +70,7 @@ public class TemplateGenUtil {
 
       nodeBuilder.getGenerator().showErrorMessage(templateNode, "Couldn't resolve template reference \"" + templateReference.getRole() + "\"");
       //test
-      System.out.println("uhhh! error. set breakpoint here, referenceResolver:" + referenceResolver);
+      LOG.error("uhhh! error. set breakpoint here, referenceResolver:" + referenceResolver);
       referenceResolver.resolveTarget(templateReference, nodeBuilder);
       //test
 
@@ -86,7 +86,7 @@ public class TemplateGenUtil {
         currBuilder = currBuilder.getParent();
       }
 
-      System.err.println("WARN! Couldn't resolve template reference! " + nodeBuilder.getGenerator().getState().toString() +
+      LOG.warn("WARN! Couldn't resolve template reference! " + nodeBuilder.getGenerator().getState().toString() +
               "\n    template       : " + templateReference.getSourceNode().getDebugText() + " --[" + templateReference.getRole() + "]--> " + templateReference.getTargetNode().getDebugText() +
               "\n    template target: " + targetNode.getDebugText() +
               "\n" + buildersStack);
@@ -166,7 +166,7 @@ public class TemplateGenUtil {
     if (ruleName == null) {
       generator.getProject().getComponent(MessageView.class).add(new Message(MessageKind.ERROR, templateMappingRule, "TemplateMappingRule must have name"));
     }
-    LOG.assertNotNull(ruleName, "TemplateMappingRule must have name");
+    LOG.assertLog(ruleName != null, "TemplateMappingRule must have name");
     BaseConcept templateNode = templateMappingRule.getTemplateNode();
     List<SemanticNode> sourceNodes = createSourceNodeListForTemplateMappingRule(templateMappingRule, generator);
     for (SemanticNode sourceNode : sourceNodes) {
@@ -184,7 +184,7 @@ public class TemplateGenUtil {
     for (SemanticNode sourceNode : sourceNodes) {
       INodeBuilder ruleContextBuilder = getContextNodeBuilderForTemplateWeavingingRule(sourceNode, templateWeavingRule, generator);
       if (ruleContextBuilder == null) {
-        System.err.println("Context Builder is NULL. Couldn't create node builder." +
+        LOG.error("Context Builder is NULL. Couldn't create node builder." +
                 "\nWeaving rule: " + templateWeavingRule.getDebugText() +
                 "\nSource node : " + sourceNode.getDebugText());
         SModelUtil.dumpNodePath(sourceNode, 0, System.err);
@@ -210,7 +210,7 @@ public class TemplateGenUtil {
   public static void weaveTemplateDeclaration(SemanticNode sourceNode, TemplateDeclaration templateDeclaration, INodeBuilder contextBuilder, ITemplateGenerator generator) {
     List<TemplateFragment> templateFragments = getTemplateFragments(templateDeclaration);
     if (templateFragments.isEmpty()) {
-      System.err.println("WARN: no template fragments found in " + templateDeclaration.getDebugText());
+      LOG.warn("WARN: no template fragments found in " + templateDeclaration.getDebugText());
       return;
     }
 
@@ -434,11 +434,11 @@ public class TemplateGenUtil {
     if (templateForSwitch != null) {
       List<TemplateFragment> templateFragments = getTemplateFragments(templateForSwitch);
       if (templateFragments.isEmpty()) {
-        System.err.println("WARN: no template fragments found in " + templateForSwitch.getDebugText());
+        LOG.error("WARN: no template fragments found in " + templateForSwitch.getDebugText());
         return null;
       }
       if (templateFragments.size() > 1) {
-        System.err.println("WARN: more when one fragments found in " + templateForSwitch.getDebugText());
+        LOG.error("WARN: more when one fragments found in " + templateForSwitch.getDebugText());
         return null;
       }
 
@@ -455,7 +455,7 @@ public class TemplateGenUtil {
     String role = builder.getRoleInParent();
     String roleString = role == null ? "[root]" : "[" + role + "] ";
 
-    System.out.println((new String(indent)) + roleString +
+    LOG.debug(new String(indent) + roleString +
             JavaNameUtil.shortName(builder.getTemplateNode().getClass().getName()) +
             "           (src: " + JavaNameUtil.shortName(builder.getSourceNode().getClass().getName()) + ")");
     Iterator<INodeBuilder> iterator = builder.childBuilders();

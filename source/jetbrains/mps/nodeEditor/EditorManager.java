@@ -14,7 +14,7 @@ import jetbrains.mps.util.NodeNameUtil;
  * Time: Nov 7, 2003 7:06:31 PM
  */
 public class EditorManager {
-  private static Logger LOG = Logger.getInstance("jetbrains.mps.nodeEditor.EditorManager");
+  private static final org.apache.log4j.Logger LOG = org.apache.log4j.Logger.getLogger(EditorManager.class);
   //  private static EditorManager myInstance;
   public static String NODE_TO_PLACE_AFTER = "nodeToPlaceAfter";
 
@@ -108,7 +108,7 @@ public class EditorManager {
       Class editorClass = Class.forName(editorClassName, true, ClassLoaderManager.getInstance().getClassLoader());
       return (INodeEditor) editorClass.newInstance();
     } catch (ClassNotFoundException e) {
-      System.err.println("Couldn't load editor " + editorClassName + " : Class Not Found!");
+      LOG.warn("Couldn't load editor " + editorClassName + " : Class Not Found!");
       //      e.printStackTrace();  //To change body of catch statement use Options | File Templates.
     } catch (InstantiationException e) {
       e.printStackTrace();  //To change body of catch statement use Options | File Templates.

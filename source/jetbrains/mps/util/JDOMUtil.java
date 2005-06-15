@@ -8,10 +8,12 @@ import org.jdom.output.Format;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
+import org.apache.log4j.Logger;
 
 import java.io.*;
 
 public class JDOMUtil {
+  private static final Logger LOG = Logger.getLogger(JDOMUtil.class);
   private static final String ENCODING = "UTF-8";
 
   public static Document loadDocument(File file) throws JDOMException, IOException {
@@ -19,10 +21,10 @@ public class JDOMUtil {
     try {
       return saxBuilder.build(new InputStreamReader(new FileInputStream(file), ENCODING));
     } catch (JDOMException e) {
-      System.err.println("FAILED TO LOAD FILE : " + file.getAbsolutePath());
+      LOG.error("FAILED TO LOAD FILE : " + file.getAbsolutePath());
       throw e;
     } catch (IOException e) {
-      System.err.println("FAILED TO LOAD FILE : " + file.getAbsolutePath());
+      LOG.error("FAILED TO LOAD FILE : " + file.getAbsolutePath());
       throw e;
     }
   }

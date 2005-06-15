@@ -6,6 +6,8 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import org.apache.log4j.Logger;
+
 import java.awt.event.KeyEvent;
 import java.util.HashMap;
 import java.util.List;
@@ -14,6 +16,8 @@ import java.util.Iterator;
 import java.lang.reflect.Field;
 
 public class EditorCellKeyMap {
+  private static final Logger LOG = Logger.getLogger(EditorCellKeyMap.class);
+
   public static final String KEY_MODIFIERS_NONE = "none";
   public static final String KEY_MODIFIERS_ANY = "any";
 
@@ -115,7 +119,7 @@ public class EditorCellKeyMap {
       ActionKey actionKey = actionKeies.get(i);
       EditorCellKeyMapAction editorCellAction = keyMap.myActionMap.get(actionKey);
       if (editorCellAction != null) {
-        System.out.println("keymap action found for key: " + actionKey);
+        LOG.debug("keymap action found for key: " + actionKey);
         return editorCellAction;
       }
     }

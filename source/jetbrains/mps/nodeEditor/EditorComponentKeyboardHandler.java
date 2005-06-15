@@ -6,10 +6,14 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import org.apache.log4j.Logger;
+
 import java.awt.event.KeyEvent;
 import java.util.List;
 
 public class EditorComponentKeyboardHandler implements IKeyboardHandler {
+  private static final Logger LOG = Logger.getLogger(EditorComponentKeyboardHandler.class);
+
   public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
     return false;
   }
@@ -22,7 +26,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     if (selectedCell != null /*&& EditorUtil.isValidCell(selectedCell)*/) {
       //test >
       if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER) {
-        System.out.println("key pressed:" + keyEvent);
+        LOG.debug("key pressed:" + keyEvent);
       }
       //test <
       List<EditorCellKeyMapAction> actions = EditorUtil.getKeyMapActionsForEvent(selectedCell, keyEvent, editorContext);
@@ -123,10 +127,10 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
         if ((keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown() && !(keyEvent.isAltDown() || keyEvent.isShiftDown())) ||
                 (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && keyEvent.isAltDown() && !(keyEvent.isControlDown() || keyEvent.isShiftDown()))) {
           if (editor.activateNodeSubstituteChooser(selectedCell, keyEvent.getKeyCode() == KeyEvent.VK_ENTER)) {
-            System.out.println("SUBSTITUTE");
+            LOG.debug("SUBSTITUTE");
             return true;
           }
-          System.out.println("NO SUBSTITUTE");
+          LOG.debug("NO SUBSTITUTE");
         }
 
         // surround with substitution

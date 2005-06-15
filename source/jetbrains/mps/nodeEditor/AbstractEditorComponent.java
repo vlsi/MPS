@@ -35,11 +35,14 @@ import java.beans.PropertyChangeListener;
 import java.util.*;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 /**
  * Author: Sergey Dmitriev
  * Created Sep 14, 2003
  */
 public abstract class AbstractEditorComponent extends JComponent implements Scrollable {
+  private static final Logger LOG = Logger.getLogger(AbstractEditorComponent.class);
   public static final String EDITOR_POPUP_MENU_ACTIONS = "editor-popup-menu-actions";
 
   private boolean myHasLastCaretX = false;
@@ -1081,7 +1084,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     // do substitute...
-    System.out.println("substitute info : " + substituteInfo);
+    LOG.debug("substitute info : " + substituteInfo);
     NodeSubstitutePatternEditor patternEditor = editorCell.createSubstitutePatternEditor();
     if (resetPattern) {
       patternEditor.setCaretPosition(0);
