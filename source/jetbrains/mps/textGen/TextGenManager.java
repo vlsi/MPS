@@ -1,6 +1,5 @@
 package jetbrains.mps.textGen;
 
-import ;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.mapping.MappingTextGenManager;
 import jetbrains.mps.reloading.ClassLoaderManager;
