@@ -199,17 +199,17 @@
     <link role="extends" targetNodeId="1.1078489098625" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1105725141344">
-    <property name="rootable" value="true" />
+    <property name="rootable" value="false" />
     <property name="name" value="IntegerConceptPropertyDeclaration" />
     <link role="extends" targetNodeId="1105725006687" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1105725240314">
-    <property name="rootable" value="true" />
+    <property name="rootable" value="false" />
     <property name="name" value="BooleanConceptPropertyDeclaration" />
     <link role="extends" targetNodeId="1105725006687" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1105725281956">
-    <property name="rootable" value="true" />
+    <property name="rootable" value="false" />
     <property name="name" value="StringConceptPropertyDeclaration" />
     <link role="extends" targetNodeId="1105725006687" />
   </node>
@@ -286,7 +286,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1105736778597">
-    <property name="rootable" value="true" />
+    <property name="rootable" value="false" />
     <property name="name" value="ReferenceConceptLink" />
     <link role="extends" targetNodeId="1105736674127" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1105742372452">
@@ -304,7 +304,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1105736889287">
-    <property name="rootable" value="true" />
+    <property name="rootable" value="false" />
     <property name="name" value="AggregationConceptLink" />
     <link role="extends" targetNodeId="1105736674127" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1105742417828">
@@ -323,12 +323,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1105741535888">
-    <property name="rootable" value="true" />
+    <property name="rootable" value="false" />
     <property name="name" value="AggregationConceptLinkDeclaration" />
     <link role="extends" targetNodeId="1105736576531" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1105741578420">
-    <property name="rootable" value="true" />
+    <property name="rootable" value="false" />
     <property name="name" value="ReferenceConceptLinkDeclaration" />
     <link role="extends" targetNodeId="1105736576531" />
   </node>
