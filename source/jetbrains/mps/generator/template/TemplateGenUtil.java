@@ -9,7 +9,6 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.core.BaseConcept;
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.ide.diagnostic.Logger;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessageView;

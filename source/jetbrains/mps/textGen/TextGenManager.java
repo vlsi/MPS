@@ -1,6 +1,6 @@
 package jetbrains.mps.textGen;
 
-import jetbrains.mps.ide.diagnostic.Logger;
+import ;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.mapping.MappingTextGenManager;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -10,7 +10,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
  * Date: Dec 22, 2003
  */
 public class TextGenManager {
-  private static Logger LOG = Logger.getInstance("jetbrains.mps.textGen.TextGenManager");
+  private static final org.apache.log4j.Logger LOG = org.apache.log4j.Logger.getLogger(TextGenManager.class);
   private static TextGenManager myInstance;
 
   public static void setMappingTextGenManager() {
@@ -45,7 +45,7 @@ public class TextGenManager {
     }
 
     SemanticNodeTextGen nodeTextGen = loadNodeTextGen(node);
-    LOG.assertTrue(nodeTextGen != null, "Couldn't find text generator for " + node.getDebugText());
+    LOG.assertLog(nodeTextGen != null, "Couldn't find text generator for " + node.getDebugText());
     nodeTextGen.setBuffer(buffer);
     nodeTextGen.doGenerateText(node);
   }
