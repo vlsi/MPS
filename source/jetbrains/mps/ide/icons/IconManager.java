@@ -3,6 +3,7 @@ package jetbrains.mps.ide.icons;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.collectionLanguage.CollectionDeclaration;
 
 import javax.swing.*;
 
@@ -21,7 +22,7 @@ public class IconManager {
     while (cls != SemanticNode.class) {
       String className = cls.getName();
       className = className.substring(className.lastIndexOf('.') + 1);
-      String packageName = node.getClass().getPackage().getName();
+      String packageName = cls.getPackage().getName();
       String iconsClass = packageName + ".icons.Icons";
 
       try {
