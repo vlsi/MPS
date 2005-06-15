@@ -26,7 +26,6 @@ import jetbrains.mps.projectLanguage.ProjectModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.baseLanguage.*;
 
 import javax.swing.*;
 import javax.swing.event.TreeExpansionEvent;
@@ -403,7 +402,7 @@ public class ProjectPane extends JComponent {
                   public void run() {
                     SemanticNode node = SModelUtil.instantiateConceptDeclaration(typeDeclaration, ApplicationComponents.getInstance().getComponent(ProjectModel.class).getSModel());
                     LOG.assertLog(node != null, "Node isn't null");
-                    putValue(Action.SMALL_ICON, NodeIcons.getIconFor(node));
+                    putValue(Action.SMALL_ICON, IconManager.getIconFor(node));
                   }
                 }, "find icon for " + typeDeclaration.getName());
               }
