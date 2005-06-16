@@ -1,6 +1,6 @@
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
 <idea-plugin>
-  <name>JetBrains MPS Integeration</name>
+  <name>JetBrains MPS Integration</name>
   <description></description>
   <version>1.0</version>
   <vendor>JetBrains</vendor>
