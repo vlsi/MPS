@@ -8,9 +8,10 @@ import org.jdom.output.Format;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
-import org.apache.log4j.Logger;
 
 import java.io.*;
+
+import jetbrains.mps.logging.Logger;
 
 public class JDOMUtil {
   private static final Logger LOG = Logger.getLogger(JDOMUtil.class);

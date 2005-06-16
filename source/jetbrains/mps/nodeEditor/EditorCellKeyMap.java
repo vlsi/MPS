@@ -6,7 +6,8 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import org.apache.log4j.Logger;
+
+import jetbrains.mps.logging.Logger;
 
 import java.awt.event.KeyEvent;
 import java.util.HashMap;

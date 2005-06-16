@@ -2,10 +2,10 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.datatransfer.PasteUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.logging.Logger;
 
 import java.util.List;
 
-import org.apache.log4j.Logger;
 
 /**
  * Author: Sergey Dmitriev.

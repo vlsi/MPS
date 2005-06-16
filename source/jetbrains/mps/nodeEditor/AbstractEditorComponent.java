@@ -26,6 +26,7 @@ import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.logging.Logger;
 
 import javax.swing.*;
 import java.awt.*;
@@ -35,7 +36,6 @@ import java.beans.PropertyChangeListener;
 import java.util.*;
 import java.util.List;
 
-import org.apache.log4j.Logger;
 
 /**
  * Author: Sergey Dmitriev

@@ -2,13 +2,13 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.datatransfer.SemanticNodeData;
 import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.logging.Logger;
 
 import java.awt.datatransfer.Clipboard;
 import java.awt.*;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.apache.log4j.Logger;
 
 /**
  * Author: Sergey Dmitriev.

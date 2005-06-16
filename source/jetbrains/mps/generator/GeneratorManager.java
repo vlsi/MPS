@@ -25,12 +25,12 @@ import jetbrains.mps.textPresentation.TextPresentationManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.ide.progress.ProgressMonitor;
 import jetbrains.mps.ide.progress.ProgressWindowProgressMonitor;
+import jetbrains.mps.logging.Logger;
 
 import javax.swing.*;
 import java.io.File;
 import java.util.*;
 
-import org.apache.log4j.Logger;
 
 /**
  * @author Kostik

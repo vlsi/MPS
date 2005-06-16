@@ -5,10 +5,10 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.collectionLanguage.CollectionDeclaration;
+import jetbrains.mps.logging.Logger;
 
 import javax.swing.*;
 
-import org.apache.log4j.Logger;
 
 import java.awt.*;
 

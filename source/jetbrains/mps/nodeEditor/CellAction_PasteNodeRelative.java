@@ -8,10 +8,10 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.datatransfer.PasteUtil;
+import jetbrains.mps.logging.Logger;
 
 import java.util.List;
 
-import org.apache.log4j.Logger;
 
 public class CellAction_PasteNodeRelative extends EditorCellAction {
   private static final Logger LOG = Logger.getLogger(CellAction_PasteNodeRelative.class);

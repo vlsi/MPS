@@ -18,6 +18,7 @@ import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.*;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.AspectMethod;
+import jetbrains.mps.logging.Logger;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -27,7 +28,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class TemplateGenUtil {
-  private static final org.apache.log4j.Logger LOG = org.apache.log4j.Logger.getLogger(TemplateGenUtil.class);
+  private static final Logger LOG = Logger.getLogger(TemplateGenUtil.class);
 
   public static SemanticNode instantiateNodeForTemplate(SemanticNode templateNode, SModel targetModel) {
     ConceptDeclaration conceptDeclaration = Language.getTypeDeclaration(templateNode);
@@ -85,7 +86,7 @@ public class TemplateGenUtil {
         currBuilder = currBuilder.getParent();
       }
 
-      LOG.warn("WARN! Couldn't resolve template reference! " + nodeBuilder.getGenerator().getState().toString() +
+      LOG.warning("WARN! Couldn't resolve template reference! " + nodeBuilder.getGenerator().getState().toString() +
               "\n    template       : " + templateReference.getSourceNode().getDebugText() + " --[" + templateReference.getRole() + "]--> " + templateReference.getTargetNode().getDebugText() +
               "\n    template target: " + targetNode.getDebugText() +
               "\n" + buildersStack);
@@ -209,7 +210,7 @@ public class TemplateGenUtil {
   public static void weaveTemplateDeclaration(SemanticNode sourceNode, TemplateDeclaration templateDeclaration, INodeBuilder contextBuilder, ITemplateGenerator generator) {
     List<TemplateFragment> templateFragments = getTemplateFragments(templateDeclaration);
     if (templateFragments.isEmpty()) {
-      LOG.warn("WARN: no template fragments found in " + templateDeclaration.getDebugText());
+      LOG.warning("WARN: no template fragments found in " + templateDeclaration.getDebugText());
       return;
     }
 

@@ -26,6 +26,7 @@ import jetbrains.mps.projectLanguage.ProjectModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.logging.Logger;
 
 import javax.swing.*;
 import javax.swing.event.TreeExpansionEvent;
@@ -38,7 +39,7 @@ import java.awt.event.*;
 import java.util.*;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+
 
 /**
  * Author: Sergey Dmitriev
@@ -555,7 +556,7 @@ public class ProjectPane extends JComponent {
       myTree.setSelectionPath(treePath);
       myTree.scrollPathToVisible(treePath);
     } else {
-      LOG.warn("Couldn't select node " + semanticNode.getDebugText() + " : tree node not found.");
+      LOG.warning("Couldn't select node " + semanticNode.getDebugText() + " : tree node not found.");
     }
   }
 

@@ -3,10 +3,10 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.logging.Logger;
 
 import java.awt.*;
 
-import org.apache.log4j.Logger;
 
 /**
  * Author: Sergey Dmitriev

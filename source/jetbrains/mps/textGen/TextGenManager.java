@@ -3,13 +3,14 @@ package jetbrains.mps.textGen;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.mapping.MappingTextGenManager;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.logging.Logger;
 
 /**
  * User: Dmitriev.
  * Date: Dec 22, 2003
  */
 public class TextGenManager {
-  private static final org.apache.log4j.Logger LOG = org.apache.log4j.Logger.getLogger(TextGenManager.class);
+  private static final Logger LOG = Logger.getLogger(TextGenManager.class);
   private static TextGenManager myInstance;
 
   public static void setMappingTextGenManager() {

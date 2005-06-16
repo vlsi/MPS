@@ -1,6 +1,7 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.projectLanguage.ModelRoot;
+import jetbrains.mps.logging.Logger;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,7 +9,6 @@ import java.net.URL;
 import java.util.Collection;
 import java.util.Iterator;
 
-import org.apache.log4j.Logger;
 
 /**
  * Author: Sergey Dmitriev
