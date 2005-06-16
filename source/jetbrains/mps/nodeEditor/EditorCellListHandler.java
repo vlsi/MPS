@@ -59,9 +59,11 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
     AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
     editor.pushKeyboardHandler(this);
     editor.rebuildEditorContent();
-    EditorCell selectableLeaf = myInsertCell.findFirstSelectableLeaf();
-    if (selectableLeaf != null) {
-      editor.changeSelection(selectableLeaf);
+    if (myInsertCell != null) {
+      EditorCell selectableLeaf = myInsertCell.findFirstSelectableLeaf();
+      if (selectableLeaf != null) {
+        editor.changeSelection(selectableLeaf);
+      }
     }
   }
 
@@ -71,7 +73,9 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
 
       EditorCell prevCell = myListEditorCell_Collection.getPrevCell(myInsertCell);
       myListEditorCell_Collection.removeCell(myInsertCell);
-      myListEditorCell_Collection.insertAfter(prevCell, myInsertedNodeCell);
+      if (myInsertedNodeCell != null) {
+        myListEditorCell_Collection.insertAfter(prevCell, myInsertedNodeCell);
+      }
 
       myInsertCell = null;
       myInsertedNode = null;
