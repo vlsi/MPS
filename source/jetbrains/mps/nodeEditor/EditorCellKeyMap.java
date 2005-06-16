@@ -55,7 +55,7 @@ public class EditorCellKeyMap {
           int value = field.getInt(null);
           ourJavaKeycodesMap.put(new Integer(value), name);
         } catch (IllegalAccessException e) {
-          e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+          LOG.error(e);
         }
       }
     }
