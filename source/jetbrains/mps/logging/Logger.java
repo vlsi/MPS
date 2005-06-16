@@ -51,8 +51,16 @@ public class Logger {
     myLogger.error(message);
   }
 
+  public void error(Throwable t) {
+    error("Exception", t);
+  }
+
   public void error(String message, Throwable t) {
     myLogger.error(message, t);
+  }
+
+  public void errorWithTrace(String message) {
+    myLogger.error(message, new Throwable());
   }
 
   public void fatal(String message) {

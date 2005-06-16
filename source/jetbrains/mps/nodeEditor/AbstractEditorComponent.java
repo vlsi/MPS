@@ -347,7 +347,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
                       try {
                         tmpClass = (ClassConcept) javaClassMap.get(className);
                       } catch (Exception e1) {
-                        e1.printStackTrace();
+                        LOG.error(e1);
                       }
                       if (tmpClass == null) {
                         JOptionPane.showMessageDialog(myContainer, "Class not found:\n" + className, "Class Not Found", JOptionPane.ERROR_MESSAGE);
@@ -882,7 +882,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       try {
         cellSelectionListener.selectionChanged(this, oldSelection, newSelection);
       } catch (Exception e) {
-        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        LOG.error(e);
       }
     }
   }

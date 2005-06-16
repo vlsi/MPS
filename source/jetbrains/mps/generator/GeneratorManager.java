@@ -178,7 +178,6 @@ public class GeneratorManager {
                 return;
               } catch (final GenerationFailedException gfe) {
                 LOG.error(model.getFQName() + " generation failed", gfe);
-                gfe.printStackTrace();
                 addMessage(new Message(MessageKind.ERROR, model.getFQName() + " model generation failed"));
                 showMessageView();
                 return;
@@ -217,7 +216,7 @@ public class GeneratorManager {
       ReloadUtils.reloadAll(true);
 
     } catch (Exception e) {
-      e.printStackTrace();
+      LOG.error("Exception", e);
     }
   }
 
@@ -341,7 +340,7 @@ public class GeneratorManager {
         generator = (IModelGenerator) cls.getConstructor(MPSProject.class).newInstance(myProject);
       }
     } catch (Exception e) {
-      e.printStackTrace();
+      LOG.error("Exception", e);
     }
     if (generator == null) {
       return;

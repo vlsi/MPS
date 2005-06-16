@@ -1,11 +1,15 @@
 package jetbrains.mps.ide;
 
+import jetbrains.mps.logging.Logger;
+
 import javax.swing.*;
 
 /**
  * @author Kostik
  */
 public class ThreadUtils {
+  private static final Logger LOG = Logger.getLogger(ThreadUtils.class);
+
   public static void runInEventDispathThread(Runnable r) {
     if (isEventDispatchThread()) {
       r.run();
@@ -13,7 +17,7 @@ public class ThreadUtils {
       try {
         SwingUtilities.invokeAndWait(r);
       } catch (Exception e) {
-        e.printStackTrace();
+        LOG.error(e);
       }
     }
   }

@@ -11,6 +11,7 @@ import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.logging.Logger;
 import jetbrains.textLanguage.Sentence;
 import jetbrains.textLanguage.Word;
 import jetbrains.textLanguage.Text;
@@ -31,6 +32,8 @@ import rubyWeb.TextUtil;
  * Time: Nov 25, 2003 7:27:37 PM
  */
 public class PasteUtil {
+  private static final Logger LOG = Logger.getLogger(PasteUtil.class);
+
   private static final int PASTE_N_A = 0;
   private static final int PASTE_TO_TAREGT = 1;
   private static final int PASTE_TO_PARENT = 2;
@@ -47,9 +50,9 @@ public class PasteUtil {
         nodeData = (SemanticNodeData) content.getTransferData(SModelDataFlavor.semanticNode);
         return nodeData.createNodes(semanticModel);
       } catch (UnsupportedFlavorException e) {
-        e.printStackTrace();  //To change body of catch statement use Options | File Templates.
+        LOG.error("Exception", e);
       } catch (IOException e) {
-        e.printStackTrace();  //To change body of catch statement use Options | File Templates.
+        LOG.error("Exception", e);
       }
     }
 
@@ -84,7 +87,7 @@ public class PasteUtil {
       }
       return result;
     } catch (Exception e) {
-      e.printStackTrace();
+      LOG.error(e);
       return null;
     }
   }

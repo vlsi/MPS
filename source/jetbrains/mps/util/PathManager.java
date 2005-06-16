@@ -73,7 +73,7 @@ public class PathManager {
       File file = new File(ourConfigPath);
       file.mkdirs();
     } catch (Exception e) {
-      e.printStackTrace();
+      LOG.error(e);
     }
 
     return ourConfigPath;
@@ -248,7 +248,7 @@ public class PathManager {
       }
       return fqName;
     } catch (IOException e) {
-      e.printStackTrace();
+      LOG.error(e);
     }
     return null;
   }

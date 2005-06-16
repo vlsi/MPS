@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.logging.Logger;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -18,6 +19,8 @@ import java.util.List;
  * Created Sep 16, 2003
  */
 public class NodeSubstituteChooser implements IKeyboardHandler {
+  private static final Logger LOG = Logger.getLogger(NodeSubstituteChooser.class);
+
   static final int MAX_MENU_LEN = 30;
   static final int SCROLLER_WIDTH = 7;
 
@@ -126,7 +129,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
         }
       });
     } catch (Exception e) {
-      e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+      LOG.error(e);
     }
     myMenuSubstituteEntries = new LinkedList<INodeSubstituteItem>(matchingActions);
     if (myMenuSubstituteEntries.size() == 0) {
@@ -152,7 +155,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       try {
         myMatchingStrings[i] = entry.getMatchingText(null);
       } catch (Exception e) {
-        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        LOG.error(e);
       }
       if (myMatchingStrings[i] != null) {
         descriptionIndent = Math.max(descriptionIndent, myMatchingStrings[i].length() + 2);

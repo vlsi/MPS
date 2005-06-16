@@ -89,7 +89,7 @@ public class JDOMUtil {
       writer.close();
     }
     catch (NullPointerException ex) {
-      ex.printStackTrace();
+      LOG.error(ex);
     }
   }
 

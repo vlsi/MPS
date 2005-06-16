@@ -226,7 +226,7 @@ public class EditorCellKeyMap {
             String value = field.get(null).toString();
             ourModifiers.add(value);
           } catch (IllegalAccessException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            LOG.error(e);
           }
         }
       }
@@ -246,7 +246,7 @@ public class EditorCellKeyMap {
             String value = field.get(null).toString();
             ourKeycodeCategories.add(value);
           } catch (IllegalAccessException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            LOG.error(e);
           }
         }
       }

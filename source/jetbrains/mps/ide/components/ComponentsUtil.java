@@ -6,6 +6,7 @@ import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.semanticModel.SModelDescriptor;
 import jetbrains.mps.semanticModel.SModelRepository;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.logging.Logger;
 
 import java.awt.*;
 
@@ -13,6 +14,8 @@ import java.awt.*;
  * @author Kostik
  */
 public class ComponentsUtil {
+  private static final Logger LOG = Logger.getLogger(ComponentsUtil.class);
+
   public static final String NODE = "node";
   public static final String MODEL = "model";
   public static final String ID = "id";
@@ -57,7 +60,7 @@ public class ComponentsUtil {
           int h = e.getAttribute(HEIGHT).getIntValue();
           return new Rectangle(x, y, w, h);
       } catch (DataConversionException e1) {
-          e1.printStackTrace();
+          LOG.error(e1);
           return null;
       }
   }

@@ -9,6 +9,7 @@ import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.cml.util.CommandRunnable;
 import jetbrains.mps.projectLanguage.ProjectModel;
+import jetbrains.mps.logging.Logger;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -20,6 +21,8 @@ import java.util.*;
  * Created Apr 29, 2004
  */
 public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
+  private static final Logger LOG = Logger.getLogger(MPSProject.class);
+
   private File myProjectFile;
   private File myWorkspaceFile;
 
@@ -131,12 +134,12 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
               ((ExternalizableComponent) getComponent(cls)).read(component);
             }
           } catch (Exception e) {
-            e.printStackTrace();
+            LOG.error(e);
           }
         }
       }
     } catch (Exception e) {
-      e.printStackTrace();
+      LOG.error(e);
     }
   }
 
@@ -165,7 +168,7 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
       Document document = new Document(root);
       JDOMUtil.writeDocument(document, myWorkspaceFile);
     } catch (Exception e) {
-      e.printStackTrace();
+      LOG.error(e);
     }
   }
 

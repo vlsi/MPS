@@ -33,7 +33,7 @@ public class EditorManager {
     try {
       nodeCell = editor.createEditorCell(context, node);
     } catch (Exception e) {
-      e.printStackTrace();
+      LOG.error(e);
       nodeCell = EditorCell_Error.create(context, node, "!exception!");
     }
     if (node.getChildCount(NODE_TO_PLACE_AFTER) == 0) {
@@ -81,13 +81,13 @@ public class EditorManager {
   private INodeEditor loadEditor(EditorContext context, SemanticNode node) {
     Language language = Language.getLanguage(node, context.getProject());
     if (language == null) {
-      (new RuntimeException("Error loading editor for node \"" + node.getDebugText() + "\" : couldn't find language.")).printStackTrace();
+      LOG.errorWithTrace("Error loading editor for node \"" + node.getDebugText() + "\" : couldn't find language.");
       return null;
     }
     String conceptName = JavaNameUtil.shortName(node.getClass().getName());
     ConceptDeclaration nodeConcept = language.findTypeDeclaration(conceptName);
     if (nodeConcept == null) {
-      (new RuntimeException("Error loading editor for node \"" + node.getDebugText() + "\" : couldn't find the type declaration.")).printStackTrace();
+      LOG.errorWithTrace("Error loading editor for node \"" + node.getDebugText() + "\" : couldn't find the type declaration.");
       return null;
     }
 
@@ -97,7 +97,7 @@ public class EditorManager {
     if (languageEditorFQName == null) {
       languageEditorFQName = language.getEditorFQName();
       if (languageEditorFQName == null) {
-        (new RuntimeException("Error loading editor for node \"" + node.getDebugText() + "\" <<" + stereotype + ">> : no editor model.")).printStackTrace();
+        LOG.errorWithTrace("Error loading editor for node \"" + node.getDebugText() + "\" <<" + stereotype + ">> : no editor model.");
         return null;
       }
     }
@@ -111,11 +111,11 @@ public class EditorManager {
       LOG.warning("Couldn't load editor " + editorClassName + " : Class Not Found!");
       //      e.printStackTrace();  //To change body of catch statement use Options | File Templates.
     } catch (InstantiationException e) {
-      e.printStackTrace();  //To change body of catch statement use Options | File Templates.
+      LOG.error(e);
     } catch (IllegalAccessException e) {
-      e.printStackTrace();  //To change body of catch statement use Options | File Templates.
+      LOG.error(e);
     } catch (Exception e) {
-      e.printStackTrace();
+      LOG.error(e);
     }
 
     return null;
