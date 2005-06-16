@@ -112,6 +112,8 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
   }
 
   public void readWorkspaceSettings() {
+    if (IdeMain.isTestMode()) return;
+
     String projectFileName = myProjectFile.getName();
     int dotIndex = projectFileName.lastIndexOf('.');
     String mwsFileName = projectFileName.substring(0, dotIndex) + ".mws";
