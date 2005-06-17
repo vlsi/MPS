@@ -130,9 +130,7 @@ public class GeneratorManager {
       public void run() {
         ProgressMonitor progress = new ProgressWindowProgressMonitor(false);
 
-        progress.addText("Checking IntelliJ IDEA presence");
         boolean isIdeaPresent = MPSPlugin.getInstance().isIDEAPresent();
-
         try {
           int modelCount = 0;
           for (GeneratorConfigurationCommand cmd : CollectionUtil.iteratorAsIterable(configuration.commands())) {
@@ -146,11 +144,12 @@ public class GeneratorManager {
             } else {
               ideaCompilations = 2;
             }
-          } else {
-            progress.addText("IntelliJ IDEA with installed MPS is not present");
           }
 
-          progress.start("Generating", (modelCount + ideaCompilations) * AMOUNT_PER_MODEL);
+          progress.start("Generating", (modelCount + ideaCompilations) * AMOUNT_PER_MODEL);          
+          if (ideaCompilations == 0) {
+            progress.addText("IntelliJ IDEA with installed MPS is not present");
+          }
 
           clearMessages();
           addMessage(new Message(MessageKind.INFORMATION, null, "Generating configuration " + configuration.getName()));
