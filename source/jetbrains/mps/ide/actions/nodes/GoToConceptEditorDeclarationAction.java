@@ -49,7 +49,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
       while (iterator.hasNext()) {
         SemanticNode root = iterator.next();
         if (editorName.equals(root.getName())) {
-          AbstractEditorComponent editor = context.getIde().getEditorsPane().openEditor(root, EditorsPane.EditorPosition.LEFT);
+          AbstractEditorComponent editor = context.getIde().getEditorsPane().openEditor(root);
           editor.selectNode(root);
           return;
         }

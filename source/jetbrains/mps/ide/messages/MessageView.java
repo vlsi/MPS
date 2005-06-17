@@ -1,7 +1,6 @@
 package jetbrains.mps.ide.messages;
 
 import jetbrains.mps.ide.IdeMain;
-import static jetbrains.mps.ide.EditorsPane.EditorPosition.LEFT;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 
 import javax.swing.*;
