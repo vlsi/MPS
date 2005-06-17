@@ -5,6 +5,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.module.ModuleType;
@@ -68,7 +69,6 @@ public class ProjectCreator implements ApplicationComponent {
       public void run() {
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
           public void run() {
-
             LocalFileSystem lfs = LocalFileSystem.getInstance();
 
             Project project = myProjectManager.newProject(path + File.separator + name + ".ipr", true, false);
