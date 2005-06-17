@@ -22,7 +22,7 @@ public class FloatingPointConstant_Editor extends DefaultNodeEditor {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "value", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
     editorCell.setSelectable(true);
-    editorCell.setDrawBorder(true);
+    editorCell.setDrawBorder(false);
     editorCell.setEditable(true);
     editorCell.setDefaultText("?.?");
     editorCell.setDrawBrackets(false);
