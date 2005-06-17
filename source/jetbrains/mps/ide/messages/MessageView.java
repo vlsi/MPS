@@ -1,10 +1,12 @@
 package jetbrains.mps.ide.messages;
 
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
@@ -45,6 +47,18 @@ public class MessageView {
           openCurrentMessageNodeIfPossible();
         }
       }
+
+      public void mousePressed(MouseEvent e) {
+        if (e.isPopupTrigger()) {
+          showPopupMenu(e);
+        }
+      }
+
+      public void mouseReleased(MouseEvent e) {
+        if (e.isPopupTrigger()) {
+          showPopupMenu(e);
+        }
+      }
     });
 
     myList.setCellRenderer(new DefaultListCellRenderer() {
@@ -70,6 +84,21 @@ public class MessageView {
       }
     });
 
+  }
+
+
+  private void showPopupMenu(MouseEvent evt) {
+    if (myList.getSelectedValue() == null) return;
+
+    JPopupMenu menu = new JPopupMenu();
+    menu.add(new AbstractActionWithEmptyIcon("Copy Text") {
+      public void actionPerformed(ActionEvent e) {
+        if (myList.getSelectedValue() == null) return;
+        String text = ((Message) myList.getSelectedValue()).getText();
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(text), null);
+      }
+    });
+    menu.show(myList, evt.getX(), evt.getY());
   }
 
   private void openCurrentMessageNodeIfPossible() {
