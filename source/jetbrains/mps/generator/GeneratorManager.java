@@ -130,6 +130,7 @@ public class GeneratorManager {
       public void run() {
         ProgressMonitor progress = new ProgressWindowProgressMonitor(false);
 
+        progress.addText("Checking IntelliJ IDEA presence");
         boolean isIdeaPresent = MPSPlugin.getInstance().isIDEAPresent();
 
         try {
@@ -146,7 +147,7 @@ public class GeneratorManager {
               ideaCompilations = 2;
             }
           } else {
-            progress.addText("IDEA with installed MSP is not present");
+            progress.addText("IntelliJ IDEA with installed MPS is not present");
           }
 
           progress.start("Generating", (modelCount + ideaCompilations) * AMOUNT_PER_MODEL);
