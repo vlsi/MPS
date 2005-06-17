@@ -130,6 +130,8 @@ public class GeneratorManager {
       public void run() {
         ProgressMonitor progress = new ProgressWindowProgressMonitor(false);
 
+        boolean isIdeaPresent = MPSPlugin.getInstance().isIDEAPresent();
+
         try {
           int modelCount = 0;
           for (GeneratorConfigurationCommand cmd : CollectionUtil.iteratorAsIterable(configuration.commands())) {
@@ -137,10 +139,14 @@ public class GeneratorManager {
           }
 
           int ideaCompilations = 0;
-          if (generateText) {
-            ideaCompilations = 1;
+          if (isIdeaPresent) {
+            if (generateText) {
+              ideaCompilations = 1;
+            } else {
+              ideaCompilations = 2;
+            }
           } else {
-            ideaCompilations = 2;
+            progress.addText("IDEA with installed MSP is not present");
           }
 
           progress.start("Generating", (modelCount + ideaCompilations) * AMOUNT_PER_MODEL);
@@ -148,13 +154,12 @@ public class GeneratorManager {
           clearMessages();
           addMessage(new Message(MessageKind.INFORMATION, null, "Generating configuration " + configuration.getName()));
 
-          progress.addText("Compiling in IntelliJ IDEA...");
-
-
-          LOG.debug("Compiling in IDE before generation ");
-
-          compileAndReload();
-          progress.advance(AMOUNT_PER_MODEL);
+          if (isIdeaPresent) {
+            progress.addText("Compiling in IntelliJ IDEA...");
+            LOG.debug("Compiling in IDE before generation ");
+            compileAndReload();
+            progress.advance(AMOUNT_PER_MODEL);
+          }
 
 
           for (GeneratorConfigurationCommand cmd : CollectionUtil.iteratorAsIterable(configuration.commands())) {
@@ -187,10 +192,8 @@ public class GeneratorManager {
               addMessage(new Message(MessageKind.INFORMATION, model.getFQName() + " model is generated"));
             }
           }
-          if (!generateText) {
-
+          if (!generateText && isIdeaPresent) {
             LOG.debug("Compiling in IDE after generation");
-
             progress.addText("Compiling in IntelliJ IDEA...");
             compileAndReload();
             progress.advance(AMOUNT_PER_MODEL);
