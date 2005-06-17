@@ -188,6 +188,7 @@ public class ProjectPane extends JComponent {
             if (JOptionPane.showConfirmDialog(null, "Delete model " + getSelectedModel() + "?", "Delete model", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)
             {
               SModelDescriptor model = getSelectedModel();
+              myProject.getComponent(EditorsPane.class).closeEditors(model);
               myProject.deleteModel(model);
               LOG.debug("deleting " + model.getModelFile());
               rebuildTree();
