@@ -73,9 +73,9 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
       // we may want to change action Type as result of pre-processing
       if (endEditKeystroke && !cellWasValid) {
-        actionType = EditorCellAction.NEXT;
+        EditorUtil.validateCell(selectedCell, editorContext, strictMatching);
         keyEvent.consume();
-
+        return true;
       } else if (deleteKeystroke) {
         if (!(selectedCell instanceof EditorCell_Label &&
                 ((EditorCell_Label) selectedCell).isEditable())) {
