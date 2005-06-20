@@ -39,14 +39,8 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     if(this.handleConditionalQuery_1075379536707(node)) {
       editorCell.addEditorCell(this.createIfFalseBranch(context, node));
     }
-    if(this.handleConditionalQuery_1119003764321(node)) {
-      editorCell.addEditorCell(this.createIfFalseBranch1(context, node));
-    }
-    if(this.handleConditionalQuery_1119004246538(node)) {
-      editorCell.addEditorCell(this.createIfFalseBranch2(context, node));
-    }
     if(this.handleConditionalQuery_1075379580458(node)) {
-      editorCell.addEditorCell(this.createConstantCell8(context, node, "}"));
+      editorCell.addEditorCell(this.createConstantCell5(context, node, "}"));
     }
     return editorCell;
   }
@@ -83,35 +77,14 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createConstantCell3(context, node, "}"));
     editorCell.addEditorCell(this.createConstantCell4(context, node, "else"));
-    editorCell.addEditorCell(this.createConstantCell5(context, node, "{"));
-    return editorCell;
-  }
-  public EditorCell createIfFalseBranch1(EditorContext context, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.addEditorCell(this.createConstantCell6(context, node, "  "));
     editorCell.addEditorCell(this.createIfFalseStatementCell(context, node));
     return editorCell;
   }
-  public EditorCell createIfFalseBranch2(EditorContext context, SemanticNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.addEditorCell(this.createConstantCell7(context, node, "}"));
-    return editorCell;
-  }
-  public EditorCell createConstantCell8(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell5(EditorContext context, SemanticNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
+    editorCell.setEditable(true);
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
@@ -179,38 +152,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setFontType(MPSFonts.BOLD);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    return editorCell;
-  }
-  public EditorCell createConstantCell5(EditorContext context, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    return editorCell;
-  }
-  public EditorCell createConstantCell6(EditorContext context, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.getTextLine().setFontType(MPSFonts.BOLD);
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    return editorCell;
-  }
-  public EditorCell createConstantCell7(EditorContext context, SemanticNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
   public EditorCell createConditionCell(EditorContext context, SemanticNode node) {
@@ -298,14 +239,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public boolean handleConditionalQuery_1075379536707(SemanticNode node) {
-    IfStatement ifStatement = (IfStatement)node;
-    return ifStatement.getIfFalseStatement() != null;
-  }
-  public boolean handleConditionalQuery_1119003764321(SemanticNode node) {
-    IfStatement ifStatement = (IfStatement)node;
-    return ifStatement.getIfFalseStatement() != null;
-  }
-  public boolean handleConditionalQuery_1119004246538(SemanticNode node) {
     IfStatement ifStatement = (IfStatement)node;
     return ifStatement.getIfFalseStatement() != null;
   }
