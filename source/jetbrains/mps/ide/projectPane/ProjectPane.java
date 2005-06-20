@@ -178,11 +178,6 @@ public class ProjectPane extends JComponent {
 
     if (getSelectedModel() != null) {
       if (selectionPath.getLastPathComponent() instanceof SModelTreeNode) {
-        popupMenu.add(new AbstractActionWithEmptyIcon("Model Properties") {
-          public void actionPerformed(ActionEvent e) {
-            DialogUtils.editModelProperties(myIDE);
-          }
-        });
         popupMenu.add(new AbstractActionWithEmptyIcon("Delete Model") {
           public void actionPerformed(ActionEvent e) {
             if (JOptionPane.showConfirmDialog(null, "Delete model " + getSelectedModel() + "?", "Delete model", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)
@@ -226,15 +221,23 @@ public class ProjectPane extends JComponent {
 
     if (lastPathComponent instanceof ProjectLanguageTreeNode) {
       final ProjectLanguageTreeNode languageTreeNode = ((ProjectLanguageTreeNode) lastPathComponent);
+      popupMenu.add(new AbstractActionWithEmptyIcon("Generate Language") {
+        public void actionPerformed(ActionEvent e) {
+          myProject.getComponent(GeneratorManager.class).generate(languageTreeNode.getLanguage());
+        }
+      });
+      popupMenu.addSeparator();
       popupMenu.add(new AbstractActionWithEmptyIcon("Language Properties") {
         public void actionPerformed(ActionEvent e) {
           new LanguagePropertiesDialog(myIDE.getMainFrame(), myProject, languageTreeNode.getLanguage()).showDialog();
         }
       });
-      popupMenu.addSeparator();
-      popupMenu.add(new AbstractActionWithEmptyIcon("Generate Language") {
+    }
+
+    if (getSelectedModel() != null) {
+      popupMenu.add(new AbstractActionWithEmptyIcon("Model Properties") {
         public void actionPerformed(ActionEvent e) {
-          myProject.getComponent(GeneratorManager.class).generate(languageTreeNode.getLanguage());
+          DialogUtils.editModelProperties(myIDE);
         }
       });
     }
