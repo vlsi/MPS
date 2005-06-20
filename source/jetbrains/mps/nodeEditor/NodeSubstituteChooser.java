@@ -48,7 +48,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
   private PopupWindow getPopupWindow() {
     if (myPopupWindow == null) {
-      myPopupWindow = new PopupWindow(getEditorWindow(), myRelativeCell);
+      myPopupWindow = new PopupWindow(getEditorWindow());
     }
     return myPopupWindow;
   }
@@ -65,6 +65,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     myRelativeCell = cell;
     Component component = cell.getEditorContext().getNodeEditorComponent();
     Point anchor = component.getLocationOnScreen();
+    getPopupWindow().setRelativeCell(cell);
     getPopupWindow().relayout();
     myPatternEditorLocation = new Point(anchor.x + cell.getX(), anchor.y + +cell.getY());
     myPatternEditorSize = new Dimension(cell.getWidth() + 1, cell.getHeight());
@@ -312,17 +313,15 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     private JScrollPane myScroller = new JScrollPane(myList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);;
     private EditorCell myRelativeCell;
 
-    public PopupWindow(final Window owner, final EditorCell cell) {
+    public PopupWindow(final Window owner) {
       super(owner);
 
       owner.addComponentListener(new ComponentAdapter() {
         public void componentMoved(ComponentEvent e) {
-          NodeSubstituteChooser.this.setLocationRelative(cell);
+          NodeSubstituteChooser.this.setLocationRelative(myRelativeCell);
           getPatternEditor().setLocation(myPatternEditorLocation);
         }
       });
-
-      myRelativeCell = cell;
 
       myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
       myList.setFont(new TextLine("", null).getFont());
@@ -348,6 +347,10 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       add(myScroller);
       myList.setFocusable(false);
       setSize(PREFERRED_WIDTH, PREFERRED_HEIGHT);
+    }
+
+    public void setRelativeCell(EditorCell cell) {
+      myRelativeCell = cell;
     }
 
     public int getSelectionIndex() {
