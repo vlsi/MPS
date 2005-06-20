@@ -1,13 +1,13 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.IStatus;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.semanticModel.SemanticNode;
-import jetbrains.mps.util.NodeNameUtil;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.NameUtil;
 
 /**
  * Author: Sergey Dmitriev.
@@ -81,7 +81,8 @@ public class EditorManager {
   private INodeEditor loadEditor(EditorContext context, SemanticNode node) {
     Language language = Language.getLanguage(node, context.getProject());
     if (language == null) {
-      LOG.errorWithTrace("Error loading editor for node \"" + node.getDebugText() + "\" : couldn't find language.");
+      LOG.errorWithTrace("Error loading editor for node \"" + node.getDebugText() + "\".\n" +
+              "Couldn't find language for namespace: \"" + NameUtil.namespaceFromConceptFQName(node.getClass().getName()) + "\"");
       return null;
     }
     String conceptName = JavaNameUtil.shortName(node.getClass().getName());
