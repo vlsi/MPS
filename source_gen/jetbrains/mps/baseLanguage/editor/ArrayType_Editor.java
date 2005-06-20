@@ -30,6 +30,7 @@ public class ArrayType_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.addKeyMap(new _TypeKeyMap());
     editorCell.addEditorCell(this.createComponentTypeCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "[]"));
     return editorCell;
@@ -42,6 +43,7 @@ public class ArrayType_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.addKeyMap(new _ArrayTypeBracketsActions());
     return editorCell;
   }
   public EditorCell createComponentTypeCell(EditorContext context, SemanticNode node) {

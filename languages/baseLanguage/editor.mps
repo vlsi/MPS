@@ -9707,6 +9707,7 @@
       <property name="text" value="boolean" />
       <property name="drawBorder" value="false" />
       <property name="selectable" value="true" />
+      <link role="keyMap" targetNodeId="1119265790350" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311184611">
@@ -9718,6 +9719,7 @@
       <property name="text" value="byte" />
       <property name="drawBorder" value="false" />
       <property name="selectable" value="true" />
+      <link role="keyMap" targetNodeId="1119265790350" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311208800">
@@ -9729,6 +9731,7 @@
       <property name="text" value="char" />
       <property name="drawBorder" value="false" />
       <property name="selectable" value="true" />
+      <link role="keyMap" targetNodeId="1119265790350" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311246068">
@@ -9740,6 +9743,7 @@
       <property name="text" value="float" />
       <property name="drawBorder" value="false" />
       <property name="selectable" value="true" />
+      <link role="keyMap" targetNodeId="1119265790350" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311278508">
@@ -9751,6 +9755,7 @@
       <property name="text" value="int" />
       <property name="drawBorder" value="false" />
       <property name="selectable" value="true" />
+      <link role="keyMap" targetNodeId="1119265790350" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311329197">
@@ -9762,6 +9767,7 @@
       <property name="text" value="long" />
       <property name="drawBorder" value="false" />
       <property name="selectable" value="true" />
+      <link role="keyMap" targetNodeId="1119265790350" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311365246">
@@ -9772,6 +9778,7 @@
       <property name="text" value="short" />
       <property name="drawBorder" value="false" />
       <property name="selectable" value="true" />
+      <link role="keyMap" targetNodeId="1119265790350" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311403842">
@@ -9783,6 +9790,7 @@
       <property name="text" value="void" />
       <property name="drawBorder" value="false" />
       <property name="selectable" value="true" />
+      <link role="keyMap" targetNodeId="1119265790350" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311808095">
@@ -9794,6 +9802,7 @@
       <property name="text" value="double" />
       <property name="drawBorder" value="false" />
       <property name="selectable" value="true" />
+      <link role="keyMap" targetNodeId="1119265790350" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311823660">
@@ -9802,6 +9811,7 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1109204485828">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
+      <link role="keyMap" targetNodeId="1119265790350" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1109204507830">
         <property name="drawBorder" value="false" />
         <property name="nullText" value="&lt;no class&gt;" />
@@ -10861,6 +10871,7 @@
       <property name="text" value="String" />
       <property name="drawBorder" value="false" />
       <property name="selectable" value="true" />
+      <link role="keyMap" targetNodeId="1119265790350" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1079605217732">
@@ -15814,6 +15825,7 @@
       <property name="text" value="var" />
       <property name="drawBorder" value="false" />
       <property name="selectable" value="true" />
+      <link role="keyMap" targetNodeId="1119265790350" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1107796847143">
@@ -15911,6 +15923,7 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1109204541098">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
+      <link role="keyMap" targetNodeId="1119265790350" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1109204552943">
         <property name="drawBorder" value="false" />
         <property name="nullText" value="&lt;no interface&gt;" />
@@ -16095,6 +16108,7 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1113208366980">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
+      <link role="keyMap" targetNodeId="1119265790350" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1113208455587">
         <property name="drawBorder" value="false" />
         <link role="linkDeclaration" targetNodeId="8.1070534760952" />
@@ -16102,6 +16116,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1113208455588">
         <property name="text" value="[]" />
         <property name="drawBorder" value="false" />
+        <link role="keyMap" targetNodeId="1119269292522" />
       </node>
     </node>
   </node>
@@ -16132,6 +16147,24 @@
         <property name="fontStyle" value="ITALIC" />
         <property name="drawBorder" value="false" />
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1119265790350">
+    <property name="name" value="_TypeKeyMap" />
+    <node role="entry" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1119265795851">
+      <property name="keycode" value="[" />
+      <property name="actionProviderId" value="TransformToArrayType" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1119269292522">
+    <property name="name" value="_ArrayTypeBracketsActions" />
+    <node role="entry" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1119269308210">
+      <property name="keycode" value="VK_DELETE" />
+      <property name="actionProviderId" value="DeleteArrayType" />
+    </node>
+    <node role="entry" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1119270874006">
+      <property name="keycode" value="VK_BACK_SPACE" />
+      <property name="actionProviderId" value="DeleteArrayType" />
     </node>
   </node>
 </model>
