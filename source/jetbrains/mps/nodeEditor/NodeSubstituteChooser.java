@@ -8,9 +8,7 @@ import jetbrains.mps.logging.Logger;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.util.*;
 import java.util.List;
 
@@ -38,6 +36,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   private boolean myMenuEmpty;
   private String[] myStrings = new String[0];
   private String[] myMatchingStrings;
+  private EditorCell myRelativeCell;
 
   public NodeSubstituteChooser(AbstractEditorComponent editorComponent) {
     myEditorComponent = editorComponent;
@@ -48,6 +47,9 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   }
 
   private PopupWindow getPopupWindow() {
+    if (myPopupWindow == null) {
+      myPopupWindow = new PopupWindow(getEditorWindow(), myRelativeCell);
+    }
     return myPopupWindow;
   }
 
@@ -60,12 +62,10 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   }
 
   public void setLocationRelative(EditorCell cell) {
-    myPopupWindow = new PopupWindow(getEditorWindow(), cell);
-
+    myRelativeCell = cell;
     Component component = cell.getEditorContext().getNodeEditorComponent();
     Point anchor = component.getLocationOnScreen();
     getPopupWindow().relayout();
-
     myPatternEditorLocation = new Point(anchor.x + cell.getX(), anchor.y + +cell.getY());
     myPatternEditorSize = new Dimension(cell.getWidth() + 1, cell.getHeight());
   }
@@ -312,8 +312,16 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     private JScrollPane myScroller = new JScrollPane(myList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);;
     private EditorCell myRelativeCell;
 
-    public PopupWindow(Window owner, EditorCell cell) {
+    public PopupWindow(final Window owner, final EditorCell cell) {
       super(owner);
+
+      owner.addComponentListener(new ComponentAdapter() {
+        public void componentMoved(ComponentEvent e) {
+          NodeSubstituteChooser.this.setLocationRelative(cell);
+          getPatternEditor().setLocation(myPatternEditorLocation);
+        }
+      });
+
       myRelativeCell = cell;
 
       myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);

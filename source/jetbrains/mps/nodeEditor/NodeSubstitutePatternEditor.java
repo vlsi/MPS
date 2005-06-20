@@ -3,6 +3,8 @@ package jetbrains.mps.nodeEditor;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 
 /**
  * Author: Sergey Dmitriev.
@@ -81,6 +83,10 @@ public class NodeSubstitutePatternEditor {
       myEditorWindow.relayout();
       myEditorWindow.setVisible(true);
     }
+  }
+
+  public void setLocation(Point point) {
+    myEditorWindow.setLocation(point);
   }
 
   public void done() {
