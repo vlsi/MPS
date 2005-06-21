@@ -6,6 +6,7 @@ import jetbrains.mps.util.CommandRunnable;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.output.OutputView;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.messages.Message;
@@ -373,9 +374,9 @@ public class GeneratorManager {
     }
   }
 
-  private SModel generateByTemplateGenerator(SModelDescriptor sourceModelDescr, SModel templatesModel, final ITemplateGenerator generator)
+  private SModel generateByTemplateGenerator(SModelDescriptor sourceModelDescr, final SModel templatesModel, final ITemplateGenerator generator)
   {
-    SModel originalSourceModel = sourceModelDescr.getSModel();
+    final SModel originalSourceModel = sourceModelDescr.getSModel();
     String outputModelNamespace = JavaNameUtil.packageNameForModelFqName(originalSourceModel.getFQName());
     String transientModelNamePfx = originalSourceModel.getName() + "_transient_";
     List<SModel> transientModels = new LinkedList<SModel>();
@@ -386,7 +387,14 @@ public class GeneratorManager {
 
     // mapping
     LOG.debug("DO MAPPING from: " + originalSourceModel.getFQName() + " to " + currentTargetModel.getFQName());
-    generator.generate(originalSourceModel, currentTargetModel, templatesModel);
+
+    final SModel currentTargetModel1 = currentTargetModel;
+    CommandProcessor.instance().executeCommand(new Runnable() {
+      public void run() {
+        generator.generate(originalSourceModel, currentTargetModel1, templatesModel);
+      }
+    }, "generation");
+
 
     // reductions...
     while (true) {
