@@ -235,6 +235,7 @@ public class ProjectPane extends JComponent {
     }
 
     if (getSelectedModel() != null) {
+      popupMenu.addSeparator();
       popupMenu.add(new AbstractActionWithEmptyIcon("Model Properties") {
         public void actionPerformed(ActionEvent e) {
           DialogUtils.editModelProperties(myIDE);
