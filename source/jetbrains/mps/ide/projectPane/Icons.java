@@ -20,6 +20,11 @@ public class Icons {
   public static final Icon EDITORS_ICON =  new ImageIcon(Icons.class.getResource("nodes/editors.png"));
   public static final Icon GENERATORS_ICON =  new ImageIcon(Icons.class.getResource("nodes/generators.png"));
 
+  public static final Icon PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/properties.png"));
+  public static final Icon LANGUAGE_PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/languageProperties.png"));
+  public static final Icon MODEL_PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/modelProperties.png"));
+  public static final Icon PROJECT_PROPERTIES_ICON =  new ImageIcon(Icons.class.getResource("nodes/projectProperties.png"));
+
   public static final Icon STRUCTURE_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/structureModel.png"));
   public static final Icon EDITOR_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/editorModel.png"));
   public static final Icon ACTIONS_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/actionsModel.png"));

@@ -152,7 +152,7 @@ public class ProjectPane extends JComponent {
       popupMenu.add(createGenerateMenu(null));
       popupMenu.add(createGenerateTextMenu(null));
       popupMenu.addSeparator();
-      popupMenu.add(new AbstractActionWithEmptyIcon("Project Properties") {
+      popupMenu.add(new AbstractAction("Project Properties", Icons.PROJECT_PROPERTIES_ICON) {
         public void actionPerformed(ActionEvent e) {
           new ProjectPropertiesDialog(myIDE.getMainFrame(), myProject).showDialog();
         }
@@ -227,7 +227,7 @@ public class ProjectPane extends JComponent {
         }
       });
       popupMenu.addSeparator();
-      popupMenu.add(new AbstractActionWithEmptyIcon("Language Properties") {
+      popupMenu.add(new AbstractAction("Language Properties", Icons.LANGUAGE_PROPERTIES_ICON) {
         public void actionPerformed(ActionEvent e) {
           new LanguagePropertiesDialog(myIDE.getMainFrame(), myProject, languageTreeNode.getLanguage()).showDialog();
         }
@@ -236,7 +236,7 @@ public class ProjectPane extends JComponent {
 
     if (getSelectedModel() != null) {
       popupMenu.addSeparator();
-      popupMenu.add(new AbstractActionWithEmptyIcon("Model Properties") {
+      popupMenu.add(new AbstractAction("Model Properties", Icons.MODEL_PROPERTIES_ICON) {
         public void actionPerformed(ActionEvent e) {
           DialogUtils.editModelProperties(myIDE);
         }
