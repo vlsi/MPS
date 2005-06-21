@@ -2,11 +2,10 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.baseLanguage.Classifier;
 import jetbrains.mps.baseLanguage.generator.target.DefaultTemplateGenerator;
-import jetbrains.mps.cml.util.CommandRunnable;
+import jetbrains.mps.util.CommandRunnable;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.output.OutputView;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.messages.Message;

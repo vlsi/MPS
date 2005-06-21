@@ -4,7 +4,6 @@ import jetbrains.mps.baseLanguage.*;
 import jetbrains.mps.bootstrap.editorLanguage.BaseEditorComponent;
 import jetbrains.mps.bootstrap.editorLanguage.EditorCellModel;
 import jetbrains.mps.bootstrap.editorLanguage.EditorLanguageUtil;
-import jetbrains.mps.cml.generator.GeneratorUtil;
 import jetbrains.mps.generator.ContextUtil;
 import jetbrains.mps.generator.JavaClassMap;
 import jetbrains.mps.generator.JavaClassMaps;
@@ -26,6 +25,7 @@ import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.CopyUtil;
 import jetbrains.mps.logging.Logger;
 
 import javax.swing.*;
@@ -975,7 +975,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     CommandProcessor.instance().executeCommand(getContext(), new Runnable() {
       public void run() {
-        copy[0] = GeneratorUtil.copy(root);
+        copy[0] = CopyUtil.copy(root);
       }
     }, "node copyAndAddToRoots");
 

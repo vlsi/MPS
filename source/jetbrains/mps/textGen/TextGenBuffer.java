@@ -1,8 +1,6 @@
 package jetbrains.mps.textGen;
 
 
-import jetbrains.mps.cml.names.Names;
-
 import java.util.HashMap;
 
 /**

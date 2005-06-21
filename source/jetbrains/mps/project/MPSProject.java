@@ -1,13 +1,12 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.*;
 import jetbrains.mps.modelExecute.ExecutionManager;
 import jetbrains.mps.modelExecute.ExecutionPoint;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.cml.util.CommandRunnable;
+import jetbrains.mps.util.CommandRunnable;
 import jetbrains.mps.projectLanguage.ProjectModel;
 import jetbrains.mps.logging.Logger;
 import org.jdom.Document;
