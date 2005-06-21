@@ -15524,10 +15524,15 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.EditorComponentDeclaration" id="1107192536658">
     <property name="name" value="_CodeBlock_Component" />
     <link role="conceptDeclaration" targetNodeId="8.1107134345596" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1119296647696">
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1119314994020">
       <property name="drawBorder" value="false" />
-      <property name="nullText" value="&lt;no statement&gt;" />
-      <link role="linkDeclaration" targetNodeId="8.1107134797946" />
+      <property name="vertical" value="false" />
+      <property name="selectable" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1119315002099">
+        <property name="drawBorder" value="false" />
+        <property name="nullText" value="&lt;no statement&gt;" />
+        <link role="linkDeclaration" targetNodeId="8.1107134797946" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1107213958236">

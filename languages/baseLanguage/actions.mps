@@ -10,6 +10,12 @@
       <property name="applicableLinkMetaclass" value="aggregation" />
       <link role="applicableConcept" targetNodeId="1.1068431790191" />
     </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1119298590500">
+      <property name="actionsFactoryAspectId" value="Statement" />
+      <property name="actionsFilterAspectId" value="Statement" />
+      <property name="applicableLinkMetaclass" value="aggregation" />
+      <link role="applicableConcept" targetNodeId="1.1068580123157" />
+    </node>
   </node>
 </model>
 
