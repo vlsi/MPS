@@ -463,12 +463,6 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
         modelRepository.markChanged(transientModel);
         LOG.debug(" ---> " + transientModelDescr.getFQName() + " to file " + transientModelDescr.getModelFile().getAbsolutePath());
       }
-
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          generator.getProject().getComponent(ProjectPane.class).rebuildTree();
-        }
-      });
     }
 
     SModel lastTransientModel = transientModels.get(transientModels.size() - 1);

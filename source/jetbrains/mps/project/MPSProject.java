@@ -33,7 +33,7 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
   private Map<Class, Object> myComponents = new HashMap<Class, Object>();
   private List<MPSProjectListener> myProjectListeners = new ArrayList<MPSProjectListener>();
   private List<MPSProjectCommandListener> myProjectCommandListeners = new ArrayList<MPSProjectCommandListener>();
-  private CommandEventsTranslator myCommandListener = new CommandEventsTranslator();
+  private CommandEventsTranslator myEventTranslator = new CommandEventsTranslator();
   private RootManager myRootManager = null;
 
   public MPSProject(File file) {
@@ -56,8 +56,8 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
       rubyWeb.paper.PersistenceUtil.loadRubyWebPaper(this);
     }
 
-    CommandProcessor.instance().addCommandListener(myCommandListener);
-    addMPSProjectListener(myCommandListener);
+    CommandProcessor.instance().addCommandListener(myEventTranslator);
+    addMPSProjectListener(myEventTranslator);
   }
 
   public Collection<Language> getProjectLanguages() {
@@ -221,6 +221,7 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
   public void dispose() {
     myRootManager.releaseAll();
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
+    CommandProcessor.instance().removeCommandListener(myEventTranslator);
   }
 
   public void addMPSProjectListener(MPSProjectListener listener) {

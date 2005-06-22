@@ -20,6 +20,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.RootManager;
 import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.project.MPSProjectCommandListener;
 import jetbrains.mps.projectLanguage.Generator;
 import jetbrains.mps.projectLanguage.GeneratorConfiguration;
 import jetbrains.mps.projectLanguage.ProjectModel;
@@ -55,6 +56,11 @@ public class ProjectPane extends JComponent {
   private IdeMain myIDE;
   private HeaderWrapper myHeader;
   private boolean myRebuildEnabled = true;
+  private MPSProjectCommandListener myProjectListener = new MPSProjectCommandListener() {
+    public void projectChangedInCommand(MPSProject project) {
+      rebuildTree();
+    }
+  };
 
   public ProjectPane(IdeMain ide) {
     myIDE = ide;
@@ -472,6 +478,7 @@ public class ProjectPane extends JComponent {
 
   public void setProject(MPSProject project) {
     myProject = project;
+    myProject.addMPSProjectCommandListener(myProjectListener);
     project.getComponent(RootManager.class).reloadProject();
     rebuildTree();
     for (SModelDescriptor modelDescriptor : myProject.getAllModelDescriptors()) {
@@ -533,7 +540,7 @@ public class ProjectPane extends JComponent {
     repaint();
   }
 
-  public void rebuildTree(SModel model) {
+  private void rebuildTree(SModel model) {
     if (!myRebuildEnabled) return;
     myTree.rebuildTree(model);
   }
