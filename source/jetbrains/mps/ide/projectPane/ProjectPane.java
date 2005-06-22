@@ -187,8 +187,7 @@ public class ProjectPane extends JComponent {
       if (selectionPath.getLastPathComponent() instanceof SModelTreeNode) {
         popupMenu.add(new AbstractActionWithEmptyIcon("Delete Model") {
           public void actionPerformed(ActionEvent e) {
-            if (JOptionPane.showConfirmDialog(null, "Delete model " + getSelectedModel() + "?", "Delete model", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)
-            {
+            if (JOptionPane.showConfirmDialog(null, "Delete model " + getSelectedModel() + "?", "Delete model", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
               CommandProcessor.instance().executeCommand(new Runnable() {
                 public void run() {
                   SModelDescriptor model = getSelectedModel();
