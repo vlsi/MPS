@@ -185,7 +185,7 @@ public class ProjectPane extends JComponent {
 
     if (getSelectedModel() != null) {
       if (selectionPath.getLastPathComponent() instanceof SModelTreeNode) {
-        popupMenu.add(new AbstractActionWithEmptyIcon("Delete Model") {
+        popupMenu.add(new AbstractAction("Delete Model", Icons.DELETE_MODEL_ICON) {
           public void actionPerformed(ActionEvent e) {
             if (JOptionPane.showConfirmDialog(null, "Delete model " + getSelectedModel() + "?", "Delete model", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
               CommandProcessor.instance().executeCommand(new Runnable() {
@@ -377,7 +377,7 @@ public class ProjectPane extends JComponent {
 
   private JMenu createRootPopupMenu(final SModel semanticModel) {
     JMenu rootPopupMenu = new JMenu("Create Root Node");
-    rootPopupMenu.setIcon(MPSAction.EMPTY_ICON);
+    rootPopupMenu.setIcon(Icons.CREATE_NODE_ICON);
 
     if (semanticModel.getLanguages().size() == 0) {
       rootPopupMenu.add(new AbstractActionWithEmptyIcon("<NO LANGUAGES>") {
