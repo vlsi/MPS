@@ -1,12 +1,8 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.baseLanguage.*;
 import jetbrains.mps.bootstrap.editorLanguage.BaseEditorComponent;
 import jetbrains.mps.bootstrap.editorLanguage.EditorCellModel;
 import jetbrains.mps.bootstrap.editorLanguage.EditorLanguageUtil;
-import jetbrains.mps.generator.ContextUtil;
-import jetbrains.mps.generator.JavaClassMap;
-import jetbrains.mps.generator.JavaClassMaps;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.IdeMain;
@@ -19,14 +15,15 @@ import jetbrains.mps.ide.actions.nodes.*;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.rerform.CellRangeSelection;
 import jetbrains.mps.nodeEditor.test.EventRecorder;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.semanticModel.*;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.semanticModel.SModel;
+import jetbrains.mps.semanticModel.SModelListener;
+import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.util.CopyUtil;
-import jetbrains.mps.logging.Logger;
 
 import javax.swing.*;
 import java.awt.*;
@@ -304,10 +301,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     ActionGroup group = ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS);
     group.add(popupMenu, new ActionContext(ApplicationComponents.getInstance().getComponent(IdeMain.class), selectedNode));
 
-    if (selectedNode instanceof ClassConcept) {
-      popupMenu.addSeparator();
-      popupMenu.add(createGenStubFromClassFileAction((ClassConcept) selectedNode));
-    }
+//    if (selectedNode instanceof ClassConcept) {
+//      popupMenu.addSeparator();
+//      popupMenu.add(createGenStubFromClassFileAction((ClassConcept) selectedNode));
+//    }
 
     if (selectedNode instanceof BaseEditorComponent ||
             selectedNode instanceof EditorCellModel) {
@@ -325,146 +322,146 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     changeSelection(cell);
   }
 
-  private Action createGenStubFromClassFileAction(final ClassConcept targetClass) {
-    return new AbstractAction("Generate Stub From Class File") {
-      public void actionPerformed(ActionEvent e) {
-        CommandProcessor.instance().executeCommand(getContext(),
-                new Runnable() {
-                  public void run() {
-                    MPSProject project = getContext().getProject();
-                    SModel targetModel = targetClass.getModel();
-                    String fqName = targetModel.getFQName();
-                    String name = targetClass.getName();
-                    String className = fqName + '.' + name;
-                    SModel tmpModel = new SModel();
-                    tmpModel.setLoading(true);
-                    SimpleModelDescriptor tmpModelDescriptor = new SimpleModelDescriptor(tmpModel);
-                    targetModel.addImportedModelDescriptor(tmpModelDescriptor);
-
-                    try {
-                      JavaClassMap javaClassMap = JavaClassMaps.getJavaClassMap(tmpModel);
-                      ClassConcept tmpClass = null;
-                      try {
-                        tmpClass = (ClassConcept) javaClassMap.get(className);
-                      } catch (Exception e1) {
-                        LOG.error(e1);
-                      }
-                      if (tmpClass == null) {
-                        JOptionPane.showMessageDialog(myContainer, "Class not found:\n" + className, "Class Not Found", JOptionPane.ERROR_MESSAGE);
-                        return;
-                      }
-                      targetClass.setExtendedClass(toModelClass(tmpClass.getExtendedClass(), targetModel, project));
-
-                      Iterator<StaticFieldDeclaration> staticFields = tmpClass.staticFields();
-                      while (staticFields.hasNext()) {
-                        StaticFieldDeclaration staticFieldDeclaration = staticFields.next();
-                        StaticFieldDeclaration copy = (StaticFieldDeclaration) createValidCopy(staticFieldDeclaration, targetModel, project);
-                        targetClass.addStaticField(copy);
-                      }
-
-                      Iterator<FieldDeclaration> fields = tmpClass.fields();
-                      while (fields.hasNext()) {
-                        FieldDeclaration fieldDeclaration = fields.next();
-                        FieldDeclaration copy = (FieldDeclaration) createValidCopy(fieldDeclaration, targetModel, project);
-                        targetClass.addField(copy);
-                      }
-
-                      Iterator<ConstructorDeclaration> constructors = tmpClass.constructors();
-                      while (constructors.hasNext()) {
-                        ConstructorDeclaration constructorDeclaration = constructors.next();
-                        ConstructorDeclaration copy = (ConstructorDeclaration) createValidCopy(constructorDeclaration, targetModel, project);
-                        targetClass.addConstructor(copy);
-                      }
-
-                      Iterator<InstanceMethodDeclaration> methods = tmpClass.methods();
-                      while (methods.hasNext()) {
-                        InstanceMethodDeclaration instanceMethodDeclaration = methods.next();
-                        InstanceMethodDeclaration copy = (InstanceMethodDeclaration) createValidCopy(instanceMethodDeclaration, targetModel, project);
-                        targetClass.addMethod(copy);
-                      }
-
-                      Iterator<StaticMethodDeclaration> staticMethods = tmpClass.staticMethods();
-                      while (staticMethods.hasNext()) {
-                        StaticMethodDeclaration staticMethodDeclaration = staticMethods.next();
-                        StaticMethodDeclaration copy = (StaticMethodDeclaration) createValidCopy(staticMethodDeclaration, targetModel, project);
-                        targetClass.addStaticMethod(copy);
-                      }
-
-                      targetModel.fireModelChangedDramaticallyEvent();
-                      JOptionPane.showMessageDialog(myContainer, "Added:\n" +
-                              tmpClass.getStaticFieldsCount() + " static fields\n" +
-                              tmpClass.getFieldsCount() + " fields\n" +
-                              tmpClass.getConstructorsCount() + " constructors\n" +
-                              tmpClass.getMethodsCount() + " methods\n" +
-                              tmpClass.getStaticMethodsCount() + " static methods",
-                              "Class Has Been Generated", JOptionPane.INFORMATION_MESSAGE);
-                      tmpClass.delete();
-
-                    } finally {
-                      targetModel.deleteImportedModel(tmpModelDescriptor.getFQName());
-                    }
-                  }
-                },
-                "Generate Stab from Class File");
-      }
-
-      private SemanticNode createValidCopy(SemanticNode node, SModel targetModel, MPSProject project) {
-        SemanticNode copy = ContextUtil.copyNode(node, targetModel, project);
-        //        //test
-        //        Iterator<SemanticNode> children = copy.depthFirstChildren();
-        //        while (children.hasNext()) {
-        //          SemanticNode child = children.next();
-        //          if(child.getModel() != targetModel) {
-        //            System.err.println("after copy error! node: " + copy.getDebugText() );
-        //            SModelUtil.dumpNodePath(child, 0, System.err);
-        //          }
-        //        }
-        //        //test
-
-        replaceClasses(copy, targetModel, project);
-        if (copy instanceof BaseMethodDeclaration) {
-          BaseMethodDeclaration method = (BaseMethodDeclaration) copy;
-          Iterator<ParameterDeclaration> iterator = method.parameters();
-          int count = 0;
-          while (iterator.hasNext()) {
-            ParameterDeclaration parameterDeclaration = iterator.next();
-            parameterDeclaration.setName("parm" + (count++));
-          }
-        }
-        return copy;
-      }
-
-      private void replaceClasses(SemanticNode node, SModel targetModel, MPSProject project) {
-        List<SemanticReference> references = node.getReferences();
-        for (int i = 0; i < references.size(); i++) {
-          SemanticReference reference = references.get(i);
-          SemanticNode referent = reference.getTargetNode();
-          if (referent instanceof ClassConcept) {
-            ClassConcept classInModel = toModelClass((ClassConcept) referent, targetModel, project);
-            node.insertReferent(referent, reference.getRole(), classInModel);
-            node.removeReferent(reference.getRole(), referent);
-          }
-        }
-
-        List<SemanticNode> children = node.getChildren();
-        for (int i = 0; i < children.size(); i++) {
-          SemanticNode child = children.get(i);
-          replaceClasses(child, targetModel, project);
-        }
-      }
-
-      private ClassConcept toModelClass(ClassConcept tmpClass, SModel targetModel, MPSProject project) {
-        ClassConcept modelClass = (ClassConcept) SModelUtil.findNodeByFQName(NameUtil.nodeFQName(tmpClass), getContext().getProject());
-        if (modelClass == null) {
-          modelClass = (ClassConcept) SModelUtil.findNodeByFQName("java.lang.Object", project);
-        }
-        if (modelClass != null && targetModel != modelClass.getModel()) {
-          targetModel.addImportedModel(modelClass.getModel());
-        }
-        return modelClass;
-      }
-    };
-  }
+//  private Action createGenStubFromClassFileAction(final ClassConcept targetClass) {
+//    return new AbstractAction("Generate Stub From Class File") {
+//      public void actionPerformed(ActionEvent e) {
+//        CommandProcessor.instance().executeCommand(getContext(),
+//                new Runnable() {
+//                  public void run() {
+//                    MPSProject project = getContext().getProject();
+//                    SModel targetModel = targetClass.getModel();
+//                    String fqName = targetModel.getFQName();
+//                    String name = targetClass.getName();
+//                    String className = fqName + '.' + name;
+//                    SModel tmpModel = new SModel();
+//                    tmpModel.setLoading(true);
+//                    SimpleModelDescriptor tmpModelDescriptor = new SimpleModelDescriptor(tmpModel);
+//                    targetModel.addImportedModelDescriptor(tmpModelDescriptor);
+//
+//                    try {
+//                      JavaClassMap javaClassMap = JavaClassMaps.getJavaClassMap(tmpModel);
+//                      ClassConcept tmpClass = null;
+//                      try {
+//                        tmpClass = (ClassConcept) javaClassMap.get(className);
+//                      } catch (Exception e1) {
+//                        LOG.error(e1);
+//                      }
+//                      if (tmpClass == null) {
+//                        JOptionPane.showMessageDialog(myContainer, "Class not found:\n" + className, "Class Not Found", JOptionPane.ERROR_MESSAGE);
+//                        return;
+//                      }
+//                      targetClass.setExtendedClass(toModelClass(tmpClass.getExtendedClass(), targetModel, project));
+//
+//                      Iterator<StaticFieldDeclaration> staticFields = tmpClass.staticFields();
+//                      while (staticFields.hasNext()) {
+//                        StaticFieldDeclaration staticFieldDeclaration = staticFields.next();
+//                        StaticFieldDeclaration copy = (StaticFieldDeclaration) createValidCopy(staticFieldDeclaration, targetModel, project);
+//                        targetClass.addStaticField(copy);
+//                      }
+//
+//                      Iterator<FieldDeclaration> fields = tmpClass.fields();
+//                      while (fields.hasNext()) {
+//                        FieldDeclaration fieldDeclaration = fields.next();
+//                        FieldDeclaration copy = (FieldDeclaration) createValidCopy(fieldDeclaration, targetModel, project);
+//                        targetClass.addField(copy);
+//                      }
+//
+//                      Iterator<ConstructorDeclaration> constructors = tmpClass.constructors();
+//                      while (constructors.hasNext()) {
+//                        ConstructorDeclaration constructorDeclaration = constructors.next();
+//                        ConstructorDeclaration copy = (ConstructorDeclaration) createValidCopy(constructorDeclaration, targetModel, project);
+//                        targetClass.addConstructor(copy);
+//                      }
+//
+//                      Iterator<InstanceMethodDeclaration> methods = tmpClass.methods();
+//                      while (methods.hasNext()) {
+//                        InstanceMethodDeclaration instanceMethodDeclaration = methods.next();
+//                        InstanceMethodDeclaration copy = (InstanceMethodDeclaration) createValidCopy(instanceMethodDeclaration, targetModel, project);
+//                        targetClass.addMethod(copy);
+//                      }
+//
+//                      Iterator<StaticMethodDeclaration> staticMethods = tmpClass.staticMethods();
+//                      while (staticMethods.hasNext()) {
+//                        StaticMethodDeclaration staticMethodDeclaration = staticMethods.next();
+//                        StaticMethodDeclaration copy = (StaticMethodDeclaration) createValidCopy(staticMethodDeclaration, targetModel, project);
+//                        targetClass.addStaticMethod(copy);
+//                      }
+//
+//                      targetModel.fireModelChangedDramaticallyEvent();
+//                      JOptionPane.showMessageDialog(myContainer, "Added:\n" +
+//                              tmpClass.getStaticFieldsCount() + " static fields\n" +
+//                              tmpClass.getFieldsCount() + " fields\n" +
+//                              tmpClass.getConstructorsCount() + " constructors\n" +
+//                              tmpClass.getMethodsCount() + " methods\n" +
+//                              tmpClass.getStaticMethodsCount() + " static methods",
+//                              "Class Has Been Generated", JOptionPane.INFORMATION_MESSAGE);
+//                      tmpClass.delete();
+//
+//                    } finally {
+//                      targetModel.deleteImportedModel(tmpModelDescriptor.getFQName());
+//                    }
+//                  }
+//                },
+//                "Generate Stab from Class File");
+//      }
+//
+//      private SemanticNode createValidCopy(SemanticNode node, SModel targetModel, MPSProject project) {
+//        SemanticNode copy = ContextUtil.copyNode(node, targetModel, project);
+//        //        //test
+//        //        Iterator<SemanticNode> children = copy.depthFirstChildren();
+//        //        while (children.hasNext()) {
+//        //          SemanticNode child = children.next();
+//        //          if(child.getModel() != targetModel) {
+//        //            System.err.println("after copy error! node: " + copy.getDebugText() );
+//        //            SModelUtil.dumpNodePath(child, 0, System.err);
+//        //          }
+//        //        }
+//        //        //test
+//
+//        replaceClasses(copy, targetModel, project);
+//        if (copy instanceof BaseMethodDeclaration) {
+//          BaseMethodDeclaration method = (BaseMethodDeclaration) copy;
+//          Iterator<ParameterDeclaration> iterator = method.parameters();
+//          int count = 0;
+//          while (iterator.hasNext()) {
+//            ParameterDeclaration parameterDeclaration = iterator.next();
+//            parameterDeclaration.setName("parm" + (count++));
+//          }
+//        }
+//        return copy;
+//      }
+//
+//      private void replaceClasses(SemanticNode node, SModel targetModel, MPSProject project) {
+//        List<SemanticReference> references = node.getReferences();
+//        for (int i = 0; i < references.size(); i++) {
+//          SemanticReference reference = references.get(i);
+//          SemanticNode referent = reference.getTargetNode();
+//          if (referent instanceof ClassConcept) {
+//            ClassConcept classInModel = toModelClass((ClassConcept) referent, targetModel, project);
+//            node.insertReferent(referent, reference.getRole(), classInModel);
+//            node.removeReferent(reference.getRole(), referent);
+//          }
+//        }
+//
+//        List<SemanticNode> children = node.getChildren();
+//        for (int i = 0; i < children.size(); i++) {
+//          SemanticNode child = children.get(i);
+//          replaceClasses(child, targetModel, project);
+//        }
+//      }
+//
+//      private ClassConcept toModelClass(ClassConcept tmpClass, SModel targetModel, MPSProject project) {
+//        ClassConcept modelClass = (ClassConcept) SModelUtil.findNodeByFQName(NameUtil.nodeFQName(tmpClass), getContext().getProject());
+//        if (modelClass == null) {
+//          modelClass = (ClassConcept) SModelUtil.findNodeByFQName("java.lang.Object", project);
+//        }
+//        if (modelClass != null && targetModel != modelClass.getModel()) {
+//          targetModel.addImportedModel(modelClass.getModel());
+//        }
+//        return modelClass;
+//      }
+//    };
+//  }
 
   public JComponent getExternalComponent() {
     return myContainer;
