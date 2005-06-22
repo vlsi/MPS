@@ -189,11 +189,14 @@ public class ProjectPane extends JComponent {
           public void actionPerformed(ActionEvent e) {
             if (JOptionPane.showConfirmDialog(null, "Delete model " + getSelectedModel() + "?", "Delete model", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)
             {
-              SModelDescriptor model = getSelectedModel();
-              myProject.getComponent(EditorsPane.class).closeEditors(model);
-              myProject.getRootManager().deleteModel(model);
-              LOG.debug("deleting " + model.getModelFile());
-              rebuildTree();
+              CommandProcessor.instance().executeCommand(new Runnable() {
+                public void run() {
+                  SModelDescriptor model = getSelectedModel();
+                  myProject.getComponent(EditorsPane.class).closeEditors(model);
+                  myProject.getRootManager().deleteModel(model);
+                  LOG.debug("deleting " + model.getModelFile());
+                }
+              }, "Model delete");
             }
           }
         });
