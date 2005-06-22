@@ -132,8 +132,7 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
             if (getComponent(cls) != null && getComponent(cls) instanceof ExternalizableComponent) {
               ((ExternalizableComponent) getComponent(cls)).read(component);
             }
-          } catch (Exception e) {
-            LOG.error(e);
+          } catch (ClassNotFoundException e) {
           }
         }
       }

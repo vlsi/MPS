@@ -6,6 +6,9 @@ import jetbrains.mps.util.CommandRunnable;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.action.MPSAction;
+import jetbrains.mps.ide.preferences.ComponentWithPreferences;
+import jetbrains.mps.ide.preferences.PreferencesPage;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.output.OutputView;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
@@ -16,6 +19,7 @@ import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.RootManager;
+import jetbrains.mps.project.ExternalizableComponent;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.semanticModel.Language;
@@ -30,21 +34,38 @@ import jetbrains.mps.logging.Logger;
 import javax.swing.*;
 import java.io.File;
 import java.util.*;
+import java.util.List;
+import java.awt.*;
+
+import org.jdom.Element;
 
 
 /**
  * @author Kostik
  */
-public class GeneratorManager {
+public class GeneratorManager implements ExternalizableComponent, ComponentWithPreferences  {
   public static final Logger LOG = Logger.getLogger(GeneratorManager.class);
 
   private static final boolean SAVE_TRANSIENT_MODELS = false;
+  public static final String COMPILE_ON_GENERATION = "compile-on-generation";
 
   private MPSProject myProject;
+  private boolean myCompileOnGeneration = true;
 
   public GeneratorManager(MPSProject project) {
     myProject = project;
   }
+
+  public void read(Element element) {
+    if (element.getAttribute(COMPILE_ON_GENERATION) != null) {
+      myCompileOnGeneration = Boolean.getBoolean(element.getAttributeValue(COMPILE_ON_GENERATION));
+    }
+  }
+
+  public void write(Element element) {
+    element.setAttribute(COMPILE_ON_GENERATION, "" + myCompileOnGeneration);
+  }
+
 
   public void generate(final Language language) {
     final SModel model = ApplicationComponents.getInstance().getComponent(ProjectModel.class).getSModel();
@@ -140,23 +161,27 @@ public class GeneratorManager {
           }
 
           int ideaCompilations = 0;
-          if (isIdeaPresent) {
+          if (isIdeaPresent && myCompileOnGeneration) {
             if (generateText) {
               ideaCompilations = 1;
             } else {
               ideaCompilations = 2;
             }
           }
-                    
-          progress.start("Generating", (modelCount + ideaCompilations) * AMOUNT_PER_MODEL);          
-          if (ideaCompilations == 0) {
+
+          progress.start("Generating", (modelCount + ideaCompilations) * AMOUNT_PER_MODEL);
+          if (myCompileOnGeneration && ideaCompilations == 0) {
             progress.addText("IntelliJ IDEA with installed MPS is not present");
+          }
+
+          if (!myCompileOnGeneration) {
+            progress.addText("Compilation in IDEA on generation is turned off");
           }
 
           clearMessages();
           addMessage(new Message(MessageKind.INFORMATION, null, "Generating configuration " + configuration.getName()));
 
-          if (isIdeaPresent) {
+          if (isIdeaPresent && myCompileOnGeneration) {
             progress.addText("Compiling in IntelliJ IDEA...");
             LOG.debug("Compiling in IDE before generation ");
             compileAndReload();
@@ -194,7 +219,7 @@ public class GeneratorManager {
               addMessage(new Message(MessageKind.INFORMATION, model.getFQName() + " model is generated"));
             }
           }
-          if (!generateText && isIdeaPresent) {
+          if (!generateText && isIdeaPresent && myCompileOnGeneration) {
             LOG.debug("Compiling in IDE after generation");
             progress.addText("Compiling in IntelliJ IDEA...");
             compileAndReload();
@@ -483,5 +508,38 @@ public class GeneratorManager {
       outputModel.setLoading(false);
     }
     return outputModel;
+  }
+
+
+  public PreferencesPage createPreferencesPage() {
+    return new MyPreferencesPage();
+  }
+
+  private class MyPreferencesPage implements PreferencesPage {
+    private JPanel myPage;
+    private JCheckBox myCompileInIdeaOnGeneration = new JCheckBox("Compile in IntelliJ IDEA on generation");
+
+    public MyPreferencesPage() {
+      myPage = new JPanel(new BorderLayout());
+      myCompileInIdeaOnGeneration.setSelected(myCompileOnGeneration);
+
+      myPage.add(myCompileInIdeaOnGeneration, BorderLayout.NORTH);
+    }
+
+    public String getName() {
+      return "Generation";
+    }
+
+    public Icon getIcon() {
+      return MPSAction.EMPTY_ICON;
+    }
+
+    public JComponent getComponent() {
+      return myPage;
+    }
+
+    public void commit() {
+      myCompileOnGeneration = myCompileInIdeaOnGeneration.isSelected();
+    }
   }
 }
