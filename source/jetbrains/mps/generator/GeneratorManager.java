@@ -463,6 +463,12 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
         modelRepository.markChanged(transientModel);
         LOG.debug(" ---> " + transientModelDescr.getFQName() + " to file " + transientModelDescr.getModelFile().getAbsolutePath());
       }
+
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          generator.getProject().getComponent(ProjectPane.class).rebuildTree();
+        }
+      });
     }
 
     SModel lastTransientModel = transientModels.get(transientModels.size() - 1);
@@ -528,10 +534,6 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
 
     public Icon getIcon() {
       return MPSAction.EMPTY_ICON;
-    }
-
-    public Icon getLargeIcon() {
-      return MPSAction.EMPTY_LARGE_ICON;
     }
 
     public JComponent getComponent() {

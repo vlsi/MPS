@@ -164,10 +164,6 @@ public class OutputView implements ExternalizableComponent, ComponentWithPrefere
         return MPSAction.EMPTY_ICON;
       }
 
-      public Icon getLargeIcon() {
-        return MPSAction.EMPTY_LARGE_ICON;
-      }
-
       public JComponent getComponent() {
         return myComponent;
       }
