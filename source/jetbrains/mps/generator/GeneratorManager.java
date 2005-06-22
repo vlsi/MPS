@@ -32,6 +32,7 @@ import jetbrains.mps.ide.progress.ProgressWindowProgressMonitor;
 import jetbrains.mps.logging.Logger;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.io.File;
 import java.util.*;
 import java.util.List;
@@ -521,6 +522,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
 
     public MyPreferencesPage() {
       myPage = new JPanel(new BorderLayout());
+      myPage.setBorder(new EmptyBorder(10, 10, 10, 10));
       myCompileInIdeaOnGeneration.setSelected(myCompileOnGeneration);
 
       myPage.add(myCompileInIdeaOnGeneration, BorderLayout.NORTH);
