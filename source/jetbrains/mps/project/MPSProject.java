@@ -1,6 +1,9 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.ide.*;
+import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.command.ICommandListener;
+import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.PathManager;
@@ -30,6 +33,7 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
   private Map<Class, Object> myComponents = new HashMap<Class, Object>();
   private List<MPSProjectListener> myProjectListeners = new ArrayList<MPSProjectListener>();
   private List<MPSProjectCommandListener> myProjectCommandListeners = new ArrayList<MPSProjectCommandListener>();
+  private CommandEventsTranslator myCommandListener = new CommandEventsTranslator();
   private RootManager myRootManager = null;
 
   public MPSProject(File file) {
@@ -51,6 +55,9 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
       rubyWeb.patternList.PersistenceUtil.loadRubyWebPatternList(this);
       rubyWeb.paper.PersistenceUtil.loadRubyWebPaper(this);
     }
+
+    CommandProcessor.instance().addCommandListener(myCommandListener);
+    addMPSProjectListener(myCommandListener);
   }
 
   public Collection<Language> getProjectLanguages() {
@@ -83,7 +90,6 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     init();
     return myRootManager.getLanguage(nameSpace);
   }
-
 
   public List<Object> getComponents() {
     init();
@@ -169,7 +175,6 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     }
   }
 
-
   public String findPath(String modelFQName) {
     init();
     String modelPath = PathManager.findModelPath(myRootManager.getProjectModelRoots(), modelFQName);
@@ -213,7 +218,7 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     return SModelRepository.getInstance().getModelDescriptor(fqName);
   }
 
-  public void releaseAll() {
+  public void dispose() {
     myRootManager.releaseAll();
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
   }
@@ -243,6 +248,30 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
   void fireMPSProjectChangedInCommand() {
     for (MPSProjectCommandListener listener : myProjectCommandListeners) {
       listener.projectChangedInCommand(this);
+    }
+  }
+
+  private class CommandEventsTranslator implements ICommandListener, MPSProjectListener {
+    private Set<Runnable> myRunningCommands = new HashSet<Runnable>();
+    private Set<Runnable> myDirtyCommands = new HashSet<Runnable>();
+
+    public void commandStarted(CommandEvent event) {
+      myRunningCommands.add(event.getCommand());
+    }
+
+    public void beforeCommandFinished(CommandEvent event) {
+    }
+
+    public void commandFinished(CommandEvent event) {
+      myRunningCommands.remove(event.getCommand());
+      if (myDirtyCommands.contains(event.getCommand())) {
+        fireMPSProjectChangedInCommand();
+      }
+      myDirtyCommands.remove(event.getCommand());
+    }
+
+    public void projectChanged(MPSProject project) {
+      myDirtyCommands.addAll(myRunningCommands);
     }
   }
 }
