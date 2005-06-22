@@ -128,6 +128,8 @@ public class GeneratorManager {
       }
 
       public void run() {
+        myProject.getComponent(ProjectPane.class).disableRebuild();
+
         ProgressMonitor progress = new ProgressWindowProgressMonitor(false);
 
         boolean isIdeaPresent = MPSPlugin.getInstance().isIDEAPresent();
@@ -145,7 +147,7 @@ public class GeneratorManager {
               ideaCompilations = 2;
             }
           }
-
+                    
           progress.start("Generating", (modelCount + ideaCompilations) * AMOUNT_PER_MODEL);          
           if (ideaCompilations == 0) {
             progress.addText("IntelliJ IDEA with installed MPS is not present");
@@ -206,6 +208,7 @@ public class GeneratorManager {
           progress.addText("Finished.");
         } finally {
           progress.finish();
+          myProject.getComponent(ProjectPane.class).enableRebuild();
         }
       }
     }.start();

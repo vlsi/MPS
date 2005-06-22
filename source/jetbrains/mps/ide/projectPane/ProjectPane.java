@@ -54,6 +54,7 @@ public class ProjectPane extends JComponent {
   private MPSProject myProject;
   private IdeMain myIDE;
   private HeaderWrapper myHeader;
+  private boolean myRebuildEnabled = true;
 
   public ProjectPane(IdeMain ide) {
     myIDE = ide;
@@ -514,7 +515,18 @@ public class ProjectPane extends JComponent {
     }
   }
 
+  public void enableRebuild() {
+    myRebuildEnabled = true;
+    rebuildTree();
+  }
+
+  public void disableRebuild() {
+    myRebuildEnabled = false;
+  }
+
   public void rebuildTree() {
+    if (!myRebuildEnabled) return;
+
     myTree.rebuildTree();
     invalidate();
     validate();
@@ -522,6 +534,7 @@ public class ProjectPane extends JComponent {
   }
 
   public void rebuildTree(SModel model) {
+    if (!myRebuildEnabled) return;
     myTree.rebuildTree(model);
   }
 
