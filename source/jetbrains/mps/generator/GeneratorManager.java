@@ -466,7 +466,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
 
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          generator.getProject().getComponent(ProjectPane.class).rebuildTree();
+          generator.getProject().getComponent(ProjectPane.class).rebuildTree(); //todo ???
         }
       });
     }
