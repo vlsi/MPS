@@ -262,7 +262,7 @@ public class ProjectPane extends JComponent {
     if (model != null) {
       result.setText("Generate From Model");
     }
-    result.setIcon(MPSAction.EMPTY_ICON);
+    result.setIcon(Icons.GENERATORS_ICON);
 
     List<GeneratorConfiguration> configurations = myProject.getRootManager().getGeneratorConfigurations();
     sortConfigurations(configurations);
