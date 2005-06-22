@@ -29,6 +29,7 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
 
   private Map<Class, Object> myComponents = new HashMap<Class, Object>();
   private List<MPSProjectListener> myProjectListeners = new ArrayList<MPSProjectListener>();
+  private List<MPSProjectCommandListener> myProjectCommandListeners = new ArrayList<MPSProjectCommandListener>();
   private RootManager myRootManager = null;
 
   public MPSProject(File file) {
@@ -225,9 +226,23 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     myProjectListeners.remove(listener);
   }
 
+  public void addMPSProjectCommandListener(MPSProjectCommandListener listener) {
+    myProjectCommandListeners.add(listener);
+  }
+
+  public void removeMPSProjectCommandListener(MPSProjectCommandListener listener) {
+    myProjectCommandListeners.remove(listener);
+  }
+
   void fireMPSProjectChanged() {
     for (MPSProjectListener listener : myProjectListeners) {
       listener.projectChanged(this);
+    }
+  }
+
+  void fireMPSProjectChangedInCommand() {
+    for (MPSProjectCommandListener listener : myProjectCommandListeners) {
+      listener.projectChangedInCommand(this);
     }
   }
 }
