@@ -536,6 +536,10 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
       return MPSAction.EMPTY_ICON;
     }
 
+    public Icon getLargeIcon() {
+      return MPSAction.EMPTY_LARGE_ICON;
+    }
+
     public JComponent getComponent() {
       return myPage;
     }
