@@ -454,7 +454,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
       for (SModel transientModel : transientModels) {
         SModelDescriptor existingModel = modelRepository.getModelDescriptor(transientModel.getFQName());
         if (existingModel != null) {
-          myProject.deleteModel(existingModel);
+          myProject.getRootManager().deleteModel(existingModel);
         }
 
         File transientModelFile = new File(sourceModelDerectory, transientModel.getName() + ".mps");

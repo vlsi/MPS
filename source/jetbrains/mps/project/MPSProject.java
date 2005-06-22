@@ -1,8 +1,6 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.ide.*;
-import jetbrains.mps.modelExecute.ExecutionManager;
-import jetbrains.mps.modelExecute.ExecutionPoint;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.PathManager;
@@ -29,8 +27,8 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
   public static final String COMPONENT = "component";
   public static final String CLASS = "class";
 
-  private ExecutionPoint myEntryPoint;
   private Map<Class, Object> myComponents = new HashMap<Class, Object>();
+  private List<MPSProjectListener> myProjectListeners = new ArrayList<MPSProjectListener>();
   private RootManager myRootManager = null;
 
   public MPSProject(File file) {
@@ -184,30 +182,12 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     return null;
   }
 
-
-  public void setProjectFile(File projectFile) {
-    myProjectFile = projectFile;
-    myRootManager = null;
-  }
-
   public File getProjectFile() {
     return myProjectFile;
   }
 
   public boolean isProjectChanged() {
     return ApplicationComponents.getInstance().getComponent(SModelRepository.class).wereChanges();
-  }
-
-  public ExecutionPoint getEntryPoint() {
-    return myEntryPoint;
-  }
-
-  public void setEntryPoint(ExecutionPoint entryPoint) {
-    myEntryPoint = entryPoint;
-  }
-
-  public ExecutionManager getExecutionManager() {
-    return getComponent(ExecutionManager.class);
   }
 
   public Language getLanguageByStructureModel(SModel semanticModel) {
@@ -228,15 +208,6 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     return myRootManager;
   }
 
-  public void deleteModel(SModelDescriptor modelDescriptor) {
-    init();
-    SModelRepository.getInstance().removeModel(modelDescriptor);
-
-    getComponent(EditorsPane.class).closeEditors(modelDescriptor);      
-    myRootManager.removeModel(modelDescriptor);    
-    modelDescriptor.getModelFile().delete();
-  }
-
   public SModelDescriptor getModelDescriptor(String fqName) {
     return SModelRepository.getInstance().getModelDescriptor(fqName);
   }
@@ -246,5 +217,17 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
   }
 
+  public void addMPSProjectListener(MPSProjectListener listener) {
+    myProjectListeners.add(listener);
+  }
 
+  public void removeMPSProjectListener(MPSProjectListener listener) {
+    myProjectListeners.remove(listener);
+  }
+
+  void fireMPSProjectChanged() {
+    for (MPSProjectListener listener : myProjectListeners) {
+      listener.projectChanged(this);
+    }
+  }
 }

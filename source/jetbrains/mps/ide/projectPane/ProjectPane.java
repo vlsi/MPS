@@ -185,7 +185,7 @@ public class ProjectPane extends JComponent {
             {
               SModelDescriptor model = getSelectedModel();
               myProject.getComponent(EditorsPane.class).closeEditors(model);
-              myProject.deleteModel(model);
+              myProject.getRootManager().deleteModel(model);
               LOG.debug("deleting " + model.getModelFile());
               rebuildTree();
             }
@@ -816,9 +816,7 @@ public class ProjectPane extends JComponent {
         fqName += " <b>(imported)</b>";
       }
 
-      if (myProject.getRootManager().isNewModel(myModelDescriptor)) {
-        fqName = "<font color=\"#009000\">" + fqName + "</font>";
-      } else if (myModelDescriptor.isInitialized() && SModelRepository.getInstance().isChanged(myModelDescriptor)) {
+      if (myModelDescriptor.isInitialized() && SModelRepository.getInstance().isChanged(myModelDescriptor)) {
         fqName = "<font color=\"#000090\">" + fqName + "</font>";
       }
 
