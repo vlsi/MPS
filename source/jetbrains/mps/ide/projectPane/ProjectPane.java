@@ -339,36 +339,8 @@ public class ProjectPane extends JComponent {
   }
 
 
-  public List<SemanticNode> getVisibleNodes() {
-    List<SemanticNode> result = new ArrayList<SemanticNode>();
-
-    Enumeration<TreePath> expandedPaths = myTree.getExpandedDescendants(getRootPath());
-    while (expandedPaths != null && expandedPaths.hasMoreElements()) {
-      TreePath path = (TreePath) expandedPaths.nextElement();
-      DefaultMutableTreeNode lastNode = (DefaultMutableTreeNode) path.getLastPathComponent();
-      for (int i = 0; i < lastNode.getChildCount(); i++) {
-        DefaultMutableTreeNode child = (DefaultMutableTreeNode) lastNode.getChildAt(i);
-        if (child.getUserObject() instanceof SemanticNode) {
-          result.add((SemanticNode) child.getUserObject());
-        }
-      }
-    }
-
-    return result;
-  }
-
-
   public void modelAdded(SModelDescriptor descriptor) {
     addModelListener(descriptor);
-  }
-
-  public void showNode(SemanticNode node) {
-    DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
-    TreeNode treeNode = findTreeNode((DefaultMutableTreeNode) model.getRoot(), node).getParent();
-    if (node == null) return;
-    TreePath path = new TreePath(model.getPathToRoot(treeNode));
-    if (myTree.isVisible(path)) return;
-    myTree.expandPath(path);
   }
 
   private TreePath getRootPath() {
@@ -775,10 +747,6 @@ public class ProjectPane extends JComponent {
     public SModelTreeNode(SModelDescriptor modelDescriptor, String label) {
       myModelDescriptor = modelDescriptor;
       myLabel = label;
-    }
-
-    public SModelTreeNode(SModelDescriptor modelDescriptor) {
-      this(modelDescriptor, null);
     }
 
     public Icon getIcon(boolean expanded) {
