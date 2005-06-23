@@ -5,6 +5,7 @@ import jetbrains.mps.baseLanguage.generator.target.DefaultTemplateGenerator;
 import jetbrains.mps.util.CommandRunnable;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.preferences.ComponentWithPreferences;
@@ -528,7 +529,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     }
 
     public Icon getIcon() {
-      return MPSAction.EMPTY_ICON;
+      return Icons.GENERATORS_ICON;
     }
 
     public JComponent getComponent() {
