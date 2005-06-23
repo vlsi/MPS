@@ -2,6 +2,7 @@ package jetbrains.mps.ide.output;
 
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.preferences.ComponentWithPreferences;
 import jetbrains.mps.ide.preferences.PreferencesPage;
@@ -161,7 +162,7 @@ public class OutputView implements ExternalizableComponent, ComponentWithPrefere
       }
 
       public Icon getIcon() {
-        return MPSAction.EMPTY_ICON;
+        return Icons.OUTPUT_VIEW_ICON;
       }
 
       public JComponent getComponent() {
