@@ -12,7 +12,6 @@ import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
-import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.ui.HeaderWrapper;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.TreeWithSemanticNodesSpeedSearch;
@@ -1059,12 +1058,12 @@ public class ProjectPane extends JComponent {
     private void initProjectLanguageNode(ProjectLanguageTreeNode node, Language language) {
       addNodeIfModelNotNull(node, language.getStructureModelDescriptor(), "Structure");
 
-      Iterator<SModelDescriptor> editorDescriptors = language.editorDescriptors();
+      Iterator<SModelDescriptor> editorDescriptors = language.getEditorDescriptors().iterator();
       while (editorDescriptors.hasNext()) {
         SModelDescriptor editor = editorDescriptors.next();
         String stereotypeName = language.getEditorStereotype(editor);
         TextTreeNode stereotype = new LanguageEditorsTreeNode("<html><b>Editor " + ((stereotypeName != null) ? stereotypeName : "") + "</b>");
-        addNodeIfModelNotNull(stereotype, language.getEditorDescriptor(stereotypeName), "<html><b>Editor</b>");
+        addNodeIfModelNotNull(stereotype, language.getEditorModelDescriptor(stereotypeName), "<html><b>Editor</b>");
         node.add(stereotype);
       }
 
@@ -1101,9 +1100,7 @@ public class ProjectPane extends JComponent {
         }
       };
       List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-      for (SModelDescriptor model : CollectionUtil.iteratorAsIterable(language.libraryModels())) {
-        models.add(model);
-      }
+      models.addAll(language.getLibraryModels());
       Collections.sort(models, new Comparator<SModelDescriptor>() {
         public int compare(SModelDescriptor o1, SModelDescriptor o2) {
           return o1.getFQName().compareTo(o2.getFQName());
@@ -1129,10 +1126,7 @@ public class ProjectPane extends JComponent {
       };
 
       List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-      Iterator<SModelDescriptor> libraryModelIterator = language.libraryModels();
-      while (libraryModelIterator.hasNext()) {
-        models.add(libraryModelIterator.next());
-      }
+      models.addAll(language.getLibraryModels());
       Collections.sort(models, new Comparator<SModelDescriptor>() {
         public int compare(SModelDescriptor o1, SModelDescriptor o2) {
           return o1.getFQName().compareTo(o2.getFQName());
