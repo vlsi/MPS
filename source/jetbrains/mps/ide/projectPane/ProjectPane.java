@@ -558,11 +558,6 @@ public class ProjectPane extends JComponent {
         String name2 = ((SModelDescriptor) o1).getFQName();
         if (name1 == null) name1 = "";
         if (name2 == null) name2 = "";
-
-        //        if (name1.equals(name2)) {
-        //          // allow duplications
-        //          return o.hashCode() < o1.hashCode() ? -1 : 1;
-        //        }
         return name1.compareTo(name2);
       }
     });
