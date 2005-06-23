@@ -7,7 +7,6 @@ import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.util.CommandRunnable;
 import jetbrains.mps.projectLanguage.ProjectModel;
 import jetbrains.mps.logging.Logger;
 import org.jdom.Document;
