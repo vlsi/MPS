@@ -319,7 +319,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     LOG.assertLog(source != null, "Source language must be not null. Can't find language " + sourceLanguage);
 
     for (Generator gen : source.getGenerators()) {
-      if (gen.getTargetLanguage().equals(targetLanguage)) {
+      if (gen.getTargetLanguageFqName().equals(targetLanguage)) {
         result = gen;
         break;
       }
@@ -328,22 +328,22 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
   }
 
   private String findGeneratorClass(Generator generator) {
-    if (generator.getGeneratorClass() != null) return generator.getGeneratorClass();
-    Language targetLanguage = myProject.getLanguage(generator.getTargetLanguage());
-    if (targetLanguage.getLanguageDescriptor().getTargetOfGenerator() != null) {
-      return targetLanguage.getLanguageDescriptor().getTargetOfGenerator().getGeneratorClass();
+    if (generator.getGeneratorClassFqName() != null) return generator.getGeneratorClassFqName();
+    Language targetLanguage = myProject.getLanguage(generator.getTargetLanguageFqName());
+    if (targetLanguage.getTargetOfGeneratorGeneratorClass() != null) {
+      return targetLanguage.getTargetOfGeneratorGeneratorClass();
     }
     return null;
   }
 
   private SModelDescriptor loadTemplatesModel(Generator generator) {
-    if (generator.getTemplatesModel() == null) {
+    if (generator.getTemplatesModelFqName() == null) {
       return null;
     }
 
     if (generator.getModelRoots().size() == 0) {
-      LOG.error("Couldn't find templates model " + generator.getTemplatesModel() + " model roots aren't specified");
-      getMessageView().add(new Message(MessageKind.WARNING, "Couldn't find templates model " + generator.getTemplatesModel() + " model roots aren't specified"));
+      LOG.error("Couldn't find templates model " + generator.getTemplatesModelFqName() + " model roots aren't specified");
+      getMessageView().add(new Message(MessageKind.WARNING, "Couldn't find templates model " + generator.getTemplatesModelFqName() + " model roots aren't specified"));
       return null;
     }
 
@@ -358,9 +358,9 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     SModelRepository.getInstance().readModelDescriptors(roots, models, myProject);
 
     for (SModelDescriptor model : models) {
-      if (model.getFQName().equals(generator.getTemplatesModel())) return model;
+      if (model.getFQName().equals(generator.getTemplatesModelFqName())) return model;
     }
-    getMessageView().add(new Message(MessageKind.WARNING, "Couldn't find templates model " + generator.getTemplatesModel()));
+    getMessageView().add(new Message(MessageKind.WARNING, "Couldn't find templates model " + generator.getTemplatesModelFqName()));
     return null;
   }
 

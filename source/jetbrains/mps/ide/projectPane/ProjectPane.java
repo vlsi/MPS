@@ -21,12 +21,10 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.RootManager;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProjectCommandListener;
-import jetbrains.mps.projectLanguage.Generator;
 import jetbrains.mps.projectLanguage.GeneratorConfiguration;
 import jetbrains.mps.projectLanguage.ProjectModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.semanticModel.*;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.logging.Logger;
 
 import javax.swing.*;
@@ -1068,15 +1066,15 @@ public class ProjectPane extends JComponent {
       }
 
 
-      Iterator<Generator> generators = language.getLanguageDescriptor().generators();
+      Iterator<Generator> generators = language.getGenerators().iterator();
       while (generators.hasNext()) {
         Generator generator = generators.next();
         TextTreeNode generatorNode = new GeneratorsTreeNode("<html><b>Generator " + generator.getName() + "</b>");
 
         SModelDescriptor templatesModel = null;
 
-        if (generator.getTemplatesModel() != null && generator.getTemplatesModel().getName() != null) {
-          templatesModel = SModelRepository.getInstance().getModelDescriptor(generator.getTemplatesModel().getName());
+        if (generator.getTemplatesModelFqName() != null && generator.getTemplatesModelFqName() != null) {
+          templatesModel = SModelRepository.getInstance().getModelDescriptor(generator.getTemplatesModelFqName());
         }
 
         addNodeIfModelNotNull(generatorNode, templatesModel, "Templates Model");
