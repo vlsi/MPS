@@ -263,6 +263,7 @@ public class ProjectPane extends JComponent {
     if (model != null) {
       result.setText("Generate From Model");
     }
+    result.setIcon(MPSAction.EMPTY_ICON);
 
     List<GeneratorConfiguration> configurations = myProject.getRootManager().getGeneratorConfigurations();
     sortConfigurations(configurations);
@@ -349,6 +350,7 @@ public class ProjectPane extends JComponent {
 
   private JMenu createRootPopupMenu(final SModel semanticModel) {
     JMenu rootPopupMenu = new JMenu("Create Root Node");
+    rootPopupMenu.setIcon(MPSAction.EMPTY_ICON);
 
     if (semanticModel.getLanguages().size() == 0) {
       rootPopupMenu.add(new AbstractActionWithEmptyIcon("<NO LANGUAGES>") {
