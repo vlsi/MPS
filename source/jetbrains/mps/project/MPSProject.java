@@ -109,13 +109,7 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
 
   public void read(final File file) {
     init();
-    new CommandRunnable(ApplicationComponents.getInstance().getComponent(ProjectModel.class).getSModel()) {
-      protected Object onRun() {
-        myRootManager.read(file);
-        return null;
-      }
-    }.run();
-
+    myRootManager.read(file);
   }
 
   public void readWorkspaceSettings() {

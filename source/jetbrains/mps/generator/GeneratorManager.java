@@ -71,6 +71,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
   public void generate(final Language language) {
     final SModel model = ApplicationComponents.getInstance().getComponent(ProjectModel.class).getSModel();
 
+    //todo move to language
     GeneratorConfiguration configuration = new CommandRunnable<GeneratorConfiguration>(model) {
       protected GeneratorConfiguration onRun() {
         GeneratorConfiguration conf = GeneratorConfiguration.newInstance(model);

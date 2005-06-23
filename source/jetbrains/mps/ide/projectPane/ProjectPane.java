@@ -12,6 +12,7 @@ import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
+import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.ui.HeaderWrapper;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.TreeWithSemanticNodesSpeedSearch;
@@ -453,12 +454,16 @@ public class ProjectPane extends JComponent {
   public void setProject(MPSProject project) {
     myProject = project;
     myProject.addMPSProjectCommandListener(myProjectListener);
-    project.getComponent(RootManager.class).reloadProject();
-    rebuildTree();
+    CommandProcessor.instance().executeCommand(new Runnable() {
+      public void run() {
+        myProject.getComponent(RootManager.class).reloadProject();
+      }
+    }, "project reloading");
     for (SModelDescriptor modelDescriptor : myProject.getAllModelDescriptors()) {
       addModelListener(modelDescriptor);
     }
     myHeader.setText("Project - " + FileUtil.getCanonicalPath(myProject.getProjectFile()));
+    rebuildTree();
   }
 
   private void addModelListener(SModelDescriptor semanticModel) {
