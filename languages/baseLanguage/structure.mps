@@ -997,13 +997,6 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1068580123136" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1090412743880">
-      <property name="sourceCardinality" value="1" />
-      <property name="targetCardinality" value="1" />
-      <property name="role" value="declarations" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1068580123136" />
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConstrainedDataTypeDeclaration" id="1083065718921">
     <property name="constraint" value="[a-zA-Z[_]][a-zA-Z0-9[_]]*" />
