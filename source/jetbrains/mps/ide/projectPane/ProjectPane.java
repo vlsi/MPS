@@ -714,6 +714,7 @@ public class ProjectPane extends JComponent {
     private String myRole;
 
     public SNodeTreeNode(SemanticNode node, String role) {
+      LOG.assertLog(node != null);      
       myNodeReference = new SNodeReference(node);
       myRole = role;
     }
