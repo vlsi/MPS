@@ -533,7 +533,7 @@ public class ProjectPane extends JComponent {
     myRebuildEnabled = false;
   }
 
-  public void rebuildTree() {
+  private void rebuildTree() {
     if (!myRebuildEnabled) return;
 
     myTree.rebuildTree();
@@ -714,7 +714,7 @@ public class ProjectPane extends JComponent {
     private String myRole;
 
     public SNodeTreeNode(SemanticNode node, String role) {
-      LOG.assertLog(node != null);      
+      LOG.assertLog(node != null);
       myNodeReference = new SNodeReference(node);
       myRole = role;
     }
