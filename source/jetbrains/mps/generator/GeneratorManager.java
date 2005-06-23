@@ -7,7 +7,6 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.preferences.ComponentWithPreferences;
 import jetbrains.mps.ide.preferences.PreferencesPage;
 import jetbrains.mps.ide.command.CommandProcessor;
@@ -25,6 +24,7 @@ import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.semanticModel.*;
+import jetbrains.mps.semanticModel.Generator;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textPresentation.TextPresentationManager;
 import jetbrains.mps.util.CollectionUtil;
@@ -197,8 +197,8 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
 
             Set<SModelDescriptor> modelsWithLanguage = findModelsWithLanguage(modelDescriptors, cmd.getSourceLanguage().getName());
             Generator generator = findGenerator(cmd.getSourceLanguage().getName(), cmd.getTargetLanguage().getName());
-            for (Root r : CollectionUtil.iteratorAsIterable(generator.languages())) {
-              myProject.getComponent(RootManager.class).readLanguageDescriptors(new File(r.getPath()));
+            for (String languageRoot : generator.getRequiredLanguageRoots()) {
+              myProject.getComponent(RootManager.class).readLanguageDescriptors(new File(languageRoot));
             }
             String generatorClass = findGeneratorClass(generator);
             if (generatorClass == null) generatorClass = DefaultTemplateGenerator.class.getName();
@@ -318,8 +318,8 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
 
     LOG.assertLog(source != null, "Source language must be not null. Can't find language " + sourceLanguage);
 
-    for (Generator gen : CollectionUtil.iteratorAsIterable(source.getLanguageDescriptor().generators())) {
-      if (gen.getTargetLanguage().getName().equals(targetLanguage)) {
+    for (Generator gen : source.getGenerators()) {
+      if (gen.getTargetLanguage().equals(targetLanguage)) {
         result = gen;
         break;
       }
@@ -329,7 +329,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
 
   private String findGeneratorClass(Generator generator) {
     if (generator.getGeneratorClass() != null) return generator.getGeneratorClass();
-    Language targetLanguage = myProject.getLanguage(generator.getTargetLanguage().getName());
+    Language targetLanguage = myProject.getLanguage(generator.getTargetLanguage());
     if (targetLanguage.getLanguageDescriptor().getTargetOfGenerator() != null) {
       return targetLanguage.getLanguageDescriptor().getTargetOfGenerator().getGeneratorClass();
     }
@@ -341,14 +341,14 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
       return null;
     }
 
-    if (generator.getModelRootsCount() == 0) {
-      LOG.error("Couldn't find templates model " + generator.getTemplatesModel().getName() + " model roots aren't specified");
-      getMessageView().add(new Message(MessageKind.WARNING, "Couldn't find templates model " + generator.getTemplatesModel().getName() + " model roots aren't specified"));
+    if (generator.getModelRoots().size() == 0) {
+      LOG.error("Couldn't find templates model " + generator.getTemplatesModel() + " model roots aren't specified");
+      getMessageView().add(new Message(MessageKind.WARNING, "Couldn't find templates model " + generator.getTemplatesModel() + " model roots aren't specified"));
       return null;
     }
 
     Set<ModelRoot> roots = new HashSet<ModelRoot>();
-    Iterator<ModelRoot> iterator = generator.modelRoots();
+    Iterator<ModelRoot> iterator = generator.getModelRoots().iterator();
     while (iterator.hasNext()) {
       ModelRoot modelRoot = iterator.next();
       roots.add(modelRoot);
@@ -358,9 +358,9 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     SModelRepository.getInstance().readModelDescriptors(roots, models, myProject);
 
     for (SModelDescriptor model : models) {
-      if (model.getFQName().equals(generator.getTemplatesModel().getName())) return model;
+      if (model.getFQName().equals(generator.getTemplatesModel())) return model;
     }
-    getMessageView().add(new Message(MessageKind.WARNING, "Couldn't find templates model " + generator.getTemplatesModel().getName()));
+    getMessageView().add(new Message(MessageKind.WARNING, "Couldn't find templates model " + generator.getTemplatesModel()));
     return null;
   }
 
