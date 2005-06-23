@@ -3005,7 +3005,7 @@
               <link role="variableDeclaration" targetNodeId="1115664492697" />
             </node>
           </node>
-          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.Block" id="1117575428530">
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.BlockStatement" id="1117575428530">
             <node role="statements" type="jetbrains.mps.baseLanguage.StatementList" id="1117575428531">
               <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1117575437877">
                 <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1117575437878">
@@ -3088,7 +3088,7 @@
               <link role="classifier" targetNodeId="19.1109971954288" />
             </node>
           </node>
-          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.Block" id="1117575892813">
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.BlockStatement" id="1117575892813">
             <node role="statements" type="jetbrains.mps.baseLanguage.StatementList" id="1117575892814">
               <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1117575905254">
                 <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1117575905255">
@@ -3140,7 +3140,7 @@
             </node>
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1115664492770" />
           </node>
-          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.Block" id="1117575949323">
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.BlockStatement" id="1117575949323">
             <node role="statements" type="jetbrains.mps.baseLanguage.StatementList" id="1117575949324">
               <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1117575955732">
                 <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1117575955733">
@@ -4477,7 +4477,7 @@
               <link role="classifier" targetNodeId="19.1113723507392" />
             </node>
           </node>
-          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.Block" id="1115664493224">
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.BlockStatement" id="1115664493224">
             <node role="statements" type="jetbrains.mps.baseLanguage.StatementList" id="1115664493225">
               <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1115664493226">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1115664493227">
@@ -6875,7 +6875,7 @@
               <link role="classifier" targetNodeId="19.1113723509495" />
             </node>
           </node>
-          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.Block" id="1115664494012">
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.BlockStatement" id="1115664494012">
             <node role="statements" type="jetbrains.mps.baseLanguage.StatementList" id="1115664494013">
               <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1115664494014">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1115664494015">
@@ -7603,7 +7603,7 @@
               <link role="classifier" targetNodeId="19.1113723508096" />
             </node>
           </node>
-          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.Block" id="1115664494284">
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.BlockStatement" id="1115664494284">
             <node role="statements" type="jetbrains.mps.baseLanguage.StatementList" id="1115664494285">
               <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1115664494286">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1115664494287">
@@ -7916,7 +7916,7 @@
               <link role="classifier" targetNodeId="19.1108062933074" />
             </node>
           </node>
-          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.Block" id="1115664494396">
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.BlockStatement" id="1115664494396">
             <node role="statements" type="jetbrains.mps.baseLanguage.StatementList" id="1115664494397">
               <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1115664494398">
                 <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1115664494399">
@@ -8873,8 +8873,8 @@
         <property name="textFgColor" value="DARK_MAGENTA" />
         <property name="writable" value="true" />
         <property name="defaultText" value="&lt;no name&gt;" />
-        <property name="fontStyle" value="BOLD" />
         <property name="defaultValue" value="?" />
+        <property name="fontStyle" value="BOLD" />
         <property name="drawBorder" value="false" />
         <link role="actionSet" targetNodeId="1076781056865" />
         <link role="propertyDeclaration" targetNodeId="9.1078489098626" />
@@ -9513,11 +9513,11 @@
     <link role="conceptDeclaration" targetNodeId="8.1068580123152" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1075310191003">
       <property name="drawBorder" value="false" />
-      <property name="name" value="expressionBox" />
       <property name="actionSet" value="RightTransform" />
+      <property name="name" value="expressionBox" />
       <property name="vertical" value="false" />
-      <property name="selectable" value="true" />
       <property name="gridLayout" value="true" />
+      <property name="selectable" value="true" />
       <link role="actionSet" targetNodeId="1107375429415" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1081777074470">
         <property name="drawBorder" value="false" />
@@ -9625,11 +9625,11 @@
     </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1075310480282">
       <property name="drawBorder" value="false" />
-      <property name="name" value="expressionBox" />
       <property name="actionSet" value="RightTransform" />
+      <property name="name" value="expressionBox" />
       <property name="vertical" value="false" />
-      <property name="gridLayout" value="true" />
       <property name="selectable" value="true" />
+      <property name="gridLayout" value="true" />
       <link role="actionSet" targetNodeId="1107375429415" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075310480284">
         <property name="drawBorder" value="false" />
@@ -9659,11 +9659,11 @@
     <link role="conceptDeclaration" targetNodeId="8.1068581242869" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1075310659938">
       <property name="drawBorder" value="false" />
-      <property name="name" value="expressionBox" />
       <property name="actionSet" value="RightTransform" />
+      <property name="name" value="expressionBox" />
       <property name="vertical" value="false" />
-      <property name="gridLayout" value="true" />
       <property name="selectable" value="true" />
+      <property name="gridLayout" value="true" />
       <link role="actionSet" targetNodeId="1107375429415" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1081777125800">
         <property name="drawBorder" value="false" />
@@ -9687,11 +9687,11 @@
     <link role="conceptDeclaration" targetNodeId="8.1068581242875" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1075310695836">
       <property name="drawBorder" value="false" />
-      <property name="name" value="expressionBox" />
       <property name="actionSet" value="RightTransform" />
+      <property name="name" value="expressionBox" />
       <property name="vertical" value="false" />
-      <property name="selectable" value="true" />
       <property name="gridLayout" value="true" />
+      <property name="selectable" value="true" />
       <link role="actionSet" targetNodeId="1107375429415" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1081776530461">
         <property name="drawBorder" value="false" />
@@ -10389,8 +10389,8 @@
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1076932272477">
         <property name="handlerId" value="CreateClassifierType" />
         <property name="name" value="classifiers" />
-        <property name="descriptionProviderId" value="SemanticNode_ModelFQName" />
         <property name="queryId" value="Classifiers" />
+        <property name="descriptionProviderId" value="SemanticNode_ModelFQName" />
         <property name="textProviderId" value="SemanticNode_Name" />
         <link role="substituteModelQueryMethod" targetNodeId="1081927996786" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1081927996761" />
@@ -13722,18 +13722,6 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1082485734863">
     <property name="name" value="Block_Editor" />
     <link role="conceptDeclaration" targetNodeId="8.1082485599095" />
-    <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1090412874295">
-      <property name="drawBorder" value="false" />
-      <property name="vertical" value="true" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1090412874296">
-        <property name="text" value="Declarations" />
-        <property name="drawBorder" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1090412874297">
-        <property name="drawBorder" value="false" />
-        <link role="linkDeclaration" targetNodeId="8.1090412743880" />
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1119291654779">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="true" />
@@ -14234,8 +14222,8 @@
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082541996944">
         <property name="handlerId" value="Classifier_CreateLocalVariableDeclarationStatement" />
         <property name="name" value="classifiers" />
-        <property name="queryId" value="Classifiers" />
         <property name="descriptionProviderId" value="SemanticNode_ModelFQName" />
+        <property name="queryId" value="Classifiers" />
         <property name="textProviderId" value="SemanticNode_Name" />
         <link role="substituteHandlerQueryBody" targetNodeId="1081927994925" />
         <link role="substituteHandlerQueryMethod" targetNodeId="1081927994917" />
@@ -15125,8 +15113,8 @@
         <property name="textFgColor" value="DARK_MAGENTA" />
         <property name="writable" value="true" />
         <property name="defaultText" value="&lt;no name&gt;" />
-        <property name="fontStyle" value="BOLD_ITALIC" />
         <property name="defaultValue" value="?" />
+        <property name="fontStyle" value="BOLD_ITALIC" />
         <property name="drawBorder" value="false" />
         <link role="actionSet" targetNodeId="1084188979609" />
         <link role="propertyDeclaration" targetNodeId="9.1078489098626" />
@@ -15555,8 +15543,8 @@
         <link role="conceptDeclaration" targetNodeId="8.1107135704075" />
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ModelAccess" id="1107214220285">
           <property name="textFgColor" value="DARK_BLUE" />
-          <property name="fontStyle" value="ITALIC" />
           <property name="modelAccessorId" value="Node_DefaultText" />
+          <property name="fontStyle" value="ITALIC" />
           <property name="drawBorder" value="false" />
         </node>
       </node>
@@ -15624,8 +15612,8 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ModelAccess" id="1107384111588">
         <property name="textFgColor" value="DARK_BLUE" />
-        <property name="modelAccessorId" value="Node_DefaultText" />
         <property name="fontStyle" value="BOLD_ITALIC" />
+        <property name="modelAccessorId" value="Node_DefaultText" />
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1107384111589">

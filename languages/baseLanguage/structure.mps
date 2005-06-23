@@ -980,14 +980,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1082485599095">
-    <property name="name" value="Block" />
+    <property name="name" value="BlockStatement" />
     <link role="extends" targetNodeId="1068580123157" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107215517585">
       <property name="value" value="{" />
       <link role="conceptPropertyDeclaration" targetNodeId="34.1106346943066" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107215521727">
-      <property name="value" value="block of statements" />
+      <property name="value" value="block statement" />
       <link role="conceptPropertyDeclaration" targetNodeId="34.1107214812281" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1082485599096">
