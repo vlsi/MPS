@@ -1,7 +1,6 @@
 package jetbrains.mps.textGen;
 
 import jetbrains.mps.semanticModel.SemanticNode;
-import jetbrains.mps.mapping.MappingTextGenManager;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.logging.Logger;
 
@@ -13,9 +12,6 @@ public class TextGenManager {
   private static final Logger LOG = Logger.getLogger(TextGenManager.class);
   private static TextGenManager myInstance;
 
-  public static void setMappingTextGenManager() {
-    myInstance = new MappingTextGenManager();
-  }
 
   public static void reset() {
     myInstance = null;
