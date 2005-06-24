@@ -27,6 +27,7 @@
           <link role="conceptDeclaration" targetNodeId="2.1071489090640" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1112058427771">
             <property name="defaultText" value="&lt;no name&gt;" />
+            <property name="readOnly" value="true" />
             <link role="propertyDeclaration" targetNodeId="3.1078489098626" />
           </node>
         </node>
