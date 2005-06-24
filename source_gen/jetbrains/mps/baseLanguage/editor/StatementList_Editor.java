@@ -21,7 +21,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
   }
   public EditorCell createStatementList(EditorContext context, SemanticNode node) {
     if(this.myStatementListHandler == null) {
-      this.myStatementListHandler = new StatementList_Editor_StatementListHandler(node, "statement", true);
+      this.myStatementListHandler = new StatementList_Editor_StatementListHandler(node, "statement");
     }
     EditorCell_Collection editorCell = this.myStatementListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(true);

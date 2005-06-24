@@ -71,7 +71,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createActualArgumentList(EditorContext context, SemanticNode node) {
     if(this.myActualArgumentListHandler == null) {
-      this.myActualArgumentListHandler = new EnumConstantDeclaration_Editor_ActualArgumentListHandler(node, "actualArgument", true);
+      this.myActualArgumentListHandler = new EnumConstantDeclaration_Editor_ActualArgumentListHandler(node, "actualArgument");
     }
     EditorCell_Collection editorCell = this.myActualArgumentListHandler.createCells(context, new CellLayout_Horizontal());
     editorCell.setSelectable(true);

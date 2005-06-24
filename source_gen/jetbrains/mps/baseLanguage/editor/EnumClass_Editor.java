@@ -207,7 +207,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   }
   public EditorCell createEnumConstantList(EditorContext context, SemanticNode node) {
     if(this.myEnumConstantListHandler == null) {
-      this.myEnumConstantListHandler = new EnumClass_Editor_EnumConstantListHandler(node, "enumConstant", true);
+      this.myEnumConstantListHandler = new EnumClass_Editor_EnumConstantListHandler(node, "enumConstant");
     }
     EditorCell_Collection editorCell = this.myEnumConstantListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(true);
@@ -219,7 +219,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   }
   public EditorCell createFieldList(EditorContext context, SemanticNode node) {
     if(this.myFieldListHandler == null) {
-      this.myFieldListHandler = new EnumClass_Editor_FieldListHandler(node, "field", true);
+      this.myFieldListHandler = new EnumClass_Editor_FieldListHandler(node, "field");
     }
     EditorCell_Collection editorCell = this.myFieldListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(true);
@@ -231,7 +231,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   }
   public EditorCell createConstructorList(EditorContext context, SemanticNode node) {
     if(this.myConstructorListHandler == null) {
-      this.myConstructorListHandler = new EnumClass_Editor_ConstructorListHandler(node, "constructor", true);
+      this.myConstructorListHandler = new EnumClass_Editor_ConstructorListHandler(node, "constructor");
     }
     EditorCell_Collection editorCell = this.myConstructorListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(true);
@@ -243,7 +243,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   }
   public EditorCell createMethodList(EditorContext context, SemanticNode node) {
     if(this.myMethodListHandler == null) {
-      this.myMethodListHandler = new EnumClass_Editor_MethodListHandler(node, "method", true);
+      this.myMethodListHandler = new EnumClass_Editor_MethodListHandler(node, "method");
     }
     EditorCell_Collection editorCell = this.myMethodListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(true);
@@ -255,7 +255,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   }
   public EditorCell createStaticMethodList(EditorContext context, SemanticNode node) {
     if(this.myStaticMethodListHandler == null) {
-      this.myStaticMethodListHandler = new EnumClass_Editor_StaticMethodListHandler(node, "staticMethod", true);
+      this.myStaticMethodListHandler = new EnumClass_Editor_StaticMethodListHandler(node, "staticMethod");
     }
     EditorCell_Collection editorCell = this.myStaticMethodListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(true);

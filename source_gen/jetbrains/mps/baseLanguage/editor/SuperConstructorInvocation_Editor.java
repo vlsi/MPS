@@ -56,7 +56,7 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
   }
   public EditorCell createActualArgumentList(EditorContext context, SemanticNode node) {
     if(this.myActualArgumentListHandler == null) {
-      this.myActualArgumentListHandler = new SuperConstructorInvocation_Editor_ActualArgumentListHandler(node, "actualArgument", true);
+      this.myActualArgumentListHandler = new SuperConstructorInvocation_Editor_ActualArgumentListHandler(node, "actualArgument");
     }
     EditorCell_Collection editorCell = this.myActualArgumentListHandler.createCells(context, new CellLayout_Horizontal());
     editorCell.setSelectable(true);

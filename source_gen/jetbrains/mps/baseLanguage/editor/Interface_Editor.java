@@ -165,7 +165,7 @@ public class Interface_Editor extends DefaultNodeEditor {
   }
   public EditorCell createExtendedInterfaceList(EditorContext context, SemanticNode node) {
     if(this.myExtendedInterfaceListHandler == null) {
-      this.myExtendedInterfaceListHandler = new Interface_Editor_ExtendedInterfaceListHandler(node, "extendedInterface", true);
+      this.myExtendedInterfaceListHandler = new Interface_Editor_ExtendedInterfaceListHandler(node, "extendedInterface");
     }
     EditorCell_Collection editorCell = this.myExtendedInterfaceListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(true);
@@ -177,7 +177,7 @@ public class Interface_Editor extends DefaultNodeEditor {
   }
   public EditorCell createMethodsList(EditorContext context, SemanticNode node) {
     if(this.myMethodListHandler == null) {
-      this.myMethodListHandler = new Interface_Editor_MethodListHandler(node, "method", true);
+      this.myMethodListHandler = new Interface_Editor_MethodListHandler(node, "method");
     }
     EditorCell_Collection editorCell = this.myMethodListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(false);

@@ -86,7 +86,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
   }
   public EditorCell createTypeVariableDeclarationList(EditorContext context, SemanticNode node) {
     if(this.myTypeVariableDeclarationListHandler == null) {
-      this.myTypeVariableDeclarationListHandler = new _GenericDeclaration_TypeVariables_Component_TypeVariableDeclarationListHandler(node, "typeVariableDeclaration", true);
+      this.myTypeVariableDeclarationListHandler = new _GenericDeclaration_TypeVariables_Component_TypeVariableDeclarationListHandler(node, "typeVariableDeclaration");
     }
     EditorCell_Collection editorCell = this.myTypeVariableDeclarationListHandler.createCells(context, new CellLayout_Horizontal());
     editorCell.setSelectable(true);
