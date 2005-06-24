@@ -72,6 +72,8 @@ public class EditorManager {
 
     editor = loadEditor(context, node);
     if (editor == null) {
+      //test
+      editor = loadEditor(context, node);
       editor = new DefaultNodeEditor();
     }
     node.putUserObject(this.getClass(), editor);

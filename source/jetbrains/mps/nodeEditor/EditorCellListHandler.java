@@ -1,10 +1,10 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.semanticModel.SemanticNode;
-import jetbrains.mps.semanticModel.SModelUtil;
-import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
+import jetbrains.mps.semanticModel.SModelUtil;
+import jetbrains.mps.semanticModel.SemanticNode;
 
 import java.awt.event.KeyEvent;
 import java.util.Iterator;
@@ -130,8 +130,10 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
   }
 
   protected EditorCell createEmptyCell(EditorContext editorContext) {
-    EditorCell_Constant emptyCell = EditorCell_Constant.create(editorContext, getOwner(), " << ... >>", true);
+    EditorCell_Constant emptyCell = EditorCell_Constant.create(editorContext, getOwner(), null, true);
+    emptyCell.setDefaultText(" << ... >>");
     emptyCell.setEditable(true);
+    emptyCell.setSubstituteInfo(new DefaultChildSubstituteInfo(getOwner(), null, getLinkDeclaration()));
     return emptyCell;
   }
 
