@@ -8039,7 +8039,6 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1073416106126">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="true" />
-      <link role="elementActionSet" targetNodeId="1081788832468" />
       <link role="linkDeclaration" targetNodeId="8.1068581517665" />
       <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1079958242049">
         <property name="editable" value="true" />
@@ -8048,7 +8047,6 @@
         <property name="drawBorder" value="false" />
         <property name="nullText" value="&lt;no statements&gt;" />
         <property name="selectable" value="true" />
-        <link role="actionSet" targetNodeId="1081788832468" />
       </node>
     </node>
   </node>
@@ -10174,7 +10172,6 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1119293948309">
           <property name="drawBorder" value="false" />
           <link role="linkDeclaration" targetNodeId="8.1082485599094" />
-          <link role="actionSet" targetNodeId="1082542109276" />
         </node>
         <node role="conditionalQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1082097601951">
           <property name="name" value="conditionalQuery" />

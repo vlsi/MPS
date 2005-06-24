@@ -224,7 +224,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-        IfStatement_ElseStatementActions.setCellActions(noRefCell, node);
         return noRefCell;
       }
     }
@@ -235,7 +234,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-    IfStatement_ElseStatementActions.setCellActions(editorCell, node);
     return editorCell;
   }
   public boolean handleConditionalQuery_1075379536707(SemanticNode node) {

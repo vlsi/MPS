@@ -21,6 +21,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
   private SemanticNode myCurrentTargetNode;
   private LinkDeclaration myLinkDeclaration;
 
+
   public DefaultChildSubstituteInfo(SemanticNode sourceNode, LinkDeclaration linkDeclaration) {
     if (SModelUtil.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.aggregation) {
       throw new RuntimeException("Only aggregation links are allowed here.");
@@ -35,6 +36,15 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     myCurrentTargetNode = sourceNode.getChild(SModelUtil.getGenuineLinkRole(linkDeclaration));
   }
 
+  public DefaultChildSubstituteInfo(SemanticNode parentNode, SemanticNode currChildNode, LinkDeclaration linkDeclaration) {
+    if (SModelUtil.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.aggregation) {
+      throw new RuntimeException("Only aggregation links are allowed here.");
+    }
+    mySourceNode = parentNode;
+    myLinkDeclaration = linkDeclaration;
+    myCurrentTargetNode = currChildNode;
+  }
+
   public List<INodeSubstituteItem> createActions() {
     List<INodeSubstituteAction> defaultActions = createActions_default();
     List<INodeSubstituteAction> actions = ModelActions.createNodeSubstituteActions(mySourceNode, myCurrentTargetNode, myLinkDeclaration, defaultActions);
@@ -47,7 +57,6 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     List<ConceptDeclaration> childTypes = createChildTypesList();
     for (final ConceptDeclaration childType : childTypes) {
       list.add(new DefaultChildNodeSubstituteAction(childType, mySourceNode, myCurrentTargetNode, myLinkDeclaration) {
-
         public String getDescriptionText(String pattern) {
           return childType.getModel().getFQName();
         }
