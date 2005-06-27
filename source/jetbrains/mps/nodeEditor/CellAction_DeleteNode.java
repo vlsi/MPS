@@ -22,6 +22,5 @@ public class CellAction_DeleteNode extends EditorCellAction {
     SModel model = mySemanticNode.getModel();
     SemanticNode parent = mySemanticNode.getParent();
     mySemanticNode.delete();
-    model.fireNodeDeletedEvent(parent);
   }
 }

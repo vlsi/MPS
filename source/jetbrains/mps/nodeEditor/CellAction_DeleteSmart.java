@@ -39,15 +39,11 @@ public class CellAction_DeleteSmart extends EditorCellAction {
         SemanticNode defaultTarget = SModelUtil.instantiateConceptDeclaration(defaultTargetConcept, model);
         String role = genuineLink.getRole();
         mySource.setChild(role, defaultTarget);
-        model.fireNodeAddedEvent(defaultTarget);
-      } else {
-        model.fireNodeDeletedEvent(mySource);
       }
 
     } else if (metaclass == LinkMetaclass.reference) {
       String role = genuineLink.getRole();
       mySource.removeReferent(role, myTarget);
-      model.fireNodeDeletedEvent(mySource);
     }
   }
 }

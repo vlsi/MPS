@@ -1156,15 +1156,15 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       rebuildEditorContent();
     }
 
-    public void nodeAdded(SModel semanticModel, final SemanticNode child) {
+    public void childAdded(SModel model, SemanticNode parent, SemanticNode child) {
       rebuildEditorContent();
       handleNodelAdded(child);
     }
 
-    public void nodeDeleted(SModel semanticModel, final SemanticNode container) {
+    public void childRemoved(SModel model, SemanticNode parent, SemanticNode child) {
       rebuildEditorContent();
       if (mySelectedCell == null) {
-        EditorCell changedNodeCell = findNodeCell(container);
+        EditorCell changedNodeCell = findNodeCell(parent);
         if (changedNodeCell != null) {
           changeSelection(changedNodeCell);
         }

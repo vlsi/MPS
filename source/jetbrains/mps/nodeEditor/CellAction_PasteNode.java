@@ -43,7 +43,5 @@ public class CellAction_PasteNode extends EditorCellAction {
       PasteUtil.pasteRelative(anchor, node, false);
       anchor = node;
     }
-
-    selectedNode.getModel().fireModelChangedDramaticallyEvent();
   }
 }
