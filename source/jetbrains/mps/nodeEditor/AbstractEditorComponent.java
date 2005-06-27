@@ -23,6 +23,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.semanticModel.SModelListener;
 import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SModelAdapter;
 import jetbrains.mps.util.CopyUtil;
 
 import javax.swing.*;
@@ -1145,7 +1146,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   // ---- semantic model listener
 
-  private class MyModelListener implements SModelListener {
+  private class MyModelListener extends SModelAdapter {
     public void modelChanged(SModel semanticModel) {
       myRootCell.updateView();
       relayout();

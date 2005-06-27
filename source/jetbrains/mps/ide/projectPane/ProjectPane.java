@@ -1156,7 +1156,7 @@ public class ProjectPane extends JComponent {
     }
   }
 
-  private class MyModelListener implements SModelListener {
+  private class MyModelListener extends SModelAdapter {
     public MyModelListener() {
     }
 

@@ -56,7 +56,7 @@ public class FindUsagesManager {
   }
 
   public static void registerStructureModel(SModelDescriptor descriptor) {
-    descriptor.addSModelListener(new SModelListener() {
+    descriptor.addSModelListener(new SModelAdapter() {
       public void modelChanged(SModel model) {
         invalidateCaches();
       }
