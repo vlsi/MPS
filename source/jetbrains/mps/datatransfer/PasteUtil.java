@@ -103,7 +103,7 @@ public class PasteUtil {
     } else if (status == PASTE_TO_PARENT) {
       pasteToParent(pasteTarget, pasteNode, false);
     } else if (status == PASTE_TO_ROOT) {
-      CommandUtil.addRootNode(pasteNode);
+      pasteNode.getModel().addRoot(pasteNode);
     }
   }
 

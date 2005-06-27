@@ -11,7 +11,6 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.ui.HeaderWrapper;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.TreeWithSemanticNodesSpeedSearch;
@@ -394,7 +393,7 @@ public class ProjectPane extends JComponent {
                 CommandProcessor.instance().executeCommand(new Runnable() {
                   public void run() {
                     SemanticNode node = SModelUtil.instantiateConceptDeclaration(typeDeclaration, semanticModel);
-                    CommandUtil.addRootNode(node);
+                    node.getModel().addRoot(node);
                     selectNode(node);
                     openEditor();
                   }
