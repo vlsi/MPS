@@ -45,10 +45,10 @@ import org.jdom.Element;
 /**
  * @author Kostik
  */
-public class GeneratorManager implements ExternalizableComponent, ComponentWithPreferences  {
+public class GeneratorManager implements ExternalizableComponent, ComponentWithPreferences {
   public static final Logger LOG = Logger.getLogger(GeneratorManager.class);
 
-  private static final boolean SAVE_TRANSIENT_MODELS = true;//false;
+  private static final boolean SAVE_TRANSIENT_MODELS = false;
   public static final String COMPILE_ON_GENERATION = "compile-on-generation";
 
   private MPSProject myProject;
@@ -99,8 +99,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     generate(configuration, models, false);
   }
 
-  private GeneratorConfigurationCommand createCommand(final SModel model, final String fromLanguage, final String toLanguage)
-  {
+  private GeneratorConfigurationCommand createCommand(final SModel model, final String fromLanguage, final String toLanguage) {
     GeneratorConfigurationCommand command = GeneratorConfigurationCommand.newInstance(model);
 
     jetbrains.mps.projectLanguage.Language from = jetbrains.mps.projectLanguage.Language.newInstance(model);
@@ -259,7 +258,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
   }
 
 
-  private void generateSource(String outputPath, SModel sourceModel, SModel targetModel) {
+  private void generateFile(String outputPath, SModel sourceModel, SModel targetModel) {
     if (outputPath == null) throw new RuntimeException("Unspecified output path. Please specify one.");
 
     LOG.debug("Generating to root : " + outputPath);
@@ -273,11 +272,21 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
       outputPathFile.mkdirs();
     }
 
-    JavaFileGenerator javaFileGenerator = new JavaFileGenerator(outputPathFile, packageName, false);
-    Iterator<SemanticNode> javaRoots = targetModel.roots();
-    while (javaRoots.hasNext()) {
-      SemanticNode node = javaRoots.next();
-      javaFileGenerator.generateJavaFile((Classifier) node);
+    // todo : refactor it...
+    if (targetModel.importsLanguage("jetbrains.mps.xml")) {
+      XmlFileGenerator xmlFileGenerator = new XmlFileGenerator(outputPathFile, packageName, false);
+      Iterator<SemanticNode> roots = targetModel.roots();
+      while (roots.hasNext()) {
+        SemanticNode node = roots.next();
+        xmlFileGenerator.generateXmlFile((jetbrains.mps.xml.Element) node);
+      }
+    } else {
+      JavaFileGenerator javaFileGenerator = new JavaFileGenerator(outputPathFile, packageName, false);
+      Iterator<SemanticNode> roots = targetModel.roots();
+      while (roots.hasNext()) {
+        SemanticNode node = roots.next();
+        javaFileGenerator.generateJavaFile((Classifier) node);
+      }
     }
   }
 
@@ -393,7 +402,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
       if (generateText) {
         generateText(targetModel);
       } else {
-        generateSource(outputPath, sourceModelDescr.getSModel(), targetModel);
+        generateFile(outputPath, sourceModelDescr.getSModel(), targetModel);
       }
     } catch (Exception e) {
       monitor.addText("Exception during generation " + e.getMessage());
@@ -405,8 +414,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     }
   }
 
-  private SModel generateByTemplateGenerator(SModelDescriptor sourceModelDescr, final SModel templatesModel, final ITemplateGenerator generator)
-  {
+  private SModel generateByTemplateGenerator(SModelDescriptor sourceModelDescr, final SModel templatesModel, final ITemplateGenerator generator) {
     final SModel originalSourceModel = sourceModelDescr.getSModel();
     String outputModelNamespace = JavaNameUtil.packageNameForModelFqName(originalSourceModel.getFQName());
     String transientModelNamePfx = originalSourceModel.getName() + "_transient_";

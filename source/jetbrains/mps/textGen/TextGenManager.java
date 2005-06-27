@@ -40,13 +40,13 @@ public class TextGenManager {
       return;
     }
 
-    SemanticNodeTextGen nodeTextGen = loadNodeTextGen(node);
+    SNodeTextGen nodeTextGen = loadNodeTextGen(node);
     LOG.assertLog(nodeTextGen != null, "Couldn't find text generator for " + node.getDebugText());
     nodeTextGen.setBuffer(buffer);
     nodeTextGen.doGenerateText(node);
   }
 
-  private SemanticNodeTextGen loadNodeTextGen(SemanticNode node) {
+  private SNodeTextGen loadNodeTextGen(SemanticNode node) {
     String className = node.getClass().getName();
     className = className.substring(className.lastIndexOf('.') + 1);
     String packageName = node.getClass().getPackage().getName();
@@ -54,7 +54,7 @@ public class TextGenManager {
 
     try {
       Class textgenClass = Class.forName(textgenClassname, true, ClassLoaderManager.getInstance().getClassLoader());
-      SemanticNodeTextGen textGenerator = (SemanticNodeTextGen) textgenClass.newInstance();
+      SNodeTextGen textGenerator = (SNodeTextGen) textgenClass.newInstance();
       return textGenerator;
     } catch (ClassNotFoundException e) {
     } catch (InstantiationException e) {
