@@ -64,14 +64,6 @@ public class FindUsagesManager {
       public void modelChangedDramatically(SModel model) {
         invalidateCaches();
       }
-
-      public void nodeAdded(SModel model, SemanticNode child) {
-        invalidateCaches();
-      }
-
-      public void nodeDeleted(SModel model, SemanticNode container) {
-        invalidateCaches();
-      }
     });
   }
 

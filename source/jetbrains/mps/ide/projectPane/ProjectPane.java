@@ -1173,14 +1173,14 @@ public class ProjectPane extends JComponent {
       update();
     }
 
-    public void nodeAdded(SModel semanticModel, SemanticNode child) {
-      rebuildTree(semanticModel);
+    public void childAdded(SModel model, SemanticNode parent, SemanticNode child) {
+      rebuildTree(model);
       update();
     }
 
-    public void nodeDeleted(SModel model, SemanticNode container) {
-      if (container != null) {
-        selectNode(container);
+    public void childRemoved(SModel model, SemanticNode parent, SemanticNode child) {
+      if (parent != null) {
+        selectNode(parent);
       } else {
         selectModel(myProject.getModelDescriptor(model.getFQName()));
       }
