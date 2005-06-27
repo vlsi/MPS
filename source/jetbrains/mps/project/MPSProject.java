@@ -2,12 +2,10 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.ide.*;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.command.ICommandListener;
-import jetbrains.mps.ide.command.CommandEvent;
+import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.projectLanguage.ProjectModel;
 import jetbrains.mps.logging.Logger;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -32,7 +30,7 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
   private Map<Class, Object> myComponents = new HashMap<Class, Object>();
   private List<MPSProjectListener> myProjectListeners = new ArrayList<MPSProjectListener>();
   private List<MPSProjectCommandListener> myProjectCommandListeners = new ArrayList<MPSProjectCommandListener>();
-  private CommandEventsTranslator myEventTranslator = new CommandEventsTranslator();
+  private MyCommandEventTranslator myEventTranslator = new MyCommandEventTranslator();
   private RootManager myRootManager = null;
 
   public MPSProject(File file) {
@@ -43,20 +41,24 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     if(myRootManager != null) {
       return;
     }
-    myRootManager = new RootManager(this);
-    if (myProjectFile != null) {
-      read(myProjectFile);
-    }
-    MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
-    projects.addProject(this);
-    if (myProjectFile != null && myProjectFile.getName().equals("RubyWeb.mpr")) {
-      rubyWeb.bibliography.PersistenceUtil.loadRubyWebBibliography(this);
-      rubyWeb.patternList.PersistenceUtil.loadRubyWebPatternList(this);
-      rubyWeb.paper.PersistenceUtil.loadRubyWebPaper(this);
-    }
+    CommandProcessor.instance().executeCommandIfNotInCommand(new Runnable() {
+      public void run() {
+        myRootManager = new RootManager(MPSProject.this);
+        if (myProjectFile != null) {
+          read(myProjectFile);
+        }
+        MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
+        projects.addProject(MPSProject.this);
+        if (myProjectFile != null && myProjectFile.getName().equals("RubyWeb.mpr")) {
+          rubyWeb.bibliography.PersistenceUtil.loadRubyWebBibliography(MPSProject.this);
+          rubyWeb.patternList.PersistenceUtil.loadRubyWebPatternList(MPSProject.this);
+          rubyWeb.paper.PersistenceUtil.loadRubyWebPaper(MPSProject.this);
+        }
 
-    CommandProcessor.instance().addCommandListener(myEventTranslator);
-    addMPSProjectListener(myEventTranslator);
+        CommandProcessor.instance().addCommandListener(myEventTranslator);
+        addMPSProjectListener(myEventTranslator);
+      }
+    });
   }
 
   public Collection<Language> getProjectLanguages() {
@@ -245,27 +247,13 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     }
   }
 
-  private class CommandEventsTranslator implements ICommandListener, MPSProjectListener {
-    private Set<Runnable> myRunningCommands = new HashSet<Runnable>();
-    private Set<Runnable> myDirtyCommands = new HashSet<Runnable>();
-
-    public void commandStarted(CommandEvent event) {
-      myRunningCommands.add(event.getCommand());
-    }
-
-    public void beforeCommandFinished(CommandEvent event) {
-    }
-
-    public void commandFinished(CommandEvent event) {
-      myRunningCommands.remove(event.getCommand());
-      if (myDirtyCommands.contains(event.getCommand())) {
-        fireMPSProjectChangedInCommand();
-      }
-      myDirtyCommands.remove(event.getCommand());
+  private class MyCommandEventTranslator extends CommandEventTranslator implements MPSProjectListener {
+    protected void fireCommandEvent() {
+      fireMPSProjectChangedInCommand();
     }
 
     public void projectChanged(MPSProject project) {
-      myDirtyCommands.addAll(myRunningCommands);
+      markCurrentCommandsDirty();
     }
   }
 }

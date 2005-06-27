@@ -56,9 +56,12 @@ public class ProjectPane extends JComponent {
   private boolean myRebuildEnabled = true;
   private MPSProjectCommandListener myProjectListener = new MPSProjectCommandListener() {
     public void projectChangedInCommand(MPSProject project) {
+      updateListeners();
       rebuildTree();
     }
   };
+  private SModelListener myModelListener = new MyModelListener();
+  private LanguageCommandListener myLanguageListener = new MyLanguageListener();
 
   public ProjectPane(IdeMain ide) {
     myIDE = ide;
@@ -336,11 +339,6 @@ public class ProjectPane extends JComponent {
     });
   }
 
-
-  public void modelAdded(SModelDescriptor descriptor) {
-    addModelListener(descriptor);
-  }
-
   private TreePath getRootPath() {
     return new TreePath(new Object[]{myTree.getModel().getRoot()});
   }
@@ -450,52 +448,36 @@ public class ProjectPane extends JComponent {
 
   public void setProject(MPSProject project) {
     myProject = project;
+
     myProject.addMPSProjectCommandListener(myProjectListener);
-    CommandProcessor.instance().executeCommand(new Runnable() {
-      public void run() {
-        myProject.getComponent(RootManager.class).reloadProject();
-      }
-    }, "project reloading");
-    for (SModelDescriptor modelDescriptor : myProject.getAllModelDescriptors()) {
-      addModelListener(modelDescriptor);
-    }
+    updateListeners();
+
     myHeader.setText("Project - " + FileUtil.getCanonicalPath(myProject.getProjectFile()));
     rebuildTree();
   }
 
+  private void updateListeners() {
+    for (SModelDescriptor modelDescriptor : myProject.getAllModelDescriptors()) {
+      addModelListener(modelDescriptor);
+    }
+    for (Language projectLanguage : myProject.getProjectLanguages()) {
+      addLanguageListener(projectLanguage);
+    }
+    for (Language language : myProject.getLanguages()) {
+      addLanguageListener(language);
+    }
+  }
+
   private void addModelListener(SModelDescriptor semanticModel) {
     if (semanticModel != null) {
-      semanticModel.addSModelListener(new SModelListener() {
-        private void update() {
-          validate();
-          repaint();
-        }
-
-        public void modelChanged(SModel semanticModel) {
-          update();
-        }
-
-        public void modelChangedDramatically(SModel semanticModel) {
-          rebuildTree(semanticModel);
-          update();
-        }
-
-        public void nodeAdded(SModel semanticModel, SemanticNode child) {
-          rebuildTree(semanticModel);
-          update();
-        }
-
-        public void nodeDeleted(SModel model, SemanticNode container) {
-          if (container != null) {
-            selectNode(container);
-          } else {
-            selectModel(myProject.getModelDescriptor(model.getFQName()));
-          }
-          rebuildTree(model);
-          update();
-        }
-      });
+      semanticModel.removeSModelListener(myModelListener);
+      semanticModel.addSModelListener(myModelListener);
     }
+  }
+
+  private void addLanguageListener(Language language) {
+    language.removeLanguageCommandListener(myLanguageListener);
+    language.addLanguageCommandListener(myLanguageListener);
   }
 
   public void enableRebuild() {
@@ -1168,4 +1150,43 @@ public class ProjectPane extends JComponent {
     }
   }
 
+  private class MyLanguageListener implements LanguageCommandListener {
+    public void languageChangedInCommand(Language language) {
+      rebuildTree();
+    }
+  }
+
+  private class MyModelListener implements SModelListener {
+    public MyModelListener() {
+    }
+
+    private void update() {
+      validate();
+      repaint();
+    }
+
+    public void modelChanged(SModel semanticModel) {
+      update();
+    }
+
+    public void modelChangedDramatically(SModel semanticModel) {
+      rebuildTree(semanticModel);
+      update();
+    }
+
+    public void nodeAdded(SModel semanticModel, SemanticNode child) {
+      rebuildTree(semanticModel);
+      update();
+    }
+
+    public void nodeDeleted(SModel model, SemanticNode container) {
+      if (container != null) {
+        selectNode(container);
+      } else {
+        selectModel(myProject.getModelDescriptor(model.getFQName()));
+      }
+      rebuildTree(model);
+      update();
+    }
+  }
 }
