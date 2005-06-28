@@ -29,6 +29,7 @@ import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.semanticModel.event.EventUtil;
 import jetbrains.mps.semanticModel.event.SModelCommandListener;
 import jetbrains.mps.semanticModel.event.SModelEvent;
+import jetbrains.mps.semanticModel.event.SModelListener;
 
 import javax.swing.*;
 import javax.swing.event.TreeModelEvent;
@@ -58,11 +59,9 @@ public class ProjectPane extends JComponent {
   private boolean myRebuildEnabled = true;
   private MPSProjectCommandListener myProjectListener = new MPSProjectCommandListener() {
     public void projectChangedInCommand(MPSProject project) {
-      updateListeners();
       rebuildTree();
     }
   };
-  private SModelCommandListener myModelListener = new MyModelListener();
   private LanguageCommandListener myLanguageListener = new MyLanguageListener();
 
   public ProjectPane(IdeMain ide) {
@@ -433,30 +432,17 @@ public class ProjectPane extends JComponent {
 
   public void setProject(MPSProject project) {
     myProject = project;
-
     myProject.addMPSProjectCommandListener(myProjectListener);
-    updateListeners();
-
     myHeader.setText("Project - " + FileUtil.getCanonicalPath(myProject.getProjectFile()));
     rebuildTree();
   }
 
   private void updateListeners() {
-    for (SModelDescriptor modelDescriptor : myProject.getAllModelDescriptors()) {
-      addModelListener(modelDescriptor);
-    }
     for (Language projectLanguage : myProject.getProjectLanguages()) {
       addLanguageListener(projectLanguage);
     }
     for (Language language : myProject.getLanguages()) {
       addLanguageListener(language);
-    }
-  }
-
-  private void addModelListener(SModelDescriptor semanticModel) {
-    if (semanticModel != null) {
-      semanticModel.removeSModelCommandListener(myModelListener);
-      semanticModel.addSModelCommandListener(myModelListener);
     }
   }
 
@@ -709,6 +695,7 @@ public class ProjectPane extends JComponent {
     private SModelDescriptor myModelDescriptor;
     private String myLabel;
     private boolean isInitialized = false;
+    private MyModelListener myModelListener = new MyModelListener();
 
     public SModelTreeNode(SModelDescriptor modelDescriptor, String label) {
       myModelDescriptor = modelDescriptor;
@@ -776,6 +763,7 @@ public class ProjectPane extends JComponent {
     public void init() {
       this.removeAllChildren();
       SModel model = myModelDescriptor.getSModel();
+      model.addSModelCommandListener(myModelListener);
       Iterator<SemanticNode> iterator = model.roots();
       TreeSet<Object> sortedRoots = new TreeSet<Object>(new Comparator() {
         public int compare(Object o, Object o1) {
@@ -805,6 +793,10 @@ public class ProjectPane extends JComponent {
         initTreeNode(treeNode, semanticNode);
       }
       isInitialized = true;
+    }
+
+    protected void dispose() {
+      myModelDescriptor.getSModel().removeSModelCommandListener(myModelListener);
     }
 
     private void initTreeNode(SemanticTreeNode treeNode, SemanticNode semanticNode) {
@@ -1063,7 +1055,6 @@ public class ProjectPane extends JComponent {
     }
 
     private SModelTreeNode createSModelTreeNode(SModelDescriptor modelDescriptor, String label) {
-      // sorted roots
       SModelTreeNode rootModelNode = new SModelTreeNode(modelDescriptor, label);
       mySModelTreeNodes.add(rootModelNode);
       return rootModelNode;
