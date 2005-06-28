@@ -11,8 +11,6 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.awt.*;
 
-import jetbrains.mps.ide.projectPane.Icons;
-
 /**
  * @author Kostik
  */
@@ -74,6 +72,10 @@ public abstract class MPSTree extends JTree {
   public void rebuildTree() {
     runRebuildAction(new Runnable() {
       public void run() {
+        if (getModel().getRoot() instanceof MPSTreeNode) {
+          ((MPSTreeNode) getModel().getRoot()).
+        }
+
         DefaultTreeModel model = new DefaultTreeModel(rebuild());
         setModel(model);
       }
@@ -184,47 +186,6 @@ public abstract class MPSTree extends JTree {
       expansionPaths.add(path.getText());
     }
     expandPaths(expansionPaths);
-  }
-
-  public static abstract class MPSTreeNode extends DefaultMutableTreeNode {
-    public MPSTreeNode() {
-    }
-
-    public MPSTreeNode(Object userObject) {
-      super(userObject);
-    }
-
-    protected abstract String getNodeIdentifier();
-
-    protected boolean initialized() {
-      return true;
-    }
-
-    protected void init() {
-    }
-
-    protected final MPSTreeNode findNodeWith(Object userObject) {
-      if (getUserObject() == userObject) return this;
-      if (initialized()) {
-        for (int i = 0; i < getChildCount(); i++) {
-          MPSTreeNode result = ((MPSTreeNode) getChildAt(i)).findNodeWith(userObject);
-          if (result != null) return result;
-        }
-      }
-      return null;
-    }
-
-    public Icon getIcon(boolean expanded) {
-      if (expanded) {
-        return Icons.OPENED_FOLDER;
-      } else {
-        return Icons.CLOSED_FOLDER;
-      }
-    }
-
-    public String toString() {
-      return getNodeIdentifier();
-    }
   }
 
   public static class TextTreeNode extends MPSTreeNode {

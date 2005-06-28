@@ -16,6 +16,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.HeaderWrapper;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.TreeWithSemanticNodesSpeedSearch;
+import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
@@ -586,7 +587,7 @@ public class ProjectPane extends JComponent {
   }
 
 
-  private static class ProjectTreeNode extends MPSTree.MPSTreeNode {
+  private static class ProjectTreeNode extends MPSTreeNode {
     public ProjectTreeNode() {
     }
 
@@ -603,7 +604,7 @@ public class ProjectPane extends JComponent {
     }
   }
 
-  private abstract class SemanticTreeNode extends MPSTree.MPSTreeNode {
+  private abstract class SemanticTreeNode extends MPSTreeNode {
     protected abstract SModel getSModel();
 
     public SemanticNode getSNode() {
@@ -816,7 +817,7 @@ public class ProjectPane extends JComponent {
     }
   }
 
-  private class ProjectLanguageTreeNode extends MPSTree.MPSTreeNode {
+  private class ProjectLanguageTreeNode extends MPSTreeNode {
     private Language myLanguage;
 
     public ProjectLanguageTreeNode(Language language) {
@@ -844,7 +845,7 @@ public class ProjectPane extends JComponent {
     }
   }
 
-  private class LanguageTreeNode extends MPSTree.MPSTreeNode {
+  private class LanguageTreeNode extends MPSTreeNode {
     private Language myLanguage;
 
     public LanguageTreeNode(Language language) {
