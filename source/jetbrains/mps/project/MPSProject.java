@@ -79,7 +79,7 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
   public Set<SModelDescriptor> getAllModelDescriptors() {
     init();
 
-    return SModelRepository.getInstance().getAllModelDescriptors();
+    return SModelRepository.getInstance().getAllNonTransientModelDescriptors();
   }
 
   public Collection<Language> getLanguages() {
