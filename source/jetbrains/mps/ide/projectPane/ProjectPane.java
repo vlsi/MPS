@@ -24,7 +24,7 @@ import jetbrains.mps.projectLanguage.GeneratorConfiguration;
 import jetbrains.mps.projectLanguage.ProjectModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.semanticModel.*;
-import jetbrains.mps.semanticModel.event.SModelCommandListener;
+import jetbrains.mps.semanticModel.event.*;
 import jetbrains.mps.logging.Logger;
 
 import javax.swing.*;
@@ -1120,16 +1120,16 @@ public class ProjectPane extends JComponent {
     public MyModelListener() {
     }
 
-    public void modelChangedInCommand(SModel model) {
-      update();
-    }
-
-    public void modelChangeDramaticallyInCommand(SModel model) {
-      rebuildTree(model);
-      update();
-    }
-
-    private void update() {
+    public void modelChangedInCommand(List<SModelEvent> events) {
+      boolean isChangedDramatically = false;
+      for (SModelEvent e : events) {
+        if (e instanceof SModelChildEvent) isChangedDramatically = true;
+        if (e instanceof SModelRootEvent) isChangedDramatically = true;
+        if (e instanceof SModelReferenceEvent) isChangedDramatically = true;
+      }
+      if (isChangedDramatically) {
+        rebuildTree();
+      }
       validate();
       repaint();
     }
