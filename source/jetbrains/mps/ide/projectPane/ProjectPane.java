@@ -59,7 +59,7 @@ public class ProjectPane extends JComponent {
       rebuildTree();
     }
   };
-  private SModelListener myModelListener = new MyModelListener();
+  private SModelCommandListener myModelListener = new MyModelListener();
   private LanguageCommandListener myLanguageListener = new MyLanguageListener();
 
   public ProjectPane(IdeMain ide) {
@@ -469,8 +469,8 @@ public class ProjectPane extends JComponent {
 
   private void addModelListener(SModelDescriptor semanticModel) {
     if (semanticModel != null) {
-      semanticModel.removeSModelListener(myModelListener);
-      semanticModel.addSModelListener(myModelListener);
+      semanticModel.removeSModelCommandListener(myModelListener);
+      semanticModel.addSModelCommandListener(myModelListener);
     }
   }
 
@@ -794,7 +794,7 @@ public class ProjectPane extends JComponent {
       this.removeAllChildren();
       SModel model = myModelDescriptor.getSModel();
       Iterator<SemanticNode> iterator = model.roots();
-      TreeSet sortedRoots = new TreeSet(new Comparator() {
+      TreeSet<Object> sortedRoots = new TreeSet<Object>(new Comparator() {
         public int compare(Object o, Object o1) {
           if (o == o1) {
             return 0;
@@ -915,47 +915,6 @@ public class ProjectPane extends JComponent {
       return Icons.GENERATORS_ICON;
     }
   }
-
-
-
-//  private static class SemanticNodeTreeRenderer extends DefaultTreeCellRenderer {
-//    public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus)
-//    {
-//      JLabel label = (JLabel) super.getTreeCellRendererComponent(tree, value, selected, expanded, leaf, row, hasFocus);
-//
-//      if (expanded) {
-//        label.setIcon(Icons.OPENED_FOLDER);
-//      } else {
-//        label.setIcon(Icons.CLOSED_FOLDER);
-//      }
-//
-//      if (value instanceof SNodeTreeNode) {
-//        SemanticNode semanticNode = ((SNodeTreeNode) value).getSNode();
-//        if (semanticNode != null) {
-//
-//          typesystem
-//
-//          label.setIcon(IconManager.getIconFor(semanticNode));
-//        }
-//      } else if (value instanceof SModelTreeNode) {
-//        SModelTreeNode node = (SModelTreeNode) value;
-//        label.setIcon(Icons.MODEL_ICON);
-//
-//        if (node.isImported()) {
-//          label.setIcon(Icons.createMarkedIcon(label.getIcon(), Icons.JAVA_ICON));
-//        }
-//
-//      } else if (value instanceof LanguageTreeNode) {
-//        label.setIcon(Icons.LANGUAGE_ICON);
-//      } else if (value instanceof ProjectLanguageTreeNode) {
-//        label.setIcon(Icons.PROJECT_LANGUAGE_ICON);
-//      } else if (value instanceof LibraryModelsTreeNode) {
-//        label.setIcon(Icons.LIB_ICON);
-//      }
-//
-//      return label;
-//    }
-//  }
 
   private class MyTree extends MPSTree {
     private Set<SModelTreeNode> mySModelTreeNodes = new HashSet<SModelTreeNode>();
@@ -1153,37 +1112,22 @@ public class ProjectPane extends JComponent {
     }
   }
 
-  private class MyModelListener extends SModelAdapter {
+  private class MyModelListener implements SModelCommandListener {
     public MyModelListener() {
+    }
+
+    public void modelChangedInCommand(SModel model) {
+      update();
+    }
+
+    public void modelChangeDramaticallyInCommand(SModel model) {
+      rebuildTree(model);
+      update();
     }
 
     private void update() {
       validate();
       repaint();
-    }
-
-    public void modelChanged(SModel semanticModel) {
-      update();
-    }
-
-    public void modelChangedDramatically(SModel semanticModel) {
-      rebuildTree(semanticModel);
-      update();
-    }
-
-    public void childAdded(SModel model, SemanticNode parent, SemanticNode child) {
-      rebuildTree(model);
-      update();
-    }
-
-    public void childRemoved(SModel model, SemanticNode parent, SemanticNode child) {
-      if (parent != null) {
-        selectNode(parent);
-      } else {
-        selectModel(myProject.getModelDescriptor(model.getFQName()));
-      }
-      rebuildTree(model);
-      update();
     }
   }
 }
