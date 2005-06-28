@@ -639,7 +639,6 @@ public class ProjectPane extends JComponent {
   }
 
   private class LanguageEditorsTreeNode extends MPSTree.TextTreeNode {
-
     public LanguageEditorsTreeNode(String text){
       super(text);
     }
@@ -950,6 +949,10 @@ public class ProjectPane extends JComponent {
 
       expandPaths(expansion);
       selectPaths(selection);
+    }
+
+    public void rebuildTree(SemanticNode node) {
+
     }
 
 

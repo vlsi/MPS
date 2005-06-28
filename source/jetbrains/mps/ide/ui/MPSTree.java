@@ -170,7 +170,6 @@ public abstract class MPSTree extends JTree {
 
     protected abstract String getNodeIdentifier();
 
-
     public boolean initialized() {
       return true;
     }
