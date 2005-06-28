@@ -51,12 +51,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode {
   }
 
   protected final MPSTreeNode findNodeWith(Object userObject) {
-    System.err.println("Finding " + userObject);
-    System.err.println("My object is " + getUserObject());
-    if (getUserObject() == userObject) {
-      System.err.println("Returning it!");
-      return this;
-    }
+    if (getUserObject() == userObject) return this;
     if (initialized()) {
       for (int i = 0; i < getChildCount(); i++) {
         MPSTreeNode result = ((MPSTreeNode) getChildAt(i)).findNodeWith(userObject);
