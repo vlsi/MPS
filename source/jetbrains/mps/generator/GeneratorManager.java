@@ -60,7 +60,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
 
   public void read(Element element) {
     if (element.getAttribute(COMPILE_ON_GENERATION) != null) {
-      myCompileOnGeneration = Boolean.getBoolean(element.getAttributeValue(COMPILE_ON_GENERATION));
+      myCompileOnGeneration = Boolean.parseBoolean(element.getAttributeValue(COMPILE_ON_GENERATION));
     }
   }
 
