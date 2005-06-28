@@ -808,6 +808,19 @@ public class ProjectPane extends JComponent {
         initTreeNode(childTreeNode, childNode);
       }
     }
+
+    private class MyModelListener implements SModelCommandListener {
+      public MyModelListener() {
+      }
+
+      public void modelChangedInCommand(List<SModelEvent> events) {
+        if (EventUtil.isDramaticalChange(events)) {
+          rebuildTree(events.get(0).getModel());
+        }
+        validate();
+        repaint();
+      }
+    }
   }
 
   private class ProjectLanguageTreeNode extends MPSTreeNode {
@@ -1073,19 +1086,6 @@ public class ProjectPane extends JComponent {
   private class MyLanguageListener implements LanguageCommandListener {
     public void languageChangedInCommand(Language language) {
       rebuildTree();
-    }
-  }
-
-  private class MyModelListener implements SModelCommandListener {
-    public MyModelListener() {
-    }
-
-    public void modelChangedInCommand(List<SModelEvent> events) {
-      if (EventUtil.isDramaticalChange(events)) {
-        rebuildTree(events.get(0).getModel());
-      }
-      validate();
-      repaint();
     }
   }
 }
