@@ -23,6 +23,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.semanticModel.SModelAdapter;
+import jetbrains.mps.semanticModel.event.SModelChildEvent;
 import jetbrains.mps.util.CopyUtil;
 
 import javax.swing.*;
@@ -1155,15 +1156,15 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       rebuildEditorContent();
     }
 
-    public void childAdded(SModel model, SemanticNode parent, SemanticNode child) {
+    public void childAdded(SModelChildEvent event) {
       rebuildEditorContent();
-      handleNodelAdded(child);
+      handleNodelAdded(event.getChild());
     }
 
-    public void childRemoved(SModel model, SemanticNode parent, SemanticNode child) {
+    public void childRemoved(SModelChildEvent event) {
       rebuildEditorContent();
       if (mySelectedCell == null) {
-        EditorCell changedNodeCell = findNodeCell(parent);
+        EditorCell changedNodeCell = findNodeCell(event.getParent());
         if (changedNodeCell != null) {
           changeSelection(changedNodeCell);
         }

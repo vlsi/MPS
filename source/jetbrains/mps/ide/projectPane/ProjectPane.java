@@ -24,6 +24,7 @@ import jetbrains.mps.projectLanguage.GeneratorConfiguration;
 import jetbrains.mps.projectLanguage.ProjectModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.semanticModel.*;
+import jetbrains.mps.semanticModel.event.SModelCommandListener;
 import jetbrains.mps.logging.Logger;
 
 import javax.swing.*;

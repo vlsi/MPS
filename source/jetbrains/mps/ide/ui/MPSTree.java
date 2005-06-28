@@ -204,7 +204,5 @@ public abstract class MPSTree extends JTree {
     public String toString() {
       return myText;
     }
-
-
   }
 }
