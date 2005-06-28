@@ -59,6 +59,7 @@ public class ProjectPane extends JComponent {
   private boolean myRebuildEnabled = true;
   private MPSProjectCommandListener myProjectListener = new MPSProjectCommandListener() {
     public void projectChangedInCommand(MPSProject project) {
+      updateListeners();
       rebuildTree();
     }
   };
