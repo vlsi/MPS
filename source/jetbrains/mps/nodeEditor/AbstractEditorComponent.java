@@ -22,8 +22,10 @@ import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.semanticModel.SemanticNode;
-import jetbrains.mps.semanticModel.SModelAdapter;
 import jetbrains.mps.semanticModel.event.SModelChildEvent;
+import jetbrains.mps.semanticModel.event.SModelCommandListener;
+import jetbrains.mps.semanticModel.event.SModelEvent;
+import jetbrains.mps.semanticModel.event.EventUtil;
 import jetbrains.mps.util.CopyUtil;
 
 import javax.swing.*;
@@ -476,7 +478,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     SemanticNode semanticNode = myRootCell.getSemanticNode();
     if (semanticNode != null) {
       SModel semanticModel = semanticNode.getModel();
-      semanticModel.removeSemanticModelListener(mySemanticModelListener);
+      semanticModel.removeSModelCommandListener(mySemanticModelListener);
     }
   }
 
@@ -485,7 +487,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       SemanticNode semanticNode = myRootCell.getSemanticNode();
       if (semanticNode != null) {
         SModel semanticModel = semanticNode.getModel();
-        semanticModel.removeSemanticModelListener(mySemanticModelListener);
+        semanticModel.removeSModelCommandListener(mySemanticModelListener);
       }
     }
 
@@ -498,7 +500,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     SemanticNode semanticNode = myRootCell.getSemanticNode();
     if (semanticNode != null) {
       SModel semanticModel = semanticNode.getModel();
-      semanticModel.addSModelListener(mySemanticModelListener);
+      semanticModel.addSModelCommandListener(mySemanticModelListener);
       addImportedModelsToListener(semanticModel);
     }
 
@@ -511,9 +513,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (importedModels != null) {
       while (importedModels.hasNext()) {
         SModel importedModel = importedModels.next();
-        if (importedModel.hasSemanticModelListener(mySemanticModelListener)) continue;
+        if (importedModel.hasSModelCommandListener(mySemanticModelListener)) continue;
 
-        importedModel.addSModelListener(mySemanticModelListener);
+        importedModel.addSModelCommandListener(mySemanticModelListener);
         addImportedModelsToListener(importedModel);
       }
     }
@@ -1146,25 +1148,33 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   // ---- semantic model listener
 
-  private class MyModelListener extends SModelAdapter {
-    public void modelChanged(SModel semanticModel) {
-      myRootCell.updateView();
-      relayout();
+  private class MyModelListener implements SModelCommandListener {
+    public void modelChangedInCommand(List<SModelEvent> events) {
+      boolean isDramaticalChange = EventUtil.isDramaticalChange(events);
+      if (isDramaticalChange) {
+        SModelChildEvent lastSignificantEvent = null;
+        for (SModelEvent e : events) {
+          if (e instanceof SModelChildEvent) lastSignificantEvent = (SModelChildEvent) e;
+        }
+
+        rebuildEditorContent();
+        if (lastSignificantEvent != null) {
+          if (lastSignificantEvent.isAdded()) {
+            handleNodelAdded(lastSignificantEvent.getChild());
+          } else {
+            handleNodeRemoved(lastSignificantEvent.getParent());
+          }
+        }
+      } else {
+        myRootCell.updateView();
+        relayout();
+      }
     }
 
-    public void modelChangedDramatically(SModel semanticModel) {
-      rebuildEditorContent();
-    }
-
-    public void childAdded(SModelChildEvent event) {
-      rebuildEditorContent();
-      handleNodelAdded(event.getChild());
-    }
-
-    public void childRemoved(SModelChildEvent event) {
+    public void handleNodeRemoved(SemanticNode parent) {
       rebuildEditorContent();
       if (mySelectedCell == null) {
-        EditorCell changedNodeCell = findNodeCell(event.getParent());
+        EditorCell changedNodeCell = findNodeCell(parent);
         if (changedNodeCell != null) {
           changeSelection(changedNodeCell);
         }

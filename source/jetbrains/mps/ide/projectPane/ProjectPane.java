@@ -1121,13 +1121,7 @@ public class ProjectPane extends JComponent {
     }
 
     public void modelChangedInCommand(List<SModelEvent> events) {
-      boolean isChangedDramatically = false;
-      for (SModelEvent e : events) {
-        if (e instanceof SModelChildEvent) isChangedDramatically = true;
-        if (e instanceof SModelRootEvent) isChangedDramatically = true;
-        if (e instanceof SModelReferenceEvent) isChangedDramatically = true;
-      }
-      if (isChangedDramatically) {
+      if (EventUtil.isDramaticalChange(events)) {
         rebuildTree();
       }
       validate();
