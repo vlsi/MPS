@@ -22,7 +22,6 @@ public class ConceptLink_Editor extends DefaultNodeEditor {
     editorCell.setEditable(true);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    ConceptLink_ConceptLinks_Menu.setCellActions(editorCell, node);
     return editorCell;
   }
 }

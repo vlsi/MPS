@@ -203,7 +203,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createMemberList(EditorContext context, SemanticNode node) {
     if(this.myMemberListHandler == null) {
-      this.myMemberListHandler = new EnumerationDataTypeDeclaration_Editor_MemberListHandler(node, "member", true);
+      this.myMemberListHandler = new EnumerationDataTypeDeclaration_Editor_MemberListHandler(node, "member");
     }
     EditorCell_Collection editorCell = this.myMemberListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(true);
