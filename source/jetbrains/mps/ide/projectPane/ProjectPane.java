@@ -1001,14 +1001,12 @@ public class ProjectPane extends JComponent {
       }
       ProjectTreeNode root = new ProjectTreeNode();
       DefaultMutableTreeNode projectModelsNode = new ProjectModelsTreeNode();
-      for (SModelDescriptor modelDescriptor : sortSemanticModels(new ArrayList<SModelDescriptor>(myProject.getProjectModelDescriptors())))
-      {
+      for (SModelDescriptor modelDescriptor : sortSemanticModels(new ArrayList<SModelDescriptor>(myProject.getProjectModelDescriptors()))) {
         projectModelsNode.add(createSModelTreeNode(modelDescriptor, null));
       }
 
       DefaultMutableTreeNode libraryModelsNode = new LibraryModelsTreeNode();
-      for (SModelDescriptor modelDescriptor : sortSemanticModels(new ArrayList<SModelDescriptor>(myProject.getLibraryModelDescriptors())))
-      {
+      for (SModelDescriptor modelDescriptor : sortSemanticModels(new ArrayList<SModelDescriptor>(myProject.getLibraryModelDescriptors()))) {
         libraryModelsNode.add(createSModelTreeNode(modelDescriptor, null));
       }
 

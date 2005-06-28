@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.test.EventRecorder;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.semanticModel.SModel;
-import jetbrains.mps.semanticModel.SModelListener;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.semanticModel.SModelAdapter;
 import jetbrains.mps.util.CopyUtil;
@@ -498,7 +497,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     SemanticNode semanticNode = myRootCell.getSemanticNode();
     if (semanticNode != null) {
       SModel semanticModel = semanticNode.getModel();
-      semanticModel.addSemanticModelListener(mySemanticModelListener);
+      semanticModel.addSModelListener(mySemanticModelListener);
       addImportedModelsToListener(semanticModel);
     }
 
@@ -513,7 +512,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         SModel importedModel = importedModels.next();
         if (importedModel.hasSemanticModelListener(mySemanticModelListener)) continue;
 
-        importedModel.addSemanticModelListener(mySemanticModelListener);
+        importedModel.addSModelListener(mySemanticModelListener);
         addImportedModelsToListener(importedModel);
       }
     }
