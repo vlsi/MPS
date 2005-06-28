@@ -73,7 +73,7 @@ public abstract class MPSTree extends JTree {
     runRebuildAction(new Runnable() {
       public void run() {
         if (getModel().getRoot() instanceof MPSTreeNode) {
-          ((MPSTreeNode) getModel().getRoot()).
+          ((MPSTreeNode) getModel().getRoot()).disposeThisAndChildren();
         }
 
         DefaultTreeModel model = new DefaultTreeModel(rebuild());
