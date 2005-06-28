@@ -64,7 +64,6 @@ public abstract class MPSTree extends JTree {
     });
   }
 
-
   private String pathToString(TreePath path) {
     String result = "";
     for (int i = 1; i < path.getPathCount(); i++) {
@@ -133,7 +132,6 @@ public abstract class MPSTree extends JTree {
     return result;
   }
 
-
   public Element toXML() {
     Element result = new Element(MPS_TREE);
 
@@ -176,7 +174,22 @@ public abstract class MPSTree extends JTree {
     public MPSTreeNode() {
     }
 
+    public MPSTreeNode(Object userObject) {
+      super(userObject);
+    }
+
     protected abstract String getNodeIdentifier();
+
+    protected MPSTreeNode findNodeWith(Object userObject) {
+      if (getUserObject() == userObject) return this;
+      if (initialized()) {
+        for (int i = 0; i < getChildCount(); i++) {
+          MPSTreeNode result = ((MPSTreeNode) getChildAt(i)).findNodeWith(userObject);
+          if (result != null) return result;
+        }
+      }
+      return null;
+    }
 
     public boolean initialized() {
       return true;
