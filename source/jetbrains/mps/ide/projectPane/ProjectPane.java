@@ -110,23 +110,6 @@ public class ProjectPane extends JComponent {
         }
       }
     });
-
-    myTree.addTreeWillExpandListener(new TreeWillExpandListener() {
-      public void treeWillExpand(TreeExpansionEvent event) throws ExpandVetoException {
-        TreePath path = event.getPath();
-        Object node = path.getLastPathComponent();
-        if (node instanceof SModelTreeNode) {
-          SModelTreeNode modelTreeNode = (SModelTreeNode) node;
-          if (!modelTreeNode.initialized()) {
-            modelTreeNode.init();
-          }
-        }
-      }
-
-      public void treeWillCollapse(TreeExpansionEvent event) throws ExpandVetoException {
-      }
-    });
-
     rebuildTree();
   }
 
@@ -523,11 +506,9 @@ public class ProjectPane extends JComponent {
   public void selectNode(SemanticNode semanticNode) {
     DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
     DefaultMutableTreeNode rootNode = (DefaultMutableTreeNode) model.getRoot();
-
     SModel sModel = semanticNode.getModel();
     SModelTreeNode sModelNode = findSModelTreeNode(rootNode, sModel);
     if (sModelNode == null) return;
-    sModelNode.init();
     SemanticTreeNode treeNodeToSelect = findTreeNode(rootNode, semanticNode);
     if (treeNodeToSelect != null) {
       TreePath treePath = new TreePath(treeNodeToSelect.getPath());
@@ -1082,16 +1063,7 @@ public class ProjectPane extends JComponent {
     private SModelTreeNode createSModelTreeNode(SModelDescriptor modelDescriptor, String label) {
       // sorted roots
       SModelTreeNode rootModelNode = new SModelTreeNode(modelDescriptor, label);
-
-      if (modelDescriptor.isInitialized()) {
-        rootModelNode.init();
-      } else {
-        rootModelNode.add(new TextTreeNode("<empty>"));
-      }
-
-
       mySModelTreeNodes.add(rootModelNode);
-
       return rootModelNode;
     }
 

@@ -3,6 +3,8 @@ package jetbrains.mps.ide.ui;
 import org.jdom.Element;
 
 import javax.swing.*;
+import javax.swing.event.TreeWillExpandListener;
+import javax.swing.event.TreeExpansionEvent;
 import javax.swing.tree.*;
 import java.util.List;
 import java.util.ArrayList;
@@ -31,6 +33,20 @@ public abstract class MPSTree extends JTree {
           setIcon(node.getIcon(expanded));
         }        
         return this;
+      }
+    });
+
+    addTreeWillExpandListener(new TreeWillExpandListener() {
+      public void treeWillExpand(TreeExpansionEvent event) throws ExpandVetoException {
+        TreePath path = event.getPath();
+        Object node = path.getLastPathComponent();
+        MPSTreeNode treeNode = (MPSTreeNode) node;
+        if (!treeNode.initialized()) {
+          treeNode.init();
+        }
+      }
+
+      public void treeWillCollapse(TreeExpansionEvent event) throws ExpandVetoException {
       }
     });
   }
@@ -178,9 +194,17 @@ public abstract class MPSTree extends JTree {
       super(userObject);
     }
 
+
     protected abstract String getNodeIdentifier();
 
-    protected MPSTreeNode findNodeWith(Object userObject) {
+    protected boolean initialized() {
+      return true;
+    }
+
+    protected void init() {
+    }
+
+    protected final MPSTreeNode findNodeWith(Object userObject) {
       if (getUserObject() == userObject) return this;
       if (initialized()) {
         for (int i = 0; i < getChildCount(); i++) {
@@ -191,12 +215,6 @@ public abstract class MPSTree extends JTree {
       return null;
     }
 
-    public boolean initialized() {
-      return true;
-    }
-
-    public void init() {
-    }
 
     public Icon getIcon(boolean expanded) {
       if (expanded) {
