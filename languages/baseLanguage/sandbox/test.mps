@@ -82,5 +82,8 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1115766375256" />
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1119992601482">
+    <property name="name" value="TEst" />
+  </node>
 </model>
 
