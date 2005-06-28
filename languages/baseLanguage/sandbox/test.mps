@@ -83,7 +83,23 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1119992601482">
-    <property name="name" value="TEst" />
+    <property name="name" value="TestInt" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1119993863122">
+      <property name="name" value="aaa" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1119993863499">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1119997376002">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1119997376066">
+            <property name="name" value="aaa" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1119997376067" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1119993866157" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1119993881455">
+        <property name="name" value="iii" />
+        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1119993881456" />
+      </node>
+    </node>
   </node>
 </model>
 
