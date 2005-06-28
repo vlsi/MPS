@@ -930,30 +930,24 @@ public class ProjectPane extends JComponent {
 
     public void rebuildTree(SModel model) {
       LOG.debug("Rebuild tree node (model = " + model.getFQName() + ")");
-      String modelFqName = model.getFQName();
-      List<String> expansion = getExpandedPaths();
-      List<String> selection = getSelectedPaths();
-      for (SModelTreeNode node : new HashSet<SModelTreeNode>(mySModelTreeNodes)) {
-        if (modelFqName.equals(node.getModelDescriptor().getFQName())) {
-          DefaultMutableTreeNode parent = (DefaultMutableTreeNode) node.getParent();
-          int index = parent.getIndex(node);
-          parent.insert(createSModelTreeNode(node.getModelDescriptor(), node.getLabel()), index);
-          parent.remove(node);
-          mySModelTreeNodes.remove(node);
+      final String modelFqName = model.getFQName();
+      runRebuildAction(new Runnable() {
+        public void run() {
+          for (SModelTreeNode node : new HashSet<SModelTreeNode>(mySModelTreeNodes)) {
+            if (modelFqName.equals(node.getModelDescriptor().getFQName())) {
+              DefaultMutableTreeNode parent = (DefaultMutableTreeNode) node.getParent();
+              int index = parent.getIndex(node);
+              parent.insert(createSModelTreeNode(node.getModelDescriptor(), node.getLabel()), index);
+              parent.remove(node);
+              mySModelTreeNodes.remove(node);
+            }
+          }
+          DefaultTreeModel treeModel = (DefaultTreeModel) myTree.getModel();
+          for (TreeModelListener l : treeModel.getTreeModelListeners()) {
+            l.treeStructureChanged(new TreeModelEvent(this, new Object[]{treeModel.getRoot()}));
+          }
         }
-      }
-
-      DefaultTreeModel treeModel = (DefaultTreeModel) myTree.getModel();
-      for (TreeModelListener l : treeModel.getTreeModelListeners()) {
-        l.treeStructureChanged(new TreeModelEvent(this, new Object[]{treeModel.getRoot()}));
-      }
-
-      expandPaths(expansion);
-      selectPaths(selection);
-    }
-
-    public void rebuildTree(SemanticNode node) {
-
+      });
     }
 
 

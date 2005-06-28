@@ -35,6 +35,8 @@ public abstract class MPSTree extends JTree {
     });
   }
 
+  protected abstract MPSTreeNode rebuild();
+
   protected void selectNode(TreeNode node) {
     List<TreeNode> nodes = new ArrayList<TreeNode>();
     while (node != null) {
@@ -45,38 +47,23 @@ public abstract class MPSTree extends JTree {
     setSelectionPath(path);
   }
 
-  protected List<String> getExpandedPaths() {
-    List<String> result = new ArrayList<String>();
-    Enumeration<TreePath> expanded = getExpandedDescendants(new TreePath(new Object[] { getModel().getRoot() }));
-    if (expanded == null) return result;
-    while (expanded.hasMoreElements()) {
-      result.add(pathToString(expanded.nextElement()));
-    }
-    return result;
+  protected void runRebuildAction(Runnable rebuildAction) {
+    List<String> expansion = getExpandedPaths();
+    List<String> selection = getSelectedPaths();
+    rebuildAction.run();
+    expandPaths(expansion);
+    selectPaths(selection);
   }
 
-  protected List<String> getSelectedPaths() {
-    List<String> result = new ArrayList<String>();
-    if (getSelectionPaths() == null) return result;
-    for (TreePath selectionPart : getSelectionPaths()) {
-      result.add(pathToString(selectionPart));
-    }
-    return result;
+  public void rebuildTree() {
+    runRebuildAction(new Runnable() {
+      public void run() {
+        DefaultTreeModel model = new DefaultTreeModel(rebuild());
+        setModel(model);
+      }
+    });
   }
 
-  protected void expandPaths(List<String> paths) {
-    for (String path : paths) {
-      expandPath(stringToPath(path));
-    }
-  }
-
-  protected void selectPaths(List<String> paths) {
-    List<TreePath> treePaths = new ArrayList<TreePath>();
-    for (String path : paths) {
-      treePaths.add(stringToPath(path));
-    }
-    setSelectionPaths((TreePath[]) treePaths.toArray(new TreePath[treePaths.size()]));
-  }
 
   private String pathToString(TreePath path) {
     String result = "";
@@ -88,7 +75,7 @@ public abstract class MPSTree extends JTree {
     return result;
   }
 
-  public TreePath stringToPath(String pathString) {
+  private TreePath stringToPath(String pathString) {
     String[] components = pathString.split(TREE_PATH_SEPARATOR);
     List<Object> path = new ArrayList<Object>();
     MPSTreeNode current = (MPSTreeNode) getModel().getRoot();
@@ -113,18 +100,39 @@ public abstract class MPSTree extends JTree {
     return new TreePath(path.toArray());
   }
 
-  public void rebuildTree() {
-    List<String> expansion = getExpandedPaths();
-    List<String> selection = getSelectedPaths();
-
-    DefaultTreeModel model = new DefaultTreeModel(rebuild());
-    setModel(model);
-
-    expandPaths(expansion);
-    selectPaths(selection);
+  private void expandPaths(List<String> paths) {
+    for (String path : paths) {
+      expandPath(stringToPath(path));
+    }
   }
 
-  protected abstract MPSTreeNode rebuild();
+  private void selectPaths(List<String> paths) {
+    List<TreePath> treePaths = new ArrayList<TreePath>();
+    for (String path : paths) {
+      treePaths.add(stringToPath(path));
+    }
+    setSelectionPaths((TreePath[]) treePaths.toArray(new TreePath[treePaths.size()]));
+  }
+
+  private List<String> getExpandedPaths() {
+    List<String> result = new ArrayList<String>();
+    Enumeration<TreePath> expanded = getExpandedDescendants(new TreePath(new Object[] { getModel().getRoot() }));
+    if (expanded == null) return result;
+    while (expanded.hasMoreElements()) {
+      result.add(pathToString(expanded.nextElement()));
+    }
+    return result;
+  }
+
+  private List<String> getSelectedPaths() {
+    List<String> result = new ArrayList<String>();
+    if (getSelectionPaths() == null) return result;
+    for (TreePath selectionPart : getSelectionPaths()) {
+      result.add(pathToString(selectionPart));
+    }
+    return result;
+  }
+
 
   public Element toXML() {
     Element result = new Element(MPS_TREE);
