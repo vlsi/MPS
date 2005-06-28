@@ -31,6 +31,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.ide.progress.ProgressMonitor;
 import jetbrains.mps.ide.progress.ProgressWindowProgressMonitor;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.xml.Document;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -273,19 +274,16 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     }
 
     // todo : refactor it...
-    if (targetModel.importsLanguage("jetbrains.mps.xml")) {
-      XmlFileGenerator xmlFileGenerator = new XmlFileGenerator(outputPathFile, packageName, false);
-      Iterator<SemanticNode> roots = targetModel.roots();
-      while (roots.hasNext()) {
-        SemanticNode node = roots.next();
-        xmlFileGenerator.generateXmlFile((jetbrains.mps.xml.Element) node);
-      }
-    } else {
-      JavaFileGenerator javaFileGenerator = new JavaFileGenerator(outputPathFile, packageName, false);
-      Iterator<SemanticNode> roots = targetModel.roots();
-      while (roots.hasNext()) {
-        SemanticNode node = roots.next();
-        javaFileGenerator.generateJavaFile((Classifier) node);
+    XmlFileGenerator xmlFileGenerator = new XmlFileGenerator(outputPathFile, packageName, false);
+    JavaFileGenerator javaFileGenerator = new JavaFileGenerator(outputPathFile, packageName, false);
+    Iterator<SemanticNode> roots = targetModel.roots();
+    while (roots.hasNext()) {
+      SemanticNode root = roots.next();
+      String content = generateText(root);
+      if(root instanceof Classifier) {
+        javaFileGenerator.generateJavaFile((Classifier) root, content);
+      } else if(root instanceof Document) {
+        xmlFileGenerator.generateXmlFile((Document) root, content);
       }
     }
   }
@@ -297,18 +295,23 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     Iterator<SemanticNode> javaRoots = targetModel.roots();
     while (javaRoots.hasNext()) {
       SemanticNode node = javaRoots.next();
-      String nodeText = null;
-      if (TextGenManager.instance().canGenerateTextFor(node)) {
-        nodeText = TextGenManager.instance().generateText(node);
-      } else {
-        nodeText = TextPresentationManager.generateTextPresentation(node);
-      }
+      String nodeText = generateText(node);
       view.append(nodeText);
       view.append("\n");
       view.append("\r\n-------------------------------------------------------------------------------");
     }
 
     view.activate();
+  }
+
+  private String generateText(SemanticNode node) {
+    String nodeText = null;
+    if (TextGenManager.instance().canGenerateTextFor(node)) {
+      nodeText = TextGenManager.instance().generateText(node);
+    } else {
+      nodeText = TextPresentationManager.generateTextPresentation(node);
+    }
+    return nodeText;
   }
 
   private Set<SModelDescriptor> findModelsWithLanguage(Set<SModelDescriptor> models, String fqName) {
