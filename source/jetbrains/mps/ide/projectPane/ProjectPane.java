@@ -7,38 +7,39 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.conversion.ConversionUtil;
 import jetbrains.mps.conversion.Converter;
 import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.ide.*;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.HeaderWrapper;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.TreeWithSemanticNodesSpeedSearch;
-import jetbrains.mps.ide.*;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.RootManager;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjectCommandListener;
+import jetbrains.mps.project.RootManager;
 import jetbrains.mps.projectLanguage.GeneratorConfiguration;
 import jetbrains.mps.projectLanguage.ProjectModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.semanticModel.*;
-import jetbrains.mps.semanticModel.event.*;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.semanticModel.event.EventUtil;
+import jetbrains.mps.semanticModel.event.SModelCommandListener;
+import jetbrains.mps.semanticModel.event.SModelEvent;
 
 import javax.swing.*;
-import javax.swing.event.TreeExpansionEvent;
 import javax.swing.event.TreeModelEvent;
 import javax.swing.event.TreeModelListener;
-import javax.swing.event.TreeWillExpandListener;
-import javax.swing.tree.*;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreeNode;
+import javax.swing.tree.TreePath;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 import java.util.List;
-
-
 
 /**
  * Author: Sergey Dmitriev

@@ -194,7 +194,6 @@ public abstract class MPSTree extends JTree {
       super(userObject);
     }
 
-
     protected abstract String getNodeIdentifier();
 
     protected boolean initialized() {
@@ -214,7 +213,6 @@ public abstract class MPSTree extends JTree {
       }
       return null;
     }
-
 
     public Icon getIcon(boolean expanded) {
       if (expanded) {
