@@ -15,8 +15,8 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.HeaderWrapper;
 import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.ide.ui.TreeWithSemanticNodesSpeedSearch;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.TreeWithSemanticNodesSpeedSearch;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
@@ -26,14 +26,9 @@ import jetbrains.mps.projectLanguage.GeneratorConfiguration;
 import jetbrains.mps.projectLanguage.ProjectModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.semanticModel.*;
-import jetbrains.mps.semanticModel.event.EventUtil;
-import jetbrains.mps.semanticModel.event.SModelCommandListener;
-import jetbrains.mps.semanticModel.event.SModelEvent;
-import jetbrains.mps.semanticModel.event.SModelListener;
+import jetbrains.mps.semanticModel.event.*;
 
 import javax.swing.*;
-import javax.swing.event.TreeModelEvent;
-import javax.swing.event.TreeModelListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
@@ -470,10 +465,6 @@ public class ProjectPane extends JComponent {
     repaint();
   }
 
-  private void rebuildTree(SModel model) {
-    if (!myRebuildEnabled) return;
-    myTree.rebuildTree(model);
-  }
 
   private List<SModelDescriptor> sortSemanticModels(List<SModelDescriptor> modelDescriptors) {
     List<SModelDescriptor> sortedModels = new ArrayList<SModelDescriptor>(modelDescriptors);
@@ -630,6 +621,7 @@ public class ProjectPane extends JComponent {
   }
 
   private class SNodeTreeNode extends SemanticTreeNode {
+    private boolean myInitialized = false;
     private SNodeReference myNodeReference;
     private String myRole;
 
@@ -637,6 +629,7 @@ public class ProjectPane extends JComponent {
       LOG.assertLog(node != null);
       myNodeReference = new SNodeReference(node);
       myRole = role;
+      setUserObject(node);
     }
 
     public SNodeTreeNode(SemanticNode node) {
@@ -655,6 +648,25 @@ public class ProjectPane extends JComponent {
     protected SModel getSModel() {
       return getSNode().getModel();
     }
+
+    public void update() {
+      this.removeAllChildren();
+      myInitialized = false;
+    }
+
+    protected boolean initialized() {
+      return myInitialized;
+    }
+
+    protected void init() {
+      this.removeAllChildren();
+      List<SemanticNode> children = getSNode().getChildren();
+      for (SemanticNode childNode : children) {
+        add(new SNodeTreeNode(childNode, childNode.getRole_()));
+      }
+      myInitialized = true;
+    }
+
 
     public Icon getIcon(boolean expanded) {
       if (myNodeReference.getNode() != null) {
@@ -761,6 +773,11 @@ public class ProjectPane extends JComponent {
       return isInitialized;
     }
 
+    public void update() {
+      this.removeAllChildren();
+      isInitialized = false;
+    }
+
     public void init() {
       this.removeAllChildren();
       SModel model = myModelDescriptor.getSModel();
@@ -791,7 +808,6 @@ public class ProjectPane extends JComponent {
         SemanticNode semanticNode = (SemanticNode) iterator1.next();
         SemanticTreeNode treeNode = new SNodeTreeNode(semanticNode);
         add(treeNode);
-        initTreeNode(treeNode, semanticNode);
       }
       isInitialized = true;
     }
@@ -800,25 +816,45 @@ public class ProjectPane extends JComponent {
       myModelDescriptor.getSModel().removeSModelCommandListener(myModelListener);
     }
 
-    private void initTreeNode(SemanticTreeNode treeNode, SemanticNode semanticNode) {
-      List<SemanticNode> children = semanticNode.getChildren();
-      for (SemanticNode childNode : children) {
-        SemanticTreeNode childTreeNode = new SNodeTreeNode(childNode, childNode.getRole_());
-        treeNode.add(childTreeNode);
-        initTreeNode(childTreeNode, childNode);
-      }
-    }
-
     private class MyModelListener implements SModelCommandListener {
       public MyModelListener() {
       }
 
-      public void modelChangedInCommand(List<SModelEvent> events) {
+      public void modelChangedInCommand(final List<SModelEvent> events) {
         if (EventUtil.isDramaticalChange(events)) {
-          rebuildTree(events.get(0).getModel());
+          myTree.runRebuildAction(new Runnable() {
+            public void run() {
+              SModelEventVisitor visitor = new SModelEventVisitor() {
+                public void visitRootEvent(SModelRootEvent event) {
+                  updateTreeWithRoot(event.getRoot());
+                }
+
+                public void visitChildEvent(SModelChildEvent event) {
+                  updateTreeWithRoot(event.getParent());
+                }
+
+                public void visitPropertyEvent(SModelPropertyEvent event) {
+                }
+
+                public void visitReferenceEvent(SModelReferenceEvent event) {
+                }
+              };
+              for (SModelEvent event : events) {
+                event.accept(visitor);
+              }
+              ((DefaultTreeModel) myTree.getModel()).nodeStructureChanged(SModelTreeNode.this);
+            }
+          });
         }
         validate();
         repaint();
+      }
+
+      private void updateTreeWithRoot(SemanticNode node) {
+        MPSTreeNode treeNode = findNodeWith(node);
+        if (treeNode != null) {
+          treeNode.update();
+        }
       }
     }
   }
@@ -916,29 +952,6 @@ public class ProjectPane extends JComponent {
         }
       }
     }
-
-    public void rebuildTree(SModel model) {
-      LOG.debug("Rebuild tree node (model = " + model.getFQName() + ")");
-      final String modelFqName = model.getFQName();
-      runRebuildAction(new Runnable() {
-        public void run() {
-          for (SModelTreeNode node : new HashSet<SModelTreeNode>(mySModelTreeNodes)) {
-            if (modelFqName.equals(node.getModelDescriptor().getFQName())) {
-              DefaultMutableTreeNode parent = (DefaultMutableTreeNode) node.getParent();
-              int index = parent.getIndex(node);
-              parent.insert(createSModelTreeNode(node.getModelDescriptor(), node.getLabel()), index);
-              parent.remove(node);
-              mySModelTreeNodes.remove(node);
-            }
-          }
-          DefaultTreeModel treeModel = (DefaultTreeModel) myTree.getModel();
-          for (TreeModelListener l : treeModel.getTreeModelListeners()) {
-            l.treeStructureChanged(new TreeModelEvent(this, new Object[]{treeModel.getRoot()}));
-          }
-        }
-      });
-    }
-
 
     protected MPSTreeNode rebuild() {
       mySModelTreeNodes.clear();

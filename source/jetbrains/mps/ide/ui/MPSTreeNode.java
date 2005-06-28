@@ -28,6 +28,9 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode {
   protected void init() {
   }
 
+  public void update() {
+  }
+
   public void remove(int childIndex) {
     ((MPSTreeNode) getChildAt(childIndex)).disposeThisAndChildren();
     super.remove(childIndex);
@@ -48,7 +51,12 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode {
   }
 
   protected final MPSTreeNode findNodeWith(Object userObject) {
-    if (getUserObject() == userObject) return this;
+    System.err.println("Finding " + userObject);
+    System.err.println("My object is " + getUserObject());
+    if (getUserObject() == userObject) {
+      System.err.println("Returning it!");
+      return this;
+    }
     if (initialized()) {
       for (int i = 0; i < getChildCount(); i++) {
         MPSTreeNode result = ((MPSTreeNode) getChildAt(i)).findNodeWith(userObject);

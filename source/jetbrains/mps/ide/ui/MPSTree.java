@@ -61,7 +61,7 @@ public abstract class MPSTree extends JTree {
     setSelectionPath(path);
   }
 
-  protected void runRebuildAction(Runnable rebuildAction) {
+  public void runRebuildAction(Runnable rebuildAction) {
     List<String> expansion = getExpandedPaths();
     List<String> selection = getSelectedPaths();
     rebuildAction.run();
