@@ -43,6 +43,10 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode {
     dispose();
   }
 
+  public boolean isLeaf() {
+    return false;
+  }
+
   protected final MPSTreeNode findNodeWith(Object userObject) {
     if (getUserObject() == userObject) return this;
     if (initialized()) {

@@ -1090,7 +1090,7 @@ public class ProjectPane extends JComponent {
 
     public void modelChangedInCommand(List<SModelEvent> events) {
       if (EventUtil.isDramaticalChange(events)) {
-        rebuildTree();
+        rebuildTree(events.get(0).getModel());
       }
       validate();
       repaint();
