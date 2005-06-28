@@ -163,10 +163,10 @@ public class TemplateGenUtil {
   public static List<INodeBuilder> createNodeBuildersForTemplateMappingRule(MappingRule templateMappingRule, ITemplateGenerator generator) {
     List<INodeBuilder> builders = new LinkedList<INodeBuilder>();
     String ruleName = templateMappingRule.getName();
-    if (ruleName == null) {
-      generator.getProject().getComponent(MessageView.class).add(new Message(MessageKind.ERROR, templateMappingRule, "TemplateMappingRule must have name"));
-    }
-    LOG.assertLog(ruleName != null, "TemplateMappingRule must have name");
+//    if (ruleName == null) {
+//      generator.getProject().getComponent(MessageView.class).add(new Message(MessageKind.ERROR, templateMappingRule, "TemplateMappingRule must have name"));
+//    }
+//    LOG.assertLog(ruleName != null, "TemplateMappingRule must have name");
     BaseConcept templateNode = templateMappingRule.getTemplateNode();
     List<SemanticNode> sourceNodes = createSourceNodeListForTemplateMappingRule(templateMappingRule, generator);
     for (SemanticNode sourceNode : sourceNodes) {

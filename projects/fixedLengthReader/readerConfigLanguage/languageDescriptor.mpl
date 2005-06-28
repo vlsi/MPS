@@ -9,12 +9,17 @@
   <modelRoot rootPath="${language_descriptor}." namespacePrefix="readerConfigLanguage" />
   <library />
   <generators>
-    <generator name="java" generatorClass="jetbrains.mps.baseLanguage.generator.target.DefaultTemplateGenerator" templatesModel="readerConfigLanguage.generator.baseLanguage" targetLanguage="jetbrains.mps.baseLanguage">
+    <generator name="java" templatesModel="readerConfigLanguage.generator.baseLanguage" targetLanguage="jetbrains.mps.baseLanguage">
       <modelRoot rootPath="${language_descriptor}\models\import" namespacePrefix="" />
       <modelRoot rootPath="${mps_home}\models" namespacePrefix="" />
       <modelRoot rootPath="${language_descriptor}\generator" namespacePrefix="readerConfigLanguage.generator" />
       <languages rootPath="${mps_home}\languages\transformation\TLBase" />
       <languages rootPath="${mps_home}\languages\baseLanguage" />
+    </generator>
+    <generator name="xml" templatesModel="readerConfigLanguage.generator.xml" targetLanguage="jetbrains.mps.xml">
+      <modelRoot rootPath="${language_descriptor}." namespacePrefix="readerConfigLanguage" />
+      <languages rootPath="${mps_home}\languages\transformation\TLBase" />
+      <languages rootPath="${mps_home}\languages\xml" />
     </generator>
   </generators>
 </language>
