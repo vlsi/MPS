@@ -371,14 +371,15 @@ public class ProjectPane extends JComponent {
               }
 
               public void actionPerformed(ActionEvent e) {
+                final SemanticNode[] node = new SemanticNode[1];
                 CommandProcessor.instance().executeCommand(new Runnable() {
                   public void run() {
-                    SemanticNode node = SModelUtil.instantiateConceptDeclaration(typeDeclaration, semanticModel);
-                    node.getModel().addRoot(node);
-                    selectNode(node);
-                    openEditor();
+                    node[0] = SModelUtil.instantiateConceptDeclaration(typeDeclaration, semanticModel);
+                    node[0].getModel().addRoot(node[0]);
                   }
                 }, "add root node " + typeDeclaration.getName());
+                selectNode(node[0]);
+                openEditor();
               }
             });
           } else {
@@ -774,8 +775,8 @@ public class ProjectPane extends JComponent {
     }
 
     public void update() {
-      this.removeAllChildren();
       isInitialized = false;
+      this.removeAllChildren();
     }
 
     public void init() {
@@ -826,7 +827,7 @@ public class ProjectPane extends JComponent {
             public void run() {
               SModelEventVisitor visitor = new SModelEventVisitor() {
                 public void visitRootEvent(SModelRootEvent event) {
-                  updateTreeWithRoot(event.getRoot());
+                  SModelTreeNode.this.update();
                 }
 
                 public void visitChildEvent(SModelChildEvent event) {
@@ -842,7 +843,7 @@ public class ProjectPane extends JComponent {
               for (SModelEvent event : events) {
                 event.accept(visitor);
               }
-              ((DefaultTreeModel) myTree.getModel()).nodeStructureChanged(SModelTreeNode.this);
+              ((DefaultTreeModel) myTree.getModel()).nodeStructureChanged(SModelTreeNode.this.getParent());
             }
           });
         }
