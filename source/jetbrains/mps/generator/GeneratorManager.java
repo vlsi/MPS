@@ -46,7 +46,7 @@ import org.jdom.Element;
 /**
  * @author Kostik
  */
-public class GeneratorManager implements ExternalizableComponent, ComponentWithPreferences {
+public class GeneratorManager implements ExternalizableComponent, ComponentWithPreferences, LanguageOwner {
   public static final Logger LOG = Logger.getLogger(GeneratorManager.class);
 
   private static final boolean SAVE_TRANSIENT_MODELS = false;
@@ -198,7 +198,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
             Set<SModelDescriptor> modelsWithLanguage = findModelsWithLanguage(modelDescriptors, cmd.getSourceLanguage().getName());
             Generator generator = findGenerator(cmd.getSourceLanguage().getName(), cmd.getTargetLanguage().getName());
             for (String languageRoot : generator.getRequiredLanguageRoots()) {
-              myProject.getComponent(RootManager.class).readLanguageDescriptors(new File(languageRoot));
+              LanguageRepository.getInstance().readLanguageDescriptors(new File(languageRoot), GeneratorManager.this);
             }
             String generatorClass = findGeneratorClass(generator);
             if (generatorClass == null) generatorClass = DefaultTemplateGenerator.class.getName();
@@ -236,6 +236,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
           progress.addText("Finished.");
         } finally {
           progress.finish();
+          LanguageRepository.getInstance().unRegisterLanguages(GeneratorManager.this);
           myProject.getComponent(ProjectPane.class).enableRebuild();
         }
       }
@@ -341,7 +342,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
 
   private String findGeneratorClass(Generator generator) {
     if (generator.getGeneratorClassFqName() != null) return generator.getGeneratorClassFqName();
-    Language targetLanguage = myProject.getLanguage(generator.getTargetLanguageFqName());
+    Language targetLanguage = LanguageRepository.getInstance().getLanguage(generator.getTargetLanguageFqName());
     if (targetLanguage.getTargetOfGeneratorGeneratorClass() != null) {
       return targetLanguage.getTargetOfGeneratorGeneratorClass();
     }

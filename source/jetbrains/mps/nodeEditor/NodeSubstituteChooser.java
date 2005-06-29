@@ -64,11 +64,13 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   public void setLocationRelative(EditorCell cell) {
     myRelativeCell = cell;
     Component component = cell.getEditorContext().getNodeEditorComponent();
-    Point anchor = component.getLocationOnScreen();
-    getPopupWindow().setRelativeCell(cell);
-    getPopupWindow().relayout();
-    myPatternEditorLocation = new Point(anchor.x + cell.getX(), anchor.y + +cell.getY());
-    myPatternEditorSize = new Dimension(cell.getWidth() + 1, cell.getHeight());
+    if (component.isVisible()) {
+      Point anchor = component.getLocationOnScreen();
+      getPopupWindow().setRelativeCell(cell);
+      getPopupWindow().relayout();
+      myPatternEditorLocation = new Point(anchor.x + cell.getX(), anchor.y + +cell.getY());
+      myPatternEditorSize = new Dimension(cell.getWidth() + 1, cell.getHeight());
+    }
   }
 
   public void setNodeSubstituteInfo(INodeSubstituteInfo nodeSubstituteInfo) {
