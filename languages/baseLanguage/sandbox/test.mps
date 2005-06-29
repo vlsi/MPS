@@ -84,6 +84,11 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1119992601482">
     <property name="name" value="TestInt" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1120075189455">
+      <property name="name" value="aaa_static" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1120075189581" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1120075201350" />
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1119993863122">
       <property name="name" value="aaa" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1119993863499">
@@ -113,6 +118,14 @@
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1120071326062" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1120071339983">
               <property name="value" value="10" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1120084010578">
+          <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1120084010610">
+            <link role="baseMethodDeclaration" targetNodeId="1120075189455" />
+            <node role="classType" type="jetbrains.mps.baseLanguage.ClassType" id="1120084010627">
+              <link role="classifier" targetNodeId="1119992601482" />
             </node>
           </node>
         </node>
