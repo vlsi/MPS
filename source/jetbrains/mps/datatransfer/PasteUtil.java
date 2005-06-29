@@ -12,6 +12,7 @@ import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.resolve.Resolver;
 import jetbrains.textLanguage.Sentence;
 import jetbrains.textLanguage.Word;
 import jetbrains.textLanguage.Text;
@@ -143,13 +144,15 @@ public class PasteUtil {
       return false;
     }
     if (reallyPaste) {       
-      CommandProcessor.instance().executeCommand(null, new Runnable() {
+      CommandProcessor.instance().executeCommand(null, new Runnable() {//assertion fails here (nested commands deprecated
         public void run() {
           if (linkDeclaration.getMetaClass() == LinkMetaclass.aggregation) {
             CommandUtil.insertChild(pasteTarget, anchorNode, linkDeclaration.getRole(), pasteNode, pasteBefore);
           } else {
             CommandUtil.insertReferent(pasteTarget, anchorNode, linkDeclaration.getRole(), pasteNode, pasteBefore);
           }
+        //Add resolving here!
+        Resolver.resolveAllReferences(pasteTarget);
         }
       }, "paste");
     }
