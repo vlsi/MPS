@@ -46,7 +46,7 @@ import org.jdom.Element;
 /**
  * @author Kostik
  */
-public class GeneratorManager implements ExternalizableComponent, ComponentWithPreferences, LanguageOwner {
+public class GeneratorManager implements ExternalizableComponent, ComponentWithPreferences, LanguageOwner, ModelOwner {
   public static final Logger LOG = Logger.getLogger(GeneratorManager.class);
 
   private static final boolean SAVE_TRANSIENT_MODELS = false;
@@ -237,6 +237,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
         } finally {
           progress.finish();
           LanguageRepository.getInstance().unRegisterLanguages(GeneratorManager.this);
+          SModelRepository.getInstance().unRegisterModelDescriptors(GeneratorManager.this);
           myProject.getComponent(ProjectPane.class).enableRebuild();
         }
       }
@@ -368,7 +369,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     }
 
     Set<SModelDescriptor> models = new HashSet<SModelDescriptor>();
-    SModelRepository.getInstance().readModelDescriptors(roots, models, myProject);
+    SModelRepository.getInstance().readModelDescriptors(roots, models, this);
 
     for (SModelDescriptor model : models) {
       if (model.getFQName().equals(generator.getTemplatesModelFqName())) return model;
