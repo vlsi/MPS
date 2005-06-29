@@ -37,11 +37,20 @@ public class IconManager {
       String iconsClass = packageName + ".icons.Icons";
       try {
         Class icons = Class.forName(iconsClass, true, ClassLoaderManager.getInstance().getClassLoader());
-        Icon icon = (Icon) icons.getMethod("getIconFor" + className, SemanticNode.class).invoke(null, node);
-        if (icon != null) {
-          ourIcons.put(node.getClass(), icon);
-          return icon;
+        try {
+          Icon icon = (Icon) icons.getMethod("getIconFor" + className).invoke(null);
+          if (icon != null) {
+            ourIcons.put(node.getClass(), icon);
+            return icon;
+          }
         }
+        catch (Exception e) {
+          try {
+            Icon icon = (Icon) icons.getMethod("getIconFor" + className, SemanticNode.class).invoke(null, node);
+            return icon;
+          } catch (Exception ex) {}
+        }
+
       } catch (Exception e) {
       }
 

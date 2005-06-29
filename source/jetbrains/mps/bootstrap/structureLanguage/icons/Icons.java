@@ -15,19 +15,19 @@ public class Icons {
   public static final Icon PRIMITIVE_ICON = new ImageIcon(Icons.class.getResource("primitiveTD.png"));
   public static final Icon LANGUAGE_ICON =  new ImageIcon(Icons.class.getResource("structureLanguage.png"));
 
-  public static Icon getIconForConceptDeclaration(SemanticNode node) {
+  public static Icon getIconForConceptDeclaration() {
     return CONCEPT_DECLARATION_ICON;
   }
 
-  public static Icon getIconForEnumerationDataTypeDeclaration(SemanticNode node) {
+  public static Icon getIconForEnumerationDataTypeDeclaration() {
     return ENUM_ICON;
   }
 
-  public static Icon getIconForConstrainedDataTypeDeclaration(SemanticNode node) {
+  public static Icon getIconForConstrainedDataTypeDeclaration() {
     return CONSTRAINED_ICON;
   }
 
-  public static Icon getIconForPrimitiveDataTypeDeclaration(SemanticNode node) {
+  public static Icon getIconForPrimitiveDataTypeDeclaration() {
     return PRIMITIVE_ICON;
   }
 
