@@ -64,7 +64,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   public void setLocationRelative(EditorCell cell) {
     myRelativeCell = cell;
     Component component = cell.getEditorContext().getNodeEditorComponent();
-    if (component.isVisible()) {
+    if (component.isShowing()) {
       Point anchor = component.getLocationOnScreen();
       getPopupWindow().setRelativeCell(cell);
       getPopupWindow().relayout();
