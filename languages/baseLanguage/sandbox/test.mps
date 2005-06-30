@@ -96,9 +96,7 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1120147044955">
             <property name="name" value="aaa" />
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1120147044956" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1120158451994">
-              <property name="value" value="10" />
-            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.Expression" id="1120159275015" />
           </node>
         </node>
       </node>
