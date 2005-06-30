@@ -22,10 +22,8 @@ import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SModelAdapter;
 import jetbrains.mps.semanticModel.event.SModelChildEvent;
-import jetbrains.mps.semanticModel.event.SModelCommandListener;
-import jetbrains.mps.semanticModel.event.SModelEvent;
-import jetbrains.mps.semanticModel.event.EventUtil;
 import jetbrains.mps.util.CopyUtil;
 
 import javax.swing.*;
@@ -325,147 +323,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     changeSelection(cell);
   }
 
-//  private Action createGenStubFromClassFileAction(final ClassConcept targetClass) {
-//    return new AbstractAction("Generate Stub From Class File") {
-//      public void actionPerformed(ActionEvent e) {
-//        CommandProcessor.instance().executeCommand(getContext(),
-//                new Runnable() {
-//                  public void run() {
-//                    MPSProject project = getContext().getProject();
-//                    SModel targetModel = targetClass.getModel();
-//                    String fqName = targetModel.getFQName();
-//                    String name = targetClass.getName();
-//                    String className = fqName + '.' + name;
-//                    SModel tmpModel = new SModel();
-//                    tmpModel.setLoading(true);
-//                    SimpleModelDescriptor tmpModelDescriptor = new SimpleModelDescriptor(tmpModel);
-//                    targetModel.addImportedModelDescriptor(tmpModelDescriptor);
-//
-//                    try {
-//                      JavaClassMap javaClassMap = JavaClassMaps.getJavaClassMap(tmpModel);
-//                      ClassConcept tmpClass = null;
-//                      try {
-//                        tmpClass = (ClassConcept) javaClassMap.get(className);
-//                      } catch (Exception e1) {
-//                        LOG.error(e1);
-//                      }
-//                      if (tmpClass == null) {
-//                        JOptionPane.showMessageDialog(myContainer, "Class not found:\n" + className, "Class Not Found", JOptionPane.ERROR_MESSAGE);
-//                        return;
-//                      }
-//                      targetClass.setExtendedClass(toModelClass(tmpClass.getExtendedClass(), targetModel, project));
-//
-//                      Iterator<StaticFieldDeclaration> staticFields = tmpClass.staticFields();
-//                      while (staticFields.hasNext()) {
-//                        StaticFieldDeclaration staticFieldDeclaration = staticFields.next();
-//                        StaticFieldDeclaration copy = (StaticFieldDeclaration) createValidCopy(staticFieldDeclaration, targetModel, project);
-//                        targetClass.addStaticField(copy);
-//                      }
-//
-//                      Iterator<FieldDeclaration> fields = tmpClass.fields();
-//                      while (fields.hasNext()) {
-//                        FieldDeclaration fieldDeclaration = fields.next();
-//                        FieldDeclaration copy = (FieldDeclaration) createValidCopy(fieldDeclaration, targetModel, project);
-//                        targetClass.addField(copy);
-//                      }
-//
-//                      Iterator<ConstructorDeclaration> constructors = tmpClass.constructors();
-//                      while (constructors.hasNext()) {
-//                        ConstructorDeclaration constructorDeclaration = constructors.next();
-//                        ConstructorDeclaration copy = (ConstructorDeclaration) createValidCopy(constructorDeclaration, targetModel, project);
-//                        targetClass.addConstructor(copy);
-//                      }
-//
-//                      Iterator<InstanceMethodDeclaration> methods = tmpClass.methods();
-//                      while (methods.hasNext()) {
-//                        InstanceMethodDeclaration instanceMethodDeclaration = methods.next();
-//                        InstanceMethodDeclaration copy = (InstanceMethodDeclaration) createValidCopy(instanceMethodDeclaration, targetModel, project);
-//                        targetClass.addMethod(copy);
-//                      }
-//
-//                      Iterator<StaticMethodDeclaration> staticMethods = tmpClass.staticMethods();
-//                      while (staticMethods.hasNext()) {
-//                        StaticMethodDeclaration staticMethodDeclaration = staticMethods.next();
-//                        StaticMethodDeclaration copy = (StaticMethodDeclaration) createValidCopy(staticMethodDeclaration, targetModel, project);
-//                        targetClass.addStaticMethod(copy);
-//                      }
-//
-//                      targetModel.fireModelChangedDramaticallyEvent();
-//                      JOptionPane.showMessageDialog(myContainer, "Added:\n" +
-//                              tmpClass.getStaticFieldsCount() + " static fields\n" +
-//                              tmpClass.getFieldsCount() + " fields\n" +
-//                              tmpClass.getConstructorsCount() + " constructors\n" +
-//                              tmpClass.getMethodsCount() + " methods\n" +
-//                              tmpClass.getStaticMethodsCount() + " static methods",
-//                              "Class Has Been Generated", JOptionPane.INFORMATION_MESSAGE);
-//                      tmpClass.delete();
-//
-//                    } finally {
-//                      targetModel.deleteImportedModel(tmpModelDescriptor.getFQName());
-//                    }
-//                  }
-//                },
-//                "Generate Stab from Class File");
-//      }
-//
-//      private SemanticNode createValidCopy(SemanticNode node, SModel targetModel, MPSProject project) {
-//        SemanticNode copy = ContextUtil.copyNode(node, targetModel, project);
-//        //        //test
-//        //        Iterator<SemanticNode> children = copy.depthFirstChildren();
-//        //        while (children.hasNext()) {
-//        //          SemanticNode child = children.next();
-//        //          if(child.getModel() != targetModel) {
-//        //            System.err.println("after copy error! node: " + copy.getDebugText() );
-//        //            SModelUtil.dumpNodePath(child, 0, System.err);
-//        //          }
-//        //        }
-//        //        //test
-//
-//        replaceClasses(copy, targetModel, project);
-//        if (copy instanceof BaseMethodDeclaration) {
-//          BaseMethodDeclaration method = (BaseMethodDeclaration) copy;
-//          Iterator<ParameterDeclaration> iterator = method.parameters();
-//          int count = 0;
-//          while (iterator.hasNext()) {
-//            ParameterDeclaration parameterDeclaration = iterator.next();
-//            parameterDeclaration.setName("parm" + (count++));
-//          }
-//        }
-//        return copy;
-//      }
-//
-//      private void replaceClasses(SemanticNode node, SModel targetModel, MPSProject project) {
-//        List<SemanticReference> references = node.getReferences();
-//        for (int i = 0; i < references.size(); i++) {
-//          SemanticReference reference = references.get(i);
-//          SemanticNode referent = reference.getTargetNode();
-//          if (referent instanceof ClassConcept) {
-//            ClassConcept classInModel = toModelClass((ClassConcept) referent, targetModel, project);
-//            node.insertReferent(referent, reference.getRole(), classInModel);
-//            node.removeReferent(reference.getRole(), referent);
-//          }
-//        }
-//
-//        List<SemanticNode> children = node.getChildren();
-//        for (int i = 0; i < children.size(); i++) {
-//          SemanticNode child = children.get(i);
-//          replaceClasses(child, targetModel, project);
-//        }
-//      }
-//
-//      private ClassConcept toModelClass(ClassConcept tmpClass, SModel targetModel, MPSProject project) {
-//        ClassConcept modelClass = (ClassConcept) SModelUtil.findNodeByFQName(NameUtil.nodeFQName(tmpClass), getContext().getProject());
-//        if (modelClass == null) {
-//          modelClass = (ClassConcept) SModelUtil.findNodeByFQName("java.lang.Object", project);
-//        }
-//        if (modelClass != null && targetModel != modelClass.getModel()) {
-//          targetModel.addImportedModel(modelClass.getModel());
-//        }
-//        return modelClass;
-//      }
-//    };
-//  }
-
   public JComponent getExternalComponent() {
     return myContainer;
   }
@@ -478,7 +335,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     SemanticNode semanticNode = myRootCell.getSemanticNode();
     if (semanticNode != null) {
       SModel semanticModel = semanticNode.getModel();
-      semanticModel.removeSModelCommandListener(mySemanticModelListener);
+      semanticModel.removeSModelListener(mySemanticModelListener);
     }
   }
 
@@ -487,7 +344,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       SemanticNode semanticNode = myRootCell.getSemanticNode();
       if (semanticNode != null) {
         SModel semanticModel = semanticNode.getModel();
-        semanticModel.removeSModelCommandListener(mySemanticModelListener);
+        semanticModel.removeSModelListener(mySemanticModelListener);
       }
     }
 
@@ -500,7 +357,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     SemanticNode semanticNode = myRootCell.getSemanticNode();
     if (semanticNode != null) {
       SModel semanticModel = semanticNode.getModel();
-      semanticModel.addSModelCommandListener(mySemanticModelListener);
+      semanticModel.addSModelListener(mySemanticModelListener);
       addImportedModelsToListener(semanticModel);
     }
 
@@ -513,9 +370,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (importedModels != null) {
       while (importedModels.hasNext()) {
         SModel importedModel = importedModels.next();
-        if (importedModel.hasSModelCommandListener(mySemanticModelListener)) continue;
+        if (importedModel.hasSModelListener(mySemanticModelListener)) continue;
 
-        importedModel.addSModelCommandListener(mySemanticModelListener);
+        importedModel.addSModelListener(mySemanticModelListener);
         addImportedModelsToListener(importedModel);
       }
     }
@@ -1148,30 +1005,30 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   // ---- semantic model listener
 
-  private class MyModelListener implements SModelCommandListener {
-    public void modelChangedInCommand(List<SModelEvent> events) {
-      boolean isDramaticalChange = EventUtil.isDramaticalChange(events);
-      if (isDramaticalChange) {
-        SModelChildEvent lastSignificantEvent = null;
-        for (SModelEvent e : events) {
-          if (e instanceof SModelChildEvent) lastSignificantEvent = (SModelChildEvent) e;
-        }
-
-        rebuildEditorContent();
-        if (lastSignificantEvent != null) {
-          if (lastSignificantEvent.isAdded()) {
-            handleNodelAdded(lastSignificantEvent.getChild());
-          } else {
-            handleNodeRemoved(lastSignificantEvent.getParent());
-          }
-        }
-      } else {
-        myRootCell.updateView();
-        relayout();
-      }
+  private class MyModelListener extends SModelAdapter {
+    public void modelChanged(SModel semanticModel) {
+      myRootCell.updateView();
+      relayout();
     }
 
-    public void handleNodeRemoved(SemanticNode parent) {
+    public void modelChangedDramatically(SModel semanticModel) {
+      rebuildEditorContent();
+    }
+
+    public void childAdded(SModelChildEvent event) {
+      childAdded(event.getModel(), event.getParent(), event.getChild());
+    }
+
+    public void childRemoved(SModelChildEvent event) {
+      childRemoved(event.getModel(), event.getParent(), event.getChild());
+    }
+
+    public void childAdded(SModel model, SemanticNode parent, SemanticNode child) {
+      rebuildEditorContent();
+      handleNodelAdded(child);
+    }
+
+    public void childRemoved(SModel model, SemanticNode parent, SemanticNode child) {
       rebuildEditorContent();
       if (mySelectedCell == null) {
         EditorCell changedNodeCell = findNodeCell(parent);
@@ -1210,5 +1067,5 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         textLine.setCaretPosition(textLine.getText().length());
       }
     }
-  } // private class MyModelListener implements SModelListener
+  }
 }
