@@ -70,6 +70,39 @@
         <node role="type" type="jetbrains.mps.baseLanguage.CharType" id="1120132827853" />
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1120151576652">
+      <property name="name" value="foo" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1120151576672">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1120151576673">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1120151576674">
+            <property name="name" value="y" />
+            <node role="type" type="jetbrains.mps.baseLanguage.CharType" id="1120151576675" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.StringLiteral" id="1120151576676">
+              <property name="value" value="f" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1120151576677">
+          <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1120151576678">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1120151576679">
+              <link role="variableDeclaration" targetNodeId="1120151576674" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1120151576680">
+              <link role="baseMethodDeclaration" targetNodeId="1120132621811" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1120151576681" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1120151576682">
+                <link role="variableDeclaration" targetNodeId="1120151576670" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.StringType" id="1120151576669" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1120151576670">
+        <property name="name" value="x" />
+        <node role="type" type="jetbrains.mps.baseLanguage.CharType" id="1120151576671" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1120132915670">
     <property name="name" value="New2" />
@@ -143,6 +176,42 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1120146414229">
         <property name="name" value="x" />
         <node role="type" type="jetbrains.mps.baseLanguage.CharType" id="1120146414230" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1120149654800">
+    <property name="name" value="New3" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1120149686817">
+      <property name="name" value="foo" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1120149686868">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1120149686869">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1120149686870">
+            <property name="name" value="y" />
+            <node role="type" type="jetbrains.mps.baseLanguage.CharType" id="1120149686871" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.StringLiteral" id="1120149686872">
+              <property name="value" value="f" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1120149686873">
+          <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1120149686874">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1120149686875">
+              <link role="variableDeclaration" targetNodeId="1120149686870" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1120149686876">
+              <link role="baseMethodDeclaration" targetNodeId="1120132621811" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1120149686877" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1120149686878">
+                <link role="variableDeclaration" targetNodeId="1120149686866" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.StringType" id="1120149686865" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1120149686866">
+        <property name="name" value="x" />
+        <node role="type" type="jetbrains.mps.baseLanguage.CharType" id="1120149686867" />
       </node>
     </node>
   </node>

@@ -15,7 +15,31 @@ import java.util.*;
  */
 public class Resolver {
 
+
   public static void resolveAllReferences(SemanticNode node) {
+
+    List<SemanticReference> referenceList = getExternalReferences(node);
+
+    for (SemanticReference reference : referenceList) {
+      resolve(reference);
+    }
+  }
+
+
+  public static void processCopy(SemanticNode node) {
+
+    List<SemanticReference> referenceList = getExternalReferences(node);
+
+    for (SemanticReference reference : referenceList) {
+      Cemetery.getInstance().registerNode(reference.getTargetNode());
+    }
+
+  }
+
+
+  public static List<SemanticReference> getExternalReferences(SemanticNode node) {
+
+    List<SemanticReference> result = new ArrayList<SemanticReference>();
 
     HashSet<SemanticNode> children = new HashSet<SemanticNode>();
     children.add(node);
@@ -33,17 +57,24 @@ public class Resolver {
       List<SemanticReference> references = child.getReferences();
       for (SemanticReference reference : references) {
         if (!children.contains(reference.getTargetNode())){//if external reference
-          resolve(reference, child);
+          result.add(reference);
         }
       }
     }
 
+    return result;
   }
 
-  public static void resolve(SemanticReference reference, SemanticNode sourceNode){
+  public static void resolve(SemanticReference reference){
+
     String role  = reference.getRole();
+
+    SemanticNode sourceNode = reference.getSourceNode();
+
     String packageName = sourceNode.getClass().getPackage().getName();
     Class cls = sourceNode.getClass();
+
+    SemanticNode oldTarget = reference.getTargetNode();
 
     reference.setBad();
 
@@ -56,6 +87,9 @@ public class Resolver {
         boolean success = (Boolean)resolveClass.getMethod("resolveForRole"+role+"In"+className, SemanticReference.class).invoke(null, reference);
         if (success) {
           reference.setGood();
+          Cemetery.getInstance().unregisterNode(oldTarget);
+        } else {
+          Cemetery.getInstance().registerNode(oldTarget);
         }
         return;
       } catch (NullPointerException e) {
