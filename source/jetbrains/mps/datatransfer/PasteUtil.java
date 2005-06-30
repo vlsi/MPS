@@ -49,7 +49,7 @@ public class PasteUtil {
       SemanticNodeData nodeData = null;
       try {
         nodeData = (SemanticNodeData) content.getTransferData(SModelDataFlavor.semanticNode);
-        return nodeData.createNodes(semanticModel);
+        return nodeData.createNodes(semanticModel, true);  //preserve internal references
       } catch (UnsupportedFlavorException e) {
         LOG.error("Exception", e);
       } catch (IOException e) {
