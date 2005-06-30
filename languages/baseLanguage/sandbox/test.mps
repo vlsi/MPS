@@ -96,7 +96,16 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1120147044955">
             <property name="name" value="aaa" />
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1120147044956" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.Expression" id="1120159275015" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1120166093665">
+              <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1120166075736">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1120166080849">
+                  <property name="value" value="10" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1120166100572">
+                  <property name="value" value="10" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
