@@ -389,6 +389,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
       }
     } catch (Exception e) {
       LOG.error("Exception", e);
+      return;
     }
     if (generator == null) {
       return;
@@ -411,9 +412,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
       }
     } catch (Exception e) {
       monitor.addText("Exception during generation " + e.getMessage());
-
-      LOG.error("Errors during generation", e);
-
+      LOG.error("Errors during generation", e);      
     } finally {
       JavaClassMaps.clearMaps();
     }
