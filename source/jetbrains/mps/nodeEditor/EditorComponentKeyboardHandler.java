@@ -64,7 +64,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
           return true;
         }
         selectedCell = editor.getSelectedCell();
-
+        cellWasValid = true;
         // no selection any more - very strange
         if (selectedCell == null) {
           return true;

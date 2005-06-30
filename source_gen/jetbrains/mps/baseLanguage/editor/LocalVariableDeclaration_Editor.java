@@ -120,7 +120,6 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-        __VariableInitializer_ActionSet.setCellActions(noRefCell, node);
         return noRefCell;
       }
     }
@@ -131,7 +130,6 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-    __VariableInitializer_ActionSet.setCellActions(editorCell, node);
     return editorCell;
   }
   public boolean handleConditionalQuery_1075303160504(SemanticNode node) {

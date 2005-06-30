@@ -238,7 +238,7 @@
     <link role="extends" targetNodeId="1068431790191" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107215698714">
       <property name="value" value="boolean constant" />
-      <link role="conceptPropertyDeclaration" targetNodeId="34.1107214812281" />
+      <link role="conceptPropertyDeclaration" targetNodeId="34.1106346943066" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1068580123138">
       <property name="propertyType" value="boolean" />
@@ -392,9 +392,9 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068580320020">
     <property name="name" value="IntegerConstant" />
     <link role="extends" targetNodeId="1068431790191" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107216798229">
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1120154379158">
       <property name="value" value="integer constant" />
-      <link role="conceptPropertyDeclaration" targetNodeId="34.1107214812281" />
+      <link role="conceptPropertyDeclaration" targetNodeId="34.1106346943066" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1068580320021">
       <property name="propertyType" value="integer" />
@@ -1414,16 +1414,12 @@
       <link role="dataType" targetNodeId="1113006251687" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1111509061468">
-      <property name="value" value="&lt;x.y&gt;" />
-      <link role="conceptPropertyDeclaration" targetNodeId="34.1106346943066" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1111509096391">
       <property name="value" value="floating point constant" />
-      <link role="conceptPropertyDeclaration" targetNodeId="34.1107214812281" />
+      <link role="conceptPropertyDeclaration" targetNodeId="34.1106346943066" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConstrainedDataTypeDeclaration" id="1113006251687">
-    <property name="constraint" value="-?[0-9]+\\.[0-9]+" />
+    <property name="constraint" value="-?[0-9]+\\.[0-9]*" />
     <property name="name" value="_FPNumber_String" />
     <link role="extends" targetNodeId="4.1082983041843" />
   </node>
