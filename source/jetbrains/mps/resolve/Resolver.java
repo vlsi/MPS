@@ -43,22 +43,30 @@ public class Resolver {
   public static void resolve(SemanticReference reference, SemanticNode sourceNode){
     String role  = reference.getRole();
     String packageName = sourceNode.getClass().getPackage().getName();
-    String className = sourceNode.getClass().getName();
-    className = className.substring(className.lastIndexOf('.') + 1);
+    Class cls = sourceNode.getClass();
 
-    try {
-      reference.setBad();//if method exists but can't resolve we'll mark our reference as a bad one 
-      Class resolveClass = Class.forName(packageName+".resolve.Resolver", true, ClassLoaderManager.getInstance().getClassLoader());
-      resolveClass.getMethod("resolveForRole"+role+"In"+className, SemanticReference.class).invoke(null, reference);
+    reference.setBad();
 
-    } catch (NullPointerException e) {
+    while (cls != SemanticNode.class) {
+      try {
+        String className = cls.getName();
+        className = className.substring(className.lastIndexOf('.') + 1);
+        //if method exists but can't resolve we'll mark our reference as a bad one
+        Class resolveClass = Class.forName(packageName+".resolve.Resolver", true, ClassLoaderManager.getInstance().getClassLoader());
+        boolean success = (Boolean)resolveClass.getMethod("resolveForRole"+role+"In"+className, SemanticReference.class).invoke(null, reference);
+        if (success) {
+          reference.setGood();
+        }
+        return;
+      } catch (NullPointerException e) {
+        return;
+      } catch (Exception e) {
 
-    } catch (Exception e) {
-      reference.setGood();
+      }
+      cls = cls.getSuperclass();
+
     }
-
-
-
-  };
+    reference.setGood();
+  }
 
 }

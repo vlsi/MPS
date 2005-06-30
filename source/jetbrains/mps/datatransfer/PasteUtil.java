@@ -152,7 +152,7 @@ public class PasteUtil {
             CommandUtil.insertReferent(pasteTarget, anchorNode, linkDeclaration.getRole(), pasteNode, pasteBefore);
           }
         //Add resolving here!
-        Resolver.resolveAllReferences(pasteTarget);
+        Resolver.resolveAllReferences(pasteNode);
         }
       }, "paste");
     }
