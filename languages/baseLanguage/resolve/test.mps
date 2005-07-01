@@ -4,6 +4,12 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1120132608419">
     <property name="name" value="New" />
+    <node role="staticField" type="jetbrains.mps.baseLanguage.StaticFieldDeclaration" id="1120238865673">
+      <property name="name" value="q" />
+      <node role="type" type="jetbrains.mps.baseLanguage.ArrayType" id="1120238875988">
+        <node role="componentType" type="jetbrains.mps.baseLanguage.BooleanType" id="1120238879678" />
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1120132621811">
       <property name="name" value="string" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1120132645940">
@@ -24,6 +30,20 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1120239144334">
+          <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1120239144335">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1120239144336">
+              <link role="variableDeclaration" targetNodeId="1120132645940" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1120239144337">
+              <link role="baseMethodDeclaration" targetNodeId="1120132621811" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1120239144338" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1120239144339">
+                <link role="variableDeclaration" targetNodeId="1120132645940" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1120132760871">
           <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1120132769125">
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1120132766857">
@@ -36,6 +56,20 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.StringType" id="1120132631361" />
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1120238903134">
+      <property name="name" value="string" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1120238903136">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1120238937391">
+          <node role="expression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1120239004622">
+            <link role="variableDeclaration" targetNodeId="1120238865673" />
+            <node role="classType" type="jetbrains.mps.baseLanguage.ClassType" id="1120239004623">
+              <link role="classifier" targetNodeId="1120132608419" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.BooleanType" id="1120238910059" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1120132789160">
       <property name="name" value="foo" />
@@ -106,6 +140,18 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1120132915670">
     <property name="name" value="New2" />
+    <node role="staticField" type="jetbrains.mps.baseLanguage.StaticFieldDeclaration" id="1120239044759">
+      <property name="name" value="q" />
+      <node role="type" type="jetbrains.mps.baseLanguage.ArrayType" id="1120239049011">
+        <node role="componentType" type="jetbrains.mps.baseLanguage.BooleanType" id="1120239052232" />
+      </node>
+    </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1120239030877">
+      <property name="name" value="q" />
+      <node role="type" type="jetbrains.mps.baseLanguage.ArrayType" id="1120239035067">
+        <node role="componentType" type="jetbrains.mps.baseLanguage.BooleanType" id="1120239038507" />
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1120132925280">
       <property name="name" value="string" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1120132925282">
@@ -117,6 +163,12 @@
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1120132976812">
               <link role="variableDeclaration" targetNodeId="1120132950896" />
             </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1120239844864">
+          <node role="expression" type="jetbrains.mps.baseLanguage.FieldReference" id="1120239844865">
+            <link role="variableDeclaration" targetNodeId="1120239030877" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1120239844866" />
           </node>
         </node>
       </node>
@@ -209,6 +261,12 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1120149654800">
     <property name="name" value="New3" />
+    <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1120239783330">
+      <property name="name" value="q" />
+      <node role="type" type="jetbrains.mps.baseLanguage.ArrayType" id="1120239785723">
+        <node role="componentType" type="jetbrains.mps.baseLanguage.BooleanType" id="1120239788085" />
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1120149686817">
       <property name="name" value="foo" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1120149686868">
@@ -241,6 +299,18 @@
         <property name="name" value="x" />
         <node role="type" type="jetbrains.mps.baseLanguage.CharType" id="1120149686867" />
       </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1120239797836">
+      <property name="name" value="kuu" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1120239797838">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1120239812592">
+          <node role="expression" type="jetbrains.mps.baseLanguage.FieldReference" id="1120239818110">
+            <link role="variableDeclaration" targetNodeId="1120239783330" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1120239818111" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.StringType" id="1120239803559" />
     </node>
   </node>
 </model>
