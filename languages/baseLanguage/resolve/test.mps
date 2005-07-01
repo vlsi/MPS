@@ -138,29 +138,15 @@
             <property name="value" value="wow" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1120236181811">
-          <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1120236181812">
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1120236181813">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1120237327496">
+          <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1120237327497">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1120237327498">
               <link role="variableDeclaration" targetNodeId="1120133007333" />
             </node>
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1120236181814">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1120237327499">
               <link role="baseMethodDeclaration" targetNodeId="1120132925280" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1120236181815" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1120236181816">
-                <link role="variableDeclaration" targetNodeId="1120133007333" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1120236190021">
-          <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1120236190022">
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1120236190023">
-              <link role="variableDeclaration" targetNodeId="1120133007333" />
-            </node>
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1120236190024">
-              <link role="baseMethodDeclaration" targetNodeId="1120132925280" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1120236190025" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1120236190026">
+              <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1120237327500" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1120237327501">
                 <link role="variableDeclaration" targetNodeId="1120133007333" />
               </node>
             </node>
