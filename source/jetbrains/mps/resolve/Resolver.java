@@ -36,6 +36,10 @@ public class Resolver {
 
   }
 
+  public static void processDelete(SemanticNode node) {
+    Cemetery.getInstance().buryNode(node);
+  }
+
 
   public static List<SemanticReference> getExternalReferences(SemanticNode node) {
 
