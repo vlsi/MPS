@@ -2,45 +2,45 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.baseLanguage.Classifier;
 import jetbrains.mps.baseLanguage.generator.target.DefaultTemplateGenerator;
-import jetbrains.mps.util.CommandRunnable;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.preferences.ComponentWithPreferences;
-import jetbrains.mps.ide.preferences.PreferencesPage;
-import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.output.OutputView;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessageView;
+import jetbrains.mps.ide.output.OutputView;
+import jetbrains.mps.ide.preferences.ComponentWithPreferences;
+import jetbrains.mps.ide.preferences.PreferencesPage;
+import jetbrains.mps.ide.progress.ProgressMonitor;
+import jetbrains.mps.ide.progress.ProgressWindowProgressMonitor;
+import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.project.ExternalizableComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.RootManager;
-import jetbrains.mps.project.ExternalizableComponent;
-import jetbrains.mps.projectLanguage.*;
+import jetbrains.mps.projectLanguage.GeneratorConfiguration;
+import jetbrains.mps.projectLanguage.GeneratorConfigurationCommand;
+import jetbrains.mps.projectLanguage.ModelRoot;
+import jetbrains.mps.projectLanguage.ProjectModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.semanticModel.*;
-import jetbrains.mps.semanticModel.Generator;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textPresentation.TextPresentationManager;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.ide.progress.ProgressMonitor;
-import jetbrains.mps.ide.progress.ProgressWindowProgressMonitor;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.CommandRunnable;
 import jetbrains.mps.xml.Document;
+import org.jdom.Element;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import java.awt.*;
 import java.io.File;
 import java.util.*;
 import java.util.List;
-import java.awt.*;
-
-import org.jdom.Element;
 
 
 /**
@@ -412,9 +412,8 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
       }
     } catch (Exception e) {
       monitor.addText("Exception during generation " + e.getMessage());
-      LOG.error("Errors during generation", e);      
+      LOG.error("Errors during generation", e);
     } finally {
-      JavaClassMaps.clearMaps();
     }
   }
 

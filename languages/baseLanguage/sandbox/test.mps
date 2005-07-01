@@ -101,8 +101,8 @@
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1120166080849">
                   <property name="value" value="10" />
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1120166100572">
-                  <property name="value" value="10" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.FloatingPointConstant" id="1120233244547">
+                  <property name="value" value="10.0" />
                 </node>
               </node>
             </node>
