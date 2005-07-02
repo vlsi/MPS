@@ -49,7 +49,7 @@ import java.util.List;
 public class GeneratorManager implements ExternalizableComponent, ComponentWithPreferences, LanguageOwner, ModelOwner {
   public static final Logger LOG = Logger.getLogger(GeneratorManager.class);
 
-  private static final boolean SAVE_TRANSIENT_MODELS = false;
+  private static final boolean SAVE_TRANSIENT_MODELS = true; //false;
   public static final String COMPILE_ON_GENERATION = "compile-on-generation";
 
   private MPSProject myProject;
