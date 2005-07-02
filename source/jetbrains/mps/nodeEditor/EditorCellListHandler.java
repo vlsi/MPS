@@ -79,7 +79,6 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
 
     AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
     editor.pushKeyboardHandler(this);
-    editor.rebuildEditorContent();
     if (myInsertCell != null) {
       EditorCell selectableLeaf = myInsertCell.findFirstSelectableLeaf();
       if (selectableLeaf != null) {
@@ -101,6 +100,8 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
       myInsertCell = null;
       myInsertedNode = null;
       myInsertedNodeCell = null;
+
+      //todo why it works? :(
       editorContext.getNodeEditorComponent().relayout();
     }
   }
@@ -113,7 +114,6 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
       myInsertCell = null;
       myInsertedNode = null;
       myInsertedNodeCell = null;
-      editorContext.getNodeEditorComponent().rebuildEditorContent();
     }
   }
 

@@ -349,7 +349,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     myRootCell = rootCell;
-    //    System.out.println("setRootCell root node: " + (myRootCell.getSemanticNode() != null ? myRootCell.getSemanticNode().getDebugText() : "NULL"));
     myRootCell.setX(myShiftX);
     myRootCell.setY(myShiftY);
     myRootCell.relayout();
@@ -999,20 +998,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     public void modelChangedDramatically(SModel semanticModel) {
       rebuildEditorContent();
-    }
-
-    public void childAdded(SModelChildEvent event) {
-      rebuildEditorContent();
-    }
-
-    public void childRemoved(SModelChildEvent event) {
-      rebuildEditorContent();
-      if (mySelectedCell == null) {
-        EditorCell changedNodeCell = findNodeCell(event.getParent());
-        if (changedNodeCell != null) {
-          changeSelection(changedNodeCell);
-        }
-      }
     }
   }
 }
