@@ -1003,7 +1003,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     public void childAdded(SModelChildEvent event) {
       rebuildEditorContent();
-      handleNodelAdded(event.getChild());
     }
 
     public void childRemoved(SModelChildEvent event) {
@@ -1013,36 +1012,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         if (changedNodeCell != null) {
           changeSelection(changedNodeCell);
         }
-      }
-    }
-
-    private void handleNodelAdded(SemanticNode child) {
-      EditorCell childCell = findNodeCell(child);
-      if (childCell == null) {
-        // this editor doesn't contain this node.
-        return;
-      }
-
-      if (childCell instanceof EditorCell_Collection) {
-        EditorCell errorCell = ((EditorCell_Collection) childCell).findFirstErrorCell();
-        if (errorCell != null) {
-          changeSelection(errorCell);
-        } else {
-          EditorCell selectableLeaf = ((EditorCell_Collection) childCell).findLastSelectableLeaf();
-          if (selectableLeaf != null) {
-            changeSelection(selectableLeaf);
-          } else {
-            changeSelection(childCell);
-          }
-        }
-      } else {
-        changeSelection(childCell);
-      }
-
-      // put caret at the end of text
-      if (mySelectedCell instanceof EditorCell_Label && ((EditorCell_Label) mySelectedCell).isEditable()) {
-        TextLine textLine = ((EditorCell_Label) mySelectedCell).getTextLine();
-        textLine.setCaretPosition(textLine.getText().length());
       }
     }
   }
