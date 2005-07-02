@@ -357,7 +357,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     SemanticNode semanticNode = myRootCell.getSemanticNode();
     if (semanticNode != null) {
       SModel semanticModel = semanticNode.getModel();
-      semanticModel.addSModelListener(mySemanticModelListener);
+      if (!semanticModel.hasSModelListener(mySemanticModelListener)) {
+        semanticModel.addSModelListener(mySemanticModelListener);
+      }
       addImportedModelsToListener(semanticModel);
     }
 
@@ -371,7 +373,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       while (importedModels.hasNext()) {
         SModel importedModel = importedModels.next();
         if (importedModel.hasSModelListener(mySemanticModelListener)) continue;
-
+        System.err.println("Adding imported model listener");
         importedModel.addSModelListener(mySemanticModelListener);
         addImportedModelsToListener(importedModel);
       }
@@ -700,23 +702,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       mySelectedCell.setSelected(true);
     }
     if (mySelectedCell != null) {
-      JScrollBar hScrollBar = myScrollPane.getHorizontalScrollBar();
-      JScrollBar vScrollBar = myScrollPane.getVerticalScrollBar();
-      Rectangle viewRect = myScrollPane.getViewport().getViewRect();
-      int x = mySelectedCell.getX() - 20;
-      int y = mySelectedCell.getY() - 20;
-      int w = mySelectedCell.getWidth() + 40;
-      int h = mySelectedCell.getHeight() + 40;
-      if (x < viewRect.x) {
-        hScrollBar.setValue(x);
-      } else if (x + w > viewRect.x + viewRect.width) {
-        hScrollBar.setValue(x + w - viewRect.width);
-      }
-      if (y < viewRect.y) {
-        vScrollBar.setValue(y);
-      } else if (y + h > viewRect.y + viewRect.height) {
-        vScrollBar.setValue(y + h - viewRect.height);
-      }
+      scrollRectToVisible(new Rectangle(newSelectedCell.getX(), newSelectedCell.getY(), newSelectedCell.getWidth(), newSelectedCell.getHeight()));
     }
     repaint();
 
@@ -1016,22 +1002,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     public void childAdded(SModelChildEvent event) {
-      childAdded(event.getModel(), event.getParent(), event.getChild());
+      rebuildEditorContent();
+      handleNodelAdded(event.getChild());
     }
 
     public void childRemoved(SModelChildEvent event) {
-      childRemoved(event.getModel(), event.getParent(), event.getChild());
-    }
-
-    public void childAdded(SModel model, SemanticNode parent, SemanticNode child) {
-      rebuildEditorContent();
-      handleNodelAdded(child);
-    }
-
-    public void childRemoved(SModel model, SemanticNode parent, SemanticNode child) {
       rebuildEditorContent();
       if (mySelectedCell == null) {
-        EditorCell changedNodeCell = findNodeCell(parent);
+        EditorCell changedNodeCell = findNodeCell(event.getParent());
         if (changedNodeCell != null) {
           changeSelection(changedNodeCell);
         }
