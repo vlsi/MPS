@@ -490,7 +490,7 @@ public class ProjectPane extends JComponent {
     SModel sModel = semanticNode.getModel();
     SModelTreeNode sModelNode = findSModelTreeNode(rootNode, sModel);
     if (sModelNode == null) return;
-    SemanticTreeNode treeNodeToSelect = findTreeNode(rootNode, semanticNode);
+    SemanticTreeNode treeNodeToSelect = findTreeNode((MPSTreeNode) rootNode, semanticNode);
     if (treeNodeToSelect != null) {
       TreePath treePath = new TreePath(treeNodeToSelect.getPath());
       myTree.setSelectionPath(treePath);
@@ -500,7 +500,9 @@ public class ProjectPane extends JComponent {
     }
   }
 
-  private SemanticTreeNode findTreeNode(DefaultMutableTreeNode parent, SemanticNode semanticNode) {
+  private SemanticTreeNode findTreeNode(MPSTreeNode parent, SemanticNode semanticNode) {
+    if (!parent.initialized()) parent.init();
+
     if (parent instanceof SNodeTreeNode) {
       SNodeTreeNode parentSemanticTreeNode = (SNodeTreeNode) parent;
       if (semanticNode.equals(parentSemanticTreeNode.getSNode())) {
@@ -509,7 +511,7 @@ public class ProjectPane extends JComponent {
     }
     Enumeration children = parent.children();
     while (children.hasMoreElements()) {
-      SemanticTreeNode foundNode = findTreeNode((DefaultMutableTreeNode) children.nextElement(), semanticNode);
+      SemanticTreeNode foundNode = findTreeNode((MPSTreeNode) children.nextElement(), semanticNode);
       if (foundNode != null) {
         return foundNode;
       }
@@ -655,11 +657,11 @@ public class ProjectPane extends JComponent {
       myInitialized = false;
     }
 
-    protected boolean initialized() {
+    public boolean initialized() {
       return myInitialized;
     }
 
-    protected void init() {
+    public void init() {
       this.removeAllChildren();
       List<SemanticNode> children = getSNode().getChildren();
       for (SemanticNode childNode : children) {

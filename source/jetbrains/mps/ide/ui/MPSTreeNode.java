@@ -18,14 +18,14 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode {
 
   protected abstract String getNodeIdentifier();
 
-  protected boolean initialized() {
+  public boolean initialized() {
     return true;
   }
 
   protected void dispose() {
   }
 
-  protected void init() {
+  public void init() {
   }
 
   public void update() {
