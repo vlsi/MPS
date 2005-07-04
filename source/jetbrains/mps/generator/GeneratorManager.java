@@ -98,6 +98,8 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     }
 
     generate(configuration, models, false);
+
+    language.updateLastGenerationTime();
   }
 
   private GeneratorConfigurationCommand createCommand(final SModel model, final String fromLanguage, final String toLanguage) {
