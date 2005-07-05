@@ -2,6 +2,7 @@ package jetbrains.mps.resolve;
 
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.semanticModel.SemanticReference;
+import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.util.*;
@@ -75,6 +76,8 @@ public class Resolver {
 
     SemanticNode sourceNode = reference.getSourceNode();
 
+    SModel model = sourceNode.getModel();
+
     String packageName = sourceNode.getClass().getPackage().getName();
     Class cls = sourceNode.getClass();
 
@@ -88,18 +91,22 @@ public class Resolver {
         className = className.substring(className.lastIndexOf('.') + 1);
         //if method exists but can't resolve we'll mark our reference as a bad one
         Class resolveClass = Class.forName(packageName+".resolve.Resolver", true, ClassLoaderManager.getInstance().getClassLoader());
+        model.setLoading(true);
         boolean success = (Boolean)resolveClass.getMethod("resolveForRole"+role+"In"+className, SemanticReference.class).invoke(null, reference);
+        model.setLoading(false);
         if (success) {
           reference.setGood();
           Cemetery.getInstance().unregisterNode(oldTarget);
         } else {
+          reference.setBad();
           Cemetery.getInstance().registerNode(oldTarget);
         }
         return;
       } catch (NullPointerException e) {
+        model.setLoading(false);
         return;
       } catch (Exception e) {
-
+        model.setLoading(false);
       }
       cls = cls.getSuperclass();
 
