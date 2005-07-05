@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.datatransfer.SemanticNodeData;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.resolve.Resolver;
 
 import java.awt.datatransfer.Clipboard;
 import java.awt.*;
@@ -34,6 +35,10 @@ public class CellAction_CopyNode extends EditorCellAction {
     } else {
       nodeList.add(editorComponent.getSelectedCell().getSemanticNode());
       LOG.debug("Copy node : " + nodeList.get(0).getDebugText());
+    }
+
+    for (SemanticNode sn : nodeList) {
+      Resolver.processCopy(sn);
     }
 
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();

@@ -165,16 +165,16 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1120560599727">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1120560599744">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1120568813650">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1120568813651">
             <property name="name" value="zed" />
-            <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1120560599745" />
+            <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1120568813652" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1120560628794">
           <node role="expression" type="jetbrains.mps.baseLanguage.NotExpression" id="1120560628795">
             <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1120560638188">
-              <link role="variableDeclaration" targetNodeId="1120560599744" />
+              <link role="variableDeclaration" targetNodeId="1120568813651" />
             </node>
           </node>
         </node>
