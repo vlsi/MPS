@@ -93,8 +93,7 @@ public class CellLayout_Vertical implements CellLayout {
     if (y >= editorCells.getY() + editorCells.getHeight() || y < editorCells.getY()) {
       return null;
     }
-    for (Iterator iterator = editorCells.iterator(); iterator.hasNext();) {
-      EditorCell editorCell = (EditorCell) iterator.next();
+    for (EditorCell editorCell : editorCells) {
       EditorCell cell = editorCell.findNearestCell(x, y, true);
       if (cell != null) {
         return cell;
@@ -108,8 +107,7 @@ public class CellLayout_Vertical implements CellLayout {
           editorCells.getY() <= y && y < editorCells.getY() + editorCells.getHeight())) {
       return null;
     }
-    for (Iterator iterator = editorCells.iterator(); iterator.hasNext();) {
-      EditorCell editorCell = (EditorCell) iterator.next();
+    for (EditorCell editorCell : editorCells) {
       EditorCell cell = editorCell.findCell(x, y);
       if (cell != null) {
         return cell;
@@ -119,3 +117,4 @@ public class CellLayout_Vertical implements CellLayout {
   }
 
 }
+                              
