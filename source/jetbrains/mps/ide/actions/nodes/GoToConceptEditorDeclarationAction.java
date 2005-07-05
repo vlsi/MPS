@@ -1,15 +1,14 @@
 package jetbrains.mps.ide.actions.nodes;
 
-import jetbrains.mps.ide.action.MPSAction;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.EditorsPane;
-import jetbrains.mps.semanticModel.SemanticNode;
-import jetbrains.mps.semanticModel.SModel;
-import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.semanticModel.Language;
+import jetbrains.mps.semanticModel.SModel;
+import jetbrains.mps.semanticModel.SemanticNode;
 
 import javax.swing.*;
 import java.util.Iterator;
@@ -28,15 +27,15 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
 
   public void update(ActionContext context) {
     super.update(context);
-    setVisible(context.getNode() instanceof ConceptDeclaration);
+    setVisible(context.get(SemanticNode.class) instanceof ConceptDeclaration);
   }
 
   public void execute(ActionContext context) {
-    SemanticNode node = context.getNode();
+    SemanticNode node = context.get(SemanticNode.class);
     if (!(node instanceof ConceptDeclaration)) return;
 
     final String editorName = node.getName() + "_Editor";
-    MPSProject project = context.getProject();
+    MPSProject project = context.get(MPSProject.class);
     SModel languageStructure = node.getModel();
     Language language = project.getLanguageByStructureModel(languageStructure);
     if (language == null) {
@@ -49,7 +48,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
       while (iterator.hasNext()) {
         SemanticNode root = iterator.next();
         if (editorName.equals(root.getName())) {
-          AbstractEditorComponent editor = context.getIde().getEditorsPane().openEditor(root);
+          AbstractEditorComponent editor = context.get(IdeMain.class).getEditorsPane().openEditor(root);
           editor.selectNode(root);
           return;
         }
