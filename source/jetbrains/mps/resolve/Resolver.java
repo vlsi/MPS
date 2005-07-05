@@ -92,7 +92,7 @@ public class Resolver {
         //if method exists but can't resolve we'll mark our reference as a bad one
         Class resolveClass = Class.forName(packageName+".resolve.Resolver", true, ClassLoaderManager.getInstance().getClassLoader());
         model.setLoading(true);
-        boolean success = (Boolean)resolveClass.getMethod("resolveForRole"+role+"In"+className, SemanticReference.class).invoke(null, reference);
+        boolean success = (Boolean)resolveClass.getMethod("resolveForRole"+role+"In"+className, SemanticReference.class, Class.class).invoke(null, reference, cls);
         model.setLoading(false);
         if (success) {
           reference.setGood();
