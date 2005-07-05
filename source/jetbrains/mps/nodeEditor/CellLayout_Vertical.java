@@ -21,8 +21,7 @@ public class CellLayout_Vertical implements CellLayout {
     if (editorCells.isDrawBrackets()) {
       width += EditorCell_Collection.BRACKET_WIDTH;
     }
-    for (Iterator iterator = editorCells.iterator(); iterator.hasNext();) {
-      EditorCell editorCell = (EditorCell) iterator.next();
+    for (EditorCell editorCell : editorCells) {
       if (editorCells.isDrawBrackets()) {
         editorCell.setX(x + EditorCell_Collection.BRACKET_WIDTH);
       } else {
@@ -43,21 +42,17 @@ public class CellLayout_Vertical implements CellLayout {
       int x0 = x;
       for (int i = 0; ; i++) {
         int maxWidth = -1;
-        for (Iterator iterator = editorCells.iterator(); iterator.hasNext();) {
-          EditorCell editorCell = (EditorCell) iterator.next();
+        for (EditorCell editorCell : editorCells) {
           if (editorCell instanceof EditorCell_Collection) {
             EditorCell_Collection editorCellCollection = (EditorCell_Collection) editorCell;
             CellLayout cellLayout = editorCellCollection.getCellLayout();
             if (cellLayout instanceof CellLayout_Horizontal && i < editorCellCollection.getChildCount()) {
               EditorCell cell = editorCellCollection.getChildAt(i);
-              if (cell.getWidth() > maxWidth) {
-                maxWidth = cell.getWidth();
-              }
+              maxWidth = Math.max(maxWidth, cell.getWidth());
             }
           }
         }
-        for (Iterator iterator = editorCells.iterator(); iterator.hasNext();) {
-          EditorCell editorCell = (EditorCell) iterator.next();
+        for (EditorCell editorCell : editorCells) {
           if (editorCell instanceof EditorCell_Collection) {
             EditorCell_Collection editorCellCollection = (EditorCell_Collection) editorCell;
             CellLayout cellLayout = editorCellCollection.getCellLayout();
@@ -74,15 +69,14 @@ public class CellLayout_Vertical implements CellLayout {
         }
         x0 += maxWidth;
       }
-      for (Iterator iterator = editorCells.iterator(); iterator.hasNext();) {
-        EditorCell editorCell = (EditorCell) iterator.next();
+      for (EditorCell editorCell : editorCells) {
         if (editorCell instanceof EditorCell_Collection) {
           EditorCell_Collection editorCellCollection = (EditorCell_Collection) editorCell;
           CellLayout cellLayout = editorCellCollection.getCellLayout();
           if (cellLayout instanceof CellLayout_Horizontal) {
             int width0 = 0;
-            for (Iterator iterator0 = editorCellCollection.iterator(); iterator0.hasNext();) {
-              EditorCell cell = (EditorCell) iterator0.next();
+            for (Object aEditorCellCollection : editorCellCollection) {
+              EditorCell cell = (EditorCell) aEditorCellCollection;
               width0 += cell.getWidth();
             }
             editorCellCollection.setWidth(width0);
