@@ -1,5 +1,7 @@
 package jetbrains.mps.logging;
 
+import jetbrains.mps.ide.command.CommandProcessor;
+
 import java.util.Map;
 import java.util.HashMap;
 
@@ -79,6 +81,14 @@ public class Logger {
     if (!condition) {
       myLogger.error(message, new Throwable());
     }
+  }
+
+  public void assertInCommand() {
+    assertLog(CommandProcessor.instance().isInsideCommand(), "This action must be performed in command");
+  }
+
+  public void assertNotInCommand() {
+    assertLog(!CommandProcessor.instance().isInsideCommand(), "This action should be performed outside of command");
   }
 }
 
