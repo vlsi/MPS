@@ -731,6 +731,10 @@ public class ProjectPane extends JComponent {
         } else if (myLabel.startsWith("Typesystem")) {
           return Icons.TYPESYSTEM_MODEL_ICON;
         }
+      } else if (myModelDescriptor.getSModel() != null &&
+                 myModelDescriptor.getSModel().getStereotype() != null
+       && myModelDescriptor.getSModel().getStereotype().equals("generatorTemplates")) {
+        return Icons.TEMPLATES_MODEL_ICON;
       }
       return Icons.MODEL_ICON;
     }

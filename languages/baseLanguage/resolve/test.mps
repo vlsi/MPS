@@ -288,25 +288,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1120570837553">
-          <node role="expression" type="jetbrains.mps.baseLanguage.FieldReference" id="1120570837554">
-            <link role="variableDeclaration" targetNodeId="1120239030877" />
-            <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1120570837555" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1120570848868">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1120570848869">
-            <property name="name" value="new2" />
-            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1120570848870">
-              <link role="classifier" targetNodeId="1120132915670" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.NewExpression" id="1120570848871">
-              <node role="constructorCall" type="jetbrains.mps.baseLanguage.ConstructorCall" id="1120570848872">
-                <link role="baseMethodDeclaration" targetNodeId="1120569738663" />
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.StringType" id="1120146414228" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1120146414229">
