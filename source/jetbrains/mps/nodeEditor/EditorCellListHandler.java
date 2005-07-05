@@ -101,7 +101,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
       myInsertedNode = null;
       myInsertedNodeCell = null;
 
-//      editorContext.getNodeEditorComponent().relayout();
+      editorContext.getNodeEditorComponent().relayout();
     }
   }
 

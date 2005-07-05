@@ -480,6 +480,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void relayout() {
+    myRootCell.updateView();
     myRootCell.relayout();
     repaint();
   }
@@ -866,6 +867,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return;
     }
 
+    if (keyEvent.getKeyCode() == KeyEvent.VK_F6) {
+      relayout();
+      keyEvent.consume();
+      return;
+    }
+
     // dump cells tree starting from current
     if (keyEvent.getKeyCode() == KeyEvent.VK_D && keyEvent.isControlDown()) {
       if (mySelectedCell != null) {
@@ -997,7 +1004,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private class MyModelListener extends SModelAdapter {
     public void modelChanged(SModel semanticModel) {
-      myRootCell.updateView();
       relayout();
     }
 
