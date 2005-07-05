@@ -50,7 +50,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode {
     return false;
   }
 
-  protected final MPSTreeNode findNodeWith(Object userObject) {
+  public final MPSTreeNode findNodeWith(Object userObject) {
     if (getUserObject() == userObject) return this;
     if (initialized()) {
       for (int i = 0; i < getChildCount(); i++) {

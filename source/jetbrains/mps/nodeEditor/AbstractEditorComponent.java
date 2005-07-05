@@ -166,6 +166,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }, KeyStroke.getKeyStroke("ESCAPE"), WHEN_FOCUSED);
 
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        new CellExplorer(AbstractEditorComponent.this);
+      }
+    }, KeyStroke.getKeyStroke("F12"), WHEN_FOCUSED);
+
     addMouseListener(new MouseAdapter() {
       public void mousePressed(final MouseEvent e) {
         if (e.isPopupTrigger()) {

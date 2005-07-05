@@ -41,6 +41,8 @@ public abstract class MPSTree extends JTree {
         MPSTreeNode treeNode = (MPSTreeNode) node;
         if (!treeNode.initialized()) {
           treeNode.init();
+        } else {
+          treeNode.update();
         }
       }
 
