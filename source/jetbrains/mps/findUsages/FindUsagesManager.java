@@ -11,7 +11,7 @@ import java.util.*;
 public class FindUsagesManager {
   private MPSProject myProject;
 
-  public FindUsagesManager(MPSProject project) {
+  public FindUsagesManager(MPSProject project) {    
     myProject = project;
   }
 
