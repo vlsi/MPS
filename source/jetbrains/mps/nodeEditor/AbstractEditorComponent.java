@@ -891,7 +891,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       public void run() {
         if (peekKeyboardHandler().processKeyPressed(getContext(), keyEvent) == true) {
           keyEvent.consume();
-          repaint();
+          relayout();
           return;
         }
       }
