@@ -144,7 +144,7 @@ public class PasteUtil {
       return false;
     }
     if (reallyPaste) {       
-      CommandProcessor.instance().executeCommand(null, new Runnable() {//assertion fails here (nested commands deprecated
+      CommandProcessor.instance().executeCommandIfNotInCommand(new Runnable() {
         public void run() {
           if (linkDeclaration.getMetaClass() == LinkMetaclass.aggregation) {
             CommandUtil.insertChild(pasteTarget, anchorNode, linkDeclaration.getRole(), pasteNode, pasteBefore);
@@ -154,7 +154,7 @@ public class PasteUtil {
         //Add resolving here!
         Resolver.resolveAllReferences(pasteNode);
         }
-      }, "paste");
+      });
     }
     return true;
   }
