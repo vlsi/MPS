@@ -481,6 +481,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public void relayout() {
     myRootCell.relayout();
+    revalidate();
     repaint();
   }
 
