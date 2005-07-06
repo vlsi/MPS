@@ -18,12 +18,19 @@ public class ClassLoaderManager {
   }
 
   private ClassLoader myClassLoader = null;
+  private boolean myUseSystemClassLoader;
 
   public void reloadAll() {
     myClassLoader = null;
   }
 
+  public void setUseSystemClassLoader(boolean useSystemClassLoader) {
+    myUseSystemClassLoader = useSystemClassLoader;
+  }
+
   public ClassLoader getClassLoader() {
+    if (myUseSystemClassLoader) return ClassLoader.getSystemClassLoader();
+
     if (myClassLoader == null) {
       IdeMain ideMain = IdeMain.instance();
       if (ideMain.getProject() == null) {
