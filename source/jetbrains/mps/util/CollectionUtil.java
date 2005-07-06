@@ -9,6 +9,14 @@ import java.util.*;
  */
 public class CollectionUtil {
 
+  public static<T> List<T> asList(T... ts) {
+    List<T> result = new ArrayList<T>();
+    for (T t : ts) {
+      result.add(t);
+    }
+    return result;
+  }
+
   public static <T> List<T> iteratorAsList(Iterator<T> i) {
     List<T> result = new ArrayList<T>();
     while (i.hasNext()) {
