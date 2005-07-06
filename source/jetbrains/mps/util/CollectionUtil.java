@@ -9,6 +9,14 @@ import java.util.*;
  */
 public class CollectionUtil {
 
+  public static<T, F extends T> List<F> filter(Class<F> cls, List<T> l) {
+    List<F> result = new ArrayList<F>();
+    for (T t : l) {
+      if (cls.isInstance(t)) result.add((F) t);
+    }
+    return result;
+  }
+
   public static<T> List<T> asList(T... ts) {
     List<T> result = new ArrayList<T>();
     for (T t : ts) {
