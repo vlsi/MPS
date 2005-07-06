@@ -8,6 +8,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.resolve.BadReferentInfo;
 
 /**
  * Author: Sergey Dmitriev.
@@ -20,6 +21,16 @@ public class EditorManager {
 
   public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
     EditorCell editorCell = createEditorCell_internal(context, node);
+
+    SemanticNode sourceNode = (SemanticNode) editorCell.getUserObject(EditorCell.METAINFO_SOURCE_NODE);
+    BadReferentInfo badReferentInfo = (BadReferentInfo) node.getUserObject(SemanticNode.BAD_REFERENT_STATUS);
+
+    if (sourceNode != null && badReferentInfo != null) {
+      editorCell.setOutlined(badReferentInfo.mySourceNode == sourceNode);
+    } else {
+      editorCell.setOutlined(false);
+    }
+
     IStatus status = (IStatus) node.getUserObject(SemanticNode.ERROR_STATUS);
     if (status != null) {
       editorCell.setHighlighted(true);
