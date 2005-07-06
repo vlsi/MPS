@@ -29,6 +29,8 @@ public class Resolver {
 
   public static void processCopy(SemanticNode node) {
 
+    Cemetery.getInstance().exhumateOldTargets();
+
     List<SemanticReference> referenceList = getExternalReferences(node);
 
     for (SemanticReference reference : referenceList) {
