@@ -9,6 +9,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.datatransfer.PasteUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.ide.EditorsPane;
 
 import java.util.List;
 
@@ -51,5 +52,8 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
       PasteUtil.pasteRelative(anchorNode, node, false);
       anchorNode = node;
     }
+    EditorsPane editorsPane = context.getProject().getComponent(EditorsPane.class);
+    AbstractEditorComponent editor = editorsPane.getCurrentEditor();
+    editor.rebuildEditorContent();
   }
 }
