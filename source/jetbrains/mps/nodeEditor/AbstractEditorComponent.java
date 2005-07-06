@@ -480,7 +480,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void relayout() {
-    myRootCell.updateView();
     myRootCell.relayout();
     repaint();
   }
@@ -1005,6 +1004,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private class MyModelListener extends SModelAdapter {
     public void modelChanged(SModel semanticModel) {
+      myRootCell.updateView();
       relayout();
     }
 
