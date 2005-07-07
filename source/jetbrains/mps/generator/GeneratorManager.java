@@ -49,11 +49,12 @@ import java.util.List;
 public class GeneratorManager implements ExternalizableComponent, ComponentWithPreferences, LanguageOwner, ModelOwner {
   public static final Logger LOG = Logger.getLogger(GeneratorManager.class);
 
-  private static final boolean SAVE_TRANSIENT_MODELS = false;
-  public static final String COMPILE_ON_GENERATION = "compile-on-generation";
+  private static final String SAVE_TRANSIENT_MODELS = "save-transient-models-on-generation";
+  private static final String COMPILE_ON_GENERATION = "compile-on-generation";
 
   private MPSProject myProject;
   private boolean myCompileOnGeneration = true;
+  private boolean mySaveTransientModels;
 
   public GeneratorManager(MPSProject project) {
     myProject = project;
@@ -63,10 +64,14 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     if (element.getAttribute(COMPILE_ON_GENERATION) != null) {
       myCompileOnGeneration = Boolean.parseBoolean(element.getAttributeValue(COMPILE_ON_GENERATION));
     }
+    if (element.getAttribute(SAVE_TRANSIENT_MODELS) != null) {
+      mySaveTransientModels = Boolean.parseBoolean(element.getAttributeValue(SAVE_TRANSIENT_MODELS));
+    }
   }
 
   public void write(Element element) {
     element.setAttribute(COMPILE_ON_GENERATION, "" + myCompileOnGeneration);
+    element.setAttribute(SAVE_TRANSIENT_MODELS, "" + mySaveTransientModels);
   }
 
 
@@ -284,9 +289,9 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     while (roots.hasNext()) {
       SemanticNode root = roots.next();
       String content = generateText(root);
-      if(root instanceof Classifier) {
+      if (root instanceof Classifier) {
         javaFileGenerator.generateJavaFile((Classifier) root, content);
-      } else if(root instanceof Document) {
+      } else if (root instanceof Document) {
         xmlFileGenerator.generateXmlFile((Document) root, content);
       }
     }
@@ -462,7 +467,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
       currentSourceModel = currentTargetModel;
     }
 
-    if (SAVE_TRANSIENT_MODELS) {
+    if (mySaveTransientModels) {
       LOG.debug("SAVE TRANSIENT MODELS ...");
       String sourceModelDerectory = sourceModelDescr.getModelFile().getParent();
       SModelRepository modelRepository = SModelRepository.getInstance();
@@ -482,7 +487,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
 
     SModel lastTransientModel = transientModels.get(transientModels.size() - 1);
     SModel outputModel = null;
-    if (SAVE_TRANSIENT_MODELS) {
+    if (mySaveTransientModels) {
       outputModel = createOutputModel(outputModelNamespace, "", originalSourceModel, templatesModel);
       LOG.debug("COPY MODEL from: " + lastTransientModel.getFQName() + " to " + outputModel.getFQName());
       SModelUtil.cloneSModel(lastTransientModel, outputModel);
@@ -528,13 +533,19 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
   private class MyPreferencesPage implements PreferencesPage {
     private JPanel myPage;
     private JCheckBox myCompileInIdeaOnGeneration = new JCheckBox("Compile in IntelliJ IDEA on generation");
+    private JCheckBox mySaveTransientModelsCheckBox = new JCheckBox("Save transient models on generation");
 
     public MyPreferencesPage() {
+      myCompileInIdeaOnGeneration.setSelected(myCompileOnGeneration);
+      mySaveTransientModelsCheckBox.setSelected(mySaveTransientModels);
+
+      JPanel optionsPanel = new JPanel(new GridLayout(2, 1));
+      optionsPanel.add(myCompileInIdeaOnGeneration);
+      optionsPanel.add(mySaveTransientModelsCheckBox);
+
       myPage = new JPanel(new BorderLayout());
       myPage.setBorder(new EmptyBorder(10, 10, 10, 10));
-      myCompileInIdeaOnGeneration.setSelected(myCompileOnGeneration);
-
-      myPage.add(myCompileInIdeaOnGeneration, BorderLayout.NORTH);
+      myPage.add(optionsPanel, BorderLayout.NORTH);
     }
 
     public String getName() {
@@ -551,6 +562,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
 
     public void commit() {
       myCompileOnGeneration = myCompileInIdeaOnGeneration.isSelected();
+      mySaveTransientModels = mySaveTransientModelsCheckBox.isSelected();
     }
   }
 }
