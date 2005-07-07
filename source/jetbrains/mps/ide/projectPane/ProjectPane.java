@@ -275,7 +275,7 @@ public class ProjectPane extends JComponent {
                   try {
                     SModel m1 = model.getSModel();
                     SModel m2 = ModelPersistence.readModel(plugin.getContentsFor(path, r.myRevision));
-                    new ModelDiffDialog(m1, m2);
+                    new ModelDiffDialog(m2, m1);
                   } catch (Exception ex) {
                     LOG.error(ex);
                   }
