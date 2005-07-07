@@ -27,8 +27,14 @@ import jetbrains.mps.projectLanguage.ProjectModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.semanticModel.event.*;
+import jetbrains.mps.plugin.MPSPlugin;
+import jetbrains.mps.plugin.Revision;
+import jetbrains.mps.vcs.ModelDiff;
+import jetbrains.mps.vcs.ModelDiffDialog;
 
 import javax.swing.*;
+import javax.swing.event.MenuListener;
+import javax.swing.event.MenuEvent;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
@@ -37,6 +43,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 import java.util.List;
+import java.io.File;
 
 /**
  * Author: Sergey Dmitriev
@@ -226,6 +233,8 @@ public class ProjectPane extends JComponent {
 
     if (getSelectedModel() != null) {
       popupMenu.addSeparator();
+      addCompareWithVCSMenu(popupMenu, getSelectedModel());
+      popupMenu.addSeparator();
       popupMenu.add(new AbstractAction("Model Properties", Icons.MODEL_PROPERTIES_ICON) {
         public void actionPerformed(ActionEvent e) {
           DialogUtils.editModelProperties(myIDE);
@@ -236,6 +245,49 @@ public class ProjectPane extends JComponent {
     if (popupMenu.getComponentCount() == 0) return;
 
     popupMenu.show(myTree, e.getX(), e.getY());
+  }
+
+  private void addCompareWithVCSMenu(final JPopupMenu menu, final SModelDescriptor model) {
+    final JMenu compareWith = new JMenu("Compare With");
+    compareWith.setIcon(MPSAction.EMPTY_ICON);
+    menu.add(compareWith);
+    compareWith.addMenuListener(new MenuListener() {
+      public void menuDeselected(MenuEvent e) {
+      }
+
+      public void menuCanceled(MenuEvent e) {
+      }
+
+      public void menuSelected(MenuEvent e) {
+        try {
+          compareWith.removeAll();
+          final MPSPlugin plugin = MPSPlugin.getInstance();
+          final String path = model.getModelFile().getAbsolutePath();
+          if (!plugin.isVersionControlPresent(path)) {
+            JMenuItem dummy = new JMenuItem("<NOT VERSIONED>");
+            dummy.setIcon(MPSAction.EMPTY_ICON);
+            compareWith.add(dummy);
+          } else {
+            List<Revision> revs = plugin.getRevisionsFor(path);
+            for (final Revision r : revs) {
+              compareWith.add(new AbstractActionWithEmptyIcon(r.myRevision + " " + r.myAuthor + " " + r.myComment) {
+                public void actionPerformed(ActionEvent e) {
+                  try {
+                    SModel m1 = model.getSModel();
+                    SModel m2 = ModelPersistence.readModel(plugin.getContentsFor(path, r.myRevision));
+                    new ModelDiffDialog(m1, m2);
+                  } catch (Exception ex) {
+                    LOG.error(ex);
+                  }
+                }
+              });
+            }
+          }
+        } catch (Exception exc) {
+          LOG.error(exc);
+        }
+      }
+    });
   }
 
   private JMenu createGenerateMenu(final SModelDescriptor model) {

@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.ArrayList;
 import java.io.IOException;
 
-import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.IModelGenerator;
 
 /**
@@ -142,10 +141,17 @@ public class MPSPlugin {
     return (Boolean) myClient.execute("MPSSupport.isVCSSupported", params);
   }
 
-  public Vector getVersionsFor(String path) throws IOException, XmlRpcException {
+  public List<Revision> getRevisionsFor(String path) throws IOException, XmlRpcException {
     Vector params = new Vector();
     params.add(path);
-    return (Vector) myClient.execute("MPSSupport.getVersionsFor", params);
+    Vector<String> vector =  (Vector) myClient.execute("MPSSupport.getVersionsFor", params);
+    List<Revision> result = new ArrayList<Revision>();
+    for (int i = 0; i < vector.size() / 3; i++) {
+      int offset = i * 3;
+      result.add(new Revision(vector.get(offset), vector.get(offset + 1), vector.get(offset + 2)));
+    }
+
+    return result;
   }
 
   public byte[] getContentsFor(String path, String revision) throws IOException, XmlRpcException {
