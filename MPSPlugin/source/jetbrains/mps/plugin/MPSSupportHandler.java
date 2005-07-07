@@ -3,22 +3,26 @@ package jetbrains.mps.plugin;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.compiler.CompileStatusNotification;
+import com.intellij.openapi.compiler.CompilerManager;
+import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.module.ModuleType;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.*;
-import com.intellij.openapi.roots.libraries.LibraryTablesRegistrar;
-import com.intellij.openapi.roots.libraries.LibraryTable;
 import com.intellij.openapi.roots.libraries.Library;
-import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.roots.libraries.LibraryTable;
+import com.intellij.openapi.roots.libraries.LibraryTablesRegistrar;
+import com.intellij.openapi.vcs.AbstractVcs;
+import com.intellij.openapi.vcs.FilePathImpl;
+import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.vcs.VcsException;
+import com.intellij.openapi.vcs.history.VcsFileRevision;
+import com.intellij.openapi.vcs.history.VcsHistorySession;
 import com.intellij.openapi.vfs.LocalFileSystem;
-import com.intellij.openapi.vfs.JarFileSystem;
-import com.intellij.openapi.vfs.VfsUtil;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.WindowManager;
-import com.intellij.openapi.compiler.CompilerManager;
-import com.intellij.openapi.compiler.CompileStatusNotification;
-import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.psi.*;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.PsiSearchHelper;
@@ -26,12 +30,12 @@ import com.intellij.util.IncorrectOperationException;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.lang.reflect.InvocationTargetException;
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
 
 /**
  * @author Kostik
@@ -108,6 +112,71 @@ public class MPSSupportHandler implements ProjectComponent {
       }
     });
     return "OK";
+  }
+
+  public boolean isVCSSupported(final String path) {
+    final boolean[] result = new boolean[1];
+    ApplicationManager.getApplication().runReadAction(new Runnable() {
+      public void run() {
+        ProjectLevelVcsManager manager = myProject.getComponent(ProjectLevelVcsManager.class);
+        VirtualFile file = LocalFileSystem.getInstance().findFileByIoFile(new File(path));
+        if (manager.getVcsFor(file) != null) {
+          result[0] = true;
+        } else {
+          result[0] = false;
+        }
+      }
+    });
+    return result[0];
+  }
+
+  public Vector getVersionsFor(final String path) {
+    final Vector result = new Vector();
+    executeWriteAction(new Runnable() {
+      public void run() {
+        try {
+          ProjectLevelVcsManager manager = myProject.getComponent(ProjectLevelVcsManager.class);
+          VirtualFile file = LocalFileSystem.getInstance().findFileByIoFile(new File(path));
+          AbstractVcs vcs = manager.getVcsFor(file);
+          VcsHistorySession session = vcs.getVcsHistoryProvider().createSessionFor(new FilePathImpl(file));
+
+          List<VcsFileRevision> revisions = session.getRevisionList();
+          for (VcsFileRevision r : revisions) {
+            result.add(r.getRevisionNumber().asString());
+            result.add(r.getAuthor());
+            result.add(r.getCommitMessage());
+          }
+        } catch (VcsException e) {
+          e.printStackTrace();
+        }
+      }
+    });
+    return result;
+  }
+
+  public byte[] getContentsForRevision(final String path, final String revision) {
+    final byte[][] result = new byte[1][];
+    executeWriteAction(new Runnable() {
+      public void run() {
+        try {
+          ProjectLevelVcsManager manager = myProject.getComponent(ProjectLevelVcsManager.class);
+          VirtualFile file = LocalFileSystem.getInstance().findFileByIoFile(new File(path));
+          AbstractVcs vcs = manager.getVcsFor(file);
+          VcsHistorySession session = vcs.getVcsHistoryProvider().createSessionFor(new FilePathImpl(file));
+
+          List<VcsFileRevision> revisions = session.getRevisionList();
+          for (VcsFileRevision r : revisions) {
+            if (r.getRevisionNumber().asString().equals(revision)) {
+              r.loadContent();
+              result[0] = r.getContent();
+            }
+          }
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
+      }
+    });
+    return result[0];
   }
 
 
@@ -392,7 +461,6 @@ public class MPSSupportHandler implements ProjectComponent {
   public boolean isAspectsClassExist(final String namespace) {
     return getAspectsClass(namespace) != null;
   }
-
 
   private void executeWriteAction(final Runnable runnable) {
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {

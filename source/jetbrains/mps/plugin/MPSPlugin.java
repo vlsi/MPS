@@ -136,6 +136,25 @@ public class MPSPlugin {
     myClient.execute("ProjectCreator.createNewProject", params);
   }
 
+  public boolean isVersionControlPresent(String path) throws IOException, XmlRpcException {
+    Vector params = new Vector();
+    params.add(path);
+    return (Boolean) myClient.execute("MPSSupport.isVCSSupported", params);
+  }
+
+  public Vector getVersionsFor(String path) throws IOException, XmlRpcException {
+    Vector params = new Vector();
+    params.add(path);
+    return (Vector) myClient.execute("MPSSupport.getVersionsFor", params);
+  }
+
+  public byte[] getContentsFor(String path, String revision) throws IOException, XmlRpcException {
+    Vector params = new Vector();
+    params.add(path);
+    params.add(revision);    
+    return (byte[]) myClient.execute("MPSSupport.getContentsForRevision", params);
+  }
+
   public boolean isIDEAPresent() {
     try {
       myClient.execute("ProjectCreator.ping", new Vector());

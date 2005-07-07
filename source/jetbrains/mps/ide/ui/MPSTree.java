@@ -51,6 +51,18 @@ public abstract class MPSTree extends JTree {
 
   protected abstract MPSTreeNode rebuild();
 
+  public void expandAll() {
+    MPSTreeNode node = (MPSTreeNode) getModel().getRoot();
+    expandAll(node);
+  }
+
+  private void expandAll(MPSTreeNode node) {
+    expandPath(new TreePath(node.getPath()));
+    for (int i = 0; i < node.getChildCount(); i++) {
+      expandAll((MPSTreeNode) node.getChildAt(i));      
+    }
+  }
+
   protected void selectNode(TreeNode node) {
     List<TreeNode> nodes = new ArrayList<TreeNode>();
     while (node != null) {
