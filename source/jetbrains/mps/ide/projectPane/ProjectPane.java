@@ -252,6 +252,9 @@ public class ProjectPane extends JComponent {
     compareWith.setIcon(MPSAction.EMPTY_ICON);
     menu.add(compareWith);
     compareWith.addMenuListener(new MenuListener() {
+      public static final int ITEM_LENGTH = 60;
+      public static final int LEVEL_SIZE = 30;
+
       public void menuDeselected(MenuEvent e) {
       }
 
@@ -269,8 +272,12 @@ public class ProjectPane extends JComponent {
             compareWith.add(dummy);
           } else {
             List<Revision> revs = plugin.getRevisionsFor(path);
+
+            JMenu current = compareWith;
             for (final Revision r : revs) {
-              compareWith.add(new AbstractActionWithEmptyIcon(r.myRevision + " " + r.myAuthor + " " + r.myComment) {
+              String actionText = r.myRevision + " " + r.myAuthor + " " + r.myComment;
+              if (actionText.length() > ITEM_LENGTH) actionText = actionText.subSequence(0, ITEM_LENGTH - 3) + "...";
+              current.add(new AbstractActionWithEmptyIcon(actionText) {
                 public void actionPerformed(ActionEvent e) {
                   try {
                     SModel m1 = model.getSModel();
@@ -281,6 +288,12 @@ public class ProjectPane extends JComponent {
                   }
                 }
               });
+              if (current.getItemCount() >= LEVEL_SIZE) {
+                JMenu moreMenu = new JMenu("More...");
+                moreMenu.setIcon(MPSAction.EMPTY_ICON);
+                current.add(moreMenu);
+                current = moreMenu;
+              }
             }
           }
         } catch (Exception exc) {
