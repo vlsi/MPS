@@ -27,7 +27,7 @@ public class Resolver {
   }
 
 
-  public static void processCopy(SemanticNode node) {
+/*  public static void processCopy(SemanticNode node) {
 
     Cemetery.getInstance().exhumateOldTargets();
 
@@ -37,9 +37,9 @@ public class Resolver {
       Cemetery.getInstance().registerNode(reference.getTargetNode(), new ReferrerInfo(reference.getRole(), reference.getSourceNode()));
     }
 
-  }
+  }*/
 
-  public static void processChange(SemanticNode node) {
+ /* public static void processChange(SemanticNode node) {
     SModel model = node.getModel();
     model.setLoading(true);
     Cemetery.getInstance().buryNode(node);
@@ -49,7 +49,7 @@ public class Resolver {
   public static void processDelete(SemanticNode node) {
     //Cemetery.getInstance().buryNode(node);
     processChange(node);
-  }
+  }*/
 
 
   public static List<SemanticReference> getExternalReferences(SemanticNode node) {
@@ -106,10 +106,12 @@ public class Resolver {
         model.setLoading(false);
         if (success) {
           reference.setGood();
-          Cemetery.getInstance().unregisterNode(oldTarget, new ReferrerInfo(role, sourceNode));
+          Cemetery.getInstance().exhumateNode(oldTarget);
+          //Cemetery.getInstance().unregisterNode(oldTarget, new ReferrerInfo(role, sourceNode));
         } else {
           reference.setBad();
-          Cemetery.getInstance().registerNode(oldTarget, new ReferrerInfo(role, sourceNode));
+          //Cemetery.getInstance().registerNode(oldTarget, new ReferrerInfo(role, sourceNode));
+          Cemetery.getInstance().buryNode(oldTarget, reference);
         }
         return;
       } catch (NullPointerException e) {

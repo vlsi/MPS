@@ -14,6 +14,7 @@ import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.resolve.Resolver;
+import jetbrains.mps.resolve.Cemetery;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.textLanguage.Sentence;
 import jetbrains.textLanguage.Word;
@@ -154,7 +155,10 @@ public class PasteUtil {
             CommandUtil.insertReferent(pasteTarget, anchorNode, linkDeclaration.getRole(), pasteNode, pasteBefore);
           }
         //Add resolving here!
+
+
         Resolver.resolveAllReferences(pasteNode);
+
         }
       });
     }
