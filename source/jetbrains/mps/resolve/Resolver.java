@@ -40,7 +40,10 @@ public class Resolver {
   }
 
   public static void processChange(SemanticNode node) {
+    SModel model = node.getModel();
+    model.setLoading(true);
     Cemetery.getInstance().buryNode(node);
+    model.setLoading(false);
   }
 
   public static void processDelete(SemanticNode node) {
@@ -103,7 +106,7 @@ public class Resolver {
         model.setLoading(false);
         if (success) {
           reference.setGood();
-          Cemetery.getInstance().unregisterNode(oldTarget);
+          Cemetery.getInstance().unregisterNode(oldTarget, new ReferrerInfo(role, sourceNode));
         } else {
           reference.setBad();
           Cemetery.getInstance().registerNode(oldTarget, new ReferrerInfo(role, sourceNode));
