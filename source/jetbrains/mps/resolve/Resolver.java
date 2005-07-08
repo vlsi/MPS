@@ -34,13 +34,18 @@ public class Resolver {
     List<SemanticReference> referenceList = getExternalReferences(node);
 
     for (SemanticReference reference : referenceList) {
-      Cemetery.getInstance().registerNode(reference.getTargetNode());
+      Cemetery.getInstance().registerNode(reference.getTargetNode(), new ReferrerInfo(reference.getRole(), reference.getSourceNode()));
     }
 
   }
 
-  public static void processDelete(SemanticNode node) {
+  public static void processChange(SemanticNode node) {
     Cemetery.getInstance().buryNode(node);
+  }
+
+  public static void processDelete(SemanticNode node) {
+    //Cemetery.getInstance().buryNode(node);
+    processChange(node);
   }
 
 
@@ -101,7 +106,7 @@ public class Resolver {
           Cemetery.getInstance().unregisterNode(oldTarget);
         } else {
           reference.setBad();
-          Cemetery.getInstance().registerNode(oldTarget);
+          Cemetery.getInstance().registerNode(oldTarget, new ReferrerInfo(role, sourceNode));
         }
         return;
       } catch (NullPointerException e) {
