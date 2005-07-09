@@ -18,6 +18,8 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TreeWithSemanticNodesSpeedSearch;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugin.MPSPlugin;
+import jetbrains.mps.plugin.Revision;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjectCommandListener;
@@ -27,14 +29,11 @@ import jetbrains.mps.projectLanguage.ProjectModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.semanticModel.event.*;
-import jetbrains.mps.plugin.MPSPlugin;
-import jetbrains.mps.plugin.Revision;
-import jetbrains.mps.vcs.ModelDiff;
 import jetbrains.mps.vcs.ModelDiffDialog;
 
 import javax.swing.*;
-import javax.swing.event.MenuListener;
 import javax.swing.event.MenuEvent;
+import javax.swing.event.MenuListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
@@ -43,7 +42,6 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 import java.util.List;
-import java.io.File;
 
 /**
  * Author: Sergey Dmitriev
@@ -669,7 +667,7 @@ public class ProjectPane extends JComponent {
   }
 
   private class LanguageEditorsTreeNode extends MPSTree.TextTreeNode {
-    public LanguageEditorsTreeNode(String text){
+    public LanguageEditorsTreeNode(String text) {
       super(text);
     }
 
@@ -784,21 +782,20 @@ public class ProjectPane extends JComponent {
     }
 
     public Icon getIcon(boolean expanded) {
-      if (myLabel != null){
-        if (myLabel.startsWith("<html><b>Editor</b>") || myLabel.startsWith("Editor")){
+      if (myLabel != null) {
+        if (myLabel.startsWith("<html><b>Editor</b>") || myLabel.startsWith("Editor")) {
           return Icons.EDITOR_MODEL_ICON;
-        } else if (myLabel.startsWith("Structure")){
+        } else if (myLabel.startsWith("Structure")) {
           return Icons.STRUCTURE_MODEL_ICON;
-        } else if (myLabel.startsWith("Templates")){
+        } else if (myLabel.startsWith("Templates")) {
           return Icons.TEMPLATES_MODEL_ICON;
         } else if (myLabel.startsWith("Actions")) {
           return Icons.ACTIONS_MODEL_ICON;
         } else if (myLabel.startsWith("Typesystem")) {
           return Icons.TYPESYSTEM_MODEL_ICON;
         }
-      } else if (myModelDescriptor.getSModel() != null &&
-                 myModelDescriptor.getSModel().getStereotype() != null
-       && myModelDescriptor.getSModel().getStereotype().equals("generatorTemplates")) {
+      } else if (myModelDescriptor.getStereotype() != null &&
+              myModelDescriptor.getStereotype().equals("generatorTemplates")) {
         return Icons.TEMPLATES_MODEL_ICON;
       }
       return Icons.MODEL_ICON;
@@ -1004,7 +1001,7 @@ public class ProjectPane extends JComponent {
   }
 
   private class GeneratorsTreeNode extends MPSTree.TextTreeNode {
-    public GeneratorsTreeNode(String text){
+    public GeneratorsTreeNode(String text) {
       super(text);
     }
 
