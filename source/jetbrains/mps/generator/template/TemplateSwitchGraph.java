@@ -2,6 +2,7 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SModelDescriptor;
 import jetbrains.mps.transformation.TLBase.TemplateSwitch;
 
 import java.util.*;
@@ -34,9 +35,9 @@ public class TemplateSwitchGraph {
       }
     }
 
-    Iterator<SModel> iterator = templatesModel.importedModels();
+    Iterator<SModelDescriptor> iterator = templatesModel.importedModels();
     while (iterator.hasNext()) {
-      SModel importedModel = iterator.next();
+      SModel importedModel = iterator.next().getSModel();
       if (importedModel.importsLanguage("jetbrains.mps.transformation.TLBase")) {
         processTemplatesModel(importedModel, processedModes);
       }

@@ -21,9 +21,9 @@ import jetbrains.mps.nodeEditor.test.EventRecorder;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.semanticModel.SModel;
-import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.semanticModel.SModelAdapter;
-import jetbrains.mps.semanticModel.event.SModelChildEvent;
+import jetbrains.mps.semanticModel.SModelDescriptor;
+import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.util.CopyUtil;
 
 import javax.swing.*;
@@ -64,7 +64,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private NodeSubstituteChooser myNodeSubstituteChooser;
   private HashMap myUserDataMap = new HashMap();
 
-  private MyModelListener mySemanticModelListener = new MyModelListener();
+  private MyModelListener myModelListener = new MyModelListener();
 
   private List<ICellSelectionListener> mySelectionListeners = new LinkedList<ICellSelectionListener>();
   private KeyListener myKeyListener;
@@ -341,7 +341,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     SemanticNode semanticNode = myRootCell.getSemanticNode();
     if (semanticNode != null) {
       SModel semanticModel = semanticNode.getModel();
-      semanticModel.removeSModelListener(mySemanticModelListener);
+      semanticModel.removeSModelListener(myModelListener);
     }
   }
 
@@ -350,7 +350,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       SemanticNode semanticNode = myRootCell.getSemanticNode();
       if (semanticNode != null) {
         SModel semanticModel = semanticNode.getModel();
-        semanticModel.removeSModelListener(mySemanticModelListener);
+        semanticModel.removeSModelListener(myModelListener);
       }
     }
 
@@ -359,30 +359,37 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myRootCell.setY(myShiftY);
     myRootCell.relayout();
 
-    SemanticNode semanticNode = myRootCell.getSemanticNode();
-    if (semanticNode != null) {
-      SModel semanticModel = semanticNode.getModel();
-      if (!semanticModel.hasSModelListener(mySemanticModelListener)) {
-        semanticModel.addSModelListener(mySemanticModelListener);
+    SemanticNode node = myRootCell.getSemanticNode();
+    if (node != null) {
+      SModel model = node.getModel();
+      if (!model.hasSModelListener(myModelListener)) {
+        model.addSModelListener(myModelListener);
       }
-      addImportedModelsToListener(semanticModel);
+      Iterator<SModelDescriptor> iterator = model.importedModels();
+      while (iterator.hasNext()) {
+        SModelDescriptor imported = iterator.next();
+        imported.addSModelListener(myModelListener);
+        imported.addSModelListenerToImportedModels(myModelListener);
+      }
+
+//      addImportedModelsToListener(model);
     }
 
     revalidate();
     repaint();
   }
 
-  private void addImportedModelsToListener(SModel semanticModel) {
-    Iterator<SModel> importedModels = semanticModel.importedModels();
-    if (importedModels != null) {
-      while (importedModels.hasNext()) {
-        SModel importedModel = importedModels.next();
-        if (importedModel.hasSModelListener(mySemanticModelListener)) continue;
-        importedModel.addSModelListener(mySemanticModelListener);
-        addImportedModelsToListener(importedModel);
-      }
-    }
-  }
+//  private void addImportedModelsToListener(SModelDescriptor modelDescriptor) {
+//    Iterator<SModelDescriptor> importedModels = modelDescriptor.importedModels();
+//    if (importedModels != null) {
+//      while (importedModels.hasNext()) {
+//        SModel importedModel = importedModels.next();
+//        if (importedModel.hasSModelListener(myModelListener)) continue;
+//        importedModel.addSModelListener(myModelListener);
+//        addImportedModelsToListener(importedModel);
+//      }
+//    }
+//  }
 
   public EditorCell getRootCell() {
     return myRootCell;
@@ -931,8 +938,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return activateNodeSubstituteChooser(editorCell, substituteInfo, resetPattern);
   }
 
-  public boolean activateNodeSubstituteChooser(EditorCell editorCell, INodeSubstituteInfo substituteInfo, boolean resetPattern)
-  {
+  public boolean activateNodeSubstituteChooser(EditorCell editorCell, INodeSubstituteInfo substituteInfo, boolean resetPattern) {
     if (substituteInfo == null) {
       return false;
     }

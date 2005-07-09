@@ -9,6 +9,7 @@ package jetbrains.mps.generator;
 import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SModelDescriptor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.messages.MessageView;
 
@@ -49,8 +50,19 @@ public abstract class AbstractModelGenerator implements IModelGenerator {
     myTargetModel = targetModel;
   }
 
-  protected void clearAllUserObjects(SModel semanticModel) {
-    List<SModel> modelsList = allDependentModels(semanticModel);
+  protected void clearAllUserObjects(SModel sourceModel) {
+    List<SModelDescriptor> list = new LinkedList<SModelDescriptor>();
+    Iterator<SModelDescriptor> iterator = sourceModel.importedModels();
+    while (iterator.hasNext()) {
+      SModelDescriptor modelDescriptor = iterator.next();
+      allDependentModels(modelDescriptor, list);
+    }
+
+    List<SModel> modelsList = new LinkedList<SModel>();
+    modelsList.add(sourceModel);
+    for (SModelDescriptor descriptor : list) {
+      modelsList.add(descriptor.getSModel());
+    }
     Iterator<SModel> models = modelsList.iterator();
     while (models.hasNext()) {
       SModel model = models.next();
@@ -62,29 +74,18 @@ public abstract class AbstractModelGenerator implements IModelGenerator {
     }
   }
 
-
-  private static List<SModel> allDependentModels(SModel semanticModel) {
-    return allDependentModels(semanticModel, new LinkedList<SModel>());
-  }
-
-  private static List<SModel> allDependentModels(SModel semanticModel, List<SModel> modelList) {
-    modelList.add(semanticModel);
-    Iterator<SModel> imports = semanticModel.importedModels();
+  private static List<SModelDescriptor> allDependentModels(SModelDescriptor modelDescriptor, List<SModelDescriptor> list) {
+    if(!modelDescriptor.isInitialized()) {
+      return list;
+    }
+    list.add(modelDescriptor);
+    Iterator<SModelDescriptor> imports = modelDescriptor.getSModel().importedModels();
     while (imports.hasNext()) {
-      SModel imported = imports.next();
-      if (!modelList.contains(imported)) {
-        allDependentModels(imported, modelList);
+      SModelDescriptor imported = imports.next();
+      if (!list.contains(imported)) {
+        allDependentModels(imported, list);
       }
     }
-    Iterator<SModel> languages = semanticModel.importedModels();
-    while (languages.hasNext()) {
-      SModel language = languages.next();
-      if (!modelList.contains(language)) {
-        allDependentModels(language, modelList);
-      }
-    }
-    return modelList;
+    return list;
   }
-
-
 }
