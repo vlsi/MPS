@@ -22,6 +22,10 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode {
     return true;
   }
 
+  protected JPopupMenu getPopupMenu() {
+    return null;
+  }
+
   protected void dispose() {
   }
 

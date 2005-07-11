@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  * @author Kostik
@@ -29,7 +31,7 @@ public abstract class MPSTree extends JTree {
         if (value instanceof MPSTreeNode) {
           MPSTreeNode node = (MPSTreeNode) value;
           setIcon(node.getIcon(expanded));
-        }        
+        }
         return this;
       }
     });
@@ -47,6 +49,28 @@ public abstract class MPSTree extends JTree {
       public void treeWillCollapse(TreeExpansionEvent event) throws ExpandVetoException {
       }
     });
+
+    addMouseListener(new MouseAdapter() {
+      public void mousePressed(MouseEvent e) {
+        if (e.isPopupTrigger()) showPopup(e);
+      }
+
+      public void mouseReleased(MouseEvent e) {
+        if (e.isPopupTrigger()) showPopup(e);
+      }
+    });
+  }
+
+  private void showPopup(MouseEvent e) {
+    TreePath path = getPathForLocation(e.getX(), e.getY());
+    if (path == null) return;
+    if (path.getLastPathComponent() instanceof MPSTreeNode) {
+      MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
+      JPopupMenu menu = node.getPopupMenu();
+      if (menu == null) return;
+      setSelectionPath(path);
+      menu.show(this, e.getX(), e.getY());
+    }
   }
 
   protected abstract MPSTreeNode rebuild();
@@ -59,7 +83,7 @@ public abstract class MPSTree extends JTree {
   private void expandAll(MPSTreeNode node) {
     expandPath(new TreePath(node.getPath()));
     for (int i = 0; i < node.getChildCount(); i++) {
-      expandAll((MPSTreeNode) node.getChildAt(i));      
+      expandAll((MPSTreeNode) node.getChildAt(i));
     }
   }
 
