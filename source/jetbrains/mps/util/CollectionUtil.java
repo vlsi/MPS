@@ -17,6 +17,14 @@ public class CollectionUtil {
     return result;
   }
 
+  public static <T, F extends T> Set<F> filter(Class<F> cls, Set<T> s) {
+    Set<F> result = new HashSet<F>();
+    for (T t : s) {
+      if (cls.isInstance(t)) result.add((F) t);
+    }
+    return  result;
+  }
+
   public static<T> List<T> asList(T... ts) {
     List<T> result = new ArrayList<T>();
     for (T t : ts) {
