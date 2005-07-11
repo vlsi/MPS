@@ -28,6 +28,7 @@ import jetbrains.mps.projectLanguage.ProjectModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.semanticModel.vcs.Revision;
+import jetbrains.mps.semanticModel.vcs.VersionControl;
 import jetbrains.mps.semanticModel.event.*;
 import jetbrains.mps.vcs.ModelDiffDialog;
 
@@ -262,14 +263,13 @@ public class ProjectPane extends JComponent {
       public void menuSelected(MenuEvent e) {
         try {
           compareWith.removeAll();
-          final MPSPlugin plugin = MPSPlugin.getInstance();
-          final String path = model.getModelFile().getAbsolutePath();
-          if (!plugin.isVersionControlPresent(path)) {
+          final VersionControl vcs = model.getVersionControl();          
+          if (!vcs.isUnderVersionControl()) {
             JMenuItem dummy = new JMenuItem("<NOT VERSIONED>");
             dummy.setIcon(MPSAction.EMPTY_ICON);
             compareWith.add(dummy);
           } else {
-            List<Revision> revs = plugin.getRevisionsFor(path);
+            List<Revision> revs = vcs.getRevisions();
 
             JMenu current = compareWith;
             for (final Revision r : revs) {
@@ -279,7 +279,7 @@ public class ProjectPane extends JComponent {
                 public void actionPerformed(ActionEvent e) {
                   try {
                     SModel m1 = model.getSModel();
-                    SModel m2 = ModelPersistence.readModel(plugin.getContentsFor(path, r.getRevision()));
+                    SModel m2 = vcs.getRevision(r.getRevision());
                     m2.setNamespace("");
                     m2.setName(r.getRevision());
                     new ModelDiffDialog(m2, m1);
