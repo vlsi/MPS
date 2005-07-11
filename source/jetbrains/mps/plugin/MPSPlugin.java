@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 
 import jetbrains.mps.generator.IModelGenerator;
+import jetbrains.mps.semanticModel.vcs.Revision;
 
 /**
  * @author Kostik
@@ -99,7 +100,7 @@ public class MPSPlugin {
   }
 
   public void openClass(Class cls) throws IOException, XmlRpcException {
-    openClass(cls.getName());    
+    openClass(cls.getName());
   }
 
   public void addImport(String namespace, String fqName) throws IOException, XmlRpcException {
@@ -157,7 +158,7 @@ public class MPSPlugin {
   public byte[] getContentsFor(String path, String revision) throws IOException, XmlRpcException {
     Vector params = new Vector();
     params.add(path);
-    params.add(revision);    
+    params.add(revision);
     return (byte[]) myClient.execute("MPSSupport.getContentsForRevision", params);
   }
 

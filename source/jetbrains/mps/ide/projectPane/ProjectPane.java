@@ -19,7 +19,6 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TreeWithSemanticNodesSpeedSearch;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.MPSPlugin;
-import jetbrains.mps.plugin.Revision;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjectCommandListener;
@@ -28,6 +27,7 @@ import jetbrains.mps.projectLanguage.GeneratorConfiguration;
 import jetbrains.mps.projectLanguage.ProjectModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.semanticModel.*;
+import jetbrains.mps.semanticModel.vcs.Revision;
 import jetbrains.mps.semanticModel.event.*;
 import jetbrains.mps.vcs.ModelDiffDialog;
 
@@ -273,15 +273,15 @@ public class ProjectPane extends JComponent {
 
             JMenu current = compareWith;
             for (final Revision r : revs) {
-              String actionText = r.myRevision + " " + r.myAuthor + " " + r.myComment;
+              String actionText = r.getRevision() + " " + r.getAuthor() + " " + r.getComment();
               if (actionText.length() > ITEM_LENGTH) actionText = actionText.subSequence(0, ITEM_LENGTH - 3) + "...";
               current.add(new AbstractActionWithEmptyIcon(actionText) {
                 public void actionPerformed(ActionEvent e) {
                   try {
                     SModel m1 = model.getSModel();
-                    SModel m2 = ModelPersistence.readModel(plugin.getContentsFor(path, r.myRevision));
+                    SModel m2 = ModelPersistence.readModel(plugin.getContentsFor(path, r.getRevision()));
                     m2.setNamespace("");
-                    m2.setName(r.myRevision);
+                    m2.setName(r.getRevision());
                     new ModelDiffDialog(m2, m1);
                   } catch (Exception ex) {
                     LOG.error(ex);
