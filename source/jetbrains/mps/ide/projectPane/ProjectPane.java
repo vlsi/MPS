@@ -18,7 +18,6 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TreeWithSemanticNodesSpeedSearch;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjectCommandListener;
@@ -27,14 +26,9 @@ import jetbrains.mps.projectLanguage.GeneratorConfiguration;
 import jetbrains.mps.projectLanguage.ProjectModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.semanticModel.*;
-import jetbrains.mps.semanticModel.vcs.Revision;
-import jetbrains.mps.semanticModel.vcs.VersionControl;
 import jetbrains.mps.semanticModel.event.*;
-import jetbrains.mps.vcs.ModelDiffDialog;
 
 import javax.swing.*;
-import javax.swing.event.MenuEvent;
-import javax.swing.event.MenuListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
@@ -232,7 +226,7 @@ public class ProjectPane extends JComponent {
 
     if (getSelectedModel() != null) {
       popupMenu.addSeparator();
-      addCompareWithVCSMenu(popupMenu, getSelectedModel());
+      addVCSMenu(popupMenu, getSelectedModel());
       popupMenu.addSeparator();
       popupMenu.add(new AbstractAction("Model Properties", Icons.MODEL_PROPERTIES_ICON) {
         public void actionPerformed(ActionEvent e) {
@@ -246,61 +240,26 @@ public class ProjectPane extends JComponent {
     popupMenu.show(myTree, e.getX(), e.getY());
   }
 
-  private void addCompareWithVCSMenu(final JPopupMenu menu, final SModelDescriptor model) {
-    final JMenu compareWith = new JMenu("Compare With");
-    compareWith.setIcon(MPSAction.EMPTY_ICON);
-    menu.add(compareWith);
-    compareWith.addMenuListener(new MenuListener() {
-      public static final int ITEM_LENGTH = 60;
-      public static final int LEVEL_SIZE = 30;
+  private void addVCSMenu(final JPopupMenu menu, final SModelDescriptor model) {
+    JMenu vcsMenu = new JMenu("VCS");
+    vcsMenu.setIcon(MPSAction.EMPTY_ICON);
 
-      public void menuDeselected(MenuEvent e) {
-      }
 
-      public void menuCanceled(MenuEvent e) {
-      }
-
-      public void menuSelected(MenuEvent e) {
-        try {
-          compareWith.removeAll();
-          final VersionControl vcs = model.getVersionControl();          
-          if (!vcs.isUnderVersionControl()) {
-            JMenuItem dummy = new JMenuItem("<NOT VERSIONED>");
-            dummy.setIcon(MPSAction.EMPTY_ICON);
-            compareWith.add(dummy);
-          } else {
-            List<Revision> revs = vcs.getRevisions();
-
-            JMenu current = compareWith;
-            for (final Revision r : revs) {
-              String actionText = r.getRevision() + " " + r.getAuthor() + " " + r.getComment();
-              if (actionText.length() > ITEM_LENGTH) actionText = actionText.subSequence(0, ITEM_LENGTH - 3) + "...";
-              current.add(new AbstractActionWithEmptyIcon(actionText) {
-                public void actionPerformed(ActionEvent e) {
-                  try {
-                    SModel m1 = model.getSModel();
-                    SModel m2 = vcs.getRevision(r.getRevision());
-                    m2.setNamespace("");
-                    m2.setName(r.getRevision());
-                    new ModelDiffDialog(m2, m1);
-                  } catch (Exception ex) {
-                    LOG.error(ex);
-                  }
-                }
-              });
-              if (current.getItemCount() >= LEVEL_SIZE) {
-                JMenu moreMenu = new JMenu("More...");
-                moreMenu.setIcon(MPSAction.EMPTY_ICON);
-                current.add(moreMenu);
-                current = moreMenu;
-              }
-            }
-          }
-        } catch (Exception exc) {
-          LOG.error(exc);
+    if (!model.getVersionControl().isUnderVersionControl()) {
+      vcsMenu.add(new AbstractActionWithEmptyIcon("<NO VCS AVAILABLE FOR MODEL>") {
+        public void actionPerformed(ActionEvent e) {
         }
-      }
-    });
+      });
+    } else {
+      vcsMenu.add(new AbstractActionWithEmptyIcon("History") {
+        public void actionPerformed(ActionEvent e) {
+          myIDE.getHistoryView().showHistoryFor(model);
+        }
+      });
+    }
+
+
+    menu.add(vcsMenu);
   }
 
   private JMenu createGenerateMenu(final SModelDescriptor model) {
