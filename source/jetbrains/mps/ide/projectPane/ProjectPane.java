@@ -280,6 +280,8 @@ public class ProjectPane extends JComponent {
                   try {
                     SModel m1 = model.getSModel();
                     SModel m2 = ModelPersistence.readModel(plugin.getContentsFor(path, r.myRevision));
+                    m2.setNamespace("");
+                    m2.setName(r.myRevision);
                     new ModelDiffDialog(m2, m1);
                   } catch (Exception ex) {
                     LOG.error(ex);
