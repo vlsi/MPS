@@ -39,10 +39,10 @@ public class EditorManager {
       editorCell.setOutlined(true);
     }*/
 
-    IStatus status = (IStatus) node.getUserObject(SemanticNode.ERROR_STATUS);
-    if (status != null) {
-      editorCell.setHighlighted(true);
-    }
+//    IStatus status = (IStatus) node.getUserObject(SemanticNode.ERROR_STATUS);
+//    if (status != null) {
+//      editorCell.setHighlighted(true);
+//    }
     return editorCell;
   }
 
