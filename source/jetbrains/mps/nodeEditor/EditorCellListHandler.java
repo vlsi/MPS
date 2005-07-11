@@ -16,13 +16,10 @@ import java.util.List;
  * Time: Oct 21, 2003 5:12:16 PM
  */
 public abstract class EditorCellListHandler implements IKeyboardHandler {
-
   private String myChildRole;
   private SemanticNode myOwnerNode;
   private EditorCell_Collection myListEditorCell_Collection;
-  private EditorCell_Collection myInsertCell;
   private SemanticNode myInsertedNode;
-  private EditorCell myInsertedNodeCell;
   private ConceptDeclaration myChildConcept;
   private LinkDeclaration myLinkDeclaration;
 
@@ -38,7 +35,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
     myLinkDeclaration = SModelUtil.getLinkDeclaration(ownerNode, childRole);
     myChildConcept = myLinkDeclaration.getTarget();
     LinkDeclaration genuineLink = SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration);
-    if(genuineLink.getMetaClass() != LinkMetaclass.aggregation) {
+    if (genuineLink.getMetaClass() != LinkMetaclass.aggregation) {
       throw new RuntimeException("Only Aggregation links can be used in list");
     }
     myChildRole = genuineLink.getRole();
@@ -79,29 +76,12 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
 
     AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
     editor.pushKeyboardHandler(this);
-    if (myInsertCell != null) {
-      EditorCell selectableLeaf = myInsertCell.findFirstSelectableLeaf();
-      if (selectableLeaf != null) {
-        editor.changeSelection(selectableLeaf);
-      }
-    }
   }
 
   private void finishInsertMode(EditorContext editorContext) {
     if (isInsertMode()) {
       editorContext.getNodeEditorComponent().popKeyboardHandler(); // remove this handler from stack.
-
-      EditorCell prevCell = myListEditorCell_Collection.getPrevCell(myInsertCell);
-      myListEditorCell_Collection.removeCell(myInsertCell);
-      if (myInsertedNodeCell != null) {
-        myListEditorCell_Collection.insertAfter(prevCell, myInsertedNodeCell);
-      }
-
-      myInsertCell = null;
       myInsertedNode = null;
-      myInsertedNodeCell = null;
-
-      editorContext.getNodeEditorComponent().relayout();
     }
   }
 
@@ -109,10 +89,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
     if (isInsertMode()) {
       editorContext.getNodeEditorComponent().popKeyboardHandler(); // remove this handler from stack.
       myInsertedNode.delete();
-
-      myInsertCell = null;
       myInsertedNode = null;
-      myInsertedNodeCell = null;
     }
   }
 
@@ -145,11 +122,12 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
   public EditorCell_Collection createCells_Horizontal(EditorContext editorContext) {
     return createCells(editorContext, new CellLayout_Horizontal());
   }
+
   public EditorCell_Collection createCells(EditorContext editorContext, CellLayout cellLayout) {
     myListEditorCell_Collection = EditorCell_Collection.create(editorContext, myOwnerNode, cellLayout);
     myListEditorCell_Collection.setSelectable(false);
 
-    Iterator<SemanticNode> listNodes = listNodes = myOwnerNode.children(getChildRole());
+    Iterator<SemanticNode> listNodes = myOwnerNode.children(getChildRole());
     if (!listNodes.hasNext()) {
       myListEditorCell_Collection.addEditorCell(createEmptyCell(editorContext));
     } else {
@@ -157,7 +135,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
       while (listNodes.hasNext()) {
         separatorCell = addSeparatorCell(editorContext, separatorCell);
         SemanticNode node = listNodes.next();
-        myListEditorCell_Collection.addEditorCell(createNodeCell_internal(editorContext, node));
+        myListEditorCell_Collection.addEditorCell(createNodeCell(editorContext, node));
       }
     }
     setDefaultCellListActions(myListEditorCell_Collection);
@@ -168,27 +146,6 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
     cellList.setAction(EditorCellAction.INSERT, new CellAction_Insert(this, false));
     cellList.setAction(EditorCellAction.INSERT_BEFORE, new CellAction_Insert(this, true));
     cellList.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-  }
-
-  private EditorCell createNodeCell_internal(EditorContext editorContext, SemanticNode node) {
-    EditorCell nodeCell = createNodeCell(editorContext, node);
-    if (node == myInsertedNode) {
-      if (myInsertCell == null) {
-        myInsertedNodeCell = nodeCell;
-        myInsertCell = createInsertCell_internal(editorContext, myInsertedNodeCell);
-      }
-      return myInsertCell;
-    }
-
-    return nodeCell;
-  }
-
-  private EditorCell_Collection createInsertCell_internal(EditorContext editorContext, EditorCell insertedNodeCell) {
-    EditorCell_Collection insertCell = EditorCell_Collection.createHorizontal(editorContext, insertedNodeCell.getSemanticNode());
-    insertCell.setSelectable(false);
-    insertCell.setHighlighted(true);
-    insertCell.addEditorCell(insertedNodeCell);
-    return insertCell;
   }
 
   private EditorCell addSeparatorCell(EditorContext editorContext, EditorCell separatorCell) {

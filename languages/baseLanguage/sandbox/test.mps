@@ -24,7 +24,7 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1115766243764" />
     </node>
     <node role="extendedInterface" type="jetbrains.mps.baseLanguage.InterfaceType" id="1115766202021">
-      <link role="classifier" targetNodeId="1115766127296" />
+      <link role="classifier" targetNodeId="1115766127296" bad="false" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1115766267843">
@@ -45,12 +45,12 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1115766328169" />
     </node>
     <node role="implementedInterface" type="jetbrains.mps.baseLanguage.InterfaceType" id="1115766274125">
-      <link role="classifier" targetNodeId="1115766166286" />
+      <link role="classifier" targetNodeId="1115766166286" bad="false" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1115766310400">
     <property name="name" value="AClass" />
-    <link role="extendedClass" targetNodeId="1115766267843" />
+    <link role="extendedClass" targetNodeId="1115766267843" bad="false" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1115766338748">
       <property name="name" value="aClassMethod" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1115766338750" />
@@ -66,15 +66,15 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1115766387883">
             <property name="name" value="c1" />
             <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1115766387884">
-              <link role="classifier" targetNodeId="1115766310400" />
+              <link role="classifier" targetNodeId="1115766310400" bad="false" />
             </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1115766395168">
           <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1115766399358">
-            <link role="baseMethodDeclaration" targetNodeId="1115766338748" />
+            <link role="baseMethodDeclaration" targetNodeId="1115766338748" bad="false" />
             <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1115766395169">
-              <link role="variableDeclaration" targetNodeId="1115766387883" />
+              <link role="variableDeclaration" targetNodeId="1115766387883" bad="false" />
             </node>
           </node>
         </node>
@@ -116,5 +116,6 @@
       </node>
     </node>
   </node>
+  <resolveInfo />
 </model>
 
