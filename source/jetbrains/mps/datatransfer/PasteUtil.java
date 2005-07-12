@@ -151,7 +151,6 @@ public class PasteUtil {
           if (linkDeclaration.getMetaClass() == LinkMetaclass.aggregation) {
             if (uniqueChild) CommandUtil.setChild(pasteTarget, anchorNode, linkDeclaration.getRole(), pasteNode, pasteBefore);
             else CommandUtil.insertChild(pasteTarget, anchorNode, linkDeclaration.getRole(), pasteNode, pasteBefore);
-            //todo: process the case of unique child
           } else {
             if (uniqueChild) CommandUtil.insertReferent(pasteTarget, anchorNode, linkDeclaration.getRole(), pasteNode, pasteBefore);
             else CommandUtil.setReferent(pasteTarget, anchorNode, linkDeclaration.getRole(), pasteNode, pasteBefore);
