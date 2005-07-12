@@ -1009,8 +1009,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
 
-  // ---- semantic model listener
-
   private class MyModelListener implements SModelCommandListener   {
     public void modelChangedInCommand(List<SModelEvent> events) {
       if (!EventUtil.isDramaticalChange(events)) {
