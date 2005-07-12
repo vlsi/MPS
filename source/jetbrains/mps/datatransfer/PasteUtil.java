@@ -146,10 +146,15 @@ public class PasteUtil {
     if (reallyPaste) {       
       CommandProcessor.instance().executeCommandIfNotInCommand(new Runnable() {
         public void run() {
+          Cardinality cardinality = linkDeclaration.getSourceCardinality();
+          boolean uniqueChild = (cardinality == Cardinality._0_1 || cardinality == Cardinality._1);
           if (linkDeclaration.getMetaClass() == LinkMetaclass.aggregation) {
-            CommandUtil.insertChild(pasteTarget, anchorNode, linkDeclaration.getRole(), pasteNode, pasteBefore);
+            if (uniqueChild) CommandUtil.setChild(pasteTarget, anchorNode, linkDeclaration.getRole(), pasteNode, pasteBefore);
+            else CommandUtil.insertChild(pasteTarget, anchorNode, linkDeclaration.getRole(), pasteNode, pasteBefore);
+            //todo: process the case of unique child
           } else {
-            CommandUtil.insertReferent(pasteTarget, anchorNode, linkDeclaration.getRole(), pasteNode, pasteBefore);
+            if (uniqueChild) CommandUtil.insertReferent(pasteTarget, anchorNode, linkDeclaration.getRole(), pasteNode, pasteBefore);
+            else CommandUtil.setReferent(pasteTarget, anchorNode, linkDeclaration.getRole(), pasteNode, pasteBefore);
           }
         //Add resolving here!
 
@@ -203,20 +208,31 @@ public class PasteUtil {
     while (metalinks.hasNext()) {
       LinkDeclaration metalink = metalinks.next();
       if (SModelUtil.isAssignableType(metalink.getTarget(), targetMetatype)) {
-//        String sourceCardinality = metalink.getSourceCardinality();
-//        if (LinkDeclaration.CARDINALITY_0_N.equals(sourceCardinality) ||
-//                LinkDeclaration.CARDINALITY_1_N.equals(sourceCardinality)) {
-//          return metalink;
-//        }
         Cardinality sourceCardinality = metalink.getSourceCardinality();
-        if (sourceCardinality == Cardinality._0_n || sourceCardinality == Cardinality._1_n) {
+ //       if (sourceCardinality == Cardinality._0_n || sourceCardinality == Cardinality._1_n) {
           return metalink;
-        }
+//        } //todo: you can't paste a single item because of this
       }
     }
     ConceptDeclaration anExtends = sourceMetatype.getExtends();
     if (anExtends != null) {
       return findListlikeMetalink(anExtends, targetMetatype);
+    }
+    return null;
+  }
+
+
+  private static LinkDeclaration findMetalink(ConceptDeclaration sourceMetatype, ConceptDeclaration targetMetatype) {
+    Iterator<LinkDeclaration> metalinks = sourceMetatype.linkDeclarations();
+    while (metalinks.hasNext()) {
+      LinkDeclaration metalink = metalinks.next();
+      if (SModelUtil.isAssignableType(metalink.getTarget(), targetMetatype)) {
+        return metalink;
+      }
+    }
+    ConceptDeclaration anExtends = sourceMetatype.getExtends();
+    if (anExtends != null) {
+      return findMetalink(anExtends, targetMetatype);
     }
     return null;
   }
