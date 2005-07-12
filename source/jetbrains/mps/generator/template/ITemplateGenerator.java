@@ -43,6 +43,8 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   INodeBuilder findNodeBuilderForSource(SemanticNode sourceNode, String mappingName);
 
+  INodeBuilder findNodeBuilderForSource(SemanticNode sourceNode, Condition<INodeBuilder> condition);
+
   INodeBuilder findNodeBuilder(Condition<INodeBuilder> condition);
 
   INodeBuilder findNodeBuilder(INodeBuilder fromBuilder, Condition<INodeBuilder> condition);
