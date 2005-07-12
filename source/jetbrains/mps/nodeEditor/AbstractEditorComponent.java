@@ -24,7 +24,9 @@ import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.semanticModel.SModelAdapter;
 import jetbrains.mps.semanticModel.SModelDescriptor;
 import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.event.*;
 import jetbrains.mps.util.CopyUtil;
+import jetbrains.mps.util.CollectionUtil;
 
 import javax.swing.*;
 import java.awt.*;
@@ -341,7 +343,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     SemanticNode semanticNode = myRootCell.getSemanticNode();
     if (semanticNode != null) {
       SModel semanticModel = semanticNode.getModel();
-      semanticModel.removeSModelListener(myModelListener);
+      semanticModel.removeSModelCommandListener(myModelListener);
     }
   }
 
@@ -350,7 +352,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       SemanticNode semanticNode = myRootCell.getSemanticNode();
       if (semanticNode != null) {
         SModel semanticModel = semanticNode.getModel();
-        semanticModel.removeSModelListener(myModelListener);
+        semanticModel.removeSModelCommandListener(myModelListener);
       }
     }
 
@@ -362,14 +364,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     SemanticNode node = myRootCell.getSemanticNode();
     if (node != null) {
       SModel model = node.getModel();
-      if (!model.hasSModelListener(myModelListener)) {
-        model.addSModelListener(myModelListener);
+      if (!model.hasSModelCommandListener(myModelListener)) {
+        model.addSModelCommandListener(myModelListener);
       }
       Iterator<SModelDescriptor> iterator = model.importedModels();
       while (iterator.hasNext()) {
         SModelDescriptor imported = iterator.next();
-        imported.addSModelListener(myModelListener);
-        imported.addSModelListenerToImportedModels(myModelListener);
+        imported.addSModelCommandListener(myModelListener);
+        imported.addSModelCommandListenerToImportedModels(myModelListener);
       }
 
 //      addImportedModelsToListener(model);
@@ -1009,14 +1011,36 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   // ---- semantic model listener
 
-  private class MyModelListener extends SModelAdapter {
-    public void modelChanged(SModel semanticModel) {
-      myRootCell.updateView();
-      relayout();
+  private class MyModelListener implements SModelCommandListener   {
+    public void modelChangedInCommand(List<SModelEvent> events) {
+      if (!EventUtil.isDramaticalChange(events)) {
+        myRootCell.updateView();
+        relayout();
+      } else {
+        rebuildEditorContent();
+
+        List<SModelChildEvent> childEvents = CollectionUtil.filter(SModelChildEvent.class, events);
+
+        SModelChildEvent lastAdd = null;
+        SModelChildEvent lastRemove = null;
+
+        for (SModelChildEvent e : childEvents) {
+          if (e.isAdded()) lastAdd = e;
+          if (e.isRemoved()) lastRemove = e;
+        }
+
+        if (lastAdd != null) {
+          selectNode(lastAdd.getChild());
+          return;
+        }
+
+        if (lastRemove != null) {
+          selectNode(lastRemove.getChild());
+          return;
+        }
+      }
     }
 
-    public void modelChangedDramatically(SModel semanticModel) {
-      rebuildEditorContent();
-    }
+
   }
 }
