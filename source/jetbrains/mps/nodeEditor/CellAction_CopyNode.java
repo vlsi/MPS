@@ -37,9 +37,9 @@ public class CellAction_CopyNode extends EditorCellAction {
       LOG.debug("Copy node : " + nodeList.get(0).getDebugText());
     }
 
-/*    for (SemanticNode sn : nodeList) {
+    for (SemanticNode sn : nodeList) {
       Resolver.processCopy(sn);
-    }*/
+    }
 
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     cb.setContents(new SemanticNodeData(nodeList), null);

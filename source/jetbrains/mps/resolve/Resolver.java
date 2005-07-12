@@ -6,6 +6,7 @@ import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.util.*;
+import java.lang.reflect.Method;
 
 /**
  * Created by IntelliJ IDEA.
@@ -27,29 +28,52 @@ public class Resolver {
   }
 
 
-/*  public static void processCopy(SemanticNode node) {
-
-    Cemetery.getInstance().exhumateOldTargets();
+  public static void processCopy(SemanticNode node) {
 
     List<SemanticReference> referenceList = getExternalReferences(node);
 
     for (SemanticReference reference : referenceList) {
-      Cemetery.getInstance().registerNode(reference.getTargetNode(), new ReferrerInfo(reference.getRole(), reference.getSourceNode()));
+      setResolveInfo(reference);
     }
 
-  }*/
-
- /* public static void processChange(SemanticNode node) {
-    SModel model = node.getModel();
-    model.setLoading(true);
-    Cemetery.getInstance().buryNode(node);
-    model.setLoading(false);
   }
 
-  public static void processDelete(SemanticNode node) {
-    //Cemetery.getInstance().buryNode(node);
-    processChange(node);
-  }*/
+  private static void setResolveInfo(SemanticReference reference) {
+    String role = reference.getRole();
+    Class sourceClass = reference.getSourceNode().getClass();
+    Class targetClass  = reference.getTargetNode().getClass();
+
+    String packageName = sourceClass.getPackage().getName();
+
+
+    Class cls1 = sourceClass;
+
+
+    while (cls1 != SemanticNode.class) {
+      String sourceClassName = cls1.getName();
+      sourceClassName = sourceClassName.substring(sourceClassName.lastIndexOf('.') + 1);
+      Class cls2 = targetClass;
+
+      while (cls2 != SemanticNode.class) {
+        String targetClassName = cls2.getName();
+        targetClassName = targetClassName.substring(targetClassName.lastIndexOf('.') +1);
+
+        String methodName = "getResolveInfoOf" + targetClassName + "ForRole" + role + "In" + sourceClassName;
+        try {
+          Class resolveClass = Class.forName(packageName+".resolve.Resolver", true, ClassLoaderManager.getInstance().getClassLoader());
+          Method m = resolveClass.getMethod(methodName, cls2);
+          String resolveInfo = (String) m.invoke(null, reference.getTargetNode());
+          reference.setResolveInfo(resolveInfo);
+          reference.setTargetClassResolveInfo(targetClass);
+          return;
+        } catch (Exception e) {
+
+        }
+        cls2 = cls2.getSuperclass();
+      }
+      cls1 = cls1.getSuperclass();
+    }
+  }
 
 
   public static List<SemanticReference> getExternalReferences(SemanticNode node) {
@@ -106,12 +130,10 @@ public class Resolver {
         model.setLoading(false);
         if (success) {
           reference.setGood();
-          Cemetery.getInstance().exhumateNode(oldTarget);
-          //Cemetery.getInstance().unregisterNode(oldTarget, new ReferrerInfo(role, sourceNode));
+          reference.setResolveInfo(null);
+          reference.setTargetClassResolveInfo((String)null);
         } else {
           reference.setBad();
-          //Cemetery.getInstance().registerNode(oldTarget, new ReferrerInfo(role, sourceNode));
-          Cemetery.getInstance().buryNode(oldTarget, reference);
         }
         return;
       } catch (NullPointerException e) {
@@ -124,6 +146,7 @@ public class Resolver {
 
     }
     reference.setGood();
+    reference.setResolveInfo(null);
   }
 
 }
