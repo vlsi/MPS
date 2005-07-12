@@ -284,7 +284,6 @@ public class ProjectPane extends JComponent {
       vcsMenu.addSeparator();
       vcsMenu.add(new AbstractActionWithEmptyIcon("Commit") {
         public void actionPerformed(ActionEvent e) {
-
           if (!vc.getCurrentRevisionId().equals(vc.getLatestRevisionId())) {
             JOptionPane.showMessageDialog(ProjectPane.this, "Can't commit. You Have to update.");
             return;
@@ -298,6 +297,18 @@ public class ProjectPane extends JComponent {
           String message = JOptionPane.showInputDialog("Enter commit message : ");
           if (message == null) return;
           vc.commit(message);
+        }
+      });
+
+      vcsMenu.add(new AbstractActionWithEmptyIcon("Update") {
+        public void actionPerformed(ActionEvent e) {
+          vc.update();  
+        }
+      });
+
+      vcsMenu.add(new AbstractActionWithEmptyIcon("Checkout") {
+        public void actionPerformed(ActionEvent actionEvent) {
+          vc.checkout();
         }
       });
 

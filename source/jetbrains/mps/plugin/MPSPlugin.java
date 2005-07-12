@@ -136,6 +136,12 @@ public class MPSPlugin {
     myClient.execute("MPSSupport.commit", params);
   }
 
+  public void checkout(String path) throws IOException, XmlRpcException {
+    Vector<String> params = new Vector<String>();
+    params.add(path);
+    myClient.execute("MPSSupport.checkout", params);
+  }
+
   public boolean isFileChanged(String path) throws IOException, XmlRpcException {
     Vector<String> params = new Vector<String>();
     params.add(path);
