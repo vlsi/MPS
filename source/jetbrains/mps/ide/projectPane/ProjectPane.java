@@ -284,11 +284,6 @@ public class ProjectPane extends JComponent {
       vcsMenu.addSeparator();
       vcsMenu.add(new AbstractActionWithEmptyIcon("Commit") {
         public void actionPerformed(ActionEvent e) {
-          if (!vc.getCurrentRevisionId().equals(vc.getLatestRevisionId())) {
-            JOptionPane.showMessageDialog(ProjectPane.this, "Can't commit. You Have to update.");
-            return;
-          }
-
           if (!vc.isChanged()) {
             JOptionPane.showMessageDialog(ProjectPane.this, "Can't commit. Model isn't changed.");
             return;
@@ -302,13 +297,9 @@ public class ProjectPane extends JComponent {
 
       vcsMenu.add(new AbstractActionWithEmptyIcon("Update") {
         public void actionPerformed(ActionEvent e) {
-          vc.update();  
-        }
-      });
-
-      vcsMenu.add(new AbstractActionWithEmptyIcon("Checkout") {
-        public void actionPerformed(ActionEvent actionEvent) {
-          vc.checkout();
+          vc.update();
+          myIDE.getEditorsPane().rebuildAllEditors();
+          rebuildTree();
         }
       });
 
