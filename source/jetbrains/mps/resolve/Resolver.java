@@ -117,7 +117,7 @@ public class Resolver {
 
     SemanticNode oldTarget = reference.getTargetNode();
 
-    reference.setBad();
+    //reference.setBad();
 
     while (cls != SemanticNode.class) {
       try {
