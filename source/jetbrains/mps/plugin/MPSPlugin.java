@@ -129,6 +129,20 @@ public class MPSPlugin {
     myClient.execute("MPSSupport.addSourceRoot", params);
   }
 
+  public void commit(String path, String comment) throws IOException, XmlRpcException {
+    Vector<String> params = new Vector<String>();
+    params.add(path);
+    params.add(comment);
+    myClient.execute("MPSSupport.commit", params);
+  }
+
+  public boolean isFileChanged(String path) throws IOException, XmlRpcException {
+    Vector<String> params = new Vector<String>();
+    params.add(path);
+    return (Boolean) myClient.execute("MPSSupport.isFileChanged", params); 
+  }
+
+
   public void createNewProject(String path, String name) throws IOException, XmlRpcException {
     Vector<String> params = new Vector<String>();
     params.add(path);
@@ -140,6 +154,12 @@ public class MPSPlugin {
     Vector params = new Vector();
     params.add(path);
     return (Boolean) myClient.execute("MPSSupport.isVCSSupported", params);
+  }
+
+  public String getCurrentRevisionFor(String path) throws IOException, XmlRpcException {
+    Vector params = new Vector();
+     params.add(path);                           
+    return (String) myClient.execute("MPSSupport.getCurrentRevisionFor", params);
   }
 
   public List<Revision> getRevisionsFor(String path) throws IOException, XmlRpcException {

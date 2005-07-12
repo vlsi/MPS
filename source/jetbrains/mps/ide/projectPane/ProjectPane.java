@@ -26,9 +26,12 @@ import jetbrains.mps.projectLanguage.GeneratorConfiguration;
 import jetbrains.mps.projectLanguage.ProjectModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.semanticModel.*;
+import jetbrains.mps.semanticModel.vcs.VersionControl;
 import jetbrains.mps.semanticModel.event.*;
 
 import javax.swing.*;
+import javax.swing.event.MenuListener;
+import javax.swing.event.MenuEvent;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
@@ -241,25 +244,69 @@ public class ProjectPane extends JComponent {
   }
 
   private void addVCSMenu(final JPopupMenu menu, final SModelDescriptor model) {
-    JMenu vcsMenu = new JMenu("VCS");
+    final JMenu vcsMenu = new JMenu("VCS");
     vcsMenu.setIcon(MPSAction.EMPTY_ICON);
 
 
-    if (!model.getVersionControl().isUnderVersionControl()) {
+    vcsMenu.addMenuListener(new MenuListener() {
+      public void menuSelected(MenuEvent e) {
+        fillVCSMenu(model, vcsMenu);
+      }
+
+      public void menuDeselected(MenuEvent e) {
+      }
+
+      public void menuCanceled(MenuEvent e) {
+      }
+    });
+
+    menu.add(vcsMenu);
+  }
+
+  private void fillVCSMenu(final SModelDescriptor model, JMenu vcsMenu) {
+    vcsMenu.removeAll();
+
+    final VersionControl vc = model.getVersionControl();
+    if (!vc.isUnderVersionControl()) {
       vcsMenu.add(new AbstractActionWithEmptyIcon("<NO VCS AVAILABLE FOR MODEL>") {
         public void actionPerformed(ActionEvent e) {
         }
       });
     } else {
-      vcsMenu.add(new AbstractActionWithEmptyIcon("History") {
+      vcsMenu.add(new AbstractActionWithEmptyIcon("Current Revision " + vc.getCurrentRevisionId()) {
+        {
+          setEnabled(false);
+        }
+
+        public void actionPerformed(ActionEvent actionEvent) {
+        }
+      });
+      vcsMenu.addSeparator();
+      vcsMenu.add(new AbstractActionWithEmptyIcon("Commit") {
+        public void actionPerformed(ActionEvent e) {
+
+          if (!vc.getCurrentRevisionId().equals(vc.getLatestRevisionId())) {
+            JOptionPane.showMessageDialog(ProjectPane.this, "Can't commit. You Have to update.");
+            return;
+          }
+
+          if (!vc.isChanged()) {
+            JOptionPane.showMessageDialog(ProjectPane.this, "Can't commit. Model isn't changed.");
+            return;
+          }
+
+          String message = JOptionPane.showInputDialog("Enter commit message : ");
+          if (message == null) return;
+          vc.commit(message);
+        }
+      });
+
+      vcsMenu.add(new AbstractActionWithEmptyIcon("Show History") {
         public void actionPerformed(ActionEvent e) {
           myIDE.getHistoryView().showHistoryFor(model);
         }
       });
     }
-
-
-    menu.add(vcsMenu);
   }
 
   private JMenu createGenerateMenu(final SModelDescriptor model) {

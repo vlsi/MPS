@@ -14,10 +14,7 @@ import com.intellij.openapi.roots.*;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.libraries.LibraryTable;
 import com.intellij.openapi.roots.libraries.LibraryTablesRegistrar;
-import com.intellij.openapi.vcs.AbstractVcs;
-import com.intellij.openapi.vcs.FilePathImpl;
-import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import com.intellij.openapi.vcs.VcsException;
+import com.intellij.openapi.vcs.*;
 import com.intellij.openapi.vcs.history.VcsFileRevision;
 import com.intellij.openapi.vcs.history.VcsHistorySession;
 import com.intellij.openapi.vfs.LocalFileSystem;
@@ -139,7 +136,6 @@ public class MPSSupportHandler implements ProjectComponent {
           VirtualFile file = LocalFileSystem.getInstance().findFileByIoFile(new File(path));
           AbstractVcs vcs = manager.getVcsFor(file);
           VcsHistorySession session = vcs.getVcsHistoryProvider().createSessionFor(new FilePathImpl(file));
-
           List<VcsFileRevision> revisions = session.getRevisionList();
           for (VcsFileRevision r : revisions) {
             result.add(r.getRevisionNumber().asString());
@@ -152,6 +148,61 @@ public class MPSSupportHandler implements ProjectComponent {
       }
     });
     return result;
+  }
+
+  public boolean isFileChanges(final String path) {
+    final boolean[] result = new boolean[1];
+    executeWriteAction(new Runnable() {
+      public void run() {
+        VirtualFile file = LocalFileSystem.getInstance().findFileByIoFile(new File(path));        
+        FileStatusManager fsm = FileStatusManager.getInstance(myProject);
+        if (fsm.getStatus(file) == FileStatus.NOT_CHANGED) {
+          result[0] = false;
+        } else {
+          result[0] = true;
+        }
+      }
+    });
+    return result[0];
+  }
+
+  public String getCurrentRevisionFor(final String path) {
+    final String[] result = new String[1];
+    executeWriteAction(new Runnable() {
+      public void run() {
+        try {
+          ProjectLevelVcsManager manager = myProject.getComponent(ProjectLevelVcsManager.class);
+          VirtualFile file = LocalFileSystem.getInstance().findFileByIoFile(new File(path));
+          AbstractVcs vcs = manager.getVcsFor(file);
+          VcsHistorySession session = vcs.getVcsHistoryProvider().createSessionFor(new FilePathImpl(file));
+          result[0] = session.getCurrentRevisionNumber().asString();
+        } catch (VcsException e) {
+          e.printStackTrace();
+        }
+      }
+    });
+    return result[0];
+  }
+
+  //todo add support for comments
+  public String commit(final String path, final String comment) {
+    executeWriteAction(new Runnable() {
+      public void run() {
+        try {
+          ProjectLevelVcsManager manager = myProject.getComponent(ProjectLevelVcsManager.class);
+          VirtualFile file = LocalFileSystem.getInstance().findFileByIoFile(new File(path));
+          AbstractVcs vcs = manager.getVcsFor(file);
+
+          Object ta = comment;
+          vcs.getTransactionProvider().startTransaction(ta);          
+          vcs.getStandardOperationsProvider().checkinFile(path, null, null);
+          vcs.getTransactionProvider().commitTransaction(ta);
+        } catch (VcsException e) {
+          e.printStackTrace();
+        }
+      }
+    });
+    return "OK";
   }
 
   public byte[] getContentsForRevision(final String path, final String revision) {
