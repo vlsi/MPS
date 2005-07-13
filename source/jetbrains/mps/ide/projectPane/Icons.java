@@ -31,6 +31,7 @@ public class Icons {
 
   public static final Icon OUTPUT_VIEW_ICON = new ImageIcon(Icons.class.getResource("nodes/outputView.png"));
   public static final Icon MESSAGE_VIEW_ICON = new ImageIcon(Icons.class.getResource("nodes/messageView.png")); 
+  public static final Icon HISTORY_VIEW_ICON = new ImageIcon(Icons.class.getResource("nodes/historyView.png"));
 
   public static final Icon STRUCTURE_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/structureModel.png"));
   public static final Icon EDITOR_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/editorModel.png"));

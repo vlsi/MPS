@@ -41,7 +41,16 @@ public class Resolver {
   private static void setResolveInfo(SemanticReference reference) {
     String role = reference.getRole();
     Class sourceClass = reference.getSourceNode().getClass();
-    Class targetClass  = reference.getTargetNode().getClass();
+
+    SemanticNode targetNode = reference.getTargetNode();
+    Class targetClass  = null;
+
+    if (targetNode != null) targetClass  = reference.getTargetNode().getClass();
+    else try {
+      targetClass = Class.forName(reference.getTargetClassResolveInfo());
+    } catch (Exception e) {
+      return;
+    }
 
     String packageName = sourceClass.getPackage().getName();
 
@@ -129,9 +138,10 @@ public class Resolver {
         boolean success = (Boolean)resolveClass.getMethod("resolveForRole"+role+"In"+className, SemanticReference.class, Class.class).invoke(null, reference, cls);
         model.setLoading(false);
         if (success) {
-          reference.setGood();
+          sourceNode.removeReference(reference);
+    /*      reference.setGood();
           reference.setResolveInfo(null);
-          reference.setTargetClassResolveInfo((String)null);
+          reference.setTargetClassResolveInfo((String)null);*/
         } else {
           reference.setBad();
         }
