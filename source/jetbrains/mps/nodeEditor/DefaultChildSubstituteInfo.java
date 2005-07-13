@@ -56,11 +56,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
 
     List<ConceptDeclaration> childTypes = createChildTypesList();
     for (final ConceptDeclaration childType : childTypes) {
-      list.add(new DefaultChildNodeSubstituteAction(childType, mySourceNode, myCurrentTargetNode, myLinkDeclaration) {
-        public String getDescriptionText(String pattern) {
-          return childType.getModel().getFQName();
-        }
-      });
+      list.add(new DefaultChildNodeSubstituteAction(childType, mySourceNode, myCurrentTargetNode, myLinkDeclaration));
     }
 
     return list;
@@ -69,13 +65,13 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
   private List<ConceptDeclaration> createChildTypesList() {
     final ConceptDeclaration targetType = myLinkDeclaration.getTarget();
     List<ConceptDeclaration> list = SModelUtil.allConceptDeclarations(mySourceNode.getModel(), new Condition<ConceptDeclaration>() {
-              public boolean met(ConceptDeclaration node) {
-                if (!SModelUtil.hasConceptProperty(node, "abstract")) {
-                  return SModelUtil.isAssignableType(targetType, node);
-                }
-                return false;
-              }
-            });
+      public boolean met(ConceptDeclaration node) {
+        if (!SModelUtil.hasConceptProperty(node, "abstract")) {
+          return SModelUtil.isAssignableType(targetType, node);
+        }
+        return false;
+      }
+    });
     return list;
   }
 }

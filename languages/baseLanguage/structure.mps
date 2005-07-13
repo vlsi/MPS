@@ -1179,7 +1179,10 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107135704075">
     <property name="name" value="CodeBlockParameter" />
-    <link role="extends" targetNodeId="4.1078489098625" bad="false" />
+    <link role="extends" targetNodeId="1068431790191" bad="false" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1121268908095">
+      <link role="conceptPropertyDeclaration" targetNodeId="34.1107214854626" bad="false" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107136355904">
     <property name="name" value="CodeBlockParameterReference" />
