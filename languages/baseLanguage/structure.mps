@@ -1184,20 +1184,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="34.1107214854626" bad="false" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107136355904">
-    <property name="name" value="CodeBlockParameterReference" />
-    <link role="extends" targetNodeId="1068431790191" bad="false" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107215992093">
-      <property name="value" value="reference to code block parameter" />
-      <link role="conceptPropertyDeclaration" targetNodeId="34.1107214812281" bad="false" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1107136391389">
-      <property name="sourceCardinality" value="1" />
-      <property name="targetCardinality" value="0..n" />
-      <property name="role" value="codeBlockParameter" />
-      <link role="target" targetNodeId="1107135704075" bad="false" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107382435476">
     <property name="name" value="CodeBlockBreak" />
     <link role="extends" targetNodeId="1107383054539" bad="false" />
