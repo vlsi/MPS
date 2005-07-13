@@ -4,6 +4,7 @@ import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.semanticModel.SemanticReference;
 import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.ide.command.CommandProcessor;
 
 import java.util.*;
 import java.lang.reflect.Method;
@@ -113,50 +114,58 @@ public class Resolver {
     return result;
   }
 
-  public static void resolve(SemanticReference reference){
+  public static void resolve(final SemanticReference reference){
+    CommandProcessor.instance().executeCommand(new Runnable() {
+      public void run() {
 
-    String role  = reference.getRole();
+        String role  = reference.getRole();
 
-    SemanticNode sourceNode = reference.getSourceNode();
+        SemanticNode sourceNode = reference.getSourceNode();
 
-    SModel model = sourceNode.getModel();
+        SModel model = sourceNode.getModel();
 
-    String packageName = sourceNode.getClass().getPackage().getName();
-    Class cls = sourceNode.getClass();
+        String packageName = sourceNode.getClass().getPackage().getName();
+        Class cls = sourceNode.getClass();
 
-    SemanticNode oldTarget = reference.getTargetNode();
+        SemanticNode oldTarget = reference.getTargetNode();
 
-    //reference.setBad();
+        //reference.setBad();
 
-    while (cls != SemanticNode.class) {
-      try {
-        String className = cls.getName();
-        className = className.substring(className.lastIndexOf('.') + 1);
-        //if method exists but can't resolve we'll mark our reference as a bad one
-        Class resolveClass = Class.forName(packageName+".resolve.Resolver", true, ClassLoaderManager.getInstance().getClassLoader());
-        model.setLoading(true);
-        boolean success = (Boolean)resolveClass.getMethod("resolveForRole"+role+"In"+className, SemanticReference.class, Class.class).invoke(null, reference, cls);
-        model.setLoading(false);
-        if (success) {
-          sourceNode.removeReference(reference);
-    /*      reference.setGood();
-          reference.setResolveInfo(null);
-          reference.setTargetClassResolveInfo((String)null);*/
-        } else {
-          reference.setBad();
+        while (cls != SemanticNode.class) {
+          try {
+            String className = cls.getName();
+            className = className.substring(className.lastIndexOf('.') + 1);
+            //if method exists but can't resolve we'll mark our reference as a bad one
+            Class resolveClass = Class.forName(packageName+".resolve.Resolver", true, ClassLoaderManager.getInstance().getClassLoader());
+
+            Method m = resolveClass.getMethod("resolveForRole"+role+"In"+className, SemanticReference.class, Class.class);
+
+            // model.setLoading(true);
+            boolean success = (Boolean)m.invoke(null, reference, cls);
+            //  model.setLoading(false);
+            if (success) {
+              sourceNode.removeReference(reference);
+              /*      reference.setGood();
+              reference.setResolveInfo(null);
+              reference.setTargetClassResolveInfo((String)null);*/
+            } else {
+              reference.setBad();
+            }
+            return;
+          } catch (NullPointerException e) {
+            //  model.setLoading(false);
+            return;
+          } catch (Exception e) {
+            //   model.setLoading(false);
+          }
+          cls = cls.getSuperclass();
+
         }
-        return;
-      } catch (NullPointerException e) {
-        model.setLoading(false);
-        return;
-      } catch (Exception e) {
-        model.setLoading(false);
-      }
-      cls = cls.getSuperclass();
+        reference.setGood();
+        reference.setResolveInfo(null);
 
-    }
-    reference.setGood();
-    reference.setResolveInfo(null);
+      }
+    } , "resolve" );
   }
 
 }
