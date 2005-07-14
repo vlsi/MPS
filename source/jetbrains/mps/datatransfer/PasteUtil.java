@@ -144,7 +144,7 @@ public class PasteUtil {
       return false;
     }
     if (reallyPaste) {       
-      CommandProcessor.instance().executeCommandIfNotInCommand(new Runnable() {
+      CommandProcessor.instance().executeCommand(new Runnable() {
         public void run() {
           Cardinality cardinality = linkDeclaration.getSourceCardinality();
           boolean uniqueChild = (cardinality == Cardinality._0_1 || cardinality == Cardinality._1);

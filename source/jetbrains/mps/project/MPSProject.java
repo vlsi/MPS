@@ -41,7 +41,7 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     if(myRootManager != null) {
       return;
     }
-    CommandProcessor.instance().executeCommandIfNotInCommand(new Runnable() {
+    CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         myRootManager = new RootManager(MPSProject.this);
         if (myProjectFile != null) {
