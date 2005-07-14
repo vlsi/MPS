@@ -3,6 +3,7 @@ package jetbrains.mps.resolve;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.semanticModel.SemanticReference;
 import jetbrains.mps.semanticModel.SModel;
+import jetbrains.mps.semanticModel.ExternalSemanticReference;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.ide.command.CommandProcessor;
 
@@ -40,6 +41,9 @@ public class Resolver {
   }
 
   private static void setResolveInfo(SemanticReference reference) {
+
+    if (reference instanceof ExternalSemanticReference) return;
+
     String role = reference.getRole();
     Class sourceClass = reference.getSourceNode().getClass();
 
@@ -115,6 +119,9 @@ public class Resolver {
   }
 
   public static void resolve(final SemanticReference reference){
+
+    if (reference instanceof ExternalSemanticReference) return;
+
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
 
