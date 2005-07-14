@@ -757,9 +757,17 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
   }
 
-  protected void paintComponent(Graphics g) {
+  protected void paintComponent(Graphics gg) {
+    Graphics2D g = (Graphics2D) gg;
+
+    g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
+    RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+
+
     g.setColor(Color.white);
     Rectangle bounds = g.getClipBounds();
+
+
     g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
     myRootCell.paint(g);
     if (mySelectedCell != null) {
