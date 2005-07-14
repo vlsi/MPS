@@ -30,9 +30,9 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   void generate(SModel sourceModel, SModel targetModel, SModel templatesModel) throws GenerationFailedException;
 
-  int setupReduction(SModel sourceModel, SModel templatesModel);
+  int setupReduction(SModel sourceModel, SModel targetModel, SModel templatesModel);
 
-  void doReduction(SModel targetModel);
+  void doReduction();
 
   void processPropertyMacros(SemanticNode sourceNode, SemanticNode templateNode, SemanticNode targetNode);
 
