@@ -103,6 +103,12 @@ public class Resolver {
       children.add(child);
     }
 
+    for (SemanticReference reference : node.getReferences()) {
+      if (!children.contains(reference.getTargetNode())){//if external reference
+          result.add(reference);
+      }
+    }
+
     it = node.depthFirstChildren();
 
     for (;it.hasNext();) {

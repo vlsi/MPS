@@ -22,7 +22,6 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
   public boolean processKeyPressed(final EditorContext editorContext, final KeyEvent keyEvent) {
     AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
     EditorCell selectedCell = editor.getSelectedCell();
-
     // precess cell keymaps first
     if (selectedCell != null /*&& EditorUtil.isValidCell(selectedCell)*/) {
       //test >
@@ -110,6 +109,17 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
             return true;
           }
         }
+      }
+    }
+
+    //process text copy action
+    if (EditorCellAction.COPY.equals(actionType) && selectedCell instanceof EditorCell_Label) {
+      if (selectedCell.processKeyPressed(keyEvent)) {
+          boolean cellWasValid = EditorUtil.isValidCell(selectedCell);
+          if (!cellWasValid) {
+            EditorUtil.validateCell(selectedCell, editorContext);
+          }
+          return true;
       }
     }
 
