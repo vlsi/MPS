@@ -117,6 +117,12 @@ public abstract class MPSTree extends JTree {
     });
   }
 
+  public void paint(Graphics g) {
+    Graphics2D g2d = (Graphics2D) g;
+    g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+    super.paint(g);
+  }
+
   private String pathToString(TreePath path) {
     String result = "";
     for (int i = 1; i < path.getPathCount(); i++) {
