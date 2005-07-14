@@ -16,6 +16,7 @@ import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.*;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.AspectMethod;
+import jetbrains.mps.util.Condition;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -475,4 +476,54 @@ public class TemplateGenUtil {
     }
   }
 
+
+  //-------------------------------
+  // search
+  //-------------------------------
+  public static SemanticNode findTargetNode(SemanticNode sourceNode, SemanticNode templateNode, String mappingName, String targetDescription, ITemplateGenerator generator) {
+    INodeBuilder builder = generator.findNodeBuilderForSource(sourceNode, mappingName);
+    if (builder == null) {
+      String descr = targetDescription;
+      if (descr == null || descr.length() == 0) {
+        descr = "target node";
+      }
+      generator.showErrorMessage(sourceNode, templateNode, "Couldn't get " + descr + " by mapping name: \"" + mappingName + "\" : builder not found");
+      return null;
+    }
+    SemanticNode targetNode = builder.getTargetNode();
+    if (targetNode == null) {
+      String descr = targetDescription;
+      if (descr == null || descr.length() == 0) {
+        descr = "target node";
+      }
+      generator.showErrorMessage(sourceNode, templateNode, "Couldn't find " + descr + " by mapping name: \"" + mappingName + "\" : builder isn't yet executed");
+    }
+    return targetNode;
+  }
+
+  public static SemanticNode findTargetNode(SemanticNode sourceNode, SemanticNode templateNode, Condition<INodeBuilder> condition, String targetDescription, ITemplateGenerator generator) {
+    INodeBuilder builder = null;
+    if (sourceNode != null) {
+      builder = generator.findNodeBuilderForSource(sourceNode, condition);
+    } else {
+      builder = generator.findNodeBuilder(condition);
+    }
+    if (builder == null) {
+      String descr = targetDescription;
+      if (descr == null || descr.length() == 0) {
+        descr = "target node";
+      }
+      generator.showErrorMessage(sourceNode, templateNode, "Couldn't get " + descr + " by custom condition : builder not found");
+      return null;
+    }
+    SemanticNode targetNode = builder.getTargetNode();
+    if (targetNode == null) {
+      String descr = targetDescription;
+      if (descr == null || descr.length() == 0) {
+        descr = "target node";
+      }
+      generator.showErrorMessage(sourceNode, templateNode, "Couldn't find " + descr + " by custom condition : builder isn't yet executed");
+    }
+    return targetNode;
+  }
 }

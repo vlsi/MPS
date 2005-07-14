@@ -300,9 +300,9 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     OutputView view = myProject.getComponent(OutputView.class);
     view.clear();
 
-    Iterator<SemanticNode> javaRoots = targetModel.roots();
-    while (javaRoots.hasNext()) {
-      SemanticNode node = javaRoots.next();
+    Iterator<SemanticNode> roots = targetModel.roots();
+    while (roots.hasNext()) {
+      SemanticNode node = roots.next();
       String nodeText = generateText(node);
       view.append(nodeText);
       view.append("\n");
