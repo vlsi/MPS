@@ -855,12 +855,15 @@ public class ProjectPane extends JComponent {
     public void update() {
       isInitialized = false;
       this.removeAllChildren();
+
     }
 
     public void init() {
       this.removeAllChildren();
       SModel model = myModelDescriptor.getSModel();
-      model.addSModelCommandListener(myModelListener);
+      if (!model.hasSModelCommandListener(myModelListener)) {
+        model.addSModelCommandListener(myModelListener);
+      }
       Iterator<SemanticNode> iterator = model.roots();
       TreeSet<Object> sortedRoots = new TreeSet<Object>(new Comparator() {
         public int compare(Object o, Object o1) {
