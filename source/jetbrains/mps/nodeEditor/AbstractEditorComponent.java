@@ -1008,6 +1008,23 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myHasLastCaretX = true;
   }
 
+  private EditorCell findErrorCell(EditorCell root) {
+    if (root instanceof EditorCell_Error) {
+      return root;
+    }
+
+    if (root instanceof EditorCell_Collection) {
+      EditorCell_Collection collection = (EditorCell_Collection) root;
+      for (int i = 0; i < collection.getChildCount(); i++) {
+        EditorCell child = collection.getChildAt(i);
+        EditorCell result = findErrorCell(child);
+        if (result != null) return result;
+      }
+    }
+
+    return null;
+  }
+
 
   private class MyModelListener implements SModelCommandListener   {
     public void modelChangedInCommand(List<SModelEvent> events) {
@@ -1028,17 +1045,21 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
 
         if (lastAdd != null) {
-          selectNode(lastAdd.getChild());
+          EditorCell cell = findNodeCell(lastAdd.getChild());
+          EditorCell error = findErrorCell(cell);
+          if (error == null) {
+            selectNode(lastAdd.getChild());
+          } else {
+            changeSelection(error);
+          }
           return;
         }
 
         if (lastRemove != null) {
-          selectNode(lastRemove.getChild());
+          selectNode(lastRemove.getParent());
           return;
         }
       }
     }
-
-
   }
 }
