@@ -18,6 +18,13 @@ public class MemoryIndicator extends JPanel {
       g.setColor(Color.WHITE);
       g.fillRect(0, 0, getWidth(), getHeight());
       g.setColor(new Color(200, 220, 250));
+
+
+//      Graphics2D g2d = (Graphics2D) g;
+//      g2d.setPaint(new GradientPaint(0, 0, new Color(100, 100, 255), getWidth(), getHeight(), Color.CYAN));
+
+
+
       g.fillRect(0, 0, (int) (getWidth() * myUsedMemeory / myTotalMemory), getHeight());
       g.setColor(Color.BLACK);
       g.drawRect(0, 0, getWidth() - 1, getHeight() - 1);
