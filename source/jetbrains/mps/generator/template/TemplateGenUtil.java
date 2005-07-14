@@ -15,10 +15,10 @@ import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.*;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
-import jetbrains.mps.util.AspectMethod;
-import jetbrains.mps.util.Condition;
 import jetbrains.mps.typesystem.ITypeObject;
 import jetbrains.mps.typesystem.TSStatus;
+import jetbrains.mps.util.AspectMethod;
+import jetbrains.mps.util.Condition;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -190,9 +190,9 @@ public class TemplateGenUtil {
     }
   }
 
-  public static void applyWeaveTemplateReductionCommand(SemanticNode sourceNode, ReductionCommand_WeaveTemplate command, ITemplateGenerator generator) {
+  public static void applyWeaveTemplateReductionCommand(SemanticNode sourceNode, ReductionCommand_WeaveTemplate command, INodeBuilder defaultContextBuilder, ITemplateGenerator generator) {
     TemplateDeclaration templateDeclaration = command.getTemplateDeclaration();
-    INodeBuilder contextBuilder = getContextNodeBuilderForWeaveTemplateReductionCommand(sourceNode, command, generator);
+    INodeBuilder contextBuilder = getContextNodeBuilderForWeaveTemplateReductionCommand(sourceNode, command, defaultContextBuilder, generator);
     if (contextBuilder == null) {
       generator.showErrorMessage(sourceNode, command, "Couldn't create context node builder");
       return;
@@ -268,8 +268,11 @@ public class TemplateGenUtil {
     return nodeBuilder;
   }
 
-  private static INodeBuilder getContextNodeBuilderForWeaveTemplateReductionCommand(SemanticNode sourceNode, ReductionCommand_WeaveTemplate command, ITemplateGenerator generator) {
+  private static INodeBuilder getContextNodeBuilderForWeaveTemplateReductionCommand(SemanticNode sourceNode, ReductionCommand_WeaveTemplate command, INodeBuilder defaultContextBuilder, ITemplateGenerator generator) {
     String aspectId = command.getContextProviderAspectId();
+    if (aspectId == null) {
+      return defaultContextBuilder;
+    }
     String methodName = "templateWeavingRule_Context_" + aspectId;
     Object[] args = new Object[]{sourceNode, generator};
     INodeBuilder nodeBuilder = (INodeBuilder) AspectMethod.invoke(methodName, args, command.getModel());
