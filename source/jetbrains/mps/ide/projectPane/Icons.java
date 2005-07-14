@@ -25,6 +25,8 @@ public class Icons {
   public static final Icon MODEL_PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/modelProperties.png"));
   public static final Icon PROJECT_PROPERTIES_ICON =  new ImageIcon(Icons.class.getResource("nodes/projectProperties.png"));
 
+  public static final Icon SVN_PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/svn.png"));
+
   public static final Icon DELETE_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/deleteModel.png"));
   public static final Icon CREATE_NODE_ICON =  new ImageIcon(Icons.class.getResource("nodes/createNode.png"));
   public static final Icon DELETE_NODE_ICON = new ImageIcon(Icons.class.getResource("nodes/deleteNode.png"));
