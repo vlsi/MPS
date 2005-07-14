@@ -1026,6 +1026,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (root instanceof EditorCell_Error) {
       return root;
     }
+    if (root != null && root.isErrorState()) {
+      return root;
+    }
     if (root instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) root;
       for (int i = 0; i < collection.getChildCount(); i++) {
