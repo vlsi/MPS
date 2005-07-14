@@ -109,7 +109,7 @@ public class TemplateGenUtil {
   }
 
   private static INodeBuilder loadNodeBuilder(SemanticNode sourceNode, SemanticNode templateNode, String mappingName, ITemplateGenerator generator) {
-    ConceptDeclaration typeDeclaration = Language.getTypeDeclaration(templateNode);
+    ConceptDeclaration typeDeclaration = SModelUtil.getConceptDeclaration(templateNode, generator.getProject());
     String modelPackageName = JavaNameUtil.packageNameForModelFqName(typeDeclaration.getModel().getFQName());
     String buildersPackageName = modelPackageName + ".builder";
     String builderClassName = buildersPackageName + "." + typeDeclaration.getName() + "_NodeBuilder";
