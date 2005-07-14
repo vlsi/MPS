@@ -17,6 +17,8 @@ import jetbrains.mps.transformation.TLBase.*;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.AspectMethod;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.typesystem.ITypeObject;
+import jetbrains.mps.typesystem.TSStatus;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -525,5 +527,15 @@ public class TemplateGenUtil {
       generator.showErrorMessage(sourceNode, templateNode, "Couldn't find " + descr + " by custom condition : builder isn't yet executed");
     }
     return targetNode;
+  }
+
+  public static ITypeObject computeType(SemanticNode node, String description, ITemplateGenerator generator) {
+    TSStatus status = generator.getTypeChecker().getNodeType(node);
+    if (status.isError()) {
+      generator.showErrorMessage(node, "Couldn't compute type of " +
+              (description != null ? description : "node") + " : " + status.getMessage());
+      return null;
+    }
+    return status.getTypeObject();
   }
 }
