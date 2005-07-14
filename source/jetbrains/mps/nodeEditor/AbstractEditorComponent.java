@@ -502,6 +502,16 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     changeSelection(findNodeCell(node));
   }
 
+  public void selectFirstEditableCellOf(final SemanticNode node) {
+    EditorCell cell = findNodeCell(node);
+    EditorCell editable = findEditableCell(cell);
+    if (editable == null) {
+      changeSelection(cell);
+    } else {
+      changeSelection(editable);
+    }
+  }
+
   public EditorCell findNodeCell(final SemanticNode node) {
     if (myRootCell.getSemanticNode() == node) {
       return myRootCell;
@@ -1016,7 +1026,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (root instanceof EditorCell_Error) {
       return root;
     }
-
     if (root instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) root;
       for (int i = 0; i < collection.getChildCount(); i++) {
@@ -1025,9 +1034,26 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         if (result != null) return result;
       }
     }
-
     return null;
   }
+
+  private EditorCell findEditableCell(EditorCell root) {
+    if (root instanceof EditorCell_Label && ((EditorCell_Label) root).isEditable()) {
+      return root;
+    }
+    if (root instanceof EditorCell_Collection) {
+      EditorCell_Collection collection = (EditorCell_Collection) root;
+      for (int i = 0; i < collection.getChildCount(); i++) {
+        EditorCell child = collection.getChildAt(i);
+        EditorCell result = findEditableCell(child);
+        if (result != null) return result;
+      }
+    }
+    return null;
+
+  }
+
+
 
 
   private class MyModelListener implements SModelCommandListener   {
