@@ -1053,11 +1053,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }
     return null;
-
   }
-
-
-
 
   private class MyModelListener implements SModelCommandListener   {
     public void modelChangedInCommand(List<SModelEvent> events) {
