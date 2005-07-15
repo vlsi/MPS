@@ -54,8 +54,6 @@ public class FindUsagesManager {
     }
   }
 
-
-
   public Set<SemanticReference> findUsages(SemanticNode node, ProgressMonitor progress) {
     return findUsages(node, globalScope(), progress);
   }
