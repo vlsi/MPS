@@ -497,7 +497,7 @@ public class ProjectPane extends JComponent {
     if (!(selectionPath.getLastPathComponent() instanceof SNodeTreeNode)) return;
     SNodeTreeNode selectedTreeNode = (SNodeTreeNode) selectionPath.getLastPathComponent();
     SemanticNode semanticNode = selectedTreeNode.getSNode();
-    myIDE.openNode(semanticNode, true);
+    myIDE.openNode(semanticNode);
   }
 
   public void setProject(MPSProject project) {

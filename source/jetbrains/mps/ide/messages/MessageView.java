@@ -2,7 +2,6 @@ package jetbrains.mps.ide.messages;
 
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 
 import javax.swing.*;
 import java.awt.*;
@@ -105,7 +104,7 @@ public class MessageView {
     Message selectedMessage = (Message) myList.getSelectedValue();
     if (selectedMessage == null) return;
     if (selectedMessage.getNode() == null) return;
-    myIde.openNode(selectedMessage.getNode(), true);
+    myIde.openNode(selectedMessage.getNode());
   }
 
 
