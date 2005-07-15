@@ -412,10 +412,12 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
         generator.generate(sourceModelDescr.getSModel(), targetModel, monitor);
         childMonitor.finish();
       }
-      if (generateText) {
-        generateText(targetModel);
-      } else {
-        generateFile(outputPath, sourceModelDescr.getSModel(), targetModel);
+      if (targetModel != null) {
+        if (generateText) {
+          generateText(targetModel);
+        } else {
+          generateFile(outputPath, sourceModelDescr.getSModel(), targetModel);
+        }
       }
     } catch (Exception e) {
       monitor.addText("Exception during generation " + e.getMessage());
@@ -432,7 +434,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
   private class MyPreferencesPage implements PreferencesPage {
     private JPanel myPage;
     private JCheckBox myCompileInIdeaOnGeneration = new JCheckBox("Compile in IntelliJ IDEA on generation");
-    private JCheckBox mySaveTransientModelsCheckBox = new JCheckBox("Save transient models on generation");
+    private JCheckBox mySaveTransientModelsCheckBox = new JCheckBox("Save transient models on generation (experts only)");
 
     public MyPreferencesPage() {
       myCompileInIdeaOnGeneration.setSelected(myCompileOnGeneration);

@@ -26,11 +26,13 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   ITemplateGeneratorState getState();
 
-  void reset();
-
   void generate(SModel sourceModel, SModel targetModel, SModel templatesModel) throws GenerationFailedException;
 
-  int setupReduction(SModel sourceModel, SModel targetModel, SModel templatesModel);
+  int prepareReduction(SModel sourceModel, SModel targetModel, SModel templatesModel);
+
+  boolean hasPendingReductions();
+
+  int preparePendingReduction();
 
   void doReduction();
 
