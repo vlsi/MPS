@@ -106,7 +106,7 @@ public class MessageView implements Tool {
     Message selectedMessage = (Message) myList.getSelectedValue();
     if (selectedMessage == null) return;
     if (selectedMessage.getNode() == null) return;
-    myIde.openNode(selectedMessage.getNode());
+    myIde.openNodeAndSelect(selectedMessage.getNode());
   }
 
 
