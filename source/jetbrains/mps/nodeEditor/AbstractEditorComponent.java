@@ -844,6 +844,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public void processKeyReleased(KeyEvent keyEvent) {
     peekKeyboardHandler().processKeyReleased(getContext(), keyEvent);
+    relayout();
   }
 
   protected void startRecording(String scriptName) {
@@ -921,11 +922,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       public void run() {
         if (peekKeyboardHandler().processKeyPressed(getContext(), keyEvent) == true) {
           keyEvent.consume();
-          relayout();
           return;
         }
       }
     });
+
+    relayout();
 
     return;
   }
