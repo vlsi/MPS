@@ -56,4 +56,11 @@ public class TextCopyPasteUtil {
     return result;
   };
 
+  public static boolean doesClipboardContainNode () {
+    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
+    Transferable content = cb.getContents(null);
+    if (content == null) return false;
+    return (content.isDataFlavorSupported(SModelDataFlavor.semanticNode));
+  }
+
 }

@@ -113,7 +113,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     }
 
     //process text copy action
-    if (EditorCellAction.COPY.equals(actionType) && selectedCell instanceof EditorCell_Label) {
+/*    if (EditorCellAction.COPY.equals(actionType) && selectedCell instanceof EditorCell_Label) {
       if (selectedCell.processKeyPressed(keyEvent)) {
           boolean cellWasValid = EditorUtil.isValidCell(selectedCell);
           if (!cellWasValid) {
@@ -121,7 +121,12 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
           }
           return true;
       }
-    }
+    }*/
+
+    //process text paste action
+/*    if (EditorCellAction.PASTE.equals(actionType) && selectedCell instanceof EditorCell_Label) {
+       System.out.println("paste text");
+    }*/
 
     // process action
 
