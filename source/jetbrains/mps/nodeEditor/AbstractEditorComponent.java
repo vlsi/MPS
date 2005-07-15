@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.test.EventRecorder;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.semanticModel.SModel;
-import jetbrains.mps.semanticModel.SModelAdapter;
 import jetbrains.mps.semanticModel.SModelDescriptor;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.semanticModel.event.*;
@@ -1093,6 +1092,26 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
 
         if (lastRemove != null) {
+          int index = lastRemove.getChildIndex();
+          String role = lastRemove.getChildRole();
+          SemanticNode parent = lastRemove.getParent();
+
+          if (parent.getChildCount() > index) {
+            SemanticNode child = parent.getChildAt(index);
+            if (child.getRole_().equals(role)) {
+              selectNode(child);
+              return;
+            }
+          }
+
+          if (index != 0) {
+            SemanticNode child = parent.getChildAt(index - 1);
+            if (child.getRole_().equals(role)) {
+              selectNode(child);
+              return;
+            }
+          }
+
           selectNode(lastRemove.getParent());
           return;
         }
