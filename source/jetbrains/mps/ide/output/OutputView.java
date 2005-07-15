@@ -2,6 +2,7 @@ package jetbrains.mps.ide.output;
 
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
+import jetbrains.mps.ide.toolsPane.Tool;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.preferences.ComponentWithPreferences;
@@ -21,7 +22,7 @@ import org.jdom.Element;
 /**
  * @author Kostik
  */
-public class OutputView implements ExternalizableComponent, ComponentWithPreferences {
+public class OutputView implements ExternalizableComponent, ComponentWithPreferences, Tool {
   public static final String FONT_SIZE = "fontSize";
 
   private JPanel myComponent = new JPanel();
@@ -142,6 +143,14 @@ public class OutputView implements ExternalizableComponent, ComponentWithPrefere
 
   public JComponent getComponent() {
     return myComponent;
+  }
+
+  public String getName() {
+    return "Output View";
+  }
+
+  public Icon getIcon() {
+    return Icons.OUTPUT_VIEW_ICON;
   }
 
   public PreferencesPage createPreferencesPage() {

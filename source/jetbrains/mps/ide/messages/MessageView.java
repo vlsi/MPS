@@ -2,6 +2,8 @@ package jetbrains.mps.ide.messages;
 
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
+import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.toolsPane.Tool;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,7 +15,7 @@ import java.awt.event.ActionEvent;
 /**
  * @author Kostik
  */
-public class MessageView {
+public class MessageView implements Tool {
   public static final Icon INFORMATION_ICON = new ImageIcon(MessageView.class.getResource("information.png"));
   public static final Icon ERROR_ICON = new ImageIcon(MessageView.class.getResource("error.png"));
   public static final Icon WARNING_ICON = new ImageIcon(MessageView.class.getResource("warning.png"));
@@ -125,5 +127,13 @@ public class MessageView {
       myList.setSelectedValue(myModel.getElementAt(myModel.size() - 1), true);
     }
     myIde.showMessagesView();
+  }
+
+  public String getName() {
+    return "Messages";
+  }
+
+  public Icon getIcon() {
+    return Icons.MESSAGE_VIEW_ICON;
   }
 }
