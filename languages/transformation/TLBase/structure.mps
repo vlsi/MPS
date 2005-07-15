@@ -206,9 +206,9 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1121381256013">
       <property name="sourceCardinality" value="0..1" />
       <property name="targetCardinality" value="1" />
-      <property name="role" value="dependentReduction" />
+      <property name="role" value="pendingReduction" />
       <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1114456200744" bad="false" />
+      <link role="target" targetNodeId="1121461070170" bad="false" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1114456532170">
@@ -347,6 +347,24 @@
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="templateDeclaration" />
       <link role="target" targetNodeId="1092059087312" bad="false" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1121461070170">
+    <property name="name" value="PendingReductions" />
+    <link role="extends" targetNodeId="2.1078489098625" bad="false" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1121461141454">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="targetCardinality" value="1" />
+      <property name="role" value="reductionRule" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1114456532170" bad="false" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1121461218080">
+      <property name="sourceCardinality" value="0..1" />
+      <property name="targetCardinality" value="1" />
+      <property name="role" value="pendingReduction" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1121461070170" bad="false" />
     </node>
   </node>
 </model>

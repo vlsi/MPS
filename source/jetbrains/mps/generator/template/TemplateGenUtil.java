@@ -42,6 +42,10 @@ public class TemplateGenUtil {
     while (iterator.hasNext()) {
       SemanticReference templateReference = iterator.next();
       SemanticNode templateReferentNode = templateReference.getTargetNode();
+      if (templateReferentNode == null) {
+        nodeBuilder.getGenerator().showErrorMessage(templateNode, "Invalid reference \"" + templateReference.getRole() + "\" in templates model " + templateNode.getModel().getFQName());
+        continue;
+      }
       if (templateReferentNode instanceof NodeMacro ||
               templateReferentNode instanceof ReferenceMacro ||
               templateReferentNode instanceof PropertyMacro) {
@@ -71,7 +75,7 @@ public class TemplateGenUtil {
       nodeBuilder.getGenerator().showErrorMessage(templateNode, "Couldn't resolve template reference \"" + templateReference.getRole() + "\"");
       //test
       LOG.error("uhhh! error. set breakpoint here, referenceResolver:" + referenceResolver);
-      referenceResolver.resolveTarget(templateReference, nodeBuilder);
+//      referenceResolver.resolveTarget(templateReference, nodeBuilder);
       //test
 
       // dump builders info
