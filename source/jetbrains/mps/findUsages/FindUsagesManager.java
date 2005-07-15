@@ -16,10 +16,9 @@ public class FindUsagesManager {
   }
 
   public Set<SemanticReference> findUsages(SemanticNode node, Scope scope, ProgressMonitor progress) {
-    Set<SemanticReference> result;
+    Set<SemanticReference> result = new HashSet<SemanticReference>();;
     try {
       if (progress == null) progress = ProgressMonitor.NULL_PROGRESS_MONITOR;
-      result = new HashSet<SemanticReference>();
       Set<SModelDescriptor> models = scope.getModels();
       progress.start("Find Usages...", models.size());
       progress.addText("Finding usages...");
@@ -36,9 +35,33 @@ public class FindUsagesManager {
     }
   }
 
+  public Set<SemanticNode> findInstances(ConceptDeclaration concept, Scope scope, ProgressMonitor progress) {
+    Set<SemanticNode> result = new HashSet<SemanticNode>();
+    try {
+      if (progress == null) progress = ProgressMonitor.NULL_PROGRESS_MONITOR;
+      Set<SModelDescriptor> models = scope.getModels();
+      progress.start("Finding Instances...", models.size());
+      for (SModelDescriptor model : models) {
+        result.addAll(model.findInstances(concept));
+        if (progress.isCanceled()) {
+          return result;
+        }
+        progress.advance(1);
+      }
+      return result;
+    } finally {
+      progress.finish();
+    }
+  }
+
+
 
   public Set<SemanticReference> findUsages(SemanticNode node, ProgressMonitor progress) {
     return findUsages(node, globalScope(), progress);
+  }
+
+  public Set<SemanticNode> findInstances(ConceptDeclaration concept, ProgressMonitor progress){
+    return findInstances(concept, globalScope(), progress);
   }
 
   public Scope globalScope() {
