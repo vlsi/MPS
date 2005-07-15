@@ -12,9 +12,11 @@ import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.semanticModel.SemanticReference;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.resolve.BadReferenceTextProvider;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
@@ -156,8 +158,22 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   }
   public EditorCell createConditionCell(EditorContext context, SemanticNode node) {
     SemanticNode referencedNode = null;
+    SemanticReference reference = null;
     referencedNode = node.getChild("condition");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "condition");
+    if(!(reference == null) && !((reference.isGood()))) {
+      EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
+      noRefCell.setEditable(true);
+      noRefCell.setSelectable(true);
+      noRefCell.setDrawBorder(false);
+      noRefCell.setDrawBrackets(false);
+      noRefCell.setBracketsColor(Color.black);
+      noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+      noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+      IfStatement_ConditionCellActions.setCellActions(noRefCell, node);
+      _DefErrorActions.setCellActions(noRefCell, node);
+      return noRefCell;
+    }
     if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
@@ -185,8 +201,20 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   }
   public EditorCell createIfTrueCell(EditorContext context, SemanticNode node) {
     SemanticNode referencedNode = null;
+    SemanticReference reference = null;
     referencedNode = node.getChild("ifTrue");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "ifTrue");
+    if(!(reference == null) && !((reference.isGood()))) {
+      EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
+      noRefCell.setEditable(true);
+      noRefCell.setSelectable(true);
+      noRefCell.setDrawBorder(false);
+      noRefCell.setDrawBrackets(false);
+      noRefCell.setBracketsColor(Color.black);
+      noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+      noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+      return noRefCell;
+    }
     if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
@@ -211,8 +239,20 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   }
   public EditorCell createIfFalseStatementCell(EditorContext context, SemanticNode node) {
     SemanticNode referencedNode = null;
+    SemanticReference reference = null;
     referencedNode = node.getChild("ifFalseStatement");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "ifFalseStatement");
+    if(!(reference == null) && !((reference.isGood()))) {
+      EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
+      noRefCell.setEditable(true);
+      noRefCell.setSelectable(true);
+      noRefCell.setDrawBorder(false);
+      noRefCell.setDrawBrackets(false);
+      noRefCell.setBracketsColor(Color.black);
+      noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+      noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+      return noRefCell;
+    }
     if(referencedNode == null) {
       {
         EditorCell_Constant noRefCell = EditorCell_Constant.create(context, node, null, true);

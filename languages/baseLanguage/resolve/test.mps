@@ -4,15 +4,6 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1121166935562">
     <property name="name" value="New" />
-    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1121172564017">
-      <property name="name" value="method" />
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1121172564019" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1121172570957" />
-      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1121172576490">
-        <property name="name" value="k" />
-        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1121172576491" />
-      </node>
-    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1121172586148">
       <property name="name" value="method" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1121172586150">
@@ -44,10 +35,10 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1121172642210">
             <property name="name" value="d" />
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1121172642211" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1121172725846">
-              <link role="baseMethodDeclaration" targetNodeId="1121172564017" bad="false" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1121172725847" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1121172736522">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1121438925079">
+              <link role="baseMethodDeclaration" targetNodeId="1121438897509" bad="false" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1121438925080" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1121438925081">
                 <link role="variableDeclaration" targetNodeId="1121172709122" bad="false" />
               </node>
             </node>
@@ -55,6 +46,15 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.BooleanType" id="1121172625567" />
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1121438897509">
+      <property name="name" value="method" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1121438897513" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1121438897510" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1121438897511">
+        <property name="name" value="k" />
+        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1121438897512" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1121167096060">

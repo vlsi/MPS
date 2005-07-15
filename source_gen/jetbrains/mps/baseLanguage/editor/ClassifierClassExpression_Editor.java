@@ -12,9 +12,11 @@ import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.semanticModel.SemanticReference;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.resolve.BadReferenceTextProvider;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
@@ -51,8 +53,21 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
   }
   public EditorCell createClassifierReferenceCell(EditorContext context, SemanticNode node) {
     SemanticNode effectiveNode = null;
+    SemanticReference reference = null;
     effectiveNode = node.getReferent("classifier");
+    reference = node.getReference("classifier");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "classifier");
+    if(!(reference == null) && !((reference.isGood()))) {
+      EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
+      noRefCell.setEditable(true);
+      noRefCell.setDrawBrackets(false);
+      noRefCell.setBracketsColor(Color.black);
+      noRefCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
+      noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
+      noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+      noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
+      return noRefCell;
+    }
     if(effectiveNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "<no classifier>");

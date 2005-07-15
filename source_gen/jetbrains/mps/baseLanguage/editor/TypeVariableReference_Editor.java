@@ -7,9 +7,11 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SemanticReference;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.resolve.BadReferenceTextProvider;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
@@ -24,8 +26,21 @@ public class TypeVariableReference_Editor extends DefaultNodeEditor {
   }
   public EditorCell createTypeVariableDeclarationReferenceCell(EditorContext context, SemanticNode node) {
     SemanticNode effectiveNode = null;
+    SemanticReference reference = null;
     effectiveNode = node.getReferent("typeVariableDeclaration");
+    reference = node.getReference("typeVariableDeclaration");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "typeVariableDeclaration");
+    if(!(reference == null) && !((reference.isGood()))) {
+      EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
+      noRefCell.setEditable(true);
+      noRefCell.setDrawBrackets(false);
+      noRefCell.setBracketsColor(Color.black);
+      noRefCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
+      noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
+      noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+      noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
+      return noRefCell;
+    }
     if(effectiveNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "<no type variable>");

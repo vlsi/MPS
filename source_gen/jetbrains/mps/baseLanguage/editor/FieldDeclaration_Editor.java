@@ -16,9 +16,11 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
+import jetbrains.mps.semanticModel.SemanticReference;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.resolve.BadReferenceTextProvider;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.CellAction_DeleteSmart;
@@ -93,8 +95,21 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createTypeCell(EditorContext context, SemanticNode node) {
     SemanticNode referencedNode = null;
+    SemanticReference reference = null;
     referencedNode = node.getChild("type");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "type");
+    if(!(reference == null) && !((reference.isGood()))) {
+      EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
+      noRefCell.setEditable(true);
+      noRefCell.setSelectable(true);
+      noRefCell.setDrawBorder(false);
+      noRefCell.setDrawBrackets(false);
+      noRefCell.setBracketsColor(Color.black);
+      noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+      noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+      FieldDeclaration_TypeCellActions.setCellActions(noRefCell, node);
+      return noRefCell;
+    }
     if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "<no type>");
@@ -121,8 +136,21 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createInitializerCell(EditorContext context, SemanticNode node) {
     SemanticNode referencedNode = null;
+    SemanticReference reference = null;
     referencedNode = node.getChild("initializer");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "initializer");
+    if(!(reference == null) && !((reference.isGood()))) {
+      EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
+      noRefCell.setEditable(true);
+      noRefCell.setSelectable(true);
+      noRefCell.setDrawBorder(false);
+      noRefCell.setDrawBrackets(false);
+      noRefCell.setBracketsColor(Color.black);
+      noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+      noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+      __VariableInitializer_ActionSet.setCellActions(noRefCell, node);
+      return noRefCell;
+    }
     if(referencedNode == null) {
       {
         EditorCell_Constant noRefCell = EditorCell_Constant.create(context, node, null, true);

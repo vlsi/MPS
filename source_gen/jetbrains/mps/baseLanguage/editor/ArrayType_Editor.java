@@ -10,9 +10,11 @@ import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.semanticModel.SemanticReference;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.resolve.BadReferenceTextProvider;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
@@ -48,8 +50,20 @@ public class ArrayType_Editor extends DefaultNodeEditor {
   }
   public EditorCell createComponentTypeCell(EditorContext context, SemanticNode node) {
     SemanticNode referencedNode = null;
+    SemanticReference reference = null;
     referencedNode = node.getChild("componentType");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "componentType");
+    if(!(reference == null) && !((reference.isGood()))) {
+      EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
+      noRefCell.setEditable(true);
+      noRefCell.setSelectable(true);
+      noRefCell.setDrawBorder(false);
+      noRefCell.setDrawBrackets(false);
+      noRefCell.setBracketsColor(Color.black);
+      noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+      noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+      return noRefCell;
+    }
     if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
