@@ -26,7 +26,7 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   ITemplateGeneratorState getState();
 
-  void generate(SModel sourceModel, SModel targetModel, SModel templatesModel) throws GenerationFailedException;
+  void doMapping(SModel sourceModel, SModel targetModel, SModel templatesModel) throws GenerationFailedException;
 
   int prepareReduction(SModel sourceModel, SModel targetModel, SModel templatesModel);
 
@@ -47,6 +47,8 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
   INodeBuilder findNodeBuilderForSource(SemanticNode sourceNode, String mappingName);
 
   INodeBuilder findNodeBuilderForSource(SemanticNode sourceNode, Condition<INodeBuilder> condition);
+
+  INodeBuilder findNodeBuilderForSource(SemanticNode sourceNode);
 
   INodeBuilder findNodeBuilder(Condition<INodeBuilder> condition);
 

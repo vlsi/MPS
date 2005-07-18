@@ -15,10 +15,7 @@ import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.*;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
-import jetbrains.mps.typesystem.ITypeObject;
-import jetbrains.mps.typesystem.TSStatus;
 import jetbrains.mps.util.AspectMethod;
-import jetbrains.mps.util.Condition;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -68,7 +65,12 @@ public class TemplateGenUtil {
       IReferenceResolver referenceResolver = createReferenceResolver(templateNode);
       SemanticNode targetReferentNode = referenceResolver.resolveTarget(templateReference, nodeBuilder);
       if (targetReferentNode != null) {
-        targetNode.addReferent(templateReference.getRole(), targetReferentNode);
+        if(SModelUtil.isAcceptableReferent(targetNode, templateReference.getRole(), targetReferentNode, nodeBuilder.getGenerator().getProject())) {
+          targetNode.addReferent(templateReference.getRole(), targetReferentNode);
+        } else {
+          // if reference is not acceptable, then temporarily keep original reference
+          targetNode.addReferent(templateReference.getRole(), templateReferentNode);
+        }
         continue;
       }
 
