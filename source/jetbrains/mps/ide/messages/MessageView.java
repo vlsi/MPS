@@ -116,6 +116,7 @@ public class MessageView implements Tool {
 
   public void add(Message message) {
     myModel.addElement(message);
+    show();
   }
 
   public JComponent getComponent() {
