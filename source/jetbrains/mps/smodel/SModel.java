@@ -155,10 +155,6 @@ public class SModel implements Iterable<SNode> {
     return false;
   }
 
-  public boolean customSave() {
-    return false;
-  }
-
   private boolean canFireEvent() {
     return !isLoading /*&& !UndoManager.instance().isUndoOrRedoInProgress() */;
   }

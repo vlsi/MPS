@@ -19,7 +19,6 @@ import java.util.*;
 public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   private static final Logger LOG = Logger.getLogger(AbstractSModelDescriptor.class);
 
-
   private SModel mySModel = null;
   private String myModelFqName;
   private ArrayList<SModelListener> myModelListeners;

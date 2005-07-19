@@ -49,8 +49,9 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
         }
         MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
         projects.addProject(MPSProject.this);
-        if (myProjectFile != null && myProjectFile.getName().equals("RubyWeb.mpr")) {
-          rubyWeb.bibliography.PersistenceUtil.loadRubyWebBibliography(MPSProject.this);
+
+
+        if (false && (myProjectFile != null && myProjectFile.getName().equals("RubyWeb.mpr"))) {
           rubyWeb.patternList.PersistenceUtil.loadRubyWebPatternList(MPSProject.this);
           rubyWeb.paper.PersistenceUtil.loadRubyWebPaper(MPSProject.this);
         }

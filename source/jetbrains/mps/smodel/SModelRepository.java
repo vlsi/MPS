@@ -1,7 +1,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.ApplicationComponents;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.logging.Logger;
@@ -193,7 +192,9 @@ public class SModelRepository extends SModelAdapter {
       ModelRoot modelRoot = iterator.next();
       File dir = new File(modelRoot.getPath());
       if (dir.exists()) {
-        readModelDescriptors(modelDescriptors, dir, modelRoot, owner);
+        ModelRootManager manager = getManagerFor(modelRoot);
+        Set<SModelDescriptor> models = manager.read(modelRoot, owner);
+        modelDescriptors.addAll(models);
       } else {
         String error = "Couldn't load modelDescriptors from " + dir.getAbsolutePath() +
                 "\nDirectory doesn't exist: " + dir.getAbsolutePath();
@@ -203,32 +204,14 @@ public class SModelRepository extends SModelAdapter {
     }
   }
 
-  private void readModelDescriptors(Set<SModelDescriptor> modelDescriptors, File dir, ModelRoot modelRoot, ModelOwner owner) {
-    if (!dir.isDirectory()) {
-      return;
-    }
-    File[] files = dir.listFiles(new FilenameFilter() {
-      public boolean accept(File dir, String name) {
-        return name.endsWith(".mps");
-      }
-    });
-    for (int i = 0; i < files.length; i++) {
-      File file = files[i];
-      String modelFQName = PathManager.getModelFQName(file, new File(modelRoot.getPath()), modelRoot.getPrefix());
-      SModelDescriptor modelDescriptor = MPSFileModelDescriptor.getInstance(file.getAbsolutePath(), modelFQName, owner);
-      LOG.debug("I've read model descriptor " + modelDescriptor.getFQName() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());      
-      modelDescriptors.add(modelDescriptor);
-
-      if (modelRoot.getIsSynchronizedWithJava()) {
-        IdeMain.instance().getProject().getRootManager().addImportedModel(modelDescriptor);
-      }
-    }
-    File[] dirs = dir.listFiles();
-    for (int i = 0; i < dirs.length; i++) {
-      File childDir = dirs[i];
-      if (childDir.isDirectory()) {
-        readModelDescriptors(modelDescriptors, childDir, modelRoot, owner);
-      }
+  private ModelRootManager getManagerFor(ModelRoot modelRoot) {
+    if (modelRoot.getHandlerClass() == null) return new DefaultModelRootManager();
+    String fqName = modelRoot.getHandlerClass();
+    try {
+      Class cls = Class.forName(fqName);
+      return (ModelRootManager) cls.newInstance();
+    } catch (Exception e) {
+      return null;
     }
   }
 }
