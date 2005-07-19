@@ -33,7 +33,7 @@
   </project-components>
 
   <actions>
-    <action class="jetbrains.mps.plugin.FindAspectMethodUsages" text="Find Aspect Method Usages" id="MPSPlugin.findAspectMethodUsages" />
+    <action class="jetbrains.mps.plugin.FindAspectMethodUsages" text="Find Query Method Usages" id="MPSPlugin.findAspectMethodUsages" />
 
     <group>
       <separator />

@@ -1031,8 +1031,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myHasLastCaretX = true;
   }
 
-  private EditorCell findErrorCell(EditorCell root) {
+  private EditorCell findErrorOrEditableCell(EditorCell root) {
     if (root instanceof EditorCell_Error) {
+      return root;
+    }
+    if (root instanceof EditorCell_Label && ((EditorCell_Label) root).isEditable()) {
       return root;
     }
     if (root != null && root.isErrorState()) {
@@ -1042,7 +1045,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       EditorCell_Collection collection = (EditorCell_Collection) root;
       for (int i = 0; i < collection.getChildCount(); i++) {
         EditorCell child = collection.getChildAt(i);
-        EditorCell result = findErrorCell(child);
+        EditorCell result = findErrorOrEditableCell(child);
         if (result != null) return result;
       }
     }
@@ -1084,7 +1087,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
         if (lastAdd != null) {
           EditorCell cell = findNodeCell(lastAdd.getChild());
-          EditorCell error = findErrorCell(cell);
+          EditorCell error = findErrorOrEditableCell(cell);
           if (error == null) {
             selectNode(lastAdd.getChild());
           } else {
