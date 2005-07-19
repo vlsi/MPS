@@ -1,8 +1,8 @@
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.semanticModel.SModel;
-import jetbrains.mps.semanticModel.SNode;
-import jetbrains.mps.semanticModel.SModelDescriptor;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.transformation.TLBase.TemplateSwitch;
 
 import java.util.*;

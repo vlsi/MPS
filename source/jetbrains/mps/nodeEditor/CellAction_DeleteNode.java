@@ -1,7 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.semanticModel.SNode;
-import jetbrains.mps.semanticModel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
 
 /**
  * Author: Sergey Dmitriev.

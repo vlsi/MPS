@@ -6,11 +6,11 @@ import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
-import jetbrains.mps.semanticModel.SModelUtil;
-import jetbrains.mps.semanticModel.SNode;
-import jetbrains.mps.semanticModel.action.DefaultChildNodeSubstituteAction;
-import jetbrains.mps.semanticModel.action.INodeSubstituteAction;
-import jetbrains.mps.semanticModel.action.ModelActions;
+import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.util.Condition;
 
 import java.util.LinkedList;

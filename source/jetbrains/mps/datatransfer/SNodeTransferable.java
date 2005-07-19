@@ -1,6 +1,6 @@
 package jetbrains.mps.datatransfer;
 
-import jetbrains.mps.semanticModel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.textPresentation.TextPresentationManager;
 import org.jdom.Document;
 import org.jdom.Element;

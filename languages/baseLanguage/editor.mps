@@ -6,7 +6,7 @@
   <import referenceID="8" name="structure" namespace="jetbrains.mps.baseLanguage" />
   <import referenceID="9" name="structure" namespace="jetbrains.mps.core" />
   <import referenceID="14" name="lang" namespace="java" />
-  <import referenceID="15" name="semanticModel" namespace="jetbrains.mps" />
+  <import referenceID="15" name="smodel" namespace="jetbrains.mps" />
   <import referenceID="16" name="util" namespace="java" />
   <import referenceID="17" name="structureLanguage" namespace="jetbrains.mps.bootstrap" />
   <import referenceID="18" name="core" namespace="jetbrains.mps" />
@@ -7892,7 +7892,7 @@
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1082648409712">
                 <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1082648736065">
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1082648736066">
-                    <property name="name" value="semanticModel" />
+                    <property name="name" value="smodel" />
                     <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1082648736067">
                       <link role="classifier" targetNodeId="15.1086945614636" bad="false" />
                     </node>

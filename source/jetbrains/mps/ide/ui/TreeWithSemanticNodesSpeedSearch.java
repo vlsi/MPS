@@ -1,7 +1,7 @@
 package jetbrains.mps.ide.ui;
 
 import jetbrains.mps.ide.ui.TreeSpeedSearch;
-import jetbrains.mps.semanticModel.SNode;
+import jetbrains.mps.smodel.SNode;
 
 import javax.swing.*;
 import javax.swing.tree.TreePath;

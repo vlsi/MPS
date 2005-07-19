@@ -2,9 +2,9 @@ package jetbrains.mps.ide.components;
 
 import org.jdom.Element;
 import org.jdom.DataConversionException;
-import jetbrains.mps.semanticModel.SNode;
-import jetbrains.mps.semanticModel.SModelDescriptor;
-import jetbrains.mps.semanticModel.SModelRepository;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.logging.Logger;
 

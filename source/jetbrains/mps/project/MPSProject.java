@@ -3,7 +3,7 @@ package jetbrains.mps.project;
 import jetbrains.mps.ide.*;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandEventTranslator;
-import jetbrains.mps.semanticModel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.logging.Logger;

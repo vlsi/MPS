@@ -1,9 +1,9 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration;
-import jetbrains.mps.semanticModel.SModelUtil;
-import jetbrains.mps.semanticModel.SNode;
-import jetbrains.mps.semanticModel.PropertySupport;
+import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.PropertySupport;
 
 /**
  * User: Dmitriev.

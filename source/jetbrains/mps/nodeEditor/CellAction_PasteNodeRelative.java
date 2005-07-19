@@ -6,7 +6,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.semanticModel.SNode;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.datatransfer.PasteUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.EditorsPane;

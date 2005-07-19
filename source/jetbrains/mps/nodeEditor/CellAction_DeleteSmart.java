@@ -4,9 +4,9 @@ import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
-import jetbrains.mps.semanticModel.SModel;
-import jetbrains.mps.semanticModel.SModelUtil;
-import jetbrains.mps.semanticModel.SNode;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * Author: Sergey Dmitriev.

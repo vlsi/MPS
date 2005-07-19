@@ -6,9 +6,9 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.semanticModel.Language;
-import jetbrains.mps.semanticModel.SModel;
-import jetbrains.mps.semanticModel.SNode;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
 
 import javax.swing.*;
 import java.util.Iterator;

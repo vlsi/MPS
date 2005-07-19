@@ -2,7 +2,7 @@ package rubyWeb;
 
 import jetbrains.textLanguage.*;
 import jetbrains.textLanguage.Tag;
-import jetbrains.mps.semanticModel.SModel;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.CollectionUtil;
 import org.jdom.Element;
 import rubyWeb.paper.*;

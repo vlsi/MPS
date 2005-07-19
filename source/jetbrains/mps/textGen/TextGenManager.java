@@ -1,6 +1,6 @@
 package jetbrains.mps.textGen;
 
-import jetbrains.mps.semanticModel.SNode;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.logging.Logger;
 

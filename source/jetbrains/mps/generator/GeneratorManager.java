@@ -25,7 +25,7 @@ import jetbrains.mps.projectLanguage.GeneratorConfigurationCommand;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.projectLanguage.ProjectModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.semanticModel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textPresentation.TextPresentationManager;
 import jetbrains.mps.util.CollectionUtil;

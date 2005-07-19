@@ -25,9 +25,9 @@ import jetbrains.mps.project.RootManager;
 import jetbrains.mps.projectLanguage.GeneratorConfiguration;
 import jetbrains.mps.projectLanguage.ProjectModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.semanticModel.*;
-import jetbrains.mps.semanticModel.vcs.VersionControl;
-import jetbrains.mps.semanticModel.event.*;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.vcs.VersionControl;
+import jetbrains.mps.smodel.event.*;
 
 import javax.swing.*;
 import javax.swing.event.MenuListener;

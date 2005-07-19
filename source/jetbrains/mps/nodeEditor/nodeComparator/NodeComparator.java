@@ -1,7 +1,7 @@
 package jetbrains.mps.nodeEditor.nodeComparator;
 
-import jetbrains.mps.semanticModel.SNode;
-import jetbrains.mps.semanticModel.SReference;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
 
 import java.util.HashMap;
 import java.util.Map;

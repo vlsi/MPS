@@ -1,6 +1,6 @@
 package jetbrains.mps.ide.icons;
 
-import jetbrains.mps.semanticModel.SNode;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.action.MPSAction;

@@ -1,7 +1,7 @@
 package jetbrains.mps.ide.messages;
 
-import jetbrains.mps.semanticModel.SNode;
-import jetbrains.mps.semanticModel.SNodeReference;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeReference;
 
 /**
  * @author Kostik

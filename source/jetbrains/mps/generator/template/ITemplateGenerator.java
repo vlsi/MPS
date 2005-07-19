@@ -8,8 +8,8 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.IModelGenerator;
-import jetbrains.mps.semanticModel.SModel;
-import jetbrains.mps.semanticModel.SNode;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.TemplateDeclaration;
 import jetbrains.mps.transformation.TLBase.TemplateSwitch;

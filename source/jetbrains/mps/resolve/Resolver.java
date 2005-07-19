@@ -1,9 +1,9 @@
 package jetbrains.mps.resolve;
 
-import jetbrains.mps.semanticModel.SNode;
-import jetbrains.mps.semanticModel.SReference;
-import jetbrains.mps.semanticModel.SModel;
-import jetbrains.mps.semanticModel.ExternalReference;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.ExternalReference;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.ide.command.CommandProcessor;
 

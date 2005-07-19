@@ -1,7 +1,7 @@
 package jetbrains.mps.findUsages;
 
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.semanticModel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.ide.progress.ProgressMonitor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;

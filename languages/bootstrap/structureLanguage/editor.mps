@@ -6,7 +6,7 @@
   <import referenceID="1" name="structure" namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <import referenceID="2" name="structure" namespace="jetbrains.mps.core" />
   <import referenceID="4" name="nodeEditor" namespace="jetbrains.mps" />
-  <import referenceID="5" name="semanticModel" namespace="jetbrains.mps" />
+  <import referenceID="5" name="smodel" namespace="jetbrains.mps" />
   <import referenceID="6" name="lang" namespace="java" />
   <import referenceID="7" name="util" namespace="java" />
   <import referenceID="8" name="structureLanguage" namespace="jetbrains.mps.bootstrap" />

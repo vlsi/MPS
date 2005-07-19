@@ -1,7 +1,7 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.semanticModel.SModel;
-import jetbrains.mps.semanticModel.SNode;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * User: Dmitriev.

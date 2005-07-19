@@ -7,7 +7,7 @@
 package jetbrains.mps.textGen;
 
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.semanticModel.SNode;
+import jetbrains.mps.smodel.SNode;
 
 public class DefaultTextGen extends SNodeTextGen {
 

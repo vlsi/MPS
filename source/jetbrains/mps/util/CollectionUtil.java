@@ -1,6 +1,6 @@
 package jetbrains.mps.util;
 
-import jetbrains.mps.semanticModel.SNode;
+import jetbrains.mps.smodel.SNode;
 
 import java.util.*;
 

@@ -6,10 +6,10 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.semanticModel.SModel;
-import jetbrains.mps.semanticModel.SModelUtil;
-import jetbrains.mps.semanticModel.SNode;
-import jetbrains.mps.semanticModel.SModelDescriptor;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.messages.MessageView;
 

@@ -2,7 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
-import jetbrains.mps.semanticModel.SNode;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.logging.Logger;
 
 import javax.swing.*;

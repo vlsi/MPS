@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 
 import jetbrains.mps.generator.IModelGenerator;
-import jetbrains.mps.semanticModel.vcs.Revision;
+import jetbrains.mps.smodel.vcs.Revision;
 
 /**
  * @author Kostik

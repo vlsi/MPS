@@ -4,9 +4,9 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.semanticModel.Language;
-import jetbrains.mps.semanticModel.SNode;
-import jetbrains.mps.semanticModel.SReference;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.util.NameUtil;
 
 

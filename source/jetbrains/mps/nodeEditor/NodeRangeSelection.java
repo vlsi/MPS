@@ -8,8 +8,8 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.semanticModel.SModelUtil;
-import jetbrains.mps.semanticModel.SNode;
+import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SNode;
 
 import java.awt.event.KeyEvent;
 import java.awt.*;

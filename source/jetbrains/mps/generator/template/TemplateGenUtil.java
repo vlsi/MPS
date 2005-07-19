@@ -11,7 +11,7 @@ import jetbrains.mps.core.BaseConcept;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.semanticModel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.*;
 import jetbrains.mps.transformation.TemplateLanguageUtil;

@@ -20,10 +20,10 @@ import jetbrains.mps.nodeEditor.rerform.CellRangeSelection;
 import jetbrains.mps.nodeEditor.test.EventRecorder;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.semanticModel.SModel;
-import jetbrains.mps.semanticModel.SModelDescriptor;
-import jetbrains.mps.semanticModel.SNode;
-import jetbrains.mps.semanticModel.event.*;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CopyUtil;
 import jetbrains.mps.util.CollectionUtil;
 
