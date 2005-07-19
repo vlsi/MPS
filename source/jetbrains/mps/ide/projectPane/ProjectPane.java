@@ -698,12 +698,12 @@ public class ProjectPane extends JComponent {
 
   private class SNodeTreeNode extends MPSTreeNodeEx {
     private boolean myInitialized = false;
-    private SNodeReference myNodeReference;
+    private SNodeProxy myNodeReference;
     private String myRole;
 
     public SNodeTreeNode(SNode node, String role) {
       LOG.assertLog(node != null);
-      myNodeReference = new SNodeReference(node);
+      myNodeReference = new SNodeProxy(node);
       myRole = role;
       setUserObject(node);
     }

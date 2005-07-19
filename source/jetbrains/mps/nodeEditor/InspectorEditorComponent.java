@@ -7,12 +7,12 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeReference;
+import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.project.MPSProject;
 
 public class InspectorEditorComponent extends AbstractEditorComponent {
   private EditorContext myEditorContext;
-  private SNodeReference myNodeReference = new SNodeReference(null);
+  private SNodeProxy myNodeReference = new SNodeProxy(null);
 
   public InspectorEditorComponent(MPSProject project) {
     super(project);
@@ -37,7 +37,7 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
     if (getNode() == semanticNode) {
       return;
     }
-    myNodeReference = new SNodeReference(semanticNode);
+    myNodeReference = new SNodeProxy(semanticNode);
     reinitEditor();
     rebuildEditorContent();
     repaint();

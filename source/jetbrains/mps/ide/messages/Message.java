@@ -1,19 +1,19 @@
 package jetbrains.mps.ide.messages;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeReference;
+import jetbrains.mps.smodel.SNodeProxy;
 
 /**
  * @author Kostik
  */
 public class Message {
   private MessageKind myKind;
-  private SNodeReference myNodeReference;
+  private SNodeProxy myNodeReference;
   private String myText;
 
   public Message(MessageKind kind, SNode node, String text) {
     myKind = kind;
-    myNodeReference = new SNodeReference(node);
+    myNodeReference = new SNodeProxy(node);
     myText = text;
   }
 
