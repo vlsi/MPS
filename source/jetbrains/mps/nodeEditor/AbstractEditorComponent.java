@@ -1109,7 +1109,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             }
           }
 
-          if (index != 0) {
+          if (index != 0) {       
             SNode child = parent.getChildAt(index - 1);
             if (child.getRole_().equals(role)) {
               selectNode(child);
