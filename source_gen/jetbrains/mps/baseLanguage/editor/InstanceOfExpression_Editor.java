@@ -6,12 +6,12 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.semanticModel.SemanticReference;
+import jetbrains.mps.semanticModel.SReference;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
@@ -23,10 +23,10 @@ import jetbrains.mps.nodeEditor.CellAction_DeleteSmart;
 
 public class InstanceOfExpression_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+  public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createExpressionBox(context, node);
   }
-  public EditorCell createExpressionBox(EditorContext context, SemanticNode node) {
+  public EditorCell createExpressionBox(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -38,7 +38,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createClassTypeCell(context, node));
     return editorCell;
   }
-  public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -49,9 +49,9 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     return editorCell;
   }
-  public EditorCell createLeftExpressionCell(EditorContext context, SemanticNode node) {
-    SemanticNode referencedNode = null;
-    SemanticReference reference = null;
+  public EditorCell createLeftExpressionCell(EditorContext context, SNode node) {
+    SNode referencedNode = null;
+    SReference reference = null;
     referencedNode = node.getChild("leftExpression");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "leftExpression");
     if(!(reference == null) && !((reference.isGood()))) {
@@ -92,9 +92,9 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     InstanceOfExpression_LeftExpressionsActions.setCellActions(editorCell, node);
     return editorCell;
   }
-  public EditorCell createClassTypeCell(EditorContext context, SemanticNode node) {
-    SemanticNode referencedNode = null;
-    SemanticReference reference = null;
+  public EditorCell createClassTypeCell(EditorContext context, SNode node) {
+    SNode referencedNode = null;
+    SReference reference = null;
     referencedNode = node.getChild("classType");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "classType");
     if(!(reference == null) && !((reference.isGood()))) {

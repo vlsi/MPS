@@ -1,7 +1,7 @@
 package jetbrains.mps.nodeEditor.nodeComparator;
 
-import jetbrains.mps.semanticModel.SemanticNode;
-import jetbrains.mps.semanticModel.SemanticReference;
+import jetbrains.mps.semanticModel.SNode;
+import jetbrains.mps.semanticModel.SReference;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,12 +10,12 @@ import java.util.Map;
  * @author Kostik
  */
 public class NodeComparator {
-  private SemanticNode myFirstNode;
-  private SemanticNode mySecondNode;
+  private SNode myFirstNode;
+  private SNode mySecondNode;
 
-  private Map<SemanticNode, SemanticNode> myNodeMap = new HashMap<SemanticNode, SemanticNode>();
+  private Map<SNode, SNode> myNodeMap = new HashMap<SNode, SNode>();
 
-  public NodeComparator(SemanticNode firstNode, SemanticNode secondNode) {
+  public NodeComparator(SNode firstNode, SNode secondNode) {
     myFirstNode = firstNode;
     mySecondNode = secondNode;
   }
@@ -30,7 +30,7 @@ public class NodeComparator {
     return true;
   }
 
-  private boolean compareNodes(SemanticNode one, SemanticNode another) {
+  private boolean compareNodes(SNode one, SNode another) {
     if (one.getClass() != another.getClass()) return false;
     if (!compareProperties(one, another)) return false;
     if (!compareChildren(one, another)) return false;
@@ -38,7 +38,7 @@ public class NodeComparator {
     return true;
   }
 
-  private boolean compareProperties(SemanticNode one, SemanticNode another) {
+  private boolean compareProperties(SNode one, SNode another) {
     if (one.getProperties().size() != another.getProperties().size()) return false;
     for (String key : one.getProperties().keySet()) {
       if (!one.getProperties().get(key).equals(another.getProperties().get(key))) {
@@ -48,7 +48,7 @@ public class NodeComparator {
     return true;
   }
 
-  private boolean compareChildren(SemanticNode one, SemanticNode another) {
+  private boolean compareChildren(SNode one, SNode another) {
     if (one.getChildren().size() != another.getChildren().size()) return false;
 
     for (int i = 0; i < one.getChildren().size(); i++) {
@@ -59,12 +59,12 @@ public class NodeComparator {
     return true;
   }
 
-  private boolean compareReferences(SemanticNode one, SemanticNode another) {
+  private boolean compareReferences(SNode one, SNode another) {
     if (one.getReferences().size() != another.getReferences().size()) return false;
 
     for (int i = 0; i < one.getReferences().size(); i++) {
-      SemanticReference oneReference = one.getReferences().get(i);
-      SemanticReference anotherReference = another.getReferences().get(i);
+      SReference oneReference = one.getReferences().get(i);
+      SReference anotherReference = another.getReferences().get(i);
       if (!compareTargets(oneReference.getTargetNode(), anotherReference.getTargetNode())) return false;
     }
 
@@ -75,7 +75,7 @@ public class NodeComparator {
     return true;
   }
 
-  private boolean compareTargets(SemanticNode one, SemanticNode another) {
+  private boolean compareTargets(SNode one, SNode another) {
     if (one == another) return true;
     if (myNodeMap.get(one) == another) return true;
     return false;

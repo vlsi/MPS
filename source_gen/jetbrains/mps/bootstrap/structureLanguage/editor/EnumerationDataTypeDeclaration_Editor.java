@@ -7,7 +7,7 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCellListHandler;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -23,10 +23,10 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCellListHandler myMemberListHandler;
 
-  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+  public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createNodeBox(context, node);
   }
-  public EditorCell createNodeBox(EditorContext context, SemanticNode node) {
+  public EditorCell createNodeBox(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -38,7 +38,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRowCell3(context, node));
     return editorCell;
   }
-  public EditorCell createHeaderRow(EditorContext context, SemanticNode node) {
+  public EditorCell createHeaderRow(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -49,7 +49,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createNameCell(context, node));
     return editorCell;
   }
-  public EditorCell createColumnCell(EditorContext context, SemanticNode node) {
+  public EditorCell createColumnCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -61,7 +61,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRowCell2(context, node));
     return editorCell;
   }
-  public EditorCell createRowCell3(EditorContext context, SemanticNode node) {
+  public EditorCell createRowCell3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -72,7 +72,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createMemberList(context, node));
     return editorCell;
   }
-  public EditorCell createRowCell(EditorContext context, SemanticNode node) {
+  public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -84,7 +84,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createEnumDataType_MemberDataTypeNameCell(context, node));
     return editorCell;
   }
-  public EditorCell createRowCell1(EditorContext context, SemanticNode node) {
+  public EditorCell createRowCell1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -94,7 +94,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createIndent1(context, node, "    "));
     return editorCell;
   }
-  public EditorCell createRowCell2(EditorContext context, SemanticNode node) {
+  public EditorCell createRowCell2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -105,7 +105,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell2(context, node, "members:"));
     return editorCell;
   }
-  public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -115,7 +115,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createIndent(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createIndent(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -125,7 +125,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createConstantCell1(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -135,7 +135,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createIndent1(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createIndent1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -145,7 +145,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createIndent2(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createIndent2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -155,7 +155,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createConstantCell2(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -165,7 +165,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createIndent3(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createIndent3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -175,7 +175,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createEnumDataType_MemberDataTypeNameCell(EditorContext context, SemanticNode node) {
+  public EditorCell createEnumDataType_MemberDataTypeNameCell(EditorContext context, SNode node) {
     ModelAccessor modelAccessor = Queries.createModelAccessor_EnumDataType_MemberDataTypeName(node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
     editorCell.setSelectable(true);
@@ -187,7 +187,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     EnumerationDataTypeDeclaration_MemberDataTypeActions.setCellActions(editorCell, node);
     return editorCell;
   }
-  public EditorCell createNameCell(EditorContext context, SemanticNode node) {
+  public EditorCell createNameCell(EditorContext context, SNode node) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "name", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
     editorCell.setSelectable(true);
@@ -201,7 +201,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
     return editorCell;
   }
-  public EditorCell createMemberList(EditorContext context, SemanticNode node) {
+  public EditorCell createMemberList(EditorContext context, SNode node) {
     if(this.myMemberListHandler == null) {
       this.myMemberListHandler = new EnumerationDataTypeDeclaration_Editor_MemberListHandler(node, "member");
     }

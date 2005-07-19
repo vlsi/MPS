@@ -9,14 +9,13 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.semanticModel.SModelUtil;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 
 import java.awt.event.KeyEvent;
 import java.awt.*;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.ArrayList;
 
 // ----- range selection ----
 
@@ -24,9 +23,9 @@ public class NodeRangeSelection implements IKeyboardHandler {
   private AbstractEditorComponent myEditorComponent;
   private boolean myActive;
   private String myRole;
-  private SemanticNode myParentNode;
-  private SemanticNode myFirstNode;
-  private SemanticNode myLastNode;
+  private SNode myParentNode;
+  private SNode myFirstNode;
+  private SNode myLastNode;
 
   public NodeRangeSelection(AbstractEditorComponent abstractEditorComponent) {
     myEditorComponent = abstractEditorComponent;
@@ -62,11 +61,11 @@ public class NodeRangeSelection implements IKeyboardHandler {
   public boolean activate(KeyEvent keyEvent) {
     // find appropriate node
     EditorCell selectedCell = myEditorComponent.getSelectedCell();
-    SemanticNode childNode = selectedCell.getSemanticNode();
-    SemanticNode parentNode = childNode.getParent();
+    SNode childNode = selectedCell.getSemanticNode();
+    SNode parentNode = childNode.getParent();
     String role = null;
     while (parentNode != null) {
-//      SemanticReference reference = parentNode.getReference(childNode);
+//      SReference reference = parentNode.getReference(childNode);
 //      role = reference.getRole();
       role = childNode.getRole_();
       LinkDeclaration childDeclaration = SModelUtil.getChildDeclaration(parentNode, role);
@@ -97,13 +96,13 @@ public class NodeRangeSelection implements IKeyboardHandler {
     return true;
   }
 
-  public List<SemanticNode> getNodes() {
-    Iterator<SemanticNode> iterator = myParentNode.children(myRole);
-    List<SemanticNode> children = new LinkedList<SemanticNode>();
+  public List<SNode> getNodes() {
+    Iterator<SNode> iterator = myParentNode.children(myRole);
+    List<SNode> children = new LinkedList<SNode>();
     while (iterator.hasNext()) {
       children.add(iterator.next());
     }
-    LinkedList<SemanticNode> resultList = new LinkedList<SemanticNode>();
+    LinkedList<SNode> resultList = new LinkedList<SNode>();
     int i1 = children.indexOf(myFirstNode);
     int i2 = children.indexOf(myLastNode);
     for (int index = Math.min(i1, i2); index <= Math.max(i1, i2); index++) {
@@ -116,7 +115,7 @@ public class NodeRangeSelection implements IKeyboardHandler {
 
     if (getNodes().size() != 0) {
       AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
-      SemanticNode node = getNodes().get(0);
+      SNode node = getNodes().get(0);
       EditorCell cell = editor.findNodeCell(node);
       List<EditorCellKeyMapAction> actions = EditorUtil.getKeyMapActionsForEvent(cell, keyEvent, editorContext);
       if (actions != null) {
@@ -169,10 +168,10 @@ public class NodeRangeSelection implements IKeyboardHandler {
     }
 
     boolean next = (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT || keyEvent.getKeyCode() == KeyEvent.VK_DOWN);
-    SemanticNode newLastNode = null;
-    Iterator<SemanticNode> iterator = myParentNode.children(myRole);
+    SNode newLastNode = null;
+    Iterator<SNode> iterator = myParentNode.children(myRole);
     while (iterator.hasNext()) {
-      SemanticNode semanticNode = iterator.next();
+      SNode semanticNode = iterator.next();
       if (semanticNode == myLastNode) {
         if (next) {
           if (iterator.hasNext()) {
@@ -199,9 +198,9 @@ public class NodeRangeSelection implements IKeyboardHandler {
   }
 
   private void doDeleteNodes(EditorContext editorContext) {
-    Iterator<SemanticNode> iterator = getNodes().iterator();
+    Iterator<SNode> iterator = getNodes().iterator();
     while (iterator.hasNext()) {
-      SemanticNode semanticNode = iterator.next();
+      SNode semanticNode = iterator.next();
       EditorCell nodeCell = myEditorComponent.findNodeCell(semanticNode);
       EditorCellAction action = nodeCell.getAction(EditorCellAction.DELETE);
       if (action != null && action.canExecute(editorContext)) {
@@ -212,7 +211,7 @@ public class NodeRangeSelection implements IKeyboardHandler {
 
   public void paint(Graphics g) {
     g.setColor(new Color(255, 0, 255, 60));
-    Iterator<SemanticNode> nodes = getNodes().iterator();
+    Iterator<SNode> nodes = getNodes().iterator();
     while (nodes.hasNext()) {
       EditorCell cell = myEditorComponent.findNodeCell(nodes.next());
       if (cell != null) { // the paint may happen when the editor content is aldeary changed

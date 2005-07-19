@@ -1,7 +1,7 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.semanticModel.SModel;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.semanticModel.SModelDescriptor;
 import jetbrains.mps.transformation.TLBase.TemplateSwitch;
 
@@ -27,7 +27,7 @@ public class TemplateSwitchGraph {
     }
     processedModes.add(templatesModel.getFQName());
 
-    for (SemanticNode root : templatesModel.getRoots()) {
+    for (SNode root : templatesModel.getRoots()) {
       if (root instanceof TemplateSwitch) {
         if (myTemplateSwitchToGraphNodeMap.get((TemplateSwitch) root) == null) {
           addSwitch((TemplateSwitch) root);

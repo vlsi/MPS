@@ -119,13 +119,13 @@ public class ProjectPane extends JComponent {
 
     TreePath selectionPath = myTree.getSelectionPath();
     final Object lastPathComponent = selectionPath.getLastPathComponent();
-    SemanticTreeNode selectedTreeNode = null;
+    MPSTreeNodeEx selectedTreeNode = null;
     SModel semanticModel = null;
 
-    if (lastPathComponent instanceof SemanticTreeNode) {
-      selectedTreeNode = (SemanticTreeNode) selectionPath.getLastPathComponent();
+    if (lastPathComponent instanceof MPSTreeNodeEx) {
+      selectedTreeNode = (MPSTreeNodeEx) selectionPath.getLastPathComponent();
       if (selectedTreeNode != null) {
-        semanticModel = ((SemanticTreeNode) selectedTreeNode).getSModel();
+        semanticModel = ((MPSTreeNodeEx) selectedTreeNode).getSModel();
       }
     }
 
@@ -436,7 +436,7 @@ public class ProjectPane extends JComponent {
               {
                 CommandProcessor.instance().executeCommand(new Runnable() {
                   public void run() {
-                    SemanticNode node = SModelUtil.instantiateConceptDeclaration(typeDeclaration, ApplicationComponents.getInstance().getComponent(ProjectModel.class).getSModel());
+                    SNode node = SModelUtil.instantiateConceptDeclaration(typeDeclaration, ApplicationComponents.getInstance().getComponent(ProjectModel.class).getSModel());
                     LOG.assertLog(node != null, "Node isn't null");
                     putValue(Action.SMALL_ICON, IconManager.getIconFor(node));
                   }
@@ -444,7 +444,7 @@ public class ProjectPane extends JComponent {
               }
 
               public void actionPerformed(ActionEvent e) {
-                final SemanticNode[] node = new SemanticNode[1];
+                final SNode[] node = new SNode[1];
                 CommandProcessor.instance().executeCommand(new Runnable() {
                   public void run() {
                     node[0] = SModelUtil.instantiateConceptDeclaration(typeDeclaration, semanticModel);
@@ -480,7 +480,7 @@ public class ProjectPane extends JComponent {
     return rootPopupMenu;
   }
 
-  private void addSemanticNodePopupActions(JPopupMenu popupMenu, SemanticNode semanticNode, SModel selectedModel) {
+  private void addSemanticNodePopupActions(JPopupMenu popupMenu, SNode semanticNode, SModel selectedModel) {
     ActionManager.instance().getGroup(PROJECT_PANE_NODE_ACTIONS).add(popupMenu, new ActionContext(myIDE, semanticNode));
 
     if (semanticNode instanceof BaseEditorComponent || semanticNode instanceof EditorCellModel) {
@@ -496,7 +496,7 @@ public class ProjectPane extends JComponent {
     if (selectionPath == null) return;
     if (!(selectionPath.getLastPathComponent() instanceof SNodeTreeNode)) return;
     SNodeTreeNode selectedTreeNode = (SNodeTreeNode) selectionPath.getLastPathComponent();
-    SemanticNode semanticNode = selectedTreeNode.getSNode();
+    SNode semanticNode = selectedTreeNode.getSNode();
     myIDE.openNode(semanticNode);
   }
 
@@ -557,13 +557,13 @@ public class ProjectPane extends JComponent {
     return sortedModels;
   }
 
-  public void selectNode(SemanticNode semanticNode) {
+  public void selectNode(SNode semanticNode) {
     DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
     DefaultMutableTreeNode rootNode = (DefaultMutableTreeNode) model.getRoot();
     SModel sModel = semanticNode.getModel();
     SModelTreeNode sModelNode = findSModelTreeNode(rootNode, sModel);
     if (sModelNode == null) return;
-    SemanticTreeNode treeNodeToSelect = findTreeNode((MPSTreeNode) rootNode, semanticNode);
+    MPSTreeNodeEx treeNodeToSelect = findTreeNode((MPSTreeNode) rootNode, semanticNode);
     if (treeNodeToSelect != null) {
       TreePath treePath = new TreePath(treeNodeToSelect.getPath());
       myTree.setSelectionPath(treePath);
@@ -573,7 +573,7 @@ public class ProjectPane extends JComponent {
     }
   }
 
-  private SemanticTreeNode findTreeNode(MPSTreeNode parent, SemanticNode semanticNode) {
+  private MPSTreeNodeEx findTreeNode(MPSTreeNode parent, SNode semanticNode) {
     if (!parent.initialized()) parent.init();
 
     if (parent instanceof SNodeTreeNode) {
@@ -584,7 +584,7 @@ public class ProjectPane extends JComponent {
     }
     Enumeration children = parent.children();
     while (children.hasMoreElements()) {
-      SemanticTreeNode foundNode = findTreeNode((MPSTreeNode) children.nextElement(), semanticNode);
+      MPSTreeNodeEx foundNode = findTreeNode((MPSTreeNode) children.nextElement(), semanticNode);
       if (foundNode != null) {
         return foundNode;
       }
@@ -658,10 +658,10 @@ public class ProjectPane extends JComponent {
     }
   }
 
-  private abstract class SemanticTreeNode extends MPSTreeNode {
+  private abstract class MPSTreeNodeEx extends MPSTreeNode {
     protected abstract SModel getSModel();
 
-    public SemanticNode getSNode() {
+    public SNode getSNode() {
       return null;
     }
   }
@@ -696,23 +696,23 @@ public class ProjectPane extends JComponent {
     }
   }
 
-  private class SNodeTreeNode extends SemanticTreeNode {
+  private class SNodeTreeNode extends MPSTreeNodeEx {
     private boolean myInitialized = false;
     private SNodeReference myNodeReference;
     private String myRole;
 
-    public SNodeTreeNode(SemanticNode node, String role) {
+    public SNodeTreeNode(SNode node, String role) {
       LOG.assertLog(node != null);
       myNodeReference = new SNodeReference(node);
       myRole = role;
       setUserObject(node);
     }
 
-    public SNodeTreeNode(SemanticNode node) {
+    public SNodeTreeNode(SNode node) {
       this(node, null);
     }
 
-    public SemanticNode getSNode() {
+    public SNode getSNode() {
       return myNodeReference.getNode();
     }
 
@@ -736,8 +736,8 @@ public class ProjectPane extends JComponent {
 
     public void init() {
       this.removeAllChildren();
-      List<SemanticNode> children = getSNode().getChildren();
-      for (SemanticNode childNode : children) {
+      List<SNode> children = getSNode().getChildren();
+      for (SNode childNode : children) {
         add(new SNodeTreeNode(childNode, childNode.getRole_()));
       }
       myInitialized = true;
@@ -764,11 +764,11 @@ public class ProjectPane extends JComponent {
       }
 
       if (getSNode() != null) {
-        IStatus status = (IStatus) getSNode().getUserObject(SemanticNode.ERROR_STATUS);
+        IStatus status = (IStatus) getSNode().getUserObject(SNode.ERROR_STATUS);
         if (status != null && status.isError()) {
           output.append("<font color=\"red\">");
         } else {
-          status = (IStatus) getSNode().getUserObject(SemanticNode.CHILDREN_ERROR_STATUS);
+          status = (IStatus) getSNode().getUserObject(SNode.CHILDREN_ERROR_STATUS);
           if (status != null && status.isError()) {
             output.append("<font color=\"red\">");
             output.append(" (" + status.getMessage() + ")");
@@ -780,7 +780,7 @@ public class ProjectPane extends JComponent {
     }
   }
 
-  private class SModelTreeNode extends SemanticTreeNode {
+  private class SModelTreeNode extends MPSTreeNodeEx {
     private SModelDescriptor myModelDescriptor;
     private String myLabel;
     private boolean isInitialized = false;
@@ -864,14 +864,14 @@ public class ProjectPane extends JComponent {
       if (!model.hasSModelCommandListener(myModelListener)) {
         model.addSModelCommandListener(myModelListener);
       }
-      Iterator<SemanticNode> iterator = model.roots();
+      Iterator<SNode> iterator = model.roots();
       TreeSet<Object> sortedRoots = new TreeSet<Object>(new Comparator() {
         public int compare(Object o, Object o1) {
           if (o == o1) {
             return 0;
           }
-          String name1 = ((SemanticNode) o).getName();
-          String name2 = ((SemanticNode) o1).getName();
+          String name1 = ((SNode) o).getName();
+          String name2 = ((SNode) o1).getName();
           if (name1 == null) name1 = "";
           if (name2 == null) name2 = "";
 
@@ -887,8 +887,8 @@ public class ProjectPane extends JComponent {
       }
       Iterator iterator1 = sortedRoots.iterator();
       while (iterator1.hasNext()) {
-        SemanticNode semanticNode = (SemanticNode) iterator1.next();
-        SemanticTreeNode treeNode = new SNodeTreeNode(semanticNode);
+        SNode semanticNode = (SNode) iterator1.next();
+        MPSTreeNodeEx treeNode = new SNodeTreeNode(semanticNode);
         add(treeNode);
       }
       isInitialized = true;
@@ -932,7 +932,7 @@ public class ProjectPane extends JComponent {
         repaint();
       }
 
-      private void updateTreeWithRoot(SemanticNode node) {
+      private void updateTreeWithRoot(SNode node) {
         MPSTreeNode treeNode = findNodeWith(node);
         if (treeNode != null) {
           treeNode.update();
@@ -1172,7 +1172,7 @@ public class ProjectPane extends JComponent {
     public int getToggleClickCount() {
       TreePath selection = myTree.getSelectionPath();
       if (selection == null) return -1;
-      if (!(selection.getLastPathComponent() instanceof SemanticTreeNode)) return 2;
+      if (!(selection.getLastPathComponent() instanceof MPSTreeNodeEx)) return 2;
       if ((selection.getLastPathComponent() instanceof SModelTreeNode)) return 2;
       return -1;
     }

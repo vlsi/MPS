@@ -1,6 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 
 import java.util.List;
 
@@ -14,9 +14,9 @@ public interface INodeSubstituteInfo {
 
   void invalidateItems();
 
-  void setOriginalNode(SemanticNode node);
+  void setOriginalNode(SNode node);
 
-  SemanticNode getOriginalNode();
+  SNode getOriginalNode();
 
   void setOriginalText(String text);
 

@@ -1,16 +1,16 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 
 /**
  * Author: Sergey Dmitriev.
  * Time: Nov 5, 2003 1:03:02 PM
  */
 public class CellAction_DeleteProperty extends EditorCellAction {
-  private SemanticNode mySemanticNode;
+  private SNode mySemanticNode;
   private String myPropertyName;
 
-  public CellAction_DeleteProperty(SemanticNode semanticNode, String propertyName) {
+  public CellAction_DeleteProperty(SNode semanticNode, String propertyName) {
     mySemanticNode = semanticNode;
     myPropertyName = propertyName;
   }

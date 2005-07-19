@@ -9,7 +9,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.semanticModel.SModel;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.util.NameUtil;
 import org.apache.xmlrpc.XmlRpcException;
 
@@ -30,11 +30,11 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
 
   private boolean myMustBeSet;
 
-  public QueryMethodIdEditor(SemanticNode semanticNode) {
+  public QueryMethodIdEditor(SNode semanticNode) {
     this(semanticNode, false);
   }
 
-  public QueryMethodIdEditor(SemanticNode semanticNode, boolean mustBeSet) {
+  public QueryMethodIdEditor(SNode semanticNode, boolean mustBeSet) {
     super(semanticNode);
     myMustBeSet = mustBeSet;
   }
@@ -115,7 +115,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
 //        return getIdNotSetString();
 //      }
 //
-//      public SemanticNode doSubstitute(String pattern) {
+//      public SNode doSubstitute(String pattern) {
 //        setQueryMethodId(null);
 //        return getSemanticNode();
 //      }
@@ -133,7 +133,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
           return queryMethodId;
         }
 
-        public SemanticNode doSubstitute(String pattern) {
+        public SNode doSubstitute(String pattern) {
           setQueryMethodId(queryMethodId);
           return null;
         }
@@ -145,7 +145,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
         return "New query method";
       }
 
-      public SemanticNode doSubstitute(String pattern) {
+      public SNode doSubstitute(String pattern) {
         String id = JOptionPane.showInputDialog(null, "Enter query method ID :", "Create New Query Method", JOptionPane.QUESTION_MESSAGE);
         if (id == null) return null;
         try {

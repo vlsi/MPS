@@ -7,7 +7,7 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCellListHandler;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
 import java.awt.Color;
@@ -16,10 +16,10 @@ public class StatementList_Editor extends DefaultNodeEditor {
 
   public EditorCellListHandler myStatementListHandler;
 
-  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+  public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createStatementList(context, node);
   }
-  public EditorCell createStatementList(EditorContext context, SemanticNode node) {
+  public EditorCell createStatementList(EditorContext context, SNode node) {
     if(this.myStatementListHandler == null) {
       this.myStatementListHandler = new StatementList_Editor_StatementListHandler(node, "statement");
     }

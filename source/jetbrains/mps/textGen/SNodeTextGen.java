@@ -1,8 +1,6 @@
 package jetbrains.mps.textGen;
 
-import jetbrains.mps.semanticModel.SemanticNode;
-
-import java.util.HashMap;
+import jetbrains.mps.semanticModel.SNode;
 
 /**
  * Author: Sergey Dmitriev
@@ -20,9 +18,9 @@ public abstract class SNodeTextGen {
     return myBuffer;
   }
 
-  protected abstract void doGenerateText(SemanticNode node);
+  protected abstract void doGenerateText(SNode node);
 
-  protected final void appendNodeText(SemanticNode node) {
+  protected final void appendNodeText(SNode node) {
     TextGenManager.instance().appendNodeText(myBuffer, node);
   }
 

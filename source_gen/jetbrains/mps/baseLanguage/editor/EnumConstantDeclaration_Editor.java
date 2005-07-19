@@ -7,7 +7,7 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCellListHandler;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -21,10 +21,10 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCellListHandler myActualArgumentListHandler;
 
-  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+  public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
-  public EditorCell createRowCell(EditorContext context, SemanticNode node) {
+  public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -37,7 +37,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell2(context, node, ")"));
     return editorCell;
   }
-  public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -47,7 +47,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createConstantCell2(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -57,7 +57,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createNameCell(EditorContext context, SemanticNode node) {
+  public EditorCell createNameCell(EditorContext context, SNode node) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "name", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
     editorCell.setSelectable(true);
@@ -69,7 +69,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
     return editorCell;
   }
-  public EditorCell createActualArgumentList(EditorContext context, SemanticNode node) {
+  public EditorCell createActualArgumentList(EditorContext context, SNode node) {
     if(this.myActualArgumentListHandler == null) {
       this.myActualArgumentListHandler = new EnumConstantDeclaration_Editor_ActualArgumentListHandler(node, "actualArgument");
     }

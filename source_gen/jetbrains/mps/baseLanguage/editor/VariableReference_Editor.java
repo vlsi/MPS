@@ -6,16 +6,16 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 import java.awt.Color;
 
 public class VariableReference_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+  public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createErrorCell(context, node);
   }
-  public EditorCell createErrorCell(EditorContext context, SemanticNode node) {
+  public EditorCell createErrorCell(EditorContext context, SNode node) {
     EditorCell_Error editorCell = EditorCell_Error.create(context, node, "<collection>");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);

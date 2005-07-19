@@ -2,12 +2,11 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.semanticModel.Language;
-import jetbrains.mps.semanticModel.SemanticNode;
-import jetbrains.mps.semanticModel.SemanticReference;
+import jetbrains.mps.semanticModel.SNode;
+import jetbrains.mps.semanticModel.SReference;
 import jetbrains.mps.util.NameUtil;
 
 
@@ -20,11 +19,11 @@ public class EditorManager {
   //  private static EditorManager myInstance;
   public static String NODE_TO_PLACE_AFTER = "nodeToPlaceAfter";
 
-  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+  public EditorCell createEditorCell(EditorContext context, SNode node) {
     EditorCell editorCell = createEditorCell_internal(context, node);
 
     boolean hasBadReference = false;
-    for (SemanticReference sr : node.getReferences()) {
+    for (SReference sr : node.getReferences()) {
       if (!sr.isGood()) {
         hasBadReference = true;
         break ;
@@ -36,7 +35,7 @@ public class EditorManager {
     return editorCell;
   }
 
-  private EditorCell createEditorCell_internal(EditorContext context, SemanticNode node) {
+  private EditorCell createEditorCell_internal(EditorContext context, SNode node) {
     INodeEditor editor = getEditor(context, node);
     EditorCell nodeCell = null;
     try {
@@ -52,17 +51,17 @@ public class EditorManager {
     EditorCell_Collection rowWrapper = EditorCell_Collection.createHorizontal(context, node);
     rowWrapper.setSelectable(false);
     rowWrapper.addEditorCell(nodeCell);
-    SemanticNode afterNode = node.getChild(NODE_TO_PLACE_AFTER);
+    SNode afterNode = node.getChild(NODE_TO_PLACE_AFTER);
     rowWrapper.addEditorCell(getEditor(context, afterNode).createEditorCell(context, afterNode));
     return rowWrapper;
   }
 
-  public EditorCell createInspectedCell(EditorContext context, SemanticNode node) {
+  public EditorCell createInspectedCell(EditorContext context, SNode node) {
     INodeEditor editor = getEditor(context, node);
     return editor.createInspectedCell(context, node);
   }
 
-  private INodeEditor getEditor(EditorContext context, SemanticNode node) {
+  private INodeEditor getEditor(EditorContext context, SNode node) {
     INodeEditor editor = (INodeEditor) node.getUserObject(this.getClass());
 
     if (editor != null &&
@@ -89,7 +88,7 @@ public class EditorManager {
     return editor;
   }
 
-  private INodeEditor loadEditor(EditorContext context, SemanticNode node) {
+  private INodeEditor loadEditor(EditorContext context, SNode node) {
     Language language = Language.getLanguage(node, context.getProject());
     if (language == null) {
       LOG.errorWithTrace("Error loading editor for node \"" + node.getDebugText() + "\".\n" +

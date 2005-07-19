@@ -7,7 +7,7 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -15,7 +15,7 @@ import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
-import jetbrains.mps.semanticModel.SemanticReference;
+import jetbrains.mps.semanticModel.SReference;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
@@ -28,10 +28,10 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public AbstractCellProvider my_BaseMethodParmListEditor;
 
-  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+  public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createMethodBox(context, node);
   }
-  public EditorCell createMethodBox(EditorContext context, SemanticNode node) {
+  public EditorCell createMethodBox(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -43,7 +43,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell2(context, node, "}"));
     return editorCell;
   }
-  public EditorCell createHeaderRow(EditorContext context, SemanticNode node) {
+  public EditorCell createHeaderRow(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -57,7 +57,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell1(context, node, ") {"));
     return editorCell;
   }
-  public EditorCell createBodyArea(EditorContext context, SemanticNode node) {
+  public EditorCell createBodyArea(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -68,7 +68,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createBodyCell(context, node));
     return editorCell;
   }
-  public EditorCell create_BaseMethodParmListEditorCell(EditorContext context, SemanticNode node) {
+  public EditorCell create_BaseMethodParmListEditorCell(EditorContext context, SNode node) {
     if(this.my_BaseMethodParmListEditor == null) {
       this.my_BaseMethodParmListEditor = new _BaseMethodParmListEditor(node);
     }
@@ -79,7 +79,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createConstantCell2(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -89,7 +89,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -99,7 +99,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createConstantCell1(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -109,7 +109,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createIndentCell(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createIndentCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -119,7 +119,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createMethodName(EditorContext context, SemanticNode node) {
+  public EditorCell createMethodName(EditorContext context, SNode node) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "name", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
     editorCell.setSelectable(true);
@@ -131,9 +131,9 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
     return editorCell;
   }
-  public EditorCell createReturnType(EditorContext context, SemanticNode node) {
-    SemanticNode referencedNode = null;
-    SemanticReference reference = null;
+  public EditorCell createReturnType(EditorContext context, SNode node) {
+    SNode referencedNode = null;
+    SReference reference = null;
     referencedNode = node.getChild("returnType");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "returnType");
     if(!(reference == null) && !((reference.isGood()))) {
@@ -172,9 +172,9 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     InstanceMethodDeclaration_ReturnTypeCellActions.setCellActions(editorCell, node);
     return editorCell;
   }
-  public EditorCell createBodyCell(EditorContext context, SemanticNode node) {
-    SemanticNode referencedNode = null;
-    SemanticReference reference = null;
+  public EditorCell createBodyCell(EditorContext context, SNode node) {
+    SNode referencedNode = null;
+    SReference reference = null;
     referencedNode = node.getChild("body");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "body");
     if(!(reference == null) && !((reference.isGood()))) {

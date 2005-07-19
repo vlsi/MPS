@@ -1,6 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.semanticModel.SModel;
 
 /**
@@ -8,9 +8,9 @@ import jetbrains.mps.semanticModel.SModel;
  * Time: Nov 5, 2003 1:03:02 PM
  */
 public class CellAction_DeleteNode extends EditorCellAction {
-  private SemanticNode mySemanticNode;
+  private SNode mySemanticNode;
 
-  public CellAction_DeleteNode(SemanticNode semanticNode) {
+  public CellAction_DeleteNode(SNode semanticNode) {
     mySemanticNode = semanticNode;
   }
 
@@ -20,7 +20,7 @@ public class CellAction_DeleteNode extends EditorCellAction {
 
   public void execute(EditorContext context) {
     SModel model = mySemanticNode.getModel();
-    SemanticNode parent = mySemanticNode.getParent();
+    SNode parent = mySemanticNode.getParent();
     mySemanticNode.delete();
   }
 }

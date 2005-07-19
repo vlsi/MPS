@@ -2,7 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.logging.Logger;
 
 import javax.swing.*;
@@ -142,7 +142,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
           return "No variants for \"" + getPatternEditor().getPattern() + "\"";
         }
 
-        public SemanticNode doSubstitute(String pattern) {
+        public SNode doSubstitute(String pattern) {
           return null;
         }
       });

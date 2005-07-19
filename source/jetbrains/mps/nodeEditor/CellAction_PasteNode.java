@@ -1,9 +1,8 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.datatransfer.PasteUtil;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.EditorsPane;
 
 import java.util.List;
@@ -21,8 +20,8 @@ public class CellAction_PasteNode extends EditorCellAction {
     if (selectedCell == null) {
       return false;
     }
-    SemanticNode selectedNode = selectedCell.getSemanticNode();
-    List<SemanticNode> pasteNodes = PasteUtil.getNodesFromClipboard(selectedNode.getModel());
+    SNode selectedNode = selectedCell.getSemanticNode();
+    List<SNode> pasteNodes = PasteUtil.getNodesFromClipboard(selectedNode.getModel());
     if (pasteNodes == null || pasteNodes.size() == 0) {
       return false;
     }
@@ -36,12 +35,12 @@ public class CellAction_PasteNode extends EditorCellAction {
 
   public void execute(EditorContext context) {
     EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
-    SemanticNode selectedNode = selectedCell.getSemanticNode();
-    List<SemanticNode> pasteNodes = PasteUtil.getNodesFromClipboard(selectedNode.getModel());
+    SNode selectedNode = selectedCell.getSemanticNode();
+    List<SNode> pasteNodes = PasteUtil.getNodesFromClipboard(selectedNode.getModel());
     PasteUtil.paste(selectedNode, pasteNodes.get(0));
-    SemanticNode anchor = pasteNodes.get(0);
+    SNode anchor = pasteNodes.get(0);
     for (int i = 1; i < pasteNodes.size(); i++) {
-      SemanticNode node = pasteNodes.get(i);
+      SNode node = pasteNodes.get(i);
       PasteUtil.pasteRelative(anchor, node, false);
       anchor = node;
     }

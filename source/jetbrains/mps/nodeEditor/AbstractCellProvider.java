@@ -6,16 +6,16 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 
 public abstract class AbstractCellProvider {
-  private SemanticNode myNode;
+  private SNode myNode;
 
-  public AbstractCellProvider(SemanticNode node) {
+  public AbstractCellProvider(SNode node) {
     myNode = node;
   }
 
-  public SemanticNode getSemanticNode() {
+  public SNode getSemanticNode() {
     return myNode;
   }
 

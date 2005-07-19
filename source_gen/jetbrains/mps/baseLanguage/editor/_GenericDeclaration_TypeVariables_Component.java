@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.EditorCellListHandler;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.baseLanguage.editor.Queries;
@@ -18,17 +18,17 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
 
   public EditorCellListHandler myTypeVariableDeclarationListHandler;
 
-  public _GenericDeclaration_TypeVariables_Component(SemanticNode node) {
+  public _GenericDeclaration_TypeVariables_Component(SNode node) {
     super(node);
   }
 
   public EditorCell createEditorCell(EditorContext context) {
     return this.createEditorCell(context, this.getSemanticNode());
   }
-  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+  public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCellAlternation(context, node);
   }
-  public EditorCell createCellAlternation(EditorContext context, SemanticNode node) {
+  public EditorCell createCellAlternation(EditorContext context, SNode node) {
     boolean alternationCondition = Queries.semanticNodeCondition_GenericDeclaration_HasTypeVariables(node);
     EditorCell editorCell = null;
     if(alternationCondition) {
@@ -41,7 +41,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createRowCell(EditorContext context, SemanticNode node) {
+  public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -53,7 +53,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     editorCell.addEditorCell(this.createConstantCell1(context, node, ">"));
     return editorCell;
   }
-  public EditorCell createConstantCell2(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -64,7 +64,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     editorCell.addKeyMap(new _GenericDeclaration_AddTypeVariable_KeyMap());
     return editorCell;
   }
-  public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -74,7 +74,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createConstantCell1(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -84,7 +84,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createTypeVariableDeclarationList(EditorContext context, SemanticNode node) {
+  public EditorCell createTypeVariableDeclarationList(EditorContext context, SNode node) {
     if(this.myTypeVariableDeclarationListHandler == null) {
       this.myTypeVariableDeclarationListHandler = new _GenericDeclaration_TypeVariables_Component_TypeVariableDeclarationListHandler(node, "typeVariableDeclaration");
     }

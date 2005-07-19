@@ -6,18 +6,18 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.semanticModel.SModelUtil;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 
 /**
  * Author: Sergey Dmitriev.
  * Time: Nov 5, 2003 1:03:02 PM
  */
 public class CellAction_DeleteSmart extends EditorCellAction {
-  private SemanticNode mySource;
+  private SNode mySource;
   private LinkDeclaration myLink;
-  private SemanticNode myTarget;
+  private SNode myTarget;
 
-  public CellAction_DeleteSmart(SemanticNode source, LinkDeclaration link, SemanticNode target) {
+  public CellAction_DeleteSmart(SNode source, LinkDeclaration link, SNode target) {
     mySource = source;
     myLink = link;
     myTarget = target;
@@ -36,7 +36,7 @@ public class CellAction_DeleteSmart extends EditorCellAction {
       Cardinality sourceCardinality = genuineLink.getSourceCardinality();
       if (sourceCardinality == Cardinality._1) {
         ConceptDeclaration defaultTargetConcept = myLink.getTarget();
-        SemanticNode defaultTarget = SModelUtil.instantiateConceptDeclaration(defaultTargetConcept, model);
+        SNode defaultTarget = SModelUtil.instantiateConceptDeclaration(defaultTargetConcept, model);
         String role = genuineLink.getRole();
         mySource.setChild(role, defaultTarget);
       }

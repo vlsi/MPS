@@ -1,6 +1,6 @@
 package jetbrains.mps.textGen;
 
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.logging.Logger;
 
@@ -24,17 +24,17 @@ public class TextGenManager {
     return myInstance;
   }
 
-  public String generateText(SemanticNode node) {
+  public String generateText(SNode node) {
     TextGenBuffer buffer = new TextGenBuffer();
     appendNodeText(buffer, node);
     return buffer.getText();
   }
 
-  public boolean canGenerateTextFor(SemanticNode node) {
+  public boolean canGenerateTextFor(SNode node) {
     return !(loadNodeTextGen(node) instanceof DefaultTextGen);
   }
 
-  protected void appendNodeText(TextGenBuffer buffer, SemanticNode node) {
+  protected void appendNodeText(TextGenBuffer buffer, SNode node) {
     if(node == null) {
       buffer.append("???");
       return;
@@ -46,7 +46,7 @@ public class TextGenManager {
     nodeTextGen.doGenerateText(node);
   }
 
-  private SNodeTextGen loadNodeTextGen(SemanticNode node) {
+  private SNodeTextGen loadNodeTextGen(SNode node) {
     String className = node.getClass().getName();
     className = className.substring(className.lastIndexOf('.') + 1);
     String packageName = node.getClass().getPackage().getName();

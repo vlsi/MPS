@@ -4,7 +4,7 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.semanticModel.SModelUtil;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 
 import java.awt.event.KeyEvent;
 import java.util.Iterator;
@@ -17,20 +17,20 @@ import java.util.List;
  */
 public abstract class EditorCellListHandler implements IKeyboardHandler {
   private String myChildRole;
-  private SemanticNode myOwnerNode;
+  private SNode myOwnerNode;
   private EditorCell_Collection myListEditorCell_Collection;
-  private SemanticNode myInsertedNode;
+  private SNode myInsertedNode;
   private ConceptDeclaration myChildConcept;
   private LinkDeclaration myLinkDeclaration;
 
   /**
    * @deprecated
    */
-  public EditorCellListHandler(SemanticNode ownerNode, String linkRole, boolean isAggregation) {
+  public EditorCellListHandler(SNode ownerNode, String linkRole, boolean isAggregation) {
     this(ownerNode, linkRole);
   }
 
-  public EditorCellListHandler(SemanticNode ownerNode, String childRole) {
+  public EditorCellListHandler(SNode ownerNode, String childRole) {
     myOwnerNode = ownerNode;
     myLinkDeclaration = SModelUtil.getLinkDeclaration(ownerNode, childRole);
     myChildConcept = myLinkDeclaration.getTarget();
@@ -41,7 +41,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
     myChildRole = genuineLink.getRole();
   }
 
-  public SemanticNode getOwner() {
+  public SNode getOwner() {
     return myOwnerNode;
   }
 
@@ -59,10 +59,10 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
 
 
   public void startInsertMode(EditorContext editorContext, EditorCell anchorCell, boolean insertBefore) {
-    SemanticNode anchorNode = (anchorCell != null ? anchorCell.getSemanticNode() : null);
+    SNode anchorNode = (anchorCell != null ? anchorCell.getSemanticNode() : null);
     if (anchorNode != null) {
-      Iterator<SemanticNode> listElementsIter = getOwner().children(getChildRole());
-      List<SemanticNode> listElements = new LinkedList<SemanticNode>();
+      Iterator<SNode> listElementsIter = getOwner().children(getChildRole());
+      List<SNode> listElements = new LinkedList<SNode>();
       while (listElementsIter.hasNext()) {
         listElements.add(listElementsIter.next());
       }
@@ -97,7 +97,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
     return myInsertedNode != null;
   }
 
-  public EditorCell createNodeCell(EditorContext editorContext, SemanticNode node) {
+  public EditorCell createNodeCell(EditorContext editorContext, SNode node) {
     return editorContext.createNodeCell(node);
   }
 
@@ -113,7 +113,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
     return emptyCell;
   }
 
-  public abstract SemanticNode createNodeToInsert();
+  public abstract SNode createNodeToInsert();
 
   public EditorCell_Collection createCells_Vertical(EditorContext editorContext) {
     return createCells(editorContext, new CellLayout_Vertical());
@@ -127,14 +127,14 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
     myListEditorCell_Collection = EditorCell_Collection.create(editorContext, myOwnerNode, cellLayout);
     myListEditorCell_Collection.setSelectable(false);
 
-    Iterator<SemanticNode> listNodes = myOwnerNode.children(getChildRole());
+    Iterator<SNode> listNodes = myOwnerNode.children(getChildRole());
     if (!listNodes.hasNext()) {
       myListEditorCell_Collection.addEditorCell(createEmptyCell(editorContext));
     } else {
       EditorCell separatorCell = null;
       while (listNodes.hasNext()) {
         separatorCell = addSeparatorCell(editorContext, separatorCell);
-        SemanticNode node = listNodes.next();
+        SNode node = listNodes.next();
         myListEditorCell_Collection.addEditorCell(createNodeCell(editorContext, node));
       }
     }

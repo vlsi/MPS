@@ -1,7 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.datatransfer.SemanticNodeData;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.datatransfer.SNodeTransferable;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.resolve.Resolver;
 
@@ -23,7 +23,7 @@ public class CellAction_CopyNode extends EditorCellAction {
   }
 
   public void execute(EditorContext context) {
-    List<SemanticNode> nodeList = new LinkedList<SemanticNode>();
+    List<SNode> nodeList = new LinkedList<SNode>();
     AbstractEditorComponent editorComponent = context.getNodeEditorComponent();
     NodeRangeSelection cellRangeSelection = editorComponent.getNodeRangeSelection();
     if (cellRangeSelection.isActive()) {
@@ -37,11 +37,11 @@ public class CellAction_CopyNode extends EditorCellAction {
       LOG.debug("Copy node : " + nodeList.get(0).getDebugText());
     }
 
-    for (SemanticNode sn : nodeList) {
+    for (SNode sn : nodeList) {
       Resolver.processCopy(sn);
     }
 
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
-    cb.setContents(new SemanticNodeData(nodeList), null);
+    cb.setContents(new SNodeTransferable(nodeList), null);
   }
 }

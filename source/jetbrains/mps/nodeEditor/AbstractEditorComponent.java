@@ -22,7 +22,7 @@ import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.semanticModel.SModelDescriptor;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.semanticModel.event.*;
 import jetbrains.mps.util.CopyUtil;
 import jetbrains.mps.util.CollectionUtil;
@@ -302,7 +302,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void showPopupMenu(MouseEvent e) {
-    final SemanticNode selectedNode = getSelectedCell().getSemanticNode();
+    final SNode selectedNode = getSelectedCell().getSemanticNode();
     if (selectedNode == null) return;
     //    selectNode(selectedNode);
     JPopupMenu popupMenu = new JPopupMenu();
@@ -339,7 +339,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public abstract EditorCell createRootCell();
 
   public void clear() {
-    SemanticNode semanticNode = myRootCell.getSemanticNode();
+    SNode semanticNode = myRootCell.getSemanticNode();
     if (semanticNode != null) {
       SModel semanticModel = semanticNode.getModel();
       semanticModel.removeSModelCommandListener(myModelListener);
@@ -348,7 +348,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private void setRootCell(EditorCell rootCell) {
     if (myRootCell != null) {
-      SemanticNode semanticNode = myRootCell.getSemanticNode();
+      SNode semanticNode = myRootCell.getSemanticNode();
       if (semanticNode != null) {
         SModel semanticModel = semanticNode.getModel();
         semanticModel.removeSModelCommandListener(myModelListener);
@@ -360,7 +360,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myRootCell.setY(myShiftY);
     myRootCell.relayout();
 
-    SemanticNode node = myRootCell.getSemanticNode();
+    SNode node = myRootCell.getSemanticNode();
     if (node != null) {
       SModel model = node.getModel();
       if (!model.hasSModelCommandListener(myModelListener)) {
@@ -497,11 +497,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     repaint();
   }
 
-  public void selectNode(final SemanticNode node) {
+  public void selectNode(final SNode node) {
     changeSelection(findNodeCell(node));
   }
 
-  public void selectFirstEditableCellOf(final SemanticNode node) {
+  public void selectFirstEditableCellOf(final SNode node) {
     EditorCell cell = findNodeCell(node);
     EditorCell editable = findEditableCell(cell);
     if (editable == null) {
@@ -511,7 +511,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
   }
 
-  public EditorCell findNodeCell(final SemanticNode node) {
+  public EditorCell findNodeCell(final SNode node) {
     if (myRootCell.getSemanticNode() == node) {
       return myRootCell;
     }
@@ -653,11 +653,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     if (mouseEvent.isControlDown()) {
       if (getSelectedCell() != null) {
-        SemanticNode selectedNode = getSelectedCell().getSemanticNode();
+        SNode selectedNode = getSelectedCell().getSemanticNode();
         while (selectedNode != null) {
-          final IStatus status = (IStatus) selectedNode.getUserObject(SemanticNode.ERROR_STATUS);
+          final IStatus status = (IStatus) selectedNode.getUserObject(SNode.ERROR_STATUS);
           if (status != null) {
-            final SemanticNode selectedNode1 = selectedNode;
+            final SNode selectedNode1 = selectedNode;
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
                 String nodeClasName = JavaNameUtil.shortName(selectedNode1.getClass().getName());
@@ -849,8 +849,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   protected void startRecording(String scriptName) {
     requestFocus();
-    final SemanticNode root = getRootCell().getSemanticNode();
-    final SemanticNode[] copy = new SemanticNode[1];
+    final SNode root = getRootCell().getSemanticNode();
+    final SNode[] copy = new SNode[1];
 
     CommandProcessor.instance().executeCommand(getContext(), new Runnable() {
       public void run() {
@@ -940,7 +940,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     // try to obtain substitute info
     INodeSubstituteInfo substituteInfo = null;
     if (editorCell != null) {
-      SemanticNode cellNode = editorCell.getSemanticNode();
+      SNode cellNode = editorCell.getSemanticNode();
       EditorCell infoCell = editorCell;
       substituteInfo = infoCell.getSubstituteInfo();
     }
@@ -1096,10 +1096,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         if (lastRemove != null) {
           int index = lastRemove.getChildIndex();
           String role = lastRemove.getChildRole();
-          SemanticNode parent = lastRemove.getParent();
+          SNode parent = lastRemove.getParent();
 
           if (parent.getChildCount() > index) {
-            SemanticNode child = parent.getChildAt(index);
+            SNode child = parent.getChildAt(index);
             if (child.getRole_().equals(role)) {
               selectNode(child);
               return;
@@ -1107,7 +1107,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           }
 
           if (index != 0) {
-            SemanticNode child = parent.getChildAt(index - 1);
+            SNode child = parent.getChildAt(index - 1);
             if (child.getRole_().equals(role)) {
               selectNode(child);
               return;

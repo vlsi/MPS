@@ -6,7 +6,7 @@ package jetbrains.mps.bootstrap.structureLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -23,10 +23,10 @@ import jetbrains.mps.nodeEditor.CellAction_DeleteSmart;
 
 public class AggregationConceptLink_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+  public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
-  public EditorCell createRowCell(EditorContext context, SemanticNode node) {
+  public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -38,7 +38,7 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createTargetCell(context, node));
     return editorCell;
   }
-  public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -48,8 +48,8 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createConceptLinkDeclarationReferenceCell(EditorContext context, SemanticNode node) {
-    SemanticNode effectiveNode = null;
+  public EditorCell createConceptLinkDeclarationReferenceCell(EditorContext context, SNode node) {
+    SNode effectiveNode = null;
     effectiveNode = node.getReferent("conceptLinkDeclaration");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "conceptLinkDeclaration");
     if(effectiveNode == null) {
@@ -80,8 +80,8 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     AggregationConceptLink_ConceptLinks_Menu.setCellActions(editorCell, node);
     return editorCell;
   }
-  public EditorCell createTargetCell(EditorContext context, SemanticNode node) {
-    SemanticNode referencedNode = null;
+  public EditorCell createTargetCell(EditorContext context, SNode node) {
+    SNode referencedNode = null;
     referencedNode = node.getChild("target");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "target");
     if(referencedNode == null) {

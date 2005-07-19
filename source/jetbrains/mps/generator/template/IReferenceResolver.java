@@ -6,10 +6,10 @@
  */
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.semanticModel.SemanticNode;
-import jetbrains.mps.semanticModel.SemanticReference;
+import jetbrains.mps.semanticModel.SNode;
+import jetbrains.mps.semanticModel.SReference;
 import jetbrains.mps.generator.template.INodeBuilder;
 
 public interface IReferenceResolver {
-  SemanticNode resolveTarget(SemanticReference templateReference, INodeBuilder sourceNodeBuilder);
+  SNode resolveTarget(SReference templateReference, INodeBuilder sourceNodeBuilder);
 }

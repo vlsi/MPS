@@ -1,6 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -13,14 +13,14 @@ import java.util.Collections;
  */
 public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo {
   private List<INodeSubstituteItem> myCachedItemList;
-  private SemanticNode myOriginalNode;
+  private SNode myOriginalNode;
   private String myOriginalText;
 
-  public void setOriginalNode(SemanticNode node) {
+  public void setOriginalNode(SNode node) {
     myOriginalNode = node;
   }
 
-  public SemanticNode getOriginalNode() {
+  public SNode getOriginalNode() {
     return myOriginalNode;
   }
 
@@ -70,7 +70,7 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
     return Collections.unmodifiableList(myCachedItemList);
   }
 
-  public SemanticNode handleSubstituteAction(SemanticNode node, Object substituteObject) {
+  public SNode handleSubstituteAction(SNode node, Object substituteObject) {
     return null;
   }
 }

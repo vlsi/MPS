@@ -1,9 +1,9 @@
 package jetbrains.mps.resolve;
 
-import jetbrains.mps.semanticModel.SemanticNode;
-import jetbrains.mps.semanticModel.SemanticReference;
+import jetbrains.mps.semanticModel.SNode;
+import jetbrains.mps.semanticModel.SReference;
 import jetbrains.mps.semanticModel.SModel;
-import jetbrains.mps.semanticModel.ExternalSemanticReference;
+import jetbrains.mps.semanticModel.ExternalReference;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.ide.command.CommandProcessor;
 
@@ -20,34 +20,34 @@ import java.lang.reflect.Method;
 public class Resolver {
 
 
-  public static void resolveAllReferences(SemanticNode node) {
+  public static void resolveAllReferences(SNode node) {
 
-    List<SemanticReference> referenceList = getExternalReferences(node);
+    List<SReference> referenceList = getExternalReferences(node);
 
-    for (SemanticReference reference : referenceList) {
+    for (SReference reference : referenceList) {
       resolve(reference);
     }
   }
 
 
-  public static void processCopy(SemanticNode node) {
+  public static void processCopy(SNode node) {
 
-    List<SemanticReference> referenceList = getExternalReferences(node);
+    List<SReference> referenceList = getExternalReferences(node);
 
-    for (SemanticReference reference : referenceList) {
+    for (SReference reference : referenceList) {
       setResolveInfo(reference);
     }
 
   }
 
-  private static void setResolveInfo(SemanticReference reference) {
+  private static void setResolveInfo(SReference reference) {
 
-    if (reference instanceof ExternalSemanticReference) return;
+    if (reference instanceof ExternalReference) return;
 
     String role = reference.getRole();
     Class sourceClass = reference.getSourceNode().getClass();
 
-    SemanticNode targetNode = reference.getTargetNode();
+    SNode targetNode = reference.getTargetNode();
     Class targetClass  = null;
 
     if (targetNode != null) targetClass  = reference.getTargetNode().getClass();
@@ -63,12 +63,12 @@ public class Resolver {
     Class cls1 = sourceClass;
 
 
-    while (cls1 != SemanticNode.class) {
+    while (cls1 != SNode.class) {
       String sourceClassName = cls1.getName();
       sourceClassName = sourceClassName.substring(sourceClassName.lastIndexOf('.') + 1);
       Class cls2 = targetClass;
 
-      while (cls2 != SemanticNode.class) {
+      while (cls2 != SNode.class) {
         String targetClassName = cls2.getName();
         targetClassName = targetClassName.substring(targetClassName.lastIndexOf('.') +1);
 
@@ -90,20 +90,20 @@ public class Resolver {
   }
 
 
-  public static List<SemanticReference> getExternalReferences(SemanticNode node) {
+  public static List<SReference> getExternalReferences(SNode node) {
 
-    List<SemanticReference> result = new ArrayList<SemanticReference>();
+    List<SReference> result = new ArrayList<SReference>();
 
-    HashSet<SemanticNode> children = new HashSet<SemanticNode>();
+    HashSet<SNode> children = new HashSet<SNode>();
     children.add(node);
-    Iterator<SemanticNode> it = node.depthFirstChildren();
+    Iterator<SNode> it = node.depthFirstChildren();
 
     for (;it.hasNext();) {
-      SemanticNode child = it.next();
+      SNode child = it.next();
       children.add(child);
     }
 
-    for (SemanticReference reference : node.getReferences()) {
+    for (SReference reference : node.getReferences()) {
       if (!children.contains(reference.getTargetNode())){//if external reference
           result.add(reference);
       }
@@ -112,9 +112,9 @@ public class Resolver {
     it = node.depthFirstChildren();
 
     for (;it.hasNext();) {
-      SemanticNode child = it.next();
-      List<SemanticReference> references = child.getReferences();
-      for (SemanticReference reference : references) {
+      SNode child = it.next();
+      List<SReference> references = child.getReferences();
+      for (SReference reference : references) {
         if (!children.contains(reference.getTargetNode())){//if external reference
           result.add(reference);
         }
@@ -124,34 +124,34 @@ public class Resolver {
     return result;
   }
 
-  public static void resolve(final SemanticReference reference){
+  public static void resolve(final SReference reference){
 
-    if (reference instanceof ExternalSemanticReference) return;
+    if (reference instanceof ExternalReference) return;
 
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
 
         String role  = reference.getRole();
 
-        SemanticNode sourceNode = reference.getSourceNode();
+        SNode sourceNode = reference.getSourceNode();
 
         SModel model = sourceNode.getModel();
 
         String packageName = sourceNode.getClass().getPackage().getName();
         Class cls = sourceNode.getClass();
 
-        SemanticNode oldTarget = reference.getTargetNode();
+        SNode oldTarget = reference.getTargetNode();
 
         //reference.setBad();
 
-        while (cls != SemanticNode.class) {
+        while (cls != SNode.class) {
           try {
             String className = cls.getName();
             className = className.substring(className.lastIndexOf('.') + 1);
             //if method exists but can't resolve we'll mark our reference as a bad one
             Class resolveClass = Class.forName(packageName+".resolve.Resolver", true, ClassLoaderManager.getInstance().getClassLoader());
 
-            Method m = resolveClass.getMethod("resolveForRole"+role+"In"+className, SemanticReference.class, Class.class);
+            Method m = resolveClass.getMethod("resolveForRole"+role+"In"+className, SReference.class, Class.class);
 
             // model.setLoading(true);
             boolean success = (Boolean)m.invoke(null, reference, cls);

@@ -7,7 +7,7 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.semanticModel.SModelUtil;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.semanticModel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.semanticModel.action.INodeSubstituteAction;
 import jetbrains.mps.semanticModel.action.ModelActions;
@@ -17,12 +17,12 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
-  private SemanticNode mySourceNode;
-  private SemanticNode myCurrentTargetNode;
+  private SNode mySourceNode;
+  private SNode myCurrentTargetNode;
   private LinkDeclaration myLinkDeclaration;
 
 
-  public DefaultChildSubstituteInfo(SemanticNode sourceNode, LinkDeclaration linkDeclaration) {
+  public DefaultChildSubstituteInfo(SNode sourceNode, LinkDeclaration linkDeclaration) {
     if (SModelUtil.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.aggregation) {
       throw new RuntimeException("Only aggregation links are allowed here.");
     }
@@ -36,7 +36,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     myCurrentTargetNode = sourceNode.getChild(SModelUtil.getGenuineLinkRole(linkDeclaration));
   }
 
-  public DefaultChildSubstituteInfo(SemanticNode parentNode, SemanticNode currChildNode, LinkDeclaration linkDeclaration) {
+  public DefaultChildSubstituteInfo(SNode parentNode, SNode currChildNode, LinkDeclaration linkDeclaration) {
     if (SModelUtil.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.aggregation) {
       throw new RuntimeException("Only aggregation links are allowed here.");
     }

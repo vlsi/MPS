@@ -1,14 +1,14 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.semanticModel.SModel;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 
 /**
  * User: Dmitriev.
  * Date: Jan 13, 2004
  */
 public class JavaNameUtil {
-  public static String fqClassNameByNamespace(SemanticNode semanticNode, String shortClassName) {
+  public static String fqClassNameByNamespace(SNode semanticNode, String shortClassName) {
     return fqClassNameByNamespace(semanticNode.getModel(), shortClassName);
   }
 
@@ -17,7 +17,7 @@ public class JavaNameUtil {
     return modelNamespace + '.' + shortClassName;
   }
 
-  public static String fqClassName(SemanticNode semanticNode, String shortClassName) {
+  public static String fqClassName(SNode semanticNode, String shortClassName) {
     return fqClassName(semanticNode.getModel(), shortClassName);
   }
 

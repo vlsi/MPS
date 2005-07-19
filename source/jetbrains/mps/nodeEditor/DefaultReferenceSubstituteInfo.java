@@ -7,7 +7,7 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.semanticModel.SModelUtil;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.DiagnosticUtil;
 import jetbrains.mps.util.NameUtil;
@@ -16,11 +16,11 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
-  private SemanticNode mySourceNode;
+  private SNode mySourceNode;
   private LinkDeclaration myLinkDeclaration;
   private LinkDeclaration myGenuineLinkDeclaration;
 
-  public DefaultReferenceSubstituteInfo(SemanticNode sourceNode, LinkDeclaration linkDeclaration) {
+  public DefaultReferenceSubstituteInfo(SNode sourceNode, LinkDeclaration linkDeclaration) {
     mySourceNode = sourceNode;
     myLinkDeclaration = linkDeclaration;
     myGenuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
@@ -36,8 +36,8 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
   public List<INodeSubstituteItem> createActions() {
     List<INodeSubstituteItem> list = new LinkedList<INodeSubstituteItem>();
 
-    List<SemanticNode> targetSemanticNodes = createTargetNodesList();
-    for (final SemanticNode targetNode : targetSemanticNodes) {
+    List<SNode> targetSemanticNodes = createTargetNodesList();
+    for (final SNode targetNode : targetSemanticNodes) {
       list.add(new AbstractNodeSubstituteItem() {
         public String getMatchingText(String pattern) {
           if (targetNode instanceof LinkDeclaration) {
@@ -48,13 +48,13 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
 
         public String getDescriptionText(String pattern) {
           if (targetNode instanceof LinkDeclaration) {
-            SemanticNode containingRoot = targetNode.getContainingRoot();
+            SNode containingRoot = targetNode.getContainingRoot();
             return containingRoot.getName() + " (" + containingRoot.getModel().getFQName() + ")";
           }
           return targetNode.getModel().getFQName();
         }
 
-        public SemanticNode doSubstitute(String pattern) {
+        public SNode doSubstitute(String pattern) {
           mySourceNode.setReferent(myGenuineLinkDeclaration.getRole(), targetNode);
           return null;
         }
@@ -64,12 +64,12 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
     return list;
   }
 
-  private List<SemanticNode> createTargetNodesList() {
+  private List<SNode> createTargetNodesList() {
     final ConceptDeclaration targetConcept = myLinkDeclaration.getTarget();
     DiagnosticUtil.assertNodeValid(targetConcept);
     final boolean searchLinks = NameUtil.nodeFQName(targetConcept).equals("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration");
-    List<SemanticNode> list = SModelUtil.allNodes(mySourceNode.getModel(), true, new Condition<SemanticNode>() {
-      public boolean met(SemanticNode node) {
+    List<SNode> list = SModelUtil.allNodes(mySourceNode.getModel(), true, new Condition<SNode>() {
+      public boolean met(SNode node) {
         DiagnosticUtil.assertNodeValid(node);
         if (searchLinks && (node instanceof LinkDeclaration)) return true;
         return node.getName() != null && SModelUtil.isInstanceOfType(node, targetConcept);

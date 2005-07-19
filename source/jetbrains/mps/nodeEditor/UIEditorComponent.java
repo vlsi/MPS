@@ -1,20 +1,16 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.IdeMain;
 
 import javax.swing.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.ActionEvent;
-import java.awt.*;
 
 /**
  * @author Kostik
  */
 public class UIEditorComponent extends AbstractEditorComponent {
   private EditorContext myEditorContext;
-  private SemanticNode mySemanticNode;
+  private SNode mySemanticNode;
   private InspectorEditorComponent myInspector;
 
   public UIEditorComponent(MPSProject project, InspectorEditorComponent inspector) {
@@ -31,7 +27,7 @@ public class UIEditorComponent extends AbstractEditorComponent {
     });
   }
 
-  public void editNode(SemanticNode semanticNode) {
+  public void editNode(SNode semanticNode) {
     mySemanticNode = semanticNode;
     myEditorContext = new EditorContext(this, semanticNode.getModel(), getProject());
     rebuildEditorContent();

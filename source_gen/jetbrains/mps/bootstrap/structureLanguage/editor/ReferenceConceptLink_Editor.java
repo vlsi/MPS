@@ -6,7 +6,7 @@ package jetbrains.mps.bootstrap.structureLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -21,10 +21,10 @@ import jetbrains.mps.nodeEditor.EditorUtil;
 
 public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+  public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
-  public EditorCell createRowCell(EditorContext context, SemanticNode node) {
+  public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -36,7 +36,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createTargetReferenceCell(context, node));
     return editorCell;
   }
-  public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -46,8 +46,8 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createConceptLinkDeclarationReferenceCell(EditorContext context, SemanticNode node) {
-    SemanticNode effectiveNode = null;
+  public EditorCell createConceptLinkDeclarationReferenceCell(EditorContext context, SNode node) {
+    SNode effectiveNode = null;
     effectiveNode = node.getReferent("conceptLinkDeclaration");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "conceptLinkDeclaration");
     if(effectiveNode == null) {
@@ -78,8 +78,8 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
     ReferenceConceptLink_ConceptLinks_Menu.setCellActions(editorCell, node);
     return editorCell;
   }
-  public EditorCell createTargetReferenceCell(EditorContext context, SemanticNode node) {
-    SemanticNode effectiveNode = null;
+  public EditorCell createTargetReferenceCell(EditorContext context, SNode node) {
+    SNode effectiveNode = null;
     effectiveNode = node.getReferent("target");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "target");
     if(effectiveNode == null) {

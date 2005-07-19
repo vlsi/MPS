@@ -15,8 +15,8 @@ public class FindUsagesManager {
     myProject = project;
   }
 
-  public Set<SemanticReference> findUsages(SemanticNode node, Scope scope, ProgressMonitor progress) {
-    Set<SemanticReference> result = new HashSet<SemanticReference>();;
+  public Set<SReference> findUsages(SNode node, Scope scope, ProgressMonitor progress) {
+    Set<SReference> result = new HashSet<SReference>();;
     try {
       if (progress == null) progress = ProgressMonitor.NULL_PROGRESS_MONITOR;
       Set<SModelDescriptor> models = scope.getModels();
@@ -35,8 +35,8 @@ public class FindUsagesManager {
     }
   }
 
-  public Set<SemanticNode> findInstances(ConceptDeclaration concept, Scope scope, ProgressMonitor progress) {
-    Set<SemanticNode> result = new HashSet<SemanticNode>();
+  public Set<SNode> findInstances(ConceptDeclaration concept, Scope scope, ProgressMonitor progress) {
+    Set<SNode> result = new HashSet<SNode>();
     try {
       if (progress == null) progress = ProgressMonitor.NULL_PROGRESS_MONITOR;
       Set<SModelDescriptor> models = scope.getModels();
@@ -54,11 +54,11 @@ public class FindUsagesManager {
     }
   }
 
-  public Set<SemanticReference> findUsages(SemanticNode node, ProgressMonitor progress) {
+  public Set<SReference> findUsages(SNode node, ProgressMonitor progress) {
     return findUsages(node, globalScope(), progress);
   }
 
-  public Set<SemanticNode> findInstances(ConceptDeclaration concept, ProgressMonitor progress){
+  public Set<SNode> findInstances(ConceptDeclaration concept, ProgressMonitor progress){
     return findInstances(concept, globalScope(), progress);
   }
 
@@ -95,13 +95,13 @@ public class FindUsagesManager {
 
     FindUsagesManager manager = IdeMain.instance().getProject().getComponent(FindUsagesManager.class);
 
-    Set<SemanticReference> usages = manager.findUsages(typeDeclaration, new FilterScope(manager.globalScope()) {
+    Set<SReference> usages = manager.findUsages(typeDeclaration, new FilterScope(manager.globalScope()) {
       protected boolean accept(SModelDescriptor descriptor) {
         return descriptor.getFQName().endsWith(".structure");
       }
     }, null);
 
-    for (SemanticReference ref : usages) {
+    for (SReference ref : usages) {
       if (ref.getRole().equals(ConceptDeclaration.EXTENDS)) {
         ConceptDeclaration subtype = (ConceptDeclaration) ref.getSourceNode();
         list.add(subtype);

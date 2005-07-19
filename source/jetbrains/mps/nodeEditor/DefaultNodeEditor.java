@@ -1,6 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 
 /**
  * Author: Sergey Dmitriev.
@@ -8,11 +8,11 @@ import jetbrains.mps.semanticModel.SemanticNode;
  */
 public class DefaultNodeEditor implements INodeEditor {
 
-  public EditorCell createEditorCell(EditorContext editorContext, SemanticNode node) {
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return EditorCell_Error.create(editorContext, node, "no editor found");
   }
 
-  public EditorCell createInspectedCell(EditorContext editorContext, SemanticNode node) {
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return EditorCell_Constant.create(editorContext, node, node.getDebugText(), true);
   }
 }

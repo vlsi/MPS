@@ -284,9 +284,9 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     // todo : refactor it...
     XmlFileGenerator xmlFileGenerator = new XmlFileGenerator(outputPathFile, packageName, false);
     JavaFileGenerator javaFileGenerator = new JavaFileGenerator(outputPathFile, packageName, false);
-    Iterator<SemanticNode> roots = targetModel.roots();
+    Iterator<SNode> roots = targetModel.roots();
     while (roots.hasNext()) {
-      SemanticNode root = roots.next();
+      SNode root = roots.next();
       String content = generateText(root);
       if (root instanceof Classifier) {
         javaFileGenerator.generateJavaFile((Classifier) root, content);
@@ -300,9 +300,9 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     OutputView view = myProject.getComponent(OutputView.class);
     view.clear();
 
-    Iterator<SemanticNode> roots = targetModel.roots();
+    Iterator<SNode> roots = targetModel.roots();
     while (roots.hasNext()) {
-      SemanticNode node = roots.next();
+      SNode node = roots.next();
       String nodeText = generateText(node);
       view.append(nodeText);
       view.append("\n");
@@ -312,7 +312,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     view.activate();
   }
 
-  private String generateText(SemanticNode node) {
+  private String generateText(SNode node) {
     String nodeText = null;
     if (TextGenManager.instance().canGenerateTextFor(node)) {
       nodeText = TextGenManager.instance().generateText(node);

@@ -6,8 +6,8 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.semanticModel.SemanticNode;
-import jetbrains.mps.semanticModel.SemanticReference;
+import jetbrains.mps.semanticModel.SNode;
+import jetbrains.mps.semanticModel.SReference;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
@@ -21,12 +21,12 @@ import jetbrains.mps.nodeEditor.EditorUtil;
 
 public class TypeVariableReference_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+  public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createTypeVariableDeclarationReferenceCell(context, node);
   }
-  public EditorCell createTypeVariableDeclarationReferenceCell(EditorContext context, SemanticNode node) {
-    SemanticNode effectiveNode = null;
-    SemanticReference reference = null;
+  public EditorCell createTypeVariableDeclarationReferenceCell(EditorContext context, SNode node) {
+    SNode effectiveNode = null;
+    SReference reference = null;
     effectiveNode = node.getReferent("typeVariableDeclaration");
     reference = node.getReference("typeVariableDeclaration");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "typeVariableDeclaration");

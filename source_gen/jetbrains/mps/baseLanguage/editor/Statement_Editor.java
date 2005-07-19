@@ -6,16 +6,16 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 import java.awt.Color;
 
 public class Statement_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+  public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createNodeBox(context, node);
   }
-  public EditorCell createNodeBox(EditorContext context, SemanticNode node) {
+  public EditorCell createNodeBox(EditorContext context, SNode node) {
     EditorCell_Error editorCell = EditorCell_Error.create(context, node, "<statement>");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);

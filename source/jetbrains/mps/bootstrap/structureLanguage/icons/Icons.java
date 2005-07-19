@@ -1,7 +1,5 @@
 package jetbrains.mps.bootstrap.structureLanguage.icons;
 
-import jetbrains.mps.semanticModel.SemanticNode;
-
 import javax.swing.*;
 
 /**

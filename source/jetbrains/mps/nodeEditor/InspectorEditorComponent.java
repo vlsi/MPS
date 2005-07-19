@@ -6,10 +6,9 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.semanticModel.SNodeReference;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.IdeMain;
 
 public class InspectorEditorComponent extends AbstractEditorComponent {
   private EditorContext myEditorContext;
@@ -21,7 +20,7 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
     rebuildEditorContent();
   }
 
-  public SemanticNode getNode() {
+  public SNode getNode() {
     return myNodeReference.getNode();
   }
 
@@ -34,7 +33,7 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
   }
 
 
-  public void inspectNode(SemanticNode semanticNode) {
+  public void inspectNode(SNode semanticNode) {
     if (getNode() == semanticNode) {
       return;
     }
@@ -55,7 +54,7 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
     return getProject().getComponent(EditorManager.class).createInspectedCell(getContext(), getNode());
   }
 
-  public SemanticNode getInspectedNode() {
+  public SNode getInspectedNode() {
     return getNode();
   }
 }

@@ -1,7 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.semanticModel.SModel;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.logging.Logger;
 
@@ -37,7 +37,7 @@ public class EditorContext {
     return myProject;
   }
 
-  public EditorCell createNodeCell(SemanticNode node) {
+  public EditorCell createNodeCell(SNode node) {
     return myProject.getComponent(EditorManager.class).createEditorCell(this, node);
   }
 

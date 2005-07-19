@@ -6,13 +6,13 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.semanticModel.SemanticReference;
+import jetbrains.mps.semanticModel.SReference;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
@@ -26,10 +26,10 @@ import jetbrains.mps.baseLanguage.IfStatement;
 
 public class IfStatement_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+  public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createStatementBox(context, node);
   }
-  public EditorCell createStatementBox(EditorContext context, SemanticNode node) {
+  public EditorCell createStatementBox(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -46,7 +46,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-  public EditorCell createHeaderRow(EditorContext context, SemanticNode node) {
+  public EditorCell createHeaderRow(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -59,7 +59,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell2(context, node, ") {"));
     return editorCell;
   }
-  public EditorCell createIfTrueBox(EditorContext context, SemanticNode node) {
+  public EditorCell createIfTrueBox(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -70,7 +70,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createIfTrueCell(context, node));
     return editorCell;
   }
-  public EditorCell createIfFalseBranch(EditorContext context, SemanticNode node) {
+  public EditorCell createIfFalseBranch(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -82,7 +82,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createIfFalseStatementCell(context, node));
     return editorCell;
   }
-  public EditorCell createConstantCell5(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -93,7 +93,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     IfStatement_IfClosingBracketActions.setCellActions(editorCell, node);
     return editorCell;
   }
-  public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -104,7 +104,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     return editorCell;
   }
-  public EditorCell createConstantCell1(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -114,7 +114,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createConstantCell2(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -124,7 +124,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createIndentCell(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createIndentCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -134,7 +134,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createConstantCell3(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -144,7 +144,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createConstantCell4(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -156,9 +156,9 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     return editorCell;
   }
-  public EditorCell createConditionCell(EditorContext context, SemanticNode node) {
-    SemanticNode referencedNode = null;
-    SemanticReference reference = null;
+  public EditorCell createConditionCell(EditorContext context, SNode node) {
+    SNode referencedNode = null;
+    SReference reference = null;
     referencedNode = node.getChild("condition");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "condition");
     if(!(reference == null) && !((reference.isGood()))) {
@@ -199,9 +199,9 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     IfStatement_ConditionCellActions.setCellActions(editorCell, node);
     return editorCell;
   }
-  public EditorCell createIfTrueCell(EditorContext context, SemanticNode node) {
-    SemanticNode referencedNode = null;
-    SemanticReference reference = null;
+  public EditorCell createIfTrueCell(EditorContext context, SNode node) {
+    SNode referencedNode = null;
+    SReference reference = null;
     referencedNode = node.getChild("ifTrue");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "ifTrue");
     if(!(reference == null) && !((reference.isGood()))) {
@@ -237,9 +237,9 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
     return editorCell;
   }
-  public EditorCell createIfFalseStatementCell(EditorContext context, SemanticNode node) {
-    SemanticNode referencedNode = null;
-    SemanticReference reference = null;
+  public EditorCell createIfFalseStatementCell(EditorContext context, SNode node) {
+    SNode referencedNode = null;
+    SReference reference = null;
     referencedNode = node.getChild("ifFalseStatement");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "ifFalseStatement");
     if(!(reference == null) && !((reference.isGood()))) {
@@ -276,11 +276,11 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
     return editorCell;
   }
-  public boolean handleConditionalQuery_1075379536707(SemanticNode node) {
+  public boolean handleConditionalQuery_1075379536707(SNode node) {
     IfStatement ifStatement = (IfStatement)node;
     return ifStatement.getIfFalseStatement() != null;
   }
-  public boolean handleConditionalQuery_1075379580458(SemanticNode node) {
+  public boolean handleConditionalQuery_1075379580458(SNode node) {
     IfStatement ifStatement = (IfStatement)node;
     return ifStatement.getIfFalseStatement() == null;
   }

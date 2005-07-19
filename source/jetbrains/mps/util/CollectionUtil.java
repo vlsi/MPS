@@ -1,6 +1,6 @@
 package jetbrains.mps.util;
 
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 
 import java.util.*;
 
@@ -57,8 +57,8 @@ public class CollectionUtil {
     };
   }
 
-  public static<Node extends SemanticNode> Node getByName(Class<Node> cls, Iterable<? extends SemanticNode> collection, String name) {
-    for (SemanticNode node : collection) {
+  public static<Node extends SNode> Node getByName(Class<Node> cls, Iterable<? extends SNode> collection, String name) {
+    for (SNode node : collection) {
       if (name.equals(node.getName()) && cls.isInstance(node)) return (Node) node;
     }
     return null;

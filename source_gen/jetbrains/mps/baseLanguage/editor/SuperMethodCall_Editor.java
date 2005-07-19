@@ -7,12 +7,12 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.semanticModel.SemanticReference;
+import jetbrains.mps.semanticModel.SReference;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.semanticModel.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
@@ -26,10 +26,10 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
 
   public AbstractCellProvider my_BaseMethodCallArgListEditor;
 
-  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+  public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
-  public EditorCell createRowCell(EditorContext context, SemanticNode node) {
+  public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -45,7 +45,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell3(context, node, ")"));
     return editorCell;
   }
-  public EditorCell create_BaseMethodCallArgListEditorCell(EditorContext context, SemanticNode node) {
+  public EditorCell create_BaseMethodCallArgListEditorCell(EditorContext context, SNode node) {
     if(this.my_BaseMethodCallArgListEditor == null) {
       this.my_BaseMethodCallArgListEditor = new _BaseMethodCallArgListEditor(node);
     }
@@ -56,7 +56,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -67,7 +67,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     return editorCell;
   }
-  public EditorCell createConstantCell1(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -77,7 +77,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createConstantCell2(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -87,7 +87,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createConstantCell3(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
@@ -98,9 +98,9 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     __ExpressionClosingParethesis_ActionSet.setCellActions(editorCell, node);
     return editorCell;
   }
-  public EditorCell createBaseMethodDeclarationReferenceCell(EditorContext context, SemanticNode node) {
-    SemanticNode effectiveNode = null;
-    SemanticReference reference = null;
+  public EditorCell createBaseMethodDeclarationReferenceCell(EditorContext context, SNode node) {
+    SNode effectiveNode = null;
+    SReference reference = null;
     effectiveNode = node.getReferent("baseMethodDeclaration");
     reference = node.getReference("baseMethodDeclaration");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "baseMethodDeclaration");

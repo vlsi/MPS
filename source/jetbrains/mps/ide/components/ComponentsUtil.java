@@ -2,7 +2,7 @@ package jetbrains.mps.ide.components;
 
 import org.jdom.Element;
 import org.jdom.DataConversionException;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.semanticModel.SModelDescriptor;
 import jetbrains.mps.semanticModel.SModelRepository;
 import jetbrains.mps.project.MPSProject;
@@ -25,19 +25,19 @@ public class ComponentsUtil {
   private static String WIDTH = "width";
   private static String HEIGHT = "height";
 
-  public static Element nodeToElement(SemanticNode node) {
+  public static Element nodeToElement(SNode node) {
     Element nodeElement = new Element(NODE);
     nodeElement.setAttribute(MODEL, node.getModel().getFQName());
     nodeElement.setAttribute(ID, node.getId());
     return nodeElement;
   }
 
-  public static SemanticNode nodeFromElement(MPSProject project, Element nodeElement) {
+  public static SNode nodeFromElement(MPSProject project, Element nodeElement) {
     String fqName = nodeElement.getAttributeValue(MODEL);
     String id = nodeElement.getAttributeValue(ID);
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(fqName);
     if (modelDescriptor == null) return null;
-    SemanticNode semanticNode = modelDescriptor.getSModel().getNodeById(id);
+    SNode semanticNode = modelDescriptor.getSModel().getNodeById(id);
     return semanticNode;
   }
 

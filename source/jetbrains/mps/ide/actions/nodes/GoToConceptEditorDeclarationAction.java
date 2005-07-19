@@ -8,7 +8,7 @@ import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.semanticModel.SModel;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 
 import javax.swing.*;
 import java.util.Iterator;
@@ -27,11 +27,11 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
 
   public void update(ActionContext context) {
     super.update(context);
-    setVisible(context.get(SemanticNode.class) instanceof ConceptDeclaration);
+    setVisible(context.get(SNode.class) instanceof ConceptDeclaration);
   }
 
   public void execute(ActionContext context) {
-    SemanticNode node = context.get(SemanticNode.class);
+    SNode node = context.get(SNode.class);
     if (!(node instanceof ConceptDeclaration)) return;
 
     final String editorName = node.getName() + "_Editor";
@@ -44,9 +44,9 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     }
     SModel languageEditor = language.getEditorModel();
     if (languageEditor != null) {
-      Iterator<SemanticNode> iterator = languageEditor.roots();
+      Iterator<SNode> iterator = languageEditor.roots();
       while (iterator.hasNext()) {
-        SemanticNode root = iterator.next();
+        SNode root = iterator.next();
         if (editorName.equals(root.getName())) {
           AbstractEditorComponent editor = context.get(IdeMain.class).getEditorsPane().openEditor(root);
           editor.selectNode(root);

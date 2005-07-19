@@ -1,16 +1,14 @@
 package jetbrains.mps.ide.icons;
 
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.action.MPSAction;
-import jetbrains.mps.collectionLanguage.CollectionDeclaration;
 import jetbrains.mps.logging.Logger;
 
 import javax.swing.*;
 
 
-import java.awt.*;
 import java.util.Map;
 import java.util.HashMap;
 
@@ -23,14 +21,14 @@ public class IconManager {
 
   private static Map<Class, Icon> ourIcons = new HashMap<Class, Icon>();
 
-  public static Icon getIconFor(SemanticNode node) {
-    Class<? extends SemanticNode> cls = node.getClass();
+  public static Icon getIconFor(SNode node) {
+    Class<? extends SNode> cls = node.getClass();
 
     if (ourIcons.get(node.getClass()) != null) {
       return ourIcons.get(node.getClass());
     }
 
-    while (cls != SemanticNode.class) {
+    while (cls != SNode.class) {
       String className = cls.getName();
       className = className.substring(className.lastIndexOf('.') + 1);
       String packageName = cls.getPackage().getName();
@@ -46,7 +44,7 @@ public class IconManager {
         }
         catch (Exception e) {
           try {
-            Icon icon = (Icon) icons.getMethod("getIconFor" + className, SemanticNode.class).invoke(null, node);
+            Icon icon = (Icon) icons.getMethod("getIconFor" + className, SNode.class).invoke(null, node);
             return icon;
           } catch (Exception ex) {}
         }
@@ -54,7 +52,7 @@ public class IconManager {
       } catch (Exception e) {
       }
 
-      cls = (Class<? extends SemanticNode>) cls.getSuperclass();
+      cls = (Class<? extends SNode>) cls.getSuperclass();
     }
 
     ourIcons.put(node.getClass(), Icons.DEFAULT_ICON);

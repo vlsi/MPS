@@ -7,5 +7,5 @@ import java.awt.datatransfer.DataFlavor;
  * Time: Nov 25, 2003 12:27:44 PM
  */
 public class SModelDataFlavor extends DataFlavor {
-  public static DataFlavor semanticNode = new DataFlavor(SemanticNodeData.class, "Semantic Node");
+  public static DataFlavor semanticNode = new DataFlavor(SNodeTransferable.class, "Semantic Node");
 }

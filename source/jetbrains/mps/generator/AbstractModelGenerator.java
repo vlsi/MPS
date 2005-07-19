@@ -8,7 +8,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.semanticModel.SModelUtil;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.semanticModel.SModelDescriptor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.messages.MessageView;
@@ -66,9 +66,9 @@ public abstract class AbstractModelGenerator implements IModelGenerator {
     Iterator<SModel> models = modelsList.iterator();
     while (models.hasNext()) {
       SModel model = models.next();
-      Iterator<SemanticNode> nodes = SModelUtil.allNodes(model).iterator();
+      Iterator<SNode> nodes = SModelUtil.allNodes(model).iterator();
       while (nodes.hasNext()) {
-        SemanticNode node = nodes.next();
+        SNode node = nodes.next();
         node.removeAllUserObjects();
       }
     }

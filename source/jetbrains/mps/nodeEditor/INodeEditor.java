@@ -6,10 +6,10 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 
 public interface INodeEditor {
-  EditorCell createEditorCell(EditorContext editorContext, SemanticNode node);
+  EditorCell createEditorCell(EditorContext editorContext, SNode node);
 
-  EditorCell createInspectedCell(EditorContext editorContext, SemanticNode node);
+  EditorCell createInspectedCell(EditorContext editorContext, SNode node);
 }

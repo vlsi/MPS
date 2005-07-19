@@ -6,7 +6,7 @@ package jetbrains.mps.bootstrap.structureLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.bootstrap.structureLanguage.editor.Queries;
@@ -26,10 +26,10 @@ import jetbrains.mps.nodeEditor.EditorUtil;
 
 public class LinkDeclaration_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SemanticNode node) {
+  public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
-  public EditorCell createRowCell(EditorContext context, SemanticNode node) {
+  public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
@@ -61,7 +61,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createLinkDeclaration_SpecializedLinkRoleCell(context, node));
     return editorCell;
   }
-  public EditorCell createConstantCell(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
@@ -71,7 +71,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createConstantCell1(EditorContext context, SemanticNode node, String text) {
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
@@ -81,7 +81,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createLinkDeclaration_SpecializedMetaclassCell(EditorContext context, SemanticNode node) {
+  public EditorCell createLinkDeclaration_SpecializedMetaclassCell(EditorContext context, SNode node) {
     ModelAccessor modelAccessor = Queries.createModelAccessor_LinkDeclaration_SpecializedMetaclass(node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
     editorCell.setSelectable(true);
@@ -94,7 +94,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     LinkDeclaration_DisableDelete_Actions.setCellActions(editorCell, node);
     return editorCell;
   }
-  public EditorCell createLinkDeclaration_SpecializedSourceCardinalityCell(EditorContext context, SemanticNode node) {
+  public EditorCell createLinkDeclaration_SpecializedSourceCardinalityCell(EditorContext context, SNode node) {
     ModelAccessor modelAccessor = Queries.createModelAccessor_LinkDeclaration_SpecializedSourceCardinality(node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
     editorCell.setSelectable(true);
@@ -107,7 +107,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     LinkDeclaration_DisableDelete_Actions.setCellActions(editorCell, node);
     return editorCell;
   }
-  public EditorCell createLinkDeclaration_SpecializedTargetCardinalityCell(EditorContext context, SemanticNode node) {
+  public EditorCell createLinkDeclaration_SpecializedTargetCardinalityCell(EditorContext context, SNode node) {
     ModelAccessor modelAccessor = Queries.createModelAccessor_LinkDeclaration_SpecializedTargetCardinality(node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
     editorCell.setSelectable(true);
@@ -120,7 +120,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     LinkDeclaration_DisableDelete_Actions.setCellActions(editorCell, node);
     return editorCell;
   }
-  public EditorCell createLinkDeclaration_SpecializedLinkRoleCell(EditorContext context, SemanticNode node) {
+  public EditorCell createLinkDeclaration_SpecializedLinkRoleCell(EditorContext context, SNode node) {
     ModelAccessor modelAccessor = Queries.createModelAccessor_LinkDeclaration_SpecializedLinkRole(node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
     editorCell.setSelectable(true);
@@ -132,7 +132,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     LinkDeclaration_SpecializedLink_Actions.setCellActions(editorCell, node);
     return editorCell;
   }
-  public EditorCell createRoleCell(EditorContext context, SemanticNode node) {
+  public EditorCell createRoleCell(EditorContext context, SNode node) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "role", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
     editorCell.setSelectable(true);
@@ -144,7 +144,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "role"));
     return editorCell;
   }
-  public EditorCell createMetaClassCell(EditorContext context, SemanticNode node) {
+  public EditorCell createMetaClassCell(EditorContext context, SNode node) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "metaClass", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
     editorCell.setSelectable(true);
@@ -157,7 +157,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "metaClass"));
     return editorCell;
   }
-  public EditorCell createSourceCardinalityCell(EditorContext context, SemanticNode node) {
+  public EditorCell createSourceCardinalityCell(EditorContext context, SNode node) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "sourceCardinality", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
     editorCell.setSelectable(true);
@@ -170,7 +170,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "sourceCardinality"));
     return editorCell;
   }
-  public EditorCell createTargetCardinalityCell(EditorContext context, SemanticNode node) {
+  public EditorCell createTargetCardinalityCell(EditorContext context, SNode node) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(node, "targetCardinality", false, false);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
     editorCell.setSelectable(true);
@@ -183,8 +183,8 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "targetCardinality"));
     return editorCell;
   }
-  public EditorCell createTargetReferenceCell(EditorContext context, SemanticNode node) {
-    SemanticNode effectiveNode = null;
+  public EditorCell createTargetReferenceCell(EditorContext context, SNode node) {
+    SNode effectiveNode = null;
     effectiveNode = node.getReferent("target");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "target");
     if(effectiveNode == null) {

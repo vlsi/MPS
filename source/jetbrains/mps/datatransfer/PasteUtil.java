@@ -8,7 +8,7 @@ import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.semanticModel.SModel;
 import jetbrains.mps.semanticModel.SModelUtil;
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.semanticModel.Language;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.logging.Logger;
@@ -40,16 +40,16 @@ public class PasteUtil {
   private static final int PASTE_TO_PARENT = 2;
   private static final int PASTE_TO_ROOT = 3;
 
-  public static List<SemanticNode> getNodesFromClipboard(SModel semanticModel) {
+  public static List<SNode> getNodesFromClipboard(SModel semanticModel) {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     Transferable content = cb.getContents(null);
     if (content == null) return null;
 
     if (content.isDataFlavorSupported(SModelDataFlavor.semanticNode)) {
-      SemanticNodeData nodeData = null;
+      SNodeTransferable nodeTransferable = null;
       try {
-        nodeData = (SemanticNodeData) content.getTransferData(SModelDataFlavor.semanticNode);
-        return nodeData.createNodes(semanticModel, true);  //preserve internal references
+        nodeTransferable = (SNodeTransferable) content.getTransferData(SModelDataFlavor.semanticNode);
+        return nodeTransferable.createNodes(semanticModel, true);  //preserve internal references
       } catch (UnsupportedFlavorException e) {
         LOG.error("Exception", e);
       } catch (IOException e) {
@@ -65,14 +65,14 @@ public class PasteUtil {
     return null;
   }
 
-  private static List<SemanticNode> tryToPasteText(Clipboard cb, SModel model) {
+  private static List<SNode> tryToPasteText(Clipboard cb, SModel model) {
     try {
 
       if (!model.importsLanguage("jetbrains.textLanguage")) return null;
 
       String text = cb.getData(DataFlavor.stringFlavor).toString();
 
-      List<SemanticNode> result = new ArrayList<SemanticNode>();
+      List<SNode> result = new ArrayList<SNode>();
       if (text.contains(".")) { //sentence(s)
         Text textNode = TextUtil.toText(model, text);
         for (Sentence sentence : CollectionUtil.iteratorAsIterable(textNode.sentences())) {
@@ -93,11 +93,11 @@ public class PasteUtil {
     }
   }
 
-  public static boolean canPaste(SemanticNode pasteTarget, SemanticNode pasteNode) {
+  public static boolean canPaste(SNode pasteTarget, SNode pasteNode) {
     return (canPaste_internal(pasteTarget, pasteNode) != PASTE_N_A);
   }
 
-  public static void paste(SemanticNode pasteTarget, SemanticNode pasteNode) {
+  public static void paste(SNode pasteTarget, SNode pasteNode) {
     int status = canPaste_internal(pasteTarget, pasteNode);
     if (status == PASTE_TO_TAREGT) {
       pasteToTarget(pasteTarget, pasteNode, null, false);
@@ -108,7 +108,7 @@ public class PasteUtil {
     }
   }
 
-  private static int canPaste_internal(SemanticNode pasteTarget, SemanticNode pasteNode) {
+  private static int canPaste_internal(SNode pasteTarget, SNode pasteNode) {
     if (pasteTarget.getModel() != pasteNode.getModel()) {
       return PASTE_N_A;
     }
@@ -125,15 +125,15 @@ public class PasteUtil {
     return PASTE_N_A;
   }
 
-  private static boolean canPasteToTarget(SemanticNode pasteTarget, SemanticNode pasteNode) {
+  private static boolean canPasteToTarget(SNode pasteTarget, SNode pasteNode) {
     return pasteToTarget_internal(pasteTarget, pasteNode, null, false, false);
   }
 
-  private static void pasteToTarget(SemanticNode pasteTarget, SemanticNode pasteNode, SemanticNode anchorNode, boolean pasteBefore) {
+  private static void pasteToTarget(SNode pasteTarget, SNode pasteNode, SNode anchorNode, boolean pasteBefore) {
     pasteToTarget_internal(pasteTarget, pasteNode, anchorNode, pasteBefore, true);
   }
 
-  private static boolean pasteToTarget_internal(final SemanticNode pasteTarget, final SemanticNode pasteNode, final SemanticNode anchorNode, final boolean pasteBefore, boolean reallyPaste) {
+  private static boolean pasteToTarget_internal(final SNode pasteTarget, final SNode pasteNode, final SNode anchorNode, final boolean pasteBefore, boolean reallyPaste) {
     ConceptDeclaration pasteTargetType = Language.getTypeDeclaration(pasteTarget);
     ConceptDeclaration pasteNodeType = Language.getTypeDeclaration(pasteNode);
     if (pasteTargetType == null || pasteNodeType == null) {
@@ -166,17 +166,17 @@ public class PasteUtil {
     return true;
   }
 
-  private static boolean canPasteToParent(SemanticNode anchorNode, SemanticNode pasteNode) {
+  private static boolean canPasteToParent(SNode anchorNode, SNode pasteNode) {
     return pasteToParent_internal(anchorNode, pasteNode, false, false);
   }
 
-  private static void pasteToParent(SemanticNode pasteTarget, SemanticNode pasteNode, boolean pasteBefore) {
+  private static void pasteToParent(SNode pasteTarget, SNode pasteNode, boolean pasteBefore) {
     pasteToParent_internal(pasteTarget, pasteNode, pasteBefore, true);
   }
 
-  private static boolean pasteToParent_internal(SemanticNode anchorNode, SemanticNode pasteNode, boolean pasteBefore, boolean reallyPaste) {
-    SemanticNode actualPasteTarget = null;
-    SemanticNode actualAnchorNode = defineActualAnchorNode(anchorNode, pasteNode);
+  private static boolean pasteToParent_internal(SNode anchorNode, SNode pasteNode, boolean pasteBefore, boolean reallyPaste) {
+    SNode actualPasteTarget = null;
+    SNode actualAnchorNode = defineActualAnchorNode(anchorNode, pasteNode);
     if (!reallyPaste) {
       return (actualAnchorNode != null);
     }
@@ -188,9 +188,9 @@ public class PasteUtil {
     return true;
   }
 
-  private static SemanticNode defineActualAnchorNode(SemanticNode anchorNode, SemanticNode pasteNode) {
+  private static SNode defineActualAnchorNode(SNode anchorNode, SNode pasteNode) {
     while (anchorNode != null) {
-      SemanticNode container = anchorNode.getParent();
+      SNode container = anchorNode.getParent();
       if (container == null) {
         break;
       }
@@ -236,11 +236,11 @@ public class PasteUtil {
     return null;
   }
 
-  public static boolean canPasteRelative(SemanticNode anchorNode, SemanticNode pasteNode) {
+  public static boolean canPasteRelative(SNode anchorNode, SNode pasteNode) {
     return canPasteToParent(anchorNode, pasteNode);
   }
 
-  public static void pasteRelative(SemanticNode anchorNode, SemanticNode pasteNode, boolean pasteBefore) {
+  public static void pasteRelative(SNode anchorNode, SNode pasteNode, boolean pasteBefore) {
     pasteToParent(anchorNode, pasteNode, pasteBefore);
   }
 }

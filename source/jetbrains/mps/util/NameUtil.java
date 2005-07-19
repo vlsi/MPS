@@ -1,6 +1,6 @@
 package jetbrains.mps.util;
 
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 
 
 /**
@@ -94,7 +94,7 @@ public class NameUtil {
     return namespace + '.' + name;
   }
 
-  public static String nodeFQName(SemanticNode node) {
+  public static String nodeFQName(SNode node) {
     if (node == null) return null;
     String name = node.getName();
     // todo: dont set property NAME full name of a class

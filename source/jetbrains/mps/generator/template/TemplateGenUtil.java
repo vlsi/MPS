@@ -27,18 +27,18 @@ import java.util.List;
 public class TemplateGenUtil {
   private static final Logger LOG = Logger.getLogger(TemplateGenUtil.class);
 
-  public static SemanticNode instantiateNodeForTemplate(SemanticNode templateNode, SModel targetModel) {
+  public static SNode instantiateNodeForTemplate(SNode templateNode, SModel targetModel) {
     ConceptDeclaration conceptDeclaration = Language.getTypeDeclaration(templateNode);
-    SemanticNode targetNode = SModelUtil.instantiateConceptDeclaration(conceptDeclaration, targetModel, false);
-    SModelUtil.copySemanticNodeProperties(templateNode, targetNode);
+    SNode targetNode = SModelUtil.instantiateConceptDeclaration(conceptDeclaration, targetModel, false);
+    SModelUtil.copySNodeProperties(templateNode, targetNode);
     return targetNode;
   }
 
-  public static void buildTargetNodeReferences(SemanticNode templateNode, SemanticNode targetNode, INodeBuilder nodeBuilder) {
-    Iterator<SemanticReference> iterator = templateNode.getReferences().iterator();
+  public static void buildTargetNodeReferences(SNode templateNode, SNode targetNode, INodeBuilder nodeBuilder) {
+    Iterator<SReference> iterator = templateNode.getReferences().iterator();
     while (iterator.hasNext()) {
-      SemanticReference templateReference = iterator.next();
-      SemanticNode templateReferentNode = templateReference.getTargetNode();
+      SReference templateReference = iterator.next();
+      SNode templateReferentNode = templateReference.getTargetNode();
       if (templateReferentNode == null) {
         nodeBuilder.getGenerator().showErrorMessage(templateNode, "Invalid reference \"" + templateReference.getRole() + "\" in templates model " + templateNode.getModel().getFQName());
         continue;
@@ -63,7 +63,7 @@ public class TemplateGenUtil {
 
       // try to resolve the reference
       IReferenceResolver referenceResolver = createReferenceResolver(templateNode);
-      SemanticNode targetReferentNode = referenceResolver.resolveTarget(templateReference, nodeBuilder);
+      SNode targetReferentNode = referenceResolver.resolveTarget(templateReference, nodeBuilder);
       if (targetReferentNode != null) {
         if (SModelUtil.isAcceptableReferent(targetNode, templateReference.getRole(), targetReferentNode, nodeBuilder.getGenerator().getProject())) {
           targetNode.addReferent(templateReference.getRole(), targetReferentNode);
@@ -99,14 +99,14 @@ public class TemplateGenUtil {
     } // while (iterator.hasNext())
   }
 
-  private static IReferenceResolver createReferenceResolver(SemanticNode templateNode) {
+  private static IReferenceResolver createReferenceResolver(SNode templateNode) {
     IReferenceResolver referenceResolver = loadReferenceResolver(templateNode);
     if (referenceResolver == null) {
       referenceResolver = new DefaultReferenceResolver();
     }
 
     // if template node is inside of "template fragment" then wrap the resolver..
-    SemanticNode mayBeTemplateFragment = templateNode;
+    SNode mayBeTemplateFragment = templateNode;
     while (mayBeTemplateFragment != null) {
       if (TemplateLanguageUtil.isTemplateFragment(mayBeTemplateFragment)) {
         return new TemplateFragmentReferenceResolver(referenceResolver);
@@ -117,7 +117,7 @@ public class TemplateGenUtil {
     return referenceResolver;
   }
 
-  private static INodeBuilder loadNodeBuilder(SemanticNode sourceNode, SemanticNode templateNode, String mappingName, ITemplateGenerator generator) {
+  private static INodeBuilder loadNodeBuilder(SNode sourceNode, SNode templateNode, String mappingName, ITemplateGenerator generator) {
     ConceptDeclaration typeDeclaration = SModelUtil.getConceptDeclaration(templateNode, generator.getProject());
     String modelPackageName = JavaNameUtil.packageNameForModelFqName(typeDeclaration.getModel().getFQName());
     String buildersPackageName = modelPackageName + ".builder";
@@ -126,7 +126,7 @@ public class TemplateGenUtil {
       Class builderClass = Class.forName(builderClassName, true, ClassLoaderManager.getInstance().getClassLoader());
       Constructor[] constructors = builderClass.getDeclaredConstructors();
       // should be 1 constructor with parameters:
-      // SemanticNode sourceNode, SemanticNode templateNode, ITemplateGenerator generator
+      // SNode sourceNode, SNode templateNode, ITemplateGenerator generator
       INodeBuilder nodeBuilder = (INodeBuilder) constructors[0].newInstance(new Object[]{sourceNode, templateNode,
               mappingName, generator});
       return nodeBuilder;
@@ -143,7 +143,7 @@ public class TemplateGenUtil {
     return null;
   }
 
-  public static IReferenceResolver loadReferenceResolver(SemanticNode templateNode) {
+  public static IReferenceResolver loadReferenceResolver(SNode templateNode) {
     ConceptDeclaration conceptDeclaration = Language.getTypeDeclaration(templateNode);
     while (conceptDeclaration != null) {
       String modelPackageName = JavaNameUtil.packageNameForModelFqName(conceptDeclaration.getModel().getFQName());
@@ -174,8 +174,8 @@ public class TemplateGenUtil {
 //    }
 //    LOG.assertLog(ruleName != null, "TemplateMappingRule must have name");
     BaseConcept templateNode = templateMappingRule.getTemplateNode();
-    List<SemanticNode> sourceNodes = createSourceNodeListForTemplateMappingRule(templateMappingRule, generator);
-    for (SemanticNode sourceNode : sourceNodes) {
+    List<SNode> sourceNodes = createSourceNodeListForTemplateMappingRule(templateMappingRule, generator);
+    for (SNode sourceNode : sourceNodes) {
       INodeBuilder nodeBuilder = createNodeBuilder(sourceNode, templateNode, ruleName, generator);
       builders.add(nodeBuilder);
     }
@@ -185,8 +185,8 @@ public class TemplateGenUtil {
 
   public static void applyTemplateWeavingingRule(WeavingRule rule, ITemplateGenerator generator) {
     TemplateDeclaration templateDeclaration = rule.getTemplate();
-    List<SemanticNode> sourceNodes = createSourceNodeListForTemplateWeavingRule(rule, generator);
-    for (SemanticNode sourceNode : sourceNodes) {
+    List<SNode> sourceNodes = createSourceNodeListForTemplateWeavingRule(rule, generator);
+    for (SNode sourceNode : sourceNodes) {
       INodeBuilder contextBuilder = getContextNodeBuilderForTemplateWeavingingRule(sourceNode, rule, generator);
       if (contextBuilder == null) {
         generator.showErrorMessage(sourceNode, rule, "Couldn't create context node builder");
@@ -196,7 +196,7 @@ public class TemplateGenUtil {
     }
   }
 
-  public static void applyWeaveTemplateReductionCommand(SemanticNode sourceNode, ReductionCommand_WeaveTemplate command, INodeBuilder defaultContextBuilder, ITemplateGenerator generator) {
+  public static void applyWeaveTemplateReductionCommand(SNode sourceNode, ReductionCommand_WeaveTemplate command, INodeBuilder defaultContextBuilder, ITemplateGenerator generator) {
     TemplateDeclaration templateDeclaration = command.getTemplateDeclaration();
     INodeBuilder contextBuilder = getContextNodeBuilderForWeaveTemplateReductionCommand(sourceNode, command, defaultContextBuilder, generator);
     if (contextBuilder == null) {
@@ -210,7 +210,7 @@ public class TemplateGenUtil {
     List<TemplateFragment> templateFragments = getTemplateFragments(templateDeclaration);
     if (templateFragments.size() == 1) {
       TemplateFragment templateFragment = templateFragments.get(0);
-      SemanticNode templateFragmentNode = templateFragment.getParent();
+      SNode templateFragmentNode = templateFragment.getParent();
       if (TemplateDeclaration.CONTENT_NODE.equals(templateFragmentNode.getRole_())) {
         return true;
       }
@@ -218,7 +218,7 @@ public class TemplateGenUtil {
     return false;
   }
 
-  private static void weaveTemplateDeclaration(SemanticNode sourceNode, TemplateDeclaration templateDeclaration, INodeBuilder contextBuilder, ITemplateGenerator generator) {
+  private static void weaveTemplateDeclaration(SNode sourceNode, TemplateDeclaration templateDeclaration, INodeBuilder contextBuilder, ITemplateGenerator generator) {
     List<TemplateFragment> templateFragments = getTemplateFragments(templateDeclaration);
     if (templateFragments.isEmpty()) {
       LOG.warning("WARN: no template fragments found in " + templateDeclaration.getDebugText());
@@ -227,7 +227,7 @@ public class TemplateGenUtil {
 
     // for each template fragment create node builder
     for (TemplateFragment templateFragment : templateFragments) {
-      SemanticNode templateFragmentNode = templateFragment.getParent();
+      SNode templateFragmentNode = templateFragment.getParent();
       String mappingName = templateFragment.getName();
       List<INodeBuilder> fragmentNodeBuilders = createNodeBuildersForTemplateNode(sourceNode, templateFragmentNode, mappingName, generator);
       for (INodeBuilder fragmentBuilder : fragmentNodeBuilders) {
@@ -240,9 +240,9 @@ public class TemplateGenUtil {
 
   public static List<TemplateFragment> getTemplateFragments(TemplateDeclaration template) {
     List<TemplateFragment> templateFragments = new LinkedList<TemplateFragment>();
-    Iterator<SemanticNode> iterator = template.depthFirstChildren();
+    Iterator<SNode> iterator = template.depthFirstChildren();
     while (iterator.hasNext()) {
-      SemanticNode templateFragment = iterator.next();
+      SNode templateFragment = iterator.next();
       if (templateFragment instanceof TemplateFragment) {
         templateFragments.add((TemplateFragment) templateFragment);
       }
@@ -250,7 +250,7 @@ public class TemplateGenUtil {
     return templateFragments;
   }
 
-  private static INodeBuilder getContextBuilderForTemplateFragment(SemanticNode templateFragmentNode, INodeBuilder ruleContextBuilder, ITemplateGenerator generator) {
+  private static INodeBuilder getContextBuilderForTemplateFragment(SNode templateFragmentNode, INodeBuilder ruleContextBuilder, ITemplateGenerator generator) {
     TemplateFragment fragment = (TemplateFragment) templateFragmentNode.getChild(ITemplateLanguageConstants.ROLE_TEMPLATE_FRAGMENT);
 
     // has custom context builder provider?
@@ -266,7 +266,7 @@ public class TemplateGenUtil {
     return ruleContextBuilder;
   }
 
-  private static INodeBuilder getContextNodeBuilderForTemplateWeavingingRule(SemanticNode sourceNode, WeavingRule rule, ITemplateGenerator generator) {
+  private static INodeBuilder getContextNodeBuilderForTemplateWeavingingRule(SNode sourceNode, WeavingRule rule, ITemplateGenerator generator) {
     String aspectId = rule.getContextProviderAspectId();
     String methodName = "templateWeavingRule_Context_" + aspectId;
     Object[] args = new Object[]{sourceNode, generator};
@@ -274,7 +274,7 @@ public class TemplateGenUtil {
     return nodeBuilder;
   }
 
-  private static INodeBuilder getContextNodeBuilderForWeaveTemplateReductionCommand(SemanticNode sourceNode, ReductionCommand_WeaveTemplate command, INodeBuilder defaultContextBuilder, ITemplateGenerator generator) {
+  private static INodeBuilder getContextNodeBuilderForWeaveTemplateReductionCommand(SNode sourceNode, ReductionCommand_WeaveTemplate command, INodeBuilder defaultContextBuilder, ITemplateGenerator generator) {
     String aspectId = command.getContextProviderAspectId();
     if (aspectId == null) {
       return defaultContextBuilder;
@@ -286,10 +286,10 @@ public class TemplateGenUtil {
   }
 
 
-  public static List<INodeBuilder> createNodeBuildersForTemplateNode(SemanticNode parentSourceNode, SemanticNode templateNode, String mappingName, ITemplateGenerator generator) {
+  public static List<INodeBuilder> createNodeBuildersForTemplateNode(SNode parentSourceNode, SNode templateNode, String mappingName, ITemplateGenerator generator) {
     List<INodeBuilder> builders = new LinkedList<INodeBuilder>();
-    List<SemanticNode> sourceNodes = createSourceNodeListForTemplateNode(parentSourceNode, templateNode, generator);
-    for (SemanticNode sourceNode : sourceNodes) {
+    List<SNode> sourceNodes = createSourceNodeListForTemplateNode(parentSourceNode, templateNode, generator);
+    for (SNode sourceNode : sourceNodes) {
       INodeBuilder nodeBuilder = createNodeBuilder(sourceNode, templateNode, mappingName, generator);
       builders.add(nodeBuilder);
     }
@@ -297,7 +297,7 @@ public class TemplateGenUtil {
     return builders;
   }
 
-  public static boolean isTemplateLanguageElement(SemanticNode templateNode) {
+  public static boolean isTemplateLanguageElement(SNode templateNode) {
     String role = templateNode.getRole_();
     if (role.equals(ITemplateGenerator.ROLE_NODE_MAKRO) ||
             role.equals(ITemplateGenerator.ROLE_TEMPLATE_FRAGMENT) ||
@@ -309,11 +309,11 @@ public class TemplateGenUtil {
   }
 
   private static void createChildBuilders(INodeBuilder parentNodeBuilder) {
-    SemanticNode parentSourceNode = parentNodeBuilder.getSourceNode();
-    SemanticNode parentTemplateNode = parentNodeBuilder.getTemplateNode();
-    Iterator<SemanticNode> templateChildNodes = parentTemplateNode.getChildren().iterator();
+    SNode parentSourceNode = parentNodeBuilder.getSourceNode();
+    SNode parentTemplateNode = parentNodeBuilder.getTemplateNode();
+    Iterator<SNode> templateChildNodes = parentTemplateNode.getChildren().iterator();
     while (templateChildNodes.hasNext()) {
-      SemanticNode templateChildNode = templateChildNodes.next();
+      SNode templateChildNode = templateChildNodes.next();
       if (!isTemplateLanguageElement(templateChildNode)) {
         List<INodeBuilder> childNodeBuilders = createNodeBuildersForTemplateNode(parentSourceNode, templateChildNode, null, parentNodeBuilder.getGenerator());
         for (INodeBuilder childNodeBuilder : childNodeBuilders) {
@@ -323,25 +323,25 @@ public class TemplateGenUtil {
     } // while (childTemplates.hasNext())
   }
 
-  private static List<SemanticNode> createSourceNodeListForTemplateMappingRule(MappingRule templateMappingRule, ITemplateGenerator generator) {
+  private static List<SNode> createSourceNodeListForTemplateMappingRule(MappingRule templateMappingRule, ITemplateGenerator generator) {
     String sourceQueryAspectId = templateMappingRule.getSourceQueryAspectId();
     String methodName = "templateMappingRule_SourceQuery_" + sourceQueryAspectId;
     Object[] args = new Object[]{generator};
-    List<SemanticNode> sourceNodes = (List<SemanticNode>) QueryMethod.invoke(methodName, args, templateMappingRule.getModel());
+    List<SNode> sourceNodes = (List<SNode>) QueryMethod.invoke(methodName, args, templateMappingRule.getModel());
     checkNodesFromQuery(sourceNodes, templateMappingRule, generator);
     return sourceNodes;
   }
 
-  private static List<SemanticNode> createSourceNodeListForTemplateWeavingRule(WeavingRule templateWeavingRule, ITemplateGenerator generator) {
+  private static List<SNode> createSourceNodeListForTemplateWeavingRule(WeavingRule templateWeavingRule, ITemplateGenerator generator) {
     String sourceQueryAspectId = templateWeavingRule.getSourceQueryAspectId();
     String methodName = "templateWeavingRule_SourceQuery_" + sourceQueryAspectId;
     Object[] args = new Object[]{generator};
-    List<SemanticNode> sourceNodes = (List<SemanticNode>) QueryMethod.invoke(methodName, args, templateWeavingRule.getModel());
+    List<SNode> sourceNodes = (List<SNode>) QueryMethod.invoke(methodName, args, templateWeavingRule.getModel());
     checkNodesFromQuery(sourceNodes, templateWeavingRule, generator);
     return sourceNodes;
   }
 
-  private static List<SemanticNode> createSourceNodeListForTemplateNode(SemanticNode parentSourceNode, SemanticNode templateNode, ITemplateGenerator generator) {
+  private static List<SNode> createSourceNodeListForTemplateNode(SNode parentSourceNode, SNode templateNode, ITemplateGenerator generator) {
     NodeMacro nodeMacro = (NodeMacro) templateNode.getChild(ITemplateGenerator.ROLE_NODE_MAKRO);
 
     if (nodeMacro instanceof CopySrcNodeMacro) {
@@ -349,8 +349,8 @@ public class TemplateGenUtil {
       String sourceNodeQueryId = copySrcNodeMacro.getSourceNodeQueryId();
       String methodName = "templateSourceNodeQuery_" + sourceNodeQueryId;
       Object[] args = new Object[]{parentSourceNode, generator};
-      SemanticNode srcNodeToCopy = (SemanticNode) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
-      List<SemanticNode> list = new LinkedList<SemanticNode>();
+      SNode srcNodeToCopy = (SNode) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
+      List<SNode> list = new LinkedList<SNode>();
       if (srcNodeToCopy != null) {
         list.add(srcNodeToCopy);
       }
@@ -365,7 +365,7 @@ public class TemplateGenUtil {
         String methodName = "semanticNodeCondition_" + conditionAspectId;
         Object[] args = new Object[]{parentSourceNode};
         Boolean conditionStatus = (Boolean) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
-        List<SemanticNode> sourceNodes = new LinkedList<SemanticNode>();
+        List<SNode> sourceNodes = new LinkedList<SNode>();
         if (conditionStatus) {
           sourceNodes.add(parentSourceNode);
         }
@@ -378,23 +378,23 @@ public class TemplateGenUtil {
       if (sourceQueryAspectMethodName != null) {
         String methodName = "templateSourceQuery_" + sourceQueryAspectMethodName;
         Object[] args = new Object[]{parentSourceNode, generator};
-        List<SemanticNode> sourceNodes = (List<SemanticNode>) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
+        List<SNode> sourceNodes = (List<SNode>) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
         checkNodesFromQuery(sourceNodes, nodeMacro, generator);
         return sourceNodes;
       }
     }
 
     // <default> : propagate  parent source node
-    List<SemanticNode> list = new LinkedList<SemanticNode>();
+    List<SNode> list = new LinkedList<SNode>();
     list.add(parentSourceNode);
     return list;
   }
 
-  private static void checkNodesFromQuery(List<SemanticNode> queryNodes, SemanticNode templateNode, ITemplateGenerator generator) {
+  private static void checkNodesFromQuery(List<SNode> queryNodes, SNode templateNode, ITemplateGenerator generator) {
     if (!queryNodes.isEmpty()) {
-      Iterator<SemanticNode> iterator = queryNodes.iterator();
+      Iterator<SNode> iterator = queryNodes.iterator();
       while (iterator.hasNext()) {
-        SemanticNode node = iterator.next();
+        SNode node = iterator.next();
         if (node.getModel() != generator.getSourceModel()) {
           iterator.remove();
           generator.showErrorMessage(templateNode, "Query node not from source model : " + node.getDebugText());
@@ -403,14 +403,14 @@ public class TemplateGenUtil {
     }
   }
 
-  private static INodeBuilder createNodeBuilder(SemanticNode sourceNode, SemanticNode templateNode, String mappingName, ITemplateGenerator generator) {
+  private static INodeBuilder createNodeBuilder(SNode sourceNode, SNode templateNode, String mappingName, ITemplateGenerator generator) {
     INodeBuilder builder = null;
     boolean needCreateChildBuilders = true;
     NodeMacro nodeMacro = (NodeMacro) templateNode.getChild(ITemplateGenerator.ROLE_NODE_MAKRO);
     if (nodeMacro != null) {
       if (nodeMacro instanceof SwitchMacro) {
         TemplateSwitch templateSwitch = ((SwitchMacro) nodeMacro).getTemplateSwitch();
-        SemanticNode templateNodeFromSwitch = getTemplateNodeFromSwitch(sourceNode, templateSwitch, generator);
+        SNode templateNodeFromSwitch = getTemplateNodeFromSwitch(sourceNode, templateSwitch, generator);
         if (templateNodeFromSwitch != null) {
           builder = createNodeBuilder(sourceNode, templateNodeFromSwitch, mappingName, generator);
           if (builder != null) {
@@ -444,7 +444,7 @@ public class TemplateGenUtil {
     return builder;
   }
 
-  public static INodeBuilder createDefaultNodeBuilder(SemanticNode sourceNode, SemanticNode templateNode, String mappingName, ITemplateGenerator generator) {
+  public static INodeBuilder createDefaultNodeBuilder(SNode sourceNode, SNode templateNode, String mappingName, ITemplateGenerator generator) {
     INodeBuilder builder = loadNodeBuilder(sourceNode, templateNode, mappingName, generator);
     if (builder != null) {
       return builder;
@@ -452,23 +452,23 @@ public class TemplateGenUtil {
     return new DefaultNodeBuilder(sourceNode, templateNode, mappingName, generator);
   }
 
-  public static INodeBuilder createCopyingNodeBuilder(SemanticNode sourceNode, String roleInParent, ITemplateGenerator generator) {
+  public static INodeBuilder createCopyingNodeBuilder(SNode sourceNode, String roleInParent, ITemplateGenerator generator) {
     INodeBuilder nodeBuilder = createCopyingNodeBuilder(sourceNode, generator);
     nodeBuilder.setRoleInParent(roleInParent);
     return nodeBuilder;
   }
 
-  public static INodeBuilder createCopyingNodeBuilder(SemanticNode sourceNode, ITemplateGenerator generator) {
+  public static INodeBuilder createCopyingNodeBuilder(SNode sourceNode, ITemplateGenerator generator) {
     INodeBuilder nodeBuilder = createDefaultNodeBuilder(sourceNode, sourceNode, null, generator);
-    List<SemanticNode> children = sourceNode.getChildren();
-    for (SemanticNode child : children) {
+    List<SNode> children = sourceNode.getChildren();
+    for (SNode child : children) {
       INodeBuilder childBuilder = createCopyingNodeBuilder(child, generator);
       nodeBuilder.addChildBuilder(childBuilder);
     }
     return nodeBuilder;
   }
 
-  private static SemanticNode getTemplateNodeFromSwitch(SemanticNode sourceNode, TemplateSwitch templateSwitch, ITemplateGenerator generator) {
+  private static SNode getTemplateNodeFromSwitch(SNode sourceNode, TemplateSwitch templateSwitch, ITemplateGenerator generator) {
     TemplateDeclaration templateForSwitch = generator.getTemplateForSwitch(sourceNode, templateSwitch);
     if (templateForSwitch != null) {
       List<TemplateFragment> templateFragments = getTemplateFragments(templateForSwitch);
@@ -482,7 +482,7 @@ public class TemplateGenUtil {
       }
 
       TemplateFragment templateFragment = templateFragments.get(0);
-      SemanticNode templateNode = templateFragment.getParent();
+      SNode templateNode = templateFragment.getParent();
       return templateNode;
     }
     return null;

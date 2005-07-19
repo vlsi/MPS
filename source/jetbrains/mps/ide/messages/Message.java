@@ -1,6 +1,6 @@
 package jetbrains.mps.ide.messages;
 
-import jetbrains.mps.semanticModel.SemanticNode;
+import jetbrains.mps.semanticModel.SNode;
 import jetbrains.mps.semanticModel.SNodeReference;
 
 /**
@@ -11,7 +11,7 @@ public class Message {
   private SNodeReference myNodeReference;
   private String myText;
 
-  public Message(MessageKind kind, SemanticNode node, String text) {
+  public Message(MessageKind kind, SNode node, String text) {
     myKind = kind;
     myNodeReference = new SNodeReference(node);
     myText = text;
@@ -29,7 +29,7 @@ public class Message {
     return myKind;
   }
 
-  public SemanticNode getNode() {
+  public SNode getNode() {
     return myNodeReference.getNode();
   }
 
