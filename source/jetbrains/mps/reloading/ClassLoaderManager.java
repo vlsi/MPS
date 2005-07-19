@@ -62,8 +62,8 @@ public class ClassLoaderManager {
       if (pack.contains(".generator")) return false;
 
 
-      if (name.endsWith(".Aspects")) return false;
-      if (name.contains(".Aspects$")) return false;
+      if (name.endsWith(".Queries")) return false;
+      if (name.contains(".Queries$")) return false;
 
       if (name.startsWith("jetbrains.mps.")) return true;
       if (name.startsWith("jetbrains.textLanguage.")) return true;

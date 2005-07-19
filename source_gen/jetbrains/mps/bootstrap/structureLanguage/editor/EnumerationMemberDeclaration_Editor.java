@@ -11,7 +11,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.ModelAccessor;
-import jetbrains.mps.bootstrap.structureLanguage.editor.Aspects;
+import jetbrains.mps.bootstrap.structureLanguage.editor.Queries;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorCellAction;
@@ -91,7 +91,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createEnumMember_IsDefaultCell(EditorContext context, SemanticNode node) {
-    ModelAccessor modelAccessor = Aspects.createModelAccessor_EnumMember_IsDefault(node);
+    ModelAccessor modelAccessor = Queries.createModelAccessor_EnumMember_IsDefault(node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);

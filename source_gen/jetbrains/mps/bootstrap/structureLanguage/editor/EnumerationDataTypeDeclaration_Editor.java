@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.ModelAccessor;
-import jetbrains.mps.bootstrap.structureLanguage.editor.Aspects;
+import jetbrains.mps.bootstrap.structureLanguage.editor.Queries;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorCellAction;
@@ -176,7 +176,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createEnumDataType_MemberDataTypeNameCell(EditorContext context, SemanticNode node) {
-    ModelAccessor modelAccessor = Aspects.createModelAccessor_EnumDataType_MemberDataTypeName(node);
+    ModelAccessor modelAccessor = Queries.createModelAccessor_EnumDataType_MemberDataTypeName(node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);

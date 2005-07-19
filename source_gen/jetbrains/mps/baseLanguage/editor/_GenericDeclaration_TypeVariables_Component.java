@@ -8,7 +8,7 @@ import jetbrains.mps.nodeEditor.EditorCellListHandler;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.baseLanguage.editor.Aspects;
+import jetbrains.mps.baseLanguage.editor.Queries;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -29,7 +29,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     return this.createCellAlternation(context, node);
   }
   public EditorCell createCellAlternation(EditorContext context, SemanticNode node) {
-    boolean alternationCondition = Aspects.semanticNodeCondition_GenericDeclaration_HasTypeVariables(node);
+    boolean alternationCondition = Queries.semanticNodeCondition_GenericDeclaration_HasTypeVariables(node);
     EditorCell editorCell = null;
     if(alternationCondition) {
       editorCell = this.createRowCell(context, node);

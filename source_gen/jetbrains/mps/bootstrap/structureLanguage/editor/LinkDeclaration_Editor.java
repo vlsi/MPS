@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.semanticModel.SemanticNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
-import jetbrains.mps.bootstrap.structureLanguage.editor.Aspects;
+import jetbrains.mps.bootstrap.structureLanguage.editor.Queries;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.ModelAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
@@ -37,22 +37,22 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createRoleCell(context, node));
-    if(Aspects.semanticNodeCondition_LinkDeclaration_NotSpecializes(node)) {
+    if(Queries.semanticNodeCondition_LinkDeclaration_NotSpecializes(node)) {
       editorCell.addEditorCell(this.createMetaClassCell(context, node));
     }
-    if(Aspects.semanticNodeCondition_LinkDeclaration_NotSpecializes(node)) {
+    if(Queries.semanticNodeCondition_LinkDeclaration_NotSpecializes(node)) {
       editorCell.addEditorCell(this.createSourceCardinalityCell(context, node));
     }
-    if(Aspects.semanticNodeCondition_LinkDeclaration_NotSpecializes(node)) {
+    if(Queries.semanticNodeCondition_LinkDeclaration_NotSpecializes(node)) {
       editorCell.addEditorCell(this.createTargetCardinalityCell(context, node));
     }
-    if(Aspects.semanticNodeCondition_LinkDeclaration_Specializes(node)) {
+    if(Queries.semanticNodeCondition_LinkDeclaration_Specializes(node)) {
       editorCell.addEditorCell(this.createLinkDeclaration_SpecializedMetaclassCell(context, node));
     }
-    if(Aspects.semanticNodeCondition_LinkDeclaration_Specializes(node)) {
+    if(Queries.semanticNodeCondition_LinkDeclaration_Specializes(node)) {
       editorCell.addEditorCell(this.createLinkDeclaration_SpecializedSourceCardinalityCell(context, node));
     }
-    if(Aspects.semanticNodeCondition_LinkDeclaration_Specializes(node)) {
+    if(Queries.semanticNodeCondition_LinkDeclaration_Specializes(node)) {
       editorCell.addEditorCell(this.createLinkDeclaration_SpecializedTargetCardinalityCell(context, node));
     }
     editorCell.addEditorCell(this.createConstantCell(context, node, "target:"));
@@ -82,7 +82,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createLinkDeclaration_SpecializedMetaclassCell(EditorContext context, SemanticNode node) {
-    ModelAccessor modelAccessor = Aspects.createModelAccessor_LinkDeclaration_SpecializedMetaclass(node);
+    ModelAccessor modelAccessor = Queries.createModelAccessor_LinkDeclaration_SpecializedMetaclass(node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
@@ -95,7 +95,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createLinkDeclaration_SpecializedSourceCardinalityCell(EditorContext context, SemanticNode node) {
-    ModelAccessor modelAccessor = Aspects.createModelAccessor_LinkDeclaration_SpecializedSourceCardinality(node);
+    ModelAccessor modelAccessor = Queries.createModelAccessor_LinkDeclaration_SpecializedSourceCardinality(node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
@@ -108,7 +108,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createLinkDeclaration_SpecializedTargetCardinalityCell(EditorContext context, SemanticNode node) {
-    ModelAccessor modelAccessor = Aspects.createModelAccessor_LinkDeclaration_SpecializedTargetCardinality(node);
+    ModelAccessor modelAccessor = Queries.createModelAccessor_LinkDeclaration_SpecializedTargetCardinality(node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
@@ -121,7 +121,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createLinkDeclaration_SpecializedLinkRoleCell(EditorContext context, SemanticNode node) {
-    ModelAccessor modelAccessor = Aspects.createModelAccessor_LinkDeclaration_SpecializedLinkRole(node);
+    ModelAccessor modelAccessor = Queries.createModelAccessor_LinkDeclaration_SpecializedLinkRole(node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);

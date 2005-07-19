@@ -305,8 +305,8 @@ public class MPSSupportHandler implements ProjectComponent {
     ApplicationManager.getApplication().runReadAction(new Runnable() {
       public void run() {
         final PsiManager psiManager = PsiManager.getInstance(myProject);
-        if (!isAspectsClassExist(namespace)) return;
-        PsiClass aspects = psiManager.findClass(namespace + ".Aspects", GlobalSearchScope.projectScope(myProject));
+        if (!isQueriesClassExist(namespace)) return;
+        PsiClass aspects = psiManager.findClass(namespace + ".Queries", GlobalSearchScope.projectScope(myProject));
         PsiMethod[] methods = aspects.getMethods();
         for (int i = 0; i < methods.length; i++) {
           PsiMethod method = methods[i];
@@ -362,11 +362,11 @@ public class MPSSupportHandler implements ProjectComponent {
   }
 
   public String addImport(final String namespace, final String fqName) {
-    if (!isAspectsClassExist(namespace)) createAspectClass(namespace);
+    if (!isQueriesClassExist(namespace)) createAspectClass(namespace);
     executeWriteAction(new Runnable() {
       public void run() {
         PsiManager manager = PsiManager.getInstance(myProject);
-        PsiClass aspectClass = getAspectsClass(namespace);
+        PsiClass aspectClass = getQueriesClass(namespace);
         PsiJavaFile file = (PsiJavaFile) aspectClass.getContainingFile();
         try {
           if (file.getImportList().findSingleClassImportStatement(fqName) != null) return;
@@ -382,10 +382,10 @@ public class MPSSupportHandler implements ProjectComponent {
   }
 
   public String openMethod(final String namespace, final String name) {
-    if (!isAspectsClassExist(namespace)) createAspectClass(namespace);
+    if (!isQueriesClassExist(namespace)) createAspectClass(namespace);
     executeWriteAction(new Runnable() {
       public void run() {
-        PsiClass aspects = getAspectsClass(namespace);
+        PsiClass aspects = getQueriesClass(namespace);
         PsiMethod[] methods = aspects.getMethods();
         for (int i = 0; i < methods.length; i++) {
           PsiMethod method = methods[i];
@@ -402,11 +402,11 @@ public class MPSSupportHandler implements ProjectComponent {
 
 
   public String createAspectMethod(final String namespace, final String name, final String returnType, final String params) {
-    if (!isAspectsClassExist(namespace)) createAspectClass(namespace);
+    if (!isQueriesClassExist(namespace)) createAspectClass(namespace);
 
     executeWriteAction(new Runnable() {
       public void run() {
-        PsiClass cls = getAspectsClass(namespace);
+        PsiClass cls = getQueriesClass(namespace);
         try {
           PsiMethod method = getPsiElementFactory().createMethodFromText("public static " + returnType + " " + name + "(" + params + ")  { }", cls);
           method = (PsiMethod) cls.add(method);
@@ -490,7 +490,7 @@ public class MPSSupportHandler implements ProjectComponent {
         }
         PsiDirectory rootDir = psiManager.findDirectory(sourceDir);
         try {
-          createPackagesForNamespace(rootDir, namespace).createClass("Aspects");
+          createPackagesForNamespace(rootDir, namespace).createClass("Queries");
         } catch (IncorrectOperationException e) {
           e.printStackTrace();
         }
@@ -517,19 +517,19 @@ public class MPSSupportHandler implements ProjectComponent {
     return current;
   }
 
-  private PsiClass getAspectsClass(final String namespace) {
+  private PsiClass getQueriesClass(final String namespace) {
     final PsiClass[] aspects = new PsiClass[1];
     ApplicationManager.getApplication().runReadAction(new Runnable() {
       public void run() {
         final PsiManager psiManager = PsiManager.getInstance(myProject);
-        aspects[0] = psiManager.findClass(namespace + ".Aspects", GlobalSearchScope.projectScope(myProject));
+        aspects[0] = psiManager.findClass(namespace + ".Queries", GlobalSearchScope.projectScope(myProject));
       }
     });
     return aspects[0];
   }
 
-  public boolean isAspectsClassExist(final String namespace) {
-    return getAspectsClass(namespace) != null;
+  public boolean isQueriesClassExist(final String namespace) {
+    return getQueriesClass(namespace) != null;
   }
 
   private void executeWriteAction(final Runnable runnable) {

@@ -15,7 +15,7 @@ import jetbrains.mps.semanticModel.*;
 import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.*;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
-import jetbrains.mps.util.AspectMethod;
+import jetbrains.mps.util.QueryMethod;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -65,7 +65,7 @@ public class TemplateGenUtil {
       IReferenceResolver referenceResolver = createReferenceResolver(templateNode);
       SemanticNode targetReferentNode = referenceResolver.resolveTarget(templateReference, nodeBuilder);
       if (targetReferentNode != null) {
-        if(SModelUtil.isAcceptableReferent(targetNode, templateReference.getRole(), targetReferentNode, nodeBuilder.getGenerator().getProject())) {
+        if (SModelUtil.isAcceptableReferent(targetNode, templateReference.getRole(), targetReferentNode, nodeBuilder.getGenerator().getProject())) {
           targetNode.addReferent(templateReference.getRole(), targetReferentNode);
         } else {
           // if reference is not acceptable, then temporarily keep original reference
@@ -258,7 +258,7 @@ public class TemplateGenUtil {
     if (aspectId != null) {
       String methodName = "templateFragment_Context_" + aspectId;
       Object[] args = new Object[]{templateFragmentNode, ruleContextBuilder, generator};
-      INodeBuilder nodeBuilder = (INodeBuilder) AspectMethod.invoke(methodName, args, fragment.getModel());
+      INodeBuilder nodeBuilder = (INodeBuilder) QueryMethod.invoke(methodName, args, fragment.getModel());
       return nodeBuilder;
     }
 
@@ -270,7 +270,7 @@ public class TemplateGenUtil {
     String aspectId = rule.getContextProviderAspectId();
     String methodName = "templateWeavingRule_Context_" + aspectId;
     Object[] args = new Object[]{sourceNode, generator};
-    INodeBuilder nodeBuilder = (INodeBuilder) AspectMethod.invoke(methodName, args, rule.getModel());
+    INodeBuilder nodeBuilder = (INodeBuilder) QueryMethod.invoke(methodName, args, rule.getModel());
     return nodeBuilder;
   }
 
@@ -281,7 +281,7 @@ public class TemplateGenUtil {
     }
     String methodName = "templateWeavingRule_Context_" + aspectId;
     Object[] args = new Object[]{sourceNode, generator};
-    INodeBuilder nodeBuilder = (INodeBuilder) AspectMethod.invoke(methodName, args, command.getModel());
+    INodeBuilder nodeBuilder = (INodeBuilder) QueryMethod.invoke(methodName, args, command.getModel());
     return nodeBuilder;
   }
 
@@ -327,7 +327,8 @@ public class TemplateGenUtil {
     String sourceQueryAspectId = templateMappingRule.getSourceQueryAspectId();
     String methodName = "templateMappingRule_SourceQuery_" + sourceQueryAspectId;
     Object[] args = new Object[]{generator};
-    List<SemanticNode> sourceNodes = (List<SemanticNode>) AspectMethod.invoke(methodName, args, templateMappingRule.getModel());
+    List<SemanticNode> sourceNodes = (List<SemanticNode>) QueryMethod.invoke(methodName, args, templateMappingRule.getModel());
+    checkNodesFromQuery(sourceNodes, templateMappingRule, generator);
     return sourceNodes;
   }
 
@@ -335,7 +336,8 @@ public class TemplateGenUtil {
     String sourceQueryAspectId = templateWeavingRule.getSourceQueryAspectId();
     String methodName = "templateWeavingRule_SourceQuery_" + sourceQueryAspectId;
     Object[] args = new Object[]{generator};
-    List<SemanticNode> sourceNodes = (List<SemanticNode>) AspectMethod.invoke(methodName, args, templateWeavingRule.getModel());
+    List<SemanticNode> sourceNodes = (List<SemanticNode>) QueryMethod.invoke(methodName, args, templateWeavingRule.getModel());
+    checkNodesFromQuery(sourceNodes, templateWeavingRule, generator);
     return sourceNodes;
   }
 
@@ -347,11 +349,12 @@ public class TemplateGenUtil {
       String sourceNodeQueryId = copySrcNodeMacro.getSourceNodeQueryId();
       String methodName = "templateSourceNodeQuery_" + sourceNodeQueryId;
       Object[] args = new Object[]{parentSourceNode, generator};
-      SemanticNode srcNodeToCopy = (SemanticNode) AspectMethod.invoke(methodName, args, nodeMacro.getModel());
+      SemanticNode srcNodeToCopy = (SemanticNode) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
       List<SemanticNode> list = new LinkedList<SemanticNode>();
       if (srcNodeToCopy != null) {
         list.add(srcNodeToCopy);
       }
+      checkNodesFromQuery(list, copySrcNodeMacro, generator);
       return list;
     } else if (nodeMacro instanceof IfMacro) {
       IfMacro ifMacro = (IfMacro) nodeMacro;
@@ -361,7 +364,7 @@ public class TemplateGenUtil {
       } else {
         String methodName = "semanticNodeCondition_" + conditionAspectId;
         Object[] args = new Object[]{parentSourceNode};
-        Boolean conditionStatus = (Boolean) AspectMethod.invoke(methodName, args, nodeMacro.getModel());
+        Boolean conditionStatus = (Boolean) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
         List<SemanticNode> sourceNodes = new LinkedList<SemanticNode>();
         if (conditionStatus) {
           sourceNodes.add(parentSourceNode);
@@ -375,7 +378,8 @@ public class TemplateGenUtil {
       if (sourceQueryAspectMethodName != null) {
         String methodName = "templateSourceQuery_" + sourceQueryAspectMethodName;
         Object[] args = new Object[]{parentSourceNode, generator};
-        List<SemanticNode> sourceNodes = (List<SemanticNode>) AspectMethod.invoke(methodName, args, nodeMacro.getModel());
+        List<SemanticNode> sourceNodes = (List<SemanticNode>) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
+        checkNodesFromQuery(sourceNodes, nodeMacro, generator);
         return sourceNodes;
       }
     }
@@ -384,6 +388,19 @@ public class TemplateGenUtil {
     List<SemanticNode> list = new LinkedList<SemanticNode>();
     list.add(parentSourceNode);
     return list;
+  }
+
+  private static void checkNodesFromQuery(List<SemanticNode> queryNodes, SemanticNode templateNode, ITemplateGenerator generator) {
+    if (!queryNodes.isEmpty()) {
+      Iterator<SemanticNode> iterator = queryNodes.iterator();
+      while (iterator.hasNext()) {
+        SemanticNode node = iterator.next();
+        if (node.getModel() != generator.getSourceModel()) {
+          iterator.remove();
+          generator.showErrorMessage(templateNode, "Query node not from source model : " + node.getDebugText());
+        }
+      }
+    }
   }
 
   private static INodeBuilder createNodeBuilder(SemanticNode sourceNode, SemanticNode templateNode, String mappingName, ITemplateGenerator generator) {
@@ -413,7 +430,7 @@ public class TemplateGenUtil {
         if (targetBuilderAspectMethodName != null) {
           String methodName = "templateTargetBuilder_" + targetBuilderAspectMethodName;
           Object[] args = new Object[]{sourceNode, templateNode, mappingName, generator};
-          builder = (INodeBuilder) AspectMethod.invoke(methodName, args, nodeMacro.getModel());
+          builder = (INodeBuilder) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
         }
       }
     }
