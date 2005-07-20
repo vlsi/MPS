@@ -11,6 +11,7 @@ import org.jdom.JDOMException;
 import java.io.File;
 import java.io.IOException;
 import java.io.ByteArrayInputStream;
+import java.io.OutputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
@@ -80,7 +81,7 @@ public class ModelPersistence {
 
     // the model FQ name ...
     String fileName = file.getName();
-    int index = fileName.lastIndexOf('.');
+    int index = fileName.indexOf('.');
     String modelName = (index >= 0) ? fileName.substring(0, index) : fileName;
 
     Document document = loadModelDocument(file);
@@ -272,6 +273,16 @@ public class ModelPersistence {
 
     try {
       JDOMUtil.writeDocument(document, file);
+    } catch (IOException e) {
+      LOG.error(e);
+    }
+  }
+
+  public static void saveModel(SModel sourceModel, OutputStream output) {
+    Document document = saveModel(sourceModel);
+    try {
+      JDOMUtil.writeDocument(document, output);
+      output.close();
     } catch (IOException e) {
       LOG.error(e);
     }
