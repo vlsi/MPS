@@ -38,7 +38,7 @@ public class SModel implements Iterable<SNode> {
   private Map<String, SNode> myIdToNodeMap = new HashMap<String, SNode>();
   private SModelEventTranslator myEventTranslator = new SModelEventTranslator();
 
-  private Set<String> myDescriptorNotFoundReportedFqNames = new HashSet<String>();
+  private Set<SModelRepository.SModelKey> myDescriptorNotFoundReportedModelKeys = new HashSet<SModelRepository.SModelKey>();
 
   public SModel(String name, String nameSpace) {
     this();
@@ -159,10 +159,18 @@ public class SModel implements Iterable<SNode> {
     return isLoading;
   }
 
+  /**
+   *
+   * @deprecated use hasImportedModel(SModelRepository.SModelKey modelKey) instead
+   */
   public boolean hasImportedModel(String fqName) {
+    return hasImportedModel(new SModelRepository.SModelKey(fqName));
+  }
+
+  public boolean hasImportedModel(SModelRepository.SModelKey modelKey) {
     for (int i = 0; i < myImports.size(); i++) {
       ImportElement importElement = (ImportElement) myImports.get(i);
-      if (importElement.getModelFQName().equals(fqName)) {
+      if (importElement.getModelKey().equals(modelKey)) {
         return true;
       }
     }
@@ -337,7 +345,7 @@ public class SModel implements Iterable<SNode> {
    * @deprecated
    */
   public void addImportedModel(SModel semanticModel) {
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(semanticModel.getFQName());
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(semanticModel.getModelKey());
     addImportedModelDescriptor(modelDescriptor, ++myMaxReferenceID);
   }
 
@@ -349,24 +357,45 @@ public class SModel implements Iterable<SNode> {
     myImports.add(importElement);
   }
 
+  /** @deprecated use addImportedModel(SModelRepository.SModelKey modelFqName) instead
+   */
   public void addImportedModel(String modelFqName) {
     addImportElement(modelFqName);
   }
 
+  public void addImportedModel(SModelRepository.SModelKey modelFqName) {
+    addImportElement(modelFqName);
+  }
+
+  /** @deprecated use addImportElement(SModelRepository.SModelKey modelKey) instead
+   */
   ImportElement addImportElement(String modelFqName) {
-    ImportElement importElement = findImportElement(modelFqName);
+    return addImportElement(new SModelRepository.SModelKey(modelFqName));
+  }
+
+  ImportElement addImportElement(SModelRepository.SModelKey modelKey) {
+    ImportElement importElement = findImportElement(modelKey);
     if (importElement != null) return importElement;
-    importElement = new ImportElement(modelFqName, ++myMaxReferenceID);
+    importElement = new ImportElement(modelKey, ++myMaxReferenceID);
     myImports.add(importElement);
     return importElement;
   }
 
+  /** @deprecated use addImportElement(SModelRepository.SModelKey modelKey, int referenceId) instead
+   */
   ImportElement addImportElement(String modelFqName, int referenceId) {
-    ImportElement importElement = new ImportElement(modelFqName, referenceId);
+    return addImportElement(new SModelRepository.SModelKey(modelFqName), referenceId);
+  }
+
+   ImportElement addImportElement(SModelRepository.SModelKey modelKey, int referenceId) {
+    ImportElement importElement = new ImportElement(modelKey, referenceId);
     myImports.add(importElement);
     return importElement;
   }
 
+  /**
+   *  @deprecated use deleteImportedModel(SModelRepository.SModelKey modelKey) instead
+   */
   public void deleteImportedModel(String fqName) {
     ImportElement importElement = findImportElement(fqName);
     if (importElement != null) {
@@ -374,19 +403,38 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  public void deleteImportedModel(SModel model) {
-    ImportElement importElement = findImportElement(model.getFQName());
+  public void deleteImportedModel(SModelRepository.SModelKey modelKey) {
+    ImportElement importElement = findImportElement(modelKey);
     if (importElement != null) {
       myImports.remove(importElement);
     }
   }
 
+  public void deleteImportedModel(SModel model) {
+    ImportElement importElement = findImportElement(model.getModelKey());
+    if (importElement != null) {
+      myImports.remove(importElement);
+    }
+  }
+
+  /**
+   *
+   * @deprecated use Collection<SModelRepository.SModelKey> getImportedModelKeys() instead
+   */
   public Collection<String> getImportedModelNames() {
     ArrayList<String> modelNames = new ArrayList<String>();
     for (ImportElement importElement : myImports) {
       modelNames.add(importElement.getModelFQName());
     }
     return modelNames;
+  }
+
+  public Collection<SModelRepository.SModelKey> getImportedModelKeys() {
+    ArrayList<SModelRepository.SModelKey> modelKeys = new ArrayList<SModelRepository.SModelKey>();
+    for (ImportElement importElement : myImports) {
+      modelKeys.add(importElement.getModelKey());
+    }
+    return modelKeys;
   }
 
   String getImportedModelName(int referenceID) {
@@ -406,14 +454,14 @@ public class SModel implements Iterable<SNode> {
     Iterator<ImportElement> iterator = myImports.iterator();
     while (iterator.hasNext()) {
       ImportElement importElement = iterator.next();
-      String modelFQName = importElement.getModelFQName();
-      if (!myDescriptorNotFoundReportedFqNames.contains(modelFQName)) {
-        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelFQName);
+      SModelRepository.SModelKey modelKey = importElement.getModelKey();
+      if (!myDescriptorNotFoundReportedModelKeys.contains(modelKey)) {
+        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelKey);
         if (modelDescriptor != null) {
           modelsList.add(modelDescriptor);
         } else {
-          myDescriptorNotFoundReportedFqNames.add(modelFQName);
-          LOG.errorWithTrace("Couldn't find model descriptor for imported model: \"" + modelFQName + "\"\n" +
+          myDescriptorNotFoundReportedModelKeys.add(modelKey);
+          LOG.errorWithTrace("Couldn't find model descriptor for imported model: \"" + modelKey + "\"\n" +
                   "source model was: \"" + getFQName() + "\"");
         }
       }
@@ -435,16 +483,22 @@ public class SModel implements Iterable<SNode> {
   }
 
   public boolean isImported(SModel model) {
-    return findImportElement(model.getFQName()) != null;
+    return findImportElement(model.getModelKey()) != null;
   }
 
-  private ImportElement findImportElement(String fqName) {
+  private ImportElement findImportElement(SModelRepository.SModelKey modelKey) {
     for (ImportElement importElement : myImports) {
-      if (fqName.equals(importElement.getModelFQName())) {
+      if (modelKey.equals(importElement.getModelKey())) {
         return importElement;
       }
     }
     return null;
+  }
+
+  /** @deprecated use findImportElement(SModelRepository.SModelKey modelKey) instead
+   */
+  private ImportElement findImportElement(String fqName) {     //todo: alt f7
+   return findImportElement(new SModelRepository.SModelKey(fqName));
   }
 
   public void setMaxReferenceID(int i) {
@@ -552,15 +606,27 @@ public class SModel implements Iterable<SNode> {
 
   /*package*/
   static class ImportElement {
-    private String myModelDescriptor;
+    private SModelRepository.SModelKey myModelDescriptor;
     private int myReferenceID;
 
+    /**
+     * @deprecated use ImportElement(SModelRepository.SModelKey modelKey, int referenceID) instead
+    */
     public ImportElement(String modelDescriptor, int referenceID) {
-      myModelDescriptor = modelDescriptor;
+      myModelDescriptor = new SModelRepository.SModelKey(modelDescriptor);
+      myReferenceID = referenceID;
+    }
+
+    public ImportElement(SModelRepository.SModelKey modelKey, int referenceID) {
+      myModelDescriptor = modelKey;
       myReferenceID = referenceID;
     }
 
     public String getModelFQName() {
+      return myModelDescriptor.myFQName;
+    }
+
+    public SModelRepository.SModelKey getModelKey() {
       return myModelDescriptor;
     }
 

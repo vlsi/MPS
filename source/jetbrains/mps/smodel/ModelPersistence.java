@@ -128,7 +128,8 @@ public class ModelPersistence {
       String importedModelFQName = NameUtil.fqNameFromNamespaceAndName(element.getAttributeValue(NAMESPACE),
               element.getAttributeValue(NAME));
       int referenceID = readIntAttributeValue(element, MODEL_REFERENCE_ID);
-      semanticModel.addImportElement(importedModelFQName, referenceID);
+      String stereotype = element.getAttributeValue(STEREOTYPE, "");
+      semanticModel.addImportElement(new SModelRepository.SModelKey(importedModelFQName, stereotype), referenceID);
     }
 
     ArrayList<ReferenceDescriptor> referenceDescriptors = new ArrayList<ReferenceDescriptor>();
@@ -316,6 +317,7 @@ public class ModelPersistence {
       String fqName = importElement.getModelFQName();
       importElem.setAttribute(NAME, NameUtil.nameFromFQName(fqName));
       importElem.setAttribute(NAMESPACE, NameUtil.namespaceFromFQName(fqName));
+      importElem.setAttribute(STEREOTYPE, importElement.getModelKey().myStereotype);
       rootElement.addContent(importElem);
     }
 
