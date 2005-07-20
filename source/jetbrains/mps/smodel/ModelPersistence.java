@@ -1,16 +1,16 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.logging.Logger;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
-import java.io.ByteArrayInputStream;
 import java.io.OutputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -73,7 +73,7 @@ public class ModelPersistence {
 
   public static SModel readModel(byte[] bytes) {
     Document document = loadModelDocument(bytes);
-    return readModel(document, "");
+    return readModel(document, "", "");
   }
 
   public static SModel readModel(File file) {
@@ -85,9 +85,11 @@ public class ModelPersistence {
     String rawModelName = (index >= 0) ? fileName.substring(0, index) : fileName;
     String modelName = rawModelName;
     int index1 = rawModelName.indexOf("@");
+    String modelStereotype = "";
     if (index1 >= 0) {
       System.out.println();
       modelName = rawModelName.substring(index1 + 1);
+      modelStereotype = rawModelName.substring(0, index1);
     }
 
 
@@ -98,24 +100,24 @@ public class ModelPersistence {
       return null;
     }
 
-    return readModel(document, modelName);
+    return readModel(document, modelName, modelStereotype);
   }
 
   public static SModel copyModel(SModel model) {
-    return readModel(saveModel(model), model.getName());
+    return readModel(saveModel(model), model.getName(), model.getStereotype());
   }
 
-  private static SModel readModel(Document document, String modelName) {
+  private static SModel readModel(Document document, String modelName, String stereotype) {
     Element rootElement = document.getRootElement();
     String modelNamespace = rootElement.getAttributeValue(NAMESPACE, "");
     String modelFqName = NameUtil.fqNameFromNamespaceAndName(modelNamespace, modelName);
-    SModel semanticModel = new SModel(modelFqName);
+    SModel model = new SModel(modelFqName);
 
-    semanticModel.setStereotype(rootElement.getAttributeValue(STEREOTYPE));
-    semanticModel.setLoading(true);
+    model.setStereotype(stereotype);
+    model.setLoading(true);
     try {
       Element maxRefID = rootElement.getChild(MAX_REFERENCE_ID);
-      semanticModel.setMaxReferenceID(readIntAttributeValue(maxRefID, VALUE));
+      model.setMaxReferenceID(readIntAttributeValue(maxRefID, VALUE));
     } catch (Throwable e) {
       LOG.error(e);
     }
@@ -125,7 +127,7 @@ public class ModelPersistence {
     for (Iterator iterator = languages.iterator(); iterator.hasNext();) {
       Element element = (Element) iterator.next();
       String languageNamespace = element.getAttributeValue(NAMESPACE);
-      semanticModel.addLanguage(languageNamespace);
+      model.addLanguage(languageNamespace);
     }
 
     // imports
@@ -135,16 +137,16 @@ public class ModelPersistence {
       String importedModelFQName = NameUtil.fqNameFromNamespaceAndName(element.getAttributeValue(NAMESPACE),
               element.getAttributeValue(NAME));
       int referenceID = readIntAttributeValue(element, MODEL_REFERENCE_ID);
-      String stereotype = element.getAttributeValue(STEREOTYPE, "");
-      semanticModel.addImportElement(new SModelRepository.SModelKey(importedModelFQName, stereotype), referenceID);
+      String importedModelStereotype = element.getAttributeValue(STEREOTYPE, "");
+      model.addImportElement(new SModelRepository.SModelKey(importedModelFQName, importedModelStereotype), referenceID);
     }
 
     ArrayList<ReferenceDescriptor> referenceDescriptors = new ArrayList<ReferenceDescriptor>();
     List children = rootElement.getChildren(NODE);
     for (Iterator iterator = children.iterator(); iterator.hasNext();) {
       Element element = (Element) iterator.next();
-      SNode semanticNode = readNode(element, semanticModel, referenceDescriptors);
-      semanticModel.addRoot(semanticNode);
+      SNode semanticNode = readNode(element, model, referenceDescriptors);
+      model.addRoot(semanticNode);
     }
 
 
@@ -160,18 +162,15 @@ public class ModelPersistence {
     }
 
 
-
-    semanticModel.setLoading(false);
-    return semanticModel;
+    model.setLoading(false);
+    return model;
   }
 
-  public static SNode readNode(Element nodeElement, SModel semanticModel, ArrayList<ReferenceDescriptor> referenceDescriptors)
-  {
+  public static SNode readNode(Element nodeElement, SModel semanticModel, ArrayList<ReferenceDescriptor> referenceDescriptors) {
     return readNode(nodeElement, semanticModel, referenceDescriptors, true, null);
   }
 
-  public static SNode readNode(Element nodeElement, SModel semanticModel, ArrayList<ReferenceDescriptor> referenceDescriptors, boolean setID, HashMap<String, SNode> oldIdsToNodes)
-  {
+  public static SNode readNode(Element nodeElement, SModel semanticModel, ArrayList<ReferenceDescriptor> referenceDescriptors, boolean setID, HashMap<String, SNode> oldIdsToNodes) {
     String type = nodeElement.getAttributeValue(TYPE);
     SNode semanticNode = createNodeInstance(type, semanticModel);
     if (semanticNode == null) {
@@ -255,7 +254,8 @@ public class ModelPersistence {
       return semanticNode;
     } catch (ClassNotFoundException e) {
       LOG.warning("I can't find class for node type " + type);
-      return new SNode(semanticModel) { }; //this hack is required to make diff work correctly event if no such class
+      return new SNode(semanticModel) {
+      }; //this hack is required to make diff work correctly event if no such class
     } catch (NoSuchMethodException e) {
       LOG.error(e);
     } catch (SecurityException e) {
@@ -272,7 +272,7 @@ public class ModelPersistence {
 
   public static SModel refreshModel(SModel model) {
     String name = model.getName();
-    return readModel(saveModel(model), name);
+    return readModel(saveModel(model), name, model.getStereotype());
   }
 
   public static void saveModel(SModel sourceModel, File file) {
@@ -367,7 +367,7 @@ public class ModelPersistence {
       linkElement.setAttribute(ROLE, semanticReference.getRole());
 //      setNotNullAttribute(linkElement, META_CLASS, null);
       linkElement.setAttribute(TARGET_NODE_ID, semanticReference.createReferencedNodeId());
-      if(!semanticReference.isGood()) {
+      if (!semanticReference.isGood()) {
         linkElement.setAttribute(BAD, "true");
       }
       String resolveInfo = semanticReference.getResolveInfo();
