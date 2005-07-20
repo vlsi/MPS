@@ -1,15 +1,13 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.ApplicationComponents;
-import jetbrains.mps.projectLanguage.ModelRoot;
-import jetbrains.mps.util.PathManager;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.projectLanguage.ModelRoot;
 
 import java.io.File;
-import java.io.FilenameFilter;
 import java.util.*;
 
 /**
