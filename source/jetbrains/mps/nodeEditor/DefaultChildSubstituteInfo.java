@@ -37,6 +37,9 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
   }
 
   public DefaultChildSubstituteInfo(SNode parentNode, SNode currChildNode, LinkDeclaration linkDeclaration) {
+    if (linkDeclaration == null) {
+      throw new IllegalArgumentException("link declaration is null");
+    }
     if (SModelUtil.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.aggregation) {
       throw new RuntimeException("Only aggregation links are allowed here.");
     }
