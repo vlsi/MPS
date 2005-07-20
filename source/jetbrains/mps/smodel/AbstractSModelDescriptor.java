@@ -20,7 +20,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   private static final Logger LOG = Logger.getLogger(AbstractSModelDescriptor.class);
 
   private SModel mySModel = null;
-  private String myModelFqName;
+  private SModelRepository.SModelKey myModelKey = new SModelRepository.SModelKey("","");
   private ArrayList<SModelListener> myModelListeners;
   private ArrayList<SModelListener> myModelListenersForImportedModels;
   private ArrayList<SModelCommandListener> myModelCommandListenersForImportedModels;
@@ -28,11 +28,15 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
   protected AbstractSModelDescriptor(SModel model) {
     mySModel = model;
-    myModelFqName = model.getFQName();
+    myModelKey = model.getModelKey();
   }
 
   protected AbstractSModelDescriptor(String fqName) {
-    myModelFqName = fqName;
+    myModelKey.myFQName = fqName;
+  }
+
+  protected AbstractSModelDescriptor(SModelRepository.SModelKey modelKey) {
+    myModelKey = modelKey;
   }
 
   {
@@ -57,19 +61,24 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   }
 
   public String getFQName() {
-    return myModelFqName;
+    return myModelKey.myFQName;
+  }
+
+  public SModelRepository.SModelKey getModelKey() {
+    return myModelKey;
   }
 
   public String getName() {
-    return NameUtil.nameFromFQName(myModelFqName);
+    return NameUtil.nameFromFQName(myModelKey.myFQName);
   }
 
   public String getStereotype() {
-    // todo: obtain stereotype without loading model (from fqName)
+  /*  // todo: obtain stereotype without loading model (from fqName)
     if (mySModel == null) {
       return null;
     }
-    return mySModel.getStereotype();
+    return mySModel.getStereotype();*/
+    return myModelKey.myStereotype;
   }
 
   public SModel getSModel() {

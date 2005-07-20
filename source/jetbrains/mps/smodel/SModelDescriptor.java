@@ -15,6 +15,7 @@ import java.io.File;
 public interface SModelDescriptor {
   SModel getSModel();
   String getFQName();
+  SModelRepository.SModelKey getModelKey();
   String getName();
   String getStereotype();
   boolean isInitialized();

@@ -21,7 +21,7 @@ public class SModelRepository extends SModelAdapter {
 
   private ArrayList<SModelDescriptor> myModelDescriptors = new ArrayList<SModelDescriptor>();
   private HashMap<SModelDescriptor, Long> myChangedModels = new HashMap<SModelDescriptor, Long>();
-  private HashMap<String, SModelDescriptor> myNameToModelDescriptorMap = new HashMap<String, SModelDescriptor>();
+  private HashMap<SModelKey, SModelDescriptor> myNameToModelDescriptorMap = new HashMap<SModelKey, SModelDescriptor>();
   private HashMap<SModelDescriptor, HashSet<ModelOwner>> myModelToOwnerMap = new HashMap<SModelDescriptor, HashSet<ModelOwner>>();
 
   public SModelRepository() {
@@ -67,14 +67,14 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public void registerModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
-    String modelFqName = modelDescriptor.getFQName();
-    SModelDescriptor registeredModel = myNameToModelDescriptorMap.get(modelFqName);
+    SModelKey modelKey = modelDescriptor.getModelKey();
+    SModelDescriptor registeredModel = myNameToModelDescriptorMap.get(modelKey);
     HashSet<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
     LOG.assertLog(registeredModel != modelDescriptor ||
                    owners == null ||
                    !owners.contains(owner),
-                   "Another model " + modelFqName + " is already registered!");
-    myNameToModelDescriptorMap.put(modelFqName, modelDescriptor);
+                   "Another model " + modelKey + " is already registered!");
+    myNameToModelDescriptorMap.put(modelKey, modelDescriptor);
     myModelDescriptors.add(modelDescriptor);
     if(owners == null) {
       owners = new HashSet<ModelOwner>();
@@ -85,8 +85,8 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public void unRegisterModelDescriptors(ModelOwner modelLocator) {
-    ArrayList<String> modelsToRemove = new ArrayList<String>();
-    for(String fqName : myNameToModelDescriptorMap.keySet()) {
+    ArrayList<SModelKey> modelsToRemove = new ArrayList<SModelKey>();
+    for(SModelKey fqName : myNameToModelDescriptorMap.keySet()) {
       SModelDescriptor modelDescriptor = myNameToModelDescriptorMap.get(fqName);
       HashSet<ModelOwner> locators = myModelToOwnerMap.get(modelDescriptor);
       if(locators != null) {
@@ -96,15 +96,15 @@ public class SModelRepository extends SModelAdapter {
         }
       }
     }
-    for(String fqName : modelsToRemove) {
-      SModelDescriptor modelDescriptor = myNameToModelDescriptorMap.get(fqName);
+    for(SModelKey modelKey : modelsToRemove) {
+      SModelDescriptor modelDescriptor = myNameToModelDescriptorMap.get(modelKey);
       removeModel(modelDescriptor);
     }
   }
 
   public void removeModel(SModelDescriptor modelDescriptor) {
     myModelDescriptors.remove(modelDescriptor);
-    myNameToModelDescriptorMap.remove(modelDescriptor.getFQName());
+    myNameToModelDescriptorMap.remove(modelDescriptor.getModelKey());
     myChangedModels.remove(modelDescriptor);
     modelDescriptor.removeSModelListener(this);
   }
@@ -119,7 +119,11 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public SModelDescriptor getModelDescriptor(String modelFQName) {
-    return myNameToModelDescriptorMap.get(modelFQName);
+    return myNameToModelDescriptorMap.get(new SModelKey(modelFQName));
+  }
+
+  public SModelDescriptor getModelDescriptor(SModelKey modelKey) {
+    return myNameToModelDescriptorMap.get(modelKey);
   }
 
   public void modelChanged(SModel model) {
@@ -131,7 +135,7 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public void markChanged(SModel model) {
-    SModelDescriptor modelDescriptor = myNameToModelDescriptorMap.get(model.getFQName());
+    SModelDescriptor modelDescriptor = myNameToModelDescriptorMap.get(model.getModelKey());
     if (modelDescriptor != null) { //i.e project model
       markChanged(modelDescriptor);
     }
@@ -213,5 +217,36 @@ public class SModelRepository extends SModelAdapter {
     } catch (Exception e) {
       return null;
     }
+  }
+
+  public static class SModelKey {
+    public String myFQName;
+    public String myStereotype;
+
+    public SModelKey(String fqName, String stereotype) {
+      if (fqName == null) fqName = "";
+      if (stereotype == null) stereotype = "";
+      this.myFQName = fqName;
+      this.myStereotype = stereotype;
+    }
+
+    public SModelKey(String fqName) {
+      this(fqName, "");
+    }
+
+    public boolean equals (Object o) {
+      SModelKey sModelKey = (SModelKey) o;
+      return sModelKey.myFQName.equals(myFQName) && sModelKey.myStereotype.equals(myStereotype);
+    }
+
+    public int hashCode () {
+      return myFQName.hashCode() + myStereotype.hashCode();
+    }
+
+    public String toString () {
+      return myStereotype + "@" + myFQName;
+    }
+
+
   }
 }

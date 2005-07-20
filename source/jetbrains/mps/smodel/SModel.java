@@ -52,10 +52,24 @@ public class SModel implements Iterable<SNode> {
     myNamespace = NameUtil.namespaceFromFQName(fqName);
   }
 
+  public SModel(String name, String namespace, String stereotype) {
+    this(name, namespace);
+    myStereotype = stereotype;
+  }
 
   public SModel() {
     addSModelListener(myEventTranslator);
     CommandProcessor.instance().addCommandListener(myEventTranslator);
+  }
+
+  public SModelRepository.SModelKey getModelKey () {
+    return new SModelRepository.SModelKey(getFQName(), getStereotype());
+  }
+
+  public void setModelKey (SModelRepository.SModelKey modelKey) {
+    myName = NameUtil.nameFromFQName(modelKey.myFQName);
+    myNamespace = NameUtil.namespaceFromFQName(modelKey.myStereotype);
+    myStereotype = modelKey.myStereotype;
   }
 
   public String getName() {
