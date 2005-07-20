@@ -186,7 +186,7 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public void reloadAll() {
-    for (SModelDescriptor modelDescriptor : myModelToOwnerMap.keySet()) {
+    for (SModelDescriptor modelDescriptor : new HashSet<SModelDescriptor>(myModelToOwnerMap.keySet())) {
       modelDescriptor.reloadFromDisk();
     }
   }
