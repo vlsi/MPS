@@ -391,16 +391,16 @@ public class TemplateGenUtil {
   }
 
   private static void checkNodesFromQuery(List<SNode> queryNodes, SNode templateNode, ITemplateGenerator generator) {
-    if (!queryNodes.isEmpty()) {
-      Iterator<SNode> iterator = queryNodes.iterator();
-      while (iterator.hasNext()) {
-        SNode node = iterator.next();
-        if (node.getModel() != generator.getSourceModel()) {
-          iterator.remove();
-          generator.showErrorMessage(templateNode, "Query node not from source model : " + node.getDebugText());
-        }
-      }
-    }
+//    if (!queryNodes.isEmpty()) {
+//      Iterator<SNode> iterator = queryNodes.iterator();
+//      while (iterator.hasNext()) {
+//        SNode node = iterator.next();
+//        if (node.getModel() != generator.getSourceModel()) {
+//          iterator.remove();
+//          generator.showErrorMessage(templateNode, "Query node not from source model : " + node.getDebugText());
+//        }
+//      }
+//    }
   }
 
   private static INodeBuilder createNodeBuilder(SNode sourceNode, SNode templateNode, String mappingName, ITemplateGenerator generator) {
