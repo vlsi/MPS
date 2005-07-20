@@ -24,10 +24,6 @@ import com.intellij.psi.*;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.PsiSearchHelper;
 import com.intellij.util.IncorrectOperationException;
-import com.intellij.cvsSupport2.cvshandlers.CommandCvsHandler;
-import com.intellij.cvsSupport2.cvshandlers.CvsHandler;
-import com.intellij.cvsSupport2.config.CvsConfiguration;
-import com.intellij.cvsSupport2.cvsExecution.ModalityContext;
 
 import javax.swing.*;
 import java.awt.*;
