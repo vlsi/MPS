@@ -299,7 +299,6 @@ public class ModelPersistence {
   private static Document saveModel(SModel sourceModel) {
     Element rootElement = new Element(MODEL);
     rootElement.setAttribute(NAMESPACE, sourceModel.getNamespace());
-    setNotNullAttribute(rootElement, STEREOTYPE, sourceModel.getStereotype());
 
     Document document = new Document();
     document.setRootElement(rootElement);
