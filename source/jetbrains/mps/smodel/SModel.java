@@ -446,12 +446,6 @@ public class SModel implements Iterable<SNode> {
     return this.getFQName();
   }
 
-  public void dump() {
-    System.err.println("Namespaced = " + getNamespace());
-    System.err.println("Name = " + getName());
-    System.err.println("--------");
-  }
-
   public String getFQName() {
     if (myNamespace == null || myNamespace.length() == 0) {
       return myName;
