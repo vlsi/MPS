@@ -242,7 +242,7 @@ public class SModelRepository extends SModelAdapter {
       boolean b = sModelKey.myFQName.equals(myFQName);
       boolean b1 = sModelKey.myStereotype.equals(myStereotype);
       if (b && !b1) {
-        LOG.errorWithTrace("model keys with equal fqNames: " + myFQName + " - have different stereotypes: " + myStereotype + " and " + sModelKey.myStereotype);
+        LOG.errorWithTrace("model keys with equal fqNames: " + myFQName + " - have different stereotypes: \"" + myStereotype + "\" and \"" + sModelKey.myStereotype + "\"");
       }
       return b && b1;
     }
