@@ -34,7 +34,12 @@ public class DefaultModelRootManager implements ModelRootManager {
     for (int i = 0; i < files.length; i++) {
       File file = files[i];
       String modelFQName = PathManager.getModelFQName(file, new File(modelRoot.getPath()), modelRoot.getPrefix());
-      SModelDescriptor modelDescriptor = MPSFileModelDescriptor.getInstance(file.getAbsolutePath(), modelFQName, owner);
+      String stereotype = PathManager.getModelStereotype(file, new File(modelRoot.getPath()), modelRoot.getPrefix());
+ /*     if (modelFQName.equals("jetbrains.mps.baseLanguage.generator.java")) {
+        System.out.println();
+      }*/
+      SModelRepository.SModelKey modelKey = new SModelRepository.SModelKey(modelFQName, stereotype);
+      SModelDescriptor modelDescriptor = MPSFileModelDescriptor.getInstance(file.getAbsolutePath(), modelKey, owner);
       LOG.debug("I've read model descriptor " + modelDescriptor.getFQName() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
       modelDescriptors.add(modelDescriptor);
 

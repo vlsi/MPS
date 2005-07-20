@@ -118,6 +118,9 @@ public class SModelRepository extends SModelAdapter {
     return model;
   }
 
+  /** @deprecated use getModelDescriptor(SModelKey modelKey) instead
+   * 
+   */
   public SModelDescriptor getModelDescriptor(String modelFQName) {
     return myNameToModelDescriptorMap.get(new SModelKey(modelFQName));
   }
@@ -245,7 +248,7 @@ public class SModelRepository extends SModelAdapter {
     }
 
     public int hashCode () {
-      return myFQName.hashCode() + myStereotype.hashCode();
+      return myFQName.hashCode();// + myStereotype.hashCode();
     }
 
     public String toString () {

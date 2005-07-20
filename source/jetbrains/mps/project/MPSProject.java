@@ -202,8 +202,15 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     return myRootManager;
   }
 
+  /**
+   * @deprecated use SModelDescriptor getModelDescriptor(SModelRepository.SModelKey modelKey) instead
+   */
   public SModelDescriptor getModelDescriptor(String fqName) {
     return SModelRepository.getInstance().getModelDescriptor(fqName);
+  }
+
+  public SModelDescriptor getModelDescriptor(SModelRepository.SModelKey modelKey) {
+    return SModelRepository.getInstance().getModelDescriptor(modelKey);
   }
 
   public void dispose() {

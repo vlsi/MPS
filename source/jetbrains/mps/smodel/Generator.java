@@ -22,8 +22,15 @@ public class Generator {
     return myGenerator.getTargetLanguage().getName();
   }
 
+  /** @deprecated use SModelRepository.SModelKey getTemplatesModelKey() instead
+   */
   public String getTemplatesModelFqName() {
     return myGenerator.getTemplatesModel().getName();
+  }
+
+  public SModelRepository.SModelKey getTemplatesModelKey() {
+    if (myGenerator.getTemplatesModel().getName() == null) return null;
+    return new SModelRepository.SModelKey(myGenerator.getTemplatesModel().getName(), "generatorTemplates");  //hack
   }
 
   public String getGeneratorClassFqName() {

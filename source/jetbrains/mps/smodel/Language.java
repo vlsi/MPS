@@ -289,6 +289,9 @@ public class Language implements ModelLocator, ModelOwner {
     LanguageUtil.saveToFile(myDescriptorFile, getLanguageDescriptor());
   }
 
+  /** @deprecated  use getModelDescriptorByKey instead
+   *
+   */
   private SModelDescriptor getModelDescriptorByFQName(String modelFQName) {
     return getModelDescriptorByKey(new SModelRepository.SModelKey(modelFQName));
   }
@@ -301,11 +304,11 @@ public class Language implements ModelLocator, ModelOwner {
       if (modelDescriptor != null) {
         return modelDescriptor;
       }
-      String modelPath = PathManager.findModelPath(getLanguageDescriptor().modelRoots(), modelKey.myFQName);
+      String modelPath = PathManager.findModelPath(getLanguageDescriptor().modelRoots(), modelKey);
       if (modelPath == null) {
         return null;
       }
-      return MPSFileModelDescriptor.getInstance(modelPath, modelKey.myFQName, this);
+      return MPSFileModelDescriptor.getInstance(modelPath, modelKey, this);
     } catch (Exception e) {
       LOG.error(e);
     }

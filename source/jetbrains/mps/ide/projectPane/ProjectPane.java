@@ -1093,8 +1093,8 @@ public class ProjectPane extends JComponent {
 
         SModelDescriptor templatesModel = null;
 
-        if (generator.getTemplatesModelFqName() != null && generator.getTemplatesModelFqName() != null) {
-          templatesModel = SModelRepository.getInstance().getModelDescriptor(generator.getTemplatesModelFqName());
+        if (generator.getTemplatesModelKey() != null && generator.getTemplatesModelKey() != null) {
+          templatesModel = SModelRepository.getInstance().getModelDescriptor(generator.getTemplatesModelKey());
         }
 
         addNodeIfModelNotNull(generatorNode, templatesModel, "Templates Model");

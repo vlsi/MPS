@@ -2,6 +2,7 @@ package jetbrains.mps.util;
 
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SModelRepository;
 
 import java.io.File;
 import java.io.IOException;
@@ -162,6 +163,8 @@ public class PathManager {
     return null;
   }
 
+  /** @deprecated use findModelPath(Iterator<ModelRoot> modelRoots, SModelRepository.SModelKey modelKey) instead
+   */
   public static String findModelPath(Iterator<ModelRoot> modelRoots, String modelFQName) {
     while (modelRoots.hasNext()) {
       ModelRoot modelRoot = modelRoots.next();
@@ -173,6 +176,19 @@ public class PathManager {
     return null;
   }
 
+    public static String findModelPath(Iterator<ModelRoot> modelRoots, SModelRepository.SModelKey modelKey) {
+    while (modelRoots.hasNext()) {
+      ModelRoot modelRoot = modelRoots.next();
+      String path = findModelPath(modelRoot, modelKey);
+      if(path != null) {
+        return path;
+      }
+    }
+    return null;
+  }
+
+  /** @deprecated use findModelPath(ModelRoot modelRoot, SModelRepository.SModelKey modelKey) instead
+   */
   public static String findModelPath(ModelRoot modelRoot, String modelFQName) {
     String name = modelFQName;
     String packagePrefix = modelRoot.getPrefix();
@@ -187,6 +203,36 @@ public class PathManager {
     String path = name.replace('.', File.separatorChar);
     if(!path.startsWith(File.separator)) {
       path = File.separator + path;
+    }
+    path = modelRoot.getPath() + path + ".mps";
+    if(!(new File(path)).exists()) {
+      return null;
+    }
+    return path;
+  }
+
+  public static String findModelPath(ModelRoot modelRoot, SModelRepository.SModelKey modelKey) {
+    String modelFQName = modelKey.myFQName;
+    String name = modelFQName;
+    String packagePrefix = modelRoot.getPrefix();
+    if(packagePrefix != null && packagePrefix.length() > 0) {
+      if(modelFQName.startsWith(packagePrefix + '.')) {
+        name = modelFQName.substring(packagePrefix.length());
+      }
+      else {
+        return null;
+      }
+    }
+    String path = name.replace('.', File.separatorChar);
+    if(!path.startsWith(File.separator)) {
+      path = File.separator + path;
+    }
+
+    if (!modelKey.myStereotype.equals("")) {
+      String littleName = path.substring(path.lastIndexOf(File.separator) + 1);
+      String rawPath = path.substring(0, path.lastIndexOf(File.separator) + 1);
+      System.err.println ("littleName = " + littleName + ", rawPath = " + rawPath);
+      path = rawPath + modelKey.myStereotype + "@" + littleName;
     }
     path = modelRoot.getPath() + path + ".mps";
     if(!(new File(path)).exists()) {
@@ -229,7 +275,24 @@ public class PathManager {
     return relativePath.toString();
   }
 
+  public static String getModelStereotype(File modelFile, File root, String namespacePrefix) {
+    String rawFQName = getModelRawFQName(modelFile, root, namespacePrefix);
+    String rawName = NameUtil.nameFromFQName(rawFQName);
+    int index = rawName.indexOf("@");
+    if (index > 0) return rawName.substring(0, index); else return "";
+  }
+
   public static String getModelFQName(File modelFile, File root, String namespacePrefix) {
+    String rawFQName = getModelRawFQName(modelFile, root, namespacePrefix);
+    String rawName = NameUtil.nameFromFQName(rawFQName);
+    String namespace = NameUtil.namespaceFromFQName(rawFQName);
+    int index = rawName.indexOf("@");
+    String name = rawName;
+    if (index > 0) name = rawName.substring(index + 1);
+    return NameUtil.fqNameFromNamespaceAndName(namespace, name);
+  }
+
+  public static String getModelRawFQName(File modelFile, File root, String namespacePrefix) {
     try {
       String modelPath = modelFile.getCanonicalPath();
       String rootPath = root.getCanonicalPath();

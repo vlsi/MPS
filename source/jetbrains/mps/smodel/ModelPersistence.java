@@ -82,7 +82,14 @@ public class ModelPersistence {
     // the model FQ name ...
     String fileName = file.getName();
     int index = fileName.indexOf('.');
-    String modelName = (index >= 0) ? fileName.substring(0, index) : fileName;
+    String rawModelName = (index >= 0) ? fileName.substring(0, index) : fileName;
+    String modelName = rawModelName;
+    int index1 = rawModelName.indexOf("@");
+    if (index1 >= 0) {
+      System.out.println();
+      modelName = rawModelName.substring(index1 + 1);
+    }
+
 
     Document document = loadModelDocument(file);
 
