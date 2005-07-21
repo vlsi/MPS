@@ -9,7 +9,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
-import jetbrains.mps.baseLanguage.editor.Queries;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
@@ -34,9 +33,7 @@ public class ExpressionStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createExpressionCell(context, node));
-    if(Queries.semanticNodeCondition_IsParent_StatementList(node)) {
-      editorCell.addEditorCell(this.createConstantCell(context, node, ";"));
-    }
+    editorCell.addEditorCell(this.createConstantCell(context, node, ";"));
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
