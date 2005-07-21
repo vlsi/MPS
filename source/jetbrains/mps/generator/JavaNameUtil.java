@@ -31,7 +31,7 @@ public class JavaNameUtil {
   }
 
   public static String packageNameForModelUID(SModelUID modelUID) {
-    String modelFqName = modelUID.getFQName();
+    String modelFqName = modelUID.getLongName();
     String packageName = modelFqName;
     if (modelFqName.endsWith(".structure")) {
       packageName = modelFqName.substring(0, modelFqName.lastIndexOf(".structure"));

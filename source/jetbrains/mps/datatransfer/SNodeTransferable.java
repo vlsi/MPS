@@ -90,10 +90,10 @@ public class SNodeTransferable implements Transferable {
   }
 
   public List<SNode> createNodes(SModel semanticModel, boolean preserveInternalLinks) {
-//    if (!mySourceModelFQName.equals(semanticModel.getFQName())) {
+//    if (!mySourceModelFQName.equals(semanticModel.getLongName())) {
 //      throw new RuntimeException("Couldn't trnsfer node between models!" +
 //              "\nsource model: " + mySourceModelFQName +
-//              "\ntarget model: " + semanticModel.getFQName());
+//              "\ntarget model: " + semanticModel.getLongName());
 //    }
 
     semanticModel.setLoading(true);

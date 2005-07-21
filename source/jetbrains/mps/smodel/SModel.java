@@ -57,7 +57,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void setModelUID (SModelUID modelUID) {
-    myName = NameUtil.nameFromFQName(modelUID.getFQName());
+    myName = NameUtil.nameFromFQName(modelUID.getLongName());
     myNamespace = NameUtil.namespaceFromFQName(modelUID.getStereotype());
     myStereotype = modelUID.getStereotype();
   }

@@ -10,39 +10,39 @@ import jetbrains.mps.logging.Logger;
  * To change this template use File | Settings | File Templates.
  */
 public class SModelUID {
-  private String myFQName;
+  private String myLongName;
   private String myStereotype;
 
   public String getNamespace () {
-    int offset = getFQName().lastIndexOf('.');
+    int offset = getLongName().lastIndexOf('.');
     if (offset < 0) {
       return "";
     }
-    return getFQName().substring(0, offset);
+    return getLongName().substring(0, offset);
   }
 
   public String getName () {
-    int offset = getFQName().lastIndexOf('.');
+    int offset = getLongName().lastIndexOf('.');
     if (offset < 0) {
-      return getFQName();
+      return getLongName();
     }
-    return getFQName().substring(offset + 1);
+    return getLongName().substring(offset + 1);
   }
 
   private static final Logger LOG = Logger.getLogger(SModelUID.class);
 
-  public SModelUID(String fqName, String stereotype) {
-    if (fqName == null) fqName = "";
+  public SModelUID(String longName, String stereotype) {
+    if (longName == null) longName = "";
     if (stereotype == null) stereotype = "";
-    this.myFQName = fqName;
+    this.myLongName = longName;
     this.myStereotype = stereotype;
   }
 
   public SModelUID(String namespace, String name, String stereotype) {
     if (name == null) name = "";
     if (namespace == null || namespace.length() == 0) {
-      myFQName = name;
-    } else myFQName = namespace + '.' + name;
+      myLongName = name;
+    } else myLongName = namespace + '.' + name;
 
     myStereotype = stereotype;
   }
@@ -53,39 +53,39 @@ public class SModelUID {
     if (index >= 0) {
       stereotype = s.substring(index + 1);
     }
-    String fqName = s;
+    String longName = s;
     if(index > 0) {
-      fqName = s.substring(0, index);
+      longName = s.substring(0, index);
     }
 
-    return new SModelUID(fqName, stereotype);
+    return new SModelUID(longName, stereotype);
   }
 
   public boolean equals (Object o) {
     SModelUID sModelUID = (SModelUID) o;
-    boolean b = sModelUID.getFQName().equals(getFQName());
-    boolean b1 = sModelUID.getStereotype().equals(getStereotype());
+    boolean b = sModelUID.myLongName.equals(myLongName);
+    boolean b1 = sModelUID.myStereotype.equals(myStereotype);
     if (b && !b1) {
-      LOG.errorWithTrace("model keys with equal fqNames: " + getFQName() + " - have different stereotypes: \"" + getStereotype() + "\" and \"" + sModelUID.getStereotype() + "\"");
+      LOG.errorWithTrace("model keys with equal fqNames: " + myLongName + " - have different stereotypes: \"" + myStereotype + "\" and \"" + sModelUID.myStereotype + "\"");
     }
     return b && b1;
   }
 
   public int hashCode () {
-    return getFQName().hashCode();// + myStereotype.hashCode();
+    return getLongName().hashCode();// + myStereotype.hashCode();
   }
 
   public String toString () {
-    return getFQName() + (getStereotype().equals("")? "" : "@" + getStereotype());
+    return getLongName() + (getStereotype().equals("")? "" : "@" + getStereotype());
   }
 
 
-  public String getFQName() {
-    return myFQName;
+  public String getLongName() {
+    return myLongName;
   }
 
   public String getStereotype() {
     return myStereotype;
   }
-  
+
 }

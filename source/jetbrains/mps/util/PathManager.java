@@ -177,7 +177,7 @@ public class PathManager {
 
 
   public static String findModelPath(ModelRoot modelRoot, SModelUID modelUID) {
-    String modelFQName = modelUID.getFQName();
+    String modelFQName = modelUID.getLongName();
     String name = modelFQName;
     String packagePrefix = modelRoot.getPrefix();
     if(packagePrefix != null && packagePrefix.length() > 0) {
