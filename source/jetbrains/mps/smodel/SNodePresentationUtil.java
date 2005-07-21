@@ -174,7 +174,7 @@ public class SNodePresentationUtil {
     String prefix = getAliasOrConceptName(method) + " in ";
     if (method instanceof MethodDeclaration) {
       // freestanding method: model fqname
-      return prefix + method.getModel().getModelUID().myFQName;
+      return prefix + method.getModel().getModelUID().getFQName();
     }
 
     Classifier parent = SModelUtil.findParent(method, Classifier.class);

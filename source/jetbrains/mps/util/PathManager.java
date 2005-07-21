@@ -177,7 +177,7 @@ public class PathManager {
 
 
   public static String findModelPath(ModelRoot modelRoot, SModelUID modelUID) {
-    String modelFQName = modelUID.myFQName;
+    String modelFQName = modelUID.getFQName();
     String name = modelFQName;
     String packagePrefix = modelRoot.getPrefix();
     if(packagePrefix != null && packagePrefix.length() > 0) {
@@ -193,11 +193,11 @@ public class PathManager {
       path = File.separator + path;
     }
 
-    if (!modelUID.myStereotype.equals("")) {
+    if (!modelUID.getStereotype().equals("")) {
       String littleName = path.substring(path.lastIndexOf(File.separator) + 1);
       String rawPath = path.substring(0, path.lastIndexOf(File.separator) + 1);
       System.err.println ("littleName = " + littleName + ", rawPath = " + rawPath);
-      path = rawPath + modelUID.myStereotype + "@" + littleName;
+      path = rawPath + modelUID.getStereotype() + "@" + littleName;
     }
     path = modelRoot.getPath() + path + ".mps";
     if(!(new File(path)).exists()) {

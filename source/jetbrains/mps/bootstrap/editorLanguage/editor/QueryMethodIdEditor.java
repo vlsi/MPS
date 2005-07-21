@@ -201,7 +201,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
 
   protected ClassConcept getQueriesClass() {
     SModel model = getSemanticNode().getModel();
-    String className = NameUtil.fqNameFromNamespaceAndName(model.getModelUID().myFQName, "Queries");
+    String className = NameUtil.fqNameFromNamespaceAndName(model.getModelUID().getFQName(), "Queries");
     Classifier classifier = ReflectionClassifierFinder.get(className, model);
     return (ClassConcept) classifier;
   }

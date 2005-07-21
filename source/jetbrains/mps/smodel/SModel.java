@@ -44,7 +44,7 @@ public class SModel implements Iterable<SNode> {
     this();
     myName = modelUID.getName();
     myNamespace = modelUID.getNamespace();
-    myStereotype = modelUID.myStereotype;
+    myStereotype = modelUID.getStereotype();
   }
 
   public SModel() {
@@ -57,9 +57,9 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void setModelUID (SModelUID modelUID) {
-    myName = NameUtil.nameFromFQName(modelUID.myFQName);
-    myNamespace = NameUtil.namespaceFromFQName(modelUID.myStereotype);
-    myStereotype = modelUID.myStereotype;
+    myName = NameUtil.nameFromFQName(modelUID.getFQName());
+    myNamespace = NameUtil.namespaceFromFQName(modelUID.getStereotype());
+    myStereotype = modelUID.getStereotype();
   }
 
   public String getName() {
@@ -153,7 +153,7 @@ public class SModel implements Iterable<SNode> {
   public boolean hasImportedModel(SModelUID modelUID) {
     for (int i = 0; i < myImports.size(); i++) {
       ImportElement importElement = (ImportElement) myImports.get(i);
-      if (importElement.getModelKey().equals(modelUID)) {
+      if (importElement.getModelUID().equals(modelUID)) {
         return true;
       }
     }
@@ -380,7 +380,7 @@ public class SModel implements Iterable<SNode> {
   public Collection<SModelUID> getImportedModelUIDs() {
     ArrayList<SModelUID> modelKeys = new ArrayList<SModelUID>();
     for (ImportElement importElement : myImports) {
-      modelKeys.add(importElement.getModelKey());
+      modelKeys.add(importElement.getModelUID());
     }
     return modelKeys;
   }
@@ -390,7 +390,7 @@ public class SModel implements Iterable<SNode> {
     while (iterator.hasNext()) {
       ImportElement importElement = iterator.next();
       if (importElement.getReferenceID() == referenceID) {
-        return importElement.getModelKey();
+        return importElement.getModelUID();
       }
     }
     return null;
@@ -402,7 +402,7 @@ public class SModel implements Iterable<SNode> {
     Iterator<ImportElement> iterator = myImports.iterator();
     while (iterator.hasNext()) {
       ImportElement importElement = iterator.next();
-      SModelUID modelUID = importElement.getModelKey();
+      SModelUID modelUID = importElement.getModelUID();
       if (!myDescriptorNotFoundReportedModelKeys.contains(modelUID)) {
         SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
         if (modelDescriptor != null) {
@@ -436,7 +436,7 @@ public class SModel implements Iterable<SNode> {
 
   private ImportElement findImportElement(SModelUID modelUID) {
     for (ImportElement importElement : myImports) {
-      if (modelUID.equals(importElement.getModelKey())) {
+      if (modelUID.equals(importElement.getModelUID())) {
         return importElement;
       }
     }
@@ -552,11 +552,7 @@ public class SModel implements Iterable<SNode> {
       myReferenceID = referenceID;
     }
 
-    public String getModelFQName() {
-      return myModelDescriptor.myFQName;
-    }
-
-    public SModelUID getModelKey() {
+    public SModelUID getModelUID() {
       return myModelDescriptor;
     }
 

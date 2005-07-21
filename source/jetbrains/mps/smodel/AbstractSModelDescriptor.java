@@ -61,11 +61,11 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   }
 
   public String getName() {
-    return NameUtil.nameFromFQName(myModelUID.myFQName);
+    return NameUtil.nameFromFQName(myModelUID.getFQName());
   }
 
   public String getStereotype() {
-    return myModelUID.myStereotype;
+    return myModelUID.getStereotype();
   }
 
   public SModel getSModel() {

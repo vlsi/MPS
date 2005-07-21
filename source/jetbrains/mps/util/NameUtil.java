@@ -100,6 +100,6 @@ public class NameUtil {
       return name;
     }
 
-    return node.getModel().getModelUID().myFQName + "." + (name != null ? name : "");
+    return node.getModel().getModelUID().getFQName() + "." + (name != null ? name : "");
   }
 }

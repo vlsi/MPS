@@ -316,10 +316,10 @@ public class ModelPersistence {
       SModel.ImportElement importElement = imports.next();
       Element importElem = new Element(IMPORT_ELEMENT);
       importElem.setAttribute(MODEL_REFERENCE_ID, "" + importElement.getReferenceID());
-      String fqName = importElement.getModelFQName();
-      importElem.setAttribute(NAME, NameUtil.nameFromFQName(fqName));
-      importElem.setAttribute(NAMESPACE, NameUtil.namespaceFromFQName(fqName));
-      importElem.setAttribute(STEREOTYPE, importElement.getModelKey().myStereotype);
+      SModelUID modelUID = importElement.getModelUID();
+      importElem.setAttribute(NAME, modelUID.getName());
+      importElem.setAttribute(NAMESPACE, modelUID.getNamespace());
+      importElem.setAttribute(STEREOTYPE, modelUID.getStereotype());
       rootElement.addContent(importElem);
     }
 

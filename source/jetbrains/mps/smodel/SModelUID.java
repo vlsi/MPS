@@ -1,8 +1,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.util.PathManager;
-import jetbrains.mps.util.NameUtil;
 
 /**
  * Created by IntelliJ IDEA.
@@ -12,23 +10,23 @@ import jetbrains.mps.util.NameUtil;
  * To change this template use File | Settings | File Templates.
  */
 public class SModelUID {
-  public String myFQName;
-  public String myStereotype;
+  private String myFQName;
+  private String myStereotype;
 
   public String getNamespace () {
-    int offset = myFQName.lastIndexOf('.');
+    int offset = getFQName().lastIndexOf('.');
     if (offset < 0) {
       return "";
     }
-    return myFQName.substring(0, offset);
+    return getFQName().substring(0, offset);
   }
 
   public String getName () {
-    int offset = myFQName.lastIndexOf('.');
+    int offset = getFQName().lastIndexOf('.');
     if (offset < 0) {
-      return myFQName;
+      return getFQName();
     }
-    return myFQName.substring(offset + 1);
+    return getFQName().substring(offset + 1);
   }
 
   private static final Logger LOG = Logger.getLogger(SModelUID.class);
@@ -65,21 +63,29 @@ public class SModelUID {
 
   public boolean equals (Object o) {
     SModelUID sModelUID = (SModelUID) o;
-    boolean b = sModelUID.myFQName.equals(myFQName);
-    boolean b1 = sModelUID.myStereotype.equals(myStereotype);
+    boolean b = sModelUID.getFQName().equals(getFQName());
+    boolean b1 = sModelUID.getStereotype().equals(getStereotype());
     if (b && !b1) {
-      LOG.errorWithTrace("model keys with equal fqNames: " + myFQName + " - have different stereotypes: \"" + myStereotype + "\" and \"" + sModelUID.myStereotype + "\"");
+      LOG.errorWithTrace("model keys with equal fqNames: " + getFQName() + " - have different stereotypes: \"" + getStereotype() + "\" and \"" + sModelUID.getStereotype() + "\"");
     }
     return b && b1;
   }
 
   public int hashCode () {
-    return myFQName.hashCode();// + myStereotype.hashCode();
+    return getFQName().hashCode();// + myStereotype.hashCode();
   }
 
   public String toString () {
-    return myFQName + (myStereotype.equals("")? "" : "@" + myStereotype);
+    return getFQName() + (getStereotype().equals("")? "" : "@" + getStereotype());
   }
 
 
+  public String getFQName() {
+    return myFQName;
+  }
+
+  public String getStereotype() {
+    return myStereotype;
+  }
+  
 }
