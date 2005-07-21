@@ -65,7 +65,7 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public void registerModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
-    SModelUID modelUID = modelDescriptor.getModelKey();
+    SModelUID modelUID = modelDescriptor.getModelUID();
     SModelDescriptor registeredModel = myNameToModelDescriptorMap.get(modelUID);
     HashSet<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
     LOG.assertLog(registeredModel != modelDescriptor ||
@@ -102,7 +102,7 @@ public class SModelRepository extends SModelAdapter {
 
   public void removeModel(SModelDescriptor modelDescriptor) {
     myModelDescriptors.remove(modelDescriptor);
-    myNameToModelDescriptorMap.remove(modelDescriptor.getModelKey());
+    myNameToModelDescriptorMap.remove(modelDescriptor.getModelUID());
     myChangedModels.remove(modelDescriptor);
     modelDescriptor.removeSModelListener(this);
   }
@@ -114,13 +114,6 @@ public class SModelRepository extends SModelAdapter {
     File file = new File(fileName);
     SModel model = ModelPersistence.readModel(file);
     return model;
-  }
-
-  /** @deprecated use getModelDescriptor(SModelUID modelKey) instead
-   *
-   */
-  public SModelDescriptor getModelDescriptor(String modelFQName) {
-    return myNameToModelDescriptorMap.get(new SModelUID(modelFQName));
   }
 
   public SModelDescriptor getModelDescriptor(SModelUID modelUID) {

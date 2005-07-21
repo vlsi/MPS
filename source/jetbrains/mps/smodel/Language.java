@@ -171,19 +171,19 @@ public class Language implements ModelLocator, ModelOwner {
     }
 
   public SModelDescriptor getStructureModelDescriptor() {
-    return getModelDescriptorByFQName(getLanguageDescriptor().getStructureModel().getName());
+    return getModelDescriptorByUID(SModelUID.fromString(getLanguageDescriptor().getStructureModel().getName()));
   }
 
   public SModelDescriptor getTypesystemModelDescriptor() {
     if (getLanguageDescriptor().getTypeSystem() != null) {
-      return getModelDescriptorByFQName(getLanguageDescriptor().getTypeSystem().getName());
+      return getModelDescriptorByUID(SModelUID.fromString(getLanguageDescriptor().getTypeSystem().getName()));
     }
     return null;
   }
 
   public SModelDescriptor getActionsModelDescriptor() {
     if (getLanguageDescriptor().getActionsModel() != null) {
-      return getModelDescriptorByFQName(getLanguageDescriptor().getActionsModel().getName());
+      return getModelDescriptorByUID(SModelUID.fromString(getLanguageDescriptor().getActionsModel().getName()));
     }
     return null;
   }
@@ -204,13 +204,13 @@ public class Language implements ModelLocator, ModelOwner {
     return getEditorModelDescriptor(null);
   }
 
-  public String getEditorFQName() {
-    return getEditorFQName(null);
+  public String getEditorUID() {
+    return getEditorUID(null);
   }
 
   public SModelDescriptor getEditorModelDescriptor(String stereotype) {
     if (stereotype == null) stereotype = NULL_STEREOTYPE;
-    return getModelDescriptorByFQName(getEditorFQName(stereotype));
+    return getModelDescriptorByUID(SModelUID.fromString(getEditorUID(stereotype)));
   }
 
   public Set<SModelDescriptor> getEditorDescriptors() {
@@ -223,7 +223,7 @@ public class Language implements ModelLocator, ModelOwner {
     return result;
   }
 
-  public String getEditorFQName(String stereotype) {
+  public String getEditorUID(String stereotype) {
     if (stereotype == null) stereotype = NULL_STEREOTYPE;
     Iterator<Editor> editors = getLanguageDescriptor().editors();
     while (editors.hasNext()) {
@@ -289,14 +289,8 @@ public class Language implements ModelLocator, ModelOwner {
     LanguageUtil.saveToFile(myDescriptorFile, getLanguageDescriptor());
   }
 
-  /** @deprecated  use getModelDescriptorByKey instead
-   *
-   */
-  private SModelDescriptor getModelDescriptorByFQName(String modelFQName) {
-    return getModelDescriptorByKey(new SModelUID(modelFQName));
-  }
 
-  private SModelDescriptor getModelDescriptorByKey(SModelUID modelUID) {
+  private SModelDescriptor getModelDescriptorByUID(SModelUID modelUID) {
     if (modelUID == null) return null;
     try {
       SModelRepository modelRepository = ApplicationComponents.getInstance().getComponent(SModelRepository.class);
@@ -334,7 +328,7 @@ public class Language implements ModelLocator, ModelOwner {
     Iterator<Model> libraryModels = getLanguageDescriptor().libraryModels();
     while (libraryModels.hasNext()) {
       Model model = libraryModels.next();
-      SModelDescriptor modelDescriptor = getModelDescriptorByFQName(model.getName());
+      SModelDescriptor modelDescriptor = getModelDescriptorByUID(SModelUID.fromString(model.getName()));
       if (modelDescriptor != null) {
         result.add(modelDescriptor);
       }

@@ -31,10 +31,6 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     myModelUID = model.getModelUID();
   }
 
-  protected AbstractSModelDescriptor(String fqName) {
-    myModelUID.myFQName = fqName;
-  }
-
   protected AbstractSModelDescriptor(SModelUID modelUID) {
     myModelUID = modelUID;
   }
@@ -64,7 +60,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     return myModelUID.myFQName;
   }
 
-  public SModelUID getModelKey() {
+  public SModelUID getModelUID() {
     return myModelUID;
   }
 
@@ -198,7 +194,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   public void refresh() {
     LanguageRepository.getInstance().invalidateLanguagesCaches();
     if (isInitialized()) {
-      LOG.debug("Refreshing " + mySModel.getFQName());
+      LOG.debug("Refreshing " + mySModel.getModelUID());
       List<SModelListener> listeners = getSModel().getListeners();
       List<SModelCommandListener> commandListeners = getSModel().getCommandListeners();
       try {

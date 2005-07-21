@@ -5,6 +5,7 @@ import org.jdom.DataConversionException;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.logging.Logger;
 
@@ -27,15 +28,15 @@ public class ComponentsUtil {
 
   public static Element nodeToElement(SNode node) {
     Element nodeElement = new Element(NODE);
-    nodeElement.setAttribute(MODEL, node.getModel().getFQName());
+    nodeElement.setAttribute(MODEL, node.getModel().getModelUID().toString());
     nodeElement.setAttribute(ID, node.getId());
     return nodeElement;
   }
 
   public static SNode nodeFromElement(MPSProject project, Element nodeElement) {
-    String fqName = nodeElement.getAttributeValue(MODEL);
+    String modelUID = nodeElement.getAttributeValue(MODEL);
     String id = nodeElement.getAttributeValue(ID);
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(fqName);
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(modelUID));
     if (modelDescriptor == null) return null;
     SNode semanticNode = modelDescriptor.getSModel().getNodeById(id);
     return semanticNode;

@@ -104,9 +104,9 @@ public class EditorManager {
 
 
     String stereotype = node.getModel().getStereotype();
-    String languageEditorFQName = language.getEditorFQName(stereotype);
+    String languageEditorFQName = language.getEditorUID(stereotype);
     if (languageEditorFQName == null) {
-      languageEditorFQName = language.getEditorFQName();
+      languageEditorFQName = language.getEditorUID();
       if (languageEditorFQName == null) {
         LOG.errorWithTrace("Error loading editor for node \"" + node.getDebugText() + "\" <<" + stereotype + ">> : no editor model.");
         return null;

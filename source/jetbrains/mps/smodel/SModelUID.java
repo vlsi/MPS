@@ -1,6 +1,8 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.NameUtil;
 
 /**
  * Created by IntelliJ IDEA.
@@ -13,6 +15,22 @@ public class SModelUID {
   public String myFQName;
   public String myStereotype;
 
+  public String getNamespace () {
+    int offset = myFQName.lastIndexOf('.');
+    if (offset < 0) {
+      return "";
+    }
+    return myFQName.substring(0, offset);
+  }
+
+  public String getName () {
+    int offset = myFQName.lastIndexOf('.');
+    if (offset < 0) {
+      return myFQName;
+    }
+    return myFQName.substring(offset + 1);
+  }
+
   private static final Logger LOG = Logger.getLogger(SModelUID.class);
 
   public SModelUID(String fqName, String stereotype) {
@@ -22,8 +40,18 @@ public class SModelUID {
     this.myStereotype = stereotype;
   }
 
-  public SModelUID(String fqName) {
-    this(fqName, "");
+  public static SModelUID fromString (String s) {
+    int index = s.indexOf("@");
+    String stereotype = "";
+    if (index >= 0) {
+      stereotype = s.substring(index + 1);
+    }
+    String fqName = s;
+    if(index > 0) {
+      fqName = s.substring(0, index);
+    }
+
+    return new SModelUID(fqName, stereotype);
   }
 
   public boolean equals (Object o) {
@@ -41,7 +69,7 @@ public class SModelUID {
   }
 
   public String toString () {
-    return myFQName + "@" + myStereotype;
+    return myFQName + (myStereotype.equals("")? "" : "@" + myStereotype);
   }
 
 

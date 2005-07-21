@@ -240,6 +240,8 @@ public class PathManager {
     return relativePath.toString();
   }
 
+  /** @deprecated
+   */
   public static String getModelStereotype(File modelFile, File root, String namespacePrefix) {
     String rawFQName = getModelRawFQName(modelFile, root, namespacePrefix);
     String rawName = NameUtil.nameFromFQName(rawFQName);
@@ -253,6 +255,8 @@ public class PathManager {
 
   }
 
+  /** @deprecated
+   */
   public static String getModelFQName(File modelFile, File root, String namespacePrefix) {
     String rawFQName = getModelRawFQName(modelFile, root, namespacePrefix);
     int index = rawFQName.indexOf("@");
@@ -260,6 +264,11 @@ public class PathManager {
       rawFQName = rawFQName.substring(0, index);
     }
     return rawFQName;
+  }
+
+  public static SModelUID getModelUID(File modelFile, File root, String namespacePrefix) {
+    String rawFQName = getModelRawFQName(modelFile, root, namespacePrefix);
+    return SModelUID.fromString(rawFQName);
   }
 
   public static String getModelRawFQName(File modelFile, File root, String namespacePrefix) {

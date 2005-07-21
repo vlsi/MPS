@@ -172,7 +172,7 @@ public class ModelPersistence {
     String type = nodeElement.getAttributeValue(TYPE);
     SNode semanticNode = createNodeInstance(type, semanticModel);
     if (semanticNode == null) {
-      String error = "Error reading model " + semanticModel.getFQName() + ": couldn't create instance of node id=" + nodeElement.getAttributeValue(ID);
+      String error = "Error reading model " + semanticModel.getModelUID() + ": couldn't create instance of node id=" + nodeElement.getAttributeValue(ID);
       LOG.errorWithTrace(error);
       firePersisteneceError();
       return null;
@@ -274,7 +274,7 @@ public class ModelPersistence {
   }
 
   public static void saveModel(SModel sourceModel, File file) {
-    LOG.debug("Save model " + sourceModel.getFQName() + " to file " + file.getAbsolutePath());
+    LOG.debug("Save model " + sourceModel.getModelUID() + " to file " + file.getAbsolutePath());
     Document document = saveModel(sourceModel);
 
     try {

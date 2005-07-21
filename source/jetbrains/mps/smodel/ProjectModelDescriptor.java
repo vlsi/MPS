@@ -15,7 +15,7 @@ public class ProjectModelDescriptor extends AbstractSModelDescriptor {
   }
 
   private ProjectModelDescriptor() {
-    super("ProjectModel" + ourProjectModelDescriptorCount++);
+    super(SModelUID.fromString("ProjectModel" + ourProjectModelDescriptorCount++));
   }
 
   public void reloadFromDisk() {

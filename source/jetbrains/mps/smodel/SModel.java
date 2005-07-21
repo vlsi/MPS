@@ -40,16 +40,26 @@ public class SModel implements Iterable<SNode> {
 
   private Set<SModelUID> myDescriptorNotFoundReportedModelKeys = new HashSet<SModelUID>();
 
+  /**  @deprecated
+   */
   public SModel(String name, String nameSpace) {
     this();
     myName = name;
     myNamespace = nameSpace;
   }
 
+  /**  @deprecated
+   */
   public SModel(String fqName) {
     this();
     myName = NameUtil.nameFromFQName(fqName);
     myNamespace = NameUtil.namespaceFromFQName(fqName);
+  }
+
+  public SModel(SModelUID modelUID) {
+    this();
+    myName = modelUID.getName();
+    myNamespace = modelUID.getNamespace();
   }
 
   public SModel(String name, String namespace, String stereotype) {
@@ -159,13 +169,6 @@ public class SModel implements Iterable<SNode> {
     return isLoading;
   }
 
-  /**
-   *
-   * @deprecated use hasImportedModel(SModelRepository.SModelUID modelKey) instead
-   */
-  public boolean hasImportedModel(String fqName) {
-    return hasImportedModel(new SModelUID(fqName));
-  }
 
   public boolean hasImportedModel(SModelUID modelUID) {
     for (int i = 0; i < myImports.size(); i++) {
@@ -336,7 +339,7 @@ public class SModel implements Iterable<SNode> {
    * @deprecated
    */
   public void addImportedModelDescriptor(SModelDescriptor modelDescriptor) {
-    if (findImportElement(modelDescriptor.getModelKey()) == null) {
+    if (findImportElement(modelDescriptor.getModelUID()) == null) {
       addImportedModelDescriptor(modelDescriptor, ++myMaxReferenceID);
     }
   }
@@ -353,25 +356,15 @@ public class SModel implements Iterable<SNode> {
    * @deprecated
    */
   void addImportedModelDescriptor(SModelDescriptor modelDescriptor, int referenceId) {
-    ImportElement importElement = new ImportElement(modelDescriptor.getModelKey(), referenceId);
+    ImportElement importElement = new ImportElement(modelDescriptor.getModelUID(), referenceId);
     myImports.add(importElement);
   }
 
-  /** @deprecated use addImportedModel(SModelRepository.SModelUID modelFqName) instead
-   */
-  public void addImportedModel(String modelFqName) {
-    addImportElement(modelFqName);
-  }
 
   public void addImportedModel(SModelUID modelFqName) {
     addImportElement(modelFqName);
   }
 
-  /** @deprecated use addImportElement(SModelRepository.SModelUID modelKey) instead
-   */
-  ImportElement addImportElement(String modelFqName) {
-    return addImportElement(new SModelUID(modelFqName));
-  }
 
   ImportElement addImportElement(SModelUID modelUID) {
     ImportElement importElement = findImportElement(modelUID);
@@ -381,11 +374,6 @@ public class SModel implements Iterable<SNode> {
     return importElement;
   }
 
-  /** @deprecated use addImportElement(SModelRepository.SModelUID modelKey, int referenceId) instead
-   */
-  ImportElement addImportElement(String modelFqName, int referenceId) {
-    return addImportElement(new SModelUID(modelFqName), referenceId);
-  }
 
    ImportElement addImportElement(SModelUID modelUID, int referenceId) {
     ImportElement importElement = new ImportElement(modelUID, referenceId);
@@ -393,15 +381,6 @@ public class SModel implements Iterable<SNode> {
     return importElement;
   }
 
-  /**
-   *  @deprecated use deleteImportedModel(SModelRepository.SModelUID modelKey) instead
-   */
-  public void deleteImportedModel(String fqName) {
-    ImportElement importElement = findImportElement(fqName);
-    if (importElement != null) {
-      myImports.remove(importElement);
-    }
-  }
 
   public void deleteImportedModel(SModelUID modelUID) {
     ImportElement importElement = findImportElement(modelUID);
@@ -419,7 +398,7 @@ public class SModel implements Iterable<SNode> {
 
   /**
    *
-   * @deprecated use Collection<SModelRepository.SModelUID> getImportedModelKeys() instead
+   * @deprecated use Collection<SModelRepository.SModelUID> getImportedModelUIDs() instead
    */
   public Collection<String> getImportedModelNames() {
     ArrayList<String> modelNames = new ArrayList<String>();
@@ -429,7 +408,7 @@ public class SModel implements Iterable<SNode> {
     return modelNames;
   }
 
-  public Collection<SModelUID> getImportedModelKeys() {
+  public Collection<SModelUID> getImportedModelUIDs() {
     ArrayList<SModelUID> modelKeys = new ArrayList<SModelUID>();
     for (ImportElement importElement : myImports) {
       modelKeys.add(importElement.getModelKey());
@@ -508,11 +487,6 @@ public class SModel implements Iterable<SNode> {
     return null;
   }
 
-  /** @deprecated use findImportElement(SModelRepository.SModelUID modelKey) instead
-   */
-  private ImportElement findImportElement(String fqName) {     //todo: alt f7
-   return findImportElement(new SModelUID(fqName));
-  }
 
   public void setMaxReferenceID(int i) {
     myMaxReferenceID = i;
@@ -624,13 +598,6 @@ public class SModel implements Iterable<SNode> {
     private SModelUID myModelDescriptor;
     private int myReferenceID;
 
-    /**
-     * @deprecated use ImportElement(SModelRepository.SModelUID modelKey, int referenceID) instead
-    */
-    public ImportElement(String modelDescriptor, int referenceID) {
-      myModelDescriptor = new SModelUID(modelDescriptor);
-      myReferenceID = referenceID;
-    }
 
     public ImportElement(SModelUID modelUID, int referenceID) {
       myModelDescriptor = modelUID;

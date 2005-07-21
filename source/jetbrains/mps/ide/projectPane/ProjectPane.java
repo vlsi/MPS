@@ -188,7 +188,7 @@ public class ProjectPane extends JComponent {
           popupMenu.addSeparator();
           popupMenu.add(new AbstractActionWithEmptyIcon("Synchronize Model With Java") {
             public void actionPerformed(ActionEvent actionEvent) {
-              ConversionUtil.updateModel(myProject, getSelectedModel().getFQName(), new Converter(myProject));
+              ConversionUtil.updateModel(myProject, getSelectedModel().getModelUID(), new Converter(myProject));
               JOptionPane.showMessageDialog(ProjectPane.this, "Model Synchronized");
             }
           });
@@ -580,8 +580,8 @@ public class ProjectPane extends JComponent {
         if (o == o1) {
           return 0;
         }
-        String name1 = ((SModelDescriptor) o).getFQName();
-        String name2 = ((SModelDescriptor) o1).getFQName();
+        String name1 = ((SModelDescriptor) o).getModelUID().toString();
+        String name2 = ((SModelDescriptor) o1).getModelUID().toString();
         if (name1 == null) name1 = "";
         if (name2 == null) name2 = "";
         return name1.compareTo(name2);

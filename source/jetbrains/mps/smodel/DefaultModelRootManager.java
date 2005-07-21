@@ -33,14 +33,14 @@ public class DefaultModelRootManager implements ModelRootManager {
     });
     for (int i = 0; i < files.length; i++) {
       File file = files[i];
-      String modelFQName = PathManager.getModelFQName(file, new File(modelRoot.getPath()), modelRoot.getPrefix());
-      String stereotype = PathManager.getModelStereotype(file, new File(modelRoot.getPath()), modelRoot.getPrefix());
+     /* String modelFQName = PathManager.getModelFQName(file, new File(modelRoot.getPath()), modelRoot.getPrefix());
+      String stereotype = PathManager.getModelStereotype(file, new File(modelRoot.getPath()), modelRoot.getPrefix());*/
  /*     if (modelFQName.equals("jetbrains.mps.baseLanguage.generator.java")) {
         System.out.println();
       }*/
-      SModelUID modelUID = new SModelUID(modelFQName, stereotype);
+      SModelUID modelUID = PathManager.getModelUID(file, new File(modelRoot.getPath()), modelRoot.getPrefix());//new SModelUID(modelFQName, stereotype);
       SModelDescriptor modelDescriptor = MPSFileModelDescriptor.getInstance(file.getAbsolutePath(), modelUID, owner);
-      LOG.debug("I've read model descriptor " + modelDescriptor.getFQName() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
+      LOG.debug("I've read model descriptor " + modelDescriptor.getModelUID() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
       modelDescriptors.add(modelDescriptor);
 
       if (modelRoot.getIsSynchronizedWithJava()) {
