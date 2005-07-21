@@ -853,7 +853,7 @@ public class ProjectPane extends JComponent {
     }
 
     protected String getNodeIdentifier() {
-      return myModelDescriptor.getFQName();
+      return myModelDescriptor.getModelUID().toString();
     }
 
     public String getLabel() {
@@ -861,7 +861,7 @@ public class ProjectPane extends JComponent {
     }
 
     public String toString() {
-      String fqName = myModelDescriptor.getFQName();
+      String fqName = myModelDescriptor.getModelUID().toString();
 
       if (isImported()) {
         fqName += " <b>(imported)</b>";
@@ -1126,8 +1126,8 @@ public class ProjectPane extends JComponent {
 
         SModelDescriptor templatesModel = null;
 
-        if (generator.getTemplatesModelKey() != null && generator.getTemplatesModelKey() != null) {
-          templatesModel = SModelRepository.getInstance().getModelDescriptor(generator.getTemplatesModelKey());
+        if (generator.getTemplatesModelUID() != null && generator.getTemplatesModelUID() != null) {
+          templatesModel = SModelRepository.getInstance().getModelDescriptor(generator.getTemplatesModelUID());
         }
 
         addNodeIfModelNotNull(generatorNode, templatesModel, "Templates Model");
@@ -1154,7 +1154,7 @@ public class ProjectPane extends JComponent {
       models.addAll(language.getLibraryModels());
       Collections.sort(models, new Comparator<SModelDescriptor>() {
         public int compare(SModelDescriptor o1, SModelDescriptor o2) {
-          return o1.getFQName().compareTo(o2.getFQName());
+          return o1.getModelUID().toString().compareTo(o2.getModelUID().toString());
         }
       });
       for (SModelDescriptor model : models) {
@@ -1180,7 +1180,7 @@ public class ProjectPane extends JComponent {
       models.addAll(language.getLibraryModels());
       Collections.sort(models, new Comparator<SModelDescriptor>() {
         public int compare(SModelDescriptor o1, SModelDescriptor o2) {
-          return o1.getFQName().compareTo(o2.getFQName());
+          return o1.getModelUID().toString().compareTo(o2.getModelUID().toString());
         }
       });
       for (SModelDescriptor model : models) {

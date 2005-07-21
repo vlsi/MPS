@@ -56,10 +56,6 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     }
   }
 
-  public String getFQName() {
-    return myModelUID.myFQName;
-  }
-
   public SModelUID getModelUID() {
     return myModelUID;
   }
@@ -75,7 +71,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   public SModel getSModel() {
     if (mySModel == null) {
       mySModel = loadModel();
-      LOG.assertLog(mySModel != null, "Couldn't load model \"" + getFQName() + "\"");
+      LOG.assertLog(mySModel != null, "Couldn't load model \"" + getModelUID() + "\"");
       if (myModelListeners != null) {
         for (SModelListener listener : myModelListeners) {
           if (!mySModel.hasSModelListener(listener)) {
@@ -269,7 +265,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
 
   public String toString() {
-    return getFQName();
+    return getModelUID().toString();
   }
 
 }

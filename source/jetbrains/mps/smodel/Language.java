@@ -236,9 +236,9 @@ public class Language implements ModelLocator, ModelOwner {
   }
 
   public String getEditorStereotype(SModelDescriptor modelDescriptor) {
-    String fqName = modelDescriptor.getFQName();
+    String anUID = modelDescriptor.getModelUID().toString();
     for (Editor editor : CollectionUtil.iteratorAsIterable(getLanguageDescriptor().editors())) {
-      if (fqName.equals(editor.getEditorModel().getName())) return editor.getStereotype();
+      if (anUID.equals(editor.getEditorModel().getName())) return editor.getStereotype();
     }
     return null;
   }

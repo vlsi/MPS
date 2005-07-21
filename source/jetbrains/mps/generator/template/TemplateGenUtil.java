@@ -40,7 +40,7 @@ public class TemplateGenUtil {
       SReference templateReference = iterator.next();
       SNode templateReferentNode = templateReference.getTargetNode();
       if (templateReferentNode == null) {
-        nodeBuilder.getGenerator().showErrorMessage(templateNode, "Invalid reference \"" + templateReference.getRole() + "\" in templates model " + templateNode.getModel().getFQName());
+        nodeBuilder.getGenerator().showErrorMessage(templateNode, "Invalid reference \"" + templateReference.getRole() + "\" in templates model " + templateNode.getModel().getModelUID());
         continue;
       }
       if (templateReferentNode instanceof NodeMacro ||
@@ -119,7 +119,7 @@ public class TemplateGenUtil {
 
   private static INodeBuilder loadNodeBuilder(SNode sourceNode, SNode templateNode, String mappingName, ITemplateGenerator generator) {
     ConceptDeclaration typeDeclaration = SModelUtil.getConceptDeclaration(templateNode, generator.getProject());
-    String modelPackageName = JavaNameUtil.packageNameForModelFqName(typeDeclaration.getModel().getFQName());
+    String modelPackageName = JavaNameUtil.packageNameForModelUID(typeDeclaration.getModel().getModelUID());
     String buildersPackageName = modelPackageName + ".builder";
     String builderClassName = buildersPackageName + "." + typeDeclaration.getName() + "_NodeBuilder";
     try {
@@ -146,7 +146,7 @@ public class TemplateGenUtil {
   public static IReferenceResolver loadReferenceResolver(SNode templateNode) {
     ConceptDeclaration conceptDeclaration = Language.getTypeDeclaration(templateNode);
     while (conceptDeclaration != null) {
-      String modelPackageName = JavaNameUtil.packageNameForModelFqName(conceptDeclaration.getModel().getFQName());
+      String modelPackageName = JavaNameUtil.packageNameForModelUID(conceptDeclaration.getModel().getModelUID());
       String buildersPackageName = modelPackageName + ".builder";
       String resolverClassName = buildersPackageName + "." + conceptDeclaration.getName() + "_ReferenceResolver";
       try {

@@ -22,13 +22,7 @@ public class Generator {
     return myGenerator.getTargetLanguage().getName();
   }
 
-//  /** @deprecated use SModelRepository.SModelUID getTemplatesModelKey() instead
-//   */
-//  public String getTemplatesModelFqName() {
-//    return myGenerator.getTemplatesModel().getName();
-//  }
-
-  public SModelUID getTemplatesModelKey() {
+  public SModelUID getTemplatesModelUID() {
     if (myGenerator.getTemplatesModel().getName() == null) return null;
     return new SModelUID(myGenerator.getTemplatesModel().getName(), SModelStereotype.TEMPLATES);  //hack
   }

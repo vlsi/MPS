@@ -108,10 +108,8 @@ public class ModelPersistence {
   private static SModel readModel(Document document, String modelName, String stereotype) {
     Element rootElement = document.getRootElement();
     String modelNamespace = rootElement.getAttributeValue(NAMESPACE, "");
-    String modelFqName = NameUtil.fqNameFromNamespaceAndName(modelNamespace, modelName);
-    SModel model = new SModel(modelFqName);
+    SModel model = new SModel(new SModelUID(modelNamespace, modelName, stereotype));
 
-    model.setStereotype(stereotype);
     model.setLoading(true);
     try {
       Element maxRefID = rootElement.getChild(MAX_REFERENCE_ID);

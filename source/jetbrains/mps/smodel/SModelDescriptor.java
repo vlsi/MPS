@@ -14,10 +14,6 @@ import java.io.File;
  */
 public interface SModelDescriptor {
   SModel getSModel();
-
-  /** @deprecated
-   */
-  String getFQName();
   SModelUID getModelUID();
   String getName();
   String getStereotype();

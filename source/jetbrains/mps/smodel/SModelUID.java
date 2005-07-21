@@ -40,6 +40,15 @@ public class SModelUID {
     this.myStereotype = stereotype;
   }
 
+  public SModelUID(String namespace, String name, String stereotype) {
+    if (name == null) name = "";
+    if (namespace == null || namespace.length() == 0) {
+      myFQName = name;
+    } else myFQName = namespace + '.' + name;
+
+    myStereotype = stereotype;
+  }
+
   public static SModelUID fromString (String s) {
     int index = s.indexOf("@");
     String stereotype = "";

@@ -2,6 +2,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelUID;
 
 /**
  * User: Dmitriev.
@@ -22,14 +23,15 @@ public class JavaNameUtil {
   }
 
   public static String fqClassName(SModel semanticModel, String shortClassName) {
-    String packageName = packageNameForModelFqName(semanticModel.getFQName());
+    String packageName = packageNameForModelUID(semanticModel.getModelUID());
     if (packageName == null || packageName.length() == 0) {
       return shortClassName;
     }
     return packageName + "." + shortClassName;
   }
 
-  public static String packageNameForModelFqName(String modelFqName) {
+  public static String packageNameForModelUID(SModelUID modelUID) {
+    String modelFqName = modelUID.myFQName;
     String packageName = modelFqName;
     if (modelFqName.endsWith(".structure")) {
       packageName = modelFqName.substring(0, modelFqName.lastIndexOf(".structure"));

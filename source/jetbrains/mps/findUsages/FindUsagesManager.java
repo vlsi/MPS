@@ -97,7 +97,7 @@ public class FindUsagesManager {
 
     Set<SReference> usages = manager.findUsages(typeDeclaration, new FilterScope(manager.globalScope()) {
       protected boolean accept(SModelDescriptor descriptor) {
-        return descriptor.getFQName().endsWith(".structure");
+        return descriptor.getModelUID().getName().equals("structure");
       }
     }, null);
 

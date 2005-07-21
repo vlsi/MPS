@@ -40,31 +40,11 @@ public class SModel implements Iterable<SNode> {
 
   private Set<SModelUID> myDescriptorNotFoundReportedModelKeys = new HashSet<SModelUID>();
 
-  /**  @deprecated
-   */
-  public SModel(String name, String nameSpace) {
-    this();
-    myName = name;
-    myNamespace = nameSpace;
-  }
-
-  /**  @deprecated
-   */
-  public SModel(String fqName) {
-    this();
-    myName = NameUtil.nameFromFQName(fqName);
-    myNamespace = NameUtil.namespaceFromFQName(fqName);
-  }
-
   public SModel(SModelUID modelUID) {
     this();
     myName = modelUID.getName();
     myNamespace = modelUID.getNamespace();
-  }
-
-  public SModel(String name, String namespace, String stereotype) {
-    this(name, namespace);
-    myStereotype = stereotype;
+    myStereotype = modelUID.myStereotype;
   }
 
   public SModel() {
@@ -73,7 +53,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public SModelUID getModelUID () {
-    return new SModelUID(getFQName(), getStereotype());
+    return new SModelUID(myNamespace, myName, myStereotype);
   }
 
   public void setModelUID (SModelUID modelUID) {

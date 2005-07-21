@@ -218,14 +218,14 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
                 showMessageView();
                 return;
               } catch (final GenerationFailedException gfe) {
-                LOG.error(model.getFQName() + " generation failed", gfe);
-                addMessage(new Message(MessageKind.ERROR, model.getFQName() + " model generation failed"));
+                LOG.error(model.getModelUID() + " generation failed", gfe);
+                addMessage(new Message(MessageKind.ERROR, model.getModelUID() + " model generation failed"));
                 showMessageView();
                 return;
               } catch (Exception e) {
                 LOG.error("Exception ", e);
               }
-              addMessage(new Message(MessageKind.INFORMATION, model.getFQName() + " model is generated"));
+              addMessage(new Message(MessageKind.INFORMATION, model.getModelUID() + " model is generated"));
             }
           }
           if (!generateText && isIdeaPresent && myCompileOnGeneration) {
@@ -272,7 +272,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
 
     LOG.debug("Generating to root : " + outputPath);
 
-    String packageName = JavaNameUtil.packageNameForModelFqName(sourceModel.getFQName());
+    String packageName = JavaNameUtil.packageNameForModelUID(sourceModel.getModelUID());
     File outputPathFile = new File(outputPath + File.separator + packageName.replace('.', File.separatorChar));
 
     LOG.debug("Generating to folder : " + outputPathFile.getAbsolutePath());
@@ -357,13 +357,13 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
   }
 
   private SModelDescriptor loadTemplatesModel(Generator generator) {
-    if (generator.getTemplatesModelKey() == null) {
+    if (generator.getTemplatesModelUID() == null) {
       return null;
     }
 
     if (generator.getModelRoots().size() == 0) {
-      LOG.error("Couldn't find templates model \"" + generator.getTemplatesModelKey() + "\" model roots aren't specified");
-      getMessageView().add(new Message(MessageKind.WARNING, "Couldn't find templates model \"" + generator.getTemplatesModelKey() + "\" model roots aren't specified"));
+      LOG.error("Couldn't find templates model \"" + generator.getTemplatesModelUID() + "\" model roots aren't specified");
+      getMessageView().add(new Message(MessageKind.WARNING, "Couldn't find templates model \"" + generator.getTemplatesModelUID() + "\" model roots aren't specified"));
       return null;
     }
 
@@ -377,12 +377,12 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     Set<SModelDescriptor> models = new HashSet<SModelDescriptor>();
     SModelRepository.getInstance().readModelDescriptors(roots, models, this);
 
-    String templatesModelFqName = generator.getTemplatesModelKey().myFQName;
+    SModelUID templatesModelUID = generator.getTemplatesModelUID();
     for (SModelDescriptor model : models) {
-      if (model.getFQName().equals(templatesModelFqName)) return model;
+      if (model.getModelUID().equals(templatesModelUID)) return model;
     }
-    LOG.errorWithTrace("Couldn't find templates model \"" + templatesModelFqName + "\"");
-    getMessageView().add(new Message(MessageKind.WARNING, "Couldn't find templates model \"" + templatesModelFqName + "\""));
+    LOG.errorWithTrace("Couldn't find templates model \"" + templatesModelUID + "\"");
+    getMessageView().add(new Message(MessageKind.WARNING, "Couldn't find templates model \"" + templatesModelUID + "\""));
     return null;
   }
 
@@ -410,7 +410,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
         targetModel = command.execute();
       } else {
         ProgressMonitor childMonitor = monitor.startSubTask(AMOUNT_PER_MODEL);
-        targetModel = JavaGenUtil.createTargetJavaModel(sourceModelDescr.getSModel(), JavaNameUtil.packageNameForModelFqName(sourceModelDescr.getFQName()), myProject);
+        targetModel = JavaGenUtil.createTargetJavaModel(sourceModelDescr.getSModel(), JavaNameUtil.packageNameForModelUID(sourceModelDescr.getModelUID()), myProject);
         generator.generate(sourceModelDescr.getSModel(), targetModel, monitor);
         childMonitor.finish();
       }

@@ -25,7 +25,7 @@ public class ProjectModelDescriptor extends AbstractSModelDescriptor {
   }
 
   protected SModel loadModel() {
-    SModel result = new SModel(getFQName());
+    SModel result = new SModel(getModelUID());
     result.addLanguage("jetbrains.mps.projectLanguage");
     return result;
   }
