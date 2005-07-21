@@ -6,6 +6,7 @@ import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.projectLanguage.ModelRoot;
+import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.io.File;
 import java.util.*;
@@ -206,9 +207,10 @@ public class SModelRepository extends SModelAdapter {
     if (modelRoot.getHandlerClass() == null) return new DefaultModelRootManager();
     String fqName = modelRoot.getHandlerClass();
     try {
-      Class cls = Class.forName(fqName);
+      Class cls = Class.forName(fqName, true, ClassLoaderManager.getInstance().getClassLoader());
       return (ModelRootManager) cls.newInstance();
     } catch (Exception e) {
+      LOG.error(e);
       return null;
     }
   }
