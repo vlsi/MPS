@@ -27,6 +27,7 @@ import jetbrains.mps.projectLanguage.ProjectModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.vcs.VersionControl;
+import jetbrains.mps.smodel.vcs.ModelVCSStatus;
 import jetbrains.mps.smodel.event.*;
 
 import javax.swing.*;
@@ -267,9 +268,41 @@ public class ProjectPane extends JComponent {
     vcsMenu.removeAll();
 
     final VersionControl vc = model.getVersionControl();
-    if (!vc.isUnderVersionControl()) {
+    if (vc.getStatus() == ModelVCSStatus.UNVERSIONED) {
       vcsMenu.add(new AbstractActionWithEmptyIcon("<NO VCS AVAILABLE FOR MODEL>") {
+        {
+          setEnabled(false);
+        }
+
         public void actionPerformed(ActionEvent e) {
+        }
+      });
+      vcsMenu.addSeparator();
+      vcsMenu.add(new AbstractActionWithEmptyIcon("Add") {
+        public void actionPerformed(ActionEvent e) {
+          vc.add();
+        }
+      });
+    } else if (vc.getStatus() == ModelVCSStatus.ADDED) {
+      vcsMenu.add(new AbstractActionWithEmptyIcon("ADDED") {
+        {
+          setEnabled(false);
+        }
+
+        public void actionPerformed(ActionEvent e) {
+        }
+      });
+      vcsMenu.addSeparator();
+      vcsMenu.add(new AbstractActionWithEmptyIcon("Commit") {
+        public void actionPerformed(ActionEvent e) {
+          if (!vc.isChanged()) {
+            JOptionPane.showMessageDialog(ProjectPane.this, "Can't commit. Model isn't changed.");
+            return;
+          }
+
+          String message = JOptionPane.showInputDialog("Enter commit message : ");
+          if (message == null) return;
+          vc.commit(message);
         }
       });
     } else {
