@@ -250,7 +250,7 @@ public class SModelRepository extends SModelAdapter {
     }
 
     public String toString () {
-      return myStereotype + "@" + myFQName;
+      return myFQName + "@" + myStereotype;
     }
 
 

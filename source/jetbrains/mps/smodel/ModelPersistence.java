@@ -25,7 +25,6 @@ public class ModelPersistence {
   private static final Logger LOG = Logger.getLogger(ModelPersistence.class);
 
   private static final String TARGET_NODE_ID = "targetNodeId";
-//  private static final String META_CLASS = "metaClass";
   private static final String LINK = "link";
   private static final String ROLE = "role";
   public static final String BAD = "bad";
@@ -87,9 +86,8 @@ public class ModelPersistence {
     int index1 = rawModelName.indexOf("@");
     String modelStereotype = "";
     if (index1 >= 0) {
-      System.out.println();
-      modelName = rawModelName.substring(index1 + 1);
-      modelStereotype = rawModelName.substring(0, index1);
+      modelName = rawModelName.substring(0, index1);
+      modelStereotype = rawModelName.substring(index1 + 1);
     }
 
 

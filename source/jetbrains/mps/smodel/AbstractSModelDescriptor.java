@@ -73,11 +73,6 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   }
 
   public String getStereotype() {
-  /*  // todo: obtain stereotype without loading model (from fqName)
-    if (mySModel == null) {
-      return null;
-    }
-    return mySModel.getStereotype();*/
     return myModelKey.myStereotype;
   }
 

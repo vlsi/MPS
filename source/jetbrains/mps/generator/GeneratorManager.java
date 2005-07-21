@@ -357,13 +357,13 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
   }
 
   private SModelDescriptor loadTemplatesModel(Generator generator) {
-    if (generator.getTemplatesModelFqName() == null) {
+    if (generator.getTemplatesModelKey() == null) {
       return null;
     }
 
     if (generator.getModelRoots().size() == 0) {
-      LOG.error("Couldn't find templates model " + generator.getTemplatesModelFqName() + " model roots aren't specified");
-      getMessageView().add(new Message(MessageKind.WARNING, "Couldn't find templates model " + generator.getTemplatesModelFqName() + " model roots aren't specified"));
+      LOG.error("Couldn't find templates model \"" + generator.getTemplatesModelKey() + "\" model roots aren't specified");
+      getMessageView().add(new Message(MessageKind.WARNING, "Couldn't find templates model \"" + generator.getTemplatesModelKey() + "\" model roots aren't specified"));
       return null;
     }
 
@@ -377,10 +377,12 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     Set<SModelDescriptor> models = new HashSet<SModelDescriptor>();
     SModelRepository.getInstance().readModelDescriptors(roots, models, this);
 
+    String templatesModelFqName = generator.getTemplatesModelKey().myFQName;
     for (SModelDescriptor model : models) {
-      if (model.getFQName().equals(generator.getTemplatesModelFqName())) return model;
+      if (model.getFQName().equals(templatesModelFqName)) return model;
     }
-    getMessageView().add(new Message(MessageKind.WARNING, "Couldn't find templates model " + generator.getTemplatesModelFqName()));
+    LOG.errorWithTrace("Couldn't find templates model \"" + templatesModelFqName + "\"");
+    getMessageView().add(new Message(MessageKind.WARNING, "Couldn't find templates model \"" + templatesModelFqName + "\""));
     return null;
   }
 

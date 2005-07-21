@@ -29,7 +29,7 @@ public class SModel implements Iterable<SNode> {
   private List<SNode> myRoots = new ArrayList<SNode>();
   private String myName = "unnamed";
   private String myNamespace = "";
-  private String myStereotype;
+  private String myStereotype = "";
   private boolean isLoading = false;
 
   private int myMaxReferenceID;

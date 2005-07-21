@@ -805,7 +805,7 @@ public class ProjectPane extends JComponent {
           return Icons.TYPESYSTEM_MODEL_ICON;
         }
       } else if (myModelDescriptor.getStereotype() != null &&
-              myModelDescriptor.getStereotype().equals("generatorTemplates")) {
+              myModelDescriptor.getStereotype().equals(SModelStereotype.TEMPLATES)) {
         return Icons.TEMPLATES_MODEL_ICON;
       }
       return Icons.MODEL_ICON;

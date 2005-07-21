@@ -278,18 +278,29 @@ public class PathManager {
   public static String getModelStereotype(File modelFile, File root, String namespacePrefix) {
     String rawFQName = getModelRawFQName(modelFile, root, namespacePrefix);
     String rawName = NameUtil.nameFromFQName(rawFQName);
+
     int index = rawName.indexOf("@");
-    if (index > 0) return rawName.substring(0, index); else return "";
+    String stereotype = "";
+    if (index >= 0) {
+      stereotype = rawName.substring(index + 1);
+    }
+    return stereotype;
+
   }
 
   public static String getModelFQName(File modelFile, File root, String namespacePrefix) {
     String rawFQName = getModelRawFQName(modelFile, root, namespacePrefix);
-    String rawName = NameUtil.nameFromFQName(rawFQName);
-    String namespace = NameUtil.namespaceFromFQName(rawFQName);
-    int index = rawName.indexOf("@");
-    String name = rawName;
-    if (index > 0) name = rawName.substring(index + 1);
-    return NameUtil.fqNameFromNamespaceAndName(namespace, name);
+    int index = rawFQName.indexOf("@");
+    if(index > 0) {
+      rawFQName = rawFQName.substring(0, index);
+    }
+    return rawFQName;
+//    String rawName = NameUtil.nameFromFQName(rawFQName);
+//    String namespace = NameUtil.namespaceFromFQName(rawFQName);
+//    int index = rawName.indexOf("@");
+//    String name = rawName;
+//    if (index > 0) name = rawName.substring(index + 1);
+//    return NameUtil.fqNameFromNamespaceAndName(namespace, name);
   }
 
   public static String getModelRawFQName(File modelFile, File root, String namespacePrefix) {

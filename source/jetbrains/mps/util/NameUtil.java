@@ -27,9 +27,6 @@ public class NameUtil {
 
   /**
    * "aaaBBB" -> "AAA_BBB"
-   *
-   * @param s
-   * @return
    */
   public static String toConstantName(String s) {
     if (s == null) {
