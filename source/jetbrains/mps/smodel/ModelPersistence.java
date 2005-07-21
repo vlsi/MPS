@@ -130,7 +130,7 @@ public class ModelPersistence {
     List imports = rootElement.getChildren(IMPORT_ELEMENT);
     for (Iterator iterator = imports.iterator(); iterator.hasNext();) {
       Element element = (Element) iterator.next();
-      String importedModelFQName = NameUtil.fqNameFromNamespaceAndName(element.getAttributeValue(NAMESPACE),
+      String importedModelFQName = NameUtil.longNameFromNamespaceAndName(element.getAttributeValue(NAMESPACE),
               element.getAttributeValue(NAME));
       int referenceID = readIntAttributeValue(element, MODEL_REFERENCE_ID);
       String importedModelStereotype = element.getAttributeValue(STEREOTYPE, "");
@@ -362,13 +362,13 @@ public class ModelPersistence {
       linkElement.setAttribute(ROLE, semanticReference.getRole());
 //      setNotNullAttribute(linkElement, META_CLASS, null);
       linkElement.setAttribute(TARGET_NODE_ID, semanticReference.createReferencedNodeId());
-      if (!semanticReference.isGood()) {
+      if (!semanticReference.isResolved()) {
         linkElement.setAttribute(BAD, "true");
       }
       String resolveInfo = semanticReference.getResolveInfo();
-      if (!semanticReference.isGood() || (saveResolveInfo && resolveInfo != null)) linkElement.setAttribute(RESOLVE_INFO, resolveInfo);
+      if (!semanticReference.isResolved() || (saveResolveInfo && resolveInfo != null)) linkElement.setAttribute(RESOLVE_INFO, resolveInfo);
       String targetClassResolveInfo = semanticReference.getTargetClassResolveInfo();
-      if (!semanticReference.isGood() || saveResolveInfo && targetClassResolveInfo != null) linkElement.setAttribute(TARGET_CLASS_RESOLVE_INFO, targetClassResolveInfo);
+      if (!semanticReference.isResolved() || saveResolveInfo && targetClassResolveInfo != null) linkElement.setAttribute(TARGET_CLASS_RESOLVE_INFO, targetClassResolveInfo);
     }
 
     // children ...

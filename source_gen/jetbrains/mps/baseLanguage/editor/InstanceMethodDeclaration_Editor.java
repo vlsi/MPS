@@ -136,7 +136,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     SReference reference = null;
     referencedNode = node.getChild("returnType");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "returnType");
-    if(!(reference == null) && !((reference.isGood()))) {
+    if(!(reference == null) && !((reference.isResolved()))) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);
       noRefCell.setSelectable(true);
@@ -177,7 +177,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     SReference reference = null;
     referencedNode = node.getChild("body");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "body");
-    if(!(reference == null) && !((reference.isGood()))) {
+    if(!(reference == null) && !((reference.isResolved()))) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);
       noRefCell.setSelectable(true);

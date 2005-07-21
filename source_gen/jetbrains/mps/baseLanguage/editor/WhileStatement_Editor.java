@@ -128,7 +128,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     SReference reference = null;
     referencedNode = node.getChild("condition");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "condition");
-    if(!(reference == null) && !((reference.isGood()))) {
+    if(!(reference == null) && !((reference.isResolved()))) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);
       noRefCell.setSelectable(true);
@@ -174,7 +174,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     SReference reference = null;
     referencedNode = node.getChild("body");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "body");
-    if(!(reference == null) && !((reference.isGood()))) {
+    if(!(reference == null) && !((reference.isResolved()))) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);
       noRefCell.setSelectable(true);

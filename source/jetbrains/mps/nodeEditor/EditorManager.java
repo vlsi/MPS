@@ -24,7 +24,7 @@ public class EditorManager {
 
     boolean hasBadReference = false;
     for (SReference sr : node.getReferences()) {
-      if (!sr.isGood()) {
+      if (!sr.isResolved()) {
         hasBadReference = true;
         break ;
       }

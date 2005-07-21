@@ -65,7 +65,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     SReference reference = null;
     referencedNode = node.getChild("type");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "type");
-    if(!(reference == null) && !((reference.isGood()))) {
+    if(!(reference == null) && !((reference.isResolved()))) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);
       noRefCell.setSelectable(true);
@@ -108,7 +108,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     SReference reference = null;
     referencedNode = node.getChild("expression");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "expression");
-    if(!(reference == null) && !((reference.isGood()))) {
+    if(!(reference == null) && !((reference.isResolved()))) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);
       noRefCell.setSelectable(true);

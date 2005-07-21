@@ -142,8 +142,6 @@ public class Resolver {
 
         SNode oldTarget = reference.getTargetNode();
 
-        //reference.setBad();
-
         while (cls != SNode.class) {
           try {
             String className = cls.getName();
@@ -153,28 +151,23 @@ public class Resolver {
 
             Method m = resolveClass.getMethod("resolveForRole"+role+"In"+className, SReference.class, Class.class);
 
-            // model.setLoading(true);
+
             boolean success = (Boolean)m.invoke(null, reference, cls);
-            //  model.setLoading(false);
+
             if (success) {
               sourceNode.removeReference(reference);
-              /*      reference.setGood();
-              reference.setResolveInfo(null);
-              reference.setTargetClassResolveInfo((String)null);*/
             } else {
-              reference.setBad();
+              reference.setUnresolved();
             }
             return;
           } catch (NullPointerException e) {
-            //  model.setLoading(false);
             return;
           } catch (Exception e) {
-            //   model.setLoading(false);
           }
           cls = cls.getSuperclass();
 
         }
-        reference.setGood();
+        reference.setResolved();
         reference.setResolveInfo(null);
 
       }

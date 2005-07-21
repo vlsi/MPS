@@ -11,7 +11,7 @@ public abstract class SReference {
 
   private String myRole;
   private SNode mySourceNode;
-  private boolean myIsGood;
+  private boolean myIsResolved;
 
   protected SReference(String role, SNode sourceNode) {
     myRole = role;
@@ -49,16 +49,16 @@ public abstract class SReference {
     return mySourceNode;
   }
 
-  public boolean isGood(){
-    return myIsGood;
+  public boolean isResolved(){
+    return myIsResolved;
   }
 
-  public void setGood() {
-    myIsGood = true;
+  public void setResolved() {
+    myIsResolved = true;
   }
 
-  public void setBad() {
-    myIsGood = false;
+  public void setUnresolved() {
+    myIsResolved = false;
   }
 
 

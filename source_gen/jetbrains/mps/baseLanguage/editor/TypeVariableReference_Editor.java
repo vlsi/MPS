@@ -30,7 +30,7 @@ public class TypeVariableReference_Editor extends DefaultNodeEditor {
     effectiveNode = node.getReferent("typeVariableDeclaration");
     reference = node.getReference("typeVariableDeclaration");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "typeVariableDeclaration");
-    if(!(reference == null) && !((reference.isGood()))) {
+    if(!(reference == null) && !((reference.isResolved()))) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);
       noRefCell.setDrawBrackets(false);

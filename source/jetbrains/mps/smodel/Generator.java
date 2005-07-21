@@ -24,7 +24,7 @@ public class Generator {
 
   public SModelUID getTemplatesModelUID() {
     if (myGenerator.getTemplatesModel().getName() == null) return null;
-    return new SModelUID(myGenerator.getTemplatesModel().getName(), SModelStereotype.TEMPLATES);  //hack
+    return SModelUID.fromString(myGenerator.getTemplatesModel().getName());//, SModelStereotype.TEMPLATES);  //hack
   }
 
   public String getGeneratorClassFqName() {

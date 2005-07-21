@@ -98,7 +98,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     SReference reference = null;
     referencedNode = node.getChild("type");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "type");
-    if(!(reference == null) && !((reference.isGood()))) {
+    if(!(reference == null) && !((reference.isResolved()))) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);
       noRefCell.setSelectable(true);
@@ -139,7 +139,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     SReference reference = null;
     referencedNode = node.getChild("initializer");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "initializer");
-    if(!(reference == null) && !((reference.isGood()))) {
+    if(!(reference == null) && !((reference.isResolved()))) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);
       noRefCell.setSelectable(true);

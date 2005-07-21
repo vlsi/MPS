@@ -57,7 +57,7 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
     effectiveNode = node.getReferent("classifier");
     reference = node.getReference("classifier");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "classifier");
-    if(!(reference == null) && !((reference.isGood()))) {
+    if(!(reference == null) && !((reference.isResolved()))) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);
       noRefCell.setDrawBrackets(false);

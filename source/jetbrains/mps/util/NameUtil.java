@@ -84,7 +84,7 @@ public class NameUtil {
     return namespace;
   }
 
-  public static String fqNameFromNamespaceAndName(String namespace, String name) {
+  public static String longNameFromNamespaceAndName(String namespace, String name) {
     if (namespace == null || namespace.length() == 0) {
       return name;
     }

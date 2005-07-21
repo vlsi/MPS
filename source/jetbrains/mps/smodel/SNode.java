@@ -612,7 +612,7 @@ public abstract class SNode implements Cloneable {
 
     while (myBackReferences.size() > 0) {
       SReference backReference = myBackReferences.iterator().next();
-      if (!backReference.isGood()) {
+      if (!backReference.isResolved()) {
         myBackReferences.remove(backReference);
         continue;
       }
