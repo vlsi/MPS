@@ -25,9 +25,9 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     // precess cell keymaps first
     if (selectedCell != null /*&& EditorUtil.isValidCell(selectedCell)*/) {
       //test >
-      if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER) {
-        LOG.debug("key pressed:" + keyEvent);
-      }
+//      if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER) {
+//        LOG.debug("key pressed:" + keyEvent);
+//      }
       //test <
       List<EditorCellKeyMapAction> actions = EditorUtil.getKeyMapActionsForEvent(selectedCell, keyEvent, editorContext);
       if (actions != null) {
@@ -50,32 +50,58 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
       boolean endEditKeystroke = isEndEditKeystroke(keyEvent);
       boolean deleteKeystroke = isDeleteKeystroke(keyEvent, selectedCell);
-      boolean cellWasValid = EditorUtil.isValidCell(selectedCell);
+//      boolean cellWasValid = EditorUtil.isValidCell(selectedCell);
       boolean strictMatching = endEditKeystroke || actionType == EditorCellAction.RIGHT_TRANSFORM;
 
-      if (endEditKeystroke ||
-              actionType == EditorCellAction.RIGHT_TRANSFORM ||
-              actionType == EditorCellAction.INSERT ||
-              actionType == EditorCellAction.INSERT_BEFORE) {
-        if (!cellWasValid &&
-                !EditorUtil.validateCell(selectedCell, editorContext, strictMatching)) {
-          // !side effect: can change selection!
+//      if (!cellWasValid && (actionType == EditorCellAction.INSERT ||
+//              actionType == EditorCellAction.INSERT_BEFORE)) {
+//        // try to validate, do not proceed
+//        EditorUtil.validateCell(selectedCell, editorContext, strictMatching);
+//        return true;
+//      }
+//
+//      if (endEditKeystroke ||
+//              actionType == EditorCellAction.RIGHT_TRANSFORM) {
+//        if (!cellWasValid &&
+//                !EditorUtil.validateCell(selectedCell, editorContext, strictMatching)) {
+//          // !side effect: can change selection!
+//          return true;
+//        }
+//        selectedCell = editor.getSelectedCell();
+//        cellWasValid = true;
+//        // no selection any more - very strange
+//        if (selectedCell == null) {
+//          return true;
+//        }
+//      }
+
+      if (!EditorUtil.isValidCell(selectedCell)) {
+        if (endEditKeystroke ||
+                actionType == EditorCellAction.INSERT ||
+                actionType == EditorCellAction.INSERT_BEFORE) {
+          EditorUtil.validateCell(selectedCell, editorContext, strictMatching);
           return true;
         }
+
+        if (actionType == EditorCellAction.RIGHT_TRANSFORM) {
+          // !side effect: can change selection!
+          if (!EditorUtil.validateCell(selectedCell, editorContext, strictMatching)) {
+            return true;
+          }
+        }
+
         selectedCell = editor.getSelectedCell();
-        cellWasValid = true;
-        // no selection any more - very strange
         if (selectedCell == null) {
           return true;
         }
       }
 
       // we may want to change action Type as result of pre-processing
-      if (endEditKeystroke && !cellWasValid) {
+      /*if (endEditKeystroke && !cellWasValid) {
         EditorUtil.validateCell(selectedCell, editorContext, strictMatching);
-        keyEvent.consume();
         return true;
-      } else if (deleteKeystroke) {
+      } else */
+      if (deleteKeystroke) {
         if (!(selectedCell instanceof EditorCell_Label &&
                 ((EditorCell_Label) selectedCell).isEditable())) {
           actionType = EditorCellAction.DELETE;
@@ -83,7 +109,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
         }
 
       } else if (actionType == EditorCellAction.RIGHT_TRANSFORM) {
-        if (selectedCell instanceof EditorCell_Label && ((EditorCell_Label) selectedCell).isErrorState()) {
+        if (selectedCell instanceof EditorCell_Label && selectedCell.isErrorState()) {
           // stop here
           return true;
         }

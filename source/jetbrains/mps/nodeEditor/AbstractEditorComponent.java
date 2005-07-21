@@ -413,10 +413,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return EditorCellAction.INSERT_BEFORE;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {
-      EditorCell selection = editorContext.getNodeEditorComponent().getSelectedCell();
-      if (!selection.isErrorState()) {
-        return EditorCellAction.INSERT;
-      }
+      return EditorCellAction.INSERT;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && keyEvent.isControlDown()) {
       return EditorCellAction.LEFT_SPECIAL;
