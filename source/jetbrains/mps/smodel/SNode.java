@@ -235,7 +235,7 @@ public abstract class SNode implements Cloneable {
     // tmp check
     int count = getChildCount(role);
     if (count > 1) {
-      LOG.errorWithTrace("ERROR: " + count + " children for role " + role + " in " + NameUtil.nameFromFQName(getClass().getName()) + "[" + getId() + "] " + getModel().getFQName());
+      LOG.errorWithTrace("ERROR: " + count + " children for role " + role + " in " + NameUtil.nameFromFQName(getClass().getName()) + "[" + getId() + "] " + getModel().getModelUID());
     }
     // tmp check
 
@@ -409,7 +409,7 @@ public abstract class SNode implements Cloneable {
     // tmp check
     int count = getReferentCount(role);
     if (count > 1) {
-      LOG.errorWithTrace("ERROR: " + count + " referents for role " + role + " in " + NameUtil.nameFromFQName(getClass().getName()) + "[" + getId() + "] " + getModel().getFQName());
+      LOG.errorWithTrace("ERROR: " + count + " referents for role " + role + " in " + NameUtil.nameFromFQName(getClass().getName()) + "[" + getId() + "] " + getModel().getModelUID());
     }
     // tmp check
 
@@ -426,7 +426,7 @@ public abstract class SNode implements Cloneable {
     // tmp check
     int count = getReferentCount(role);
     if (count > 1) {
-      LOG.errorWithTrace("ERROR: " + count + " referents for role " + role + " in " + NameUtil.nameFromFQName(getClass().getName()) + "[" + getId() + "] " + getModel().getFQName());
+      LOG.errorWithTrace("ERROR: " + count + " referents for role " + role + " in " + NameUtil.nameFromFQName(getClass().getName()) + "[" + getId() + "] " + getModel().getModelUID());
     }
     // tmp check
 
@@ -666,7 +666,7 @@ public abstract class SNode implements Cloneable {
       //e.printStackTrace();
       nameText = "<??name??>";
     }
-    return roleText + " " + getNodeTypeName() + " " + nameText + " in " + getModel().getFQName();
+    return roleText + " " + getNodeTypeName() + " " + nameText + " in " + getModel().getModelUID();
   }
 
   public String getId() {

@@ -301,12 +301,12 @@ public class SModel implements Iterable<SNode> {
       if (language != null) {
         languages.add(language);
       } else {
-        LOG.error("Language \"" + languageNamespace + "\" was not loaded. Used by model \"" + getFQName() +
+        LOG.error("Language \"" + languageNamespace + "\" was not loaded. Used by model \"" + getModelUID() +
                 "\"\nAdd this language to the LANGUAGES section of the project properties");
       }
     }
     if (languages.isEmpty()) {
-      LOG.error("Model \"" + getFQName() + "\" has no languages !!!");
+      LOG.error("Model \"" + getModelUID() + "\" has no languages !!!");
     }
     return languages;
   }
@@ -376,17 +376,6 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  /**
-   *
-   * @deprecated use Collection<SModelRepository.SModelUID> getImportedModelUIDs() instead
-   */
-  public Collection<String> getImportedModelNames() {
-    ArrayList<String> modelNames = new ArrayList<String>();
-    for (ImportElement importElement : myImports) {
-      modelNames.add(importElement.getModelFQName());
-    }
-    return modelNames;
-  }
 
   public Collection<SModelUID> getImportedModelUIDs() {
     ArrayList<SModelUID> modelKeys = new ArrayList<SModelUID>();
@@ -394,19 +383,6 @@ public class SModel implements Iterable<SNode> {
       modelKeys.add(importElement.getModelKey());
     }
     return modelKeys;
-  }
-
-  /** @deprecated use SModelRepository.SModelUID getImportedModelKey(int referenceID) instead
-   */
-  String getImportedModelName(int referenceID) {
-    Iterator<ImportElement> iterator = myImports.iterator();
-    while (iterator.hasNext()) {
-      ImportElement importElement = iterator.next();
-      if (importElement.getReferenceID() == referenceID) {
-        return importElement.getModelFQName();
-      }
-    }
-    return null;
   }
 
   SModelUID getImportedModelKey(int referenceID) {
@@ -434,7 +410,7 @@ public class SModel implements Iterable<SNode> {
         } else {
           myDescriptorNotFoundReportedModelKeys.add(modelUID);
           LOG.errorWithTrace("Couldn't find model descriptor for imported model: \"" + modelUID + "\"\n" +
-                  "source model was: \"" + getFQName() + "\"");
+                  "source model was: \"" + getModelUID() + "\"");
         }
       }
     }
@@ -477,21 +453,13 @@ public class SModel implements Iterable<SNode> {
   }
 
   public String toString() {
-    if (getFQName() == null) return "";
-    return this.getFQName();
+    if (getModelUID() == null) return "";
+    return this.getModelUID().toString();
   }
 
-  /** @deprecated
-   */
-  public String getFQName() {
-    if (myNamespace == null || myNamespace.length() == 0) {
-      return myName;
-    }
-    return myNamespace + "." + myName;
-  }
 
   public IStatus updateNodeStatuses() {
-    LOG.debug("SModel updateNodeStatuses: " + getFQName());
+    LOG.debug("SModel updateNodeStatuses: " + getModelUID());
     // clear
     Iterator<SNode> roots = roots();
     while (roots.hasNext()) {

@@ -39,7 +39,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     SModel languageStructure = node.getModel();
     Language language = project.getLanguageByStructureModel(languageStructure);
     if (language == null) {
-      JOptionPane.showMessageDialog(null, "Couldn't find Language for structure model " + languageStructure.getFQName());
+      JOptionPane.showMessageDialog(null, "Couldn't find Language for structure model " + languageStructure.getModelUID());
       return;
     }
     SModel languageEditor = language.getEditorModel();
@@ -53,9 +53,9 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
           return;
         }
       }
-      JOptionPane.showMessageDialog(null, "The " + editorName + " wasn't found in " + languageEditor.getFQName());
+      JOptionPane.showMessageDialog(null, "The " + editorName + " wasn't found in " + languageEditor.getModelUID());
     } else {
-      JOptionPane.showMessageDialog(null, "Editor model for \"" + node.getModel().getFQName() + "\" is not in the project");
+      JOptionPane.showMessageDialog(null, "Editor model for \"" + node.getModel().getModelUID() + "\" is not in the project");
     }
   }
 }

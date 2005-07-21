@@ -3,6 +3,7 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.transformation.TLBase.TemplateSwitch;
 
 import java.util.*;
@@ -18,14 +19,14 @@ public class TemplateSwitchGraph {
   private Map<TemplateSwitch, TemplateSwitchGraphNode> myTemplateSwitchToGraphNodeMap = new HashMap<TemplateSwitch, TemplateSwitchGraphNode>();
 
   public TemplateSwitchGraph(SModel templatesModel) {
-    processTemplatesModel(templatesModel, new HashSet<String>());
+    processTemplatesModel(templatesModel, new HashSet<SModelUID>());
   }
 
-  private void processTemplatesModel(SModel templatesModel, HashSet<String> processedModes) {
-    if (processedModes.contains(templatesModel.getFQName())) {
+  private void processTemplatesModel(SModel templatesModel, HashSet<SModelUID> processedModes) {
+    if (processedModes.contains(templatesModel.getModelUID())) {
       return;
     }
-    processedModes.add(templatesModel.getFQName());
+    processedModes.add(templatesModel.getModelUID());
 
     for (SNode root : templatesModel.getRoots()) {
       if (root instanceof TemplateSwitch) {
