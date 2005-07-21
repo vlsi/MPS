@@ -1034,7 +1034,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (root instanceof EditorCell_Error) {
       return root;
     }
-    if (root instanceof EditorCell_Label && ((EditorCell_Label) root).isEditable()) {
+    if (root instanceof EditorCell_Label && ((EditorCell_Label) root).isEditable() && ((EditorCell_Label) root).isSelectable()) {
       return root;
     }
     if (root != null && root.isErrorState()) {

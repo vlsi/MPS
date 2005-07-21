@@ -35,10 +35,9 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
 
   public MPSProject(File file) {
     myProjectFile = file;
-    init();
   }
 
-  private void init() {
+  public void init() {
     if(myRootManager != null) {
       return;
     }
