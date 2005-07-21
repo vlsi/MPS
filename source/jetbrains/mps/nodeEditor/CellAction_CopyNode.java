@@ -33,7 +33,7 @@ public class CellAction_CopyNode extends EditorCellAction {
         LOG.debug("    " + nodeList.get(i).getDebugText());
       }
     } else {
-      nodeList.add(editorComponent.getSelectedCell().getSemanticNode());
+      nodeList.add(editorComponent.getSelectedCell().getSNode());
       LOG.debug("Copy node : " + nodeList.get(0).getDebugText());
     }
 

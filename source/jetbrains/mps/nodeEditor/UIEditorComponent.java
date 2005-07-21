@@ -21,7 +21,7 @@ public class UIEditorComponent extends AbstractEditorComponent {
     addCellSelectionListener(new ICellSelectionListener() {
       public void selectionChanged(AbstractEditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
         if (newSelection != null) {
-          myInspector.inspectNode(newSelection.getSemanticNode());
+          myInspector.inspectNode(newSelection.getSNode());
         }
       }
     });

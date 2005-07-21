@@ -61,7 +61,7 @@ public class NodeRangeSelection implements IKeyboardHandler {
   public boolean activate(KeyEvent keyEvent) {
     // find appropriate node
     EditorCell selectedCell = myEditorComponent.getSelectedCell();
-    SNode childNode = selectedCell.getSemanticNode();
+    SNode childNode = selectedCell.getSNode();
     SNode parentNode = childNode.getParent();
     String role = null;
     while (parentNode != null) {

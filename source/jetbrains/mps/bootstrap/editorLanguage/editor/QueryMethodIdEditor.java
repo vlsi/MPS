@@ -117,7 +117,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
 //
 //      public SNode doSubstitute(String pattern) {
 //        setQueryMethodId(null);
-//        return getSemanticNode();
+//        return getSNode();
 //      }
 //    });
     List<String> conditionsList = null;

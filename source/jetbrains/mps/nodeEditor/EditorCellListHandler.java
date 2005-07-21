@@ -59,7 +59,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
 
 
   public void startInsertMode(EditorContext editorContext, EditorCell anchorCell, boolean insertBefore) {
-    SNode anchorNode = (anchorCell != null ? anchorCell.getSemanticNode() : null);
+    SNode anchorNode = (anchorCell != null ? anchorCell.getSNode() : null);
     if (anchorNode != null) {
       Iterator<SNode> listElementsIter = getOwner().children(getChildRole());
       List<SNode> listElements = new LinkedList<SNode>();
