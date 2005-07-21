@@ -48,6 +48,7 @@ public class SModelUID {
   }
 
   public static SModelUID fromString (String s) {
+    if (s == null) s = "";
     int index = s.indexOf("@");
     String stereotype = "";
     if (index >= 0) {
