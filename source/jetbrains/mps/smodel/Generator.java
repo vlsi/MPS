@@ -28,9 +28,9 @@ public class Generator {
 //    return myGenerator.getTemplatesModel().getName();
 //  }
 
-  public SModelRepository.SModelUID getTemplatesModelKey() {
+  public SModelUID getTemplatesModelKey() {
     if (myGenerator.getTemplatesModel().getName() == null) return null;
-    return new SModelRepository.SModelUID(myGenerator.getTemplatesModel().getName(), SModelStereotype.TEMPLATES);  //hack
+    return new SModelUID(myGenerator.getTemplatesModel().getName(), SModelStereotype.TEMPLATES);  //hack
   }
 
   public String getGeneratorClassFqName() {

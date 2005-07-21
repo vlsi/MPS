@@ -164,13 +164,13 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     }
   }
 
-  public String findPath(String modelFQName) {
+  public String findPath(SModelUID modelUID) {
     init();
-    String modelPath = PathManager.findModelPath(myRootManager.getProjectModelRoots(), modelFQName);
+    String modelPath = PathManager.findModelPath(myRootManager.getProjectModelRoots(), modelUID);
     if (modelPath != null && (new File(modelPath)).exists()) {
       return modelPath;
     }
-    modelPath = PathManager.findModelPath(myRootManager.getLibraryModelRoots(), modelFQName);
+    modelPath = PathManager.findModelPath(myRootManager.getLibraryModelRoots(), modelUID);
     if (modelPath != null && (new File(modelPath)).exists()) {
       return modelPath;
     }
@@ -210,7 +210,7 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     return SModelRepository.getInstance().getModelDescriptor(fqName);
   }
 
-  public SModelDescriptor getModelDescriptor(SModelRepository.SModelUID modelUID) {
+  public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
     return SModelRepository.getInstance().getModelDescriptor(modelUID);
   }
 

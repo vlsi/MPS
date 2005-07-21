@@ -136,7 +136,7 @@ public class ModelPersistence {
               element.getAttributeValue(NAME));
       int referenceID = readIntAttributeValue(element, MODEL_REFERENCE_ID);
       String importedModelStereotype = element.getAttributeValue(STEREOTYPE, "");
-      model.addImportElement(new SModelRepository.SModelUID(importedModelFQName, importedModelStereotype), referenceID);
+      model.addImportElement(new SModelUID(importedModelFQName, importedModelStereotype), referenceID);
     }
 
     ArrayList<ReferenceDescriptor> referenceDescriptors = new ArrayList<ReferenceDescriptor>();

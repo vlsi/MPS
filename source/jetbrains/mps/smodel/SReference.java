@@ -68,7 +68,7 @@ public abstract class SReference {
     if (sourceModel == targetModel) {
       return new InternalReference(role, sourceNode, targetNode);
     } else {
-      SModel.ImportElement importElement = sourceModel.addImportElement(targetModel.getModelKey());
+      SModel.ImportElement importElement = sourceModel.addImportElement(targetModel.getModelUID());
       return new ExternalReference(role, sourceNode, targetNode.getId(), importElement);
     }
   }
@@ -87,7 +87,7 @@ public abstract class SReference {
     String localNodeId = targetNodeId;
     if (offset > 0) {
       Integer refModelId = new Integer(targetNodeId.substring(0, offset));
-      SModelRepository.SModelUID targetModelUID = sourceModel.getImportedModelKey(refModelId.intValue());
+      SModelUID targetModelUID = sourceModel.getImportedModelKey(refModelId.intValue());
       if (targetModelUID == null) {
         LOG.errorWithTrace("SReference.newInstance -Search in model: " + sourceNode.getModel().getFQName() + ": couldn't find referenced model by id:" + refModelId);
         return null;

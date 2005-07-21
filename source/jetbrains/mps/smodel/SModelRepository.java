@@ -136,7 +136,7 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public void markChanged(SModel model) {
-    SModelDescriptor modelDescriptor = myNameToModelDescriptorMap.get(model.getModelKey());
+    SModelDescriptor modelDescriptor = myNameToModelDescriptorMap.get(model.getModelUID());
     if (modelDescriptor != null) { //i.e project model
       markChanged(modelDescriptor);
     }
@@ -220,39 +220,4 @@ public class SModelRepository extends SModelAdapter {
     }
   }
 
-  public static class SModelUID {
-    public String myFQName;
-    public String myStereotype;
-
-    public SModelUID(String fqName, String stereotype) {
-      if (fqName == null) fqName = "";
-      if (stereotype == null) stereotype = "";
-      this.myFQName = fqName;
-      this.myStereotype = stereotype;
-    }
-
-    public SModelUID(String fqName) {
-      this(fqName, "");
-    }
-
-    public boolean equals (Object o) {
-      SModelUID sModelUID = (SModelUID) o;
-      boolean b = sModelUID.myFQName.equals(myFQName);
-      boolean b1 = sModelUID.myStereotype.equals(myStereotype);
-      if (b && !b1) {
-        LOG.errorWithTrace("model keys with equal fqNames: " + myFQName + " - have different stereotypes: \"" + myStereotype + "\" and \"" + sModelUID.myStereotype + "\"");
-      }
-      return b && b1;
-    }
-
-    public int hashCode () {
-      return myFQName.hashCode();// + myStereotype.hashCode();
-    }
-
-    public String toString () {
-      return myFQName + "@" + myStereotype;
-    }
-
-
-  }
 }

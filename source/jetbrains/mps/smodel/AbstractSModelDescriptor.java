@@ -20,7 +20,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   private static final Logger LOG = Logger.getLogger(AbstractSModelDescriptor.class);
 
   private SModel mySModel = null;
-  private SModelRepository.SModelUID myModelUID = new SModelRepository.SModelUID("","");
+  private SModelUID myModelUID = new SModelUID("","");
   private ArrayList<SModelListener> myModelListeners;
   private ArrayList<SModelListener> myModelListenersForImportedModels;
   private ArrayList<SModelCommandListener> myModelCommandListenersForImportedModels;
@@ -28,14 +28,14 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
   protected AbstractSModelDescriptor(SModel model) {
     mySModel = model;
-    myModelUID = model.getModelKey();
+    myModelUID = model.getModelUID();
   }
 
   protected AbstractSModelDescriptor(String fqName) {
     myModelUID.myFQName = fqName;
   }
 
-  protected AbstractSModelDescriptor(SModelRepository.SModelUID modelUID) {
+  protected AbstractSModelDescriptor(SModelUID modelUID) {
     myModelUID = modelUID;
   }
 
@@ -64,7 +64,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     return myModelUID.myFQName;
   }
 
-  public SModelRepository.SModelUID getModelKey() {
+  public SModelUID getModelKey() {
     return myModelUID;
   }
 

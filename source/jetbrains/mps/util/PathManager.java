@@ -2,7 +2,7 @@ package jetbrains.mps.util;
 
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelUID;
 
 import java.io.File;
 import java.io.IOException;
@@ -153,20 +153,8 @@ public class PathManager {
     return resultPath;
   }
 
-  /** @deprecated use findModelPath(Collection<ModelRoot> modelRoots, SModelRepository.SModelUID modelUID) instead
-   * 
-   */
-  public static String findModelPath(Collection<ModelRoot> modelRoots, String modelFQName) {
-    for (ModelRoot modelRoot : modelRoots) {
-      String path = findModelPath(modelRoot, modelFQName);
-      if(path != null) {
-        return path;
-      }
-    }
-    return null;
-  }
 
-  public static String findModelPath(Collection<ModelRoot> modelRoots, SModelRepository.SModelUID modelUID) {
+  public static String findModelPath(Collection<ModelRoot> modelRoots, SModelUID modelUID) {
     for (ModelRoot modelRoot : modelRoots) {
       String path = findModelPath(modelRoot, modelUID);
       if(path != null) {
@@ -176,20 +164,7 @@ public class PathManager {
     return null;
   }
 
-  /** @deprecated use findModelPath(Iterator<ModelRoot> modelRoots, SModelRepository.SModelUID modelKey) instead
-   */
-  public static String findModelPath(Iterator<ModelRoot> modelRoots, String modelFQName) {
-    while (modelRoots.hasNext()) {
-      ModelRoot modelRoot = modelRoots.next();
-      String path = findModelPath(modelRoot, modelFQName);
-      if(path != null) {
-        return path;
-      }
-    }
-    return null;
-  }
-
-    public static String findModelPath(Iterator<ModelRoot> modelRoots, SModelRepository.SModelUID modelUID) {
+  public static String findModelPath(Iterator<ModelRoot> modelRoots, SModelUID modelUID) {
     while (modelRoots.hasNext()) {
       ModelRoot modelRoot = modelRoots.next();
       String path = findModelPath(modelRoot, modelUID);
@@ -200,31 +175,8 @@ public class PathManager {
     return null;
   }
 
-  /** @deprecated use findModelPath(ModelRoot modelRoot, SModelRepository.SModelUID modelKey) instead
-   */
-  public static String findModelPath(ModelRoot modelRoot, String modelFQName) {
-    String name = modelFQName;
-    String packagePrefix = modelRoot.getPrefix();
-    if(packagePrefix != null && packagePrefix.length() > 0) {
-      if(modelFQName.startsWith(packagePrefix + '.')) {
-        name = modelFQName.substring(packagePrefix.length());
-      }
-      else {
-        return null;
-      }
-    }
-    String path = name.replace('.', File.separatorChar);
-    if(!path.startsWith(File.separator)) {
-      path = File.separator + path;
-    }
-    path = modelRoot.getPath() + path + ".mps";
-    if(!(new File(path)).exists()) {
-      return null;
-    }
-    return path;
-  }
 
-  public static String findModelPath(ModelRoot modelRoot, SModelRepository.SModelUID modelUID) {
+  public static String findModelPath(ModelRoot modelRoot, SModelUID modelUID) {
     String modelFQName = modelUID.myFQName;
     String name = modelFQName;
     String packagePrefix = modelRoot.getPrefix();
@@ -308,12 +260,6 @@ public class PathManager {
       rawFQName = rawFQName.substring(0, index);
     }
     return rawFQName;
-//    String rawName = NameUtil.nameFromFQName(rawFQName);
-//    String namespace = NameUtil.namespaceFromFQName(rawFQName);
-//    int index = rawName.indexOf("@");
-//    String name = rawName;
-//    if (index > 0) name = rawName.substring(index + 1);
-//    return NameUtil.fqNameFromNamespaceAndName(namespace, name);
   }
 
   public static String getModelRawFQName(File modelFile, File root, String namespacePrefix) {

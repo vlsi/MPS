@@ -143,8 +143,8 @@ public class Language implements ModelLocator, ModelOwner {
     return myDescriptorFile;
   }
 
-  public String findPath(String modelFQName) {
-    String modelPath = PathManager.findModelPath(getLanguageDescriptor().modelRoots(), modelFQName);
+  public String findPath(SModelUID modelUID) {
+    String modelPath = PathManager.findModelPath(getLanguageDescriptor().modelRoots(), modelUID);
     if (modelPath != null && (new File(modelPath)).exists()) {
       return modelPath;
     }
@@ -293,10 +293,10 @@ public class Language implements ModelLocator, ModelOwner {
    *
    */
   private SModelDescriptor getModelDescriptorByFQName(String modelFQName) {
-    return getModelDescriptorByKey(new SModelRepository.SModelUID(modelFQName));
+    return getModelDescriptorByKey(new SModelUID(modelFQName));
   }
 
-  private SModelDescriptor getModelDescriptorByKey(SModelRepository.SModelUID modelUID) {
+  private SModelDescriptor getModelDescriptorByKey(SModelUID modelUID) {
     if (modelUID == null) return null;
     try {
       SModelRepository modelRepository = ApplicationComponents.getInstance().getComponent(SModelRepository.class);
