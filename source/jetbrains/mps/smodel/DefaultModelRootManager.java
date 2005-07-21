@@ -38,8 +38,8 @@ public class DefaultModelRootManager implements ModelRootManager {
  /*     if (modelFQName.equals("jetbrains.mps.baseLanguage.generator.java")) {
         System.out.println();
       }*/
-      SModelRepository.SModelKey modelKey = new SModelRepository.SModelKey(modelFQName, stereotype);
-      SModelDescriptor modelDescriptor = MPSFileModelDescriptor.getInstance(file.getAbsolutePath(), modelKey, owner);
+      SModelRepository.SModelUID modelUID = new SModelRepository.SModelUID(modelFQName, stereotype);
+      SModelDescriptor modelDescriptor = MPSFileModelDescriptor.getInstance(file.getAbsolutePath(), modelUID, owner);
       LOG.debug("I've read model descriptor " + modelDescriptor.getFQName() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
       modelDescriptors.add(modelDescriptor);
 

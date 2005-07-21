@@ -153,6 +153,9 @@ public class PathManager {
     return resultPath;
   }
 
+  /** @deprecated use findModelPath(Collection<ModelRoot> modelRoots, SModelRepository.SModelUID modelUID) instead
+   * 
+   */
   public static String findModelPath(Collection<ModelRoot> modelRoots, String modelFQName) {
     for (ModelRoot modelRoot : modelRoots) {
       String path = findModelPath(modelRoot, modelFQName);
@@ -163,7 +166,17 @@ public class PathManager {
     return null;
   }
 
-  /** @deprecated use findModelPath(Iterator<ModelRoot> modelRoots, SModelRepository.SModelKey modelKey) instead
+  public static String findModelPath(Collection<ModelRoot> modelRoots, SModelRepository.SModelUID modelUID) {
+    for (ModelRoot modelRoot : modelRoots) {
+      String path = findModelPath(modelRoot, modelUID);
+      if(path != null) {
+        return path;
+      }
+    }
+    return null;
+  }
+
+  /** @deprecated use findModelPath(Iterator<ModelRoot> modelRoots, SModelRepository.SModelUID modelKey) instead
    */
   public static String findModelPath(Iterator<ModelRoot> modelRoots, String modelFQName) {
     while (modelRoots.hasNext()) {
@@ -176,10 +189,10 @@ public class PathManager {
     return null;
   }
 
-    public static String findModelPath(Iterator<ModelRoot> modelRoots, SModelRepository.SModelKey modelKey) {
+    public static String findModelPath(Iterator<ModelRoot> modelRoots, SModelRepository.SModelUID modelUID) {
     while (modelRoots.hasNext()) {
       ModelRoot modelRoot = modelRoots.next();
-      String path = findModelPath(modelRoot, modelKey);
+      String path = findModelPath(modelRoot, modelUID);
       if(path != null) {
         return path;
       }
@@ -187,7 +200,7 @@ public class PathManager {
     return null;
   }
 
-  /** @deprecated use findModelPath(ModelRoot modelRoot, SModelRepository.SModelKey modelKey) instead
+  /** @deprecated use findModelPath(ModelRoot modelRoot, SModelRepository.SModelUID modelKey) instead
    */
   public static String findModelPath(ModelRoot modelRoot, String modelFQName) {
     String name = modelFQName;
@@ -211,8 +224,8 @@ public class PathManager {
     return path;
   }
 
-  public static String findModelPath(ModelRoot modelRoot, SModelRepository.SModelKey modelKey) {
-    String modelFQName = modelKey.myFQName;
+  public static String findModelPath(ModelRoot modelRoot, SModelRepository.SModelUID modelUID) {
+    String modelFQName = modelUID.myFQName;
     String name = modelFQName;
     String packagePrefix = modelRoot.getPrefix();
     if(packagePrefix != null && packagePrefix.length() > 0) {
@@ -228,11 +241,11 @@ public class PathManager {
       path = File.separator + path;
     }
 
-    if (!modelKey.myStereotype.equals("")) {
+    if (!modelUID.myStereotype.equals("")) {
       String littleName = path.substring(path.lastIndexOf(File.separator) + 1);
       String rawPath = path.substring(0, path.lastIndexOf(File.separator) + 1);
       System.err.println ("littleName = " + littleName + ", rawPath = " + rawPath);
-      path = rawPath + modelKey.myStereotype + "@" + littleName;
+      path = rawPath + modelUID.myStereotype + "@" + littleName;
     }
     path = modelRoot.getPath() + path + ".mps";
     if(!(new File(path)).exists()) {

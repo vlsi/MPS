@@ -293,22 +293,22 @@ public class Language implements ModelLocator, ModelOwner {
    *
    */
   private SModelDescriptor getModelDescriptorByFQName(String modelFQName) {
-    return getModelDescriptorByKey(new SModelRepository.SModelKey(modelFQName));
+    return getModelDescriptorByKey(new SModelRepository.SModelUID(modelFQName));
   }
 
-  private SModelDescriptor getModelDescriptorByKey(SModelRepository.SModelKey modelKey) {
-    if (modelKey == null) return null;
+  private SModelDescriptor getModelDescriptorByKey(SModelRepository.SModelUID modelUID) {
+    if (modelUID == null) return null;
     try {
       SModelRepository modelRepository = ApplicationComponents.getInstance().getComponent(SModelRepository.class);
-      SModelDescriptor modelDescriptor = modelRepository.getModelDescriptor(modelKey);
+      SModelDescriptor modelDescriptor = modelRepository.getModelDescriptor(modelUID);
       if (modelDescriptor != null) {
         return modelDescriptor;
       }
-      String modelPath = PathManager.findModelPath(getLanguageDescriptor().modelRoots(), modelKey);
+      String modelPath = PathManager.findModelPath(getLanguageDescriptor().modelRoots(), modelUID);
       if (modelPath == null) {
         return null;
       }
-      return MPSFileModelDescriptor.getInstance(modelPath, modelKey, this);
+      return MPSFileModelDescriptor.getInstance(modelPath, modelUID, this);
     } catch (Exception e) {
       LOG.error(e);
     }

@@ -87,13 +87,13 @@ public abstract class SReference {
     String localNodeId = targetNodeId;
     if (offset > 0) {
       Integer refModelId = new Integer(targetNodeId.substring(0, offset));
-      SModelRepository.SModelKey targetModelKey = sourceModel.getImportedModelKey(refModelId.intValue());
-      if (targetModelKey == null) {
+      SModelRepository.SModelUID targetModelUID = sourceModel.getImportedModelKey(refModelId.intValue());
+      if (targetModelUID == null) {
         LOG.errorWithTrace("SReference.newInstance -Search in model: " + sourceNode.getModel().getFQName() + ": couldn't find referenced model by id:" + refModelId);
         return null;
       }
       localNodeId = targetNodeId.substring(offset + 1);
-      SModel.ImportElement importElement = sourceModel.addImportElement(targetModelKey);
+      SModel.ImportElement importElement = sourceModel.addImportElement(targetModelUID);
       SReference resultReference = new ExternalReference(role, sourceNode, localNodeId, importElement, isBad);
       resultReference.setResolveInfo(resolveInfo);
       resultReference.setTargetClassResolveInfo(targetClassResolveInfo);

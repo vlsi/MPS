@@ -22,15 +22,15 @@ public class Generator {
     return myGenerator.getTargetLanguage().getName();
   }
 
-//  /** @deprecated use SModelRepository.SModelKey getTemplatesModelKey() instead
+//  /** @deprecated use SModelRepository.SModelUID getTemplatesModelKey() instead
 //   */
 //  public String getTemplatesModelFqName() {
 //    return myGenerator.getTemplatesModel().getName();
 //  }
 
-  public SModelRepository.SModelKey getTemplatesModelKey() {
+  public SModelRepository.SModelUID getTemplatesModelKey() {
     if (myGenerator.getTemplatesModel().getName() == null) return null;
-    return new SModelRepository.SModelKey(myGenerator.getTemplatesModel().getName(), SModelStereotype.TEMPLATES);  //hack
+    return new SModelRepository.SModelUID(myGenerator.getTemplatesModel().getName(), SModelStereotype.TEMPLATES);  //hack
   }
 
   public String getGeneratorClassFqName() {

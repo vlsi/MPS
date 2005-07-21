@@ -20,7 +20,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   private static final Logger LOG = Logger.getLogger(AbstractSModelDescriptor.class);
 
   private SModel mySModel = null;
-  private SModelRepository.SModelKey myModelKey = new SModelRepository.SModelKey("","");
+  private SModelRepository.SModelUID myModelUID = new SModelRepository.SModelUID("","");
   private ArrayList<SModelListener> myModelListeners;
   private ArrayList<SModelListener> myModelListenersForImportedModels;
   private ArrayList<SModelCommandListener> myModelCommandListenersForImportedModels;
@@ -28,15 +28,15 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
   protected AbstractSModelDescriptor(SModel model) {
     mySModel = model;
-    myModelKey = model.getModelKey();
+    myModelUID = model.getModelKey();
   }
 
   protected AbstractSModelDescriptor(String fqName) {
-    myModelKey.myFQName = fqName;
+    myModelUID.myFQName = fqName;
   }
 
-  protected AbstractSModelDescriptor(SModelRepository.SModelKey modelKey) {
-    myModelKey = modelKey;
+  protected AbstractSModelDescriptor(SModelRepository.SModelUID modelUID) {
+    myModelUID = modelUID;
   }
 
   {
@@ -61,19 +61,19 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   }
 
   public String getFQName() {
-    return myModelKey.myFQName;
+    return myModelUID.myFQName;
   }
 
-  public SModelRepository.SModelKey getModelKey() {
-    return myModelKey;
+  public SModelRepository.SModelUID getModelKey() {
+    return myModelUID;
   }
 
   public String getName() {
-    return NameUtil.nameFromFQName(myModelKey.myFQName);
+    return NameUtil.nameFromFQName(myModelUID.myFQName);
   }
 
   public String getStereotype() {
-    return myModelKey.myStereotype;
+    return myModelUID.myStereotype;
   }
 
   public SModel getSModel() {

@@ -19,7 +19,7 @@ public class SModelRepository extends SModelAdapter {
 
   private ArrayList<SModelDescriptor> myModelDescriptors = new ArrayList<SModelDescriptor>();
   private HashMap<SModelDescriptor, Long> myChangedModels = new HashMap<SModelDescriptor, Long>();
-  private HashMap<SModelKey, SModelDescriptor> myNameToModelDescriptorMap = new HashMap<SModelKey, SModelDescriptor>();
+  private HashMap<SModelUID, SModelDescriptor> myNameToModelDescriptorMap = new HashMap<SModelUID, SModelDescriptor>();
   private HashMap<SModelDescriptor, HashSet<ModelOwner>> myModelToOwnerMap = new HashMap<SModelDescriptor, HashSet<ModelOwner>>();
 
   public SModelRepository() {
@@ -65,14 +65,14 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public void registerModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
-    SModelKey modelKey = modelDescriptor.getModelKey();
-    SModelDescriptor registeredModel = myNameToModelDescriptorMap.get(modelKey);
+    SModelUID modelUID = modelDescriptor.getModelKey();
+    SModelDescriptor registeredModel = myNameToModelDescriptorMap.get(modelUID);
     HashSet<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
     LOG.assertLog(registeredModel != modelDescriptor ||
                    owners == null ||
                    !owners.contains(owner),
-                   "Another model " + modelKey + " is already registered!");
-    myNameToModelDescriptorMap.put(modelKey, modelDescriptor);
+                   "Another model " + modelUID + " is already registered!");
+    myNameToModelDescriptorMap.put(modelUID, modelDescriptor);
     myModelDescriptors.add(modelDescriptor);
     if(owners == null) {
       owners = new HashSet<ModelOwner>();
@@ -83,8 +83,8 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public void unRegisterModelDescriptors(ModelOwner modelLocator) {
-    ArrayList<SModelKey> modelsToRemove = new ArrayList<SModelKey>();
-    for(SModelKey fqName : myNameToModelDescriptorMap.keySet()) {
+    ArrayList<SModelUID> modelsToRemove = new ArrayList<SModelUID>();
+    for(SModelUID fqName : myNameToModelDescriptorMap.keySet()) {
       SModelDescriptor modelDescriptor = myNameToModelDescriptorMap.get(fqName);
       HashSet<ModelOwner> locators = myModelToOwnerMap.get(modelDescriptor);
       if(locators != null) {
@@ -94,8 +94,8 @@ public class SModelRepository extends SModelAdapter {
         }
       }
     }
-    for(SModelKey modelKey : modelsToRemove) {
-      SModelDescriptor modelDescriptor = myNameToModelDescriptorMap.get(modelKey);
+    for(SModelUID modelUID : modelsToRemove) {
+      SModelDescriptor modelDescriptor = myNameToModelDescriptorMap.get(modelUID);
       removeModel(modelDescriptor);
     }
   }
@@ -116,15 +116,15 @@ public class SModelRepository extends SModelAdapter {
     return model;
   }
 
-  /** @deprecated use getModelDescriptor(SModelKey modelKey) instead
-   * 
+  /** @deprecated use getModelDescriptor(SModelUID modelKey) instead
+   *
    */
   public SModelDescriptor getModelDescriptor(String modelFQName) {
-    return myNameToModelDescriptorMap.get(new SModelKey(modelFQName));
+    return myNameToModelDescriptorMap.get(new SModelUID(modelFQName));
   }
 
-  public SModelDescriptor getModelDescriptor(SModelKey modelKey) {
-    return myNameToModelDescriptorMap.get(modelKey);
+  public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
+    return myNameToModelDescriptorMap.get(modelUID);
   }
 
   public void modelChanged(SModel model) {
@@ -220,27 +220,27 @@ public class SModelRepository extends SModelAdapter {
     }
   }
 
-  public static class SModelKey {
+  public static class SModelUID {
     public String myFQName;
     public String myStereotype;
 
-    public SModelKey(String fqName, String stereotype) {
+    public SModelUID(String fqName, String stereotype) {
       if (fqName == null) fqName = "";
       if (stereotype == null) stereotype = "";
       this.myFQName = fqName;
       this.myStereotype = stereotype;
     }
 
-    public SModelKey(String fqName) {
+    public SModelUID(String fqName) {
       this(fqName, "");
     }
 
     public boolean equals (Object o) {
-      SModelKey sModelKey = (SModelKey) o;
-      boolean b = sModelKey.myFQName.equals(myFQName);
-      boolean b1 = sModelKey.myStereotype.equals(myStereotype);
+      SModelUID sModelUID = (SModelUID) o;
+      boolean b = sModelUID.myFQName.equals(myFQName);
+      boolean b1 = sModelUID.myStereotype.equals(myStereotype);
       if (b && !b1) {
-        LOG.errorWithTrace("model keys with equal fqNames: " + myFQName + " - have different stereotypes: \"" + myStereotype + "\" and \"" + sModelKey.myStereotype + "\"");
+        LOG.errorWithTrace("model keys with equal fqNames: " + myFQName + " - have different stereotypes: \"" + myStereotype + "\" and \"" + sModelUID.myStereotype + "\"");
       }
       return b && b1;
     }
