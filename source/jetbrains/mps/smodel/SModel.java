@@ -501,13 +501,13 @@ public class SModel implements Iterable<SNode> {
     LOG.debug("status : " + allErrors.size() + " errors found!");
     for (int i = 0; i < allErrors.size(); i++) {
       TSStatus error = allErrors.get(i);
-      SNode node = error.getSemanticNode();
+      SNode node = error.getSNode();
       if (node == null) {
         LOG.error("ERROR: error status " + error + " has no *node*, message: " + error.getMessage());
         LOG.error("ERROR: Couldn't show the error status in model");
         continue;
       }
-      error.getSemanticNode().putUserObject(SNode.ERROR_STATUS, error);
+      error.getSNode().putUserObject(SNode.ERROR_STATUS, error);
     }
 
     return new Status.ERROR(allErrors.size() + " error(s)");

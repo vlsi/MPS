@@ -23,7 +23,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
   }
 
   public EditorCell createEditorCell(EditorContext context) {
-    return this.createEditorCell(context, this.getSemanticNode());
+    return this.createEditorCell(context, this.getSNode());
   }
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCellAlternation(context, node);

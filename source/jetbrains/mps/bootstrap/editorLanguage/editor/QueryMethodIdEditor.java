@@ -71,7 +71,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
         boolean wasSet = (text != null && text.trim().length() > 0);
         return !myMustBeSet || wasSet;
       }
-    }, getSemanticNode());
+    }, getSNode());
 
     editorCell.setSubstituteInfo(new AbstractNodeSubstituteInfo() {
       protected List<INodeSubstituteItem> createActions() {
@@ -196,11 +196,11 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
   }
 
   protected String getNamespace() {
-    return JavaNameUtil.packageNameForModelUID(getSemanticNode().getModel().getModelUID());
+    return JavaNameUtil.packageNameForModelUID(getSNode().getModel().getModelUID());
   }
 
   protected ClassConcept getQueriesClass() {
-    SModel model = getSemanticNode().getModel();
+    SModel model = getSNode().getModel();
     String className = NameUtil.longNameFromNamespaceAndName(model.getModelUID().getLongName(), "Queries");
     Classifier classifier = ReflectionClassifierFinder.get(className, model);
     return (ClassConcept) classifier;

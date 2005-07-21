@@ -15,7 +15,7 @@ public abstract class AbstractCellProvider {
     myNode = node;
   }
 
-  public SNode getSemanticNode() {
+  public SNode getSNode() {
     return myNode;
   }
 
