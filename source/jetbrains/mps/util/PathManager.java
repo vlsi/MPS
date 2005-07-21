@@ -240,38 +240,12 @@ public class PathManager {
     return relativePath.toString();
   }
 
-  /** @deprecated
-   */
-  public static String getModelStereotype(File modelFile, File root, String namespacePrefix) {
-    String rawFQName = getModelRawFQName(modelFile, root, namespacePrefix);
-    String rawName = NameUtil.nameFromFQName(rawFQName);
-
-    int index = rawName.indexOf("@");
-    String stereotype = "";
-    if (index >= 0) {
-      stereotype = rawName.substring(index + 1);
-    }
-    return stereotype;
-
-  }
-
-  /** @deprecated
-   */
-  public static String getModelFQName(File modelFile, File root, String namespacePrefix) {
-    String rawFQName = getModelRawFQName(modelFile, root, namespacePrefix);
-    int index = rawFQName.indexOf("@");
-    if(index > 0) {
-      rawFQName = rawFQName.substring(0, index);
-    }
-    return rawFQName;
-  }
-
   public static SModelUID getModelUID(File modelFile, File root, String namespacePrefix) {
-    String rawFQName = getModelRawFQName(modelFile, root, namespacePrefix);
-    return SModelUID.fromString(rawFQName);
+    String rawLongName = getModelUIDString(modelFile, root, namespacePrefix);
+    return SModelUID.fromString(rawLongName);
   }
 
-  public static String getModelRawFQName(File modelFile, File root, String namespacePrefix) {
+  public static String getModelUIDString(File modelFile, File root, String namespacePrefix) {
     try {
       String modelPath = modelFile.getCanonicalPath();
       String rootPath = root.getCanonicalPath();
@@ -282,13 +256,13 @@ public class PathManager {
       if(rootPath.endsWith(File.separator)) {
         length--;
       }
-      String fqName = modelPath.substring(length+1);
-      fqName = fqName.substring(0, fqName.lastIndexOf("."));
-      fqName = fqName.replace(File.separatorChar, '.');
+      String longName = modelPath.substring(length+1);
+      longName = longName.substring(0, longName.lastIndexOf("."));
+      longName = longName.replace(File.separatorChar, '.');
       if(namespacePrefix != null && namespacePrefix.length() > 0) {
-        fqName = namespacePrefix + "." + fqName;
+        longName = namespacePrefix + "." + longName;
       }
-      return fqName;
+      return longName;
     } catch (IOException e) {
       LOG.error(e);
     }
