@@ -22,7 +22,6 @@ public class CellAction_Insert extends EditorCellAction {
   }
 
   public void execute(EditorContext context) {
-    AbstractEditorComponent editor = context.getNodeEditorComponent();
-    listHandler.startInsertMode(context, editor.getSelectedCell(), myInsertBefore);
+    listHandler.startInsertMode(context, context.getContextCell(), myInsertBefore);
   }
 }

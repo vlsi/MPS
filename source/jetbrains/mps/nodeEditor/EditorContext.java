@@ -18,6 +18,7 @@ public class EditorContext {
   private AbstractEditorComponent myNodeEditorComponent;
   private SModel myModel;
   private MPSProject myProject;
+  private EditorCell myContextCell;
 
   public EditorContext(AbstractEditorComponent editorComponent, SModel model, MPSProject project) {
     myNodeEditorComponent = editorComponent;
@@ -72,6 +73,14 @@ public class EditorContext {
       }
     }
     return false;
+  }
+
+  public void setContextCell(EditorCell cell) {
+    myContextCell = cell;
+  }
+
+  public EditorCell getContextCell() {
+    return myContextCell;
   }
 
   private static class Memento {
