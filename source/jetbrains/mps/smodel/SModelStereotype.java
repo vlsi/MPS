@@ -8,12 +8,9 @@ package jetbrains.mps.smodel;
  * To change this template use File | Settings | File Templates.
  */
 public class SModelStereotype {
+  public static final String NONE = "";
   public static final String TEMPLATES = "templates";
   public static final String IMPORTED = "imported";
 
-  public static final String[] values = new String[]{TEMPLATES, IMPORTED};
-
-  public static String[] values() {
-    return values;
-  }
+  public static final String[] values = new String[]{NONE, TEMPLATES, IMPORTED};
 }
