@@ -14,6 +14,7 @@ import jetbrains.mps.typesystem.ITypeChecker;
 import jetbrains.mps.typesystem.TSStatus;
 import jetbrains.mps.typesystem.TypeCheckerAccess;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.projectLanguage.ProjectModel;
 
 import java.util.*;
 
@@ -38,7 +39,7 @@ public class SModel implements Iterable<SNode> {
   private Map<String, SNode> myIdToNodeMap = new HashMap<String, SNode>();
   private SModelEventTranslator myEventTranslator = new SModelEventTranslator();
 
-  private Set<SModelUID> myDescriptorNotFoundReportedModelKeys = new HashSet<SModelUID>();
+  private Set<SModelUID> myDescriptorNotFoundReportedModelUIDs = new HashSet<SModelUID>();
 
   public SModel(SModelUID modelUID) {
     this();
@@ -341,8 +342,8 @@ public class SModel implements Iterable<SNode> {
   }
 
 
-  public void addImportedModel(SModelUID modelFqName) {
-    addImportElement(modelFqName);
+  public void addImportedModel(SModelUID modelUID) {
+    addImportElement(modelUID);
   }
 
 
@@ -403,12 +404,12 @@ public class SModel implements Iterable<SNode> {
     while (iterator.hasNext()) {
       ImportElement importElement = iterator.next();
       SModelUID modelUID = importElement.getModelUID();
-      if (!myDescriptorNotFoundReportedModelKeys.contains(modelUID)) {
+      if (!myDescriptorNotFoundReportedModelUIDs.contains(modelUID)) {
         SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
         if (modelDescriptor != null) {
           modelsList.add(modelDescriptor);
         } else {
-          myDescriptorNotFoundReportedModelKeys.add(modelUID);
+          myDescriptorNotFoundReportedModelUIDs.add(modelUID);
           LOG.errorWithTrace("Couldn't find model descriptor for imported model: \"" + modelUID + "\"\n" +
                   "source model was: \"" + getModelUID() + "\"");
         }

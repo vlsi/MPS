@@ -20,7 +20,7 @@ public class SModelRepository extends SModelAdapter {
 
   private ArrayList<SModelDescriptor> myModelDescriptors = new ArrayList<SModelDescriptor>();
   private HashMap<SModelDescriptor, Long> myChangedModels = new HashMap<SModelDescriptor, Long>();
-  private HashMap<SModelUID, SModelDescriptor> myNameToModelDescriptorMap = new HashMap<SModelUID, SModelDescriptor>();
+  private HashMap<SModelUID, SModelDescriptor> myUIDToModelDescriptorMap = new HashMap<SModelUID, SModelDescriptor>();
   private HashMap<SModelDescriptor, HashSet<ModelOwner>> myModelToOwnerMap = new HashMap<SModelDescriptor, HashSet<ModelOwner>>();
 
   public SModelRepository() {
@@ -31,12 +31,12 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public void refreshModels(boolean updateNodeStatuses) {
-    for (SModelDescriptor m : myNameToModelDescriptorMap.values()) {
+    for (SModelDescriptor m : myUIDToModelDescriptorMap.values()) {
       m.refresh();
     }
 
     if (updateNodeStatuses) {
-      for (SModelDescriptor m : myNameToModelDescriptorMap.values()) {
+      for (SModelDescriptor m : myUIDToModelDescriptorMap.values()) {
         if (m.isInitialized()) {
           m.getSModel().updateNodeStatuses();
         }
@@ -67,13 +67,13 @@ public class SModelRepository extends SModelAdapter {
 
   public void registerModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
     SModelUID modelUID = modelDescriptor.getModelUID();
-    SModelDescriptor registeredModel = myNameToModelDescriptorMap.get(modelUID);
+    SModelDescriptor registeredModel = myUIDToModelDescriptorMap.get(modelUID);
     HashSet<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
     LOG.assertLog(registeredModel != modelDescriptor ||
                    owners == null ||
                    !owners.contains(owner),
                    "Another model " + modelUID + " is already registered!");
-    myNameToModelDescriptorMap.put(modelUID, modelDescriptor);
+    myUIDToModelDescriptorMap.put(modelUID, modelDescriptor);
     myModelDescriptors.add(modelDescriptor);
     if(owners == null) {
       owners = new HashSet<ModelOwner>();
@@ -85,8 +85,8 @@ public class SModelRepository extends SModelAdapter {
 
   public void unRegisterModelDescriptors(ModelOwner modelLocator) {
     ArrayList<SModelUID> modelsToRemove = new ArrayList<SModelUID>();
-    for(SModelUID fqName : myNameToModelDescriptorMap.keySet()) {
-      SModelDescriptor modelDescriptor = myNameToModelDescriptorMap.get(fqName);
+    for(SModelUID fqName : myUIDToModelDescriptorMap.keySet()) {
+      SModelDescriptor modelDescriptor = myUIDToModelDescriptorMap.get(fqName);
       HashSet<ModelOwner> locators = myModelToOwnerMap.get(modelDescriptor);
       if(locators != null) {
         locators.remove(modelLocator);
@@ -96,14 +96,14 @@ public class SModelRepository extends SModelAdapter {
       }
     }
     for(SModelUID modelUID : modelsToRemove) {
-      SModelDescriptor modelDescriptor = myNameToModelDescriptorMap.get(modelUID);
+      SModelDescriptor modelDescriptor = myUIDToModelDescriptorMap.get(modelUID);
       removeModel(modelDescriptor);
     }
   }
 
   public void removeModel(SModelDescriptor modelDescriptor) {
     myModelDescriptors.remove(modelDescriptor);
-    myNameToModelDescriptorMap.remove(modelDescriptor.getModelUID());
+    myUIDToModelDescriptorMap.remove(modelDescriptor.getModelUID());
     myChangedModels.remove(modelDescriptor);
     modelDescriptor.removeSModelListener(this);
   }
@@ -118,7 +118,7 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
-    return myNameToModelDescriptorMap.get(modelUID);
+    return myUIDToModelDescriptorMap.get(modelUID);
   }
 
   public void modelChanged(SModel model) {
@@ -130,7 +130,7 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public void markChanged(SModel model) {
-    SModelDescriptor modelDescriptor = myNameToModelDescriptorMap.get(model.getModelUID());
+    SModelDescriptor modelDescriptor = myUIDToModelDescriptorMap.get(model.getModelUID());
     if (modelDescriptor != null) { //i.e project model
       markChanged(modelDescriptor);
     }
