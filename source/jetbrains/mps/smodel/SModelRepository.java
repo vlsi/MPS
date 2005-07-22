@@ -58,7 +58,7 @@ public class SModelRepository extends SModelAdapter {
 
   public void addOwnerForDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
     HashSet<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
-    if(owners == null) {
+    if (owners == null) {
       owners = new HashSet<ModelOwner>();
       myModelToOwnerMap.put(modelDescriptor, owners);
     }
@@ -70,12 +70,12 @@ public class SModelRepository extends SModelAdapter {
     SModelDescriptor registeredModel = myUIDToModelDescriptorMap.get(modelUID);
     HashSet<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
     LOG.assertLog(registeredModel != modelDescriptor ||
-                   owners == null ||
-                   !owners.contains(owner),
-                   "Another model " + modelUID + " is already registered!");
+            owners == null ||
+            !owners.contains(owner),
+            "Another model " + modelUID + " is already registered!");
     myUIDToModelDescriptorMap.put(modelUID, modelDescriptor);
     myModelDescriptors.add(modelDescriptor);
-    if(owners == null) {
+    if (owners == null) {
       owners = new HashSet<ModelOwner>();
       myModelToOwnerMap.put(modelDescriptor, owners);
     }
@@ -85,17 +85,17 @@ public class SModelRepository extends SModelAdapter {
 
   public void unRegisterModelDescriptors(ModelOwner modelLocator) {
     ArrayList<SModelUID> modelsToRemove = new ArrayList<SModelUID>();
-    for(SModelUID fqName : myUIDToModelDescriptorMap.keySet()) {
+    for (SModelUID fqName : myUIDToModelDescriptorMap.keySet()) {
       SModelDescriptor modelDescriptor = myUIDToModelDescriptorMap.get(fqName);
       HashSet<ModelOwner> locators = myModelToOwnerMap.get(modelDescriptor);
-      if(locators != null) {
+      if (locators != null) {
         locators.remove(modelLocator);
-        if(locators.size() == 0) {
+        if (locators.size() == 0) {
           modelsToRemove.add(fqName);
         }
       }
     }
-    for(SModelUID modelUID : modelsToRemove) {
+    for (SModelUID modelUID : modelsToRemove) {
       SModelDescriptor modelDescriptor = myUIDToModelDescriptorMap.get(modelUID);
       removeModel(modelDescriptor);
     }
@@ -108,17 +108,29 @@ public class SModelRepository extends SModelAdapter {
     modelDescriptor.removeSModelListener(this);
   }
 
-  /**
-   * @deprecated
-   */
-  public SModel loadModel(String fileName) {
-    File file = new File(fileName);
-    SModel model = ModelPersistence.readModel(file);
-    return model;
-  }
-
   public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
     return myUIDToModelDescriptorMap.get(modelUID);
+  }
+
+  public List<SModelDescriptor> getModelDescriptors(String modelName) {
+    List<SModelDescriptor> list = new LinkedList<SModelDescriptor>();
+    SModelUID modelUID = SModelUID.fromString(modelName);
+    List<SModelUID> uidList = new LinkedList<SModelUID>();
+    if (modelUID.hasStereotype()) {
+      uidList.add(modelUID);
+    } else {
+      for (String stereotype : SModelStereotype.values) {
+        uidList.add(new SModelUID(modelName, stereotype));
+      }
+    }
+
+    for (SModelUID uid : uidList) {
+      SModelDescriptor descriptor = myUIDToModelDescriptorMap.get(uid);
+      if (descriptor != null) {
+        list.add(descriptor);
+      }
+    }
+    return list;
   }
 
   public void modelChanged(SModel model) {
@@ -187,8 +199,7 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public void readModelDescriptors(Set<ModelRoot> modelRoots, Set<SModelDescriptor> modelDescriptors, ModelOwner owner) {
-    for (Iterator<ModelRoot> iterator = modelRoots.iterator(); iterator.hasNext();) {
-      ModelRoot modelRoot = iterator.next();
+    for (ModelRoot modelRoot : modelRoots) {
       File dir = new File(modelRoot.getPath());
       if (dir.exists()) {
         ModelRootManager manager = getManagerFor(modelRoot);

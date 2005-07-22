@@ -9,7 +9,7 @@ import jetbrains.mps.logging.Logger;
  * Time: 14:07:53
  * To change this template use File | Settings | File Templates.
  */
-public class SModelUID {
+public class SModelUID implements Comparable {
   private String myLongName;
   private String myStereotype;
 
@@ -66,9 +66,9 @@ public class SModelUID {
     SModelUID sModelUID = (SModelUID) o;
     boolean b = sModelUID.myLongName.equals(myLongName);
     boolean b1 = sModelUID.myStereotype.equals(myStereotype);
-    if (b && !b1) {
-      System.err.println("model keys with equal fqNames: " + myLongName + " - have different stereotypes: \"" + myStereotype + "\" and \"" + sModelUID.myStereotype + "\"");
-    }
+//    if (b && !b1) {
+//      LOG.errorWithTrace("model keys with equal fqNames: " + myLongName + " - have different stereotypes: \"" + myStereotype + "\" and \"" + sModelUID.myStereotype + "\"");
+//    }
     return b && b1;
   }
 
@@ -89,4 +89,11 @@ public class SModelUID {
     return myStereotype;
   }
 
+  public boolean hasStereotype() {
+    return myStereotype.length() > 0;
+  }
+
+  public int compareTo(Object o) {
+    return this.toString().compareTo(o.toString());
+  }
 }
