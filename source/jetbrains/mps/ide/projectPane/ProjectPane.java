@@ -611,7 +611,7 @@ public class ProjectPane extends JComponent {
 
     if (parent instanceof SNodeTreeNode) {
       SNodeTreeNode parentSemanticTreeNode = (SNodeTreeNode) parent;
-      if (semanticNode.equals(parentSemanticTreeNode.getSNode())) {
+      if (semanticNode == parentSemanticTreeNode.getSNode()) {
         return parentSemanticTreeNode;
       }
     }
