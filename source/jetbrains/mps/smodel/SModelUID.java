@@ -67,7 +67,7 @@ public class SModelUID {
     boolean b = sModelUID.myLongName.equals(myLongName);
     boolean b1 = sModelUID.myStereotype.equals(myStereotype);
     if (b && !b1) {
-      LOG.errorWithTrace("model keys with equal fqNames: " + myLongName + " - have different stereotypes: \"" + myStereotype + "\" and \"" + sModelUID.myStereotype + "\"");
+      System.err.println("model keys with equal fqNames: " + myLongName + " - have different stereotypes: \"" + myStereotype + "\" and \"" + sModelUID.myStereotype + "\"");
     }
     return b && b1;
   }
