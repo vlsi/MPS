@@ -596,7 +596,7 @@ public class ProjectPane extends JComponent {
     SModel sModel = semanticNode.getModel();
     SModelTreeNode sModelNode = findSModelTreeNode(rootNode, sModel);
     if (sModelNode == null) return;
-    MPSTreeNodeEx treeNodeToSelect = findTreeNode((MPSTreeNode) rootNode, semanticNode);
+    MPSTreeNodeEx treeNodeToSelect = findTreeNode(sModelNode, semanticNode);
     if (treeNodeToSelect != null) {
       TreePath treePath = new TreePath(treeNodeToSelect.getPath());
       myTree.setSelectionPath(treePath);
