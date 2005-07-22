@@ -94,6 +94,7 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="log4j" />
     <orderEntryProperties />
   </component>
 </module>
