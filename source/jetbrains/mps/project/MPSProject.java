@@ -56,6 +56,14 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     });
   }
 
+  public Set<SModelDescriptor> getAllProjectModels() {
+    Set<SModelDescriptor> result = getRootManager().getProjectModelDescriptors();    
+    for (Language l : getProjectLanguages()) {
+      result.addAll(l.getAllModels());
+    }
+    return result;
+  }
+
   public Collection<Language> getProjectLanguages() {
     init();
     return Collections.unmodifiableCollection(myRootManager.getProjectLanguages());
