@@ -1,0 +1,164 @@
+package jetbrains.mps.datatransfer;
+
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.resolve.Resolver;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.textLanguage.Text;
+import jetbrains.textLanguage.Sentence;
+import jetbrains.textLanguage.Word;
+
+import java.util.*;
+import java.util.List;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.Transferable;
+import java.awt.datatransfer.UnsupportedFlavorException;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.*;
+import java.io.IOException;
+
+import rubyWeb.TextUtil;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: Cyril.Konopko
+ * Date: 22.07.2005
+ * Time: 17:53:14
+ * To change this template use File | Settings | File Templates.
+ */
+public class CopyPasteNodeUtil {
+
+  private static final Logger LOG = Logger.getLogger(CopyPasteNodeUtil.class);
+
+  private static HashMap<SNode, SNode> ourSourceNodesToNewNodes = new HashMap<SNode, SNode>();
+  private static HashSet<SReference> ourReferences = new HashSet<SReference>();
+
+  public static SNode copyNode(SNode sourceNode) {
+    ourSourceNodesToNewNodes.clear();
+    ourReferences.clear();
+    SNode targetNode = copyNode_internal(sourceNode);
+    processReferences();
+    return targetNode;
+  }
+
+  private static SNode copyNode_internal(SNode sourceNode) {
+
+    SNode targetNode = sourceNode.clone();
+    targetNode.justSetId(targetNode.generateUniqueId());
+
+    ourSourceNodesToNewNodes.put(sourceNode, targetNode);
+
+    List<SReference> references = sourceNode.getReferences();
+    for (SReference reference : references) {
+      ourReferences.add(reference);
+    }
+
+    List<SNode> children = sourceNode.getChildren();
+    for(SNode sourceChild : children) {
+      SNode targetChild = copyNode_internal(sourceChild);
+      targetNode.addChild(sourceChild.getRole_(), targetChild);
+    }
+
+    return targetNode;
+  }
+
+  private static void processReferences () {
+    for (SReference sourceReference : ourReferences) {
+      SNode oldSourceNode = sourceReference.getSourceNode();
+      SNode newSourceNode = ourSourceNodesToNewNodes.get(oldSourceNode);
+
+      if (sourceReference instanceof InternalReference) {
+        SNode oldTargetNode = sourceReference.getTargetNode();
+        SNode newTargetNode = ourSourceNodesToNewNodes.get(oldTargetNode);
+
+        if (newTargetNode != null) {//if our reference points inside our node's subtree
+
+          newSourceNode.addSemanticReference(SReference.newInstance(sourceReference.getRole(), newSourceNode, newTargetNode));
+
+        } else {//otherwise it points out of our node's subtree
+
+          SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, oldTargetNode);
+          if (oldTargetNode == null) {//if we copy a reference which is not resolved yet
+            newReference.setResolveInfo(sourceReference.getResolveInfo());
+            newReference.setTargetClassResolveInfo(sourceReference.getTargetClassResolveInfo());
+          } else {//we copy resolved reference
+            Resolver.setResolveInfo(newReference);
+          }
+          newSourceNode.addSemanticReference(newReference);
+
+        }
+
+      } else if (sourceReference instanceof ExternalReference) {
+
+        String targetNodeId = sourceReference.getTargetNodeId();
+        SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, targetNodeId);
+
+        newSourceNode.addSemanticReference(newReference);
+      }
+
+    }
+  }
+
+  public static void copyNodesToClipboard(List<SNode> nodes) {
+    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
+    cb.setContents(new SNTransferable(nodes), null);
+  }
+
+  public static List<SNode> getNodesFromClipboard(SModel semanticModel) {
+    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
+    Transferable content = cb.getContents(null);
+    if (content == null) return null;
+
+    if (content.isDataFlavorSupported(SModelDataFlavor.sNode)) {
+      SNTransferable nodeTransferable = null;
+      try {
+        nodeTransferable = (SNTransferable) content.getTransferData(SModelDataFlavor.sNode);
+        return nodeTransferable.createNodes(semanticModel);
+      } catch (UnsupportedFlavorException e) {
+        LOG.error("Exception", e);
+      } catch (IOException e) {
+        LOG.error("Exception", e);
+      }
+    }
+
+    if (content.isDataFlavorSupported(DataFlavor.stringFlavor)) {
+      return tryToPasteText(cb, semanticModel);
+    }
+
+    return null;
+  }
+
+  private static List<SNode> tryToPasteText(Clipboard cb, SModel model) {
+    try {
+
+      if (!model.importsLanguage("jetbrains.textLanguage")) return null;
+
+      String text = cb.getData(DataFlavor.stringFlavor).toString();
+
+      List<SNode> result = new ArrayList<SNode>();
+      if (text.contains(".")) { //sentence(s)
+        Text textNode = TextUtil.toText(model, text);
+        for (Sentence sentence : CollectionUtil.iteratorAsIterable(textNode.sentences())) {
+          textNode.removeChild(sentence);
+          result.add(sentence);
+        }
+      } else { //words
+        Sentence sentence = TextUtil.toSentence(model, text);
+        for (Word word : CollectionUtil.iteratorAsIterable(sentence.words())) {
+          sentence.removeChild(word);
+          result.add(word);
+        }
+      }
+      return result;
+    } catch (Exception e) {
+      LOG.error(e);
+      return null;
+    }
+  }
+
+  public static void testCopyPaste () { //todo write it!
+    SModel tempModel = new SModel();
+    
+  }
+
+}

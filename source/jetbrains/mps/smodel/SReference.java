@@ -12,6 +12,7 @@ public abstract class SReference {
   private String myRole;
   private SNode mySourceNode;
   private boolean myIsResolved;
+  protected String myTargetNodeId;
 
   protected SReference(String role, SNode sourceNode) {
     myRole = role;
@@ -62,7 +63,7 @@ public abstract class SReference {
   }
 
 
-  static SReference newInstance(String role, SNode sourceNode, SNode targetNode) {
+  public static SReference newInstance(String role, SNode sourceNode, SNode targetNode) {
     SModel sourceModel = sourceNode.getModel();
     SModel targetModel = targetNode.getModel();
     if (sourceModel == targetModel) {
@@ -95,8 +96,8 @@ public abstract class SReference {
       localNodeId = targetNodeId.substring(offset + 1);
       SModel.ImportElement importElement = sourceModel.addImportElement(targetModelUID);
       SReference resultReference = new ExternalReference(role, sourceNode, localNodeId, importElement, isBad);
-      resultReference.setResolveInfo(resolveInfo);
-      resultReference.setTargetClassResolveInfo(targetClassResolveInfo);
+    /*  resultReference.setResolveInfo(resolveInfo);
+      resultReference.setTargetClassResolveInfo(targetClassResolveInfo);*/
       return resultReference;
     } else {
       SNode targetNode = sourceModel.getNodeById(localNodeId);
@@ -123,4 +124,9 @@ public abstract class SReference {
   public abstract boolean isTargetNode(SNode node);
 
   public abstract boolean isExternal();
+
+  public String getTargetNodeId() {
+    return myTargetNodeId;
+  }
+
 }

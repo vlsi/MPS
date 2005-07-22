@@ -42,6 +42,19 @@ public abstract class SNode implements Cloneable {
     myModel = model;
   }
 
+  public void changeModel(SModel newModel) {
+
+    LOG.assertLog (myParent == null || myParent.myModel == newModel, "CHANGE MODEL: parent must be NULL or must have the same model as your destination model");
+
+    myModel.removeNodeId(myId);
+    myModel = newModel;
+    myModel.setNodeId(getId(), this);
+
+    for (SNode child : myChildren) {
+      child.changeModel(newModel);
+    }
+  }
+
   public SNode clone() {//doesn't copy children, references and back references
     SNode newNode = null;
     try {

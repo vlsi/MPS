@@ -40,7 +40,7 @@ public class Resolver {
 
   }
 
-  private static void setResolveInfo(SReference reference) {
+  public static void setResolveInfo(SReference reference) {
 
     if (reference instanceof ExternalReference) return;
 
