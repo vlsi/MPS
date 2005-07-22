@@ -112,12 +112,12 @@ public class PasteUtil {
     if (pasteTarget.getModel() != pasteNode.getModel()) {
       return PASTE_N_A;
     }
-    if (canPasteToTarget(pasteTarget, pasteNode)) {
-      return PASTE_TO_TAREGT;
-    }
     // if target is root node - paste to model root
     if (pasteTarget.getParent() == null) {
       return PASTE_TO_ROOT;
+    }
+    if (canPasteToTarget(pasteTarget, pasteNode)) {
+      return PASTE_TO_TAREGT;
     }
     if (canPasteToParent(pasteTarget, pasteNode)) {
       return PASTE_TO_PARENT;
