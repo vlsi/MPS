@@ -40,6 +40,7 @@ public class SModelUID implements Comparable {
 
   public SModelUID(String namespace, String name, String stereotype) {
     if (name == null) name = "";
+    if (stereotype == null) stereotype = "";
     if (namespace == null || namespace.length() == 0) {
       myLongName = name;
     } else myLongName = namespace + '.' + name;
