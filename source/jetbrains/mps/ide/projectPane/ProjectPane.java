@@ -132,11 +132,6 @@ public class ProjectPane extends JComponent {
       }
     }
 
-    if (semanticModel != null) {
-      JMenu rootPopupMenu = createRootPopupMenu(semanticModel);
-      popupMenu.add(rootPopupMenu);
-    }
-
     if (selectedTreeNode != null && selectedTreeNode.getSNode() != null) {
       popupMenu.addSeparator();
       addSemanticNodePopupActions(popupMenu, selectedTreeNode.getSNode(), semanticModel);
@@ -307,90 +302,6 @@ public class ProjectPane extends JComponent {
     }
   }
 
-  private JMenu createRootPopupMenu(final SModel semanticModel) {
-    JMenu rootPopupMenu = new JMenu("Create Root Node");
-    rootPopupMenu.setIcon(MPSAction.EMPTY_ICON);
-
-    if (semanticModel.getLanguages().size() == 0) {
-      rootPopupMenu.add(new AbstractActionWithEmptyIcon("<NO LANGUAGES>") {
-        {
-          setEnabled(false);
-        }
-
-        public void actionPerformed(ActionEvent e) {
-        }
-      });
-    }
-
-    for (Language language : semanticModel.getLanguages()) {
-      String languageName = language.getNamespace();
-
-      JMenu langRootsMenu = new JMenu(languageName);
-      langRootsMenu.setIcon(IconManager.getIconFor(language.getNamespace()));
-      rootPopupMenu.add(langRootsMenu);
-
-      Iterator<ConceptDeclaration> iterator = language.semanticTypes();
-      while (iterator.hasNext()) {
-        final ConceptDeclaration typeDeclaration = iterator.next();
-        if (typeDeclaration.getRootable()) {
-
-          String className = SModelUtil.getClassNameFor(typeDeclaration);
-
-          Class cls = null;
-          try {
-            cls = Class.forName(className, true, ClassLoaderManager.getInstance().getClassLoader());
-          } catch (ClassNotFoundException e) {
-          }
-
-          if (cls != null) {
-            langRootsMenu.add(new AbstractAction(typeDeclaration.getName()) {
-              {
-                CommandProcessor.instance().executeCommand(new Runnable() {
-                  public void run() {
-                    SNode node = SModelUtil.instantiateConceptDeclaration(typeDeclaration, ApplicationComponents.getInstance().getComponent(ProjectModel.class).getSModel());
-                    LOG.assertLog(node != null, "Node isn't null");
-                    putValue(Action.SMALL_ICON, IconManager.getIconFor(node));
-                  }
-                }, "find icon for " + typeDeclaration.getName());
-              }
-
-              public void actionPerformed(ActionEvent e) {
-                final SNode[] node = new SNode[1];
-                CommandProcessor.instance().executeCommand(new Runnable() {
-                  public void run() {
-                    node[0] = SModelUtil.instantiateConceptDeclaration(typeDeclaration, semanticModel);
-                    node[0].getModel().addRoot(node[0]);
-                  }
-                }, "add root node " + typeDeclaration.getName());
-                selectNode(node[0]);
-                openEditor();
-              }
-            });
-          } else {
-            langRootsMenu.add(new AbstractActionWithEmptyIcon(typeDeclaration.getName() + " (Structure Isn't Generated)") {
-              {
-                setEnabled(false);
-              }
-
-              public void actionPerformed(ActionEvent e) {
-              }
-            });
-          }
-        }
-      }
-
-      if (langRootsMenu.getItemCount() == 0) {
-        JMenuItem emptyItem = new JMenuItem("empty");
-        emptyItem.setIcon(MPSAction.EMPTY_ICON);
-        emptyItem.setEnabled(false);
-        langRootsMenu.add(emptyItem);
-      }
-    }
-
-
-    return rootPopupMenu;
-  }
-
   private void addSemanticNodePopupActions(JPopupMenu popupMenu, SNode semanticNode, SModel selectedModel) {
     ActionManager.instance().getGroup(PROJECT_PANE_NODE_ACTIONS).add(popupMenu, new ActionContext(myIDE, semanticNode));
 
@@ -402,7 +313,7 @@ public class ProjectPane extends JComponent {
   }
 
 
-  private void openEditor() {
+  public void openEditor() {
     TreePath selectionPath = myTree.getSelectionPath();
     if (selectionPath == null) return;
     if (!(selectionPath.getLastPathComponent() instanceof SNodeTreeNode)) return;
