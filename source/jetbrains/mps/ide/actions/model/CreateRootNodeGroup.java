@@ -42,12 +42,15 @@ public class CreateRootNodeGroup extends ActionGroup {
 
     }
 
-    for (Language language : model.getSModel().getLanguages()) {
+    for (final Language language : model.getSModel().getLanguages()) {
       int addCount = 0;
       String languageName = language.getNamespace();
 
-      ActionGroup langRootsGroup = new ActionGroup(languageName);
-//      langRootsGroup.setIcon(IconManager.getIconFor(language.getNamespace()));
+      ActionGroup langRootsGroup = new ActionGroup(languageName) {
+        public Icon getIcon() {
+          return IconManager.getIconFor(language.getNamespace());
+        }
+      };
       add(langRootsGroup);
 
       Iterator<ConceptDeclaration> iterator = language.semanticTypes();
