@@ -117,7 +117,6 @@ public class ProjectPane extends JComponent {
   }
 
   private void showPopupMenu(MouseEvent e) {
-
     JPopupMenu popupMenu = new JPopupMenu();
 
     TreePath selectionPath = myTree.getSelectionPath();
