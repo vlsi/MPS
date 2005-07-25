@@ -52,6 +52,7 @@ public class ProjectPane extends JComponent {
 
   public static final String PROJECT_PANE_NODE_ACTIONS = "project-pane-node-actions";
   public static final String PROJECT_PANE_MODELS_ACTIONS = "project-pane-models-actions";
+  public static final String PROJECT_PANE_MODEL_ACTIONS = "project-pane-model-actions";
 
   private MyTree myTree = new MyTree();
   private MPSProject myProject;
@@ -153,12 +154,6 @@ public class ProjectPane extends JComponent {
     }
 
     if (selectionPath.getLastPathComponent() instanceof ProjectModelsTreeNode) {
-      popupMenu.add(new AbstractActionWithEmptyIcon("New Model") {
-        public void actionPerformed(ActionEvent e) {
-          new NewModelDialog(myProject, myIDE.getMainFrame()).showDialog();
-        }
-      });
-      popupMenu.addSeparator();
       ActionManager.instance().getGroup(PROJECT_PANE_MODELS_ACTIONS).add(popupMenu, new ActionContext(myIDE));
     }
 
@@ -173,30 +168,10 @@ public class ProjectPane extends JComponent {
 
     if (getSelectedModel() != null) {
       if (selectionPath.getLastPathComponent() instanceof SModelTreeNode) {
-        popupMenu.add(new AbstractActionWithEmptyIcon("Delete Model") {
-          public void actionPerformed(ActionEvent e) {
-            if (JOptionPane.showConfirmDialog(null, "Delete model " + getSelectedModel() + "?", "Delete model", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
-              CommandProcessor.instance().executeCommand(new Runnable() {
-                public void run() {
-                  SModelDescriptor model = getSelectedModel();
-                  myProject.getComponent(EditorsPane.class).closeEditors(model);
-                  myProject.getRootManager().deleteModel(model);
-                  LOG.debug("deleting " + model.getModelFile());
-                }
-              }, "Model delete");
-            }
-          }
-        });
-        if (getSelectedModel().getSModel().importsLanguage("jetbrains.mps.baseLanguage")) {
-          popupMenu.addSeparator();
-          popupMenu.add(new AbstractActionWithEmptyIcon("Synchronize Model With Java") {
-            public void actionPerformed(ActionEvent actionEvent) {
-              ConversionUtil.updateModel(myProject, getSelectedModel().getModelUID(), new Converter(myProject));
-              JOptionPane.showMessageDialog(ProjectPane.this, "Model Synchronized");
-            }
-          });
-        }
-
+        SModelDescriptor model = ((SModelTreeNode) selectionPath.getLastPathComponent()).getModelDescriptor();
+        ActionContext context = new ActionContext(myIDE);
+        context.put(SModelDescriptor.class, model);
+        ActionManager.instance().getGroup(PROJECT_PANE_MODEL_ACTIONS).add(popupMenu, context);
 
         popupMenu.addSeparator();
         popupMenu.add(createGenerateMenu(getSelectedModel()));
