@@ -8,6 +8,7 @@ import jetbrains.mps.conversion.ConversionUtil;
 import jetbrains.mps.conversion.Converter;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.ide.*;
+import jetbrains.mps.ide.actions.importMenu.CreateClassStubAction;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.MPSAction;
@@ -49,7 +50,8 @@ import java.util.List;
 public class ProjectPane extends JComponent {
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);
 
-  public static String PROJECT_PANE_NODE_ACTIONS = "project-pane-node-actions";
+  public static final String PROJECT_PANE_NODE_ACTIONS = "project-pane-node-actions";
+  public static final String PROJECT_PANE_MODELS_ACTIONS = "project-pane-models-actions";
 
   private MyTree myTree = new MyTree();
   private MPSProject myProject;
@@ -157,6 +159,8 @@ public class ProjectPane extends JComponent {
           new NewModelDialog(myProject, myIDE.getMainFrame()).showDialog();
         }
       });
+      popupMenu.addSeparator();
+      ActionManager.instance().getGroup(PROJECT_PANE_MODELS_ACTIONS).add(popupMenu, new ActionContext(myIDE));
     }
 
     if (selectionPath.getLastPathComponent() instanceof ProjectLanguagesTreeNode) {
