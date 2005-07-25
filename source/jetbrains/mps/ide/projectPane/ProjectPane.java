@@ -143,9 +143,6 @@ public class ProjectPane extends JComponent {
     }
 
     if (selectionPath.getLastPathComponent() == myTree.getModel().getRoot()) {
-      popupMenu.add(createGenerateMenu(null));
-      popupMenu.add(createGenerateTextMenu(null));
-      popupMenu.addSeparator();
       popupMenu.add(new AbstractAction("Project Properties", Icons.PROJECT_PROPERTIES_ICON) {
         public void actionPerformed(ActionEvent e) {
           new ProjectPropertiesDialog(myIDE.getMainFrame(), myProject).showDialog();
@@ -173,9 +170,6 @@ public class ProjectPane extends JComponent {
         context.put(SModelDescriptor.class, model);
         ActionManager.instance().getGroup(PROJECT_PANE_MODEL_ACTIONS).add(popupMenu, context);
 
-        popupMenu.addSeparator();
-        popupMenu.add(createGenerateMenu(getSelectedModel()));
-        popupMenu.add(createGenerateTextMenu(getSelectedModel()));
         SModelDescriptor selectedModelDescriptor = getSelectedModel();
         if (selectedModelDescriptor != null) {
           SModel selectedModel = selectedModelDescriptor.getSModel();
@@ -188,6 +182,8 @@ public class ProjectPane extends JComponent {
             }
           }
         }
+        popupMenu.addSeparator();
+        addVCSMenu(popupMenu, getSelectedModel());
       }
     }
 
@@ -202,17 +198,6 @@ public class ProjectPane extends JComponent {
       popupMenu.add(new AbstractAction("Language Properties", Icons.LANGUAGE_PROPERTIES_ICON) {
         public void actionPerformed(ActionEvent e) {
           new LanguagePropertiesDialog(myIDE.getMainFrame(), myProject, languageTreeNode.getLanguage()).showDialog();
-        }
-      });
-    }
-
-    if (getSelectedModel() != null) {
-      popupMenu.addSeparator();
-      addVCSMenu(popupMenu, getSelectedModel());
-      popupMenu.addSeparator();
-      popupMenu.add(new AbstractAction("Model Properties", Icons.MODEL_PROPERTIES_ICON) {
-        public void actionPerformed(ActionEvent e) {
-          DialogUtils.editModelProperties(myIDE);
         }
       });
     }
@@ -320,91 +305,6 @@ public class ProjectPane extends JComponent {
         }
       });
     }
-  }
-
-  private JMenu createGenerateMenu(final SModelDescriptor model) {
-    JMenu result = new JMenu("Generate");
-    if (model != null) {
-      result.setText("Generate From Model");
-    }
-    result.setIcon(MPSAction.EMPTY_ICON);
-
-    List<GeneratorConfiguration> configurations = myProject.getRootManager().getGeneratorConfigurations();
-    sortConfigurations(configurations);
-
-    if (configurations.isEmpty()) {
-      result.add(new AbstractActionWithEmptyIcon("<EMPTY>") {
-        public void actionPerformed(ActionEvent e) {
-        }
-      });
-    }
-
-
-    for (final GeneratorConfiguration conf : configurations) {
-      result.add(new AbstractActionWithEmptyIcon(conf.getName()) {
-        public void actionPerformed(ActionEvent e) {
-          if (model == null) {
-            myProject.getComponent(GeneratorManager.class).generate(conf, false);
-          } else {
-            Set<SModelDescriptor> set = new HashSet<SModelDescriptor>();
-            set.add(model);
-            myProject.getComponent(GeneratorManager.class).generate(conf, set, false);
-          }
-        }
-      });
-    }
-
-    return result;
-  }
-
-  private JMenu createGenerateTextMenu(final SModelDescriptor model) {
-    JMenu result = new JMenu("Generate Text");
-    if (model != null) {
-      result.setText("Generate Text From Model");
-    }
-    result.setIcon(MPSAction.EMPTY_ICON);
-
-    List<GeneratorConfiguration> configurations = myProject.getRootManager().getGeneratorConfigurations();
-    sortConfigurations(configurations);
-
-    if (configurations.isEmpty()) {
-      result.add(new AbstractActionWithEmptyIcon("<EMPTY>") {
-        public void actionPerformed(ActionEvent e) {
-        }
-      });
-    }
-
-    for (final GeneratorConfiguration conf : configurations) {
-      result.add(new AbstractActionWithEmptyIcon(conf.getName()) {
-        public void actionPerformed(ActionEvent e) {
-          if (model == null) {
-            myProject.getComponent(GeneratorManager.class).generate(conf, true);
-          } else {
-            Set<SModelDescriptor> set = new HashSet<SModelDescriptor>();
-            set.add(model);
-            myProject.getComponent(GeneratorManager.class).generate(conf, set, true);
-          }
-        }
-      });
-    }
-
-    return result;
-  }
-
-  private void sortConfigurations(List<GeneratorConfiguration> configurations) {
-    Collections.sort(configurations, new Comparator<GeneratorConfiguration>() {
-      public int compare(GeneratorConfiguration o1, GeneratorConfiguration o2) {
-        String n1 = o1.getName();
-        String n2 = o2.getName();
-        if (n1 == null) n1 = "";
-        if (n2 == null) n2 = "";
-        return n1.compareTo(n2);
-      }
-    });
-  }
-
-  private TreePath getRootPath() {
-    return new TreePath(new Object[]{myTree.getModel().getRoot()});
   }
 
   private JMenu createRootPopupMenu(final SModel semanticModel) {
