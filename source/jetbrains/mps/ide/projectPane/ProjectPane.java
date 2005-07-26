@@ -157,7 +157,6 @@ public class ProjectPane extends JComponent {
         context.put(SModelDescriptor.class, model);
         ActionManager.instance().getGroup(PROJECT_PANE_MODEL_ACTIONS).add(popupMenu, context);
         popupMenu.addSeparator();
-        addVCSMenu(popupMenu, getSelectedModel());
       }
     }
 
@@ -179,106 +178,6 @@ public class ProjectPane extends JComponent {
     if (popupMenu.getComponentCount() == 0) return;
 
     popupMenu.show(myTree, e.getX(), e.getY());
-  }
-
-  private void addVCSMenu(final JPopupMenu menu, final SModelDescriptor model) {
-    final JMenu vcsMenu = new JMenu("VCS");
-    vcsMenu.setIcon(MPSAction.EMPTY_ICON);
-
-
-    vcsMenu.addMenuListener(new MenuListener() {
-      public void menuSelected(MenuEvent e) {
-        fillVCSMenu(model, vcsMenu);
-      }
-
-      public void menuDeselected(MenuEvent e) {
-      }
-
-      public void menuCanceled(MenuEvent e) {
-      }
-    });
-
-    menu.add(vcsMenu);
-  }
-
-  private void fillVCSMenu(final SModelDescriptor model, JMenu vcsMenu) {
-    vcsMenu.removeAll();
-
-    final VersionControl vc = model.getVersionControl();
-    if (vc.getStatus() == ModelVCSStatus.UNVERSIONED) {
-      vcsMenu.add(new AbstractActionWithEmptyIcon("<NO VCS AVAILABLE FOR MODEL>") {
-        {
-          setEnabled(false);
-        }
-
-        public void actionPerformed(ActionEvent e) {
-        }
-      });
-      vcsMenu.addSeparator();
-      vcsMenu.add(new AbstractActionWithEmptyIcon("Add") {
-        public void actionPerformed(ActionEvent e) {
-          vc.add();
-        }
-      });
-    } else if (vc.getStatus() == ModelVCSStatus.ADDED) {
-      vcsMenu.add(new AbstractActionWithEmptyIcon("ADDED") {
-        {
-          setEnabled(false);
-        }
-
-        public void actionPerformed(ActionEvent e) {
-        }
-      });
-      vcsMenu.addSeparator();
-      vcsMenu.add(new AbstractActionWithEmptyIcon("Commit") {
-        public void actionPerformed(ActionEvent e) {
-          if (!vc.isChanged()) {
-            JOptionPane.showMessageDialog(ProjectPane.this, "Can't commit. Model isn't changed.");
-            return;
-          }
-
-          String message = JOptionPane.showInputDialog("Enter commit message : ");
-          if (message == null) return;
-          vc.commit(message);
-        }
-      });
-    } else {
-      vcsMenu.add(new AbstractActionWithEmptyIcon("Current Revision " + vc.getCurrentRevisionId()) {
-        {
-          setEnabled(false);
-        }
-
-        public void actionPerformed(ActionEvent actionEvent) {
-        }
-      });
-      vcsMenu.addSeparator();
-      vcsMenu.add(new AbstractActionWithEmptyIcon("Commit") {
-        public void actionPerformed(ActionEvent e) {
-          if (!vc.isChanged()) {
-            JOptionPane.showMessageDialog(ProjectPane.this, "Can't commit. Model isn't changed.");
-            return;
-          }
-
-          String message = JOptionPane.showInputDialog("Enter commit message : ");
-          if (message == null) return;
-          vc.commit(message);
-        }
-      });
-
-      vcsMenu.add(new AbstractActionWithEmptyIcon("Update") {
-        public void actionPerformed(ActionEvent e) {
-          vc.update();
-          myIDE.getEditorsPane().rebuildAllEditors();
-          rebuildTree();
-        }
-      });
-
-      vcsMenu.add(new AbstractActionWithEmptyIcon("Show History") {
-        public void actionPerformed(ActionEvent e) {
-          myIDE.getHistoryView().showHistoryFor(model);
-        }
-      });
-    }
   }
 
   private void addSemanticNodePopupActions(JPopupMenu popupMenu, SNode semanticNode, SModel selectedModel) {
@@ -325,7 +224,7 @@ public class ProjectPane extends JComponent {
     myRebuildEnabled = false;
   }
 
-  private void rebuildTree() {
+  public void rebuildTree() {
     if (!myRebuildEnabled) return;
 
     myTree.rebuildTree();
