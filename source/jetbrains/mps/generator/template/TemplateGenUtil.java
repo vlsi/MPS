@@ -55,6 +55,15 @@ public class TemplateGenUtil {
         continue;
       }
 
+      // give builder an opportunity to resolve reference
+      {
+        SNode targetReferentNode = nodeBuilder.resolveReference(templateReference);
+        if (targetReferentNode != null) {
+          targetNode.addReferent(templateReference.getRole(), targetReferentNode);
+          continue;
+        }
+      }
+
       // external reference?
       if (templateReferentNode.getModel() != templateNode.getModel()) {
         targetNode.addReferent(templateReference.getRole(), templateReferentNode);
@@ -77,7 +86,7 @@ public class TemplateGenUtil {
       nodeBuilder.getGenerator().showErrorMessage(templateNode, "Couldn't resolve template reference \"" + templateReference.getRole() + "\"");
       //test
       LOG.error("uhhh! error. set breakpoint here, referenceResolver:" + referenceResolver);
-//      referenceResolver.resolveTarget(templateReference, nodeBuilder);
+      referenceResolver.resolveTarget(templateReference, nodeBuilder);
       //test
 
       // dump builders info
