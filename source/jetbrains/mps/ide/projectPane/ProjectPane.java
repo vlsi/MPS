@@ -767,7 +767,7 @@ public class ProjectPane extends JComponent {
       models.addAll(language.getLibraryModels());
       Collections.sort(models, new Comparator<SModelDescriptor>() {
         public int compare(SModelDescriptor o1, SModelDescriptor o2) {
-          return o1.getModelUID().toString().compareTo(o2.getModelUID().toString());
+          return o1.getModelUID().compareTo(o2.getModelUID());
         }
       });
       for (SModelDescriptor model : models) {
@@ -793,7 +793,7 @@ public class ProjectPane extends JComponent {
       models.addAll(language.getLibraryModels());
       Collections.sort(models, new Comparator<SModelDescriptor>() {
         public int compare(SModelDescriptor o1, SModelDescriptor o2) {
-          return o1.getModelUID().toString().compareTo(o2.getModelUID().toString());
+          return o1.getModelUID().compareTo(o2.getModelUID());
         }
       });
       for (SModelDescriptor model : models) {
