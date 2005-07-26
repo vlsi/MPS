@@ -89,68 +89,9 @@ public class ProjectPane extends JComponent {
           TreePath path = myTree.getClosestPathForLocation(e.getX(), e.getY());
           myTree.setSelectionPath(path);
         }
-
-        if (e.isPopupTrigger()) {
-          showPopupMenu(e);
-        }
-      }
-
-      public void mouseReleased(MouseEvent e) {
-        if (e.isPopupTrigger()) {
-          showPopupMenu(e);
-        }
       }
     });
     rebuildTree();
-  }
-
-  private void showPopupMenu(MouseEvent e) {
-    JPopupMenu popupMenu = new JPopupMenu();
-
-    TreePath selectionPath = myTree.getSelectionPath();
-    final Object lastPathComponent = selectionPath.getLastPathComponent();
-
-    MPSTreeNodeEx selectedTreeNode = null;
-    if (lastPathComponent instanceof MPSTreeNodeEx) {
-      selectedTreeNode = (MPSTreeNodeEx) lastPathComponent;
-    }
-
-    if (selectedTreeNode != null && selectedTreeNode.getSNode() != null) {
-      ActionManager.instance().getGroup(PROJECT_PANE_NODE_ACTIONS).add(popupMenu, new ActionContext(myIDE, selectedTreeNode.getSNode()));
-    }
-
-    if (selectionPath.getLastPathComponent() == myTree.getModel().getRoot()) {
-      ActionManager.instance().getGroup(PROJECT_PANE_PROJECT_ACTIONS).add(popupMenu, new ActionContext(myIDE));
-    }
-
-    if (selectionPath.getLastPathComponent() instanceof ProjectModelsTreeNode) {
-      ActionManager.instance().getGroup(PROJECT_PANE_MODELS_ACTIONS).add(popupMenu, new ActionContext(myIDE));
-    }
-
-    if (selectionPath.getLastPathComponent() instanceof ProjectLanguagesTreeNode) {
-      ActionManager.instance().getGroup(PROJECT_PANE_PROJECT_LANGUAGES_ACTIONS).add(popupMenu, new ActionContext(myIDE));
-    }
-
-    if (getSelectedModel() != null) {
-      if (selectionPath.getLastPathComponent() instanceof SModelTreeNode) {
-        SModelDescriptor model = ((SModelTreeNode) selectionPath.getLastPathComponent()).getModelDescriptor();
-        ActionContext context = new ActionContext(myIDE);
-        context.put(SModelDescriptor.class, model);
-        ActionManager.instance().getGroup(PROJECT_PANE_MODEL_ACTIONS).add(popupMenu, context);
-      }
-    }
-
-    if (lastPathComponent instanceof ProjectLanguageTreeNode) {
-      final ProjectLanguageTreeNode languageTreeNode = ((ProjectLanguageTreeNode) lastPathComponent);
-      final Language language = languageTreeNode.getLanguage();
-      ActionContext context = new ActionContext(myIDE);
-      context.put(Language.class, language);
-      ActionManager.instance().getGroup(PROJECT_PANE_LANGUAGE_ACTIONS).add(popupMenu, context);
-    }
-
-    if (popupMenu.getComponentCount() == 0) return;
-
-    popupMenu.show(myTree, e.getX(), e.getY());
   }
 
 
@@ -304,8 +245,14 @@ public class ProjectPane extends JComponent {
   }
 
 
-  private static class ProjectTreeNode extends MPSTreeNode {
+  private class ProjectTreeNode extends MPSTreeNode {
     public ProjectTreeNode() {
+    }
+
+    protected JPopupMenu getPopupMenu() {
+      JPopupMenu result = new JPopupMenu();
+      ActionManager.instance().getGroup(PROJECT_PANE_PROJECT_ACTIONS).add(result, new ActionContext(myIDE));
+      return result;
     }
 
     public Icon getIcon(boolean expanded) {
@@ -336,6 +283,12 @@ public class ProjectPane extends JComponent {
 
     public Icon getIcon(boolean expanded) {
       return Icons.PROJECT_MODELS_ICON;
+    }
+
+    protected JPopupMenu getPopupMenu() {
+      JPopupMenu result = new JPopupMenu();
+      ActionManager.instance().getGroup(PROJECT_PANE_MODELS_ACTIONS).add(result, new ActionContext(myIDE));
+      return result;
     }
   }
 
@@ -369,6 +322,12 @@ public class ProjectPane extends JComponent {
       myNodeReference = new SNodeProxy(node);
       myRole = role;
       setUserObject(node);
+    }
+
+    protected JPopupMenu getPopupMenu() {
+      JPopupMenu result = new JPopupMenu();
+      ActionManager.instance().getGroup(PROJECT_PANE_NODE_ACTIONS).add(result, new ActionContext(myIDE, getSNode()));
+      return result;
     }
 
     public SNodeTreeNode(SNode node) {
@@ -472,6 +431,15 @@ public class ProjectPane extends JComponent {
         return Icons.TEMPLATES_MODEL_ICON;
       }
       return Icons.MODEL_ICON;
+    }
+
+    protected JPopupMenu getPopupMenu() {
+      JPopupMenu result = new JPopupMenu();
+      SModelDescriptor model = getModelDescriptor();
+      ActionContext context = new ActionContext(myIDE);
+      context.put(SModelDescriptor.class, model);
+      ActionManager.instance().getGroup(PROJECT_PANE_MODEL_ACTIONS).add(result, context);
+      return result;
     }
 
     public SModel getSModel() {
@@ -623,6 +591,15 @@ public class ProjectPane extends JComponent {
       return myLanguage.getNamespace();
     }
 
+    protected JPopupMenu getPopupMenu() {
+      JPopupMenu result = new JPopupMenu();
+      final Language language = getLanguage();
+      ActionContext context = new ActionContext(myIDE);
+      context.put(Language.class, language);
+      ActionManager.instance().getGroup(PROJECT_PANE_LANGUAGE_ACTIONS).add(result, context);
+      return result;
+    }
+
     public String toString() {
       if (myLanguage.isUpToDate()) {
         return "<html>" + myLanguage.getNamespace() + "  <b>(up-to-date)</b>";
@@ -656,7 +633,7 @@ public class ProjectPane extends JComponent {
     return myTree;
   }
 
-  private static class ProjectLanguagesTreeNode extends MPSTree.TextTreeNode {
+  private class ProjectLanguagesTreeNode extends MPSTree.TextTreeNode {
     public ProjectLanguagesTreeNode() {
       super("Project Languages");
     }
@@ -664,9 +641,15 @@ public class ProjectPane extends JComponent {
     public Icon getIcon(boolean expanded) {
       return Icons.PROJECT_LANGUAGES_ICON;
     }
+
+    protected JPopupMenu getPopupMenu() {
+      JPopupMenu result = new JPopupMenu();
+      ActionManager.instance().getGroup(PROJECT_PANE_PROJECT_LANGUAGES_ACTIONS).add(result, new ActionContext(myIDE));
+      return result;
+    }
   }
 
-  private static class LanguagesTreeNode extends MPSTree.TextTreeNode {
+  private class LanguagesTreeNode extends MPSTree.TextTreeNode {
     public LanguagesTreeNode() {
       super("Languages");
     }
