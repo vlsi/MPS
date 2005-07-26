@@ -27,7 +27,7 @@ public abstract class BaseDialog extends JDialog {
       innerButtonsPanel.add(button);
     }
     buttonsPanel.add(myErrorLabel, BorderLayout.WEST);
-    buttonsPanel.add(innerButtonsPanel, BorderLayout.EAST);
+    buttonsPanel.add(innerButtonsPanel, getButtonsPosition());
     add(buttonsPanel, BorderLayout.SOUTH);
 
     ((JComponent) getContentPane()).registerKeyboardAction(new AbstractAction("Dispose dialog") {
@@ -40,6 +40,11 @@ public abstract class BaseDialog extends JDialog {
 
     setVisible(true);
   }
+
+  protected String getButtonsPosition() {
+    return BorderLayout.EAST;
+  }
+
 
   protected void setErrorText(String errorText) {
     myErrorLabel.setText(errorText);
