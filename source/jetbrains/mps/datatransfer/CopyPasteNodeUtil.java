@@ -104,7 +104,7 @@ public class CopyPasteNodeUtil {
 
   public static void copyNodesToClipboard(List<SNode> nodes) {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
-    cb.setContents(new SNodeTransferable(nodes), null);
+    cb.setContents(new SNTransferable(nodes), null);
   }
 
   public static void copyNodeToClipboard(SNode node) {
@@ -119,9 +119,9 @@ public class CopyPasteNodeUtil {
     if (content == null) return null;
 
     if (content.isDataFlavorSupported(SModelDataFlavor.sNode)) {
-      SNodeTransferable nodeTransferable = null;
+      SNTransferable nodeTransferable = null;
       try {
-        nodeTransferable = (SNodeTransferable) content.getTransferData(SModelDataFlavor.sNode);
+        nodeTransferable = (SNTransferable) content.getTransferData(SModelDataFlavor.sNode);
         return nodeTransferable.createNodes(model);
       } catch (UnsupportedFlavorException e) {
         LOG.error("Exception", e);

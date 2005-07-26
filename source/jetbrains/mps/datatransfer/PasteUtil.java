@@ -40,6 +40,59 @@ public class PasteUtil {
   private static final int PASTE_TO_PARENT = 2;
   private static final int PASTE_TO_ROOT = 3;
 
+  public static List<SNode> getNodesFromClipboard(SModel semanticModel) {
+    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
+    Transferable content = cb.getContents(null);
+    if (content == null) return null;
+
+    if (content.isDataFlavorSupported(SModelDataFlavor.semanticNode)) {
+      SNodeTransferable nodeTransferable = null;
+      try {
+        nodeTransferable = (SNodeTransferable) content.getTransferData(SModelDataFlavor.semanticNode);
+        return nodeTransferable.createNodes(semanticModel, true);  //preserve internal references
+      } catch (UnsupportedFlavorException e) {
+        LOG.error("Exception", e);
+      } catch (IOException e) {
+        LOG.error("Exception", e);
+      }
+    }
+
+
+    if (content.isDataFlavorSupported(DataFlavor.stringFlavor)) {
+      return tryToPasteText(cb, semanticModel);
+    }
+
+    return null;
+  }
+
+  private static List<SNode> tryToPasteText(Clipboard cb, SModel model) {
+    try {
+
+      if (!model.importsLanguage("jetbrains.textLanguage")) return null;
+
+      String text = cb.getData(DataFlavor.stringFlavor).toString();
+
+      List<SNode> result = new ArrayList<SNode>();
+      if (text.contains(".")) { //sentence(s)
+        Text textNode = TextUtil.toText(model, text);
+        for (Sentence sentence : CollectionUtil.iteratorAsIterable(textNode.sentences())) {
+          textNode.removeChild(sentence);
+          result.add(sentence);
+        }
+      } else { //words
+        Sentence sentence = TextUtil.toSentence(model, text);
+        for (Word word : CollectionUtil.iteratorAsIterable(sentence.words())) {
+          sentence.removeChild(word);
+          result.add(word);
+        }
+      }
+      return result;
+    } catch (Exception e) {
+      LOG.error(e);
+      return null;
+    }
+  }
+
   public static boolean canPaste(SNode pasteTarget, SNode pasteNode) {
     return (canPaste_internal(pasteTarget, pasteNode) != PASTE_N_A);
   }
