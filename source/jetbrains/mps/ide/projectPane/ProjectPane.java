@@ -44,6 +44,7 @@ public class ProjectPane extends JComponent {
   public static final String PROJECT_PANE_NODE_ACTIONS = "project-pane-node-actions";
   public static final String PROJECT_PANE_MODELS_ACTIONS = "project-pane-models-actions";
   public static final String PROJECT_PANE_MODEL_ACTIONS = "project-pane-model-actions";
+  public static final String PROJECT_PANE_VCS_ACTIONS = "project-pane-vcs-actions";
 
   private MyTree myTree = new MyTree();
   private MPSProject myProject;
