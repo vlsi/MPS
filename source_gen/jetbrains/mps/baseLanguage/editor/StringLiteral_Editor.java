@@ -33,6 +33,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "\""));
     editorCell.addEditorCell(this.createValueCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "\""));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1079623722228");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -45,6 +46,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setFontType(MPSFonts.BOLD);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1079623722229");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
@@ -58,6 +60,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     editorCell.getTextLine().setFontType(MPSFonts.BOLD);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
     __ExpressionClosingParethesis_ActionSet.setCellActions(editorCell, node);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1079623722231");
     return editorCell;
   }
   public EditorCell createValueCell(EditorContext context, SNode node) {
@@ -72,6 +75,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     editorCell.getTextLine().setFontType(MPSFonts.BOLD);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "value"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1079623722230");
     return editorCell;
   }
 }

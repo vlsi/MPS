@@ -24,6 +24,7 @@ public class Expression_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     Expression_NodeBoxActions.setCellActions(editorCell, node);
     editorCell.addKeyMap(new _Expression_KeyMap());
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075376431437");
     return editorCell;
   }
 }

@@ -28,6 +28,7 @@ public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createHeaderRow(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1083244251719");
     return editorCell;
   }
   public EditorCell createHeaderRow(EditorContext context, SNode node) {
@@ -39,6 +40,7 @@ public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createConstantCell(context, node, "Primitive Data Type"));
     editorCell.addEditorCell(this.createNameCell(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1083244251720");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -49,6 +51,7 @@ public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1083244251721");
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext context, SNode node) {
@@ -63,6 +66,7 @@ public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
     editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1083244251722");
     return editorCell;
   }
 }

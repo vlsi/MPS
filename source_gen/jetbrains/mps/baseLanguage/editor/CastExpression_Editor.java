@@ -38,6 +38,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createTypeCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ")"));
     editorCell.addEditorCell(this.createExpressionCell(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1080902646660");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -48,6 +49,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1080902646661");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
@@ -58,6 +60,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1080902646663");
     return editorCell;
   }
   public EditorCell createTypeCell(EditorContext context, SNode node) {
@@ -76,6 +79,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
       CastExpression_CastTypeActions.setCellActions(noRefCell, node);
       _DefErrorActions.setCellActions(noRefCell, node);
+      noRefCell.putUserObject(EditorCell.CELL_ID, "1080902646662");
       return noRefCell;
     }
     if(referencedNode == null) {
@@ -90,6 +94,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
         CastExpression_CastTypeActions.setCellActions(noRefCell, node);
         _DefErrorActions.setCellActions(noRefCell, node);
+        noRefCell.putUserObject(EditorCell.CELL_ID, "1080902646662");
         return noRefCell;
       }
     }
@@ -119,6 +124,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
       CastExpression_CastExpressionActions.setCellActions(noRefCell, node);
       _DefErrorActions.setCellActions(noRefCell, node);
+      noRefCell.putUserObject(EditorCell.CELL_ID, "1080902646664");
       return noRefCell;
     }
     if(referencedNode == null) {
@@ -133,6 +139,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
         CastExpression_CastExpressionActions.setCellActions(noRefCell, node);
         _DefErrorActions.setCellActions(noRefCell, node);
+        noRefCell.putUserObject(EditorCell.CELL_ID, "1080902646664");
         return noRefCell;
       }
     }

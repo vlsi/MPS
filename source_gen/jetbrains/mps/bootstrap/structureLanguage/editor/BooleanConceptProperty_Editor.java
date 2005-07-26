@@ -9,9 +9,11 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.resolve.BadReferenceTextProvider;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
@@ -31,12 +33,28 @@ public class BooleanConceptProperty_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createConceptPropertyDeclarationReferenceCell(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1105727453183");
     return editorCell;
   }
   public EditorCell createConceptPropertyDeclarationReferenceCell(EditorContext context, SNode node) {
     SNode effectiveNode = null;
+    SReference reference = null;
     effectiveNode = node.getReferent("conceptPropertyDeclaration");
+    reference = node.getReference("conceptPropertyDeclaration");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "conceptPropertyDeclaration");
+    if(!(reference == null) && !((reference.isResolved()))) {
+      EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
+      noRefCell.setEditable(true);
+      noRefCell.setDrawBrackets(false);
+      noRefCell.setBracketsColor(Color.black);
+      noRefCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
+      noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
+      noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+      noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
+      BooleanConceptProperty_BooleanConceptProperties_Menu.setCellActions(noRefCell, node);
+      noRefCell.putUserObject(EditorCell.CELL_ID, "1105727610547");
+      return noRefCell;
+    }
     if(effectiveNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "<no property>");
@@ -48,6 +66,7 @@ public class BooleanConceptProperty_Editor extends DefaultNodeEditor {
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
         BooleanConceptProperty_BooleanConceptProperties_Menu.setCellActions(noRefCell, node);
+        noRefCell.putUserObject(EditorCell.CELL_ID, "1105727610547");
         return noRefCell;
       }
     }

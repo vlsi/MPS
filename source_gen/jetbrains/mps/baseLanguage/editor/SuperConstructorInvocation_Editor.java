@@ -31,6 +31,7 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "super("));
     editorCell.addEditorCell(this.createActualArgumentList(context, node));
     editorCell.addEditorCell(this.createConstantCell2(context, node, ");"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1085059533049");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -42,6 +43,7 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1085059604178");
     return editorCell;
   }
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
@@ -52,6 +54,7 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1085140612097");
     return editorCell;
   }
   public EditorCell createActualArgumentList(EditorContext context, SNode node) {

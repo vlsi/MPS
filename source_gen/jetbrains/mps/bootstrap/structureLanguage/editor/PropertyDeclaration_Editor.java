@@ -16,9 +16,11 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.resolve.BadReferenceTextProvider;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
@@ -39,6 +41,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createNameCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, ":"));
     editorCell.addEditorCell(this.createDataTypeReferenceCell(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1082985570613");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -49,6 +52,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1082987076546");
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext context, SNode node) {
@@ -63,12 +67,27 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getTextLine().setFontType(MPSFonts.BOLD);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1082985570614");
     return editorCell;
   }
   public EditorCell createDataTypeReferenceCell(EditorContext context, SNode node) {
     SNode effectiveNode = null;
+    SReference reference = null;
     effectiveNode = node.getReferent("dataType");
+    reference = node.getReference("dataType");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "dataType");
+    if(!(reference == null) && !((reference.isResolved()))) {
+      EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
+      noRefCell.setEditable(true);
+      noRefCell.setDrawBrackets(false);
+      noRefCell.setBracketsColor(Color.black);
+      noRefCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
+      noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
+      noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+      noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
+      noRefCell.putUserObject(EditorCell.CELL_ID, "1106002077142");
+      return noRefCell;
+    }
     if(effectiveNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "<no data type>");
@@ -79,6 +98,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
+        noRefCell.putUserObject(EditorCell.CELL_ID, "1106002077142");
         return noRefCell;
       }
     }

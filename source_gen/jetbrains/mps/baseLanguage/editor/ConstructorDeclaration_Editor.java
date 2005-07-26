@@ -40,6 +40,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createHeaderRow(context, node));
     editorCell.addEditorCell(this.createBodyArea(context, node));
     editorCell.addEditorCell(this.createConstantCell2(context, node, "}"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075139052657");
     return editorCell;
   }
   public EditorCell createHeaderRow(EditorContext context, SNode node) {
@@ -53,6 +54,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "("));
     editorCell.addEditorCell(this.create_BaseMethodParmListEditorCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ") {"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075139052658");
     return editorCell;
   }
   public EditorCell createBodyArea(EditorContext context, SNode node) {
@@ -64,6 +66,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createIndentCell(context, node, "  "));
     editorCell.addEditorCell(this.createBodyCell(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075139937803");
     return editorCell;
   }
   public EditorCell create_BaseMethodParmListEditorCell(EditorContext context, SNode node) {
@@ -75,6 +78,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1079958138015");
     return editorCell;
   }
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
@@ -85,6 +89,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075139395584");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -95,6 +100,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075140096042");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
@@ -105,6 +111,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075140096043");
     return editorCell;
   }
   public EditorCell createIndentCell(EditorContext context, SNode node, String text) {
@@ -115,6 +122,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075139937804");
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext context, SNode node) {
@@ -126,6 +134,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("<constructor>");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1107467684674");
     return editorCell;
   }
   public EditorCell createBodyCell(EditorContext context, SNode node) {
@@ -142,6 +151,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
       noRefCell.setBracketsColor(Color.black);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+      noRefCell.putUserObject(EditorCell.CELL_ID, "1075139937805");
       return noRefCell;
     }
     if(referencedNode == null) {
@@ -154,6 +164,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+        noRefCell.putUserObject(EditorCell.CELL_ID, "1075139937805");
         return noRefCell;
       }
     }

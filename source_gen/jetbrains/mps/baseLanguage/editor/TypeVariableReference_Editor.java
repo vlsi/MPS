@@ -39,6 +39,7 @@ public class TypeVariableReference_Editor extends DefaultNodeEditor {
       noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
+      noRefCell.putUserObject(EditorCell.CELL_ID, "1109283721555");
       return noRefCell;
     }
     if(effectiveNode == null) {
@@ -51,6 +52,7 @@ public class TypeVariableReference_Editor extends DefaultNodeEditor {
         noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
+        noRefCell.putUserObject(EditorCell.CELL_ID, "1109283721555");
         return noRefCell;
       }
     }

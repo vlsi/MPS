@@ -33,6 +33,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRowCell(context, node));
     editorCell.addEditorCell(this.createSeparator(context, node, "  "));
     editorCell.addEditorCell(this.createRowCell1(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1082979388797");
     return editorCell;
   }
   public EditorCell createHeaderRow(EditorContext context, SNode node) {
@@ -44,6 +45,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createConstantCell(context, node, "Simple Data Type"));
     editorCell.addEditorCell(this.createNameCell(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1082979388814");
     return editorCell;
   }
   public EditorCell createRowCell(EditorContext context, SNode node) {
@@ -55,6 +57,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createConstantCell1(context, node, "    extends:"));
     editorCell.addEditorCell(this.createSimpleDataType_ExtendedDataTypeNameCell(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1082979707911");
     return editorCell;
   }
   public EditorCell createRowCell1(EditorContext context, SNode node) {
@@ -66,6 +69,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createConstantCell2(context, node, "    constraint:"));
     editorCell.addEditorCell(this.createConstraintCell(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1083066231720");
     return editorCell;
   }
   public EditorCell createSeparator(EditorContext context, SNode node, String text) {
@@ -76,6 +80,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1083066231719");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -86,6 +91,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1082979388815");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
@@ -96,6 +102,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1082979707912");
     return editorCell;
   }
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
@@ -106,6 +113,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1083066231721");
     return editorCell;
   }
   public EditorCell createSimpleDataType_ExtendedDataTypeNameCell(EditorContext context, SNode node) {
@@ -118,6 +126,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     ConstrainedDataTypeDeclaration_ExtendsCellActions.setCellActions(editorCell, node);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1083243939643");
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext context, SNode node) {
@@ -132,6 +141,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
     editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1082979388816");
     return editorCell;
   }
   public EditorCell createConstraintCell(EditorContext context, SNode node) {
@@ -146,6 +156,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
     editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "constraint"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1083066231722");
     return editorCell;
   }
 }

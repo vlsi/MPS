@@ -36,6 +36,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRowCell(context, node));
     editorCell.addEditorCell(this.createRowCell1(context, node));
     editorCell.addEditorCell(this.createRowCell2(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1081264241575");
     return editorCell;
   }
   public EditorCell createRowCell(EditorContext context, SNode node) {
@@ -49,6 +50,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell1(context, node, "("));
     editorCell.addEditorCell(this.createConditionCell(context, node));
     editorCell.addEditorCell(this.createConstantCell2(context, node, ") {"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1081264241576");
     return editorCell;
   }
   public EditorCell createRowCell1(EditorContext context, SNode node) {
@@ -60,6 +62,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createConstantCell3(context, node, "  "));
     editorCell.addEditorCell(this.createBodyCell(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1081264296784");
     return editorCell;
   }
   public EditorCell createRowCell2(EditorContext context, SNode node) {
@@ -70,6 +73,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createConstantCell4(context, node, "}"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1081264296786");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -81,6 +85,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1081264296765");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
@@ -91,6 +96,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1101210485457");
     return editorCell;
   }
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
@@ -101,6 +107,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1081264296767");
     return editorCell;
   }
   public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
@@ -111,6 +118,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1090928635163");
     return editorCell;
   }
   public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
@@ -121,6 +129,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1081264296787");
     return editorCell;
   }
   public EditorCell createConditionCell(EditorContext context, SNode node) {
@@ -140,6 +149,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
       WhileStatement_ConditionCellActions.setCellActions(noRefCell, node);
       _DefErrorActions.setCellActions(noRefCell, node);
       noRefCell.addKeyMap(new _Expression_KeyMap());
+      noRefCell.putUserObject(EditorCell.CELL_ID, "1081264296766");
       return noRefCell;
     }
     if(referencedNode == null) {
@@ -155,6 +165,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
         WhileStatement_ConditionCellActions.setCellActions(noRefCell, node);
         _DefErrorActions.setCellActions(noRefCell, node);
         noRefCell.addKeyMap(new _Expression_KeyMap());
+        noRefCell.putUserObject(EditorCell.CELL_ID, "1081264296766");
         return noRefCell;
       }
     }
@@ -183,6 +194,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
       noRefCell.setBracketsColor(Color.black);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+      noRefCell.putUserObject(EditorCell.CELL_ID, "1081264296785");
       return noRefCell;
     }
     if(referencedNode == null) {
@@ -195,6 +207,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+        noRefCell.putUserObject(EditorCell.CELL_ID, "1081264296785");
         return noRefCell;
       }
     }

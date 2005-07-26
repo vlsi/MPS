@@ -36,6 +36,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createTypeCell(context, node));
     editorCell.addEditorCell(this.createNameCell(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075302295735");
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext context, SNode node) {
@@ -49,6 +50,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
     ParameterDeclaration_NameCellActions.setCellActions(editorCell, node);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075302295737");
     return editorCell;
   }
   public EditorCell createTypeCell(EditorContext context, SNode node) {
@@ -66,6 +68,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
       ParameterDeclaration_TypeCellActions.setCellActions(noRefCell, node);
+      noRefCell.putUserObject(EditorCell.CELL_ID, "1075302295736");
       return noRefCell;
     }
     if(referencedNode == null) {
@@ -79,6 +82,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
         ParameterDeclaration_TypeCellActions.setCellActions(noRefCell, node);
+        noRefCell.putUserObject(EditorCell.CELL_ID, "1075302295736");
         return noRefCell;
       }
     }

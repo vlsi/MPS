@@ -39,6 +39,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     }
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1109280119303");
     return editorCell;
   }
   public EditorCell createRowCell(EditorContext context, SNode node) {
@@ -51,6 +52,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     editorCell.addEditorCell(this.createConstantCell(context, node, "<"));
     editorCell.addEditorCell(this.createTypeVariableDeclarationList(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ">"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1109280205087");
     return editorCell;
   }
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
@@ -62,6 +64,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.addKeyMap(new _GenericDeclaration_AddTypeVariable_KeyMap());
+    editorCell.putUserObject(EditorCell.CELL_ID, "1109280404592");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -72,6 +75,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1109280296588");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
@@ -82,6 +86,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1109280296590");
     return editorCell;
   }
   public EditorCell createTypeVariableDeclarationList(EditorContext context, SNode node) {

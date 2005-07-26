@@ -37,6 +37,7 @@ public class NotExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "!("));
     editorCell.addEditorCell(this.createExpressionCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ")"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1081929706295");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -47,6 +48,7 @@ public class NotExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1081930071608");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
@@ -57,6 +59,7 @@ public class NotExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1081930071610");
     return editorCell;
   }
   public EditorCell createExpressionCell(EditorContext context, SNode node) {
@@ -74,6 +77,7 @@ public class NotExpression_Editor extends DefaultNodeEditor {
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
       NotExpression_NotExpressionActions.setCellActions(noRefCell, node);
+      noRefCell.putUserObject(EditorCell.CELL_ID, "1081930071609");
       return noRefCell;
     }
     if(referencedNode == null) {
@@ -87,6 +91,7 @@ public class NotExpression_Editor extends DefaultNodeEditor {
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
         NotExpression_NotExpressionActions.setCellActions(noRefCell, node);
+        noRefCell.putUserObject(EditorCell.CELL_ID, "1081930071609");
         return noRefCell;
       }
     }

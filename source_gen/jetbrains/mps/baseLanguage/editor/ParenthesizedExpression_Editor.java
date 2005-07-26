@@ -37,6 +37,7 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "("));
     editorCell.addEditorCell(this.createExpressionCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ")"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1081880010409");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -48,6 +49,7 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.addKeyMap(new _LeftParen_KeyMap());
+    editorCell.putUserObject(EditorCell.CELL_ID, "1081880010410");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
@@ -60,6 +62,7 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     __ExpressionClosingParethesis_ActionSet.setCellActions(editorCell, node);
     editorCell.addKeyMap(new _RightParen_KeyMap());
+    editorCell.putUserObject(EditorCell.CELL_ID, "1081880010412");
     return editorCell;
   }
   public EditorCell createExpressionCell(EditorContext context, SNode node) {
@@ -77,6 +80,7 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
       ParenthesizedExpression_ExpressionActions.setCellActions(noRefCell, node);
+      noRefCell.putUserObject(EditorCell.CELL_ID, "1081880010411");
       return noRefCell;
     }
     if(referencedNode == null) {
@@ -90,6 +94,7 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
         ParenthesizedExpression_ExpressionActions.setCellActions(noRefCell, node);
+        noRefCell.putUserObject(EditorCell.CELL_ID, "1081880010411");
         return noRefCell;
       }
     }

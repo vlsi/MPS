@@ -10,9 +10,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.resolve.BadReferenceTextProvider;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
@@ -36,6 +38,7 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConceptLinkDeclarationReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "="));
     editorCell.addEditorCell(this.createTargetCell(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1105739124743");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -46,12 +49,28 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1105739124746");
     return editorCell;
   }
   public EditorCell createConceptLinkDeclarationReferenceCell(EditorContext context, SNode node) {
     SNode effectiveNode = null;
+    SReference reference = null;
     effectiveNode = node.getReferent("conceptLinkDeclaration");
+    reference = node.getReference("conceptLinkDeclaration");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "conceptLinkDeclaration");
+    if(!(reference == null) && !((reference.isResolved()))) {
+      EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
+      noRefCell.setEditable(true);
+      noRefCell.setDrawBrackets(false);
+      noRefCell.setBracketsColor(Color.black);
+      noRefCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
+      noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
+      noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+      noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
+      AggregationConceptLink_ConceptLinks_Menu.setCellActions(noRefCell, node);
+      noRefCell.putUserObject(EditorCell.CELL_ID, "1105739124744");
+      return noRefCell;
+    }
     if(effectiveNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "<no link>");
@@ -63,6 +82,7 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
         AggregationConceptLink_ConceptLinks_Menu.setCellActions(noRefCell, node);
+        noRefCell.putUserObject(EditorCell.CELL_ID, "1105739124744");
         return noRefCell;
       }
     }
@@ -82,8 +102,22 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
   }
   public EditorCell createTargetCell(EditorContext context, SNode node) {
     SNode referencedNode = null;
+    SReference reference = null;
     referencedNode = node.getChild("target");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "target");
+    if(!(reference == null) && !((reference.isResolved()))) {
+      EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
+      noRefCell.setEditable(true);
+      noRefCell.setSelectable(true);
+      noRefCell.setDrawBorder(false);
+      noRefCell.setDrawBrackets(false);
+      noRefCell.setBracketsColor(Color.black);
+      noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+      noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+      AggregationConceptLink_ConceptLinkTargets_Menu.setCellActions(noRefCell, node);
+      noRefCell.putUserObject(EditorCell.CELL_ID, "1105987989392");
+      return noRefCell;
+    }
     if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
@@ -95,6 +129,7 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
         AggregationConceptLink_ConceptLinkTargets_Menu.setCellActions(noRefCell, node);
+        noRefCell.putUserObject(EditorCell.CELL_ID, "1105987989392");
         return noRefCell;
       }
     }

@@ -36,6 +36,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createLeftExpressionCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "instanceof"));
     editorCell.addEditorCell(this.createClassTypeCell(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1081257073129");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -47,6 +48,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1081257097747");
     return editorCell;
   }
   public EditorCell createLeftExpressionCell(EditorContext context, SNode node) {
@@ -65,6 +67,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
       InstanceOfExpression_LeftExpressionsActions.setCellActions(noRefCell, node);
       _DefErrorActions.setCellActions(noRefCell, node);
+      noRefCell.putUserObject(EditorCell.CELL_ID, "1081257097746");
       return noRefCell;
     }
     if(referencedNode == null) {
@@ -79,6 +82,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
         InstanceOfExpression_LeftExpressionsActions.setCellActions(noRefCell, node);
         _DefErrorActions.setCellActions(noRefCell, node);
+        noRefCell.putUserObject(EditorCell.CELL_ID, "1081257097746");
         return noRefCell;
       }
     }
@@ -108,6 +112,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
       InstanceOfExpression_InstanceOfTypes.setCellActions(noRefCell, node);
       _DefErrorActions.setCellActions(noRefCell, node);
+      noRefCell.putUserObject(EditorCell.CELL_ID, "1081257097748");
       return noRefCell;
     }
     if(referencedNode == null) {
@@ -122,6 +127,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
         InstanceOfExpression_InstanceOfTypes.setCellActions(noRefCell, node);
         _DefErrorActions.setCellActions(noRefCell, node);
+        noRefCell.putUserObject(EditorCell.CELL_ID, "1081257097748");
         return noRefCell;
       }
     }

@@ -29,6 +29,7 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createConstantCell(context, node, "integer concept property declaration"));
     editorCell.addEditorCell(this.createNameCell(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1105726994976");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -39,6 +40,7 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1105727034368");
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext context, SNode node) {
@@ -51,6 +53,7 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1105727076103");
     return editorCell;
   }
 }

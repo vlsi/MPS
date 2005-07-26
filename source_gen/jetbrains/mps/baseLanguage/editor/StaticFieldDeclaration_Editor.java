@@ -46,6 +46,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createInitializerArea(context, node));
     }
     editorCell.addEditorCell(this.createConstantCell2(context, node, ";"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1084188901669");
     return editorCell;
   }
   public EditorCell createInitializerArea(EditorContext context, SNode node) {
@@ -57,6 +58,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createConstantCell1(context, node, "="));
     editorCell.addEditorCell(this.createInitializerCell(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1084188979616");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -68,6 +70,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1084188979613");
     return editorCell;
   }
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
@@ -78,6 +81,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1084188979619");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
@@ -88,6 +92,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1084188979617");
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext context, SNode node) {
@@ -103,6 +108,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
     StaticFieldDeclaration_NameCellActions.setCellActions(editorCell, node);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1084188979615");
     return editorCell;
   }
   public EditorCell createTypeCell(EditorContext context, SNode node) {
@@ -120,6 +126,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
       StaticFieldDeclaration_TypeCellActions.setCellActions(noRefCell, node);
+      noRefCell.putUserObject(EditorCell.CELL_ID, "1084188979614");
       return noRefCell;
     }
     if(referencedNode == null) {
@@ -133,6 +140,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
         StaticFieldDeclaration_TypeCellActions.setCellActions(noRefCell, node);
+        noRefCell.putUserObject(EditorCell.CELL_ID, "1084188979614");
         return noRefCell;
       }
     }
@@ -162,6 +170,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
       __VariableInitializer_ActionSet.setCellActions(noRefCell, node);
       noRefCell.addKeyMap(new _Expression_KeyMap());
+      noRefCell.putUserObject(EditorCell.CELL_ID, "1084188979618");
       return noRefCell;
     }
     if(referencedNode == null) {
@@ -177,6 +186,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
         __VariableInitializer_ActionSet.setCellActions(noRefCell, node);
         noRefCell.addKeyMap(new _Expression_KeyMap());
+        noRefCell.putUserObject(EditorCell.CELL_ID, "1084188979618");
         return noRefCell;
       }
     }

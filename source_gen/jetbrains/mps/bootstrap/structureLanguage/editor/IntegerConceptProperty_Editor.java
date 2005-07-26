@@ -15,9 +15,11 @@ import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.resolve.BadReferenceTextProvider;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
@@ -38,6 +40,7 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConceptPropertyDeclarationReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "="));
     editorCell.addEditorCell(this.createValueCell(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1105727243426");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -48,6 +51,7 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1105727371774");
     return editorCell;
   }
   public EditorCell createValueCell(EditorContext context, SNode node) {
@@ -61,12 +65,28 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "value"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1105727402759");
     return editorCell;
   }
   public EditorCell createConceptPropertyDeclarationReferenceCell(EditorContext context, SNode node) {
     SNode effectiveNode = null;
+    SReference reference = null;
     effectiveNode = node.getReferent("conceptPropertyDeclaration");
+    reference = node.getReference("conceptPropertyDeclaration");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "conceptPropertyDeclaration");
+    if(!(reference == null) && !((reference.isResolved()))) {
+      EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
+      noRefCell.setEditable(true);
+      noRefCell.setDrawBrackets(false);
+      noRefCell.setBracketsColor(Color.black);
+      noRefCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
+      noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
+      noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+      noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
+      IntegerConceptProperty_IntegerConceptProperties_Menu.setCellActions(noRefCell, node);
+      noRefCell.putUserObject(EditorCell.CELL_ID, "1105727338100");
+      return noRefCell;
+    }
     if(effectiveNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "<no property>");
@@ -78,6 +98,7 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
         IntegerConceptProperty_IntegerConceptProperties_Menu.setCellActions(noRefCell, node);
+        noRefCell.putUserObject(EditorCell.CELL_ID, "1105727338100");
         return noRefCell;
       }
     }

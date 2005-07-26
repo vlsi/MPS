@@ -44,6 +44,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     if(this.handleConditionalQuery_1075379580458(node)) {
       editorCell.addEditorCell(this.createConstantCell5(context, node, "}"));
     }
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075379419313");
     return editorCell;
   }
   public EditorCell createHeaderRow(EditorContext context, SNode node) {
@@ -57,6 +58,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell1(context, node, "("));
     editorCell.addEditorCell(this.createConditionCell(context, node));
     editorCell.addEditorCell(this.createConstantCell2(context, node, ") {"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075379444330");
     return editorCell;
   }
   public EditorCell createIfTrueBox(EditorContext context, SNode node) {
@@ -68,6 +70,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createIndentCell(context, node, "  "));
     editorCell.addEditorCell(this.createIfTrueCell(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075379536706");
     return editorCell;
   }
   public EditorCell createIfFalseBranch(EditorContext context, SNode node) {
@@ -80,6 +83,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell3(context, node, "}"));
     editorCell.addEditorCell(this.createConstantCell4(context, node, "else"));
     editorCell.addEditorCell(this.createIfFalseStatementCell(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075379536707");
     return editorCell;
   }
   public EditorCell createConstantCell5(EditorContext context, SNode node, String text) {
@@ -91,6 +95,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     IfStatement_IfClosingBracketActions.setCellActions(editorCell, node);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075379580458");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -102,6 +107,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1101210485455");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
@@ -112,6 +118,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075379663006");
     return editorCell;
   }
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
@@ -122,6 +129,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075379740164");
     return editorCell;
   }
   public EditorCell createIndentCell(EditorContext context, SNode node, String text) {
@@ -132,6 +140,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1075379821384");
     return editorCell;
   }
   public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
@@ -142,6 +151,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1082541374920");
     return editorCell;
   }
   public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
@@ -154,6 +164,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setFontType(MPSFonts.BOLD);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1101210485456");
     return editorCell;
   }
   public EditorCell createConditionCell(EditorContext context, SNode node) {
@@ -172,6 +183,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
       IfStatement_ConditionCellActions.setCellActions(noRefCell, node);
       _DefErrorActions.setCellActions(noRefCell, node);
+      noRefCell.putUserObject(EditorCell.CELL_ID, "1075379700788");
       return noRefCell;
     }
     if(referencedNode == null) {
@@ -186,6 +198,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
         IfStatement_ConditionCellActions.setCellActions(noRefCell, node);
         _DefErrorActions.setCellActions(noRefCell, node);
+        noRefCell.putUserObject(EditorCell.CELL_ID, "1075379700788");
         return noRefCell;
       }
     }
@@ -213,6 +226,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       noRefCell.setBracketsColor(Color.black);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+      noRefCell.putUserObject(EditorCell.CELL_ID, "1082486433802");
       return noRefCell;
     }
     if(referencedNode == null) {
@@ -225,6 +239,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+        noRefCell.putUserObject(EditorCell.CELL_ID, "1082486433802");
         return noRefCell;
       }
     }
@@ -251,6 +266,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       noRefCell.setBracketsColor(Color.black);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+      noRefCell.putUserObject(EditorCell.CELL_ID, "1119293948309");
       return noRefCell;
     }
     if(referencedNode == null) {
@@ -264,6 +280,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+        noRefCell.putUserObject(EditorCell.CELL_ID, "1119293948309");
         return noRefCell;
       }
     }

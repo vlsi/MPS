@@ -16,9 +16,11 @@ import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
+import jetbrains.mps.resolve.BadReferenceTextProvider;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
@@ -59,6 +61,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createTargetReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "specializes:"));
     editorCell.addEditorCell(this.createLinkDeclaration_SpecializedLinkRoleCell(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1084189569970");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -69,6 +72,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1084192678902");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
@@ -79,6 +83,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1084189693806");
     return editorCell;
   }
   public EditorCell createLinkDeclaration_SpecializedMetaclassCell(EditorContext context, SNode node) {
@@ -92,6 +97,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextBackgroundColor(Color.lightGray);
     LinkDeclaration_DisableDelete_Actions.setCellActions(editorCell, node);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1084205682784");
     return editorCell;
   }
   public EditorCell createLinkDeclaration_SpecializedSourceCardinalityCell(EditorContext context, SNode node) {
@@ -105,6 +111,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextBackgroundColor(Color.lightGray);
     LinkDeclaration_DisableDelete_Actions.setCellActions(editorCell, node);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1084205682785");
     return editorCell;
   }
   public EditorCell createLinkDeclaration_SpecializedTargetCardinalityCell(EditorContext context, SNode node) {
@@ -118,6 +125,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextBackgroundColor(Color.lightGray);
     LinkDeclaration_DisableDelete_Actions.setCellActions(editorCell, node);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1084205682786");
     return editorCell;
   }
   public EditorCell createLinkDeclaration_SpecializedLinkRoleCell(EditorContext context, SNode node) {
@@ -130,6 +138,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     LinkDeclaration_SpecializedLink_Actions.setCellActions(editorCell, node);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1084189693807");
     return editorCell;
   }
   public EditorCell createRoleCell(EditorContext context, SNode node) {
@@ -142,6 +151,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "role"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1084189569972");
     return editorCell;
   }
   public EditorCell createMetaClassCell(EditorContext context, SNode node) {
@@ -155,6 +165,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setSubstituteInfo(new LinkMetaclass_PropertySubstituteInfo(node, "metaClass"));
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "metaClass"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1084205682781");
     return editorCell;
   }
   public EditorCell createSourceCardinalityCell(EditorContext context, SNode node) {
@@ -168,6 +179,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setSubstituteInfo(new Cardinality_PropertySubstituteInfo(node, "sourceCardinality"));
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "sourceCardinality"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1084205682782");
     return editorCell;
   }
   public EditorCell createTargetCardinalityCell(EditorContext context, SNode node) {
@@ -181,12 +193,27 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setSubstituteInfo(new Cardinality_PropertySubstituteInfo(node, "targetCardinality"));
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "targetCardinality"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1084205682783");
     return editorCell;
   }
   public EditorCell createTargetReferenceCell(EditorContext context, SNode node) {
     SNode effectiveNode = null;
+    SReference reference = null;
     effectiveNode = node.getReferent("target");
+    reference = node.getReference("target");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "target");
+    if(!(reference == null) && !((reference.isResolved()))) {
+      EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
+      noRefCell.setEditable(true);
+      noRefCell.setDrawBrackets(false);
+      noRefCell.setBracketsColor(Color.black);
+      noRefCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
+      noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
+      noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+      noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
+      noRefCell.putUserObject(EditorCell.CELL_ID, "1096455263454");
+      return noRefCell;
+    }
     if(effectiveNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "<no target>");
@@ -197,6 +224,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
+        noRefCell.putUserObject(EditorCell.CELL_ID, "1096455263454");
         return noRefCell;
       }
     }

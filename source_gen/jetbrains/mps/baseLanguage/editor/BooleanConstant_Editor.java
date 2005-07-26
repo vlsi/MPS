@@ -36,6 +36,7 @@ public class BooleanConstant_Editor extends DefaultNodeEditor {
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "value"));
     __Expression_RTransform_ActionSet.setCellActions(editorCell, node);
     editorCell.addKeyMap(new _Expression_KeyMap());
+    editorCell.putUserObject(EditorCell.CELL_ID, "1088424970609");
     return editorCell;
   }
 }

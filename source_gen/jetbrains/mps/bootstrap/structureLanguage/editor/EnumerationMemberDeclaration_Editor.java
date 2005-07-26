@@ -38,6 +38,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell3(context, node, ")"));
     editorCell.addEditorCell(this.createConstantCell4(context, node, "default:"));
     editorCell.addEditorCell(this.createEnumMember_IsDefaultCell(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1083925414250");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -48,6 +49,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1083925414251");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
@@ -58,6 +60,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1083925414253");
     return editorCell;
   }
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
@@ -68,6 +71,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1083925414255");
     return editorCell;
   }
   public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
@@ -78,6 +82,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1083925414257");
     return editorCell;
   }
   public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
@@ -88,6 +93,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1083925414258");
     return editorCell;
   }
   public EditorCell createEnumMember_IsDefaultCell(EditorContext context, SNode node) {
@@ -100,6 +106,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     EnumerationMemberDeclaration_IsDefaultActions.setCellActions(editorCell, node);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1083925414259");
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext context, SNode node) {
@@ -114,6 +121,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
     editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1083925414252");
     return editorCell;
   }
   public EditorCell createExternalValueCell(EditorContext context, SNode node) {
@@ -127,6 +135,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextBackgroundColor(Color.cyan);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "externalValue"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1083925414254");
     return editorCell;
   }
   public EditorCell createInternalValueCell(EditorContext context, SNode node) {
@@ -141,6 +150,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
     editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "internalValue"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1083925414256");
     return editorCell;
   }
 }

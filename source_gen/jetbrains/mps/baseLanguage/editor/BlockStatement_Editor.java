@@ -34,6 +34,7 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createRowCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "}"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1119291654779");
     return editorCell;
   }
   public EditorCell createRowCell(EditorContext context, SNode node) {
@@ -45,6 +46,7 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createConstantCell(context, node, "{"));
     editorCell.addEditorCell(this.createStatementsCell(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1119291719344");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
@@ -55,6 +57,7 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1119291721269");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -65,6 +68,7 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1119291719345");
     return editorCell;
   }
   public EditorCell createStatementsCell(EditorContext context, SNode node) {
@@ -81,6 +85,7 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
       noRefCell.setBracketsColor(Color.black);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+      noRefCell.putUserObject(EditorCell.CELL_ID, "1119291719346");
       return noRefCell;
     }
     if(referencedNode == null) {
@@ -93,6 +98,7 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+        noRefCell.putUserObject(EditorCell.CELL_ID, "1119291719346");
         return noRefCell;
       }
     }
