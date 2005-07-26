@@ -60,7 +60,7 @@ public class TextCopyPasteUtil {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     Transferable content = cb.getContents(null);
     if (content == null) return false;
-    return (content.isDataFlavorSupported(SModelDataFlavor.sNode));
+    return (content.isDataFlavorSupported(SModelDataFlavor.semanticNode));
   }
 
 }
