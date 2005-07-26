@@ -28,9 +28,10 @@ public class SModel implements Iterable<SNode> {
   private List<SModelListener> myListeners = new ArrayList<SModelListener>();
   private List<SModelCommandListener> myCommandListeners = new ArrayList<SModelCommandListener>();
   private List<SNode> myRoots = new ArrayList<SNode>();
-  private String myName = "unnamed";
+ /* private String myName = "unnamed";
   private String myNamespace = "";
-  private String myStereotype = "";
+  private String myStereotype = "";*/
+  private SModelUID myUID = new SModelUID("unnamed","");
   private boolean isLoading = false;
 
   private int myMaxReferenceID;
@@ -43,9 +44,7 @@ public class SModel implements Iterable<SNode> {
 
   public SModel(SModelUID modelUID) {
     this();
-    myName = modelUID.getName();
-    myNamespace = modelUID.getNamespace();
-    myStereotype = modelUID.getStereotype();
+    myUID = modelUID;
   }
 
   public SModel() {
@@ -54,25 +53,19 @@ public class SModel implements Iterable<SNode> {
   }
 
   public SModelUID getModelUID () {
-    return new SModelUID(myNamespace, myName, myStereotype);
+    return myUID;
   }
 
   public void setModelUID (SModelUID modelUID) {
-    myName = NameUtil.nameFromFQName(modelUID.getLongName());
-    myNamespace = NameUtil.namespaceFromFQName(modelUID.getStereotype());
-    myStereotype = modelUID.getStereotype();
+    myUID = modelUID;
   }
 
   public String getName() {
-    return myName;
-  }
-
-  public void setName(String name) {
-    myName = name;
+    return myUID.getName();
   }
 
   public String getNamespace() {
-    return myNamespace;
+    return myUID.getNamespace();
   }
 
   public void runLoadingAction(Runnable runnable) {
@@ -89,16 +82,20 @@ public class SModel implements Iterable<SNode> {
     return roots();
   }
 
-  public void setNamespace(String namespace) {
-    myNamespace = namespace;
-  }
-
   public String getStereotype() {
-    return myStereotype;
+    return myUID.getStereotype();
   }
 
   public void setStereotype(String stereotype) {
-    myStereotype = stereotype;
+    myUID = new SModelUID(myUID.getLongName(), stereotype);
+  }
+
+  public void setLongName(String longName) {
+    myUID = new SModelUID(longName, myUID.getStereotype());
+  }
+
+  public String getLongName() {
+    return myUID.getLongName();
   }
 
   public Iterator<SNode> roots() {
