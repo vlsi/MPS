@@ -34,10 +34,13 @@ public class CopyPasteNodeUtil {
   private static HashSet<SReference> ourReferences = new HashSet<SReference>();
 
   public static SNode copyNode(SNode sourceNode) {
+    SModel model = sourceNode.getModel();
+    model.setLoading(true);
     ourSourceNodesToNewNodes.clear();
     ourReferences.clear();
     SNode targetNode = copyNode_internal(sourceNode);
     processReferences();
+    model.setLoading(false);
     return targetNode;
   }
 
@@ -104,7 +107,13 @@ public class CopyPasteNodeUtil {
     cb.setContents(new SNTransferable(nodes), null);
   }
 
-  public static List<SNode> getNodesFromClipboard(SModel semanticModel) {
+  public static void copyNodeToClipboard(SNode node) {
+    List<SNode> list = new ArrayList<SNode>();
+    list.add(node);
+    copyNodesToClipboard(list);
+  }
+
+  public static List<SNode> getNodesFromClipboard(SModel model) {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     Transferable content = cb.getContents(null);
     if (content == null) return null;
@@ -113,7 +122,7 @@ public class CopyPasteNodeUtil {
       SNTransferable nodeTransferable = null;
       try {
         nodeTransferable = (SNTransferable) content.getTransferData(SModelDataFlavor.sNode);
-        return nodeTransferable.createNodes(semanticModel);
+        return nodeTransferable.createNodes(model);
       } catch (UnsupportedFlavorException e) {
         LOG.error("Exception", e);
       } catch (IOException e) {
@@ -122,10 +131,14 @@ public class CopyPasteNodeUtil {
     }
 
     if (content.isDataFlavorSupported(DataFlavor.stringFlavor)) {
-      return tryToPasteText(cb, semanticModel);
+      return tryToPasteText(cb, model);
     }
 
     return null;
+  }
+
+  public static SNode getNodeFromClipboard(SModel model) {
+    return getNodesFromClipboard(model).get(0);
   }
 
   private static List<SNode> tryToPasteText(Clipboard cb, SModel model) {
@@ -156,9 +169,5 @@ public class CopyPasteNodeUtil {
     }
   }
 
-  public static void testCopyPaste () { //todo write it!
-    SModel tempModel = new SModel();
-    
-  }
 
 }

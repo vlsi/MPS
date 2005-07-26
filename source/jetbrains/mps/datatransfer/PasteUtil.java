@@ -186,11 +186,11 @@ public class PasteUtil {
   private static boolean pasteToParent_internal(SNode anchorNode, SNode pasteNode, String role, boolean pasteBefore, boolean reallyPaste) {
     SNode actualPasteTarget = null;
     NodeAndRole nodeAndRole = defineActualAnchorNode(anchorNode, pasteNode, role);
+    if (!reallyPaste) {
+      return (nodeAndRole != null && nodeAndRole.node != null);
+    }
     SNode actualAnchorNode = nodeAndRole.node;
     String actualRole = nodeAndRole.role;
-    if (!reallyPaste) {
-      return (actualAnchorNode != null);
-    }
     actualPasteTarget = actualAnchorNode.getParent();
     if (actualPasteTarget == null) {
       return false;
