@@ -2,7 +2,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelListener;
-import jetbrains.mps.smodel.vcs.VersionControl;
+import jetbrains.mps.vcs.model.VersionControl;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 
 import java.util.Set;

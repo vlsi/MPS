@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 
 import jetbrains.mps.generator.IModelGenerator;
-import jetbrains.mps.smodel.vcs.Revision;
+import jetbrains.mps.vcs.model.Revision;
 
 /**
  * @author Kostik
@@ -145,7 +145,7 @@ public class MPSPlugin {
   public boolean isFileChanged(String path) throws IOException, XmlRpcException {
     Vector<String> params = new Vector<String>();
     params.add(path);
-    return (Boolean) myClient.execute("MPSSupport.isFileChanged", params); 
+    return (Boolean) myClient.execute("MPSSupport.isFileChanged", params);
   }
 
 
@@ -164,7 +164,7 @@ public class MPSPlugin {
 
   public String getCurrentRevisionFor(String path) throws IOException, XmlRpcException {
     Vector params = new Vector();
-     params.add(path);                           
+     params.add(path);
     return (String) myClient.execute("MPSSupport.getCurrentRevisionFor", params);
   }
 

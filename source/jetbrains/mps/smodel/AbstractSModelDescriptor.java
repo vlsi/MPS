@@ -7,7 +7,7 @@ import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
-import jetbrains.mps.smodel.vcs.VersionControl;
+import jetbrains.mps.vcs.model.VersionControl;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.VersionControlManager;
 
