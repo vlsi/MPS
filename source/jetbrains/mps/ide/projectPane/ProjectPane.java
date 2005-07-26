@@ -1,13 +1,9 @@
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.bootstrap.editorLanguage.BaseEditorComponent;
-import jetbrains.mps.bootstrap.editorLanguage.EditorCellModel;
-import jetbrains.mps.bootstrap.editorLanguage.EditorLanguageUtil;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.ide.*;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
-import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.HeaderWrapper;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -18,13 +14,9 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjectCommandListener;
 import jetbrains.mps.project.RootManager;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.vcs.model.VersionControl;
-import jetbrains.mps.vcs.model.ModelVCSStatus;
 import jetbrains.mps.smodel.event.*;
 
 import javax.swing.*;
-import javax.swing.event.MenuListener;
-import javax.swing.event.MenuEvent;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
@@ -45,6 +37,7 @@ public class ProjectPane extends JComponent {
   public static final String PROJECT_PANE_MODELS_ACTIONS = "project-pane-models-actions";
   public static final String PROJECT_PANE_MODEL_ACTIONS = "project-pane-model-actions";
   public static final String PROJECT_PANE_VCS_ACTIONS = "project-pane-vcs-actions";
+  public static final String PROJECT_PANE_LANGUAGE_ACTIONS = "project-pane-language-actions";
 
   private MyTree myTree = new MyTree();
   private MPSProject myProject;
@@ -114,19 +107,10 @@ public class ProjectPane extends JComponent {
 
     TreePath selectionPath = myTree.getSelectionPath();
     final Object lastPathComponent = selectionPath.getLastPathComponent();
-    MPSTreeNodeEx selectedTreeNode = null;
-    SModel semanticModel = null;
-
-    if (lastPathComponent instanceof MPSTreeNodeEx) {
-      selectedTreeNode = (MPSTreeNodeEx) selectionPath.getLastPathComponent();
-      if (selectedTreeNode != null) {
-        semanticModel = ((MPSTreeNodeEx) selectedTreeNode).getSModel();
-      }
-    }
+    MPSTreeNodeEx selectedTreeNode = (MPSTreeNodeEx) lastPathComponent;
 
     if (selectedTreeNode != null && selectedTreeNode.getSNode() != null) {
-      popupMenu.addSeparator();
-      addSemanticNodePopupActions(popupMenu, selectedTreeNode.getSNode(), semanticModel);
+      ActionManager.instance().getGroup(PROJECT_PANE_NODE_ACTIONS).add(popupMenu, new ActionContext(myIDE, selectedTreeNode.getSNode()));
     }
 
     if (selectionPath.getLastPathComponent() == myTree.getModel().getRoot()) {
@@ -156,32 +140,20 @@ public class ProjectPane extends JComponent {
         ActionContext context = new ActionContext(myIDE);
         context.put(SModelDescriptor.class, model);
         ActionManager.instance().getGroup(PROJECT_PANE_MODEL_ACTIONS).add(popupMenu, context);
-        popupMenu.addSeparator();
       }
     }
 
     if (lastPathComponent instanceof ProjectLanguageTreeNode) {
       final ProjectLanguageTreeNode languageTreeNode = ((ProjectLanguageTreeNode) lastPathComponent);
-      popupMenu.add(new AbstractActionWithEmptyIcon("Generate Language") {
-        public void actionPerformed(ActionEvent e) {
-          myProject.getComponent(GeneratorManager.class).generate(languageTreeNode.getLanguage());
-        }
-      });
-      popupMenu.addSeparator();
-      popupMenu.add(new AbstractAction("Language Properties", Icons.LANGUAGE_PROPERTIES_ICON) {
-        public void actionPerformed(ActionEvent e) {
-          new LanguagePropertiesDialog(myIDE.getMainFrame(), myProject, languageTreeNode.getLanguage()).showDialog();
-        }
-      });
+      final Language language = languageTreeNode.getLanguage();
+      ActionContext context = new ActionContext(myIDE);
+      context.put(Language.class, language);
+      ActionManager.instance().getGroup(PROJECT_PANE_LANGUAGE_ACTIONS).add(popupMenu, context);
     }
 
     if (popupMenu.getComponentCount() == 0) return;
 
     popupMenu.show(myTree, e.getX(), e.getY());
-  }
-
-  private void addSemanticNodePopupActions(JPopupMenu popupMenu, SNode semanticNode, SModel selectedModel) {
-    ActionManager.instance().getGroup(PROJECT_PANE_NODE_ACTIONS).add(popupMenu, new ActionContext(myIDE, semanticNode));
   }
 
 
