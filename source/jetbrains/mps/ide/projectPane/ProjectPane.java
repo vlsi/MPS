@@ -155,19 +155,6 @@ public class ProjectPane extends JComponent {
         ActionContext context = new ActionContext(myIDE);
         context.put(SModelDescriptor.class, model);
         ActionManager.instance().getGroup(PROJECT_PANE_MODEL_ACTIONS).add(popupMenu, context);
-
-        SModelDescriptor selectedModelDescriptor = getSelectedModel();
-        if (selectedModelDescriptor != null) {
-          SModel selectedModel = selectedModelDescriptor.getSModel();
-          for (Language language : selectedModel.getLanguages()) {
-            if (language.getNamespace().equals("jetbrains.mps.bootstrap.editorLanguage")) {
-              popupMenu.addSeparator();
-              popupMenu.add(EditorLanguageUtil.createTurnCellBordersOnOffAction(selectedModel, true, myProject));
-              popupMenu.add(EditorLanguageUtil.createTurnCellBordersOnOffAction(selectedModel, false, myProject));
-              break;
-            }
-          }
-        }
         popupMenu.addSeparator();
         addVCSMenu(popupMenu, getSelectedModel());
       }
@@ -295,12 +282,6 @@ public class ProjectPane extends JComponent {
 
   private void addSemanticNodePopupActions(JPopupMenu popupMenu, SNode semanticNode, SModel selectedModel) {
     ActionManager.instance().getGroup(PROJECT_PANE_NODE_ACTIONS).add(popupMenu, new ActionContext(myIDE, semanticNode));
-
-    if (semanticNode instanceof BaseEditorComponent || semanticNode instanceof EditorCellModel) {
-      popupMenu.addSeparator();
-      popupMenu.add(EditorLanguageUtil.createTurnCellBordersOnOffAction(semanticNode, true, myProject));
-      popupMenu.add(EditorLanguageUtil.createTurnCellBordersOnOffAction(semanticNode, false, myProject));
-    }
   }
 
 

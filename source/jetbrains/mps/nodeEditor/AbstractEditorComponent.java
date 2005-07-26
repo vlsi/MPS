@@ -309,18 +309,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     ActionGroup group = ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS);
     group.add(popupMenu, new ActionContext(ApplicationComponents.getInstance().getComponent(IdeMain.class), selectedNode));
 
-//    if (selectedNode instanceof ClassConcept) {
-//      popupMenu.addSeparator();
-//      popupMenu.add(createGenStubFromClassFileAction((ClassConcept) selectedNode));
-//    }
-
-    if (selectedNode instanceof BaseEditorComponent ||
-            selectedNode instanceof EditorCellModel) {
-      popupMenu.addSeparator();
-      popupMenu.add(EditorLanguageUtil.createTurnCellBordersOnOffAction(selectedNode, true, getContext().getProject()));
-      popupMenu.add(EditorLanguageUtil.createTurnCellBordersOnOffAction(selectedNode, false, getContext().getProject()));
-    }
-
     popupMenu.show(AbstractEditorComponent.this, e.getX(), e.getY());
   }
 
