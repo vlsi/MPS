@@ -38,6 +38,8 @@ public class ProjectPane extends JComponent {
   public static final String PROJECT_PANE_MODEL_ACTIONS = "project-pane-model-actions";
   public static final String PROJECT_PANE_VCS_ACTIONS = "project-pane-vcs-actions";
   public static final String PROJECT_PANE_LANGUAGE_ACTIONS = "project-pane-language-actions";
+  public static final String PROJECT_PANE_PROJECT_ACTIONS = "project-pane-project-actions";
+  public static final String PROJECT_PANE_PROJECT_LANGUAGES_ACTIONS = "project-pane-project-languages-actions";
 
   private MyTree myTree = new MyTree();
   private MPSProject myProject;
@@ -107,18 +109,18 @@ public class ProjectPane extends JComponent {
 
     TreePath selectionPath = myTree.getSelectionPath();
     final Object lastPathComponent = selectionPath.getLastPathComponent();
-    MPSTreeNodeEx selectedTreeNode = (MPSTreeNodeEx) lastPathComponent;
+
+    MPSTreeNodeEx selectedTreeNode = null;
+    if (lastPathComponent instanceof MPSTreeNodeEx) {
+      selectedTreeNode = (MPSTreeNodeEx) lastPathComponent;
+    }
 
     if (selectedTreeNode != null && selectedTreeNode.getSNode() != null) {
       ActionManager.instance().getGroup(PROJECT_PANE_NODE_ACTIONS).add(popupMenu, new ActionContext(myIDE, selectedTreeNode.getSNode()));
     }
 
     if (selectionPath.getLastPathComponent() == myTree.getModel().getRoot()) {
-      popupMenu.add(new AbstractAction("Project Properties", Icons.PROJECT_PROPERTIES_ICON) {
-        public void actionPerformed(ActionEvent e) {
-          new ProjectPropertiesDialog(myIDE.getMainFrame(), myProject).showDialog();
-        }
-      });
+      ActionManager.instance().getGroup(PROJECT_PANE_PROJECT_ACTIONS).add(popupMenu, new ActionContext(myIDE));
     }
 
     if (selectionPath.getLastPathComponent() instanceof ProjectModelsTreeNode) {
@@ -126,12 +128,7 @@ public class ProjectPane extends JComponent {
     }
 
     if (selectionPath.getLastPathComponent() instanceof ProjectLanguagesTreeNode) {
-      popupMenu.add(new AbstractActionWithEmptyIcon("New Language") {
-        public void actionPerformed(ActionEvent e) {
-          NewLanguageDialog dialog = new NewLanguageDialog(myIDE.getMainFrame(), myProject);
-          dialog.showDialog();
-        }
-      });
+      ActionManager.instance().getGroup(PROJECT_PANE_PROJECT_LANGUAGES_ACTIONS).add(popupMenu, new ActionContext(myIDE));
     }
 
     if (getSelectedModel() != null) {
