@@ -461,9 +461,9 @@ public class ProjectPane extends JComponent {
     public String toString() {
       String fqName = myModelDescriptor.getModelUID().toString();
 
-      if (isImported()) {
-        fqName += " <b>(imported)</b>";
-      }
+//      if (isImported()) {
+//        fqName += " <b>(imported)</b>";
+//      }
 
       if (myModelDescriptor.isInitialized() && SModelRepository.getInstance().isChanged(myModelDescriptor)) {
         fqName = "<font color=\"#000090\">" + fqName + "</font>";
