@@ -5,16 +5,16 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <import referenceID="8" name="structure" namespace="jetbrains.mps.baseLanguage" stereotype="" />
   <import referenceID="9" name="structure" namespace="jetbrains.mps.core" stereotype="" />
-  <import referenceID="14" name="lang" namespace="java" stereotype="" />
-  <import referenceID="15" name="smodel" namespace="jetbrains.mps" stereotype="" />
-  <import referenceID="16" name="util" namespace="java" stereotype="" />
-  <import referenceID="17" name="structureLanguage" namespace="jetbrains.mps.bootstrap" stereotype="" />
-  <import referenceID="18" name="core" namespace="jetbrains.mps" stereotype="" />
-  <import referenceID="19" name="baseLanguage" namespace="jetbrains.mps" stereotype="" />
-  <import referenceID="21" name="generator" namespace="jetbrains.mps" stereotype="" />
-  <import referenceID="22" name="collectionLanguage" namespace="jetbrains.mps" stereotype="" />
-  <import referenceID="23" name="findUsages" namespace="jetbrains.mps" stereotype="" />
-  <import referenceID="20" name="nodeEditor" namespace="jetbrains.mps" stereotype="" />
+  <import referenceID="14" modelUID="java.lang@java_stub" stereotype="" />
+  <import referenceID="15" modelUID="jetbrains.mps.smodel@java_stub" stereotype="" />
+  <import referenceID="16" modelUID="java.util@java_stub" stereotype="" />
+  <import referenceID="17" modelUID="jetbrains.mps.bootstrap.structureLanguage@java_stub" stereotype="" />
+  <import referenceID="18" modelUID="jetbrains.mps.core@java_stub" stereotype="" />
+  <import referenceID="19" modelUID="jetbrains.mps.baseLanguage@java_stub" stereotype="" />
+  <import referenceID="21" modelUID="jetbrains.mps.generator@java_stub" stereotype="" />
+  <import referenceID="22" modelUID="jetbrains.mps.collectionLanguage@java_stub" stereotype="" />
+  <import referenceID="23" modelUID="jetbrains.mps.findUsages@java_stub" stereotype="" />
+  <import referenceID="20" modelUID="jetbrains.mps.nodeEditor@java_stub" stereotype="" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1115664491666">
     <property name="name" value="__util" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1115664491683">

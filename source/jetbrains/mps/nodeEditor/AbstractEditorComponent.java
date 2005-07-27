@@ -1,8 +1,5 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.bootstrap.editorLanguage.BaseEditorComponent;
-import jetbrains.mps.bootstrap.editorLanguage.EditorCellModel;
-import jetbrains.mps.bootstrap.editorLanguage.EditorLanguageUtil;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.IdeMain;
@@ -16,7 +13,7 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.rerform.CellRangeSelection;
+import jetbrains.mps.nodeEditor.reform.CellRangeSelection;
 import jetbrains.mps.nodeEditor.test.EventRecorder;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;

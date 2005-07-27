@@ -2,7 +2,7 @@
 <model namespace="jetbrains.mps.baseLanguage.sandbox">
   <maxReferenceID value="1" />
   <language namespace="jetbrains.mps.baseLanguage" />
-  <import referenceID="1" name="lang" namespace="java" />
+  <import referenceID="1" modelUID="java.lang@java_stub" />
   <node type="jetbrains.mps.baseLanguage.Interface" id="1115766127296">
     <property name="name" value="IBaseInterface" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1115766147547">

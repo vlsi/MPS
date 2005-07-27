@@ -109,7 +109,28 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
-    return myUIDToModelDescriptorMap.get(modelUID);
+    SModelDescriptor descriptor = myUIDToModelDescriptorMap.get(modelUID);
+    if (descriptor != null) {
+      return descriptor;
+    }
+
+    if (modelUID.getStereotype().length() > 0) {
+//      LOG.error("No model descriptors found for uid \"" + modelUID.toString() + "\"");
+      return null;
+    }
+
+    // todo: tmp solution
+    List<SModelDescriptor> descriptors = getModelDescriptors(modelUID.getLongName());
+    if (descriptors.size() == 1) {
+      return descriptors.get(0);
+    }
+    if (descriptors.size() == 0) {
+//      LOG.error("No model descriptors found for name \"" + modelUID.getLongName() + "\"");
+      return null;
+    }
+
+    LOG.error(descriptors.size() + " model descriptors found for name \"" + modelUID.getLongName() + "\"");
+    return null;
   }
 
   public List<SModelDescriptor> getModelDescriptors(String modelName) {

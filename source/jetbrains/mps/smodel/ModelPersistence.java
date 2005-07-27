@@ -44,6 +44,7 @@ public class ModelPersistence {
   private static final String MAX_REFERENCE_ID = "maxReferenceID";
   private static final String LANGUAGE = "language";
   private static final String STEREOTYPE = "stereotype";
+  private static final String MODEL_UID = "modelUID";
 
 
   private static Document loadModelDocument(File file) {
@@ -130,11 +131,17 @@ public class ModelPersistence {
     List imports = rootElement.getChildren(IMPORT_ELEMENT);
     for (Iterator iterator = imports.iterator(); iterator.hasNext();) {
       Element element = (Element) iterator.next();
-      String importedModelFQName = NameUtil.longNameFromNamespaceAndName(element.getAttributeValue(NAMESPACE),
-              element.getAttributeValue(NAME));
       int referenceID = readIntAttributeValue(element, MODEL_REFERENCE_ID);
-      String importedModelStereotype = element.getAttributeValue(STEREOTYPE, "");
-      model.addImportElement(new SModelUID(importedModelFQName, importedModelStereotype), referenceID);
+      String modelUID = element.getAttributeValue(MODEL_UID);
+      if (modelUID != null) {
+        model.addImportElement(SModelUID.fromString(modelUID), referenceID);
+      } else {
+        // read in old manner...
+        String importedModelFQName = NameUtil.longNameFromNamespaceAndName(element.getAttributeValue(NAMESPACE),
+                element.getAttributeValue(NAME));
+        String importedModelStereotype = element.getAttributeValue(STEREOTYPE, "");
+        model.addImportElement(new SModelUID(importedModelFQName, importedModelStereotype), referenceID);
+      }
     }
 
     ArrayList<ReferenceDescriptor> referenceDescriptors = new ArrayList<ReferenceDescriptor>();
@@ -317,9 +324,10 @@ public class ModelPersistence {
       Element importElem = new Element(IMPORT_ELEMENT);
       importElem.setAttribute(MODEL_REFERENCE_ID, "" + importElement.getReferenceID());
       SModelUID modelUID = importElement.getModelUID();
-      importElem.setAttribute(NAME, modelUID.getName());
-      importElem.setAttribute(NAMESPACE, modelUID.getNamespace());
-      importElem.setAttribute(STEREOTYPE, modelUID.getStereotype());
+//      importElem.setAttribute(NAME, modelUID.getName());
+//      importElem.setAttribute(NAMESPACE, modelUID.getNamespace());
+//      importElem.setAttribute(STEREOTYPE, modelUID.getStereotype());
+      importElem.setAttribute(MODEL_UID, modelUID.toString());
       rootElement.addContent(importElem);
     }
 

@@ -10,7 +10,7 @@ package jetbrains.mps.smodel;
 public class SModelStereotype {
   public static final String NONE = "";
   public static final String TEMPLATES = "templates";
-  public static final String IMPORTED = "imported";
+  public static final String JAVA_STUB = "java_stub";
 
-  public static final String[] values = new String[]{NONE, TEMPLATES, IMPORTED};
+  public static final String[] values = new String[]{NONE, TEMPLATES, JAVA_STUB};
 }

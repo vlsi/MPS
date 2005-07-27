@@ -5,11 +5,11 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <import referenceID="1" name="structure" namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <import referenceID="2" name="structure" namespace="jetbrains.mps.core" />
-  <import referenceID="4" name="nodeEditor" namespace="jetbrains.mps" />
-  <import referenceID="5" name="smodel" namespace="jetbrains.mps" />
-  <import referenceID="6" name="lang" namespace="java" />
-  <import referenceID="7" name="util" namespace="java" />
-  <import referenceID="8" name="structureLanguage" namespace="jetbrains.mps.bootstrap" />
+  <import referenceID="4" modelUID="jetbrains.mps.nodeEditor@java_stub" />
+  <import referenceID="5" modelUID="jetbrains.mps.smodel@java_stub" />
+  <import referenceID="6" modelUID="java.lang@java_stub" />
+  <import referenceID="7" modelUID="java.util@java_stub" />
+  <import referenceID="8" modelUID="jetbrains.mps.bootstrap.structureLanguage@java_stub" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1082979388796">
     <property name="name" value="ConstrainedDataTypeDeclaration_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1082978499127" />
