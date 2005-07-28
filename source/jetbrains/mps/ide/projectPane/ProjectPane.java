@@ -1,7 +1,8 @@
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.ide.*;
+import jetbrains.mps.ide.FileUtil;
+import jetbrains.mps.ide.IStatus;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.icons.IconManager;
@@ -22,7 +23,10 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.*;
 import java.util.List;
 
@@ -251,7 +255,7 @@ public class ProjectPane extends JComponent {
 
     protected JPopupMenu getPopupMenu() {
       JPopupMenu result = new JPopupMenu();
-      ActionManager.instance().getGroup(PROJECT_PANE_PROJECT_ACTIONS).add(result, new ActionContext(myIDE));
+      ActionManager.instance().getGroup(PROJECT_PANE_PROJECT_ACTIONS).add(result, new ActionContext(myIDE, myIDE.getProjectOperationContext()));
       return result;
     }
 
@@ -287,7 +291,7 @@ public class ProjectPane extends JComponent {
 
     protected JPopupMenu getPopupMenu() {
       JPopupMenu result = new JPopupMenu();
-      ActionManager.instance().getGroup(PROJECT_PANE_MODELS_ACTIONS).add(result, new ActionContext(myIDE));
+      ActionManager.instance().getGroup(PROJECT_PANE_MODELS_ACTIONS).add(result, new ActionContext(myIDE, myIDE.getProjectOperationContext()));
       return result;
     }
   }
@@ -326,7 +330,7 @@ public class ProjectPane extends JComponent {
 
     protected JPopupMenu getPopupMenu() {
       JPopupMenu result = new JPopupMenu();
-      ActionManager.instance().getGroup(PROJECT_PANE_NODE_ACTIONS).add(result, new ActionContext(myIDE, getSNode()));
+      ActionManager.instance().getGroup(PROJECT_PANE_NODE_ACTIONS).add(result, new ActionContext(myIDE, myIDE.getProjectOperationContext(), getSNode()));
       return result;
     }
 
@@ -436,7 +440,7 @@ public class ProjectPane extends JComponent {
     protected JPopupMenu getPopupMenu() {
       JPopupMenu result = new JPopupMenu();
       SModelDescriptor model = getModelDescriptor();
-      ActionContext context = new ActionContext(myIDE);
+      ActionContext context = new ActionContext(myIDE, myIDE.getProjectOperationContext());
       context.put(SModelDescriptor.class, model);
       ActionManager.instance().getGroup(PROJECT_PANE_MODEL_ACTIONS).add(result, context);
       return result;
@@ -594,7 +598,7 @@ public class ProjectPane extends JComponent {
     protected JPopupMenu getPopupMenu() {
       JPopupMenu result = new JPopupMenu();
       final Language language = getLanguage();
-      ActionContext context = new ActionContext(myIDE);
+      ActionContext context = new ActionContext(myIDE, myIDE.getProjectOperationContext());
       context.put(Language.class, language);
       ActionManager.instance().getGroup(PROJECT_PANE_LANGUAGE_ACTIONS).add(result, context);
       return result;
@@ -644,7 +648,7 @@ public class ProjectPane extends JComponent {
 
     protected JPopupMenu getPopupMenu() {
       JPopupMenu result = new JPopupMenu();
-      ActionManager.instance().getGroup(PROJECT_PANE_PROJECT_LANGUAGES_ACTIONS).add(result, new ActionContext(myIDE));
+      ActionManager.instance().getGroup(PROJECT_PANE_PROJECT_LANGUAGES_ACTIONS).add(result, new ActionContext(myIDE, myIDE.getProjectOperationContext()));
       return result;
     }
   }

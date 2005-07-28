@@ -20,9 +20,12 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.util.CopyUtil;
+import jetbrains.mps.smodel.event.EventUtil;
+import jetbrains.mps.smodel.event.SModelChildEvent;
+import jetbrains.mps.smodel.event.SModelCommandListener;
+import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.CopyUtil;
 
 import javax.swing.*;
 import java.awt.*;
@@ -265,7 +268,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     registerKeyboardAction(new AbstractAction(action.getName()) {
       public void actionPerformed(ActionEvent e) {
         if (mySelectedCell != null && mySelectedCell.getSNode() != null) {
-          action.execute(new ActionContext(ApplicationComponents.getInstance().getComponent(IdeMain.class), mySelectedCell.getSNode()));
+          IdeMain ide = ApplicationComponents.getInstance().getComponent(IdeMain.class);
+          action.execute(new ActionContext(ide, ide.getProjectOperationContext(), mySelectedCell.getSNode()));
         }
       }
     }, KeyStroke.getKeyStroke(keyStroke), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
@@ -304,7 +308,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     //    selectNode(selectedNode);
     JPopupMenu popupMenu = new JPopupMenu();
     ActionGroup group = ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS);
-    group.add(popupMenu, new ActionContext(ApplicationComponents.getInstance().getComponent(IdeMain.class), selectedNode));
+    IdeMain ide = ApplicationComponents.getInstance().getComponent(IdeMain.class);
+    group.add(popupMenu, new ActionContext(ide, ide.getProjectOperationContext(), selectedNode));
 
     popupMenu.show(AbstractEditorComponent.this, e.getX(), e.getY());
   }
