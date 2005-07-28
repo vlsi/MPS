@@ -1,13 +1,12 @@
 package jetbrains.mps.ide.components;
 
-import org.jdom.Element;
-import org.jdom.DataConversionException;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.OperationContext;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.SNode;
+import org.jdom.DataConversionException;
+import org.jdom.Element;
 
 import java.awt.*;
 
@@ -33,10 +32,10 @@ public class ComponentsUtil {
     return nodeElement;
   }
 
-  public static SNode nodeFromElement(MPSProject project, Element nodeElement) {
+  public static SNode nodeFromElement(OperationContext operationContext, Element nodeElement) {
     String modelUID = nodeElement.getAttributeValue(MODEL);
     String id = nodeElement.getAttributeValue(ID);
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(modelUID));
+    SModelDescriptor modelDescriptor = operationContext.getModelDescriptor(SModelUID.fromString(modelUID));
     if (modelDescriptor == null) return null;
     SNode semanticNode = modelDescriptor.getSModel().getNodeById(id);
     return semanticNode;
