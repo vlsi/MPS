@@ -37,6 +37,10 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     myProjectFile = file;
   }
 
+  public ModelOwner getParent() {
+    return null;
+  }
+
   public void init() {
     if(myRootManager != null) {
       return;
@@ -210,6 +214,9 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     return myRootManager;
   }
 
+  /**
+   * @deprecated
+   */
   public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
     return SModelRepository.getInstance().getModelDescriptor(modelUID);
   }

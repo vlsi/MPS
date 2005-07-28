@@ -59,6 +59,10 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     myProject = project;
   }
 
+  public ModelOwner getParent() {
+    return myProject;
+  }
+
   public void read(Element element) {
     if (element.getAttribute(COMPILE_ON_GENERATION) != null) {
       myCompileOnGeneration = Boolean.parseBoolean(element.getAttributeValue(COMPILE_ON_GENERATION));

@@ -108,6 +108,9 @@ public class SModelRepository extends SModelAdapter {
     modelDescriptor.removeSModelListener(this);
   }
 
+  /**
+   * @deprecated
+   */
   public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
     SModelDescriptor descriptor = myUIDToModelDescriptorMap.get(modelUID);
     if (descriptor != null) {
@@ -133,6 +136,9 @@ public class SModelRepository extends SModelAdapter {
     return null;
   }
 
+  /**
+   * @deprecated
+   */
   public List<SModelDescriptor> getModelDescriptors(String modelName) {
     List<SModelDescriptor> list = new LinkedList<SModelDescriptor>();
     SModelUID modelUID = SModelUID.fromString(modelName);
@@ -147,6 +153,43 @@ public class SModelRepository extends SModelAdapter {
 
     for (SModelUID uid : uidList) {
       SModelDescriptor descriptor = myUIDToModelDescriptorMap.get(uid);
+      if (descriptor != null) {
+        list.add(descriptor);
+      }
+    }
+    return list;
+  }
+
+  public SModelDescriptor getModelDescriptor(SModelUID modelUID, ModelOwner owner) {
+    SModelDescriptor descriptor = myUIDToModelDescriptorMap.get(modelUID);
+    if(descriptor == null) {
+    return null;
+    }
+    HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(descriptor);
+    ModelOwner testOwner = owner;
+    while( testOwner != null) {
+       if(modelOwners.contains(testOwner)) {
+         return descriptor;
+       }
+      testOwner = testOwner.getParent();
+    }
+    return null;
+  }
+
+  public List<SModelDescriptor> getModelDescriptors(String modelName, ModelOwner owner) {
+    List<SModelDescriptor> list = new LinkedList<SModelDescriptor>();
+    SModelUID modelUID = SModelUID.fromString(modelName);
+    List<SModelUID> uidList = new LinkedList<SModelUID>();
+    if (modelUID.hasStereotype()) {
+      uidList.add(modelUID);
+    } else {
+      for (String stereotype : SModelStereotype.values) {
+        uidList.add(new SModelUID(modelName, stereotype));
+      }
+    }
+
+    for (SModelUID uid : uidList) {
+      SModelDescriptor descriptor = getModelDescriptor(uid, owner);
       if (descriptor != null) {
         list.add(descriptor);
       }

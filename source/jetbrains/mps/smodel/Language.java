@@ -43,6 +43,10 @@ public class Language implements ModelLocator, ModelOwner {
     updateLastGenerationTime();
   }
 
+  public ModelOwner getParent() {
+    return null;
+  }
+  
   public void updateLastGenerationTime() {
     myLastGenerationTime = FileUtil.getNewestFileTime(getSourceDir());
   }
