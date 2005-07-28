@@ -13,15 +13,8 @@ public class SModelUID implements Comparable {
   private String myLongName;
   private String myStereotype;
 
-  public String getNamespace () {
-    int offset = getLongName().lastIndexOf('.');
-    if (offset < 0) {
-      return "";
-    }
-    return getLongName().substring(0, offset);
-  }
 
-  public String getName () {
+  public String getShortName () {
     int offset = getLongName().lastIndexOf('.');
     if (offset < 0) {
       return getLongName();

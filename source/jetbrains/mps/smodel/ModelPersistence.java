@@ -103,13 +103,23 @@ public class ModelPersistence {
   }
 
   public static SModel copyModel(SModel model) {
-    return readModel(saveModel(model), model.getName(), model.getStereotype());
+    return readModel(saveModel(model), model.getShortName(), model.getStereotype());
   }
 
   private static SModel readModel(Document document, String modelName, String stereotype) {
     Element rootElement = document.getRootElement();
-    String modelNamespace = rootElement.getAttributeValue(NAMESPACE, "");
-    SModel model = new SModel(new SModelUID(modelNamespace, modelName, stereotype));
+
+    String modelLongName = rootElement.getAttributeValue(NAME);
+
+    if (modelLongName == null) {//back compatibility
+      String modelNamespace = rootElement.getAttributeValue(NAMESPACE, "");
+      modelLongName = NameUtil.longNameFromNamespaceAndShortName(modelNamespace, modelName);
+    } else {
+      String shortName = NameUtil.shortNameFromLongName(modelLongName);
+      LOG.assertLog(shortName.equals(modelName));
+    }
+
+    SModel model = new SModel(new SModelUID(modelLongName, stereotype));
 
     model.setLoading(true);
     try {
@@ -137,7 +147,7 @@ public class ModelPersistence {
         model.addImportElement(SModelUID.fromString(modelUID), referenceID);
       } else {
         // read in old manner...
-        String importedModelFQName = NameUtil.longNameFromNamespaceAndName(element.getAttributeValue(NAMESPACE),
+        String importedModelFQName = NameUtil.longNameFromNamespaceAndShortName(element.getAttributeValue(NAMESPACE),
                 element.getAttributeValue(NAME));
         String importedModelStereotype = element.getAttributeValue(STEREOTYPE, "");
         model.addImportElement(new SModelUID(importedModelFQName, importedModelStereotype), referenceID);
@@ -274,7 +284,7 @@ public class ModelPersistence {
   }
 
   public static SModel refreshModel(SModel model) {
-    String name = model.getName();
+    String name = model.getShortName();
     return readModel(saveModel(model), name, model.getStereotype());
   }
 
@@ -301,7 +311,8 @@ public class ModelPersistence {
 
   private static Document saveModel(SModel sourceModel) {
     Element rootElement = new Element(MODEL);
-    rootElement.setAttribute(NAMESPACE, sourceModel.getNamespace());
+   // rootElement.setAttribute(NAMESPACE, sourceModel.getNamespace());
+    rootElement.setAttribute(NAME, sourceModel.getLongName());
 
     Document document = new Document();
     document.setRootElement(rootElement);

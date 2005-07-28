@@ -47,7 +47,7 @@ public class SNodePresentationUtil {
     if (name != null) {
       return name;
     }
-    return NameUtil.nameFromFQName(node.getClass().getName());
+    return NameUtil.shortNameFromLongName(node.getClass().getName());
   }
 
   public static boolean isNamedElement(SNode node) {
@@ -165,7 +165,7 @@ public class SNodePresentationUtil {
         parmsSB.insert(0, '<');
         parmsSB.append('>');
       }
-      return NameUtil.nameFromFQName(type.getName()) + parmsSB.toString();
+      return NameUtil.shortNameFromLongName(type.getName()) + parmsSB.toString();
     }
     return type.getName();
   }
@@ -221,6 +221,6 @@ public class SNodePresentationUtil {
     if(alias != null) {
       return alias;
     }
-    return NameUtil.nameFromFQName(node.getClass().getName());
+    return NameUtil.shortNameFromLongName(node.getClass().getName());
   }
 }

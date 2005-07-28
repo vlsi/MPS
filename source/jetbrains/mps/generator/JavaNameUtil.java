@@ -3,18 +3,24 @@ package jetbrains.mps.generator;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.util.NameUtil;
 
 /**
  * User: Dmitriev.
  * Date: Jan 13, 2004
  */
 public class JavaNameUtil {
+
+  /** @deprecated
+   */
   public static String fqClassNameByNamespace(SNode semanticNode, String shortClassName) {
     return fqClassNameByNamespace(semanticNode.getModel(), shortClassName);
   }
 
+  /**  @deprecated
+   */
   public static String fqClassNameByNamespace(SModel model, String shortClassName) {
-    String modelNamespace = model.getNamespace();
+    String modelNamespace = NameUtil.namespaceFromLongName(model.getLongName());
     return modelNamespace + '.' + shortClassName;
   }
 

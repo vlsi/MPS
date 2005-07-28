@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model namespace="jetbrains.mps.baseLanguage.resolve">
+<model name="jetbrains.mps.baseLanguage.resolve.test">
   <maxReferenceID value="0" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1121166935562">
@@ -36,10 +36,10 @@
             <property name="name" value="d" />
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1121172642211" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1121438925079">
-              <link role="baseMethodDeclaration" targetNodeId="1121438897509" bad="false" />
+              <link role="baseMethodDeclaration" targetNodeId="1121438897509" />
               <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1121438925080" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1121438925081">
-                <link role="variableDeclaration" targetNodeId="1121172709122" bad="false" />
+                <link role="variableDeclaration" targetNodeId="1121172709122" />
               </node>
             </node>
           </node>
@@ -68,6 +68,15 @@
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1121172827478" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1121172827479">
               <property name="value" value="6" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1122541557333">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1122541557334">
+            <property name="name" value="k" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1122541557335" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1122541565463">
+              <property name="value" value="42" />
             </node>
           </node>
         </node>
@@ -102,7 +111,7 @@
             <property name="name" value="g" />
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1121251486267" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1121251486284">
-              <link role="baseMethodDeclaration" targetNodeId="1121253849301" bad="false" />
+              <link role="baseMethodDeclaration" targetNodeId="1121253849301" />
               <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1121251486285" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1121251486286">
                 <link role="variableDeclaration" targetNodeId="noId" bad="true" resolveInfo="f:jetbrains.mps.baseLanguage.types.int;jetbrains.mps.baseLanguage.types.int" targetClassResolveInfo="jetbrains.mps.baseLanguage.LocalVariableDeclaration" />
@@ -121,10 +130,10 @@
             <property name="name" value="g" />
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1121253843125" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1121253843126">
-              <link role="baseMethodDeclaration" targetNodeId="1121253849301" bad="false" />
+              <link role="baseMethodDeclaration" targetNodeId="1121253849301" />
               <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1121253843127" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1121253843128">
-                <link role="variableDeclaration" targetNodeId="1121256534410" bad="false" />
+                <link role="variableDeclaration" targetNodeId="1121256534410" />
               </node>
             </node>
           </node>

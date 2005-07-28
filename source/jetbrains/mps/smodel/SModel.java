@@ -13,8 +13,6 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.ITypeChecker;
 import jetbrains.mps.typesystem.TSStatus;
 import jetbrains.mps.typesystem.TypeCheckerAccess;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.projectLanguage.ProjectModel;
 
 import java.util.*;
 
@@ -60,12 +58,8 @@ public class SModel implements Iterable<SNode> {
     myUID = modelUID;
   }
 
-  public String getName() {
-    return myUID.getName();
-  }
-
-  public String getNamespace() {
-    return myUID.getNamespace();
+  public String getShortName() {
+    return myUID.getShortName();
   }
 
   public void runLoadingAction(Runnable runnable) {

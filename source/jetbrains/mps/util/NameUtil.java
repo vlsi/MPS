@@ -46,7 +46,7 @@ public class NameUtil {
     return sb.toString();
   }
 
-  public static String nameFromFQName(String fqName) {
+  public static String shortNameFromLongName(String fqName) {
     if (fqName == null) {
       return fqName;
     }
@@ -57,7 +57,7 @@ public class NameUtil {
     return fqName.substring(offset + 1);
   }
 
-  public static String namespaceFromFQName(String fqName) {
+  public static String namespaceFromLongName(String fqName) {
     if (fqName == null) {
       return fqName;
     }
@@ -84,7 +84,7 @@ public class NameUtil {
     return namespace;
   }
 
-  public static String longNameFromNamespaceAndName(String namespace, String name) {
+  public static String longNameFromNamespaceAndShortName(String namespace, String name) {
     if (namespace == null || namespace.length() == 0) {
       return name;
     }

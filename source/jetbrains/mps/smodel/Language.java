@@ -430,6 +430,6 @@ public class Language implements ModelLocator, ModelOwner {
 //    ConceptDeclaration conceptDeclaration = getTypeDeclaration(semanticNode);
     ConceptDeclaration conceptDeclaration = SModelUtil.getConceptDeclaration(node, project);
     SModel languageStructure = conceptDeclaration.getModel();
-    return project.getLanguage(languageStructure.getNamespace());
+    return project.getLanguage(JavaNameUtil.packageNameForModelUID(languageStructure.getModelUID()));
   }
 }
