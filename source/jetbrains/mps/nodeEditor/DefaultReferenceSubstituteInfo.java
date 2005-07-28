@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.DiagnosticUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.ide.IdeMain;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -66,11 +67,11 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   private List<SNode> createTargetNodesList() {
     final ConceptDeclaration targetConcept = myLinkDeclaration.getTarget();
-    DiagnosticUtil.assertNodeValid(targetConcept);
+    DiagnosticUtil.assertNodeValid(targetConcept, IdeMain.instance().getProjectOperationContext());
     final boolean searchLinks = NameUtil.nodeFQName(targetConcept).equals("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration");
     List<SNode> list = SModelUtil.allNodes(mySourceNode.getModel(), true, new Condition<SNode>() {
       public boolean met(SNode node) {
-        DiagnosticUtil.assertNodeValid(node);
+        DiagnosticUtil.assertNodeValid(node, IdeMain.instance().getProjectOperationContext());
         if (searchLinks && (node instanceof LinkDeclaration)) return true;
         return node.getName() != null && SModelUtil.isInstanceOfType(node, targetConcept);
       }

@@ -7,6 +7,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.util.*;
 import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.projectLanguage.*;
@@ -261,7 +262,7 @@ public class Language implements ModelLocator, ModelOwner {
     if (myNameToTypeMap.isEmpty()) {
       SModelUtil.allNodes(getStructureModel(), new Condition<SNode>() {
         public boolean met(SNode node) {
-          DiagnosticUtil.assertNodeValid(node);
+          DiagnosticUtil.assertNodeValid(node, IdeMain.instance().getProjectOperationContext());
           if (node instanceof ConceptDeclaration) {
             myNameToTypeMap.put(node.getName(), (ConceptDeclaration) node);
           }
@@ -409,7 +410,7 @@ public class Language implements ModelLocator, ModelOwner {
     for (Language language : sourceModel.getLanguages()) {
       LOG.assertLog(language != null, "Languages must be not null");
       ConceptDeclaration typeDeclaration = language.findTypeDeclaration(conceptName);
-      DiagnosticUtil.assertNodeValid(typeDeclaration);
+      DiagnosticUtil.assertNodeValid(typeDeclaration, IdeMain.instance().getProjectOperationContext());
       if (typeDeclaration != null) {
         return typeDeclaration;
       }
@@ -419,7 +420,7 @@ public class Language implements ModelLocator, ModelOwner {
   }
 
   public static ConceptDeclaration getTypeDeclaration(SNode node) {
-    DiagnosticUtil.assertNodeValid(node);
+    DiagnosticUtil.assertNodeValid(node, IdeMain.instance().getProjectOperationContext());
     String conceptName = JavaNameUtil.shortName(node.getClass().getName());
     ConceptDeclaration conceptDeclaration = findTypeDeclaration(node.getModel(), conceptName);
     LOG.assertLog(conceptDeclaration != null, "couldn't find concept declaration for node: " + node.getDebugText());
