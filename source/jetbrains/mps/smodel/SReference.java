@@ -65,8 +65,8 @@ public abstract class SReference {
 
   public static SReference newInstance(String role, SNode sourceNode, SNode targetNode) {
     SModel sourceModel = sourceNode.getModel();
-    SModel targetModel = targetNode.getModel();
-    if (sourceModel == targetModel) {
+    SModel targetModel = targetNode == null ? null : targetNode.getModel();
+    if (sourceModel == targetModel || targetModel == null) {
       return new InternalReference(role, sourceNode, targetNode);
     } else {
       SModel.ImportElement importElement = sourceModel.addImportElement(targetModel.getModelUID());
