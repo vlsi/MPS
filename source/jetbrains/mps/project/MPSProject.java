@@ -1,12 +1,13 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.ide.*;
-import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.command.CommandEventTranslator;
+import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.logging.Logger;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -37,12 +38,12 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     myProjectFile = file;
   }
 
-  public ModelOwner getParent() {
+  public ModelOwner getParentModelOwner() {
     return null;
   }
 
   public void init() {
-    if(myRootManager != null) {
+    if (myRootManager != null) {
       return;
     }
     CommandProcessor.instance().executeCommand(new Runnable() {
@@ -61,7 +62,7 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
   }
 
   public Set<SModelDescriptor> getAllProjectModels() {
-    Set<SModelDescriptor> result = getRootManager().getProjectModelDescriptors();    
+    Set<SModelDescriptor> result = getRootManager().getProjectModelDescriptors();
     for (Language l : getProjectLanguages()) {
       result.addAll(l.getAllModels());
     }
@@ -84,7 +85,7 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
   }
 
   public Set<SModelDescriptor> getAllModelDescriptors() {
-    init();        
+    init();
     return SModelRepository.getInstance().getAllNonTransientModelDescriptors();
   }
 
@@ -93,6 +94,9 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     return Collections.unmodifiableCollection(myRootManager.getLanguages());
   }
 
+  /**
+   * @deprecated
+   */
   public Language getLanguage(String nameSpace) {
     init();
     return myRootManager.getLanguage(nameSpace);
@@ -135,7 +139,7 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
             String className = component.getAttributeValue(CLASS);
             Class cls = Class.forName(className);
             if (getComponent(cls) != null && getComponent(cls) instanceof ExternalizableComponent) {
-              ((ExternalizableComponent) getComponent(cls)).read(component);
+              ((ExternalizableComponent) getComponent(cls)).read(component, new OperationContext(this, this, this));
             }
           } catch (ClassNotFoundException e) {
           }
@@ -253,6 +257,10 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     for (MPSProjectCommandListener listener : myProjectCommandListeners) {
       listener.projectChangedInCommand(this);
     }
+  }
+
+  public LanguageOwner getParentLanguageOwner() {
+    return BootstrapLanguages.getInstance();
   }
 
   private class MyCommandEventTranslator extends CommandEventTranslator implements MPSProjectListener {

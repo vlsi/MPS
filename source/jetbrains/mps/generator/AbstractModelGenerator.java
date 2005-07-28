@@ -6,28 +6,29 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.messages.MessageView;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.*;
 
 import java.util.Iterator;
-import java.util.List;
 import java.util.LinkedList;
+import java.util.List;
 
 public abstract class AbstractModelGenerator implements IModelGenerator {
-  private MPSProject myProject;
+  private OperationContext myOperationContext;
   private SModel mySourceModel;
   private SModel myTargetModel;
 
-  protected AbstractModelGenerator(MPSProject project) {
-    myProject = project;
+  protected AbstractModelGenerator(OperationContext operationContext) {
+    myOperationContext = operationContext;
   }
 
   public MPSProject getProject() {
-    return myProject;
+    return myOperationContext.getProject();
+  }
+
+  public OperationContext getOperationContext() {
+    return myOperationContext;
   }
 
   public MessageView getMessageView() {

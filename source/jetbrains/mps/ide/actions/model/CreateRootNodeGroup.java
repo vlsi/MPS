@@ -1,20 +1,17 @@
 package jetbrains.mps.ide.actions.model;
 
-import jetbrains.mps.ide.action.ActionGroup;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.MPSAction;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.action.ActionGroup;
+import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelUtil;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.projectLanguage.ProjectModel;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.*;
 
 import javax.swing.*;
 import java.util.Iterator;
@@ -92,7 +89,7 @@ public class CreateRootNodeGroup extends ActionGroup {
                 });
 
                 ide.getProjectPane().selectNode(node[0]);
-                ide.getProjectPane().openEditor();
+                ide.getProjectPane().openEditor(context.get(OperationContext.class));
               }
             });
             addCount++;

@@ -171,7 +171,7 @@ public class SModelRepository extends SModelAdapter {
        if(modelOwners.contains(testOwner)) {
          return descriptor;
        }
-      testOwner = testOwner.getParent();
+      testOwner = testOwner.getParentModelOwner();
     }
     return null;
   }

@@ -43,7 +43,7 @@ public class Language implements ModelLocator, ModelOwner {
     updateLastGenerationTime();
   }
 
-  public ModelOwner getParent() {
+  public ModelOwner getParentModelOwner() {
     return null;
   }
   
@@ -77,13 +77,13 @@ public class Language implements ModelLocator, ModelOwner {
     return myLanguageDescriptor;
   }
 
-  public LanguageDescriptor getCopyOfLanguageDescriptor(SModel modelToCopy) {
-    return ContextUtil.copyNode(getLanguageDescriptor(), modelToCopy);
+  public LanguageDescriptor getCopyOfLanguageDescriptor(SModel modelToCopy, OperationContext operationContext) {
+    return ContextUtil.copyNode(getLanguageDescriptor(), modelToCopy, operationContext);
   }
 
-  public void setLanguageDescriptor(LanguageDescriptor newDescriptor) {
+  public void setLanguageDescriptor(LanguageDescriptor newDescriptor, OperationContext operationContext) {
     myModelDescriptor.getSModel().deleteRoot(getLanguageDescriptor());
-    myLanguageDescriptor = ContextUtil.copyNode(newDescriptor, myModelDescriptor.getSModel());
+    myLanguageDescriptor = ContextUtil.copyNode(newDescriptor, myModelDescriptor.getSModel(), operationContext);
     myModelDescriptor.getSModel().addRoot(getLanguageDescriptor());
     readLanguageModelDescriptors();
   }

@@ -1,15 +1,13 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageOwner;
 import jetbrains.mps.logging.Logger;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.FilenameFilter;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.ArrayList;
 import java.util.Set;
 
 /**
@@ -22,7 +20,7 @@ public class LanguageRepository {
   private static LanguageRepository myInstance = new LanguageRepository();
   private HashMap<String, Language> myFileToLanguageMap = new HashMap<String, Language>();
   private HashMap<String, Language> myNamespaceToLanguageMap = new HashMap<String, Language>();
-  private HashMap<Language, HashSet> myLanguageToContainersMap = new HashMap<Language, HashSet>();
+  private HashMap<Language, HashSet<LanguageOwner>> myLanguageToOwnersMap = new HashMap<Language, HashSet<LanguageOwner>>();
 
   public static LanguageRepository getInstance() {
     return myInstance;
@@ -32,17 +30,17 @@ public class LanguageRepository {
     try {
       String canonicalPath = file.getCanonicalPath();
       Language language = myFileToLanguageMap.get(canonicalPath);
-      if(language == null) {
+      if (language == null) {
         language = new Language(file);
         myFileToLanguageMap.put(canonicalPath, language);
         myNamespaceToLanguageMap.put(language.getNamespace(), language);
       }
-      HashSet containers = myLanguageToContainersMap.get(language);
-      if(containers == null) {
-        containers = new HashSet();
-        myLanguageToContainersMap.put(language, containers);
+      HashSet<LanguageOwner> owners = myLanguageToOwnersMap.get(language);
+      if (owners == null) {
+        owners = new HashSet<LanguageOwner>();
+        myLanguageToOwnersMap.put(language, owners);
       }
-      containers.add(owner);
+      owners.add(owner);
       return language;
     } catch (IOException e) {
       LOG.error(e);
@@ -58,18 +56,18 @@ public class LanguageRepository {
 
   public void unRegisterLanguages(LanguageOwner owner) {
     ArrayList<String> filesToRemove = new ArrayList<String>();
-    for(String fileName : myFileToLanguageMap.keySet()) {
+    for (String fileName : myFileToLanguageMap.keySet()) {
       Language language = myFileToLanguageMap.get(fileName);
-      HashSet owners = myLanguageToContainersMap.get(language);
-      if(owners != null) {
+      HashSet owners = myLanguageToOwnersMap.get(language);
+      if (owners != null) {
         owners.remove(owner);
-        if(owners.size() == 0) {
+        if (owners.size() == 0) {
           filesToRemove.add(fileName);
           myNamespaceToLanguageMap.remove(language.getNamespace());
         }
       }
     }
-    for(String fileName : filesToRemove) {
+    for (String fileName : filesToRemove) {
       Language language = myFileToLanguageMap.get(fileName);
       SModelRepository.getInstance().unRegisterModelDescriptors(language);
       myFileToLanguageMap.remove(fileName);
@@ -101,7 +99,26 @@ public class LanguageRepository {
     return result;
   }
 
+  /**
+   * @deprecated
+   */
   public Language getLanguage(String namespace) {
     return myNamespaceToLanguageMap.get(namespace);
+  }
+
+  public Language getLanguage(String namespace, LanguageOwner languageOwner) {
+    Language language = myNamespaceToLanguageMap.get(namespace);
+    if (language == null) {
+      return null;
+    }
+    HashSet<LanguageOwner> languageOwners = myLanguageToOwnersMap.get(language);
+    LanguageOwner testOwner = languageOwner;
+    while (testOwner != null) {
+      if (languageOwners.contains(testOwner)) {
+        return language;
+      }
+      testOwner = testOwner.getParentLanguageOwner();
+    }
+    return null;
   }
 }

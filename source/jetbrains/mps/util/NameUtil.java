@@ -102,4 +102,10 @@ public class NameUtil {
 
     return node.getModel().getModelUID().getLongName() + "." + (name != null ? name : "");
   }
+
+  public static String nodeConceptFQName(SNode node) {
+    String conceptName = NameUtil.shortNameFromLongName(node.getClass().getName());
+    String languageNamespace = NameUtil.namespaceFromLongName(node.getClass().getName());
+    return languageNamespace + ".structure." + conceptName;
+  }
 }

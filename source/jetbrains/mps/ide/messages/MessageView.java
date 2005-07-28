@@ -4,6 +4,7 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.toolsPane.Tool;
+import jetbrains.mps.smodel.OperationContext;
 
 import javax.swing.*;
 import java.awt.*;
@@ -33,19 +34,19 @@ public class MessageView implements Tool {
 
     myList.registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        openCurrentMessageNodeIfPossible();
+        openCurrentMessageNodeIfPossible(myIde.getProjectOperationContext());
       }
     }, KeyStroke.getKeyStroke("F4"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     myList.registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        openCurrentMessageNodeIfPossible();
+        openCurrentMessageNodeIfPossible(myIde.getProjectOperationContext());
       }
     }, KeyStroke.getKeyStroke("ENTER"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     myList.addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
         if (e.getClickCount() == 2) {
-          openCurrentMessageNodeIfPossible();
+          openCurrentMessageNodeIfPossible(myIde.getProjectOperationContext());
         }
       }
 
@@ -102,11 +103,11 @@ public class MessageView implements Tool {
     menu.show(myList, evt.getX(), evt.getY());
   }
 
-  private void openCurrentMessageNodeIfPossible() {
+  private void openCurrentMessageNodeIfPossible(OperationContext operationContext) {
     Message selectedMessage = (Message) myList.getSelectedValue();
     if (selectedMessage == null) return;
     if (selectedMessage.getNode() == null) return;
-    myIde.openNodeAndSelect(selectedMessage.getNode());
+    myIde.openNodeAndSelect(selectedMessage.getNode(), operationContext);
   }
 
 

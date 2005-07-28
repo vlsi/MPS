@@ -9,6 +9,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.OperationContext;
 
 import javax.swing.*;
 import java.util.Iterator;
@@ -48,7 +49,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
       while (iterator.hasNext()) {
         SNode root = iterator.next();
         if (editorName.equals(root.getName())) {
-          AbstractEditorComponent editor = context.get(IdeMain.class).getEditorsPane().openEditor(root);
+          AbstractEditorComponent editor = context.get(IdeMain.class).getEditorsPane().openEditor(root, context.get(OperationContext.class));
           editor.selectNode(root);
           return;
         }

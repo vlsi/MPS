@@ -16,7 +16,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.reform.CellRangeSelection;
 import jetbrains.mps.nodeEditor.test.EventRecorder;
 import jetbrains.mps.project.ApplicationComponents;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.OperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
@@ -72,17 +72,17 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private Component myPreviousFocusOwner = null;
   private PropertyChangeListener myFocusListener;
 
-  private MPSProject myMPSProject;
+  private OperationContext myOperationContext;
   private EventRecorder myRecorder = null;
 
-  public AbstractEditorComponent(MPSProject project) {
+  public AbstractEditorComponent(OperationContext operationContext) {
     addFocusListener(new FocusAdapter() {
       public void focusGained(FocusEvent e) {
         myPreviousFocusOwner = e.getOppositeComponent();
       }
     });
 
-    myMPSProject = project;
+    myOperationContext = operationContext;
 
     setFocusTraversalPolicyProvider(true);
     setFocusCycleRoot(true);
@@ -234,12 +234,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     });
   }
 
-  public MPSProject getProject() {
-    return myMPSProject;
+  public OperationContext getOperationContext() {
+    return myOperationContext;
   }
 
-  public void setProject(MPSProject project) {
-    myMPSProject = project;
+  public void setOperationContext(OperationContext operationContext) {
+    myOperationContext = operationContext;
   }
 
 
@@ -840,21 +840,21 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     CommandProcessor.instance().executeCommand(getContext(), new Runnable() {
       public void run() {
-        copy[0] = CopyUtil.copy(root);
+        copy[0] = CopyUtil.copy(root, getContext().getOperationContext());
       }
     }, "node copyAndAddToRoots");
 
     root.getModel().addRoot(copy[0]);
     selectNode(null);
     myRecorder = new EventRecorder();
-    myMPSProject.getComponent(InspectorPane.class).getInspector().setEventRecorder(myRecorder);
+    myOperationContext.getProject().getComponent(InspectorPane.class).getInspector().setEventRecorder(myRecorder);
     myRecorder.startRecording(copy[0], root, scriptName);
   }
 
   protected void stopRecordingIfPossible() {
     if (myRecorder != null) {
       myRecorder.stopRecording();
-      myMPSProject.getComponent(InspectorPane.class).getInspector().setEventRecorder(null);
+      myOperationContext.getProject().getComponent(InspectorPane.class).getInspector().setEventRecorder(null);
       myRecorder = null;
     }
   }

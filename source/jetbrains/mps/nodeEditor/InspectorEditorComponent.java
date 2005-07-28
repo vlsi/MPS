@@ -8,14 +8,14 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.OperationContext;
 
 public class InspectorEditorComponent extends AbstractEditorComponent {
   private EditorContext myEditorContext;
   private SNodeProxy myNodeReference = new SNodeProxy(null);
 
-  public InspectorEditorComponent(MPSProject project) {
-    super(project);
+  public InspectorEditorComponent(OperationContext operationContext) {
+    super(operationContext);
     reinitEditor();
     rebuildEditorContent();
   }
@@ -26,9 +26,9 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
 
   private void reinitEditor() {
     if (getNode() == null) {
-      myEditorContext = new EditorContext(this, null, getProject());
+      myEditorContext = new EditorContext(this, null, getOperationContext());
     } else {
-      myEditorContext = new EditorContext(this, getNode().getModel(), getProject());
+      myEditorContext = new EditorContext(this, getNode().getModel(), getOperationContext());
     }
   }
 
@@ -51,7 +51,7 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
     if (getNode() == null || getNode().isDeleted()) {
       return EditorCell_Constant.create(getContext(), null, "<no inspect info>", true);
     }
-    return getProject().getComponent(EditorManager.class).createInspectedCell(getContext(), getNode());
+    return getOperationContext().getProject().getComponent(EditorManager.class).createInspectedCell(getContext(), getNode());
   }
 
   public SNode getInspectedNode() {

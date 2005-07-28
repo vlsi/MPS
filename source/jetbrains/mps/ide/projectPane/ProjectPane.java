@@ -69,10 +69,10 @@ public class ProjectPane extends JComponent {
     myTree.addKeyListener(new KeyAdapter() {
       public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_F4 && e.getModifiers() == 0) {
-          openEditor();
+          openEditor(myIDE.getProjectOperationContext());
         }
         if (e.getKeyCode() == KeyEvent.VK_ENTER && e.getModifiers() == 0) {
-          openEditor();
+          openEditor(myIDE.getProjectOperationContext());
         }
       }
     });
@@ -84,7 +84,7 @@ public class ProjectPane extends JComponent {
           TreePath path = myTree.getPathForLocation(e.getX(), e.getY());
           if (path == null) return;
           myTree.setSelectionPath(path);
-          openEditor();
+          openEditor(myIDE.getProjectOperationContext());
         }
       }
 
@@ -99,13 +99,13 @@ public class ProjectPane extends JComponent {
   }
 
 
-  public void openEditor() {
+  public void openEditor(OperationContext operationContext) {
     TreePath selectionPath = myTree.getSelectionPath();
     if (selectionPath == null) return;
     if (!(selectionPath.getLastPathComponent() instanceof SNodeTreeNode)) return;
     SNodeTreeNode selectedTreeNode = (SNodeTreeNode) selectionPath.getLastPathComponent();
     SNode semanticNode = selectedTreeNode.getSNode();
-    myIDE.openNode(semanticNode);
+    myIDE.openNode(semanticNode, operationContext);
   }
 
   public void setProject(MPSProject project) {

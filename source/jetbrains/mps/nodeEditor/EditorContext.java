@@ -1,9 +1,10 @@
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.OperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.logging.Logger;
 
 import java.awt.*;
 
@@ -17,13 +18,13 @@ public class EditorContext {
 
   private AbstractEditorComponent myNodeEditorComponent;
   private SModel myModel;
-  private MPSProject myProject;
+  private OperationContext myOperationContext;
   private EditorCell myContextCell;
 
-  public EditorContext(AbstractEditorComponent editorComponent, SModel model, MPSProject project) {
+  public EditorContext(AbstractEditorComponent editorComponent, SModel model, OperationContext operationContext) {
     myNodeEditorComponent = editorComponent;
     myModel = model;
-    myProject = project;
+    myOperationContext = operationContext;
   }
 
   public AbstractEditorComponent getNodeEditorComponent() {
@@ -34,12 +35,16 @@ public class EditorContext {
     return myModel;
   }
 
+  public OperationContext getOperationContext() {
+    return myOperationContext;
+  }
+
   public MPSProject getProject() {
-    return myProject;
+    return myOperationContext.getProject();
   }
 
   public EditorCell createNodeCell(SNode node) {
-    return myProject.getComponent(EditorManager.class).createEditorCell(this, node);
+    return myOperationContext.getProject().getComponent(EditorManager.class).createEditorCell(this, node);
   }
 
 

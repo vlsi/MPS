@@ -4,6 +4,7 @@ import jetbrains.mps.baseLanguage.Classifier;
 import jetbrains.mps.baseLanguage.generator.target.DefaultTemplateGenerator;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
@@ -59,11 +60,11 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     myProject = project;
   }
 
-  public ModelOwner getParent() {
-    return myProject;
+  public ModelOwner getParentModelOwner() {
+    return null;
   }
 
-  public void read(Element element) {
+  public void read(Element element, OperationContext operationContext) {
     if (element.getAttribute(COMPILE_ON_GENERATION) != null) {
       myCompileOnGeneration = Boolean.parseBoolean(element.getAttributeValue(COMPILE_ON_GENERATION));
     }
@@ -435,6 +436,10 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
 
   public PreferencesPage createPreferencesPage() {
     return new MyPreferencesPage();
+  }
+
+  public LanguageOwner getParentLanguageOwner() {
+    return BootstrapLanguages.getInstance();
   }
 
   private class MyPreferencesPage implements PreferencesPage {
