@@ -97,15 +97,36 @@ public class SModelRepository extends SModelAdapter {
     }
     for (SModelUID modelUID : modelsToRemove) {
       SModelDescriptor modelDescriptor = myUIDToModelDescriptorMap.get(modelUID);
-      removeModel(modelDescriptor);
+      removeModelDescriptor(modelDescriptor);
     }
   }
 
+  /**
+   * @deprecated
+   */
   public void removeModel(SModelDescriptor modelDescriptor) {
     myModelDescriptors.remove(modelDescriptor);
     myUIDToModelDescriptorMap.remove(modelDescriptor.getModelUID());
     myChangedModels.remove(modelDescriptor);
     modelDescriptor.removeSModelListener(this);
+  }
+
+  private void removeModelDescriptor(SModelDescriptor modelDescriptor) {
+    myModelDescriptors.remove(modelDescriptor);
+    myUIDToModelDescriptorMap.remove(modelDescriptor.getModelUID());
+    myChangedModels.remove(modelDescriptor);
+    modelDescriptor.removeSModelListener(this);
+  }
+
+  public void removeModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
+    HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(modelDescriptor);
+    if(modelOwners.contains(owner)) {
+      modelOwners.remove(owner);
+      if(modelOwners.isEmpty()) {
+        myModelToOwnerMap.remove(modelDescriptor);
+        removeModelDescriptor(modelDescriptor);
+      }
+    }
   }
 
   /**
