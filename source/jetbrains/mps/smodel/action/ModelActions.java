@@ -104,7 +104,7 @@ public class ModelActions {
 
   public static Object invokeAspectMethod(String methodName, Object[] arguments, SModel templatesModel) {
     Class queriesClass = null;
-    String javaPackageName = JavaNameUtil.packageNameForModelUID(templatesModel.getModelUID());
+    String javaPackageName = JavaNameUtil.packageNameForModelUID(templatesModel.getUID());
     String queriesClassName = "Queries";
     if (javaPackageName.length() > 0) {
       queriesClassName = javaPackageName + "." + queriesClassName;

@@ -92,7 +92,7 @@ public class NodeRangeSelection implements IKeyboardHandler {
       return true;
     }
 
-    processKeyPressed(myEditorComponent.getContext(), keyEvent);
+    processKeyPressed(myEditorComponent.getEditorContext(), keyEvent);
     return true;
   }
 

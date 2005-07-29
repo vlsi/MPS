@@ -7,6 +7,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.util.NameUtil;
 
 
@@ -89,7 +90,7 @@ public class EditorManager {
   }
 
   private INodeEditor loadEditor(EditorContext context, SNode node) {
-    Language language = Language.getLanguage(node, context.getProject());
+    Language language = SModelUtil.getLanguage(node, context.getOperationContext());
     if (language == null) {
       LOG.errorWithTrace("Error loading editor for node \"" + node.getDebugText() + "\".\n" +
               "Couldn't find language for namespace: \"" + NameUtil.namespaceFromConceptFQName(node.getClass().getName()) + "\"");

@@ -69,7 +69,7 @@ public abstract class SReference {
     if (sourceModel == targetModel || targetModel == null) {
       return new InternalReference(role, sourceNode, targetNode);
     } else {
-      SModel.ImportElement importElement = sourceModel.addImportElement(targetModel.getModelUID());
+      SModel.ImportElement importElement = sourceModel.addImportElement(targetModel.getUID());
       return new ExternalReference(role, sourceNode, targetNode.getId(), importElement);
     }
   }
@@ -90,7 +90,7 @@ public abstract class SReference {
       Integer refModelId = new Integer(targetNodeId.substring(0, offset));
       SModelUID targetModelUID = sourceModel.getImportedModelKey(refModelId.intValue());
       if (targetModelUID == null) {
-        LOG.errorWithTrace("SReference.newInstance -Search in model: " + sourceNode.getModel().getModelUID() + ": couldn't find referenced model by id:" + refModelId);
+        LOG.errorWithTrace("SReference.newInstance -Search in model: " + sourceNode.getModel().getUID() + ": couldn't find referenced model by id:" + refModelId);
         return null;
       }
       localNodeId = targetNodeId.substring(offset + 1);

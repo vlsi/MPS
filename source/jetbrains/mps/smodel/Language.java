@@ -1,18 +1,17 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.generator.ContextUtil;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ApplicationComponents;
-import jetbrains.mps.util.*;
+import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.projectLanguage.*;
-import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.projectLanguage.*;
+import jetbrains.mps.util.*;
 
 import java.io.File;
 import java.util.*;
@@ -34,10 +33,14 @@ public class Language implements ModelLocator, ModelOwner {
   private MyCommandEventTranslator myEventTranslator = new MyCommandEventTranslator();
   private long myLastGenerationTime = 0;
 
-  private static final String NULL_STEREOTYPE = "";
+  private LanguageOperationContext myOperationContext;
+
+  private static final String NULL_STEREOTYPE = SModelStereotype.NONE;
+  private boolean myRegisteredInFindUsagesManager;
 
   public Language(File descriptorFile) {
     myDescriptorFile = descriptorFile;
+    myOperationContext = new LanguageOperationContext(this);
     CommandProcessor.instance().addCommandListener(myEventTranslator);
     addLanguageListener(myEventTranslator);
     readLanguageModelDescriptors();
@@ -47,13 +50,13 @@ public class Language implements ModelLocator, ModelOwner {
   public ModelOwner getParentModelOwner() {
     return null;
   }
-  
+
   public void updateLastGenerationTime() {
     myLastGenerationTime = FileUtil.getNewestFileTime(getSourceDir());
   }
 
   private LanguageDescriptor getLanguageDescriptor() {
-    if(myLanguageDescriptor == null) {
+    if (myLanguageDescriptor == null) {
       SModel model = myModelDescriptor.getSModel();
       model.addSModelListener(new SModelAdapter() {
         public void modelChanged(SModel model) {
@@ -68,9 +71,6 @@ public class Language implements ModelLocator, ModelOwner {
         model.setLoading(true);
         myLanguageDescriptor = LanguageUtil.loadFromXML(myDescriptorFile, model);
         model.addRoot(myLanguageDescriptor);
-
-        //register cache invalidation
-        FindUsagesManager.registerStructureModel(getStructureModelDescriptor());
       } finally {
         model.setLoading(false);
       }
@@ -164,19 +164,25 @@ public class Language implements ModelLocator, ModelOwner {
   }
 
   public Iterator<ConceptDeclaration> semanticTypes() {
-      List<ConceptDeclaration> list = new LinkedList<ConceptDeclaration>();
-      Iterator<SNode> roots = getStructureModelDescriptor().getSModel().roots();
-      while (roots.hasNext()) {
-        SNode rootNode = roots.next();
-        if (rootNode instanceof ConceptDeclaration) {
-          list.add((ConceptDeclaration) rootNode);
-        }
+    List<ConceptDeclaration> list = new LinkedList<ConceptDeclaration>();
+    Iterator<SNode> roots = getStructureModelDescriptor().getSModel().roots();
+    while (roots.hasNext()) {
+      SNode rootNode = roots.next();
+      if (rootNode instanceof ConceptDeclaration) {
+        list.add((ConceptDeclaration) rootNode);
       }
-      return list.iterator();
     }
+    return list.iterator();
+  }
 
   public SModelDescriptor getStructureModelDescriptor() {
-    return getModelDescriptorByUID(SModelUID.fromString(getLanguageDescriptor().getStructureModel().getName()));
+    SModelDescriptor structureModelDescriptor = getModelDescriptorByUID(SModelUID.fromString(getLanguageDescriptor().getStructureModel().getName()));
+    if (!myRegisteredInFindUsagesManager) {
+      myRegisteredInFindUsagesManager = true;
+      //register cache invalidation
+      FindUsagesManager.registerStructureModel(structureModelDescriptor);
+    }
+    return structureModelDescriptor;
   }
 
   public SModelDescriptor getTypesystemModelDescriptor() {
@@ -215,7 +221,11 @@ public class Language implements ModelLocator, ModelOwner {
 
   public SModelDescriptor getEditorModelDescriptor(String stereotype) {
     if (stereotype == null) stereotype = NULL_STEREOTYPE;
-    return getModelDescriptorByUID(SModelUID.fromString(getEditorUID(stereotype)));
+    String editorUID = getEditorUID(stereotype);
+    if(editorUID == null) {
+      return null;
+    }
+    return getModelDescriptorByUID(SModelUID.fromString(editorUID));
   }
 
   public Set<SModelDescriptor> getEditorDescriptors() {
@@ -262,7 +272,7 @@ public class Language implements ModelLocator, ModelOwner {
     if (myNameToTypeMap.isEmpty()) {
       SModelUtil.allNodes(getStructureModel(), new Condition<SNode>() {
         public boolean met(SNode node) {
-          DiagnosticUtil.assertNodeValid(node, IdeMain.instance().getProjectOperationContext());
+          DiagnosticUtil.assertNodeValid(node, myOperationContext);
           if (node instanceof ConceptDeclaration) {
             myNameToTypeMap.put(node.getName(), (ConceptDeclaration) node);
           }
@@ -298,8 +308,9 @@ public class Language implements ModelLocator, ModelOwner {
   private SModelDescriptor getModelDescriptorByUID(SModelUID modelUID) {
     if (modelUID == null) return null;
     try {
-      SModelRepository modelRepository = ApplicationComponents.getInstance().getComponent(SModelRepository.class);
-      SModelDescriptor modelDescriptor = modelRepository.getModelDescriptor(modelUID);
+//      SModelRepository modelRepository = ApplicationComponents.getInstance().getComponent(SModelRepository.class);
+//      SModelDescriptor modelDescriptor = modelRepository.getModelDescriptor(modelUID);
+      SModelDescriptor modelDescriptor = myOperationContext.getModelDescriptor(modelUID);
       if (modelDescriptor != null) {
         return modelDescriptor;
       }
@@ -406,6 +417,9 @@ public class Language implements ModelLocator, ModelOwner {
     return list;
   }
 
+  /**
+   * @deprecated
+   */
   public static ConceptDeclaration findTypeDeclaration(SModel sourceModel, String conceptName) {
     for (Language language : sourceModel.getLanguages()) {
       LOG.assertLog(language != null, "Languages must be not null");
@@ -419,6 +433,9 @@ public class Language implements ModelLocator, ModelOwner {
     return null;
   }
 
+  /**
+   * @deprecated
+   */
   public static ConceptDeclaration getTypeDeclaration(SNode node) {
     DiagnosticUtil.assertNodeValid(node, IdeMain.instance().getProjectOperationContext());
     String conceptName = JavaNameUtil.shortName(node.getClass().getName());
@@ -427,10 +444,31 @@ public class Language implements ModelLocator, ModelOwner {
     return conceptDeclaration;
   }
 
-  public static Language getLanguage(SNode node, MPSProject project) {
-//    ConceptDeclaration conceptDeclaration = getTypeDeclaration(semanticNode);
-    ConceptDeclaration conceptDeclaration = SModelUtil.getConceptDeclaration(node, project);
-    SModel languageStructure = conceptDeclaration.getModel();
-    return project.getLanguage(JavaNameUtil.packageNameForModelUID(languageStructure.getModelUID()));
+
+  private static class LanguageOperationContext extends OperationContext {
+    public LanguageOperationContext(Language language) {
+      super(null, null, language);
+    }
+
+    public MPSProject getProject() {
+      throw new RuntimeException("not available");
+    }
+
+    public LanguageOwner getLanguageOwner() {
+      throw new RuntimeException("not available");
+    }
+
+    public Language getLanguage(String languageNamespace) {
+      throw new RuntimeException("not available");
+    }
+
+    public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
+      SModelDescriptor modelDescriptor = super.getModelDescriptor(modelUID);
+      // tmp
+      if (modelDescriptor == null) {
+//        super.getModelDescriptor(modelUID);
+      }
+      return modelDescriptor;
+    }
   }
 }

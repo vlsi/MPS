@@ -29,7 +29,7 @@ public class JavaNameUtil {
   }
 
   public static String fqClassName(SModel semanticModel, String shortClassName) {
-    String packageName = packageNameForModelUID(semanticModel.getModelUID());
+    String packageName = packageNameForModelUID(semanticModel.getUID());
     if (packageName == null || packageName.length() == 0) {
       return shortClassName;
     }

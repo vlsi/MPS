@@ -196,12 +196,12 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
   }
 
   protected String getNamespace() {
-    return JavaNameUtil.packageNameForModelUID(getSNode().getModel().getModelUID());
+    return JavaNameUtil.packageNameForModelUID(getSNode().getModel().getUID());
   }
 
   protected ClassConcept getQueriesClass() {
     SModel model = getSNode().getModel();
-    String className = NameUtil.longNameFromNamespaceAndShortName(model.getModelUID().getLongName(), "Queries");
+    String className = NameUtil.longNameFromNamespaceAndShortName(model.getUID().getLongName(), "Queries");
     Classifier classifier = ReflectionClassifierFinder.get(className, model);
     return (ClassConcept) classifier;
   }

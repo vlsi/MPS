@@ -33,13 +33,13 @@ public class UIEditorComponent extends AbstractEditorComponent {
     rebuildEditorContent();
   }
 
-  public EditorContext getContext() {
+  public EditorContext getEditorContext() {
     return myEditorContext;
   }
 
   public EditorCell createRootCell() {
     if (mySemanticNode.isDeleted()) {
-      return EditorCell_Constant.create(getContext(), mySemanticNode, "<no editor info>", true);
+      return EditorCell_Constant.create(getEditorContext(), mySemanticNode, "<no editor info>", true);
     }
     return myEditorContext.createNodeCell(mySemanticNode);
   }

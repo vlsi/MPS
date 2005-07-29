@@ -50,9 +50,9 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
         public String getDescriptionText(String pattern) {
           if (targetNode instanceof LinkDeclaration) {
             SNode containingRoot = targetNode.getContainingRoot();
-            return containingRoot.getName() + " (" + containingRoot.getModel().getModelUID() + ")";
+            return containingRoot.getName() + " (" + containingRoot.getModel().getUID() + ")";
           }
-          return targetNode.getModel().getModelUID().toString();
+          return targetNode.getModel().getUID().toString();
         }
 
         public SNode doSubstitute(String pattern) {

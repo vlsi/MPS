@@ -28,7 +28,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
   protected AbstractSModelDescriptor(SModel model) {
     mySModel = model;
-    myModelUID = model.getModelUID();
+    myModelUID = model.getUID();
   }
 
   protected AbstractSModelDescriptor(SModelUID modelUID) {
@@ -190,7 +190,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   public void refresh() {
     LanguageRepository.getInstance().invalidateLanguagesCaches();
     if (isInitialized()) {
-      LOG.debug("Refreshing " + mySModel.getModelUID());
+      LOG.debug("Refreshing " + mySModel.getUID());
       List<SModelListener> listeners = getSModel().getListeners();
       List<SModelCommandListener> commandListeners = getSModel().getCommandListeners();
       try {

@@ -23,10 +23,10 @@ public class TemplateSwitchGraph {
   }
 
   private void processTemplatesModel(SModel templatesModel, HashSet<SModelUID> processedModes) {
-    if (processedModes.contains(templatesModel.getModelUID())) {
+    if (processedModes.contains(templatesModel.getUID())) {
       return;
     }
-    processedModes.add(templatesModel.getModelUID());
+    processedModes.add(templatesModel.getUID());
 
     for (SNode root : templatesModel.getRoots()) {
       if (root instanceof TemplateSwitch) {

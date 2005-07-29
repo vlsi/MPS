@@ -74,7 +74,7 @@ public class SNodePresentationUtil {
     // default
     if (node instanceof LinkDeclaration) {
       SNode containingRoot = node.getContainingRoot();
-      return containingRoot.getName() + " (" + containingRoot.getModel().getModelUID() + ")";
+      return containingRoot.getName() + " (" + containingRoot.getModel().getUID() + ")";
     }
     String description = SModelUtil.getConceptProperty(node, "short_description");
     if (description != null) {
@@ -174,7 +174,7 @@ public class SNodePresentationUtil {
     String prefix = getAliasOrConceptName(method) + " in ";
     if (method instanceof MethodDeclaration) {
       // freestanding method: model fqname
-      return prefix + method.getModel().getModelUID().getLongName();
+      return prefix + method.getModel().getUID().getLongName();
     }
 
     Classifier parent = SModelUtil.findParent(method, Classifier.class);
@@ -213,7 +213,7 @@ public class SNodePresentationUtil {
   }
 
   private static String descriptionText_Classifier(Classifier classifier) {
-    return getAliasOrConceptName(classifier) + " in " + classifier.getModel().getModelUID();
+    return getAliasOrConceptName(classifier) + " in " + classifier.getModel().getUID();
   }
 
   private static String getAliasOrConceptName(SNode node) {

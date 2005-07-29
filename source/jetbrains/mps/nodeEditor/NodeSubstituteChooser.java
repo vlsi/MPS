@@ -224,7 +224,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     List<INodeSubstituteItem> matchingActions = myNodeSubstituteInfo.getMatchingItems(pattern, false);
     if (matchingActions.size() == 1) {
       setVisible(false);
-      CommandUtil.substituteNode(matchingActions.get(0), pattern, myNodeSubstituteInfo, myEditorComponent.getContext());
+      CommandUtil.substituteNode(matchingActions.get(0), pattern, myNodeSubstituteInfo, myEditorComponent.getEditorContext());
     }
     return true;
   }
@@ -283,7 +283,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     String pattern = getPatternEditor().getPattern();
     INodeSubstituteItem entry = myMenuSubstituteEntries.get(myPopupWindow.getSelectionIndex());
     setVisible(false);
-    CommandUtil.substituteNode(entry, pattern, myNodeSubstituteInfo, myEditorComponent.getContext());
+    CommandUtil.substituteNode(entry, pattern, myNodeSubstituteInfo, myEditorComponent.getEditorContext());
   }
 
   private void updatePatternEditor() {

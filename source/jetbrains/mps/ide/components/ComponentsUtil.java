@@ -27,7 +27,7 @@ public class ComponentsUtil {
 
   public static Element nodeToElement(SNode node) {
     Element nodeElement = new Element(NODE);
-    nodeElement.setAttribute(MODEL, node.getModel().getModelUID().toString());
+    nodeElement.setAttribute(MODEL, node.getModel().getUID().toString());
     nodeElement.setAttribute(ID, node.getId());
     return nodeElement;
   }

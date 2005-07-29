@@ -43,15 +43,15 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
     repaint();
   }
 
-  public EditorContext getContext() {
+  public EditorContext getEditorContext() {
     return myEditorContext;
   }
 
   public EditorCell createRootCell() {
     if (getNode() == null || getNode().isDeleted()) {
-      return EditorCell_Constant.create(getContext(), null, "<no inspect info>", true);
+      return EditorCell_Constant.create(getEditorContext(), null, "<no inspect info>", true);
     }
-    return getOperationContext().getProject().getComponent(EditorManager.class).createInspectedCell(getContext(), getNode());
+    return getOperationContext().getProject().getComponent(EditorManager.class).createInspectedCell(getEditorContext(), getNode());
   }
 
   public SNode getInspectedNode() {

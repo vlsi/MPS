@@ -277,7 +277,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
 
     LOG.debug("Generating to root : " + outputPath);
 
-    String packageName = JavaNameUtil.packageNameForModelUID(sourceModel.getModelUID());
+    String packageName = JavaNameUtil.packageNameForModelUID(sourceModel.getUID());
     File outputPathFile = new File(outputPath + File.separator + packageName.replace('.', File.separatorChar));
 
     LOG.debug("Generating to folder : " + outputPathFile.getAbsolutePath());

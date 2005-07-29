@@ -227,7 +227,7 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public void markChanged(SModel model) {
-    SModelDescriptor modelDescriptor = myUIDToModelDescriptorMap.get(model.getModelUID());
+    SModelDescriptor modelDescriptor = myUIDToModelDescriptorMap.get(model.getUID());
     if (modelDescriptor != null) { //i.e project model
       markChanged(modelDescriptor);
     }

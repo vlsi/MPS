@@ -269,7 +269,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       public void actionPerformed(ActionEvent e) {
         if (mySelectedCell != null && mySelectedCell.getSNode() != null) {
           IdeMain ide = ApplicationComponents.getInstance().getComponent(IdeMain.class);
-          action.execute(new ActionContext(ide, ide.getProjectOperationContext(), mySelectedCell.getSNode()));
+          action.execute(new ActionContext(ide, getEditorContext().getOperationContext(), mySelectedCell.getSNode()));
         }
       }
     }, KeyStroke.getKeyStroke(keyStroke), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
@@ -324,7 +324,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return myContainer;
   }
 
-  public abstract EditorContext getContext();
+  public abstract EditorContext getEditorContext();
 
   public abstract EditorCell createRootCell();
 
@@ -470,8 +470,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return false;
     }
     EditorCellAction action = (EditorCellAction) myActionMap.get(actionType);
-    if (action != null && action.canExecute(getContext())) {
-      action.execute(getContext());
+    if (action != null && action.canExecute(getEditorContext())) {
+      action.execute(getEditorContext());
       return true;
     }
     return false;
@@ -829,7 +829,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void processKeyReleased(KeyEvent keyEvent) {
-    peekKeyboardHandler().processKeyReleased(getContext(), keyEvent);
+    peekKeyboardHandler().processKeyReleased(getEditorContext(), keyEvent);
     relayout();
   }
 
@@ -838,9 +838,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     final SNode root = getRootCell().getSNode();
     final SNode[] copy = new SNode[1];
 
-    CommandProcessor.instance().executeCommand(getContext(), new Runnable() {
+    CommandProcessor.instance().executeCommand(getEditorContext(), new Runnable() {
       public void run() {
-        copy[0] = CopyUtil.copy(root, getContext().getOperationContext());
+        copy[0] = CopyUtil.copy(root, getEditorContext().getOperationContext());
       }
     }, "node copyAndAddToRoots");
 
@@ -865,12 +865,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     // hardcoded undo/redo action
     if (keyEvent.getKeyCode() == KeyEvent.VK_Z && keyEvent.isControlDown()) {
       if (keyEvent.isShiftDown()) {
-        if (UndoManager.instance().isRedoAvailable(getContext())) {
-          UndoManager.instance().redo(getContext());
+        if (UndoManager.instance().isRedoAvailable(getEditorContext())) {
+          UndoManager.instance().redo(getEditorContext());
         }
       } else {
-        if (UndoManager.instance().isUndoAvailable(getContext())) {
-          UndoManager.instance().undo(getContext());
+        if (UndoManager.instance().isUndoAvailable(getEditorContext())) {
+          UndoManager.instance().undo(getEditorContext());
         }
       }
       keyEvent.consume();
@@ -904,9 +904,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     // all other processing should be performed inside command
-    CommandProcessor.instance().executeCommand(getContext(), new Runnable() {
+    CommandProcessor.instance().executeCommand(getEditorContext(), new Runnable() {
       public void run() {
-        if (peekKeyboardHandler().processKeyPressed(getContext(), keyEvent) == true) {
+        if (peekKeyboardHandler().processKeyPressed(getEditorContext(), keyEvent) == true) {
           keyEvent.consume();
           return;
         }
@@ -969,7 +969,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (trySubstituteNow) {
       List<INodeSubstituteItem> matchingActions = substituteInfo.getMatchingItems(pattern, false);
       if (matchingActions.size() == 1 && pattern.length() > 0) {
-        CommandUtil.substituteNode(matchingActions.get(0), pattern, substituteInfo, this.getContext());
+        CommandUtil.substituteNode(matchingActions.get(0), pattern, substituteInfo, this.getEditorContext());
         return true;
       }
     }

@@ -100,7 +100,7 @@ public class NameUtil {
       return name;
     }
 
-    return node.getModel().getModelUID().getLongName() + "." + (name != null ? name : "");
+    return node.getModel().getUID().getLongName() + "." + (name != null ? name : "");
   }
 
   public static String nodeConceptFQName(SNode node) {
