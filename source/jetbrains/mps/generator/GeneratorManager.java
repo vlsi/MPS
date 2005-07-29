@@ -3,8 +3,8 @@ package jetbrains.mps.generator;
 import jetbrains.mps.baseLanguage.Classifier;
 import jetbrains.mps.baseLanguage.generator.target.DefaultTemplateGenerator;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
@@ -52,12 +52,12 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
   private static final String SAVE_TRANSIENT_MODELS = "save-transient-models-on-generation";
   private static final String COMPILE_ON_GENERATION = "compile-on-generation";
 
-  private MPSProject myProject;
+  private OperationContext myOperationContext;
   private boolean myCompileOnGeneration = true;
   private boolean mySaveTransientModels;
 
   public GeneratorManager(MPSProject project) {
-    myProject = project;
+    myOperationContext = new GeneratorOperationContext(project, this);
   }
 
   public ModelOwner getParentModelOwner() {
@@ -127,7 +127,8 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
   }
 
   public void generate(GeneratorConfiguration configuration, boolean generateText) {
-    generate(configuration, new HashSet<SModelDescriptor>(myProject.getProjectModelDescriptors()), generateText);
+    // todo: rework
+    generate(configuration, new HashSet<SModelDescriptor>(myOperationContext.getProject().getProjectModelDescriptors()), generateText);
   }
 
   private void addMessage(final Message msg) {
@@ -163,7 +164,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
       }
 
       public void run() {
-        myProject.getComponent(ProjectPane.class).disableRebuild();
+        myOperationContext.getProject().getComponent(ProjectPane.class).disableRebuild();
 
         ProgressMonitor progress = new ProgressWindowProgressMonitor(false);
 
@@ -216,7 +217,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
             SModelDescriptor templatesModel = loadTemplatesModel(generator);
             for (final SModelDescriptor model : modelsWithLanguage) {
               try {
-                generate_internal_new(model, generatorClass, templatesModel, configuration.getOutputPath(), progress, generateText);
+                generate_internal(model, generatorClass, templatesModel, configuration.getOutputPath(), progress, generateText);
               } catch (final GenerationCanceledException e) {
                 addMessage(new Message(MessageKind.WARNING, "generation canceled"));
                 progress.addText("Generation canceled");
@@ -249,7 +250,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
           progress.finish();
           LanguageRepository.getInstance().unRegisterLanguages(GeneratorManager.this);
           SModelRepository.getInstance().unRegisterModelDescriptors(GeneratorManager.this);
-          myProject.getComponent(ProjectPane.class).enableRebuild();
+          myOperationContext.getProject().getComponent(ProjectPane.class).enableRebuild();
         }
       }
     }.start();
@@ -268,7 +269,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
   }
 
   private MessageView getMessageView() {
-    return myProject.getComponent(MessageView.class);
+    return myOperationContext.getProject().getComponent(MessageView.class);
   }
 
 
@@ -302,7 +303,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
   }
 
   private void generateText(SModel targetModel) {
-    OutputView view = myProject.getComponent(OutputView.class);
+    OutputView view = myOperationContext.getProject().getComponent(OutputView.class);
     view.clear();
 
     Iterator<SNode> roots = targetModel.roots();
@@ -391,14 +392,14 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     return null;
   }
 
-  private void generate_internal_new(SModelDescriptor sourceModelDescr, String generatorClassFQName, SModelDescriptor templatesModelDescr, String outputPath, ProgressMonitor monitor, boolean generateText) {
-    IModelGenerator generator = null;
+  private void generate_internal(SModelDescriptor sourceModelDescr, String generatorClassFQName, SModelDescriptor templatesModelDescr, String outputPath, ProgressMonitor monitor, boolean generateText) {
+    IModelGenerator generator;
     try {
       Class cls = Class.forName(generatorClassFQName, true, ClassLoaderManager.getInstance().getClassLoader());
       if (ITemplateGenerator.class.isAssignableFrom(cls)) {
-        generator = (ITemplateGenerator) cls.getConstructor(MPSProject.class, ProgressMonitor.class).newInstance(myProject, monitor);
+        generator = (ITemplateGenerator) cls.getConstructor(OperationContext.class, ProgressMonitor.class).newInstance(myOperationContext, monitor);
       } else {
-        generator = (IModelGenerator) cls.getConstructor(MPSProject.class).newInstance(myProject);
+        generator = (IModelGenerator) cls.getConstructor(OperationContext.class).newInstance(myOperationContext);
       }
     } catch (Exception e) {
       LOG.error("Exception", e);
@@ -415,7 +416,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
         targetModel = command.execute();
       } else {
         ProgressMonitor childMonitor = monitor.startSubTask(AMOUNT_PER_MODEL);
-        targetModel = JavaGenUtil.createTargetJavaModel(sourceModelDescr.getSModel(), JavaNameUtil.packageNameForModelUID(sourceModelDescr.getModelUID()), myProject);
+        targetModel = JavaGenUtil.createTargetJavaModel(sourceModelDescr.getSModel(), JavaNameUtil.packageNameForModelUID(sourceModelDescr.getModelUID()), myOperationContext);
         generator.generate(sourceModelDescr.getSModel(), targetModel, monitor);
         childMonitor.finish();
       }
@@ -475,6 +476,12 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     public void commit() {
       myCompileOnGeneration = myCompileInIdeaOnGeneration.isSelected();
       mySaveTransientModels = mySaveTransientModelsCheckBox.isSelected();
+    }
+  }
+
+  private static class GeneratorOperationContext extends OperationContext {
+    public GeneratorOperationContext(MPSProject project, GeneratorManager generatorManager) {
+      super(project, generatorManager, generatorManager);
     }
   }
 }

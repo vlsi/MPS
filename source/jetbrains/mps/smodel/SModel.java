@@ -143,8 +143,8 @@ public class SModel implements Iterable<SNode> {
 
 
   public boolean hasImportedModel(SModelUID modelUID) {
-    for (int i = 0; i < myImports.size(); i++) {
-      ImportElement importElement = (ImportElement) myImports.get(i);
+    for (ImportElement myImport : myImports) {
+      ImportElement importElement = myImport;
       if (importElement.getModelUID().equals(modelUID)) {
         return true;
       }
@@ -273,13 +273,6 @@ public class SModel implements Iterable<SNode> {
       if (current == null) return null;
     }
     return current;
-  }
-
-  /**
-   * @deprecated use deleteLanguage(String nameSpace) instead
-   */
-  public void deleteLanguage(Language language) {
-    myLanguages.remove(language.getNamespace());
   }
 
   public void deleteLanguage(String languageNamespace) {

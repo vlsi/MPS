@@ -18,6 +18,7 @@ import java.util.List;
 public abstract class EditorCellListHandler implements IKeyboardHandler {
   private String myChildRole;
   private SNode myOwnerNode;
+  private EditorContext myEditorContext;
   private EditorCell_Collection myListEditorCell_Collection;
   private SNode myInsertedNode;
   private ConceptDeclaration myChildConcept;
@@ -27,11 +28,19 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
    * @deprecated
    */
   public EditorCellListHandler(SNode ownerNode, String linkRole, boolean isAggregation) {
-    this(ownerNode, linkRole);
+    this(ownerNode, linkRole, null);
   }
 
+  /**
+   * @deprecated
+   */
   public EditorCellListHandler(SNode ownerNode, String childRole) {
+    this(ownerNode, childRole, null);
+  }
+
+  public EditorCellListHandler(SNode ownerNode, String childRole, EditorContext editorContext) {
     myOwnerNode = ownerNode;
+    myEditorContext = editorContext;
     myLinkDeclaration = SModelUtil.getLinkDeclaration(ownerNode, childRole);
     myChildConcept = myLinkDeclaration.getTarget();
     LinkDeclaration genuineLink = SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration);
@@ -39,6 +48,10 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
       throw new RuntimeException("Only Aggregation links can be used in list");
     }
     myChildRole = genuineLink.getRole();
+  }
+
+  public EditorContext getEditorContext() {
+    return myEditorContext;
   }
 
   public SNode getOwner() {
