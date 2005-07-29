@@ -120,9 +120,9 @@ public class SModelRepository extends SModelAdapter {
 
   public void removeModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
     HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(modelDescriptor);
-    if(modelOwners.contains(owner)) {
+    if (modelOwners.contains(owner)) {
       modelOwners.remove(owner);
-      if(modelOwners.isEmpty()) {
+      if (modelOwners.isEmpty()) {
         myModelToOwnerMap.remove(modelDescriptor);
         removeModelDescriptor(modelDescriptor);
       }
@@ -183,18 +183,20 @@ public class SModelRepository extends SModelAdapter {
 
   public SModelDescriptor getModelDescriptor(SModelUID modelUID, ModelOwner owner) {
     SModelDescriptor descriptor = myUIDToModelDescriptorMap.get(modelUID);
-    if(descriptor == null) {
-    return null;
-    }
-    HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(descriptor);
-    ModelOwner testOwner = owner;
-    while( testOwner != null) {
-       if(modelOwners.contains(testOwner)) {
-         return descriptor;
-       }
-      testOwner = testOwner.getParentModelOwner();
-    }
-    return null;
+    // tmp
+    return descriptor;
+//    if (descriptor == null) {
+//      return null;
+//    }
+//    HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(descriptor);
+//    ModelOwner testOwner = owner;
+//    while (testOwner != null) {
+//      if (modelOwners.contains(testOwner)) {
+//        return descriptor;
+//      }
+//      testOwner = testOwner.getParentModelOwner();
+//    }
+//    return null;
   }
 
   public List<SModelDescriptor> getModelDescriptors(String modelName, ModelOwner owner) {

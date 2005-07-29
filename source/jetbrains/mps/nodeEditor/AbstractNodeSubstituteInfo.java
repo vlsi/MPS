@@ -3,9 +3,9 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.smodel.SNode;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Collections;
 
 /**
  * Author: Sergey Dmitriev.
@@ -15,6 +15,21 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
   private List<INodeSubstituteItem> myCachedItemList;
   private SNode myOriginalNode;
   private String myOriginalText;
+  private EditorContext myEditorContext;
+
+  /**
+   * @deprecated
+   */
+  public AbstractNodeSubstituteInfo() {
+  }
+
+  public AbstractNodeSubstituteInfo(EditorContext editorContext) {
+    myEditorContext = editorContext;
+  }
+
+  public EditorContext getEditorContext() {
+    return myEditorContext;
+  }
 
   public void setOriginalNode(SNode node) {
     myOriginalNode = node;
