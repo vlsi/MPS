@@ -35,7 +35,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    __Expression_RTransform_ActionSet.setCellActions(editorCell, node);
+    __Expression_RTransform_ActionSet.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new _Expression_KeyMap());
     editorCell.addEditorCell(this.createClassTypeCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "."));
@@ -69,7 +69,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
       noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
-      StaticFieldReference_FieldNameActions.setCellActions(noRefCell, node);
+      StaticFieldReference_FieldNameActions.setCellActions(noRefCell, node, context);
       noRefCell.putUserObject(EditorCell.CELL_ID, "1088427644683");
       return noRefCell;
     }
@@ -83,7 +83,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
         noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
-        StaticFieldReference_FieldNameActions.setCellActions(noRefCell, node);
+        StaticFieldReference_FieldNameActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1088427644683");
         return noRefCell;
       }
@@ -99,7 +99,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     editorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
-    StaticFieldReference_FieldNameActions.setCellActions(editorCell, node);
+    StaticFieldReference_FieldNameActions.setCellActions(editorCell, node, context);
     return editorCell;
   }
   public EditorCell createClassTypeCell(EditorContext context, SNode node) {
@@ -116,7 +116,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
       noRefCell.setBracketsColor(Color.black);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-      StaticFieldReference_TypeActions.setCellActions(noRefCell, node);
+      StaticFieldReference_TypeActions.setCellActions(noRefCell, node, context);
       noRefCell.putUserObject(EditorCell.CELL_ID, "1082740154393");
       return noRefCell;
     }
@@ -130,7 +130,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-        StaticFieldReference_TypeActions.setCellActions(noRefCell, node);
+        StaticFieldReference_TypeActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1082740154393");
         return noRefCell;
       }
@@ -142,7 +142,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-    StaticFieldReference_TypeActions.setCellActions(editorCell, node);
+    StaticFieldReference_TypeActions.setCellActions(editorCell, node, context);
     return editorCell;
   }
 }

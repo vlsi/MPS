@@ -78,7 +78,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
-    LocalVariableDeclaration_NameCellActions.setCellActions(editorCell, node);
+    LocalVariableDeclaration_NameCellActions.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new _LocalVariableName_KeyMap());
     editorCell.putUserObject(EditorCell.CELL_ID, "1075303160503");
     return editorCell;
@@ -97,7 +97,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
       noRefCell.setBracketsColor(Color.black);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-      LocalVariableDeclaration_TypeCellActions.setCellActions(noRefCell, node);
+      LocalVariableDeclaration_TypeCellActions.setCellActions(noRefCell, node, context);
       noRefCell.putUserObject(EditorCell.CELL_ID, "1075303160502");
       return noRefCell;
     }
@@ -111,7 +111,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-        LocalVariableDeclaration_TypeCellActions.setCellActions(noRefCell, node);
+        LocalVariableDeclaration_TypeCellActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1075303160502");
         return noRefCell;
       }
@@ -123,7 +123,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-    LocalVariableDeclaration_TypeCellActions.setCellActions(editorCell, node);
+    LocalVariableDeclaration_TypeCellActions.setCellActions(editorCell, node, context);
     return editorCell;
   }
   public EditorCell createInitializerCell(EditorContext context, SNode node) {
@@ -140,7 +140,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
       noRefCell.setBracketsColor(Color.black);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-      __VariableInitializer_ActionSet.setCellActions(noRefCell, node);
+      __VariableInitializer_ActionSet.setCellActions(noRefCell, node, context);
       noRefCell.putUserObject(EditorCell.CELL_ID, "1075303160506");
       return noRefCell;
     }
@@ -155,7 +155,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-        __VariableInitializer_ActionSet.setCellActions(noRefCell, node);
+        __VariableInitializer_ActionSet.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1075303160506");
         return noRefCell;
       }
@@ -167,7 +167,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-    __VariableInitializer_ActionSet.setCellActions(editorCell, node);
+    __VariableInitializer_ActionSet.setCellActions(editorCell, node, context);
     return editorCell;
   }
   public boolean handleConditionalQuery_1075303160504(SNode node) {

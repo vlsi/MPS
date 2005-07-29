@@ -59,7 +59,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setFontType(MPSFonts.BOLD);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
-    __ExpressionClosingParethesis_ActionSet.setCellActions(editorCell, node);
+    __ExpressionClosingParethesis_ActionSet.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1079623722231");
     return editorCell;
   }

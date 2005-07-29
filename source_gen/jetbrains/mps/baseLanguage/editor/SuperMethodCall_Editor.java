@@ -100,7 +100,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    __ExpressionClosingParethesis_ActionSet.setCellActions(editorCell, node);
+    __ExpressionClosingParethesis_ActionSet.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1091709481305");
     return editorCell;
   }
@@ -119,7 +119,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
       noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
-      SuperMethodCall_NameCellActions.setCellActions(noRefCell, node);
+      SuperMethodCall_NameCellActions.setCellActions(noRefCell, node, context);
       noRefCell.putUserObject(EditorCell.CELL_ID, "1091709481300");
       return noRefCell;
     }
@@ -133,7 +133,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
         noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
-        SuperMethodCall_NameCellActions.setCellActions(noRefCell, node);
+        SuperMethodCall_NameCellActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1091709481300");
         return noRefCell;
       }
@@ -149,7 +149,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     editorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
-    SuperMethodCall_NameCellActions.setCellActions(editorCell, node);
+    SuperMethodCall_NameCellActions.setCellActions(editorCell, node, context);
     return editorCell;
   }
 }

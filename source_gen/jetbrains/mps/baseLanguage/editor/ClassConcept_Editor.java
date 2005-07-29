@@ -358,7 +358,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
   public EditorCell createImplementedInterfaceList(EditorContext context, SNode node) {
     if(this.myImplementedInterfaceListHandler == null) {
-      this.myImplementedInterfaceListHandler = new ClassConcept_Editor_ImplementedInterfaceListHandler(node, "implementedInterface");
+      this.myImplementedInterfaceListHandler = new ClassConcept_Editor_ImplementedInterfaceListHandler(node, "implementedInterface", context);
     }
     EditorCell_Collection editorCell = this.myImplementedInterfaceListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(true);
@@ -370,7 +370,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
   public EditorCell createFieldsList(EditorContext context, SNode node) {
     if(this.myFieldListHandler == null) {
-      this.myFieldListHandler = new ClassConcept_Editor_FieldListHandler(node, "field");
+      this.myFieldListHandler = new ClassConcept_Editor_FieldListHandler(node, "field", context);
     }
     EditorCell_Collection editorCell = this.myFieldListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(false);
@@ -382,7 +382,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
   public EditorCell createStaticFieldList(EditorContext context, SNode node) {
     if(this.myStaticFieldListHandler == null) {
-      this.myStaticFieldListHandler = new ClassConcept_Editor_StaticFieldListHandler(node, "staticField");
+      this.myStaticFieldListHandler = new ClassConcept_Editor_StaticFieldListHandler(node, "staticField", context);
     }
     EditorCell_Collection editorCell = this.myStaticFieldListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(true);
@@ -394,7 +394,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
   public EditorCell createConstructorsList(EditorContext context, SNode node) {
     if(this.myConstructorListHandler == null) {
-      this.myConstructorListHandler = new ClassConcept_Editor_ConstructorListHandler(node, "constructor");
+      this.myConstructorListHandler = new ClassConcept_Editor_ConstructorListHandler(node, "constructor", context);
     }
     EditorCell_Collection editorCell = this.myConstructorListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(false);
@@ -406,7 +406,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
   public EditorCell createMethodsList(EditorContext context, SNode node) {
     if(this.myMethodListHandler == null) {
-      this.myMethodListHandler = new ClassConcept_Editor_MethodListHandler(node, "method");
+      this.myMethodListHandler = new ClassConcept_Editor_MethodListHandler(node, "method", context);
     }
     EditorCell_Collection editorCell = this.myMethodListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(false);
@@ -418,7 +418,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
   public EditorCell createStaticMethodList(EditorContext context, SNode node) {
     if(this.myStaticMethodListHandler == null) {
-      this.myStaticMethodListHandler = new ClassConcept_Editor_StaticMethodListHandler(node, "staticMethod");
+      this.myStaticMethodListHandler = new ClassConcept_Editor_StaticMethodListHandler(node, "staticMethod", context);
     }
     EditorCell_Collection editorCell = this.myStaticMethodListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(false);

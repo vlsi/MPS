@@ -94,7 +94,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getTextLine().setFontType(MPSFonts.BOLD);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
-    FieldDeclaration_NameCellActions.setCellActions(editorCell, node);
+    FieldDeclaration_NameCellActions.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1075289970878");
     return editorCell;
   }
@@ -112,7 +112,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
       noRefCell.setBracketsColor(Color.black);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-      FieldDeclaration_TypeCellActions.setCellActions(noRefCell, node);
+      FieldDeclaration_TypeCellActions.setCellActions(noRefCell, node, context);
       noRefCell.putUserObject(EditorCell.CELL_ID, "1075289941064");
       return noRefCell;
     }
@@ -126,7 +126,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-        FieldDeclaration_TypeCellActions.setCellActions(noRefCell, node);
+        FieldDeclaration_TypeCellActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1075289941064");
         return noRefCell;
       }
@@ -138,7 +138,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-    FieldDeclaration_TypeCellActions.setCellActions(editorCell, node);
+    FieldDeclaration_TypeCellActions.setCellActions(editorCell, node, context);
     return editorCell;
   }
   public EditorCell createInitializerCell(EditorContext context, SNode node) {
@@ -155,7 +155,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
       noRefCell.setBracketsColor(Color.black);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-      __VariableInitializer_ActionSet.setCellActions(noRefCell, node);
+      __VariableInitializer_ActionSet.setCellActions(noRefCell, node, context);
       noRefCell.putUserObject(EditorCell.CELL_ID, "1075290268533");
       return noRefCell;
     }
@@ -170,7 +170,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-        __VariableInitializer_ActionSet.setCellActions(noRefCell, node);
+        __VariableInitializer_ActionSet.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1075290268533");
         return noRefCell;
       }
@@ -182,7 +182,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-    __VariableInitializer_ActionSet.setCellActions(editorCell, node);
+    __VariableInitializer_ActionSet.setCellActions(editorCell, node, context);
     return editorCell;
   }
   public boolean handleConditionalQuery_1075290206265(SNode node) {

@@ -37,7 +37,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    __Expression_RTransform_ActionSet.setCellActions(editorCell, node);
+    __Expression_RTransform_ActionSet.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new _Expression_KeyMap());
     editorCell.addEditorCell(this.createClassTypeCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "."));
@@ -90,7 +90,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    __ExpressionClosingParethesis_ActionSet.setCellActions(editorCell, node);
+    __ExpressionClosingParethesis_ActionSet.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1081149570782");
     return editorCell;
   }
@@ -109,7 +109,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
       noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
-      StaticMethodCall_MethodNameActions.setCellActions(noRefCell, node);
+      StaticMethodCall_MethodNameActions.setCellActions(noRefCell, node, context);
       noRefCell.putUserObject(EditorCell.CELL_ID, "1088427863670");
       return noRefCell;
     }
@@ -123,7 +123,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
         noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
-        StaticMethodCall_MethodNameActions.setCellActions(noRefCell, node);
+        StaticMethodCall_MethodNameActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1088427863670");
         return noRefCell;
       }
@@ -139,7 +139,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     editorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
-    StaticMethodCall_MethodNameActions.setCellActions(editorCell, node);
+    StaticMethodCall_MethodNameActions.setCellActions(editorCell, node, context);
     return editorCell;
   }
   public EditorCell createClassTypeCell(EditorContext context, SNode node) {
@@ -156,7 +156,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
       noRefCell.setBracketsColor(Color.black);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-      StaticMethodCall_TypeActions.setCellActions(noRefCell, node);
+      StaticMethodCall_TypeActions.setCellActions(noRefCell, node, context);
       noRefCell.putUserObject(EditorCell.CELL_ID, "1081149310029");
       return noRefCell;
     }
@@ -170,7 +170,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-        StaticMethodCall_TypeActions.setCellActions(noRefCell, node);
+        StaticMethodCall_TypeActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1081149310029");
         return noRefCell;
       }
@@ -182,7 +182,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-    StaticMethodCall_TypeActions.setCellActions(editorCell, node);
+    StaticMethodCall_TypeActions.setCellActions(editorCell, node, context);
     return editorCell;
   }
 }

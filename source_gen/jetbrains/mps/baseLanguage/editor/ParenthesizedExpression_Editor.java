@@ -32,7 +32,7 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    __Expression_RTransform_ActionSet.setCellActions(editorCell, node);
+    __Expression_RTransform_ActionSet.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new _Expression_KeyMap());
     editorCell.addEditorCell(this.createConstantCell(context, node, "("));
     editorCell.addEditorCell(this.createExpressionCell(context, node));
@@ -60,7 +60,7 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    __ExpressionClosingParethesis_ActionSet.setCellActions(editorCell, node);
+    __ExpressionClosingParethesis_ActionSet.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new _RightParen_KeyMap());
     editorCell.putUserObject(EditorCell.CELL_ID, "1081880010412");
     return editorCell;
@@ -79,7 +79,7 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
       noRefCell.setBracketsColor(Color.black);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-      ParenthesizedExpression_ExpressionActions.setCellActions(noRefCell, node);
+      ParenthesizedExpression_ExpressionActions.setCellActions(noRefCell, node, context);
       noRefCell.putUserObject(EditorCell.CELL_ID, "1081880010411");
       return noRefCell;
     }
@@ -93,7 +93,7 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-        ParenthesizedExpression_ExpressionActions.setCellActions(noRefCell, node);
+        ParenthesizedExpression_ExpressionActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1081880010411");
         return noRefCell;
       }
@@ -105,7 +105,7 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-    ParenthesizedExpression_ExpressionActions.setCellActions(editorCell, node);
+    ParenthesizedExpression_ExpressionActions.setCellActions(editorCell, node, context);
     return editorCell;
   }
 }

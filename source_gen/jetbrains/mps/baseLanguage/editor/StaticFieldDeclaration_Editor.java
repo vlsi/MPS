@@ -107,7 +107,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getTextLine().setFontType(MPSFonts.BOLD_ITALIC);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
-    StaticFieldDeclaration_NameCellActions.setCellActions(editorCell, node);
+    StaticFieldDeclaration_NameCellActions.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1084188979615");
     return editorCell;
   }
@@ -125,7 +125,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
       noRefCell.setBracketsColor(Color.black);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-      StaticFieldDeclaration_TypeCellActions.setCellActions(noRefCell, node);
+      StaticFieldDeclaration_TypeCellActions.setCellActions(noRefCell, node, context);
       noRefCell.putUserObject(EditorCell.CELL_ID, "1084188979614");
       return noRefCell;
     }
@@ -139,7 +139,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-        StaticFieldDeclaration_TypeCellActions.setCellActions(noRefCell, node);
+        StaticFieldDeclaration_TypeCellActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1084188979614");
         return noRefCell;
       }
@@ -151,7 +151,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-    StaticFieldDeclaration_TypeCellActions.setCellActions(editorCell, node);
+    StaticFieldDeclaration_TypeCellActions.setCellActions(editorCell, node, context);
     return editorCell;
   }
   public EditorCell createInitializerCell(EditorContext context, SNode node) {
@@ -168,7 +168,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
       noRefCell.setBracketsColor(Color.black);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-      __VariableInitializer_ActionSet.setCellActions(noRefCell, node);
+      __VariableInitializer_ActionSet.setCellActions(noRefCell, node, context);
       noRefCell.addKeyMap(new _Expression_KeyMap());
       noRefCell.putUserObject(EditorCell.CELL_ID, "1084188979618");
       return noRefCell;
@@ -184,7 +184,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-        __VariableInitializer_ActionSet.setCellActions(noRefCell, node);
+        __VariableInitializer_ActionSet.setCellActions(noRefCell, node, context);
         noRefCell.addKeyMap(new _Expression_KeyMap());
         noRefCell.putUserObject(EditorCell.CELL_ID, "1084188979618");
         return noRefCell;
@@ -197,7 +197,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-    __VariableInitializer_ActionSet.setCellActions(editorCell, node);
+    __VariableInitializer_ActionSet.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new _Expression_KeyMap());
     return editorCell;
   }

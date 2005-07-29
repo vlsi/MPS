@@ -146,8 +146,8 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
       noRefCell.setBracketsColor(Color.black);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-      WhileStatement_ConditionCellActions.setCellActions(noRefCell, node);
-      _DefErrorActions.setCellActions(noRefCell, node);
+      WhileStatement_ConditionCellActions.setCellActions(noRefCell, node, context);
+      _DefErrorActions.setCellActions(noRefCell, node, context);
       noRefCell.addKeyMap(new _Expression_KeyMap());
       noRefCell.putUserObject(EditorCell.CELL_ID, "1081264296766");
       return noRefCell;
@@ -162,8 +162,8 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-        WhileStatement_ConditionCellActions.setCellActions(noRefCell, node);
-        _DefErrorActions.setCellActions(noRefCell, node);
+        WhileStatement_ConditionCellActions.setCellActions(noRefCell, node, context);
+        _DefErrorActions.setCellActions(noRefCell, node, context);
         noRefCell.addKeyMap(new _Expression_KeyMap());
         noRefCell.putUserObject(EditorCell.CELL_ID, "1081264296766");
         return noRefCell;
@@ -176,7 +176,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-    WhileStatement_ConditionCellActions.setCellActions(editorCell, node);
+    WhileStatement_ConditionCellActions.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new _Expression_KeyMap());
     return editorCell;
   }

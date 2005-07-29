@@ -387,9 +387,14 @@ public class TemplateGenUtil {
       if (sourceQueryAspectMethodName != null) {
         String methodName = "templateSourceQuery_" + sourceQueryAspectMethodName;
         Object[] args = new Object[]{parentSourceNode, generator};
-        List<SNode> sourceNodes = (List<SNode>) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
-        checkNodesFromQuery(sourceNodes, nodeMacro, generator);
-        return sourceNodes;
+        try {
+          List<SNode> sourceNodes = (List<SNode>) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
+          checkNodesFromQuery(sourceNodes, nodeMacro, generator);
+          return sourceNodes;
+        } catch (Exception e) {
+          generator.showErrorMessage(parentSourceNode, nodeMacro, "Error invocation method: \"" + methodName + "\" : " + e.getMessage());
+          throw new RuntimeException("Error invocation method: \"" + methodName + "\"", e);
+        }
       }
     }
 

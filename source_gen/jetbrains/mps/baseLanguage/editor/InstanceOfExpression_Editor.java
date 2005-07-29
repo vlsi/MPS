@@ -65,8 +65,8 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
       noRefCell.setBracketsColor(Color.black);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-      InstanceOfExpression_LeftExpressionsActions.setCellActions(noRefCell, node);
-      _DefErrorActions.setCellActions(noRefCell, node);
+      InstanceOfExpression_LeftExpressionsActions.setCellActions(noRefCell, node, context);
+      _DefErrorActions.setCellActions(noRefCell, node, context);
       noRefCell.putUserObject(EditorCell.CELL_ID, "1081257097746");
       return noRefCell;
     }
@@ -80,8 +80,8 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-        InstanceOfExpression_LeftExpressionsActions.setCellActions(noRefCell, node);
-        _DefErrorActions.setCellActions(noRefCell, node);
+        InstanceOfExpression_LeftExpressionsActions.setCellActions(noRefCell, node, context);
+        _DefErrorActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1081257097746");
         return noRefCell;
       }
@@ -93,7 +93,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-    InstanceOfExpression_LeftExpressionsActions.setCellActions(editorCell, node);
+    InstanceOfExpression_LeftExpressionsActions.setCellActions(editorCell, node, context);
     return editorCell;
   }
   public EditorCell createClassTypeCell(EditorContext context, SNode node) {
@@ -110,8 +110,8 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
       noRefCell.setBracketsColor(Color.black);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-      InstanceOfExpression_InstanceOfTypes.setCellActions(noRefCell, node);
-      _DefErrorActions.setCellActions(noRefCell, node);
+      InstanceOfExpression_InstanceOfTypes.setCellActions(noRefCell, node, context);
+      _DefErrorActions.setCellActions(noRefCell, node, context);
       noRefCell.putUserObject(EditorCell.CELL_ID, "1081257097748");
       return noRefCell;
     }
@@ -125,8 +125,8 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-        InstanceOfExpression_InstanceOfTypes.setCellActions(noRefCell, node);
-        _DefErrorActions.setCellActions(noRefCell, node);
+        InstanceOfExpression_InstanceOfTypes.setCellActions(noRefCell, node, context);
+        _DefErrorActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1081257097748");
         return noRefCell;
       }
@@ -138,7 +138,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-    InstanceOfExpression_InstanceOfTypes.setCellActions(editorCell, node);
+    InstanceOfExpression_InstanceOfTypes.setCellActions(editorCell, node, context);
     return editorCell;
   }
 }

@@ -22,7 +22,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
     editorCell.setEditable(true);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    __Expression_RTransform_ActionSet.setCellActions(editorCell, node);
+    __Expression_RTransform_ActionSet.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1090310064235");
     return editorCell;
   }

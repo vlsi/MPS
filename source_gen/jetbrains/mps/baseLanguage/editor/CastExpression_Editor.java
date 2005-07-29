@@ -32,7 +32,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    __Expression_RTransform_ActionSet.setCellActions(editorCell, node);
+    __Expression_RTransform_ActionSet.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new _Expression_KeyMap());
     editorCell.addEditorCell(this.createConstantCell(context, node, "("));
     editorCell.addEditorCell(this.createTypeCell(context, node));
@@ -77,8 +77,8 @@ public class CastExpression_Editor extends DefaultNodeEditor {
       noRefCell.setBracketsColor(Color.black);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-      CastExpression_CastTypeActions.setCellActions(noRefCell, node);
-      _DefErrorActions.setCellActions(noRefCell, node);
+      CastExpression_CastTypeActions.setCellActions(noRefCell, node, context);
+      _DefErrorActions.setCellActions(noRefCell, node, context);
       noRefCell.putUserObject(EditorCell.CELL_ID, "1080902646662");
       return noRefCell;
     }
@@ -92,8 +92,8 @@ public class CastExpression_Editor extends DefaultNodeEditor {
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-        CastExpression_CastTypeActions.setCellActions(noRefCell, node);
-        _DefErrorActions.setCellActions(noRefCell, node);
+        CastExpression_CastTypeActions.setCellActions(noRefCell, node, context);
+        _DefErrorActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1080902646662");
         return noRefCell;
       }
@@ -105,7 +105,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-    CastExpression_CastTypeActions.setCellActions(editorCell, node);
+    CastExpression_CastTypeActions.setCellActions(editorCell, node, context);
     return editorCell;
   }
   public EditorCell createExpressionCell(EditorContext context, SNode node) {
@@ -122,8 +122,8 @@ public class CastExpression_Editor extends DefaultNodeEditor {
       noRefCell.setBracketsColor(Color.black);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-      CastExpression_CastExpressionActions.setCellActions(noRefCell, node);
-      _DefErrorActions.setCellActions(noRefCell, node);
+      CastExpression_CastExpressionActions.setCellActions(noRefCell, node, context);
+      _DefErrorActions.setCellActions(noRefCell, node, context);
       noRefCell.putUserObject(EditorCell.CELL_ID, "1080902646664");
       return noRefCell;
     }
@@ -137,8 +137,8 @@ public class CastExpression_Editor extends DefaultNodeEditor {
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-        CastExpression_CastExpressionActions.setCellActions(noRefCell, node);
-        _DefErrorActions.setCellActions(noRefCell, node);
+        CastExpression_CastExpressionActions.setCellActions(noRefCell, node, context);
+        _DefErrorActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1080902646664");
         return noRefCell;
       }
@@ -150,7 +150,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-    CastExpression_CastExpressionActions.setCellActions(editorCell, node);
+    CastExpression_CastExpressionActions.setCellActions(editorCell, node, context);
     return editorCell;
   }
 }

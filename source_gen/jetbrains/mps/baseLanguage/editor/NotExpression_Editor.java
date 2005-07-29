@@ -32,7 +32,7 @@ public class NotExpression_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    __Expression_RTransform_ActionSet.setCellActions(editorCell, node);
+    __Expression_RTransform_ActionSet.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new _Expression_KeyMap());
     editorCell.addEditorCell(this.createConstantCell(context, node, "!("));
     editorCell.addEditorCell(this.createExpressionCell(context, node));
@@ -76,7 +76,7 @@ public class NotExpression_Editor extends DefaultNodeEditor {
       noRefCell.setBracketsColor(Color.black);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-      NotExpression_NotExpressionActions.setCellActions(noRefCell, node);
+      NotExpression_NotExpressionActions.setCellActions(noRefCell, node, context);
       noRefCell.putUserObject(EditorCell.CELL_ID, "1081930071609");
       return noRefCell;
     }
@@ -90,7 +90,7 @@ public class NotExpression_Editor extends DefaultNodeEditor {
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-        NotExpression_NotExpressionActions.setCellActions(noRefCell, node);
+        NotExpression_NotExpressionActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1081930071609");
         return noRefCell;
       }
@@ -102,7 +102,7 @@ public class NotExpression_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
-    NotExpression_NotExpressionActions.setCellActions(editorCell, node);
+    NotExpression_NotExpressionActions.setCellActions(editorCell, node, context);
     return editorCell;
   }
 }
