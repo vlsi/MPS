@@ -51,7 +51,7 @@ public class BooleanConceptProperty_Editor extends DefaultNodeEditor {
       noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
-      BooleanConceptProperty_BooleanConceptProperties_Menu.setCellActions(noRefCell, node);
+      BooleanConceptProperty_BooleanConceptProperties_Menu.setCellActions(noRefCell, node, context);
       noRefCell.putUserObject(EditorCell.CELL_ID, "1105727610547");
       return noRefCell;
     }
@@ -65,7 +65,7 @@ public class BooleanConceptProperty_Editor extends DefaultNodeEditor {
         noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
-        BooleanConceptProperty_BooleanConceptProperties_Menu.setCellActions(noRefCell, node);
+        BooleanConceptProperty_BooleanConceptProperties_Menu.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1105727610547");
         return noRefCell;
       }
@@ -81,7 +81,7 @@ public class BooleanConceptProperty_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     editorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
-    BooleanConceptProperty_BooleanConceptProperties_Menu.setCellActions(editorCell, node);
+    BooleanConceptProperty_BooleanConceptProperties_Menu.setCellActions(editorCell, node, context);
     return editorCell;
   }
 }

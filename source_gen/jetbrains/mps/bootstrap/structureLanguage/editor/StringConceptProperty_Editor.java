@@ -85,7 +85,7 @@ public class StringConceptProperty_Editor extends DefaultNodeEditor {
       noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
-      StringConceptProperty_StringConceptProperties_Menu.setCellActions(noRefCell, node);
+      StringConceptProperty_StringConceptProperties_Menu.setCellActions(noRefCell, node, context);
       noRefCell.putUserObject(EditorCell.CELL_ID, "1105727610549");
       return noRefCell;
     }
@@ -99,7 +99,7 @@ public class StringConceptProperty_Editor extends DefaultNodeEditor {
         noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
-        StringConceptProperty_StringConceptProperties_Menu.setCellActions(noRefCell, node);
+        StringConceptProperty_StringConceptProperties_Menu.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1105727610549");
         return noRefCell;
       }
@@ -115,7 +115,7 @@ public class StringConceptProperty_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     editorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
-    StringConceptProperty_StringConceptProperties_Menu.setCellActions(editorCell, node);
+    StringConceptProperty_StringConceptProperties_Menu.setCellActions(editorCell, node, context);
     return editorCell;
   }
 }

@@ -125,7 +125,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("<none>");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    ConstrainedDataTypeDeclaration_ExtendsCellActions.setCellActions(editorCell, node);
+    ConstrainedDataTypeDeclaration_ExtendsCellActions.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1083243939643");
     return editorCell;
   }

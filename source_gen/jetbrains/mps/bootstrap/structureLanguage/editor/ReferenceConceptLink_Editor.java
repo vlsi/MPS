@@ -65,7 +65,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
       noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
-      ReferenceConceptLink_ConceptLinks_Menu.setCellActions(noRefCell, node);
+      ReferenceConceptLink_ConceptLinks_Menu.setCellActions(noRefCell, node, context);
       noRefCell.putUserObject(EditorCell.CELL_ID, "1105739062907");
       return noRefCell;
     }
@@ -79,7 +79,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
         noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
-        ReferenceConceptLink_ConceptLinks_Menu.setCellActions(noRefCell, node);
+        ReferenceConceptLink_ConceptLinks_Menu.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1105739062907");
         return noRefCell;
       }
@@ -95,7 +95,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     editorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
-    ReferenceConceptLink_ConceptLinks_Menu.setCellActions(editorCell, node);
+    ReferenceConceptLink_ConceptLinks_Menu.setCellActions(editorCell, node, context);
     return editorCell;
   }
   public EditorCell createTargetReferenceCell(EditorContext context, SNode node) {
@@ -113,7 +113,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
       noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
-      ReferenceConceptLink_ConceptLinkTargets_Menu.setCellActions(noRefCell, node);
+      ReferenceConceptLink_ConceptLinkTargets_Menu.setCellActions(noRefCell, node, context);
       noRefCell.putUserObject(EditorCell.CELL_ID, "1105739062910");
       return noRefCell;
     }
@@ -127,7 +127,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
         noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
-        ReferenceConceptLink_ConceptLinkTargets_Menu.setCellActions(noRefCell, node);
+        ReferenceConceptLink_ConceptLinkTargets_Menu.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1105739062910");
         return noRefCell;
       }
@@ -143,7 +143,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     editorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
-    ReferenceConceptLink_ConceptLinkTargets_Menu.setCellActions(editorCell, node);
+    ReferenceConceptLink_ConceptLinkTargets_Menu.setCellActions(editorCell, node, context);
     return editorCell;
   }
 }

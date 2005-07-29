@@ -198,7 +198,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("<no data type>");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    EnumerationDataTypeDeclaration_MemberDataTypeActions.setCellActions(editorCell, node);
+    EnumerationDataTypeDeclaration_MemberDataTypeActions.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1083175632066");
     return editorCell;
   }
@@ -219,7 +219,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createMemberList(EditorContext context, SNode node) {
     if(this.myMemberListHandler == null) {
-      this.myMemberListHandler = new EnumerationDataTypeDeclaration_Editor_MemberListHandler(node, "member");
+      this.myMemberListHandler = new EnumerationDataTypeDeclaration_Editor_MemberListHandler(node, "member", context);
     }
     EditorCell_Collection editorCell = this.myMemberListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(true);

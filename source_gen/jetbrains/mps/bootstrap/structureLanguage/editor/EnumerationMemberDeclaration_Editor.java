@@ -105,7 +105,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    EnumerationMemberDeclaration_IsDefaultActions.setCellActions(editorCell, node);
+    EnumerationMemberDeclaration_IsDefaultActions.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1083925414259");
     return editorCell;
   }
