@@ -116,6 +116,7 @@ public class CellExplorerView implements Tool {
 
 
     public Icon getIcon(boolean expanded) {
+      if (myCell.isErrorState()) return Icons.CELL_ERROR_ICON;
       if (myCell instanceof EditorCell_Collection) return Icons.CELLS_ICON;
       if (myCell instanceof EditorCell_Constant) return Icons.CELL_CONSTANT_ICON;
       if (myCell instanceof EditorCell_Error) return Icons.CELL_ERROR_ICON;
@@ -129,6 +130,9 @@ public class CellExplorerView implements Tool {
       String result = "<html>" + NameUtil.shortNameFromLongName(myCell.getClass().getName());
       if (myCell instanceof EditorCell_Label) {
         result += " <b>text</b> = <i>\"" + ((EditorCell_Label) myCell).getText() + "\"</i>";
+      }
+      if (myCell.isErrorState() ) {
+        result += " <b>(error state)</b>";
       }
       return result;
     }
@@ -152,8 +156,16 @@ public class CellExplorerView implements Tool {
         keys.add(ak.toString());
       }
       for (String key : keys) {
-        add(new MPSTree.TextTreeNode(key));
+        add(new MPSTree.TextTreeNode(key) {
+          public Icon getIcon(boolean expanded) {
+            return Icons.CELL_ACTION_KEY;
+          }
+        });
       }
+    }
+
+    public Icon getIcon(boolean expanded) {
+      return Icons.CELL_KEY_MAP_ICON;
     }
 
     protected String getNodeIdentifier() {
