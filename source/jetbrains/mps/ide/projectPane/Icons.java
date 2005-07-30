@@ -45,6 +45,7 @@ public class Icons {
   public static final Icon CLOSED_FOLDER = new ImageIcon(Icons.class.getResource("other/closedFolder.png"));
 
   public static final Icon USAGES_ICON = new ImageIcon(Icons.class.getResource("nodes/usages.png"));
+  public static final Icon CELL_EXPLORER_ICON = new ImageIcon(Icons.class.getResource("nodes/cellExplorer.png"));
 
   public static final Icon DISCARD_ALL_ICON = new ImageIcon(Icons.class.getResource("nodes/discardAll.png"));
   public static final Icon SELECT_ALL_ICON = new ImageIcon(Icons.class.getResource("nodes/selectAll.png"));
