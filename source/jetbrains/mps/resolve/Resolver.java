@@ -22,7 +22,7 @@ public class Resolver {
 
   public static void resolveAllReferences(SNode node) {
 
-    List<SReference> referenceList = getExternalReferences(node);
+    List<SReference> referenceList = getReferencesPointingOut(node);
 
     for (SReference reference : referenceList) {
       resolve(reference);
@@ -80,7 +80,7 @@ public class Resolver {
   }
 
 
-  public static List<SReference> getExternalReferences(SNode node) {
+  public static List<SReference> getReferencesPointingOut(SNode node) {
 
     List<SReference> result = new ArrayList<SReference>();
 
