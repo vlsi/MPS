@@ -7,10 +7,10 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.util.NameUtil;
 
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 import java.awt.*;
 
 /**
@@ -56,14 +56,24 @@ public class CellExplorerView implements Tool {
 
   private class CellTreeNode extends MPSTreeNode {
     private EditorCell myCell;
+    private boolean myInitialized = false;
 
     public CellTreeNode(EditorCell cell) {
       myCell = cell;
     }
 
+    public boolean isInitialized() {
+      return myInitialized;
+    }
 
     public void init() {
-      
+      if (myCell instanceof EditorCell_Collection) {
+        EditorCell_Collection cell = (EditorCell_Collection) myCell;
+        for (EditorCell child : cell) {
+          add(new CellTreeNode(child));
+        }
+        myInitialized = true;
+      }
     }
 
 
