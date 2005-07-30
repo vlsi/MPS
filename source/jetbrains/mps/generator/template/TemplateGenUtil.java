@@ -74,7 +74,7 @@ public class TemplateGenUtil {
       IReferenceResolver referenceResolver = createReferenceResolver(templateNode);
       SNode targetReferentNode = referenceResolver.resolveTarget(templateReference, nodeBuilder);
       if (targetReferentNode != null) {
-        if (SModelUtil.isAcceptableReferent(targetNode, templateReference.getRole(), targetReferentNode, nodeBuilder.getGenerator().getProject())) {
+        if (SModelUtil.isAcceptableReferent(targetNode, templateReference.getRole(), targetReferentNode, nodeBuilder.getGenerator().getOperationContext())) {
           targetNode.addReferent(templateReference.getRole(), targetReferentNode);
         } else {
           // if reference is not acceptable, then temporarily keep original reference
@@ -127,7 +127,7 @@ public class TemplateGenUtil {
   }
 
   private static INodeBuilder loadNodeBuilder(SNode sourceNode, SNode templateNode, String mappingName, ITemplateGenerator generator) {
-    ConceptDeclaration typeDeclaration = SModelUtil.getConceptDeclaration(templateNode, generator.getProject());
+    ConceptDeclaration typeDeclaration = SModelUtil.getConceptDeclaration(templateNode, generator.getOperationContext());
     String modelPackageName = JavaNameUtil.packageNameForModelUID(typeDeclaration.getModel().getUID());
     String buildersPackageName = modelPackageName + ".builder";
     String builderClassName = buildersPackageName + "." + typeDeclaration.getName() + "_NodeBuilder";
