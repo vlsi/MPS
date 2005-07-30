@@ -97,7 +97,7 @@ public class EditorManager {
       return null;
     }
     String conceptName = JavaNameUtil.shortName(node.getClass().getName());
-    ConceptDeclaration nodeConcept = language.findTypeDeclaration(conceptName);
+    ConceptDeclaration nodeConcept = language.findConceptDeclaration(conceptName);
     if (nodeConcept == null) {
       LOG.errorWithTrace("Error loading editor for node \"" + node.getDebugText() + "\" : couldn't find the type declaration.");
       return null;

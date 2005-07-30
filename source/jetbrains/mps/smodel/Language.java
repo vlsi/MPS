@@ -268,7 +268,7 @@ public class Language implements ModelLocator, ModelOwner {
     myNameToTypeMap.clear();
   }
 
-  public ConceptDeclaration findTypeDeclaration(String conceptName) {
+  public ConceptDeclaration findConceptDeclaration(String conceptName) {
     if (myNameToTypeMap.isEmpty()) {
       SModelUtil.allNodes(getStructureModel(), new Condition<SNode>() {
         public boolean met(SNode node) {
@@ -411,7 +411,7 @@ public class Language implements ModelLocator, ModelOwner {
   public static List<SNode> findSubTypes(String conceptName, SModel model, SNodeFilter filter) {
     ArrayList<SNode> list = new ArrayList<SNode>();
     for (Language language : model.getLanguages()) {
-      ConceptDeclaration typeDeclaration = language.findTypeDeclaration(conceptName);
+      ConceptDeclaration typeDeclaration = language.findConceptDeclaration(conceptName);
       language.findSubTypes(typeDeclaration, list, filter);
     }
     return list;
@@ -423,7 +423,7 @@ public class Language implements ModelLocator, ModelOwner {
   public static ConceptDeclaration findTypeDeclaration(SModel sourceModel, String conceptName) {
     for (Language language : sourceModel.getLanguages()) {
       LOG.assertLog(language != null, "Languages must be not null");
-      ConceptDeclaration typeDeclaration = language.findTypeDeclaration(conceptName);
+      ConceptDeclaration typeDeclaration = language.findConceptDeclaration(conceptName);
       DiagnosticUtil.assertNodeValid(typeDeclaration, IdeMain.instance().getProjectOperationContext());
       if (typeDeclaration != null) {
         return typeDeclaration;
