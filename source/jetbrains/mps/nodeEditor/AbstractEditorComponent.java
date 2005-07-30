@@ -479,6 +479,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myRootCell.relayout();
     revalidate();
     repaint();
+    IdeMain.instance().getCellExplorerView().update();
   }
 
   public void selectNode(final SNode node) {
@@ -620,6 +621,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       EditorCell cell = findNodeCell(nodeProxy.getNode(), id);
       changeSelection(cell);
     }
+
+    IdeMain.instance().getCellExplorerView().update();
   }
 
   public EditorCell findNearestCell(int x, int y) {

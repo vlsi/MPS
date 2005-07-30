@@ -71,6 +71,7 @@ public class CellExplorerView implements Tool {
     }
 
     public void init() {
+      removeAllChildren();
       if (myCell.getSNode() != null) {
         final SNode node = myCell.getSNode();
         add(new MPSTree.TextTreeNode(node.getName() + " [" + node.getId() + "]") {
