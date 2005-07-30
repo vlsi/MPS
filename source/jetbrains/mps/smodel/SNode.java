@@ -46,13 +46,15 @@ public abstract class SNode implements Cloneable {
 
     LOG.assertLog (myParent == null || myParent.myModel == newModel, "CHANGE MODEL: parent must be NULL or must have the same model as your destination model");
 
-    myModel.removeNodeId(myId);
-    myModel = newModel;
-    myModel.setNodeId(getId(), this);
-
     for (SNode child : myChildren) {
       child.changeModel(newModel);
     }
+
+    myModel.removeNodeId(myId);
+    myModel = newModel;
+    myModel.setNodeId(myId, this);
+
+
   }
 
   public SNode clone() {//doesn't copy children, references and back references
@@ -64,6 +66,7 @@ public abstract class SNode implements Cloneable {
       newNode.myReferences = new ArrayList<SReference>();
       newNode.myBackReferences = new WeakSet<SReference>();
       newNode.myChildren =  new ArrayList<SNode>();
+      newNode.myUserObjects = new HashMap();
       newNode.myProperties = new HashMap<String, String>();
       newNode.myProperties.putAll(this.myProperties);
     } catch (Exception e) {
@@ -344,6 +347,9 @@ public abstract class SNode implements Cloneable {
   }
 
   private void insertChildAt(final int index, String role, SNode child) {
+    LOG.assertLog(child != null, "Child is null");
+    LOG.assertLog(child.getModel() == getModel(), "Can't add child with different model");
+
     if (child.getParent() != null) {
       throw new RuntimeException(child.getDebugText() + " already has parent: " + child.getParent().getDebugText() + "\n" +
               "Couldn't add it to: " + this.getDebugText());

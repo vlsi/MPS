@@ -30,16 +30,6 @@ public class Resolver {
   }
 
 
-  public static void processCopy(SNode node) {
-
-    List<SReference> referenceList = getExternalReferences(node);
-
-    for (SReference reference : referenceList) {
-      setResolveInfo(reference);
-    }
-
-  }
-
   public static void setResolveInfo(SReference reference) {
 
     if (reference instanceof ExternalReference) return;

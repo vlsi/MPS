@@ -39,9 +39,20 @@ public class CopyPasteNodeUtil {
     ourSourceNodesToNewNodes.clear();
     ourReferences.clear();
     SNode targetNode = copyNode_internal(sourceNode);
-    processReferences();
+    processReferencesIn();
     model.setLoading(false);
     return targetNode;
+  }
+
+  public static SNode copyNodeFromClipboard(SNode node, SModel model) {
+    model.setLoading(true);
+    ourSourceNodesToNewNodes.clear();
+    ourReferences.clear();
+    SNode nodeToPaste = copyNode_internal(node);
+    processReferencesOut();
+    nodeToPaste.changeModel(model);
+    model.setLoading(false);
+    return nodeToPaste;
   }
 
   private static SNode copyNode_internal(SNode sourceNode) {
@@ -65,7 +76,7 @@ public class CopyPasteNodeUtil {
     return targetNode;
   }
 
-  private static void processReferences () {
+  private static void processReferencesIn () {
     for (SReference sourceReference : ourReferences) {
       SNode oldSourceNode = sourceReference.getSourceNode();
       SNode newSourceNode = ourSourceNodesToNewNodes.get(oldSourceNode);
@@ -102,9 +113,49 @@ public class CopyPasteNodeUtil {
     }
   }
 
+
+  private static void processReferencesOut() {
+    for (SReference sourceReference : ourReferences) {
+      SNode oldSourceNode = sourceReference.getSourceNode();
+      SNode newSourceNode = ourSourceNodesToNewNodes.get(oldSourceNode);
+
+      if (sourceReference instanceof InternalReference) {
+
+        SNode oldTargetNode = sourceReference.getTargetNode();
+        SNode newTargetNode = ourSourceNodesToNewNodes.get(oldTargetNode);
+
+         if (newTargetNode != null) {//if our reference points inside our node's subtree
+
+          newSourceNode.addSemanticReference(SReference.newInstance(sourceReference.getRole(), newSourceNode, newTargetNode));
+
+        } else {//otherwise it points out of our node's subtree
+           //the difference between In and Out is here!
+
+          String oldTargetNodeId = sourceReference.getTargetNodeId();
+
+          SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, oldTargetNodeId);
+          newReference.setResolveInfo(sourceReference.getResolveInfo());
+          newReference.setTargetClassResolveInfo(sourceReference.getTargetClassResolveInfo());
+
+          newSourceNode.addSemanticReference(newReference);
+
+        }
+
+      } else if (sourceReference instanceof ExternalReference) {
+
+        String targetNodeId = sourceReference.getTargetNodeId();
+        SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, targetNodeId);
+
+        newSourceNode.addSemanticReference(newReference);
+      }
+
+    }
+  }
+
+
   public static void copyNodesToClipboard(List<SNode> nodes) {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
-    cb.setContents(new SNTransferable(nodes), null);
+    cb.setContents(new SNodeTransferable(nodes), null);
   }
 
   public static void copyNodeToClipboard(SNode node) {
@@ -119,9 +170,9 @@ public class CopyPasteNodeUtil {
     if (content == null) return null;
 
     if (content.isDataFlavorSupported(SModelDataFlavor.sNode)) {
-      SNTransferable nodeTransferable = null;
+      SNodeTransferable nodeTransferable = null;
       try {
-        nodeTransferable = (SNTransferable) content.getTransferData(SModelDataFlavor.sNode);
+        nodeTransferable = (SNodeTransferable) content.getTransferData(SModelDataFlavor.sNode);
         return nodeTransferable.createNodes(model);
       } catch (UnsupportedFlavorException e) {
         LOG.error("Exception", e);

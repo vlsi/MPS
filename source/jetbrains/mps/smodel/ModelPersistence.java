@@ -7,6 +7,7 @@ import jetbrains.mps.util.NameUtil;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
+import org.jdom.output.XMLOutputter;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -168,7 +169,6 @@ public class ModelPersistence {
       semanticReference = SReference.newInstance(referenceDescriptor.role,
               referenceDescriptor.sourceNode,
               referenceDescriptor.targetId,
-              referenceDescriptor.isBad,
               referenceDescriptor.resolveInfo,
               referenceDescriptor.targetClassResolveInfo);
       if (semanticReference != null) referenceDescriptor.sourceNode.addSemanticReference(semanticReference);
@@ -217,27 +217,27 @@ public class ModelPersistence {
     for (Iterator iterator = links.iterator(); iterator.hasNext();) {
       Element linkElement = (Element) iterator.next();
       String role = linkElement.getAttributeValue(ROLE);
-      String bad = linkElement.getAttributeValue(BAD, "false");
+     // String bad = linkElement.getAttributeValue(BAD, "false");
       String resolveInfo = linkElement.getAttributeValue(RESOLVE_INFO);
       String targetClassResolveInfo = linkElement.getAttributeValue(TARGET_CLASS_RESOLVE_INFO);
-      boolean isBad = ("true".equals(bad));
+     // boolean isBad = ("true".equals(bad));
 //      LinkMetaclass metaclass = LinkMetaclass.parseValue(linkElement.getAttributeValue(META_CLASS));
 //      if (metaclass == LinkMetaclass.aggregation) {
 //        // old style of children saving (keep this for a while)
 //        Element targetElement = linkElement.getChild(NODE);
 //        SNode targetNode = readNode(targetElement, semanticModel, referenceDescriptors, setID);
 //        if (targetNode != null) {
-//          semanticNode.addChild(role, targetNode);
+//          sNode.addChild(role, targetNode);
 //        } else {
-//          (new RuntimeException("Error reading child node in node " + semanticNode.getDebugText())).printStackTrace();
+//          (new RuntimeException("Error reading child node in node " + sNode.getDebugText())).printStackTrace();
 //          firePersisteneceError();
 //        }
 //      } else {
       String targetNodeId = linkElement.getAttributeValue(TARGET_NODE_ID);
       if (resolveInfo == null || resolveInfo.equals("") || targetClassResolveInfo == null || targetClassResolveInfo.equals("")) {
-        referenceDescriptors.add(new ReferenceDescriptor(semanticNode, role, targetNodeId, isBad));
+        referenceDescriptors.add(new ReferenceDescriptor(semanticNode, role, targetNodeId));
       } else {
-        referenceDescriptors.add(new ReferenceDescriptor(semanticNode, role, targetNodeId, isBad, resolveInfo, targetClassResolveInfo));
+        referenceDescriptors.add(new ReferenceDescriptor(semanticNode, role, targetNodeId, resolveInfo, targetClassResolveInfo));
       }
 //      }
     }
@@ -380,14 +380,14 @@ public class ModelPersistence {
       element.addContent(linkElement);
       linkElement.setAttribute(ROLE, semanticReference.getRole());
 //      setNotNullAttribute(linkElement, META_CLASS, null);
-      linkElement.setAttribute(TARGET_NODE_ID, semanticReference.createReferencedNodeId());
-      if (!semanticReference.isResolved()) {
+      if (semanticReference.isResolved()) linkElement.setAttribute(TARGET_NODE_ID, semanticReference.createReferencedNodeId());
+/*      if (!semanticReference.isResolved()) {
         linkElement.setAttribute(BAD, "true");
-      }
+      }*/
       String resolveInfo = semanticReference.getResolveInfo();
-      if (!semanticReference.isResolved() || (saveResolveInfo && resolveInfo != null)) linkElement.setAttribute(RESOLVE_INFO, resolveInfo);
+      if (!semanticReference.isResolved() && resolveInfo != null) linkElement.setAttribute(RESOLVE_INFO, resolveInfo);
       String targetClassResolveInfo = semanticReference.getTargetClassResolveInfo();
-      if (!semanticReference.isResolved() || saveResolveInfo && targetClassResolveInfo != null) linkElement.setAttribute(TARGET_CLASS_RESOLVE_INFO, targetClassResolveInfo);
+      if (!semanticReference.isResolved() && targetClassResolveInfo != null) linkElement.setAttribute(TARGET_CLASS_RESOLVE_INFO, targetClassResolveInfo);
     }
 
     // children ...
@@ -430,25 +430,20 @@ public class ModelPersistence {
     public SNode sourceNode;
     public String role;
     public String targetId;
-    public boolean isBad;
     public String resolveInfo;
     public String targetClassResolveInfo;
 
-    public ReferenceDescriptor(SNode sourceNode, String role, String targetId, boolean isBad) {
+    public ReferenceDescriptor(SNode sourceNode, String role, String targetId) {
       this.sourceNode = sourceNode;
       this.role = role;
       this.targetId = targetId;
-      this.isBad = isBad;
     }
 
-    public ReferenceDescriptor(SNode sourceNode, String role, String targetId, boolean isBad, String resolveInfo, String targetClassResolveInfo) {
-      this(sourceNode, role, targetId, isBad);
+    public ReferenceDescriptor(SNode sourceNode, String role, String targetId, String resolveInfo, String targetClassResolveInfo) {
+      this(sourceNode, role, targetId);
       this.resolveInfo = resolveInfo;
       this.targetClassResolveInfo = targetClassResolveInfo;
     }
 
-    public ReferenceDescriptor(SNode sourceNode, String role, String targetId) {
-      this(sourceNode, role, targetId, false);
-    }
   }
 }

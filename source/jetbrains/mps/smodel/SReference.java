@@ -11,7 +11,7 @@ public abstract class SReference {
 
   private String myRole;
   private SNode mySourceNode;
-  private boolean myIsResolved;
+  private boolean myIsResolved = true;
   protected String myTargetNodeId;
 
   protected SReference(String role, SNode sourceNode) {
@@ -74,15 +74,15 @@ public abstract class SReference {
     }
   }
 
-  public static SReference newInstance(String role, SNode sourceNode, String targetNodeId) {
-    return newInstance(role, sourceNode, targetNodeId, false);
-  }
 
-  public static SReference newInstance(String role, SNode sourceNode, String targetNodeId, boolean isBad) {
-    return newInstance(role, sourceNode, targetNodeId, isBad, null, null);
-  }
+   public static SReference newInstance(String role, SNode sourceNode, String targetNodeId) {
+     return newInstance(role, sourceNode, targetNodeId, null, null);
+   }
 
-  public static SReference newInstance(String role, SNode sourceNode, String targetNodeId, boolean isBad, String resolveInfo, String targetClassResolveInfo) {
+  public static SReference newInstance(String role, SNode sourceNode, String targetNodeId, String resolveInfo, String targetClassResolveInfo) {
+
+    if (targetNodeId == null) return new InternalReference(role, sourceNode, resolveInfo, targetClassResolveInfo);
+
     int offset = targetNodeId.indexOf('.');
     SModel sourceModel = sourceNode.getModel();
     String localNodeId = targetNodeId;
@@ -95,22 +95,18 @@ public abstract class SReference {
       }
       localNodeId = targetNodeId.substring(offset + 1);
       SModel.ImportElement importElement = sourceModel.addImportElement(targetModelUID);
-      SReference resultReference = new ExternalReference(role, sourceNode, localNodeId, importElement, isBad);
+      SReference resultReference = new ExternalReference(role, sourceNode, localNodeId, importElement);
     /*  resultReference.setResolveInfo(resolveInfo);
       resultReference.setTargetClassResolveInfo(targetClassResolveInfo);*/
       return resultReference;
     } else {
       SNode targetNode = sourceModel.getNodeById(localNodeId);
-      if (targetNode == null && !(isBad)) {
-        if (resolveInfo == null) {
+      if (targetNode == null && resolveInfo == null) {
           LOG.errorWithTrace("SReference.newInstance Couldn't create internal reference: \"" + role + "\" to node id:" + localNodeId +
                   "\nSource node: " + sourceNode.getDebugText());
           return null;
-        } else {
-          isBad = true;
-        }
       }
-      SReference resultReference = new InternalReference(role, sourceNode, targetNode, isBad);
+      SReference resultReference = new InternalReference(role, sourceNode, targetNode);
       resultReference.setResolveInfo(resolveInfo);
       resultReference.setTargetClassResolveInfo(targetClassResolveInfo);
       return resultReference;

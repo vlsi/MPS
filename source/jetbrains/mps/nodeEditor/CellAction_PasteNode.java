@@ -1,9 +1,11 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.datatransfer.PasteUtil;
+import jetbrains.mps.datatransfer.CopyPasteNodeUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.output.OutputView;
 
 import java.util.List;
 
@@ -21,7 +23,7 @@ public class CellAction_PasteNode extends EditorCellAction {
       return false;
     }
     SNode selectedNode = selectedCell.getSNode();
-    List<SNode> pasteNodes = PasteUtil.getNodesFromClipboard(selectedNode.getModel());
+    List<SNode> pasteNodes = CopyPasteNodeUtil.getNodesFromClipboard(selectedNode.getModel());
     if (pasteNodes == null || pasteNodes.size() == 0) {
       return false;
     }
@@ -36,15 +38,20 @@ public class CellAction_PasteNode extends EditorCellAction {
   public void execute(EditorContext context) {
     EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
     SNode selectedNode = selectedCell.getSNode();
-    List<SNode> pasteNodes = PasteUtil.getNodesFromClipboard(selectedNode.getModel());
-    PasteUtil.paste(selectedNode, pasteNodes.get(0));
+    List<SNode> pasteNodes = CopyPasteNodeUtil.getNodesFromClipboard(selectedNode.getModel());
     SNode anchor = pasteNodes.get(0);
+    PasteUtil.paste(selectedNode, anchor);
     for (int i = 1; i < pasteNodes.size(); i++) {
       SNode node = pasteNodes.get(i);
       PasteUtil.pasteRelative(anchor, node, false);
       anchor = node;
     }
     //EditorsPane editorsPane = context.getProject().getComponent(EditorsPane.class);
+
+    OutputView outputView = context.getProject().getComponent(OutputView.class);
+    outputView.clear();
+    outputView.append("first pasted node id = " + anchor.getId());
+    outputView.activate();
     AbstractEditorComponent editor = context.getNodeEditorComponent();//editorsPane.getCurrentEditor();
     editor.rebuildEditorContent();
   }
