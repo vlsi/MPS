@@ -133,9 +133,9 @@ public class CopyPasteNodeUtil {
 
           String oldTargetNodeId = sourceReference.getTargetNodeId();
 
-          SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, oldTargetNodeId);
-          newReference.setResolveInfo(sourceReference.getResolveInfo());
-          newReference.setTargetClassResolveInfo(sourceReference.getTargetClassResolveInfo());
+          SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, oldTargetNodeId, sourceReference.getResolveInfo(), sourceReference.getTargetClassResolveInfo(), null);
+        /*  newReference.setResolveInfo(sourceReference.getResolveInfo());
+          newReference.setTargetClassResolveInfo(sourceReference.getTargetClassResolveInfo());*/
 
           newSourceNode.addSemanticReference(newReference);
 

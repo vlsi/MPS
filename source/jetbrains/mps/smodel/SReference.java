@@ -94,6 +94,9 @@ public abstract class SReference {
       }
 
       //internal reference
+      if (resolveInfo == null) {
+        System.err.println("resolve info is null, source node is " + sourceNode + ", role is " + role);
+      }
       return new InternalReference(role, sourceNode, resolveInfo, targetClassResolveInfo);
 
     }

@@ -48,10 +48,10 @@ public class CellAction_PasteNode extends EditorCellAction {
     }
     //EditorsPane editorsPane = context.getProject().getComponent(EditorsPane.class);
 
-    OutputView outputView = context.getProject().getComponent(OutputView.class);
+   /* OutputView outputView = context.getProject().getComponent(OutputView.class);
     outputView.clear();
     outputView.append("first pasted node id = " + anchor.getId());
-    outputView.activate();
+    outputView.activate();*/
     AbstractEditorComponent editor = context.getNodeEditorComponent();//editorsPane.getCurrentEditor();
     editor.rebuildEditorContent();
   }
