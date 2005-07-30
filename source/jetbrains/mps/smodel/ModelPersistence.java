@@ -28,7 +28,6 @@ public class ModelPersistence {
   private static final String TARGET_NODE_ID = "targetNodeId";
   private static final String LINK = "link";
   private static final String ROLE = "role";
-  public static final String BAD = "bad";
   public static final String NAME = "name";
   public static final String NAMESPACE = "namespace";
   public static final String NODE = "node";
