@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.core.BaseConcept;
 
 
 /**
@@ -114,22 +115,32 @@ public class EditorManager {
       }
     }
 
+
+    ConceptDeclaration superConcept = nodeConcept;
     //    String editorClassName = "jetbrains.mps." + languageEditorFQName + "." + nodeConcept.getName() + "_Editor";
-    String editorClassName = languageEditorFQName + "." + nodeConcept.getName() + "_Editor";
+    String editorClassName = "";
+
+    while (superConcept != null)  {
     try {
-      Class editorClass = Class.forName(editorClassName, true, ClassLoaderManager.getInstance().getClassLoader());
+       editorClassName = languageEditorFQName + "." + superConcept.getName() + "_Editor";
+       Class editorClass = Class.forName(editorClassName, true, ClassLoaderManager.getInstance().getClassLoader());
       return (INodeEditor) editorClass.newInstance();
     } catch (ClassNotFoundException e) {
-      LOG.warning("Couldn't load editor " + editorClassName + " : Class Not Found!");
-      //      e.printStackTrace();  //To change body of catch statement use Options | File Templates.
+
+      superConcept = superConcept.getExtends();
+      
     } catch (InstantiationException e) {
       LOG.error(e);
+      return null;
     } catch (IllegalAccessException e) {
       LOG.error(e);
+      return null;
     } catch (Exception e) {
       LOG.error(e);
+      return null;
     }
-
+    }
+    LOG.warning("Couldn't load editor " + editorClassName + " : Class Not Found!");
     return null;
   }
 }
