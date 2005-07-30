@@ -10,10 +10,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.logging.Logger;
 
 import java.awt.event.KeyEvent;
-import java.util.HashMap;
-import java.util.List;
-import java.util.LinkedList;
-import java.util.Iterator;
+import java.util.*;
 import java.lang.reflect.Field;
 import java.io.File;
 import java.io.IOException;
@@ -114,6 +111,10 @@ public class EditorCellKeyMap {
       }
     }
     return list;
+  }
+
+  public List<ActionKey> getActionKeys() {
+    return new ArrayList<ActionKey>(myActionMap.keySet());
   }
 
   private static EditorCellKeyMapAction findAction(EditorCellKeyMap keyMap, KeyEvent event) {
@@ -275,7 +276,7 @@ public class EditorCellKeyMap {
   }
 
 
-  private static class ActionKey {
+  public static class ActionKey {
     private String myModifiers;
     private String myKeyCode;
 
