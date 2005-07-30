@@ -15,6 +15,7 @@ import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.reform.CellRangeSelection;
 import jetbrains.mps.nodeEditor.test.EventRecorder;
+import jetbrains.mps.nodeEditor.cellExplorer.CellExplorerDialog;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.EventUtil;
@@ -166,7 +167,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        new CellExplorer(AbstractEditorComponent.this);
+        new CellExplorerDialog(AbstractEditorComponent.this);
       }
     }, KeyStroke.getKeyStroke("F12"), WHEN_FOCUSED);
 
