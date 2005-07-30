@@ -91,6 +91,10 @@ public class CellExplorerView implements Tool {
           public Icon getIcon(boolean expanded) {
             return IconManager.getIconFor(node);
           }
+
+          public boolean isLeaf() {
+            return false;
+          }
         });
 
         if (myCell.getKeyMap() != null) {
@@ -122,7 +126,11 @@ public class CellExplorerView implements Tool {
 
 
     public String toString() {
-      return NameUtil.shortNameFromLongName(myCell.getClass().getName());
+      String result = "<html>" + NameUtil.shortNameFromLongName(myCell.getClass().getName());
+      if (myCell instanceof EditorCell_Label) {
+        result += " <b>text</b> = <i>\"" + ((EditorCell_Label) myCell).getText() + "\"</i>";
+      }
+      return result;
     }
 
     protected String getNodeIdentifier() {
@@ -147,9 +155,6 @@ public class CellExplorerView implements Tool {
         add(new MPSTree.TextTreeNode(key));
       }
     }
-
-
-
 
     protected String getNodeIdentifier() {
       return "Keymap";
