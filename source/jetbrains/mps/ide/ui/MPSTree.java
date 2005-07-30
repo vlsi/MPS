@@ -133,6 +133,20 @@ public abstract class MPSTree extends JTree {
     return result;
   }
 
+  public TreeNode findNodeWith(Object userObject) {
+    MPSTreeNode root = (MPSTreeNode) getModel().getRoot();
+    return findNodeWith(root, userObject);
+  }
+
+  private MPSTreeNode findNodeWith(MPSTreeNode root, Object userObject) {
+    if (root.getUserObject() == userObject) return root;
+    for (MPSTreeNode child : root) {
+      MPSTreeNode result = findNodeWith(child, userObject);
+      if (result != null) return result;
+    }
+    return null;
+  }
+
   private TreePath stringToPath(String pathString) {
     String[] components = pathString.split(TREE_PATH_SEPARATOR);
     List<Object> path = new ArrayList<Object>();

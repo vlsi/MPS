@@ -35,6 +35,10 @@ public class CellExplorerView implements Tool {
     myTree.rebuildTree();
   }
 
+  public void showCell(EditorCell cell) {
+    
+  }
+
   public String getName() {
     return "Cell Explorer";
   }
