@@ -167,7 +167,7 @@ public class ProjectPane extends JComponent {
 
   public void selectNode(SNode semanticNode) {
     DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
-    DefaultMutableTreeNode rootNode = (DefaultMutableTreeNode) model.getRoot();
+    MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
     SModel sModel = semanticNode.getModel();
     SModelTreeNode sModelNode = findSModelTreeNode(rootNode, sModel);
     if (sModelNode == null) return;
@@ -183,16 +183,14 @@ public class ProjectPane extends JComponent {
 
   private MPSTreeNodeEx findTreeNode(MPSTreeNode parent, SNode semanticNode) {
     if (!parent.initialized()) parent.init();
-
     if (parent instanceof SNodeTreeNode) {
       SNodeTreeNode parentSemanticTreeNode = (SNodeTreeNode) parent;
       if (semanticNode == parentSemanticTreeNode.getSNode()) {
         return parentSemanticTreeNode;
       }
     }
-    Enumeration children = parent.children();
-    while (children.hasMoreElements()) {
-      MPSTreeNodeEx foundNode = findTreeNode((MPSTreeNode) children.nextElement(), semanticNode);
+    for (MPSTreeNode node : parent) {
+      MPSTreeNodeEx foundNode = findTreeNode(node, semanticNode);
       if (foundNode != null) {
         return foundNode;
       }
@@ -200,7 +198,7 @@ public class ProjectPane extends JComponent {
     return null;
   }
 
-  private SModelTreeNode findSModelTreeNode(DefaultMutableTreeNode parent, SModel sModel) {
+  private SModelTreeNode findSModelTreeNode(MPSTreeNode parent, SModel sModel) {
     if (parent instanceof SModelTreeNode) {
       SModelTreeNode parentSModelNode = (SModelTreeNode) parent;
       SModelDescriptor modelDescriptor = parentSModelNode.getModelDescriptor();
@@ -210,9 +208,8 @@ public class ProjectPane extends JComponent {
         }
       }
     }
-    Enumeration children = parent.children();
-    while (children.hasMoreElements()) {
-      SModelTreeNode foundNode = findSModelTreeNode((DefaultMutableTreeNode) children.nextElement(), sModel);
+    for (MPSTreeNode node : parent) {
+      SModelTreeNode foundNode = findSModelTreeNode(node, sModel);
       if (foundNode != null) {
         return foundNode;
       }

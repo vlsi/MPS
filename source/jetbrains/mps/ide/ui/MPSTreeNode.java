@@ -4,11 +4,14 @@ import jetbrains.mps.ide.projectPane.Icons;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.*;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * @author Kostik
  */
-public abstract class MPSTreeNode extends DefaultMutableTreeNode {
+public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPSTreeNode> {
   public MPSTreeNode() {
   }
 
@@ -17,6 +20,14 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode {
   }
 
   protected abstract String getNodeIdentifier();
+
+  public Iterator<MPSTreeNode> iterator() {
+    List<MPSTreeNode> result = new ArrayList<MPSTreeNode>();    
+    for (int i = 0; i < getChildCount(); i++) {
+      result.add((MPSTreeNode) getChildAt(i));
+    }
+    return result.iterator();
+  }
 
   public boolean initialized() {
     return true;
