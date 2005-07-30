@@ -41,7 +41,7 @@ public abstract class MPSTree extends JTree {
         TreePath path = event.getPath();
         Object node = path.getLastPathComponent();
         MPSTreeNode treeNode = (MPSTreeNode) node;
-        if (!treeNode.initialized()) {
+        if (!treeNode.isInitialized()) {
           treeNode.init();
         }
       }
@@ -146,7 +146,7 @@ public abstract class MPSTree extends JTree {
         if (node.getNodeIdentifier().equals(component)) {
           current = node;
           path.add(current);
-          if (!current.initialized()) current.init();
+          if (!current.isInitialized()) current.init();
           found = true;
           break;
         }

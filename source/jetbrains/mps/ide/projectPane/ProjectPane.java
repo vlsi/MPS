@@ -13,7 +13,6 @@ import jetbrains.mps.ide.ui.TreeWithSemanticNodesSpeedSearch;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjectCommandListener;
-import jetbrains.mps.project.RootManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 
@@ -182,7 +181,7 @@ public class ProjectPane extends JComponent {
   }
 
   private MPSTreeNodeEx findTreeNode(MPSTreeNode parent, SNode semanticNode) {
-    if (!parent.initialized()) parent.init();
+    if (!parent.isInitialized()) parent.init();
     if (parent instanceof SNodeTreeNode) {
       SNodeTreeNode parentSemanticTreeNode = (SNodeTreeNode) parent;
       if (semanticNode == parentSemanticTreeNode.getSNode()) {
@@ -353,7 +352,7 @@ public class ProjectPane extends JComponent {
       myInitialized = false;
     }
 
-    public boolean initialized() {
+    public boolean isInitialized() {
       return myInitialized;
     }
 
@@ -476,7 +475,7 @@ public class ProjectPane extends JComponent {
       return "<html>" + fqName;
     }
 
-    public boolean initialized() {
+    public boolean isInitialized() {
       return isInitialized;
     }
 
