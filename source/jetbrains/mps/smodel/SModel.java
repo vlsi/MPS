@@ -30,6 +30,9 @@ public class SModel implements Iterable<SNode> {
   private String myNamespace = "";
   private String myStereotype = "";*/
   private SModelUID myUID = new SModelUID("unnamed","");
+
+  private boolean myIsExternallyResolved = false;
+
   private boolean isLoading = false;
 
   private int myMaxReferenceID;
@@ -463,6 +466,7 @@ public class SModel implements Iterable<SNode> {
     }
 
     ITypeChecker typeChecker = TypeCheckerAccess.instance().getTypeChecker();
+    if (typeChecker == null) return new Status.ERROR("null typechecker");
 
     List<Language> languages = getLanguages();
     for (Iterator<Language> iterator = languages.iterator(); iterator.hasNext();) {
@@ -528,6 +532,14 @@ public class SModel implements Iterable<SNode> {
   public Collection<? extends SNode> getAllNodes() {
     Collection<SNode> nodes = myIdToNodeMap.values();
     return Collections.unmodifiableCollection(nodes);
+  }
+
+  public boolean isExternallyResolved() {
+    return myIsExternallyResolved;
+  }
+
+  public void setExternallyResolved(boolean externallyResolved) {
+    myIsExternallyResolved = externallyResolved;
   }
 
   /*package*/

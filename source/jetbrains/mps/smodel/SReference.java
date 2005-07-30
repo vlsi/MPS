@@ -76,30 +76,42 @@ public abstract class SReference {
 
 
    public static SReference newInstance(String role, SNode sourceNode, String targetNodeId) {
-     return newInstance(role, sourceNode, targetNodeId, null, null);
+     return newInstance(role, sourceNode, targetNodeId, null, null, null);
    }
 
-  public static SReference newInstance(String role, SNode sourceNode, String targetNodeId, String resolveInfo, String targetClassResolveInfo) {
+  public static SReference newInstance(String role, SNode sourceNode, String targetNodeId, String resolveInfo, String targetClassResolveInfo, String extResolveInfo) {
 
-    if (targetNodeId == null) return new InternalReference(role, sourceNode, resolveInfo, targetClassResolveInfo);
+    if (targetNodeId == null) {//WITHOUT TARGET ID
+
+      //internal reference
+      if (resolveInfo != null) return new InternalReference(role, sourceNode, resolveInfo, targetClassResolveInfo);
+
+      if (extResolveInfo != null) {//external reference
+        int offset = extResolveInfo.indexOf('.');
+        SModel.ImportElement importElement = importElementFromString(extResolveInfo, sourceNode);
+        if (importElement == null) return null;
+
+        String localExtResolveInfo = extResolveInfo.substring(offset + 1);
+        return new ExternalReference(role, sourceNode, importElement, localExtResolveInfo);
+      }
+
+    }
 
     int offset = targetNodeId.indexOf('.');
     SModel sourceModel = sourceNode.getModel();
     String localNodeId = targetNodeId;
-    if (offset > 0) {
-      Integer refModelId = new Integer(targetNodeId.substring(0, offset));
-      SModelUID targetModelUID = sourceModel.getImportedModelKey(refModelId.intValue());
-      if (targetModelUID == null) {
-        LOG.errorWithTrace("SReference.newInstance -Search in model: " + sourceNode.getModel().getUID() + ": couldn't find referenced model by id:" + refModelId);
-        return null;
-      }
+    if (offset > 0) {  //EXTERNAL REFERENCE
+
+      SModel.ImportElement importElement = importElementFromString(targetNodeId, sourceNode);
+      if (importElement == null) return null;
+
       localNodeId = targetNodeId.substring(offset + 1);
-      SModel.ImportElement importElement = sourceModel.addImportElement(targetModelUID);
       SReference resultReference = new ExternalReference(role, sourceNode, localNodeId, importElement);
-    /*  resultReference.setResolveInfo(resolveInfo);
-      resultReference.setTargetClassResolveInfo(targetClassResolveInfo);*/
+
       return resultReference;
-    } else {
+    }
+
+    else {//INTERNAL REFERENCE
       SNode targetNode = sourceModel.getNodeById(localNodeId);
       if (targetNode == null && resolveInfo == null) {
           LOG.errorWithTrace("SReference.newInstance Couldn't create internal reference: \"" + role + "\" to node id:" + localNodeId +
@@ -113,9 +125,25 @@ public abstract class SReference {
     }
   }
 
+  private static SModel.ImportElement importElementFromString(String targetNodeId, SNode sourceNode) {
+    int offset = targetNodeId.indexOf('.');
+    SModel sourceModel = sourceNode.getModel();
+    Integer refModelId = new Integer(targetNodeId.substring(0, offset));
+    SModelUID targetModelUID = sourceModel.getImportedModelKey(refModelId.intValue());
+    if (targetModelUID == null) {
+      LOG.errorWithTrace("SReference.newInstance -Search in model: " + sourceNode.getModel().getUID() + ": couldn't find referenced model by id:" + refModelId);
+      return null;
+    }
+
+    SModel.ImportElement importElement = sourceModel.addImportElement(targetModelUID);
+    return importElement;
+  }
+
   public abstract SNode getTargetNode();
 
   public abstract String createReferencedNodeId();
+
+  public abstract String createExtResolveInfo();
 
   public abstract boolean isTargetNode(SNode node);
 
