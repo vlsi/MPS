@@ -83,8 +83,6 @@ public abstract class SReference {
 
     if (targetNodeId == null) {//WITHOUT TARGET ID
 
-      //internal reference
-      if (resolveInfo != null) return new InternalReference(role, sourceNode, resolveInfo, targetClassResolveInfo);
 
       if (extResolveInfo != null) {//external reference
         int offset = extResolveInfo.indexOf('.');
@@ -94,6 +92,9 @@ public abstract class SReference {
         String localExtResolveInfo = extResolveInfo.substring(offset + 1);
         return new ExternalReference(role, sourceNode, importElement, localExtResolveInfo);
       }
+
+      //internal reference
+      return new InternalReference(role, sourceNode, resolveInfo, targetClassResolveInfo);
 
     }
 
