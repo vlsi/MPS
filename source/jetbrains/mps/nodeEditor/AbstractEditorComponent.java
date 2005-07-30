@@ -16,10 +16,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.reform.CellRangeSelection;
 import jetbrains.mps.nodeEditor.test.EventRecorder;
 import jetbrains.mps.project.ApplicationComponents;
-import jetbrains.mps.smodel.OperationContext;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.EventUtil;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelCommandListener;
@@ -523,6 +520,24 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return condition.getFoundCell();
   }
 
+  public EditorCell findNodeCell(final SNode node, String id) {
+    EditorCell rootCell = findNodeCell(node);
+    if (rootCell == null) return null;
+    return findCellWithId(rootCell, id);
+  }
+
+  private EditorCell findCellWithId(final EditorCell root, String id) {
+    if (id.equals(root.getUserObject(EditorCell.CELL_ID))) return root;
+    if (root instanceof EditorCell_Collection) {
+      EditorCell_Collection collection = (EditorCell_Collection) root;
+      for (EditorCell child : collection) {
+        EditorCell result = findCellWithId(child, id);
+        if (result != null) return result;
+      }
+    }
+    return null;
+  }
+
   public EditorCell findNextSelectableCell(final EditorCell cell) {
     if (!(myRootCell instanceof EditorCell_Collection)) {
       return null;
@@ -588,36 +603,21 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public void rebuildEditorContent() {
     removeAll();
 
-    Point selectionPoint = null;
-    Point prevSelectablePoint = null;
-    int caretX = 0;
-    if (mySelectedCell != null) {
-      selectionPoint = new Point(mySelectedCell.getX(), mySelectedCell.getY());
-      EditorCell prevSelectableCell = null;
-      if (mySelectedCell.getSNode() != null) {
-        prevSelectableCell = findPrevSelectableCell(findNodeCell(mySelectedCell.getSNode()));
-      }
-      if (prevSelectableCell != null) {
-        prevSelectablePoint = new Point(prevSelectableCell.getX(), prevSelectableCell.getY());
-      }
-      caretX = mySelectedCell.getCaretX();
+
+
+    EditorCell selectedCell = getSelectedCell();
+    String id = "";
+    SNodeProxy nodeProxy = null;
+    if (selectedCell != null) {
+      nodeProxy = selectedCell.getSNodeProxy();
+      id = (String) selectedCell.getUserObject(EditorCell.CELL_ID);
     }
-    mySelectedCell = null;
-    mySelectedStack.clear();
 
     setRootCell(createRootCell());
-    //    System.out.println("rebuildEditorContent root node: " + (myRootCell.getSNode() != null ? myRootCell.getSNode().getDebugText() : "NULL"));
 
-    EditorCell newSelection = null;
-    if (selectionPoint != null) {
-      newSelection = findNearestCell(selectionPoint.x, selectionPoint.y);
-    }
-    if (newSelection == null && prevSelectablePoint != null) {
-      newSelection = findNearestCell(prevSelectablePoint.x, prevSelectablePoint.y);
-    }
-    if (newSelection != null) {
-      changeSelection(newSelection);
-      newSelection.setCaretX(caretX);
+    if (nodeProxy != null && id != null) {
+      EditorCell cell = findNodeCell(nodeProxy.getNode(), id);
+      changeSelection(cell);
     }
   }
 
