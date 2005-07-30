@@ -111,6 +111,16 @@ public class CellExplorerView implements Tool {
     }
 
 
+    public Icon getIcon(boolean expanded) {
+      if (myCell instanceof EditorCell_Collection) return Icons.CELLS_ICON;
+      if (myCell instanceof EditorCell_Constant) return Icons.CELL_CONSTANT_ICON;
+      if (myCell instanceof EditorCell_Error) return Icons.CELL_ERROR_ICON;
+      if (myCell instanceof EditorCell_Component) return Icons.CELL_COMPONENT_ICON;
+      if (myCell instanceof EditorCell_Property) return Icons.CELL_PROPERTY_ICON;
+      return Icons.CELL_DEFAULT_ICON;
+    }
+
+
     public String toString() {
       return NameUtil.shortNameFromLongName(myCell.getClass().getName());
     }

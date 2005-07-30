@@ -46,6 +46,13 @@ public class Icons {
 
   public static final Icon USAGES_ICON = new ImageIcon(Icons.class.getResource("nodes/usages.png"));
   public static final Icon CELL_EXPLORER_ICON = new ImageIcon(Icons.class.getResource("nodes/cellExplorer.png"));
+  public static final Icon CELLS_ICON = new ImageIcon(Icons.class.getResource("nodes/cells.png"));
+  public static final Icon CELL_CONSTANT_ICON = new ImageIcon(Icons.class.getResource("nodes/cellConst.png"));
+  public static final Icon CELL_DEFAULT_ICON = new ImageIcon(Icons.class.getResource("nodes/cellDefault.png"));
+  public static final Icon CELL_COMPONENT_ICON = new ImageIcon(Icons.class.getResource("nodes/cellComponent.png"));
+  public static final Icon CELL_ERROR_ICON = new ImageIcon(Icons.class.getResource("nodes/cellError.png"));
+  public static final Icon CELL_PROPERTY_ICON = new ImageIcon(Icons.class.getResource("nodes/cellProperty.png"));
+
 
   public static final Icon DISCARD_ALL_ICON = new ImageIcon(Icons.class.getResource("nodes/discardAll.png"));
   public static final Icon SELECT_ALL_ICON = new ImageIcon(Icons.class.getResource("nodes/selectAll.png"));
