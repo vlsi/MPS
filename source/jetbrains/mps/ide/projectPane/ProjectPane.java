@@ -479,10 +479,6 @@ public class ProjectPane extends JComponent {
       return "<html>" + fqName;
     }
 
-    private boolean isImported() {
-      return myProject.getComponent(RootManager.class).isImported(myModelDescriptor);
-    }
-
     public boolean initialized() {
       return isInitialized;
     }

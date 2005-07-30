@@ -56,6 +56,16 @@ public class SModelRepository extends SModelAdapter {
     return new HashSet<SModelDescriptor>(myModelDescriptors);
   }
 
+  public Set<SModelDescriptor> getJavaStubsModelDescriptors() {
+    Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
+    for (SModelDescriptor m : myModelDescriptors) {
+      if (SModelStereotype.JAVA_STUB.equals(m.getStereotype())) {
+        result.add(m);        
+      }
+    }
+    return result;
+  }
+
   public void addOwnerForDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
     HashSet<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
     if (owners == null) {

@@ -42,10 +42,6 @@ public class DefaultModelRootManager implements ModelRootManager {
       SModelDescriptor modelDescriptor = MPSFileModelDescriptor.getInstance(file.getAbsolutePath(), modelUID, owner);
       LOG.debug("I've read model descriptor " + modelDescriptor.getModelUID() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
       modelDescriptors.add(modelDescriptor);
-
-      if (modelRoot.getIsSynchronizedWithJava()) {
-        IdeMain.instance().getProject().getRootManager().addImportedModel(modelDescriptor);
-      }
     }
     File[] dirs = dir.listFiles();
     for (int i = 0; i < dirs.length; i++) {
