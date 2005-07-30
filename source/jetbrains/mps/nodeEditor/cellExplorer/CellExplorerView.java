@@ -2,6 +2,7 @@ package jetbrains.mps.nodeEditor.cellExplorer;
 
 import jetbrains.mps.ide.toolsPane.Tool;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -9,6 +10,7 @@ import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.SNode;
 
 import javax.swing.*;
 import java.awt.*;
@@ -49,7 +51,9 @@ public class CellExplorerView implements Tool {
       if (editor == null) {
         return new TextTreeNode("No editor selected");
       } else {
-        return new CellTreeNode(editor.getRootCell());
+        TextTreeNode root = new TextTreeNode("CELLS");
+        root.add(new CellTreeNode(editor.getRootCell()));
+        return root;
       }
     }
   }
@@ -67,6 +71,17 @@ public class CellExplorerView implements Tool {
     }
 
     public void init() {
+      if (myCell.getSNode() != null) {
+        final SNode node = myCell.getSNode();
+        add(new MPSTree.TextTreeNode(node.getName() + " [" + node.getId() + "]") {
+          public Icon getIcon(boolean expanded) {
+            return IconManager.getIconFor(node);
+          }
+        });
+      } else {
+        add(new MPSTree.TextTreeNode("No Node"));
+      }
+
       if (myCell instanceof EditorCell_Collection) {
         EditorCell_Collection cell = (EditorCell_Collection) myCell;
         for (EditorCell child : cell) {
@@ -74,6 +89,10 @@ public class CellExplorerView implements Tool {
         }
         myInitialized = true;
       }
+    }
+
+    public boolean isLeaf() {
+      return false;
     }
 
 

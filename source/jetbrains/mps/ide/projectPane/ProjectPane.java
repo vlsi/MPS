@@ -512,9 +512,8 @@ public class ProjectPane extends JComponent {
       while (iterator.hasNext()) {
         sortedRoots.add(iterator.next());
       }
-      Iterator iterator1 = sortedRoots.iterator();
-      while (iterator1.hasNext()) {
-        SNode semanticNode = (SNode) iterator1.next();
+      for (Object sortedRoot : sortedRoots) {
+        SNode semanticNode = (SNode) sortedRoot;
         MPSTreeNodeEx treeNode = new SNodeTreeNode(semanticNode);
         add(treeNode);
       }
