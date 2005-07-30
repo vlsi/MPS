@@ -36,7 +36,8 @@ public class CellExplorerView implements Tool {
   }
 
   public void showCell(EditorCell cell) {
-    
+    myTree.selectNode(myTree.findNodeWith(cell));
+    myIde.showCellExplorer();
   }
 
   public String getName() {

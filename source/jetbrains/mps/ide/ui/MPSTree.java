@@ -87,7 +87,7 @@ public abstract class MPSTree extends JTree {
     }
   }
 
-  protected void selectNode(TreeNode node) {
+  public void selectNode(TreeNode node) {
     List<TreeNode> nodes = new ArrayList<TreeNode>();
     while (node != null) {
       nodes.add(0, node);
@@ -95,6 +95,7 @@ public abstract class MPSTree extends JTree {
     }
     TreePath path = new TreePath(nodes.toArray());
     setSelectionPath(path);
+    scrollRowToVisible(getRowForPath(path));
   }
 
   public void runRebuildAction(Runnable rebuildAction) {
@@ -140,6 +141,7 @@ public abstract class MPSTree extends JTree {
 
   private MPSTreeNode findNodeWith(MPSTreeNode root, Object userObject) {
     if (root.getUserObject() == userObject) return root;
+    if (!root.isInitialized()) root.init();
     for (MPSTreeNode child : root) {
       MPSTreeNode result = findNodeWith(child, userObject);
       if (result != null) return result;
