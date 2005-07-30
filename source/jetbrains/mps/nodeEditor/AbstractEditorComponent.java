@@ -1078,6 +1078,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             selectNode(lastAdd.getChild());
           } else {
             changeSelection(error);
+            if (error instanceof EditorCell_Label && !error.isErrorState()) {
+              ((EditorCell_Label) error).getTextLine().end();
+            }
           }
           return;
         }
