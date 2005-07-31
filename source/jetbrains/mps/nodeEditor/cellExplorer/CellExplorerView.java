@@ -76,9 +76,18 @@ public class CellExplorerView implements Tool {
     protected MPSTreeNode rebuild() {
       AbstractEditorComponent editor = myIde.getEditorsPane().getCurrentEditor();
       if (editor == null) {
-        return new TextTreeNode("No editor selected");
+        return new TextTreeNode("No editor selected") {
+          public Icon getIcon(boolean expanded) {
+            return Icons.CELL_TREE_ICON;
+          }
+        };
+
       } else {
-        TextTreeNode root = new TextTreeNode("CELLS");
+        TextTreeNode root = new TextTreeNode("CELLS") {
+          public Icon getIcon(boolean expanded) {
+            return Icons.CELL_TREE_ICON;
+          }
+        };
         root.add(new CellTreeNode(editor.getRootCell()));
         return root;
       }
