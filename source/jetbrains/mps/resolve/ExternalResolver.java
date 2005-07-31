@@ -36,11 +36,11 @@ public class ExternalResolver {
       return externalReference.getExtResolveInfo();
     }
 
-    return getExternalResolveInfo_internal(targetNode);
+    return getExternalResolveInfoFromTarget(targetNode);
 
   }
 
-  private static String getExternalResolveInfo_internal(SNode targetNode) {
+  public static String getExternalResolveInfoFromTarget(SNode targetNode) {
     String packageName = targetNode.getClass().getPackage().getName();
     Class externalResolver = null;
     try {
@@ -58,7 +58,7 @@ public class ExternalResolver {
         Method externalResolveMethod = externalResolver.getMethod(METHOD_NAME_PREFIX + targetClassName, targetCls);
         return (String) externalResolveMethod.invoke(null, targetNode);
       } catch (Exception e) {
-        targetCls = targetCls.getClass();
+        targetCls = targetCls.getSuperclass();
       }
     }
     return null;
@@ -73,13 +73,13 @@ public class ExternalResolver {
   }
 
 
-  
+
   public static SNode getTargetNode(SModel model, String extResolveInfo) {
-    if (extResolveInfo == null) return null;
+    if (extResolveInfo == null || extResolveInfo.equals("")) return null;
 
     Collection<? extends SNode> nodes = model.getAllNodes();
     for (SNode node : nodes) {
-      String nodeExtResolveInfo = getExternalResolveInfo_internal(node);
+      String nodeExtResolveInfo = getExternalResolveInfoFromTarget(node);
       if (extResolveInfo.equals(nodeExtResolveInfo)) return node;
     }
     return null;

@@ -224,5 +224,187 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1122810884186">
+    <property name="name" value="TestExternalResolver1" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1122811034967">
+      <property name="name" value="method" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1122811034984" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811038985" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1122811043955">
+        <property name="name" value="k" />
+        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811043956" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1122811049785">
+      <property name="name" value="method" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1122811049818" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811052054" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1122811058821">
+        <property name="name" value="k" />
+        <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1122811058822" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1122811070354">
+      <property name="name" value="method" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1122811070387" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811071919" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1122811082827">
+        <property name="name" value="k" />
+        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811082828" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1122811087172">
+        <property name="name" value="b" />
+        <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1122811089439" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1122811099050">
+      <property name="name" value="foo" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1122811099083" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811101021" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1122811107288">
+        <property name="name" value="k" />
+        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811107289" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1122811110274">
+        <property name="name" value="b" />
+        <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1122811112963" />
+      </node>
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1122810898062">
+      <property name="name" value="method" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1122810898158" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1122810903752" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1122810910175">
+        <property name="name" value="k" />
+        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1122810910176" />
+      </node>
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1122810915724">
+      <property name="name" value="method" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1122810915757" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1122810919540" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1122810934025">
+        <property name="name" value="k" />
+        <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1122810934026" />
+      </node>
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1122810990512">
+      <property name="name" value="method" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1122810990545" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1122810993656" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1122811003282">
+        <property name="name" value="k" />
+        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811003283" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1122811005627">
+        <property name="name" value="b" />
+        <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1122811009207" />
+      </node>
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1122811015943">
+      <property name="name" value="foo" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1122811015976" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811018993" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1122811024572">
+        <property name="name" value="k" />
+        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811024573" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1122811028371">
+        <property name="name" value="b" />
+        <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1122811030122" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1122811255194">
+    <property name="name" value="TestExternalResolver2" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1122811350761">
+      <property name="name" value="method" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1122811350762" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811350763" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1122811350764">
+        <property name="name" value="k" />
+        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811350765" />
+      </node>
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1122811350766">
+      <property name="name" value="method" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1122811350767" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811350768" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1122811350769">
+        <property name="name" value="k" />
+        <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1122811350770" />
+      </node>
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1122811350771">
+      <property name="name" value="method" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1122811350772" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811350773" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1122811350774">
+        <property name="name" value="k" />
+        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811350775" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1122811350776">
+        <property name="name" value="b" />
+        <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1122811350777" />
+      </node>
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1122811350778">
+      <property name="name" value="foo" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1122811350779" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811350780" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1122811350781">
+        <property name="name" value="k" />
+        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811350782" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1122811350783">
+        <property name="name" value="b" />
+        <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1122811350784" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1122811296075">
+      <property name="name" value="method" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1122811296076" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811296077" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1122811296078">
+        <property name="name" value="k" />
+        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811296079" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1122811296080">
+      <property name="name" value="method" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1122811296081" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811296082" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1122811296083">
+        <property name="name" value="k" />
+        <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1122811296084" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1122811296085">
+      <property name="name" value="method" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1122811296086" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811296087" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1122811296088">
+        <property name="name" value="k" />
+        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811296089" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1122811296090">
+        <property name="name" value="b" />
+        <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1122811296091" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1122811296092">
+      <property name="name" value="foo" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1122811296093" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811296094" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1122811296095">
+        <property name="name" value="k" />
+        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1122811296096" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1122811296097">
+        <property name="name" value="b" />
+        <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1122811296098" />
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -105,7 +105,8 @@ public class CopyPasteNodeUtil {
       } else if (sourceReference instanceof ExternalReference) {
 
         String targetNodeId = sourceReference.getTargetNodeId();
-        SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, targetNodeId);
+        String extResolveInfo = ((ExternalReference)sourceReference).getExtResolveInfo();
+        SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, targetNodeId, null, null, extResolveInfo);
 
         newSourceNode.addSemanticReference(newReference);
       }
