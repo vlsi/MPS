@@ -152,6 +152,19 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1122818024750">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1122818024751">
+            <property name="name" value="g" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1122818024752" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1122818024753">
+              <link role="baseMethodDeclaration" targetNodeId="1121253849301" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1122818024754" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1122818024755">
+                <link role="variableDeclaration" resolveInfo="f:jetbrains.mps.baseLanguage.types.int;jetbrains.mps.baseLanguage.types.int" targetClassResolveInfo="jetbrains.mps.baseLanguage.LocalVariableDeclaration" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1122558714662">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1122558714663">
             <property name="name" value="g" />

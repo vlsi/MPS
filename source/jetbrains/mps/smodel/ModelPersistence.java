@@ -406,7 +406,7 @@ public class ModelPersistence {
           setNotNullAttribute(linkElement, EXT_RESOLVE_INFO, semanticReference.createExtResolveInfo());
           return;
         }
-        SModel model = modelDescriptor.getSModel(); //todo nullpointer because of updateNodeStatuses()
+        SModel model = modelDescriptor.getSModel();
         if (model == null) {
           LOG.error("The modelDescriptor.getSModel() failed to load model");
           setNotNullAttribute(linkElement, EXT_RESOLVE_INFO, semanticReference.createExtResolveInfo());

@@ -78,14 +78,14 @@ public class CellExplorerView implements Tool {
       if (editor == null) {
         return new TextTreeNode("No editor selected") {
           public Icon getIcon(boolean expanded) {
-            return Icons.CELL_TREE_ICON;
+            return Icons.CELL_EXPLORER_ICON;
           }
         };
 
       } else {
         TextTreeNode root = new TextTreeNode("CELLS") {
           public Icon getIcon(boolean expanded) {
-            return Icons.CELL_TREE_ICON;
+            return Icons.CELL_EXPLORER_ICON;
           }
         };
         root.add(new CellTreeNode(editor.getRootCell()));

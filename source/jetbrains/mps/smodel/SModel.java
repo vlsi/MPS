@@ -46,6 +46,7 @@ public class SModel implements Iterable<SNode> {
   public SModel(SModelUID modelUID) {
     this();
     myUID = modelUID;
+    if (SModelStereotype.JAVA_STUB.equals(myUID.getStereotype())) myIsExternallyResolved = true;
   }
 
   public SModel() {
@@ -59,6 +60,7 @@ public class SModel implements Iterable<SNode> {
 
   public void setModelUID (SModelUID modelUID) {
     myUID = modelUID;
+    if (SModelStereotype.JAVA_STUB.equals(myUID.getStereotype())) myIsExternallyResolved = true;
   }
 
   public String getShortName() {
@@ -85,6 +87,7 @@ public class SModel implements Iterable<SNode> {
 
   public void setStereotype(String stereotype) {
     myUID = new SModelUID(myUID.getLongName(), stereotype);
+    if (SModelStereotype.JAVA_STUB.equals(stereotype)) myIsExternallyResolved = true;
   }
 
   public void setLongName(String longName) {

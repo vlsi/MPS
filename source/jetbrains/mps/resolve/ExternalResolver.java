@@ -75,7 +75,16 @@ public class ExternalResolver {
 
 
   public static SNode getTargetNode(SModel model, String extResolveInfo) {
-    if (extResolveInfo == null || extResolveInfo.equals("")) return null;
+
+    if (extResolveInfo == null || extResolveInfo.equals("")) {
+      System.err.println("EXTERNAL RESOLVE: resolve info is empty");
+      return null;
+    }
+
+    if (!model.isExternallyResolved()) {
+      LOG.error("model " + model + " is not for external resolve");
+      return null;
+    }
 
     Collection<? extends SNode> nodes = model.getAllNodes();
     for (SNode node : nodes) {
