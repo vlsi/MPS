@@ -98,6 +98,10 @@ public class CellExplorerView implements Tool {
       return myInitialized;
     }
 
+    public int getToggleClickCount() {
+      return -1;
+    }
+
     protected JPopupMenu getPopupMenu() {
       JPopupMenu result = new JPopupMenu();
       result.add(new AbstractActionWithEmptyIcon("Select In Editor") {
@@ -112,7 +116,7 @@ public class CellExplorerView implements Tool {
       myIde.getEditorsPane().getCurrentEditor().changeSelection(myCell);
     }
 
-    public void onClick(int clickCount) {
+    public void doubleClick() {
       showCell();
     }
 

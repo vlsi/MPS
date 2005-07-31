@@ -37,7 +37,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     return null;
   }
 
-  public void onClick(int clickCount) {
+  public void doubleClick() {
   }
 
   protected void dispose() {
@@ -96,5 +96,9 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
 
   public String toString() {
     return getNodeIdentifier();
+  }
+
+  public int getToggleClickCount() {
+    return 2;
   }
 }

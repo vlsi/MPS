@@ -58,9 +58,10 @@ public abstract class MPSTree extends JTree {
       public void mouseClicked(MouseEvent e) {
         TreePath path = getPathForLocation(e.getX(), e.getY());
         if (path == null) return;
-        if (path.getLastPathComponent() instanceof MPSTreeNode) {
+        if (path.getLastPathComponent() instanceof MPSTreeNode && e.getClickCount() == 2) {
+          setSelectionPath(path);
           MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
-          node.onClick(e.getClickCount());
+          node.doubleClick();
           e.consume();
         }
       }
@@ -241,6 +242,18 @@ public abstract class MPSTree extends JTree {
     result.addContent(expansion);
 
     return result;
+  }
+
+
+
+  public int getToggleClickCount() {
+    TreePath selection = getSelectionPath();
+    if (selection == null) return -1;
+    if (selection.getLastPathComponent() instanceof MPSTreeNode) {
+      MPSTreeNode node = (MPSTreeNode) selection.getLastPathComponent();
+      return node.getToggleClickCount();
+    }
+    return -1;
   }
 
   public void fromXML(Element element) {
