@@ -17,10 +17,7 @@ import jetbrains.mps.nodeEditor.reform.CellRangeSelection;
 import jetbrains.mps.nodeEditor.test.EventRecorder;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.EventUtil;
-import jetbrains.mps.smodel.event.SModelChildEvent;
-import jetbrains.mps.smodel.event.SModelCommandListener;
-import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.CopyUtil;
 
@@ -1063,53 +1060,80 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       } else {
         rebuildEditorContent();
 
-        List<SModelChildEvent> childEvents = CollectionUtil.filter(SModelChildEvent.class, events);
+        SModelEvent lastAdd = null;
+        SModelEvent lastRemove = null;
 
-        SModelChildEvent lastAdd = null;
-        SModelChildEvent lastRemove = null;
 
-        for (SModelChildEvent e : childEvents) {
-          if (e.isAdded()) lastAdd = e;
-          if (e.isRemoved()) lastRemove = e;
+        for (SModelEvent e : events) {
+          if (e instanceof SModelChildEvent) {
+            SModelChildEvent ce = (SModelChildEvent) e;
+            if (ce.isAdded()) lastAdd = ce;
+            if (ce.isRemoved()) lastRemove = ce;
+          }
+
+          if (e instanceof SModelReferenceEvent) {
+            SModelReferenceEvent re = (SModelReferenceEvent) e;
+            if (re.isAdded()) lastAdd = re;
+            if (re.isRemoved()) lastRemove = re;
+          }
         }
 
         if (lastAdd != null) {
-          EditorCell cell = findNodeCell(lastAdd.getChild());
-          EditorCell error = findErrorOrEditableCell(cell);
-          if (error == null) {
-            selectNode(lastAdd.getChild());
-          } else {
-            changeSelection(error);
-            if (error instanceof EditorCell_Label && !error.isErrorState()) {
-              ((EditorCell_Label) error).getTextLine().end();
+          if (lastAdd instanceof SModelChildEvent) {
+            SModelChildEvent ce = (SModelChildEvent) lastAdd;
+
+            EditorCell error = findErrorOrEditableCell(findNodeCell(ce.getChild()));
+            if (error == null) {
+              selectNode(ce.getChild());
+            } else {
+              changeSelection(error);
+              if (error instanceof EditorCell_Label && !error.isErrorState()) {
+                ((EditorCell_Label) error).getTextLine().end();
+              }
             }
+            return;
           }
-          return;
+
+          if (lastAdd instanceof SModelReferenceEvent) {
+            SModelReferenceEvent re = (SModelReferenceEvent) lastAdd;
+            selectNode(re.getReference().getSourceNode());
+            return;
+          }
+
         }
 
         if (lastRemove != null) {
-          int index = lastRemove.getChildIndex();
-          String role = lastRemove.getChildRole();
-          SNode parent = lastRemove.getParent();
+          if (lastRemove instanceof SModelChildEvent) {
+            SModelChildEvent ce = (SModelChildEvent) lastRemove;
+            int index = ce.getChildIndex();
+            String role = ce.getChildRole();
+            SNode parent = ce.getParent();
 
-          if (parent.getChildCount() > index) {
-            SNode child = parent.getChildAt(index);
-            if (child.getRole_().equals(role)) {
-              selectNode(child);
-              return;
+            if (parent.getChildCount() > index) {
+              SNode child = parent.getChildAt(index);
+              if (child.getRole_().equals(role)) {
+                selectNode(child);
+                return;
+              }
             }
+
+            if (index != 0) {
+              SNode child = parent.getChildAt(index - 1);
+              if (child.getRole_().equals(role)) {
+                selectNode(child);
+                return;
+              }
+            }
+
+            selectNode(parent);
+            return;
           }
 
-          if (index != 0) {       
-            SNode child = parent.getChildAt(index - 1);
-            if (child.getRole_().equals(role)) {
-              selectNode(child);
-              return;
-            }
+          if (lastRemove instanceof SModelReferenceEvent) {
+            SModelReferenceEvent re = (SModelReferenceEvent) lastRemove;
+            selectNode(re.getReference().getSourceNode());
+            return;
           }
-
-          selectNode(lastRemove.getParent());
-          return;
         }
       }
     }
