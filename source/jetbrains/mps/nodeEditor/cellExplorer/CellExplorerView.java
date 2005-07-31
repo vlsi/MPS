@@ -102,10 +102,18 @@ public class CellExplorerView implements Tool {
       JPopupMenu result = new JPopupMenu();
       result.add(new AbstractActionWithEmptyIcon("Select In Editor") {
         public void actionPerformed(ActionEvent e) {
-          myIde.getEditorsPane().getCurrentEditor().changeSelection(myCell);
+          showCell();
         }
       }).setBorder(null);
       return result;
+    }
+
+    private void showCell() {
+      myIde.getEditorsPane().getCurrentEditor().changeSelection(myCell);
+    }
+
+    public void onClick(int clickCount) {
+      showCell();
     }
 
     public void init() {

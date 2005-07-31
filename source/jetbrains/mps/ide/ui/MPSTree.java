@@ -55,6 +55,16 @@ public abstract class MPSTree extends JTree {
         if (e.isPopupTrigger()) showPopup(e);
       }
 
+      public void mouseClicked(MouseEvent e) {
+        TreePath path = getPathForLocation(e.getX(), e.getY());
+        if (path == null) return;
+        if (path.getLastPathComponent() instanceof MPSTreeNode) {
+          MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
+          node.onClick(e.getClickCount());
+          e.consume();
+        }
+      }
+
       public void mouseReleased(MouseEvent e) {
         if (e.isPopupTrigger()) showPopup(e);
       }

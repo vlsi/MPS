@@ -37,6 +37,9 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     return null;
   }
 
+  public void onClick(int clickCount) {
+  }
+
   protected void dispose() {
   }
 
