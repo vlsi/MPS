@@ -164,7 +164,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }, KeyStroke.getKeyStroke("ESCAPE"), WHEN_FOCUSED);
 
-    
+
     addMouseListener(new MouseAdapter() {
       public void mousePressed(final MouseEvent e) {
         if (e.isPopupTrigger()) {
@@ -475,7 +475,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myRootCell.relayout();
     revalidate();
     repaint();
-    IdeMain.instance().getCellExplorerView().update();
+    updateCellExplorerIfNeeded();
   }
 
   public void selectNode(final SNode node) {
@@ -568,6 +568,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return condition.getFoundCell();
   }
 
+  protected void updateCellExplorerIfNeeded() {
+    IdeMain.instance().getCellExplorerView().update();
+  }
+
   public EditorCell findPrevSelectableCell(final EditorCell cell) {
     if (!(myRootCell instanceof EditorCell_Collection)) {
       return null;
@@ -617,8 +621,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       EditorCell cell = findNodeCell(nodeProxy.getNode(), id);
       changeSelection(cell);
     }
-
-    IdeMain.instance().getCellExplorerView().update();
+    
+    updateCellExplorerIfNeeded();
   }
 
   public EditorCell findNearestCell(int x, int y) {

@@ -10,17 +10,20 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.logging.Logger;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
+import java.util.List;
 
 /**
  * @author Kostik
  */
 public class CellExplorerView implements Tool {
+  public static final Logger LOG = Logger.getLogger(CellExplorerView.class);
+
   private JPanel myComponent = new JPanel(new BorderLayout());
   private MyTree myTree = new MyTree();
   private IdeMain myIde;
@@ -37,7 +40,23 @@ public class CellExplorerView implements Tool {
   }
 
   public void showCell(EditorCell cell) {
-    myTree.selectNode(myTree.findNodeWith(cell));
+    List<EditorCell> path = new ArrayList<EditorCell>();
+    while (cell != null) {
+      path.add(cell);
+      cell = cell.getParent();
+    }
+    Collections.reverse(path);
+
+    MPSTreeNode current = myTree.getRootNode();
+    for (EditorCell editorCell : path) {
+      if (!current.isInitialized()) current.init();
+      current = current.findExactChildWith(editorCell);
+      if (current == null) {
+        LOG.warning("Can't find cell in tree");
+        return;
+      }
+    }
+    myTree.selectNode(current);
     myIde.showCellExplorer();
   }
 

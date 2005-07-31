@@ -76,7 +76,7 @@ public abstract class MPSTree extends JTree {
   protected abstract MPSTreeNode rebuild();
 
   public void expandAll() {
-    MPSTreeNode node = (MPSTreeNode) getModel().getRoot();
+    MPSTreeNode node = getRootNode();
     expandAll(node);
   }
 
@@ -110,7 +110,7 @@ public abstract class MPSTree extends JTree {
     runRebuildAction(new Runnable() {
       public void run() {
         if (getModel().getRoot() instanceof MPSTreeNode) {
-          ((MPSTreeNode) getModel().getRoot()).disposeThisAndChildren();
+          (getRootNode()).disposeThisAndChildren();
         }
         DefaultTreeModel model = new DefaultTreeModel(rebuild());
         setModel(model);
@@ -135,8 +135,12 @@ public abstract class MPSTree extends JTree {
   }
 
   public TreeNode findNodeWith(Object userObject) {
-    MPSTreeNode root = (MPSTreeNode) getModel().getRoot();
+    MPSTreeNode root = getRootNode();
     return findNodeWith(root, userObject);
+  }
+
+  public MPSTreeNode getRootNode() {
+    return (MPSTreeNode) getModel().getRoot();
   }
 
   private MPSTreeNode findNodeWith(MPSTreeNode root, Object userObject) {
@@ -152,7 +156,7 @@ public abstract class MPSTree extends JTree {
   private TreePath stringToPath(String pathString) {
     String[] components = pathString.split(TREE_PATH_SEPARATOR);
     List<Object> path = new ArrayList<Object>();
-    MPSTreeNode current = (MPSTreeNode) getModel().getRoot();
+    MPSTreeNode current = getRootNode();
     path.add(current);
     for (String component : components) {
       if (component == null || component.length() == 0) continue;

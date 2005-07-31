@@ -65,11 +65,18 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     return false;
   }
 
-  public final MPSTreeNode findNodeWith(Object userObject) {
+  public MPSTreeNode findExactChildWith(Object userObject) {
+    for (MPSTreeNode child : this) {
+      if (child.getUserObject() == userObject) return child;
+    }
+    return null;
+  }
+
+  public final MPSTreeNode findAncestorWith(Object userObject) {
     if (getUserObject() == userObject) return this;
     if (isInitialized()) {
       for (int i = 0; i < getChildCount(); i++) {
-        MPSTreeNode result = ((MPSTreeNode) getChildAt(i)).findNodeWith(userObject);
+        MPSTreeNode result = ((MPSTreeNode) getChildAt(i)).findAncestorWith(userObject);
         if (result != null) return result;
       }
     }

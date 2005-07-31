@@ -559,7 +559,7 @@ public class ProjectPane extends JComponent {
       }
 
       private void updateTreeWithRoot(SNode node) {
-        MPSTreeNode treeNode = findNodeWith(node);
+        MPSTreeNode treeNode = findAncestorWith(node);
         if (treeNode != null) {
           treeNode.update();
         }

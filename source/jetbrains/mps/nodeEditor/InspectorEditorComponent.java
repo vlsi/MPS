@@ -32,6 +32,9 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
     }
   }
 
+  protected void updateCellExplorerIfNeeded() {    
+  }
+
 
   public void inspectNode(SNode semanticNode) {
     if (getNode() == semanticNode) {
