@@ -147,6 +147,9 @@ public class CellExplorerView implements Tool {
           add(new KeyMapTreeNode(myCell.getKeyMap()));
         }
 
+        if (myCell.getAvailableActions().size() > 0) {
+          add(new CellActionsTreeNode(myCell));
+        }                     
       } else {
         add(new MPSTree.TextTreeNode("No Node"));
       }
@@ -188,6 +191,23 @@ public class CellExplorerView implements Tool {
       if (myCell.getSNode() != null) result += "[" + myCell.getSNode().getId() + "]";
       if (myCell.getUserObject(EditorCell.CELL_ID) != null) result += "[" + myCell.getUserObject(EditorCell.CELL_ID).toString() + "]";
       return result;
+    }
+  }
+
+  private class CellActionsTreeNode extends MPSTreeNode {
+    private EditorCell myCell;
+
+    public CellActionsTreeNode(EditorCell cell) {
+      super(cell);
+      myCell = cell;
+      Set<String> actions = new TreeSet<String>(cell.getAvailableActions());
+      for (String action : actions) {
+        add(new MPSTree.TextTreeNode(action));
+      }
+    }
+
+    protected String getNodeIdentifier() {
+      return "Actions";
     }
   }
 
