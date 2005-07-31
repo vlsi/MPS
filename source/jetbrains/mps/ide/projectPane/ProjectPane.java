@@ -334,6 +334,10 @@ public class ProjectPane extends JComponent {
       this(node, null);
     }
 
+    public int getToggleClickCount() {
+      return -1;
+    }
+
     public SNode getSNode() {
       return myNodeReference.getNode();
     }
@@ -810,13 +814,6 @@ public class ProjectPane extends JComponent {
       return rootModelNode;
     }
 
-    public int getToggleClickCount() {
-      TreePath selection = myTree.getSelectionPath();
-      if (selection == null) return -1;
-      if (!(selection.getLastPathComponent() instanceof MPSTreeNodeEx)) return 2;
-      if ((selection.getLastPathComponent() instanceof SModelTreeNode)) return 2;
-      return -1;
-    }
   }
 
   private class MyLanguageListener implements LanguageCommandListener {
