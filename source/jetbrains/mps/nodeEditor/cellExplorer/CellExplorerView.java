@@ -30,7 +30,7 @@ public class CellExplorerView implements Tool {
 
   public CellExplorerView(IdeMain ide) {
     myIde = ide;
-    myTree.setRootVisible(false);
+    myTree.setRootVisible(true);
     myComponent.add(new JScrollPane(myTree), BorderLayout.CENTER);
     update();
   }
