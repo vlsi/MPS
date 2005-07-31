@@ -685,7 +685,7 @@ public abstract class SNode implements Cloneable {
       //e.printStackTrace();
       nameText = "<??name??>";
     }
-    return roleText + " " + getNodeTypeName() + " " + nameText + " in " + getModel().getUID();
+    return roleText + " " + getConceptName() + " " + nameText + " in " + getModel().getUID();
   }
 
   public String getId() {
@@ -723,7 +723,7 @@ public abstract class SNode implements Cloneable {
     return getParent().getPath() + "/" + getId();
   }
 
-  public String getNodeTypeName() {
+  public String getConceptName() {
     return getClass().getName().substring(getClass().getName().lastIndexOf('.') + 1);
   }
 
@@ -732,7 +732,7 @@ public abstract class SNode implements Cloneable {
     if (name != null) {
       return name;
     }
-    return getNodeTypeName();
+    return getConceptName();
   }
 
   public boolean hasConceptProperty(String propertyName) {
