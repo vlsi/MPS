@@ -621,7 +621,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       EditorCell cell = findNodeCell(nodeProxy.getNode(), id);
       changeSelection(cell);
     }
-    
+
     updateCellExplorerIfNeeded();
   }
 
@@ -1021,40 +1021,38 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myHasLastCaretX = true;
   }
 
-  private EditorCell findErrorOrEditableCell(EditorCell root) {
-    if (root instanceof EditorCell_Error) {
-      return root;
-    }
-    if (root instanceof EditorCell_Label && ((EditorCell_Label) root).isEditable() && ((EditorCell_Label) root).isSelectable()) {
-      return root;
-    }
-    if (root != null && root.isErrorState()) {
+  private EditorCell findEditableCell(EditorCell root) {
+    if (root instanceof EditorCell_Label && ((EditorCell_Label) root).isEditable() && root.isSelectable()) {
       return root;
     }
     if (root instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) root;
-      for (int i = 0; i < collection.getChildCount(); i++) {
-        EditorCell child = collection.getChildAt(i);
-        EditorCell result = findErrorOrEditableCell(child);
+      for (EditorCell child : collection) {
+        EditorCell result = findEditableCell(child);
         if (result != null) return result;
       }
     }
     return null;
   }
 
-  private EditorCell findEditableCell(EditorCell root) {
-    if (root instanceof EditorCell_Label && ((EditorCell_Label) root).isEditable()) {
+  private EditorCell findErrorCell(EditorCell root) {
+    if (root != null && (root instanceof EditorCell_Error || root.isErrorState())) {
       return root;
     }
     if (root instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) root;
-      for (int i = 0; i < collection.getChildCount(); i++) {
-        EditorCell child = collection.getChildAt(i);
-        EditorCell result = findEditableCell(child);
+      for (EditorCell child : collection) {
+        EditorCell result = findErrorCell(child);
         if (result != null) return result;
       }
     }
     return null;
+  }
+
+  private EditorCell findErrorOrEditableCell(EditorCell root) {
+    EditorCell result = findErrorCell(root);
+    if (result != null) return result;
+    return findEditableCell(root);
   }
 
   private class MyModelListener implements SModelCommandListener   {
@@ -1116,4 +1114,5 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }
   }
+
 }
