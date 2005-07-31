@@ -53,7 +53,8 @@ public class Icons {
   public static final Icon CELL_ERROR_ICON = new ImageIcon(Icons.class.getResource("nodes/cellError.png"));
   public static final Icon CELL_PROPERTY_ICON = new ImageIcon(Icons.class.getResource("nodes/cellProperty.png"));
   public static final Icon CELL_KEY_MAP_ICON = new ImageIcon(Icons.class.getResource("nodes/cellKeyMap.png"));
-  public static final Icon CELL_ACTION_KEY = new ImageIcon(Icons.class.getResource("nodes/cellActionKey.png"));
+  public static final Icon CELL_ACTION_KEY_ICON = new ImageIcon(Icons.class.getResource("nodes/cellActionKey.png"));
+  public static final Icon CELL_TREE_ICON = new ImageIcon(Icons.class.getResource("nodes/cellTree.png"));
 
   public static final Icon DISCARD_ALL_ICON = new ImageIcon(Icons.class.getResource("nodes/discardAll.png"));
   public static final Icon SELECT_ALL_ICON = new ImageIcon(Icons.class.getResource("nodes/selectAll.png"));

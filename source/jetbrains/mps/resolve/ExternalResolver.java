@@ -16,6 +16,10 @@ public class ExternalResolver {
 
   public static String createExternalResolveInfo(SReference reference) {
     //todo! implement
+    SNode sourceNode = reference.getSourceNode();
+    String packageName = sourceNode.getClass().getPackage().getName();
+
+
     return null;
   }
 

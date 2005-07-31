@@ -195,7 +195,7 @@ public class CellExplorerView implements Tool {
       for (String key : keys) {
         add(new MPSTree.TextTreeNode(key) {
           public Icon getIcon(boolean expanded) {
-            return Icons.CELL_ACTION_KEY;
+            return Icons.CELL_ACTION_KEY_ICON;
           }
         });
       }
