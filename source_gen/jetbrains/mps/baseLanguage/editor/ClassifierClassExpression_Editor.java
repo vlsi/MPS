@@ -67,7 +67,7 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
       noRefCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
       noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-      noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
+      noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration, context));
       noRefCell.putUserObject(EditorCell.CELL_ID, "1116615277650");
       return noRefCell;
     }
@@ -80,7 +80,7 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
         noRefCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
         noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-        noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
+        noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration, context));
         noRefCell.putUserObject(EditorCell.CELL_ID, "1116615277650");
         return noRefCell;
       }
@@ -95,7 +95,7 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
     editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-    editorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration));
+    editorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration, context));
     return editorCell;
   }
 }

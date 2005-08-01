@@ -73,7 +73,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
       }
     }, getSNode());
 
-    editorCell.setSubstituteInfo(new AbstractNodeSubstituteInfo() {
+    editorCell.setSubstituteInfo(new AbstractNodeSubstituteInfo(editorContext) {
       protected List<INodeSubstituteItem> createActions() {
         return QueryMethodIdEditor.this.createActions();
       }

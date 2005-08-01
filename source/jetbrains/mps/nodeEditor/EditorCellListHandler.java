@@ -24,20 +24,6 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
   private ConceptDeclaration myChildConcept;
   private LinkDeclaration myLinkDeclaration;
 
-  /**
-   * @deprecated
-   */
-  public EditorCellListHandler(SNode ownerNode, String linkRole, boolean isAggregation) {
-    this(ownerNode, linkRole, null);
-  }
-
-  /**
-   * @deprecated
-   */
-  public EditorCellListHandler(SNode ownerNode, String childRole) {
-    this(ownerNode, childRole, null);
-  }
-
   public EditorCellListHandler(SNode ownerNode, String childRole, EditorContext editorContext) {
     myOwnerNode = ownerNode;
     myEditorContext = editorContext;
@@ -122,7 +108,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
     EditorCell_Constant emptyCell = EditorCell_Constant.create(editorContext, getOwner(), null, true);
     emptyCell.setDefaultText(" << ... >>");
     emptyCell.setEditable(true);
-    emptyCell.setSubstituteInfo(new DefaultChildSubstituteInfo(getOwner(), null, getLinkDeclaration()));
+    emptyCell.setSubstituteInfo(new DefaultChildSubstituteInfo(getOwner(), null, getLinkDeclaration(), editorContext));
     return emptyCell;
   }
 

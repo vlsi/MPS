@@ -145,7 +145,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
       noRefCell.setDrawBrackets(false);
       noRefCell.setBracketsColor(Color.black);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-      noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+      noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
       WhileStatement_ConditionCellActions.setCellActions(noRefCell, node, context);
       _DefErrorActions.setCellActions(noRefCell, node, context);
       noRefCell.addKeyMap(new _Expression_KeyMap());
@@ -161,7 +161,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
         noRefCell.setDrawBrackets(false);
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-        noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+        noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
         WhileStatement_ConditionCellActions.setCellActions(noRefCell, node, context);
         _DefErrorActions.setCellActions(noRefCell, node, context);
         noRefCell.addKeyMap(new _Expression_KeyMap());
@@ -175,7 +175,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
-    editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+    editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
     WhileStatement_ConditionCellActions.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new _Expression_KeyMap());
     return editorCell;
@@ -193,7 +193,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
       noRefCell.setDrawBrackets(false);
       noRefCell.setBracketsColor(Color.black);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-      noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+      noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
       noRefCell.putUserObject(EditorCell.CELL_ID, "1081264296785");
       return noRefCell;
     }
@@ -206,7 +206,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
         noRefCell.setDrawBrackets(false);
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-        noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+        noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
         noRefCell.putUserObject(EditorCell.CELL_ID, "1081264296785");
         return noRefCell;
       }
@@ -217,7 +217,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
-    editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration));
+    editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
     return editorCell;
   }
 }

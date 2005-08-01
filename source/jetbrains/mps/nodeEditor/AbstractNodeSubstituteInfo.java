@@ -17,12 +17,6 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
   private String myOriginalText;
   private EditorContext myEditorContext;
 
-  /**
-   * @deprecated
-   */
-  public AbstractNodeSubstituteInfo() {
-  }
-
   public AbstractNodeSubstituteInfo(EditorContext editorContext) {
     myEditorContext = editorContext;
   }

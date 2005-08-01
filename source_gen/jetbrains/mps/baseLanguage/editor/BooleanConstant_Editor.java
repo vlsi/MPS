@@ -32,7 +32,7 @@ public class BooleanConstant_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setFontType(MPSFonts.BOLD);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
-    editorCell.setSubstituteInfo(new BooleanPropertySubstituteInfo(node, "value"));
+    editorCell.setSubstituteInfo(new BooleanPropertySubstituteInfo(node, "value", context));
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "value"));
     __Expression_RTransform_ActionSet.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new _Expression_KeyMap());

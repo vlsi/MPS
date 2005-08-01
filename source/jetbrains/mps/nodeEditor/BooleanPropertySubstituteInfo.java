@@ -13,7 +13,8 @@ public class BooleanPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
   private SNode myNode;
   private String myPropertyName;
 
-  public BooleanPropertySubstituteInfo(SNode node, String propertyName) {
+  public BooleanPropertySubstituteInfo(SNode node, String propertyName, EditorContext editorContext) {
+    super(editorContext);
     myNode = node;
     myPropertyName = propertyName;
   }

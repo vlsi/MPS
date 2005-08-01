@@ -22,7 +22,8 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
   private LinkDeclaration myLinkDeclaration;
 
 
-  public DefaultChildSubstituteInfo(SNode sourceNode, LinkDeclaration linkDeclaration) {
+  public DefaultChildSubstituteInfo(SNode sourceNode, LinkDeclaration linkDeclaration, EditorContext editorContext) {
+    super(editorContext);
     if (SModelUtil.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.aggregation) {
       throw new RuntimeException("Only aggregation links are allowed here.");
     }
@@ -36,7 +37,8 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     myCurrentTargetNode = sourceNode.getChild(SModelUtil.getGenuineLinkRole(linkDeclaration));
   }
 
-  public DefaultChildSubstituteInfo(SNode parentNode, SNode currChildNode, LinkDeclaration linkDeclaration) {
+  public DefaultChildSubstituteInfo(SNode parentNode, SNode currChildNode, LinkDeclaration linkDeclaration, EditorContext editorContext) {
+    super(editorContext);
     if (linkDeclaration == null) {
       throw new IllegalArgumentException("link declaration is null");
     }
