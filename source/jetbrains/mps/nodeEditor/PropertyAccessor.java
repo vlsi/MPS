@@ -21,8 +21,7 @@ public class PropertyAccessor implements ModelAccessor {
     myPropertyName = propertyName;
     myReadOnly = readOnly;
     myAllowEmptyText = allowEmptyText;
-
-    myPropertyDeclaration = SModelUtil.getPropertyDeclaration(node, propertyName);
+    myPropertyDeclaration = SModelUtil.getPropertyDeclaration(node, propertyName, editorContext.getOperationContext());
   }
 
   public String getPropertyName() {

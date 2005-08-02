@@ -29,7 +29,7 @@ public class TypeVariableReference_Editor extends DefaultNodeEditor {
     SReference reference = null;
     effectiveNode = node.getReferent("typeVariableDeclaration");
     reference = node.getReference("typeVariableDeclaration");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "typeVariableDeclaration");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "typeVariableDeclaration", context.getOperationContext());
     if(!(reference == null) && !((reference.isResolved()))) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);

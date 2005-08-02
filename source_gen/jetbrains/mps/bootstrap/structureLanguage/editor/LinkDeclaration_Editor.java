@@ -201,7 +201,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     SReference reference = null;
     effectiveNode = node.getReferent("target");
     reference = node.getReference("target");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "target");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "target", context.getOperationContext());
     if(!(reference == null) && !((reference.isResolved()))) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);

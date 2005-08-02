@@ -109,7 +109,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     SReference reference = null;
     effectiveNode = node.getReferent("baseMethodDeclaration");
     reference = node.getReference("baseMethodDeclaration");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "baseMethodDeclaration");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "baseMethodDeclaration", context.getOperationContext());
     if(!(reference == null) && !((reference.isResolved()))) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);

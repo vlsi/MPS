@@ -11,8 +11,8 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
 
-import java.awt.event.KeyEvent;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -65,10 +65,8 @@ public class NodeRangeSelection implements IKeyboardHandler {
     SNode parentNode = childNode.getParent();
     String role = null;
     while (parentNode != null) {
-//      SReference reference = parentNode.getReference(childNode);
-//      role = reference.getRole();
       role = childNode.getRole_();
-      LinkDeclaration childDeclaration = SModelUtil.getChildDeclaration(parentNode, role);
+      LinkDeclaration childDeclaration = SModelUtil.getChildDeclaration(parentNode, role, myEditorComponent.getEditorContext().getOperationContext());
       Cardinality cardinality = childDeclaration.getSourceCardinality();
       if (cardinality == Cardinality._0_n || cardinality == Cardinality._1_n) {
         break;

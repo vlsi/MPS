@@ -52,7 +52,7 @@ public class ExpressionStatement_Editor extends DefaultNodeEditor {
     SNode referencedNode = null;
     SReference reference = null;
     referencedNode = node.getChild("expression");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "expression");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "expression", context.getOperationContext());
     if(!(reference == null) && !((reference.isResolved()))) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);

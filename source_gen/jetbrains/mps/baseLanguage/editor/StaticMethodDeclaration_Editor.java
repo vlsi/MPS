@@ -159,7 +159,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     SNode referencedNode = null;
     SReference reference = null;
     referencedNode = node.getChild("returnType");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "returnType");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "returnType", context.getOperationContext());
     if(!(reference == null) && !((reference.isResolved()))) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);
@@ -202,7 +202,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     SNode referencedNode = null;
     SReference reference = null;
     referencedNode = node.getChild("body");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "body");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "body", context.getOperationContext());
     if(!(reference == null) && !((reference.isResolved()))) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);

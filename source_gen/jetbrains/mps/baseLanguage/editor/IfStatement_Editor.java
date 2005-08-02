@@ -171,7 +171,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     SNode referencedNode = null;
     SReference reference = null;
     referencedNode = node.getChild("condition");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "condition");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "condition", context.getOperationContext());
     if(!(reference == null) && !((reference.isResolved()))) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);
@@ -216,7 +216,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     SNode referencedNode = null;
     SReference reference = null;
     referencedNode = node.getChild("ifTrue");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "ifTrue");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "ifTrue", context.getOperationContext());
     if(!(reference == null) && !((reference.isResolved()))) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);
@@ -256,7 +256,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     SNode referencedNode = null;
     SReference reference = null;
     referencedNode = node.getChild("ifFalseStatement");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "ifFalseStatement");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "ifFalseStatement", context.getOperationContext());
     if(!(reference == null) && !((reference.isResolved()))) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);

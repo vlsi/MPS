@@ -75,7 +75,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     SReference reference = null;
     effectiveNode = node.getReferent("dataType");
     reference = node.getReference("dataType");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "dataType");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "dataType", context.getOperationContext());
     if(!(reference == null) && !((reference.isResolved()))) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);

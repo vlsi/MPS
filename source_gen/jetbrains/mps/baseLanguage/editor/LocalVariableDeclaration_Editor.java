@@ -87,7 +87,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     SNode referencedNode = null;
     SReference reference = null;
     referencedNode = node.getChild("type");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "type");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "type", context.getOperationContext());
     if(!(reference == null) && !((reference.isResolved()))) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);
@@ -130,7 +130,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     SNode referencedNode = null;
     SReference reference = null;
     referencedNode = node.getChild("initializer");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "initializer");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "initializer", context.getOperationContext());
     if(!(reference == null) && !((reference.isResolved()))) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);

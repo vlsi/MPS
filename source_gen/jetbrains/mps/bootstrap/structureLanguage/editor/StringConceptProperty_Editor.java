@@ -75,7 +75,7 @@ public class StringConceptProperty_Editor extends DefaultNodeEditor {
     SReference reference = null;
     effectiveNode = node.getReferent("conceptPropertyDeclaration");
     reference = node.getReference("conceptPropertyDeclaration");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "conceptPropertyDeclaration");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "conceptPropertyDeclaration", context.getOperationContext());
     if(!(reference == null) && !((reference.isResolved()))) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);

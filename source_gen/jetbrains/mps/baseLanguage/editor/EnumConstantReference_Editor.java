@@ -57,7 +57,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     SReference reference = null;
     effectiveNode = node.getReferent("enumConstantDeclaration");
     reference = node.getReference("enumConstantDeclaration");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "enumConstantDeclaration");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "enumConstantDeclaration", context.getOperationContext());
     if(!(reference == null) && !((reference.isResolved()))) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);
@@ -104,7 +104,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     SNode referencedNode = null;
     SReference reference = null;
     referencedNode = node.getChild("classType");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "classType");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "classType", context.getOperationContext());
     if(!(reference == null) && !((reference.isResolved()))) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);
