@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model name="jetbrains.mps.baseLanguage.resolve.test" externallyResolved="false">
+<model name="jetbrains.mps.baseLanguage.resolve.test">
   <maxReferenceID value="1" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <import referenceID="1" modelUID="jetbrains.mps.resolve@java_stub" />
@@ -430,6 +430,23 @@
             <property name="name" value="resolver" />
             <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1122985412890">
               <link role="classifier" extResolveInfo="1.[ClassConcept]Resolver" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1122986116623">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1122986116624">
+            <property name="name" value="y" />
+            <node role="type" type="jetbrains.mps.baseLanguage.VoidType" id="1122986116625" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1122986121554">
+              <link role="baseMethodDeclaration" extResolveInfo="1.static method ([ClassConcept]Resolver).([StaticMethodDeclaration]resolveAllReferences((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
+              <node role="classType" type="jetbrains.mps.baseLanguage.ClassType" id="1122986121555">
+                <link role="classifier" extResolveInfo="1.[ClassConcept]Resolver" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.NewExpression" id="1122988408523">
+                <node role="constructorCall" type="jetbrains.mps.baseLanguage.ConstructorCall" id="1122988408524">
+                  <link role="baseMethodDeclaration" extResolveInfo="1.constructor [ClassConcept]DefaultResolver[ConstructorDeclaration] ()" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

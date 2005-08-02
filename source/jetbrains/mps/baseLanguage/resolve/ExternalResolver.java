@@ -1,6 +1,5 @@
 package jetbrains.mps.baseLanguage.resolve;
 import jetbrains.mps.baseLanguage.*;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.typesystem.ITypeChecker;
 import jetbrains.mps.typesystem.TypeCheckerAccess;
 import jetbrains.mps.typesystem.TSStatus;
@@ -42,6 +41,31 @@ public class ExternalResolver {
     return result;
   }
 
+  public static String getExtResolveInfoForTargetClassConstructorDeclaration(ConstructorDeclaration constructorDeclaration) {
+    String conceptName = constructorDeclaration.getConceptName();
+
+    ClassConcept classConcept = (ClassConcept) constructorDeclaration.getParent();
+    String classifierExtResolveInfo = getExtResolveInfoForTargetClassGenericDeclaration(classConcept);
+
+    String result  = "[" + conceptName + "] (";
+
+    Iterator<ParameterDeclaration> pIterator = constructorDeclaration.parameters();
+
+    ITypeChecker typeChecker = TypeCheckerAccess.instance().getTypeChecker();
+    while (pIterator.hasNext()) {
+      ParameterDeclaration parameterDeclaration = pIterator.next();
+      TSStatus tSStatus = typeChecker.adaptNode(parameterDeclaration.getType());
+      ITypeObject parameterTypeObject = tSStatus.getTypeObject();
+      String parameterType = "(" + parameterTypeObject.getTypeName() + "/" + parameterTypeObject.getSignature() + ")";
+      result += parameterType;
+      if (pIterator.hasNext()) result += ", ";
+    }
+
+    result += ")";
+
+    return "constructor " + classifierExtResolveInfo + result;
+  }
+
   public static String getExtResolveInfoForTargetClassBaseMethodDeclaration(BaseMethodDeclaration baseMethodDeclaration) {
     String name = baseMethodDeclaration.getName();
     String conceptName = baseMethodDeclaration.getConceptName();
@@ -49,9 +73,9 @@ public class ExternalResolver {
 
     ITypeChecker typeChecker = TypeCheckerAccess.instance().getTypeChecker();
     TSStatus tSStatus = typeChecker.adaptNode(baseMethodDeclaration.getReturnType());
-    ITypeObject returnTypeObject = tSStatus.getTypeObject();
-    String methodTypeName = returnTypeObject.getTypeName();
-    String methodTypeSignature = returnTypeObject.getSignature();
+    ITypeObject typeObject = tSStatus.getTypeObject();
+    String methodTypeName = typeObject.getTypeName();
+    String methodTypeSignature = typeObject.getSignature();
     String methodType = "(" + methodTypeName + "/" + methodTypeSignature + ")";
 
     String result  = "[" + conceptName + "]" + name + "(";
@@ -61,8 +85,8 @@ public class ExternalResolver {
     while (pIterator.hasNext()) {
       ParameterDeclaration parameterDeclaration = pIterator.next();
       tSStatus = typeChecker.adaptNode(parameterDeclaration.getType());
-      returnTypeObject = tSStatus.getTypeObject();
-      String parameterType = "(" + returnTypeObject.getTypeName() + "/" + returnTypeObject.getSignature() + ")";
+      typeObject = tSStatus.getTypeObject();
+      String parameterType = "(" + typeObject.getTypeName() + "/" + typeObject.getSignature() + ")";
       result += parameterType;
       if (pIterator.hasNext()) result += ", ";
     }

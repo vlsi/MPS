@@ -9,7 +9,6 @@ import jetbrains.mps.resolve.ExternalResolver;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
-import org.jdom.output.XMLOutputter;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -134,10 +133,14 @@ public class ModelPersistence {
     }
 
     //is externally resolved?
-    boolean externallyResolved = Boolean.parseBoolean(rootElement.getAttributeValue(IS_EXTERNALLY_RESOLVED, "false"));
-    //temporary:
-    if (externallyResolved) model.setExternallyResolved(externallyResolved);
-    //should be: model.setExternallyResolved(externallyResolved);
+    String extResolvedString = rootElement.getAttributeValue(IS_EXTERNALLY_RESOLVED);
+    if (extResolvedString == null) {
+      PersistExternalResolveUtil.loadExternallyResolvedDefaults(model);
+    }
+    else {
+      boolean externallyResolved = Boolean.parseBoolean(extResolvedString);
+      model.setExternallyResolved(externallyResolved);
+    }
 
     // languages
     List languages = rootElement.getChildren(LANGUAGE);
@@ -311,7 +314,7 @@ public class ModelPersistence {
     Element rootElement = new Element(MODEL);
 
     rootElement.setAttribute(NAME, sourceModel.getLongName());
-    rootElement.setAttribute(IS_EXTERNALLY_RESOLVED, Boolean.toString(sourceModel.isExternallyResolved()));
+    setNotNullAttribute(rootElement, IS_EXTERNALLY_RESOLVED, PersistExternalResolveUtil.saveExternallyResolved(sourceModel));
 
     Document document = new Document();
     document.setRootElement(rootElement);
