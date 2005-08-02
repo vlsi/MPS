@@ -135,7 +135,9 @@ public class ModelPersistence {
 
     //is externally resolved?
     boolean externallyResolved = Boolean.parseBoolean(rootElement.getAttributeValue(IS_EXTERNALLY_RESOLVED, "false"));
-    model.setExternallyResolved(externallyResolved);
+    //temporary:
+    if (externallyResolved) model.setExternallyResolved(externallyResolved);
+    //should be: model.setExternallyResolved(externallyResolved);
 
     // languages
     List languages = rootElement.getChildren(LANGUAGE);
@@ -414,7 +416,8 @@ public class ModelPersistence {
         }
 
         if (model.isExternallyResolved()) {//if target model requires external resolve:
-          setNotNullAttribute(linkElement, EXT_RESOLVE_INFO, ExternalResolver.createExternalResolveInfo(semanticReference));
+          ExternalResolver.setExternalResolveInfo(semanticReference);
+          setNotNullAttribute(linkElement, EXT_RESOLVE_INFO, semanticReference.createExtResolveInfo());
         } else {
           linkElement.setAttribute(TARGET_NODE_ID, semanticReference.createReferencedNodeId());
         }

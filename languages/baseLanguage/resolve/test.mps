@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.resolve.test" externallyResolved="false">
-  <maxReferenceID value="0" />
+  <maxReferenceID value="1" />
   <language namespace="jetbrains.mps.baseLanguage" />
+  <import referenceID="1" modelUID="jetbrains.mps.resolve@java_stub" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1121166935562">
     <property name="name" value="New" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1121172586148">
@@ -417,6 +418,23 @@
         <property name="name" value="b" />
         <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1122811296098" />
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1122983374125">
+    <property name="name" value="TestJavaStub" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1122983385064">
+      <property name="name" value="test1" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1122983385144">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1122985412888">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1122985412889">
+            <property name="name" value="resolver" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1122985412890">
+              <link role="classifier" extResolveInfo="1.[ClassConcept]Resolver" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1122983393504" />
     </node>
   </node>
 </model>
