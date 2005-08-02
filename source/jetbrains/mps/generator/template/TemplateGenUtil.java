@@ -373,7 +373,7 @@ public class TemplateGenUtil {
       } else {
         String methodName = "semanticNodeCondition_" + conditionAspectId;
         Object[] args = new Object[]{parentSourceNode};
-        Boolean conditionStatus = (Boolean) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
+        Boolean conditionStatus = (Boolean) QueryMethod.invokeWithOptionalArg(methodName, args, nodeMacro.getModel(), generator.getOperationContext());
         List<SNode> sourceNodes = new LinkedList<SNode>();
         if (conditionStatus) {
           sourceNodes.add(parentSourceNode);
