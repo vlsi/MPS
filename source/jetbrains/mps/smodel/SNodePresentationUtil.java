@@ -1,8 +1,9 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.*;
+import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.util.NameUtil;
 
 import java.util.Iterator;
 
@@ -38,7 +39,7 @@ public class SNodePresentationUtil {
 
     // todo: alias or name ????
     if (!isNamedElement(node)) {
-      String alias = SModelUtil.getConceptProperty(node, "alias");
+      String alias = SModelUtil.getConceptProperty(node, "alias", IdeMain.instance().getProjectOperationContext());
       if (alias != null) {
         return alias;
       }
@@ -60,12 +61,13 @@ public class SNodePresentationUtil {
 
   public static String descriptionText(SNode node, SNode referenceContext) {
     String result = null;
+    OperationContext operationContext = IdeMain.instance().getProjectOperationContext();
     if (node instanceof BaseMethodDeclaration) {
-      result = descriptionText_BaseMethodDeclaration((BaseMethodDeclaration) node, referenceContext);
+      result = descriptionText_BaseMethodDeclaration((BaseMethodDeclaration) node, referenceContext, operationContext);
     } else if (node instanceof VariableDeclaration) {
-      result = descriptionText_VariableDeclaration((VariableDeclaration) node, referenceContext);
+      result = descriptionText_VariableDeclaration((VariableDeclaration) node, referenceContext, operationContext);
     } else if (node instanceof Classifier) {
-      result = descriptionText_Classifier((Classifier) node);
+      result = descriptionText_Classifier((Classifier) node, operationContext);
     }
     if (result != null) {
       return result;
@@ -76,7 +78,7 @@ public class SNodePresentationUtil {
       SNode containingRoot = node.getContainingRoot();
       return containingRoot.getName() + " (" + containingRoot.getModel().getUID() + ")";
     }
-    String description = SModelUtil.getConceptProperty(node, "short_description");
+    String description = SModelUtil.getConceptProperty(node, "short_description", IdeMain.instance().getProjectOperationContext());
     if (description != null) {
       return description;
     }
@@ -170,8 +172,8 @@ public class SNodePresentationUtil {
     return type.getName();
   }
 
-  private static String descriptionText_BaseMethodDeclaration(BaseMethodDeclaration method, SNode referenceContext) {
-    String prefix = getAliasOrConceptName(method) + " in ";
+  private static String descriptionText_BaseMethodDeclaration(BaseMethodDeclaration method, SNode referenceContext, OperationContext operationContext) {
+    String prefix = getAliasOrConceptName(method, operationContext) + " in ";
     if (method instanceof MethodDeclaration) {
       // freestanding method: model fqname
       return prefix + method.getModel().getUID().getLongName();
@@ -187,7 +189,7 @@ public class SNodePresentationUtil {
     return prefix + NameUtil.nodeFQName(parent);
   }
 
-  private static String descriptionText_VariableDeclaration(VariableDeclaration variable, SNode referenceContext) {
+  private static String descriptionText_VariableDeclaration(VariableDeclaration variable, SNode referenceContext, OperationContext operationContext) {
     if (variable instanceof ParameterDeclaration) {
       return "parameter";
     }
@@ -195,7 +197,7 @@ public class SNodePresentationUtil {
       return "local variable";
     }
 
-    String prefix = getAliasOrConceptName(variable) + " in ";
+    String prefix = getAliasOrConceptName(variable, operationContext) + " in ";
     if (variable instanceof FieldDeclaration ||
             variable instanceof StaticFieldDeclaration) {
       Classifier parent = SModelUtil.findParent(variable, Classifier.class);
@@ -212,12 +214,12 @@ public class SNodePresentationUtil {
     return null;
   }
 
-  private static String descriptionText_Classifier(Classifier classifier) {
-    return getAliasOrConceptName(classifier) + " in " + classifier.getModel().getUID();
+  private static String descriptionText_Classifier(Classifier classifier, OperationContext operationContext) {
+    return getAliasOrConceptName(classifier, operationContext) + " in " + classifier.getModel().getUID();
   }
 
-  private static String getAliasOrConceptName(SNode node) {
-    String alias = SModelUtil.getConceptProperty(node, "alias");
+  private static String getAliasOrConceptName(SNode node, OperationContext operationContext) {
+    String alias = SModelUtil.getConceptProperty(node, "alias", operationContext);
     if(alias != null) {
       return alias;
     }
