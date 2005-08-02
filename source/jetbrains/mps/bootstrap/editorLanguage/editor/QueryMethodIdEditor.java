@@ -110,18 +110,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
 
   protected List<INodeSubstituteItem> createActions() {
     List<INodeSubstituteItem> actions = new ArrayList<INodeSubstituteItem>();
-//    actions.add(new AbstractNodeSubstituteItem() {
-//      public String getName() {
-//        return getIdNotSetString();
-//      }
-//
-//      public SNode doSubstitute(String pattern) {
-//        setQueryMethodId(null);
-//        return getSNode();
-//      }
-//    });
-    List<String> conditionsList = null;
-    conditionsList = getAvailableIdsUsingPlugin();
+    List<String> conditionsList = getAvailableIdsUsingPlugin();
     if (conditionsList == null) {
       LOG.debug("Plugin isn't present using reflection");
       conditionsList = getAvailableIdsUsingReflection();

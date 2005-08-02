@@ -1,22 +1,16 @@
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions;
 import jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.QueryMethod;
 
-import java.util.List;
 import java.util.Iterator;
 import java.util.LinkedList;
-import java.lang.reflect.Method;
-import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -26,7 +20,7 @@ import java.lang.reflect.InvocationTargetException;
  * To change this template use File | Settings | File Templates.
  */
 public class ModelActions {
-  public static List<INodeSubstituteAction> createNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, List<INodeSubstituteAction> defaultActions) {
+  public static List<INodeSubstituteAction> createNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, List<INodeSubstituteAction> defaultActions, OperationContext operationContext) {
 
     LinkMetaclass metaClass = linkDeclaration.getMetaClass();
     ConceptDeclaration targetConcept = linkDeclaration.getTarget();
@@ -63,22 +57,22 @@ public class ModelActions {
 
     // filter default actions
     List<INodeSubstituteAction> resultActions = new LinkedList<INodeSubstituteAction>();
-    List<INodeSubstituteAction> filteredActions = filterActions(defaultActions, substituteActionsBuilders, null);
+    List<INodeSubstituteAction> filteredActions = filterActions(defaultActions, substituteActionsBuilders, null, operationContext);
     resultActions.addAll(filteredActions);
 
     // for each builder cerate and filter actions
     for (NodeSubstituteActionsBuilder nodeSubstituteActionsBuilder : substituteActionsBuilders) {
-      List<INodeSubstituteAction> addActions = createActions(nodeSubstituteActionsBuilder, sourceNode, currentTargetNode, linkDeclaration);
-      addActions = filterActions(addActions, substituteActionsBuilders, nodeSubstituteActionsBuilder);
+      List<INodeSubstituteAction> addActions = createActions(nodeSubstituteActionsBuilder, sourceNode, currentTargetNode, linkDeclaration, operationContext);
+      addActions = filterActions(addActions, substituteActionsBuilders, nodeSubstituteActionsBuilder, operationContext);
       resultActions.addAll(addActions);
     }
     return resultActions;
   }
 
-  private static List<INodeSubstituteAction> filterActions(List<INodeSubstituteAction> actions, List<NodeSubstituteActionsBuilder> substituteActionsBuilders, NodeSubstituteActionsBuilder excludeBuilder) {
+  private static List<INodeSubstituteAction> filterActions(List<INodeSubstituteAction> actions, List<NodeSubstituteActionsBuilder> substituteActionsBuilders, NodeSubstituteActionsBuilder excludeBuilder, OperationContext operationContext) {
     for (NodeSubstituteActionsBuilder substituteActionsBuilder : substituteActionsBuilders) {
       if (substituteActionsBuilder != excludeBuilder) {
-        actions = filterActions(substituteActionsBuilder, actions);
+        actions = filterActions(substituteActionsBuilder, actions, operationContext);
       }
     }
     return actions;
@@ -88,48 +82,22 @@ public class ModelActions {
   // Macro Aspect methods invocation...
   // --------------------------------
 
-  private static List<INodeSubstituteAction> filterActions(NodeSubstituteActionsBuilder substituteActionsBuilder, List<INodeSubstituteAction> actions) {
-    Object[] args = new Object[]{actions};
-    List<INodeSubstituteAction> result = (List<INodeSubstituteAction>) invokeAspectMethod("nodeSubstituteActionsBuilder_ActionsFilter_" + substituteActionsBuilder.getActionsFilterAspectId(), args, substituteActionsBuilder.getModel());
+  private static List<INodeSubstituteAction> filterActions(NodeSubstituteActionsBuilder substituteActionsBuilder, List<INodeSubstituteAction> actions, OperationContext operationContext) {
+    Object[] args = new Object[]{actions, operationContext};
+    String methodName = "nodeSubstituteActionsBuilder_ActionsFilter_" + substituteActionsBuilder.getActionsFilterAspectId();
+    SModel model = substituteActionsBuilder.getModel();
+    List<INodeSubstituteAction> result = (List<INodeSubstituteAction>) QueryMethod.invoke(methodName, args, model);
     return result;
   }
 
-  private static List<INodeSubstituteAction> createActions(NodeSubstituteActionsBuilder substituteActionsBuilder, SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration) {
+  private static List<INodeSubstituteAction> createActions(NodeSubstituteActionsBuilder substituteActionsBuilder, SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, OperationContext operationContext) {
     Object[] args = new Object[]{sourceNode,
                       currentTargetNode,
-                      linkDeclaration};
-    List<INodeSubstituteAction> result = (List<INodeSubstituteAction>) invokeAspectMethod("nodeSubstituteActionsBuilder_ActionsFactory_" + substituteActionsBuilder.getActionsFactoryAspectId(), args, substituteActionsBuilder.getModel());
+                      linkDeclaration,
+                      operationContext};
+    String methodName = "nodeSubstituteActionsBuilder_ActionsFactory_" + substituteActionsBuilder.getActionsFactoryAspectId();
+    SModel model = substituteActionsBuilder.getModel();
+    List<INodeSubstituteAction> result = (List<INodeSubstituteAction>) QueryMethod.invoke(methodName, args, model);
     return result;
   }
-
-  public static Object invokeAspectMethod(String methodName, Object[] arguments, SModel templatesModel) {
-    Class queriesClass = null;
-    String javaPackageName = JavaNameUtil.packageNameForModelUID(templatesModel.getUID());
-    String queriesClassName = "Queries";
-    if (javaPackageName.length() > 0) {
-      queriesClassName = javaPackageName + "." + queriesClassName;
-    }
-    try {
-      queriesClass = Class.forName(queriesClassName, true, ClassLoaderManager.getInstance().getClassLoader());
-    } catch (ClassNotFoundException e) {
-      throw new RuntimeException(e);
-    }
-
-
-    Method[] declaredMethods = queriesClass.getDeclaredMethods();
-    for (int i = 0; i < declaredMethods.length; i++) {
-      Method declaredMethod = declaredMethods[i];
-      if (declaredMethod.getName().equals(methodName)) {
-        try {
-          return declaredMethod.invoke(null, arguments);
-        } catch (IllegalAccessException e) {
-          throw new RuntimeException(e);
-        } catch (InvocationTargetException e) {
-          throw new RuntimeException(e);
-        }
-      }
-    }
-    throw new RuntimeException("Couldn't find method \"" + methodName + "\" in " + queriesClass.getPackage().getName() + "." + queriesClass.getName());
-  }
-
 }
