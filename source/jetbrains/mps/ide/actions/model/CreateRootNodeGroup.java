@@ -50,7 +50,7 @@ public class CreateRootNodeGroup extends ActionGroup {
       };
       add(langRootsGroup);
 
-      Iterator<ConceptDeclaration> iterator = language.semanticTypes();
+      Iterator<ConceptDeclaration> iterator = language.conceptDeclarations();
       while (iterator.hasNext()) {
         final ConceptDeclaration typeDeclaration = iterator.next();
         if (typeDeclaration.getRootable()) {

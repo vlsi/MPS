@@ -27,8 +27,8 @@ import java.util.List;
 public class TemplateGenUtil {
   private static final Logger LOG = Logger.getLogger(TemplateGenUtil.class);
 
-  public static SNode instantiateNodeForTemplate(SNode templateNode, SModel targetModel) {
-    ConceptDeclaration conceptDeclaration = Language.getTypeDeclaration(templateNode);
+  public static SNode instantiateNodeForTemplate(SNode templateNode, SModel targetModel, OperationContext operationContext) {
+    ConceptDeclaration conceptDeclaration = SModelUtil.getConceptDeclaration(templateNode, operationContext);
     SNode targetNode = SModelUtil.instantiateConceptDeclaration(conceptDeclaration, targetModel, false);
     SModelUtil.copySNodeProperties(templateNode, targetNode);
     return targetNode;
@@ -71,7 +71,7 @@ public class TemplateGenUtil {
       }
 
       // try to resolve the reference
-      IReferenceResolver referenceResolver = createReferenceResolver(templateNode);
+      IReferenceResolver referenceResolver = createReferenceResolver(templateNode, nodeBuilder.getGenerator().getOperationContext());
       SNode targetReferentNode = referenceResolver.resolveTarget(templateReference, nodeBuilder);
       if (targetReferentNode != null) {
         if (SModelUtil.isAcceptableReferent(targetNode, templateReference.getRole(), targetReferentNode, nodeBuilder.getGenerator().getOperationContext())) {
@@ -108,8 +108,8 @@ public class TemplateGenUtil {
     } // while (iterator.hasNext())
   }
 
-  private static IReferenceResolver createReferenceResolver(SNode templateNode) {
-    IReferenceResolver referenceResolver = loadReferenceResolver(templateNode);
+  private static IReferenceResolver createReferenceResolver(SNode templateNode, OperationContext operationContext) {
+    IReferenceResolver referenceResolver = loadReferenceResolver(templateNode, operationContext);
     if (referenceResolver == null) {
       referenceResolver = new DefaultReferenceResolver();
     }
@@ -152,8 +152,8 @@ public class TemplateGenUtil {
     return null;
   }
 
-  public static IReferenceResolver loadReferenceResolver(SNode templateNode) {
-    ConceptDeclaration conceptDeclaration = Language.getTypeDeclaration(templateNode);
+  public static IReferenceResolver loadReferenceResolver(SNode templateNode, OperationContext operationContext) {
+    ConceptDeclaration conceptDeclaration = SModelUtil.getConceptDeclaration(templateNode, operationContext);
     while (conceptDeclaration != null) {
       String modelPackageName = JavaNameUtil.packageNameForModelUID(conceptDeclaration.getModel().getUID());
       String buildersPackageName = modelPackageName + ".builder";

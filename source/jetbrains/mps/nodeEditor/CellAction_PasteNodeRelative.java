@@ -7,6 +7,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.OperationContext;
 import jetbrains.mps.datatransfer.PasteUtil;
 import jetbrains.mps.datatransfer.CopyPasteNodeUtil;
 import jetbrains.mps.logging.Logger;
@@ -29,13 +30,14 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
     if (selectedCell == null) {
       return false;
     }
+    OperationContext operationContext = context.getOperationContext();
     SNode anchorNode = selectedCell.getSNode();
     List<SNode> pasteNodes = CopyPasteNodeUtil.getNodesFromClipboard(anchorNode.getModel());
     if (pasteNodes == null) {
       return false;
     }
 
-    if (!PasteUtil.canPasteRelative(anchorNode, pasteNodes.get(0))) {
+    if (!PasteUtil.canPasteRelative(anchorNode, pasteNodes.get(0), operationContext)) {
       LOG.debug("Couldn't paste node relative");
       return false;
     }
@@ -43,14 +45,15 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
   }
 
   public void execute(EditorContext context) {
+    OperationContext operationContext = context.getOperationContext();
     EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
     SNode anchorNode = selectedCell.getSNode();
     List<SNode> pasteNodes = CopyPasteNodeUtil.getNodesFromClipboard(anchorNode.getModel());
-    PasteUtil.pasteRelative(anchorNode, pasteNodes.get(0), myPasteBefore);
+    PasteUtil.pasteRelative(anchorNode, pasteNodes.get(0), myPasteBefore, operationContext);
     anchorNode = pasteNodes.get(0);
     for (int i = 1; i < pasteNodes.size(); i++) {
       SNode node = pasteNodes.get(i);
-      PasteUtil.pasteRelative(anchorNode, node, false);
+      PasteUtil.pasteRelative(anchorNode, node, false, operationContext);
       anchorNode = node;
     }
     EditorsPane editorsPane = context.getProject().getComponent(EditorsPane.class);

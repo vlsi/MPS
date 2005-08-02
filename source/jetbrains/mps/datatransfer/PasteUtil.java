@@ -1,32 +1,18 @@
 package jetbrains.mps.datatransfer;
 
-import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
-import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.resolve.Resolver;
-import jetbrains.textLanguage.Sentence;
-import jetbrains.textLanguage.Word;
-import jetbrains.textLanguage.Text;
+import jetbrains.mps.smodel.OperationContext;
+import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SNode;
 
-import java.awt.*;
-import java.awt.datatransfer.Clipboard;
-import java.awt.datatransfer.Transferable;
-import java.awt.datatransfer.UnsupportedFlavorException;
-import java.awt.datatransfer.DataFlavor;
-import java.io.IOException;
-import java.util.*;
-import java.util.List;
-
-import rubyWeb.TextUtil;
+import java.util.Iterator;
 
 /**
  * Author: Sergey Dmitriev.
@@ -41,22 +27,22 @@ public class PasteUtil {
   private static final int PASTE_TO_ROOT = 3;
 
 
-  public static boolean canPaste(SNode pasteTarget, SNode pasteNode) {
-    return (canPaste_internal(pasteTarget, pasteNode) != PASTE_N_A);
+  public static boolean canPaste(SNode pasteTarget, SNode pasteNode, OperationContext operationContext) {
+    return (canPaste_internal(pasteTarget, pasteNode, operationContext) != PASTE_N_A);
   }
 
-  public static void paste(SNode pasteTarget, SNode pasteNode) {
-    int status = canPaste_internal(pasteTarget, pasteNode);
+  public static void paste(SNode pasteTarget, SNode pasteNode, OperationContext operationContext) {
+    int status = canPaste_internal(pasteTarget, pasteNode, operationContext);
     if (status == PASTE_TO_TAREGT) {
-      pasteToTarget(pasteTarget, pasteNode, null, pasteTarget.getRole_(), false);
+      pasteToTarget(pasteTarget, pasteNode, null, pasteTarget.getRole_(), false, operationContext);
     } else if (status == PASTE_TO_PARENT) {
-      pasteToParent(pasteTarget, pasteNode, pasteTarget.getRole_(), false);
+      pasteToParent(pasteTarget, pasteNode, pasteTarget.getRole_(), false, operationContext);
     } else if (status == PASTE_TO_ROOT) {
       pasteNode.getModel().addRoot(pasteNode);
     }
   }
 
-  private static int canPaste_internal(SNode pasteTarget, SNode pasteNode) {
+  private static int canPaste_internal(SNode pasteTarget, SNode pasteNode, OperationContext operationContext) {
     if (pasteTarget.getModel() != pasteNode.getModel()) {
       return PASTE_N_A;
     }
@@ -64,26 +50,26 @@ public class PasteUtil {
     if (pasteTarget.getParent() == null) {
       return PASTE_TO_ROOT;
     }
-    if (canPasteToTarget(pasteTarget, pasteNode, pasteTarget.getRole_())) {
+    if (canPasteToTarget(pasteTarget, pasteNode, pasteTarget.getRole_(), operationContext)) {
       return PASTE_TO_TAREGT;
     }
-    if (canPasteToParent(pasteTarget, pasteNode, pasteTarget.getRole_())) {
+    if (canPasteToParent(pasteTarget, pasteNode, pasteTarget.getRole_(), operationContext)) {
       return PASTE_TO_PARENT;
     }
     return PASTE_N_A;
   }
 
-  private static boolean canPasteToTarget(SNode pasteTarget, SNode pasteNode, String role) {
-    return pasteToTarget_internal(pasteTarget, pasteNode, null, role, false, false);
+  private static boolean canPasteToTarget(SNode pasteTarget, SNode pasteNode, String role, OperationContext operationContext) {
+    return pasteToTarget_internal(pasteTarget, pasteNode, null, role, false, false, operationContext);
   }
 
-  private static void pasteToTarget(SNode pasteTarget, SNode pasteNode, SNode anchorNode, String role, boolean pasteBefore) {
-    pasteToTarget_internal(pasteTarget, pasteNode, anchorNode, role, pasteBefore, true);
+  private static void pasteToTarget(SNode pasteTarget, SNode pasteNode, SNode anchorNode, String role, boolean pasteBefore, OperationContext operationContext) {
+    pasteToTarget_internal(pasteTarget, pasteNode, anchorNode, role, pasteBefore, true, operationContext);
   }
 
-  private static boolean pasteToTarget_internal(final SNode pasteTarget, final SNode pasteNode, final SNode anchorNode, String role, final boolean pasteBefore, boolean reallyPaste) {
-    ConceptDeclaration pasteTargetType = Language.getTypeDeclaration(pasteTarget);
-    ConceptDeclaration pasteNodeType = Language.getTypeDeclaration(pasteNode);
+  private static boolean pasteToTarget_internal(final SNode pasteTarget, final SNode pasteNode, final SNode anchorNode, String role, final boolean pasteBefore, boolean reallyPaste, OperationContext operationContext) {
+    ConceptDeclaration pasteTargetType = SModelUtil.getConceptDeclaration(pasteTarget, operationContext);
+    ConceptDeclaration pasteNodeType = SModelUtil.getConceptDeclaration(pasteNode, operationContext);
     if (pasteTargetType == null || pasteNodeType == null) {
       return false;
     }
@@ -114,12 +100,12 @@ public class PasteUtil {
     return true;
   }
 
-  private static boolean canPasteToParent(SNode anchorNode, SNode pasteNode, String role) {
-    return pasteToParent_internal(anchorNode, pasteNode, role, false, false);
+  private static boolean canPasteToParent(SNode anchorNode, SNode pasteNode, String role, OperationContext operationContext) {
+    return pasteToParent_internal(anchorNode, pasteNode, role, false, false, operationContext);
   }
 
-  private static void pasteToParent(SNode pasteTarget, SNode pasteNode, String role, boolean pasteBefore) {
-    pasteToParent_internal(pasteTarget, pasteNode, role, pasteBefore, true);
+  private static void pasteToParent(SNode pasteTarget, SNode pasteNode, String role, boolean pasteBefore, OperationContext operationContext) {
+    pasteToParent_internal(pasteTarget, pasteNode, role, pasteBefore, true, operationContext);
   }
 
   private static class NodeAndRole {
@@ -131,9 +117,9 @@ public class PasteUtil {
     }
   }
 
-  private static boolean pasteToParent_internal(SNode anchorNode, SNode pasteNode, String role, boolean pasteBefore, boolean reallyPaste) {
-    SNode actualPasteTarget = null;
-    NodeAndRole nodeAndRole = defineActualAnchorNode(anchorNode, pasteNode, role);
+  private static boolean pasteToParent_internal(SNode anchorNode, SNode pasteNode, String role, boolean pasteBefore, boolean reallyPaste, OperationContext operationContext) {
+    SNode actualPasteTarget;
+    NodeAndRole nodeAndRole = defineActualAnchorNode(anchorNode, pasteNode, role, operationContext);
     if (!reallyPaste) {
       return (nodeAndRole != null && nodeAndRole.node != null);
     }
@@ -143,18 +129,18 @@ public class PasteUtil {
     if (actualPasteTarget == null) {
       return false;
     }
-    PasteUtil.pasteToTarget(actualPasteTarget, pasteNode, actualAnchorNode, actualRole /*?*/, pasteBefore);
+    PasteUtil.pasteToTarget(actualPasteTarget, pasteNode, actualAnchorNode, actualRole /*?*/, pasteBefore, operationContext);
     return true;
   }
 
-  private static NodeAndRole defineActualAnchorNode(SNode anchorNode, SNode pasteNode, String firstRole) {
+  private static NodeAndRole defineActualAnchorNode(SNode anchorNode, SNode pasteNode, String firstRole, OperationContext operationContext) {
     String role = firstRole;
     while (anchorNode != null) {
       SNode container = anchorNode.getParent();
       if (container == null) {
         break;
       }
-      if (PasteUtil.canPasteToTarget(container, pasteNode, role)) {
+      if (PasteUtil.canPasteToTarget(container, pasteNode, role, operationContext)) {
         return new NodeAndRole(anchorNode, role);
       }
       anchorNode = container;
@@ -197,11 +183,11 @@ public class PasteUtil {
     return null;
   }
 
-  public static boolean canPasteRelative(SNode anchorNode, SNode pasteNode) {
-    return canPasteToParent(anchorNode, pasteNode, anchorNode.getRole_());
+  public static boolean canPasteRelative(SNode anchorNode, SNode pasteNode, OperationContext operationContext) {
+    return canPasteToParent(anchorNode, pasteNode, anchorNode.getRole_(), operationContext);
   }
 
-  public static void pasteRelative(SNode anchorNode, SNode pasteNode, boolean pasteBefore) {
-    pasteToParent(anchorNode, pasteNode, anchorNode.getRole_(), pasteBefore);
+  public static void pasteRelative(SNode anchorNode, SNode pasteNode, boolean pasteBefore, OperationContext operationContext) {
+    pasteToParent(anchorNode, pasteNode, anchorNode.getRole_(), pasteBefore, operationContext);
   }
 }

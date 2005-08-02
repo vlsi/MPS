@@ -88,14 +88,14 @@ public class FindUsagesManager {
     });
   }
 
-  public static List<ConceptDeclaration> allSubtypes(ConceptDeclaration typeDeclaration) {
-    if (ourCache.get(typeDeclaration) != null) return Collections.unmodifiableList(ourCache.get(typeDeclaration));
+  public static List<ConceptDeclaration> allSubtypes(ConceptDeclaration conceptDeclaration) {
+    if (ourCache.get(conceptDeclaration) != null) return Collections.unmodifiableList(ourCache.get(conceptDeclaration));
 
     List<ConceptDeclaration> list = new LinkedList<ConceptDeclaration>();
 
     FindUsagesManager manager = IdeMain.instance().getProject().getComponent(FindUsagesManager.class);
 
-    Set<SReference> usages = manager.findUsages(typeDeclaration, new FilterScope(manager.globalScope()) {
+    Set<SReference> usages = manager.findUsages(conceptDeclaration, new FilterScope(manager.globalScope()) {
       protected boolean accept(SModelDescriptor descriptor) {
         return descriptor.getModelUID().getShortName().equals("structure");
       }
@@ -109,7 +109,7 @@ public class FindUsagesManager {
       }
     }
 
-    ourCache.put(typeDeclaration, list);
+    ourCache.put(conceptDeclaration, list);
 
     return Collections.unmodifiableList(list);
   }

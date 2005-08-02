@@ -3,9 +3,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.generator.ContextUtil;
-import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.BootstrapLanguages;
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
@@ -163,7 +161,7 @@ public class Language implements ModelLocator, ModelOwner {
     return BootstrapLanguages.getInstance().getBootstrapLanguage(languageNamespace);
   }
 
-  public Iterator<ConceptDeclaration> semanticTypes() {
+  public Iterator<ConceptDeclaration> conceptDeclarations() {
     List<ConceptDeclaration> list = new LinkedList<ConceptDeclaration>();
     Iterator<SNode> roots = getStructureModelDescriptor().getSModel().roots();
     while (roots.hasNext()) {
@@ -283,10 +281,6 @@ public class Language implements ModelLocator, ModelOwner {
     return myNameToTypeMap.get(conceptName);
   }
 
-  public void findSubTypes(SNode conceptDeclaration, List<SNode> list) {
-    findSubTypes(conceptDeclaration, list, null);
-  }
-
   public void findSubTypes(SNode conceptDeclaration, List<SNode> list, SNodeFilter filter) {
     if (conceptDeclaration == null) {
       return;
@@ -304,12 +298,9 @@ public class Language implements ModelLocator, ModelOwner {
     LanguageUtil.saveToFile(myDescriptorFile, getLanguageDescriptor());
   }
 
-
   private SModelDescriptor getModelDescriptorByUID(SModelUID modelUID) {
     if (modelUID == null) return null;
     try {
-//      SModelRepository modelRepository = ApplicationComponents.getInstance().getComponent(SModelRepository.class);
-//      SModelDescriptor modelDescriptor = modelRepository.getModelDescriptor(modelUID);
       SModelDescriptor modelDescriptor = myOperationContext.getModelDescriptor(modelUID);
       if (modelDescriptor != null) {
         return modelDescriptor;
@@ -401,47 +392,6 @@ public class Language implements ModelLocator, ModelOwner {
     protected void fireCommandEvent() {
       fireLanguageChangedInCommand();
     }
-  }
-
-  //statics
-  public static List<SNode> findSubTypes(String conceptName, SModel model) {
-    return findSubTypes(conceptName, model, null);
-  }
-
-  public static List<SNode> findSubTypes(String conceptName, SModel model, SNodeFilter filter) {
-    ArrayList<SNode> list = new ArrayList<SNode>();
-    for (Language language : model.getLanguages()) {
-      ConceptDeclaration typeDeclaration = language.findConceptDeclaration(conceptName);
-      language.findSubTypes(typeDeclaration, list, filter);
-    }
-    return list;
-  }
-
-  /**
-   * @deprecated
-   */
-  public static ConceptDeclaration findTypeDeclaration(SModel sourceModel, String conceptName) {
-    for (Language language : sourceModel.getLanguages()) {
-      LOG.assertLog(language != null, "Languages must be not null");
-      ConceptDeclaration typeDeclaration = language.findConceptDeclaration(conceptName);
-      DiagnosticUtil.assertNodeValid(typeDeclaration, IdeMain.instance().getProjectOperationContext());
-      if (typeDeclaration != null) {
-        return typeDeclaration;
-      }
-    }
-    LOG.warning("warn: couldn't find concept declaration " + conceptName);
-    return null;
-  }
-
-  /**
-   * @deprecated
-   */
-  public static ConceptDeclaration getTypeDeclaration(SNode node) {
-    DiagnosticUtil.assertNodeValid(node, IdeMain.instance().getProjectOperationContext());
-    String conceptName = JavaNameUtil.shortName(node.getClass().getName());
-    ConceptDeclaration conceptDeclaration = findTypeDeclaration(node.getModel(), conceptName);
-    LOG.assertLog(conceptDeclaration != null, "couldn't find concept declaration for node: " + node.getDebugText());
-    return conceptDeclaration;
   }
 
 
