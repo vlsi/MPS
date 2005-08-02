@@ -16,7 +16,7 @@ public class PropertyAccessor implements ModelAccessor {
   private boolean myAllowEmptyText;
   private PropertyDeclaration myPropertyDeclaration;
 
-  public PropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText) {
+  public PropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, EditorContext editorContext) {
     myNode = node;
     myPropertyName = propertyName;
     myReadOnly = readOnly;
@@ -36,12 +36,11 @@ public class PropertyAccessor implements ModelAccessor {
 
   public void setText(String text) {
     if (!myReadOnly) {
-      if (!myAllowEmptyText && text != null && text.length() == 0) {
+      if (text != null && text.length() == 0) {
         text = null;
       }
       if (isValidText(text)) {
         String propertyValue = toInternal(text);
-//        System.out.println("set internal value: " + myPropertyName + " = " + propertyValue);
         myNode.setProperty(myPropertyName, propertyValue);
       }
     }
@@ -53,11 +52,14 @@ public class PropertyAccessor implements ModelAccessor {
       return (text == null && propertyValue == null) || (text != null && text.equals(propertyValue));
     }
 
-    if (myPropertyDeclaration != null) {
-      if (!myAllowEmptyText && text != null && text.length() == 0) {
-        text = null;
-      }
+    if (text != null && text.length() == 0) {
+      text = null;
+    }
+    if(!myAllowEmptyText && text == null) {
+      return false;
+    }
 
+    if (myPropertyDeclaration != null) {
       PropertySupport propertySupport = PropertySupport.getPropertySupport(myPropertyDeclaration);
       return propertySupport.canSetValue(text);
     }

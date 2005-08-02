@@ -110,7 +110,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext context, SNode node) {
-    PropertyAccessor propertyAccessor = new PropertyAccessor(node, "name", false, false);
+    PropertyAccessor propertyAccessor = new PropertyAccessor(node, "name", false, false, context);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
@@ -125,7 +125,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createExternalValueCell(EditorContext context, SNode node) {
-    PropertyAccessor propertyAccessor = new PropertyAccessor(node, "externalValue", false, false);
+    PropertyAccessor propertyAccessor = new PropertyAccessor(node, "externalValue", false, false, context);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
@@ -139,7 +139,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createInternalValueCell(EditorContext context, SNode node) {
-    PropertyAccessor propertyAccessor = new PropertyAccessor(node, "internalValue", false, false);
+    PropertyAccessor propertyAccessor = new PropertyAccessor(node, "internalValue", false, false, context);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);

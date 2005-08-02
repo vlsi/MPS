@@ -203,7 +203,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext context, SNode node) {
-    PropertyAccessor propertyAccessor = new PropertyAccessor(node, "name", false, false);
+    PropertyAccessor propertyAccessor = new PropertyAccessor(node, "name", false, false, context);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);

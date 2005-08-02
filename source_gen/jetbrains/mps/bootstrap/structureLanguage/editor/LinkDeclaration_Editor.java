@@ -142,7 +142,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createRoleCell(EditorContext context, SNode node) {
-    PropertyAccessor propertyAccessor = new PropertyAccessor(node, "role", false, false);
+    PropertyAccessor propertyAccessor = new PropertyAccessor(node, "role", false, false, context);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
@@ -155,7 +155,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createMetaClassCell(EditorContext context, SNode node) {
-    PropertyAccessor propertyAccessor = new PropertyAccessor(node, "metaClass", false, false);
+    PropertyAccessor propertyAccessor = new PropertyAccessor(node, "metaClass", false, false, context);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
@@ -169,7 +169,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createSourceCardinalityCell(EditorContext context, SNode node) {
-    PropertyAccessor propertyAccessor = new PropertyAccessor(node, "sourceCardinality", false, false);
+    PropertyAccessor propertyAccessor = new PropertyAccessor(node, "sourceCardinality", false, false, context);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
@@ -183,7 +183,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createTargetCardinalityCell(EditorContext context, SNode node) {
-    PropertyAccessor propertyAccessor = new PropertyAccessor(node, "targetCardinality", false, false);
+    PropertyAccessor propertyAccessor = new PropertyAccessor(node, "targetCardinality", false, false, context);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(true);
