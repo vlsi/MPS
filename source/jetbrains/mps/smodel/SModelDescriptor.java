@@ -35,8 +35,8 @@ public interface SModelDescriptor {
   File getModelFile();
 
   Set<SReference> findUsages(SNode node);
-  Set<SNode> findInstances(ConceptDeclaration concept);
+  Set<SNode> findInstances(ConceptDeclaration concept, OperationContext operationContext);
   long timestamp();
 
-  VersionControl getVersionControl();
+  VersionControl getVersionControl(OperationContext operationContext);
 }

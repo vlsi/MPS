@@ -1,10 +1,10 @@
 package jetbrains.mps.findUsages;
 
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.progress.ProgressMonitor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.ide.progress.ProgressMonitor;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 
 import java.util.*;
 
@@ -16,7 +16,7 @@ public class FindUsagesManager {
   }
 
   public Set<SReference> findUsages(SNode node, Scope scope, ProgressMonitor progress) {
-    Set<SReference> result = new HashSet<SReference>();;
+    Set<SReference> result = new HashSet<SReference>();
     try {
       if (progress == null) progress = ProgressMonitor.NULL_PROGRESS_MONITOR;
       Set<SModelDescriptor> models = scope.getModels();
@@ -35,14 +35,14 @@ public class FindUsagesManager {
     }
   }
 
-  public Set<SNode> findInstances(ConceptDeclaration concept, Scope scope, ProgressMonitor progress) {
+  public Set<SNode> findInstances(ConceptDeclaration concept, Scope scope, ProgressMonitor progress, OperationContext operationContext) {
     Set<SNode> result = new HashSet<SNode>();
     try {
       if (progress == null) progress = ProgressMonitor.NULL_PROGRESS_MONITOR;
       Set<SModelDescriptor> models = scope.getModels();
       progress.start("Finding Instances...", models.size());
       for (SModelDescriptor model : models) {
-        result.addAll(model.findInstances(concept));
+        result.addAll(model.findInstances(concept, operationContext));
         if (progress.isCanceled()) {
           return result;
         }
@@ -58,8 +58,8 @@ public class FindUsagesManager {
     return findUsages(node, globalScope(), progress);
   }
 
-  public Set<SNode> findInstances(ConceptDeclaration concept, ProgressMonitor progress){
-    return findInstances(concept, globalScope(), progress);
+  public Set<SNode> findInstances(ConceptDeclaration concept, ProgressMonitor progress, OperationContext operationContext){
+    return findInstances(concept, globalScope(), progress, operationContext);
   }
 
   public Scope globalScope() {

@@ -8,6 +8,7 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.OperationContext;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.DiagnosticUtil;
 import jetbrains.mps.util.NameUtil;
@@ -67,15 +68,15 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   private List<SNode> createTargetNodesList() {
     final ConceptDeclaration targetConcept = myLinkDeclaration.getTarget();
-    DiagnosticUtil.assertNodeValid(targetConcept, getEditorContext().getOperationContext());
+    final OperationContext operationContext = getEditorContext().getOperationContext();
+    DiagnosticUtil.assertNodeValid(targetConcept, operationContext);
     final boolean searchLinks = NameUtil.nodeFQName(targetConcept).equals("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration");
-    List<SNode> list = SModelUtil.allNodes(mySourceNode.getModel(), true, new Condition<SNode>() {
+    return SModelUtil.allNodes(mySourceNode.getModel(), true, new Condition<SNode>() {
       public boolean met(SNode node) {
         DiagnosticUtil.assertNodeValid(node, getEditorContext().getOperationContext());
         if (searchLinks && (node instanceof LinkDeclaration)) return true;
-        return node.getName() != null && SModelUtil.isInstanceOfType(node, targetConcept);
+        return node.getName() != null && SModelUtil.isInstanceOfConcept(node, targetConcept, operationContext);
       }
     });
-    return list;
   }
 }

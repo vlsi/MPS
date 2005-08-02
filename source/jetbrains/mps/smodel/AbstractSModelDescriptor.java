@@ -225,8 +225,8 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     return result;
   }
 
-  public VersionControl getVersionControl() {
-    VersionControlManager vcm = IdeMain.instance().getProject().getComponent(VersionControlManager.class);
+  public VersionControl getVersionControl(OperationContext operationContext) {
+    VersionControlManager vcm = operationContext.getProject().getComponent(VersionControlManager.class);
     return vcm.createVCSFor(this);
   }
 
@@ -241,7 +241,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     }
   }
 
-  public Set<SNode> findInstances(ConceptDeclaration concept) {
+  public Set<SNode> findInstances(ConceptDeclaration concept, OperationContext operationContext) {
     String conceptFqName = SModelUtil.getClassNameFor(concept);
     if (mySModel == null || !SModelRepository.getInstance().isChanged(mySModel)) {
       if (!containsString(conceptFqName)) return new HashSet<SNode>();
@@ -250,16 +250,16 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     Set<SNode> result = new HashSet<SNode>();
     if (mySModel != null) {
       for (SNode root : mySModel.getRoots()) {
-        addInstances(root, concept, result);
+        addInstances(root, concept, result, operationContext);
       }
     }
     return result;
   }
 
-  private void addInstances(SNode current, ConceptDeclaration concept, Set<SNode> result) {
-    if (SModelUtil.isInstanceOfType(current, concept)) result.add(current);
+  private void addInstances(SNode current, ConceptDeclaration concept, Set<SNode> result, OperationContext operationContext) {
+    if (SModelUtil.isInstanceOfConcept(current, concept, operationContext)) result.add(current);
     for (SNode child : current.getChildren()) {
-      addInstances(child, concept, result);
+      addInstances(child, concept, result, operationContext);
     }
   }
 
