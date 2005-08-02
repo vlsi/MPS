@@ -70,7 +70,7 @@ public abstract class SReference {
       return new InternalReference(role, sourceNode, targetNode);
     } else {
       SModel.ImportElement importElement = sourceModel.addImportElement(targetModel.getUID());
-      return new ExternalReference(role, sourceNode, targetNode.getId(), importElement);
+      return new ExternalReference(role, sourceNode, targetNode.getId(), importElement, null);
     }
   }
 
@@ -90,7 +90,7 @@ public abstract class SReference {
         if (importElement == null) return null;
 
         String localExtResolveInfo = extResolveInfo.substring(offset + 1);
-        return new ExternalReference(role, sourceNode, importElement, localExtResolveInfo);
+        return new ExternalReference(role, sourceNode, null, importElement, localExtResolveInfo);
       }
 
       //internal reference
@@ -110,7 +110,14 @@ public abstract class SReference {
       if (importElement == null) return null;
 
       localNodeId = targetNodeId.substring(offset + 1);
-      SReference resultReference = new ExternalReference(role, sourceNode, localNodeId, importElement);
+
+      if (extResolveInfo != null) {
+        int offset1 = extResolveInfo.indexOf('.');
+        LOG.assertLog(targetNodeId.substring(0, offset).equals(extResolveInfo.substring(0, offset1)));
+        extResolveInfo = extResolveInfo.substring(offset1 + 1);
+      }
+
+      SReference resultReference = new ExternalReference(role, sourceNode, localNodeId, importElement, extResolveInfo);
 
       return resultReference;
     }

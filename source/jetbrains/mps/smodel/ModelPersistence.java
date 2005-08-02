@@ -409,24 +409,28 @@ public class ModelPersistence {
         if (modelDescriptor == null) {
           LOG.error("Path to the target model " + modelUID + " is not specified");
           setNotNullAttribute(linkElement, EXT_RESOLVE_INFO, semanticReference.createExtResolveInfo());
+          linkElement.setAttribute(TARGET_NODE_ID, semanticReference.createReferencedNodeId());//cache
           return;
         }
         SModel model = modelDescriptor.getSModel();
         if (model == null) {
           LOG.error("The modelDescriptor.getSModel() failed to load model");
           setNotNullAttribute(linkElement, EXT_RESOLVE_INFO, semanticReference.createExtResolveInfo());
+          linkElement.setAttribute(TARGET_NODE_ID, semanticReference.createReferencedNodeId());//cache
           return;
         }
 
         if (model.isExternallyResolved()) {//if target model requires external resolve:
           ExternalResolver.setExternalResolveInfo(semanticReference);
           setNotNullAttribute(linkElement, EXT_RESOLVE_INFO, semanticReference.createExtResolveInfo());
-        } else {
-          linkElement.setAttribute(TARGET_NODE_ID, semanticReference.createReferencedNodeId());
         }
+
+        linkElement.setAttribute(TARGET_NODE_ID, semanticReference.createReferencedNodeId());
+
 
       } else {
         setNotNullAttribute(linkElement, EXT_RESOLVE_INFO, semanticReference.createExtResolveInfo());
+        setNotNullAttribute(linkElement, TARGET_NODE_ID, semanticReference.createReferencedNodeId());//cache
       }
     } else {//internal reference
       if (semanticReference.isResolved()) linkElement.setAttribute(TARGET_NODE_ID, semanticReference.createReferencedNodeId());

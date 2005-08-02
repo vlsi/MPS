@@ -8,6 +8,7 @@ import jetbrains.mps.logging.Logger;
 
 import java.lang.reflect.Method;
 import java.util.Collection;
+import java.util.HashMap;
 
 /**
  * Created by IntelliJ IDEA.
@@ -23,7 +24,7 @@ public class ExternalResolver {
 
   private static final Logger LOG = Logger.getLogger(ExternalResolver.class);
 
-
+  private static HashMap<Class, Method> ourConceptsToResolveInfoMethodsMap = new HashMap<Class, Method>();
 
   public static String createExternalResolveInfo(SReference reference) {
 
@@ -41,6 +42,23 @@ public class ExternalResolver {
   }
 
   public static String getExternalResolveInfoFromTarget(SNode targetNode) {
+    //cache lookup
+    Method externalResolveMethod = ourConceptsToResolveInfoMethodsMap.get(targetNode.getClass());
+    //reflection searching 
+    if (externalResolveMethod == null) {
+      externalResolveMethod = getExternalResolveMethodFromTarget(targetNode);
+      ourConceptsToResolveInfoMethodsMap.put(targetNode.getClass(), externalResolveMethod);
+      if (externalResolveMethod == null) return null;
+    }
+    try {
+      return (String) externalResolveMethod.invoke(null, targetNode);
+    } catch(Exception e) {
+      return null;
+    }
+  }
+
+  private static Method getExternalResolveMethodFromTarget(SNode targetNode) {
+
     String packageName = targetNode.getClass().getPackage().getName();
     Class externalResolver = null;
     try {
@@ -56,7 +74,7 @@ public class ExternalResolver {
         String targetClassName = targetCls.getName();
         targetClassName = targetClassName.substring(targetClassName.lastIndexOf(".") + 1);
         Method externalResolveMethod = externalResolver.getMethod(METHOD_NAME_PREFIX + targetClassName, targetCls);
-        return (String) externalResolveMethod.invoke(null, targetNode);
+        return externalResolveMethod;
       } catch (Exception e) {
         targetCls = targetCls.getSuperclass();
       }
