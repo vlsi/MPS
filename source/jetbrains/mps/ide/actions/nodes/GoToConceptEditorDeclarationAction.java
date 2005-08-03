@@ -3,15 +3,24 @@ package jetbrains.mps.ide.actions.nodes;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.NewModelUtil;
+import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.projectLanguage.Model;
+import jetbrains.mps.projectLanguage.Editor;
+import jetbrains.mps.projectLanguage.LanguageDescriptor;
 
 import javax.swing.*;
 import java.util.Iterator;
+import java.io.IOException;
+import java.io.File;
 
 /**
  * @author Kostik
@@ -42,7 +51,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     final String editorName = node.getName() + "_Editor";
     MPSProject project = context.get(MPSProject.class);
     SModel languageStructure = node.getModel();
-    Language language = project.getLanguageByStructureModel(languageStructure);
+    final Language language = project.getLanguageByStructureModel(languageStructure);
     if (language == null) {
       JOptionPane.showMessageDialog(null, "Couldn't find Language for structure model " + languageStructure.getUID());
       return;
@@ -58,7 +67,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
           return;
         }
       }
-   
+
       int option = JOptionPane.showConfirmDialog(
               null, "The " + editorName + " wasn't found in " + languageEditor.getUID() + "\nDo you want to create such an editor?",
               "Editor not found",
@@ -82,7 +91,88 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
       }
 
     } else {
-      JOptionPane.showMessageDialog(null, "Editor model for \"" + node.getModel().getUID() + "\" is not in the project");
+      //
+
+      String path;
+      try {
+        MPSFileModelDescriptor fileModelDescriptor = (MPSFileModelDescriptor) language.getStructureModelDescriptor();
+        final File languageDir = (new File(fileModelDescriptor.getFileName())).getParentFile();
+        path = languageDir.getAbsolutePath();
+      }
+      catch(Exception e) {
+        JOptionPane.showMessageDialog(
+              null,
+              "Editor model for \"" + node.getModel().getUID() + "\" is not in the project"
+        );
+        return;
+      }
+      int option = JOptionPane.showConfirmDialog(
+              null,
+              "Editor model for \"" + node.getModel().getUID() + "\" is not in the project" + "\nDo you want to create it? \n(file " + path + "\\editor.mps )",
+              "Editor model not found",
+              JOptionPane.YES_NO_OPTION,
+              JOptionPane.QUESTION_MESSAGE
+      );
+
+      if (option == JOptionPane.YES_OPTION) {
+        final BootstrapLanguages bootstrapLanguages = ApplicationComponents.getInstance().getComponent(BootstrapLanguages.class);
+        SModelDescriptor editor =  NewModelUtil.createModel(project, "editor", language.getNamespace(), "", path, language.getNamespace(), false);
+        editor.getSModel().addImportedModelDescriptor(language.getStructureModelDescriptor());
+        editor.getSModel().addImportedModelDescriptor(bootstrapLanguages.getCoreLanguage().getStructureModelDescriptor());
+        editor.getSModel().addLanguage(bootstrapLanguages.getEditorLanguage());
+        editor.getSModel().addLanguage(bootstrapLanguages.getBaseLanguage());
+        editor.save();
+        //SModelRepository.getInstance().markChanged(editor.getSModel());
+
+        final SModel smodel = new SModel(new SModelUID("z", "z", ""));
+        AbstractSModelDescriptor abstractModelDescriptor = new AbstractSModelDescriptor(smodel) {
+          protected SModel loadModel() {
+            return null;  //To change body of implemented methods use File | Settings | File Templates.
+          }
+
+          protected void saveModel(SModel model) {
+            //To change body of implemented methods use File | Settings | File Templates.
+          }
+
+          public File getModelFile() {
+            return null;  //To change body of implemented methods use File | Settings | File Templates.
+          }
+
+          public long timestamp() {
+            return 0;  //To change body of implemented methods use File | Settings | File Templates.
+          }
+        };
+
+        SModelRepository.getInstance().registerModelDescriptor(abstractModelDescriptor, project);
+
+        final OperationContext operationContext = context.get(OperationContext.class);
+
+        CommandProcessor.instance().executeCommand(new Runnable() {
+          public void run() {
+            LanguageDescriptor descriptor = language.getCopyOfLanguageDescriptor(smodel, operationContext);
+
+
+            smodel.addLanguage(bootstrapLanguages.getProjectLanguage());
+            Model editorModel = Model.newInstance(smodel);
+            editorModel.setName(language.getNamespace() + ".editor");
+            Editor editorNode = Editor.newInstance(smodel);
+            editorNode.setStereotype("");
+            editorNode.setEditorModel(editorModel);
+            descriptor.addEditor(editorNode);
+
+            language.setLanguageDescriptor(descriptor, operationContext);
+            language.save();
+          }
+        });
+
+
+        SModelRepository.getInstance().removeModelDescriptor(abstractModelDescriptor, project);
+        ProjectPane projectPane = operationContext.getProject().getComponent(ProjectPane.class);
+        projectPane.rebuildTree();
+        JOptionPane.showMessageDialog(null, "Editor model created");
+        execute(context);
+      }
+
     }
   }
 
