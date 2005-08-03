@@ -1,15 +1,14 @@
 package jetbrains.mps.ide.actions.nodes;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.OperationContext;
+import jetbrains.mps.smodel.*;
 
 import javax.swing.*;
 import java.util.Iterator;
@@ -31,7 +30,12 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     setVisible(context.get(SNode.class) instanceof ConceptDeclaration);
   }
 
+  public boolean executeInsideCommand() {
+    return false;
+  }
+
   public void execute(ActionContext context) {
+    final IdeMain ide = context.get(IdeMain.class);
     SNode node = context.get(SNode.class);
     if (!(node instanceof ConceptDeclaration)) return;
 
@@ -43,7 +47,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
       JOptionPane.showMessageDialog(null, "Couldn't find Language for structure model " + languageStructure.getUID());
       return;
     }
-    SModel languageEditor = language.getEditorModel();
+    final SModel languageEditor = language.getEditorModel();
     if (languageEditor != null) {
       Iterator<SNode> iterator = languageEditor.roots();
       while (iterator.hasNext()) {
@@ -54,9 +58,32 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
           return;
         }
       }
-      JOptionPane.showMessageDialog(null, "The " + editorName + " wasn't found in " + languageEditor.getUID());
+   
+      int option = JOptionPane.showConfirmDialog(
+              null, "The " + editorName + " wasn't found in " + languageEditor.getUID() + "\nDo you want to create such an editor?",
+              "Editor not found",
+              JOptionPane.YES_NO_OPTION,
+              JOptionPane.QUESTION_MESSAGE);
+
+      if (option == JOptionPane.YES_OPTION) {
+                final ConceptEditorDeclaration[] editorDeclaration = new ConceptEditorDeclaration[1];
+                final ConceptDeclaration conceptDeclaration = (ConceptDeclaration) node;
+                CommandProcessor.instance().executeCommand(new Runnable() {
+                  public void run() {
+                    editorDeclaration[0] = new ConceptEditorDeclaration(languageEditor);
+                    editorDeclaration[0].setConceptDeclaration(conceptDeclaration);
+                    editorDeclaration[0].getModel().addRoot(editorDeclaration[0]);
+                  }
+                });
+
+                ide.getProjectPane().selectNode(editorDeclaration[0]);
+                ide.getProjectPane().openEditor(context.get(OperationContext.class));
+                JOptionPane.showMessageDialog(null, "Editor " + editorName + " created");
+      }
+
     } else {
       JOptionPane.showMessageDialog(null, "Editor model for \"" + node.getModel().getUID() + "\" is not in the project");
     }
   }
+
 }
