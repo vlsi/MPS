@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.test.EventRecorder;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.CopyUtil;
 
 import javax.swing.*;

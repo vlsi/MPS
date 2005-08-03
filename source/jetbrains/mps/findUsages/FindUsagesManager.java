@@ -1,7 +1,6 @@
 package jetbrains.mps.findUsages;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.progress.ProgressMonitor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
@@ -88,12 +87,12 @@ public class FindUsagesManager {
     });
   }
 
-  public static List<ConceptDeclaration> allSubtypes(ConceptDeclaration conceptDeclaration) {
+  public static List<ConceptDeclaration> allSubtypes(ConceptDeclaration conceptDeclaration, OperationContext operationContext) {
     if (ourCache.get(conceptDeclaration) != null) return Collections.unmodifiableList(ourCache.get(conceptDeclaration));
 
     List<ConceptDeclaration> list = new LinkedList<ConceptDeclaration>();
 
-    FindUsagesManager manager = IdeMain.instance().getProject().getComponent(FindUsagesManager.class);
+    FindUsagesManager manager = operationContext.getProject().getComponent(FindUsagesManager.class);
 
     Set<SReference> usages = manager.findUsages(conceptDeclaration, new FilterScope(manager.globalScope()) {
       protected boolean accept(SModelDescriptor descriptor) {
@@ -105,7 +104,7 @@ public class FindUsagesManager {
       if (ref.getRole().equals(ConceptDeclaration.EXTENDS)) {
         ConceptDeclaration subtype = (ConceptDeclaration) ref.getSourceNode();
         list.add(subtype);
-        list.addAll(allSubtypes(subtype));
+        list.addAll(allSubtypes(subtype, operationContext));
       }
     }
 

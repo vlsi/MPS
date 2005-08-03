@@ -59,9 +59,8 @@ public class SNodePresentationUtil {
     return false;
   }
 
-  public static String descriptionText(SNode node, SNode referenceContext) {
+  public static String descriptionText(SNode node, SNode referenceContext, OperationContext operationContext) {
     String result = null;
-    OperationContext operationContext = IdeMain.instance().getProjectOperationContext();
     if (node instanceof BaseMethodDeclaration) {
       result = descriptionText_BaseMethodDeclaration((BaseMethodDeclaration) node, referenceContext, operationContext);
     } else if (node instanceof VariableDeclaration) {
@@ -78,7 +77,7 @@ public class SNodePresentationUtil {
       SNode containingRoot = node.getContainingRoot();
       return containingRoot.getName() + " (" + containingRoot.getModel().getUID() + ")";
     }
-    String description = SModelUtil.getConceptProperty(node, "short_description", IdeMain.instance().getProjectOperationContext());
+    String description = SModelUtil.getConceptProperty(node, "short_description", operationContext);
     if (description != null) {
       return description;
     }
