@@ -1,6 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.OperationContext;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,6 +24,10 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
 
   public EditorContext getEditorContext() {
     return myEditorContext;
+  }
+
+  public OperationContext getOperationContext() {
+    return myEditorContext.getOperationContext();
   }
 
   public void setOriginalNode(SNode node) {
