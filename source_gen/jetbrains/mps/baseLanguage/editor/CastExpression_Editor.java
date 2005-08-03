@@ -10,11 +10,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
-import jetbrains.mps.resolve.BadReferenceTextProvider;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
@@ -65,23 +63,8 @@ public class CastExpression_Editor extends DefaultNodeEditor {
   }
   public EditorCell createTypeCell(EditorContext context, SNode node) {
     SNode referencedNode = null;
-    SReference reference = null;
     referencedNode = node.getChild("type");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "type", context.getOperationContext());
-    if(!(reference == null) && !((reference.isResolved()))) {
-      EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
-      noRefCell.setEditable(true);
-      noRefCell.setSelectable(true);
-      noRefCell.setDrawBorder(false);
-      noRefCell.setDrawBrackets(false);
-      noRefCell.setBracketsColor(Color.black);
-      noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-      noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
-      CastExpression_CastTypeActions.setCellActions(noRefCell, node, context);
-      _DefErrorActions.setCellActions(noRefCell, node, context);
-      noRefCell.putUserObject(EditorCell.CELL_ID, "1080902646662");
-      return noRefCell;
-    }
     if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
@@ -110,23 +93,8 @@ public class CastExpression_Editor extends DefaultNodeEditor {
   }
   public EditorCell createExpressionCell(EditorContext context, SNode node) {
     SNode referencedNode = null;
-    SReference reference = null;
     referencedNode = node.getChild("expression");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "expression", context.getOperationContext());
-    if(!(reference == null) && !((reference.isResolved()))) {
-      EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
-      noRefCell.setEditable(true);
-      noRefCell.setSelectable(true);
-      noRefCell.setDrawBorder(false);
-      noRefCell.setDrawBrackets(false);
-      noRefCell.setBracketsColor(Color.black);
-      noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-      noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
-      CastExpression_CastExpressionActions.setCellActions(noRefCell, node, context);
-      _DefErrorActions.setCellActions(noRefCell, node, context);
-      noRefCell.putUserObject(EditorCell.CELL_ID, "1080902646664");
-      return noRefCell;
-    }
     if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");

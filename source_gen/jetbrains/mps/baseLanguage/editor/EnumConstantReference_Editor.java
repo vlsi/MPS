@@ -10,9 +10,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.resolve.BadReferenceTextProvider;
 import jetbrains.mps.nodeEditor.EditorCellAction;
@@ -54,11 +54,10 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
   }
   public EditorCell createEnumConstantDeclarationReferenceCell(EditorContext context, SNode node) {
     SNode effectiveNode = null;
-    SReference reference = null;
     effectiveNode = node.getReferent("enumConstantDeclaration");
-    reference = node.getReference("enumConstantDeclaration");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "enumConstantDeclaration", context.getOperationContext());
-    if(!(reference == null) && !((reference.isResolved()))) {
+    SReference reference = node.getReference("enumConstantDeclaration");
+    if(reference != null && !(reference.isResolved())) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);
       noRefCell.setDrawBrackets(false);
@@ -102,22 +101,8 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
   }
   public EditorCell createClassTypeCell(EditorContext context, SNode node) {
     SNode referencedNode = null;
-    SReference reference = null;
     referencedNode = node.getChild("classType");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "classType", context.getOperationContext());
-    if(!(reference == null) && !((reference.isResolved()))) {
-      EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
-      noRefCell.setEditable(true);
-      noRefCell.setSelectable(true);
-      noRefCell.setDrawBorder(false);
-      noRefCell.setDrawBrackets(false);
-      noRefCell.setBracketsColor(Color.black);
-      noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-      noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
-      EnumConstantReference_TypeActions.setCellActions(noRefCell, node, context);
-      noRefCell.putUserObject(EditorCell.CELL_ID, "1090928601377");
-      return noRefCell;
-    }
     if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");

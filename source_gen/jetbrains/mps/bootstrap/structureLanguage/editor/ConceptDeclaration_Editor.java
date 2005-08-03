@@ -16,9 +16,9 @@ import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
 import jetbrains.mps.nodeEditor.BooleanPropertySubstituteInfo;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.resolve.BadReferenceTextProvider;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
@@ -297,11 +297,10 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createExtendsReferenceCell(EditorContext context, SNode node) {
     SNode effectiveNode = null;
-    SReference reference = null;
     effectiveNode = node.getReferent("extends");
-    reference = node.getReference("extends");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "extends", context.getOperationContext());
-    if(!(reference == null) && !((reference.isResolved()))) {
+    SReference reference = node.getReference("extends");
+    if(reference != null && !(reference.isResolved())) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);
       noRefCell.setDrawBrackets(false);

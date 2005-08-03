@@ -15,11 +15,9 @@ import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
-import jetbrains.mps.resolve.BadReferenceTextProvider;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.CellAction_DeleteSmart;
@@ -142,22 +140,8 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createReturnType(EditorContext context, SNode node) {
     SNode referencedNode = null;
-    SReference reference = null;
     referencedNode = node.getChild("returnType");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "returnType", context.getOperationContext());
-    if(!(reference == null) && !((reference.isResolved()))) {
-      EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
-      noRefCell.setEditable(true);
-      noRefCell.setSelectable(true);
-      noRefCell.setDrawBorder(false);
-      noRefCell.setDrawBrackets(false);
-      noRefCell.setBracketsColor(Color.black);
-      noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-      noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
-      InstanceMethodDeclaration_ReturnTypeCellActions.setCellActions(noRefCell, node, context);
-      noRefCell.putUserObject(EditorCell.CELL_ID, "1075233539828");
-      return noRefCell;
-    }
     if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "<no return type>");
@@ -185,21 +169,8 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createBodyCell(EditorContext context, SNode node) {
     SNode referencedNode = null;
-    SReference reference = null;
     referencedNode = node.getChild("body");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "body", context.getOperationContext());
-    if(!(reference == null) && !((reference.isResolved()))) {
-      EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
-      noRefCell.setEditable(true);
-      noRefCell.setSelectable(true);
-      noRefCell.setDrawBorder(false);
-      noRefCell.setDrawBrackets(false);
-      noRefCell.setBracketsColor(Color.black);
-      noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-      noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
-      noRefCell.putUserObject(EditorCell.CELL_ID, "1075233459448");
-      return noRefCell;
-    }
     if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");

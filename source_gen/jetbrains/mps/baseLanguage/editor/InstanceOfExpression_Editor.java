@@ -11,11 +11,9 @@ import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
-import jetbrains.mps.resolve.BadReferenceTextProvider;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
@@ -53,23 +51,8 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
   }
   public EditorCell createLeftExpressionCell(EditorContext context, SNode node) {
     SNode referencedNode = null;
-    SReference reference = null;
     referencedNode = node.getChild("leftExpression");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "leftExpression", context.getOperationContext());
-    if(!(reference == null) && !((reference.isResolved()))) {
-      EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
-      noRefCell.setEditable(true);
-      noRefCell.setSelectable(true);
-      noRefCell.setDrawBorder(false);
-      noRefCell.setDrawBrackets(false);
-      noRefCell.setBracketsColor(Color.black);
-      noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-      noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
-      InstanceOfExpression_LeftExpressionsActions.setCellActions(noRefCell, node, context);
-      _DefErrorActions.setCellActions(noRefCell, node, context);
-      noRefCell.putUserObject(EditorCell.CELL_ID, "1081257097746");
-      return noRefCell;
-    }
     if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
@@ -98,23 +81,8 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
   }
   public EditorCell createClassTypeCell(EditorContext context, SNode node) {
     SNode referencedNode = null;
-    SReference reference = null;
     referencedNode = node.getChild("classType");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "classType", context.getOperationContext());
-    if(!(reference == null) && !((reference.isResolved()))) {
-      EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
-      noRefCell.setEditable(true);
-      noRefCell.setSelectable(true);
-      noRefCell.setDrawBorder(false);
-      noRefCell.setDrawBrackets(false);
-      noRefCell.setBracketsColor(Color.black);
-      noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-      noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
-      InstanceOfExpression_InstanceOfTypes.setCellActions(noRefCell, node, context);
-      _DefErrorActions.setCellActions(noRefCell, node, context);
-      noRefCell.putUserObject(EditorCell.CELL_ID, "1081257097748");
-      return noRefCell;
-    }
     if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");

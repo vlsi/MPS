@@ -15,9 +15,9 @@ import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteProperty;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.nodeEditor.EditorCell_Error;
 import jetbrains.mps.resolve.BadReferenceTextProvider;
 import jetbrains.mps.nodeEditor.CellAction_Empty;
@@ -70,11 +70,10 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
   }
   public EditorCell createConceptPropertyDeclarationReferenceCell(EditorContext context, SNode node) {
     SNode effectiveNode = null;
-    SReference reference = null;
     effectiveNode = node.getReferent("conceptPropertyDeclaration");
-    reference = node.getReference("conceptPropertyDeclaration");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "conceptPropertyDeclaration", context.getOperationContext());
-    if(!(reference == null) && !((reference.isResolved()))) {
+    SReference reference = node.getReference("conceptPropertyDeclaration");
+    if(reference != null && !(reference.isResolved())) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);
       noRefCell.setDrawBrackets(false);
