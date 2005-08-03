@@ -10,7 +10,7 @@ public class NodeEditorActions {
   public static class LEFT extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      return selection != null && selection.getParent() != null && findTarget(selection) != null;
+      return selection != null && findTarget(selection) != null;
     }
 
     public void execute(EditorContext context) {
@@ -20,24 +20,62 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell) {
+      if (cell.getParent() == null) {
+        return (cell instanceof EditorCell_Collection)?findTarget((EditorCell_Collection) cell):null;
+      }
       return cell.getParent().findNextToLeft(cell);
+    }
+
+    private EditorCell findTarget(EditorCell_Collection collection) {
+     /* EditorCell target = collection.lastCell();
+      while (target != null) {
+        if (target instanceof EditorCell_Collection) {
+          EditorCell childTarget = findTarget((EditorCell_Collection) target);
+          if (childTarget != null) {
+            return childTarget;
+          }
+        } else if (target.isSelectable()) {
+          return target;
+        }
+        target = collection.findNextToLeft(target);
+      }*/
+      return null;
     }
   }
 
   public static class RIGHT extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      return selection != null && selection.getParent() != null && findTarget(selection) != null;
+      return selection != null && findTarget(selection) != null;
     }
 
     public void execute(EditorContext context) {
-      context.getNodeEditorComponent().clearSelectionStack();
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      context.getNodeEditorComponent().changeSelection(findTarget(selection));
+        context.getNodeEditorComponent().clearSelectionStack();
+        EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
+        context.getNodeEditorComponent().changeSelection(findTarget(selection));
     }
 
     private EditorCell findTarget(EditorCell cell) {
+      if (cell.getParent() == null) {
+        return (cell instanceof EditorCell_Collection)?findTarget((EditorCell_Collection) cell):null;
+      }
       return cell.getParent().findNextToRight(cell);
+    }
+
+    private EditorCell findTarget(EditorCell_Collection collection) {
+      EditorCell target = collection.firstCell();
+      while (target != null) {
+        if (target instanceof EditorCell_Collection) {
+          EditorCell childTarget = findTarget((EditorCell_Collection) target);
+          if (childTarget != null) {
+            return childTarget;
+          }
+        } else if (target.isSelectable()) {
+          return target;
+        }
+        target = collection.findNextToRight(target);
+      }
+      return null;
     }
   }
 
@@ -66,7 +104,7 @@ public class NodeEditorActions {
   public static class DOWN extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      return selection != null && selection.getParent() != null && findTarget(selection, selection.getCaretX()) != null;
+      return selection != null /*&& selection.getParent() != null*/ && findTarget(selection, selection.getCaretX()) != null;
     }
 
     public void execute(EditorContext context) {
@@ -81,7 +119,27 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell, int caretX) {
+       if (cell.getParent() == null) {
+        return (cell instanceof EditorCell_Collection)?findTarget((EditorCell_Collection) cell, caretX):null;
+      }
       return cell.getParent().findNextToDown(caretX, cell.getY() + cell.getHeight());
+    }
+
+
+    private EditorCell findTarget(EditorCell_Collection collection, int caretX) {
+      EditorCell target = collection.firstCell();
+      while (target != null) {
+        if (target instanceof EditorCell_Collection) {
+          EditorCell childTarget = findTarget((EditorCell_Collection) target, caretX);
+          if (childTarget != null) {
+            return childTarget;
+          }
+        } else if (target.isSelectable()) {
+          return target;
+        }
+        target = collection.findNextToDown(caretX, target.getY());
+      }
+      return null;
     }
   }
 
