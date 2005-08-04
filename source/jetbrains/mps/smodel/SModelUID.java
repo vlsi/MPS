@@ -31,12 +31,12 @@ public class SModelUID implements Comparable {
     this.myStereotype = stereotype;
   }
 
-  public SModelUID(String namespace, String name, String stereotype) {
-    if (name == null) name = "";
+  public SModelUID(String namePrefix, String shortName, String stereotype) {
+    if (shortName == null) shortName = "";
     if (stereotype == null) stereotype = "";
-    if (namespace == null || namespace.length() == 0) {
-      myLongName = name;
-    } else myLongName = namespace + '.' + name;
+    if (namePrefix == null || namePrefix.length() == 0) {
+      myLongName = shortName;
+    } else myLongName = namePrefix + '.' + shortName;
 
     myStereotype = stereotype;
   }

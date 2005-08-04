@@ -60,8 +60,16 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     return myModelUID;
   }
 
+
+  /**
+   * todo: should return "long name"
+   */
   public String getName() {
     return NameUtil.shortNameFromLongName(myModelUID.getLongName());
+  }
+
+  public String getLongName() {
+    return myModelUID.getLongName();
   }
 
   public String getStereotype() {

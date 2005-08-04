@@ -15,7 +15,11 @@ import java.io.File;
 public interface SModelDescriptor {
   SModel getSModel();
   SModelUID getModelUID();
+  /**
+   * todo: should return "long name"
+   */
   String getName();
+  String getLongName();
   String getStereotype();
   boolean isInitialized();
   void addSModelListener(SModelListener listener);

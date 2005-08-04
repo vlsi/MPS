@@ -46,6 +46,10 @@ public class SModelRepository extends SModelAdapter {
     }
   }
 
+  /**
+   * @deprecated
+   */
+
   public Set<SModelDescriptor> getAllNonTransientModelDescriptors() {
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
     for (SModelDescriptor d : getAllModelDescriptors()) {
@@ -226,6 +230,20 @@ public class SModelRepository extends SModelAdapter {
     for (SModelUID uid : uidList) {
       SModelDescriptor descriptor = getModelDescriptor(uid, owner);
       if (descriptor != null) {
+        list.add(descriptor);
+      }
+    }
+    return list;
+  }
+
+  public List<SModelDescriptor> getModelDescriptors(ModelOwner owner) {
+    List<SModelDescriptor> list = new LinkedList<SModelDescriptor>();
+    Iterator<Map.Entry<SModelUID, SModelDescriptor>> entries = myUIDToModelDescriptorMap.entrySet().iterator();
+    while (entries.hasNext()) {
+      Map.Entry<SModelUID, SModelDescriptor> entry = entries.next();
+      SModelDescriptor descriptor = entry.getValue();
+      HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(descriptor);
+      if(modelOwners.contains(owner)) {
         list.add(descriptor);
       }
     }

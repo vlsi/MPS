@@ -5,10 +5,7 @@ import jetbrains.mps.logging.Logger;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * User: Sergey Dmitriev
@@ -120,5 +117,18 @@ public class LanguageRepository {
       testOwner = testOwner.getParentLanguageOwner();
     }
     return null;
+  }
+
+  public List<Language> getLanguages(LanguageOwner languageOwner) {
+    List<Language> list = new LinkedList<Language>();
+    Iterator<Map.Entry<Language, HashSet<LanguageOwner>>> entries = myLanguageToOwnersMap.entrySet().iterator();
+    while (entries.hasNext()) {
+      Map.Entry<Language, HashSet<LanguageOwner>> entry = entries.next();
+      HashSet<LanguageOwner> languageOwners = entry.getValue();
+      if (languageOwners.contains(languageOwner)) {
+        list.add(entry.getKey());
+      }
+    }
+    return list;
   }
 }

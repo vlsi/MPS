@@ -38,6 +38,10 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     myProjectFile = file;
   }
 
+  public String toString() {
+    return "MPSProject file: " + (myProjectFile == null ? "<none>" : myProjectFile.toString());
+  }
+
   public ModelOwner getParentModelOwner() {
     return null;
   }
@@ -74,21 +78,33 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     return Collections.unmodifiableCollection(myRootManager.getProjectLanguages());
   }
 
+  /**
+   * @deprecated
+   */
   public Collection<SModelDescriptor> getProjectModelDescriptors() {
     init();
     return Collections.unmodifiableCollection(myRootManager.getProjectModelDescriptors());
   }
 
+  /**
+   * @deprecated
+   */
   public Collection<SModelDescriptor> getLibraryModelDescriptors() {
     init();
     return Collections.unmodifiableCollection(myRootManager.getLibraryModelDescriptors());
   }
 
+  /**
+   * @deprecated
+   */
   public Set<SModelDescriptor> getAllModelDescriptors() {
     init();
     return SModelRepository.getInstance().getAllNonTransientModelDescriptors();
   }
 
+  /**
+   * @deprecated
+   */
   public Collection<Language> getLanguages() {
     init();
     return Collections.unmodifiableCollection(myRootManager.getLanguages());
