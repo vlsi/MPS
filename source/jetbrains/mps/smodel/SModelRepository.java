@@ -22,8 +22,10 @@ public class SModelRepository extends SModelAdapter {
   private HashMap<SModelDescriptor, Long> myChangedModels = new HashMap<SModelDescriptor, Long>();
   private HashMap<SModelUID, SModelDescriptor> myUIDToModelDescriptorMap = new HashMap<SModelUID, SModelDescriptor>();
   private HashMap<SModelDescriptor, HashSet<ModelOwner>> myModelToOwnerMap = new HashMap<SModelDescriptor, HashSet<ModelOwner>>();
+  private IdeMain myIde;
 
-  public SModelRepository() {
+  public SModelRepository(IdeMain ide) {
+    myIde = ide;
   }
 
   public static SModelRepository getInstance() {
@@ -306,7 +308,7 @@ public class SModelRepository extends SModelAdapter {
         String error = "Couldn't load modelDescriptors from " + dir.getAbsolutePath() +
                 "\nDirectory doesn't exist: " + dir.getAbsolutePath();
         LOG.error(error);
-        IdeMain.instance().getMessageView().add(new Message(MessageKind.ERROR, error));
+        myIde.getMessageView().add(new Message(MessageKind.ERROR, error));
       }
     }
   }
