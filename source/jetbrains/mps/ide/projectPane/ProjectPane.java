@@ -180,6 +180,43 @@ public class ProjectPane extends JComponent {
     }
   }
 
+  public MPSTreeNode findNextTreeNode(SNode semanticNode) {
+    DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
+    MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
+    SModel sModel = semanticNode.getModel();
+    SModelTreeNode sModelNode = findSModelTreeNode(rootNode, sModel);
+    if (sModelNode == null) return null;
+    MPSTreeNode foundNode = findTreeNode(sModelNode, semanticNode);
+    if (foundNode == null) return null;
+    DefaultMutableTreeNode parentNode = (DefaultMutableTreeNode) foundNode.getParent();
+    TreeNode result = parentNode.getChildAfter(foundNode);
+    if (result == null) result = parentNode.getChildBefore(foundNode);
+    if (result == null) result = parentNode;
+    return (MPSTreeNode) result;
+  }
+
+  public MPSTreeNode findNextTreeNode(SModel sModel) {
+    DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
+    MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
+    SModelTreeNode sModelNode = findSModelTreeNode(rootNode, sModel);
+    if (sModelNode == null) return null;
+    DefaultMutableTreeNode parentNode = (DefaultMutableTreeNode) sModelNode.getParent();
+    TreeNode result = parentNode.getChildAfter(sModelNode);
+    if (result == null) result = parentNode.getChildBefore(sModelNode);
+    if (result == null) result = parentNode;
+    return (MPSTreeNode) result;
+  }
+
+  public void selectNextTreeNode(SNode sNode) {
+    MPSTreeNode mpsTreeNode = findNextTreeNode(sNode);
+    myTree.selectNode(mpsTreeNode);
+  }
+
+  public void selectNextTreeModel(SModel sModel) {
+    MPSTreeNode mpsTreeNode = findNextTreeNode(sModel);
+    myTree.selectNode(mpsTreeNode);
+  }
+
   private MPSTreeNodeEx findTreeNode(MPSTreeNode parent, SNode semanticNode) {
     if (!parent.isInitialized()) parent.init();
     if (parent instanceof SNodeTreeNode) {
