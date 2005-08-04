@@ -39,7 +39,7 @@ public class TemplateSwitchGraph {
     Iterator<SModelDescriptor> iterator = templatesModel.importedModels();
     while (iterator.hasNext()) {
       SModel importedModel = iterator.next().getSModel();
-      if (importedModel.importsLanguage("jetbrains.mps.transformation.TLBase")) {
+      if (importedModel.hasLanguage("jetbrains.mps.transformation.TLBase")) {
         processTemplatesModel(importedModel, processedModes);
       }
     }

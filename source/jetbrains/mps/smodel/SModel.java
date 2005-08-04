@@ -26,9 +26,6 @@ public class SModel implements Iterable<SNode> {
   private List<SModelListener> myListeners = new ArrayList<SModelListener>();
   private List<SModelCommandListener> myCommandListeners = new ArrayList<SModelCommandListener>();
   private List<SNode> myRoots = new ArrayList<SNode>();
- /* private String myName = "unnamed";
-  private String myNamespace = "";
-  private String myStereotype = "";*/
   private SModelUID myUID = new SModelUID("unnamed","");
 
   private boolean myIsExternallyResolved = false;
@@ -164,6 +161,32 @@ public class SModel implements Iterable<SNode> {
     return !isLoading /*&& !UndoManager.instance().isUndoOrRedoInProgress() */;
   }
 
+  void fireLanguageAddedEvent(String languageNamespace) {
+    if (!canFireEvent()) return;
+    for (SModelListener sModelListener : copyListeners()) {
+      sModelListener.languageAdded(new SModeLanguageEvent(this, languageNamespace));
+    }
+  }
+  void fireLanguageRemovedEvent(String languageNamespace) {
+    if (!canFireEvent()) return;
+    for (SModelListener sModelListener : copyListeners()) {
+      sModelListener.languageRemoved(new SModeLanguageEvent(this, languageNamespace));
+    }
+  }
+
+  void fireImportAddedEvent(SModelUID modelUID) {
+    if (!canFireEvent()) return;
+    for (SModelListener sModelListener : copyListeners()) {
+      sModelListener.importAdded(new SModeImportEvent(this, modelUID));
+    }
+  }
+  void fireImportRemovedEvent(SModelUID modelUID) {
+    if (!canFireEvent()) return;
+    for (SModelListener sModelListener : copyListeners()) {
+      sModelListener.importAdded(new SModeImportEvent(this, modelUID));
+    }
+  }
+
   void fireRootAddedEvent(SNode root) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
@@ -175,6 +198,13 @@ public class SModel implements Iterable<SNode> {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
       sModelListener.rootRemoved(new SModelRootEvent(this, root, false));
+    }
+  }
+
+  void fireChangedEvent(SNode node, String property) {
+    if (!canFireEvent()) return;
+    for (SModelListener sModelListener : copyListeners()) {
+      sModelListener.propertyChanged(new SModelPropertyEvent(this, property, node));
     }
   }
 
@@ -241,7 +271,7 @@ public class SModel implements Iterable<SNode> {
     return myRoots.contains(node);
   }
 
-  public boolean importsLanguage(String languageNamespace) {
+  public boolean hasLanguage(String languageNamespace) {
     for (String languageNamespase : myLanguages) {
       if (languageNamespase.equals(languageNamespace)) return true;
     }
@@ -257,6 +287,7 @@ public class SModel implements Iterable<SNode> {
     assert languageNamespace != null;
     if (!myLanguages.contains(languageNamespace)) {
       myLanguages.add(languageNamespace);
+      fireLanguageAddedEvent(languageNamespace);
     }
   }
 
@@ -285,6 +316,7 @@ public class SModel implements Iterable<SNode> {
 
   public void deleteLanguage(String languageNamespace) {
     myLanguages.remove(languageNamespace);
+    fireLanguageRemovedEvent(languageNamespace);
   }
 
   public List<Language> getLanguages() {
@@ -331,6 +363,7 @@ public class SModel implements Iterable<SNode> {
   void addImportedModelDescriptor(SModelDescriptor modelDescriptor, int referenceId) {
     ImportElement importElement = new ImportElement(modelDescriptor.getModelUID(), referenceId);
     myImports.add(importElement);
+    fireImportAddedEvent(modelDescriptor.getModelUID());
   }
 
 
@@ -344,6 +377,7 @@ public class SModel implements Iterable<SNode> {
     if (importElement != null) return importElement;
     importElement = new ImportElement(modelUID, ++myMaxReferenceID);
     myImports.add(importElement);
+    fireImportAddedEvent(modelUID);
     return importElement;
   }
 
@@ -351,6 +385,7 @@ public class SModel implements Iterable<SNode> {
    ImportElement addImportElement(SModelUID modelUID, int referenceId) {
     ImportElement importElement = new ImportElement(modelUID, referenceId);
     myImports.add(importElement);
+    fireImportAddedEvent(modelUID);
     return importElement;
   }
 
@@ -359,6 +394,7 @@ public class SModel implements Iterable<SNode> {
     ImportElement importElement = findImportElement(modelUID);
     if (importElement != null) {
       myImports.remove(importElement);
+      fireImportRemovedEvent(modelUID);
     }
   }
 
@@ -366,6 +402,7 @@ public class SModel implements Iterable<SNode> {
     ImportElement importElement = findImportElement(model.getUID());
     if (importElement != null) {
       myImports.remove(importElement);
+      fireImportRemovedEvent(model.getUID());
     }
   }
 
@@ -595,6 +632,22 @@ public class SModel implements Iterable<SNode> {
 
     public void commandStarted(CommandEvent event) {
       myEvents.clear();
+    }
+
+    public void languageAdded(SModeLanguageEvent event) {
+      myEvents.add(event);
+    }
+
+    public void languageRemoved(SModeLanguageEvent event) {
+      myEvents.add(event);
+    }
+
+    public void importAdded(SModeImportEvent event) {
+      myEvents.add(event);
+    }
+
+    public void importRemoved(SModeImportEvent event) {
+      myEvents.add(event);
     }
 
     public void rootAdded(SModelRootEvent event) {

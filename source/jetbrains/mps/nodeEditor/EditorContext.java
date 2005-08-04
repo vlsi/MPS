@@ -44,7 +44,7 @@ public class EditorContext {
   }
 
   public EditorCell createNodeCell(SNode node) {
-    return myOperationContext.getProject().getComponent(EditorManager.class).createEditorCell(this, node);
+    return myOperationContext.getComponent(EditorManager.class).createEditorCell(this, node);
   }
 
 

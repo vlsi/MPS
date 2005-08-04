@@ -197,7 +197,7 @@ public class CopyPasteNodeUtil {
   private static List<SNode> tryToPasteText(Clipboard cb, SModel model) {
     try {
 
-      if (!model.importsLanguage("jetbrains.textLanguage")) return null;
+      if (!model.hasLanguage("jetbrains.textLanguage")) return null;
 
       String text = cb.getData(DataFlavor.stringFlavor).toString();
 

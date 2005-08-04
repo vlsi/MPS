@@ -331,7 +331,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
   private Set<SModelDescriptor> findModelsWithLanguage(Set<SModelDescriptor> models, String fqName) {
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
     for (SModelDescriptor model : models) {
-      if (model.getSModel().importsLanguage(fqName)) {
+      if (model.getSModel().hasLanguage(fqName)) {
         result.add(model);
       }
     }

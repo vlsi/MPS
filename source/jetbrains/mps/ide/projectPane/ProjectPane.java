@@ -15,7 +15,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjectCommandListener;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.util.CollectionUtil;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;

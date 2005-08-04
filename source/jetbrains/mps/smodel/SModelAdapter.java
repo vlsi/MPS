@@ -6,6 +6,22 @@ import jetbrains.mps.smodel.event.*;
  * @author Kostik
  */
 public class SModelAdapter implements SModelListener {
+  public void languageAdded(SModeLanguageEvent event) {
+    modelChanged(event.getModel());
+  }
+
+  public void languageRemoved(SModeLanguageEvent event) {
+    modelChanged(event.getModel());
+  }
+
+  public void importAdded(SModeImportEvent event) {
+    modelChanged(event.getModel());
+  }
+
+  public void importRemoved(SModeImportEvent event) {
+    modelChanged(event.getModel());
+  }
+
   public void rootAdded(SModelRootEvent event) {
     modelChangedDramatically(event.getModel());
   }
