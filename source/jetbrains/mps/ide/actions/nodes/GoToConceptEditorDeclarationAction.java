@@ -120,28 +120,12 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
         editor.getSModel().addImportedModelDescriptor(language.getStructureModelDescriptor());
         editor.getSModel().addImportedModelDescriptor(bootstrapLanguages.getCoreLanguage().getStructureModelDescriptor());
         editor.getSModel().addLanguage(bootstrapLanguages.getEditorLanguage());
-        editor.getSModel().addLanguage(bootstrapLanguages.getBaseLanguage());
+        //editor.getSModel().addLanguage(bootstrapLanguages.getBaseLanguage());
         editor.save();
         //SModelRepository.getInstance().markChanged(editor.getSModel());
 
         final SModel smodel = new SModel(new SModelUID("z", "z", ""));
-        AbstractSModelDescriptor abstractModelDescriptor = new AbstractSModelDescriptor(smodel) {
-          protected SModel loadModel() {
-            return null;  //To change body of implemented methods use File | Settings | File Templates.
-          }
-
-          protected void saveModel(SModel model) {
-            //To change body of implemented methods use File | Settings | File Templates.
-          }
-
-          public File getModelFile() {
-            return null;  //To change body of implemented methods use File | Settings | File Templates.
-          }
-
-          public long timestamp() {
-            return 0;  //To change body of implemented methods use File | Settings | File Templates.
-          }
-        };
+        AbstractSModelDescriptor abstractModelDescriptor = new DummySModelDescriptor(smodel);
 
         SModelRepository.getInstance().registerModelDescriptor(abstractModelDescriptor, project);
 
