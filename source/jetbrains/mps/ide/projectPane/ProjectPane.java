@@ -15,6 +15,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjectCommandListener;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.util.CollectionUtil;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -162,6 +163,30 @@ public class ProjectPane extends JComponent {
       }
     });
     return sortedModels;
+  }
+
+  private void selectTreeNodes(Iterable<MPSTreeNode> nodes) {
+    if (!nodes.iterator().hasNext()) return;
+    ArrayList<TreePath> treePaths = new ArrayList<TreePath>();
+    for (MPSTreeNode node : nodes) {
+      TreePath treePath = new TreePath(node.getPath());
+      treePaths.add(treePath);
+    }
+    myTree.setSelectionPaths(treePaths.toArray(new TreePath[treePaths.size()]));
+    myTree.scrollPathToVisible(treePaths.get(0));
+  }
+
+  public void selectAllSiblingNodes(SNode sNode) {
+    DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
+    MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
+    SModel sModel = sNode.getModel();
+    SModelTreeNode sModelNode = findSModelTreeNode(rootNode, sModel);
+    if (sModelNode == null) return;
+    MPSTreeNodeEx foundNode = findTreeNode(sModelNode, sNode);
+    if (foundNode != null) {
+      MPSTreeNode parentNode = (MPSTreeNode) foundNode.getParent();
+      selectTreeNodes(parentNode);
+    }
   }
 
   public void selectNode(SNode semanticNode) {
