@@ -116,7 +116,7 @@ public abstract class SReference {
 
       localNodeId = targetNodeId.substring(offset + 1);
 
-      if (extResolveInfo != null) {
+      if (extResolveInfo != null || !extResolveInfo.equals("")) {
         int offset1 = extResolveInfo.indexOf('.');
         LOG.assertLog(targetNodeId.substring(0, offset).equals(extResolveInfo.substring(0, offset1)));
         extResolveInfo = extResolveInfo.substring(offset1 + 1);
