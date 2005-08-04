@@ -67,8 +67,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private OperationContext myOperationContext;
   private EventRecorder myRecorder = null;
+  private IdeMain myIde;
 
-  public AbstractEditorComponent(OperationContext operationContext) {
+  public AbstractEditorComponent(IdeMain ide, OperationContext operationContext) {
+    myIde = ide;
     addFocusListener(new FocusAdapter() {
       public void focusGained(FocusEvent e) {
         myPreviousFocusOwner = e.getOppositeComponent();
@@ -565,7 +567,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   protected void updateCellExplorerIfNeeded() {
-    IdeMain.instance().getCellExplorerView().update();
+    myIde.getCellExplorerView().update();
   }
 
   public EditorCell findPrevSelectableCell(final EditorCell cell) {
@@ -600,7 +602,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public void rebuildEditorContent() {
     removeAll();
-
 
 
     EditorCell selectedCell = getSelectedCell();
@@ -746,7 +747,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     Graphics2D g = (Graphics2D) gg;
 
     g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
-    RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+            RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 
 
     g.setColor(Color.white);
@@ -1051,7 +1052,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return findEditableCell(root);
   }
 
-  private class MyModelListener implements SModelCommandListener   {
+  private class MyModelListener implements SModelCommandListener {
     public void modelChangedInCommand(List<SModelEvent> events) {
       if (!EventUtil.isDramaticalChange(events)) {
         myRootCell.updateView();

@@ -9,13 +9,14 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.smodel.OperationContext;
+import jetbrains.mps.ide.IdeMain;
 
 public class InspectorEditorComponent extends AbstractEditorComponent {
   private EditorContext myEditorContext;
   private SNodeProxy myNodeReference = new SNodeProxy(null);
 
-  public InspectorEditorComponent(OperationContext operationContext) {
-    super(operationContext);
+  public InspectorEditorComponent(IdeMain ide, OperationContext operationContext) {
+    super(ide, operationContext);
     reinitEditor();
     rebuildEditorContent();
   }
@@ -32,7 +33,7 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
     }
   }
 
-  protected void updateCellExplorerIfNeeded() {    
+  protected void updateCellExplorerIfNeeded() {
   }
 
 
