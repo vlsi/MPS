@@ -61,6 +61,7 @@ public class LanguageRepository {
         if (owners.size() == 0) {
           filesToRemove.add(fileName);
           myNamespaceToLanguageMap.remove(language.getNamespace());
+          myLanguageToOwnersMap.remove(language);
         }
       }
     }
@@ -125,8 +126,14 @@ public class LanguageRepository {
     while (entries.hasNext()) {
       Map.Entry<Language, HashSet<LanguageOwner>> entry = entries.next();
       HashSet<LanguageOwner> languageOwners = entry.getValue();
-      if (languageOwners.contains(languageOwner)) {
-        list.add(entry.getKey());
+
+      LanguageOwner testOwner = languageOwner;
+      while (testOwner != null) {
+        if (languageOwners.contains(testOwner)) {
+          list.add(entry.getKey());
+          break;
+        }
+        testOwner = testOwner.getParentLanguageOwner();
       }
     }
     return list;
