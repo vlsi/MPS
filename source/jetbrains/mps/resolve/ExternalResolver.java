@@ -44,6 +44,9 @@ public class ExternalResolver {
   public static String getExternalResolveInfoFromTarget(SNode targetNode) {
     //cache lookup
     Method externalResolveMethod = ourConceptsToResolveInfoMethodsMap.get(targetNode.getClass());
+    if (targetNode.getName() != null && targetNode.getName().equals("iterator")) {
+      System.err.println(targetNode + "");
+    }
     //reflection searching 
     if (externalResolveMethod == null) {
       externalResolveMethod = getExternalResolveMethodFromTarget(targetNode);
@@ -94,7 +97,7 @@ public class ExternalResolver {
 
   public static SNode getTargetNode(SModel model, String extResolveInfo) {
 
-    if (extResolveInfo == null || extResolveInfo.equals("")) {
+    if (ExternalReference.isEmptyExtResolveInfo(extResolveInfo)) {
       System.err.println("EXTERNAL RESOLVE: resolve info is empty");
       return null;
     }
