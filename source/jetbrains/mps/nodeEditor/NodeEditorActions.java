@@ -43,6 +43,86 @@ public class NodeEditorActions {
     }
   }
 
+  public static class CTRL_HOME extends EditorCellAction {
+
+    public boolean canExecute(EditorContext context) {
+      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
+      return selection != null && findTarget(selection) != null;
+    }
+
+    public void execute(EditorContext context) {
+      context.getNodeEditorComponent().clearSelectionStack();
+      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
+      context.getNodeEditorComponent().changeSelection(findTarget(selection));
+    }
+
+    private EditorCell findTarget(EditorCell cell) {
+      EditorCell_Collection rootCell = cell instanceof EditorCell_Collection?(EditorCell_Collection) cell : cell.getParent();
+      while (rootCell != null && rootCell.getParent() != null) {
+        rootCell = rootCell.getParent();
+      }
+      return findTarget(rootCell);
+    }
+
+    private EditorCell findTarget(EditorCell_Collection collection) {
+      EditorCell target = collection.firstCell();
+      while (target != null) {
+        if (target instanceof EditorCell_Collection) {
+          EditorCell childTarget = findTarget((EditorCell_Collection) target);
+          if (childTarget != null) {
+            return childTarget;
+          }
+        } else if (target.isSelectable()) {
+          return target;
+        }
+        target = collection.findNextToRight(target);
+      }
+      return null;
+    }
+
+  }
+
+
+  public static class CTRL_END extends EditorCellAction {
+
+    public boolean canExecute(EditorContext context) {
+      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
+      return selection != null && findTarget(selection) != null;
+    }
+
+    public void execute(EditorContext context) {
+      context.getNodeEditorComponent().clearSelectionStack();
+      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
+      context.getNodeEditorComponent().changeSelection(findTarget(selection));
+    }
+
+    private EditorCell findTarget(EditorCell cell) {
+      EditorCell_Collection rootCell = cell instanceof EditorCell_Collection?(EditorCell_Collection) cell : cell.getParent();
+      while (rootCell != null && rootCell.getParent() != null) {
+        rootCell = rootCell.getParent();
+      }
+      return findTarget(rootCell);
+    }
+
+    private EditorCell findTarget(EditorCell_Collection collection) {
+      EditorCell target = collection.lastCell();
+      while (target != null) {
+        if (target instanceof EditorCell_Collection) {
+          EditorCell childTarget = findTarget((EditorCell_Collection) target);
+          if (childTarget != null) {
+            return childTarget;
+          }
+        } else if (target.isSelectable()) {
+          return target;
+        }
+        target = collection.findNextToLeft(target);
+      }
+      return null;
+    }
+
+  }
+
+
   public static class RIGHT extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();

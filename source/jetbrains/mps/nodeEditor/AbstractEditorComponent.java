@@ -139,6 +139,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myActionMap.put(EditorCellAction.RIGHT_SPECIAL, new NodeEditorActions.RIGHT());
     myActionMap.put(EditorCellAction.UP_SPECIAL, new NodeEditorActions.UP_SPECIAL());
     myActionMap.put(EditorCellAction.DOWN_SPECIAL, new NodeEditorActions.DOWN_SPECIAL());
+    myActionMap.put(EditorCellAction.CTRL_HOME, new NodeEditorActions.CTRL_HOME());
+    myActionMap.put(EditorCellAction.CTRL_END, new NodeEditorActions.CTRL_END());
     // ----
     myActionMap.put(EditorCellAction.COPY, new CellAction_CopyNode());
     myActionMap.put(EditorCellAction.PASTE, new CellAction_PasteNode());
@@ -408,6 +410,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN && keyEvent.isControlDown()) {
       return EditorCellAction.DOWN_SPECIAL;
+    }
+    if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && keyEvent.isControlDown()) {
+      return EditorCellAction.CTRL_HOME;
+    }
+    if (keyEvent.getKeyCode() == KeyEvent.VK_END && keyEvent.isControlDown()) {
+      return EditorCellAction.CTRL_END;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_TAB && keyEvent.getModifiers() == 0) {
       return EditorCellAction.NEXT;
