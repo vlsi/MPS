@@ -196,11 +196,11 @@ public class ModelPersistence {
     return readNode(nodeElement, semanticModel, referenceDescriptors, true, null);
   }
 
-  public static SNode readNode(Element nodeElement, SModel semanticModel, ArrayList<ReferenceDescriptor> referenceDescriptors, boolean setID, HashMap<String, SNode> oldIdsToNodes) {
+  public static SNode readNode(Element nodeElement, SModel smodel, ArrayList<ReferenceDescriptor> referenceDescriptors, boolean setID, HashMap<String, SNode> oldIdsToNodes) {
     String type = nodeElement.getAttributeValue(TYPE);
-    SNode semanticNode = createNodeInstance(type, semanticModel);
-    if (semanticNode == null) {
-      String error = "Error reading model " + semanticModel.getUID() + ": couldn't create instance of node id=" + nodeElement.getAttributeValue(ID);
+    SNode snode = createNodeInstance(type, smodel);
+    if (snode == null) {
+      String error = "Error reading model " + smodel.getUID() + ": couldn't create instance of node id=" + nodeElement.getAttributeValue(ID);
       LOG.errorWithTrace(error);
       firePersisteneceError();
       return null;
@@ -209,11 +209,17 @@ public class ModelPersistence {
     String myOldId = nodeElement.getAttributeValue(ID);
 
     if (setID) {
-      semanticNode.setId(myOldId);
+      snode.setId(myOldId);
     }
 
     if (oldIdsToNodes != null) {
-      oldIdsToNodes.put(myOldId, semanticNode);
+      oldIdsToNodes.put(myOldId, snode);
+    }
+
+
+    String cachedExtResolveInfo = nodeElement.getAttributeValue(EXT_RESOLVE_INFO);
+    if (!ExternalResolver.isEmptyExtResolveInfo(cachedExtResolveInfo)) {
+      smodel.cacheNodeExtResolveInfo(snode, cachedExtResolveInfo);
     }
 
     List properties = nodeElement.getChildren(PROPERTY);
@@ -222,7 +228,7 @@ public class ModelPersistence {
       String propertyName = propertyElement.getAttributeValue(NAME);
       String propertyValue = propertyElement.getAttributeValue(VALUE);
       if (propertyValue != null) {
-        semanticNode.setProperty(propertyName, propertyValue);
+        snode.setProperty(propertyName, propertyValue);
       }
     }
 
@@ -236,9 +242,9 @@ public class ModelPersistence {
 
       String targetNodeId = linkElement.getAttributeValue(TARGET_NODE_ID);
 /*      if (resolveInfo == null || resolveInfo.equals("") || targetClassResolveInfo == null || targetClassResolveInfo.equals("")) {
-        referenceDescriptors.add(new ReferenceDescriptor(semanticNode, role, targetNodeId));
+        referenceDescriptors.add(new ReferenceDescriptor(snode, role, targetNodeId));
       } else {*/
-        referenceDescriptors.add(new ReferenceDescriptor(semanticNode, role, targetNodeId, resolveInfo, targetClassResolveInfo, extResolveInfo));
+        referenceDescriptors.add(new ReferenceDescriptor(snode, role, targetNodeId, resolveInfo, targetClassResolveInfo, extResolveInfo));
   //    }
 
     }
@@ -247,16 +253,16 @@ public class ModelPersistence {
     for (Iterator iterator = childNodes.iterator(); iterator.hasNext();) {
       Element childNodeElement = (Element) iterator.next();
       String role = childNodeElement.getAttributeValue(ROLE);
-      SNode childNode = readNode(childNodeElement, semanticModel, referenceDescriptors, setID, oldIdsToNodes);
+      SNode childNode = readNode(childNodeElement, smodel, referenceDescriptors, setID, oldIdsToNodes);
       if (childNode != null) {
-        semanticNode.addChild(role, childNode);
+        snode.addChild(role, childNode);
       } else {
-        LOG.errorWithTrace("Error reading child node in node " + semanticNode.getDebugText());
+        LOG.errorWithTrace("Error reading child node in node " + snode.getDebugText());
         firePersisteneceError();
       }
     }
 
-    return semanticNode;
+    return snode;
   }
 
 
@@ -364,6 +370,13 @@ public class ModelPersistence {
     element.setAttribute(TYPE, semanticNode.getClass().getName());
     element.setAttribute(ID, semanticNode.getId());
 
+    if (semanticNode.getModel().isExternallyResolved()) {
+      String extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(semanticNode);
+      if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
+        element.setAttribute(EXT_RESOLVE_INFO, extResolveInfo);
+      }
+    }
+
     // properties ...
     Map<String, String> properties = semanticNode.getProperties();
     Set<String> keys = properties.keySet();
@@ -399,38 +412,35 @@ public class ModelPersistence {
     linkElement.setAttribute(ROLE, semanticReference.getRole());
 
     if (semanticReference.isExternal()) {//external reference
-      String referencedNodeId = semanticReference.createReferencedNodeId();
 
-      if (referencedNodeId != null) {
+      String extResolveInfo = semanticReference.createExtResolveInfo();
+
+      if (ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
 
         //try to find out if target model requires external resolve
+
+        //searchin' target model
         SModelUID modelUID = ((ExternalReference)semanticReference).getImportElement().getModelUID();
         SModelDescriptor modelDescriptor = IdeMain.instance().getProjectOperationContext().getModelDescriptor(modelUID);
         if (modelDescriptor == null) {
           LOG.error("Path to the target model " + modelUID + " is not specified");
-          setNotNullAttribute(linkElement, EXT_RESOLVE_INFO, semanticReference.createExtResolveInfo());
-          linkElement.setAttribute(TARGET_NODE_ID, semanticReference.createReferencedNodeId());//cache
           return;
         }
         SModel model = modelDescriptor.getSModel();
         if (model == null) {
           LOG.error("The modelDescriptor.getSModel() failed to load model");
-          setNotNullAttribute(linkElement, EXT_RESOLVE_INFO, semanticReference.createExtResolveInfo());
-          linkElement.setAttribute(TARGET_NODE_ID, semanticReference.createReferencedNodeId());//cache
           return;
         }
 
         if (model.isExternallyResolved()) {//if target model requires external resolve:
           ExternalResolver.setExternalResolveInfo(semanticReference);
           setNotNullAttribute(linkElement, EXT_RESOLVE_INFO, semanticReference.createExtResolveInfo());
+        } else {
+          linkElement.setAttribute(TARGET_NODE_ID, semanticReference.createReferencedNodeId());
         }
 
-        linkElement.setAttribute(TARGET_NODE_ID, semanticReference.createReferencedNodeId());
-
-
       } else {
-        setNotNullAttribute(linkElement, EXT_RESOLVE_INFO, semanticReference.createExtResolveInfo());
-        setNotNullAttribute(linkElement, TARGET_NODE_ID, semanticReference.createReferencedNodeId());//cache
+        setNotNullAttribute(linkElement, EXT_RESOLVE_INFO, extResolveInfo);
       }
     } else {//internal reference
       if (semanticReference.isResolved()) linkElement.setAttribute(TARGET_NODE_ID, semanticReference.createReferencedNodeId());

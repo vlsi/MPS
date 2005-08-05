@@ -32,11 +32,9 @@ public class ExternalResolver {
 
     ExternalReference externalReference = (ExternalReference) reference;
 
-    SNode targetNode = reference.getTargetNode();
-    if (targetNode == null) {
-      return externalReference.getExtResolveInfo();
-    }
+    if (!isEmptyExtResolveInfo(externalReference.getExtResolveInfo())) return externalReference.getExtResolveInfo();
 
+    SNode targetNode = reference.getTargetNode();
     return getExternalResolveInfoFromTarget(targetNode);
 
   }
@@ -105,7 +103,7 @@ public class ExternalResolver {
 
   public static SNode getTargetNode(SModel model, String extResolveInfo) {
 
-    if (ExternalReference.isEmptyExtResolveInfo(extResolveInfo)) {
+    if (isEmptyExtResolveInfo(extResolveInfo)) {
       System.err.println("EXTERNAL RESOLVE: resolve info is empty");
       return null;
     }
@@ -123,4 +121,7 @@ public class ExternalResolver {
     return null;
   }
 
+  public static boolean isEmptyExtResolveInfo(String extResolveInfo) {
+    return (extResolveInfo == null ||extResolveInfo.equals("")||extResolveInfo.equals("null") );
+  }
 }

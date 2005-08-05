@@ -450,6 +450,11 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1123250623839">
+          <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1123250655403">
+            <link role="variableDeclaration" targetNodeId="1122986116624" />
+          </node>
+        </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1122983393504" />
     </node>

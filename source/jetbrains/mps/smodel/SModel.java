@@ -36,8 +36,10 @@ public class SModel implements Iterable<SNode> {
   private int myMaxReferenceID;
   private List<String> myLanguages = new ArrayList<String>();
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
+
   private Map<String, SNode> myIdToNodeMap = new HashMap<String, SNode>();
   private Map<String, SNode> myExternalResolveInfoToNodeMap = new HashMap<String, SNode>();
+
   private SModelEventTranslator myEventTranslator = new SModelEventTranslator();
 
   private Set<SModelUID> myDescriptorNotFoundReportedModelUIDs = new HashSet<SModelUID>();
@@ -556,21 +558,43 @@ public class SModel implements Iterable<SNode> {
   }
 
   public SNode getNodeByExtResolveInfo(String extResolveInfo) {
+    if (!isExternallyResolved()) return null;
+    if (ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) return null;
     SNode node = myExternalResolveInfoToNodeMap.get(extResolveInfo);
-    return node;
+    if (node != null) {
+      String currentResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(node);
+      if (extResolveInfo.equals(currentResolveInfo)) return node;
+      else return findNodeWithExtResolveInfo(extResolveInfo);
+    } else {
+      return findNodeWithExtResolveInfo(extResolveInfo);
+    }
   }
 
-  public void nodeIsFullyPrepared(SNode node) {
-    if (!isExternallyResolved()) return;
-    String extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(node);
-    if (ExternalReference.isEmptyExtResolveInfo(extResolveInfo)) return;
-    SNode existingNode = myExternalResolveInfoToNodeMap.get(extResolveInfo);
-    if (existingNode != null && existingNode != node) {
-      LOG.error("couldn't set resolve info " + extResolveInfo + " to node: " + node.getDebugText() + "\nnode with this ERI exists: " + existingNode.getDebugText());
-      return;
-    }
-    myExternalResolveInfoToNodeMap.put(extResolveInfo, node);
+  private SNode findNodeWithExtResolveInfo(String extResolveInfo) {
+    SNode targetNode = ExternalResolver.getTargetNode(this, extResolveInfo);
+    if (targetNode != null) myExternalResolveInfoToNodeMap.put(extResolveInfo, targetNode);
+    return targetNode;
   }
+
+  public void clearCacheAllNodesExtResolveInfos() {
+    myExternalResolveInfoToNodeMap.clear();
+  }
+
+  public void cacheAllNodesExtResolveInfos() {
+    if (!isExternallyResolved()) return;
+    for (SNode node : myIdToNodeMap.values()) {
+      String extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(node);
+      if (ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) continue;
+      myExternalResolveInfoToNodeMap.put(extResolveInfo, node);
+    }
+  }
+
+  public void cacheNodeExtResolveInfo(SNode node, String extResolveInfo) {
+    if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
+      myExternalResolveInfoToNodeMap.put(extResolveInfo, node);
+    }
+  }
+
 
   public void setNodeId(String id, SNode node) {
     if (id == null) {
