@@ -32,7 +32,7 @@ public class SModelRepository extends SModelAdapter {
     return ApplicationComponents.getInstance().getComponent(SModelRepository.class);
   }
 
-  public void refreshModels(boolean updateNodeStatuses) {
+  public void refreshModels(boolean updateNodeStatuses, OperationContext operationContext) {
     for (SModelDescriptor m : myUIDToModelDescriptorMap.values()) {
       m.refresh();
     }
@@ -40,7 +40,7 @@ public class SModelRepository extends SModelAdapter {
     if (updateNodeStatuses) {
       for (SModelDescriptor m : myUIDToModelDescriptorMap.values()) {
         if (m.isInitialized()) {
-          m.getSModel().updateNodeStatuses();
+          m.getSModel().updateNodeStatuses(operationContext);
         }
       }
     }

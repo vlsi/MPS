@@ -9,11 +9,11 @@ import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.resolve.ExternalResolver;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.ITypeChecker;
 import jetbrains.mps.typesystem.TSStatus;
 import jetbrains.mps.typesystem.TypeCheckerAccess;
-import jetbrains.mps.resolve.ExternalResolver;
 
 import java.util.*;
 
@@ -323,10 +323,10 @@ public class SModel implements Iterable<SNode> {
     fireLanguageRemovedEvent(languageNamespace);
   }
 
-  public List<Language> getLanguages() {
+  public List<Language> getLanguages(OperationContext operationContext) {
     ArrayList<Language> languages = new ArrayList<Language>();
     for (String languageNamespace : myLanguages) {
-      Language language = LanguageRepository.getInstance().getLanguage(languageNamespace);
+      Language language = operationContext.getLanguage(languageNamespace);
       if (language != null) {
         languages.add(language);
       } else {
@@ -496,7 +496,7 @@ public class SModel implements Iterable<SNode> {
   }
 
 
-  public IStatus updateNodeStatuses() {
+  public IStatus updateNodeStatuses(OperationContext operationContext) {
     LOG.debug("SModel updateNodeStatuses: " + getUID());
     // clear
     Iterator<SNode> roots = roots();
@@ -514,7 +514,7 @@ public class SModel implements Iterable<SNode> {
     ITypeChecker typeChecker = TypeCheckerAccess.instance().getTypeChecker();
     if (typeChecker == null) return new Status.ERROR("null typechecker");
 
-    List<Language> languages = getLanguages();
+    List<Language> languages = getLanguages(operationContext);
     for (Iterator<Language> iterator = languages.iterator(); iterator.hasNext();) {
       Language language = iterator.next();
       typeChecker.loadLanguage(language);

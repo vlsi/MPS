@@ -30,8 +30,9 @@ public class CreateRootNodeGroup extends ActionGroup {
     clear();
     final SModelDescriptor model = context.get(SModelDescriptor.class);
     final IdeMain ide = context.get(IdeMain.class);
+    OperationContext operationContext = context.get(OperationContext.class);
 
-    if (model.getSModel().getLanguages().size() == 0) {
+    if (model.getSModel().getLanguageNamespaces().size() == 0) {
       add(new MPSAction("<NO LANGUAGES>") {
         public void execute(ActionContext context) {
         }
@@ -39,17 +40,16 @@ public class CreateRootNodeGroup extends ActionGroup {
 
     }
 
-    for (final Language language : model.getSModel().getLanguages()) {
+    for (final String languageNamespace : model.getSModel().getLanguageNamespaces()) {
       int addCount = 0;
-      String languageName = language.getNamespace();
-
-      ActionGroup langRootsGroup = new ActionGroup(languageName) {
+      ActionGroup langRootsGroup = new ActionGroup(languageNamespace) {
         public Icon getIcon() {
-          return IconManager.getIconFor(language.getNamespace());
+          return IconManager.getIconFor(languageNamespace);
         }
       };
       add(langRootsGroup);
 
+      Language language = operationContext.getLanguage(languageNamespace);
       Iterator<ConceptDeclaration> iterator = language.conceptDeclarations();
       while (iterator.hasNext()) {
         final ConceptDeclaration typeDeclaration = iterator.next();
@@ -83,7 +83,7 @@ public class CreateRootNodeGroup extends ActionGroup {
 
                 CommandProcessor.instance().executeCommand(new Runnable() {
                   public void run() {
-                    node[0] =  SModelUtil.instantiateConceptDeclaration(typeDeclaration, model.getSModel());
+                    node[0] = SModelUtil.instantiateConceptDeclaration(typeDeclaration, model.getSModel());
                     node[0].getModel().addRoot(node[0]);
                   }
                 });

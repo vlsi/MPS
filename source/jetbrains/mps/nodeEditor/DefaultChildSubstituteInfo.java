@@ -71,7 +71,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   private List<ConceptDeclaration> createChildTypesList() {
     final ConceptDeclaration targetType = myLinkDeclaration.getTarget();
-    List<ConceptDeclaration> list = SModelUtil.allConceptDeclarations(mySourceNode.getModel(), new Condition<ConceptDeclaration>() {
+    List<ConceptDeclaration> list = SModelUtil.allConceptDeclarations(mySourceNode.getModel(), getOperationContext(), new Condition<ConceptDeclaration>() {
       public boolean met(ConceptDeclaration node) {
         if (!SModelUtil.hasConceptProperty(node, "abstract", getEditorContext().getOperationContext())) {
           return SModelUtil.isAssignableType(targetType, node);

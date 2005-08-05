@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.vcs.model.VersionControl;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.VersionControlManager;
+import jetbrains.mps.typesystem.TypeCheckerAccess;
 
 import java.util.*;
 
@@ -119,7 +120,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   }
 
   protected void updateNodeStatuses() {
-    mySModel.updateNodeStatuses();
+    mySModel.updateNodeStatuses(TypeCheckerAccess.instance().getTypeChecker().getOperationContext());
   }
 
   public void addSModelListener(SModelListener listener) {

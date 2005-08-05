@@ -29,7 +29,7 @@ public class ModelActions {
     List<NodeSubstituteActionsBuilder> substituteActionsBuilders = new LinkedList<NodeSubstituteActionsBuilder>();
 
     SModel model = sourceNode.getModel();
-    List<Language> languages = model.getLanguages();
+    List<Language> languages = model.getLanguages(operationContext);
     for (Language language : languages) {
       SModelDescriptor actionsModelDescr = language.getActionsModelDescriptor();
       if (actionsModelDescr != null) {
