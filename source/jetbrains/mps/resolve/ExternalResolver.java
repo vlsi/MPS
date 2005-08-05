@@ -24,7 +24,7 @@ public class ExternalResolver {
 
   private static final Logger LOG = Logger.getLogger(ExternalResolver.class);
 
-  private static HashMap<Class, Method> ourConceptsToResolveInfoMethodsMap = new HashMap<Class, Method>();
+  private static HashMap<Class, Object> ourConceptsToResolveInfoMethodsMap = new HashMap<Class, Object>();
 
   public static String createExternalResolveInfo(SReference reference) {
 
@@ -45,12 +45,21 @@ public class ExternalResolver {
 
   public static String getExternalResolveInfoFromTarget(SNode targetNode) {
     //cache lookup
-    Method externalResolveMethod = ourConceptsToResolveInfoMethodsMap.get(targetNode.getClass());
+    Object externalResolveMethodObject = ourConceptsToResolveInfoMethodsMap.get(targetNode.getClass());
+
+    if (externalResolveMethodObject == NO_METHOD) return null; //no_method marker found
+
+    Method externalResolveMethod = (Method) externalResolveMethodObject;
     //reflection searching 
     if (externalResolveMethod == null) {
       externalResolveMethod = getExternalResolveMethodFromTarget(targetNode);
+      if (externalResolveMethod == null) {
+        ourConceptsToResolveInfoMethodsMap.put(targetNode.getClass(), NO_METHOD);//memoize that no such method exists
+        return null;
+      }
+
       ourConceptsToResolveInfoMethodsMap.put(targetNode.getClass(), externalResolveMethod);
-      if (externalResolveMethod == null) return null;
+
     }
     try {
       return (String) externalResolveMethod.invoke(null, targetNode);
