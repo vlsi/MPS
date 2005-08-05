@@ -49,6 +49,10 @@ public class Language implements ModelLocator, ModelOwner {
     return null;
   }
 
+  public OperationContext getLanguageOperationContext() {
+    return myOperationContext;
+  }
+
   public void updateLastGenerationTime() {
     myLastGenerationTime = FileUtil.getNewestFileTime(getSourceDir());
   }

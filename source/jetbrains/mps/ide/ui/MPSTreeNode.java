@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.ui;
 
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.smodel.OperationContext;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.*;
@@ -12,11 +13,19 @@ import java.util.ArrayList;
  * @author Kostik
  */
 public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPSTreeNode> {
-  public MPSTreeNode() {
+  private OperationContext myOperationContext;
+
+  public MPSTreeNode(OperationContext operationContext) {
+    myOperationContext = operationContext;
   }
 
-  public MPSTreeNode(Object userObject) {
+  public MPSTreeNode(Object userObject, OperationContext operationContext) {
     super(userObject);
+    myOperationContext = operationContext;
+  }
+
+  public OperationContext getOperationContext() {
+    return myOperationContext;
   }
 
   protected abstract String getNodeIdentifier();

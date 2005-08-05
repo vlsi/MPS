@@ -13,6 +13,8 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import jetbrains.mps.smodel.OperationContext;
+
 /**
  * @author Kostik
  */
@@ -276,6 +278,7 @@ public abstract class MPSTree extends JTree {
     private String myText;
 
     public TextTreeNode(String text) {
+      super(null);
       myText = text;
     }
 

@@ -145,6 +145,10 @@ public class SModelRepository extends SModelAdapter {
     }
   }
 
+  public SModelDescriptor getModelDescriptor(SModel model) {
+    return myUIDToModelDescriptorMap.get(model.getUID());
+  }
+
   /**
    * @deprecated
    */

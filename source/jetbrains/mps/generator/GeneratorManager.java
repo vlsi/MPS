@@ -128,7 +128,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
 
   public void generate(GeneratorConfiguration configuration, boolean generateText) {
     // todo: rework
-    generate(configuration, new HashSet<SModelDescriptor>(myOperationContext.getProject().getProjectModelDescriptors()), generateText);
+    generate(configuration, new HashSet<SModelDescriptor>(myOperationContext.getWorkingModelDescriptors()), generateText);
   }
 
   private void addMessage(final Message msg) {
@@ -164,7 +164,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
       }
 
       public void run() {
-        myOperationContext.getProject().getComponent(ProjectPane.class).disableRebuild();
+        myOperationContext.getComponent(ProjectPane.class).disableRebuild();
 
         ProgressMonitor progress = new ProgressWindowProgressMonitor(false);
 
@@ -194,7 +194,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
           }
 
           clearMessages();
-          addMessage(new Message(MessageKind.INFORMATION, null, "Generating configuration " + configuration.getName()));
+          addMessage(new Message(MessageKind.INFORMATION, null, "Generating configuration " + configuration.getName(), myOperationContext));
 
           if (isIdeaPresent && myCompileOnGeneration) {
             progress.addText("Compiling in IntelliJ IDEA...");
@@ -250,7 +250,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
           progress.finish();
           LanguageRepository.getInstance().unRegisterLanguages(GeneratorManager.this);
           SModelRepository.getInstance().unRegisterModelDescriptors(GeneratorManager.this);
-          myOperationContext.getProject().getComponent(ProjectPane.class).enableRebuild();
+          myOperationContext.getComponent(ProjectPane.class).enableRebuild();
         }
       }
     }.start();
@@ -269,7 +269,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
   }
 
   private MessageView getMessageView() {
-    return myOperationContext.getProject().getComponent(MessageView.class);
+    return myOperationContext.getComponent(MessageView.class);
   }
 
 
@@ -303,7 +303,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
   }
 
   private void generateText(SModel targetModel) {
-    OutputView view = myOperationContext.getProject().getComponent(OutputView.class);
+    OutputView view = myOperationContext.getComponent(OutputView.class);
     view.clear();
 
     Iterator<SNode> roots = targetModel.roots();
@@ -319,7 +319,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
   }
 
   private String generateText(SNode node) {
-    String nodeText = null;
+    String nodeText;
     if (TextGenManager.instance().canGenerateTextFor(node)) {
       nodeText = TextGenManager.instance().generateText(node);
     } else {
@@ -339,7 +339,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
   }
 
   private Generator findGenerator(String sourceLanguage, String targetLanguage) {
-    Language source = LanguageRepository.getInstance().getLanguage(sourceLanguage);
+    Language source = myOperationContext.getLanguage(sourceLanguage);
     Generator result = null;
 
     LOG.assertLog(source != null, "Source language must be not null. Can't find language " + sourceLanguage);
@@ -355,7 +355,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
 
   private String findGeneratorClass(Generator generator) {
     if (generator.getGeneratorClassFqName() != null) return generator.getGeneratorClassFqName();
-    Language targetLanguage = LanguageRepository.getInstance().getLanguage(generator.getTargetLanguageFqName());
+    Language targetLanguage = myOperationContext.getLanguage(generator.getTargetLanguageFqName());
     if (targetLanguage.getTargetOfGeneratorGeneratorClass() != null) {
       return targetLanguage.getTargetOfGeneratorGeneratorClass();
     }
@@ -410,7 +410,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     }
 
     try {
-      SModel targetModel = null;
+      SModel targetModel;
       if (generator instanceof ITemplateGenerator) {
         GenerateWithTemplatesCommand command = new GenerateWithTemplatesCommand(sourceModelDescr, templatesModelDescr.getSModel(), mySaveTransientModels, (ITemplateGenerator) generator);
         targetModel = command.execute();
@@ -430,7 +430,6 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     } catch (Exception e) {
       monitor.addText("Exception during generation " + e.getMessage());
       LOG.error("Errors during generation", e);
-    } finally {
     }
   }
 

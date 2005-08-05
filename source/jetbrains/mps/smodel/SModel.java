@@ -431,10 +431,13 @@ public class SModel implements Iterable<SNode> {
   }
 
   public SModelDescriptor getModelDescriptor() {
-    return SModelRepository.getInstance().getModelDescriptor(getUID());
+    return SModelRepository.getInstance().getModelDescriptor(this);
   }
 
 
+  /**
+   * @deprecated
+   */
   public Iterator<SModelDescriptor> importedModels() {
     List<SModelDescriptor> modelsList = new LinkedList<SModelDescriptor>();
     Iterator<ImportElement> iterator = myImports.iterator();

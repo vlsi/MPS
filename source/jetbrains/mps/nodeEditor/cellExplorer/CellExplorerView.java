@@ -10,6 +10,7 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.OperationContext;
 import jetbrains.mps.logging.Logger;
 
 import javax.swing.*;
@@ -99,7 +100,7 @@ public class CellExplorerView implements Tool {
     private boolean myInitialized = false;
 
     public CellTreeNode(EditorCell cell) {
-      super(cell);
+      super(cell, null);
       myCell = cell;
     }
 
@@ -148,7 +149,7 @@ public class CellExplorerView implements Tool {
         }
 
         if (myCell.getAvailableActions().size() > 0) {
-          add(new CellActionsTreeNode(myCell));
+          add(new CellActionsTreeNode(myCell, getOperationContext()));
         }                     
       } else {
         add(new MPSTree.TextTreeNode("No Node"));
@@ -197,8 +198,8 @@ public class CellExplorerView implements Tool {
   private class CellActionsTreeNode extends MPSTreeNode {
     private EditorCell myCell;
 
-    public CellActionsTreeNode(EditorCell cell) {
-      super(cell);
+    public CellActionsTreeNode(EditorCell cell, OperationContext operationContext) {
+      super(cell, operationContext);
       myCell = cell;
       Set<String> actions = new TreeSet<String>(cell.getAvailableActions());
       for (String action : actions) {
@@ -215,6 +216,7 @@ public class CellExplorerView implements Tool {
     private EditorCellKeyMap myKeyMap;
 
     public KeyMapTreeNode(EditorCellKeyMap keyMap) {
+      super(null);
       myKeyMap = keyMap;
 
       Set<String> keys = new TreeSet<String>();

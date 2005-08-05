@@ -13,16 +13,17 @@ import jetbrains.mps.ide.IdeMain;
 
 public class InspectorEditorComponent extends AbstractEditorComponent {
   private EditorContext myEditorContext;
-  private SNodeProxy myNodeReference = new SNodeProxy(null);
+  private SNodeProxy myNodeProxy;
 
   public InspectorEditorComponent(IdeMain ide, OperationContext operationContext) {
     super(ide, operationContext);
+    myNodeProxy = new SNodeProxy(null, operationContext);
     reinitEditor();
     rebuildEditorContent();
   }
 
   public SNode getNode() {
-    return myNodeReference.getNode();
+    return myNodeProxy.getNode();
   }
 
   private void reinitEditor() {
@@ -41,7 +42,7 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
     if (getNode() == semanticNode) {
       return;
     }
-    myNodeReference = new SNodeProxy(semanticNode);
+    myNodeProxy = new SNodeProxy(semanticNode, getOperationContext());
     reinitEditor();
     rebuildEditorContent();
     repaint();
