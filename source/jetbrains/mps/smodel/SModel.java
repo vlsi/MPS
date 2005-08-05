@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.ITypeChecker;
 import jetbrains.mps.typesystem.TSStatus;
 import jetbrains.mps.typesystem.TypeCheckerAccess;
+import jetbrains.mps.resolve.ExternalResolver;
 
 import java.util.*;
 
@@ -36,6 +37,7 @@ public class SModel implements Iterable<SNode> {
   private List<String> myLanguages = new ArrayList<String>();
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
   private Map<String, SNode> myIdToNodeMap = new HashMap<String, SNode>();
+  private Map<String, SNode> myExternalResolveInfoToNodeMap = new HashMap<String, SNode>();
   private SModelEventTranslator myEventTranslator = new SModelEventTranslator();
 
   private Set<SModelUID> myDescriptorNotFoundReportedModelUIDs = new HashSet<SModelUID>();
@@ -58,7 +60,7 @@ public class SModel implements Iterable<SNode> {
 
   public void setModelUID (SModelUID modelUID) {
     myUID = modelUID;
-    if (SModelStereotype.JAVA_STUB.equals(myUID.getStereotype())) 
+    if (SModelStereotype.JAVA_STUB.equals(myUID.getStereotype()))
       myIsExternallyResolved = true;
   }
 
@@ -551,6 +553,23 @@ public class SModel implements Iterable<SNode> {
   public SNode getNodeById(String nodeId) {
     SNode node = myIdToNodeMap.get(nodeId);
     return node;
+  }
+
+  public SNode getNodeByExtResolveInfo(String extResolveInfo) {
+    SNode node = myExternalResolveInfoToNodeMap.get(extResolveInfo);
+    return node;
+  }
+
+  public void nodeIsFullyPrepared(SNode node) {
+    if (!isExternallyResolved()) return;
+    String extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(node);
+    if (ExternalReference.isEmptyExtResolveInfo(extResolveInfo)) return;
+    SNode existingNode = myExternalResolveInfoToNodeMap.get(extResolveInfo);
+    if (existingNode != null && existingNode != node) {
+      LOG.error("couldn't set resolve info " + extResolveInfo + " to node: " + node.getDebugText() + "\nnode with this ERI exists: " + existingNode.getDebugText());
+      return;
+    }
+    myExternalResolveInfoToNodeMap.put(extResolveInfo, node);
   }
 
   public void setNodeId(String id, SNode node) {
