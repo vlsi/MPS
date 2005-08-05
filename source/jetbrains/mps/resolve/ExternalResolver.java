@@ -41,12 +41,11 @@ public class ExternalResolver {
 
   }
 
+  private static final Object NO_METHOD = new Object();
+
   public static String getExternalResolveInfoFromTarget(SNode targetNode) {
     //cache lookup
     Method externalResolveMethod = ourConceptsToResolveInfoMethodsMap.get(targetNode.getClass());
-    if (targetNode.getName() != null && targetNode.getName().equals("iterator")) {
-      System.err.println(targetNode + "");
-    }
     //reflection searching 
     if (externalResolveMethod == null) {
       externalResolveMethod = getExternalResolveMethodFromTarget(targetNode);
