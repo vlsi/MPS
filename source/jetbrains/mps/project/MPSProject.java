@@ -102,22 +102,6 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     return SModelRepository.getInstance().getAllNonTransientModelDescriptors();
   }
 
-  /**
-   * @deprecated
-   */
-  public Collection<Language> getLanguages() {
-    init();
-    return Collections.unmodifiableCollection(myRootManager.getLanguages());
-  }
-
-  /**
-   * @deprecated
-   */
-  public Language getLanguage(String nameSpace) {
-    init();
-    return myRootManager.getLanguage(nameSpace);
-  }
-
   public List<Object> getComponents() {
     init();
     return new ArrayList<Object>(myComponents.values());

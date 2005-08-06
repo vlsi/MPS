@@ -157,13 +157,6 @@ public class Language implements ModelLocator, ModelOwner {
     return null;
   }
 
-  public Language getLanguage(String languageNamespace) {
-    if (getNamespace().equals(languageNamespace)) {
-      return this;
-    }
-    return BootstrapLanguages.getInstance().getBootstrapLanguage(languageNamespace);
-  }
-
   public Iterator<ConceptDeclaration> conceptDeclarations() {
     List<ConceptDeclaration> list = new LinkedList<ConceptDeclaration>();
     Iterator<SNode> roots = getStructureModelDescriptor().getSModel().roots();

@@ -118,7 +118,7 @@ public class ProjectPane extends JComponent {
     for (Language projectLanguage : myProject.getProjectLanguages()) {
       addLanguageListener(projectLanguage);
     }
-    for (Language language : myProject.getLanguages()) {
+    for (Language language : myIDE.getProjectOperationContext().getLanguages()) {
       addLanguageListener(language);
     }
   }
@@ -775,7 +775,7 @@ public class ProjectPane extends JComponent {
       }
 
       DefaultMutableTreeNode languagesNode = new LanguagesTreeNode(operationContext);
-      for (Language language : myProject.getLanguages()) {
+      for (Language language : operationContext.getLanguages()) {
         LanguageTreeNode node = new LanguageTreeNode(language);
         languagesNode.add(node);
         initLanguageNode(node, language);

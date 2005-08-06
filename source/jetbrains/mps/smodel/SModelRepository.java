@@ -104,7 +104,6 @@ public class SModelRepository extends SModelAdapter {
     if (modelOwners.contains(owner)) {
       modelOwners.remove(owner);
       if (modelOwners.isEmpty()) {
-        myModelToOwnerMap.remove(modelDescriptor);
         removeModelDescriptor(modelDescriptor);
       }
     }
@@ -135,13 +134,15 @@ public class SModelRepository extends SModelAdapter {
     myModelDescriptors.remove(modelDescriptor);
     myUIDToModelDescriptorMap.remove(modelDescriptor.getModelUID());
     myChangedModels.remove(modelDescriptor);
+    myModelToOwnerMap.remove(modelDescriptor);
     modelDescriptor.removeSModelListener(this);
   }
 
-  private void removeModelDescriptor(SModelDescriptor modelDescriptor) {
+  /*package*/ void removeModelDescriptor(SModelDescriptor modelDescriptor) {
     myModelDescriptors.remove(modelDescriptor);
     myUIDToModelDescriptorMap.remove(modelDescriptor.getModelUID());
     myChangedModels.remove(modelDescriptor);
+    myModelToOwnerMap.remove(modelDescriptor);
     modelDescriptor.removeSModelListener(this);
   }
 
