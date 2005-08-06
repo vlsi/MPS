@@ -91,7 +91,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
         myModelListeners = null;
       }
       if (myModelListenersForImportedModels != null) {
-        Iterator<SModelDescriptor> iterator = mySModel.importedModels();
+        Iterator<SModelDescriptor> iterator = mySModel.importedModels(IdeMain.instance().getProjectOperationContext());
         while (iterator.hasNext()) {
           SModelDescriptor imported = iterator.next();
           for (SModelListener listener : myModelListenersForImportedModels) {
@@ -144,7 +144,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
   public void addSModelListenerToImportedModels(SModelListener listener) {
     if (mySModel != null) {
-      Iterator<SModelDescriptor> iterator = mySModel.importedModels();
+      Iterator<SModelDescriptor> iterator = mySModel.importedModels(IdeMain.instance().getProjectOperationContext());
       while (iterator.hasNext()) {
         SModelDescriptor imported = iterator.next();
         imported.addSModelListener(listener);
@@ -157,7 +157,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
   public void addSModelCommandListenerToImportedModels(SModelCommandListener listener) {
     if (mySModel != null) {
-      Iterator<SModelDescriptor> iterator = mySModel.importedModels();
+      Iterator<SModelDescriptor> iterator = mySModel.importedModels(IdeMain.instance().getProjectOperationContext());
       while (iterator.hasNext()) {
         SModelDescriptor imported = iterator.next();
         imported.addSModelCommandListener(listener);

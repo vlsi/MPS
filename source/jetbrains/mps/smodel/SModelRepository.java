@@ -99,6 +99,17 @@ public class SModelRepository extends SModelAdapter {
     modelDescriptor.addSModelListener(this);
   }
 
+  public void unRegisterModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
+    HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(modelDescriptor);
+    if (modelOwners.contains(owner)) {
+      modelOwners.remove(owner);
+      if (modelOwners.isEmpty()) {
+        myModelToOwnerMap.remove(modelDescriptor);
+        removeModelDescriptor(modelDescriptor);
+      }
+    }
+  }
+
   public void unRegisterModelDescriptors(ModelOwner modelLocator) {
     ArrayList<SModelUID> modelsToRemove = new ArrayList<SModelUID>();
     for (SModelUID fqName : myUIDToModelDescriptorMap.keySet()) {
@@ -132,17 +143,6 @@ public class SModelRepository extends SModelAdapter {
     myUIDToModelDescriptorMap.remove(modelDescriptor.getModelUID());
     myChangedModels.remove(modelDescriptor);
     modelDescriptor.removeSModelListener(this);
-  }
-
-  public void removeModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
-    HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(modelDescriptor);
-    if (modelOwners.contains(owner)) {
-      modelOwners.remove(owner);
-      if (modelOwners.isEmpty()) {
-        myModelToOwnerMap.remove(modelDescriptor);
-        removeModelDescriptor(modelDescriptor);
-      }
-    }
   }
 
   public SModelDescriptor getModelDescriptor(SModel model) {

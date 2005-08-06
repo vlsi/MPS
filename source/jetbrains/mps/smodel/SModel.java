@@ -27,7 +27,7 @@ public class SModel implements Iterable<SNode> {
   private List<SModelListener> myListeners = new ArrayList<SModelListener>();
   private List<SModelCommandListener> myCommandListeners = new ArrayList<SModelCommandListener>();
   private List<SNode> myRoots = new ArrayList<SNode>();
-  private SModelUID myUID = new SModelUID("unnamed","");
+  private SModelUID myUID = new SModelUID("unnamed", "");
 
   private boolean myIsExternallyResolved = false;
 
@@ -56,11 +56,11 @@ public class SModel implements Iterable<SNode> {
     CommandProcessor.instance().addCommandListener(myEventTranslator);
   }
 
-  public SModelUID getUID () {
+  public SModelUID getUID() {
     return myUID;
   }
 
-  public void setModelUID (SModelUID modelUID) {
+  public void setModelUID(SModelUID modelUID) {
     myUID = modelUID;
     if (SModelStereotype.JAVA_STUB.equals(myUID.getStereotype()))
       myIsExternallyResolved = true;
@@ -171,6 +171,7 @@ public class SModel implements Iterable<SNode> {
       sModelListener.languageAdded(new SModeLanguageEvent(this, languageNamespace));
     }
   }
+
   void fireLanguageRemovedEvent(String languageNamespace) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
@@ -184,6 +185,7 @@ public class SModel implements Iterable<SNode> {
       sModelListener.importAdded(new SModeImportEvent(this, modelUID));
     }
   }
+
   void fireImportRemovedEvent(SModelUID modelUID) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
@@ -344,37 +346,9 @@ public class SModel implements Iterable<SNode> {
     return new ArrayList<String>(myLanguages);
   }
 
-  /**
-   * @deprecated
-   */
-  public void addImportedModelDescriptor(SModelDescriptor modelDescriptor) {
-    if (findImportElement(modelDescriptor.getModelUID()) == null) {
-      addImportedModelDescriptor(modelDescriptor, ++myMaxReferenceID);
-    }
-  }
-
-  /**
-   * @deprecated
-   */
-  public void addImportedModel(SModel semanticModel) {
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(semanticModel.getUID());
-    addImportedModelDescriptor(modelDescriptor, ++myMaxReferenceID);
-  }
-
-  /**
-   * @deprecated
-   */
-  void addImportedModelDescriptor(SModelDescriptor modelDescriptor, int referenceId) {
-    ImportElement importElement = new ImportElement(modelDescriptor.getModelUID(), referenceId);
-    myImports.add(importElement);
-    fireImportAddedEvent(modelDescriptor.getModelUID());
-  }
-
-
   public void addImportedModel(SModelUID modelUID) {
     addImportElement(modelUID);
   }
-
 
   ImportElement addImportElement(SModelUID modelUID) {
     ImportElement importElement = findImportElement(modelUID);
@@ -385,8 +359,7 @@ public class SModel implements Iterable<SNode> {
     return importElement;
   }
 
-
-   ImportElement addImportElement(SModelUID modelUID, int referenceId) {
+  ImportElement addImportElement(SModelUID modelUID, int referenceId) {
     ImportElement importElement = new ImportElement(modelUID, referenceId);
     myImports.add(importElement);
     fireImportAddedEvent(modelUID);
@@ -435,17 +408,14 @@ public class SModel implements Iterable<SNode> {
   }
 
 
-  /**
-   * @deprecated
-   */
-  public Iterator<SModelDescriptor> importedModels() {
+  public Iterator<SModelDescriptor> importedModels(OperationContext operationContext) {
     List<SModelDescriptor> modelsList = new LinkedList<SModelDescriptor>();
     Iterator<ImportElement> iterator = myImports.iterator();
     while (iterator.hasNext()) {
       ImportElement importElement = iterator.next();
       SModelUID modelUID = importElement.getModelUID();
       if (!myDescriptorNotFoundReportedModelUIDs.contains(modelUID)) {
-        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
+        SModelDescriptor modelDescriptor = operationContext.getModelDescriptor(modelUID);
         if (modelDescriptor != null) {
           modelsList.add(modelDescriptor);
         } else {

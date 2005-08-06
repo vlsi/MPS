@@ -216,19 +216,6 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     return ApplicationComponents.getInstance().getComponent(SModelRepository.class).wereChanges();
   }
 
-  public Language getLanguageByStructureModel(SModel semanticModel) {
-    init();
-    for (Language language : myRootManager.getLanguages()) {
-      SModelDescriptor structureModelDescriptor = language.getStructureModelDescriptor();
-      if (structureModelDescriptor != null) {
-        if (structureModelDescriptor.getSModel() == semanticModel) {
-          return language;
-        }
-      }
-    }
-    return null;
-  }
-
   public RootManager getRootManager() {
     init();
     return myRootManager;

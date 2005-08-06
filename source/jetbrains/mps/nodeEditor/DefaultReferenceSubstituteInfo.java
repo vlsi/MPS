@@ -71,7 +71,7 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
     final OperationContext operationContext = getEditorContext().getOperationContext();
     DiagnosticUtil.assertNodeValid(targetConcept, operationContext);
     final boolean searchLinks = NameUtil.nodeFQName(targetConcept).equals("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration");
-    return SModelUtil.allNodes(mySourceNode.getModel(), true, operationContext, new Condition<SNode>() {
+    return SModelUtil.allNodesIncludingImported(mySourceNode.getModel(), operationContext, new Condition<SNode>() {
       public boolean met(SNode node) {
         DiagnosticUtil.assertNodeValid(node, getEditorContext().getOperationContext());
         if (searchLinks && (node instanceof LinkDeclaration)) return true;

@@ -7,7 +7,6 @@ import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.util.*;
 
@@ -31,14 +30,14 @@ public class Language implements ModelLocator, ModelOwner {
   private MyCommandEventTranslator myEventTranslator = new MyCommandEventTranslator();
   private long myLastGenerationTime = 0;
 
-  private LanguageOperationContext myOperationContext;
+  private LanguageModuleOperationContext myOperationContext;
 
   private static final String NULL_STEREOTYPE = SModelStereotype.NONE;
   private boolean myRegisteredInFindUsagesManager;
 
   public Language(File descriptorFile) {
     myDescriptorFile = descriptorFile;
-    myOperationContext = new LanguageOperationContext(this);
+    myOperationContext = new LanguageModuleOperationContext(this);
     CommandProcessor.instance().addCommandListener(myEventTranslator);
     addLanguageListener(myEventTranslator);
     readLanguageModelDescriptors();
@@ -399,30 +398,4 @@ public class Language implements ModelLocator, ModelOwner {
   }
 
 
-  private static class LanguageOperationContext extends OperationContext {
-    public LanguageOperationContext(Language language) {
-      super(null, null, language);
-    }
-
-    public MPSProject getProject() {
-      throw new RuntimeException("not available");
-    }
-
-    public LanguageOwner getLanguageOwner() {
-      throw new RuntimeException("not available");
-    }
-
-    public Language getLanguage(String languageNamespace) {
-      throw new RuntimeException("not available");
-    }
-
-    public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
-      SModelDescriptor modelDescriptor = super.getModelDescriptor(modelUID);
-      // tmp
-      if (modelDescriptor == null) {
-//        super.getModelDescriptor(modelUID);
-      }
-      return modelDescriptor;
-    }
-  }
 }

@@ -676,7 +676,7 @@ public abstract class SNode implements Cloneable {
         nameText = (role == null) ? "<no role>" : '"' + role + '"';
       } else {
         // !!! use *safe* getName here !!!
-        nameText = (myProperties.get("name") == null) ? "<no name>" : '"' + getName() + '"';
+        nameText = (myProperties.get("name") == null) ? "<no name>" : '"' + myProperties.get("name") + '"';
       }
       // !!! use *safe* getId here !!!
       nameText = nameText + "[" + myId + "]";

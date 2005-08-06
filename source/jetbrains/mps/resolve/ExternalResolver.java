@@ -122,6 +122,6 @@ public class ExternalResolver {
   }
 
   public static boolean isEmptyExtResolveInfo(String extResolveInfo) {
-    return (extResolveInfo == null ||extResolveInfo.equals("")||extResolveInfo.equals("null") );
+    return (extResolveInfo == null ||extResolveInfo.equals("")||extResolveInfo.endsWith("null") );
   }
 }

@@ -1,9 +1,6 @@
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.TemplateSwitch;
 
 import java.util.*;
@@ -17,8 +14,10 @@ import java.util.*;
  */
 public class TemplateSwitchGraph {
   private Map<TemplateSwitch, TemplateSwitchGraphNode> myTemplateSwitchToGraphNodeMap = new HashMap<TemplateSwitch, TemplateSwitchGraphNode>();
+  private OperationContext myOperationContext;
 
-  public TemplateSwitchGraph(SModel templatesModel) {
+  public TemplateSwitchGraph(SModel templatesModel, OperationContext operationContext) {
+    myOperationContext = operationContext;
     processTemplatesModel(templatesModel, new HashSet<SModelUID>());
   }
 
@@ -36,7 +35,7 @@ public class TemplateSwitchGraph {
       }
     }
 
-    Iterator<SModelDescriptor> iterator = templatesModel.importedModels();
+    Iterator<SModelDescriptor> iterator = templatesModel.importedModels(myOperationContext);
     while (iterator.hasNext()) {
       SModel importedModel = iterator.next().getSModel();
       if (importedModel.hasLanguage("jetbrains.mps.transformation.TLBase")) {

@@ -53,10 +53,10 @@ public abstract class AbstractModelGenerator implements IModelGenerator {
 
   protected void clearAllUserObjects(SModel sourceModel) {
     List<SModelDescriptor> list = new LinkedList<SModelDescriptor>();
-    Iterator<SModelDescriptor> iterator = sourceModel.importedModels();
+    Iterator<SModelDescriptor> iterator = sourceModel.importedModels(getOperationContext());
     while (iterator.hasNext()) {
       SModelDescriptor modelDescriptor = iterator.next();
-      allDependentModels(modelDescriptor, list);
+      allDependentModels(modelDescriptor, list, getOperationContext());
     }
 
     List<SModel> modelsList = new LinkedList<SModel>();
@@ -75,16 +75,16 @@ public abstract class AbstractModelGenerator implements IModelGenerator {
     }
   }
 
-  private static List<SModelDescriptor> allDependentModels(SModelDescriptor modelDescriptor, List<SModelDescriptor> list) {
+  private static List<SModelDescriptor> allDependentModels(SModelDescriptor modelDescriptor, List<SModelDescriptor> list, OperationContext operationContext) {
     if(!modelDescriptor.isInitialized()) {
       return list;
     }
     list.add(modelDescriptor);
-    Iterator<SModelDescriptor> imports = modelDescriptor.getSModel().importedModels();
+    Iterator<SModelDescriptor> imports = modelDescriptor.getSModel().importedModels(operationContext);
     while (imports.hasNext()) {
       SModelDescriptor imported = imports.next();
       if (!list.contains(imported)) {
-        allDependentModels(imported, list);
+        allDependentModels(imported, list, operationContext);
       }
     }
     return list;
