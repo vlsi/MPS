@@ -1,6 +1,7 @@
 package jetbrains.mps.findUsages;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.progress.ProgressMonitor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
@@ -18,7 +19,7 @@ public class FindUsagesManager {
     Set<SReference> result = new HashSet<SReference>();
     try {
       if (progress == null) progress = ProgressMonitor.NULL_PROGRESS_MONITOR;
-      Set<SModelDescriptor> models = scope.getModels();
+      List<SModelDescriptor> models = scope.getModels();
       progress.start("Find Usages...", models.size());
       progress.addText("Finding usages...");
       for (SModelDescriptor model : models) {
@@ -38,7 +39,7 @@ public class FindUsagesManager {
     Set<SNode> result = new HashSet<SNode>();
     try {
       if (progress == null) progress = ProgressMonitor.NULL_PROGRESS_MONITOR;
-      Set<SModelDescriptor> models = scope.getModels();
+      List<SModelDescriptor> models = scope.getModels();
       progress.start("Finding Instances...", models.size());
       for (SModelDescriptor model : models) {
         result.addAll(model.findInstances(concept, operationContext));
@@ -63,8 +64,8 @@ public class FindUsagesManager {
 
   public Scope globalScope() {
     return new Scope() {
-      public Set<SModelDescriptor> getModels() {
-        return myProject.getAllModelDescriptors();
+      public List<SModelDescriptor> getModels() {
+        return IdeMain.instance().getProjectOperationContext().getModelDescriptors();
       }
     };
   }

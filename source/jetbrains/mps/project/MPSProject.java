@@ -78,30 +78,6 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     return Collections.unmodifiableCollection(myRootManager.getProjectLanguages());
   }
 
-  /**
-   * @deprecated
-   */
-  public Collection<SModelDescriptor> getProjectModelDescriptors() {
-    init();
-    return Collections.unmodifiableCollection(myRootManager.getProjectModelDescriptors());
-  }
-
-  /**
-   * @deprecated
-   */
-  public Collection<SModelDescriptor> getLibraryModelDescriptors() {
-    init();
-    return Collections.unmodifiableCollection(myRootManager.getLibraryModelDescriptors());
-  }
-
-  /**
-   * @deprecated
-   */
-  public Set<SModelDescriptor> getAllModelDescriptors() {
-    init();
-    return SModelRepository.getInstance().getAllNonTransientModelDescriptors();
-  }
-
   public List<Object> getComponents() {
     init();
     return new ArrayList<Object>(myComponents.values());
@@ -203,13 +179,6 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
   public RootManager getRootManager() {
     init();
     return myRootManager;
-  }
-
-  /**
-   * @deprecated
-   */
-  public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
-    return SModelRepository.getInstance().getModelDescriptor(modelUID);
   }
 
   public void dispose() {
