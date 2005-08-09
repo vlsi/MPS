@@ -5,6 +5,7 @@ import jetbrains.mps.baseLanguage.generator.target.DefaultTemplateGenerator;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
@@ -392,8 +393,8 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     return null;
   }
 
-  private void generate_internal(SModelDescriptor sourceModelDescr, String generatorClassFQName, SModelDescriptor templatesModelDescr, String outputPath, ProgressMonitor monitor, boolean generateText) {
-    IModelGenerator generator;
+  private void generate_internal(final SModelDescriptor sourceModelDescr, String generatorClassFQName, SModelDescriptor templatesModelDescr, String outputPath, final ProgressMonitor monitor, boolean generateText) {
+    final IModelGenerator generator;
     try {
       Class cls = Class.forName(generatorClassFQName, true, ClassLoaderManager.getInstance().getClassLoader());
       if (ITemplateGenerator.class.isAssignableFrom(cls)) {
@@ -410,14 +411,18 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     }
 
     try {
-      SModel targetModel;
+      final SModel targetModel;
       if (generator instanceof ITemplateGenerator) {
         GenerateWithTemplatesCommand command = new GenerateWithTemplatesCommand(sourceModelDescr, templatesModelDescr.getSModel(), mySaveTransientModels, (ITemplateGenerator) generator);
         targetModel = command.execute();
       } else {
         ProgressMonitor childMonitor = monitor.startSubTask(AMOUNT_PER_MODEL);
         targetModel = JavaGenUtil.createTargetJavaModel(sourceModelDescr.getSModel(), JavaNameUtil.packageNameForModelUID(sourceModelDescr.getModelUID()), myOperationContext);
-        generator.generate(sourceModelDescr.getSModel(), targetModel, monitor);
+        CommandProcessor.instance().executeCommand(new Runnable() {
+          public void run() {
+            generator.generate(sourceModelDescr.getSModel(), targetModel, monitor);
+          }
+        }, "generate with " + generator.getClass().getName());
         childMonitor.finish();
       }
       if (targetModel != null) {

@@ -6,12 +6,12 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.DataTypeDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.PrimitiveDataTypeDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -71,7 +71,7 @@ public abstract class PropertySupport {
 
   private static PropertySupport loadPropertySupport(PropertyDeclaration propertyDeclaration) {
     DataTypeDeclaration propertyDataType = propertyDeclaration.getDataType();
-    String propertySupportClassName = JavaNameUtil.fqClassNameByNamespace(propertyDataType, getClassName(propertyDataType));
+    String propertySupportClassName = JavaNameUtil.fqClassName(propertyDataType.getModel(), getClassName(propertyDataType));
     PropertySupport propertySupport = null;
     try {
       Class propertySupportClass = Class.forName(propertySupportClassName, true, ClassLoaderManager.getInstance().getClassLoader());

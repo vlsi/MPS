@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.NameUtil;
 import org.apache.xmlrpc.XmlRpcException;
 
 import javax.swing.*;
@@ -190,7 +189,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
 
   protected ClassConcept getQueriesClass() {
     SModel model = getSNode().getModel();
-    String className = NameUtil.longNameFromNamespaceAndShortName(model.getUID().getLongName(), "Queries");
+    String className = JavaNameUtil.fqClassName(model, "Queries");
     Classifier classifier = ReflectionClassifierFinder.get(className, model);
     return (ClassConcept) classifier;
   }
