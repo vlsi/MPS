@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.OperationContext;
 
 /**
  * Created by IntelliJ IDEA.
@@ -21,12 +22,14 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteItem
   private LinkDeclaration myLinkDeclaration;
   private SNode mySourceNode;
   private SNode myCurrentTargetNode;
+  private OperationContext myOperationContext;
 
-  public DefaultChildNodeSubstituteAction(SNode parameterNode, SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration) {
+  public DefaultChildNodeSubstituteAction(SNode parameterNode, SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, OperationContext operationContext) {
     mySourceNode = sourceNode;
     myParameterNode = parameterNode;
     myLinkDeclaration = linkDeclaration;
     myCurrentTargetNode = currentTargetNode;
+    myOperationContext = operationContext;
 
     if (SModelUtil.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.aggregation) {
       throw new RuntimeException("Only aggregation links are allowed here.");
@@ -41,12 +44,16 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteItem
     return myParameterNode;
   }
 
+  public OperationContext getOperationContext() {
+    return myOperationContext;
+  }
+
   public String getMatchingText(String pattern) {
-    return EditorUtil.getMatchingText(myParameterNode, mySourceNode);
+    return EditorUtil.getMatchingText(myParameterNode, mySourceNode, getOperationContext());
   }
 
   public String getDescriptionText(String pattern) {
-    return EditorUtil.getShortDescription(myParameterNode, mySourceNode);
+    return EditorUtil.getShortDescription(myParameterNode, mySourceNode, getOperationContext());
   }
 
   public SNode doSubstitute(String pattern) {
