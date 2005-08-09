@@ -120,7 +120,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   }
 
   protected void updateNodeStatuses() {
-    mySModel.updateNodeStatuses(TypeCheckerAccess.instance().getTypeChecker().getOperationContext());
+    mySModel.updateNodeStatuses();
   }
 
   public void addSModelListener(SModelListener listener) {

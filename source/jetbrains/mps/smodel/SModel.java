@@ -469,20 +469,16 @@ public class SModel implements Iterable<SNode> {
   }
 
 
+  public IStatus updateNodeStatuses() {
+    clearNodeStatuses();
+    ITypeChecker typeChecker = TypeCheckerAccess.instance().getTypeChecker();
+    if (typeChecker == null) return new Status.ERROR("null typechecker");
+    return updateNodeStatuses(typeChecker.getOperationContext());
+  }
+
   public IStatus updateNodeStatuses(OperationContext operationContext) {
-    LOG.debug("SModel updateNodeStatuses: " + getUID());
-    // clear
-    Iterator<SNode> roots = roots();
-    while (roots.hasNext()) {
-      SNode rootNode = roots.next();
-      rootNode.putUserObject(SNode.ERROR_STATUS, null);
-      rootNode.putUserObject(SNode.CHILDREN_ERROR_STATUS, null);
-      Iterator<SNode> children = rootNode.depthFirstChildren();
-      while (children.hasNext()) {
-        children.next().putUserObject(SNode.ERROR_STATUS, null);
-        rootNode.putUserObject(SNode.CHILDREN_ERROR_STATUS, null);
-      }
-    }
+    clearNodeStatuses();
+    Iterator<SNode> roots;
 
     ITypeChecker typeChecker = TypeCheckerAccess.instance().getTypeChecker();
     if (typeChecker == null) return new Status.ERROR("null typechecker");
@@ -523,6 +519,22 @@ public class SModel implements Iterable<SNode> {
     }
 
     return new Status.ERROR(allErrors.size() + " error(s)");
+  }
+
+  private void clearNodeStatuses() {
+    LOG.debug("SModel updateNodeStatuses: " + getUID());
+    // clear
+    Iterator<SNode> roots = roots();
+    while (roots.hasNext()) {
+      SNode rootNode = roots.next();
+      rootNode.putUserObject(SNode.ERROR_STATUS, null);
+      rootNode.putUserObject(SNode.CHILDREN_ERROR_STATUS, null);
+      Iterator<SNode> children = rootNode.depthFirstChildren();
+      while (children.hasNext()) {
+        children.next().putUserObject(SNode.ERROR_STATUS, null);
+        rootNode.putUserObject(SNode.CHILDREN_ERROR_STATUS, null);
+      }
+    }
   }
 
   public SNode getNodeById(String nodeId) {
