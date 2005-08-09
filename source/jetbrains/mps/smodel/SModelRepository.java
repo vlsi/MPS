@@ -58,8 +58,8 @@ public class SModelRepository extends SModelAdapter {
     return result;
   }
 
-  public Set<SModelDescriptor> getAllModelDescriptors() {
-    return new HashSet<SModelDescriptor>(myModelDescriptors);
+  public List<SModelDescriptor> getAllModelDescriptors() {
+    return Collections.unmodifiableList(myModelDescriptors);
   }
 
   public Set<SModelDescriptor> getJavaStubsModelDescriptors() {

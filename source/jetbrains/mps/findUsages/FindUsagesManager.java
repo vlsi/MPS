@@ -65,7 +65,7 @@ public class FindUsagesManager {
   public Scope globalScope() {
     return new Scope() {
       public List<SModelDescriptor> getModels() {
-        return IdeMain.instance().getProjectOperationContext().getModelDescriptors();
+        return SModelRepository.getInstance().getAllModelDescriptors();
       }
     };
   }

@@ -2,7 +2,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.baseLanguage.*;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.Iterator;
@@ -17,7 +16,7 @@ import java.util.Iterator;
  * Todo: refactor this utility
  */
 public class SNodePresentationUtil {
-  public static String matchingText(SNode node, SNode referenceContext) {
+  public static String matchingText(SNode node, SNode referenceContext, OperationContext operationContext) {
     String result = null;
     if (node instanceof BaseMethodDeclaration) {
       result = matchingText_BaseMethodDeclaration((BaseMethodDeclaration) node, referenceContext);
@@ -39,7 +38,7 @@ public class SNodePresentationUtil {
 
     // todo: alias or name ????
     if (!isNamedElement(node)) {
-      String alias = SModelUtil.getConceptProperty(node, "alias", IdeMain.instance().getProjectOperationContext());
+      String alias = SModelUtil.getConceptProperty(node, "alias", operationContext);
       if (alias != null) {
         return alias;
       }
