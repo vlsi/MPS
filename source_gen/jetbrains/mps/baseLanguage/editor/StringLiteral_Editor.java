@@ -64,7 +64,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   public EditorCell createValueCell(EditorContext context, SNode node) {
-    PropertyAccessor propertyAccessor = new PropertyAccessor(node, "value", false, false, context);
+    PropertyAccessor propertyAccessor = new PropertyAccessor(node, "value", false, true, context);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
