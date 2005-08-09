@@ -90,7 +90,8 @@ public class ProjectPane extends JComponent {
       public void mousePressed(MouseEvent e) {
         if (e.getButton() == MouseEvent.BUTTON3) {
           TreePath path = myTree.getClosestPathForLocation(e.getX(), e.getY());
-          myTree.setSelectionPath(path);
+          //myTree.setSelectionPath(path);
+          //myTree.addSelectionPath(path);
         }
       }
     });
@@ -393,7 +394,8 @@ public class ProjectPane extends JComponent {
 
     protected JPopupMenu getPopupMenu() {
       JPopupMenu result = new JPopupMenu();
-      ActionManager.instance().getGroup(PROJECT_PANE_NODE_ACTIONS).add(result, new ActionContext(myIDE, myIDE.getProjectOperationContext(), getSNode()));
+      Set<SNode> selection = getNormalizedSelectedNodes(myTree);
+      ActionManager.instance().getGroup(PROJECT_PANE_NODE_ACTIONS).add(result, new ActionContext(myIDE, myIDE.getProjectOperationContext(), getSNode(), selection));
       return result;
     }
 
@@ -893,5 +895,35 @@ public class ProjectPane extends JComponent {
     public void languageChangedInCommand(Language language) {
       rebuildTree();
     }
+  }
+
+  private static Set<SNode> getSelectedNodes(MyTree myTree) {
+    Set<SNode> result = new HashSet<SNode>();
+    TreePath[] paths = myTree.getSelectionPaths();
+    for (int i = 0; i < paths.length; i++) {
+      MPSTreeNode node = (MPSTreeNode) paths[i].getLastPathComponent();
+      if (node instanceof MPSTreeNodeEx) {
+        result.add(((MPSTreeNodeEx)node).getSNode());
+      }
+    }
+    return result;
+  }
+
+  private static Set<SNode> getNormalizedSelectedNodes(MyTree myTree) {
+    HashSet<SNode> selectedNodes = (HashSet<SNode>) ((HashSet<SNode>) getSelectedNodes(myTree)).clone();
+    HashSet<SNode> unselectedNodes = new HashSet<SNode>();
+
+    for (SNode node : selectedNodes) {
+      if (node == null) continue;
+      if (unselectedNodes.contains(node)) continue;
+      Iterator<SNode> dfChildren = node.depthFirstChildren();
+      while (dfChildren.hasNext()) {
+        SNode child = dfChildren.next();
+        unselectedNodes.add(child);
+      }
+    }
+    selectedNodes.removeAll(unselectedNodes);
+
+    return selectedNodes;
   }
 }

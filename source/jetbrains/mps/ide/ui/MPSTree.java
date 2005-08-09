@@ -81,7 +81,9 @@ public abstract class MPSTree extends JTree {
       MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
       JPopupMenu menu = node.getPopupMenu();
       if (menu == null) return;
-      setSelectionPath(path);
+      if (!getSelectedPaths().contains(pathToString(path))) {
+        setSelectionPath(path);
+      }
       menu.show(this, e.getX(), e.getY());
     }
   }
