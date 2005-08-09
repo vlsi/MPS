@@ -1,7 +1,5 @@
 package jetbrains.mps.nodeEditor;
 
-import java.awt.event.KeyEvent;
-
 
 /**
  * Author: Sergey Dmitriev.
@@ -47,17 +45,39 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell) {
-      if (cell.getParent() == null) {
+      EditorCell_Collection parent = cell.getParent();
+      if (parent == null) /*{
         return (cell instanceof EditorCell_Collection)?findTarget((EditorCell_Collection) cell):null;
+      }*/  return null;
+      EditorCell nextToLeft = parent.findNextToLeft(cell);
+      if (nextToLeft != null) return nextToLeft;
+
+      //to the prev line:
+      EditorCell_Collection parentCollection = parent.getParent();
+      if (parentCollection == null) return null;
+      EditorCell target = parentCollection.getPrevCell(parent);
+
+      while (target == null || !(target instanceof EditorCell_Collection || target.isSelectable())) {
+        parent = parentCollection;
+        parentCollection = parentCollection.getParent();
+        if (parentCollection == null) return null;
+        target = parentCollection.getPrevCell(parent);
+        while (target != null && !(target instanceof EditorCell_Collection || target.isSelectable())) {
+          target = parentCollection.getPrevCell(target);
+        }
       }
-      return cell.getParent().findNextToLeft(cell);
+
+      if (!(target instanceof EditorCell_Collection)) return target;
+
+      return findLastSelectableCell((EditorCell_Collection) target);
+      //---
     }
 
-    private EditorCell findTarget(EditorCell_Collection collection) {
-     /* EditorCell target = collection.lastCell();
+    private EditorCell findLastSelectableCell(EditorCell_Collection collection) {
+     EditorCell target = collection.lastCell();
       while (target != null) {
         if (target instanceof EditorCell_Collection) {
-          EditorCell childTarget = findTarget((EditorCell_Collection) target);
+          EditorCell childTarget = findLastSelectableCell((EditorCell_Collection) target);
           if (childTarget != null) {
             return childTarget;
           }
@@ -65,7 +85,7 @@ public class NodeEditorActions {
           return target;
         }
         target = collection.findNextToLeft(target);
-      }*/
+      }
       return null;
     }
   }
@@ -260,17 +280,40 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell) {
-      if (cell.getParent() == null) {
-        return (cell instanceof EditorCell_Collection)?findTarget((EditorCell_Collection) cell):null;
+      EditorCell_Collection parent = cell.getParent();
+      if (parent == null) {
+        return (cell instanceof EditorCell_Collection)?findFirstSelectableCell((EditorCell_Collection) cell):null;
       }
-      return cell.getParent().findNextToRight(cell);
+
+      EditorCell nextToRight = parent.findNextToRight(cell);
+      if (nextToRight != null) return nextToRight;
+
+      //to the next line:
+      EditorCell_Collection parentCollection = parent.getParent();
+      if (parentCollection == null) return null;
+      EditorCell target = parentCollection.getNextCell(parent);
+
+      while (target == null || !(target instanceof EditorCell_Collection || target.isSelectable())) {
+        parent = parentCollection;
+        parentCollection = parentCollection.getParent();
+        if (parentCollection == null) return null;
+        target = parentCollection.getNextCell(parent);
+        while (target != null && !(target instanceof EditorCell_Collection || target.isSelectable())) {
+          target = parentCollection.getNextCell(target);
+        }
+      }
+
+      if (!(target instanceof EditorCell_Collection)) return target;
+
+      return findFirstSelectableCell((EditorCell_Collection) target);
+      //---
     }
 
-    private EditorCell findTarget(EditorCell_Collection collection) {
+    private EditorCell findFirstSelectableCell(EditorCell_Collection collection) {
       EditorCell target = collection.firstCell();
       while (target != null) {
         if (target instanceof EditorCell_Collection) {
-          EditorCell childTarget = findTarget((EditorCell_Collection) target);
+          EditorCell childTarget = findFirstSelectableCell((EditorCell_Collection) target);
           if (childTarget != null) {
             return childTarget;
           }
