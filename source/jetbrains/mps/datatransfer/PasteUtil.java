@@ -188,6 +188,10 @@ public class PasteUtil {
   }
 
   public static void pasteRelative(SNode anchorNode, SNode pasteNode, boolean pasteBefore, OperationContext operationContext) {
-    pasteToParent(anchorNode, pasteNode, anchorNode.getRole_(), pasteBefore, operationContext);
+    if (anchorNode.getParent() == null) {
+      anchorNode.getModel().addRoot(pasteNode);
+    } else {
+      pasteToParent(anchorNode, pasteNode, anchorNode.getRole_(), pasteBefore, operationContext);
+    }
   }
 }

@@ -4,6 +4,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.textLanguage.Text;
 import jetbrains.textLanguage.Sentence;
 import jetbrains.textLanguage.Word;
@@ -49,9 +50,12 @@ public class CopyPasteNodeUtil {
     ourSourceNodesToNewNodes.clear();
     ourReferences.clear();
     SNode nodeToPaste = copyNode_internal(node);
+    SModel fakeModel = nodeToPaste.getModel();
+    fakeModel.setLoading(true);
     processReferencesOut();
     nodeToPaste.changeModel(model);
     model.setLoading(false);
+    fakeModel.setLoading(false);
     return nodeToPaste;
   }
 

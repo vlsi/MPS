@@ -394,7 +394,7 @@ public class ProjectPane extends JComponent {
 
     protected JPopupMenu getPopupMenu() {
       JPopupMenu result = new JPopupMenu();
-      Set<SNode> selection = getNormalizedSelectedNodes(myTree);
+      List<SNode> selection = getNormalizedSelectedNodes(myTree);
       ActionManager.instance().getGroup(PROJECT_PANE_NODE_ACTIONS).add(result, new ActionContext(myIDE, myIDE.getProjectOperationContext(), getSNode(), selection));
       return result;
     }
@@ -897,8 +897,8 @@ public class ProjectPane extends JComponent {
     }
   }
 
-  private static Set<SNode> getSelectedNodes(MyTree myTree) {
-    Set<SNode> result = new HashSet<SNode>();
+  private static List<SNode> getSelectedNodes(MyTree myTree) {
+    List<SNode> result = new ArrayList<SNode>();
     TreePath[] paths = myTree.getSelectionPaths();
     for (int i = 0; i < paths.length; i++) {
       MPSTreeNode node = (MPSTreeNode) paths[i].getLastPathComponent();
@@ -909,8 +909,8 @@ public class ProjectPane extends JComponent {
     return result;
   }
 
-  private static Set<SNode> getNormalizedSelectedNodes(MyTree myTree) {
-    HashSet<SNode> selectedNodes = (HashSet<SNode>) ((HashSet<SNode>) getSelectedNodes(myTree)).clone();
+  private static List<SNode> getNormalizedSelectedNodes(MyTree myTree) {
+    List<SNode> selectedNodes = new ArrayList<SNode>(getSelectedNodes(myTree));
     HashSet<SNode> unselectedNodes = new HashSet<SNode>();
 
     for (SNode node : selectedNodes) {
