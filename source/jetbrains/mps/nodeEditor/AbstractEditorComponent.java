@@ -358,25 +358,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         imported.addSModelCommandListener(myModelListener);
         imported.addSModelCommandListenerToImportedModels(myModelListener);
       }
-
-//      addImportedModelsToListener(model);
     }
 
     revalidate();
     repaint();
   }
-
-//  private void addImportedModelsToListener(SModelDescriptor modelDescriptor) {
-//    Iterator<SModelDescriptor> importedModels = modelDescriptor.importedModels();
-//    if (importedModels != null) {
-//      while (importedModels.hasNext()) {
-//        SModel importedModel = importedModels.next();
-//        if (importedModel.hasSModelListener(myModelListener)) continue;
-//        importedModel.addSModelListener(myModelListener);
-//        addImportedModelsToListener(importedModel);
-//      }
-//    }
-//  }
 
   public EditorCell getRootCell() {
     return myRootCell;

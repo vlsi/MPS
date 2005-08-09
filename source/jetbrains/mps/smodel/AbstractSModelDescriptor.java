@@ -7,10 +7,9 @@ import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
-import jetbrains.mps.vcs.model.VersionControl;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.VersionControlManager;
-import jetbrains.mps.typesystem.TypeCheckerAccess;
+import jetbrains.mps.vcs.model.VersionControl;
 
 import java.util.*;
 
@@ -90,6 +89,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
         myModelListeners.clear();
         myModelListeners = null;
       }
+      // todo: remove listener?
       if (myModelListenersForImportedModels != null) {
         Iterator<SModelDescriptor> iterator = mySModel.importedModels(IdeMain.instance().getProjectOperationContext());
         while (iterator.hasNext()) {
@@ -103,6 +103,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
         myModelListenersForImportedModels = null;
       }
 
+      // todo: remove listener?
       if (myCommandListeners != null) {
         for (SModelCommandListener listener : myCommandListeners) {
           if (!mySModel.hasSModelCommandListener(listener)) {
@@ -111,6 +112,20 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
         }
         myCommandListeners.clear();
         myCommandListeners = null;
+      }
+
+      // todo: remove listener?
+      if (myModelCommandListenersForImportedModels != null) {
+        Iterator<SModelDescriptor> iterator = mySModel.importedModels(IdeMain.instance().getProjectOperationContext());
+        while (iterator.hasNext()) {
+          SModelDescriptor imported = iterator.next();
+          for (SModelCommandListener listener : myModelCommandListenersForImportedModels) {
+            imported.addSModelCommandListener(listener);
+            imported.addSModelCommandListenerToImportedModels(listener);
+          }
+        }
+        myModelCommandListenersForImportedModels.clear();
+        myModelCommandListenersForImportedModels = null;
       }
 
       //Todo: This should be moved somewhere else
