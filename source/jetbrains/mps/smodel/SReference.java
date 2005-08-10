@@ -43,6 +43,10 @@ public abstract class SReference {
     myTargetClassResolveInfo = c.getName();
   }
 
+  abstract public SModelUID getTargetModelUID();
+
+  abstract public boolean equalsTargetInfo(SReference reference);
+
   public String getRole() {
     return myRole;
   }
@@ -51,7 +55,7 @@ public abstract class SReference {
     return mySourceNode;
   }
 
-  public boolean isResolved(){
+  public boolean isResolved() {
     return myIsResolved;
   }
 
@@ -70,96 +74,71 @@ public abstract class SReference {
     if (sourceModel == targetModel || targetModel == null) {
       return new InternalReference(role, sourceNode, targetNode);
     } else {
-      SModel.ImportElement importElement = sourceModel.addImportElement(targetModel.getUID());
+      sourceModel.addImportElement(targetModel.getUID());
       String extResolveInfo = null;
       if (targetModel.isExternallyResolved()) {
         extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(targetNode);
       }
-      return new ExternalReference(role, sourceNode, targetNode.getId(), importElement, extResolveInfo);
+      return new ExternalReference(role, sourceNode, targetNode.getId(), extResolveInfo, targetModel.getUID());
     }
   }
 
+  public static SReference newInstance(String role, SNode sourceNode, String targetNodeId, SModelUID targetModelUID) {
+    SModelDescriptor targetModelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelUID);
+    LOG.error("Couldn't get model by uid: \"" + targetModelUID + "\"");
+    SModel targetModel = targetModelDescriptor.getSModel();
+    SNode targetNode = targetModel.getNodeById(targetNodeId);
+    LOG.error("Couldn't find node id:\""+targetNodeId+"\" in model \"" + targetModelUID + "\"");
+    return newInstance(role, sourceNode, targetNode);
+  }
 
-   public static SReference newInstance(String role, SNode sourceNode, String targetNodeId) {
-     return newInstance(role, sourceNode, targetNodeId, null, null, null);
-   }
-
-  public static SReference newInstance(String role, SNode sourceNode, String targetNodeId, String resolveInfo, String targetClassResolveInfo, String extResolveInfo) {
-
-    if (targetNodeId == null) {//WITHOUT TARGET ID
-
-
-      if (extResolveInfo != null) {//external reference
-        int offset = extResolveInfo.indexOf('.');
-        SModel.ImportElement importElement = importElementFromString(extResolveInfo, sourceNode);
-        if (importElement == null) return null;
-
-        String localExtResolveInfo = extResolveInfo.substring(offset + 1);
-        return new ExternalReference(role, sourceNode, null, importElement, localExtResolveInfo);
+  public static SReference newInstance(String role, SNode sourceNode, SReference templateRef) {
+    if(templateRef instanceof InternalReference) {
+      if(templateRef.isResolved()) {
+        return new InternalReference(role, sourceNode, templateRef.getTargetNode());
       }
-
-      //internal reference
-      if (resolveInfo == null) {
-        System.err.println("resolve info is null, source node is " + sourceNode + ", role is " + role);
+      else {
+        return new InternalReference(role, sourceNode, templateRef.getResolveInfo(), templateRef.getTargetClassResolveInfo());
       }
-      return new InternalReference(role, sourceNode, resolveInfo, targetClassResolveInfo);
-
     }
+    ExternalReference extTemplateRef = (ExternalReference) templateRef;
+    return new ExternalReference(role, sourceNode, extTemplateRef.getTargetNodeId(), extTemplateRef.getExtResolveInfo(), extTemplateRef.getTargetModelUID());
+  }
 
-    int offset = targetNodeId.indexOf('.');
+
+  public static SReference newInstance(String role, SNode sourceNode, String targetNodeId, String extResolveInfo,
+                                       SModelUID targetModelUID, String resolveInfo, String targetClassResolveInfo) {
     SModel sourceModel = sourceNode.getModel();
-    String localNodeId = targetNodeId;
-    if (offset > 0) {  //EXTERNAL REFERENCE
 
-      SModel.ImportElement importElement = importElementFromString(targetNodeId, sourceNode);
-      if (importElement == null) return null;
-
-      localNodeId = targetNodeId.substring(offset + 1);
-
-      if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
-        int offset1 = extResolveInfo.indexOf('.');
-        LOG.assertLog(targetNodeId.substring(0, offset).equals(extResolveInfo.substring(0, offset1)));
-        extResolveInfo = extResolveInfo.substring(offset1 + 1);
-      }
-
-      SReference resultReference = new ExternalReference(role, sourceNode, localNodeId, importElement, extResolveInfo);
-
-      return resultReference;
-    }
-
-    else {//INTERNAL REFERENCE
-      SNode targetNode = sourceModel.getNodeById(localNodeId);
+    // INTERNAL REFERENCE
+    if(sourceModel.getUID().equals(targetModelUID)) {
+      LOG.assertLog(targetNodeId != null, "Target node id is NULL for internal reference");
+      SNode targetNode = sourceModel.getNodeById(targetNodeId);
       if (targetNode == null && resolveInfo == null) {
-          LOG.errorWithTrace("SReference.newInstance Couldn't create internal reference: \"" + role + "\" to node id:" + localNodeId +
-                  "\nSource node: " + sourceNode.getDebugText());
-          return null;
+        LOG.errorWithTrace("SReference.newInstance Couldn't create internal reference: \"" + role + "\" to node id:" + targetNodeId +
+                "\nSource node: " + sourceNode.getDebugText());
+        return null;
       }
-      SReference resultReference = new InternalReference(role, sourceNode, targetNode);
-      resultReference.setResolveInfo(resolveInfo);
-      resultReference.setTargetClassResolveInfo(targetClassResolveInfo);
-      return resultReference;
-    }
-  }
-
-  private static SModel.ImportElement importElementFromString(String targetNodeId, SNode sourceNode) {
-    int offset = targetNodeId.indexOf('.');
-    SModel sourceModel = sourceNode.getModel();
-    Integer refModelId = new Integer(targetNodeId.substring(0, offset));
-    SModelUID targetModelUID = sourceModel.getImportedModelKey(refModelId.intValue());
-    if (targetModelUID == null) {
-      LOG.errorWithTrace("SReference.newInstance -Search in model: " + sourceNode.getModel().getUID() + ": couldn't find referenced model by id:" + refModelId);
-      return null;
+      SReference internalReference = new InternalReference(role, sourceNode, targetNode);
+      internalReference.setResolveInfo(resolveInfo);
+      internalReference.setTargetClassResolveInfo(targetClassResolveInfo);
+      return internalReference;
     }
 
-    SModel.ImportElement importElement = sourceModel.addImportElement(targetModelUID);
-    return importElement;
+    // EXTERNAL REFERENCE
+    if(targetNodeId != null || extResolveInfo != null) {
+      return new ExternalReference(role, sourceNode, targetNodeId, extResolveInfo, targetModelUID);
+    }
+    if (resolveInfo != null) {
+      return new InternalReference(role, sourceNode, resolveInfo, targetClassResolveInfo);
+    }
+    else {
+      LOG.error("resolve info is null, source node is " + sourceNode + ", role is " + role);
+    }
+    return null;
   }
 
   public abstract SNode getTargetNode();
-
-  public abstract String createReferencedNodeId();
-
-  public abstract String createExtResolveInfo();
 
   public abstract boolean isTargetNode(SNode node);
 

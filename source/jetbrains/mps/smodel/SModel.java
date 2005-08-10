@@ -151,14 +151,8 @@ public class SModel implements Iterable<SNode> {
   }
 
 
-  public boolean hasImportedModel(SModelUID modelUID) {
-    for (ImportElement myImport : myImports) {
-      ImportElement importElement = myImport;
-      if (importElement.getModelUID().equals(modelUID)) {
-        return true;
-      }
-    }
-    return false;
+  public SModelDescriptor getModelDescriptor() {
+    return SModelRepository.getInstance().getModelDescriptor(this);
   }
 
   private boolean canFireEvent() {
@@ -273,6 +267,14 @@ public class SModel implements Iterable<SNode> {
     myCommandListeners.remove(listener);
   }
 
+  List<SModelListener> getListeners() {
+    return new ArrayList<SModelListener>(myListeners);
+  }
+
+  List<SModelCommandListener> getCommandListeners() {
+    return new ArrayList<SModelCommandListener>(myCommandListeners);
+  }
+
   public boolean isRoot(SNode node) {
     return myRoots.contains(node);
   }
@@ -346,12 +348,17 @@ public class SModel implements Iterable<SNode> {
     return new ArrayList<String>(myLanguages);
   }
 
+  public boolean hasImportedModel(SModelUID modelUID) {
+    return getImportElement(modelUID) != null;
+  }
+
   public void addImportedModel(SModelUID modelUID) {
     addImportElement(modelUID);
   }
 
+  /*package*/
   ImportElement addImportElement(SModelUID modelUID) {
-    ImportElement importElement = findImportElement(modelUID);
+    ImportElement importElement = getImportElement(modelUID);
     if (importElement != null) return importElement;
     importElement = new ImportElement(modelUID, ++myMaxReferenceID);
     myImports.add(importElement);
@@ -359,6 +366,7 @@ public class SModel implements Iterable<SNode> {
     return importElement;
   }
 
+  /*package*/
   ImportElement addImportElement(SModelUID modelUID, int referenceId) {
     ImportElement importElement = new ImportElement(modelUID, referenceId);
     myImports.add(importElement);
@@ -366,9 +374,19 @@ public class SModel implements Iterable<SNode> {
     return importElement;
   }
 
+  /*package*/
+  ImportElement getImportElement(SModelUID modelUID) {
+   for (ImportElement importElement : myImports) {
+     if (importElement.getModelUID().equals(modelUID)) {
+       return importElement;
+     }
+   }
+   return null;
+ }
+
 
   public void deleteImportedModel(SModelUID modelUID) {
-    ImportElement importElement = findImportElement(modelUID);
+    ImportElement importElement = getImportElement(modelUID);
     if (importElement != null) {
       myImports.remove(importElement);
       fireImportRemovedEvent(modelUID);
@@ -376,23 +394,23 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void deleteImportedModel(SModel model) {
-    ImportElement importElement = findImportElement(model.getUID());
+    ImportElement importElement = getImportElement(model.getUID());
     if (importElement != null) {
       myImports.remove(importElement);
       fireImportRemovedEvent(model.getUID());
     }
   }
 
-
-  public Collection<SModelUID> getImportedModelUIDs() {
-    ArrayList<SModelUID> modelKeys = new ArrayList<SModelUID>();
+  public List<SModelUID> getImportedModelUIDs() {
+    List<SModelUID> uids = new LinkedList<SModelUID>();
     for (ImportElement importElement : myImports) {
-      modelKeys.add(importElement.getModelUID());
+      uids.add(importElement.getModelUID());
     }
-    return modelKeys;
+    return Collections.unmodifiableList(uids);
   }
 
-  SModelUID getImportedModelKey(int referenceID) {
+  /*package*/
+  SModelUID getImportedModelUID(int referenceID) {
     Iterator<ImportElement> iterator = myImports.iterator();
     while (iterator.hasNext()) {
       ImportElement importElement = iterator.next();
@@ -402,11 +420,6 @@ public class SModel implements Iterable<SNode> {
     }
     return null;
   }
-
-  public SModelDescriptor getModelDescriptor() {
-    return SModelRepository.getInstance().getModelDescriptor(this);
-  }
-
 
   public Iterator<SModelDescriptor> importedModels(OperationContext operationContext) {
     List<SModelDescriptor> modelsList = new LinkedList<SModelDescriptor>();
@@ -428,32 +441,14 @@ public class SModel implements Iterable<SNode> {
     return modelsList.iterator();
   }
 
-  List<SModelListener> getListeners() {
-    return new ArrayList<SModelListener>(myListeners);
-  }
-
-  List<SModelCommandListener> getCommandListeners() {
-    return new ArrayList<SModelCommandListener>(myCommandListeners);
-  }
-
   /*package*/
   Iterator<ImportElement> importElements() {
     return myImports.iterator();
   }
 
   public boolean isImported(SModel model) {
-    return findImportElement(model.getUID()) != null;
+    return getImportElement(model.getUID()) != null;
   }
-
-  private ImportElement findImportElement(SModelUID modelUID) {
-    for (ImportElement importElement : myImports) {
-      if (modelUID.equals(importElement.getModelUID())) {
-        return importElement;
-      }
-    }
-    return null;
-  }
-
 
   public void setMaxReferenceID(int i) {
     myMaxReferenceID = i;

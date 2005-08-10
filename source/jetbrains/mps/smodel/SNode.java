@@ -319,14 +319,6 @@ public abstract class SNode implements Cloneable {
     return result;
   }
 
-  public List<String> getReferentIds(String role) {
-    List<String> result = new ArrayList<String>();
-    for (SReference ref : getReferences()) {
-      result.add(ref.createReferencedNodeId());
-    }
-    return result;
-  }
-
   private void removeChildAt(final int index) {
     final SNode wasChild = myChildren.get(index);
     final String wasId = myChildren.get(index).getId();
@@ -375,8 +367,22 @@ public abstract class SNode implements Cloneable {
   // ---------------------------------
 
   public List<SReference> getReferences() {
-    return myReferences;
+    return new ArrayList<SReference>(myReferences);
   }
+
+  public List<SReference> getReferences(String role) {
+    if(role == null) {
+      return getReferences();
+    }
+    List<SReference> refs = new ArrayList<SReference>();
+    for(SReference ref: myReferences) {
+      if(role.equals(ref.getRole())) {
+        refs.add(ref);
+      }
+    }
+    return refs;
+  }
+  
 
   public void removeReference(SReference ref) {
     myReferences.remove(ref);

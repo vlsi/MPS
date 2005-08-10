@@ -44,7 +44,6 @@ public class ExternalResolver {
   public static String getExternalResolveInfoFromTarget(SNode targetNode) {
     //cache lookup
     Object externalResolveMethodObject = ourConceptsToResolveInfoMethodsMap.get(targetNode.getClass());
-
     if (externalResolveMethodObject == NO_METHOD) return null; //no_method marker found
 
     Method externalResolveMethod = (Method) externalResolveMethodObject;

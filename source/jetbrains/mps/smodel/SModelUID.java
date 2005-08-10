@@ -57,6 +57,7 @@ public class SModelUID implements Comparable {
   }
 
   public boolean equals (Object o) {
+    if(!(o instanceof SModelUID)) return false;
     SModelUID sModelUID = (SModelUID) o;
     boolean b = sModelUID.myLongName.equals(myLongName);
     boolean b1 = sModelUID.myStereotype.equals(myStereotype);

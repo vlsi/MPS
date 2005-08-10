@@ -1,24 +1,24 @@
 package jetbrains.mps.datatransfer;
 
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.resolve.Resolver;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.textLanguage.Text;
 import jetbrains.textLanguage.Sentence;
+import jetbrains.textLanguage.Text;
 import jetbrains.textLanguage.Word;
+import rubyWeb.TextUtil;
 
-import java.util.*;
-import java.util.List;
+import java.awt.*;
 import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
-import java.awt.datatransfer.DataFlavor;
-import java.awt.*;
 import java.io.IOException;
-
-import rubyWeb.TextUtil;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -107,10 +107,7 @@ public class CopyPasteNodeUtil {
         }
 
       } else if (sourceReference instanceof ExternalReference) {
-
-        String targetNodeId = sourceReference.createReferencedNodeId();
-        String extResolveInfo = ((ExternalReference)sourceReference).createExtResolveInfo();
-        SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, targetNodeId, null, null, extResolveInfo);
+        SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, sourceReference);
 
         newSourceNode.addSemanticReference(newReference);
       }
@@ -125,33 +122,18 @@ public class CopyPasteNodeUtil {
       SNode newSourceNode = ourSourceNodesToNewNodes.get(oldSourceNode);
 
       if (sourceReference instanceof InternalReference) {
-
         SNode oldTargetNode = sourceReference.getTargetNode();
         SNode newTargetNode = ourSourceNodesToNewNodes.get(oldTargetNode);
-
          if (newTargetNode != null) {//if our reference points inside our node's subtree
-
           newSourceNode.addSemanticReference(SReference.newInstance(sourceReference.getRole(), newSourceNode, newTargetNode));
-
         } else {//otherwise it points out of our node's subtree
            //the difference between In and Out is here!
-
-          String oldTargetNodeId = sourceReference.getTargetNodeId();
-
-          SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, oldTargetNodeId, sourceReference.getResolveInfo(), sourceReference.getTargetClassResolveInfo(), null);
-        /*  newReference.setResolveInfo(sourceReference.getResolveInfo());
-          newReference.setTargetClassResolveInfo(sourceReference.getTargetClassResolveInfo());*/
-
+          SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, sourceReference);
           newSourceNode.addSemanticReference(newReference);
-
         }
 
       } else if (sourceReference instanceof ExternalReference) {
-
-        String targetNodeId = sourceReference.createReferencedNodeId();
-        String extResolveInfo = ((ExternalReference)sourceReference).createExtResolveInfo();
-        SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, targetNodeId, null, null, extResolveInfo);
-
+        SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, sourceReference);
         newSourceNode.addSemanticReference(newReference);
       }
 
