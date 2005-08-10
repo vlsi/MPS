@@ -39,9 +39,8 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.io.File;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
+import java.util.List;
 
 
 /**
@@ -98,7 +97,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
       }
     }.run();
 
-    Set<SModelDescriptor> models = new HashSet<SModelDescriptor>();
+   List<SModelDescriptor> models = new LinkedList<SModelDescriptor>();
     models.add(language.getStructureModelDescriptor());
     if (language.getEditorModelDescriptor() != null) {
       models.add(language.getEditorModelDescriptor());
@@ -129,7 +128,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
 
   public void generate(GeneratorConfiguration configuration, boolean generateText) {
     // todo: rework
-    generate(configuration, new HashSet<SModelDescriptor>(myOperationContext.getWorkingModelDescriptors()), generateText);
+    generate(configuration, myOperationContext.getModelDescriptors(), generateText);
   }
 
   private void addMessage(final Message msg) {
@@ -158,7 +157,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
 
   public static final int AMOUNT_PER_MODEL = 100;
 
-  public void generate(final GeneratorConfiguration configuration, final Set<SModelDescriptor> modelDescriptors, final boolean generateText) {
+  public void generate(final GeneratorConfiguration configuration, final List<SModelDescriptor> modelDescriptors, final boolean generateText) {
     new Thread() {
       {
         setPriority(Thread.MIN_PRIORITY);
@@ -329,7 +328,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     return nodeText;
   }
 
-  private Set<SModelDescriptor> findModelsWithLanguage(Set<SModelDescriptor> models, String fqName) {
+  private Set<SModelDescriptor> findModelsWithLanguage(List<SModelDescriptor> models, String fqName) {
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
     for (SModelDescriptor model : models) {
       if (model.getSModel().hasLanguage(fqName)) {
@@ -374,15 +373,14 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
       return null;
     }
 
-    Set<ModelRoot> roots = new HashSet<ModelRoot>();
+    List<ModelRoot> roots = new LinkedList<ModelRoot>();
     Iterator<ModelRoot> iterator = generator.getModelRoots().iterator();
     while (iterator.hasNext()) {
       ModelRoot modelRoot = iterator.next();
       roots.add(modelRoot);
     }
 
-    Set<SModelDescriptor> models = new HashSet<SModelDescriptor>();
-    SModelRepository.getInstance().readModelDescriptors(roots, models, this);
+    java.util.List<SModelDescriptor> models = SModelRepository.getInstance().readModelDescriptors(roots, this);
 
     SModelUID templatesModelUID = generator.getTemplatesModelUID();
     for (SModelDescriptor model : models) {

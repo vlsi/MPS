@@ -7,11 +7,13 @@ import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.smodel.event.SModelsMulticaster;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.VersionControlManager;
 import jetbrains.mps.vcs.model.VersionControl;
 
 import java.util.*;
+import java.io.File;
 
 /**
  * @author Kostik
@@ -20,7 +22,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   private static final Logger LOG = Logger.getLogger(AbstractSModelDescriptor.class);
 
   private SModel mySModel = null;
-  private SModelUID myModelUID = new SModelUID("","");
+  private SModelUID myModelUID = new SModelUID("", "");
   private ArrayList<SModelListener> myModelListeners;
   private ArrayList<SModelListener> myModelListenersForImportedModels;
   private ArrayList<SModelCommandListener> myModelCommandListenersForImportedModels;
@@ -252,6 +254,16 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   public VersionControl getVersionControl(OperationContext operationContext) {
     VersionControlManager vcm = operationContext.getProject().getComponent(VersionControlManager.class);
     return vcm.createVCSFor(this);
+  }
+
+  public final void delete() {
+    SModelsMulticaster.getInstance().fireModelWillBeDeletedEvent(this);
+    SModelRepository.getInstance().removeModelDescriptor(this);
+    File modelFile = getModelFile();
+    if (modelFile != null && modelFile.exists()) {
+      modelFile.delete();
+    }
+    SModelsMulticaster.getInstance().fireModelDeletedEvent(this);
   }
 
   private void addUsages(SNode current, SNode node, Set<SReference> result) {

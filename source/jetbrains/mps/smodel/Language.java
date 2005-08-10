@@ -3,7 +3,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.generator.ContextUtil;
-import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
@@ -105,8 +104,8 @@ public class Language implements ModelLocator, ModelOwner {
     return getLanguageDescriptor().getTargetOfGenerator().getGeneratorClass();
   }
 
-  public Set<ModelRoot> getModelRoots() {
-    Set<ModelRoot> result = new HashSet<ModelRoot>();
+  public List<ModelRoot> getModelRoots() {
+    List<ModelRoot> result = new LinkedList<ModelRoot>();
     Iterator<ModelRoot> roots = getLanguageDescriptor().modelRoots();
     while (roots.hasNext()) {
       ModelRoot root = roots.next();
@@ -363,9 +362,9 @@ public class Language implements ModelLocator, ModelOwner {
 
   private void readLanguageModelDescriptors() {
     SModelRepository repository = SModelRepository.getInstance();
-    repository.readModelDescriptors(getModelRoots(), new HashSet<SModelDescriptor>(), this);
+    repository.readModelDescriptors(getModelRoots(), this);
     for (Generator g : getGenerators()) {
-      repository.readModelDescriptors(g.getModelRoots(), new HashSet<SModelDescriptor>(), this);
+      repository.readModelDescriptors(g.getModelRoots(), this);
     }
   }
 

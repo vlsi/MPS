@@ -320,13 +320,13 @@ public class SModelRepository extends SModelAdapter {
     }
   }
 
-  public void readModelDescriptors(Set<ModelRoot> modelRoots, Set<SModelDescriptor> modelDescriptors, ModelOwner owner) {
+  public List<SModelDescriptor> readModelDescriptors(List<ModelRoot> modelRoots, ModelOwner owner) {
+    List<SModelDescriptor> list = new LinkedList<SModelDescriptor>();
     for (ModelRoot modelRoot : modelRoots) {
       File dir = new File(modelRoot.getPath());
       if (dir.exists()) {
         ModelRootManager manager = getManagerFor(modelRoot);
-        Set<SModelDescriptor> models = manager.read(modelRoot, owner);
-        modelDescriptors.addAll(models);
+        list.addAll(manager.read(modelRoot, owner));
       } else {
         String error = "Couldn't load modelDescriptors from " + dir.getAbsolutePath() +
                 "\nDirectory doesn't exist: " + dir.getAbsolutePath();
@@ -334,6 +334,7 @@ public class SModelRepository extends SModelAdapter {
         myIde.getMessageView().add(new Message(MessageKind.ERROR, error));
       }
     }
+    return list;
   }
 
   private ModelRootManager getManagerFor(ModelRoot modelRoot) {

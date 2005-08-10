@@ -59,8 +59,22 @@ public class ProjectPane extends JComponent {
 
   public ProjectPane(IdeMain ide) {
     myIDE = ide;
-    setLayout(new BorderLayout());
+    SModelsMulticaster.getInstance().addSModelsListener(new SModelsAdapter() {
+      public void modelCreated(SModelDescriptor modelDescriptor) {
+        rebuildTree();
+        selectModel(modelDescriptor);
+      }
 
+      public void modelDeleted(SModelDescriptor modelDescriptor) {
+        rebuildTree();
+      }
+
+      public void modelWillBeDeleted(SModelDescriptor modelDescriptor) {
+        ProjectPane.this.selectNextTreeModel(modelDescriptor);
+      }
+    });
+
+    setLayout(new BorderLayout());
     new TreeWithSemanticNodesSpeedSearch(myTree);
 
     myHeader = new HeaderWrapper("Project", new JScrollPane(myTree));
@@ -179,7 +193,7 @@ public class ProjectPane extends JComponent {
   public void selectAllSiblingNodes(SNode sNode) {
     DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
     MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
-    SModel sModel = sNode.getModel();
+    SModelDescriptor sModel = sNode.getModel().getModelDescriptor();
     SModelTreeNode sModelNode = findSModelTreeNode(rootNode, sModel);
     if (sModelNode == null) return;
     MPSTreeNodeEx foundNode = findTreeNode(sModelNode, sNode);
@@ -192,7 +206,7 @@ public class ProjectPane extends JComponent {
   public void selectNode(SNode semanticNode) {
     DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
     MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
-    SModel sModel = semanticNode.getModel();
+    SModelDescriptor sModel = semanticNode.getModel().getModelDescriptor();
     SModelTreeNode sModelNode = findSModelTreeNode(rootNode, sModel);
     if (sModelNode == null) return;
     MPSTreeNodeEx treeNodeToSelect = findTreeNode(sModelNode, semanticNode);
@@ -208,7 +222,7 @@ public class ProjectPane extends JComponent {
   public MPSTreeNode findNextTreeNode(SNode semanticNode) {
     DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
     MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
-    SModel sModel = semanticNode.getModel();
+    SModelDescriptor sModel = semanticNode.getModel().getModelDescriptor();
     SModelTreeNode sModelNode = findSModelTreeNode(rootNode, sModel);
     if (sModelNode == null) return null;
     MPSTreeNode foundNode = findTreeNode(sModelNode, semanticNode);
@@ -220,10 +234,10 @@ public class ProjectPane extends JComponent {
     return (MPSTreeNode) result;
   }
 
-  public MPSTreeNode findNextTreeNode(SModel sModel) {
+  public MPSTreeNode findNextTreeNode(SModelDescriptor modelDescriptor) {
     DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
     MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
-    SModelTreeNode sModelNode = findSModelTreeNode(rootNode, sModel);
+    SModelTreeNode sModelNode = findSModelTreeNode(rootNode, modelDescriptor);
     if (sModelNode == null) return null;
     DefaultMutableTreeNode parentNode = (DefaultMutableTreeNode) sModelNode.getParent();
     TreeNode result = parentNode.getChildAfter(sModelNode);
@@ -237,8 +251,8 @@ public class ProjectPane extends JComponent {
     myTree.selectNode(mpsTreeNode);
   }
 
-  public void selectNextTreeModel(SModel sModel) {
-    MPSTreeNode mpsTreeNode = findNextTreeNode(sModel);
+  public void selectNextTreeModel(SModelDescriptor modelDescriptor) {
+    MPSTreeNode mpsTreeNode = findNextTreeNode(modelDescriptor);
     myTree.selectNode(mpsTreeNode);
   }
 
@@ -259,18 +273,16 @@ public class ProjectPane extends JComponent {
     return null;
   }
 
-  private SModelTreeNode findSModelTreeNode(MPSTreeNode parent, SModel sModel) {
+  private SModelTreeNode findSModelTreeNode(MPSTreeNode parent, SModelDescriptor modelDescriptor) {
     if (parent instanceof SModelTreeNode) {
       SModelTreeNode parentSModelNode = (SModelTreeNode) parent;
-      SModelDescriptor modelDescriptor = parentSModelNode.getModelDescriptor();
-      if (modelDescriptor.isInitialized()) {
-        if (sModel.equals(modelDescriptor.getSModel())) {
-          return parentSModelNode;
-        }
+      SModelDescriptor parentModelDescriptor = parentSModelNode.getModelDescriptor();
+      if (parentModelDescriptor == modelDescriptor) {
+        return parentSModelNode;
       }
     }
     for (MPSTreeNode node : parent) {
-      SModelTreeNode foundNode = findSModelTreeNode(node, sModel);
+      SModelTreeNode foundNode = findSModelTreeNode(node, modelDescriptor);
       if (foundNode != null) {
         return foundNode;
       }
@@ -366,16 +378,6 @@ public class ProjectPane extends JComponent {
 
     public Icon getIcon(boolean expanded) {
       return Icons.EDITORS_ICON;
-    }
-  }
-
-  private class LibraryModelsTreeNode extends MPSTree.TextTreeNode {
-    public LibraryModelsTreeNode(OperationContext operationContext) {
-      super("Library Models");
-    }
-
-    public Icon getIcon(boolean expanded) {
-      return Icons.LIB_ICON;
     }
   }
 
@@ -760,13 +762,8 @@ public class ProjectPane extends JComponent {
       }
       ProjectTreeNode root = new ProjectTreeNode(operationContext);
       ProjectModelsTreeNode projectModelsNode = new ProjectModelsTreeNode(operationContext);
-      for (SModelDescriptor modelDescriptor : sortSemanticModels(new ArrayList<SModelDescriptor>(operationContext.getWorkingModelDescriptors()))) {
+      for (SModelDescriptor modelDescriptor : sortSemanticModels(new ArrayList<SModelDescriptor>(operationContext.getModelDescriptors()))) {
         projectModelsNode.add(createSModelTreeNode(modelDescriptor, null, operationContext));
-      }
-
-      DefaultMutableTreeNode libraryModelsNode = new LibraryModelsTreeNode(operationContext);
-      for (SModelDescriptor modelDescriptor : sortSemanticModels(new ArrayList<SModelDescriptor>(operationContext.getLibraryModelDescriptors()))) {
-        libraryModelsNode.add(createSModelTreeNode(modelDescriptor, null, operationContext));
       }
 
       DefaultMutableTreeNode projectLanguagesNode = new ProjectLanguagesTreeNode(operationContext);
@@ -785,7 +782,6 @@ public class ProjectPane extends JComponent {
 
       root.add(projectModelsNode);
       root.add(projectLanguagesNode);
-      root.add(libraryModelsNode);
       root.add(languagesNode);
 
       return root;
@@ -903,7 +899,7 @@ public class ProjectPane extends JComponent {
     for (int i = 0; i < paths.length; i++) {
       MPSTreeNode node = (MPSTreeNode) paths[i].getLastPathComponent();
       if (node instanceof MPSTreeNodeEx) {
-        result.add(((MPSTreeNodeEx)node).getSNode());
+        result.add(((MPSTreeNodeEx) node).getSNode());
       }
     }
     return result;

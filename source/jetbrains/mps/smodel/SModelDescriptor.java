@@ -43,4 +43,6 @@ public interface SModelDescriptor {
   long timestamp();
 
   VersionControl getVersionControl(OperationContext operationContext);
+
+  void delete();
 }

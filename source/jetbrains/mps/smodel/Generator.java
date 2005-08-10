@@ -40,8 +40,8 @@ public class Generator {
     return result;
   }
 
-  public Set<ModelRoot> getModelRoots() {
-    Set<ModelRoot> result = new HashSet<ModelRoot>();
+  public List<ModelRoot> getModelRoots() {
+    List<ModelRoot> result = new LinkedList<ModelRoot>();
     Iterator<ModelRoot> roots = myGenerator.modelRoots();
     while (roots.hasNext()) {
       ModelRoot modelRoot = roots.next();
