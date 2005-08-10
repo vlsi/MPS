@@ -56,6 +56,9 @@ public class NodeEditorActions {
       EditorCell_Collection parentCollection = parent.getParent();
       if (parentCollection == null) return null;
       EditorCell target = parentCollection.getPrevCell(parent);
+      while (target != null && !(target instanceof EditorCell_Collection || target.isSelectable())) {
+          target = parentCollection.getPrevCell(target);
+      }
 
       while (target == null || !(target instanceof EditorCell_Collection || target.isSelectable())) {
         parent = parentCollection;
@@ -292,6 +295,9 @@ public class NodeEditorActions {
       EditorCell_Collection parentCollection = parent.getParent();
       if (parentCollection == null) return null;
       EditorCell target = parentCollection.getNextCell(parent);
+      while (target != null && !(target instanceof EditorCell_Collection || target.isSelectable())) {
+          target = parentCollection.getNextCell(target);
+      }
 
       while (target == null || !(target instanceof EditorCell_Collection || target.isSelectable())) {
         parent = parentCollection;
