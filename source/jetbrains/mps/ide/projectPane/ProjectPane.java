@@ -15,6 +15,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjectCommandListener;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.util.NameUtil;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -358,6 +359,10 @@ public class ProjectPane extends JComponent {
   private class ProjectModelsTreeNode extends MPSTree.TextTreeNode {
     public ProjectModelsTreeNode(OperationContext operationContext) {
       super("Project Models");
+    }
+
+    public ProjectModelsTreeNode(OperationContext operationContext, String name) {
+      super(NameUtil.capitalize(name) + " Models");
     }
 
     public Icon getIcon(boolean expanded) {
@@ -762,8 +767,30 @@ public class ProjectPane extends JComponent {
       }
       ProjectTreeNode root = new ProjectTreeNode(operationContext);
       ProjectModelsTreeNode projectModelsNode = new ProjectModelsTreeNode(operationContext);
+      root.add(projectModelsNode);
+      HashMap<String, ArrayList<SModelDescriptor>> stereotypes = new HashMap<String, ArrayList<SModelDescriptor>>();
       for (SModelDescriptor modelDescriptor : sortSemanticModels(new ArrayList<SModelDescriptor>(operationContext.getModelDescriptors()))) {
-        projectModelsNode.add(createSModelTreeNode(modelDescriptor, null, operationContext));
+        String stereotype = modelDescriptor.getStereotype();
+        if(stereotype == null || stereotype.length() == 0) {
+          projectModelsNode.add(createSModelTreeNode(modelDescriptor, null, operationContext));
+        }
+        else {
+          ArrayList<SModelDescriptor> sModelDescriptors = stereotypes.get(stereotype);
+          if(sModelDescriptors == null) {
+            sModelDescriptors = new ArrayList<SModelDescriptor>();
+            stereotypes.put(stereotype, sModelDescriptors);
+          }
+          sModelDescriptors.add(modelDescriptor);
+        }
+      }
+
+      for(String stereotype: stereotypes.keySet()) {
+        ArrayList<SModelDescriptor> sModelDescriptors = stereotypes.get(stereotype);
+        ProjectModelsTreeNode stereotypedModelsNode = new ProjectModelsTreeNode(operationContext, stereotype);
+        root.add(stereotypedModelsNode);
+        for(SModelDescriptor sModelDescr : sModelDescriptors) {
+          stereotypedModelsNode.add(createSModelTreeNode(sModelDescr, null, operationContext));
+        }
       }
 
       DefaultMutableTreeNode projectLanguagesNode = new ProjectLanguagesTreeNode(operationContext);
@@ -780,7 +807,6 @@ public class ProjectPane extends JComponent {
         initLanguageNode(node, language);
       }
 
-      root.add(projectModelsNode);
       root.add(projectLanguagesNode);
       root.add(languagesNode);
 
