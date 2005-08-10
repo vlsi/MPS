@@ -112,7 +112,15 @@ public abstract class SReference {
 
     // INTERNAL REFERENCE
     if(sourceModel.getUID().equals(targetModelUID)) {
-      LOG.assertLog(targetNodeId != null, "Target node id is NULL for internal reference");
+      //LOG.assertLog(targetNodeId != null, "Target node id is NULL for internal reference"); //so what?
+      if (targetNodeId == null) {//unresolved reference
+        if (resolveInfo != null) {
+          return new InternalReference(role, sourceNode, resolveInfo, targetClassResolveInfo);
+        } else {
+          LOG.error("resolve info is null, source node is " + sourceNode + ", role is " + role);
+          return null;
+        }
+      } //resolved reference
       SNode targetNode = sourceModel.getNodeById(targetNodeId);
       if (targetNode == null && resolveInfo == null) {
         LOG.errorWithTrace("SReference.newInstance Couldn't create internal reference: \"" + role + "\" to node id:" + targetNodeId +
@@ -128,12 +136,6 @@ public abstract class SReference {
     // EXTERNAL REFERENCE
     if(targetNodeId != null || extResolveInfo != null) {
       return new ExternalReference(role, sourceNode, targetNodeId, extResolveInfo, targetModelUID);
-    }
-    if (resolveInfo != null) {
-      return new InternalReference(role, sourceNode, resolveInfo, targetClassResolveInfo);
-    }
-    else {
-      LOG.error("resolve info is null, source node is " + sourceNode + ", role is " + role);
     }
     return null;
   }
