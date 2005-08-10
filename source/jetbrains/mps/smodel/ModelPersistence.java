@@ -436,7 +436,7 @@ public class ModelPersistence {
 
         if (model.isExternallyResolved()) {//if target model requires external resolve:
           ExternalResolver.setExternalResolveInfo(reference);
-          setNotNullAttribute(linkElement, EXT_RESOLVE_INFO, importElement.getReferenceID() + "." + extResolveInfo);
+          setNotNullAttribute(linkElement, EXT_RESOLVE_INFO, importElement.getReferenceID() + "." + ((ExternalReference)reference).getExtResolveInfo());
         } else {
           linkElement.setAttribute(TARGET_NODE_ID, importElement.getReferenceID() + "." + reference.getTargetNodeId());
         }
