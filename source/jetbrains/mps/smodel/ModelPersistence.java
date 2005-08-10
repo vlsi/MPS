@@ -414,36 +414,20 @@ public class ModelPersistence {
 
     if (reference.isExternal()) {//external reference
       ExternalReference externalReference = (ExternalReference) reference;
-      SModelUID referentModelUID = externalReference.getTargetModelUID();
-      SModel.ImportElement importElement = node.getModel().getImportElement(referentModelUID);
+      SModelUID targetModelUID = externalReference.getTargetModelUID();
+      SModel.ImportElement importElement = node.getModel().getImportElement(targetModelUID);
       if (importElement == null) {
-        importElement = node.getModel().addImportElement(referentModelUID);
+        importElement = node.getModel().addImportElement(targetModelUID);
       }
-//      String extResolveInfo = externalReference.createExtResolveInfo();
+
       String extResolveInfo = externalReference.getExtResolveInfo();
       if (ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
-        //try to find out if target model requires external resolve
-        //searchin' target model
-        SModelUID modelUID = externalReference.getTargetModelUID();
-        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
-        LOG.assertLog(modelDescriptor != null, "Path to the target model " + modelUID + " is not specified");
-        // todo: don't load external model
-        SModel model = modelDescriptor.getSModel();
-        if (model == null) {
-          LOG.error("The modelDescriptor.getSModel() failed to load model");
-          return;
-        }
-
-        if (model.isExternallyResolved()) {//if target model requires external resolve:
-          ExternalResolver.setExternalResolveInfo(reference);
-          setNotNullAttribute(linkElement, EXT_RESOLVE_INFO, importElement.getReferenceID() + "." + ((ExternalReference)reference).getExtResolveInfo());
-        } else {
-          linkElement.setAttribute(TARGET_NODE_ID, importElement.getReferenceID() + "." + reference.getTargetNodeId());
-        }
-
+        // no external info - save target node id
+        linkElement.setAttribute(TARGET_NODE_ID, importElement.getReferenceID() + "." + reference.getTargetNodeId());
       } else {
-        setNotNullAttribute(linkElement, EXT_RESOLVE_INFO, importElement.getReferenceID() + "." + extResolveInfo);
+        linkElement.setAttribute(EXT_RESOLVE_INFO, importElement.getReferenceID() + "." + extResolveInfo);
       }
+
     } else {//internal reference
       if (reference.isResolved()) linkElement.setAttribute(TARGET_NODE_ID, reference.getTargetNodeId());
       String resolveInfo = reference.getResolveInfo();
