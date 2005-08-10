@@ -128,7 +128,9 @@ public class CopyPasteNodeUtil {
           newSourceNode.addSemanticReference(SReference.newInstance(sourceReference.getRole(), newSourceNode, newTargetNode));
         } else {//otherwise it points out of our node's subtree
            //the difference between In and Out is here!
-          SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, sourceReference);
+
+          String oldTargetNodeId = sourceReference.getTargetNodeId();
+          SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, oldTargetNodeId, null, newSourceNode.getModel().getUID() ,sourceReference.getResolveInfo(), sourceReference.getTargetClassResolveInfo());
           newSourceNode.addSemanticReference(newReference);
         }
 

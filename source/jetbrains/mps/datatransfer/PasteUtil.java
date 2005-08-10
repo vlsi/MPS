@@ -67,7 +67,7 @@ public class PasteUtil {
     pasteToTarget_internal(pasteTarget, pasteNode, anchorNode, role, pasteBefore, true, operationContext);
   }
 
-  private static boolean pasteToTarget_internal(final SNode pasteTarget, final SNode pasteNode, final SNode anchorNode, String role, final boolean pasteBefore, boolean reallyPaste, OperationContext operationContext) {
+  private static boolean pasteToTarget_internal(final SNode pasteTarget, final SNode pasteNode, final SNode anchorNode, String role, final boolean pasteBefore, boolean reallyPaste, final OperationContext operationContext) {
     ConceptDeclaration pasteTargetType = SModelUtil.getConceptDeclaration(pasteTarget, operationContext);
     ConceptDeclaration pasteNodeType = SModelUtil.getConceptDeclaration(pasteNode, operationContext);
     if (pasteTargetType == null || pasteNodeType == null) {
@@ -92,7 +92,7 @@ public class PasteUtil {
         //Add resolving here!
 
 
-        Resolver.resolveAllReferences(pasteNode);
+        Resolver.resolveAllReferences(pasteNode, operationContext);
 
         }
       });

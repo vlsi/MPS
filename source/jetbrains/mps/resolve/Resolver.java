@@ -1,9 +1,6 @@
 package jetbrains.mps.resolve;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.ExternalReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.ide.command.CommandProcessor;
 
@@ -20,12 +17,12 @@ import java.lang.reflect.Method;
 public class Resolver {
 
 
-  public static void resolveAllReferences(SNode node) {
+  public static void resolveAllReferences(SNode node, OperationContext operationContext) {
 
     List<SReference> referenceList = getReferencesPointingOut(node);
 
     for (SReference reference : referenceList) {
-      resolve(reference);
+      resolve(reference, operationContext);
     }
   }
 
@@ -114,7 +111,7 @@ public class Resolver {
     return result;
   }
 
-  public static void resolve(final SReference reference){
+  public static void resolve(final SReference reference, final OperationContext operationContext){
 
     if (reference instanceof ExternalReference) return;
 
@@ -139,10 +136,10 @@ public class Resolver {
             //if method exists but can't resolve we'll mark our reference as a bad one
             Class resolveClass = Class.forName(packageName+".resolve.Resolver", true, ClassLoaderManager.getInstance().getClassLoader());
 
-            Method m = resolveClass.getMethod("resolveForRole"+role+"In"+className, SReference.class, Class.class);
+            Method m = resolveClass.getMethod("resolveForRole"+role+"In"+className, SReference.class, Class.class, OperationContext.class);
 
 
-            boolean success = (Boolean)m.invoke(null, reference, cls);
+            boolean success = (Boolean)m.invoke(null, reference, cls, operationContext);
 
             if (success) {
               sourceNode.removeReference(reference);
