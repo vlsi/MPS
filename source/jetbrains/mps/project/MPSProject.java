@@ -75,9 +75,9 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     return new ArrayList<Object>(myComponents.values());
   }
 
-  public <T> T getComponent(Class<T> interfaceClass) {
+  public <T> T getComponent(Class<T> clazz) {
     init();
-    T result = (T) myComponents.get(interfaceClass);
+    T result = (T) myComponents.get(clazz);
     return result;
   }
 
@@ -107,7 +107,7 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
             String className = component.getAttributeValue(CLASS);
             Class cls = Class.forName(className);
             if (getComponent(cls) != null && getComponent(cls) instanceof ExternalizableComponent) {
-              ((ExternalizableComponent) getComponent(cls)).read(component, new OperationContext(this, this, this));
+              ((ExternalizableComponent) getComponent(cls)).read(component, new ProjectOperationContext(this));
             }
           } catch (ClassNotFoundException e) {
           }

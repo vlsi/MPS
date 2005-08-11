@@ -328,7 +328,7 @@ public class SModel implements Iterable<SNode> {
     fireLanguageRemovedEvent(languageNamespace);
   }
 
-  public List<Language> getLanguages(OperationContext operationContext) {
+  public List<Language> getLanguages(IOperationContext operationContext) {
     ArrayList<Language> languages = new ArrayList<Language>();
     for (String languageNamespace : myLanguages) {
       Language language = operationContext.getLanguage(languageNamespace);
@@ -422,7 +422,7 @@ public class SModel implements Iterable<SNode> {
     return null;
   }
 
-  public Iterator<SModelDescriptor> importedModels(OperationContext operationContext) {
+  public Iterator<SModelDescriptor> importedModels(IOperationContext operationContext) {
     List<SModelDescriptor> modelsList = new LinkedList<SModelDescriptor>();
     Iterator<ImportElement> iterator = myImports.iterator();
     while (iterator.hasNext()) {
@@ -472,7 +472,7 @@ public class SModel implements Iterable<SNode> {
     return updateNodeStatuses(typeChecker.getOperationContext());
   }
 
-  public IStatus updateNodeStatuses(OperationContext operationContext) {
+  public IStatus updateNodeStatuses(IOperationContext operationContext) {
     clearNodeStatuses();
     Iterator<SNode> roots;
 

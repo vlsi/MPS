@@ -1,6 +1,6 @@
 package jetbrains.mps.ide.ui;
 
-import jetbrains.mps.smodel.OperationContext;
+import jetbrains.mps.smodel.IOperationContext;
 
 /**
  * @author Kostik
@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.OperationContext;
 public class TextMPSTreeNode extends MPSTreeNode {
   private String myText;
 
-  public TextMPSTreeNode(String text, OperationContext operationContext) {
+  public TextMPSTreeNode(String text, IOperationContext operationContext) {
     super(operationContext);
     myText = text;
   }

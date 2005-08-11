@@ -7,7 +7,6 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.ide.messages.MessageView;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 
 import java.util.Iterator;
@@ -15,15 +14,15 @@ import java.util.LinkedList;
 import java.util.List;
 
 public abstract class AbstractModelGenerator implements IModelGenerator {
-  private OperationContext myOperationContext;
+  private IOperationContext myOperationContext;
   private SModel mySourceModel;
   private SModel myTargetModel;
 
-  protected AbstractModelGenerator(OperationContext operationContext) {
+  protected AbstractModelGenerator(IOperationContext operationContext) {
     myOperationContext = operationContext;
   }
 
-  public OperationContext getOperationContext() {
+  public IOperationContext getOperationContext() {
     return myOperationContext;
   }
 
@@ -71,7 +70,7 @@ public abstract class AbstractModelGenerator implements IModelGenerator {
     }
   }
 
-  private static List<SModelDescriptor> allDependentModels(SModelDescriptor modelDescriptor, List<SModelDescriptor> list, OperationContext operationContext) {
+  private static List<SModelDescriptor> allDependentModels(SModelDescriptor modelDescriptor, List<SModelDescriptor> list, IOperationContext operationContext) {
     if(!modelDescriptor.isInitialized()) {
       return list;
     }

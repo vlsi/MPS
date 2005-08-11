@@ -13,8 +13,6 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import jetbrains.mps.smodel.OperationContext;
-
 /**
  * @author Kostik
  */

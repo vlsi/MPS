@@ -21,7 +21,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.ExternalizableComponent;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.projectLanguage.GeneratorConfiguration;
 import jetbrains.mps.projectLanguage.GeneratorConfigurationCommand;
 import jetbrains.mps.projectLanguage.ModelRoot;
@@ -52,19 +51,19 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
   private static final String SAVE_TRANSIENT_MODELS = "save-transient-models-on-generation";
   private static final String COMPILE_ON_GENERATION = "compile-on-generation";
 
-  private OperationContext myOperationContext;
+  private IOperationContext myOperationContext;
   private boolean myCompileOnGeneration = true;
   private boolean mySaveTransientModels;
 
-  public GeneratorManager(MPSProject project) {
-    myOperationContext = new GeneratorOperationContext(project, this);
+  public GeneratorManager(IOperationContext operationContext) {
+    myOperationContext = new GeneratorOperationContext(operationContext, this);
   }
 
   public ModelOwner getParentModelOwner() {
     return null;
   }
 
-  public void read(Element element, OperationContext operationContext) {
+  public void read(Element element, IOperationContext operationContext) {
     if (element.getAttribute(COMPILE_ON_GENERATION) != null) {
       myCompileOnGeneration = Boolean.parseBoolean(element.getAttributeValue(COMPILE_ON_GENERATION));
     }
@@ -396,9 +395,9 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     try {
       Class cls = Class.forName(generatorClassFQName, true, ClassLoaderManager.getInstance().getClassLoader());
       if (ITemplateGenerator.class.isAssignableFrom(cls)) {
-        generator = (ITemplateGenerator) cls.getConstructor(OperationContext.class, ProgressMonitor.class).newInstance(myOperationContext, monitor);
+        generator = (ITemplateGenerator) cls.getConstructor(IOperationContext.class, ProgressMonitor.class).newInstance(myOperationContext, monitor);
       } else {
-        generator = (IModelGenerator) cls.getConstructor(OperationContext.class).newInstance(myOperationContext);
+        generator = (IModelGenerator) cls.getConstructor(IOperationContext.class).newInstance(myOperationContext);
       }
     } catch (Exception e) {
       LOG.error("Exception", e);
@@ -481,9 +480,9 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     }
   }
 
-  private static class GeneratorOperationContext extends OperationContext {
-    public GeneratorOperationContext(MPSProject project, GeneratorManager generatorManager) {
-      super(project, generatorManager, generatorManager);
+  private static class GeneratorOperationContext extends DelegatingOperationContext {
+    public GeneratorOperationContext(IOperationContext upperOperationContext, GeneratorManager generatorManager) {
+      super(upperOperationContext, generatorManager, generatorManager);
     }
   }
 }

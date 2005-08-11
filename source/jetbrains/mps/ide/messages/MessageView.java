@@ -4,7 +4,7 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.toolsPane.Tool;
-import jetbrains.mps.smodel.OperationContext;
+import jetbrains.mps.smodel.IOperationContext;
 
 import javax.swing.*;
 import java.awt.*;
@@ -103,7 +103,7 @@ public class MessageView implements Tool {
     menu.show(myList, evt.getX(), evt.getY());
   }
 
-  private void openCurrentMessageNodeIfPossible(OperationContext operationContext) {
+  private void openCurrentMessageNodeIfPossible(IOperationContext operationContext) {
     Message selectedMessage = (Message) myList.getSelectedValue();
     if (selectedMessage == null) return;
     if (selectedMessage.getNode() == null) return;

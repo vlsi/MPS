@@ -3,7 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.datatransfer.PasteUtil;
 import jetbrains.mps.datatransfer.CopyPasteNodeUtil;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.OperationContext;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.logging.Logger;
 
 import java.util.List;
@@ -27,7 +27,7 @@ public class CellAction_PasteNode extends EditorCellAction {
       return false;
     }
 
-    OperationContext operationContext = context.getOperationContext();
+    IOperationContext operationContext = context.getOperationContext();
     if (!PasteUtil.canPaste(selectedNode, pasteNodes.get(0), operationContext)) {
       LOG.debug("Couldn't paste node here");
       return false;
@@ -40,7 +40,7 @@ public class CellAction_PasteNode extends EditorCellAction {
     SNode selectedNode = selectedCell.getSNode();
     List<SNode> pasteNodes = CopyPasteNodeUtil.getNodesFromClipboard(selectedNode.getModel());
     SNode anchor = pasteNodes.get(0);
-    OperationContext operationContext = context.getOperationContext();
+    IOperationContext operationContext = context.getOperationContext();
     PasteUtil.paste(selectedNode, anchor, operationContext);
     for (int i = 1; i < pasteNodes.size(); i++) {
       SNode node = pasteNodes.get(i);

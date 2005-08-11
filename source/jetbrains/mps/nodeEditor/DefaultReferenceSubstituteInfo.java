@@ -8,7 +8,7 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.OperationContext;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.DiagnosticUtil;
 import jetbrains.mps.util.NameUtil;
@@ -68,7 +68,7 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   private List<SNode> createTargetNodesList() {
     final ConceptDeclaration targetConcept = myLinkDeclaration.getTarget();
-    final OperationContext operationContext = getEditorContext().getOperationContext();
+    final IOperationContext operationContext = getEditorContext().getOperationContext();
     DiagnosticUtil.assertNodeValid(targetConcept, operationContext);
     final boolean searchLinks = NameUtil.nodeFQName(targetConcept).equals("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration");
     return SModelUtil.allNodesIncludingImported(mySourceNode.getModel(), operationContext, new Condition<SNode>() {

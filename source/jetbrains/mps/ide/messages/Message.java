@@ -2,7 +2,7 @@ package jetbrains.mps.ide.messages;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
-import jetbrains.mps.smodel.OperationContext;
+import jetbrains.mps.smodel.IOperationContext;
 
 /**
  * @author Kostik
@@ -12,7 +12,7 @@ public class Message {
   private SNodeProxy myNodeProxy;
   private String myText;
 
-  public Message(MessageKind kind, SNode node, String text, OperationContext operationContext) {
+  public Message(MessageKind kind, SNode node, String text, IOperationContext operationContext) {
     myKind = kind;
     myNodeProxy = new SNodeProxy(node, operationContext);
     myText = text;

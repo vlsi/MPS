@@ -30,7 +30,7 @@ public class CreateRootNodeGroup extends ActionGroup {
     clear();
     final SModelDescriptor model = context.get(SModelDescriptor.class);
     final IdeMain ide = context.get(IdeMain.class);
-    OperationContext operationContext = context.get(OperationContext.class);
+    IOperationContext operationContext = context.get(IOperationContext.class);
 
     if (model.getSModel().getLanguageNamespaces().size() == 0) {
       add(new MPSAction("<NO LANGUAGES>") {
@@ -89,7 +89,7 @@ public class CreateRootNodeGroup extends ActionGroup {
                 });
 
                 ide.getProjectPane().selectNode(node[0]);
-                ide.getProjectPane().openEditor(context.get(OperationContext.class));
+                ide.getProjectPane().openEditor(context.get(IOperationContext.class));
               }
             });
             addCount++;

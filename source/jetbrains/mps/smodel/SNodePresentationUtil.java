@@ -16,7 +16,7 @@ import java.util.Iterator;
  * Todo: refactor this utility
  */
 public class SNodePresentationUtil {
-  public static String matchingText(SNode node, SNode referenceContext, OperationContext operationContext) {
+  public static String matchingText(SNode node, SNode referenceContext, IOperationContext operationContext) {
     String result = null;
     if (node instanceof BaseMethodDeclaration) {
       result = matchingText_BaseMethodDeclaration((BaseMethodDeclaration) node, referenceContext);
@@ -58,7 +58,7 @@ public class SNodePresentationUtil {
     return false;
   }
 
-  public static String descriptionText(SNode node, SNode referenceContext, OperationContext operationContext) {
+  public static String descriptionText(SNode node, SNode referenceContext, IOperationContext operationContext) {
     String result = null;
     if (node instanceof BaseMethodDeclaration) {
       result = descriptionText_BaseMethodDeclaration((BaseMethodDeclaration) node, referenceContext, operationContext);
@@ -170,7 +170,7 @@ public class SNodePresentationUtil {
     return type.getName();
   }
 
-  private static String descriptionText_BaseMethodDeclaration(BaseMethodDeclaration method, SNode referenceContext, OperationContext operationContext) {
+  private static String descriptionText_BaseMethodDeclaration(BaseMethodDeclaration method, SNode referenceContext, IOperationContext operationContext) {
     String prefix = getAliasOrConceptName(method, operationContext) + " in ";
     if (method instanceof MethodDeclaration) {
       // freestanding method: model fqname
@@ -187,7 +187,7 @@ public class SNodePresentationUtil {
     return prefix + NameUtil.nodeFQName(parent);
   }
 
-  private static String descriptionText_VariableDeclaration(VariableDeclaration variable, SNode referenceContext, OperationContext operationContext) {
+  private static String descriptionText_VariableDeclaration(VariableDeclaration variable, SNode referenceContext, IOperationContext operationContext) {
     if (variable instanceof ParameterDeclaration) {
       return "parameter";
     }
@@ -212,11 +212,11 @@ public class SNodePresentationUtil {
     return null;
   }
 
-  private static String descriptionText_Classifier(Classifier classifier, OperationContext operationContext) {
+  private static String descriptionText_Classifier(Classifier classifier, IOperationContext operationContext) {
     return getAliasOrConceptName(classifier, operationContext) + " in " + classifier.getModel().getUID();
   }
 
-  private static String getAliasOrConceptName(SNode node, OperationContext operationContext) {
+  private static String getAliasOrConceptName(SNode node, IOperationContext operationContext) {
     String alias = SModelUtil.getConceptProperty(node, "alias", operationContext);
     if(alias != null) {
       return alias;

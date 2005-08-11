@@ -1,7 +1,7 @@
 package jetbrains.mps.ide.components;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.OperationContext;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.SNode;
@@ -32,7 +32,7 @@ public class ComponentsUtil {
     return nodeElement;
   }
 
-  public static SNode nodeFromElement(OperationContext operationContext, Element nodeElement) {
+  public static SNode nodeFromElement(IOperationContext operationContext, Element nodeElement) {
     String modelUID = nodeElement.getAttributeValue(MODEL);
     String id = nodeElement.getAttributeValue(ID);
     SModelDescriptor modelDescriptor = operationContext.getModelDescriptor(SModelUID.fromString(modelUID));

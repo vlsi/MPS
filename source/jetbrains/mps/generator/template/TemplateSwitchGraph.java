@@ -14,9 +14,9 @@ import java.util.*;
  */
 public class TemplateSwitchGraph {
   private Map<TemplateSwitch, TemplateSwitchGraphNode> myTemplateSwitchToGraphNodeMap = new HashMap<TemplateSwitch, TemplateSwitchGraphNode>();
-  private OperationContext myOperationContext;
+  private IOperationContext myOperationContext;
 
-  public TemplateSwitchGraph(SModel templatesModel, OperationContext operationContext) {
+  public TemplateSwitchGraph(SModel templatesModel, IOperationContext operationContext) {
     myOperationContext = operationContext;
     processTemplatesModel(templatesModel, new HashSet<SModelUID>());
   }

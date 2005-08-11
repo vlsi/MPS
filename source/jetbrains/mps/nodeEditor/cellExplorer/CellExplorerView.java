@@ -10,7 +10,7 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.OperationContext;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.logging.Logger;
 
 import javax.swing.*;
@@ -198,7 +198,7 @@ public class CellExplorerView implements Tool {
   private class CellActionsTreeNode extends MPSTreeNode {
     private EditorCell myCell;
 
-    public CellActionsTreeNode(EditorCell cell, OperationContext operationContext) {
+    public CellActionsTreeNode(EditorCell cell, IOperationContext operationContext) {
       super(cell, operationContext);
       myCell = cell;
       Set<String> actions = new TreeSet<String>(cell.getAvailableActions());

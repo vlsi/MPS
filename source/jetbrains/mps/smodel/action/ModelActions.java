@@ -20,7 +20,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class ModelActions {
-  public static List<INodeSubstituteAction> createNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, List<INodeSubstituteAction> defaultActions, OperationContext operationContext) {
+  public static List<INodeSubstituteAction> createNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, List<INodeSubstituteAction> defaultActions, IOperationContext operationContext) {
 
     LinkMetaclass metaClass = linkDeclaration.getMetaClass();
     ConceptDeclaration targetConcept = linkDeclaration.getTarget();
@@ -69,7 +69,7 @@ public class ModelActions {
     return resultActions;
   }
 
-  private static List<INodeSubstituteAction> filterActions(List<INodeSubstituteAction> actions, List<NodeSubstituteActionsBuilder> substituteActionsBuilders, NodeSubstituteActionsBuilder excludeBuilder, OperationContext operationContext) {
+  private static List<INodeSubstituteAction> filterActions(List<INodeSubstituteAction> actions, List<NodeSubstituteActionsBuilder> substituteActionsBuilders, NodeSubstituteActionsBuilder excludeBuilder, IOperationContext operationContext) {
     for (NodeSubstituteActionsBuilder substituteActionsBuilder : substituteActionsBuilders) {
       if (substituteActionsBuilder != excludeBuilder) {
         actions = filterActions(substituteActionsBuilder, actions, operationContext);
@@ -82,7 +82,7 @@ public class ModelActions {
   // Macro Aspect methods invocation...
   // --------------------------------
 
-  private static List<INodeSubstituteAction> filterActions(NodeSubstituteActionsBuilder substituteActionsBuilder, List<INodeSubstituteAction> actions, OperationContext operationContext) {
+  private static List<INodeSubstituteAction> filterActions(NodeSubstituteActionsBuilder substituteActionsBuilder, List<INodeSubstituteAction> actions, IOperationContext operationContext) {
     Object[] args = new Object[]{actions, operationContext};
     String methodName = "nodeSubstituteActionsBuilder_ActionsFilter_" + substituteActionsBuilder.getActionsFilterAspectId();
     SModel model = substituteActionsBuilder.getModel();
@@ -90,7 +90,7 @@ public class ModelActions {
     return result;
   }
 
-  private static List<INodeSubstituteAction> createActions(NodeSubstituteActionsBuilder substituteActionsBuilder, SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, OperationContext operationContext) {
+  private static List<INodeSubstituteAction> createActions(NodeSubstituteActionsBuilder substituteActionsBuilder, SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, IOperationContext operationContext) {
     Object[] args = new Object[]{sourceNode,
                       currentTargetNode,
                       linkDeclaration,

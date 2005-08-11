@@ -8,7 +8,7 @@ import jetbrains.mps.ide.preferences.ComponentWithPreferences;
 import jetbrains.mps.ide.preferences.PreferencesPage;
 import jetbrains.mps.project.ExternalizableComponent;
 import jetbrains.mps.util.IntegerValueDocumentFilter;
-import jetbrains.mps.smodel.OperationContext;
+import jetbrains.mps.smodel.IOperationContext;
 
 import javax.swing.*;
 import javax.swing.text.AbstractDocument;
@@ -97,7 +97,7 @@ public class OutputView implements ExternalizableComponent, ComponentWithPrefere
     myComponent.add(new JScrollPane(myTextArea), BorderLayout.CENTER);
   }
 
-  public void read(Element element, OperationContext operationContext) {
+  public void read(Element element, IOperationContext operationContext) {
     if (element.getAttribute(FONT_SIZE) != null) {
       myFontSize = Integer.valueOf(element.getAttributeValue(FONT_SIZE));
       updateComponent();

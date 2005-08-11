@@ -115,7 +115,7 @@ public class ProjectPane extends JComponent {
   }
 
 
-  public void openEditor(OperationContext operationContext) {
+  public void openEditor(IOperationContext operationContext) {
     TreePath selectionPath = myTree.getSelectionPath();
     if (selectionPath == null) return;
     if (!(selectionPath.getLastPathComponent() instanceof SNodeTreeNode)) return;
@@ -322,7 +322,7 @@ public class ProjectPane extends JComponent {
 
 
   private class ProjectTreeNode extends MPSTreeNode {
-    public ProjectTreeNode(OperationContext operationContext) {
+    public ProjectTreeNode(IOperationContext operationContext) {
       super(operationContext);
     }
 
@@ -346,7 +346,7 @@ public class ProjectPane extends JComponent {
   }
 
   private abstract class MPSTreeNodeEx extends MPSTreeNode {
-    private MPSTreeNodeEx(OperationContext operationContext) {
+    private MPSTreeNodeEx(IOperationContext operationContext) {
       super(operationContext);
     }
 
@@ -358,11 +358,11 @@ public class ProjectPane extends JComponent {
   }
 
   private class ProjectModelsTreeNode extends MPSTree.TextTreeNode {
-    public ProjectModelsTreeNode(OperationContext operationContext) {
+    public ProjectModelsTreeNode(IOperationContext operationContext) {
       super("Project Models");
     }
 
-    public ProjectModelsTreeNode(OperationContext operationContext, String name) {
+    public ProjectModelsTreeNode(IOperationContext operationContext, String name) {
       super(NameUtil.capitalize(name) + " Models");
     }
 
@@ -378,7 +378,7 @@ public class ProjectPane extends JComponent {
   }
 
   private class LanguageEditorsTreeNode extends MPSTree.TextTreeNode {
-    public LanguageEditorsTreeNode(String text, OperationContext operationContext) {
+    public LanguageEditorsTreeNode(String text, IOperationContext operationContext) {
       super(text);
     }
 
@@ -392,7 +392,7 @@ public class ProjectPane extends JComponent {
     private SNodeProxy myNodeProxy;
     private String myRole;
 
-    public SNodeTreeNode(SNode node, String role, OperationContext operationContext) {
+    public SNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
       super(operationContext);
       LOG.assertLog(node != null);
       myNodeProxy = new SNodeProxy(node, operationContext);
@@ -407,7 +407,7 @@ public class ProjectPane extends JComponent {
       return result;
     }
 
-    public SNodeTreeNode(SNode node, OperationContext operationContext) {
+    public SNodeTreeNode(SNode node, IOperationContext operationContext) {
       this(node, null, operationContext);
     }
 
@@ -489,7 +489,7 @@ public class ProjectPane extends JComponent {
     private boolean isInitialized = false;
     private MyModelListener myModelListener = new MyModelListener();
 
-    public SModelTreeNode(SModelDescriptor modelDescriptor, String label, OperationContext operationContext) {
+    public SModelTreeNode(SModelDescriptor modelDescriptor, String label, IOperationContext operationContext) {
       super(operationContext);
       myModelDescriptor = modelDescriptor;
       myLabel = label;
@@ -653,7 +653,7 @@ public class ProjectPane extends JComponent {
     private Language myLanguage;
 
     public ProjectLanguageTreeNode(Language language) {
-      super(new LanguageInProjectOperationContext(language, myProject));
+      super(new LanguageInProjectOperationContext(language, myIDE.getProjectOperationContext()));
       myLanguage = language;
     }
 
@@ -691,7 +691,7 @@ public class ProjectPane extends JComponent {
     private Language myLanguage;
 
     public LanguageTreeNode(Language language) {
-      super(new LanguageInProjectOperationContext(language, myProject));
+      super(new LanguageInProjectOperationContext(language, myIDE.getProjectOperationContext()));
       myLanguage = language;
     }
 
@@ -713,7 +713,7 @@ public class ProjectPane extends JComponent {
   }
 
   private class ProjectLanguagesTreeNode extends MPSTree.TextTreeNode {
-    private ProjectLanguagesTreeNode(OperationContext operationContext) {
+    private ProjectLanguagesTreeNode(IOperationContext operationContext) {
       super("Project Languages");
     }
 
@@ -729,7 +729,7 @@ public class ProjectPane extends JComponent {
   }
 
   private class LanguagesTreeNode extends MPSTree.TextTreeNode {
-    public LanguagesTreeNode(OperationContext operationContext) {
+    public LanguagesTreeNode(IOperationContext operationContext) {
       super("Languages");
     }
 
@@ -739,7 +739,7 @@ public class ProjectPane extends JComponent {
   }
 
   private class GeneratorsTreeNode extends MPSTree.TextTreeNode {
-    public GeneratorsTreeNode(String text, OperationContext operationContext) {
+    public GeneratorsTreeNode(String text, IOperationContext operationContext) {
       super(text);
     }
 
@@ -762,7 +762,7 @@ public class ProjectPane extends JComponent {
 
     protected MPSTreeNode rebuild() {
       mySModelTreeNodes.clear();
-      OperationContext operationContext = myIDE.getProjectOperationContext();
+      IOperationContext operationContext = myIDE.getProjectOperationContext();
       if (myProject == null) {
         return new TextTreeNode("Empty");
       }
@@ -815,7 +815,7 @@ public class ProjectPane extends JComponent {
     }
 
     private void initProjectLanguageNode(ProjectLanguageTreeNode node, Language language) {
-      OperationContext operationContext = node.getOperationContext();
+      IOperationContext operationContext = node.getOperationContext();
       addNodeIfModelNotNull(node, language.getStructureModelDescriptor(), "Structure", operationContext);
 
       Iterator<SModelDescriptor> editorDescriptors = language.getEditorDescriptors().iterator();
@@ -873,7 +873,7 @@ public class ProjectPane extends JComponent {
     }
 
     private void initLanguageNode(LanguageTreeNode node, Language language) {
-      OperationContext operationContext = node.getOperationContext();
+      IOperationContext operationContext = node.getOperationContext();
       addNodeIfModelNotNull(node, language.getEditorModelDescriptor(), "Editor", operationContext);
       addNodeIfModelNotNull(node, language.getStructureModelDescriptor(), "Structure", operationContext);
       addNodeIfModelNotNull(node, language.getTypesystemModelDescriptor(), "Typesystem", operationContext);
@@ -900,13 +900,13 @@ public class ProjectPane extends JComponent {
       node.add(libraries);
     }
 
-    private void addNodeIfModelNotNull(MPSTreeNode node, SModelDescriptor modelDescriptor, String label, OperationContext operationContext) {
+    private void addNodeIfModelNotNull(MPSTreeNode node, SModelDescriptor modelDescriptor, String label, IOperationContext operationContext) {
       if (modelDescriptor != null) {
         node.add(createSModelTreeNode(modelDescriptor, label, operationContext));
       }
     }
 
-    private SModelTreeNode createSModelTreeNode(SModelDescriptor modelDescriptor, String label, OperationContext operationContext) {
+    private SModelTreeNode createSModelTreeNode(SModelDescriptor modelDescriptor, String label, IOperationContext operationContext) {
       SModelTreeNode rootModelNode = new SModelTreeNode(modelDescriptor, label, operationContext);
       mySModelTreeNodes.add(rootModelNode);
       return rootModelNode;

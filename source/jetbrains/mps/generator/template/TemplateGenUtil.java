@@ -27,7 +27,7 @@ import java.util.List;
 public class TemplateGenUtil {
   private static final Logger LOG = Logger.getLogger(TemplateGenUtil.class);
 
-  public static SNode instantiateNodeForTemplate(SNode templateNode, SModel targetModel, OperationContext operationContext) {
+  public static SNode instantiateNodeForTemplate(SNode templateNode, SModel targetModel, IOperationContext operationContext) {
     ConceptDeclaration conceptDeclaration = SModelUtil.getConceptDeclaration(templateNode, operationContext);
     SNode targetNode = SModelUtil.instantiateConceptDeclaration(conceptDeclaration, targetModel, false);
     SModelUtil.copySNodeProperties(templateNode, targetNode);
@@ -108,7 +108,7 @@ public class TemplateGenUtil {
     } // while (iterator.hasNext())
   }
 
-  private static IReferenceResolver createReferenceResolver(SNode templateNode, OperationContext operationContext) {
+  private static IReferenceResolver createReferenceResolver(SNode templateNode, IOperationContext operationContext) {
     IReferenceResolver referenceResolver = loadReferenceResolver(templateNode, operationContext);
     if (referenceResolver == null) {
       referenceResolver = new DefaultReferenceResolver();
@@ -152,7 +152,7 @@ public class TemplateGenUtil {
     return null;
   }
 
-  public static IReferenceResolver loadReferenceResolver(SNode templateNode, OperationContext operationContext) {
+  public static IReferenceResolver loadReferenceResolver(SNode templateNode, IOperationContext operationContext) {
     ConceptDeclaration conceptDeclaration = SModelUtil.getConceptDeclaration(templateNode, operationContext);
     while (conceptDeclaration != null) {
       String modelPackageName = JavaNameUtil.packageNameForModelUID(conceptDeclaration.getModel().getUID());

@@ -17,7 +17,7 @@ import java.lang.reflect.Method;
 public class Resolver {
 
 
-  public static void resolveAllReferences(SNode node, OperationContext operationContext) {
+  public static void resolveAllReferences(SNode node, IOperationContext operationContext) {
 
     List<SReference> referenceList = getReferencesPointingOut(node);
 
@@ -111,7 +111,7 @@ public class Resolver {
     return result;
   }
 
-  public static void resolve(final SReference reference, final OperationContext operationContext){
+  public static void resolve(final SReference reference, final IOperationContext operationContext){
 
     if (reference instanceof ExternalReference) return;
 
@@ -136,7 +136,7 @@ public class Resolver {
             //if method exists but can't resolve we'll mark our reference as a bad one
             Class resolveClass = Class.forName(packageName+".resolve.Resolver", true, ClassLoaderManager.getInstance().getClassLoader());
 
-            Method m = resolveClass.getMethod("resolveForRole"+role+"In"+className, SReference.class, Class.class, OperationContext.class);
+            Method m = resolveClass.getMethod("resolveForRole"+role+"In"+className, SReference.class, Class.class, IOperationContext.class);
 
 
             boolean success = (Boolean)m.invoke(null, reference, cls, operationContext);

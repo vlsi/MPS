@@ -65,11 +65,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private Component myPreviousFocusOwner = null;
   private PropertyChangeListener myFocusListener;
 
-  private OperationContext myOperationContext;
+  private IOperationContext myOperationContext;
   private EventRecorder myRecorder = null;
   private IdeMain myIde;
 
-  public AbstractEditorComponent(IdeMain ide, OperationContext operationContext) {
+  public AbstractEditorComponent(IdeMain ide, IOperationContext operationContext) {
     myIde = ide;
     addFocusListener(new FocusAdapter() {
       public void focusGained(FocusEvent e) {
@@ -228,11 +228,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     });
   }
 
-  public OperationContext getOperationContext() {
+  public IOperationContext getOperationContext() {
     return myOperationContext;
   }
 
-  public void setOperationContext(OperationContext operationContext) {
+  public void setOperationContext(IOperationContext operationContext) {
     myOperationContext = operationContext;
   }
 
@@ -510,6 +510,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public EditorCell findNodeCell(final SNode node) {
+    if(myRootCell == null) return null;
     if (myRootCell.getSNode() == node) {
       return myRootCell;
     }

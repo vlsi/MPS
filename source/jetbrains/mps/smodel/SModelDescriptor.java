@@ -39,10 +39,10 @@ public interface SModelDescriptor {
   File getModelFile();
 
   Set<SReference> findUsages(SNode node);
-  Set<SNode> findInstances(ConceptDeclaration concept, OperationContext operationContext);
+  Set<SNode> findInstances(ConceptDeclaration concept, IOperationContext operationContext);
   long timestamp();
 
-  VersionControl getVersionControl(OperationContext operationContext);
+  VersionControl getVersionControl(IOperationContext operationContext);
 
   void delete();
 }

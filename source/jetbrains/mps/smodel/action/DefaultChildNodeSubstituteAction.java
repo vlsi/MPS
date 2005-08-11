@@ -8,7 +8,7 @@ import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.OperationContext;
+import jetbrains.mps.smodel.IOperationContext;
 
 /**
  * Created by IntelliJ IDEA.
@@ -22,9 +22,9 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteItem
   private LinkDeclaration myLinkDeclaration;
   private SNode mySourceNode;
   private SNode myCurrentTargetNode;
-  private OperationContext myOperationContext;
+  private IOperationContext myOperationContext;
 
-  public DefaultChildNodeSubstituteAction(SNode parameterNode, SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, OperationContext operationContext) {
+  public DefaultChildNodeSubstituteAction(SNode parameterNode, SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, IOperationContext operationContext) {
     mySourceNode = sourceNode;
     myParameterNode = parameterNode;
     myLinkDeclaration = linkDeclaration;
@@ -44,7 +44,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteItem
     return myParameterNode;
   }
 
-  public OperationContext getOperationContext() {
+  public IOperationContext getOperationContext() {
     return myOperationContext;
   }
 

@@ -1,7 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.OperationContext;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 
@@ -17,10 +17,10 @@ public class EditorContext {
 
   private AbstractEditorComponent myNodeEditorComponent;
   private SModel myModel;
-  private OperationContext myOperationContext;
+  private IOperationContext myOperationContext;
   private EditorCell myContextCell;
 
-  public EditorContext(AbstractEditorComponent editorComponent, SModel model, OperationContext operationContext) {
+  public EditorContext(AbstractEditorComponent editorComponent, SModel model, IOperationContext operationContext) {
     myNodeEditorComponent = editorComponent;
     myModel = model;
     myOperationContext = operationContext;
@@ -34,7 +34,7 @@ public class EditorContext {
     return myModel;
   }
 
-  public OperationContext getOperationContext() {
+  public IOperationContext getOperationContext() {
     return myOperationContext;
   }
 

@@ -32,7 +32,7 @@ public class SModelRepository extends SModelAdapter {
     return ApplicationComponents.getInstance().getComponent(SModelRepository.class);
   }
 
-  public void refreshModels(boolean updateNodeStatuses, OperationContext operationContext) {
+  public void refreshModels(boolean updateNodeStatuses, IOperationContext operationContext) {
     for (SModelDescriptor m : myUIDToModelDescriptorMap.values()) {
       m.refresh();
     }
@@ -349,4 +349,7 @@ public class SModelRepository extends SModelAdapter {
     }
   }
 
+  public Set<ModelOwner> getOwners(SModelDescriptor modelDescriptor) {
+    return Collections.unmodifiableSet(myModelToOwnerMap.get(modelDescriptor));
+  }
 }

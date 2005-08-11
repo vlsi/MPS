@@ -10,7 +10,7 @@ import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.IModelGenerator;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.OperationContext;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.TemplateDeclaration;
 import jetbrains.mps.transformation.TLBase.TemplateSwitch;
@@ -69,5 +69,5 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   ITypeChecker getTypeChecker();
 
-  OperationContext getOperationContext();
+  IOperationContext getOperationContext();
 }

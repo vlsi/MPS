@@ -45,7 +45,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     if (!(node instanceof ConceptDeclaration)) return;
 
     final IdeMain ide = context.get(IdeMain.class);
-    final OperationContext operationContext = context.get(OperationContext.class);
+    final IOperationContext operationContext = context.get(IOperationContext.class);
 
     final String editorName = node.getName() + "_Editor";
     SModel languageStructure = node.getModel();

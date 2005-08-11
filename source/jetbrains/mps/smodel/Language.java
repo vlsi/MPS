@@ -3,6 +3,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.generator.ContextUtil;
+import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
@@ -47,7 +48,7 @@ public class Language implements ModelLocator, ModelOwner {
     return null;
   }
 
-  public OperationContext getLanguageOperationContext() {
+  public IOperationContext getLanguageOperationContext() {
     return myOperationContext;
   }
 
@@ -78,11 +79,11 @@ public class Language implements ModelLocator, ModelOwner {
     return myLanguageDescriptor;
   }
 
-  public LanguageDescriptor getCopyOfLanguageDescriptor(SModel modelToCopy, OperationContext operationContext) {
+  public LanguageDescriptor getCopyOfLanguageDescriptor(SModel modelToCopy, IOperationContext operationContext) {
     return ContextUtil.copyNode(getLanguageDescriptor(), modelToCopy, operationContext);
   }
 
-  public void setLanguageDescriptor(LanguageDescriptor newDescriptor, OperationContext operationContext) {
+  public void setLanguageDescriptor(LanguageDescriptor newDescriptor, IOperationContext operationContext) {
     myModelDescriptor.getSModel().deleteRoot(getLanguageDescriptor());
     myLanguageDescriptor = ContextUtil.copyNode(newDescriptor, myModelDescriptor.getSModel(), operationContext);
     myModelDescriptor.getSModel().addRoot(getLanguageDescriptor());
@@ -215,7 +216,7 @@ public class Language implements ModelLocator, ModelOwner {
   public SModelDescriptor getEditorModelDescriptor(String stereotype) {
     if (stereotype == null) stereotype = NULL_STEREOTYPE;
     String editorUID = getEditorUID(stereotype);
-    if(editorUID == null) {
+    if (editorUID == null) {
       return null;
     }
     return getModelDescriptorByUID(SModelUID.fromString(editorUID));
@@ -389,5 +390,102 @@ public class Language implements ModelLocator, ModelOwner {
     }
   }
 
+  //
+  // language - related utilities
+  //
 
+  public static LanguageAspectStatus getLanguageAspectStatus(SModelDescriptor modelDescriptor) {
+    Set<ModelOwner> owners = SModelRepository.getInstance().getOwners(modelDescriptor);
+    for (ModelOwner modelOwner : owners) {
+      if (modelOwner instanceof Language) {
+        Language language = (Language) modelOwner;
+        if (modelDescriptor == language.getStructureModelDescriptor()) {
+          return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.STRUCTURE);
+        }
+        if (modelDescriptor == language.getTypesystemModelDescriptor()) {
+          return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.TYPESYSTEM);
+        }
+        if (modelDescriptor == language.getActionsModelDescriptor()) {
+          return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.ACTIONS);
+        }
+        
+        Set<SModelDescriptor> editorDescriptors = language.getEditorDescriptors();
+        if (editorDescriptors.contains(modelDescriptor)) {
+          return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.EDITOR);
+        }
+
+        Set<Generator> generators = language.getGenerators();
+        for (Generator generator : generators) {
+          SModelUID templatesModelUID = generator.getTemplatesModelUID();
+          if (modelDescriptor.getModelUID().equals(templatesModelUID)) {
+            return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.GENERATOR_TEMPLATES);
+          }
+        }
+        return new LanguageAspectStatus(null, LanguageAspectStatus.AspectKind.NONE);
+      }
+    }
+    return new LanguageAspectStatus(null, LanguageAspectStatus.AspectKind.NONE);
+  }
+
+  public static class LanguageAspectStatus implements IStatus {
+    public static enum AspectKind {
+      STRUCTURE,EDITOR,ACTIONS,TYPESYSTEM,GENERATOR_TEMPLATES,NONE
+    }
+
+    private Language myLanguage;
+    private AspectKind myAspectKind;
+
+    public LanguageAspectStatus(Language language, AspectKind aspectKind) {
+      myLanguage = language;
+      myAspectKind = aspectKind;
+    }
+
+    public boolean isOk() {
+      return true;
+    }
+
+    public boolean isError() {
+      return false;
+    }
+
+    public Code getCode() {
+      return Code.OK;
+    }
+
+    public String getMessage() {
+      return "";
+    }
+
+    public Object getUserObject() {
+      return null;
+    }
+
+    public Language getLanguage() {
+      return myLanguage;
+    }
+
+    public boolean isLanguageAspect() {
+      return myAspectKind != LanguageAspectStatus.AspectKind.NONE;
+    }
+
+    public boolean isStructure() {
+      return myAspectKind == LanguageAspectStatus.AspectKind.STRUCTURE;
+    }
+
+    public boolean isEditor() {
+      return myAspectKind == LanguageAspectStatus.AspectKind.EDITOR;
+    }
+
+    public boolean isTypesystem() {
+      return myAspectKind == LanguageAspectStatus.AspectKind.TYPESYSTEM;
+    }
+
+    public boolean isActions() {
+      return myAspectKind == LanguageAspectStatus.AspectKind.ACTIONS;
+    }
+
+    public boolean isGeneratorTemplates() {
+      return myAspectKind == LanguageAspectStatus.AspectKind.GENERATOR_TEMPLATES;
+    }
+  }
 }

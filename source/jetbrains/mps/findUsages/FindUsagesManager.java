@@ -1,7 +1,6 @@
 package jetbrains.mps.findUsages;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.progress.ProgressMonitor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
@@ -35,7 +34,7 @@ public class FindUsagesManager {
     }
   }
 
-  public Set<SNode> findInstances(ConceptDeclaration concept, Scope scope, ProgressMonitor progress, OperationContext operationContext) {
+  public Set<SNode> findInstances(ConceptDeclaration concept, Scope scope, ProgressMonitor progress, IOperationContext operationContext) {
     Set<SNode> result = new HashSet<SNode>();
     try {
       if (progress == null) progress = ProgressMonitor.NULL_PROGRESS_MONITOR;
@@ -58,7 +57,7 @@ public class FindUsagesManager {
     return findUsages(node, globalScope(), progress);
   }
 
-  public Set<SNode> findInstances(ConceptDeclaration concept, ProgressMonitor progress, OperationContext operationContext){
+  public Set<SNode> findInstances(ConceptDeclaration concept, ProgressMonitor progress, IOperationContext operationContext){
     return findInstances(concept, globalScope(), progress, operationContext);
   }
 
@@ -88,7 +87,7 @@ public class FindUsagesManager {
     });
   }
 
-  public static List<ConceptDeclaration> allSubtypes(ConceptDeclaration conceptDeclaration, OperationContext operationContext) {
+  public static List<ConceptDeclaration> allSubtypes(ConceptDeclaration conceptDeclaration, IOperationContext operationContext) {
     if (ourCache.get(conceptDeclaration) != null) return Collections.unmodifiableList(ourCache.get(conceptDeclaration));
 
     List<ConceptDeclaration> list = new LinkedList<ConceptDeclaration>();

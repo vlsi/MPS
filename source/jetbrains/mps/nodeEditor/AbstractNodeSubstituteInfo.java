@@ -1,7 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.OperationContext;
+import jetbrains.mps.smodel.IOperationContext;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -26,7 +26,7 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
     return myEditorContext;
   }
 
-  public OperationContext getOperationContext() {
+  public IOperationContext getOperationContext() {
     return myEditorContext.getOperationContext();
   }
 
