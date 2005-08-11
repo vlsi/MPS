@@ -253,7 +253,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   }
 
   public VersionControl getVersionControl(OperationContext operationContext) {
-    VersionControlManager vcm = operationContext.getProject().getComponent(VersionControlManager.class);
+    VersionControlManager vcm = operationContext.getComponent(VersionControlManager.class);
     return vcm.createVCSFor(this);
   }
 

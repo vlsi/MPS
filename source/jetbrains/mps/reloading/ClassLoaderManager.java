@@ -1,10 +1,7 @@
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.util.NodeNameUtil;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.IdeMain;
-
-import java.lang.ClassLoader;
+import jetbrains.mps.util.NodeNameUtil;
 
 /**
  * @author Kostik
@@ -36,7 +33,7 @@ public class ClassLoaderManager {
       if (ideMain.getProject() == null) {
         myClassLoader = new MyClassLoader("classes");
       } else {
-        myClassLoader = new MyClassLoader(ideMain.getProject().getRootManager().getClassPath());
+        myClassLoader = new MyClassLoader(ideMain.getProject().getRootManager().getClassPath().get(0));
       }
     }
     return myClassLoader;
