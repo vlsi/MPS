@@ -1078,8 +1078,15 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         relayout();
       } else {
 
-        EditorCell selectedCell = editorContext.getNodeEditorComponent().getSelectedCell();
-        String cellId = (String)selectedCell.getUserObject(EditorCell.CELL_ID);
+        String cellId = null;
+
+        if (editorContext != null) {
+          AbstractEditorComponent nodeEditorComponent = editorContext.getNodeEditorComponent();
+          if (nodeEditorComponent != null) {
+            EditorCell selectedCell = nodeEditorComponent.getSelectedCell();
+            if (selectedCell != null) cellId = (String)selectedCell.getUserObject(EditorCell.CELL_ID);
+          }
+        }
 
         rebuildEditorContent();
 

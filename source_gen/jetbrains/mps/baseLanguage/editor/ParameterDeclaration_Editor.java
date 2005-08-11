@@ -48,6 +48,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
     ParameterDeclaration_NameCellActions.setCellActions(editorCell, node, context);
+    editorCell.addKeyMap(new _ParameterDeclaration_KeyMap());
     editorCell.putUserObject(EditorCell.CELL_ID, "1075302295737");
     return editorCell;
   }
