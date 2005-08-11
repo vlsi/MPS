@@ -93,7 +93,7 @@ public class FindUsagesManager {
 
     List<ConceptDeclaration> list = new LinkedList<ConceptDeclaration>();
 
-    FindUsagesManager manager = operationContext.getProject().getComponent(FindUsagesManager.class);
+    FindUsagesManager manager = operationContext.getComponent(FindUsagesManager.class);
 
     Set<SReference> usages = manager.findUsages(conceptDeclaration, new FilterScope(manager.globalScope()) {
       protected boolean accept(SModelDescriptor descriptor) {

@@ -1,7 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.OperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -39,14 +38,9 @@ public class EditorContext {
     return myOperationContext;
   }
 
-  public MPSProject getProject() {
-    return myOperationContext.getProject();
-  }
-
   public EditorCell createNodeCell(SNode node) {
     return myOperationContext.getComponent(EditorManager.class).createEditorCell(this, node);
   }
-
 
   public Object createMemento() {
     return new Memento(this);

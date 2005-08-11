@@ -856,14 +856,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     root.getModel().addRoot(copy[0]);
     selectNode(null);
     myRecorder = new EventRecorder();
-    myOperationContext.getProject().getComponent(InspectorPane.class).getInspector().setEventRecorder(myRecorder);
+    myOperationContext.getComponent(InspectorPane.class).getInspector().setEventRecorder(myRecorder);
     myRecorder.startRecording(copy[0], root, scriptName);
   }
 
   protected void stopRecordingIfPossible() {
     if (myRecorder != null) {
       myRecorder.stopRecording();
-      myOperationContext.getProject().getComponent(InspectorPane.class).getInspector().setEventRecorder(null);
+      myOperationContext.getComponent(InspectorPane.class).getInspector().setEventRecorder(null);
       myRecorder = null;
     }
   }

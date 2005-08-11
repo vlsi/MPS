@@ -23,16 +23,12 @@ public abstract class AbstractModelGenerator implements IModelGenerator {
     myOperationContext = operationContext;
   }
 
-  public MPSProject getProject() {
-    return myOperationContext.getProject();
-  }
-
   public OperationContext getOperationContext() {
     return myOperationContext;
   }
 
   public MessageView getMessageView() {
-    return getProject().getComponent(MessageView.class);
+    return getOperationContext().getComponent(MessageView.class);
   }
 
   public SModel getSourceModel() {

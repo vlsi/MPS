@@ -56,7 +56,7 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
     if (getNode() == null || getNode().isDeleted()) {
       return EditorCell_Constant.create(getEditorContext(), null, "<no inspect info>", true);
     }
-    return getOperationContext().getProject().getComponent(EditorManager.class).createInspectedCell(getEditorContext(), getNode());
+    return getOperationContext().getComponent(EditorManager.class).createInspectedCell(getEditorContext(), getNode());
   }
 
   public SNode getInspectedNode() {

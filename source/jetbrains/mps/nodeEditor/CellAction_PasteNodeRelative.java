@@ -56,7 +56,7 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
       PasteUtil.pasteRelative(anchorNode, node, false, operationContext);
       anchorNode = node;
     }
-    EditorsPane editorsPane = context.getProject().getComponent(EditorsPane.class);
+    EditorsPane editorsPane = context.getOperationContext().getComponent(EditorsPane.class);
     AbstractEditorComponent editor = editorsPane.getCurrentEditor();
     editor.rebuildEditorContent();
   }
