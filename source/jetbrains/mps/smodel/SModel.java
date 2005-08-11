@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.ITypeChecker;
 import jetbrains.mps.typesystem.TSStatus;
 import jetbrains.mps.typesystem.TypeCheckerAccess;
+import jetbrains.mps.nodeEditor.EditorContext;
 
 import java.util.*;
 
@@ -243,9 +244,9 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  private void fireSModelChangedInCommandEvent(List<SModelEvent> events) {
+  private void fireSModelChangedInCommandEvent(List<SModelEvent> events, EditorContext editorContext) {
     for (SModelCommandListener l : copyCommandListeners()) {
-      l.modelChangedInCommand(events);
+      l.modelChangedInCommand(events, editorContext);
     }
   }
 
@@ -706,7 +707,8 @@ public class SModel implements Iterable<SNode> {
 
     public void commandFinished(CommandEvent event) {
       if (myEvents.size() > 0) {
-        fireSModelChangedInCommandEvent(new ArrayList<SModelEvent>(myEvents));
+        EditorContext editorContext  = event.getEditorContext();
+        fireSModelChangedInCommandEvent(new ArrayList<SModelEvent>(myEvents), editorContext);
       }
     }
 

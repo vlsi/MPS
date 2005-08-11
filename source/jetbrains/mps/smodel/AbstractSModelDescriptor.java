@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.event.SModelsMulticaster;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.VersionControlManager;
 import jetbrains.mps.vcs.model.VersionControl;
+import jetbrains.mps.nodeEditor.EditorContext;
 
 import java.util.*;
 import java.io.File;
@@ -39,7 +40,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
   {
     this.addSModelCommandListener(new SModelCommandListener() {
-      public void modelChangedInCommand(List<SModelEvent> events) {
+      public void modelChangedInCommand(List<SModelEvent> events, EditorContext editorContext) {
         updateNodeStatuses();
         ApplicationComponents.getInstance().getComponent(IdeMain.class).getEditorsPane().repaint();
       }

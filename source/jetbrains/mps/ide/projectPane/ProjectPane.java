@@ -16,6 +16,7 @@ import jetbrains.mps.project.MPSProjectCommandListener;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.nodeEditor.EditorContext;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -609,7 +610,7 @@ public class ProjectPane extends JComponent {
       public MyModelListener() {
       }
 
-      public void modelChangedInCommand(final List<SModelEvent> events) {
+      public void modelChangedInCommand(final List<SModelEvent> events, EditorContext editorContext) {
         if (EventUtil.isDramaticalChange(events)) {
           myTree.runRebuildAction(new Runnable() {
             public void run() {

@@ -4,6 +4,7 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.debug.DebugContext;
 
 import javax.swing.*;
 import javax.swing.border.Border;

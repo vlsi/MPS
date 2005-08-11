@@ -475,8 +475,12 @@
             <node role="lValue" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1123686641053">
               <link role="variableDeclaration" targetNodeId="1123686625798" />
             </node>
-            <node role="rValue" type="jetbrains.mps.baseLanguage.ParameterReference" id="1123686650306">
-              <link role="variableDeclaration" targetNodeId="1123686600435" />
+            <node role="rValue" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1123754350342">
+              <link role="baseMethodDeclaration" targetNodeId="1123686657150" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1123754350343" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1123754365250">
+                <link role="variableDeclaration" targetNodeId="1123686600435" />
+              </node>
             </node>
           </node>
         </node>

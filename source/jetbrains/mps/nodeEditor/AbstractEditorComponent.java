@@ -488,6 +488,17 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     changeSelection(findNodeCell(node));
   }
 
+  public void selectRefCell(SReference reference, String id) {
+    SNode sourceNode = reference.getSourceNode();
+    EditorCell cell;
+    if (id == null) cell = findNodeCell(sourceNode);
+    else {
+      cell = findNodeCell(sourceNode, id);
+      if (cell == null) cell = findNodeCell(sourceNode);
+    }
+    changeSelection(cell);
+  }
+
   public void selectFirstEditableCellOf(final SNode node) {
     EditorCell cell = findNodeCell(node);
     EditorCell editable = findEditableCell(cell);
@@ -1061,11 +1072,15 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private class MyModelListener implements SModelCommandListener {
-    public void modelChangedInCommand(List<SModelEvent> events) {
+    public void modelChangedInCommand(List<SModelEvent> events, EditorContext editorContext) {
       if (!EventUtil.isDramaticalChange(events)) {
         myRootCell.updateView();
         relayout();
       } else {
+
+        EditorCell selectedCell = editorContext.getNodeEditorComponent().getSelectedCell();
+        String cellId = (String)selectedCell.getUserObject(EditorCell.CELL_ID);
+
         rebuildEditorContent();
 
         SModelEvent lastAdd = null;
@@ -1104,7 +1119,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
           if (lastAdd instanceof SModelReferenceEvent) {
             SModelReferenceEvent re = (SModelReferenceEvent) lastAdd;
-            selectNode(re.getReference().getSourceNode());
+            //selectNode(re.getReference().getSourceNode());
+            selectRefCell(re.getReference(), cellId);
             return;
           }
 
@@ -1139,7 +1155,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
           if (lastRemove instanceof SModelReferenceEvent) {
             SModelReferenceEvent re = (SModelReferenceEvent) lastRemove;
-            selectNode(re.getReference().getSourceNode());
+            //selectNode(re.getReference().getSourceNode());
+            selectRefCell(re.getReference(), cellId);
             return;
           }
         }
