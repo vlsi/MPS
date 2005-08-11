@@ -484,6 +484,12 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1123760548335">
+          <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1123760549775" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1123760423269">
+          <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1123760423270" />
+        </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1123686583387" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1123686600435">
