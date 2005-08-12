@@ -498,17 +498,18 @@ public class ProjectPane extends JComponent {
       myLabel = label;
     }
 
-    public Icon getIcon(boolean expanded) {
-      if (myLabel != null) {
-        if (myLabel.startsWith("<html><b>Editor</b>") || myLabel.startsWith("Editor")) {
+    public Icon getIcon(boolean expanded) {    
+      Language.LanguageAspectStatus languageAspectStatus = Language.getLanguageAspectStatus(myModelDescriptor);
+      if (languageAspectStatus.isLanguageAspect()) {
+        if (languageAspectStatus.isEditor()) {
           return Icons.EDITOR_MODEL_ICON;
-        } else if (myLabel.startsWith("Structure")) {
+        } else if (languageAspectStatus.isStructure()) {
           return Icons.STRUCTURE_MODEL_ICON;
-        } else if (myLabel.startsWith("Templates")) {
+        } else if (languageAspectStatus.isGeneratorTemplates()) {
           return Icons.TEMPLATES_MODEL_ICON;
-        } else if (myLabel.startsWith("Actions")) {
+        } else if (languageAspectStatus.isActions()) {
           return Icons.ACTIONS_MODEL_ICON;
-        } else if (myLabel.startsWith("Typesystem")) {
+        } else if (languageAspectStatus.isTypesystem()) {
           return Icons.TYPESYSTEM_MODEL_ICON;
         }
       } else if (myModelDescriptor.getStereotype() != null &&
