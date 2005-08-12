@@ -8,6 +8,9 @@ import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.*;
+import jetbrains.mps.smodel.event.SModelsAdapter;
+import jetbrains.mps.smodel.event.SModelsListener;
+import jetbrains.mps.smodel.event.SModelsMulticaster;
 import jetbrains.mps.util.*;
 
 import java.io.File;
@@ -35,6 +38,41 @@ public class Language implements ModelLocator, ModelOwner {
   private static final String NULL_STEREOTYPE = SModelStereotype.NONE;
   private boolean myRegisteredInFindUsagesManager;
 
+  private SModelsListener myModelsListener = new SModelsAdapter() {
+    public void modelWillBeDeleted(SModelDescriptor modelDescriptor) {
+      LanguageAspectStatus status = getLanguageAspectStatus(Language.this, modelDescriptor);
+      if (status.isLanguageAspect()) {
+        LanguageDescriptor languageDescriptor = getLanguageDescriptor();
+        if (status.isStructure()) {
+          languageDescriptor.removeChild(languageDescriptor.getStructureModel());
+        } else if (status.isEditor()) {
+          Iterator<Editor> iterator = languageDescriptor.editors();
+          while (iterator.hasNext()) {
+            Editor editor = iterator.next();
+            String name = editor.getEditorModel().getName();
+            if (EqualUtil.equals(name,modelDescriptor.getModelUID().toString())) {
+              languageDescriptor.removeChild(editor);
+              break;
+            }
+          }
+        } else if (status.isTypesystem()) {
+          languageDescriptor.removeChild(languageDescriptor.getTypeSystem());
+        } else if (status.isActions()) {
+          languageDescriptor.removeChild(languageDescriptor.getActionsModel());
+        } else if (status.isGeneratorTemplates()) {
+          Iterator<jetbrains.mps.projectLanguage.Generator> iterator = languageDescriptor.generators();
+          while (iterator.hasNext()) {
+            jetbrains.mps.projectLanguage.Generator generator =  iterator.next();
+            if (generator.getTemplatesModel().getName().equals(modelDescriptor.getModelUID().toString())) {
+              languageDescriptor.removeChild(generator);
+              break;
+            }
+          }
+        }
+      }
+    }
+  };
+
   public Language(File descriptorFile) {
     myDescriptorFile = descriptorFile;
     myOperationContext = new LanguageModuleOperationContext(this);
@@ -42,6 +80,12 @@ public class Language implements ModelLocator, ModelOwner {
     addLanguageListener(myEventTranslator);
     readLanguageModelDescriptors();
     updateLastGenerationTime();
+
+    SModelsMulticaster.getInstance().addSModelsListener(myModelsListener);
+  }
+
+  public void dispose() {
+    SModelsMulticaster.getInstance().removeSModelsListener(myModelsListener);
   }
 
   public ModelOwner getParentModelOwner() {
@@ -390,38 +434,41 @@ public class Language implements ModelLocator, ModelOwner {
     }
   }
 
-  //
+  // ----------------------------
   // language - related utilities
-  //
+  // ----------------------------
 
   public static LanguageAspectStatus getLanguageAspectStatus(SModelDescriptor modelDescriptor) {
     Set<ModelOwner> owners = SModelRepository.getInstance().getOwners(modelDescriptor);
     for (ModelOwner modelOwner : owners) {
       if (modelOwner instanceof Language) {
-        Language language = (Language) modelOwner;
-        if (modelDescriptor == language.getStructureModelDescriptor()) {
-          return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.STRUCTURE);
-        }
-        if (modelDescriptor == language.getTypesystemModelDescriptor()) {
-          return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.TYPESYSTEM);
-        }
-        if (modelDescriptor == language.getActionsModelDescriptor()) {
-          return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.ACTIONS);
-        }
-        
-        Set<SModelDescriptor> editorDescriptors = language.getEditorDescriptors();
-        if (editorDescriptors.contains(modelDescriptor)) {
-          return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.EDITOR);
-        }
+        return getLanguageAspectStatus((Language) modelOwner, modelDescriptor);
+      }
+    }
+    return new LanguageAspectStatus(null, LanguageAspectStatus.AspectKind.NONE);
+  }
 
-        Set<Generator> generators = language.getGenerators();
-        for (Generator generator : generators) {
-          SModelUID templatesModelUID = generator.getTemplatesModelUID();
-          if (modelDescriptor.getModelUID().equals(templatesModelUID)) {
-            return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.GENERATOR_TEMPLATES);
-          }
-        }
-        return new LanguageAspectStatus(null, LanguageAspectStatus.AspectKind.NONE);
+  public static LanguageAspectStatus getLanguageAspectStatus(Language language, SModelDescriptor modelDescriptor) {
+    if (modelDescriptor == language.getStructureModelDescriptor()) {
+      return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.STRUCTURE);
+    }
+    if (modelDescriptor == language.getTypesystemModelDescriptor()) {
+      return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.TYPESYSTEM);
+    }
+    if (modelDescriptor == language.getActionsModelDescriptor()) {
+      return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.ACTIONS);
+    }
+
+    Set<SModelDescriptor> editorDescriptors = language.getEditorDescriptors();
+    if (editorDescriptors.contains(modelDescriptor)) {
+      return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.EDITOR);
+    }
+
+    Set<Generator> generators = language.getGenerators();
+    for (Generator generator : generators) {
+      SModelUID templatesModelUID = generator.getTemplatesModelUID();
+      if (modelDescriptor.getModelUID().equals(templatesModelUID)) {
+        return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.GENERATOR_TEMPLATES);
       }
     }
     return new LanguageAspectStatus(null, LanguageAspectStatus.AspectKind.NONE);

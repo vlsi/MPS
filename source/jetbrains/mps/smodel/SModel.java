@@ -608,6 +608,13 @@ public class SModel implements Iterable<SNode> {
     myIsExternallyResolved = externallyResolved;
   }
 
+  public void clear() {
+    List<SNode> roots = new LinkedList<SNode>(myRoots);
+    for (SNode root : roots) {
+      root.delete();
+    }
+  }
+
   /*package*/
   static class ImportElement {
     private SModelUID myModelDescriptor;

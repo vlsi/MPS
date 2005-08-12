@@ -105,7 +105,7 @@ public class ProjectPane extends JComponent {
 
       public void mousePressed(MouseEvent e) {
         if (e.getButton() == MouseEvent.BUTTON3) {
-          TreePath path = myTree.getClosestPathForLocation(e.getX(), e.getY());
+//          TreePath path = myTree.getClosestPathForLocation(e.getX(), e.getY());
           //myTree.setSelectionPath(path);
           //myTree.addSelectionPath(path);
         }
@@ -358,12 +358,15 @@ public class ProjectPane extends JComponent {
   }
 
   private class ProjectModelsTreeNode extends MPSTree.TextTreeNode {
+    private IOperationContext myOperationContext;
+
     public ProjectModelsTreeNode(IOperationContext operationContext) {
-      super("Project Models");
+      this(operationContext, "Project");
     }
 
-    public ProjectModelsTreeNode(IOperationContext operationContext, String name) {
-      super(NameUtil.capitalize(name) + " Models");
+    public ProjectModelsTreeNode(IOperationContext operationContext, String prefix) {
+      super(NameUtil.capitalize(prefix) + " Models");
+      myOperationContext = operationContext;
     }
 
     public Icon getIcon(boolean expanded) {
@@ -372,7 +375,7 @@ public class ProjectPane extends JComponent {
 
     protected JPopupMenu getPopupMenu() {
       JPopupMenu result = new JPopupMenu();
-      ActionManager.instance().getGroup(PROJECT_PANE_MODELS_ACTIONS).add(result, new ActionContext(myIDE, myIDE.getProjectOperationContext()));
+      ActionManager.instance().getGroup(PROJECT_PANE_MODELS_ACTIONS).add(result, new ActionContext(myIDE, myOperationContext));
       return result;
     }
   }
@@ -392,6 +395,10 @@ public class ProjectPane extends JComponent {
     private SNodeProxy myNodeProxy;
     private String myRole;
 
+    public SNodeTreeNode(SNode node, IOperationContext operationContext) {
+      this(node, null, operationContext);
+    }
+
     public SNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
       super(operationContext);
       LOG.assertLog(node != null);
@@ -403,12 +410,8 @@ public class ProjectPane extends JComponent {
     protected JPopupMenu getPopupMenu() {
       JPopupMenu result = new JPopupMenu();
       List<SNode> selection = getNormalizedSelectedNodes(myTree);
-      ActionManager.instance().getGroup(PROJECT_PANE_NODE_ACTIONS).add(result, new ActionContext(myIDE, myIDE.getProjectOperationContext(), getSNode(), selection));
+      ActionManager.instance().getGroup(PROJECT_PANE_NODE_ACTIONS).add(result, new ActionContext(myIDE, getOperationContext(), getSNode(), selection));
       return result;
-    }
-
-    public SNodeTreeNode(SNode node, IOperationContext operationContext) {
-      this(node, null, operationContext);
     }
 
     public int getToggleClickCount() {
@@ -459,7 +462,7 @@ public class ProjectPane extends JComponent {
       StringBuffer output = new StringBuffer("<html>");
 
       if (myRole != null) {
-        output.append("<b>" + myRole + "</b> : ");
+        output.append("<b>").append(myRole).append("</b> : ");
       }
 
       if (getSNode() != null) {
@@ -474,7 +477,7 @@ public class ProjectPane extends JComponent {
           status = (IStatus) getSNode().getUserObject(SNode.CHILDREN_ERROR_STATUS);
           if (status != null && status.isError()) {
             output.append("<font color=\"red\">");
-            output.append(" (" + status.getMessage() + ")");
+            output.append(" (").append(status.getMessage()).append(")");
           }
         }
       }
@@ -713,8 +716,11 @@ public class ProjectPane extends JComponent {
   }
 
   private class ProjectLanguagesTreeNode extends MPSTree.TextTreeNode {
+    private IOperationContext myOperationContext;
+
     private ProjectLanguagesTreeNode(IOperationContext operationContext) {
       super("Project Languages");
+      myOperationContext = operationContext;
     }
 
     public Icon getIcon(boolean expanded) {
@@ -723,7 +729,7 @@ public class ProjectPane extends JComponent {
 
     protected JPopupMenu getPopupMenu() {
       JPopupMenu result = new JPopupMenu();
-      ActionManager.instance().getGroup(PROJECT_PANE_PROJECT_LANGUAGES_ACTIONS).add(result, new ActionContext(myIDE, myIDE.getProjectOperationContext()));
+      ActionManager.instance().getGroup(PROJECT_PANE_PROJECT_LANGUAGES_ACTIONS).add(result, new ActionContext(myIDE, myOperationContext));
       return result;
     }
   }
