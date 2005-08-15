@@ -442,7 +442,8 @@ public class Language implements ModelLocator, ModelOwner {
     Set<ModelOwner> owners = SModelRepository.getInstance().getOwners(modelDescriptor);
     for (ModelOwner modelOwner : owners) {
       if (modelOwner instanceof Language) {
-        return getLanguageAspectStatus((Language) modelOwner, modelDescriptor);
+        LanguageAspectStatus languageAspectStatus = getLanguageAspectStatus((Language) modelOwner, modelDescriptor);
+        if (languageAspectStatus.isLanguageAspect()) return languageAspectStatus;
       }
     }
     return new LanguageAspectStatus(null, LanguageAspectStatus.AspectKind.NONE);
