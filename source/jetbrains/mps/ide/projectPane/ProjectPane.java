@@ -498,7 +498,7 @@ public class ProjectPane extends JComponent {
       myLabel = label;
     }
 
-    public Icon getIcon(boolean expanded) {    
+    public Icon getIcon(boolean expanded) {
       Language.LanguageAspectStatus languageAspectStatus = Language.getLanguageAspectStatus(myModelDescriptor);
       if (languageAspectStatus.isLanguageAspect()) {
         if (languageAspectStatus.isEditor()) {
@@ -516,7 +516,7 @@ public class ProjectPane extends JComponent {
               myModelDescriptor.getStereotype().equals(SModelStereotype.TEMPLATES)) {
         return Icons.TEMPLATES_MODEL_ICON;
       }
-      return Icons.MODEL_ICON;
+      return Icons.MODEL_ICON;   //todo library models
     }
 
     protected JPopupMenu getPopupMenu() {
