@@ -46,13 +46,15 @@ public abstract class SNode implements Cloneable {
 
     LOG.assertLog (myParent == null || myParent.myModel == newModel, "CHANGE MODEL: parent must be NULL or must have the same model as your destination model");
 
+    myModel.removeNodeId(myId);
+    myModel = newModel;
+    myModel.setNodeId(myId, this);
+
     for (SNode child : myChildren) {
       child.changeModel(newModel);
     }
 
-    myModel.removeNodeId(myId);
-    myModel = newModel;
-    myModel.setNodeId(myId, this);
+
 
 
   }

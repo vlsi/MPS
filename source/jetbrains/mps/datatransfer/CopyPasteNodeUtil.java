@@ -34,7 +34,7 @@ public class CopyPasteNodeUtil {
   private static HashMap<SNode, SNode> ourSourceNodesToNewNodes = new HashMap<SNode, SNode>();
   private static HashSet<SReference> ourReferences = new HashSet<SReference>();
 
-  public static SNode copyNode(SNode sourceNode) {
+  public static SNode copyNodeIn(SNode sourceNode) {
     SModel model = sourceNode.getModel();
     model.setLoading(true);
     ourSourceNodesToNewNodes.clear();
@@ -45,7 +45,7 @@ public class CopyPasteNodeUtil {
     return targetNode;
   }
 
-  public static SNode copyNodeFromClipboard(SNode node, SModel model) {
+  public static SNode copyNodeOut(SNode node, SModel model) {
     model.setLoading(true);
     ourSourceNodesToNewNodes.clear();
     ourReferences.clear();

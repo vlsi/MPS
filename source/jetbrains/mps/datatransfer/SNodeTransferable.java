@@ -75,7 +75,7 @@ public class SNodeTransferable implements Transferable {
   private void saveNodes(List<SNode> nodes) {
     mySNodes.clear();
     for (SNode node : nodes) {
-      SNode newNode = CopyPasteNodeUtil.copyNode(node);
+      SNode newNode = CopyPasteNodeUtil.copyNodeIn(node);
       mySNodes.add(newNode);
     }
   }
@@ -83,7 +83,7 @@ public class SNodeTransferable implements Transferable {
   public List<SNode> createNodes(SModel sModel) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode node : mySNodes) {
-      SNode newNode = CopyPasteNodeUtil.copyNodeFromClipboard(node, sModel);
+      SNode newNode = CopyPasteNodeUtil.copyNodeOut(node, sModel);
       result.add(newNode);
     }
     return result;
