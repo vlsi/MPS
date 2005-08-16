@@ -22,7 +22,7 @@ import java.util.Iterator;
 public class CloneModelDialog extends BaseNodeDialog {
 
   private static final DialogDimensions ourDefaultDialogSettings = new DialogDimensions(100, 100, 500, 400);
-  private NewModelProperties myCloneModelProperties;
+  private CloneModelProperties myCloneModelProperties;
 
   private SModel myProjectModel;
   private IdeMain myIde;
@@ -61,7 +61,7 @@ public class CloneModelDialog extends BaseNodeDialog {
       public Object onRun() {
 
         myProjectModel.addLanguage(getOperationContext().getLanguage("jetbrains.mps.projectLanguage"));
-        myCloneModelProperties = NewModelProperties.newInstance(myProjectModel);
+        myCloneModelProperties = CloneModelProperties.newInstance(myProjectModel);
         myProjectModel.addRoot(myCloneModelProperties);
 
         String longName = mySModel.getLongName();
