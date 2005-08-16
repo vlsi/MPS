@@ -14,6 +14,49 @@ public class FindUsagesManager {
     myProject = project;
   }
 
+  //---
+  //caches
+  //---
+  private HashMap<ConceptDeclaration, HashMap<SModelDescriptor, HashSet<ConceptDeclaration>>> myConceptsToKnownDescendantsInModelDescriptors = new HashMap<ConceptDeclaration, HashMap<SModelDescriptor, HashSet<ConceptDeclaration>>>();
+  //--
+
+
+  public void addDescendant(ConceptDeclaration ancestor, ConceptDeclaration descendant) {
+    HashMap<SModelDescriptor, HashSet<ConceptDeclaration>> knownDescendantsInModelDescriptors = myConceptsToKnownDescendantsInModelDescriptors.get(ancestor);
+    if (knownDescendantsInModelDescriptors == null) {
+      knownDescendantsInModelDescriptors = new HashMap<SModelDescriptor, HashSet<ConceptDeclaration>>();
+      myConceptsToKnownDescendantsInModelDescriptors.put(ancestor, knownDescendantsInModelDescriptors);
+    }
+    SModelDescriptor model = descendant.getModel().getModelDescriptor();
+    HashSet<ConceptDeclaration> descendantsKnownInModel =  knownDescendantsInModelDescriptors.get(model);
+    if (descendantsKnownInModel == null) {
+      descendantsKnownInModel = new HashSet<ConceptDeclaration>();
+      knownDescendantsInModelDescriptors.put(model, descendantsKnownInModel);
+    }
+    descendantsKnownInModel.add(descendant);
+  }
+
+  public Set<ConceptDeclaration> findDescendants(ConceptDeclaration node) {
+    HashMap<SModelDescriptor, HashSet<ConceptDeclaration>> knownDescendantsInModelDescriptors = myConceptsToKnownDescendantsInModelDescriptors.get(node);
+    if (knownDescendantsInModelDescriptors == null) {
+      knownDescendantsInModelDescriptors = new HashMap<SModelDescriptor, HashSet<ConceptDeclaration>>();
+      myConceptsToKnownDescendantsInModelDescriptors.put(node, knownDescendantsInModelDescriptors);
+    }
+    Scope scope = globalScope();
+    Set<ConceptDeclaration> result = new HashSet<ConceptDeclaration>();
+    List<SModelDescriptor> models = scope.getModels();
+    for (SModelDescriptor model : models) {
+      HashSet<ConceptDeclaration> descendantsKnownInModel = knownDescendantsInModelDescriptors.get(model);
+      if (descendantsKnownInModel == null) {
+        descendantsKnownInModel = new HashSet<ConceptDeclaration>();
+        knownDescendantsInModelDescriptors.put(model, descendantsKnownInModel);
+      }
+      result.addAll(model.findDescendants(node, descendantsKnownInModel));
+    }
+
+    return result;
+  }
+
   public Set<SReference> findUsages(SNode node, Scope scope, ProgressMonitor progress) {
     Set<SReference> result = new HashSet<SReference>();
     try {

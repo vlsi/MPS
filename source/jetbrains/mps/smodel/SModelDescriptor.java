@@ -39,6 +39,7 @@ public interface SModelDescriptor {
   File getModelFile();
 
   Set<SReference> findUsages(SNode node);
+  Set<ConceptDeclaration> findDescendants(ConceptDeclaration node, Set<ConceptDeclaration> descendantsKnownInModel);
   Set<SNode> findInstances(ConceptDeclaration concept, IOperationContext operationContext);
   long timestamp();
 

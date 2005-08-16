@@ -252,6 +252,27 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     return result;
   }
 
+  public Set<ConceptDeclaration> findDescendants(ConceptDeclaration node, Set<ConceptDeclaration> descendantsKnownInModel) {
+
+    if (mySModel != null && !SModelRepository.getInstance().isChanged(mySModel) && !descendantsKnownInModel.isEmpty()){
+      return descendantsKnownInModel;
+    }
+
+    if (mySModel == null || !SModelRepository.getInstance().isChanged(mySModel)) {
+      if (!containsString(node.getId())) return descendantsKnownInModel;
+    }
+    getSModel();
+    Set<ConceptDeclaration> result = new HashSet<ConceptDeclaration>();
+    if (mySModel != null) {
+      for (SNode root : mySModel.getRoots()) {
+        addDescendants(root, node, result);
+      }
+    }
+    descendantsKnownInModel.clear();
+    descendantsKnownInModel.addAll(result);
+    return descendantsKnownInModel;
+  }
+
   public VersionControl getVersionControl(IOperationContext operationContext) {
     VersionControlManager vcm = operationContext.getComponent(VersionControlManager.class);
     return vcm.createVCSFor(this);
@@ -275,6 +296,21 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     }
     for (SNode child : current.getChildren()) {
       addUsages(child, node, result);
+    }
+  }
+
+  private void addDescendants(SNode current, ConceptDeclaration node, Set<ConceptDeclaration> result) {
+
+    if (current instanceof ConceptDeclaration) {
+      for (SReference ref : current.getReferences()) {
+        if (ref.getTargetNode() == node && ref.getRole().equals(ConceptDeclaration.EXTENDS)) {
+          result.add((ConceptDeclaration) current);
+          break;
+        }
+      }
+    }
+    for (SNode child : current.getChildren()) {
+      addDescendants(child, node, result);
     }
   }
 
