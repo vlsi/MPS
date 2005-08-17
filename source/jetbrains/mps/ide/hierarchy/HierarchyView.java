@@ -8,6 +8,9 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.toolsPane.Tool;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.navigation.NavigationActionProcessor;
+import jetbrains.mps.ide.navigation.EditorNavigationRunnable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.findUsages.FindUsagesManager;
@@ -51,6 +54,10 @@ public class HierarchyView implements Tool {
     myHierarchyTree.myConceptDeclaration = node;
     myHierarchyTree.rebuildTree();
     if (myTreeNode != null) myHierarchyTree.selectNode(myTreeNode);
+  }
+
+  public void activate() {
+    myIde.showHierarchyView();
   }
 
 
@@ -156,8 +163,25 @@ public class HierarchyView implements Tool {
     }
 
     public void doubleClick() {
-      SNode node = myNodeProxy.getNode();
-      myIde.getEditorsPane().openEditor(node, getOperationContext());
+      final SNode node = myNodeProxy.getNode();
+
+      final EditorsPane editorsPane = myIde.getEditorsPane();
+      final AbstractEditorComponent currentEditor = editorsPane.getCurrentEditor();
+
+      NavigationActionProcessor.executeNavigationAction(new EditorNavigationRunnable() {
+        public AbstractEditorComponent run(AbstractEditorComponent sourceEditor) {
+          return editorsPane.openEditor(node, getOperationContext());
+        }
+
+        public AbstractEditorComponent getSourceEditor() {
+          return currentEditor;
+        }
+
+        public EditorsPane getEditorsPane() {
+          return editorsPane;
+        }
+      });
+
     }
 
     public Icon getIcon(boolean expanded) {
