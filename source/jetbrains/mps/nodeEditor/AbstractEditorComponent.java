@@ -554,6 +554,29 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return null;
   }
 
+  public EditorCell findFirstSelectableCell() {
+    if (myRootCell instanceof EditorCell_Collection) {
+      return findFirstSelectableCell((EditorCell_Collection) myRootCell);
+    } else if (myRootCell.isSelectable()) return myRootCell;
+      else return null;
+  }
+
+   private EditorCell findFirstSelectableCell(EditorCell_Collection collection) {
+      EditorCell target = collection.firstCell();
+      while (target != null) {
+        if (target instanceof EditorCell_Collection) {
+          EditorCell childTarget = findFirstSelectableCell((EditorCell_Collection) target);
+          if (childTarget != null) {
+            return childTarget;
+          }
+        } else if (target.isSelectable()) {
+          return target;
+        }
+        target = collection.findNextToRight(target);
+      }
+      return null;
+    }
+
   public EditorCell findNextSelectableCell(final EditorCell cell) {
     if (!(myRootCell instanceof EditorCell_Collection)) {
       return null;

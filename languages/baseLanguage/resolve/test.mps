@@ -438,7 +438,7 @@
             <property name="name" value="y" />
             <node role="type" type="jetbrains.mps.baseLanguage.VoidType" id="1122986116625" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1122986121554">
-              <link role="baseMethodDeclaration" extResolveInfo="1.static method ([ClassConcept]Resolver).([StaticMethodDeclaration]resolveAllReferences((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
+              <link role="baseMethodDeclaration" targetNodeId="1.1121463990596" />
               <node role="classType" type="jetbrains.mps.baseLanguage.ClassType" id="1122986121555">
                 <link role="classifier" extResolveInfo="1.[ClassConcept]Resolver" />
               </node>
