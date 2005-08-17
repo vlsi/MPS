@@ -179,7 +179,11 @@ public class CellExplorerView implements Tool {
     public String toString() {
       String result = "<html>" + NameUtil.shortNameFromLongName(myCell.getClass().getName());
       if (myCell instanceof EditorCell_Label) {
-        result += " <b>text</b> = <i>\"" + ((EditorCell_Label) myCell).getText() + "\"</i>";
+        String text = ((EditorCell_Label) myCell).getText();
+        if (text == null || text.length() == 0) {
+          text = ((EditorCell_Label) myCell).getNullText();
+        }
+        result += " <b>text</b> = <i>\"" + text + "\"</i>";
       }
       if (myCell.isErrorState() ) {
         result += " <b>(error state)</b>";

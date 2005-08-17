@@ -470,6 +470,12 @@
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1123686625799" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1124289166509">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1124289166510">
+            <property name="name" value="f" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1124289166511" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1123686641052">
           <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1123686643898">
             <node role="lValue" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1123686641053">
