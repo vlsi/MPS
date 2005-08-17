@@ -4,6 +4,7 @@ import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.InspectorPane;
+import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.action.ActionManager;
@@ -919,6 +920,21 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
       keyEvent.consume();
       return;
+    }
+
+    //ctrl-alt-arrows
+    if (keyEvent.isControlDown() && keyEvent.isAltDown()) {
+      if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT) {
+        getOperationContext().getComponent(EditorsPane.class).openPrevEditorInHistory();
+        keyEvent.consume();
+        return;
+      }
+
+      if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT) {
+        getOperationContext().getComponent(EditorsPane.class).openNextEditorInHistory();
+        keyEvent.consume();
+        return;
+      }
     }
 
     // hardcoded "update" action

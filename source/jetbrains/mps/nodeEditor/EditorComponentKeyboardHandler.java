@@ -43,19 +43,6 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
       }
     }
 
-    //ctrl-alt-arrows
-    if (keyEvent.isControlDown() && keyEvent.isAltDown()) {
-      if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT) {
-        editorContext.getOperationContext().getComponent(EditorsPane.class).openPrevEditorInHistory();
-        return true;
-      }
-
-      if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT) {
-        editorContext.getOperationContext().getComponent(EditorsPane.class).openNextEditorInHistory();
-        return true;
-      }
-    }
-
 
 
     String actionType = editor.getActionType(keyEvent, editorContext);
