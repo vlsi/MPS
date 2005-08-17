@@ -19,7 +19,7 @@ public class CellLayout_Vertical implements CellLayout {
     final int x = editorCells.getX();
     final int y = editorCells.getY();
     if (editorCells.isDrawBrackets()) {
-      width += EditorCell_Collection.BRACKET_WIDTH;
+      width += EditorCell_Collection.BRACKET_WIDTH * 2;
     }
     for (EditorCell editorCell : editorCells) {
       if (editorCells.isDrawBrackets()) {
@@ -35,7 +35,7 @@ public class CellLayout_Vertical implements CellLayout {
       height += cellHeight;
     }
     if (editorCells.isDrawBrackets()) {
-      width += EditorCell_Collection.BRACKET_WIDTH;
+      width += EditorCell_Collection.BRACKET_WIDTH * 2;
     }
 
     if (isGridLayout) {

@@ -13,7 +13,7 @@ public class CellLayout_Horizontal implements CellLayout {
     final int x = editorCells.getX();
     final int y = editorCells.getY();
     if (editorCells.isDrawBrackets()) {
-      width += EditorCell_Collection.BRACKET_WIDTH;
+      width += EditorCell_Collection.BRACKET_WIDTH * 2;
     }
     for (Iterator iterator = editorCells.iterator(); iterator.hasNext();) {
       EditorCell editorCell = (EditorCell) iterator.next();
@@ -26,7 +26,7 @@ public class CellLayout_Horizontal implements CellLayout {
       height = Math.max(height, cellHeight);
     }
     if (editorCells.isDrawBrackets()) {
-      width += EditorCell_Collection.BRACKET_WIDTH;
+      width += EditorCell_Collection.BRACKET_WIDTH * 2;
     }
     editorCells.setWidth(width);
     editorCells.setHeight(height);
