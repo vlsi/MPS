@@ -4,6 +4,9 @@ import jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.navigation.NavigationActionProcessor;
+import jetbrains.mps.ide.navigation.EditorNavigationRunnable;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.command.CommandProcessor;
@@ -46,6 +49,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
 
     final IdeMain ide = context.get(IdeMain.class);
     final IOperationContext operationContext = context.get(IOperationContext.class);
+    final AbstractEditorComponent currentEditor = ide.getEditorsPane().getCurrentEditor();
 
     final String editorName = node.getName() + "_Editor";
     SModel languageStructure = node.getModel();
@@ -60,8 +64,25 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
       while (iterator.hasNext()) {
         SNode root = iterator.next();
         if (editorName.equals(root.getName())) {
-          AbstractEditorComponent editor = ide.getEditorsPane().openEditor(root, operationContext);
-          editor.selectNode(root);
+
+          final SNode finalRoot = root;
+
+          NavigationActionProcessor.executeNavigationAction(new EditorNavigationRunnable() {
+            public AbstractEditorComponent run(AbstractEditorComponent sourceEditor) {
+              AbstractEditorComponent editor = ide.getEditorsPane().openEditor(finalRoot, operationContext);
+              editor.selectNode(finalRoot);
+              return editor;
+            }
+
+            public AbstractEditorComponent getSourceEditor() {
+              return currentEditor;
+            }
+
+            public EditorsPane getEditorsPane() {
+              return ide.getEditorsPane();
+            }
+          });
+
           return;
         }
       }
@@ -84,7 +105,22 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
         });
 
         ide.getProjectPane().selectNode(editorDeclaration[0]);
-        ide.getProjectPane().openEditor(operationContext);
+
+        NavigationActionProcessor.executeNavigationAction(new EditorNavigationRunnable() {
+          public AbstractEditorComponent run(AbstractEditorComponent sourceEditor) {
+            return ide.getProjectPane().openEditor(operationContext);
+          }
+
+          public AbstractEditorComponent getSourceEditor() {
+            return currentEditor;
+          }
+
+          public EditorsPane getEditorsPane() {
+            return ide.getEditorsPane();
+          }
+        });
+
+
         JOptionPane.showMessageDialog(null, "Editor " + editorName + " created");
       }
 

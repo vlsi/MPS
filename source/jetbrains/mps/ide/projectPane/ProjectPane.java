@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -115,13 +116,13 @@ public class ProjectPane extends JComponent {
   }
 
 
-  public void openEditor(IOperationContext operationContext) {
+  public AbstractEditorComponent openEditor(IOperationContext operationContext) {
     TreePath selectionPath = myTree.getSelectionPath();
-    if (selectionPath == null) return;
-    if (!(selectionPath.getLastPathComponent() instanceof SNodeTreeNode)) return;
+    if (selectionPath == null) return null;
+    if (!(selectionPath.getLastPathComponent() instanceof SNodeTreeNode)) return null;
     SNodeTreeNode selectedTreeNode = (SNodeTreeNode) selectionPath.getLastPathComponent();
     SNode semanticNode = selectedTreeNode.getSNode();
-    myIDE.openNode(semanticNode, operationContext);
+    return myIDE.openNode(semanticNode, operationContext);
   }
 
   public void setProject(MPSProject project) {
