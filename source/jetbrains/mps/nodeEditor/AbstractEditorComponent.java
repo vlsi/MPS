@@ -1,10 +1,8 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.ide.IStatus;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.InspectorPane;
-import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.*;
+import jetbrains.mps.ide.navigation.EditorsHistory;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.action.ActionManager;
@@ -735,6 +733,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return null;
   }
 
+  public Stack<EditorCell> getSelectionStackCopy() {
+    return (Stack<EditorCell>) mySelectedStack.clone();
+  }
+
   public void changeSelection(EditorCell newSelectedCell) {
     changeSelection(newSelectedCell, true);
   }
@@ -1110,6 +1112,43 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (result != null) return result;
     return findEditableCell(root);
   }
+
+
+  public static EditorsHistory.HistoryItem getHistoryItemFromEditor(AbstractEditorComponent editor) {
+    return new EditorsHistory.HistoryItem(editor, editor.mySelectedCell, (Stack<EditorCell>) editor.mySelectedStack.clone());
+  }
+
+  public static AbstractEditorComponent getEditorFromHistoryItem(EditorsHistory.HistoryItem historyItem, EditorsPane editorsPane) {
+    AbstractEditorComponent nodeEditor = historyItem.editor;
+    EditorCell selectedCell = historyItem.selectedCell;
+    Stack<EditorCell> selectedStack = historyItem.selectedStack;
+    AbstractEditorComponent newEditor = editorsPane.openEditor(nodeEditor.getRootCell().getSNode(), nodeEditor.getOperationContext(), true);
+    if (selectedCell != null) {
+        EditorCell nodeCell = newEditor.findNodeCell(selectedCell.getSNode(), (String) selectedCell.getUserObject(EditorCell.CELL_ID));
+        if (nodeCell == null) nodeCell = newEditor.findNodeCell(selectedCell.getSNode());
+        if (nodeCell != null) newEditor.changeSelection(nodeCell);
+    }
+    newEditor.setSelectedStackFromHistory(selectedStack);
+    return newEditor;
+  }
+
+  private void setSelectedStackFromHistory(Stack<EditorCell> historySelectedStack) {
+    mySelectedStack.clear();
+    Stack<EditorCell> temp = new Stack<EditorCell>();
+
+    for (int i = historySelectedStack.size()-1; i >= 0; i--) {
+      EditorCell historyCell = historySelectedStack.get(i);
+      String cellId  = (String) historyCell.getUserObject(EditorCell.CELL_ID);
+      SNode cellNode = historyCell.getSNode();
+      EditorCell newCell = findNodeCell(cellNode, cellId);
+      temp.push(newCell);
+      if (newCell == null) break;
+    }
+    while (temp.size() >  0) {
+      mySelectedStack.push(temp.pop());
+    }
+  }
+
 
   private class MyModelListener implements SModelCommandListener {
     public void modelChangedInCommand(List<SModelEvent> events, EditorContext editorContext) {
