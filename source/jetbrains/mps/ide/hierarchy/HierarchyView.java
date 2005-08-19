@@ -5,6 +5,7 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.icons.Icons;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.ide.toolsPane.Tool;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.EditorsPane;
@@ -124,7 +125,7 @@ public class HierarchyView implements Tool {
         parentTreeNode = hierarchyTreeNode;
       }
       myTreeNode = hierarchyTreeNode;
-      TextTreeNode textRootNode = new RootTextTreeNode("<html>Hierarchy for concept <font color=\"#400090\"><b>" + ((ConceptDeclaration)myTreeNode.getUserObject()).getName() + "</b></font>");
+      TextTreeNode textRootNode = new RootTextTreeNode("<html>Hierarchy for concept <font color=\"#400090\"><b>" + TreeTextUtil.toHtml(((ConceptDeclaration)myTreeNode.getUserObject()).getName()) + "</b></font>");
       textRootNode.add(rootNode);
       return textRootNode;
     }
@@ -269,7 +270,7 @@ public class HierarchyView implements Tool {
     public String toString() {
       String name = super.toString();
       if (this == myTreeNode) {
-        name = "<html><font color=\"#400090\"><b>" + name + "</b></font>";
+        name = "<html><font color=\"#400090\"><b>" + TreeTextUtil.toHtml(name) + "</b></font>";
       }
       return name;
     }

@@ -120,6 +120,11 @@ public class CellExplorerView implements Tool {
           showCell();
         }
       }).setBorder(null);
+      result.add(new AbstractActionWithEmptyIcon("Properties") {
+        public void actionPerformed(ActionEvent e) {
+          new CellPropertiesWindow(myCell, myIde);
+        }
+      }).setBorder(null);
       return result;
     }
 
