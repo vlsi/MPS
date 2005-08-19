@@ -6,6 +6,7 @@ import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.util.NameUtil;
@@ -134,7 +135,7 @@ public class CellExplorerView implements Tool {
       removeAllChildren();
       if (myCell.getSNode() != null) {
         final SNode node = myCell.getSNode();
-        add(new MPSTree.TextTreeNode("<html><b>Node</b> " + node.getName() + " [" + node.getId() + "]") {
+        add(new MPSTree.TextTreeNode("<html><b>Node</b> " + TreeTextUtil.toHtml(node.getName()) + " [" + node.getId() + "]") {
           public Icon getIcon(boolean expanded) {
             return IconManager.getIconFor(node);
           }
@@ -183,7 +184,7 @@ public class CellExplorerView implements Tool {
         if (text == null || text.length() == 0) {
           text = ((EditorCell_Label) myCell).getNullText();
         }
-        result += " <b>text</b> = <i>\"" + text + "\"</i>";
+        result += " <b>text</b> = <i>\"" + TreeTextUtil.toHtml(text) + "\"</i>";
       }
       if (myCell.isErrorState() ) {
         result += " <b>(error state)</b>";

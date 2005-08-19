@@ -119,7 +119,7 @@ public class HierarchyView implements Tool {
         if (i == parentHierarchy.size()-1) rootNode = hierarchyTreeNode;
         if (parentTreeNode != null) {
           parentTreeNode.add(hierarchyTreeNode);
-          myUsagesManager.addDescendant(parentHierarchy.get(i+1), parentHierarchy.get(i));
+          //myUsagesManager.addDescendant(parentHierarchy.get(i+1), parentHierarchy.get(i));
         }
         parentTreeNode = hierarchyTreeNode;
       }
