@@ -659,6 +659,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (nodeProxy != null && id != null) {
       EditorCell cell = findNodeCell(nodeProxy.getNode(), id);
       changeSelection(cell);
+    } else {
+      changeSelection(null);
     }
 
     updateCellExplorerIfNeeded();
