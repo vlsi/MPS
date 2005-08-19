@@ -208,13 +208,15 @@ public class NodeRangeSelection implements IKeyboardHandler {
   }
 
   public void paint(Graphics g) {
-    g.setColor(new Color(255, 0, 255, 60));
+   // g.setColor(new Color(255, 0, 255, 30));
     Iterator<SNode> nodes = getNodes().iterator();
     while (nodes.hasNext()) {
       EditorCell cell = myEditorComponent.findNodeCell(nodes.next());
       if (cell != null) { // the paint may happen when the editor content is aldeary changed
-        g.drawRect(cell.getX(), cell.getY(), cell.getWidth(), cell.getHeight());
+        g.setColor(new Color(255, 0, 255, 30));
         g.fillRect(cell.getX() - 1, cell.getY() - 1, cell.getWidth() + 2, cell.getHeight() + 2);
+        g.setColor(new Color(255, 0, 255, 70));
+        g.drawRect(cell.getX(), cell.getY(), cell.getWidth(), cell.getHeight());
       }
     }
   }

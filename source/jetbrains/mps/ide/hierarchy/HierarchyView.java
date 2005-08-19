@@ -6,9 +6,10 @@ import jetbrains.mps.bootstrap.structureLanguage.icons.Icons;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.toolsPane.Tool;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
+import jetbrains.mps.ide.GoToNodeWindow;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.navigation.EditorNavigationRunnable;
 import jetbrains.mps.logging.Logger;
@@ -17,9 +18,10 @@ import jetbrains.mps.findUsages.FindUsagesManager;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
-import java.util.ArrayList;
-import java.util.Set;
+import javax.swing.tree.TreePath;
+import java.util.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 
 /**
  * Created by IntelliJ IDEA.
@@ -59,6 +61,33 @@ public class HierarchyView implements Tool {
   public void activate() {
     myIde.showHierarchyView();
   }
+
+
+  private JPopupMenu ShowHierarchyForFoundConceptPopupMenu() {
+    JPopupMenu result = new JPopupMenu();
+    result.add(new AbstractActionWithEmptyIcon("Show Hierarchy For Concept") {
+      public void actionPerformed(ActionEvent e) {
+        java.util.List<SNode> nodes = new ArrayList<SNode>();
+        for (SModelDescriptor modelDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
+          for (SNode node : modelDescriptor.getSModel().getRoots()) {
+            if (node instanceof ConceptDeclaration) nodes.add(node);
+          }
+        }
+
+        new GoToNodeWindow(myIde, nodes.toArray(new SNode[0])) {
+          protected void selectNode(final SNode node, final IOperationContext operationContext) {
+            showConceptInHierarchy((ConceptDeclaration) node);
+            /*   ConceptDeclaration conceptDeclaration = SModelUtil.findConceptDeclaration(NameUtil.nodeConceptFQName(node), operationContext);
+            showConceptInHierarchy(conceptDeclaration);*/
+          }
+        };
+      }
+    }).setBorder(null);
+    return result;
+  }
+
+
+
 
 
   private class ConceptHierarchyTree extends MPSTree {
@@ -115,11 +144,14 @@ public class HierarchyView implements Tool {
 
 
     protected MPSTreeNode rebuild() {
+
       if (myConceptDeclaration == null) return new RootTextTreeNode("(no concept)");
+
       MPSTreeNode rootNode = rebuildParentHierarchy();
       //rebuildChildrenHierarchy();
       return rootNode;
     }
+
 
     public void rebuildTree() {
        DefaultTreeModel model = new DefaultTreeModel(rebuild());
@@ -135,6 +167,10 @@ public class HierarchyView implements Tool {
 
     public Icon getIcon(boolean expanded) {
       return jetbrains.mps.ide.projectPane.Icons.HIERARCHY_ICON;
+    }
+
+    protected JPopupMenu getPopupMenu() {
+      return ShowHierarchyForFoundConceptPopupMenu();
     }
   }
 
@@ -160,6 +196,17 @@ public class HierarchyView implements Tool {
     protected String getNodeIdentifier() {
       if (getConceptDeclaration() == null) return "null";
       return getConceptDeclaration().getName();
+    }
+
+    protected JPopupMenu getPopupMenu() {
+      JPopupMenu result = new JPopupMenu();
+      result.add(new AbstractActionWithEmptyIcon("Show Hierarchy For This Concept") {
+        public void actionPerformed(ActionEvent e) {
+          final SNode node = myNodeProxy.getNode();
+          showConceptInHierarchy((ConceptDeclaration) node);
+        }
+      }).setBorder(null);
+      return result;
     }
 
     public void doubleClick() {
