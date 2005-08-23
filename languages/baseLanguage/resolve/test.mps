@@ -107,6 +107,36 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1124810732329">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1124810732330">
+            <property name="name" value="ch" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.StringLiteral" id="1124810751895">
+              <property name="value" value="rubber" />
+            </node>
+            <node role="type" type="jetbrains.mps.baseLanguage.StringType" id="1124810761631" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1124810796149">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1124810796150">
+            <property name="name" value="guu" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1124810796151" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1124810808950">
+          <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1124810811173">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1124810810140">
+              <link role="variableDeclaration" targetNodeId="1124810796150" />
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.PlusExpression" id="1124810814849">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1124810818648">
+                <property name="value" value="42" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1124810813205">
+                <link role="variableDeclaration" targetNodeId="1124810796150" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.BooleanType" id="1121172827474" />
     </node>
