@@ -542,6 +542,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private EditorCell findCellWithId(final EditorCell root, String id) {
+    if (id == null) return null;
     if (id.equals(root.getUserObject(EditorCell.CELL_ID))) return root;
     if (root instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) root;

@@ -13,6 +13,8 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import jetbrains.mps.logging.Logger;
+
 /**
  * @author Kostik
  */
@@ -21,6 +23,8 @@ public abstract class MPSTree extends JTree {
   public static final String PATH = "path";
   public static final String SELECTION = "selection";
   public static final String EXPANSION = "expansion";
+
+  private static Logger LOG = Logger.getLogger(MPSTree.class);
 
   public static final String TREE_PATH_SEPARATOR = "/";
 
@@ -210,7 +214,10 @@ public abstract class MPSTree extends JTree {
     Enumeration<TreePath> expanded = getExpandedDescendants(new TreePath(new Object[] { getModel().getRoot() }));
     if (expanded == null) return result;
     while (expanded.hasMoreElements()) {
-      result.add(pathToString(expanded.nextElement()));
+      TreePath path = expanded.nextElement();
+      String pathString = pathToString(path);
+      if (result.contains(pathString)) LOG.warning("two expanded paths have the same string representation");
+      result.add(pathString);
     }
     return result;
   }
@@ -219,7 +226,9 @@ public abstract class MPSTree extends JTree {
     List<String> result = new ArrayList<String>();
     if (getSelectionPaths() == null) return result;
     for (TreePath selectionPart : getSelectionPaths()) {
-      result.add(pathToString(selectionPart));
+      String pathString = pathToString(selectionPart);
+      if (result.contains(pathString)) LOG.warning("two selected paths have the same string representation");
+      result.add(pathString);
     }
     return result;
   }

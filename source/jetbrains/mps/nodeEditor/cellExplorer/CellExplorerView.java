@@ -140,13 +140,19 @@ public class CellExplorerView implements Tool {
       removeAllChildren();
       if (myCell.getSNode() != null) {
         final SNode node = myCell.getSNode();
-        add(new MPSTree.TextTreeNode("<html><b>Node</b> " + TreeTextUtil.toHtml(node.getName()) + " [" + node.getId() + "]") {
+        String name = node.getName();
+        name = name != null ? name : "<no name>";
+        add(new MPSTree.TextTreeNode("<html><b>Node</b> " + TreeTextUtil.toHtml(name) + " (" + TreeTextUtil.toHtml(node.getConceptName()) + ") [" + node.getId() + "]") {
           public Icon getIcon(boolean expanded) {
             return IconManager.getIconFor(node);
           }
 
+          public void doubleClick() {
+            CellTreeNode.this.doubleClick();
+          }
+
           public boolean isLeaf() {
-            return false;
+            return true;
           }
         });
 
@@ -201,6 +207,7 @@ public class CellExplorerView implements Tool {
       String result = myCell.getClass().getName();
       if (myCell.getSNode() != null) result += "[" + myCell.getSNode().getId() + "]";
       if (myCell.getUserObject(EditorCell.CELL_ID) != null) result += "[" + myCell.getUserObject(EditorCell.CELL_ID).toString() + "]";
+      if (myCell.getUserObject(EditorCell.NUMBER) != null) result += "[" + myCell.getUserObject(EditorCell.NUMBER) + "]";
       return result;
     }
   }
@@ -237,6 +244,10 @@ public class CellExplorerView implements Tool {
         add(new MPSTree.TextTreeNode(key) {
           public Icon getIcon(boolean expanded) {
             return Icons.CELL_ACTION_KEY_ICON;
+          }
+
+          public boolean isLeaf() {
+            return true;
           }
         });
       }

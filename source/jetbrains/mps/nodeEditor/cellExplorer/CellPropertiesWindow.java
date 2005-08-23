@@ -4,6 +4,8 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.smodel.SNode;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -42,22 +44,33 @@ public class CellPropertiesWindow extends JFrame {
     String cellHeight = myCell.getHeight() + "";
     String cellEffectiveWidth = myCell.getEffectiveWidth() + "";
     String isRootCell = (myCell.getEditorContext().getNodeEditorComponent().getRootCell() == myCell)?"Yes":"No";
+    String cellID = (String) (myCell.getUserObject(EditorCell.CELL_ID));
+    String cellNumber = "" + (myCell.getUserObject(EditorCell.NUMBER));
+
+    SNode sNode = myCell.getSNode();
+    String name = sNode.getName();
+    name = name != null ? name : "<no name>";
+    String cellSNode = sNode == null ? "no node" : name + " (" + sNode.getConceptName() + ") [" + sNode.getId() + "]";
+    Icon icon = IconManager.getIconFor(sNode);
 
     setLayout(new BorderLayout());
 
-    JPanel outerPanel = new JPanel(new GridLayout(2,1,0,10));
+    JPanel outerPanel = new JPanel(new GridLayout(1,1,0,10));
 
-    myPanel = new JPanel(new GridLayout(6, 2, 10, 20));
+    myPanel = new JPanel(new GridLayout(9, 2, 10, 20));
     myPanel.setBorder(new EmptyBorder(10,5,5,5));
 
     Font f = myPanel.getFont();
     Font bold = new Font(f.getName(), Font.BOLD, f.getSize());
     Font italic = new Font(f.getName(), Font.ITALIC, f.getSize());
     myPanel.add(new JLabel("Cell:")).setFont(bold); myPanel.add(new JLabel(cellKind)).setFont(bold);
+    myPanel.add(new JLabel("ID:")).setFont(bold); myPanel.add(new JLabel(cellID));
     myPanel.add(new JLabel("Text:")).setFont(bold); myPanel.add(new JLabel(cellText)).setFont(italic);
     myPanel.add(new JLabel("Width:")).setFont(bold); myPanel.add(new JLabel(cellWidth));
     myPanel.add(new JLabel("Height:")).setFont(bold);myPanel.add(new JLabel(cellHeight));
     myPanel.add(new JLabel("Effective width:")).setFont(bold);myPanel.add(new JLabel(cellEffectiveWidth));
+    myPanel.add(new JLabel("Number in collection:")).setFont(bold);myPanel.add(new JLabel(cellNumber));
+    myPanel.add(new JLabel("SNode:")).setFont(bold);myPanel.add(new JLabel(cellSNode, icon, SwingConstants.LEFT));
     myPanel.add(new JLabel("Is Root Cell:")).setFont(bold);myPanel.add(new JLabel(isRootCell));
 
     outerPanel.add(myPanel);

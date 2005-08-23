@@ -22,6 +22,8 @@ public class IconManager {
   private static Map<Class, Icon> ourIcons = new HashMap<Class, Icon>();
 
   public static Icon getIconFor(SNode node) {
+    if (node == null) return Icons.DEFAULT_ICON;
+
     Class<? extends SNode> cls = node.getClass();
 
     if (ourIcons.get(node.getClass()) != null) {
