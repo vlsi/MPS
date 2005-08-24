@@ -25,6 +25,10 @@ public class ClassLoaderManager {
     myUseSystemClassLoader = useSystemClassLoader;
   }
 
+  public boolean isUseSystemClassLoader() {
+    return myUseSystemClassLoader;
+  }
+
   public ClassLoader getClassLoader() {
     if (myUseSystemClassLoader) return ClassLoader.getSystemClassLoader();
 
