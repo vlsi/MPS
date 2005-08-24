@@ -8,6 +8,8 @@ import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.actions.nodes.*;
+import jetbrains.mps.ide.actions.refactorings.InlineVariableAction;
+import jetbrains.mps.ide.actions.refactorings.IntroduceVariableAction;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
@@ -156,6 +158,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     registerNodeAction(new GoToConceptDeclarationAction(), "control shift S");
     registerNodeAction(new GoToEditorDeclarationAction(), "control shift E");
     registerNodeAction(new GoToConceptEditorDeclarationAction(), "control E");
+    registerNodeAction(new InlineVariableAction(), "control alt N");
+    registerNodeAction(new IntroduceVariableAction(), "alt V");
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
@@ -257,12 +261,26 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     super.removeNotify();
   }
 
+  protected void registerNodeAction(MPSAction action) {
+    registerNodeAction(action, action.getKeyStroke());
+  }
+
   protected void registerNodeAction(final MPSAction action, String keyStroke) {
     registerKeyboardAction(new AbstractAction(action.getName()) {
       public void actionPerformed(ActionEvent e) {
         if (mySelectedCell != null && mySelectedCell.getSNode() != null) {
           IdeMain ide = ApplicationComponents.getInstance().getComponent(IdeMain.class);
-          action.execute(new ActionContext(ide, getEditorContext().getOperationContext(), mySelectedCell.getSNode()));
+
+          final ActionContext context = new ActionContext(ide, getEditorContext().getOperationContext(), mySelectedCell.getSNode());
+          if (action.executeInsideCommand()) {
+            CommandProcessor.instance().executeCommand(new Runnable() {
+              public void run() {
+                action.execute(context);
+              }
+            });
+          } else {
+            action.execute(context);
+          }
         }
       }
     }, KeyStroke.getKeyStroke(keyStroke), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
