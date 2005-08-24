@@ -151,15 +151,15 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myActionMap.put(EditorCellAction.PASTE_AFTER, new CellAction_PasteNodeRelative(false));
 
 
-    registerNodeAction(new ShowNodeTypeAction(), "control T");
-    registerNodeAction(new FindUsagesNodeAction(), "alt F7");
-    registerNodeAction(new ShowInProjectAction(), "control P");
-    registerNodeAction(new GoByFirstReferenceAction(), "control B");
-    registerNodeAction(new GoToConceptDeclarationAction(), "control shift S");
-    registerNodeAction(new GoToEditorDeclarationAction(), "control shift E");
-    registerNodeAction(new GoToConceptEditorDeclarationAction(), "control E");
-    registerNodeAction(new InlineVariableAction(), "control alt N");
-    registerNodeAction(new IntroduceVariableAction(), "alt V");
+    registerNodeAction(new ShowNodeTypeAction()/*, "control T"*/);
+    registerNodeAction(new FindUsagesNodeAction()/*, "alt F7"*/);
+    registerNodeAction(new ShowInProjectAction()/*, "control P"*/);
+    registerNodeAction(new GoByFirstReferenceAction()/*, "control B"*/);
+    registerNodeAction(new GoToConceptDeclarationAction()/*, "control shift S"*/);
+    registerNodeAction(new GoToEditorDeclarationAction()/*", control shift E"*/);
+    registerNodeAction(new GoToConceptEditorDeclarationAction()/*, "control E"*/);
+    registerNodeAction(new InlineVariableAction()/*", control alt N"*/);
+    registerNodeAction(new IntroduceVariableAction()/*, "alt V"*/);
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
