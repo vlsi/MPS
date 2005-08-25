@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.projectLanguage.Root;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -72,8 +73,26 @@ public class LanguageRepository {
     }
   }
 
-  public Set<Language> readLanguageDescriptors(File dir, LanguageOwner owner) {
-    Set<Language> result = new HashSet<Language>();
+  public void readLanguageDescriptors(Iterable<Root> roots, LanguageOwner owner) {
+    readLanguageDescriptors(roots.iterator(), owner);
+  }
+
+  public void readLanguageDescriptors(Iterator<Root> roots, LanguageOwner owner) {
+    while (roots.hasNext()) {
+      Root root = roots.next();
+      File languageRoot = new File(root.getPath());
+      if (languageRoot.exists()) {
+        readLanguageDescriptors(languageRoot, owner);
+      } else {
+        String error = "Couldn't load languages from " + languageRoot.getAbsolutePath() +
+                "\nDirectory doesn't exist: ";
+        LOG.error(error);
+      }
+    }
+  }
+
+  public List<Language> readLanguageDescriptors(File dir, LanguageOwner owner) {
+    List<Language> result = new LinkedList<Language>();
     if (!dir.isDirectory()) {
       return result;
     }

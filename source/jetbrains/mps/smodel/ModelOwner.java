@@ -6,4 +6,5 @@ package jetbrains.mps.smodel;
  */
 public interface ModelOwner {
   ModelOwner getParentModelOwner();
+  void dispose();
 }

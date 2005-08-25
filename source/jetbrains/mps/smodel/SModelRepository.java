@@ -109,13 +109,13 @@ public class SModelRepository extends SModelAdapter {
     }
   }
 
-  public void unRegisterModelDescriptors(ModelOwner modelLocator) {
+  public void unRegisterModelDescriptors(ModelOwner owner) {
     ArrayList<SModelUID> modelsToRemove = new ArrayList<SModelUID>();
     for (SModelUID fqName : myUIDToModelDescriptorMap.keySet()) {
       SModelDescriptor modelDescriptor = myUIDToModelDescriptorMap.get(fqName);
       HashSet<ModelOwner> locators = myModelToOwnerMap.get(modelDescriptor);
       if (locators != null) {
-        locators.remove(modelLocator);
+        locators.remove(owner);
         if (locators.size() == 0) {
           modelsToRemove.add(fqName);
         }
@@ -320,9 +320,14 @@ public class SModelRepository extends SModelAdapter {
     }
   }
 
-  public List<SModelDescriptor> readModelDescriptors(List<ModelRoot> modelRoots, ModelOwner owner) {
+  public List<SModelDescriptor> readModelDescriptors(Iterable<ModelRoot> modelRoots, ModelOwner owner) {
+    return readModelDescriptors(modelRoots.iterator(), owner);
+  }
+
+  public List<SModelDescriptor> readModelDescriptors(Iterator<ModelRoot> modelRoots, ModelOwner owner) {
     List<SModelDescriptor> list = new LinkedList<SModelDescriptor>();
-    for (ModelRoot modelRoot : modelRoots) {
+    while (modelRoots.hasNext()) {
+      ModelRoot modelRoot = modelRoots.next();
       File dir = new File(modelRoot.getPath());
       if (dir.exists()) {
         ModelRootManager manager = getManagerFor(modelRoot);
@@ -334,6 +339,7 @@ public class SModelRepository extends SModelAdapter {
         myIde.getMessageView().add(new Message(MessageKind.ERROR, error));
       }
     }
+
     return list;
   }
 

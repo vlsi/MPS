@@ -6,4 +6,5 @@ package jetbrains.mps.smodel;
  */
 public interface LanguageOwner {
   LanguageOwner getParentLanguageOwner();
+  void dispose();
 }

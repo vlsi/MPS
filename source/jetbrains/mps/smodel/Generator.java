@@ -1,24 +1,42 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.projectLanguage.*;
+import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.util.PathManager;
 
-import java.util.*;
+import java.io.File;
+import java.util.Set;
+import java.util.List;
 
 /**
  * @author Kostik
  */
-public class Generator {
+public class Generator implements ModelLocator, ModelOwner, LanguageOwner {
+  private Language mySourceLanguage;
   private jetbrains.mps.projectLanguage.Generator myGenerator;
 
-  Generator(jetbrains.mps.projectLanguage.Generator generator) {
+  Generator(Language sourceLanguage, jetbrains.mps.projectLanguage.Generator generator) {
+    mySourceLanguage = sourceLanguage;
     myGenerator = generator;
+    readModelDescriptors();
+  }
+
+  private void readModelDescriptors() {
+    SModelRepository.getInstance().readModelDescriptors(myGenerator.modelRoots(), this);
+  }
+
+  public void readLanguageDescriptors(File dir) {
+    LanguageRepository.getInstance().readLanguageDescriptors(dir, this);
+  }
+  public void dispose() {
+    SModelRepository.getInstance().unRegisterModelDescriptors(this);
+    LanguageRepository.getInstance().unRegisterLanguages(this);
   }
 
   public String getName() {
     return myGenerator.getName();
   }
 
-  public String getTargetLanguageFqName() {
+  public String getTargetLanguageName() {
     return myGenerator.getTargetLanguage().getName();
   }
 
@@ -27,26 +45,29 @@ public class Generator {
     return SModelUID.fromString(myGenerator.getTemplatesModel().getName());//, SModelStereotype.TEMPLATES);  //hack
   }
 
-  public String getGeneratorClassFqName() {
+  public String getGeneratorClass() {
     return myGenerator.getGeneratorClass();
   }
 
-  public Set<String> getRequiredLanguageRoots() {
-    Set<String> result = new HashSet<String>();
-    Iterator<Root> roots = myGenerator.languages();
-    while (roots.hasNext()) {
-      result.add(roots.next().getPath());
+
+
+  // -------------------------------
+  // ModelLocator, ModelOwner, LanguageOwner
+  // -------------------------------
+
+  public String findPath(SModelUID modelUID) {
+    String modelPath = PathManager.findModelPath(myGenerator.modelRoots(), modelUID);
+    if (modelPath != null && (new File(modelPath)).exists()) {
+      return modelPath;
     }
-    return result;
+    return null;
   }
 
-  public List<ModelRoot> getModelRoots() {
-    List<ModelRoot> result = new LinkedList<ModelRoot>();
-    Iterator<ModelRoot> roots = myGenerator.modelRoots();
-    while (roots.hasNext()) {
-      ModelRoot modelRoot = roots.next();
-      result.add(modelRoot);
-    }
-    return result;
+  public ModelOwner getParentModelOwner() {
+    return mySourceLanguage;
+  }
+
+  public LanguageOwner getParentLanguageOwner() {
+    return BootstrapLanguages.getInstance();
   }
 }
