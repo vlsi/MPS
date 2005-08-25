@@ -7,6 +7,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TreeTextUtil;
+import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.util.NameUtil;
@@ -142,7 +143,7 @@ public class CellExplorerView implements Tool {
         final SNode node = myCell.getSNode();
         String name = node.getName();
         name = name != null ? name : "<no name>";
-        add(new MPSTree.TextTreeNode("<html><b>Node</b> " + TreeTextUtil.toHtml(name) + " (" + TreeTextUtil.toHtml(node.getConceptName()) + ") [" + node.getId() + "]") {
+        add(new TextTreeNode("<html><b>Node</b> " + TreeTextUtil.toHtml(name) + " (" + TreeTextUtil.toHtml(node.getConceptName()) + ") [" + node.getId() + "]") {
           public Icon getIcon(boolean expanded) {
             return IconManager.getIconFor(node);
           }
@@ -164,7 +165,7 @@ public class CellExplorerView implements Tool {
           add(new CellActionsTreeNode(myCell, getOperationContext()));
         }                     
       } else {
-        add(new MPSTree.TextTreeNode("No Node"));
+        add(new TextTreeNode("No Node"));
       }
 
       if (myCell instanceof EditorCell_Collection) {
@@ -220,7 +221,7 @@ public class CellExplorerView implements Tool {
       myCell = cell;
       Set<String> actions = new TreeSet<String>(cell.getAvailableActions());
       for (String action : actions) {
-        add(new MPSTree.TextTreeNode(action));
+        add(new TextTreeNode(action));
       }
     }
 
@@ -241,7 +242,7 @@ public class CellExplorerView implements Tool {
         keys.add(ak.toString());
       }
       for (String key : keys) {
-        add(new MPSTree.TextTreeNode(key) {
+        add(new TextTreeNode(key) {
           public Icon getIcon(boolean expanded) {
             return Icons.CELL_ACTION_KEY_ICON;
           }

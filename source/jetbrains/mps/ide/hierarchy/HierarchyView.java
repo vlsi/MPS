@@ -6,6 +6,7 @@ import jetbrains.mps.bootstrap.structureLanguage.icons.Icons;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TreeTextUtil;
+import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.toolsPane.Tool;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.EditorsPane;
@@ -19,7 +20,6 @@ import jetbrains.mps.findUsages.FindUsagesManager;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
-import javax.swing.tree.TreePath;
 import java.util.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -160,7 +160,7 @@ public class HierarchyView implements Tool {
     }
   }
 
-  private class RootTextTreeNode extends MPSTree.TextTreeNode {
+  private class RootTextTreeNode extends TextTreeNode {
 
     public RootTextTreeNode(String s) {
       super(s);

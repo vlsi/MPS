@@ -4,8 +4,6 @@ import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.util.PathManager;
 
 import java.io.File;
-import java.util.Set;
-import java.util.List;
 
 /**
  * @author Kostik

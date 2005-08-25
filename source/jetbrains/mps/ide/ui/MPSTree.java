@@ -283,20 +283,4 @@ public abstract class MPSTree extends JTree {
     expandPaths(expansionPaths);
   }
 
-  public static class TextTreeNode extends MPSTreeNode {
-    private String myText;
-
-    public TextTreeNode(String text) {
-      super(null);
-      myText = text;
-    }
-
-    protected String getNodeIdentifier() {
-      return myText.replaceAll(TREE_PATH_SEPARATOR, " ");
-    }
-
-    public String toString() {
-      return myText;
-    }
-  }
 }
