@@ -16,6 +16,7 @@ import java.awt.event.KeyEvent;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ArrayList;
 
 // ----- range selection ----
 
@@ -95,6 +96,7 @@ public class NodeRangeSelection implements IKeyboardHandler {
   }
 
   public List<SNode> getNodes() {
+    if (myParentNode == null) return new ArrayList<SNode>();
     Iterator<SNode> iterator = myParentNode.children(myRole);
     List<SNode> children = new LinkedList<SNode>();
     while (iterator.hasNext()) {
