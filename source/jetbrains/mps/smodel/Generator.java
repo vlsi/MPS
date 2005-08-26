@@ -10,16 +10,16 @@ import java.io.File;
  */
 public class Generator implements ModelLocator, ModelOwner, LanguageOwner {
   private Language mySourceLanguage;
-  private jetbrains.mps.projectLanguage.Generator myGenerator;
+  private jetbrains.mps.projectLanguage.GeneratorDescriptor myGeneratorDescriptor;
 
-  Generator(Language sourceLanguage, jetbrains.mps.projectLanguage.Generator generator) {
+  Generator(Language sourceLanguage, jetbrains.mps.projectLanguage.GeneratorDescriptor generatorDescriptor) {
     mySourceLanguage = sourceLanguage;
-    myGenerator = generator;
+    myGeneratorDescriptor = generatorDescriptor;
     readModelDescriptors();
   }
 
   private void readModelDescriptors() {
-    SModelRepository.getInstance().readModelDescriptors(myGenerator.modelRoots(), this);
+    SModelRepository.getInstance().readModelDescriptors(myGeneratorDescriptor.modelRoots(), this);
   }
 
   public void readLanguageDescriptors(File dir) {
@@ -31,20 +31,20 @@ public class Generator implements ModelLocator, ModelOwner, LanguageOwner {
   }
 
   public String getName() {
-    return myGenerator.getName();
+    return myGeneratorDescriptor.getName();
   }
 
   public String getTargetLanguageName() {
-    return myGenerator.getTargetLanguage().getName();
+    return myGeneratorDescriptor.getTargetLanguage().getName();
   }
 
   public SModelUID getTemplatesModelUID() {
-    if (myGenerator.getTemplatesModel().getName() == null) return null;
-    return SModelUID.fromString(myGenerator.getTemplatesModel().getName());//, SModelStereotype.TEMPLATES);  //hack
+    if (myGeneratorDescriptor.getTemplatesModel().getName() == null) return null;
+    return SModelUID.fromString(myGeneratorDescriptor.getTemplatesModel().getName());//, SModelStereotype.TEMPLATES);  //hack
   }
 
   public String getGeneratorClass() {
-    return myGenerator.getGeneratorClass();
+    return myGeneratorDescriptor.getGeneratorClass();
   }
 
 
@@ -54,7 +54,7 @@ public class Generator implements ModelLocator, ModelOwner, LanguageOwner {
   // -------------------------------
 
   public String findPath(SModelUID modelUID) {
-    String modelPath = PathManager.findModelPath(myGenerator.modelRoots(), modelUID);
+    String modelPath = PathManager.findModelPath(myGeneratorDescriptor.modelRoots(), modelUID);
     if (modelPath != null && (new File(modelPath)).exists()) {
       return modelPath;
     }

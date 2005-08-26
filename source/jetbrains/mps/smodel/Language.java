@@ -62,11 +62,11 @@ public class Language implements ModelLocator, ModelOwner {
         } else if (status.isActions()) {
           languageDescriptor.removeChild(languageDescriptor.getActionsModel());
         } else if (status.isGeneratorTemplates()) {
-          Iterator<jetbrains.mps.projectLanguage.Generator> iterator = languageDescriptor.generators();
+          Iterator<jetbrains.mps.projectLanguage.GeneratorDescriptor> iterator = languageDescriptor.generators();
           while (iterator.hasNext()) {
-            jetbrains.mps.projectLanguage.Generator generator = iterator.next();
-            if (generator.getTemplatesModel().getName().equals(modelDescriptor.getModelUID().toString())) {
-              languageDescriptor.removeChild(generator);
+            jetbrains.mps.projectLanguage.GeneratorDescriptor generatorDescriptor = iterator.next();
+            if (generatorDescriptor.getTemplatesModel().getName().equals(modelDescriptor.getModelUID().toString())) {
+              languageDescriptor.removeChild(generatorDescriptor);
               break;
             }
           }
@@ -85,10 +85,10 @@ public class Language implements ModelLocator, ModelOwner {
 
     // todo: update generators after changes in language (property dialog)
     myGenerators = new LinkedList<Generator>();
-    Iterator<jetbrains.mps.projectLanguage.Generator> generators = getLanguageDescriptor().generators();
+    Iterator<jetbrains.mps.projectLanguage.GeneratorDescriptor> generators = getLanguageDescriptor().generators();
     while (generators.hasNext()) {
-      jetbrains.mps.projectLanguage.Generator generator = generators.next();
-      myGenerators.add(new Generator(this, generator));
+      jetbrains.mps.projectLanguage.GeneratorDescriptor generatorDescriptor = generators.next();
+      myGenerators.add(new Generator(this, generatorDescriptor));
     }
 
     SModelsMulticaster.getInstance().addSModelsListener(myModelsListener);
