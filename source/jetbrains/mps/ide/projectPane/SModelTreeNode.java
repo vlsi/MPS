@@ -9,10 +9,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 
 import javax.swing.*;
-import java.util.Comparator;
-import java.util.Iterator;
 import java.util.List;
-import java.util.TreeSet;
 
 /**
  * Created by IntelliJ IDEA.
@@ -110,30 +107,9 @@ class SModelTreeNode extends MPSTreeNodeEx {
     if (!model.hasSModelCommandListener(myModelListener)) {
       model.addSModelCommandListener(myModelListener);
     }
-    Iterator<SNode> iterator = model.roots();
-    TreeSet<Object> sortedRoots = new TreeSet<Object>(new Comparator() {
-      public int compare(Object o, Object o1) {
-        if (o == o1) {
-          return 0;
-        }
-        String name1 = ((SNode) o).getName();
-        String name2 = ((SNode) o1).getName();
-        if (name1 == null) name1 = "";
-        if (name2 == null) name2 = "";
-
-        if (name1.equals(name2)) {
-          // allow duplications
-          return o.hashCode() < o1.hashCode() ? -1 : 1;
-        }
-        return name1.compareTo(name2);
-      }
-    });
-    while (iterator.hasNext()) {
-      sortedRoots.add(iterator.next());
-    }
-    for (Object sortedRoot : sortedRoots) {
-      SNode node = (SNode) sortedRoot;
-      MPSTreeNodeEx treeNode = new SNodeTreeNode(node, myIDE, getOperationContext());
+    List<SNode> sortedRoots = SortUtil.sortNodes(model.getRoots());
+    for (SNode sortedRoot : sortedRoots) {
+      MPSTreeNodeEx treeNode = new SNodeTreeNode(sortedRoot, myIDE, getOperationContext());
       add(treeNode);
     }
     isInitialized = true;

@@ -358,8 +358,8 @@ public class Language implements ModelLocator, ModelOwner {
     return result;
   }
 
-  public Set<SModelDescriptor> getLibraryModels() {
-    Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
+  public List<SModelDescriptor> getLibraryModels() {
+    List<SModelDescriptor> result = new LinkedList<SModelDescriptor>();
     Iterator<Model> libraryModels = getLanguageDescriptor().libraryModels();
     while (libraryModels.hasNext()) {
       Model model = libraryModels.next();

@@ -1,14 +1,14 @@
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageInProjectOperationContext;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.smodel.*;
 
 import javax.swing.*;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -25,6 +25,7 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
     super(new LanguageInProjectOperationContext(language, upperContext));
     myLanguage = language;
     myIDE = ide;
+    populate();
   }
 
   public Icon getIcon(boolean expanded) {
@@ -53,6 +54,60 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
       return "<html>" + myLanguage.getNamespace() + "  <b>(up-to-date)</b>";
     } else {
       return "<html>" + myLanguage.getNamespace() + "  <b>(generation required)</b>";
+    }
+  }
+
+  private void populate() {
+    IOperationContext operationContext = getOperationContext();
+
+    // language aspects
+
+    SModelDescriptor structureModelDescriptor = myLanguage.getStructureModelDescriptor();
+    if(structureModelDescriptor != null) {
+      this.add(new SModelTreeNode(structureModelDescriptor, "structure", myIDE, operationContext));
+    }
+
+    SModelDescriptor editorModelDescriptor = myLanguage.getEditorModelDescriptor();
+    if(editorModelDescriptor != null) {
+      this.add(new SModelTreeNode(editorModelDescriptor, "editor", myIDE, operationContext));
+    }
+
+    // todo: tmp here
+    SModelDescriptor templatesEditorModelDescriptor = myLanguage.getEditorModelDescriptor("templates");
+    if(templatesEditorModelDescriptor != null) {
+      this.add(new SModelTreeNode(templatesEditorModelDescriptor, "templates editor", myIDE, operationContext));
+    }
+
+    SModelDescriptor typesystemModelDescriptor = myLanguage.getTypesystemModelDescriptor();
+    if (typesystemModelDescriptor != null) {
+      this.add(new SModelTreeNode(typesystemModelDescriptor, "typesystem", myIDE, operationContext));
+    }
+
+    SModelDescriptor actionsModelDescriptor = myLanguage.getActionsModelDescriptor();
+    if (actionsModelDescriptor != null) {
+      this.add(new SModelTreeNode(actionsModelDescriptor, "actions", myIDE, operationContext));
+    }
+
+    // language accessory models
+
+    TextTreeNode libraries = new TextTreeNode("<html><b>accessory</b>") {
+      public Icon getIcon(boolean expanded) {
+        return Icons.LIB_ICON;
+      }
+    };
+
+    List<SModelDescriptor> sortedModels = SortUtil.sortModels(myLanguage.getLibraryModels());
+    for (SModelDescriptor model : sortedModels) {
+      libraries.add(new SModelTreeNode(model, null, myIDE, operationContext));
+    }
+    this.add(libraries);
+
+
+    // language generators
+
+    for (Generator generator : myLanguage.getGenerators()) {
+      TextTreeNode generatorNode = new GeneratorTreeNode("<html><b>generator \"" + generator.getName() + "\"</b>", myIDE, operationContext);
+      this.add(generatorNode);
     }
   }
 }

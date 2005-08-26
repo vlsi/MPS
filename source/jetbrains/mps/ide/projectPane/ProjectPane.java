@@ -359,110 +359,15 @@ public class ProjectPane extends JComponent {
 
       DefaultMutableTreeNode projectLanguagesNode = new ProjectLanguagesTreeNode(myIDE, operationContext);
       for (Language language : myProject.getProjectLanguages()) {
-        ProjectLanguageTreeNode node = new ProjectLanguageTreeNode(language, myIDE, myIDE.getProjectOperationContext());
+        ProjectLanguageTreeNode node = new ProjectLanguageTreeNode(language, myIDE, operationContext);
         projectLanguagesNode.add(node);
-        initProjectLanguageNode(node, language);
       }
-
-      DefaultMutableTreeNode languagesNode = new LanguagesTreeNode(operationContext);
-      for (Language language : operationContext.getLanguages()) {
-        LanguageTreeNode node = new LanguageTreeNode(language, myIDE.getProjectOperationContext());
-        languagesNode.add(node);
-        initLanguageNode(node, language);
-      }
-
       root.add(projectLanguagesNode);
-      root.add(languagesNode);
 
+      LanguagesTreeNode languagesNode = new LanguagesTreeNode(myIDE, operationContext);
+      root.add(languagesNode);
       return root;
     }
-
-    private void initProjectLanguageNode(ProjectLanguageTreeNode node, Language language) {
-      IOperationContext operationContext = node.getOperationContext();
-      addNodeIfModelNotNull(node, language.getStructureModelDescriptor(), "Structure", operationContext);
-
-      for (SModelDescriptor editor : language.getEditorDescriptors()) {
-        String stereotypeName = language.getEditorStereotype(editor);
-        TextTreeNode stereotype = new LanguageEditorsTreeNode("<html><b>Editor " + ((stereotypeName != null) ? stereotypeName : "") + "</b>", operationContext);
-        addNodeIfModelNotNull(stereotype, language.getEditorModelDescriptor(stereotypeName), "<html><b>Editor</b>", operationContext);
-        node.add(stereotype);
-      }
-
-      for (Generator generator : language.getGenerators()) {
-        TextTreeNode generatorNode = new GeneratorsTreeNode("<html><b>Generator " + generator.getName() + "</b>", operationContext);
-        SModelDescriptor templatesModel = null;
-        if (generator.getTemplatesModelUID() != null && generator.getTemplatesModelUID() != null) {
-          templatesModel = operationContext.getModelDescriptor(generator.getTemplatesModelUID());
-        }
-
-        addNodeIfModelNotNull(generatorNode, templatesModel, "Templates Model", node.getOperationContext());
-        node.add(generatorNode);
-      }
-
-      SModelDescriptor typesystemModelDescriptor = language.getTypesystemModelDescriptor();
-      if (typesystemModelDescriptor != null) {
-        addNodeIfModelNotNull(node, typesystemModelDescriptor, "Typesystem", operationContext);
-      }
-
-      SModelDescriptor actionsModelDescriptor = language.getActionsModelDescriptor();
-      if (actionsModelDescriptor != null) {
-        addNodeIfModelNotNull(node, actionsModelDescriptor, "Actions", operationContext);
-      }
-
-      TextTreeNode libraries = new TextTreeNode("<html><b>Library Models</b>") {
-        public Icon getIcon(boolean expanded) {
-          return Icons.LIB_ICON;
-        }
-      };
-
-      List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-      models.addAll(language.getLibraryModels());
-      Collections.sort(models, new Comparator<SModelDescriptor>() {
-        public int compare(SModelDescriptor o1, SModelDescriptor o2) {
-          return o1.getModelUID().compareTo(o2.getModelUID());
-        }
-      });
-
-      for (SModelDescriptor model : models) {
-        libraries.add(new SModelTreeNode(model, null, myIDE, operationContext));
-      }
-      node.add(libraries);
-    }
-
-    private void initLanguageNode(LanguageTreeNode node, Language language) {
-      IOperationContext operationContext = node.getOperationContext();
-      addNodeIfModelNotNull(node, language.getEditorModelDescriptor(), "Editor", operationContext);
-      addNodeIfModelNotNull(node, language.getStructureModelDescriptor(), "Structure", operationContext);
-      addNodeIfModelNotNull(node, language.getTypesystemModelDescriptor(), "Typesystem", operationContext);
-      addNodeIfModelNotNull(node, language.getActionsModelDescriptor(), "Actions", operationContext);
-
-
-      TextTreeNode libraries = new TextTreeNode("<html><b>Library Models</b>") {
-        public Icon getIcon(boolean expanded) {
-          return Icons.LIB_ICON;
-        }
-      };
-
-      List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-      models.addAll(language.getLibraryModels());
-      Collections.sort(models, new Comparator<SModelDescriptor>() {
-        public int compare(SModelDescriptor o1, SModelDescriptor o2) {
-          return o1.getModelUID().compareTo(o2.getModelUID());
-        }
-      });
-      for (SModelDescriptor model : models) {
-        addNodeIfModelNotNull(libraries, model, null, operationContext);
-      }
-
-      node.add(libraries);
-    }
-
-    private void addNodeIfModelNotNull(MPSTreeNode node, SModelDescriptor modelDescriptor, String label, IOperationContext operationContext) {
-      if (modelDescriptor != null) {
-        node.add(new SModelTreeNode(modelDescriptor, label, myIDE, operationContext));
-      }
-    }
-
   } // private class MyTree
 
   private class MyLanguageListener implements LanguageCommandListener {
