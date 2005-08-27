@@ -97,6 +97,11 @@ public class Language implements ModelLocator, ModelOwner {
   public void dispose() {
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
     SModelsMulticaster.getInstance().removeSModelsListener(myModelsListener);
+    if(myGenerators != null) {
+      for (Generator generator : myGenerators) {
+        generator.dispose();
+      }
+    }
   }
 
   public ModelOwner getParentModelOwner() {
@@ -125,7 +130,7 @@ public class Language implements ModelLocator, ModelOwner {
       });
       try {
         model.setLoading(true);
-        myLanguageDescriptor = LanguageUtil.loadFromXML(myDescriptorFile, model);
+        myLanguageDescriptor = PersistenceUtil.loadLanguageDescriptor(myDescriptorFile, model);
         model.addRoot(myLanguageDescriptor);
       } finally {
         model.setLoading(false);
@@ -323,7 +328,7 @@ public class Language implements ModelLocator, ModelOwner {
   }
 
   public void save() {
-    LanguageUtil.saveToFile(myDescriptorFile, getLanguageDescriptor());
+    PersistenceUtil.saveLanguageDescriptor(myDescriptorFile, getLanguageDescriptor());
   }
 
   private SModelDescriptor getModelDescriptorByUID(SModelUID modelUID) {
@@ -396,9 +401,6 @@ public class Language implements ModelLocator, ModelOwner {
   private void readLanguageModelDescriptors() {
     SModelRepository repository = SModelRepository.getInstance();
     repository.readModelDescriptors(getModelRoots(), this);
-//    for (Generator g : getGenerators()) {
-//      repository.readModelDescriptors(g.getModelRoots(), this);
-//    }
   }
 
   private void fireLanguageChangedInCommand() {
