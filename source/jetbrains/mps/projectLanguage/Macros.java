@@ -13,12 +13,6 @@ import java.io.File;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class Macros {
-//  private static final Logger LOG = Logger.getLogger(Macros.class);
-
-//  public static final String PATH_MACRO_LANGUAGE_DESCRIPTOR = "${language_descriptor}";
-//  public static final String PATH_MACRO_SOLUTION_DESCRIPTOR = "${solution_descriptor}";
-//  public static final String PATH_MACRO_MPS_HOME = "${mps_home}";
-
   public static Macros languageDescriptor() {
     return new LanguageDescriptorMacros();
   }
@@ -102,61 +96,4 @@ public abstract class Macros {
       return super.shrinkPath_impl(absolutePath, languageDescriptor);
     }
   }
-
-//  private static String expandPath(String rootFileName, File anchorFile) {
-//    rootFileName = rootFileName.replace('\\', File.separatorChar);
-//
-//    String rootAbsolutePath;
-//    if (rootFileName.startsWith(PATH_MACRO_LANGUAGE_DESCRIPTOR)) {
-//      String modelRelativePath = removePrefix(rootFileName, PATH_MACRO_LANGUAGE_DESCRIPTOR);
-//      rootAbsolutePath = PathManager.getAbsolutePathByRelational(anchorFile, modelRelativePath);
-//    } else if (rootFileName.startsWith(PATH_MACRO_SOLUTION_DESCRIPTOR)) {
-//      String modelRelativePath = removePrefix(rootFileName, PATH_MACRO_SOLUTION_DESCRIPTOR);
-//      rootAbsolutePath = PathManager.getAbsolutePathByRelational(anchorFile, modelRelativePath);
-//    } else if (rootFileName.startsWith(PATH_MACRO_MPS_HOME)) {
-//      String modelRelativePath = removePrefix(rootFileName, PATH_MACRO_MPS_HOME);
-//      rootAbsolutePath = PathManager.getAbsolutePathByRelational(new File(PathManager.getHomePath()), modelRelativePath);
-//    } else if (new File(rootFileName).isAbsolute()) {
-//      rootAbsolutePath = new File(rootFileName).getAbsolutePath();
-//    } else {
-//      rootAbsolutePath = PathManager.getAbsolutePathByRelational(anchorFile, rootFileName);
-//    }
-//    return FileUtil.getCanonicalPath(rootAbsolutePath);
-//  }
-
-//  public static String shrinkLanguageDescriptorPath(String absolutePath, File languageDescriptor) {
-//    String fileName;
-//    if ((absolutePath).startsWith(languageDescriptor.getParent())) {
-//      String modelRelationalPath = PathManager.getRelationalPathByAbsolute(languageDescriptor, absolutePath);
-//      fileName = PATH_MACRO_LANGUAGE_DESCRIPTOR + modelRelationalPath;
-//    } else if ((absolutePath).startsWith(PathManager.getHomePath())) {
-//      String modelRelationalPath = PathManager.getRelationalPathByAbsolute(new File(PathManager.getHomePath()), absolutePath);
-//      fileName = PATH_MACRO_MPS_HOME + modelRelationalPath;
-//    } else {
-//      fileName = absolutePath;
-//    }
-//    return fileName.replace(File.separatorChar, '\\');
-//  }
-
-//  static String expandLanguageDescriptorPath(String rootFileName, File languageDescriptor) {
-//    return expandPath(rootFileName, languageDescriptor);
-//  }
-
-//  public static String shrinkSolutionDescriptorPath(String absolutePath, File solutionDescriptor) {
-//    String fileName;
-//    if ((absolutePath).startsWith(solutionDescriptor.getParent())) {
-//      String modelRelationalPath = PathManager.getRelationalPathByAbsolute(solutionDescriptor, absolutePath);
-//      fileName = PATH_MACRO_SOLUTION_DESCRIPTOR + modelRelationalPath;
-//    } else if ((absolutePath).startsWith(PathManager.getHomePath())) {
-//      String modelRelationalPath = PathManager.getRelationalPathByAbsolute(new File(PathManager.getHomePath()), absolutePath);
-//      fileName = PATH_MACRO_MPS_HOME + modelRelationalPath;
-//    } else {
-//      fileName = absolutePath;
-//    }
-//    return fileName.replace(File.separatorChar, '\\');
-//  }
-
-//  static String expandSolutionDescriptorPath(String rootFileName, File solutionDescriptor) {
-//    return expandPath(rootFileName, solutionDescriptor);
-//  }
 }
