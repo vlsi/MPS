@@ -2,6 +2,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.projectLanguage.GeneratorDescriptor;
 
 import java.io.File;
 
@@ -10,21 +11,18 @@ import java.io.File;
  */
 public class Generator implements ModelLocator, ModelOwner, LanguageOwner {
   private Language mySourceLanguage;
-  private jetbrains.mps.projectLanguage.GeneratorDescriptor myGeneratorDescriptor;
+  private GeneratorDescriptor myGeneratorDescriptor;
 
-  Generator(Language sourceLanguage, jetbrains.mps.projectLanguage.GeneratorDescriptor generatorDescriptor) {
+  Generator(Language sourceLanguage, GeneratorDescriptor generatorDescriptor) {
     mySourceLanguage = sourceLanguage;
     myGeneratorDescriptor = generatorDescriptor;
-    readModelDescriptors();
-  }
-
-  private void readModelDescriptors() {
     SModelRepository.getInstance().readModelDescriptors(myGeneratorDescriptor.modelRoots(), this);
   }
 
   public void readLanguageDescriptors(File dir) {
     LanguageRepository.getInstance().readLanguageDescriptors(dir, this);
   }
+
   public void dispose() {
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
     LanguageRepository.getInstance().unRegisterLanguages(this);
@@ -46,8 +44,6 @@ public class Generator implements ModelLocator, ModelOwner, LanguageOwner {
   public String getGeneratorClass() {
     return myGeneratorDescriptor.getGeneratorClass();
   }
-
-
 
   // -------------------------------
   // ModelLocator, ModelOwner, LanguageOwner
