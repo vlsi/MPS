@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.DialogUtils;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -91,6 +92,10 @@ class SModelTreeNode extends MPSTreeNodeEx {
     return "<html>" + fqName;
   }
 
+  public int getToggleClickCount() {
+    return -1;
+  }
+
   public boolean isInitialized() {
     return isInitialized;
   }
@@ -117,6 +122,10 @@ class SModelTreeNode extends MPSTreeNodeEx {
 
   protected void dispose() {
     myModelDescriptor.getSModel().removeSModelCommandListener(myModelListener);
+  }
+
+  public void doubleClick() {
+    DialogUtils.editModelProperties(myIDE, myModelDescriptor, getOperationContext());
   }
 
   private class MyModelListener implements SModelCommandListener {

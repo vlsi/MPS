@@ -216,7 +216,8 @@ public abstract class MPSTree extends JTree {
     while (expanded.hasMoreElements()) {
       TreePath path = expanded.nextElement();
       String pathString = pathToString(path);
-      if (result.contains(pathString)) LOG.warning("two expanded paths have the same string representation");
+      if (result.contains(pathString))
+        LOG.warning("two expanded paths have the same string representation");
       result.add(pathString);
     }
     return result;
@@ -227,7 +228,8 @@ public abstract class MPSTree extends JTree {
     if (getSelectionPaths() == null) return result;
     for (TreePath selectionPart : getSelectionPaths()) {
       String pathString = pathToString(selectionPart);
-      if (result.contains(pathString)) LOG.warning("two selected paths have the same string representation");
+      if (result.contains(pathString))
+        LOG.warning("two selected paths have the same string representation");
       result.add(pathString);
     }
     return result;
