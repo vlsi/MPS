@@ -84,7 +84,7 @@ public class ProjectPane extends JComponent {
         }
       }
     });
-    
+
     rebuildTree();
   }
 
@@ -327,6 +327,12 @@ public class ProjectPane extends JComponent {
   }
 
   private class MyTree extends MPSTree {
+
+   public MyTree() {
+     super();
+     scrollsOnExpand = false;
+   }
+
     protected MPSTreeNode rebuild() {
       IOperationContext operationContext = myIDE.getGlobalOperationContext();
       if (myProject == null) {
