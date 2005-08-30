@@ -14,6 +14,7 @@ import org.jdom.Document;
 import org.jdom.Element;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.*;
 
 /**
@@ -47,16 +48,30 @@ public class MPSProject implements LanguageOwner {
 
     // load solutions
     mySolutions = new LinkedList<Solution>();
-    // convert legacy project to solution
-    SolutionDescriptor solutionFromLegacyProject = PersistenceUtil.loadSolutionDescriptorFormOldMPR(file, myProjectModel);
-    if (solutionFromLegacyProject != null && solutionFromLegacyProject.getModelRootsCount() > 0) {
-      String solutionPath = file.getAbsolutePath();
-      solutionPath = solutionPath.substring(0, solutionPath.lastIndexOf('.')) + ".msd";
-      mySolutions.add(new Solution(new File(solutionPath), solutionFromLegacyProject));
-    }
     for (SolutionPath solutionPath : CollectionUtil.iteratorAsIterable(myProjectDescriptor.solutionPaths())) {
       Solution solution = new Solution(new File(solutionPath.getPath()));
       mySolutions.add(solution);
+    }
+
+    // convert legacy project to solution
+    SolutionDescriptor solutionFromLegacyProject = PersistenceUtil.loadSolutionDescriptorFormOldMPR(file, myProjectModel);
+    if (solutionFromLegacyProject != null &&
+            (solutionFromLegacyProject.getModelRootsCount() > 0 || solutionFromLegacyProject.getLanguageRootsCount() > 0)) {
+      String solutionPathname = file.getAbsolutePath();
+      solutionPathname = solutionPathname.substring(0, solutionPathname.lastIndexOf('.')) + ".msd";
+      File solutionDescriptorFile = new File(solutionPathname);
+      if (!solutionDescriptorFile.exists()) {
+        try {
+          solutionDescriptorFile.createNewFile();
+          SolutionPath solutionPath = SolutionPath.newInstance(myProjectModel);
+          solutionPath.setPath(solutionPathname);
+          myProjectDescriptor.addSolutionPath(solutionPath);
+          mySolutions.add(new Solution(solutionDescriptorFile, solutionFromLegacyProject));
+          PersistenceUtil.saveSolutionDescriptor(solutionDescriptorFile, solutionFromLegacyProject);
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
     }
 
     // load languages
@@ -84,6 +99,7 @@ public class MPSProject implements LanguageOwner {
   public ProjectDescriptor getProjectDescriptor() {
     return myProjectDescriptor;
   }
+
 //  public void init() {
 //    if (myRootManager != null) {
 //      return;
@@ -133,12 +149,6 @@ public class MPSProject implements LanguageOwner {
     myComponents.put(interfaceClass, instance);
   }
 
-//  public void read(final File file) {
-//    init();
-//    myRootManager.read(file);
-//  }
-
-
   public List<String> getClassPath() {
     List<String> classpath = new LinkedList<String>();
     String clspath = myProjectDescriptor.getProjectClassesPath();
@@ -184,29 +194,30 @@ public class MPSProject implements LanguageOwner {
   }
 
   public void save() {
-    System.out.println("PLOJECT SAVE IS NOT IMPLEMENTED");
 //    init();
 //    myRootManager.save(myProjectFile);
-//
-//    try {
-//      if (!myWorkspaceFile.exists()) {
-//        myWorkspaceFile.createNewFile();
-//      }
-//      Element root = new Element(COMPONENTS);
-//      for (Class cls : myComponents.keySet()) {
-//        Object component = myComponents.get(cls);
-//        if (component instanceof ExternalizableComponent) {
-//          Element componentElement = new Element(COMPONENT);
-//          componentElement.setAttribute(CLASS, cls.getName());
-//          ((ExternalizableComponent) component).write(componentElement);
-//          root.addContent(componentElement);
-//        }
-//      }
-//      Document document = new Document(root);
-//      JDOMUtil.writeDocument(document, myWorkspaceFile);
-//    } catch (Exception e) {
-//      LOG.error(e);
-//    }
+
+    PersistenceUtil.saveProjectDescriptor(myProjectFile, myProjectDescriptor);
+
+    try {
+      if (!myWorkspaceFile.exists()) {
+        myWorkspaceFile.createNewFile();
+      }
+      Element root = new Element(COMPONENTS);
+      for (Class cls : myComponents.keySet()) {
+        Object component = myComponents.get(cls);
+        if (component instanceof ExternalizableComponent) {
+          Element componentElement = new Element(COMPONENT);
+          componentElement.setAttribute(CLASS, cls.getName());
+          ((ExternalizableComponent) component).write(componentElement);
+          root.addContent(componentElement);
+        }
+      }
+      Document document = new Document(root);
+      JDOMUtil.writeDocument(document, myWorkspaceFile);
+    } catch (Exception e) {
+      LOG.error(e);
+    }
   }
 
   public boolean isProjectChanged() {

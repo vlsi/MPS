@@ -21,6 +21,7 @@ public class Solution implements ModelLocator, ModelOwner, LanguageOwner {
 
   /**
    * tmp: to create solution from legacy projects
+   *
    * @deprecated
    */
   public Solution(File descriptorFile, SolutionDescriptor solutionDescriptor) {
@@ -48,16 +49,7 @@ public class Solution implements ModelLocator, ModelOwner, LanguageOwner {
   }
 
   public void save() {
-//    if (!myDescriptorFile.exists()) {
-//      try {
-//        myDescriptorFile.createNewFile();
-//        PersistenceUtil.saveSolutionDescriptor(myDescriptorFile, getSolutionDescriptor());
-//      } catch (IOException e) {
-//        e.printStackTrace();
-//      }
-//    } else {
-      PersistenceUtil.saveSolutionDescriptor(myDescriptorFile, getSolutionDescriptor());
-//    }
+    PersistenceUtil.saveSolutionDescriptor(myDescriptorFile, getSolutionDescriptor());
   }
 
   public SolutionDescriptor getSolutionDescriptor() {

@@ -28,16 +28,16 @@ public abstract class Macros {
   public final String expandPath(String path, File anchorFile) {
     if(path == null) return null;
     path = path.replace('\\', File.separatorChar);
-    return expandPath_impl(path, anchorFile);
+    return expandPath_internal(path, anchorFile);
   }
 
   public final String shrinkPath(String absolutePath, File anchorFile) {
     if(absolutePath == null) return null;
-    String fileName = shrinkPath_impl(absolutePath, anchorFile);
+    String fileName = shrinkPath_internal(absolutePath, anchorFile);
     return fileName.replace(File.separatorChar, '\\');
   }
 
-  protected String expandPath_impl(String path, File anchorFile) {
+  protected String expandPath_internal(String path, File anchorFile) {
     String absolutePath;
     if (path.startsWith("${mps_home}")) {
       String relativePath = removePrefix(path, "${mps_home}");
@@ -50,9 +50,9 @@ public abstract class Macros {
     return FileUtil.getCanonicalPath(absolutePath);
   }
 
-  protected String shrinkPath_impl(String absolutePath, File anchorFile) {
+  protected String shrinkPath_internal(String absolutePath, File anchorFile) {
     String fileName;
-    if ((absolutePath).startsWith(PathManager.getHomePath())) {
+    if (absolutePath.startsWith(PathManager.getHomePath())) {
       String relationalPath = PathManager.getRelationalPathByAbsolute(new File(PathManager.getHomePath()), absolutePath);
       fileName = "${mps_home}" + relationalPath;
     } else {
@@ -68,56 +68,56 @@ public abstract class Macros {
   }
 
   private static class LanguageDescriptorMacros extends Macros {
-    protected String expandPath_impl(String path, File languageDescriptor) {
+    protected String expandPath_internal(String path, File languageDescriptor) {
       if (path.startsWith("${language_descriptor}")) {
         String modelRelativePath = removePrefix(path, "${language_descriptor}");
         return PathManager.getAbsolutePathByRelational(languageDescriptor, modelRelativePath);
       }
-      return super.expandPath_impl(path, languageDescriptor);
+      return super.expandPath_internal(path, languageDescriptor);
     }
 
-    protected String shrinkPath_impl(String absolutePath, File languageDescriptor) {
-      if ((absolutePath).startsWith(languageDescriptor.getParent())) {
+    protected String shrinkPath_internal(String absolutePath, File languageDescriptor) {
+      if (absolutePath.startsWith(languageDescriptor.getParent())) {
         String relationalPath = PathManager.getRelationalPathByAbsolute(languageDescriptor, absolutePath);
         return "${language_descriptor}" + relationalPath;
       }
-      return super.shrinkPath_impl(absolutePath, languageDescriptor);
+      return super.shrinkPath_internal(absolutePath, languageDescriptor);
     }
   }
 
   private static class SolutionDescriptorMacros extends Macros {
-    protected String expandPath_impl(String path, File solutionDescriptor) {
+    protected String expandPath_internal(String path, File solutionDescriptor) {
       if (path.startsWith("${solution_descriptor}")) {
         String modelRelativePath = removePrefix(path, "${solution_descriptor}");
         return PathManager.getAbsolutePathByRelational(solutionDescriptor, modelRelativePath);
       }
-      return super.expandPath_impl(path, solutionDescriptor);
+      return super.expandPath_internal(path, solutionDescriptor);
     }
 
-    protected String shrinkPath_impl(String absolutePath, File solutionDescriptor) {
-      if ((absolutePath).startsWith(solutionDescriptor.getParent())) {
+    protected String shrinkPath_internal(String absolutePath, File solutionDescriptor) {
+      if (absolutePath.startsWith(solutionDescriptor.getParent())) {
         String relationalPath = PathManager.getRelationalPathByAbsolute(solutionDescriptor, absolutePath);
         return "${solution_descriptor}" + relationalPath;
       }
-      return super.shrinkPath_impl(absolutePath, solutionDescriptor);
+      return super.shrinkPath_internal(absolutePath, solutionDescriptor);
     }
   }
 
   private static class ProjectDescriptorMacros extends Macros {
-    protected String expandPath_impl(String path, File projectDescriptor) {
+    protected String expandPath_internal(String path, File projectDescriptor) {
       if (path.startsWith("${project}")) {
         String modelRelativePath = removePrefix(path, "${project}");
         return PathManager.getAbsolutePathByRelational(projectDescriptor, modelRelativePath);
       }
-      return super.expandPath_impl(path, projectDescriptor);
+      return super.expandPath_internal(path, projectDescriptor);
     }
 
-    protected String shrinkPath_impl(String absolutePath, File projectDescriptor) {
-      if ((absolutePath).startsWith(projectDescriptor.getParent())) {
+    protected String shrinkPath_internal(String absolutePath, File projectDescriptor) {
+      if (absolutePath.startsWith(projectDescriptor.getParent())) {
         String relationalPath = PathManager.getRelationalPathByAbsolute(projectDescriptor, absolutePath);
         return "${project}" + relationalPath;
       }
-      return super.shrinkPath_impl(absolutePath, projectDescriptor);
+      return super.shrinkPath_internal(absolutePath, projectDescriptor);
     }
   }
 }
