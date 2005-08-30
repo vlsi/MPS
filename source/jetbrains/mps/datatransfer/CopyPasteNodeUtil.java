@@ -45,6 +45,23 @@ public class CopyPasteNodeUtil {
     return targetNode;
   }
 
+  public static List<SNode> copyNodesIn(List<SNode> sourceNodes) {
+    if (sourceNodes.isEmpty()) return new ArrayList<SNode>();
+    SModel model = sourceNodes.get(0).getModel();
+    List<SNode> result = new ArrayList<SNode>();
+    model.setLoading(true);
+    ourSourceNodesToNewNodes.clear();
+    ourReferences.clear();
+    for (SNode sourceNode : sourceNodes) {
+      assert sourceNode.getModel() == model;
+      SNode targetNode = copyNode_internal(sourceNode);
+      result.add(targetNode);
+    }
+    processReferencesIn();
+    model.setLoading(false);
+    return result;
+  }
+
   public static SNode copyNodeOut(SNode node, SModel model) {
     model.setLoading(true);
     ourSourceNodesToNewNodes.clear();
@@ -57,6 +74,30 @@ public class CopyPasteNodeUtil {
     model.setLoading(false);
     fakeModel.setLoading(false);
     return nodeToPaste;
+  }
+
+  public static List<SNode> copyNodesOut(List<SNode> sourceNodes) {
+    if (sourceNodes.isEmpty()) return new ArrayList<SNode>();
+    SModel model = sourceNodes.get(0).getModel();
+    List<SNode> result = new ArrayList<SNode>();
+    model.setLoading(true);
+    ourSourceNodesToNewNodes.clear();
+    ourReferences.clear();
+    for (SNode sourceNode : sourceNodes) {
+      assert sourceNode.getModel() == model;
+      SNode nodeToPaste = copyNode_internal(sourceNode);
+      result.add(nodeToPaste);
+    }
+    SNode firstNodeToPaste = result.get(0);
+    SModel fakeModel = firstNodeToPaste.getModel();
+    fakeModel.setLoading(true);
+    processReferencesOut();
+    for (SNode nodeToPaste : result) {
+      nodeToPaste.changeModel(model);
+    }
+    model.setLoading(false);
+    fakeModel.setLoading(false);
+    return result;
   }
 
   private static SNode copyNode_internal(SNode sourceNode) {

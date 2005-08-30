@@ -47,13 +47,8 @@ public class CellAction_PasteNode extends EditorCellAction {
       PasteUtil.pasteRelative(anchor, node, false, operationContext);
       anchor = node;
     }
-    //EditorsPane editorsPane = context.getProject().getComponent(EditorsPane.class);
 
-   /* OutputView outputView = context.getProject().getComponent(OutputView.class);
-    outputView.clear();
-    outputView.append("first pasted node id = " + anchor.getId());
-    outputView.activate();*/
-    AbstractEditorComponent editor = context.getNodeEditorComponent();//editorsPane.getCurrentEditor();
+    AbstractEditorComponent editor = context.getNodeEditorComponent();
     editor.rebuildEditorContent();
   }
 }
