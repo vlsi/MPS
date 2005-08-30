@@ -93,7 +93,7 @@ class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   public int getToggleClickCount() {
-    return -1;
+    return 2;
   }
 
   public boolean isInitialized() {
