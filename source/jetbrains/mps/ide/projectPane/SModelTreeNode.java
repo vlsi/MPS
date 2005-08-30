@@ -124,9 +124,9 @@ class SModelTreeNode extends MPSTreeNodeEx {
     myModelDescriptor.getSModel().removeSModelCommandListener(myModelListener);
   }
 
-  public void doubleClick() {
+/*  public void doubleClick() {
     DialogUtils.editModelProperties(myIDE, myModelDescriptor, getOperationContext());
-  }
+  }*/
 
   private class MyModelListener implements SModelCommandListener {
     public MyModelListener() {
