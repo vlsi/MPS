@@ -80,6 +80,9 @@ class SNodeTreeNode extends MPSTreeNodeEx {
     myInitialized = true;
   }
 
+  public void doubleClick() {
+    myIDE.openNode(myNodeProxy.getNode(), getOperationContext());
+  }
 
   public Icon getIcon(boolean expanded) {
     if (myNodeProxy.getNode() != null) {

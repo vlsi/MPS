@@ -84,26 +84,7 @@ public class ProjectPane extends JComponent {
         }
       }
     });
-
-    myTree.addMouseListener(new MouseAdapter() {
-      public void mouseClicked(MouseEvent e) {
-        if (myTree.getToggleClickCount() == 2) return;
-        if (e.getClickCount() == 2) {
-          TreePath path = myTree.getPathForLocation(e.getX(), e.getY());
-          if (path == null) return;
-          myTree.setSelectionPath(path);
-          openEditor(myIDE.getGlobalOperationContext());
-        }
-      }
-
-      public void mousePressed(MouseEvent e) {
-        if (e.getButton() == MouseEvent.BUTTON3) {
-//          TreePath path = myTree.getClosestPathForLocation(e.getX(), e.getY());
-          //myTree.setSelectionPath(path);
-          //myTree.addSelectionPath(path);
-        }
-      }
-    });
+    
     rebuildTree();
   }
 
