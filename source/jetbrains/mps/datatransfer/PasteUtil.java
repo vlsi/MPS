@@ -11,6 +11,7 @@ import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.NameUtil;
 
 import java.util.Iterator;
 
@@ -42,12 +43,18 @@ public class PasteUtil {
     }
   }
 
+  private static boolean canPasteToRoot(SNode pasteTarget, SNode pasteNode, IOperationContext operationContext) {
+    if (pasteNode == null) return false;
+    final ConceptDeclaration conceptDeclaration = SModelUtil.findConceptDeclaration(NameUtil.nodeConceptFQName(pasteNode), operationContext);
+    return (pasteTarget.getParent() == null && conceptDeclaration.getRootable());
+  }
+
   private static int canPaste_internal(SNode pasteTarget, SNode pasteNode, IOperationContext operationContext) {
     if (pasteTarget.getModel() != pasteNode.getModel()) {
       return PASTE_N_A;
     }
     // if target is root node - paste to model root
-    if (pasteTarget.getParent() == null /*&& pasteNode*/) {
+    if (canPasteToRoot(pasteTarget, pasteNode, operationContext)) {
       return PASTE_TO_ROOT;
     }
     if (canPasteToTarget(pasteTarget, pasteNode, pasteTarget.getRole_(), operationContext)) {
