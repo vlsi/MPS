@@ -1,5 +1,7 @@
 package jetbrains.mps.project;
 
+import jetbrains.mps.logging.Logger;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +10,7 @@ import java.util.List;
  * Date: Mar 24, 2005
  */
 public class MPSProjects {
+  private static final Logger LOG = Logger.getLogger(MPSProjects.class);
   private ArrayList<MPSProject> myProjects = new ArrayList<MPSProject>();
   private ArrayList<MPSProjectsListener> myMPSProjectsListeners = new ArrayList<MPSProjectsListener>();
 
@@ -29,6 +32,10 @@ public class MPSProjects {
     }
   }
 
+  public void reloadProject(MPSProject project) {
+    LOG.errorWithTrace("Not implemented");
+  }
+  
   public void addMPSProjectsListener(MPSProjectsListener listener) {
     myMPSProjectsListeners.add(listener);
   }

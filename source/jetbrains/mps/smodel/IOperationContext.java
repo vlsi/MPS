@@ -2,7 +2,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.projectLanguage.ModelRoot;
 
-import java.io.File;
 import java.util.List;
 
 /**
@@ -37,10 +36,6 @@ public interface IOperationContext {
   void dispose();
 
   <T> T getComponent(Class<T> clazz);
-
-  List<File> getLanguageRoots();
-
-  void addLanguageRoot(File file);
 
   List<ModelRoot> getModelRoots();
 

@@ -37,7 +37,7 @@ public class ClassLoaderManager {
       if (ideMain.getProject() == null) {
         myClassLoader = new MyClassLoader("classes");
       } else {
-        myClassLoader = new MyClassLoader(ideMain.getProject().getRootManager().getClassPath().get(0));
+        myClassLoader = new MyClassLoader(ideMain.getProject().getClassPath().get(0));
       }
     }
     return myClassLoader;

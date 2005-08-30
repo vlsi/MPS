@@ -5,7 +5,12 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.LanguageOperationContext;
 
 import javax.swing.*;
 import java.util.List;
@@ -20,11 +25,13 @@ import java.util.List;
 class ProjectLanguageTreeNode extends MPSTreeNode {
   private Language myLanguage;
   private IdeMain myIDE;
+  private MPSProject myProject;
 
-  public ProjectLanguageTreeNode(Language language, IdeMain ide, IOperationContext upperContext) {
-    super(new LanguageInProjectOperationContext(language, upperContext));
+  public ProjectLanguageTreeNode(Language language, IdeMain ide, MPSProject project) {
+    super(new LanguageOperationContext(language, project));
     myLanguage = language;
     myIDE = ide;
+    myProject = project;
     populate();
   }
 
@@ -106,7 +113,7 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
     // language generators
 
     for (Generator generator : myLanguage.getGenerators()) {
-      TextTreeNode generatorNode = new GeneratorTreeNode("<html><b>generator \"" + generator.getName() + "\"</b>", myIDE, operationContext);
+      TextTreeNode generatorNode = new GeneratorTreeNode("<html><b>generator \"" + generator.getName() + "\"</b>", myIDE, myProject, operationContext);
       this.add(generatorNode);
     }
   }

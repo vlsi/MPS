@@ -6,6 +6,7 @@ import jetbrains.mps.ide.ui.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjectCommandListener;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
@@ -76,10 +77,10 @@ public class ProjectPane extends JComponent {
     myTree.addKeyListener(new KeyAdapter() {
       public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_F4 && e.getModifiers() == 0) {
-          openEditor(myIDE.getProjectOperationContext());
+          openEditor(myIDE.getGlobalOperationContext());
         }
         if (e.getKeyCode() == KeyEvent.VK_ENTER && e.getModifiers() == 0) {
-          openEditor(myIDE.getProjectOperationContext());
+          openEditor(myIDE.getGlobalOperationContext());
         }
       }
     });
@@ -91,7 +92,7 @@ public class ProjectPane extends JComponent {
           TreePath path = myTree.getPathForLocation(e.getX(), e.getY());
           if (path == null) return;
           myTree.setSelectionPath(path);
-          openEditor(myIDE.getProjectOperationContext());
+          openEditor(myIDE.getGlobalOperationContext());
         }
       }
 
@@ -124,10 +125,10 @@ public class ProjectPane extends JComponent {
   }
 
   private void updateListeners() {
-    for (Language projectLanguage : myProject.getProjectLanguages()) {
+    for (Language projectLanguage : myProject.getLanguages()) {
       addLanguageListener(projectLanguage);
     }
-    for (Language language : myIDE.getProjectOperationContext().getLanguages()) {
+    for (Language language : myIDE.getGlobalOperationContext().getLanguages()) {
       addLanguageListener(language);
     }
   }
@@ -345,27 +346,39 @@ public class ProjectPane extends JComponent {
 
   private class MyTree extends MPSTree {
     protected MPSTreeNode rebuild() {
-      IOperationContext operationContext = myIDE.getProjectOperationContext();
+      IOperationContext operationContext = myIDE.getGlobalOperationContext();
       if (myProject == null) {
         return new TextTreeNode("Empty");
       }
       ProjectTreeNode root = new ProjectTreeNode(myIDE, operationContext);
 
-      // project models
-      List<ProjectModelsTreeNode> modelTreeNodes = ProjectModelsTreeNode.createModelTreeNodes(myIDE, operationContext);
-      for (ProjectModelsTreeNode projectModelsTreeNode : modelTreeNodes) {
-        root.add(projectModelsTreeNode);
+//      // project models
+//      List<ProjectModelsTreeNode> modelTreeNodes = ProjectModelsTreeNode.createModelTreeNodes(myIDE, operationContext);
+//      for (ProjectModelsTreeNode projectModelsTreeNode : modelTreeNodes) {
+//        root.add(projectModelsTreeNode);
+//      }
+//
+//      DefaultMutableTreeNode projectLanguagesNode = new ProjectLanguagesTreeNode(myIDE, operationContext);
+//      for (Language language : myProject.getProjectLanguages()) {
+//        ProjectLanguageTreeNode node = new ProjectLanguageTreeNode(language, myIDE, operationContext);
+//        projectLanguagesNode.add(node);
+//      }
+//      root.add(projectLanguagesNode);
+//
+//      LanguagesTreeNode languagesNode = new LanguagesTreeNode(myIDE, operationContext);
+//      root.add(languagesNode);
+
+      List<Solution> solutions = myProject.getSolutions();
+      for (Solution solution : solutions) {
+        ProjectSolutionTreeNode solutionTreeNode = new ProjectSolutionTreeNode(solution, myIDE, myProject);
+        root.add(solutionTreeNode);
       }
 
-      DefaultMutableTreeNode projectLanguagesNode = new ProjectLanguagesTreeNode(myIDE, operationContext);
-      for (Language language : myProject.getProjectLanguages()) {
-        ProjectLanguageTreeNode node = new ProjectLanguageTreeNode(language, myIDE, operationContext);
-        projectLanguagesNode.add(node);
+      for (Language language : myProject.getLanguages()) {
+        ProjectLanguageTreeNode node = new ProjectLanguageTreeNode(language, myIDE, myProject);
+        root.add(node);
       }
-      root.add(projectLanguagesNode);
 
-      LanguagesTreeNode languagesNode = new LanguagesTreeNode(myIDE, operationContext);
-      root.add(languagesNode);
       return root;
     }
   } // private class MyTree

@@ -1,13 +1,12 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.SolutionOperationContext;
+import jetbrains.mps.smodel.IOperationContext;
 
-import javax.swing.*;
 import java.util.List;
 
 /**
@@ -18,96 +17,56 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 class ProjectSolutionTreeNode extends MPSTreeNode {
-  private Language myLanguage;
+  private Solution mySolution;
   private IdeMain myIDE;
+  private MPSProject myProject;
 
-  public ProjectSolutionTreeNode(Language language, IdeMain ide, IOperationContext upperContext) {
-    super(new LanguageInProjectOperationContext(language, upperContext));
-    myLanguage = language;
+  public ProjectSolutionTreeNode(Solution solution, IdeMain ide, MPSProject project) {
+    super(new SolutionOperationContext(solution, project));
+    mySolution = solution;
     myIDE = ide;
+    myProject = project;
     populate();
   }
 
-  public Icon getIcon(boolean expanded) {
-    return Icons.PROJECT_LANGUAGE_ICON;
-  }
+//  public Icon getIcon(boolean expanded) {
+//    return Icons.PROJECT_LANGUAGE_ICON;
+//  }
 
-  public Language getLanguage() {
-    return myLanguage;
+  public Solution getSolution() {
+    return mySolution;
   }
 
   protected String getNodeIdentifier() {
-    return myLanguage.getNamespace();
+    return "solution"; //mySolution.getNamespace();
   }
 
-  protected JPopupMenu getPopupMenu() {
-    JPopupMenu result = new JPopupMenu();
-    final Language language = getLanguage();
-    ActionContext context = new ActionContext(myIDE, getOperationContext());
-    context.put(Language.class, language);
-    ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_LANGUAGE_ACTIONS).add(result, context);
-    return result;
-  }
+//  protected JPopupMenu getPopupMenu() {
+//    JPopupMenu result = new JPopupMenu();
+//    final Language language = getSolution();
+//    ActionContext context = new ActionContext(myIDE, getOperationContext());
+//    context.put(Language.class, language);
+//    ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_LANGUAGE_ACTIONS).add(result, context);
+//    return result;
+//  }
 
   public String toString() {
-    if (myLanguage.isUpToDate()) {
-      return "<html>" + myLanguage.getNamespace() + "  <b>(up-to-date)</b>";
-    } else {
-      return "<html>" + myLanguage.getNamespace() + "  <b>(generation required)</b>";
-    }
+//    if (mySolution.isUpToDate()) {
+//      return "<html>" + mySolution.getNamespace() + "  <b>(up-to-date)</b>";
+//    } else {
+//      return "<html>" + mySolution.getNamespace() + "  <b>(generation required)</b>";
+//    }
+    return "solution";
   }
 
   private void populate() {
-    IOperationContext operationContext = getOperationContext();
-
-    // language aspects
-
-    SModelDescriptor structureModelDescriptor = myLanguage.getStructureModelDescriptor();
-    if(structureModelDescriptor != null) {
-      this.add(new SModelTreeNode(structureModelDescriptor, "structure", myIDE, operationContext));
+    IOperationContext context = getOperationContext();
+    List<SolutionModelsTreeNode> modelTreeNodes = SolutionModelsTreeNode.createModelsTreeNodes(myIDE, context);
+    for (SolutionModelsTreeNode modelsTreeNode : modelTreeNodes) {
+      this.add(modelsTreeNode);
     }
 
-    SModelDescriptor editorModelDescriptor = myLanguage.getEditorModelDescriptor();
-    if(editorModelDescriptor != null) {
-      this.add(new SModelTreeNode(editorModelDescriptor, "editor", myIDE, operationContext));
-    }
-
-    // todo: tmp here
-    SModelDescriptor templatesEditorModelDescriptor = myLanguage.getEditorModelDescriptor("templates");
-    if(templatesEditorModelDescriptor != null) {
-      this.add(new SModelTreeNode(templatesEditorModelDescriptor, "templates editor", myIDE, operationContext));
-    }
-
-    SModelDescriptor typesystemModelDescriptor = myLanguage.getTypesystemModelDescriptor();
-    if (typesystemModelDescriptor != null) {
-      this.add(new SModelTreeNode(typesystemModelDescriptor, "typesystem", myIDE, operationContext));
-    }
-
-    SModelDescriptor actionsModelDescriptor = myLanguage.getActionsModelDescriptor();
-    if (actionsModelDescriptor != null) {
-      this.add(new SModelTreeNode(actionsModelDescriptor, "actions", myIDE, operationContext));
-    }
-
-    // language accessory models
-
-    TextTreeNode libraries = new TextTreeNode("<html><b>accessory</b>") {
-      public Icon getIcon(boolean expanded) {
-        return Icons.LIB_ICON;
-      }
-    };
-
-    List<SModelDescriptor> sortedModels = SortUtil.sortModels(myLanguage.getLibraryModels());
-    for (SModelDescriptor model : sortedModels) {
-      libraries.add(new SModelTreeNode(model, null, myIDE, operationContext));
-    }
-    this.add(libraries);
-
-
-    // language generators
-
-    for (Generator generator : myLanguage.getGenerators()) {
-      TextTreeNode generatorNode = new GeneratorTreeNode("<html><b>generator \"" + generator.getName() + "\"</b>", myIDE, operationContext);
-      this.add(generatorNode);
-    }
+    LanguagesTreeNode languagesNode = new LanguagesTreeNode(myIDE, myProject);
+    this.add(languagesNode);
   }
 }

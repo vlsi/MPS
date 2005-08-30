@@ -492,16 +492,4 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     }
   }
 
-  private static class GeneratorOperationContext extends DelegatingOperationContext {
-    private Generator myGenerator;
-
-    public GeneratorOperationContext(IOperationContext upperOperationContext, Generator generator) {
-      super(upperOperationContext, generator, generator);
-      myGenerator = generator;
-    }
-
-    public Generator getGenerator() {
-      return myGenerator;
-    }
-  }
 }

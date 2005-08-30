@@ -4,6 +4,7 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.generator.ContextUtil;
 import jetbrains.mps.ide.IStatus;
+import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
@@ -21,7 +22,7 @@ import java.util.*;
  * Author: Sergey Dmitriev
  * Created Jan 30, 2004
  */
-public class Language implements ModelLocator, ModelOwner {
+public class Language implements ModelLocator, ModelOwner, LanguageOwner {
   private static final Logger LOG = Logger.getLogger(Language.class);
 
   private File myDescriptorFile;
@@ -34,8 +35,6 @@ public class Language implements ModelLocator, ModelOwner {
   private List<LanguageCommandListener> myCommandListeners = new ArrayList<LanguageCommandListener>();
   private MyCommandEventTranslator myEventTranslator = new MyCommandEventTranslator();
   private long myLastGenerationTime = 0;
-
-  private LanguageModuleOperationContext myOperationContext;
 
   private static final String NULL_STEREOTYPE = SModelStereotype.NONE;
   private boolean myRegisteredInFindUsagesManager;
@@ -75,12 +74,12 @@ public class Language implements ModelLocator, ModelOwner {
     }
   };
 
-  public Language(File descriptorFile) {
+  /*package*/
+  Language(File descriptorFile) {
     myDescriptorFile = descriptorFile;
-    myOperationContext = new LanguageModuleOperationContext(this);
     CommandProcessor.instance().addCommandListener(myEventTranslator);
     addLanguageListener(myEventTranslator);
-    readLanguageModelDescriptors();
+    readModelDescriptors();
     updateLastGenerationTime();
 
     // todo: update generators after changes in language (property dialog)
@@ -94,29 +93,38 @@ public class Language implements ModelLocator, ModelOwner {
     SModelsMulticaster.getInstance().addSModelsListener(myModelsListener);
   }
 
+  private void readModelDescriptors() {
+    SModelRepository repository = SModelRepository.getInstance();
+    repository.readModelDescriptors(getModelRoots(), this);
+  }
+
   public void dispose() {
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
     SModelsMulticaster.getInstance().removeSModelsListener(myModelsListener);
-    if(myGenerators != null) {
+    if (myGenerators != null) {
       for (Generator generator : myGenerators) {
         generator.dispose();
       }
     }
   }
 
+  public File getDescriptorFile() {
+    return myDescriptorFile;
+  }
+
   public ModelOwner getParentModelOwner() {
     return null;
   }
 
-  public IOperationContext getLanguageOperationContext() {
-    return myOperationContext;
+  public LanguageOwner getParentLanguageOwner() {
+    return BootstrapLanguages.getInstance();
   }
 
   public void updateLastGenerationTime() {
     myLastGenerationTime = FileUtil.getNewestFileTime(getSourceDir());
   }
 
-  private LanguageDescriptor getLanguageDescriptor() {
+  public LanguageDescriptor getLanguageDescriptor() {
     if (myLanguageDescriptor == null) {
       SModel model = myProjectModelDescriptor.getSModel();
       model.addSModelListener(new SModelAdapter() {
@@ -147,7 +155,7 @@ public class Language implements ModelLocator, ModelOwner {
     myProjectModelDescriptor.getSModel().deleteRoot(getLanguageDescriptor());
     myLanguageDescriptor = ContextUtil.copyNode(newDescriptor, myProjectModelDescriptor.getSModel(), operationContext);
     myProjectModelDescriptor.getSModel().addRoot(getLanguageDescriptor());
-    readLanguageModelDescriptors();
+    readModelDescriptors();
   }
 
   public List<Generator> getGenerators() {
@@ -316,7 +324,7 @@ public class Language implements ModelLocator, ModelOwner {
     if (myNameToConceptCache.isEmpty()) {
       SModelUtil.allNodes(getStructureModel(), new Condition<SNode>() {
         public boolean met(SNode node) {
-          DiagnosticUtil.assertNodeValid(node, myOperationContext);
+//          DiagnosticUtil.assertNodeValid(node, myOperationContext);
           if (node instanceof ConceptDeclaration) {
             myNameToConceptCache.put(node.getName(), (ConceptDeclaration) node);
           }
@@ -334,7 +342,7 @@ public class Language implements ModelLocator, ModelOwner {
   private SModelDescriptor getModelDescriptorByUID(SModelUID modelUID) {
     if (modelUID == null) return null;
     try {
-      SModelDescriptor modelDescriptor = myOperationContext.getModelDescriptor(modelUID);
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
       if (modelDescriptor != null) {
         return modelDescriptor;
       }
@@ -396,11 +404,6 @@ public class Language implements ModelLocator, ModelOwner {
 
   public void removeLanguageCommandListener(LanguageCommandListener listener) {
     myCommandListeners.remove(listener);
-  }
-
-  private void readLanguageModelDescriptors() {
-    SModelRepository repository = SModelRepository.getInstance();
-    repository.readModelDescriptors(getModelRoots(), this);
   }
 
   private void fireLanguageChangedInCommand() {

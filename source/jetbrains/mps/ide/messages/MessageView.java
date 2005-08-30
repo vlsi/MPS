@@ -34,19 +34,19 @@ public class MessageView implements Tool {
 
     myList.registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        openCurrentMessageNodeIfPossible(myIde.getProjectOperationContext());
+        openCurrentMessageNodeIfPossible(myIde.getGlobalOperationContext());
       }
     }, KeyStroke.getKeyStroke("F4"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     myList.registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        openCurrentMessageNodeIfPossible(myIde.getProjectOperationContext());
+        openCurrentMessageNodeIfPossible(myIde.getGlobalOperationContext());
       }
     }, KeyStroke.getKeyStroke("ENTER"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     myList.addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
         if (e.getClickCount() == 2) {
-          openCurrentMessageNodeIfPossible(myIde.getProjectOperationContext());
+          openCurrentMessageNodeIfPossible(myIde.getGlobalOperationContext());
         }
       }
 

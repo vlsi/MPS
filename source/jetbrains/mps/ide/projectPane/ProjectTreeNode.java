@@ -18,7 +18,7 @@ import javax.swing.*;
 class ProjectTreeNode extends MPSTreeNode {
   private IdeMain myIDE;
 
-  public ProjectTreeNode(IdeMain ide, IOperationContext operationContext) {
+  ProjectTreeNode(IdeMain ide, IOperationContext operationContext) {
     super(operationContext);
     myIDE = ide;
   }

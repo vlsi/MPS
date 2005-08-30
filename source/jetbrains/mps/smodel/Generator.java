@@ -19,10 +19,6 @@ public class Generator implements ModelLocator, ModelOwner, LanguageOwner {
     SModelRepository.getInstance().readModelDescriptors(myGeneratorDescriptor.modelRoots(), this);
   }
 
-  public void readLanguageDescriptors(File dir) {
-    LanguageRepository.getInstance().readLanguageDescriptors(dir, this);
-  }
-
   public void dispose() {
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
     LanguageRepository.getInstance().unRegisterLanguages(this);

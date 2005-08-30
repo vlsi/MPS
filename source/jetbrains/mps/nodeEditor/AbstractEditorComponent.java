@@ -322,8 +322,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     IdeMain ide = ApplicationComponents.getInstance().getComponent(IdeMain.class);
 
     List<SNode> selectedNodes = myNodeRangeSelection.getNodes();
-    ActionContext context = new ActionContext(ide, ide.getProjectOperationContext(), selectedNode, selectedNodes);
-    context.put(EditorContext.class, new EditorContext(this, null, ide.getProjectOperationContext()));
+    ActionContext context = new ActionContext(ide, ide.getGlobalOperationContext(), selectedNode, selectedNodes);
+    context.put(EditorContext.class, new EditorContext(this, null, ide.getGlobalOperationContext()));
     group.add(popupMenu, context);
 
     popupMenu.show(AbstractEditorComponent.this, e.getX(), e.getY());

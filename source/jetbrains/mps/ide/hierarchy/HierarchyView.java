@@ -53,7 +53,7 @@ public class HierarchyView implements Tool {
 
 
   public void showConceptInHierarchy(ConceptDeclaration node) {
-    myHierarchyTree.setOperationContext(myIde.getProjectOperationContext());
+    myHierarchyTree.setOperationContext(myIde.getGlobalOperationContext());
     myHierarchyTree.myConceptDeclaration = node;
     myHierarchyTree.rebuildTree();
     if (myTreeNode != null) myHierarchyTree.selectNode(myTreeNode);

@@ -21,12 +21,18 @@ public abstract class Macros {
     return new SolutionDescriptorMacros();
   }
 
+  public static Macros projectDescriptor() {
+    return new ProjectDescriptorMacros();
+  }
+
   public final String expandPath(String path, File anchorFile) {
+    if(path == null) return null;
     path = path.replace('\\', File.separatorChar);
     return expandPath_impl(path, anchorFile);
   }
 
   public final String shrinkPath(String absolutePath, File anchorFile) {
+    if(absolutePath == null) return null;
     String fileName = shrinkPath_impl(absolutePath, anchorFile);
     return fileName.replace(File.separatorChar, '\\');
   }
@@ -88,12 +94,30 @@ public abstract class Macros {
       return super.expandPath_impl(path, solutionDescriptor);
     }
 
-    protected String shrinkPath_impl(String absolutePath, File languageDescriptor) {
-      if ((absolutePath).startsWith(languageDescriptor.getParent())) {
-        String relationalPath = PathManager.getRelationalPathByAbsolute(languageDescriptor, absolutePath);
+    protected String shrinkPath_impl(String absolutePath, File solutionDescriptor) {
+      if ((absolutePath).startsWith(solutionDescriptor.getParent())) {
+        String relationalPath = PathManager.getRelationalPathByAbsolute(solutionDescriptor, absolutePath);
         return "${solution_descriptor}" + relationalPath;
       }
-      return super.shrinkPath_impl(absolutePath, languageDescriptor);
+      return super.shrinkPath_impl(absolutePath, solutionDescriptor);
+    }
+  }
+
+  private static class ProjectDescriptorMacros extends Macros {
+    protected String expandPath_impl(String path, File projectDescriptor) {
+      if (path.startsWith("${project}")) {
+        String modelRelativePath = removePrefix(path, "${project}");
+        return PathManager.getAbsolutePathByRelational(projectDescriptor, modelRelativePath);
+      }
+      return super.expandPath_impl(path, projectDescriptor);
+    }
+
+    protected String shrinkPath_impl(String absolutePath, File projectDescriptor) {
+      if ((absolutePath).startsWith(projectDescriptor.getParent())) {
+        String relationalPath = PathManager.getRelationalPathByAbsolute(projectDescriptor, absolutePath);
+        return "${project}" + relationalPath;
+      }
+      return super.shrinkPath_impl(absolutePath, projectDescriptor);
     }
   }
 }

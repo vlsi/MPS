@@ -94,7 +94,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
       }
       // todo: remove listener?
       if (myModelListenersForImportedModels != null) {
-        Iterator<SModelDescriptor> iterator = mySModel.importedModels(IdeMain.instance().getProjectOperationContext());
+        Iterator<SModelDescriptor> iterator = mySModel.importedModels(IdeMain.instance().getGlobalOperationContext());
         while (iterator.hasNext()) {
           SModelDescriptor imported = iterator.next();
           for (SModelListener listener : myModelListenersForImportedModels) {
@@ -119,7 +119,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
       // todo: remove listener?
       if (myModelCommandListenersForImportedModels != null) {
-        Iterator<SModelDescriptor> iterator = mySModel.importedModels(IdeMain.instance().getProjectOperationContext());
+        Iterator<SModelDescriptor> iterator = mySModel.importedModels(IdeMain.instance().getGlobalOperationContext());
         while (iterator.hasNext()) {
           SModelDescriptor imported = iterator.next();
           for (SModelCommandListener listener : myModelCommandListenersForImportedModels) {
@@ -162,7 +162,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
   public void addSModelListenerToImportedModels(SModelListener listener) {
     if (mySModel != null) {
-      Iterator<SModelDescriptor> iterator = mySModel.importedModels(IdeMain.instance().getProjectOperationContext());
+      Iterator<SModelDescriptor> iterator = mySModel.importedModels(IdeMain.instance().getGlobalOperationContext());
       while (iterator.hasNext()) {
         SModelDescriptor imported = iterator.next();
         imported.addSModelListener(listener);
@@ -175,7 +175,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
   public void addSModelCommandListenerToImportedModels(SModelCommandListener listener) {
     if (mySModel != null) {
-      Iterator<SModelDescriptor> iterator = mySModel.importedModels(IdeMain.instance().getProjectOperationContext());
+      Iterator<SModelDescriptor> iterator = mySModel.importedModels(IdeMain.instance().getGlobalOperationContext());
       while (iterator.hasNext()) {
         SModelDescriptor imported = iterator.next();
         imported.addSModelCommandListener(listener);

@@ -1,13 +1,15 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.FileUtil;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.util.PathManager;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -18,10 +20,16 @@ import java.util.*;
  * Author: Sergey Dmitriev
  * Created Apr 29, 2004
  */
-public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
+public class MPSProject implements LanguageOwner {
   private static final Logger LOG = Logger.getLogger(MPSProject.class);
 
   private File myProjectFile;
+  private ProjectDescriptor myProjectDescriptor;
+  private SModel myProjectModel = ApplicationComponents.getInstance().getComponent(ProjectModel.class).getSModel();
+
+  private List<Solution> mySolutions;
+  private List<Language> myLanguages;
+
   private File myWorkspaceFile;
 
   public static final String COMPONENTS = "components";
@@ -32,51 +40,91 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
   private List<MPSProjectListener> myProjectListeners = new ArrayList<MPSProjectListener>();
   private List<MPSProjectCommandListener> myProjectCommandListeners = new ArrayList<MPSProjectCommandListener>();
   private MyCommandEventTranslator myEventTranslator = new MyCommandEventTranslator();
-  private RootManager myRootManager = null;
 
   public MPSProject(File file) {
     myProjectFile = file;
+    myProjectDescriptor = PersistenceUtil.loadProjectDescriptor(file, myProjectModel);
+
+    // load solutions
+    mySolutions = new LinkedList<Solution>();
+    // convert legacy project to solution
+    SolutionDescriptor solutionFromLegacyProject = PersistenceUtil.loadSolutionDescriptorFormOldMPR(file, myProjectModel);
+    if (solutionFromLegacyProject != null && solutionFromLegacyProject.getModelRootsCount() > 0) {
+      String solutionPath = file.getAbsolutePath();
+      solutionPath = solutionPath.substring(0, solutionPath.lastIndexOf('.')) + ".msd";
+      mySolutions.add(new Solution(new File(solutionPath), solutionFromLegacyProject));
+    }
+    for (SolutionPath solutionPath : CollectionUtil.iteratorAsIterable(myProjectDescriptor.solutionPaths())) {
+      Solution solution = new Solution(new File(solutionPath.getPath()));
+      mySolutions.add(solution);
+    }
+
+    // load languages
+    myLanguages = new LinkedList<Language>();
+    for (ProjectLanguage languagePath : CollectionUtil.iteratorAsIterable(myProjectDescriptor.projectLanguages())) {
+      myLanguages.add(LanguageRepository.getInstance().registerLanguage(new File(languagePath.getPath()), this));
+    }
+
+    MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
+    projects.addProject(MPSProject.this);
+  }
+
+  public LanguageOwner getParentLanguageOwner() {
+    return null;
   }
 
   public String toString() {
     return "MPSProject file: " + (myProjectFile == null ? "<none>" : myProjectFile.toString());
   }
 
-  public ModelOwner getParentModelOwner() {
-    return null;
+  public File getProjectFile() {
+    return myProjectFile;
   }
 
-  public void init() {
-    if (myRootManager != null) {
-      return;
-    }
-    CommandProcessor.instance().executeCommand(new Runnable() {
-      public void run() {
-        myRootManager = new RootManager(MPSProject.this);
-        if (myProjectFile != null) {
-          read(myProjectFile);
-        }
-        MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
-        projects.addProject(MPSProject.this);
+  public ProjectDescriptor getProjectDescriptor() {
+    return myProjectDescriptor;
+  }
+//  public void init() {
+//    if (myRootManager != null) {
+//      return;
+//    }
+//    CommandProcessor.instance().executeCommand(new Runnable() {
+//      public void run() {
+//        myRootManager = new RootManager(MPSProject.this);
+//        if (myProjectFile != null) {
+//          read(myProjectFile);
+//        }
+//        MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
+//        projects.addProject(MPSProject.this);
+//
+//        CommandProcessor.instance().addCommandListener(myEventTranslator);
+//        addMPSProjectListener(myEventTranslator);
+//      }
+//    });
+//  }
 
-        CommandProcessor.instance().addCommandListener(myEventTranslator);
-        addMPSProjectListener(myEventTranslator);
-      }
-    });
+//  public Collection<Language> getProjectLanguages() {
+//    return Collections.unmodifiableCollection(myLanguages);
+//  }
+
+  public Collection<Language> getLanguages() {
+    return Collections.unmodifiableCollection(myLanguages);
   }
 
-  public Collection<Language> getProjectLanguages() {
-    init();
-    return Collections.unmodifiableCollection(myRootManager.getProjectLanguages());
+  public void addLanguage(Language language) {
+    myLanguages.add(language);
+  }
+
+
+  public List<Solution> getSolutions() {
+    return Collections.unmodifiableList(mySolutions);
   }
 
   public List<Object> getComponents() {
-    init();
     return new ArrayList<Object>(myComponents.values());
   }
 
   public <T> T getComponent(Class<T> clazz) {
-    init();
     T result = (T) myComponents.get(clazz);
     return result;
   }
@@ -85,9 +133,22 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     myComponents.put(interfaceClass, instance);
   }
 
-  public void read(final File file) {
-    init();
-    myRootManager.read(file);
+//  public void read(final File file) {
+//    init();
+//    myRootManager.read(file);
+//  }
+
+
+  public List<String> getClassPath() {
+    List<String> classpath = new LinkedList<String>();
+    String clspath = myProjectDescriptor.getProjectClassesPath();
+    if (clspath == null) {
+      File file = new File(myProjectFile.getParent(), "classes");
+      classpath.add(FileUtil.getCanonicalPath(file));
+    } else {
+      classpath.add(clspath);
+    }
+    return classpath;
   }
 
   public void readWorkspaceSettings() {
@@ -107,7 +168,7 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
             String className = component.getAttributeValue(CLASS);
             Class cls = Class.forName(className);
             if (getComponent(cls) != null && getComponent(cls) instanceof ExternalizableComponent) {
-              ((ExternalizableComponent) getComponent(cls)).read(component, new ProjectOperationContext(this));
+              ((ExternalizableComponent) getComponent(cls)).read(component, new GlogalOperationContext(this));
             }
           } catch (ClassNotFoundException e) {
           }
@@ -123,57 +184,42 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
   }
 
   public void save() {
-    init();
-    myRootManager.save(myProjectFile);
-
-    try {
-      if (!myWorkspaceFile.exists()) {
-        myWorkspaceFile.createNewFile();
-      }
-      Element root = new Element(COMPONENTS);
-      for (Class cls : myComponents.keySet()) {
-        Object component = myComponents.get(cls);
-        if (component instanceof ExternalizableComponent) {
-          Element componentElement = new Element(COMPONENT);
-          componentElement.setAttribute(CLASS, cls.getName());
-          ((ExternalizableComponent) component).write(componentElement);
-          root.addContent(componentElement);
-        }
-      }
-      Document document = new Document(root);
-      JDOMUtil.writeDocument(document, myWorkspaceFile);
-    } catch (Exception e) {
-      LOG.error(e);
-    }
-  }
-
-  public String findPath(SModelUID modelUID) {
-    init();
-    String modelPath = PathManager.findModelPath(myRootManager.getModelRoots(), modelUID);
-    if (modelPath != null && (new File(modelPath)).exists()) {
-      return modelPath;
-    }
-    return null;
-  }
-
-  public File getProjectFile() {
-    return myProjectFile;
+    System.out.println("PLOJECT SAVE IS NOT IMPLEMENTED");
+//    init();
+//    myRootManager.save(myProjectFile);
+//
+//    try {
+//      if (!myWorkspaceFile.exists()) {
+//        myWorkspaceFile.createNewFile();
+//      }
+//      Element root = new Element(COMPONENTS);
+//      for (Class cls : myComponents.keySet()) {
+//        Object component = myComponents.get(cls);
+//        if (component instanceof ExternalizableComponent) {
+//          Element componentElement = new Element(COMPONENT);
+//          componentElement.setAttribute(CLASS, cls.getName());
+//          ((ExternalizableComponent) component).write(componentElement);
+//          root.addContent(componentElement);
+//        }
+//      }
+//      Document document = new Document(root);
+//      JDOMUtil.writeDocument(document, myWorkspaceFile);
+//    } catch (Exception e) {
+//      LOG.error(e);
+//    }
   }
 
   public boolean isProjectChanged() {
     return ApplicationComponents.getInstance().getComponent(SModelRepository.class).wereChanges();
   }
 
-  public RootManager getRootManager() {
-    init();
-    return myRootManager;
+  public void dispose() {
+//    myRootManager.releaseAll();
+//    SModelRepository.getInstance().unRegisterModelDescriptors(this);
+    CommandProcessor.instance().removeCommandListener(myEventTranslator);
+    LanguageRepository.getInstance().unRegisterLanguages(this);
   }
 
-  public void dispose() {
-    myRootManager.releaseAll();
-    SModelRepository.getInstance().unRegisterModelDescriptors(this);
-    CommandProcessor.instance().removeCommandListener(myEventTranslator);
-  }
 
   public void addMPSProjectListener(MPSProjectListener listener) {
     myProjectListeners.add(listener);
@@ -201,10 +247,6 @@ public class MPSProject implements ModelLocator, ModelOwner, LanguageOwner {
     for (MPSProjectCommandListener listener : myProjectCommandListeners) {
       listener.projectChangedInCommand(this);
     }
-  }
-
-  public LanguageOwner getParentLanguageOwner() {
-    return BootstrapLanguages.getInstance();
   }
 
   private class MyCommandEventTranslator extends CommandEventTranslator implements MPSProjectListener {
