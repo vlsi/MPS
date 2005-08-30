@@ -53,7 +53,7 @@ public class MPSProject implements LanguageOwner {
       mySolutions.add(solution);
     }
 
-    // convert legacy project to solution
+    // convert legacy project to new solution
     SolutionDescriptor solutionFromLegacyProject = PersistenceUtil.loadSolutionDescriptorFormOldMPR(file, myProjectModel);
     if (solutionFromLegacyProject != null &&
             (solutionFromLegacyProject.getModelRootsCount() > 0 || solutionFromLegacyProject.getLanguageRootsCount() > 0)) {
@@ -82,6 +82,8 @@ public class MPSProject implements LanguageOwner {
 
     MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
     projects.addProject(MPSProject.this);
+    CommandProcessor.instance().addCommandListener(myEventTranslator);
+    addMPSProjectListener(myEventTranslator);
   }
 
   public LanguageOwner getParentLanguageOwner() {
@@ -99,29 +101,6 @@ public class MPSProject implements LanguageOwner {
   public ProjectDescriptor getProjectDescriptor() {
     return myProjectDescriptor;
   }
-
-//  public void init() {
-//    if (myRootManager != null) {
-//      return;
-//    }
-//    CommandProcessor.instance().executeCommand(new Runnable() {
-//      public void run() {
-//        myRootManager = new RootManager(MPSProject.this);
-//        if (myProjectFile != null) {
-//          read(myProjectFile);
-//        }
-//        MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
-//        projects.addProject(MPSProject.this);
-//
-//        CommandProcessor.instance().addCommandListener(myEventTranslator);
-//        addMPSProjectListener(myEventTranslator);
-//      }
-//    });
-//  }
-
-//  public Collection<Language> getProjectLanguages() {
-//    return Collections.unmodifiableCollection(myLanguages);
-//  }
 
   public Collection<Language> getLanguages() {
     return Collections.unmodifiableCollection(myLanguages);
@@ -194,9 +173,6 @@ public class MPSProject implements LanguageOwner {
   }
 
   public void save() {
-//    init();
-//    myRootManager.save(myProjectFile);
-
     PersistenceUtil.saveProjectDescriptor(myProjectFile, myProjectDescriptor);
 
     try {
