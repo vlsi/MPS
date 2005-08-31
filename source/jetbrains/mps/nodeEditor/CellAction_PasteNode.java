@@ -5,6 +5,7 @@ import jetbrains.mps.datatransfer.CopyPasteNodeUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.ide.EditorsPane;
 
 import java.util.List;
 
@@ -28,7 +29,8 @@ public class CellAction_PasteNode extends EditorCellAction {
     }
 
     IOperationContext operationContext = context.getOperationContext();
-    if (!PasteUtil.canPaste(selectedNode, pasteNodes.get(0), operationContext)) {
+    EditorsPane editorsPane = operationContext.getComponent(EditorsPane.class);
+    if (!PasteUtil.canPaste(selectedNode, pasteNodes.get(0), operationContext, editorsPane)) {
       LOG.debug("Couldn't paste node here");
       return false;
     }
@@ -41,7 +43,8 @@ public class CellAction_PasteNode extends EditorCellAction {
     List<SNode> pasteNodes = CopyPasteNodeUtil.getNodesFromClipboard(selectedNode.getModel());
     SNode anchor = pasteNodes.get(0);
     IOperationContext operationContext = context.getOperationContext();
-    PasteUtil.paste(selectedNode, anchor, operationContext);
+    EditorsPane editorsPane = operationContext.getComponent(EditorsPane.class);
+    PasteUtil.paste(selectedNode, anchor, operationContext, editorsPane);
     for (int i = 1; i < pasteNodes.size(); i++) {
       SNode node = pasteNodes.get(i);
       PasteUtil.pasteRelative(anchor, node, false, operationContext);

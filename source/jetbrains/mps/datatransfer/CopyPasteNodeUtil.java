@@ -48,6 +48,7 @@ public class CopyPasteNodeUtil {
   public static List<SNode> copyNodesIn(List<SNode> sourceNodes) {
     if (sourceNodes.isEmpty()) return new ArrayList<SNode>();
     SModel model = sourceNodes.get(0).getModel();
+    Class aClass = sourceNodes.get(0).getClass();
     List<SNode> result = new ArrayList<SNode>();
     model.setLoading(true);
     ourSourceNodesToNewNodes.clear();

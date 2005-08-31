@@ -6,6 +6,7 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.smodel.IOperationContext;
@@ -23,18 +24,18 @@ public class PasteUtil {
   private static final Logger LOG = Logger.getLogger(PasteUtil.class);
 
   private static final int PASTE_N_A = 0;
-  private static final int PASTE_TO_TAREGT = 1;
+  private static final int PASTE_TO_TARGET = 1;
   private static final int PASTE_TO_PARENT = 2;
   private static final int PASTE_TO_ROOT = 3;
 
 
-  public static boolean canPaste(SNode pasteTarget, SNode pasteNode, IOperationContext operationContext) {
-    return (canPaste_internal(pasteTarget, pasteNode, operationContext) != PASTE_N_A);
+  public static boolean canPaste(SNode pasteTarget, SNode pasteNode, IOperationContext operationContext, Object invoker) {
+    return (canPaste_internal(pasteTarget, pasteNode, operationContext, invoker) != PASTE_N_A);
   }
 
-  public static void paste(SNode pasteTarget, SNode pasteNode, IOperationContext operationContext) {
-    int status = canPaste_internal(pasteTarget, pasteNode, operationContext);
-    if (status == PASTE_TO_TAREGT) {
+  public static void paste(SNode pasteTarget, SNode pasteNode, IOperationContext operationContext, Object invoker) {
+    int status = canPaste_internal(pasteTarget, pasteNode, operationContext, invoker);
+    if (status == PASTE_TO_TARGET) {
       pasteToTarget(pasteTarget, pasteNode, null, pasteTarget.getRole_(), false, operationContext);
     } else if (status == PASTE_TO_PARENT) {
       pasteToParent(pasteTarget, pasteNode, pasteTarget.getRole_(), false, operationContext);
@@ -49,17 +50,34 @@ public class PasteUtil {
     return (pasteTarget.getParent() == null && conceptDeclaration.getRootable());
   }
 
-  private static int canPaste_internal(SNode pasteTarget, SNode pasteNode, IOperationContext operationContext) {
+
+  private static int canPaste_internal(SNode pasteTarget, SNode pasteNode, IOperationContext operationContext, Object invoker) {
+    ProjectPane projectPane = operationContext.getComponent(ProjectPane.class);
     if (pasteTarget.getModel() != pasteNode.getModel()) {
       return PASTE_N_A;
     }
     // if target is root node - paste to model root
-    if (canPasteToRoot(pasteTarget, pasteNode, operationContext)) {
-      return PASTE_TO_ROOT;
+    boolean canPasteToRoot = canPasteToRoot(pasteTarget, pasteNode, operationContext);
+    boolean canPasteToTarget = canPasteToTarget(pasteTarget, pasteNode, pasteTarget.getRole_(), operationContext);
+
+    //priorities differ wrt invoker
+    if (invoker == projectPane) {
+      if (canPasteToRoot) {
+        return PASTE_TO_ROOT;
+      }
+
+      if (canPasteToTarget) {
+        return PASTE_TO_TARGET;
+      }
+    } else {
+      if (canPasteToTarget) {
+        return PASTE_TO_TARGET;
+      }
+      if (canPasteToRoot) {
+        return PASTE_TO_ROOT;
+      }
     }
-    if (canPasteToTarget(pasteTarget, pasteNode, pasteTarget.getRole_(), operationContext)) {
-      return PASTE_TO_TAREGT;
-    }
+
     if (canPasteToParent(pasteTarget, pasteNode, pasteTarget.getRole_(), operationContext)) {
       return PASTE_TO_PARENT;
     }
