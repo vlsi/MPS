@@ -46,30 +46,8 @@ public class SModelRepository extends SModelAdapter {
     }
   }
 
-  /**
-   * @deprecated
-   */
-
-  public Set<SModelDescriptor> getAllNonTransientModelDescriptors() {
-    Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
-    for (SModelDescriptor d : getAllModelDescriptors()) {
-      if (d.getModelFile() != null) result.add(d);
-    }
-    return result;
-  }
-
   public List<SModelDescriptor> getAllModelDescriptors() {
     return Collections.unmodifiableList(myModelDescriptors);
-  }
-
-  public Set<SModelDescriptor> getJavaStubsModelDescriptors() {
-    Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
-    for (SModelDescriptor m : myModelDescriptors) {
-      if (SModelStereotype.JAVA_STUB.equals(m.getStereotype())) {
-        result.add(m);        
-      }
-    }
-    return result;
   }
 
   public void addOwnerForDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
@@ -125,17 +103,6 @@ public class SModelRepository extends SModelAdapter {
       SModelDescriptor modelDescriptor = myUIDToModelDescriptorMap.get(modelUID);
       removeModelDescriptor(modelDescriptor);
     }
-  }
-
-  /**
-   * @deprecated
-   */
-  public void removeModel(SModelDescriptor modelDescriptor) {
-    myModelDescriptors.remove(modelDescriptor);
-    myUIDToModelDescriptorMap.remove(modelDescriptor.getModelUID());
-    myChangedModels.remove(modelDescriptor);
-    myModelToOwnerMap.remove(modelDescriptor);
-    modelDescriptor.removeSModelListener(this);
   }
 
   /*package*/ void removeModelDescriptor(SModelDescriptor modelDescriptor) {

@@ -85,13 +85,13 @@ public class Solution implements ModelLocator, ModelOwner, LanguageOwner {
   }
 
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor, IOperationContext operationContext) {
-    mySolutionDescriptor = newDescriptor;
-
     // release languages and models (except descriptor model)
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(mySolutionDescriptor.getModel().getUID(), this);
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), this);
     LanguageRepository.getInstance().unRegisterLanguages(this);
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
     SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, this);
+
+    mySolutionDescriptor = newDescriptor;
 
     // read languages and models
     LanguageRepository.getInstance().readLanguageDescriptors(mySolutionDescriptor.languageRoots(), this);

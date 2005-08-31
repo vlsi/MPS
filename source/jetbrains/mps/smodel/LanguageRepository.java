@@ -2,6 +2,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.Root;
+import jetbrains.mps.util.CollectionUtil;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -156,5 +157,11 @@ public class LanguageRepository {
       }
     }
     return list;
+  }
+
+  public List<Language> getAllLanguages() {
+    List<Language> list = new LinkedList<Language>();
+    Iterator<Language> langauges = myLanguageToOwnersMap.keySet().iterator();
+    return CollectionUtil.iteratorAsList(langauges);
   }
 }

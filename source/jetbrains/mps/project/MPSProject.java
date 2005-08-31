@@ -20,12 +20,11 @@ import java.util.*;
  * Author: Sergey Dmitriev
  * Created Apr 29, 2004
  */
-public class MPSProject implements LanguageOwner {
+public class MPSProject implements ModelOwner, LanguageOwner {
   private static final Logger LOG = Logger.getLogger(MPSProject.class);
 
   private File myProjectFile;
   private ProjectDescriptor myProjectDescriptor;
-  private SModel myProjectModel = ApplicationComponents.getInstance().getComponent(ProjectModel.class).getSModel();
 
   private List<Solution> mySolutions;
   private List<Language> myLanguages;
@@ -37,14 +36,23 @@ public class MPSProject implements LanguageOwner {
   public static final String CLASS = "class";
 
   private Map<Class, Object> myComponents = new HashMap<Class, Object>();
-  private List<MPSProjectListener> myProjectListeners = new ArrayList<MPSProjectListener>();
   private List<MPSProjectCommandListener> myProjectCommandListeners = new ArrayList<MPSProjectCommandListener>();
-  private MyCommandEventTranslator myEventTranslator = new MyCommandEventTranslator();
+  private ProjectEventTranslator myEventTranslator;
 
   public MPSProject(File projectFile) {
     myProjectFile = projectFile;
-    myProjectDescriptor = PersistenceUtil.loadProjectDescriptor(projectFile, myProjectModel);
+    SModel model = ProjectModelDescriptor.createDescriptorFor(this).getSModel();
+    myProjectDescriptor = PersistenceUtil.loadProjectDescriptor(projectFile, model);
 
+    revalidateContent(projectFile, model);
+
+    MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
+    projects.addProject(MPSProject.this);
+    myEventTranslator = new ProjectEventTranslator();
+    CommandProcessor.instance().addCommandListener(myEventTranslator);
+  }
+
+  private void revalidateContent(File projectFile, SModel model) {
     // load solutions
     mySolutions = new LinkedList<Solution>();
     for (SolutionPath solutionPath : CollectionUtil.iteratorAsIterable(myProjectDescriptor.solutionPaths())) {
@@ -55,7 +63,7 @@ public class MPSProject implements LanguageOwner {
     // convert legacy project to new solution
     Solution solution = Solution.createFromLegacyProjectFile(projectFile);
     if (solution != null) {
-      SolutionPath solutionPath = SolutionPath.newInstance(myProjectModel);
+      SolutionPath solutionPath = SolutionPath.newInstance(model);
       solutionPath.setPath(solution.getDescriptorFile().getAbsolutePath());
       myProjectDescriptor.addSolutionPath(solutionPath);
       mySolutions.add(solution);
@@ -66,11 +74,28 @@ public class MPSProject implements LanguageOwner {
     for (ProjectLanguage languagePath : CollectionUtil.iteratorAsIterable(myProjectDescriptor.projectLanguages())) {
       myLanguages.add(LanguageRepository.getInstance().registerLanguage(new File(languagePath.getPath()), this));
     }
+  }
 
-    MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
-    projects.addProject(MPSProject.this);
-    CommandProcessor.instance().addCommandListener(myEventTranslator);
-    addMPSProjectListener(myEventTranslator);
+  public void setProjectDescriptor(ProjectDescriptor newDescriptor, IOperationContext operationContext) {
+
+    // release languages and models (except descriptor model)
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), this);
+    LanguageRepository.getInstance().unRegisterLanguages(this);
+    SModelRepository.getInstance().unRegisterModelDescriptors(this);
+    SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, this);
+    for (Solution solution : getSolutions()) {
+      solution.dispose();
+    }
+
+    myProjectDescriptor = newDescriptor;
+    revalidateContent(myProjectFile, newDescriptor.getModel());
+
+    myEventTranslator.projectChanged();
+  }
+
+
+  public ModelOwner getParentModelOwner() {
+    return null;
   }
 
   public LanguageOwner getParentLanguageOwner() {
@@ -96,7 +121,6 @@ public class MPSProject implements LanguageOwner {
   public void addLanguage(Language language) {
     myLanguages.add(language);
   }
-
 
   public List<Solution> getSolutions() {
     return Collections.unmodifiableList(mySolutions);
@@ -188,20 +212,17 @@ public class MPSProject implements LanguageOwner {
   }
 
   public void dispose() {
-//    myRootManager.releaseAll();
-//    SModelRepository.getInstance().unRegisterModelDescriptors(this);
+    for (Solution solution : getSolutions()) {
+      solution.dispose();
+    }
+    for (Language language : getLanguages()) {
+      language.dispose();
+    }
     CommandProcessor.instance().removeCommandListener(myEventTranslator);
+    SModelRepository.getInstance().unRegisterModelDescriptors(this);
     LanguageRepository.getInstance().unRegisterLanguages(this);
   }
 
-
-  public void addMPSProjectListener(MPSProjectListener listener) {
-    myProjectListeners.add(listener);
-  }
-
-  public void removeMPSProjectListener(MPSProjectListener listener) {
-    myProjectListeners.remove(listener);
-  }
 
   public void addMPSProjectCommandListener(MPSProjectCommandListener listener) {
     myProjectCommandListeners.add(listener);
@@ -211,24 +232,18 @@ public class MPSProject implements LanguageOwner {
     myProjectCommandListeners.remove(listener);
   }
 
-  void fireMPSProjectChanged() {
-    for (MPSProjectListener listener : myProjectListeners) {
-      listener.projectChanged(this);
-    }
-  }
-
   void fireMPSProjectChangedInCommand() {
     for (MPSProjectCommandListener listener : myProjectCommandListeners) {
       listener.projectChangedInCommand(this);
     }
   }
 
-  private class MyCommandEventTranslator extends CommandEventTranslator implements MPSProjectListener {
+  private class ProjectEventTranslator extends CommandEventTranslator {
     protected void fireCommandEvent() {
       fireMPSProjectChangedInCommand();
     }
 
-    public void projectChanged(MPSProject project) {
+    public void projectChanged() {
       markCurrentCommandsDirty();
     }
   }
