@@ -31,9 +31,8 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
   private List<Generator> myGenerators;
 
   private HashMap<String, ConceptDeclaration> myNameToConceptCache = new HashMap<String, ConceptDeclaration>();
-  private List<LanguageListener> myListeners = new ArrayList<LanguageListener>();
   private List<LanguageCommandListener> myCommandListeners = new ArrayList<LanguageCommandListener>();
-  private MyCommandEventTranslator myEventTranslator = new MyCommandEventTranslator();
+  private LanguageEventTranslator myEventTranslator = new LanguageEventTranslator();
   private long myLastGenerationTime = 0;
 
   private static final String NULL_STEREOTYPE = SModelStereotype.NONE;
@@ -78,7 +77,6 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
   Language(File descriptorFile) {
     myDescriptorFile = descriptorFile;
     CommandProcessor.instance().addCommandListener(myEventTranslator);
-    addLanguageListener(myEventTranslator);
     readModelDescriptors();
     updateLastGenerationTime();
 
@@ -129,11 +127,11 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
       SModel model = myProjectModelDescriptor.getSModel();
       model.addSModelListener(new SModelAdapter() {
         public void modelChanged(SModel model) {
-          fireLanguageChanged();
+          myEventTranslator.languageChanged();
         }
 
         public void modelChangedDramatically(SModel model) {
-          fireLanguageChanged();
+          myEventTranslator.languageChanged();
         }
       });
       try {
@@ -384,19 +382,10 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
     return result;
   }
 
-  public void addLanguageListener(LanguageListener listener) {
-    myListeners.add(listener);
+  public String toString() {
+    return getLanguageDescriptor().getNamespace();
   }
 
-  public void removeLanguageListener(LanguageListener listener) {
-    myListeners.remove(listener);
-  }
-
-  private void fireLanguageChanged() {
-    for (LanguageListener listener : myListeners) {
-      listener.languageChanged(this);
-    }
-  }
 
   public void addLanguageCommandListener(LanguageCommandListener listener) {
     myCommandListeners.add(listener);
@@ -406,24 +395,15 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
     myCommandListeners.remove(listener);
   }
 
-  private void fireLanguageChangedInCommand() {
-    for (LanguageCommandListener l : myCommandListeners) {
-      l.languageChangedInCommand(this);
-    }
-  }
-
-  public String toString() {
-    return getLanguageDescriptor().getNamespace();
-  }
-
-  private class MyCommandEventTranslator extends CommandEventTranslator implements LanguageListener {
-
-    public void languageChanged(Language l) {
+  private class LanguageEventTranslator extends CommandEventTranslator {
+    public void languageChanged() {
       markCurrentCommandsDirty();
     }
 
     protected void fireCommandEvent() {
-      fireLanguageChangedInCommand();
+      for (LanguageCommandListener l : myCommandListeners) {
+        l.languageChangedInCommand(Language.this);
+      }
     }
   }
 

@@ -4,12 +4,13 @@ import jetbrains.mps.ide.FileUtil;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ui.*;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjectCommandListener;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.smodel.event.SModelsAdapter;
+import jetbrains.mps.smodel.event.SModelsMulticaster;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -19,9 +20,9 @@ import javax.swing.tree.TreePath;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -38,6 +39,7 @@ public class ProjectPane extends JComponent {
   public static final String PROJECT_PANE_LANGUAGE_ACTIONS = "project-pane-language-actions";
   public static final String PROJECT_PANE_PROJECT_ACTIONS = "project-pane-project-actions";
   public static final String PROJECT_PANE_PROJECT_LANGUAGES_ACTIONS = "project-pane-project-languages-actions";
+  public static final String PROJECT_PANE_PROJECT_SOLUTION_ACTIONS = "project-pane-project-solution-actions";
 
   private MyTree myTree = new MyTree();
   private MPSProject myProject;
@@ -51,6 +53,7 @@ public class ProjectPane extends JComponent {
     }
   };
   private LanguageCommandListener myLanguageListener = new MyLanguageListener();
+  private SolutionCommandListener mySolutionListener = new MySolutionListener();
 
   public ProjectPane(IdeMain ide) {
     myIDE = ide;
@@ -99,24 +102,39 @@ public class ProjectPane extends JComponent {
   }
 
   public void setProject(MPSProject project) {
+    if(myProject != null) {
+      removeListeners(myProject);
+    }
     myProject = project;
-    myProject.addMPSProjectCommandListener(myProjectListener);
     myHeader.setText("Project - " + FileUtil.getCanonicalPath(myProject.getProjectFile()));
     rebuildTree();
+    updateListeners();
+  }
+
+  private void removeListeners(MPSProject project) {
+    project.removeMPSProjectCommandListener(myProjectListener);
+    for (Language language : project.getLanguages()) {
+      language.removeLanguageCommandListener(myLanguageListener);
+    }
+    for (Solution solution : project.getSolutions()) {
+      solution.removeSolutionCommandListener(mySolutionListener);
+    }
   }
 
   private void updateListeners() {
-    for (Language projectLanguage : myProject.getLanguages()) {
-      addLanguageListener(projectLanguage);
-    }
-    for (Language language : myIDE.getGlobalOperationContext().getLanguages()) {
-      addLanguageListener(language);
-    }
-  }
+    if(myProject == null) return;
 
-  private void addLanguageListener(Language language) {
-    language.removeLanguageCommandListener(myLanguageListener);
-    language.addLanguageCommandListener(myLanguageListener);
+    myProject.removeMPSProjectCommandListener(myProjectListener);
+    myProject.addMPSProjectCommandListener(myProjectListener);
+
+    for (Language language : myProject.getLanguages()) {
+      language.removeLanguageCommandListener(myLanguageListener);
+      language.addLanguageCommandListener(myLanguageListener);
+    }
+    for (Solution solution : myProject.getSolutions()) {
+      solution.removeSolutionCommandListener(mySolutionListener);
+      solution.addSolutionCommandListener(mySolutionListener);
+    }
   }
 
   public void enableRebuild() {
@@ -340,22 +358,6 @@ public class ProjectPane extends JComponent {
       }
       ProjectTreeNode root = new ProjectTreeNode(myIDE, operationContext);
 
-//      // project models
-//      List<ProjectModelsTreeNode> modelTreeNodes = ProjectModelsTreeNode.createModelTreeNodes(myIDE, operationContext);
-//      for (ProjectModelsTreeNode projectModelsTreeNode : modelTreeNodes) {
-//        root.add(projectModelsTreeNode);
-//      }
-//
-//      DefaultMutableTreeNode projectLanguagesNode = new ProjectLanguagesTreeNode(myIDE, operationContext);
-//      for (Language language : myProject.getProjectLanguages()) {
-//        ProjectLanguageTreeNode node = new ProjectLanguageTreeNode(language, myIDE, operationContext);
-//        projectLanguagesNode.add(node);
-//      }
-//      root.add(projectLanguagesNode);
-//
-//      LanguagesTreeNode languagesNode = new LanguagesTreeNode(myIDE, operationContext);
-//      root.add(languagesNode);
-
       List<Solution> solutions = myProject.getSolutions();
       for (Solution solution : solutions) {
         ProjectSolutionTreeNode solutionTreeNode = new ProjectSolutionTreeNode(solution, myIDE, myProject);
@@ -373,6 +375,12 @@ public class ProjectPane extends JComponent {
 
   private class MyLanguageListener implements LanguageCommandListener {
     public void languageChangedInCommand(Language language) {
+      rebuildTree();
+    }
+  }
+
+  private class MySolutionListener implements SolutionCommandListener {
+    public void solutionChangedInCommand(Solution solution) {
       rebuildTree();
     }
   }

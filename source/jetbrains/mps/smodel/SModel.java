@@ -143,8 +143,10 @@ public class SModel implements Iterable<SNode> {
     myListeners.remove(listener);
   }
 
-  public void setLoading(boolean loading) {
+  public boolean setLoading(boolean loading) {
+    boolean wasLoading = isLoading;
     isLoading = loading;
+    return wasLoading;
   }
 
   public boolean isLoading() {

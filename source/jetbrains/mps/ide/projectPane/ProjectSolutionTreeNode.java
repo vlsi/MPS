@@ -1,12 +1,15 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.SolutionOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 
+import javax.swing.*;
 import java.util.List;
 
 /**
@@ -41,14 +44,14 @@ class ProjectSolutionTreeNode extends MPSTreeNode {
     return "solution"; //mySolution.getNamespace();
   }
 
-//  protected JPopupMenu getPopupMenu() {
-//    JPopupMenu result = new JPopupMenu();
-//    final Language language = getSolution();
-//    ActionContext context = new ActionContext(myIDE, getOperationContext());
-//    context.put(Language.class, language);
-//    ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_LANGUAGE_ACTIONS).add(result, context);
-//    return result;
-//  }
+  protected JPopupMenu getPopupMenu() {
+    JPopupMenu result = new JPopupMenu();
+    Solution solution = getSolution();
+    ActionContext context = new ActionContext(myIDE, getOperationContext());
+    context.put(Solution.class, solution);
+    ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_PROJECT_SOLUTION_ACTIONS).add(result, context);
+    return result;
+  }
 
   public String toString() {
 //    if (mySolution.isUpToDate()) {

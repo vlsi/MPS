@@ -14,7 +14,6 @@ import org.jdom.Document;
 import org.jdom.Element;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.*;
 
 /**
@@ -42,9 +41,9 @@ public class MPSProject implements LanguageOwner {
   private List<MPSProjectCommandListener> myProjectCommandListeners = new ArrayList<MPSProjectCommandListener>();
   private MyCommandEventTranslator myEventTranslator = new MyCommandEventTranslator();
 
-  public MPSProject(File file) {
-    myProjectFile = file;
-    myProjectDescriptor = PersistenceUtil.loadProjectDescriptor(file, myProjectModel);
+  public MPSProject(File projectFile) {
+    myProjectFile = projectFile;
+    myProjectDescriptor = PersistenceUtil.loadProjectDescriptor(projectFile, myProjectModel);
 
     // load solutions
     mySolutions = new LinkedList<Solution>();
@@ -54,24 +53,12 @@ public class MPSProject implements LanguageOwner {
     }
 
     // convert legacy project to new solution
-    SolutionDescriptor solutionFromLegacyProject = PersistenceUtil.loadSolutionDescriptorFormOldMPR(file, myProjectModel);
-    if (solutionFromLegacyProject != null &&
-            (solutionFromLegacyProject.getModelRootsCount() > 0 || solutionFromLegacyProject.getLanguageRootsCount() > 0)) {
-      String solutionPathname = file.getAbsolutePath();
-      solutionPathname = solutionPathname.substring(0, solutionPathname.lastIndexOf('.')) + ".msd";
-      File solutionDescriptorFile = new File(solutionPathname);
-      if (!solutionDescriptorFile.exists()) {
-        try {
-          solutionDescriptorFile.createNewFile();
-          SolutionPath solutionPath = SolutionPath.newInstance(myProjectModel);
-          solutionPath.setPath(solutionPathname);
-          myProjectDescriptor.addSolutionPath(solutionPath);
-          mySolutions.add(new Solution(solutionDescriptorFile, solutionFromLegacyProject));
-          PersistenceUtil.saveSolutionDescriptor(solutionDescriptorFile, solutionFromLegacyProject);
-        } catch (IOException e) {
-          e.printStackTrace();
-        }
-      }
+    Solution solution = Solution.createFromLegacyProjectFile(projectFile);
+    if (solution != null) {
+      SolutionPath solutionPath = SolutionPath.newInstance(myProjectModel);
+      solutionPath.setPath(solution.getDescriptorFile().getAbsolutePath());
+      myProjectDescriptor.addSolutionPath(solutionPath);
+      mySolutions.add(solution);
     }
 
     // load languages
