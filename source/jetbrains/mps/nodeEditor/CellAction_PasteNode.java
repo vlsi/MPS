@@ -30,7 +30,7 @@ public class CellAction_PasteNode extends EditorCellAction {
 
     IOperationContext operationContext = context.getOperationContext();
     EditorsPane editorsPane = operationContext.getComponent(EditorsPane.class);
-    if (!PasteUtil.canPaste(selectedNode, pasteNodes.get(0), operationContext, editorsPane)) {
+    if (!PasteUtil.canPaste(selectedCell, pasteNodes.get(0), operationContext, editorsPane)) {
       LOG.debug("Couldn't paste node here");
       return false;
     }
@@ -44,7 +44,7 @@ public class CellAction_PasteNode extends EditorCellAction {
     SNode anchor = pasteNodes.get(0);
     IOperationContext operationContext = context.getOperationContext();
     EditorsPane editorsPane = operationContext.getComponent(EditorsPane.class);
-    PasteUtil.paste(selectedNode, anchor, operationContext, editorsPane);
+    PasteUtil.paste(selectedCell, anchor, operationContext, editorsPane);
     for (int i = 1; i < pasteNodes.size(); i++) {
       SNode node = pasteNodes.get(i);
       PasteUtil.pasteRelative(anchor, node, false, operationContext);
