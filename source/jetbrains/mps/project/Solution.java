@@ -117,10 +117,6 @@ public class Solution implements ModelLocator, ModelOwner, LanguageOwner {
     return mySolutionDescriptor;
   }
 
-  public String getName() {
-    return mySolutionDescriptor.getName();
-  }
-
   // -------------------------------
   // ModelLocator, ModelOwner, LanguageOwner
   // -------------------------------

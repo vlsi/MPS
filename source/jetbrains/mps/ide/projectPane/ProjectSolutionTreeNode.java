@@ -41,7 +41,7 @@ class ProjectSolutionTreeNode extends MPSTreeNode {
   }
 
   protected String getNodeIdentifier() {
-    return "solution"; //mySolution.getNamespace();
+    return mySolution.getDescriptorFile().getAbsolutePath();
   }
 
   protected JPopupMenu getPopupMenu() {
@@ -54,11 +54,10 @@ class ProjectSolutionTreeNode extends MPSTreeNode {
   }
 
   public String toString() {
-//    if (mySolution.isUpToDate()) {
-//      return "<html>" + mySolution.getNamespace() + "  <b>(up-to-date)</b>";
-//    } else {
-//      return "<html>" + mySolution.getNamespace() + "  <b>(generation required)</b>";
-//    }
+    String name = mySolution.getSolutionDescriptor().getName();
+    if(name != null) {
+      return name;
+    }
     return "solution";
   }
 
@@ -69,7 +68,7 @@ class ProjectSolutionTreeNode extends MPSTreeNode {
       this.add(modelsTreeNode);
     }
 
-    LanguagesTreeNode languagesNode = new LanguagesTreeNode(myIDE, myProject);
+    LanguagesTreeNode languagesNode = new LanguagesTreeNode(myIDE, myProject, context);
     this.add(languagesNode);
   }
 }

@@ -14,8 +14,12 @@ public class ProjectModelDescriptor extends AbstractSModelDescriptor {
     return result;
   }
 
+  public static boolean isProjectModelDescriptor(SModelDescriptor modelDescriptor) {
+    return "$internal$".equals(modelDescriptor.getStereotype());
+  }
+
   private ProjectModelDescriptor() {
-    super(SModelUID.fromString("ProjectModel" + ourProjectModelDescriptorCount++));
+    super(new SModelUID("ProjectModel" + ourProjectModelDescriptorCount++, "$internal$"));
   }
 
   public void reloadFromDisk() {

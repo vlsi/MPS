@@ -208,15 +208,21 @@ public class SModelRepository extends SModelAdapter {
     return list;
   }
 
-  public List<SModelDescriptor> getModelDescriptors(ModelOwner owner) {
+  public List<SModelDescriptor> getModelDescriptors(ModelOwner modelOwner) {
     List<SModelDescriptor> list = new LinkedList<SModelDescriptor>();
     Iterator<Map.Entry<SModelUID, SModelDescriptor>> entries = myUIDToModelDescriptorMap.entrySet().iterator();
     while (entries.hasNext()) {
       Map.Entry<SModelUID, SModelDescriptor> entry = entries.next();
       SModelDescriptor descriptor = entry.getValue();
       HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(descriptor);
-      if(modelOwners.contains(owner)) {
-        list.add(descriptor);
+
+      ModelOwner testOwner = modelOwner;
+      while (testOwner != null) {
+        if (modelOwners.contains(testOwner)) {
+          list.add(descriptor);
+          break;
+        }
+        testOwner = testOwner.getParentModelOwner();
       }
     }
     return list;

@@ -113,7 +113,7 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
     // language generators
 
     for (Generator generator : myLanguage.getGenerators()) {
-      TextTreeNode generatorNode = new GeneratorTreeNode("<html><b>generator \"" + generator.getName() + "\"</b>", myIDE, myProject, operationContext);
+      TextTreeNode generatorNode = new GeneratorTreeNode("<html><b>generator \"" + generator.getName() + "\"</b>", generator, myIDE, myProject, operationContext);
       this.add(generatorNode);
     }
   }

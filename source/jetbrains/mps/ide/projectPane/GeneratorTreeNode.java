@@ -3,7 +3,7 @@ package jetbrains.mps.ide.projectPane;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.*;
 
 import javax.swing.*;
 import java.util.List;
@@ -20,11 +20,11 @@ class GeneratorTreeNode extends TextTreeNode {
   private MPSProject myProject;
   private IOperationContext myOperationContext;
 
-  public GeneratorTreeNode(String text, IdeMain ide, MPSProject project, IOperationContext operationContext) {
+  public GeneratorTreeNode(String text, Generator generator, IdeMain ide, MPSProject project, IOperationContext operationContext) {
     super(text);
     myIDE = ide;
     myProject = project;
-    myOperationContext = operationContext;
+    myOperationContext = new GeneratorTreeNodeOperationContext(generator, operationContext);
     populate();
   }
 
@@ -38,7 +38,13 @@ class GeneratorTreeNode extends TextTreeNode {
       this.add(modelsTreeNode);
     }
     
-    LanguagesTreeNode languagesNode = new LanguagesTreeNode(myIDE, myProject);
+    LanguagesTreeNode languagesNode = new LanguagesTreeNode(myIDE, myProject, myOperationContext);
     this.add(languagesNode);
+  }
+
+  private static class GeneratorTreeNodeOperationContext extends DelegatingOperationContext {
+    public GeneratorTreeNodeOperationContext(Generator generator, IOperationContext upperOperationContext) {
+      super(upperOperationContext, generator, generator);
+    }
   }
 }
