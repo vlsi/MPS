@@ -58,9 +58,9 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
       JOptionPane.showMessageDialog(null, "Couldn't find Language for structure model " + languageStructure.getUID());
       return;
     }
-    final SModel languageEditor = language.getEditorModel();
+    final SModelDescriptor languageEditor = language.getEditorModelDescriptor();
     if (languageEditor != null) {
-      Iterator<SNode> iterator = languageEditor.roots();
+      Iterator<SNode> iterator = languageEditor.getSModel().roots();
       while (iterator.hasNext()) {
         SNode root = iterator.next();
         if (editorName.equals(root.getName())) {
@@ -88,7 +88,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
       }
 
       int option = JOptionPane.showConfirmDialog(
-              null, "The " + editorName + " wasn't found in " + languageEditor.getUID() + "\nDo you want to create such an editor?",
+              null, "The " + editorName + " wasn't found in " + languageEditor.getModelUID() + "\nDo you want to create such an editor?",
               "Editor not found",
               JOptionPane.YES_NO_OPTION,
               JOptionPane.QUESTION_MESSAGE);
@@ -98,7 +98,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
         final ConceptDeclaration conceptDeclaration = (ConceptDeclaration) node;
         CommandProcessor.instance().executeCommand(new Runnable() {
           public void run() {
-            editorDeclaration[0] = new ConceptEditorDeclaration(languageEditor);
+            editorDeclaration[0] = new ConceptEditorDeclaration(languageEditor.getSModel());
             editorDeclaration[0].setConceptDeclaration(conceptDeclaration);
             editorDeclaration[0].getModel().addRoot(editorDeclaration[0]);
           }

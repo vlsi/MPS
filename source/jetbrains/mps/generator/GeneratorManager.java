@@ -4,8 +4,8 @@ import jetbrains.mps.baseLanguage.Classifier;
 import jetbrains.mps.baseLanguage.generator.target.DefaultTemplateGenerator;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessageView;
@@ -23,6 +23,7 @@ import jetbrains.mps.project.ExternalizableComponent;
 import jetbrains.mps.projectLanguage.GeneratorConfiguration;
 import jetbrains.mps.projectLanguage.GeneratorConfigurationCommand;
 import jetbrains.mps.projectLanguage.ProjectModel;
+import jetbrains.mps.projectLanguage.TargetOfGenerator;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
@@ -339,8 +340,9 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     Generator generator = generatorContext.getGenerator();
     if (generator.getGeneratorClass() != null) return generator.getGeneratorClass();
     Language targetLanguage = generatorContext.getLanguage(generator.getTargetLanguageName());
-    if (targetLanguage.getTargetOfGeneratorGeneratorClass() != null) {
-      return targetLanguage.getTargetOfGeneratorGeneratorClass();
+    TargetOfGenerator targetOfGenerator = targetLanguage.getLanguageDescriptor().getTargetOfGenerator();
+    if (targetOfGenerator != null) {
+      return targetOfGenerator.getGeneratorClass();
     }
     return null;
   }

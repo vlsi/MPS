@@ -3,8 +3,8 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.generator.ContextUtil;
-import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
@@ -26,79 +26,47 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
   private static final Logger LOG = Logger.getLogger(Language.class);
 
   private File myDescriptorFile;
-  private SModelDescriptor myProjectModelDescriptor = ProjectModelDescriptor.createDescriptorFor(this);
+//  private SModelDescriptor myProjectModelDescriptor = ProjectModelDescriptor.createDescriptorFor(this);
   private LanguageDescriptor myLanguageDescriptor;
   private List<Generator> myGenerators;
 
   private HashMap<String, ConceptDeclaration> myNameToConceptCache = new HashMap<String, ConceptDeclaration>();
   private List<LanguageCommandListener> myCommandListeners = new ArrayList<LanguageCommandListener>();
   private LanguageEventTranslator myEventTranslator = new LanguageEventTranslator();
-  private long myLastGenerationTime = 0;
+  private SModelsListener myModelsListener = new LanguageModelsAdapter();
 
-  private static final String NULL_STEREOTYPE = SModelStereotype.NONE;
+  private long myLastGenerationTime = 0;
   private boolean myRegisteredInFindUsagesManager;
 
-  private SModelsListener myModelsListener = new SModelsAdapter() {
-    public void modelWillBeDeleted(SModelDescriptor modelDescriptor) {
-      LanguageAspectStatus status = getLanguageAspectStatus(Language.this, modelDescriptor);
-      if (status.isLanguageAspect()) {
-        LanguageDescriptor languageDescriptor = getLanguageDescriptor();
-        if (status.isStructure()) {
-          languageDescriptor.removeChild(languageDescriptor.getStructureModel());
-        } else if (status.isEditor()) {
-          Iterator<Editor> iterator = languageDescriptor.editors();
-          while (iterator.hasNext()) {
-            Editor editor = iterator.next();
-            String name = editor.getEditorModel().getName();
-            if (EqualUtil.equals(name, modelDescriptor.getModelUID().toString())) {
-              languageDescriptor.removeChild(editor);
-              break;
-            }
-          }
-        } else if (status.isTypesystem()) {
-          languageDescriptor.removeChild(languageDescriptor.getTypeSystem());
-        } else if (status.isActions()) {
-          languageDescriptor.removeChild(languageDescriptor.getActionsModel());
-        } else if (status.isGeneratorTemplates()) {
-          Iterator<jetbrains.mps.projectLanguage.GeneratorDescriptor> iterator = languageDescriptor.generators();
-          while (iterator.hasNext()) {
-            jetbrains.mps.projectLanguage.GeneratorDescriptor generatorDescriptor = iterator.next();
-            if (generatorDescriptor.getTemplatesModel().getName().equals(modelDescriptor.getModelUID().toString())) {
-              languageDescriptor.removeChild(generatorDescriptor);
-              break;
-            }
-          }
-        }
-      }
-    }
-  };
 
-  /*package*/
   Language(File descriptorFile) {
     myDescriptorFile = descriptorFile;
-    CommandProcessor.instance().addCommandListener(myEventTranslator);
-    readModelDescriptors();
+    SModel model = ProjectModelDescriptor.createDescriptorFor(this).getSModel();
+    myLanguageDescriptor = PersistenceUtil.loadLanguageDescriptor(descriptorFile, model);
+
+    // read models
+    SModelRepository.getInstance().readModelDescriptors(myLanguageDescriptor.modelRoots(), this);
+    revalidateGenerators();
+
     updateLastGenerationTime();
 
-    // todo: update generators after changes in language (property dialog)
-    myGenerators = new LinkedList<Generator>();
-    Iterator<jetbrains.mps.projectLanguage.GeneratorDescriptor> generators = getLanguageDescriptor().generators();
-    while (generators.hasNext()) {
-      jetbrains.mps.projectLanguage.GeneratorDescriptor generatorDescriptor = generators.next();
-      myGenerators.add(new Generator(this, generatorDescriptor));
-    }
-
+    CommandProcessor.instance().addCommandListener(myEventTranslator);
     SModelsMulticaster.getInstance().addSModelsListener(myModelsListener);
   }
 
-  private void readModelDescriptors() {
-    SModelRepository repository = SModelRepository.getInstance();
-    repository.readModelDescriptors(getModelRoots(), this);
+  private void revalidateGenerators() {
+    myGenerators = new LinkedList<Generator>();
+    Iterator<GeneratorDescriptor> generators = getLanguageDescriptor().generators();
+    while (generators.hasNext()) {
+      GeneratorDescriptor generatorDescriptor = generators.next();
+      myGenerators.add(new Generator(this, generatorDescriptor));
+    }
   }
 
   public void dispose() {
-    SModelRepository.getInstance().unRegisterModelDescriptors(this);
+    CommandProcessor.instance().removeCommandListener(myEventTranslator);
     SModelsMulticaster.getInstance().removeSModelsListener(myModelsListener);
+    SModelRepository.getInstance().unRegisterModelDescriptors(this);
     if (myGenerators != null) {
       for (Generator generator : myGenerators) {
         generator.dispose();
@@ -108,6 +76,28 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
 
   public File getDescriptorFile() {
     return myDescriptorFile;
+  }
+
+  public void setLanguageDescriptor(LanguageDescriptor newDescriptor, IOperationContext operationContext) {
+
+    // release languages and models (except descriptor model)
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), this);
+    LanguageRepository.getInstance().unRegisterLanguages(this);
+    SModelRepository.getInstance().unRegisterModelDescriptors(this);
+    SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, this);
+    for (Generator generator : getGenerators()) {
+      generator.dispose();
+    }
+
+    myLanguageDescriptor = newDescriptor;
+    SModelRepository.getInstance().readModelDescriptors(myLanguageDescriptor.modelRoots(), this);
+    revalidateGenerators();
+
+    updateLastGenerationTime();
+    myEventTranslator.languageChanged();
+  }
+  public LanguageDescriptor getLanguageDescriptor() {
+    return myLanguageDescriptor;
   }
 
   public ModelOwner getParentModelOwner() {
@@ -122,57 +112,15 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
     myLastGenerationTime = FileUtil.getNewestFileTime(getSourceDir());
   }
 
-  public LanguageDescriptor getLanguageDescriptor() {
-    if (myLanguageDescriptor == null) {
-      SModel model = myProjectModelDescriptor.getSModel();
-      model.addSModelListener(new SModelAdapter() {
-        public void modelChanged(SModel model) {
-          myEventTranslator.languageChanged();
-        }
-
-        public void modelChangedDramatically(SModel model) {
-          myEventTranslator.languageChanged();
-        }
-      });
-      try {
-        model.setLoading(true);
-        myLanguageDescriptor = PersistenceUtil.loadLanguageDescriptor(myDescriptorFile, model);
-        model.addRoot(myLanguageDescriptor);
-      } finally {
-        model.setLoading(false);
-      }
-    }
-    return myLanguageDescriptor;
-  }
-
+  /**
+   * @deprecated
+   */
   public LanguageDescriptor getCopyOfLanguageDescriptor(SModel modelToCopy, IOperationContext operationContext) {
     return ContextUtil.copyNode(getLanguageDescriptor(), modelToCopy, operationContext);
   }
 
-  public void setLanguageDescriptor(LanguageDescriptor newDescriptor, IOperationContext operationContext) {
-    myProjectModelDescriptor.getSModel().deleteRoot(getLanguageDescriptor());
-    myLanguageDescriptor = ContextUtil.copyNode(newDescriptor, myProjectModelDescriptor.getSModel(), operationContext);
-    myProjectModelDescriptor.getSModel().addRoot(getLanguageDescriptor());
-    readModelDescriptors();
-  }
-
   public List<Generator> getGenerators() {
     return myGenerators;
-  }
-
-  public String getTargetOfGeneratorGeneratorClass() {
-    if (getLanguageDescriptor().getTargetOfGenerator() == null) return null;
-    return getLanguageDescriptor().getTargetOfGenerator().getGeneratorClass();
-  }
-
-  public List<ModelRoot> getModelRoots() {
-    List<ModelRoot> result = new LinkedList<ModelRoot>();
-    Iterator<ModelRoot> roots = getLanguageDescriptor().modelRoots();
-    while (roots.hasNext()) {
-      ModelRoot root = roots.next();
-      result.add(root);
-    }
-    return result;
   }
 
   public String getNamespace() {
@@ -213,16 +161,12 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
     return null;
   }
 
-  public Iterator<ConceptDeclaration> conceptDeclarations() {
-    List<ConceptDeclaration> list = new LinkedList<ConceptDeclaration>();
-    Iterator<SNode> roots = getStructureModelDescriptor().getSModel().roots();
-    while (roots.hasNext()) {
-      SNode rootNode = roots.next();
-      if (rootNode instanceof ConceptDeclaration) {
-        list.add((ConceptDeclaration) rootNode);
+  public List<ConceptDeclaration> getConceptDeclarations() {
+    return SModelUtil.allNodes(getStructureModelDescriptor().getSModel(), new Condition<SNode>() {
+      public boolean met(SNode object) {
+        return object instanceof ConceptDeclaration;
       }
-    }
-    return list.iterator();
+    });
   }
 
   public SModelDescriptor getStructureModelDescriptor() {
@@ -249,18 +193,6 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
     return null;
   }
 
-  public SModel getStructureModel() {
-    SModelDescriptor modelDescriptor = getStructureModelDescriptor();
-    if (modelDescriptor == null) return null;
-    return modelDescriptor.getSModel();
-  }
-
-  public SModel getEditorModel() {
-    SModelDescriptor modelDescriptor = getEditorModelDescriptor();
-    if (modelDescriptor == null) return null;
-    return modelDescriptor.getSModel();
-  }
-
   public SModelDescriptor getEditorModelDescriptor() {
     return getEditorModelDescriptor(null);
   }
@@ -270,7 +202,7 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
   }
 
   public SModelDescriptor getEditorModelDescriptor(String stereotype) {
-    if (stereotype == null) stereotype = NULL_STEREOTYPE;
+    if (stereotype == null) stereotype = SModelStereotype.NONE;
     String editorUID = getEditorUID(stereotype);
     if (editorUID == null) {
       return null;
@@ -289,12 +221,12 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
   }
 
   public String getEditorUID(String stereotype) {
-    if (stereotype == null) stereotype = NULL_STEREOTYPE;
+    if (stereotype == null) stereotype = SModelStereotype.NONE;
     Iterator<Editor> editors = getLanguageDescriptor().editors();
     while (editors.hasNext()) {
       Editor currentEditor = editors.next();
       String currentStereotype = currentEditor.getStereotype();
-      if (currentStereotype == null) currentStereotype = NULL_STEREOTYPE;
+      if (currentStereotype == null) currentStereotype = SModelStereotype.NONE;
       if (currentStereotype.equals(stereotype)) return currentEditor.getEditorModel().getName();
     }
     return null;
@@ -308,21 +240,15 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
     return null;
   }
 
-  public SModel getActionsModel() {
-    SModelDescriptor modelDescriptor = getActionsModelDescriptor();
-    if (modelDescriptor == null) return null;
-    return modelDescriptor.getSModel();
-  }
-
   public void invalidateCaches() {
     myNameToConceptCache.clear();
   }
 
   public ConceptDeclaration findConceptDeclaration(String conceptName) {
     if (myNameToConceptCache.isEmpty()) {
-      SModelUtil.allNodes(getStructureModel(), new Condition<SNode>() {
+      SModel structureModel = getStructureModelDescriptor().getSModel();
+      SModelUtil.allNodes(structureModel, new Condition<SNode>() {
         public boolean met(SNode node) {
-//          DiagnosticUtil.assertNodeValid(node, myOperationContext);
           if (node instanceof ConceptDeclaration) {
             myNameToConceptCache.put(node.getName(), (ConceptDeclaration) node);
           }
@@ -338,42 +264,30 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
   }
 
   private SModelDescriptor getModelDescriptorByUID(SModelUID modelUID) {
-    if (modelUID == null) return null;
-    try {
-      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
-      if (modelDescriptor != null) {
-        return modelDescriptor;
-      }
-      String modelPath = PathManager.findModelPath(getLanguageDescriptor().modelRoots(), modelUID);
-      if (modelPath == null) {
-        return null;
-      }
-      return MPSFileModelDescriptor.getInstance(modelPath, modelUID, this);
-    } catch (Exception e) {
-      LOG.error(e);
-    }
-
-    return null;
+    return SModelRepository.getInstance().getModelDescriptor(modelUID, this);
+//    if (modelUID == null) return null;
+//    try {
+//      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
+//      if (modelDescriptor != null) {
+//        return modelDescriptor;
+//      }
+//      String modelPath = PathManager.findModelPath(getLanguageDescriptor().modelRoots(), modelUID);
+//      if (modelPath == null) {
+//        return null;
+//      }
+//      return MPSFileModelDescriptor.getInstance(modelPath, modelUID, this);
+//    } catch (Exception e) {
+//      LOG.error(e);
+//    }
+//
+//    return null;
   }
 
-  public Set<SModelDescriptor> getAllModels() {
-    Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
-
-    result.addAll(getLibraryModels());
-
-    if (getStructureModelDescriptor() != null) result.add(getStructureModelDescriptor());
-    if (getEditorModelDescriptor() != null) result.add(getEditorModelDescriptor());
-    if (getTypesystemModelDescriptor() != null) result.add(getTypesystemModelDescriptor());
-    if (getActionsModelDescriptor() != null) result.add(getActionsModelDescriptor());
-
-    return result;
-  }
-
-  public List<SModelDescriptor> getLibraryModels() {
+  public List<SModelDescriptor> getAccessoryModels() {
     List<SModelDescriptor> result = new LinkedList<SModelDescriptor>();
-    Iterator<Model> libraryModels = getLanguageDescriptor().libraryModels();
-    while (libraryModels.hasNext()) {
-      Model model = libraryModels.next();
+    Iterator<Model> accessoryModels = getLanguageDescriptor().libraryModels();
+    while (accessoryModels.hasNext()) {
+      Model model = accessoryModels.next();
       SModelDescriptor modelDescriptor = getModelDescriptorByUID(SModelUID.fromString(model.getName()));
       if (modelDescriptor != null) {
         result.add(modelDescriptor);
@@ -385,7 +299,6 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
   public String toString() {
     return getLanguageDescriptor().getNamespace();
   }
-
 
   public void addLanguageCommandListener(LanguageCommandListener listener) {
     myCommandListeners.add(listener);
@@ -513,4 +426,41 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
       return myAspectKind == LanguageAspectStatus.AspectKind.GENERATOR_TEMPLATES;
     }
   }
+
+
+
+  private class LanguageModelsAdapter extends SModelsAdapter {
+    public void modelWillBeDeleted(SModelDescriptor modelDescriptor) {
+      LanguageAspectStatus status = getLanguageAspectStatus(Language.this, modelDescriptor);
+      if (status.isLanguageAspect()) {
+        LanguageDescriptor languageDescriptor = getLanguageDescriptor();
+        if (status.isStructure()) {
+          languageDescriptor.removeChild(languageDescriptor.getStructureModel());
+        } else if (status.isEditor()) {
+          Iterator<Editor> iterator = languageDescriptor.editors();
+          while (iterator.hasNext()) {
+            Editor editor = iterator.next();
+            String name = editor.getEditorModel().getName();
+            if (EqualUtil.equals(name, modelDescriptor.getModelUID().toString())) {
+              languageDescriptor.removeChild(editor);
+              break;
+            }
+          }
+        } else if (status.isTypesystem()) {
+          languageDescriptor.removeChild(languageDescriptor.getTypeSystem());
+        } else if (status.isActions()) {
+          languageDescriptor.removeChild(languageDescriptor.getActionsModel());
+        } else if (status.isGeneratorTemplates()) {
+          Iterator<jetbrains.mps.projectLanguage.GeneratorDescriptor> iterator = languageDescriptor.generators();
+          while (iterator.hasNext()) {
+            jetbrains.mps.projectLanguage.GeneratorDescriptor generatorDescriptor = iterator.next();
+            if (generatorDescriptor.getTemplatesModel().getName().equals(modelDescriptor.getModelUID().toString())) {
+              languageDescriptor.removeChild(generatorDescriptor);
+              break;
+            }
+          }
+        }
+      }
+    }
+  } // private class LanguageModelsAdapter
 }

@@ -103,7 +103,7 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
       }
     };
 
-    List<SModelDescriptor> sortedModels = SortUtil.sortModels(myLanguage.getLibraryModels());
+    List<SModelDescriptor> sortedModels = SortUtil.sortModels(myLanguage.getAccessoryModels());
     for (SModelDescriptor model : sortedModels) {
       libraries.add(new SModelTreeNode(model, null, myIDE, operationContext));
     }

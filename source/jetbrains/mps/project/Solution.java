@@ -24,7 +24,7 @@ public class Solution implements ModelLocator, ModelOwner, LanguageOwner {
   private SolutionDescriptor mySolutionDescriptor;
   private File myDescriptorFile;
   private List<SolutionCommandListener> myCommandListeners = new LinkedList<SolutionCommandListener>();
-  private SolutionEventTranslator myEventTranslator;
+  private SolutionEventTranslator myEventTranslator = new SolutionEventTranslator();
 
   /**
    * tmp: to create solution from legacy projects
@@ -69,7 +69,7 @@ public class Solution implements ModelLocator, ModelOwner, LanguageOwner {
     CommandProcessor.instance().addCommandListener(myEventTranslator);
   }
 
-
+  // -------------------------------------------------------------------
 
   public Solution(File descriptorFile) {
     myDescriptorFile = descriptorFile;
@@ -80,7 +80,6 @@ public class Solution implements ModelLocator, ModelOwner, LanguageOwner {
     LanguageRepository.getInstance().readLanguageDescriptors(mySolutionDescriptor.languageRoots(), this);
     SModelRepository.getInstance().readModelDescriptors(mySolutionDescriptor.modelRoots(), this);
 
-    myEventTranslator = new SolutionEventTranslator();
     CommandProcessor.instance().addCommandListener(myEventTranslator);
   }
 

@@ -3,6 +3,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.projectLanguage.GeneratorDescriptor;
+import jetbrains.mps.projectLanguage.Model;
 
 import java.io.File;
 
@@ -33,8 +34,9 @@ public class Generator implements ModelLocator, ModelOwner, LanguageOwner {
   }
 
   public SModelUID getTemplatesModelUID() {
-    if (myGeneratorDescriptor.getTemplatesModel().getName() == null) return null;
-    return SModelUID.fromString(myGeneratorDescriptor.getTemplatesModel().getName());//, SModelStereotype.TEMPLATES);  //hack
+    Model templatesModel = myGeneratorDescriptor.getTemplatesModel();
+    if (templatesModel == null || templatesModel.getName() == null) return null;
+    return SModelUID.fromString(templatesModel.getName());
   }
 
   public String getGeneratorClass() {
