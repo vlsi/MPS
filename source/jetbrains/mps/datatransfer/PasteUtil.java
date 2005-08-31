@@ -41,21 +41,6 @@ public class PasteUtil {
     return (canPaste_internal(pasteTarget, pasteNode, operationContext, role, invoker) != PASTE_N_A);
   }
 
-  private static String getRoleFromCell(EditorCell targetCell) {
-    SNode pasteTarget = targetCell.getSNode();
-    String role = pasteTarget.getRole_();
-    if (role == null) {
-      EditorCell_Collection actualCollection = (targetCell instanceof EditorCell_Collection)? (EditorCell_Collection) targetCell : targetCell.getParent();
-      if (actualCollection != null) role = actualCollection.getCellNodesRole();
-      while (actualCollection != null && role == null) {
-        actualCollection = actualCollection.getParent();
-        if (actualCollection == null) break;
-        role = actualCollection.getCellNodesRole();
-      }
-    }
-    return role;
-  }
-
   public static void paste(EditorCell targetCell, SNode pasteNode, IOperationContext operationContext, Object invoker) {
     String role = getRoleFromCell(targetCell);
     SNode pasteTarget = targetCell.getSNode();
@@ -247,6 +232,35 @@ public class PasteUtil {
     }
     return null;
   }
+
+
+  private static String getRoleFromCell(EditorCell targetCell) {
+    /*If target cell represents some empty collection, target cell's node is not a member of that collection,
+      but its future members' parent. Hence, if we consider that node as an anchor
+      and hence its role as role-in-parent for the node we want to paste - we'll not be able
+      to paste our node as a child of that very target node.
+
+      But we want to process such case, too. Hence we search for the first collection which contains
+      our target cell and has not-null handler (i.e. not-null cell nodes role). 
+    */
+
+    String role = null;
+
+    EditorCell_Collection actualCollection = (targetCell instanceof EditorCell_Collection)? (EditorCell_Collection) targetCell : targetCell.getParent();
+    if (actualCollection != null) role = actualCollection.getCellNodesRole();
+    while (actualCollection != null && role == null) {
+      actualCollection = actualCollection.getParent();
+      if (actualCollection == null) break;
+      role = actualCollection.getCellNodesRole();
+    }
+
+    if (role == null) {
+      SNode pasteTarget = targetCell.getSNode();
+      role = pasteTarget.getRole_();
+    }
+    return role;
+  }
+
 
   public static boolean canPasteRelative(SNode anchorNode, SNode pasteNode, IOperationContext operationContext) {
     return canPasteToParent(anchorNode, pasteNode, anchorNode.getRole_(), operationContext);
