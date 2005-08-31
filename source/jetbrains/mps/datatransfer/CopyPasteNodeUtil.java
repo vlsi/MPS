@@ -31,6 +31,16 @@ public class CopyPasteNodeUtil {
 
   private static final Logger LOG = Logger.getLogger(CopyPasteNodeUtil.class);
 
+  private static final ModelOwner ourModelOwner = new ModelOwner() {
+    public ModelOwner getParentModelOwner() {
+      return null;
+    }
+
+    public void dispose() {
+      SModelRepository.getInstance().unRegisterModelDescriptors(this);
+    }
+  };
+
   private static HashMap<SNode, SNode> ourSourceNodesToNewNodes = new HashMap<SNode, SNode>();
   private static HashSet<SReference> ourReferences = new HashSet<SReference>();
 
@@ -182,6 +192,16 @@ public class CopyPasteNodeUtil {
       }
 
     }
+  }
+
+  public static SModel copyModelProperties(SModel model) {
+    SModelUID modelUID = model.getUID();
+    SModel newModel = new SModel(new SModelUID(modelUID.getLongName(), SModelStereotype.INTERNAL_COPY));
+    for (String language : model.getLanguageNamespaces())
+      newModel.addLanguage(language);
+    for (SModelUID importedModel : model.getImportedModelUIDs())
+      newModel.addImportedModel(importedModel);
+    return newModel;
   }
 
 
