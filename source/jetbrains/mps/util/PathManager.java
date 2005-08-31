@@ -225,7 +225,8 @@ public class PathManager {
     if (!baseFile.isDirectory()) {
       baseFile = baseFile.getParentFile();
     }
-    if (baseFile.getPath().equals(absoluteFile.getPath())) return ".";
+    if (baseFile.getPath().equals(absoluteFile.getPath())) return File.separator + ".";
+
     StringBuffer relativePath = new StringBuffer(absoluteFile.getName());
     File parent = absoluteFile.getParentFile();
     while (parent != null) {

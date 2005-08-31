@@ -76,7 +76,7 @@ public class MPSProject implements ModelOwner, LanguageOwner {
     }
   }
 
-  public void setProjectDescriptor(ProjectDescriptor newDescriptor, IOperationContext operationContext) {
+  public void setProjectDescriptor(ProjectDescriptor newDescriptor) {
 
     // release languages and models (except descriptor model)
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), this);
@@ -91,6 +91,17 @@ public class MPSProject implements ModelOwner, LanguageOwner {
     revalidateContent(myProjectFile, newDescriptor.getModel());
 
     myEventTranslator.projectChanged();
+  }
+
+  public void addLanguage(File languageDescriptorFile) {
+    ProjectDescriptor projectDescriptor = getProjectDescriptor();
+    SModel model = projectDescriptor.getModel();
+    model.setLoading(true);
+    ProjectLanguage languagePath = new ProjectLanguage(model);
+    languagePath.setPath(languageDescriptorFile.getAbsolutePath());
+    projectDescriptor.addProjectLanguage(languagePath);
+
+    setProjectDescriptor(projectDescriptor);
   }
 
 
@@ -116,10 +127,6 @@ public class MPSProject implements ModelOwner, LanguageOwner {
 
   public Collection<Language> getLanguages() {
     return Collections.unmodifiableCollection(myLanguages);
-  }
-
-  public void addLanguage(Language language) {
-    myLanguages.add(language);
   }
 
   public List<Solution> getSolutions() {

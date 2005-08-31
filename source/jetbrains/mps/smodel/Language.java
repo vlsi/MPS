@@ -39,7 +39,7 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
   private boolean myRegisteredInFindUsagesManager;
 
 
-  Language(File descriptorFile) {
+  public Language(File descriptorFile) {
     myDescriptorFile = descriptorFile;
     SModel model = ProjectModelDescriptor.createDescriptorFor(this).getSModel();
     myLanguageDescriptor = PersistenceUtil.loadLanguageDescriptor(descriptorFile, model);
