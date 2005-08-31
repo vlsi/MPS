@@ -123,7 +123,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
   }
 
   public EditorCell_Collection createCells(EditorContext editorContext, CellLayout cellLayout) {
-    myListEditorCell_Collection = EditorCell_Collection.create(editorContext, myOwnerNode, cellLayout);
+    myListEditorCell_Collection = EditorCell_Collection.create(editorContext, myOwnerNode, cellLayout, this);
     myListEditorCell_Collection.setSelectable(false);
 
     Iterator<SNode> listNodes = myOwnerNode.children(getChildRole());
