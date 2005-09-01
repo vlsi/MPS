@@ -151,6 +151,8 @@ class SModelTreeNode extends MPSTreeNodeEx {
 
             public void visitPropertyEvent(SModelPropertyEvent event) {
               DefaultTreeModel treeModel = (DefaultTreeModel)myIDE.getProjectPane().getTree().getModel();
+
+              //i tried to use nodeChange but it didn't work
               treeModel.nodeStructureChanged(SModelTreeNode.this.getParent());
             }
 
