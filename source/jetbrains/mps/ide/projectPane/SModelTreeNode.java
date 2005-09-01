@@ -138,31 +138,31 @@ class SModelTreeNode extends MPSTreeNodeEx {
 
     public void modelChangedInCommand(final List<SModelEvent> events, EditorContext editorContext) {
       ProjectPane projectPane = getOperationContext().getComponent(ProjectPane.class);
-      if (EventUtil.isDramaticalChange(events)) {
-        projectPane.rebuildTree(new Runnable() {
-          public void run() {
-            SModelEventVisitor visitor = new SModelEventVisitor() {
-              public void visitRootEvent(SModelRootEvent event) {
-                SModelTreeNode.this.update();
-              }
-
-              public void visitChildEvent(SModelChildEvent event) {
-                updateTreeWithRoot(event.getParent());
-              }
-
-              public void visitPropertyEvent(SModelPropertyEvent event) {
-              }
-
-              public void visitReferenceEvent(SModelReferenceEvent event) {
-              }
-            };
-            for (SModelEvent event : events) {
-              event.accept(visitor);
+      projectPane.rebuildTree(new Runnable() {
+        public void run() {
+          SModelEventVisitor visitor = new SModelEventVisitor() {
+            public void visitRootEvent(SModelRootEvent event) {
+              SModelTreeNode.this.update();
             }
-//            ((DefaultTreeModel) myTree.getModel()).nodeStructureChanged(SModelTreeNode.this.getParent());
+
+            public void visitChildEvent(SModelChildEvent event) {
+              updateTreeWithRoot(event.getParent());
+            }
+
+            public void visitPropertyEvent(SModelPropertyEvent event) {
+              DefaultTreeModel treeModel = (DefaultTreeModel)myIDE.getProjectPane().getTree().getModel();
+              treeModel.nodeStructureChanged(SModelTreeNode.this.getParent());
+            }
+
+            public void visitReferenceEvent(SModelReferenceEvent event) {
+            }
+          };
+          for (SModelEvent event : events) {
+            event.accept(visitor);
           }
-        });
-      }
+
+        }
+      });
     }
 
     private void updateTreeWithRoot(SNode node) {
