@@ -10,6 +10,8 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 
 import javax.swing.*;
+import javax.swing.tree.TreeModel;
+import javax.swing.tree.DefaultTreeModel;
 import java.util.List;
 
 /**
@@ -117,6 +119,8 @@ class SModelTreeNode extends MPSTreeNodeEx {
       MPSTreeNodeEx treeNode = new SNodeTreeNode(sortedRoot, myIDE, getOperationContext());
       add(treeNode);
     }
+    DefaultTreeModel treeModel = (DefaultTreeModel)myIDE.getProjectPane().getTree().getModel();
+    treeModel.nodeStructureChanged(this);
     isInitialized = true;
   }
 

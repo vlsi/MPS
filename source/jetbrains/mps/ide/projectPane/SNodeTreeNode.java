@@ -11,6 +11,7 @@ import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.IdeMain;
 
 import javax.swing.*;
+import javax.swing.tree.DefaultTreeModel;
 import java.util.List;
 
 /**
@@ -77,6 +78,8 @@ class SNodeTreeNode extends MPSTreeNodeEx {
     for (SNode childNode : children) {
       add(new SNodeTreeNode(childNode, childNode.getRole_(), myIDE, getOperationContext()));
     }
+    DefaultTreeModel treeModel = (DefaultTreeModel)myIDE.getProjectPane().getTree().getModel();
+    treeModel.nodeStructureChanged(this);
     myInitialized = true;
   }
 
