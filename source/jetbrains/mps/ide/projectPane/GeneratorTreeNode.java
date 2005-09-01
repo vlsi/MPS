@@ -1,8 +1,11 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
 
 import javax.swing.*;
@@ -16,12 +19,14 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 class GeneratorTreeNode extends TextTreeNode {
+  private Generator myGenerator;
   private IdeMain myIDE;
   private MPSProject myProject;
   private IOperationContext myOperationContext;
 
   public GeneratorTreeNode(String text, Generator generator, IdeMain ide, MPSProject project, IOperationContext operationContext) {
     super(text);
+    myGenerator = generator;
     myIDE = ide;
     myProject = project;
     myOperationContext = new GeneratorTreeNodeOperationContext(generator, operationContext);
@@ -31,6 +36,15 @@ class GeneratorTreeNode extends TextTreeNode {
   public Icon getIcon(boolean expanded) {
     return Icons.GENERATORS_ICON;
   }
+
+  protected JPopupMenu getPopupMenu() {
+    JPopupMenu result = new JPopupMenu();
+    ActionContext context = new ActionContext(myIDE, myOperationContext);
+    context.put(Generator.class, myGenerator);
+    ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_GENERATOR_ACTIONS).add(result, context);
+    return result;
+  }
+
 
   private void populate() {
     List<GeneratorModelsTreeNode> modelTreeNodes = GeneratorModelsTreeNode.createModelsTreeNodes(myIDE, myOperationContext);

@@ -39,6 +39,7 @@ public class ProjectPane extends JComponent {
   public static final String PROJECT_PANE_LANGUAGE_ACTIONS = "project-pane-language-actions";
   public static final String PROJECT_PANE_PROJECT_ACTIONS = "project-pane-project-actions";
   public static final String PROJECT_PANE_PROJECT_SOLUTION_ACTIONS = "project-pane-project-solution-actions";
+  public static final String PROJECT_PANE_GENERATOR_ACTIONS = "project-pane-generator-actions";
 
   private MyTree myTree = new MyTree();
   private MPSProject myProject;

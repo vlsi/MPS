@@ -37,6 +37,9 @@ public interface IOperationContext {
 
   <T> T getComponent(Class<T> clazz);
 
+  /**
+   * @deprecated
+   */
   List<ModelRoot> getModelRoots();
 
   SModelDescriptor createModel(SModelUID uid, String path, String pathPrefix);
