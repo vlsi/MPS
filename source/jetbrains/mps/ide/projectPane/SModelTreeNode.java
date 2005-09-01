@@ -173,16 +173,8 @@ class SModelTreeNode extends MPSTreeNodeEx {
       if (treeNode != null) {
         treeNode.update();
       }
-
-      TreeNode current = SModelTreeNode.this;
       DefaultTreeModel treeModel = (DefaultTreeModel)myIDE.getProjectPane().getTree().getModel();
-
-      //this required to update text in (geenration required) because to change text width
-      //node structure changed has to be called
-      while (current != null) {
-        treeModel.nodeStructureChanged(current);
-        current = current.getParent();
-      }
+      treeModel.nodeStructureChanged((TreeNode) treeModel.getRoot());
     }
   }
 }
