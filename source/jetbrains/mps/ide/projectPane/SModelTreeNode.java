@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.event.*;
 import javax.swing.*;
 import javax.swing.tree.TreeModel;
 import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreeNode;
 import java.util.List;
 
 /**
@@ -105,7 +106,6 @@ class SModelTreeNode extends MPSTreeNodeEx {
   public void update() {
     isInitialized = false;
     this.removeAllChildren();
-
   }
 
   public void init() {
@@ -143,6 +143,7 @@ class SModelTreeNode extends MPSTreeNodeEx {
           SModelEventVisitor visitor = new SModelEventVisitor() {
             public void visitRootEvent(SModelRootEvent event) {
               SModelTreeNode.this.update();
+              updateTreeWithRoot(event.getRoot());
             }
 
             public void visitChildEvent(SModelChildEvent event) {
@@ -153,7 +154,7 @@ class SModelTreeNode extends MPSTreeNodeEx {
               DefaultTreeModel treeModel = (DefaultTreeModel)myIDE.getProjectPane().getTree().getModel();
 
               //i tried to use nodeChange but it didn't work
-              treeModel.nodeStructureChanged(SModelTreeNode.this.getParent());
+              treeModel.nodeStructureChanged((TreeNode) treeModel.getRoot());
             }
 
             public void visitReferenceEvent(SModelReferenceEvent event) {
@@ -171,6 +172,16 @@ class SModelTreeNode extends MPSTreeNodeEx {
       MPSTreeNode treeNode = findAncestorWith(node);
       if (treeNode != null) {
         treeNode.update();
+      }
+
+      TreeNode current = SModelTreeNode.this;
+      DefaultTreeModel treeModel = (DefaultTreeModel)myIDE.getProjectPane().getTree().getModel();
+
+      //this required to update text in (geenration required) because to change text width
+      //node structure changed has to be called
+      while (current != null) {
+        treeModel.nodeStructureChanged(current);
+        current = current.getParent();
       }
     }
   }
