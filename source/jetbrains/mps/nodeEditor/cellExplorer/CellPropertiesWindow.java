@@ -2,6 +2,7 @@ package jetbrains.mps.nodeEditor.cellExplorer;
 
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.CellProperties;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.icons.IconManager;
@@ -25,33 +26,24 @@ public class CellPropertiesWindow extends JFrame {
   private EditorCell myCell;
   private IdeMain myIde;
   private EditorCell myClonedCell;
+  private CellProperties myCellProperties;
 
   public CellPropertiesWindow(EditorCell editorCell, IdeMain ide) {
     myCell = editorCell;
-   /* myClonedCell = myCell.clone();
-    myClonedCell.setX(0);
-    myClonedCell.setY(0);*/
     myIde = ide;
+    myCellProperties = new CellProperties(editorCell);
 
-    String cellText = null;
-    if (editorCell instanceof EditorCell_Label) {
-      cellText = ((EditorCell_Label) editorCell).getText();
-      if (cellText == null || cellText.length() == 0) cellText = ((EditorCell_Label) editorCell).getNullText();
-    }
+    String cellText = myCellProperties.getCellText();
 
-    String cellKind = NameUtil.shortNameFromLongName(myCell.getClass().getName());
-    String cellWidth = myCell.getWidth() + "";
-    String cellHeight = myCell.getHeight() + "";
-    String cellEffectiveWidth = myCell.getEffectiveWidth() + "";
-    String isRootCell = (myCell.getEditorContext().getNodeEditorComponent().getRootCell() == myCell)?"Yes":"No";
-    String cellID = (String) (myCell.getUserObject(EditorCell.CELL_ID));
-    String cellNumber = "" + (myCell.getUserObject(EditorCell.NUMBER));
-
-    SNode sNode = myCell.getSNode();
-    String name = sNode.getName();
-    name = name != null ? name : "<no name>";
-    String cellSNode = sNode == null ? "no node" : name + " (" + sNode.getConceptName() + ") [" + sNode.getId() + "]";
-    Icon icon = IconManager.getIconFor(sNode);
+    String cellKind = myCellProperties.getCellKind();
+    String cellWidth = myCellProperties.getCellWidth();
+    String cellHeight = myCellProperties.getCellHeight();
+    String cellEffectiveWidth = myCellProperties.getCellEffectiveWidth();
+    String isRootCell = myCellProperties.getRootCell();
+    String cellID = myCellProperties.getCellID();
+    String cellNumber = myCellProperties.getCellNumber();
+    String cellSNode = myCellProperties.getCellSNode();
+    Icon icon = IconManager.getIconFor(myCellProperties.getSNode());
 
     setLayout(new BorderLayout());
 
