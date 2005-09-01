@@ -33,7 +33,6 @@ public class ProjectPane extends JComponent {
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);
 
   public static final String PROJECT_PANE_NODE_ACTIONS = "project-pane-node-actions";
-  public static final String PROJECT_PANE_MODELS_ACTIONS = "project-pane-models-actions";
   public static final String PROJECT_PANE_MODEL_ACTIONS = "project-pane-model-actions";
   public static final String PROJECT_PANE_VCS_ACTIONS = "project-pane-vcs-actions";
   public static final String PROJECT_PANE_LANGUAGE_ACTIONS = "project-pane-language-actions";
