@@ -52,7 +52,7 @@ public class MPSProject implements ModelOwner, LanguageOwner {
     CommandProcessor.instance().addCommandListener(myEventTranslator);
   }
 
-  private void revalidateContent(File projectFile, SModel model) {
+  private void revalidateContent(File projectFile, final SModel model) {
     // load solutions
     mySolutions = new LinkedList<Solution>();
     for (SolutionPath solutionPath : CollectionUtil.iteratorAsIterable(myProjectDescriptor.solutionPaths())) {
@@ -61,11 +61,15 @@ public class MPSProject implements ModelOwner, LanguageOwner {
     }
 
     // convert legacy project to new solution
-    Solution solution = Solution.createFromLegacyProjectFile(projectFile);
+    final Solution solution = Solution.createFromLegacyProjectFile(projectFile);
     if (solution != null) {
-      SolutionPath solutionPath = SolutionPath.newInstance(model);
-      solutionPath.setPath(solution.getDescriptorFile().getAbsolutePath());
-      myProjectDescriptor.addSolutionPath(solutionPath);
+      model.runLoadingAction(new Runnable() {
+        public void run() {
+          SolutionPath solutionPath = SolutionPath.newInstance(model);
+          solutionPath.setPath(solution.getDescriptorFile().getAbsolutePath());
+          myProjectDescriptor.addSolutionPath(solutionPath);
+        }
+      });
       mySolutions.add(solution);
     }
 
