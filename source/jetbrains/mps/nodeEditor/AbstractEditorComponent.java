@@ -2,6 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.*;
+import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.ide.navigation.EditorsHistory;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionGroup;
@@ -229,6 +230,29 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         myNodeSubstituteChooser.setVisible(false);
       }
     });
+
+    ToolTipManager.sharedInstance().registerComponent(this);
+  }
+
+  public JToolTip createToolTip() {
+    JMultiLineToolTip toolTip = new JMultiLineToolTip();
+    toolTip.setFont(new TextLine("aaa", this).getFont());
+    return toolTip;
+  }
+
+  public String getToolTipText(MouseEvent event) {
+    EditorCell current = getRootCell().findCell(event.getX(), event.getY());
+    if (current != null) {
+      StringBuilder result = new StringBuilder();
+
+      result.append("Cell : \n");
+      result.append("\n");
+      result.append("Node Model : " + current.getSNodeProxy().getModel() + "  \n");
+      result.append("Node ID  : " + current.getSNodeProxy().getId() + "\n");
+
+//      return result.toString();
+    }
+    return null;
   }
 
   public IOperationContext getOperationContext() {
