@@ -4,6 +4,7 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.toolsPane.Tool;
+import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.smodel.IOperationContext;
 
 import javax.swing.*;
@@ -16,7 +17,7 @@ import java.awt.event.ActionEvent;
 /**
  * @author Kostik
  */
-public class MessageView implements Tool {
+public class MessageView extends DefaultTool {
   public static final Icon INFORMATION_ICON = new ImageIcon(MessageView.class.getResource("information.png"));
   public static final Icon ERROR_ICON = new ImageIcon(MessageView.class.getResource("error.png"));
   public static final Icon WARNING_ICON = new ImageIcon(MessageView.class.getResource("warning.png"));
@@ -86,6 +87,10 @@ public class MessageView implements Tool {
       }
     });
 
+  }
+
+  public boolean canClose() {
+    return false;
   }
 
 

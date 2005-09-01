@@ -1,6 +1,7 @@
 package jetbrains.mps.nodeEditor.cellExplorer;
 
 import jetbrains.mps.ide.toolsPane.Tool;
+import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.icons.IconManager;
@@ -24,7 +25,7 @@ import java.util.List;
 /**
  * @author Kostik
  */
-public class CellExplorerView implements Tool {
+public class CellExplorerView extends DefaultTool {
   public static final Logger LOG = Logger.getLogger(CellExplorerView.class);
 
   private JPanel myComponent = new JPanel(new BorderLayout());

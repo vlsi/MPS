@@ -8,6 +8,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.toolsPane.Tool;
+import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
@@ -31,7 +32,7 @@ import java.awt.event.ActionEvent;
  * Time: 19:26:52
  * To change this template use File | Settings | File Templates.
  */
-public class HierarchyView implements Tool {
+public class HierarchyView extends DefaultTool {
 
   private static Logger LOG = Logger.getLogger(HierarchyView.class);
 

@@ -3,6 +3,7 @@ package jetbrains.mps.ide.output;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.toolsPane.Tool;
+import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.preferences.ComponentWithPreferences;
 import jetbrains.mps.ide.preferences.PreferencesPage;
@@ -22,7 +23,7 @@ import org.jdom.Element;
 /**
  * @author Kostik
  */
-public class OutputView implements ExternalizableComponent, ComponentWithPreferences, Tool {
+public class OutputView extends DefaultTool implements ExternalizableComponent, ComponentWithPreferences {
   public static final String FONT_SIZE = "fontSize";
 
   private JPanel myComponent = new JPanel();
