@@ -2,6 +2,9 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.FileUtil;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.actions.model.DeleteModelAction;
+import jetbrains.mps.ide.actions.nodes.DeleteNodeAction;
+import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.ui.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
@@ -348,7 +351,31 @@ public class ProjectPane extends JComponent {
    public MyTree() {
      super();
      scrollsOnExpand = false;
+
+     registerActions();
    }
+
+   private void registerActions() {
+     registerMPSAction(new DeleteModelAction(), SModelTreeNode.class);
+     registerMPSAction(new DeleteNodeAction(), SNodeTreeNode.class);
+   }
+
+    protected ActionContext getActionContext(MPSTreeNode node, List<MPSTreeNode> nodes) {
+      ActionContext actionContext  = super.getActionContext(node, nodes);
+      if (node instanceof SNodeTreeNode) {
+        actionContext.put(SNode.class, ((SNodeTreeNode)node).getSNode());
+        List<SNode> otherNodes = new ArrayList<SNode>();
+        for (MPSTreeNode aNode : nodes) {
+          if (aNode instanceof SNodeTreeNode)
+            otherNodes.add(((SNodeTreeNode)aNode).getSNode());
+        }
+        actionContext.put(List.class, otherNodes);
+      } else if (node instanceof SModelTreeNode) {
+        actionContext.put(SModelDescriptor.class, ((SModelTreeNode)node).getModelDescriptor());
+      }
+
+      return actionContext;
+    }
 
     protected MPSTreeNode rebuild() {
       IOperationContext operationContext = myIDE.getGlobalOperationContext();

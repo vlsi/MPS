@@ -9,11 +9,19 @@ import javax.swing.tree.*;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Enumeration;
+import java.util.HashMap;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.ide.action.MPSAction;
+import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.action.ActionManager;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.command.CommandProcessor;
 
 /**
  * @author Kostik
@@ -74,6 +82,64 @@ public abstract class MPSTree extends JTree {
         if (e.isPopupTrigger()) showPopup(e);
       }
     });
+
+    addKeyListener(new KeyAdapter() {
+      public void keyPressed(KeyEvent e) {
+        TreePath[] paths = getSelectionPaths();
+        TreePath selPath = getSelectionPath();
+        MPSTreeNode selNode = (MPSTreeNode) selPath.getLastPathComponent();
+        List<MPSTreeNode> nodes = new ArrayList<MPSTreeNode>();
+        for (TreePath path : paths) {
+          MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
+          nodes.add(node);
+          node.keyPressed(e);
+        }
+        Pair pair = new Pair(KeyStroke.getKeyStrokeForEvent(e), selNode.getClass());
+        final MPSAction action = myKeyStrokesToActionsMap.get(pair);
+        if (action != null) {
+          final ActionContext context = getActionContext(selNode, nodes);
+          if (action.executeInsideCommand()) {
+            CommandProcessor.instance().executeCommand(new Runnable() {
+              public void run() {
+                action.execute(context);
+              }
+            });
+          } else {
+            action.execute(context);
+          }
+        }
+      }
+    });
+  }
+
+  private static class Pair {
+    KeyStroke keyStroke;
+    Class<? extends MPSTreeNode> nodeClass;
+    public Pair(KeyStroke keyStroke, Class<? extends MPSTreeNode> nodeClass) {
+      this.keyStroke = keyStroke;
+      this.nodeClass = nodeClass;
+    }
+    public int hashCode() {
+      return keyStroke.hashCode() + nodeClass.hashCode();
+    }
+    public boolean equals(Object o) {
+      if (!(o instanceof Pair)) return false;
+      Pair pair = ((Pair) o);
+      return pair.keyStroke.equals(keyStroke) && pair.nodeClass.equals(nodeClass);
+    }
+  }
+
+
+  private HashMap<Pair, MPSAction> myKeyStrokesToActionsMap = new HashMap<Pair, MPSAction>();
+
+  public final void registerMPSAction(MPSAction action, Class<? extends MPSTreeNode> nodeClass) {
+    Pair pair = new Pair(KeyStroke.getKeyStroke(action.getKeyStroke()), nodeClass); 
+    myKeyStrokesToActionsMap.put(pair, action);
+  }
+
+  protected ActionContext getActionContext(MPSTreeNode node, List<MPSTreeNode> nodes) {
+    IdeMain ide = node.getOperationContext().getComponent(IdeMain.class);
+    return new ActionContext(ide, node.getOperationContext());
   }
 
   private void showPopup(MouseEvent e) {

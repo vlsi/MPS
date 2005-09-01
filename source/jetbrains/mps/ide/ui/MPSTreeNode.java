@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
+import java.awt.event.KeyEvent;
 
 /**
  * @author Kostik
@@ -31,7 +32,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   protected abstract String getNodeIdentifier();
 
   public Iterator<MPSTreeNode> iterator() {
-    List<MPSTreeNode> result = new ArrayList<MPSTreeNode>();    
+    List<MPSTreeNode> result = new ArrayList<MPSTreeNode>();
     for (int i = 0; i < getChildCount(); i++) {
       result.add((MPSTreeNode) getChildAt(i));
     }
@@ -47,6 +48,9 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   public void doubleClick() {
+  }
+
+  public void keyPressed(KeyEvent keyEvent) {
   }
 
   protected void dispose() {
