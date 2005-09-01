@@ -104,6 +104,16 @@ public class MPSProject implements ModelOwner, LanguageOwner {
     setProjectDescriptor(projectDescriptor);
   }
 
+  public void addSolution(File solutionDescriptionFile) {
+    ProjectDescriptor projectDescriptor = getProjectDescriptor();
+    SModel model = projectDescriptor.getModel();
+    model.setLoading(true);
+    SolutionPath solutionPath = new SolutionPath(model);
+    solutionPath.setPath(solutionDescriptionFile.getAbsolutePath());
+    projectDescriptor.addSolutionPath(solutionPath);
+
+    setProjectDescriptor(projectDescriptor);
+  }
 
   public ModelOwner getParentModelOwner() {
     return null;
