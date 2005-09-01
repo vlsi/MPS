@@ -5,8 +5,8 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.generator.GeneratorOperationContext;
 
 import javax.swing.*;
 import java.util.List;
@@ -29,7 +29,8 @@ class GeneratorTreeNode extends TextTreeNode {
     myGenerator = generator;
     myIDE = ide;
     myProject = project;
-    myOperationContext = new GeneratorTreeNodeOperationContext(generator, operationContext);
+//    myOperationContext = new GeneratorTreeNodeOperationContext(generator, operationContext);
+    myOperationContext = GeneratorOperationContext.createContext(generator, operationContext);
     populate();
   }
 
@@ -56,9 +57,9 @@ class GeneratorTreeNode extends TextTreeNode {
     this.add(languagesNode);
   }
 
-  private static class GeneratorTreeNodeOperationContext extends DelegatingOperationContext {
-    public GeneratorTreeNodeOperationContext(Generator generator, IOperationContext upperOperationContext) {
-      super(upperOperationContext, generator, generator);
-    }
-  }
+//  private static class GeneratorTreeNodeOperationContext extends DelegatingOperationContext {
+//    public GeneratorTreeNodeOperationContext(Generator generator, IOperationContext upperOperationContext) {
+//      super(upperOperationContext, generator, generator);
+//    }
+//  }
 }

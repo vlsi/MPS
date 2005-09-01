@@ -13,12 +13,11 @@ import java.util.List;
  */
 public interface IOperationContext {
 
-  ModelOwner getModelOwner();
-
-  LanguageOwner getLanguageOwner();
-
   SModelDescriptor getModelDescriptor(SModelUID modelUID);
 
+  /**
+   * @deprecated
+   */
   SModelDescriptor getModelDescriptor(String modelName);
 
   List<SModelDescriptor> getModelDescriptors();
@@ -33,13 +32,8 @@ public interface IOperationContext {
 
   List<Language> getLanguages();
 
-  void dispose();
-
   <T> T getComponent(Class<T> clazz);
 
-  /**
-   * @deprecated
-   */
   List<ModelRoot> getModelRoots();
 
   SModelDescriptor createModel(SModelUID uid, String path, String pathPrefix);

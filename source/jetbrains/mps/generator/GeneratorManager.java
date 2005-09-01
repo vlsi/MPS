@@ -201,7 +201,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
             Set<SModelDescriptor> modelsWithLanguage = findModelsWithLanguage(modelDescriptors, cmd.getSourceLanguage().getName());
 
             Generator generator = findGenerator(cmd.getSourceLanguage().getName(), cmd.getTargetLanguage().getName(), invocationContext);
-            GeneratorOperationContext generatorContext = new GeneratorOperationContext(invocationContext, generator);
+            GeneratorOperationContext generatorContext = GeneratorOperationContext.createContext(generator, invocationContext);
             String generatorClass = findGeneratorClass(generatorContext);
             if (generatorClass == null) generatorClass = DefaultTemplateGenerator.class.getName();
             SModelDescriptor templatesModel = loadTemplatesModel(generatorContext);

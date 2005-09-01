@@ -15,7 +15,7 @@
     <model modelUID="jetbrains.mps.core.structure" />
   </library>
   <generators>
-    <generator name="StructureGenerator" generatorClass="jetbrains.mps.baseLanguage.generator.target.DefaultTemplateGenerator" templatesModel="jetbrains.mps.bootstrap.structureLanguage.generator.baseLanguage@templates" targetLanguage="jetbrains.mps.baseLanguage">
+    <generator name="structure generator" templatesModel="jetbrains.mps.bootstrap.structureLanguage.generator.baseLanguage@templates" targetLanguage="jetbrains.mps.baseLanguage">
       <models>
         <modelRoot path="${language_descriptor}\generator" namespacePrefix="jetbrains.mps.bootstrap.structureLanguage.generator" />
         <modelRoot path="${mps_home}\models" namespacePrefix="" />
