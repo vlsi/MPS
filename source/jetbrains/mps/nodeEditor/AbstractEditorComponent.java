@@ -173,7 +173,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        RecentEditorsMenu m = new RecentEditorsMenu(myIde.getEditorsPane().getEditorsHistory());
+        RecentEditorsMenu m = new RecentEditorsMenu(myOperationContext);
 
         if (!m.isHasItems()) return;
 
