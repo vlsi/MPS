@@ -171,20 +171,20 @@ public class SModelRepository extends SModelAdapter {
 
   public SModelDescriptor getModelDescriptor(SModelUID modelUID, ModelOwner owner) {
     SModelDescriptor descriptor = myUIDToModelDescriptorMap.get(modelUID);
-    // tmp
-    return descriptor;
-//    if (descriptor == null) {
-//      return null;
-//    }
-//    HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(descriptor);
-//    ModelOwner testOwner = owner;
-//    while (testOwner != null) {
-//      if (modelOwners.contains(testOwner)) {
-//        return descriptor;
-//      }
-//      testOwner = testOwner.getParentModelOwner();
-//    }
-//    return null;
+//    // tmp
+//    return descriptor;
+    if (descriptor == null) {
+      return null;
+    }
+    HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(descriptor);
+    ModelOwner testOwner = owner;
+    while (testOwner != null) {
+      if (modelOwners.contains(testOwner)) {
+        return descriptor;
+      }
+      testOwner = testOwner.getParentModelOwner();
+    }
+    return null;
   }
 
   public List<SModelDescriptor> getModelDescriptors(String modelName, ModelOwner owner) {

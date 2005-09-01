@@ -6,17 +6,21 @@
   <editor>
     <model modelUID="jetbrains.mps.bootstrap.structureLanguage.editor" />
   </editor>
-  <modelRoot rootPath="${language_descriptor}." namespacePrefix="jetbrains.mps.bootstrap.structureLanguage" />
-  <modelRoot rootPath="${mps_home}\models" namespacePrefix="" />
-  <modelRoot rootPath="${mps_home}\languages\core" namespacePrefix="jetbrains.mps.core" />
+  <models>
+    <modelRoot path="${language_descriptor}\." namespacePrefix="jetbrains.mps.bootstrap.structureLanguage" />
+    <modelRoot path="${mps_home}\languages\core" namespacePrefix="jetbrains.mps.core" />
+  </models>
   <library>
     <model modelUID="jetbrains.mps.bootstrap.structureLanguage.library" />
     <model modelUID="jetbrains.mps.core.structure" />
   </library>
   <generators>
     <generator name="StructureGenerator" generatorClass="jetbrains.mps.baseLanguage.generator.target.DefaultTemplateGenerator" templatesModel="jetbrains.mps.bootstrap.structureLanguage.generator.baseLanguage@templates" targetLanguage="jetbrains.mps.baseLanguage">
-      <modelRoot rootPath="${language_descriptor}\generator" namespacePrefix="jetbrains.mps.bootstrap.structureLanguage.generator" />
-      <modelRoot rootPath="${mps_home}\models" namespacePrefix="" />
+      <models>
+        <modelRoot path="${language_descriptor}\generator" namespacePrefix="jetbrains.mps.bootstrap.structureLanguage.generator" />
+        <modelRoot path="${mps_home}\models" namespacePrefix="" />
+      </models>
+      <languages />
     </generator>
   </generators>
 </language>
