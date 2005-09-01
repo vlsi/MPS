@@ -4,6 +4,7 @@ import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.*;
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.ide.navigation.EditorsHistory;
+import jetbrains.mps.ide.navigation.NavigationMenu;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.action.ActionManager;
@@ -169,6 +170,23 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
       }
     }, KeyStroke.getKeyStroke("ESCAPE"), WHEN_FOCUSED);
+
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        NavigationMenu m = new NavigationMenu(myIde.getEditorsPane().getEditorsHistory());
+
+        if (!m.isHasItems()) return;
+
+        int x = 0;
+        int y = 0;
+        EditorCell cell = getSelectedCell();
+        if (cell != null) {
+          x = cell.getX();
+          y = cell.getY();
+        }
+        m.show(AbstractEditorComponent.this, x, y);
+      }
+    }, KeyStroke.getKeyStroke("control E"), WHEN_FOCUSED);
 
 
     addMouseListener(new MouseAdapter() {
