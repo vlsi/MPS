@@ -51,6 +51,7 @@ public class CopyPasteNodeUtil {
     return ourModelOwner;
   }
 
+  //for model cloning and stuff : copying node within one model
   public static SNode copyNodeIn(SNode sourceNode) {
     SModel model = sourceNode.getModel();
     model.setLoading(true);
@@ -58,15 +59,29 @@ public class CopyPasteNodeUtil {
     ourReferences.clear();
     SNode targetNode = copyNode_internal(sourceNode);
     processReferencesIn();
- //   targetNode.changeModel(copyModelProperties(model));
     model.setLoading(false);
     return targetNode;
   }
 
+  public static SNode copyNodeOut(SNode node, SModel model) {
+    model.setLoading(true);
+    ourSourceNodesToNewNodes.clear();
+    ourReferences.clear();
+    SNode nodeToPaste = copyNode_internal(node);
+    SModel fakeModel = nodeToPaste.getModel();
+    fakeModel.setLoading(true);
+    processReferencesOut();
+    nodeToPaste.changeModel(model);
+    model.setLoading(false);
+    fakeModel.setLoading(false);
+    return nodeToPaste;
+  }
+
+
+  //for nodes' copying and pasting : behaviour differs from behaviour of methods above
   public static List<SNode> copyNodesIn(List<SNode> sourceNodes) {
     if (sourceNodes.isEmpty()) return new ArrayList<SNode>();
     SModel model = sourceNodes.get(0).getModel();
-    System.err.println("source model: " + model);
 
     List<SNode> result = new ArrayList<SNode>();
     model.setLoading(true);
@@ -86,21 +101,6 @@ public class CopyPasteNodeUtil {
     return result;
   }
 
-  public static SNode copyNodeOut(SNode node, SModel model) {
-    model.setLoading(true);
-    ourSourceNodesToNewNodes.clear();
-    ourReferences.clear();
-    SNode nodeToPaste = copyNode_internal(node);
-    SModel fakeModel = nodeToPaste.getModel();
-
-    fakeModel.setLoading(true);
-    processReferencesOut();
-    nodeToPaste.changeModel(model);
-    model.setLoading(false);
-    fakeModel.setLoading(false);
-    return nodeToPaste;
-  }
-
   public static List<SNode> copyNodesOut(List<SNode> sourceNodes, SModel model) {
     if (sourceNodes.isEmpty()) return new ArrayList<SNode>();
     List<SNode> result = new ArrayList<SNode>();
@@ -116,7 +116,6 @@ public class CopyPasteNodeUtil {
     SNode firstNodeToPaste = result.get(0);
     SModel fakeModel = firstNodeToPaste.getModel();
     fakeModel.setLoading(true);
-    System.err.println("fake model: " + fakeModel);
     for (SNode nodeToPaste : result) {
       nodeToPaste.changeModel(model);
     }
