@@ -2,6 +2,7 @@ package jetbrains.mps.datatransfer;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.resolve.Resolver;
+import jetbrains.mps.resolve.ExternalResolver;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.ide.AddRequiredModelImportsDialog;
@@ -77,10 +78,10 @@ public class CopyPasteNodeUtil {
       result.add(targetNode);
     }
     processReferencesIn();
- /*   SModel fakeModel = copyModelProperties(model);
+    SModel fakeModel = copyModelProperties(model);
     for (SNode copiedNode : result) {
       copiedNode.changeModel(fakeModel);
-    }*/
+    }
     model.setLoading(false);
     return result;
   }
@@ -116,6 +117,9 @@ public class CopyPasteNodeUtil {
     SModel fakeModel = firstNodeToPaste.getModel();
     fakeModel.setLoading(true);
     System.err.println("fake model: " + fakeModel);
+    for (SNode nodeToPaste : result) {
+      nodeToPaste.changeModel(model);
+    }
     processReferencesOut();
     for (SNode nodeToPaste : result) {
       nodeToPaste.changeModel(model);
@@ -167,6 +171,19 @@ public class CopyPasteNodeUtil {
             newReference.setTargetClassResolveInfo(sourceReference.getTargetClassResolveInfo());
           } else {//we copy resolved reference
             Resolver.setResolveInfo(newReference);
+
+            if (newReference.getResolveInfo() == null) {//reference is not resolvable
+              String extResolveInfo = null;
+              if (newReference.getSourceNode().getModel().isExternallyResolved()) {
+                extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(newReference.getTargetNode());
+              }
+              if (extResolveInfo != null) {
+                newReference = new ExternalReference(newReference.getRole(), newReference.getSourceNode(), null, extResolveInfo, newReference.getTargetModelUID());
+              } else {
+                newReference = new ExternalReference(newReference.getRole(), newReference.getSourceNode(), newReference.getTargetNodeId(), null, newReference.getTargetModelUID());
+              }
+            }
+
           }
           newSourceNode.addSemanticReference(newReference);
 
