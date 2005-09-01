@@ -14,8 +14,8 @@ public class ProjectModelDescriptor extends AbstractSModelDescriptor {
     return result;
   }
 
-  public static boolean isProjectModelDescriptor(SModelDescriptor modelDescriptor) {
-    return "$internal$".equals(modelDescriptor.getStereotype());
+  public static boolean isProjectModel(SModelUID uid) {
+    return "$internal$".equals(uid.getStereotype());
   }
 
   private ProjectModelDescriptor() {
