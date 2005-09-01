@@ -268,7 +268,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       result.append("Node Model : " + current.getSNodeProxy().getModel() + "  \n");
       result.append("Node ID  : " + current.getSNodeProxy().getId() + "\n");
 
-//      return result.toString();
+      return result.toString();
     }
     return null;
   }
