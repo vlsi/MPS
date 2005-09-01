@@ -31,6 +31,7 @@ public class SNodeTransferable implements Transferable {
 
   // ---- node data ----
   private List<SNode> mySNodes = new ArrayList<SNode>();
+  private SModel mySModel;
   private String myText = "";
 
   public DataFlavor[] getTransferDataFlavors() {
@@ -75,12 +76,17 @@ public class SNodeTransferable implements Transferable {
   private void saveNodes(List<SNode> nodes) {
     mySNodes.clear();
     mySNodes.addAll(CopyPasteNodeUtil.copyNodesIn(nodes));
+    mySModel = mySNodes.get(0).getModel();
   }
 
   public List<SNode> createNodes(SModel sModel) {
     List<SNode> result = new ArrayList<SNode>();
-    result.addAll(CopyPasteNodeUtil.copyNodesOut(mySNodes));
+    result.addAll(CopyPasteNodeUtil.copyNodesOut(mySNodes, sModel));
     return result;
+  }
+
+  public SModel getModel() {
+    return mySModel;
   }
 }
 

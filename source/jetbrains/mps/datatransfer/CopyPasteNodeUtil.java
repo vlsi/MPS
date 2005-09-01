@@ -4,6 +4,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.ide.AddRequiredModelImportsDialog;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.textLanguage.Sentence;
 import jetbrains.textLanguage.Text;
 import jetbrains.textLanguage.Word;
@@ -44,6 +46,10 @@ public class CopyPasteNodeUtil {
   private static HashMap<SNode, SNode> ourSourceNodesToNewNodes = new HashMap<SNode, SNode>();
   private static HashSet<SReference> ourReferences = new HashSet<SReference>();
 
+  static ModelOwner getCopyPasteOwner() {
+    return ourModelOwner;
+  }
+
   public static SNode copyNodeIn(SNode sourceNode) {
     SModel model = sourceNode.getModel();
     model.setLoading(true);
@@ -51,6 +57,7 @@ public class CopyPasteNodeUtil {
     ourReferences.clear();
     SNode targetNode = copyNode_internal(sourceNode);
     processReferencesIn();
+ //   targetNode.changeModel(copyModelProperties(model));
     model.setLoading(false);
     return targetNode;
   }
@@ -69,6 +76,10 @@ public class CopyPasteNodeUtil {
       result.add(targetNode);
     }
     processReferencesIn();
+ /*   SModel fakeModel = copyModelProperties(model);
+    for (SNode copiedNode : result) {
+      copiedNode.changeModel(fakeModel);
+    }*/
     model.setLoading(false);
     return result;
   }
@@ -87,15 +98,15 @@ public class CopyPasteNodeUtil {
     return nodeToPaste;
   }
 
-  public static List<SNode> copyNodesOut(List<SNode> sourceNodes) {
+  public static List<SNode> copyNodesOut(List<SNode> sourceNodes, SModel model) {
     if (sourceNodes.isEmpty()) return new ArrayList<SNode>();
-    SModel model = sourceNodes.get(0).getModel();
     List<SNode> result = new ArrayList<SNode>();
     model.setLoading(true);
     ourSourceNodesToNewNodes.clear();
     ourReferences.clear();
+    SModel originalModel = sourceNodes.get(0).getModel();
     for (SNode sourceNode : sourceNodes) {
-      assert sourceNode.getModel() == model;
+      assert sourceNode.getModel() == originalModel;
       SNode nodeToPaste = copyNode_internal(sourceNode);
       result.add(nodeToPaste);
     }
@@ -240,6 +251,26 @@ public class CopyPasteNodeUtil {
     return null;
   }
 
+  public static SModel getModelPropertiesFromClipboard() {
+    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
+    Transferable content = cb.getContents(null);
+    if (content == null) return null;
+
+    if (content.isDataFlavorSupported(SModelDataFlavor.sNode)) {
+      SNodeTransferable nodeTransferable = null;
+      try {
+        nodeTransferable = (SNodeTransferable) content.getTransferData(SModelDataFlavor.sNode);
+        return nodeTransferable.getModel();
+      } catch (UnsupportedFlavorException e) {
+        LOG.error("Exception", e);
+      } catch (IOException e) {
+        LOG.error("Exception", e);
+      }
+    }
+
+    return null;
+  }
+
   public static SNode getNodeFromClipboard(SModel model) {
     return getNodesFromClipboard(model).get(0);
   }
@@ -270,6 +301,25 @@ public class CopyPasteNodeUtil {
       LOG.error(e);
       return null;
     }
+  }
+
+  public static boolean addImportsAndLanguagesToModel(SModel targetModel, SModel modelPropertiesPattern, IOperationContext context) {
+    List<String> additionalLanguages = new ArrayList<String>();
+    List<SModelUID> additionalModels = new ArrayList<SModelUID>();
+    for (String namespace : modelPropertiesPattern.getLanguageNamespaces()) {
+      if (!targetModel.hasLanguage(namespace)) additionalLanguages.add(namespace);
+    }
+    for (SModelUID modelUID : modelPropertiesPattern.getImportedModelUIDs()) {
+      if (!targetModel.hasImportedModel(modelUID)) additionalModels.add(modelUID);
+    }
+
+    if ((!additionalModels.isEmpty())||(!additionalLanguages.isEmpty())) {
+      AddRequiredModelImportsDialog dialog = new AddRequiredModelImportsDialog(context.getComponent(IdeMain.class), targetModel, additionalModels, additionalLanguages);
+      dialog.setModal(true);
+      dialog.showDialog();
+      return (!dialog.isCanceled());
+    }
+     return true;
   }
 
 

@@ -40,7 +40,9 @@ public class CellExplorerView extends DefaultTool {
   }
 
   public void update() {
-    if (myIde.getToolsPane().isVisible(this)) return;
+    if (!myIde.getToolsPane().isVisible(this)) {
+      return;
+    }
     myTree.rebuildTree();
   }
 

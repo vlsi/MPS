@@ -1,0 +1,208 @@
+package jetbrains.mps.ide;
+
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUID;
+
+import javax.swing.*;
+import javax.swing.event.TableModelListener;
+import javax.swing.event.TableModelEvent;
+import javax.swing.table.TableModel;
+import java.util.List;
+import java.util.ArrayList;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: Cyril.Konopko
+ * Date: 01.09.2005
+ * Time: 12:42:23
+ * To change this template use File | Settings | File Templates.
+ */
+public class AddRequiredModelImportsDialog extends BaseDialog {
+
+
+
+  private static final DialogDimensions ourDefaultDimensionSettings = new DialogDimensions(200,200,600,300);
+
+  private SModel myModel;
+
+  private List<String> myLanguages;
+  private List<SModelUID> myImports;
+
+  private boolean myCanceled = true;
+
+  private List<String> myLanguagesToAdd;
+  private List<SModelUID> myImportsToAdd;
+
+  private JTable myImportsTable;
+  private MyImportsTableModel myImportsTableModel;
+  private JTable myLanguagesTable;
+  private MyImportsTableModel myLanguagesTableModel;
+
+  public boolean isCanceled() {
+    return myCanceled;
+  }
+
+  public AddRequiredModelImportsDialog(IdeMain ideMain, SModel model, List<SModelUID> imports, List<String> languages) {
+    super(ideMain.getMainFrame(), "Imports and Languages");
+    myImports = imports;
+    myLanguages = languages;
+    myLanguagesToAdd = new ArrayList<String>(myLanguages);
+    myImportsToAdd = new ArrayList<SModelUID>(myImports);
+
+    myModel = model;
+
+    myMainComponent = new JPanel(new BorderLayout());
+    myMainComponent.add(new JLabel("Do you want to add imported models or languages to the model "+ myModel + " ?", JLabel.LEFT), BorderLayout.NORTH);
+
+    JPanel panel = new JPanel(new GridLayout(4,1,5,5));
+
+    if (!myImports.isEmpty()) {
+      myImportsTableModel = new MyImportsTableModel("Imports", myImports, myImportsToAdd);
+      myImportsTable = new JTable(myImportsTableModel);
+      myImportsTable.getColumnModel().getColumn(0).setWidth(30);
+      myImportsTable.getColumnModel().getColumn(1).setPreferredWidth(300);
+      panel.add(new JLabel("Add Imported Models"));
+      panel.add(new JScrollPane(myImportsTable));
+    }
+    if (!myLanguages.isEmpty()) {
+      myLanguagesTableModel = new MyImportsTableModel("Languages", myLanguages, myLanguagesToAdd);
+      myLanguagesTable = new JTable(myImportsTableModel);
+      myLanguagesTable.getColumnModel().getColumn(0).setWidth(30);
+      myLanguagesTable.getColumnModel().getColumn(1).setPreferredWidth(300);
+      panel.add(new JLabel("Add Languages"));
+      panel.add(new JScrollPane(myLanguagesTable));
+    }
+
+    myMainComponent.add(panel, BorderLayout.CENTER);
+  }
+
+  public DialogDimensions getDefaultDimensionSettings() {
+    return ourDefaultDimensionSettings;
+  }
+
+  private JPanel myMainComponent;
+
+  protected String getButtonsPosition() {
+    return BorderLayout.CENTER;
+  }
+
+  protected JButton[] createButtons() {
+    return new JButton[] {
+
+            new JButton(new AbstractAction("Add All") {
+              public void actionPerformed(ActionEvent e) {
+                for (SModelUID imported : myImports)
+                  myModel.addImportedModel(imported);
+                for (String language : myLanguages)
+                  myModel.addLanguage(language);
+                myCanceled = false;
+                dispose();
+              }
+            }),
+            new JButton(new AbstractAction("Add Selected") {
+              public void actionPerformed(ActionEvent e) {
+                for (SModelUID imported : myImportsToAdd)
+                  myModel.addImportedModel(imported);
+                for (String language : myLanguagesToAdd)
+                  myModel.addLanguage(language);
+                myCanceled = false;
+                dispose();
+              }
+            }),
+            new JButton(new AbstractAction("Don't Add") {
+              public void actionPerformed(ActionEvent e) {
+                myCanceled = false;
+                dispose();
+              }
+            }),
+             new JButton(new AbstractAction("Cancel") {
+              public void actionPerformed(ActionEvent e) {
+                myCanceled = true;
+                dispose();
+              }
+            })
+
+    };
+  }
+
+  protected JComponent getMainComponent() {
+    return myMainComponent;
+  }
+
+
+
+
+   private class MyImportsTableModel implements TableModel {
+
+    private String myColumnName = "";
+    private List myItemsToAdd;
+    private List myItems;
+
+    private List<TableModelListener> myListeners = new ArrayList<TableModelListener>();
+
+    public MyImportsTableModel(String columnName, List items, List itemsToAdd) {
+      myColumnName = columnName;
+      myItems = items;
+      myItemsToAdd = itemsToAdd;
+    }
+
+    public int getRowCount() {
+      return myItems.size();
+    }
+
+    public int getColumnCount() {
+      return 2;
+    }
+
+    public String getColumnName(int columnIndex) {
+      if (columnIndex == 0) return "";
+      return myColumnName;
+    }
+
+    public Class<?> getColumnClass(int columnIndex) {
+      if (columnIndex == 0) return Boolean.class;
+      return String.class;
+    }
+
+    public boolean isCellEditable(int rowIndex, int columnIndex) {
+      return columnIndex == 0;
+    }
+
+    public Object getValueAt(int rowIndex, int columnIndex) {
+      Object value = myItems.get(rowIndex);
+      if (columnIndex == 0) return (Boolean) myItemsToAdd.contains(value);
+      return value.toString();
+    }
+
+    public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
+      if (columnIndex != 0) return;
+      if (aValue instanceof Boolean) {
+        boolean b = (Boolean) aValue;
+        if (b) {
+          myItemsToAdd.add(myItems.get(rowIndex));
+        } else {
+          myItemsToAdd.remove(myItems.get(rowIndex));
+        }
+        fireTableChanged();
+      }
+    }
+
+    public void fireTableChanged() {
+      for (TableModelListener l : myListeners) {
+        l.tableChanged(new TableModelEvent(this));
+      }
+    }
+
+    public void addTableModelListener(TableModelListener l) {
+      myListeners.add(l);
+    }
+
+    public void removeTableModelListener(TableModelListener l) {
+      myListeners.remove(l);
+    }
+  }
+}

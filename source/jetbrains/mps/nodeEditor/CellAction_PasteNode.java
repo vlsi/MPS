@@ -4,6 +4,7 @@ import jetbrains.mps.datatransfer.PasteUtil;
 import jetbrains.mps.datatransfer.CopyPasteNodeUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.EditorsPane;
 
@@ -40,6 +41,11 @@ public class CellAction_PasteNode extends EditorCellAction {
   public void execute(EditorContext context) {
     EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
     SNode selectedNode = selectedCell.getSNode();
+
+    SModel model = selectedNode.getModel();
+    SModel modelProperties = CopyPasteNodeUtil.getModelPropertiesFromClipboard();
+    if (!CopyPasteNodeUtil.addImportsAndLanguagesToModel(model, modelProperties, context.getOperationContext())) return;
+
     List<SNode> pasteNodes = CopyPasteNodeUtil.getNodesFromClipboard(selectedNode.getModel());
     SNode anchor = pasteNodes.get(0);
     IOperationContext operationContext = context.getOperationContext();
