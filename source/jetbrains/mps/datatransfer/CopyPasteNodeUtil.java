@@ -65,7 +65,8 @@ public class CopyPasteNodeUtil {
   public static List<SNode> copyNodesIn(List<SNode> sourceNodes) {
     if (sourceNodes.isEmpty()) return new ArrayList<SNode>();
     SModel model = sourceNodes.get(0).getModel();
-    Class aClass = sourceNodes.get(0).getClass();
+    System.err.println("source model: " + model);
+
     List<SNode> result = new ArrayList<SNode>();
     model.setLoading(true);
     ourSourceNodesToNewNodes.clear();
@@ -90,6 +91,7 @@ public class CopyPasteNodeUtil {
     ourReferences.clear();
     SNode nodeToPaste = copyNode_internal(node);
     SModel fakeModel = nodeToPaste.getModel();
+
     fakeModel.setLoading(true);
     processReferencesOut();
     nodeToPaste.changeModel(model);
@@ -113,6 +115,7 @@ public class CopyPasteNodeUtil {
     SNode firstNodeToPaste = result.get(0);
     SModel fakeModel = firstNodeToPaste.getModel();
     fakeModel.setLoading(true);
+    System.err.println("fake model: " + fakeModel);
     processReferencesOut();
     for (SNode nodeToPaste : result) {
       nodeToPaste.changeModel(model);
