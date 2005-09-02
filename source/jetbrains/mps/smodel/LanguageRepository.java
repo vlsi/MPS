@@ -25,6 +25,10 @@ public class LanguageRepository {
     return myInstance;
   }
 
+  public Set<LanguageOwner> getOwners(Language language) {
+    return new HashSet<LanguageOwner>(myLanguageToOwnersMap.get(language));
+  }
+
   public Language registerLanguage(File file, LanguageOwner owner) {
     try {
       String canonicalPath = file.getCanonicalPath();
