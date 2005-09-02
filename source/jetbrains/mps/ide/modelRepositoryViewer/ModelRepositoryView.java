@@ -4,6 +4,8 @@ import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
+import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelOwner;
@@ -11,6 +13,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vcs.VCSTree;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
 
 /**
  * @author Kostik
@@ -28,7 +31,7 @@ public class ModelRepositoryView extends DefaultTool {
   }
 
   public Icon getIcon() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    return MPSAction.EMPTY_ICON;
   }
 
   public JComponent getComponent() {
@@ -37,7 +40,19 @@ public class ModelRepositoryView extends DefaultTool {
 
   private class MyTree extends MPSTree {
     protected MPSTreeNode rebuild() {
-      TextTreeNode root = new TextTreeNode("Loaded Models");
+      TextTreeNode root = new TextTreeNode("Loaded Models") {
+        protected JPopupMenu getPopupMenu() {
+          JPopupMenu result = new JPopupMenu();
+
+          result.add(new AbstractActionWithEmptyIcon("Refresh") {
+            public void actionPerformed(ActionEvent e) {
+              myTree.rebuildTree();
+            }
+          });
+
+          return result;
+        }
+      };
       for (SModelDescriptor modelDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
         root.add(new ModelTreeNode(modelDescriptor));
       }
