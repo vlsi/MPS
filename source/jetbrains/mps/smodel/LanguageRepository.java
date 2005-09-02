@@ -20,9 +20,25 @@ public class LanguageRepository {
   private HashMap<String, Language> myFileToLanguageMap = new HashMap<String, Language>();
   private HashMap<String, Language> myNamespaceToLanguageMap = new HashMap<String, Language>();
   private HashMap<Language, HashSet<LanguageOwner>> myLanguageToOwnersMap = new HashMap<Language, HashSet<LanguageOwner>>();
+  private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
 
   public static LanguageRepository getInstance() {
     return myInstance;
+  }
+
+
+  public void addRepositoryListener(RepositoryListener l) {
+    myListeners.add(l);
+  }
+
+  public void removeRepositoryListener(RepositoryListener l) {
+    myListeners.remove(l);
+  }
+
+  void fireRepositoryChanged() {
+    for (RepositoryListener l : myListeners) {
+      l.repositoryChanged();
+    }
   }
 
   public boolean hasOwners(Language language) {
@@ -48,6 +64,7 @@ public class LanguageRepository {
         myLanguageToOwnersMap.put(language, owners);
       }
       owners.add(owner);
+      fireRepositoryChanged();
       return language;
     } catch (IOException e) {
       LOG.error(e);
@@ -82,6 +99,7 @@ public class LanguageRepository {
       SModelRepository.getInstance().unRegisterModelDescriptors(language);
       myFileToLanguageMap.remove(fileName);
     }
+    fireRepositoryChanged();
   }
 
   public void readLanguageDescriptors(Iterable<Root> roots, LanguageOwner owner) {

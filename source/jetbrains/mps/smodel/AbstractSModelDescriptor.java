@@ -83,7 +83,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     if (mySModel == null) {
       mySModel = loadModel();
 
-      SModelRepository.getInstance().fireSModelRepositoryChanged();
+      SModelRepository.getInstance().fireRepositoryChanged();
 
       LOG.assertLog(mySModel != null, "Couldn't load model \"" + getModelUID() + "\"");
       if (myModelListeners != null) {
@@ -283,7 +283,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
   public final void delete() {
     SModelsMulticaster.getInstance().fireModelWillBeDeletedEvent(this);
-    SModelRepository.getInstance().removeModelDescriptor(this);
+    SModelRepository.getInstance().removeModelDescriptor_internal(this);
     File modelFile = getModelFile();
     if (modelFile != null && modelFile.exists()) {
       modelFile.delete();

@@ -21,6 +21,11 @@ import java.awt.event.ActionEvent;
 public class LanguageRepositoryView extends DefaultTool {
   private MPSTree myTree = new MyTree();
   private JScrollPane myComponent = new JScrollPane(myTree);
+  private RepositoryListener myListener = new RepositoryListener() {
+    public void repositoryChanged() {
+      myTree.rebuildTree();
+    }
+  };
 
   public LanguageRepositoryView() {
     myTree.rebuildTree();
@@ -36,6 +41,15 @@ public class LanguageRepositoryView extends DefaultTool {
 
   public JComponent getComponent() {
     return myComponent;
+  }
+
+  public void toolShown() {
+    myTree.rebuildTree();
+    SModelRepository.getInstance().addRepositoryListener(myListener);
+  }
+
+  public void toolHidden() {
+    SModelRepository.getInstance().removeRepositoryListener(myListener);
   }
 
   private class MyTree extends MPSTree {

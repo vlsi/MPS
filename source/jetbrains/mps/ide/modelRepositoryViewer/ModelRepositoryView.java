@@ -7,9 +7,7 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.vcs.VCSTree;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.projectLanguage.ProjectModel;
@@ -23,8 +21,8 @@ import java.awt.event.ActionEvent;
 public class ModelRepositoryView extends DefaultTool {
   private MPSTree myTree = new MyTree();
   private JScrollPane myComponent = new JScrollPane(myTree);
-  private SModelRepositoryListener myListener = new SModelRepositoryListener() {
-    public void smodelRepositoryChanged() {
+  private RepositoryListener myListener = new RepositoryListener() {
+    public void repositoryChanged() {
       myTree.rebuildTree();
     }
   };
@@ -35,11 +33,11 @@ public class ModelRepositoryView extends DefaultTool {
 
   public void toolShown() {
     myTree.rebuildTree();
-    SModelRepository.getInstance().addSModelRepositoryListener(myListener);
+    SModelRepository.getInstance().addRepositoryListener(myListener);
   }
 
   public void toolHidden() {
-    SModelRepository.getInstance().removeSModelRepositoryListener(myListener);
+    SModelRepository.getInstance().removeRepositoryListener(myListener);
   }
 
   public String getName() {
