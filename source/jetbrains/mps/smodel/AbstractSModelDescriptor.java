@@ -1,8 +1,10 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -11,10 +13,9 @@ import jetbrains.mps.smodel.event.SModelsMulticaster;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.VersionControlManager;
 import jetbrains.mps.vcs.model.VersionControl;
-import jetbrains.mps.nodeEditor.EditorContext;
 
-import java.util.*;
 import java.io.File;
+import java.util.*;
 
 /**
  * @author Kostik
@@ -318,7 +319,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   }
 
   public Set<SNode> findInstances(ConceptDeclaration concept, IOperationContext operationContext) {
-    String conceptFqName = SModelUtil.getClassNameFor(concept);
+    String conceptFqName = JavaNameUtil.className(concept);
     if (mySModel == null || !SModelRepository.getInstance().isChanged(mySModel)) {
       if (!containsString(conceptFqName)) return new HashSet<SNode>();
     }

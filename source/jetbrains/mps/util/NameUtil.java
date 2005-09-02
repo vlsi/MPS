@@ -92,15 +92,7 @@ public class NameUtil {
   }
 
   public static String nodeFQName(SNode node) {
-    if (node == null) return null;
-    String name = node.getName();
-    // todo: dont set property NAME full name of a class
-    // the name is actually "full name"?
-    if (name != null && name.indexOf('.') >= 0) {
-      return name;
-    }
-
-    return node.getModel().getUID().getLongName() + "." + (name != null ? name : "");
+    return node.getModel().getUID().getLongName() + "." + node.getName();
   }
 
   public static String nodeConceptFQName(SNode node) {

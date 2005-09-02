@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.actions.model;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionGroup;
@@ -8,8 +9,6 @@ import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.ApplicationComponents;
-import jetbrains.mps.projectLanguage.ProjectModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 
@@ -51,24 +50,14 @@ public class CreateRootNodeGroup extends ActionGroup {
       Language language = operationContext.getLanguage(languageNamespace);
       for(final ConceptDeclaration conceptDeclaration : language.getConceptDeclarations()) {
         if (conceptDeclaration.getRootable()) {
-          String className = SModelUtil.getClassNameFor(conceptDeclaration);
-          Class cls = null;
+          String className = JavaNameUtil.className(conceptDeclaration);
+
           try {
-            cls = Class.forName(className, true, ClassLoaderManager.getInstance().getClassLoader());
-          } catch (ClassNotFoundException e) {
-          }
-          if (cls != null) {
+
+            final Class<? extends SNode> nodeClass = (Class<? extends SNode>)Class.forName(className, true, ClassLoaderManager.getInstance().getClassLoader());
             langRootsGroup.add(new MPSAction(conceptDeclaration.getName()) {
               public Icon getIcon() {
-                final Icon[] result = new Icon[1];
-                CommandProcessor.instance().executeCommand(new Runnable() {
-                  public void run() {
-                    SNode node = SModelUtil.instantiateConceptDeclaration(conceptDeclaration, ApplicationComponents.getInstance().getComponent(ProjectModel.class).getSModel());
-                    LOG.assertLog(node != null, "Node isn't null");
-                    result[0] = IconManager.getIconFor(node);
-                  }
-                });
-                return result[0];
+                return  IconManager.getIconFor(nodeClass);
               }
 
               public boolean executeInsideCommand() {
@@ -90,7 +79,9 @@ public class CreateRootNodeGroup extends ActionGroup {
               }
             });
             addCount++;
-          } else {
+
+          } catch (ClassNotFoundException e) {
+
             langRootsGroup.add(new MPSAction(conceptDeclaration.getName() + " (Structure Isn't Generated)") {
               public void update(ActionContext context) {
                 setEnabled(false);

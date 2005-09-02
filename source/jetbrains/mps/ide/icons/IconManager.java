@@ -1,9 +1,6 @@
 package jetbrains.mps.ide.icons;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.action.MPSAction;
@@ -29,8 +26,8 @@ public class IconManager {
 
     Class<? extends SNode> cls = node.getClass();
 
-    if (ourIcons.get(node.getClass()) != null) {
-      return ourIcons.get(node.getClass());
+    if (ourIcons.get(cls) != null) {
+      return ourIcons.get(cls);
     }
 
     while (cls != SNode.class) {
@@ -43,7 +40,7 @@ public class IconManager {
         try {
           Icon icon = (Icon) icons.getMethod("getIconFor" + className).invoke(null);
           if (icon != null) {
-            ourIcons.put(node.getClass(), icon);
+            ourIcons.put(cls, icon);
             return icon;
           }
         }
@@ -60,8 +57,38 @@ public class IconManager {
       cls = (Class<? extends SNode>) cls.getSuperclass();
     }
 
-    ourIcons.put(node.getClass(), Icons.DEFAULT_ICON);
+    ourIcons.put(cls, Icons.DEFAULT_ICON);
+    return Icons.DEFAULT_ICON;
+  }
 
+  public static Icon getIconFor(Class<? extends SNode> nodeClass) {
+    if (ourIcons.get(nodeClass) != null) {
+      return ourIcons.get(nodeClass);
+    }
+
+    while (nodeClass != SNode.class) {
+      String className = nodeClass.getName();
+      className = className.substring(className.lastIndexOf('.') + 1);
+      String packageName = nodeClass.getPackage().getName();
+      String iconsClass = packageName + ".icons.Icons";
+      try {
+        Class icons = Class.forName(iconsClass, true, ClassLoaderManager.getInstance().getClassLoader());
+        try {
+          Icon icon = (Icon) icons.getMethod("getIconFor" + className).invoke(null);
+          if (icon != null) {
+            ourIcons.put(nodeClass, icon);
+            return icon;
+          }
+        }
+        catch (Exception e) {
+        }
+      } catch (Exception e) {
+      }
+
+      nodeClass = (Class<? extends SNode>) nodeClass.getSuperclass();
+    }
+
+    ourIcons.put(nodeClass, Icons.DEFAULT_ICON);
     return Icons.DEFAULT_ICON;
   }
 
