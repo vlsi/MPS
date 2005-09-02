@@ -20,14 +20,12 @@ import java.util.List;
  */
 class GeneratorTreeNode extends TextTreeNode {
   private Generator myGenerator;
-  private IdeMain myIDE;
   private MPSProject myProject;
   private IOperationContext myOperationContext;
 
-  public GeneratorTreeNode(String text, Generator generator, IdeMain ide, MPSProject project, IOperationContext operationContext) {
+  public GeneratorTreeNode(String text, Generator generator, MPSProject project, IOperationContext operationContext) {
     super(text);
     myGenerator = generator;
-    myIDE = ide;
     myProject = project;
 //    myOperationContext = new GeneratorTreeNodeOperationContext(generator, operationContext);
     myOperationContext = GeneratorOperationContext.createContext(generator, operationContext);
@@ -40,7 +38,7 @@ class GeneratorTreeNode extends TextTreeNode {
 
   protected JPopupMenu getPopupMenu() {
     JPopupMenu result = new JPopupMenu();
-    ActionContext context = new ActionContext(myIDE, myOperationContext);
+    ActionContext context = new ActionContext(myOperationContext);
     context.put(Generator.class, myGenerator);
     ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_GENERATOR_ACTIONS).add(result, context);
     return result;
@@ -48,12 +46,12 @@ class GeneratorTreeNode extends TextTreeNode {
 
 
   private void populate() {
-    List<GeneratorModelsTreeNode> modelTreeNodes = GeneratorModelsTreeNode.createModelsTreeNodes(myIDE, myOperationContext);
+    List<GeneratorModelsTreeNode> modelTreeNodes = GeneratorModelsTreeNode.createModelsTreeNodes(myOperationContext);
     for (GeneratorModelsTreeNode modelsTreeNode : modelTreeNodes) {
       this.add(modelsTreeNode);
     }
     
-    LanguagesTreeNode languagesNode = new LanguagesTreeNode(myIDE, myProject, myOperationContext);
+    LanguagesTreeNode languagesNode = new LanguagesTreeNode(myProject, myOperationContext);
     this.add(languagesNode);
   }
 

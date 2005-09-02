@@ -25,15 +25,13 @@ class SNodeTreeNode extends MPSTreeNodeEx {
   private boolean myInitialized = false;
   private SNodeProxy myNodeProxy;
   private String myRole;
-  private IdeMain myIDE;
 
-  public SNodeTreeNode(SNode node, IdeMain ide, IOperationContext operationContext) {
-    this(node, null, ide, operationContext);
+  public SNodeTreeNode(SNode node, IOperationContext operationContext) {
+    this(node, null, operationContext);
   }
 
-  public SNodeTreeNode(SNode node, String role, IdeMain ide, IOperationContext operationContext) {
+  public SNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
     super(operationContext);
-    myIDE = ide;
     myNodeProxy = new SNodeProxy(node, operationContext);
     myRole = role;
     setUserObject(node);
@@ -42,7 +40,7 @@ class SNodeTreeNode extends MPSTreeNodeEx {
   protected JPopupMenu getPopupMenu() {
     JPopupMenu result = new JPopupMenu();
     List<SNode> selection = getOperationContext().getComponent(ProjectPane.class).getNormalizedSelectedNodes();
-    ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_NODE_ACTIONS).add(result, new ActionContext(myIDE, getOperationContext(), getSNode(), selection));
+    ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_NODE_ACTIONS).add(result, new ActionContext(getOperationContext(), getSNode(), selection));
     return result;
   }
 
@@ -76,15 +74,15 @@ class SNodeTreeNode extends MPSTreeNodeEx {
     this.removeAllChildren();
     List<SNode> children = getSNode().getChildren();
     for (SNode childNode : children) {
-      add(new SNodeTreeNode(childNode, childNode.getRole_(), myIDE, getOperationContext()));
+      add(new SNodeTreeNode(childNode, childNode.getRole_(), getOperationContext()));
     }
-    DefaultTreeModel treeModel = (DefaultTreeModel)myIDE.getProjectPane().getTree().getModel();
+    DefaultTreeModel treeModel = (DefaultTreeModel)getOperationContext().getComponent(IdeMain.class).getProjectPane().getTree().getModel();
     treeModel.nodeStructureChanged(this);
     myInitialized = true;
   }
 
   public void doubleClick() {
-    myIDE.openNode(myNodeProxy.getNode(), getOperationContext());
+    getOperationContext().getComponent(IdeMain.class).openNode(myNodeProxy.getNode(), getOperationContext());
   }
 
   public Icon getIcon(boolean expanded) {

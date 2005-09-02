@@ -16,16 +16,14 @@ import javax.swing.*;
  * To change this template use File | Settings | File Templates.
  */
 class ProjectTreeNode extends MPSTreeNode {
-  private IdeMain myIDE;
 
-  ProjectTreeNode(IdeMain ide, IOperationContext operationContext) {
+  ProjectTreeNode(IOperationContext operationContext) {
     super(operationContext);
-    myIDE = ide;
   }
 
   protected JPopupMenu getPopupMenu() {
     JPopupMenu result = new JPopupMenu();
-    ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_PROJECT_ACTIONS).add(result, new ActionContext(myIDE, getOperationContext()));
+    ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_PROJECT_ACTIONS).add(result, new ActionContext(getOperationContext()));
     return result;
   }
 

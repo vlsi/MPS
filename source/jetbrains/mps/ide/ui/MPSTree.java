@@ -19,7 +19,6 @@ import java.awt.event.KeyEvent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.command.CommandProcessor;
 
@@ -140,7 +139,7 @@ public abstract class MPSTree extends JTree {
 
   protected ActionContext getActionContext(MPSTreeNode node, List<MPSTreeNode> nodes) {
     IdeMain ide = node.getOperationContext().getComponent(IdeMain.class);
-    return new ActionContext(ide, node.getOperationContext());
+    return new ActionContext(node.getOperationContext());
   }
 
   private void showPopup(MouseEvent e) {

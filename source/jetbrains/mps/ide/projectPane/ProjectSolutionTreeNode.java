@@ -47,7 +47,7 @@ class ProjectSolutionTreeNode extends MPSTreeNode {
   protected JPopupMenu getPopupMenu() {
     JPopupMenu result = new JPopupMenu();
     Solution solution = getSolution();
-    ActionContext context = new ActionContext(myIDE, getOperationContext());
+    ActionContext context = new ActionContext(getOperationContext());
     context.put(Solution.class, solution);
     ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_PROJECT_SOLUTION_ACTIONS).add(result, context);
     return result;
@@ -68,7 +68,7 @@ class ProjectSolutionTreeNode extends MPSTreeNode {
       this.add(modelsTreeNode);
     }
 
-    LanguagesTreeNode languagesNode = new LanguagesTreeNode(myIDE, myProject, context);
+    LanguagesTreeNode languagesNode = new LanguagesTreeNode(myProject, context);
     this.add(languagesNode);
   }
 }

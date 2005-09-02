@@ -325,7 +325,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         if (mySelectedCell != null && mySelectedCell.getSNode() != null) {
           IdeMain ide = ApplicationComponents.getInstance().getComponent(IdeMain.class);
 
-          final ActionContext context = new ActionContext(ide, getEditorContext().getOperationContext(), mySelectedCell.getSNode());
+          final ActionContext context = new ActionContext(getEditorContext().getOperationContext(), mySelectedCell.getSNode());
           if (action.executeInsideCommand()) {
             CommandProcessor.instance().executeCommand(new Runnable() {
               public void run() {
@@ -376,7 +376,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     IdeMain ide = ApplicationComponents.getInstance().getComponent(IdeMain.class);
 
     List<SNode> selectedNodes = myNodeRangeSelection.getNodes();
-    ActionContext context = new ActionContext(ide, ide.getGlobalOperationContext(), selectedNode, selectedNodes);
+    ActionContext context = new ActionContext(ide.getGlobalOperationContext(), selectedNode, selectedNodes);
     context.put(EditorContext.class, new EditorContext(this, null, ide.getGlobalOperationContext()));
     group.add(popupMenu, context);
 

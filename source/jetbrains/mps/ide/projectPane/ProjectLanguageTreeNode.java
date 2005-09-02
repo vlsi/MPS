@@ -50,7 +50,7 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
   protected JPopupMenu getPopupMenu() {
     JPopupMenu result = new JPopupMenu();
     final Language language = getLanguage();
-    ActionContext context = new ActionContext(myIDE, getOperationContext());
+    ActionContext context = new ActionContext(getOperationContext());
     context.put(Language.class, language);
     ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_LANGUAGE_ACTIONS).add(result, context);
     return result;
@@ -71,28 +71,28 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
 
     SModelDescriptor structureModelDescriptor = myLanguage.getStructureModelDescriptor();
     if(structureModelDescriptor != null) {
-      this.add(new SModelTreeNode(structureModelDescriptor, "structure", myIDE, operationContext));
+      this.add(new SModelTreeNode(structureModelDescriptor, "structure", operationContext));
     }
 
     SModelDescriptor editorModelDescriptor = myLanguage.getEditorModelDescriptor();
     if(editorModelDescriptor != null) {
-      this.add(new SModelTreeNode(editorModelDescriptor, "editor", myIDE, operationContext));
+      this.add(new SModelTreeNode(editorModelDescriptor, "editor", operationContext));
     }
 
     // todo: tmp here
     SModelDescriptor templatesEditorModelDescriptor = myLanguage.getEditorModelDescriptor("templates");
     if(templatesEditorModelDescriptor != null) {
-      this.add(new SModelTreeNode(templatesEditorModelDescriptor, "templates editor", myIDE, operationContext));
+      this.add(new SModelTreeNode(templatesEditorModelDescriptor, "templates editor", operationContext));
     }
 
     SModelDescriptor typesystemModelDescriptor = myLanguage.getTypesystemModelDescriptor();
     if (typesystemModelDescriptor != null) {
-      this.add(new SModelTreeNode(typesystemModelDescriptor, "typesystem", myIDE, operationContext));
+      this.add(new SModelTreeNode(typesystemModelDescriptor, "typesystem", operationContext));
     }
 
     SModelDescriptor actionsModelDescriptor = myLanguage.getActionsModelDescriptor();
     if (actionsModelDescriptor != null) {
-      this.add(new SModelTreeNode(actionsModelDescriptor, "actions", myIDE, operationContext));
+      this.add(new SModelTreeNode(actionsModelDescriptor, "actions", operationContext));
     }
 
     // language accessory models
@@ -105,7 +105,7 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
 
     List<SModelDescriptor> sortedModels = SortUtil.sortModels(myLanguage.getAccessoryModels());
     for (SModelDescriptor model : sortedModels) {
-      libraries.add(new SModelTreeNode(model, null, myIDE, operationContext));
+      libraries.add(new SModelTreeNode(model, null, operationContext));
     }
     this.add(libraries);
 
@@ -113,7 +113,7 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
     // language generators
 
     for (Generator generator : myLanguage.getGenerators()) {
-      TextTreeNode generatorNode = new GeneratorTreeNode("<html><b>generator \"" + generator.getName() + "\"</b>", generator, myIDE, myProject, operationContext);
+      TextTreeNode generatorNode = new GeneratorTreeNode("<html><b>generator \"" + generator.getName() + "\"</b>", generator, myProject, operationContext);
       this.add(generatorNode);
     }
   }

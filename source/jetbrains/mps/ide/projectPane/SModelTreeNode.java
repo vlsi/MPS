@@ -1,7 +1,6 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.DialogUtils;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -10,7 +9,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 
 import javax.swing.*;
-import javax.swing.tree.TreeModel;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import java.util.List;
@@ -25,15 +23,13 @@ import java.util.List;
 class SModelTreeNode extends MPSTreeNodeEx {
   private SModelDescriptor myModelDescriptor;
   private String myLabel;
-  private IdeMain myIDE;
   private boolean isInitialized = false;
   private MyModelListener myModelListener = new MyModelListener();
 
-  public SModelTreeNode(SModelDescriptor modelDescriptor, String label, IdeMain ide, IOperationContext operationContext) {
+  public SModelTreeNode(SModelDescriptor modelDescriptor, String label, IOperationContext operationContext) {
     super(operationContext);
     myModelDescriptor = modelDescriptor;
     myLabel = label;
-    myIDE = ide;
   }
 
   public Icon getIcon(boolean expanded) {
@@ -60,7 +56,7 @@ class SModelTreeNode extends MPSTreeNodeEx {
   protected JPopupMenu getPopupMenu() {
     JPopupMenu result = new JPopupMenu();
     SModelDescriptor model = getModelDescriptor();
-    ActionContext context = new ActionContext(myIDE, getOperationContext());
+    ActionContext context = new ActionContext(getOperationContext());
     context.put(SModelDescriptor.class, model);
     ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_MODEL_ACTIONS).add(result, context);
     return result;
@@ -116,10 +112,10 @@ class SModelTreeNode extends MPSTreeNodeEx {
     }
     List<SNode> sortedRoots = SortUtil.sortNodes(model.getRoots());
     for (SNode sortedRoot : sortedRoots) {
-      MPSTreeNodeEx treeNode = new SNodeTreeNode(sortedRoot, myIDE, getOperationContext());
+      MPSTreeNodeEx treeNode = new SNodeTreeNode(sortedRoot, getOperationContext());
       add(treeNode);
     }
-    DefaultTreeModel treeModel = (DefaultTreeModel)myIDE.getProjectPane().getTree().getModel();
+    DefaultTreeModel treeModel = (DefaultTreeModel)getOperationContext().getComponent(IdeMain.class).getProjectPane().getTree().getModel();
     treeModel.nodeStructureChanged(this);
     isInitialized = true;
   }
@@ -151,7 +147,7 @@ class SModelTreeNode extends MPSTreeNodeEx {
             }
 
             public void visitPropertyEvent(SModelPropertyEvent event) {
-              DefaultTreeModel treeModel = (DefaultTreeModel)myIDE.getProjectPane().getTree().getModel();
+              DefaultTreeModel treeModel = (DefaultTreeModel)getOperationContext().getComponent(IdeMain.class).getProjectPane().getTree().getModel();
 
               //i tried to use nodeChange but it didn't work
               treeModel.nodeStructureChanged((TreeNode) treeModel.getRoot());
@@ -173,7 +169,7 @@ class SModelTreeNode extends MPSTreeNodeEx {
       if (treeNode != null) {
         treeNode.update();
       }
-      DefaultTreeModel treeModel = (DefaultTreeModel)myIDE.getProjectPane().getTree().getModel();
+      DefaultTreeModel treeModel = (DefaultTreeModel)getOperationContext().getComponent(IdeMain.class).getProjectPane().getTree().getModel();
       treeModel.nodeStructureChanged((TreeNode) treeModel.getRoot());
     }
   }
