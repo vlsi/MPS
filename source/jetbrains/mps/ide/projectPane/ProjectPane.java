@@ -391,7 +391,7 @@ public class ProjectPane extends JComponent {
       }
 
       for (Language language : myProject.getLanguages()) {
-        ProjectLanguageTreeNode node = new ProjectLanguageTreeNode(language, myIDE, myProject);
+        ProjectLanguageTreeNode node = new ProjectLanguageTreeNode(language, myProject);
         root.add(node);
       }
 

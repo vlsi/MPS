@@ -21,13 +21,11 @@ import java.util.List;
  */
 class ProjectSolutionTreeNode extends MPSTreeNode {
   private Solution mySolution;
-  private IdeMain myIDE;
   private MPSProject myProject;
 
-  public ProjectSolutionTreeNode(Solution solution, IdeMain ide, MPSProject project) {
+  public ProjectSolutionTreeNode(Solution solution, MPSProject project) {
     super(new SolutionOperationContext(solution, project));
     mySolution = solution;
-    myIDE = ide;
     myProject = project;
     populate();
   }
@@ -63,7 +61,7 @@ class ProjectSolutionTreeNode extends MPSTreeNode {
 
   private void populate() {
     IOperationContext context = getOperationContext();
-    List<SolutionModelsTreeNode> modelTreeNodes = SolutionModelsTreeNode.createModelsTreeNodes(myIDE, context);
+    List<SolutionModelsTreeNode> modelTreeNodes = SolutionModelsTreeNode.createModelsTreeNodes(context);
     for (SolutionModelsTreeNode modelsTreeNode : modelTreeNodes) {
       this.add(modelsTreeNode);
     }

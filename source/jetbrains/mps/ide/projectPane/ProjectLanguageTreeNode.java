@@ -24,13 +24,11 @@ import java.util.List;
  */
 class ProjectLanguageTreeNode extends MPSTreeNode {
   private Language myLanguage;
-  private IdeMain myIDE;
   private MPSProject myProject;
 
-  public ProjectLanguageTreeNode(Language language, IdeMain ide, MPSProject project) {
+  public ProjectLanguageTreeNode(Language language, MPSProject project) {
     super(new LanguageOperationContext(language, project));
     myLanguage = language;
-    myIDE = ide;
     myProject = project;
     populate();
   }
