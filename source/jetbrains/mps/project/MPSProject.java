@@ -236,9 +236,7 @@ public class MPSProject implements ModelOwner, LanguageOwner {
     for (Solution solution : getSolutions()) {
       solution.dispose();
     }
-    for (Language language : getLanguages()) {
-      language.dispose();
-    }
+    LanguageRepository.getInstance().unRegisterLanguages(this);
     CommandProcessor.instance().removeCommandListener(myEventTranslator);
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
     LanguageRepository.getInstance().unRegisterLanguages(this);

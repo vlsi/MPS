@@ -51,6 +51,7 @@ public class LanguageRepository {
     }
   }
 
+
   public void invalidateLanguagesCaches() {
     for (Language l : myFileToLanguageMap.values()) {
       l.invalidateCaches();
@@ -68,6 +69,7 @@ public class LanguageRepository {
           filesToRemove.add(fileName);
           myNamespaceToLanguageMap.remove(language.getNamespace());
           myLanguageToOwnersMap.remove(language);
+          language.dispose();
         }
       }
     }
