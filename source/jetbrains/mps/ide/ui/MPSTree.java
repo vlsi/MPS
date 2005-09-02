@@ -86,6 +86,7 @@ public abstract class MPSTree extends JTree {
       public void keyPressed(KeyEvent e) {
         TreePath[] paths = getSelectionPaths();
         TreePath selPath = getSelectionPath();
+        if (selPath == null) return;
         MPSTreeNode selNode = (MPSTreeNode) selPath.getLastPathComponent();
         if(selNode == null) return;
         List<MPSTreeNode> nodes = new ArrayList<MPSTreeNode>();
