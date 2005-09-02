@@ -24,6 +24,7 @@ public class CloneModelDialog extends BaseNodeDialog {
   private static final DialogDimensions ourDefaultDialogSettings = new DialogDimensions(100, 100, 500, 400);
   private CloneModelProperties myCloneModelProperties;
 
+  private SModelDescriptor myWorkingModel;
   private SModel myProjectModel;
   private IdeMain myIde;
   private SModel mySModel;
@@ -40,7 +41,8 @@ public class CloneModelDialog extends BaseNodeDialog {
   public CloneModelDialog(IdeMain ide, SModelDescriptor modelDescriptor, IOperationContext operationContext) {
     super(ide, "Clone Model", operationContext);
     myIde = ide;
-    myProjectModel = ApplicationComponents.getInstance().getComponent(ProjectModel.class).getSModel();
+    myWorkingModel = operationContext.createTransientProjectModel();
+    myProjectModel = myWorkingModel.getSModel();
     mySModel = modelDescriptor.getSModel();
 
     initNode();
