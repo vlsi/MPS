@@ -5,6 +5,7 @@ import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.generator.ContextUtil;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.IStatus;
+import jetbrains.mps.ide.languageRepositoryViewer.LanguageRepositoryView;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
@@ -64,6 +65,9 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
   }
 
   public void dispose() {
+    LOG.assertLog(!LanguageRepository.getInstance().hasOwners(this));
+
+
     CommandProcessor.instance().removeCommandListener(myEventTranslator);
     SModelsMulticaster.getInstance().removeSModelsListener(myModelsListener);
     SModelRepository.getInstance().unRegisterModelDescriptors(this);

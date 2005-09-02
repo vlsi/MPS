@@ -25,6 +25,10 @@ public class LanguageRepository {
     return myInstance;
   }
 
+  public boolean hasOwners(Language language) {
+    return myLanguageToOwnersMap.get(language) != null;  
+  }
+
   public Set<LanguageOwner> getOwners(Language language) {
     return new HashSet<LanguageOwner>(myLanguageToOwnersMap.get(language));
   }
