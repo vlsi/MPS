@@ -91,6 +91,10 @@ public class LanguageRepositoryView extends DefaultTool {
         myOwner = owner;
       }
 
+      public boolean isLeaf() {
+        return true;
+      }
+
       protected String getNodeIdentifier() {
         return myOwner.toString();
       }
