@@ -69,4 +69,8 @@ class ProjectSolutionTreeNode extends MPSTreeNode {
     LanguagesTreeNode languagesNode = new LanguagesTreeNode(myProject, context);
     this.add(languagesNode);
   }
+
+  public Icon getIcon(boolean expanded) {
+    return Icons.SOLUTION_ICON;
+  }
 }

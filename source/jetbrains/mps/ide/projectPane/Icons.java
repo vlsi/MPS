@@ -61,8 +61,8 @@ public class Icons {
   public static final Icon DISCARD_ALL_ICON = new ImageIcon(Icons.class.getResource("nodes/discardAll.png"));
   public static final Icon SELECT_ALL_ICON = new ImageIcon(Icons.class.getResource("nodes/selectAll.png"));
 
-  public static final Icon SOLUTION_ICON = DEFAULT_ICON;
-
+  public static final Icon SOLUTION_ICON = new ImageIcon(Icons.class.getResource("nodes/solution.png"));
+  public static final Icon SOLUTION_PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/solutionProperties.png"));
 
   public static final Icon CFG_END_ICON = new ImageIcon(Icons.class.getResource("nodes/cfgEnd.png"));
 
