@@ -386,7 +386,7 @@ public class ProjectPane extends JComponent {
 
       List<Solution> solutions = myProject.getSolutions();
       for (Solution solution : solutions) {
-        ProjectSolutionTreeNode solutionTreeNode = new ProjectSolutionTreeNode(solution, myIDE, myProject);
+        ProjectSolutionTreeNode solutionTreeNode = new ProjectSolutionTreeNode(solution, myProject);
         root.add(solutionTreeNode);
       }
 
