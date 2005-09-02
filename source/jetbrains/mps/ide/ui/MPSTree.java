@@ -88,6 +88,7 @@ public abstract class MPSTree extends JTree {
         TreePath[] paths = getSelectionPaths();
         TreePath selPath = getSelectionPath();
         MPSTreeNode selNode = (MPSTreeNode) selPath.getLastPathComponent();
+        if(selNode == null) return;
         List<MPSTreeNode> nodes = new ArrayList<MPSTreeNode>();
         for (TreePath path : paths) {
           MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
