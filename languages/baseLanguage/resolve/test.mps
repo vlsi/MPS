@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.resolve.test">
-  <maxReferenceID value="2" />
+  <maxReferenceID value="3" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <import referenceID="1" modelUID="jetbrains.mps.resolve@java_stub" />
   <import referenceID="2" modelUID="java.lang@java_stub" />
+  <import referenceID="3" modelUID="jetbrains.mps.baseLanguage.refactoring.test" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1121166935562">
     <property name="name" value="New" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1121172586148">

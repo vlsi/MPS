@@ -9,6 +9,7 @@ import javax.swing.event.TableModelEvent;
 import javax.swing.table.TableModel;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Set;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
@@ -46,12 +47,12 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
     return myCanceled;
   }
 
-  public AddRequiredModelImportsDialog(IdeMain ideMain, SModel model, List<SModelUID> imports, List<String> languages) {
+  public AddRequiredModelImportsDialog(IdeMain ideMain, SModel model, List<SModelUID> imports, List<String> languages, Set<SModelUID> necessaryImports, Set<String> necessaryLanguages) {
     super(ideMain.getMainFrame(), "Imports and Languages");
     myImports = imports;
     myLanguages = languages;
-    myLanguagesToAdd = new ArrayList<String>(myLanguages);
-    myImportsToAdd = new ArrayList<SModelUID>(myImports);
+    myLanguagesToAdd = new ArrayList<String>(necessaryLanguages);
+    myImportsToAdd = new ArrayList<SModelUID>(necessaryImports);
 
     myModel = model;
 

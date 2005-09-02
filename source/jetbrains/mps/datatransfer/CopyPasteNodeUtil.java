@@ -5,6 +5,7 @@ import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.resolve.ExternalResolver;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.AddRequiredModelImportsDialog;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.textLanguage.Sentence;
@@ -46,6 +47,8 @@ public class CopyPasteNodeUtil {
 
   private static HashMap<SNode, SNode> ourSourceNodesToNewNodes = new HashMap<SNode, SNode>();
   private static HashSet<SReference> ourReferences = new HashSet<SReference>();
+  private static HashSet<SModelUID> ourNecessaryImports = new HashSet<SModelUID>();
+  private static HashSet<String> ourNecessaryLanguages = new HashSet<String>();
 
   static ModelOwner getCopyPasteOwner() {
     return ourModelOwner;
@@ -78,6 +81,25 @@ public class CopyPasteNodeUtil {
   }
 
 
+  private static void processImportsAndLanguages() {
+    ourNecessaryImports.clear();
+    ourNecessaryLanguages.clear();
+    SModel sourceModel = ourSourceNodesToNewNodes.keySet().iterator().next().getModel();
+    for (SNode node : ourSourceNodesToNewNodes.keySet()) {
+      String languageNamespace = NameUtil.namespaceFromConceptFQName(NameUtil.nodeConceptFQName(node));
+      ourNecessaryLanguages.add(languageNamespace);
+    }
+    for (SReference ref : ourReferences) {
+      if (ref instanceof ExternalReference) {
+        ExternalReference extRef = (ExternalReference) ref;
+          SModelUID targetModelUID = extRef.getTargetModelUID();
+          ourNecessaryImports.add(targetModelUID);
+      }
+    }
+    ourNecessaryImports.add(sourceModel.getUID());
+  }
+
+
   //for nodes' copying and pasting : behaviour differs from behaviour of methods above
   public static List<SNode> copyNodesIn(List<SNode> sourceNodes) {
     if (sourceNodes.isEmpty()) return new ArrayList<SNode>();
@@ -92,6 +114,7 @@ public class CopyPasteNodeUtil {
       SNode targetNode = copyNode_internal(sourceNode);
       result.add(targetNode);
     }
+    processImportsAndLanguages();
     processReferencesIn();
     SModel fakeModel = copyModelProperties(model);
     for (SNode copiedNode : result) {
@@ -325,15 +348,24 @@ public class CopyPasteNodeUtil {
   public static boolean addImportsAndLanguagesToModel(SModel targetModel, SModel modelPropertiesPattern, IOperationContext context) {
     List<String> additionalLanguages = new ArrayList<String>();
     List<SModelUID> additionalModels = new ArrayList<SModelUID>();
-    for (String namespace : modelPropertiesPattern.getLanguageNamespaces()) {
+    List<String> languagesFromPattern = new ArrayList<String>(modelPropertiesPattern.getLanguageNamespaces());
+    List<SModelUID> importsFromPattern = new ArrayList<SModelUID>(modelPropertiesPattern.getImportedModelUIDs());
+
+    importsFromPattern.addAll(ourNecessaryImports);
+    languagesFromPattern.addAll(ourNecessaryLanguages);
+
+    for (String namespace : languagesFromPattern) {
       if (!targetModel.hasLanguage(namespace)) additionalLanguages.add(namespace);
     }
-    for (SModelUID modelUID : modelPropertiesPattern.getImportedModelUIDs()) {
-      if (!targetModel.hasImportedModel(modelUID)) additionalModels.add(modelUID);
+    for (SModelUID modelUID : importsFromPattern) {
+      if (!(targetModel.hasImportedModel(modelUID)) && !(targetModel.getUID().equals(modelUID))) additionalModels.add(modelUID);
     }
 
+    ourNecessaryImports.retainAll(importsFromPattern);
+    ourNecessaryLanguages.retainAll(languagesFromPattern);
+
     if ((!additionalModels.isEmpty())||(!additionalLanguages.isEmpty())) {
-      AddRequiredModelImportsDialog dialog = new AddRequiredModelImportsDialog(context.getComponent(IdeMain.class), targetModel, additionalModels, additionalLanguages);
+      AddRequiredModelImportsDialog dialog = new AddRequiredModelImportsDialog(context.getComponent(IdeMain.class), targetModel, additionalModels, additionalLanguages, ourNecessaryImports, ourNecessaryLanguages);
       dialog.setModal(true);
       dialog.showDialog();
       return (!dialog.isCanceled());
