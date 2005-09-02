@@ -23,10 +23,12 @@ public class SModelRepository extends SModelAdapter {
   private HashMap<SModelUID, SModelDescriptor> myUIDToModelDescriptorMap = new HashMap<SModelUID, SModelDescriptor>();
   private HashMap<SModelDescriptor, HashSet<ModelOwner>> myModelToOwnerMap = new HashMap<SModelDescriptor, HashSet<ModelOwner>>();
   private IdeMain myIde;
+  private List<SModelRepositoryListener> myListeners = new ArrayList<SModelRepositoryListener>();
 
   public SModelRepository(IdeMain ide) {
     myIde = ide;
   }
+
 
   public static SModelRepository getInstance() {
     return ApplicationComponents.getInstance().getComponent(SModelRepository.class);
@@ -43,6 +45,20 @@ public class SModelRepository extends SModelAdapter {
           m.getSModel().updateNodeStatuses(operationContext);
         }
       }
+    }
+  }
+
+  public void addSModelRepositoryListener(SModelRepositoryListener l) {
+    myListeners.add(l);
+  }
+
+  public void removeSModelRepositoryListener(SModelRepositoryListener l) {
+    myListeners.remove(l);
+  }
+
+  void fireSModelRepositoryChanged() {
+    for (SModelRepositoryListener l : myListeners) {
+      l.smodelRepositoryChanged();
     }
   }
 
@@ -67,6 +83,7 @@ public class SModelRepository extends SModelAdapter {
       myModelToOwnerMap.put(modelDescriptor, owners);
     }
     owners.add(owner);
+    fireSModelRepositoryChanged();
   }
 
   public void registerModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
@@ -85,6 +102,7 @@ public class SModelRepository extends SModelAdapter {
     }
     owners.add(owner);
     modelDescriptor.addSModelListener(this);
+    fireSModelRepositoryChanged();
   }
 
   public void unRegisterModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
@@ -100,6 +118,8 @@ public class SModelRepository extends SModelAdapter {
         removeModelDescriptor(modelDescriptor);
       }
     }
+
+    fireSModelRepositoryChanged();
   }
 
   public void unRegisterModelDescriptors(ModelOwner owner) {
@@ -118,6 +138,8 @@ public class SModelRepository extends SModelAdapter {
       SModelDescriptor modelDescriptor = myUIDToModelDescriptorMap.get(modelUID);
       removeModelDescriptor(modelDescriptor);
     }
+
+    fireSModelRepositoryChanged();
   }
 
   /*package*/ void removeModelDescriptor(SModelDescriptor modelDescriptor) {
@@ -126,6 +148,8 @@ public class SModelRepository extends SModelAdapter {
     myChangedModels.remove(modelDescriptor);
     myModelToOwnerMap.remove(modelDescriptor);
     modelDescriptor.removeSModelListener(this);
+
+    fireSModelRepositoryChanged();
   }
 
   public SModelDescriptor getModelDescriptor(SModel model) {

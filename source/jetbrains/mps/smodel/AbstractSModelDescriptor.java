@@ -82,6 +82,9 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   public SModel getSModel() {
     if (mySModel == null) {
       mySModel = loadModel();
+
+      SModelRepository.getInstance().fireSModelRepositoryChanged();
+
       LOG.assertLog(mySModel != null, "Couldn't load model \"" + getModelUID() + "\"");
       if (myModelListeners != null) {
         for (SModelListener listener : myModelListeners) {

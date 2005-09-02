@@ -23,9 +23,23 @@ import java.awt.event.ActionEvent;
 public class ModelRepositoryView extends DefaultTool {
   private MPSTree myTree = new MyTree();
   private JScrollPane myComponent = new JScrollPane(myTree);
+  private SModelRepositoryListener myListener = new SModelRepositoryListener() {
+    public void smodelRepositoryChanged() {
+      myTree.rebuildTree();
+    }
+  };
 
   public ModelRepositoryView() {
     myTree.rebuildTree();
+  }
+
+  public void toolShown() {
+    myTree.rebuildTree();
+    SModelRepository.getInstance().addSModelRepositoryListener(myListener);
+  }
+
+  public void toolHidden() {
+    SModelRepository.getInstance().removeSModelRepositoryListener(myListener);
   }
 
   public String getName() {

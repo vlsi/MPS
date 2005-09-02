@@ -13,6 +13,10 @@ import java.io.File;
  * Date: Apr 3, 2005
  */
 public interface SModelDescriptor {
+
+  /**
+   * After model loading call SModelRepostiory.fireModelRepositoryChanged
+   */
   SModel getSModel();
   SModelUID getModelUID();
   /**
