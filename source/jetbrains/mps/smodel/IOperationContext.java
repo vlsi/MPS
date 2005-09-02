@@ -41,4 +41,7 @@ public interface IOperationContext {
   List<String> getClassPath();
 
   String getHomePath();
+
+  SModelDescriptor createTransientProjectModel();
+
 }

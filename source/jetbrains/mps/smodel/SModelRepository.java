@@ -79,6 +79,11 @@ public class SModelRepository extends SModelAdapter {
 
   public void unRegisterModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
     HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(modelDescriptor);
+    if(modelOwners == null) {
+      removeModelDescriptor(modelDescriptor);
+      return;
+    }
+    
     if (modelOwners.contains(owner)) {
       modelOwners.remove(owner);
       if (modelOwners.isEmpty()) {
