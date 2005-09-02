@@ -67,7 +67,6 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
   public void dispose() {
     LOG.assertLog(!LanguageRepository.getInstance().hasOwners(this));
 
-
     CommandProcessor.instance().removeCommandListener(myEventTranslator);
     SModelsMulticaster.getInstance().removeSModelsListener(myModelsListener);
     SModelRepository.getInstance().unRegisterModelDescriptors(this);

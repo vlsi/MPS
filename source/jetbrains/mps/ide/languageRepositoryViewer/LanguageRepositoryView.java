@@ -5,8 +5,12 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
+import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Solution;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -27,7 +31,7 @@ public class LanguageRepositoryView extends DefaultTool {
   }
 
   public Icon getIcon() {
-    return MPSAction.EMPTY_ICON;
+    return Icons.LANGUAGES_ICON;
   }
 
   public JComponent getComponent() {
@@ -36,7 +40,7 @@ public class LanguageRepositoryView extends DefaultTool {
 
   private class MyTree extends MPSTree {
     protected MPSTreeNode rebuild() {
-      TextTreeNode root = new TextTreeNode("Loaded Language") {
+      TextTreeNode root = new TextTreeNode("Loaded Languages") {
         protected JPopupMenu getPopupMenu() {
           JPopupMenu result = new JPopupMenu();
 
@@ -47,6 +51,10 @@ public class LanguageRepositoryView extends DefaultTool {
           });
 
           return result;
+        }
+
+        public Icon getIcon(boolean expanded) {
+          return Icons.LANGUAGES_ICON;
         }
       };
       for (Language l : LanguageRepository.getInstance().getAllLanguages()) {
@@ -66,6 +74,10 @@ public class LanguageRepositoryView extends DefaultTool {
         }
       }
 
+      public Icon getIcon(boolean expanded) {
+        return Icons.LANGUAGE_ICON;
+      }
+
       protected String getNodeIdentifier() {
         return mylanguage.toString();
       }
@@ -81,6 +93,25 @@ public class LanguageRepositoryView extends DefaultTool {
 
       protected String getNodeIdentifier() {
         return myOwner.toString();
+      }
+
+      public Icon getIcon(boolean expanded) {
+        if (myOwner instanceof Generator) {
+          return Icons.GENERATORS_ICON;
+        }
+        if (myOwner instanceof Language) {
+          return Icons.LANGUAGE_ICON;
+        }
+        if (myOwner instanceof MPSProject) {
+          return Icons.PROJECT_ICON;
+        }
+        if (myOwner instanceof BootstrapLanguages) {
+          return Icons.PROJECT_LANGUAGE_ICON;
+        }
+        if (myOwner instanceof  Solution) {
+          return Icons.SOLUTION_ICON;
+        }
+        return Icons.DEFAULT_ICON;
       }
     }
   }

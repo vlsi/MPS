@@ -5,11 +5,9 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.action.MPSAction;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelOwner;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.vcs.VCSTree;
 
 import javax.swing.*;
@@ -31,7 +29,7 @@ public class ModelRepositoryView extends DefaultTool {
   }
 
   public Icon getIcon() {
-    return MPSAction.EMPTY_ICON;
+    return Icons.MODEL_ICON;
   }
 
   public JComponent getComponent() {
@@ -41,6 +39,10 @@ public class ModelRepositoryView extends DefaultTool {
   private class MyTree extends MPSTree {
     protected MPSTreeNode rebuild() {
       TextTreeNode root = new TextTreeNode("Loaded Models") {
+        public Icon getIcon(boolean expanded) {
+          return Icons.PROJECT_MODELS_ICON;
+        }
+
         protected JPopupMenu getPopupMenu() {
           JPopupMenu result = new JPopupMenu();
 
@@ -70,6 +72,30 @@ public class ModelRepositoryView extends DefaultTool {
         }
       }
 
+      public Icon getIcon(boolean expanded) {
+        //todo duplication
+
+        Language.LanguageAspectStatus languageAspectStatus = Language.getLanguageAspectStatus(myModelDescriptor);
+        if (languageAspectStatus.isLanguageAspect()) {
+          if (languageAspectStatus.isEditor()) {
+            return Icons.EDITOR_MODEL_ICON;
+          } else if (languageAspectStatus.isStructure()) {
+            return Icons.STRUCTURE_MODEL_ICON;
+          } else if (languageAspectStatus.isGeneratorTemplates()) {
+            return Icons.TEMPLATES_MODEL_ICON;
+          } else if (languageAspectStatus.isActions()) {
+            return Icons.ACTIONS_MODEL_ICON;
+          } else if (languageAspectStatus.isTypesystem()) {
+            return Icons.TYPESYSTEM_MODEL_ICON;
+          }
+        } else if (myModelDescriptor.getStereotype() != null &&
+                myModelDescriptor.getStereotype().equals(SModelStereotype.TEMPLATES)) {
+          return Icons.TEMPLATES_MODEL_ICON;
+        }
+        return Icons.MODEL_ICON;   //todo library models
+
+      }
+
       protected String getNodeIdentifier() {
         return myModelDescriptor.getModelUID().toString();
       }
@@ -86,6 +112,8 @@ public class ModelRepositoryView extends DefaultTool {
       protected String getNodeIdentifier() {
         return myOwner.toString();
       }
+
+
     }
   }
 }
