@@ -10,6 +10,9 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vcs.VCSTree;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.projectLanguage.ProjectModel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -87,6 +90,25 @@ public class ModelRepositoryView extends DefaultTool {
 
     private class OwnerTreeNode extends MPSTreeNode {
       private ModelOwner myOwner;
+
+      public Icon getIcon(boolean expanded) {
+        if (myOwner instanceof Generator) {
+          return Icons.GENERATORS_ICON;
+        }
+        if (myOwner instanceof Language) {
+          return Icons.LANGUAGE_ICON;
+        }
+        if (myOwner instanceof MPSProject) {
+          return Icons.PROJECT_ICON;
+        }
+        if (myOwner instanceof Solution) {
+          return Icons.SOLUTION_ICON;
+        }
+        if (myOwner instanceof ProjectModel) {
+          return Icons.MODEL_ICON;
+        }
+        return Icons.DEFAULT_ICON;
+      }
 
       public OwnerTreeNode(ModelOwner owner) {
         super(null);
