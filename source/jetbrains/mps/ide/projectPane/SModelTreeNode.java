@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -33,24 +34,7 @@ class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   public Icon getIcon(boolean expanded) {
-    Language.LanguageAspectStatus languageAspectStatus = Language.getLanguageAspectStatus(myModelDescriptor);
-    if (languageAspectStatus.isLanguageAspect()) {
-      if (languageAspectStatus.isEditor()) {
-        return Icons.EDITOR_MODEL_ICON;
-      } else if (languageAspectStatus.isStructure()) {
-        return Icons.STRUCTURE_MODEL_ICON;
-      } else if (languageAspectStatus.isGeneratorTemplates()) {
-        return Icons.TEMPLATES_MODEL_ICON;
-      } else if (languageAspectStatus.isActions()) {
-        return Icons.ACTIONS_MODEL_ICON;
-      } else if (languageAspectStatus.isTypesystem()) {
-        return Icons.TYPESYSTEM_MODEL_ICON;
-      }
-    } else if (myModelDescriptor.getStereotype() != null &&
-            myModelDescriptor.getStereotype().equals(SModelStereotype.TEMPLATES)) {
-      return Icons.TEMPLATES_MODEL_ICON;
-    }
-    return Icons.MODEL_ICON;   //todo library models
+    return IconManager.getIconFor(myModelDescriptor);
   }
 
   protected JPopupMenu getPopupMenu() {

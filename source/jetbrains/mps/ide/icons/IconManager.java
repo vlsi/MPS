@@ -1,6 +1,9 @@
 package jetbrains.mps.ide.icons;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.action.MPSAction;
@@ -73,6 +76,27 @@ public class IconManager {
 
     return MPSAction.EMPTY_ICON;
         
+  }
+
+  public static Icon getIconFor(SModelDescriptor modelDescriptor) {
+    Language.LanguageAspectStatus languageAspectStatus = Language.getLanguageAspectStatus(modelDescriptor);
+        if (languageAspectStatus.isLanguageAspect()) {
+          if (languageAspectStatus.isEditor()) {
+            return Icons.EDITOR_MODEL_ICON;
+          } else if (languageAspectStatus.isStructure()) {
+            return Icons.STRUCTURE_MODEL_ICON;
+          } else if (languageAspectStatus.isGeneratorTemplates()) {
+            return Icons.TEMPLATES_MODEL_ICON;
+          } else if (languageAspectStatus.isActions()) {
+            return Icons.ACTIONS_MODEL_ICON;
+          } else if (languageAspectStatus.isTypesystem()) {
+            return Icons.TYPESYSTEM_MODEL_ICON;
+          }
+        } else if (modelDescriptor.getStereotype() != null &&
+                modelDescriptor.getStereotype().equals(SModelStereotype.TEMPLATES)) {
+          return Icons.TEMPLATES_MODEL_ICON;
+        }
+        return Icons.MODEL_ICON;   //todo library models
   }
 
 }
