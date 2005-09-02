@@ -5,6 +5,7 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.smodel.*;
@@ -76,27 +77,11 @@ public class ModelRepositoryView extends DefaultTool {
       }
 
       public Icon getIcon(boolean expanded) {
-        //todo duplication
+        return IconManager.getIconFor(myModelDescriptor); 
+      }
 
-        Language.LanguageAspectStatus languageAspectStatus = Language.getLanguageAspectStatus(myModelDescriptor);
-        if (languageAspectStatus.isLanguageAspect()) {
-          if (languageAspectStatus.isEditor()) {
-            return Icons.EDITOR_MODEL_ICON;
-          } else if (languageAspectStatus.isStructure()) {
-            return Icons.STRUCTURE_MODEL_ICON;
-          } else if (languageAspectStatus.isGeneratorTemplates()) {
-            return Icons.TEMPLATES_MODEL_ICON;
-          } else if (languageAspectStatus.isActions()) {
-            return Icons.ACTIONS_MODEL_ICON;
-          } else if (languageAspectStatus.isTypesystem()) {
-            return Icons.TYPESYSTEM_MODEL_ICON;
-          }
-        } else if (myModelDescriptor.getStereotype() != null &&
-                myModelDescriptor.getStereotype().equals(SModelStereotype.TEMPLATES)) {
-          return Icons.TEMPLATES_MODEL_ICON;
-        }
-        return Icons.MODEL_ICON;   //todo library models
-
+      public String toString() {
+        return "<html>" + getNodeIdentifier() + (myModelDescriptor.isInitialized() ? " <b>(initialized)</b>" : " <i>(not initialized)</i>");
       }
 
       protected String getNodeIdentifier() {
@@ -111,7 +96,7 @@ public class ModelRepositoryView extends DefaultTool {
         super(null);
         myOwner = owner;
       }
-      
+
       public Icon getIcon(boolean expanded) {
         if (myOwner instanceof Generator) {
           return Icons.GENERATORS_ICON;
