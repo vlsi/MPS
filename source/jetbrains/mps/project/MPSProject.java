@@ -55,7 +55,7 @@ public class MPSProject implements ModelOwner, LanguageOwner {
   private void revalidateContent(File projectFile, final SModel model) {
     // load solutions
     mySolutions = new LinkedList<Solution>();
-    for (SolutionPath solutionPath : CollectionUtil.iteratorAsIterable(myProjectDescriptor.solutionPaths())) {
+    for (SolutionPath solutionPath : CollectionUtil.iteratorAsIterable(myProjectDescriptor.projectSolutions())) {
       Solution solution = new Solution(new File(solutionPath.getPath()));
       mySolutions.add(solution);
     }
@@ -67,7 +67,7 @@ public class MPSProject implements ModelOwner, LanguageOwner {
         public void run() {
           SolutionPath solutionPath = SolutionPath.newInstance(model);
           solutionPath.setPath(solution.getDescriptorFile().getAbsolutePath());
-          myProjectDescriptor.addSolutionPath(solutionPath);
+          myProjectDescriptor.addProjectSolution(solutionPath);
         }
       });
       mySolutions.add(solution);
@@ -75,7 +75,7 @@ public class MPSProject implements ModelOwner, LanguageOwner {
 
     // load languages
     myLanguages = new LinkedList<Language>();
-    for (ProjectLanguage languagePath : CollectionUtil.iteratorAsIterable(myProjectDescriptor.projectLanguages())) {
+    for (LanguagePath languagePath : CollectionUtil.iteratorAsIterable(myProjectDescriptor.projectLanguages())) {
       myLanguages.add(LanguageRepository.getInstance().registerLanguage(new File(languagePath.getPath()), this));
     }
   }
@@ -101,7 +101,7 @@ public class MPSProject implements ModelOwner, LanguageOwner {
     ProjectDescriptor projectDescriptor = getProjectDescriptor();
     SModel model = projectDescriptor.getModel();
     model.setLoading(true);
-    ProjectLanguage languagePath = new ProjectLanguage(model);
+    LanguagePath languagePath = new LanguagePath(model);
     languagePath.setPath(languageDescriptorFile.getAbsolutePath());
     projectDescriptor.addProjectLanguage(languagePath);
 
@@ -114,7 +114,7 @@ public class MPSProject implements ModelOwner, LanguageOwner {
     model.setLoading(true);
     SolutionPath solutionPath = new SolutionPath(model);
     solutionPath.setPath(solutionDescriptionFile.getAbsolutePath());
-    projectDescriptor.addSolutionPath(solutionPath);
+    projectDescriptor.addProjectSolution(solutionPath);
 
     setProjectDescriptor(projectDescriptor);
   }
