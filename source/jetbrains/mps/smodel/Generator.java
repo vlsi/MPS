@@ -62,4 +62,11 @@ public class Generator implements ModelLocator, ModelOwner, LanguageOwner {
   public LanguageOwner getParentLanguageOwner() {
     return BootstrapLanguages.getInstance();
   }
+
+  public String toString() {
+    StringBuffer sb = new StringBuffer(this.getClass().getName());
+    sb.append(" \"").append(myGeneratorDescriptor.getName()).append("\"");
+    sb.append(" in: ").append(mySourceLanguage.getNamespace());
+    return sb.toString();
+  }
 }

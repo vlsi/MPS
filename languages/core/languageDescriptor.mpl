@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.core">
+<language namespace="jetbrains.mps.core" generatorOutputPath="${mps_home}\source_gen">
   <structure>
-    <model fqName="jetbrains.mps.core.structure" />
+    <model modelUID="jetbrains.mps.core.structure" />
   </structure>
   <editor>
-    <model fqName="jetbrains.mps.core.editor" />
+    <model modelUID="jetbrains.mps.core.editor" />
   </editor>
-  <modelRoot rootPath="${language_descriptor}." namespacePrefix="jetbrains.mps.core" />
+  <models>
+    <modelRoot path="${language_descriptor}\." namespacePrefix="jetbrains.mps.core" />
+  </models>
   <library />
   <generators />
 </language>

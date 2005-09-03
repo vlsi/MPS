@@ -436,8 +436,7 @@ public class SModel implements Iterable<SNode> {
           modelsList.add(modelDescriptor);
         } else {
           myDescriptorNotFoundReportedModelUIDs.add(modelUID);
-          LOG.errorWithTrace("Couldn't find model descriptor for imported model: \"" + modelUID + "\"\n" +
-                  "source model was: \"" + getUID() + "\"");
+          LOG.errorWithTrace("Couldn't find model descriptor for imported model: \"" + modelUID + "\" in: \"" + getUID() + "\"");
         }
       }
     }

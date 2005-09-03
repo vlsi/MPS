@@ -5,7 +5,6 @@ import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.generator.ContextUtil;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.IStatus;
-import jetbrains.mps.ide.languageRepositoryViewer.LanguageRepositoryView;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
@@ -267,23 +266,9 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
   }
 
   private SModelDescriptor getModelDescriptorByUID(SModelUID modelUID) {
-    return SModelRepository.getInstance().getModelDescriptor(modelUID, this);
-//    if (modelUID == null) return null;
-//    try {
-//      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
-//      if (modelDescriptor != null) {
-//        return modelDescriptor;
-//      }
-//      String modelPath = PathManager.findModelPath(getLanguageDescriptor().modelRoots(), modelUID);
-//      if (modelPath == null) {
-//        return null;
-//      }
-//      return MPSFileModelDescriptor.getInstance(modelPath, modelUID, this);
-//    } catch (Exception e) {
-//      LOG.error(e);
-//    }
-//
-//    return null;
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
+    LOG.assertLog(modelDescriptor != null, "Couldn't get model \"" + modelUID + "\" in " + this);
+    return modelDescriptor;
   }
 
   public List<SModelDescriptor> getAccessoryModels() {

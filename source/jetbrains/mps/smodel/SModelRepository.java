@@ -89,11 +89,12 @@ public class SModelRepository extends SModelAdapter {
   public void registerModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
     SModelUID modelUID = modelDescriptor.getModelUID();
     SModelDescriptor registeredModel = myUIDToModelDescriptorMap.get(modelUID);
+    LOG.assertLog(registeredModel == null || registeredModel == modelDescriptor,
+            "Another model \"" + modelUID + "\" is already registered!");
     HashSet<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
-    LOG.assertLog(registeredModel != modelDescriptor ||
-            owners == null ||
+    LOG.assertLog(owners == null ||
             !owners.contains(owner),
-            "Another model " + modelUID + " is already registered!");
+            "Another model \"" + modelUID + "\" is already registered!");
     myUIDToModelDescriptorMap.put(modelUID, modelDescriptor);
     myModelDescriptors.add(modelDescriptor);
     if (owners == null) {
