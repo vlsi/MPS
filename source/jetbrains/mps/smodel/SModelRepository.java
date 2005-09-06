@@ -112,7 +112,7 @@ public class SModelRepository extends SModelAdapter {
 
   public void unRegisterModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
     HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(modelDescriptor);
-    if(modelOwners == null) {
+    if (modelOwners == null) {
       removeModelDescriptor_internal(modelDescriptor);
       return;
     }
@@ -159,7 +159,7 @@ public class SModelRepository extends SModelAdapter {
     myModelToOwnerMap.remove(modelDescriptor);
     modelDescriptor.removeSModelListener(this);
 
-   // fireRepositoryChanged(); don't fire it twice
+    // fireRepositoryChanged(); don't fire it twice
   }
 
   public SModelDescriptor getModelDescriptor(SModel model) {
@@ -381,21 +381,21 @@ public class SModelRepository extends SModelAdapter {
     return Collections.unmodifiableSet(myModelToOwnerMap.get(modelDescriptor));
   }
 
-   public<M extends ModelOwner> Set<M> getOwners(SModelDescriptor modelDescriptor, Class<M> cls) {
-     Set<M> result = new HashSet<M>();
-     for (ModelOwner o : getOwners(modelDescriptor)) {
-       if (cls.isInstance(o)) {
-         result.add((M) o);
-       }
-     }
-     return result;
-   }
-
-
+  public <M extends ModelOwner> Set<M> getOwners(SModelDescriptor modelDescriptor, Class<M> cls) {
+    Set<M> result = new HashSet<M>();
+    for (ModelOwner o : getOwners(modelDescriptor)) {
+      if (cls.isInstance(o)) {
+        result.add((M) o);
+      }
+    }
+    return result;
+  }
 
 
   public void repositoryChanged() {
-    myCommandTranslator.repositoryChanged();
+    if (CommandProcessor.instance().isInsideCommand()) {
+      myCommandTranslator.repositoryChanged();
+    }
   }
 
   private class MyCommandTranslator extends CommandEventTranslator {
