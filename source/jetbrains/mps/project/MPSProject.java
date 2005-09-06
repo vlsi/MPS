@@ -20,6 +20,7 @@ import java.util.*;
  * Author: Sergey Dmitriev
  * Created Apr 29, 2004
  */
+
 public class MPSProject implements ModelOwner, LanguageOwner {
   private static final Logger LOG = Logger.getLogger(MPSProject.class);
 
