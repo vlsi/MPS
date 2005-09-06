@@ -139,12 +139,28 @@ public class MPSProject implements ModelOwner, LanguageOwner {
     return myProjectDescriptor;
   }
 
-  public Collection<Language> getLanguages() {
-    return Collections.unmodifiableCollection(myLanguages);
+  public List<Language> getLanguages() {
+    return Collections.unmodifiableList(myLanguages);
   }
 
   public List<Solution> getSolutions() {
     return Collections.unmodifiableList(mySolutions);
+  }
+
+  public Solution getSolutionForModel(SModelDescriptor md) {
+    Set<Solution> owners = SModelRepository.getInstance().getOwners(md, Solution.class);
+    for (Solution s : mySolutions) {
+      if (owners.contains(s)) return s;
+    }
+    return null;
+  }
+
+  public Language getLanguageForModel(SModelDescriptor md) {
+    Set<Language> owners = SModelRepository.getInstance().getOwners(md, Language.class);
+    for (Language l : myLanguages) {
+      if (owners.contains(l)) return l;
+    }
+    return null;
   }
 
   public List<Object> getComponents() {
