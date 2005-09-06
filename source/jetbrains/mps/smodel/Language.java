@@ -26,7 +26,6 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
   private static final Logger LOG = Logger.getLogger(Language.class);
 
   private File myDescriptorFile;
-//  private SModelDescriptor myProjectModelDescriptor = ProjectModelDescriptor.createDescriptorFor(this);
   private LanguageDescriptor myLanguageDescriptor;
   private List<Generator> myGenerators;
 
@@ -273,7 +272,7 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
 
   public List<SModelDescriptor> getAccessoryModels() {
     List<SModelDescriptor> result = new LinkedList<SModelDescriptor>();
-    Iterator<Model> accessoryModels = getLanguageDescriptor().libraryModels();
+    Iterator<Model> accessoryModels = getLanguageDescriptor().accessoryModels();
     while (accessoryModels.hasNext()) {
       Model model = accessoryModels.next();
       SModelDescriptor modelDescriptor = getModelDescriptorByUID(SModelUID.fromString(model.getName()));
