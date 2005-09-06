@@ -89,9 +89,8 @@ public class ModelRepositoryView extends DefaultTool {
       }
 
       public Icon getIcon(boolean expanded) {
-        return Icons.MODEL_ICON;
-        //todo
-        //return IconManager.getIconFor(myModelDescriptor);
+        //return Icons.MODEL_ICON;
+        return IconManager.getIconFor(myModelDescriptor);
       }
 
       public String toString() {

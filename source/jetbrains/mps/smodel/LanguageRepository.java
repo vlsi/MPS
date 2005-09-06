@@ -3,6 +3,8 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.Root;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.ide.command.CommandEventTranslator;
+import jetbrains.mps.ide.command.CommandProcessor;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -21,11 +23,15 @@ public class LanguageRepository {
   private HashMap<String, Language> myNamespaceToLanguageMap = new HashMap<String, Language>();
   private HashMap<Language, HashSet<LanguageOwner>> myLanguageToOwnersMap = new HashMap<Language, HashSet<LanguageOwner>>();
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
+  private MyCommandTranslator myCommandTranslator = new MyCommandTranslator();
 
   public static LanguageRepository getInstance() {
     return myInstance;
   }
 
+  private LanguageRepository() {
+    CommandProcessor.instance().addCommandListener(myCommandTranslator);
+  }
 
   public void addRepositoryListener(RepositoryListener l) {
     myListeners.add(l);
@@ -35,7 +41,7 @@ public class LanguageRepository {
     myListeners.remove(l);
   }
 
-  void fireRepositoryChanged() {
+  private void fireRepositoryChanged() {
     for (RepositoryListener l : myListeners) {
       l.repositoryChanged();
     }
@@ -64,7 +70,7 @@ public class LanguageRepository {
         myLanguageToOwnersMap.put(language, owners);
       }
       owners.add(owner);
-      fireRepositoryChanged();
+      repositoryChanged();
       return language;
     } catch (IOException e) {
       LOG.error(e);
@@ -99,7 +105,7 @@ public class LanguageRepository {
       SModelRepository.getInstance().unRegisterModelDescriptors(language);
       myFileToLanguageMap.remove(fileName);
     }
-    fireRepositoryChanged();
+    repositoryChanged();
   }
 
   public void readLanguageDescriptors(Iterable<Root> roots, LanguageOwner owner) {
@@ -191,5 +197,23 @@ public class LanguageRepository {
     List<Language> list = new LinkedList<Language>();
     Iterator<Language> langauges = myLanguageToOwnersMap.keySet().iterator();
     return CollectionUtil.iteratorAsList(langauges);
+  }
+
+
+
+  public void repositoryChanged() {
+    myCommandTranslator.repositoryChanged();
+  }
+
+  private class MyCommandTranslator extends CommandEventTranslator {
+
+    protected void fireCommandEvent() {
+      fireRepositoryChanged();
+    }
+
+    public void repositoryChanged() {
+      markCurrentCommandsDirty();
+    }
+
   }
 }

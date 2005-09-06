@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
@@ -23,6 +24,7 @@ import java.util.List;
  */
 class SModelTreeNode extends MPSTreeNodeEx {
   private SModelDescriptor myModelDescriptor;
+  private SModel myModel;
   private String myLabel;
   private boolean isInitialized = false;
   private MyModelListener myModelListener = new MyModelListener();
@@ -47,7 +49,14 @@ class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   public SModel getSModel() {
-    return myModelDescriptor.getSModel();
+
+    CommandProcessor.instance().executeCommand(new Runnable() {
+      public void run() {
+        myModel = myModelDescriptor.getSModel();
+      }
+    }
+            ,"loading model in project pane");
+    return myModel;
   }
 
   public SModelDescriptor getModelDescriptor() {
@@ -90,11 +99,17 @@ class SModelTreeNode extends MPSTreeNodeEx {
 
   public void init() {
     removeAllChildren();
-    SModel model = myModelDescriptor.getSModel();
-    if (!model.hasSModelCommandListener(myModelListener)) {
-      model.addSModelCommandListener(myModelListener);
+    CommandProcessor.instance().executeCommand(new Runnable() {
+      public void run() {
+        myModel = myModelDescriptor.getSModel();
+      }
     }
-    List<SNode> sortedRoots = SortUtil.sortNodes(model.getRoots());
+            ,"loading model in project pane");
+
+    if (!myModel.hasSModelCommandListener(myModelListener)) {
+      myModel.addSModelCommandListener(myModelListener);
+    }
+    List<SNode> sortedRoots = SortUtil.sortNodes(myModel.getRoots());
     for (SNode sortedRoot : sortedRoots) {
       MPSTreeNodeEx treeNode = new SNodeTreeNode(sortedRoot, getOperationContext());
       add(treeNode);

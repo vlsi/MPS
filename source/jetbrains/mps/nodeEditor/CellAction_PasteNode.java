@@ -5,10 +5,12 @@ import jetbrains.mps.datatransfer.CopyPasteNodeUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.EditorsPane;
 
 import java.util.List;
+import java.util.Set;
 
 
 /**
@@ -17,7 +19,7 @@ import java.util.List;
  */
 public class CellAction_PasteNode extends EditorCellAction {
   private static final Logger LOG = Logger.getLogger(CellAction_PasteNode.class);
-  
+
   public boolean canExecute(EditorContext context) {
     EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
     if (selectedCell == null) {
@@ -44,7 +46,9 @@ public class CellAction_PasteNode extends EditorCellAction {
 
     SModel model = selectedNode.getModel();
     SModel modelProperties = CopyPasteNodeUtil.getModelPropertiesFromClipboard();
-    if (!CopyPasteNodeUtil.addImportsAndLanguagesToModel(model, modelProperties, context.getOperationContext())) return;
+    Set<String> necessaryLanguages = CopyPasteNodeUtil.getNecessryLanguagesFromClipboard();
+    Set<SModelUID> necessaryImports = CopyPasteNodeUtil.getNecessaryImportsFromClipboard();
+    if (!CopyPasteNodeUtil.addImportsAndLanguagesToModel(model, modelProperties, necessaryLanguages, necessaryImports, context.getOperationContext())) return;
 
     List<SNode> pasteNodes = CopyPasteNodeUtil.getNodesFromClipboard(selectedNode.getModel());
     SNode anchor = pasteNodes.get(0);

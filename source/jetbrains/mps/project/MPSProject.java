@@ -40,15 +40,22 @@ public class MPSProject implements ModelOwner, LanguageOwner {
   private List<MPSProjectCommandListener> myProjectCommandListeners = new ArrayList<MPSProjectCommandListener>();
   private ProjectEventTranslator myEventTranslator;
 
-  public MPSProject(File projectFile) {
-    myProjectFile = projectFile;
-    SModel model = ProjectModelDescriptor.createDescriptorFor(this).getSModel();
-    myProjectDescriptor = PersistenceUtil.loadProjectDescriptor(projectFile, model);
+  public MPSProject(final File projectFile) {
 
-    revalidateContent(projectFile, model);
+    CommandProcessor.instance().executeCommand(new Runnable() {
+      public void run() {
+        myProjectFile = projectFile;
+        SModel model = ProjectModelDescriptor.createDescriptorFor(MPSProject.this).getSModel();
+        myProjectDescriptor = PersistenceUtil.loadProjectDescriptor(projectFile, model);
 
-    MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
-    projects.addProject(MPSProject.this);
+        revalidateContent(projectFile, model);
+
+        MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
+        projects.addProject(MPSProject.this);
+
+      }
+    }, "MPS Project init");
+
     myEventTranslator = new ProjectEventTranslator();
     CommandProcessor.instance().addCommandListener(myEventTranslator);
   }
@@ -81,16 +88,21 @@ public class MPSProject implements ModelOwner, LanguageOwner {
     }
   }
 
-  public void setProjectDescriptor(ProjectDescriptor newDescriptor) {
+  public void setProjectDescriptor(final ProjectDescriptor newDescriptor) {
 
-    // release languages and models (except descriptor model)
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), this);
-    LanguageRepository.getInstance().unRegisterLanguages(this);
-    SModelRepository.getInstance().unRegisterModelDescriptors(this);
-    SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, this);
-    for (Solution solution : getSolutions()) {
-      solution.dispose();
-    }
+    CommandProcessor.instance().executeCommand(new Runnable() {
+      public void run() {
+        // release languages and models (except descriptor model)
+        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), MPSProject.this);
+        LanguageRepository.getInstance().unRegisterLanguages(MPSProject.this);
+        SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
+        SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, MPSProject.this);
+        for (Solution solution : getSolutions()) {
+          solution.dispose();
+        }
+      }
+    }, "Set project descriptor");
+
 
     myProjectDescriptor = newDescriptor;
     revalidateContent(myProjectFile, newDescriptor.getModel());
@@ -140,28 +152,12 @@ public class MPSProject implements ModelOwner, LanguageOwner {
     return myProjectDescriptor;
   }
 
-  public List<Language> getLanguages() {
-    return Collections.unmodifiableList(myLanguages);
+  public Collection<Language> getLanguages() {
+    return Collections.unmodifiableCollection(myLanguages);
   }
 
   public List<Solution> getSolutions() {
     return Collections.unmodifiableList(mySolutions);
-  }
-
-  public Solution getSolutionForModel(SModelDescriptor md) {
-    Set<Solution> owners = SModelRepository.getInstance().getOwners(md, Solution.class);
-    for (Solution s : mySolutions) {
-      if (owners.contains(s)) return s;
-    }
-    return null;
-  }
-
-  public Language getLanguageForModel(SModelDescriptor md) {
-    Set<Language> owners = SModelRepository.getInstance().getOwners(md, Language.class);
-    for (Language l : myLanguages) {
-      if (owners.contains(l)) return l;
-    }
-    return null;
   }
 
   public List<Object> getComponents() {
@@ -250,14 +246,36 @@ public class MPSProject implements ModelOwner, LanguageOwner {
   }
 
   public void dispose() {
-    for (Solution solution : getSolutions()) {
-      solution.dispose();
-    }
-    LanguageRepository.getInstance().unRegisterLanguages(this);
-    CommandProcessor.instance().removeCommandListener(myEventTranslator);
-    SModelRepository.getInstance().unRegisterModelDescriptors(this);
-    LanguageRepository.getInstance().unRegisterLanguages(this);
+    CommandProcessor.instance().executeCommand(new Runnable() {
+      public void run() {
+        for (Solution solution : getSolutions()) {
+          solution.dispose();
+        }
+        LanguageRepository.getInstance().unRegisterLanguages(MPSProject.this);
+        CommandProcessor.instance().removeCommandListener(myEventTranslator);
+        SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
+        LanguageRepository.getInstance().unRegisterLanguages(MPSProject.this);
+      }
+    }, "disposing project");
+
   }
+
+
+  public Solution getSolutionForModel(SModelDescriptor md) {
+      Set<Solution> owners = SModelRepository.getInstance().getOwners(md, Solution.class);
+      for (Solution s : mySolutions) {
+        if (owners.contains(s)) return s;
+      }
+      return null;
+    }
+
+    public Language getLanguageForModel(SModelDescriptor md) {
+      Set<Language> owners = SModelRepository.getInstance().getOwners(md, Language.class);
+      for (Language l : myLanguages) {
+        if (owners.contains(l)) return l;
+      }
+      return null;
+    }
 
 
   public void addMPSProjectCommandListener(MPSProjectCommandListener listener) {

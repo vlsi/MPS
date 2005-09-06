@@ -1,6 +1,8 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.command.CommandEventTranslator;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.logging.Logger;
@@ -24,9 +26,11 @@ public class SModelRepository extends SModelAdapter {
   private HashMap<SModelDescriptor, HashSet<ModelOwner>> myModelToOwnerMap = new HashMap<SModelDescriptor, HashSet<ModelOwner>>();
   private IdeMain myIde;
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
+  private MyCommandTranslator myCommandTranslator = new MyCommandTranslator();
 
   public SModelRepository(IdeMain ide) {
     myIde = ide;
+    CommandProcessor.instance().addCommandListener(this.myCommandTranslator);
   }
 
 
@@ -56,7 +60,7 @@ public class SModelRepository extends SModelAdapter {
     myListeners.remove(l);
   }
 
-  void fireRepositoryChanged() {
+  private void fireRepositoryChanged() {
     for (RepositoryListener l : myListeners) {
       l.repositoryChanged();
     }
@@ -83,7 +87,7 @@ public class SModelRepository extends SModelAdapter {
       myModelToOwnerMap.put(modelDescriptor, owners);
     }
     owners.add(owner);
-    fireRepositoryChanged();
+    repositoryChanged();
   }
 
   public void registerModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
@@ -103,7 +107,7 @@ public class SModelRepository extends SModelAdapter {
     }
     owners.add(owner);
     modelDescriptor.addSModelListener(this);
-    fireRepositoryChanged();
+    repositoryChanged();
   }
 
   public void unRegisterModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
@@ -120,7 +124,7 @@ public class SModelRepository extends SModelAdapter {
       }
     }
 
-    fireRepositoryChanged();
+    repositoryChanged();
   }
 
   public void unRegisterModelDescriptors(ModelOwner owner) {
@@ -140,12 +144,12 @@ public class SModelRepository extends SModelAdapter {
       removeModelDescriptor_internal(modelDescriptor);
     }
 
-    fireRepositoryChanged();
+    repositoryChanged();
   }
 
   void removeModelDescriptor(SModelDescriptor modelDescriptor) {
     removeModelDescriptor_internal(modelDescriptor);
-    fireRepositoryChanged();
+    repositoryChanged();
   }
 
   /*package*/ void removeModelDescriptor_internal(SModelDescriptor modelDescriptor) {
@@ -377,13 +381,32 @@ public class SModelRepository extends SModelAdapter {
     return Collections.unmodifiableSet(myModelToOwnerMap.get(modelDescriptor));
   }
 
-  public<M extends ModelOwner> Set<M> getOwners(SModelDescriptor modelDescriptor, Class<M> cls) {
-    Set<M> result = new HashSet<M>();
-    for (ModelOwner o : getOwners(modelDescriptor)) {
-      if (cls.isInstance(o)) {
-        result.add((M) o);
-      }
+   public<M extends ModelOwner> Set<M> getOwners(SModelDescriptor modelDescriptor, Class<M> cls) {
+     Set<M> result = new HashSet<M>();
+     for (ModelOwner o : getOwners(modelDescriptor)) {
+       if (cls.isInstance(o)) {
+         result.add((M) o);
+       }
+     }
+     return result;
+   }
+
+
+
+
+  public void repositoryChanged() {
+    myCommandTranslator.repositoryChanged();
+  }
+
+  private class MyCommandTranslator extends CommandEventTranslator {
+
+    protected void fireCommandEvent() {
+      fireRepositoryChanged();
     }
-    return result;
+
+    public void repositoryChanged() {
+      markCurrentCommandsDirty();
+    }
+
   }
 }

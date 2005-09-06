@@ -19,9 +19,7 @@ import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
 import java.util.List;
 
 /**
@@ -257,6 +255,14 @@ public class CopyPasteNodeUtil {
     return newModel;
   }
 
+  static Set<String> getNecessaryLanguages() {
+    return new HashSet<String>(ourNecessaryLanguages);
+  }
+
+  static Set<SModelUID> getNecessaryImports() {
+    return new HashSet<SModelUID>(ourNecessaryImports);
+  }
+
 
   public static void copyNodesToClipboard(List<SNode> nodes) {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
@@ -313,6 +319,46 @@ public class CopyPasteNodeUtil {
     return null;
   }
 
+  public static Set<String> getNecessryLanguagesFromClipboard() {
+    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
+    Transferable content = cb.getContents(null);
+    if (content == null) return null;
+
+    if (content.isDataFlavorSupported(SModelDataFlavor.sNode)) {
+      SNodeTransferable nodeTransferable = null;
+      try {
+        nodeTransferable = (SNodeTransferable) content.getTransferData(SModelDataFlavor.sNode);
+        return nodeTransferable.getNecessaryLanguages();
+      } catch (UnsupportedFlavorException e) {
+        LOG.error("Exception", e);
+      } catch (IOException e) {
+        LOG.error("Exception", e);
+      }
+    }
+
+    return null;
+  }
+
+  public static Set<SModelUID> getNecessaryImportsFromClipboard() {
+    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
+    Transferable content = cb.getContents(null);
+    if (content == null) return null;
+
+    if (content.isDataFlavorSupported(SModelDataFlavor.sNode)) {
+      SNodeTransferable nodeTransferable = null;
+      try {
+        nodeTransferable = (SNodeTransferable) content.getTransferData(SModelDataFlavor.sNode);
+        return nodeTransferable.getNecessaryImports();
+      } catch (UnsupportedFlavorException e) {
+        LOG.error("Exception", e);
+      } catch (IOException e) {
+        LOG.error("Exception", e);
+      }
+    }
+
+    return null;
+  }
+
   public static SNode getNodeFromClipboard(SModel model) {
     return getNodesFromClipboard(model).get(0);
   }
@@ -345,14 +391,14 @@ public class CopyPasteNodeUtil {
     }
   }
 
-  public static boolean addImportsAndLanguagesToModel(SModel targetModel, SModel modelPropertiesPattern, IOperationContext context) {
+  public static boolean addImportsAndLanguagesToModel(SModel targetModel, SModel modelPropertiesPattern, Set<String> necessaryLanguages, Set<SModelUID> necessaryImports, IOperationContext context) {
     List<String> additionalLanguages = new ArrayList<String>();
     List<SModelUID> additionalModels = new ArrayList<SModelUID>();
     List<String> languagesFromPattern = new ArrayList<String>(modelPropertiesPattern.getLanguageNamespaces());
     List<SModelUID> importsFromPattern = new ArrayList<SModelUID>(modelPropertiesPattern.getImportedModelUIDs());
 
-    importsFromPattern.addAll(ourNecessaryImports);
-    languagesFromPattern.addAll(ourNecessaryLanguages);
+    importsFromPattern.addAll(necessaryImports);
+    languagesFromPattern.addAll(necessaryLanguages);
 
     for (String namespace : languagesFromPattern) {
       if (!targetModel.hasLanguage(namespace)) additionalLanguages.add(namespace);
@@ -361,11 +407,11 @@ public class CopyPasteNodeUtil {
       if (!(targetModel.hasImportedModel(modelUID)) && !(targetModel.getUID().equals(modelUID))) additionalModels.add(modelUID);
     }
 
-    ourNecessaryImports.retainAll(importsFromPattern);
-    ourNecessaryLanguages.retainAll(languagesFromPattern);
+    necessaryImports.retainAll(importsFromPattern);
+    necessaryLanguages.retainAll(languagesFromPattern);
 
     if ((!additionalModels.isEmpty())||(!additionalLanguages.isEmpty())) {
-      AddRequiredModelImportsDialog dialog = new AddRequiredModelImportsDialog(context.getComponent(IdeMain.class), targetModel, additionalModels, additionalLanguages, ourNecessaryImports, ourNecessaryLanguages);
+      AddRequiredModelImportsDialog dialog = new AddRequiredModelImportsDialog(context.getComponent(IdeMain.class), targetModel, additionalModels, additionalLanguages, necessaryImports, necessaryLanguages);
       dialog.setModal(true);
       dialog.showDialog();
       return (!dialog.isCanceled());

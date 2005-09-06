@@ -10,6 +10,7 @@ import java.util.*;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUID;
 
 /**
  * Created by IntelliJ IDEA.
@@ -32,6 +33,8 @@ public class SNodeTransferable implements Transferable {
   // ---- node data ----
   private List<SNode> mySNodes = new ArrayList<SNode>();
   private SModel mySModel;
+  private Set<SModelUID> myNecessaryImports = new HashSet<SModelUID>();
+  private Set<String> myNecessaryLanguages = new HashSet<String>();
   private String myText = "";
 
   public DataFlavor[] getTransferDataFlavors() {
@@ -77,12 +80,22 @@ public class SNodeTransferable implements Transferable {
     mySNodes.clear();
     mySNodes.addAll(CopyPasteNodeUtil.copyNodesIn(nodes));
     mySModel = mySNodes.get(0).getModel();
+    myNecessaryImports = CopyPasteNodeUtil.getNecessaryImports();
+    myNecessaryLanguages = CopyPasteNodeUtil.getNecessaryLanguages();
   }
 
   public List<SNode> createNodes(SModel sModel) {
     List<SNode> result = new ArrayList<SNode>();
     result.addAll(CopyPasteNodeUtil.copyNodesOut(mySNodes, sModel));
     return result;
+  }
+
+  public Set<String> getNecessaryLanguages() {
+    return new HashSet<String>(myNecessaryLanguages);
+  }
+
+  public Set<SModelUID> getNecessaryImports() {
+    return new HashSet<SModelUID>(myNecessaryImports);
   }
 
   public SModel getModel() {
