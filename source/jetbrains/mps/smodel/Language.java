@@ -331,6 +331,7 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
       return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.STRUCTURE);
     }
     if (modelDescriptor == language.getTypesystemModelDescriptor()) {
+      return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.TYPESYSTEM);
     }
     if (modelDescriptor == language.getActionsModelDescriptor()) {
       return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.ACTIONS);

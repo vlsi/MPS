@@ -35,6 +35,7 @@ public class ExternalResolver {
     if (!isEmptyExtResolveInfo(externalReference.getExtResolveInfo())) return externalReference.getExtResolveInfo();
 
     SNode targetNode = reference.getTargetNode();
+    if (targetNode == null) return null;
     return getExternalResolveInfoFromTarget(targetNode);
 
   }
