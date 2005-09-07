@@ -221,6 +221,15 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
     return result;
   }
 
+  public Set<SModelDescriptor> getAspectModelDescriptors() {
+    Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
+    result.add(getStructureModelDescriptor());
+    result.addAll(getEditorDescriptors());
+    result.add(getTypesystemModelDescriptor());
+    result.add(getActionsModelDescriptor());
+    return result;
+  }
+
   public String getEditorUID(String stereotype) {
     if (stereotype == null) stereotype = SModelStereotype.NONE;
     Iterator<Editor> editors = getLanguageDescriptor().editors();
