@@ -139,7 +139,7 @@ public class SModelRepository extends SModelAdapter {
     modelDescriptor.removeSModelListener(this);
   }
 
-  /*package*/ void removeUnusedDescriptors() {
+  public void removeUnusedDescriptors() {
     List<SModelDescriptor> descriptorsToRemove = new LinkedList<SModelDescriptor>();
     for (SModelDescriptor descriptor : myModelDescriptors) {
       HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(descriptor);
@@ -159,31 +159,12 @@ public class SModelRepository extends SModelAdapter {
     return myUIDToModelDescriptorMap.get(model.getUID());
   }
 
-  /**
-   * @deprecated
-   */
-  public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
+  /*package*/ SModelDescriptor getModelDescriptor(SModelUID modelUID) {
     SModelDescriptor descriptor = myUIDToModelDescriptorMap.get(modelUID);
     if (descriptor != null) {
       return descriptor;
     }
-
-    if (modelUID.getStereotype().length() > 0) {
-//      LOG.error("No model descriptors found for uid \"" + modelUID.toString() + "\"");
-      return null;
-    }
-
-    // todo: tmp solution
-    List<SModelDescriptor> descriptors = getModelDescriptors(modelUID.getLongName());
-    if (descriptors.size() == 1) {
-      return descriptors.get(0);
-    }
-    if (descriptors.size() == 0) {
-//      LOG.error("No model descriptors found for name \"" + modelUID.getLongName() + "\"");
-      return null;
-    }
-
-    LOG.error(descriptors.size() + " model descriptors found for name \"" + modelUID.getLongName() + "\"");
+//    LOG.error("Couldn't find model descriptor \"" + modelUID.toString() + "\"");
     return null;
   }
 

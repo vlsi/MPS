@@ -104,7 +104,7 @@ public class LanguageRepository {
     repositoryChanged();
   }
 
-  private void removeUnusedLanguages() {
+  public void removeUnusedLanguages() {
     List<Language> languagesToRemove = new LinkedList<Language>();
     for (Language language : myLanguageToOwnersMap.keySet()) {
       HashSet<LanguageOwner> languageOwners = myLanguageToOwnersMap.get(language);
