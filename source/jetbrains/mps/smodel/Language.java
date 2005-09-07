@@ -82,7 +82,7 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
   public void setLanguageDescriptor(LanguageDescriptor newDescriptor, IOperationContext operationContext) {
 
     // release languages and models (except descriptor model)
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), this);
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), (ModelOwner) this);
     LanguageRepository.getInstance().unRegisterLanguages(this);
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
     SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, this);
@@ -274,7 +274,7 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
   }
 
   private SModelDescriptor getModelDescriptorByUID(SModelUID modelUID) {
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, (ModelOwner) this);
     LOG.assertLog(modelDescriptor != null, "Couldn't get model \"" + modelUID + "\" in " + this);
     return modelDescriptor;
   }

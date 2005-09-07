@@ -168,6 +168,17 @@ public class SModelRepository extends SModelAdapter {
     return null;
   }
 
+  public SModelDescriptor getModelDescriptor(SModelUID modelUID, LanguageOwner languageOwner) {
+    SModelDescriptor descriptor = getModelDescriptor(modelUID);
+    if (descriptor == null) return null;
+    List<Language> languages = LanguageRepository.getInstance().getLanguages(languageOwner);
+    Set<ModelOwner> owners = myModelToOwnerMap.get(descriptor);
+    for (ModelOwner owner : owners) {
+      if (languages.contains(owner)) return descriptor;
+    }
+    return null;
+  }
+
   /**
    * @deprecated
    */

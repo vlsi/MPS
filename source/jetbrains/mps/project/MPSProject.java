@@ -102,7 +102,7 @@ public class MPSProject implements ModelOwner, LanguageOwner {
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         // release languages and models (except descriptor model)
-        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), MPSProject.this);
+        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), (ModelOwner)MPSProject.this);
         LanguageRepository.getInstance().unRegisterLanguages(MPSProject.this);
         SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
         SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, MPSProject.this);
