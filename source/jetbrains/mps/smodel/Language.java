@@ -313,16 +313,20 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
 
   public static LanguageAspectStatus getLanguageAspectStatus(SModelDescriptor modelDescriptor) {
     Set<ModelOwner> owners = SModelRepository.getInstance().getOwners(modelDescriptor);
+    LanguageAspectStatus accessoryStatus = null;
     try {
+
       for (ModelOwner modelOwner : owners) {
         if (modelOwner instanceof Language) {
           LanguageAspectStatus languageAspectStatus = getLanguageAspectStatus((Language) modelOwner, modelDescriptor);
           if (languageAspectStatus.isLanguageAspect()) return languageAspectStatus;
+          if (languageAspectStatus.isAccessoryModel()) accessoryStatus = languageAspectStatus;
         }
       }
     } catch (ConcurrentModificationException e) {
       e.printStackTrace();
     }
+    if (accessoryStatus != null) return accessoryStatus;
     return new LanguageAspectStatus(null, LanguageAspectStatus.AspectKind.NONE);
   }
 
@@ -336,7 +340,10 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
     if (modelDescriptor == language.getActionsModelDescriptor()) {
       return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.ACTIONS);
     }
-
+    List<SModelDescriptor> acccessoryModels =  language.getAccessoryModels();
+    if (acccessoryModels.contains(modelDescriptor)) {
+      return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.ACCESSORY);
+    }
     Set<SModelDescriptor> editorDescriptors = language.getEditorDescriptors();
     if (editorDescriptors.contains(modelDescriptor)) {
       return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.EDITOR);
@@ -390,7 +397,7 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
     }
 
     public boolean isLanguageAspect() {
-      return myAspectKind != LanguageAspectStatus.AspectKind.NONE;
+      return myAspectKind != LanguageAspectStatus.AspectKind.NONE && myAspectKind != LanguageAspectStatus.AspectKind.ACCESSORY;
     }
 
     public boolean isStructure() {
@@ -411,6 +418,10 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
 
     public boolean isGeneratorTemplates() {
       return myAspectKind == LanguageAspectStatus.AspectKind.GENERATOR_TEMPLATES;
+    }
+
+    public boolean isAccessoryModel() {
+      return myAspectKind == LanguageAspectStatus.AspectKind.ACCESSORY;
     }
   }
 
