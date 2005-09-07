@@ -30,6 +30,8 @@ public class Solution implements ModelLocator, ModelOwner, LanguageOwner {
    * tmp: to create solution from legacy projects
    */
   public static Solution createFromLegacyProjectFile(File projectFile) {
+    if (!projectFile.exists()) return null;
+
     Solution solution = new Solution();
     SModel model = ProjectModelDescriptor.createDescriptorFor(solution).getSModel();
     SolutionDescriptor solutionDescriptor = PersistenceUtil.loadSolutionDescriptorFormOldMPR(projectFile, model);
