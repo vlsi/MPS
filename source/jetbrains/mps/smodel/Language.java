@@ -354,7 +354,7 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
 
   public static class LanguageAspectStatus implements IStatus {
     public static enum AspectKind {
-      STRUCTURE,EDITOR,ACTIONS,TYPESYSTEM,GENERATOR_TEMPLATES,NONE
+      STRUCTURE,EDITOR,ACTIONS,TYPESYSTEM,GENERATOR_TEMPLATES,ACCESSORY,NONE
     }
 
     private Language myLanguage;
