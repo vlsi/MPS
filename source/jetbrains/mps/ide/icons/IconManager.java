@@ -122,8 +122,10 @@ public class IconManager {
         } else if (modelDescriptor.getStereotype() != null &&
                 modelDescriptor.getStereotype().equals(SModelStereotype.TEMPLATES)) {
           return Icons.TEMPLATES_MODEL_ICON;
+        } else if (languageAspectStatus.isAccessoryModel()) {
+          return Icons.ACCESSORY_MODEL_ICON;
         }
-        return Icons.MODEL_ICON;   //todo library models
+        return Icons.MODEL_ICON;  
   }
 
 }
