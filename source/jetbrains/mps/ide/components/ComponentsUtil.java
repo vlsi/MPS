@@ -43,25 +43,25 @@ public class ComponentsUtil {
 
 
   public static Element rectangleToElement(Rectangle rect) {
-      Element result = new Element(RECTANGLE);
-      result.setAttribute(X, "" + rect.x);
-      result.setAttribute(Y, "" + rect.y);
-      result.setAttribute(WIDTH, "" + rect.width);
-      result.setAttribute(HEIGHT, "" + rect.height);
-      return result;
+    Element result = new Element(RECTANGLE);
+    result.setAttribute(X, "" + rect.x);
+    result.setAttribute(Y, "" + rect.y);
+    result.setAttribute(WIDTH, "" + rect.width);
+    result.setAttribute(HEIGHT, "" + rect.height);
+    return result;
   }
                        
   public static Rectangle elementToRectangle(Element e) {
       assert e.getName().equals(RECTANGLE);
       try {
-          int x = e.getAttribute(X).getIntValue();
-          int y = e.getAttribute(Y).getIntValue();
-          int w = e.getAttribute(WIDTH).getIntValue();
-          int h = e.getAttribute(HEIGHT).getIntValue();
-          return new Rectangle(x, y, w, h);
+        int x = e.getAttribute(X).getIntValue();
+        int y = e.getAttribute(Y).getIntValue();
+        int w = e.getAttribute(WIDTH).getIntValue();
+        int h = e.getAttribute(HEIGHT).getIntValue();
+        return new Rectangle(x, y, w, h);
       } catch (DataConversionException e1) {
-          LOG.error(e1);
-          return null;
+        LOG.error(e1);
+        return null;
       }
   }
 
