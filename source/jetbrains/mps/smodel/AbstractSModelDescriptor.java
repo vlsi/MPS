@@ -87,7 +87,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
       CommandProcessor.instance().executeCommand(new Runnable() {
         public void run() {
-           SModelRepository.getInstance().repositoryChanged();
+          SModelRepository.getInstance().repositoryChanged();
         }
       });
 
@@ -264,7 +264,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
   public Set<ConceptDeclaration> findDescendants(ConceptDeclaration node, Set<ConceptDeclaration> descendantsKnownInModel) {
 
-    if (mySModel != null && !SModelRepository.getInstance().isChanged(mySModel) && !descendantsKnownInModel.isEmpty()){
+    if (mySModel != null && !SModelRepository.getInstance().isChanged(mySModel) && !descendantsKnownInModel.isEmpty()) {
       return descendantsKnownInModel;
     }
 
@@ -290,7 +290,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
   public final void delete() {
     SModelsMulticaster.getInstance().fireModelWillBeDeletedEvent(this);
-    SModelRepository.getInstance().removeModelDescriptor_internal(this);
+    SModelRepository.getInstance().removeModelDescriptor(this);
     File modelFile = getModelFile();
     if (modelFile != null && modelFile.exists()) {
       modelFile.delete();

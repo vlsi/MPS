@@ -64,8 +64,12 @@ public class MPSProject implements ModelOwner, LanguageOwner {
     // load solutions
     mySolutions = new LinkedList<Solution>();
     for (SolutionPath solutionPath : CollectionUtil.iteratorAsIterable(myProjectDescriptor.projectSolutions())) {
-      Solution solution = new Solution(new File(solutionPath.getPath()));
-      mySolutions.add(solution);
+      File descriptorFile = new File(solutionPath.getPath());
+      if (descriptorFile.exists()) {
+        mySolutions.add(new Solution(descriptorFile));
+      } else {
+        LOG.error("Couldn't load solution from: " + descriptorFile.getAbsolutePath() + " : file doesn't exist");
+      }
     }
 
     // convert legacy project to new solution
@@ -84,7 +88,12 @@ public class MPSProject implements ModelOwner, LanguageOwner {
     // load languages
     myLanguages = new LinkedList<Language>();
     for (LanguagePath languagePath : CollectionUtil.iteratorAsIterable(myProjectDescriptor.projectLanguages())) {
-      myLanguages.add(LanguageRepository.getInstance().registerLanguage(new File(languagePath.getPath()), this));
+      File descriptorFile = new File(languagePath.getPath());
+      if (descriptorFile.exists()) {
+        myLanguages.add(LanguageRepository.getInstance().registerLanguage(descriptorFile, this));
+      } else {
+        LOG.error("Couldn't load language from: " + descriptorFile.getAbsolutePath() + " : file doesn't exist");
+      }
     }
   }
 
@@ -262,20 +271,20 @@ public class MPSProject implements ModelOwner, LanguageOwner {
 
 
   public Solution getSolutionForModel(SModelDescriptor md) {
-      Set<Solution> owners = SModelRepository.getInstance().getOwners(md, Solution.class);
-      for (Solution s : mySolutions) {
-        if (owners.contains(s)) return s;
-      }
-      return null;
+    Set<Solution> owners = SModelRepository.getInstance().getOwners(md, Solution.class);
+    for (Solution s : mySolutions) {
+      if (owners.contains(s)) return s;
     }
+    return null;
+  }
 
-    public Language getLanguageForModel(SModelDescriptor md) {
-      Set<Language> owners = SModelRepository.getInstance().getOwners(md, Language.class);
-      for (Language l : myLanguages) {
-        if (owners.contains(l)) return l;
-      }
-      return null;
+  public Language getLanguageForModel(SModelDescriptor md) {
+    Set<Language> owners = SModelRepository.getInstance().getOwners(md, Language.class);
+    for (Language l : myLanguages) {
+      if (owners.contains(l)) return l;
     }
+    return null;
+  }
 
 
   public void addMPSProjectCommandListener(MPSProjectCommandListener listener) {

@@ -21,9 +21,9 @@ public class SModelRepository extends SModelAdapter {
   private static final Logger LOG = Logger.getLogger(SModelRepository.class);
 
   private ArrayList<SModelDescriptor> myModelDescriptors = new ArrayList<SModelDescriptor>();
-  private HashMap<SModelDescriptor, Long> myChangedModels = new HashMap<SModelDescriptor, Long>();
-  private HashMap<SModelUID, SModelDescriptor> myUIDToModelDescriptorMap = new HashMap<SModelUID, SModelDescriptor>();
-  private HashMap<SModelDescriptor, HashSet<ModelOwner>> myModelToOwnerMap = new HashMap<SModelDescriptor, HashSet<ModelOwner>>();
+  private Map<SModelDescriptor, Long> myChangedModels = new HashMap<SModelDescriptor, Long>();
+  private Map<SModelUID, SModelDescriptor> myUIDToModelDescriptorMap = new HashMap<SModelUID, SModelDescriptor>();
+  private Map<SModelDescriptor, HashSet<ModelOwner>> myModelToOwnerMap = new HashMap<SModelDescriptor, HashSet<ModelOwner>>();
   private IdeMain myIde;
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
   private MyCommandTranslator myCommandTranslator = new MyCommandTranslator();
@@ -112,54 +112,47 @@ public class SModelRepository extends SModelAdapter {
 
   public void unRegisterModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
     HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(modelDescriptor);
-    if (modelOwners == null) {
-      removeModelDescriptor_internal(modelDescriptor);
-      return;
-    }
-
-    if (modelOwners.contains(owner)) {
+    if (modelOwners != null && modelOwners.contains(owner)) {
       modelOwners.remove(owner);
-      if (modelOwners.isEmpty()) {
-        removeModelDescriptor_internal(modelDescriptor);
-      }
     }
 
     repositoryChanged();
   }
 
   public void unRegisterModelDescriptors(ModelOwner owner) {
-    ArrayList<SModelUID> modelsToRemove = new ArrayList<SModelUID>();
-    for (SModelUID fqName : myUIDToModelDescriptorMap.keySet()) {
-      SModelDescriptor modelDescriptor = myUIDToModelDescriptorMap.get(fqName);
-      HashSet<ModelOwner> locators = myModelToOwnerMap.get(modelDescriptor);
-      if (locators != null) {
-        locators.remove(owner);
-        if (locators.size() == 0) {
-          modelsToRemove.add(fqName);
-        }
+    for (SModelUID uid : myUIDToModelDescriptorMap.keySet()) {
+      SModelDescriptor modelDescriptor = myUIDToModelDescriptorMap.get(uid);
+      HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(modelDescriptor);
+      if (modelOwners != null) {
+        modelOwners.remove(owner);
       }
     }
-    for (SModelUID modelUID : modelsToRemove) {
-      SModelDescriptor modelDescriptor = myUIDToModelDescriptorMap.get(modelUID);
-      removeModelDescriptor_internal(modelDescriptor);
-    }
 
     repositoryChanged();
   }
 
-  void removeModelDescriptor(SModelDescriptor modelDescriptor) {
-    removeModelDescriptor_internal(modelDescriptor);
-    repositoryChanged();
-  }
-
-  /*package*/ void removeModelDescriptor_internal(SModelDescriptor modelDescriptor) {
+  /*package*/ void removeModelDescriptor(SModelDescriptor modelDescriptor) {
     myModelDescriptors.remove(modelDescriptor);
     myUIDToModelDescriptorMap.remove(modelDescriptor.getModelUID());
     myChangedModels.remove(modelDescriptor);
     myModelToOwnerMap.remove(modelDescriptor);
     modelDescriptor.removeSModelListener(this);
+  }
 
-    // fireRepositoryChanged(); don't fire it twice
+  /*package*/ void removeUnusedDescriptors() {
+    List<SModelDescriptor> descriptorsToRemove = new LinkedList<SModelDescriptor>();
+    for (SModelDescriptor descriptor : myModelDescriptors) {
+      HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(descriptor);
+      if (modelOwners == null || modelOwners.isEmpty()) {
+        descriptorsToRemove.add(descriptor);
+      }
+    }
+
+    if (descriptorsToRemove.size() > 0) {
+      for (SModelDescriptor descriptor : descriptorsToRemove) {
+        removeModelDescriptor(descriptor);
+      }
+    }
   }
 
   public SModelDescriptor getModelDescriptor(SModel model) {
@@ -220,8 +213,6 @@ public class SModelRepository extends SModelAdapter {
 
   public SModelDescriptor getModelDescriptor(SModelUID modelUID, ModelOwner owner) {
     SModelDescriptor descriptor = myUIDToModelDescriptorMap.get(modelUID);
-//    // tmp
-//    return descriptor;
     if (descriptor == null) {
       return null;
     }
@@ -278,22 +269,26 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public void modelChanged(SModel model) {
-    markChanged(model);
+    markChanged(model, true);
   }
 
   public void modelChangedDramatically(SModel model) {
-    markChanged(model);
+    markChanged(model, true);
   }
 
-  public void markChanged(SModel model) {
+  public void markChanged(SModel model, boolean b) {
     SModelDescriptor modelDescriptor = myUIDToModelDescriptorMap.get(model.getUID());
     if (modelDescriptor != null) { //i.e project model
-      markChanged(modelDescriptor);
+      markChanged(modelDescriptor, b);
     }
   }
 
-  public void markChanged(SModelDescriptor descriptor) {
-    myChangedModels.put(descriptor, System.currentTimeMillis());
+  public void markChanged(SModelDescriptor descriptor, boolean b) {
+    if (b) {
+      myChangedModels.put(descriptor, System.currentTimeMillis());
+    } else {
+      myChangedModels.remove(descriptor);
+    }
   }
 
   public boolean isChanged(SModel model) {

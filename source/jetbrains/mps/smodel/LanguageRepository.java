@@ -5,6 +5,8 @@ import jetbrains.mps.projectLanguage.Root;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.command.CommandAdapter;
+import jetbrains.mps.ide.command.CommandEvent;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -31,6 +33,12 @@ public class LanguageRepository {
 
   private LanguageRepository() {
     CommandProcessor.instance().addCommandListener(myCommandTranslator);
+    CommandProcessor.instance().addCommandListener(new CommandAdapter() {
+      public void beforeCommandFinished(CommandEvent event) {
+        removeUnusedLanguages();
+        SModelRepository.getInstance().removeUnusedDescriptors();
+      }
+    });
   }
 
   public void addRepositoryListener(RepositoryListener l) {
@@ -48,7 +56,7 @@ public class LanguageRepository {
   }
 
   public boolean hasOwners(Language language) {
-    return myLanguageToOwnersMap.get(language) != null;  
+    return myLanguageToOwnersMap.get(language) != null;
   }
 
   public Set<LanguageOwner> getOwners(Language language) {
@@ -78,7 +86,6 @@ public class LanguageRepository {
     }
   }
 
-
   public void invalidateLanguagesCaches() {
     for (Language l : myFileToLanguageMap.values()) {
       l.invalidateCaches();
@@ -86,26 +93,44 @@ public class LanguageRepository {
   }
 
   public void unRegisterLanguages(LanguageOwner owner) {
-    ArrayList<String> filesToRemove = new ArrayList<String>();
     for (String fileName : myFileToLanguageMap.keySet()) {
       Language language = myFileToLanguageMap.get(fileName);
       HashSet owners = myLanguageToOwnersMap.get(language);
       if (owners != null) {
         owners.remove(owner);
-        if (owners.size() == 0) {
-          filesToRemove.add(fileName);
-          myNamespaceToLanguageMap.remove(language.getNamespace());
-          myLanguageToOwnersMap.remove(language);
-          language.dispose();
-        }
       }
     }
-    for (String fileName : filesToRemove) {
-      Language language = myFileToLanguageMap.get(fileName);
-      SModelRepository.getInstance().unRegisterModelDescriptors(language);
-      myFileToLanguageMap.remove(fileName);
-    }
+
     repositoryChanged();
+  }
+
+  private void removeUnusedLanguages() {
+    List<Language> languagesToRemove = new LinkedList<Language>();
+    for (Language language : myLanguageToOwnersMap.keySet()) {
+      HashSet<LanguageOwner> languageOwners = myLanguageToOwnersMap.get(language);
+      if (languageOwners == null || languageOwners.isEmpty()) {
+        languagesToRemove.add(language);
+      }
+    }
+
+    if (languagesToRemove.size() > 0) {
+      for (Language language : languagesToRemove) {
+        removeLanguage(language);
+        language.dispose();
+      }
+    }
+  }
+
+  private void removeLanguage(Language language) {
+    File descriptorFile = language.getDescriptorFile();
+    myLanguageToOwnersMap.remove(language);
+    myNamespaceToLanguageMap.remove(language.getNamespace());
+
+    try {
+      myFileToLanguageMap.remove(descriptorFile.getCanonicalPath());
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 
   public void readLanguageDescriptors(Iterable<Root> roots, LanguageOwner owner) {
@@ -194,11 +219,9 @@ public class LanguageRepository {
   }
 
   public List<Language> getAllLanguages() {
-    List<Language> list = new LinkedList<Language>();
     Iterator<Language> langauges = myLanguageToOwnersMap.keySet().iterator();
     return CollectionUtil.iteratorAsList(langauges);
   }
-
 
 
   public void repositoryChanged() {
