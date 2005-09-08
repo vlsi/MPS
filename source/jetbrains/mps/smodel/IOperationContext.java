@@ -20,7 +20,7 @@ public interface IOperationContext {
    */
   SModelDescriptor getModelDescriptor(String modelName);
 
-  List<SModelDescriptor> getModelDescriptors();
+  List<SModelDescriptor> getOwnModelDescriptors();
 
   List<SModelDescriptor> getModelDescriptors(String modelName);
 
@@ -44,4 +44,5 @@ public interface IOperationContext {
 
   SModelDescriptor createTransientProjectModel();
 
+  List<SModelDescriptor> getVisibleModelDescriptors();
 }

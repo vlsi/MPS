@@ -219,6 +219,15 @@ public class SModelRepository extends SModelAdapter {
     return null;
   }
 
+  public List<SModelDescriptor> getModelDescriptors(String modelName, LanguageOwner owner) {
+    List<Language> languages = LanguageRepository.getInstance().getLanguages(owner);
+    List<SModelDescriptor> list = new LinkedList<SModelDescriptor>();
+    for (Language language : languages) {
+      list.addAll(getModelDescriptors(modelName, (ModelOwner)language));
+    }
+    return list;
+  }
+
   public List<SModelDescriptor> getModelDescriptors(String modelName, ModelOwner owner) {
     List<SModelDescriptor> list = new LinkedList<SModelDescriptor>();
     SModelUID modelUID = SModelUID.fromString(modelName);
@@ -255,6 +264,17 @@ public class SModelRepository extends SModelAdapter {
           break;
         }
         testOwner = testOwner.getParentModelOwner();
+      }
+    }
+    return list;
+  }
+
+  public List<SModelDescriptor> getModelDescriptors(LanguageOwner languageOwner) {
+    List<SModelDescriptor> list = new LinkedList<SModelDescriptor>();
+    List<Language> languages = LanguageRepository.getInstance().getLanguages(languageOwner);
+    for (SModelDescriptor model : myUIDToModelDescriptorMap.values()) {
+      for (Language language : languages) {
+        if (myModelToOwnerMap.get(model).contains(language)) list.add(model);
       }
     }
     return list;
