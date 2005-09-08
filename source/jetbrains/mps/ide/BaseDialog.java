@@ -12,7 +12,12 @@ import java.awt.event.WindowEvent;
  * @author Kostik
  */
 public abstract class BaseDialog extends JDialog {
-  private JLabel myErrorLabel = new JLabel("");
+  private JLabel myErrorLabel = new JLabel("") {
+    {
+      setForeground(Color.RED);
+      setFont(getFont().deriveFont(Font.BOLD));
+    }
+  };
 
     static final String D_LEFT = "left";
   static final String D_TOP = "top";
