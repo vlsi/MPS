@@ -118,7 +118,7 @@ public class CellExplorerView extends DefaultTool {
       return -1;
     }
 
-    protected JPopupMenu getPopupMenu() {
+    public JPopupMenu getPopupMenu() {
       JPopupMenu result = new JPopupMenu();
       result.add(new AbstractActionWithEmptyIcon("Select In Editor") {
         public void actionPerformed(ActionEvent e) {

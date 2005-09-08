@@ -21,7 +21,7 @@ class ProjectTreeNode extends MPSTreeNode {
     super(operationContext);
   }
 
-  protected JPopupMenu getPopupMenu() {
+  public JPopupMenu getPopupMenu() {
     JPopupMenu result = new JPopupMenu();
     ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_PROJECT_ACTIONS).add(result, new ActionContext(getOperationContext()));
     return result;

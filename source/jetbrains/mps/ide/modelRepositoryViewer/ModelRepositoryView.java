@@ -59,7 +59,7 @@ public class ModelRepositoryView extends DefaultTool {
           return Icons.PROJECT_MODELS_ICON;
         }
 
-        protected JPopupMenu getPopupMenu() {
+        public JPopupMenu getPopupMenu() {
           JPopupMenu result = new JPopupMenu();
 
           result.add(new AbstractActionWithEmptyIcon("Refresh") {

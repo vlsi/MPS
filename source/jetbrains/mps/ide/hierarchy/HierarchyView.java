@@ -171,7 +171,7 @@ public class HierarchyView extends DefaultTool {
       return jetbrains.mps.ide.projectPane.Icons.HIERARCHY_ICON;
     }
 
-    protected JPopupMenu getPopupMenu() {
+    public JPopupMenu getPopupMenu() {
       return ShowHierarchyForFoundConceptPopupMenu();
     }
   }
@@ -200,7 +200,7 @@ public class HierarchyView extends DefaultTool {
       return getConceptDeclaration().getName();
     }
 
-    protected JPopupMenu getPopupMenu() {
+    public JPopupMenu getPopupMenu() {
       JPopupMenu result = new JPopupMenu();
       result.add(new AbstractActionWithEmptyIcon("Show Hierarchy For This Concept") {
         public void actionPerformed(ActionEvent e) {

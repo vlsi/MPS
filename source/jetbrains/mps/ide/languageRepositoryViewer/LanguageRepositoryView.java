@@ -55,7 +55,7 @@ public class LanguageRepositoryView extends DefaultTool {
   private class MyTree extends MPSTree {
     protected MPSTreeNode rebuild() {
       TextTreeNode root = new TextTreeNode("Loaded Languages") {
-        protected JPopupMenu getPopupMenu() {
+        public JPopupMenu getPopupMenu() {
           JPopupMenu result = new JPopupMenu();
 
           result.add(new AbstractActionWithEmptyIcon("Refresh") {

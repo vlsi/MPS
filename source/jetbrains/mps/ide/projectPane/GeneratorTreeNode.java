@@ -36,7 +36,7 @@ class GeneratorTreeNode extends TextTreeNode {
     return Icons.GENERATORS_ICON;
   }
 
-  protected JPopupMenu getPopupMenu() {
+  public JPopupMenu getPopupMenu() {
     JPopupMenu result = new JPopupMenu();
     ActionContext context = new ActionContext(myOperationContext);
     context.put(Generator.class, myGenerator);

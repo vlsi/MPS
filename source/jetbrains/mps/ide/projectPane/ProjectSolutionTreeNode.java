@@ -42,7 +42,7 @@ class ProjectSolutionTreeNode extends MPSTreeNode {
     return mySolution.getDescriptorFile().getAbsolutePath();
   }
 
-  protected JPopupMenu getPopupMenu() {
+  public JPopupMenu getPopupMenu() {
     JPopupMenu result = new JPopupMenu();
     Solution solution = getSolution();
     ActionContext context = new ActionContext(getOperationContext());

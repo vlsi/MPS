@@ -43,7 +43,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     return true;
   }
 
-  protected JPopupMenu getPopupMenu() {
+  public JPopupMenu getPopupMenu() {
     return null;
   }
 

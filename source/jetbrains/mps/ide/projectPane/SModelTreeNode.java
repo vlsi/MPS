@@ -39,7 +39,7 @@ class SModelTreeNode extends MPSTreeNodeEx {
     return IconManager.getIconFor(myModelDescriptor);
   }
 
-  protected JPopupMenu getPopupMenu() {
+  public JPopupMenu getPopupMenu() {
     JPopupMenu result = new JPopupMenu();
     SModelDescriptor model = getModelDescriptor();
     ActionContext context = new ActionContext(getOperationContext());

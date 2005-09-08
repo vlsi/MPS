@@ -37,7 +37,7 @@ class SNodeTreeNode extends MPSTreeNodeEx {
     setUserObject(node);
   }
 
-  protected JPopupMenu getPopupMenu() {
+  public JPopupMenu getPopupMenu() {
     JPopupMenu result = new JPopupMenu();
     List<SNode> selection = getOperationContext().getComponent(ProjectPane.class).getNormalizedSelectedNodes();
     ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_NODE_ACTIONS).add(result, new ActionContext(getOperationContext(), getSNode(), selection));

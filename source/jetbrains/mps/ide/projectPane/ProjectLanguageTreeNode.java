@@ -45,7 +45,7 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
     return myLanguage.getNamespace();
   }
 
-  protected JPopupMenu getPopupMenu() {
+  public JPopupMenu getPopupMenu() {
     JPopupMenu result = new JPopupMenu();
     final Language language = getLanguage();
     ActionContext context = new ActionContext(getOperationContext());
