@@ -6,7 +6,7 @@
   <actions>
     <model modelUID="agreementLanguage.actions" />
   </actions>
-  <editor>
+  <editor>                                                                                                       
     <model modelUID="agreementLanguage.editor" />
   </editor>
   <modelRoot rootPath="${language_descriptor}." namespacePrefix="agreementLanguage" />
