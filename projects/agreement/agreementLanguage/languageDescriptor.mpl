@@ -6,13 +6,12 @@
   <actions>
     <model modelUID="agreementLanguage.actions" />
   </actions>
-  <editor>                                                                                                       
+  <editor>
     <model modelUID="agreementLanguage.editor" />
   </editor>
-  <modelRoot rootPath="${language_descriptor}." namespacePrefix="agreementLanguage" />
+  <modelRoot rootPath="${language_descriptor}\language" namespacePrefix="agreementLanguage" />
   <modelRoot rootPath="${mps_home}\languages\formulaLanguage\language" namespacePrefix="jetbrains.mps.formulaLanguage" />
   <library>
-    <model modelUID="agreementLanguage.library" />
   </library>
   <generators>
     <generator name="java" generatorClass="jetbrains.mps.baseLanguage.generator.target.DefaultTemplateGenerator" templatesModel="agreementLanguage.generator.baseLanguage@templates" targetLanguage="jetbrains.mps.baseLanguage">
