@@ -6,7 +6,7 @@
   <editor>
     <model modelUID="readerConfigLanguage.editor" />
   </editor>
-  <modelRoot rootPath="${language_descriptor}." namespacePrefix="readerConfigLanguage" />
+  <modelRoot rootPath="${language_descriptor}/language" namespacePrefix="readerConfigLanguage" />
   <library />
   <generators>
     <generator name="java" templatesModel="readerConfigLanguage.generator.baseLanguage@templates" targetLanguage="jetbrains.mps.baseLanguage">
@@ -17,9 +17,8 @@
       <languages rootPath="${mps_home}\languages\baseLanguage" />
     </generator>
     <generator name="xml" templatesModel="readerConfigLanguage.generator.xml@templates" targetLanguage="jetbrains.mps.xml">
-      <modelRoot rootPath="${language_descriptor}." namespacePrefix="readerConfigLanguage" />
-      <languages rootPath="${mps_home}\languages\transformation\TLBase" />
-      <languages rootPath="${mps_home}\languages\xml" />
+      <modelRoot rootPath="${language_descriptor}\language." namespacePrefix="readerConfigLanguage" />
+      <languages rootPath="${mps_home}\languages" />
     </generator>
   </generators>
 </language>
