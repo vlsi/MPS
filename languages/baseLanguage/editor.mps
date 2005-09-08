@@ -6356,6 +6356,12 @@
         <property name="name" value="typeVariables" />
         <property name="queryId" value="TypeVariables" />
       </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1126181226635">
+        <property name="handlerId" value="CreateArrayType" />
+        <property name="name" value="arrayTypes" />
+        <property name="queryId" value="ArrayTypes" />
+        <property name="textProviderId" value="ArrayTypesText" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1077124145703">
