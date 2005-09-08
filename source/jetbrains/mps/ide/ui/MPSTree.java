@@ -144,7 +144,9 @@ public abstract class MPSTree extends JTree {
       iconWidth += label.getIconTextGap() + label.getIcon().getIconWidth();
     }
 
-    return new Point(rect.getLocation().x + iconWidth, rect.getLocation().y);
+    Insets insets = label.getInsets();
+
+    return new Point(rect.getLocation().x + iconWidth + insets.left - 1, rect.getLocation().y + insets.top + 1);
   }
 
   private static class Pair {
