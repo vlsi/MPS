@@ -121,7 +121,11 @@ public abstract class MPSTree extends JTree {
     TreePath path = getPathForLocation(event.getX(), event.getY());
     if (path == null) return null;
 
+    int row = getRowForPath(path);
+    if (getVisibleRect().contains(getRowBounds(row))) return null;
+
     JLabel label = getLabelFor(path);
+
     return label.getText();
   }
 
@@ -136,6 +140,9 @@ public abstract class MPSTree extends JTree {
     TreePath path = getPathForLocation(event.getX(), event.getY());
     if (path == null) return null;
     int row = getRowForPath(path);
+
+    if (getVisibleRect().contains(getRowBounds(row))) return null;
+    
     JLabel label = getLabelFor(path);
     Rectangle rect = getRowBounds(row);
 
