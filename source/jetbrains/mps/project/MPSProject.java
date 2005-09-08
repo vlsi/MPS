@@ -130,7 +130,7 @@ public class MPSProject implements ModelOwner, LanguageOwner {
     setProjectDescriptor(projectDescriptor);
 
     myEventTranslator.projectChanged();
-    
+
   }
 
   public void addSolution(File solutionDescriptionFile) {
