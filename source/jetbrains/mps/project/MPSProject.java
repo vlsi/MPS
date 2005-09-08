@@ -128,6 +128,9 @@ public class MPSProject implements ModelOwner, LanguageOwner {
     projectDescriptor.addProjectLanguage(languagePath);
 
     setProjectDescriptor(projectDescriptor);
+
+    myEventTranslator.projectChanged();
+    
   }
 
   public void addSolution(File solutionDescriptionFile) {
@@ -139,6 +142,8 @@ public class MPSProject implements ModelOwner, LanguageOwner {
     projectDescriptor.addProjectSolution(solutionPath);
 
     setProjectDescriptor(projectDescriptor);
+
+    myEventTranslator.projectChanged();
   }
 
   public ModelOwner getParentModelOwner() {
