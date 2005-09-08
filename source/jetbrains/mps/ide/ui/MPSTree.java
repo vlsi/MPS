@@ -36,6 +36,9 @@ public abstract class MPSTree extends JTree {
   public static final String TREE_PATH_SEPARATOR = "/";
 
   protected MPSTree() {
+    ToolTipManager.sharedInstance().registerComponent(this);
+
+
     setCellRenderer(new DefaultTreeCellRenderer() {
       public Component getTreeCellRendererComponent(JTree tree, Object value, boolean sel, boolean expanded, boolean leaf, int row, boolean hasFocus) {
         super.getTreeCellRendererComponent(tree, value, sel, expanded, leaf, row, hasFocus);
@@ -111,6 +114,37 @@ public abstract class MPSTree extends JTree {
         }
       }
     });
+  }
+
+
+  public String getToolTipText(MouseEvent event) {
+    TreePath path = getPathForLocation(event.getX(), event.getY());
+    if (path == null) return null;
+
+    JLabel label = getLabelFor(path);
+    return label.getText();
+  }
+
+  private JLabel getLabelFor(TreePath path) {
+    Object object = path.getLastPathComponent();
+    int row = getRowForPath(path);
+    JLabel label = ((JLabel) getCellRenderer().getTreeCellRendererComponent(this, object, false, false, false, row, false));
+    return label;
+  }
+
+  public Point getToolTipLocation(MouseEvent event) {
+    TreePath path = getPathForLocation(event.getX(), event.getY());
+    if (path == null) return null;
+    int row = getRowForPath(path);
+    JLabel label = getLabelFor(path);
+    Rectangle rect = getRowBounds(row);
+
+    int iconWidth = 0;
+    if (label.getIcon() != null) {
+      iconWidth += label.getIconTextGap() + label.getIcon().getIconWidth();
+    }
+
+    return new Point(rect.getLocation().x + iconWidth, rect.getLocation().y);
   }
 
   private static class Pair {
@@ -200,12 +234,6 @@ public abstract class MPSTree extends JTree {
         setModel(model);
       }
     });
-  }
-
-  public void paint(Graphics g) {
-    Graphics2D g2d = (Graphics2D) g;
-    g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
-    super.paint(g);
   }
 
   private String pathToString(TreePath path) {

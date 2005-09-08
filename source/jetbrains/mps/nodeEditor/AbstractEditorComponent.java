@@ -258,33 +258,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return toolTip;
   }
 
-  public String getToolTipText(MouseEvent event) {
-    EditorCell current = getRootCell().findCell(event.getX(), event.getY());
-    if (current != null) {
-      StringBuilder result = new StringBuilder();
-
-      CellProperties cellProperties = new CellProperties(current);
-
-      result.append("Cell: "); result.append(cellProperties.getCellKind() + "\n");
-      result.append("ID: "); result.append(cellProperties.getCellID() + "\n");
-      result.append("Text: "); result.append(cellProperties.getCellText() + "\n");
-      result.append("Width: ");result.append(cellProperties.getCellWidth() + "\n");
-      result.append("Height: ");result.append(cellProperties.getCellHeight() + "\n");
-      result.append("Effective width: ");result.append(cellProperties.getCellEffectiveWidth() + "\n");
-      result.append("Number in collection: ");result.append(cellProperties.getCellNumber() + "\n");
-      result.append("SNode: ");result.append(cellProperties.getCellSNode() + "\n");
-      result.append("Is Root Cell: ");result.append(cellProperties.getRootCell());
-/*
-      result.append("Cell : \n");
-      result.append("\n");
-      result.append("Node Model : " + current.getSNodeProxy().getModel() + "  \n");
-      result.append("Node ID  : " + current.getSNodeProxy().getId() + "\n");*/
-
-//      return result.toString();
-    }
-    return null;
-  }
-
   public IOperationContext getOperationContext() {
     return myOperationContext;
   }
