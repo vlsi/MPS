@@ -1,16 +1,15 @@
 package jetbrains.mps.ide.modelRepositoryViewer;
 
+import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.projectLanguage.ProjectModel;
+import jetbrains.mps.smodel.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -122,9 +121,6 @@ public class ModelRepositoryView extends DefaultTool {
         }
         if (myOwner instanceof Solution) {
           return Icons.SOLUTION_ICON;
-        }
-        if (myOwner instanceof ProjectModel) {
-          return Icons.MODEL_ICON;
         }
         return Icons.DEFAULT_ICON;
       }

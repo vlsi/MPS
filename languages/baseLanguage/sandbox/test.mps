@@ -53,8 +53,21 @@
     <link role="extendedClass" targetNodeId="1115766267843" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1115766338748">
       <property name="name" value="aClassMethod" />
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1115766338750" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1115766338750">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1126142422028">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1126142422092">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1126142422093">
+              <link role="classifier" targetNodeId="1115766310400" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1115766340908" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1126142365135">
+        <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1126142365229">
+          <link role="classifier" targetNodeId="1115766310400" />
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1115766355096">

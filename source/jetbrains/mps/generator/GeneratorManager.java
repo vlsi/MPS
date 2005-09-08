@@ -18,18 +18,15 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.MPSPlugin;
-import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.ExternalizableComponent;
 import jetbrains.mps.projectLanguage.GeneratorConfiguration;
 import jetbrains.mps.projectLanguage.GeneratorConfigurationCommand;
-import jetbrains.mps.projectLanguage.ProjectModel;
 import jetbrains.mps.projectLanguage.TargetOfGenerator;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textPresentation.TextPresentationManager;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.CommandRunnable;
 import jetbrains.mps.xml.Document;
 import org.jdom.Element;
 
@@ -72,22 +69,19 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
 
 
   public void generate(final Language language, IOperationContext operationContext) {
-    final SModel model = ApplicationComponents.getInstance().getComponent(ProjectModel.class).getSModel();
-
     //todo move to language
-    GeneratorConfiguration configuration = new CommandRunnable<GeneratorConfiguration>(model) {
-      protected GeneratorConfiguration onRun() {
-        GeneratorConfiguration conf = GeneratorConfiguration.newInstance(model);
-
+    final SModelDescriptor tmpModelDescriptor = operationContext.createTransientProjectModel();
+    final SModel model = tmpModelDescriptor.getSModel();
+    final GeneratorConfiguration conf = new GeneratorConfiguration(model);
+    tmpModelDescriptor.getSModel().runLoadingAction(new Runnable() {
+      public void run() {
         conf.setName("Generate " + language.getNamespace() + " language.");
         conf.setOutputPath(language.getSourceDir().getAbsolutePath());
         conf.addCommand(createCommand(model, "jetbrains.mps.bootstrap.structureLanguage", "jetbrains.mps.baseLanguage"));
         conf.addCommand(createCommand(model, "jetbrains.mps.bootstrap.editorLanguage", "jetbrains.mps.baseLanguage"));
         conf.addCommand(createCommand(model, "jetbrains.mps.typesystem.typesystemLanguage", "jetbrains.mps.baseLanguage"));
-
-        return conf;
       }
-    }.run();
+    });
 
    List<SModelDescriptor> models = new LinkedList<SModelDescriptor>();
     models.add(language.getStructureModelDescriptor());
@@ -98,9 +92,10 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
       models.add(language.getTypesystemModelDescriptor());
     }
 
-    generate(configuration, models, operationContext, false);
+    generate(conf, models, operationContext, false);
 
     language.updateLastGenerationTime();
+    operationContext.unRegisterModelDescriptor(tmpModelDescriptor);
   }
 
   private GeneratorConfigurationCommand createCommand(final SModel model, final String fromLanguage, final String toLanguage) {
