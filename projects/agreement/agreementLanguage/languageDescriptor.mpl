@@ -10,7 +10,7 @@
     <model modelUID="agreementLanguage.editor" />
   </editor>
   <modelRoot rootPath="${language_descriptor}." namespacePrefix="agreementLanguage" />
-  <modelRoot rootPath="${mps_home}\languages\formulaLanguage" namespacePrefix="jetbrains.mps.formulaLanguage" />
+  <modelRoot rootPath="${mps_home}\languages\formulaLanguage\language" namespacePrefix="jetbrains.mps.formulaLanguage" />
   <library>
     <model modelUID="agreementLanguage.library" />
   </library>
@@ -19,7 +19,6 @@
       <modelRoot rootPath="${mps_home}\models" namespacePrefix="" />
       <modelRoot rootPath="${language_descriptor}\generator" namespacePrefix="agreementLanguage.generator" />
       <modelRoot rootPath="${mps_home}\languages\formulaLanguage\models" namespacePrefix="jetbrains.mps.formulaLanguage" />
-      <modelRoot rootPath="${mps_home}\languages\formulaLanguage\generator" namespacePrefix="jetbrains.mps.formulaLanguage.generator" />
       <modelRoot rootPath="${mps_home}\projects\agreement\framework\models\import" namespacePrefix="" />
       <modelRoot rootPath="${language_descriptor}\models\import" namespacePrefix="" />
     </generator>
