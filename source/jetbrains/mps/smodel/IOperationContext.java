@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.projectLanguage.ModelRoot;
+import jetbrains.mps.project.MPSProject;
 
 import java.util.List;
 
@@ -12,6 +13,11 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public interface IOperationContext {
+
+  /**
+   * todo: move to module context 
+   */
+  MPSProject getProject();
 
   SModelDescriptor getModelDescriptor(SModelUID modelUID);
 

@@ -82,10 +82,10 @@ public class ProjectPane extends JComponent {
     myTree.addKeyListener(new KeyAdapter() {
       public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_F4 && e.getModifiers() == 0) {
-          openEditor(myIDE.getGlobalOperationContext());
+          openEditor();
         }
         if (e.getKeyCode() == KeyEvent.VK_ENTER && e.getModifiers() == 0) {
-          openEditor(myIDE.getGlobalOperationContext());
+          openEditor();
         }
       }
     });
@@ -94,13 +94,12 @@ public class ProjectPane extends JComponent {
   }
 
 
-  public AbstractEditorComponent openEditor(IOperationContext operationContext) {
+  public AbstractEditorComponent openEditor() {
     TreePath selectionPath = myTree.getSelectionPath();
     if (selectionPath == null) return null;
     if (!(selectionPath.getLastPathComponent() instanceof SNodeTreeNode)) return null;
     SNodeTreeNode selectedTreeNode = (SNodeTreeNode) selectionPath.getLastPathComponent();
-    SNode semanticNode = selectedTreeNode.getSNode();
-    return myIDE.openNode(semanticNode, operationContext);
+    return myIDE.openNode(selectedTreeNode.getSNode(), selectedTreeNode.getOperationContext());
   }
 
   public void setProject(MPSProject project) {
@@ -378,11 +377,10 @@ public class ProjectPane extends JComponent {
     }
 
     protected MPSTreeNode rebuild() {
-      IOperationContext operationContext = myIDE.getGlobalOperationContext();
       if (myProject == null) {
         return new TextTreeNode("Empty");
       }
-      ProjectTreeNode root = new ProjectTreeNode(operationContext);
+      ProjectTreeNode root = new ProjectTreeNode();
 
       List<Solution> solutions = myProject.getSolutions();
       for (Solution solution : solutions) {

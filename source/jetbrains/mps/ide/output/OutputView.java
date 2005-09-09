@@ -2,14 +2,13 @@ package jetbrains.mps.ide.output;
 
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
-import jetbrains.mps.ide.toolsPane.Tool;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.preferences.ComponentWithPreferences;
 import jetbrains.mps.ide.preferences.PreferencesPage;
 import jetbrains.mps.project.ExternalizableComponent;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.util.IntegerValueDocumentFilter;
-import jetbrains.mps.smodel.IOperationContext;
 
 import javax.swing.*;
 import javax.swing.text.AbstractDocument;
@@ -98,14 +97,14 @@ public class OutputView extends DefaultTool implements ExternalizableComponent, 
     myComponent.add(new JScrollPane(myTextArea), BorderLayout.CENTER);
   }
 
-  public void read(Element element, IOperationContext operationContext) {
+  public void read(Element element, MPSProject project) {
     if (element.getAttribute(FONT_SIZE) != null) {
       myFontSize = Integer.valueOf(element.getAttributeValue(FONT_SIZE));
       updateComponent();
     }
   }
 
-  public void write(Element element) {
+  public void write(Element element, MPSProject project) {
     element.setAttribute(FONT_SIZE, "" + myFontSize);
   }
 

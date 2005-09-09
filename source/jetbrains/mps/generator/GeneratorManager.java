@@ -19,6 +19,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.ExternalizableComponent;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.projectLanguage.GeneratorConfiguration;
 import jetbrains.mps.projectLanguage.GeneratorConfigurationCommand;
 import jetbrains.mps.projectLanguage.TargetOfGenerator;
@@ -53,7 +54,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
   public GeneratorManager() {
   }
 
-  public void read(Element element, IOperationContext operationContext) {
+  public void read(Element element, MPSProject project) {
     if (element.getAttribute(COMPILE_ON_GENERATION) != null) {
       myCompileOnGeneration = Boolean.parseBoolean(element.getAttributeValue(COMPILE_ON_GENERATION));
     }
@@ -62,7 +63,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     }
   }
 
-  public void write(Element element) {
+  public void write(Element element, MPSProject project) {
     element.setAttribute(COMPILE_ON_GENERATION, "" + myCompileOnGeneration);
     element.setAttribute(SAVE_TRANSIENT_MODELS, "" + mySaveTransientModels);
   }
@@ -196,7 +197,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
             Set<SModelDescriptor> modelsWithLanguage = findModelsWithLanguage(modelDescriptors, cmd.getSourceLanguage().getName());
 
             Generator generator = findGenerator(cmd.getSourceLanguage().getName(), cmd.getTargetLanguage().getName(), invocationContext);
-            GeneratorOperationContext generatorContext = GeneratorOperationContext.createContext(generator, invocationContext);
+            GeneratorOperationContext generatorContext = GeneratorOperationContext.createContext(generator, invocationContext.getProject());
             String generatorClass = findGeneratorClass(generatorContext);
             if (generatorClass == null) generatorClass = DefaultTemplateGenerator.class.getName();
             SModelDescriptor templatesModel = loadTemplatesModel(generatorContext);

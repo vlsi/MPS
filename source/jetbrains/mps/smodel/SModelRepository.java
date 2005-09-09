@@ -159,7 +159,7 @@ public class SModelRepository extends SModelAdapter {
     return myUIDToModelDescriptorMap.get(model.getUID());
   }
 
-  /*package*/ SModelDescriptor getModelDescriptor(SModelUID modelUID) {
+  public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
     SModelDescriptor descriptor = myUIDToModelDescriptorMap.get(modelUID);
     if (descriptor != null) {
       return descriptor;

@@ -85,12 +85,12 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     if (mySModel == null) {
       mySModel = loadModel();
 
+      // todo: remove
       CommandProcessor.instance().executeCommand(new Runnable() {
         public void run() {
           SModelRepository.getInstance().repositoryChanged();
         }
       });
-
 
       LOG.assertLog(mySModel != null, "Couldn't load model \"" + getModelUID() + "\"");
       if (myModelListeners != null) {
@@ -104,14 +104,17 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
       }
       // todo: remove listener?
       if (myModelListenersForImportedModels != null) {
-        Iterator<SModelDescriptor> iterator = mySModel.importedModels(IdeMain.instance().getGlobalOperationContext());
-        while (iterator.hasNext()) {
-          SModelDescriptor imported = iterator.next();
-          for (SModelListener listener : myModelListenersForImportedModels) {
-            imported.addSModelListener(listener);
-            imported.addSModelListenerToImportedModels(listener);
-          }
-        }
+//
+//    temporary break editors update
+//
+//        Iterator<SModelDescriptor> iterator = mySModel.importedModels(IdeMain.instance().getGlobalOperationContext());
+//        while (iterator.hasNext()) {
+//          SModelDescriptor imported = iterator.next();
+//          for (SModelListener listener : myModelListenersForImportedModels) {
+//            imported.addSModelListener(listener);
+//            imported.addSModelListenerToImportedModels(listener);
+//          }
+//        }
         myModelListenersForImportedModels.clear();
         myModelListenersForImportedModels = null;
       }
@@ -129,14 +132,17 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
       // todo: remove listener?
       if (myModelCommandListenersForImportedModels != null) {
-        Iterator<SModelDescriptor> iterator = mySModel.importedModels(IdeMain.instance().getGlobalOperationContext());
-        while (iterator.hasNext()) {
-          SModelDescriptor imported = iterator.next();
-          for (SModelCommandListener listener : myModelCommandListenersForImportedModels) {
-            imported.addSModelCommandListener(listener);
-            imported.addSModelCommandListenerToImportedModels(listener);
-          }
-        }
+//
+//    temporary break editors update
+//
+//        Iterator<SModelDescriptor> iterator = mySModel.importedModels(IdeMain.instance().getGlobalOperationContext());
+//        while (iterator.hasNext()) {
+//          SModelDescriptor imported = iterator.next();
+//          for (SModelCommandListener listener : myModelCommandListenersForImportedModels) {
+//            imported.addSModelCommandListener(listener);
+//            imported.addSModelCommandListenerToImportedModels(listener);
+//          }
+//        }
         myModelCommandListenersForImportedModels.clear();
         myModelCommandListenersForImportedModels = null;
       }
@@ -171,29 +177,35 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   }
 
   public void addSModelListenerToImportedModels(SModelListener listener) {
-    if (mySModel != null) {
-      Iterator<SModelDescriptor> iterator = mySModel.importedModels(IdeMain.instance().getGlobalOperationContext());
-      while (iterator.hasNext()) {
-        SModelDescriptor imported = iterator.next();
-        imported.addSModelListener(listener);
-      }
-    } else {
-      if (myModelListenersForImportedModels == null) myModelListenersForImportedModels = new ArrayList<SModelListener>();
-      myModelListenersForImportedModels.add(listener);
-    }
+//
+//    temporary break editors update
+//
+//    if (mySModel != null) {
+//      Iterator<SModelDescriptor> iterator = mySModel.importedModels(IdeMain.instance().getGlobalOperationContext());
+//      while (iterator.hasNext()) {
+//        SModelDescriptor imported = iterator.next();
+//        imported.addSModelListener(listener);
+//      }
+//    } else {
+//      if (myModelListenersForImportedModels == null) myModelListenersForImportedModels = new ArrayList<SModelListener>();
+//      myModelListenersForImportedModels.add(listener);
+//    }
   }
 
   public void addSModelCommandListenerToImportedModels(SModelCommandListener listener) {
-    if (mySModel != null) {
-      Iterator<SModelDescriptor> iterator = mySModel.importedModels(IdeMain.instance().getGlobalOperationContext());
-      while (iterator.hasNext()) {
-        SModelDescriptor imported = iterator.next();
-        imported.addSModelCommandListener(listener);
-      }
-    } else {
-      if (myModelCommandListenersForImportedModels == null) myModelCommandListenersForImportedModels = new ArrayList<SModelCommandListener>();
-      myModelCommandListenersForImportedModels.add(listener);
-    }
+//
+//    temporary break editors update
+//
+//    if (mySModel != null) {
+//      Iterator<SModelDescriptor> iterator = mySModel.importedModels(IdeMain.instance().getGlobalOperationContext());
+//      while (iterator.hasNext()) {
+//        SModelDescriptor imported = iterator.next();
+//        imported.addSModelCommandListener(listener);
+//      }
+//    } else {
+//      if (myModelCommandListenersForImportedModels == null) myModelCommandListenersForImportedModels = new ArrayList<SModelCommandListener>();
+//      myModelCommandListenersForImportedModels.add(listener);
+//    }
   }
 
   public void addSModelCommandListener(SModelCommandListener listener) {

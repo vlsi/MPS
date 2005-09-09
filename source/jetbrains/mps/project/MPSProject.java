@@ -216,7 +216,7 @@ public class MPSProject implements ModelOwner, LanguageOwner {
             String className = component.getAttributeValue(CLASS);
             Class cls = Class.forName(className);
             if (getComponent(cls) != null && getComponent(cls) instanceof ExternalizableComponent) {
-              ((ExternalizableComponent) getComponent(cls)).read(component, new GlobalOperationContext(this));
+              ((ExternalizableComponent) getComponent(cls)).read(component, this);
             }
           } catch (ClassNotFoundException e) {
           }
@@ -244,7 +244,7 @@ public class MPSProject implements ModelOwner, LanguageOwner {
         if (component instanceof ExternalizableComponent) {
           Element componentElement = new Element(COMPONENT);
           componentElement.setAttribute(CLASS, cls.getName());
-          ((ExternalizableComponent) component).write(componentElement);
+          ((ExternalizableComponent) component).write(componentElement, this);
           root.addContent(componentElement);
         }
       }

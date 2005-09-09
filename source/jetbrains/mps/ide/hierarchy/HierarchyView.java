@@ -1,29 +1,29 @@
 package jetbrains.mps.ide.hierarchy;
 
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.icons.Icons;
+import jetbrains.mps.findUsages.FindUsagesManager;
+import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
+import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.GoToNodeWindow;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.navigation.EditorNavigationRunnable;
+import jetbrains.mps.ide.navigation.NavigationActionProcessor;
+import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.toolsPane.Tool;
-import jetbrains.mps.ide.toolsPane.DefaultTool;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.EditorsPane;
-import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
-import jetbrains.mps.ide.GoToNodeWindow;
-import jetbrains.mps.ide.navigation.NavigationActionProcessor;
-import jetbrains.mps.ide.navigation.EditorNavigationRunnable;
+import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
-import jetbrains.mps.findUsages.FindUsagesManager;
+import jetbrains.mps.smodel.*;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
-import java.util.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -48,13 +48,13 @@ public class HierarchyView extends DefaultTool {
     myIde = ide;
     myHierarchyTree.setRootVisible(true);
     myComponent.add(new JScrollPane(myHierarchyTree), BorderLayout.CENTER);
-    showConceptInHierarchy(null);
+    showConceptInHierarchy(null, null);
   }
 
 
 
-  public void showConceptInHierarchy(ConceptDeclaration node) {
-    myHierarchyTree.setOperationContext(myIde.getGlobalOperationContext());
+  public void showConceptInHierarchy(ConceptDeclaration node, IOperationContext context) {
+    myHierarchyTree.setOperationContext(context);
     myHierarchyTree.myConceptDeclaration = node;
     myHierarchyTree.rebuildTree();
     if (myTreeNode != null) myHierarchyTree.selectNode(myTreeNode);
@@ -78,7 +78,7 @@ public class HierarchyView extends DefaultTool {
 
         new GoToNodeWindow(myIde, nodes.toArray(new SNode[0])) {
           protected void selectNode(final SNode node, final IOperationContext operationContext) {
-            showConceptInHierarchy((ConceptDeclaration) node);
+            showConceptInHierarchy((ConceptDeclaration) node, operationContext);
             /*   ConceptDeclaration conceptDeclaration = SModelUtil.findConceptDeclaration(NameUtil.nodeConceptFQName(node), operationContext);
             showConceptInHierarchy(conceptDeclaration);*/
           }
@@ -205,7 +205,7 @@ public class HierarchyView extends DefaultTool {
       result.add(new AbstractActionWithEmptyIcon("Show Hierarchy For This Concept") {
         public void actionPerformed(ActionEvent e) {
           final SNode node = myNodeProxy.getNode();
-          showConceptInHierarchy((ConceptDeclaration) node);
+          showConceptInHierarchy((ConceptDeclaration) node, getOperationContext());
         }
       }).setBorder(null);
       return result;

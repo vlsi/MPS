@@ -38,11 +38,12 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
   }
 
 
-  public void inspectNode(SNode semanticNode) {
-    if (getNode() == semanticNode) {
+  public void inspectNode(SNode node, IOperationContext context) {
+    if (getNode() == node) {
       return;
     }
-    myNodeProxy = new SNodeProxy(semanticNode, getOperationContext());
+    setOperationContext(context);
+    myNodeProxy = new SNodeProxy(node, getOperationContext());
     reinitEditor();
     rebuildEditorContent();
     repaint();

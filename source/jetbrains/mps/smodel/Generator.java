@@ -69,4 +69,8 @@ public class Generator implements ModelLocator, ModelOwner, LanguageOwner {
     sb.append(" in: ").append(mySourceLanguage.getNamespace());
     return sb.toString();
   }
+
+  public GeneratorDescriptor getGeneratorDescriptor() {
+    return myGeneratorDescriptor;
+  }
 }

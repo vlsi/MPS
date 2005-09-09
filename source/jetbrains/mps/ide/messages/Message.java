@@ -37,4 +37,8 @@ public class Message {
   public String getText() {
     return myText;
   }
+
+  public IOperationContext getOperationContext() {
+    return myNodeProxy.getOperationContext();
+  }
 }
