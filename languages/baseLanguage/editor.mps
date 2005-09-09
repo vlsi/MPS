@@ -9468,6 +9468,10 @@
       <property name="keycode" value="[" />
       <property name="actionProviderId" value="LocalVariable_ConvertToArray" />
     </node>
+    <node role="entry" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1126260002190">
+      <property name="keycode" value="]" />
+      <property name="actionProviderId" value="LocalVariable_SmartConvertToArray" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1107347527745">
     <property name="name" value="_LeftParen_KeyMap" />
@@ -9925,6 +9929,25 @@
       <property name="modifiers" value="none" />
       <property name="keycode" value="VK_COMMA" />
       <property name="actionProviderId" value="ParameterDeclaration_Comma" />
+    </node>
+    <node role="entry" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1126261906063">
+      <property name="keycode" value="[" />
+      <property name="actionProviderId" value="LocalVariable_ConvertToArray" />
+    </node>
+    <node role="entry" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1126261906064">
+      <property name="keycode" value="]" />
+      <property name="actionProviderId" value="LocalVariable_SmartConvertToArray" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1126261789236">
+    <property name="name" value="_Variable_KeyMap" />
+    <node role="entry" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1126261818977">
+      <property name="keycode" value="[" />
+      <property name="actionProviderId" value="LocalVariable_ConvertToArray" />
+    </node>
+    <node role="entry" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1126261818978">
+      <property name="keycode" value="]" />
+      <property name="actionProviderId" value="LocalVariable_SmartConvertToArray" />
     </node>
   </node>
 </model>
