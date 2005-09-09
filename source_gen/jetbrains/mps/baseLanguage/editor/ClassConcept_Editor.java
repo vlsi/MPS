@@ -307,6 +307,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
+    editorCell.addKeyMap(new _GenericDeclaration_FirstTypeVariable_KeyMap());
     editorCell.putUserObject(EditorCell.CELL_ID, "1074794745222");
     return editorCell;
   }

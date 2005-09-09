@@ -4168,6 +4168,7 @@
           <property name="drawBorder" value="false" />
           <property name="selectable" value="true" />
           <link role="propertyDeclaration" targetNodeId="9.1078489098626" />
+          <link role="keyMap" targetNodeId="1126264898688" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1109281144581">
           <property name="drawBorder" value="false" />
@@ -9767,6 +9768,7 @@
       <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1109280205087">
         <property name="drawBorder" value="false" />
         <property name="vertical" value="false" />
+        <link role="keyMap" targetNodeId="1126263716184" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1109280296588">
           <property name="text" value="&lt;" />
           <property name="drawBorder" value="false" />
@@ -9777,6 +9779,7 @@
           <property name="drawBorder" value="false" />
           <property name="vertical" value="false" />
           <link role="linkDeclaration" targetNodeId="8.1109279881614" />
+          <link role="keyMap" targetNodeId="1126264582913" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1109280296590">
           <property name="text" value="&gt;" />
@@ -9911,6 +9914,10 @@
       <property name="keycode" value="[" />
       <property name="actionProviderId" value="TransformToArrayType" />
     </node>
+    <node role="entry" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1126262780722">
+      <property name="keycode" value="]" />
+      <property name="actionProviderId" value="Consume" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1119269292522">
     <property name="name" value="_ArrayTypeBracketsActions" />
@@ -9948,6 +9955,40 @@
     <node role="entry" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1126261818978">
       <property name="keycode" value="]" />
       <property name="actionProviderId" value="LocalVariable_SmartConvertToArray" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1126263716184">
+    <property name="name" value="_GenericDeclaration_Delete_KeyMap" />
+    <node role="entry" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1126263880592">
+      <property name="keycode" value="VK_DELETE" />
+      <property name="actionProviderId" value="KeyMap_GenericDeclaration_Delete" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1126264582913">
+    <property name="name" value="_GenericDeclaration_TypeVariables_KeyMap" />
+    <node role="entry" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1126264650527">
+      <property name="keycode" value="VK_COMMA" />
+      <property name="actionProviderId" value="GenericDeclaration_TypeVariables_InsertTypeVariable" />
+    </node>
+    <node role="entry" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1126269459178">
+      <property name="modifiers" value="none" />
+      <property name="keycode" value="VK_SPACE" />
+      <property name="actionProviderId" value="GenericDeclaration_TypeVariables_InsertTypeVariable" />
+    </node>
+    <node role="entry" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1126265416123">
+      <property name="keycode" value="&gt;" />
+      <property name="actionProviderId" value="Consume" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1126264898688">
+    <property name="name" value="_GenericDeclaration_FirstTypeVariable_KeyMap" />
+    <node role="entry" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1126264978832">
+      <property name="keycode" value="&lt;" />
+      <property name="actionProviderId" value="GenericDeclaration_FirstTypeVariable" />
+    </node>
+    <node role="entry" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1126264987833">
+      <property name="keycode" value="&gt;" />
+      <property name="actionProviderId" value="Consume" />
     </node>
   </node>
 </model>

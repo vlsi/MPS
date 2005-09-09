@@ -49,6 +49,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.addKeyMap(new _GenericDeclaration_Delete_KeyMap());
     editorCell.addEditorCell(this.createConstantCell(context, node, "<"));
     editorCell.addEditorCell(this.createTypeVariableDeclarationList(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ">"));
@@ -99,6 +100,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
+    editorCell.addKeyMap(new _GenericDeclaration_TypeVariables_KeyMap());
     return editorCell;
   }
 }
