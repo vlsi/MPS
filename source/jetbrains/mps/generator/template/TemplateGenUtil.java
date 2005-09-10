@@ -27,8 +27,8 @@ import java.util.List;
 public class TemplateGenUtil {
   private static final Logger LOG = Logger.getLogger(TemplateGenUtil.class);
 
-  public static SNode instantiateNodeForTemplate(SNode templateNode, SModel targetModel, IOperationContext operationContext) {
-    ConceptDeclaration conceptDeclaration = SModelUtil.getConceptDeclaration(templateNode, operationContext);
+  public static SNode instantiateNodeForTemplate(SNode templateNode, SModel targetModel, IScope scope) {
+    ConceptDeclaration conceptDeclaration = SModelUtil.getConceptDeclaration(templateNode, scope);
     SNode targetNode = SModelUtil.instantiateConceptDeclaration(conceptDeclaration, targetModel, false);
     SModelUtil.copySNodeProperties(templateNode, targetNode);
     return targetNode;
@@ -71,10 +71,11 @@ public class TemplateGenUtil {
       }
 
       // try to resolve the reference
-      IReferenceResolver referenceResolver = createReferenceResolver(templateNode, nodeBuilder.getGenerator().getOperationContext());
+      IScope scope = nodeBuilder.getGenerator().getOperationContext().getScope();
+      IReferenceResolver referenceResolver = createReferenceResolver(templateNode, scope);
       SNode targetReferentNode = referenceResolver.resolveTarget(templateReference, nodeBuilder);
       if (targetReferentNode != null) {
-        if (SModelUtil.isAcceptableReferent(targetNode, templateReference.getRole(), targetReferentNode, nodeBuilder.getGenerator().getOperationContext())) {
+        if (SModelUtil.isAcceptableReferent(targetNode, templateReference.getRole(), targetReferentNode, scope)) {
           targetNode.addReferent(templateReference.getRole(), targetReferentNode);
         } else {
           // if reference is not acceptable, then temporarily keep original reference
@@ -108,8 +109,8 @@ public class TemplateGenUtil {
     } // while (iterator.hasNext())
   }
 
-  private static IReferenceResolver createReferenceResolver(SNode templateNode, IOperationContext operationContext) {
-    IReferenceResolver referenceResolver = loadReferenceResolver(templateNode, operationContext);
+  private static IReferenceResolver createReferenceResolver(SNode templateNode, IScope scope) {
+    IReferenceResolver referenceResolver = loadReferenceResolver(templateNode, scope);
     if (referenceResolver == null) {
       referenceResolver = new DefaultReferenceResolver();
     }
@@ -127,7 +128,7 @@ public class TemplateGenUtil {
   }
 
   private static INodeBuilder loadNodeBuilder(SNode sourceNode, SNode templateNode, String mappingName, ITemplateGenerator generator) {
-    ConceptDeclaration typeDeclaration = SModelUtil.getConceptDeclaration(templateNode, generator.getOperationContext());
+    ConceptDeclaration typeDeclaration = SModelUtil.getConceptDeclaration(templateNode, generator.getOperationContext().getScope());
     String modelPackageName = JavaNameUtil.packageNameForModelUID(typeDeclaration.getModel().getUID());
     String buildersPackageName = modelPackageName + ".builder";
     String builderClassName = buildersPackageName + "." + typeDeclaration.getName() + "_NodeBuilder";
@@ -152,8 +153,8 @@ public class TemplateGenUtil {
     return null;
   }
 
-  public static IReferenceResolver loadReferenceResolver(SNode templateNode, IOperationContext operationContext) {
-    ConceptDeclaration conceptDeclaration = SModelUtil.getConceptDeclaration(templateNode, operationContext);
+  public static IReferenceResolver loadReferenceResolver(SNode templateNode, IScope scope) {
+    ConceptDeclaration conceptDeclaration = SModelUtil.getConceptDeclaration(templateNode, scope);
     while (conceptDeclaration != null) {
       String modelPackageName = JavaNameUtil.packageNameForModelUID(conceptDeclaration.getModel().getUID());
       String buildersPackageName = modelPackageName + ".builder";

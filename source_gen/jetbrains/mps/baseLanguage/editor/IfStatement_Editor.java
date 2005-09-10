@@ -168,8 +168,8 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   public EditorCell createConditionCell(EditorContext context, SNode node) {
     SNode referencedNode = null;
     referencedNode = node.getChild("condition");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "condition", context.getOperationContext());
-    if(referencedNode == null) {
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "condition", context.getOperationContext().getScope());
+    if (referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);
@@ -198,8 +198,8 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   public EditorCell createIfTrueCell(EditorContext context, SNode node) {
     SNode referencedNode = null;
     referencedNode = node.getChild("ifTrue");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "ifTrue", context.getOperationContext());
-    if(referencedNode == null) {
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "ifTrue", context.getOperationContext().getScope());
+    if (referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);
@@ -225,8 +225,8 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   public EditorCell createIfFalseStatementCell(EditorContext context, SNode node) {
     SNode referencedNode = null;
     referencedNode = node.getChild("ifFalseStatement");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "ifFalseStatement", context.getOperationContext());
-    if(referencedNode == null) {
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "ifFalseStatement", context.getOperationContext().getScope());
+    if (referencedNode == null) {
       {
         EditorCell_Constant noRefCell = EditorCell_Constant.create(context, node, null, true);
         noRefCell.setDefaultText("");

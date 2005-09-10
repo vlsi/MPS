@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.LanguageOperationContext;
+import jetbrains.mps.project.ModuleContext;
 
 import javax.swing.*;
 import java.util.List;
@@ -27,7 +27,7 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
   private MPSProject myProject;
 
   public ProjectLanguageTreeNode(Language language, MPSProject project) {
-    super(new LanguageOperationContext(language, project));
+    super(new ModuleContext(language, project));
     myLanguage = language;
     myProject = project;
     populate();

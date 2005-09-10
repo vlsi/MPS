@@ -14,10 +14,10 @@ import java.util.*;
  */
 public class TemplateSwitchGraph {
   private Map<TemplateSwitch, TemplateSwitchGraphNode> myTemplateSwitchToGraphNodeMap = new HashMap<TemplateSwitch, TemplateSwitchGraphNode>();
-  private IOperationContext myOperationContext;
+  private IScope myScope;
 
-  public TemplateSwitchGraph(SModel templatesModel, IOperationContext operationContext) {
-    myOperationContext = operationContext;
+  public TemplateSwitchGraph(SModel templatesModel, IScope scope) {
+    myScope = scope;
     processTemplatesModel(templatesModel, new HashSet<SModelUID>());
   }
 
@@ -35,7 +35,7 @@ public class TemplateSwitchGraph {
       }
     }
 
-    Iterator<SModelDescriptor> iterator = templatesModel.importedModels(myOperationContext);
+    Iterator<SModelDescriptor> iterator = templatesModel.importedModels(myScope);
     while (iterator.hasNext()) {
       SModel importedModel = iterator.next().getSModel();
       if (importedModel.hasLanguage("jetbrains.mps.transformation.TLBase")) {

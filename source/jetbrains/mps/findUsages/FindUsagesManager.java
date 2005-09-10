@@ -2,16 +2,18 @@ package jetbrains.mps.findUsages;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.ide.progress.ProgressMonitor;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.*;
 
 import java.util.*;
 
 public class FindUsagesManager {
-  private MPSProject myProject;
 
-  public FindUsagesManager(MPSProject project) {    
-    myProject = project;
+  public static FindUsagesManager getInstance() {
+    return ApplicationComponents.getInstance().getComponent(FindUsagesManager.class);
+  }
+
+  public FindUsagesManager() {
   }
 
   //---
@@ -84,7 +86,7 @@ public class FindUsagesManager {
       List<SModelDescriptor> models = scope.getModels();
       progress.start("Finding Instances...", models.size());
       for (SModelDescriptor model : models) {
-        result.addAll(model.findInstances(concept, operationContext));
+        result.addAll(model.findInstances(concept, operationContext.getScope()));
         if (progress.isCanceled()) {
           return result;
         }
@@ -130,13 +132,12 @@ public class FindUsagesManager {
     });
   }
 
-  public static List<ConceptDeclaration> allSubtypes(ConceptDeclaration conceptDeclaration, IOperationContext operationContext) {
+  public List<ConceptDeclaration> allSubtypes(ConceptDeclaration conceptDeclaration) {
     if (ourCache.get(conceptDeclaration) != null) return Collections.unmodifiableList(ourCache.get(conceptDeclaration));
 
     List<ConceptDeclaration> list = new LinkedList<ConceptDeclaration>();
 
-    FindUsagesManager manager = operationContext.getComponent(FindUsagesManager.class);
-
+    FindUsagesManager manager = FindUsagesManager.getInstance();
     Set<SReference> usages = manager.findUsages(conceptDeclaration, new FilterScope(manager.globalScope()) {
       protected boolean accept(SModelDescriptor descriptor) {
         return descriptor.getModelUID().getShortName().equals("structure");
@@ -147,7 +148,7 @@ public class FindUsagesManager {
       if (ref.getRole().equals(ConceptDeclaration.EXTENDS)) {
         ConceptDeclaration subtype = (ConceptDeclaration) ref.getSourceNode();
         list.add(subtype);
-        list.addAll(allSubtypes(subtype, operationContext));
+        list.addAll(allSubtypes(subtype));
       }
     }
 

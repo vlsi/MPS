@@ -8,7 +8,6 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
@@ -52,9 +51,8 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
   }
 
   public List<INodeSubstituteItem> createActions() {
-    IOperationContext operationContext = getEditorContext().getOperationContext();
     List<INodeSubstituteAction> defaultActions = createActions_default();
-    List<INodeSubstituteAction> actions = ModelActions.createNodeSubstituteActions(mySourceNode, myCurrentTargetNode, myLinkDeclaration, defaultActions, operationContext);
+    List<INodeSubstituteAction> actions = ModelActions.createNodeSubstituteActions(mySourceNode, myCurrentTargetNode, myLinkDeclaration, defaultActions, getOperationContext().getScope());
     return (List<INodeSubstituteItem>) ((List) actions);
   }
 
@@ -63,7 +61,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
 
     List<ConceptDeclaration> childTypes = createChildTypesList();
     for (final ConceptDeclaration childType : childTypes) {
-      list.add(new DefaultChildNodeSubstituteAction(childType, mySourceNode, myCurrentTargetNode, myLinkDeclaration, getOperationContext()));
+      list.add(new DefaultChildNodeSubstituteAction(childType, mySourceNode, myCurrentTargetNode, myLinkDeclaration, getOperationContext().getScope()));
     }
 
     return list;
@@ -71,9 +69,9 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   private List<ConceptDeclaration> createChildTypesList() {
     final ConceptDeclaration targetType = myLinkDeclaration.getTarget();
-    return SModelUtil.allConceptDeclarations(mySourceNode.getModel(), getOperationContext(), new Condition<ConceptDeclaration>() {
+    return SModelUtil.allConceptDeclarations(mySourceNode.getModel(), getOperationContext().getScope(), new Condition<ConceptDeclaration>() {
       public boolean met(ConceptDeclaration node) {
-        if (!SModelUtil.hasConceptProperty(node, "abstract", getEditorContext().getOperationContext())) {
+        if (!SModelUtil.hasConceptProperty(node, "abstract", getOperationContext().getScope())) {
           return SModelUtil.isAssignableType(targetType, node);
         }
         return false;

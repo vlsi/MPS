@@ -64,8 +64,8 @@ public class CastExpression_Editor extends DefaultNodeEditor {
   public EditorCell createTypeCell(EditorContext context, SNode node) {
     SNode referencedNode = null;
     referencedNode = node.getChild("type");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "type", context.getOperationContext());
-    if(referencedNode == null) {
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "type", context.getOperationContext().getScope());
+    if (referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);
@@ -94,8 +94,8 @@ public class CastExpression_Editor extends DefaultNodeEditor {
   public EditorCell createExpressionCell(EditorContext context, SNode node) {
     SNode referencedNode = null;
     referencedNode = node.getChild("expression");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "expression", context.getOperationContext());
-    if(referencedNode == null) {
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "expression", context.getOperationContext().getScope());
+    if (referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);

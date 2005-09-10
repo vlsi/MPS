@@ -51,8 +51,8 @@ public class ArrayType_Editor extends DefaultNodeEditor {
   public EditorCell createComponentTypeCell(EditorContext context, SNode node) {
     SNode referencedNode = null;
     referencedNode = node.getChild("componentType");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "componentType", context.getOperationContext());
-    if(referencedNode == null) {
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "componentType", context.getOperationContext().getScope());
+    if (referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);

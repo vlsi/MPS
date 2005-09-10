@@ -72,8 +72,8 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
   public EditorCell createStatementsCell(EditorContext context, SNode node) {
     SNode referencedNode = null;
     referencedNode = node.getChild("statements");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "statements", context.getOperationContext());
-    if(referencedNode == null) {
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "statements", context.getOperationContext().getScope());
+    if (referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);

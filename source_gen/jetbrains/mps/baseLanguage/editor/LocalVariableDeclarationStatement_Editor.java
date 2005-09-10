@@ -49,8 +49,8 @@ public class LocalVariableDeclarationStatement_Editor extends DefaultNodeEditor 
   public EditorCell createLocalVariableDeclarationCell(EditorContext context, SNode node) {
     SNode referencedNode = null;
     referencedNode = node.getChild("localVariableDeclaration");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "localVariableDeclaration", context.getOperationContext());
-    if(referencedNode == null) {
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "localVariableDeclaration", context.getOperationContext().getScope());
+    if (referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);

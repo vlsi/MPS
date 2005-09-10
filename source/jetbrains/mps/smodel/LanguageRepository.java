@@ -7,6 +7,7 @@ import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.command.CommandEvent;
+import jetbrains.mps.project.ApplicationComponents;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -20,7 +21,6 @@ import java.util.*;
 public class LanguageRepository {
   private static final Logger LOG = Logger.getLogger(LanguageRepository.class);
 
-  private static LanguageRepository myInstance = new LanguageRepository();
   private HashMap<String, Language> myFileToLanguageMap = new HashMap<String, Language>();
   private HashMap<String, Language> myNamespaceToLanguageMap = new HashMap<String, Language>();
   private HashMap<Language, HashSet<LanguageOwner>> myLanguageToOwnersMap = new HashMap<Language, HashSet<LanguageOwner>>();
@@ -28,10 +28,10 @@ public class LanguageRepository {
   private MyCommandTranslator myCommandTranslator = new MyCommandTranslator();
 
   public static LanguageRepository getInstance() {
-    return myInstance;
+    return ApplicationComponents.getInstance().getComponent(LanguageRepository.class);
   }
 
-  private LanguageRepository() {
+  public LanguageRepository() {
     CommandProcessor.instance().addCommandListener(myCommandTranslator);
     CommandProcessor.instance().addCommandListener(new CommandAdapter() {
       public void beforeCommandFinished(CommandEvent event) {

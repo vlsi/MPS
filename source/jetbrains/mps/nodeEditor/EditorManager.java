@@ -89,7 +89,7 @@ public class EditorManager {
   }
 
   private INodeEditor loadEditor(EditorContext context, SNode node) {
-    Language language = SModelUtil.getLanguage(node, context.getOperationContext());
+    Language language = SModelUtil.getLanguage(node, context.getOperationContext().getScope());
     if (language == null) {
       LOG.errorWithTrace("Error loading editor for node \"" + node.getDebugText() + "\".\n" +
               "Couldn't find language for namespace: \"" + NameUtil.namespaceFromConceptFQName(node.getClass().getName()) + "\"");

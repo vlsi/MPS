@@ -12,12 +12,12 @@ import jetbrains.mps.ide.navigation.EditorNavigationRunnable;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
-import jetbrains.mps.project.LanguageOperationContext;
 import jetbrains.mps.projectLanguage.Editor;
 import jetbrains.mps.projectLanguage.LanguageDescriptor;
 import jetbrains.mps.projectLanguage.Model;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.project.ModuleContext;
 
 import javax.swing.*;
 import java.io.File;
@@ -50,31 +50,33 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     if (!(node instanceof ConceptDeclaration)) return;
 
     final IdeMain ide = context.get(IdeMain.class);
-    final IOperationContext operationContext = context.get(IOperationContext.class);
+    IOperationContext invocationContext = context.get(IOperationContext.class);
+    final IScope scope = invocationContext.getScope();
     final AbstractEditorComponent currentEditor = ide.getEditorsPane().getCurrentEditor();
 
     Language language = null;
-    if (operationContext instanceof LanguageOperationContext) {
-      Language contextLanguage = ((LanguageOperationContext) operationContext).getLanguage();
+    if (invocationContext.getModule() instanceof Language) {
+      Language contextLanguage = (Language) invocationContext.getModule();
       SModelDescriptor testStructureModel = contextLanguage.getStructureModelDescriptor();
       if (testStructureModel != null && node.getModel().getUID().equals(testStructureModel.getModelUID())) {
         language = contextLanguage;
       }
     }
     if (language == null) {
-      language = SModelUtil.getDeclaringLanguage((ConceptDeclaration) node, operationContext);
+      language = SModelUtil.getDeclaringLanguage((ConceptDeclaration) node, scope);
       if (language == null) {
         JOptionPane.showMessageDialog(null, "Couldn't find declaring language for concept " + NameUtil.nodeFQName(node));
         return;
       }
     }
 
+    final ModuleContext languageContext = new ModuleContext(language, invocationContext.getProject());
     SModelDescriptor languageEditor = language.getEditorModelDescriptor();
     ConceptEditorDeclaration editorDeclaration;
     if (languageEditor != null) {
       editorDeclaration = findEditorDeclaration(languageEditor.getSModel(), (ConceptDeclaration) node);
       if (editorDeclaration != null) {
-        navigateToEditorDeclaration(editorDeclaration, operationContext, currentEditor, ide);
+        navigateToEditorDeclaration(editorDeclaration, languageContext, currentEditor, ide);
         return;
       }
     }
@@ -100,7 +102,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         if (languageEditorFinal == null) {
-          createLanguageEditorModel(languageFinal, operationContext);
+          createLanguageEditorModel(languageFinal);
           createEditorDeclaration((ConceptDeclaration) node, languageFinal.getEditorModelDescriptor());
         } else {
           createEditorDeclaration((ConceptDeclaration) node, languageEditorFinal);
@@ -109,7 +111,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     });
 
     editorDeclaration = findEditorDeclaration(language.getEditorModelDescriptor().getSModel(), (ConceptDeclaration) node);
-    navigateToEditorDeclaration(editorDeclaration, operationContext, currentEditor, ide);
+    navigateToEditorDeclaration(editorDeclaration, languageContext, currentEditor, ide);
   }
 
   private ConceptEditorDeclaration findEditorDeclaration(SModel editorModel, ConceptDeclaration conceptDeclaration) {
@@ -155,12 +157,12 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     return editorDeclaration;
   }
 
-  private SModelDescriptor createLanguageEditorModel(Language language, IOperationContext operationContext) {
+  private SModelDescriptor createLanguageEditorModel(Language language) {
     MPSFileModelDescriptor fileModelDescriptor = (MPSFileModelDescriptor) language.getStructureModelDescriptor();
     File languageDir = (new File(fileModelDescriptor.getFileName())).getParentFile();
     String path = languageDir.getAbsolutePath();
 
-    SModelDescriptor editorModelDescriptor = operationContext.createModel(new SModelUID(language.getNamespace(), "editor", ""), path, language.getNamespace());
+    SModelDescriptor editorModelDescriptor = language.createModel(new SModelUID(language.getNamespace(), "editor", ""), path, language.getNamespace());
     SModel editorModel = editorModelDescriptor.getSModel();
     editorModel.addLanguage(BootstrapLanguages.getInstance().getEditorLanguage());
     editorModelDescriptor.save();
@@ -173,7 +175,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     _editor.setEditorModel(_model);
     _editor.setStereotype("");
     languageDescriptor.addEditor(_editor);
-    language.setLanguageDescriptor(languageDescriptor, operationContext);
+    language.setLanguageDescriptor(languageDescriptor);
     language.save();
 
     return editorModelDescriptor;

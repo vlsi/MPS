@@ -52,8 +52,8 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
   public EditorCell createLeftExpressionCell(EditorContext context, SNode node) {
     SNode referencedNode = null;
     referencedNode = node.getChild("leftExpression");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "leftExpression", context.getOperationContext());
-    if(referencedNode == null) {
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "leftExpression", context.getOperationContext().getScope());
+    if (referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);
@@ -82,8 +82,8 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
   public EditorCell createClassTypeCell(EditorContext context, SNode node) {
     SNode referencedNode = null;
     referencedNode = node.getChild("classType");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "classType", context.getOperationContext());
-    if(referencedNode == null) {
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "classType", context.getOperationContext().getScope());
+    if (referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);

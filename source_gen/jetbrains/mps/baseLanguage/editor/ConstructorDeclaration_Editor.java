@@ -138,8 +138,8 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createBodyCell(EditorContext context, SNode node) {
     SNode referencedNode = null;
     referencedNode = node.getChild("body");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "body", context.getOperationContext());
-    if(referencedNode == null) {
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "body", context.getOperationContext().getScope());
+    if (referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);

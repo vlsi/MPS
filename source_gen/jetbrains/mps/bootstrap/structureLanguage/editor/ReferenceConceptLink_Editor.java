@@ -53,7 +53,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
   public EditorCell createConceptLinkDeclarationReferenceCell(EditorContext context, SNode node) {
     SNode effectiveNode = null;
     effectiveNode = node.getReferent("conceptLinkDeclaration");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "conceptLinkDeclaration", context.getOperationContext());
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "conceptLinkDeclaration", context.getOperationContext().getScope());
     SReference reference = node.getReference("conceptLinkDeclaration");
     if(reference != null && !(reference.isResolved())) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
@@ -100,7 +100,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
   public EditorCell createTargetReferenceCell(EditorContext context, SNode node) {
     SNode effectiveNode = null;
     effectiveNode = node.getReferent("target");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "target", context.getOperationContext());
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "target", context.getOperationContext().getScope());
     SReference reference = node.getReference("target");
     if(reference != null && !(reference.isResolved())) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));

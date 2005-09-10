@@ -2,12 +2,13 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.generator.ContextUtil;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.smodel.event.SModelsAdapter;
 import jetbrains.mps.smodel.event.SModelsListener;
@@ -22,7 +23,7 @@ import java.util.*;
  * Author: Sergey Dmitriev
  * Created Jan 30, 2004
  */
-public class Language implements ModelLocator, ModelOwner, LanguageOwner {
+public class Language extends AbstractModule implements ModelLocator {
   private static final Logger LOG = Logger.getLogger(Language.class);
 
   private File myDescriptorFile;
@@ -79,10 +80,10 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
     return myDescriptorFile;
   }
 
-  public void setLanguageDescriptor(LanguageDescriptor newDescriptor, IOperationContext operationContext) {
+  public void setLanguageDescriptor(LanguageDescriptor newDescriptor) {
 
     // release languages and models (except descriptor model)
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), (ModelOwner) this);
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), this);
     LanguageRepository.getInstance().unRegisterLanguages(this);
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
     SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, this);
@@ -97,27 +98,13 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
     updateLastGenerationTime();
     myEventTranslator.languageChanged();
   }
+
   public LanguageDescriptor getLanguageDescriptor() {
     return myLanguageDescriptor;
   }
 
-  public ModelOwner getParentModelOwner() {
-    return null;
-  }
-
-  public LanguageOwner getParentLanguageOwner() {
-    return BootstrapLanguages.getInstance();
-  }
-
   public void updateLastGenerationTime() {
     myLastGenerationTime = FileUtil.getNewestFileTime(getSourceDir());
-  }
-
-  /**
-   * @deprecated
-   */
-  public LanguageDescriptor getCopyOfLanguageDescriptor(SModel modelToCopy, IOperationContext operationContext) {
-    return ContextUtil.copyNode(getLanguageDescriptor(), modelToCopy, operationContext);
   }
 
   public List<Generator> getGenerators() {
@@ -171,7 +158,7 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
   }
 
   public SModelDescriptor getStructureModelDescriptor() {
-    SModelDescriptor structureModelDescriptor = getModelDescriptorByUID(SModelUID.fromString(getLanguageDescriptor().getStructureModel().getName()));
+    SModelDescriptor structureModelDescriptor = getModelDescriptor(SModelUID.fromString(getLanguageDescriptor().getStructureModel().getName()));
     if (!myRegisteredInFindUsagesManager) {
       myRegisteredInFindUsagesManager = true;
       //register cache invalidation
@@ -182,14 +169,14 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
 
   public SModelDescriptor getTypesystemModelDescriptor() {
     if (getLanguageDescriptor().getTypeSystem() != null) {
-      return getModelDescriptorByUID(SModelUID.fromString(getLanguageDescriptor().getTypeSystem().getName()));
+      return getModelDescriptor(SModelUID.fromString(getLanguageDescriptor().getTypeSystem().getName()));
     }
     return null;
   }
 
   public SModelDescriptor getActionsModelDescriptor() {
     if (getLanguageDescriptor().getActionsModel() != null) {
-      return getModelDescriptorByUID(SModelUID.fromString(getLanguageDescriptor().getActionsModel().getName()));
+      return getModelDescriptor(SModelUID.fromString(getLanguageDescriptor().getActionsModel().getName()));
     }
     return null;
   }
@@ -208,7 +195,7 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
     if (editorUID == null) {
       return null;
     }
-    return getModelDescriptorByUID(SModelUID.fromString(editorUID));
+    return getModelDescriptor(SModelUID.fromString(editorUID));
   }
 
   public Set<SModelDescriptor> getEditorDescriptors() {
@@ -273,18 +260,12 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
     PersistenceUtil.saveLanguageDescriptor(myDescriptorFile, getLanguageDescriptor());
   }
 
-  private SModelDescriptor getModelDescriptorByUID(SModelUID modelUID) {
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, (ModelOwner) this);
-    LOG.assertLog(modelDescriptor != null, "Couldn't get model \"" + modelUID + "\" in " + this);
-    return modelDescriptor;
-  }
-
   public List<SModelDescriptor> getAccessoryModels() {
     List<SModelDescriptor> result = new LinkedList<SModelDescriptor>();
     Iterator<Model> accessoryModels = getLanguageDescriptor().accessoryModels();
     while (accessoryModels.hasNext()) {
       Model model = accessoryModels.next();
-      SModelDescriptor modelDescriptor = getModelDescriptorByUID(SModelUID.fromString(model.getName()));
+      SModelDescriptor modelDescriptor = getModelDescriptor(SModelUID.fromString(model.getName()));
       if (modelDescriptor != null) {
         result.add(modelDescriptor);
       }
@@ -314,6 +295,14 @@ public class Language implements ModelLocator, ModelOwner, LanguageOwner {
         l.languageChangedInCommand(Language.this);
       }
     }
+  }
+
+  public List<ModelRoot> getModelRoots() {
+    return CollectionUtil.iteratorAsList(myLanguageDescriptor.modelRoots());
+  }
+
+  protected List<IModule> getDependOnModules() {
+    return Collections.emptyList();
   }
 
   // ----------------------------

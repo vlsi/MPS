@@ -112,8 +112,8 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createTypeCell(EditorContext context, SNode node) {
     SNode referencedNode = null;
     referencedNode = node.getChild("type");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "type", context.getOperationContext());
-    if(referencedNode == null) {
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "type", context.getOperationContext().getScope());
+    if (referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "<no type>");
         noRefCell.setEditable(true);
@@ -141,8 +141,8 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createInitializerCell(EditorContext context, SNode node) {
     SNode referencedNode = null;
     referencedNode = node.getChild("initializer");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "initializer", context.getOperationContext());
-    if(referencedNode == null) {
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "initializer", context.getOperationContext().getScope());
+    if (referencedNode == null) {
       {
         EditorCell_Constant noRefCell = EditorCell_Constant.create(context, node, null, true);
         noRefCell.setDefaultText("");

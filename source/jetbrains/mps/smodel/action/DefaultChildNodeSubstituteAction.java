@@ -4,11 +4,7 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.nodeEditor.AbstractNodeSubstituteItem;
-import jetbrains.mps.nodeEditor.EditorUtil;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -22,14 +18,14 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteItem
   private LinkDeclaration myLinkDeclaration;
   private SNode mySourceNode;
   private SNode myCurrentTargetNode;
-  private IOperationContext myOperationContext;
+  private IScope myOperationContext;
 
-  public DefaultChildNodeSubstituteAction(SNode parameterNode, SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, IOperationContext operationContext) {
+  public DefaultChildNodeSubstituteAction(SNode parameterNode, SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, IScope scope) {
     mySourceNode = sourceNode;
     myParameterNode = parameterNode;
     myLinkDeclaration = linkDeclaration;
     myCurrentTargetNode = currentTargetNode;
-    myOperationContext = operationContext;
+    myOperationContext = scope;
 
     if (SModelUtil.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.aggregation) {
       throw new RuntimeException("Only aggregation links are allowed here.");
@@ -44,16 +40,16 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteItem
     return myParameterNode;
   }
 
-  public IOperationContext getOperationContext() {
+  public IScope getScope() {
     return myOperationContext;
   }
 
   public String getMatchingText(String pattern) {
-    return EditorUtil.getMatchingText(myParameterNode, mySourceNode, getOperationContext());
+    return SNodePresentationUtil.matchingText(myParameterNode, mySourceNode, getScope());
   }
 
   public String getDescriptionText(String pattern) {
-    return EditorUtil.getShortDescription(myParameterNode, mySourceNode, getOperationContext());
+    return SNodePresentationUtil.descriptionText(myParameterNode, mySourceNode, getScope());
   }
 
   public SNode doSubstitute(String pattern) {

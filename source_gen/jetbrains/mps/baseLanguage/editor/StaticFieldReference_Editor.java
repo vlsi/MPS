@@ -57,7 +57,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
   public EditorCell createVariableDeclarationReferenceCell(EditorContext context, SNode node) {
     SNode effectiveNode = null;
     effectiveNode = node.getReferent("variableDeclaration");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "variableDeclaration", context.getOperationContext());
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "variableDeclaration", context.getOperationContext().getScope());
     SReference reference = node.getReference("variableDeclaration");
     if(reference != null && !(reference.isResolved())) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
@@ -104,8 +104,8 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
   public EditorCell createClassTypeCell(EditorContext context, SNode node) {
     SNode referencedNode = null;
     referencedNode = node.getChild("classType");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "classType", context.getOperationContext());
-    if(referencedNode == null) {
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "classType", context.getOperationContext().getScope());
+    if (referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);

@@ -1,10 +1,7 @@
 package jetbrains.mps.ide.components;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import org.jdom.DataConversionException;
 import org.jdom.Element;
 
@@ -32,13 +29,12 @@ public class ComponentsUtil {
     return nodeElement;
   }
 
-  public static SNode nodeFromElement(IOperationContext operationContext, Element nodeElement) {
+  public static SNode nodeFromElement(Element nodeElement, IScope scope) {
     String modelUID = nodeElement.getAttributeValue(MODEL);
     String id = nodeElement.getAttributeValue(ID);
-    SModelDescriptor modelDescriptor = operationContext.getModelDescriptor(SModelUID.fromString(modelUID));
+    SModelDescriptor modelDescriptor = scope.getModelDescriptor(SModelUID.fromString(modelUID));
     if (modelDescriptor == null) return null;
-    SNode semanticNode = modelDescriptor.getSModel().getNodeById(id);
-    return semanticNode;
+    return modelDescriptor.getSModel().getNodeById(id);
   }
 
 

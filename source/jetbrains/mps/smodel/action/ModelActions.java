@@ -20,7 +20,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class ModelActions {
-  public static List<INodeSubstituteAction> createNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, List<INodeSubstituteAction> defaultActions, IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> createNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, List<INodeSubstituteAction> defaultActions, IScope scope) {
 
     LinkMetaclass metaClass = linkDeclaration.getMetaClass();
     ConceptDeclaration targetConcept = linkDeclaration.getTarget();
@@ -29,7 +29,7 @@ public class ModelActions {
     List<NodeSubstituteActionsBuilder> substituteActionsBuilders = new LinkedList<NodeSubstituteActionsBuilder>();
 
     SModel model = sourceNode.getModel();
-    List<Language> languages = model.getLanguages(operationContext);
+    List<Language> languages = model.getLanguages(scope);
     for (Language language : languages) {
       SModelDescriptor actionsModelDescr = language.getActionsModelDescriptor();
       if (actionsModelDescr != null) {
@@ -57,22 +57,22 @@ public class ModelActions {
 
     // filter default actions
     List<INodeSubstituteAction> resultActions = new LinkedList<INodeSubstituteAction>();
-    List<INodeSubstituteAction> filteredActions = filterActions(defaultActions, substituteActionsBuilders, null, operationContext);
+    List<INodeSubstituteAction> filteredActions = filterActions(defaultActions, substituteActionsBuilders, null, scope);
     resultActions.addAll(filteredActions);
 
     // for each builder cerate and filter actions
     for (NodeSubstituteActionsBuilder nodeSubstituteActionsBuilder : substituteActionsBuilders) {
-      List<INodeSubstituteAction> addActions = createActions(nodeSubstituteActionsBuilder, sourceNode, currentTargetNode, linkDeclaration, operationContext);
-      addActions = filterActions(addActions, substituteActionsBuilders, nodeSubstituteActionsBuilder, operationContext);
+      List<INodeSubstituteAction> addActions = createActions(nodeSubstituteActionsBuilder, sourceNode, currentTargetNode, linkDeclaration, scope);
+      addActions = filterActions(addActions, substituteActionsBuilders, nodeSubstituteActionsBuilder, scope);
       resultActions.addAll(addActions);
     }
     return resultActions;
   }
 
-  private static List<INodeSubstituteAction> filterActions(List<INodeSubstituteAction> actions, List<NodeSubstituteActionsBuilder> substituteActionsBuilders, NodeSubstituteActionsBuilder excludeBuilder, IOperationContext operationContext) {
+  private static List<INodeSubstituteAction> filterActions(List<INodeSubstituteAction> actions, List<NodeSubstituteActionsBuilder> substituteActionsBuilders, NodeSubstituteActionsBuilder excludeBuilder, IScope scope) {
     for (NodeSubstituteActionsBuilder substituteActionsBuilder : substituteActionsBuilders) {
       if (substituteActionsBuilder != excludeBuilder) {
-        actions = filterActions(substituteActionsBuilder, actions, operationContext);
+        actions = filterActions(substituteActionsBuilder, actions, scope);
       }
     }
     return actions;
@@ -82,19 +82,19 @@ public class ModelActions {
   // Macro Aspect methods invocation...
   // --------------------------------
 
-  private static List<INodeSubstituteAction> filterActions(NodeSubstituteActionsBuilder substituteActionsBuilder, List<INodeSubstituteAction> actions, IOperationContext operationContext) {
-    Object[] args = new Object[]{actions, operationContext};
+  private static List<INodeSubstituteAction> filterActions(NodeSubstituteActionsBuilder substituteActionsBuilder, List<INodeSubstituteAction> actions, IScope scope) {
+    Object[] args = new Object[]{actions, scope};
     String methodName = "nodeSubstituteActionsBuilder_ActionsFilter_" + substituteActionsBuilder.getActionsFilterAspectId();
     SModel model = substituteActionsBuilder.getModel();
     List<INodeSubstituteAction> result = (List<INodeSubstituteAction>) QueryMethod.invoke(methodName, args, model);
     return result;
   }
 
-  private static List<INodeSubstituteAction> createActions(NodeSubstituteActionsBuilder substituteActionsBuilder, SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, IOperationContext operationContext) {
+  private static List<INodeSubstituteAction> createActions(NodeSubstituteActionsBuilder substituteActionsBuilder, SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, IScope scope) {
     Object[] args = new Object[]{sourceNode,
                       currentTargetNode,
                       linkDeclaration,
-                      operationContext};
+                      scope};
     String methodName = "nodeSubstituteActionsBuilder_ActionsFactory_" + substituteActionsBuilder.getActionsFactoryAspectId();
     SModel model = substituteActionsBuilder.getModel();
     List<INodeSubstituteAction> result = (List<INodeSubstituteAction>) QueryMethod.invoke(methodName, args, model);

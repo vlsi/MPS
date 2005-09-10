@@ -15,20 +15,23 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
   private EditorContext myEditorContext;
   private SNodeProxy myNodeProxy;
 
-  public InspectorEditorComponent(IdeMain ide, IOperationContext operationContext) {
-    super(ide, operationContext);
-    myNodeProxy = new SNodeProxy(null, operationContext);
+  public InspectorEditorComponent(IdeMain ide) {
+    super(ide, null);
+    myNodeProxy = new SNodeProxy(null, null);
     reinitEditor();
     rebuildEditorContent();
   }
 
   public SNode getNode() {
-    return myNodeProxy.getNode();
+    if (myNodeProxy != null) {
+      return myNodeProxy.getNode();
+    }
+    return null;
   }
 
   private void reinitEditor() {
     if (getNode() == null) {
-      myEditorContext = new EditorContext(this, null, getOperationContext());
+      myEditorContext = new EditorContext(this, null, null);
     } else {
       myEditorContext = new EditorContext(this, getNode().getModel(), getOperationContext());
     }
@@ -42,8 +45,14 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
     if (getNode() == node) {
       return;
     }
-    setOperationContext(context);
-    myNodeProxy = new SNodeProxy(node, getOperationContext());
+    if (node == null) {
+      setOperationContext(null);
+      myNodeProxy = null;
+    } else {
+      setOperationContext(context);
+      myNodeProxy = new SNodeProxy(node, context.getScope());
+    }
+
     reinitEditor();
     rebuildEditorContent();
     repaint();

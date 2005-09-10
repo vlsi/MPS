@@ -20,6 +20,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.ExternalizableComponent;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.projectLanguage.GeneratorConfiguration;
 import jetbrains.mps.projectLanguage.GeneratorConfigurationCommand;
 import jetbrains.mps.projectLanguage.TargetOfGenerator;
@@ -28,6 +29,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textPresentation.TextPresentationManager;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.xml.Document;
 import org.jdom.Element;
 
@@ -71,7 +73,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
 
   public void generate(final Language language, IOperationContext operationContext) {
     //todo move to language
-    final SModelDescriptor tmpModelDescriptor = operationContext.createTransientProjectModel();
+    final SModelDescriptor tmpModelDescriptor = language.createTransientProjectModel();
     final SModel model = tmpModelDescriptor.getSModel();
     final GeneratorConfiguration conf = new GeneratorConfiguration(model);
     tmpModelDescriptor.getSModel().runLoadingAction(new Runnable() {
@@ -84,7 +86,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
       }
     });
 
-   List<SModelDescriptor> models = new LinkedList<SModelDescriptor>();
+    List<SModelDescriptor> models = new LinkedList<SModelDescriptor>();
     models.add(language.getStructureModelDescriptor());
     if (language.getEditorModelDescriptor() != null) {
       models.add(language.getEditorModelDescriptor());
@@ -96,7 +98,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     generate(conf, models, operationContext, false);
 
     language.updateLastGenerationTime();
-    operationContext.unRegisterModelDescriptor(tmpModelDescriptor);
+    language.unRegisterModelDescriptor(tmpModelDescriptor);
   }
 
   private GeneratorConfigurationCommand createCommand(final SModel model, final String fromLanguage, final String toLanguage) {
@@ -197,10 +199,10 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
             Set<SModelDescriptor> modelsWithLanguage = findModelsWithLanguage(modelDescriptors, cmd.getSourceLanguage().getName());
 
             Generator generator = findGenerator(cmd.getSourceLanguage().getName(), cmd.getTargetLanguage().getName(), invocationContext);
-            GeneratorOperationContext generatorContext = GeneratorOperationContext.createContext(generator, invocationContext.getProject());
-            String generatorClass = findGeneratorClass(generatorContext);
+            ModuleContext generatorContext = new ModuleContext(generator, invocationContext.getProject());
+            String generatorClass = findGeneratorClass(generator);
             if (generatorClass == null) generatorClass = DefaultTemplateGenerator.class.getName();
-            SModelDescriptor templatesModel = loadTemplatesModel(generatorContext);
+            SModelDescriptor templatesModel = loadTemplatesModel(generator, generatorContext);
             for (final SModelDescriptor model : modelsWithLanguage) {
               try {
                 generate_internal(model, templatesModel, generatorContext, generatorClass, configuration.getOutputPath(), progress, generateText);
@@ -318,13 +320,13 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
   }
 
   private Generator findGenerator(String sourceLanguageName, String targetLanguageName, IOperationContext operationContext) {
-    Language source = operationContext.getLanguage(sourceLanguageName);
+    Language source = operationContext.getScope().getLanguage(sourceLanguageName);
     Generator result = null;
 
     LOG.assertLog(source != null, "Source language must be not null. Can't find language " + sourceLanguageName);
 
     for (Generator gen : source.getGenerators()) {
-      if (gen.getTargetLanguageName().equals(targetLanguageName)) {
+      if (EqualUtil.equals(gen.getTargetLanguageName(), targetLanguageName)) {
         result = gen;
         break;
       }
@@ -332,10 +334,9 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     return result;
   }
 
-  private String findGeneratorClass(GeneratorOperationContext generatorContext) {
-    Generator generator = generatorContext.getGenerator();
+  private String findGeneratorClass(Generator generator) {
     if (generator.getGeneratorClass() != null) return generator.getGeneratorClass();
-    Language targetLanguage = generatorContext.getLanguage(generator.getTargetLanguageName());
+    Language targetLanguage = generator.getTargetLanguage();
     TargetOfGenerator targetOfGenerator = targetLanguage.getLanguageDescriptor().getTargetOfGenerator();
     if (targetOfGenerator != null) {
       return targetOfGenerator.getGeneratorClass();
@@ -343,23 +344,22 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     return null;
   }
 
-  private SModelDescriptor loadTemplatesModel(GeneratorOperationContext generatorContext) {
-    Generator generator = generatorContext.getGenerator();
+  private SModelDescriptor loadTemplatesModel(Generator generator, IOperationContext context) {
     SModelUID templatesModelUID = generator.getTemplatesModelUID();
     if (templatesModelUID == null) {
       LOG.error("Templates model isn't specified");
       return null;
     }
 
-    SModelDescriptor templateModelDescriptor = generatorContext.getModelDescriptor(templatesModelUID);
+    SModelDescriptor templateModelDescriptor = generator.getModelDescriptor(templatesModelUID);
     if (templateModelDescriptor == null) {
       LOG.errorWithTrace("Couldn't find templates model \"" + templatesModelUID + "\"");
-      addMessage(new Message(MessageKind.ERROR, "Couldn't find templates model \"" + templatesModelUID + "\""), generatorContext);
+      addMessage(new Message(MessageKind.ERROR, "Couldn't find templates model \"" + templatesModelUID + "\""), context);
     }
     return templateModelDescriptor;
   }
 
-  private void generate_internal(final SModelDescriptor sourceModel, SModelDescriptor templatesModel, GeneratorOperationContext operationContext, String generatorClass, String outputPath, final ProgressMonitor monitor, boolean generateText) {
+  private void generate_internal(final SModelDescriptor sourceModel, SModelDescriptor templatesModel, IOperationContext operationContext, String generatorClass, String outputPath, final ProgressMonitor monitor, boolean generateText) {
     final IModelGenerator generator;
     try {
       Class cls = Class.forName(generatorClass, true, ClassLoaderManager.getInstance().getClassLoader());

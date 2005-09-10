@@ -141,8 +141,8 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createReturnType(EditorContext context, SNode node) {
     SNode referencedNode = null;
     referencedNode = node.getChild("returnType");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "returnType", context.getOperationContext());
-    if(referencedNode == null) {
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "returnType", context.getOperationContext().getScope());
+    if (referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "<no return type>");
         noRefCell.setEditable(true);
@@ -170,8 +170,8 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createBodyCell(EditorContext context, SNode node) {
     SNode referencedNode = null;
     referencedNode = node.getChild("body");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "body", context.getOperationContext());
-    if(referencedNode == null) {
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "body", context.getOperationContext().getScope());
+    if (referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);

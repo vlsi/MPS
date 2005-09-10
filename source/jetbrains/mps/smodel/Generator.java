@@ -1,16 +1,21 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.ide.BootstrapLanguages;
-import jetbrains.mps.util.PathManager;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.Model;
+import jetbrains.mps.projectLanguage.ModelRoot;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.PathManager;
 
 import java.io.File;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * @author Kostik
  */
-public class Generator implements ModelLocator, ModelOwner, LanguageOwner {
+public class Generator extends AbstractModule implements ModelLocator {
   private Language mySourceLanguage;
   private GeneratorDescriptor myGeneratorDescriptor;
 
@@ -29,6 +34,14 @@ public class Generator implements ModelLocator, ModelOwner, LanguageOwner {
     return myGeneratorDescriptor.getName();
   }
 
+  public Language getSourceLanguage() {
+    return mySourceLanguage;
+  }
+
+  public Language getTargetLanguage() {
+    return getLanguage(myGeneratorDescriptor.getTargetLanguage().getName());
+  }
+
   public String getTargetLanguageName() {
     return myGeneratorDescriptor.getTargetLanguage().getName();
   }
@@ -43,10 +56,6 @@ public class Generator implements ModelLocator, ModelOwner, LanguageOwner {
     return myGeneratorDescriptor.getGeneratorClass();
   }
 
-  // -------------------------------
-  // ModelLocator, ModelOwner, LanguageOwner
-  // -------------------------------
-
   public String findPath(SModelUID modelUID) {
     String modelPath = PathManager.findModelPath(myGeneratorDescriptor.modelRoots(), modelUID);
     if (modelPath != null && (new File(modelPath)).exists()) {
@@ -59,8 +68,8 @@ public class Generator implements ModelLocator, ModelOwner, LanguageOwner {
     return mySourceLanguage;
   }
 
-  public LanguageOwner getParentLanguageOwner() {
-    return BootstrapLanguages.getInstance();
+  public List<ModelRoot> getModelRoots() {
+    return CollectionUtil.iteratorAsList(myGeneratorDescriptor.modelRoots());
   }
 
   public String toString() {
@@ -72,5 +81,15 @@ public class Generator implements ModelLocator, ModelOwner, LanguageOwner {
 
   public GeneratorDescriptor getGeneratorDescriptor() {
     return myGeneratorDescriptor;
+  }
+
+  protected List<IModule> getDependOnModules() {
+    List<IModule> list = new LinkedList<IModule>();
+    list.add(mySourceLanguage);
+    Language targetLanguage = getTargetLanguage();
+    if (targetLanguage != null) {
+      list.add(targetLanguage);
+    }
+    return list;
   }
 }

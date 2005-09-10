@@ -314,7 +314,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   public EditorCell createExtendedClassReferenceCell(EditorContext context, SNode node) {
     SNode effectiveNode = null;
     effectiveNode = node.getReferent("extendedClass");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "extendedClass", context.getOperationContext());
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "extendedClass", context.getOperationContext().getScope());
     SReference reference = node.getReference("extendedClass");
     if(reference != null && !(reference.isResolved())) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));

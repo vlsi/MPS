@@ -1,16 +1,17 @@
 package jetbrains.mps.ide;
 
-import jetbrains.mps.projectLanguage.*;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.project.ApplicationComponents;
-import jetbrains.mps.util.CommandRunnable;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.datatransfer.CloneModelUtil;
+import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.projectLanguage.CloneModelProperties;
+import jetbrains.mps.projectLanguage.Model;
+import jetbrains.mps.projectLanguage.RootReference;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.CommandRunnable;
 
-import java.util.Set;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -41,7 +42,7 @@ public class CloneModelDialog extends BaseNodeDialog {
   public CloneModelDialog(IdeMain ide, SModelDescriptor modelDescriptor, IOperationContext operationContext) {
     super(ide, "Clone Model", operationContext);
     myIde = ide;
-    myWorkingModel = operationContext.createTransientProjectModel();
+    myWorkingModel = operationContext.getModule().createTransientProjectModel();
     myProjectModel = myWorkingModel.getSModel();
     mySModel = modelDescriptor.getSModel();
 
@@ -53,7 +54,7 @@ public class CloneModelDialog extends BaseNodeDialog {
     String result = longName + "_copy";
     int i;
     for (i = 1; ;i++) {
-      if (getOperationContext().getModelDescriptor(new SModelUID(result + i, stereotype)) == null) break;
+      if (getOperationContext().getScope().getModelDescriptor(new SModelUID(result + i, stereotype)) == null) break;
     }
     return result + i;
   }
@@ -62,7 +63,7 @@ public class CloneModelDialog extends BaseNodeDialog {
      new CommandRunnable(myProjectModel) {
       public Object onRun() {
 
-        myProjectModel.addLanguage(getOperationContext().getLanguage("jetbrains.mps.projectLanguage"));
+        myProjectModel.addLanguage(getOperationContext().getScope().getLanguage("jetbrains.mps.projectLanguage"));
         myCloneModelProperties = CloneModelProperties.newInstance(myProjectModel);
         myProjectModel.addRoot(myCloneModelProperties);
 
@@ -101,7 +102,7 @@ public class CloneModelDialog extends BaseNodeDialog {
     RootReference reference = myCloneModelProperties.getRoot();
 
    IOperationContext operationContext = getOperationContext();
-   SModelDescriptor modelDescriptor = operationContext.createModel(new SModelUID(modelName, stereotype), reference.getPath(), reference.getPrefix());
+   SModelDescriptor modelDescriptor = operationContext.getModule().createModel(new SModelUID(modelName, stereotype), reference.getPath(), reference.getPrefix());
 
     SModel SModel = modelDescriptor.getSModel();
     Set<String> modelsInProps = getModelsInProperties();
@@ -110,7 +111,7 @@ public class CloneModelDialog extends BaseNodeDialog {
     }
 
     for (jetbrains.mps.projectLanguage.Language l : CollectionUtil.iteratorAsIterable(myCloneModelProperties.languages())) {
-      SModel.addLanguage(getOperationContext().getLanguage(l.getName()));
+      SModel.addLanguage(getOperationContext().getScope().getLanguage(l.getName()));
     }
 
     CloneModelUtil.cloneModel(mySModel, modelDescriptor.getSModel());

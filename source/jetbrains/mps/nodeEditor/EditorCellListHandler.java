@@ -27,7 +27,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
   public EditorCellListHandler(SNode ownerNode, String childRole, EditorContext editorContext) {
     myOwnerNode = ownerNode;
     myEditorContext = editorContext;
-    myLinkDeclaration = SModelUtil.getLinkDeclaration(ownerNode, childRole, editorContext.getOperationContext());
+    myLinkDeclaration = SModelUtil.getLinkDeclaration(ownerNode, childRole, editorContext.getOperationContext().getScope());
     myChildConcept = myLinkDeclaration.getTarget();
     LinkDeclaration genuineLink = SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration);
     if (genuineLink.getMetaClass() != LinkMetaclass.aggregation) {

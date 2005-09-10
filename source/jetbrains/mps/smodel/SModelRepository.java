@@ -1,10 +1,7 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.messages.Message;
-import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.projectLanguage.ModelRoot;
@@ -24,12 +21,10 @@ public class SModelRepository extends SModelAdapter {
   private Map<SModelDescriptor, Long> myChangedModels = new HashMap<SModelDescriptor, Long>();
   private Map<SModelUID, SModelDescriptor> myUIDToModelDescriptorMap = new HashMap<SModelUID, SModelDescriptor>();
   private Map<SModelDescriptor, HashSet<ModelOwner>> myModelToOwnerMap = new HashMap<SModelDescriptor, HashSet<ModelOwner>>();
-  private IdeMain myIde;
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
   private MyCommandTranslator myCommandTranslator = new MyCommandTranslator();
 
-  public SModelRepository(IdeMain ide) {
-    myIde = ide;
+  public SModelRepository() {
     CommandProcessor.instance().addCommandListener(this.myCommandTranslator);
   }
 
@@ -38,7 +33,7 @@ public class SModelRepository extends SModelAdapter {
     return ApplicationComponents.getInstance().getComponent(SModelRepository.class);
   }
 
-  public void refreshModels(boolean updateNodeStatuses, IOperationContext operationContext) {
+  public void refreshModels(boolean updateNodeStatuses, IScope scope) {
     for (SModelDescriptor m : myUIDToModelDescriptorMap.values()) {
       m.refresh();
     }
@@ -46,7 +41,7 @@ public class SModelRepository extends SModelAdapter {
     if (updateNodeStatuses) {
       for (SModelDescriptor m : myUIDToModelDescriptorMap.values()) {
         if (m.isInitialized()) {
-          m.getSModel().updateNodeStatuses(operationContext);
+          m.getSModel().updateNodeStatuses(scope);
         }
       }
     }
@@ -168,17 +163,6 @@ public class SModelRepository extends SModelAdapter {
     return null;
   }
 
-  public SModelDescriptor getModelDescriptor(SModelUID modelUID, LanguageOwner languageOwner) {
-    SModelDescriptor descriptor = getModelDescriptor(modelUID);
-    if (descriptor == null) return null;
-    List<Language> languages = LanguageRepository.getInstance().getLanguages(languageOwner);
-    Set<ModelOwner> owners = myModelToOwnerMap.get(descriptor);
-    for (ModelOwner owner : owners) {
-      if (languages.contains(owner)) return descriptor;
-    }
-    return null;
-  }
-
   /**
    * @deprecated
    */
@@ -219,15 +203,6 @@ public class SModelRepository extends SModelAdapter {
     return null;
   }
 
-  public List<SModelDescriptor> getModelDescriptors(String modelName, LanguageOwner owner) {
-    List<Language> languages = LanguageRepository.getInstance().getLanguages(owner);
-    List<SModelDescriptor> list = new LinkedList<SModelDescriptor>();
-    for (Language language : languages) {
-      list.addAll(getModelDescriptors(modelName, (ModelOwner)language));
-    }
-    return list;
-  }
-
   public List<SModelDescriptor> getModelDescriptors(String modelName, ModelOwner owner) {
     List<SModelDescriptor> list = new LinkedList<SModelDescriptor>();
     SModelUID modelUID = SModelUID.fromString(modelName);
@@ -264,17 +239,6 @@ public class SModelRepository extends SModelAdapter {
           break;
         }
         testOwner = testOwner.getParentModelOwner();
-      }
-    }
-    return list;
-  }
-
-  public List<SModelDescriptor> getModelDescriptors(LanguageOwner languageOwner) {
-    List<SModelDescriptor> list = new LinkedList<SModelDescriptor>();
-    List<Language> languages = LanguageRepository.getInstance().getLanguages(languageOwner);
-    for (SModelDescriptor model : myUIDToModelDescriptorMap.values()) {
-      for (Language language : languages) {
-        if (myModelToOwnerMap.get(model).contains(language)) list.add(model);
       }
     }
     return list;
@@ -365,7 +329,6 @@ public class SModelRepository extends SModelAdapter {
         String error = "Couldn't load modelDescriptors from " + dir.getAbsolutePath() +
                 "\nDirectory doesn't exist: " + dir.getAbsolutePath();
         LOG.error(error);
-        myIde.getMessageView().add(new Message(MessageKind.ERROR, error));
       }
     }
 

@@ -295,9 +295,8 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     return descendantsKnownInModel;
   }
 
-  public VersionControl getVersionControl(IOperationContext operationContext) {
-    VersionControlManager vcm = operationContext.getComponent(VersionControlManager.class);
-    return vcm.createVCSFor(this);
+  public VersionControl getVersionControl() {
+    return VersionControlManager.getInstance().createVCSFor(this);
   }
 
   public final void delete() {
@@ -336,7 +335,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     }
   }
 
-  public Set<SNode> findInstances(ConceptDeclaration concept, IOperationContext operationContext) {
+  public Set<SNode> findInstances(ConceptDeclaration concept, IScope scope) {
     String conceptFqName = JavaNameUtil.className(concept);
     if (mySModel == null || !SModelRepository.getInstance().isChanged(mySModel)) {
       if (!containsString(conceptFqName)) return new HashSet<SNode>();
@@ -345,16 +344,16 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     Set<SNode> result = new HashSet<SNode>();
     if (mySModel != null) {
       for (SNode root : mySModel.getRoots()) {
-        addInstances(root, concept, result, operationContext);
+        addInstances(root, concept, result, scope);
       }
     }
     return result;
   }
 
-  private void addInstances(SNode current, ConceptDeclaration concept, Set<SNode> result, IOperationContext operationContext) {
-    if (SModelUtil.isInstanceOfConcept(current, concept, operationContext)) result.add(current);
+  private void addInstances(SNode current, ConceptDeclaration concept, Set<SNode> result, IScope scope) {
+    if (SModelUtil.isInstanceOfConcept(current, concept, scope)) result.add(current);
     for (SNode child : current.getChildren()) {
-      addInstances(child, concept, result, operationContext);
+      addInstances(child, concept, result, scope);
     }
   }
 

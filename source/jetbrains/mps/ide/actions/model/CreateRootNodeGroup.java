@@ -47,7 +47,7 @@ public class CreateRootNodeGroup extends ActionGroup {
       };
       add(langRootsGroup);
 
-      Language language = operationContext.getLanguage(languageNamespace);
+      Language language = operationContext.getScope().getLanguage(languageNamespace);
       for(final ConceptDeclaration conceptDeclaration : language.getConceptDeclarations()) {
         if (conceptDeclaration.getRootable()) {
           String className = JavaNameUtil.className(conceptDeclaration);

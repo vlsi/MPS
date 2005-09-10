@@ -330,10 +330,10 @@ public class SModel implements Iterable<SNode> {
     fireLanguageRemovedEvent(languageNamespace);
   }
 
-  public List<Language> getLanguages(IOperationContext operationContext) {
+  public List<Language> getLanguages(IScope scope) {
     ArrayList<Language> languages = new ArrayList<Language>();
     for (String languageNamespace : myLanguages) {
-      Language language = operationContext.getLanguage(languageNamespace);
+      Language language = scope.getLanguage(languageNamespace);
       if (language != null) {
         languages.add(language);
       } else {
@@ -424,14 +424,14 @@ public class SModel implements Iterable<SNode> {
     return null;
   }
 
-  public Iterator<SModelDescriptor> importedModels(IOperationContext operationContext) {
+  public Iterator<SModelDescriptor> importedModels(IScope scope) {
     List<SModelDescriptor> modelsList = new LinkedList<SModelDescriptor>();
     Iterator<ImportElement> iterator = myImports.iterator();
     while (iterator.hasNext()) {
       ImportElement importElement = iterator.next();
       SModelUID modelUID = importElement.getModelUID();
       if (!myDescriptorNotFoundReportedModelUIDs.contains(modelUID)) {
-        SModelDescriptor modelDescriptor = operationContext.getModelDescriptor(modelUID);
+        SModelDescriptor modelDescriptor = scope.getModelDescriptor(modelUID);
         if (modelDescriptor != null) {
           modelsList.add(modelDescriptor);
         } else {
@@ -470,17 +470,17 @@ public class SModel implements Iterable<SNode> {
     clearNodeStatuses();
     ITypeChecker typeChecker = TypeCheckerAccess.instance().getTypeChecker();
     if (typeChecker == null) return new Status.ERROR("null typechecker");
-    return updateNodeStatuses(typeChecker.getOperationContext());
+    return updateNodeStatuses(typeChecker.getOperationContext().getScope());
   }
 
-  public IStatus updateNodeStatuses(IOperationContext operationContext) {
+  public IStatus updateNodeStatuses(IScope scope) {
     clearNodeStatuses();
     Iterator<SNode> roots;
 
     ITypeChecker typeChecker = TypeCheckerAccess.instance().getTypeChecker();
     if (typeChecker == null) return new Status.ERROR("null typechecker");
 
-    List<Language> languages = getLanguages(operationContext);
+    List<Language> languages = getLanguages(scope);
     for (Iterator<Language> iterator = languages.iterator(); iterator.hasNext();) {
       Language language = iterator.next();
       typeChecker.loadLanguage(language);

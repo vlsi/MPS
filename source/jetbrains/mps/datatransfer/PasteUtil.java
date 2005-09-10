@@ -105,7 +105,7 @@ public class PasteUtil {
 
   private static boolean canPasteToRoot(SNode pasteTarget, SNode pasteNode, IOperationContext operationContext) {
     if (pasteNode == null) return false;
-    final ConceptDeclaration conceptDeclaration = SModelUtil.findConceptDeclaration(NameUtil.nodeConceptFQName(pasteNode), operationContext);
+    final ConceptDeclaration conceptDeclaration = SModelUtil.findConceptDeclaration(NameUtil.nodeConceptFQName(pasteNode), operationContext.getScope());
     return (pasteTarget.getParent() == null && conceptDeclaration.getRootable());
   }
 
@@ -118,8 +118,8 @@ public class PasteUtil {
   }
 
   private static boolean pasteToTarget_internal(final SNode pasteTarget, final SNode pasteNode, final SNode anchorNode, String role, final boolean pasteBefore, boolean reallyPaste, final IOperationContext operationContext) {
-    ConceptDeclaration pasteTargetType = SModelUtil.getConceptDeclaration(pasteTarget, operationContext);
-    ConceptDeclaration pasteNodeType = SModelUtil.getConceptDeclaration(pasteNode, operationContext);
+    ConceptDeclaration pasteTargetType = SModelUtil.getConceptDeclaration(pasteTarget, operationContext.getScope());
+    ConceptDeclaration pasteNodeType = SModelUtil.getConceptDeclaration(pasteNode, operationContext.getScope());
     if (pasteTargetType == null || pasteNodeType == null) {
       return false;
     }

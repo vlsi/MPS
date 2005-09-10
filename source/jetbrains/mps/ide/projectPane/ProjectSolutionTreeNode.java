@@ -1,12 +1,11 @@
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.SolutionOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 
 import javax.swing.*;
@@ -24,7 +23,7 @@ class ProjectSolutionTreeNode extends MPSTreeNode {
   private MPSProject myProject;
 
   public ProjectSolutionTreeNode(Solution solution, MPSProject project) {
-    super(new SolutionOperationContext(solution, project));
+    super(new ModuleContext(solution, project));
     mySolution = solution;
     myProject = project;
     populate();

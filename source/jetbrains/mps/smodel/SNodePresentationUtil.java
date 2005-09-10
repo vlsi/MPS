@@ -16,7 +16,7 @@ import java.util.Iterator;
  * Todo: refactor this utility
  */
 public class SNodePresentationUtil {
-  public static String matchingText(SNode node, SNode referenceContext, IOperationContext operationContext) {
+  public static String matchingText(SNode node, SNode referenceContext, IScope scope) {
     String result = null;
     if (node instanceof BaseMethodDeclaration) {
       result = matchingText_BaseMethodDeclaration((BaseMethodDeclaration) node, referenceContext);
@@ -38,7 +38,7 @@ public class SNodePresentationUtil {
 
     // todo: alias or name ????
     if (!isNamedElement(node)) {
-      String alias = SModelUtil.getConceptProperty(node, "alias", operationContext);
+      String alias = SModelUtil.getConceptProperty(node, "alias", scope);
       if (alias != null) {
         return alias;
       }
@@ -58,14 +58,14 @@ public class SNodePresentationUtil {
     return false;
   }
 
-  public static String descriptionText(SNode node, SNode referenceContext, IOperationContext operationContext) {
+  public static String descriptionText(SNode node, SNode referenceContext, IScope scope) {
     String result = null;
     if (node instanceof BaseMethodDeclaration) {
-      result = descriptionText_BaseMethodDeclaration((BaseMethodDeclaration) node, referenceContext, operationContext);
+      result = descriptionText_BaseMethodDeclaration((BaseMethodDeclaration) node, referenceContext, scope);
     } else if (node instanceof VariableDeclaration) {
-      result = descriptionText_VariableDeclaration((VariableDeclaration) node, referenceContext, operationContext);
+      result = descriptionText_VariableDeclaration((VariableDeclaration) node, referenceContext, scope);
     } else if (node instanceof Classifier) {
-      result = descriptionText_Classifier((Classifier) node, operationContext);
+      result = descriptionText_Classifier((Classifier) node, scope);
     }
     if (result != null) {
       return result;
@@ -76,7 +76,7 @@ public class SNodePresentationUtil {
       SNode containingRoot = node.getContainingRoot();
       return containingRoot.getName() + " (" + containingRoot.getModel().getUID() + ")";
     }
-    String description = SModelUtil.getConceptProperty(node, "short_description", operationContext);
+    String description = SModelUtil.getConceptProperty(node, "short_description", scope);
     if (description != null) {
       return description;
     }
@@ -170,8 +170,8 @@ public class SNodePresentationUtil {
     return type.getName();
   }
 
-  private static String descriptionText_BaseMethodDeclaration(BaseMethodDeclaration method, SNode referenceContext, IOperationContext operationContext) {
-    String prefix = getAliasOrConceptName(method, operationContext) + " in ";
+  private static String descriptionText_BaseMethodDeclaration(BaseMethodDeclaration method, SNode referenceContext, IScope scope) {
+    String prefix = getAliasOrConceptName(method, scope) + " in ";
     if (method instanceof MethodDeclaration) {
       // freestanding method: model fqname
       return prefix + method.getModel().getUID().getLongName();
@@ -187,7 +187,7 @@ public class SNodePresentationUtil {
     return prefix + NameUtil.nodeFQName(parent);
   }
 
-  private static String descriptionText_VariableDeclaration(VariableDeclaration variable, SNode referenceContext, IOperationContext operationContext) {
+  private static String descriptionText_VariableDeclaration(VariableDeclaration variable, SNode referenceContext, IScope scope) {
     if (variable instanceof ParameterDeclaration) {
       return "parameter";
     }
@@ -195,7 +195,7 @@ public class SNodePresentationUtil {
       return "local variable";
     }
 
-    String prefix = getAliasOrConceptName(variable, operationContext) + " in ";
+    String prefix = getAliasOrConceptName(variable, scope) + " in ";
     if (variable instanceof FieldDeclaration ||
             variable instanceof StaticFieldDeclaration) {
       Classifier parent = SModelUtil.findParent(variable, Classifier.class);
@@ -212,12 +212,12 @@ public class SNodePresentationUtil {
     return null;
   }
 
-  private static String descriptionText_Classifier(Classifier classifier, IOperationContext operationContext) {
-    return getAliasOrConceptName(classifier, operationContext) + " in " + classifier.getModel().getUID();
+  private static String descriptionText_Classifier(Classifier classifier, IScope scope) {
+    return getAliasOrConceptName(classifier, scope) + " in " + classifier.getModel().getUID();
   }
 
-  private static String getAliasOrConceptName(SNode node, IOperationContext operationContext) {
-    String alias = SModelUtil.getConceptProperty(node, "alias", operationContext);
+  private static String getAliasOrConceptName(SNode node, IScope scope) {
+    String alias = SModelUtil.getConceptProperty(node, "alias", scope);
     if(alias != null) {
       return alias;
     }

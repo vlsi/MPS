@@ -298,7 +298,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createExtendsReferenceCell(EditorContext context, SNode node) {
     SNode effectiveNode = null;
     effectiveNode = node.getReferent("extends");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "extends", context.getOperationContext());
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "extends", context.getOperationContext().getScope());
     SReference reference = node.getReference("extends");
     if(reference != null && !(reference.isResolved())) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));

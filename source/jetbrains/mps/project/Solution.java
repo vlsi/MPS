@@ -1,17 +1,19 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.projectLanguage.PersistenceUtil;
 import jetbrains.mps.projectLanguage.SolutionDescriptor;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.PathManager;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Collections;
 
 /**
  * Created by IntelliJ IDEA.
@@ -20,7 +22,7 @@ import java.util.List;
  * Time: 8:29:14 PM
  * To change this template use File | Settings | File Templates.
  */
-public class Solution implements ModelLocator, ModelOwner, LanguageOwner {
+public class Solution extends AbstractModule implements ModelLocator {
   private SolutionDescriptor mySolutionDescriptor;
   private File myDescriptorFile;
   private List<SolutionCommandListener> myCommandListeners = new LinkedList<SolutionCommandListener>();
@@ -87,7 +89,7 @@ public class Solution implements ModelLocator, ModelOwner, LanguageOwner {
 
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor, IOperationContext operationContext) {
     // release languages and models (except descriptor model)
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), (ModelOwner)this);
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), this);
     LanguageRepository.getInstance().unRegisterLanguages(this);
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
     SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, this);
@@ -119,9 +121,9 @@ public class Solution implements ModelLocator, ModelOwner, LanguageOwner {
     return mySolutionDescriptor;
   }
 
-  // -------------------------------
-  // ModelLocator, ModelOwner, LanguageOwner
-  // -------------------------------
+  public List<ModelRoot> getModelRoots() {
+    return CollectionUtil.iteratorAsList(mySolutionDescriptor.modelRoots());
+  }
 
   public String findPath(SModelUID modelUID) {
     String modelPath = PathManager.findModelPath(mySolutionDescriptor.modelRoots(), modelUID);
@@ -131,12 +133,8 @@ public class Solution implements ModelLocator, ModelOwner, LanguageOwner {
     return null;
   }
 
-  public ModelOwner getParentModelOwner() {
-    return null;
-  }
-
-  public LanguageOwner getParentLanguageOwner() {
-    return BootstrapLanguages.getInstance();
+  protected List<IModule> getDependOnModules() {
+    return Collections.emptyList();
   }
 
   public void addSolutionCommandListener(SolutionCommandListener listener) {

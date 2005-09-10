@@ -115,7 +115,7 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
   public EditorCell createTargetTypeReferenceCell(EditorContext context, SNode node) {
     SNode effectiveNode = null;
     effectiveNode = node.getReferent("targetType");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "targetType", context.getOperationContext());
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "targetType", context.getOperationContext().getScope());
     SReference reference = node.getReference("targetType");
     if(reference != null && !(reference.isResolved())) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));

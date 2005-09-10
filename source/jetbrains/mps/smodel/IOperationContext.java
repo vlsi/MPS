@@ -2,6 +2,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.IModule;
 
 import java.util.List;
 
@@ -14,41 +15,11 @@ import java.util.List;
  */
 public interface IOperationContext {
 
-  /**
-   * todo: move to module context 
-   */
   MPSProject getProject();
 
-  SModelDescriptor getModelDescriptor(SModelUID modelUID);
+  IModule getModule();
 
-  /**
-   * @deprecated
-   */
-  SModelDescriptor getModelDescriptor(String modelName);
-
-  List<SModelDescriptor> getOwnModelDescriptors();
-
-  List<SModelDescriptor> getModelDescriptors(String modelName);
-
-  void registerModelDescriptor(SModelDescriptor modelDescriptor);
-
-  void unRegisterModelDescriptor(SModelDescriptor model);
-
-  Language getLanguage(String languageNamespace);
-
-  List<Language> getLanguages();
-
+  IScope getScope();
+  
   <T> T getComponent(Class<T> clazz);
-
-  List<ModelRoot> getModelRoots();
-
-  SModelDescriptor createModel(SModelUID uid, String path, String pathPrefix);
-
-  List<String> getClassPath();
-
-  String getHomePath();
-
-  SModelDescriptor createTransientProjectModel();
-
-  List<SModelDescriptor> getVisibleModelDescriptors();
 }

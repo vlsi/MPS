@@ -44,10 +44,10 @@ public interface SModelDescriptor {
 
   Set<SReference> findUsages(SNode node);
   Set<ConceptDeclaration> findDescendants(ConceptDeclaration node, Set<ConceptDeclaration> descendantsKnownInModel);
-  Set<SNode> findInstances(ConceptDeclaration concept, IOperationContext operationContext);
+  Set<SNode> findInstances(ConceptDeclaration concept, IScope scope);
   long timestamp();
 
-  VersionControl getVersionControl(IOperationContext operationContext);
+  VersionControl getVersionControl();
 
   void delete();
 }

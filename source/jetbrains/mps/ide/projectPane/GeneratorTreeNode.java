@@ -1,10 +1,10 @@
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.generator.GeneratorOperationContext;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IOperationContext;
 
@@ -27,7 +27,7 @@ class GeneratorTreeNode extends TextTreeNode {
     super(text);
     myGenerator = generator;
     myProject = project;
-    myOperationContext = GeneratorOperationContext.createContext(generator, operationContext.getProject());
+    myOperationContext = new ModuleContext(generator, operationContext.getProject());
     populate();
   }
 

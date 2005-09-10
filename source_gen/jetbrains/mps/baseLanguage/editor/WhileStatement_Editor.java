@@ -133,8 +133,8 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   public EditorCell createConditionCell(EditorContext context, SNode node) {
     SNode referencedNode = null;
     referencedNode = node.getChild("condition");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "condition", context.getOperationContext());
-    if(referencedNode == null) {
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "condition", context.getOperationContext().getScope());
+    if (referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);
@@ -165,8 +165,8 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   public EditorCell createBodyCell(EditorContext context, SNode node) {
     SNode referencedNode = null;
     referencedNode = node.getChild("body");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "body", context.getOperationContext());
-    if(referencedNode == null) {
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "body", context.getOperationContext().getScope());
+    if (referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);

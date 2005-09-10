@@ -16,7 +16,7 @@ public class CloneModelUtil {
 
     String path = modelRoot.getPath();
     String prefix = modelRoot.getPrefix();
-    SModelDescriptor modelCopyDescriptor = operationContext.createModel(modelUID, path, prefix);
+    SModelDescriptor modelCopyDescriptor = operationContext.getModule().createModel(modelUID, path, prefix);
     SModel modelCopy = modelCopyDescriptor.getSModel();
 
     return cloneModel(model, modelCopy);
