@@ -378,6 +378,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       return "";
     }
 
+
     public void relayout() {
       Point newLocation = new Point();
 
@@ -385,8 +386,18 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       Point anchor = component.getLocationOnScreen();
       Point location = new Point(anchor.x + myRelativeCell.getX(), anchor.y + myRelativeCell.getY() + myRelativeCell.getHeight());
 
-      int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
-      if (location.getY() + PopupWindow.PREFERRED_HEIGHT > screenHeight - 150) {
+
+      Rectangle deviceBounds = getOwner().getGraphicsConfiguration().getBounds();
+
+      //this is a hack but i don't know how to
+      //make it work on many monitors
+      GraphicsDevice devices[] = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices();
+      for (GraphicsDevice d : devices) {
+        Rectangle bounds = d.getDefaultConfiguration().getBounds();
+        if (bounds.contains(location)) deviceBounds = bounds;
+      }
+
+      if (location.getY() + PopupWindow.PREFERRED_HEIGHT > deviceBounds.height + deviceBounds.y - 150) {
         getPopupWindow().setPosition(PopupWindowPosition.TOP);
       } else {
         getPopupWindow().setPosition(PopupWindowPosition.BOTTOM);
@@ -418,17 +429,16 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
         newLocation = new Point(newLocation.x, newLocation.y - getHeight() - myRelativeCell.getHeight());
       }
 
-      int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
-      if (getWidth() >= screenWidth) {
-        setSize(screenWidth, getSize().height + myList.getFontMetrics(myList.getFont()).getHeight());
+      if (getWidth() >= deviceBounds.width) {
+        setSize(deviceBounds.width, getSize().height + myList.getFontMetrics(myList.getFont()).getHeight());
       }
 
       if (newLocation.x < 0) {
         newLocation.x = 0;
       }
 
-      if (getWidth() + newLocation.x > screenWidth) {
-        newLocation = new Point(screenWidth - getWidth(), newLocation.y);
+      if (getWidth() + newLocation.x > deviceBounds.width + deviceBounds.x) {
+        newLocation = new Point(deviceBounds.width + deviceBounds.x - getWidth(), newLocation.y);
       }
 
 
