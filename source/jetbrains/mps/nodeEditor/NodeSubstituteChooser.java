@@ -387,8 +387,9 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       Point location = new Point(anchor.x + myRelativeCell.getX(), anchor.y + myRelativeCell.getY() + myRelativeCell.getHeight());
 
 
-      Rectangle deviceBounds = getOwner().getGraphicsConfiguration().getBounds();
+      Rectangle deviceBounds = getGraphicsConfiguration().getBounds();
 
+      
       //this is a hack but i don't know how to
       //make it work on many monitors
       GraphicsDevice devices[] = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices();
