@@ -27,6 +27,11 @@ public abstract class BaseDialog extends JDialog {
   protected BaseDialog(Frame mainFrame, String text) throws HeadlessException {
     super(mainFrame, text, true);
 
+    //do not remove this code
+    //it require to run MPS correctly on system
+    //with many monitors  
+    setLocationRelativeTo(mainFrame);
+
     this.addWindowListener(new WindowAdapter() {
       public void windowClosing(WindowEvent e) {
         saveMyDimensionSettings();
