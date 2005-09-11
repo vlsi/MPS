@@ -19,10 +19,24 @@ public abstract class BaseDialog extends JDialog {
     }
   };
 
-    static final String D_LEFT = "left";
+  static final String D_LEFT = "left";
   static final String D_TOP = "top";
   static final String D_WIDTH = "width";
   static final String D_HEIGHT = "height";
+
+  protected BaseDialog(Frame mainFrame, String text) throws HeadlessException {
+    super(mainFrame, text, true);
+
+    this.addWindowListener(new WindowAdapter() {
+      public void windowClosing(WindowEvent e) {
+        saveMyDimensionSettings();
+      }
+    });
+
+    updateDimensionSettings();
+    setLocation(myDialogDimensions.left, myDialogDimensions.top);
+    setSize(myDialogDimensions.width, myDialogDimensions.height);
+  }
 
   protected DialogDimensions myDialogDimensions;
 
@@ -83,19 +97,6 @@ public abstract class BaseDialog extends JDialog {
     if (myDialogDimensions == null) myDialogDimensions = getDefaultDimensionSettings();
   }
 
-  protected BaseDialog(Frame mainFrame, String text) throws HeadlessException {
-    super(mainFrame, text, true);
-
-    this.addWindowListener(new WindowAdapter() {
-      public void windowClosing(WindowEvent e) {
-        saveMyDimensionSettings();
-      }
-    });
-
-    updateDimensionSettings();
-    setLocation(myDialogDimensions.left, myDialogDimensions.top);
-    setSize(myDialogDimensions.width, myDialogDimensions.height);
-  }
 
   public void showDialog() {
     setLayout(new BorderLayout());
