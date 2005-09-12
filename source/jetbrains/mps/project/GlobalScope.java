@@ -1,6 +1,7 @@
-package jetbrains.mps.smodel;
+package jetbrains.mps.project;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.*;
 
 import java.util.List;
 

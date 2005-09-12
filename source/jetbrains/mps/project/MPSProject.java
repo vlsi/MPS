@@ -1,13 +1,16 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.FileUtil;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.projectLanguage.*;
+import jetbrains.mps.projectLanguage.LanguagePath;
+import jetbrains.mps.projectLanguage.PersistenceUtil;
+import jetbrains.mps.projectLanguage.ProjectDescriptor;
+import jetbrains.mps.projectLanguage.SolutionPath;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Document;
@@ -21,7 +24,7 @@ import java.util.*;
  * Created Apr 29, 2004
  */
 
-public class MPSProject implements ModelOwner, LanguageOwner {
+public class MPSProject implements ModelOwner, LanguageOwner, IScope {
   private static final Logger LOG = Logger.getLogger(MPSProject.class);
 
   private File myProjectFile;
@@ -102,7 +105,7 @@ public class MPSProject implements ModelOwner, LanguageOwner {
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         // release languages and models (except descriptor model)
-        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), (ModelOwner)MPSProject.this);
+        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), (ModelOwner) MPSProject.this);
         LanguageRepository.getInstance().unRegisterLanguages(MPSProject.this);
         SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
         SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, MPSProject.this);
@@ -151,7 +154,7 @@ public class MPSProject implements ModelOwner, LanguageOwner {
   }
 
   public LanguageOwner getParentLanguageOwner() {
-    return null;
+    return BootstrapLanguages.getInstance();
   }
 
   public String toString() {
@@ -166,8 +169,8 @@ public class MPSProject implements ModelOwner, LanguageOwner {
     return myProjectDescriptor;
   }
 
-  public Collection<Language> getLanguages() {
-    return Collections.unmodifiableCollection(myLanguages);
+  public List<Language> getLanguages() {
+    return Collections.unmodifiableList(myLanguages);
   }
 
   public List<Solution> getSolutions() {
@@ -289,6 +292,74 @@ public class MPSProject implements ModelOwner, LanguageOwner {
       if (owners.contains(l)) return l;
     }
     return null;
+  }
+
+
+  public Language getLanguage(String languageNamespace) {
+    Language language = LanguageRepository.getInstance().getLanguage(languageNamespace, this);
+    if (language == null) {
+      LOG.error("Couldn't find language for namespace: \"" + languageNamespace + "\" in: " + this);
+    }
+    return language;
+  }
+
+  public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
+    if (modelDescriptor != null) {
+      return modelDescriptor;
+    }
+    for (Solution solution : mySolutions) {
+      modelDescriptor = solution.getModelDescriptor(modelUID);
+      if (modelDescriptor != null) {
+        return modelDescriptor;
+      }
+    }
+    for (Language language : myLanguages) {
+      modelDescriptor = language.getModelDescriptor(modelUID);
+      if (modelDescriptor != null) {
+        return modelDescriptor;
+      }
+    }
+
+    LOG.warning("Couldn't find model descriptor for uid: \"" + modelUID + "\" in: " + this);
+    return null;
+  }
+
+  public List<SModelDescriptor> getModelDescriptors(String modelName) {
+    HashSet<SModelDescriptor> set = new HashSet<SModelDescriptor>();
+    {
+      List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptors(modelName, this);
+      for (SModelDescriptor descriptor : list) {
+        if (!set.contains(descriptor)) {
+          set.add(descriptor);
+        }
+      }
+    }
+
+    for (Solution solution : mySolutions) {
+      List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptors(modelName, solution);
+      for (SModelDescriptor descriptor : list) {
+        if (!set.contains(descriptor)) {
+          set.add(descriptor);
+        }
+      }
+    }
+    for (Language language : myLanguages) {
+      List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptors(modelName, language);
+      for (SModelDescriptor descriptor : list) {
+        if (!set.contains(descriptor)) {
+          set.add(descriptor);
+        }
+      }
+    }
+
+    List<SModelDescriptor> result = CollectionUtil.iteratorAsList(set.iterator());
+    set.clear();
+    return result;
+  }
+
+  public List<SModelDescriptor> getVisibleModelDescriptors() {
+    throw new RuntimeException("not implemented");
   }
 
 
