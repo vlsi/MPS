@@ -176,9 +176,6 @@ public class LanguageRepository {
     return result;
   }
 
-  /**
-   * @deprecated
-   */
   public Language getLanguage(String namespace) {
     return myNamespaceToLanguageMap.get(namespace);
   }
