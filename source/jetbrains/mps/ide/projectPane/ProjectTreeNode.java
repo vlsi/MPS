@@ -3,6 +3,8 @@ package jetbrains.mps.ide.projectPane;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.GlobalOperationContext;
 
 import javax.swing.*;
 
@@ -15,8 +17,8 @@ import javax.swing.*;
  */
 class ProjectTreeNode extends MPSTreeNode {
 
-  ProjectTreeNode() {
-    super(null);
+  ProjectTreeNode(MPSProject project) {
+    super(new GlobalOperationContext(project));
   }
 
   public JPopupMenu getPopupMenu() {

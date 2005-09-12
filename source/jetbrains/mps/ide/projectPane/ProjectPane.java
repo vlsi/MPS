@@ -380,7 +380,7 @@ public class ProjectPane extends JComponent {
       if (myProject == null) {
         return new TextTreeNode("Empty");
       }
-      ProjectTreeNode root = new ProjectTreeNode();
+      ProjectTreeNode root = new ProjectTreeNode(myProject);
 
       List<Solution> solutions = myProject.getSolutions();
       for (Solution solution : solutions) {
