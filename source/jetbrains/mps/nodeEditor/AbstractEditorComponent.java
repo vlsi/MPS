@@ -588,6 +588,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return findCellWithId(rootCell, id);
   }
 
+  public EditorCell findNodeCell(final SNode node, String id, int number) {
+    EditorCell rootCell = findNodeCell(node);
+    if (rootCell == null) return null;
+    return findCellWithIdAndNumber(rootCell, id, number);
+  }
+
   private EditorCell findCellWithId(final EditorCell root, String id) {
     if (id == null) return null;
     if (id.equals(root.getUserObject(EditorCell.CELL_ID))) return root;
@@ -595,6 +601,19 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       EditorCell_Collection collection = (EditorCell_Collection) root;
       for (EditorCell child : collection) {
         EditorCell result = findCellWithId(child, id);
+        if (result != null) return result;
+      }
+    }
+    return null;
+  }
+
+  private EditorCell findCellWithIdAndNumber(final EditorCell root, String id, int number) {
+    if (id == null) return null;
+    if (id.equals(root.getUserObject(EditorCell.CELL_ID)) && ((Integer)number).equals(root.getUserObject(EditorCell.NUMBER))) return root;
+    if (root instanceof EditorCell_Collection) {
+      EditorCell_Collection collection = (EditorCell_Collection) root;
+      for (EditorCell child : collection) {
+        EditorCell result = findCellWithIdAndNumber(child, id, number);
         if (result != null) return result;
       }
     }

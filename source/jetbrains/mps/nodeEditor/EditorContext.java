@@ -57,11 +57,15 @@ public class EditorContext {
     if (o instanceof Memento) {
       Memento memento = (Memento) o;
       if (myNodeEditorComponent == memento.nodeEditor) {
-        if (memento.selectionPosition != null) {
-          EditorCell nearestCell = myNodeEditorComponent.findNearestCell(memento.selectionPosition.x, memento.selectionPosition.y);
-          myNodeEditorComponent.changeSelection(nearestCell);
-          if (nearestCell != null) {
-            nearestCell.setCaretX(memento.caretX.intValue());
+        if (memento.cellInfo != null) {
+         /* EditorCell nearestCell = myNodeEditorComponent.findNearestCell(memento.selectionPosition.x, memento.selectionPosition.y);
+          myNodeEditorComponent.changeSelection(nearestCell);*/
+          CellInfo cellInfo = memento.cellInfo;
+          EditorCell cellToSelect = myNodeEditorComponent.findNodeCell(cellInfo.getSNode(), cellInfo.cellId, cellInfo.cellNumber);
+          if (cellToSelect == null) cellToSelect = myNodeEditorComponent.findNodeCell(cellInfo.getSNode(), cellInfo.cellId);
+          myNodeEditorComponent.changeSelection(cellToSelect);
+          if (cellToSelect != null) {
+            cellToSelect.setCaretX(memento.caretX.intValue());
           } else {
             LOG.error("ERROR EditorContext: coudn't find cell at: " + memento.selectionPosition);
           }
@@ -85,6 +89,7 @@ public class EditorContext {
   private static class Memento {
     private AbstractEditorComponent nodeEditor;
     private Point selectionPosition;
+    private CellInfo cellInfo;
     private Integer caretX;
 
     public Memento(EditorContext context) {
@@ -93,6 +98,7 @@ public class EditorContext {
       if (selectedCell != null) {
         selectionPosition = new Point(selectedCell.getX(), selectedCell.getY());
         caretX = new Integer(selectedCell.getCaretX());
+        cellInfo = new CellInfo(selectedCell);
       }
     }
 
