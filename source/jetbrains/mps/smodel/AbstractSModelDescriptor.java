@@ -7,6 +7,7 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
@@ -295,8 +296,8 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     return descendantsKnownInModel;
   }
 
-  public VersionControl getVersionControl() {
-    return VersionControlManager.getInstance().createVCSFor(this);
+  public VersionControl getVersionControl(MPSProject project) {
+    return project.getComponent(VersionControlManager.class).createVCSFor(this);
   }
 
   public final void delete() {

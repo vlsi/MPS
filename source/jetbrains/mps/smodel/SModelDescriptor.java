@@ -4,6 +4,7 @@ import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.vcs.model.VersionControl;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.project.MPSProject;
 
 import java.util.Set;
 import java.io.File;
@@ -47,7 +48,7 @@ public interface SModelDescriptor {
   Set<SNode> findInstances(ConceptDeclaration concept, IScope scope);
   long timestamp();
 
-  VersionControl getVersionControl();
+  VersionControl getVersionControl(MPSProject project);
 
   void delete();
 }
