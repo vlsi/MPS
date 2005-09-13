@@ -227,6 +227,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
   public void save() {
     if (mySModel == null) return;
+    SModelRepository.getInstance().markChanged(mySModel, false);
     saveModel(mySModel);
   }
 

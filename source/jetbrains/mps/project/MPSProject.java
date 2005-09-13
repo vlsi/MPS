@@ -122,18 +122,28 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope {
     myEventTranslator.projectChanged();
   }
 
-  public void addLanguage(File languageDescriptorFile) {
+//  public void addLanguage(File languageDescriptorFile) {
+//    ProjectDescriptor projectDescriptor = getProjectDescriptor();
+//    SModel model = projectDescriptor.getModel();
+//    model.setLoading(true);
+//    LanguagePath languagePath = new LanguagePath(model);
+//    languagePath.setPath(languageDescriptorFile.getAbsolutePath());
+//    projectDescriptor.addProjectLanguage(languagePath);
+//
+//    setProjectDescriptor(projectDescriptor);
+//
+//    myEventTranslator.projectChanged();
+//  }
+
+  public void addLanguage(Language language) {
     ProjectDescriptor projectDescriptor = getProjectDescriptor();
     SModel model = projectDescriptor.getModel();
     model.setLoading(true);
     LanguagePath languagePath = new LanguagePath(model);
-    languagePath.setPath(languageDescriptorFile.getAbsolutePath());
+    languagePath.setPath(language.getDescriptorFile().getAbsolutePath());
     projectDescriptor.addProjectLanguage(languagePath);
-
     setProjectDescriptor(projectDescriptor);
-
     myEventTranslator.projectChanged();
-
   }
 
   public void addSolution(File solutionDescriptionFile) {

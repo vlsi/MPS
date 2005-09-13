@@ -21,9 +21,9 @@ import java.util.*;
 public class LanguageRepository {
   private static final Logger LOG = Logger.getLogger(LanguageRepository.class);
 
-  private HashMap<String, Language> myFileToLanguageMap = new HashMap<String, Language>();
-  private HashMap<String, Language> myNamespaceToLanguageMap = new HashMap<String, Language>();
-  private HashMap<Language, HashSet<LanguageOwner>> myLanguageToOwnersMap = new HashMap<Language, HashSet<LanguageOwner>>();
+  private Map<String, Language> myFileToLanguageMap = new HashMap<String, Language>();
+  private Map<String, Language> myNamespaceToLanguageMap = new HashMap<String, Language>();
+  private Map<Language, Set<LanguageOwner>> myLanguageToOwnersMap = new HashMap<Language, Set<LanguageOwner>>();
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
   private MyCommandTranslator myCommandTranslator = new MyCommandTranslator();
 
@@ -68,21 +68,35 @@ public class LanguageRepository {
       String canonicalPath = file.getCanonicalPath();
       Language language = myFileToLanguageMap.get(canonicalPath);
       if (language == null) {
-        language = new Language(file);
-        myFileToLanguageMap.put(canonicalPath, language);
-        myNamespaceToLanguageMap.put(language.getNamespace(), language);
+        language = Language.newInstance(file, owner);
+      } else {
+        Set<LanguageOwner> owners = myLanguageToOwnersMap.get(language);
+        if (owners == null) {
+          owners = new HashSet<LanguageOwner>();
+          myLanguageToOwnersMap.put(language, owners);
+        }
+        owners.add(owner);
       }
-      HashSet<LanguageOwner> owners = myLanguageToOwnersMap.get(language);
-      if (owners == null) {
-        owners = new HashSet<LanguageOwner>();
-        myLanguageToOwnersMap.put(language, owners);
-      }
-      owners.add(owner);
       repositoryChanged();
       return language;
     } catch (IOException e) {
       LOG.error(e);
       return null;
+    }
+  }
+
+  void addLanguage(Language language, LanguageOwner owner) {
+    if (myNamespaceToLanguageMap.containsKey(language.getNamespace())) {
+      throw new RuntimeException("Couldn't add language \"" + language.getNamespace() + "\" : this language is already registered");
+    }
+    try {
+      myFileToLanguageMap.put(language.getDescriptorFile().getCanonicalPath(), language);
+      myNamespaceToLanguageMap.put(language.getNamespace(), language);
+      Set<LanguageOwner> owners = new HashSet<LanguageOwner>();
+      owners.add(owner);
+      myLanguageToOwnersMap.put(language, owners);
+    } catch (IOException e) {
+      throw new RuntimeException("Failed to add language \"" + language.getNamespace() + "\"", e);
     }
   }
 
@@ -95,7 +109,7 @@ public class LanguageRepository {
   public void unRegisterLanguages(LanguageOwner owner) {
     for (String fileName : myFileToLanguageMap.keySet()) {
       Language language = myFileToLanguageMap.get(fileName);
-      HashSet owners = myLanguageToOwnersMap.get(language);
+      Set owners = myLanguageToOwnersMap.get(language);
       if (owners != null) {
         owners.remove(owner);
       }
@@ -107,7 +121,7 @@ public class LanguageRepository {
   public void removeUnusedLanguages() {
     List<Language> languagesToRemove = new LinkedList<Language>();
     for (Language language : myLanguageToOwnersMap.keySet()) {
-      HashSet<LanguageOwner> languageOwners = myLanguageToOwnersMap.get(language);
+      Set<LanguageOwner> languageOwners = myLanguageToOwnersMap.get(language);
       if (languageOwners == null || languageOwners.isEmpty()) {
         languagesToRemove.add(language);
       }
@@ -185,7 +199,7 @@ public class LanguageRepository {
     if (language == null) {
       return null;
     }
-    HashSet<LanguageOwner> languageOwners = myLanguageToOwnersMap.get(language);
+    Set<LanguageOwner> languageOwners = myLanguageToOwnersMap.get(language);
     LanguageOwner testOwner = languageOwner;
     while (testOwner != null) {
       if (languageOwners.contains(testOwner)) {
@@ -198,10 +212,10 @@ public class LanguageRepository {
 
   public List<Language> getLanguages(LanguageOwner languageOwner) {
     List<Language> list = new LinkedList<Language>();
-    Iterator<Map.Entry<Language, HashSet<LanguageOwner>>> entries = myLanguageToOwnersMap.entrySet().iterator();
+    Iterator<Map.Entry<Language, Set<LanguageOwner>>> entries = myLanguageToOwnersMap.entrySet().iterator();
     while (entries.hasNext()) {
-      Map.Entry<Language, HashSet<LanguageOwner>> entry = entries.next();
-      HashSet<LanguageOwner> languageOwners = entry.getValue();
+      Map.Entry<Language, Set<LanguageOwner>> entry = entries.next();
+      Set<LanguageOwner> languageOwners = entry.getValue();
 
       LanguageOwner testOwner = languageOwner;
       while (testOwner != null) {

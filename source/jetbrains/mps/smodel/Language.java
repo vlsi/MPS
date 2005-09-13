@@ -6,12 +6,12 @@ import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.*;
-import jetbrains.mps.nodeEditor.EditorContext;
 
 import java.io.File;
 import java.util.*;
@@ -50,12 +50,41 @@ public class Language extends AbstractModule implements ModelLocator {
   private long myLastGenerationTime = 0;
   private boolean myRegisteredInFindUsagesManager;
 
+  public static Language newInstance(File descriptorFile, LanguageOwner languageOwner) {
+    Language language = new Language();
+    SModel model = ProjectModelDescriptor.createDescriptorFor(language).getSModel();
+    LanguageDescriptor languageDescriptor = PersistenceUtil.loadLanguageDescriptor(descriptorFile, model);
+    language.myDescriptorFile = descriptorFile;
+    language.myLanguageDescriptor = languageDescriptor;
+    LanguageRepository.getInstance().addLanguage(language, languageOwner);
+    language.init();
+    return language;
+  }
 
-  public Language(File descriptorFile) {
-    myDescriptorFile = descriptorFile;
-    SModel model = ProjectModelDescriptor.createDescriptorFor(this).getSModel();
-    myLanguageDescriptor = PersistenceUtil.loadLanguageDescriptor(descriptorFile, model);
+  public static Language createLanguage(String languageNamespace, File descriptorFile, LanguageOwner languageOwner) {
+    Language language = new Language();
+    SModel descriptorModel = ProjectModelDescriptor.createDescriptorFor(language).getSModel();
+    descriptorModel.setLoading(true);
+    LanguageDescriptor languageDescriptor = new LanguageDescriptor(descriptorModel);
+    languageDescriptor.setNamespace(languageNamespace);
 
+    // default descriptorModel root
+    ModelRoot modelRoot = new ModelRoot(descriptorModel);
+    modelRoot.setPath(descriptorFile.getParentFile().getAbsolutePath());
+    modelRoot.setPrefix(languageNamespace);
+    languageDescriptor.addModelRoot(modelRoot);
+
+    language.myDescriptorFile = descriptorFile;
+    language.myLanguageDescriptor = languageDescriptor;
+    LanguageRepository.getInstance().addLanguage(language, languageOwner);
+    language.init();
+    return language;
+  }
+
+  private Language() {
+  }
+
+  private void init() {
     // read models
     SModelRepository.getInstance().readModelDescriptors(myLanguageDescriptor.modelRoots(), this);
     revalidateGenerators();
@@ -193,13 +222,16 @@ public class Language extends AbstractModule implements ModelLocator {
   }
 
   public SModelDescriptor getStructureModelDescriptor() {
-    SModelDescriptor structureModelDescriptor = getModelDescriptor(SModelUID.fromString(getLanguageDescriptor().getStructureModel().getName()));
-    if (!myRegisteredInFindUsagesManager) {
-      myRegisteredInFindUsagesManager = true;
-      //register cache invalidation
-      FindUsagesManager.registerStructureModel(structureModelDescriptor);
+    if (getLanguageDescriptor().getStructureModel() != null) {
+      SModelDescriptor structureModelDescriptor = getModelDescriptor(SModelUID.fromString(getLanguageDescriptor().getStructureModel().getName()));
+      if (!myRegisteredInFindUsagesManager) {
+        myRegisteredInFindUsagesManager = true;
+        //register cache invalidation
+        FindUsagesManager.registerStructureModel(structureModelDescriptor);
+      }
+      return structureModelDescriptor;
     }
-    return structureModelDescriptor;
+    return null;
   }
 
   public SModelDescriptor getTypesystemModelDescriptor() {
@@ -341,7 +373,7 @@ public class Language extends AbstractModule implements ModelLocator {
   }
 
   public Language getLanguage(String languageNamespace) {
-    if(getNamespace().equals(languageNamespace)) {
+    if (getNamespace().equals(languageNamespace)) {
       return this;
     }
     return super.getLanguage(languageNamespace);
@@ -379,7 +411,7 @@ public class Language extends AbstractModule implements ModelLocator {
     if (modelDescriptor == language.getActionsModelDescriptor()) {
       return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.ACTIONS);
     }
-    List<SModelDescriptor> acccessoryModels =  language.getAccessoryModels();
+    List<SModelDescriptor> acccessoryModels = language.getAccessoryModels();
     if (acccessoryModels.contains(modelDescriptor)) {
       return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.ACCESSORY);
     }
@@ -463,7 +495,6 @@ public class Language extends AbstractModule implements ModelLocator {
       return myAspectKind == LanguageAspectStatus.AspectKind.ACCESSORY;
     }
   }
-
 
 
   private class LanguageModelsAdapter extends SModelsAdapter {
