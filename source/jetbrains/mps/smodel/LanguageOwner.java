@@ -5,6 +5,4 @@ package jetbrains.mps.smodel;
  * Date: Apr 14, 2005
  */
 public interface LanguageOwner {
-  LanguageOwner getParentLanguageOwner();
-  void dispose();
 }

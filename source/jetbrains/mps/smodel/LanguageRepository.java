@@ -175,14 +175,12 @@ public class LanguageRepository {
         return name.endsWith(".mpl");
       }
     });
-    for (int i = 0; i < files.length; i++) {
-      File file = files[i];
+    for (File file : files) {
       Language language = registerLanguage(file, owner);
       result.add(language);
     }
     File[] dirs = dir.listFiles();
-    for (int i = 0; i < dirs.length; i++) {
-      File childDir = dirs[i];
+    for (File childDir : dirs) {
       if (childDir.isDirectory()) {
         result.addAll(readLanguageDescriptors(childDir, owner));
       }
@@ -200,30 +198,18 @@ public class LanguageRepository {
       return null;
     }
     Set<LanguageOwner> languageOwners = myLanguageToOwnersMap.get(language);
-    LanguageOwner testOwner = languageOwner;
-    while (testOwner != null) {
-      if (languageOwners.contains(testOwner)) {
-        return language;
-      }
-      testOwner = testOwner.getParentLanguageOwner();
+    if (languageOwners.contains(languageOwner)) {
+      return language;
     }
     return null;
   }
 
   public List<Language> getLanguages(LanguageOwner languageOwner) {
     List<Language> list = new LinkedList<Language>();
-    Iterator<Map.Entry<Language, Set<LanguageOwner>>> entries = myLanguageToOwnersMap.entrySet().iterator();
-    while (entries.hasNext()) {
-      Map.Entry<Language, Set<LanguageOwner>> entry = entries.next();
+    for (Map.Entry<Language, Set<LanguageOwner>> entry : myLanguageToOwnersMap.entrySet()) {
       Set<LanguageOwner> languageOwners = entry.getValue();
-
-      LanguageOwner testOwner = languageOwner;
-      while (testOwner != null) {
-        if (languageOwners.contains(testOwner)) {
-          list.add(entry.getKey());
-          break;
-        }
-        testOwner = testOwner.getParentLanguageOwner();
+      if (languageOwners.contains(languageOwner)) {
+        list.add(entry.getKey());
       }
     }
     return list;
@@ -248,6 +234,5 @@ public class LanguageRepository {
     public void repositoryChanged() {
       markCurrentCommandsDirty();
     }
-
   }
 }

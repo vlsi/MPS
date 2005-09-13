@@ -33,15 +33,7 @@ public class CopyPasteNodeUtil {
 
   private static final Logger LOG = Logger.getLogger(CopyPasteNodeUtil.class);
 
-  private static final ModelOwner ourModelOwner = new ModelOwner() {
-    public ModelOwner getParentModelOwner() {
-      return null;
-    }
-
-    public void dispose() {
-      SModelRepository.getInstance().unRegisterModelDescriptors(this);
-    }
-  };
+  private static final ModelOwner ourModelOwner = new ModelOwner() {};
 
   private static HashMap<SNode, SNode> ourSourceNodesToNewNodes = new HashMap<SNode, SNode>();
   private static HashSet<SReference> ourReferences = new HashSet<SReference>();

@@ -23,14 +23,6 @@ import java.io.IOException;
 public abstract class AbstractModule implements LanguageOwner, IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
-  public ModelOwner getParentModelOwner() {
-    return null;
-  }
-
-  public LanguageOwner getParentLanguageOwner() {
-    return BootstrapLanguages.getInstance();
-  }
-
   //
   // IScope
   //
@@ -38,13 +30,18 @@ public abstract class AbstractModule implements LanguageOwner, IModule {
   public Language getLanguage(String languageNamespace) {
     Language language = LanguageRepository.getInstance().getLanguage(languageNamespace, this);
     if (language == null) {
+      language = LanguageRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
+    }
+    if (language == null) {
       LOG.error("Couldn't find language for namespace: \"" + languageNamespace + "\" in scope: " + this);
     }
     return language;
   }
 
   public List<Language> getLanguages() {
-    return LanguageRepository.getInstance().getLanguages(this);
+    List<Language> list = new LinkedList<Language>(LanguageRepository.getInstance().getLanguages(this));
+    list.addAll(LanguageRepository.getInstance().getLanguages(BootstrapLanguages.getInstance()));
+    return list;
   }
 
   public SModelDescriptor getModelDescriptor(SModelUID modelUID) {

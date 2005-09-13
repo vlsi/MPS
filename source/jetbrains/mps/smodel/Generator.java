@@ -67,10 +67,6 @@ public class Generator extends AbstractModule implements ModelLocator {
     return null;
   }
 
-  public ModelOwner getParentModelOwner() {
-    return null;
-  }
-
   public List<ModelRoot> getModelRoots() {
     return CollectionUtil.iteratorAsList(myGeneratorDescriptor.modelRoots());
   }

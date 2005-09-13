@@ -114,10 +114,10 @@ public class ProjectPane extends JComponent {
 
   private void removeListeners(MPSProject project) {
     project.removeMPSProjectCommandListener(myProjectListener);
-    for (Language language : project.getLanguages()) {
+    for (Language language : project.getProjectLanguages()) {
       language.removeLanguageCommandListener(myLanguageListener);
     }
-    for (Solution solution : project.getSolutions()) {
+    for (Solution solution : project.getProjectSolutions()) {
       solution.removeSolutionCommandListener(mySolutionListener);
     }
   }
@@ -128,11 +128,11 @@ public class ProjectPane extends JComponent {
     myProject.removeMPSProjectCommandListener(myProjectListener);
     myProject.addMPSProjectCommandListener(myProjectListener);
 
-    for (Language language : myProject.getLanguages()) {
+    for (Language language : myProject.getProjectLanguages()) {
       language.removeLanguageCommandListener(myLanguageListener);
       language.addLanguageCommandListener(myLanguageListener);
     }
-    for (Solution solution : myProject.getSolutions()) {
+    for (Solution solution : myProject.getProjectSolutions()) {
       solution.removeSolutionCommandListener(mySolutionListener);
       solution.addSolutionCommandListener(mySolutionListener);
     }
@@ -382,13 +382,13 @@ public class ProjectPane extends JComponent {
       }
       ProjectTreeNode root = new ProjectTreeNode(myProject);
 
-      List<Solution> solutions = myProject.getSolutions();
+      List<Solution> solutions = myProject.getProjectSolutions();
       for (Solution solution : solutions) {
         ProjectSolutionTreeNode solutionTreeNode = new ProjectSolutionTreeNode(solution, myProject);
         root.add(solutionTreeNode);
       }
 
-      for (Language language : myProject.getLanguages()) {
+      for (Language language : myProject.getProjectLanguages()) {
         ProjectLanguageTreeNode node = new ProjectLanguageTreeNode(language, myProject);
         root.add(node);
       }

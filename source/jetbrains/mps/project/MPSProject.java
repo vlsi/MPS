@@ -109,7 +109,7 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope {
         LanguageRepository.getInstance().unRegisterLanguages(MPSProject.this);
         SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
         SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, MPSProject.this);
-        for (Solution solution : getSolutions()) {
+        for (Solution solution : getProjectSolutions()) {
           solution.dispose();
         }
       }
@@ -122,20 +122,7 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope {
     myEventTranslator.projectChanged();
   }
 
-//  public void addLanguage(File languageDescriptorFile) {
-//    ProjectDescriptor projectDescriptor = getProjectDescriptor();
-//    SModel model = projectDescriptor.getModel();
-//    model.setLoading(true);
-//    LanguagePath languagePath = new LanguagePath(model);
-//    languagePath.setPath(languageDescriptorFile.getAbsolutePath());
-//    projectDescriptor.addProjectLanguage(languagePath);
-//
-//    setProjectDescriptor(projectDescriptor);
-//
-//    myEventTranslator.projectChanged();
-//  }
-
-  public void addLanguage(Language language) {
+  public void addProjectLanguage(Language language) {
     ProjectDescriptor projectDescriptor = getProjectDescriptor();
     SModel model = projectDescriptor.getModel();
     model.setLoading(true);
@@ -159,14 +146,6 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope {
     myEventTranslator.projectChanged();
   }
 
-  public ModelOwner getParentModelOwner() {
-    return null;
-  }
-
-  public LanguageOwner getParentLanguageOwner() {
-    return BootstrapLanguages.getInstance();
-  }
-
   public String toString() {
     return "MPSProject file: " + (myProjectFile == null ? "<none>" : myProjectFile.toString());
   }
@@ -179,11 +158,11 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope {
     return myProjectDescriptor;
   }
 
-  public List<Language> getLanguages() {
+  public List<Language> getProjectLanguages() {
     return Collections.unmodifiableList(myLanguages);
   }
 
-  public List<Solution> getSolutions() {
+  public List<Solution> getProjectSolutions() {
     return Collections.unmodifiableList(mySolutions);
   }
 
@@ -275,7 +254,7 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope {
   public void dispose() {
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
-        for (Solution solution : getSolutions()) {
+        for (Solution solution : getProjectSolutions()) {
           solution.dispose();
         }
         LanguageRepository.getInstance().unRegisterLanguages(MPSProject.this);
@@ -308,9 +287,18 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope {
   public Language getLanguage(String languageNamespace) {
     Language language = LanguageRepository.getInstance().getLanguage(languageNamespace, this);
     if (language == null) {
+      language = LanguageRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
+    }
+    if (language == null) {
       LOG.error("Couldn't find language for namespace: \"" + languageNamespace + "\" in: " + this);
     }
     return language;
+  }
+
+  public List<Language> getLanguages() {
+    List<Language> list = new LinkedList<Language>(LanguageRepository.getInstance().getLanguages(this));
+    list.addAll(LanguageRepository.getInstance().getLanguages(BootstrapLanguages.getInstance()));
+    return list;
   }
 
   public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
