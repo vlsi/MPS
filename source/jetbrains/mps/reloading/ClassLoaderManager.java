@@ -44,12 +44,16 @@ public class ClassLoaderManager {
 //    return ClassLoader.getSystemClassLoader();
   }
 
+  public MPSClassLoader getMPSClassLoader() {
+    if (myClassLoader instanceof MPSClassLoader) return (MPSClassLoader) myClassLoader;
+    return null;
+  }
+
 
   private class MyClassLoader extends MPSClassLoader {
     public MyClassLoader(String classPath) {
-      super(classPath);
+      super(new FileClassPathItem(classPath));
     }
-
     
 
     protected boolean isExcluded(String name) {
