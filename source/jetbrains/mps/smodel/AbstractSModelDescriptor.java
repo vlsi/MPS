@@ -363,4 +363,13 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     return getModelUID().toString();
   }
 
+  public boolean equals(Object o) {
+    if (!(o instanceof AbstractSModelDescriptor)) return false;
+    return ((AbstractSModelDescriptor) o).myModelUID.equals(myModelUID);
+  }
+
+  public int hashCode() {
+    return myModelUID.hashCode();
+  }
+
 }

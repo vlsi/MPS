@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SNode;
  * To change this template use File | Settings | File Templates.
  */
 public class CellInfo {
-  
+
   SNodeProxy nodeProxy;
   String cellId;
   int cellNumber;
@@ -25,5 +25,15 @@ public class CellInfo {
 
   public SNode getSNode() {
     return nodeProxy.getNode();
+  }
+
+  public int hashCode() {
+    return nodeProxy.hashCode() + cellId.hashCode() + cellNumber;
+  }
+
+  public boolean equals(Object o) {
+    if (!(o instanceof CellInfo)) return false;
+    CellInfo cellInfo = (CellInfo) o;
+    return cellInfo.cellId.equals(cellId) && cellInfo.nodeProxy.equals(nodeProxy) && cellInfo.cellNumber == cellNumber;
   }
 }

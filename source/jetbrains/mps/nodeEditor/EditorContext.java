@@ -58,8 +58,6 @@ public class EditorContext {
       Memento memento = (Memento) o;
       if (myNodeEditorComponent == memento.nodeEditor) {
         if (memento.cellInfo != null) {
-         /* EditorCell nearestCell = myNodeEditorComponent.findNearestCell(memento.selectionPosition.x, memento.selectionPosition.y);
-          myNodeEditorComponent.changeSelection(nearestCell);*/
           CellInfo cellInfo = memento.cellInfo;
           EditorCell cellToSelect = myNodeEditorComponent.findNodeCell(cellInfo.getSNode(), cellInfo.cellId, cellInfo.cellNumber);
           if (cellToSelect == null) cellToSelect = myNodeEditorComponent.findNodeCell(cellInfo.getSNode(), cellInfo.cellId);
@@ -69,8 +67,6 @@ public class EditorContext {
           } else {
             LOG.error("ERROR EditorContext: coudn't find cell at: " + memento.selectionPosition);
           }
-        } else {
-          //myComponent.changeSelection(null);
         }
         return true;
       }
@@ -113,7 +109,7 @@ public class EditorContext {
 
     public int hashCode() {
       return nodeEditor.hashCode() +
-              (selectionPosition != null ? selectionPosition.hashCode() : 0) +
+              (cellInfo != null ? cellInfo.hashCode() : 0) +
               (caretX != null ? caretX.hashCode() : 0);
     }
   } // private static class Memento
