@@ -160,7 +160,7 @@ class SModelTreeNode extends MPSTreeNodeEx {
           }
 
         }
-      });
+      }, EventUtil.isDramaticalChange(events));
     }
 
     private void updateTreeWithRoot(SNode node) {

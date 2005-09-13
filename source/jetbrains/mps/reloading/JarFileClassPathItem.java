@@ -3,13 +3,12 @@ package jetbrains.mps.reloading;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 import java.net.MalformedURLException;
-import java.util.List;
+import java.net.URL;
 import java.util.ArrayList;
-import java.util.zip.ZipFile;
+import java.util.List;
 import java.util.zip.ZipEntry;
-import java.util.jar.JarFile;
+import java.util.zip.ZipFile;
 
 /**
  * @author Kostik

@@ -41,7 +41,6 @@ public class ClassLoaderManager {
       }
     }
     return myClassLoader;
-//    return ClassLoader.getSystemClassLoader();
   }
 
   public MPSClassLoader getMPSClassLoader() {

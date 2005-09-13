@@ -225,11 +225,11 @@ public abstract class MPSTree extends JTree {
     scrollRowToVisible(getRowForPath(path));
   }
 
-  public void runRebuildAction(Runnable rebuildAction) {
+  public void runRebuildAction(Runnable rebuildAction, boolean saveExpansion) {
     List<String> expansion = getExpandedPaths();
     List<String> selection = getSelectedPaths();
     rebuildAction.run();
-    expandPaths(expansion);
+    if (saveExpansion) expandPaths(expansion);
     selectPaths(selection);
   }
 
@@ -242,7 +242,7 @@ public abstract class MPSTree extends JTree {
         DefaultTreeModel model = new DefaultTreeModel(rebuild());
         setModel(model);
       }
-    });
+    }, true);
   }
 
   private String pathToString(TreePath path) {

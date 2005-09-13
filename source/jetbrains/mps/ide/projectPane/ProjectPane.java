@@ -155,9 +155,9 @@ public class ProjectPane extends JComponent {
     repaint();
   }
 
-  public void rebuildTree(Runnable rebuildAction) {
+  public void rebuildTree(Runnable rebuildAction, boolean saveExpansion) {
     if (!myRebuildEnabled) return;
-    myTree.runRebuildAction(rebuildAction);
+    myTree.runRebuildAction(rebuildAction, saveExpansion);
     invalidate();
     validate();
     repaint();
