@@ -1,5 +1,7 @@
 package jetbrains.mps.reloading;
 
+import jetbrains.mps.smodel.IOperationContext;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -45,6 +47,36 @@ public class FileClassPathItem extends ClassPathItem {
     } catch (MalformedURLException e) {
       return null;
     }
-
   }
+
+  public List<String> getAvailableClasses(String namespace) {
+    List<String> result = new ArrayList<String>();
+    File dir = getModelDir(namespace);
+    if (dir.exists()) {
+      for (String path : dir.list()) {
+        if (path.endsWith(".class") && !path.contains("$")) {
+          result.add(path.substring(0, path.length() - ".class".length()));
+        }
+      }
+    }
+    return result;
+  }
+
+  public long getClassesTimestamp(String namespace) {
+    File dir = getModelDir(namespace);
+    long result = dir.lastModified();
+    if (dir.exists()) {
+      for (File file : dir.listFiles()) {
+        if (file.getName().endsWith(".class")) {
+          result = Math.max(result, file.lastModified());
+        }
+      }
+    }
+    return result;
+  }
+
+  private File getModelDir(String namespace) {
+    return new File(myClassPath + File.separatorChar + namespace.replace('.', File.separatorChar));
+  }
+
 }
