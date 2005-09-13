@@ -36,8 +36,9 @@ public abstract class MPSTree extends JTree {
   public static final String TREE_PATH_SEPARATOR = "/";
 
   protected MPSTree() {
-    ToolTipManager.sharedInstance().registerComponent(this);
+    largeModel = true;
 
+    ToolTipManager.sharedInstance().registerComponent(this);
 
     setCellRenderer(new DefaultTreeCellRenderer() {
       public Component getTreeCellRendererComponent(JTree tree, Object value, boolean sel, boolean expanded, boolean leaf, int row, boolean hasFocus) {
@@ -225,11 +226,11 @@ public abstract class MPSTree extends JTree {
     scrollRowToVisible(getRowForPath(path));
   }
 
-  public void runRebuildAction(Runnable rebuildAction, boolean saveExpansion) {
+  public void runRebuildAction(Runnable rebuildAction) {
     List<String> expansion = getExpandedPaths();
     List<String> selection = getSelectedPaths();
     rebuildAction.run();
-    if (saveExpansion) expandPaths(expansion);
+    expandPaths(expansion);  
     selectPaths(selection);
   }
 
@@ -242,7 +243,7 @@ public abstract class MPSTree extends JTree {
         DefaultTreeModel model = new DefaultTreeModel(rebuild());
         setModel(model);
       }
-    }, true);
+    });
   }
 
   private String pathToString(TreePath path) {
