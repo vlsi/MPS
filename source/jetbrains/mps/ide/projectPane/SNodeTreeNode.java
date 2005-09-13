@@ -34,7 +34,6 @@ class SNodeTreeNode extends MPSTreeNodeEx {
     super(operationContext);
     myNodeProxy = new SNodeProxy(node, operationContext.getScope());
     myRole = role;
-    setUserObject(node);
   }
 
   public JPopupMenu getPopupMenu() {
@@ -42,6 +41,10 @@ class SNodeTreeNode extends MPSTreeNodeEx {
     List<SNode> selection = getOperationContext().getComponent(ProjectPane.class).getNormalizedSelectedNodes();
     ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_NODE_ACTIONS).add(result, new ActionContext(getOperationContext(), getSNode(), selection));
     return result;
+  }
+
+  public Object getUserObject() {
+    return myNodeProxy.getNode();
   }
 
   public int getToggleClickCount() {
