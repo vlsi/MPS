@@ -132,6 +132,8 @@ public class Language extends AbstractModule implements ModelLocator {
 
   public void updateLastGenerationTime() {
     myLastGenerationTime = FileUtil.getNewestFileTime(getSourceDir());
+    myUpToDate = true;
+    isUpToDate();
   }
 
   public List<Generator> getGenerators() {
