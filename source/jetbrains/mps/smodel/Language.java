@@ -2,7 +2,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
@@ -305,6 +304,12 @@ public class Language extends AbstractModule implements ModelLocator {
     return Collections.emptyList();
   }
 
+  public Language getLanguage(String languageNamespace) {
+    if(getNamespace().equals(languageNamespace)) {
+      return this;
+    }
+    return super.getLanguage(languageNamespace);
+  }
   // ----------------------------
   // language - related utilities
   // ----------------------------

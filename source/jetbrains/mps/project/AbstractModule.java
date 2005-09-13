@@ -38,7 +38,7 @@ public abstract class AbstractModule implements LanguageOwner, IModule {
   public Language getLanguage(String languageNamespace) {
     Language language = LanguageRepository.getInstance().getLanguage(languageNamespace, this);
     if (language == null) {
-      LOG.error("Couldn't find language for namespace: \"" + languageNamespace + "\" in: " + this);
+      LOG.error("Couldn't find language for namespace: \"" + languageNamespace + "\" in scope: " + this);
     }
     return language;
   }
@@ -70,7 +70,7 @@ public abstract class AbstractModule implements LanguageOwner, IModule {
     }
     //-- CYRIL
 
-    LOG.warning("Couldn't find model descriptor for uid: \"" + modelUID + "\" in: " + this);
+    LOG.warning("Couldn't find model descriptor for uid: \"" + modelUID + "\" in scope: " + this);
     return null;
   }
 

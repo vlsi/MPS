@@ -22,7 +22,10 @@ public class Generator extends AbstractModule implements ModelLocator {
   Generator(Language sourceLanguage, GeneratorDescriptor generatorDescriptor) {
     mySourceLanguage = sourceLanguage;
     myGeneratorDescriptor = generatorDescriptor;
-    SModelRepository.getInstance().readModelDescriptors(myGeneratorDescriptor.modelRoots(), this);
+
+    // read languages and models
+    LanguageRepository.getInstance().readLanguageDescriptors(generatorDescriptor.languageRoots(), this);
+    SModelRepository.getInstance().readModelDescriptors(generatorDescriptor.modelRoots(), this);
   }
 
   public void dispose() {
@@ -65,7 +68,7 @@ public class Generator extends AbstractModule implements ModelLocator {
   }
 
   public ModelOwner getParentModelOwner() {
-    return mySourceLanguage;
+    return null;
   }
 
   public List<ModelRoot> getModelRoots() {
@@ -81,6 +84,13 @@ public class Generator extends AbstractModule implements ModelLocator {
 
   public GeneratorDescriptor getGeneratorDescriptor() {
     return myGeneratorDescriptor;
+  }
+
+  public Language getLanguage(String languageNamespace) {
+    if (mySourceLanguage.getNamespace().equals(languageNamespace)) {
+      return mySourceLanguage;
+    }
+    return super.getLanguage(languageNamespace);
   }
 
   protected List<IModule> getDependOnModules() {

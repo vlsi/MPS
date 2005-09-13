@@ -324,7 +324,11 @@ public class SModelRepository extends SModelAdapter {
       File dir = new File(modelRoot.getPath());
       if (dir.exists()) {
         ModelRootManager manager = getManagerFor(modelRoot);
-        list.addAll(manager.read(modelRoot, owner));
+        try {
+          list.addAll(manager.read(modelRoot, owner));
+        } catch (Exception e) {
+          LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\"", e);
+        }
       } else {
         String error = "Couldn't load modelDescriptors from " + dir.getAbsolutePath() +
                 "\nDirectory doesn't exist: " + dir.getAbsolutePath();

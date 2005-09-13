@@ -37,12 +37,12 @@ public class EditorManager {
 
   private EditorCell createEditorCell_internal(EditorContext context, SNode node) {
     INodeEditor editor = getEditor(context, node);
-    EditorCell nodeCell = null;
+    EditorCell nodeCell;
     try {
       nodeCell = editor.createEditorCell(context, node);
     } catch (Exception e) {
-      LOG.error(e);
-      nodeCell = EditorCell_Error.create(context, node, "!exception!");
+      LOG.error("Failed to create cell for node " + node.getDebugText(), e);
+      nodeCell = EditorCell_Error.create(context, node, "!exception!:" + node.getDebugText());
     }
     if (node.getChildCount(NODE_TO_PLACE_AFTER) == 0) {
       return nodeCell;
