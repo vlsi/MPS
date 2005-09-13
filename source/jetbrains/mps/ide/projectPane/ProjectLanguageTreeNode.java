@@ -41,6 +41,10 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
     return myLanguage;
   }
 
+  public Object getUserObject() {
+    return myLanguage;
+  }
+
   protected String getNodeIdentifier() {
     return myLanguage.getNamespace();
   }

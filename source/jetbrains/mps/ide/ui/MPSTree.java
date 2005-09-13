@@ -143,7 +143,7 @@ public abstract class MPSTree extends JTree {
     int row = getRowForPath(path);
 
     if (getVisibleRect().contains(getRowBounds(row))) return null;
-    
+
     JLabel label = getLabelFor(path);
     Rectangle rect = getRowBounds(row);
 
@@ -178,7 +178,7 @@ public abstract class MPSTree extends JTree {
   private HashMap<Pair, MPSAction> myKeyStrokesToActionsMap = new HashMap<Pair, MPSAction>();
 
   public final void registerMPSAction(MPSAction action, Class<? extends MPSTreeNode> nodeClass) {
-    Pair pair = new Pair(KeyStroke.getKeyStroke(action.getKeyStroke()), nodeClass); 
+    Pair pair = new Pair(KeyStroke.getKeyStroke(action.getKeyStroke()), nodeClass);
     myKeyStrokesToActionsMap.put(pair, action);
   }
 
@@ -226,12 +226,14 @@ public abstract class MPSTree extends JTree {
     scrollRowToVisible(getRowForPath(path));
   }
 
-  public void runRebuildAction(Runnable rebuildAction) {
+  public void runRebuildAction(Runnable rebuildAction, boolean saveExpansion) {
     List<String> expansion = getExpandedPaths();
     List<String> selection = getSelectedPaths();
     rebuildAction.run();
-    expandPaths(expansion);  
-    selectPaths(selection);
+    if (saveExpansion) {
+      expandPaths(expansion);
+      selectPaths(selection);
+    }
   }
 
   public void rebuildTree() {
@@ -243,7 +245,7 @@ public abstract class MPSTree extends JTree {
         DefaultTreeModel model = new DefaultTreeModel(rebuild());
         setModel(model);
       }
-    });
+    }, true);
   }
 
   private String pathToString(TreePath path) {

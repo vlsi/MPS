@@ -468,9 +468,10 @@ public class SModel implements Iterable<SNode> {
 
   public IStatus updateNodeStatuses() {
     clearNodeStatuses();
-    ITypeChecker typeChecker = TypeCheckerAccess.instance().getTypeChecker();
-    if (typeChecker == null) return new Status.ERROR("null typechecker");
-    return updateNodeStatuses(typeChecker.getOperationContext().getScope());
+   ITypeChecker typeChecker = TypeCheckerAccess.instance().getTypeChecker();
+   if (typeChecker == null) return new Status.ERROR("null typechecker");
+   return updateNodeStatuses(typeChecker.getOperationContext().getScope());
+   // return new Status.OK();
   }
 
   public IStatus updateNodeStatuses(IScope scope) {

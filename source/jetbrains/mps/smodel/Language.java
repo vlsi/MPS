@@ -9,10 +9,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.*;
-import jetbrains.mps.smodel.event.SModelsAdapter;
-import jetbrains.mps.smodel.event.SModelsListener;
-import jetbrains.mps.smodel.event.SModelsMulticaster;
+import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.*;
+import jetbrains.mps.nodeEditor.EditorContext;
 
 import java.io.File;
 import java.util.*;
@@ -33,6 +32,20 @@ public class Language extends AbstractModule implements ModelLocator {
   private List<LanguageCommandListener> myCommandListeners = new ArrayList<LanguageCommandListener>();
   private LanguageEventTranslator myEventTranslator = new LanguageEventTranslator();
   private SModelsListener myModelsListener = new LanguageModelsAdapter();
+  private boolean myUpToDate = true;
+
+  private SModelCommandListener myAspectModelsListener = new SModelCommandListener() {
+    public void modelChangedInCommand(List<SModelEvent> events, EditorContext editorContext) {
+      if (myUpToDate) {
+        myUpToDate = false;
+        CommandProcessor.instance().executeCommand(new Runnable() {
+          public void run() {
+            myEventTranslator.languageChanged();
+          }
+        });
+      }
+    }
+  };
 
   private long myLastGenerationTime = 0;
   private boolean myRegisteredInFindUsagesManager;
@@ -51,6 +64,7 @@ public class Language extends AbstractModule implements ModelLocator {
 
     CommandProcessor.instance().addCommandListener(myEventTranslator);
     SModelsMulticaster.getInstance().addSModelsListener(myModelsListener);
+    registerAspectListener();
   }
 
   private void revalidateGenerators() {
@@ -82,6 +96,7 @@ public class Language extends AbstractModule implements ModelLocator {
   public void setLanguageDescriptor(LanguageDescriptor newDescriptor) {
 
     // release languages and models (except descriptor model)
+    unregisterAspectListener();
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), this);
     LanguageRepository.getInstance().unRegisterLanguages(this);
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
@@ -94,8 +109,21 @@ public class Language extends AbstractModule implements ModelLocator {
     SModelRepository.getInstance().readModelDescriptors(myLanguageDescriptor.modelRoots(), this);
     revalidateGenerators();
 
+    registerAspectListener();
     updateLastGenerationTime();
     myEventTranslator.languageChanged();
+  }
+
+  private void registerAspectListener() {
+    for (SModelDescriptor aspectModel : getAspectModelDescriptors()) {
+      if (aspectModel != null) aspectModel.addSModelCommandListener(myAspectModelsListener);
+    }
+  }
+
+  private void unregisterAspectListener() {
+    for (SModelDescriptor aspectModel : getAspectModelDescriptors()) {
+      if (aspectModel != null) aspectModel.removeSModelCommandListener(myAspectModelsListener);
+    }
   }
 
   public LanguageDescriptor getLanguageDescriptor() {
@@ -126,9 +154,15 @@ public class Language extends AbstractModule implements ModelLocator {
   }
 
   public boolean isUpToDate() {
-    long lastChangeTime = getLastChangeTime();
-    return myLastGenerationTime >= lastChangeTime;
+    if (myUpToDate) {
+      long lastChangeTime = getLastChangeTime();
+      myUpToDate = myLastGenerationTime >= lastChangeTime;
+      return myUpToDate;
+    } else {
+      return false;
+    }
   }
+
 
   private long getLastChangeTime() {
     long result = 0;

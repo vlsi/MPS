@@ -149,7 +149,7 @@ class SModelTreeNode extends MPSTreeNodeEx {
               DefaultTreeModel treeModel = (DefaultTreeModel)getOperationContext().getComponent(IdeMain.class).getProjectPane().getTree().getModel();
 
               //i tried to use nodeChange but it didn't work
-              treeModel.nodeStructureChanged((TreeNode) treeModel.getRoot());
+              treeModel.nodeStructureChanged((TreeNode) findAncestorWith(event.getNode()));
             }
 
             public void visitReferenceEvent(SModelReferenceEvent event) {
