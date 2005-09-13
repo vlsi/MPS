@@ -62,6 +62,10 @@ public class FileClassPathItem extends ClassPathItem {
     return result;
   }
 
+  public List<String> getSubpackages(String namespace) {
+    return null;  //To change body of implemented methods use File | Settings | File Templates.
+  }
+
   public long getClassesTimestamp(String namespace) {
     File dir = getModelDir(namespace);
     long result = dir.lastModified();
