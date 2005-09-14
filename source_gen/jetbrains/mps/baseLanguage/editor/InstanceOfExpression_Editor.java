@@ -53,7 +53,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     SNode referencedNode = null;
     referencedNode = node.getChild("leftExpression");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "leftExpression", context.getOperationContext().getScope());
-    if (referencedNode == null) {
+    if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);
@@ -66,6 +66,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
         InstanceOfExpression_LeftExpressionsActions.setCellActions(noRefCell, node, context);
         _DefErrorActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1081257097746");
+        noRefCell.putUserObject(EditorCell.ROLE, "leftExpression");
         return noRefCell;
       }
     }
@@ -73,6 +74,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
+    editorCell.putUserObject(EditorCell.ROLE, "leftExpression");
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
@@ -83,7 +85,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     SNode referencedNode = null;
     referencedNode = node.getChild("classType");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "classType", context.getOperationContext().getScope());
-    if (referencedNode == null) {
+    if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);
@@ -96,6 +98,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
         InstanceOfExpression_InstanceOfTypes.setCellActions(noRefCell, node, context);
         _DefErrorActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1081257097748");
+        noRefCell.putUserObject(EditorCell.ROLE, "classType");
         return noRefCell;
       }
     }
@@ -103,6 +106,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
+    editorCell.putUserObject(EditorCell.ROLE, "classType");
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));

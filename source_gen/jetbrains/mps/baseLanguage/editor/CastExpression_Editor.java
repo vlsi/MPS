@@ -65,7 +65,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     SNode referencedNode = null;
     referencedNode = node.getChild("type");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "type", context.getOperationContext().getScope());
-    if (referencedNode == null) {
+    if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);
@@ -78,6 +78,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
         CastExpression_CastTypeActions.setCellActions(noRefCell, node, context);
         _DefErrorActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1080902646662");
+        noRefCell.putUserObject(EditorCell.ROLE, "type");
         return noRefCell;
       }
     }
@@ -85,6 +86,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
+    editorCell.putUserObject(EditorCell.ROLE, "type");
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
@@ -95,7 +97,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     SNode referencedNode = null;
     referencedNode = node.getChild("expression");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "expression", context.getOperationContext().getScope());
-    if (referencedNode == null) {
+    if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);
@@ -108,6 +110,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
         CastExpression_CastExpressionActions.setCellActions(noRefCell, node, context);
         _DefErrorActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1080902646664");
+        noRefCell.putUserObject(EditorCell.ROLE, "expression");
         return noRefCell;
       }
     }
@@ -115,6 +118,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
+    editorCell.putUserObject(EditorCell.ROLE, "expression");
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));

@@ -73,7 +73,7 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     SNode referencedNode = null;
     referencedNode = node.getChild("statements");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "statements", context.getOperationContext().getScope());
-    if (referencedNode == null) {
+    if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);
@@ -84,6 +84,7 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
         noRefCell.putUserObject(EditorCell.CELL_ID, "1119291719346");
+        noRefCell.putUserObject(EditorCell.ROLE, "statements");
         return noRefCell;
       }
     }
@@ -91,6 +92,7 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
+    editorCell.putUserObject(EditorCell.ROLE, "statements");
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));

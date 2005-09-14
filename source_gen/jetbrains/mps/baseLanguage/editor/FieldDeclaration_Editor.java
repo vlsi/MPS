@@ -100,7 +100,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     SNode referencedNode = null;
     referencedNode = node.getChild("type");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "type", context.getOperationContext().getScope());
-    if (referencedNode == null) {
+    if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "<no type>");
         noRefCell.setEditable(true);
@@ -112,6 +112,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
         FieldDeclaration_TypeCellActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1075289941064");
+        noRefCell.putUserObject(EditorCell.ROLE, "type");
         return noRefCell;
       }
     }
@@ -119,6 +120,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
+    editorCell.putUserObject(EditorCell.ROLE, "type");
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
@@ -129,7 +131,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     SNode referencedNode = null;
     referencedNode = node.getChild("initializer");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "initializer", context.getOperationContext().getScope());
-    if (referencedNode == null) {
+    if(referencedNode == null) {
       {
         EditorCell_Constant noRefCell = EditorCell_Constant.create(context, node, null, true);
         noRefCell.setDefaultText("");
@@ -142,6 +144,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
         __VariableInitializer_ActionSet.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1075290268533");
+        noRefCell.putUserObject(EditorCell.ROLE, "initializer");
         return noRefCell;
       }
     }
@@ -149,6 +152,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
+    editorCell.putUserObject(EditorCell.ROLE, "initializer");
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));

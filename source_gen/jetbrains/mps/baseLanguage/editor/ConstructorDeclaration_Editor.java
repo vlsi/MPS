@@ -139,7 +139,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     SNode referencedNode = null;
     referencedNode = node.getChild("body");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "body", context.getOperationContext().getScope());
-    if (referencedNode == null) {
+    if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);
@@ -150,6 +150,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
         noRefCell.putUserObject(EditorCell.CELL_ID, "1075139937805");
+        noRefCell.putUserObject(EditorCell.ROLE, "body");
         return noRefCell;
       }
     }
@@ -157,6 +158,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
+    editorCell.putUserObject(EditorCell.ROLE, "body");
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));

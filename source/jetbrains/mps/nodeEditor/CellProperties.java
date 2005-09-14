@@ -17,6 +17,7 @@ public class CellProperties {
   private String myCellSNode;
   private String myCellNumber;
   private String myCellID;
+  private String myCellRole;
   private String myRootCell;
   private String myCellEffectiveWidth;
   private String myCellHeight;
@@ -38,6 +39,7 @@ public class CellProperties {
     myRootCell = (myCell.getEditorContext().getNodeEditorComponent().getRootCell() == myCell)?"Yes":"No";
     myCellID = (String) (myCell.getUserObject(EditorCell.CELL_ID));
     myCellNumber = "" + (myCell.getUserObject(EditorCell.NUMBER));
+    myCellRole = "" + (myCell.getUserObject(EditorCell.ROLE));
 
     mySNode = myCell.getSNode();
     String name = mySNode.getName();
@@ -64,6 +66,10 @@ public class CellProperties {
 
   public String getCellID() {
     return myCellID;
+  }
+
+  public String getCellRole() {
+    return myCellRole;
   }
 
   public String getRootCell() {

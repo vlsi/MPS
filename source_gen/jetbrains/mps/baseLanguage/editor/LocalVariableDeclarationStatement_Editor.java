@@ -50,7 +50,7 @@ public class LocalVariableDeclarationStatement_Editor extends DefaultNodeEditor 
     SNode referencedNode = null;
     referencedNode = node.getChild("localVariableDeclaration");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "localVariableDeclaration", context.getOperationContext().getScope());
-    if (referencedNode == null) {
+    if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);
@@ -61,6 +61,7 @@ public class LocalVariableDeclarationStatement_Editor extends DefaultNodeEditor 
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
         noRefCell.putUserObject(EditorCell.CELL_ID, "1075380566830");
+        noRefCell.putUserObject(EditorCell.ROLE, "localVariableDeclaration");
         return noRefCell;
       }
     }
@@ -68,6 +69,7 @@ public class LocalVariableDeclarationStatement_Editor extends DefaultNodeEditor 
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
+    editorCell.putUserObject(EditorCell.ROLE, "localVariableDeclaration");
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));

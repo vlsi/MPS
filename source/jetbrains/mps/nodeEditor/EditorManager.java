@@ -22,6 +22,12 @@ public class EditorManager {
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     EditorCell editorCell = createEditorCell_internal(context, node);
 
+/*    //checking if the cell is created for referenced node (i.e. not aggregated)
+    SNode rootNode = context.getNodeEditorComponent().getRootCell().getSNode();
+    if (!SModelUtil.isParent(rootNode, node)) {
+       SModelUtil.find
+    }
+    */
     boolean hasBadReference = false;
     for (SReference sr : node.getReferences()) {
       if (!sr.isResolved()) {

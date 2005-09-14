@@ -120,6 +120,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
       noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration, context));
       SuperMethodCall_NameCellActions.setCellActions(noRefCell, node, context);
       noRefCell.putUserObject(EditorCell.CELL_ID, "1091709481300");
+      noRefCell.putUserObject(EditorCell.ROLE, "baseMethodDeclaration");
       return noRefCell;
     }
     if(effectiveNode == null) {
@@ -134,6 +135,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
         noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration, context));
         SuperMethodCall_NameCellActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1091709481300");
+        noRefCell.putUserObject(EditorCell.ROLE, "baseMethodDeclaration");
         return noRefCell;
       }
     }
@@ -146,6 +148,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
     editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
+    editorCell.putUserObject(EditorCell.ROLE, "baseMethodDeclaration");
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     editorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration, context));
     SuperMethodCall_NameCellActions.setCellActions(editorCell, node, context);

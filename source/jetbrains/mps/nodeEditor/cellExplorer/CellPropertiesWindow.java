@@ -42,6 +42,7 @@ public class CellPropertiesWindow extends JFrame {
     String isRootCell = myCellProperties.getRootCell();
     String cellID = myCellProperties.getCellID();
     String cellNumber = myCellProperties.getCellNumber();
+    String cellRole = myCellProperties.getCellRole();
     String cellSNode = myCellProperties.getCellSNode();
     Icon icon = IconManager.getIconFor(myCellProperties.getSNode());
 
@@ -49,7 +50,7 @@ public class CellPropertiesWindow extends JFrame {
 
     JPanel outerPanel = new JPanel(new GridLayout(1,1,0,10));
 
-    myPanel = new JPanel(new GridLayout(9, 2, 10, 20));
+    myPanel = new JPanel(new GridLayout(10, 2, 10, 20));
     myPanel.setBorder(new EmptyBorder(10,5,5,5));
 
     Font f = myPanel.getFont();
@@ -57,6 +58,7 @@ public class CellPropertiesWindow extends JFrame {
     Font italic = new Font(f.getName(), Font.ITALIC, f.getSize());
     myPanel.add(new JLabel("Cell:")).setFont(bold); myPanel.add(new JLabel(cellKind)).setFont(bold);
     myPanel.add(new JLabel("ID:")).setFont(bold); myPanel.add(new JLabel(cellID));
+    myPanel.add(new JLabel("Role:")).setFont(bold);myPanel.add(new JLabel(cellRole));
     myPanel.add(new JLabel("Text:")).setFont(bold); myPanel.add(new JLabel(cellText)).setFont(italic);
     myPanel.add(new JLabel("Width:")).setFont(bold); myPanel.add(new JLabel(cellWidth));
     myPanel.add(new JLabel("Height:")).setFont(bold);myPanel.add(new JLabel(cellHeight));

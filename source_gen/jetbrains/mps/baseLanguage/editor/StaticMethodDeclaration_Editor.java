@@ -157,7 +157,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     SNode referencedNode = null;
     referencedNode = node.getChild("returnType");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "returnType", context.getOperationContext().getScope());
-    if (referencedNode == null) {
+    if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "<no type>");
         noRefCell.setEditable(true);
@@ -169,6 +169,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
         StaticMethodDeclaration_ReturnTypeCellActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1075287750861");
+        noRefCell.putUserObject(EditorCell.ROLE, "returnType");
         return noRefCell;
       }
     }
@@ -176,6 +177,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
+    editorCell.putUserObject(EditorCell.ROLE, "returnType");
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
@@ -186,7 +188,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     SNode referencedNode = null;
     referencedNode = node.getChild("body");
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "body", context.getOperationContext().getScope());
-    if (referencedNode == null) {
+    if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
         noRefCell.setEditable(true);
@@ -197,6 +199,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
         noRefCell.putUserObject(EditorCell.CELL_ID, "1075287750859");
+        noRefCell.putUserObject(EditorCell.ROLE, "body");
         return noRefCell;
       }
     }
@@ -204,6 +207,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
+    editorCell.putUserObject(EditorCell.ROLE, "body");
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
