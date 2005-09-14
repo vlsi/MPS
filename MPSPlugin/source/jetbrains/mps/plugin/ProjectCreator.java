@@ -21,6 +21,7 @@ import com.intellij.openapi.projectRoots.ProjectJdk;
 import com.intellij.openapi.projectRoots.ProjectJdkTable;
 import com.intellij.psi.impl.file.impl.RootManager;
 import com.intellij.pom.java.LanguageLevel;
+import com.intellij.ide.impl.ProjectUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -71,8 +72,8 @@ public class ProjectCreator implements ApplicationComponent {
           public void run() {
             LocalFileSystem lfs = LocalFileSystem.getInstance();
 
+
             Project project = myProjectManager.newProject(path + File.separator + name + ".ipr", true, false);
-            myProjectManager.openProject(project);
 
             ProjectRootManagerEx projectRootManager = (ProjectRootManagerEx) ProjectRootManagerEx.getInstance(project);
             projectRootManager.setLanguageLevel(LanguageLevel.JDK_1_5);
@@ -96,14 +97,8 @@ public class ProjectCreator implements ApplicationComponent {
               e.printStackTrace();
             }
             rootModel.commit();
-
-            String path = project.getProjectFilePath();
-            myProjectManager.closeProject(project);
-            try {
-              myProjectManager.openProject(myProjectManager.loadProject(path));
-            } catch (Exception e) {
-              e.printStackTrace();
-            }
+            
+            myProjectManager.openProject(project);
           }
         });
       }
