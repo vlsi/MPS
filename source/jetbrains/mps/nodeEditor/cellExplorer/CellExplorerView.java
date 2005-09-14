@@ -47,6 +47,10 @@ public class CellExplorerView extends DefaultTool {
   }
 
   public void showCell(EditorCell cell) {
+    if (!myIde.getToolsPane().isVisible(this)) {
+      myIde.getToolsPane().selectTool(this);
+    }
+
     List<EditorCell> path = new ArrayList<EditorCell>();
     while (cell != null) {
       path.add(cell);
