@@ -211,6 +211,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration, context));
       noRefCell.putUserObject(EditorCell.CELL_ID, "1096455263454");
+      noRefCell.putUserObject(EditorCell.ROLE, "target");
       return noRefCell;
     }
     if(effectiveNode == null) {
@@ -224,6 +225,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration, context));
         noRefCell.putUserObject(EditorCell.CELL_ID, "1096455263454");
+        noRefCell.putUserObject(EditorCell.ROLE, "target");
         return noRefCell;
       }
     }
@@ -236,6 +238,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
     editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
+    editorCell.putUserObject(EditorCell.ROLE, "target");
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     editorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration, context));
     return editorCell;

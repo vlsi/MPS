@@ -127,6 +127,7 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration, context));
       noRefCell.putUserObject(EditorCell.CELL_ID, "1105751826978");
+      noRefCell.putUserObject(EditorCell.ROLE, "targetType");
       return noRefCell;
     }
     if(effectiveNode == null) {
@@ -140,6 +141,7 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration, context));
         noRefCell.putUserObject(EditorCell.CELL_ID, "1105751826978");
+        noRefCell.putUserObject(EditorCell.ROLE, "targetType");
         return noRefCell;
       }
     }
@@ -152,6 +154,7 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
     editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
+    editorCell.putUserObject(EditorCell.ROLE, "targetType");
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     editorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration, context));
     return editorCell;
