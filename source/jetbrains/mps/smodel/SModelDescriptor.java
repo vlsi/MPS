@@ -48,7 +48,5 @@ public interface SModelDescriptor {
   Set<SNode> findInstances(ConceptDeclaration concept, IScope scope);
   long timestamp();
 
-  VersionControl getVersionControl(MPSProject project);
-
   void delete();
 }

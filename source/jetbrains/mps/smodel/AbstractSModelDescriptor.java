@@ -294,10 +294,6 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     return descendantsKnownInModel;
   }
 
-  public VersionControl getVersionControl(MPSProject project) {
-    return project.getComponent(VersionControlManager.class).createVCSFor(this);
-  }
-
   public final void delete() {
     SModelsMulticaster.getInstance().fireModelWillBeDeletedEvent(this);
     SModelRepository.getInstance().removeModelDescriptor(this);

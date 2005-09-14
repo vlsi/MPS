@@ -13,6 +13,8 @@ import jetbrains.mps.projectLanguage.SolutionPath;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.vcs.model.VersionControl;
+import jetbrains.mps.vcs.VersionControlManager;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -98,6 +100,10 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope {
         LOG.error("Couldn't load language from: " + descriptorFile.getAbsolutePath() + " : file doesn't exist");
       }
     }
+  }
+
+  public VersionControl getVCSFor(SModelDescriptor model) {
+    return getComponent(VersionControlManager.class).createVCSFor(model);
   }
 
   public void setProjectDescriptor(final ProjectDescriptor newDescriptor) {
