@@ -66,6 +66,7 @@ public class Language extends AbstractModule implements ModelLocator {
     SModel descriptorModel = ProjectModelDescriptor.createDescriptorFor(language).getSModel();
     descriptorModel.setLoading(true);
     LanguageDescriptor languageDescriptor = new LanguageDescriptor(descriptorModel);
+    descriptorModel.addRoot(languageDescriptor);
     languageDescriptor.setNamespace(languageNamespace);
 
     // default descriptorModel root
