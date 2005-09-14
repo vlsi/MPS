@@ -535,12 +535,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     changeSelection(findNodeCell(node));
   }
 
-  public void selectRefCell(SReference reference, String id) {
+  public void selectRefCell(SReference reference, String role) {
     SNode sourceNode = reference.getSourceNode();
     EditorCell cell;
-    if (id == null) cell = findNodeCell(sourceNode);
+    if (role == null) cell = findNodeCell(sourceNode);
     else {
-      cell = findNodeCell(sourceNode, id);
+      cell = findNodeCellWithRole(sourceNode, role);
       if (cell == null) cell = findNodeCell(sourceNode);
     }
     changeSelection(cell);
@@ -587,6 +587,25 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     EditorCell rootCell = findNodeCell(node);
     if (rootCell == null) return null;
     return findCellWithId(rootCell, id);
+  }
+
+  public EditorCell findNodeCellWithRole(SNode node, String role) {
+    EditorCell rootCell = findNodeCell(node);
+    if (rootCell == null) return null;
+    return findNodeCellWithRole(rootCell, role);
+  }
+
+  private EditorCell findNodeCellWithRole(EditorCell rootCell, String role) {
+    if (role == null) return null;
+    if (role.equals(rootCell.getUserObject(EditorCell.ROLE))) return rootCell;
+    if (rootCell instanceof EditorCell_Collection) {
+      EditorCell_Collection collection = (EditorCell_Collection) rootCell;
+      for (EditorCell child : collection) {
+        EditorCell result = findNodeCellWithRole(child, role);
+        if (result != null) return result;
+      }
+    }
+    return null;
   }
 
   public EditorCell findNodeCell(final SNode node, String id, int number) {
@@ -1258,12 +1277,16 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       } else {
 
         String cellId = null;
+        String cellRole = null;
 
         if (editorContext != null) {
           AbstractEditorComponent nodeEditorComponent = editorContext.getNodeEditorComponent();
           if (nodeEditorComponent != null) {
             EditorCell selectedCell = nodeEditorComponent.getSelectedCell();
-            if (selectedCell != null) cellId = (String)selectedCell.getUserObject(EditorCell.CELL_ID);
+            if (selectedCell != null) {
+              cellId = (String)selectedCell.getUserObject(EditorCell.CELL_ID);
+              cellRole = (String)selectedCell.getUserObject(EditorCell.ROLE);
+            }
           }
         }
 
@@ -1306,7 +1329,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           if (lastAdd instanceof SModelReferenceEvent) {
             SModelReferenceEvent re = (SModelReferenceEvent) lastAdd;
             //selectNode(re.getReference().getSourceNode());
-            selectRefCell(re.getReference(), cellId);
+            selectRefCell(re.getReference(), cellRole);
             return;
           }
 
