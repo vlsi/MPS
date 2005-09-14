@@ -6,6 +6,7 @@ import jetbrains.mps.projectLanguage.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.Model;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.ide.command.CommandProcessor;
 
 import java.io.File;
 import java.util.LinkedList;
@@ -28,8 +29,12 @@ public class Generator extends AbstractModule implements ModelLocator {
   }
 
   public void dispose() {
-    SModelRepository.getInstance().unRegisterModelDescriptors(this);
-    LanguageRepository.getInstance().unRegisterLanguages(this);
+    CommandProcessor.instance().executeCommand(new Runnable() {
+      public void run() {
+        SModelRepository.getInstance().unRegisterModelDescriptors(Generator.this);
+        LanguageRepository.getInstance().unRegisterLanguages(Generator.this);
+      }
+    });
   }
 
   public String getName() {

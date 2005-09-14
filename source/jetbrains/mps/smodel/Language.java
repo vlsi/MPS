@@ -162,8 +162,8 @@ public class Language extends AbstractModule implements ModelLocator {
 
   public void updateLastGenerationTime() {
     myLastGenerationTime = FileUtil.getNewestFileTime(getSourceDir());
-    myUpToDate = true;
-    isUpToDate();
+    long lastChangeTime = getLastChangeTime();
+    myUpToDate = myLastGenerationTime >= lastChangeTime;
   }
 
   public List<Generator> getGenerators() {
@@ -186,13 +186,7 @@ public class Language extends AbstractModule implements ModelLocator {
   }
 
   public boolean isUpToDate() {
-    if (myUpToDate) {
-      long lastChangeTime = getLastChangeTime();
-      myUpToDate = myLastGenerationTime >= lastChangeTime;
-      return myUpToDate;
-    } else {
-      return false;
-    }
+    return myUpToDate;
   }
 
 

@@ -95,9 +95,9 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
       models.add(language.getTypesystemModelDescriptor());
     }
 
-    generate(conf, models, operationContext, false);
+    generate(conf, models, operationContext, false, language);
 
-    language.updateLastGenerationTime();
+ //   language.updateLastGenerationTime();
     language.unRegisterModelDescriptor(tmpModelDescriptor);
   }
 
@@ -146,7 +146,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
 
   public static final int AMOUNT_PER_MODEL = 100;
 
-  public void generate(final GeneratorConfiguration configuration, final List<SModelDescriptor> modelDescriptors, final IOperationContext invocationContext, final boolean generateText) {
+  public void generate(final GeneratorConfiguration configuration, final List<SModelDescriptor> modelDescriptors, final IOperationContext invocationContext, final boolean generateText, final Language language) {
     new Thread() {
       {
         setPriority(Thread.MIN_PRIORITY);
@@ -236,6 +236,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
           progress.addText("Finished.");
         } finally {
           progress.finish();
+          if (language != null) language.updateLastGenerationTime();
           invocationContext.getComponent(ProjectPane.class).enableRebuild();
         }
       }
