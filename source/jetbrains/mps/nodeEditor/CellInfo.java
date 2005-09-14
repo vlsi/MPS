@@ -19,7 +19,8 @@ public class CellInfo {
   public CellInfo(EditorCell cell) {
     nodeProxy = cell.getSNodeProxy();
     cellId = (String) cell.getUserObject(EditorCell.CELL_ID);
-    cellNumber = (Integer) cell.getUserObject(EditorCell.NUMBER);
+    Object userObject = cell.getUserObject(EditorCell.NUMBER);
+    cellNumber = userObject == null ? -1 : (Integer) userObject;
   }
 
 

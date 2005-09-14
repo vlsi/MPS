@@ -22,6 +22,7 @@ import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CopyUtil;
+import jetbrains.mps.util.CollectionUtil;
 
 import javax.swing.*;
 import java.awt.*;
@@ -1178,6 +1179,20 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return null;
   }
 
+  private EditorCell findLastEditableCell(EditorCell root) {
+    if (root instanceof EditorCell_Label && ((EditorCell_Label) root).isEditable() && root.isSelectable()) {
+      return root;
+    }
+    if (root instanceof EditorCell_Collection) {
+      EditorCell_Collection collection = (EditorCell_Collection) root;
+      for (EditorCell child : CollectionUtil.iteratorAsIterable(collection.reverseCellIterator())) {
+        EditorCell result = findLastEditableCell(child);
+        if (result != null) return result;
+      }
+    }
+    return null;
+  }
+
   private EditorCell findErrorCell(EditorCell root) {
     if (root != null && (root instanceof EditorCell_Error || root.isErrorState())) {
       return root;
@@ -1195,7 +1210,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private EditorCell findErrorOrEditableCell(EditorCell root) {
     EditorCell result = findErrorCell(root);
     if (result != null) return result;
-    return findEditableCell(root);
+    return findLastEditableCell(root);
   }
 
 
