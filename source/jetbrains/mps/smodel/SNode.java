@@ -53,10 +53,10 @@ public abstract class SNode implements Cloneable {
     for (SNode child : myChildren) {
       child.changeModel(newModel);
     }
+  }
 
-
-
-
+  public boolean isRoot() {
+    return getModel().getRoots().contains(this);
   }
 
   public SNode clone() {//doesn't copy children, references and back references

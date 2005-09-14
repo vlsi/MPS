@@ -53,6 +53,8 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope {
         SModel model = ProjectModelDescriptor.createDescriptorFor(MPSProject.this).getSModel();
         myProjectDescriptor = PersistenceUtil.loadProjectDescriptor(projectFile, model);
 
+        LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
+
         revalidateContent(projectFile, model);
 
         MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
@@ -123,6 +125,9 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope {
 
 
     myProjectDescriptor = newDescriptor;
+
+    LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
+
     revalidateContent(myProjectFile, newDescriptor.getModel());
 
     myEventTranslator.projectChanged();
