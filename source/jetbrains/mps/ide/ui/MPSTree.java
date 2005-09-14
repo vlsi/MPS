@@ -153,20 +153,22 @@ public abstract class MPSTree extends JTree {
     }
 
     Insets insets = label.getInsets();
-
     return new Point(rect.getLocation().x + iconWidth + insets.left - 1, rect.getLocation().y + insets.top + 1);
   }
 
   private static class Pair {
     KeyStroke keyStroke;
     Class<? extends MPSTreeNode> nodeClass;
+
     public Pair(KeyStroke keyStroke, Class<? extends MPSTreeNode> nodeClass) {
       this.keyStroke = keyStroke;
       this.nodeClass = nodeClass;
     }
+
     public int hashCode() {
       return keyStroke.hashCode() + nodeClass.hashCode();
     }
+
     public boolean equals(Object o) {
       if (!(o instanceof Pair)) return false;
       Pair pair = ((Pair) o);

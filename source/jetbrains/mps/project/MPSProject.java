@@ -224,6 +224,8 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope {
   }
 
   public void save() {
+    if (IdeMain.isTestMode()) return;
+
     PersistenceUtil.saveProjectDescriptor(myProjectFile, myProjectDescriptor);
 
     try {

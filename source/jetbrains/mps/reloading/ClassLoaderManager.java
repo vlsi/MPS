@@ -48,7 +48,6 @@ public class ClassLoaderManager {
     return null;
   }
 
-
   private class MyClassLoader extends MPSClassLoader {
     public MyClassLoader(String classPath) {
       super(new FileClassPathItem(classPath));
