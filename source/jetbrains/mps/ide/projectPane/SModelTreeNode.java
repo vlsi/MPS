@@ -55,7 +55,7 @@ class SModelTreeNode extends MPSTreeNodeEx {
         myModel = myModelDescriptor.getSModel();
       }
     }
-            ,"loading model in project pane");
+            , "loading model in project pane");
     return myModel;
   }
 
@@ -104,7 +104,7 @@ class SModelTreeNode extends MPSTreeNodeEx {
         myModel = myModelDescriptor.getSModel();
       }
     }
-            ,"loading model in project pane");
+            , "loading model in project pane");
 
     if (!myModel.hasSModelCommandListener(myModelListener)) {
       myModel.addSModelCommandListener(myModelListener);
@@ -114,7 +114,7 @@ class SModelTreeNode extends MPSTreeNodeEx {
       MPSTreeNodeEx treeNode = new SNodeTreeNode(sortedRoot, getOperationContext());
       add(treeNode);
     }
-    DefaultTreeModel treeModel = (DefaultTreeModel)getOperationContext().getComponent(IdeMain.class).getProjectPane().getTree().getModel();
+    DefaultTreeModel treeModel = (DefaultTreeModel) getOperationContext().getComponent(IdeMain.class).getProjectPane().getTree().getModel();
     treeModel.nodeStructureChanged(this);
     isInitialized = true;
   }
@@ -146,10 +146,10 @@ class SModelTreeNode extends MPSTreeNodeEx {
             }
 
             public void visitPropertyEvent(SModelPropertyEvent event) {
-              DefaultTreeModel treeModel = (DefaultTreeModel)getOperationContext().getComponent(IdeMain.class).getProjectPane().getTree().getModel();
+              DefaultTreeModel treeModel = (DefaultTreeModel) getOperationContext().getComponent(IdeMain.class).getProjectPane().getTree().getModel();
 
               //i tried to use nodeChange but it didn't work
-              treeModel.nodeStructureChanged((TreeNode) findAncestorWith(event.getNode()));
+              treeModel.nodeStructureChanged(findAncestorWith(event.getNode()));
             }
 
             public void visitReferenceEvent(SModelReferenceEvent event) {
@@ -168,7 +168,7 @@ class SModelTreeNode extends MPSTreeNodeEx {
       if (treeNode != null) {
         treeNode.update();
       }
-      DefaultTreeModel treeModel = (DefaultTreeModel)getOperationContext().getComponent(IdeMain.class).getProjectPane().getTree().getModel();
+      DefaultTreeModel treeModel = (DefaultTreeModel) getOperationContext().getComponent(IdeMain.class).getProjectPane().getTree().getModel();
       treeModel.nodeStructureChanged((TreeNode) treeModel.getRoot());
     }
   }

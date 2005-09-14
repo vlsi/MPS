@@ -2,11 +2,10 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
-import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.IOperationContext;
 
 import javax.swing.*;
 import java.util.List;
@@ -18,17 +17,15 @@ import java.util.List;
  * Time: 5:16:43 PM
  * To change this template use File | Settings | File Templates.
  */
-class GeneratorTreeNode extends TextTreeNode {
-  private Generator myGenerator;
-  private MPSProject myProject;
-  private IOperationContext myOperationContext;
+class GeneratorTreeNode extends MPSTreeNode {
 
-  public GeneratorTreeNode(String text, Generator generator, MPSProject project, IOperationContext operationContext) {
-    super(text);
-    myGenerator = generator;
-    myProject = project;
-    myOperationContext = new ModuleContext(generator, operationContext.getProject());
+  public GeneratorTreeNode(Generator generator, MPSProject project) {
+    super(new ModuleContext(generator, project));
     populate();
+  }
+
+  public Generator getGenerator() {
+    return (Generator) getOperationContext().getModule();
   }
 
   public Icon getIcon(boolean expanded) {
@@ -37,26 +34,31 @@ class GeneratorTreeNode extends TextTreeNode {
 
   public JPopupMenu getPopupMenu() {
     JPopupMenu result = new JPopupMenu();
-    ActionContext context = new ActionContext(myOperationContext);
-    context.put(Generator.class, myGenerator);
+    ActionContext context = new ActionContext(getOperationContext());
+    context.put(MPSProject.class, getOperationContext().getProject());
+    context.put(Generator.class, getGenerator());
     ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_GENERATOR_ACTIONS).add(result, context);
     return result;
   }
 
 
   private void populate() {
-    List<GeneratorModelsTreeNode> modelTreeNodes = GeneratorModelsTreeNode.createModelsTreeNodes(myOperationContext);
+    List<GeneratorModelsTreeNode> modelTreeNodes = GeneratorModelsTreeNode.createModelsTreeNodes(getOperationContext());
     for (GeneratorModelsTreeNode modelsTreeNode : modelTreeNodes) {
       this.add(modelsTreeNode);
     }
-    
-    LanguagesTreeNode languagesNode = new LanguagesTreeNode(myProject, myOperationContext);
+
+    LanguagesTreeNode languagesNode = new LanguagesTreeNode(getOperationContext().getProject(), getOperationContext());
     this.add(languagesNode);
   }
 
-//  private static class GeneratorTreeNodeOperationContext extends DelegatingOperationContext {
-//    public GeneratorTreeNodeOperationContext(Generator generator, IOperationContext upperOperationContext) {
-//      super(upperOperationContext, generator, generator);
-//    }
-//  }
+  public String toString() {
+//    return "<html><b>generator \"" + generator.getName() + "\"</b>"
+    return "generator -> " + getGenerator().getTargetLanguageName();
+  }
+
+  protected String getNodeIdentifier() {
+    return toString();
+  }
+
 }

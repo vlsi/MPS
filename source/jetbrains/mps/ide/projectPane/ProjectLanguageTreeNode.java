@@ -1,16 +1,15 @@
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ModuleContext;
 
 import javax.swing.*;
 import java.util.List;
@@ -72,18 +71,18 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
     // language aspects
 
     SModelDescriptor structureModelDescriptor = myLanguage.getStructureModelDescriptor();
-    if(structureModelDescriptor != null) {
+    if (structureModelDescriptor != null) {
       this.add(new SModelTreeNode(structureModelDescriptor, "structure", operationContext));
     }
 
     SModelDescriptor editorModelDescriptor = myLanguage.getEditorModelDescriptor();
-    if(editorModelDescriptor != null) {
+    if (editorModelDescriptor != null) {
       this.add(new SModelTreeNode(editorModelDescriptor, "editor", operationContext));
     }
 
     // todo: tmp here
     SModelDescriptor templatesEditorModelDescriptor = myLanguage.getEditorModelDescriptor("templates");
-    if(templatesEditorModelDescriptor != null) {
+    if (templatesEditorModelDescriptor != null) {
       this.add(new SModelTreeNode(templatesEditorModelDescriptor, "templates editor", operationContext));
     }
 
@@ -99,7 +98,7 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
 
     // language accessory models
 
-    TextTreeNode libraries = new TextTreeNode("<html><b>accessory</b>") {
+    TextTreeNode accessories = new TextTreeNode("accessories") {
       public Icon getIcon(boolean expanded) {
         return Icons.LIB_ICON;
       }
@@ -107,16 +106,29 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
 
     List<SModelDescriptor> sortedModels = SortUtil.sortModels(myLanguage.getAccessoryModels());
     for (SModelDescriptor model : sortedModels) {
-      libraries.add(new SModelTreeNode(model, null, operationContext));
+      accessories.add(new SModelTreeNode(model, null, operationContext));
     }
-    this.add(libraries);
-
+    this.add(accessories);
 
     // language generators
+    TextTreeNode generators = new TextTreeNode("generators", operationContext) {
+      public Icon getIcon(boolean expanded) {
+        return Icons.GENERATORS_ICON;
+      }
+
+      public JPopupMenu getPopupMenu() {
+        JPopupMenu result = new JPopupMenu();
+        ActionContext context = new ActionContext(getOperationContext());
+        ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_GENERATORS_ACTIONS).add(result, context);
+        return result;
+      }
+    };
+    this.add(generators);
+
 
     for (Generator generator : myLanguage.getGenerators()) {
-      TextTreeNode generatorNode = new GeneratorTreeNode("<html><b>generator \"" + generator.getName() + "\"</b>", generator, myProject, operationContext);
-      this.add(generatorNode);
+      MPSTreeNode generatorNode = new GeneratorTreeNode(generator, myProject);
+      generators.add(generatorNode);
     }
   }
 }

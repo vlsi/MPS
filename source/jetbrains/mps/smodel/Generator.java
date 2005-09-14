@@ -4,7 +4,6 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.Model;
-import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.PathManager;
 
@@ -42,11 +41,19 @@ public class Generator extends AbstractModule implements ModelLocator {
   }
 
   public Language getTargetLanguage() {
-    return getLanguage(myGeneratorDescriptor.getTargetLanguage().getName());
+    jetbrains.mps.projectLanguage.Language targetLanguage = myGeneratorDescriptor.getTargetLanguage();
+    if (targetLanguage != null) {
+      return getLanguage(targetLanguage.getName());
+    }
+    return null;
   }
 
   public String getTargetLanguageName() {
-    return myGeneratorDescriptor.getTargetLanguage().getName();
+    jetbrains.mps.projectLanguage.Language targetLanguage = myGeneratorDescriptor.getTargetLanguage();
+    if (targetLanguage != null) {
+      return targetLanguage.getName();
+    }
+    return null;
   }
 
   public SModelUID getTemplatesModelUID() {
@@ -67,7 +74,7 @@ public class Generator extends AbstractModule implements ModelLocator {
     return null;
   }
 
-  public List<ModelRoot> getModelRoots() {
+  public List<jetbrains.mps.projectLanguage.ModelRoot> getModelRoots() {
     return CollectionUtil.iteratorAsList(myGeneratorDescriptor.modelRoots());
   }
 

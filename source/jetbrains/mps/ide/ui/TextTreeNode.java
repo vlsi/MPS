@@ -1,5 +1,7 @@
 package jetbrains.mps.ide.ui;
 
+import jetbrains.mps.smodel.IOperationContext;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Igoor
@@ -11,7 +13,11 @@ public class TextTreeNode extends MPSTreeNode {
   private String myText;
 
   public TextTreeNode(String text) {
-    super(null);
+    this(text, null);
+  }
+
+  public TextTreeNode(String text, IOperationContext context) {
+    super(context);
     myText = text;
   }
 
