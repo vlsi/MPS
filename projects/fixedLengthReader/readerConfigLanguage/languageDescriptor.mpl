@@ -25,7 +25,9 @@
       <models>
         <modelRoot path="${language_descriptor}\language." namespacePrefix="readerConfigLanguage" />
       </models>
-      <languages />
+      <languages>
+        <languageRoot path="${mps_home}\languages" />
+      </languages>
     </generator>
   </generators>
 </language>
