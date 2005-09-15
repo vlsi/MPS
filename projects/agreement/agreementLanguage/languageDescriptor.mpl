@@ -11,8 +11,7 @@
   </editor>
   <modelRoot rootPath="${language_descriptor}\language" namespacePrefix="agreementLanguage" />
   <modelRoot rootPath="${mps_home}\languages\formulaLanguage\language" namespacePrefix="jetbrains.mps.formulaLanguage" />
-  <library>
-  </library>
+  <modelRoot rootPath="${language_descriptor}\library" namespacePrefix="agreementLanguage" />
   <generators>
     <generator name="java" generatorClass="jetbrains.mps.baseLanguage.generator.target.DefaultTemplateGenerator" templatesModel="agreementLanguage.generator.baseLanguage@templates" targetLanguage="jetbrains.mps.baseLanguage">
       <modelRoot rootPath="${mps_home}\models" namespacePrefix="" />
