@@ -98,17 +98,19 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
 
     // language accessory models
 
-    TextTreeNode accessories = new TextTreeNode("accessories") {
-      public Icon getIcon(boolean expanded) {
-        return Icons.LIB_ICON;
-      }
-    };
+    if (myLanguage.getAccessoryModels().size() > 0) {
+      TextTreeNode accessories = new TextTreeNode("accessories") {
+        public Icon getIcon(boolean expanded) {
+          return Icons.LIB_ICON;
+        }
+      };
 
-    List<SModelDescriptor> sortedModels = SortUtil.sortModels(myLanguage.getAccessoryModels());
-    for (SModelDescriptor model : sortedModels) {
-      accessories.add(new SModelTreeNode(model, null, operationContext));
+      List<SModelDescriptor> sortedModels = SortUtil.sortModels(myLanguage.getAccessoryModels());
+      for (SModelDescriptor model : sortedModels) {
+        accessories.add(new SModelTreeNode(model, null, operationContext));
+      }
+      this.add(accessories);
     }
-    this.add(accessories);
 
     // language generators
     TextTreeNode generators = new TextTreeNode("generators", operationContext) {

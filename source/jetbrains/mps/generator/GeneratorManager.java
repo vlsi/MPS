@@ -201,6 +201,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
             Generator generator = findGenerator(cmd.getSourceLanguage().getName(), cmd.getTargetLanguage().getName(), invocationContext);
             ModuleContext generatorContext = new ModuleContext(generator, invocationContext.getProject());
             String generatorClass = findGeneratorClass(generator);
+            // todo: get rid of hardcoded "default" generator class
             if (generatorClass == null) generatorClass = DefaultTemplateGenerator.class.getName();
             SModelDescriptor templatesModel = loadTemplatesModel(generator, generatorContext);
             for (final SModelDescriptor model : modelsWithLanguage) {
