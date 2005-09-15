@@ -6,19 +6,26 @@
   <editor>
     <model modelUID="readerConfigLanguage.editor" />
   </editor>
-  <modelRoot rootPath="${language_descriptor}/language" namespacePrefix="readerConfigLanguage" />
-  <library />
+  <models>
+    <modelRoot path="${language_descriptor}\language" namespacePrefix="readerConfigLanguage" />
+  </models>
+  <accessoryModels />
   <generators>
     <generator name="java" templatesModel="readerConfigLanguage.generator.baseLanguage@templates" targetLanguage="jetbrains.mps.baseLanguage">
-      <modelRoot rootPath="${language_descriptor}\models\import" namespacePrefix="" />
-      <modelRoot rootPath="${mps_home}\models" namespacePrefix="" />
-      <modelRoot rootPath="${language_descriptor}\generator" namespacePrefix="readerConfigLanguage.generator" />
-      <languages rootPath="${mps_home}\languages\transformation\TLBase" />
-      <languages rootPath="${mps_home}\languages\baseLanguage" />
+      <models>
+        <modelRoot path="${language_descriptor}\models\import" namespacePrefix="" />
+        <modelRoot path="${mps_home}\models" namespacePrefix="" />
+        <modelRoot path="${language_descriptor}\language\generator" namespacePrefix="readerConfigLanguage.generator" />
+      </models>
+      <languages>
+        <languageRoot path="${mps_home}\languages" />
+      </languages>
     </generator>
     <generator name="xml" templatesModel="readerConfigLanguage.generator.xml@templates" targetLanguage="jetbrains.mps.xml">
-      <modelRoot rootPath="${language_descriptor}\language." namespacePrefix="readerConfigLanguage" />
-      <languages rootPath="${mps_home}\languages" />
+      <models>
+        <modelRoot path="${language_descriptor}\language." namespacePrefix="readerConfigLanguage" />
+      </models>
+      <languages />
     </generator>
   </generators>
 </language>
