@@ -15,6 +15,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vcs.model.VersionControl;
 import jetbrains.mps.vcs.VersionControlManager;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -46,15 +47,15 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope {
   private ProjectEventTranslator myEventTranslator;
 
   public MPSProject(final File projectFile) {
-
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         myProjectFile = projectFile;
         SModel model = ProjectModelDescriptor.createDescriptorFor(MPSProject.this).getSModel();
         myProjectDescriptor = PersistenceUtil.loadProjectDescriptor(projectFile, model);
 
-        LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
+        ClassLoaderManager.getInstance().setClassesDir(getClassPath().get(0));
 
+        LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
         revalidateContent(projectFile, model);
 
         MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);

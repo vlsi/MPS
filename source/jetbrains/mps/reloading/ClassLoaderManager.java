@@ -40,7 +40,13 @@ public class ClassLoaderManager {
         myClassLoader = new MyClassLoader(ideMain.getProject().getClassPath().get(0));
       }
     }
+
     return myClassLoader;
+  }
+
+  public void setClassesDir(String path) {
+    if (myUseSystemClassLoader) return;
+    myClassLoader = new MyClassLoader(path);
   }
 
   public MPSClassLoader getMPSClassLoader() {
