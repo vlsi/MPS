@@ -67,6 +67,11 @@ public class Icons {
 
   public static final Icon CFG_END_ICON = new ImageIcon(Icons.class.getResource("nodes/cfgEnd.png"));
 
+  public static final Icon MPS_ICON = new ImageIcon(Icons.class.getResource("nodes/mps2.png"));
+  public static final Icon MPS_SMALL_ICON = new ImageIcon(Icons.class.getResource("nodes/mps.png"));
+
   public static final Icon JDK_OPENED_FOLDER = new ImageIcon(Icons.class.getResource("nodes/ppJdkOpen.png"));
   public static final Icon JDK_CLOSED_FOLDER = new ImageIcon(Icons.class.getResource("nodes/ppJdkClosed.png"));
+
+  public static final Icon SPLASH_SCREEN = new ImageIcon(Icons.class.getResource("splash.png"));
 }
