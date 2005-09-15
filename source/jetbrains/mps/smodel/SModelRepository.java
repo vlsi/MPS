@@ -109,17 +109,19 @@ public class SModelRepository extends SModelAdapter {
     HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(modelDescriptor);
     if (modelOwners != null && modelOwners.contains(owner)) {
       modelOwners.remove(owner);
+      if (modelOwners.isEmpty()) removeModelDescriptor(modelDescriptor);
     }
 
     repositoryChanged();
   }
 
   public void unRegisterModelDescriptors(ModelOwner owner) {
-    for (SModelUID uid : myUIDToModelDescriptorMap.keySet()) {
+    for (SModelUID uid : new HashMap<SModelUID, SModelDescriptor>(myUIDToModelDescriptorMap).keySet()) {
       SModelDescriptor modelDescriptor = myUIDToModelDescriptorMap.get(uid);
       HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(modelDescriptor);
       if (modelOwners != null) {
         modelOwners.remove(owner);
+        if (modelOwners.isEmpty()) removeModelDescriptor(modelDescriptor);
       }
     }
 
