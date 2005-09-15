@@ -10,6 +10,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjectCommandListener;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelsAdapter;
 import jetbrains.mps.smodel.event.SModelsMulticaster;
@@ -188,7 +189,63 @@ public class ProjectPane extends JComponent {
   }
 
   public void selectNode(SNode node, IOperationContext context) {
+    IModule module = context.getModule();
+    if (module == null || !myProject.isProjectModule(module)) {
+      selectNode(node);
+      return;
+    }
 
+    MPSTreeNode moduleTreeNode = findProjectModuleTreeNode(module);
+    if (moduleTreeNode == null) {
+      LOG.error("Couldn't find tree node for module: " + module);
+      selectNode(node);
+      return;
+    }
+
+    // search in module sub-tree
+    SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+    SModelTreeNode modelTreeNode = findSModelTreeNode(moduleTreeNode, modelDescriptor);
+    if (modelTreeNode == null) {
+      // no such model in the module sub-tree
+      selectNode(node);
+      return;
+    }
+
+    // search in SModel sub-tree
+    MPSTreeNodeEx treeNodeToSelect = findTreeNode(modelTreeNode, node);
+    if (treeNodeToSelect != null) {
+      TreePath treePath = new TreePath(treeNodeToSelect.getPath());
+      myTree.setSelectionPath(treePath);
+      myTree.scrollPathToVisible(treePath);
+    } else {
+      LOG.warning("Couldn't select node " + node.getDebugText() + " : tree node not found.");
+    }
+  }
+
+  public MPSTreeNode findProjectModuleTreeNode(IModule module) {
+    DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
+    MPSTreeNode rootTreeNode = (MPSTreeNode) model.getRoot();
+
+    if (module instanceof Generator) {
+      // check 1st-level language nodes
+      for (MPSTreeNode treeNode : rootTreeNode) {
+        if (treeNode instanceof ProjectLanguageTreeNode) {
+          return ((ProjectLanguageTreeNode) treeNode).getGeneratorTreeNode((Generator) module);
+        }
+      }
+    } else {
+      // check all 1st-level nodes
+      for (MPSTreeNode treeNode : rootTreeNode) {
+        IOperationContext operationContext = treeNode.getOperationContext();
+        if (operationContext != null) {
+          if (operationContext.getModule() == module) {
+            return treeNode;
+          }
+        }
+      }
+    }
+
+    return null;
   }
 
   public void selectNode(SNode node) {
@@ -196,7 +253,10 @@ public class ProjectPane extends JComponent {
     MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
     SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
     SModelTreeNode modelTreeNode = findSModelTreeNode(rootNode, modelDescriptor);
-    if (modelTreeNode == null) return;
+    if (modelTreeNode == null) {
+      LOG.warning("Couldn't select node " + node.getDebugText() + " : tree node for model \"" + modelDescriptor.getModelUID() + "\" not found.");
+      return;
+    }
     MPSTreeNodeEx treeNodeToSelect = findTreeNode(modelTreeNode, node);
     if (treeNodeToSelect != null) {
       TreePath treePath = new TreePath(treeNodeToSelect.getPath());

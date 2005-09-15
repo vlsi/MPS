@@ -74,7 +74,7 @@ public class CreateRootNodeGroup extends ActionGroup {
                   }
                 });
 
-                ide.getProjectPane().selectNode(node[0]);
+                ide.getProjectPane().selectNode(node[0], context.get(IOperationContext.class));
                 ide.getProjectPane().openEditor();
               }
             });

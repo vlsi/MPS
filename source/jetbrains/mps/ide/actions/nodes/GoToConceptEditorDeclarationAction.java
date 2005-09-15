@@ -128,7 +128,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
   }
 
   private void navigateToEditorDeclaration(final SNode editorDeclaration, final IOperationContext operationContext, final AbstractEditorComponent currentEditor, final IdeMain ide) {
-    operationContext.getComponent(ProjectPane.class).selectNode(editorDeclaration);
+    operationContext.getComponent(ProjectPane.class).selectNode(editorDeclaration, operationContext);
 
     NavigationActionProcessor.executeNavigationAction(new EditorNavigationRunnable() {
       public AbstractEditorComponent run(AbstractEditorComponent sourceEditor) {

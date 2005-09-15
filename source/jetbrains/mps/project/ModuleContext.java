@@ -57,4 +57,24 @@ public class ModuleContext implements IOperationContext {
     }
     return new ModuleContext(owningModules.iterator().next(), project);
   }
+
+  public static ModuleContext create(SNode node, IOperationContext context) {
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(node.getModel());
+    Set<IModule> owningModules = SModelRepository.getInstance().getOwners(modelDescriptor, IModule.class);
+    if (owningModules.isEmpty()) {
+      LOG.errorWithTrace("Couldn't create module context for node: " + node.getDebugText() +
+              "\nCouldn't find owner module for model \"" + modelDescriptor.getModelUID() + "\"");
+      return null;
+    }
+
+    // todo: need to find "real" owner.
+    // todo: for instance "real" owner of structure model is language
+    // todo: right now just get 1st owner - shoul work in most cases
+//    if(context.getModule() != null && owningModules.contains(context.getModule())) {
+//      // context is fine
+//      return (ModuleContext)context;
+//    }
+
+    return new ModuleContext(owningModules.iterator().next(), context.getProject());
+  }
 }

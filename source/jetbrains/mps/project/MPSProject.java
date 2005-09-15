@@ -178,6 +178,15 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope {
     return Collections.unmodifiableList(mySolutions);
   }
 
+  public boolean isProjectModule(IModule module) {
+    if (myLanguages.contains(module) || mySolutions.contains(module)) return true;
+    for (Language language : myLanguages) {
+      List<Generator> generators = language.getGenerators();
+      if (generators.contains(module)) return true;
+    }
+    return false;
+  }
+
   public List<Object> getComponents() {
     return new ArrayList<Object>(myComponents.values());
   }
