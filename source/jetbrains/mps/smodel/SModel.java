@@ -61,6 +61,9 @@ public class SModel implements Iterable<SNode> {
     return myUID;
   }
 
+  /**
+   * @deprecated
+   */
   public void setModelUID(SModelUID modelUID) {
     myUID = modelUID;
     if (SModelStereotype.JAVA_STUB.equals(myUID.getStereotype()))

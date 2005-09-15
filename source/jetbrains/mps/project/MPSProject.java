@@ -379,11 +379,6 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope {
     return result;
   }
 
-  public List<SModelDescriptor> getVisibleModelDescriptors() {
-    throw new RuntimeException("not implemented");
-  }
-
-
   public void addMPSProjectCommandListener(MPSProjectCommandListener listener) {
     myProjectCommandListeners.add(listener);
   }

@@ -65,6 +65,16 @@ public class SModelRepository extends SModelAdapter {
     return Collections.unmodifiableList(myModelDescriptors);
   }
 
+  public List<SModelDescriptor> getModelDescriptorsByModelName(String modelName) {
+    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+    for (SModelDescriptor d : getAllModelDescriptors()) {
+      if (modelName.equals(d.getLongName())) {
+        result.add(d);
+      }
+    }
+    return result;
+  }
+
   public List<SModelDescriptor> getModelDescriptorsByStereotype(String stereotype) {
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor d : getAllModelDescriptors()) {
@@ -165,30 +175,6 @@ public class SModelRepository extends SModelAdapter {
     return null;
   }
 
-  /**
-   * @deprecated
-   */
-  public List<SModelDescriptor> getModelDescriptors(String modelName) {
-    List<SModelDescriptor> list = new LinkedList<SModelDescriptor>();
-    SModelUID modelUID = SModelUID.fromString(modelName);
-    List<SModelUID> uidList = new LinkedList<SModelUID>();
-    if (modelUID.hasStereotype()) {
-      uidList.add(modelUID);
-    } else {
-      for (String stereotype : SModelStereotype.values) {
-        uidList.add(new SModelUID(modelName, stereotype));
-      }
-    }
-
-    for (SModelUID uid : uidList) {
-      SModelDescriptor descriptor = myUIDToModelDescriptorMap.get(uid);
-      if (descriptor != null) {
-        list.add(descriptor);
-      }
-    }
-    return list;
-  }
-
   public SModelDescriptor getModelDescriptor(SModelUID modelUID, ModelOwner owner) {
     SModelDescriptor descriptor = myUIDToModelDescriptorMap.get(modelUID);
     if (descriptor == null) {
@@ -202,24 +188,13 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public List<SModelDescriptor> getModelDescriptors(String modelName, ModelOwner owner) {
-    List<SModelDescriptor> list = new LinkedList<SModelDescriptor>();
-    SModelUID modelUID = SModelUID.fromString(modelName);
-    List<SModelUID> uidList = new LinkedList<SModelUID>();
-    if (modelUID.hasStereotype()) {
-      uidList.add(modelUID);
-    } else {
-      for (String stereotype : SModelStereotype.values) {
-        uidList.add(new SModelUID(modelName, stereotype));
+    List<SModelDescriptor> result = new LinkedList<SModelDescriptor>();
+    for (SModelDescriptor descriptor : getModelDescriptors(owner)) {
+      if (modelName.equals(descriptor.getLongName())) {
+        result.add(descriptor);
       }
     }
-
-    for (SModelUID uid : uidList) {
-      SModelDescriptor descriptor = getModelDescriptor(uid, owner);
-      if (descriptor != null) {
-        list.add(descriptor);
-      }
-    }
-    return list;
+    return result;
   }
 
   public List<SModelDescriptor> getModelDescriptors(ModelOwner modelOwner) {

@@ -335,6 +335,18 @@ public class Language extends AbstractModule implements ModelLocator {
     return result;
   }
 
+  public boolean isAccessoryModel(SModelUID modelUID) {
+    Iterator<Model> accessoryModels = getLanguageDescriptor().accessoryModels();
+    while (accessoryModels.hasNext()) {
+      Model model = accessoryModels.next();
+      SModelUID accessoryUID = SModelUID.fromString(model.getName());
+      if(accessoryUID.equals(modelUID)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   public String toString() {
     return getLanguageDescriptor().getNamespace();
   }

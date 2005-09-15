@@ -14,8 +14,6 @@ public interface IScope {
 
   List<SModelDescriptor> getModelDescriptors(String modelName);
 
-  List<SModelDescriptor> getVisibleModelDescriptors();
-
   Language getLanguage(String languageNamespace);
 
   List<Language> getLanguages();
