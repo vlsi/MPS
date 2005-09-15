@@ -38,4 +38,8 @@ public class ModuleContext implements IOperationContext {
   public IScope getScope() {
     return myModule;
   }
+
+  public String toString() {
+    return "module context: " + myModule;
+  }
 }

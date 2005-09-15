@@ -158,4 +158,11 @@ public class Solution extends AbstractModule implements ModelLocator {
     }
   }
 
+  public String toString() {
+    String text = mySolutionDescriptor.getName();
+    if(text == null || text.length() == 0) {
+      text = myDescriptorFile.getName();
+    }
+    return text;
+  }
 }

@@ -36,4 +36,8 @@ public class ProjectOperationContext implements IOperationContext {
   public IScope getScope() {
     return myProject;
   }
+
+  public String toString() {
+    return "project context";
+  }
 }

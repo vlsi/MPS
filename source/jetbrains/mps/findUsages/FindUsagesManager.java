@@ -3,6 +3,7 @@ package jetbrains.mps.findUsages;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.ide.progress.ProgressMonitor;
 import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 
 import java.util.*;
@@ -79,14 +80,14 @@ public class FindUsagesManager {
     }
   }
 
-  public Set<SNode> findInstances(ConceptDeclaration concept, Scope scope, ProgressMonitor progress, IOperationContext operationContext) {
+  public Set<SNode> findInstances(ConceptDeclaration concept, Scope scope, ProgressMonitor progress) {
     Set<SNode> result = new HashSet<SNode>();
     try {
       if (progress == null) progress = ProgressMonitor.NULL_PROGRESS_MONITOR;
       List<SModelDescriptor> models = scope.getModels();
       progress.start("Finding Instances...", models.size());
       for (SModelDescriptor model : models) {
-        result.addAll(model.findInstances(concept, operationContext.getScope()));
+        result.addAll(model.findInstances(concept, GlobalScope.getInstance()));
         if (progress.isCanceled()) {
           return result;
         }
@@ -102,8 +103,8 @@ public class FindUsagesManager {
     return findUsages(node, globalScope(), progress);
   }
 
-  public Set<SNode> findInstances(ConceptDeclaration concept, ProgressMonitor progress, IOperationContext operationContext){
-    return findInstances(concept, globalScope(), progress, operationContext);
+  public Set<SNode> findInstances(ConceptDeclaration concept, ProgressMonitor progress){
+    return findInstances(concept, globalScope(), progress);
   }
 
   public Scope globalScope() {

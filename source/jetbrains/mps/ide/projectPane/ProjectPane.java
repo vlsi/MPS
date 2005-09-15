@@ -7,7 +7,6 @@ import jetbrains.mps.ide.actions.nodes.DeleteNodeAction;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.ui.*;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjectCommandListener;
 import jetbrains.mps.project.Solution;
@@ -95,16 +94,16 @@ public class ProjectPane extends JComponent {
   }
 
 
-  public AbstractEditorComponent openEditor() {
+  public void openEditor() {
     TreePath selectionPath = myTree.getSelectionPath();
-    if (selectionPath == null) return null;
-    if (!(selectionPath.getLastPathComponent() instanceof SNodeTreeNode)) return null;
+    if (selectionPath == null) return;
+    if (!(selectionPath.getLastPathComponent() instanceof SNodeTreeNode)) return;
     SNodeTreeNode selectedTreeNode = (SNodeTreeNode) selectionPath.getLastPathComponent();
-    return myIDE.openNode(selectedTreeNode.getSNode(), selectedTreeNode.getOperationContext());
+    myIDE.openNode(selectedTreeNode.getSNode(), selectedTreeNode.getOperationContext());
   }
 
   public void setProject(MPSProject project) {
-    if(myProject != null) {
+    if (myProject != null) {
       removeListeners(myProject);
     }
     myProject = project;
@@ -124,7 +123,7 @@ public class ProjectPane extends JComponent {
   }
 
   private void updateListeners() {
-    if(myProject == null) return;
+    if (myProject == null) return;
 
     myProject.removeMPSProjectCommandListener(myProjectListener);
     myProject.addMPSProjectCommandListener(myProjectListener);
@@ -348,30 +347,30 @@ public class ProjectPane extends JComponent {
 
   private class MyTree extends MPSTree {
 
-   public MyTree() {
-     super();
-     scrollsOnExpand = false;
+    public MyTree() {
+      super();
+      scrollsOnExpand = false;
 
-     registerActions();
-   }
+      registerActions();
+    }
 
-   private void registerActions() {
-     registerMPSAction(new DeleteModelAction(), SModelTreeNode.class);
-     registerMPSAction(new DeleteNodeAction(), SNodeTreeNode.class);
-   }
+    private void registerActions() {
+      registerMPSAction(new DeleteModelAction(), SModelTreeNode.class);
+      registerMPSAction(new DeleteNodeAction(), SNodeTreeNode.class);
+    }
 
     protected ActionContext getActionContext(MPSTreeNode node, List<MPSTreeNode> nodes) {
-      ActionContext actionContext  = super.getActionContext(node, nodes);
+      ActionContext actionContext = super.getActionContext(node, nodes);
       if (node instanceof SNodeTreeNode) {
-        actionContext.put(SNode.class, ((SNodeTreeNode)node).getSNode());
+        actionContext.put(SNode.class, ((SNodeTreeNode) node).getSNode());
         List<SNode> otherNodes = new ArrayList<SNode>();
         for (MPSTreeNode aNode : nodes) {
           if (aNode instanceof SNodeTreeNode)
-            otherNodes.add(((SNodeTreeNode)aNode).getSNode());
+            otherNodes.add(((SNodeTreeNode) aNode).getSNode());
         }
         actionContext.put(List.class, otherNodes);
       } else if (node instanceof SModelTreeNode) {
-        actionContext.put(SModelDescriptor.class, ((SModelTreeNode)node).getModelDescriptor());
+        actionContext.put(SModelDescriptor.class, ((SModelTreeNode) node).getModelDescriptor());
       }
 
       return actionContext;
