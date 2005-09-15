@@ -187,6 +187,10 @@ public class ProjectPane extends JComponent {
     }
   }
 
+  public void selectNode(SNode node, IOperationContext context) {
+
+  }
+
   public void selectNode(SNode node) {
     DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
     MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
