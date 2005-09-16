@@ -52,25 +52,6 @@ public abstract class AbstractModule implements LanguageOwner, IModule {
       return modelDescriptor;
     }
 
-//    // todo: problem if cycle in dependency graph
-//    List<IModule> dependOnModules = getDependOnModules();
-//    for (IModule module : dependOnModules) {
-//      modelDescriptor = module.getModelDescriptor(modelUID);
-//      if (modelDescriptor != null) {
-//        return modelDescriptor;
-//      }
-//    }
-
-    // alshan : "depend on" list includes languages
-//    // CYRIL : maybe context should see models which its language owner's languages can see
-//    for (Language language : getLanguages()) {
-//      modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, language);
-//      if (modelDescriptor != null) {
-//        return modelDescriptor;
-//      }
-//    }
-//    //-- CYRIL
-
     LOG.warning("Couldn't find model descriptor for uid: \"" + modelUID + "\" in scope: " + this);
     return null;
   }
@@ -123,27 +104,6 @@ public abstract class AbstractModule implements LanguageOwner, IModule {
         }
       }
     }
-
-//    // todo: problem if cycle in dependency graph
-//    List<IModule> dependOnModules = getDependOnModules();
-//    for (IModule module : dependOnModules) {
-//      List<SModelDescriptor> list = module.getModelDescriptors(modelName);
-//      for (SModelDescriptor descriptor : list) {
-//        if (!set.contains(descriptor)) {
-//          set.add(descriptor);
-//        }
-//      }
-//    }
-
-    // alshan : "depend on" list includes languages
-//    for (Language language : getLanguages()) {
-//      List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptors(modelName, language);
-//      for (SModelDescriptor descriptor : list) {
-//        if (!set.contains(descriptor)) {
-//          set.add(descriptor);
-//        }
-//      }
-//    }
 
     List<SModelDescriptor> result = CollectionUtil.iteratorAsList(set.iterator());
     set.clear();
