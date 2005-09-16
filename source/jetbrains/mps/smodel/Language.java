@@ -375,8 +375,8 @@ public class Language extends AbstractModule implements ModelLocator {
     return CollectionUtil.iteratorAsList(myLanguageDescriptor.modelRoots());
   }
 
-  protected List<IModule> getDependOnModules() {
-    return Collections.emptyList();
+  public List<IModule> getChildModules() {
+    return (List<IModule>)((List)getGenerators());
   }
 
   public Language getLanguage(String languageNamespace) {

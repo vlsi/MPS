@@ -6,10 +6,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.ide.BootstrapLanguages;
 
-import java.util.List;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Iterator;
+import java.util.*;
 import java.io.File;
 import java.io.IOException;
 
@@ -71,8 +68,6 @@ public abstract class AbstractModule implements LanguageOwner, IModule {
     return null;
   }
 
-  protected abstract List<IModule> getDependOnModules();
-
   public List<SModelDescriptor> getModelDescriptors(String modelName) {
     HashSet<SModelDescriptor> set = new HashSet<SModelDescriptor>();
     {
@@ -126,6 +121,14 @@ public abstract class AbstractModule implements LanguageOwner, IModule {
   //
 
   public abstract List<ModelRoot> getModelRoots();
+
+  public List<IModule> getChildModules() {
+    return Collections.emptyList();
+  }
+
+  public List<IModule> getDependOnModules() {
+    return Collections.emptyList();
+  }
 
   public void registerModelDescriptor(SModelDescriptor modelDescriptor) {
     SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, this);

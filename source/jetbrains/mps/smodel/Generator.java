@@ -101,7 +101,7 @@ public class Generator extends AbstractModule implements ModelLocator {
     return super.getLanguage(languageNamespace);
   }
 
-  protected List<IModule> getDependOnModules() {
+  public List<IModule> getDependOnModules() {
     List<IModule> list = new LinkedList<IModule>();
     list.add(mySourceLanguage);
     Language targetLanguage = getTargetLanguage();

@@ -13,7 +13,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Collections;
 
 /**
  * Created by IntelliJ IDEA.
@@ -131,10 +130,6 @@ public class Solution extends AbstractModule implements ModelLocator {
       return modelPath;
     }
     return null;
-  }
-
-  protected List<IModule> getDependOnModules() {
-    return Collections.emptyList();
   }
 
   public void addSolutionCommandListener(SolutionCommandListener listener) {
