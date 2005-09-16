@@ -45,9 +45,9 @@ public class FindUsagesManager {
       knownDescendantsInModelDescriptors = new HashMap<SModelDescriptor, HashSet<ConceptDeclaration>>();
       myConceptsToKnownDescendantsInModelDescriptors.put(node, knownDescendantsInModelDescriptors);
     }
-    FindUsagesScope scope = globalScope();
+    IScope scope = globalScope();
     Set<ConceptDeclaration> result = new HashSet<ConceptDeclaration>();
-    List<SModelDescriptor> models = scope.getModels();
+    List<SModelDescriptor> models = scope.getModelDescriptors();
     for (SModelDescriptor model : models) {
       HashSet<ConceptDeclaration> descendantsKnownInModel = knownDescendantsInModelDescriptors.get(model);
       if (descendantsKnownInModel == null) {
@@ -60,11 +60,11 @@ public class FindUsagesManager {
     return result;
   }
 
-  public Set<SReference> findUsages(SNode node, FindUsagesScope scope, ProgressMonitor progress) {
+  public Set<SReference> findUsages(SNode node, IScope scope, ProgressMonitor progress) {
     Set<SReference> result = new HashSet<SReference>();
     try {
       if (progress == null) progress = ProgressMonitor.NULL_PROGRESS_MONITOR;
-      List<SModelDescriptor> models = scope.getModels();
+      List<SModelDescriptor> models = scope.getModelDescriptors();
       progress.start("Find Usages...", models.size());
       progress.addText("Finding usages...");
       for (SModelDescriptor model : models) {
@@ -80,11 +80,11 @@ public class FindUsagesManager {
     }
   }
 
-  public Set<SNode> findInstances(ConceptDeclaration concept, FindUsagesScope scope, ProgressMonitor progress) {
+  public Set<SNode> findInstances(ConceptDeclaration concept, IScope scope, ProgressMonitor progress) {
     Set<SNode> result = new HashSet<SNode>();
     try {
       if (progress == null) progress = ProgressMonitor.NULL_PROGRESS_MONITOR;
-      List<SModelDescriptor> models = scope.getModels();
+      List<SModelDescriptor> models = scope.getModelDescriptors();
       progress.start("Finding Instances...", models.size());
       for (SModelDescriptor model : models) {
         result.addAll(model.findInstances(concept, GlobalScope.getInstance()));
@@ -107,12 +107,8 @@ public class FindUsagesManager {
     return findInstances(concept, globalScope(), progress);
   }
 
-  public FindUsagesScope globalScope() {
-    return new FindUsagesScope() {
-      public List<SModelDescriptor> getModels() {
-        return SModelRepository.getInstance().getAllModelDescriptors();
-      }
-    };
+  public IScope globalScope() {
+    return GlobalScope.getInstance();
   }
 
   private static Map<ConceptDeclaration, List<ConceptDeclaration>> ourCache = new HashMap<ConceptDeclaration, List<ConceptDeclaration>>();

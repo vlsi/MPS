@@ -154,6 +154,10 @@ public abstract class AbstractModule implements LanguageOwner, IModule {
     }
   }
 
+  public List<SModelDescriptor> getModelDescriptors() {
+    return SModelRepository.getInstance().getAllModelDescriptors();
+  }
+
   public SModelDescriptor createTransientProjectModel() {
     return ProjectModelDescriptor.createDescriptorFor(this);
   }

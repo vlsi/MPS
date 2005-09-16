@@ -50,4 +50,8 @@ public class GlobalScope implements IScope {
   public List<SModelDescriptor> getModelDescriptors(String modelName) {
     return SModelRepository.getInstance().getModelDescriptorsByModelName(modelName);
   }
+
+  public List<SModelDescriptor> getModelDescriptors() {
+    return SModelRepository.getInstance().getAllModelDescriptors();
+  }
 }

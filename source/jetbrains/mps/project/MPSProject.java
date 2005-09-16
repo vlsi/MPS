@@ -68,6 +68,11 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope {
     CommandProcessor.instance().addCommandListener(myEventTranslator);
   }
 
+
+  public List<SModelDescriptor> getModelDescriptors() {
+    return SModelRepository.getInstance().getAllModelDescriptors();
+  }
+
   private void revalidateContent(File projectFile, final SModel model) {
     // load solutions
     mySolutions = new LinkedList<Solution>();
