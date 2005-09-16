@@ -53,7 +53,6 @@ class GeneratorTreeNode extends MPSTreeNode {
   }
 
   public String toString() {
-//    return "<html><b>generator \"" + generator.getName() + "\"</b>"
     return "generator -> " + getGenerator().getTargetLanguageName();
   }
 
