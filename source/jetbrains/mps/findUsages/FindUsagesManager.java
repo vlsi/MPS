@@ -45,7 +45,7 @@ public class FindUsagesManager {
       knownDescendantsInModelDescriptors = new HashMap<SModelDescriptor, HashSet<ConceptDeclaration>>();
       myConceptsToKnownDescendantsInModelDescriptors.put(node, knownDescendantsInModelDescriptors);
     }
-    Scope scope = globalScope();
+    FindUsagesScope scope = globalScope();
     Set<ConceptDeclaration> result = new HashSet<ConceptDeclaration>();
     List<SModelDescriptor> models = scope.getModels();
     for (SModelDescriptor model : models) {
@@ -60,7 +60,7 @@ public class FindUsagesManager {
     return result;
   }
 
-  public Set<SReference> findUsages(SNode node, Scope scope, ProgressMonitor progress) {
+  public Set<SReference> findUsages(SNode node, FindUsagesScope scope, ProgressMonitor progress) {
     Set<SReference> result = new HashSet<SReference>();
     try {
       if (progress == null) progress = ProgressMonitor.NULL_PROGRESS_MONITOR;
@@ -80,7 +80,7 @@ public class FindUsagesManager {
     }
   }
 
-  public Set<SNode> findInstances(ConceptDeclaration concept, Scope scope, ProgressMonitor progress) {
+  public Set<SNode> findInstances(ConceptDeclaration concept, FindUsagesScope scope, ProgressMonitor progress) {
     Set<SNode> result = new HashSet<SNode>();
     try {
       if (progress == null) progress = ProgressMonitor.NULL_PROGRESS_MONITOR;
@@ -107,8 +107,8 @@ public class FindUsagesManager {
     return findInstances(concept, globalScope(), progress);
   }
 
-  public Scope globalScope() {
-    return new Scope() {
+  public FindUsagesScope globalScope() {
+    return new FindUsagesScope() {
       public List<SModelDescriptor> getModels() {
         return SModelRepository.getInstance().getAllModelDescriptors();
       }
