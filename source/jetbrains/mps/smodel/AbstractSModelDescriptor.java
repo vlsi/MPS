@@ -7,14 +7,14 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.project.ApplicationComponents;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vcs.VersionControlManager;
-import jetbrains.mps.vcs.model.VersionControl;
 
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * @author Kostik
