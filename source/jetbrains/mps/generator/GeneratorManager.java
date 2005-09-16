@@ -10,15 +10,15 @@ import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessageView;
 import jetbrains.mps.ide.output.OutputView;
-import jetbrains.mps.ide.preferences.ComponentWithPreferences;
-import jetbrains.mps.ide.preferences.PreferencesPage;
-import jetbrains.mps.ide.progress.ProgressMonitor;
+import jetbrains.mps.ide.preferences.IComponentWithPreferences;
+import jetbrains.mps.ide.preferences.IPreferencesPage;
+import jetbrains.mps.ide.progress.IProgressMonitor;
 import jetbrains.mps.ide.progress.ProgressWindowProgressMonitor;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.MPSPlugin;
-import jetbrains.mps.project.ExternalizableComponent;
+import jetbrains.mps.project.IExternalizableComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.projectLanguage.GeneratorConfiguration;
@@ -44,7 +44,7 @@ import java.util.List;
 /**
  * @author Kostik
  */
-public class GeneratorManager implements ExternalizableComponent, ComponentWithPreferences {
+public class GeneratorManager implements IExternalizableComponent, IComponentWithPreferences {
   public static final Logger LOG = Logger.getLogger(GeneratorManager.class);
 
   private static final String SAVE_TRANSIENT_MODELS = "save-transient-models-on-generation";
@@ -155,7 +155,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
       public void run() {
         invocationContext.getComponent(ProjectPane.class).disableRebuild();
 
-        ProgressMonitor progress = new ProgressWindowProgressMonitor(false);
+        IProgressMonitor progress = new ProgressWindowProgressMonitor(false);
 
         boolean isIdeaPresent = MPSPlugin.getInstance().isIDEAPresent();
         try {
@@ -361,12 +361,12 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
     return templateModelDescriptor;
   }
 
-  private void generate_internal(final SModelDescriptor sourceModel, SModelDescriptor templatesModel, IOperationContext operationContext, String generatorClass, String outputPath, final ProgressMonitor monitor, boolean generateText) {
+  private void generate_internal(final SModelDescriptor sourceModel, SModelDescriptor templatesModel, IOperationContext operationContext, String generatorClass, String outputPath, final IProgressMonitor monitor, boolean generateText) {
     final IModelGenerator generator;
     try {
       Class cls = Class.forName(generatorClass, true, ClassLoaderManager.getInstance().getClassLoader());
       if (ITemplateGenerator.class.isAssignableFrom(cls)) {
-        generator = (ITemplateGenerator) cls.getConstructor(IOperationContext.class, ProgressMonitor.class).newInstance(operationContext, monitor);
+        generator = (ITemplateGenerator) cls.getConstructor(IOperationContext.class, IProgressMonitor.class).newInstance(operationContext, monitor);
       } else {
         generator = (IModelGenerator) cls.getConstructor(IOperationContext.class).newInstance(operationContext);
       }
@@ -384,7 +384,7 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
         GenerateWithTemplatesCommand command = new GenerateWithTemplatesCommand(sourceModel, templatesModel.getSModel(), mySaveTransientModels, (ITemplateGenerator) generator);
         targetModel = command.execute();
       } else {
-        ProgressMonitor childMonitor = monitor.startSubTask(AMOUNT_PER_MODEL);
+        IProgressMonitor childMonitor = monitor.startSubTask(AMOUNT_PER_MODEL);
         targetModel = JavaGenUtil.createTargetJavaModel(sourceModel.getSModel(), JavaNameUtil.packageNameForModelUID(sourceModel.getModelUID()), operationContext);
         CommandProcessor.instance().executeCommand(new Runnable() {
           public void run() {
@@ -407,11 +407,11 @@ public class GeneratorManager implements ExternalizableComponent, ComponentWithP
   }
 
 
-  public PreferencesPage createPreferencesPage() {
+  public IPreferencesPage createPreferencesPage() {
     return new MyPreferencesPage();
   }
 
-  private class MyPreferencesPage implements PreferencesPage {
+  private class MyPreferencesPage implements IPreferencesPage {
     private JPanel myPage;
     private JCheckBox myCompileInIdeaOnGeneration = new JCheckBox("Compile in IntelliJ IDEA on generation");
     private JCheckBox mySaveTransientModelsCheckBox = new JCheckBox("Save transient models on generation (experts only)");

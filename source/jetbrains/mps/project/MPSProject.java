@@ -13,7 +13,7 @@ import jetbrains.mps.projectLanguage.SolutionPath;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.vcs.model.VersionControl;
+import jetbrains.mps.vcs.model.IVersionControl;
 import jetbrains.mps.vcs.VersionControlManager;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import org.jdom.Document;
@@ -43,7 +43,7 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope {
   public static final String CLASS = "class";
 
   private Map<Class, Object> myComponents = new HashMap<Class, Object>();
-  private List<MPSProjectCommandListener> myProjectCommandListeners = new ArrayList<MPSProjectCommandListener>();
+  private List<IMPSProjectCommandListener> myProjectCommandListeners = new ArrayList<IMPSProjectCommandListener>();
   private ProjectEventTranslator myEventTranslator;
 
   public MPSProject(final File projectFile) {
@@ -110,7 +110,7 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope {
     }
   }
 
-  public VersionControl getVCSFor(SModelDescriptor model) {
+  public IVersionControl getVCSFor(SModelDescriptor model) {
     return getComponent(VersionControlManager.class).createVCSFor(model);
   }
 
@@ -233,8 +233,8 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope {
           try {
             String className = component.getAttributeValue(CLASS);
             Class cls = Class.forName(className);
-            if (getComponent(cls) != null && getComponent(cls) instanceof ExternalizableComponent) {
-              ((ExternalizableComponent) getComponent(cls)).read(component, this);
+            if (getComponent(cls) != null && getComponent(cls) instanceof IExternalizableComponent) {
+              ((IExternalizableComponent) getComponent(cls)).read(component, this);
             }
           } catch (ClassNotFoundException e) {
           }
@@ -261,10 +261,10 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope {
       Element root = new Element(COMPONENTS);
       for (Class cls : myComponents.keySet()) {
         Object component = myComponents.get(cls);
-        if (component instanceof ExternalizableComponent) {
+        if (component instanceof IExternalizableComponent) {
           Element componentElement = new Element(COMPONENT);
           componentElement.setAttribute(CLASS, cls.getName());
-          ((ExternalizableComponent) component).write(componentElement, this);
+          ((IExternalizableComponent) component).write(componentElement, this);
           root.addContent(componentElement);
         }
       }
@@ -384,16 +384,16 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope {
     return result;
   }
 
-  public void addMPSProjectCommandListener(MPSProjectCommandListener listener) {
+  public void addMPSProjectCommandListener(IMPSProjectCommandListener listener) {
     myProjectCommandListeners.add(listener);
   }
 
-  public void removeMPSProjectCommandListener(MPSProjectCommandListener listener) {
+  public void removeMPSProjectCommandListener(IMPSProjectCommandListener listener) {
     myProjectCommandListeners.remove(listener);
   }
 
   void fireMPSProjectChangedInCommand() {
-    for (MPSProjectCommandListener listener : myProjectCommandListeners) {
+    for (IMPSProjectCommandListener listener : myProjectCommandListeners) {
       listener.projectChangedInCommand(this);
     }
   }

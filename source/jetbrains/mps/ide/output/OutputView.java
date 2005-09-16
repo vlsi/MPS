@@ -4,9 +4,9 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.preferences.ComponentWithPreferences;
-import jetbrains.mps.ide.preferences.PreferencesPage;
-import jetbrains.mps.project.ExternalizableComponent;
+import jetbrains.mps.ide.preferences.IComponentWithPreferences;
+import jetbrains.mps.ide.preferences.IPreferencesPage;
+import jetbrains.mps.project.IExternalizableComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.util.IntegerValueDocumentFilter;
 
@@ -22,7 +22,7 @@ import org.jdom.Element;
 /**
  * @author Kostik
  */
-public class OutputView extends DefaultTool implements ExternalizableComponent, ComponentWithPreferences {
+public class OutputView extends DefaultTool implements IExternalizableComponent, IComponentWithPreferences {
   public static final String FONT_SIZE = "fontSize";
 
   private JPanel myComponent = new JPanel();
@@ -153,8 +153,8 @@ public class OutputView extends DefaultTool implements ExternalizableComponent, 
     return Icons.OUTPUT_VIEW_ICON;
   }
 
-  public PreferencesPage createPreferencesPage() {
-    return new PreferencesPage() {
+  public IPreferencesPage createPreferencesPage() {
+    return new IPreferencesPage() {
       private JPanel myComponent = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 10));
       private JTextField myFontSizeField = new JTextField("" + myFontSize);
 

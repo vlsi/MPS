@@ -1,7 +1,7 @@
 package jetbrains.mps.findUsages;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.ide.progress.ProgressMonitor;
+import jetbrains.mps.ide.progress.IProgressMonitor;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
@@ -60,10 +60,10 @@ public class FindUsagesManager {
     return result;
   }
 
-  public Set<SReference> findUsages(SNode node, IScope scope, ProgressMonitor progress) {
+  public Set<SReference> findUsages(SNode node, IScope scope, IProgressMonitor progress) {
     Set<SReference> result = new HashSet<SReference>();
     try {
-      if (progress == null) progress = ProgressMonitor.NULL_PROGRESS_MONITOR;
+      if (progress == null) progress = IProgressMonitor.NULL_PROGRESS_MONITOR;
       List<SModelDescriptor> models = scope.getModelDescriptors();
       progress.start("Find Usages...", models.size());
       progress.addText("Finding usages...");
@@ -80,10 +80,10 @@ public class FindUsagesManager {
     }
   }
 
-  public Set<SNode> findInstances(ConceptDeclaration concept, IScope scope, ProgressMonitor progress) {
+  public Set<SNode> findInstances(ConceptDeclaration concept, IScope scope, IProgressMonitor progress) {
     Set<SNode> result = new HashSet<SNode>();
     try {
-      if (progress == null) progress = ProgressMonitor.NULL_PROGRESS_MONITOR;
+      if (progress == null) progress = IProgressMonitor.NULL_PROGRESS_MONITOR;
       List<SModelDescriptor> models = scope.getModelDescriptors();
       progress.start("Finding Instances...", models.size());
       for (SModelDescriptor model : models) {
@@ -99,11 +99,11 @@ public class FindUsagesManager {
     }
   }
 
-  public Set<SReference> findUsages(SNode node, ProgressMonitor progress) {
+  public Set<SReference> findUsages(SNode node, IProgressMonitor progress) {
     return findUsages(node, globalScope(), progress);
   }
 
-  public Set<SNode> findInstances(ConceptDeclaration concept, ProgressMonitor progress){
+  public Set<SNode> findInstances(ConceptDeclaration concept, IProgressMonitor progress){
     return findInstances(concept, globalScope(), progress);
   }
 

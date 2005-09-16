@@ -16,7 +16,7 @@ import jetbrains.mps.transformation.TLBase.TemplateDeclaration;
 import jetbrains.mps.transformation.TLBase.TemplateSwitch;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.typesystem.ITypeChecker;
-import jetbrains.mps.ide.progress.ProgressMonitor;
+import jetbrains.mps.ide.progress.IProgressMonitor;
 
 import java.util.Map;
 
@@ -27,7 +27,7 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   ITemplateGeneratorState getState();
 
-  ProgressMonitor getProgressMonitor();
+  IProgressMonitor getProgressMonitor();
 
   void doMapping(SModel sourceModel, SModel targetModel, SModel templatesModel) throws GenerationFailedException;
 

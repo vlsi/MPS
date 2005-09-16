@@ -8,7 +8,7 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.ui.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.MPSProjectCommandListener;
+import jetbrains.mps.project.IMPSProjectCommandListener;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
@@ -49,7 +49,7 @@ public class ProjectPane extends JComponent {
   private IdeMain myIDE;
   private HeaderWrapper myHeader;
   private boolean myRebuildEnabled = true;
-  private MPSProjectCommandListener myProjectListener = new MPSProjectCommandListener() {
+  private IMPSProjectCommandListener myProjectListener = new IMPSProjectCommandListener() {
     public void projectChangedInCommand(MPSProject project) {
       updateListeners();
       rebuildTree();

@@ -12,11 +12,11 @@ import java.util.List;
 public class MPSProjects {
   private static final Logger LOG = Logger.getLogger(MPSProjects.class);
   private ArrayList<MPSProject> myProjects = new ArrayList<MPSProject>();
-  private ArrayList<MPSProjectsListener> myMPSProjectsListeners = new ArrayList<MPSProjectsListener>();
+  private ArrayList<IMPSProjectsListener> myMPSProjectsListeners = new ArrayList<IMPSProjectsListener>();
 
   public void addProject(MPSProject mpsProject) {
     myProjects.add(mpsProject);
-    for(MPSProjectsListener listener : myMPSProjectsListeners) {
+    for(IMPSProjectsListener listener : myMPSProjectsListeners) {
       listener.projectAdded(mpsProject);
     }
   }
@@ -27,7 +27,7 @@ public class MPSProjects {
 
   public void removeProject(MPSProject mpsProject) {
     myProjects.remove(mpsProject);
-    for(MPSProjectsListener listener : myMPSProjectsListeners) {
+    for(IMPSProjectsListener listener : myMPSProjectsListeners) {
       listener.projectRemoved(mpsProject);
     }
   }
@@ -36,11 +36,11 @@ public class MPSProjects {
     LOG.errorWithTrace("Not implemented");
   }
   
-  public void addMPSProjectsListener(MPSProjectsListener listener) {
+  public void addMPSProjectsListener(IMPSProjectsListener listener) {
     myMPSProjectsListeners.add(listener);
   }
 
-  public void removeMPSProjectsListener(MPSProjectsListener listener) {
+  public void removeMPSProjectsListener(IMPSProjectsListener listener) {
     myMPSProjectsListeners.remove(listener);
   }
 
