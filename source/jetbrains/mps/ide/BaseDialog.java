@@ -43,6 +43,10 @@ public abstract class BaseDialog extends JDialog {
     setSize(myDialogDimensions.width, myDialogDimensions.height);
   }
 
+  public void setDefaultButton(JButton button) {
+    getRootPane().setDefaultButton(button);
+  }
+
   protected DialogDimensions myDialogDimensions;
 
   protected static void saveDimensionSettings(int left, int top, int width, int height, Class<? extends BaseDialog> cls) {

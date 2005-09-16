@@ -103,7 +103,11 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
                 myCanceled = false;
                 dispose();
               }
-            }),
+            }) {
+              {
+                setDefaultButton(this);
+              }
+            },
             new JButton(new AbstractAction("Add Selected") {
               public void actionPerformed(ActionEvent e) {
                 for (SModelUID imported : myImportsToAdd)
