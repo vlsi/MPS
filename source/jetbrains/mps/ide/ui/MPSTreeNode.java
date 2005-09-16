@@ -3,12 +3,12 @@ package jetbrains.mps.ide.ui;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.IOperationContext;
 
-import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.*;
+import javax.swing.tree.DefaultMutableTreeNode;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.ArrayList;
-import java.awt.event.KeyEvent;
 
 /**
  * @author Kostik

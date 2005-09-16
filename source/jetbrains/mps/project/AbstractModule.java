@@ -47,29 +47,64 @@ public abstract class AbstractModule implements LanguageOwner, IModule {
       return modelDescriptor;
     }
 
-    List<IModule> dependOnModules = getDependOnModules();
-    for (IModule module : dependOnModules) {
-      modelDescriptor = module.getModelDescriptor(modelUID);
-      if (modelDescriptor != null) {
-        return modelDescriptor;
-      }
+    modelDescriptor = getModelDescriptorFromDependOnModules(modelUID, this);
+    if (modelDescriptor != null) {
+      return modelDescriptor;
     }
 
-    // CYRIL : maybe context should see models which its language owner's languages can see
-    for (Language language : getLanguages()) {
-      modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, language);
-      if (modelDescriptor != null) {
-        return modelDescriptor;
-      }
-    }
-    //-- CYRIL
+//    // todo: problem if cycle in dependency graph
+//    List<IModule> dependOnModules = getDependOnModules();
+//    for (IModule module : dependOnModules) {
+//      modelDescriptor = module.getModelDescriptor(modelUID);
+//      if (modelDescriptor != null) {
+//        return modelDescriptor;
+//      }
+//    }
+
+    // alshan : "depend on" list includes languages
+//    // CYRIL : maybe context should see models which its language owner's languages can see
+//    for (Language language : getLanguages()) {
+//      modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, language);
+//      if (modelDescriptor != null) {
+//        return modelDescriptor;
+//      }
+//    }
+//    //-- CYRIL
 
     LOG.warning("Couldn't find model descriptor for uid: \"" + modelUID + "\" in scope: " + this);
     return null;
   }
 
+  private SModelDescriptor getModelDescriptorFromDependOnModules(SModelUID modelUID, IModule dependentModule) {
+    Set<IModule> modules = new HashSet<IModule>();
+    modules.add(dependentModule);
+    return getModelDescriptorFromDependOnModules(modelUID, dependentModule, modules);
+  }
+
+  private SModelDescriptor getModelDescriptorFromDependOnModules(SModelUID modelUID, IModule dependentModule, Set<IModule> modules) {
+    List<IModule> dependOnModules = dependentModule.getDependOnModules();
+    List<IModule> justProcessedModules = new LinkedList<IModule>();
+    for (IModule dependOnModule : dependOnModules) {
+      if (!modules.contains(dependOnModule)) {
+        modules.add(dependOnModule);
+        justProcessedModules.add(dependOnModule);
+        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, dependOnModule);
+        if (modelDescriptor != null) {
+          return modelDescriptor;
+        }
+      }
+    }
+    for (IModule dependOnModule : justProcessedModules) {
+      SModelDescriptor modelDescriptor = getModelDescriptorFromDependOnModules(modelUID, dependOnModule, modules);
+      if (modelDescriptor != null) {
+        return modelDescriptor;
+      }
+    }
+    return null;
+  }
+
   public List<SModelDescriptor> getModelDescriptors(String modelName) {
-    HashSet<SModelDescriptor> set = new HashSet<SModelDescriptor>();
+    Set<SModelDescriptor> set = new HashSet<SModelDescriptor>();
     {
       List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptors(modelName, this);
       for (SModelDescriptor descriptor : list) {
@@ -79,10 +114,9 @@ public abstract class AbstractModule implements LanguageOwner, IModule {
       }
     }
 
-    // todo: problem if cycle in dependency graph
-    List<IModule> dependOnModules = getDependOnModules();
+    Set<IModule> dependOnModules = getAllDependOnModules();
     for (IModule module : dependOnModules) {
-      List<SModelDescriptor> list = module.getModelDescriptors(modelName);
+      List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptors(modelName, module);
       for (SModelDescriptor descriptor : list) {
         if (!set.contains(descriptor)) {
           set.add(descriptor);
@@ -90,18 +124,48 @@ public abstract class AbstractModule implements LanguageOwner, IModule {
       }
     }
 
-    for (Language language : getLanguages()) {
-      List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptors(modelName, language);
-      for (SModelDescriptor descriptor : list) {
-        if (!set.contains(descriptor)) {
-          set.add(descriptor);
-        }
-      }
-    }
+//    // todo: problem if cycle in dependency graph
+//    List<IModule> dependOnModules = getDependOnModules();
+//    for (IModule module : dependOnModules) {
+//      List<SModelDescriptor> list = module.getModelDescriptors(modelName);
+//      for (SModelDescriptor descriptor : list) {
+//        if (!set.contains(descriptor)) {
+//          set.add(descriptor);
+//        }
+//      }
+//    }
+
+    // alshan : "depend on" list includes languages
+//    for (Language language : getLanguages()) {
+//      List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptors(modelName, language);
+//      for (SModelDescriptor descriptor : list) {
+//        if (!set.contains(descriptor)) {
+//          set.add(descriptor);
+//        }
+//      }
+//    }
 
     List<SModelDescriptor> result = CollectionUtil.iteratorAsList(set.iterator());
     set.clear();
     return result;
+  }
+
+  private Set<IModule> getAllDependOnModules() {
+    Set<IModule> dependOnModules = new HashSet<IModule>();
+    dependOnModules.add(this);
+    collectAllDependOnModules(this, dependOnModules);
+    dependOnModules.remove(this);
+    return dependOnModules;
+  }
+
+  private void collectAllDependOnModules(IModule dependentModule, Set<IModule> modules) {
+    List<IModule> dependOnModules = dependentModule.getDependOnModules();
+    for (IModule dependOnModule : dependOnModules) {
+      if (!modules.contains(dependOnModule)) {
+        modules.add(dependOnModule);
+        collectAllDependOnModules(dependOnModule, modules);
+      }
+    }
   }
 
   public List<SModelDescriptor> getOwnModelDescriptors() {
@@ -122,12 +186,16 @@ public abstract class AbstractModule implements LanguageOwner, IModule {
 
   public abstract List<ModelRoot> getModelRoots();
 
+  public IModule getParentModule() {
+    return null;
+  }
+
   public List<IModule> getChildModules() {
     return Collections.emptyList();
   }
 
   public List<IModule> getDependOnModules() {
-    return Collections.emptyList();
+    return (List<IModule>) ((List) getLanguages());
   }
 
   public void registerModelDescriptor(SModelDescriptor modelDescriptor) {

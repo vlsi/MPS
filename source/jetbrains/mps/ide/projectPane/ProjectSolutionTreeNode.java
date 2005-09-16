@@ -6,10 +6,8 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.IOperationContext;
 
 import javax.swing.*;
-import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -28,10 +26,6 @@ class ProjectSolutionTreeNode extends MPSTreeNode {
     myProject = project;
     populate();
   }
-
-//  public Icon getIcon(boolean expanded) {
-//    return Icons.PROJECT_LANGUAGE_ICON;
-//  }
 
   public Solution getSolution() {
     return mySolution;
@@ -59,14 +53,15 @@ class ProjectSolutionTreeNode extends MPSTreeNode {
   }
 
   private void populate() {
-    IOperationContext context = getOperationContext();
-    List<SolutionModelsTreeNode> modelTreeNodes = SolutionModelsTreeNode.createModelsTreeNodes(context);
-    for (SolutionModelsTreeNode modelsTreeNode : modelTreeNodes) {
-      this.add(modelsTreeNode);
-    }
+//    IOperationContext context = getOperationContext();
+//    List<SolutionModelsTreeNode> modelTreeNodes = SolutionModelsTreeNode.createModelsTreeNodes(context);
+//    for (SolutionModelsTreeNode modelsTreeNode : modelTreeNodes) {
+//      this.add(modelsTreeNode);
+//    }
+    SModelsSubtree.create(this, getOperationContext());
 
-    LanguagesTreeNode languagesNode = new LanguagesTreeNode(myProject, context);
-    this.add(languagesNode);
+//    LanguagesTreeNode languagesNode = new LanguagesTreeNode(myProject, context);
+//    this.add(languagesNode);
   }
 
   public Icon getIcon(boolean expanded) {

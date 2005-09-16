@@ -8,7 +8,6 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.Generator;
 
 import javax.swing.*;
-import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -43,13 +42,14 @@ class GeneratorTreeNode extends MPSTreeNode {
 
 
   private void populate() {
-    List<GeneratorModelsTreeNode> modelTreeNodes = GeneratorModelsTreeNode.createModelsTreeNodes(getOperationContext());
-    for (GeneratorModelsTreeNode modelsTreeNode : modelTreeNodes) {
-      this.add(modelsTreeNode);
-    }
+//    List<GeneratorModelsTreeNode> modelTreeNodes = GeneratorModelsTreeNode.createModelsTreeNodes(getOperationContext());
+//    for (GeneratorModelsTreeNode modelsTreeNode : modelTreeNodes) {
+//      this.add(modelsTreeNode);
+//    }
 
-    LanguagesTreeNode languagesNode = new LanguagesTreeNode(getOperationContext().getProject(), getOperationContext());
-    this.add(languagesNode);
+//    LanguagesTreeNode languagesNode = new LanguagesTreeNode(getOperationContext().getProject(), getOperationContext());
+//    this.add(languagesNode);
+    SModelsSubtree.create(this, getOperationContext());
   }
 
   public String toString() {

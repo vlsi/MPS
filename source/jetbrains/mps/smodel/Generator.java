@@ -1,15 +1,14 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.Model;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.ide.command.CommandProcessor;
 
 import java.io.File;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -39,6 +38,10 @@ public class Generator extends AbstractModule implements ModelLocator {
 
   public String getName() {
     return myGeneratorDescriptor.getName();
+  }
+
+  public IModule getParentModule() {
+    return mySourceLanguage;
   }
 
   public Language getSourceLanguage() {
@@ -102,7 +105,7 @@ public class Generator extends AbstractModule implements ModelLocator {
   }
 
   public List<IModule> getDependOnModules() {
-    List<IModule> list = new LinkedList<IModule>();
+    List<IModule> list = super.getDependOnModules();
     list.add(mySourceLanguage);
     Language targetLanguage = getTargetLanguage();
     if (targetLanguage != null) {

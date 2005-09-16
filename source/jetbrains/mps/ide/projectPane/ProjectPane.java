@@ -14,6 +14,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelsAdapter;
 import jetbrains.mps.smodel.event.SModelsMulticaster;
+import jetbrains.mps.util.Condition;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -190,12 +191,12 @@ public class ProjectPane extends JComponent {
 
   public void selectNode(SNode node, IOperationContext context) {
     IModule module = context.getModule();
-    if (module == null || !myProject.isProjectModule(module)) {
+    if (module == null) {
       selectNode(node);
       return;
     }
 
-    MPSTreeNode moduleTreeNode = findProjectModuleTreeNode(module);
+    MPSTreeNode moduleTreeNode = findModuleTreeNode(module);
     if (moduleTreeNode == null) {
       LOG.error("Couldn't find tree node for module: " + module);
       selectNode(node);
@@ -222,29 +223,27 @@ public class ProjectPane extends JComponent {
     }
   }
 
-  public MPSTreeNode findProjectModuleTreeNode(IModule module) {
-    DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
-    MPSTreeNode rootTreeNode = (MPSTreeNode) model.getRoot();
-
-    if (module instanceof Generator) {
-      // check 1st-level language nodes
-      for (MPSTreeNode treeNode : rootTreeNode) {
-        if (treeNode instanceof ProjectLanguageTreeNode) {
-          return ((ProjectLanguageTreeNode) treeNode).getGeneratorTreeNode((Generator) module);
-        }
+  public MPSTreeNode findModuleTreeNode(final IModule module) {
+    DefaultTreeModel treeModel = (DefaultTreeModel) myTree.getModel();
+    MPSTreeNode rootTreeNode = (MPSTreeNode) treeModel.getRoot();
+    return findTreeNode(rootTreeNode, new Condition<MPSTreeNode>() {
+      public boolean met(MPSTreeNode treeNode) {
+        IOperationContext nodeContext = treeNode.getOperationContext();
+        return (nodeContext != null && nodeContext.getModule() == module);
       }
-    } else {
-      // check all 1st-level nodes
-      for (MPSTreeNode treeNode : rootTreeNode) {
-        IOperationContext operationContext = treeNode.getOperationContext();
-        if (operationContext != null) {
-          if (operationContext.getModule() == module) {
-            return treeNode;
-          }
-        }
+    });
+  }
+
+  private MPSTreeNode findTreeNode(MPSTreeNode root, Condition<MPSTreeNode> condition) {
+    if (condition.met(root)) {
+      return root;
+    }
+    for (MPSTreeNode node : root) {
+      MPSTreeNode result = findTreeNode(node, condition);
+      if (result != null) {
+        return result;
       }
     }
-
     return null;
   }
 
@@ -452,11 +451,15 @@ public class ProjectPane extends JComponent {
         root.add(solutionTreeNode);
       }
 
-      for (Language language : myProject.getProjectLanguages()) {
+      List<Language> languages = myProject.getProjectLanguages();
+      for (Language language : languages) {
         ProjectLanguageTreeNode node = new ProjectLanguageTreeNode(language, myProject);
         root.add(node);
       }
 
+      if (languages.size() + solutions.size() > 0) {
+        root.add(new ProjectModulesPoolTreeNode(myProject));
+      }
       return root;
     }
   } // private class MyTree

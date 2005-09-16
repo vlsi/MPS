@@ -10,12 +10,12 @@ import jetbrains.mps.projectLanguage.LanguagePath;
 import jetbrains.mps.projectLanguage.PersistenceUtil;
 import jetbrains.mps.projectLanguage.ProjectDescriptor;
 import jetbrains.mps.projectLanguage.SolutionPath;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.vcs.model.IVersionControl;
 import jetbrains.mps.vcs.VersionControlManager;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.vcs.model.IVersionControl;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -184,11 +184,10 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope {
   }
 
   public boolean isProjectModule(IModule module) {
-    if (myLanguages.contains(module) || mySolutions.contains(module)) return true;
-    for (Language language : myLanguages) {
-      List<Generator> generators = language.getGenerators();
-      if (generators.contains(module)) return true;
+    if (module.getParentModule() != null) {
+      return isProjectModule(module.getParentModule());
     }
+    if (myLanguages.contains(module) || mySolutions.contains(module)) return true;
     return false;
   }
 
