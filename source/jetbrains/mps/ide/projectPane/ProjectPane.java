@@ -76,7 +76,7 @@ public class ProjectPane extends JComponent {
     });
 
     setLayout(new BorderLayout());
-    new TreeWithSemanticNodesSpeedSearch(myTree);
+    new TreeWithSNodesSpeedSearch(myTree);
 
     myHeader = new HeaderWrapper("Project", new JScrollPane(myTree));
     add(myHeader, BorderLayout.CENTER);

@@ -10,8 +10,8 @@ import javax.swing.tree.DefaultMutableTreeNode;
 /**
  * @author Kostik
  */
-public class TreeWithSemanticNodesSpeedSearch extends TreeSpeedSearch {
-  public TreeWithSemanticNodesSpeedSearch(JTree tree) {
+public class TreeWithSNodesSpeedSearch extends TreeSpeedSearch {
+  public TreeWithSNodesSpeedSearch(JTree tree) {
     super(tree);
   }
 

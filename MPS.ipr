@@ -233,15 +233,7 @@
     <option name="GENERATE_IIOP_STUBS" value="false" />
     <option name="ADDITIONAL_OPTIONS_STRING" value="" />
   </component>
-  <component name="libraryTable">
-    <library name="MPS">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/mps.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-  </component>
+  <component name="libraryTable" />
   <component name="org.tmatesoft.tmate.projectComponent" />
   <component name="uidesigner-configuration">
     <option name="INSTRUMENT_CLASSES" value="true" />
