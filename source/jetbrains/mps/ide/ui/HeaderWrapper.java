@@ -54,8 +54,8 @@ public class HeaderWrapper extends JPanel {
             doClose();
           }
         });
-        closeButton.setFont(closeButton.getFont().deriveFont(Font.BOLD, 9));
         closeButton.setUI(new MPSToolBarButtonUI());
+        closeButton.setBorder(null);
         buttonsPanel.add(closeButton);
       }
 
@@ -65,8 +65,8 @@ public class HeaderWrapper extends JPanel {
             doMinimize();
           }
         });
-        minimizeButton.setFont(minimizeButton.getFont().deriveFont(Font.BOLD, 9));
         minimizeButton.setUI(new MPSToolBarButtonUI());
+        minimizeButton.setBorder(null);
         buttonsPanel.add(minimizeButton);
       }
 
