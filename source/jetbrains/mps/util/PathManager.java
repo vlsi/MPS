@@ -30,6 +30,7 @@ public class PathManager {
   private static String ourHomePath;
   private static String ourConfigPath;
   private static String ourHelpPath;
+  private static String ourTutorialPath;
 
   public static void resetHomePath() {
     ourHomePath = null;
@@ -87,6 +88,14 @@ public class PathManager {
     }
     ourHelpPath = getHomePath() + File.separator + "help" + File.separator + "help.html";
     return ourHelpPath;
+  }
+
+  public static String getTutorialPath() {
+    if (ourTutorialPath != null) {
+      return ourTutorialPath;
+    }
+    ourTutorialPath = getHomePath() + File.separator + "help" + File.separator + "tutorial.html";
+    return ourTutorialPath;
   }
 
 

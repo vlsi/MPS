@@ -125,6 +125,7 @@ public class ProjectPane extends JComponent implements IDataProvider {
 
   private IOperationContext getContextForSelection() {
     TreePath[] selection = myTree.getSelectionPaths();
+    if (selection == null) return null;
     if (selection.length > 0) {
       MPSTreeNode lastPathComponent = (MPSTreeNode) selection[0].getLastPathComponent();
       return lastPathComponent.getOperationContext();
