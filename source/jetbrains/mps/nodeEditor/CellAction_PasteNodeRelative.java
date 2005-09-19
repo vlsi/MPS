@@ -8,12 +8,15 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.datatransfer.PasteUtil;
 import jetbrains.mps.datatransfer.CopyPasteNodeUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.resolve.Resolver;
 
 import java.util.List;
+import java.util.Set;
 
 
 public class CellAction_PasteNodeRelative extends EditorCellAction {
@@ -48,7 +51,12 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
     IOperationContext operationContext = context.getOperationContext();
     EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
     SNode anchorNode = selectedCell.getSNode();
-    List<SNode> pasteNodes = CopyPasteNodeUtil.getNodesFromClipboard(anchorNode.getModel());
+
+    CopyPasteNodeUtil.NodesAndOutgoingReferences nodesAndOutgoingReferences = CopyPasteNodeUtil.getNodesAndOutgoingReferencesFromClipboard(anchorNode.getModel());
+    List<SNode> pasteNodes = nodesAndOutgoingReferences.getNodes();
+    Set<SReference> outgoingReferences = nodesAndOutgoingReferences.getOutgoingReferences();
+
+
     PasteUtil.pasteRelative(anchorNode, pasteNodes.get(0), myPasteBefore, operationContext);
     anchorNode = pasteNodes.get(0);
     for (int i = 1; i < pasteNodes.size(); i++) {
@@ -56,6 +64,9 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
       PasteUtil.pasteRelative(anchorNode, node, false, operationContext);
       anchorNode = node;
     }
+
+    Resolver.resolveReferences(outgoingReferences, operationContext);
+
     EditorsPane editorsPane = context.getOperationContext().getComponent(EditorsPane.class);
     AbstractEditorComponent editor = editorsPane.getCurrentEditor();
     editor.rebuildEditorContent();

@@ -26,6 +26,12 @@ public class Resolver {
     }
   }
 
+  public static void resolveReferences(Set<SReference> references, IOperationContext operationContext) {
+     for (SReference reference : references) {
+      resolve(reference, operationContext);
+    }
+  }
+
 
   public static void setResolveInfo(SReference reference) {
 

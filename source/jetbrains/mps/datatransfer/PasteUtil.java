@@ -152,7 +152,7 @@ public class PasteUtil {
         //Add resolving here!
 
 
-        Resolver.resolveAllReferences(pasteNode, operationContext);
+      //  Resolver.resolveAllReferences(pasteNode, operationContext);
 
         }
       });

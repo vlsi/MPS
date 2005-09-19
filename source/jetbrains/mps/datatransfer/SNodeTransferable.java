@@ -11,6 +11,7 @@ import java.util.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.SReference;
 
 /**
  * Created by IntelliJ IDEA.
@@ -90,6 +91,11 @@ public class SNodeTransferable implements Transferable {
     return result;
   }
 
+  //package
+  List<SNode> getSNodes() {
+    return mySNodes;
+  }
+
   public Set<String> getNecessaryLanguages() {
     return new HashSet<String>(myNecessaryLanguages);
   }
@@ -101,5 +107,6 @@ public class SNodeTransferable implements Transferable {
   public SModel getModel() {
     return mySModel;
   }
+
 }
 

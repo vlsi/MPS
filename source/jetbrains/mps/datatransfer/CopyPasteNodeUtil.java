@@ -39,6 +39,7 @@ public class CopyPasteNodeUtil {
   private static HashSet<SReference> ourReferences = new HashSet<SReference>();
   private static HashSet<SModelUID> ourNecessaryImports = new HashSet<SModelUID>();
   private static HashSet<String> ourNecessaryLanguages = new HashSet<String>();
+  private static HashSet<SReference> ourPointingOutReferences = new HashSet<SReference>();
 
   static ModelOwner getCopyPasteOwner() {
     return ourModelOwner;
@@ -118,6 +119,7 @@ public class CopyPasteNodeUtil {
     if (sourceNodes.isEmpty()) return new ArrayList<SNode>();
     List<SNode> result = new ArrayList<SNode>();
     model.setLoading(true);
+    ourPointingOutReferences.clear();
     ourSourceNodesToNewNodes.clear();
     ourReferences.clear();
     SModel originalModel = sourceNodes.get(0).getModel();
@@ -229,6 +231,7 @@ public class CopyPasteNodeUtil {
           String oldTargetNodeId = sourceReference.getTargetNodeId();
           SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, oldTargetNodeId, null, newSourceNode.getModel().getUID() ,sourceReference.getResolveInfo(), sourceReference.getTargetClassResolveInfo());
           newSourceNode.addSemanticReference(newReference);
+          ourPointingOutReferences.add(newReference);
         }
 
       } else if (sourceReference instanceof ExternalReference) {
@@ -293,6 +296,28 @@ public class CopyPasteNodeUtil {
     return null;
   }
 
+
+  public static NodesAndOutgoingReferences getNodesAndOutgoingReferencesFromClipboard(SModel model) {
+    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
+    Transferable content = cb.getContents(null);
+    if (content == null) return null;
+
+    if (content.isDataFlavorSupported(SModelDataFlavor.sNode)) {
+      SNodeTransferable nodeTransferable = null;
+      try {
+        nodeTransferable = (SNodeTransferable) content.getTransferData(SModelDataFlavor.sNode);
+        return copyOutNodesAndGetOutgoingReferences(nodeTransferable.getSNodes(), model);
+      } catch (UnsupportedFlavorException e) {
+        LOG.error("Exception", e);
+      } catch (IOException e) {
+        LOG.error("Exception", e);
+      }
+    }
+
+    return null;
+  }
+
+
   public static SModel getModelPropertiesFromClipboard() {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     Transferable content = cb.getContents(null);
@@ -352,6 +377,7 @@ public class CopyPasteNodeUtil {
 
     return null;
   }
+
 
   public static SNode getNodeFromClipboard(SModel model) {
     return getNodesFromClipboard(model).get(0);
@@ -413,5 +439,31 @@ public class CopyPasteNodeUtil {
      return true;
   }
 
+  private static NodesAndOutgoingReferences copyOutNodesAndGetOutgoingReferences( List<SNode> nodes, SModel model) {
+    List<SNode> result = new ArrayList<SNode>();
+    result.addAll(copyNodesOut(nodes, model));
+    Set<SReference> references = new HashSet<SReference>(ourPointingOutReferences);
+    return new NodesAndOutgoingReferences(result, references);
+  }
 
+
+  public static class NodesAndOutgoingReferences {
+    private List<SNode> nodes;
+    private Set<SReference> outgoingReferences;
+
+    public NodesAndOutgoingReferences(List<SNode> nodes, Set<SReference> references) {
+      this.nodes = nodes;
+      this.outgoingReferences = references;
+    }
+
+    public List<SNode> getNodes() {
+      return nodes;
+    }
+
+    public Set<SReference> getOutgoingReferences() {
+      return outgoingReferences;
+    }
+
+
+  }
 }
