@@ -20,8 +20,12 @@ public class HeaderWrapper extends JPanel {
       return new Dimension(0, 0);
     }
   };
-
+  
   public HeaderWrapper(String text, JComponent component) {
+    this(text, component, false);
+  }
+
+  public HeaderWrapper(String text, JComponent component, boolean showIcons) {
     super(new BorderLayout());
 
     myLabel.setText(text);
@@ -46,6 +50,14 @@ public class HeaderWrapper extends JPanel {
          updateLabel();
        }
      });
+  }
+
+  protected void onClose() {
+
+  }
+
+  protected void onMinimize() {
+
   }
 
   public void setText(String text) {
