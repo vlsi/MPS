@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeEvent;
 
@@ -22,12 +23,13 @@ public class HeaderWrapper extends JPanel {
   };
   
   public HeaderWrapper(String text, JComponent component) {
-    this(text, component, false);
+    this(text, component, false, false);
   }
 
-  public HeaderWrapper(String text, JComponent component, boolean showIcons) {
+  public HeaderWrapper(String text, JComponent component, boolean showCloseButton, boolean showMinimizeButton) {
     super(new BorderLayout());
 
+    JPanel labelPanel = new JPanel(new BorderLayout());
     myLabel.setText(text);
     myLabel.setFont(myLabel.getFont().deriveFont(Font.BOLD));
     myLabel.setForeground(Color.WHITE);
@@ -39,8 +41,38 @@ public class HeaderWrapper extends JPanel {
       }
     });
 
+    if (showMinimizeButton || showCloseButton) {
+      JPanel buttonsPanel = new JPanel(new GridLayout(1, 0));
+
+      if (showCloseButton) {
+        JButton closeButton = new JButton(new AbstractAction("X") {
+          public void actionPerformed(ActionEvent e) {
+            doClose();
+          }
+        });
+        closeButton.setFont(closeButton.getFont().deriveFont(Font.BOLD, 9));
+        closeButton.setUI(new MPSToolBarButtonUI());
+        buttonsPanel.add(closeButton);
+      }
+
+      if (showMinimizeButton) {
+        JButton minimizeButton = new JButton(new AbstractAction("_") {
+          public void actionPerformed(ActionEvent e) {
+            doMinimize();
+          }
+        });
+        minimizeButton.setFont(minimizeButton.getFont().deriveFont(Font.BOLD, 9));
+        minimizeButton.setUI(new MPSToolBarButtonUI());
+        buttonsPanel.add(minimizeButton);
+      }
+
+      labelPanel.add(buttonsPanel, BorderLayout.EAST);
+    }
+
+    labelPanel.add(myLabel, BorderLayout.CENTER);
+
     myComponent = component;
-    add(myLabel, BorderLayout.NORTH);
+    add(labelPanel, BorderLayout.NORTH);
     add(myComponent, BorderLayout.CENTER);
 
     updateLabel();
@@ -52,11 +84,11 @@ public class HeaderWrapper extends JPanel {
      });
   }
 
-  protected void onClose() {
+  protected void doClose() {
 
   }
 
-  protected void onMinimize() {
+  protected void doMinimize() {
 
   }
 
