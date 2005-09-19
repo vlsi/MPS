@@ -5,10 +5,7 @@ import jetbrains.mps.ide.*;
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.ide.navigation.EditorsHistory;
 import jetbrains.mps.ide.navigation.RecentEditorsMenu;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.ActionGroup;
-import jetbrains.mps.ide.action.ActionManager;
-import jetbrains.mps.ide.action.MPSAction;
+import jetbrains.mps.ide.action.*;
 import jetbrains.mps.ide.actions.nodes.*;
 import jetbrains.mps.ide.actions.refactorings.InlineVariableAction;
 import jetbrains.mps.ide.actions.refactorings.IntroduceVariableAction;
@@ -37,7 +34,7 @@ import java.util.List;
  * Author: Sergey Dmitriev
  * Created Sep 14, 2003
  */
-public abstract class AbstractEditorComponent extends JComponent implements Scrollable {
+public abstract class AbstractEditorComponent extends JComponent implements Scrollable, IDataProvider {
   private static final Logger LOG = Logger.getLogger(AbstractEditorComponent.class);
   public static final String EDITOR_POPUP_MENU_ACTIONS = "editor-popup-menu-actions";
 
@@ -1371,6 +1368,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
       }
     }
+  }
+
+  public <T> T get(Class<T> cls) {
+    if (cls == SNode.class) return (T) getRootCell().getSNode();
+    if (cls == SModelDescriptor.class && get(SNode.class) != null) return (T) get(SNode.class).getModel().getModelDescriptor();
+    if (cls == IOperationContext.class) return (T) getOperationContext();
+    return null;
   }
 
 }
