@@ -51,13 +51,25 @@
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1115766310400">
     <property name="name" value="AClass" />
     <link role="extendedClass" targetNodeId="1115766267843" />
+    <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1127094836077">
+      <property name="name" value="aaa" />
+      <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1127094838614" />
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1115766338748">
       <property name="name" value="aClassMethod" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1115766338750">
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1126142422028">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1126142422092">
+            <property name="name" value="aClass" />
             <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1126142422093">
               <link role="classifier" targetNodeId="1115766310400" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1127094882893">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1127094889246">
+            <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1127094882894">
+              <link role="variableDeclaration" targetNodeId="1126142422092" />
             </node>
           </node>
         </node>
