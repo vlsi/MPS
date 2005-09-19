@@ -117,8 +117,18 @@ public class ProjectPane extends JComponent implements IDataProvider {
 
   public <T> T get(Class<T> cls) {
     if (cls == SNode.class) return (T) getSelectedNode();
-    if (cls == SModel.class) return (T) getSelectedModel();
+    if (cls == SModelDescriptor.class) return (T) getSelectedModel();
     if (cls == List.class) return (T) getSelectedNodes();
+    if (cls == IOperationContext.class) return (T) getContextForSelection();
+    return null;
+  }
+
+  private IOperationContext getContextForSelection() {
+    TreePath[] selection = myTree.getSelectionPaths();
+    if (selection.length > 0) {
+      MPSTreeNode lastPathComponent = (MPSTreeNode) selection[0].getLastPathComponent();
+      return lastPathComponent.getOperationContext();
+    }
     return null;
   }
 
