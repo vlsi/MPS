@@ -67,7 +67,7 @@ public class PathManager {
     if (System.getProperty(PROPERTY_CONFIG_PATH) != null) {
       ourConfigPath = getAbsolutePath(System.getProperty(PROPERTY_CONFIG_PATH));
     } else {
-      ourConfigPath = getHomePath() + File.separator + "config";
+      ourConfigPath = System.getProperty("user.home") + File.separator + ".MPS" + File.separator + "config";
     }
 
     try {
