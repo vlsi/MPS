@@ -19,6 +19,7 @@ public class Icons {
   public static final Icon LANGUAGES_ICON = new ImageIcon(Icons.class.getResource("nodes/languages.png"));
   public static final Icon EDITORS_ICON =  new ImageIcon(Icons.class.getResource("nodes/editors.png"));
   public static final Icon GENERATORS_ICON =  new ImageIcon(Icons.class.getResource("nodes/generators.png"));
+  public static final Icon GENERATOR_ICON = new ImageIcon(Icons.class.getResource("nodes/generator.png"));
 
   public static final Icon PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/properties.png"));
   public static final Icon LANGUAGE_PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/languageProperties.png"));

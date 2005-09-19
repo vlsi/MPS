@@ -28,7 +28,7 @@ class GeneratorTreeNode extends MPSTreeNode {
   }
 
   public Icon getIcon(boolean expanded) {
-    return Icons.GENERATORS_ICON;
+    return Icons.GENERATOR_ICON;
   }
 
   public JPopupMenu getPopupMenu() {

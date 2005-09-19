@@ -115,7 +115,7 @@ public class LanguageRepositoryView extends DefaultTool {
 
       public Icon getIcon(boolean expanded) {
         if (myOwner instanceof Generator) {
-          return Icons.GENERATORS_ICON;
+          return Icons.GENERATOR_ICON;
         }
         if (myOwner instanceof Language) {
           return Icons.LANGUAGE_ICON;
