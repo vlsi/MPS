@@ -341,7 +341,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private void showPopupMenu(MouseEvent e) {
     final SNode selectedNode = getSelectedCell().getSNode();
     if (selectedNode == null) return;
-    //    selectNode(selectedNode);
+    //    doChoose(selectedNode);
     JPopupMenu popupMenu = new JPopupMenu();
     ActionGroup group = ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS);
     IdeMain ide = ApplicationComponents.getInstance().getComponent(IdeMain.class);
@@ -1325,7 +1325,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
           if (lastAdd instanceof SModelReferenceEvent) {
             SModelReferenceEvent re = (SModelReferenceEvent) lastAdd;
-            //selectNode(re.getReference().getSourceNode());
+            //doChoose(re.getReference().getSourceNode());
             selectRefCell(re.getReference(), cellRole);
             return;
           }
@@ -1361,7 +1361,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
           if (lastRemove instanceof SModelReferenceEvent) {
             SModelReferenceEvent re = (SModelReferenceEvent) lastRemove;
-            //selectNode(re.getReference().getSourceNode());
+            //doChoose(re.getReference().getSourceNode());
             selectRefCell(re.getReference(), cellId);
             return;
           }

@@ -3,10 +3,7 @@ package jetbrains.mps.ide.hierarchy;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.icons.Icons;
 import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
-import jetbrains.mps.ide.EditorsPane;
-import jetbrains.mps.ide.GoToNodeWindow;
-import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.*;
 import jetbrains.mps.ide.navigation.EditorNavigationRunnable;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
@@ -87,10 +84,6 @@ public class HierarchyView extends DefaultTool {
     }).setBorder(null);
     return result;
   }
-
-
-
-
 
   private class ConceptHierarchyTree extends MPSTree {
 
