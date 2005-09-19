@@ -75,4 +75,7 @@ public class Icons {
   public static final Icon JDK_CLOSED_FOLDER = new ImageIcon(Icons.class.getResource("nodes/ppJdkClosed.png"));
 
   public static final Icon SPLASH_SCREEN = new ImageIcon(Icons.class.getResource("splash.png"));
+
+  public static final Icon MINIMIZE_ICON = new ImageIcon(Icons.class.getResource("nodes/minimize.png"));
+  public static final Icon CLOSE_ICON = new ImageIcon(Icons.class.getResource("nodes/close.png"));
 }

@@ -1,5 +1,7 @@
 package jetbrains.mps.ide.ui;
 
+import jetbrains.mps.ide.projectPane.Icons;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -14,6 +16,8 @@ import java.beans.PropertyChangeEvent;
 public class HeaderWrapper extends JPanel {
   public static final Color ACTIVE_COLOR = new Color(120, 150, 180);
   public static final Color NOT_ACTIVE_COLOR = new Color(150, 150, 150);
+
+
 
   private JComponent myComponent;
   private JLabel myLabel  = new JLabel("", JLabel.LEFT) {
@@ -45,7 +49,7 @@ public class HeaderWrapper extends JPanel {
       JPanel buttonsPanel = new JPanel(new GridLayout(1, 0));
 
       if (showCloseButton) {
-        JButton closeButton = new JButton(new AbstractAction("X") {
+        JButton closeButton = new JButton(new AbstractAction("", Icons.CLOSE_ICON) {
           public void actionPerformed(ActionEvent e) {
             doClose();
           }
@@ -56,7 +60,7 @@ public class HeaderWrapper extends JPanel {
       }
 
       if (showMinimizeButton) {
-        JButton minimizeButton = new JButton(new AbstractAction("_") {
+        JButton minimizeButton = new JButton(new AbstractAction("", Icons.MINIMIZE_ICON) {
           public void actionPerformed(ActionEvent e) {
             doMinimize();
           }
