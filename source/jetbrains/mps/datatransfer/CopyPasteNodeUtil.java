@@ -121,6 +121,7 @@ public class CopyPasteNodeUtil {
     ourSourceNodesToNewNodes.clear();
     ourReferences.clear();
     SModel originalModel = sourceNodes.get(0).getModel();
+    originalModel.setLoading(true);
     for (SNode sourceNode : sourceNodes) {
       assert sourceNode.getModel() == originalModel;
       SNode nodeToPaste = copyNode_internal(sourceNode);
@@ -137,6 +138,7 @@ public class CopyPasteNodeUtil {
       nodeToPaste.changeModel(model);
     }
     model.setLoading(false);
+    originalModel.setLoading(false);
     fakeModel.setLoading(false);
     return result;
   }

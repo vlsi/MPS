@@ -403,6 +403,7 @@ public class ProjectPane extends JComponent implements IDataProvider {
   List<SNode> getSelectedNodes() {
     List<SNode> result = new ArrayList<SNode>();
     TreePath[] paths = myTree.getSelectionPaths();
+    if (paths == null) return null;
     for (TreePath path : paths) {
       MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
       if (node instanceof MPSTreeNodeEx) {
