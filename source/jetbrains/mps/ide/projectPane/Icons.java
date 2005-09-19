@@ -77,5 +77,5 @@ public class Icons {
   public static final Icon SPLASH_SCREEN = new ImageIcon(Icons.class.getResource("splash.png"));
 
   public static final Icon MINIMIZE_ICON = new ImageIcon(Icons.class.getResource("nodes/minimize.png"));
-  public static final Icon CLOSE_ICON = GENERATORS_ICON;//new ImageIcon(Icons.class.getResource("nodes/close.png"));
+  public static final Icon CLOSE_ICON = new ImageIcon(Icons.class.getResource("nodes/close.png"));
 }

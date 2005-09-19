@@ -3,6 +3,7 @@ package jetbrains.mps.ide.ui;
 import jetbrains.mps.ide.projectPane.Icons;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -25,6 +26,9 @@ public class HeaderWrapper extends JPanel {
       return new Dimension(0, 0);
     }
   };
+
+  private JButton myCloseButton;
+  private JButton myMinimizeButton;
   
   public HeaderWrapper(String text, JComponent component) {
     this(text, component, false, false);
@@ -49,25 +53,25 @@ public class HeaderWrapper extends JPanel {
       JPanel buttonsPanel = new JPanel(new GridLayout(1, 0));
 
       if (showCloseButton) {
-        JButton closeButton = new JButton(new AbstractAction("", Icons.CLOSE_ICON) {
+        myCloseButton = new JButton(new AbstractAction("", Icons.CLOSE_ICON) {
           public void actionPerformed(ActionEvent e) {
             doClose();
           }
         });
-        closeButton.setUI(new MPSToolBarButtonUI());
-        closeButton.setBorder(null);
-        buttonsPanel.add(closeButton);
+        myCloseButton.setUI(new MPSToolBarButtonUI());
+      //  closeButton.setBorder(LineBorder.createGrayLineBorder());
+        buttonsPanel.add(myCloseButton);
       }
 
       if (showMinimizeButton) {
-        JButton minimizeButton = new JButton(new AbstractAction("", Icons.MINIMIZE_ICON) {
+        myMinimizeButton = new JButton(new AbstractAction("", Icons.MINIMIZE_ICON) {
           public void actionPerformed(ActionEvent e) {
             doMinimize();
           }
         });
-        minimizeButton.setUI(new MPSToolBarButtonUI());
-        minimizeButton.setBorder(null);
-        buttonsPanel.add(minimizeButton);
+        myMinimizeButton.setUI(new MPSToolBarButtonUI());
+       // minimizeButton.setBorder(LineBorder.createGrayLineBorder());
+        buttonsPanel.add(myMinimizeButton);
       }
 
       labelPanel.add(buttonsPanel, BorderLayout.EAST);
@@ -104,8 +108,12 @@ public class HeaderWrapper extends JPanel {
     Component focusOwner = KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
     if (isAncestorOf(focusOwner)) {
       myLabel.setBackground(ACTIVE_COLOR);
+      if (myMinimizeButton != null) myMinimizeButton.setBorder(new LineBorder(ACTIVE_COLOR, 1));
+      if (myCloseButton != null) myCloseButton.setBorder(new LineBorder(ACTIVE_COLOR, 1));
     } else {
       myLabel.setBackground(NOT_ACTIVE_COLOR);
+      if (myMinimizeButton != null) myMinimizeButton.setBorder(new LineBorder(NOT_ACTIVE_COLOR, 1));
+      if (myCloseButton != null) myCloseButton.setBorder(new LineBorder(NOT_ACTIVE_COLOR, 1));
     }
   }
 
