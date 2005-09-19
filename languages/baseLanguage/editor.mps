@@ -2368,18 +2368,30 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1115664493387">
-          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1115664415613">
-            <link role="baseMethodDeclaration" targetNodeId="19.1113723508367" />
-            <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1115664493388">
-              <link role="variableDeclaration" targetNodeId="1115664493384" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1127097854562">
+          <node role="condition" type="jetbrains.mps.baseLanguage.InstanceOfExpression" id="1127097871681">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1127097923868">
+              <link role="variableDeclaration" targetNodeId="1115664493379" />
             </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1115664493389">
-              <node role="expression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1115664493390">
-                <link role="variableDeclaration" targetNodeId="1115664493379" />
-              </node>
-              <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1115664415661">
-                <link role="classifier" targetNodeId="19.1109971952054" />
+            <node role="classType" type="jetbrains.mps.baseLanguage.ClassType" id="1127097883349">
+              <link role="classifier" extResolveInfo="19.[ClassConcept]FieldDeclaration" />
+            </node>
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1127097854574">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1127097938017">
+              <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1127097938018">
+                <link role="baseMethodDeclaration" targetNodeId="19.1113723508367" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1127097938019">
+                  <link role="variableDeclaration" targetNodeId="1115664493384" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1127097938020">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1127097938021">
+                    <link role="variableDeclaration" targetNodeId="1115664493379" />
+                  </node>
+                  <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1127097938022">
+                    <link role="classifier" targetNodeId="19.1109971952054" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -4481,6 +4493,11 @@
             </node>
           </node>
         </node>
+        <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1127097422097">
+          <property name="handlerId" value="InstanceMethodsInFieldReference" />
+          <property name="name" value="instanceMethodsInFieldReference" />
+          <property name="queryId" value="InstanceMethodsInFieldReference" />
+        </node>
         <node role="substituteQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1081927995339">
           <property name="name" value="substituteAcceptor_Query" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1081927995340">
@@ -4535,7 +4552,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1088425851836">
         <property name="drawBorder" value="false" />
-        <property name="nullText" value="&lt;no field&gt;" />
+        <property name="nullText" value="&lt;no member&gt;" />
         <link role="linkDeclaration" targetNodeId="8.1068581517664" />
         <link role="actionSet" targetNodeId="1080140075203" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1088425851837">
@@ -5331,7 +5348,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1088426063979">
         <property name="drawBorder" value="false" />
-        <property name="nullText" value="&lt;no method&gt;" />
+        <property name="nullText" value="&lt;no member&gt;" />
         <link role="linkDeclaration" targetNodeId="8.1068499141037" />
         <link role="actionSet" targetNodeId="1076935149131" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1088426063980">

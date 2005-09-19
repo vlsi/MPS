@@ -67,8 +67,25 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1127094882893">
-          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1127094889246">
+          <node role="expression" type="jetbrains.mps.baseLanguage.FieldReference" id="1127098709768">
+            <link role="variableDeclaration" targetNodeId="1127094836077" />
             <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1127094882894">
+              <link role="variableDeclaration" targetNodeId="1126142422092" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1127095494814">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1127098277264">
+            <link role="baseMethodDeclaration" targetNodeId="1115766338748" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1127095494815">
+              <link role="variableDeclaration" targetNodeId="1126142422092" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1127098721977">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1127098788159">
+            <link role="baseMethodDeclaration" targetNodeId="1115766295021" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1127098721978">
               <link role="variableDeclaration" targetNodeId="1126142422092" />
             </node>
           </node>
