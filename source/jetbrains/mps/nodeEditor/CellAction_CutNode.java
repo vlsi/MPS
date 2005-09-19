@@ -1,23 +1,20 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.datatransfer.SNodeTransferable;
-import jetbrains.mps.datatransfer.CopyPasteNodeUtil;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.resolve.Resolver;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.datatransfer.CopyPasteNodeUtil;
 
-import java.awt.datatransfer.Clipboard;
-import java.awt.*;
-import java.util.LinkedList;
 import java.util.List;
-
+import java.util.LinkedList;
 
 /**
- * Author: Sergey Dmitriev.
- * Time: Nov 26, 2003 2:06:41 PM
+ * Created by IntelliJ IDEA.
+ * User: Cyril.Konopko
+ * Date: 19.09.2005
+ * Time: 21:16:59
+ * To change this template use File | Settings | File Templates.
  */
-public class CellAction_CopyNode extends EditorCellAction {
-  private static final Logger LOG = Logger.getLogger(CellAction_CopyNode.class);
+public class CellAction_CutNode extends EditorCellAction {
 
   public boolean canExecute(EditorContext context) {
     return context.getNodeEditorComponent().getSelectedCell() != null;
@@ -29,15 +26,13 @@ public class CellAction_CopyNode extends EditorCellAction {
     NodeRangeSelection cellRangeSelection = editorComponent.getNodeRangeSelection();
     if (cellRangeSelection.isActive()) {
       nodeList.addAll(cellRangeSelection.getNodes());
-      LOG.debug("Copy " + nodeList.size() + " nodes : ");
-      for (int i = 0; i < nodeList.size(); i++) {
-        LOG.debug("    " + nodeList.get(i).getDebugText());
-      }
-    } else {
+     } else {
       nodeList.add(editorComponent.getSelectedCell().getSNode());
-      LOG.debug("Copy node : " + nodeList.get(0).getDebugText());
     }
 
     CopyPasteNodeUtil.copyNodesToClipboard(nodeList);
+    for (SNode node : nodeList) {
+      node.delete();
+    }
   }
 }

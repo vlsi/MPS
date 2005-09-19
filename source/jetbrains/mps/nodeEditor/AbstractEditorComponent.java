@@ -146,6 +146,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myActionMap.put(EditorCellAction.END, new NodeEditorActions.END());
     // ----
     myActionMap.put(EditorCellAction.COPY, new CellAction_CopyNode());
+    myActionMap.put(EditorCellAction.CUT, new CellAction_CutNode());
     myActionMap.put(EditorCellAction.PASTE, new CellAction_PasteNode());
     myActionMap.put(EditorCellAction.PASTE_BEFORE, new CellAction_PasteNodeRelative(true));
     myActionMap.put(EditorCellAction.PASTE_AFTER, new CellAction_PasteNodeRelative(false));
@@ -496,6 +497,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     // ---
     if (keyEvent.getKeyCode() == KeyEvent.VK_C && keyEvent.isControlDown()) {
       return EditorCellAction.COPY;
+    }
+    if (keyEvent.getKeyCode() == KeyEvent.VK_X && keyEvent.isControlDown()) {
+      return EditorCellAction.CUT;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_V && keyEvent.isControlDown()) {
       if (keyEvent.isShiftDown() && !keyEvent.isAltDown()) {
