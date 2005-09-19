@@ -5,6 +5,7 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.actions.model.DeleteModelAction;
 import jetbrains.mps.ide.actions.nodes.DeleteNodeAction;
 import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.action.IDataProvider;
 import jetbrains.mps.ide.ui.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
@@ -33,7 +34,7 @@ import java.util.List;
  * Author: Sergey Dmitriev
  * Created Oct 25, 2003
  */
-public class ProjectPane extends JComponent {
+public class ProjectPane extends JComponent implements IDataProvider {
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);
 
   public static final String PROJECT_PANE_NODE_ACTIONS = "project-pane-node-actions";
@@ -112,6 +113,20 @@ public class ProjectPane extends JComponent {
     myHeader.setText("Project - " + FileUtil.getCanonicalPath(myProject.getProjectFile()));
     rebuildTree();
     updateListeners();
+  }
+
+  public <T> T get(Class<T> cls) {
+    if (cls == SNode.class) return (T) getSelectedNode();
+    if (cls == SModel.class) return (T) getSelectedModel();
+    if (cls == List.class) return (T) getSelectedNodes();
+    return null;
+  }
+
+  private SNode getSelectedNode() {
+    if (getSelectedNodes().size() == 1) {
+      return getSelectedNodes().get(0);
+    }
+    return null;
   }
 
   private void removeListeners(MPSProject project) {
@@ -386,6 +401,8 @@ public class ProjectPane extends JComponent {
     }
     return result;
   }
+
+
 
   List<SNode> getNormalizedSelectedNodes() {
     List<SNode> selectedNodes = new ArrayList<SNode>(getSelectedNodes());
