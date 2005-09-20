@@ -364,7 +364,7 @@ public class ProjectPane extends JComponent implements IDataProvider {
   }
 
   public void emptyAll() {
-    myTree.setModel(new DefaultTreeModel(new DefaultMutableTreeNode("Empty")));
+    myTree.setModel(new DefaultTreeModel(new TextTreeNode("Empty")));
     myTree.validate();
   }
 
