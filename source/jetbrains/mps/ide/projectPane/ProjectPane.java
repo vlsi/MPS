@@ -376,7 +376,6 @@ public class ProjectPane extends JComponent implements IDataProvider {
       TreePath treePath = new TreePath(modelTreeNode.getPath());
       myTree.setSelectionPath(treePath);
       myTree.scrollPathToVisible(treePath);
-      System.err.println("scrolling");
     } else {
       LOG.warning("Couldn't select model \"" + modelDescriptor + "\" : tree node not found.");
     }
