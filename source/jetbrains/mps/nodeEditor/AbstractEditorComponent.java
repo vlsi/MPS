@@ -727,22 +727,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     SelectNodeCondition condition = new SelectNodeCondition();
     cellCollection.iterateTreeUntilCondition(condition);
     return condition.getFoundCell();
-/*    EditorCell_Collection collection = cell.getParent();
-    if (collection == null) return null;
-    EditorCell currentCell = cell;
-    EditorCell resultCell = null;
-    while (resultCell == null) {
-      EditorCell prevCell = collection.getPrevCell(currentCell);
-      if (prevCell == null) break;
-      if (prevCell instanceof EditorCell_Collection) {
-        resultCell = EditorUtil.findLastSelectableCell((EditorCell_Collection) prevCell);
-      } else {
-        if (prevCell.isSelectable()) resultCell = prevCell;
-      }
-      currentCell = prevCell;
-    }
-    if (resultCell == null) return findPrevSelectableCell(collection);
-    else return resultCell;*/
   }
 
 
