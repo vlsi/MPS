@@ -38,8 +38,8 @@ public class SModel implements Iterable<SNode> {
   private List<String> myLanguages = new ArrayList<String>();
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
 
-  private Map<String, SNode> myIdToNodeMap = new HashMap<String, SNode>();
-  private Map<String, SNode> myExternalResolveInfoToNodeMap = new HashMap<String, SNode>();
+  private Map<String, SNode> myIdToNodeMap = new WeakHashMap<String, SNode>();
+  private Map<String, SNode> myExternalResolveInfoToNodeMap = new WeakHashMap<String, SNode>();
 
   private SModelEventTranslator myEventTranslator = new SModelEventTranslator();
 
