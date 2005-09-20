@@ -86,20 +86,24 @@ public class Solution extends AbstractModule implements ModelLocator {
     CommandProcessor.instance().addCommandListener(myEventTranslator);
   }
 
-  public void setSolutionDescriptor(SolutionDescriptor newDescriptor, IOperationContext operationContext) {
-    // release languages and models (except descriptor model)
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), this);
-    LanguageRepository.getInstance().unRegisterLanguages(this);
-    SModelRepository.getInstance().unRegisterModelDescriptors(this);
-    SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, this);
+  public void setSolutionDescriptor(final SolutionDescriptor newDescriptor, IOperationContext operationContext) {
+    SModelRepository.getInstance().runReloadingAction(this, new Runnable() {
+      public void run() {
+        // release languages and models (except descriptor model)
+        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), Solution.this);
+        LanguageRepository.getInstance().unRegisterLanguages(Solution.this);
+        SModelRepository.getInstance().unRegisterModelDescriptors(Solution.this);
+        SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, Solution.this);
 
-    mySolutionDescriptor = newDescriptor;
+        mySolutionDescriptor = newDescriptor;
 
-    // read languages and models
-    LanguageRepository.getInstance().readLanguageDescriptors(mySolutionDescriptor.languageRoots(), this);
-    SModelRepository.getInstance().readModelDescriptors(mySolutionDescriptor.modelRoots(), this);
+        // read languages and models
+        LanguageRepository.getInstance().readLanguageDescriptors(mySolutionDescriptor.languageRoots(), Solution.this);
+        SModelRepository.getInstance().readModelDescriptors(mySolutionDescriptor.modelRoots(), Solution.this);
 
-    myEventTranslator.solutionChanged();
+        myEventTranslator.solutionChanged();
+      }
+    });
   }
 
   public File getDescriptorFile() {
