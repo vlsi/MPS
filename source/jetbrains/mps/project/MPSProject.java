@@ -115,28 +115,33 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope {
   }
 
   public void setProjectDescriptor(final ProjectDescriptor newDescriptor) {
+    final Set<ModelOwner> owners = new HashSet<ModelOwner>();
 
-    CommandProcessor.instance().executeCommand(new Runnable() {
+    
+    owners.add(this);
+    for (Solution s : mySolutions) owners.add(s);
+    for (Language l : myLanguages) owners.add(l);
+
+    SModelRepository.getInstance().runReloadingAction(owners, new Runnable() {
       public void run() {
-        // release languages and models (except descriptor model)
-        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), (ModelOwner) MPSProject.this);
-        LanguageRepository.getInstance().unRegisterLanguages(MPSProject.this);
-        SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
-        SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, MPSProject.this);
-        for (Solution solution : getProjectSolutions()) {
-          solution.dispose();
-        }
+        CommandProcessor.instance().executeCommand(new Runnable() {
+          public void run() {
+            // release languages and models (except descriptor model)
+            SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), (ModelOwner) MPSProject.this);
+            LanguageRepository.getInstance().unRegisterLanguages(MPSProject.this);
+            SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
+            SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, MPSProject.this);
+            for (Solution solution : getProjectSolutions()) {
+              solution.dispose();
+            }
+          }
+        }, "Set project descriptor");
+        myProjectDescriptor = newDescriptor;
+        LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
+        revalidateContent(myProjectFile, newDescriptor.getModel());
+        myEventTranslator.projectChanged();
       }
-    }, "Set project descriptor");
-
-
-    myProjectDescriptor = newDescriptor;
-
-    LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
-
-    revalidateContent(myProjectFile, newDescriptor.getModel());
-
-    myEventTranslator.projectChanged();
+    });
   }
 
   public void addProjectLanguage(Language language) {

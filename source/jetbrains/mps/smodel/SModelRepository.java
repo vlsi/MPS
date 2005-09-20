@@ -34,7 +34,17 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public void runReloadingAction(ModelOwner owner, Runnable r) {
-    List<SModelDescriptor> descriptors = getModelDescriptors(owner);
+    Set<ModelOwner> owners = new HashSet<ModelOwner>();
+    owners.add(owner);
+    runReloadingAction(owners, r);
+  }
+
+  public void runReloadingAction(Set<ModelOwner> owners, Runnable r) {
+    Set<SModelDescriptor> descriptors = new HashSet<SModelDescriptor>();
+    for (ModelOwner o : owners) {
+      descriptors.addAll(getModelDescriptors(o));
+    }
+
     ModelOwner tmp = new ModelOwner() { };
     for (SModelDescriptor d : descriptors) {
       registerModelDescriptor(d, tmp);
