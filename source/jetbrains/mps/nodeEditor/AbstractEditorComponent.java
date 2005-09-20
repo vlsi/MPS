@@ -1313,7 +1313,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
           if (lastAdd instanceof SModelReferenceEvent) {
             SModelReferenceEvent re = (SModelReferenceEvent) lastAdd;
-            //doChoose(re.getReference().getSourceNode());
             selectRefCell(re.getReference(), cellRole);
             return;
           }
@@ -1349,7 +1348,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
           if (lastRemove instanceof SModelReferenceEvent) {
             SModelReferenceEvent re = (SModelReferenceEvent) lastRemove;
-            //doChoose(re.getReference().getSourceNode());
             selectRefCell(re.getReference(), cellId);
             return;
           }

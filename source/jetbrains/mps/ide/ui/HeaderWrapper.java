@@ -92,7 +92,7 @@ public class HeaderWrapper extends JPanel {
   }
 
   private void setupButton(JButton button) {
-    button.setUI(new MPSToolBarButtonUI());
+    button.setUI(new MPSRoundButtonUI());
     button.setContentAreaFilled(false);
     button.setBorder(null);
   }
@@ -114,9 +114,13 @@ public class HeaderWrapper extends JPanel {
     if (isAncestorOf(focusOwner)) {
       myLabel.setBackground(ACTIVE_COLOR);
       if (myButtonsPanel != null) myButtonsPanel.setBackground(ACTIVE_COLOR);
+      if (myMinimizeButton != null) myMinimizeButton.setIcon(Icons.MINIMIZE_ICON);
+      if (myCloseButton != null) myCloseButton.setIcon(Icons.CLOSE_ICON);
     } else {
       myLabel.setBackground(NOT_ACTIVE_COLOR);
       if (myButtonsPanel != null) myButtonsPanel.setBackground(NOT_ACTIVE_COLOR);
+      if (myMinimizeButton != null) myMinimizeButton.setIcon(Icons.MINIMIZE_DISABLED_ICON);
+      if (myCloseButton != null) myCloseButton.setIcon(Icons.CLOSE_DISABLED_ICON);
     }
   }
 

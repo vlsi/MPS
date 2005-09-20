@@ -23,13 +23,9 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
   public boolean processKeyPressed(final EditorContext editorContext, final KeyEvent keyEvent) {
     AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
     EditorCell selectedCell = editor.getSelectedCell();
-    // precess cell keymaps first
-    if (selectedCell != null /*&& EditorUtil.isValidCell(selectedCell)*/) {
-      //test >
-//      if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER) {
-//        LOG.debug("key pressed:" + keyEvent);
-//      }
-      //test <
+    // process cell keymaps first
+
+    if (selectedCell != null) {
       List<EditorCellKeyMapAction> actions = EditorUtil.getKeyMapActionsForEvent(selectedCell, keyEvent, editorContext);
       if (actions != null) {
         if (actions.size() == 1) {
@@ -53,30 +49,9 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
       boolean endEditKeystroke = isEndEditKeystroke(keyEvent);
       boolean deleteKeystroke = isDeleteKeystroke(keyEvent, selectedCell);
-//      boolean cellWasValid = EditorUtil.isValidCell(selectedCell);
+
       boolean strictMatching = endEditKeystroke || actionType == EditorCellAction.RIGHT_TRANSFORM;
 
-//      if (!cellWasValid && (actionType == EditorCellAction.INSERT ||
-//              actionType == EditorCellAction.INSERT_BEFORE)) {
-//        // try to validate, do not proceed
-//        EditorUtil.validateCell(selectedCell, editorContext, strictMatching);
-//        return true;
-//      }
-//
-//      if (endEditKeystroke ||
-//              actionType == EditorCellAction.RIGHT_TRANSFORM) {
-//        if (!cellWasValid &&
-//                !EditorUtil.validateCell(selectedCell, editorContext, strictMatching)) {
-//          // !side effect: can change selection!
-//          return true;
-//        }
-//        selectedCell = editor.getSelectedCell();
-//        cellWasValid = true;
-//        // no selection any more - very strange
-//        if (selectedCell == null) {
-//          return true;
-//        }
-//      }
 
       if (!EditorUtil.isValidCell(selectedCell)) {
         if (endEditKeystroke ||
@@ -100,10 +75,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
       }
 
       // we may want to change action Type as result of pre-processing
-      /*if (endEditKeystroke && !cellWasValid) {
-        EditorUtil.validateCell(selectedCell, editorContext, strictMatching);
-        return true;
-      } else */
+
       if (deleteKeystroke) {
         if (!(selectedCell instanceof EditorCell_Label &&
                 ((EditorCell_Label) selectedCell).isEditable())) {
@@ -142,22 +114,6 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
         }
       }
     }
-
-    //process text copy action
-/*    if (EditorCellAction.COPY.equals(actionType) && selectedCell instanceof EditorCell_Label) {
-      if (selectedCell.processKeyPressed(keyEvent)) {
-          boolean cellWasValid = EditorUtil.isValidCell(selectedCell);
-          if (!cellWasValid) {
-            EditorUtil.validateCell(selectedCell, editorContext);
-          }
-          return true;
-      }
-    }*/
-
-    //process text paste action
-/*    if (EditorCellAction.PASTE.equals(actionType) && selectedCell instanceof EditorCell_Label) {
-       System.out.println("paste text");
-    }*/
 
     // process action
 
