@@ -15,6 +15,7 @@ import jetbrains.mps.typesystem.ITypeChecker;
 import jetbrains.mps.typesystem.TSStatus;
 import jetbrains.mps.typesystem.TypeCheckerAccess;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.util.WeakSet;
 
 import java.util.*;
 
@@ -25,7 +26,7 @@ import java.util.*;
 public class SModel implements Iterable<SNode> {
   private static final Logger LOG = Logger.getLogger(SModel.class);
 
-  private List<SModelListener> myListeners = new ArrayList<SModelListener>();
+  private Set<SModelListener> myListeners = new WeakSet<SModelListener>();
   private List<SModelCommandListener> myCommandListeners = new ArrayList<SModelCommandListener>();
   private List<SNode> myRoots = new ArrayList<SNode>();
   private SModelUID myUID = new SModelUID("unnamed", "");
