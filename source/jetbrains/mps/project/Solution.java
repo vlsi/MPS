@@ -87,23 +87,19 @@ public class Solution extends AbstractModule implements ModelLocator {
   }
 
   public void setSolutionDescriptor(final SolutionDescriptor newDescriptor, IOperationContext operationContext) {
-    SModelRepository.getInstance().runReloadingAction(this, new Runnable() {
-      public void run() {
-        // release languages and models (except descriptor model)
-        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), Solution.this);
-        LanguageRepository.getInstance().unRegisterLanguages(Solution.this);
-        SModelRepository.getInstance().unRegisterModelDescriptors(Solution.this);
-        SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, Solution.this);
+    // release languages and models (except descriptor model)
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), Solution.this);
+    LanguageRepository.getInstance().unRegisterLanguages(Solution.this);
+    SModelRepository.getInstance().unRegisterModelDescriptors(Solution.this);
+    SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, Solution.this);
 
-        mySolutionDescriptor = newDescriptor;
+    mySolutionDescriptor = newDescriptor;
 
-        // read languages and models
-        LanguageRepository.getInstance().readLanguageDescriptors(mySolutionDescriptor.languageRoots(), Solution.this);
-        SModelRepository.getInstance().readModelDescriptors(mySolutionDescriptor.modelRoots(), Solution.this);
+    // read languages and models
+    LanguageRepository.getInstance().readLanguageDescriptors(mySolutionDescriptor.languageRoots(), Solution.this);
+    SModelRepository.getInstance().readModelDescriptors(mySolutionDescriptor.modelRoots(), Solution.this);
 
-        myEventTranslator.solutionChanged();
-      }
-    });
+    myEventTranslator.solutionChanged();
   }
 
   public File getDescriptorFile() {
@@ -159,7 +155,7 @@ public class Solution extends AbstractModule implements ModelLocator {
 
   public String toString() {
     String text = mySolutionDescriptor.getName();
-    if(text == null || text.length() == 0) {
+    if (text == null || text.length() == 0) {
       text = myDescriptorFile.getName();
     }
     return text;

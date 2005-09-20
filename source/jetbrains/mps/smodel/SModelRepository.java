@@ -33,25 +33,25 @@ public class SModelRepository extends SModelAdapter {
     return ApplicationComponents.getInstance().getComponent(SModelRepository.class);
   }
 
-  public void runReloadingAction(ModelOwner owner, Runnable r) {
-    Set<ModelOwner> owners = new HashSet<ModelOwner>();
-    owners.add(owner);
-    runReloadingAction(owners, r);
-  }
-
-  public void runReloadingAction(Set<ModelOwner> owners, Runnable r) {
-    Set<SModelDescriptor> descriptors = new HashSet<SModelDescriptor>();
-    for (ModelOwner o : owners) {
-      descriptors.addAll(getModelDescriptors(o));
-    }
-
-    ModelOwner tmp = new ModelOwner() { };
-    for (SModelDescriptor d : descriptors) {
-      registerModelDescriptor(d, tmp);
-    }
-    r.run();
-    unRegisterModelDescriptors(tmp);
-  }
+//  public void runReloadingAction(ModelOwner owner, Runnable r) {
+//    Set<ModelOwner> owners = new HashSet<ModelOwner>();
+//    owners.add(owner);
+//    runReloadingAction(owners, r);
+//  }
+//
+//  public void runReloadingAction(Set<ModelOwner> owners, Runnable r) {
+//    Set<SModelDescriptor> descriptors = new HashSet<SModelDescriptor>();
+//    for (ModelOwner o : owners) {
+//      descriptors.addAll(getModelDescriptors(o));
+//    }
+//
+//    ModelOwner tmp = new ModelOwner() { };
+//    for (SModelDescriptor d : descriptors) {
+//      registerModelDescriptor(d, tmp);
+//    }
+//    r.run();
+//    unRegisterModelDescriptors(tmp);
+//  }
 
   public void refreshModels(boolean updateNodeStatuses, IScope scope) {
     for (SModelDescriptor m : myUIDToModelDescriptorMap.values()) {
@@ -139,7 +139,8 @@ public class SModelRepository extends SModelAdapter {
     HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(modelDescriptor);
     if (modelOwners != null && modelOwners.contains(owner)) {
       modelOwners.remove(owner);
-      if (modelOwners.isEmpty()) removeModelDescriptor(modelDescriptor);
+      // DO NOT REMOVE MODEL FROM REPOSITORY EVEN IF NO MORE OWNERS
+      // THE REPOSITORY IS CLEANED UP AFTER COMMAND IS COMPLETED
     }
 
     repositoryChanged();
@@ -151,7 +152,8 @@ public class SModelRepository extends SModelAdapter {
       HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(modelDescriptor);
       if (modelOwners != null) {
         modelOwners.remove(owner);
-        if (modelOwners.isEmpty()) removeModelDescriptor(modelDescriptor);
+        // DO NOT REMOVE MODEL FROM REPOSITORY EVEN IF NO MORE OWNERS
+        // THE REPOSITORY IS CLEANED UP AFTER COMMAND IS COMPLETED
       }
     }
 

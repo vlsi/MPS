@@ -124,27 +124,23 @@ public class Language extends AbstractModule implements ModelLocator {
   }
 
   public void setLanguageDescriptor(final LanguageDescriptor newDescriptor) {
-    SModelRepository.getInstance().runReloadingAction(this, new Runnable() {
-      public void run() {
-        // release languages and models (except descriptor model)
-        unregisterAspectListener();
-        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), Language.this);
-        LanguageRepository.getInstance().unRegisterLanguages(Language.this);
-        SModelRepository.getInstance().unRegisterModelDescriptors(Language.this);
-        SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, Language.this);
-        for (Generator generator : getGenerators()) {
-          generator.dispose();
-        }
+    // release languages and models (except descriptor model)
+    unregisterAspectListener();
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), Language.this);
+    LanguageRepository.getInstance().unRegisterLanguages(Language.this);
+    SModelRepository.getInstance().unRegisterModelDescriptors(Language.this);
+    SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, Language.this);
+    for (Generator generator : getGenerators()) {
+      generator.dispose();
+    }
 
-        myLanguageDescriptor = newDescriptor;
-        SModelRepository.getInstance().readModelDescriptors(myLanguageDescriptor.modelRoots(), Language.this);
-        revalidateGenerators();
+    myLanguageDescriptor = newDescriptor;
+    SModelRepository.getInstance().readModelDescriptors(myLanguageDescriptor.modelRoots(), Language.this);
+    revalidateGenerators();
 
-        registerAspectListener();
-        updateLastGenerationTime();
-        myEventTranslator.languageChanged();
-      }
-    });
+    registerAspectListener();
+    updateLastGenerationTime();
+    myEventTranslator.languageChanged();
   }
 
   private void registerAspectListener() {
@@ -343,7 +339,7 @@ public class Language extends AbstractModule implements ModelLocator {
     while (accessoryModels.hasNext()) {
       Model model = accessoryModels.next();
       SModelUID accessoryUID = SModelUID.fromString(model.getName());
-      if(accessoryUID.equals(modelUID)) {
+      if (accessoryUID.equals(modelUID)) {
         return true;
       }
     }
@@ -379,7 +375,7 @@ public class Language extends AbstractModule implements ModelLocator {
   }
 
   public List<IModule> getChildModules() {
-    return (List<IModule>)((List)getGenerators());
+    return (List<IModule>) ((List) getGenerators());
   }
 
   public Language getLanguage(String languageNamespace) {
