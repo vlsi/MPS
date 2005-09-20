@@ -26,6 +26,7 @@ public class LanguageRepository {
   private Map<Language, Set<LanguageOwner>> myLanguageToOwnersMap = new HashMap<Language, Set<LanguageOwner>>();
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
   private MyCommandTranslator myCommandTranslator = new MyCommandTranslator();
+  private CommandAdapter myListenerToRemoveUnusedModules;
 
   public static LanguageRepository getInstance() {
     return ApplicationComponents.getInstance().getComponent(LanguageRepository.class);
@@ -33,12 +34,13 @@ public class LanguageRepository {
 
   public LanguageRepository() {
     CommandProcessor.instance().addCommandListener(myCommandTranslator);
-    CommandProcessor.instance().addCommandListener(new CommandAdapter() {
+    myListenerToRemoveUnusedModules = new CommandAdapter() {
       public void beforeCommandFinished(CommandEvent event) {
         removeUnusedLanguages();
         SModelRepository.getInstance().removeUnusedDescriptors();
       }
-    });
+    };
+    CommandProcessor.instance().addCommandListener(myListenerToRemoveUnusedModules);
   }
 
   public void addRepositoryListener(RepositoryListener l) {
