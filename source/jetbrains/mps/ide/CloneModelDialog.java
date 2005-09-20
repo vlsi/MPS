@@ -42,7 +42,7 @@ public class CloneModelDialog extends BaseNodeDialog {
   public CloneModelDialog(IdeMain ide, SModelDescriptor modelDescriptor, IOperationContext operationContext) {
     super(ide, "Clone Model", operationContext);
     myIde = ide;
-    myWorkingModel = operationContext.getModule().createTransientProjectModel();
+    myWorkingModel = ProjectModelDescriptor.createDescriptorFor(operationContext.getModule());
     myProjectModel = myWorkingModel.getSModel();
     mySModel = modelDescriptor.getSModel();
 
@@ -53,14 +53,14 @@ public class CloneModelDialog extends BaseNodeDialog {
   private String createNameForCopy(String longName, String stereotype) {
     String result = longName + "_copy";
     int i;
-    for (i = 1; ;i++) {
+    for (i = 1; ; i++) {
       if (getOperationContext().getScope().getModelDescriptor(new SModelUID(result + i, stereotype)) == null) break;
     }
     return result + i;
   }
 
   private void initNode() {
-     new CommandRunnable(myProjectModel) {
+    new CommandRunnable(myProjectModel) {
       public Object onRun() {
 
         myProjectModel.addLanguage(getOperationContext().getScope().getLanguage("jetbrains.mps.projectLanguage"));
@@ -87,7 +87,7 @@ public class CloneModelDialog extends BaseNodeDialog {
     }.run();
   }
 
- protected String getErrorString() {
+  protected String getErrorString() {
     if (myCloneModelProperties.getRoot() == null) return "Please specify root";
     if (myCloneModelProperties.getLongName() == null || myCloneModelProperties.getLongName().length() == 0) return "Please specify name";
     if (!myCloneModelProperties.getLongName().startsWith(myCloneModelProperties.getRoot().getPrefix())) return "Incorrect namespace for specified root";
@@ -96,13 +96,13 @@ public class CloneModelDialog extends BaseNodeDialog {
     return null;
   }
 
- protected void saveChanges() {
+  protected void saveChanges() {
     String stereotype = myCloneModelProperties.getStereotype();
     String modelName = myCloneModelProperties.getLongName();
     RootReference reference = myCloneModelProperties.getRoot();
 
-   IOperationContext operationContext = getOperationContext();
-   SModelDescriptor modelDescriptor = operationContext.getModule().createModel(new SModelUID(modelName, stereotype), reference.getPath(), reference.getPrefix());
+    IOperationContext operationContext = getOperationContext();
+    SModelDescriptor modelDescriptor = operationContext.getModule().createModel(new SModelUID(modelName, stereotype), reference.getPath(), reference.getPrefix());
 
     SModel SModel = modelDescriptor.getSModel();
     Set<String> modelsInProps = getModelsInProperties();

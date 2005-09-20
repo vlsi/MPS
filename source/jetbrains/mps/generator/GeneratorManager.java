@@ -72,7 +72,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
   public void generate(final Language language, IOperationContext operationContext) {
     //todo move to language
-    final SModelDescriptor tmpModelDescriptor = language.createTransientProjectModel();
+    final SModelDescriptor tmpModelDescriptor = ProjectModelDescriptor.createDescriptorFor(language);
     final SModel model = tmpModelDescriptor.getSModel();
     final GeneratorConfiguration conf = new GeneratorConfiguration(model);
     tmpModelDescriptor.getSModel().runLoadingAction(new Runnable() {

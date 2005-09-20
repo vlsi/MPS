@@ -1,14 +1,14 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.projectLanguage.ModelRoot;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.projectLanguage.ModelRoot;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.CollectionUtil;
 
-import java.util.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -187,9 +187,5 @@ public abstract class AbstractModule implements LanguageOwner, IModule {
 
   public List<SModelDescriptor> getModelDescriptors() {
     return SModelRepository.getInstance().getAllModelDescriptors();
-  }
-
-  public SModelDescriptor createTransientProjectModel() {
-    return ProjectModelDescriptor.createDescriptorFor(this);
   }
 }
