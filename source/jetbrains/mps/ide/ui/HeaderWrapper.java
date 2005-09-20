@@ -26,6 +26,7 @@ public class HeaderWrapper extends JPanel {
       return new Dimension(0, 0);
     }
   };
+  private JPanel myButtonsPanel;
 
   private JButton myCloseButton;
   private JButton myMinimizeButton;
@@ -50,7 +51,7 @@ public class HeaderWrapper extends JPanel {
     });
 
     if (showMinimizeButton || showCloseButton) {
-      JPanel buttonsPanel = new JPanel(new GridLayout(1, 0));
+      myButtonsPanel = new JPanel(new GridLayout(1, 0));
 
       if (showCloseButton) {
         myCloseButton = new JButton(new AbstractAction("", Icons.CLOSE_ICON) {
@@ -58,9 +59,8 @@ public class HeaderWrapper extends JPanel {
             doClose();
           }
         });
-        myCloseButton.setUI(new MPSToolBarButtonUI());
-      //  closeButton.setBorder(LineBorder.createGrayLineBorder());
-        buttonsPanel.add(myCloseButton);
+        setupButton(myCloseButton);
+        myButtonsPanel.add(myCloseButton);
       }
 
       if (showMinimizeButton) {
@@ -69,12 +69,11 @@ public class HeaderWrapper extends JPanel {
             doMinimize();
           }
         });
-        myMinimizeButton.setUI(new MPSToolBarButtonUI());
-       // minimizeButton.setBorder(LineBorder.createGrayLineBorder());
-        buttonsPanel.add(myMinimizeButton);
+        setupButton(myMinimizeButton);
+        myButtonsPanel.add(myMinimizeButton);
       }
 
-      labelPanel.add(buttonsPanel, BorderLayout.EAST);
+      labelPanel.add(myButtonsPanel, BorderLayout.EAST);
     }
 
     labelPanel.add(myLabel, BorderLayout.CENTER);
@@ -90,6 +89,12 @@ public class HeaderWrapper extends JPanel {
          updateLabel();
        }
      });
+  }
+
+  private void setupButton(JButton button) {
+    button.setUI(new MPSToolBarButtonUI());
+    button.setContentAreaFilled(false);
+    button.setBorder(null);
   }
 
   protected void doClose() {
@@ -108,12 +113,10 @@ public class HeaderWrapper extends JPanel {
     Component focusOwner = KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
     if (isAncestorOf(focusOwner)) {
       myLabel.setBackground(ACTIVE_COLOR);
-      if (myMinimizeButton != null) myMinimizeButton.setBorder(new LineBorder(ACTIVE_COLOR, 1));
-      if (myCloseButton != null) myCloseButton.setBorder(new LineBorder(ACTIVE_COLOR, 1));
+      if (myButtonsPanel != null) myButtonsPanel.setBackground(ACTIVE_COLOR);
     } else {
       myLabel.setBackground(NOT_ACTIVE_COLOR);
-      if (myMinimizeButton != null) myMinimizeButton.setBorder(new LineBorder(NOT_ACTIVE_COLOR, 1));
-      if (myCloseButton != null) myCloseButton.setBorder(new LineBorder(NOT_ACTIVE_COLOR, 1));
+      if (myButtonsPanel != null) myButtonsPanel.setBackground(NOT_ACTIVE_COLOR);
     }
   }
 
