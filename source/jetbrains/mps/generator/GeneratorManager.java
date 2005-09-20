@@ -20,7 +20,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.IExternalizableComponent;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.projectLanguage.GeneratorConfiguration;
 import jetbrains.mps.projectLanguage.GeneratorConfigurationCommand;
 import jetbrains.mps.projectLanguage.TargetOfGenerator;
@@ -199,7 +198,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
             Set<SModelDescriptor> modelsWithLanguage = findModelsWithLanguage(modelDescriptors, cmd.getSourceLanguage().getName());
 
             Generator generator = findGenerator(cmd.getSourceLanguage().getName(), cmd.getTargetLanguage().getName(), invocationContext);
-            ModuleContext generatorContext = new ModuleContext(generator, invocationContext.getProject());
+
+            GeneratorContext generatorContext = new GeneratorContext(generator, invocationContext);
+
             String generatorClass = findGeneratorClass(generator);
             // todo: get rid of hardcoded "default" generator class
             if (generatorClass == null) generatorClass = DefaultTemplateGenerator.class.getName();
@@ -361,14 +362,14 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     return templateModelDescriptor;
   }
 
-  private void generate_internal(final SModelDescriptor sourceModel, SModelDescriptor templatesModel, IOperationContext operationContext, String generatorClass, String outputPath, final IProgressMonitor monitor, boolean generateText) {
+  private void generate_internal(final SModelDescriptor sourceModel, SModelDescriptor templatesModel, GeneratorContext generatorContext, String generatorClass, String outputPath, final IProgressMonitor monitor, boolean generateText) {
     final IModelGenerator generator;
     try {
       Class cls = Class.forName(generatorClass, true, ClassLoaderManager.getInstance().getClassLoader());
       if (ITemplateGenerator.class.isAssignableFrom(cls)) {
-        generator = (ITemplateGenerator) cls.getConstructor(IOperationContext.class, IProgressMonitor.class).newInstance(operationContext, monitor);
+        generator = (ITemplateGenerator) cls.getConstructor(IOperationContext.class, IProgressMonitor.class).newInstance(generatorContext, monitor);
       } else {
-        generator = (IModelGenerator) cls.getConstructor(IOperationContext.class).newInstance(operationContext);
+        generator = (IModelGenerator) cls.getConstructor(IOperationContext.class).newInstance(generatorContext);
       }
     } catch (Exception e) {
       LOG.error("Exception", e);
@@ -385,7 +386,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         targetModel = command.execute();
       } else {
         IProgressMonitor childMonitor = monitor.startSubTask(AMOUNT_PER_MODEL);
-        targetModel = JavaGenUtil.createTargetJavaModel(sourceModel.getSModel(), JavaNameUtil.packageNameForModelUID(sourceModel.getModelUID()), operationContext);
+        targetModel = JavaGenUtil.createTargetJavaModel(sourceModel.getSModel(), JavaNameUtil.packageNameForModelUID(sourceModel.getModelUID()), generatorContext);
         CommandProcessor.instance().executeCommand(new Runnable() {
           public void run() {
             generator.generate(sourceModel.getSModel(), targetModel, monitor);
@@ -395,7 +396,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       }
       if (targetModel != null) {
         if (generateText) {
-          generateText(targetModel, operationContext);
+          generateText(targetModel, generatorContext);
         } else {
           generateFile(outputPath, sourceModel.getSModel(), targetModel);
         }

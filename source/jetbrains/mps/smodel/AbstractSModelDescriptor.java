@@ -146,7 +146,9 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
       }
 
       //Todo: This should be moved somewhere else
-      updateNodeStatuses();
+      if (mySModel.roots().hasNext()) {
+        updateNodeStatuses();
+      }
     }
     return mySModel;
   }
