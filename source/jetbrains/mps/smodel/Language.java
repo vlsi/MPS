@@ -123,25 +123,28 @@ public class Language extends AbstractModule implements ModelLocator {
     return myDescriptorFile;
   }
 
-  public void setLanguageDescriptor(LanguageDescriptor newDescriptor) {
+  public void setLanguageDescriptor(final LanguageDescriptor newDescriptor) {
+    SModelRepository.getInstance().runReloadingAction(this, new Runnable() {
+      public void run() {
+        // release languages and models (except descriptor model)
+        unregisterAspectListener();
+        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), Language.this);
+        LanguageRepository.getInstance().unRegisterLanguages(Language.this);
+        SModelRepository.getInstance().unRegisterModelDescriptors(Language.this);
+        SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, Language.this);
+        for (Generator generator : getGenerators()) {
+          generator.dispose();
+        }
 
-    // release languages and models (except descriptor model)
-    unregisterAspectListener();
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), this);
-    LanguageRepository.getInstance().unRegisterLanguages(this);
-    SModelRepository.getInstance().unRegisterModelDescriptors(this);
-    SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, this);
-    for (Generator generator : getGenerators()) {
-      generator.dispose();
-    }
+        myLanguageDescriptor = newDescriptor;
+        SModelRepository.getInstance().readModelDescriptors(myLanguageDescriptor.modelRoots(), Language.this);
+        revalidateGenerators();
 
-    myLanguageDescriptor = newDescriptor;
-    SModelRepository.getInstance().readModelDescriptors(myLanguageDescriptor.modelRoots(), this);
-    revalidateGenerators();
-
-    registerAspectListener();
-    updateLastGenerationTime();
-    myEventTranslator.languageChanged();
+        registerAspectListener();
+        updateLastGenerationTime();
+        myEventTranslator.languageChanged();
+      }
+    });
   }
 
   private void registerAspectListener() {

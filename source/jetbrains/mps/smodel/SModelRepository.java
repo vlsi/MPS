@@ -33,6 +33,16 @@ public class SModelRepository extends SModelAdapter {
     return ApplicationComponents.getInstance().getComponent(SModelRepository.class);
   }
 
+  public void runReloadingAction(ModelOwner owner, Runnable r) {
+    List<SModelDescriptor> descriptors = getModelDescriptors(owner);
+    ModelOwner tmp = new ModelOwner() { };
+    for (SModelDescriptor d : descriptors) {
+      registerModelDescriptor(d, tmp);
+    }
+    r.run();
+    unRegisterModelDescriptors(tmp);
+  }
+
   public void refreshModels(boolean updateNodeStatuses, IScope scope) {
     for (SModelDescriptor m : myUIDToModelDescriptorMap.values()) {
       m.refresh();

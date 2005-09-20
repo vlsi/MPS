@@ -32,10 +32,14 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   protected AbstractSModelDescriptor(SModel model) {
     mySModel = model;
     myModelUID = model.getUID();
+
+    checkModelDuplication();
   }
 
   protected AbstractSModelDescriptor(SModelUID modelUID) {
     myModelUID = modelUID;
+
+    checkModelDuplication();
   }
 
   {
@@ -45,6 +49,11 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
         ApplicationComponents.getInstance().getComponent(IdeMain.class).getEditorsPane().repaint();
       }
     });
+  }
+
+
+  private void checkModelDuplication() {
+    LOG.assertLog(SModelRepository.getInstance().getModelDescriptor(myModelUID) == null, "Model Already Register");
   }
 
   protected abstract SModel loadModel();
