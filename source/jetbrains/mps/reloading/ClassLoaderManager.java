@@ -33,12 +33,7 @@ public class ClassLoaderManager {
     if (myUseSystemClassLoader) return ClassLoader.getSystemClassLoader();
 
     if (myClassLoader == null) {
-      IdeMain ideMain = IdeMain.instance();
-      if (ideMain.getProject() == null) {
-        myClassLoader = new MyClassLoader("classes");
-      } else {
-        myClassLoader = new MyClassLoader(ideMain.getProject().getClassPath().get(0));
-      }
+      myClassLoader = new MyClassLoader("classes");
     }
 
     return myClassLoader;
