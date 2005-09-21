@@ -48,6 +48,14 @@ public class GeneratorContext implements IOperationContext {
     return myTransientModule;
   }
 
+  public Generator getGeneratorModule() {
+    return myGeneratorModule;
+  }
+
+  public IOperationContext getInvocationContext() {
+    return myInvocationContext;
+  }
+
   public String toString() {
     return "generator context: " + myGeneratorModule + " invocation cntx: " + myInvocationContext;
   }
@@ -84,8 +92,16 @@ public class GeneratorContext implements IOperationContext {
     }
 
     public void dispose() {
-      SModelRepository.getInstance().unRegisterModelDescriptors(this);
       LanguageRepository.getInstance().unRegisterLanguages(this);
+
+      // force removing transient models
+      List<SModelDescriptor> ownModelDescriptors = getOwnModelDescriptors();
+      for (SModelDescriptor descriptor : ownModelDescriptors) {
+        SModelRepository.getInstance().unRegisterModelDescriptor(descriptor, this);
+        if(descriptor instanceof TransientModelDescriptor) {
+          SModelRepository.getInstance().removeModelDescriptor(descriptor);
+        }
+      }
     }
   }
 }

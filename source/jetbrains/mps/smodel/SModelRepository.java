@@ -33,26 +33,6 @@ public class SModelRepository extends SModelAdapter {
     return ApplicationComponents.getInstance().getComponent(SModelRepository.class);
   }
 
-//  public void runReloadingAction(ModelOwner owner, Runnable r) {
-//    Set<ModelOwner> owners = new HashSet<ModelOwner>();
-//    owners.add(owner);
-//    runReloadingAction(owners, r);
-//  }
-//
-//  public void runReloadingAction(Set<ModelOwner> owners, Runnable r) {
-//    Set<SModelDescriptor> descriptors = new HashSet<SModelDescriptor>();
-//    for (ModelOwner o : owners) {
-//      descriptors.addAll(getModelDescriptors(o));
-//    }
-//
-//    ModelOwner tmp = new ModelOwner() { };
-//    for (SModelDescriptor d : descriptors) {
-//      registerModelDescriptor(d, tmp);
-//    }
-//    r.run();
-//    unRegisterModelDescriptors(tmp);
-//  }
-
   public void refreshModels(boolean updateNodeStatuses, IScope scope) {
     for (SModelDescriptor m : myUIDToModelDescriptorMap.values()) {
       m.refresh();
@@ -160,7 +140,7 @@ public class SModelRepository extends SModelAdapter {
     repositoryChanged();
   }
 
-  /*package*/ void removeModelDescriptor(SModelDescriptor modelDescriptor) {
+  public void removeModelDescriptor(SModelDescriptor modelDescriptor) {
     myModelDescriptors.remove(modelDescriptor);
     myUIDToModelDescriptorMap.remove(modelDescriptor.getModelUID());
     myChangedModels.remove(modelDescriptor);

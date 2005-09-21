@@ -19,12 +19,12 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.IExternalizableComponent;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.projectLanguage.GeneratorConfiguration;
-import jetbrains.mps.projectLanguage.GeneratorConfigurationCommand;
-import jetbrains.mps.projectLanguage.TargetOfGenerator;
+import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textPresentation.TextPresentationManager;
 import jetbrains.mps.util.CollectionUtil;
@@ -96,7 +96,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
     generate(conf, models, operationContext, false, language);
 
- //   language.updateLastGenerationTime();
+    //   language.updateLastGenerationTime();
     language.unRegisterModelDescriptor(tmpModelDescriptor);
   }
 
@@ -199,11 +199,12 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
             Generator generator = findGenerator(cmd.getSourceLanguage().getName(), cmd.getTargetLanguage().getName(), invocationContext);
 
-            GeneratorContext generatorContext = new GeneratorContext(generator, invocationContext);
+            final GeneratorContext generatorContext = new GeneratorContext(generator, invocationContext);
 
             String generatorClass = findGeneratorClass(generator);
             // todo: get rid of hardcoded "default" generator class
             if (generatorClass == null) generatorClass = DefaultTemplateGenerator.class.getName();
+
             SModelDescriptor templatesModel = loadTemplatesModel(generator, generatorContext);
             for (final SModelDescriptor model : modelsWithLanguage) {
               try {
@@ -223,13 +224,27 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
               }
               addMessage(new Message(MessageKind.INFORMATION, model.getModelUID() + " model is generated"), invocationContext);
             }
+
+            // save transient models in session module
+            CommandProcessor.instance().executeCommand(new Runnable() {
+              public void run() {
+                if (mySaveTransientModels) {
+                  saveTransientModels(generatorContext);
+                } else {
+                  // unregister transient models
+                  generatorContext.getModule().dispose();
+                }
+              }
+            });
           }
+
           if (!generateText && isIdeaPresent && myCompileOnGeneration) {
             LOG.debug("Compiling in IDE after generation");
             progress.addText("Compiling in IntelliJ IDEA...");
             compileAndReload();
             progress.advance(AMOUNT_PER_MODEL);
           }
+
           addMessage(new Message(MessageKind.INFORMATION, "Generation finished"), invocationContext);
           if (!generateText) {
             showMessageView(invocationContext);
@@ -407,6 +422,82 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     }
   }
 
+  private void saveTransientModels(GeneratorContext generatorContext) {
+    // solution dir
+    String solutionKey = "" + System.currentTimeMillis();
+    String projectDir = generatorContext.getProject().getProjectFile().getParentFile().getAbsolutePath();
+    String solutionDir = projectDir + File.separatorChar + "outputModels" + File.separatorChar + solutionKey;
+
+    // save models to solution dir
+    IModule transientModule = generatorContext.getModule();
+    List<SModelDescriptor> transientModelDescriptors = transientModule.getOwnModelDescriptors();
+    for (SModelDescriptor descriptor : transientModelDescriptors) {
+      if (descriptor instanceof TransientModelDescriptor) {
+        TransientModelDescriptor transientModelDescriptor = (TransientModelDescriptor) descriptor;
+        String modelFqName = transientModelDescriptor.getModelUID().toString();
+        String modelFileName = modelFqName.replace('.', File.separatorChar) + ".mps";
+        File modelFile = new File(solutionDir, modelFileName);
+        ModelPersistence.saveModel(transientModelDescriptor.getSModel(), modelFile);
+      }
+    }
+
+    // create solution
+    SModel solutionDescriptorModel = ProjectModelDescriptor.createDescriptorFor(transientModule).getSModel();
+    solutionDescriptorModel.setLoading(true);
+    SolutionDescriptor solutionDescriptor = new SolutionDescriptor(solutionDescriptorModel);
+    solutionDescriptor.setName("generator session " + solutionKey);
+
+    // add root where transient models were saved
+    ModelRoot root = new ModelRoot(solutionDescriptorModel);
+    root.setPrefix("");
+    root.setPath(solutionDir);
+    solutionDescriptor.addModelRoot(root);
+
+    // add model/language roots from generator module
+    {
+      Generator generatorModule = generatorContext.getGeneratorModule();
+      List<ModelRoot> modelRoots = generatorModule.getModelRoots();
+      for (ModelRoot modelRoot : modelRoots) {
+        ModelRoot copyRoot = new ModelRoot(solutionDescriptorModel);
+        copyRoot.setPrefix(modelRoot.getPrefix());
+        copyRoot.setPath(modelRoot.getPath());
+        solutionDescriptor.addModelRoot(copyRoot);
+      }
+
+      List<Language> languages = generatorContext.getGeneratorModule().getLanguages();
+      for (Language language : languages) {
+        Root languageRoot = new Root(solutionDescriptorModel);
+        languageRoot.setPath(language.getDescriptorFile().getParentFile().getAbsolutePath());
+        solutionDescriptor.addLanguageRoot(languageRoot);
+      }
+    }
+
+    // add model/language roots from invocation module
+    {
+      IModule invocationModule = generatorContext.getInvocationContext().getModule();
+      List<ModelRoot> modelRoots = invocationModule.getModelRoots();
+      for (ModelRoot modelRoot : modelRoots) {
+        ModelRoot copyRoot = new ModelRoot(solutionDescriptorModel);
+        copyRoot.setPrefix(modelRoot.getPrefix());
+        copyRoot.setPath(modelRoot.getPath());
+        solutionDescriptor.addModelRoot(copyRoot);
+      }
+
+      List<Language> languages = generatorContext.getGeneratorModule().getLanguages();
+      for (Language language : languages) {
+        Root languageRoot = new Root(solutionDescriptorModel);
+        languageRoot.setPath(language.getDescriptorFile().getParentFile().getAbsolutePath());
+        solutionDescriptor.addLanguageRoot(languageRoot);
+      }
+    }
+
+    // save, add to project and reload all
+    File solutionFile = new File(solutionDir, solutionKey + ".msd");
+    PersistenceUtil.saveSolutionDescriptor(solutionFile, solutionDescriptor);
+    // remove transient descriptors from repository before re-loading
+    transientModule.dispose();
+    generatorContext.getProject().addSolution(solutionFile);
+  }
 
   public IPreferencesPage createPreferencesPage() {
     return new MyPreferencesPage();
