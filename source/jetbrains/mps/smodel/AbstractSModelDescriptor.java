@@ -42,15 +42,6 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     checkModelDuplication();
   }
 
-  {
-    this.addSModelCommandListener(new SModelCommandListener() {
-      public void modelChangedInCommand(List<SModelEvent> events, EditorContext editorContext) {
-        if (EventUtil.isDramaticalChange(events)) updateNodeStatuses();
-        ApplicationComponents.getInstance().getComponent(ProjectWindow.class).getEditorsPane().repaint();
-      }
-    });
-  }
-
 
   private void checkModelDuplication() {
     LOG.assertLog(SModelRepository.getInstance().getModelDescriptor(myModelUID) == null, "Model Already Register");
