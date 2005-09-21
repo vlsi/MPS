@@ -1,13 +1,13 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.projectLanguage.Root;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.ide.command.CommandEventTranslator;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.command.CommandEvent;
+import jetbrains.mps.ide.command.CommandEventTranslator;
+import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.projectLanguage.Root;
+import jetbrains.mps.util.CollectionUtil;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -26,7 +26,6 @@ public class LanguageRepository {
   private Map<Language, Set<LanguageOwner>> myLanguageToOwnersMap = new HashMap<Language, Set<LanguageOwner>>();
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
   private MyCommandTranslator myCommandTranslator = new MyCommandTranslator();
-  private CommandAdapter myListenerToRemoveUnusedModules;
 
   public static LanguageRepository getInstance() {
     return ApplicationComponents.getInstance().getComponent(LanguageRepository.class);
@@ -34,13 +33,13 @@ public class LanguageRepository {
 
   public LanguageRepository() {
     CommandProcessor.instance().addCommandListener(myCommandTranslator);
-    myListenerToRemoveUnusedModules = new CommandAdapter() {
+    CommandAdapter listenerToRemoveUnusedModules = new CommandAdapter() {
       public void beforeCommandFinished(CommandEvent event) {
         removeUnusedLanguages();
         SModelRepository.getInstance().removeUnusedDescriptors();
       }
     };
-    CommandProcessor.instance().addCommandListener(myListenerToRemoveUnusedModules);
+    CommandProcessor.instance().addCommandListener(listenerToRemoveUnusedModules);
   }
 
   public void addRepositoryListener(RepositoryListener l) {
@@ -178,8 +177,12 @@ public class LanguageRepository {
       }
     });
     for (File file : files) {
-      Language language = registerLanguage(file, owner);
-      result.add(language);
+      try {
+        Language language = registerLanguage(file, owner);
+        result.add(language);
+      } catch (Exception e) {
+        LOG.error("Fail to load language from descriptor " + file.getAbsolutePath(), e);
+      }
     }
     File[] dirs = dir.listFiles();
     for (File childDir : dirs) {
