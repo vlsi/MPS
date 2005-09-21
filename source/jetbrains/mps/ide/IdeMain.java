@@ -62,6 +62,7 @@ public class IdeMain {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         ProjectWindow ideMain = new ProjectWindow();
+        ideMain.loadLastProjectIfAny();
         SplashScreen.getInstance().hideSplashScreen();
         ideMain.getMainFrame().setVisible(true);
       }
