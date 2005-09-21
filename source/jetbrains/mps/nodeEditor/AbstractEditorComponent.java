@@ -295,8 +295,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     registerKeyboardAction(new AbstractAction(action.getName()) {
       public void actionPerformed(ActionEvent e) {
         if (mySelectedCell != null && mySelectedCell.getSNode() != null) {
-          ProjectWindow ide = ApplicationComponents.getInstance().getComponent(ProjectWindow.class);
-
           final ActionContext context = new ActionContext(getEditorContext().getOperationContext(), mySelectedCell.getSNode());
           if (action.executeInsideCommand()) {
             CommandProcessor.instance().executeCommand(new Runnable() {
@@ -345,7 +343,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     //    doChoose(selectedNode);
     JPopupMenu popupMenu = new JPopupMenu();
     ActionGroup group = ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS);
-    ProjectWindow ide = ApplicationComponents.getInstance().getComponent(ProjectWindow.class);
 
     List<SNode> selectedNodes = myNodeRangeSelection.getNodes();
     ActionContext context = new ActionContext(getOperationContext(), selectedNode, selectedNodes);
