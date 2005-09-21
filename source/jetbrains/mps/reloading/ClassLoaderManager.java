@@ -17,7 +17,15 @@ public class ClassLoaderManager {
   private boolean myUseSystemClassLoader;
 
   public void reloadAll() {
+    ClassPathItem item = null;
+    if (myClassLoader instanceof MPSClassLoader) {
+      item = ((MPSClassLoader) myClassLoader).getClassPathItem();
+    }
     myClassLoader = null;
+
+    if (item != null) {
+      myClassLoader = new MyClassLoader(item);
+    }
   }
 
   public void setUseSystemClassLoader(boolean useSystemClassLoader) {
@@ -32,8 +40,9 @@ public class ClassLoaderManager {
     if (myUseSystemClassLoader) return ClassLoader.getSystemClassLoader();
 
     if (myClassLoader == null) {
-      myClassLoader = new MyClassLoader("classes");
+      return ClassLoader.getSystemClassLoader();
     }
+
 
     return myClassLoader;
   }
@@ -52,7 +61,11 @@ public class ClassLoaderManager {
     public MyClassLoader(String classPath) {
       super(new FileClassPathItem(classPath));
     }
-    
+
+    public MyClassLoader(ClassPathItem item) {
+      super(item);
+    }
+
 
     protected boolean isExcluded(String name) {
       String pack = NodeNameUtil.getNamespace(name);
