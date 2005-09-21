@@ -2,7 +2,7 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.FileUtil;
-import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.ProjectWindow;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
@@ -212,7 +212,7 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope {
     String mwsFileName = projectFileName.substring(0, dotIndex) + ".mws";
     myWorkspaceFile = new File(myProjectFile.getParent(), mwsFileName);
 
-    if (IdeMain.isTestMode()) return;
+    if (ProjectWindow.isTestMode()) return;
     try {
       if (myWorkspaceFile.exists()) {
         Document document = JDOMUtil.loadDocument(myWorkspaceFile);
@@ -239,7 +239,7 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope {
   }
 
   public void save() {
-    if (IdeMain.isTestMode()) return;
+    if (ProjectWindow.isTestMode()) return;
 
     PersistenceUtil.saveProjectDescriptor(myProjectFile, myProjectDescriptor);
 

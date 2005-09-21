@@ -9,13 +9,13 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.ProjectWindow;
 
 public class InspectorEditorComponent extends AbstractEditorComponent {
   private EditorContext myEditorContext;
   private SNodeProxy myNodeProxy;
 
-  public InspectorEditorComponent(IdeMain ide) {
+  public InspectorEditorComponent(ProjectWindow ide) {
     super(ide, null);
     myNodeProxy = new SNodeProxy(null, null);
     reinitEditor();

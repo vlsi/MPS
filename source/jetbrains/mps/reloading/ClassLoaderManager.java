@@ -1,6 +1,5 @@
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.util.NodeNameUtil;
 
 /**

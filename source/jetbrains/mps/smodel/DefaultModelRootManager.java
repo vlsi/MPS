@@ -2,7 +2,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.logging.Logger;
 
 import java.util.Set;

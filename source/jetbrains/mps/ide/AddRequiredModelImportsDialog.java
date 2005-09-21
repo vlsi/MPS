@@ -12,8 +12,6 @@ import java.util.ArrayList;
 import java.util.Set;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 
 /**
  * Created by IntelliJ IDEA.
@@ -47,7 +45,7 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
     return myCanceled;
   }
 
-  public AddRequiredModelImportsDialog(IdeMain ideMain, SModel model, List<SModelUID> imports, List<String> languages, Set<SModelUID> necessaryImports, Set<String> necessaryLanguages) {
+  public AddRequiredModelImportsDialog(ProjectWindow ideMain, SModel model, List<SModelUID> imports, List<String> languages, Set<SModelUID> necessaryImports, Set<String> necessaryLanguages) {
     super(ideMain.getMainFrame(), "Imports and Languages");
     myImports = imports;
     myLanguages = languages;

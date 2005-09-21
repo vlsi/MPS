@@ -68,9 +68,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private IOperationContext myOperationContext;
   private EventRecorder myRecorder = null;
-  private IdeMain myIde;
+  private ProjectWindow myIde;
 
-  public AbstractEditorComponent(IdeMain ide, IOperationContext operationContext) {
+  public AbstractEditorComponent(ProjectWindow ide, IOperationContext operationContext) {
     myIde = ide;
     addFocusListener(new FocusAdapter() {
       public void focusGained(FocusEvent e) {
@@ -295,7 +295,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     registerKeyboardAction(new AbstractAction(action.getName()) {
       public void actionPerformed(ActionEvent e) {
         if (mySelectedCell != null && mySelectedCell.getSNode() != null) {
-          IdeMain ide = ApplicationComponents.getInstance().getComponent(IdeMain.class);
+          ProjectWindow ide = ApplicationComponents.getInstance().getComponent(ProjectWindow.class);
 
           final ActionContext context = new ActionContext(getEditorContext().getOperationContext(), mySelectedCell.getSNode());
           if (action.executeInsideCommand()) {
@@ -345,7 +345,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     //    doChoose(selectedNode);
     JPopupMenu popupMenu = new JPopupMenu();
     ActionGroup group = ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS);
-    IdeMain ide = ApplicationComponents.getInstance().getComponent(IdeMain.class);
+    ProjectWindow ide = ApplicationComponents.getInstance().getComponent(ProjectWindow.class);
 
     List<SNode> selectedNodes = myNodeRangeSelection.getNodes();
     ActionContext context = new ActionContext(getOperationContext(), selectedNode, selectedNodes);

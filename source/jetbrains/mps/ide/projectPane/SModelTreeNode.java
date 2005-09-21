@@ -1,6 +1,6 @@
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.ProjectWindow;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.action.ActionContext;
@@ -114,7 +114,7 @@ class SModelTreeNode extends MPSTreeNodeEx {
       MPSTreeNodeEx treeNode = new SNodeTreeNode(sortedRoot, getOperationContext());
       add(treeNode);
     }
-    DefaultTreeModel treeModel = (DefaultTreeModel) getOperationContext().getComponent(IdeMain.class).getProjectPane().getTree().getModel();
+    DefaultTreeModel treeModel = (DefaultTreeModel) getOperationContext().getComponent(ProjectWindow.class).getProjectPane().getTree().getModel();
     treeModel.nodeStructureChanged(this);
     isInitialized = true;
   }
@@ -146,7 +146,7 @@ class SModelTreeNode extends MPSTreeNodeEx {
             }
 
             public void visitPropertyEvent(SModelPropertyEvent event) {
-              DefaultTreeModel treeModel = (DefaultTreeModel) getOperationContext().getComponent(IdeMain.class).getProjectPane().getTree().getModel();
+              DefaultTreeModel treeModel = (DefaultTreeModel) getOperationContext().getComponent(ProjectWindow.class).getProjectPane().getTree().getModel();
 
               //i tried to use nodeChange but it didn't work
               treeModel.nodeStructureChanged(findAncestorWith(event.getNode()));
@@ -168,7 +168,7 @@ class SModelTreeNode extends MPSTreeNodeEx {
       if (treeNode != null) {
         treeNode.update();
       }
-      DefaultTreeModel treeModel = (DefaultTreeModel) getOperationContext().getComponent(IdeMain.class).getProjectPane().getTree().getModel();
+      DefaultTreeModel treeModel = (DefaultTreeModel) getOperationContext().getComponent(ProjectWindow.class).getProjectPane().getTree().getModel();
       treeModel.nodeStructureChanged((TreeNode) treeModel.getRoot());
     }
   }

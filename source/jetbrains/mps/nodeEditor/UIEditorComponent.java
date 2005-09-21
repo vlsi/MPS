@@ -2,7 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.ProjectWindow;
 
 import javax.swing.*;
 
@@ -14,7 +14,7 @@ public class UIEditorComponent extends AbstractEditorComponent {
   private SNode mySemanticNode;
   private InspectorEditorComponent myInspector;
 
-  public UIEditorComponent(IdeMain ide, IOperationContext operationContext, InspectorEditorComponent inspector) {
+  public UIEditorComponent(ProjectWindow ide, IOperationContext operationContext, InspectorEditorComponent inspector) {
     super(ide, operationContext);
     unregisterKeyboardAction(KeyStroke.getKeyStroke("ESCAPE"));
     myInspector = inspector;

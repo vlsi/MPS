@@ -2,7 +2,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.ProjectWindow;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -46,7 +46,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     this.addSModelCommandListener(new SModelCommandListener() {
       public void modelChangedInCommand(List<SModelEvent> events, EditorContext editorContext) {
         if (EventUtil.isDramaticalChange(events)) updateNodeStatuses();
-        ApplicationComponents.getInstance().getComponent(IdeMain.class).getEditorsPane().repaint();
+        ApplicationComponents.getInstance().getComponent(ProjectWindow.class).getEditorsPane().repaint();
       }
     });
   }
@@ -114,7 +114,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 //
 //    temporary break editors update
 //
-//        Iterator<SModelDescriptor> iterator = mySModel.importedModels(IdeMain.instance().getGlobalOperationContext());
+//        Iterator<SModelDescriptor> iterator = mySModel.importedModels(ProjectWindow.instance().getGlobalOperationContext());
 //        while (iterator.hasNext()) {
 //          SModelDescriptor imported = iterator.next();
 //          for (SModelListener listener : myModelListenersForImportedModels) {
@@ -142,7 +142,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 //
 //    temporary break editors update
 //
-//        Iterator<SModelDescriptor> iterator = mySModel.importedModels(IdeMain.instance().getGlobalOperationContext());
+//        Iterator<SModelDescriptor> iterator = mySModel.importedModels(ProjectWindow.instance().getGlobalOperationContext());
 //        while (iterator.hasNext()) {
 //          SModelDescriptor imported = iterator.next();
 //          for (SModelCommandListener listener : myModelCommandListenersForImportedModels) {
@@ -190,7 +190,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 //    temporary break editors update
 //
 //    if (mySModel != null) {
-//      Iterator<SModelDescriptor> iterator = mySModel.importedModels(IdeMain.instance().getGlobalOperationContext());
+//      Iterator<SModelDescriptor> iterator = mySModel.importedModels(ProjectWindow.instance().getGlobalOperationContext());
 //      while (iterator.hasNext()) {
 //        SModelDescriptor imported = iterator.next();
 //        imported.addSModelListener(listener);
@@ -206,7 +206,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 //    temporary break editors update
 //
 //    if (mySModel != null) {
-//      Iterator<SModelDescriptor> iterator = mySModel.importedModels(IdeMain.instance().getGlobalOperationContext());
+//      Iterator<SModelDescriptor> iterator = mySModel.importedModels(ProjectWindow.instance().getGlobalOperationContext());
 //      while (iterator.hasNext()) {
 //        SModelDescriptor imported = iterator.next();
 //        imported.addSModelCommandListener(listener);

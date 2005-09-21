@@ -1,7 +1,7 @@
 package jetbrains.mps.nodeEditor.cellExplorer;
 
 import jetbrains.mps.ide.toolsPane.DefaultTool;
-import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.ProjectWindow;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -29,9 +29,9 @@ public class CellExplorerView extends DefaultTool {
 
   private JPanel myComponent = new JPanel(new BorderLayout());
   private MyTree myTree = new MyTree();
-  private IdeMain myIde;
+  private ProjectWindow myIde;
 
-  public CellExplorerView(IdeMain ide) {
+  public CellExplorerView(ProjectWindow ide) {
     myIde = ide;
     myTree.setRootVisible(true);
     myComponent.add(new JScrollPane(myTree), BorderLayout.CENTER);

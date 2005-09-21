@@ -1,15 +1,11 @@
 package jetbrains.mps.nodeEditor.cellExplorer;
 
 import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.CellProperties;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.ProjectWindow;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.smodel.SNode;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
@@ -24,11 +20,11 @@ public class CellPropertiesWindow extends JFrame {
 
   private JPanel myPanel;
   private EditorCell myCell;
-  private IdeMain myIde;
+  private ProjectWindow myIde;
   private EditorCell myClonedCell;
   private CellProperties myCellProperties;
 
-  public CellPropertiesWindow(EditorCell editorCell, IdeMain ide) {
+  public CellPropertiesWindow(EditorCell editorCell, ProjectWindow ide) {
     myCell = editorCell;
     myIde = ide;
     myCellProperties = new CellProperties(editorCell);

@@ -1,6 +1,6 @@
 package jetbrains.mps.ide.output;
 
-import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.ProjectWindow;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -27,13 +27,13 @@ public class OutputView extends DefaultTool implements IExternalizableComponent,
 
   private JPanel myComponent = new JPanel();
   private JTextArea myTextArea = new JTextArea();
-  private IdeMain myIde;
+  private ProjectWindow myIde;
   private String myLastSearchPattern = null;
   private AbstractAction myFindAction;
   private AbstractAction myFindNextAction;
   private int myFontSize = 12;
 
-  public OutputView(IdeMain ide) {
+  public OutputView(ProjectWindow ide) {
     myIde = ide;
 
     myTextArea.setEditable(false);
