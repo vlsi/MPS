@@ -6,7 +6,7 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/projects/baseLanguage.test/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/baseLanguage.test/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/projects/fixedLengthReader/framework/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projects/fixedLengthReader/framework/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/fixedLengthReader/framework/src_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/fixedLengthReader/readerConfigLanguage/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/fixedLengthReader/readerConfigLanguage/source_gen" isTestSource="false" />

@@ -21,6 +21,11 @@ public class MPSProjects {
     }
   }
 
+  public MPSProject getFirstProject() {
+    if (myProjects.size() == 0) return null;
+    return myProjects.get(0);
+  }
+
   public List<MPSProject> getProjects() {
     return new ArrayList<MPSProject>(myProjects);
   }
