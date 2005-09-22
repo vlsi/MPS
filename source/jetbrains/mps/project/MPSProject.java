@@ -16,6 +16,8 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vcs.VersionControlManager;
 import jetbrains.mps.vcs.model.IVersionControl;
+import jetbrains.mps.components.IExternalizableComponent;
+import jetbrains.mps.components.IContainer;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -27,7 +29,7 @@ import java.util.*;
  * Created Apr 29, 2004
  */
 
-public class MPSProject implements ModelOwner, LanguageOwner, IScope {
+public class MPSProject implements ModelOwner, LanguageOwner, IScope, IContainer {
   private static final Logger LOG = Logger.getLogger(MPSProject.class);
 
   private File myProjectFile;

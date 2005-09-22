@@ -19,7 +19,7 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.MPSPlugin;
-import jetbrains.mps.project.IExternalizableComponent;
+import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.projectLanguage.*;
