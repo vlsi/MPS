@@ -305,7 +305,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
   public final void delete() {
     SModelsMulticaster.getInstance().fireModelWillBeDeletedEvent(this);
-    SModelRepository.getInstance().removeModelDescriptor(this);
+    SModelRepository.getInstance().deleteModelDescriptor(this);
     File modelFile = getModelFile();
     if (modelFile != null && modelFile.exists()) {
       modelFile.delete();

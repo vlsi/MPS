@@ -2,6 +2,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.ConfirmSaveDialog;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.projectLanguage.ModelRoot;
@@ -140,7 +141,11 @@ public class SModelRepository extends SModelAdapter {
     repositoryChanged();
   }
 
-  public void removeModelDescriptor(SModelDescriptor modelDescriptor) {
+  public void deleteModelDescriptor(SModelDescriptor modelDescriptor) {
+    removeModelDescriptor(modelDescriptor);
+  }
+
+  private void removeModelDescriptor(SModelDescriptor modelDescriptor) {
     myModelDescriptors.remove(modelDescriptor);
     myUIDToModelDescriptorMap.remove(modelDescriptor.getModelUID());
     myChangedModels.remove(modelDescriptor);
@@ -158,6 +163,12 @@ public class SModelRepository extends SModelAdapter {
     }
 
     if (descriptorsToRemove.size() > 0) {
+      List<SModelDescriptor> changedModelsToDelete = new ArrayList<SModelDescriptor>();
+      for (SModelDescriptor descriptor : descriptorsToRemove) {
+        if (myChangedModels.containsKey(descriptor)) changedModelsToDelete.add(descriptor);
+      }
+/*      ConfirmSaveDialog dialog = new ConfirmSaveDialog(null, changedModelsToDelete);
+      dialog.showDialog();*/
       for (SModelDescriptor descriptor : descriptorsToRemove) {
         removeModelDescriptor(descriptor);
       }

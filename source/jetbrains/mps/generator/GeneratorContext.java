@@ -99,7 +99,7 @@ public class GeneratorContext implements IOperationContext {
       for (SModelDescriptor descriptor : ownModelDescriptors) {
         SModelRepository.getInstance().unRegisterModelDescriptor(descriptor, this);
         if(descriptor instanceof TransientModelDescriptor) {
-          SModelRepository.getInstance().removeModelDescriptor(descriptor);
+          SModelRepository.getInstance().deleteModelDescriptor(descriptor);
         }
       }
     }

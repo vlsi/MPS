@@ -93,7 +93,9 @@ public class ModelRepositoryView extends DefaultTool {
       }
 
       public String toString() {
-        return "<html>" + getNodeIdentifier() + (myModelDescriptor.isInitialized() ? " <b>(initialized)</b>" : " <i>(not initialized)</i>");
+        String colorString = "";
+        if (SModelRepository.getInstance().isChanged(myModelDescriptor)) colorString = "<font color=\"#000090\">";
+        return "<html>" + colorString + getNodeIdentifier() + (myModelDescriptor.isInitialized() ? " <b>(initialized)</b>" : " <i>(not initialized)</i>");
       }
 
       protected String getNodeIdentifier() {
