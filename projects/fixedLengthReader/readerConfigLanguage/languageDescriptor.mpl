@@ -13,8 +13,8 @@
   <generators>
     <generator name="java" templatesModel="readerConfigLanguage.generator.baseLanguage.templates@templates" targetLanguage="jetbrains.mps.baseLanguage">
       <models>
-        <modelRoot path="${language_descriptor}\models\import" namespacePrefix="" />
         <modelRoot path="${language_descriptor}\generator\baseLanguage" namespacePrefix="readerConfigLanguage.generator.baseLanguage" />
+        <modelRoot path="${mps_home}\projects\fixedLengthReader\readerFramework\models" namespacePrefix="" />
       </models>
       <languages />
     </generator>
