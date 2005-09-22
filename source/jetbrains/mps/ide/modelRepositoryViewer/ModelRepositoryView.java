@@ -3,6 +3,7 @@ package jetbrains.mps.ide.modelRepositoryViewer;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -70,7 +71,7 @@ public class ModelRepositoryView extends DefaultTool {
           return result;
         }
       };
-      for (SModelDescriptor modelDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
+      for (SModelDescriptor modelDescriptor : SortUtil.sortModels(SModelRepository.getInstance().getAllModelDescriptors())) {
         root.add(new ModelTreeNode(modelDescriptor));
       }
       return root;

@@ -7,6 +7,7 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.MPSProject;
@@ -71,7 +72,7 @@ public class LanguageRepositoryView extends DefaultTool {
           return Icons.LANGUAGES_ICON;
         }
       };
-      for (Language l : LanguageRepository.getInstance().getAllLanguages()) {
+      for (Language l : SortUtil.sortLanguages(LanguageRepository.getInstance().getAllLanguages())) {
         root.add(new LanguageTreeNode(l));
       }
       return root;

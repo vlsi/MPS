@@ -190,7 +190,10 @@ public class HierarchyView extends DefaultTool {
 
     protected String getNodeIdentifier() {
       if (getConceptDeclaration() == null) return "null";
-      return getConceptDeclaration().getName();
+      Language language = SModelUtil.getDeclaringLanguage(getConceptDeclaration(), getOperationContext().getScope());
+      String namespace;
+      if (language == null) namespace = " ? "; else namespace = language.getNamespace();
+      return getConceptDeclaration().getName() + "  (" + namespace + ")";
     }
 
     public JPopupMenu getPopupMenu() {
