@@ -33,6 +33,7 @@ public class Language extends AbstractModule implements ModelLocator {
   private LanguageEventTranslator myEventTranslator = new LanguageEventTranslator();
   private SModelsListener myModelsListener = new LanguageModelsAdapter();
   private boolean myUpToDate = true;
+  private boolean myUpdateLastGenerationTimeCalled = false;
 
   private SModelCommandListener myAspectModelsListener = new SModelCommandListener() {
     public void modelChangedInCommand(List<SModelEvent> events, EditorContext editorContext) {
@@ -90,7 +91,6 @@ public class Language extends AbstractModule implements ModelLocator {
     SModelRepository.getInstance().readModelDescriptors(myLanguageDescriptor.modelRoots(), this);
     revalidateGenerators();
 
-    updateLastGenerationTime();
 
     CommandProcessor.instance().addCommandListener(myEventTranslator);
     SModelsMulticaster.getInstance().addSModelsListener(myModelsListener);
@@ -163,6 +163,7 @@ public class Language extends AbstractModule implements ModelLocator {
     myLastGenerationTime = FileUtil.getNewestFileTime(getSourceDir());
     long lastChangeTime = getLastChangeTime();
     myUpToDate = myLastGenerationTime >= lastChangeTime;
+    myUpdateLastGenerationTimeCalled = true;
   }
 
   public List<Generator> getGenerators() {
@@ -185,6 +186,9 @@ public class Language extends AbstractModule implements ModelLocator {
   }
 
   public boolean isUpToDate() {
+    if (!myUpdateLastGenerationTimeCalled) {
+      updateLastGenerationTime();
+    }
     return myUpToDate;
   }
 
