@@ -17,7 +17,7 @@ import java.util.List;
  * @author Kostik
  */
 public class EditorSettings extends DefaultExternalizableComponent implements IComponentWithPreferences {
-  private @Externalizable Font myFont = new Font("Monospaced", Font.PLAIN, 5);
+  private @Externalizable Font myFont = new Font("Monospaced", Font.PLAIN, 10);
 
   public Font getDefaultEditorFont() {
     return myFont;
