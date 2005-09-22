@@ -61,10 +61,10 @@ public class IdeMain {
     configureLogger();
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        ProjectWindow ideMain = new ProjectWindow();
-        ideMain.loadLastProjectIfAny();
+        ProjectWindow projectWindow = new ProjectWindow();
+        projectWindow.loadLastProjectIfAny();
         SplashScreen.getInstance().hideSplashScreen();
-        ideMain.getMainFrame().setVisible(true);
+        projectWindow.show();
       }
     });
   }
