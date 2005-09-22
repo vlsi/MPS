@@ -7,13 +7,27 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.annotation.Target;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 
 import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.logging.Logger;
 
 /**
  * @author Kostik
  */
 public abstract class BaseDialog extends JDialog {
+  private static final Logger LOG = Logger.getLogger(BaseDialog.class);
+
   private JLabel myErrorLabel = new JLabel("") {
     {
       setForeground(Color.RED);
@@ -52,17 +66,6 @@ public abstract class BaseDialog extends JDialog {
   protected DialogDimensionsSettings.DialogDimensions myDialogDimensions;
 
   protected static void saveDimensionSettings(int left, int top, int width, int height, Class<? extends BaseDialog> cls) {
-   /* String className = cls.getName();
-    className = className.substring(className.lastIndexOf(".") + 1);
-    Element dimensionsConfig = new Element(className + "DimensionsConfig");
-
-    dimensionsConfig.setAttribute(D_LEFT, left+"");
-    dimensionsConfig.setAttribute(D_TOP, top+"");
-    dimensionsConfig.setAttribute(D_WIDTH, width+"");
-    dimensionsConfig.setAttribute(D_HEIGHT, height+"");
-    IdeSettings settings = IdeSettings.getInstance();
-    settings.putExternalElement(dimensionsConfig);
-    //settings.save();*/
     ApplicationComponents.getInstance().getComponent(DialogDimensionsSettings.class).saveDimensionSettings(left, top, width, height, cls);
   }
 
@@ -79,16 +82,6 @@ public abstract class BaseDialog extends JDialog {
   public abstract DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings();
 
   protected static DialogDimensionsSettings.DialogDimensions getDimensionSettings(Class <? extends BaseDialog> cls) {
-   /* String className = cls.getName();
-    className = className.substring(className.lastIndexOf(".") + 1);
-    IdeSettings settings = IdeSettings.getInstance();
-    Element dimensionsConfig = settings.getExternalElement(className + "DimensionsConfig");
-    if (dimensionsConfig == null) return null;
-    int left = Integer.parseInt(dimensionsConfig.getAttributeValue(D_LEFT));
-    int top = Integer.parseInt(dimensionsConfig.getAttributeValue(D_TOP));
-    int width = Integer.parseInt(dimensionsConfig.getAttributeValue(D_WIDTH));
-    int height = Integer.parseInt(dimensionsConfig.getAttributeValue(D_HEIGHT));
-    return new DialogDimensionsSettings.DialogDimensions(left, top, width, height);*/
     return ApplicationComponents.getInstance().getComponent(DialogDimensionsSettings.class).getDimensionSettings(cls);
   }
 
@@ -134,7 +127,54 @@ public abstract class BaseDialog extends JDialog {
     myErrorLabel.setText(errorText);
   }
 
-  protected abstract JButton[] createButtons();
+  protected JButton[] createButtons() {
+    Map<Integer, Method> buttonMethods = new HashMap<Integer, Method>();
+    for (Method m : getClass().getMethods()) {
+      if (m.isAnnotationPresent(Button.class) && !Modifier.isStatic(m.getModifiers())) {
+        Button b = m.getAnnotation(Button.class);
+        if (buttonMethods.containsKey(b.position())) {
+          throw new RuntimeException("BaseDialog has buttons with the same position");
+        }
+        if (m.getReturnType() != Void.TYPE || m.getParameterTypes().length != 0) {
+          throw new RuntimeException("Button methods should return void type and have no parameters");
+        }
+        buttonMethods.put(b.position(), m);
+      }
+    }
+
+    List<JButton> result = new ArrayList<JButton>();
+    for (int i = 0; i < buttonMethods.keySet().size(); i++) {
+      if (!buttonMethods.containsKey(i)) throw new RuntimeException("BaseDialog doesn't contain button with index " + i);
+      Button b = buttonMethods.get(i).getAnnotation(Button.class);
+      final Method m = buttonMethods.get(i);
+      JButton button = new JButton(new AbstractAction(b.name()) {
+        public void actionPerformed(ActionEvent e) {
+          try {
+            m.invoke(BaseDialog.this);
+          } catch (IllegalAccessException e1) {
+            LOG.error(e1);
+          } catch (InvocationTargetException e1) {
+            LOG.error(e1);
+          }
+        }
+      });
+      if (b.defaultButton()) {
+        setDefaultButton(button);
+      }
+      result.add(button);
+    }
+
+    return result.toArray(new JButton[0]);
+  }
 
   protected abstract JComponent getMainComponent();
+
+
+  @Target(ElementType.METHOD)
+  @Retention(RetentionPolicy.RUNTIME)
+  public @interface Button {
+    int position();
+    String name();
+    boolean defaultButton() default false;
+  }
 }
