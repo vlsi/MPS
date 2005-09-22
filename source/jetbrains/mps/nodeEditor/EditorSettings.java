@@ -62,6 +62,18 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
 
     private JComboBox createFontsComboBox() {
       JComboBox result = new JComboBox(GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames());
+
+      result.setRenderer(new DefaultListCellRenderer() {
+        public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+          Component result = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+
+          Font font = new Font(value.toString(), Font.PLAIN, 12);
+          result.setFont(font);
+
+          return result;
+        }
+      });
+
       result.setSelectedItem("" + myFont.getFamily());
       return result;
     }
