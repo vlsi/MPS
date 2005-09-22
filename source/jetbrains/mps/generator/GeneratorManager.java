@@ -2,6 +2,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.baseLanguage.Classifier;
 import jetbrains.mps.baseLanguage.generator.target.DefaultTemplateGenerator;
+import jetbrains.mps.baseLanguage.generator.target.ReflectionClassifierFinder;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.ProjectWindow;
@@ -254,6 +255,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           progress.addText("Finished.");
         } finally {
           progress.finish();
+          ReflectionClassifierFinder.generationFinished();
           if (language != null) language.updateLastGenerationTime();
           invocationContext.getComponent(ProjectPane.class).enableRebuild();
         }
