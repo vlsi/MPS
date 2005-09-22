@@ -2,19 +2,15 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.ide.ProjectWindow;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.project.GlobalScope;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author Kostik
@@ -24,10 +20,9 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
   private SModel mySModel = null;
   private SModelUID myModelUID = new SModelUID("", "");
-  private ArrayList<SModelListener> myModelListeners;
-  private ArrayList<SModelListener> myModelListenersForImportedModels;
-  private ArrayList<SModelCommandListener> myModelCommandListenersForImportedModels;
-  private ArrayList<SModelCommandListener> myCommandListeners;
+  private List<SModelListener> myModelListeners;
+  private List<SModelCommandListener> myModelCommandListenersForImportedModels;
+  private List<SModelCommandListener> myCommandListeners;
 
   protected AbstractSModelDescriptor(SModel model) {
     mySModel = model;
@@ -107,24 +102,8 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
         myModelListeners.clear();
         myModelListeners = null;
       }
-      // todo: remove listener?
-      if (myModelListenersForImportedModels != null) {
-//
-//    temporary break editors update
-//
-//        Iterator<SModelDescriptor> iterator = mySModel.importedModels(ProjectWindow.instance().getGlobalOperationContext());
-//        while (iterator.hasNext()) {
-//          SModelDescriptor imported = iterator.next();
-//          for (SModelListener listener : myModelListenersForImportedModels) {
-//            imported.addSModelListener(listener);
-//            imported.addSModelListenerToImportedModels(listener);
-//          }
-//        }
-        myModelListenersForImportedModels.clear();
-        myModelListenersForImportedModels = null;
-      }
 
-      // todo: remove listener?
+      // todo: when remove listener?
       if (myCommandListeners != null) {
         for (SModelCommandListener listener : myCommandListeners) {
           if (!mySModel.hasSModelCommandListener(listener)) {
@@ -135,19 +114,15 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
         myCommandListeners = null;
       }
 
-      // todo: remove listener?
+      // todo: when remove listener?
       if (myModelCommandListenersForImportedModels != null) {
-//
-//    temporary break editors update
-//
-//        Iterator<SModelDescriptor> iterator = mySModel.importedModels(ProjectWindow.instance().getGlobalOperationContext());
-//        while (iterator.hasNext()) {
-//          SModelDescriptor imported = iterator.next();
-//          for (SModelCommandListener listener : myModelCommandListenersForImportedModels) {
-//            imported.addSModelCommandListener(listener);
-//            imported.addSModelCommandListenerToImportedModels(listener);
-//          }
-//        }
+        Iterator<SModelDescriptor> iterator = mySModel.importedModels(GlobalScope.getInstance());
+        while (iterator.hasNext()) {
+          SModelDescriptor imported = iterator.next();
+          for (SModelCommandListener listener : myModelCommandListenersForImportedModels) {
+            imported.addSModelCommandListener(listener);
+          }
+        }
         myModelCommandListenersForImportedModels.clear();
         myModelCommandListenersForImportedModels = null;
       }
@@ -183,36 +158,17 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     }
   }
 
-  public void addSModelListenerToImportedModels(SModelListener listener) {
-//
-//    temporary break editors update
-//
-//    if (mySModel != null) {
-//      Iterator<SModelDescriptor> iterator = mySModel.importedModels(ProjectWindow.instance().getGlobalOperationContext());
-//      while (iterator.hasNext()) {
-//        SModelDescriptor imported = iterator.next();
-//        imported.addSModelListener(listener);
-//      }
-//    } else {
-//      if (myModelListenersForImportedModels == null) myModelListenersForImportedModels = new ArrayList<SModelListener>();
-//      myModelListenersForImportedModels.add(listener);
-//    }
-  }
-
   public void addSModelCommandListenerToImportedModels(SModelCommandListener listener) {
-//
-//    temporary break editors update
-//
-//    if (mySModel != null) {
-//      Iterator<SModelDescriptor> iterator = mySModel.importedModels(ProjectWindow.instance().getGlobalOperationContext());
-//      while (iterator.hasNext()) {
-//        SModelDescriptor imported = iterator.next();
-//        imported.addSModelCommandListener(listener);
-//      }
-//    } else {
-//      if (myModelCommandListenersForImportedModels == null) myModelCommandListenersForImportedModels = new ArrayList<SModelCommandListener>();
-//      myModelCommandListenersForImportedModels.add(listener);
-//    }
+    if (mySModel != null) {
+      Iterator<SModelDescriptor> iterator = mySModel.importedModels(GlobalScope.getInstance());
+      while (iterator.hasNext()) {
+        SModelDescriptor imported = iterator.next();
+        imported.addSModelCommandListener(listener);
+      }
+    } else {
+      if (myModelCommandListenersForImportedModels == null) myModelCommandListenersForImportedModels = new ArrayList<SModelCommandListener>();
+      myModelCommandListenersForImportedModels.add(listener);
+    }
   }
 
   public void addSModelCommandListener(SModelCommandListener listener) {

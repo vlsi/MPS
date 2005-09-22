@@ -28,7 +28,6 @@ public interface SModelDescriptor {
   void addSModelListener(SModelListener listener);
   void removeSModelListener(SModelListener listener);
 
-  void addSModelListenerToImportedModels(SModelListener listener);
   void addSModelCommandListenerToImportedModels(SModelCommandListener listener);
 
   void addSModelCommandListener(SModelCommandListener listener);
