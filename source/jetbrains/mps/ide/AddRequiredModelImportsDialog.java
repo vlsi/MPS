@@ -89,55 +89,45 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
     return BorderLayout.CENTER;
   }
 
-  protected JButton[] createButtons() {
-    return new JButton[] {
+  @BaseDialog.Button(position = 0, name = "Add All", defaultButton = true)
+  public void buttonAddAll() {
+    for (SModelUID imported : myImports) {
+      myModel.addImportedModel(imported);
+    }
+    for (String language : myLanguages) {
+      myModel.addLanguage(language);
+    }
+    myCanceled = false;
+    dispose();
+  }
 
-            new JButton(new AbstractAction("Add All") {
-              public void actionPerformed(ActionEvent e) {
-                for (SModelUID imported : myImports)
-                  myModel.addImportedModel(imported);
-                for (String language : myLanguages)
-                  myModel.addLanguage(language);
-                myCanceled = false;
-                dispose();
-              }
-            }) {
-              {
-                setDefaultButton(this);
-              }
-            },
-            new JButton(new AbstractAction("Add Selected") {
-              public void actionPerformed(ActionEvent e) {
-                for (SModelUID imported : myImportsToAdd)
-                  myModel.addImportedModel(imported);
-                for (String language : myLanguagesToAdd)
-                  myModel.addLanguage(language);
-                myCanceled = false;
-                dispose();
-              }
-            }),
-            new JButton(new AbstractAction("Don't Add") {
-              public void actionPerformed(ActionEvent e) {
-                myCanceled = false;
-                dispose();
-              }
-            }),
-             new JButton(new AbstractAction("Cancel") {
-              public void actionPerformed(ActionEvent e) {
-                myCanceled = true;
-                dispose();
-              }
-            })
+  @BaseDialog.Button(position = 1, name = "Add Selected")
+  public void buttonAddSelected() {
+    for (SModelUID imported : myImportsToAdd) {
+      myModel.addImportedModel(imported);
+    }
+    for (String language : myLanguagesToAdd) {
+      myModel.addLanguage(language);
+    }
+    myCanceled = false;
+    dispose();
+  }
 
-    };
+  @BaseDialog.Button(position = 2, name = "Don't Add")
+  public void buttonDontAdd() {
+    myCanceled = false;
+    dispose();
+  }
+
+  @BaseDialog.Button(position = 3, name = "Cancel")
+  public void buttonCancel() {
+    myCanceled = true;
+    dispose();
   }
 
   protected JComponent getMainComponent() {
     return myMainComponent;
   }
-
-
-
 
    private class MyImportsTableModel implements TableModel {
 

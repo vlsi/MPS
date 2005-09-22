@@ -127,7 +127,7 @@ public abstract class BaseDialog extends JDialog {
     myErrorLabel.setText(errorText);
   }
 
-  protected JButton[] createButtons() {
+  private JButton[] createButtons() {
     Map<Integer, Method> buttonMethods = new HashMap<Integer, Method>();
     for (Method m : getClass().getMethods()) {
       if (m.isAnnotationPresent(Button.class) && !Modifier.isStatic(m.getModifiers())) {
