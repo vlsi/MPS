@@ -15,7 +15,6 @@ import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.reform.CellRangeSelection;
 import jetbrains.mps.nodeEditor.test.EventRecorder;
-import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CopyUtil;
@@ -34,7 +33,7 @@ import java.util.List;
  * Author: Sergey Dmitriev
  * Created Sep 14, 2003
  */
-public abstract class AbstractEditorComponent extends JComponent implements Scrollable, IDataProvider {
+public abstract class AbstractEditorComponent extends JComponent implements Scrollable, IActionDataProvider {
   private static final Logger LOG = Logger.getLogger(AbstractEditorComponent.class);
   public static final String EDITOR_POPUP_MENU_ACTIONS = "editor-popup-menu-actions";
 

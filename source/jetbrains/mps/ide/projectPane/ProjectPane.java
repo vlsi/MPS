@@ -5,7 +5,7 @@ import jetbrains.mps.ide.ProjectWindow;
 import jetbrains.mps.ide.actions.model.DeleteModelAction;
 import jetbrains.mps.ide.actions.nodes.DeleteNodeAction;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.IDataProvider;
+import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.ide.ui.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
@@ -34,7 +34,7 @@ import java.util.List;
  * Author: Sergey Dmitriev
  * Created Oct 25, 2003
  */
-public class ProjectPane extends JComponent implements IDataProvider {
+public class ProjectPane extends JComponent implements IActionDataProvider {
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);
 
   public static final String PROJECT_PANE_NODE_ACTIONS = "project-pane-node-actions";
