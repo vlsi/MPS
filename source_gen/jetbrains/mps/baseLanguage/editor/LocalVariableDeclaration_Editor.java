@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.CellAction_DeleteSmart;
 import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
-import jetbrains.mps.baseLanguage.editor.__util;
 
 public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
 
