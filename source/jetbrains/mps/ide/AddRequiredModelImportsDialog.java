@@ -24,7 +24,7 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
 
 
 
-  private static final DialogDimensions ourDefaultDimensionSettings = new DialogDimensions(200,200,600,300);
+  private static final DialogDimensionsSettings.DialogDimensions ourDefaultDimensionSettings = new DialogDimensionsSettings.DialogDimensions(200,200,600,300);
 
   private SModel myModel;
 
@@ -79,7 +79,7 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
     myMainComponent.add(panel, BorderLayout.CENTER);
   }
 
-  public DialogDimensions getDefaultDimensionSettings() {
+  public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
     return ourDefaultDimensionSettings;
   }
 

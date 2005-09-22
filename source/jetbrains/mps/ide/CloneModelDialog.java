@@ -22,7 +22,7 @@ import java.util.Set;
  */
 public class CloneModelDialog extends BaseNodeDialog {
 
-  private static final DialogDimensions ourDefaultDialogSettings = new DialogDimensions(100, 100, 500, 400);
+  private static final DialogDimensionsSettings.DialogDimensions ourDefaultDialogSettings = new DialogDimensionsSettings.DialogDimensions(100, 100, 500, 400);
   private CloneModelProperties myCloneModelProperties;
 
   private SModelDescriptor myWorkingModel;
@@ -34,7 +34,7 @@ public class CloneModelDialog extends BaseNodeDialog {
     return myCloneModelProperties;
   }
 
-  public DialogDimensions getDefaultDimensionSettings() {
+  public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
     return ourDefaultDialogSettings;
   }
 

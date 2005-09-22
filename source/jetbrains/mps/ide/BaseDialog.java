@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+import jetbrains.mps.project.ApplicationComponents;
+
 /**
  * @author Kostik
  */
@@ -33,7 +35,7 @@ public abstract class BaseDialog extends JDialog {
     setLocationRelativeTo(mainFrame);
 
     this.addWindowListener(new WindowAdapter() {
-      public void windowClosing(WindowEvent e) {
+      public void windowClosed(WindowEvent e) {
         saveMyDimensionSettings();
       }
     });
@@ -47,10 +49,10 @@ public abstract class BaseDialog extends JDialog {
     getRootPane().setDefaultButton(button);
   }
 
-  protected DialogDimensions myDialogDimensions;
+  protected DialogDimensionsSettings.DialogDimensions myDialogDimensions;
 
   protected static void saveDimensionSettings(int left, int top, int width, int height, Class<? extends BaseDialog> cls) {
-    String className = cls.getName();
+   /* String className = cls.getName();
     className = className.substring(className.lastIndexOf(".") + 1);
     Element dimensionsConfig = new Element(className + "DimensionsConfig");
 
@@ -60,7 +62,8 @@ public abstract class BaseDialog extends JDialog {
     dimensionsConfig.setAttribute(D_HEIGHT, height+"");
     IdeSettings settings = IdeSettings.getInstance();
     settings.putExternalElement(dimensionsConfig);
-    //settings.save();
+    //settings.save();*/
+    ApplicationComponents.getInstance().getComponent(DialogDimensionsSettings.class).saveDimensionSettings(left, top, width, height, cls);
   }
 
   protected void saveMyDimensionSettings() {
@@ -73,23 +76,10 @@ public abstract class BaseDialog extends JDialog {
     saveDimensionSettings(myDialogDimensions.left, myDialogDimensions.top, myDialogDimensions.width, myDialogDimensions.height, this.getClass());
   }
 
-  public abstract DialogDimensions getDefaultDimensionSettings();
+  public abstract DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings();
 
-  protected static class DialogDimensions {
-    public int top;
-    public int left;
-    public int width;
-    public int height;
-    public DialogDimensions(int left, int top, int width, int height) {
-      this.height = height;
-      this.width = width;
-      this.left = left;
-      this.top = top;
-    }
-  }
-
-  protected static DialogDimensions getDimensionSettings(Class <? extends BaseDialog> cls) {
-    String className = cls.getName();
+  protected static DialogDimensionsSettings.DialogDimensions getDimensionSettings(Class <? extends BaseDialog> cls) {
+   /* String className = cls.getName();
     className = className.substring(className.lastIndexOf(".") + 1);
     IdeSettings settings = IdeSettings.getInstance();
     Element dimensionsConfig = settings.getExternalElement(className + "DimensionsConfig");
@@ -98,7 +88,8 @@ public abstract class BaseDialog extends JDialog {
     int top = Integer.parseInt(dimensionsConfig.getAttributeValue(D_TOP));
     int width = Integer.parseInt(dimensionsConfig.getAttributeValue(D_WIDTH));
     int height = Integer.parseInt(dimensionsConfig.getAttributeValue(D_HEIGHT));
-    return new DialogDimensions(left, top, width, height);
+    return new DialogDimensionsSettings.DialogDimensions(left, top, width, height);*/
+    return ApplicationComponents.getInstance().getComponent(DialogDimensionsSettings.class).getDimensionSettings(cls);
   }
 
   protected void updateDimensionSettings() {
