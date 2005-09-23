@@ -86,7 +86,7 @@ public class Solution extends AbstractModule implements ModelLocator {
     CommandProcessor.instance().addCommandListener(myEventTranslator);
   }
 
-  public void setSolutionDescriptor(final SolutionDescriptor newDescriptor, IOperationContext operationContext) {
+  public void setSolutionDescriptor(SolutionDescriptor newDescriptor) {
     // release languages and models (except descriptor model)
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), Solution.this);
     LanguageRepository.getInstance().unRegisterLanguages(Solution.this);

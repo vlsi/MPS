@@ -6,12 +6,10 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.projectLanguage.LanguagePath;
-import jetbrains.mps.projectLanguage.PersistenceUtil;
-import jetbrains.mps.projectLanguage.ProjectDescriptor;
-import jetbrains.mps.projectLanguage.SolutionPath;
+import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vcs.VersionControlManager;
@@ -35,7 +33,7 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope, IContainer
   private File myProjectFile;
   private ProjectDescriptor myProjectDescriptor;
 
-  private List<Solution> mySolutions;
+  private List<Solution> mySolutions = new LinkedList<Solution>();
   private List<Language> myLanguages;
 
   private File myWorkspaceFile;
@@ -75,24 +73,49 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope, IContainer
     return SModelRepository.getInstance().getAllModelDescriptors();
   }
 
-  private void revalidateContent(File projectFile, final SModel model) {
+  private void revalidateContent(File projectFile, final SModel projectModel) {
     // load solutions
-    mySolutions = new LinkedList<Solution>();
+    List<Solution> newSolutions = new LinkedList<Solution>();
     for (SolutionPath solutionPath : CollectionUtil.iteratorAsIterable(myProjectDescriptor.projectSolutions())) {
       File descriptorFile = new File(solutionPath.getPath());
-      if (descriptorFile.exists()) {
-        mySolutions.add(new Solution(descriptorFile));
-      } else {
+      if (!descriptorFile.exists()) {
         LOG.error("Couldn't load solution from: " + descriptorFile.getAbsolutePath() + " : file doesn't exist");
+        continue;
+      }
+
+      Solution loadedSolution = null;
+      for (Solution solution : mySolutions) {
+        if (solution.getDescriptorFile().equals(descriptorFile)) {
+          loadedSolution = solution;
+          break;
+        }
+      }
+
+      if (loadedSolution != null) {
+        // update solution
+        SolutionDescriptor solutionDescriptor = PersistenceUtil.loadSolutionDescriptor(descriptorFile,
+                ProjectModelDescriptor.createDescriptorFor(loadedSolution).getSModel());
+        loadedSolution.setSolutionDescriptor(solutionDescriptor);
+        newSolutions.add(loadedSolution);
+        mySolutions.remove(loadedSolution);
+      } else {
+        newSolutions.add(new Solution(descriptorFile));
       }
     }
+
+    // dispose other solutions
+    for (Solution solution : mySolutions) {
+      solution.dispose();
+    }
+    mySolutions.clear();
+    mySolutions = newSolutions;
 
     // convert legacy project to new solution
     final Solution solution = Solution.createFromLegacyProjectFile(projectFile);
     if (solution != null) {
-      model.runLoadingAction(new Runnable() {
+      projectModel.runLoadingAction(new Runnable() {
         public void run() {
-          SolutionPath solutionPath = SolutionPath.newInstance(model);
+          SolutionPath solutionPath = SolutionPath.newInstance(projectModel);
           solutionPath.setPath(solution.getDescriptorFile().getAbsolutePath());
           myProjectDescriptor.addProjectSolution(solutionPath);
         }
@@ -122,9 +145,7 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope, IContainer
     LanguageRepository.getInstance().unRegisterLanguages(MPSProject.this);
     SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
     SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, MPSProject.this);
-    for (Solution solution : getProjectSolutions()) {
-      solution.dispose();
-    }
+
     myProjectDescriptor = newDescriptor;
     LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
     revalidateContent(myProjectFile, newDescriptor.getModel());
@@ -149,9 +170,7 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope, IContainer
     SolutionPath solutionPath = new SolutionPath(model);
     solutionPath.setPath(solutionDescriptionFile.getAbsolutePath());
     projectDescriptor.addProjectSolution(solutionPath);
-
     setProjectDescriptor(projectDescriptor);
-
     myEventTranslator.projectChanged();
   }
 
