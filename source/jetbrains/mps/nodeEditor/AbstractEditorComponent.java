@@ -37,7 +37,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private static final Logger LOG = Logger.getLogger(AbstractEditorComponent.class);
   public static final String EDITOR_POPUP_MENU_ACTIONS = "editor-popup-menu-actions";
 
-  private HashMap<EditorCell, Set<SNode>> myCellsToNodesToDependOnMap = new HashMap<EditorCell, Set<SNode>>();
+  private WeakHashMap<EditorCell, Set<SNode>> myCellsToNodesToDependOnMap = new WeakHashMap<EditorCell, Set<SNode>>();
 
   private boolean myHasLastCaretX = false;
   private int myLastCaretX;
@@ -1172,6 +1172,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myLastCaretX = lastCaretX;
     myHasLastCaretX = true;
   }
+
+  public void putCellAndNodesToDependOn(EditorCell cell, Set<SNode> nodes) {
+    myCellsToNodesToDependOnMap.put(cell, nodes);
+  }
+
 
   private EditorCell findEditableCell(EditorCell root) {
     if (root instanceof EditorCell_Label && ((EditorCell_Label) root).isEditable() && root.isSelectable()) {

@@ -3,10 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelUtil;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 
 
@@ -39,11 +36,17 @@ public class EditorManager {
     INodeEditor editor = getEditor(context, node);
     EditorCell nodeCell;
     try {
-      //todo add AccessListener
+      //voodoo for editor incremental rebuild support
+      CellBuildModelAccessListener modelAccessListener = new CellBuildModelAccessListener(context.getNodeEditorComponent());
+      ModelAccessCaster.setModelReadAccessListener(modelAccessListener);
       nodeCell = editor.createEditorCell(context, node);
+      modelAccessListener.recordFinished(nodeCell);
+      //-voodoo
     } catch (Exception e) {
       LOG.error("Failed to create cell for node " + node.getDebugText(), e);
       nodeCell = EditorCell_Error.create(context, node, "!exception!:" + node.getDebugText());
+    } finally {
+      ModelAccessCaster.removeModelAccessListener();
     }
     if (node.getChildCount(NODE_TO_PLACE_AFTER) == 0) {
       return nodeCell;
