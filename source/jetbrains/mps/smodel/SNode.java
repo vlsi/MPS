@@ -737,7 +737,7 @@ public abstract class SNode implements Cloneable {
 
   public String toString() {
     String name = getName();
-    if (name != null) {
+    if (name != null && !name.equals("")) {
       return name;
     }
     return getConceptName();
