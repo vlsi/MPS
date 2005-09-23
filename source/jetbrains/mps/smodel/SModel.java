@@ -28,6 +28,8 @@ public class SModel implements Iterable<SNode> {
 
   private Set<SModelListener> myListeners = new WeakSet<SModelListener>();
   private List<SModelCommandListener> myCommandListeners = new ArrayList<SModelCommandListener>();
+  private ModelReadAccessListener myReadAccessListener;
+
   private List<SNode> myRoots = new ArrayList<SNode>();
   private SModelUID myUID = new SModelUID("unnamed", "");
 
@@ -45,6 +47,7 @@ public class SModel implements Iterable<SNode> {
   private SModelEventTranslator myEventTranslator = new SModelEventTranslator();
 
   private Set<SModelUID> myDescriptorNotFoundReportedModelUIDs = new HashSet<SModelUID>();
+
 
   public SModel(SModelUID modelUID) {
     this();
@@ -619,6 +622,14 @@ public class SModel implements Iterable<SNode> {
     for (SNode root : roots) {
       root.delete();
     }
+  }
+
+  public void setModelReadAccessListener(ModelReadAccessListener listener) {
+    myReadAccessListener = listener;
+  }
+
+  public void fireModelReadAccessed(SNode node) {
+    if (myReadAccessListener != null) myReadAccessListener.readAccess(node);
   }
 
   /*package*/

@@ -34,7 +34,7 @@ public class LanguageRepository {
 
   public LanguageRepository() {
     CommandProcessor.instance().addCommandListener(myCommandTranslator);
-    // do not convert this field into a local variable -
+    // DO NOT CONVERT this FIELD into a LOCAL VARIABLE -
     // otherwise this listener will be collected very quickly
     // (myListeners in CommandProcessor is a WeakSet)
     myListenerToRemoveUnusedModules = new CommandAdapter() {

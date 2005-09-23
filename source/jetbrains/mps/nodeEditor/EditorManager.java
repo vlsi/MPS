@@ -22,12 +22,6 @@ public class EditorManager {
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     EditorCell editorCell = createEditorCell_internal(context, node);
 
-/*    //checking if the cell is created for referenced node (i.e. not aggregated)
-    SNode rootNode = context.getNodeEditorComponent().getRootCell().getSNode();
-    if (!SModelUtil.isParent(rootNode, node)) {
-       SModelUtil.find
-    }
-    */
     boolean hasBadReference = false;
     for (SReference sr : node.getReferences()) {
       if (!sr.isResolved()) {
@@ -45,6 +39,7 @@ public class EditorManager {
     INodeEditor editor = getEditor(context, node);
     EditorCell nodeCell;
     try {
+      //todo add AccessListener
       nodeCell = editor.createEditorCell(context, node);
     } catch (Exception e) {
       LOG.error("Failed to create cell for node " + node.getDebugText(), e);

@@ -80,10 +80,12 @@ public abstract class SNode implements Cloneable {
   }
 
   public SModel getModel() {
+    myModel.fireModelReadAccessed(this);
     return myModel;
   }
 
   public String getRoleOf(SNode node) {
+    myModel.fireModelReadAccessed(this);
     if (getChildren().contains(node)) return node.getRole_();
 
     for (SReference reference : getReferences()) {
@@ -94,6 +96,7 @@ public abstract class SNode implements Cloneable {
   }
 
   public Set<String> getChildRoles() {
+    myModel.fireModelReadAccessed(this);
     Set<String> result = new HashSet<String>();
     for (SNode child : getChildren()) {
       result.add(getRoleOf(child));
@@ -102,6 +105,7 @@ public abstract class SNode implements Cloneable {
   }
 
   public Set<String> getReferenceRoles() {
+    myModel.fireModelReadAccessed(this);
     Set<String> result = new HashSet<String>();
     for (SReference ref : getReferences()) {
       result.add(ref.getRole());
@@ -110,12 +114,14 @@ public abstract class SNode implements Cloneable {
   }
 
   public boolean isAncestorOf(SNode child) {
+    myModel.fireModelReadAccessed(this);
     if (child == this) return true;
     if (child.getParent() == null) return false;
     return isAncestorOf(child.getParent());
   }
 
   public SNode getContainingRoot() {
+    myModel.fireModelReadAccessed(this);
     if (getParent() == null) return this;
     return getParent().getContainingRoot();
   }
@@ -146,6 +152,7 @@ public abstract class SNode implements Cloneable {
 
 
   public Object getUserObject(Object key) {
+    myModel.fireModelReadAccessed(this);
     return myUserObjects.get(key);
   }
 
@@ -162,6 +169,7 @@ public abstract class SNode implements Cloneable {
   }
 
   public String getName() {
+    myModel.fireModelReadAccessed(this);
     return getProperty(NAME);
   }
 
@@ -171,6 +179,7 @@ public abstract class SNode implements Cloneable {
 
 
   public SNode getChildById(String id) {
+    myModel.fireModelReadAccessed(this);
     if (id.equals(getId())) return this;
     for (SNode child : getChildren()) {
       SNode result = child.getChildById(id);
@@ -184,10 +193,12 @@ public abstract class SNode implements Cloneable {
   //
 
   public Map<String, String> getProperties() {
+    myModel.fireModelReadAccessed(this);
     return myProperties;
   }
 
   public boolean getBooleanProperty(String propertyName) {
+    myModel.fireModelReadAccessed(this);
     String value = getProperty(propertyName);
     return "true".equals(value);
   }
@@ -197,6 +208,7 @@ public abstract class SNode implements Cloneable {
   }
 
   public int getIntegerProperty(String propertyName) {
+    myModel.fireModelReadAccessed(this);
     String value = getProperty(propertyName);
     try {
       return Integer.parseInt(value);
@@ -210,6 +222,7 @@ public abstract class SNode implements Cloneable {
   }
 
   public String getProperty(String propertyName) {
+    myModel.fireModelReadAccessed(this);
     return myProperties.get(propertyName);
   }
 
@@ -306,14 +319,17 @@ public abstract class SNode implements Cloneable {
   }
 
   public List<SNode> getChildren() {
+    myModel.fireModelReadAccessed(this);
     return myChildren;
   }
 
   public int getChildCount() {
+    myModel.fireModelReadAccessed(this);
     return myChildren.size();
   }
 
   public List<SNode> getChildren(String role) {
+    myModel.fireModelReadAccessed(this);
     List<SNode> result = new ArrayList<SNode>();
     for (SNode child : myChildren) {
       if (role.equals(child.getRole_())) result.add(child);
@@ -369,10 +385,12 @@ public abstract class SNode implements Cloneable {
   // ---------------------------------
 
   public List<SReference> getReferences() {
+    myModel.fireModelReadAccessed(this);
     return new ArrayList<SReference>(myReferences);
   }
 
   public List<SReference> getReferences(String role) {
+    myModel.fireModelReadAccessed(this);
     if(role == null) {
       return getReferences();
     }
@@ -450,6 +468,7 @@ public abstract class SNode implements Cloneable {
   }
 
   public SReference getReference(String role) {
+    myModel.fireModelReadAccessed(this);
     // tmp check
     int count = getReferentCount(role);
     if (count > 1) {
@@ -502,6 +521,7 @@ public abstract class SNode implements Cloneable {
   }
 
   public int getReferentCount(String role) {
+    myModel.fireModelReadAccessed(this);
     int count = 0;
     for (Iterator<SReference> iterator = myReferences.iterator(); iterator.hasNext();) {
       SReference semanticReference = iterator.next();
@@ -513,6 +533,7 @@ public abstract class SNode implements Cloneable {
   }
 
   public <T extends SNode> Iterator<T> referents(String role) {
+    myModel.fireModelReadAccessed(this);
     List<T> list = new LinkedList<T>();
     for (Iterator<SReference> iterator = myReferences.iterator(); iterator.hasNext();) {
       SReference reference = iterator.next();
@@ -655,6 +676,7 @@ public abstract class SNode implements Cloneable {
   }
 
   public Iterator<SNode> depthFirstChildren() {
+    myModel.fireModelReadAccessed(this);
     List<SNode> allChildren = new ArrayList<SNode>();
     putAggregationTree2List(this, allChildren);
     return allChildren.iterator();
@@ -697,6 +719,7 @@ public abstract class SNode implements Cloneable {
   }
 
   public String getId() {
+    myModel.fireModelReadAccessed(this);
     if (myId == null) {
       setId(generateUniqueId());
     }
@@ -732,10 +755,12 @@ public abstract class SNode implements Cloneable {
   }
 
   public String getConceptName() {
+    myModel.fireModelReadAccessed(this);
     return getClass().getName().substring(getClass().getName().lastIndexOf('.') + 1);
   }
 
   public String toString() {
+    myModel.fireModelReadAccessed(this);
     String name = getName();
     if (name != null && !name.equals("")) {
       return name;

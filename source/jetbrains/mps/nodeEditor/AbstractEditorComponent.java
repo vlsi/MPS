@@ -37,6 +37,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private static final Logger LOG = Logger.getLogger(AbstractEditorComponent.class);
   public static final String EDITOR_POPUP_MENU_ACTIONS = "editor-popup-menu-actions";
 
+  private HashMap<EditorCell, Set<SNode>> myCellsToNodesToDependOnMap = new HashMap<EditorCell, Set<SNode>>();
+
   private boolean myHasLastCaretX = false;
   private int myLastCaretX;
 
@@ -750,6 +752,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     updateCellExplorerIfNeeded();
   }
 
+  //todo impl
+  public void rebuildUpdatedCells() {
+
+  }
+
+
   public EditorCell findNearestCell(int x, int y) {
     EditorCell cell = null;
     myRootCell.findCell(x, y);
@@ -1271,6 +1279,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           }
         }
 
+        //todo optimize
         rebuildEditorContent();
 
         SModelEvent lastAdd = null;
