@@ -1,8 +1,5 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.ide.command.CommandEventTranslator;
-import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.ConfirmSaveDialog;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.projectLanguage.ModelRoot;
@@ -23,10 +20,8 @@ public class SModelRepository extends SModelAdapter {
   private Map<SModelUID, SModelDescriptor> myUIDToModelDescriptorMap = new HashMap<SModelUID, SModelDescriptor>();
   private Map<SModelDescriptor, HashSet<ModelOwner>> myModelToOwnerMap = new HashMap<SModelDescriptor, HashSet<ModelOwner>>();
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
-  private MyCommandTranslator myCommandTranslator = new MyCommandTranslator();
 
   public SModelRepository() {
-    CommandProcessor.instance().addCommandListener(this.myCommandTranslator);
   }
 
 
@@ -54,12 +49,6 @@ public class SModelRepository extends SModelAdapter {
 
   public void removeRepositoryListener(RepositoryListener l) {
     myListeners.remove(l);
-  }
-
-  private void fireRepositoryChanged() {
-    for (RepositoryListener l : myListeners) {
-      l.repositoryChanged();
-    }
   }
 
   public List<SModelDescriptor> getAllModelDescriptors() {
@@ -93,7 +82,7 @@ public class SModelRepository extends SModelAdapter {
       myModelToOwnerMap.put(modelDescriptor, owners);
     }
     owners.add(owner);
-    repositoryChanged();
+    fireRepositoryChanged();
   }
 
   public void registerModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
@@ -113,7 +102,7 @@ public class SModelRepository extends SModelAdapter {
     }
     owners.add(owner);
     modelDescriptor.addSModelListener(this);
-    repositoryChanged();
+    fireRepositoryChanged();
   }
 
   public void unRegisterModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
@@ -124,7 +113,7 @@ public class SModelRepository extends SModelAdapter {
       // THE REPOSITORY IS CLEANED UP AFTER COMMAND IS COMPLETED
     }
 
-    repositoryChanged();
+    fireRepositoryChanged();
   }
 
   public void unRegisterModelDescriptors(ModelOwner owner) {
@@ -138,7 +127,7 @@ public class SModelRepository extends SModelAdapter {
       }
     }
 
-    repositoryChanged();
+    fireRepositoryChanged();
   }
 
   public void deleteModelDescriptor(SModelDescriptor modelDescriptor) {
@@ -344,22 +333,9 @@ public class SModelRepository extends SModelAdapter {
     return result;
   }
 
-
-  public void repositoryChanged() {
-    if (CommandProcessor.instance().isInsideCommand()) {
-      myCommandTranslator.repositoryChanged();
+  private void fireRepositoryChanged() {
+    for (RepositoryListener l : myListeners) {
+      l.repositoryChanged();
     }
-  }
-
-  private class MyCommandTranslator extends CommandEventTranslator {
-
-    protected void fireCommandEvent() {
-      fireRepositoryChanged();
-    }
-
-    public void repositoryChanged() {
-      markCurrentCommandsDirty();
-    }
-
   }
 }

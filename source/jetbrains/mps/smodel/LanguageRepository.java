@@ -2,7 +2,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.command.CommandEvent;
-import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
@@ -25,7 +24,6 @@ public class LanguageRepository {
   private Map<String, Language> myNamespaceToLanguageMap = new HashMap<String, Language>();
   private Map<Language, Set<LanguageOwner>> myLanguageToOwnersMap = new HashMap<Language, Set<LanguageOwner>>();
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
-  private MyCommandTranslator myCommandTranslator = new MyCommandTranslator();
   private CommandAdapter myListenerToRemoveUnusedModules;
 
   public static LanguageRepository getInstance() {
@@ -33,7 +31,6 @@ public class LanguageRepository {
   }
 
   public LanguageRepository() {
-    CommandProcessor.instance().addCommandListener(myCommandTranslator);
     // DO NOT CONVERT this FIELD into a LOCAL VARIABLE -
     // otherwise this listener will be collected very quickly
     // (myListeners in CommandProcessor is a WeakSet)
@@ -82,7 +79,7 @@ public class LanguageRepository {
         }
         owners.add(owner);
       }
-      repositoryChanged();
+      fireRepositoryChanged();
       return language;
     } catch (IOException e) {
       LOG.error(e);
@@ -120,7 +117,7 @@ public class LanguageRepository {
       }
     }
 
-    repositoryChanged();
+    fireRepositoryChanged();
   }
 
   public void removeUnusedLanguages() {
@@ -227,21 +224,5 @@ public class LanguageRepository {
   public List<Language> getAllLanguages() {
     Iterator<Language> langauges = myLanguageToOwnersMap.keySet().iterator();
     return CollectionUtil.iteratorAsList(langauges);
-  }
-
-
-  public void repositoryChanged() {
-    myCommandTranslator.repositoryChanged();
-  }
-
-  private class MyCommandTranslator extends CommandEventTranslator {
-
-    protected void fireCommandEvent() {
-      fireRepositoryChanged();
-    }
-
-    public void repositoryChanged() {
-      markCurrentCommandsDirty();
-    }
   }
 }

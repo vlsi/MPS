@@ -1,17 +1,19 @@
 package jetbrains.mps.ide.languageRepositoryViewer;
 
+import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
+import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.command.CommandEvent;
+import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.command.ICommandListener;
+import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
-import jetbrains.mps.ide.BootstrapLanguages;
-import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.projectPane.SortUtil;
-import jetbrains.mps.ide.action.MPSAction;
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -22,11 +24,7 @@ import java.awt.event.ActionEvent;
 public class LanguageRepositoryView extends DefaultTool {
   private MPSTree myTree = new MyTree();
   private JScrollPane myComponent = new JScrollPane(myTree);
-  private RepositoryListener myListener = new RepositoryListener() {
-    public void repositoryChanged() {
-      myTree.rebuildTree();
-    }
-  };
+  private DeferringEventHandler myDeferringEventHandler = new DeferringEventHandler();
 
   public LanguageRepositoryView() {
     myTree.rebuildTree();
@@ -46,11 +44,11 @@ public class LanguageRepositoryView extends DefaultTool {
 
   public void toolShown() {
     myTree.rebuildTree();
-    SModelRepository.getInstance().addRepositoryListener(myListener);
+    myDeferringEventHandler.installListeners();
   }
 
   public void toolHidden() {
-    SModelRepository.getInstance().removeRepositoryListener(myListener);
+    myDeferringEventHandler.unInstallListeners();
   }
 
   private class MyTree extends MPSTree {
@@ -127,11 +125,47 @@ public class LanguageRepositoryView extends DefaultTool {
         if (myOwner instanceof BootstrapLanguages) {
           return Icons.PROJECT_LANGUAGE_ICON;
         }
-        if (myOwner instanceof  Solution) {
+        if (myOwner instanceof Solution) {
           return Icons.SOLUTION_ICON;
         }
         return Icons.DEFAULT_ICON;
       }
     }
   }
+
+  private class DeferringEventHandler implements ICommandListener, RepositoryListener {
+    private boolean deferredUpdate = false;
+
+    public void installListeners() {
+      CommandProcessor.instance().addCommandListener(this);
+      LanguageRepository.getInstance().addRepositoryListener(this);
+    }
+
+    public void unInstallListeners() {
+      CommandProcessor.instance().removeCommandListener(this);
+      LanguageRepository.getInstance().removeRepositoryListener(this);
+    }
+
+    public void repositoryChanged() {
+      if (CommandProcessor.instance().isInsideCommand()) {
+        deferredUpdate = true;
+      } else {
+        myTree.rebuildTree();
+      }
+    }
+
+    public void beforeCommandFinished(CommandEvent event) {
+    }
+
+    public void commandFinished(CommandEvent event) {
+      if (deferredUpdate) {
+        deferredUpdate = false;
+        myTree.rebuildTree();
+      }
+    }
+
+    public void commandStarted(CommandEvent event) {
+    }
+  }
+
 }

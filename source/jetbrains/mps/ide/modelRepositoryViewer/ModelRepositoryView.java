@@ -1,6 +1,9 @@
 package jetbrains.mps.ide.modelRepositoryViewer;
 
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
+import jetbrains.mps.ide.command.CommandEvent;
+import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.command.ICommandListener;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.SortUtil;
@@ -11,6 +14,8 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.event.SModelsAdapter;
+import jetbrains.mps.smodel.event.SModelsMulticaster;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -21,11 +26,7 @@ import java.awt.event.ActionEvent;
 public class ModelRepositoryView extends DefaultTool {
   private MPSTree myTree = new MyTree();
   private JScrollPane myComponent = new JScrollPane(myTree);
-  private RepositoryListener myListener = new RepositoryListener() {
-    public void repositoryChanged() {
-      myTree.rebuildTree();
-    }
-  };
+  private DeferringEventHandler myDeferringEventHandler = new DeferringEventHandler();
 
   public ModelRepositoryView() {
     myTree.rebuildTree();
@@ -33,11 +34,11 @@ public class ModelRepositoryView extends DefaultTool {
 
   public void toolShown() {
     myTree.rebuildTree();
-    SModelRepository.getInstance().addRepositoryListener(myListener);
+    myDeferringEventHandler.installListeners();
   }
 
   public void toolHidden() {
-    SModelRepository.getInstance().removeRepositoryListener(myListener);
+    myDeferringEventHandler.unInstallListeners();
   }
 
   public String getName() {
@@ -135,6 +136,49 @@ public class ModelRepositoryView extends DefaultTool {
       protected String getNodeIdentifier() {
         return myOwner.toString();
       }
+    }
+  }
+
+  private class DeferringEventHandler extends SModelsAdapter implements ICommandListener, RepositoryListener {
+    private boolean deferredUpdate = false;
+
+    public void installListeners() {
+      CommandProcessor.instance().addCommandListener(this);
+      SModelRepository.getInstance().addRepositoryListener(this);
+      SModelsMulticaster.getInstance().addSModelsListener(this);
+    }
+    public void unInstallListeners() {
+      CommandProcessor.instance().removeCommandListener(this);
+      SModelRepository.getInstance().removeRepositoryListener(this);
+      SModelsMulticaster.getInstance().removeSModelsListener(this);
+    }
+
+    public void modelLoaded(SModelDescriptor modelDescriptor) {
+      if(CommandProcessor.instance().isInsideCommand()) {
+         deferredUpdate = true;
+      } else {
+        myTree.rebuildTree();
+      }
+    }
+    public void repositoryChanged() {
+      if(CommandProcessor.instance().isInsideCommand()) {
+         deferredUpdate = true;
+      } else {
+        myTree.rebuildTree();
+      }
+    }
+
+    public void beforeCommandFinished(CommandEvent event) {
+    }
+
+    public void commandFinished(CommandEvent event) {
+      if(deferredUpdate) {
+        deferredUpdate = false;
+        myTree.rebuildTree();
+      }
+    }
+
+    public void commandStarted(CommandEvent event) {
     }
   }
 }

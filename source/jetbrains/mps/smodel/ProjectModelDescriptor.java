@@ -19,7 +19,7 @@ public class ProjectModelDescriptor extends AbstractSModelDescriptor {
   }
 
   private ProjectModelDescriptor() {
-    super(new SModelUID("ProjectModel" + ourProjectModelDescriptorCount++, "$internal$"));
+    super(new SModelUID("projectModel" + ourProjectModelDescriptorCount++, "$internal$"));
   }
 
   public void reloadFromDisk() {

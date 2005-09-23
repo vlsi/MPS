@@ -2,12 +2,11 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.project.GlobalScope;
 
 import java.io.File;
 import java.util.*;
@@ -84,13 +83,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   public SModel getSModel() {
     if (mySModel == null) {
       mySModel = loadModel();
-
-      // todo: remove
-      CommandProcessor.instance().executeCommand(new Runnable() {
-        public void run() {
-          SModelRepository.getInstance().repositoryChanged();
-        }
-      });
+      SModelsMulticaster.getInstance().fireModelLoadedEvent(this);
 
       LOG.assertLog(mySModel != null, "Couldn't load model \"" + getModelUID() + "\"");
       if (myModelListeners != null) {
