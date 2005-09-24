@@ -18,14 +18,14 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteItem
   private LinkDeclaration myLinkDeclaration;
   private SNode mySourceNode;
   private SNode myCurrentTargetNode;
-  private IScope myOperationContext;
+  private IScope myScope;
 
   public DefaultChildNodeSubstituteAction(SNode parameterNode, SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, IScope scope) {
     mySourceNode = sourceNode;
     myParameterNode = parameterNode;
     myLinkDeclaration = linkDeclaration;
     myCurrentTargetNode = currentTargetNode;
-    myOperationContext = scope;
+    myScope = scope;
 
     if (SModelUtil.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.aggregation) {
       throw new RuntimeException("Only aggregation links are allowed here.");
@@ -40,8 +40,16 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteItem
     return myParameterNode;
   }
 
+  public SNode getCurrentTargetNode() {
+    return myCurrentTargetNode;
+  }
+
+  public LinkDeclaration getLinkDeclaration() {
+    return myLinkDeclaration;
+  }
+
   public IScope getScope() {
-    return myOperationContext;
+    return myScope;
   }
 
   public String getMatchingText(String pattern) {
@@ -64,7 +72,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteItem
     return newChild;
   }
 
-  protected SNode createChildNode(SNode parameterNode, SModel model, String pattern) {
+  public SNode createChildNode(SNode parameterNode, SModel model, String pattern) {
     if (parameterNode instanceof ConceptDeclaration) {
       return SModelUtil.instantiateConceptDeclaration((ConceptDeclaration) parameterNode, model);
     }

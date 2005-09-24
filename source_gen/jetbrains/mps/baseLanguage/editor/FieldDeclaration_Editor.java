@@ -109,7 +109,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
-        FieldDeclaration_TypeCellActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1075289941064");
         noRefCell.putUserObject(EditorCell.ROLE, "type");
         return noRefCell;
@@ -123,7 +122,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
-    FieldDeclaration_TypeCellActions.setCellActions(editorCell, node, context);
     return editorCell;
   }
   public EditorCell createInitializerCell(EditorContext context, SNode node) {

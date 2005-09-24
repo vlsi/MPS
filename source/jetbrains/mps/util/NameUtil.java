@@ -92,8 +92,16 @@ public class NameUtil {
   }
 
   public static String nodeFQName(SNode node) {
-    return node.getModel().getUID().getLongName() + "." + node.getName();
+    String name = node.getName();
+    // TRICK: NativeClassProvider creates Classifiers with FQ name.
+    // if we have FQ name here - do not concatenate it with model long name
+    if (name != null && name.indexOf('.') >= 0) {
+      return name;
+    }
+
+    return node.getModel().getLongName() + "." + name;
   }
+
 
   public static String nodeConceptFQName(SNode node) {
     String conceptName = NameUtil.shortNameFromLongName(node.getClass().getName());

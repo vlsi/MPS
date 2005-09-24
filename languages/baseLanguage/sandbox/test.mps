@@ -158,5 +158,51 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1127501659937">
+    <property name="name" value="TestArrays" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1127521381925">
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1127521385662">
+        <property name="name" value="args" />
+        <node role="type" type="jetbrains.mps.baseLanguage.ArrayType" id="1127521404777">
+          <node role="componentType" type="jetbrains.mps.baseLanguage.ClassType" id="1127521404778">
+            <link role="classifier" extResolveInfo="1.[ClassConcept]String" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1127521515935" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1127521382005" />
+    </node>
+    <node role="staticField" type="jetbrains.mps.baseLanguage.StaticFieldDeclaration" id="1127521372765">
+      <property name="name" value="bbb" />
+      <node role="type" type="jetbrains.mps.baseLanguage.ArrayType" id="1127521376986">
+        <node role="componentType" type="jetbrains.mps.baseLanguage.ClassType" id="1127521377018">
+          <link role="classifier" extResolveInfo="1.[ClassConcept]AbstractStringBuilder" />
+        </node>
+      </node>
+    </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1127505657359">
+      <property name="name" value="aaa" />
+      <node role="type" type="jetbrains.mps.baseLanguage.ArrayType" id="1127511843639">
+        <node role="componentType" type="jetbrains.mps.baseLanguage.InterfaceType" id="1127511843796">
+          <link role="classifier" targetNodeId="1115766127296" />
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1127501681001">
+      <property name="name" value="method" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1127501681440" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.ArrayType" id="1127520302970">
+        <node role="componentType" type="jetbrains.mps.baseLanguage.TypeVariableReference" id="1127520308379">
+          <link role="typeVariableDeclaration" targetNodeId="1127509349664" />
+        </node>
+      </node>
+    </node>
+    <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1127509349664">
+      <property name="name" value="T1" />
+    </node>
+    <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1127509355540">
+      <property name="name" value="T2" />
+    </node>
+  </node>
 </model>
 

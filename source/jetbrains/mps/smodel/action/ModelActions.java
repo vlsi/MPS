@@ -11,6 +11,7 @@ import jetbrains.mps.util.QueryMethod;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Collections;
 
 /**
  * Created by IntelliJ IDEA.
@@ -42,7 +43,7 @@ public class ModelActions {
               NodeSubstituteActionsBuilder substituteActionsBuilder = iterator.next();
               // is applicable ?
               if (substituteActionsBuilder.getApplicableLinkMetaclass() == metaClass &&
-                          substituteActionsBuilder.getApplicableConcept() == targetConcept) {
+                      substituteActionsBuilder.getApplicableConcept() == targetConcept) {
                 substituteActionsBuilders.add(substituteActionsBuilder);
               }
             }
@@ -83,19 +84,31 @@ public class ModelActions {
   // --------------------------------
 
   private static List<INodeSubstituteAction> filterActions(NodeSubstituteActionsBuilder substituteActionsBuilder, List<INodeSubstituteAction> actions, IScope scope) {
+    String filterQueryMethodId = substituteActionsBuilder.getActionsFilterAspectId();
+    // filter is optional
+    if (filterQueryMethodId == null) {
+      return actions;
+    }
+
     Object[] args = new Object[]{actions, scope};
-    String methodName = "nodeSubstituteActionsBuilder_ActionsFilter_" + substituteActionsBuilder.getActionsFilterAspectId();
+    String methodName = "nodeSubstituteActionsBuilder_ActionsFilter_" + filterQueryMethodId;
     SModel model = substituteActionsBuilder.getModel();
     List<INodeSubstituteAction> result = (List<INodeSubstituteAction>) QueryMethod.invoke(methodName, args, model);
     return result;
   }
 
   private static List<INodeSubstituteAction> createActions(NodeSubstituteActionsBuilder substituteActionsBuilder, SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, IScope scope) {
+    String factoryQueryMethodId = substituteActionsBuilder.getActionsFactoryAspectId();
+    // factory is optional
+    if (factoryQueryMethodId == null) {
+      return Collections.EMPTY_LIST;
+    }
+
     Object[] args = new Object[]{sourceNode,
-                      currentTargetNode,
-                      linkDeclaration,
-                      scope};
-    String methodName = "nodeSubstituteActionsBuilder_ActionsFactory_" + substituteActionsBuilder.getActionsFactoryAspectId();
+            currentTargetNode,
+            linkDeclaration,
+            scope};
+    String methodName = "nodeSubstituteActionsBuilder_ActionsFactory_" + factoryQueryMethodId;
     SModel model = substituteActionsBuilder.getModel();
     List<INodeSubstituteAction> result = (List<INodeSubstituteAction>) QueryMethod.invoke(methodName, args, model);
     return result;

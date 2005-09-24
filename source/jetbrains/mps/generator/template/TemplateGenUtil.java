@@ -87,7 +87,7 @@ public class TemplateGenUtil {
       nodeBuilder.getGenerator().showErrorMessage(templateNode, "Couldn't resolve template reference \"" + templateReference.getRole() + "\"");
       //test
       LOG.error("uhhh! error. set breakpoint here, referenceResolver:" + referenceResolver);
-      referenceResolver.resolveTarget(templateReference, nodeBuilder);
+//      referenceResolver.resolveTarget(templateReference, nodeBuilder);
       //test
 
       // dump builders info
