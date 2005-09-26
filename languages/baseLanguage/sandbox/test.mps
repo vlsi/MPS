@@ -197,6 +197,12 @@
         </node>
       </node>
     </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1127758831744">
+      <property name="name" value="i" />
+      <node role="type" type="jetbrains.mps.baseLanguage.ArrayType" id="1127758837090">
+        <node role="componentType" type="jetbrains.mps.baseLanguage.IntegerType" id="1127758837106" />
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1127501681001">
       <property name="name" value="method" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1127501681440" />
@@ -211,7 +217,40 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.InterfaceType" id="1127754701003">
         <link role="classifier" targetNodeId="1115766166286" />
       </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1127754693423" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1127758799756">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1127759093843">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1127759093844">
+            <property name="name" value="qa" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1127759093845">
+              <link role="classifier" extResolveInfo="1.[ClassConcept]Boolean" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1127759103488">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1127759103489">
+            <property name="name" value="as" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ArrayType" id="1127759103490">
+              <node role="componentType" type="jetbrains.mps.baseLanguage.ClassType" id="1127759103491">
+                <link role="classifier" extResolveInfo="1.[ClassConcept]Boolean" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1127759155712">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1127759155713">
+            <property name="name" value="aaa" />
+            <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1127759155745" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1127762107148">
+        <property name="name" value="assd" />
+        <node role="type" type="jetbrains.mps.baseLanguage.ArrayType" id="1127762107149">
+          <node role="componentType" type="jetbrains.mps.baseLanguage.ClassType" id="1127762107150">
+            <link role="classifier" extResolveInfo="1.[ClassConcept]String" />
+          </node>
+        </node>
+      </node>
     </node>
     <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1127509349664">
       <property name="name" value="T1" />
