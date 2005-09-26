@@ -5,6 +5,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Set;
+import java.util.HashSet;
 import java.net.URL;
 import java.net.MalformedURLException;
 
@@ -47,8 +49,8 @@ public class FileClassPathItem implements IClassPathItem {
     }
   }
 
-  public List<String> getAvailableClasses(String namespace) {
-    List<String> result = new ArrayList<String>();
+  public Set<String> getAvailableClasses(String namespace) {
+    Set<String> result = new HashSet<String>();
     File dir = getModelDir(namespace);
     if (dir.exists()) {
       for (String path : dir.list()) {
@@ -56,6 +58,15 @@ public class FileClassPathItem implements IClassPathItem {
           result.add(path.substring(0, path.length() - ".class".length()));
         }
       }
+    }
+    return result;
+  }
+
+  public Set<String> getSubpackages(String namespace) {
+    Set<String> result = new HashSet<String>();
+    File dir = getModelDir(namespace);
+    for (File file : dir.listFiles()) {
+      if (file.isDirectory()) result.add(namespace + "." + file.getName());
     }
     return result;
   }

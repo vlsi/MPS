@@ -3,6 +3,8 @@ package jetbrains.mps.reloading;
 import java.net.URL;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Set;
+import java.util.HashSet;
 
 /**
  * @author Kostik
@@ -33,11 +35,21 @@ public class CompositeClassPathItem implements IClassPathItem {
     return null;
   }
 
-  public List<String> getAvailableClasses(String namespace) {
-    List<String> result = new ArrayList<String>();
+  public Set<String> getAvailableClasses(String namespace) {
+    Set<String> result = new HashSet<String>();
     for (IClassPathItem item : myChidlren) {
       result.addAll(item.getAvailableClasses(namespace));
     }
+    return result;
+  }
+
+  public Set<String> getSubpackages(String namespace) {
+    Set<String> result = new HashSet<String>();
+
+    for (IClassPathItem item : myChidlren) {
+      result.addAll(item.getSubpackages(namespace));
+    }
+
     return result;
   }
 

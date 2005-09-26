@@ -5,9 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Enumeration;
+import java.util.*;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -69,8 +67,8 @@ public class JarFileClassPathItem implements IClassPathItem {
     }
   }
 
-  public List<String> getAvailableClasses(String namespace) {
-    List<String> result = new ArrayList<String>();
+  public Set<String> getAvailableClasses(String namespace) {
+    Set<String> result = new HashSet<String>();
     String prefix = namespace.replace('.', '/') + "/";
 
     for (Enumeration<? extends ZipEntry> e = myZipFile.entries();  e.hasMoreElements();) {
@@ -87,11 +85,36 @@ public class JarFileClassPathItem implements IClassPathItem {
     return result;
   }
 
+  public Set<String> getSubpackages(String namespace) {
+    Set<String> result = new HashSet<String>();
+    String prefix = namespace.replace('.', '/') + "/";
+
+    for (Enumeration<? extends ZipEntry> e = myZipFile.entries();  e.hasMoreElements();) {
+      ZipEntry ze = e.nextElement();
+      String name = ze.getName();
+
+      if (name.startsWith(prefix) &&
+              !name.equals(prefix) &&
+              name.endsWith("/") &&
+              !name.substring(prefix.length(), name.length() - 1).contains("/")) {
+        result.add(name.substring(0, name.length() - 1).replace("/", "."));
+      }
+    }
+
+    return result;
+  }
+
   public long getClassesTimestamp(String namespace) {
     long timestamp = 0;
     for (String cls : getAvailableClasses(namespace)) {
       timestamp = Math.max(timestamp, getClassTimestamp(namespace + "." + cls));
     }
     return timestamp;
+  }
+
+  public static void main(String[] args) {
+    JarFileClassPathItem item = new JarFileClassPathItem(new File("lib/junit.jar"));
+
+    System.err.println(item.getSubpackages("junit"));
   }
 }
