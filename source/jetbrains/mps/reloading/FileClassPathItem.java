@@ -65,8 +65,10 @@ public class FileClassPathItem implements IClassPathItem {
   public Set<String> getSubpackages(String namespace) {
     Set<String> result = new HashSet<String>();
     File dir = getModelDir(namespace);
-    for (File file : dir.listFiles()) {
-      if (file.isDirectory()) result.add(namespace + "." + file.getName());
+    if (dir.exists()) {
+      for (File file : dir.listFiles()) {
+        if (file.isDirectory()) result.add(namespace + "." + file.getName());
+      }
     }
     return result;
   }
