@@ -177,8 +177,4 @@ public abstract class BaseDialog extends JDialog {
     String name();
     boolean defaultButton() default false;
   }
-
-  public class A {
-
-  }
 }
