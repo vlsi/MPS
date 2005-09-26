@@ -56,8 +56,7 @@ class SModelTreeNode extends MPSTreeNodeEx {
       public void run() {
         myModel = myModelDescriptor.getSModel();
       }
-    }
-            , "loading model in project pane");
+    }, "loading model in project pane");
     return myModel;
   }
 
@@ -96,7 +95,6 @@ class SModelTreeNode extends MPSTreeNodeEx {
 
   public void update() {
     isInitialized = false;
-    getTree().setExpandedState(new TreePath(getPath()), false);
     this.removeAllChildren();
   }
 
@@ -106,8 +104,7 @@ class SModelTreeNode extends MPSTreeNodeEx {
       public void run() {
         myModel = myModelDescriptor.getSModel();
       }
-    }
-            , "loading model in project pane");
+    }, "loading model in project pane");
 
     if (!myModel.hasSModelCommandListener(myModelListener)) {
       myModel.addSModelCommandListener(myModelListener);
@@ -139,8 +136,6 @@ class SModelTreeNode extends MPSTreeNodeEx {
     }
 
     public void modelChangedInCommand(final List<SModelEvent> events, EditorContext editorContext) {
-      System.err.println("ModelChanged in command!");
-
       ProjectPane projectPane = getOperationContext().getComponent(ProjectPane.class);
       projectPane.rebuildTree(new Runnable() {
         public void run() {
