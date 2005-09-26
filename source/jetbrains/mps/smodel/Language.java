@@ -72,7 +72,7 @@ public class Language extends AbstractModule implements ModelLocator {
 
     // default descriptorModel root
     ModelRoot modelRoot = new ModelRoot(descriptorModel);
-    modelRoot.setPath(descriptorFile.getParentFile().getAbsolutePath());
+    modelRoot.setPath(new File(descriptorFile.getParentFile(), "languageModels").getAbsolutePath());
     modelRoot.setPrefix(languageNamespace);
     languageDescriptor.addModelRoot(modelRoot);
 
@@ -360,6 +360,10 @@ public class Language extends AbstractModule implements ModelLocator {
 
   public void removeLanguageCommandListener(LanguageCommandListener listener) {
     myCommandListeners.remove(listener);
+  }
+
+  public String getLanguageModelsDir() {
+    return getLanguageDescriptor().modelRoots().next().getPath();
   }
 
   private class LanguageEventTranslator extends CommandEventTranslator {
