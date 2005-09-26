@@ -15,7 +15,7 @@ public class ModelAccessCaster {
 
   public static void setModelReadAccessListener(ModelReadAccessListener listener) {
     if (myReadAccessListener != null) {
-      LOG.error("attempt to replace not null model access listener", new Throwable());
+//      LOG.error("attempt to replace not null model access listener", new Throwable());
     }
     myReadAccessListener = listener;
   }
