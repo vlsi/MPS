@@ -1,7 +1,5 @@
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.smodel.IOperationContext;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -13,7 +11,7 @@ import java.net.MalformedURLException;
 /**
  * @author Kostik
  */
-public class FileClassPathItem extends ClassPathItem {
+public class FileClassPathItem implements IClassPathItem {
   private String myClassPath;
 
   public FileClassPathItem(String classPath) {

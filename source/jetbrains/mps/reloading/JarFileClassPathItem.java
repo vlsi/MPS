@@ -1,7 +1,5 @@
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.util.CollectionUtil;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,7 +14,7 @@ import java.util.zip.ZipFile;
 /**
  * @author Kostik
  */
-public class JarFileClassPathItem extends ClassPathItem {
+public class JarFileClassPathItem implements IClassPathItem {
   private ZipFile myZipFile;
   private String myPrefix;
 

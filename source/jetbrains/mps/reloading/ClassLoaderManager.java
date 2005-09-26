@@ -17,7 +17,7 @@ public class ClassLoaderManager {
   private boolean myUseSystemClassLoader;
 
   public void reloadAll() {
-    ClassPathItem item = null;
+    IClassPathItem item = null;
     if (myClassLoader instanceof MPSClassLoader) {
       item = ((MPSClassLoader) myClassLoader).getClassPathItem();
     }
@@ -62,7 +62,7 @@ public class ClassLoaderManager {
       super(new FileClassPathItem(classPath));
     }
 
-    public MyClassLoader(ClassPathItem item) {
+    public MyClassLoader(IClassPathItem item) {
       super(item);
     }
 
