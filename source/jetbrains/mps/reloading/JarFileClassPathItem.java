@@ -18,6 +18,10 @@ public class JarFileClassPathItem implements IClassPathItem {
   private ZipFile myZipFile;
   private String myPrefix;
 
+  public JarFileClassPathItem(String path) {
+    this(new File(path));
+  }
+
   public JarFileClassPathItem(File jarFile) {
     try {
       myPrefix = "jar:" + jarFile.toURL() + "!/";
@@ -30,6 +34,7 @@ public class JarFileClassPathItem implements IClassPathItem {
   public byte[] getClass(String name) {
     String path = name.replace('.', '/') + ".class";
     ZipEntry entry = myZipFile.getEntry(path);
+    if (entry == null) return null;
     try {
       InputStream inp = myZipFile.getInputStream(entry);
       List<Byte> list = new ArrayList<Byte>();
@@ -71,6 +76,7 @@ public class JarFileClassPathItem implements IClassPathItem {
     for (Enumeration<? extends ZipEntry> e = myZipFile.entries();  e.hasMoreElements();) {
       ZipEntry ze = e.nextElement();
       String name = ze.getName();
+
       if (name.startsWith(prefix) &&
               name.endsWith(".class") &&
               !name.contains("$") &&    //skip inner and anonymous classes

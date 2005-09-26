@@ -53,7 +53,7 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope, IContainer
         SModel model = ProjectModelDescriptor.createDescriptorFor(MPSProject.this).getSModel();
         myProjectDescriptor = PersistenceUtil.loadProjectDescriptor(projectFile, model);
 
-        ClassLoaderManager.getInstance().setClassesDir(getClassPath().get(0));
+        ClassLoaderManager.getInstance().setClassesDir(getClassPath());
 
         LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
         revalidateContent(projectFile, model);
@@ -224,6 +224,11 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope, IContainer
     } else {
       classpath.add(clspath);
     }
+
+    for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(myProjectDescriptor.classPathEntriess())) {
+      classpath.add(entry.getPath());
+    }
+
     return classpath;
   }
 

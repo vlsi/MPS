@@ -1,11 +1,17 @@
 package jetbrains.mps.reloading;
 
 import jetbrains.mps.util.NodeNameUtil;
+import jetbrains.mps.logging.Logger;
+
+import java.util.List;
+import java.io.File;
 
 /**
  * @author Kostik
  */
 public class ClassLoaderManager {
+  private static Logger LOG = Logger.getLogger(ClassLoaderManager.class);
+
   private static ClassLoaderManager ourInstance;
 
   public static ClassLoaderManager getInstance() {
@@ -47,9 +53,24 @@ public class ClassLoaderManager {
     return myClassLoader;
   }
 
-  public void setClassesDir(String path) {
+  public void setClassesDir(List<String> paths) {
     if (myUseSystemClassLoader) return;
-    myClassLoader = new MyClassLoader(path);
+
+    CompositeClassPathItem items = new CompositeClassPathItem();
+
+    for (String s : paths) {
+      if (!new File(s).exists()) {
+        LOG.warning("Class path item doesn't exists " + s);
+        continue;
+      }
+      if (new File(s).isDirectory()) {
+        items.add(new FileClassPathItem(s));
+      } else {
+        items.add(new JarFileClassPathItem(s));
+      }
+    }
+
+    myClassLoader = new MyClassLoader(items);
   }
 
   public MPSClassLoader getMPSClassLoader() {
