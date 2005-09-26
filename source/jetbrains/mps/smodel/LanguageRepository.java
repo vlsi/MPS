@@ -88,9 +88,9 @@ public class LanguageRepository {
   }
 
   void addLanguage(Language language, LanguageOwner owner) {
-    if (myNamespaceToLanguageMap.containsKey(language.getNamespace())) {
-      throw new RuntimeException("Couldn't add language \"" + language.getNamespace() + "\" : this language is already registered");
-    }
+//    if (myNamespaceToLanguageMap.containsKey(language.getNamespace())) {
+//      throw new RuntimeException("Couldn't add language \"" + language.getNamespace() + "\" : this language is already registered");
+//    }
     try {
       myFileToLanguageMap.put(language.getDescriptorFile().getCanonicalPath(), language);
       myNamespaceToLanguageMap.put(language.getNamespace(), language);
