@@ -149,11 +149,11 @@ public class MPSPlugin {
   }
 
 
-  public void createNewProject(String path, String name) throws IOException, XmlRpcException {
+  public String createNewProject(String path, String name) throws IOException, XmlRpcException {
     Vector<String> params = new Vector<String>();
     params.add(path);
     params.add(name);
-    myClient.execute("ProjectCreator.createNewProject", params);
+    return (String) myClient.execute("ProjectCreator.createNewProject", params);
   }
 
   public boolean isVersionControlPresent(String path) throws IOException, XmlRpcException {

@@ -66,6 +66,8 @@ public class ProjectCreator implements ApplicationComponent {
 
 
   public String createNewProject(final String path, final String name) {
+    final String[] result = { "OK" };
+
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
@@ -82,7 +84,14 @@ public class ProjectCreator implements ApplicationComponent {
             Module module = moduleManager.newModule(path + File.separator + name + ".iml", ModuleType.JAVA);
             ModuleRootManager rootManager = module.getComponent(ModuleRootManager.class);
             ModifiableRootModel rootModel = rootManager.getModifiableModel();
-            rootModel.setJdk(findSuitableJDK());
+            ProjectJdk jdk = findSuitableJDK();
+
+            if (jdk == null) {
+              result[0] = "Can't find suitable JDK";
+              return;
+            }
+
+            rootModel.setJdk(jdk);
 
 
             VirtualFile contentRootFile = lfs.refreshAndFindFileByIoFile(new File(path));
@@ -104,7 +113,7 @@ public class ProjectCreator implements ApplicationComponent {
       }
     }, ModalityState.NON_MMODAL);
 
-    return "OK";
+    return result[0];
   }
 
   private ProjectJdk findSuitableJDK() {

@@ -5,10 +5,10 @@
     <output url="file://$MODULE_DIR$/classes" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/myReaderConfiguration/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/framework/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/framework/src_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/readerConfigLanguage/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/readerConfigLanguage/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/readerFramework/source" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
