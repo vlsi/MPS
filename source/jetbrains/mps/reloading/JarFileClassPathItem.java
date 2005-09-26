@@ -1,5 +1,7 @@
 package jetbrains.mps.reloading;
 
+import jetbrains.mps.util.CollectionUtil;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -7,6 +9,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -49,6 +52,12 @@ public class JarFileClassPathItem extends ClassPathItem {
     }
   }
 
+  private long getClassTimestamp(String name) {
+    String path = name.replace('.', '/') + ".class";
+    ZipEntry entry = myZipFile.getEntry(path);
+    return entry.getTime();
+  }
+
   public URL getResource(String name) {
     try {
       return new URL(myPrefix + name);
@@ -58,10 +67,27 @@ public class JarFileClassPathItem extends ClassPathItem {
   }
 
   public List<String> getAvailableClasses(String namespace) {
-    return new ArrayList<String>();
+    List<String> result = new ArrayList<String>();
+    String prefix = namespace.replace('.', '/') + "/";
+
+    for (Enumeration<? extends ZipEntry> e = myZipFile.entries();  e.hasMoreElements();) {
+      ZipEntry ze = e.nextElement();
+      String name = ze.getName();
+      if (name.startsWith(prefix) &&
+              name.endsWith(".class") &&
+              !name.contains("$") &&    //skip inner and anonymous classes
+              !name.substring(prefix.length()).contains("/")) {
+        result.add(name.substring(prefix.length(), name.length() - ".class".length()));
+      }
+    }
+    return result;
   }
 
   public long getClassesTimestamp(String namespace) {
-    return 0;  //To change body of implemented methods use File | Settings | File Templates.
+    long timestamp = 0;
+    for (String cls : getAvailableClasses(namespace)) {
+      timestamp = Math.max(timestamp, getClassTimestamp(namespace + "." + cls));
+    }
+    return timestamp;
   }
 }
