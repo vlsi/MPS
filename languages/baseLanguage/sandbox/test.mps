@@ -170,7 +170,16 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1127521515935" />
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1127521382005" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1127521382005">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1127754752083">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1127754752131">
+            <property name="name" value="aaa" />
+            <node role="type" type="jetbrains.mps.baseLanguage.TypeVariableReference" id="1127754756539">
+              <link role="typeVariableDeclaration" targetNodeId="1127509349664" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="staticField" type="jetbrains.mps.baseLanguage.StaticFieldDeclaration" id="1127521372765">
       <property name="name" value="bbb" />
@@ -196,6 +205,13 @@
           <link role="typeVariableDeclaration" targetNodeId="1127509349664" />
         </node>
       </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1127754693390">
+      <property name="name" value="wqwe" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.InterfaceType" id="1127754701003">
+        <link role="classifier" targetNodeId="1115766166286" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1127754693423" />
     </node>
     <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1127509349664">
       <property name="name" value="T1" />
