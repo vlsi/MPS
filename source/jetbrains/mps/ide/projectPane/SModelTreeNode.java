@@ -6,6 +6,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
@@ -13,6 +14,7 @@ import jetbrains.mps.smodel.event.*;
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
+import javax.swing.tree.TreePath;
 import java.util.List;
 
 /**
@@ -94,6 +96,7 @@ class SModelTreeNode extends MPSTreeNodeEx {
 
   public void update() {
     isInitialized = false;
+    getTree().setExpandedState(new TreePath(getPath()), false);
     this.removeAllChildren();
   }
 
@@ -127,11 +130,17 @@ class SModelTreeNode extends MPSTreeNodeEx {
     DialogUtils.editModelProperties(myIDE, myModelDescriptor, getOperationContext());
   }*/
 
+  private MPSTree getTree() {
+    return getOperationContext().getComponent(ProjectWindow.class).getProjectPane().getTree();
+  }
+
   private class MyModelListener implements SModelCommandListener {
     public MyModelListener() {
     }
 
     public void modelChangedInCommand(final List<SModelEvent> events, EditorContext editorContext) {
+      System.err.println("ModelChanged in command!");
+
       ProjectPane projectPane = getOperationContext().getComponent(ProjectPane.class);
       projectPane.rebuildTree(new Runnable() {
         public void run() {
@@ -146,7 +155,7 @@ class SModelTreeNode extends MPSTreeNodeEx {
             }
 
             public void visitPropertyEvent(SModelPropertyEvent event) {
-              DefaultTreeModel treeModel = (DefaultTreeModel) getOperationContext().getComponent(ProjectWindow.class).getProjectPane().getTree().getModel();
+              DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
 
               //i tried to use nodeChange but it didn't work
               treeModel.nodeStructureChanged(findAncestorWith(event.getNode()));
@@ -168,8 +177,9 @@ class SModelTreeNode extends MPSTreeNodeEx {
       if (treeNode != null) {
         treeNode.update();
       }
-      DefaultTreeModel treeModel = (DefaultTreeModel) getOperationContext().getComponent(ProjectWindow.class).getProjectPane().getTree().getModel();
+      DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
       treeModel.nodeStructureChanged((TreeNode) treeModel.getRoot());
     }
   }
+
 }

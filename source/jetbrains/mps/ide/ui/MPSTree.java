@@ -394,4 +394,8 @@ public abstract class MPSTree extends JTree {
     expandPaths(expansionPaths);
   }
 
+  public void setExpandedState(TreePath path, boolean state) {
+    super.setExpandedState(path, state);
+  }
+
 }
