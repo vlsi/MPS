@@ -118,12 +118,19 @@ public class MessagesGutter extends JPanel {
       Graphics2D g = (Graphics2D) graphics;
 
       for (IGutterMessage msg : myMessages) {
-        g.setColor(Color.RED);
+
 
         int start = getMessageStart(msg);
         int length = getMessageHeight(msg);
+        int messageY = start + (length / 2);
 
-        g.fillRect(0, start, getWidth() - 2, length);
+        g.setColor(new Color(80, 80, 80, 70));
+        g.fillRect(1, messageY, getWidth() - 2, 2);
+
+        g.setColor(Color.RED);
+        g.fillRect(0, messageY - 1, getWidth() - 2, 2);
+
+
       }
     }
 
