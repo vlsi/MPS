@@ -1,8 +1,5 @@
 package jetbrains.mps.util;
 
-import jetbrains.mps.project.ApplicationComponents;
-import jetbrains.mps.ide.ProjectWindow;
-
 import javax.swing.*;
 import java.io.File;
 import java.awt.*;

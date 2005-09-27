@@ -67,15 +67,15 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private PropertyChangeListener myFocusListener;
 
   private IOperationContext myOperationContext;
-  private ProjectWindow myIde;
+  private ProjectFrame myIde;
 
   private MessagesGutter myMessagesGutter = new MessagesGutter(this);
 
-  public AbstractEditorComponent(ProjectWindow ide, IOperationContext operationContext) {
+  public AbstractEditorComponent(ProjectFrame ide, IOperationContext operationContext) {
     this(ide, operationContext, false);
   }
 
-  public AbstractEditorComponent(ProjectWindow ide, IOperationContext operationContext, boolean showErrorsGutter) {
+  public AbstractEditorComponent(ProjectFrame ide, IOperationContext operationContext, boolean showErrorsGutter) {
     myIde = ide;
     addFocusListener(new FocusAdapter() {
       public void focusGained(FocusEvent e) {

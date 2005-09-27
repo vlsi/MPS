@@ -27,7 +27,7 @@ public class CloneModelDialog extends BaseNodeDialog {
 
   private SModelDescriptor myWorkingModel;
   private SModel myProjectModel;
-  private ProjectWindow myIde;
+  private ProjectFrame myIde;
   private SModel mySModel;
 
   protected SNode getNode() {
@@ -39,7 +39,7 @@ public class CloneModelDialog extends BaseNodeDialog {
   }
 
 
-  public CloneModelDialog(ProjectWindow ide, SModelDescriptor modelDescriptor, IOperationContext operationContext) {
+  public CloneModelDialog(ProjectFrame ide, SModelDescriptor modelDescriptor, IOperationContext operationContext) {
     super(ide, "Clone Model", operationContext);
     myIde = ide;
     myWorkingModel = ProjectModelDescriptor.createDescriptorFor(operationContext.getModule());

@@ -5,7 +5,7 @@ import jetbrains.mps.baseLanguage.generator.target.DefaultTemplateGenerator;
 import jetbrains.mps.baseLanguage.generator.target.ReflectionClassifierFinder;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.ProjectWindow;
+import jetbrains.mps.ide.ProjectFrame;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.Message;
@@ -156,7 +156,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       public void run() {
         invocationContext.getComponent(ProjectPane.class).disableRebuild();
 
-        IProgressMonitor progress = new ProgressWindowProgressMonitor(invocationContext.getComponent(ProjectWindow.class), false);
+        IProgressMonitor progress = new ProgressWindowProgressMonitor(invocationContext.getComponent(ProjectFrame.class), false);
 
         boolean isIdeaPresent = MPSPlugin.getInstance().isIDEAPresent();
         try {

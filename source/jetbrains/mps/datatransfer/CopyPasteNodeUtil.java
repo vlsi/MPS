@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.AddRequiredModelImportsDialog;
-import jetbrains.mps.ide.ProjectWindow;
+import jetbrains.mps.ide.ProjectFrame;
 import jetbrains.textLanguage.Sentence;
 import jetbrains.textLanguage.Text;
 import jetbrains.textLanguage.Word;
@@ -342,7 +342,7 @@ public class CopyPasteNodeUtil {
     necessaryLanguages.retainAll(languagesFromPattern);
 
     if ((!additionalModels.isEmpty())||(!additionalLanguages.isEmpty())) {
-      AddRequiredModelImportsDialog dialog = new AddRequiredModelImportsDialog(context.getComponent(ProjectWindow.class), targetModel, additionalModels, additionalLanguages, necessaryImports, necessaryLanguages);
+      AddRequiredModelImportsDialog dialog = new AddRequiredModelImportsDialog(context.getComponent(ProjectFrame.class), targetModel, additionalModels, additionalLanguages, necessaryImports, necessaryLanguages);
       dialog.setModal(true);
       dialog.showDialog();
       return (!dialog.isCanceled());

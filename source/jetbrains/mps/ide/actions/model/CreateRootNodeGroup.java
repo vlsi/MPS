@@ -2,7 +2,7 @@ package jetbrains.mps.ide.actions.model;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.ide.ProjectWindow;
+import jetbrains.mps.ide.ProjectFrame;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.action.MPSAction;
@@ -27,7 +27,7 @@ public class CreateRootNodeGroup extends ActionGroup {
   public void update(ActionContext context) {
     clear();
     final SModelDescriptor modelDescriptor = context.get(SModelDescriptor.class);
-    final ProjectWindow ide = context.get(ProjectWindow.class);
+    final ProjectFrame ide = context.get(ProjectFrame.class);
     IOperationContext operationContext = context.get(IOperationContext.class);
 
     if (modelDescriptor.getSModel().getLanguageNamespaces().size() == 0) {

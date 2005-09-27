@@ -1,6 +1,6 @@
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.ide.ProjectWindow;
+import jetbrains.mps.ide.ProjectFrame;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.action.ActionContext;
@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.event.*;
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
-import javax.swing.tree.TreePath;
 import java.util.List;
 
 /**
@@ -114,7 +113,7 @@ class SModelTreeNode extends MPSTreeNodeEx {
       MPSTreeNodeEx treeNode = new SNodeTreeNode(sortedRoot, getOperationContext());
       add(treeNode);
     }
-    DefaultTreeModel treeModel = (DefaultTreeModel) getOperationContext().getComponent(ProjectWindow.class).getProjectPane().getTree().getModel();
+    DefaultTreeModel treeModel = (DefaultTreeModel) getOperationContext().getComponent(ProjectFrame.class).getProjectPane().getTree().getModel();
     treeModel.nodeStructureChanged(this);
     isInitialized = true;
   }
@@ -124,7 +123,7 @@ class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   private MPSTree getTree() {
-    return getOperationContext().getComponent(ProjectWindow.class).getProjectPane().getTree();
+    return getOperationContext().getComponent(ProjectFrame.class).getProjectPane().getTree();
   }
 
   private class MyModelListener implements SModelCommandListener {

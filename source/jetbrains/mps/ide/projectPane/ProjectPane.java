@@ -1,7 +1,7 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.FileUtil;
-import jetbrains.mps.ide.ProjectWindow;
+import jetbrains.mps.ide.ProjectFrame;
 import jetbrains.mps.ide.actions.model.DeleteModelAction;
 import jetbrains.mps.ide.actions.nodes.DeleteNodeAction;
 import jetbrains.mps.ide.action.ActionContext;
@@ -48,7 +48,7 @@ public class ProjectPane extends JComponent implements IActionDataProvider {
 
   private MyTree myTree = new MyTree();
   private MPSProject myProject;
-  private ProjectWindow myIDE;
+  private ProjectFrame myIDE;
   private HeaderWrapper myHeader;
   private boolean myRebuildEnabled = true;
   private IMPSProjectCommandListener myProjectListener = new IMPSProjectCommandListener() {
@@ -60,7 +60,7 @@ public class ProjectPane extends JComponent implements IActionDataProvider {
   private LanguageCommandListener myLanguageListener = new MyLanguageListener();
   private SolutionCommandListener mySolutionListener = new MySolutionListener();
 
-  public ProjectPane(ProjectWindow ide) {
+  public ProjectPane(ProjectFrame ide) {
     myIDE = ide;
     SModelsMulticaster.getInstance().addSModelsListener(new SModelsAdapter() {
       public void modelCreated(SModelDescriptor modelDescriptor) {

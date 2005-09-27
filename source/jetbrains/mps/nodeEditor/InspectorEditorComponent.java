@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.ide.ProjectWindow;
+import jetbrains.mps.ide.ProjectFrame;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
   private EditorContext myEditorContext;
   private SNodeProxy myNodeProxy;
 
-  public InspectorEditorComponent(ProjectWindow ide) {
+  public InspectorEditorComponent(ProjectFrame ide) {
     super(ide, null);
     myNodeProxy = new SNodeProxy(null, null);
     reinitEditor();

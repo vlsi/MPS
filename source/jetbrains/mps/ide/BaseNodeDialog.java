@@ -4,7 +4,7 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.BaseDialog;
-import jetbrains.mps.ide.ProjectWindow;
+import jetbrains.mps.ide.ProjectFrame;
 import jetbrains.mps.nodeEditor.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.UIEditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
@@ -23,7 +23,7 @@ public abstract class BaseNodeDialog extends BaseDialog {
   private UIEditorComponent myEditorComponent;
   private JSplitPane mySplitter;
 
-  protected BaseNodeDialog(ProjectWindow ide, String text, IOperationContext operationContext) throws HeadlessException {
+  protected BaseNodeDialog(ProjectFrame ide, String text, IOperationContext operationContext) throws HeadlessException {
     super(ide.getMainFrame(), text);
     myOperationContext = operationContext;
     InspectorEditorComponent inspector = new InspectorEditorComponent(ide);

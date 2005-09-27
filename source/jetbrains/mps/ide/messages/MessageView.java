@@ -1,6 +1,6 @@
 package jetbrains.mps.ide.messages;
 
-import jetbrains.mps.ide.ProjectWindow;
+import jetbrains.mps.ide.ProjectFrame;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
@@ -20,12 +20,12 @@ public class MessageView extends DefaultTool {
   public static final Icon ERROR_ICON = new ImageIcon(MessageView.class.getResource("error.png"));
   public static final Icon WARNING_ICON = new ImageIcon(MessageView.class.getResource("warning.png"));
 
-  private ProjectWindow myIde;
+  private ProjectFrame myIde;
   private JPanel myComponent = new JPanel();
   private DefaultListModel myModel = new DefaultListModel();
   private JList myList = new JList(myModel);
 
-  public MessageView(ProjectWindow ideMain) {
+  public MessageView(ProjectFrame ideMain) {
     myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     myIde = ideMain;
     myComponent.setLayout(new BorderLayout());

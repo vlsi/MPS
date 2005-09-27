@@ -19,7 +19,7 @@ import java.awt.event.KeyEvent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.ProjectWindow;
+import jetbrains.mps.ide.ProjectFrame;
 import jetbrains.mps.ide.command.CommandProcessor;
 
 /**
@@ -185,7 +185,7 @@ public abstract class MPSTree extends JTree {
   }
 
   protected ActionContext getActionContext(MPSTreeNode node, List<MPSTreeNode> nodes) {
-    ProjectWindow ide = node.getOperationContext().getComponent(ProjectWindow.class);
+    ProjectFrame ide = node.getOperationContext().getComponent(ProjectFrame.class);
     return new ActionContext(node.getOperationContext());
   }
 
