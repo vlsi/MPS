@@ -25,7 +25,7 @@ public class ProjectModelDescriptor extends AbstractSModelDescriptor {
   public void reloadFromDisk() {
   }
 
-  protected void updateNodeStatuses() {
+  public void updateNodeStatuses() {
   }
 
   protected SModel loadModel() {

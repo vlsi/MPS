@@ -22,6 +22,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   private List<SModelListener> myModelListeners;
   private List<SModelCommandListener> myModelCommandListenersForImportedModels;
   private List<SModelCommandListener> myCommandListeners;
+  private boolean myTypesUpToDate = false;
 
   protected AbstractSModelDescriptor(SModel model) {
     mySModel = model;
@@ -39,7 +40,9 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   {
     this.addSModelCommandListener(new SModelCommandListener() {
       public void modelChangedInCommand(List<SModelEvent> events, EditorContext editorContext) {
-        if (EventUtil.isDramaticalChange(events)) updateNodeStatuses();
+        if (EventUtil.isDramaticalChange(events)) {
+          myTypesUpToDate = false;
+        }
       }
     });
   }
@@ -119,16 +122,13 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
         myModelCommandListenersForImportedModels.clear();
         myModelCommandListenersForImportedModels = null;
       }
-
-      //Todo: This should be moved somewhere else
-      if (mySModel.roots().hasNext()) {
-        updateNodeStatuses();
-      }
     }
     return mySModel;
   }
 
-  protected void updateNodeStatuses() {
+  public void updateNodeStatuses() {
+    if (myTypesUpToDate) return;
+    myTypesUpToDate = true;
     mySModel.updateNodeStatuses();
   }
 
