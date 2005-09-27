@@ -71,7 +71,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private EventRecorder myRecorder = null;
   private ProjectWindow myIde;
 
+  private MessagesGutter myMessagesGutter = new MessagesGutter(this);
+
   public AbstractEditorComponent(ProjectWindow ide, IOperationContext operationContext) {
+    this(ide, operationContext, false);
+  }
+
+  public AbstractEditorComponent(ProjectWindow ide, IOperationContext operationContext, boolean showErrorsGutter) {
     myIde = ide;
     addFocusListener(new FocusAdapter() {
       public void focusGained(FocusEvent e) {
@@ -119,6 +125,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myContainer = new JPanel();
     myContainer.setLayout(new BorderLayout());
     myContainer.add(myScrollPane, BorderLayout.CENTER);
+
+    if (showErrorsGutter) {
+      myContainer.add(myMessagesGutter, BorderLayout.EAST);
+    }
 
     myNodeSubstituteChooser = new NodeSubstituteChooser(this);
     myNodeRangeSelection = new NodeRangeSelection(this);
@@ -250,6 +260,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     });
 
     ToolTipManager.sharedInstance().registerComponent(this);
+  }
+
+  public MessagesGutter getMessagesGutter() {
+    return myMessagesGutter;
   }
 
   public JToolTip createToolTip() {
