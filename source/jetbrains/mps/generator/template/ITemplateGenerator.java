@@ -8,15 +8,15 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.IModelGenerator;
+import jetbrains.mps.ide.progress.IProgressMonitor;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.TemplateDeclaration;
 import jetbrains.mps.transformation.TLBase.TemplateSwitch;
-import jetbrains.mps.util.Condition;
 import jetbrains.mps.typesystem.ITypeChecker;
-import jetbrains.mps.ide.progress.IProgressMonitor;
+import jetbrains.mps.util.Condition;
 
 import java.util.Map;
 
@@ -31,13 +31,13 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   void doMapping(SModel sourceModel, SModel targetModel, SModel templatesModel) throws GenerationFailedException;
 
-  int prepareReduction(SModel sourceModel, SModel targetModel, SModel templatesModel);
+  int prepareReduction(SModel sourceModel, SModel templatesModel);
 
   boolean hasPendingReductions();
 
   int preparePendingReduction();
 
-  void doReduction();
+  void doReduction(SModel targetModel);
 
   void processPropertyMacros(SNode sourceNode, SNode templateNode, SNode targetNode);
 

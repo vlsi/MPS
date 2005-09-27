@@ -400,7 +400,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     try {
       final SModel targetModel;
       if (generator instanceof ITemplateGenerator) {
-        GenerateWithTemplatesCommand command = new GenerateWithTemplatesCommand(sourceModel, templatesModel.getSModel(), mySaveTransientModels, (ITemplateGenerator) generator);
+        GenerateWithTemplatesCommand command = new GenerateWithTemplatesCommand(sourceModel, templatesModel.getSModel(), (ITemplateGenerator) generator);
         targetModel = command.execute();
       } else {
         IProgressMonitor childMonitor = monitor.startSubTask(AMOUNT_PER_MODEL);
@@ -427,9 +427,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
   private void saveTransientModels(GeneratorContext generatorContext) {
     // solution dir
-    String solutionKey = "" + System.currentTimeMillis();
+    String sessionId = generatorContext.getSessionId();
     String projectDir = generatorContext.getProject().getProjectFile().getParentFile().getAbsolutePath();
-    String solutionDir = projectDir + File.separatorChar + "outputModels" + File.separatorChar + solutionKey;
+    String solutionDir = projectDir + File.separatorChar + "outputModels" + File.separatorChar + sessionId;
 
     // save models to solution dir
     IModule transientModule = generatorContext.getModule();
@@ -448,7 +448,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     SModel solutionDescriptorModel = ProjectModelDescriptor.createDescriptorFor(transientModule).getSModel();
     solutionDescriptorModel.setLoading(true);
     SolutionDescriptor solutionDescriptor = new SolutionDescriptor(solutionDescriptorModel);
-    solutionDescriptor.setName("generator session " + solutionKey);
+    solutionDescriptor.setName("generator session " + sessionId);
 
     // add root where transient models were saved
     ModelRoot root = new ModelRoot(solutionDescriptorModel);
@@ -495,7 +495,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     }
 
     // save, add to project and reload all
-    File solutionFile = new File(solutionDir, solutionKey + ".msd");
+    File solutionFile = new File(solutionDir, "generatorSession_" + sessionId + ".msd");
     PersistenceUtil.saveSolutionDescriptor(solutionFile, solutionDescriptor);
     // remove transient descriptors from repository before re-loading
     transientModule.dispose();

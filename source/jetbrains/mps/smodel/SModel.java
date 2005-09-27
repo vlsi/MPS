@@ -51,8 +51,10 @@ public class SModel implements Iterable<SNode> {
   public SModel(SModelUID modelUID) {
     this();
     myUID = modelUID;
-    if (SModelStereotype.JAVA_STUB.equals(myUID.getStereotype()))
+    if (SModelStereotype.JAVA_STUB.equals(myUID.getStereotype()) ||
+            SModelStereotype.GENERATED.equals(myUID.getStereotype())) {
       myIsExternallyResolved = true;
+    }
   }
 
   public SModel() {
@@ -69,8 +71,10 @@ public class SModel implements Iterable<SNode> {
    */
   public void setModelUID(SModelUID modelUID) {
     myUID = modelUID;
-    if (SModelStereotype.JAVA_STUB.equals(myUID.getStereotype()))
+    if (SModelStereotype.JAVA_STUB.equals(myUID.getStereotype()) ||
+            SModelStereotype.GENERATED.equals(myUID.getStereotype())) {
       myIsExternallyResolved = true;
+    }
   }
 
   public String getShortName() {
@@ -97,7 +101,10 @@ public class SModel implements Iterable<SNode> {
 
   public void setStereotype(String stereotype) {
     myUID = new SModelUID(myUID.getLongName(), stereotype);
-    if (SModelStereotype.JAVA_STUB.equals(stereotype)) myIsExternallyResolved = true;
+    if (SModelStereotype.JAVA_STUB.equals(myUID.getStereotype()) ||
+            SModelStereotype.GENERATED.equals(myUID.getStereotype())) {
+      myIsExternallyResolved = true;
+    }
   }
 
   public void setLongName(String longName) {
@@ -385,13 +392,13 @@ public class SModel implements Iterable<SNode> {
 
   /*package*/
   ImportElement getImportElement(SModelUID modelUID) {
-   for (ImportElement importElement : myImports) {
-     if (importElement.getModelUID().equals(modelUID)) {
-       return importElement;
-     }
-   }
-   return null;
- }
+    for (ImportElement importElement : myImports) {
+      if (importElement.getModelUID().equals(modelUID)) {
+        return importElement;
+      }
+    }
+    return null;
+  }
 
 
   public void deleteImportedModel(SModelUID modelUID) {
@@ -474,10 +481,10 @@ public class SModel implements Iterable<SNode> {
 
   public IStatus updateNodeStatuses() {
     clearNodeStatuses();
-   ITypeChecker typeChecker = TypeCheckerAccess.instance().getTypeChecker();
-   if (typeChecker == null) return new Status.ERROR("null typechecker");
-   return updateNodeStatuses(typeChecker.getOperationContext().getScope());
-   // return new Status.OK();
+    ITypeChecker typeChecker = TypeCheckerAccess.instance().getTypeChecker();
+    if (typeChecker == null) return new Status.ERROR("null typechecker");
+    return updateNodeStatuses(typeChecker.getOperationContext().getScope());
+    // return new Status.OK();
   }
 
   public IStatus updateNodeStatuses(IScope scope) {
@@ -553,7 +560,8 @@ public class SModel implements Iterable<SNode> {
     if (node != null) {
       String currentResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(node);
       if (extResolveInfo.equals(currentResolveInfo)) return node;
-      else return findNodeWithExtResolveInfo(extResolveInfo);
+      else
+        return findNodeWithExtResolveInfo(extResolveInfo);
     } else {
       return findNodeWithExtResolveInfo(extResolveInfo);
     }
@@ -722,7 +730,7 @@ public class SModel implements Iterable<SNode> {
 
     public void commandFinished(CommandEvent event) {
       if (myEvents.size() > 0) {
-        EditorContext editorContext  = event.getEditorContext();
+        EditorContext editorContext = event.getEditorContext();
         fireSModelChangedInCommandEvent(new ArrayList<SModelEvent>(myEvents), editorContext);
       }
     }

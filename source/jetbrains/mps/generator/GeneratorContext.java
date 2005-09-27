@@ -25,6 +25,7 @@ public class GeneratorContext implements IOperationContext {
   private Generator myGeneratorModule;
   private IOperationContext myInvocationContext;
   private TransientModule myTransientModule;
+  private String mySessionId;
 
   public GeneratorContext(Generator generatorModule, IOperationContext invocationContext) {
     myGeneratorModule = generatorModule;
@@ -58,6 +59,13 @@ public class GeneratorContext implements IOperationContext {
 
   public String toString() {
     return "generator context: " + myGeneratorModule + " invocation cntx: " + myInvocationContext;
+  }
+
+  public String getSessionId() {
+    if( mySessionId == null) {
+      mySessionId = "" + System.currentTimeMillis();
+    }
+    return mySessionId;
   }
 
   private class TransientModule extends AbstractModule {

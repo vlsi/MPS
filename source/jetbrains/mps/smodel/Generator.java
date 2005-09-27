@@ -88,7 +88,7 @@ public class Generator extends AbstractModule implements ModelLocator {
 
   public String toString() {
     StringBuffer sb = new StringBuffer(this.getClass().getName());
-    sb.append(" \"").append(myGeneratorDescriptor.getName()).append("\"");
+    sb.append(" -> ").append(getTargetLanguageName());
     sb.append(" in: ").append(mySourceLanguage.getNamespace());
     return sb.toString();
   }
