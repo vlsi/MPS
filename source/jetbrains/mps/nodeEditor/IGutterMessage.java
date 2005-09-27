@@ -5,10 +5,10 @@ package jetbrains.mps.nodeEditor;
  */
 public interface IGutterMessage {
 
-  int getStart() throws NodeNotFoundException;
-  int getHeight() throws NodeNotFoundException;
+  int getStart();
+  int getHeight();
 
   String getMessage();
 
-  void doNavigate() throws NodeNotFoundException;
+  void doNavigate();
 }
