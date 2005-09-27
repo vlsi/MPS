@@ -47,6 +47,8 @@ public interface SModelDescriptor {
   void updateNodeStatuses();
 
   long timestamp();
+  long lastChange();
+  boolean isTypesUpToDate();
 
   void delete();
 }

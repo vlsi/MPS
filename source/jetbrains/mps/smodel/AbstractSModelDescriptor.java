@@ -23,6 +23,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   private List<SModelCommandListener> myModelCommandListenersForImportedModels;
   private List<SModelCommandListener> myCommandListeners;
   private boolean myTypesUpToDate = false;
+  private long myLastChange = System.currentTimeMillis();
 
   protected AbstractSModelDescriptor(SModel model) {
     mySModel = model;
@@ -42,6 +43,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
       public void modelChangedInCommand(List<SModelEvent> events, EditorContext editorContext) {
         if (EventUtil.isDramaticalChange(events)) {
           myTypesUpToDate = false;
+          myLastChange = System.currentTimeMillis();
         }
       }
     });
@@ -128,8 +130,18 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
   public void updateNodeStatuses() {
     if (myTypesUpToDate) return;
+    //we set true here because TypeCheckerImpl calls updateNodeStatuse, so if we don't do it
+    //we will have StackOverflow
     myTypesUpToDate = true;
     mySModel.updateNodeStatuses();
+  }
+
+  public long lastChange() {
+    return myLastChange;
+  }
+
+  public boolean isTypesUpToDate() {
+    return myTypesUpToDate;
   }
 
   public void addSModelListener(SModelListener listener) {
