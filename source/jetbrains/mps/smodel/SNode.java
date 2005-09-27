@@ -19,9 +19,10 @@ import java.util.*;
 public abstract class SNode implements Cloneable {
   private static final Logger LOG = Logger.getLogger(SNode.class);
 
-  public static final Object ERROR_STATUS = new Object();
-  public static final Object CHILDREN_ERROR_STATUS = new Object();
   public static final Object TYPE_OBJECT = new Object();
+  public static final Object STATUS = new Object();
+  public static final Object LAST_UPDATE = new Object();
+  public static final Object ERROR_STATUS = new Object();
   public static final Object BAD_REFERENT_STATUS = new Object();
 
   public static final String NAME = "name";

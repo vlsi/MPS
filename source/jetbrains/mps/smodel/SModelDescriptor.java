@@ -44,11 +44,12 @@ public interface SModelDescriptor {
   Set<ConceptDeclaration> findDescendants(ConceptDeclaration node, Set<ConceptDeclaration> descendantsKnownInModel);
   Set<SNode> findInstances(ConceptDeclaration concept, IScope scope);
 
-  void updateNodeStatuses();
-
   long timestamp();
   long lastChange();
-  boolean isTypesUpToDate();
+
+
+  //dramatical event counter
+  long state();
 
   void delete();
 }

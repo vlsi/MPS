@@ -37,36 +37,30 @@ public class MessagesGutter extends JPanel {
 
     if (node == null) return;
 
-    SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+    myErrosLabel.setIcon(Icons.OK);
 
-    if (!modelDescriptor.isTypesUpToDate()) {
+    if (node.getUserObject(SNode.LAST_UPDATE) == null ||
+            (Long) node.getUserObject(SNode.LAST_UPDATE) < node.getModel().getModelDescriptor().state()) {
       myErrosLabel.setIcon(Icons.IN_PROGRESS);
       return;
     }
 
-    myErrosLabel.setIcon(Icons.OK);
+    TSStatus status = (TSStatus) node.getUserObject(SNode.STATUS);
 
-    IStatus status = (IStatus) node.getUserObject(SNode.ERROR_STATUS);
+    removeAllMessages();
+    
     if (status != null && status.isError()) {
-      myErrosLabel.setIcon(Icons.ERRORS);
-    } else {
-      status = (IStatus) node.getUserObject(SNode.CHILDREN_ERROR_STATUS);
-      if (status != null && status.isError()) {
-        myErrosLabel.setIcon(Icons.ERRORS);
-      }
-    }
-
-    if (status != null && status.isError()) {
-      TSStatus type = TypeCheckerAccess.instance().getTypeChecker().getNodeType(node);
       List<TSStatus> tsStatuses = new ArrayList<TSStatus>();
 
-      if (type instanceof TSStatus.ERROR_COMPOSITE) {
-        tsStatuses.addAll(type.getAllErrors());
+      if (status instanceof TSStatus.ERROR_COMPOSITE) {
+        tsStatuses.addAll(status.getAllErrors());
       } else {
-        tsStatuses.add(type);
+        tsStatuses.add(status);
       }
 
-      removeAllMessages();
+      myErrosLabel.setIcon(Icons.ERRORS);
+
+
 
       for (final TSStatus s : tsStatuses) {
         final EditorCell cellForNode = myEditorComponent.findNodeCell(s.getSNode());
@@ -100,6 +94,8 @@ public class MessagesGutter extends JPanel {
           }
         });
       }
+    } else {
+      myErrosLabel.setIcon(Icons.OK);
     }
   }
 

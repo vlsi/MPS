@@ -29,17 +29,9 @@ public class SModelRepository extends SModelAdapter {
     return ApplicationComponents.getInstance().getComponent(SModelRepository.class);
   }
 
-  public void refreshModels(boolean updateNodeStatuses, IScope scope) {
+  public void refreshModels(IScope scope) {
     for (SModelDescriptor m : myUIDToModelDescriptorMap.values()) {
       m.refresh();
-    }
-
-    if (updateNodeStatuses) {
-      for (SModelDescriptor m : myUIDToModelDescriptorMap.values()) {
-        if (m.isInitialized()) {
-          m.getSModel().updateNodeStatuses(scope);
-        }
-      }
     }
   }
 
