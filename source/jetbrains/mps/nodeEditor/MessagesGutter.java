@@ -67,16 +67,15 @@ public class MessagesGutter extends JPanel {
       }
 
       for (final TSStatus s : tsStatuses) {
-        final EditorCell editorCell = myEditorComponent.getBigCellForNode(s.getSNode());
-        if (editorCell == null) return;
+        if (myEditorComponent.getBigCellForNode(s.getSNode()) == null) return;
 
         add(new IGutterMessage() {
           public int getStart() {
-            return editorCell.getY();
+            return myEditorComponent.getBigCellForNode(s.getSNode()).getY();
           }
 
           public int getHeight() {
-            return editorCell.getHeight();
+            return myEditorComponent.getBigCellForNode(s.getSNode()).getHeight();
           }
 
           public String getMessage() {
@@ -84,7 +83,7 @@ public class MessagesGutter extends JPanel {
           }
 
           public void doNavigate() {
-            myEditorComponent.changeSelection(editorCell);
+            myEditorComponent.changeSelection(myEditorComponent.getBigCellForNode(s.getSNode()));
           }
         });
       }
@@ -143,7 +142,7 @@ public class MessagesGutter extends JPanel {
       if (messages.size() > 0) {
         StringBuffer text = new StringBuffer();
         for (IGutterMessage msg : messages) {
-          if (text.length() > 0) {
+          if (text.length() > 0) {            
             text.append("\n");
           }
           text.append(msg.getMessage());
