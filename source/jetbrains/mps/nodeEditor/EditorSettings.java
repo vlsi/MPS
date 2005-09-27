@@ -94,6 +94,10 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
       return true;
     }
 
+    public List<IPreferencesPage> getChildren() {
+      return new ArrayList<IPreferencesPage>();
+    }
+
     public void commit() {
       String fontName = myFontsComboBox.getSelectedItem().toString();
       int fontSize = Integer.parseInt(mySizesComboBox.getSelectedItem().toString());

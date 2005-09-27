@@ -16,6 +16,7 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
+import java.util.*;
 
 import org.jdom.Element;
 
@@ -182,6 +183,10 @@ public class OutputView extends DefaultTool implements IExternalizableComponent,
         return true;
       }
 
+      public java.util.List<IPreferencesPage> getChildren() {
+        return new ArrayList<IPreferencesPage>();
+      }
+      
       public void commit() {
         myFontSize = Integer.valueOf(myFontSizeField.getText());
         updateComponent();

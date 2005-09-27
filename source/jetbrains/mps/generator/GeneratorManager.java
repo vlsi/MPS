@@ -540,6 +540,10 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       return true;
     }
 
+    public List<IPreferencesPage> getChildren() {
+      return new ArrayList<IPreferencesPage>();
+    }
+
     public void commit() {
       myCompileOnGeneration = myCompileInIdeaOnGeneration.isSelected();
       mySaveTransientModels = mySaveTransientModelsCheckBox.isSelected();
