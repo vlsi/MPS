@@ -23,6 +23,7 @@ public class MessagesGutter extends JPanel {
   private JLabel myErrosLabel = new JLabel(Icons.OK);
   private List<IGutterMessage> myMessages = new ArrayList<IGutterMessage>();
 
+
   public MessagesGutter(AbstractEditorComponent editorComponent) {
     myEditorComponent = editorComponent;
 
@@ -67,12 +68,12 @@ public class MessagesGutter extends JPanel {
         if (cellForNode == null) return;
 
         add(new IGutterMessage() {
-          public int getStart() throws NodeNotFoundException {
+          public int getStart() {
             EditorCell nodeCell = getNodeCell();
             return nodeCell.getY();
           }
 
-          public int getHeight() throws NodeNotFoundException {
+          public int getHeight() {
             return getNodeCell().getHeight();
           }
 
@@ -80,16 +81,16 @@ public class MessagesGutter extends JPanel {
             return s.getMessage();
           }
 
-          public void doNavigate() throws NodeNotFoundException {
+          public void doNavigate() {
             myEditorComponent.changeSelection(getNodeCell());
           }
 
-          private EditorCell getNodeCell() throws NodeNotFoundException {
+          public boolean isValid() {
+            return getNodeCell() != null;
+          }
+
+          private EditorCell getNodeCell() {
             EditorCell nodeCell = myEditorComponent.findNodeCell(s.getSNode());
-            if (nodeCell == null) {
-             // myMessages.remove(this);
-              throw new NodeNotFoundException();
-            }
             return nodeCell;
           }
         });
@@ -117,11 +118,7 @@ public class MessagesGutter extends JPanel {
         public void mousePressed(MouseEvent e) {
           List<IGutterMessage> messages = getMessagesAt(e.getY());
           if (messages.size() > 0) {
-            try {
-              messages.get(0).doNavigate();
-            } catch(NodeNotFoundException ex ) {
-              myMessages.remove(messages.get(0));
-            }
+            messages.get(0).doNavigate();
           }
         }
       });
@@ -132,15 +129,9 @@ public class MessagesGutter extends JPanel {
       Graphics2D g = (Graphics2D) graphics;
       List<IGutterMessage> messagesToRemove = new ArrayList<IGutterMessage>();
       for (IGutterMessage msg : myMessages) {
-        int start;
-        int length;
-        try {
-          start = getMessageStart(msg);
-          length = getMessageHeight(msg);
-        } catch (NodeNotFoundException ex) {
-          messagesToRemove.add(msg);
-          continue;
-        }
+        if (!msg.isValid()) continue;
+        int start = getMessageStart(msg);
+        int length = getMessageHeight(msg);
         int messageY = start + (length / 2);
 
         g.setColor(new Color(80, 80, 80, 70));
@@ -154,11 +145,11 @@ public class MessagesGutter extends JPanel {
       myMessages.removeAll(messagesToRemove);
     }
 
-    private int getMessageHeight(IGutterMessage msg) throws NodeNotFoundException {
+    private int getMessageHeight(IGutterMessage msg) {
       return (int) (Math.max(2.0d, msg.getHeight() * (((double) getHeight()) / ((double) myEditorComponent.getHeight()))));
     }
 
-    private int getMessageStart(IGutterMessage msg) throws NodeNotFoundException {
+    private int getMessageStart(IGutterMessage msg) {
       return (int) (msg.getStart() * (((double) getHeight()) / ((double) myEditorComponent.getHeight())));
     }
 
@@ -184,17 +175,10 @@ public class MessagesGutter extends JPanel {
       List<IGutterMessage> result = new ArrayList<IGutterMessage>();
       List<IGutterMessage> messagesToRemove = new ArrayList<IGutterMessage>();
       for (IGutterMessage msg : myMessages) {
-        int start;
-        int height;
-        try {
-          start = getMessageStart(msg);
-          height = getMessageHeight(msg);
-        } catch(NodeNotFoundException ex) {
-          messagesToRemove.add(msg);
-          continue;
-        }
+        if (!msg.isValid()) continue;
+        int start = getMessageStart(msg);
+        int height = getMessageHeight(msg);
         if (y >= start && y <= start + height) {
-
           result.add(msg);
         }
       }
