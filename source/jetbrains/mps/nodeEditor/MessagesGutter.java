@@ -11,6 +11,7 @@ import jetbrains.mps.typesystem.TypeCheckerAccess;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseAdapter;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -101,6 +102,16 @@ public class MessagesGutter extends JPanel {
   private class MyMessagesGutter extends JPanel {
     public MyMessagesGutter() {
       ToolTipManager.sharedInstance().registerComponent(this);
+
+
+      addMouseListener(new MouseAdapter() {
+        public void mousePressed(MouseEvent e) {
+          List<IGutterMessage> messages = getMessagesAt(e.getY());
+          if (messages.size() > 0) {
+            messages.get(0).doNavigate();
+          }
+        }
+      });
     }
 
     protected void paintComponent(Graphics graphics) {
