@@ -4,7 +4,12 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.event.SModelChildEvent;
+import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.util.NameUtil;
+
+import java.util.*;
 
 
 /**
@@ -16,7 +21,61 @@ public class EditorManager {
   //  private static EditorManager myInstance;
   public static String NODE_TO_PLACE_AFTER = "nodeToPlaceAfter";
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
+  public static final Object IS_BIG_CELL = new Object();
+
+  public HashMap<SNode, EditorCell> myMap = new HashMap<SNode, EditorCell>();
+
+
+  public EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events) {
+    EditorCell rootCell = context.getNodeEditorComponent().getRootCell();
+    myMap.clear();
+    myMap.put(node,rootCell);
+    return createEditorCell(context, node, events);
+  }
+
+  private static Map<SNode, EditorCell> findBigDescendantCellsAndTheirNodes(EditorCell cell) {
+    Map<SNode, EditorCell> result = new HashMap<SNode, EditorCell>();
+    if (cell instanceof EditorCell_Collection) {
+      for (EditorCell childCell : ((EditorCell_Collection)cell)) {
+        Object isBigCell = childCell.getUserObject(IS_BIG_CELL);
+        if (isBigCell != null && (Boolean) childCell.getUserObject(IS_BIG_CELL)) {
+          result.put(childCell.getSNode(), childCell);
+        } else {
+          result.putAll(findBigDescendantCellsAndTheirNodes(childCell));
+        }
+      }
+    }
+
+    return result;
+  }
+
+  /*package*/ EditorCell createEditorCell(EditorContext context, SNode node, List<SModelEvent> events) {
+
+    if (events != null) {
+      AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
+      EditorCell oldCell = nodeEditorComponent.getBigCellForNode(node);
+     
+      boolean nodeChanged = false;
+      for (SModelEvent event : events) {
+        SNode eventNode;
+        if (event instanceof SModelChildEvent) {
+          eventNode = ((SModelChildEvent)event).getParent();
+        } else if (event instanceof SModelReferenceEvent) {
+          eventNode = ((SModelReferenceEvent)event).getReference().getSourceNode();
+        } else continue;
+        if (nodeEditorComponent.doesCellDependOnNode(oldCell, eventNode)) {
+          nodeChanged = true;
+          break;
+        }
+      }
+
+      if (!nodeChanged) {
+        if (myMap.containsKey(node)) return myMap.get(node);
+      } else {
+        myMap.putAll(findBigDescendantCellsAndTheirNodes(oldCell));
+      }
+    }
+
     EditorCell editorCell = createEditorCell_internal(context, node);
 
     boolean hasBadReference = false;
@@ -34,19 +93,22 @@ public class EditorManager {
 
   private EditorCell createEditorCell_internal(EditorContext context, SNode node) {
     INodeEditor editor = getEditor(context, node);
-    EditorCell nodeCell;
+    AbstractEditorComponent abstractEditorComponent = context.getNodeEditorComponent();
+    EditorCell nodeCell = null;
+    CellBuildNodeAccessListener nodeAccessListener = new CellBuildNodeAccessListener(context.getNodeEditorComponent());
     try {
       //voodoo for editor incremental rebuild support
-      CellBuildModelAccessListener modelAccessListener = new CellBuildModelAccessListener(context.getNodeEditorComponent());
-      ModelAccessCaster.setModelReadAccessListener(modelAccessListener);
+      NodeReadAccessCaster.setNodeReadAccessListener(nodeAccessListener);
       nodeCell = editor.createEditorCell(context, node);
-      modelAccessListener.recordFinished(nodeCell);
       //-voodoo
     } catch (Exception e) {
       LOG.error("Failed to create cell for node " + node.getDebugText(), e);
       nodeCell = EditorCell_Error.create(context, node, "!exception!:" + node.getDebugText());
     } finally {
-      ModelAccessCaster.removeModelAccessListener();
+      nodeCell.putUserObject(IS_BIG_CELL, true);
+      abstractEditorComponent.registerAsBigCell(nodeCell);
+      NodeReadAccessCaster.removeNodeAccessListener();
+      nodeAccessListener.recordingFinishedForCell(nodeCell);
     }
     if (node.getChildCount(NODE_TO_PLACE_AFTER) == 0) {
       return nodeCell;

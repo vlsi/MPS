@@ -9,7 +9,10 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.ide.ProjectWindow;
+
+import java.util.List;
 
 public class InspectorEditorComponent extends AbstractEditorComponent {
   private EditorContext myEditorContext;
@@ -67,6 +70,10 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
       return EditorCell_Constant.create(getEditorContext(), null, "<no inspect info>", true);
     }
     return getOperationContext().getComponent(EditorManager.class).createInspectedCell(getEditorContext(), getNode());
+  }
+
+  public EditorCell createRootCell(List<SModelEvent> events) {
+    return createRootCell();//temp
   }
 
   public SNode getInspectedNode() {

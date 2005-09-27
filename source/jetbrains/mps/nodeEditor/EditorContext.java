@@ -4,7 +4,10 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.event.SModelEvent;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.awt.*;
 
 
@@ -19,6 +22,7 @@ public class EditorContext {
   private SModel myModel;
   private IOperationContext myOperationContext;
   private EditorCell myContextCell;
+  private java.util.List<SModelEvent> mySModelEvents = null;
 
   public EditorContext(AbstractEditorComponent editorComponent, SModel model, IOperationContext operationContext) {
     myNodeEditorComponent = editorComponent;
@@ -38,8 +42,27 @@ public class EditorContext {
     return myOperationContext;
   }
 
+  public void resetModelEvents() {
+    mySModelEvents = null;
+  }
+
+  public void setModelEvents(List<SModelEvent> modelEvents) {
+    mySModelEvents = modelEvents;
+  }
+
+  public EditorCell createNodeCell(SNode node, java.util.List<SModelEvent> events) {
+    return myOperationContext.getComponent(EditorManager.class).createEditorCell(this, node, events);
+  }
+
+  public EditorCell createRootCell(SNode node, java.util.List<SModelEvent> events) {
+    mySModelEvents = events;
+    EditorCell result = myOperationContext.getComponent(EditorManager.class).createRootCell(this, node, events);
+    mySModelEvents = null;
+    return result;
+  }
+
   public EditorCell createNodeCell(SNode node) {
-    return myOperationContext.getComponent(EditorManager.class).createEditorCell(this, node);
+    return createNodeCell(node, mySModelEvents);
   }
 
   public Object createMemento() {

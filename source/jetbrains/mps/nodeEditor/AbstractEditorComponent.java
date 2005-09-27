@@ -38,6 +38,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public static final String EDITOR_POPUP_MENU_ACTIONS = "editor-popup-menu-actions";
 
   private WeakHashMap<EditorCell, Set<SNode>> myCellsToNodesToDependOnMap = new WeakHashMap<EditorCell, Set<SNode>>();
+  private WeakHashMap<SNode, EditorCell> myNodesToBigCellsMap = new WeakHashMap<SNode, EditorCell>();
 
   private boolean myHasLastCaretX = false;
   private int myLastCaretX;
@@ -45,8 +46,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private JScrollPane myScrollPane;
   private JComponent myContainer;
 
-  private EditorCell myRootCell;
-  private EditorCell mySelectedCell;
+  protected EditorCell myRootCell;
+  protected EditorCell mySelectedCell;
   private int myShiftX = 10;
   private int myShiftY = 10;
 
@@ -68,7 +69,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private PropertyChangeListener myFocusListener;
 
   private IOperationContext myOperationContext;
-  private EventRecorder myRecorder = null;
   private ProjectWindow myIde;
 
   private MessagesGutter myMessagesGutter = new MessagesGutter(this);
@@ -163,15 +163,15 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myActionMap.put(EditorCellAction.PASTE_AFTER, new CellAction_PasteNodeRelative(false));
 
 
-    registerNodeAction(new ShowNodeTypeAction()/*, "control T"*/);
-    registerNodeAction(new FindUsagesNodeAction()/*, "alt F7"*/);
-    registerNodeAction(new ShowInProjectAction()/*, "control P"*/);
-    registerNodeAction(new GoByFirstReferenceAction()/*, "control B"*/);
-    registerNodeAction(new GoToConceptDeclarationAction()/*, "control shift S"*/);
-    registerNodeAction(new GoToEditorDeclarationAction()/*", control shift E"*/);
-    registerNodeAction(new GoToConceptEditorDeclarationAction()/*, "control E"*/);
-    registerNodeAction(new InlineVariableAction()/*", control alt N"*/);
-    registerNodeAction(new IntroduceVariableAction()/*, "alt V"*/);
+    registerNodeAction(new ShowNodeTypeAction());
+    registerNodeAction(new FindUsagesNodeAction());
+    registerNodeAction(new ShowInProjectAction());
+    registerNodeAction(new GoByFirstReferenceAction());
+    registerNodeAction(new GoToConceptDeclarationAction());
+    registerNodeAction(new GoToEditorDeclarationAction());
+    registerNodeAction(new GoToConceptEditorDeclarationAction());
+    registerNodeAction(new InlineVariableAction());
+    registerNodeAction(new IntroduceVariableAction());
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
@@ -218,16 +218,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     myKeyListener = new KeyAdapter() {
       public void keyPressed(final KeyEvent e) {
-        if (myRecorder != null) {
-          myRecorder.record(e, AbstractEditorComponent.this instanceof InspectorEditorComponent);
-        }
         processKeyPressed(e);
       }
 
       public void keyReleased(final KeyEvent e) {
-        if (myRecorder != null) {
-          myRecorder.record(e, AbstractEditorComponent.this instanceof InspectorEditorComponent);
-        }
         processKeyReleased(e);
       }
     };
@@ -341,9 +335,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return null;
   }
 
-  public void setEventRecorder(EventRecorder recorder) {
-    myRecorder = recorder;
-  }
 
   private void processPopupMenu(MouseEvent e) {
     EditorCell selectedCell = getSelectedCell();
@@ -380,6 +371,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public abstract EditorContext getEditorContext();
 
   public abstract EditorCell createRootCell();
+
+  public abstract EditorCell createRootCell(List<SModelEvent> events);
 
   public void clear() {
     SNode semanticNode = myRootCell.getSNode();
@@ -741,8 +734,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return condition.getFoundCell();
   }
 
-
   public void rebuildEditorContent() {
+    rebuildEditorContent(null);
+  }
+
+  public void rebuildEditorContent(List<SModelEvent> events) {
     removeAll();
 
 
@@ -754,7 +750,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       id = (String) selectedCell.getUserObject(EditorCell.CELL_ID);
     }
 
-    setRootCell(createRootCell());
+    setRootCell(createRootCell(events));
 
     if (nodeProxy != null && id != null) {
       EditorCell cell = findNodeCell(nodeProxy.getNode(), id);
@@ -765,12 +761,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     updateCellExplorerIfNeeded();
   }
-
-  //todo impl
-  public void rebuildUpdatedCells() {
-
-  }
-
 
   public EditorCell findNearestCell(int x, int y) {
     EditorCell cell = null;
@@ -988,31 +978,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     relayout();
   }
 
-  protected void startRecording(String scriptName) {
-    requestFocus();
-    final SNode root = getRootCell().getSNode();
-    final SNode[] copy = new SNode[1];
-
-    CommandProcessor.instance().executeCommand(getEditorContext(), new Runnable() {
-      public void run() {
-        copy[0] = CopyUtil.copy(root, getEditorContext().getOperationContext());
-      }
-    }, "node copyAndAddToRoots");
-
-    root.getModel().addRoot(copy[0]);
-    selectNode(null);
-    myRecorder = new EventRecorder();
-    myOperationContext.getComponent(InspectorPane.class).getInspector().setEventRecorder(myRecorder);
-    myRecorder.startRecording(copy[0], root, scriptName);
-  }
-
-  protected void stopRecordingIfPossible() {
-    if (myRecorder != null) {
-      myRecorder.stopRecording();
-      myOperationContext.getComponent(InspectorPane.class).getInspector().setEventRecorder(null);
-      myRecorder = null;
-    }
-  }
 
   public void processKeyPressed(final KeyEvent keyEvent) {
     // hardcoded actions which should be excuted outside command
@@ -1191,6 +1156,23 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myCellsToNodesToDependOnMap.put(cell, nodes);
   }
 
+  public boolean doesCellDependOnNode(EditorCell cell, SNode node) {
+    Set<SNode> sNodes = myCellsToNodesToDependOnMap.get(cell);
+    return (sNodes != null) && (sNodes.contains(node));
+  }
+
+  public void clearNodesCellDependsOn(EditorCell cell) {
+    myCellsToNodesToDependOnMap.remove(cell);
+  }
+
+  public void registerAsBigCell(EditorCell cell) {
+    myNodesToBigCellsMap.put(cell.getSNode(), cell);
+  }
+
+  public EditorCell getBigCellForNode(SNode node) {
+    return myNodesToBigCellsMap.get(node);
+  }
+
 
   private EditorCell findEditableCell(EditorCell root) {
     if (root instanceof EditorCell_Label && ((EditorCell_Label) root).isEditable() && root.isSelectable()) {
@@ -1299,7 +1281,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
 
         //todo optimize
-        rebuildEditorContent();
+        rebuildEditorContent(events);
 
         SModelEvent lastAdd = null;
         SModelEvent lastRemove = null;

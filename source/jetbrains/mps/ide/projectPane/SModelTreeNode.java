@@ -123,10 +123,6 @@ class SModelTreeNode extends MPSTreeNodeEx {
     myModelDescriptor.getSModel().removeSModelCommandListener(myModelListener);
   }
 
-/*  public void doubleClick() {
-    DialogUtils.editModelProperties(myIDE, myModelDescriptor, getOperationContext());
-  }*/
-
   private MPSTree getTree() {
     return getOperationContext().getComponent(ProjectWindow.class).getProjectPane().getTree();
   }

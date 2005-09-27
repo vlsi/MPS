@@ -65,6 +65,6 @@ public class CellAction_PasteNode extends EditorCellAction {
     Resolver.resolveReferences(outgoingReferences, operationContext);
 
     AbstractEditorComponent editor = context.getNodeEditorComponent();
-    editor.rebuildEditorContent();
+    //editor.rebuildEditorContent();
   }
 }

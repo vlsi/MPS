@@ -2,9 +2,11 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.ide.ProjectWindow;
 
 import javax.swing.*;
+import java.util.List;
 
 /**
  * @author Kostik
@@ -43,5 +45,9 @@ public class UIEditorComponent extends AbstractEditorComponent {
       return EditorCell_Constant.create(getEditorContext(), mySemanticNode, "<no editor info>", true);
     }
     return myEditorContext.createNodeCell(mySemanticNode);
+  }
+
+  public EditorCell createRootCell(List<SModelEvent> events) {
+    return createRootCell();//temp
   }
 }
