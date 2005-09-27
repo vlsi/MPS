@@ -183,10 +183,6 @@ public class OutputView extends DefaultTool implements IExternalizableComponent,
         return true;
       }
 
-      public java.util.List<IPreferencesPage> getChildren() {
-        return new ArrayList<IPreferencesPage>();
-      }
-      
       public void commit() {
         myFontSize = Integer.valueOf(myFontSizeField.getText());
         updateComponent();
