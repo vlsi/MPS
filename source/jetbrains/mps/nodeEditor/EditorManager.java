@@ -54,7 +54,7 @@ public class EditorManager {
     if (events != null) {
       AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
       EditorCell oldCell = nodeEditorComponent.getBigCellForNode(node);
-     
+
       boolean nodeChanged = false;
       for (SModelEvent event : events) {
         SNode eventNode;
@@ -70,7 +70,9 @@ public class EditorManager {
       }
 
       if (!nodeChanged) {
-        if (myMap.containsKey(node)) return myMap.get(node);
+        if (myMap.containsKey(node)) {
+          return myMap.get(node);
+        }
       } else {
         myMap.putAll(findBigDescendantCellsAndTheirNodes(oldCell));
       }

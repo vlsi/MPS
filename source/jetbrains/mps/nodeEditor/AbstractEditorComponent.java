@@ -1282,7 +1282,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           }
         }
 
-        //todo optimize
         rebuildEditorContent(events);
 
         SModelEvent lastAdd = null;
