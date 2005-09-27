@@ -7,6 +7,7 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.QueryMethod;
+import jetbrains.mps.util.Condition;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -21,10 +22,27 @@ import java.util.Collections;
  * To change this template use File | Settings | File Templates.
  */
 public class ModelActions {
-  public static List<INodeSubstituteAction> createNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, List<INodeSubstituteAction> defaultActions, IScope scope) {
+  public static List<INodeSubstituteAction> createChildNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, final IScope scope) {
 
-    LinkMetaclass metaClass = linkDeclaration.getMetaClass();
-    ConceptDeclaration targetConcept = linkDeclaration.getTarget();
+    final ConceptDeclaration targetConcept = linkDeclaration.getTarget();
+
+    // "default" substitute actions
+    List<ConceptDeclaration> targetConcepts = SModelUtil.allConceptDeclarations(sourceNode.getModel(), scope, new Condition<ConceptDeclaration>() {
+      public boolean met(ConceptDeclaration node) {
+        if (!SModelUtil.hasConceptProperty(node, "abstract", scope)) {
+          return SModelUtil.isAssignableType(targetConcept, node);
+        }
+        return false;
+      }
+    });
+
+    List<INodeSubstituteAction> defaultActions = new LinkedList<INodeSubstituteAction>();
+    for (ConceptDeclaration conceptDeclaration : targetConcepts) {
+      defaultActions.add(new DefaultChildNodeSubstituteAction(conceptDeclaration, sourceNode, currentTargetNode, linkDeclaration, scope));
+    }
+
+
+    // apply filters and factories from action models
 
     // todo: tmp impl
     List<NodeSubstituteActionsBuilder> substituteActionsBuilders = new LinkedList<NodeSubstituteActionsBuilder>();
@@ -42,7 +60,7 @@ public class ModelActions {
             while (iterator.hasNext()) {
               NodeSubstituteActionsBuilder substituteActionsBuilder = iterator.next();
               // is applicable ?
-              if (substituteActionsBuilder.getApplicableLinkMetaclass() == metaClass &&
+              if (substituteActionsBuilder.getApplicableLinkMetaclass() == LinkMetaclass.aggregation &&
                       substituteActionsBuilder.getApplicableConcept() == targetConcept) {
                 substituteActionsBuilders.add(substituteActionsBuilder);
               }
@@ -61,7 +79,7 @@ public class ModelActions {
     List<INodeSubstituteAction> filteredActions = filterActions(defaultActions, substituteActionsBuilders, null, scope);
     resultActions.addAll(filteredActions);
 
-    // for each builder cerate and filter actions
+    // for each builder create and filter actions
     for (NodeSubstituteActionsBuilder nodeSubstituteActionsBuilder : substituteActionsBuilders) {
       List<INodeSubstituteAction> addActions = createActions(nodeSubstituteActionsBuilder, sourceNode, currentTargetNode, linkDeclaration, scope);
       addActions = filterActions(addActions, substituteActionsBuilders, nodeSubstituteActionsBuilder, scope);
@@ -79,8 +97,11 @@ public class ModelActions {
     return actions;
   }
 
+
+
+
   // --------------------------------
-  // Macro Aspect methods invocation...
+  // Query methods invocation...
   // --------------------------------
 
   private static List<INodeSubstituteAction> filterActions(NodeSubstituteActionsBuilder substituteActionsBuilder, List<INodeSubstituteAction> actions, IScope scope) {

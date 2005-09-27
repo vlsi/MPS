@@ -51,31 +51,8 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
   }
 
   public List<INodeSubstituteItem> createActions() {
-    List<INodeSubstituteAction> defaultActions = createActions_default();
-    List<INodeSubstituteAction> actions = ModelActions.createNodeSubstituteActions(mySourceNode, myCurrentTargetNode, myLinkDeclaration, defaultActions, getOperationContext().getScope());
+    List<INodeSubstituteAction> actions = ModelActions.createChildNodeSubstituteActions(mySourceNode, myCurrentTargetNode, myLinkDeclaration, getOperationContext().getScope());
     return (List<INodeSubstituteItem>) ((List) actions);
   }
 
-  public List<INodeSubstituteAction> createActions_default() {
-    List<INodeSubstituteAction> list = new LinkedList<INodeSubstituteAction>();
-
-    List<ConceptDeclaration> childTypes = createChildTypesList();
-    for (final ConceptDeclaration childType : childTypes) {
-      list.add(new DefaultChildNodeSubstituteAction(childType, mySourceNode, myCurrentTargetNode, myLinkDeclaration, getOperationContext().getScope()));
-    }
-
-    return list;
-  }
-
-  private List<ConceptDeclaration> createChildTypesList() {
-    final ConceptDeclaration targetType = myLinkDeclaration.getTarget();
-    return SModelUtil.allConceptDeclarations(mySourceNode.getModel(), getOperationContext().getScope(), new Condition<ConceptDeclaration>() {
-      public boolean met(ConceptDeclaration node) {
-        if (!SModelUtil.hasConceptProperty(node, "abstract", getOperationContext().getScope())) {
-          return SModelUtil.isAssignableType(targetType, node);
-        }
-        return false;
-      }
-    });
-  }
 }
