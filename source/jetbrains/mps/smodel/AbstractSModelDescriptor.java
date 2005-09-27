@@ -17,13 +17,15 @@ import java.util.*;
 public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   private static final Logger LOG = Logger.getLogger(AbstractSModelDescriptor.class);
 
+  private static volatile long ourState = 0;
+
   private SModel mySModel = null;
   private SModelUID myModelUID = new SModelUID("", "");
   private List<SModelListener> myModelListeners;
   private List<SModelCommandListener> myModelCommandListenersForImportedModels;
   private List<SModelCommandListener> myCommandListeners;
   private long myLastChange = System.currentTimeMillis();
-  private long myState = 0;
+
 
   protected AbstractSModelDescriptor(SModel model) {
     mySModel = model;
@@ -43,7 +45,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
       public void modelChangedInCommand(List<SModelEvent> events, EditorContext editorContext) {
         if (EventUtil.isDramaticalChange(events)) {
           myLastChange = System.currentTimeMillis();
-          myState++;
+          ourState++;
         }
       }
     });
@@ -133,7 +135,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
   //event counter
   public long state() {
-    return myState;
+    return ourState;
   }
 
   public void addSModelListener(SModelListener listener) {
