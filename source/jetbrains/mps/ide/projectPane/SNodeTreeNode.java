@@ -107,19 +107,6 @@ class SNodeTreeNode extends MPSTreeNodeEx {
       output.append(getSNode().toString());
     }
 
-    if (getSNode() != null) {
-      IStatus status = (IStatus) getSNode().getUserObject(SNode.ERROR_STATUS);
-      if (status != null && status.isError()) {
-        output.append("<font color=\"red\">");
-      } else {
-        status = (IStatus) getSNode().getUserObject(SNode.CHILDREN_ERROR_STATUS);
-        if (status != null && status.isError()) {
-          output.append("<font color=\"red\">");
-          output.append(" (").append(status.getMessage()).append(")");
-        }
-      }
-    }
-
     return output.toString();
   }
 }
