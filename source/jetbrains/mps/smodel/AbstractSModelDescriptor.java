@@ -69,7 +69,6 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     return myModelUID;
   }
 
-
   /**
    * todo: should return "long name"
    */

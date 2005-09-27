@@ -167,7 +167,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     editorModel.addLanguage(BootstrapLanguages.getInstance().getEditorLanguage());
     editorModelDescriptor.save();
 
-    // update language
+    // updateTypesystem language
     LanguageDescriptor languageDescriptor = language.getLanguageDescriptor();
     Model _model = new Model(languageDescriptor.getModel());
     _model.setName(editorModel.getUID().toString());

@@ -1,6 +1,5 @@
 package mf;
 
-import java.util.*;
 public class BitemporalCollection implements TemporalCollection {
 
 	/* The key data structure of this class is a temporal collection of
@@ -31,7 +30,7 @@ public class BitemporalCollection implements TemporalCollection {
 	}
 //</codeFragment>
 
-// <codeFragment name="update">
+// <codeFragment name="updateTypesystem">
 	public void put(MfDate validDate, Object item) {
 		contents.put(MfDate.today(), currentValidHistory().copy());
 		currentValidHistory().put(validDate,item);

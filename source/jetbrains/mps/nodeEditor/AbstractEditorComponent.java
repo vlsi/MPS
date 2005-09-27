@@ -14,10 +14,8 @@ import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.reform.CellRangeSelection;
-import jetbrains.mps.nodeEditor.test.EventRecorder;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.util.CopyUtil;
 import jetbrains.mps.util.CollectionUtil;
 
 import javax.swing.*;
@@ -291,6 +289,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     });
   }
 
+
   public void removeNotify() {
     KeyboardFocusManager.getCurrentKeyboardFocusManager().removePropertyChangeListener("focusOwner", myFocusListener);
     super.removeNotify();
@@ -410,7 +409,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }
 
-    myMessagesGutter.update();
+    myMessagesGutter.updateTypesystem();
 
     revalidate();
     repaint();
@@ -542,6 +541,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public void selectNode(final SNode node) {
     changeSelection(findNodeCell(node));
   }
+
 
   public void selectRefCell(SReference reference, String role) {
     SNode sourceNode = reference.getSourceNode();
@@ -1014,7 +1014,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }
 
-    // hardcoded "update" action
+    // hardcoded "updateTypesystem" action
     if (keyEvent.getKeyCode() == KeyEvent.VK_F5) {
       rebuildEditorContent();
       keyEvent.consume();
@@ -1282,6 +1282,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           }
         }
 
+        //todo optimize
         rebuildEditorContent(events);
 
         SModelEvent lastAdd = null;

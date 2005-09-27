@@ -91,7 +91,7 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope, IContainer
       }
 
       if (loadedSolution != null) {
-        // update solution
+        // updateTypesystem solution
         SolutionDescriptor solutionDescriptor = PersistenceUtil.loadSolutionDescriptor(descriptorFile,
                 ProjectModelDescriptor.createDescriptorFor(loadedSolution).getSModel());
         loadedSolution.setSolutionDescriptor(solutionDescriptor);
