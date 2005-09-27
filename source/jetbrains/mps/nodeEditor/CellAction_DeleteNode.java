@@ -19,8 +19,6 @@ public class CellAction_DeleteNode extends EditorCellAction {
   }
 
   public void execute(EditorContext context) {
-    SModel model = mySemanticNode.getModel();
-    SNode parent = mySemanticNode.getParent();
     mySemanticNode.delete();
   }
 }
