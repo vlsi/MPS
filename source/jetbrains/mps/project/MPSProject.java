@@ -1,22 +1,21 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.ide.BootstrapLanguages;
-import jetbrains.mps.ide.FileUtil;
-import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.components.IContainer;
+import jetbrains.mps.components.IExternalizableComponent;
+import jetbrains.mps.ide.*;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.preferences.IComponentWithPreferences;
+import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.*;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vcs.VersionControlManager;
 import jetbrains.mps.vcs.model.IVersionControl;
-import jetbrains.mps.components.IExternalizableComponent;
-import jetbrains.mps.components.IContainer;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -28,7 +27,7 @@ import java.util.*;
  * Created Apr 29, 2004
  */
 
-public class MPSProject implements ModelOwner, LanguageOwner, IScope, IContainer {
+public class MPSProject implements ModelOwner, LanguageOwner, IScope, IContainer, IComponentWithPreferences {
   private static final Logger LOG = Logger.getLogger(MPSProject.class);
 
   private File myProjectFile;
@@ -60,7 +59,7 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope, IContainer
         MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
         projects.addProject(MPSProject.this);
 
-        ReloadUtils.reloadAll(true);        
+        ReloadUtils.reloadAll(true);
       }
     }, "MPS Project init");
 
@@ -411,6 +410,10 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope, IContainer
     for (IMPSProjectCommandListener listener : myProjectCommandListeners) {
       listener.projectChangedInCommand(this);
     }
+  }
+
+  public IPreferencesPage createPreferencesPage() {
+    return new ProjectPropertiesDialog(getComponent(ProjectWindow.class), this, new ProjectOperationContext(this)).createPreferencesPage();
   }
 
   private class ProjectEventTranslator extends CommandEventTranslator {

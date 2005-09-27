@@ -178,6 +178,10 @@ public class OutputView extends DefaultTool implements IExternalizableComponent,
         return myComponent;
       }
 
+      public boolean validate() {
+        return true;
+      }
+
       public void commit() {
         myFontSize = Integer.valueOf(myFontSizeField.getText());
         updateComponent();

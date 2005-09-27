@@ -1,7 +1,5 @@
 package jetbrains.mps.ide;
 
-import org.jdom.Element;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -92,10 +90,12 @@ public abstract class BaseDialog extends JDialog {
 
 
   public void showDialog() {
-    setLayout(new BorderLayout());
     ((JComponent) getContentPane()).setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
-    add(getMainComponent(), BorderLayout.CENTER);
 
+    setLayout(new BorderLayout());
+
+    JPanel panel1 = new JPanel(new BorderLayout());
+    panel1.add(getMainComponent(), BorderLayout.CENTER);
     JPanel buttonsPanel = new JPanel(new BorderLayout());
     buttonsPanel.setBorder(BorderFactory.createEmptyBorder(4, 0, 0, 0));
     JButton[] buttons = createButtons();
@@ -105,7 +105,10 @@ public abstract class BaseDialog extends JDialog {
     }
     buttonsPanel.add(myErrorLabel, BorderLayout.WEST);
     buttonsPanel.add(innerButtonsPanel, getButtonsPosition());
-    add(buttonsPanel, BorderLayout.SOUTH);
+    panel1.add(buttonsPanel, BorderLayout.SOUTH);
+    JPanel panel = panel1;
+
+    add(panel, BorderLayout.CENTER);
 
     ((JComponent) getContentPane()).registerKeyboardAction(new AbstractAction("Dispose dialog") {
       public void actionPerformed(ActionEvent e) {

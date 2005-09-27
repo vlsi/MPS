@@ -90,6 +90,10 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
       return myEditorSettingsPanel;
     }
 
+    public boolean validate() {
+      return true;
+    }
+
     public void commit() {
       String fontName = myFontsComboBox.getSelectedItem().toString();
       int fontSize = Integer.parseInt(mySizesComboBox.getSelectedItem().toString());
