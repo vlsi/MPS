@@ -410,6 +410,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }
 
+    myMessagesGutter.update();
+
     revalidate();
     repaint();
   }

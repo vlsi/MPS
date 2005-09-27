@@ -26,6 +26,8 @@ public class MessagesGutter extends JPanel {
   public void update() {
     SNode node = myEditorComponent.getRootCell().getSNode();
 
+    if (node == null) return;
+
     SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
 
     if (!modelDescriptor.isTypesUpToDate()) {
