@@ -66,29 +66,43 @@ public class MessagesGutter extends JPanel {
         tsStatuses.add(type);
       }
 
+      removeAllMessages();
+
       for (final TSStatus s : tsStatuses) {
-        if (myEditorComponent.getBigCellForNode(s.getSNode()) == null) return;
+        final EditorCell cellForNode = myEditorComponent.findNodeCell(s.getSNode());
+        if (cellForNode == null) return;
 
         add(new IGutterMessage() {
-          public int getStart() {
-            return myEditorComponent.getBigCellForNode(s.getSNode()).getY();
+          public int getStart() throws NodeNotFoundException {
+            EditorCell nodeCell = getNodeCell();
+            return nodeCell.getY();
           }
 
-          public int getHeight() {
-            return myEditorComponent.getBigCellForNode(s.getSNode()).getHeight();
+          public int getHeight() throws NodeNotFoundException {
+            return getNodeCell().getHeight();
           }
 
           public String getMessage() {
             return s.getMessage();
           }
 
-          public void doNavigate() {
-            myEditorComponent.changeSelection(myEditorComponent.getBigCellForNode(s.getSNode()));
+          public void doNavigate() throws NodeNotFoundException {
+            myEditorComponent.changeSelection(getNodeCell());
+          }
+
+          private EditorCell getNodeCell() throws NodeNotFoundException {
+            EditorCell nodeCell = myEditorComponent.findNodeCell(s.getSNode());
+            if (nodeCell == null) {
+             // myMessages.remove(this);
+              throw new NodeNotFoundException();
+            }
+            return nodeCell;
           }
         });
       }
     }
   }
+
 
   public void add(IGutterMessage message) {
     myMessages.add(message);
@@ -107,7 +121,11 @@ public class MessagesGutter extends JPanel {
         public void mousePressed(MouseEvent e) {
           List<IGutterMessage> messages = getMessagesAt(e.getY());
           if (messages.size() > 0) {
-            messages.get(0).doNavigate();
+            try {
+              messages.get(0).doNavigate();
+            } catch(NodeNotFoundException ex ) {
+              myMessages.remove(messages.get(0));
+            }
           }
         }
       });
@@ -116,12 +134,17 @@ public class MessagesGutter extends JPanel {
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
       Graphics2D g = (Graphics2D) graphics;
-
+      List<IGutterMessage> messagesToRemove = new ArrayList<IGutterMessage>();
       for (IGutterMessage msg : myMessages) {
-
-
-        int start = getMessageStart(msg);
-        int length = getMessageHeight(msg);
+        int start;
+        int length;
+        try {
+          start = getMessageStart(msg);
+          length = getMessageHeight(msg);
+        } catch (NodeNotFoundException ex) {
+          messagesToRemove.add(msg);
+          continue;
+        }
         int messageY = start + (length / 2);
 
         g.setColor(new Color(80, 80, 80, 70));
@@ -132,13 +155,14 @@ public class MessagesGutter extends JPanel {
 
 
       }
+      myMessages.removeAll(messagesToRemove);
     }
 
-    private int getMessageHeight(IGutterMessage msg) {
+    private int getMessageHeight(IGutterMessage msg) throws NodeNotFoundException {
       return (int) (Math.max(2.0d, msg.getHeight() * (((double) getHeight()) / ((double) myEditorComponent.getHeight()))));
     }
 
-    private int getMessageStart(IGutterMessage msg) {
+    private int getMessageStart(IGutterMessage msg) throws NodeNotFoundException {
       return (int) (msg.getStart() * (((double) getHeight()) / ((double) myEditorComponent.getHeight())));
     }
 
@@ -162,15 +186,23 @@ public class MessagesGutter extends JPanel {
 
     private List<IGutterMessage> getMessagesAt(int y) {
       List<IGutterMessage> result = new ArrayList<IGutterMessage>();
+      List<IGutterMessage> messagesToRemove = new ArrayList<IGutterMessage>();
       for (IGutterMessage msg : myMessages) {
-        int start = getMessageStart(msg);
-        int height = getMessageHeight(msg);
-
+        int start;
+        int height;
+        try {
+          start = getMessageStart(msg);
+          height = getMessageHeight(msg);
+        } catch(NodeNotFoundException ex) {
+          messagesToRemove.add(msg);
+          continue;
+        }
         if (y >= start && y <= start + height) {
 
           result.add(msg);
         }
       }
+      myMessages.removeAll(messagesToRemove);
       return result;
     }
 

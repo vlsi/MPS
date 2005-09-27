@@ -1167,11 +1167,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myCellsToNodesToDependOnMap.remove(cell);
   }
 
-  public void registerAsBigCell(EditorCell cell) {
+  void registerAsBigCell(EditorCell cell) {
     myNodesToBigCellsMap.put(cell.getSNode(), cell);
   }
 
-  public EditorCell getBigCellForNode(SNode node) {
+  EditorCell getBigCellForNode(SNode node) {
     return myNodesToBigCellsMap.get(node);
   }
 
