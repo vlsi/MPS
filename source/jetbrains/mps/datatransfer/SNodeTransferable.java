@@ -11,7 +11,6 @@ import java.util.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.SReference;
 
 /**
  * Created by IntelliJ IDEA.
@@ -33,7 +32,7 @@ public class SNodeTransferable implements Transferable {
 
   // ---- node data ----
   private List<SNode> mySNodes = new ArrayList<SNode>();
-  private SModel mySModel;
+  private SModel myModelProperties;
   private Set<SModelUID> myNecessaryImports = new HashSet<SModelUID>();
   private Set<String> myNecessaryLanguages = new HashSet<String>();
   private String myText = "";
@@ -79,33 +78,15 @@ public class SNodeTransferable implements Transferable {
 
   private void saveNodes(List<SNode> nodes) {
     mySNodes.clear();
-    mySNodes.addAll(CopyPasteNodeUtil.copyNodesIn(nodes));
-    mySModel = mySNodes.get(0).getModel();
-    myNecessaryImports = CopyPasteNodeUtil.getNecessaryImports();
-    myNecessaryLanguages = CopyPasteNodeUtil.getNecessaryLanguages();
+    PasteNodeData pasteNodeData = CopyPasteNodeUtil.createNodeDataIn(nodes);
+    mySNodes.addAll(pasteNodeData.getNodes());
+    myModelProperties = pasteNodeData.getModelProperties();
+    myNecessaryImports = pasteNodeData.getNecessaryImports();
+    myNecessaryLanguages = pasteNodeData.getNecessaryLanguages();
   }
 
-  public List<SNode> createNodes(SModel sModel) {
-    List<SNode> result = new ArrayList<SNode>();
-    result.addAll(CopyPasteNodeUtil.copyNodesOut(mySNodes, sModel));
-    return result;
-  }
-
-  //package
-  List<SNode> getSNodes() {
-    return mySNodes;
-  }
-
-  public Set<String> getNecessaryLanguages() {
-    return new HashSet<String>(myNecessaryLanguages);
-  }
-
-  public Set<SModelUID> getNecessaryImports() {
-    return new HashSet<SModelUID>(myNecessaryImports);
-  }
-
-  public SModel getModel() {
-    return mySModel;
+  public PasteNodeData createNodeData(SModel sModel) {
+    return CopyPasteNodeUtil.createNodeDataOut(mySNodes, sModel, myModelProperties, new HashSet<String>(myNecessaryLanguages), new HashSet<SModelUID>(myNecessaryImports));
   }
 
 }

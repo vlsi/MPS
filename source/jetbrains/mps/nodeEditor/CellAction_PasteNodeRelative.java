@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.datatransfer.PasteUtil;
 import jetbrains.mps.datatransfer.CopyPasteNodeUtil;
+import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.resolve.Resolver;
@@ -52,9 +53,9 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
     EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
     SNode anchorNode = selectedCell.getSNode();
 
-    CopyPasteNodeUtil.NodesAndOutgoingReferences nodesAndOutgoingReferences = CopyPasteNodeUtil.getNodesAndOutgoingReferencesFromClipboard(anchorNode.getModel());
-    List<SNode> pasteNodes = nodesAndOutgoingReferences.getNodes();
-    Set<SReference> outgoingReferences = nodesAndOutgoingReferences.getOutgoingReferences();
+    PasteNodeData pasteNodeData = CopyPasteNodeUtil.getPasteNodeDataFromClipboard(anchorNode.getModel());
+    List<SNode> pasteNodes = pasteNodeData.getNodes();
+    Set<SReference> outgoingReferences = pasteNodeData.getOutgoingReferences();
 
 
     PasteUtil.pasteRelative(anchorNode, pasteNodes.get(0), myPasteBefore, operationContext);

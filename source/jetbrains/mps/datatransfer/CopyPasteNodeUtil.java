@@ -37,8 +37,6 @@ public class CopyPasteNodeUtil {
 
   private static HashMap<SNode, SNode> ourSourceNodesToNewNodes = new HashMap<SNode, SNode>();
   private static HashSet<SReference> ourReferences = new HashSet<SReference>();
-  private static HashSet<SModelUID> ourNecessaryImports = new HashSet<SModelUID>();
-  private static HashSet<String> ourNecessaryLanguages = new HashSet<String>();
   private static HashSet<SReference> ourPointingOutReferences = new HashSet<SReference>();
 
   static ModelOwner getCopyPasteOwner() {
@@ -72,28 +70,28 @@ public class CopyPasteNodeUtil {
   }
 
 
-  private static void processImportsAndLanguages() {
-    ourNecessaryImports.clear();
-    ourNecessaryLanguages.clear();
+  private static void processImportsAndLanguages(HashSet<SModelUID> necessaryImports, HashSet<String> necessaryLanguages) {
+    necessaryImports.clear();
+    necessaryLanguages.clear();
     SModel sourceModel = ourSourceNodesToNewNodes.keySet().iterator().next().getModel();
     for (SNode node : ourSourceNodesToNewNodes.keySet()) {
       String languageNamespace = NameUtil.namespaceFromConceptFQName(NameUtil.nodeConceptFQName(node));
-      ourNecessaryLanguages.add(languageNamespace);
+      necessaryLanguages.add(languageNamespace);
     }
     for (SReference ref : ourReferences) {
       if (ref instanceof ExternalReference) {
         ExternalReference extRef = (ExternalReference) ref;
           SModelUID targetModelUID = extRef.getTargetModelUID();
-          ourNecessaryImports.add(targetModelUID);
+          necessaryImports.add(targetModelUID);
       }
     }
-    ourNecessaryImports.add(sourceModel.getUID());
+    necessaryImports.add(sourceModel.getUID());
   }
 
 
   //for nodes' copying and pasting : behaviour differs from behaviour of methods above
-  public static List<SNode> copyNodesIn(List<SNode> sourceNodes) {
-    if (sourceNodes.isEmpty()) return new ArrayList<SNode>();
+  public static PasteNodeData createNodeDataIn(List<SNode> sourceNodes) {
+    if (sourceNodes.isEmpty()) return new PasteNodeData(new ArrayList<SNode>(), null, null, null, null);
     SModel model = sourceNodes.get(0).getModel();
 
     List<SNode> result = new ArrayList<SNode>();
@@ -105,18 +103,20 @@ public class CopyPasteNodeUtil {
       SNode targetNode = copyNode_internal(sourceNode);
       result.add(targetNode);
     }
-    processImportsAndLanguages();
+    HashSet<SModelUID> necessaryImports = new HashSet<SModelUID>();
+    HashSet<String> necessaryLanguages = new HashSet<String>();
+    processImportsAndLanguages(necessaryImports, necessaryLanguages);
     processReferencesIn();
     SModel fakeModel = copyModelProperties(model);
     for (SNode copiedNode : result) {
       copiedNode.changeModel(fakeModel);
     }
     model.setLoading(false);
-    return result;
+    return new PasteNodeData(result, null, fakeModel, necessaryLanguages, necessaryImports);
   }
 
-  public static List<SNode> copyNodesOut(List<SNode> sourceNodes, SModel model) {
-    if (sourceNodes.isEmpty()) return new ArrayList<SNode>();
+  public static PasteNodeData createNodeDataOut(List<SNode> sourceNodes, SModel model, SModel modelProperties, Set<String> necessaryLanguages, Set<SModelUID> necessaryImports) {
+    if (sourceNodes.isEmpty()) return new PasteNodeData(new ArrayList<SNode>(), null, null, null, null);
     List<SNode> result = new ArrayList<SNode>();
     model.setLoading(true);
     ourPointingOutReferences.clear();
@@ -142,7 +142,7 @@ public class CopyPasteNodeUtil {
     model.setLoading(false);
     originalModel.setLoading(false);
     fakeModel.setLoading(false);
-    return result;
+    return new PasteNodeData(result, new HashSet<SReference>(ourPointingOutReferences), modelProperties, necessaryLanguages, necessaryImports);
   }
 
   private static SNode copyNode_internal(SNode sourceNode) {
@@ -252,14 +252,6 @@ public class CopyPasteNodeUtil {
     return newModel;
   }
 
-  static Set<String> getNecessaryLanguages() {
-    return new HashSet<String>(ourNecessaryLanguages);
-  }
-
-  static Set<SModelUID> getNecessaryImports() {
-    return new HashSet<SModelUID>(ourNecessaryImports);
-  }
-
 
   public static void copyNodesToClipboard(List<SNode> nodes) {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
@@ -273,31 +265,11 @@ public class CopyPasteNodeUtil {
   }
 
   public static List<SNode> getNodesFromClipboard(SModel model) {
-    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
-    Transferable content = cb.getContents(null);
-    if (content == null) return null;
-
-    if (content.isDataFlavorSupported(SModelDataFlavor.sNode)) {
-      SNodeTransferable nodeTransferable = null;
-      try {
-        nodeTransferable = (SNodeTransferable) content.getTransferData(SModelDataFlavor.sNode);
-        return nodeTransferable.createNodes(model);
-      } catch (UnsupportedFlavorException e) {
-        LOG.error("Exception", e);
-      } catch (IOException e) {
-        LOG.error("Exception", e);
-      }
-    }
-
-    if (content.isDataFlavorSupported(DataFlavor.stringFlavor)) {
-      return tryToPasteText(cb, model);
-    }
-
-    return null;
+    return getPasteNodeDataFromClipboard(model).getNodes();
   }
 
 
-  public static NodesAndOutgoingReferences getNodesAndOutgoingReferencesFromClipboard(SModel model) {
+  public static PasteNodeData getPasteNodeDataFromClipboard(SModel model) {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     Transferable content = cb.getContents(null);
     if (content == null) return null;
@@ -306,68 +278,7 @@ public class CopyPasteNodeUtil {
       SNodeTransferable nodeTransferable = null;
       try {
         nodeTransferable = (SNodeTransferable) content.getTransferData(SModelDataFlavor.sNode);
-        return copyOutNodesAndGetOutgoingReferences(nodeTransferable.getSNodes(), model);
-      } catch (UnsupportedFlavorException e) {
-        LOG.error("Exception", e);
-      } catch (IOException e) {
-        LOG.error("Exception", e);
-      }
-    }
-
-    return null;
-  }
-
-
-  public static SModel getModelPropertiesFromClipboard() {
-    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
-    Transferable content = cb.getContents(null);
-    if (content == null) return null;
-
-    if (content.isDataFlavorSupported(SModelDataFlavor.sNode)) {
-      SNodeTransferable nodeTransferable = null;
-      try {
-        nodeTransferable = (SNodeTransferable) content.getTransferData(SModelDataFlavor.sNode);
-        return nodeTransferable.getModel();
-      } catch (UnsupportedFlavorException e) {
-        LOG.error("Exception", e);
-      } catch (IOException e) {
-        LOG.error("Exception", e);
-      }
-    }
-
-    return null;
-  }
-
-  public static Set<String> getNecessryLanguagesFromClipboard() {
-    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
-    Transferable content = cb.getContents(null);
-    if (content == null) return null;
-
-    if (content.isDataFlavorSupported(SModelDataFlavor.sNode)) {
-      SNodeTransferable nodeTransferable = null;
-      try {
-        nodeTransferable = (SNodeTransferable) content.getTransferData(SModelDataFlavor.sNode);
-        return nodeTransferable.getNecessaryLanguages();
-      } catch (UnsupportedFlavorException e) {
-        LOG.error("Exception", e);
-      } catch (IOException e) {
-        LOG.error("Exception", e);
-      }
-    }
-
-    return null;
-  }
-
-  public static Set<SModelUID> getNecessaryImportsFromClipboard() {
-    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
-    Transferable content = cb.getContents(null);
-    if (content == null) return null;
-
-    if (content.isDataFlavorSupported(SModelDataFlavor.sNode)) {
-      SNodeTransferable nodeTransferable = null;
-      try {
-        nodeTransferable = (SNodeTransferable) content.getTransferData(SModelDataFlavor.sNode);
-        return nodeTransferable.getNecessaryImports();
+        return nodeTransferable.createNodeData(model);
       } catch (UnsupportedFlavorException e) {
         LOG.error("Exception", e);
       } catch (IOException e) {
@@ -439,31 +350,5 @@ public class CopyPasteNodeUtil {
      return true;
   }
 
-  private static NodesAndOutgoingReferences copyOutNodesAndGetOutgoingReferences( List<SNode> nodes, SModel model) {
-    List<SNode> result = new ArrayList<SNode>();
-    result.addAll(copyNodesOut(nodes, model));
-    Set<SReference> references = new HashSet<SReference>(ourPointingOutReferences);
-    return new NodesAndOutgoingReferences(result, references);
-  }
 
-
-  public static class NodesAndOutgoingReferences {
-    private List<SNode> nodes;
-    private Set<SReference> outgoingReferences;
-
-    public NodesAndOutgoingReferences(List<SNode> nodes, Set<SReference> references) {
-      this.nodes = nodes;
-      this.outgoingReferences = references;
-    }
-
-    public List<SNode> getNodes() {
-      return nodes;
-    }
-
-    public Set<SReference> getOutgoingReferences() {
-      return outgoingReferences;
-    }
-
-
-  }
 }
