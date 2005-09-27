@@ -53,6 +53,16 @@ public class HeaderWrapper extends JPanel {
     if (showMinimizeButton || showCloseButton) {
       myButtonsPanel = new JPanel(new GridLayout(1, 0));
 
+      if (showMinimizeButton) {
+        myMinimizeButton = new JButton(new AbstractAction("", Icons.MINIMIZE_ICON) {
+          public void actionPerformed(ActionEvent e) {
+            doMinimize();
+          }
+        });
+        setupButton(myMinimizeButton);
+        myButtonsPanel.add(myMinimizeButton);
+      }
+      
       if (showCloseButton) {
         myCloseButton = new JButton(new AbstractAction("", Icons.CLOSE_ICON) {
           public void actionPerformed(ActionEvent e) {
@@ -63,15 +73,6 @@ public class HeaderWrapper extends JPanel {
         myButtonsPanel.add(myCloseButton);
       }
 
-      if (showMinimizeButton) {
-        myMinimizeButton = new JButton(new AbstractAction("", Icons.MINIMIZE_ICON) {
-          public void actionPerformed(ActionEvent e) {
-            doMinimize();
-          }
-        });
-        setupButton(myMinimizeButton);
-        myButtonsPanel.add(myMinimizeButton);
-      }
 
       labelPanel.add(myButtonsPanel, BorderLayout.EAST);
     }
