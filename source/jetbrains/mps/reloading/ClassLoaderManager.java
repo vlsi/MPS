@@ -2,6 +2,10 @@ package jetbrains.mps.reloading;
 
 import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.MPSProjects;
+import jetbrains.mps.ide.actions.tools.ReloadUtils;
 
 import java.util.List;
 import java.io.File;
@@ -49,24 +53,26 @@ public class ClassLoaderManager {
       return ClassLoader.getSystemClassLoader();
     }
 
-
     return myClassLoader;
   }
 
-  public void setClassesDir(List<String> paths) {
+  public void updateClassPath() {
     if (myUseSystemClassLoader) return;
 
     CompositeClassPathItem items = new CompositeClassPathItem();
 
-    for (String s : paths) {
-      if (!new File(s).exists()) {
-        LOG.warning("Class path item doesn't exists " + s);
-        continue;
-      }
-      if (new File(s).isDirectory()) {
-        items.add(new FileClassPathItem(s));
-      } else {
-        items.add(new JarFileClassPathItem(s));
+
+    for (MPSProject project : ApplicationComponents.getInstance().getComponent(MPSProjects.class).getProjects()) {
+      for (String s : project.getClassPath()) {
+        if (!new File(s).exists()) {
+          LOG.warning("Class path item doesn't exists " + s);
+          continue;
+        }
+        if (new File(s).isDirectory()) {
+          items.add(new FileClassPathItem(s));
+        } else {
+          items.add(new JarFileClassPathItem(s));
+        }
       }
     }
 
