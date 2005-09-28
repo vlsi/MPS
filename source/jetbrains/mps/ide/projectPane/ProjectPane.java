@@ -330,7 +330,7 @@ public class ProjectPane extends JComponent implements IActionDataProvider {
   }
 
   private MPSTreeNodeEx findTreeNode(MPSTreeNode parent, SNode node) {
-    if (!parent.isInitialized()) parent.init();
+    if (!(parent.isInitialized() || parent.hasInfiniteSubtree())) parent.init();
     if (parent instanceof SNodeTreeNode) {
       SNodeTreeNode parentSNodeTreeNode = (SNodeTreeNode) parent;
       if (node == parentSNodeTreeNode.getSNode()) {
@@ -412,7 +412,6 @@ public class ProjectPane extends JComponent implements IActionDataProvider {
     }
     return result;
   }
-
 
 
   List<SNode> getNormalizedSelectedNodes() {

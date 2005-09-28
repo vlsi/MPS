@@ -43,6 +43,10 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     return true;
   }
 
+  public boolean hasInfiniteSubtree() {
+    return false;
+  }
+
   public JPopupMenu getPopupMenu() {
     return null;
   }

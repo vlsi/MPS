@@ -84,10 +84,6 @@ class SModelTreeNode extends MPSTreeNodeEx {
     return "<html>" + fqName;
   }
 
-  public int getToggleClickCount() {
-    return 2;
-  }
-
   public boolean isInitialized() {
     return isInitialized;
   }

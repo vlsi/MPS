@@ -110,11 +110,18 @@ public class Generator extends AbstractModule implements ModelLocator {
     Language targetLanguage = getTargetLanguage();
     if (targetLanguage != null) {
       list.add(targetLanguage);
-
-      // todo: declare dependency?
-      // add all models available for any generator in target language (baseLanguage reduce itself to produce compilable java code)
-      list.addAll(targetLanguage.getGenerators());
     }
+
+    // todo: configure generator dependencies ...
+    // ... add all generators of all languages which this generator ownes or depend on
+    List<Language> languages = LanguageRepository.getInstance().getLanguages(this);
+    if(getTargetLanguage() != null && !languages.contains(getTargetLanguage())) {
+      languages.add(getTargetLanguage());
+    }
+    for (Language language : languages) {
+      list.addAll(language.getGenerators());
+    }
+
     return list;
   }
 }

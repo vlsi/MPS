@@ -92,7 +92,7 @@ public abstract class MPSTree extends JTree {
         TreePath selPath = getSelectionPath();
         if (selPath == null) return;
         MPSTreeNode selNode = (MPSTreeNode) selPath.getLastPathComponent();
-        if(selNode == null) return;
+        if (selNode == null) return;
         List<MPSTreeNode> nodes = new ArrayList<MPSTreeNode>();
         for (TreePath path : paths) {
           MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
@@ -271,7 +271,7 @@ public abstract class MPSTree extends JTree {
 
   private MPSTreeNode findNodeWith(MPSTreeNode root, Object userObject) {
     if (root.getUserObject() == userObject) return root;
-    if (!root.isInitialized()) root.init();
+    if (!(root.isInitialized() || root.hasInfiniteSubtree())) root.init();
     for (MPSTreeNode child : root) {
       MPSTreeNode result = findNodeWith(child, userObject);
       if (result != null) return result;
@@ -320,7 +320,7 @@ public abstract class MPSTree extends JTree {
 
   private List<String> getExpandedPaths() {
     List<String> result = new ArrayList<String>();
-    Enumeration<TreePath> expanded = getExpandedDescendants(new TreePath(new Object[] { getModel().getRoot() }));
+    Enumeration<TreePath> expanded = getExpandedDescendants(new TreePath(new Object[]{getModel().getRoot()}));
     if (expanded == null) return result;
     while (expanded.hasMoreElements()) {
       TreePath path = expanded.nextElement();
@@ -365,7 +365,6 @@ public abstract class MPSTree extends JTree {
 
     return result;
   }
-
 
 
   public int getToggleClickCount() {
