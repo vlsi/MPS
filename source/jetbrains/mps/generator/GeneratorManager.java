@@ -268,7 +268,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       MPSPlugin.getInstance().refreshFS();
       MPSPlugin.getInstance().buildProject();
 
-      ReloadUtils.reloadAll(true);
+      ReloadUtils.reloadAll();
 
     } catch (Exception e) {
       LOG.error("Exception", e);

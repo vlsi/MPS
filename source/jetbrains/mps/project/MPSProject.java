@@ -59,7 +59,7 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope, IContainer
         MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
         projects.addProject(MPSProject.this);
 
-        ReloadUtils.reloadAll(true);
+        ReloadUtils.reloadAll();
       }
     }, "MPS Project init");
 
