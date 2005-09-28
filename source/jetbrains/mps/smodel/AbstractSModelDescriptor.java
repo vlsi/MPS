@@ -24,6 +24,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   private List<SModelListener> myModelListeners;
   private List<SModelCommandListener> myModelCommandListenersForImportedModels;
   private List<SModelCommandListener> myCommandListeners;
+  private long myLastStructuralChange = System.currentTimeMillis();
   private long myLastChange = System.currentTimeMillis();
 
 
@@ -44,9 +45,10 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     this.addSModelCommandListener(new SModelCommandListener() {
       public void modelChangedInCommand(List<SModelEvent> events, EditorContext editorContext) {
         if (EventUtil.isDramaticalChange(events)) {
-          myLastChange = System.currentTimeMillis();
+          myLastStructuralChange = System.currentTimeMillis();
           ourState++;
         }
+        myLastChange = System.currentTimeMillis();
       }
     });
   }
@@ -127,6 +129,10 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
       }
     }
     return mySModel;
+  }
+
+  public long lastStructuralChange() {
+    return myLastStructuralChange;
   }
 
   public long lastChange() {

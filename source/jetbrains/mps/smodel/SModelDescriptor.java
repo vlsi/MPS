@@ -45,6 +45,7 @@ public interface SModelDescriptor {
   Set<SNode> findInstances(ConceptDeclaration concept, IScope scope);
 
   long timestamp();
+  long lastStructuralChange();
   long lastChange();
 
 

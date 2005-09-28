@@ -14,6 +14,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseAdapter;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.HashMap;
 
 /**
  * @author Kostik
@@ -22,6 +24,7 @@ public class MessagesGutter extends JPanel {
   private AbstractEditorComponent myEditorComponent;
   private JLabel myErrosLabel = new JLabel(Icons.OK);
   private List<IGutterMessage> myMessages = new ArrayList<IGutterMessage>();
+  private Map<IGutterMessage, IGutterMessageOwner> myOwners = new HashMap<IGutterMessage, IGutterMessageOwner>();
 
 
   public MessagesGutter(AbstractEditorComponent editorComponent) {
@@ -33,75 +36,40 @@ public class MessagesGutter extends JPanel {
     add(new MyMessagesGutter(), BorderLayout.CENTER);
   }
 
+  public AbstractEditorComponent getEditorComponent() {
+    return myEditorComponent;
+  }
+
+  public void setStatus(Status status) {
+    switch (status) {
+      case OK:
+        myErrosLabel.setIcon(Icons.OK);
+        break;
+      case ERROR:
+        myErrosLabel.setIcon(Icons.ERRORS);
+        break;
+      case IN_PROGRESS:
+        myErrosLabel.setIcon(Icons.IN_PROGRESS);
+        break;
+    }
+  }
+
   public void updateTypesystem() {
-    SNode node = myEditorComponent.getRootCell().getSNode();
-
-    if (node == null) return;
-
-    myErrosLabel.setIcon(Icons.OK);
-
-    if (node.getUserObject(SNode.LAST_UPDATE) == null ||
-            (Long) node.getUserObject(SNode.LAST_UPDATE) < node.getModel().getModelDescriptor().state()) {
-      myErrosLabel.setIcon(Icons.IN_PROGRESS);
-      return;
-    }
-
-    TSStatus status = (TSStatus) node.getUserObject(SNode.STATUS);
-
-    removeAllMessages();
-    
-    if (status != null && status.isError()) {
-      List<TSStatus> tsStatuses = new ArrayList<TSStatus>();
-
-      if (status instanceof TSStatus.ERROR_COMPOSITE) {
-        tsStatuses.addAll(status.getAllErrors());
-      } else {
-        tsStatuses.add(status);
-      }
-
-      myErrosLabel.setIcon(Icons.ERRORS);
-
-
-
-      for (final TSStatus s : tsStatuses) {
-        add(new IGutterMessage() {
-          public int getStart() {
-            return getNodeCell().getY();
-          }
-
-          public int getHeight() {
-            return getNodeCell().getHeight();
-          }
-
-          public String getMessage() {
-            return s.getMessage();
-          }
-
-          public void doNavigate() {
-            myEditorComponent.changeSelection(getNodeCell());
-          }
-
-          public boolean isValid() {
-            return getNodeCell() != null;
-          }
-
-          private EditorCell getNodeCell() {
-            return myEditorComponent.getBigValidCellForNode(s.getSNode());
-          }
-        });
-      }
-    } else {
-      myErrosLabel.setIcon(Icons.OK);
-    }
   }
 
 
-  public void add(IGutterMessage message) {
+  public void add(IGutterMessage message, IGutterMessageOwner owner) {
     myMessages.add(message);
+    myOwners.put(message, owner);
   }
 
-  public void removeAllMessages() {
-    myMessages.clear();
+  public void removeMessages(IGutterMessageOwner owner) {
+    for (IGutterMessage m : new ArrayList<IGutterMessage>(myMessages)) {
+      if (myOwners.get(m) == owner) {
+        myMessages.remove(m);
+        myOwners.remove(m);
+      }
+    }
   }
 
   private class MyMessagesGutter extends JPanel {
@@ -155,7 +123,7 @@ public class MessagesGutter extends JPanel {
       if (messages.size() > 0) {
         StringBuffer text = new StringBuffer();
         for (IGutterMessage msg : messages) {
-          if (text.length() > 0) {            
+          if (text.length() > 0) {
             text.append("\n");
           }
           text.append(msg.getMessage());
@@ -184,5 +152,12 @@ public class MessagesGutter extends JPanel {
     public JToolTip createToolTip() {
       return new JMultiLineToolTip();
     }
+  }
+
+
+  public enum Status {
+    OK,
+    ERROR,
+    IN_PROGRESS
   }
 }
