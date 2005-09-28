@@ -1,5 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
+import java.awt.*;
+
 
 /**
  * Author: Sergey Dmitriev.
@@ -41,7 +43,12 @@ public class NodeEditorActions {
     public void execute(EditorContext context) {
       context.getNodeEditorComponent().clearSelectionStack();
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      context.getNodeEditorComponent().changeSelection(findTarget(selection));
+      EditorCell target = findTarget(selection);
+      context.getNodeEditorComponent().changeSelection(target);
+      if (target instanceof EditorCell_Label) {
+        TextLine textLine = ((EditorCell_Label) target).getTextLine();
+        textLine.setCaretPositionToLast();
+      }
     }
 
     private EditorCell findTarget(EditorCell cell) {
@@ -277,9 +284,13 @@ public class NodeEditorActions {
     }
 
     public void execute(EditorContext context) {
-        context.getNodeEditorComponent().clearSelectionStack();
-        EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-        context.getNodeEditorComponent().changeSelection(findTarget(selection));
+      context.getNodeEditorComponent().clearSelectionStack();
+      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
+      EditorCell target = findTarget(selection);
+      context.getNodeEditorComponent().changeSelection(target);
+      if (target instanceof EditorCell_Label) {
+        ((EditorCell_Label)target).getTextLine().setCaretPosition(0);
+      }
     }
 
     private EditorCell findTarget(EditorCell cell) {
@@ -419,6 +430,40 @@ public class NodeEditorActions {
       context.getNodeEditorComponent().clearSelectionStack();
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
       context.getNodeEditorComponent().changeSelection(context.getNodeEditorComponent().findPrevSelectableCell(selection));
+    }
+  }
+
+
+  private static void navigatePage(EditorContext context, boolean isDown) {
+      AbstractEditorComponent editor = context.getNodeEditorComponent();
+      EditorCell selection = editor.getSelectedCell();
+      Rectangle rect = editor.getVisibleRect();
+      int height = (int) rect.getHeight();
+      height = isDown ? height : -height;
+      int caretX = selection.getCaretX();
+      int y = selection.getY() + (selection.getHeight()/2);
+      EditorCell target = editor.findNearestCell(caretX, y + height);
+      target.setCaretX(caretX);
+      editor.changeSelection(target);
+  }
+
+  public static class PAGE_DOWN extends EditorCellAction {
+    public boolean canExecute(EditorContext context) {
+      return true;
+    }
+
+    public void execute(EditorContext context) {
+      navigatePage(context, true);
+    }
+  }
+
+  public static class PAGE_UP extends EditorCellAction {
+    public boolean canExecute(EditorContext context) {
+      return true;
+    }
+
+    public void execute(EditorContext context) {
+      navigatePage(context, false);
     }
   }
 

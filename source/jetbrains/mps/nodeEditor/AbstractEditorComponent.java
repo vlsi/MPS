@@ -54,7 +54,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private Stack<EditorCell> mySelectedStack = new Stack<EditorCell>();
   private Stack<IKeyboardHandler> myKbdHandlersStack;
-  private HashMap myActionMap;
+  private HashMap<String, EditorCellAction> myActionMap;
 
   private NodeSubstituteChooser myNodeSubstituteChooser;
   private HashMap myUserDataMap = new HashMap();
@@ -153,6 +153,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myActionMap.put(EditorCellAction.CTRL_END, new NodeEditorActions.CTRL_END());
     myActionMap.put(EditorCellAction.HOME, new NodeEditorActions.HOME());
     myActionMap.put(EditorCellAction.END, new NodeEditorActions.END());
+    myActionMap.put(EditorCellAction.PAGE_DOWN, new NodeEditorActions.PAGE_DOWN());
+    myActionMap.put(EditorCellAction.PAGE_UP, new NodeEditorActions.PAGE_UP());
     // ----
     myActionMap.put(EditorCellAction.COPY, new CellAction_CopyNode());
     myActionMap.put(EditorCellAction.CUT, new CellAction_CutNode());
@@ -465,6 +467,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_END) {
       return EditorCellAction.END;
+    }
+    if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_DOWN) {
+      return EditorCellAction.PAGE_DOWN;
+    }
+    if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_UP) {
+      return EditorCellAction.PAGE_UP;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_TAB && keyEvent.getModifiers() == 0) {
       return EditorCellAction.NEXT;
