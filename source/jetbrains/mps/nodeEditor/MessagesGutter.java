@@ -69,12 +69,11 @@ public class MessagesGutter extends JPanel {
 
         add(new IGutterMessage() {
           public int getStart() {
-            EditorCell nodeCell = getNodeCell();
-            return nodeCell.getY();
+            return cellForNode.getY();
           }
 
           public int getHeight() {
-            return getNodeCell().getHeight();
+            return cellForNode.getHeight();
           }
 
           public String getMessage() {
@@ -86,12 +85,11 @@ public class MessagesGutter extends JPanel {
           }
 
           public boolean isValid() {
-            return getNodeCell() != null;
+            return true;
           }
 
           private EditorCell getNodeCell() {
-            EditorCell nodeCell = myEditorComponent.findNodeCell(s.getSNode());
-            return nodeCell;
+            return myEditorComponent.findNodeCell(s.getSNode());
           }
         });
       }
