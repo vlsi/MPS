@@ -776,7 +776,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public EditorCell findNearestCell(int x, int y) {
     EditorCell cell = null;
-    myRootCell.findCell(x, y);
+    cell = myRootCell.findCell(x, y);
     if (cell == null) {
       cell = myRootCell.findNearestCell(x, y, true);
       if (cell == null) {

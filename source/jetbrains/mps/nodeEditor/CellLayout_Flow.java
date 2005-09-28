@@ -111,6 +111,10 @@ hStart |--------|                  |  | hEnd
     return findCell(editorCells, x, y);
   }
 
+  public EditorCell findNearestRow(EditorCell_Collection editorCells, int y) {
+    return null;
+  }
+
   public EditorCell findCell(EditorCell_Collection editorCells, int x, int y) {
     return findCell_internal(editorCells, x, y);
   }

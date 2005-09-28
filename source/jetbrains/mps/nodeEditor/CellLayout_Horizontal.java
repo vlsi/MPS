@@ -32,6 +32,12 @@ public class CellLayout_Horizontal implements CellLayout {
     editorCells.setHeight(height);
   }
 
+  public EditorCell findNearestRow(EditorCell_Collection editorCells, int y) {
+    int myY = editorCells.getY();
+    if (myY <= y && y < myY + editorCells.getHeight()) return editorCells;
+    return null;
+  }
+
   public EditorCell findNearestCell(EditorCell_Collection editorCells, int x, int y, boolean isPrevious) {
     if (y >= editorCells.getY() + editorCells.getHeight() || y < editorCells.getY()) {
       return null;
