@@ -100,7 +100,7 @@ public class MessagesGutter extends JPanel {
         g.setColor(new Color(80, 80, 80, 70));
         g.fillRect(1, messageY, getWidth() - 2, 2);
 
-        g.setColor(Color.RED);
+        g.setColor(msg.getColor());
         g.fillRect(0, messageY - 1, getWidth() - 2, 2);
 
 

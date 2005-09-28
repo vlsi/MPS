@@ -17,6 +17,7 @@ import java.util.*;
 public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   private static final Logger LOG = Logger.getLogger(AbstractSModelDescriptor.class);
 
+  private static volatile long ourStructuralState = 0;
   private static volatile long ourState = 0;
 
   private SModel mySModel = null;
@@ -46,9 +47,10 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
       public void modelChangedInCommand(List<SModelEvent> events, EditorContext editorContext) {
         if (EventUtil.isDramaticalChange(events)) {
           myLastStructuralChange = System.currentTimeMillis();
-          ourState++;
+          ourStructuralState++;
         }
         myLastChange = System.currentTimeMillis();
+        ourState++;
       }
     });
   }
@@ -140,6 +142,10 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   }
 
   //event counter
+  public long structuralState() {
+    return ourStructuralState;
+  }
+
   public long state() {
     return ourState;
   }

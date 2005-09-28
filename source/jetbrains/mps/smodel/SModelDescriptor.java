@@ -50,6 +50,7 @@ public interface SModelDescriptor {
 
 
   //dramatical event counter
+  long structuralState();
   long state();
 
   void delete();

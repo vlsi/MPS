@@ -1,5 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
+import java.awt.*;
+
 /**
  * @author Kostik
  */
@@ -12,4 +14,6 @@ public interface IGutterMessage {
   void doNavigate();
 
   boolean isValid();
+
+  Color getColor();
 }
