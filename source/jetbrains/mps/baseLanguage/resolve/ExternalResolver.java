@@ -4,6 +4,7 @@ import jetbrains.mps.typesystem.ITypeChecker;
 import jetbrains.mps.typesystem.TypeCheckerAccess;
 import jetbrains.mps.typesystem.TSStatus;
 import jetbrains.mps.typesystem.ITypeObject;
+import jetbrains.mps.ide.BootstrapLanguages;
 
 import java.util.Iterator;
 
@@ -15,6 +16,14 @@ import java.util.Iterator;
  * To change this template use File | Settings | File Templates.
  */
 public class ExternalResolver {
+
+  static {
+    loadBaseLanguage();
+  }
+
+  private static void loadBaseLanguage() {
+    TypeCheckerAccess.instance().getTypeChecker().loadLanguage(BootstrapLanguages.getInstance().getBaseLanguage());
+  }
 
   public static String getExtResolveInfoForTargetClassGenericDeclaration(GenericDeclaration genericDeclaration) {
     String name = genericDeclaration.getName();
