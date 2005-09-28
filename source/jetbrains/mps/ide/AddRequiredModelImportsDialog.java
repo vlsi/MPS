@@ -44,8 +44,8 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
     return myCanceled;
   }
 
-  public AddRequiredModelImportsDialog(ProjectFrame ideMain, SModel model, List<SModelUID> imports, List<String> languages, Set<SModelUID> necessaryImports, Set<String> necessaryLanguages) {
-    super(ideMain.getMainFrame(), "Imports and Languages");
+  public AddRequiredModelImportsDialog(Frame frame, SModel model, List<SModelUID> imports, List<String> languages, Set<SModelUID> necessaryImports, Set<String> necessaryLanguages) {
+    super(frame, "Imports and Languages");
     myImports = imports;
     myLanguages = languages;
     myLanguagesToAdd = new ArrayList<String>(necessaryLanguages);

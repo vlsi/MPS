@@ -342,7 +342,7 @@ public class CopyPasteNodeUtil {
     necessaryLanguages.retainAll(languagesFromPattern);
 
     if ((!additionalModels.isEmpty())||(!additionalLanguages.isEmpty())) {
-      AddRequiredModelImportsDialog dialog = new AddRequiredModelImportsDialog(context.getComponent(ProjectFrame.class), targetModel, additionalModels, additionalLanguages, necessaryImports, necessaryLanguages);
+      AddRequiredModelImportsDialog dialog = new AddRequiredModelImportsDialog(context.getComponent(ProjectFrame.class).getMainFrame(), targetModel, additionalModels, additionalLanguages, necessaryImports, necessaryLanguages);
       dialog.setModal(true);
       dialog.showDialog();
       return (!dialog.isCanceled());
