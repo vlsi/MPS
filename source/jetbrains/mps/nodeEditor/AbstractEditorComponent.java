@@ -1189,6 +1189,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public boolean isValid(EditorCell cell) {
     if (cell == myRootCell) return true;
+    if (cell == null) return false;
     if (cell.getParent() == null) return false;
     return isValid(cell.getParent());
   }
@@ -1367,7 +1368,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
               }
             }
 
-            selectNode(parent);
+
+            EditorCell nullCell = findNodeCellWithRole(parent, role);
+            if (nullCell == null) {
+              selectNode(parent);
+            } else {
+              changeSelection(nullCell);
+            }
+
             return;
           }
 
