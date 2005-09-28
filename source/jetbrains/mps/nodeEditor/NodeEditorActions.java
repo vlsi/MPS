@@ -10,13 +10,9 @@ import java.awt.*;
 public class NodeEditorActions {
 
   private static EditorCell_Collection findHorizontalCollection(EditorCell cell) {
-    EditorCell_Collection parentCell = cell.getParent();
+    EditorCell_Collection parentCell = (cell instanceof EditorCell_Collection) ? (EditorCell_Collection) cell : cell.getParent();
 
-    if (parentCell == null) {
-      if (cell instanceof EditorCell_Collection) {
-        parentCell = (EditorCell_Collection) cell;
-      } else return null;
-    }
+    if (parentCell == null) return null;
 
     while (!(parentCell.getCellLayout() instanceof CellLayout_Horizontal)) {
       EditorCell firstCell = parentCell.firstCell();
@@ -79,24 +75,8 @@ public class NodeEditorActions {
 
       if (!(target instanceof EditorCell_Collection)) return target;
 
-      return findLastSelectableCell((EditorCell_Collection) target);
+      return EditorUtil.findLastSelectableCell((EditorCell_Collection) target);
       //---
-    }
-
-    private EditorCell findLastSelectableCell(EditorCell_Collection collection) {
-     EditorCell target = collection.lastCell();
-      while (target != null) {
-        if (target instanceof EditorCell_Collection) {
-          EditorCell childTarget = findLastSelectableCell((EditorCell_Collection) target);
-          if (childTarget != null) {
-            return childTarget;
-          }
-        } else if (target.isSelectable()) {
-          return target;
-        }
-        target = collection.findNextToLeft(target);
-      }
-      return null;
     }
   }
 
@@ -118,23 +98,7 @@ public class NodeEditorActions {
       while (rootCell != null && rootCell.getParent() != null) {
         rootCell = rootCell.getParent();
       }
-      return findTarget(rootCell);
-    }
-
-    private EditorCell findTarget(EditorCell_Collection collection) {
-      EditorCell target = collection.firstCell();
-      while (target != null) {
-        if (target instanceof EditorCell_Collection) {
-          EditorCell childTarget = findTarget((EditorCell_Collection) target);
-          if (childTarget != null) {
-            return childTarget;
-          }
-        } else if (target.isSelectable()) {
-          return target;
-        }
-        target = collection.findNextToRight(target);
-      }
-      return null;
+      return EditorUtil.findFirstSelectableCell(rootCell);
     }
 
   }
@@ -158,23 +122,7 @@ public class NodeEditorActions {
       while (rootCell != null && rootCell.getParent() != null) {
         rootCell = rootCell.getParent();
       }
-      return findTarget(rootCell);
-    }
-
-    private EditorCell findTarget(EditorCell_Collection collection) {
-      EditorCell target = collection.lastCell();
-      while (target != null) {
-        if (target instanceof EditorCell_Collection) {
-          EditorCell childTarget = findTarget((EditorCell_Collection) target);
-          if (childTarget != null) {
-            return childTarget;
-          }
-        } else if (target.isSelectable()) {
-          return target;
-        }
-        target = collection.findNextToLeft(target);
-      }
-      return null;
+      return EditorUtil.findLastSelectableCell(rootCell);
     }
 
   }
@@ -204,25 +152,10 @@ public class NodeEditorActions {
       EditorCell_Collection prev_parentCell = findHorizontalCollection(cell);
 
       if (prev_parentCell == null) return null;
-      return findTarget(prev_parentCell);
+      return EditorUtil.findFirstSelectableCell(prev_parentCell);
 
     }
 
-    private EditorCell findTarget(EditorCell_Collection collection) {
-      EditorCell target = collection.firstCell();
-      while (target != null) {
-        if (target instanceof EditorCell_Collection) {
-          EditorCell childTarget = findTarget((EditorCell_Collection) target);
-          if (childTarget != null) {
-            return childTarget;
-          }
-        } else if (target.isSelectable()) {
-          return target;
-        }
-        target = collection.findNextToRight(target);
-      }
-      return null;
-    }
   }
 
   public  static class END extends EditorCellAction {
@@ -249,29 +182,8 @@ public class NodeEditorActions {
       EditorCell_Collection prev_parentCell = findHorizontalCollection(cell);
 
       if (prev_parentCell == null) return null;
-      return findTarget(prev_parentCell);
+      return EditorUtil.findLastSelectableCell(prev_parentCell);
 
-    }
-
-    private EditorCell findTarget(EditorCell_Collection collection) {
-      EditorCell target;
-
-      if (collection.getCellLayout() instanceof CellLayout_Horizontal)
-        target = collection.lastCell();
-      else target = collection.firstCell();
-
-      while (target != null) {
-        if (target instanceof EditorCell_Collection) {
-          EditorCell childTarget = findTarget((EditorCell_Collection) target);
-          if (childTarget != null) {
-            return childTarget;
-          }
-        } else if (target.isSelectable()) {
-          return target;
-        }
-        target = collection.findNextToLeft(target);
-      }
-      return null;
     }
 
   }
@@ -296,7 +208,7 @@ public class NodeEditorActions {
     private EditorCell findTarget(EditorCell cell) {
       EditorCell_Collection parent = cell.getParent();
       if (parent == null) {
-        return (cell instanceof EditorCell_Collection)?findFirstSelectableCell((EditorCell_Collection) cell):null;
+        return (cell instanceof EditorCell_Collection)?EditorUtil.findFirstSelectableCell((EditorCell_Collection) cell) :null;
       }
 
       EditorCell nextToRight = parent.findNextToRight(cell);
@@ -322,48 +234,32 @@ public class NodeEditorActions {
 
       if (!(target instanceof EditorCell_Collection)) return target;
 
-      return findFirstSelectableCell((EditorCell_Collection) target);
+      return EditorUtil.findFirstSelectableCell((EditorCell_Collection) target);
       //---
     }
+  }
 
-    private EditorCell findFirstSelectableCell(EditorCell_Collection collection) {
-      EditorCell target = collection.firstCell();
-      while (target != null) {
-        if (target instanceof EditorCell_Collection) {
-          EditorCell childTarget = findFirstSelectableCell((EditorCell_Collection) target);
-          if (childTarget != null) {
-            return childTarget;
-          }
-        } else if (target.isSelectable()) {
-          return target;
-        }
-        target = collection.findNextToRight(target);
+    public static class UP extends EditorCellAction {
+      public boolean canExecute(EditorContext context) {
+        EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
+        return selection != null && selection.getParent() != null && findTarget(selection, selection.getCaretX()) != null;
       }
-      return null;
-    }
-  }
 
-  public static class UP extends EditorCellAction {
-    public boolean canExecute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      return selection != null && selection.getParent() != null && findTarget(selection, selection.getCaretX()) != null;
-    }
+      public void execute(EditorContext context) {
+        context.getNodeEditorComponent().clearSelectionStack();
+        EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
+        int caretX = selection.getCaretX();
+        if (context.getNodeEditorComponent().hasLastCaretX()) caretX = context.getNodeEditorComponent().getLastCaretX();
+        context.getNodeEditorComponent().saveLastCaretX(caretX);
+        EditorCell target = findTarget(selection, caretX);
+        target.setCaretX(caretX);
+        context.getNodeEditorComponent().changeSelection(target, false);
+      }
 
-    public void execute(EditorContext context) {
-      context.getNodeEditorComponent().clearSelectionStack();
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      int caretX = selection.getCaretX();
-      if (context.getNodeEditorComponent().hasLastCaretX()) caretX = context.getNodeEditorComponent().getLastCaretX();
-      context.getNodeEditorComponent().saveLastCaretX(caretX);
-      EditorCell target = findTarget(selection, caretX);
-      target.setCaretX(caretX);
-      context.getNodeEditorComponent().changeSelection(target, false);
+      private EditorCell findTarget(EditorCell cell, int caretX) {
+        return cell.getParent().findNextToUp(caretX, cell.getY() - 1);
+      }
     }
-
-    private EditorCell findTarget(EditorCell cell, int caretX) {
-      return cell.getParent().findNextToUp(caretX, cell.getY() - 1);
-    }
-  }
 
   public static class DOWN extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
@@ -435,16 +331,21 @@ public class NodeEditorActions {
 
 
   private static void navigatePage(EditorContext context, boolean isDown) {
-      AbstractEditorComponent editor = context.getNodeEditorComponent();
-      EditorCell selection = editor.getSelectedCell();
-      Rectangle rect = editor.getVisibleRect();
-      int height = (int) rect.getHeight();
-      height = isDown ? height : -height;
-      int caretX = selection.getCaretX();
-      int y = selection.getY() + (selection.getHeight()/2);
-      EditorCell target = editor.findNearestCell(caretX, y + height);
+    AbstractEditorComponent editor = context.getNodeEditorComponent();
+    EditorCell selection = editor.getSelectedCell();
+    Rectangle rect = editor.getVisibleRect();
+    int height = (int) rect.getHeight();
+    height = isDown ? height : -height;
+    int caretX = selection.getCaretX();
+    int y = selection.getY() + (selection.getHeight()/2);
+    EditorCell target = editor.findNearestCell(caretX, y + height);
+    if (target == null) {
+      target = isDown ? editor.findLastSelectableCell() : editor.findFirstSelectableCell();
+      editor.changeSelection(target);
+    } else {
       target.setCaretX(caretX);
       editor.changeSelection(target);
+    }
   }
 
   public static class PAGE_DOWN extends EditorCellAction {

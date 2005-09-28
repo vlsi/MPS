@@ -27,10 +27,13 @@ public class EditorManager {
 
 
   public EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events) {
-    EditorCell rootCell = context.getNodeEditorComponent().getRootCell();
+    AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
+    EditorCell rootCell = nodeEditorComponent.getRootCell();
     myMap.clear();
     myMap.put(node,rootCell);
-    return createEditorCell(context, node, events);
+    EditorCell newRootCell = createEditorCell(context, node, events);
+    
+    return newRootCell;
   }
 
   private static Map<SNode, EditorCell> findBigDescendantCellsAndTheirNodes(EditorCell cell) {

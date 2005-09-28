@@ -384,6 +384,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void setRootCell(EditorCell rootCell) {
+    setRootCell(rootCell, true);
+  }
+
+  private void setRootCell(EditorCell rootCell, boolean isOldRebuild /*temp parameter*/) {
     if (myRootCell != null) {
       SNode semanticNode = myRootCell.getSNode();
       if (semanticNode != null) {
@@ -397,19 +401,34 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myRootCell.setY(myShiftY);
     myRootCell.relayout();
 
-    SNode node = myRootCell.getSNode();
-    if (node != null) {
-      SModel model = node.getModel();
-      if (!model.hasSModelCommandListener(myModelListener)) {
-        model.addSModelCommandListener(myModelListener);
+    if (isOldRebuild) {//old rebuild strategy => listeners are set differently (temp code)
+      SNode node = myRootCell.getSNode();
+      if (node != null) {
+        SModel model = node.getModel();
+        if (!model.hasSModelCommandListener(myModelListener)) {
+          model.addSModelCommandListener(myModelListener);
+        }
+        Iterator<SModelDescriptor> iterator = model.importedModels(getOperationContext().getScope());
+        while (iterator.hasNext()) {
+          SModelDescriptor imported = iterator.next();
+          imported.addSModelCommandListener(myModelListener);
+          imported.addSModelCommandListenerToImportedModels(myModelListener);
+        }
       }
-      Iterator<SModelDescriptor> iterator = model.importedModels(getOperationContext().getScope());
-      while (iterator.hasNext()) {
-        SModelDescriptor imported = iterator.next();
-        imported.addSModelCommandListener(myModelListener);
-        imported.addSModelCommandListenerToImportedModels(myModelListener);
+
+    } else {//new rebuild strategy
+      Set<SNode> nodesWhichEditorDependsOn = myCellsToNodesToDependOnMap.get(myRootCell);
+
+      if (nodesWhichEditorDependsOn != null) {
+        for (SNode node : nodesWhichEditorDependsOn) {
+          SModel model = node.getModel();
+          if (!model.hasSModelCommandListener(myModelListener)) {
+            model.addSModelCommandListener(myModelListener);
+          }
+        }
       }
     }
+
 
     revalidate();
     repaint();
@@ -655,27 +674,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public EditorCell findFirstSelectableCell() {
-    if (myRootCell instanceof EditorCell_Collection) {
-      return findFirstSelectableCell((EditorCell_Collection) myRootCell);
-    } else if (myRootCell.isSelectable()) return myRootCell;
-      else return null;
+    return EditorUtil.findFirstSelectableCell(myRootCell);
   }
 
-   private EditorCell findFirstSelectableCell(EditorCell_Collection collection) {
-      EditorCell target = collection.firstCell();
-      while (target != null) {
-        if (target instanceof EditorCell_Collection) {
-          EditorCell childTarget = findFirstSelectableCell((EditorCell_Collection) target);
-          if (childTarget != null) {
-            return childTarget;
-          }
-        } else if (target.isSelectable()) {
-          return target;
-        }
-        target = collection.findNextToRight(target);
-      }
-      return null;
-    }
+  public EditorCell findLastSelectableCell() {
+    return EditorUtil.findLastSelectableCell(myRootCell);
+  }
 
   public EditorCell findNextSelectableCell(final EditorCell cell) {
     if (!(myRootCell instanceof EditorCell_Collection)) {
@@ -758,7 +762,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       id = (String) selectedCell.getUserObject(EditorCell.CELL_ID);
     }
 
-    setRootCell(createRootCell(events));
+    setRootCell(createRootCell(events), false);
 
     if (nodeProxy != null && id != null) {
       EditorCell cell = findNodeCell(nodeProxy.getNode(), id);
@@ -1300,7 +1304,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           }
         }
 
-        //todo optimize
         rebuildEditorContent(events);
 
         SModelEvent lastAdd = null;
