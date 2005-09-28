@@ -287,11 +287,10 @@ public class SModelRepository extends SModelAdapter {
         try {
           list.addAll(manager.read(modelRoot, owner));
         } catch (Exception e) {
-          LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\"", e);
+          LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + owner, e);
         }
       } else {
-        String error = "Couldn't load modelDescriptors from " + dir.getAbsolutePath() +
-                "\nDirectory doesn't exist: " + dir.getAbsolutePath();
+        String error = "Couldn't load modelDescriptors from \"" + dir.getAbsolutePath() + "\" : directory doesn't exist. Requested by: " + owner;
         LOG.error(error);
       }
     }

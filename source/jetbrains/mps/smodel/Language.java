@@ -221,8 +221,11 @@ public class Language extends AbstractModule implements ModelLocator {
 
   public SModelDescriptor getStructureModelDescriptor() {
     if (getLanguageDescriptor().getStructureModel() != null) {
-      SModelDescriptor structureModelDescriptor = getModelDescriptor(SModelUID.fromString(getLanguageDescriptor().getStructureModel().getName()));
-      if (!myRegisteredInFindUsagesManager) {
+      SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getStructureModel().getName());
+      SModelDescriptor structureModelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
+      if (structureModelDescriptor == null) {
+        LOG.errorWithTrace("Couldn't get structure model \"" + modelUID + "\"");
+      } else if (!myRegisteredInFindUsagesManager) {
         myRegisteredInFindUsagesManager = true;
         //register cache invalidation
         FindUsagesManager.registerStructureModel(structureModelDescriptor);
@@ -234,14 +237,16 @@ public class Language extends AbstractModule implements ModelLocator {
 
   public SModelDescriptor getTypesystemModelDescriptor() {
     if (getLanguageDescriptor().getTypeSystem() != null) {
-      return getModelDescriptor(SModelUID.fromString(getLanguageDescriptor().getTypeSystem().getName()));
+      SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getTypeSystem().getName());
+      return SModelRepository.getInstance().getModelDescriptor(modelUID, this);
     }
     return null;
   }
 
   public SModelDescriptor getActionsModelDescriptor() {
     if (getLanguageDescriptor().getActionsModel() != null) {
-      return getModelDescriptor(SModelUID.fromString(getLanguageDescriptor().getActionsModel().getName()));
+      SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getActionsModel().getName());
+      return SModelRepository.getInstance().getModelDescriptor(modelUID, this);
     }
     return null;
   }
@@ -260,7 +265,7 @@ public class Language extends AbstractModule implements ModelLocator {
     if (editorUID == null) {
       return null;
     }
-    return getModelDescriptor(SModelUID.fromString(editorUID));
+    return SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(editorUID), this);
   }
 
   public Set<SModelDescriptor> getEditorDescriptors() {
@@ -275,10 +280,13 @@ public class Language extends AbstractModule implements ModelLocator {
 
   public Set<SModelDescriptor> getAspectModelDescriptors() {
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
-    result.add(getStructureModelDescriptor());
+    SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
+    if (structureModelDescriptor != null) result.add(structureModelDescriptor);
     result.addAll(getEditorDescriptors());
-    result.add(getTypesystemModelDescriptor());
-    result.add(getActionsModelDescriptor());
+    SModelDescriptor typesystemModelDescriptor = getTypesystemModelDescriptor();
+    if (typesystemModelDescriptor != null) result.add(typesystemModelDescriptor);
+    SModelDescriptor actionsModelDescriptor = getActionsModelDescriptor();
+    if (actionsModelDescriptor != null) result.add(actionsModelDescriptor);
     return result;
   }
 

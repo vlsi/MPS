@@ -30,7 +30,7 @@ public abstract class AbstractModule implements LanguageOwner, IModule {
       language = LanguageRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
     }
     if (language == null) {
-      LOG.error("Couldn't find language for namespace: \"" + languageNamespace + "\" in scope: " + this);
+      LOG.error("Couldn't find language: \"" + languageNamespace + "\" in scope: " + this);
     }
     return language;
   }

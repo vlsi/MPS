@@ -88,8 +88,8 @@ public class Generator extends AbstractModule implements ModelLocator {
 
   public String toString() {
     StringBuffer sb = new StringBuffer(this.getClass().getName());
-    sb.append(" -> ").append(getTargetLanguageName());
-    sb.append(" in: ").append(mySourceLanguage.getNamespace());
+    sb.append('(').append(mySourceLanguage.getNamespace()).append(')');
+    sb.append("->").append(getTargetLanguageName());
     return sb.toString();
   }
 
@@ -110,6 +110,10 @@ public class Generator extends AbstractModule implements ModelLocator {
     Language targetLanguage = getTargetLanguage();
     if (targetLanguage != null) {
       list.add(targetLanguage);
+
+      // todo: declare dependency?
+      // add all models available for any generator in target language (baseLanguage reduce itself to produce compilable java code)
+      list.addAll(targetLanguage.getGenerators());
     }
     return list;
   }

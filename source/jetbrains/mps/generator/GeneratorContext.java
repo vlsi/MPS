@@ -58,11 +58,11 @@ public class GeneratorContext implements IOperationContext {
   }
 
   public String toString() {
-    return "generator context: " + myGeneratorModule + " invocation cntx: " + myInvocationContext;
+    return getClass().getName() + ": " + myGeneratorModule + "\ninvoked from: " + myInvocationContext;
   }
 
   public String getSessionId() {
-    if( mySessionId == null) {
+    if (mySessionId == null) {
       mySessionId = "" + System.currentTimeMillis();
     }
     return mySessionId;
@@ -86,15 +86,22 @@ public class GeneratorContext implements IOperationContext {
     }
 
     public Language getLanguage(String languageNamespace) {
+      IModule invokationModule = myInvocationContext.getModule();
+      if (invokationModule instanceof Language) {
+        if (languageNamespace.equals(((Language) invokationModule).getNamespace())) {
+          return (Language) invokationModule;
+        }
+      }
+
       Language language = LanguageRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
       if (language == null) {
         language = LanguageRepository.getInstance().getLanguage(languageNamespace, myGeneratorModule);
       }
-      if (language == null && myInvocationContext.getModule() instanceof LanguageOwner) {
-        language = LanguageRepository.getInstance().getLanguage(languageNamespace, (LanguageOwner) myInvocationContext.getModule());
+      if (language == null && invokationModule instanceof LanguageOwner) {
+        language = LanguageRepository.getInstance().getLanguage(languageNamespace, (LanguageOwner) invokationModule);
       }
       if (language == null) {
-        LOG.error("Couldn't find language for namespace: \"" + languageNamespace + "\" in scope: " + this);
+        LOG.error("Couldn't find language: \"" + languageNamespace + "\" in scope: " + this);
       }
       return language;
     }
@@ -106,10 +113,14 @@ public class GeneratorContext implements IOperationContext {
       List<SModelDescriptor> ownModelDescriptors = getOwnModelDescriptors();
       for (SModelDescriptor descriptor : ownModelDescriptors) {
         SModelRepository.getInstance().unRegisterModelDescriptor(descriptor, this);
-        if(descriptor instanceof TransientModelDescriptor) {
+        if (descriptor instanceof TransientModelDescriptor) {
           SModelRepository.getInstance().deleteModelDescriptor(descriptor);
         }
       }
+    }
+
+    public String toString() {
+      return "TransientModule in " + GeneratorContext.this;
     }
   }
 }
