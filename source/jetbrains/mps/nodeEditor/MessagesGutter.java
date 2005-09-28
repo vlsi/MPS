@@ -82,7 +82,7 @@ public class MessagesGutter extends JPanel {
           }
 
           public boolean isValid() {
-            return getNodeCell() == null;
+            return getNodeCell() != null;
           }
 
           private EditorCell getNodeCell() {
