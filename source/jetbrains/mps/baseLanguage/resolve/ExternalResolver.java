@@ -82,7 +82,7 @@ public class ExternalResolver {
 
     ITypeChecker typeChecker = TypeCheckerAccess.instance().getTypeChecker();
     TSStatus tSStatus = typeChecker.adaptNode(baseMethodDeclaration.getReturnType());
-    ITypeObject typeObject = tSStatus.getTypeObject(); //if error => nullPointer!!! TODO!!!
+    ITypeObject typeObject = tSStatus.getTypeObject(); //if error => nullPointer - and that's okay
     String methodTypeName = typeObject.getTypeName();
     String methodTypeSignature = typeObject.getSignature();
     String methodType = "(" + methodTypeName + "/" + methodTypeSignature + ")";
