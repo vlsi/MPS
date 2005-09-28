@@ -12,6 +12,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.Interface" id="1115766166286">
+    <property name="todo" value="this is a test interface" />
     <property name="name" value="AnInterface" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1115766214538">
       <property name="name" value="baseInterfaceMethod" />
@@ -108,6 +109,7 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1115766387883">
             <property name="name" value="c1" />
             <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1115766387884">
+              <property name="todo" value="remove this variable" />
               <link role="classifier" targetNodeId="1115766310400" />
             </node>
           </node>
