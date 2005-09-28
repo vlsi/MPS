@@ -1173,6 +1173,17 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return myNodesToBigCellsMap.get(node);
   }
 
+  public EditorCell getBigValidCellForNode(SNode node) {
+    EditorCell result = getBigCellForNode(node);
+    if (isValid(result)) return result;
+    return null;
+  }
+
+  public boolean isValid(EditorCell cell) {
+    if (cell == myRootCell) return true;
+    if (cell.getParent() == null) return false;
+    return isValid(cell.getParent());
+  }
 
   private EditorCell findEditableCell(EditorCell root) {
     if (root instanceof EditorCell_Label && ((EditorCell_Label) root).isEditable() && root.isSelectable()) {

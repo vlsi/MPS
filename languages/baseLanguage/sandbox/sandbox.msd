@@ -2,6 +2,7 @@
 <solution name="sandbox">
   <models>
     <modelRoot path="${solution_descriptor}\." namespacePrefix="jetbrains.mps.baseLanguage.sandbox" />
+    <modelRoot path="${mps_home}\models" namespacePrefix="" />
   </models>
   <languages />
 </solution>
