@@ -23,7 +23,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.Solution;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
@@ -477,7 +476,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         solutionDescriptor.addModelRoot(copyRoot);
       }
 
-      List<Language> languages = generatorContext.getGeneratorModule().getLanguages();
+      List<Language> languages = generatorModule.getLanguages();
       for (Language language : languages) {
         Root languageRoot = new Root(solutionDescriptorModel);
         languageRoot.setPath(language.getDescriptorFile().getParentFile().getAbsolutePath());
@@ -496,7 +495,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         solutionDescriptor.addModelRoot(copyRoot);
       }
 
-      List<Language> languages = generatorContext.getGeneratorModule().getLanguages();
+      List<Language> languages = invocationModule.getLanguages();
       for (Language language : languages) {
         Root languageRoot = new Root(solutionDescriptorModel);
         languageRoot.setPath(language.getDescriptorFile().getParentFile().getAbsolutePath());
@@ -510,13 +509,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     // remove transient descriptors from repository before re-loading
     transientModule.dispose();
     generatorContext.getProject().addSolution(solutionFile);
-    List<Solution> projectSolutions = generatorContext.getProject().getProjectSolutions();
-    for (Solution solution : projectSolutions) {
-      if (solution.getDescriptorFile().equals(solutionFile)) {
-        ((GeneratorSessionContext.TransientModule) transientModule).setSessionModule(solution);
-        break;
-      }
-    }
   }
 
   public IPreferencesPage createPreferencesPage() {

@@ -66,11 +66,10 @@ public class GeneratorSessionContext implements IOperationContext {
     return mySessionId;
   }
 
-  public static class TransientModule extends AbstractModule {
+  private static class TransientModule extends AbstractModule {
     private List<IModule> myDependOnModules;
     private Generator myGenerator;
     private IModule myInvocationModule;
-    private IModule mySessionModule;
 
     TransientModule(Generator generator, IModule invocationModule) {
       myGenerator = generator;
@@ -80,26 +79,15 @@ public class GeneratorSessionContext implements IOperationContext {
       myDependOnModules.add(invocationModule);
     }
 
-    public void setSessionModule(IModule sessionModule) {
-      mySessionModule = sessionModule;
-    }
-
     public List<ModelRoot> getModelRoots() {
       return Collections.EMPTY_LIST;
     }
 
     public List<IModule> getDependOnModules() {
-      if (mySessionModule != null) {
-        return mySessionModule.getDependOnModules();
-      }
       return myDependOnModules;
     }
 
     public Language getLanguage(String languageNamespace) {
-      if (mySessionModule != null) {
-        return mySessionModule.getLanguage(languageNamespace);
-      }
-
       if (myInvocationModule instanceof Language) {
         if (languageNamespace.equals(((Language) myInvocationModule).getNamespace())) {
           return (Language) myInvocationModule;
@@ -133,14 +121,7 @@ public class GeneratorSessionContext implements IOperationContext {
     }
 
     public String toString() {
-      return "TransientModule " + (mySessionModule != null ? "(persisted)" : "") + "for " + myGenerator + " invoked in: " + myInvocationModule;
-    }
-
-    public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
-      if (mySessionModule != null) {
-        return mySessionModule.getModelDescriptor(modelUID);
-      }
-      return super.getModelDescriptor(modelUID);
+      return "TransientModule:[" + myInvocationModule + "]->[" + myGenerator + "]";
     }
   }
 }
