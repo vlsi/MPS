@@ -176,44 +176,41 @@ public class TemplateGenUtil {
     return null;
   }
 
-  public static List<INodeBuilder> createNodeBuildersForTemplateMappingRule(MappingRule templateMappingRule, ITemplateGenerator generator) {
+  public static List<INodeBuilder> createNodeBuildersForMappingRule(MappingRule mappingRule, ITemplateGenerator generator) {
     List<INodeBuilder> builders = new LinkedList<INodeBuilder>();
-    String ruleName = templateMappingRule.getName();
-//    if (ruleName == null) {
-//      generator.getProject().getComponent(MessageView.class).add(new Message(MessageKind.ERROR, templateMappingRule, "TemplateMappingRule must have name"));
-//    }
-//    LOG.assertLog(ruleName != null, "TemplateMappingRule must have name");
-    BaseConcept templateNode = templateMappingRule.getTemplateNode();
-    List<SNode> sourceNodes = createSourceNodeListForTemplateMappingRule(templateMappingRule, generator);
+    String ruleName = mappingRule.getName();
+    BaseConcept templateNode = mappingRule.getTemplateNode();
+    List<SNode> sourceNodes = createSourceNodeListForMappingRule(mappingRule, generator);
     for (SNode sourceNode : sourceNodes) {
       INodeBuilder nodeBuilder = createNodeBuilder(sourceNode, templateNode, ruleName, generator);
+      nodeBuilder.setRuleNode(mappingRule);
       builders.add(nodeBuilder);
     }
 
     return builders;
   }
 
-  public static void applyTemplateWeavingingRule(WeavingRule rule, ITemplateGenerator generator) {
-    TemplateDeclaration templateDeclaration = rule.getTemplate();
-    List<SNode> sourceNodes = createSourceNodeListForTemplateWeavingRule(rule, generator);
+  public static void applyWeavingingRule(WeavingRule weavingRule, ITemplateGenerator generator) {
+    TemplateDeclaration templateDeclaration = weavingRule.getTemplate();
+    List<SNode> sourceNodes = createSourceNodeListForWeavingRule(weavingRule, generator);
     for (SNode sourceNode : sourceNodes) {
-      INodeBuilder contextBuilder = getContextNodeBuilderForTemplateWeavingingRule(sourceNode, rule, generator);
+      INodeBuilder contextBuilder = getContextNodeBuilderForWeavingingRule(sourceNode, weavingRule, generator);
       if (contextBuilder == null) {
-        generator.showErrorMessage(sourceNode, rule, "Couldn't create context node builder");
+        generator.showErrorMessage(sourceNode, weavingRule, "Couldn't create context node builder");
         continue;
       }
-      weaveTemplateDeclaration(sourceNode, templateDeclaration, contextBuilder, generator);
+      weaveTemplateDeclaration(sourceNode, templateDeclaration, contextBuilder, generator, weavingRule);
     }
   }
 
   public static void applyWeaveTemplateReductionCommand(SNode sourceNode, ReductionCommand_WeaveTemplate command, INodeBuilder defaultContextBuilder, ITemplateGenerator generator) {
     TemplateDeclaration templateDeclaration = command.getTemplateDeclaration();
-    INodeBuilder contextBuilder = getContextNodeBuilderForWeaveTemplateReductionCommand(sourceNode, command, defaultContextBuilder, generator);
+    INodeBuilder contextBuilder = getContextNodeBuilderForWeaveReductionCommand(sourceNode, command, defaultContextBuilder, generator);
     if (contextBuilder == null) {
       generator.showErrorMessage(sourceNode, command, "Couldn't create context node builder");
       return;
     }
-    weaveTemplateDeclaration(sourceNode, templateDeclaration, contextBuilder, generator);
+    weaveTemplateDeclaration(sourceNode, templateDeclaration, contextBuilder, generator, command);
   }
 
   public static boolean isContextlessFragment(TemplateDeclaration templateDeclaration) {
@@ -228,7 +225,7 @@ public class TemplateGenUtil {
     return false;
   }
 
-  private static void weaveTemplateDeclaration(SNode sourceNode, TemplateDeclaration templateDeclaration, INodeBuilder contextBuilder, ITemplateGenerator generator) {
+  private static void weaveTemplateDeclaration(SNode sourceNode, TemplateDeclaration templateDeclaration, INodeBuilder contextBuilder, ITemplateGenerator generator, SNode ruleNode) {
     List<TemplateFragment> templateFragments = getTemplateFragments(templateDeclaration);
     if (templateFragments.isEmpty()) {
       LOG.warning("WARN: no template fragments found in " + templateDeclaration.getDebugText());
@@ -241,6 +238,7 @@ public class TemplateGenUtil {
       String mappingName = templateFragment.getName();
       List<INodeBuilder> fragmentNodeBuilders = createNodeBuildersForTemplateNode(sourceNode, templateFragmentNode, mappingName, generator);
       for (INodeBuilder fragmentBuilder : fragmentNodeBuilders) {
+        fragmentBuilder.setRuleNode(ruleNode);
         // add our "fragmant builder" to context builder
         INodeBuilder fragmentContextBuilder = getContextBuilderForTemplateFragment(templateFragmentNode, contextBuilder, generator);
         fragmentContextBuilder.addChildBuilder(fragmentBuilder);
@@ -276,7 +274,7 @@ public class TemplateGenUtil {
     return ruleContextBuilder;
   }
 
-  private static INodeBuilder getContextNodeBuilderForTemplateWeavingingRule(SNode sourceNode, WeavingRule rule, ITemplateGenerator generator) {
+  private static INodeBuilder getContextNodeBuilderForWeavingingRule(SNode sourceNode, WeavingRule rule, ITemplateGenerator generator) {
     String aspectId = rule.getContextProviderAspectId();
     String methodName = "templateWeavingRule_Context_" + aspectId;
     Object[] args = new Object[]{sourceNode, generator};
@@ -284,7 +282,7 @@ public class TemplateGenUtil {
     return nodeBuilder;
   }
 
-  private static INodeBuilder getContextNodeBuilderForWeaveTemplateReductionCommand(SNode sourceNode, ReductionCommand_WeaveTemplate command, INodeBuilder defaultContextBuilder, ITemplateGenerator generator) {
+  private static INodeBuilder getContextNodeBuilderForWeaveReductionCommand(SNode sourceNode, ReductionCommand_WeaveTemplate command, INodeBuilder defaultContextBuilder, ITemplateGenerator generator) {
     String aspectId = command.getContextProviderAspectId();
     if (aspectId == null) {
       return defaultContextBuilder;
@@ -333,21 +331,21 @@ public class TemplateGenUtil {
     } // while (childTemplates.hasNext())
   }
 
-  private static List<SNode> createSourceNodeListForTemplateMappingRule(MappingRule templateMappingRule, ITemplateGenerator generator) {
-    String sourceQueryAspectId = templateMappingRule.getSourceQueryAspectId();
+  private static List<SNode> createSourceNodeListForMappingRule(MappingRule mappingRule, ITemplateGenerator generator) {
+    String sourceQueryAspectId = mappingRule.getSourceQueryAspectId();
     String methodName = "templateMappingRule_SourceQuery_" + sourceQueryAspectId;
     Object[] args = new Object[]{generator};
-    List<SNode> sourceNodes = (List<SNode>) QueryMethod.invoke(methodName, args, templateMappingRule.getModel());
-    checkNodesFromQuery(sourceNodes, templateMappingRule, generator);
+    List<SNode> sourceNodes = (List<SNode>) QueryMethod.invoke(methodName, args, mappingRule.getModel());
+    checkNodesFromQuery(sourceNodes, mappingRule, generator);
     return sourceNodes;
   }
 
-  private static List<SNode> createSourceNodeListForTemplateWeavingRule(WeavingRule templateWeavingRule, ITemplateGenerator generator) {
-    String sourceQueryAspectId = templateWeavingRule.getSourceQueryAspectId();
+  private static List<SNode> createSourceNodeListForWeavingRule(WeavingRule weavingRule, ITemplateGenerator generator) {
+    String sourceQueryAspectId = weavingRule.getSourceQueryAspectId();
     String methodName = "templateWeavingRule_SourceQuery_" + sourceQueryAspectId;
     Object[] args = new Object[]{generator};
-    List<SNode> sourceNodes = (List<SNode>) QueryMethod.invoke(methodName, args, templateWeavingRule.getModel());
-    checkNodesFromQuery(sourceNodes, templateWeavingRule, generator);
+    List<SNode> sourceNodes = (List<SNode>) QueryMethod.invoke(methodName, args, weavingRule.getModel());
+    checkNodesFromQuery(sourceNodes, weavingRule, generator);
     return sourceNodes;
   }
 

@@ -4,6 +4,8 @@ import jetbrains.mps.ide.ProjectFrame;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.project.ModuleContext;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,14 +22,14 @@ public class MessageView extends DefaultTool {
   public static final Icon ERROR_ICON = new ImageIcon(MessageView.class.getResource("error.png"));
   public static final Icon WARNING_ICON = new ImageIcon(MessageView.class.getResource("warning.png"));
 
-  private ProjectFrame myIde;
+  private ProjectFrame myProjectFrame;
   private JPanel myComponent = new JPanel();
   private DefaultListModel myModel = new DefaultListModel();
   private JList myList = new JList(myModel);
 
   public MessageView(ProjectFrame ideMain) {
     myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-    myIde = ideMain;
+    myProjectFrame = ideMain;
     myComponent.setLayout(new BorderLayout());
     myComponent.add(new JScrollPane(myList), BorderLayout.CENTER);
 
@@ -69,7 +71,7 @@ public class MessageView extends DefaultTool {
         Message msg = (Message) value;
         setText(msg.getText());
 
-        switch(msg.getKind()) {
+        switch (msg.getKind()) {
           case INFORMATION:
             setIcon(INFORMATION_ICON);
             break;
@@ -109,8 +111,12 @@ public class MessageView extends DefaultTool {
   private void openCurrentMessageNodeIfPossible() {
     Message selectedMessage = (Message) myList.getSelectedValue();
     if (selectedMessage == null) return;
-    if (selectedMessage.getNode() == null) return;
-    myIde.openNodeAndSelect(selectedMessage.getNode(), selectedMessage.getOperationContext());
+    SNode node = selectedMessage.getNode();
+    if (node == null) return;
+    ModuleContext operationContext = ModuleContext.create(node, myProjectFrame.getProject());
+    if (operationContext != null) {
+      myProjectFrame.openNodeAndSelect(node, operationContext);
+    }
   }
 
 
@@ -131,7 +137,7 @@ public class MessageView extends DefaultTool {
     if (myModel.size() > 0) {
       myList.setSelectedValue(myModel.getElementAt(myModel.size() - 1), true);
     }
-    myIde.showMessagesView();
+    myProjectFrame.showMessagesView();
   }
 
   public String getName() {
