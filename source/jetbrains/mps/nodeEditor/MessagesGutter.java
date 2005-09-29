@@ -12,6 +12,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseAdapter;
+import java.awt.event.MouseMotionAdapter;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
@@ -82,6 +83,17 @@ public class MessagesGutter extends JPanel {
           List<IGutterMessage> messages = getMessagesAt(e.getY());
           if (messages.size() > 0) {
             messages.get(0).doNavigate();
+          }
+        }
+      });
+
+      addMouseMotionListener(new MouseMotionAdapter() {
+        public void mouseMoved(MouseEvent e) {
+          List<IGutterMessage> messages = getMessagesAt(e.getY());
+          if (messages.size() > 0) {
+            setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+          } else {
+            setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
           }
         }
       });
