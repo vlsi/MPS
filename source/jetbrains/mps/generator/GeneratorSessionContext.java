@@ -17,15 +17,15 @@ import java.util.*;
  * Time: 7:20:19 PM
  * To change this template use File | Settings | File Templates.
  */
-public class GeneratorOperationContext implements IOperationContext {
-  private static final Logger LOG = Logger.getLogger(GeneratorOperationContext.class);
+public class GeneratorSessionContext implements IOperationContext {
+  private static final Logger LOG = Logger.getLogger(GeneratorSessionContext.class);
 
   private Generator myGeneratorModule;
   private IOperationContext myInvocationContext;
   private TransientModule myTransientModule;
   private String mySessionId;
 
-  public GeneratorOperationContext(Generator generatorModule, IOperationContext invocationContext) {
+  public GeneratorSessionContext(Generator generatorModule, IOperationContext invocationContext) {
     myGeneratorModule = generatorModule;
     myInvocationContext = invocationContext;
     myTransientModule = new TransientModule(generatorModule, invocationContext.getModule());
