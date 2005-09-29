@@ -1,6 +1,5 @@
 package jetbrains.mps.ide.messages;
 
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
 
@@ -9,23 +8,17 @@ import jetbrains.mps.smodel.SNodeProxy;
  */
 public class Message {
   private MessageKind myKind;
-  private IOperationContext myOperationContext;
   private SNodeProxy myNodeProxy;
   private String myText;
 
-  public Message(MessageKind kind, SNode node, String text, IOperationContext operationContext) {
+  public Message(MessageKind kind, SNode node, String text) {
     myKind = kind;
-    myOperationContext = operationContext;
-    if (operationContext != null) {
-      myNodeProxy = new SNodeProxy(node, operationContext.getScope());
-    } else {
-      myNodeProxy = new SNodeProxy(null, null);
-    }
+    myNodeProxy = new SNodeProxy(node);
     myText = text;
   }
 
   public Message(MessageKind kind, String text) {
-    this(kind, null, text, null);
+    this(kind, null, text);
   }
 
   public Message(String text) {
@@ -42,9 +35,5 @@ public class Message {
 
   public String getText() {
     return myText;
-  }
-
-  public IOperationContext getOperationContext() {
-    return myOperationContext;
   }
 }

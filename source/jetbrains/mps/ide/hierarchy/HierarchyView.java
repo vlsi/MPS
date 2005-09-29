@@ -176,7 +176,7 @@ public class HierarchyView extends DefaultTool {
     public ConceptHierarchyTreeNode(ConceptDeclaration declaration, IOperationContext operationContext) {
       super(operationContext);
       LOG.assertLog(declaration != null);
-      myNodeProxy = new SNodeProxy(declaration, operationContext.getScope());
+      myNodeProxy = new SNodeProxy(declaration);
       setUserObject(declaration);
     }
 

@@ -31,7 +31,7 @@ class SNodeTreeNode extends MPSTreeNodeEx {
 
   public SNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
     super(operationContext);
-    myNodeProxy = new SNodeProxy(node, operationContext.getScope());
+    myNodeProxy = new SNodeProxy(node);
     myRole = role;
   }
 

@@ -194,7 +194,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       }
 
       clearMessages(invocationContext);
-      addMessage(new Message(MessageKind.INFORMATION, null, "Generating configuration " + configuration.getName(), invocationContext), invocationContext);
+      addMessage(new Message(MessageKind.INFORMATION, null, "Generating configuration " + configuration.getName()), invocationContext);
 
       if (isIdeaPresent && myCompileOnGeneration) {
         progress.addText("Compiling in IntelliJ IDEA...");
