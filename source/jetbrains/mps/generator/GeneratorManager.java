@@ -211,7 +211,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
         Generator generator = findGenerator(cmd.getSourceLanguage().getName(), cmd.getTargetLanguage().getName(), invocationContext);
 
-        GeneratorContext generatorContext = new GeneratorContext(generator, invocationContext);
+        GeneratorOperationContext generatorContext = new GeneratorOperationContext(generator, invocationContext);
 
         String generatorClass = findGeneratorClass(generator);
         // todo: get rid of hardcoded "default" generator class
@@ -398,7 +398,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   /**
    * @return TRUE if no errors were detected
    */
-  private boolean generate_internal(final SModelDescriptor sourceModel, SModelDescriptor templatesModel, GeneratorContext generatorContext, String generatorClass, String outputPath, final IProgressMonitor monitor, boolean generateText) {
+  private boolean generate_internal(final SModelDescriptor sourceModel, SModelDescriptor templatesModel, GeneratorOperationContext generatorContext, String generatorClass, String outputPath, final IProgressMonitor monitor, boolean generateText) {
     final IModelGenerator generator;
     try {
       Class cls = Class.forName(generatorClass, true, ClassLoaderManager.getInstance().getClassLoader());
@@ -435,7 +435,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     return true;
   }
 
-  private void saveTransientModels(GeneratorContext generatorContext) {
+  private void saveTransientModels(GeneratorOperationContext generatorContext) {
     // solution dir
     String sessionId = generatorContext.getSessionId();
     String projectDir = generatorContext.getProject().getProjectFile().getParentFile().getAbsolutePath();
@@ -513,7 +513,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     List<Solution> projectSolutions = generatorContext.getProject().getProjectSolutions();
     for (Solution solution : projectSolutions) {
       if (solution.getDescriptorFile().equals(solutionFile)) {
-        ((GeneratorContext.TransientModule) transientModule).setSessionModule(solution);
+        ((GeneratorOperationContext.TransientModule) transientModule).setSessionModule(solution);
         break;
       }
     }
