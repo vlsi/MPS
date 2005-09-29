@@ -1,7 +1,5 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.logging.Logger;
-
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -12,23 +10,14 @@ import jetbrains.mps.logging.Logger;
 public class SModelUID implements Comparable {
   private String myLongName;
   private String myStereotype;
-
-
-  public String getShortName () {
-    int offset = getLongName().lastIndexOf('.');
-    if (offset < 0) {
-      return getLongName();
-    }
-    return getLongName().substring(offset + 1);
-  }
-
-  private static final Logger LOG = Logger.getLogger(SModelUID.class);
+  private String myUIDString;
 
   public SModelUID(String longName, String stereotype) {
     if (longName == null) longName = "";
     if (stereotype == null) stereotype = "";
-    this.myLongName = longName;
-    this.myStereotype = stereotype;
+    myLongName = longName;
+    myStereotype = stereotype;
+    myUIDString = myLongName + (myStereotype.length() == 0 ? "" : "@" + myStereotype);
   }
 
   public SModelUID(String namePrefix, String shortName, String stereotype) {
@@ -36,12 +25,14 @@ public class SModelUID implements Comparable {
     if (stereotype == null) stereotype = "";
     if (namePrefix == null || namePrefix.length() == 0) {
       myLongName = shortName;
-    } else myLongName = namePrefix + '.' + shortName;
+    } else
+      myLongName = namePrefix + '.' + shortName;
 
     myStereotype = stereotype;
+    myUIDString = myLongName + (myStereotype.length() == 0 ? "" : "@" + myStereotype);
   }
 
-  public static SModelUID fromString (String s) {
+  public static SModelUID fromString(String s) {
     if (s == null) s = "";
     int index = s.indexOf("@");
     String stereotype = "";
@@ -49,35 +40,38 @@ public class SModelUID implements Comparable {
       stereotype = s.substring(index + 1);
     }
     String longName = s;
-    if(index > 0) {
+    if (index > 0) {
       longName = s.substring(0, index);
     }
 
     return new SModelUID(longName, stereotype);
   }
 
-  public boolean equals (Object o) {
-    if(!(o instanceof SModelUID)) return false;
-    SModelUID sModelUID = (SModelUID) o;
-    boolean b = sModelUID.myLongName.equals(myLongName);
-    boolean b1 = sModelUID.myStereotype.equals(myStereotype);
-//    if (b && !b1) {
-//      LOG.errorWithTrace("model keys with equal fqNames: " + myLongName + " - have different stereotypes: \"" + myStereotype + "\" and \"" + sModelUID.myStereotype + "\"");
-//    }
-    return b && b1;
+  public boolean equals(Object o) {
+    if (o == this) return true;
+    if (!(o instanceof SModelUID)) return false;
+    SModelUID otherUID = (SModelUID) o;
+    return otherUID.myUIDString.equals(myUIDString);
   }
 
-  public int hashCode () {
-    return getLongName().hashCode();// + myStereotype.hashCode();
+  public int hashCode() {
+    return myUIDString.hashCode();
   }
 
-  public String toString () {
-     return getLongName() + ((myStereotype == null || myStereotype.equals(""))? "" : "@" + myStereotype);
+  public String toString() {
+    return myUIDString;
   }
-
 
   public String getLongName() {
     return myLongName;
+  }
+
+  public String getShortName() {
+    int offset = getLongName().lastIndexOf('.');
+    if (offset < 0) {
+      return getLongName();
+    }
+    return getLongName().substring(offset + 1);
   }
 
   public String getStereotype() {

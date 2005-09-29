@@ -8,9 +8,7 @@ import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.ide.BootstrapLanguages;
 
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -30,7 +28,7 @@ public class GeneratorContext implements IOperationContext {
   public GeneratorContext(Generator generatorModule, IOperationContext invocationContext) {
     myGeneratorModule = generatorModule;
     myInvocationContext = invocationContext;
-    myTransientModule = new TransientModule();
+    myTransientModule = new TransientModule(generatorModule, invocationContext.getModule());
   }
 
   public <T> T getComponent(Class<T> clazz) {
@@ -68,13 +66,22 @@ public class GeneratorContext implements IOperationContext {
     return mySessionId;
   }
 
-  private class TransientModule extends AbstractModule {
+  public static class TransientModule extends AbstractModule {
     private List<IModule> myDependOnModules;
+    private Generator myGenerator;
+    private IModule myInvocationModule;
+    private IModule mySessionModule;
 
-    TransientModule() {
+    TransientModule(Generator generator, IModule invocationModule) {
+      myGenerator = generator;
+      myInvocationModule = invocationModule;
       myDependOnModules = new LinkedList<IModule>();
-      myDependOnModules.add(myGeneratorModule);
-      myDependOnModules.add(myInvocationContext.getModule());
+      myDependOnModules.add(generator);
+      myDependOnModules.add(invocationModule);
+    }
+
+    public void setSessionModule(IModule sessionModule) {
+      mySessionModule = sessionModule;
     }
 
     public List<ModelRoot> getModelRoots() {
@@ -82,23 +89,29 @@ public class GeneratorContext implements IOperationContext {
     }
 
     public List<IModule> getDependOnModules() {
+      if (mySessionModule != null) {
+        return mySessionModule.getDependOnModules();
+      }
       return myDependOnModules;
     }
 
     public Language getLanguage(String languageNamespace) {
-      IModule invokationModule = myInvocationContext.getModule();
-      if (invokationModule instanceof Language) {
-        if (languageNamespace.equals(((Language) invokationModule).getNamespace())) {
-          return (Language) invokationModule;
+      if (mySessionModule != null) {
+        return mySessionModule.getLanguage(languageNamespace);
+      }
+
+      if (myInvocationModule instanceof Language) {
+        if (languageNamespace.equals(((Language) myInvocationModule).getNamespace())) {
+          return (Language) myInvocationModule;
         }
       }
 
       Language language = LanguageRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
       if (language == null) {
-        language = LanguageRepository.getInstance().getLanguage(languageNamespace, myGeneratorModule);
+        language = LanguageRepository.getInstance().getLanguage(languageNamespace, myGenerator);
       }
-      if (language == null && invokationModule instanceof LanguageOwner) {
-        language = LanguageRepository.getInstance().getLanguage(languageNamespace, (LanguageOwner) invokationModule);
+      if (language == null && myInvocationModule instanceof LanguageOwner) {
+        language = LanguageRepository.getInstance().getLanguage(languageNamespace, (LanguageOwner) myInvocationModule);
       }
       if (language == null) {
         LOG.error("Couldn't find language: \"" + languageNamespace + "\" in scope: " + this);
@@ -109,7 +122,7 @@ public class GeneratorContext implements IOperationContext {
     public void dispose() {
       LanguageRepository.getInstance().unRegisterLanguages(this);
 
-      // force removing transient models
+      // force removing transient models from repository
       List<SModelDescriptor> ownModelDescriptors = getOwnModelDescriptors();
       for (SModelDescriptor descriptor : ownModelDescriptors) {
         SModelRepository.getInstance().unRegisterModelDescriptor(descriptor, this);
@@ -120,7 +133,14 @@ public class GeneratorContext implements IOperationContext {
     }
 
     public String toString() {
-      return "TransientModule in " + GeneratorContext.this;
+      return "TransientModule " + (mySessionModule != null ? "(persisted)" : "") + "for " + myGenerator + " invoked in: " + myInvocationModule;
+    }
+
+    public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
+      if (mySessionModule != null) {
+        return mySessionModule.getModelDescriptor(modelUID);
+      }
+      return super.getModelDescriptor(modelUID);
     }
   }
 }

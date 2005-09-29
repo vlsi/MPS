@@ -70,4 +70,6 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
   ITypeChecker getTypeChecker();
 
   IOperationContext getOperationContext();
+
+  int getErrorCount();
 }
