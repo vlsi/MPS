@@ -40,14 +40,14 @@ public class UIEditorComponent extends AbstractEditorComponent {
     return myEditorContext;
   }
 
-  public EditorCell createRootCell() {
+  public EditorCell createRootCell(List<SModelEvent> events) {
     if (mySemanticNode.isDeleted()) {
       return EditorCell_Constant.create(getEditorContext(), mySemanticNode, "<no editor info>", true);
     }
-    return myEditorContext.createNodeCell(mySemanticNode);
+    return myEditorContext.createRootCell(mySemanticNode, events);
   }
 
-  public EditorCell createRootCell(List<SModelEvent> events) {
-    return createRootCell();//temp
+  public EditorCell createRootCell() {
+    return createRootCell(null);
   }
 }

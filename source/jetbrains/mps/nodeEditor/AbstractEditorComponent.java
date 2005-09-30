@@ -384,10 +384,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void setRootCell(EditorCell rootCell) {
-    setRootCell(rootCell, true);
-  }
-
-  private void setRootCell(EditorCell rootCell, boolean isOldRebuild /*temp parameter*/) {
     if (myRootCell != null) {
       SNode semanticNode = myRootCell.getSNode();
       if (semanticNode != null) {
@@ -401,34 +397,16 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myRootCell.setY(myShiftY);
     myRootCell.relayout();
 
-    if (isOldRebuild) {//old rebuild strategy => listeners are set differently (temp code)
-      SNode node = myRootCell.getSNode();
-      if (node != null) {
+    Set<SNode> nodesWhichEditorDependsOn = myCellsToNodesToDependOnMap.get(myRootCell);
+
+    if (nodesWhichEditorDependsOn != null) {
+      for (SNode node : nodesWhichEditorDependsOn) {
         SModel model = node.getModel();
         if (!model.hasSModelCommandListener(myModelListener)) {
           model.addSModelCommandListener(myModelListener);
         }
-        Iterator<SModelDescriptor> iterator = model.importedModels(getOperationContext().getScope());
-        while (iterator.hasNext()) {
-          SModelDescriptor imported = iterator.next();
-          imported.addSModelCommandListener(myModelListener);
-          imported.addSModelCommandListenerToImportedModels(myModelListener);
-        }
-      }
-
-    } else {//new rebuild strategy
-      Set<SNode> nodesWhichEditorDependsOn = myCellsToNodesToDependOnMap.get(myRootCell);
-
-      if (nodesWhichEditorDependsOn != null) {
-        for (SNode node : nodesWhichEditorDependsOn) {
-          SModel model = node.getModel();
-          if (!model.hasSModelCommandListener(myModelListener)) {
-            model.addSModelCommandListener(myModelListener);
-          }
-        }
       }
     }
-
 
     revalidate();
     repaint();
@@ -762,7 +740,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       id = (String) selectedCell.getUserObject(EditorCell.CELL_ID);
     }
 
-    setRootCell(createRootCell(events), false);
+    setRootCell(createRootCell(events));
 
     if (nodeProxy != null && id != null) {
       EditorCell cell = findNodeCell(nodeProxy.getNode(), id);

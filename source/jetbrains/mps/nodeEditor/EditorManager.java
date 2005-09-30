@@ -23,14 +23,19 @@ public class EditorManager {
 
   public static final Object IS_BIG_CELL = new Object();
 
-  public HashMap<SNode, EditorCell> myMap = new HashMap<SNode, EditorCell>();
-
+  private HashMap<SNode, EditorCell> myMap = new HashMap<SNode, EditorCell>();
+  private boolean myCreatingInspectedCell = false;
 
   public EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events) {
+    return createRootCell(context, node, events, false);
+  }
+
+  private EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events, boolean isInspectorCell) {
     AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
     EditorCell rootCell = nodeEditorComponent.getRootCell();
     myMap.clear();
     myMap.put(node,rootCell);
+    myCreatingInspectedCell = isInspectorCell;
     EditorCell newRootCell = createEditorCell(context, node, events);
     
     return newRootCell;
@@ -91,7 +96,7 @@ public class EditorManager {
       }
     }
 
-    EditorCell editorCell = createEditorCell_internal(context, node);
+    EditorCell editorCell = createEditorCell_internal(context, node, myCreatingInspectedCell);
 
     boolean hasBadReference = false;
     for (SReference sr : node.getReferences()) {
@@ -106,7 +111,7 @@ public class EditorManager {
     return editorCell;
   }
 
-  private EditorCell createEditorCell_internal(EditorContext context, SNode node) {
+  private EditorCell createEditorCell_internal(EditorContext context, SNode node, boolean isInspectorCell) {
     INodeEditor editor = getEditor(context, node);
     AbstractEditorComponent abstractEditorComponent = context.getNodeEditorComponent();
     EditorCell nodeCell = null;
@@ -114,7 +119,7 @@ public class EditorManager {
     try {
       //voodoo for editor incremental rebuild support
       NodeReadAccessCaster.setNodeReadAccessListener(nodeAccessListener);
-      nodeCell = editor.createEditorCell(context, node);
+      nodeCell = isInspectorCell ? editor.createInspectedCell(context, node) : editor.createEditorCell(context, node);
       //-voodoo
     } catch (Exception e) {
       LOG.error("Failed to create cell for node " + node.getDebugText(), e);
@@ -137,9 +142,8 @@ public class EditorManager {
     return rowWrapper;
   }
 
-  public EditorCell createInspectedCell(EditorContext context, SNode node) {
-    INodeEditor editor = getEditor(context, node);
-    return editor.createInspectedCell(context, node);
+  public EditorCell createInspectedCell(EditorContext context, SNode node, List<SModelEvent> events) {
+    return createRootCell(context, node, events, true);
   }
 
   private INodeEditor getEditor(EditorContext context, SNode node) {

@@ -271,7 +271,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       progress.addText("Finished.");
     } finally {
       progress.finish();
-      ReflectionClassifierFinder.generationFinished();
+      ReflectionClassifierFinder.generationFinished(); //memory leak fix
       if (language != null) language.updateLastGenerationTime();
       invocationContext.getComponent(ProjectPane.class).enableRebuild();
     }
