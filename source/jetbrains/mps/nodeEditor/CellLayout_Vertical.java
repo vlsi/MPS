@@ -120,13 +120,27 @@ public class CellLayout_Vertical implements CellLayout {
           editorCells.getY() <= y && y < editorCells.getY() + editorCells.getHeight())) {
       return null;
     }
-    for (EditorCell editorCell : editorCells) {
+   /* for (EditorCell editorCell : editorCells) {
+      EditorCell cell = editorCell.findCell(x, y);
+      if (cell != null) {
+        return cell;
+      }
+    }*/
+    EditorCell editorCell = null;
+     for (EditorCell editorCell1 : editorCells) {
+      editorCell = editorCell1;
+      y = Math.max(editorCell.getY(), y);
       EditorCell cell = editorCell.findCell(x, y);
       if (cell != null) {
         return cell;
       }
     }
-    return null;
+    if (editorCell != null) {
+      return editorCell.findCell(x, editorCell.getY() + editorCell.getHeight() - 1);
+    } else {
+      return null;
+    }
+   // return null;
   }
 
 }

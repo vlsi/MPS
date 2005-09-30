@@ -72,8 +72,8 @@ public class CellLayout_Horizontal implements CellLayout {
       return null;
     }
     EditorCell editorCell = null;
-    for (Iterator iterator = editorCells.iterator(); iterator.hasNext();) {
-      editorCell = (EditorCell) iterator.next();
+    for (EditorCell editorCell1 : editorCells) {
+      editorCell = editorCell1;
       x = Math.max(editorCell.getX(), x);
       EditorCell cell = editorCell.findCell(x, y);
       if (cell != null) {
