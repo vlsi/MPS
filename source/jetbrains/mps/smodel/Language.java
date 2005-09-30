@@ -394,6 +394,14 @@ public class Language extends AbstractModule implements ModelLocator {
     return (List<IModule>) ((List) getGenerators());
   }
 
+  public List<Language> getLanguages() {
+    List<Language> languages = super.getLanguages();
+    if (!languages.contains(this)) {
+      languages.add(this);
+    }
+    return languages;
+  }
+
   public Language getLanguage(String languageNamespace) {
     if (getNamespace().equals(languageNamespace)) {
       return this;
