@@ -17,6 +17,7 @@ import jetbrains.mps.nodeEditor.reform.CellRangeSelection;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.WeakSet;
 
 import javax.swing.*;
 import java.awt.*;
@@ -741,6 +742,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     setRootCell(createRootCell(events));
+
+    for (JComponent component : myRootCell.getSwingComponents()) {
+      this.add(component);
+    }
 
     if (nodeProxy != null && id != null) {
       EditorCell cell = findNodeCell(nodeProxy.getNode(), id);
