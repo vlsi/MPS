@@ -14,6 +14,7 @@ import jetbrains.mps.datatransfer.CopyPasteNodeUtil;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.resolve.Resolver;
 
 import java.util.List;
@@ -49,6 +50,7 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
   }
 
   public void execute(EditorContext context) {
+    LOG.assertInCommand();
     IOperationContext operationContext = context.getOperationContext();
     EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
     SNode anchorNode = selectedCell.getSNode();
@@ -67,9 +69,5 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
     }
 
     Resolver.resolveReferences(outgoingReferences, operationContext);
-
-    EditorsPane editorsPane = context.getOperationContext().getComponent(EditorsPane.class);
-    AbstractEditorComponent editor = editorsPane.getCurrentEditor();
-    editor.rebuildEditorContent();
   }
 }

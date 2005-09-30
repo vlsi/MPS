@@ -54,9 +54,9 @@ public class EditorManager {
 
   /*package*/ EditorCell createEditorCell(EditorContext context, SNode node, List<SModelEvent> events) {
 
+    AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
+    EditorCell oldCell = nodeEditorComponent.getBigCellForNode(node);
     if (events != null) {
-      AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
-      EditorCell oldCell = nodeEditorComponent.getBigCellForNode(node);
 
       boolean nodeChanged = false;
       for (SModelEvent event : events) {
@@ -74,7 +74,17 @@ public class EditorManager {
 
       if (!nodeChanged) {
         if (myMap.containsKey(node)) {
-          return myMap.get(node);
+          EditorCell editorCell = myMap.get(node);
+          final Set<SNode> nodesOldCellDependsOn = nodeEditorComponent.getCopyOfNodesCellDependsOn(editorCell);
+          //voodoo for editor incremental rebuild support:
+          // add listen-nothing listener, fill it up,
+          // remove listener to report recorded nodes to parent listener
+          CellBuildNodeAccessListener listensNothingListener = new CellBuildNodeAccessListener(nodeEditorComponent);
+          NodeReadAccessCaster.setNodeReadAccessListener(listensNothingListener);
+          listensNothingListener.addNodesToDependOn(nodesOldCellDependsOn);
+          NodeReadAccessCaster.removeNodeAccessListener();
+          //--voodoo
+          return editorCell;
         }
       } else {
         myMap.putAll(findBigDescendantCellsAndTheirNodes(oldCell));
@@ -100,7 +110,7 @@ public class EditorManager {
     INodeEditor editor = getEditor(context, node);
     AbstractEditorComponent abstractEditorComponent = context.getNodeEditorComponent();
     EditorCell nodeCell = null;
-    CellBuildNodeAccessListener nodeAccessListener = new CellBuildNodeAccessListener(context.getNodeEditorComponent());
+    CellBuildNodeAccessListener nodeAccessListener = new CellBuildNodeAccessListener(abstractEditorComponent);
     try {
       //voodoo for editor incremental rebuild support
       NodeReadAccessCaster.setNodeReadAccessListener(nodeAccessListener);

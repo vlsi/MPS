@@ -15,9 +15,9 @@ import java.util.Set;
 public class CellBuildNodeAccessListener {
 
 
-  private AbstractEditorComponent myEditor;
- // private EditorCell myCell;
-  private HashSet<SNode> myNodesToDependOn = new HashSet<SNode>();
+  protected AbstractEditorComponent myEditor;
+
+  protected HashSet<SNode> myNodesToDependOn = new HashSet<SNode>();
 
   public CellBuildNodeAccessListener(AbstractEditorComponent editor) {
     myEditor = editor;
@@ -27,11 +27,11 @@ public class CellBuildNodeAccessListener {
     myEditor.putCellAndNodesToDependOn(cell, myNodesToDependOn);
   }
 
-  Set<SNode> getNodesToDependOn() {
+  public Set<SNode> getNodesToDependOn() {
     return myNodesToDependOn;
   }
 
-  void addChildNodesToDependOn(Set<SNode> nodes) {
+  public void addNodesToDependOn(Set<SNode> nodes) {
     myNodesToDependOn.addAll(nodes);
   }
 

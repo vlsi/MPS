@@ -29,7 +29,7 @@ public class NodeReadAccessCaster {
     else {
       Set<SNode> nodesWhichChildCellDependsOn = myReadAccessListener.getNodesToDependOn();
       myReadAccessListener = myReadAccessListenerStack.pop();
-      myReadAccessListener.addChildNodesToDependOn(nodesWhichChildCellDependsOn);
+      myReadAccessListener.addNodesToDependOn(nodesWhichChildCellDependsOn);
     }
   }
 

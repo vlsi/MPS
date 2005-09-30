@@ -1168,6 +1168,18 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myCellsToNodesToDependOnMap.put(cell, nodes);
   }
 
+  /*package*/ void addNodesToDependOnForCell(EditorCell cell, Set<SNode> nodes) {
+    Set<SNode> yetRegisteredNodes = myCellsToNodesToDependOnMap.get(cell);
+    if (yetRegisteredNodes == null) myCellsToNodesToDependOnMap.put(cell, nodes);
+    else yetRegisteredNodes.addAll(nodes);
+  }
+
+  public Set<SNode> getCopyOfNodesCellDependsOn(EditorCell cell) {
+    Set<SNode> nodes = myCellsToNodesToDependOnMap.get(cell);
+    if (nodes == null) return null;
+    return new HashSet<SNode>(nodes);
+  }
+
   public boolean doesCellDependOnNode(EditorCell cell, SNode node) {
     Set<SNode> sNodes = myCellsToNodesToDependOnMap.get(cell);
     return (sNodes != null) && (sNodes.contains(node));
