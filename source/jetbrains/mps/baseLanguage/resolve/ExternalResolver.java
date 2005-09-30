@@ -21,7 +21,7 @@ public class ExternalResolver {
     loadBaseLanguage();
   }
 
-  private static void loadBaseLanguage() {
+  public static void loadBaseLanguage() {
     TypeCheckerAccess.instance().getTypeChecker().loadLanguage(BootstrapLanguages.getInstance().getBaseLanguage());
   }
 

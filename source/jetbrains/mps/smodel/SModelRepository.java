@@ -259,6 +259,10 @@ public class SModelRepository extends SModelAdapter {
     return result;
   }
 
+  public Set<SModelDescriptor> getMaybeTransientChangedModels() {
+    return new HashSet<SModelDescriptor>(myChangedModels.keySet());
+  }
+
   public void saveAll() {
     List<SModelDescriptor> descriptors = new LinkedList(myChangedModels.keySet());
     for (SModelDescriptor modelDescriptor : descriptors) {

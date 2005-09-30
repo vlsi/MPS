@@ -16,6 +16,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vcs.VersionControlManager;
 import jetbrains.mps.vcs.model.IVersionControl;
+import jetbrains.mps.typesystem.TypeCheckerAccess;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -58,8 +59,6 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope, IContainer
 
         MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
         projects.addProject(MPSProject.this);
-
-        ReloadUtils.reloadAll();
       }
     }, "MPS Project init");
 
@@ -76,7 +75,12 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope, IContainer
     // load solutions
     List<Solution> newSolutions = new LinkedList<Solution>();
     for (SolutionPath solutionPath : CollectionUtil.iteratorAsIterable(myProjectDescriptor.projectSolutions())) {
-      File descriptorFile = new File(solutionPath.getPath());
+      String path = solutionPath.getPath();
+      if (path == null) {
+        LOG.error("Solution path is null");
+        continue;
+      }
+      File descriptorFile = new File(path);
       if (!descriptorFile.exists()) {
         LOG.error("Couldn't load solution from: " + descriptorFile.getAbsolutePath() + " : file doesn't exist");
         continue;
