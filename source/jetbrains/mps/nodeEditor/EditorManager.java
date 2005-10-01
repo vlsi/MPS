@@ -223,7 +223,7 @@ public class EditorManager {
       } catch (Exception e) {
         LOG.error(e);
         return null;
-      }
+      } 
     }
 
     LOG.warning("Couldn't load editor " + editorClassName + " : Class Not Found!");

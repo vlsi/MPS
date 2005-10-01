@@ -494,24 +494,14 @@ public class SModel implements Iterable<SNode> {
 
   private SNode findNodeWithExtResolveInfo(String extResolveInfo) {
     SNode targetNode = ExternalResolver.getTargetNode(this, extResolveInfo);
-    if (targetNode != null) myExternalResolveInfoToNodeMap.put(extResolveInfo, targetNode);
+    if (targetNode != null) {
+      myExternalResolveInfoToNodeMap.put(extResolveInfo, targetNode);
+      SModelRepository.getInstance().markChanged(this, true);
+    }
     return targetNode;
   }
 
-  public void clearCacheAllNodesExtResolveInfos() {
-    myExternalResolveInfoToNodeMap.clear();
-  }
-
-  public void cacheAllNodesExtResolveInfos() {
-    if (!isExternallyResolved()) return;
-    for (SNode node : myIdToNodeMap.values()) {
-      String extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(node);
-      if (ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) continue;
-      myExternalResolveInfoToNodeMap.put(extResolveInfo, node);
-    }
-  }
-
-  public void cacheNodeExtResolveInfo(SNode node, String extResolveInfo) {
+  /*package*/ void cacheNodeExtResolveInfo(SNode node, String extResolveInfo) {
     if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
       myExternalResolveInfoToNodeMap.put(extResolveInfo, node);
     }

@@ -99,6 +99,8 @@ public class ClassLoaderManager {
 
       if (pack.startsWith("jetbrains.mps.generator")) return true;
       if (pack.startsWith("jetbrains.mps.baseLanguage.generator")) return true;
+      if (pack.startsWith("java.")) return true;
+      if (pack.startsWith("sun.")) return true;
 
       if (pack.endsWith(".editor")) return false;
       if (pack.endsWith(".types")) return false;
