@@ -113,7 +113,7 @@ public class EditorManager {
     return editorCell;
   }
 
-  
+
   private EditorCell createEditorCell_internal(EditorContext context, SNode node, boolean isInspectorCell) {
     INodeEditor editor = getEditor(context, node);
     AbstractEditorComponent abstractEditorComponent = context.getNodeEditorComponent();
@@ -128,10 +128,12 @@ public class EditorManager {
       LOG.error("Failed to create cell for node " + node.getDebugText(), e);
       nodeCell = EditorCell_Error.create(context, node, "!exception!:" + node.getDebugText());
     } finally {
-      nodeCell.putUserObject(IS_BIG_CELL, true);
-      abstractEditorComponent.registerAsBigCell(nodeCell);
+      if (nodeCell != null) {
+        nodeCell.putUserObject(IS_BIG_CELL, true);
+        abstractEditorComponent.registerAsBigCell(nodeCell);
+        nodeAccessListener.recordingFinishedForCell(nodeCell);
+      }
       NodeReadAccessCaster.removeNodeAccessListener();
-      nodeAccessListener.recordingFinishedForCell(nodeCell);
     }
     if (node.getChildCount(NODE_TO_PLACE_AFTER) == 0) {
       return nodeCell;

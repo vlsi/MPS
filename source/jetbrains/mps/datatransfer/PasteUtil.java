@@ -102,9 +102,9 @@ public class PasteUtil {
       if (canPasteToTarget) {
         return PASTE_TO_TARGET;
       }
-      if (canPasteToRoot) {
+/*      if (canPasteToRoot) {
         return PASTE_TO_ROOT;
-      }
+      }*/
     }
 
     if (canPasteToParent(pasteTarget, pasteNode, role_, operationContext)) {
