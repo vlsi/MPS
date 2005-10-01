@@ -18,7 +18,7 @@ import java.util.*;
  */
 public class EditorManager {
   private static final Logger LOG = Logger.getLogger(EditorManager.class);
-  //  private static EditorManager myInstance;
+
   public static String NODE_TO_PLACE_AFTER = "nodeToPlaceAfter";
 
   public static final Object IS_BIG_CELL = new Object();
@@ -26,9 +26,11 @@ public class EditorManager {
   private HashMap<SNode, EditorCell> myMap = new HashMap<SNode, EditorCell>();
   private boolean myCreatingInspectedCell = false;
 
+
   public EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events) {
     return createRootCell(context, node, events, false);
   }
+
 
   private EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events, boolean isInspectorCell) {
     AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
@@ -37,9 +39,9 @@ public class EditorManager {
     myMap.put(node,rootCell);
     myCreatingInspectedCell = isInspectorCell;
     EditorCell newRootCell = createEditorCell(context, node, events);
-    
     return newRootCell;
   }
+
 
   private static Map<SNode, EditorCell> findBigDescendantCellsAndTheirNodes(EditorCell cell) {
     Map<SNode, EditorCell> result = new HashMap<SNode, EditorCell>();
@@ -53,9 +55,9 @@ public class EditorManager {
         }
       }
     }
-
     return result;
   }
+
 
   /*package*/ EditorCell createEditorCell(EditorContext context, SNode node, List<SModelEvent> events) {
 
@@ -111,6 +113,7 @@ public class EditorManager {
     return editorCell;
   }
 
+  
   private EditorCell createEditorCell_internal(EditorContext context, SNode node, boolean isInspectorCell) {
     INodeEditor editor = getEditor(context, node);
     AbstractEditorComponent abstractEditorComponent = context.getNodeEditorComponent();
