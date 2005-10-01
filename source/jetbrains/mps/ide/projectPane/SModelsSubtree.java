@@ -2,8 +2,13 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.IModule;
 
 import javax.swing.*;
 import java.util.HashMap;
@@ -20,6 +25,7 @@ import java.util.Map;
  */
 class SModelsSubtree{
   static void create(MPSTreeNode rootTreeNode, IOperationContext operationContext) {
+
     List<MPSTreeNode> list = new LinkedList<MPSTreeNode>();
     list.add(new ModelsGroupTreeNode("<.>", operationContext)); // default
 
@@ -59,6 +65,22 @@ class SModelsSubtree{
     }
     public Icon getIcon(boolean expanded) {
       return Icons.PROJECT_MODELS_ICON;
+    }
+    public JPopupMenu getPopupMenu() {
+       JPopupMenu result = new JPopupMenu();
+
+      ActionContext context = new ActionContext(getOperationContext());
+      IModule module = getOperationContext().getModule();
+      if (module instanceof Solution) {
+        Solution solution = (Solution) module;
+        context.put(Solution.class, solution);
+        if (toString().equals("<"+ SModelStereotype.JAVA_STUB +">")) {
+          ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_STUBS_ACTIONS).add(result, context);
+        } else {
+          ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_MODELS_ACTIONS).add(result, context);
+        }
+      }
+      return result;
     }
   }
 }
