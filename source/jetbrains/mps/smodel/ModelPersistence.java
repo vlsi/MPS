@@ -42,8 +42,8 @@ public class ModelPersistence {
   private static final String PROPERTY = "property";
   private static final String VALUE = "value";
   private static final String IMPORT_ELEMENT = "import";
-  private static final String MODEL_REFERENCE_ID = "referenceID";
-  private static final String MAX_REFERENCE_ID = "maxReferenceID";
+  private static final String MODEL_IMPORT_INDEX = "index";
+  private static final String MAX_IMPORT_INDEX = "maxImportIndex";
   private static final String LANGUAGE = "language";
   private static final String STEREOTYPE = "stereotype";
   private static final String MODEL_UID = "modelUID";
@@ -125,8 +125,9 @@ public class ModelPersistence {
 
     model.setLoading(true);
     try {
-      Element maxRefID = rootElement.getChild(MAX_REFERENCE_ID);
-      model.setMaxReferenceID(readIntAttributeValue(maxRefID, VALUE));
+      Element maxImportIndex = rootElement.getChild(MAX_IMPORT_INDEX);
+      if (maxImportIndex == null) maxImportIndex = rootElement.getChild("maxReferenceID"); // old manner
+      model.setMaxImportIndex(readIntAttributeValue(maxImportIndex, VALUE));
     } catch (Throwable e) {
       LOG.error(e);
     }
@@ -153,21 +154,28 @@ public class ModelPersistence {
     List imports = rootElement.getChildren(IMPORT_ELEMENT);
     for (Iterator iterator = imports.iterator(); iterator.hasNext();) {
       Element element = (Element) iterator.next();
-      int referenceID = readIntAttributeValue(element, MODEL_REFERENCE_ID);
-      String modelUID = element.getAttributeValue(MODEL_UID);
-      if (modelUID != null) {
-        SModelUID importedModelUID = SModelUID.fromString(modelUID);
-        model.addImportElement(importedModelUID, referenceID);
-        importedUIDtoIndex.put(referenceID, importedModelUID);
-      } else {
+      String indexValue = element.getAttributeValue(MODEL_IMPORT_INDEX, element.getAttributeValue("referenceID"));
+      int importIndex = Integer.parseInt(indexValue);
+      String importedModelUIDString = element.getAttributeValue(MODEL_UID);
+      if (importedModelUIDString == null) {
         // read in old manner...
         String importedModelFQName = NameUtil.longNameFromNamespaceAndShortName(element.getAttributeValue(NAMESPACE),
                 element.getAttributeValue(NAME));
         String importedModelStereotype = element.getAttributeValue(STEREOTYPE, "");
-        SModelUID importedModelUID = new SModelUID(importedModelFQName, importedModelStereotype);
-        model.addImportElement(importedModelUID, referenceID);
-        importedUIDtoIndex.put(referenceID, importedModelUID);
+        importedModelUIDString = new SModelUID(importedModelFQName, importedModelStereotype).toString();
       }
+      if (importedModelUIDString == null) {
+        LOG.error("Error loading import element for index " + importIndex + " in " + model.getUID());
+        continue;
+      }
+      if (importIndex > model.getMaxImportIndex()) {
+        LOG.warning("Import element " + importIndex + ":" + importedModelUIDString + " greater then max import index (" + model.getMaxImportIndex() + ") in " + model.getUID());
+        model.setMaxImportIndex(importIndex);
+      }
+
+      SModelUID importedModelUID = SModelUID.fromString(importedModelUIDString);
+      model.addImportElement(importedModelUID, importIndex);
+      importedUIDtoIndex.put(importIndex, importedModelUID);
     }
 
     ArrayList<ReferenceDescriptor> referenceDescriptors = new ArrayList<ReferenceDescriptor>();
@@ -177,7 +185,6 @@ public class ModelPersistence {
       SNode semanticNode = readNode(element, model, referenceDescriptors);
       model.addRoot(semanticNode);
     }
-
 
     for (ReferenceDescriptor referenceDescriptor : referenceDescriptors) {
       SModelUID importedModelUID = model.getUID();
@@ -329,10 +336,6 @@ public class ModelPersistence {
     Document document = new Document();
     document.setRootElement(rootElement);
 
-    Element maxRefID = new Element(MAX_REFERENCE_ID);
-    maxRefID.setAttribute(VALUE, "" + sourceModel.getMaxReferenceID());
-    rootElement.addContent(maxRefID);
-
     // languages
     for (String languageNamespace : sourceModel.getLanguageNamespaces()) {
       Element languageElem = new Element(LANGUAGE);
@@ -341,15 +344,17 @@ public class ModelPersistence {
     }
 
     // imports
+    validateModelImports(sourceModel);
+    Element maxRefID = new Element(MAX_IMPORT_INDEX);
+    maxRefID.setAttribute(VALUE, "" + sourceModel.getMaxImportIndex());
+    rootElement.addContent(maxRefID);
+
     Iterator<SModel.ImportElement> imports = sourceModel.importElements();
     while (imports.hasNext()) {
       SModel.ImportElement importElement = imports.next();
       Element importElem = new Element(IMPORT_ELEMENT);
-      importElem.setAttribute(MODEL_REFERENCE_ID, "" + importElement.getReferenceID());
+      importElem.setAttribute(MODEL_IMPORT_INDEX, "" + importElement.getReferenceID());
       SModelUID modelUID = importElement.getModelUID();
-//      importElem.setAttribute(NAME, modelUID.getName());
-//      importElem.setAttribute(NAMESPACE, modelUID.getNamespace());
-//      importElem.setAttribute(STEREOTYPE, modelUID.getStereotype());
       importElem.setAttribute(MODEL_UID, modelUID.toString());
       rootElement.addContent(importElem);
     }
@@ -361,6 +366,25 @@ public class ModelPersistence {
     }
 
     return document;
+  }
+
+  private static void validateModelImports(SModel sourceModel) {
+    Set<SModelUID> importedModels = new HashSet<SModelUID>(sourceModel.getImportedModelUIDs());
+    Collection<? extends SNode> nodes = sourceModel.getAllNodes();
+    for (SNode node : nodes) {
+      List<SReference> references = node.getReferences();
+      for (SReference reference : references) {
+        if (reference.isExternal()) {
+          ExternalReference externalReference = (ExternalReference) reference;
+          SModelUID targetModelUID = externalReference.getTargetModelUID();
+          if (!importedModels.contains(targetModelUID)) {
+            sourceModel.addImportedModel(targetModelUID);
+            importedModels.add(targetModelUID);
+          }
+        }
+      }
+    }
+    importedModels.clear();
   }
 
   public static void saveNode(Element parentElement, SNode node) {
@@ -415,17 +439,14 @@ public class ModelPersistence {
     if (reference.isExternal()) {//external reference
       ExternalReference externalReference = (ExternalReference) reference;
       SModelUID targetModelUID = externalReference.getTargetModelUID();
-      SModel.ImportElement importElement = node.getModel().getImportElement(targetModelUID);
-      if (importElement == null) {
-        importElement = node.getModel().addImportElement(targetModelUID);
-      }
+      int importIndex = node.getModel().getImportElement(targetModelUID).getReferenceID();
 
       String extResolveInfo = externalReference.getExtResolveInfo();
       if (ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
         // no external info - save target node id
-        linkElement.setAttribute(TARGET_NODE_ID, importElement.getReferenceID() + "." + reference.getTargetNodeId());
+        linkElement.setAttribute(TARGET_NODE_ID, importIndex + "." + reference.getTargetNodeId());
       } else {
-        linkElement.setAttribute(EXT_RESOLVE_INFO, importElement.getReferenceID() + "." + extResolveInfo);
+        linkElement.setAttribute(EXT_RESOLVE_INFO, importIndex + "." + extResolveInfo);
       }
 
     } else {//internal reference

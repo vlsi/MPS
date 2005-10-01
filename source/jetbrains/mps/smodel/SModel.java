@@ -1,7 +1,5 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.ide.IStatus;
-import jetbrains.mps.ide.Status;
 import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.ICommandListener;
@@ -9,12 +7,9 @@ import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.resolve.ExternalResolver;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.typesystem.ITypeChecker;
-import jetbrains.mps.typesystem.TSStatus;
-import jetbrains.mps.typesystem.TypeCheckerAccess;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.util.WeakSet;
 
 import java.util.*;
@@ -36,7 +31,7 @@ public class SModel implements Iterable<SNode> {
 
   private boolean isLoading = false;
 
-  private int myMaxReferenceID;
+  private int myMaxImportIndex;
   private List<String> myLanguages = new ArrayList<String>();
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
 
@@ -376,7 +371,7 @@ public class SModel implements Iterable<SNode> {
   ImportElement addImportElement(SModelUID modelUID) {
     ImportElement importElement = getImportElement(modelUID);
     if (importElement != null) return importElement;
-    importElement = new ImportElement(modelUID, ++myMaxReferenceID);
+    importElement = new ImportElement(modelUID, ++myMaxImportIndex);
     myImports.add(importElement);
     fireImportAddedEvent(modelUID);
     return importElement;
@@ -465,12 +460,12 @@ public class SModel implements Iterable<SNode> {
     return getImportElement(model.getUID()) != null;
   }
 
-  public void setMaxReferenceID(int i) {
-    myMaxReferenceID = i;
+  public void setMaxImportIndex(int i) {
+    myMaxImportIndex = i;
   }
 
-  public int getMaxReferenceID() {
-    return myMaxReferenceID;
+  public int getMaxImportIndex() {
+    return myMaxImportIndex;
   }
 
   public String toString() {
