@@ -3,6 +3,7 @@ package jetbrains.mps.ide.ui;
 import org.jdom.Element;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import javax.swing.event.TreeWillExpandListener;
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.tree.*;
@@ -35,21 +36,21 @@ public abstract class MPSTree extends JTree {
 
   public static final String TREE_PATH_SEPARATOR = "/";
 
+
+  private Point myToolTipLocation;
+  private Color myTooltipBackgroundNonSelectionColor;
+  private Color myTooltipBackgroundSelectionColor;
+  private Color myTooltipBorderSelectionColor;
+  private boolean myTooltipOverSelected;
+
+
   protected MPSTree() {
     largeModel = true;
 
     ToolTipManager.sharedInstance().registerComponent(this);
+    ToolTipManager.sharedInstance().setInitialDelay(10);
 
-    setCellRenderer(new DefaultTreeCellRenderer() {
-      public Component getTreeCellRendererComponent(JTree tree, Object value, boolean sel, boolean expanded, boolean leaf, int row, boolean hasFocus) {
-        super.getTreeCellRendererComponent(tree, value, sel, expanded, leaf, row, hasFocus);
-        if (value instanceof MPSTreeNode) {
-          MPSTreeNode node = (MPSTreeNode) value;
-          setIcon(node.getIcon(expanded));
-        }
-        return this;
-      }
-    });
+    setCellRenderer(new MPSTreeCellRenderer());
 
     addTreeWillExpandListener(new TreeWillExpandListener() {
       public void treeWillExpand(TreeExpansionEvent event) throws ExpandVetoException {
@@ -130,10 +131,10 @@ public abstract class MPSTree extends JTree {
     return label.getText();
   }
 
-  private JLabel getLabelFor(TreePath path) {
+  private MPSTreeCellRenderer getLabelFor(TreePath path) {
     Object object = path.getLastPathComponent();
     int row = getRowForPath(path);
-    JLabel label = ((JLabel) getCellRenderer().getTreeCellRendererComponent(this, object, false, false, false, row, false));
+    MPSTreeCellRenderer label = ((MPSTreeCellRenderer) getCellRenderer().getTreeCellRendererComponent(this, object, this.isPathSelected(path), false, false, row, false));
     return label;
   }
 
@@ -144,7 +145,7 @@ public abstract class MPSTree extends JTree {
 
     if (getVisibleRect().contains(getRowBounds(row))) return null;
 
-    JLabel label = getLabelFor(path);
+    MPSTreeCellRenderer label = getLabelFor(path);
     Rectangle rect = getRowBounds(row);
 
     int iconWidth = 0;
@@ -153,7 +154,14 @@ public abstract class MPSTree extends JTree {
     }
 
     Insets insets = label.getInsets();
-    return new Point(rect.getLocation().x + iconWidth + insets.left - 1, rect.getLocation().y + insets.top + 1);
+
+    myTooltipBackgroundNonSelectionColor = label.getBackgroundNonSelectionColor();
+    myTooltipBackgroundSelectionColor = label.getBackgroundSelectionColor();
+    myTooltipBorderSelectionColor = label.getBorderSelectionColor();
+    myTooltipOverSelected = label.isSelected();
+
+    myToolTipLocation = new Point(rect.getLocation().x + iconWidth + insets.left - 1, rect.getLocation().y + insets.top + 1);
+    return myToolTipLocation;
   }
 
   private static class Pair {
@@ -397,4 +405,52 @@ public abstract class MPSTree extends JTree {
     super.setExpandedState(path, state);
   }
 
+  public JToolTip createToolTip() {
+    JToolTip tip = new HintToolTip();
+    tip.setComponent(this);
+    return tip;
+  }
+
+  private class HintToolTip extends JToolTip {
+    public HintToolTip() {
+      setForeground(Color.black);
+      setBorder(new LineBorder(Color.black, 1));
+    }
+
+    public void paint(Graphics g) {
+
+      Color nonSelectionColor = myTooltipBackgroundNonSelectionColor;
+      Color selectionColor = myTooltipBackgroundSelectionColor;
+      Color borderSelectionColor = myTooltipBorderSelectionColor;
+
+      setBackground(myTooltipOverSelected ? selectionColor : nonSelectionColor);
+      super.paint(g);
+      if (myToolTipLocation == null) return;
+      Rectangle rect = MPSTree.this.getVisibleRect();
+      SwingUtilities.computeIntersection(myToolTipLocation.x, myToolTipLocation.y, getWidth(), getHeight(), rect);
+      int x1 = (int) (rect.getWidth());
+      int y1 = (int) (rect.getHeight()-1);
+
+      Color borderColor = myTooltipOverSelected ? borderSelectionColor : Color.white;
+      g.setColor(borderColor);
+      g.drawLine(0, 0, 0, y1);
+      g.drawLine(0, 0, x1, 0);
+      g.drawLine(0, y1, x1, y1);
+    }
+  }
+
+  private static class MPSTreeCellRenderer extends DefaultTreeCellRenderer {
+    public Component getTreeCellRendererComponent(JTree tree, Object value, boolean sel, boolean expanded, boolean leaf, int row, boolean hasFocus) {
+      super.getTreeCellRendererComponent(tree, value, sel, expanded, leaf, row, hasFocus);
+      if (value instanceof MPSTreeNode) {
+        MPSTreeNode node = (MPSTreeNode) value;
+        setIcon(node.getIcon(expanded));
+      }
+      return this;
+    }
+
+    public boolean isSelected() {
+      return selected;
+    }
+  }
 }
