@@ -70,9 +70,13 @@ public class Language extends AbstractModule implements ModelLocator {
     descriptorModel.addRoot(languageDescriptor);
     languageDescriptor.setNamespace(languageNamespace);
 
-    // default descriptorModel root
+    // default descriptorModel roots
     ModelRoot modelRoot = new ModelRoot(descriptorModel);
     modelRoot.setPath(new File(descriptorFile.getParentFile(), "languageModels").getAbsolutePath());
+    modelRoot.setPrefix(languageNamespace);
+    languageDescriptor.addModelRoot(modelRoot);
+    modelRoot = new ModelRoot(descriptorModel);
+    modelRoot.setPath(new File(descriptorFile.getParentFile(), "languageAccessories").getAbsolutePath());
     modelRoot.setPrefix(languageNamespace);
     languageDescriptor.addModelRoot(modelRoot);
 
