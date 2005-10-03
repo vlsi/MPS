@@ -310,6 +310,7 @@ public class ModelPersistence {
     LOG.debug("Save model " + sourceModel.getUID() + " to file " + file.getAbsolutePath());
     Document document = saveModel(sourceModel);
 
+
     try {
       JDOMUtil.writeDocument(document, file);
     } catch (IOException e) {
