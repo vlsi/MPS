@@ -102,9 +102,12 @@ public class JarFileClassPathItem implements IClassPathItem {
 
       if (name.startsWith(prefix) &&
               !name.equals(prefix) &&
-              name.endsWith("/") &&
-              !name.substring(prefix.length(), name.length() - 1).contains("/")) {
-        result.add(name.substring(0, name.length() - 1).replace("/", "."));
+              name.endsWith("/")) {
+
+
+        int nextIndexOfSlash = name.indexOf("/", prefix.length());
+
+        result.add(name.substring(0, nextIndexOfSlash).replace("/", "."));
       }
     }
 
