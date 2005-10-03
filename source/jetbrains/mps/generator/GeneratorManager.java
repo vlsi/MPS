@@ -508,7 +508,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     PersistenceUtil.saveSolutionDescriptor(solutionFile, solutionDescriptor);
     // remove transient descriptors from repository before re-loading
     transientModule.dispose();
-    generatorContext.getProject().addSolution(solutionFile);
+    generatorContext.getProject().addProjectSolution(solutionFile);
   }
 
   public IPreferencesPage createPreferencesPage() {

@@ -3,7 +3,6 @@ package jetbrains.mps.project;
 import jetbrains.mps.components.IContainer;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.*;
-import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
@@ -16,7 +15,6 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vcs.VersionControlManager;
 import jetbrains.mps.vcs.model.IVersionControl;
-import jetbrains.mps.typesystem.TypeCheckerAccess;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -166,7 +164,7 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope, IContainer
     myEventTranslator.projectChanged();
   }
 
-  public void addSolution(File solutionDescriptionFile) {
+  public void addProjectSolution(File solutionDescriptionFile) {
     ProjectDescriptor projectDescriptor = getProjectDescriptor();
     SModel model = projectDescriptor.getModel();
     model.setLoading(true);

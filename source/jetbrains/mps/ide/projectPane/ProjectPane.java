@@ -47,6 +47,7 @@ public class ProjectPane extends JComponent implements IActionDataProvider {
   public static final String PROJECT_PANE_GENERATOR_ACTIONS = "project-pane-generator-actions";
   public static final String PROJECT_PANE_MODELS_ACTIONS = "project-pane-models-actions";
   public static final String PROJECT_PANE_STUBS_ACTIONS = "project-pane-stubs-actions";
+  public static final String PROJECT_PANE_GENERIC_MODULE_ACTIONS = "project-pane-generic-module-actions";
 
   private MyTree myTree = new MyTree();
   private MPSProject myProject;
