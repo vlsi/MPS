@@ -186,14 +186,19 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       public void actionPerformed(ActionEvent e) {
         if (getSelectedCell() != null) {
           SNode node = getSelectedCell().getSNode();
-          getHighlightManager().mark(node, NODE_COLOR, "source node");
 
           Set<SReference> usages = node.getModel().getModelDescriptor().findUsages(node);
+          if (usages.size() > 0) {
+            getHighlightManager().mark(node, NODE_COLOR, "source node");
+          }
 
           if (usages.size() == 0) {
             for (SReference ref : node.getReferences()) {
               usages = node.getModel().getModelDescriptor().findUsages(ref.getTargetNode());
-              if (usages.size() > 0) break;
+              if (usages.size() > 0) {
+                getHighlightManager().mark(ref.getTargetNode(), NODE_COLOR, "source node");
+                break;
+              }
             }
           }
 
