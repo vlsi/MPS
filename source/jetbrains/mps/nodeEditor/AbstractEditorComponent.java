@@ -180,16 +180,26 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }, KeyStroke.getKeyStroke("ESCAPE"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     registerKeyboardAction(new AbstractAction() {
+      public final Color NODE_COLOR = Color.PINK;
+      public final Color USAGE_COLOR = Color.MAGENTA;
+
       public void actionPerformed(ActionEvent e) {
         if (getSelectedCell() != null) {
           SNode node = getSelectedCell().getSNode();
-          getHighlightManager().mark(node, Color.MAGENTA, "source node");
+          getHighlightManager().mark(node, NODE_COLOR, "source node");
 
           Set<SReference> usages = node.getModel().getModelDescriptor().findUsages(node);
 
+          if (usages.size() == 0) {
+            for (SReference ref : node.getReferences()) {
+              usages = node.getModel().getModelDescriptor().findUsages(ref.getTargetNode());
+              if (usages.size() > 0) break;
+            }
+          }
+
           for (SReference ref : usages) {
             if (ref.getSourceNode().getContainingRoot() == getRootCell().getSNode()) {
-              getHighlightManager().mark(ref.getSourceNode(), Color.PINK, "usage");
+              getHighlightManager().mark(ref.getSourceNode(), USAGE_COLOR, "usage");
             }
           }
         }
