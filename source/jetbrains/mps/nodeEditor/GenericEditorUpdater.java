@@ -54,7 +54,6 @@ public abstract class GenericEditorUpdater {
                 }
 
                 if (isUpdated) {
-                  System.err.println("repainting");
                   editorsPane.repaint();
                 }
               }
