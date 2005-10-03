@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.sandbox.test">
-  <maxReferenceID value="2" />
   <language namespace="jetbrains.mps.baseLanguage" />
-  <import referenceID="1" modelUID="java.lang@java_stub" />
+  <maxImportIndex value="2" />
+  <import index="1" modelUID="java.lang@java_stub" />
   <node type="jetbrains.mps.baseLanguage.Interface" id="1115766127296">
     <property name="name" value="IBaseInterface" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1115766147547">
@@ -75,14 +75,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1127095494814">
-          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1127098277264">
-            <link role="baseMethodDeclaration" targetNodeId="1115766338748" />
-            <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1127095494815">
-              <link role="variableDeclaration" targetNodeId="1126142422092" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1127098721977">
           <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1127098788159">
             <link role="baseMethodDeclaration" targetNodeId="1115766295021" />
@@ -94,6 +86,7 @@
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1115766340908" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1126142365135">
+        <property name="name" value="someName" />
         <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1126142365229">
           <link role="classifier" targetNodeId="1115766310400" />
         </node>

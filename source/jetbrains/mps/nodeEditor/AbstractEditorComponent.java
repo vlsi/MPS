@@ -17,7 +17,6 @@ import jetbrains.mps.nodeEditor.reform.CellRangeSelection;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.WeakSet;
 
 import javax.swing.*;
 import java.awt.*;
@@ -66,6 +65,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private KeyListener myKeyListener;
   private Component myPreviousFocusOwner = null;
   private PropertyChangeListener myFocusListener;
+  private NodeHighlightManager myHighlightManager = new NodeHighlightManager(this);
 
   private IOperationContext myOperationContext;
   private ProjectFrame myIde;
@@ -417,6 +417,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public EditorCell getRootCell() {
     return myRootCell;
+  }
+
+  public NodeHighlightManager getHighlightManager() {
+    return myHighlightManager;
   }
 
   public String getActionType(KeyEvent keyEvent, EditorContext editorContext) {
