@@ -386,6 +386,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private void setRootCell(EditorCell rootCell) {
     if (myRootCell != null) {
+      myRootCell.setEditor(null);
       SNode semanticNode = myRootCell.getSNode();
       if (semanticNode != null) {
         SModel semanticModel = semanticNode.getModel();
@@ -396,6 +397,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myRootCell = rootCell;
     myRootCell.setX(myShiftX);
     myRootCell.setY(myShiftY);
+    myRootCell.setEditor(this);
     myRootCell.relayout();
 
     Set<SNode> nodesWhichEditorDependsOn = myCellsToNodesToDependOnMap.get(myRootCell);
