@@ -15,6 +15,7 @@ import java.util.zip.ZipFile;
 public class JarFileClassPathItem implements IClassPathItem {
   private ZipFile myZipFile;
   private String myPrefix;
+  private File myFile;
 
   public JarFileClassPathItem(String path) {
     this(new File(path));
@@ -22,11 +23,16 @@ public class JarFileClassPathItem implements IClassPathItem {
 
   public JarFileClassPathItem(File jarFile) {
     try {
+      myFile = jarFile;
       myPrefix = "jar:" + jarFile.toURL() + "!/";
       myZipFile = new ZipFile(jarFile);
     } catch (IOException e) {
       e.printStackTrace();
     }
+  }
+
+  public File getFile() {
+    return myFile;
   }
 
   public byte[] getClass(String name) {
@@ -88,6 +94,7 @@ public class JarFileClassPathItem implements IClassPathItem {
   public Set<String> getSubpackages(String namespace) {
     Set<String> result = new HashSet<String>();
     String prefix = namespace.replace('.', '/') + "/";
+    if (prefix.equals("/")) prefix = ""; //root package
 
     for (Enumeration<? extends ZipEntry> e = myZipFile.entries();  e.hasMoreElements();) {
       ZipEntry ze = e.nextElement();
