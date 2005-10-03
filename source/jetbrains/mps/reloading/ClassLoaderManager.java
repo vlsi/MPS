@@ -102,6 +102,11 @@ public class ClassLoaderManager {
       if (pack.startsWith("java.")) return true;
       if (pack.startsWith("javax.")) return true;
       if (pack.startsWith("sun.")) return true;
+      if (pack.startsWith("sunw.")) return true;
+      if (pack.startsWith("org.omg.")) return true;
+      if (pack.startsWith("org.ietf.jgss.")) return true;
+      if (pack.startsWith("org.xml.")) return true;
+      if (pack.startsWith("org.w3c.")) return true;
 
       if (pack.endsWith(".editor")) return false;
       if (pack.endsWith(".types")) return false;

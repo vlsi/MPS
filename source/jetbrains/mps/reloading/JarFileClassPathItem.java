@@ -101,13 +101,11 @@ public class JarFileClassPathItem implements IClassPathItem {
       String name = ze.getName();
 
       if (name.startsWith(prefix) &&
-              !name.equals(prefix) &&
-              name.endsWith("/")) {
-
-
+              !name.equals(prefix)) {
         int nextIndexOfSlash = name.indexOf("/", prefix.length());
-
-        result.add(name.substring(0, nextIndexOfSlash).replace("/", "."));
+        if (nextIndexOfSlash != -1) {
+          result.add(name.substring(0, nextIndexOfSlash).replace("/", "."));
+        }
       }
     }
 
