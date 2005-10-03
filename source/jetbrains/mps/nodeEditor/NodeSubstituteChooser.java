@@ -4,7 +4,7 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.debug.DebugContext;
+import jetbrains.mps.util.WindowsUtil;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -387,16 +387,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       Point location = new Point(anchor.x + myRelativeCell.getX(), anchor.y + myRelativeCell.getY() + myRelativeCell.getHeight());
 
 
-      Rectangle deviceBounds = getGraphicsConfiguration().getBounds();
-
-      
-      //this is a hack but i don't know how to
-      //make it work on many monitors
-      GraphicsDevice devices[] = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices();
-      for (GraphicsDevice d : devices) {
-        Rectangle bounds = d.getDefaultConfiguration().getBounds();
-        if (bounds.contains(location)) deviceBounds = bounds;
-      }
+      Rectangle deviceBounds = WindowsUtil.findDeviceBoundsAt(location);
 
       if (location.getY() + PopupWindow.PREFERRED_HEIGHT > deviceBounds.height + deviceBounds.y - 150) {
         getPopupWindow().setPosition(PopupWindowPosition.TOP);

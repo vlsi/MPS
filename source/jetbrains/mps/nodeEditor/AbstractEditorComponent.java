@@ -211,6 +211,22 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }, KeyStroke.getKeyStroke("control shift F7"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
+
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        EditorCell cell = getSelectedCell();
+        if (cell == null) return;
+        if (cell.getSNode() == null) return;
+        Frame frame = (Frame) SwingUtilities.getRoot(AbstractEditorComponent.this);
+        Point point = new Point(cell.getX() + cell.getWidth(), cell.getY());
+        SwingUtilities.convertPointToScreen(point, AbstractEditorComponent.this);
+
+        new NodeInformationDialog(frame, point, cell.getSNode()).setVisible(true);
+
+      }
+    }, KeyStroke.getKeyStroke("control Q"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
         RecentEditorsMenu m = new RecentEditorsMenu(myOperationContext);

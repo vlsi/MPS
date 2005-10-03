@@ -6,6 +6,7 @@ import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
+import jetbrains.mps.project.ApplicationComponents;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -17,6 +18,10 @@ import java.util.List;
  * @author Kostik
  */
 public class EditorSettings extends DefaultExternalizableComponent implements IComponentWithPreferences {
+  public static EditorSettings getInstance() {
+    return ApplicationComponents.getInstance().getComponent(EditorSettings.class);
+  }
+
   private @Externalizable Font myFont = new Font("Monospaced", Font.PLAIN, 12);
 
   public Font getDefaultEditorFont() {
