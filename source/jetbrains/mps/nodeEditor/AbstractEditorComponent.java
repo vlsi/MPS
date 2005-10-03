@@ -176,11 +176,25 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        if (myPreviousFocusOwner != null) {
-          myPreviousFocusOwner.requestFocus();
+        getHighlightManager().clear();
+      }
+    }, KeyStroke.getKeyStroke("ESCAPE"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        if (getSelectedCell() != null) {
+          SNode node = getSelectedCell().getSNode();
+          getHighlightManager().mark(node, Color.MAGENTA, "source node");
+
+          Set<SReference> usages = node.getModel().getModelDescriptor().findUsages(node);
+
+          for (SReference ref : usages) {
+            if (ref.getSourceNode().getContainingRoot() == getRootCell().getSNode()) {
+              getHighlightManager().mark(ref.getSourceNode(), Color.PINK, "usage");
+            }
+          }
         }
       }
-    }, KeyStroke.getKeyStroke("ESCAPE"), WHEN_FOCUSED);
+    }, KeyStroke.getKeyStroke("control shift F7"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
