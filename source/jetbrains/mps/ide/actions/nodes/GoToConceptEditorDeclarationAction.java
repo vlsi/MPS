@@ -103,9 +103,9 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
       public void run() {
         if (languageEditorFinal == null) {
           createLanguageEditorModel(languageFinal);
-          createEditorDeclaration((ConceptDeclaration) node, languageFinal.getEditorModelDescriptor());
+          createEditorDeclaration((ConceptDeclaration) node, languageFinal.getEditorModelDescriptor(), scope);
         } else {
-          createEditorDeclaration((ConceptDeclaration) node, languageEditorFinal);
+          createEditorDeclaration((ConceptDeclaration) node, languageEditorFinal, scope);
         }
       }
     });
@@ -147,9 +147,9 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     });
   }
 
-  private ConceptEditorDeclaration createEditorDeclaration(ConceptDeclaration conceptDeclaration, SModelDescriptor editorModelDescriptor) {
+  private ConceptEditorDeclaration createEditorDeclaration(ConceptDeclaration conceptDeclaration, SModelDescriptor editorModelDescriptor, IScope scope) {
     SModel editorModel = editorModelDescriptor.getSModel();
-    ConceptEditorDeclaration editorDeclaration = new ConceptEditorDeclaration(editorModel);
+    ConceptEditorDeclaration editorDeclaration = (ConceptEditorDeclaration) SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration", editorModel, scope);
     editorDeclaration.setConceptDeclaration(conceptDeclaration);
     editorModel.addRoot(editorDeclaration);
     editorModelDescriptor.save();
