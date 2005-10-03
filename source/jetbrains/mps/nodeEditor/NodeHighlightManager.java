@@ -22,7 +22,7 @@ public class NodeHighlightManager implements IGutterMessageOwner {
   public void clear() {
     myEditor.getMessagesGutter().removeMessages(this);
     myMessages.clear();
-    myEditor.repaint();
+    myEditor.getExternalComponent().repaint();
   }
 
   public void mark(SNode node, Color color, String messageText) {
@@ -36,7 +36,7 @@ public class NodeHighlightManager implements IGutterMessageOwner {
 
     myMessages.add(message);
     myEditor.getMessagesGutter().add(message, this);
-    myEditor.repaint();
+    myEditor.getExternalComponent().repaint();
   }
 
   public Color getColorFor(SNode node) {
