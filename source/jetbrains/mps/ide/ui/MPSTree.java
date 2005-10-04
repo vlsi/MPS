@@ -3,7 +3,10 @@ package jetbrains.mps.ide.ui;
 import org.jdom.Element;
 
 import javax.swing.*;
+import javax.swing.plaf.basic.BasicBorders;
 import javax.swing.border.LineBorder;
+import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
 import javax.swing.event.TreeWillExpandListener;
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.tree.*;
@@ -41,6 +44,7 @@ public abstract class MPSTree extends JTree {
   private Color myTooltipBackgroundNonSelectionColor;
   private Color myTooltipBackgroundSelectionColor;
   private Color myTooltipBorderSelectionColor;
+  private Insets myToolTipInsets;
   private boolean myTooltipOverSelected;
 
 
@@ -155,12 +159,14 @@ public abstract class MPSTree extends JTree {
 
     Insets insets = label.getInsets();
 
+
+    myToolTipInsets = insets;
     myTooltipBackgroundNonSelectionColor = label.getBackgroundNonSelectionColor();
     myTooltipBackgroundSelectionColor = label.getBackgroundSelectionColor();
     myTooltipBorderSelectionColor = label.getBorderSelectionColor();
     myTooltipOverSelected = label.isSelected();
 
-    myToolTipLocation = new Point(rect.getLocation().x + iconWidth + insets.left - 1, rect.getLocation().y + insets.top + 1);
+    myToolTipLocation = new Point(rect.getLocation().x + iconWidth + insets.left - 1, rect.getLocation().y + insets.top);
     return myToolTipLocation;
   }
 
@@ -414,7 +420,21 @@ public abstract class MPSTree extends JTree {
   private class HintToolTip extends JToolTip {
     public HintToolTip() {
       setForeground(Color.black);
-      setBorder(new LineBorder(Color.black, 1));
+      LineBorder border = new LineBorder(Color.black, 1);
+      BasicBorders.MarginBorder margin = new BasicBorders.MarginBorder() {
+        private Insets myInsets = new Insets(1,0,0,0);
+
+        public Insets getBorderInsets(Component c) {
+          return myInsets;
+        }
+
+        public Insets getBorderInsets(Component c, Insets insets) {
+          return myInsets;
+        }
+      };
+      Border aBorder = new CompoundBorder(border, margin);
+      setBorder(aBorder);
+
     }
 
     public void paint(Graphics g) {
