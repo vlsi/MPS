@@ -67,6 +67,8 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   void showErrorMessage(SNode sourceNode, SNode templateNode, String message);
 
+  void showErrorMessage(SNode sourceNode, SNode templateNode, SNode ruleNode, String message);
+
   ITypeChecker getTypeChecker();
 
   IOperationContext getOperationContext();
