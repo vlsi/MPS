@@ -3,14 +3,6 @@ package jetbrains.mps.ide.ui;
 import org.jdom.Element;
 
 import javax.swing.*;
-import javax.swing.text.View;
-import javax.swing.plaf.basic.BasicBorders;
-import javax.swing.plaf.basic.BasicHTML;
-import javax.swing.plaf.basic.BasicToolTipUI;
-import javax.swing.plaf.ToolTipUI;
-import javax.swing.border.LineBorder;
-import javax.swing.border.Border;
-import javax.swing.border.CompoundBorder;
 import javax.swing.event.TreeWillExpandListener;
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.tree.*;
@@ -29,7 +21,6 @@ import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.ProjectFrame;
 import jetbrains.mps.ide.command.CommandProcessor;
-import com.sun.java.swing.SwingUtilities2;
 
 /**
  * @author Kostik
@@ -44,16 +35,7 @@ public abstract class MPSTree extends JTree {
 
   public static final String TREE_PATH_SEPARATOR = "/";
 
-
-  private Point myToolTipLocation;
-  private Color myTooltipBackgroundNonSelectionColor;
-  private Color myTooltipBackgroundSelectionColor;
-  private Color myTooltipBorderSelectionColor;
-  private Insets myToolTipInsets;
-  private boolean myTooltipOverSelected;
-  private int myToolTipWidth;
-  private int myToolTipHeight;
-
+  private MPSToolTipInfo myToolTipInfo;
 
   protected MPSTree() {
     largeModel = true;
@@ -166,16 +148,18 @@ public abstract class MPSTree extends JTree {
 
     Insets insets = label.getInsets();
 
-    myToolTipWidth = label.getWidth();
-    myToolTipHeight = label.getHeight();
-    myToolTipInsets = new Insets(insets.top, insets.left, insets.bottom, insets.right);
-    myTooltipBackgroundNonSelectionColor = label.getBackgroundNonSelectionColor();
-    myTooltipBackgroundSelectionColor = label.getBackgroundSelectionColor();
-    myTooltipBorderSelectionColor = label.getBorderSelectionColor();
-    myTooltipOverSelected = label.isSelected();
 
-    myToolTipLocation = new Point(rect.x + iconWidth + insets.left - 1, rect.y + insets.top);
-    return myToolTipLocation;
+    Insets tooltipInsets = new Insets(insets.top, insets.left, insets.bottom, insets.right);
+    Color bgNonSelColor = label.getBackgroundNonSelectionColor();
+    Color bgSelColor = label.getBackgroundSelectionColor();
+    Color borderSelColor = label.getBorderSelectionColor();
+    boolean overSelected = label.isSelected();
+    Rectangle visibleRect = getVisibleRect();
+    Point location = new Point(rect.x + iconWidth + insets.left - 1, rect.y + insets.top);
+
+    myToolTipInfo = new MPSToolTipInfo(location, bgNonSelColor, bgSelColor, borderSelColor, tooltipInsets, overSelected, visibleRect);
+
+    return myToolTipInfo.getLocation();
   }
 
   private static class Pair {
@@ -420,101 +404,11 @@ public abstract class MPSTree extends JTree {
   }
 
   public JToolTip createToolTip() {
-    JToolTip tip = new HintToolTip();
+    JToolTip tip = new MPSTreeToolTip(myToolTipInfo);
     tip.setComponent(this);
     return tip;
   }
 
-  private class HintToolTip extends JToolTip {
-    public HintToolTip() {
-      setForeground(Color.black);
-      LineBorder border = new LineBorder(Color.black, 1);
-      ui = new MyToolTipUI();
-      BasicBorders.MarginBorder margin = new BasicBorders.MarginBorder() {
-        private Insets myInsets = new Insets(myToolTipInsets.top + 1, myToolTipInsets.left, myToolTipInsets.bottom, myToolTipInsets.right);
-
-        public Insets getBorderInsets(Component c) {
-          return myInsets;
-        }
-
-        public Insets getBorderInsets(Component c, Insets insets) {
-          return myInsets;
-        }
-      };
-      Border aBorder = new CompoundBorder(border, margin);
-      setBorder(aBorder);
-
-    }
-
-    public void paintBorder(Graphics g) {
-      super.paintBorder(g);
-
-      Color borderSelectionColor = myTooltipBorderSelectionColor;
-
-      if (myToolTipLocation == null) return;
-      Rectangle rect = MPSTree.this.getVisibleRect();
-      Rectangle visRect = new Rectangle(rect);
-      SwingUtilities.computeIntersection(myToolTipLocation.x, myToolTipLocation.y, getWidth(), getHeight(), rect);
-
-      int x2 = (int) (rect.getX() - myToolTipLocation.x);
-      int y2 = (int) (rect.getY() - myToolTipLocation.y);
-      int x1 = (int) (rect.getWidth() - 1 + x2);
-      int y1 = (int) (rect.getHeight() - 1 + y2);
-
-      Color borderColor = myTooltipOverSelected ? borderSelectionColor : Color.white;
-      g.setColor(borderColor);
-
-
-      if (visRect.intersectsLine(myToolTipLocation.x, myToolTipLocation.y, myToolTipLocation.x, myToolTipLocation.y + getHeight())) {
-        g.drawLine(x2, y2, x2, y1);
-      }
-      if (visRect.intersectsLine(myToolTipLocation.x, myToolTipLocation.y, myToolTipLocation.x + getWidth(), myToolTipLocation.y)) {
-        g.drawLine(x2, y2, x1, y2);
-      }
-      if (visRect.intersectsLine(myToolTipLocation.x,  myToolTipLocation.y + getHeight(), myToolTipLocation.x + getWidth(), myToolTipLocation.y + getHeight())) {
-        g.drawLine(x2, y1, x1, y1);
-      }
-      if (visRect.intersectsLine(myToolTipLocation.x + getWidth(), myToolTipLocation.y, myToolTipLocation.x + getWidth(), myToolTipLocation.y + getHeight())) {
-       g.drawLine(x1, y2, x1, y1);
-      }
-
-    }
-  }
-
-  private class MyToolTipUI extends BasicToolTipUI {
-    public void paint(Graphics g, JComponent c) {
-      Font font = c.getFont();
-      FontMetrics metrics = c.getFontMetrics(font);
-      Dimension size = c.getSize();
-
-      Color backgroundColor = (myTooltipOverSelected ? myTooltipBackgroundSelectionColor : myTooltipBackgroundNonSelectionColor);
-
-      g.setColor(backgroundColor);
-      g.fillRect(0, 0, size.width, size.height);
-      g.setColor(c.getForeground());
-      g.setFont(font);
-
-      String tipText = ((JToolTip)c).getTipText();
-      if (tipText == null) {
-        tipText = "";
-      }
-
-      Insets insets = c.getInsets();
-
-      Rectangle paintTextR = new Rectangle(
-              insets.left,
-              insets.top,
-              size.width - (insets.left + insets.right),
-              size.height - (insets.top + insets.bottom));
-      View v = (View) c.getClientProperty(BasicHTML.propertyKey);
-      if (v != null) {
-        v.paint(g, paintTextR);
-      } else {
-        g.drawString(tipText, paintTextR.x,
-                paintTextR.y + metrics.getAscent());
-      }
-    }
-  }
 
 
   private static class MPSTreeCellRenderer extends DefaultTreeCellRenderer {
