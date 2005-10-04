@@ -36,12 +36,12 @@ public abstract class MPSTree extends JTree {
   public static final String TREE_PATH_SEPARATOR = "/";
 
   private MPSToolTipInfo myToolTipInfo;
+  private int myTooltipManagerRecentInitialDelay;
 
   protected MPSTree() {
     largeModel = true;
 
     ToolTipManager.sharedInstance().registerComponent(this);
-    ToolTipManager.sharedInstance().setInitialDelay(10);
 
     setCellRenderer(new MPSTreeCellRenderer());
 
@@ -77,6 +77,15 @@ public abstract class MPSTree extends JTree {
 
       public void mouseReleased(MouseEvent e) {
         if (e.isPopupTrigger()) showPopup(e);
+      }
+
+      public void mouseEntered(MouseEvent e) {
+        myTooltipManagerRecentInitialDelay = ToolTipManager.sharedInstance().getInitialDelay();
+        ToolTipManager.sharedInstance().setInitialDelay(10);
+      }
+
+      public void mouseExited(MouseEvent e) {
+        ToolTipManager.sharedInstance().setInitialDelay(myTooltipManagerRecentInitialDelay);
       }
     });
 
