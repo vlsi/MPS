@@ -1,8 +1,10 @@
 package jetbrains.mps.logging;
 
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.Generator;
 
 import java.util.Set;
 import java.util.HashSet;
@@ -20,7 +22,16 @@ public class ProjectChecker {
   public static boolean checkProject(MPSProject project) {
     Set<SModelDescriptor> modelsToTest = new HashSet<SModelDescriptor>();
 
-    modelsToTest.addAll(SModelRepository.getInstance().getAllModelDescriptors());
+    for (Language language : project.getLanguages()) {
+      modelsToTest.addAll(language.getModelDescriptors());
+      for (Generator generator : language.getGenerators()) {
+        modelsToTest.addAll(generator.getModelDescriptors());
+      }
+    }
+    
+    for (Solution solution : project.getProjectSolutions()) {
+      modelsToTest.addAll(solution.getModelDescriptors());
+    }
 
     for (SModelDescriptor m : modelsToTest) {
       System.err.println("Checking " + m.getModelUID());
