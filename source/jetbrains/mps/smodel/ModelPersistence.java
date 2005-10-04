@@ -235,7 +235,7 @@ public class ModelPersistence {
 
     String cachedExtResolveInfo = nodeElement.getAttributeValue(EXT_RESOLVE_INFO);
     if (!ExternalResolver.isEmptyExtResolveInfo(cachedExtResolveInfo)) {
-      model.cacheNodeExtResolveInfo(node, cachedExtResolveInfo);
+      model.loadCachedNodeExtResolveInfo(node, cachedExtResolveInfo);
     }
 
     List properties = nodeElement.getChildren(PROPERTY);

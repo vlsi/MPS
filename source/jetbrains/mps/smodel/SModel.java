@@ -501,10 +501,26 @@ public class SModel implements Iterable<SNode> {
     return targetNode;
   }
 
-  /*package*/ void cacheNodeExtResolveInfo(SNode node, String extResolveInfo) {
+  /*package*/ void loadCachedNodeExtResolveInfo(SNode node, String extResolveInfo) {
     if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
       myExternalResolveInfoToNodeMap.put(extResolveInfo, node);
     }
+  }
+
+  public String setNodeExtResolveInfo(SNode node, String extResolveInfo) {
+    if (!isExternallyResolved()) {
+      return null;
+    }
+    if (node.getModel() != this) {
+      LOG.error("trying to cache in model" + this + "ext resolve info for node from another model, namely " + node.getModel());
+      return null;
+    }
+    if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
+      myExternalResolveInfoToNodeMap.put(extResolveInfo,node);
+      SModelRepository.getInstance().markChanged(this, true);
+      return extResolveInfo;
+    }
+    return null;
   }
 
 
