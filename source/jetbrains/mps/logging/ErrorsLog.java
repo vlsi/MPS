@@ -4,6 +4,8 @@ package jetbrains.mps.logging;
  * @author
  */
 public class ErrorsLog {
+  public static final int MAX_ERROR_LOG_SIZE = 10000;
+
   private static ErrorsLog ourInstance;
 
   public static ErrorsLog getInstance() {
@@ -16,7 +18,9 @@ public class ErrorsLog {
   private StringBuffer myMessages = new StringBuffer();
 
   public void append(String message) {
-    myMessages.append(message + "\n");
+    if (myMessages.length() < MAX_ERROR_LOG_SIZE) {
+      myMessages.append(message + "\n");
+    }
   }
 
   public void clear() {
