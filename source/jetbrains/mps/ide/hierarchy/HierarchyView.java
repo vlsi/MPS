@@ -14,6 +14,8 @@ import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.project.ModuleContext;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
@@ -74,10 +76,9 @@ public class HierarchyView extends DefaultTool {
         }
 
         new GoToNodeWindow(myIde, nodes.toArray(new SNode[0])) {
-          protected void selectNode(final SNode node, final IOperationContext operationContext) {
+          protected void doChoose(final SNode node) {
+            final IOperationContext operationContext = ModuleContext.create(node, getIdeMain().getProject());
             showConceptInHierarchy((ConceptDeclaration) node, operationContext);
-            /*   ConceptDeclaration conceptDeclaration = SModelUtil.findConceptDeclaration(NameUtil.nodeConceptFQName(node), operationContext);
-            showConceptInHierarchy(conceptDeclaration);*/
           }
         };
       }
