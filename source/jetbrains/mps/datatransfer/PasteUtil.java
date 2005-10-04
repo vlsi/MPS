@@ -245,17 +245,19 @@ public class PasteUtil {
 
 
   private static String getRoleFromCell(EditorCell targetCell) {
-    /*If target cell represents some empty collection, target cell's node is not a member of that collection,
+
+    String role = (String) targetCell.getUserObject(EditorCell.ROLE);
+    if (role != null) return role;
+
+    LOG.warning("PASTE: tagret cell's user object 'ROLE' is null. Trying to get cell's role in the old manner");
+     /*If target cell represents some empty collection, target cell's node is not a member of that collection,
       but its future members' parent. Hence, if we consider that node as an anchor
       and hence its role as role-in-parent for the node we want to paste - we'll not be able
       to paste our node as a child of that very target node.
 
       But we want to process such case, too. Hence we search for the first collection which contains
-      our target cell and has not-null handler (i.e. not-null cell nodes role). 
+      our target cell and has not-null handler (i.e. not-null cell nodes role).
     */
-
-    String role = null;
-
     EditorCell_Collection actualCollection = (targetCell instanceof EditorCell_Collection)? (EditorCell_Collection) targetCell : targetCell.getParent();
     if (actualCollection != null) role = actualCollection.getCellNodesRole();
     while (actualCollection != null && role == null) {
