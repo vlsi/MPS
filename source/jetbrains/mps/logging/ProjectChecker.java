@@ -34,8 +34,6 @@ public class ProjectChecker {
     }
 
     for (SModelDescriptor m : modelsToTest) {
-      System.err.println("Checking " + m.getModelUID());
-
       m.getSModel().getRoots();
     }
 
