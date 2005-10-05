@@ -22,7 +22,7 @@ public class ExternalResolver {
   }
 
   public static void loadBaseLanguage() {
-    TypeCheckerAccess.instance().getTypeChecker().loadLanguage(BootstrapLanguages.getInstance().getBaseLanguage());
+    TypeCheckerAccess.getTypeChecker().loadLanguage(BootstrapLanguages.getInstance().getBaseLanguage());
   }
 
   public static String getExtResolveInfoForTargetClassGenericDeclaration(GenericDeclaration genericDeclaration) {
@@ -60,7 +60,7 @@ public class ExternalResolver {
 
     Iterator<ParameterDeclaration> pIterator = constructorDeclaration.parameters();
 
-    ITypeChecker typeChecker = TypeCheckerAccess.instance().getTypeChecker();
+    ITypeChecker typeChecker = TypeCheckerAccess.getTypeChecker();
     while (pIterator.hasNext()) {
       ParameterDeclaration parameterDeclaration = pIterator.next();
       TSStatus tSStatus = typeChecker.adaptNode(parameterDeclaration.getType());
@@ -80,7 +80,7 @@ public class ExternalResolver {
     String conceptName = baseMethodDeclaration.getConceptName();
 
 
-    ITypeChecker typeChecker = TypeCheckerAccess.instance().getTypeChecker();
+    ITypeChecker typeChecker = TypeCheckerAccess.getTypeChecker();
     TSStatus tSStatus = typeChecker.adaptNode(baseMethodDeclaration.getReturnType());
     ITypeObject typeObject = tSStatus.getTypeObject(); //if error => nullPointer - and that's okay
     String methodTypeName = typeObject.getTypeName();
@@ -127,7 +127,7 @@ public class ExternalResolver {
     String conceptName = variableDeclaration.getConceptName();
 
     String myExtResolveInfo = "[" + conceptName + "]" + name + " : ";
-    ITypeChecker typeChecker = TypeCheckerAccess.instance().getTypeChecker();
+    ITypeChecker typeChecker = TypeCheckerAccess.getTypeChecker();
     TSStatus tSStatus = typeChecker.adaptNode(variableDeclaration.getType());
     ITypeObject typeObject = tSStatus.getTypeObject();
     myExtResolveInfo+= "(" + typeObject.getTypeName() + "/" + typeObject.getSignature() + ")";

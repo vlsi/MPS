@@ -7,6 +7,8 @@ import java.util.Date;
 import java.awt.*;
 import java.io.File;
 
+import jetbrains.mps.project.ApplicationComponents;
+
 public class IdeMain {
   private static boolean ourTestMode = false;
 
@@ -61,6 +63,7 @@ public class IdeMain {
     configureLogger();
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
+        ApplicationComponents.getInstance();
         ProjectFrame projectWindow = new ProjectFrame();
         projectWindow.loadLastProjectIfAny();
         SplashScreen.getInstance().hideSplashScreen();
