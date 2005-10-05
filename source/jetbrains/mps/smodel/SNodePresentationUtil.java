@@ -223,4 +223,9 @@ public class SNodePresentationUtil {
     }
     return NameUtil.shortNameFromLongName(node.getClass().getName());
   }
+
+  public static String getPathToRoot(SNode node) {
+    if (node.isRoot()) return node.getName();
+    return getPathToRoot(node.getParent()) + " > " + node.getName();
+  }
 }

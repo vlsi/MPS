@@ -1,6 +1,9 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SNodePresentationUtil;
+import jetbrains.mps.smodel.ExternalReference;
 import jetbrains.mps.util.WindowsUtil;
 
 import javax.swing.*;
@@ -61,9 +64,20 @@ public class NodeInformationDialog extends JDialog {
   private String createNodeInfo(SNode node) {
     StringBuilder result = new StringBuilder();
 
-    result.append("Node from " + node.getModel() + "\n");
-    result.append("ID = " + node.getId() + "\n");
-    result.append("ConceptName = " + node.getConceptName() + "\n");
+
+    for (SReference ref : node.getReferences()) {
+      SNode target = ref.getTargetNode();
+
+      result.append("Model = " + target.getModel().getUID() + "\n");
+      result.append("Node = " + SNodePresentationUtil.getPathToRoot(target) + "\n");
+      result.append("ID  = " + target.getId() + "\n");
+
+      if (ref instanceof ExternalReference && ((ExternalReference) ref).getExtResolveInfo() != null) {
+        result.append("External resolve info = " + ((ExternalReference) ref).getExtResolveInfo() + "\n");
+      }
+
+      result.append("\n");
+    }
 
 
     return result.toString();
