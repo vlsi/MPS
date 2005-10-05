@@ -355,6 +355,13 @@ public class SModel implements Iterable<SNode> {
     return languages;
   }
 
+  public SNode getRootByName(String name) {
+    for (SNode root : getRoots()) {
+      if (name.equals(root.getName())) return root;
+    }
+    return null;
+  }
+
   public List<String> getLanguageNamespaces() {
     return new ArrayList<String>(myLanguages);
   }
