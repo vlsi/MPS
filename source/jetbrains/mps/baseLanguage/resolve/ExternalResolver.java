@@ -32,7 +32,7 @@ public class ExternalResolver {
 
     String result  = "[" + conceptName + "]" + name;
 
-    if (tvIterator.hasNext()) {
+/*    if (tvIterator.hasNext()) {
       result+= "<";
       int i = 0;
       while(tvIterator.hasNext()) {
@@ -46,7 +46,7 @@ public class ExternalResolver {
       }
 
       result += ">";
-    }
+    }*/
     return result;
   }
 
