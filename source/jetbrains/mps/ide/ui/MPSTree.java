@@ -116,6 +116,7 @@ public abstract class MPSTree extends JTree {
   void myMouseClicked(MouseEvent e) {
     TreePath path = getPathForLocation(e.getX(), e.getY());
     if (path == null) return;
+
     //hacks for supporting changing the selection by clicking a tooltip
     if (e.isControlDown()) {
       addSelectionPath(path);
