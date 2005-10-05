@@ -137,7 +137,7 @@ public class ProjectPane extends JComponent implements IActionDataProvider {
   }
 
   private SNode getSelectedNode() {
-    if (getSelectedNodes().size() == 1) {
+    if (getSelectedNodes() != null && getSelectedNodes().size() == 1) {
       return getSelectedNodes().get(0);
     }
     return null;
