@@ -413,11 +413,14 @@ public abstract class MPSTree extends JTree {
   }
 
   public JToolTip createToolTip() {
-    JToolTip tip = new MPSTreeToolTip(myToolTipInfo);
+    JToolTip tip = new MPSTreeToolTip(myToolTipInfo, this);
     tip.setComponent(this);
     return tip;
   }
 
+  public void processMouseEvent(MouseEvent e) {
+    super.processMouseEvent(e);
+  }
 
 
   private static class MPSTreeCellRenderer extends DefaultTreeCellRenderer {
