@@ -30,6 +30,10 @@ public class SModelAdapter implements SModelListener {
     modelChangedDramatically(event.getModel());
   }
 
+  public void beforeRootRemoved(SModelRootEvent event) {
+
+  }
+
   public void propertyChanged(SModelPropertyEvent event) {
     modelChanged(event.getModel());
   }

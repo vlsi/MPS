@@ -127,8 +127,9 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void deleteRoot(SNode semanticNode) {
-    String id = semanticNode.getId();
-    if (myRoots.remove(semanticNode)) {
+    if (myRoots.contains(semanticNode)) {
+      String id = semanticNode.getId();
+      myRoots.remove(semanticNode);
       if (!isLoading()) UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(semanticNode, id, true));
       fireRootDeletedEvent(semanticNode);
     }
@@ -136,7 +137,7 @@ public class SModel implements Iterable<SNode> {
 
   public void deleteAllRoots() {
     if (isLoading()) {
-      myRoots.clear();
+      myRoots.clear();     //todo
     } else {
       List<SNode> roots = new ArrayList<SNode>(myRoots);
       for (SNode root : roots) {
@@ -223,6 +224,13 @@ public class SModel implements Iterable<SNode> {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
       sModelListener.rootRemoved(new SModelRootEvent(this, root, false));
+    }
+  }
+
+  void fireBeforeRootDeletedEvent(SNode root) {
+    if (!canFireEvent()) return;
+    for (SModelListener sModelListener : copyListeners()) {
+      sModelListener.beforeRootRemoved(new SModelBeforeRootEvent(this, root, false));
     }
   }
 
@@ -654,6 +662,10 @@ public class SModel implements Iterable<SNode> {
     }
 
     public void rootRemoved(SModelRootEvent event) {
+      myEvents.add(event);
+    }
+
+    public void beforeRootRemoved(SModelRootEvent event) {
       myEvents.add(event);
     }
 

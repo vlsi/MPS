@@ -636,6 +636,9 @@ public abstract class SNode implements Cloneable {
 
   private void delete_internal() {
 
+    if (getModel().isRoot(this)) {
+      getModel().fireBeforeRootDeletedEvent(this);
+    }
 
     // delete all children
     myModel.removeNodeId(getId());

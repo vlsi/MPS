@@ -13,6 +13,7 @@ public interface SModelListener {
 
   void rootAdded(SModelRootEvent event);
   void rootRemoved(SModelRootEvent event);
+  void beforeRootRemoved(SModelRootEvent event);
 
   void propertyChanged(SModelPropertyEvent event);
 
