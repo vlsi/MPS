@@ -86,14 +86,14 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope, IContainer
 
       Solution loadedSolution = null;
       for (Solution solution : mySolutions) {
-        if (solution.getDescriptorFile().equals(descriptorFile)) {
+        if (solution.getDescriptorFile().getAbsoluteFile().equals(descriptorFile.getAbsoluteFile())) {
           loadedSolution = solution;
           break;
         }
       }
 
       if (loadedSolution != null) {
-        // updateTypesystem solution
+        // update solution
         SolutionDescriptor solutionDescriptor = PersistenceUtil.loadSolutionDescriptor(descriptorFile,
                 ProjectModelDescriptor.createDescriptorFor(loadedSolution).getSModel());
         loadedSolution.setSolutionDescriptor(solutionDescriptor);
