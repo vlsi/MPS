@@ -61,22 +61,15 @@ public abstract class MPSTree extends JTree {
 
     addMouseListener(new MouseAdapter() {
       public void mousePressed(MouseEvent e) {
-        if (e.isPopupTrigger()) showPopup(e);
+        myMousePressed(e);
       }
 
       public void mouseClicked(MouseEvent e) {
-        TreePath path = getPathForLocation(e.getX(), e.getY());
-        if (path == null) return;
-        if (path.getLastPathComponent() instanceof MPSTreeNode && e.getClickCount() == 2) {
-          setSelectionPath(path);
-          MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
-          node.doubleClick();
-          e.consume();
-        }
+        myMouseClicked(e);
       }
 
       public void mouseReleased(MouseEvent e) {
-        if (e.isPopupTrigger()) showPopup(e);
+        myMouseReleased(e);
       }
 
       public void mouseEntered(MouseEvent e) {
@@ -118,6 +111,39 @@ public abstract class MPSTree extends JTree {
         }
       }
     });
+  }
+
+  void myMouseClicked(MouseEvent e) {
+    TreePath path = getPathForLocation(e.getX(), e.getY());
+    if (path == null) return;
+    //hacks for supporting changing the selection by clicking a tooltip
+    if (e.isControlDown()) {
+      addSelectionPath(path);
+    } else if (e.isShiftDown()) {
+      int[] rows = getSelectionRows();
+      int pathRow = getRowForPath(path);
+      int firstRow = rows[0];
+      int lastRow = rows[rows.length-1];
+      int last = Math.max(firstRow, pathRow);
+      int first = Math.min(lastRow, pathRow);
+      addSelectionInterval(first, last);
+    } else {
+      setSelectionPath(path);
+    }
+    if (path.getLastPathComponent() instanceof MPSTreeNode && e.getClickCount() == 2) {
+      setSelectionPath(path);
+      MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
+      node.doubleClick();
+      e.consume();
+    }
+  }
+
+  void myMouseReleased(MouseEvent e) {
+    if (e.isPopupTrigger()) showPopup(e);
+  }
+
+  void myMousePressed(MouseEvent e) {
+    if (e.isPopupTrigger()) showPopup(e);
   }
 
 
@@ -418,9 +444,7 @@ public abstract class MPSTree extends JTree {
     return tip;
   }
 
-  public void processMouseEvent(MouseEvent e) {
-    super.processMouseEvent(e);
-  }
+
 
 
   private static class MPSTreeCellRenderer extends DefaultTreeCellRenderer {
