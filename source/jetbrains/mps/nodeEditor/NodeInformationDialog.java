@@ -23,6 +23,9 @@ public class NodeInformationDialog extends JDialog {
     myTextArea = new JTextArea(createNodeInfo(node));
     myTextArea.setFont(EditorSettings.getInstance().getDefaultEditorFont());
     myTextArea.setEditable(false);
+    myTextArea.setLineWrap(true);
+
+    myTextArea.setBackground(new Color(255, 255, 200));
 
 
     add(new JScrollPane(myTextArea));
@@ -68,21 +71,23 @@ public class NodeInformationDialog extends JDialog {
     for (SReference ref : node.getReferences()) {
       SNode target = ref.getTargetNode();
 
-      result.append("Model = " + target.getModel().getUID() + "\n");
-      result.append("Node = " + SNodePresentationUtil.getPathToRoot(target) + "\n");
-      result.append("ID  = " + target.getId() + "\n");
+      if (ref.getTargetNode() == null) {
+        result.append("Bad Reference\n");
 
-      if (ref instanceof ExternalReference && ((ExternalReference) ref).getExtResolveInfo() != null) {
-        result.append("External resolve info = " + ((ExternalReference) ref).getExtResolveInfo() + "\n");
+      } else {
+        result.append("Model = " + target.getModel().getUID() + "\n");
+        result.append("Node = " + SNodePresentationUtil.getPathToRoot(target) + "\n");
+        result.append("ID  = " + target.getId() + "\n");
+
+        if (ref instanceof ExternalReference && ((ExternalReference) ref).getExtResolveInfo() != null) {
+          result.append("External resolve info = " + ((ExternalReference) ref).getExtResolveInfo() + "\n");
+        }
       }
 
       result.append("\n");
     }
 
-
     return result.toString();
   }
-
-
 
 }
