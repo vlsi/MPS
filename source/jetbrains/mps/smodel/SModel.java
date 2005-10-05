@@ -134,6 +134,20 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
+  public void deleteAllRoots() {
+    if (isLoading()) {
+      myRoots.clear();
+    } else {
+      List<SNode> roots = new ArrayList<SNode>(myRoots);
+      for (SNode root : roots) {
+        myRoots.remove(root);
+        String id = root.getId();
+        UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(root, id, true));
+        fireRootDeletedEvent(root);
+      }
+    }
+  }
+
   public void addSModelListener(SModelListener listener) {
     LOG.assertLog(!myListeners.contains(listener), "Duplicated listener");
     myListeners.add(listener);
