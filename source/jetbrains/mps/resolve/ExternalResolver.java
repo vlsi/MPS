@@ -5,6 +5,7 @@ import jetbrains.mps.smodel.ExternalReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.baseLanguage.resolve.*;
 
 import java.lang.reflect.Method;
 import java.util.Collection;
@@ -68,14 +69,8 @@ public class ExternalResolver {
 
   private static Method getExternalResolveMethodFromTarget(SNode targetNode) {
 
-    String packageName = targetNode.getClass().getPackage().getName();
-    Class externalResolver = null;
-    try {
-      externalResolver = Class.forName(packageName + CLASS_NAME_SUFFIX);
-    } catch (ClassNotFoundException e) {
-      LOG.error("external resolver not found in package " + packageName, e);
-      return null;
-    }
+    Class externalResolver = getExternalResolverClass(targetNode);
+    if (externalResolver == null) return null;
 
     Class targetCls = targetNode.getClass();
     while (targetCls != SNode.class) {
@@ -91,6 +86,17 @@ public class ExternalResolver {
     return null;
   }
 
+  private static Class getExternalResolverClass(SNode targetNode) {
+    String packageName = targetNode.getClass().getPackage().getName();
+    Class externalResolver = null;
+    try {
+      externalResolver = Class.forName(packageName + CLASS_NAME_SUFFIX);
+    } catch (ClassNotFoundException e) {
+      LOG.error("external resolver not found in package " + packageName, e);
+    //     return null;
+    }
+    return externalResolver;
+  }
 
 
   public static void setExternalResolveInfo(SReference reference) {
@@ -123,5 +129,9 @@ public class ExternalResolver {
 
   public static boolean isEmptyExtResolveInfo(String extResolveInfo) {
     return (extResolveInfo == null ||extResolveInfo.equals("")||extResolveInfo.endsWith("null") );
+  }
+
+  public static String getHumanFriendlyString(String extResolveInfo) {
+    return jetbrains.mps.baseLanguage.resolve.ExternalResolver.getHumanFriendlyString(extResolveInfo);
   }
 }

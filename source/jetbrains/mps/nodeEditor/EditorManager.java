@@ -59,6 +59,7 @@ public class EditorManager {
   }
 
 
+
   /*package*/ EditorCell createEditorCell(EditorContext context, SNode node, List<SModelEvent> events) {
 
     AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
@@ -100,16 +101,6 @@ public class EditorManager {
 
     EditorCell editorCell = createEditorCell_internal(context, node, myCreatingInspectedCell);
 
-    boolean hasBadReference = false;
-    for (SReference sr : node.getReferences()) {
-      if (!sr.isResolved()) {
-        hasBadReference = true;
-        break;
-      }
-    }
-
-    if (hasBadReference) editorCell.setOutlined(true);
-
     return editorCell;
   }
 
@@ -147,10 +138,12 @@ public class EditorManager {
     return rowWrapper;
   }
 
+
   public EditorCell createInspectedCell(EditorContext context, SNode node, List<SModelEvent> events) {
     return createRootCell(context, node, events, true);
   }
 
+  
   private INodeEditor getEditor(EditorContext context, SNode node) {
     INodeEditor editor = (INodeEditor) node.getUserObject(this.getClass());
 

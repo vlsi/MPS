@@ -7,6 +7,8 @@ import jetbrains.mps.typesystem.ITypeObject;
 import jetbrains.mps.ide.BootstrapLanguages;
 
 import java.util.Iterator;
+import java.util.Set;
+import java.util.HashSet;
 
 /**
  * Created by IntelliJ IDEA.
@@ -16,9 +18,19 @@ import java.util.Iterator;
  * To change this template use File | Settings | File Templates.
  */
 public class ExternalResolver {
+  public static final String FIELD = "field ";
+  public static final String STATIC_FIELD = "static field ";
+  public static final String METHOD = "method ";
+  public static final String STATIC_METHOD = "static method ";
+  public static final String CONSTRUCTOR = "constructor ";
+  public static final String ENUM_CONST = "enum const ";
+  public static final String[] MEMBER_TYPES = {FIELD, STATIC_FIELD, METHOD, STATIC_METHOD, ENUM_CONST};
+  private static final char[] NFCHARS_ARRAY = {' ', ':', ')', '(', ',', '.', '[', ']'};
+  public static final Set<Character> NAME_FINISHING_CHARS = new HashSet<Character>(NFCHARS_ARRAY.length);
 
   static {
     loadBaseLanguage();
+    for (char c : NFCHARS_ARRAY) {NAME_FINISHING_CHARS.add(c);}
   }
 
   public static void loadBaseLanguage() {
@@ -72,7 +84,7 @@ public class ExternalResolver {
 
     result += ")";
 
-    return "constructor " + classifierExtResolveInfo + result;
+    return CONSTRUCTOR + classifierExtResolveInfo + result;
   }
 
   public static String getExtResolveInfoForTargetClassBaseMethodDeclaration(BaseMethodDeclaration baseMethodDeclaration) {
@@ -109,14 +121,14 @@ public class ExternalResolver {
     Classifier classifier = (Classifier) instanceMethodDeclaration.getParent();
     String classifierExtResolveInfo = getExtResolveInfoForTargetClassGenericDeclaration(classifier);
     String myExtResolveInfo = getExtResolveInfoForTargetClassBaseMethodDeclaration(instanceMethodDeclaration);
-    return "method ("+ classifierExtResolveInfo + ")." + "(" + myExtResolveInfo + ")";
+    return METHOD + "("+ classifierExtResolveInfo + ")." + "(" + myExtResolveInfo + ")";
   }
 
   public static String getExtResolveInfoForTargetClassStaticMethodDeclaration(StaticMethodDeclaration staticMethodDeclaration) {
     ClassConcept classConcept = (ClassConcept) staticMethodDeclaration.getParent();
     String classExtResolveInfo = getExtResolveInfoForTargetClassGenericDeclaration(classConcept);
     String myExtResolveInfo = getExtResolveInfoForTargetClassBaseMethodDeclaration(staticMethodDeclaration);
-    return "static method ("+ classExtResolveInfo + ")." + "(" + myExtResolveInfo + ")";
+    return STATIC_METHOD + "("+ classExtResolveInfo + ")." + "(" + myExtResolveInfo + ")";
   }
 
   private static String getExtResolveInfoForClassFields(VariableDeclaration variableDeclaration) {
@@ -136,11 +148,11 @@ public class ExternalResolver {
   }
 
   public static String getExtResolveInfoForTargetClassFieldDeclaration(FieldDeclaration fieldDeclaration) {
-    return "field " + getExtResolveInfoForClassFields(fieldDeclaration);
+    return FIELD + getExtResolveInfoForClassFields(fieldDeclaration);
   }
 
   public static String getExtResolveInfoForTargetClassStaticFieldDeclaration(StaticFieldDeclaration fieldDeclaration) {
-    return "static field " + getExtResolveInfoForClassFields(fieldDeclaration);
+    return STATIC_FIELD + getExtResolveInfoForClassFields(fieldDeclaration);
   }
 
   public static String getExtResolveInfoForTargetClassEnumConstantDeclaration(EnumConstantDeclaration enumConstantDeclaration) {
@@ -151,7 +163,26 @@ public class ExternalResolver {
     String conceptName = enumConstantDeclaration.getConceptName();
 
     String myExtResolveInfo  = "[" + conceptName + "]" + name;
-    return "enum const ("+ classExtResolveInfo + ")." + "(" + myExtResolveInfo + ")";
+    return ENUM_CONST + "("+ classExtResolveInfo + ")." + "(" + myExtResolveInfo + ")";
+  }
+
+  public static String getHumanFriendlyString(String resolveInfo) {
+    boolean isMember = false;
+    for (String memberType : MEMBER_TYPES) {
+      if (resolveInfo.startsWith(memberType)) {
+        isMember = true;
+        break;
+      }
+    }
+
+    StringBuffer ownResolveInfo = isMember ? new StringBuffer(resolveInfo.substring(resolveInfo.indexOf('.'))) : new StringBuffer(resolveInfo);
+    ownResolveInfo.delete(0, ownResolveInfo.indexOf("]")+1);
+    int i;
+    for (i = 0; i < ownResolveInfo.length(); i++) {
+      if (NAME_FINISHING_CHARS.contains(ownResolveInfo.charAt(i))) break;
+    }
+    if (i>0) ownResolveInfo.delete(i,ownResolveInfo.length());
+    return ownResolveInfo.toString();
   }
 
 }
