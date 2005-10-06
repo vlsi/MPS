@@ -17,15 +17,6 @@ import java.lang.reflect.Method;
 public class Resolver {
 
 
-  public static void resolveAllReferences(SNode node, IOperationContext operationContext) {
-
-    List<SReference> referenceList = getReferencesPointingOut(node);
-
-    for (SReference reference : referenceList) {
-      resolve(reference, operationContext);
-    }
-  }
-
   public static void resolveReferences(Set<SReference> references, IOperationContext operationContext) {
      for (SReference reference : references) {
       resolve(reference, operationContext);
@@ -82,40 +73,6 @@ public class Resolver {
     }
   }
 
-
-  public static List<SReference> getReferencesPointingOut(SNode node) {
-
-    List<SReference> result = new ArrayList<SReference>();
-
-    HashSet<SNode> children = new HashSet<SNode>();
-    children.add(node);
-    Iterator<SNode> it = node.depthFirstChildren();
-
-    for (;it.hasNext();) {
-      SNode child = it.next();
-      children.add(child);
-    }
-
-    for (SReference reference : node.getReferences()) {
-      if (!children.contains(reference.getTargetNode())){//if external reference
-          result.add(reference);
-      }
-    }
-
-    it = node.depthFirstChildren();
-
-    for (;it.hasNext();) {
-      SNode child = it.next();
-      List<SReference> references = child.getReferences();
-      for (SReference reference : references) {
-        if (!children.contains(reference.getTargetNode())){//if external reference
-          result.add(reference);
-        }
-      }
-    }
-
-    return result;
-  }
 
   public static void resolve(final SReference reference, final IOperationContext operationContext){
 
