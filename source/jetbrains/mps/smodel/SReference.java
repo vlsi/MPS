@@ -68,6 +68,11 @@ public abstract class SReference {
   }
 
 
+  public static SReference getUnresolvedExternalReference(String role, SNode sourceNode, SModelDescriptor model, String extResolveInfo) {
+    return new ExternalReference(role, sourceNode, null, extResolveInfo, model.getModelUID());
+  }
+
+
   public static SReference newInstance(String role, SNode sourceNode, SNode targetNode) {
     SModel sourceModel = sourceNode.getModel();
     SModel targetModel = targetNode == null ? null : targetNode.getModel();
@@ -76,7 +81,7 @@ public abstract class SReference {
     } else {
       sourceModel.addImportElement(targetModel.getUID());
       String extResolveInfo = null;
-      if (targetModel.isExternallyResolved()) {
+      if (targetModel.isExternallyResolvable()) {
         extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(targetNode);
       }
       return new ExternalReference(role, sourceNode, targetNode.getId(), extResolveInfo, targetModel.getUID());

@@ -190,7 +190,7 @@ public class CopyPasteNodeUtil {
 
             if (newReference.getResolveInfo() == null) {//reference is not resolvable
               String extResolveInfo = null;
-              if (newReference.getSourceNode().getModel().isExternallyResolved()) {
+              if (newReference.getSourceNode().getModel().isExternallyResolvable()) {
                 extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(newReference.getTargetNode());
               }
               if (extResolveInfo != null) {

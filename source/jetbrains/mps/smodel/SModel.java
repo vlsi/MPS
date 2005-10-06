@@ -94,18 +94,6 @@ public class SModel implements Iterable<SNode> {
     return myUID.getStereotype();
   }
 
-  public void setStereotype(String stereotype) {
-    myUID = new SModelUID(myUID.getLongName(), stereotype);
-    if (SModelStereotype.JAVA_STUB.equals(myUID.getStereotype()) ||
-            SModelStereotype.GENERATED.equals(myUID.getStereotype())) {
-      myIsExternallyResolved = true;
-    }
-  }
-
-  public void setLongName(String longName) {
-    myUID = new SModelUID(longName, myUID.getStereotype());
-  }
-
   public String getLongName() {
     return myUID.getLongName();
   }
@@ -137,7 +125,7 @@ public class SModel implements Iterable<SNode> {
 
   public void deleteAllRoots() {
     if (isLoading()) {
-      myRoots.clear();     //todo
+      myRoots.clear();
     } else {
       List<SNode> roots = new ArrayList<SNode>(myRoots);
       for (SNode root : roots) {
@@ -508,7 +496,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public SNode getNodeByExtResolveInfo(String extResolveInfo) {
-    if (!isExternallyResolved()) return null;
+    if (!isExternallyResolvable()) return null;
     if (ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) return null;
     SNode node = myExternalResolveInfoToNodeMap.get(extResolveInfo);
     if (node != null) {
@@ -537,7 +525,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public String setNodeExtResolveInfo(SNode node, String extResolveInfo) {
-    if (!isExternallyResolved()) {
+    if (!isExternallyResolvable()) {
       return null;
     }
     if (node.getModel() != this) {
@@ -576,12 +564,8 @@ public class SModel implements Iterable<SNode> {
     return Collections.unmodifiableCollection(nodes);
   }
 
-  public boolean isExternallyResolved() {
-    return myIsExternallyResolved;
-  }
-
-  public void setExternallyResolved(boolean externallyResolved) {
-    myIsExternallyResolved = externallyResolved;
+  public boolean isExternallyResolvable() {
+    return getModelDescriptor().isExternallyResolvable();
   }
 
   public void clear() {

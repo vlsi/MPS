@@ -5,7 +5,7 @@ import jetbrains.mps.smodel.ExternalReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.baseLanguage.resolve.*;
+import jetbrains.mps.util.NameUtil;
 
 import java.lang.reflect.Method;
 import java.util.Collection;
@@ -114,7 +114,7 @@ public class ExternalResolver {
       return null;
     }
 
-    if (!model.isExternallyResolved()) {
+    if (!model.isExternallyResolvable()) {
       LOG.error("model " + model + " is not for external resolve");
       return null;
     }
@@ -133,5 +133,13 @@ public class ExternalResolver {
 
   public static String getHumanFriendlyString(String extResolveInfo) {
     return jetbrains.mps.baseLanguage.resolve.ExternalResolver.getHumanFriendlyString(extResolveInfo);
+  }
+
+  public static String getExtResolveInfoFromJavaClass(Class cls) {
+    String conceptName = "ClassConcept";
+    if (cls.isInterface()) {
+      conceptName= "Interface";
+    }
+    return "[" + conceptName + "]" + NameUtil.shortNameFromLongName(cls.getName());
   }
 }

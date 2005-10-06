@@ -76,6 +76,10 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     return myModelUID;
   }
 
+  public boolean isExternallyResolvable() {
+    return false;
+  }
+
   /**
    * todo: should return "long name"
    */
@@ -246,7 +250,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   public Set<SReference> findUsages(SNode node) {
     if (mySModel == null || !SModelRepository.getInstance().isChanged(mySModel)) {
       String nodeInfo = node.getId();
-      if (node.getModel().isExternallyResolved()) {
+      if (node.getModel().isExternallyResolvable()) {
         String extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(node);
         if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) nodeInfo = extResolveInfo;
       }

@@ -132,15 +132,6 @@ public class ModelPersistence {
       LOG.error(e);
     }
 
-    //is externally resolved?
-    String extResolvedString = rootElement.getAttributeValue(IS_EXTERNALLY_RESOLVED);
-    if (extResolvedString == null) {
-      PersistExternalResolveUtil.loadExternallyResolvedDefaults(model);
-    } else {
-      boolean externallyResolved = Boolean.parseBoolean(extResolvedString);
-      model.setExternallyResolved(externallyResolved);
-    }
-
     // languages
     List languages = rootElement.getChildren(LANGUAGE);
     for (Iterator iterator = languages.iterator(); iterator.hasNext();) {
@@ -332,7 +323,6 @@ public class ModelPersistence {
     Element rootElement = new Element(MODEL);
 
     rootElement.setAttribute(NAME, sourceModel.getLongName());
-    setNotNullAttribute(rootElement, IS_EXTERNALLY_RESOLVED, PersistExternalResolveUtil.saveExternallyResolved(sourceModel));
 
     Document document = new Document();
     document.setRootElement(rootElement);
@@ -398,7 +388,7 @@ public class ModelPersistence {
     element.setAttribute(TYPE, node.getClass().getName());
     element.setAttribute(ID, node.getId());
 
-    if (node.getModel().isExternallyResolved()) {
+    if (node.getModel().isExternallyResolvable()) {
       String extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(node);
       if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
         element.setAttribute(EXT_RESOLVE_INFO, extResolveInfo);
