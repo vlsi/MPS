@@ -24,9 +24,22 @@ public class Interface_Editor extends DefaultNodeEditor {
   public AbstractCellProvider my_GenericDeclaration_TypeVariables_Component;
   public EditorCellListHandler myExtendedInterfaceListHandler;
   public EditorCellListHandler myMethodListHandler;
+  public EditorCellListHandler myStaticFieldListHandler;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createClassBox(context, node);
+  }
+  public EditorCell createStaticFieldList(EditorContext context, SNode node) {
+    if(this.myStaticFieldListHandler == null) {
+      this.myStaticFieldListHandler = new ClassConcept_Editor_StaticFieldListHandler(node, "staticField", context);
+    }
+    EditorCell_Collection editorCell = this.myStaticFieldListHandler.createCells(context, new CellLayout_Vertical());
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    return editorCell;
   }
   public EditorCell createClassBox(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
@@ -37,6 +50,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createHeaderRow(context, node));
     editorCell.addEditorCell(this.createConstantCell4(context, node, ""));
+    editorCell.addEditorCell(this.createStaticFieldList(context, node));
     editorCell.addEditorCell(this.createMethodsArea(context, node));
     editorCell.addEditorCell(this.createConstantCell6(context, node, ""));
     editorCell.addEditorCell(this.createConstantCell7(context, node, "}"));
