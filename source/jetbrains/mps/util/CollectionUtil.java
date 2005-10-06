@@ -25,14 +25,6 @@ public class CollectionUtil {
     return  result;
   }
 
-  public static<T> List<T> asList(T... ts) {
-    List<T> result = new ArrayList<T>();
-    for (T t : ts) {
-      result.add(t);
-    }
-    return result;
-  }
-
   public static <T> List<T> iteratorAsList(Iterator<T> i) {
     List<T> result = new ArrayList<T>();
     while (i.hasNext()) {
@@ -57,6 +49,22 @@ public class CollectionUtil {
     };
   }
 
+  public static <T> Set<T> asSet(T... ts) {
+    Set<T> result = new HashSet<T>();
+    for (T t : ts) {
+      result.add(t);
+    }
+    return result;
+  }
+
+  public static<T> List<T> asList(T... ts) {
+    List<T> result = new ArrayList<T>();
+    for (T t : ts) {
+      result.add(t);
+    }
+    return result;
+  }
+  
   public static<Node extends SNode> Node getByName(Class<Node> cls, Iterable<? extends SNode> collection, String name) {
     for (SNode node : collection) {
       if (name.equals(node.getName()) && cls.isInstance(node)) return (Node) node;
