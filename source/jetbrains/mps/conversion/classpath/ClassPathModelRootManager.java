@@ -8,7 +8,8 @@ import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.conversion.classpath.ClassPathModelDescriptor;
-import jetbrains.mps.conversion.Converter;
+import jetbrains.mps.conversion.ReflectionConverter;
+import jetbrains.mps.conversion.IConverter;
 
 import java.util.Set;
 import java.util.HashSet;
@@ -18,11 +19,11 @@ import java.util.HashSet;
  */
 public class ClassPathModelRootManager implements ModelRootManager  {
   private ModelOwner myOwner;
-  private Converter myConverter;
+  private IConverter myConverter;
 
   public Set<SModelDescriptor> read(ModelRoot root, ModelOwner owner) {
     myOwner = owner;
-    myConverter = Converter.createClassPathConverter(myOwner);
+    myConverter = ReflectionConverter.createClassPathConverter(myOwner);
 
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
     addPackageModelDescriptors(result, root.getPrefix());
