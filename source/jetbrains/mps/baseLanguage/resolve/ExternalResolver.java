@@ -1,17 +1,15 @@
 package jetbrains.mps.baseLanguage.resolve;
 import jetbrains.mps.baseLanguage.*;
-import jetbrains.mps.typesystem.ITypeChecker;
-import jetbrains.mps.typesystem.TypeCheckerAccess;
-import jetbrains.mps.typesystem.TSStatus;
-import jetbrains.mps.typesystem.ITypeObject;
-import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.ITypeChecker;
+import jetbrains.mps.typesystem.ITypeObject;
+import jetbrains.mps.typesystem.TSStatus;
+import jetbrains.mps.typesystem.TypeCheckerAccess;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.Iterator;
 import java.util.Set;
-import java.util.HashSet;
 
 /**
  * Created by IntelliJ IDEA.
@@ -32,13 +30,13 @@ public class ExternalResolver {
   public static final Set<String> MEMBER_TYPES = CollectionUtil.asSet(FIELD, STATIC_FIELD, METHOD, STATIC_METHOD, ENUM_CONST);
   public static final Set<Character> NAME_FINISHING_CHARS = CollectionUtil.asSet(' ', ':', ')', '(', ',', '.', '[', ']');
 
-  static {
-    loadBaseLanguage();
-  }
+//  static {
+//    loadBaseLanguage();
+//  }
 
-  public static void loadBaseLanguage() {
-    TypeCheckerAccess.getTypeChecker().loadLanguage(BootstrapLanguages.getInstance().getBaseLanguage());
-  }
+//  public static void loadBaseLanguage() {
+//    TypeCheckerAccess.getTypeChecker().loadLanguage(BootstrapLanguages.getInstance().getBaseLanguage());
+//  }
 
   public static String getExtResolveInfoForTargetClassGenericDeclaration(GenericDeclaration genericDeclaration) {
     String name = genericDeclaration.getName();
