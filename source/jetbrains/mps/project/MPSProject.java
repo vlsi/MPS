@@ -3,6 +3,7 @@ package jetbrains.mps.project;
 import jetbrains.mps.components.IContainer;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.*;
+import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
@@ -52,11 +53,14 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope, IContainer
         SModel model = ProjectModelDescriptor.createDescriptorFor(MPSProject.this).getSModel();
         myProjectDescriptor = PersistenceUtil.loadProjectDescriptor(projectFile, model);
 
+        MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
+        projects.addProject(MPSProject.this);
+
+        ReloadUtils.reloadAll();
+
         LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
         revalidateContent(projectFile, model);
 
-        MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
-        projects.addProject(MPSProject.this);
       }
     }, "MPS Project init");
 

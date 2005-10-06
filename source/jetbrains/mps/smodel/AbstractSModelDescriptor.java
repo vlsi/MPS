@@ -91,9 +91,16 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     return myModelUID.getStereotype();
   }
 
+  protected void updateModelAfterLoad() {
+
+  }
+
   public SModel getSModel() {
     if (mySModel == null) {
       mySModel = loadModel();
+
+      updateModelAfterLoad();
+
       SModelsMulticaster.getInstance().fireModelLoadedEvent(this);
 
       LOG.assertLog(mySModel != null, "Couldn't load model \"" + getModelUID() + "\"");
