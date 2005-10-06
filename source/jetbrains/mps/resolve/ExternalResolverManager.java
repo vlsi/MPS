@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.baseLanguage.resolve.ExternalResolver;
 
 import java.lang.reflect.Method;
 import java.util.Collection;
@@ -18,12 +19,12 @@ import java.util.HashMap;
  * Time: 20:56:48
  * To change this template use File | Settings | File Templates.
  */
-public class ExternalResolver {
+public class ExternalResolverManager {
 
   public static final String METHOD_NAME_PREFIX  = "getExtResolveInfoForTargetClass";
   public static final String CLASS_NAME_SUFFIX = ".resolve.ExternalResolver";
 
-  private static final Logger LOG = Logger.getLogger(ExternalResolver.class);
+  private static final Logger LOG = Logger.getLogger(ExternalResolverManager.class);
 
   private static HashMap<Class, Object> ourConceptsToResolveInfoMethodsMap = new HashMap<Class, Object>();
 
@@ -122,8 +123,7 @@ public class ExternalResolver {
     Collection<? extends SNode> nodes = model.getAllNodes();
 
     for (SNode node : nodes) {
-      if (jetbrains.mps.baseLanguage.resolve.ExternalResolver.isClassifierMember(node)
-              != jetbrains.mps.baseLanguage.resolve.ExternalResolver.isMembersExtResolveInfo(extResolveInfo)) {
+      if (!ExternalResolver.doMemberTypesCoincide(node, extResolveInfo)) {
         continue;
       }
 
@@ -142,10 +142,6 @@ public class ExternalResolver {
   }
 
   public static String getExtResolveInfoFromJavaClass(Class cls) {
-    String conceptName = "ClassConcept";
-    if (cls.isInterface()) {
-      conceptName= "Interface";
-    }
-    return "[" + conceptName + "]" + NameUtil.shortNameFromLongName(cls.getName());
+    return ExternalResolver.getExtResolveInfoFromJavaClass(cls);
   }
 }

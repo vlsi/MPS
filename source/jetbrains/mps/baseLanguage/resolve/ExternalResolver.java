@@ -7,6 +7,7 @@ import jetbrains.mps.typesystem.ITypeObject;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.NameUtil;
 
 import java.util.Iterator;
 import java.util.Set;
@@ -26,6 +27,8 @@ public class ExternalResolver {
   public static final String STATIC_METHOD = "static method ";
   public static final String CONSTRUCTOR = "constructor ";
   public static final String ENUM_CONST = "enum const ";
+  public static final String CLASSIFIER = "classifier ";
+  public static final String NO_MEMBER_TYPE = "none ";
   public static final Set<String> MEMBER_TYPES = CollectionUtil.asSet(FIELD, STATIC_FIELD, METHOD, STATIC_METHOD, ENUM_CONST);
   private static final char[] NFCHARS_ARRAY = {' ', ':', ')', '(', ',', '.', '[', ']'};
   public static final Set<Character> NAME_FINISHING_CHARS = new HashSet<Character>(NFCHARS_ARRAY.length);
@@ -187,21 +190,37 @@ public class ExternalResolver {
     return ownResolveInfo.toString();
   }
 
-  public static boolean isMembersExtResolveInfo(String extResolveInfo) {
-    for (String memberType :  MEMBER_TYPES) {
-      if (extResolveInfo.startsWith(memberType)) return true;
+
+  public static String getMemberType(SNode node) {
+    if (node instanceof Classifier) return CLASSIFIER;
+    if (node instanceof InstanceMethodDeclaration) return METHOD;
+    if (node instanceof StaticMethodDeclaration) return STATIC_METHOD;
+    if (node instanceof FieldDeclaration) return FIELD;
+    if (node instanceof StaticFieldDeclaration) return STATIC_FIELD;
+    if (node instanceof ConstructorDeclaration) return CONSTRUCTOR;
+    return NO_MEMBER_TYPE;
+  }
+
+  public static String getMemberType(String extResolveInfo) {
+    if (jetbrains.mps.resolve.ExternalResolverManager.isEmptyExtResolveInfo(extResolveInfo)) {
+      return NO_MEMBER_TYPE;
     }
-
-    if (extResolveInfo.startsWith(CONSTRUCTOR)) return true;
-    return false;
+    for (String memberType : MEMBER_TYPES) {
+      if (extResolveInfo.startsWith(memberType)) return memberType;
+    }
+    if (extResolveInfo.startsWith(CONSTRUCTOR)) return CONSTRUCTOR;
+    return CLASSIFIER;
   }
 
-  public static boolean isClassifierMember(SNode node) {
-    return (node instanceof InstanceMethodDeclaration
-            || node instanceof StaticMethodDeclaration
-            || node instanceof FieldDeclaration
-            || node instanceof StaticFieldDeclaration
-            || node instanceof ConstructorDeclaration);
+  public static boolean doMemberTypesCoincide(SNode node, String extResolveInfo) {
+    return (getMemberType(node).equals(getMemberType(extResolveInfo)));
   }
 
+  public static String getExtResolveInfoFromJavaClass(Class cls) {
+    String conceptName = "ClassConcept";
+    if (cls.isInterface()) {
+      conceptName= "Interface";
+    }
+    return "[" + conceptName + "]" + NameUtil.shortNameFromLongName(cls.getName());
+  }
 }

@@ -1,7 +1,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.resolve.ExternalResolver;
+import jetbrains.mps.resolve.ExternalResolverManager;
 
 /**
  * User: Sergey Dmitriev
@@ -69,7 +69,7 @@ public abstract class SReference {
 
 
   public static SReference getUnresolvedExternalReference(String role, SNode sourceNode, SModelDescriptor modelDescriptor, String extResolveInfo) {
-    LOG.assertLog(sourceNode.getModel().getModelDescriptor() != modelDescriptor);    
+    LOG.assertLog(sourceNode.getModel().getModelDescriptor() != modelDescriptor);
     return new ExternalReference(role, sourceNode, null, extResolveInfo, modelDescriptor.getModelUID());
   }
 
@@ -83,7 +83,7 @@ public abstract class SReference {
       sourceModel.addImportElement(targetModel.getUID());
       String extResolveInfo = null;
       if (targetModel.isExternallyResolvable()) {
-        extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(targetNode);
+        extResolveInfo = ExternalResolverManager.getExternalResolveInfoFromTarget(targetNode);
       }
       return new ExternalReference(role, sourceNode, targetNode.getId(), extResolveInfo, targetModel.getUID());
     }
