@@ -430,7 +430,14 @@ public class ModelPersistence {
     if (reference.isExternal()) {//external reference
       ExternalReference externalReference = (ExternalReference) reference;
       SModelUID targetModelUID = externalReference.getTargetModelUID();
-      int importIndex = node.getModel().getImportElement(targetModelUID).getReferenceID();
+      SModel.ImportElement importElement = node.getModel().getImportElement(targetModelUID);
+      int importIndex = -1;
+      if (importElement != null) {
+        importIndex = importElement.getReferenceID();
+      } else {
+        LOG.error("Couldn't save reference \"" + externalReference.getRole() + "\" in " + node.getDebugText() +
+                "\n -- import element for model \"" + targetModelUID + "\" not found");
+      }
 
       String extResolveInfo = externalReference.getExtResolveInfo();
       if (ExternalResolverManager.isEmptyExtResolveInfo(extResolveInfo)) {
