@@ -698,6 +698,5 @@ public class SModel implements Iterable<SNode> {
         fireSModelChangedInCommandEvent(new ArrayList<SModelEvent>(myEvents), editorContext);
       }
     }
-
   }
 }
