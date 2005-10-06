@@ -214,11 +214,11 @@ public class ExternalResolver {
     return (getMemberType(node).equals(getMemberType(extResolveInfo)));
   }
 
-  public static String getExtResolveInfoFromJavaClass(Class cls) {
+  public static String getExtResolveInfoFromJavaClass(String name, boolean isInterface) {
     String conceptName = "ClassConcept";
-    if (cls.isInterface()) {
+    if (isInterface) {
       conceptName= "Interface";
     }
-    return "[" + conceptName + "]" + NameUtil.shortNameFromLongName(cls.getName());
+    return "[" + conceptName + "]" + NameUtil.shortNameFromLongName(name);
   }
 }

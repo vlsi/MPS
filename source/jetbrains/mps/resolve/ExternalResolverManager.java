@@ -143,6 +143,6 @@ public class ExternalResolverManager {
   }
 
   public static String getExtResolveInfoFromJavaClass(Class cls) {
-    return ExternalResolver.getExtResolveInfoFromJavaClass(cls);
+    return ExternalResolver.getExtResolveInfoFromJavaClass(cls.getName(), cls.isInterface());
   }
 }
