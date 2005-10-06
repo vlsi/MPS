@@ -17,6 +17,7 @@ import jetbrains.mps.nodeEditor.reform.CellRangeSelection;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.typesystem.TypeCheckerAccess;
 
 import javax.swing.*;
 import java.awt.*;
@@ -1060,6 +1061,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     // hardcoded "updateTypesystem" action
     if (keyEvent.getKeyCode() == KeyEvent.VK_F5) {
+      TypeCheckerAccess.getTypeChecker().checkNodeType(getRootCell().getSNode());               
       rebuildEditorContent();
       keyEvent.consume();
       return;
