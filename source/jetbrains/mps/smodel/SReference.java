@@ -68,8 +68,9 @@ public abstract class SReference {
   }
 
 
-  public static SReference getUnresolvedExternalReference(String role, SNode sourceNode, SModelDescriptor model, String extResolveInfo) {
-    return new ExternalReference(role, sourceNode, null, extResolveInfo, model.getModelUID());
+  public static SReference getUnresolvedExternalReference(String role, SNode sourceNode, SModelDescriptor modelDescriptor, String extResolveInfo) {
+    LOG.assertLog(sourceNode.getModel().getModelDescriptor() != modelDescriptor);    
+    return new ExternalReference(role, sourceNode, null, extResolveInfo, modelDescriptor.getModelUID());
   }
 
 

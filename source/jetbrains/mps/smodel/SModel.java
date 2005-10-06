@@ -11,6 +11,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.resolve.ExternalResolver;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.WeakSet;
+import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
 
@@ -61,16 +62,6 @@ public class SModel implements Iterable<SNode> {
     return myUID;
   }
 
-  /**
-   * @deprecated
-   */
-  public void setModelUID(SModelUID modelUID) {
-    myUID = modelUID;
-    if (SModelStereotype.JAVA_STUB.equals(myUID.getStereotype()) ||
-            SModelStereotype.GENERATED.equals(myUID.getStereotype())) {
-      myIsExternallyResolved = true;
-    }
-  }
 
   public String getShortName() {
     return myUID.getShortName();
@@ -518,7 +509,7 @@ public class SModel implements Iterable<SNode> {
     return targetNode;
   }
 
-  /*package*/ void loadCachedNodeExtResolveInfo(SNode node, String extResolveInfo) {
+  public void loadCachedNodeExtResolveInfo(SNode node, String extResolveInfo) {
     if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
       myExternalResolveInfoToNodeMap.put(extResolveInfo, node);
     }
