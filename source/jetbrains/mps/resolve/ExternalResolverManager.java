@@ -27,7 +27,9 @@ public class ExternalResolverManager {
   private static final Logger LOG = Logger.getLogger(ExternalResolverManager.class);
 
   private static HashMap<Class, Object> ourConceptsToResolveInfoMethodsMap = new HashMap<Class, Object>();
+  private static final String BL_EXTERNAL_RESOLVER = "jetbrains.mps.baseLanguage.resolve.ExternalResolver";
 
+  
   public static String createExternalResolveInfo(SReference reference) {
 
     LOG.assertLog(reference instanceof ExternalReference, "reference to resolve externally is not external");
@@ -41,6 +43,7 @@ public class ExternalResolverManager {
     return getExternalResolveInfoFromTarget(targetNode);
 
   }
+
 
   private static final Object NO_METHOD = new Object();
 
@@ -70,7 +73,7 @@ public class ExternalResolverManager {
 
   private static Method getExternalResolveMethodFromTarget(SNode targetNode) {
 
-    Class externalResolver = getExternalResolverClass(targetNode);
+    Class externalResolver = getExternalResolverClass();
     if (externalResolver == null) return null;
 
     Class targetCls = targetNode.getClass();
@@ -87,14 +90,12 @@ public class ExternalResolverManager {
     return null;
   }
 
-  private static Class getExternalResolverClass(SNode targetNode) {
-    String packageName = targetNode.getClass().getPackage().getName();
+  private static Class getExternalResolverClass() {
     Class externalResolver = null;
     try {
-      externalResolver = Class.forName(packageName + CLASS_NAME_SUFFIX);
+      externalResolver = Class.forName(BL_EXTERNAL_RESOLVER);
     } catch (ClassNotFoundException e) {
-      LOG.error("external resolver not found in package " + packageName, e);
-    //     return null;
+      LOG.error("BL external resolver does not exist", e);
     }
     return externalResolver;
   }

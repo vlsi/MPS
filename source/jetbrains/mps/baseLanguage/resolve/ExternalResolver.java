@@ -30,12 +30,10 @@ public class ExternalResolver {
   public static final String CLASSIFIER = "classifier ";
   public static final String NO_MEMBER_TYPE = "none ";
   public static final Set<String> MEMBER_TYPES = CollectionUtil.asSet(FIELD, STATIC_FIELD, METHOD, STATIC_METHOD, ENUM_CONST);
-  private static final char[] NFCHARS_ARRAY = {' ', ':', ')', '(', ',', '.', '[', ']'};
-  public static final Set<Character> NAME_FINISHING_CHARS = new HashSet<Character>(NFCHARS_ARRAY.length);
+  public static final Set<Character> NAME_FINISHING_CHARS = CollectionUtil.asSet(' ', ':', ')', '(', ',', '.', '[', ']');
 
   static {
     loadBaseLanguage();
-    for (char c : NFCHARS_ARRAY) {NAME_FINISHING_CHARS.add(c);}
   }
 
   public static void loadBaseLanguage() {
