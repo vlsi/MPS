@@ -120,7 +120,13 @@ public class ExternalResolver {
     }
 
     Collection<? extends SNode> nodes = model.getAllNodes();
+
     for (SNode node : nodes) {
+      if (jetbrains.mps.baseLanguage.resolve.ExternalResolver.isClassifierMember(node)
+              != jetbrains.mps.baseLanguage.resolve.ExternalResolver.isMembersExtResolveInfo(extResolveInfo)) {
+        continue;
+      }
+
       String nodeExtResolveInfo = getExternalResolveInfoFromTarget(node);
       if (extResolveInfo.equals(nodeExtResolveInfo)) return node;
     }

@@ -5,6 +5,8 @@ import jetbrains.mps.typesystem.TypeCheckerAccess;
 import jetbrains.mps.typesystem.TSStatus;
 import jetbrains.mps.typesystem.ITypeObject;
 import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.CollectionUtil;
 
 import java.util.Iterator;
 import java.util.Set;
@@ -24,7 +26,7 @@ public class ExternalResolver {
   public static final String STATIC_METHOD = "static method ";
   public static final String CONSTRUCTOR = "constructor ";
   public static final String ENUM_CONST = "enum const ";
-  public static final String[] MEMBER_TYPES = {FIELD, STATIC_FIELD, METHOD, STATIC_METHOD, ENUM_CONST};
+  public static final Set<String> MEMBER_TYPES = CollectionUtil.asSet(FIELD, STATIC_FIELD, METHOD, STATIC_METHOD, ENUM_CONST);
   private static final char[] NFCHARS_ARRAY = {' ', ':', ')', '(', ',', '.', '[', ']'};
   public static final Set<Character> NAME_FINISHING_CHARS = new HashSet<Character>(NFCHARS_ARRAY.length);
 
@@ -183,6 +185,23 @@ public class ExternalResolver {
     }
     if (i>0) ownResolveInfo.delete(i,ownResolveInfo.length());
     return ownResolveInfo.toString();
+  }
+
+  public static boolean isMembersExtResolveInfo(String extResolveInfo) {
+    for (String memberType :  MEMBER_TYPES) {
+      if (extResolveInfo.startsWith(memberType)) return true;
+    }
+
+    if (extResolveInfo.startsWith(CONSTRUCTOR)) return true;
+    return false;
+  }
+
+  public static boolean isClassifierMember(SNode node) {
+    return (node instanceof InstanceMethodDeclaration
+            || node instanceof StaticMethodDeclaration
+            || node instanceof FieldDeclaration
+            || node instanceof StaticFieldDeclaration
+            || node instanceof ConstructorDeclaration);
   }
 
 }
