@@ -36,7 +36,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createTypeCell(context, node));
     editorCell.addEditorCell(this.createNameCell(context, node));
-    if(this.handleConditionalQuery_1075303160504(node)) {
+    if(Queries.semanticNodeCondition_HasInitializer(node)) {
       editorCell.addEditorCell(this.createInitializerArea(context, node));
     }
     editorCell.putUserObject(EditorCell.CELL_ID, "1075303160501");
@@ -140,8 +140,5 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
     __VariableInitializer_ActionSet.setCellActions(editorCell, node, context);
     return editorCell;
-  }
-  public boolean handleConditionalQuery_1075303160504(SNode node) {
-    return __util._SemanticNodeCondition_HasInitializer(node);
   }
 }

@@ -39,7 +39,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "static"));
     editorCell.addEditorCell(this.createTypeCell(context, node));
     editorCell.addEditorCell(this.createNameCell(context, node));
-    if(this.handleConditionalQuery_1084188979616(node)) {
+    if(Queries.semanticNodeCondition_HasInitializer(node)) {
       editorCell.addEditorCell(this.createInitializerArea(context, node));
     }
     editorCell.addEditorCell(this.createConstantCell2(context, node, ";"));
@@ -170,8 +170,5 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     __VariableInitializer_ActionSet.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new _Expression_KeyMap());
     return editorCell;
-  }
-  public boolean handleConditionalQuery_1084188979616(SNode node) {
-    return __util._SemanticNodeCondition_HasInitializer(node);
   }
 }

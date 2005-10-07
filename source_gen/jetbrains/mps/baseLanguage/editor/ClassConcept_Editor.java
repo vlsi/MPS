@@ -32,8 +32,8 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 
   public AbstractCellProvider my_GenericDeclaration_TypeVariables_Component;
   public EditorCellListHandler myImplementedInterfaceListHandler;
-  public EditorCellListHandler myFieldListHandler;
   public EditorCellListHandler myStaticFieldListHandler;
+  public EditorCellListHandler myFieldListHandler;
   public EditorCellListHandler myConstructorListHandler;
   public EditorCellListHandler myMethodListHandler;
   public EditorCellListHandler myStaticMethodListHandler;
@@ -49,8 +49,8 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createHeaderRow(context, node));
-    editorCell.addEditorCell(this.createFieldsArea(context, node));
     editorCell.addEditorCell(this.createRowCell(context, node));
+    editorCell.addEditorCell(this.createFieldsArea(context, node));
     editorCell.addEditorCell(this.createConstantCell8(context, node, ""));
     editorCell.addEditorCell(this.createConstructorsArea(context, node));
     editorCell.addEditorCell(this.createConstantCell10(context, node, ""));
@@ -79,6 +79,18 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, "1074794604361");
     return editorCell;
   }
+  public EditorCell createRowCell(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.addEditorCell(this.createConstantCell5(context, node, "    "));
+    editorCell.addEditorCell(this.createStaticFieldList(context, node));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1128555992206");
+    return editorCell;
+  }
   public EditorCell createFieldsArea(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setSelectable(false);
@@ -89,18 +101,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createFieldsIndentCell(context, node, "    "));
     editorCell.addEditorCell(this.createFieldsList(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, "1074866421484");
-    return editorCell;
-  }
-  public EditorCell createRowCell(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.addEditorCell(this.createConstantCell6(context, node, "    "));
-    editorCell.addEditorCell(this.createStaticFieldList(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1087206751418");
     return editorCell;
   }
   public EditorCell createConstructorsArea(EditorContext context, SNode node) {
@@ -242,6 +242,17 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, "1074794745224");
     return editorCell;
   }
+  public EditorCell createConstantCell5(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1128555992207");
+    return editorCell;
+  }
   public EditorCell createFieldsIndentCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(false);
@@ -251,17 +262,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1074866421485");
-    return editorCell;
-  }
-  public EditorCell createConstantCell6(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(false);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1087206751419");
     return editorCell;
   }
   public EditorCell createConstructorsIndentCell(EditorContext context, SNode node, String text) {
@@ -371,24 +371,24 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     return editorCell;
   }
-  public EditorCell createFieldsList(EditorContext context, SNode node) {
-    if(this.myFieldListHandler == null) {
-      this.myFieldListHandler = new ClassConcept_Editor_FieldListHandler(node, "field", context);
-    }
-    EditorCell_Collection editorCell = this.myFieldListHandler.createCells(context, new CellLayout_Vertical());
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-    editorCell.setGridLayout(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    return editorCell;
-  }
   public EditorCell createStaticFieldList(EditorContext context, SNode node) {
     if(this.myStaticFieldListHandler == null) {
       this.myStaticFieldListHandler = new ClassConcept_Editor_StaticFieldListHandler(node, "staticField", context);
     }
     EditorCell_Collection editorCell = this.myStaticFieldListHandler.createCells(context, new CellLayout_Vertical());
     editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setGridLayout(false);
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    return editorCell;
+  }
+  public EditorCell createFieldsList(EditorContext context, SNode node) {
+    if(this.myFieldListHandler == null) {
+      this.myFieldListHandler = new ClassConcept_Editor_FieldListHandler(node, "field", context);
+    }
+    EditorCell_Collection editorCell = this.myFieldListHandler.createCells(context, new CellLayout_Vertical());
+    editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);

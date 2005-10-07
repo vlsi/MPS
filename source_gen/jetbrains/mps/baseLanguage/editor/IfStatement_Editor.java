@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.CellAction_DeleteSmart;
 import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
-import jetbrains.mps.baseLanguage.IfStatement;
 
 public class IfStatement_Editor extends DefaultNodeEditor {
 
@@ -36,10 +35,10 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createHeaderRow(context, node));
     editorCell.addEditorCell(this.createIfTrueBox(context, node));
-    if(this.handleConditionalQuery_1075379536707(node)) {
+    if(Queries.semanticNodeCondition_IfStatement_HasIfFalseStatement(node)) {
       editorCell.addEditorCell(this.createIfFalseBranch(context, node));
     }
-    if(this.handleConditionalQuery_1075379580458(node)) {
+    if(Queries.semanticNodeCondition_IfStatement_NoIfFalseStatement(node)) {
       editorCell.addEditorCell(this.createConstantCell5(context, node, "}"));
     }
     editorCell.putUserObject(EditorCell.CELL_ID, "1075379419313");
@@ -255,13 +254,5 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
     return editorCell;
-  }
-  public boolean handleConditionalQuery_1075379536707(SNode node) {
-    IfStatement ifStatement = (IfStatement)node;
-    return ifStatement.getIfFalseStatement() != null;
-  }
-  public boolean handleConditionalQuery_1075379580458(SNode node) {
-    IfStatement ifStatement = (IfStatement)node;
-    return ifStatement.getIfFalseStatement() == null;
   }
 }
