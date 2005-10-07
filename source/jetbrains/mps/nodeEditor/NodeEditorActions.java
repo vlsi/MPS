@@ -379,8 +379,11 @@ public class NodeEditorActions {
 
     public void execute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
+      int caretX = selection.getCaretX();
       context.getNodeEditorComponent().pushSelection(selection);
-      context.getNodeEditorComponent().changeSelection(findTarget(selection));
+      EditorCell target = findTarget(selection);
+      target.setCaretX(caretX);
+      context.getNodeEditorComponent().changeSelection(target);
     }
 
     private EditorCell findTarget(EditorCell cell) {
