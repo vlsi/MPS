@@ -25,6 +25,7 @@ public class Icons {
   public static final Icon LANGUAGE_PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/languageProperties.png"));
   public static final Icon MODEL_PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/modelProperties.png"));
   public static final Icon PROJECT_PROPERTIES_ICON =  new ImageIcon(Icons.class.getResource("nodes/projectProperties.png"));
+  public static final Icon GENERATOR_PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/generatorProperties.png"));
 
   public static final Icon SVN_PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/svn.png"));
 
