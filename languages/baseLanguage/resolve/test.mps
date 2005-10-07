@@ -157,7 +157,7 @@
             <node role="initializer" type="jetbrains.mps.baseLanguage.StringLiteral" id="1124810751895">
               <property name="value" value="rubber" />
             </node>
-            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1124880034788">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1124880034788">
               <link role="classifier" extResolveInfo="2.[ClassConcept]String" />
             </node>
           </node>
@@ -527,7 +527,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1122985412888">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1122985412889">
             <property name="name" value="resolver" />
-            <node role="type" type="jetbrains.mps.baseLanguage.ClassType" id="1122985412890">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1122985412890">
               <link role="classifier" extResolveInfo="1.[ClassConcept]Resolver" />
             </node>
           </node>
@@ -538,7 +538,7 @@
             <node role="type" type="jetbrains.mps.baseLanguage.VoidType" id="1122986116625" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1122986121554">
               <link role="baseMethodDeclaration" extResolveInfo="1.static method ([ClassConcept]Resolver).([StaticMethodDeclaration]resolve((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SReference])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
-              <node role="classType" type="jetbrains.mps.baseLanguage.ClassType" id="1122986121555">
+              <node role="classType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1122986121555">
                 <link role="classifier" extResolveInfo="1.[ClassConcept]Resolver" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.NewExpression" id="1122988408523">

@@ -43,23 +43,7 @@ public class ExternalResolver {
     String conceptName = genericDeclaration.getConceptName();
     Iterator<TypeVariableDeclaration> tvIterator = genericDeclaration.typeVariableDeclarations();
 
-    String result  = "[" + conceptName + "]" + name;
-
-/*    if (tvIterator.hasNext()) {
-      result+= "<";
-      int i = 0;
-      while(tvIterator.hasNext()) {
-        TypeVariableDeclaration tv = tvIterator.next();
-        String tvName = tv.getName();
-        if (tvName.equals("?")) result += "?"; else result += ("T"+i);
-        if (tvIterator.hasNext()) {
-          result += ", ";
-          i++;
-        }
-      }
-
-      result += ">";
-    }*/
+    String result  = "[Classifier]" + name;
     return result;
   }
 
@@ -176,7 +160,8 @@ public class ExternalResolver {
       }
     }
 
-    StringBuffer ownResolveInfo = isMember ? new StringBuffer(resolveInfo.substring(resolveInfo.indexOf('.'))) : new StringBuffer(resolveInfo);
+    String ownResolveInfoString = isMember ? getMembersOwnResolveInfo(resolveInfo) : resolveInfo;
+    StringBuffer ownResolveInfo = new StringBuffer(ownResolveInfoString);
     ownResolveInfo.delete(0, ownResolveInfo.indexOf("]")+1);
     int i;
     for (i = 0; i < ownResolveInfo.length(); i++) {
@@ -184,6 +169,22 @@ public class ExternalResolver {
     }
     if (i>0) ownResolveInfo.delete(i,ownResolveInfo.length());
     return ownResolveInfo.toString();
+  }
+
+  public static String getMembersOwnResolveInfo(String resolveInfo) {
+    return resolveInfo.substring(resolveInfo.indexOf('.')+1);
+  }
+
+  public static String getMembersClassifierResolveInfo(String resolveInfo, String memberType) {
+    return resolveInfo.substring(memberType.length(),resolveInfo.indexOf('.'));
+  }
+
+  public static String getConstructorOwnResolveInfo(String resolveInfo) {
+    return resolveInfo.substring(resolveInfo.indexOf(" ("));
+  }
+
+  public static String getConstructorClassifierResolveInfo(String resolveInfo) {
+    return resolveInfo.substring(CONSTRUCTOR.length(),resolveInfo.indexOf(" (")-1);
   }
 
 
@@ -212,11 +213,7 @@ public class ExternalResolver {
     return (getMemberType(node).equals(getMemberType(extResolveInfo)));
   }
 
-  public static String getExtResolveInfoFromJavaClass(String name, boolean isInterface) {
-    String conceptName = "ClassConcept";
-    if (isInterface) {
-      conceptName= "Interface";
-    }
-    return "[" + conceptName + "]" + NameUtil.shortNameFromLongName(name);
+  public static String getExtResolveInfoFromJavaClass(String name) {
+    return "[Classifier]" + NameUtil.shortNameFromLongName(name);
   }
 }

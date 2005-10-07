@@ -8,13 +8,10 @@ import jetbrains.mps.smodel.ExternalReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.resolve.ExternalResolver;
 import jetbrains.mps.baseLanguage.*;
 
-import java.lang.reflect.Method;
 import java.util.Collection;
-import java.util.HashMap;
 
 /**
  * Created by IntelliJ IDEA.
@@ -93,11 +90,53 @@ public class ExternalResolverManager {
   }
 
   public static String getExtResolveInfoFromJavaClass(Class cls) {
-    return ExternalResolver.getExtResolveInfoFromJavaClass(cls.getName(), cls.isInterface());
+    return ExternalResolver.getExtResolveInfoFromJavaClass(cls.getName());
   }
+
+
 
   public static boolean doesNodeMatchERI(String externalResolveInfo, SNode node) {
     if (isEmptyExtResolveInfo(externalResolveInfo)) return false;
-    return (externalResolveInfo.equals(getExternalResolveInfoFromTarget(node)));
+
+    if (!ExternalResolver.doMemberTypesCoincide(node, externalResolveInfo)) return false;
+
+    String externalResolveInfoFromTarget = getExternalResolveInfoFromTarget(node);
+    String memberType = ExternalResolver.getMemberType(externalResolveInfo);
+
+    if (memberType.equals(ExternalResolver.CLASSIFIER)) {
+      return doClassifiersERIMatch(externalResolveInfo, externalResolveInfoFromTarget);
+    }
+
+    if (ExternalResolver.MEMBER_TYPES.contains(memberType)) {
+      String classifiersERI = ExternalResolver.getMembersClassifierResolveInfo(externalResolveInfo, memberType);
+      String classifiersERIFromTarget = ExternalResolver.getMembersClassifierResolveInfo(externalResolveInfoFromTarget, memberType);
+      if (!doClassifiersERIMatch(classifiersERI, classifiersERIFromTarget)) return false;
+      String ownERI = ExternalResolver.getMembersOwnResolveInfo(externalResolveInfo);
+      String ownERIFromTarget = ExternalResolver.getMembersOwnResolveInfo(externalResolveInfoFromTarget);
+      return ownERI.equals(ownERIFromTarget);
+    }
+
+    if (ExternalResolver.CONSTRUCTOR.equals(memberType)) {
+      String classifiersERI = ExternalResolver.getConstructorClassifierResolveInfo(externalResolveInfo);
+      String classifiersERIFromTarget = ExternalResolver.getConstructorClassifierResolveInfo(externalResolveInfoFromTarget);
+      if (!doClassifiersERIMatch(classifiersERI, classifiersERIFromTarget)) return false;
+      String ownERI = ExternalResolver.getConstructorOwnResolveInfo(externalResolveInfo);
+      String ownERIFromTarget = ExternalResolver.getConstructorOwnResolveInfo(externalResolveInfoFromTarget);
+      return ownERI.equals(ownERIFromTarget);
+    }
+
+    return false;/*(externalResolveInfo.equals(externalResolveInfoFromTarget));*/
+  }
+
+
+  private static boolean doClassifiersERIMatch(String externalResolveInfo, String externalResolveInfoFromTarget) {
+    String effectiveExtResolveInfo = eraseDifferencesBetweenClassAndInterfaceResolveInfo(externalResolveInfo);
+    String effectiveExtResolveInfoFromTarget = eraseDifferencesBetweenClassAndInterfaceResolveInfo(externalResolveInfoFromTarget);
+    return (effectiveExtResolveInfo.equals(effectiveExtResolveInfoFromTarget));
+  }
+
+
+  private static String eraseDifferencesBetweenClassAndInterfaceResolveInfo(String extResolveInfo) {
+    return extResolveInfo.substring(extResolveInfo.indexOf("]") + 1);
   }
 }
