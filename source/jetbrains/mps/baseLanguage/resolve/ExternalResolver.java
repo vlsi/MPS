@@ -117,7 +117,7 @@ public class ExternalResolver {
   }
 
   private static String getExtResolveInfoForClassFields(VariableDeclaration variableDeclaration) {
-    ClassConcept classConcept = (ClassConcept) variableDeclaration.getParent();
+    Classifier classConcept = (Classifier) variableDeclaration.getParent();
     String classExtResolveInfo = getExtResolveInfoForTargetClassGenericDeclaration(classConcept);
 
     String name = variableDeclaration.getName();
@@ -127,6 +127,12 @@ public class ExternalResolver {
     ITypeChecker typeChecker = TypeCheckerAccess.getTypeChecker();
     TSStatus tSStatus = typeChecker.adaptNode(variableDeclaration.getType());
     ITypeObject typeObject = tSStatus.getTypeObject();
+    //test
+    if(typeObject == null) {
+       typeChecker.adaptNode(variableDeclaration.getType());
+    }
+    //test
+    
     myExtResolveInfo+= "(" + typeObject.getTypeName() + "/" + typeObject.getSignature() + ")";
 
     return "("+ classExtResolveInfo + ")." + "(" + myExtResolveInfo + ")";

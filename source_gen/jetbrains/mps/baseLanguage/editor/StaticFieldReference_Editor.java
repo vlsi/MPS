@@ -60,7 +60,8 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "variableDeclaration", context.getOperationContext().getScope());
     SReference reference = node.getReference("variableDeclaration");
     if(reference != null && !(reference.isResolved())) {
-      EditorCell_Error noRefCell = EditorCell_Error.create(context, node, BadReferenceTextProvider.getBadReferenceText(reference));
+      EditorCell_Error noRefCell = EditorCell_Error.create(context, node, null);
+      noRefCell.setText(BadReferenceTextProvider.getBadReferenceText(reference));
       noRefCell.setEditable(true);
       noRefCell.setDrawBrackets(false);
       noRefCell.setBracketsColor(Color.black);

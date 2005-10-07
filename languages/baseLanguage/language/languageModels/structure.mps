@@ -1293,6 +1293,7 @@
       <property name="targetCardinality" value="1" />
       <property name="role" value="extendedInterface" />
       <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1107535904670" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1107796744532">
       <property name="name" value="name" />
