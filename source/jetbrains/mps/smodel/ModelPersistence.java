@@ -5,6 +5,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.resolve.ExternalResolverManager;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.baseLanguage.ClassifierType;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -268,15 +269,18 @@ public class ModelPersistence {
   }
 
 
-  public static SNode createNodeInstance(String type, SModel semanticModel) {
+  public static SNode createNodeInstance(String type, SModel model) {
     try {
       Class nodeClass = Class.forName(type, true, ClassLoaderManager.getInstance().getClassLoader());
       Method method = nodeClass.getMethod("newInstance", new Class[]{SModel.class});
-      SNode semanticNode = (SNode) method.invoke(nodeClass, new Object[]{semanticModel});
-      return semanticNode;
+      return (SNode) method.invoke(nodeClass, new Object[]{model});
     } catch (ClassNotFoundException e) {
-      LOG.warning("I can't find class for node type " + type);
-      return new SNode(semanticModel) {
+      LOG.warning("Couldn't find class for node type " + type + " in model " + model.getUID());
+      if (type.endsWith(".ClassType") || type.endsWith(".InterfaceType")) { // these classes have been removed
+        SModelRepository.getInstance().markChanged(model, true);
+        return new ClassifierType(model);
+      }
+      return new SNode(model) {
       }; //this hack is required to make diff work correctly event if no such class
     } catch (NoSuchMethodException e) {
       LOG.error(e);
@@ -379,19 +383,19 @@ public class ModelPersistence {
   }
 
   public static void saveNode(Element parentElement, SNode node) {
-    saveNode(parentElement, node, false);
-  }
-
-  public static void saveNode(Element parentElement, SNode node, boolean saveResolveInfo) {
     Element element = new Element(NODE);
     setNotNullAttribute(element, ROLE, node.getRole_());
     element.setAttribute(TYPE, node.getClass().getName());
     element.setAttribute(ID, node.getId());
 
     if (node.getModel().isExternallyResolvable()) {
-      String extResolveInfo = ExternalResolverManager.getExternalResolveInfoFromTarget(node);
-      if (!ExternalResolverManager.isEmptyExtResolveInfo(extResolveInfo)) {
-        element.setAttribute(EXT_RESOLVE_INFO, extResolveInfo);
+      try {
+        String extResolveInfo = ExternalResolverManager.getExternalResolveInfoFromTarget(node);
+        if (!ExternalResolverManager.isEmptyExtResolveInfo(extResolveInfo)) {
+          element.setAttribute(EXT_RESOLVE_INFO, extResolveInfo);
+        }
+      } catch (Exception e) {
+        LOG.error("Failed to save extResolveInfo for node " + node.getDebugText(), e);
       }
     }
 
@@ -416,7 +420,7 @@ public class ModelPersistence {
     // children ...
     List<SNode> children = node.getChildren();
     for (SNode childNode : children) {
-      saveNode(element, childNode, saveResolveInfo);
+      saveNode(element, childNode);
     }
 
     parentElement.addContent(element);

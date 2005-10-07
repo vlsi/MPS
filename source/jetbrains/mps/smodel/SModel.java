@@ -27,8 +27,6 @@ public class SModel implements Iterable<SNode> {
   private List<SNode> myRoots = new ArrayList<SNode>();
   private SModelUID myUID = new SModelUID("unnamed", "");
 
-  private boolean myIsExternallyResolved = false;
-
   private boolean isLoading = false;
 
   private int myMaxImportIndex;
@@ -46,10 +44,6 @@ public class SModel implements Iterable<SNode> {
   public SModel(SModelUID modelUID) {
     this();
     myUID = modelUID;
-    if (SModelStereotype.JAVA_STUB.equals(myUID.getStereotype()) ||
-            SModelStereotype.GENERATED.equals(myUID.getStereotype())) {
-      myIsExternallyResolved = true;
-    }
   }
 
   public SModel() {
@@ -502,7 +496,6 @@ public class SModel implements Iterable<SNode> {
     SNode targetNode = ExternalResolverManager.findTargetNode(this, extResolveInfo);
     if (targetNode != null) {
       myExternalResolveInfoToNodeMap.put(extResolveInfo, targetNode);
-      SModelRepository.getInstance().markChanged(this, true);
     }
     return targetNode;
   }
@@ -522,7 +515,7 @@ public class SModel implements Iterable<SNode> {
       return null;
     }
     if (!ExternalResolverManager.isEmptyExtResolveInfo(extResolveInfo)) {
-      myExternalResolveInfoToNodeMap.put(extResolveInfo,node);
+      myExternalResolveInfoToNodeMap.put(extResolveInfo, node);
       SModelRepository.getInstance().markChanged(this, true);
       return extResolveInfo;
     }
