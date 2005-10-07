@@ -490,8 +490,7 @@ public class SModel implements Iterable<SNode> {
     if (ExternalResolverManager.isEmptyExtResolveInfo(extResolveInfo)) return null;
     SNode node = myExternalResolveInfoToNodeMap.get(extResolveInfo);
     if (node != null) {
-      String currentResolveInfo = ExternalResolverManager.getExternalResolveInfoFromTarget(node);
-      if (extResolveInfo.equals(currentResolveInfo)) return node;
+      if (ExternalResolverManager.doesNodeMatchERI(extResolveInfo, node)) return node;
       else
         return findNodeWithExtResolveInfo(extResolveInfo);
     } else {

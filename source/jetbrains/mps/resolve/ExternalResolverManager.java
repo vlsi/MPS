@@ -78,8 +78,7 @@ public class ExternalResolverManager {
         continue;
       }
 
-      String nodeExtResolveInfo = getExternalResolveInfoFromTarget(node);
-      if (extResolveInfo.equals(nodeExtResolveInfo)) return node;
+      if (doesNodeMatchERI(extResolveInfo, node)) return node;
     }
     return null;
   }
@@ -95,5 +94,10 @@ public class ExternalResolverManager {
 
   public static String getExtResolveInfoFromJavaClass(Class cls) {
     return ExternalResolver.getExtResolveInfoFromJavaClass(cls.getName(), cls.isInterface());
+  }
+
+  public static boolean doesNodeMatchERI(String externalResolveInfo, SNode node) {
+    if (isEmptyExtResolveInfo(externalResolveInfo)) return false;
+    return (externalResolveInfo.equals(getExternalResolveInfoFromTarget(node)));
   }
 }
