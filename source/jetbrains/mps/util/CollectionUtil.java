@@ -49,6 +49,26 @@ public class CollectionUtil {
     };
   }
 
+  public static <T> Iterable<T> enumerationAsIterable(final Enumeration<T> e) {
+    return new Iterable<T>() {
+      public Iterator<T> iterator() {
+        return new Iterator<T>() {
+          public boolean hasNext() {
+            return e.hasMoreElements();
+          }
+
+          public T next() {
+            return e.nextElement();
+          }
+
+          public void remove() {
+            throw new RuntimeException();
+          }
+        };
+      }
+    };
+  }
+
   public static <T> Set<T> asSet(T... ts) {
     Set<T> result = new HashSet<T>();
     for (T t : ts) {
