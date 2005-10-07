@@ -500,7 +500,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   private SNode findNodeWithExtResolveInfo(String extResolveInfo) {
-    SNode targetNode = ExternalResolverManager.getTargetNode(this, extResolveInfo);
+    SNode targetNode = ExternalResolverManager.findTargetNode(this, extResolveInfo);
     if (targetNode != null) {
       myExternalResolveInfoToNodeMap.put(extResolveInfo, targetNode);
       SModelRepository.getInstance().markChanged(this, true);
