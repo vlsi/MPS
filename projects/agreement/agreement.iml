@@ -10,9 +10,6 @@
       <sourceFolder url="file://$MODULE_DIR$/framework/java/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/framework/java/test" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/framework/java/test_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
-      <sourceFolder url="file://C:/temp/test/languages/zzzzz/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
