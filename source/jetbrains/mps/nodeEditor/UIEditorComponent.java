@@ -6,7 +6,9 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.ide.ProjectFrame;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.util.List;
+import java.awt.*;
 
 /**
  * @author Kostik
@@ -20,6 +22,9 @@ public class UIEditorComponent extends AbstractEditorComponent {
     super(ide, operationContext);
     unregisterKeyboardAction(KeyStroke.getKeyStroke("ESCAPE"));
     myInspector = inspector;
+
+    myInspector.getExternalComponent().setBorder(new LineBorder(Color.DARK_GRAY));
+    getExternalComponent().setBorder(new LineBorder(Color.DARK_GRAY));
 
     addCellSelectionListener(new ICellSelectionListener() {
       public void selectionChanged(AbstractEditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {

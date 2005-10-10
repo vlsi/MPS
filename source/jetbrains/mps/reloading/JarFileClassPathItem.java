@@ -1,5 +1,7 @@
 package jetbrains.mps.reloading;
 
+import jetbrains.mps.util.CollectionUtil;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,6 +19,9 @@ public class JarFileClassPathItem implements IClassPathItem {
   private String myPrefix;
   private File myFile;
 
+  private Map<String, Set<String>> myClasses = new HashMap<String, Set<String>>();
+  private Map<String, Set<String>> mySubpackages = new HashMap<String, Set<String>>();
+
   public JarFileClassPathItem(String path) {
     this(new File(path));
   }
@@ -29,6 +34,8 @@ public class JarFileClassPathItem implements IClassPathItem {
     } catch (IOException e) {
       e.printStackTrace();
     }
+
+    buildCaches();
   }
 
   public File getFile() {
@@ -74,42 +81,11 @@ public class JarFileClassPathItem implements IClassPathItem {
   }
 
   public Set<String> getAvailableClasses(String namespace) {
-    Set<String> result = new HashSet<String>();
-    String prefix = namespace.replace('.', '/') + "/";
-
-    for (Enumeration<? extends ZipEntry> e = myZipFile.entries();  e.hasMoreElements();) {
-      ZipEntry ze = e.nextElement();
-      String name = ze.getName();
-
-      if (name.startsWith(prefix) &&
-              name.endsWith(".class") &&
-              !name.contains("$") &&    //skip inner and anonymous classes
-              !name.substring(prefix.length()).contains("/")) {
-        result.add(name.substring(prefix.length(), name.length() - ".class".length()));
-      }
-    }
-    return result;
+    return new HashSet<String>(getClassesSetFor(namespace));
   }
 
   public Set<String> getSubpackages(String namespace) {
-    Set<String> result = new HashSet<String>();
-    String prefix = namespace.replace('.', '/') + "/";
-    if (prefix.equals("/")) prefix = ""; //root package
-
-    for (Enumeration<? extends ZipEntry> e = myZipFile.entries();  e.hasMoreElements();) {
-      ZipEntry ze = e.nextElement();
-      String name = ze.getName();
-
-      if (name.startsWith(prefix) &&
-              !name.equals(prefix)) {
-        int nextIndexOfSlash = name.indexOf("/", prefix.length());
-        if (nextIndexOfSlash != -1) {
-          result.add(name.substring(0, nextIndexOfSlash).replace("/", "."));
-        }
-      }
-    }
-
-    return result;
+    return new HashSet<String>(getSubpackagesSetFor(namespace));
   }
 
   public long getClassesTimestamp(String namespace) {
@@ -118,6 +94,58 @@ public class JarFileClassPathItem implements IClassPathItem {
       timestamp = Math.max(timestamp, getClassTimestamp(namespace + "." + cls));
     }
     return timestamp;
+  }
+
+  private Set<String> getClassesSetFor(String pack) {
+    if (!myClasses.containsKey(pack)) {
+      myClasses.put(pack, new HashSet<String>());
+    }
+    return myClasses.get(pack);
+  }
+
+  private Set<String> getSubpackagesSetFor(String pack) {
+    if (!mySubpackages.containsKey(pack)) {
+      mySubpackages.put(pack, new HashSet<String>());
+    }
+    return mySubpackages.get(pack);
+  }
+
+  private void buildCaches() {
+    Iterable<? extends ZipEntry> entries = CollectionUtil.enumerationAsIterable(myZipFile.entries());
+
+    for (ZipEntry entry : entries) {
+      if (entry.isDirectory()) {
+        String name = entry.getName();
+        if (name.endsWith("/")) {
+          name = name.substring(0, name.length() - 1);
+        }
+
+        String pack =  name.replace('/', '.');
+
+        buildPackageCaches(pack);
+      } else {
+        String name = entry.getName();
+        int packEnd = name.lastIndexOf('/');
+        String pack = name.substring(0, packEnd).replace('/', '.');
+        buildPackageCaches(pack);
+
+        String className = name.substring(packEnd + 1, name.length() - ".class".length());
+        getClassesSetFor(pack).add(className);
+      }
+    }
+  }
+
+  private void buildPackageCaches(String namespace) {
+    String parent = getParentPackage(namespace);
+    if (parent.equals(namespace)) return;
+    getSubpackagesSetFor(parent).add(namespace);
+    buildPackageCaches(parent);
+  }
+
+  private String getParentPackage(String pack) {
+    int lastDot = pack.lastIndexOf(".");
+    if (lastDot == -1) return "";
+    return pack.substring(0, lastDot);
   }
 
   public static void main(String[] args) {
