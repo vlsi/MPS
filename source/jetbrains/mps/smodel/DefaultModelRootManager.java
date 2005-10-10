@@ -12,7 +12,7 @@ import java.io.FilenameFilter;
 /**
  * @author Kostik
  */
-public class DefaultModelRootManager implements ModelRootManager {
+public class DefaultModelRootManager implements IModelRootManager {
   private static final Logger LOG = Logger.getLogger(DefaultModelRootManager.class);
 
   public Set<SModelDescriptor> read(ModelRoot root, ModelOwner owner) {

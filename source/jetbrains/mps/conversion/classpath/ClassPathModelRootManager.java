@@ -1,6 +1,6 @@
 package jetbrains.mps.conversion.classpath;
 
-import jetbrains.mps.smodel.ModelRootManager;
+import jetbrains.mps.smodel.IModelRootManager;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.smodel.SModelRepository;
@@ -17,7 +17,7 @@ import java.util.HashSet;
 /**
  * @author Kostik
  */
-public class ClassPathModelRootManager implements ModelRootManager  {
+public class ClassPathModelRootManager implements IModelRootManager  {
   private ModelOwner myOwner;
   private IConverter myConverter;
 

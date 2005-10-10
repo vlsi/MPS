@@ -7,6 +7,6 @@ import java.util.Set;
 /**
  * @author Kostik
  */
-public interface ModelRootManager {
+public interface IModelRootManager {
   Set<SModelDescriptor> read(ModelRoot root, ModelOwner owner);    
 }

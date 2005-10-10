@@ -287,7 +287,7 @@ public class SModelRepository extends SModelAdapter {
       ModelRoot modelRoot = modelRoots.next();
       File dir = new File(modelRoot.getPath());
       if (dir.exists()) {
-        ModelRootManager manager = getManagerFor(modelRoot);
+        IModelRootManager manager = getManagerFor(modelRoot);
         try {
           list.addAll(manager.read(modelRoot, owner));
         } catch (Exception e) {
@@ -302,12 +302,12 @@ public class SModelRepository extends SModelAdapter {
     return list;
   }
 
-  private ModelRootManager getManagerFor(ModelRoot modelRoot) {
+  private IModelRootManager getManagerFor(ModelRoot modelRoot) {
     if (modelRoot.getHandlerClass() == null) return new DefaultModelRootManager();
     String fqName = modelRoot.getHandlerClass();
     try {
       Class cls = Class.forName(fqName, true, ClassLoaderManager.getInstance().getClassLoader());
-      return (ModelRootManager) cls.newInstance();
+      return (IModelRootManager) cls.newInstance();
     } catch (Exception e) {
       LOG.error(e);
       return null;
