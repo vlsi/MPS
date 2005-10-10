@@ -102,13 +102,9 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   public SModel getSModel() {
     if (mySModel == null) {
 
-      long start = System.currentTimeMillis();
-
       mySModel = loadModel();
 
       updateModelAfterLoad();
-
-      System.err.println("Model " + getModelUID() + " loaded in " + (System.currentTimeMillis() - start) + " ms");
 
       SModelsMulticaster.getInstance().fireModelLoadedEvent(this);
 
