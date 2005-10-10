@@ -20,6 +20,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.typesystem.TypeCheckerAccess;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.*;
 import java.beans.PropertyChangeEvent;
@@ -128,6 +129,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myScrollPane.setBorder(null);
 
     if (showErrorsGutter) {
+      myScrollPane.setBorder(new LineBorder(Color.LIGHT_GRAY));
       myContainer.add(myMessagesGutter, BorderLayout.EAST);
     }
 
