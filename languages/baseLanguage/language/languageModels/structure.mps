@@ -1107,6 +1107,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1106353916888">
     <property name="name" value="FeatureCompositionType" />
+    <link role="extends" targetNodeId="1107535904670" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1107553204937">
       <link role="conceptPropertyDeclaration" targetNodeId="34.1107214854626" />
     </node>

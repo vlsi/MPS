@@ -7,11 +7,9 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.ide.messages.MessageView;
-import jetbrains.mps.smodel.*;
-
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModel;
 
 public abstract class AbstractModelGenerator implements IModelGenerator {
   private IOperationContext myOperationContext;
@@ -24,6 +22,13 @@ public abstract class AbstractModelGenerator implements IModelGenerator {
 
   public IOperationContext getOperationContext() {
     return myOperationContext;
+  }
+
+  public IScope getScope() {
+    if(myOperationContext != null) {
+      return myOperationContext.getScope();
+    }
+    return null;
   }
 
   public MessageView getMessageView() {

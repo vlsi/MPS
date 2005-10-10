@@ -12,6 +12,7 @@ import jetbrains.mps.ide.progress.IProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.TemplateDeclaration;
 import jetbrains.mps.transformation.TLBase.TemplateSwitch;
@@ -72,6 +73,8 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
   ITypeChecker getTypeChecker();
 
   IOperationContext getOperationContext();
+
+  IScope getScope();
 
   int getErrorCount();
 }
