@@ -125,6 +125,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myContainer = new JPanel();
     myContainer.setLayout(new BorderLayout());
     myContainer.add(myScrollPane, BorderLayout.CENTER);
+    myScrollPane.setBorder(null);
 
     if (showErrorsGutter) {
       myContainer.add(myMessagesGutter, BorderLayout.EAST);

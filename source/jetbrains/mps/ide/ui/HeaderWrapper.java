@@ -38,6 +38,8 @@ public class HeaderWrapper extends JPanel {
   public HeaderWrapper(String text, JComponent component, boolean showCloseButton, boolean showMinimizeButton) {
     super(new BorderLayout());
 
+    setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY, 1));
+
     JPanel labelPanel = new JPanel(new BorderLayout());
     myLabel.setText(text);
     myLabel.setFont(myLabel.getFont().deriveFont(Font.BOLD));

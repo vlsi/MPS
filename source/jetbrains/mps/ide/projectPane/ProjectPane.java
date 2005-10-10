@@ -83,7 +83,9 @@ public class ProjectPane extends JComponent implements IActionDataProvider {
     setLayout(new BorderLayout());
     new TreeWithSNodesSpeedSearch(myTree);
 
-    myHeader = new HeaderWrapper("Project", new JScrollPane(myTree));
+    JScrollPane scroller = new JScrollPane(myTree);
+    scroller.setBorder(null);
+    myHeader = new HeaderWrapper("Project", scroller);
     add(myHeader, BorderLayout.CENTER);
     myTree.addKeyListener(new KeyAdapter() {
       public void keyPressed(KeyEvent e) {
