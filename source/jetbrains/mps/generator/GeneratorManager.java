@@ -232,6 +232,12 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           } catch (GenerationFailedException gfe) {
             LOG.error(model.getModelUID() + " : generation failed", gfe);
             progress.addText("exception during generation " + gfe.getMessage());
+            GenerationFailueInfo failueInfo = gfe.getFailueInfo();
+            if (failueInfo != null) {
+              for (Message message : failueInfo.createMessages()) {
+                addMessage(message, invocationContext);
+              }
+            }
             addMessage(new Message(MessageKind.ERROR, model.getModelUID() + " : generation failed"), invocationContext);
             generationOK = false;
             break;

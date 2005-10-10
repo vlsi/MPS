@@ -1116,6 +1116,7 @@
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="featureCompositionDeclaration" />
       <link role="target" targetNodeId="1106155080112" />
+      <link role="specializedLink" targetNodeId="1107535924139" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1106354127000">
       <property name="sourceCardinality" value="0..n" />
