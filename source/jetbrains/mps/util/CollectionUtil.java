@@ -91,4 +91,24 @@ public class CollectionUtil {
     }
     return null;
   }
+
+  public static<E> void iterate(Collection<E> c, CollectionBlock<E> block) {
+    for (E e : c) {
+      block.run(e);
+    }
+  }
+
+  public static<K, V> void iterate(Map<K, V> m, MapBlock<K, V> block) {
+    for (K k : m.keySet()) {
+      block.run(k, m.get(k));
+    }
+  }
+
+  public interface CollectionBlock<E> {
+    void run(E e);
+  }
+
+  public interface MapBlock<K, V> {
+    void run(K k, V v);
+  }
 }
