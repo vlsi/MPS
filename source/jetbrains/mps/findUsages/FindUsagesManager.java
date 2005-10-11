@@ -67,7 +67,7 @@ public class FindUsagesManager {
       List<SModelDescriptor> models = scope.getModelDescriptors();
       progress.start("Find Usages...", models.size());
       progress.addText("Finding usages...");
-      for (SModelDescriptor model : models) {
+      for (SModelDescriptor model : new ArrayList<SModelDescriptor>(models)) {
         result.addAll(model.findUsages(node));
         if (progress.isCanceled()) {
           return result;
