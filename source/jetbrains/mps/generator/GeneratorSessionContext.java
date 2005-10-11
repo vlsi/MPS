@@ -70,6 +70,7 @@ public class GeneratorSessionContext implements IOperationContext {
     private List<IModule> myDependOnModules;
     private Generator myGenerator;
     private IModule myInvocationModule;
+    private SModelDescriptor myProjectModelDescriptor = ProjectModelDescriptor.createDescriptorFor(this);
 
     TransientModule(Generator generator, IModule invocationModule) {
       myGenerator = generator;
@@ -79,8 +80,12 @@ public class GeneratorSessionContext implements IOperationContext {
       myDependOnModules.add(invocationModule);
     }
 
-    public List<ModelRoot> getModelRoots() {
+    protected List<ModelRoot> getModelRootsImpl() {
       return Collections.EMPTY_LIST;
+    }
+
+    protected SModelDescriptor getModuleModel() {
+      return myProjectModelDescriptor;
     }
 
     public List<IModule> getDependOnModules() {

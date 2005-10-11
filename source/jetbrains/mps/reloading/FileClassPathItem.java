@@ -93,6 +93,7 @@ public class FileClassPathItem implements IClassPathItem {
   }
 
   private File getModelDir(String namespace) {
+    if (namespace == null) namespace = "";
     return new File(myClassPath + File.separatorChar + namespace.replace('.', File.separatorChar));
   }
 

@@ -12,6 +12,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.*;
+import jetbrains.mps.annotations.Hack;
 
 import java.io.File;
 import java.util.*;
@@ -21,7 +22,7 @@ import java.util.*;
  * Author: Sergey Dmitriev
  * Created Jan 30, 2004
  */
-public class Language extends AbstractModule implements ModelLocator {
+public class Language extends AbstractModule {
   private static final Logger LOG = Logger.getLogger(Language.class);
 
   private File myDescriptorFile;
@@ -92,7 +93,7 @@ public class Language extends AbstractModule implements ModelLocator {
 
   private void init() {
     // read models
-    SModelRepository.getInstance().readModelDescriptors(myLanguageDescriptor.modelRoots(), this);
+    SModelRepository.getInstance().readModelDescriptors(getModelRoots(), this);
     revalidateGenerators();
 
 
@@ -139,7 +140,7 @@ public class Language extends AbstractModule implements ModelLocator {
     }
 
     myLanguageDescriptor = newDescriptor;
-    SModelRepository.getInstance().readModelDescriptors(myLanguageDescriptor.modelRoots(), Language.this);
+    SModelRepository.getInstance().readModelDescriptors(getModelRoots(), Language.this);
     revalidateGenerators();
 
     registerAspectListener();
@@ -205,14 +206,6 @@ public class Language extends AbstractModule implements ModelLocator {
     result = Math.max(result, repository.getLastChangeTime(getActionsModelDescriptor()));
     result = Math.max(result, repository.getLastChangeTime(getTypesystemModelDescriptor()));
     return result;
-  }
-
-  public String findPath(SModelUID modelUID) {
-    String modelPath = PathManager.findModelPath(getLanguageDescriptor().modelRoots(), modelUID);
-    if (modelPath != null && (new File(modelPath)).exists()) {
-      return modelPath;
-    }
-    return null;
   }
 
   public List<ConceptDeclaration> getConceptDeclarations() {
@@ -374,6 +367,7 @@ public class Language extends AbstractModule implements ModelLocator {
     myCommandListeners.remove(listener);
   }
 
+  @Hack("Created to simplify New Language Dialog")
   public String getLanguageModelsDir() {
     return getLanguageDescriptor().modelRoots().next().getPath();
   }
@@ -390,8 +384,12 @@ public class Language extends AbstractModule implements ModelLocator {
     }
   }
 
-  public List<ModelRoot> getModelRoots() {
+  protected List<ModelRoot> getModelRootsImpl() {
     return CollectionUtil.iteratorAsList(myLanguageDescriptor.modelRoots());
+  }
+
+  protected SModelDescriptor getModuleModel() {
+    return myLanguageDescriptor.getModel().getModelDescriptor();
   }
 
   public List<IModule> getChildModules() {

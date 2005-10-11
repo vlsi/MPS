@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.ProjectFrame;
 import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.project.MPSProjects;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
@@ -20,6 +21,8 @@ public abstract class GenericEditorUpdater {
       }
 
       public void run() {
+        if (IdeMain.isTestMode()) return;
+
         try {
           while (true) {
             doUpdate();

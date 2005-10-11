@@ -6,15 +6,13 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.Model;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.PathManager;
 
-import java.io.File;
 import java.util.List;
 
 /**
  * @author Kostik
  */
-public class Generator extends AbstractModule implements ModelLocator {
+public class Generator extends AbstractModule {
   private Language mySourceLanguage;
   private GeneratorDescriptor myGeneratorDescriptor;
 
@@ -74,16 +72,12 @@ public class Generator extends AbstractModule implements ModelLocator {
     return myGeneratorDescriptor.getGeneratorClass();
   }
 
-  public String findPath(SModelUID modelUID) {
-    String modelPath = PathManager.findModelPath(myGeneratorDescriptor.modelRoots(), modelUID);
-    if (modelPath != null && (new File(modelPath)).exists()) {
-      return modelPath;
-    }
-    return null;
+  protected List<jetbrains.mps.projectLanguage.ModelRoot> getModelRootsImpl() {
+    return CollectionUtil.iteratorAsList(myGeneratorDescriptor.modelRoots());
   }
 
-  public List<jetbrains.mps.projectLanguage.ModelRoot> getModelRoots() {
-    return CollectionUtil.iteratorAsList(myGeneratorDescriptor.modelRoots());
+  protected SModelDescriptor getModuleModel() {
+    return myGeneratorDescriptor.getModel().getModelDescriptor();
   }
 
   public String toString() {

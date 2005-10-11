@@ -5,6 +5,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.PathManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,9 +21,16 @@ import java.util.*;
 public abstract class AbstractModule implements LanguageOwner, IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
+  private ModelRoot myClassPathModelRoot;
+
   //
   // IScope
   //
+
+  protected abstract List<ModelRoot> getModelRootsImpl();
+
+  protected abstract SModelDescriptor getModuleModel();
+
 
   public Language getLanguage(String languageNamespace) {
     Language language = LanguageRepository.getInstance().getLanguage(languageNamespace, this);
@@ -144,7 +152,29 @@ public abstract class AbstractModule implements LanguageOwner, IModule {
   // IModule
   //
 
-  public abstract List<ModelRoot> getModelRoots();
+  private List<ModelRoot> getDefaultModelRoots() {
+    List<ModelRoot> result = new ArrayList<ModelRoot>();
+    if (myClassPathModelRoot == null) {
+
+      myClassPathModelRoot = ModelRoot.newInstance(getModuleModel().getSModel());
+      myClassPathModelRoot.setPrefix("");
+      myClassPathModelRoot.setPath("");
+
+      myClassPathModelRoot.setHandlerClass("jetbrains.mps.conversion.classpath.ClassPathModelRootManager");
+
+    }
+    result.add(myClassPathModelRoot);
+    return result;
+  }
+
+  public final List<ModelRoot> getModelRoots() {
+    List<ModelRoot> result = new ArrayList<ModelRoot>();
+
+    result.addAll(getDefaultModelRoots());
+    result.addAll(getModelRootsImpl());
+
+    return result;
+  }
 
   public IModule getParentModule() {
     return null;

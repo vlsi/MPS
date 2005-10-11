@@ -49,6 +49,7 @@ public class ExternalResolveInfoProvider {
       ParameterDeclaration parameterDeclaration = pIterator.next();
       TSStatus tSStatus = typeChecker.adaptNode(parameterDeclaration.getType());
       ITypeObject parameterTypeObject = tSStatus.getTypeObject();
+      if (parameterTypeObject == null) return ExternalResolver.NO_MEMBER_TYPE;
       String parameterType = "(" + parameterTypeObject.getTypeName() + "/" + parameterTypeObject.getSignature() + ")";
       result += parameterType;
       if (pIterator.hasNext()) result += ", ";
@@ -67,6 +68,7 @@ public class ExternalResolveInfoProvider {
     ITypeChecker typeChecker = TypeCheckerAccess.getTypeChecker();
     TSStatus tSStatus = typeChecker.adaptNode(baseMethodDeclaration.getReturnType());
     ITypeObject typeObject = tSStatus.getTypeObject(); //if error => nullPointer - and that's okay
+    if (typeObject == null) return ExternalResolver.NO_MEMBER_TYPE;
     String methodTypeName = typeObject.getTypeName();
     String methodTypeSignature = typeObject.getSignature();
     String methodType = "(" + methodTypeName + "/" + methodTypeSignature + ")";
@@ -79,6 +81,7 @@ public class ExternalResolveInfoProvider {
       ParameterDeclaration parameterDeclaration = pIterator.next();
       tSStatus = typeChecker.adaptNode(parameterDeclaration.getType());
       typeObject = tSStatus.getTypeObject();
+       if (typeObject == null) return ExternalResolver.NO_MEMBER_TYPE;
       String parameterType = "(" + typeObject.getTypeName() + "/" + typeObject.getSignature() + ")";
       result += parameterType;
       if (pIterator.hasNext()) result += ", ";
@@ -114,6 +117,7 @@ public class ExternalResolveInfoProvider {
     ITypeChecker typeChecker = TypeCheckerAccess.getTypeChecker();
     TSStatus tSStatus = typeChecker.adaptNode(variableDeclaration.getType());
     ITypeObject typeObject = tSStatus.getTypeObject();
+     if (typeObject == null) return ExternalResolver.NO_MEMBER_TYPE;
     myExtResolveInfo+= "(" + typeObject.getTypeName() + "/" + typeObject.getSignature() + ")";
 
     return "("+ classExtResolveInfo + ")." + "(" + myExtResolveInfo + ")";

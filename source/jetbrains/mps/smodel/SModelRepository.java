@@ -29,8 +29,8 @@ public class SModelRepository extends SModelAdapter {
     return ApplicationComponents.getInstance().getComponent(SModelRepository.class);
   }
 
-  public void refreshModels(IScope scope) {
-    for (SModelDescriptor m : myUIDToModelDescriptorMap.values()) {
+  public void refreshModels() {
+    for (SModelDescriptor m : new HashSet<SModelDescriptor>(myUIDToModelDescriptorMap.values())) {
       m.refresh();
     }
   }
@@ -285,18 +285,18 @@ public class SModelRepository extends SModelAdapter {
     List<SModelDescriptor> list = new LinkedList<SModelDescriptor>();
     while (modelRoots.hasNext()) {
       ModelRoot modelRoot = modelRoots.next();
-      File dir = new File(modelRoot.getPath());
-      if (dir.exists()) {
+//      File dir = new File(modelRoot.getPath());
+//      if (dir.exists()) {
         IModelRootManager manager = getManagerFor(modelRoot);
         try {
           list.addAll(manager.read(modelRoot, owner));
         } catch (Exception e) {
           LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + owner, e);
         }
-      } else {
-        String error = "Couldn't load modelDescriptors from \"" + dir.getAbsolutePath() + "\" : directory doesn't exist. Requested by: " + owner;
-        LOG.error(error);
-      }
+//      } else {
+//        String error = "Couldn't load modelDescriptors from \"" + dir.getAbsolutePath() + "\" : directory doesn't exist. Requested by: " + owner;
+//        LOG.error(error);
+//      }
     }
 
     return list;

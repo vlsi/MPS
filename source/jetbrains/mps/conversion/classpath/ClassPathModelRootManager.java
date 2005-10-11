@@ -1,9 +1,6 @@
 package jetbrains.mps.conversion.classpath;
 
-import jetbrains.mps.smodel.IModelRootManager;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.ModelOwner;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -22,12 +19,16 @@ public class ClassPathModelRootManager implements IModelRootManager  {
   private IConverter myConverter;
 
   public Set<SModelDescriptor> read(ModelRoot root, ModelOwner owner) {
-    myOwner = owner;
-    myConverter = ConverterFactory.createClassPathConverter(myOwner);
+    try {
+      myOwner = owner;
+      myConverter = ConverterFactory.createClassPathConverter(myOwner);
 
-    Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
-    addPackageModelDescriptors(result, root.getPrefix());
-    return result;
+      Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
+      addPackageModelDescriptors(result, root.getPrefix());
+      return result;
+    } finally {
+      myOwner = null;
+    }
   }
 
   private IClassPathItem getClassPathItem() {
@@ -39,9 +40,16 @@ public class ClassPathModelRootManager implements IModelRootManager  {
     Set<String> subpackages = getClassPathItem().getSubpackages(pack);
 
     for (String subpackage : subpackages) {
-      ClassPathModelDescriptor modelDescriptor = new ClassPathModelDescriptor(subpackage, myConverter);
-      SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, myOwner);
-      descriptors.add(modelDescriptor);
+      if (SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(subpackage + "@" + ClassPathModelDescriptor.STEREOTYPE)) != null) {
+        SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(subpackage + "@" + ClassPathModelDescriptor.STEREOTYPE));
+        SModelRepository.getInstance().addOwnerForDescriptor(descriptor, myOwner);
+        descriptors.add(descriptor);
+      } else {
+        ClassPathModelDescriptor modelDescriptor = new ClassPathModelDescriptor(subpackage, myConverter);
+        SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, myOwner);
+        descriptors.add(modelDescriptor);
+      }
+
       addPackageModelDescriptors(descriptors, subpackage);
     }
   }

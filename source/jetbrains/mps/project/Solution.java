@@ -7,7 +7,6 @@ import jetbrains.mps.projectLanguage.PersistenceUtil;
 import jetbrains.mps.projectLanguage.SolutionDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.PathManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,7 +20,7 @@ import java.util.List;
  * Time: 8:29:14 PM
  * To change this template use File | Settings | File Templates.
  */
-public class Solution extends AbstractModule implements ModelLocator {
+public class Solution extends AbstractModule {
   private SolutionDescriptor mySolutionDescriptor;
   private File myDescriptorFile;
   private List<SolutionCommandListener> myCommandListeners = new LinkedList<SolutionCommandListener>();
@@ -81,7 +80,7 @@ public class Solution extends AbstractModule implements ModelLocator {
 
     // read languages and models
     LanguageRepository.getInstance().readLanguageDescriptors(mySolutionDescriptor.languageRoots(), this);
-    SModelRepository.getInstance().readModelDescriptors(mySolutionDescriptor.modelRoots(), this);
+    SModelRepository.getInstance().readModelDescriptors(getModelRoots(), this);
 
     CommandProcessor.instance().addCommandListener(myEventTranslator);
   }
@@ -97,7 +96,7 @@ public class Solution extends AbstractModule implements ModelLocator {
 
     // read languages and models
     LanguageRepository.getInstance().readLanguageDescriptors(mySolutionDescriptor.languageRoots(), Solution.this);
-    SModelRepository.getInstance().readModelDescriptors(mySolutionDescriptor.modelRoots(), Solution.this);
+    SModelRepository.getInstance().readModelDescriptors(getModelRoots(), Solution.this);
 
     myEventTranslator.solutionChanged();
   }
@@ -120,16 +119,12 @@ public class Solution extends AbstractModule implements ModelLocator {
     return mySolutionDescriptor;
   }
 
-  public List<ModelRoot> getModelRoots() {
+  protected List<ModelRoot> getModelRootsImpl() {
     return CollectionUtil.iteratorAsList(mySolutionDescriptor.modelRoots());
   }
 
-  public String findPath(SModelUID modelUID) {
-    String modelPath = PathManager.findModelPath(mySolutionDescriptor.modelRoots(), modelUID);
-    if (modelPath != null && (new File(modelPath)).exists()) {
-      return modelPath;
-    }
-    return null;
+  protected SModelDescriptor getModuleModel() {
+    return mySolutionDescriptor.getModel().getModelDescriptor();
   }
 
   public void addSolutionCommandListener(SolutionCommandListener listener) {
