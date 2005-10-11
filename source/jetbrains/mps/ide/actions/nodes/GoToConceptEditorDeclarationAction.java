@@ -36,6 +36,10 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     return "control shift E";
   }
 
+  public Icon getIcon() {
+    return jetbrains.mps.bootstrap.editorLanguage.icons.Icons.EDITOR_ICON;
+  }
+
   public void update(ActionContext context) {
     super.update(context);
     setVisible(context.get(SNode.class) instanceof ConceptDeclaration);

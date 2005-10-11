@@ -126,7 +126,7 @@ public class JarFileClassPathItem implements IClassPathItem {
       } else {
         String name = entry.getName();
         int packEnd = name.lastIndexOf('/');
-        String pack = name.substring(0, packEnd).replace('/', '.');
+        String pack = packEnd > 0 ? name.substring(0, packEnd).replace('/', '.') : name;
         buildPackageCaches(pack);
 
         String className = name.substring(packEnd + 1, name.length() - ".class".length());
