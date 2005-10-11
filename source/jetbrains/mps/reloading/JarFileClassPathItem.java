@@ -21,6 +21,7 @@ public class JarFileClassPathItem implements IClassPathItem {
 
   private Map<String, Set<String>> myClasses = new HashMap<String, Set<String>>();
   private Map<String, Set<String>> mySubpackages = new HashMap<String, Set<String>>();
+  private Map<String, ZipEntry> myEntries = new HashMap<String, ZipEntry>();
 
   public JarFileClassPathItem(String path) {
     this(new File(path));
@@ -43,8 +44,7 @@ public class JarFileClassPathItem implements IClassPathItem {
   }
 
   public byte[] getClass(String name) {
-    String path = name.replace('.', '/') + ".class";
-    ZipEntry entry = myZipFile.getEntry(path);
+    ZipEntry entry = myEntries.get(name);
     if (entry == null) return null;
     try {
       InputStream inp = myZipFile.getInputStream(entry);
@@ -121,7 +121,6 @@ public class JarFileClassPathItem implements IClassPathItem {
         }
 
         String pack =  name.replace('/', '.');
-
         buildPackageCaches(pack);
       } else {
         String name = entry.getName();
@@ -131,6 +130,13 @@ public class JarFileClassPathItem implements IClassPathItem {
 
         String className = name.substring(packEnd + 1, name.length() - ".class".length());
         getClassesSetFor(pack).add(className);
+
+        if (pack.length() > 0) {
+          myEntries.put(pack + "." + className, entry);
+        } else {
+          myEntries.put(className, entry);
+        }
+
       }
     }
   }
