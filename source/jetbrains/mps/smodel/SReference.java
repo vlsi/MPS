@@ -1,7 +1,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.resolve.ExternalResolverManager;
+import jetbrains.mps.externalResolve.ExternalResolver;
 
 /**
  * User: Sergey Dmitriev
@@ -83,7 +83,7 @@ public abstract class SReference {
       sourceModel.addImportElement(targetModel.getUID());
       String extResolveInfo = null;
       if (targetModel.isExternallyResolvable()) {
-        extResolveInfo = ExternalResolverManager.getExternalResolveInfoFromTarget(targetNode);
+        extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(targetNode);
       }
       return new ExternalReference(role, sourceNode, targetNode.getId(), extResolveInfo, targetModel.getUID());
     }

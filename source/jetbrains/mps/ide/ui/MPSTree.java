@@ -440,6 +440,9 @@ public abstract class MPSTree extends JTree {
   }
 
   public JToolTip createToolTip() {
+    if (myToolTipInfo == null) {
+      return super.createToolTip();
+    }
     JToolTip tip = new MPSTreeToolTip(myToolTipInfo, this);
     tip.setComponent(this);
     return tip;

@@ -2,7 +2,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.resolve.ExternalResolverManager;
+import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.ClassifierType;
@@ -226,7 +226,7 @@ public class ModelPersistence {
     }
 
     String cachedExtResolveInfo = nodeElement.getAttributeValue(EXT_RESOLVE_INFO);
-    if (!ExternalResolverManager.isEmptyExtResolveInfo(cachedExtResolveInfo)) {
+    if (!ExternalResolver.isEmptyExtResolveInfo(cachedExtResolveInfo)) {
       model.loadCachedNodeExtResolveInfo(node, cachedExtResolveInfo);
     }
 
@@ -390,8 +390,8 @@ public class ModelPersistence {
 
     if (node.getModel().isExternallyResolvable()) {
       try {
-        String extResolveInfo = ExternalResolverManager.getExternalResolveInfoFromTarget(node);
-        if (!ExternalResolverManager.isEmptyExtResolveInfo(extResolveInfo)) {
+        String extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(node);
+        if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
           element.setAttribute(EXT_RESOLVE_INFO, extResolveInfo);
         }
       } catch (Exception e) {
@@ -444,7 +444,7 @@ public class ModelPersistence {
       }
 
       String extResolveInfo = externalReference.getExtResolveInfo();
-      if (ExternalResolverManager.isEmptyExtResolveInfo(extResolveInfo)) {
+      if (ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
         // no external info - save target node id
         linkElement.setAttribute(TARGET_NODE_ID, importIndex + "." + reference.getTargetNodeId());
       } else {

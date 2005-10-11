@@ -2,7 +2,7 @@ package jetbrains.mps.datatransfer;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.resolve.Resolver;
-import jetbrains.mps.resolve.ExternalResolverManager;
+import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
@@ -191,7 +191,7 @@ public class CopyPasteNodeUtil {
             if (newReference.getResolveInfo() == null) {//reference is not resolvable
               String extResolveInfo = null;
               if (newReference.getSourceNode().getModel().isExternallyResolvable()) {
-                extResolveInfo = ExternalResolverManager.getExternalResolveInfoFromTarget(newReference.getTargetNode());
+                extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(newReference.getTargetNode());
               }
               if (extResolveInfo != null) {
                 newReference = new ExternalReference(newReference.getRole(), newReference.getSourceNode(), null, extResolveInfo, newReference.getTargetModelUID());

@@ -7,7 +7,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.resolve.ExternalResolverManager;
+import jetbrains.mps.externalResolve.ExternalResolver;
 
 import java.io.File;
 import java.util.*;
@@ -252,8 +252,8 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     if (mySModel == null || !SModelRepository.getInstance().isChanged(mySModel)) {
       String nodeInfo = node.getId();
       if (node.getModel().isExternallyResolvable()) {
-        String extResolveInfo = ExternalResolverManager.getExternalResolveInfoFromTarget(node);
-        if (!ExternalResolverManager.isEmptyExtResolveInfo(extResolveInfo)) nodeInfo = extResolveInfo;
+        String extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(node);
+        if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) nodeInfo = extResolveInfo;
       }
 
       if (!containsString(nodeInfo)) return new HashSet<SReference>();

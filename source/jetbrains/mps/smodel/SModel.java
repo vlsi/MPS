@@ -8,7 +8,7 @@ import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.resolve.ExternalResolverManager;
+import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.WeakSet;
 
@@ -481,10 +481,10 @@ public class SModel implements Iterable<SNode> {
 
   public SNode getNodeByExtResolveInfo(String extResolveInfo) {
     if (!isExternallyResolvable()) return null;
-    if (ExternalResolverManager.isEmptyExtResolveInfo(extResolveInfo)) return null;
+    if (ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) return null;
     SNode node = myExternalResolveInfoToNodeMap.get(extResolveInfo);
     if (node != null) {
-      if (ExternalResolverManager.doesNodeMatchERI(extResolveInfo, node)) return node;
+      if (ExternalResolver.doesNodeMatchERI(extResolveInfo, node)) return node;
       else
         return findNodeWithExtResolveInfo(extResolveInfo);
     } else {
@@ -493,7 +493,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   private SNode findNodeWithExtResolveInfo(String extResolveInfo) {
-    SNode targetNode = ExternalResolverManager.findTargetNode(this, extResolveInfo);
+    SNode targetNode = ExternalResolver.findTargetNode(this, extResolveInfo);
     if (targetNode != null) {
       myExternalResolveInfoToNodeMap.put(extResolveInfo, targetNode);
     }
@@ -501,7 +501,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void loadCachedNodeExtResolveInfo(SNode node, String extResolveInfo) {
-    if (!ExternalResolverManager.isEmptyExtResolveInfo(extResolveInfo)) {
+    if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
       myExternalResolveInfoToNodeMap.put(extResolveInfo, node);
     }
   }
@@ -514,7 +514,7 @@ public class SModel implements Iterable<SNode> {
       LOG.error("trying to cache in model" + this + "ext resolve info for node from another model, namely " + node.getModel());
       return null;
     }
-    if (!ExternalResolverManager.isEmptyExtResolveInfo(extResolveInfo)) {
+    if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
       myExternalResolveInfoToNodeMap.put(extResolveInfo, node);
       SModelRepository.getInstance().markChanged(this, true);
       return extResolveInfo;
