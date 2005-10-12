@@ -21,7 +21,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   private static volatile long ourStructuralState = 0;
   private static volatile long ourState = 0;
 
-  private SModel mySModel = null;
+  protected SModel mySModel = null;
   private SModelUID myModelUID = new SModelUID("", "");
   private List<SModelListener> myModelListeners;
   private List<SModelCommandListener> myModelCommandListenersForImportedModels;
@@ -225,7 +225,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   }
 
   public void refresh() {
-    LanguageRepository.getInstance().invalidateLanguagesCaches();
+   // LanguageRepository.getInstance().invalidateLanguagesCaches();
     if (isInitialized()) {
       LOG.debug("Refreshing " + mySModel.getUID());
       List<SModelListener> listeners = getSModel().getListeners();
