@@ -28,7 +28,7 @@ public class GlobalScope implements IScope {
   }
 
   public Language getLanguage(String languageNamespace) {
-    Language language = LanguageRepository.getInstance().getLanguage(languageNamespace);
+    Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
     if (language == null) {
       LOG.error("Couldn't find language for namespace: \"" + languageNamespace + "\" in: " + this);
     }
@@ -36,7 +36,7 @@ public class GlobalScope implements IScope {
   }
 
   public List<Language> getLanguages() {
-    return LanguageRepository.getInstance().getAllLanguages();
+    return MPSModuleRepository.getInstance().getAllLanguages();
   }
 
   public SModelDescriptor getModelDescriptor(SModelUID modelUID) {

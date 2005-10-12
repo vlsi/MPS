@@ -6,7 +6,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.Model;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
-import jetbrains.mps.util.CollectionUtil;
 
 import java.util.List;
 
@@ -22,7 +21,7 @@ public class Generator extends AbstractModule {
     myGeneratorDescriptor = generatorDescriptor;
 
     // read languages and models
-    LanguageRepository.getInstance().readLanguageDescriptors(generatorDescriptor.languageRoots(), this);
+    MPSModuleRepository.getInstance().readLanguageDescriptors(generatorDescriptor.languageRoots(), this);
     SModelRepository.getInstance().readModelDescriptors(generatorDescriptor.modelRoots(), this);
   }
 
@@ -30,7 +29,7 @@ public class Generator extends AbstractModule {
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         SModelRepository.getInstance().unRegisterModelDescriptors(Generator.this);
-        LanguageRepository.getInstance().unRegisterLanguages(Generator.this);
+        MPSModuleRepository.getInstance().unRegisterModules(Generator.this);
       }
     });
   }
@@ -105,7 +104,7 @@ public class Generator extends AbstractModule {
 
     // todo: configure generator dependencies ...
     // ... add all generators of all languages which this generator ownes or depend on
-    List<Language> languages = LanguageRepository.getInstance().getLanguages(this);
+    List<Language> languages = MPSModuleRepository.getInstance().getLanguages(this);
     if(getTargetLanguage() != null && !languages.contains(getTargetLanguage())) {
       languages.add(getTargetLanguage());
     }

@@ -70,7 +70,7 @@ public class LanguageRepositoryView extends DefaultTool {
           return Icons.LANGUAGES_ICON;
         }
       };
-      for (Language l : SortUtil.sortLanguages(LanguageRepository.getInstance().getAllLanguages())) {
+      for (Language l : SortUtil.sortLanguages(MPSModuleRepository.getInstance().getAllLanguages())) {
         root.add(new LanguageTreeNode(l));
       }
       return root;
@@ -82,7 +82,7 @@ public class LanguageRepositoryView extends DefaultTool {
       public LanguageTreeNode(Language language) {
         super(null);
         mylanguage = language;
-        for (LanguageOwner owner : LanguageRepository.getInstance().getOwners(mylanguage)) {
+        for (MPSModuleOwner owner : MPSModuleRepository.getInstance().getOwners(mylanguage)) {
           add(new OwnerTreeNode(owner));
         }
       }
@@ -97,9 +97,9 @@ public class LanguageRepositoryView extends DefaultTool {
     }
 
     private class OwnerTreeNode extends MPSTreeNode {
-      private LanguageOwner myOwner;
+      private MPSModuleOwner myOwner;
 
-      public OwnerTreeNode(LanguageOwner owner) {
+      public OwnerTreeNode(MPSModuleOwner owner) {
         super(null);
         myOwner = owner;
       }
@@ -138,12 +138,12 @@ public class LanguageRepositoryView extends DefaultTool {
 
     public void installListeners() {
       CommandProcessor.instance().addCommandListener(this);
-      LanguageRepository.getInstance().addRepositoryListener(this);
+      MPSModuleRepository.getInstance().addRepositoryListener(this);
     }
 
     public void unInstallListeners() {
       CommandProcessor.instance().removeCommandListener(this);
-      LanguageRepository.getInstance().removeRepositoryListener(this);
+      MPSModuleRepository.getInstance().removeRepositoryListener(this);
     }
 
     public void repositoryChanged() {

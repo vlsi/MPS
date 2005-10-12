@@ -101,12 +101,12 @@ public class GeneratorSessionContext implements IOperationContext {
         }
       }
 
-      Language language = LanguageRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
+      Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
       if (language == null) {
-        language = LanguageRepository.getInstance().getLanguage(languageNamespace, myGenerator);
+        language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, myGenerator);
       }
-      if (language == null && myInvocationModule instanceof LanguageOwner) {
-        language = LanguageRepository.getInstance().getLanguage(languageNamespace, (LanguageOwner) myInvocationModule);
+      if (language == null && myInvocationModule instanceof MPSModuleOwner) {
+        language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, (MPSModuleOwner) myInvocationModule);
       }
       if (language == null) {
         LOG.error("Couldn't find language: \"" + languageNamespace + "\" in scope: " + this);
@@ -115,7 +115,7 @@ public class GeneratorSessionContext implements IOperationContext {
     }
 
     public void dispose() {
-      LanguageRepository.getInstance().unRegisterLanguages(this);
+      MPSModuleRepository.getInstance().unRegisterModules(this);
 
       // force removing transient models from repository
       List<SModelDescriptor> ownModelDescriptors = getOwnModelDescriptors();

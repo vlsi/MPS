@@ -2,12 +2,10 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.projectLanguage.PersistenceUtil;
 import jetbrains.mps.projectLanguage.SolutionDescriptor;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.CollectionUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -60,7 +58,7 @@ public class Solution extends AbstractModule {
     solution.mySolutionDescriptor = solutionDescriptor;
 
     // read languages and models
-    LanguageRepository.getInstance().readLanguageDescriptors(solutionDescriptor.languageRoots(), solution);
+    MPSModuleRepository.getInstance().readLanguageDescriptors(solutionDescriptor.languageRoots(), solution);
     SModelRepository.getInstance().readModelDescriptors(solutionDescriptor.modelRoots(), solution);
 
     return solution;
@@ -79,7 +77,7 @@ public class Solution extends AbstractModule {
     mySolutionDescriptor = PersistenceUtil.loadSolutionDescriptor(descriptorFile, model);
 
     // read languages and models
-    LanguageRepository.getInstance().readLanguageDescriptors(mySolutionDescriptor.languageRoots(), this);
+    MPSModuleRepository.getInstance().readLanguageDescriptors(mySolutionDescriptor.languageRoots(), this);
     SModelRepository.getInstance().readModelDescriptors(getModelRoots(), this);
 
     CommandProcessor.instance().addCommandListener(myEventTranslator);
@@ -88,14 +86,14 @@ public class Solution extends AbstractModule {
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor) {
     // release languages and models (except descriptor model)
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), Solution.this);
-    LanguageRepository.getInstance().unRegisterLanguages(Solution.this);
+    MPSModuleRepository.getInstance().unRegisterModules(Solution.this);
     SModelRepository.getInstance().unRegisterModelDescriptors(Solution.this);
     SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, Solution.this);
 
     mySolutionDescriptor = newDescriptor;
 
     // read languages and models
-    LanguageRepository.getInstance().readLanguageDescriptors(mySolutionDescriptor.languageRoots(), Solution.this);
+    MPSModuleRepository.getInstance().readLanguageDescriptors(mySolutionDescriptor.languageRoots(), Solution.this);
     SModelRepository.getInstance().readModelDescriptors(getModelRoots(), Solution.this);
 
     myEventTranslator.solutionChanged();
@@ -104,7 +102,7 @@ public class Solution extends AbstractModule {
   public void dispose() {
     CommandProcessor.instance().removeCommandListener(myEventTranslator);
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
-    LanguageRepository.getInstance().unRegisterLanguages(this);
+    MPSModuleRepository.getInstance().unRegisterModules(this);
   }
 
   public void save() {

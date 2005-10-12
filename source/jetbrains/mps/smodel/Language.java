@@ -55,18 +55,18 @@ public class Language extends AbstractModule {
     return myLanguageDescriptor;
   }
 
-  public static Language newInstance(File descriptorFile, LanguageOwner languageOwner) {
+  public static Language newInstance(File descriptorFile, MPSModuleOwner moduleOwner) {
     Language language = new Language();
     SModel model = ProjectModelDescriptor.createDescriptorFor(language).getSModel();
     LanguageDescriptor languageDescriptor = PersistenceUtil.loadLanguageDescriptor(descriptorFile, model);
     language.myDescriptorFile = descriptorFile;
     language.myLanguageDescriptor = languageDescriptor;
-    LanguageRepository.getInstance().addLanguage(language, languageOwner);
+    MPSModuleRepository.getInstance().addLanguage(language, moduleOwner);
     language.init();
     return language;
   }
 
-  public static Language createLanguage(String languageNamespace, File descriptorFile, LanguageOwner languageOwner) {
+  public static Language createLanguage(String languageNamespace, File descriptorFile, MPSModuleOwner moduleOwner) {
     Language language = new Language();
     SModel descriptorModel = ProjectModelDescriptor.createDescriptorFor(language).getSModel();
     descriptorModel.setLoading(true);
@@ -86,7 +86,7 @@ public class Language extends AbstractModule {
 
     language.myDescriptorFile = descriptorFile;
     language.myLanguageDescriptor = languageDescriptor;
-    LanguageRepository.getInstance().addLanguage(language, languageOwner);
+    MPSModuleRepository.getInstance().addLanguage(language, moduleOwner);
     language.init();
     return language;
   }
@@ -115,7 +115,7 @@ public class Language extends AbstractModule {
   }
 
   public void dispose() {
-    LOG.assertLog(!LanguageRepository.getInstance().hasOwners(this));
+    LOG.assertLog(!MPSModuleRepository.getInstance().hasOwners(this));
 
     CommandProcessor.instance().removeCommandListener(myEventTranslator);
     SModelsMulticaster.getInstance().removeSModelsListener(myModelsListener);
@@ -127,15 +127,11 @@ public class Language extends AbstractModule {
     }
   }
 
-  public File getDescriptorFile() {
-    return myDescriptorFile;
-  }
-
   public void setLanguageDescriptor(final LanguageDescriptor newDescriptor) {
     // release languages and models (except descriptor model)
     unregisterAspectListener();
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), Language.this);
-    LanguageRepository.getInstance().unRegisterLanguages(Language.this);
+    MPSModuleRepository.getInstance().unRegisterModules(Language.this);
     SModelRepository.getInstance().unRegisterModelDescriptors(Language.this);
     SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, Language.this);
     for (Generator generator : getGenerators()) {

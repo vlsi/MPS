@@ -6,7 +6,6 @@ import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.PathManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,7 +18,7 @@ import java.util.*;
  * Time: 2:17:14 PM
  * To change this template use File | Settings | File Templates.
  */
-public abstract class AbstractModule implements LanguageOwner, IModule {
+public abstract class AbstractModule implements MPSModuleOwner, IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
   private ModelRoot myClassPathModelRoot;
@@ -33,7 +32,7 @@ public abstract class AbstractModule implements LanguageOwner, IModule {
     return CollectionUtil.iteratorAsList(getModuleDescriptor().modelRoots());
   }
 
-  protected SModelDescriptor getModuleModel() {
+  private SModelDescriptor getModuleModel() {
     return getModuleDescriptor().getModel().getModelDescriptor();
   }
 
@@ -41,11 +40,10 @@ public abstract class AbstractModule implements LanguageOwner, IModule {
     return toString();
   }
 
-
   public Language getLanguage(String languageNamespace) {
-    Language language = LanguageRepository.getInstance().getLanguage(languageNamespace, this);
+    Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, this);
     if (language == null) {
-      language = LanguageRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
+      language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
     }
     if (language == null) {
       LOG.error("Couldn't find language: \"" + languageNamespace + "\" in scope: " + this);
@@ -54,8 +52,8 @@ public abstract class AbstractModule implements LanguageOwner, IModule {
   }
 
   public List<Language> getLanguages() {
-    List<Language> list = new LinkedList<Language>(LanguageRepository.getInstance().getLanguages(this));
-    list.addAll(LanguageRepository.getInstance().getLanguages(BootstrapLanguages.getInstance()));
+    List<Language> list = new LinkedList<Language>(MPSModuleRepository.getInstance().getLanguages(this));
+    list.addAll(MPSModuleRepository.getInstance().getLanguages(BootstrapLanguages.getInstance()));
     return list;
   }
 

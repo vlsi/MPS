@@ -27,7 +27,7 @@ import java.util.*;
  * Created Apr 29, 2004
  */
 
-public class MPSProject implements ModelOwner, LanguageOwner, IScope, IContainer, IComponentWithPreferences {
+public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContainer, IComponentWithPreferences {
   private static final Logger LOG = Logger.getLogger(MPSProject.class);
 
   private File myProjectFile;
@@ -133,7 +133,7 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope, IContainer
     for (LanguagePath languagePath : CollectionUtil.iteratorAsIterable(myProjectDescriptor.projectLanguages())) {
       File descriptorFile = new File(languagePath.getPath());
       if (descriptorFile.exists()) {
-        myLanguages.add(LanguageRepository.getInstance().registerLanguage(descriptorFile, this));
+        myLanguages.add(MPSModuleRepository.getInstance().registerLanguage(descriptorFile, this));
       } else {
         LOG.error("Couldn't load language from: " + descriptorFile.getAbsolutePath() + " : file doesn't exist");
       }
@@ -147,7 +147,7 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope, IContainer
   public void setProjectDescriptor(final ProjectDescriptor newDescriptor) {
     // release languages and models (except descriptor model)
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), (ModelOwner) MPSProject.this);
-    LanguageRepository.getInstance().unRegisterLanguages(MPSProject.this);
+    MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
     SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
     SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, MPSProject.this);
 
@@ -308,10 +308,10 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope, IContainer
         for (Solution solution : getProjectSolutions()) {
           solution.dispose();
         }
-        LanguageRepository.getInstance().unRegisterLanguages(MPSProject.this);
+        MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
         CommandProcessor.instance().removeCommandListener(myEventTranslator);
         SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
-        LanguageRepository.getInstance().unRegisterLanguages(MPSProject.this);
+        MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
       }
     }, "disposing project");
 
@@ -336,9 +336,9 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope, IContainer
 
 
   public Language getLanguage(String languageNamespace) {
-    Language language = LanguageRepository.getInstance().getLanguage(languageNamespace, this);
+    Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, this);
     if (language == null) {
-      language = LanguageRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
+      language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
     }
     if (language == null) {
       LOG.error("Couldn't find language for namespace: \"" + languageNamespace + "\" in: " + this);
@@ -347,8 +347,8 @@ public class MPSProject implements ModelOwner, LanguageOwner, IScope, IContainer
   }
 
   public List<Language> getLanguages() {
-    List<Language> list = new LinkedList<Language>(LanguageRepository.getInstance().getLanguages(this));
-    list.addAll(LanguageRepository.getInstance().getLanguages(BootstrapLanguages.getInstance()));
+    List<Language> list = new LinkedList<Language>(MPSModuleRepository.getInstance().getLanguages(this));
+    list.addAll(MPSModuleRepository.getInstance().getLanguages(BootstrapLanguages.getInstance()));
     return list;
   }
 

@@ -68,7 +68,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     if (isInitialized()) {
       mySModel = null;
       getSModel();
-      LanguageRepository.getInstance().invalidateLanguagesCaches();
+      MPSModuleRepository.getInstance().invalidateLanguagesCaches();
     }
   }
 
