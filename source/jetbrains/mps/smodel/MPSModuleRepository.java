@@ -58,12 +58,12 @@ public class MPSModuleRepository {
     }
   }
 
-  public boolean hasOwners(Language language) {
-    return myModuleToOwnersMap.get(language) != null;
+  public boolean hasOwners(IModule module) {
+    return myModuleToOwnersMap.get(module) != null;
   }
 
-  public Set<MPSModuleOwner> getOwners(Language language) {
-    return new HashSet<MPSModuleOwner>(myModuleToOwnersMap.get(language));
+  public Set<MPSModuleOwner> getOwners(IModule module) {
+    return new HashSet<MPSModuleOwner>(myModuleToOwnersMap.get(module));
   }
 
   public Language registerLanguage(File file, MPSModuleOwner owner) {
@@ -89,18 +89,18 @@ public class MPSModuleRepository {
     }
   }
 
-  void addLanguage(Language language, MPSModuleOwner owner) {
-    if (myNamespaceToLanguageMap.containsKey(language.getNamespace())) {
-      throw new RuntimeException("Couldn't add language \"" + language.getNamespace() + "\" : this language is already registered");
+  void addModule(IModule module, MPSModuleOwner owner) {
+    if (myNamespaceToLanguageMap.containsKey(module.getNamespace())) {
+      throw new RuntimeException("Couldn't add language \"" + module.getNamespace() + "\" : this language is already registered");
     }
     try {
-      myFileToModuleMap.put(language.getDescriptorFile().getCanonicalPath(), language);
-      myNamespaceToLanguageMap.put(language.getNamespace(), language);
+      myFileToModuleMap.put(module.getDescriptorFile().getCanonicalPath(), module);
+      myNamespaceToLanguageMap.put(module.getNamespace(), module);
       Set<MPSModuleOwner> owners = new HashSet<MPSModuleOwner>();
       owners.add(owner);
-      myModuleToOwnersMap.put(language, owners);
+      myModuleToOwnersMap.put(module, owners);
     } catch (IOException e) {
-      throw new RuntimeException("Failed to add language \"" + language.getNamespace() + "\"", e);
+      throw new RuntimeException("Failed to add language \"" + module.getNamespace() + "\"", e);
     }
   }
 
@@ -169,10 +169,9 @@ public class MPSModuleRepository {
     }
   }
 
-  public List<Language> readLanguageDescriptors(File dir, MPSModuleOwner owner) { //todo modules
-    List<Language> result = new LinkedList<Language>();
+  public void readLanguageDescriptors(File dir, MPSModuleOwner owner) {
     if (!dir.isDirectory()) {
-      return result;
+      return;
     }
     File[] files = dir.listFiles(new FilenameFilter() {
       public boolean accept(File dir, String name) {
@@ -181,8 +180,7 @@ public class MPSModuleRepository {
     });
     for (File file : files) {
       try {
-        Language language = registerLanguage(file, owner);
-        result.add(language);
+        registerLanguage(file, owner);
       } catch (Exception e) {
         LOG.error("Fail to load language from descriptor " + file.getAbsolutePath(), e);
       }
@@ -190,10 +188,9 @@ public class MPSModuleRepository {
     File[] dirs = dir.listFiles();
     for (File childDir : dirs) {
       if (childDir.isDirectory()) {
-        result.addAll(readLanguageDescriptors(childDir, owner));
+        readLanguageDescriptors(childDir, owner);
       }
     }
-    return result;
   }
 
   private Language moduleAsLanguage(IModule module) {

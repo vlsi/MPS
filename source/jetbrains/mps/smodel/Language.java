@@ -61,7 +61,7 @@ public class Language extends AbstractModule {
     LanguageDescriptor languageDescriptor = PersistenceUtil.loadLanguageDescriptor(descriptorFile, model);
     language.myDescriptorFile = descriptorFile;
     language.myLanguageDescriptor = languageDescriptor;
-    MPSModuleRepository.getInstance().addLanguage(language, moduleOwner);
+    MPSModuleRepository.getInstance().addModule(language, moduleOwner);
     language.init();
     return language;
   }
@@ -86,7 +86,7 @@ public class Language extends AbstractModule {
 
     language.myDescriptorFile = descriptorFile;
     language.myLanguageDescriptor = languageDescriptor;
-    MPSModuleRepository.getInstance().addLanguage(language, moduleOwner);
+    MPSModuleRepository.getInstance().addModule(language, moduleOwner);
     language.init();
     return language;
   }
