@@ -550,6 +550,10 @@ public class SModel implements Iterable<SNode> {
     return getModelDescriptor().isExternallyResolvable();
   }
 
+  public boolean isNotEditable() {
+    return getModelDescriptor().isNotEditable();
+  }
+
   public void clear() {
     List<SNode> roots = new LinkedList<SNode>(myRoots);
     for (SNode root : roots) {

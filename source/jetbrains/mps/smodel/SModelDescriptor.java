@@ -55,4 +55,6 @@ public interface SModelDescriptor {
   long state();
 
   void delete();
+
+  boolean isNotEditable();
 }

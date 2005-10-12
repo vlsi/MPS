@@ -80,6 +80,10 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     return false;
   }
 
+  public boolean isNotEditable() {
+    return isExternallyResolvable();
+  }
+
   /**
    * todo: should return "long name"
    */
