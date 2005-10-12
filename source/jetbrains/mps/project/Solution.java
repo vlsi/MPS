@@ -2,9 +2,9 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.projectLanguage.PersistenceUtil;
 import jetbrains.mps.projectLanguage.SolutionDescriptor;
-import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
 
 import java.io.File;
@@ -27,15 +27,17 @@ public class Solution extends AbstractModule {
   /**
    * tmp: to create solution from legacy projects
    */
-  public static Solution createFromLegacyProjectFile(File projectFile) {
+  public static File createSolutionDescriptorFromLegacyProjectFile(File projectFile) {
     if (!projectFile.exists()) return null;
 
-    Solution solution = new Solution();
-    SModel model = ProjectModelDescriptor.createDescriptorFor(solution).getSModel();
+    ModelOwner tmpModelOwner = new ModelOwner() {
+    };
+    SModel model = ProjectModelDescriptor.createDescriptorFor(tmpModelOwner).getSModel();
     SolutionDescriptor solutionDescriptor = PersistenceUtil.loadSolutionDescriptorFormOldMPR(projectFile, model);
 
     if (solutionDescriptor == null ||
             (solutionDescriptor.getModelRootsCount() == 0 && solutionDescriptor.getLanguageRootsCount() == 0)) {
+      SModelRepository.getInstance().unRegisterModelDescriptors(tmpModelOwner);
       return null;
     }
 
@@ -43,39 +45,39 @@ public class Solution extends AbstractModule {
     solutionPathname = solutionPathname.substring(0, solutionPathname.lastIndexOf('.')) + ".msd";
     File solutionDescriptorFile = new File(solutionPathname);
     if (solutionDescriptorFile.exists()) {
+      SModelRepository.getInstance().unRegisterModelDescriptors(tmpModelOwner);
       return null;
     }
 
     try {
       solutionDescriptorFile.createNewFile();
       PersistenceUtil.saveSolutionDescriptor(solutionDescriptorFile, solutionDescriptor);
+      SModelRepository.getInstance().unRegisterModelDescriptors(tmpModelOwner);
     } catch (IOException e) {
       e.printStackTrace();
       return null;
     }
 
-    solution.myDescriptorFile = solutionDescriptorFile;
-    solution.mySolutionDescriptor = solutionDescriptor;
-
-    // read languages and models
-    MPSModuleRepository.getInstance().readModuleDescriptors(solutionDescriptor.languageRoots(), solution);
-    SModelRepository.getInstance().readModelDescriptors(solutionDescriptor.modelRoots(), solution);
-
-    return solution;
-  }
-
-  private Solution() {
-    myEventTranslator = new SolutionEventTranslator();
-    CommandProcessor.instance().addCommandListener(myEventTranslator);
+    return solutionDescriptorFile;
   }
 
   // -------------------------------------------------------------------
 
-  public Solution(File descriptorFile) {
-    myDescriptorFile = descriptorFile;
-    SModel model = ProjectModelDescriptor.createDescriptorFor(this).getSModel();
-    mySolutionDescriptor = PersistenceUtil.loadSolutionDescriptor(descriptorFile, model);
+  private Solution() {
+  }
 
+  public static Solution newInstance(File descriptorFile, MPSModuleOwner moduleOwner) {
+    Solution solution = new Solution();
+    SModel model = ProjectModelDescriptor.createDescriptorFor(solution).getSModel();
+    SolutionDescriptor solutionDescriptor = PersistenceUtil.loadSolutionDescriptor(descriptorFile, model);
+    solution.mySolutionDescriptor = solutionDescriptor;
+    solution.myDescriptorFile = descriptorFile;
+    MPSModuleRepository.getInstance().addModule(solution, moduleOwner);
+    solution.init();
+    return solution;
+  }
+
+  private void init() {
     // read languages and models
     MPSModuleRepository.getInstance().readModuleDescriptors(mySolutionDescriptor.languageRoots(), this);
     SModelRepository.getInstance().readModelDescriptors(getModelRoots(), this);
@@ -144,5 +146,9 @@ public class Solution extends AbstractModule {
       text = myDescriptorFile.getName();
     }
     return text;
+  }
+
+  public String getNamespace() {
+    return myDescriptorFile.getAbsolutePath();
   }
 }

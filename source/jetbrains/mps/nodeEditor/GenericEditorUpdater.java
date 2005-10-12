@@ -1,15 +1,12 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.ProjectFrame;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.project.MPSProjects;
+import jetbrains.mps.ide.ProjectFrame;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.typesystem.TypeCheckerAccess;
+import jetbrains.mps.project.MPSProjects;
 
 import javax.swing.*;
 

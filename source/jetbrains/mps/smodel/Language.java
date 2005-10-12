@@ -48,7 +48,6 @@ public class Language extends AbstractModule {
     }
   };
 
-  private long myLastGenerationTime = 0;
   private boolean myRegisteredInFindUsagesManager;
 
   public ModuleDescriptor getModuleDescriptor() {
@@ -98,7 +97,6 @@ public class Language extends AbstractModule {
     // read models
     SModelRepository.getInstance().readModelDescriptors(getModelRoots(), this);
     revalidateGenerators();
-
 
     CommandProcessor.instance().addCommandListener(myEventTranslator);
     SModelsMulticaster.getInstance().addSModelsListener(myModelsListener);
@@ -164,9 +162,9 @@ public class Language extends AbstractModule {
   }
 
   public void updateLastGenerationTime() {
-    myLastGenerationTime = FileUtil.getNewestFileTime(getSourceDir());
+    long lastGenerationTime = FileUtil.getNewestFileTime(getSourceDir());
     long lastChangeTime = getLastChangeTime();
-    myUpToDate = myLastGenerationTime >= lastChangeTime;
+    myUpToDate = lastGenerationTime >= lastChangeTime;
     myUpdateLastGenerationTimeCalled = true;
   }
 
@@ -384,8 +382,8 @@ public class Language extends AbstractModule {
   }
 
 
-  public List<IModule> getChildModules() {
-    return (List<IModule>) ((List) getGenerators());
+  public List<? extends IModule> getChildModules() {
+    return getGenerators();
   }
 
   public List<Language> getLanguages() {

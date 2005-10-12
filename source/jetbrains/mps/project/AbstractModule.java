@@ -192,7 +192,7 @@ public abstract class AbstractModule implements MPSModuleOwner, IModule {
     return null;
   }
 
-  public List<IModule> getChildModules() {
+  public List<? extends IModule> getChildModules() {
     return Collections.emptyList();
   }
 

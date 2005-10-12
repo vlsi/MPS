@@ -33,7 +33,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   private File myProjectFile;
   private ProjectDescriptor myProjectDescriptor;
 
-  private List<Solution> mySolutions = new LinkedList<Solution>();
+  private List<Solution> mySolutions;
   private List<Language> myLanguages;
 
   private File myWorkspaceFile;
@@ -74,8 +74,20 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   }
 
   private void revalidateContent(File projectFile, final SModel projectModel) {
+    // convert legacy project to new solution
+    final File solutionDescriptorFile = Solution.createSolutionDescriptorFromLegacyProjectFile(projectFile);
+    if (solutionDescriptorFile != null) {
+      projectModel.runLoadingAction(new Runnable() {
+        public void run() {
+          SolutionPath solutionPath = SolutionPath.newInstance(projectModel);
+          solutionPath.setPath(solutionDescriptorFile.getAbsolutePath());
+          myProjectDescriptor.addProjectSolution(solutionPath);
+        }
+      });
+    }
+
     // load solutions
-    List<Solution> newSolutions = new LinkedList<Solution>();
+    mySolutions = new LinkedList<Solution>();
     for (SolutionPath solutionPath : CollectionUtil.iteratorAsIterable(myProjectDescriptor.projectSolutions())) {
       String path = solutionPath.getPath();
       if (path == null) {
@@ -83,49 +95,11 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
         continue;
       }
       File descriptorFile = new File(path);
-      if (!descriptorFile.exists()) {
-        LOG.error("Couldn't load solution from: " + descriptorFile.getAbsolutePath() + " : file doesn't exist");
-        continue;
-      }
-
-      Solution loadedSolution = null;
-      for (Solution solution : mySolutions) {
-        if (solution.getDescriptorFile().getAbsoluteFile().equals(descriptorFile.getAbsoluteFile())) {
-          loadedSolution = solution;
-          break;
-        }
-      }
-
-      if (loadedSolution != null) {
-        // update solution
-        SolutionDescriptor solutionDescriptor = PersistenceUtil.loadSolutionDescriptor(descriptorFile,
-                ProjectModelDescriptor.createDescriptorFor(loadedSolution).getSModel());
-        loadedSolution.setSolutionDescriptor(solutionDescriptor);
-        newSolutions.add(loadedSolution);
-        mySolutions.remove(loadedSolution);
+      if (descriptorFile.exists()) {
+        mySolutions.add((Solution) MPSModuleRepository.getInstance().registerSolution(descriptorFile, this));
       } else {
-        newSolutions.add(new Solution(descriptorFile));
+        LOG.error("Couldn't load solution from: " + descriptorFile.getAbsolutePath() + " : file doesn't exist");
       }
-    }
-
-    // dispose other solutions
-    for (Solution solution : mySolutions) {
-      solution.dispose();
-    }
-    mySolutions.clear();
-    mySolutions = newSolutions;
-
-    // convert legacy project to new solution
-    final Solution solution = Solution.createFromLegacyProjectFile(projectFile);
-    if (solution != null) {
-      projectModel.runLoadingAction(new Runnable() {
-        public void run() {
-          SolutionPath solutionPath = SolutionPath.newInstance(projectModel);
-          solutionPath.setPath(solution.getDescriptorFile().getAbsolutePath());
-          myProjectDescriptor.addProjectSolution(solutionPath);
-        }
-      });
-      mySolutions.add(solution);
     }
 
     // load languages
@@ -145,7 +119,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   }
 
   public void setProjectDescriptor(final ProjectDescriptor newDescriptor) {
-    // release languages and models (except descriptor model)
+    // release languages/solutions and models (except descriptor model)
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), (ModelOwner) MPSProject.this);
     MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
     SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
@@ -205,8 +179,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     if (module.getParentModule() != null) {
       return isProjectModule(module.getParentModule());
     }
-    if (myLanguages.contains(module) || mySolutions.contains(module)) return true;
-    return false;
+    return myLanguages.contains(module) || mySolutions.contains(module);
   }
 
   public List<Object> getComponents() {
@@ -305,10 +278,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   public void dispose() {
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
-        for (Solution solution : getProjectSolutions()) {
-          solution.dispose();
-        }
-        MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
         CommandProcessor.instance().removeCommandListener(myEventTranslator);
         SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
         MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);

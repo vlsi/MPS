@@ -45,7 +45,7 @@ public class MPSModuleRepository {
       public void beforeCommandFinished(CommandEvent event) {
         removeUnusedModules();
         SModelRepository.getInstance().removeUnusedDescriptors();
-      }            
+      }
     };
     CommandProcessor.instance().addCommandListener(myListenerToRemoveUnusedModules);
   }
@@ -91,10 +91,7 @@ public class MPSModuleRepository {
       IModule module = myFileToModuleMap.get(canonicalPath);
       if (module == null) {
         if (cls == Language.class) module = Language.newInstance(file, owner);
-        if (cls == Solution.class) {
-          module = new Solution(file);
-          addModule(module, owner);
-        }
+        if (cls == Solution.class) module = Solution.newInstance(file, owner);
       } else {
         if (!cls.isInstance(module)) {
           LOG.error("can't register module " + module + " : module of another kind with the same name already exists");
@@ -106,7 +103,7 @@ public class MPSModuleRepository {
         }
         owners.add(owner);
       }
-      if (!(module instanceof Language)) return null;
+      if (!(module instanceof Language)) return (TM) module;
       fireRepositoryChanged();
       return (TM) module;
     } catch (IOException e) {
@@ -115,7 +112,7 @@ public class MPSModuleRepository {
     }
   }
 
-  void addModule(IModule module, MPSModuleOwner owner) {
+  public void addModule(IModule module, MPSModuleOwner owner) {
     if (myNamespaceToLanguageMap.containsKey(module.getNamespace())) {
       throw new RuntimeException("Couldn't add language \"" + module.getNamespace() + "\" : this language is already registered");
     }
