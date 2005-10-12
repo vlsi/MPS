@@ -27,6 +27,7 @@ public class EditorManager {
   private boolean myCreatingInspectedCell = false;
 
 
+
   public EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events) {
     return createRootCell(context, node, events, false);
   }

@@ -26,7 +26,7 @@ public abstract class BaseNodeDialog extends BaseDialog {
   protected BaseNodeDialog(ProjectFrame ide, String text, IOperationContext operationContext) throws HeadlessException {
     super(ide.getMainFrame(), text);
     myOperationContext = operationContext;
-    InspectorEditorComponent inspector = new InspectorEditorComponent(ide);
+    InspectorEditorComponent inspector = new InspectorEditorComponent();
     myEditorComponent = new UIEditorComponent(ide, getOperationContext(), inspector);
 
     mySplitter = new JSplitPaneWithoutBorders(JSplitPane.VERTICAL_SPLIT, myEditorComponent.getExternalComponent(), inspector.getExternalComponent());
