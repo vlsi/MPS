@@ -77,10 +77,6 @@ public class Generator extends AbstractModule {
     return myGeneratorDescriptor.getGeneratorClass();
   }
 
-  protected List<jetbrains.mps.projectLanguage.ModelRoot> getModelRootsImpl() {
-    return CollectionUtil.iteratorAsList(myGeneratorDescriptor.modelRoots());
-  }
-
   public String toString() {
     StringBuffer sb = new StringBuffer(this.getClass().getName());
     sb.append('(').append(mySourceLanguage.getNamespace()).append(')');

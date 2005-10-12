@@ -29,7 +29,9 @@ public abstract class AbstractModule implements LanguageOwner, IModule {
   // IScope
   //
 
-  protected abstract List<ModelRoot> getModelRootsImpl();
+  protected List<ModelRoot> getModelRootsImpl() {
+    return CollectionUtil.iteratorAsList(getModuleDescriptor().modelRoots());
+  }
 
   protected SModelDescriptor getModuleModel() {
     return getModuleDescriptor().getModel().getModelDescriptor();

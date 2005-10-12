@@ -387,9 +387,6 @@ public class Language extends AbstractModule {
     }
   }
 
-  protected List<ModelRoot> getModelRootsImpl() {
-    return CollectionUtil.iteratorAsList(myLanguageDescriptor.modelRoots());
-  }
 
   public List<IModule> getChildModules() {
     return (List<IModule>) ((List) getGenerators());

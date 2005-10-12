@@ -119,10 +119,6 @@ public class Solution extends AbstractModule {
     return mySolutionDescriptor;
   }
 
-  protected List<ModelRoot> getModelRootsImpl() {
-    return CollectionUtil.iteratorAsList(mySolutionDescriptor.modelRoots());
-  }
-
   public void addSolutionCommandListener(SolutionCommandListener listener) {
     myCommandListeners.add(listener);
   }
