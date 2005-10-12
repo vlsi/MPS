@@ -70,16 +70,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private NodeHighlightManager myHighlightManager = new NodeHighlightManager(this);
 
   private IOperationContext myOperationContext;
-  private ProjectFrame myIde;
 
   private MessagesGutter myMessagesGutter = new MessagesGutter(this);
 
-  public AbstractEditorComponent(ProjectFrame ide, IOperationContext operationContext) {
-    this(ide, operationContext, false);
+  public AbstractEditorComponent(IOperationContext operationContext) {
+    this(operationContext, false);
   }
 
-  public AbstractEditorComponent(ProjectFrame ide, IOperationContext operationContext, boolean showErrorsGutter) {
-    myIde = ide;
+  public AbstractEditorComponent(IOperationContext operationContext, boolean showErrorsGutter) {
     addFocusListener(new FocusAdapter() {
       public void focusGained(FocusEvent e) {
         myPreviousFocusOwner = e.getOppositeComponent();
@@ -595,7 +593,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myRootCell.relayout();
     revalidate();
     repaint();
-    updateCellExplorerIfNeeded();
   }
 
   public void selectNode(final SNode node) {
@@ -748,10 +745,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return condition.getFoundCell();
   }
 
-  protected void updateCellExplorerIfNeeded() {
-    myIde.getCellExplorerView().update();
-  }
-
   public EditorCell findPrevSelectableCell(final EditorCell cell) {
     if (!(myRootCell instanceof EditorCell_Collection)) {
       return null;
@@ -810,7 +803,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       changeSelection(null);
     }
 
-    updateCellExplorerIfNeeded();
   }
 
   public EditorCell findNearestCell(int x, int y) {
