@@ -57,6 +57,10 @@ public abstract class AbstractModule implements MPSModuleOwner, IModule {
     return list;
   }
 
+  public List<IModule> getModules() {
+    return new LinkedList<IModule>(MPSModuleRepository.getInstance().getModules(this));
+  }
+
   public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
     if (modelDescriptor != null) {
@@ -193,7 +197,7 @@ public abstract class AbstractModule implements MPSModuleOwner, IModule {
   }
 
   public List<IModule> getDependOnModules() {
-    return (List<IModule>) ((List) getLanguages());
+    return getModules();
   }
 
   public void registerModelDescriptor(SModelDescriptor modelDescriptor) {

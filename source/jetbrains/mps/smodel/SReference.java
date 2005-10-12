@@ -118,7 +118,6 @@ public abstract class SReference {
 
     // INTERNAL REFERENCE
     if(sourceModel.getUID().equals(targetModelUID)) {
-      //LOG.assertLog(targetNodeId != null, "Target node id is NULL for internal reference"); //so what?
       if (targetNodeId == null) {//unresolved reference
         if (resolveInfo != null) {
           return new InternalReference(role, sourceNode, resolveInfo, targetClassResolveInfo);
