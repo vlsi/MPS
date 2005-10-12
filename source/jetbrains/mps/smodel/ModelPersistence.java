@@ -365,7 +365,7 @@ public class ModelPersistence {
 
   private static void validateModelImports(SModel sourceModel) {
     Set<SModelUID> importedModels = new HashSet<SModelUID>(sourceModel.getImportedModelUIDs());
-    Collection<? extends SNode> nodes = sourceModel.getAllNodes();
+    Collection<? extends SNode> nodes = sourceModel.getAllNodesWithIds();
     for (SNode node : nodes) {
       List<SReference> references = node.getReferences();
       for (SReference reference : references) {

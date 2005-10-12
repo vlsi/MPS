@@ -541,7 +541,7 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  public Collection<? extends SNode> getAllNodes() {
+  public Collection<? extends SNode> getAllNodesWithIds() {
     Collection<SNode> nodes = myIdToNodeMap.values();
     return Collections.unmodifiableCollection(nodes);
   }
