@@ -22,7 +22,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
   public boolean processKeyPressed(final EditorContext editorContext, final KeyEvent keyEvent) {
     AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
- //   if (editor.getRootCell().getSNodeProxy().getModel().isNotEditable()) return false;
+    if (editor.getRootCell().getSNodeProxy().getModel().isNotEditable()) return false;
     EditorCell selectedCell = editor.getSelectedCell();
     // process cell keymaps first
 
