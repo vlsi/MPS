@@ -58,7 +58,7 @@ public class Solution extends AbstractModule {
     solution.mySolutionDescriptor = solutionDescriptor;
 
     // read languages and models
-    MPSModuleRepository.getInstance().readLanguageDescriptors(solutionDescriptor.languageRoots(), solution);
+    MPSModuleRepository.getInstance().readModuleDescriptors(solutionDescriptor.languageRoots(), solution);
     SModelRepository.getInstance().readModelDescriptors(solutionDescriptor.modelRoots(), solution);
 
     return solution;
@@ -77,7 +77,7 @@ public class Solution extends AbstractModule {
     mySolutionDescriptor = PersistenceUtil.loadSolutionDescriptor(descriptorFile, model);
 
     // read languages and models
-    MPSModuleRepository.getInstance().readLanguageDescriptors(mySolutionDescriptor.languageRoots(), this);
+    MPSModuleRepository.getInstance().readModuleDescriptors(mySolutionDescriptor.languageRoots(), this);
     SModelRepository.getInstance().readModelDescriptors(getModelRoots(), this);
 
     CommandProcessor.instance().addCommandListener(myEventTranslator);
@@ -93,7 +93,7 @@ public class Solution extends AbstractModule {
     mySolutionDescriptor = newDescriptor;
 
     // read languages and models
-    MPSModuleRepository.getInstance().readLanguageDescriptors(mySolutionDescriptor.languageRoots(), Solution.this);
+    MPSModuleRepository.getInstance().readModuleDescriptors(mySolutionDescriptor.languageRoots(), Solution.this);
     SModelRepository.getInstance().readModelDescriptors(getModelRoots(), Solution.this);
 
     myEventTranslator.solutionChanged();

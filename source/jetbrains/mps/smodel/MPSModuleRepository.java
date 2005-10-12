@@ -6,6 +6,7 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.projectLanguage.Root;
 import jetbrains.mps.util.CollectionUtil;
 
@@ -27,11 +28,16 @@ public class MPSModuleRepository {
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
   private CommandAdapter myListenerToRemoveUnusedModules;
 
+  private Map<String, Class<? extends IModule>> myExtensionsToModuleTypes = new HashMap<String, Class<? extends IModule>>();
+  private static final String LANGUAGE_EXT = ".mpl";
+  private static final String SOLUTION_EXT = ".msd";
+
   public static MPSModuleRepository getInstance() {
     return ApplicationComponents.getInstance().getComponent(MPSModuleRepository.class);
   }
 
   public MPSModuleRepository() {
+    initializeExtensionsToModuleTypesMap();
     // DO NOT CONVERT this FIELD into a LOCAL VARIABLE -
     // otherwise this listener will be collected very quickly
     // (myListeners in CommandProcessor is a WeakSet)
@@ -42,6 +48,11 @@ public class MPSModuleRepository {
       }            
     };
     CommandProcessor.instance().addCommandListener(myListenerToRemoveUnusedModules);
+  }
+
+  private void initializeExtensionsToModuleTypesMap() {
+    myExtensionsToModuleTypes.put(LANGUAGE_EXT, Language.class);
+    myExtensionsToModuleTypes.put(SOLUTION_EXT, Solution.class);
   }
 
   public void addRepositoryListener(RepositoryListener l) {
@@ -67,12 +78,27 @@ public class MPSModuleRepository {
   }
 
   public Language registerLanguage(File file, MPSModuleOwner owner) {
+    return registerModule(file, owner, Language.class);
+  }
+
+  public Solution registerSolution(File file, MPSModuleOwner owner) {
+    return registerModule(file, owner, Solution.class);
+  }
+
+  public <TM extends IModule> TM registerModule(File file, MPSModuleOwner owner, Class<TM> cls) {
     try {
       String canonicalPath = file.getCanonicalPath();
       IModule module = myFileToModuleMap.get(canonicalPath);
       if (module == null) {
-        module = Language.newInstance(file, owner);
+        if (cls == Language.class) module = Language.newInstance(file, owner);
+        if (cls == Solution.class) {
+          module = new Solution(file);
+          addModule(module, owner);
+        }
       } else {
+        if (!cls.isInstance(module)) {
+          LOG.error("can't register module " + module + " : module of another kind with the same name already exists");
+        }
         Set<MPSModuleOwner> owners = myModuleToOwnersMap.get(module);
         if (owners == null) {
           owners = new HashSet<MPSModuleOwner>();
@@ -82,7 +108,7 @@ public class MPSModuleRepository {
       }
       if (!(module instanceof Language)) return null;
       fireRepositoryChanged();
-      return (Language) module;
+      return (TM) module;
     } catch (IOException e) {
       LOG.error(e);
       return null;
@@ -151,44 +177,47 @@ public class MPSModuleRepository {
     }
   }
 
-  public void readLanguageDescriptors(Iterable<Root> roots, MPSModuleOwner owner) {
-    readLanguageDescriptors(roots.iterator(), owner);
+  public void readModuleDescriptors(Iterable<Root> roots, MPSModuleOwner owner) {
+    readModuleDescriptors(roots.iterator(), owner);
   }
 
-  public void readLanguageDescriptors(Iterator<Root> roots, MPSModuleOwner owner) {
+  public void readModuleDescriptors(Iterator<Root> roots, MPSModuleOwner owner) {
     while (roots.hasNext()) {
       Root root = roots.next();
       File moduleRoot = new File(root.getPath());
+
       if (moduleRoot.exists()) {
-        readLanguageDescriptors(moduleRoot, owner);
+        readModuleDescriptors(moduleRoot, owner, LANGUAGE_EXT);
+        readModuleDescriptors(moduleRoot, owner, SOLUTION_EXT);
       } else {
-        String error = "Couldn't load languages from " + moduleRoot.getAbsolutePath() +
+        String error = "Couldn't load modules from " + moduleRoot.getAbsolutePath() +
                 "\nDirectory doesn't exist: ";
         LOG.error(error);
       }
     }
   }
 
-  public void readLanguageDescriptors(File dir, MPSModuleOwner owner) {
+  private void readModuleDescriptors(File dir, MPSModuleOwner owner, final String extension) {
     if (!dir.isDirectory()) {
       return;
     }
     File[] files = dir.listFiles(new FilenameFilter() {
       public boolean accept(File dir, String name) {
-        return name.endsWith(".mpl");
+        return name.endsWith(extension);
       }
     });
     for (File file : files) {
       try {
-        registerLanguage(file, owner);
+        Class<? extends IModule> cls = myExtensionsToModuleTypes.get(extension);
+        registerModule(file, owner, cls);
       } catch (Exception e) {
-        LOG.error("Fail to load language from descriptor " + file.getAbsolutePath(), e);
+        LOG.error("Fail to load module from descriptor " + file.getAbsolutePath(), e);
       }
     }
     File[] dirs = dir.listFiles();
     for (File childDir : dirs) {
       if (childDir.isDirectory()) {
-        readLanguageDescriptors(childDir, owner);
+        readModuleDescriptors(childDir, owner, extension);
       }
     }
   }
