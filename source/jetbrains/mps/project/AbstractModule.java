@@ -3,6 +3,7 @@ package jetbrains.mps.project;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.ModelRoot;
+import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.PathManager;
@@ -22,6 +23,7 @@ public abstract class AbstractModule implements LanguageOwner, IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
   private ModelRoot myClassPathModelRoot;
+  protected File myDescriptorFile;
 
   //
   // IScope
@@ -29,7 +31,13 @@ public abstract class AbstractModule implements LanguageOwner, IModule {
 
   protected abstract List<ModelRoot> getModelRootsImpl();
 
-  protected abstract SModelDescriptor getModuleModel();
+  protected SModelDescriptor getModuleModel() {
+    return getModuleDescriptor().getModel().getModelDescriptor();
+  }
+
+  public String getNamespace() {
+    return toString();
+  }
 
 
   public Language getLanguage(String languageNamespace) {
@@ -64,13 +72,13 @@ public abstract class AbstractModule implements LanguageOwner, IModule {
     return null;
   }
 
-  private SModelDescriptor getModelDescriptorFromDependOnModules(SModelUID modelUID, IModule dependentModule) {
+  private static SModelDescriptor getModelDescriptorFromDependOnModules(SModelUID modelUID, IModule dependentModule) {
     Set<IModule> modules = new HashSet<IModule>();
     modules.add(dependentModule);
     return getModelDescriptorFromDependOnModules(modelUID, dependentModule, modules);
   }
 
-  private SModelDescriptor getModelDescriptorFromDependOnModules(SModelUID modelUID, IModule dependentModule, Set<IModule> modules) {
+  private static SModelDescriptor getModelDescriptorFromDependOnModules(SModelUID modelUID, IModule dependentModule, Set<IModule> modules) {
     List<IModule> dependOnModules = dependentModule.getDependOnModules();
     List<IModule> justProcessedModules = new LinkedList<IModule>();
     for (IModule dependOnModule : dependOnModules) {
@@ -218,4 +226,10 @@ public abstract class AbstractModule implements LanguageOwner, IModule {
   public List<SModelDescriptor> getModelDescriptors() {
     return SModelRepository.getInstance().getAllModelDescriptors();
   }
+
+  public File getDescriptorFile() {
+    return myDescriptorFile;
+  }
+
+  public abstract ModuleDescriptor getModuleDescriptor();
 }

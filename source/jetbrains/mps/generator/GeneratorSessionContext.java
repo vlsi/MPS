@@ -5,6 +5,7 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.projectLanguage.ModelRoot;
+import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.ide.BootstrapLanguages;
 
@@ -71,6 +72,7 @@ public class GeneratorSessionContext implements IOperationContext {
     private Generator myGenerator;
     private IModule myInvocationModule;
     private SModelDescriptor myProjectModelDescriptor = ProjectModelDescriptor.createDescriptorFor(this);
+    private ModuleDescriptor myModuleDescriptor = new ModuleDescriptor(myProjectModelDescriptor.getSModel());
 
     TransientModule(Generator generator, IModule invocationModule) {
       myGenerator = generator;
@@ -83,9 +85,9 @@ public class GeneratorSessionContext implements IOperationContext {
     protected List<ModelRoot> getModelRootsImpl() {
       return Collections.EMPTY_LIST;
     }
-
-    protected SModelDescriptor getModuleModel() {
-      return myProjectModelDescriptor;
+  
+    public ModuleDescriptor getModuleDescriptor() {
+      return myModuleDescriptor;
     }
 
     public List<IModule> getDependOnModules() {

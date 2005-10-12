@@ -5,6 +5,7 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.Model;
+import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.util.CollectionUtil;
 
 import java.util.List;
@@ -32,6 +33,10 @@ public class Generator extends AbstractModule {
         LanguageRepository.getInstance().unRegisterLanguages(Generator.this);
       }
     });
+  }
+
+  public ModuleDescriptor getModuleDescriptor() {
+    return myGeneratorDescriptor;
   }
 
   public String getName() {
@@ -74,10 +79,6 @@ public class Generator extends AbstractModule {
 
   protected List<jetbrains.mps.projectLanguage.ModelRoot> getModelRootsImpl() {
     return CollectionUtil.iteratorAsList(myGeneratorDescriptor.modelRoots());
-  }
-
-  protected SModelDescriptor getModuleModel() {
-    return myGeneratorDescriptor.getModel().getModelDescriptor();
   }
 
   public String toString() {

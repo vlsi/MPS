@@ -5,6 +5,7 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.projectLanguage.PersistenceUtil;
 import jetbrains.mps.projectLanguage.SolutionDescriptor;
+import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 
@@ -22,7 +23,6 @@ import java.util.List;
  */
 public class Solution extends AbstractModule {
   private SolutionDescriptor mySolutionDescriptor;
-  private File myDescriptorFile;
   private List<SolutionCommandListener> myCommandListeners = new LinkedList<SolutionCommandListener>();
   private SolutionEventTranslator myEventTranslator = new SolutionEventTranslator();
 
@@ -101,10 +101,6 @@ public class Solution extends AbstractModule {
     myEventTranslator.solutionChanged();
   }
 
-  public File getDescriptorFile() {
-    return myDescriptorFile;
-  }
-
   public void dispose() {
     CommandProcessor.instance().removeCommandListener(myEventTranslator);
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
@@ -119,12 +115,12 @@ public class Solution extends AbstractModule {
     return mySolutionDescriptor;
   }
 
-  protected List<ModelRoot> getModelRootsImpl() {
-    return CollectionUtil.iteratorAsList(mySolutionDescriptor.modelRoots());
+  public ModuleDescriptor getModuleDescriptor() {
+    return mySolutionDescriptor;
   }
 
-  protected SModelDescriptor getModuleModel() {
-    return mySolutionDescriptor.getModel().getModelDescriptor();
+  protected List<ModelRoot> getModelRootsImpl() {
+    return CollectionUtil.iteratorAsList(mySolutionDescriptor.modelRoots());
   }
 
   public void addSolutionCommandListener(SolutionCommandListener listener) {

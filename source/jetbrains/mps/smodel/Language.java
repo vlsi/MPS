@@ -25,7 +25,6 @@ import java.util.*;
 public class Language extends AbstractModule {
   private static final Logger LOG = Logger.getLogger(Language.class);
 
-  private File myDescriptorFile;
   private LanguageDescriptor myLanguageDescriptor;
   private List<Generator> myGenerators;
 
@@ -51,6 +50,10 @@ public class Language extends AbstractModule {
 
   private long myLastGenerationTime = 0;
   private boolean myRegisteredInFindUsagesManager;
+
+  public ModuleDescriptor getModuleDescriptor() {
+    return myLanguageDescriptor;
+  }
 
   public static Language newInstance(File descriptorFile, LanguageOwner languageOwner) {
     Language language = new Language();
@@ -386,10 +389,6 @@ public class Language extends AbstractModule {
 
   protected List<ModelRoot> getModelRootsImpl() {
     return CollectionUtil.iteratorAsList(myLanguageDescriptor.modelRoots());
-  }
-
-  protected SModelDescriptor getModuleModel() {
-    return myLanguageDescriptor.getModel().getModelDescriptor();
   }
 
   public List<IModule> getChildModules() {
