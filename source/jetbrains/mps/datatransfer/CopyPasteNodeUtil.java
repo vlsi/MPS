@@ -6,12 +6,12 @@ import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.TextUtil;
 import jetbrains.mps.ide.AddRequiredModelImportsDialog;
 import jetbrains.mps.ide.ProjectFrame;
 import jetbrains.textLanguage.Sentence;
 import jetbrains.textLanguage.Text;
 import jetbrains.textLanguage.Word;
-import rubyWeb.TextUtil;
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
