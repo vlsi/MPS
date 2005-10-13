@@ -1,7 +1,5 @@
 package jetbrains.mps.util;
 
-import jetbrains.textLanguage.*;
-import jetbrains.textLanguage.Tag;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.CollectionUtil;
 import org.jdom.Element;
@@ -28,10 +26,6 @@ public class TextUtil {
 
   static String[] splitToWords(String sentence) {
     return removeEmptyStrings(sentence.split("\\s++"));
-  }
-
-  public static String toString(Word word) {
-    return word.getProperty("value");
   }
 
 }
