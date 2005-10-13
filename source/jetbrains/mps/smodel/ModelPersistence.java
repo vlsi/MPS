@@ -202,11 +202,14 @@ public class ModelPersistence {
     return model;
   }
 
-  private static SNode readNode(Element nodeElement, SModel semanticModel, List<ReferenceDescriptor> referenceDescriptors) {
-    return readNode(nodeElement, semanticModel, referenceDescriptors, true, null);
+  private static SNode readNode(Element nodeElement,
+                                SModel semanticModel, List<ReferenceDescriptor> referenceDescriptors) {
+    return readNode(nodeElement, semanticModel, referenceDescriptors, true);
   }
 
-  private static SNode readNode(Element nodeElement, SModel model, List<ReferenceDescriptor> referenceDescriptors, boolean setID, HashMap<String, SNode> oldIdsToNodes) {
+  private static SNode readNode(Element nodeElement,
+                                SModel model, List<ReferenceDescriptor> referenceDescriptors,
+                                boolean setID) {
     String type = nodeElement.getAttributeValue(TYPE);
     SNode node = createNodeInstance(type, model);
     if (node == null) {
@@ -219,10 +222,6 @@ public class ModelPersistence {
     String myOldId = nodeElement.getAttributeValue(ID);
     if (setID) {
       node.setId(myOldId);
-    }
-
-    if (oldIdsToNodes != null) {
-      oldIdsToNodes.put(myOldId, node);
     }
 
     String cachedExtResolveInfo = nodeElement.getAttributeValue(EXT_RESOLVE_INFO);
@@ -256,7 +255,7 @@ public class ModelPersistence {
     for (Iterator iterator = childNodes.iterator(); iterator.hasNext();) {
       Element childNodeElement = (Element) iterator.next();
       String role = childNodeElement.getAttributeValue(ROLE);
-      SNode childNode = readNode(childNodeElement, model, referenceDescriptors, setID, oldIdsToNodes);
+      SNode childNode = readNode(childNodeElement, model, referenceDescriptors, setID);
       if (childNode != null) {
         node.addChild(role, childNode);
       } else {
@@ -440,7 +439,7 @@ public class ModelPersistence {
         importIndex = importElement.getReferenceID();
       } else {
         LOG.error("Couldn't save reference \"" + externalReference.getRole() + "\" in " + node.getDebugText() +
-                "\n -- import element for model \"" + targetModelUID + "\" not found");
+                "\n -- importz element for model \"" + targetModelUID + "\" not found");
       }
 
       String extResolveInfo = externalReference.getExtResolveInfo();
