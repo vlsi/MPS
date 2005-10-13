@@ -202,6 +202,38 @@ public class ModelPersistence {
     return model;
   }
 
+  //warning this is simpified version. It is suitable only for usage in
+  //MPSWiki and has to be rewritten ASAP
+  public static SNode readNode(Element nodeElemnet, SModel model) {
+    List<ReferenceDescriptor> referenceDescriptors = new ArrayList<ReferenceDescriptor>();
+
+    SNode result = readNode(nodeElemnet, model, referenceDescriptors);
+
+    for (ReferenceDescriptor referenceDescriptor : referenceDescriptors) {
+      SModelUID importedModelUID = model.getUID();
+//      SModelUID importedModelUID = model.getUID();
+//      if (referenceDescriptor.importIndex > -1) {
+//        importedModelUID = importedUIDtoIndex.get(referenceDescriptor.importIndex);
+//        if (importedModelUID == null) {
+//          LOG.error("Couldn't create reference from " + referenceDescriptor.sourceNode.getDebugText() + " : import for index [" + referenceDescriptor.importIndex + "] not found");
+//          continue;
+//        }
+//      }
+      SReference reference = SReference.newInstance(referenceDescriptor.role,
+              referenceDescriptor.sourceNode,
+              referenceDescriptor.targetId,
+              referenceDescriptor.extResolveInfo,
+              importedModelUID,
+              referenceDescriptor.resolveInfo,
+              referenceDescriptor.targetClassResolveInfo
+      );
+      if (reference != null) referenceDescriptor.sourceNode.addSemanticReference(reference);
+    }
+
+    return result;
+  }
+
+
   private static SNode readNode(Element nodeElement,
                                 SModel semanticModel, List<ReferenceDescriptor> referenceDescriptors) {
     return readNode(nodeElement, semanticModel, referenceDescriptors, true);

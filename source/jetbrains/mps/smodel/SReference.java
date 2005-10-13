@@ -78,7 +78,7 @@ public abstract class SReference {
     SModel sourceModel = sourceNode.getModel();
     SModel targetModel = targetNode == null ? null : targetNode.getModel();
     if (sourceModel == targetModel || targetModel == null) {
-      return new InternalReference(role, sourceNode, targetNode);
+      return new InternalReference(role, sourceNode, targetNode.getId());
     } else {
       sourceModel.addImportElement(targetModel.getUID());
       String extResolveInfo = null;
@@ -101,7 +101,7 @@ public abstract class SReference {
   public static SReference newInstance(String role, SNode sourceNode, SReference templateRef) {
     if(templateRef instanceof InternalReference) {
       if(templateRef.isResolved()) {
-        return new InternalReference(role, sourceNode, templateRef.getTargetNode());
+        return new InternalReference(role, sourceNode, templateRef.getTargetNode().getId());
       }
       else {
         return new InternalReference(role, sourceNode, templateRef.getResolveInfo(), templateRef.getTargetClassResolveInfo());
@@ -126,13 +126,13 @@ public abstract class SReference {
           return null;
         }
       } //resolved reference
-      SNode targetNode = sourceModel.getNodeById(targetNodeId);
-      if (targetNode == null && resolveInfo == null) {
-        LOG.errorWithTrace("SReference.newInstance Couldn't create internal reference: \"" + role + "\" to node id:" + targetNodeId +
-                "\nSource node: " + sourceNode.getDebugText());
-        return null;
-      }
-      SReference internalReference = new InternalReference(role, sourceNode, targetNode);
+//      SNode targetNode = sourceModel.getNodeById(targetNodeId);
+//      if (targetNode == null && resolveInfo == null) {
+//        LOG.errorWithTrace("SReference.newInstance Couldn't create internal reference: \"" + role + "\" to node id:" + targetNodeId +
+//                "\nSource node: " + sourceNode.getDebugText());
+//        return null;
+//      }
+      SReference internalReference = new InternalReference(role, sourceNode, targetNodeId);
       internalReference.setResolveInfo(resolveInfo);
       internalReference.setTargetClassResolveInfo(targetClassResolveInfo);
       return internalReference;

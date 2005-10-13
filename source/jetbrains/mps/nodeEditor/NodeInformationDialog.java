@@ -67,6 +67,7 @@ public class NodeInformationDialog extends JDialog {
   private String createNodeInfo(SNode node) {
     StringBuilder result = new StringBuilder();
 
+    result.append("Node from model " + node.getModel().getUID() + "\n\n");
 
     for (SReference ref : node.getReferences()) {
       SNode target = ref.getTargetNode();
