@@ -197,7 +197,10 @@ public abstract class AbstractModule implements MPSModuleOwner, IModule {
   }
 
   public List<IModule> getDependOnModules() {
-    return getModules();
+    List<IModule> modules = getModules();
+    // (tmp?) make accessible bootstrap structures
+    modules.addAll(MPSModuleRepository.getInstance().getLanguages(BootstrapLanguages.getInstance()));
+    return modules;
   }
 
   public void registerModelDescriptor(SModelDescriptor modelDescriptor) {
