@@ -7,6 +7,7 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjects;
+import jetbrains.mps.util.NameUtil;
 
 import javax.swing.*;
 
@@ -20,8 +21,10 @@ public abstract class GenericEditorUpdater {
       public void run() {
         if (IdeMain.isTestMode()) return;
 
+        CommandProcessor commandProcessor = CommandProcessor.instance();
         try {
           while (true) {
+            while (commandProcessor.isInsideCommand()) Thread.sleep(222);
             doUpdate();
             Thread.sleep(300);
           }
@@ -33,33 +36,31 @@ public abstract class GenericEditorUpdater {
     }.start();
   }
 
-
   protected void doUpdate() {
-    CommandProcessor.instance().executeCommand(new Runnable() {
+    SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        final MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
-
-        for (final MPSProject project : projects.getProjects()) {
-          if (project.getComponent(ProjectFrame.class) != null) {
-            SwingUtilities.invokeLater(new Runnable() {
-              public void run() {
-                boolean isUpdated = false;
-
-                EditorsPane editorsPane = project.getComponent(ProjectFrame.class).getEditorsPane();
-
-                for (AbstractEditorComponent editor : editorsPane.getEditors()) {
-                  if (updateEditor(editor)) {
-                    isUpdated = true;
-                  }
-                }
-
-                if (isUpdated) {
-                  editorsPane.repaint();
+        String commandName = "update editor [" + NameUtil.shortNameFromLongName(GenericEditorUpdater.this.getClass().getName()) + "]";
+        CommandProcessor commandProcessor = CommandProcessor.instance();
+        if (commandProcessor.isInsideCommand()) {
+          return;
+        }
+        commandProcessor.executeCommand(new Runnable() {
+          public void run() {
+            MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
+            for (MPSProject project : projects.getProjects()) {
+              EditorsPane editorsPane = project.getComponent(ProjectFrame.class).getEditorsPane();
+              boolean isUpdated = false;
+              for (AbstractEditorComponent editor : editorsPane.getEditors()) {
+                if (updateEditor(editor)) {
+                  isUpdated = true;
                 }
               }
-            });
+              if (isUpdated) {
+                editorsPane.repaint();
+              }
+            }
           }
-        }
+        }, commandName);
       }
     });
   }
