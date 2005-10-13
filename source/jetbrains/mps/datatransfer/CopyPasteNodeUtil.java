@@ -9,7 +9,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.TextUtil;
 import jetbrains.mps.ide.AddRequiredModelImportsDialog;
 import jetbrains.mps.ide.ProjectFrame;
-import jetbrains.textLanguage.Sentence;
 import jetbrains.textLanguage.Text;
 import jetbrains.textLanguage.Word;
 
@@ -292,34 +291,6 @@ public class CopyPasteNodeUtil {
 
   public static SNode getNodeFromClipboard(SModel model) {
     return getNodesFromClipboard(model).get(0);
-  }
-
-  private static List<SNode> tryToPasteText(Clipboard cb, SModel model) {
-    try {
-
-      if (!model.hasLanguage("jetbrains.textLanguage")) return null;
-
-      String text = cb.getData(DataFlavor.stringFlavor).toString();
-
-      List<SNode> result = new ArrayList<SNode>();
-      if (text.contains(".")) { //sentence(s)
-        Text textNode = TextUtil.toText(model, text);
-        for (Sentence sentence : CollectionUtil.iteratorAsIterable(textNode.sentences())) {
-          textNode.removeChild(sentence);
-          result.add(sentence);
-        }
-      } else { //words
-        Sentence sentence = TextUtil.toSentence(model, text);
-        for (Word word : CollectionUtil.iteratorAsIterable(sentence.words())) {
-          sentence.removeChild(word);
-          result.add(word);
-        }
-      }
-      return result;
-    } catch (Exception e) {
-      LOG.error(e);
-      return null;
-    }
   }
 
   public static boolean addImportsAndLanguagesToModel(SModel targetModel, SModel modelPropertiesPattern, Set<String> necessaryLanguages, Set<SModelUID> necessaryImports, IOperationContext context) {
