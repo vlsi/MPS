@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
+import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
@@ -66,7 +67,7 @@ public class EditorManager {
     AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
     EditorCell oldCell = nodeEditorComponent.getBigCellForNode(node);
     if (events != null) {
-
+      boolean propertyChanged = false;
       boolean nodeChanged = false;
       for (SModelEvent event : events) {
         SNode eventNode;
@@ -74,7 +75,13 @@ public class EditorManager {
           eventNode = ((SModelChildEvent)event).getParent();
         } else if (event instanceof SModelReferenceEvent) {
           eventNode = ((SModelReferenceEvent)event).getReference().getSourceNode();
-        } else continue;
+        } else {
+          if (event instanceof SModelPropertyEvent) {//++if some property had changed
+            eventNode = ((SModelPropertyEvent)event).getNode();
+            if (nodeEditorComponent.doesCellDependOnNode(oldCell, eventNode)) propertyChanged = true;
+          }//--if some property had changed
+          continue;
+        }
         if (nodeEditorComponent.doesCellDependOnNode(oldCell, eventNode)) {
           nodeChanged = true;
           break;
@@ -93,6 +100,9 @@ public class EditorManager {
           listensNothingListener.addNodesToDependOn(nodesOldCellDependsOn);
           NodeReadAccessCaster.removeNodeAccessListener();
           //--voodoo
+          if (propertyChanged && !(editorCell instanceof EditorCell_Collection)) {
+            editorCell.synchronizeViewWithModel();
+          }
           return editorCell;
         }
       } else {

@@ -1330,7 +1330,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private class MyModelListener implements SModelCommandListener {
     public void modelChangedInCommand(List<SModelEvent> events, EditorContext editorContext) {
       if (!EventUtil.isDramaticalChange(events)) {
-        myRootCell.updateView();
+        myRootCell.synchronizeViewWithModel();
         relayout();
       } else {
 
