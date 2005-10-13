@@ -36,7 +36,7 @@ public class Solution extends AbstractModule {
     SolutionDescriptor solutionDescriptor = PersistenceUtil.loadSolutionDescriptorFormOldMPR(projectFile, model);
 
     if (solutionDescriptor == null ||
-            (solutionDescriptor.getModelRootsCount() == 0 && solutionDescriptor.getLanguageRootsCount() == 0)) {
+            (solutionDescriptor.getModelRootsCount() == 0 && solutionDescriptor.getModuleRootsCount() == 0)) {
       SModelRepository.getInstance().unRegisterModelDescriptors(tmpModelOwner);
       return null;
     }
@@ -78,7 +78,6 @@ public class Solution extends AbstractModule {
   }
 
   private void readModulesAndModels() {
-    MPSModuleRepository.getInstance().readModuleDescriptors(mySolutionDescriptor.languageRoots(), this);
     MPSModuleRepository.getInstance().readModuleDescriptors(mySolutionDescriptor.moduleRoots(), this);
     SModelRepository.getInstance().readModelDescriptors(getModelRoots(), this);
   }

@@ -21,7 +21,7 @@ public class Generator extends AbstractModule {
     myGeneratorDescriptor = generatorDescriptor;
 
     // read languages and models
-    MPSModuleRepository.getInstance().readModuleDescriptors(generatorDescriptor.languageRoots(), this);
+    MPSModuleRepository.getInstance().readModuleDescriptors(generatorDescriptor.moduleRoots(), this);
     SModelRepository.getInstance().readModelDescriptors(generatorDescriptor.modelRoots(), this);
   }
 

@@ -486,7 +486,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       for (Language language : languages) {
         Root languageRoot = new Root(solutionDescriptorModel);
         languageRoot.setPath(language.getDescriptorFile().getParentFile().getAbsolutePath());
-        solutionDescriptor.addLanguageRoot(languageRoot);
+        solutionDescriptor.addModuleRoot(languageRoot);
       }
     }
 
@@ -505,7 +505,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       for (Language language : languages) {
         Root languageRoot = new Root(solutionDescriptorModel);
         languageRoot.setPath(language.getDescriptorFile().getParentFile().getAbsolutePath());
-        solutionDescriptor.addLanguageRoot(languageRoot);
+        solutionDescriptor.addModuleRoot(languageRoot);
       }
     }
 
