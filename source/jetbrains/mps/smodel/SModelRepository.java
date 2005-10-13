@@ -2,6 +2,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.reloading.ClassLoaderManager;
 
@@ -247,8 +248,38 @@ public class SModelRepository extends SModelAdapter {
     }
   }
 
-  public boolean wereChanges() {
-    return getChangedModels().size() > 0;
+
+  public<T extends MPSModuleOwner & ModelOwner> List<SModelDescriptor> getChangedModelsReleasedWhenReleasingOwner(T owner) {
+    Set<SModelDescriptor> changedModels = getChangedModels();
+
+    //copying modelToOwnerMap
+    Map<SModelDescriptor, HashSet<ModelOwner>> modelToOwnerMap = new HashMap<SModelDescriptor, HashSet<ModelOwner>>();
+    for (SModelDescriptor md : myModelToOwnerMap.keySet()) {
+      modelToOwnerMap.put(md, new HashSet<ModelOwner>(myModelToOwnerMap.get(md)));
+    }//--copying
+
+    //releasing own models
+    Set<SModelDescriptor> releasedModels = collectReleasedModels(changedModels, modelToOwnerMap, owner);
+
+    //releasing models from released modules
+    Set<IModule> releasedModules = MPSModuleRepository.getInstance().getReleasedModulesWhenReleasingOwner(owner);
+    for (IModule module : releasedModules) {
+      releasedModels.addAll(collectReleasedModels(changedModels, modelToOwnerMap, module));
+    }
+    return new ArrayList<SModelDescriptor>(releasedModels);
+  }
+
+  private <ModelOwner> Set<SModelDescriptor> collectReleasedModels(Set<SModelDescriptor> changedModels, Map<SModelDescriptor, HashSet<ModelOwner>> modelToOwnerMap, ModelOwner owner) {
+    Set<SModelDescriptor> releasedModels = new HashSet<SModelDescriptor>();
+    for (SModelDescriptor modelDescriptor : changedModels) {
+      HashSet<ModelOwner> modelOwners = modelToOwnerMap.get(modelDescriptor);
+      if (modelOwners != null) {
+        modelOwners.remove(owner);
+        if (modelOwners.isEmpty()) releasedModels.add(modelDescriptor);
+      }
+    }
+
+    return releasedModels;
   }
 
   public Set<SModelDescriptor> getChangedModels() {

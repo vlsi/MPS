@@ -189,7 +189,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   public <T> T getComponent(Class<T> clazz) {
     if (clazz == EditorsPane.class) {
       ProjectFrame projectFrame = getComponent(ProjectFrame.class);
-      if (projectFrame != null) return (T) projectFrame.getEditorsPane();      
+      if (projectFrame != null) return (T) projectFrame.getEditorsPane();
     }
     T result = (T) myComponents.get(clazz);
     return result;
@@ -273,10 +273,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     } catch (Exception e) {
       LOG.error(e);
     }
-  }
-
-  public boolean isProjectChanged() {
-    return ApplicationComponents.getInstance().getComponent(SModelRepository.class).wereChanges();
   }
 
   public void dispose() {

@@ -118,6 +118,7 @@ public class Language extends AbstractModule {
     CommandProcessor.instance().removeCommandListener(myEventTranslator);
     SModelsMulticaster.getInstance().removeSModelsListener(myModelsListener);
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
+    MPSModuleRepository.getInstance().unRegisterModules(this);
     if (myGenerators != null) {
       for (Generator generator : myGenerators) {
         generator.dispose();
