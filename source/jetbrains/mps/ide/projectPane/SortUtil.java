@@ -3,6 +3,7 @@ package jetbrains.mps.ide.projectPane;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelUID;
 
 import java.util.List;
 import java.util.ArrayList;

@@ -83,6 +83,8 @@ public class SModelUID implements Comparable {
   }
 
   public int compareTo(Object o) {
+    int compareStereotypes = this.getStereotype().compareTo(((SModelUID)o).getStereotype());
+    if (compareStereotypes != 0) return compareStereotypes;
     return this.toString().compareTo(o.toString());
   }
 }

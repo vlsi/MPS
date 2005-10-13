@@ -92,6 +92,14 @@ public class CollectionUtil {
     return null;
   }
 
+  public static<LT extends List> List<String> mapToString(LT list) {
+    List<String> result = new ArrayList<String>();
+    for (Object o : list) {
+      result.add(o.toString());
+    }
+    return result;
+  }
+
   public static<E> void iterate(Collection<E> c, CollectionBlock<E> block) {
     for (E e : c) {
       block.run(e);

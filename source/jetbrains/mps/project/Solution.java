@@ -77,11 +77,15 @@ public class Solution extends AbstractModule {
     return solution;
   }
 
+  private void readModulesAndModels() {
+    MPSModuleRepository.getInstance().readModuleDescriptors(mySolutionDescriptor.languageRoots(), this);
+    MPSModuleRepository.getInstance().readModuleDescriptors(mySolutionDescriptor.moduleRoots(), this);
+    SModelRepository.getInstance().readModelDescriptors(getModelRoots(), this);
+  }
+
   private void init() {
     // read languages and models
-    MPSModuleRepository.getInstance().readModuleDescriptors(mySolutionDescriptor.languageRoots(), this);
-    SModelRepository.getInstance().readModelDescriptors(getModelRoots(), this);
-
+    readModulesAndModels();
     CommandProcessor.instance().addCommandListener(myEventTranslator);
   }
 
@@ -95,8 +99,7 @@ public class Solution extends AbstractModule {
     mySolutionDescriptor = newDescriptor;
 
     // read languages and models
-    MPSModuleRepository.getInstance().readModuleDescriptors(mySolutionDescriptor.languageRoots(), Solution.this);
-    SModelRepository.getInstance().readModelDescriptors(getModelRoots(), Solution.this);
+    readModulesAndModels();
 
     myEventTranslator.solutionChanged();
   }

@@ -57,8 +57,10 @@ public abstract class AbstractModule implements MPSModuleOwner, IModule {
     return list;
   }
 
-  public List<IModule> getModules() {
-    return new LinkedList<IModule>(MPSModuleRepository.getInstance().getModules(this));
+  private List<IModule> getModules() {
+    List<IModule> modules = new LinkedList<IModule>(MPSModuleRepository.getInstance().getModules(this));
+    modules.addAll(MPSModuleRepository.getInstance().getLanguages(BootstrapLanguages.getInstance()));
+    return modules;
   }
 
   public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
@@ -197,10 +199,7 @@ public abstract class AbstractModule implements MPSModuleOwner, IModule {
   }
 
   public List<IModule> getDependOnModules() {
-    List<IModule> modules = getModules();
-    // (tmp?) make accessible bootstrap structures
-    modules.addAll(MPSModuleRepository.getInstance().getLanguages(BootstrapLanguages.getInstance()));
-    return modules;
+    return getModules();
   }
 
   public void registerModelDescriptor(SModelDescriptor modelDescriptor) {
@@ -231,7 +230,11 @@ public abstract class AbstractModule implements MPSModuleOwner, IModule {
   }
 
   public List<SModelDescriptor> getModelDescriptors() {
-    return SModelRepository.getInstance().getAllModelDescriptors();
+    Set<SModelDescriptor> modelDescriptors = new HashSet<SModelDescriptor>(getOwnModelDescriptors());
+    for (IModule module : getAllDependOnModules()) {
+      modelDescriptors.addAll(module.getOwnModelDescriptors());
+    }
+    return new ArrayList<SModelDescriptor>(modelDescriptors);
   }
 
   public File getDescriptorFile() {
