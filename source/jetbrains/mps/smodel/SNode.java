@@ -559,7 +559,8 @@ public abstract class SNode implements Cloneable {
 
   private void insertReferenceAt(final int i, final SReference reference) {
     myReferences.add(i, reference);
-    if (reference instanceof InternalReference) {
+    if (reference instanceof InternalReference &&
+            !getModel().getUID().getStereotype().equals("remote")) {
       SNode targetNode = reference.getTargetNode();
       if (targetNode != null) targetNode.myBackReferences.add(reference);
     }
