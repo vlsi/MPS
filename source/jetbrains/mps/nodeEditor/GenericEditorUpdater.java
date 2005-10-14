@@ -48,6 +48,8 @@ public abstract class GenericEditorUpdater {
           public void run() {
             MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
             for (MPSProject project : projects.getProjects()) {
+              if (project.getComponent(ProjectFrame.class) == null) continue;
+
               EditorsPane editorsPane = project.getComponent(ProjectFrame.class).getEditorsPane();
               boolean isUpdated = false;
               for (AbstractEditorComponent editor : editorsPane.getEditors()) {

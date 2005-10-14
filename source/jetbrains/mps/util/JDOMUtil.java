@@ -35,6 +35,11 @@ public class JDOMUtil {
     return saxBuilder.build(new InputStreamReader(stream, ENCODING));
   }
 
+  public static Document loadDocument(Reader reader) throws IOException, JDOMException {
+    SAXBuilder saxBuilder = createBuilder();
+    return saxBuilder.build(reader);
+  }
+
   public static void writeDocument(Document document, String filePath) throws IOException {
     OutputStream stream = new BufferedOutputStream(new FileOutputStream(filePath));
     try {

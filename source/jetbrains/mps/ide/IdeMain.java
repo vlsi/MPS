@@ -1,13 +1,11 @@
 package jetbrains.mps.ide;
 
-import org.apache.log4j.xml.DOMConfigurator;
-
 import javax.swing.*;
 import java.util.Date;
 import java.awt.*;
-import java.io.File;
 
 import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.logging.LoggerUtil;
 
 public class IdeMain {
   private static boolean ourTestMode = false;
@@ -60,7 +58,7 @@ public class IdeMain {
     }
 
 
-    configureLogger();
+    LoggerUtil.configureLogger();
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         ApplicationComponents.getInstance();
@@ -80,11 +78,4 @@ public class IdeMain {
     ourTestMode = testMode;
   }
 
-  public static void configureLogger() {
-    if (new File("log" + File.separator + "userlog.xml").exists()) {
-      DOMConfigurator.configure("log" + File.separator + "userlog.xml");
-    } else {
-      DOMConfigurator.configure("log" + File.separator + "log.xml");
-    }
-  }
 }
