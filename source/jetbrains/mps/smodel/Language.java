@@ -94,8 +94,8 @@ public class Language extends AbstractModule {
   }
 
   private void init() {
-    // read models
-    SModelRepository.getInstance().readModelDescriptors(getModelRoots(), this);
+    // read modules and models
+    readModulesAndModels();
     revalidateGenerators();
 
     CommandProcessor.instance().addCommandListener(myEventTranslator);
@@ -127,7 +127,7 @@ public class Language extends AbstractModule {
   }
 
   public void setLanguageDescriptor(final LanguageDescriptor newDescriptor) {
-    // release languages and models (except descriptor model)
+    // release modules and models (except descriptor model)
     unregisterAspectListener();
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), Language.this);
     MPSModuleRepository.getInstance().unRegisterModules(Language.this);
@@ -138,7 +138,8 @@ public class Language extends AbstractModule {
     }
 
     myLanguageDescriptor = newDescriptor;
-    SModelRepository.getInstance().readModelDescriptors(getModelRoots(), Language.this);
+    //read modules and models
+    readModulesAndModels();
     revalidateGenerators();
 
     registerAspectListener();

@@ -474,7 +474,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     // add model/language roots from generator module
     {
       Generator generatorModule = generatorContext.getGeneratorModule();
-      List<ModelRoot> modelRoots = generatorModule.getModelRoots();
+      List<ModelRoot> modelRoots = generatorModule.getNonDefaultModelRoots();
       for (ModelRoot modelRoot : modelRoots) {
         ModelRoot copyRoot = new ModelRoot(solutionDescriptorModel);
         copyRoot.setPrefix(modelRoot.getPrefix());
@@ -493,7 +493,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     // add model/language roots from invocation module
     {
       IModule invocationModule = generatorContext.getInvocationContext().getModule();
-      List<ModelRoot> modelRoots = invocationModule.getModelRoots();
+      List<ModelRoot> modelRoots = invocationModule.getNonDefaultModelRoots();
       for (ModelRoot modelRoot : modelRoots) {
         ModelRoot copyRoot = new ModelRoot(solutionDescriptorModel);
         copyRoot.setPrefix(modelRoot.getPrefix());

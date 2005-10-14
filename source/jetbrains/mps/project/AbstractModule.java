@@ -190,6 +190,10 @@ public abstract class AbstractModule implements MPSModuleOwner, IModule {
     return result;
   }
 
+  public final List<ModelRoot> getNonDefaultModelRoots() {
+    return getModelRootsImpl();
+  }
+
   public IModule getParentModule() {
     return null;
   }
@@ -242,4 +246,9 @@ public abstract class AbstractModule implements MPSModuleOwner, IModule {
   }
 
   public abstract ModuleDescriptor getModuleDescriptor();
+
+  protected void readModulesAndModels() {
+    MPSModuleRepository.getInstance().readModuleDescriptors(getModuleDescriptor().moduleRoots(), this);
+    SModelRepository.getInstance().readModelDescriptors(getModelRoots(), this);
+  }
 }

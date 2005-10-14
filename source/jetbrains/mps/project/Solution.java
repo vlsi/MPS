@@ -77,11 +77,6 @@ public class Solution extends AbstractModule {
     return solution;
   }
 
-  private void readModulesAndModels() {
-    MPSModuleRepository.getInstance().readModuleDescriptors(mySolutionDescriptor.moduleRoots(), this);
-    SModelRepository.getInstance().readModelDescriptors(getModelRoots(), this);
-  }
-
   private void init() {
     // read languages and models
     readModulesAndModels();
