@@ -4,6 +4,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
@@ -18,7 +19,7 @@ import java.util.*;
  * Time: 7:20:19 PM
  * To change this template use File | Settings | File Templates.
  */
-public class GeneratorSessionContext implements IOperationContext {
+public class GeneratorSessionContext extends StandaloneMPSContext {
   private static final Logger LOG = Logger.getLogger(GeneratorSessionContext.class);
 
   private Generator myGeneratorModule;

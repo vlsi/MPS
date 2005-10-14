@@ -5,6 +5,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
 
 import java.util.List;
+import java.awt.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -20,6 +21,8 @@ public interface IOperationContext {
   IModule getModule();
 
   IScope getScope();
-  
+
+  Frame getMainFrame();
+
   <T> T getComponent(Class<T> clazz);
 }

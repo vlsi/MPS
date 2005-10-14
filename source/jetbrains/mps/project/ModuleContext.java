@@ -12,7 +12,7 @@ import java.util.Set;
  * Time: 7:55:20 PM
  * To change this template use File | Settings | File Templates.
  */
-public class ModuleContext implements IOperationContext {
+public class ModuleContext extends StandaloneMPSContext {
   private static final Logger LOG = Logger.getLogger(ModuleContext.class);
 
   private MPSProject myProject;

@@ -220,6 +220,7 @@
       <module fileurl="file://$PROJECT_DIR$/projects/KeyMapTutorial/KeyMapTutorial.iml" filepath="$PROJECT_DIR$/projects/KeyMapTutorial/KeyMapTutorial.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPS.iml" filepath="$PROJECT_DIR$/MPS.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPSWiki/MPSWiki.iml" filepath="$PROJECT_DIR$/MPSWiki/MPSWiki.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MPSWiki/MPSWiki.iml" filepath="$PROJECT_DIR$/MPSWiki/MPSWiki.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/SubstituteActionTutorial/SubstituteActionTutorial.iml" filepath="$PROJECT_DIR$/projects/SubstituteActionTutorial/SubstituteActionTutorial.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" filepath="$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/TheSimplestLanguage/TheSimplestLanguage.iml" filepath="$PROJECT_DIR$/projects/TheSimplestLanguage/TheSimplestLanguage.iml" />

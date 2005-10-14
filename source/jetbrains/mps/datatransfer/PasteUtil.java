@@ -90,7 +90,7 @@ public class PasteUtil {
     boolean canPasteToTarget = canPasteToTarget(pasteTarget, pasteNode, role_, operationContext);
 
     //priorities differ wrt invoker
-    if (invoker == projectPane) {
+    if (projectPane != null && invoker == projectPane) {
       if (canPasteToRoot) {
         return PASTE_TO_ROOT;
       }

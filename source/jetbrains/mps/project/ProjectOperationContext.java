@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.IOperationContext;
  * Time: 8:11:03 PM
  * To change this template use File | Settings | File Templates.
  */
-public class ProjectOperationContext implements IOperationContext {
+public class ProjectOperationContext extends StandaloneMPSContext {
   private MPSProject myProject;
 
   public ProjectOperationContext(MPSProject project) {

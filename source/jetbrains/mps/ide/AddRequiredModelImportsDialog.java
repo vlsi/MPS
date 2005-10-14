@@ -68,7 +68,7 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
     }
     if (!myLanguages.isEmpty()) {
       myLanguagesTableModel = new MyImportsTableModel("Languages", myLanguages, myLanguagesToAdd);
-      myLanguagesTable = new JTable(myImportsTableModel);
+      myLanguagesTable = new JTable(myLanguagesTableModel);
       myLanguagesTable.getColumnModel().getColumn(0).setWidth(30);
       myLanguagesTable.getColumnModel().getColumn(1).setPreferredWidth(300);
       panel.add(new JLabel("Add Languages"));
