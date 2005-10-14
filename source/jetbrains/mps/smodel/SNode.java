@@ -577,7 +577,7 @@ public abstract class SNode implements Cloneable {
   private void removeReferenceAt(final int i) {
     final SReference reference = myReferences.get(i);
     myReferences.remove(reference);
-    if (reference instanceof InternalReference) {
+    if (reference instanceof InternalReference && !getModel().getUID().getStereotype().equals("remote")) {
       SNode targetNode = reference.getTargetNode();
       if (targetNode != null) {
         targetNode.myBackReferences.remove(reference);
