@@ -170,17 +170,19 @@ public class MPSModuleRepository {
       Set<MPSModuleOwner> owners = moduleToOwnerMap.get(module);
       if (owners != null) {
         owners.remove(owner);
-        if (owners.isEmpty()) releasedModules.add(module);
+        if (owners.isEmpty() || (owners.size() == 1 && owners.contains(module))) releasedModules.add(module);
       }
     }
     for (IModule module : releasedModules) {
       modules.remove(module);
     }
+    Set<IModule> additionalReleasedModules = new HashSet<IModule>();
     for (IModule module : releasedModules) {
       if (module instanceof AbstractModule) {
-        releasedModules.addAll(collectReleasedModules(modules, moduleToOwnerMap, (AbstractModule) module));
+        additionalReleasedModules.addAll(collectReleasedModules(modules, moduleToOwnerMap, module));
       }
     }
+    releasedModules.addAll(additionalReleasedModules);
     return releasedModules;
   }
 
