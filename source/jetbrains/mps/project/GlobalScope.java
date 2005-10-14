@@ -35,7 +35,7 @@ public class GlobalScope implements IScope {
     return language;
   }
 
-  public List<Language> getLanguages() {
+  public List<Language> getVisibleLanguages() {
     return MPSModuleRepository.getInstance().getAllLanguages();
   }
 

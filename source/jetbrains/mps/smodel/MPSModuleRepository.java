@@ -284,8 +284,8 @@ public class MPSModuleRepository {
   public <MT extends IModule> List<MT> getModules(MPSModuleOwner moduleOwner, Class<MT> cls) {
     List<MT> list = new LinkedList<MT>();
     for (Map.Entry<IModule, Set<MPSModuleOwner>> entry : myModuleToOwnersMap.entrySet()) {
-      Set<MPSModuleOwner> languageOwners = entry.getValue();
-      if (languageOwners.contains(moduleOwner) && cls.isInstance(entry.getKey())) {
+      Set<MPSModuleOwner> moduleOwners = entry.getValue();
+      if (moduleOwners.contains(moduleOwner) && cls.isInstance(entry.getKey())) {
         list.add((MT) entry.getKey());
       }
     }

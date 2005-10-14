@@ -188,6 +188,7 @@ public class EditorManager {
       LOG.errorWithTrace("Error loading editor for node \"" + node.getDebugText() + "\".\n" +
               "Couldn't find language for namespace: \"" + NameUtil.namespaceFromConceptFQName(node.getClass().getName()) + "\"\n" +
               "In scope " + context.getOperationContext().getScope());
+      SModelUtil.getLanguage(node, context.getOperationContext().getScope());
       return null;
     }
     String stereotype = node.getModel().getStereotype();

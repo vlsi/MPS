@@ -388,8 +388,16 @@ public class Language extends AbstractModule {
     return getGenerators();
   }
 
-  public List<Language> getLanguages() {
-    List<Language> languages = super.getLanguages();
+  public List<Language> getOwnLanguages() {
+    List<Language> languages = super.getOwnLanguages();
+    if (!languages.contains(this)) {
+      languages.add(this);
+    }
+    return languages;
+  }
+
+  public List<Language> getVisibleLanguages() {
+    List<Language> languages = super.getVisibleLanguages();
     if (!languages.contains(this)) {
       languages.add(this);
     }

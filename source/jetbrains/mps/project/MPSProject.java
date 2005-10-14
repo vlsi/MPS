@@ -315,7 +315,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     return language;
   }
 
-  public List<Language> getLanguages() {
+  public List<Language> getVisibleLanguages() {
     List<Language> list = new LinkedList<Language>(MPSModuleRepository.getInstance().getLanguages(this));
     list.addAll(MPSModuleRepository.getInstance().getLanguages(BootstrapLanguages.getInstance()));
     return list;

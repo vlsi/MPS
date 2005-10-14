@@ -18,5 +18,5 @@ public interface IScope {
 
   Language getLanguage(String languageNamespace);
 
-  List<Language> getLanguages();
+  List<Language> getVisibleLanguages();
 }

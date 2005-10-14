@@ -18,7 +18,7 @@ import java.util.*;
  * Time: 2:17:14 PM
  * To change this template use File | Settings | File Templates.
  */
-public abstract class AbstractModule implements MPSModuleOwner, IModule {
+public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
   private ModelRoot myClassPathModelRoot;
@@ -41,25 +41,45 @@ public abstract class AbstractModule implements MPSModuleOwner, IModule {
   }
 
   public Language getLanguage(String languageNamespace) {
-    Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, this);
-    if (language == null) {
-      language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
-    }
+    Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
+    if (language != null) return language;
+    Set<IModule> processedModules = new HashSet<IModule>();
+    language = getLanguage_internal(languageNamespace, processedModules, this);
     if (language == null) {
       LOG.error("Couldn't find language: \"" + languageNamespace + "\" in scope: " + this);
     }
     return language;
   }
 
-  public List<Language> getLanguages() {
+  private static Language getLanguage_internal(String languageNamespace, Set<IModule> processedModules, IModule dependentModule) {
+    if (dependentModule instanceof Language && dependentModule.getNamespace().equals(languageNamespace)) {
+      return (Language) dependentModule;
+    }
+    Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, dependentModule);
+    processedModules.add(dependentModule);
+    if (language == null) {
+      List<IModule> dependOnModules = dependentModule.getDependOnModules();
+      for (IModule module : dependOnModules) {
+        if (!(processedModules.contains(module))) {
+          language = getLanguage_internal(languageNamespace, processedModules, module);
+          if (language != null) break;
+        }
+      }
+    }
+    return language;
+  }
+
+  public List<Language> getOwnLanguages() {
     List<Language> list = new LinkedList<Language>(MPSModuleRepository.getInstance().getLanguages(this));
-    list.addAll(MPSModuleRepository.getInstance().getLanguages(BootstrapLanguages.getInstance()));
     return list;
   }
 
-  private List<IModule> getModules() {
+  public List<Language> getVisibleLanguages() {
+    return new ArrayList<Language>(getAllDependOnModules(Language.class));
+  }
+
+  private List<IModule> getOwnModules() {
     List<IModule> modules = new LinkedList<IModule>(MPSModuleRepository.getInstance().getModules(this));
-    modules.addAll(MPSModuleRepository.getInstance().getLanguages(BootstrapLanguages.getInstance()));
     return modules;
   }
 
@@ -133,19 +153,23 @@ public abstract class AbstractModule implements MPSModuleOwner, IModule {
   }
 
   private Set<IModule> getAllDependOnModules() {
-    Set<IModule> dependOnModules = new HashSet<IModule>();
-    dependOnModules.add(this);
-    collectAllDependOnModules(this, dependOnModules);
-    dependOnModules.remove(this);
+    return getAllDependOnModules(IModule.class);
+  }
+
+  private <T extends IModule> Set<T> getAllDependOnModules(Class<T> cls) {
+    Set<T> dependOnModules = new HashSet<T>();
+  //  if (cls.isInstance(this)) dependOnModules.add((T) this);
+    collectAllDependOnModules(this, dependOnModules, cls);
+  //  dependOnModules.remove(this);
     return dependOnModules;
   }
 
-  private void collectAllDependOnModules(IModule dependentModule, Set<IModule> modules) {
+  private <T extends IModule> void collectAllDependOnModules(IModule dependentModule, Set<T> modules, Class<T> cls) {
     List<IModule> dependOnModules = dependentModule.getDependOnModules();
     for (IModule dependOnModule : dependOnModules) {
-      if (!modules.contains(dependOnModule)) {
-        modules.add(dependOnModule);
-        collectAllDependOnModules(dependOnModule, modules);
+      if (cls.isInstance(dependOnModule) && !modules.contains(dependOnModule)) {
+        modules.add((T) dependOnModule);
+        collectAllDependOnModules(dependOnModule, modules, cls);
       }
     }
   }
@@ -203,7 +227,9 @@ public abstract class AbstractModule implements MPSModuleOwner, IModule {
   }
 
   public List<IModule> getDependOnModules() {
-    return getModules();
+    List<IModule> result = getOwnModules();
+    result.addAll(MPSModuleRepository.getInstance().getLanguages(BootstrapLanguages.getInstance()));
+    return result;
   }
 
   public void registerModelDescriptor(SModelDescriptor modelDescriptor) {

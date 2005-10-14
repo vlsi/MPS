@@ -22,7 +22,7 @@ public class ProjectChecker {
   public static boolean checkProject(MPSProject project) {
     Set<SModelDescriptor> modelsToTest = new HashSet<SModelDescriptor>();
 
-    for (Language language : project.getLanguages()) {
+    for (Language language : project.getVisibleLanguages()) {
       modelsToTest.addAll(language.getModelDescriptors());
       for (Generator generator : language.getGenerators()) {
         modelsToTest.addAll(generator.getModelDescriptors());

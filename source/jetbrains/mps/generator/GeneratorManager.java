@@ -482,7 +482,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         solutionDescriptor.addModelRoot(copyRoot);
       }
 
-      List<Language> languages = generatorModule.getLanguages();
+      List<Language> languages = generatorModule.getOwnLanguages();
       for (Language language : languages) {
         Root languageRoot = new Root(solutionDescriptorModel);
         languageRoot.setPath(language.getDescriptorFile().getParentFile().getAbsolutePath());
@@ -501,7 +501,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         solutionDescriptor.addModelRoot(copyRoot);
       }
 
-      List<Language> languages = invocationModule.getLanguages();
+      List<Language> languages = invocationModule.getOwnLanguages();
       for (Language language : languages) {
         Root languageRoot = new Root(solutionDescriptorModel);
         languageRoot.setPath(language.getDescriptorFile().getParentFile().getAbsolutePath());

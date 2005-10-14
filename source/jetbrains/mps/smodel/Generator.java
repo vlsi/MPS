@@ -20,9 +20,8 @@ public class Generator extends AbstractModule {
     mySourceLanguage = sourceLanguage;
     myGeneratorDescriptor = generatorDescriptor;
 
-    // read languages and models
-    MPSModuleRepository.getInstance().readModuleDescriptors(generatorDescriptor.moduleRoots(), this);
-    SModelRepository.getInstance().readModelDescriptors(generatorDescriptor.modelRoots(), this);
+    // read modules and models
+    readModulesAndModels();
   }
 
   public void dispose() {
@@ -97,17 +96,17 @@ public class Generator extends AbstractModule {
   public List<IModule> getDependOnModules() {
     List<IModule> list = super.getDependOnModules();
     list.add(mySourceLanguage);
-    Language targetLanguage = getTargetLanguage();
+  /*  Language targetLanguage = getTargetLanguage();
     if (targetLanguage != null) {
       list.add(targetLanguage);
-    }
+    }*/
 
     // todo: configure generator dependencies ...
     // ... add all generators of all languages which this generator ownes or depend on
     List<Language> languages = MPSModuleRepository.getInstance().getLanguages(this);
-    if(getTargetLanguage() != null && !languages.contains(getTargetLanguage())) {
-      languages.add(getTargetLanguage());
-    }
+/*    if(targetLanguage != null && !languages.contains(targetLanguage)) {
+      languages.add(targetLanguage);
+    }*/
     for (Language language : languages) {
       list.addAll(language.getGenerators());
     }
