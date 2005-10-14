@@ -6,9 +6,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.SModelEvent;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.awt.*;
+import java.util.List;
 
 
 /**
@@ -102,6 +101,7 @@ public class EditorContext {
   }
 
   public EditorCell getContextCell() {
+    if (myContextCell == null) return getNodeEditorComponent().getSelectedCell();
     return myContextCell;
   }
 
