@@ -456,7 +456,7 @@ public abstract class SNode implements Cloneable {
     // tmp check
     int count = getReferentCount(role);
     if (count > 1) {
-      LOG.errorWithTrace("ERROR: " + count + " referents for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getId() + "] " + getModel().getUID());
+      LOG.errorWithTrace("ERROR: " + count + " referents for role \"" + role + "\" in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getId() + "] " + getModel().getUID());
     }
     // tmp check
 
