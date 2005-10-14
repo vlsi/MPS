@@ -218,14 +218,6 @@ public abstract class AbstractModule implements IModule {
     return getModelRootsImpl();
   }
 
-  public IModule getParentModule() {
-    return null;
-  }
-
-  public List<? extends IModule> getChildModules() {
-    return Collections.emptyList();
-  }
-
   public List<IModule> getDependOnModules() {
     List<IModule> result = getOwnModules();
     result.addAll(MPSModuleRepository.getInstance().getLanguages(BootstrapLanguages.getInstance()));

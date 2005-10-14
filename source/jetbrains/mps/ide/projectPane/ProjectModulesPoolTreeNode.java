@@ -49,15 +49,7 @@ class ProjectModulesPoolTreeNode extends TextTreeNode {
         collectModules(module, modules);
     }
 
-    // add roots only
-    List<IModule> result = new LinkedList<IModule>();
-    for (IModule module : modules) {
-      if (module.getParentModule() == null) {
-        result.add(module);
-      }
-    }
-    modules.clear();
-    return result;
+    return new LinkedList<IModule>(modules);
   }
 
   private void collectModules(IModule dependentModule, Set<IModule> modules) {

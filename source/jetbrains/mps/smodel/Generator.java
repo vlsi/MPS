@@ -45,10 +45,6 @@ public class Generator extends AbstractModule {
     return myGeneratorDescriptor.getName();
   }
 
-  public IModule getParentModule() {
-    return mySourceLanguage;
-  }
-
   public Language getSourceLanguage() {
     return mySourceLanguage;
   }
@@ -114,6 +110,8 @@ public class Generator extends AbstractModule {
     for (Language language : languages) {
       list.addAll(language.getGenerators());
     }
+
+    list.remove(this);
 
     return list;
   }

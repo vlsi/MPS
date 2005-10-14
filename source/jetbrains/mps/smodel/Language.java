@@ -383,11 +383,6 @@ public class Language extends AbstractModule {
     }
   }
 
-
-  public List<? extends IModule> getChildModules() {
-    return getGenerators();
-  }
-
   public List<Language> getOwnLanguages() {
     List<Language> languages = super.getOwnLanguages();
     if (!languages.contains(this)) {

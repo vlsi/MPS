@@ -176,9 +176,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   }
 
   public boolean isProjectModule(IModule module) {
-    if (module.getParentModule() != null) {
-      return isProjectModule(module.getParentModule());
-    }
     return myLanguages.contains(module) || mySolutions.contains(module);
   }
 
