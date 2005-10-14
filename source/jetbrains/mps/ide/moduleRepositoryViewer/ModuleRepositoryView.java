@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.languageRepositoryViewer;
+package jetbrains.mps.ide.moduleRepositoryViewer;
 
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.BootstrapLanguages;
@@ -13,6 +13,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 
 import javax.swing.*;
@@ -21,21 +22,21 @@ import java.awt.event.ActionEvent;
 /**
  * @author Kostik
  */
-public class LanguageRepositoryView extends DefaultTool {
+public class ModuleRepositoryView extends DefaultTool {
   private MPSTree myTree = new MyTree();
   private JScrollPane myComponent = new JScrollPane(myTree);
   private DeferringEventHandler myDeferringEventHandler = new DeferringEventHandler();
 
-  public LanguageRepositoryView() {
+  public ModuleRepositoryView() {
     myTree.rebuildTree();
   }
 
   public String getName() {
-    return "Language Repository Viewer";
+    return "Module Repository Viewer";
   }
 
   public Icon getIcon() {
-    return Icons.LANGUAGES_ICON;
+    return Icons.PROJECT_ICON;
   }
 
   public JComponent getComponent() {
@@ -51,9 +52,28 @@ public class LanguageRepositoryView extends DefaultTool {
     myDeferringEventHandler.unInstallListeners();
   }
 
+  private static Icon getOwnersIcon(MPSModuleOwner owner) {
+    if (owner instanceof Generator) {
+      return Icons.GENERATOR_ICON;
+    }
+    if (owner instanceof Language) {
+      return Icons.LANGUAGE_ICON;
+    }
+    if (owner instanceof MPSProject) {
+      return Icons.PROJECT_ICON;
+    }
+    if (owner instanceof BootstrapLanguages) {
+      return Icons.PROJECT_LANGUAGE_ICON;
+    }
+    if (owner instanceof Solution) {
+      return Icons.SOLUTION_ICON;
+    }
+    return Icons.DEFAULT_ICON;
+  }
+
   private class MyTree extends MPSTree {
     protected MPSTreeNode rebuild() {
-      TextTreeNode root = new TextTreeNode("Loaded Languages") {
+      TextTreeNode root = new TextTreeNode("Loaded Modules") {
         public JPopupMenu getPopupMenu() {
           JPopupMenu result = new JPopupMenu();
 
@@ -67,32 +87,32 @@ public class LanguageRepositoryView extends DefaultTool {
         }
 
         public Icon getIcon(boolean expanded) {
-          return Icons.LANGUAGES_ICON;
+          return Icons.PROJECT_ICON;
         }
       };
-      for (Language l : SortUtil.sortLanguages(MPSModuleRepository.getInstance().getAllLanguages())) {
-        root.add(new LanguageTreeNode(l));
+      for (IModule module : SortUtil.sortModules(MPSModuleRepository.getInstance().getAllModules())) {
+        root.add(new LanguageTreeNode(module));
       }
       return root;
     }
 
     private class LanguageTreeNode extends MPSTreeNode {
-      private Language mylanguage;
+      private IModule myModule;
 
-      public LanguageTreeNode(Language language) {
+      public LanguageTreeNode(IModule module) {
         super(null);
-        mylanguage = language;
-        for (MPSModuleOwner owner : MPSModuleRepository.getInstance().getOwners(mylanguage)) {
+        myModule = module;
+        for (MPSModuleOwner owner : MPSModuleRepository.getInstance().getOwners(myModule)) {
           add(new OwnerTreeNode(owner));
         }
       }
 
       public Icon getIcon(boolean expanded) {
-        return Icons.LANGUAGE_ICON;
+        return getOwnersIcon(myModule);
       }
 
       protected String getNodeIdentifier() {
-        return mylanguage.toString();
+        return myModule.toString();
       }
     }
 
@@ -113,22 +133,7 @@ public class LanguageRepositoryView extends DefaultTool {
       }
 
       public Icon getIcon(boolean expanded) {
-        if (myOwner instanceof Generator) {
-          return Icons.GENERATOR_ICON;
-        }
-        if (myOwner instanceof Language) {
-          return Icons.LANGUAGE_ICON;
-        }
-        if (myOwner instanceof MPSProject) {
-          return Icons.PROJECT_ICON;
-        }
-        if (myOwner instanceof BootstrapLanguages) {
-          return Icons.PROJECT_LANGUAGE_ICON;
-        }
-        if (myOwner instanceof Solution) {
-          return Icons.SOLUTION_ICON;
-        }
-        return Icons.DEFAULT_ICON;
+        return getOwnersIcon(myOwner);
       }
     }
   }

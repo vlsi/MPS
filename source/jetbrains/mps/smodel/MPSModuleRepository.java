@@ -24,7 +24,7 @@ public class MPSModuleRepository {
   private static final Logger LOG = Logger.getLogger(MPSModuleRepository.class);
 
   private Map<String, IModule> myFileToModuleMap = new HashMap<String, IModule>();
-  private Map<String, IModule> myNamespaceToLanguageMap = new HashMap<String, IModule>();
+  private Map<String, IModule> myNamespaceToModuleMap = new HashMap<String, IModule>();
   private Map<IModule, Set<MPSModuleOwner>> myModuleToOwnersMap = new HashMap<IModule, Set<MPSModuleOwner>>();
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
   private CommandAdapter myListenerToRemoveUnusedModules;
@@ -113,30 +113,36 @@ public class MPSModuleRepository {
     }
   }
 
+  public boolean existsModule(IModule module) {
+    return (myNamespaceToModuleMap.containsKey(module.getNamespace()));
+  }
+
   public void addModule(IModule module, MPSModuleOwner owner) {
-    if (myNamespaceToLanguageMap.containsKey(module.getNamespace())) {
-      throw new RuntimeException("Couldn't add language \"" + module.getNamespace() + "\" : this language is already registered");
+    if (existsModule(module)) {
+      throw new RuntimeException("Couldn't add module \"" + module.getNamespace() + "\" : this module is already registered");
     }
     try {
-      myFileToModuleMap.put(module.getDescriptorFile().getCanonicalPath(), module);
-      myNamespaceToLanguageMap.put(module.getNamespace(), module);
+      File descriptorFile = module.getDescriptorFile();
+      if (descriptorFile != null) {
+        myFileToModuleMap.put(descriptorFile.getCanonicalPath(), module);
+      }
+      myNamespaceToModuleMap.put(module.getNamespace(), module);
       Set<MPSModuleOwner> owners = new HashSet<MPSModuleOwner>();
       owners.add(owner);
       myModuleToOwnersMap.put(module, owners);
     } catch (IOException e) {
-      throw new RuntimeException("Failed to add language \"" + module.getNamespace() + "\"", e);
+      throw new RuntimeException("Failed to add module \"" + module.getNamespace() + "\"", e);
     }
   }
 
   public void invalidateLanguagesCaches() {
-    for (IModule module : myFileToModuleMap.values()) {
+    for (IModule module : myNamespaceToModuleMap.values()) {
       if (module instanceof Language) ((Language) module).invalidateCaches();
     }
   }
 
   public void unRegisterModules(MPSModuleOwner owner) {
-    for (String fileName : myFileToModuleMap.keySet()) {
-      IModule module = myFileToModuleMap.get(fileName);
+    for (IModule module : myNamespaceToModuleMap.values()) {
       Set owners = myModuleToOwnersMap.get(module);
       if (owners != null) {
         owners.remove(owner);
@@ -147,7 +153,7 @@ public class MPSModuleRepository {
   }
 
   public Set<IModule> getReleasedModulesWhenReleasingOwner(MPSModuleOwner owner) {
-    Set<IModule> modules = new HashSet<IModule>(myFileToModuleMap.values());
+    Set<IModule> modules = new HashSet<IModule>(myNamespaceToModuleMap.values());
 
     //copying module to owners map
     Map<IModule, HashSet<MPSModuleOwner>> moduleToOwnerMap = new HashMap<IModule, HashSet<MPSModuleOwner>>();
@@ -198,13 +204,15 @@ public class MPSModuleRepository {
   private void removeModule(IModule module) {
     File descriptorFile = module.getDescriptorFile();
     myModuleToOwnersMap.remove(module);
-    myNamespaceToLanguageMap.remove(module.getNamespace());
-
-    try {
-      myFileToModuleMap.remove(descriptorFile.getCanonicalPath());
-    } catch (IOException e) {
-      e.printStackTrace();
+    myNamespaceToModuleMap.remove(module.getNamespace());
+    if (descriptorFile != null) {
+      try {
+        myFileToModuleMap.remove(descriptorFile.getCanonicalPath());
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
     }
+
   }
 
   public void readModuleDescriptors(Iterable<Root> roots, MPSModuleOwner owner) {
@@ -258,7 +266,7 @@ public class MPSModuleRepository {
   }
 
   public IModule getModule(String namespace) {
-    return myNamespaceToLanguageMap.get(namespace);
+    return myNamespaceToModuleMap.get(namespace);
   }
 
   public Language getLanguage(String namespace) {
@@ -266,7 +274,7 @@ public class MPSModuleRepository {
   }
 
   public IModule getModule(String namespace, MPSModuleOwner moduleOwner) {
-    IModule module = myNamespaceToLanguageMap.get(namespace);
+    IModule module = myNamespaceToModuleMap.get(namespace);
     if (module == null) {
       return null;
     }

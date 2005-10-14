@@ -2,8 +2,7 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.project.IModule;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -35,15 +34,15 @@ public class SortUtil {
     return sortedModels;
   }
 
-  public static List<Language> sortLanguages(List<Language> languages) {
-    List<Language> sortedLanguages = new ArrayList<Language>(languages);
-    Collections.sort(sortedLanguages, new Comparator() {
+  public static List<IModule> sortModules(List<IModule> modules) {
+    List<IModule> sortedModules = new ArrayList<IModule>(modules);
+    Collections.sort(sortedModules, new Comparator() {
       public int compare(Object o1, Object o2) {
         if (o1 == o2) {
           return 0;
         }
-        String name1 = ((Language) o1).getNamespace();
-        String name2 = ((Language) o2).getNamespace();
+        String name1 = ((IModule) o1).getNamespace();
+        String name2 = ((IModule) o2).getNamespace();
         if (name1 == null) name1 = "";
         if (name2 == null) name2 = "";
         return name1.compareTo(name2);
@@ -51,7 +50,7 @@ public class SortUtil {
     }
     );
 
-    return sortedLanguages;
+    return sortedModules;
   }
 
   public static List<SNode> sortNodes(List<SNode> nodes) {

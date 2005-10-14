@@ -20,6 +20,10 @@ public class Generator extends AbstractModule {
     mySourceLanguage = sourceLanguage;
     myGeneratorDescriptor = generatorDescriptor;
 
+    if (!MPSModuleRepository.getInstance().existsModule(this)) {
+      MPSModuleRepository.getInstance().addModule(this, mySourceLanguage);
+    }
+
     // read modules and models
     readModulesAndModels();
   }
