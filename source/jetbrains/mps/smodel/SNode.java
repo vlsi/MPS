@@ -672,7 +672,13 @@ public abstract class SNode implements Cloneable {
       }
       SNode sourceNode = backReference.getSourceNode();
       int index = sourceNode.myReferences.indexOf(backReference);
-      sourceNode.removeReferenceAt(index);
+
+      if (index != -1) {
+        sourceNode.removeReferenceAt(index);
+      } else {
+        //it is possible when node references itself
+        myBackReferences.remove(backReference);
+      }
     }
   }
 
