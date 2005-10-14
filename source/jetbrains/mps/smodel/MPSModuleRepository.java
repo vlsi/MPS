@@ -101,8 +101,11 @@ public class MPSModuleRepository {
         if (owners == null) {
           owners = new HashSet<MPSModuleOwner>();
           myModuleToOwnersMap.put(module, owners);
+          if (owner == module) {
+            LOG.warning("module " + module + " wants to owe itself: will be collected very quickly");
+          }
         }
-        owners.add(owner);
+        if (owner != module) owners.add(owner);
       }
       if (!(module instanceof Language)) return (TM) module;
       fireRepositoryChanged();
