@@ -34,7 +34,7 @@ public abstract class BaseNodeDialog extends BaseDialog {
     mySplitter.setResizeWeight(0.8);
   }
 
-  //todo temporary solution
+  //todo temporary solution :-)
   public IPreferencesPage createPreferencesPage() {
     myEditorComponent.editNode(getNode());
     return new IPreferencesPage() {
