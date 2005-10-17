@@ -6,6 +6,7 @@ import java.awt.*;
 
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.logging.LoggerUtil;
+import jetbrains.mps.ide.action.MPSIdeActions;
 
 public class IdeMain {
   private static boolean ourTestMode = false;
@@ -58,10 +59,12 @@ public class IdeMain {
     }
 
 
+
     LoggerUtil.configureLogger();
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         ApplicationComponents.getInstance();
+        MPSIdeActions.install();
         ProjectFrame projectWindow = new ProjectFrame();
         projectWindow.loadLastProjectIfAny();
         SplashScreen.getInstance().hideSplashScreen();

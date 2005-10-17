@@ -1023,8 +1023,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
 
   public void processKeyPressed(final KeyEvent keyEvent) {
-    // hardcoded actions which should be excuted outside command
-
     // hardcoded undo/redo action
     if (keyEvent.getKeyCode() == KeyEvent.VK_Z && keyEvent.isControlDown()) {
       if (keyEvent.isShiftDown()) {
