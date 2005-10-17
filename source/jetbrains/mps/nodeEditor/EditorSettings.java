@@ -132,6 +132,8 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
       setDefaultEditorFont(newFont);
 
       setTextWidth(Integer.parseInt(myTextWidthComboBox.getSelectedItem().toString()));
+
+      ReloadUtils.rebuildAllEditors();
     }
   }
 }
