@@ -24,6 +24,8 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
 
   private @Externalizable Font myFont = new Font("Monospaced", Font.PLAIN, 12);
 
+  private @Externalizable int myTextWidth = 500;
+
   public Font getDefaultEditorFont() {
     return myFont;
   }
@@ -33,6 +35,14 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     ReloadUtils.rebuildAllEditors();
   }
 
+  public int getTextWidth() {
+    return myTextWidth;
+  }
+
+  public void setTextWidth(int textWidth) {
+    myTextWidth = textWidth;
+  }
+
   public IPreferencesPage createPreferencesPage() {
     return new MyPreferencesPage();
   }
@@ -40,7 +50,8 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
   private class MyPreferencesPage implements IPreferencesPage {
     private JPanel myEditorSettingsPanel = new JPanel(new BorderLayout());
     private JComboBox myFontsComboBox = createFontsComboBox();
-    private JComboBox mySizesComboBox = createSizeComboBox();
+    private JComboBox myFontSizesComboBox = createSizeComboBox();
+    private JComboBox myTextWidthComboBox = createTextWidthComboBox();
 
     public MyPreferencesPage() {
       JPanel panel = new JPanel(new GridLayout(0, 1));
@@ -48,9 +59,23 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
       panel.add(new JLabel("Font Name : "));
       panel.add(myFontsComboBox);
       panel.add(new JLabel("Font Size : "));
-      panel.add(mySizesComboBox);
+      panel.add(myFontSizesComboBox);
+      panel.add(new JLabel("Text Width : "));
+      panel.add(myTextWidthComboBox);
 
       myEditorSettingsPanel.add(panel, BorderLayout.NORTH);
+    }
+
+    private JComboBox createTextWidthComboBox() {
+      List<String> sizes = new ArrayList<String>();
+
+      for (int i = 400; i < 1600; i += 100) {
+        sizes.add("" + i);
+      }
+
+      JComboBox result = new JComboBox(sizes.toArray());
+      result.setSelectedItem("" + getTextWidth());
+      return result;
     }
 
     private JComboBox createSizeComboBox() {
@@ -101,10 +126,12 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
 
     public void commit() {
       String fontName = myFontsComboBox.getSelectedItem().toString();
-      int fontSize = Integer.parseInt(mySizesComboBox.getSelectedItem().toString());
+      int fontSize = Integer.parseInt(myFontSizesComboBox.getSelectedItem().toString());
 
       Font newFont = new Font(fontName, Font.PLAIN, fontSize);
       setDefaultEditorFont(newFont);
+
+      setTextWidth(Integer.parseInt(myTextWidthComboBox.getSelectedItem().toString()));
     }
   }
 }

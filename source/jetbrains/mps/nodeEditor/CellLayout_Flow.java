@@ -43,7 +43,7 @@ hStart |--------|                  |  | hEnd
   }
 
   private int getMaxX() {
-    return 400;
+    return EditorSettings.getInstance().getTextWidth();
   }
 
 
