@@ -145,7 +145,7 @@ public class CopyPasteNodeUtil {
   private static SNode copyNode_internal(SNode sourceNode) {
 
     SNode targetNode = sourceNode.clone();
-    targetNode.justSetId(targetNode.generateUniqueId());
+    targetNode.setId(targetNode.generateUniqueId());
 
     ourSourceNodesToNewNodes.put(sourceNode, targetNode);
 
