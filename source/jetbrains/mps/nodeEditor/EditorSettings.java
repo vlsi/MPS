@@ -69,7 +69,7 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     private JComboBox createTextWidthComboBox() {
       List<String> sizes = new ArrayList<String>();
 
-      for (int i = 400; i < 1600; i += 100) {
+      for (int i = 200; i < 1600; i += 100) {
         sizes.add("" + i);
       }
 
