@@ -27,6 +27,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.*;
 import java.util.List;
+import java.net.InetAddress;
 
 
 /**
@@ -126,7 +127,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myContainer.add(myScrollPane, BorderLayout.CENTER);
 
     myScrollPane.setBorder(new LineBorder(Color.LIGHT_GRAY));
-    
+
     if (showErrorsGutter) {
       myContainer.add(myMessagesGutter, BorderLayout.EAST);
     }
@@ -1016,7 +1017,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public void processKeyReleased(KeyEvent keyEvent) {
     peekKeyboardHandler().processKeyReleased(getEditorContext(), keyEvent);
-    relayout();
+    if (keyEvent.getKeyCode() != KeyEvent.VK_F5 && keyEvent.getKeyCode() != KeyEvent.VK_F6) {
+      relayout();
+    }
   }
 
 
@@ -1053,7 +1056,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     // hardcoded "updateTypesystem" action
     if (keyEvent.getKeyCode() == KeyEvent.VK_F5) {
-      TypeCheckerAccess.getTypeChecker().checkNodeType(getRootCell().getSNode());               
+      TypeCheckerAccess.getTypeChecker().checkNodeType(getRootCell().getSNode());
       rebuildEditorContent();
       keyEvent.consume();
       return;
