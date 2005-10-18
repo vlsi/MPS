@@ -56,9 +56,9 @@ public class CopyPasteNodeUtil {
     model.setLoading(true);
     ourSourceNodesToNewNodes.clear();
     ourReferences.clear();
-    SNode nodeToPaste = copyNode_internal(node);
-    SModel fakeModel = nodeToPaste.getModel();
+    SModel fakeModel = node.getModel();
     fakeModel.setLoading(true);
+    SNode nodeToPaste = copyNode_internal(node);
     processReferencesOut();
     nodeToPaste.changeModel(model);
     model.setLoading(false);
