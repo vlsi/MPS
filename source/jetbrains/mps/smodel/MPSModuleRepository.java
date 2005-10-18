@@ -56,6 +56,10 @@ public class MPSModuleRepository {
     myExtensionsToModuleTypes.put(SOLUTION_EXT, Solution.class);
   }
 
+  public Set<String> getModuleExtensions() {
+    return new HashSet<String>(myExtensionsToModuleTypes.keySet());
+  }
+
   public void addRepositoryListener(RepositoryListener l) {
     myListeners.add(l);
   }
@@ -240,8 +244,13 @@ public class MPSModuleRepository {
     }
   }
 
+
+
   private void readModuleDescriptors(File dir, MPSModuleOwner owner, final String extension) {
     if (!dir.isDirectory()) {
+      if (dir.getName().endsWith(extension)) {
+        readModuleDescriptor_internal(dir, owner, extension);
+      }
       return;
     }
     File[] files = dir.listFiles(new FilenameFilter() {
@@ -250,18 +259,22 @@ public class MPSModuleRepository {
       }
     });
     for (File file : files) {
-      try {
-        Class<? extends IModule> cls = myExtensionsToModuleTypes.get(extension);
-        registerModule(file, owner, cls);
-      } catch (Exception e) {
-        LOG.error("Fail to load module from descriptor " + file.getAbsolutePath(), e);
-      }
+      readModuleDescriptor_internal(file, owner, extension);
     }
     File[] dirs = dir.listFiles();
     for (File childDir : dirs) {
       if (childDir.isDirectory()) {
         readModuleDescriptors(childDir, owner, extension);
       }
+    }
+  }
+
+  private void readModuleDescriptor_internal(File dir, MPSModuleOwner owner, String extension) {
+    try {
+      Class<? extends IModule> cls = myExtensionsToModuleTypes.get(extension);
+      registerModule(dir, owner, cls);
+    } catch (Exception e) {
+      LOG.error("Fail to load module from descriptor " + dir.getAbsolutePath(), e);
     }
   }
 
