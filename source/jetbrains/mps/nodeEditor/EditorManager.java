@@ -117,6 +117,9 @@ public class EditorManager {
 
 
   private EditorCell createEditorCell_internal(EditorContext context, SNode node, boolean isInspectorCell) {
+    //reset creating inspected cell : we don't create not-root inspected cells
+    myCreatingInspectedCell = false;
+
     INodeEditor editor = getEditor(context, node);
     AbstractEditorComponent abstractEditorComponent = context.getNodeEditorComponent();
     EditorCell nodeCell = null;
