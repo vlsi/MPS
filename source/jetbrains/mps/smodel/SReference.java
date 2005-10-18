@@ -78,7 +78,8 @@ public abstract class SReference {
     SModel sourceModel = sourceNode.getModel();
     SModel targetModel = targetNode == null ? null : targetNode.getModel();
     if (sourceModel == targetModel || targetModel == null) {
-      return new InternalReference(role, sourceNode, targetNode.getId());
+      String id = targetNode == null ? null : targetNode.getId();
+      return new InternalReference(role, sourceNode, id);
     } else {
       sourceModel.addImportElement(targetModel.getUID());
       String extResolveInfo = null;
