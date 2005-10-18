@@ -10,6 +10,8 @@ import java.awt.*;
  * Date: Jan 19, 2005
  */
 public class CellLayout_Flow implements CellLayout {
+  public static final String NOFLOW = "noflow";
+
   /*
          wStart
        |--------|------------------|  ^
@@ -56,7 +58,16 @@ hStart |--------|                  |  | hEnd
     for (Iterator iterator = editorCells.iterator(); iterator.hasNext();) {
       EditorCell childEditorCell = (EditorCell) iterator.next();
       CellLayout_Flow cellLayout_flow = getFlowLayout(childEditorCell);
-      if(cellLayout_flow != null) {
+
+      if (NOFLOW.equals(childEditorCell.getLayoutConstraint())) {                
+        childEditorCell.relayout();
+        x = editorCells.getX();
+        y += maxRowHeight;
+        childEditorCell.moveTo(x, y);
+        y += childEditorCell.getHeight();
+        maxRowHeight = 0;
+        myRowCount++;
+      } else if(cellLayout_flow != null) {
         childEditorCell.setX(editorCells.getX());
         childEditorCell.setY(y);
         cellLayout_flow.setWStart(x - editorCells.getX());
@@ -73,18 +84,23 @@ hStart |--------|                  |  | hEnd
           x += childEditorCell.getWidth();
           maxRowHeight = Math.max(maxRowHeight, childEditorCell.getHeight());
         }
-      }
-      else {
+      } else {
         childEditorCell.setX(x);
         childEditorCell.setY(y);
         childEditorCell.relayout();
-        if((x+childEditorCell.getWidth() >= getMaxX() && maxRowHeight != 0) || childEditorCell instanceof EditorCell_NewLine)  {
+
+
+
+        if (x + childEditorCell.getWidth() >= getMaxX() && maxRowHeight != 0)  {
           x = editorCells.getX();
           y += maxRowHeight;
           childEditorCell.moveTo(x, y);
           maxRowHeight = 0;
           myRowCount++;
         }
+
+
+
         x += childEditorCell.getWidth();
         maxRowHeight = Math.max(maxRowHeight, childEditorCell.getHeight());
         maxRightX = Math.max(maxRightX, childEditorCell.getX() + childEditorCell.getWidth());
