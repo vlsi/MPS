@@ -70,7 +70,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
         anchorNode = anchorNode.getParent();
       }
     }
-    myInsertedNode = createNodeToInsert();
+    myInsertedNode = createNodeToInsert(editorContext);
     getOwner().insertChild(anchorNode, getChildRole(), myInsertedNode, insertBefore);
 
     AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
@@ -112,7 +112,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
     return emptyCell;
   }
 
-  public abstract SNode createNodeToInsert();
+  public abstract SNode createNodeToInsert(EditorContext editorContext);
 
   public EditorCell_Collection createCells_Vertical(EditorContext editorContext) {
     return createCells(editorContext, new CellLayout_Vertical());
