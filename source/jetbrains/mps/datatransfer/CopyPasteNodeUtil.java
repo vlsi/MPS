@@ -4,15 +4,11 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.TextUtil;
 import jetbrains.mps.ide.AddRequiredModelImportsDialog;
-import jetbrains.mps.ide.ProjectFrame;
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
-import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
@@ -242,7 +238,7 @@ public class CopyPasteNodeUtil {
   public static SModel copyModelProperties(SModel model) {
     SModelUID modelUID = model.getUID();
     SModel newModel = new SModel(new SModelUID(modelUID.getLongName(), SModelStereotype.INTERNAL_COPY));
-    for (String language : model.getLanguageNamespaces())
+    for (String language : model.getUserDefinedLanguageNamespaces())
       newModel.addLanguage(language);
     for (SModelUID importedModel : model.getImportedModelUIDs())
       newModel.addImportedModel(importedModel);
@@ -294,7 +290,7 @@ public class CopyPasteNodeUtil {
   public static boolean addImportsAndLanguagesToModel(SModel targetModel, SModel modelPropertiesPattern, Set<String> necessaryLanguages, Set<SModelUID> necessaryImports, IOperationContext context) {
     List<String> additionalLanguages = new ArrayList<String>();
     List<SModelUID> additionalModels = new ArrayList<SModelUID>();
-    List<String> languagesFromPattern = new ArrayList<String>(modelPropertiesPattern.getLanguageNamespaces());
+    List<String> languagesFromPattern = new ArrayList<String>(modelPropertiesPattern.getUserDefinedLanguageNamespaces());
     List<SModelUID> importsFromPattern = new ArrayList<SModelUID>(modelPropertiesPattern.getImportedModelUIDs());
 
     importsFromPattern.addAll(necessaryImports);

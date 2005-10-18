@@ -71,7 +71,7 @@ public class CloneModelDialog extends BaseNodeDialog {
         myCloneModelProperties.setLongName(createNameForCopy(longName, mySModel.getStereotype()));
         myCloneModelProperties.setStereotype(mySModel.getStereotype());
 
-        for (String language : mySModel.getLanguageNamespaces()) {
+        for (String language : mySModel.getUserDefinedLanguageNamespaces()) {
           jetbrains.mps.projectLanguage.Language lang = jetbrains.mps.projectLanguage.Language.newInstance(myProjectModel);
           lang.setName(language);
           myCloneModelProperties.addLanguage(lang);

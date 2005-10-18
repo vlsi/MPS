@@ -13,6 +13,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 
 import javax.swing.*;
+import java.util.List;
 
 /**
  * @author Kostik
@@ -30,7 +31,8 @@ public class CreateRootNodeGroup extends ActionGroup {
     final ProjectFrame ide = context.get(ProjectFrame.class);
     IOperationContext operationContext = context.get(IOperationContext.class);
 
-    if (modelDescriptor.getSModel().getLanguageNamespaces().size() == 0) {
+    List<String> visibleLanguageNamespaces = modelDescriptor.getSModel().getVisibleLanguageNamespaces(operationContext.getScope());
+    if (visibleLanguageNamespaces.size() == 0) {
       add(new MPSAction("<NO LANGUAGES>") {
         public void execute(ActionContext context) {
         }
@@ -38,7 +40,7 @@ public class CreateRootNodeGroup extends ActionGroup {
 
     }
 
-    for (final String languageNamespace : modelDescriptor.getSModel().getLanguageNamespaces()) {
+    for (final String languageNamespace : visibleLanguageNamespaces) {
       int addCount = 0;
       ActionGroup langRootsGroup = new ActionGroup(languageNamespace) {
         public Icon getIcon() {

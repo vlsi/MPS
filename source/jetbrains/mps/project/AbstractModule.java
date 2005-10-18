@@ -75,10 +75,12 @@ public abstract class AbstractModule implements IModule {
   }
 
   public List<Language> getVisibleLanguages() {
-    return new ArrayList<Language>(getAllDependOnModules(Language.class));
+    List<Language> result = new ArrayList<Language>(getAllDependOnModules(Language.class));
+    result.addAll(MPSModuleRepository.getInstance().getLanguages(BootstrapLanguages.getInstance()));
+    return result;
   }
 
-  private List<IModule> getOwnModules() {
+  public final List<IModule> getOwnModules() {
     List<IModule> modules = new LinkedList<IModule>(MPSModuleRepository.getInstance().getModules(this));
     return modules;
   }
@@ -137,7 +139,7 @@ public abstract class AbstractModule implements IModule {
       }
     }
 
-    Set<IModule> dependOnModules = getAllDependOnModules();
+    Set<IModule> dependOnModules = getAllVisibleModules();
     for (IModule module : dependOnModules) {
       List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptors(modelName, module);
       for (SModelDescriptor descriptor : list) {
@@ -152,20 +154,20 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
-  private Set<IModule> getAllDependOnModules() {
-    return getAllDependOnModules(IModule.class);
+  public Set<IModule> getAllVisibleModules() {
+    Set<IModule> result = getAllDependOnModules(IModule.class);
+    result.addAll(MPSModuleRepository.getInstance().getModules(BootstrapLanguages.getInstance()));
+    return result;
   }
 
-  private <T extends IModule> Set<T> getAllDependOnModules(Class<T> cls) {
+  public <T extends IModule> Set<T> getAllDependOnModules(Class<T> cls) {
     Set<T> dependOnModules = new HashSet<T>();
-  //  if (cls.isInstance(this)) dependOnModules.add((T) this);
     collectAllDependOnModules(this, dependOnModules, cls);
-  //  dependOnModules.remove(this);
     return dependOnModules;
   }
 
   private <T extends IModule> void collectAllDependOnModules(IModule dependentModule, Set<T> modules, Class<T> cls) {
-    List<IModule> dependOnModules = dependentModule.getDependOnModules();
+    List<IModule> dependOnModules = dependentModule.getOwnModules();
     for (IModule dependOnModule : dependOnModules) {
       if (cls.isInstance(dependOnModule) && !modules.contains(dependOnModule)) {
         modules.add((T) dependOnModule);
@@ -253,7 +255,7 @@ public abstract class AbstractModule implements IModule {
 
   public List<SModelDescriptor> getModelDescriptors() {
     Set<SModelDescriptor> modelDescriptors = new HashSet<SModelDescriptor>(getOwnModelDescriptors());
-    for (IModule module : getAllDependOnModules()) {
+    for (IModule module : getAllVisibleModules()) {
       modelDescriptors.addAll(module.getOwnModelDescriptors());
     }
     return new ArrayList<SModelDescriptor>(modelDescriptors);

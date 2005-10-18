@@ -363,7 +363,7 @@ public class ModelPersistence {
     document.setRootElement(rootElement);
 
     // languages
-    for (String languageNamespace : sourceModel.getLanguageNamespaces()) {
+    for (String languageNamespace : sourceModel.getUserDefinedLanguageNamespaces()) {
       Element languageElem = new Element(LANGUAGE);
       languageElem.setAttribute(NAMESPACE, languageNamespace);
       rootElement.addContent(languageElem);

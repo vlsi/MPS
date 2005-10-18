@@ -6,6 +6,7 @@ import jetbrains.mps.ide.command.ICommandListener;
 import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
+import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.externalResolve.ExternalResolver;
@@ -333,6 +334,18 @@ public class SModel implements Iterable<SNode> {
   }
 
   public List<Language> getLanguages(IScope scope) {
+    List<Language> result = new ArrayList<Language>(getUserDefinedLanguages(scope));
+    Set<Language> additionalLanguages = new HashSet<Language>();
+    Set<Language> visibleLanguages = new HashSet<Language>(scope.getVisibleLanguages());
+    for (Language l : result) {
+      additionalLanguages.addAll(l.getAllDependOnModules(Language.class));
+    }
+    additionalLanguages.retainAll(visibleLanguages);
+    result.addAll(additionalLanguages);
+    return result;
+  }
+
+  public List<Language> getUserDefinedLanguages(IScope scope) {
     ArrayList<Language> languages = new ArrayList<Language>();
     for (String languageNamespace : myLanguages) {
       Language language = scope.getLanguage(languageNamespace);
@@ -356,8 +369,17 @@ public class SModel implements Iterable<SNode> {
     return null;
   }
 
-  public List<String> getLanguageNamespaces() {
+  public List<String> getUserDefinedLanguageNamespaces() {
     return new ArrayList<String>(myLanguages);
+  }
+
+  public List<String> getVisibleLanguageNamespaces(IScope scope) {
+    List<Language> languages = getLanguages(scope);
+    List<String> result = new ArrayList<String>(languages.size());
+    for (Language l : languages) {
+      result.add(l.getNamespace());
+    }
+    return result;
   }
 
   public boolean hasImportedModel(SModelUID modelUID) {
