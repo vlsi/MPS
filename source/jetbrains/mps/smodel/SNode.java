@@ -488,6 +488,13 @@ public abstract class SNode implements Cloneable {
   }
 
 
+  public<N extends SNode> N getParent(Class<N> cls) {
+    if (cls.isInstance(this)) return (N) this;
+    if (getParent() == null) return null;
+    return getParent().getParent(cls);
+  }
+
+
   public SReference addReferent(String role, SNode target) {
     SReference reference = SReference.newInstance(role, this, target);
     insertReferenceAt(myReferences.size(), reference);
