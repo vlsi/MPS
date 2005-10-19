@@ -285,6 +285,7 @@ public abstract class SNode implements Cloneable {
   }
 
   public void removeChild(SNode child) {
+    if (!myChildren.contains(child)) return;
     removeChildAt(myChildren.indexOf(child));
   }
 
