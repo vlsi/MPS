@@ -128,7 +128,7 @@ hStart |--------|                  |  | hEnd
   }
 
   public EditorCell findNearestRow(EditorCell_Collection editorCells, int y) {
-    return null;
+    return findNearestCell(editorCells, 0, y, false);
   }
 
   public EditorCell findCell(EditorCell_Collection editorCells, int x, int y) {

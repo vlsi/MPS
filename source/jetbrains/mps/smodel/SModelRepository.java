@@ -45,7 +45,7 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public List<SModelDescriptor> getAllModelDescriptors() {
-    return Collections.unmodifiableList(myModelDescriptors);
+    return new ArrayList<SModelDescriptor>(myModelDescriptors);
   }
 
   public List<SModelDescriptor> getModelDescriptorsByModelName(String modelName) {
