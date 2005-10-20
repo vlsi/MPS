@@ -20,9 +20,9 @@ public class NodeEditorActions {
       //else return firstCell;
     }
 
-    EditorCell_Collection prev_parentCell = null;
+    EditorCell_Collection prev_parentCell = parentCell;
 
-    while (parentCell != null && parentCell.getCellLayout() instanceof CellLayout_Horizontal && parentCell.getCellLayout() instanceof CellLayout_Flow) {
+    while (parentCell != null && (parentCell.getCellLayout() instanceof CellLayout_Horizontal || parentCell.getCellLayout() instanceof CellLayout_Flow)) {
       prev_parentCell = parentCell;
       parentCell = parentCell.getParent();
     }
