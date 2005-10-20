@@ -44,7 +44,7 @@
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
     <option name="CLEAR_OUTPUT_DIRECTORY" value="true" />
-    <option name="DEPLOY_AFTER_MAKE" value="0" />
+    <option name="DEPLOY_AFTER_MAKE" value="1" />
     <excludeFromCompile>
       <directory url="file://$PROJECT_DIR$/source_gen/jetbrains/mps/transformation/baseLanguage" includeSubdirectories="false" />
       <directory url="file://$PROJECT_DIR$/source_gen/jetbrains/mps/transformation" includeSubdirectories="false" />
@@ -221,7 +221,7 @@
       <module fileurl="file://$PROJECT_DIR$/MPS.iml" filepath="$PROJECT_DIR$/MPS.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSPlugin.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSPlugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPSWiki/MPSWiki.iml" filepath="$PROJECT_DIR$/MPSWiki/MPSWiki.iml" group="DataLanguages" />
-      <module fileurl="file://$PROJECT_DIR$/MPSWiki/webapp/MPSWiki_WebApp.iml" filepath="$PROJECT_DIR$/MPSWiki/webapp/MPSWiki_WebApp.iml" group="DataLanguages" />
+      <module fileurl="file://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/MPSWiki_WebApp.iml" filepath="$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/MPSWiki_WebApp.iml" group="DataLanguages" />
       <module fileurl="file://$PROJECT_DIR$/projects/SubstituteActionTutorial/SubstituteActionTutorial.iml" filepath="$PROJECT_DIR$/projects/SubstituteActionTutorial/SubstituteActionTutorial.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" filepath="$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" group="DataLanguages" />
       <module fileurl="file://$PROJECT_DIR$/projects/TheSimplestLanguage/TheSimplestLanguage.iml" filepath="$PROJECT_DIR$/projects/TheSimplestLanguage/TheSimplestLanguage.iml" group="Projects" />
