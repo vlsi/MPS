@@ -400,6 +400,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     //    doChoose(selectedNode);
     JPopupMenu popupMenu = new JPopupMenu();
     ActionGroup group = ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS);
+    if (group == null) return;
 
     List<SNode> selectedNodes = myNodeRangeSelection.getNodes();
     ActionContext context = new ActionContext(getOperationContext(), selectedNode, selectedNodes);
@@ -942,9 +943,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
     myRootCell.paint(g);
-    if (mySelectedCell != null) {
+ /*   if (mySelectedCell != null) {
       mySelectedCell.paint(g);
-    }
+    }*/
   }
 
   public Dimension getPreferredSize() {

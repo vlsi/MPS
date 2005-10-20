@@ -66,6 +66,7 @@ hStart |--------|                  |  | hEnd
         childEditorCell.moveTo(x, y);
         y += childEditorCell.getHeight();
         maxRowHeight = 0;
+        maxRightX = Math.max(maxRightX, childEditorCell.getX() + childEditorCell.getWidth());
         myRowCount++;
       } else if(cellLayout_flow != null) {
         childEditorCell.setX(editorCells.getX());
