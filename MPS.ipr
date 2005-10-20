@@ -241,9 +241,26 @@
     <option name="ADDITIONAL_OPTIONS_STRING" value="" />
   </component>
   <component name="libraryTable">
-    <library name="MPS">
+    <library name="XMLRPC">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/mps.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/xmlrpc-1.2-b1.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="XStream">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/xstream.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/xstream-src.zip!/" />
+      </SOURCES>
+    </library>
+    <library name="JUnit">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/junit.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/junit-src.zip!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
