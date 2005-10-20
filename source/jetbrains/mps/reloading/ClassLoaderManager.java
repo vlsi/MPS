@@ -4,6 +4,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjects;
+import jetbrains.mps.util.PathManager;
 
 import java.io.File;
 import java.net.URL;
@@ -112,8 +113,10 @@ public class ClassLoaderManager {
   }
 
   public IClassPathItem getMPSPath() {
-    if (new File("classes").exists()) return new FileClassPathItem("classes");
-    if (new File("lib" + File.separatorChar + "mps.jar").exists()) return new JarFileClassPathItem(new File("lib" + File.separatorChar + "mps.jar"));
+    String classesPath = PathManager.getHomePath() + File.separator + "classes";
+    if (new File(classesPath).exists()) return new FileClassPathItem(classesPath);
+    String mpsJarPath = PathManager.getHomePath() + File.separator + "lib" + File.separatorChar + "mps.jar";
+    if (new File(mpsJarPath).exists()) return new JarFileClassPathItem(new File(mpsJarPath));
 
     LOG.error("Can't find mps classpath");
 

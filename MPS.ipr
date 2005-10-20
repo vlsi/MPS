@@ -246,7 +246,9 @@
         <root url="jar://$PROJECT_DIR$/lib/xmlrpc-1.2-b1.jar!/" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/xmlrpc-1.2-b1-src.zip.zip!/" />
+      </SOURCES>
     </library>
     <library name="XStream">
       <CLASSES>

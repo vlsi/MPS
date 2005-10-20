@@ -1,5 +1,7 @@
 package jetbrains.mps.reloading;
 
+import jetbrains.mps.logging.Logger;
+
 import java.net.URL;
 import java.util.List;
 import java.util.ArrayList;
@@ -10,9 +12,12 @@ import java.util.HashSet;
  * @author Kostik
  */
 public class CompositeClassPathItem implements IClassPathItem {
+  private static final Logger LOG = Logger.getLogger(CompositeClassPathItem.class);
+
   private List<IClassPathItem> myChildren = new ArrayList<IClassPathItem>();
 
   public void add(IClassPathItem item) {
+    LOG.assertLog(item != null);
     myChildren.add(item);
   }
 
