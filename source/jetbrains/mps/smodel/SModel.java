@@ -501,6 +501,10 @@ public class SModel implements Iterable<SNode> {
     return node;
   }
 
+  public boolean containsNode(String id) {
+    return myIdToNodeMap.containsKey(id);
+  }
+
   public SNode getNodeByExtResolveInfo(String extResolveInfo) {
     if (!isExternallyResolvable()) return null;
     if (ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) return null;
