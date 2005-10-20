@@ -262,10 +262,48 @@
     <library name="JUnit">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/junit.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/junit-src.zip!/" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/junit-src.zip!/" />
+      </SOURCES>
+    </library>
+    <library name="ASM">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/asm.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/asm-src.zip!/" />
+      </SOURCES>
+    </library>
+    <library name="JDOM">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/jdom-1.0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/jdom-1.0-src.zip!/" />
+      </SOURCES>
+    </library>
+    <library name="JavaSVN">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/javasvn.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jsch.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/javasvnsrc.zip!/" />
+      </SOURCES>
+    </library>
+    <library name="Log4j">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/log4j-1.2.9.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/log4j-1.2.9-src.zip!/" />
+      </SOURCES>
     </library>
   </component>
   <component name="org.tmatesoft.tmate.projectComponent" />
