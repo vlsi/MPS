@@ -11,10 +11,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.IModule;
 
 import javax.swing.*;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -23,7 +20,7 @@ import java.util.Map;
  * Time: 5:20:32 PM
  * To change this template use File | Settings | File Templates.
  */
-class SModelsSubtree{
+class SModelsSubtree {
   static void create(MPSTreeNode rootTreeNode, IOperationContext operationContext) {
 
     List<MPSTreeNode> list = new LinkedList<MPSTreeNode>();
@@ -45,7 +42,8 @@ class SModelsSubtree{
     }
 
     // create "root" for each stereotype
-    for (String stereotype : stereotypes.keySet()) {
+    Set<String> sortedStereotypes = new TreeSet<String>(stereotypes.keySet());
+    for (String stereotype : sortedStereotypes) {
       List<SModelDescriptor> modelDescriptors = stereotypes.get(stereotype);
       TextTreeNode stereotypedModelsNode = new ModelsGroupTreeNode("<" + stereotype + ">", operationContext);
       list.add(stereotypedModelsNode);
@@ -63,18 +61,20 @@ class SModelsSubtree{
     public ModelsGroupTreeNode(String text, IOperationContext context) {
       super(text, context);
     }
+
     public Icon getIcon(boolean expanded) {
       return Icons.PROJECT_MODELS_ICON;
     }
+
     public JPopupMenu getPopupMenu() {
-       JPopupMenu result = new JPopupMenu();
+      JPopupMenu result = new JPopupMenu();
 
       ActionContext context = new ActionContext(getOperationContext());
       IModule module = getOperationContext().getModule();
       if (module instanceof Solution) {
         Solution solution = (Solution) module;
         context.put(Solution.class, solution);
-        if (toString().equals("<"+ SModelStereotype.JAVA_STUB +">")) {
+        if (toString().equals("<" + SModelStereotype.JAVA_STUB + ">")) {
           ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_STUBS_ACTIONS).add(result, context);
         } else {
           ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_MODELS_ACTIONS).add(result, context);
