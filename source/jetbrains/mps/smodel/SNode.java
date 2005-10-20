@@ -748,7 +748,7 @@ public abstract class SNode implements Cloneable {
 
   private static long counter = 0;
 
-  public String generateUniqueId() {
+  public static String generateUniqueId() {
     long id = System.currentTimeMillis() + counter;
     counter++;
     return (new Long(id)).toString();

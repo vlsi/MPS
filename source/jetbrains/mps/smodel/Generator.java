@@ -45,6 +45,10 @@ public class Generator extends AbstractModule {
     return myGeneratorDescriptor.getName();
   }
 
+  public String getNamespace() {
+    return myGeneratorDescriptor.getNamespace();
+  }
+
   public Language getSourceLanguage() {
     return mySourceLanguage;
   }
