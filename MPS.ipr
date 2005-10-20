@@ -216,20 +216,20 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/projects/Epigram/Epigram.iml" filepath="$PROJECT_DIR$/projects/Epigram/Epigram.iml" />
-      <module fileurl="file://$PROJECT_DIR$/projects/KeyMapTutorial/KeyMapTutorial.iml" filepath="$PROJECT_DIR$/projects/KeyMapTutorial/KeyMapTutorial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/projects/Epigram/Epigram.iml" filepath="$PROJECT_DIR$/projects/Epigram/Epigram.iml" group="Projects" />
+      <module fileurl="file://$PROJECT_DIR$/projects/KeyMapTutorial/KeyMapTutorial.iml" filepath="$PROJECT_DIR$/projects/KeyMapTutorial/KeyMapTutorial.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/MPS.iml" filepath="$PROJECT_DIR$/MPS.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSPlugin.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSPlugin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/MPSWiki/MPSWiki.iml" filepath="$PROJECT_DIR$/MPSWiki/MPSWiki.iml" />
-      <module fileurl="file://$PROJECT_DIR$/MPSWiki/webapp/MPSWiki_WebApp.iml" filepath="$PROJECT_DIR$/MPSWiki/webapp/MPSWiki_WebApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/projects/SubstituteActionTutorial/SubstituteActionTutorial.iml" filepath="$PROJECT_DIR$/projects/SubstituteActionTutorial/SubstituteActionTutorial.iml" />
-      <module fileurl="file://$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" filepath="$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" />
-      <module fileurl="file://$PROJECT_DIR$/projects/TheSimplestLanguage/TheSimplestLanguage.iml" filepath="$PROJECT_DIR$/projects/TheSimplestLanguage/TheSimplestLanguage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MPSWiki/MPSWiki.iml" filepath="$PROJECT_DIR$/MPSWiki/MPSWiki.iml" group="DataLanguages" />
+      <module fileurl="file://$PROJECT_DIR$/MPSWiki/webapp/MPSWiki_WebApp.iml" filepath="$PROJECT_DIR$/MPSWiki/webapp/MPSWiki_WebApp.iml" group="DataLanguages" />
+      <module fileurl="file://$PROJECT_DIR$/projects/SubstituteActionTutorial/SubstituteActionTutorial.iml" filepath="$PROJECT_DIR$/projects/SubstituteActionTutorial/SubstituteActionTutorial.iml" group="Projects" />
+      <module fileurl="file://$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" filepath="$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" group="DataLanguages" />
+      <module fileurl="file://$PROJECT_DIR$/projects/TheSimplestLanguage/TheSimplestLanguage.iml" filepath="$PROJECT_DIR$/projects/TheSimplestLanguage/TheSimplestLanguage.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/TypeTest/TypeTest.iml" filepath="$PROJECT_DIR$/projects/TypeTest/TypeTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/projects/agreement/agreement.iml" filepath="$PROJECT_DIR$/projects/agreement/agreement.iml" />
-      <module fileurl="file://$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" />
-      <module fileurl="file://$PROJECT_DIR$/projects/log4j/log4j.iml" filepath="$PROJECT_DIR$/projects/log4j/log4j.iml" />
-      <module fileurl="file://$PROJECT_DIR$/projects/log4j2/log4j2.iml" filepath="$PROJECT_DIR$/projects/log4j2/log4j2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/projects/agreement/agreement.iml" filepath="$PROJECT_DIR$/projects/agreement/agreement.iml" group="Projects" />
+      <module fileurl="file://$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" group="Projects" />
+      <module fileurl="file://$PROJECT_DIR$/projects/log4j/log4j.iml" filepath="$PROJECT_DIR$/projects/log4j/log4j.iml" group="Projects" />
+      <module fileurl="file://$PROJECT_DIR$/projects/log4j2/log4j2.iml" filepath="$PROJECT_DIR$/projects/log4j2/log4j2.iml" group="Projects" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="jdk 1.5" />
