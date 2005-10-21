@@ -5,7 +5,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.Model;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
-import jetbrains.mps.ide.BootstrapLanguages;
 
 import java.util.List;
 import java.util.LinkedList;
@@ -39,18 +38,18 @@ public class Generator extends AbstractModule {
     return myGeneratorDescriptor.getName();
   }
 
-  public String getNamespace() {
+  public String getModuleUID() {
    // return mySourceLanguage.getNamespace() + "->" + getTargetLanguageName();//this wannabe key is mutable!!!
-    String namespace = myGeneratorDescriptor.getNamespace();
+    String namespace = myGeneratorDescriptor.getGeneratorUID();
     if (namespace == null) {
-      myGeneratorDescriptor.setNamespace(generateGeneratorNamespace(mySourceLanguage));
+      myGeneratorDescriptor.setGeneratorUID(generateGeneratorUID(mySourceLanguage));
       mySourceLanguage.save();
     }
-    return myGeneratorDescriptor.getNamespace();
+    return myGeneratorDescriptor.getGeneratorUID();
   }
 
-  public static String generateGeneratorNamespace(Language sourceLanguage) {
-    return sourceLanguage.getNamespace() + "#" + SNode.generateUniqueId();
+  public static String generateGeneratorUID(Language sourceLanguage) {
+    return sourceLanguage.getModuleUID() + "#" + SNode.generateUniqueId();
   }
 
   public Language getSourceLanguage() {
@@ -85,7 +84,7 @@ public class Generator extends AbstractModule {
 
   public String toString() {
     StringBuffer sb = new StringBuffer(this.getClass().getName());
-    sb.append('(').append(mySourceLanguage.getNamespace()).append(')');
+    sb.append('(').append(mySourceLanguage.getModuleUID()).append(')');
     sb.append("->").append(getTargetLanguageName());
     return sb.toString();
   }
@@ -95,7 +94,7 @@ public class Generator extends AbstractModule {
   }
 
   public Language getLanguage(String languageNamespace) {
-    if (mySourceLanguage.getNamespace().equals(languageNamespace)) {
+    if (mySourceLanguage.getModuleUID().equals(languageNamespace)) {
       return mySourceLanguage;
     }
     Set<IModule> modulesToSkip = new HashSet<IModule>();

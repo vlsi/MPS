@@ -2,7 +2,6 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.projectLanguage.PersistenceUtil;
 import jetbrains.mps.projectLanguage.SolutionDescriptor;
@@ -152,7 +151,7 @@ public class Solution extends AbstractModule {
     return text;
   }
 
-  public String getNamespace() {
+  public String getModuleUID() {
     return myDescriptorFile.getAbsolutePath();
   }
 }

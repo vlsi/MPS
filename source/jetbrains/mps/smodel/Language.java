@@ -192,6 +192,10 @@ public class Language extends AbstractModule {
     return myGenerators;
   }
 
+  public String getModuleUID() {
+    return getNamespace();
+  }
+
   public String getNamespace() {
     return getLanguageDescriptor().getNamespace();
   }
@@ -418,7 +422,7 @@ public class Language extends AbstractModule {
   }
 
   public Language getLanguage(String languageNamespace) {
-    if (getNamespace().equals(languageNamespace)) {
+    if (getModuleUID().equals(languageNamespace)) {
       return this;
     }
     return super.getLanguage(languageNamespace);

@@ -37,7 +37,7 @@ public abstract class AbstractModule implements IModule {
     return getModuleDescriptor().getModel().getModelDescriptor();
   }
 
-  public String getNamespace() {
+  public String getModuleUID() {
     return toString();
   }
 
@@ -58,7 +58,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   private static Language getLanguage_internal(String languageNamespace, Set<IModule> processedModules, IModule dependentModule) {
-    if (dependentModule instanceof Language && dependentModule.getNamespace().equals(languageNamespace)) {
+    if (dependentModule instanceof Language && dependentModule.getModuleUID().equals(languageNamespace)) {
       return (Language) dependentModule;
     }
     Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, dependentModule);
@@ -291,47 +291,4 @@ public abstract class AbstractModule implements IModule {
     SModelRepository.getInstance().readModelDescriptors(getModelRoots(), this);
   }
 
-/*  public int hashCode() {
-    if (getNamespace() == null) return 0;
-    return getNamespace().hashCode();
-  }
-
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (!(o instanceof AbstractModule)) return false;
-    String namespace = ((AbstractModule) o).getNamespace();
-    return (namespace != null && namespace.equals(this.getNamespace()));
-  }
-
-  protected static ModelDescriptorAndOwner createProjectDescriptorWithFakeOwner() {
-    //hashCode and equals methods of module use its descriptor and descriptor file,
-    // but it's not loaded yet - so we register a fake model owner to load it.
-    ModelOwner owner = new ModelOwner() {};
-    SModelDescriptor descriptorProjectModel = ProjectModelDescriptor.createDescriptorFor(owner);
-    ModelDescriptorAndOwner descriptorAndOwner = new ModelDescriptorAndOwner(descriptorProjectModel, owner);
-    return descriptorAndOwner;
-  }
-
-  protected static void releaseFakeOwner(SModelDescriptor descriptorForProjectModel, IModule module, ModelOwner fakeModelOwner) {
-    //Module descriptor created and applied to module: it's no more use in fakeModelOwner
-    SModelRepository.getInstance().addOwnerForDescriptor(descriptorForProjectModel, module);
-    SModelRepository.getInstance().unRegisterModelDescriptor(descriptorForProjectModel, fakeModelOwner);
-  }
-
-  public static class ModelDescriptorAndOwner {
-    private SModelDescriptor myModelDescriptor;
-    private ModelOwner myModelOwner;
-    public ModelDescriptorAndOwner(SModelDescriptor descriptor, ModelOwner owner) {
-      this.myModelDescriptor = descriptor;
-      this.myModelOwner = owner;
-    }
-
-    public SModelDescriptor getModelDescriptor() {
-      return myModelDescriptor;
-    }
-
-    public ModelOwner getModelOwner() {
-      return myModelOwner;
-    }
-  }*/
 }

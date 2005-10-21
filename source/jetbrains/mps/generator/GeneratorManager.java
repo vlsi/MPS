@@ -79,7 +79,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     final GeneratorConfiguration conf = new GeneratorConfiguration(model);
     tmpModelDescriptor.getSModel().runLoadingAction(new Runnable() {
       public void run() {
-        conf.setName("Generate " + language.getNamespace() + " language.");
+        conf.setName("Generate " + language.getModuleUID() + " language.");
         conf.setOutputPath(language.getSourceDir().getAbsolutePath());
         conf.addCommand(createCommand(model, "jetbrains.mps.bootstrap.structureLanguage", "jetbrains.mps.baseLanguage"));
         conf.addCommand(createCommand(model, "jetbrains.mps.bootstrap.editorLanguage", "jetbrains.mps.baseLanguage"));

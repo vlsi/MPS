@@ -97,7 +97,7 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
 
     public Language getLanguage(String languageNamespace) {
       if (myInvocationModule instanceof Language) {
-        if (languageNamespace.equals(myInvocationModule.getNamespace())) {
+        if (languageNamespace.equals(myInvocationModule.getModuleUID())) {
           return (Language) myInvocationModule;
         }
       }

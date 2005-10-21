@@ -6,7 +6,6 @@ import jetbrains.mps.ide.command.ICommandListener;
 import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
-import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.externalResolve.ExternalResolver;
@@ -294,7 +293,7 @@ public class SModel implements Iterable<SNode> {
 
   public void addLanguage(Language language) {
     assert language != null;
-    addLanguage(language.getNamespace());
+    addLanguage(language.getModuleUID());
   }
 
   public void addLanguage(String languageNamespace) {
@@ -377,7 +376,7 @@ public class SModel implements Iterable<SNode> {
     List<Language> languages = getLanguages(scope);
     List<String> result = new ArrayList<String>(languages.size());
     for (Language l : languages) {
-      result.add(l.getNamespace());
+      result.add(l.getModuleUID());
     }
     return result;
   }

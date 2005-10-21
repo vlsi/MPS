@@ -14,7 +14,6 @@ import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.ModuleContext;
 
 import javax.swing.*;
@@ -193,7 +192,7 @@ public class HierarchyView extends DefaultTool {
       if (getConceptDeclaration() == null) return "null";
       Language language = SModelUtil.getDeclaringLanguage(getConceptDeclaration(), getOperationContext().getScope());
       String namespace;
-      if (language == null) namespace = " ? "; else namespace = language.getNamespace();
+      if (language == null) namespace = " ? "; else namespace = language.getModuleUID();
       return getConceptDeclaration().getName() + "  (" + namespace + ")";
     }
 

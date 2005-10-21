@@ -62,7 +62,7 @@ class GeneratorTreeNode extends MPSTreeNode {
     // return toString();
     Generator generator = getGenerator();
     if (generator == null) return "null";
-    return generator.getNamespace();
+    return generator.getModuleUID();
   }
 
 }

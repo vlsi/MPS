@@ -208,7 +208,7 @@ public class EditorManager {
     String conceptName = NameUtil.shortNameFromLongName(NameUtil.nodeConceptFQName(node));
     ConceptDeclaration conceptDeclaration = language.findConceptDeclaration(conceptName);
     if (conceptDeclaration == null) {
-      LOG.error("couldn't find concept " + conceptName + " in language " + language.getNamespace());
+      LOG.error("couldn't find concept " + conceptName + " in language " + language.getModuleUID());
       return null;
     }
 

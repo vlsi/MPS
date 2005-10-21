@@ -41,8 +41,8 @@ public class SortUtil {
         if (o1 == o2) {
           return 0;
         }
-        String name1 = ((IModule) o1).getNamespace();
-        String name2 = ((IModule) o2).getNamespace();
+        String name1 = ((IModule) o1).getModuleUID();
+        String name2 = ((IModule) o2).getModuleUID();
         if (name1 == null) name1 = "";
         if (name2 == null) name2 = "";
         return name1.compareTo(name2);

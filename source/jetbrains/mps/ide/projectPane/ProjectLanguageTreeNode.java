@@ -6,7 +6,6 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
@@ -47,7 +46,7 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
   }
 
   protected String getNodeIdentifier() {
-    return myLanguage.getNamespace();
+    return myLanguage.getModuleUID();
   }
 
   public JPopupMenu getPopupMenu() {
@@ -61,9 +60,9 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
 
   public String toString() {
     if (myLanguage.isUpToDate()) {
-      return "<html>" + myLanguage.getNamespace() + "  <b>(up-to-date)</b>";
+      return "<html>" + myLanguage.getModuleUID() + "  <b>(up-to-date)</b>";
     } else {
-      return "<html>" + myLanguage.getNamespace() + "  <b>(generation required)</b>";
+      return "<html>" + myLanguage.getModuleUID() + "  <b>(generation required)</b>";
     }
   }
 

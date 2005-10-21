@@ -87,7 +87,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
 
     String message;
     if (languageEditor == null) {
-      message = "Language \"" + language.getNamespace() + "\" has no editor model.\n" +
+      message = "Language \"" + language.getModuleUID() + "\" has no editor model.\n" +
               "Create new editor model?";
     } else {
       message = "Concept \"" + NameUtil.nodeFQName(node) + "\" has no editor.\n" +
@@ -166,7 +166,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     File languageDir = (new File(fileModelDescriptor.getFileName())).getParentFile();
     String path = languageDir.getAbsolutePath();
 
-    SModelDescriptor editorModelDescriptor = language.createModel(new SModelUID(language.getNamespace(), "editor", ""), path, language.getNamespace());
+    SModelDescriptor editorModelDescriptor = language.createModel(new SModelUID(language.getModuleUID(), "editor", ""), path, language.getModuleUID());
     SModel editorModel = editorModelDescriptor.getSModel();
     editorModel.addLanguage(BootstrapLanguages.getInstance().getEditorLanguage());
     editorModelDescriptor.save();
