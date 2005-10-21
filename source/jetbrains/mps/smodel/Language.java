@@ -438,6 +438,11 @@ public class Language extends AbstractModule {
           if (languageAspectStatus.isLanguageAspect()) return languageAspectStatus;
           if (languageAspectStatus.isAccessoryModel()) accessoryStatus = languageAspectStatus;
         }
+        if (modelOwner instanceof Generator) {
+          LanguageAspectStatus languageAspectStatus = getLanguageAspectStatus(((Generator)modelOwner).getSourceLanguage(), modelDescriptor);
+          if (languageAspectStatus.isLanguageAspect()) return languageAspectStatus;
+          if (languageAspectStatus.isAccessoryModel()) accessoryStatus = languageAspectStatus;
+        }
       }
     } catch (ConcurrentModificationException e) {
       e.printStackTrace();
