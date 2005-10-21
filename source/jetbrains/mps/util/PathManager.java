@@ -36,6 +36,10 @@ public class PathManager {
     ourHomePath = null;
   }
 
+  public static void setHomePath(String newHomePath) {
+    ourHomePath = newHomePath;
+  }
+
   public static String getHomePath() {
     if (ourHomePath != null) return ourHomePath;
 
