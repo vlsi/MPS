@@ -6,6 +6,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleOwner;
 
 import javax.swing.*;
 import java.util.HashSet;
@@ -42,10 +43,8 @@ class ProjectModulesPoolTreeNode extends TextTreeNode {
   }
 
   private List<IModule> collectModules() {
-    Set<IModule> modules = new HashSet<IModule>(MPSModuleRepository.getInstance().getModules(myProject));
-    for (IModule module : modules) {
-      collectModules(module, modules);
-    }
+    Set<IModule> modules = new HashSet<IModule>();
+    collectModules(myProject, modules);
     List<Language> bootstrapLanguages = BootstrapLanguages.getInstance().getLanguages();
     for (Language language : bootstrapLanguages) {
       if (!modules.contains(language)) {
@@ -56,12 +55,12 @@ class ProjectModulesPoolTreeNode extends TextTreeNode {
     return SortUtil.sortModules(new LinkedList<IModule>(modules));
   }
 
-  private void collectModules(IModule dependentModule, Set<IModule> modules) {
-    List<IModule> dependOnModules = MPSModuleRepository.getInstance().getModules(dependentModule);
-    for (IModule dependOnModule : dependOnModules) {
-      if (!modules.contains(dependOnModule)) {
-        modules.add(dependOnModule);
-        collectModules(dependOnModule, modules);
+  private void collectModules(MPSModuleOwner moduleOwner, Set<IModule> modules) {
+    List<IModule> ownedModules = MPSModuleRepository.getInstance().getModules(moduleOwner);
+    for (IModule ownedModule : ownedModules) {
+      if (!modules.contains(ownedModule)) {
+        modules.add(ownedModule);
+        collectModules(ownedModule, modules);
       }
     }
   }
