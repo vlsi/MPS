@@ -53,8 +53,10 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
   private boolean myCompileOnGeneration = true;
   private boolean mySaveTransientModels;
+  private MPSProject myProject;
 
-  public GeneratorManager() {
+  public GeneratorManager(MPSProject project) {
+    myProject = project;
   }
 
   public void read(Element element, MPSProject project) {
@@ -116,11 +118,11 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     return command;
   }
 
-  private void addMessage(final Message msg, final IOperationContext operationContext) {
+  private void addMessage(final Message msg) {
     ThreadUtils.runInEventDispathThread(new Runnable() {
       public void run() {
         try {
-          operationContext.getComponent(MessageView.class).add(msg);
+          myProject.getComponent(MessageView.class).add(msg);
         } catch (Exception e) {
           e.printStackTrace();
         }
@@ -128,18 +130,18 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     });
   }
 
-  private void clearMessages(final IOperationContext operationContext) {
+  private void clearMessages() {
     ThreadUtils.runInEventDispathThread(new Runnable() {
       public void run() {
-        operationContext.getComponent(MessageView.class).clear();
+        myProject.getComponent(MessageView.class).clear();
       }
     });
   }
 
-  private void showMessageView(final IOperationContext operationContext) {
+  private void showMessageView() {
     ThreadUtils.runInEventDispathThread(new Runnable() {
       public void run() {
-        operationContext.getComponent(MessageView.class).show();
+        myProject.getComponent(MessageView.class).show();
       }
     });
   }
@@ -192,8 +194,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         progress.addText("Compilation in IDEA on generation is turned off");
       }
 
-      clearMessages(invocationContext);
-      addMessage(new Message(MessageKind.INFORMATION, null, "Generating configuration " + configuration.getName()), invocationContext);
+      clearMessages();
+      addMessage(new Message(MessageKind.INFORMATION, null, "Generating configuration " + configuration.getName()));
 
       if (isIdeaPresent && myCompileOnGeneration) {
         progress.addText("Compiling in IntelliJ IDEA...");
@@ -203,6 +205,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       }
 
 
+      boolean generationFailed = false;
+      boolean generationCancelled = false;
       for (GeneratorConfigurationCommand cmd : CollectionUtil.iteratorAsIterable(configuration.commands())) {
         LOG.debug("Executing command : " + cmd.getSourceLanguage().getName() + " -> " + cmd.getTargetLanguage().getName());
 
@@ -216,36 +220,34 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         // todo: get rid of hardcoded "default" generator class
         if (generatorClass == null) generatorClass = DefaultTemplateGenerator.class.getName();
 
-        boolean generationOK = true;
+        boolean generationByCommandFailed = false;
         SModelDescriptor templatesModel = loadTemplatesModel(generator, generatorContext);
         for (SModelDescriptor model : modelsWithLanguage) {
           try {
-            generationOK = generationOK &&
-                    generate_internal(model, templatesModel, generatorContext, generatorClass, configuration.getOutputPath(), progress, generateText);
-            addMessage(new Message(MessageKind.INFORMATION, model.getModelUID() + " generated"), invocationContext);
+            boolean genOK = generate_internal(model, templatesModel, generatorContext, generatorClass, configuration.getOutputPath(), progress, generateText);
+            generationByCommandFailed = generationByCommandFailed || !genOK;
+            addMessage(new Message(MessageKind.INFORMATION, model.getModelUID() + " generated " + (genOK ? "successfully" : "with errors")));
           } catch (GenerationCanceledException gce) {
             progress.addText("generation canceled");
-            addMessage(new Message(MessageKind.WARNING, "generation canceled"), invocationContext);
-            // unregister transient models
-            generatorContext.getModule().dispose();
-            return;
+            generationCancelled = true;
+            break;
           } catch (GenerationFailedException gfe) {
             LOG.error(model.getModelUID() + " : generation failed", gfe);
-            progress.addText("exception during generation " + gfe.getMessage());
+            progress.addText(gfe.toString());
             GenerationFailueInfo failueInfo = gfe.getFailueInfo();
             if (failueInfo != null) {
               for (Message message : failueInfo.createMessages()) {
-                addMessage(message, invocationContext);
+                addMessage(message);
               }
             }
-            addMessage(new Message(MessageKind.ERROR, model.getModelUID() + " : generation failed"), invocationContext);
-            generationOK = false;
+            addMessage(new Message(MessageKind.ERROR, model.getModelUID() + " : " + gfe));
+            generationByCommandFailed = true;
             break;
           } catch (Exception e) {
             LOG.error(model.getModelUID() + " : generation failed", e);
-            progress.addText("exception during generation " + e.getMessage());
-            addMessage(new Message(MessageKind.ERROR, model.getModelUID() + " : generation failed"), invocationContext);
-            generationOK = false;
+            progress.addText(e.toString());
+            addMessage(new Message(MessageKind.ERROR, model.getModelUID() + " : " + e));
+            generationByCommandFailed = true;
             break;
           }
         }
@@ -255,26 +257,35 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           saveTransientModels(generatorContext);
         } else {
           // unregister transient models
-          if (generationOK) {
+          if (!generationByCommandFailed) {
             // if not OK, then we need transient models to navigate to errors
             generatorContext.getModule().dispose();
           }
         }
+        generationFailed = generationFailed || generationByCommandFailed;
+        if (generationCancelled) break;
       } // iter: configuration.commands()
 
-      if (!generateText && isIdeaPresent && myCompileOnGeneration) {
-        LOG.debug("Compiling in IDE after generation");
-        progress.addText("Compiling in IntelliJ IDEA...");
-        compileAndReload();
+
+      if (myCompileOnGeneration) {
+        if (isIdeaPresent && !(generateText || generationFailed || generationCancelled)) {
+          LOG.debug("Compiling in IDE after generation");
+          progress.addText("Compiling in IntelliJ IDEA...");
+          compileAndReload();
+        }
         progress.advance(AMOUNT_PER_MODEL);
       }
 
-      addMessage(new Message(MessageKind.INFORMATION, "Generation finished"), invocationContext);
+      MessageKind messageKind = (generationCancelled || generationFailed) ? MessageKind.WARNING : MessageKind.INFORMATION;
+      String messageText = "Generation complated successfully";
+      if (generationFailed) messageText = "Generation finished with errors";
+      if (generationCancelled) messageText = "Generation cancelled";
+      addMessage(new Message(messageKind, messageText));
       if (!generateText) {
-        showMessageView(invocationContext);
+        showMessageView();
       }
 
-      progress.addText("Finished.");
+      progress.addText("Finished");
     } finally {
       progress.finish();
       ReflectionClassifierFinder.generationFinished(); //memory leak fix
@@ -395,7 +406,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     SModelDescriptor templateModelDescriptor = generator.getModelDescriptor(templatesModelUID);
     if (templateModelDescriptor == null) {
       LOG.errorWithTrace("Couldn't find templates model \"" + templatesModelUID + "\"");
-      addMessage(new Message(MessageKind.ERROR, "Couldn't find templates model \"" + templatesModelUID + "\""), context);
+      addMessage(new Message(MessageKind.ERROR, "Couldn't find templates model \"" + templatesModelUID + "\""));
     }
     return templateModelDescriptor;
   }

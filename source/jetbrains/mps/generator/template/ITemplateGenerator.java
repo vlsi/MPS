@@ -58,6 +58,9 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   INodeBuilder findNodeBuilder(INodeBuilder fromBuilder, Condition<INodeBuilder> condition);
 
+  /**
+   * @deprecated
+   */
   SModel getTemplatesModel();
 
   TemplateDeclaration getTemplateForSwitch(SNode sourceNode, TemplateSwitch templateSwitch);
