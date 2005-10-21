@@ -46,7 +46,7 @@ public class Generator extends AbstractModule {
   }
 
   public String getNamespace() {
-    return myGeneratorDescriptor.getNamespace();
+    return mySourceLanguage.getNamespace() + "->" + getTargetLanguageName();
   }
 
   public Language getSourceLanguage() {
@@ -108,7 +108,7 @@ public class Generator extends AbstractModule {
     // todo: configure generator dependencies ...
     // ... add all generators of all languages which this generator ownes or depend on
     List<Language> languages = MPSModuleRepository.getInstance().getLanguages(this);
-    if(targetLanguage != null && !languages.contains(targetLanguage)) {
+    if (targetLanguage != null && !languages.contains(targetLanguage)) {
       languages.add(targetLanguage);
     }
     for (Language language : languages) {

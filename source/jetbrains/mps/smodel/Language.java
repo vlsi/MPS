@@ -1,5 +1,6 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.annotations.Hack;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.IStatus;
@@ -8,11 +9,12 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.util.*;
-import jetbrains.mps.annotations.Hack;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.FileUtil;
 
 import java.io.File;
 import java.util.*;
