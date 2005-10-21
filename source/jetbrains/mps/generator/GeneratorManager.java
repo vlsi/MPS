@@ -226,7 +226,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           try {
             boolean genOK = generate_internal(model, templatesModel, generatorContext, generatorClass, configuration.getOutputPath(), progress, generateText);
             generationByCommandFailed = generationByCommandFailed || !genOK;
-            addMessage(new Message(MessageKind.INFORMATION, model.getModelUID() + " generated " + (genOK ? "successfully" : "with errors")));
+            addMessage(new Message(genOK ? MessageKind.INFORMATION : MessageKind.WARNING, model.getModelUID() + " generated " + (genOK ? "successfully" : "with errors")));
           } catch (GenerationCanceledException gce) {
             progress.addText("generation canceled");
             generationCancelled = true;
@@ -446,7 +446,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     }
 
     if (generator instanceof ITemplateGenerator) {
-      return ((ITemplateGenerator) generator).getErrorCount() > 0;
+      return ((ITemplateGenerator) generator).getErrorCount() == 0;
     }
     return true;
   }
