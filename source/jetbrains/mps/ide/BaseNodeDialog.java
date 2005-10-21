@@ -112,7 +112,7 @@ public abstract class BaseNodeDialog extends BaseDialog {
     if (!validateNode()) return;
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
-      //  myEditorComponent.re
+        myEditorComponent.clear();
         saveChanges();
       }
     }, "Saving dialog changes");
