@@ -9,6 +9,7 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
@@ -51,10 +52,6 @@ public class Language extends AbstractModule {
   };
 
   private boolean myRegisteredInFindUsagesManager;
-
-  public ModuleDescriptor getModuleDescriptor() {
-    return myLanguageDescriptor;
-  }
 
   public static Language newInstance(File descriptorFile, MPSModuleOwner moduleOwner) {
     Language language = new Language();
@@ -110,7 +107,9 @@ public class Language extends AbstractModule {
     Iterator<GeneratorDescriptor> generators = getLanguageDescriptor().generators();
     while (generators.hasNext()) {
       GeneratorDescriptor generatorDescriptor = generators.next();
-      myGenerators.add(new Generator(this, generatorDescriptor));
+      Generator generator = new Generator(this, generatorDescriptor);
+      MPSModuleRepository.getInstance().addModule(generator, this);
+      myGenerators.add(generator);
     }
   }
 
@@ -125,6 +124,7 @@ public class Language extends AbstractModule {
       for (Generator generator : myGenerators) {
         generator.dispose();
       }
+      myGenerators.clear();
     }
   }
 
@@ -163,6 +163,22 @@ public class Language extends AbstractModule {
 
   public LanguageDescriptor getLanguageDescriptor() {
     return myLanguageDescriptor;
+  }
+
+  public ModuleDescriptor getModuleDescriptor() {
+    return myLanguageDescriptor;
+  }
+
+  public List<IModule> getDependOnModules() {
+    // depends of other languages and solutions, but not on generators
+    List<IModule> result = new LinkedList<IModule>();
+    for (IModule ownModule : getOwnModules()) {
+      if (ownModule instanceof Generator || result.contains(ownModule)) {
+        continue;
+      }
+      result.add(ownModule);
+    }
+    return appendBootstrapLangauges(result);
   }
 
   public void updateLastGenerationTime() {

@@ -1,13 +1,14 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.Model;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
+import jetbrains.mps.ide.BootstrapLanguages;
 
 import java.util.List;
+import java.util.LinkedList;
 
 /**
  * @author Kostik
@@ -19,22 +20,13 @@ public class Generator extends AbstractModule {
   Generator(Language sourceLanguage, GeneratorDescriptor generatorDescriptor) {
     mySourceLanguage = sourceLanguage;
     myGeneratorDescriptor = generatorDescriptor;
-
-    if (!MPSModuleRepository.getInstance().existsModule(this)) {
-      MPSModuleRepository.getInstance().addModule(this, mySourceLanguage);
-    }
-
     // read modules and models
     readModulesAndModels();
   }
 
   public void dispose() {
-    CommandProcessor.instance().executeCommand(new Runnable() {
-      public void run() {
-        SModelRepository.getInstance().unRegisterModelDescriptors(Generator.this);
-        MPSModuleRepository.getInstance().unRegisterModules(Generator.this);
-      }
-    });
+    SModelRepository.getInstance().unRegisterModelDescriptors(Generator.this);
+    MPSModuleRepository.getInstance().unRegisterModules(Generator.this);
   }
 
   public ModuleDescriptor getModuleDescriptor() {
@@ -98,25 +90,27 @@ public class Generator extends AbstractModule {
   }
 
   public List<IModule> getDependOnModules() {
-    List<IModule> list = super.getDependOnModules();
-    list.add(mySourceLanguage);
-    Language targetLanguage = getTargetLanguage();
-    if (targetLanguage != null) {
-      list.add(targetLanguage);
+    // depends on source/target language and all owned modules
+    List<IModule> result = new LinkedList<IModule>(getOwnModules());
+    if (!result.contains(mySourceLanguage)) {
+      result.add(mySourceLanguage);
     }
+    Language targetLanguage = getTargetLanguage();
+    if (targetLanguage != null && !result.contains(targetLanguage)) {
+      result.add(targetLanguage);
+    }
+    result = appendBootstrapLangauges(result);
 
     // todo: configure generator dependencies ...
-    // ... add all generators of all languages which this generator ownes or depend on
-    List<Language> languages = MPSModuleRepository.getInstance().getLanguages(this);
-    if (targetLanguage != null && !languages.contains(targetLanguage)) {
-      languages.add(targetLanguage);
-    }
-    for (Language language : languages) {
-      list.addAll(language.getGenerators());
+    // ... from all languages in "result" collect generators and add to dependency list
+    List<Generator> generators = new LinkedList<Generator>();
+    for (IModule module : result) {
+      if (module instanceof Language && module != mySourceLanguage) {
+        generators.addAll(((Language) module).getGenerators());
+      }
     }
 
-    list.remove(this);
-
-    return list;
+    result.addAll(generators);
+    return result;
   }
 }

@@ -220,10 +220,16 @@ public abstract class AbstractModule implements IModule {
     return getModelRootsImpl();
   }
 
-  public List<IModule> getDependOnModules() {
-    List<IModule> result = getOwnModules();
-    result.addAll(MPSModuleRepository.getInstance().getLanguages(BootstrapLanguages.getInstance()));
-    return result;
+  public abstract List<IModule> getDependOnModules();
+
+  protected List<IModule> appendBootstrapLangauges(List<IModule> list) {
+    List<Language> languages = BootstrapLanguages.getInstance().getLanguages();
+    for (Language language : languages) {
+      if (!list.contains(language)) {
+        list.add(language);
+      }
+    }
+    return list;
   }
 
   public void registerModelDescriptor(SModelDescriptor modelDescriptor) {

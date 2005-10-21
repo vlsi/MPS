@@ -2,6 +2,7 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.projectLanguage.PersistenceUtil;
 import jetbrains.mps.projectLanguage.SolutionDescriptor;
@@ -114,6 +115,12 @@ public class Solution extends AbstractModule {
 
   public ModuleDescriptor getModuleDescriptor() {
     return mySolutionDescriptor;
+  }
+
+  public List<IModule> getDependOnModules() {
+    // depends on owned modules
+    List<IModule> result = new LinkedList<IModule>(getOwnModules());
+    return appendBootstrapLangauges(result);
   }
 
   public void addSolutionCommandListener(SolutionCommandListener listener) {

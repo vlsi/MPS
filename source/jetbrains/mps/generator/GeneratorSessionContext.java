@@ -86,7 +86,7 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
     protected List<ModelRoot> getModelRootsImpl() {
       return Collections.EMPTY_LIST;
     }
-  
+
     public ModuleDescriptor getModuleDescriptor() {
       return myModuleDescriptor;
     }
@@ -97,7 +97,7 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
 
     public Language getLanguage(String languageNamespace) {
       if (myInvocationModule instanceof Language) {
-        if (languageNamespace.equals(((Language) myInvocationModule).getNamespace())) {
+        if (languageNamespace.equals(myInvocationModule.getNamespace())) {
           return (Language) myInvocationModule;
         }
       }
@@ -106,8 +106,8 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
       if (language == null) {
         language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, myGenerator);
       }
-      if (language == null && myInvocationModule instanceof MPSModuleOwner) {
-        language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, (MPSModuleOwner) myInvocationModule);
+      if (language == null) {
+        language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, myInvocationModule);
       }
       if (language == null) {
         LOG.error("Couldn't find language: \"" + languageNamespace + "\" in scope: " + this);
