@@ -6,6 +6,7 @@ import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.annotations.ForDebug;
 
 import java.io.File;
 import java.io.IOException;
@@ -41,9 +42,14 @@ public abstract class AbstractModule implements IModule {
   }
 
   public Language getLanguage(String languageNamespace) {
+    return getLanguage(languageNamespace, new HashSet<IModule>());
+  }
+
+  public Language getLanguage(String languageNamespace, Set<IModule> modulesToSkip) {
+    if (languageNamespace == null) return null;
     Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
     if (language != null) return language;
-    Set<IModule> processedModules = new HashSet<IModule>();
+    Set<IModule> processedModules = new HashSet<IModule>(modulesToSkip);
     language = getLanguage_internal(languageNamespace, processedModules, this);
     if (language == null) {
       LOG.error("Couldn't find language: \"" + languageNamespace + "\" in scope: " + this);
@@ -85,6 +91,7 @@ public abstract class AbstractModule implements IModule {
     return modules;
   }
 
+  @ForDebug private int count = 0;
   public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
     if (modelDescriptor != null) {
@@ -96,7 +103,13 @@ public abstract class AbstractModule implements IModule {
       return modelDescriptor;
     }
 
+    if (count == 0) {
     LOG.warning("Couldn't find model descriptor for uid: \"" + modelUID + "\" in scope: " + this);
+      count = 1;
+      getModelDescriptor(modelUID);
+    } else {
+      count = 0;
+    }
     return null;
   }
 
@@ -277,4 +290,48 @@ public abstract class AbstractModule implements IModule {
     MPSModuleRepository.getInstance().readModuleDescriptors(getModuleDescriptor().moduleRoots(), this);
     SModelRepository.getInstance().readModelDescriptors(getModelRoots(), this);
   }
+
+/*  public int hashCode() {
+    if (getNamespace() == null) return 0;
+    return getNamespace().hashCode();
+  }
+
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (!(o instanceof AbstractModule)) return false;
+    String namespace = ((AbstractModule) o).getNamespace();
+    return (namespace != null && namespace.equals(this.getNamespace()));
+  }
+
+  protected static ModelDescriptorAndOwner createProjectDescriptorWithFakeOwner() {
+    //hashCode and equals methods of module use its descriptor and descriptor file,
+    // but it's not loaded yet - so we register a fake model owner to load it.
+    ModelOwner owner = new ModelOwner() {};
+    SModelDescriptor descriptorProjectModel = ProjectModelDescriptor.createDescriptorFor(owner);
+    ModelDescriptorAndOwner descriptorAndOwner = new ModelDescriptorAndOwner(descriptorProjectModel, owner);
+    return descriptorAndOwner;
+  }
+
+  protected static void releaseFakeOwner(SModelDescriptor descriptorForProjectModel, IModule module, ModelOwner fakeModelOwner) {
+    //Module descriptor created and applied to module: it's no more use in fakeModelOwner
+    SModelRepository.getInstance().addOwnerForDescriptor(descriptorForProjectModel, module);
+    SModelRepository.getInstance().unRegisterModelDescriptor(descriptorForProjectModel, fakeModelOwner);
+  }
+
+  public static class ModelDescriptorAndOwner {
+    private SModelDescriptor myModelDescriptor;
+    private ModelOwner myModelOwner;
+    public ModelDescriptorAndOwner(SModelDescriptor descriptor, ModelOwner owner) {
+      this.myModelDescriptor = descriptor;
+      this.myModelOwner = owner;
+    }
+
+    public SModelDescriptor getModelDescriptor() {
+      return myModelDescriptor;
+    }
+
+    public ModelOwner getModelOwner() {
+      return myModelOwner;
+    }
+  }*/
 }

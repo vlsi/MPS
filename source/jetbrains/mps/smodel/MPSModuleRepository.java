@@ -120,21 +120,23 @@ public class MPSModuleRepository {
     }
   }
 
-  public boolean existsModule(IModule module) {
-    return (myNamespaceToModuleMap.containsKey(module.getNamespace()));
+  public boolean existsModule(IModule module, MPSModuleOwner owner) {
+    Set<MPSModuleOwner> mpsModuleOwners = myModuleToOwnersMap.get(module);
+    return (myNamespaceToModuleMap.containsKey(module.getNamespace()) && mpsModuleOwners != null && mpsModuleOwners.contains(owner));
   }
 
   public void addModule(IModule module, MPSModuleOwner owner) {
-    if (existsModule(module)) {
-      throw new RuntimeException("Couldn't add module \"" + module.getNamespace() + "\" : this module is already registered");
+    if (existsModule(module, owner)) {
+      throw new RuntimeException("Couldn't add module \"" + module.getNamespace() + "\" : this module is already registered with very this owner: " + owner);
     }
     try {
       File descriptorFile = module.getDescriptorFile();
-      if (descriptorFile != null) {
+      if (descriptorFile != null && !myFileToModuleMap.containsKey(descriptorFile.getCanonicalPath())) {
         myFileToModuleMap.put(descriptorFile.getCanonicalPath(), module);
       }
-      myNamespaceToModuleMap.put(module.getNamespace(), module);
-      Set<MPSModuleOwner> owners = new HashSet<MPSModuleOwner>();
+      if (!myNamespaceToModuleMap.containsKey(module.getNamespace())) myNamespaceToModuleMap.put(module.getNamespace(), module);
+      Set<MPSModuleOwner> owners = myModuleToOwnersMap.get(module);
+      if (owners == null) owners = new HashSet<MPSModuleOwner>();
       owners.add(owner);
       myModuleToOwnersMap.put(module, owners);
     } catch (IOException e) {

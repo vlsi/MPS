@@ -9,6 +9,8 @@ import jetbrains.mps.ide.BootstrapLanguages;
 
 import java.util.List;
 import java.util.LinkedList;
+import java.util.Set;
+import java.util.HashSet;
 
 /**
  * @author Kostik
@@ -38,7 +40,8 @@ public class Generator extends AbstractModule {
   }
 
   public String getNamespace() {
-    return mySourceLanguage.getNamespace() + "->" + getTargetLanguageName();
+   // return mySourceLanguage.getNamespace() + "->" + getTargetLanguageName();//this wannabe key is mutable!!!
+    return myGeneratorDescriptor.getNamespace();
   }
 
   public Language getSourceLanguage() {
@@ -86,7 +89,9 @@ public class Generator extends AbstractModule {
     if (mySourceLanguage.getNamespace().equals(languageNamespace)) {
       return mySourceLanguage;
     }
-    return super.getLanguage(languageNamespace);
+    Set<IModule> modulesToSkip = new HashSet<IModule>();
+    modulesToSkip.add(this);
+    return super.getLanguage(languageNamespace, modulesToSkip);
   }
 
   public List<IModule> getDependOnModules() {
