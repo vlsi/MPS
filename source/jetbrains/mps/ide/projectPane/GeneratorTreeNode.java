@@ -53,11 +53,16 @@ class GeneratorTreeNode extends MPSTreeNode {
   }
 
   public String toString() {
-    return "generator -> " + getGenerator().getTargetLanguageName();
+    Generator generator = getGenerator();
+    if (generator == null) return "null";
+    return "generator -> " + generator.getTargetLanguageName();
   }
 
   protected String getNodeIdentifier() {
-    return toString();
+    // return toString();
+    Generator generator = getGenerator();
+    if (generator == null) return "null";
+    return generator.getNamespace();
   }
 
 }

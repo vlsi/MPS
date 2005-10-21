@@ -41,7 +41,16 @@ public class Generator extends AbstractModule {
 
   public String getNamespace() {
    // return mySourceLanguage.getNamespace() + "->" + getTargetLanguageName();//this wannabe key is mutable!!!
+    String namespace = myGeneratorDescriptor.getNamespace();
+    if (namespace == null) {
+      myGeneratorDescriptor.setNamespace(generateGeneratorNamespace(mySourceLanguage));
+      mySourceLanguage.save();
+    }
     return myGeneratorDescriptor.getNamespace();
+  }
+
+  public static String generateGeneratorNamespace(Language sourceLanguage) {
+    return sourceLanguage.getNamespace() + "#" + SNode.generateUniqueId();
   }
 
   public Language getSourceLanguage() {
