@@ -6,6 +6,7 @@ import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.projectLanguage.PersistenceUtil;
 import jetbrains.mps.projectLanguage.SolutionDescriptor;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.FileUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -153,5 +154,13 @@ public class Solution extends AbstractModule {
 
   public String getModuleUID() {
     return myDescriptorFile.getAbsolutePath();
+  }
+
+  public String getGeneratorOutputPath() {
+    String generatorOutputPath = mySolutionDescriptor.getGeneratorOutputPath();
+    if (generatorOutputPath == null) {
+      generatorOutputPath = FileUtil.getCanonicalPath(myDescriptorFile.getParentFile()) + File.separatorChar + "source_gen";
+    }
+    return generatorOutputPath;
   }
 }

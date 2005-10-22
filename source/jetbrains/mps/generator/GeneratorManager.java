@@ -17,7 +17,6 @@ import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.progress.IProgressMonitor;
 import jetbrains.mps.ide.progress.ProgressWindowProgressMonitor;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.MPSPlugin;
@@ -34,12 +33,8 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.xml.Document;
 import org.jdom.Element;
 
-import javax.swing.*;
-import javax.swing.border.EmptyBorder;
-import java.awt.*;
 import java.io.File;
 import java.util.*;
-import java.util.List;
 
 
 /**
@@ -54,6 +49,11 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   private boolean myCompileOnGeneration = true;
   private boolean mySaveTransientModels;
   private MPSProject myProject;
+
+  // progress monitor
+  public static final int AMOUNT_PER_MODEL = 100;
+  public static final int AMOUNT_PER_COMPILATION = 100;
+
 
   public GeneratorManager(MPSProject project) {
     myProject = project;
@@ -73,6 +73,21 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     element.setAttribute(SAVE_TRANSIENT_MODELS, "" + mySaveTransientModels);
   }
 
+  public boolean isCompileOnGeneration() {
+    return myCompileOnGeneration;
+  }
+
+  public void setCompileOnGeneration(boolean compileOnGeneration) {
+    myCompileOnGeneration = compileOnGeneration;
+  }
+
+  public boolean isSaveTransientModels() {
+    return mySaveTransientModels;
+  }
+
+  public void setSaveTransientModels(boolean saveTransientModels) {
+    mySaveTransientModels = saveTransientModels;
+  }
 
   public void generate(final Language language, IOperationContext operationContext) {
     //todo move to language
@@ -118,11 +133,28 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     return command;
   }
 
+  private void addMessage(MessageKind kind, String text) {
+    addMessage(new Message(kind, text));
+  }
+
   private void addMessage(final Message msg) {
     ThreadUtils.runInEventDispathThread(new Runnable() {
       public void run() {
         try {
           myProject.getComponent(MessageView.class).add(msg);
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
+      }
+    });
+  }
+
+  private void addProgressMessage(final MessageKind kind, final String text, final IProgressMonitor progress) {
+    ThreadUtils.runInEventDispathThread(new Runnable() {
+      public void run() {
+        try {
+          progress.addText(text);
+          myProject.getComponent(MessageView.class).add(new Message(kind, text));
         } catch (Exception e) {
           e.printStackTrace();
         }
@@ -145,8 +177,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       }
     });
   }
-
-  public static final int AMOUNT_PER_MODEL = 100;
 
   public void generate(final GeneratorConfiguration configuration, final List<SModelDescriptor> modelDescriptors, final IOperationContext invocationContext, final boolean generateText, final Language language) {
     new Thread() {
@@ -482,22 +512,24 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     root.setPath(solutionDir);
     solutionDescriptor.addModelRoot(root);
 
-    // add model/language roots from generator module
+    // add model/language roots from generator modules
     {
-      Generator generatorModule = generatorContext.getGeneratorModule();
-      List<ModelRoot> modelRoots = generatorModule.getNonDefaultModelRoots();
-      for (ModelRoot modelRoot : modelRoots) {
-        ModelRoot copyRoot = new ModelRoot(solutionDescriptorModel);
-        copyRoot.setPrefix(modelRoot.getPrefix());
-        copyRoot.setPath(modelRoot.getPath());
-        solutionDescriptor.addModelRoot(copyRoot);
-      }
+      List<Generator> generatorModules = generatorContext.getGeneratorModules();
+      for (Generator generatorModule : generatorModules) {
+        List<ModelRoot> modelRoots = generatorModule.getNonDefaultModelRoots();
+        for (ModelRoot modelRoot : modelRoots) {
+          ModelRoot copyRoot = new ModelRoot(solutionDescriptorModel);
+          copyRoot.setPrefix(modelRoot.getPrefix());
+          copyRoot.setPath(modelRoot.getPath());
+          solutionDescriptor.addModelRoot(copyRoot);
+        }
 
-      List<Language> languages = generatorModule.getOwnLanguages();
-      for (Language language : languages) {
-        Root languageRoot = new Root(solutionDescriptorModel);
-        languageRoot.setPath(language.getDescriptorFile().getParentFile().getAbsolutePath());
-        solutionDescriptor.addModuleRoot(languageRoot);
+        List<Language> languages = generatorModule.getOwnLanguages();
+        for (Language language : languages) {
+          Root languageRoot = new Root(solutionDescriptorModel);
+          languageRoot.setPath(language.getDescriptorFile().getParentFile().getAbsolutePath());
+          solutionDescriptor.addModuleRoot(languageRoot);
+        }
       }
     }
 
@@ -529,47 +561,259 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   }
 
   public IPreferencesPage createPreferencesPage() {
-    return new MyPreferencesPage();
+    return new GeneratorManagerPreferencesPage(this);
   }
 
-  private class MyPreferencesPage implements IPreferencesPage {
-    private JPanel myPage;
-    private JCheckBox myCompileInIdeaOnGeneration = new JCheckBox("Compile in IntelliJ IDEA on generation");
-    private JCheckBox mySaveTransientModelsCheckBox = new JCheckBox("Save transient models on generation (experts only)");
+  //------------------------------------
+  // new impl
+  //------------------------------------
 
-    public MyPreferencesPage() {
-      myCompileInIdeaOnGeneration.setSelected(myCompileOnGeneration);
-      mySaveTransientModelsCheckBox.setSelected(mySaveTransientModels);
 
-      JPanel optionsPanel = new JPanel(new GridLayout(2, 1));
-      optionsPanel.add(myCompileInIdeaOnGeneration);
-      optionsPanel.add(mySaveTransientModelsCheckBox);
+  public void generate_new(SModel sourceModel, Language targetLanguage, IOperationContext invocationContext, boolean generateText) {
+    clearMessages();
 
-      myPage = new JPanel(new BorderLayout());
-      myPage.setBorder(new EmptyBorder(10, 10, 10, 10));
-      myPage.add(optionsPanel, BorderLayout.NORTH);
+    addMessage(MessageKind.INFORMATION, "Generating " + (generateText ? "text" : "files") + " from model \"" + sourceModel + "\"");
+    addMessage(MessageKind.INFORMATION, "target language: \"" + targetLanguage.getNamespace() + "\"");
+    String targetFolder = invocationContext.getModule().getGeneratorOutputPath();
+    if (!generateText) {
+      addMessage(MessageKind.INFORMATION, "target folder  : " + targetFolder);
     }
 
-    public String getName() {
-      return "Generation";
+    String defaultGeneratorClassName = null;
+    TargetOfGenerator targetOfGenerator = targetLanguage.getLanguageDescriptor().getTargetOfGenerator();
+    if (targetOfGenerator != null) {
+      defaultGeneratorClassName = targetOfGenerator.getGeneratorClass();
+    }
+    addMessage(MessageKind.INFORMATION, "default generator class: " + (defaultGeneratorClassName != null ? defaultGeneratorClassName : "<n/a>"));
+
+    // -- create generators list
+    List<Generator> generators = new LinkedList<Generator>();
+    List<Language> sourceLanguages = sourceModel.getLanguages(invocationContext.getScope());
+    for (Language sourceLanguage : sourceLanguages) {
+      List<Generator> sourceLanguageGenerators = sourceLanguage.getGenerators();
+      for (Generator sourceLanguageGenerator : sourceLanguageGenerators) {
+        if (targetLanguage.getNamespace().equals(sourceLanguageGenerator.getTargetLanguageName())) {
+          generators.add(sourceLanguageGenerator);
+        }
+      }
+    }
+    if (generators.isEmpty()) {
+      addMessage(MessageKind.ERROR, "No generator modules found");
+      return;
     }
 
-    public Icon getIcon() {
-      return Icons.GENERATORS_ICON;
+    // -- choose generator class
+    String actualGeneratorClassName = null;
+    for (Generator generator : generators) {
+      String generatorClassName = generator.getGeneratorClass();
+      addMessage(MessageKind.INFORMATION, "generator module found: " + generator.getModuleUID() + " generator class: " + (generatorClassName != null ? generatorClassName : "<default>"));
+      if (actualGeneratorClassName == null) {
+        actualGeneratorClassName = generatorClassName;
+      } else if (generatorClassName != null && !generatorClassName.equals(actualGeneratorClassName)) {
+        addMessage(MessageKind.ERROR, "couldn't choose geneartor class");
+        return;
+      }
     }
 
-    public JComponent getComponent() {
-      return myPage;
+    if (actualGeneratorClassName == null) {
+      actualGeneratorClassName = defaultGeneratorClassName;
     }
 
-    public boolean validate() {
-      return true;
-    }
+    invocationContext.getComponent(ProjectPane.class).disableRebuild();
+    IProgressMonitor progress = new ProgressWindowProgressMonitor(invocationContext.getComponent(ProjectFrame.class), false);
 
-    public void commit() {
-      myCompileOnGeneration = myCompileInIdeaOnGeneration.isSelected();
-      mySaveTransientModels = mySaveTransientModelsCheckBox.isSelected();
+    try {
+
+      boolean isIdeaPresent = MPSPlugin.getInstance().isIDEAPresent();
+      int ideaCompilations = 0;
+      if (isIdeaPresent && myCompileOnGeneration) {
+        if (generateText) {
+          ideaCompilations = 1;
+        } else {
+          ideaCompilations = 2;
+        }
+      }
+      progress.start("Generating", AMOUNT_PER_MODEL + ideaCompilations * AMOUNT_PER_COMPILATION);
+
+      // -- compile sources before generation
+      if (!myCompileOnGeneration) {
+        progress.addText("Compilation in IntelliJ IDEA on generation is turned off");
+      } else if (!isIdeaPresent) {
+        progress.addText("IntelliJ IDEA with installed MPS is not present");
+      } else {
+        progress.addText("Compiling in IntelliJ IDEA...");
+        compileAndReload();
+        progress.advance(AMOUNT_PER_COMPILATION);
+      }
+
+
+      boolean generationFailed = true;
+      boolean generationCancelled = false;
+      GeneratorSessionContext generatorContext = new GeneratorSessionContext(targetLanguage, generators, invocationContext);
+      try {
+        generationFailed = !generate_new_internal(sourceModel,
+                targetFolder,
+                actualGeneratorClassName,
+                generatorContext,
+                generateText,
+                progress);
+        addMessage(new Message(generationFailed ? MessageKind.WARNING : MessageKind.INFORMATION, sourceModel.getUID() + " generated " + (generationFailed ? "with errors" : "successfully")));
+      } catch (GenerationCanceledException gce) {
+        progress.addText("generation canceled");
+        generationCancelled = true;
+      } catch (GenerationFailedException gfe) {
+        LOG.error(sourceModel.getUID() + " : generation failed", gfe);
+        progress.addText(gfe.toString());
+        GenerationFailueInfo failueInfo = gfe.getFailueInfo();
+        if (failueInfo != null) {
+          for (Message message : failueInfo.createMessages()) {
+            addMessage(message);
+          }
+        }
+        addMessage(new Message(MessageKind.ERROR, sourceModel.getUID() + " : " + gfe));
+      } catch (Exception e) {
+        LOG.error(sourceModel.getUID() + " : generation failed", e);
+        progress.addText(e.toString());
+        addMessage(new Message(MessageKind.ERROR, sourceModel.getUID() + " : " + e));
+      }
+
+      // save transient models in session module
+      if (mySaveTransientModels) {
+        saveTransientModels(generatorContext);
+      } else {
+        // unregister transient models
+        if (!generationFailed) {
+          // if not OK, then we need transient models to navigate to errors
+          generatorContext.getModule().dispose();
+        }
+      }
+
+      if (myCompileOnGeneration) {
+        if (isIdeaPresent && !(generateText || generationFailed || generationCancelled)) {
+          LOG.debug("Compiling in IDE after generation");
+          progress.addText("Compiling in IntelliJ IDEA...");
+          compileAndReload();
+        }
+        progress.advance(AMOUNT_PER_MODEL);
+      }
+
+      MessageKind messageKind = (generationCancelled || generationFailed) ? MessageKind.WARNING : MessageKind.INFORMATION;
+      String messageText = "Generation complated successfully";
+      if (generationFailed) messageText = "Generation finished with errors";
+      if (generationCancelled) messageText = "Generation cancelled";
+      progress.addText(messageText);
+      addMessage(new Message(messageKind, messageText));
+      if (!generateText) {
+        showMessageView();
+      }
+
+    } finally {
+      progress.finish();
+      ReflectionClassifierFinder.generationFinished(); //memory leak fix
+      invocationContext.getComponent(ProjectPane.class).enableRebuild();
     }
   }
 
+  private boolean generate_new_internal(SModel sourceModel, String outputPath, String generatorClassName, GeneratorSessionContext generatorContext, boolean generateText, IProgressMonitor progress) {
+    final IModelGenerator generator;
+    try {
+      Class cls = Class.forName(generatorClassName, true, ClassLoaderManager.getInstance().getClassLoader());
+      if (ITemplateGenerator.class.isAssignableFrom(cls)) {
+        generator = (ITemplateGenerator) cls.getConstructor(IOperationContext.class, IProgressMonitor.class).newInstance(generatorContext, progress);
+      } else {
+        generator = (IModelGenerator) cls.getConstructor(IOperationContext.class).newInstance(generatorContext);
+      }
+    } catch (Exception e) {
+      throw new GenerationFailedException(e);
+    }
+
+    SModel targetModel;
+    if (generator instanceof ITemplateGenerator) {
+      targetModel = generate_new_internal_internal(sourceModel, (ITemplateGenerator) generator, generatorContext);
+    } else {
+      IProgressMonitor childMonitor = progress.startSubTask(AMOUNT_PER_MODEL);
+      targetModel = JavaGenUtil.createTargetJavaModel(sourceModel, JavaNameUtil.packageNameForModelUID(sourceModel.getUID()), generatorContext);
+      generator.generate(sourceModel, targetModel, progress);
+      childMonitor.finish();
+    }
+    if (targetModel != null) {
+      if (generateText) {
+        generateText(targetModel, generatorContext);
+      } else {
+        generateFile(outputPath, sourceModel, targetModel);
+      }
+    }
+
+    if (generator instanceof ITemplateGenerator) {
+      return ((ITemplateGenerator) generator).getErrorCount() == 0;
+    }
+    return true;
+  }
+
+  private SModel generate_new_internal_internal(SModel sourceModel, ITemplateGenerator generator, GeneratorSessionContext generatorContext) {
+    SModelDescriptor currentTargetModel = createTransientModel(0, sourceModel, generatorContext.getModule(), generatorContext.getSessionId());
+    int iterationCount = 1;
+
+    // mapping
+    LOG.debug("DO MAPPING from: " + sourceModel.getUID() + " to " + currentTargetModel.getModelUID());
+    generator.doMapping(sourceModel, currentTargetModel.getSModel(), null);
+
+    // reductions...
+    while (true) {
+      SModelDescriptor currentSourceModel = currentTargetModel;
+      LOG.debug("CHECK NEED REDUCTION (" + iterationCount + ") in: " + currentSourceModel.getModelUID());
+
+      int numReductions = generator.prepareReduction(currentSourceModel.getSModel(), null);
+      while (numReductions == 0 && generator.hasPendingReductions()) {
+        numReductions = generator.preparePendingReduction();
+      }
+
+      LOG.debug("FOUND REDUCTIONS: " + numReductions);
+      generator.getProgressMonitor().addText("found reductions : " + numReductions);
+      if (numReductions == 0) {
+        break;
+      }
+
+      currentTargetModel = createTransientModel(iterationCount, sourceModel, generatorContext.getModule(), generatorContext.getSessionId());
+      LOG.debug("DO REDUCTION (" + iterationCount + ") from: " + currentSourceModel.getModelUID() + " to " + currentTargetModel.getModelUID());
+      generator.doReduction(currentTargetModel.getSModel());
+
+      // next iteration ...
+      if (++iterationCount > 3) {
+        LOG.debug("Reduction iteration count exceeded limit (10) - stop generation.");
+        generator.showErrorMessage(null, "Failed to reduce model.");
+        throw new GenerationFailedException("Failed to reduce model.");
+      }
+    }
+
+    return currentTargetModel.getSModel();
+  }
+
+  private SModelDescriptor createTransientModel(int iterationCount, SModel sourceModel, ModelOwner modelOwner, String sessionId) {
+    SModelUID modelUID = new SModelUID(sourceModel.getLongName(), "" + iterationCount + "_" + sessionId);
+    SModelDescriptor modelDescriptor = new TransientModelDescriptor(modelUID, modelOwner);
+
+    SModel outputModel = modelDescriptor.getSModel();
+    outputModel.setLoading(true);
+    try {
+//      List<String> languages = sourceModel.getUserDefinedLanguageNamespaces();
+//      for (String languageNamespace : languages) {
+//        outputModel.addLanguage(languageNamespace);
+//      }
+//      Collection<SModelUID> imports = sourceModel.getImportedModelUIDs();
+//      for (SModelUID modelFqName : imports) {
+//        outputModel.addImportedModel(modelFqName);
+//      }
+
+//      languages = templatesMode.getUserDefinedLanguageNamespaces();
+//      for (String languageNamespace : languages) {
+//        outputModel.addLanguage(languageNamespace);
+//      }
+
+    } finally {
+      outputModel.setLoading(false);
+    }
+
+    return modelDescriptor;
+  }
 }

@@ -1,11 +1,26 @@
 package jetbrains.mps.util;
 
 import java.io.File;
+import java.io.IOException;
 
 /**
  * @author Kostik
  */
 public class FileUtil {
+  public static String getCanonicalPath(File file) {
+    try {
+      return file.getCanonicalPath();
+    } catch (IOException e) {
+      return file.getAbsolutePath();
+    }
+  }
+
+  public static String getCanonicalPath(String path) {
+    if (path == null) return "";
+    File file = new File(path);
+    return getCanonicalPath(file);
+  }
+
   public static boolean delete(File root) {
     boolean result = true;
 

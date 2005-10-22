@@ -211,6 +211,15 @@ public class Language extends AbstractModule {
     return sourceDir;
   }
 
+  public String getGeneratorOutputPath() {
+    String generatorOutputPath = myLanguageDescriptor.getLanguageGenPath();
+    if (generatorOutputPath == null) {
+      generatorOutputPath = FileUtil.getCanonicalPath(myDescriptorFile.getParentFile()) + File.separatorChar + "source_gen";
+    }
+    return generatorOutputPath;
+  }
+
+
   public boolean isUpToDate() {
     if (!myUpdateLastGenerationTimeCalled) {
       updateLastGenerationTime();

@@ -126,4 +126,8 @@ public class Generator extends AbstractModule {
     result.addAll(generators);
     return result;
   }
+
+  public String getGeneratorOutputPath() {
+    return mySourceLanguage.getGeneratorOutputPath();
+  }
 }

@@ -1,6 +1,5 @@
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.ide.FileUtil;
 import jetbrains.mps.ide.ProjectFrame;
 import jetbrains.mps.ide.actions.model.DeleteModelAction;
 import jetbrains.mps.ide.actions.nodes.DeleteNodeAction;
@@ -16,6 +15,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelsAdapter;
 import jetbrains.mps.smodel.event.SModelsMulticaster;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.FileUtil;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;

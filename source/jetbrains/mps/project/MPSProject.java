@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.VersionControlManager;
 import jetbrains.mps.vcs.model.IVersionControl;
 import org.jdom.Document;

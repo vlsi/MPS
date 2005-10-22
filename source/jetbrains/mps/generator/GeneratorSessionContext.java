@@ -22,15 +22,28 @@ import java.util.*;
 public class GeneratorSessionContext extends StandaloneMPSContext {
   private static final Logger LOG = Logger.getLogger(GeneratorSessionContext.class);
 
-  private Generator myGeneratorModule;
+  private List<Generator> myGeneratorModules;
   private IOperationContext myInvocationContext;
   private TransientModule myTransientModule;
   private String mySessionId;
+  private Language myTargetLanguage;
 
+  /**
+   * @deprecated
+   */
   public GeneratorSessionContext(Generator generatorModule, IOperationContext invocationContext) {
-    myGeneratorModule = generatorModule;
+    myGeneratorModules = new LinkedList<Generator>();
+    myGeneratorModules.add(generatorModule);
+    myTargetLanguage = generatorModule.getTargetLanguage();
     myInvocationContext = invocationContext;
-    myTransientModule = new TransientModule(generatorModule, invocationContext.getModule());
+    myTransientModule = new TransientModule(invocationContext.getModule());
+  }
+
+  public GeneratorSessionContext(Language targetLanguage, List<Generator> generatorModules, IOperationContext invocationContext) {
+    myGeneratorModules = generatorModules;
+    myTargetLanguage = targetLanguage;
+    myInvocationContext = invocationContext;
+    myTransientModule = new TransientModule(invocationContext.getModule());
   }
 
   public <T> T getComponent(Class<T> clazz) {
@@ -49,8 +62,8 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
     return myTransientModule;
   }
 
-  public Generator getGeneratorModule() {
-    return myGeneratorModule;
+  public List<Generator> getGeneratorModules() {
+    return myGeneratorModules;
   }
 
   public IOperationContext getInvocationContext() {
@@ -58,7 +71,7 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
   }
 
   public String toString() {
-    return getClass().getName() + ": " + myGeneratorModule + "\ninvoked from: " + myInvocationContext;
+    return getClass().getName() + "-> " + myTargetLanguage.getNamespace() + "\ninvoked from: " + myInvocationContext;
   }
 
   public String getSessionId() {
@@ -68,18 +81,15 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
     return mySessionId;
   }
 
-  private static class TransientModule extends AbstractModule {
-    private List<IModule> myDependOnModules;
-    private Generator myGenerator;
+  private class TransientModule extends AbstractModule {
+    private List<IModule> myDependOnModules = new LinkedList<IModule>();
     private IModule myInvocationModule;
     private SModelDescriptor myProjectModelDescriptor = ProjectModelDescriptor.createDescriptorFor(this);
     private ModuleDescriptor myModuleDescriptor = new ModuleDescriptor(myProjectModelDescriptor.getSModel());
 
-    TransientModule(Generator generator, IModule invocationModule) {
-      myGenerator = generator;
+    TransientModule(IModule invocationModule) {
       myInvocationModule = invocationModule;
-      myDependOnModules = new LinkedList<IModule>();
-      myDependOnModules.add(generator);
+      myDependOnModules.addAll(GeneratorSessionContext.this.getGeneratorModules());
       myDependOnModules.add(invocationModule);
     }
 
@@ -104,7 +114,10 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
 
       Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
       if (language == null) {
-        language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, myGenerator);
+        for (Generator generator : GeneratorSessionContext.this.getGeneratorModules()) {
+          language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, generator);
+          if (language != null) return language;
+        }
       }
       if (language == null) {
         language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, myInvocationModule);
@@ -129,7 +142,17 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
     }
 
     public String toString() {
-      return "TransientModule:[" + myInvocationModule + "]->[" + myGenerator + "]";
+      String generatorsString = "/";
+      for (Generator generator : GeneratorSessionContext.this.getGeneratorModules()) {
+        generatorsString += generator.getModuleUID();
+        generatorsString += "/";
+      }
+
+      return "TransientModule:[" + myInvocationModule + "]->[" + generatorsString + "]";
+    }
+
+    public String getGeneratorOutputPath() {
+      return myInvocationModule.getGeneratorOutputPath();
     }
   }
 }
