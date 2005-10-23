@@ -34,6 +34,9 @@ public abstract class EditorCellAction {
   // --
   public static final String RIGHT_TRANSFORM = "RIGHT_TRANSFORM";
 
+  //--
+  public static final String CONVERT_TO_IRREFUTABLE_PATTERN = "CONVERT_TO_IRREFUTABLE_PATTERN";
+
   public abstract boolean canExecute(EditorContext context);
 
   public abstract void execute(EditorContext context);

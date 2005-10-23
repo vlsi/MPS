@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.typesystem.TypeCheckerAccess;
+import jetbrains.mps.patternLanguage.patternActions.CellAction_ConvertToIrrefutablePattern;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -166,6 +167,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myActionMap.put(EditorCellAction.PASTE, new CellAction_PasteNode());
     myActionMap.put(EditorCellAction.PASTE_BEFORE, new CellAction_PasteNodeRelative(true));
     myActionMap.put(EditorCellAction.PASTE_AFTER, new CellAction_PasteNodeRelative(false));
+    // ----
+    myActionMap.put(EditorCellAction.CONVERT_TO_IRREFUTABLE_PATTERN, new CellAction_ConvertToIrrefutablePattern());
 
 
     registerNodeAction(new ShowNodeTypeAction());
@@ -572,6 +575,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         return EditorCellAction.PASTE_AFTER;
       }
       return EditorCellAction.PASTE;
+    }
+
+    if (keyEvent.getKeyCode() == KeyEvent.VK_P && keyEvent.isControlDown()) {
+      return EditorCellAction.CONVERT_TO_IRREFUTABLE_PATTERN;
     }
 
     return null;
