@@ -58,19 +58,15 @@ public class IdeMain {
       System.exit(0);
     }
 
-
-
     LoggerUtil.configureLogger();
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        ApplicationComponents.getInstance();
-        MPSIdeActions.install();
-        ProjectFrame projectWindow = new ProjectFrame();
-        projectWindow.loadLastProjectIfAny();
-        SplashScreen.getInstance().hideSplashScreen();
-        projectWindow.show();
-      }
-    });
+
+
+    ApplicationComponents.getInstance();
+    MPSIdeActions.install();
+    ProjectFrame projectWindow = new ProjectFrame();
+    projectWindow.loadLastProjectIfAny();
+    SplashScreen.getInstance().hideSplashScreen();
+    projectWindow.show();
   }
 
   public static boolean isTestMode() {
