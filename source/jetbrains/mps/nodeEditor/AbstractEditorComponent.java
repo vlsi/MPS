@@ -577,7 +577,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return EditorCellAction.PASTE;
     }
 
-    if (keyEvent.getKeyCode() == KeyEvent.VK_P && keyEvent.isControlDown()) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_J && keyEvent.isControlDown()) {
       return EditorCellAction.CONVERT_TO_IRREFUTABLE_PATTERN;
     }
 
