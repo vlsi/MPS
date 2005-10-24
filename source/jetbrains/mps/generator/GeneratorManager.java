@@ -719,7 +719,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     try {
       Class cls = Class.forName(generatorClassName, true, ClassLoaderManager.getInstance().getClassLoader());
       if (ITemplateGenerator.class.isAssignableFrom(cls)) {
-        generator = (ITemplateGenerator) cls.getConstructor(IOperationContext.class, IProgressMonitor.class).newInstance(generatorContext, progress);
+        generator = (ITemplateGenerator) cls.getConstructor(GeneratorSessionContext.class, IProgressMonitor.class).newInstance(generatorContext, progress);
       } else {
         generator = (IModelGenerator) cls.getConstructor(IOperationContext.class).newInstance(generatorContext);
       }

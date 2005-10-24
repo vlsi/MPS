@@ -1,5 +1,6 @@
 package jetbrains.mps.generator;
 
+import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
@@ -8,9 +9,10 @@ import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.ide.BootstrapLanguages;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -23,6 +25,7 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
   private static final Logger LOG = Logger.getLogger(GeneratorSessionContext.class);
 
   private List<Generator> myGeneratorModules;
+  private List<SModel> myTemplateModels;
   private IOperationContext myInvocationContext;
   private TransientModule myTransientModule;
   private String mySessionId;
@@ -44,6 +47,18 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
     myTargetLanguage = targetLanguage;
     myInvocationContext = invocationContext;
     myTransientModule = new TransientModule(invocationContext.getModule());
+
+    myTemplateModels = new LinkedList<SModel>();
+    for (Generator generatorModule : generatorModules) {
+      List<SModelDescriptor> ownModelDescriptors = generatorModule.getOwnModelDescriptors();
+      for (SModelDescriptor modelDescriptor : ownModelDescriptors) {
+        if (SModelStereotype.TEMPLATES.equals(modelDescriptor.getStereotype())) {
+          if (!myTemplateModels.contains(modelDescriptor.getSModel())) {
+            myTemplateModels.add(modelDescriptor.getSModel());
+          }
+        }
+      }
+    }
   }
 
   public <T> T getComponent(Class<T> clazz) {
@@ -64,6 +79,10 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
 
   public List<Generator> getGeneratorModules() {
     return myGeneratorModules;
+  }
+
+  public List<SModel> getTemplateModels() {
+    return myTemplateModels;
   }
 
   public IOperationContext getInvocationContext() {

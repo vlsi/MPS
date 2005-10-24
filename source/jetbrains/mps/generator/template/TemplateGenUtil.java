@@ -71,7 +71,7 @@ public class TemplateGenUtil {
       }
 
       // try to resolve the reference
-      IScope scope = nodeBuilder.getGenerator().getOperationContext().getScope();
+      IScope scope = nodeBuilder.getGenerator().getScope();
       IReferenceResolver referenceResolver = createReferenceResolver(templateNode, scope);
       SNode targetReferentNode = referenceResolver.resolveTarget(templateReference, nodeBuilder);
       if (targetReferentNode != null) {
@@ -132,7 +132,7 @@ public class TemplateGenUtil {
   }
 
   private static INodeBuilder loadNodeBuilder(SNode sourceNode, SNode templateNode, String mappingName, ITemplateGenerator generator) {
-    ConceptDeclaration typeDeclaration = SModelUtil.getConceptDeclaration(templateNode, generator.getOperationContext().getScope());
+    ConceptDeclaration typeDeclaration = SModelUtil.getConceptDeclaration(templateNode, generator.getScope());
     String modelPackageName = JavaNameUtil.packageNameForModelUID(typeDeclaration.getModel().getUID());
     String buildersPackageName = modelPackageName + ".builder";
     String builderClassName = buildersPackageName + "." + typeDeclaration.getName() + "_NodeBuilder";
@@ -376,7 +376,7 @@ public class TemplateGenUtil {
       } else {
         String methodName = "semanticNodeCondition_" + conditionAspectId;
         Object[] args = new Object[]{parentSourceNode};
-        Boolean conditionStatus = (Boolean) QueryMethod.invokeWithOptionalArg(methodName, args, nodeMacro.getModel(), generator.getOperationContext());
+        Boolean conditionStatus = (Boolean) QueryMethod.invokeWithOptionalArg(methodName, args, nodeMacro.getModel(), generator.getGeneratorSessionContext());
         List<SNode> sourceNodes = new LinkedList<SNode>();
         if (conditionStatus) {
           sourceNodes.add(parentSourceNode);
@@ -499,8 +499,7 @@ public class TemplateGenUtil {
       }
 
       TemplateFragment templateFragment = templateFragments.get(0);
-      SNode templateNode = templateFragment.getParent();
-      return templateNode;
+      return templateFragment.getParent();
     }
     return null;
   }

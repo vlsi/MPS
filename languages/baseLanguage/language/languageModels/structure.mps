@@ -841,6 +841,7 @@
       <property name="targetCardinality" value="1" />
       <property name="role" value="classType" />
       <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1107535904670" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1081236769987">
       <property name="sourceCardinality" value="1" />
@@ -1033,6 +1034,7 @@
       <property name="targetCardinality" value="1" />
       <property name="role" value="classType" />
       <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1107535904670" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1083260308426">
       <property name="sourceCardinality" value="1" />

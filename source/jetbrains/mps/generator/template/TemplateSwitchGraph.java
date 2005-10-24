@@ -16,6 +16,21 @@ public class TemplateSwitchGraph {
   private Map<TemplateSwitch, TemplateSwitchGraphNode> myTemplateSwitchToGraphNodeMap = new HashMap<TemplateSwitch, TemplateSwitchGraphNode>();
   private IScope myScope;
 
+  public TemplateSwitchGraph(List<SModel> templateModels) {
+    for (SModel templateModel : templateModels) {
+      for (SNode root : templateModel.getRoots()) {
+        if (root instanceof TemplateSwitch) {
+          if (myTemplateSwitchToGraphNodeMap.get(root) == null) {
+            addSwitch((TemplateSwitch) root);
+          }
+        }
+      }
+    }
+  }
+
+  /**
+   * @deprecated
+   */
   public TemplateSwitchGraph(SModel templatesModel, IScope scope) {
     myScope = scope;
     processTemplatesModel(templatesModel, new HashSet<SModelUID>());
