@@ -59,6 +59,9 @@ public class Icons {
   public static final Icon CELL_ACTION_KEY_ICON = new ImageIcon(Icons.class.getResource("nodes/cellActionKey.png"));
   public static final Icon CELL_TREE_ICON = new ImageIcon(Icons.class.getResource("nodes/cellTree.png"));
 
+  public static final Icon DELETE_ICON = new ImageIcon(Icons.class.getResource("other/cancel.png"));
+  public static final Icon FIND_ICON = new ImageIcon(Icons.class.getResource("other/find.png")); 
+
   public static final Icon HIERARCHY_ICON = new ImageIcon(Icons.class.getResource("nodes/hierarchyView.png"));
 
   public static final Icon DISCARD_ALL_ICON = new ImageIcon(Icons.class.getResource("nodes/discardAll.png"));
