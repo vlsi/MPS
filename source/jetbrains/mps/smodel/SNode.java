@@ -430,7 +430,7 @@ public abstract class SNode implements Cloneable {
       }
     }
     return list;
-  }
+  }    
 
   public SReference setReferent(String role, SNode target) {
     // remove old references
