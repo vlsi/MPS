@@ -14,34 +14,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../lib/junit.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../lib/xmlrpc-1.2-b1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
           <root url="jar://$MODULE_DIR$/../../lib/mps.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../lib/jdom-1.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -56,6 +29,9 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="JDOM" level="project" />
+    <orderEntry type="library" name="JUnit" level="project" />
+    <orderEntry type="library" name="XMLRPC" level="project" />
     <orderEntryProperties />
   </component>
   <component name="org.mevenide.idea.module.ModuleSettings">
