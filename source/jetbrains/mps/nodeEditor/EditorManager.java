@@ -77,8 +77,17 @@ public class EditorManager {
           eventNode = ((SModelReferenceEvent)event).getReference().getSourceNode();
         } else {
           if (event instanceof SModelPropertyEvent) {//++if some property had changed
-            eventNode = ((SModelPropertyEvent)event).getNode();
-            if (nodeEditorComponent.doesCellDependOnNode(oldCell, eventNode)) propertyChanged = true;
+            SModelPropertyEvent propertyEvent = ((SModelPropertyEvent) event);
+            eventNode = propertyEvent.getNode();
+            if (nodeEditorComponent.doesCellDependOnNode(oldCell, eventNode)) {
+              propertyChanged = true;
+              nodeChanged = true;
+              if (eventNode == oldCell.getSNode() && oldCell instanceof EditorCell_Property) { //checking if cell node is changed by typing property
+                EditorCell_Property cellProperty = (EditorCell_Property) oldCell;
+                nodeChanged = !(propertyEvent.getOldPropertyValue().equals(cellProperty.getRenderedText()));
+                //( ^ node isn't changed if property is changed by typing)
+              }
+            }
           }//--if some property had changed
           continue;
         }

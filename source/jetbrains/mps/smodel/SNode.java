@@ -242,7 +242,7 @@ public abstract class SNode implements Cloneable {
         }
       });
     }
-    getModel().firePropertyChangedEvent(this, propertyName);
+    getModel().firePropertyChangedEvent(this, propertyName, oldValue, propertyValue);
   }
 
 

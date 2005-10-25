@@ -9,11 +9,15 @@ import jetbrains.mps.smodel.SNode;
 public class SModelPropertyEvent extends SModelEvent {
   private String myPropertyName;
   private SNode myNode;
+  private String myOldPropertyValue;
+  private String myNewPropertyValue;
 
-  public SModelPropertyEvent(SModel model, String propertyName, SNode node) {
+  public SModelPropertyEvent(SModel model, String propertyName, SNode node, String oldPropertyValue, String newPropertyValue) {
     super(model);
     myPropertyName = propertyName;
     myNode = node;
+    myOldPropertyValue = oldPropertyValue;
+    myNewPropertyValue = newPropertyValue;
   }
 
   public String getPropertyName() {
@@ -26,5 +30,13 @@ public class SModelPropertyEvent extends SModelEvent {
 
   public void accept(SModelEventVisitor visitor) {
     visitor.visitPropertyEvent(this);
+  }
+
+  public String getOldPropertyValue() {
+    return myOldPropertyValue;
+  }
+
+  public String getNewPropertyValue() {
+    return myNewPropertyValue;
   }
 }

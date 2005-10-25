@@ -206,17 +206,10 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  void fireChangedEvent(SNode node, String property) {
+  void firePropertyChangedEvent(SNode node, String property, String oldValue, String newValue) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.propertyChanged(new SModelPropertyEvent(this, property, node));
-    }
-  }
-
-  void firePropertyChangedEvent(SNode node, String property) {
-    if (!canFireEvent()) return;
-    for (SModelListener sModelListener : copyListeners()) {
-      sModelListener.propertyChanged(new SModelPropertyEvent(this, property, node));
+      sModelListener.propertyChanged(new SModelPropertyEvent(this, property, node, oldValue, newValue));
     }
   }
 

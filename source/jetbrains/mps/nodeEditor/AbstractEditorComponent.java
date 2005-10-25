@@ -790,6 +790,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
 
     EditorCell selectedCell = getSelectedCell();
+    int caretPosition = selectedCell instanceof EditorCell_Label ?
+            ((EditorCell_Label)selectedCell).getTextLine().getCaretPosition() : 0;
     String id = "";
     SNodeProxy nodeProxy = null;
     if (selectedCell != null) {
@@ -806,6 +808,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (nodeProxy != null && id != null) {
       EditorCell cell = findNodeCell(nodeProxy.getNode(), id);
       changeSelection(cell);
+      if (cell instanceof EditorCell_Label) {
+        ((EditorCell_Label)cell).getTextLine().setCaretPosition(caretPosition);
+      }
     } else {
       changeSelection(null);
     }
@@ -1337,8 +1342,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private class MyModelListener implements SModelCommandListener {
     public void modelChangedInCommand(List<SModelEvent> events, EditorContext editorContext) {
       if (!EventUtil.isDramaticalChange(events)) {
-        myRootCell.synchronizeViewWithModel();
-        relayout();
+       /* myRootCell.synchronizeViewWithModel();
+        relayout();*/
+        rebuildEditorContent(events);
       } else {
 
         String cellId = null;
