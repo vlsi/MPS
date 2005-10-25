@@ -84,7 +84,16 @@ public class EditorManager {
               nodeChanged = true;
               if (eventNode == oldCell.getSNode() && oldCell instanceof EditorCell_Property) { //checking if cell node is changed by typing property
                 EditorCell_Property cellProperty = (EditorCell_Property) oldCell;
-                nodeChanged = !(propertyEvent.getOldPropertyValue().equals(cellProperty.getRenderedText()));
+                String oldPropertyValue = propertyEvent.getOldPropertyValue();
+                String renderedText = cellProperty.getRenderedText();
+                boolean propertyTyped = false;
+                if (oldPropertyValue == null) {
+                  propertyTyped = renderedText == null;
+                }
+                else {
+                  propertyTyped = oldPropertyValue.equals(renderedText);
+                }
+                nodeChanged = !propertyTyped;
                 //( ^ node isn't changed if property is changed by typing)
               }
             }

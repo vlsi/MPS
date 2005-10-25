@@ -54,9 +54,6 @@ public class PropertyAccessor implements ModelAccessor {
     if (text != null && text.length() == 0) {
       text = null;
     }
-    if(!myAllowEmptyText && text == null) {
-      return false;
-    }
 
     if (myPropertyDeclaration != null) {
       PropertySupport propertySupport = PropertySupport.getPropertySupport(myPropertyDeclaration);
