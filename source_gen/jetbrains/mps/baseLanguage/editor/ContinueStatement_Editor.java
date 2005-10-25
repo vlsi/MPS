@@ -27,6 +27,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "continue"));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ";"));
     editorCell.putUserObject(EditorCell.CELL_ID, "1101210185160");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -39,6 +40,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     editorCell.putUserObject(EditorCell.CELL_ID, "1101210485461");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
@@ -50,6 +52,7 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1101210485462");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
 }

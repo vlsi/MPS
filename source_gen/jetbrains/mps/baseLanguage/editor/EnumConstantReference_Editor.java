@@ -39,6 +39,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "."));
     editorCell.addEditorCell(this.createEnumConstantDeclarationReferenceCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, "1090928601376");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -50,6 +51,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1090928601378");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createEnumConstantDeclarationReferenceCell(EditorContext context, SNode node) {
@@ -84,6 +86,8 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
         noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration, context));
         EnumConstantReference_ConstantNameActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1090928601379");
+        noRefCell.setLayoutConstraint("");
+        noRefCell.setLayoutConstraint("");
         noRefCell.putUserObject(EditorCell.ROLE, "enumConstantDeclaration");
         return noRefCell;
       }
@@ -118,6 +122,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
         noRefCell.putUserObject(EditorCell.CELL_ID, "1090928601377");
+        noRefCell.setLayoutConstraint("");
         noRefCell.putUserObject(EditorCell.ROLE, "classType");
         return noRefCell;
       }

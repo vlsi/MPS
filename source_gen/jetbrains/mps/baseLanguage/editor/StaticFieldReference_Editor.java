@@ -37,10 +37,11 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     __Expression_RTransform_ActionSet.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new _Expression_KeyMap());
-    editorCell.addEditorCell(this.createClassTypeCell(context, node));
+    editorCell.addEditorCell(this.createClassifierTypeCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "."));
     editorCell.addEditorCell(this.createVariableDeclarationReferenceCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, "1082740154392");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -52,6 +53,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1082740154394");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createVariableDeclarationReferenceCell(EditorContext context, SNode node) {
@@ -86,6 +88,8 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
         noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration, context));
         StaticFieldReference_FieldNameActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1088427644683");
+        noRefCell.setLayoutConstraint("");
+        noRefCell.setLayoutConstraint("");
         noRefCell.putUserObject(EditorCell.ROLE, "variableDeclaration");
         return noRefCell;
       }
@@ -105,10 +109,10 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     StaticFieldReference_FieldNameActions.setCellActions(editorCell, node, context);
     return editorCell;
   }
-  public EditorCell createClassTypeCell(EditorContext context, SNode node) {
+  public EditorCell createClassifierTypeCell(EditorContext context, SNode node) {
     SNode referencedNode = null;
-    referencedNode = node.getChild("classType");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "classType", context.getOperationContext().getScope());
+    referencedNode = node.getChild("classifierType");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "classifierType", context.getOperationContext().getScope());
     if(referencedNode == null) {
       {
         EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
@@ -120,7 +124,8 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
         noRefCell.putUserObject(EditorCell.CELL_ID, "1082740154393");
-        noRefCell.putUserObject(EditorCell.ROLE, "classType");
+        noRefCell.setLayoutConstraint("");
+        noRefCell.putUserObject(EditorCell.ROLE, "classifierType");
         return noRefCell;
       }
     }
@@ -128,7 +133,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
-    editorCell.putUserObject(EditorCell.ROLE, "classType");
+    editorCell.putUserObject(EditorCell.ROLE, "classifierType");
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
     editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));

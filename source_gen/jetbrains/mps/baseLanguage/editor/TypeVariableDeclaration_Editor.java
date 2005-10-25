@@ -29,6 +29,7 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
     editorCell.putUserObject(EditorCell.CELL_ID, "1109281432641");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
 }

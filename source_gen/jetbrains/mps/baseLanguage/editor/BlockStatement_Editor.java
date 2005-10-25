@@ -33,6 +33,7 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRowCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "}"));
     editorCell.putUserObject(EditorCell.CELL_ID, "1119291654779");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createRowCell(EditorContext context, SNode node) {
@@ -45,6 +46,7 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "{"));
     editorCell.addEditorCell(this.createStatementsCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, "1119291719344");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
@@ -56,6 +58,7 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1119291721269");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -67,6 +70,7 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1119291719345");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createStatementsCell(EditorContext context, SNode node) {
@@ -84,6 +88,7 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
         noRefCell.putUserObject(EditorCell.CELL_ID, "1119291719346");
+        noRefCell.setLayoutConstraint("");
         noRefCell.putUserObject(EditorCell.ROLE, "statements");
         return noRefCell;
       }

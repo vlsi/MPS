@@ -25,6 +25,7 @@ public class Expression_Editor extends DefaultNodeEditor {
     Expression_NodeBoxActions.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new _Expression_KeyMap());
     editorCell.putUserObject(EditorCell.CELL_ID, "1075376431437");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
 }

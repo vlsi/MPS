@@ -159,6 +159,36 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1130270268759">
+      <property name="name" value="callStatic" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1130270271199" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1130270268761">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1130270293573">
+          <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1130270293668">
+            <link role="baseMethodDeclaration" targetNodeId="1130270248176" />
+            <node role="classType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1130270293669">
+              <link role="classifier" targetNodeId="1130270238222" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1130270344612">
+          <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1130270730196">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1130270344691">
+              <link role="variableDeclaration" targetNodeId="1130270307248" />
+              <node role="classifierType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1130270440474">
+                <link role="classifier" targetNodeId="1130270238222" />
+              </node>
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1130270744652">
+              <link role="baseMethodDeclaration" targetNodeId="1130270248176" />
+              <node role="classType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1130270744653">
+                <link role="classifier" targetNodeId="1130270238222" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1115766355096">
     <property name="name" value="TESTMethodCalls" />
@@ -319,6 +349,22 @@
     </node>
     <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1127509355540">
       <property name="name" value="T2" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1130270238222">
+    <property name="name" value="StaticClass" />
+    <node role="staticField" type="jetbrains.mps.baseLanguage.StaticFieldDeclaration" id="1130270307248">
+      <property name="name" value="staticField" />
+      <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1130270311953">
+        <link role="classifier" extResolveInfo="1.[Classifier]String" />
+      </node>
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1130270248176">
+      <property name="name" value="staticMethod" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1130270332204">
+        <link role="classifier" extResolveInfo="1.[Classifier]String" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1130270248257" />
     </node>
   </node>
 </model>

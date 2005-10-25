@@ -35,6 +35,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createTypeCell(context, node));
     editorCell.addEditorCell(this.createNameCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, "1075302295735");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext context, SNode node) {
@@ -50,6 +51,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     ParameterDeclaration_NameCellActions.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new _ParameterDeclaration_KeyMap());
     editorCell.putUserObject(EditorCell.CELL_ID, "1075302295737");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createTypeCell(EditorContext context, SNode node) {
@@ -67,6 +69,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
         noRefCell.putUserObject(EditorCell.CELL_ID, "1075302295736");
+        noRefCell.setLayoutConstraint("");
         noRefCell.putUserObject(EditorCell.ROLE, "type");
         return noRefCell;
       }

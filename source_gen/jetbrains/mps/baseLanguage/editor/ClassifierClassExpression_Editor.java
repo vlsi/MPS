@@ -38,6 +38,7 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createClassifierReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, ".class"));
     editorCell.putUserObject(EditorCell.CELL_ID, "1116615268507");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -51,6 +52,7 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
     editorCell.getTextLine().setFontType(MPSFonts.ITALIC);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     editorCell.putUserObject(EditorCell.CELL_ID, "1116615336905");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createClassifierReferenceCell(EditorContext context, SNode node) {
@@ -83,6 +85,8 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration, context));
         noRefCell.putUserObject(EditorCell.CELL_ID, "1116615277650");
+        noRefCell.setLayoutConstraint("");
+        noRefCell.setLayoutConstraint("");
         noRefCell.putUserObject(EditorCell.ROLE, "classifier");
         return noRefCell;
       }

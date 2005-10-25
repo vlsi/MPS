@@ -24,6 +24,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     __Expression_RTransform_ActionSet.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1090310064235");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
 }

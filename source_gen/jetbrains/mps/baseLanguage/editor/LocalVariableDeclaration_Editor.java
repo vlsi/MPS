@@ -40,6 +40,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createInitializerArea(context, node));
     }
     editorCell.putUserObject(EditorCell.CELL_ID, "1075303160501");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createInitializerArea(EditorContext context, SNode node) {
@@ -52,6 +53,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "="));
     editorCell.addEditorCell(this.createInitializerCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, "1075303160504");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -63,6 +65,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1075303160505");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext context, SNode node) {
@@ -78,6 +81,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     LocalVariableDeclaration_NameCellActions.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new _LocalVariableName_KeyMap());
     editorCell.putUserObject(EditorCell.CELL_ID, "1075303160503");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createTypeCell(EditorContext context, SNode node) {
@@ -95,6 +99,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
         noRefCell.putUserObject(EditorCell.CELL_ID, "1075303160502");
+        noRefCell.setLayoutConstraint("");
         noRefCell.putUserObject(EditorCell.ROLE, "type");
         return noRefCell;
       }
@@ -126,6 +131,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
         __VariableInitializer_ActionSet.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1075303160506");
+        noRefCell.setLayoutConstraint("");
         noRefCell.putUserObject(EditorCell.ROLE, "initializer");
         return noRefCell;
       }

@@ -30,6 +30,7 @@ public class FloatingPointConstant_Editor extends DefaultNodeEditor {
     editorCell.getTextLine().setTextColor(Color.blue);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "value"));
     editorCell.putUserObject(EditorCell.CELL_ID, "1113006710627");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
 }

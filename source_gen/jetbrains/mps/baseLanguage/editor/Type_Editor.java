@@ -23,6 +23,7 @@ public class Type_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1081942381485");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
 }

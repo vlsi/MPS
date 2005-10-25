@@ -44,6 +44,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.create_BaseMethodCallArgListEditorCell(context, node));
     editorCell.addEditorCell(this.createConstantCell3(context, node, ")"));
     editorCell.putUserObject(EditorCell.CELL_ID, "1091709481298");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell create_BaseMethodCallArgListEditorCell(EditorContext context, SNode node) {
@@ -56,6 +57,8 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1091709481304");
+    editorCell.setLayoutConstraint("");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -68,6 +71,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     editorCell.putUserObject(EditorCell.CELL_ID, "1091709481299");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
@@ -79,6 +83,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1101210485458");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
@@ -90,6 +95,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1091709481303");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
@@ -102,6 +108,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     __ExpressionClosingParethesis_ActionSet.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1091709481305");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createBaseMethodDeclarationReferenceCell(EditorContext context, SNode node) {
@@ -136,6 +143,8 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
         noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration, context));
         SuperMethodCall_NameCellActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1091709481300");
+        noRefCell.setLayoutConstraint("");
+        noRefCell.setLayoutConstraint("");
         noRefCell.putUserObject(EditorCell.ROLE, "baseMethodDeclaration");
         return noRefCell;
       }

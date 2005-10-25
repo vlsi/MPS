@@ -28,6 +28,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     __Expression_RTransform_ActionSet.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new _Expression_KeyMap());
     editorCell.putUserObject(EditorCell.CELL_ID, "1075374365334");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
 }

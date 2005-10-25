@@ -42,6 +42,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createConstantCell5(context, node, "}"));
     }
     editorCell.putUserObject(EditorCell.CELL_ID, "1075379419313");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createHeaderRow(EditorContext context, SNode node) {
@@ -56,6 +57,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConditionCell(context, node));
     editorCell.addEditorCell(this.createConstantCell2(context, node, ") {"));
     editorCell.putUserObject(EditorCell.CELL_ID, "1075379444330");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createIfTrueBox(EditorContext context, SNode node) {
@@ -68,6 +70,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createIndentCell(context, node, "  "));
     editorCell.addEditorCell(this.createIfTrueCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, "1075379536706");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createIfFalseBranch(EditorContext context, SNode node) {
@@ -81,6 +84,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell4(context, node, "else"));
     editorCell.addEditorCell(this.createIfFalseStatementCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, "1075379536707");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell5(EditorContext context, SNode node, String text) {
@@ -93,6 +97,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     IfStatement_IfClosingBracketActions.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1075379580458");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -105,6 +110,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     editorCell.putUserObject(EditorCell.CELL_ID, "1101210485455");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
@@ -116,6 +122,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1075379663006");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
@@ -127,6 +134,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1075379740164");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createIndentCell(EditorContext context, SNode node, String text) {
@@ -138,6 +146,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1075379821384");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
@@ -149,6 +158,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1082541374920");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
@@ -162,6 +172,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.getTextLine().setFontType(MPSFonts.BOLD);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     editorCell.putUserObject(EditorCell.CELL_ID, "1101210485456");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConditionCell(EditorContext context, SNode node) {
@@ -181,6 +192,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
         IfStatement_ConditionCellActions.setCellActions(noRefCell, node, context);
         _DefErrorActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1075379700788");
+        noRefCell.setLayoutConstraint("");
         noRefCell.putUserObject(EditorCell.ROLE, "condition");
         return noRefCell;
       }
@@ -211,6 +223,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
         noRefCell.putUserObject(EditorCell.CELL_ID, "1082486433802");
+        noRefCell.setLayoutConstraint("");
         noRefCell.putUserObject(EditorCell.ROLE, "ifTrue");
         return noRefCell;
       }
@@ -241,6 +254,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
         noRefCell.putUserObject(EditorCell.CELL_ID, "1119293948309");
+        noRefCell.setLayoutConstraint("");
         noRefCell.putUserObject(EditorCell.ROLE, "ifFalseStatement");
         return noRefCell;
       }

@@ -33,6 +33,7 @@ public class ExpressionStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createExpressionCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, ";"));
     editorCell.putUserObject(EditorCell.CELL_ID, "1075379141235");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -44,6 +45,7 @@ public class ExpressionStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1075379141237");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createExpressionCell(EditorContext context, SNode node) {
@@ -62,6 +64,7 @@ public class ExpressionStatement_Editor extends DefaultNodeEditor {
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
         ExpressionStatement_DeleteNode.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1075379141236");
+        noRefCell.setLayoutConstraint("");
         noRefCell.putUserObject(EditorCell.ROLE, "expression");
         return noRefCell;
       }

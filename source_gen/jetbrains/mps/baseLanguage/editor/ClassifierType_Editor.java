@@ -38,6 +38,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createClassifierReferenceCell(context, node));
     editorCell.addEditorCell(this.create_ClassifierType_Parameters_ComponentCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, "1128164132329");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell create_ClassifierType_Parameters_ComponentCell(EditorContext context, SNode node) {
@@ -50,6 +51,8 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1128164132333");
+    editorCell.setLayoutConstraint("");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createClassifierReferenceCell(EditorContext context, SNode node) {
@@ -74,7 +77,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     }
     if(effectiveNode == null) {
       {
-        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "<no interface>");
+        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "<no classifier>");
         noRefCell.setEditable(true);
         noRefCell.setDrawBrackets(false);
         noRefCell.setBracketsColor(Color.black);
@@ -84,6 +87,8 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
         noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration, context));
         noRefCell.addKeyMap(new _TypeKeyMap());
         noRefCell.putUserObject(EditorCell.CELL_ID, "1128164132330");
+        noRefCell.setLayoutConstraint("");
+        noRefCell.setLayoutConstraint("");
         noRefCell.putUserObject(EditorCell.ROLE, "classifier");
         return noRefCell;
       }

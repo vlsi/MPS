@@ -36,6 +36,7 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createExpressionCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ")"));
     editorCell.putUserObject(EditorCell.CELL_ID, "1081880010409");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -49,6 +50,7 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     ParenthesizedExpression_ExpressionActions.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new _LeftParen_KeyMap());
     editorCell.putUserObject(EditorCell.CELL_ID, "1081880010410");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
@@ -62,6 +64,7 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     __ExpressionClosingParethesis_ActionSet.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new _RightParen_KeyMap());
     editorCell.putUserObject(EditorCell.CELL_ID, "1081880010412");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createExpressionCell(EditorContext context, SNode node) {
@@ -80,6 +83,7 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
         ParenthesizedExpression_ExpressionActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1081880010411");
+        noRefCell.setLayoutConstraint("");
         noRefCell.putUserObject(EditorCell.ROLE, "expression");
         return noRefCell;
       }

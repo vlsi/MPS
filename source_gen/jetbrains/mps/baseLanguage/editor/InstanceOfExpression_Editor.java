@@ -35,6 +35,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "instanceof"));
     editorCell.addEditorCell(this.createClassTypeCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, "1081257073129");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -47,6 +48,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     editorCell.putUserObject(EditorCell.CELL_ID, "1081257097747");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createLeftExpressionCell(EditorContext context, SNode node) {
@@ -66,6 +68,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
         InstanceOfExpression_LeftExpressionsActions.setCellActions(noRefCell, node, context);
         _DefErrorActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1081257097746");
+        noRefCell.setLayoutConstraint("");
         noRefCell.putUserObject(EditorCell.ROLE, "leftExpression");
         return noRefCell;
       }
@@ -97,6 +100,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
         _DefErrorActions.setCellActions(noRefCell, node, context);
         noRefCell.putUserObject(EditorCell.CELL_ID, "1081257097748");
+        noRefCell.setLayoutConstraint("");
         noRefCell.putUserObject(EditorCell.ROLE, "classType");
         return noRefCell;
       }

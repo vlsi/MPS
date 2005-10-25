@@ -28,6 +28,7 @@ public class NullLiteral_Editor extends DefaultNodeEditor {
     __Expression_RTransform_ActionSet.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new _Expression_KeyMap());
     editorCell.putUserObject(EditorCell.CELL_ID, "1079605716541");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
 }

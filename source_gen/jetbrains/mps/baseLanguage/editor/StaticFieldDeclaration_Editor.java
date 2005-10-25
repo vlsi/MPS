@@ -44,6 +44,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createConstantCell2(context, node, ";"));
     editorCell.putUserObject(EditorCell.CELL_ID, "1084188901669");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createInitializerArea(EditorContext context, SNode node) {
@@ -56,6 +57,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell1(context, node, "="));
     editorCell.addEditorCell(this.createInitializerCell(context, node));
     editorCell.putUserObject(EditorCell.CELL_ID, "1084188979616");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
@@ -68,6 +70,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
     editorCell.putUserObject(EditorCell.CELL_ID, "1084188979613");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
@@ -79,6 +82,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1084188979619");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
@@ -90,6 +94,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.CELL_ID, "1084188979617");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createNameCell(EditorContext context, SNode node) {
@@ -106,6 +111,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "name"));
     StaticFieldDeclaration_NameCellActions.setCellActions(editorCell, node, context);
     editorCell.putUserObject(EditorCell.CELL_ID, "1084188979615");
+    editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createTypeCell(EditorContext context, SNode node) {
@@ -123,6 +129,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
         noRefCell.putUserObject(EditorCell.CELL_ID, "1084188979614");
+        noRefCell.setLayoutConstraint("");
         noRefCell.putUserObject(EditorCell.ROLE, "type");
         return noRefCell;
       }
@@ -155,6 +162,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
         __VariableInitializer_ActionSet.setCellActions(noRefCell, node, context);
         noRefCell.addKeyMap(new _Expression_KeyMap());
         noRefCell.putUserObject(EditorCell.CELL_ID, "1084188979618");
+        noRefCell.setLayoutConstraint("");
         noRefCell.putUserObject(EditorCell.ROLE, "initializer");
         return noRefCell;
       }

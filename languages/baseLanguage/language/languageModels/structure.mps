@@ -611,10 +611,10 @@
       <property name="value" value="reference to static field declaration" />
       <link role="conceptPropertyDeclaration" targetNodeId="34.1107214812281" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1082739776687">
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1130267662831">
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="1" />
-      <property name="role" value="classType" />
+      <property name="role" value="classifierType" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1107535904670" />
     </node>
