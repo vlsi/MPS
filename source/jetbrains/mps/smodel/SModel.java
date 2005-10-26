@@ -326,15 +326,16 @@ public class SModel implements Iterable<SNode> {
   }
 
   public List<Language> getLanguages(IScope scope) { //don't remove
-    Set<Language> result = new HashSet<Language>(getUserDefinedLanguages(scope));
-    Set<Language> additionalLanguages = new HashSet<Language>();
-    Set<Language> visibleLanguages = new HashSet<Language>(scope.getVisibleLanguages());
-    for (Language l : result) {
-      additionalLanguages.addAll(l.getAllDependOnModules_impl(Language.class));
-    }
-    additionalLanguages.retainAll(visibleLanguages);
-    result.addAll(additionalLanguages);
-    return new ArrayList<Language>(result);
+//    Set<Language> result = new HashSet<Language>(getUserDefinedLanguages(scope));
+//    Set<Language> additionalLanguages = new HashSet<Language>();
+//    Set<Language> visibleLanguages = new HashSet<Language>(scope.getVisibleLanguages());
+//    for (Language l : result) {
+//      additionalLanguages.addAll(l.getAllDependOnModules_impl(Language.class));
+//    }
+//    additionalLanguages.retainAll(visibleLanguages);
+//    result.addAll(additionalLanguages);
+//    return new ArrayList<Language>(result);
+    return getUserDefinedLanguages(scope);
   }
 
   public List<Language> getUserDefinedLanguages(IScope scope) {
@@ -365,14 +366,14 @@ public class SModel implements Iterable<SNode> {
     return new ArrayList<String>(myLanguages);
   }
 
-  public List<String> getVisibleLanguageNamespaces(IScope scope) {       //don't remove
-    List<Language> languages = getLanguages(scope);
-    List<String> result = new ArrayList<String>(languages.size());
-    for (Language l : languages) {
-      result.add(l.getModuleUID());
-    }
-    return result;
-  }
+//  public List<String> getVisibleLanguageNamespaces(IScope scope) {       //don't remove
+//    List<Language> languages = getLanguages(scope);
+//    List<String> result = new ArrayList<String>(languages.size());
+//    for (Language l : languages) {
+//      result.add(l.getModuleUID());
+//    }
+//    return result;
+//  }
 
   public boolean hasImportedModel(SModelUID modelUID) {
     return getImportElement(modelUID) != null;
