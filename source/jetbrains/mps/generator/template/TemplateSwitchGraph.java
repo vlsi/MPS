@@ -1,9 +1,13 @@
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.transformation.TLBase.TemplateSwitch;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -14,7 +18,6 @@ import java.util.*;
  */
 public class TemplateSwitchGraph {
   private Map<TemplateSwitch, TemplateSwitchGraphNode> myTemplateSwitchToGraphNodeMap = new HashMap<TemplateSwitch, TemplateSwitchGraphNode>();
-  private IScope myScope;
 
   public TemplateSwitchGraph(List<SModel> templateModels) {
     for (SModel templateModel : templateModels) {
@@ -24,37 +27,6 @@ public class TemplateSwitchGraph {
             addSwitch((TemplateSwitch) root);
           }
         }
-      }
-    }
-  }
-
-  /**
-   * @deprecated
-   */
-  public TemplateSwitchGraph(SModel templatesModel, IScope scope) {
-    myScope = scope;
-    processTemplatesModel(templatesModel, new HashSet<SModelUID>());
-  }
-
-  private void processTemplatesModel(SModel templatesModel, HashSet<SModelUID> processedModes) {
-    if (processedModes.contains(templatesModel.getUID())) {
-      return;
-    }
-    processedModes.add(templatesModel.getUID());
-
-    for (SNode root : templatesModel.getRoots()) {
-      if (root instanceof TemplateSwitch) {
-        if (myTemplateSwitchToGraphNodeMap.get((TemplateSwitch) root) == null) {
-          addSwitch((TemplateSwitch) root);
-        }
-      }
-    }
-
-    Iterator<SModelDescriptor> iterator = templatesModel.importedModels(myScope);
-    while (iterator.hasNext()) {
-      SModel importedModel = iterator.next().getSModel();
-      if (importedModel.hasLanguage("jetbrains.mps.transformation.TLBase")) {
-        processTemplatesModel(importedModel, processedModes);
       }
     }
   }
