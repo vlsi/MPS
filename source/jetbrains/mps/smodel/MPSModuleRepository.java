@@ -5,7 +5,7 @@ import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.projectLanguage.Root;
@@ -23,13 +23,13 @@ import java.util.*;
 public class MPSModuleRepository {
   private static final Logger LOG = Logger.getLogger(MPSModuleRepository.class);
 
-  private Map<String, IModule> myFileToModuleMap = new HashMap<String, IModule>();
-  private Map<String, IModule> myUIDToModuleMap = new HashMap<String, IModule>();
-  private Map<IModule, Set<MPSModuleOwner>> myModuleToOwnersMap = new HashMap<IModule, Set<MPSModuleOwner>>();
+  private Map<String, AbstractModule> myFileToModuleMap = new HashMap<String, AbstractModule>();
+  private Map<String, AbstractModule> myUIDToModuleMap = new HashMap<String, AbstractModule>();
+  private Map<AbstractModule, Set<MPSModuleOwner>> myModuleToOwnersMap = new HashMap<AbstractModule, Set<MPSModuleOwner>>();
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
   private CommandAdapter myListenerToRemoveUnusedModules;
 
-  private Map<String, Class<? extends IModule>> myExtensionsToModuleTypes = new HashMap<String, Class<? extends IModule>>();
+  private Map<String, Class<? extends AbstractModule>> myExtensionsToModuleTypes = new HashMap<String, Class<? extends AbstractModule>>();
   private static final String LANGUAGE_EXT = ".mpl";
   private static final String SOLUTION_EXT = ".msd";
 
@@ -74,11 +74,11 @@ public class MPSModuleRepository {
     }
   }
 
-  public boolean hasOwners(IModule module) {
+  public boolean hasOwners(AbstractModule module) {
     return myModuleToOwnersMap.get(module) != null;
   }
 
-  public Set<MPSModuleOwner> getOwners(IModule module) {
+  public Set<MPSModuleOwner> getOwners(AbstractModule module) {
     return new HashSet<MPSModuleOwner>(myModuleToOwnersMap.get(module));
   }
 
@@ -90,10 +90,10 @@ public class MPSModuleRepository {
     return registerModule(file, owner, Solution.class);
   }
 
-  public <TM extends IModule> TM registerModule(File file, MPSModuleOwner owner, Class<TM> cls) {
+  public <TM extends AbstractModule> TM registerModule(File file, MPSModuleOwner owner, Class<TM> cls) {
     try {
       String canonicalPath = file.getCanonicalPath();
-      IModule module = myFileToModuleMap.get(canonicalPath);
+      AbstractModule module = myFileToModuleMap.get(canonicalPath);
       if (module == null) {
         if (cls == Language.class) module = Language.newInstance(file, owner);
         if (cls == Solution.class) module = Solution.newInstance(file, owner);
@@ -120,12 +120,12 @@ public class MPSModuleRepository {
     }
   }
 
-  public boolean existsModule(IModule module, MPSModuleOwner owner) {
+  public boolean existsModule(AbstractModule module, MPSModuleOwner owner) {
     Set<MPSModuleOwner> mpsModuleOwners = myModuleToOwnersMap.get(module);
     return (myUIDToModuleMap.containsKey(module.getModuleUID()) && mpsModuleOwners != null && mpsModuleOwners.contains(owner));
   }
 
-  public void addModule(IModule module, MPSModuleOwner owner) {
+  public void addModule(AbstractModule module, MPSModuleOwner owner) {
     if (existsModule(module, owner)) {
       throw new RuntimeException("Couldn't add module \"" + module.getModuleUID() + "\" : this module is already registered with very this owner: " + owner);
     }
@@ -145,13 +145,13 @@ public class MPSModuleRepository {
   }
 
   public void invalidateLanguagesCaches() {
-    for (IModule module : myUIDToModuleMap.values()) {
+    for (AbstractModule module : myUIDToModuleMap.values()) {
       if (module instanceof Language) ((Language) module).invalidateCaches();
     }
   }
 
   public void unRegisterModules(MPSModuleOwner owner) {
-    for (IModule module : myUIDToModuleMap.values()) {
+    for (AbstractModule module : myUIDToModuleMap.values()) {
       Set owners = myModuleToOwnersMap.get(module);
       if (owners != null) {
         owners.remove(owner);
@@ -161,32 +161,32 @@ public class MPSModuleRepository {
     fireRepositoryChanged();
   }
 
-  public Set<IModule> getReleasedModulesWhenReleasingOwner(MPSModuleOwner owner) {
-    Set<IModule> modules = new HashSet<IModule>(myUIDToModuleMap.values());
+  public Set<AbstractModule> getReleasedModulesWhenReleasingOwner(MPSModuleOwner owner) {
+    Set<AbstractModule> modules = new HashSet<AbstractModule>(myUIDToModuleMap.values());
 
     //copying module to owners map
-    Map<IModule, HashSet<MPSModuleOwner>> moduleToOwnerMap = new HashMap<IModule, HashSet<MPSModuleOwner>>();
-    for (IModule md : myModuleToOwnersMap.keySet()) {
+    Map<AbstractModule, HashSet<MPSModuleOwner>> moduleToOwnerMap = new HashMap<AbstractModule, HashSet<MPSModuleOwner>>();
+    for (AbstractModule md : myModuleToOwnersMap.keySet()) {
       moduleToOwnerMap.put(md, new HashSet<MPSModuleOwner>(myModuleToOwnersMap.get(md)));
     }//--copying
 
     return collectReleasedModules(modules, moduleToOwnerMap, owner);
   }
 
-  private Set<IModule> collectReleasedModules(Set<IModule> modules, Map<IModule, HashSet<MPSModuleOwner>> moduleToOwnerMap, MPSModuleOwner owner) {
-    Set<IModule> releasedModules = new HashSet<IModule>();
-    for (IModule module : modules) {
+  private Set<AbstractModule> collectReleasedModules(Set<AbstractModule> modules, Map<AbstractModule, HashSet<MPSModuleOwner>> moduleToOwnerMap, MPSModuleOwner owner) {
+    Set<AbstractModule> releasedModules = new HashSet<AbstractModule>();
+    for (AbstractModule module : modules) {
       Set<MPSModuleOwner> owners = moduleToOwnerMap.get(module);
       if (owners != null) {
         owners.remove(owner);
         if (owners.isEmpty() || (owners.size() == 1 && owners.contains(module))) releasedModules.add(module);
       }
     }
-    for (IModule module : releasedModules) {
+    for (AbstractModule module : releasedModules) {
       modules.remove(module);
     }
-    Set<IModule> additionalReleasedModules = new HashSet<IModule>();
-    for (IModule module : releasedModules) {
+    Set<AbstractModule> additionalReleasedModules = new HashSet<AbstractModule>();
+    for (AbstractModule module : releasedModules) {
       if (module instanceof AbstractModule) {
         additionalReleasedModules.addAll(collectReleasedModules(modules, moduleToOwnerMap, module));
       }
@@ -196,8 +196,8 @@ public class MPSModuleRepository {
   }
 
   public void removeUnusedModules() {
-    List<IModule> modulesToRemove = new LinkedList<IModule>();
-    for (IModule module : myModuleToOwnersMap.keySet()) {
+    List<AbstractModule> modulesToRemove = new LinkedList<AbstractModule>();
+    for (AbstractModule module : myModuleToOwnersMap.keySet()) {
       Set<MPSModuleOwner> languageOwners = myModuleToOwnersMap.get(module);
       if (languageOwners == null || languageOwners.isEmpty()) {
         modulesToRemove.add(module);
@@ -205,14 +205,14 @@ public class MPSModuleRepository {
     }
 
     if (modulesToRemove.size() > 0) {
-      for (IModule module : modulesToRemove) {
+      for (AbstractModule module : modulesToRemove) {
         removeModule(module);
         module.dispose();
       }
     }
   }
 
-  private void removeModule(IModule module) {
+  private void removeModule(AbstractModule module) {
     File descriptorFile = module.getDescriptorFile();
     myModuleToOwnersMap.remove(module);
     myUIDToModuleMap.remove(module.getModuleUID());
@@ -273,19 +273,19 @@ public class MPSModuleRepository {
 
   private void readModuleDescriptor_internal(File dir, MPSModuleOwner owner, String extension) {
     try {
-      Class<? extends IModule> cls = myExtensionsToModuleTypes.get(extension);
+      Class<? extends AbstractModule> cls = myExtensionsToModuleTypes.get(extension);
       registerModule(dir, owner, cls);
     } catch (Exception e) {
       LOG.error("Fail to load module from descriptor " + dir.getAbsolutePath(), e);
     }
   }
 
-  private Language moduleAsLanguage(IModule module) {
+  private Language moduleAsLanguage(AbstractModule module) {
     if (module instanceof Language) return (Language) module;
     return null;
   }
 
-  public IModule getModule(String namespace) {
+  public AbstractModule getModule(String namespace) {
     return myUIDToModuleMap.get(namespace);
   }
 
@@ -293,8 +293,8 @@ public class MPSModuleRepository {
     return moduleAsLanguage(getModule(namespace));
   }
 
-  public IModule getModule(String namespace, MPSModuleOwner moduleOwner) {
-    IModule module = myUIDToModuleMap.get(namespace);
+  public AbstractModule getModule(String namespace, MPSModuleOwner moduleOwner) {
+    AbstractModule module = myUIDToModuleMap.get(namespace);
     if (module == null) {
       return null;
     }
@@ -309,9 +309,9 @@ public class MPSModuleRepository {
     return moduleAsLanguage(getModule(namespace, moduleOwner));
   }
 
-  public <MT extends IModule> List<MT> getModules(MPSModuleOwner moduleOwner, Class<MT> cls) {
+  public <MT extends AbstractModule> List<MT> getModules(MPSModuleOwner moduleOwner, Class<MT> cls) {
     List<MT> list = new LinkedList<MT>();
-    for (Map.Entry<IModule, Set<MPSModuleOwner>> entry : myModuleToOwnersMap.entrySet()) {
+    for (Map.Entry<AbstractModule, Set<MPSModuleOwner>> entry : myModuleToOwnersMap.entrySet()) {
       Set<MPSModuleOwner> moduleOwners = entry.getValue();
       if (moduleOwners.contains(moduleOwner) && cls.isInstance(entry.getKey())) {
         list.add((MT) entry.getKey());
@@ -324,14 +324,14 @@ public class MPSModuleRepository {
     return getModules(moduleOwner, Language.class);
   }
 
-  public List<IModule> getModules(MPSModuleOwner moduleOwner) {
-    return getModules(moduleOwner, IModule.class);
+  public List<AbstractModule> getModules(MPSModuleOwner moduleOwner) {
+    return getModules(moduleOwner, AbstractModule.class);
   }
 
-  public <MT extends IModule> List<MT> getAllModules(Class<MT> cls) {
-    Iterator<IModule> modules = myModuleToOwnersMap.keySet().iterator();
+  public <MT extends AbstractModule> List<MT> getAllModules(Class<MT> cls) {
+    Iterator<AbstractModule> modules = myModuleToOwnersMap.keySet().iterator();
     List<MT> result = new ArrayList<MT>();
-    for (IModule module : CollectionUtil.iteratorAsIterable(modules)) {
+    for (AbstractModule module : CollectionUtil.iteratorAsIterable(modules)) {
       if (cls.isInstance(module)) result.add((MT) module);
     }
     return result;
@@ -341,7 +341,7 @@ public class MPSModuleRepository {
     return getAllModules(Language.class);
   }
 
-  public List<IModule> getAllModules() {
-    return getAllModules(IModule.class);
+  public List<AbstractModule> getAllModules() {
+    return getAllModules(AbstractModule.class);
   }
 }

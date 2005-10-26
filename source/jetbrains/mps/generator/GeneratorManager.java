@@ -22,7 +22,7 @@ import jetbrains.mps.ide.progress.ProgressWindowProgressMonitor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.MPSPlugin;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -212,7 +212,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     String solutionDir = projectDir + File.separatorChar + "outputModels" + File.separatorChar + sessionId;
 
     // save models to solution dir
-    IModule transientModule = generatorContext.getModule();
+    AbstractModule transientModule = generatorContext.getModule();
     List<SModelDescriptor> transientModelDescriptors = transientModule.getOwnModelDescriptors();
     for (SModelDescriptor descriptor : transientModelDescriptors) {
       if (descriptor instanceof TransientModelDescriptor) {
@@ -259,7 +259,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
     // add model/language roots from invocation module
     {
-      IModule invocationModule = generatorContext.getInvocationContext().getModule();
+      AbstractModule invocationModule = generatorContext.getInvocationContext().getModule();
       List<ModelRoot> modelRoots = invocationModule.getNonDefaultModelRoots();
       for (ModelRoot modelRoot : modelRoots) {
         ModelRoot copyRoot = new ModelRoot(solutionDescriptorModel);

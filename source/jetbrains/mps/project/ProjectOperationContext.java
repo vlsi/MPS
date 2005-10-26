@@ -25,7 +25,7 @@ public class ProjectOperationContext extends StandaloneMPSContext {
     return component;
   }
 
-  public IModule getModule() {
+  public AbstractModule getModule() {
     return null;
   }
 

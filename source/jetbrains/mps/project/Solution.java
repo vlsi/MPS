@@ -117,12 +117,6 @@ public class Solution extends AbstractModule {
     return mySolutionDescriptor;
   }
 
-  public List<IModule> getDependOnModules() {
-    // depends on owned modules
-    List<IModule> result = new LinkedList<IModule>(getOwnModules());
-    return appendBootstrapLangauges(result);
-  }
-
   public void addSolutionCommandListener(SolutionCommandListener listener) {
     myCommandListeners.add(listener);
   }

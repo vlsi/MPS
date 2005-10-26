@@ -3,7 +3,7 @@ package jetbrains.mps.generator;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.projectLanguage.ModelRoot;
@@ -65,7 +65,7 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
     return myInvocationContext.getComponent(clazz);
   }
 
-  public IModule getModule() {
+  public AbstractModule getModule() {
     return myTransientModule;
   }
 
@@ -101,12 +101,12 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
   }
 
   private class TransientModule extends AbstractModule {
-    private List<IModule> myDependOnModules = new LinkedList<IModule>();
-    private IModule myInvocationModule;
+    private List<AbstractModule> myDependOnModules = new LinkedList<AbstractModule>();
+    private AbstractModule myInvocationModule;
     private SModelDescriptor myProjectModelDescriptor = ProjectModelDescriptor.createDescriptorFor(this);
     private ModuleDescriptor myModuleDescriptor = new ModuleDescriptor(myProjectModelDescriptor.getSModel());
 
-    TransientModule(IModule invocationModule) {
+    TransientModule(AbstractModule invocationModule) {
       myInvocationModule = invocationModule;
       myDependOnModules.addAll(GeneratorSessionContext.this.getGeneratorModules());
       myDependOnModules.add(invocationModule);
@@ -120,7 +120,7 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
       return myModuleDescriptor;
     }
 
-    public List<IModule> getDependOnModules() {
+    public List<AbstractModule> getDependOnModules() {
       return myDependOnModules;
     }
 

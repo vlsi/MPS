@@ -6,7 +6,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 
 import javax.swing.*;
 

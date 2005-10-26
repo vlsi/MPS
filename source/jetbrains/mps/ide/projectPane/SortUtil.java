@@ -2,7 +2,7 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -34,15 +34,15 @@ public class SortUtil {
     return sortedModels;
   }
 
-  public static List<IModule> sortModules(List<IModule> modules) {
-    List<IModule> sortedModules = new ArrayList<IModule>(modules);
+  public static List<AbstractModule> sortModules(List<AbstractModule> modules) {
+    List<AbstractModule> sortedModules = new ArrayList<AbstractModule>(modules);
     Collections.sort(sortedModules, new Comparator() {
       public int compare(Object o1, Object o2) {
         if (o1 == o2) {
           return 0;
         }
-        String name1 = ((IModule) o1).getModuleUID();
-        String name2 = ((IModule) o2).getModuleUID();
+        String name1 = ((AbstractModule) o1).getModuleUID();
+        String name2 = ((AbstractModule) o2).getModuleUID();
         if (name1 == null) name1 = "";
         if (name2 == null) name2 = "";
         return name1.compareTo(name2);

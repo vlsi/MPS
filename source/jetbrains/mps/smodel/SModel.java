@@ -331,10 +331,9 @@ public class SModel implements Iterable<SNode> {
     Set<Language> additionalLanguages = new HashSet<Language>();
     Set<Language> visibleLanguages = new HashSet<Language>(scope.getVisibleLanguages());
     for (Language l : result) {
-      additionalLanguages.addAll(l.getAllDependOnModules(Language.class));
+      additionalLanguages.addAll(l.getAllDependOnModules_impl(Language.class)); 
     }
     additionalLanguages.retainAll(visibleLanguages);
-    additionalLanguages.removeAll(MPSModuleRepository.getInstance().getLanguages(BootstrapLanguages.getInstance()));
     result.addAll(additionalLanguages);
     return new ArrayList<Language>(result);
   }

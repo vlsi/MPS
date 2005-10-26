@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 
 import javax.swing.*;
 import java.util.*;
@@ -70,7 +70,7 @@ class SModelsSubtree {
       JPopupMenu result = new JPopupMenu();
 
       ActionContext context = new ActionContext(getOperationContext());
-      IModule module = getOperationContext().getModule();
+      AbstractModule module = getOperationContext().getModule();
       if (module instanceof Solution) {
         Solution solution = (Solution) module;
         context.put(Solution.class, solution);

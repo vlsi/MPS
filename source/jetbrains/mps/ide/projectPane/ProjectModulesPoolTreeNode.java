@@ -2,7 +2,7 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.BootstrapLanguages;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.Language;
@@ -35,15 +35,15 @@ class ProjectModulesPoolTreeNode extends TextTreeNode {
   }
 
   private void populate() {
-    List<IModule> modules = collectModules();
-    for (IModule module : modules) {
+    List<AbstractModule> modules = collectModules();
+    for (AbstractModule module : modules) {
       GenericModuleTreeNode moduleTreeNode = new GenericModuleTreeNode(module, myProject);
       this.add(moduleTreeNode);
     }
   }
 
-  private List<IModule> collectModules() {
-    Set<IModule> modules = new HashSet<IModule>();
+  private List<AbstractModule> collectModules() {
+    Set<AbstractModule> modules = new HashSet<AbstractModule>();
     collectModules(myProject, modules);
     List<Language> bootstrapLanguages = BootstrapLanguages.getInstance().getLanguages();
     for (Language language : bootstrapLanguages) {
@@ -52,12 +52,12 @@ class ProjectModulesPoolTreeNode extends TextTreeNode {
         collectModules(language, modules);
       }
     }
-    return SortUtil.sortModules(new LinkedList<IModule>(modules));
+    return SortUtil.sortModules(new LinkedList<AbstractModule>(modules));
   }
 
-  private void collectModules(MPSModuleOwner moduleOwner, Set<IModule> modules) {
-    List<IModule> ownedModules = MPSModuleRepository.getInstance().getModules(moduleOwner);
-    for (IModule ownedModule : ownedModules) {
+  private void collectModules(MPSModuleOwner moduleOwner, Set<AbstractModule> modules) {
+    List<AbstractModule> ownedModules = MPSModuleRepository.getInstance().getModules(moduleOwner);
+    for (AbstractModule ownedModule : ownedModules) {
       if (!modules.contains(ownedModule)) {
         modules.add(ownedModule);
         collectModules(ownedModule, modules);

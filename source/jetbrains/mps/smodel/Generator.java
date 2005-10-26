@@ -1,15 +1,12 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.projectLanguage.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.Model;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
 
-import java.util.List;
-import java.util.LinkedList;
-import java.util.Set;
-import java.util.HashSet;
+import java.util.*;
 
 /**
  * @author Kostik
@@ -97,14 +94,14 @@ public class Generator extends AbstractModule {
     if (mySourceLanguage.getModuleUID().equals(languageNamespace)) {
       return mySourceLanguage;
     }
-    Set<IModule> modulesToSkip = new HashSet<IModule>();
+    Set<AbstractModule> modulesToSkip = new HashSet<AbstractModule>();
     modulesToSkip.add(this);
     return super.getLanguage(languageNamespace, modulesToSkip);
   }
 
-  public List<IModule> getDependOnModules() {
+  protected List<AbstractModule> getDependOnModules_impl() {
     // depends on source/target language and all owned modules
-    List<IModule> result = new LinkedList<IModule>(getOwnModules());
+    List<AbstractModule> result = new LinkedList<AbstractModule>(getOwnModules());
     if (!result.contains(mySourceLanguage)) {
       result.add(mySourceLanguage);
     }
@@ -112,12 +109,15 @@ public class Generator extends AbstractModule {
     if (targetLanguage != null && !result.contains(targetLanguage)) {
       result.add(targetLanguage);
     }
-    result = appendBootstrapLangauges(result);
+
+    //do not append bootstrap languages to the result directly...
+    // however, they may be necessary in the next loop, hence we have:
+    List<AbstractModule> resultAndBootstrapLanguages = appendBootstrapLangauges(new ArrayList<AbstractModule>(result));
 
     // todo: configure generator dependencies ...
-    // ... from all languages in "result" collect generators and add to dependency list
+    // ... from all languages in "resultAndBootstrapLanguages" collect generators and add to dependency list
     List<Generator> generators = new LinkedList<Generator>();
-    for (IModule module : result) {
+    for (AbstractModule module : resultAndBootstrapLanguages) {
       if (module instanceof Language && module != mySourceLanguage) {
         generators.addAll(((Language) module).getGenerators());
       }

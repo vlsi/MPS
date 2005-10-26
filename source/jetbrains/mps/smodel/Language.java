@@ -9,7 +9,7 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
@@ -169,16 +169,16 @@ public class Language extends AbstractModule {
     return myLanguageDescriptor;
   }
 
-  public List<IModule> getDependOnModules() {
+  protected List<AbstractModule> getDependOnModules_impl() {
     // depends of other languages and solutions, but not on generators
-    List<IModule> result = new LinkedList<IModule>();
-    for (IModule ownModule : getOwnModules()) {
+    List<AbstractModule> result = new LinkedList<AbstractModule>();
+    for (AbstractModule ownModule : getOwnModules()) {
       if (ownModule instanceof Generator || result.contains(ownModule)) {
         continue;
       }
       result.add(ownModule);
     }
-    return appendBootstrapLangauges(result);
+    return result;
   }
 
   public void updateLastGenerationTime() {
