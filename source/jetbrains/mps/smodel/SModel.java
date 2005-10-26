@@ -6,6 +6,7 @@ import jetbrains.mps.ide.command.ICommandListener;
 import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
+import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.externalResolve.ExternalResolver;
@@ -326,15 +327,16 @@ public class SModel implements Iterable<SNode> {
   }
 
   public List<Language> getLanguages(IScope scope) { //don't remove
-    List<Language> result = new ArrayList<Language>(getUserDefinedLanguages(scope));
+    Set<Language> result = new HashSet<Language>(getUserDefinedLanguages(scope));
     Set<Language> additionalLanguages = new HashSet<Language>();
     Set<Language> visibleLanguages = new HashSet<Language>(scope.getVisibleLanguages());
     for (Language l : result) {
       additionalLanguages.addAll(l.getAllDependOnModules(Language.class));
     }
     additionalLanguages.retainAll(visibleLanguages);
+    additionalLanguages.removeAll(MPSModuleRepository.getInstance().getLanguages(BootstrapLanguages.getInstance()));
     result.addAll(additionalLanguages);
-    return result;
+    return new ArrayList<Language>(result);
   }
 
   public List<Language> getUserDefinedLanguages(IScope scope) {
