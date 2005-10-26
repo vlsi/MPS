@@ -76,19 +76,15 @@ public abstract class AbstractModule implements IModule {
   }
 
   public List<Language> getOwnLanguages() {
-    List<Language> list = new LinkedList<Language>(MPSModuleRepository.getInstance().getLanguages(this));
-    return list;
+    return new LinkedList<Language>(MPSModuleRepository.getInstance().getLanguages(this));
   }
 
   public List<Language> getVisibleLanguages() {
-    List<Language> result = new ArrayList<Language>(getAllDependOnModules(Language.class));
-    result.addAll(MPSModuleRepository.getInstance().getLanguages(BootstrapLanguages.getInstance()));
-    return result;
+    return new ArrayList<Language>(getAllDependOnModules(Language.class));
   }
 
   public final List<IModule> getOwnModules() {
-    List<IModule> modules = new LinkedList<IModule>(MPSModuleRepository.getInstance().getModules(this));
-    return modules;
+    return new LinkedList<IModule>(MPSModuleRepository.getInstance().getModules(this));
   }
 
   @ForDebug
@@ -154,7 +150,7 @@ public abstract class AbstractModule implements IModule {
       }
     }
 
-    Set<IModule> dependOnModules = getAllVisibleModules();
+    Set<IModule> dependOnModules = getAllDependOnModules(IModule.class);
     for (IModule module : dependOnModules) {
       List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptors(modelName, module);
       for (SModelDescriptor descriptor : list) {
@@ -166,12 +162,6 @@ public abstract class AbstractModule implements IModule {
 
     List<SModelDescriptor> result = CollectionUtil.iteratorAsList(set.iterator());
     set.clear();
-    return result;
-  }
-
-  public Set<IModule> getAllVisibleModules() {
-    Set<IModule> result = getAllDependOnModules(IModule.class);
-    result.addAll(MPSModuleRepository.getInstance().getModules(BootstrapLanguages.getInstance()));
     return result;
   }
 
@@ -276,7 +266,7 @@ public abstract class AbstractModule implements IModule {
 
   public List<SModelDescriptor> getModelDescriptors() {
     Set<SModelDescriptor> modelDescriptors = new HashSet<SModelDescriptor>(getOwnModelDescriptors());
-    for (IModule module : getAllVisibleModules()) {
+    for (IModule module : getAllDependOnModules(IModule.class)) {
       modelDescriptors.addAll(module.getOwnModelDescriptors());
     }
     return new ArrayList<SModelDescriptor>(modelDescriptors);

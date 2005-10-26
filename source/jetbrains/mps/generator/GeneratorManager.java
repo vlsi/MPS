@@ -850,10 +850,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       generator.doReduction(currentTargetModel.getSModel());
 
       // next iteration ...
-      if (++iterationCount > 3) {
-        LOG.debug("Reduction iteration count exceeded limit (10) - stop generation.");
-        generator.showErrorMessage(null, "Failed to reduce model.");
-        throw new GenerationFailedException("Failed to reduce model.");
+      if (++iterationCount > 10) {
+        generator.showErrorMessage(null, "Failed to reduce model after 10 iterations");
+        throw new GenerationFailedException("Failed to reduce model after 10 iterations");
       }
     }
 
