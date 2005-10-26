@@ -7,8 +7,6 @@ import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.smodel.event.*;
@@ -39,7 +37,7 @@ public class Language extends AbstractModule {
   private boolean myUpdateLastGenerationTimeCalled = false;
 
   private SModelCommandListener myAspectModelsListener = new SModelCommandListener() {
-    public void modelChangedInCommand(List<SModelEvent> events, EditorContext editorContext) {
+    public void modelChangedInCommand(List<SModelEvent> events) {
       if (myUpToDate) {
         myUpToDate = false;
         CommandProcessor.instance().executeCommand(new Runnable() {

@@ -6,7 +6,6 @@ import jetbrains.mps.ide.command.ICommandListener;
 import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
-import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.externalResolve.ExternalResolver;
@@ -244,7 +243,7 @@ public class SModel implements Iterable<SNode> {
 
   private void fireSModelChangedInCommandEvent(List<SModelEvent> events, EditorContext editorContext) {
     for (SModelCommandListener l : copyCommandListeners()) {
-      l.modelChangedInCommand(events, editorContext);
+      l.modelChangedInCommand(events);
     }
   }
 
@@ -331,7 +330,7 @@ public class SModel implements Iterable<SNode> {
     Set<Language> additionalLanguages = new HashSet<Language>();
     Set<Language> visibleLanguages = new HashSet<Language>(scope.getVisibleLanguages());
     for (Language l : result) {
-      additionalLanguages.addAll(l.getAllDependOnModules_impl(Language.class)); 
+      additionalLanguages.addAll(l.getAllDependOnModules_impl(Language.class));
     }
     additionalLanguages.retainAll(visibleLanguages);
     result.addAll(additionalLanguages);

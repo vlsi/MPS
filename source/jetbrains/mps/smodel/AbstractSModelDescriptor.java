@@ -3,7 +3,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.NameUtil;
@@ -45,7 +44,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
   {
     this.addSModelCommandListener(new SModelCommandListener() {
-      public void modelChangedInCommand(List<SModelEvent> events, EditorContext editorContext) {
+      public void modelChangedInCommand(List<SModelEvent> events) {
         if (EventUtil.isDramaticalChange(events)) {
           myLastStructuralChange = System.currentTimeMillis();
           ourStructuralState++;

@@ -9,5 +9,5 @@ import java.util.List;
  * @author Kostik
  */
 public interface SModelCommandListener {
-  void modelChangedInCommand(List<SModelEvent> events, EditorContext editorContext);
+  void modelChangedInCommand(List<SModelEvent> events);
 }

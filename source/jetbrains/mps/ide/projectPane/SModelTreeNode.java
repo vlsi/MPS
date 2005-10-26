@@ -7,7 +7,6 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 
@@ -126,7 +125,7 @@ class SModelTreeNode extends MPSTreeNodeEx {
     public MyModelListener() {
     }
 
-    public void modelChangedInCommand(final List<SModelEvent> events, EditorContext editorContext) {
+    public void modelChangedInCommand(final List<SModelEvent> events) {
       ProjectPane projectPane = getOperationContext().getComponent(ProjectPane.class);
       projectPane.rebuildTree(new Runnable() {
         public void run() {

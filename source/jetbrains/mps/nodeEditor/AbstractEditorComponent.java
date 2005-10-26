@@ -28,7 +28,6 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.*;
 import java.util.List;
-import java.net.InetAddress;
 
 
 /**
@@ -1340,26 +1339,24 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
 
   private class MyModelListener implements SModelCommandListener {
-    public void modelChangedInCommand(List<SModelEvent> events, EditorContext editorContext) {
+    public void modelChangedInCommand(List<SModelEvent> events) {
       if (!EventUtil.isDramaticalChange(events)) {
-       /* myRootCell.synchronizeViewWithModel();
-        relayout();*/
+        
         rebuildEditorContent(events);
+
       } else {
 
         String cellId = null;
         String cellRole = null;
 
-        if (editorContext != null) {
-          AbstractEditorComponent nodeEditorComponent = editorContext.getNodeEditorComponent();
-          if (nodeEditorComponent != null) {
-            EditorCell selectedCell = nodeEditorComponent.getSelectedCell();
-            if (selectedCell != null) {
-              cellId = (String)selectedCell.getUserObject(EditorCell.CELL_ID);
-              cellRole = (String)selectedCell.getUserObject(EditorCell.ROLE);
-            }
-          }
+
+        EditorCell selectedCell = AbstractEditorComponent.this.getSelectedCell();
+        if (selectedCell != null) {
+          cellId = (String)selectedCell.getUserObject(EditorCell.CELL_ID);
+          cellRole = (String)selectedCell.getUserObject(EditorCell.ROLE);
         }
+
+
 
         rebuildEditorContent(events);
 
