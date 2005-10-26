@@ -1,13 +1,16 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.baseLanguage.Classifier;
+import jetbrains.mps.baseLanguage.generator.target.DefaultTemplateGenerator;
 import jetbrains.mps.baseLanguage.generator.target.ReflectionClassifierFinder;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.ProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessageView;
@@ -27,6 +30,8 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textPresentation.TextPresentationManager;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.xml.Document;
 import org.jdom.Element;
 

@@ -2,9 +2,12 @@ package jetbrains.mps.ide.messages;
 
 import jetbrains.mps.ide.ProjectFrame;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
+import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
+import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ModuleContext;
 
 import javax.swing.*;
@@ -22,14 +25,14 @@ public class MessageView extends DefaultTool {
   public static final Icon ERROR_ICON = new ImageIcon(MessageView.class.getResource("error.png"));
   public static final Icon WARNING_ICON = new ImageIcon(MessageView.class.getResource("warning.png"));
 
-  private ProjectFrame myProjectFrame;
   private JPanel myComponent = new JPanel();
   private DefaultListModel myModel = new DefaultListModel();
   private JList myList = new JList(myModel);
+  private ToolsPane myToolsPane;
 
-  public MessageView(ProjectFrame ideMain) {
+  public MessageView(ToolsPane toolsPane) {
     myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-    myProjectFrame = ideMain;
+    myToolsPane = toolsPane;
     myComponent.setLayout(new BorderLayout());
     myComponent.add(new JScrollPane(myList), BorderLayout.CENTER);
 
@@ -113,10 +116,9 @@ public class MessageView extends DefaultTool {
     if (selectedMessage == null) return;
     SNode node = selectedMessage.getNode();
     if (node == null) return;
-    ModuleContext operationContext = ModuleContext.create(node, myProjectFrame.getProject());
-    if (operationContext != null) {
-      myProjectFrame.openNodeAndSelect(node, operationContext);
-    }
+    IOperationContext context = selectedMessage.getContext();
+    if (context == null) return;
+    context.getComponent(EditorsPane.class).openEditor(node, context);
   }
 
 
@@ -137,7 +139,7 @@ public class MessageView extends DefaultTool {
     if (myModel.size() > 0) {
       myList.setSelectedValue(myModel.getElementAt(myModel.size() - 1), true);
     }
-    myProjectFrame.showMessagesView();
+    myToolsPane.selectTool(this);
   }
 
   public String getName() {
