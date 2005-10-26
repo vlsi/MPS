@@ -9,6 +9,7 @@ import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 
 import javax.swing.*;
 import java.awt.*;
@@ -118,7 +119,9 @@ public class MessageView extends DefaultTool {
     if (node == null) return;
     IOperationContext context = selectedMessage.getContext();
     if (context == null) return;
-    context.getComponent(EditorsPane.class).openEditor(node, context);
+    AbstractEditorComponent editor = context.getComponent(EditorsPane.class).openEditor(node, context);
+    if (node.isRoot()) editor.selectFirstEditableCellOf(node);
+    else editor.selectNode(node);
   }
 
 
