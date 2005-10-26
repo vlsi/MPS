@@ -220,7 +220,7 @@ public abstract class AbstractModule implements IModule {
 
     return result;
   }
-
+                                                      
   public final List<ModelRoot> getNonDefaultModelRoots() {
     return getModelRootsImpl();
   }
