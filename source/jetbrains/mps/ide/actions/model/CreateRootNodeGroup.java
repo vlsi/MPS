@@ -31,8 +31,9 @@ public class CreateRootNodeGroup extends ActionGroup {
     final ProjectFrame ide = context.get(ProjectFrame.class);
     IOperationContext operationContext = context.get(IOperationContext.class);
 
-    List<String> visibleLanguageNamespaces = modelDescriptor.getSModel().getVisibleLanguageNamespaces(operationContext.getScope());
-    if (visibleLanguageNamespaces.size() == 0) {
+//    List<String> modelLanguages = modelDescriptor.getSModel().getVisibleLanguageNamespaces(operationContext.getScope());
+    List<Language> modelLanguages = modelDescriptor.getSModel().getLanguages(operationContext.getScope());
+    if (modelLanguages.size() == 0) {
       add(new MPSAction("<NO LANGUAGES>") {
         public void execute(ActionContext context) {
         }
@@ -40,16 +41,16 @@ public class CreateRootNodeGroup extends ActionGroup {
 
     }
 
-    for (final String languageNamespace : visibleLanguageNamespaces) {
+    for (final Language language : modelLanguages) {
       int addCount = 0;
-      ActionGroup langRootsGroup = new ActionGroup(languageNamespace) {
+      ActionGroup langRootsGroup = new ActionGroup(language.getNamespace()) {
         public Icon getIcon() {
-          return IconManager.getIconFor(languageNamespace);
+          return IconManager.getIconFor(language.getNamespace());
         }
       };
       add(langRootsGroup);
 
-      Language language = operationContext.getScope().getLanguage(languageNamespace);
+//      Language language = operationContext.getScope().getLanguage(language);
       for(final ConceptDeclaration conceptDeclaration : language.getConceptDeclarations()) {
         if (conceptDeclaration.getRootable()) {
           String className = JavaNameUtil.className(conceptDeclaration);

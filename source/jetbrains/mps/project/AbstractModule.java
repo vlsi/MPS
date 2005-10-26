@@ -91,7 +91,9 @@ public abstract class AbstractModule implements IModule {
     return modules;
   }
 
-  @ForDebug private int count = 0;
+  @ForDebug
+  private int count = 0;
+
   public SModelDescriptor getModelDescriptor(SModelUID modelUID) {
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
     if (modelDescriptor != null) {
@@ -104,7 +106,7 @@ public abstract class AbstractModule implements IModule {
     }
 
     if (count == 0) {
-    LOG.warning("Couldn't find model descriptor for uid: \"" + modelUID + "\" in scope: " + this);
+      LOG.warning("Couldn't find model descriptor for uid: \"" + modelUID + "\" in scope: " + this);
       count = 1;
       getModelDescriptor(modelUID);
     } else {
@@ -180,7 +182,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   private <T extends IModule> void collectAllDependOnModules(IModule dependentModule, Set<T> modules, Class<T> cls) {
-    List<IModule> dependOnModules = dependentModule.getOwnModules();
+    List<IModule> dependOnModules = dependentModule.getDependOnModules();
     for (IModule dependOnModule : dependOnModules) {
       if (cls.isInstance(dependOnModule) && !modules.contains(dependOnModule)) {
         modules.add((T) dependOnModule);
