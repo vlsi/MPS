@@ -68,8 +68,14 @@ public class ClassLoaderManager {
     CompositeClassPathItem items = new CompositeClassPathItem();
 
 
-    items.add(getRTJar());
-    items.add(getMPSPath());
+    IClassPathItem rtJar = getRTJar();
+    if (rtJar != null) {
+      items.add(rtJar);
+    }
+    IClassPathItem mpsPath = getMPSPath();
+    if (mpsPath != null) {
+      items.add(mpsPath);
+    }
 
     if (ApplicationComponents.getInstance().getComponent(MPSProjects.class) != null) {
       for (MPSProject project : ApplicationComponents.getInstance().getComponent(MPSProjects.class).getProjects()) {

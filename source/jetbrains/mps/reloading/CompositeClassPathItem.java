@@ -34,7 +34,7 @@ public class CompositeClassPathItem implements IClassPathItem {
   }
 
   public URL getResource(String name) {
-    for (IClassPathItem item : myChildren) {
+    for (IClassPathItem item : myChildren) {    
       if (item.getResource(name) != null) return item.getResource(name);
     }
     return null;
