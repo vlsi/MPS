@@ -130,12 +130,10 @@ public class GenerationSession implements ModelOwner {
     // save transient models in session module
     if (mySaveTransientModels) {
       saveTransientModels(generatorContext);
-    }
-
-    // unregister transient models
-    if (!status.isError() && !mySaveTransientModels) {
-      // if ERROR, then we need transient models to navigate to errors
-      generatorContext.getModule().dispose();
+      generatorContext.getModule().dispose(); // unregister transient models
+    } else if (!status.isError()) {
+      // if ERROR - keep transient models: we need them to navigate to errors
+      generatorContext.getModule().dispose(); // unregister transient models
     }
 
     return status;
