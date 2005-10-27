@@ -1,16 +1,12 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.baseLanguage.Classifier;
-import jetbrains.mps.baseLanguage.generator.target.DefaultTemplateGenerator;
 import jetbrains.mps.baseLanguage.generator.target.ReflectionClassifierFinder;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.ProjectFrame;
-import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessageView;
@@ -30,11 +26,10 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textPresentation.TextPresentationManager;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.xml.Document;
 import org.jdom.Element;
 
+import javax.swing.*;
 import java.io.File;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -93,24 +88,25 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     mySaveTransientModels = saveTransientModels;
   }
 
+  public IPreferencesPage createPreferencesPage() {
+    return new GeneratorManagerPreferencesPage(this);
+  }
+
+
   private void addMessage(MessageKind kind, String text) {
     addMessage(new Message(kind, text));
   }
 
   private void addMessage(final Message msg) {
-    ThreadUtils.runInEventDispathThread(new Runnable() {
+    SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        try {
-          myProject.getComponent(MessageView.class).add(msg);
-        } catch (Exception e) {
-          e.printStackTrace();
-        }
+        myProject.getComponent(MessageView.class).add(msg);
       }
     });
   }
 
   private void addProgressMessage(final MessageKind kind, final String text, final IProgressMonitor progress) {
-    ThreadUtils.runInEventDispathThread(new Runnable() {
+    SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         try {
           progress.addText(text);
@@ -123,7 +119,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   }
 
   private void clearMessages() {
-    ThreadUtils.runInEventDispathThread(new Runnable() {
+    SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         myProject.getComponent(MessageView.class).clear();
       }
@@ -131,7 +127,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   }
 
   private void showMessageView() {
-    ThreadUtils.runInEventDispathThread(new Runnable() {
+    SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         myProject.getComponent(MessageView.class).show();
       }
@@ -142,22 +138,21 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     try {
       MPSPlugin.getInstance().refreshFS();
       MPSPlugin.getInstance().buildProject();
-
       ReloadUtils.reloadAll();
-
     } catch (Exception e) {
       LOG.error("Exception", e);
     }
   }
 
+  private String getOutputFolderPath(String outputRootPath, SModel sourceModel) {
+    String packageName = JavaNameUtil.packageNameForModelUID(sourceModel.getUID());
+    return outputRootPath + File.separator + packageName.replace('.', File.separatorChar);
+  }
+
   private void generateFile(String outputPath, SModel sourceModel, SModel targetModel) {
     if (outputPath == null) throw new RuntimeException("Unspecified output path. Please specify one.");
-
     LOG.debug("Generating to root : " + outputPath);
-
-    String packageName = JavaNameUtil.packageNameForModelUID(sourceModel.getUID());
-    File outputPathFile = new File(outputPath + File.separator + packageName.replace('.', File.separatorChar));
-
+    File outputPathFile = new File(getOutputFolderPath(outputPath, sourceModel));
     LOG.debug("Generating to folder : " + outputPathFile.getAbsolutePath());
 
     if (!outputPathFile.exists()) {
@@ -165,6 +160,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     }
 
     // todo : refactor it...
+    String packageName = JavaNameUtil.packageNameForModelUID(sourceModel.getUID());
     XmlFileGenerator xmlFileGenerator = new XmlFileGenerator(outputPathFile, packageName, false);
     JavaFileGenerator javaFileGenerator = new JavaFileGenerator(outputPathFile, packageName, false);
     Iterator<SNode> roots = targetModel.roots();
@@ -284,13 +280,26 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     generatorContext.getProject().addProjectSolution(solutionFile);
   }
 
-  public IPreferencesPage createPreferencesPage() {
-    return new GeneratorManagerPreferencesPage(this);
-  }
-
   //------------------------------------
   // new impl
   //------------------------------------
+
+  public static List<Language> getPossibleTargetLanguages(SModel sourceModel, IScope scope) {
+    List<Language> targetLanguages = new LinkedList<Language>();
+    List<Language> languages = sourceModel.getLanguages(scope);
+    for (Language language : languages) {
+      List<Generator> generators = language.getGenerators();
+      for (Generator generator : generators) {
+        String targetLanguageName = generator.getTargetLanguageName();
+        Language targetLanguage = scope.getLanguage(targetLanguageName);
+        if (targetLanguage != null && !targetLanguages.contains(targetLanguage)) {
+          targetLanguages.add(targetLanguage);
+        }
+      }
+    }
+    return targetLanguages;
+  }
+
 
   public void generateLanguage(Language language, IOperationContext invocationContext) {
     clearMessages();
@@ -336,7 +345,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         status = generate_model_internal(sourceModel, targetLanguage, compileBefore, compileAfter, invocationContext, progress);
         compileBefore = false;
         if (status.isOk()) {
-          progress.addText("Generate files in folder: \"" + outputFolder + "\"");
+          progress.addText("Generate files to folder: \"" + getOutputFolderPath(outputFolder, sourceModel) + "\"");
           generateFile(outputFolder, sourceModel, status.getOutputModel());
         } else {
           break;
@@ -356,6 +365,99 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       progress.finish();
       ReflectionClassifierFinder.generationFinished(); //memory leak fix
       invocationContext.getComponent(ProjectPane.class).enableRebuild();
+    }
+  }
+
+  public void generateModels(List<SModel> sourceModels, Language targetLanguage, IOperationContext invocationContext, boolean generateText) {
+    clearMessages();
+    addMessage(MessageKind.INFORMATION, "Generating " + (generateText ? "text" : "files"));
+    addMessage(MessageKind.INFORMATION, " -- target language: \"" + targetLanguage.getNamespace() + "\"");
+    String outputFolder = invocationContext.getModule().getGeneratorOutputPath();
+    if (!generateText) {
+      addMessage(MessageKind.INFORMATION, " -- target root folder: \"" + outputFolder + "\"");
+    }
+
+    invocationContext.getComponent(ProjectPane.class).disableRebuild();
+    IProgressMonitor progress = new ProgressWindowProgressMonitor(invocationContext.getComponent(ProjectFrame.class), false);
+    double totalJob = sourceModels.size() * AMOUNT_PER_MODEL;
+    boolean compile = false;
+    if (!myCompileOnGeneration) {
+      progress.addText("Compilation in IntelliJ IDEA on generation is turned off");
+    } else if (!MPSPlugin.getInstance().isIDEAPresent()) {
+      progress.addText("IntelliJ IDEA with installed MPS is not present");
+    } else {
+      totalJob = totalJob + (1 + sourceModels.size()) * AMOUNT_PER_COMPILATION;
+      compile = true;
+    }
+    progress.start("Generating", totalJob);
+
+    try {
+
+      if (compile) {
+        // -- compile sources before generation
+        progress.addText("Compiling in IntelliJ IDEA...");
+        MPSPlugin.getInstance().refreshFS();
+        progress.advance(AMOUNT_PER_COMPILATION / 4);
+        MPSPlugin.getInstance().buildProject();
+        progress.advance(AMOUNT_PER_COMPILATION / 4);
+        progress.addText("Reloading MPS classes...");
+        ReloadUtils.reloadAll();
+        progress.advance(AMOUNT_PER_COMPILATION / 2);
+      }
+
+      GenerationSession generationSession = new GenerationSession(targetLanguage, invocationContext, progress);
+      generationSession.setSaveTransientModels(isSaveTransientModels());
+      GenerationStatus status = null;
+      for (SModel sourceModel : sourceModels) {
+        status = generationSession.generateModel(sourceModel);
+        if (status.getOutputModel() != null) {
+          if (generateText) {
+            progress.addText("Generate text to Output view");
+            generateText(status.getOutputModel(), invocationContext);
+          } else {
+            progress.addText("Generate files to folder: \"" + getOutputFolderPath(outputFolder, sourceModel) + "\"");
+            generateFile(outputFolder, sourceModel, status.getOutputModel());
+
+            if (status.isOk() && compile) {
+              // -- compile after generation of each model
+              progress.addText("Compiling in IntelliJ IDEA...");
+              MPSPlugin.getInstance().refreshFS();
+              progress.advance(AMOUNT_PER_COMPILATION / 2);
+              MPSPlugin.getInstance().buildProject();
+              progress.advance(AMOUNT_PER_COMPILATION / 2);
+            }
+          }
+        }
+        if (!status.isOk()) {
+          break;
+        }
+      }
+
+      if (isSaveTransientModels()) {
+        addProgressMessage(MessageKind.INFORMATION, "creating generation session module \"" + generationSession.getSessionModuleName() + "\"", progress);
+        File sessionDescriptorFile = generationSession.getSessionDescriptorFile();
+        myProject.addProjectSolution(sessionDescriptorFile);
+      }
+
+      if (status.isOk()) {
+        addProgressMessage(MessageKind.INFORMATION, "Generation completed successfully", progress);
+      } else if (status.isError()) {
+        addProgressMessage(MessageKind.WARNING, "Generation finished with errors", progress);
+      } else if (status.isCanceled()) {
+        addProgressMessage(MessageKind.WARNING, "Generation cancelled", progress);
+      }
+      showMessageView();
+
+    } catch (Throwable t) {
+      LOG.error(t);
+      addProgressMessage(MessageKind.ERROR, t.toString(), progress);
+    } finally {
+      progress.finish();
+      ReflectionClassifierFinder.generationFinished(); //memory leak fix
+      invocationContext.getComponent(ProjectPane.class).enableRebuild();
+      if (isSaveTransientModels()) {
+
+      }
     }
   }
 
@@ -390,7 +492,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           progress.addText("Generate text to Output view");
           generateText(status.getOutputModel(), invocationContext);
         } else {
-          progress.addText("Generate files in folder: \"" + outputFolder + "\"");
+          progress.addText("Generate files to folder: \"" + getOutputFolderPath(outputFolder, sourceModel) + "\"");
           generateFile(outputFolder, sourceModel, status.getOutputModel());
         }
       }
@@ -473,7 +575,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       addMessage(new Message(status.isError() ? MessageKind.WARNING : MessageKind.INFORMATION, sourceModel.getUID() + " generated " + (status.isError() ? "with errors" : "successfully")));
     } catch (GenerationCanceledException gce) {
       progress.addText("generation canceled");
-      status = new GenerationStatus.CANCELED();
+      status = new GenerationStatus.CANCELED(false);
     } catch (GenerationFailedException gfe) {
       LOG.error(sourceModel.getUID() + " : generation failed", gfe);
       progress.addText(gfe.toString());
@@ -497,7 +599,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       saveTransientModels(generatorContext);
     } else {
       // unregister transient models
-      if (!status.isOk()) {
+      if (!status.isError()) {
         // if not OK, then we need transient models to navigate to errors
         generatorContext.getModule().dispose();
       }

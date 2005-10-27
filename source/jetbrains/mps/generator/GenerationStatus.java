@@ -1,7 +1,6 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.ide.Status;
-import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.smodel.SModel;
 
 /**
@@ -33,6 +32,12 @@ public class GenerationStatus extends Status {
     return myOutputModel;
   }
 
+  public static class OK extends GenerationStatus {
+    public OK(SModel outputModel) {
+      super(outputModel, false, false);
+    }
+  }
+
   public static class ERROR extends GenerationStatus {
     public ERROR() {
       super(null, true, false);
@@ -40,8 +45,8 @@ public class GenerationStatus extends Status {
   }
 
   public static class CANCELED extends GenerationStatus {
-    public CANCELED() {
-      super(null, false, true);
+    public CANCELED(boolean wasErrors) {
+      super(null, wasErrors, true);
     }
   }
 }

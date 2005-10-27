@@ -93,6 +93,9 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
     return getClass().getName() + "-> " + myTargetLanguage.getNamespace() + "\ninvoked from: " + myInvocationContext;
   }
 
+  /**
+   * @deprecated
+   */
   public String getSessionId() {
     if (mySessionId == null) {
       mySessionId = "" + System.currentTimeMillis();
