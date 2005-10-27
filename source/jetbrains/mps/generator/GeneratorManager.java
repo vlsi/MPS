@@ -6,6 +6,7 @@ import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.ProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessageView;
@@ -209,7 +210,27 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     return targetLanguages;
   }
 
-  public void generateModels(List<SModel> sourceModels, Language targetLanguage, IOperationContext invocationContext, boolean generateText) {
+  public void generateModelsWithProgressWindow(final List<SModel> sourceModels, final Language targetLanguage, final IOperationContext invocationContext, final boolean generateText) {
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        final IProgressMonitor progress = new ProgressWindowProgressMonitor(invocationContext.getComponent(ProjectFrame.class), false);
+        Thread generationThread = new Thread("Generation thread") {
+          public void run() {
+            CommandProcessor.instance().executeCommand(new Runnable() {
+              public void run() {
+                generateModels(sourceModels, targetLanguage, invocationContext, generateText, progress);
+              }
+            });
+          }
+        };
+        // we are in event dispatch thread 
+        generationThread.setPriority(Thread.currentThread().getPriority() - 1);
+        generationThread.start();
+      }
+    });
+  }
+
+  public void generateModels(List<SModel> sourceModels, Language targetLanguage, IOperationContext invocationContext, boolean generateText, IProgressMonitor progress) {
     clearMessages();
     addMessage(MessageKind.INFORMATION, "generating " + (generateText ? "text" : "files"));
     addMessage(MessageKind.INFORMATION, "    target language: \"" + targetLanguage.getNamespace() + "\"");
@@ -219,7 +240,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     }
 
     invocationContext.getComponent(ProjectPane.class).disableRebuild();
-    IProgressMonitor progress = new ProgressWindowProgressMonitor(invocationContext.getComponent(ProjectFrame.class), false);
     double totalJob = sourceModels.size() * AMOUNT_PER_MODEL;
     boolean compile = false;
     if (!myCompileOnGeneration) {
@@ -310,9 +330,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       progress.finish();
       ReflectionClassifierFinder.generationFinished(); //memory leak fix
       invocationContext.getComponent(ProjectPane.class).enableRebuild();
-      if (isSaveTransientModels()) {
-
-      }
     }
   }
 }
