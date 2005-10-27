@@ -1,14 +1,14 @@
 package jetbrains.mps.bootstrap.editorLanguage.editor;
 
 import jetbrains.mps.baseLanguage.ClassConcept;
-import jetbrains.mps.baseLanguage.Classifier;
 import jetbrains.mps.baseLanguage.StaticMethodDeclaration;
-import jetbrains.mps.baseLanguage.generator.target.ReflectionClassifierFinder;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.plugin.MPSPlugin;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
 import org.apache.xmlrpc.XmlRpcException;
 
@@ -29,12 +29,12 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
 
   private boolean myMustBeSet;
 
-  public QueryMethodIdEditor(SNode semanticNode) {
-    this(semanticNode, false);
+  public QueryMethodIdEditor(SNode node) {
+    this(node, false);
   }
 
-  public QueryMethodIdEditor(SNode semanticNode, boolean mustBeSet) {
-    super(semanticNode);
+  public QueryMethodIdEditor(SNode node, boolean mustBeSet) {
+    super(node);
     myMustBeSet = mustBeSet;
   }
 
@@ -189,9 +189,8 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
 
   protected ClassConcept getQueriesClass() {
     SModel model = getSNode().getModel();
-    String className = JavaNameUtil.fqClassName(model, "Queries");
-    Classifier classifier = ReflectionClassifierFinder.get(className, model);
-    return (ClassConcept) classifier;
+    String classFQName = JavaNameUtil.fqClassName(model, "Queries");
+    return SModelUtil.findNodeByFQName(classFQName, ClassConcept.class,  GlobalScope.getInstance());
   }
 }
 

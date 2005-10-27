@@ -110,7 +110,6 @@ public class GenerationSession implements ModelOwner {
       addMessage(wasErrors ? MessageKind.WARNING : MessageKind.INFORMATION, "model \"" + sourceModel.getUID() + "\" has been generated " + (wasErrors ? "with errors" : "successfully"));
       status = new GenerationStatus(outputModel, wasErrors, false);
     } catch (GenerationCanceledException gce) {
-      myProgressMonitor.addText("generation canceled");
       status = new GenerationStatus.CANCELED(generator.getErrorCount() > 0);
     } catch (GenerationFailedException gfe) {
       myProgressMonitor.addText(gfe.toString());

@@ -1,7 +1,6 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.baseLanguage.Classifier;
-import jetbrains.mps.baseLanguage.generator.target.ReflectionClassifierFinder;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.ProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
@@ -15,7 +14,6 @@ import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.progress.IProgressMonitor;
 import jetbrains.mps.ide.progress.ProgressWindowProgressMonitor;
-import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.MPSProject;
@@ -223,7 +221,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
             });
           }
         };
-        // we are in event dispatch thread 
+        // we are in event dispatch thread
         generationThread.setPriority(Thread.currentThread().getPriority() - 1);
         generationThread.start();
       }
@@ -239,17 +237,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       addMessage(MessageKind.INFORMATION, "    target root folder: \"" + outputFolder + "\"");
     }
 
-    invocationContext.getComponent(ProjectPane.class).disableRebuild();
     double totalJob = sourceModels.size() * AMOUNT_PER_MODEL;
-    boolean compile = false;
-    if (!myCompileOnGeneration) {
-      progress.addText("compilation in IntelliJ IDEA on generation is turned off");
-    } else if (!MPSPlugin.getInstance().isIDEAPresent()) {
-      progress.addText("IntelliJ IDEA with installed MPS is not present");
-    } else {
-      compile = true;
-    }
-
+    boolean compile = myCompileOnGeneration && MPSPlugin.getInstance().isIDEAPresent();
     if (compile) {
       if (generateText) {
         totalJob = totalJob + AMOUNT_PER_COMPILATION;
@@ -257,13 +246,17 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         totalJob = totalJob + AMOUNT_PER_COMPILATION + AMOUNT_PER_COMPILATION;
       }
     } else {
-      totalJob = totalJob + AMOUNT_PER_COMPILATION / 2;
+      totalJob = totalJob + AMOUNT_PER_COMPILATION / 2; // only re-load classes
     }
     progress.start("generating", totalJob);
 
     try {
 
-      if (compile) {
+      if (!myCompileOnGeneration) {
+        progress.addText("compilation in IntelliJ IDEA on generation is turned off");
+      } else if (!compile) {
+        progress.addText("IntelliJ IDEA with installed MPS is not present");
+      } else {
         // -- compile sources before generation
         progress.addText("compiling in IntelliJ IDEA...");
         MPSPlugin.getInstance().refreshFS();
@@ -319,7 +312,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       } else if (status.isError()) {
         addProgressMessage(MessageKind.WARNING, "generation finished with errors", progress);
       } else if (status.isCanceled()) {
-        addProgressMessage(MessageKind.WARNING, "generation cancelled", progress);
+        addProgressMessage(MessageKind.WARNING, "generation canceled", progress);
       }
       showMessageView();
 
@@ -328,8 +321,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       addProgressMessage(MessageKind.ERROR, t.toString(), progress);
     } finally {
       progress.finish();
-      ReflectionClassifierFinder.generationFinished(); //memory leak fix
-      invocationContext.getComponent(ProjectPane.class).enableRebuild();
     }
   }
 }
