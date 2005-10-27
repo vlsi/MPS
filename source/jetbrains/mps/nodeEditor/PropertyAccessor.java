@@ -4,6 +4,7 @@ import jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.PropertySupport;
+import jetbrains.mps.annotations.Hack;
 
 /**
  * User: Dmitriev.
@@ -38,14 +39,19 @@ public class PropertyAccessor implements ModelAccessor {
       if (text != null && text.length() == 0) {
         text = null;
       }
-      if (isValidText(text)) {
+      if (isValidText_internal(text)) {
         String propertyValue = toInternal(text);
         myNode.setProperty(myPropertyName, propertyValue);
       }
     }
   }
 
+  @Hack
   public boolean isValidText(String text) {
+    return (isValidText_internal(text) && !isInvalidEmptyText(text));
+  }
+
+  private boolean isValidText_internal(String text) {
     if (myReadOnly) {
       String propertyValue = myNode.getProperty(myPropertyName);
       return (text == null && propertyValue == null) || (text != null && text.equals(propertyValue));
@@ -54,15 +60,17 @@ public class PropertyAccessor implements ModelAccessor {
     if (text != null && text.length() == 0) {
       text = null;
     }
-    if(!myAllowEmptyText && text == null) {
-      return false;
-    }
 
     if (myPropertyDeclaration != null) {
       PropertySupport propertySupport = PropertySupport.getPropertySupport(myPropertyDeclaration);
       return propertySupport.canSetValue(text);
     }
     return true;
+  }
+
+  @Hack
+  private boolean isInvalidEmptyText(String text) {
+    return !myAllowEmptyText && text == null;
   }
 
   private String fromInternal(String value) {

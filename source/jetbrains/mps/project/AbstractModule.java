@@ -6,7 +6,6 @@ import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.annotations.ForDebug;
 
 import java.io.File;
 import java.io.IOException;
@@ -160,15 +159,15 @@ public abstract class AbstractModule implements IScope, ModelOwner, MPSModuleOwn
 
   //returns all modules which this explicitly depends on (recursively),
   // i.e. without bootstrap languages, if such a dependency is not explicitly set in module roots
-  public <T extends AbstractModule> Set<T> getAllDependOnModules_impl(Class<T> cls) {
+  public <T extends AbstractModule> Set<T> getAllExplicitlyDependOnModules(Class<T> cls) {
     Set<T> dependOnModules = new HashSet<T>();
-    collectAllDependOnModules(this, dependOnModules, cls);
+    collectAllExplicitlyDependOnModules(this, dependOnModules, cls);
     return dependOnModules;
   }
 
   //returns all modules which this depends on (recursively)
   public <T extends AbstractModule> Set<T> getAllDependOnModules(Class<T> cls) {
-    Set<T> dependOnModules = getAllDependOnModules_impl(cls);
+    Set<T> dependOnModules = getAllExplicitlyDependOnModules(cls);
     //add bootstrapLanguages
     for (AbstractModule module : MPSModuleRepository.getInstance().getModules(BootstrapLanguages.getInstance())) {
       if (cls.isInstance(module)) {
@@ -178,12 +177,12 @@ public abstract class AbstractModule implements IScope, ModelOwner, MPSModuleOwn
     return dependOnModules;
   }
 
-  private <T extends AbstractModule> void collectAllDependOnModules(AbstractModule dependentModule, Set<T> modules, Class<T> cls) {
-    List<AbstractModule> dependOnModules = ((AbstractModule)dependentModule).getDependOnModules_impl();
+  private <T extends AbstractModule> void collectAllExplicitlyDependOnModules(AbstractModule dependentModule, Set<T> modules, Class<T> cls) {
+    List<AbstractModule> dependOnModules = dependentModule.getDependOnModules_impl();
     for (AbstractModule dependOnModule : dependOnModules) {
       if (cls.isInstance(dependOnModule) && !modules.contains(dependOnModule)) {
         modules.add((T) dependOnModule);
-        collectAllDependOnModules(dependOnModule, modules, cls);
+        collectAllExplicitlyDependOnModules(dependOnModule, modules, cls);
       }
     }
   }
