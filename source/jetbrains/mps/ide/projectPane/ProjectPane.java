@@ -352,7 +352,7 @@ public class ProjectPane extends JComponent implements IActionDataProvider {
   private SModelTreeNode findSModelTreeNode(MPSTreeNode parent, SModelDescriptor modelDescriptor) {
     if (parent instanceof SModelTreeNode) {
       SModelTreeNode parentSModelNode = (SModelTreeNode) parent;
-      SModelDescriptor parentModelDescriptor = parentSModelNode.getModelDescriptor();
+      SModelDescriptor parentModelDescriptor = parentSModelNode.getSModelDescriptor();
       if (parentModelDescriptor == modelDescriptor) {
         return parentSModelNode;
       }
@@ -400,7 +400,20 @@ public class ProjectPane extends JComponent implements IActionDataProvider {
     if (selectedTreeNode == null) {
       return null;
     }
-    return ((SModelTreeNode) selectedTreeNode).getModelDescriptor();
+    return ((SModelTreeNode) selectedTreeNode).getSModelDescriptor();
+  }
+
+  List<SModelDescriptor> getSelectedModels() {
+    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+    TreePath[] paths = myTree.getSelectionPaths();
+    if (paths == null) return result;
+    for (TreePath path : paths) {
+      TreeNode node = (TreeNode) path.getLastPathComponent();
+      if (node instanceof SModelTreeNode) {
+        result.add(((SModelTreeNode) node).getSModelDescriptor());
+      }
+    }
+    return result;
   }
 
   List<SNode> getSelectedNodes() {
@@ -463,7 +476,7 @@ public class ProjectPane extends JComponent implements IActionDataProvider {
         }
         actionContext.put(List.class, otherNodes);
       } else if (node instanceof SModelTreeNode) {
-        actionContext.put(SModelDescriptor.class, ((SModelTreeNode) node).getModelDescriptor());
+        actionContext.put(SModelDescriptor.class, ((SModelTreeNode) node).getSModelDescriptor());
       }
 
       return actionContext;

@@ -41,24 +41,17 @@ class SModelTreeNode extends MPSTreeNodeEx {
 
   public JPopupMenu getPopupMenu() {
     JPopupMenu result = new JPopupMenu();
-    SModelDescriptor model = getModelDescriptor();
+    SModelDescriptor model = getSModelDescriptor();
+    List<SModelDescriptor> models = getOperationContext().getComponent(ProjectPane.class).getSelectedModels();
+
     ActionContext context = new ActionContext(getOperationContext());
     context.put(SModelDescriptor.class, model);
+    context.put(List.class, models);
     ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_MODEL_ACTIONS).add(result, context);
     return result;
   }
 
-  public SModel getSModel() {
-
-    CommandProcessor.instance().executeCommand(new Runnable() {
-      public void run() {
-        myModel = myModelDescriptor.getSModel();
-      }
-    }, "loading model in project pane");
-    return myModel;
-  }
-
-  public SModelDescriptor getModelDescriptor() {
+  public SModelDescriptor getSModelDescriptor() {
     return myModelDescriptor;
   }
 

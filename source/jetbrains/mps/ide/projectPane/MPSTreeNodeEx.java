@@ -17,8 +17,6 @@ abstract class MPSTreeNodeEx extends MPSTreeNode {
     super(operationContext);
   }
 
-  protected abstract SModel getSModel();
-
   public SNode getSNode() {
     return null;
   }

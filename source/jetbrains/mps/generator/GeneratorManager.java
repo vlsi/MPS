@@ -370,11 +370,11 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
   public void generateModels(List<SModel> sourceModels, Language targetLanguage, IOperationContext invocationContext, boolean generateText) {
     clearMessages();
-    addMessage(MessageKind.INFORMATION, "Generating " + (generateText ? "text" : "files"));
-    addMessage(MessageKind.INFORMATION, " -- target language: \"" + targetLanguage.getNamespace() + "\"");
+    addMessage(MessageKind.INFORMATION, "generating " + (generateText ? "text" : "files"));
+    addMessage(MessageKind.INFORMATION, "    target language: \"" + targetLanguage.getNamespace() + "\"");
     String outputFolder = invocationContext.getModule().getGeneratorOutputPath();
     if (!generateText) {
-      addMessage(MessageKind.INFORMATION, " -- target root folder: \"" + outputFolder + "\"");
+      addMessage(MessageKind.INFORMATION, "    target root folder: \"" + outputFolder + "\"");
     }
 
     invocationContext.getComponent(ProjectPane.class).disableRebuild();
@@ -382,25 +382,29 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     double totalJob = sourceModels.size() * AMOUNT_PER_MODEL;
     boolean compile = false;
     if (!myCompileOnGeneration) {
-      progress.addText("Compilation in IntelliJ IDEA on generation is turned off");
+      progress.addText("compilation in IntelliJ IDEA on generation is turned off");
     } else if (!MPSPlugin.getInstance().isIDEAPresent()) {
       progress.addText("IntelliJ IDEA with installed MPS is not present");
     } else {
-      totalJob = totalJob + (1 + sourceModels.size()) * AMOUNT_PER_COMPILATION;
       compile = true;
+      if (generateText) {
+        totalJob = totalJob + AMOUNT_PER_COMPILATION;
+      } else {
+        totalJob = totalJob + AMOUNT_PER_COMPILATION + AMOUNT_PER_COMPILATION;
+      }
     }
-    progress.start("Generating", totalJob);
+    progress.start("generating", totalJob);
 
     try {
 
       if (compile) {
         // -- compile sources before generation
-        progress.addText("Compiling in IntelliJ IDEA...");
+        progress.addText("compiling in IntelliJ IDEA...");
         MPSPlugin.getInstance().refreshFS();
         progress.advance(AMOUNT_PER_COMPILATION / 4);
         MPSPlugin.getInstance().buildProject();
         progress.advance(AMOUNT_PER_COMPILATION / 4);
-        progress.addText("Reloading MPS classes...");
+        progress.addText("reloading MPS classes...");
         ReloadUtils.reloadAll();
         progress.advance(AMOUNT_PER_COMPILATION / 2);
       }
@@ -412,20 +416,12 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         status = generationSession.generateModel(sourceModel);
         if (status.getOutputModel() != null) {
           if (generateText) {
-            progress.addText("Generate text to Output view");
+            progress.addText("generate text to Output view");
             generateText(status.getOutputModel(), invocationContext);
           } else {
-            progress.addText("Generate files to folder: \"" + getOutputFolderPath(outputFolder, sourceModel) + "\"");
+            addProgressMessage(MessageKind.INFORMATION, "generate files to folder: \"" + getOutputFolderPath(outputFolder, sourceModel) + "\"", progress);
             generateFile(outputFolder, sourceModel, status.getOutputModel());
 
-            if (status.isOk() && compile) {
-              // -- compile after generation of each model
-              progress.addText("Compiling in IntelliJ IDEA...");
-              MPSPlugin.getInstance().refreshFS();
-              progress.advance(AMOUNT_PER_COMPILATION / 2);
-              MPSPlugin.getInstance().buildProject();
-              progress.advance(AMOUNT_PER_COMPILATION / 2);
-            }
           }
         }
         if (!status.isOk()) {
@@ -434,17 +430,28 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       }
 
       if (isSaveTransientModels()) {
-        addProgressMessage(MessageKind.INFORMATION, "creating generation session module \"" + generationSession.getSessionModuleName() + "\"", progress);
+        addProgressMessage(MessageKind.INFORMATION, "adding module \"" + generationSession.getSessionModuleName() + "\"", progress);
         File sessionDescriptorFile = generationSession.getSessionDescriptorFile();
         myProject.addProjectSolution(sessionDescriptorFile);
       }
 
       if (status.isOk()) {
-        addProgressMessage(MessageKind.INFORMATION, "Generation completed successfully", progress);
+        if (compile) {
+          // -- compile after generation
+          progress.addText("compiling in IntelliJ IDEA...");
+          MPSPlugin.getInstance().refreshFS();
+          progress.advance(AMOUNT_PER_COMPILATION / 4);
+          MPSPlugin.getInstance().buildProject();
+          progress.advance(AMOUNT_PER_COMPILATION / 4);
+          progress.addText("reloading MPS classes...");
+          ReloadUtils.reloadAll();
+          progress.advance(AMOUNT_PER_COMPILATION / 2);
+        }
+        addProgressMessage(MessageKind.INFORMATION, "generation completed successfully", progress);
       } else if (status.isError()) {
-        addProgressMessage(MessageKind.WARNING, "Generation finished with errors", progress);
+        addProgressMessage(MessageKind.WARNING, "generation finished with errors", progress);
       } else if (status.isCanceled()) {
-        addProgressMessage(MessageKind.WARNING, "Generation cancelled", progress);
+        addProgressMessage(MessageKind.WARNING, "generation cancelled", progress);
       }
       showMessageView();
 

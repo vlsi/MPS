@@ -52,7 +52,7 @@ public class GenerationSession implements ModelOwner {
   public GenerationStatus generateModel(SModel sourceModel) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
     addProgressMessage(MessageKind.INFORMATION, "generating model \"" + sourceModel.getUID() + "\"...");
     Class<? extends IModelGenerator> defaultGeneratorClass = getDefaultGeneratorClass();
-    addMessage(MessageKind.INFORMATION, " -- default generator class: " + (defaultGeneratorClass != null ? defaultGeneratorClass.getName() : "<n/a>"));
+    addMessage(MessageKind.INFORMATION, "    default generator class: " + (defaultGeneratorClass != null ? defaultGeneratorClass.getName() : "<n/a>"));
 
     // -- create generators list
     List<Generator> generators = getGeneratorModiles(sourceModel);
@@ -62,10 +62,10 @@ public class GenerationSession implements ModelOwner {
     }
 
     // -- choose generator class
-    Class<? extends IModelGenerator> currentGeneratorClass = defaultGeneratorClass;
+    Class<? extends IModelGenerator> currentGeneratorClass = null;
     for (Generator generator : generators) {
       Class<? extends IModelGenerator> generatorClass = getGeneratorClass(generator);
-      addMessage(MessageKind.INFORMATION, " -- generator found: " + generator.getModuleUID() + " generator class: " + (generatorClass != null ? generatorClass.getName() : "<default>"));
+      addMessage(MessageKind.INFORMATION, "    generator found: " + generator.getModuleUID() + " generator class: " + (generatorClass != null ? generatorClass.getName() : "<default>"));
       if (generatorClass != null) {
         if (currentGeneratorClass == null) {
           currentGeneratorClass = generatorClass;
@@ -82,10 +82,13 @@ public class GenerationSession implements ModelOwner {
     }
 
     if (currentGeneratorClass == null) {
-      addProgressMessage(MessageKind.ERROR, "generator class is not defined");
-      return new GenerationStatus.ERROR();
+      if (defaultGeneratorClass == null) {
+        addProgressMessage(MessageKind.ERROR, "generator class is not defined");
+        return new GenerationStatus.ERROR();
+      }
+      currentGeneratorClass = defaultGeneratorClass;
     }
-    addMessage(MessageKind.INFORMATION, " -- use generator class: \"" + currentGeneratorClass + "\"");
+    addMessage(MessageKind.INFORMATION, "    use generator class: \"" + currentGeneratorClass + "\"");
     GeneratorSessionContext generatorContext = new GeneratorSessionContext(myTargetLanguage, generators, myInvocationContext);
     // templates or hand-coded?
     if (!ITemplateGenerator.class.isAssignableFrom(currentGeneratorClass)) {
