@@ -4,6 +4,7 @@ import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessageView;
 import jetbrains.mps.ide.progress.IProgressMonitor;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
@@ -11,7 +12,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.project.AbstractModule;
 
-import javax.swing.*;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Iterator;
@@ -93,7 +93,7 @@ public class GenerationSession implements ModelOwner {
     // templates or hand-coded?
     if (!ITemplateGenerator.class.isAssignableFrom(currentGeneratorClass)) {
       // hand-coded - not much to do ... just instantiate and invoke
-      IModelGenerator handCodedGenerator = (IModelGenerator) currentGeneratorClass.getConstructor(IOperationContext.class).newInstance(generatorContext);
+      IModelGenerator handCodedGenerator = currentGeneratorClass.getConstructor(IOperationContext.class).newInstance(generatorContext);
       IProgressMonitor childMonitor = myProgressMonitor.startSubTask(GeneratorManager.AMOUNT_PER_MODEL);
       SModel targetModel = JavaGenUtil.createTargetJavaModel(sourceModel, JavaNameUtil.packageNameForModelUID(sourceModel.getUID()), generatorContext);
       handCodedGenerator.generate(sourceModel, targetModel, childMonitor);
@@ -103,7 +103,7 @@ public class GenerationSession implements ModelOwner {
 
     // templates generator
     ITemplateGenerator generator = (ITemplateGenerator) currentGeneratorClass.getConstructor(GeneratorSessionContext.class, IProgressMonitor.class).newInstance(generatorContext, myProgressMonitor);
-    GenerationStatus status = null;
+    GenerationStatus status;
     try {
       SModel outputModel = doGenerateModel(sourceModel, generator);
       boolean wasErrors = generator.getErrorCount() > 0;
@@ -236,11 +236,20 @@ public class GenerationSession implements ModelOwner {
         }
       }
     }
+    // the target language may have "reduction" generator
+    List<Generator> reductionGenerators = myTargetLanguage.getGenerators();
+    for (Generator generator : reductionGenerators) {
+      if (myTargetLanguage.getNamespace().equals(generator.getTargetLanguageName())) {
+        if (!generators.contains(generator)) {
+          generators.add(generator);
+        }
+      }
+    }
     return generators;
   }
 
   private void addMessage(final Message message) {
-    SwingUtilities.invokeLater(new Runnable() {
+    ThreadUtils.runInEventDispatchThread(new Runnable() {
       public void run() {
         myInvocationContext.getProject().getComponent(MessageView.class).add(message);
       }
@@ -248,7 +257,7 @@ public class GenerationSession implements ModelOwner {
   }
 
   private void addMessage(final MessageKind kind, final String text) {
-    SwingUtilities.invokeLater(new Runnable() {
+    ThreadUtils.runInEventDispatchThread(new Runnable() {
       public void run() {
         myInvocationContext.getProject().getComponent(MessageView.class).add(new Message(kind, text));
       }
@@ -256,7 +265,7 @@ public class GenerationSession implements ModelOwner {
   }
 
   private void addProgressMessage(final MessageKind kind, final String text) {
-    SwingUtilities.invokeLater(new Runnable() {
+    ThreadUtils.runInEventDispatchThread(new Runnable() {
       public void run() {
         myProgressMonitor.addText(text);
         myInvocationContext.getProject().getComponent(MessageView.class).add(new Message(kind, text));
@@ -285,7 +294,7 @@ public class GenerationSession implements ModelOwner {
     }
 
     // create solution
-    SolutionDescriptor sessionDescriptor = null;
+    SolutionDescriptor sessionDescriptor;
     SModel sessionDescriptorModel = ProjectModelDescriptor.createDescriptorFor(this).getSModel();
     if (mySessionDescriptorFile != null) {
       sessionDescriptor = PersistenceUtil.loadSolutionDescriptor(mySessionDescriptorFile, sessionDescriptorModel);
@@ -330,8 +339,9 @@ public class GenerationSession implements ModelOwner {
     // save, add to project and reload all
     if (mySessionDescriptorFile == null) {
       mySessionDescriptorFile = new File(solutionDir, getSessionModuleName() + ".msd");
-      PersistenceUtil.saveSolutionDescriptor(mySessionDescriptorFile, sessionDescriptor);
     }
+    PersistenceUtil.saveSolutionDescriptor(mySessionDescriptorFile, sessionDescriptor);
+    SModelRepository.getInstance().unRegisterModelDescriptor(sessionDescriptorModel.getModelDescriptor(), this);
   }
 
   private void addModelRoot(String prefix, String path, SolutionDescriptor descriptor) {

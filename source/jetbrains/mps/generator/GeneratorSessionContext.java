@@ -3,7 +3,6 @@ package jetbrains.mps.generator;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.projectLanguage.ModelRoot;
@@ -28,19 +27,7 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
   private List<SModel> myTemplateModels;
   private IOperationContext myInvocationContext;
   private TransientModule myTransientModule;
-  private String mySessionId;
   private Language myTargetLanguage;
-
-  /**
-   * @deprecated
-   */
-  public GeneratorSessionContext(Generator generatorModule, IOperationContext invocationContext) {
-    myGeneratorModules = new LinkedList<Generator>();
-    myGeneratorModules.add(generatorModule);
-    myTargetLanguage = generatorModule.getTargetLanguage();
-    myInvocationContext = invocationContext;
-    myTransientModule = new TransientModule(invocationContext.getModule());
-  }
 
   public GeneratorSessionContext(Language targetLanguage, List<Generator> generatorModules, IOperationContext invocationContext) {
     myGeneratorModules = generatorModules;
@@ -93,15 +80,6 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
     return getClass().getName() + "-> " + myTargetLanguage.getNamespace() + "\ninvoked from: " + myInvocationContext;
   }
 
-  /**
-   * @deprecated
-   */
-  public String getSessionId() {
-    if (mySessionId == null) {
-      mySessionId = "" + System.currentTimeMillis();
-    }
-    return mySessionId;
-  }
 
   private class TransientModule extends AbstractModule {
     private List<AbstractModule> myDependOnModules = new LinkedList<AbstractModule>();

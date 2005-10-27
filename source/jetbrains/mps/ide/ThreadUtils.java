@@ -10,7 +10,7 @@ import javax.swing.*;
 public class ThreadUtils {
   private static final Logger LOG = Logger.getLogger(ThreadUtils.class);
 
-  public static void runInEventDispathThread(Runnable r) {
+  public static void runInEventDispatchThread(Runnable r) {
     if (isEventDispatchThread()) {
       r.run();
     } else {
