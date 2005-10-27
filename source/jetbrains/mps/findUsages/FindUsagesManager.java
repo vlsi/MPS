@@ -49,6 +49,7 @@ public class FindUsagesManager {
     Set<ConceptDeclaration> result = new HashSet<ConceptDeclaration>();
     List<SModelDescriptor> models = scope.getModelDescriptors();
     for (SModelDescriptor model : models) {
+      if (model.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
       HashSet<ConceptDeclaration> descendantsKnownInModel = knownDescendantsInModelDescriptors.get(model);
       if (descendantsKnownInModel == null) {
         descendantsKnownInModel = new HashSet<ConceptDeclaration>();
