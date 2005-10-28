@@ -568,7 +568,7 @@ public abstract class SNode implements Cloneable {
   private void insertReferenceAt(final int i, final SReference reference) {
     myReferences.add(i, reference);
     if (reference instanceof InternalReference &&
-            !getModel().getUID().getStereotype().equals("remote")) {
+            !getModel().getUID().getStereotype().startsWith("remote")) {
       SNode targetNode = reference.getTargetNode();
       if (targetNode != null) targetNode.myBackReferences.add(reference);
     }
@@ -585,7 +585,7 @@ public abstract class SNode implements Cloneable {
   private void removeReferenceAt(final int i) {
     final SReference reference = myReferences.get(i);
     myReferences.remove(reference);
-    if (reference instanceof InternalReference && !getModel().getUID().getStereotype().equals("remote")) {
+    if (reference instanceof InternalReference && !getModel().getUID().getStereotype().startsWith("remote")) {
       SNode targetNode = reference.getTargetNode();
       if (targetNode != null) {
         targetNode.myBackReferences.remove(reference);
@@ -671,7 +671,7 @@ public abstract class SNode implements Cloneable {
       removeReferenceAt(0);
     }
 
-
+    if (!myModel.getStereotype().startsWith("remote")) {
     while (myBackReferences.size() > 0) {
       SReference backReference = myBackReferences.iterator().next();
       if (!backReference.isResolved()) {
@@ -687,6 +687,7 @@ public abstract class SNode implements Cloneable {
         //it is possible when node references itself
         myBackReferences.remove(backReference);
       }
+    }
     }
   }
 

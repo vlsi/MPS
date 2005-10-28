@@ -18,7 +18,7 @@ public class UIEditorComponent extends AbstractEditorComponent {
   private SNode mySemanticNode;
   private InspectorEditorComponent myInspector;
 
-  public UIEditorComponent(ProjectFrame ide, IOperationContext operationContext, InspectorEditorComponent inspector) {
+  public UIEditorComponent(IOperationContext operationContext, InspectorEditorComponent inspector) {
     super(operationContext);
     unregisterKeyboardAction(KeyStroke.getKeyStroke("ESCAPE"));
     myInspector = inspector;

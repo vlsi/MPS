@@ -27,7 +27,7 @@ public abstract class BaseNodeDialog extends BaseDialog {
     super(ide.getMainFrame(), text);
     myOperationContext = operationContext;
     InspectorEditorComponent inspector = new InspectorEditorComponent();
-    myEditorComponent = new UIEditorComponent(ide, getOperationContext(), inspector);
+    myEditorComponent = new UIEditorComponent(getOperationContext(), inspector);
 
     mySplitter = new JSplitPaneWithoutBorders(JSplitPane.VERTICAL_SPLIT, myEditorComponent.getExternalComponent(), inspector.getExternalComponent());
     mySplitter.setDividerSize(6);
