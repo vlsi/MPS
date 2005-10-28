@@ -2,6 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.NodeGutterMessage;
+import jetbrains.mps.util.CollectionUtil;
 
 import java.util.Set;
 import java.util.HashSet;
@@ -37,6 +38,26 @@ public class NodeHighlightManager implements IGutterMessageOwner {
     myMessages.add(message);
     myEditor.getMessagesGutter().add(message, this);
     myEditor.getExternalComponent().repaint();
+  }
+
+  public void markOverlaplessly(SNode nodeToHighlight, Color color, String messageText) {
+    if (nodeToHighlight == null) return;
+    SNode node = nodeToHighlight;
+    while (node != null) {
+      if (color.equals(this.getColorFor(node))) return;
+      node = node.getParent();
+    }
+    Set<MyMessage> messagesToRemove = new HashSet<MyMessage>();
+    for (SNode childNode : CollectionUtil.iteratorAsIterable(nodeToHighlight.depthFirstChildren())) {
+      for (MyMessage msg : myMessages) {
+        if (msg.getNode() == childNode && msg.getColor().equals(color)) messagesToRemove.add(msg);
+      }
+    }
+    myMessages.removeAll(messagesToRemove);
+    for (MyMessage msg : messagesToRemove) {
+      myEditor.getMessagesGutter().remove(msg);
+    }
+    this.mark(nodeToHighlight, color, messageText);
   }
 
   public Color getColorFor(SNode node) {

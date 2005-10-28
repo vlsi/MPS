@@ -55,4 +55,8 @@ public class UIEditorComponent extends AbstractEditorComponent {
   public EditorCell createRootCell() {
     return createRootCell(null);
   }
+
+  public InspectorEditorComponent getInspector() {
+    return myInspector;
+  }
 }
