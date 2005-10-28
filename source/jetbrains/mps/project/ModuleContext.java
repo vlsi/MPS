@@ -18,9 +18,9 @@ public class ModuleContext extends StandaloneMPSContext {
   private static final Logger LOG = Logger.getLogger(ModuleContext.class);
 
   private MPSProject myProject;
-  private AbstractModule myModule;
+  private IModule myModule;
 
-  public ModuleContext(AbstractModule module, MPSProject project) {
+  public ModuleContext(IModule module, MPSProject project) {
     myModule = module;
     myProject = project;
   }
@@ -40,7 +40,7 @@ public class ModuleContext extends StandaloneMPSContext {
     return component;
   }
 
-  public AbstractModule getModule() {
+  public IModule getModule() {
     return myModule;
   }
 
@@ -58,7 +58,7 @@ public class ModuleContext extends StandaloneMPSContext {
 
   public static ModuleContext create(SNode node, MPSProject project) {
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(node.getModel());
-    Set<AbstractModule> owningModules = SModelRepository.getInstance().getOwners(modelDescriptor, AbstractModule.class);
+    Set<IModule> owningModules = SModelRepository.getInstance().getOwners(modelDescriptor, IModule.class);
     if (owningModules.isEmpty()) {
       LOG.errorWithTrace("Couldn't create module context for node: " + node.getDebugText() +
               "\nCouldn't find owner module for model \"" + modelDescriptor.getModelUID() + "\"");

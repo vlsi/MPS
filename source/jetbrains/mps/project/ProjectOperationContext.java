@@ -1,7 +1,6 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.IOperationContext;
 
 /**
  * Created by IntelliJ IDEA.
@@ -25,7 +24,7 @@ public class ProjectOperationContext extends StandaloneMPSContext {
     return component;
   }
 
-  public AbstractModule getModule() {
+  public IModule getModule() {
     return null;
   }
 

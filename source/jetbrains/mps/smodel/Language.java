@@ -8,6 +8,7 @@ import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
@@ -167,10 +168,10 @@ public class Language extends AbstractModule {
     return myLanguageDescriptor;
   }
 
-  protected List<AbstractModule> getDependOnModules_impl() {
+  public List<IModule> getExplicitlyDependOnModules() {
     // depends of other languages and solutions, but not on generators
-    List<AbstractModule> result = new LinkedList<AbstractModule>();
-    for (AbstractModule ownModule : getOwnModules()) {
+    List<IModule> result = new LinkedList<IModule>();
+    for (IModule ownModule : getOwnModules()) {
       if (ownModule instanceof Generator || result.contains(ownModule)) {
         continue;
       }

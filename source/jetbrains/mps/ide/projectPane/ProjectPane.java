@@ -7,10 +7,7 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.ide.ui.*;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.IMPSProjectCommandListener;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelsAdapter;
 import jetbrains.mps.smodel.event.SModelsMulticaster;
@@ -219,7 +216,7 @@ public class ProjectPane extends JComponent implements IActionDataProvider {
   }
 
   public void selectNode(SNode node, IOperationContext context) {
-    AbstractModule module = context.getModule();
+    IModule module = context.getModule();
     if (module == null) {
       selectNode(node);
       return;
@@ -252,7 +249,7 @@ public class ProjectPane extends JComponent implements IActionDataProvider {
     }
   }
 
-  public MPSTreeNode findModuleTreeNode(final AbstractModule module) {
+  public MPSTreeNode findModuleTreeNode(final IModule module) {
     DefaultTreeModel treeModel = (DefaultTreeModel) myTree.getModel();
     MPSTreeNode rootTreeNode = (MPSTreeNode) treeModel.getRoot();
     return findTreeNode(rootTreeNode, new Condition<MPSTreeNode>() {

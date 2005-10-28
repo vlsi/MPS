@@ -13,7 +13,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 
 import javax.swing.*;
@@ -90,16 +90,16 @@ public class ModuleRepositoryView extends DefaultTool {
           return Icons.PROJECT_ICON;
         }
       };
-      for (AbstractModule module : SortUtil.sortModules(MPSModuleRepository.getInstance().getAllModules())) {
+      for (IModule module : SortUtil.sortModules(MPSModuleRepository.getInstance().getAllModules())) {
         root.add(new LanguageTreeNode(module));
       }
       return root;
     }
 
     private class LanguageTreeNode extends MPSTreeNode {
-      private AbstractModule myModule;
+      private IModule myModule;
 
-      public LanguageTreeNode(AbstractModule module) {
+      public LanguageTreeNode(IModule module) {
         super(null);
         myModule = module;
         for (MPSModuleOwner owner : MPSModuleRepository.getInstance().getOwners(myModule)) {

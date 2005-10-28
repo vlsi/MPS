@@ -3,7 +3,6 @@ package jetbrains.mps.project;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.ModelRoot;
-import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 
@@ -18,7 +17,7 @@ import java.util.*;
  * Time: 2:17:14 PM
  * To change this template use File | Settings | File Templates.
  */
-public abstract class AbstractModule implements IScope, ModelOwner, MPSModuleOwner {
+public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
   private ModelRoot myClassPathModelRoot;
@@ -32,23 +31,19 @@ public abstract class AbstractModule implements IScope, ModelOwner, MPSModuleOwn
     return CollectionUtil.iteratorAsList(getModuleDescriptor().modelRoots());
   }
 
-  private SModelDescriptor getModuleModel() {
-    return getModuleDescriptor().getModel().getModelDescriptor();
-  }
-
   public String getModuleUID() {
     return toString();
   }
 
   public Language getLanguage(String languageNamespace) {
-    return getLanguage(languageNamespace, new HashSet<AbstractModule>());
+    return getLanguage(languageNamespace, new HashSet<IModule>());
   }
 
-  public Language getLanguage(String languageNamespace, Set<AbstractModule> modulesToSkip) {
+  public Language getLanguage(String languageNamespace, Set<IModule> modulesToSkip) {
     if (languageNamespace == null) return null;
     Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
     if (language != null) return language;
-    Set<AbstractModule> processedModules = new HashSet<AbstractModule>(modulesToSkip);
+    Set<IModule> processedModules = new HashSet<IModule>(modulesToSkip);
     language = getLanguage_internal(languageNamespace, processedModules, this);
     if (language == null) {
       LOG.error("Couldn't find language: \"" + languageNamespace + "\" in scope: " + this);
@@ -56,15 +51,15 @@ public abstract class AbstractModule implements IScope, ModelOwner, MPSModuleOwn
     return language;
   }
 
-  private static Language getLanguage_internal(String languageNamespace, Set<AbstractModule> processedModules, AbstractModule dependentModule) {
+  private static Language getLanguage_internal(String languageNamespace, Set<IModule> processedModules, IModule dependentModule) {
     if (dependentModule instanceof Language && dependentModule.getModuleUID().equals(languageNamespace)) {
       return (Language) dependentModule;
     }
     Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, dependentModule);
     processedModules.add(dependentModule);
     if (language == null) {
-      List<AbstractModule> dependOnModules = dependentModule.getDependOnModules();
-      for (AbstractModule module : dependOnModules) {
+      List<IModule> dependOnModules = dependentModule.getDependOnModules();
+      for (IModule module : dependOnModules) {
         if (!(processedModules.contains(module))) {
           language = getLanguage_internal(languageNamespace, processedModules, module);
           if (language != null) break;
@@ -82,8 +77,8 @@ public abstract class AbstractModule implements IScope, ModelOwner, MPSModuleOwn
     return new ArrayList<Language>(getAllDependOnModules(Language.class));
   }
 
-  public final List<AbstractModule> getOwnModules() {
-    return new LinkedList<AbstractModule>(MPSModuleRepository.getInstance().getModules(this));
+  public final List<IModule> getOwnModules() {
+    return new LinkedList<IModule>(MPSModuleRepository.getInstance().getModules(this));
   }
 
 
@@ -103,16 +98,16 @@ public abstract class AbstractModule implements IScope, ModelOwner, MPSModuleOwn
     return null;
   }
 
-  private static SModelDescriptor getModelDescriptorFromDependOnModules(SModelUID modelUID, AbstractModule dependentModule) {
-    Set<AbstractModule> modules = new HashSet<AbstractModule>();
+  private static SModelDescriptor getModelDescriptorFromDependOnModules(SModelUID modelUID, IModule dependentModule) {
+    Set<IModule> modules = new HashSet<IModule>();
     modules.add(dependentModule);
     return getModelDescriptorFromDependOnModules(modelUID, dependentModule, modules);
   }
 
-  private static SModelDescriptor getModelDescriptorFromDependOnModules(SModelUID modelUID, AbstractModule dependentModule, Set<AbstractModule> modules) {
-    List<AbstractModule> dependOnModules = dependentModule.getDependOnModules();
-    List<AbstractModule> justProcessedModules = new LinkedList<AbstractModule>();
-    for (AbstractModule dependOnModule : dependOnModules) {
+  private static SModelDescriptor getModelDescriptorFromDependOnModules(SModelUID modelUID, IModule dependentModule, Set<IModule> modules) {
+    List<IModule> dependOnModules = dependentModule.getDependOnModules();
+    List<IModule> justProcessedModules = new LinkedList<IModule>();
+    for (IModule dependOnModule : dependOnModules) {
       if (!modules.contains(dependOnModule)) {
         modules.add(dependOnModule);
         justProcessedModules.add(dependOnModule);
@@ -122,7 +117,7 @@ public abstract class AbstractModule implements IScope, ModelOwner, MPSModuleOwn
         }
       }
     }
-    for (AbstractModule dependOnModule : justProcessedModules) {
+    for (IModule dependOnModule : justProcessedModules) {
       SModelDescriptor modelDescriptor = getModelDescriptorFromDependOnModules(modelUID, dependOnModule, modules);
       if (modelDescriptor != null) {
         return modelDescriptor;
@@ -142,8 +137,8 @@ public abstract class AbstractModule implements IScope, ModelOwner, MPSModuleOwn
       }
     }
 
-    Set<AbstractModule> dependOnModules = getAllDependOnModules(AbstractModule.class);
-    for (AbstractModule module : dependOnModules) {
+    Set<IModule> dependOnModules = getAllDependOnModules(IModule.class);
+    for (IModule module : dependOnModules) {
       List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptors(modelName, module);
       for (SModelDescriptor descriptor : list) {
         if (!set.contains(descriptor)) {
@@ -159,17 +154,17 @@ public abstract class AbstractModule implements IScope, ModelOwner, MPSModuleOwn
 
   //returns all modules which this explicitly depends on (recursively),
   // i.e. without bootstrap languages, if such a dependency is not explicitly set in module roots
-  public <T extends AbstractModule> Set<T> getAllExplicitlyDependOnModules(Class<T> cls) {
+  public <T extends IModule> Set<T> getAllExplicitlyDependOnModules(Class<T> cls) {
     Set<T> dependOnModules = new HashSet<T>();
     collectAllExplicitlyDependOnModules(this, dependOnModules, cls);
     return dependOnModules;
   }
 
   //returns all modules which this depends on (recursively)
-  public <T extends AbstractModule> Set<T> getAllDependOnModules(Class<T> cls) {
+  public <T extends IModule> Set<T> getAllDependOnModules(Class<T> cls) {
     Set<T> dependOnModules = getAllExplicitlyDependOnModules(cls);
     //add bootstrapLanguages
-    for (AbstractModule module : MPSModuleRepository.getInstance().getModules(BootstrapLanguages.getInstance())) {
+    for (IModule module : MPSModuleRepository.getInstance().getModules(BootstrapLanguages.getInstance())) {
       if (cls.isInstance(module)) {
         dependOnModules.add((T) module);
       }
@@ -177,9 +172,9 @@ public abstract class AbstractModule implements IScope, ModelOwner, MPSModuleOwn
     return dependOnModules;
   }
 
-  private <T extends AbstractModule> void collectAllExplicitlyDependOnModules(AbstractModule dependentModule, Set<T> modules, Class<T> cls) {
-    List<AbstractModule> dependOnModules = dependentModule.getDependOnModules_impl();
-    for (AbstractModule dependOnModule : dependOnModules) {
+  private <T extends IModule> void collectAllExplicitlyDependOnModules(IModule dependentModule, Set<T> modules, Class<T> cls) {
+    List<IModule> dependOnModules = dependentModule.getExplicitlyDependOnModules();
+    for (IModule dependOnModule : dependOnModules) {
       if (cls.isInstance(dependOnModule) && !modules.contains(dependOnModule)) {
         modules.add((T) dependOnModule);
         collectAllExplicitlyDependOnModules(dependOnModule, modules, cls);
@@ -203,11 +198,15 @@ public abstract class AbstractModule implements IScope, ModelOwner, MPSModuleOwn
   // AbstractModule
   //
 
+  private SModelDescriptor getModuleDescriptorModel() {
+    return getModuleDescriptor().getModel().getModelDescriptor();
+  }
+
   private List<ModelRoot> getDefaultModelRoots() {
     List<ModelRoot> result = new ArrayList<ModelRoot>();
     if (myClassPathModelRoot == null) {
 
-      myClassPathModelRoot = ModelRoot.newInstance(getModuleModel().getSModel());
+      myClassPathModelRoot = ModelRoot.newInstance(getModuleDescriptorModel().getSModel());
       myClassPathModelRoot.setPrefix("");
       myClassPathModelRoot.setPath("");
 
@@ -234,18 +233,18 @@ public abstract class AbstractModule implements IScope, ModelOwner, MPSModuleOwn
 
   //returns all modules which this explicitly and immediately depends on,
   // i.e. without bootstrap languages, if such a dependency is not explicitly set in module roots
-  protected List<AbstractModule> getDependOnModules_impl() {
-    List<AbstractModule> result = new LinkedList<AbstractModule>(getOwnModules());
+  public List<IModule> getExplicitlyDependOnModules() {
+    List<IModule> result = new LinkedList<IModule>(getOwnModules());
     return result;
   }
 
 
   //returns all modules which this immediately depends on, bootstrap languages in their number.
-  public List<AbstractModule> getDependOnModules() {
-    return appendBootstrapLangauges(getDependOnModules_impl());
+  public List<IModule> getDependOnModules() {
+    return appendBootstrapLanguages(getExplicitlyDependOnModules());
   }
 
-  protected List<AbstractModule> appendBootstrapLangauges(List<AbstractModule> list) {
+  protected static List<IModule> appendBootstrapLanguages(List<IModule> list) {
     List<Language> languages = BootstrapLanguages.getInstance().getLanguages();
     for (Language language : languages) {
       if (!list.contains(language)) {
@@ -284,7 +283,7 @@ public abstract class AbstractModule implements IScope, ModelOwner, MPSModuleOwn
 
   public List<SModelDescriptor> getModelDescriptors() {
     Set<SModelDescriptor> modelDescriptors = new HashSet<SModelDescriptor>(getOwnModelDescriptors());
-    for (AbstractModule module : getAllDependOnModules(AbstractModule.class)) {
+    for (IModule module : getAllDependOnModules(IModule.class)) {
       modelDescriptors.addAll(module.getOwnModelDescriptors());
     }
     return new ArrayList<SModelDescriptor>(modelDescriptors);
@@ -293,12 +292,6 @@ public abstract class AbstractModule implements IScope, ModelOwner, MPSModuleOwn
   public File getDescriptorFile() {
     return myDescriptorFile;
   }
-
-  public abstract ModuleDescriptor getModuleDescriptor();
-
-  public abstract String getGeneratorOutputPath();
-
-  public abstract void dispose();
 
   protected void readModulesAndModels() {
     MPSModuleRepository.getInstance().readModuleDescriptors(getModuleDescriptor().moduleRoots(), this);

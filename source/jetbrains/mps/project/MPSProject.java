@@ -176,7 +176,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     return Collections.unmodifiableList(mySolutions);
   }
 
-  public boolean isProjectModule(AbstractModule module) {
+  public boolean isProjectModule(IModule module) {
     return myLanguages.contains(module) || mySolutions.contains(module);
   }
 

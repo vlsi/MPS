@@ -10,7 +10,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.IModule;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -255,7 +255,7 @@ public class GenerationSession implements ModelOwner {
     addProgressMessage(MessageKind.INFORMATION, "saving transient models to \"" + solutionDir + "\"");
 
     // save models to solution dir
-    AbstractModule transientModule = generatorContext.getModule();
+    IModule transientModule = generatorContext.getModule();
     List<SModelDescriptor> transientModelDescriptors = transientModule.getOwnModelDescriptors();
     for (SModelDescriptor descriptor : transientModelDescriptors) {
       if (descriptor instanceof TransientModelDescriptor) {
@@ -299,7 +299,7 @@ public class GenerationSession implements ModelOwner {
 
     // add model/language roots from invocation module
     {
-      AbstractModule invocationModule = generatorContext.getInvocationContext().getModule();
+      IModule invocationModule = generatorContext.getInvocationContext().getModule();
       List<ModelRoot> modelRoots = invocationModule.getNonDefaultModelRoots();
       for (ModelRoot modelRoot : modelRoots) {
         addModelRoot(modelRoot.getPrefix(), modelRoot.getPath(), sessionDescriptor);

@@ -2,7 +2,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.reloading.ClassLoaderManager;
 
@@ -262,8 +262,8 @@ public class SModelRepository extends SModelAdapter {
     Set<SModelDescriptor> releasedModels = collectReleasedModels(changedModels, modelToOwnerMap, owner);
 
     //releasing models from released modules
-    Set<AbstractModule> releasedModules = MPSModuleRepository.getInstance().getReleasedModulesWhenReleasingOwner(owner);
-    for (AbstractModule module : releasedModules) {
+    Set<IModule> releasedModules = MPSModuleRepository.getInstance().getReleasedModulesWhenReleasingOwner(owner);
+    for (IModule module : releasedModules) {
       releasedModels.addAll(collectReleasedModels(changedModels, modelToOwnerMap, module));
     }
     return new ArrayList<SModelDescriptor>(releasedModels);

@@ -2,7 +2,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.IModule;
 
 import java.util.List;
 import java.awt.*;
@@ -18,7 +18,7 @@ public interface IOperationContext {
 
   MPSProject getProject();
 
-  AbstractModule getModule();
+  IModule getModule();
 
   IScope getScope();
 

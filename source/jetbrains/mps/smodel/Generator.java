@@ -1,7 +1,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.Model;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
@@ -94,14 +94,14 @@ public class Generator extends AbstractModule {
     if (mySourceLanguage.getModuleUID().equals(languageNamespace)) {
       return mySourceLanguage;
     }
-    Set<AbstractModule> modulesToSkip = new HashSet<AbstractModule>();
+    Set<IModule> modulesToSkip = new HashSet<IModule>();
     modulesToSkip.add(this);
     return super.getLanguage(languageNamespace, modulesToSkip);
   }
 
-  protected List<AbstractModule> getDependOnModules_impl() {
+  public List<IModule> getExplicitlyDependOnModules() {
     // depends on source/target language and all owned modules
-    List<AbstractModule> result = new LinkedList<AbstractModule>(getOwnModules());
+    List<IModule> result = new LinkedList<IModule>(getOwnModules());
     if (!result.contains(mySourceLanguage)) {
       result.add(mySourceLanguage);
     }
@@ -112,12 +112,12 @@ public class Generator extends AbstractModule {
 
     //do not append bootstrap languages to the result directly...
     // however, they may be necessary in the next loop, hence we have:
-    List<AbstractModule> resultAndBootstrapLanguages = appendBootstrapLangauges(new ArrayList<AbstractModule>(result));
+    List<IModule> resultAndBootstrapLanguages = appendBootstrapLanguages(new ArrayList<IModule>(result));
 
     // todo: configure generator dependencies ...
     // ... from all languages in "resultAndBootstrapLanguages" collect generators and add to dependency list
     List<Generator> generators = new LinkedList<Generator>();
-    for (AbstractModule module : resultAndBootstrapLanguages) {
+    for (IModule module : resultAndBootstrapLanguages) {
       if (module instanceof Language && module != mySourceLanguage) {
         generators.addAll(((Language) module).getGenerators());
       }
