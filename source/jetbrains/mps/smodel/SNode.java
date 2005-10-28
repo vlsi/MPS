@@ -124,7 +124,13 @@ public abstract class SNode implements Cloneable {
 
   public SNode getContainingRoot() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
-    if (getParent() == null) return this;
+    if (getParent() == null) {
+      if (getModel().getRoots().contains(this)) {
+        return this;
+      } else {
+        return null;
+      }
+    }
     return getParent().getContainingRoot();
   }
 
