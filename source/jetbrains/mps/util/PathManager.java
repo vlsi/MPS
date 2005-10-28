@@ -85,6 +85,10 @@ public class PathManager {
     return ourConfigPath;
   }
 
+  public static void setConfigPath(String newConfigPath) {
+    ourConfigPath = newConfigPath;
+  }
+
 
   public static String getHelpPath() {
     if (ourHelpPath != null) {
