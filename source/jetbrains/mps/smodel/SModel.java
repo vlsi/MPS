@@ -338,6 +338,10 @@ public class SModel implements Iterable<SNode> {
     return getUserDefinedLanguages(scope);
   }
 
+  public List<String> getLanguageNamespaces() {
+    return new ArrayList<String>(myLanguages);
+  }
+
   public List<Language> getUserDefinedLanguages(IScope scope) {
     ArrayList<Language> languages = new ArrayList<Language>();
     for (String languageNamespace : myLanguages) {

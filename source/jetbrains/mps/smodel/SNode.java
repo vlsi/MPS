@@ -420,7 +420,7 @@ public abstract class SNode implements Cloneable {
       return getBackReferences();
     }
     List<SReference> list = new LinkedList<SReference>();
-    List<SNode> nodes = SModelUtil.allNodes(sourceModel);
+    List<? extends SNode> nodes = SModelUtil.allNodes(sourceModel);
     for (SNode node : nodes) {
       List<SReference> references = node.getReferences();
       for (SReference reference : references) {

@@ -362,6 +362,8 @@ public class ModelPersistence {
     Document document = new Document();
     document.setRootElement(rootElement);
 
+    validateModelLanguagesAndImports(sourceModel);
+
     // languages
     for (String languageNamespace : sourceModel.getUserDefinedLanguageNamespaces()) {
       Element languageElem = new Element(LANGUAGE);
@@ -370,7 +372,6 @@ public class ModelPersistence {
     }
 
     // imports
-    validateModelImports(sourceModel);
     Element maxRefID = new Element(MAX_IMPORT_INDEX);
     maxRefID.setAttribute(VALUE, "" + sourceModel.getMaxImportIndex());
     rootElement.addContent(maxRefID);
@@ -394,10 +395,17 @@ public class ModelPersistence {
     return document;
   }
 
-  private static void validateModelImports(SModel sourceModel) {
+  private static void validateModelLanguagesAndImports(SModel sourceModel) {
+    Set<String> usedLanguages = new HashSet<String>(sourceModel.getLanguageNamespaces());
     Set<SModelUID> importedModels = new HashSet<SModelUID>(sourceModel.getImportedModelUIDs());
-    Collection<? extends SNode> nodes = sourceModel.getAllNodesWithIds();
+    List<? extends SNode> nodes = SModelUtil.allNodes(sourceModel);
     for (SNode node : nodes) {
+      String languageNamespace = SModelUtil.getLanguageNamespace(node);
+      if (!usedLanguages.contains(languageNamespace)) {
+        usedLanguages.add(languageNamespace);
+        sourceModel.addLanguage(languageNamespace);
+      }
+
       List<SReference> references = node.getReferences();
       for (SReference reference : references) {
         if (reference.isExternal()) {

@@ -176,30 +176,7 @@ public class GenerationSession implements ModelOwner {
 
   private SModelDescriptor createTransientModel(int iterationCount, SModel sourceModel, ModelOwner modelOwner) {
     SModelUID modelUID = new SModelUID(sourceModel.getLongName(), "" + iterationCount + "_" + getSessionId());
-    SModelDescriptor modelDescriptor = new TransientModelDescriptor(modelUID, modelOwner);
-
-    SModel outputModel = modelDescriptor.getSModel();
-    outputModel.setLoading(true);
-    try {
-//      List<String> languages = sourceModel.getUserDefinedLanguageNamespaces();
-//      for (String languageNamespace : languages) {
-//        outputModel.addLanguage(languageNamespace);
-//      }
-//      Collection<SModelUID> imports = sourceModel.getImportedModelUIDs();
-//      for (SModelUID modelFqName : imports) {
-//        outputModel.addImportedModel(modelFqName);
-//      }
-
-//      languages = templatesMode.getUserDefinedLanguageNamespaces();
-//      for (String languageNamespace : languages) {
-//        outputModel.addLanguage(languageNamespace);
-//      }
-
-    } finally {
-      outputModel.setLoading(false);
-    }
-
-    return modelDescriptor;
+    return new TransientModelDescriptor(modelUID, modelOwner);
   }
 
   private Class<? extends IModelGenerator> getDefaultGeneratorClass() throws ClassNotFoundException {
@@ -295,10 +272,11 @@ public class GenerationSession implements ModelOwner {
     SModel sessionDescriptorModel = ProjectModelDescriptor.createDescriptorFor(this).getSModel();
     if (mySessionDescriptorFile != null) {
       sessionDescriptor = PersistenceUtil.loadSolutionDescriptor(mySessionDescriptorFile, sessionDescriptorModel);
+      sessionDescriptorModel.setLoading(true);
     } else {
       sessionDescriptor = new SolutionDescriptor(sessionDescriptorModel);
       sessionDescriptorModel.setLoading(true);
-      sessionDescriptor.setName("generator session " + getSessionId());
+      sessionDescriptor.setName(getSessionModuleName());
       // add root where transient models were saved
       addModelRoot("", solutionDir, sessionDescriptor);
     }
@@ -350,8 +328,8 @@ public class GenerationSession implements ModelOwner {
       }
     }
     ModelRoot modelRoot = new ModelRoot(descriptor.getModel());
-    modelRoot.setPrefix(modelRoot.getPrefix());
-    modelRoot.setPath(modelRoot.getPath());
+    modelRoot.setPrefix(prefix);
+    modelRoot.setPath(path);
     descriptor.addModelRoot(modelRoot);
   }
 
@@ -373,6 +351,6 @@ public class GenerationSession implements ModelOwner {
   }
 
   public String getSessionModuleName() {
-    return "generatorSession_" + getSessionId();
+    return "generationSession_" + getSessionId();
   }
 }
