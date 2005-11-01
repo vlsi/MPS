@@ -134,7 +134,7 @@ public class NodeRangeSelection implements IKeyboardHandler {
 
     String actionType = myEditorComponent.getActionType(keyEvent, editorContext);
     if (actionType == null) {
-      if (keyEvent.getKeyCode() == KeyEvent.VK_DELETE) {
+      if (keyEvent.getKeyCode() == KeyEvent.VK_DELETE || keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
         actionType = EditorCellAction.DELETE;
       }
     }
