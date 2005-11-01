@@ -252,24 +252,26 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
 
     PersistenceUtil.saveProjectDescriptor(myProjectFile, myProjectDescriptor);
 
-    try {
-      if (!myWorkspaceFile.exists()) {
-        myWorkspaceFile.createNewFile();
-      }
-      Element root = new Element(COMPONENTS);
-      for (Class cls : myComponents.keySet()) {
-        Object component = myComponents.get(cls);
-        if (component instanceof IExternalizableComponent) {
-          Element componentElement = new Element(COMPONENT);
-          componentElement.setAttribute(CLASS, cls.getName());
-          ((IExternalizableComponent) component).write(componentElement, this);
-          root.addContent(componentElement);
+    if (myWorkspaceFile != null) {
+      try {
+        if (!myWorkspaceFile.exists()) {
+          myWorkspaceFile.createNewFile();
         }
+        Element root = new Element(COMPONENTS);
+        for (Class cls : myComponents.keySet()) {
+          Object component = myComponents.get(cls);
+          if (component instanceof IExternalizableComponent) {
+            Element componentElement = new Element(COMPONENT);
+            componentElement.setAttribute(CLASS, cls.getName());
+            ((IExternalizableComponent) component).write(componentElement, this);
+            root.addContent(componentElement);
+          }
+        }
+        Document document = new Document(root);
+        JDOMUtil.writeDocument(document, myWorkspaceFile);
+      } catch (Exception e) {
+        LOG.error(e);
       }
-      Document document = new Document(root);
-      JDOMUtil.writeDocument(document, myWorkspaceFile);
-    } catch (Exception e) {
-      LOG.error(e);
     }
   }
 
