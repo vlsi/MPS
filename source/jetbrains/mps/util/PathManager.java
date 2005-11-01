@@ -32,6 +32,14 @@ public class PathManager {
   private static String ourHelpPath;
   private static String ourTutorialPath;
 
+  public static String getUserHome() {
+    return System.getProperty("user.home");
+  }
+
+  public static File getUserHomeFile() {
+    return new File(getUserHome());
+  }
+
   public static void resetHomePath() {
     ourHomePath = null;
   }
