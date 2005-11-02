@@ -226,6 +226,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         generationThread.start();
       }
     });
+
   }
 
   public void generateModels(List<SModel> sourceModels, Language targetLanguage, IOperationContext invocationContext, boolean generateText, IProgressMonitor progress) {

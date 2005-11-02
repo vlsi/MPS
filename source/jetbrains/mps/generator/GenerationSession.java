@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.logging.Logger;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -26,6 +27,8 @@ import java.io.File;
  * To change this template use File | Settings | File Templates.
  */
 public class GenerationSession implements ModelOwner {
+  public static final Logger LOG = Logger.getLogger(GenerationSession.class);
+
   private Language myTargetLanguage;
   private IOperationContext myInvocationContext;
   private IProgressMonitor myProgressMonitor;
@@ -112,6 +115,7 @@ public class GenerationSession implements ModelOwner {
     } catch (GenerationCanceledException gce) {
       status = new GenerationStatus.CANCELED(generator.getErrorCount() > 0);
     } catch (GenerationFailedException gfe) {
+      LOG.error(gfe);
       myProgressMonitor.addText(gfe.toString());
       GenerationFailueInfo failueInfo = gfe.getFailueInfo();
       if (failueInfo != null) {
@@ -122,6 +126,7 @@ public class GenerationSession implements ModelOwner {
       addMessage(MessageKind.ERROR, "model \"" + sourceModel.getUID() + "\" generation failed : " + gfe);
       status = new GenerationStatus.ERROR();
     } catch (Exception e) {
+      LOG.error(e);
       myProgressMonitor.addText(e.toString());
       addMessage(MessageKind.ERROR, "model \"" + sourceModel.getUID() + "\" generation failed : " + e);
       status = new GenerationStatus.ERROR();
@@ -145,24 +150,25 @@ public class GenerationSession implements ModelOwner {
     int iterationCount = 1;
 
     // mapping
-    generator.doMapping(sourceModel, currentTargetModel.getSModel(), null);
+    generator.doMapping(sourceModel, currentTargetModel.getSModel());
 
     // reductions...
     while (true) {
       SModelDescriptor currentSourceModel = currentTargetModel;
-
-      int numReductions = generator.prepareReduction(currentSourceModel.getSModel(), null);
+      SModelDescriptor transientModel = createTransientModel(iterationCount, sourceModel, generatorContext.getModule());
+      int numReductions = generator.prepareReduction(currentSourceModel.getSModel(), transientModel.getSModel());
       while (numReductions == 0 && generator.hasPendingReductions()) {
         numReductions = generator.preparePendingReduction();
       }
 
       generator.getProgressMonitor().addText("found reductions : " + numReductions);
       if (numReductions == 0) {
+        SModelRepository.getInstance().unRegisterModelDescriptor(transientModel, generatorContext.getModule());
         break;
       }
 
-      currentTargetModel = createTransientModel(iterationCount, sourceModel, generatorContext.getModule());
-      generator.doReduction(currentTargetModel.getSModel());
+      currentTargetModel = transientModel;
+      generator.doReduction();
 
       // next iteration ...
       if (++iterationCount > 10) {

@@ -30,15 +30,15 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   IProgressMonitor getProgressMonitor();
 
-  void doMapping(SModel sourceModel, SModel targetModel, SModel templatesModel) throws GenerationFailedException;
+  void doMapping(SModel sourceModel, SModel targetModel) throws GenerationFailedException;
 
-  int prepareReduction(SModel sourceModel, SModel templatesModel);
+  int prepareReduction(SModel sourceModel, SModel targetModel);
 
   boolean hasPendingReductions();
 
   int preparePendingReduction();
 
-  void doReduction(SModel targetModel);
+  void doReduction();
 
   void processPropertyMacros(SNode sourceNode, SNode templateNode, SNode targetNode);
 
