@@ -86,6 +86,4 @@ public class Icons {
   public static final Icon CLOSE_ICON = new ImageIcon(Icons.class.getResource("nodes/close.png"));
   public static final Icon MINIMIZE_DISABLED_ICON = new ImageIcon(Icons.class.getResource("nodes/minimizeDis.png"));
   public static final Icon CLOSE_DISABLED_ICON = new ImageIcon(Icons.class.getResource("nodes/closeDis.png")); 
-
-  public static final Icon MPS_WIKI_PAGE_ICON = new ImageIcon(Icons.class.getResource("nodes/mpsWiki.png"));
 }
