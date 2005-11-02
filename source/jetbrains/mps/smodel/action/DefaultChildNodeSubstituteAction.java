@@ -5,6 +5,7 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.nodeEditor.AbstractNodeSubstituteItem;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.NameUtil;
 
 /**
  * Created by IntelliJ IDEA.
@@ -74,7 +75,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteItem
 
   public SNode createChildNode(SNode parameterNode, SModel model, String pattern) {
     if (parameterNode instanceof ConceptDeclaration) {
-      return SModelUtil.instantiateConceptDeclaration((ConceptDeclaration) parameterNode, model);
+      return NodeFactoryManager.initializeNode((ConceptDeclaration)parameterNode, model);
     }
     throw new RuntimeException("Couldn't create child node. Parameter node: " + parameterNode.getDebugText());
   }
