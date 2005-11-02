@@ -5,6 +5,7 @@ import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.lang.reflect.Method;
 
@@ -18,6 +19,7 @@ import java.lang.reflect.Method;
 public class NodeFactoryManager {
 
   public static final String CLASS_NAME = "Factory";
+  public static final String METHOD_PREFIX = "instantiate";
 
   public static SNode initializeNode(ConceptDeclaration conceptDeclaration, SModel model) {
     SNode node = SModelUtil.instantiateConceptDeclaration(conceptDeclaration, model);
@@ -25,7 +27,7 @@ public class NodeFactoryManager {
 
     Class cls;
     try {
-      cls = Class.forName(languageNamespace+'.'+CLASS_NAME);
+      cls = Class.forName(languageNamespace+'.'+CLASS_NAME, true, ClassLoaderManager.getInstance().getClassLoader());
     } catch (Exception e) {
       return node;
     }
@@ -35,7 +37,7 @@ public class NodeFactoryManager {
 
     while (nodeType != SNode.class) {
       try {
-        String methodName = conceptDeclaration.getName();
+        String methodName = METHOD_PREFIX + NameUtil.shortNameFromLongName(nodeType.getName());
         method = cls.getMethod(methodName, nodeType);
         break;
       } catch (Exception e) {
