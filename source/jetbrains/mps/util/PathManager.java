@@ -32,6 +32,17 @@ public class PathManager {
   private static String ourHelpPath;
   private static String ourTutorialPath;
 
+  public static boolean ourServer;
+
+  public static boolean isServer() {
+    return ourServer;
+  }
+
+  public static void setServer(boolean server) {
+    ourServer = server;
+  }
+
+
   public static String getUserHome() {
     return System.getProperty("user.home");
   }
