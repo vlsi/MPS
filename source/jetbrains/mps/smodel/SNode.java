@@ -709,6 +709,14 @@ public abstract class SNode implements Cloneable {
     return allChildren.iterator();
   }
 
+  public Iterator<SNode> depthLastChildren() {
+    NodeReadAccessCaster.fireNodeReadAccessed(this);
+    List<SNode> allChildren = new ArrayList<SNode>();
+    putAggregationTree2List(this, allChildren);
+    Collections.reverse(allChildren);
+    return allChildren.iterator();
+  }
+
 
   private void putAggregationTree2List(SNode semanticNode, List<SNode> allChildren) {
     List<SNode> list = semanticNode.getChildren();
