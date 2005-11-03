@@ -71,7 +71,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteItem
       myCurrentTargetNode.delete();
     }
     return newChild;
-  }
+  }                        
 
   public SNode createChildNode(SNode parameterNode, SModel model, String pattern) {
     if (parameterNode instanceof ConceptDeclaration) {
