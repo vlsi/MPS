@@ -9,7 +9,8 @@ import java.util.Iterator;
 public class CellLayout_Horizontal implements CellLayout {
   public void doLayout(EditorCell_Collection editorCells) {
     int width = 0;
-    int height = 0;
+    int ascent = 0;
+    int descent = 0;
     final int x = editorCells.getX();
     final int y = editorCells.getY();
     if (editorCells.isDrawBrackets()) {
@@ -20,17 +21,19 @@ public class CellLayout_Horizontal implements CellLayout {
       editorCell.setY(y);
       editorCell.relayout();
       int cellWidth = editorCell.getWidth();
-      int cellHeight = editorCell.getHeight();
       width += cellWidth;
-      height = Math.max(height, cellHeight);
+      ascent = Math.max(ascent, editorCell.getAscent());
+      descent = Math.max(descent, editorCell.getDescent());
     }
     if (editorCells.isDrawBrackets()) {
       width += EditorCell_Collection.BRACKET_WIDTH * 2;
     }
     editorCells.setWidth(width);
-    editorCells.setHeight(height);
-    int baseline = y + height;
+    editorCells.setHeight(ascent + descent);
+    editorCells.setAscent(ascent);
+    int baseline = y + ascent;
     editorCells.setBaseline(baseline);
+
     for (EditorCell editorCell : editorCells) {
       editorCell.setBaseline(baseline);
     }
