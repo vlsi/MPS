@@ -283,7 +283,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           } else {
             addProgressMessage(MessageKind.INFORMATION, "generate files to folder: \"" + getOutputFolderPath(outputFolder, sourceModel) + "\"", progress);
             generateFile(outputFolder, sourceModel, status.getOutputModel());
-
           }
         }
         if (!status.isOk()) {

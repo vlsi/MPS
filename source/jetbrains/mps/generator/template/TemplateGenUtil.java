@@ -16,6 +16,7 @@ import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.*;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.QueryMethod;
+import jetbrains.mps.baseLanguage.ClassifierType;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -64,8 +65,9 @@ public class TemplateGenUtil {
         }
       }
 
-      // external reference?
-      if (templateReferentNode.getModel() != templateNode.getModel()) {
+      // external reference (but not to node from source model)?
+      if (templateReferentNode.getModel() != templateNode.getModel() &&
+              templateReferentNode.getModel() != nodeBuilder.getGenerator().getSourceModel()) {
         targetNode.addReferent(templateReference.getRole(), templateReferentNode);
         continue;
       }

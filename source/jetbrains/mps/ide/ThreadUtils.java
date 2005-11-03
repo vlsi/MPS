@@ -15,7 +15,8 @@ public class ThreadUtils {
       r.run();
     } else {
       try {
-        SwingUtilities.invokeAndWait(r);
+//        SwingUtilities.invokeAndWait(r);
+        SwingUtilities.invokeLater(r);
       } catch (Exception e) {
         LOG.error(e);
       }

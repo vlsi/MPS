@@ -58,7 +58,7 @@ public class GenerationSession implements ModelOwner {
     addMessage(MessageKind.INFORMATION, "    default generator class: " + (defaultGeneratorClass != null ? defaultGeneratorClass.getName() : "<n/a>"));
 
     // -- create generators list
-    List<Generator> generators = getGeneratorModiles(sourceModel);
+    List<Generator> generators = getGeneratorModules(sourceModel);
     if (generators.isEmpty()) {
       addProgressMessage(MessageKind.WARNING, "skip model \"" + sourceModel.getUID() + "\" : no generator avalable");
       return new GenerationStatus.OK(null);
@@ -204,7 +204,7 @@ public class GenerationSession implements ModelOwner {
     return null;
   }
 
-  private List<Generator> getGeneratorModiles(SModel sourceModel) {
+  private List<Generator> getGeneratorModules(SModel sourceModel) {
     // -- create generators list
     List<Generator> generators = new LinkedList<Generator>();
     List<Language> sourceLanguages = sourceModel.getLanguages(myInvocationContext.getScope());

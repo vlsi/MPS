@@ -299,28 +299,28 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  public SNode getNode(String path) {
-    String[] pathElements = path.split("/");
-    String first = pathElements[0];
-    SNode current = null;
-    for (SNode root : myRoots) {
-      if (root.getId().equals(first)) {
-        current = root;
-        break;
-      }
-    }
-    if (current == null) return null;
-    for (int i = 1; i < pathElements.length; i++) {
-      for (SNode node : current.getChildren()) {
-        if (node.getId().equals(pathElements[i])) {
-          current = node;
-          break;
-        }
-      }
-      if (current == null) return null;
-    }
-    return current;
-  }
+//  public SNode getNode(String path) {
+//    String[] pathElements = path.split("/");
+//    String first = pathElements[0];
+//    SNode current = null;
+//    for (SNode root : myRoots) {
+//      if (root.getId().equals(first)) {
+//        current = root;
+//        break;
+//      }
+//    }
+//    if (current == null) return null;
+//    for (int i = 1; i < pathElements.length; i++) {
+//      for (SNode node : current.getChildren()) {
+//        if (node.getId().equals(pathElements[i])) {
+//          current = node;
+//          break;
+//        }
+//      }
+//      if (current == null) return null;
+//    }
+//    return current;
+//  }
 
   public void deleteLanguage(String languageNamespace) {
     myLanguages.remove(languageNamespace);
