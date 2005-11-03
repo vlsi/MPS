@@ -329,7 +329,7 @@ public abstract class SNode implements Cloneable {
 
   public List<SNode> getChildren() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
-    return myChildren;
+    return new ArrayList<SNode>(myChildren);
   }
 
   public int getChildCount() {
