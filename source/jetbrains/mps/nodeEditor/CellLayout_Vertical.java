@@ -89,6 +89,18 @@ public class CellLayout_Vertical implements CellLayout {
     editorCells.setHeight(height);
   }
 
+  public int getAscent(EditorCell_Collection editorCells) {
+    int ascent = 0;
+    for (EditorCell cell : editorCells) {
+      return cell.getAscent();
+    }
+    return ascent;
+  }
+
+  public int getDescent(EditorCell_Collection editorCells) {
+    return editorCells.getHeight() - getAscent(editorCells);
+  }
+
   public EditorCell findNearestRow(EditorCell_Collection editorCells, int y) {
     if (y >= editorCells.getY() + editorCells.getHeight() || y < editorCells.getY()) {
       return null;

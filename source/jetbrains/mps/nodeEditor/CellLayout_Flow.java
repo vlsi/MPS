@@ -152,4 +152,21 @@ hStart |--------|                  |  | hEnd
     }
     return null;
   }
+
+  public int getAscent(EditorCell_Collection editorCells) {
+    int ascent = 0;
+    for (EditorCell cell : editorCells) {
+      ascent = Math.max(ascent, cell.getAscent());
+    }
+    return ascent;
+  }
+
+  public int getDescent(EditorCell_Collection editorCells) {
+    int descent = 0;
+    for (EditorCell cell : editorCells) {
+      descent = Math.max(descent, cell.getDescent());
+    }
+    return descent;
+  }
+
 }

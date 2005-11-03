@@ -18,7 +18,7 @@ public class CellLayout_Horizontal implements CellLayout {
     }
     for (EditorCell editorCell : editorCells) {
       editorCell.setX(x + width);
-      editorCell.setY(y);
+    //  editorCell.setY(y);
       editorCell.relayout();
       int cellWidth = editorCell.getWidth();
       width += cellWidth;
@@ -28,15 +28,30 @@ public class CellLayout_Horizontal implements CellLayout {
     if (editorCells.isDrawBrackets()) {
       width += EditorCell_Collection.BRACKET_WIDTH * 2;
     }
+    int baseline = y + ascent;
     editorCells.setWidth(width);
     editorCells.setHeight(ascent + descent);
-    editorCells.setAscent(ascent);
-    int baseline = y + ascent;
     editorCells.setBaseline(baseline);
 
     for (EditorCell editorCell : editorCells) {
       editorCell.setBaseline(baseline);
     }
+  }
+
+  public int getAscent(EditorCell_Collection editorCells) {
+    int ascent = 0;
+    for (EditorCell cell : editorCells) {
+      ascent = Math.max(ascent, cell.getAscent());
+    }
+    return ascent;
+  }
+
+  public int getDescent(EditorCell_Collection editorCells) {
+    int descent = 0;
+    for (EditorCell cell : editorCells) {
+      descent = Math.max(descent, cell.getDescent());
+    }
+    return descent;
   }
 
   public EditorCell findNearestRow(EditorCell_Collection editorCells, int y) {
