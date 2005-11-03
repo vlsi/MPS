@@ -15,8 +15,7 @@ public class CellLayout_Horizontal implements CellLayout {
     if (editorCells.isDrawBrackets()) {
       width += EditorCell_Collection.BRACKET_WIDTH * 2;
     }
-    for (Iterator iterator = editorCells.iterator(); iterator.hasNext();) {
-      EditorCell editorCell = (EditorCell) iterator.next();
+    for (EditorCell editorCell : editorCells) {
       editorCell.setX(x + width);
       editorCell.setY(y);
       editorCell.relayout();
@@ -30,6 +29,11 @@ public class CellLayout_Horizontal implements CellLayout {
     }
     editorCells.setWidth(width);
     editorCells.setHeight(height);
+    int baseline = y + height;
+    editorCells.setBaseline(baseline);
+    for (EditorCell editorCell : editorCells) {
+      editorCell.setBaseline(baseline);
+    }
   }
 
   public EditorCell findNearestRow(EditorCell_Collection editorCells, int y) {
