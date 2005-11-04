@@ -6,7 +6,7 @@ import java.util.Iterator;
  * User: Sergey Dmitriev
  * Date: Jan 19, 2005
  */
-public class CellLayout_Vertical implements CellLayout {
+public class CellLayout_Vertical extends AbstractCellLayout {
   private boolean isGridLayout = false;
 
   public void setGridLayout(boolean gridLayout) {
@@ -95,10 +95,6 @@ public class CellLayout_Vertical implements CellLayout {
       return cell.getAscent();
     }
     return ascent;
-  }
-
-  public int getDescent(EditorCell_Collection editorCells) {
-    return editorCells.getHeight() - getAscent(editorCells);
   }
 
   public EditorCell findNearestRow(EditorCell_Collection editorCells, int y) {
