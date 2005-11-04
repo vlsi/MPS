@@ -1,5 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
+import java.awt.*;
+
 /**
  * User: Sergey Dmitriev
  * Date: Jan 19, 2005
@@ -12,4 +14,5 @@ public interface CellLayout {
   public EditorCell findNearestRow(EditorCell_Collection editorCells, int y);
   public EditorCell findCell(EditorCell_Collection editorCells, int x, int y);
 
+  void paintSelection(Graphics g, EditorCell_Collection editorCells, Color c);
 }

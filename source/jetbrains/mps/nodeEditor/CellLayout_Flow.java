@@ -1,6 +1,9 @@
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.logging.Logger;
+
 import java.util.ArrayList;
+import java.awt.*;
 
 /**
  * User: Sergey Dmitriev
@@ -8,6 +11,8 @@ import java.util.ArrayList;
  */
 public class CellLayout_Flow extends AbstractCellLayout {
   public static final String NOFLOW = "noflow";
+
+  private static Logger LOG = Logger.getLogger(CellLayout_Flow.class);
 
   /*
          wStart
