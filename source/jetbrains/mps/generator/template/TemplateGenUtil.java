@@ -9,6 +9,7 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.core.BaseConcept;
 import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.generator.TransientModelDescriptor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
@@ -16,7 +17,6 @@ import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.*;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.QueryMethod;
-import jetbrains.mps.baseLanguage.ClassifierType;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -36,12 +36,13 @@ public class TemplateGenUtil {
   }
 
   public static void buildTargetNodeReferences(SNode templateNode, SNode targetNode, INodeBuilder nodeBuilder) {
+    ITemplateGenerator generator = nodeBuilder.getGenerator();
     Iterator<SReference> iterator = templateNode.getReferences().iterator();
     while (iterator.hasNext()) {
       SReference templateReference = iterator.next();
       SNode templateReferentNode = templateReference.getTargetNode();
       if (templateReferentNode == null) {
-        nodeBuilder.getGenerator().showErrorMessage(templateNode, "Invalid reference \"" + templateReference.getRole() + "\" in templates model " + templateNode.getModel().getUID());
+        generator.showErrorMessage(templateNode, "Invalid reference \"" + templateReference.getRole() + "\" in templates model " + templateNode.getModel().getUID());
         continue;
       }
       if (templateReferentNode instanceof NodeMacro ||
@@ -60,33 +61,40 @@ public class TemplateGenUtil {
       {
         SNode targetReferentNode = nodeBuilder.resolveReference(templateReference);
         if (targetReferentNode != null) {
-          targetNode.addReferent(templateReference.getRole(), targetReferentNode);
+          if (checkResolvedReference(nodeBuilder.getSourceNode(), targetNode, templateNode, templateReference.getRole(), targetReferentNode, generator)) {
+            targetNode.addReferent(templateReference.getRole(), targetReferentNode);
+          }
           continue;
         }
       }
 
       // external reference (but not to node from source model)?
       if (templateReferentNode.getModel() != templateNode.getModel() &&
-              templateReferentNode.getModel() != nodeBuilder.getGenerator().getSourceModel()) {
+              templateReferentNode.getModel() != generator.getSourceModel()) {
         targetNode.addReferent(templateReference.getRole(), templateReferentNode);
         continue;
       }
 
       // try to resolve the reference
-      IScope scope = nodeBuilder.getGenerator().getScope();
+      IScope scope = generator.getScope();
       IReferenceResolver referenceResolver = createReferenceResolver(templateNode, scope);
       SNode targetReferentNode = referenceResolver.resolveTarget(templateReference, nodeBuilder);
       if (targetReferentNode != null) {
-        if (SModelUtil.isAcceptableReferent(targetNode, templateReference.getRole(), targetReferentNode, scope)) {
+//        if (SModelUtil.isAcceptableReferent(targetNode, templateReference.getRole(), targetReferentNode, scope)) {
+//          targetNode.addReferent(templateReference.getRole(), targetReferentNode);
+//        } else {
+//          // if reference is not acceptable, then temporarily keep original reference
+//          targetNode.addReferent(templateReference.getRole(), templateReferentNode);
+//        }
+//        continue;
+
+        if (checkResolvedReference(nodeBuilder.getSourceNode(), targetNode, templateNode, templateReference.getRole(), targetReferentNode, generator)) {
           targetNode.addReferent(templateReference.getRole(), targetReferentNode);
-        } else {
-          // if reference is not acceptable, then temporarily keep original reference
-          targetNode.addReferent(templateReference.getRole(), templateReferentNode);
         }
         continue;
       }
 
-      nodeBuilder.getGenerator().showErrorMessage(
+      generator.showErrorMessage(
               nodeBuilder.getSourceNode(),
               templateNode,
               nodeBuilder.getRuleNode(),
@@ -108,11 +116,25 @@ public class TemplateGenUtil {
         currBuilder = currBuilder.getParent();
       }
 
-      LOG.warning("WARN! Couldn't resolve template reference! " + nodeBuilder.getGenerator().getState().toString() +
+      LOG.warning("WARN! Couldn't resolve template reference! " + generator.getState().toString() +
               "\n    template       : " + templateReference.getSourceNode().getDebugText() + " --[" + templateReference.getRole() + "]--> " + templateReference.getTargetNode().getDebugText() +
               "\n    template target: " + targetNode.getDebugText() +
               "\n" + buildersStack);
     } // while (iterator.hasNext())
+  }
+
+  static boolean checkResolvedReference(SNode sourceNode, SNode targetNode, SNode templateNode, String role, SNode targetReferentNode, ITemplateGenerator generator) {
+    if (!SModelUtil.isAcceptableReferent(targetNode, role, targetReferentNode, generator.getScope())) {
+      generator.showErrorMessage(sourceNode, templateNode, "unacceptable referent: " + targetReferentNode.getDebugText() + " for role \"" + role + "\" in " + targetNode.getDebugText());
+      return false;
+    }
+    if (targetReferentNode.getModel() != targetNode.getModel() &&
+            targetReferentNode.getModel().getModelDescriptor() instanceof TransientModelDescriptor) {
+      // references on transient nodes are not acceptable
+      generator.showErrorMessage(sourceNode, templateNode, "unacceptable referent (transient): " + targetReferentNode.getDebugText() + " for role \"" + role + "\" in " + targetNode.getDebugText());
+      return false;
+    }
+    return true;
   }
 
   private static IReferenceResolver createReferenceResolver(SNode templateNode, IScope scope) {
@@ -358,18 +380,37 @@ public class TemplateGenUtil {
   private static List<SNode> createSourceNodeListForTemplateNode(SNode parentSourceNode, SNode templateNode, ITemplateGenerator generator) {
     NodeMacro nodeMacro = (NodeMacro) templateNode.getChild(ITemplateGenerator.ROLE_NODE_MAKRO);
 
+    List<SNode> result = new LinkedList<SNode>();
     if (nodeMacro instanceof CopySrcNodeMacro) {
       CopySrcNodeMacro copySrcNodeMacro = ((CopySrcNodeMacro) nodeMacro);
       String sourceNodeQueryId = copySrcNodeMacro.getSourceNodeQueryId();
-      String methodName = "templateSourceNodeQuery_" + sourceNodeQueryId;
-      Object[] args = new Object[]{parentSourceNode, generator};
-      SNode srcNodeToCopy = (SNode) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
-      List<SNode> list = new LinkedList<SNode>();
-      if (srcNodeToCopy != null) {
-        list.add(srcNodeToCopy);
+      if (sourceNodeQueryId == null) {
+        generator.showErrorMessage(nodeMacro, "Source query is not defined");
+      } else {
+        String methodName = "templateSourceNodeQuery_" + sourceNodeQueryId;
+        Object[] args = new Object[]{parentSourceNode, generator};
+        SNode srcNodeToCopy = (SNode) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
+        if (srcNodeToCopy != null) {
+          result.add(srcNodeToCopy);
+        }
+        checkNodesFromQuery(result, copySrcNodeMacro, generator);
+        return result;
       }
-      checkNodesFromQuery(list, copySrcNodeMacro, generator);
-      return list;
+
+    } else if (nodeMacro instanceof MapSrcNodeMacro) {
+      MapSrcNodeMacro mapSrcNodeMacro = ((MapSrcNodeMacro) nodeMacro);
+      String sourceNodeQueryId = mapSrcNodeMacro.getSourceNodeQueryId();
+      if (sourceNodeQueryId != null) { // it's optional
+        String methodName = "templateSourceNodeQuery_" + sourceNodeQueryId;
+        Object[] args = new Object[]{parentSourceNode, generator};
+        SNode srcNodeToCopy = (SNode) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
+        if (srcNodeToCopy != null) {
+          result.add(srcNodeToCopy);
+        }
+        checkNodesFromQuery(result, mapSrcNodeMacro, generator);
+        return result;
+      }
+
     } else if (nodeMacro instanceof IfMacro) {
       IfMacro ifMacro = (IfMacro) nodeMacro;
       String conditionAspectId = ifMacro.getConditionAspectId();
@@ -442,6 +483,15 @@ public class TemplateGenUtil {
         needCreateChildBuilders = false;
       } else if (nodeMacro instanceof CopySrcListMacro) {
         builder = TemplateGenUtil.createCopyingNodeBuilder(sourceNode, templateNode.getRole_(), generator);
+        needCreateChildBuilders = false;
+      } else if (nodeMacro instanceof MapSrcNodeMacro) {
+        MapSrcNodeMacro mapSrcNodeMacro = (MapSrcNodeMacro) nodeMacro;
+        String sourceNodeMapperId = mapSrcNodeMacro.getSourceNodeMapperId();
+        if (sourceNodeMapperId == null) {
+          generator.showErrorMessage(nodeMacro, "Source mapper is not defined");
+        } else {
+          builder = new QueryMethodMapperNodeBuilder(sourceNode, templateNode, mapSrcNodeMacro, generator);
+        }
         needCreateChildBuilders = false;
       } else {
         // use user-defined node builder ?
