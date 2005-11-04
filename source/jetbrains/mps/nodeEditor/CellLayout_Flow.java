@@ -133,9 +133,9 @@ public class CellLayout_Flow extends AbstractCellLayout {
         //if no flow
         if (NOFLOW.equals(cell.getLayoutConstraint())) {
           if (!getCurrentLine().isEmpty()) {
-            renderLine();
+            alignLine();
+            nextLine();
           }
-          nextLine();
           cell.relayout();
           cell.moveTo(editorCells.getX(), y);
           y += cell.getHeight();
@@ -178,19 +178,21 @@ public class CellLayout_Flow extends AbstractCellLayout {
           } else
             //if end-of-line
             if (cell.getWidth() + x >= getMaxX()) {
-              renderLine();
+              alignLine();
               nextLine();
               addCell(cell);
             } else {//default
               addCell(cell);
             }
       }
-      if (!CellLayout_Flow.this.getCurrentLine().isEmpty()) renderLine();
-      editorCells.setHeight((y + maxAscent + maxDescent) - editorCells.getY());
+      boolean currentLineIsEmpty = CellLayout_Flow.this.getCurrentLine().isEmpty();
+      if (!currentLineIsEmpty) alignLine();
+      myLastLineHeight = maxAscent + maxDescent;
+      editorCells.setHeight((y + myLastLineHeight) - editorCells.getY());
       editorCells.setWidth(maxRightX - editorCells.getX());
       myWEnd = x - editorCells.getX();
-      myLastLineHeight = maxAscent + maxDescent;
     }
+
 
     private void nextLine() {
       y += maxAscent + maxDescent;
@@ -202,8 +204,10 @@ public class CellLayout_Flow extends AbstractCellLayout {
       getCurrentLineLayouts().clear();
     }
 
-    private void renderLine() {
-      int rowEndX = renderRow(CellLayout_Flow.this.getCurrentLine(), rowStartX, y, maxAscent);
+    private void alignLine() {
+      for (EditorCell cell : CellLayout_Flow.this.getCurrentLine()) {
+        cell.setBaseline(y + maxAscent);
+      }
       for (CellLayout_Flow layout_flow : getCurrentLineLayouts()) {
         layout_flow.setMaxAscent(maxAscent);
         layout_flow.setMaxDescent(maxDescent);
@@ -211,17 +215,8 @@ public class CellLayout_Flow extends AbstractCellLayout {
         if (layout_flow.myFirstLineHeight == -1) layout_flow.setFirstLineHeight(maxAscent + maxDescent);
       }
       if (myFirstLineHeight == -1) myFirstLineHeight = maxAscent + maxDescent;
-      maxRightX = Math.max(rowEndX, maxRightX);
+      maxRightX = Math.max(x, maxRightX);
       myRowCount++;
-    }
-
-    private int renderRow(java.util.List<EditorCell> row, int startX, int y, int ascent) {
-      int x = startX;
-      for (EditorCell cell : row) {
-        cell.setBaseline(y + ascent);
-        x += cell.getWidth();
-      }
-      return x;
     }
 
     private void addCell(EditorCell cell) {
@@ -234,6 +229,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
     }
 
   } //--FlowLayouter
+
 
 
   public EditorCell findNearestCell(EditorCell_Collection editorCells, int x, int y, boolean isPrevious) {
@@ -266,12 +262,10 @@ public class CellLayout_Flow extends AbstractCellLayout {
   }
 
   public void paintSelection(Graphics g, EditorCell_Collection editorCells, Color c) {
-
     LOG.assertLog(getFlowLayout(editorCells) == this);
-    g.setColor(new Color(c.getRed(), c.getGreen(), c.getBlue(), c.getAlpha()/2));
-    g.fillRect(editorCells.getX() + myWStart, editorCells.getY(), myWEnd - myWStart, editorCells.getHeight());
-    g.fillRect(editorCells.getX(), editorCells.getY() + myFirstLineHeight, myWStart, editorCells.getHeight() - myFirstLineHeight);
-    g.fillRect(editorCells.getX() + myWEnd, editorCells.getY(), editorCells.getWidth() - myWEnd, editorCells.getHeight() - myLastLineHeight);
+    for (EditorCell cell : editorCells) {
+      cell.paintSelection(g, c);
+    }
   }
 
 }
