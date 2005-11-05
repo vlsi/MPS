@@ -16,7 +16,7 @@ import java.util.*;
  * User: Sergey Dmitriev
  * Date: Aug 2, 2003
  */
-public abstract class SNode implements Cloneable {
+public abstract class SNode implements Cloneable, Iterable<SNode> {
   private static final Logger LOG = Logger.getLogger(SNode.class);
 
   public static final Object TYPE_OBJECT = new Object();
@@ -325,6 +325,10 @@ public abstract class SNode implements Cloneable {
       }
     }
     return list.iterator();
+  }
+
+  public Iterator<SNode> iterator() {
+    return getChildren().iterator();
   }
 
   public List<SNode> getChildren() {
