@@ -61,7 +61,7 @@ public class ModelActions {
               NodeSubstituteActionsBuilder substituteActionsBuilder = iterator.next();
               // is applicable ?
               if (substituteActionsBuilder.getApplicableLinkMetaclass() == LinkMetaclass.aggregation &&
-                      substituteActionsBuilder.getApplicableConcept() == targetConcept) {
+                      SModelUtil.isAssignableType(targetConcept, substituteActionsBuilder.getApplicableConcept())) {
                 substituteActionsBuilders.add(substituteActionsBuilder);
               }
             }
