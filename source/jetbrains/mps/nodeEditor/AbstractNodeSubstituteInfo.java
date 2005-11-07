@@ -54,9 +54,9 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
 
   public List<INodeSubstituteItem> getMatchingItems(String pattern, boolean strictMatching) {
     List<INodeSubstituteItem> list = new ArrayList<INodeSubstituteItem>(items());
-    if (pattern.length() == 0) {
+ /*   if (pattern.length() == 0) {
       return list;
-    }
+    }*/
 
     Iterator<INodeSubstituteItem> items = list.iterator();
     while (items.hasNext()) {
