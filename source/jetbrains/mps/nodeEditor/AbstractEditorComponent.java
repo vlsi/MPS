@@ -776,7 +776,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return condition.getFoundCell();
   }
 
-  public void rebuildEditorContent() {
+  public void rebuildEditorContent() {        
     rebuildEditorContent(null);
   }
 
