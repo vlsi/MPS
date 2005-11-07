@@ -89,15 +89,6 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
           // stop here
           return true;
         }
-        if (selectedCell instanceof EditorCell_Property) {
-          String text = ((EditorCell_Property) selectedCell).getModelAccessor().getText();
-          if (text == null || text.length() == 0) {  // tmp: consider it as not quite valid state
-            // stop here
-            LOG.debug("formerly key event was consumed here");
-            System.out.println("formerly key event was consumed here");
-           // return true;
-          }
-        }
         if (EditorUtil.getCellAction(selectedCell, EditorCellAction.RIGHT_TRANSFORM, editorContext) == null) {
           if (selectedCell instanceof EditorCell_Constant) {
             actionType = EditorCellAction.RIGHT_SPECIAL;
