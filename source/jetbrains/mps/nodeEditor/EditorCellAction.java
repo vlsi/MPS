@@ -35,6 +35,7 @@ public abstract class EditorCellAction {
   public static final String RIGHT_TRANSFORM = "RIGHT_TRANSFORM";
 
   //--
+  public static final String RENDER_TEXT = "RENDER_TEXT";
 
   public abstract boolean canExecute(EditorContext context);
 

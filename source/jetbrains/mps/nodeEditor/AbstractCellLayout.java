@@ -1,5 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.nodeEditor.text.TextBuilder;
+
 import java.awt.*;
 
 /**
@@ -27,5 +29,9 @@ public abstract class AbstractCellLayout implements CellLayout {
   public void paintSelection(Graphics g, EditorCell_Collection editorCells, Color c) {
      g.setColor(c);
      g.fillRect(editorCells.getX() - 1, editorCells.getY() - 1, editorCells.getWidth() + 2, editorCells.getHeight() + 2);
+  }
+
+  public TextBuilder doLayoutText(EditorCell_Collection editorCells) {
+    return TextBuilder.getEmptyTextBuilder();
   }
 }

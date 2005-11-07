@@ -1,5 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.nodeEditor.text.TextBuilder;
+
 import java.util.Iterator;
 
 /**
@@ -35,6 +37,14 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
     for (EditorCell editorCell : editorCells) {
       editorCell.setBaseline(baseline);
     }
+  }
+
+  public TextBuilder doLayoutText(EditorCell_Collection editorCells) {
+    TextBuilder result = TextBuilder.getEmptyTextBuilder();
+    for (EditorCell editorCell : editorCells) {
+      result = result.appendToTheRight(editorCell.renderText());
+    }
+    return result;
   }
 
   public EditorCell findNearestRow(EditorCell_Collection editorCells, int y) {

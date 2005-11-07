@@ -14,6 +14,7 @@ import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.reform.CellRangeSelection;
+import jetbrains.mps.nodeEditor.text.CellAction_RenderText;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
@@ -168,7 +169,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myActionMap.put(EditorCellAction.PASTE_BEFORE, new CellAction_PasteNodeRelative(true));
     myActionMap.put(EditorCellAction.PASTE_AFTER, new CellAction_PasteNodeRelative(false));
     // ----
-
+    myActionMap.put(EditorCellAction.RENDER_TEXT, new CellAction_RenderText());
 
     registerNodeAction(new ShowNodeTypeAction());
     registerNodeAction(new FindUsagesNodeAction());
@@ -533,6 +534,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_TAB && keyEvent.isShiftDown()) {
       return EditorCellAction.PREV;
+    }
+
+    // ---
+
+    if (keyEvent.getKeyCode() == KeyEvent.VK_T && keyEvent.isControlDown()) {
+      return EditorCellAction.RENDER_TEXT;
     }
 
     // ---

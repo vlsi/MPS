@@ -1,5 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.nodeEditor.text.TextBuilder;
+
 import java.util.Iterator;
 
 /**
@@ -88,6 +90,15 @@ public class CellLayout_Vertical extends AbstractCellLayout {
     editorCells.setWidth(width);
     editorCells.setHeight(height);
   }
+
+  public TextBuilder doLayoutText(EditorCell_Collection editorCells) {
+    TextBuilder result = TextBuilder.getEmptyTextBuilder();
+    for (EditorCell editorCell : editorCells) {
+      result = result.appendToTheBottom(editorCell.renderText());
+    }
+    return result;
+  }
+
 
   public int getAscent(EditorCell_Collection editorCells) {
     int ascent = 0;
