@@ -60,7 +60,6 @@ public class IdeMain {
 
     LoggerUtil.configureLogger();
 
-
     ApplicationComponents.getInstance();
     MPSIdeActions.install();
     ProjectFrame projectWindow = new ProjectFrame();

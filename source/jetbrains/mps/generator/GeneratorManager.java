@@ -4,8 +4,8 @@ import jetbrains.mps.baseLanguage.Classifier;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.ProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessageView;
@@ -86,42 +86,21 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     return new GeneratorManagerPreferencesPage(this);
   }
 
-
   private void addMessage(final MessageKind kind, final String text) {
-    ThreadUtils.runInEventDispatchThread(new Runnable() {
-      public void run() {
-        myProject.getComponent(MessageView.class).add(new Message(kind, text));
-      }
-    });
+    myProject.getComponent(MessageView.class).add(new Message(kind, text));
   }
 
   private void addProgressMessage(final MessageKind kind, final String text, final IProgressMonitor progress) {
-    ThreadUtils.runInEventDispatchThread(new Runnable() {
-      public void run() {
-        try {
-          progress.addText(text);
-          myProject.getComponent(MessageView.class).add(new Message(kind, text));
-        } catch (Exception e) {
-          e.printStackTrace();
-        }
-      }
-    });
+    progress.addText(text);
+    myProject.getComponent(MessageView.class).add(new Message(kind, text));
   }
 
   private void clearMessages() {
-    ThreadUtils.runInEventDispatchThread(new Runnable() {
-      public void run() {
-        myProject.getComponent(MessageView.class).clear();
-      }
-    });
+    myProject.getComponent(MessageView.class).clear();
   }
 
   private void showMessageView() {
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        myProject.getComponent(MessageView.class).show();
-      }
-    });
+    myProject.getComponent(MessageView.class).show();
   }
 
   private String getOutputFolderPath(String outputRootPath, SModel sourceModel) {
@@ -208,11 +187,15 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     return targetLanguages;
   }
 
+  protected Object clone() throws CloneNotSupportedException {
+    return super.clone();
+  }
+
   public void generateModelsWithProgressWindow(final List<SModel> sourceModels, final Language targetLanguage, final IOperationContext invocationContext, final boolean generateText) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         final IProgressMonitor progress = new ProgressWindowProgressMonitor(invocationContext.getComponent(ProjectFrame.class), false);
-        Thread generationThread = new Thread("Generation thread") {
+        Thread generationThread = new Thread("Generation") {
           public void run() {
             CommandProcessor.instance().executeCommand(new Runnable() {
               public void run() {
@@ -226,7 +209,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         generationThread.start();
       }
     });
-
   }
 
   public void generateModels(List<SModel> sourceModels, Language targetLanguage, IOperationContext invocationContext, boolean generateText, IProgressMonitor progress) {
@@ -252,7 +234,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     progress.start("generating", totalJob);
 
     try {
-
       if (!myCompileOnGeneration) {
         progress.addText("compilation in IntelliJ IDEA on generation is turned off");
       } else if (!compile) {
@@ -315,7 +296,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         addProgressMessage(MessageKind.WARNING, "generation canceled", progress);
       }
       showMessageView();
-
     } catch (Throwable t) {
       LOG.error(t);
       addProgressMessage(MessageKind.ERROR, t.toString(), progress);

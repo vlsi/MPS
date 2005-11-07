@@ -229,28 +229,16 @@ public class GenerationSession implements ModelOwner {
   }
 
   private void addMessage(final Message message) {
-    ThreadUtils.runInEventDispatchThread(new Runnable() {
-      public void run() {
-        myInvocationContext.getProject().getComponent(MessageView.class).add(message);
-      }
-    });
+    myInvocationContext.getProject().getComponent(MessageView.class).add(message);
   }
 
   private void addMessage(final MessageKind kind, final String text) {
-    ThreadUtils.runInEventDispatchThread(new Runnable() {
-      public void run() {
-        myInvocationContext.getProject().getComponent(MessageView.class).add(new Message(kind, text));
-      }
-    });
+    myInvocationContext.getProject().getComponent(MessageView.class).add(new Message(kind, text));
   }
 
   private void addProgressMessage(final MessageKind kind, final String text) {
-    ThreadUtils.runInEventDispatchThread(new Runnable() {
-      public void run() {
-        myProgressMonitor.addText(text);
-        myInvocationContext.getProject().getComponent(MessageView.class).add(new Message(kind, text));
-      }
-    });
+    myProgressMonitor.addText(text);
+    myInvocationContext.getProject().getComponent(MessageView.class).add(new Message(kind, text));
   }
 
 

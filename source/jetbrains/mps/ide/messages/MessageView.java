@@ -1,22 +1,21 @@
 package jetbrains.mps.ide.messages;
 
-import jetbrains.mps.ide.ProjectFrame;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.toolsPane.ToolsPane;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
+import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.ActionEvent;
 
 /**
  * @author Kostik
@@ -126,12 +125,20 @@ public class MessageView extends DefaultTool {
 
 
   public void clear() {
-    myModel.clear();
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      public void run() {
+        myModel.clear();
+      }
+    });
   }
 
-  public void add(Message message) {
-    myModel.addElement(message);
-    show();
+  public void add(final Message message) {
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      public void run() {
+        myModel.addElement(message);
+        show();
+      }
+    });
   }
 
   public JComponent getComponent() {
@@ -139,10 +146,14 @@ public class MessageView extends DefaultTool {
   }
 
   public void show() {
-    if (myModel.size() > 0) {
-      myList.setSelectedValue(myModel.getElementAt(myModel.size() - 1), true);
-    }
-    myToolsPane.selectTool(this);
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      public void run() {
+        if (myModel.size() > 0) {
+          myList.setSelectedValue(myModel.getElementAt(myModel.size() - 1), true);
+        }
+        myToolsPane.selectTool(MessageView.this);
+      }
+    });
   }
 
   public String getName() {
