@@ -706,21 +706,12 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return (myReferences.size() == 0 && myBackReferences.size() == 0 && myParent == null && !getModel().isRoot(this));
   }
 
-  public Iterator<SNode> depthFirstChildren() {
+  public Iterator<? extends SNode> depthFirstChildren() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
     List<SNode> allChildren = new ArrayList<SNode>();
     putAggregationTree2List(this, allChildren);
     return allChildren.iterator();
   }
-
-  public Iterator<SNode> depthLastChildren() {
-    NodeReadAccessCaster.fireNodeReadAccessed(this);
-    List<SNode> allChildren = new ArrayList<SNode>();
-    putAggregationTree2List(this, allChildren);
-    Collections.reverse(allChildren);
-    return allChildren.iterator();
-  }
-
 
   private void putAggregationTree2List(SNode semanticNode, List<SNode> allChildren) {
     List<SNode> list = semanticNode.getChildren();

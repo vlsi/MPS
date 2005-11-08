@@ -434,7 +434,7 @@ public class ProjectPane extends JComponent implements IActionDataProvider {
     for (SNode node : selectedNodes) {
       if (node == null) continue;
       if (unselectedNodes.contains(node)) continue;
-      Iterator<SNode> dfChildren = node.depthFirstChildren();
+      Iterator<? extends SNode> dfChildren = node.depthFirstChildren();
       while (dfChildren.hasNext()) {
         SNode child = dfChildren.next();
         unselectedNodes.add(child);

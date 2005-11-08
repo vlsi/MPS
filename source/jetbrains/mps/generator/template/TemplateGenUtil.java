@@ -276,7 +276,7 @@ public class TemplateGenUtil {
 
   public static List<TemplateFragment> getTemplateFragments(TemplateDeclaration template) {
     List<TemplateFragment> templateFragments = new LinkedList<TemplateFragment>();
-    Iterator<SNode> iterator = template.depthFirstChildren();
+    Iterator<? extends SNode> iterator = template.depthFirstChildren();
     while (iterator.hasNext()) {
       SNode templateFragment = iterator.next();
       if (templateFragment instanceof TemplateFragment) {
