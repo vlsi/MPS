@@ -1,23 +1,22 @@
 package jetbrains.mps.generator;
 
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessageView;
 import jetbrains.mps.ide.progress.IProgressMonitor;
-import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.logging.Logger;
 
+import java.io.File;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Iterator;
-import java.lang.reflect.InvocationTargetException;
-import java.io.File;
 
 /**
  * Created by IntelliJ IDEA.

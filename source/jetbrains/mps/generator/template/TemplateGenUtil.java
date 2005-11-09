@@ -61,7 +61,8 @@ public class TemplateGenUtil {
       {
         SNode targetReferentNode = nodeBuilder.resolveReference(templateReference);
         if (targetReferentNode != null) {
-          if (checkResolvedReference(nodeBuilder.getSourceNode(), targetNode, templateNode, templateReference.getRole(), targetReferentNode, generator)) {
+          if (checkResolvedReference(nodeBuilder.getSourceNode(), targetNode, templateNode, templateReference.getRole(), targetReferentNode, generator))
+          {
             targetNode.addReferent(templateReference.getRole(), targetReferentNode);
           }
           continue;
@@ -88,7 +89,8 @@ public class TemplateGenUtil {
 //        }
 //        continue;
 
-        if (checkResolvedReference(nodeBuilder.getSourceNode(), targetNode, templateNode, templateReference.getRole(), targetReferentNode, generator)) {
+        if (checkResolvedReference(nodeBuilder.getSourceNode(), targetNode, templateNode, templateReference.getRole(), targetReferentNode, generator))
+        {
           targetNode.addReferent(templateReference.getRole(), targetReferentNode);
         }
         continue;
@@ -470,19 +472,26 @@ public class TemplateGenUtil {
     if (nodeMacro != null) {
       if (nodeMacro instanceof SwitchMacro) {
         TemplateSwitch templateSwitch = ((SwitchMacro) nodeMacro).getTemplateSwitch();
-        SNode templateNodeFromSwitch = getTemplateNodeFromSwitch(sourceNode, templateSwitch, generator);
-        if (templateNodeFromSwitch != null) {
-          builder = createNodeBuilder(sourceNode, templateNodeFromSwitch, mappingName, generator);
-          if (builder != null) {
-            builder.setRoleInParent(templateNode.getRole_());
-            needCreateChildBuilders = false;
-          }
+//        SNode templateNodeFromSwitch = getTemplateNodeFromSwitch(sourceNode, templateSwitch, generator);
+//        if (templateNodeFromSwitch != null) {
+//          builder = createNodeBuilder(sourceNode, templateNodeFromSwitch, mappingName, generator);
+//          if (builder != null) {
+//            builder.setRoleInParent(templateNode.getRole_());
+//            needCreateChildBuilders = false;
+//          }
+//        }
+        builder = createNodeBuilderForSwitch(sourceNode, templateSwitch, mappingName, generator);
+        if (builder != null) {
+          builder.setRoleInParent(templateNode.getRole_());
+          needCreateChildBuilders = false;
         }
+
       } else if (nodeMacro instanceof CopySrcNodeMacro) {
-        builder = TemplateGenUtil.createCopyingNodeBuilder(sourceNode, templateNode.getRole_(), generator);
+        TemplateSwitch templateSwitch = ((CopySrcNodeMacro) nodeMacro).getTemplateSwitch();
+        builder = TemplateGenUtil.createCopyingNodeBuilder(sourceNode, templateNode.getRole_(), templateSwitch, generator);
         needCreateChildBuilders = false;
       } else if (nodeMacro instanceof CopySrcListMacro) {
-        builder = TemplateGenUtil.createCopyingNodeBuilder(sourceNode, templateNode.getRole_(), generator);
+        builder = TemplateGenUtil.createCopyingNodeBuilder(sourceNode, templateNode.getRole_(), null, generator);
         needCreateChildBuilders = false;
       } else if (nodeMacro instanceof MapSrcNodeMacro) {
         MapSrcNodeMacro mapSrcNodeMacro = (MapSrcNodeMacro) nodeMacro;
@@ -521,20 +530,35 @@ public class TemplateGenUtil {
     return new DefaultNodeBuilder(sourceNode, templateNode, mappingName, generator);
   }
 
-  public static INodeBuilder createCopyingNodeBuilder(SNode sourceNode, String roleInParent, ITemplateGenerator generator) {
-    INodeBuilder nodeBuilder = createCopyingNodeBuilder(sourceNode, generator);
+  public static INodeBuilder createCopyingNodeBuilder(SNode sourceNode, String roleInParent, TemplateSwitch templateSwitch, ITemplateGenerator generator) {
+    INodeBuilder nodeBuilder = createCopyingNodeBuilder(sourceNode, templateSwitch, generator);
     nodeBuilder.setRoleInParent(roleInParent);
     return nodeBuilder;
   }
 
-  public static INodeBuilder createCopyingNodeBuilder(SNode sourceNode, ITemplateGenerator generator) {
+  public static INodeBuilder createCopyingNodeBuilder(SNode sourceNode, TemplateSwitch templateSwitch, ITemplateGenerator generator) {
+    if (templateSwitch != null) {
+      INodeBuilder nodeBuilder = createNodeBuilderForSwitch(sourceNode, templateSwitch, null, generator);
+      if (nodeBuilder != null) {
+        nodeBuilder.setRoleInParent(sourceNode.getRole_());
+        return nodeBuilder;
+      }
+    }
     INodeBuilder nodeBuilder = createDefaultNodeBuilder(sourceNode, sourceNode, null, generator);
     List<SNode> children = sourceNode.getChildren();
     for (SNode child : children) {
-      INodeBuilder childBuilder = createCopyingNodeBuilder(child, generator);
+      INodeBuilder childBuilder = createCopyingNodeBuilder(child, templateSwitch, generator);
       nodeBuilder.addChildBuilder(childBuilder);
     }
     return nodeBuilder;
+  }
+
+  private static INodeBuilder createNodeBuilderForSwitch(SNode sourceNode, TemplateSwitch templateSwitch, String mappingName, ITemplateGenerator generator) {
+    SNode templateNodeFromSwitch = getTemplateNodeFromSwitch(sourceNode, templateSwitch, generator);
+    if (templateNodeFromSwitch == null) {
+      return null;
+    }
+    return createNodeBuilder(sourceNode, templateNodeFromSwitch, mappingName, generator);
   }
 
   private static SNode getTemplateNodeFromSwitch(SNode sourceNode, TemplateSwitch templateSwitch, ITemplateGenerator generator) {

@@ -279,6 +279,12 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1114706874351">
     <property name="name" value="CopySrcNodeMacro" />
     <link role="extends" targetNodeId="1087833466690" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1131506685130">
+      <property name="sourceCardinality" value="0..1" />
+      <property name="targetCardinality" value="0..n" />
+      <property name="role" value="templateSwitch" />
+      <link role="target" targetNodeId="5.1112730859144" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1114707257324">
       <property name="value" value="$COPY_SRC$" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
@@ -378,7 +384,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1131073187192">
     <property name="name" value="MapSrcNodeMacro" />
-    <link role="extends" targetNodeId="5.1087833466690" />
+    <link role="extends" targetNodeId="1087833466690" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1131073187193">
       <property name="value" value="$MAP_SRC$" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
