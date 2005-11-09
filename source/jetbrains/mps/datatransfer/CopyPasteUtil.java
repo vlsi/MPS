@@ -6,6 +6,8 @@ import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.AddRequiredModelImportsDialog;
+import jetbrains.mps.annotations.Hack;
+import jetbrains.mps.nodeEditor.text.Parser;
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
@@ -275,7 +277,7 @@ public class CopyPasteUtil {
   public static PasteNodeData getPasteNodeDataFromClipboard(SModel model) {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     Transferable content = cb.getContents(null);
-    if (content == null) return null;
+    if (content == null) return PasteNodeData.emptyPasteNodeData(model);
 
     if (content.isDataFlavorSupported(SModelDataFlavor.sNode)) {
       SNodeTransferable nodeTransferable = null;
@@ -287,6 +289,13 @@ public class CopyPasteUtil {
       } catch (IOException e) {
         LOG.error("Exception", e);
       }
+    } else if (content.isDataFlavorSupported(SModelDataFlavor.stringFlavor)
+            && canReceiveText(model)) {// string -> text lang nodes
+      String s = TextPasteUtil.getStringFromTransferable(content);
+      if (s == null || s.length() <= 0) return PasteNodeData.emptyPasteNodeData(model);
+      @Hack List<SNode> nodes = Parser.parse(s, model, "jetbrains.mpswiki");
+      if (nodes == null) return PasteNodeData.emptyPasteNodeData(model);
+      return new PasteNodeData(nodes, new HashSet<SReference>(), model, new HashSet<String>(), new HashSet<SModelUID>());
     }
 
     return null;
@@ -326,4 +335,26 @@ public class CopyPasteUtil {
   }
 
 
+  public static boolean doesClipboardContainNode(SModel modelToPaste) {
+    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
+    Transferable content = cb.getContents(null);
+    boolean hasNodes = false;
+    if (content instanceof SNodeTransferable) {
+      SNodeTransferable transferable = (SNodeTransferable) content;
+      hasNodes = transferable.containsNodes();
+    }
+    if (hasNodes) {
+      return true;
+    } else if (content.isDataFlavorSupported(SModelDataFlavor.stringFlavor) && canReceiveText(modelToPaste)) {
+      String s = TextPasteUtil.getStringFromTransferable(content);
+      return (s != null && s.length() > 0);
+    }
+    return false;
+  }
+
+  @Hack
+  public static boolean canReceiveText(SModel model) {
+    return (model.getLanguageNamespaces().contains("jetbrains.textLanguage")
+            || model.getLanguageNamespaces().contains("jetbrains.mpswiki"));
+  }
 }

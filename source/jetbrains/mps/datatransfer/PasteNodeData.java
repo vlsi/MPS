@@ -7,6 +7,8 @@ import jetbrains.mps.smodel.SModel;
 
 import java.util.List;
 import java.util.Set;
+import java.util.ArrayList;
+import java.util.HashSet;
 
 /**
  * Created by IntelliJ IDEA.
@@ -51,4 +53,7 @@ public class PasteNodeData {
   }
 
 
+  public static PasteNodeData emptyPasteNodeData(SModel model) {
+    return new PasteNodeData(new ArrayList<SNode>(), new HashSet<SReference>(), model, new HashSet<String>(), new HashSet<SModelUID>());
+  }
 }

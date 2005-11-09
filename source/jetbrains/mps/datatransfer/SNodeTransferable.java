@@ -11,6 +11,8 @@ import java.util.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.annotations.Hack;
+import jetbrains.mps.nodeEditor.text.Parser;
 
 /**
  * Created by IntelliJ IDEA.
@@ -90,6 +92,7 @@ public class SNodeTransferable implements Transferable {
     myNecessaryLanguages = pasteNodeData.getNecessaryLanguages();
   }
 
+
   public PasteNodeData createNodeData(SModel sModel) {
     Set<String> necessaryLanguages = myNecessaryLanguages;
     Set<SModelUID> necessaryImports = myNecessaryImports;
@@ -97,6 +100,13 @@ public class SNodeTransferable implements Transferable {
     if (necessaryLanguages == null) necessaryLanguages = new HashSet<String>();
     return CopyPasteUtil.createNodeDataOut(mySNodes, sModel, myModelProperties, new HashSet<String>(necessaryLanguages), new HashSet<SModelUID>(necessaryImports));
   }
+
+
+  public boolean containsNodes() {
+    return (!mySNodes.isEmpty());
+  }
+
+
 
 }
 
