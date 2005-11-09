@@ -1,8 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.datatransfer.CopyPasteNodeUtil;
+import jetbrains.mps.datatransfer.CopyPasteUtil;
 
 import java.util.List;
 import java.util.LinkedList;
@@ -30,7 +29,7 @@ public class CellAction_CutNode extends EditorCellAction {
       nodeList.add(editorComponent.getSelectedCell().getSNode());
     }
 
-    CopyPasteNodeUtil.copyNodesToClipboard(nodeList);
+    CopyPasteUtil.copyNodesToClipboard(nodeList);
     for (SNode node : nodeList) {
       node.delete();
     }

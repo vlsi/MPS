@@ -83,7 +83,7 @@ public class SNodeTransferable implements Transferable {
 
   private void saveNodes(List<SNode> nodes) {
     mySNodes.clear();
-    PasteNodeData pasteNodeData = CopyPasteNodeUtil.createNodeDataIn(nodes);
+    PasteNodeData pasteNodeData = CopyPasteUtil.createNodeDataIn(nodes);
     mySNodes.addAll(pasteNodeData.getNodes());
     myModelProperties = pasteNodeData.getModelProperties();
     myNecessaryImports = pasteNodeData.getNecessaryImports();
@@ -91,7 +91,11 @@ public class SNodeTransferable implements Transferable {
   }
 
   public PasteNodeData createNodeData(SModel sModel) {
-    return CopyPasteNodeUtil.createNodeDataOut(mySNodes, sModel, myModelProperties, new HashSet<String>(myNecessaryLanguages), new HashSet<SModelUID>(myNecessaryImports));
+    Set<String> necessaryLanguages = myNecessaryLanguages;
+    Set<SModelUID> necessaryImports = myNecessaryImports;
+    if (necessaryImports == null) necessaryImports = new HashSet<SModelUID>();
+    if (necessaryLanguages == null) necessaryLanguages = new HashSet<String>();
+    return CopyPasteUtil.createNodeDataOut(mySNodes, sModel, myModelProperties, new HashSet<String>(necessaryLanguages), new HashSet<SModelUID>(necessaryImports));
   }
 
 }

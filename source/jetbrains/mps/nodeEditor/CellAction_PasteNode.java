@@ -1,12 +1,11 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.datatransfer.PasteUtil;
-import jetbrains.mps.datatransfer.CopyPasteNodeUtil;
+import jetbrains.mps.datatransfer.PasteNodeUtil;
+import jetbrains.mps.datatransfer.CopyPasteUtil;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.EditorsPane;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.resolve.Resolver;
 
 import java.util.List;
@@ -26,14 +25,14 @@ public class CellAction_PasteNode extends EditorCellAction {
       return false;
     }
     SNode selectedNode = selectedCell.getSNode();
-    List<SNode> pasteNodes = CopyPasteNodeUtil.getNodesFromClipboard(selectedNode.getModel());
+    List<SNode> pasteNodes = CopyPasteUtil.getNodesFromClipboard(selectedNode.getModel());
     if (pasteNodes == null || pasteNodes.size() == 0) {
       return false;
     }
 
     IOperationContext operationContext = context.getOperationContext();
     EditorsPane editorsPane = operationContext.getComponent(EditorsPane.class);
-    if (!PasteUtil.canPaste(selectedCell, pasteNodes.get(0), operationContext, editorsPane)) {
+    if (!PasteNodeUtil.canPaste(selectedCell, pasteNodes.get(0), operationContext, editorsPane)) {
       LOG.debug("Couldn't paste node here");
       return false;
     }
@@ -46,11 +45,11 @@ public class CellAction_PasteNode extends EditorCellAction {
     SNode selectedNode = selectedCell.getSNode();
 
     SModel model = selectedNode.getModel();
-    PasteNodeData pasteNodeData = CopyPasteNodeUtil.getPasteNodeDataFromClipboard(model);
+    PasteNodeData pasteNodeData = CopyPasteUtil.getPasteNodeDataFromClipboard(model);
     SModel modelProperties = pasteNodeData.getModelProperties();
     Set<String> necessaryLanguages = pasteNodeData.getNecessaryLanguages();
     Set<SModelUID> necessaryImports = pasteNodeData.getNecessaryImports();
-    if (!CopyPasteNodeUtil.addImportsAndLanguagesToModel(model, modelProperties, necessaryLanguages, necessaryImports, context.getOperationContext())) return;
+    if (!CopyPasteUtil.addImportsAndLanguagesToModel(model, modelProperties, necessaryLanguages, necessaryImports, context.getOperationContext())) return;
 
     List<SNode> pasteNodes = pasteNodeData.getNodes();
     Set<SReference> outgoingReferences = pasteNodeData.getOutgoingReferences();
@@ -58,10 +57,10 @@ public class CellAction_PasteNode extends EditorCellAction {
     SNode anchor = pasteNodes.get(0);
     IOperationContext operationContext = context.getOperationContext();
     EditorsPane editorsPane = operationContext.getComponent(EditorsPane.class);
-    PasteUtil.paste(selectedCell, anchor, operationContext, editorsPane);
+    PasteNodeUtil.paste(selectedCell, anchor, operationContext, editorsPane);
     for (int i = 1; i < pasteNodes.size(); i++) {
       SNode node = pasteNodes.get(i);
-      PasteUtil.pasteRelative(anchor, node, false, operationContext);
+      PasteNodeUtil.pasteRelative(anchor, node, false, operationContext);
       anchor = node;
     }
 

@@ -11,37 +11,8 @@ import java.awt.datatransfer.*;
 import java.awt.*;
 import java.io.IOException;
 
-public class TextCopyPasteUtil {
+public class TextPasteUtil {
 
-  static class StringContent implements Transferable  {
-
-    private String myString;
-
-    public StringContent(String s) {
-      myString = new String(s);
-    }
-
-    public DataFlavor[] getTransferDataFlavors() {
-      DataFlavor[] dataFlavors = new DataFlavor[1];
-      dataFlavors[0] = DataFlavor.stringFlavor;
-      return dataFlavors;
-    }
-
-    public boolean isDataFlavorSupported(DataFlavor flavor) {
-      return (flavor == DataFlavor.stringFlavor);
-    }
-
-    public Object getTransferData(DataFlavor flavor) throws UnsupportedFlavorException, IOException {
-      if (!isDataFlavorSupported(flavor)) throw new UnsupportedFlavorException(flavor);
-      return myString;
-    }
-  }
-
-  public static void copyStringToClipboard(String s) {
-    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
-    StringContent stringContent = new StringContent(s);
-    cb.setContents(stringContent, null);
-  };
 
   public static String getStringFromClipboard () {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();

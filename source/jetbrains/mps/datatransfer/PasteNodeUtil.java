@@ -8,7 +8,6 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
@@ -23,8 +22,8 @@ import java.util.Iterator;
  * Author: Sergey Dmitriev.
  * Time: Nov 25, 2003 7:27:37 PM
  */
-public class PasteUtil {
-  private static final Logger LOG = Logger.getLogger(PasteUtil.class);
+public class PasteNodeUtil {
+  private static final Logger LOG = Logger.getLogger(PasteNodeUtil.class);
 
   private static final int PASTE_N_A = 0;
   private static final int PASTE_TO_TARGET = 1;
@@ -189,7 +188,7 @@ public class PasteUtil {
     if (actualPasteTarget == null) {
       return false;
     }
-    PasteUtil.pasteToTarget(actualPasteTarget, pasteNode, actualAnchorNode, actualRole, pasteBefore, operationContext);
+    PasteNodeUtil.pasteToTarget(actualPasteTarget, pasteNode, actualAnchorNode, actualRole, pasteBefore, operationContext);
     return true;
   }
 
@@ -200,7 +199,7 @@ public class PasteUtil {
       if (container == null) {
         break;
       }
-      if (PasteUtil.canPasteToTarget(container, pasteNode, role, operationContext)) {
+      if (PasteNodeUtil.canPasteToTarget(container, pasteNode, role, operationContext)) {
         return new NodeAndRole(anchorNode, role);
       }
       anchorNode = container;

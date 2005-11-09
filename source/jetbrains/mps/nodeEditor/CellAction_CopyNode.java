@@ -1,6 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.datatransfer.CopyPasteNodeUtil;
+import jetbrains.mps.datatransfer.CopyPasteUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
@@ -38,6 +38,6 @@ public class CellAction_CopyNode extends EditorCellAction {
       LOG.debug("Copy node : " + nodeList.get(0).getDebugText());
     }
 
-    CopyPasteNodeUtil.copyNodesAndTextToClipboard(nodeList, textBuilder.getText());
+    CopyPasteUtil.copyNodesAndTextToClipboard(nodeList, textBuilder.getText());
   }
 }

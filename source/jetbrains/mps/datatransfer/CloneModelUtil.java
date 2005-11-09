@@ -25,7 +25,7 @@ public class CloneModelUtil {
 
   public static SModel cloneModel(SModel model, SModel modelCopy) {
     for (SNode root : model.getRoots()) {
-      SNode root1 = CopyPasteNodeUtil.copyNodeOut(CopyPasteNodeUtil.copyNodeIn(root), modelCopy);
+      SNode root1 = CopyPasteUtil.copyNodeOut(CopyPasteUtil.copyNodeIn(root), modelCopy);
       modelCopy.addRoot(root1);
     }
 

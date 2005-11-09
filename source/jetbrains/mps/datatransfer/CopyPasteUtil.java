@@ -22,9 +22,9 @@ import java.util.List;
  * Time: 17:53:14
  * To change this template use File | Settings | File Templates.
  */
-public class CopyPasteNodeUtil {
+public class CopyPasteUtil {
 
-  private static final Logger LOG = Logger.getLogger(CopyPasteNodeUtil.class);
+  private static final Logger LOG = Logger.getLogger(CopyPasteUtil.class);
 
   private static final ModelOwner ourModelOwner = new ModelOwner() {};
 
@@ -245,6 +245,11 @@ public class CopyPasteNodeUtil {
     return newModel;
   }
 
+
+  public static void copyTextToClipboard(String text) {
+    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
+    cb.setContents(new SNodeTransferable(new ArrayList<SNode>(), text), null);
+  }
 
   public static void copyNodesAndTextToClipboard(List<SNode> nodes, String text) {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();

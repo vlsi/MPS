@@ -9,12 +9,10 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.datatransfer.PasteUtil;
-import jetbrains.mps.datatransfer.CopyPasteNodeUtil;
+import jetbrains.mps.datatransfer.PasteNodeUtil;
+import jetbrains.mps.datatransfer.CopyPasteUtil;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.EditorsPane;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.resolve.Resolver;
 
 import java.util.List;
@@ -37,12 +35,12 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
     }
     IOperationContext operationContext = context.getOperationContext();
     SNode anchorNode = selectedCell.getSNode();
-    List<SNode> pasteNodes = CopyPasteNodeUtil.getNodesFromClipboard(anchorNode.getModel());
+    List<SNode> pasteNodes = CopyPasteUtil.getNodesFromClipboard(anchorNode.getModel());
     if (pasteNodes == null) {
       return false;
     }
 
-    if (!PasteUtil.canPasteRelative(anchorNode, pasteNodes.get(0), operationContext)) {
+    if (!PasteNodeUtil.canPasteRelative(anchorNode, pasteNodes.get(0), operationContext)) {
       LOG.debug("Couldn't paste node relative");
       return false;
     }
@@ -55,16 +53,16 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
     EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
     SNode anchorNode = selectedCell.getSNode();
 
-    PasteNodeData pasteNodeData = CopyPasteNodeUtil.getPasteNodeDataFromClipboard(anchorNode.getModel());
+    PasteNodeData pasteNodeData = CopyPasteUtil.getPasteNodeDataFromClipboard(anchorNode.getModel());
     List<SNode> pasteNodes = pasteNodeData.getNodes();
     Set<SReference> outgoingReferences = pasteNodeData.getOutgoingReferences();
 
 
-    PasteUtil.pasteRelative(anchorNode, pasteNodes.get(0), myPasteBefore, operationContext);
+    PasteNodeUtil.pasteRelative(anchorNode, pasteNodes.get(0), myPasteBefore, operationContext);
     anchorNode = pasteNodes.get(0);
     for (int i = 1; i < pasteNodes.size(); i++) {
       SNode node = pasteNodes.get(i);
-      PasteUtil.pasteRelative(anchorNode, node, false, operationContext);
+      PasteNodeUtil.pasteRelative(anchorNode, node, false, operationContext);
       anchorNode = node;
     }
 
