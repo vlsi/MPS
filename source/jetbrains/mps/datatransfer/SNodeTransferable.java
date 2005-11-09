@@ -41,6 +41,11 @@ public class SNodeTransferable implements Transferable {
     return (DataFlavor[]) flavors.clone();
   }
 
+  public SNodeTransferable(List<SNode> nodes, String text) {
+    saveNodes(nodes);
+    myText = text;
+  }
+
   public SNodeTransferable(List<SNode> nodes) {
     saveNodes(nodes);
   }

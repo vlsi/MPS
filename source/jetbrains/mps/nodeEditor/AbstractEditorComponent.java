@@ -13,14 +13,11 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.reform.CellRangeSelection;
 import jetbrains.mps.nodeEditor.text.CellAction_RenderText;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.typesystem.TypeCheckerAccess;
-import jetbrains.mps.patternLanguage.patternActions.CellAction_ConvertToWildCard;
-import jetbrains.mps.patternLanguage.patternActions.CellAction_ConvertToAsPattern;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -55,7 +52,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private int myShiftY = 10;
 
   private NodeRangeSelection myNodeRangeSelection;
-  private CellRangeSelection myCellRangeSelection;
 
   private Stack<EditorCell> mySelectedStack = new Stack<EditorCell>();
   private Stack<IKeyboardHandler> myKbdHandlersStack;
@@ -137,7 +133,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     myNodeSubstituteChooser = new NodeSubstituteChooser(this);
     myNodeRangeSelection = new NodeRangeSelection(this);
-    myCellRangeSelection = new CellRangeSelection(this);
+
 
     // --- keyboard handling ---
     myKbdHandlersStack = new Stack<IKeyboardHandler>();
@@ -906,7 +902,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
     myNodeSubstituteChooser.setVisible(false);
     myNodeRangeSelection.deactivate();
-    myCellRangeSelection.deactivate();
 
     EditorCell oldSelection = mySelectedCell;
     if (mySelectedCell != null) {
@@ -1179,18 +1174,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (myNodeRangeSelection.isActive()) {
       myNodeRangeSelection.paint(g);
     }
-    if (myCellRangeSelection.isActive()) {
-      myCellRangeSelection.paint(g);
-    }
   }
 
   public NodeRangeSelection getNodeRangeSelection() {
     return myNodeRangeSelection;
   }
 
-  public CellRangeSelection getCellRangeSelection() {
-    return myCellRangeSelection;
-  }
 
   // last caret X
   boolean hasLastCaretX() {

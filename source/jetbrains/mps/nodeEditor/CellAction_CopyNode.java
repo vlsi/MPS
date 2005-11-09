@@ -1,13 +1,11 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.datatransfer.SNodeTransferable;
 import jetbrains.mps.datatransfer.CopyPasteNodeUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.resolve.Resolver;
+import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.nodeEditor.text.TextRenderUtil;
 
-import java.awt.datatransfer.Clipboard;
-import java.awt.*;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -26,9 +24,11 @@ public class CellAction_CopyNode extends EditorCellAction {
   public void execute(EditorContext context) {
     List<SNode> nodeList = new LinkedList<SNode>();
     AbstractEditorComponent editorComponent = context.getNodeEditorComponent();
-    NodeRangeSelection cellRangeSelection = editorComponent.getNodeRangeSelection();
-    if (cellRangeSelection.isActive()) {
-      nodeList.addAll(cellRangeSelection.getNodes());
+    TextBuilder textBuilder = TextRenderUtil.getTextBuilderForSelectedCellsOfEditor(editorComponent);
+
+    NodeRangeSelection nodeRangeSelection = editorComponent.getNodeRangeSelection();
+    if (nodeRangeSelection.isActive()) {
+      nodeList.addAll(nodeRangeSelection.getNodes());
       LOG.debug("Copy " + nodeList.size() + " nodes : ");
       for (int i = 0; i < nodeList.size(); i++) {
         LOG.debug("    " + nodeList.get(i).getDebugText());
@@ -38,6 +38,6 @@ public class CellAction_CopyNode extends EditorCellAction {
       LOG.debug("Copy node : " + nodeList.get(0).getDebugText());
     }
 
-    CopyPasteNodeUtil.copyNodesToClipboard(nodeList);
+    CopyPasteNodeUtil.copyNodesAndTextToClipboard(nodeList, textBuilder.getText());
   }
 }

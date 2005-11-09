@@ -138,7 +138,7 @@ public class NodeRangeSelection implements IKeyboardHandler {
         actionType = EditorCellAction.DELETE;
       }
     }
-    // only DELETE and COPY and CUT are supported in this mode
+    // only DELETE and COPY and CUT and RENDER_TEXT are supported in this mode
     if (actionType != null) {
       if (actionType == EditorCellAction.DELETE) {
         doDeleteNodes(editorContext);
@@ -150,6 +150,10 @@ public class NodeRangeSelection implements IKeyboardHandler {
       }
       if (actionType == EditorCellAction.CUT) {
         myEditorComponent.executeComponentAction(EditorCellAction.CUT);
+        return true;
+      }
+      if (actionType == EditorCellAction.RENDER_TEXT) {
+        myEditorComponent.executeComponentAction(EditorCellAction.RENDER_TEXT);
         return true;
       }
     }
@@ -222,5 +226,14 @@ public class NodeRangeSelection implements IKeyboardHandler {
         cell.paintSelection(g, new Color(255, 0, 255, 35));
       }
     }
+  }
+
+  public List<EditorCell> getCells() {
+    List<EditorCell> result = new ArrayList<EditorCell>();
+    for (SNode node : getNodes()) {
+      EditorCell cell = myEditorComponent.findNodeCell(node);
+      result.add(cell);
+    }
+    return result;
   }
 }

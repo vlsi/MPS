@@ -10,7 +10,7 @@ import java.awt.*;
  */
 public interface CellLayout {
   public void doLayout(EditorCell_Collection editorCells);
-  public TextBuilder doLayoutText(EditorCell_Collection editorCells);
+  public TextBuilder doLayoutText(Iterable<EditorCell> editorCells);
   public int getAscent(EditorCell_Collection editorCells);
   public int getDescent(EditorCell_Collection editorCell_collection);
   public EditorCell findNearestCell(EditorCell_Collection editorCells, int x, int y, boolean isPrevious);

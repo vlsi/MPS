@@ -91,7 +91,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
     editorCells.setHeight(height);
   }
 
-  public TextBuilder doLayoutText(EditorCell_Collection editorCells) {
+  public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {
     TextBuilder result = TextBuilder.getEmptyTextBuilder();
     for (EditorCell editorCell : editorCells) {
       result = result.appendToTheBottom(editorCell.renderText());

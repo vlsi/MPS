@@ -1,10 +1,13 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.util.CollectionUtil;
 
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.awt.*;
 
 /**
@@ -268,4 +271,24 @@ public class CellLayout_Flow extends AbstractCellLayout {
     }
   }
 
+  public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {
+    TextBuilder result = TextBuilder.getEmptyTextBuilder();
+    Iterator<EditorCell> it = editorCells.iterator();
+    while (it.hasNext()) {
+      result = result.appendToTheBottom(doLayoutRow(it));
+    }
+    return result;
+  }
+
+  private TextBuilder doLayoutRow(Iterator<EditorCell> it) {
+    TextBuilder result = TextBuilder.getEmptyTextBuilder();
+    for (;it.hasNext();) {
+      EditorCell editorCell = it.next();
+      if (NOFLOW.equals(editorCell.getLayoutConstraint())) {
+        return result.appendToTheBottom(editorCell.renderText());
+      }
+      result = result.appendToTheRight(editorCell.renderText());
+    }
+    return result;
+  }
 }

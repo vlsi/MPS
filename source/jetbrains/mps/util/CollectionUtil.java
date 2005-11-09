@@ -33,6 +33,10 @@ public class CollectionUtil {
     return result;
   }
 
+  public static <T> List<T> iterableAsList(Iterable<T> i) {
+    return iteratorAsList(i.iterator());
+  }
+
   public static <T> Set<T> iteratorAsSet(Iterator<T> i) {
     Set<T> result = new HashSet<T>();
     while (i.hasNext()) {

@@ -246,7 +246,12 @@ public class CopyPasteNodeUtil {
   }
 
 
-  public static void copyNodesToClipboard(List<SNode> nodes) {
+  public static void copyNodesAndTextToClipboard(List<SNode> nodes, String text) {
+    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
+    cb.setContents(new SNodeTransferable(nodes, text), null);
+  }
+
+   public static void copyNodesToClipboard(List<SNode> nodes) {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     cb.setContents(new SNodeTransferable(nodes), null);
   }

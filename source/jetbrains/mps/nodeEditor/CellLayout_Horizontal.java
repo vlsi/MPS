@@ -39,7 +39,7 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
     }
   }
 
-  public TextBuilder doLayoutText(EditorCell_Collection editorCells) {
+  public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {
     TextBuilder result = TextBuilder.getEmptyTextBuilder();
     for (EditorCell editorCell : editorCells) {
       result = result.appendToTheRight(editorCell.renderText());
