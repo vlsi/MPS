@@ -28,7 +28,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public static final String NAME = "name";
 
   private List<SReference> myReferences = new ArrayList<SReference>();
-  protected Set<SReference> myBackReferences = new WeakSet<SReference>();
 
   private String myRoleInParent;
   private SNode myParent;
@@ -68,7 +67,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
       newNode.myParent = null;
       newNode.myReferences = new ArrayList<SReference>();
-      newNode.myBackReferences = new WeakSet<SReference>();
       newNode.myChildren =  new ArrayList<SNode>();
       newNode.myUserObjects = new HashMap();
       newNode.myProperties = new HashMap<String, String>();
@@ -421,14 +419,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     myReferences.remove(ref);
   }
 
-  public List<SReference> getBackReferences() {
-    return new ArrayList<SReference>(myBackReferences);
-  }
-
   public List<SReference> getBackReferences(SModel sourceModel) {
-    if (sourceModel == getModel()) {
-      return getBackReferences();
-    }
     List<SReference> list = new LinkedList<SReference>();
     List<? extends SNode> nodes = SModelUtil.allNodes(sourceModel);
     for (SNode node : nodes) {
@@ -562,11 +553,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   private void insertReferenceAt(final int i, final SReference reference) {
     myReferences.add(i, reference);
-    if (reference instanceof InternalReference &&
-            !getModel().getUID().getStereotype().startsWith("remote")) {
-      SNode targetNode = reference.getTargetNode();
-      if (targetNode != null) targetNode.myBackReferences.add(reference);
-    }
     if (!getModel().isLoading()) {
       UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
         public void undo() throws UnexpectedUndoException {
@@ -580,12 +566,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   private void removeReferenceAt(final int i) {
     final SReference reference = myReferences.get(i);
     myReferences.remove(reference);
-    if (reference instanceof InternalReference && !getModel().getUID().getStereotype().startsWith("remote")) {
-      SNode targetNode = reference.getTargetNode();
-      if (targetNode != null) {
-        targetNode.myBackReferences.remove(reference);
-      }
-    }
     if (!getModel().isLoading()) {
       UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
         public void undo() {
@@ -665,32 +645,11 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     while (myReferences.size() > 0) {
       removeReferenceAt(0);
     }
-
-    if (!myModel.getStereotype().startsWith("remote") &&
-            //todo this is a hack! Eliminate BackRefs ASAP
-            !myModel.getUID().toString().startsWith("jetbrains.mpswiki.")) {
-    while (myBackReferences.size() > 0) {
-      SReference backReference = myBackReferences.iterator().next();
-      if (!backReference.isResolved()) {
-        myBackReferences.remove(backReference);
-        continue;
-      }
-      SNode sourceNode = backReference.getSourceNode();
-      int index = sourceNode.myReferences.indexOf(backReference);
-
-      if (index != -1) {
-        sourceNode.removeReferenceAt(index);
-      } else {
-        //it is possible when node references itself
-        myBackReferences.remove(backReference);
-      }
-    }
-    }
   }
 
 
   public boolean isDeleted() {
-    return (myReferences.size() == 0 && myBackReferences.size() == 0 && myParent == null && !getModel().isRoot(this));
+    return (myReferences.size() == 0 && myParent == null && !getModel().isRoot(this));
   }
 
   public Iterator<? extends SNode> depthFirstChildren() {
