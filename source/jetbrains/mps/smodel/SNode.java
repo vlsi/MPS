@@ -681,7 +681,9 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       removeReferenceAt(0);
     }
 
-    if (!myModel.getStereotype().startsWith("remote")) {
+    if (!myModel.getStereotype().startsWith("remote") &&
+            //todo this is a hack! Eliminate BackRefs ASAP
+            !myModel.getUID().toString().startsWith("jetbrains.mpswiki.")) {
     while (myBackReferences.size() > 0) {
       SReference backReference = myBackReferences.iterator().next();
       if (!backReference.isResolved()) {
