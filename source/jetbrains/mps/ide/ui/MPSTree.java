@@ -1,26 +1,25 @@
 package jetbrains.mps.ide.ui;
 
+import jetbrains.mps.ide.ProjectFrame;
+import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.action.MPSAction;
+import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.logging.Logger;
 import org.jdom.Element;
 
 import javax.swing.*;
-import javax.swing.event.TreeWillExpandListener;
 import javax.swing.event.TreeExpansionEvent;
+import javax.swing.event.TreeWillExpandListener;
 import javax.swing.tree.*;
-import java.util.List;
+import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashMap;
-import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.action.MPSAction;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.ProjectFrame;
-import jetbrains.mps.ide.command.CommandProcessor;
+import java.util.List;
 
 /**
  * @author Kostik
@@ -114,6 +113,13 @@ public abstract class MPSTree extends JTree {
   }
 
   void myMouseClicked(MouseEvent e) {
+  }
+
+  void myMouseReleased(MouseEvent e) {
+    if (e.isPopupTrigger()) showPopup(e);
+  }
+
+  void myMousePressed(MouseEvent e) {
     TreePath path = getPathForLocation(e.getX(), e.getY());
     if (path == null) return;
 
@@ -137,13 +143,7 @@ public abstract class MPSTree extends JTree {
       node.doubleClick();
       e.consume();
     }
-  }
 
-  void myMouseReleased(MouseEvent e) {
-    if (e.isPopupTrigger()) showPopup(e);
-  }
-
-  void myMousePressed(MouseEvent e) {
     if (e.isPopupTrigger()) showPopup(e);
   }
 
