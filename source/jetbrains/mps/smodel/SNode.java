@@ -516,10 +516,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     insertReferenceAt(myReferences.size(), reference);
   }
 
-  void addBackReference(SReference reference) {
-    myBackReferences.add(reference);
-  }
-
   public void insertReferent(SNode prevReferent, String role, SNode referent) {
     insertReferent(prevReferent, role, referent, false);
   }
@@ -559,17 +555,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       SReference reference = iterator.next();
       if (reference.getRole().equals(role)) {
         list.add((T) reference.getTargetNode());
-      }
-    }
-    return list.iterator();
-  }
-
-  public <T extends SNode> Iterator<T> backReferents(String role) {
-    List<T> list = new LinkedList<T>();
-    for (Iterator<SReference> iterator = myBackReferences.iterator(); iterator.hasNext();) {
-      SReference backReference = iterator.next();
-      if (backReference.getRole().equals(role)) {
-        list.add((T) backReference.getSourceNode());
       }
     }
     return list.iterator();
