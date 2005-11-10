@@ -6,6 +6,7 @@ import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.ClassifierType;
+import jetbrains.mps.annotations.Hack;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -26,28 +27,29 @@ import java.util.*;
 public class ModelPersistence {
   private static final Logger LOG = Logger.getLogger(ModelPersistence.class);
 
-  private static final String TARGET_NODE_ID = "targetNodeId";
-  private static final String LINK = "link";
-  private static final String ROLE = "role";
+  public static final String TARGET_NODE_ID = "targetNodeId";
+  public static final String LINK = "link";
+  public static final String ROLE = "role";
   public static final String NAME = "name";
   public static final String NAMESPACE = "namespace";
   public static final String IS_EXTERNALLY_RESOLVED = "externallyResolved";
   public static final String EXT_RESOLVE_INFO = "extResolveInfo";
   public static final String NODE = "node";
-  private static final String TYPE = "type";
+  public static final String TYPE = "type";
   public static final String ID = "id";
   public static final String NO_ID = "noId";
   public static final String RESOLVE_INFO = "resolveInfo";
   public static final String TARGET_CLASS_RESOLVE_INFO = "targetClassResolveInfo";
   public static final String MODEL = "model";
-  private static final String PROPERTY = "property";
-  private static final String VALUE = "value";
-  private static final String IMPORT_ELEMENT = "import";
-  private static final String MODEL_IMPORT_INDEX = "index";
-  private static final String MAX_IMPORT_INDEX = "maxImportIndex";
-  private static final String LANGUAGE = "language";
-  private static final String STEREOTYPE = "stereotype";
-  private static final String MODEL_UID = "modelUID";
+  public static final String PROPERTY = "property";
+  public static final String VALUE = "value";
+  public static final String IMPORT_ELEMENT = "import";
+  public static final String MODEL_IMPORT_INDEX = "index";
+  public static final String MAX_IMPORT_INDEX = "maxImportIndex";
+  public static final String LANGUAGE = "language";
+  public static final String STEREOTYPE = "stereotype";
+  public static final String MODEL_UID = "modelUID";
+  public static final String REFERENCE_DESCRIPTOR_CLASS = "referenceDescriptorClass";
 
 
   private static Document loadModelDocument(File file) {
@@ -170,7 +172,7 @@ public class ModelPersistence {
       importedUIDtoIndex.put(importIndex, importedModelUID);
     }
 
-    ArrayList<ReferenceDescriptor> referenceDescriptors = new ArrayList<ReferenceDescriptor>();
+    ArrayList<IReferenceDescriptor> referenceDescriptors = new ArrayList<IReferenceDescriptor>();
     List children = rootElement.getChildren(NODE);
     for (Iterator iterator = children.iterator(); iterator.hasNext();) {
       Element element = (Element) iterator.next();
@@ -178,24 +180,8 @@ public class ModelPersistence {
       model.addRoot(semanticNode);
     }
 
-    for (ReferenceDescriptor referenceDescriptor : referenceDescriptors) {
-      SModelUID importedModelUID = model.getUID();
-      if (referenceDescriptor.importIndex > -1) {
-        importedModelUID = importedUIDtoIndex.get(referenceDescriptor.importIndex);
-        if (importedModelUID == null) {
-          LOG.error("Couldn't create reference from " + referenceDescriptor.sourceNode.getDebugText() + " : import for index [" + referenceDescriptor.importIndex + "] not found");
-          continue;
-        }
-      }
-      SReference reference = SReference.newInstance(referenceDescriptor.role,
-              referenceDescriptor.sourceNode,
-              referenceDescriptor.targetId,
-              referenceDescriptor.extResolveInfo,
-              importedModelUID,
-              referenceDescriptor.resolveInfo,
-              referenceDescriptor.targetClassResolveInfo
-      );
-      if (reference != null) referenceDescriptor.sourceNode.addSemanticReference(reference);
+    for (IReferenceDescriptor referenceDescriptor : referenceDescriptors) {
+      referenceDescriptor.createReferenceInModel(model);
     }
 
     model.setLoading(false);
@@ -204,12 +190,14 @@ public class ModelPersistence {
 
   //warning this is simpified version. It is suitable only for usage in
   //MPSWiki and has to be rewritten ASAP
+  @Hack
   public static SNode readNode(Element nodeElemnet, SModel model) {
-    List<ReferenceDescriptor> referenceDescriptors = new ArrayList<ReferenceDescriptor>();
+    List<IReferenceDescriptor> referenceDescriptors = new ArrayList<IReferenceDescriptor>();
 
     SNode result = readNode(nodeElemnet, model, referenceDescriptors);
 
-    for (ReferenceDescriptor referenceDescriptor : referenceDescriptors) {
+    for (IReferenceDescriptor _referenceDescriptor : referenceDescriptors) {
+      DefaultReferenceDescriptor referenceDescriptor = (DefaultReferenceDescriptor) _referenceDescriptor;
       SModelUID importedModelUID = model.getUID();
 //      SModelUID importedModelUID = model.getUID();
 //      if (referenceDescriptor.importIndex > -1) {
@@ -219,15 +207,15 @@ public class ModelPersistence {
 //          continue;
 //        }
 //      }
-      SReference reference = SReference.newInstance(referenceDescriptor.role,
-              referenceDescriptor.sourceNode,
-              referenceDescriptor.targetId,
-              referenceDescriptor.extResolveInfo,
+      SReference reference = SReference.newInstance(referenceDescriptor.getRole(),
+              referenceDescriptor.getSourceNode(),
+              referenceDescriptor.getTargetId(),
+              referenceDescriptor.getExtResolveInfo(),
               importedModelUID,
-              referenceDescriptor.resolveInfo,
-              referenceDescriptor.targetClassResolveInfo
+              referenceDescriptor.getResolveInfo(),
+              referenceDescriptor.getTargetClassResolveInfo()
       );
-      if (reference != null) referenceDescriptor.sourceNode.addSemanticReference(reference);
+      if (reference != null) referenceDescriptor.getSourceNode().addSemanticReference(reference);
     }
 
     return result;
@@ -235,12 +223,12 @@ public class ModelPersistence {
 
 
   private static SNode readNode(Element nodeElement,
-                                SModel semanticModel, List<ReferenceDescriptor> referenceDescriptors) {
+                                SModel semanticModel, List<IReferenceDescriptor> referenceDescriptors) {
     return readNode(nodeElement, semanticModel, referenceDescriptors, true);
   }
 
   private static SNode readNode(Element nodeElement,
-                                SModel model, List<ReferenceDescriptor> referenceDescriptors,
+                                SModel model, List<IReferenceDescriptor> referenceDescriptors,
                                 boolean setID) {
     String type = nodeElement.getAttributeValue(TYPE);
     SNode node = createNodeInstance(type, model);
@@ -274,13 +262,8 @@ public class ModelPersistence {
     List links = nodeElement.getChildren(LINK);
     for (Iterator iterator = links.iterator(); iterator.hasNext();) {
       Element linkElement = (Element) iterator.next();
-      String role = linkElement.getAttributeValue(ROLE);
-      String resolveInfo = linkElement.getAttributeValue(RESOLVE_INFO);
-      String targetClassResolveInfo = linkElement.getAttributeValue(TARGET_CLASS_RESOLVE_INFO);
-
-      String attExtResolveInfo = linkElement.getAttributeValue(EXT_RESOLVE_INFO);
-      String attTargetNodeId = linkElement.getAttributeValue(TARGET_NODE_ID);
-      referenceDescriptors.add(new ReferenceDescriptor(node, role, attTargetNodeId, attExtResolveInfo, resolveInfo, targetClassResolveInfo));
+      String rdc_name = linkElement.getAttributeValue(REFERENCE_DESCRIPTOR_CLASS);
+      referenceDescriptors.add(ReferenceDescriptorsManager.readReferenceDescriptor(linkElement, node, rdc_name));
     }
 
     List childNodes = nodeElement.getChildren(NODE);
@@ -453,7 +436,9 @@ public class ModelPersistence {
     List<SReference> references = node.getReferences();
     for (Iterator<SReference> iterator = references.iterator(); iterator.hasNext();) {
       SReference reference = iterator.next();
-      saveReference(element, node, reference);
+      @Hack String rdc_name = null;
+      Element linkElement = ReferenceDescriptorsManager.saveReference(element, node, reference, rdc_name);
+      setNotNullAttribute(linkElement, REFERENCE_DESCRIPTOR_CLASS, rdc_name);
     }
 
     // children ...
@@ -463,40 +448,6 @@ public class ModelPersistence {
     }
 
     parentElement.addContent(element);
-  }
-
-  private static void saveReference(Element element, SNode node, SReference reference) {
-    Element linkElement = new Element(LINK);
-    element.addContent(linkElement);
-    linkElement.setAttribute(ROLE, reference.getRole());
-
-    if (reference.isExternal()) {//external reference
-      ExternalReference externalReference = (ExternalReference) reference;
-      SModelUID targetModelUID = externalReference.getTargetModelUID();
-      SModel.ImportElement importElement = node.getModel().getImportElement(targetModelUID);
-      int importIndex = -1;
-      if (importElement != null) {
-        importIndex = importElement.getReferenceID();
-      } else {
-        LOG.error("Couldn't save reference \"" + externalReference.getRole() + "\" in " + node.getDebugText() +
-                "\n -- importz element for model \"" + targetModelUID + "\" not found");
-      }
-
-      String extResolveInfo = externalReference.getExtResolveInfo();
-      if (ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
-        // no external info - save target node id
-        linkElement.setAttribute(TARGET_NODE_ID, importIndex + "." + reference.getTargetNodeId());
-      } else {
-        linkElement.setAttribute(EXT_RESOLVE_INFO, importIndex + "." + extResolveInfo);
-      }
-
-    } else {//internal reference
-      if (reference.isResolved()) linkElement.setAttribute(TARGET_NODE_ID, reference.getTargetNodeId());
-      String resolveInfo = reference.getResolveInfo();
-      if (!reference.isResolved() && resolveInfo != null) linkElement.setAttribute(RESOLVE_INFO, resolveInfo);
-      String targetClassResolveInfo = reference.getTargetClassResolveInfo();
-      if (!reference.isResolved() && targetClassResolveInfo != null) linkElement.setAttribute(TARGET_CLASS_RESOLVE_INFO, targetClassResolveInfo);
-    }
   }
 
 
@@ -526,53 +477,4 @@ public class ModelPersistence {
     void onError();
   }
 
-  private static class ReferenceDescriptor {
-    public SNode sourceNode;
-    public String role;
-    public String targetId;
-    public String resolveInfo;
-    public String targetClassResolveInfo;
-    public String extResolveInfo;
-    public int importIndex = -1;
-
-    ReferenceDescriptor(SNode sourceNode, String role, String attTargetNodeId, String attExtResolveInfo, String resolveInfo, String targetClassResolveInfo) {
-      this.sourceNode = sourceNode;
-      this.role = role;
-      if (attTargetNodeId != null) {
-        ReferenceTargetDescriptor targetDescriptor = parseAttTargetNodeId(attTargetNodeId);
-        this.targetId = targetDescriptor.targetInfo;
-        this.importIndex = targetDescriptor.importIndex;
-      }
-
-      if (attExtResolveInfo != null) {
-        ReferenceTargetDescriptor targetDescriptor = parseAttExtResolveInfo(attExtResolveInfo);
-        this.extResolveInfo = targetDescriptor.targetInfo;
-        this.importIndex = targetDescriptor.importIndex;
-      }
-      this.resolveInfo = resolveInfo;
-      this.targetClassResolveInfo = targetClassResolveInfo;
-    }
-
-    static ReferenceTargetDescriptor parseAttExtResolveInfo(String attExtResolveInfo) {
-      return parseAttTargetNodeId(attExtResolveInfo); // same format of string
-    }
-
-    static ReferenceTargetDescriptor parseAttTargetNodeId(String attTargetNodeId) {
-      ReferenceTargetDescriptor referenceTargetDescriptor = new ReferenceTargetDescriptor();
-      int i = attTargetNodeId.indexOf('.');
-      if (i > 0) {
-        referenceTargetDescriptor.importIndex = Integer.parseInt(attTargetNodeId.substring(0, i));
-        referenceTargetDescriptor.targetInfo = attTargetNodeId.substring(i + 1);
-      } else {
-        referenceTargetDescriptor.importIndex = -1;
-        referenceTargetDescriptor.targetInfo = attTargetNodeId;
-      }
-      return referenceTargetDescriptor;
-    }
-
-    private static class ReferenceTargetDescriptor {
-      String targetInfo;
-      int importIndex;
-    }
-  } // public static class ReferenceDescriptor
 }
