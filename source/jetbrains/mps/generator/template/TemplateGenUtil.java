@@ -472,14 +472,6 @@ public class TemplateGenUtil {
     if (nodeMacro != null) {
       if (nodeMacro instanceof SwitchMacro) {
         TemplateSwitch templateSwitch = ((SwitchMacro) nodeMacro).getTemplateSwitch();
-//        SNode templateNodeFromSwitch = getTemplateNodeFromSwitch(sourceNode, templateSwitch, generator);
-//        if (templateNodeFromSwitch != null) {
-//          builder = createNodeBuilder(sourceNode, templateNodeFromSwitch, mappingName, generator);
-//          if (builder != null) {
-//            builder.setRoleInParent(templateNode.getRole_());
-//            needCreateChildBuilders = false;
-//          }
-//        }
         builder = createNodeBuilderForSwitch(sourceNode, templateSwitch, mappingName, generator);
         if (builder != null) {
           builder.setRoleInParent(templateNode.getRole_());
@@ -554,31 +546,53 @@ public class TemplateGenUtil {
   }
 
   private static INodeBuilder createNodeBuilderForSwitch(SNode sourceNode, TemplateSwitch templateSwitch, String mappingName, ITemplateGenerator generator) {
-    SNode templateNodeFromSwitch = getTemplateNodeFromSwitch(sourceNode, templateSwitch, generator);
-    if (templateNodeFromSwitch == null) {
+    ConditionalTemplate templateSwitchCase = generator.getTemplateSwitchCase(sourceNode, templateSwitch);
+    if (templateSwitchCase == null) return null;
+
+    TemplateDeclaration templateDeclarationForCase = templateSwitchCase.getTemplate();
+    if (templateDeclarationForCase == null) {
+      // its OK - just skip node under the $CASE$ macro
+      return new Void_NodeBuilder(sourceNode, templateSwitchCase, null, generator);
+    }
+
+    List<TemplateFragment> templateFragments = getTemplateFragments(templateDeclarationForCase);
+    if (templateFragments.isEmpty()) {
+      LOG.error("WARN: no template fragments found in " + templateDeclarationForCase.getDebugText());
       return null;
     }
-    return createNodeBuilder(sourceNode, templateNodeFromSwitch, mappingName, generator);
-  }
-
-  private static SNode getTemplateNodeFromSwitch(SNode sourceNode, TemplateSwitch templateSwitch, ITemplateGenerator generator) {
-    TemplateDeclaration templateForSwitch = generator.getTemplateForSwitch(sourceNode, templateSwitch);
-    if (templateForSwitch != null) {
-      List<TemplateFragment> templateFragments = getTemplateFragments(templateForSwitch);
-      if (templateFragments.isEmpty()) {
-        LOG.error("WARN: no template fragments found in " + templateForSwitch.getDebugText());
-        return null;
-      }
-      if (templateFragments.size() > 1) {
-        LOG.error("WARN: more when one fragments found in " + templateForSwitch.getDebugText());
-        return null;
-      }
-
-      TemplateFragment templateFragment = templateFragments.get(0);
-      return templateFragment.getParent();
+    if (templateFragments.size() > 1) {
+      LOG.error("WARN: more when one fragments found in " + templateDeclarationForCase.getDebugText());
+      return null;
     }
-    return null;
+
+    TemplateFragment templateFragment = templateFragments.get(0);
+    SNode templateNodeForCase = templateFragment.getParent();
+
+//    SNode templateNodeForCase = getTemplateNodeFromSwitch(sourceNode, templateSwitch, generator);
+//    if (templateNodeForCase == null) {
+//      return null;
+//    }
+    return createNodeBuilder(sourceNode, templateNodeForCase, mappingName, generator);
   }
+
+//  private static SNode getTemplateNodeFromSwitch(SNode sourceNode, TemplateSwitch templateSwitch, ITemplateGenerator generator) {
+//    TemplateDeclaration templateForSwitch = generator.getTemplateSwitchCase(sourceNode, templateSwitch);
+//    if (templateForSwitch != null) {
+//      List<TemplateFragment> templateFragments = getTemplateFragments(templateForSwitch);
+//      if (templateFragments.isEmpty()) {
+//        LOG.error("WARN: no template fragments found in " + templateForSwitch.getDebugText());
+//        return null;
+//      }
+//      if (templateFragments.size() > 1) {
+//        LOG.error("WARN: more when one fragments found in " + templateForSwitch.getDebugText());
+//        return null;
+//      }
+//
+//      TemplateFragment templateFragment = templateFragments.get(0);
+//      return templateFragment.getParent();
+//    }
+//    return null;
+//  }
 
   public static void printBuildersTree(INodeBuilder builder, int depth) {
     char[] indent = new char[depth * 3];

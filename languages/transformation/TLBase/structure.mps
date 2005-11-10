@@ -153,7 +153,7 @@
     <property name="name" value="ConditionalTemplate" />
     <link role="extends" targetNodeId="2.1078489098625" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1112804745009">
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="template" />
       <link role="target" targetNodeId="1092059087312" />
@@ -283,7 +283,7 @@
       <property name="sourceCardinality" value="0..1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="templateSwitch" />
-      <link role="target" targetNodeId="5.1112730859144" />
+      <link role="target" targetNodeId="1112730859144" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1114707257324">
       <property name="value" value="$COPY_SRC$" />

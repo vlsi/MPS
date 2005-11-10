@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.TemplateDeclaration;
 import jetbrains.mps.transformation.TLBase.TemplateSwitch;
+import jetbrains.mps.transformation.TLBase.ConditionalTemplate;
 import jetbrains.mps.typesystem.ITypeChecker;
 import jetbrains.mps.util.Condition;
 
@@ -58,7 +59,7 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   INodeBuilder findNodeBuilder(INodeBuilder fromBuilder, Condition<INodeBuilder> condition);
 
-  TemplateDeclaration getTemplateForSwitch(SNode sourceNode, TemplateSwitch templateSwitch);
+  ConditionalTemplate getTemplateSwitchCase(SNode sourceNode, TemplateSwitch templateSwitch);
 
   void showInformationMessage(SNode node, String message);
 
