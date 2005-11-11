@@ -42,6 +42,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private boolean myHasLastCaretX = false;
   private int myLastCaretX;
+  private boolean myReadOnly = false;
 
   private JScrollPane myScrollPane;
   private JComponent myContainer;
@@ -1444,6 +1445,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
       }
     }
+  }
+
+  public boolean isReadOnly() {
+    return myReadOnly;
+  }
+
+  public void setReadOnly(boolean readOnly) {
+    myReadOnly = readOnly;
   }
 
   public <T> T get(Class<T> cls) {
