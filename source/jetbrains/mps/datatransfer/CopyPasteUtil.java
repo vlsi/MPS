@@ -355,7 +355,7 @@ public class CopyPasteUtil {
       return true;
     } else if (content.isDataFlavorSupported(SModelDataFlavor.stringFlavor) && canReceiveText(modelToPaste)) {
       String s = TextPasteUtil.getStringFromTransferable(content);
-      return (s != null && s.length() > 0);
+      return (s != null && s.length() > 0 && s.indexOf(' ') > -1 );
     }
     return false;
   }
