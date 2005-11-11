@@ -178,8 +178,11 @@ public class DefaultReferencePersister implements IReferencePersister {
 
 
   protected static class ReferenceTargetDescriptor {
-    String targetInfo;
-    String importedModelInfo;
+    public ReferenceTargetDescriptor() {
+
+    }
+    public String targetInfo;
+    public String importedModelInfo;
   }
 
 
