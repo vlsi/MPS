@@ -11,53 +11,53 @@ import org.jdom.Element;
  * Time: 20:54:31
  * To change this template use File | Settings | File Templates.
  */
-public class DefaultReferenceDescriptor implements IReferenceDescriptor {
+public class DefaultReferencePersister implements IReferencePersister {
 
-  private static Logger LOG = Logger.getLogger(DefaultReferenceDescriptor.class);
+  private static Logger LOG = Logger.getLogger(DefaultReferencePersister.class);
 
-  private SNode sourceNode;
-  private String role;
-  private String targetId;
-  private String resolveInfo;
-  private String targetClassResolveInfo;
-  private String extResolveInfo;
-  private int importIndex = -1;
+  protected SNode sourceNode;
+  protected String role;
+  protected String targetId;
+  protected String resolveInfo;
+  protected String targetClassResolveInfo;
+  protected String extResolveInfo;
+  protected String importedModelInfo = "-1";
 
 
-  DefaultReferenceDescriptor() {
+  DefaultReferencePersister() {
   }
 
-  private DefaultReferenceDescriptor(SNode sourceNode, String role, String attTargetNodeId, String attExtResolveInfo, String resolveInfo, String targetClassResolveInfo) {
+  protected DefaultReferencePersister(SNode sourceNode, String role, String attTargetNodeId, String attExtResolveInfo, String resolveInfo, String targetClassResolveInfo) {
     this.sourceNode = sourceNode;
     this.role = role;
     if (attTargetNodeId != null) {
       ReferenceTargetDescriptor targetDescriptor = parseAttTargetNodeId(attTargetNodeId);
       this.targetId = targetDescriptor.targetInfo;
-      this.importIndex = targetDescriptor.importIndex;
+      this.importedModelInfo = targetDescriptor.importedModelInfo;
     }
 
     if (attExtResolveInfo != null) {
       ReferenceTargetDescriptor targetDescriptor = parseAttExtResolveInfo(attExtResolveInfo);
       this.extResolveInfo = targetDescriptor.targetInfo;
-      this.importIndex = targetDescriptor.importIndex;
+      this.importedModelInfo = targetDescriptor.importedModelInfo;
     }
     this.resolveInfo = resolveInfo;
     this.targetClassResolveInfo = targetClassResolveInfo;
   }
 
 
-  private static ReferenceTargetDescriptor parseAttExtResolveInfo(String attExtResolveInfo) {
+  protected ReferenceTargetDescriptor parseAttExtResolveInfo(String attExtResolveInfo) {
     return parseAttTargetNodeId(attExtResolveInfo); // same format of string
   }
 
-  private static ReferenceTargetDescriptor parseAttTargetNodeId(String attTargetNodeId) {
+  protected ReferenceTargetDescriptor parseAttTargetNodeId(String attTargetNodeId) {
     ReferenceTargetDescriptor referenceTargetDescriptor = new ReferenceTargetDescriptor();
     int i = attTargetNodeId.indexOf('.');
     if (i > 0) {
-      referenceTargetDescriptor.importIndex = Integer.parseInt(attTargetNodeId.substring(0, i));
+      referenceTargetDescriptor.importedModelInfo = attTargetNodeId.substring(0, i);
       referenceTargetDescriptor.targetInfo = attTargetNodeId.substring(i + 1);
     } else {
-      referenceTargetDescriptor.importIndex = -1;
+      referenceTargetDescriptor.importedModelInfo = "-1";
       referenceTargetDescriptor.targetInfo = attTargetNodeId;
     }
     return referenceTargetDescriptor;
@@ -66,10 +66,6 @@ public class DefaultReferenceDescriptor implements IReferenceDescriptor {
 
   public SNode getSourceNode() {
     return sourceNode;
-  }
-
-  public void setSourceNode(SNode sourceNode) {
-    this.sourceNode = sourceNode;
   }
 
   public String getRole() {
@@ -96,10 +92,10 @@ public class DefaultReferenceDescriptor implements IReferenceDescriptor {
   // -- create reference
   public void createReferenceInModel(SModel model) {
       SModelUID importedModelUID = model.getUID();
-    if (importIndex > -1) {
-      importedModelUID = model.getImportedModelUID(importIndex);
+    if (getImportIndex() > -1) {
+      importedModelUID = model.getImportedModelUID(getImportIndex());
       if (importedModelUID == null) {
-        LOG.error("Couldn't create reference from " + this.getSourceNode().getDebugText() + " : import for index [" + importIndex + "] not found");
+        LOG.error("Couldn't create reference from " + this.getSourceNode().getDebugText() + " : import for index [" + getImportIndex() + "] not found");
         return;
       }
     }
@@ -122,19 +118,20 @@ public class DefaultReferenceDescriptor implements IReferenceDescriptor {
   //-----
 
   // -- create descriptor
-  public DefaultReferenceDescriptor readReferenceDescriptor(Element linkElement, SNode sourceNode) {
+  public IReferencePersister readReferencePersister(Element linkElement, SNode sourceNode) {
       String role = linkElement.getAttributeValue(ModelPersistence.ROLE);
       String resolveInfo = linkElement.getAttributeValue(ModelPersistence.RESOLVE_INFO);
       String targetClassResolveInfo = linkElement.getAttributeValue(ModelPersistence.TARGET_CLASS_RESOLVE_INFO);
       String attExtResolveInfo = linkElement.getAttributeValue(ModelPersistence.EXT_RESOLVE_INFO);
       String attTargetNodeId = linkElement.getAttributeValue(ModelPersistence.TARGET_NODE_ID);
-      return new DefaultReferenceDescriptor(sourceNode, role, attTargetNodeId, attExtResolveInfo, resolveInfo, targetClassResolveInfo);
+      return new DefaultReferencePersister(sourceNode, role, attTargetNodeId, attExtResolveInfo, resolveInfo, targetClassResolveInfo);
   }
   // --
 
 
   //-- save reference
-  public Element saveReference(Element parentElement, SNode node, SReference reference) {
+  public Element saveReference(Element parentElement, SReference reference) {
+    SNode node = reference.getSourceNode(); 
     Element linkElement = new Element(ModelPersistence.LINK);
     parentElement.addContent(linkElement);
     linkElement.setAttribute(ModelPersistence.ROLE, reference.getRole());
@@ -169,12 +166,20 @@ public class DefaultReferenceDescriptor implements IReferenceDescriptor {
 
     return linkElement;
   }
+
+  public int getImportIndex() {
+    try {
+      return Integer.parseInt(importedModelInfo);
+    } catch( NumberFormatException e) {
+      return -1;
+    }
+  }
   // --
 
 
-  private static class ReferenceTargetDescriptor {
+  protected static class ReferenceTargetDescriptor {
     String targetInfo;
-    int importIndex;
+    String importedModelInfo;
   }
 
 

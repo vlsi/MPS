@@ -172,7 +172,7 @@ public class ModelPersistence {
       importedUIDtoIndex.put(importIndex, importedModelUID);
     }
 
-    ArrayList<IReferenceDescriptor> referenceDescriptors = new ArrayList<IReferenceDescriptor>();
+    ArrayList<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();
     List children = rootElement.getChildren(NODE);
     for (Iterator iterator = children.iterator(); iterator.hasNext();) {
       Element element = (Element) iterator.next();
@@ -180,55 +180,32 @@ public class ModelPersistence {
       model.addRoot(semanticNode);
     }
 
-    for (IReferenceDescriptor referenceDescriptor : referenceDescriptors) {
-      referenceDescriptor.createReferenceInModel(model);
+    for (IReferencePersister referencePersister : referenceDescriptors) {
+      referencePersister.createReferenceInModel(model);
     }
 
     model.setLoading(false);
     return model;
   }
 
-  //warning this is simpified version. It is suitable only for usage in
-  //MPSWiki and has to be rewritten ASAP
-  @Hack
-  public static SNode readNode(Element nodeElemnet, SModel model) {
-    List<IReferenceDescriptor> referenceDescriptors = new ArrayList<IReferenceDescriptor>();
 
-    SNode result = readNode(nodeElemnet, model, referenceDescriptors);
-
-    for (IReferenceDescriptor _referenceDescriptor : referenceDescriptors) {
-      DefaultReferenceDescriptor referenceDescriptor = (DefaultReferenceDescriptor) _referenceDescriptor;
-      SModelUID importedModelUID = model.getUID();
-//      SModelUID importedModelUID = model.getUID();
-//      if (referenceDescriptor.importIndex > -1) {
-//        importedModelUID = importedUIDtoIndex.get(referenceDescriptor.importIndex);
-//        if (importedModelUID == null) {
-//          LOG.error("Couldn't create reference from " + referenceDescriptor.sourceNode.getDebugText() + " : import for index [" + referenceDescriptor.importIndex + "] not found");
-//          continue;
-//        }
-//      }
-      SReference reference = SReference.newInstance(referenceDescriptor.getRole(),
-              referenceDescriptor.getSourceNode(),
-              referenceDescriptor.getTargetId(),
-              referenceDescriptor.getExtResolveInfo(),
-              importedModelUID,
-              referenceDescriptor.getResolveInfo(),
-              referenceDescriptor.getTargetClassResolveInfo()
-      );
-      if (reference != null) referenceDescriptor.getSourceNode().addSemanticReference(reference);
+  public static SNode readNode(Element nodeElement, SModel model) {
+    List<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();
+    SNode result = readNode(nodeElement, model, referenceDescriptors);
+    for (IReferencePersister referencePersister : referenceDescriptors) {
+      referencePersister.createReferenceInModel(model);
     }
-
     return result;
   }
 
 
   private static SNode readNode(Element nodeElement,
-                                SModel semanticModel, List<IReferenceDescriptor> referenceDescriptors) {
+                                SModel semanticModel, List<IReferencePersister> referenceDescriptors) {
     return readNode(nodeElement, semanticModel, referenceDescriptors, true);
   }
 
   private static SNode readNode(Element nodeElement,
-                                SModel model, List<IReferenceDescriptor> referenceDescriptors,
+                                SModel model, List<IReferencePersister> referenceDescriptors,
                                 boolean setID) {
     String type = nodeElement.getAttributeValue(TYPE);
     SNode node = createNodeInstance(type, model);
@@ -263,7 +240,7 @@ public class ModelPersistence {
     for (Iterator iterator = links.iterator(); iterator.hasNext();) {
       Element linkElement = (Element) iterator.next();
       String rdc_name = linkElement.getAttributeValue(REFERENCE_DESCRIPTOR_CLASS);
-      referenceDescriptors.add(ReferenceDescriptorsManager.readReferenceDescriptor(linkElement, node, rdc_name));
+      referenceDescriptors.add(ReferencePersistersManager.readReferenceDescriptor(linkElement, node, rdc_name));
     }
 
     List childNodes = nodeElement.getChildren(NODE);
@@ -372,7 +349,7 @@ public class ModelPersistence {
     Iterator<SNode> iterator = sourceModel.roots();
     while (iterator.hasNext()) {
       SNode semanticNode = iterator.next();
-      saveNode(rootElement, semanticNode);
+      saveNode(rootElement, semanticNode, null);
     }
 
     return document;
@@ -404,7 +381,7 @@ public class ModelPersistence {
     importedModels.clear();
   }
 
-  public static void saveNode(Element parentElement, SNode node) {
+  public static void saveNode(Element parentElement, SNode node, String referenceDescriptorClassName) {
     Element element = new Element(NODE);
     setNotNullAttribute(element, ROLE, node.getRole_());
     element.setAttribute(TYPE, node.getClass().getName());
@@ -436,15 +413,14 @@ public class ModelPersistence {
     List<SReference> references = node.getReferences();
     for (Iterator<SReference> iterator = references.iterator(); iterator.hasNext();) {
       SReference reference = iterator.next();
-      @Hack String rdc_name = null;
-      Element linkElement = ReferenceDescriptorsManager.saveReference(element, node, reference, rdc_name);
-      setNotNullAttribute(linkElement, REFERENCE_DESCRIPTOR_CLASS, rdc_name);
+      Element linkElement = ReferencePersistersManager.saveReference(element, reference, referenceDescriptorClassName);
+      setNotNullAttribute(linkElement, REFERENCE_DESCRIPTOR_CLASS, referenceDescriptorClassName);
     }
 
     // children ...
     List<SNode> children = node.getChildren();
     for (SNode childNode : children) {
-      saveNode(element, childNode);
+      saveNode(element, childNode, referenceDescriptorClassName);
     }
 
     parentElement.addContent(element);
