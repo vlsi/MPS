@@ -24,7 +24,7 @@ public class DefaultReferencePersister implements IReferencePersister {
   protected String importedModelInfo = "-1";
 
 
-  DefaultReferencePersister() {
+  public DefaultReferencePersister() {
   }
 
   protected DefaultReferencePersister(SNode sourceNode, String role, String attTargetNodeId, String attExtResolveInfo, String resolveInfo, String targetClassResolveInfo) {
