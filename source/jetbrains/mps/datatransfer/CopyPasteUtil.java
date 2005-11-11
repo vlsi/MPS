@@ -339,10 +339,18 @@ public class CopyPasteUtil {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     Transferable content = cb.getContents(null);
     boolean hasNodes = false;
-    if (content instanceof SNodeTransferable) {
-      SNodeTransferable transferable = (SNodeTransferable) content;
-      hasNodes = transferable.containsNodes();
+     if (content.isDataFlavorSupported(SModelDataFlavor.sNode)) {
+      SNodeTransferable nodeTransferable = null;
+      try {
+        nodeTransferable = (SNodeTransferable) content.getTransferData(SModelDataFlavor.sNode);
+        hasNodes = nodeTransferable.containsNodes();
+      } catch (UnsupportedFlavorException e) {
+
+      } catch (IOException e) {
+
+      }
     }
+
     if (hasNodes) {
       return true;
     } else if (content.isDataFlavorSupported(SModelDataFlavor.stringFlavor) && canReceiveText(modelToPaste)) {

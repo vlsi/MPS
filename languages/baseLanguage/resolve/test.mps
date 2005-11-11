@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.resolve.test">
-  <maxReferenceID value="3" />
   <language namespace="jetbrains.mps.baseLanguage" />
-  <import referenceID="1" modelUID="jetbrains.mps.resolve@java_stub" />
-  <import referenceID="2" modelUID="java.lang@java_stub" />
-  <import referenceID="3" modelUID="jetbrains.mps.baseLanguage.refactoring.test" />
+  <maxImportIndex value="3" />
+  <import index="1" modelUID="jetbrains.mps.resolve@java_stub" />
+  <import index="2" modelUID="java.lang@java_stub" />
+  <import index="3" modelUID="jetbrains.mps.baseLanguage.refactoring.test" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1121166935562">
     <property name="name" value="New" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1121172586148">
@@ -636,6 +636,26 @@
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1123686758733">
               <link role="variableDeclaration" targetNodeId="1123686672546" />
             </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1131709214228">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1131709214229">
+            <property name="name" value="s" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1131709214230">
+              <link role="classifier" extResolveInfo="2.[Classifier]String" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.StringLiteral" id="1131709227779">
+              <property name="value" value="fff" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1131709234219">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1131709234220">
+            <property name="name" value="v" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1131709234221">
+              <link role="classifier" extResolveInfo="2.[Classifier]String" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.Expression" id="1131709300803" />
           </node>
         </node>
       </node>
