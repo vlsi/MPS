@@ -572,6 +572,12 @@ public class SModel implements Iterable<SNode> {
   }
 
   public boolean isExternallyResolvable() {
+    //DO NOT REMOVE THIS CODE:
+    //we might want to create models SModels in air
+    //without corresponding model descriptor to simplify
+    //our life (one is created in WikiServer).
+    if (getModelDescriptor() == null) return false;
+
     return getModelDescriptor().isExternallyResolvable();
   }
 
