@@ -21,11 +21,6 @@ public class GenerationFailedException extends RuntimeException {
     super(cause);
   }
 
-  public GenerationFailedException(GenerationFailueInfo failueInfo) {
-    super(failueInfo.getMessage());
-    myFailueInfo = failueInfo;
-  }
-
   public GenerationFailedException(GenerationFailueInfo failueInfo, Throwable cause) {
     super(failueInfo.getMessage(), cause);
     myFailueInfo = failueInfo;

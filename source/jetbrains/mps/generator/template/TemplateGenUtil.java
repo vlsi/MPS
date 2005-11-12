@@ -10,6 +10,8 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.core.BaseConcept;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.generator.TransientModelDescriptor;
+import jetbrains.mps.generator.GenerationFailedException;
+import jetbrains.mps.generator.GenerationFailueInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
@@ -380,76 +382,77 @@ public class TemplateGenUtil {
   }
 
   private static List<SNode> createSourceNodeListForTemplateNode(SNode parentSourceNode, SNode templateNode, ITemplateGenerator generator) {
-    NodeMacro nodeMacro = (NodeMacro) templateNode.getChild(ITemplateGenerator.ROLE_NODE_MAKRO);
+    try {
 
-    List<SNode> result = new LinkedList<SNode>();
-    if (nodeMacro instanceof CopySrcNodeMacro) {
-      CopySrcNodeMacro copySrcNodeMacro = ((CopySrcNodeMacro) nodeMacro);
-      String sourceNodeQueryId = copySrcNodeMacro.getSourceNodeQueryId();
-      if (sourceNodeQueryId == null) {
-        generator.showErrorMessage(nodeMacro, "Source query is not defined");
-      } else {
-        String methodName = "templateSourceNodeQuery_" + sourceNodeQueryId;
-        Object[] args = new Object[]{parentSourceNode, generator};
-        SNode srcNodeToCopy = (SNode) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
-        if (srcNodeToCopy != null) {
-          result.add(srcNodeToCopy);
+      NodeMacro nodeMacro = (NodeMacro) templateNode.getChild(ITemplateGenerator.ROLE_NODE_MAKRO);
+
+      List<SNode> result = new LinkedList<SNode>();
+      if (nodeMacro instanceof CopySrcNodeMacro) {
+        CopySrcNodeMacro copySrcNodeMacro = ((CopySrcNodeMacro) nodeMacro);
+        String sourceNodeQueryId = copySrcNodeMacro.getSourceNodeQueryId();
+        if (sourceNodeQueryId == null) {
+          generator.showErrorMessage(nodeMacro, "Source query is not defined");
+        } else {
+          String methodName = "templateSourceNodeQuery_" + sourceNodeQueryId;
+          Object[] args = new Object[]{parentSourceNode, generator};
+          SNode srcNodeToCopy = (SNode) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
+          if (srcNodeToCopy != null) {
+            result.add(srcNodeToCopy);
+          }
+          checkNodesFromQuery(result, copySrcNodeMacro, generator);
+          return result;
         }
-        checkNodesFromQuery(result, copySrcNodeMacro, generator);
-        return result;
+
+      } else if (nodeMacro instanceof MapSrcNodeMacro) {
+        MapSrcNodeMacro mapSrcNodeMacro = ((MapSrcNodeMacro) nodeMacro);
+        String sourceNodeQueryId = mapSrcNodeMacro.getSourceNodeQueryId();
+        if (sourceNodeQueryId != null) { // it's optional
+          String methodName = "templateSourceNodeQuery_" + sourceNodeQueryId;
+          Object[] args = new Object[]{parentSourceNode, generator};
+          SNode srcNodeToCopy = (SNode) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
+          if (srcNodeToCopy != null) {
+            result.add(srcNodeToCopy);
+          }
+          checkNodesFromQuery(result, mapSrcNodeMacro, generator);
+          return result;
+        }
+
+      } else if (nodeMacro instanceof IfMacro) {
+        IfMacro ifMacro = (IfMacro) nodeMacro;
+        String conditionAspectId = ifMacro.getConditionAspectId();
+        if (conditionAspectId == null) {
+          generator.showErrorMessage(nodeMacro, "Condition is not defined");
+        } else {
+          String methodName = "semanticNodeCondition_" + conditionAspectId;
+          Object[] args = new Object[]{parentSourceNode};
+          Boolean conditionStatus = (Boolean) QueryMethod.invokeWithOptionalArg(methodName, args, nodeMacro.getModel(), generator.getGeneratorSessionContext());
+          List<SNode> sourceNodes = new LinkedList<SNode>();
+          if (conditionStatus) {
+            sourceNodes.add(parentSourceNode);
+          }
+          return sourceNodes;
+        }
       }
 
-    } else if (nodeMacro instanceof MapSrcNodeMacro) {
-      MapSrcNodeMacro mapSrcNodeMacro = ((MapSrcNodeMacro) nodeMacro);
-      String sourceNodeQueryId = mapSrcNodeMacro.getSourceNodeQueryId();
-      if (sourceNodeQueryId != null) { // it's optional
-        String methodName = "templateSourceNodeQuery_" + sourceNodeQueryId;
-        Object[] args = new Object[]{parentSourceNode, generator};
-        SNode srcNodeToCopy = (SNode) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
-        if (srcNodeToCopy != null) {
-          result.add(srcNodeToCopy);
-        }
-        checkNodesFromQuery(result, mapSrcNodeMacro, generator);
-        return result;
-      }
-
-    } else if (nodeMacro instanceof IfMacro) {
-      IfMacro ifMacro = (IfMacro) nodeMacro;
-      String conditionAspectId = ifMacro.getConditionAspectId();
-      if (conditionAspectId == null) {
-        generator.showErrorMessage(nodeMacro, "Condition is not defined");
-      } else {
-        String methodName = "semanticNodeCondition_" + conditionAspectId;
-        Object[] args = new Object[]{parentSourceNode};
-        Boolean conditionStatus = (Boolean) QueryMethod.invokeWithOptionalArg(methodName, args, nodeMacro.getModel(), generator.getGeneratorSessionContext());
-        List<SNode> sourceNodes = new LinkedList<SNode>();
-        if (conditionStatus) {
-          sourceNodes.add(parentSourceNode);
-        }
-        return sourceNodes;
-      }
-    }
-
-    if (nodeMacro != null) {
-      String sourceQueryAspectMethodName = nodeMacro.getSourceQueryAspectMethodName();
-      if (sourceQueryAspectMethodName != null) {
-        String methodName = "templateSourceQuery_" + sourceQueryAspectMethodName;
-        Object[] args = new Object[]{parentSourceNode, generator};
-        try {
+      if (nodeMacro != null) {
+        String sourceQueryAspectMethodName = nodeMacro.getSourceQueryAspectMethodName();
+        if (sourceQueryAspectMethodName != null) {
+          String methodName = "templateSourceQuery_" + sourceQueryAspectMethodName;
+          Object[] args = new Object[]{parentSourceNode, generator};
           List<SNode> sourceNodes = (List<SNode>) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
           checkNodesFromQuery(sourceNodes, nodeMacro, generator);
           return sourceNodes;
-        } catch (Exception e) {
-          generator.showErrorMessage(parentSourceNode, nodeMacro, "Error invocation method: \"" + methodName + "\" : " + e.getMessage());
-          throw new RuntimeException("Error invocation method: \"" + methodName + "\"", e);
         }
       }
-    }
 
-    // <default> : propagate  parent source node
-    List<SNode> list = new LinkedList<SNode>();
-    list.add(parentSourceNode);
-    return list;
+      // <default> : propagate  parent source node
+      List<SNode> list = new LinkedList<SNode>();
+      list.add(parentSourceNode);
+      return list;
+
+    } catch (Throwable t) {
+      throw new GenerationFailedException(new GenerationFailueInfo(t.toString(), parentSourceNode, templateNode, null, generator.getGeneratorSessionContext()), t);
+    }
   }
 
   private static void checkNodesFromQuery(List<SNode> queryNodes, SNode templateNode, ITemplateGenerator generator) {
