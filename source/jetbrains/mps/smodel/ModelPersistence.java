@@ -176,7 +176,7 @@ public class ModelPersistence {
     List children = rootElement.getChildren(NODE);
     for (Iterator iterator = children.iterator(); iterator.hasNext();) {
       Element element = (Element) iterator.next();
-      SNode semanticNode = readNode(element, model, referenceDescriptors);
+      SNode semanticNode = readNode(element, model, referenceDescriptors, null);
       model.addRoot(semanticNode);
     }
 
@@ -188,10 +188,13 @@ public class ModelPersistence {
     return model;
   }
 
-
   public static SNode readNode(Element nodeElement, SModel model) {
+    return readNode(nodeElement, model, (String) null);
+  }
+
+  public static SNode readNode(Element nodeElement, SModel model, String referencePersisterClassName) {
     List<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();
-    SNode result = readNode(nodeElement, model, referenceDescriptors);
+    SNode result = readNode(nodeElement, model, referenceDescriptors, referencePersisterClassName);
     for (IReferencePersister referencePersister : referenceDescriptors) {
       referencePersister.createReferenceInModel(model);
     }
@@ -199,14 +202,10 @@ public class ModelPersistence {
   }
 
 
-  private static SNode readNode(Element nodeElement,
-                                SModel semanticModel, List<IReferencePersister> referenceDescriptors) {
-    return readNode(nodeElement, semanticModel, referenceDescriptors, true);
-  }
 
   private static SNode readNode(Element nodeElement,
                                 SModel model, List<IReferencePersister> referenceDescriptors,
-                                boolean setID) {
+                                String referencePersisterClassName) {
     String type = nodeElement.getAttributeValue(TYPE);
     SNode node = createNodeInstance(type, model);
     if (node == null) {
@@ -217,9 +216,8 @@ public class ModelPersistence {
     }
 
     String myOldId = nodeElement.getAttributeValue(ID);
-    if (setID) {
-      node.setId(myOldId);
-    }
+    node.setId(myOldId);
+
 
     String cachedExtResolveInfo = nodeElement.getAttributeValue(EXT_RESOLVE_INFO);
     if (!ExternalResolver.isEmptyExtResolveInfo(cachedExtResolveInfo)) {
@@ -239,7 +237,10 @@ public class ModelPersistence {
     List links = nodeElement.getChildren(LINK);
     for (Iterator iterator = links.iterator(); iterator.hasNext();) {
       Element linkElement = (Element) iterator.next();
-      String rdc_name = linkElement.getAttributeValue(REFERENCE_DESCRIPTOR_CLASS);
+      String rdc_name =
+              referencePersisterClassName == null
+                      ? linkElement.getAttributeValue(REFERENCE_DESCRIPTOR_CLASS)
+                      : referencePersisterClassName;
       referenceDescriptors.add(ReferencePersistersManager.readReferenceDescriptor(linkElement, node, rdc_name));
     }
 
@@ -247,7 +248,7 @@ public class ModelPersistence {
     for (Iterator iterator = childNodes.iterator(); iterator.hasNext();) {
       Element childNodeElement = (Element) iterator.next();
       String role = childNodeElement.getAttributeValue(ROLE);
-      SNode childNode = readNode(childNodeElement, model, referenceDescriptors, setID);
+      SNode childNode = readNode(childNodeElement, model, referenceDescriptors, referencePersisterClassName);
       if (childNode != null) {
         node.addChild(role, childNode);
       } else {

@@ -109,7 +109,6 @@ public class MPSModuleRepository {
         }
         if (owner != module) owners.add(owner);
       }
-      if (!(module instanceof Language)) return (TM) module;
       fireRepositoryChanged();
       return (TM) module;
     } catch (IOException e) {

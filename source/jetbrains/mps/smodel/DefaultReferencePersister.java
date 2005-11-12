@@ -27,6 +27,10 @@ public class DefaultReferencePersister implements IReferencePersister {
   public DefaultReferencePersister() {
   }
 
+  protected DefaultReferencePersister(ReferenceDescriptor rd) {
+    this(rd.sourceNode, rd.role, rd.attTargetNodeId, rd.attExtResolveInfo, rd.resolveInfo, rd.targetClassResolveInfo);
+  }
+
   protected DefaultReferencePersister(SNode sourceNode, String role, String attTargetNodeId, String attExtResolveInfo, String resolveInfo, String targetClassResolveInfo) {
     this.sourceNode = sourceNode;
     this.role = role;
@@ -119,12 +123,19 @@ public class DefaultReferencePersister implements IReferencePersister {
 
   // -- create descriptor
   public IReferencePersister readReferencePersister(Element linkElement, SNode sourceNode) {
-      String role = linkElement.getAttributeValue(ModelPersistence.ROLE);
-      String resolveInfo = linkElement.getAttributeValue(ModelPersistence.RESOLVE_INFO);
-      String targetClassResolveInfo = linkElement.getAttributeValue(ModelPersistence.TARGET_CLASS_RESOLVE_INFO);
-      String attExtResolveInfo = linkElement.getAttributeValue(ModelPersistence.EXT_RESOLVE_INFO);
-      String attTargetNodeId = linkElement.getAttributeValue(ModelPersistence.TARGET_NODE_ID);
-      return new DefaultReferencePersister(sourceNode, role, attTargetNodeId, attExtResolveInfo, resolveInfo, targetClassResolveInfo);
+    ReferenceDescriptor rd = readReferenceDescriptor(linkElement, sourceNode);
+    return new DefaultReferencePersister(rd);
+  }
+
+  protected ReferenceDescriptor readReferenceDescriptor(Element linkElement, SNode sourceNode) {
+    ReferenceDescriptor rd = new ReferenceDescriptor();
+    rd.sourceNode = sourceNode;
+    rd.role = linkElement.getAttributeValue(ModelPersistence.ROLE);
+    rd.resolveInfo = linkElement.getAttributeValue(ModelPersistence.RESOLVE_INFO);
+    rd.targetClassResolveInfo = linkElement.getAttributeValue(ModelPersistence.TARGET_CLASS_RESOLVE_INFO);
+    rd.attExtResolveInfo = linkElement.getAttributeValue(ModelPersistence.EXT_RESOLVE_INFO);
+    rd.attTargetNodeId = linkElement.getAttributeValue(ModelPersistence.TARGET_NODE_ID);
+    return rd;
   }
   // --
 
@@ -183,6 +194,18 @@ public class DefaultReferencePersister implements IReferencePersister {
     }
     public String targetInfo;
     public String importedModelInfo;
+  }
+
+  protected static class ReferenceDescriptor {
+    public ReferenceDescriptor() {
+
+    }
+    public SNode sourceNode;
+    public String role;
+    public  String resolveInfo;
+    public  String targetClassResolveInfo;
+    public  String attExtResolveInfo;
+    public  String attTargetNodeId;
   }
 
 
