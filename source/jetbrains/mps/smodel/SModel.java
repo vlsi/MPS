@@ -11,6 +11,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.WeakSet;
+import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
 
@@ -88,6 +89,10 @@ public class SModel implements Iterable<SNode> {
 
   public List<SNode> getRoots() {
     return new ArrayList<SNode>(myRoots);
+  }
+
+  public<N extends SNode> List<N> getRoots(Class<N> cls) {
+    return CollectionUtil.filter(cls, getRoots());
   }
 
   public void addRoot(SNode rootNode) {
