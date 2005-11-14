@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.bootstrap.structureLanguage.structure">
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
-  <maxImportIndex value="2" />
+  <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.core.structure" />
+  <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.library" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1071489090640">
     <property name="rootable" value="true" />
     <property name="name" value="ConceptDeclaration" />
@@ -197,6 +198,9 @@
     <property name="rootable" value="false" />
     <property name="name" value="ConceptPropertyDeclaration" />
     <link role="extends" targetNodeId="1.1078489098625" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1131940019080">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1107214854626" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1105725141344">
     <property name="rootable" value="false" />
