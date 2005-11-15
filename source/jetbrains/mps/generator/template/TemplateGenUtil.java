@@ -391,7 +391,7 @@ public class TemplateGenUtil {
         CopySrcNodeMacro copySrcNodeMacro = ((CopySrcNodeMacro) nodeMacro);
         String sourceNodeQueryId = copySrcNodeMacro.getSourceNodeQueryId();
         if (sourceNodeQueryId == null) {
-          generator.showErrorMessage(nodeMacro, "Source query is not defined");
+          throw new GenerationFailedException(new GenerationFailueInfo("Source query is not defined", parentSourceNode, nodeMacro, null, generator.getGeneratorSessionContext()));
         } else {
           String methodName = "templateSourceNodeQuery_" + sourceNodeQueryId;
           Object[] args = new Object[]{parentSourceNode, generator};
@@ -421,7 +421,7 @@ public class TemplateGenUtil {
         IfMacro ifMacro = (IfMacro) nodeMacro;
         String conditionAspectId = ifMacro.getConditionAspectId();
         if (conditionAspectId == null) {
-          generator.showErrorMessage(nodeMacro, "Condition is not defined");
+          throw new GenerationFailedException(new GenerationFailueInfo("Source query is not defined", parentSourceNode, nodeMacro, null, generator.getGeneratorSessionContext()));
         } else {
           String methodName = "semanticNodeCondition_" + conditionAspectId;
           Object[] args = new Object[]{parentSourceNode};
@@ -450,6 +450,8 @@ public class TemplateGenUtil {
       list.add(parentSourceNode);
       return list;
 
+    } catch (GenerationFailedException gfe) {
+      throw gfe;
     } catch (Throwable t) {
       throw new GenerationFailedException(new GenerationFailueInfo(t.toString(), parentSourceNode, templateNode, null, generator.getGeneratorSessionContext()), t);
     }

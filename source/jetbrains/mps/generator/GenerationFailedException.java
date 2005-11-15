@@ -21,6 +21,11 @@ public class GenerationFailedException extends RuntimeException {
     super(cause);
   }
 
+  public GenerationFailedException(GenerationFailueInfo failueInfo) {
+    super(failueInfo.getMessage());
+    myFailueInfo = failueInfo;
+  }
+
   public GenerationFailedException(GenerationFailueInfo failueInfo, Throwable cause) {
     super(failueInfo.getMessage(), cause);
     myFailueInfo = failueInfo;
@@ -28,7 +33,8 @@ public class GenerationFailedException extends RuntimeException {
 
   public GenerationFailueInfo getFailueInfo() {
     if (myFailueInfo != null) return myFailueInfo;
-    if (getCause() instanceof GenerationFailedException) return ((GenerationFailedException) getCause()).getFailueInfo();
+    if (getCause() instanceof GenerationFailedException)
+      return ((GenerationFailedException) getCause()).getFailueInfo();
     return null;
   }
 }
