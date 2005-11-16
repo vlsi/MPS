@@ -8,10 +8,10 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.core.BaseConcept;
-import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.generator.TransientModelDescriptor;
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationFailueInfo;
+import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.generator.TransientModelDescriptor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
@@ -22,10 +22,7 @@ import jetbrains.mps.util.QueryMethod;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class TemplateGenUtil {
   private static final Logger LOG = Logger.getLogger(TemplateGenUtil.class);
@@ -91,8 +88,7 @@ public class TemplateGenUtil {
 //        }
 //        continue;
 
-        if (checkResolvedReference(nodeBuilder.getSourceNode(), targetNode, templateNode, templateReference.getRole(), targetReferentNode, generator))
-        {
+        if (checkResolvedReference(nodeBuilder.getSourceNode(), targetNode, templateNode, templateReference.getRole(), targetReferentNode, generator))        {
           targetNode.addReferent(templateReference.getRole(), targetReferentNode);
         }
         continue;
@@ -105,25 +101,25 @@ public class TemplateGenUtil {
               "Couldn't resolve template reference \"" + templateReference.getRole() + "\"");
       //test
       LOG.error("uhhh! error. set breakpoint here, referenceResolver:" + referenceResolver);
-//      referenceResolver.resolveTarget(templateReference, nodeBuilder);
+      referenceResolver.resolveTarget(templateReference, nodeBuilder);
       //test
 
-      // dump builders info
-      StringBuffer buildersStack = new StringBuffer("    builders stack:");
-      String indent = "\n        ";
-      INodeBuilder currBuilder = nodeBuilder;
-      while (currBuilder != null) {
-        buildersStack.append(indent);
-        buildersStack.append(currBuilder.getTemplateNode().getDebugText());
-        buildersStack.append(" (builder:" + currBuilder.getClass().getName() + ")");
-        indent += "    ";
-        currBuilder = currBuilder.getParent();
-      }
-
-      LOG.warning("WARN! Couldn't resolve template reference! " + generator.getState().toString() +
-              "\n    template       : " + templateReference.getSourceNode().getDebugText() + " --[" + templateReference.getRole() + "]--> " + templateReference.getTargetNode().getDebugText() +
-              "\n    template target: " + targetNode.getDebugText() +
-              "\n" + buildersStack);
+//      // dump builders info
+//      StringBuffer buildersStack = new StringBuffer("    builders stack:");
+//      String indent = "\n        ";
+//      INodeBuilder currBuilder = nodeBuilder;
+//      while (currBuilder != null) {
+//        buildersStack.append(indent);
+//        buildersStack.append(currBuilder.getTemplateNode().getDebugText());
+//        buildersStack.append(" (builder:" + currBuilder.getClass().getName() + ")");
+//        indent += "    ";
+//        currBuilder = currBuilder.getParent();
+//      }
+//
+//      LOG.warning("WARN! Couldn't resolve template reference! " + generator.getState().toString() +
+//              "\n    template       : " + templateReference.getSourceNode().getDebugText() + " --[" + templateReference.getRole() + "]--> " + templateReference.getTargetNode().getDebugText() +
+//              "\n    template target: " + targetNode.getDebugText() +
+//              "\n" + buildersStack);
     } // while (iterator.hasNext())
   }
 
