@@ -117,7 +117,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
     // todo : refactor it...
     String packageName = JavaNameUtil.packageNameForModelUID(sourceModel.getUID());
-    XmlFileGenerator xmlFileGenerator = new XmlFileGenerator(outputPathFile, packageName, false);
+    XmlFileGenerator xmlFileGenerator = new XmlFileGenerator(outputPathFile);
     JavaFileGenerator javaFileGenerator = new JavaFileGenerator(outputPathFile, packageName, false);
     Iterator<SNode> roots = targetModel.roots();
     while (roots.hasNext()) {
