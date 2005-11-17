@@ -25,7 +25,6 @@ public class CloneModelDialog extends BaseNodeDialog {
   private static final DialogDimensionsSettings.DialogDimensions ourDefaultDialogSettings = new DialogDimensionsSettings.DialogDimensions(100, 100, 500, 400);
   private CloneModelProperties myCloneModelProperties;
 
-  private SModelDescriptor myWorkingModel;
   private SModel myProjectModel;
   private ProjectFrame myIde;
   private SModel mySModel;
@@ -42,8 +41,8 @@ public class CloneModelDialog extends BaseNodeDialog {
   public CloneModelDialog(ProjectFrame ide, SModelDescriptor modelDescriptor, IOperationContext operationContext) {
     super(ide, "Clone Model", operationContext);
     myIde = ide;
-    myWorkingModel = ProjectModelDescriptor.createDescriptorFor(operationContext.getModule());
-    myProjectModel = myWorkingModel.getSModel();
+    SModelDescriptor workingModel = ProjectModelDescriptor.createDescriptorFor(operationContext.getModule());
+    myProjectModel = workingModel.getSModel();
     mySModel = modelDescriptor.getSModel();
 
     initNode();

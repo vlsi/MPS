@@ -17,11 +17,8 @@ import java.awt.*;
  * User: Cyril.Konopko
  * Date: 01.09.2005
  * Time: 12:42:23
- * To change this template use File | Settings | File Templates.
  */
 public class AddRequiredModelImportsDialog extends BaseDialog {
-
-
 
   private static final DialogDimensionsSettings.DialogDimensions ourDefaultDimensionSettings = new DialogDimensionsSettings.DialogDimensions(200,200,600,300);
 
@@ -34,11 +31,6 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
 
   private List<String> myLanguagesToAdd;
   private List<SModelUID> myImportsToAdd;
-
-  private JTable myImportsTable;
-  private MyImportsTableModel myImportsTableModel;
-  private JTable myLanguagesTable;
-  private MyImportsTableModel myLanguagesTableModel;
 
   public boolean isCanceled() {
     return myCanceled;
@@ -59,20 +51,20 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
     JPanel panel = new JPanel(new GridLayout(4,1,5,5));
 
     if (!myImports.isEmpty()) {
-      myImportsTableModel = new MyImportsTableModel("Imports", myImports, myImportsToAdd);
-      myImportsTable = new JTable(myImportsTableModel);
-      myImportsTable.getColumnModel().getColumn(0).setWidth(30);
-      myImportsTable.getColumnModel().getColumn(1).setPreferredWidth(300);
+      MyImportsTableModel importsTableModel = new MyImportsTableModel("Imports", myImports, myImportsToAdd);
+      JTable importsTable = new JTable(importsTableModel);
+      importsTable.getColumnModel().getColumn(0).setWidth(30);
+      importsTable.getColumnModel().getColumn(1).setPreferredWidth(300);
       panel.add(new JLabel("Add Imported Models"));
-      panel.add(new JScrollPane(myImportsTable));
+      panel.add(new JScrollPane(importsTable));
     }
     if (!myLanguages.isEmpty()) {
-      myLanguagesTableModel = new MyImportsTableModel("Languages", myLanguages, myLanguagesToAdd);
-      myLanguagesTable = new JTable(myLanguagesTableModel);
-      myLanguagesTable.getColumnModel().getColumn(0).setWidth(30);
-      myLanguagesTable.getColumnModel().getColumn(1).setPreferredWidth(300);
+      MyImportsTableModel languagesTableModel = new MyImportsTableModel("Languages", myLanguages, myLanguagesToAdd);
+      JTable languagesTable = new JTable(languagesTableModel);
+      languagesTable.getColumnModel().getColumn(0).setWidth(30);
+      languagesTable.getColumnModel().getColumn(1).setPreferredWidth(300);
       panel.add(new JLabel("Add Languages"));
-      panel.add(new JScrollPane(myLanguagesTable));
+      panel.add(new JScrollPane(languagesTable));
     }
 
     myMainComponent.add(panel, BorderLayout.CENTER);
@@ -166,7 +158,7 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
 
     public Object getValueAt(int rowIndex, int columnIndex) {
       Object value = myItems.get(rowIndex);
-      if (columnIndex == 0) return (Boolean) myItemsToAdd.contains(value);
+      if (columnIndex == 0) return myItemsToAdd.contains(value);
       return value.toString();
     }
 
