@@ -12,10 +12,7 @@ import javax.swing.event.TreeExpansionEvent;
 import javax.swing.event.TreeWillExpandListener;
 import javax.swing.tree.*;
 import java.awt.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashMap;
@@ -123,20 +120,6 @@ public abstract class MPSTree extends JTree {
     TreePath path = getPathForLocation(e.getX(), e.getY());
     if (path == null) return;
 
-//    //hacks for supporting changing the selection by clicking a tooltip
-//    if (e.isControlDown()) {
-//      addSelectionPath(path);
-//    } else if (e.isShiftDown()) {
-//      int[] rows = getSelectionRows();
-//      int pathRow = getRowForPath(path);
-//      int firstRow = rows[0];
-//      int lastRow = rows[rows.length-1];
-//      int last = Math.max(firstRow, pathRow);
-//      int first = Math.min(lastRow, pathRow);
-//      addSelectionInterval(first, last);
-//    } else {
-//      setSelectionPath(path);
-//    }
     if (path.getLastPathComponent() instanceof MPSTreeNode && e.getClickCount() == 2) {
       setSelectionPath(path);
       MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
