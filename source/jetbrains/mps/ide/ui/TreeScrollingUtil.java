@@ -191,9 +191,7 @@ public class TreeScrollingUtil {
     if (leadSelectionPath != null) {
       Object[] path = leadSelectionPath.getPath();
       Object[] pathToSelect = new Object[path.length > keepSelectionLevel ? keepSelectionLevel : path.length];
-      for (int i = 0; i < pathToSelect.length; i++) {
-        pathToSelect[i] = path[i];
-      }
+      System.arraycopy(path, 0, pathToSelect, 0, pathToSelect.length);
       TreeScrollingUtil.selectPath(tree, new TreePath(pathToSelect));
     }
   }

@@ -67,7 +67,7 @@ public class NodeInformationDialog extends JDialog {
   private String createNodeInfo(SNode node) {
     StringBuilder result = new StringBuilder();
 
-    result.append("Node from model " + node.getModel().getUID() + "\n\n");
+    result.append("Node from model ").append(node.getModel().getUID()).append("\n\n");
 
     for (SReference ref : node.getReferences()) {
       SNode target = ref.getTargetNode();
@@ -76,12 +76,12 @@ public class NodeInformationDialog extends JDialog {
         result.append("Bad Reference\n");
 
       } else {
-        result.append("Model = " + target.getModel().getUID() + "\n");
-        result.append("Node = " + SNodePresentationUtil.getPathToRoot(target) + "\n");
-        result.append("ID  = " + target.getId() + "\n");
+        result.append("Model = ").append(target.getModel().getUID()).append("\n");
+        result.append("Node = ").append(SNodePresentationUtil.getPathToRoot(target)).append("\n");
+        result.append("ID  = ").append(target.getId()).append("\n");
 
         if (ref instanceof ExternalReference && ((ExternalReference) ref).getExtResolveInfo() != null) {
-          result.append("External resolve info = " + ((ExternalReference) ref).getExtResolveInfo() + "\n");
+          result.append("External resolve info = ").append(((ExternalReference) ref).getExtResolveInfo()).append("\n");
         }
       }
 

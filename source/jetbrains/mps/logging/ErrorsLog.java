@@ -19,7 +19,7 @@ public class ErrorsLog {
 
   public void append(String message) {
     if (myMessages.length() < MAX_ERROR_LOG_SIZE) {
-      myMessages.append(message + "\n");
+      myMessages.append(message).append("\n");
     }
   }
 
