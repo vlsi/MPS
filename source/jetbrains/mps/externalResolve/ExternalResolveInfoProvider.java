@@ -13,25 +13,12 @@ import java.util.Iterator;
  * User: Cyril.Konopko
  * Date: 31.07.2005
  * Time: 14:19:17
- * To change this template use File | Settings | File Templates.
  */
 public class ExternalResolveInfoProvider {
 
-//  static {
-//    loadBaseLanguage();
-//  }
-
-//  public static void loadBaseLanguage() {
-//    TypeCheckerAccess.getTypeChecker().loadLanguage(BootstrapLanguages.getInstance().getBaseLanguage());
-//  }
-
   public static String getExtResolveInfoForTargetClassGenericDeclaration(GenericDeclaration genericDeclaration) {
     String name = genericDeclaration.getName();
-    String conceptName = genericDeclaration.getConceptName();
-    Iterator<TypeVariableDeclaration> tvIterator = genericDeclaration.typeVariableDeclarations();
-
-    String result  = "[Classifier]" + name;
-    return result;
+    return "[Classifier]" + name;
   }
 
   public static String getExtResolveInfoForTargetClassConstructorDeclaration(ConstructorDeclaration constructorDeclaration) {
@@ -50,8 +37,7 @@ public class ExternalResolveInfoProvider {
       TSStatus tSStatus = typeChecker.adaptNode(parameterDeclaration.getType());
       ITypeObject parameterTypeObject = tSStatus.getTypeObject();
       if (parameterTypeObject == null) return ExternalResolver.NO_MEMBER_TYPE;
-      String parameterType = "(" + parameterTypeObject.getTypeName() + "/" + parameterTypeObject.getSignature() + ")";
-      result += parameterType;
+      result += "(" + parameterTypeObject.getTypeName() + "/" + parameterTypeObject.getSignature() + ")";
       if (pIterator.hasNext()) result += ", ";
     }
 
@@ -82,8 +68,7 @@ public class ExternalResolveInfoProvider {
       tSStatus = typeChecker.adaptNode(parameterDeclaration.getType());
       typeObject = tSStatus.getTypeObject();
        if (typeObject == null) return ExternalResolver.NO_MEMBER_TYPE;
-      String parameterType = "(" + typeObject.getTypeName() + "/" + typeObject.getSignature() + ")";
-      result += parameterType;
+      result += "(" + typeObject.getTypeName() + "/" + typeObject.getSignature() + ")";
       if (pIterator.hasNext()) result += ", ";
     }
 
