@@ -184,7 +184,7 @@ public class MPSModuleRepository {
     }
     Set<IModule> additionalReleasedModules = new HashSet<IModule>();
     for (IModule module : releasedModules) {
-      if (module instanceof IModule) {
+      if (module != null) {
         additionalReleasedModules.addAll(collectReleasedModules(modules, moduleToOwnerMap, module));
       }
     }

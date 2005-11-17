@@ -64,8 +64,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private MyModelListener myModelListener = new MyModelListener();
 
   private List<ICellSelectionListener> mySelectionListeners = new LinkedList<ICellSelectionListener>();
-  private KeyListener myKeyListener;
-  private Component myPreviousFocusOwner = null;
   private PropertyChangeListener myFocusListener;
   private NodeHighlightManager myHighlightManager = new NodeHighlightManager(this);
 
@@ -78,12 +76,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public AbstractEditorComponent(IOperationContext operationContext, boolean showErrorsGutter) {
-    addFocusListener(new FocusAdapter() {
-      public void focusGained(FocusEvent e) {
-        myPreviousFocusOwner = e.getOppositeComponent();
-      }
-    });
-
     myOperationContext = operationContext;
 
     setFocusTraversalPolicyProvider(true);
@@ -141,7 +133,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myKbdHandlersStack.push(new EditorComponentKeyboardHandler());
 
     // --- init action map --
-    myActionMap = new HashMap();
+    myActionMap = new HashMap<String, EditorCellAction>();
     // -- navigation
     myActionMap.put(EditorCellAction.LEFT, new NodeEditorActions.LEFT());
     myActionMap.put(EditorCellAction.RIGHT, new NodeEditorActions.RIGHT());
@@ -266,7 +258,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     });
 
-    myKeyListener = new KeyAdapter() {
+    addKeyListener(new KeyAdapter() {
       public void keyPressed(final KeyEvent e) {
         processKeyPressed(e);
       }
@@ -274,8 +266,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       public void keyReleased(final KeyEvent e) {
         processKeyReleased(e);
       }
-    };
-    addKeyListener(myKeyListener);
+    });
 
     addFocusListener(new FocusListener() {
       public void focusGained(FocusEvent e) {
@@ -587,7 +578,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (actionType == null) {
       return false;
     }
-    EditorCellAction action = (EditorCellAction) myActionMap.get(actionType);
+    EditorCellAction action = myActionMap.get(actionType);
     if (action != null && action.canExecute(getEditorContext())) {
       action.execute(getEditorContext());
       return true;
@@ -769,7 +760,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       public void checkLeafCell(EditorCell editorCell) {
         if (editorCell == cell) {
           setToStop(true);
-          return;
         } else if (editorCell.isSelectable()) {
           setFoundCell(editorCell);
         }
@@ -817,8 +807,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public EditorCell findNearestCell(int x, int y) {
-    EditorCell cell = null;
-    cell = myRootCell.findCell(x, y);
+    EditorCell cell = myRootCell.findCell(x, y);
     if (cell == null) {
       cell = myRootCell.findNearestCell(x, y, true);
       if (cell == null) {
@@ -929,9 +918,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   protected void fireCellSelectionChanged(EditorCell oldSelection, EditorCell newSelection) {
-    Iterator<ICellSelectionListener> iterator = mySelectionListeners.iterator();
-    while (iterator.hasNext()) {
-      ICellSelectionListener cellSelectionListener = iterator.next();
+    for (ICellSelectionListener cellSelectionListener : mySelectionListeners) {
       try {
         cellSelectionListener.selectionChanged(this, oldSelection, newSelection);
       } catch (Exception e) {
@@ -1097,14 +1084,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       public void run() {
         if (peekKeyboardHandler().processKeyPressed(getEditorContext(), keyEvent) == true) {
           keyEvent.consume();
-          return;
         }
       }
     });
-
     relayout();
-
-    return;
   }
 
   boolean activateNodeSubstituteChooser(EditorCell editorCell, boolean resetPattern) {
@@ -1115,9 +1098,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     // try to obtain substitute info
     INodeSubstituteInfo substituteInfo = null;
     if (editorCell != null) {
-      SNode cellNode = editorCell.getSNode();
-      EditorCell infoCell = editorCell;
-      substituteInfo = infoCell.getSubstituteInfo();
+      substituteInfo = editorCell.getSubstituteInfo();
     }
 
     return activateNodeSubstituteChooser(editorCell, substituteInfo, resetPattern);
@@ -1131,8 +1112,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     // try to obtain substitute info
     INodeSubstituteInfo substituteInfo = null;
     if (editorCell != null) {
-      EditorCell infoCell = editorCell;
-      substituteInfo = infoCell.getSurroundWithSubstituteInfo();
+      substituteInfo = editorCell.getSurroundWithSubstituteInfo();
     }
 
     return activateNodeSubstituteChooser(editorCell, substituteInfo, resetPattern);
@@ -1334,28 +1314,17 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private class MyModelListener implements SModelCommandListener {
     public void modelChangedInCommand(List<SModelEvent> events) {
       if (!EventUtil.isDramaticalChange(events)) {
-        
         rebuildEditorContent(events);
-
       } else {
-
-        String cellId = null;
         String cellRole = null;
-
-
         EditorCell selectedCell = AbstractEditorComponent.this.getSelectedCell();
         if (selectedCell != null) {
-          cellId = (String)selectedCell.getUserObject(EditorCell.CELL_ID);
           cellRole = (String)selectedCell.getUserObject(EditorCell.ROLE);
         }
-
-
-
         rebuildEditorContent(events);
 
         SModelEvent lastAdd = null;
         SModelEvent lastRemove = null;
-
 
         for (SModelEvent e : events) {
           if (e instanceof SModelChildEvent) {
@@ -1440,7 +1409,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             } else {
               changeSelection(nullCell);
             }
-            return;
           }
         }
       }

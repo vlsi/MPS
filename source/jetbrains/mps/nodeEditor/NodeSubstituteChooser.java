@@ -7,7 +7,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.WindowsUtil;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
@@ -37,7 +36,6 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   private boolean myMenuEmpty;
   private String[] myStrings = new String[0];
   private String[] myMatchingStrings;
-  private EditorCell myRelativeCell;
 
   public NodeSubstituteChooser(AbstractEditorComponent editorComponent) {
     myEditorComponent = editorComponent;
@@ -63,7 +61,6 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   }
 
   public void setLocationRelative(EditorCell cell) {
-    myRelativeCell = cell;
     Component component = cell.getEditorContext().getNodeEditorComponent();
     if (component.isShowing()) {
       Point anchor = component.getLocationOnScreen();
@@ -380,12 +377,9 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
 
     public void relayout() {
-      Point newLocation = new Point();
-
       Component component = myRelativeCell.getEditorContext().getNodeEditorComponent();
       Point anchor = component.getLocationOnScreen();
       Point location = new Point(anchor.x + myRelativeCell.getX(), anchor.y + myRelativeCell.getY() + myRelativeCell.getHeight());
-
 
       Rectangle deviceBounds = WindowsUtil.findDeviceBoundsAt(location);
 
@@ -395,7 +389,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
         getPopupWindow().setPosition(PopupWindowPosition.BOTTOM);
       }
 
-      newLocation = location;
+      Point newLocation = location;
 
       DefaultListModel model = (DefaultListModel) myList.getModel();
       int oldIndex = getSelectionIndex();
@@ -410,9 +404,6 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       myList.ensureIndexIsVisible(getSelectionIndex());
 
 
-      Border border = myScroller.getBorder();
-      Insets insets = border.getBorderInsets(myScroller);
-      int scrollerBorderHeight = insets.top + insets.bottom;
       setSize(
               Math.max(PREFERRED_WIDTH, myList.getPreferredSize().width + 50),
               Math.min(PREFERRED_HEIGHT, myList.getPreferredSize().height) + getVerticalScrollerHeight());
@@ -432,7 +423,6 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       if (getWidth() + newLocation.x > deviceBounds.width + deviceBounds.x) {
         newLocation = new Point(deviceBounds.width + deviceBounds.x - getWidth(), newLocation.y);
       }
-
 
       setLocation(newLocation);
 

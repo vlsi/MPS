@@ -2,7 +2,6 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
-import jetbrains.mps.util.CollectionUtil;
 
 import java.util.ArrayList;
 import java.util.Set;
@@ -35,7 +34,6 @@ public class CellLayout_Flow extends AbstractCellLayout {
   private int maxDescent = 0;
   private int maxAscent = 0;
   private int myFirstLineHeight = -1;
-  private int myLastLineHeight = -1;
 
   private CellLayout_Flow myBossLayout = null;
 
@@ -45,10 +43,6 @@ public class CellLayout_Flow extends AbstractCellLayout {
 
   private void setWStart(int WStart) {
     myWStart = WStart;
-  }
-
-  private void setWEnd(int WEnd) {
-    myWEnd = WEnd;
   }
 
   public int getWStart() {
@@ -100,10 +94,6 @@ public class CellLayout_Flow extends AbstractCellLayout {
     this.myFirstLineHeight = firstLineHeight;
   }
 
-  private void setLastLineHeight(int lastLineHeight) {
-    this.myLastLineHeight = lastLineHeight;
-  }
-
   private Set<CellLayout_Flow> getCurrentLineLayouts() {
     return currentLineLayouts;
   }
@@ -116,7 +106,6 @@ public class CellLayout_Flow extends AbstractCellLayout {
     private int x;
     private int y;
     private int maxRightX;
-    private int rowStartX;
     private EditorCell_Collection editorCells;
 
     public FlowLayouter(EditorCell_Collection editorCells) {
@@ -124,7 +113,6 @@ public class CellLayout_Flow extends AbstractCellLayout {
       x = editorCells.getX() + myWStart;
       y = editorCells.getY();
       maxRightX = x;
-      rowStartX = x;
     }
 
     public void doLayout() {
@@ -190,8 +178,8 @@ public class CellLayout_Flow extends AbstractCellLayout {
       }
       boolean currentLineIsEmpty = CellLayout_Flow.this.getCurrentLine().isEmpty();
       if (!currentLineIsEmpty) alignLine();
-      myLastLineHeight = maxAscent + maxDescent;
-      editorCells.setHeight((y + myLastLineHeight) - editorCells.getY());
+      int lastLineHeight = maxAscent + maxDescent;
+      editorCells.setHeight((y + lastLineHeight) - editorCells.getY());
       editorCells.setWidth(maxRightX - editorCells.getX());
       myWEnd = x - editorCells.getX();
     }
@@ -200,7 +188,6 @@ public class CellLayout_Flow extends AbstractCellLayout {
     private void nextLine() {
       y += maxAscent + maxDescent;
       x = editorCells.getX();
-      rowStartX = editorCells.getX();
       setMaxAscent(0);
       setMaxDescent(0);
       getCurrentLine().clear();
@@ -214,7 +201,6 @@ public class CellLayout_Flow extends AbstractCellLayout {
       for (CellLayout_Flow layout_flow : getCurrentLineLayouts()) {
         layout_flow.setMaxAscent(maxAscent);
         layout_flow.setMaxDescent(maxDescent);
-        layout_flow.setLastLineHeight(maxAscent + maxDescent);
         if (layout_flow.myFirstLineHeight == -1) layout_flow.setFirstLineHeight(maxAscent + maxDescent);
       }
       if (myFirstLineHeight == -1) myFirstLineHeight = maxAscent + maxDescent;

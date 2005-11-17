@@ -59,7 +59,7 @@ public class CloneModelDialog extends BaseNodeDialog {
   }
 
   private void initNode() {
-    new CommandRunnable(myProjectModel) {
+    new CommandRunnable() {
       public Object onRun() {
 
         myProjectModel.addLanguage(getOperationContext().getScope().getLanguage("jetbrains.mps.projectLanguage"));

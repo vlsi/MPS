@@ -221,11 +221,9 @@ public class CellExplorerView extends DefaultTool {
   }
 
   private class CellActionsTreeNode extends MPSTreeNode {
-    private EditorCell myCell;
 
     public CellActionsTreeNode(EditorCell cell, IOperationContext operationContext) {
       super(cell, operationContext);
-      myCell = cell;
       Set<String> actions = new TreeSet<String>(cell.getAvailableActions());
       for (String action : actions) {
         add(new TextTreeNode(action));
@@ -238,14 +236,12 @@ public class CellExplorerView extends DefaultTool {
   }
 
   private class KeyMapTreeNode extends MPSTreeNode {
-    private EditorCellKeyMap myKeyMap;
 
     public KeyMapTreeNode(EditorCellKeyMap keyMap) {
       super(null);
-      myKeyMap = keyMap;
 
       Set<String> keys = new TreeSet<String>();
-      for (EditorCellKeyMap.ActionKey ak : myKeyMap.getActionKeys()) {
+      for (EditorCellKeyMap.ActionKey ak : keyMap.getActionKeys()) {
         keys.add(ak.toString());
       }
       for (String key : keys) {
