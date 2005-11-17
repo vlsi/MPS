@@ -478,8 +478,7 @@ public class SModel implements Iterable<SNode> {
     return modelsList.iterator();
   }
 
-  /*package*/
-  Iterator<ImportElement> importElements() {
+  /*package*/ Iterator<ImportElement> importElements() {
     return myImports.iterator();
   }
 
