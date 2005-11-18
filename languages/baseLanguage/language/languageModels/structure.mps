@@ -1208,7 +1208,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107383054539">
-    <property name="name" value="CodeBlockEndingStatement" />
+    <property name="name" value="CodeBlockAbstractReturn" />
     <link role="extends" targetNodeId="1068580123157" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1107383540437">
       <property name="sourceCardinality" value="1" />
@@ -1219,10 +1219,6 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1107383150332">
       <link role="conceptPropertyDeclaration" targetNodeId="34.1107214854626" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107383191824">
-      <property name="value" value="&lt;code block ending statement&gt;" />
-      <link role="conceptPropertyDeclaration" targetNodeId="34.1106346943066" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107460423361">
