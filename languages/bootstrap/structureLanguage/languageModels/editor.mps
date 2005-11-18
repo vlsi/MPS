@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model namespace="jetbrains.mps.bootstrap.structureLanguage">
-  <maxReferenceID value="8" />
+<model name="jetbrains.mps.bootstrap.structureLanguage.editor">
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
-  <import referenceID="1" name="structure" namespace="jetbrains.mps.bootstrap.structureLanguage" />
-  <import referenceID="2" name="structure" namespace="jetbrains.mps.core" />
-  <import referenceID="4" modelUID="jetbrains.mps.nodeEditor@java_stub" />
-  <import referenceID="5" modelUID="jetbrains.mps.smodel@java_stub" />
-  <import referenceID="6" modelUID="java.lang@java_stub" />
-  <import referenceID="7" modelUID="java.util@java_stub" />
-  <import referenceID="8" modelUID="jetbrains.mps.bootstrap.structureLanguage@java_stub" />
+  <maxImportIndex value="8" />
+  <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
+  <import index="2" modelUID="jetbrains.mps.core.structure" />
+  <import index="4" modelUID="jetbrains.mps.nodeEditor@java_stub" />
+  <import index="5" modelUID="jetbrains.mps.smodel@java_stub" />
+  <import index="6" modelUID="java.lang@java_stub" />
+  <import index="7" modelUID="java.util@java_stub" />
+  <import index="8" modelUID="jetbrains.mps.bootstrap.structureLanguage@java_stub" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1082979388796">
     <property name="name" value="ConstrainedDataTypeDeclaration_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1082978499127" />
@@ -206,8 +206,8 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1083175577171">
         <property name="drawBorder" value="false" />
         <property name="vertical" value="true" />
-        <property name="selectable" value="false" />
         <property name="gridLayout" value="true" />
+        <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1083175632064">
           <property name="drawBorder" value="false" />
           <property name="vertical" value="false" />
@@ -279,7 +279,7 @@
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1083172759161">
         <property name="name" value="dataTypes" />
         <property name="queryId" value="AllConstrainedDataTypeDeclarations" />
-        <property name="textProviderId" value="SemanticNodeNameText" />
+        <property name="textProviderId" value="Name" />
       </node>
     </node>
   </node>
@@ -289,7 +289,7 @@
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1083243818252">
         <property name="name" value="dataTypes" />
         <property name="queryId" value="AllPrimitiveDataTypeDeclarations" />
-        <property name="textProviderId" value="SemanticNodeNameText" />
+        <property name="textProviderId" value="Name" />
       </node>
     </node>
   </node>
@@ -416,6 +416,7 @@
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1114602618512">
           <property name="name" value="concepts" />
           <property name="queryId" value="ConceptsToExtend" />
+          <property name="textProviderId" value="Name" />
         </node>
       </node>
     </node>
@@ -533,8 +534,8 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1105739255644">
             <property name="vertical" value="true" />
-            <property name="gridLayout" value="true" />
             <property name="selectable" value="false" />
+            <property name="gridLayout" value="true" />
             <link role="linkDeclaration" targetNodeId="1.1071489727084" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1105739255645">
@@ -548,8 +549,8 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1105726767734">
             <property name="vertical" value="true" />
-            <property name="selectable" value="false" />
             <property name="gridLayout" value="true" />
+            <property name="selectable" value="false" />
             <link role="linkDeclaration" targetNodeId="1.1071489727083" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1105726767735">
@@ -565,8 +566,8 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1105726873349">
             <property name="drawBorder" value="false" />
             <property name="vertical" value="true" />
-            <property name="gridLayout" value="true" />
             <property name="selectable" value="false" />
+            <property name="gridLayout" value="true" />
             <link role="linkDeclaration" targetNodeId="1.1105725339613" />
             <link role="elementActionSet" targetNodeId="1119979591232" />
             <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1119979772535">
@@ -588,8 +589,8 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1105739239079">
             <property name="drawBorder" value="false" />
             <property name="vertical" value="true" />
-            <property name="selectable" value="false" />
             <property name="gridLayout" value="true" />
+            <property name="selectable" value="false" />
             <link role="linkDeclaration" targetNodeId="1.1105736949336" />
             <link role="elementActionSet" targetNodeId="1119980075004" />
             <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1119980098182">
@@ -659,7 +660,7 @@
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1105734363617">
           <property name="name" value="integerConceptPropertyDeclaration" />
           <property name="queryId" value="IntegerConceptPropertyDeclarations" />
-          <property name="textProviderId" value="SemanticNodeNameText" />
+          <property name="textProviderId" value="Name" />
         </node>
         <node role="substituteQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1105734363618">
           <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1105734363619" />
@@ -710,7 +711,7 @@
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1105734307939">
           <property name="name" value="booleanConceptPropertyDeclaration" />
           <property name="queryId" value="BooleanConceptPropertyDeclarations" />
-          <property name="textProviderId" value="SemanticNodeNameText" />
+          <property name="textProviderId" value="Name" />
         </node>
         <node role="substituteQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1105734307940">
           <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1105734307941" />
@@ -750,7 +751,7 @@
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1105733336519">
           <property name="name" value="stringConceptPropertyDeclaration" />
           <property name="queryId" value="StringConceptPropertyDeclarations" />
-          <property name="textProviderId" value="SemanticNodeNameText" />
+          <property name="textProviderId" value="Name" />
         </node>
         <node role="substituteQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1105733336520">
           <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1105733336521" />
@@ -857,7 +858,7 @@
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1105751427402">
           <property name="name" value="linkDeclaration" />
           <property name="queryId" value="ReferenceConceptLinkDeclarations" />
-          <property name="textProviderId" value="SemanticNodeNameText" />
+          <property name="textProviderId" value="Name" />
         </node>
         <node role="substituteQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1105751427403">
           <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1105751427404" />
@@ -872,7 +873,7 @@
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1105982621381">
           <property name="name" value="linkTarget" />
           <property name="queryId" value="ReferenceConceptLinkTargets" />
-          <property name="textProviderId" value="SemanticNodeNameText" />
+          <property name="textProviderId" value="Name" />
         </node>
         <node role="substituteQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1105982621382">
           <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1105982621383" />
