@@ -1161,7 +1161,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107382435476">
     <property name="name" value="CodeBlockBreak" />
-    <link role="extends" targetNodeId="1107383054539" />
+    <link role="extends" targetNodeId="1068580123157" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107382525629">
       <property name="value" value="break" />
       <link role="conceptPropertyDeclaration" targetNodeId="34.1106346943066" />
@@ -1173,7 +1173,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107382563459">
     <property name="name" value="CodeBlockContinue" />
-    <link role="extends" targetNodeId="1107383054539" />
+    <link role="extends" targetNodeId="1068580123157" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107382585749">
       <property name="value" value="continue" />
       <link role="conceptPropertyDeclaration" targetNodeId="34.1106346943066" />
