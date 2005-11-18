@@ -188,7 +188,7 @@ public class DefaultReferencePersister implements IReferencePersister {
   // --
 
 
-  protected static class ReferenceTargetDescriptor {
+  public static class ReferenceTargetDescriptor {
     public ReferenceTargetDescriptor() {
 
     }
