@@ -232,6 +232,7 @@
       <module fileurl="file://$PROJECT_DIR$/projects/Epigram/Epigram.iml" filepath="$PROJECT_DIR$/projects/Epigram/Epigram.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/KeyMapTutorial/KeyMapTutorial.iml" filepath="$PROJECT_DIR$/projects/KeyMapTutorial/KeyMapTutorial.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/MPS.iml" filepath="$PROJECT_DIR$/MPS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSPlugin.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSPlugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPSWiki/MPSWiki.iml" filepath="$PROJECT_DIR$/MPSWiki/MPSWiki.iml" group="DataLanguages" />
       <module fileurl="file://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/MPSWiki_WebApp.iml" filepath="$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/MPSWiki_WebApp.iml" group="DataLanguages" />
       <module fileurl="file://$PROJECT_DIR$/Remoting/Remoting.iml" filepath="$PROJECT_DIR$/Remoting/Remoting.iml" />
@@ -318,15 +319,14 @@
         <root url="jar://$PROJECT_DIR$/lib/log4j-1.2.9-src.zip!/" />
       </SOURCES>
     </library>
-    <library name="Commons-Email">
+    <library name="Commons-Mail">
       <CLASSES>
+        <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/smtp.jar!/" />
+        <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/mail.jar!/" />
         <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/activation.jar!/" />
+        <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/pop3.jar!/" />
         <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/commons-email.jar!/" />
         <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/imap.jar!/" />
-        <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/mail.jar!/" />
-        <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/mailapi.jar!/" />
-        <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/pop3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/smtp.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
