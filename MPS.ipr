@@ -318,14 +318,15 @@
         <root url="jar://$PROJECT_DIR$/lib/log4j-1.2.9-src.zip!/" />
       </SOURCES>
     </library>
-    <library name="Commons-Mail">
+    <library name="Commons-Email">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/smtp.jar!/" />
-        <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/mail.jar!/" />
         <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/activation.jar!/" />
-        <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/pop3.jar!/" />
         <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/commons-email.jar!/" />
         <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/imap.jar!/" />
+        <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/mail.jar!/" />
+        <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/mailapi.jar!/" />
+        <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/pop3.jar!/" />
+        <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/smtp.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>

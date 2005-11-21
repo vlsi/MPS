@@ -118,7 +118,11 @@ public class ProjectPane extends JComponent implements IActionDataProvider {
   public <T> T get(Class<T> cls) {
     if (cls == SNode.class) return (T) getSelectedNode();
     if (cls == SModelDescriptor.class) return (T) getSelectedModel();
-    if (cls == List.class) return (T) getSelectedNodes();
+    if (cls == List.class) {
+      List result = new ArrayList();
+      result.add(getSelectedModel());
+      return (T) result;
+    }
     if (cls == IOperationContext.class) return (T) getContextForSelection();
     return null;
   }
@@ -420,7 +424,10 @@ public class ProjectPane extends JComponent implements IActionDataProvider {
     for (TreePath path : paths) {
       MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
       if (node instanceof MPSTreeNodeEx) {
-        result.add(((MPSTreeNodeEx) node).getSNode());
+        SNode snode = ((MPSTreeNodeEx) node).getSNode();
+        if (snode != null) {
+          result.add(snode);
+        }
       }
     }
     return result;
