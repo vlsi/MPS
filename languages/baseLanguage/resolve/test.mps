@@ -155,7 +155,7 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1124880034707">
             <property name="name" value="str" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.StringLiteral" id="1124810751895">
-              <property name="value" value="rubber" />
+              <property name="value" value="rub ber sds sd s lkj lk d" />
             </node>
             <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1124880034788">
               <link role="classifier" extResolveInfo="2.[ClassConcept]String" />
