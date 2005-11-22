@@ -70,6 +70,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private IOperationContext myOperationContext;
 
   private MessagesGutter myMessagesGutter = new MessagesGutter(this);
+  private boolean myIsDirtyLayout = false;
 
   public AbstractEditorComponent(IOperationContext operationContext) {
     this(operationContext, false);
@@ -587,9 +588,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void relayout() {
-    myRootCell.relayout();
-    revalidate();
-    repaint();
+    if (myIsDirtyLayout) {
+      myRootCell.relayout();
+      revalidate();
+      repaint();
+      myIsDirtyLayout = false;
+    }
   }
 
   public void selectNode(final SNode node) {
@@ -1022,6 +1026,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
 
   public void processKeyPressed(final KeyEvent keyEvent) {
+    myIsDirtyLayout = true;
+
     // hardcoded undo/redo action
     if (keyEvent.getKeyCode() == KeyEvent.VK_Z && keyEvent.isControlDown()) {
       if (keyEvent.isShiftDown()) {
