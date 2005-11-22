@@ -148,17 +148,12 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell) {
-
-      EditorCell_Collection prev_parentCell = findHorizontalCollection(cell);
-
-      if (prev_parentCell == null) return null;
-      return EditorUtil.findFirstSelectableCell(prev_parentCell);
-
+      return EditorUtil.findRightmostOrLeftmostCell(cell, true);
     }
 
   }
 
-  public  static class END extends EditorCellAction {
+  public static class END extends EditorCellAction {
 
     public boolean canExecute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
@@ -178,12 +173,7 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell) {
-
-      EditorCell_Collection prev_parentCell = findHorizontalCollection(cell);
-
-      if (prev_parentCell == null) return null;
-      return EditorUtil.findLastSelectableCell(prev_parentCell);
-
+      return EditorUtil.findRightmostOrLeftmostCell(cell, false);
     }
 
   }
