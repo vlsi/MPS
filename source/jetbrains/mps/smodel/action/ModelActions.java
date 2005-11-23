@@ -22,6 +22,9 @@ import java.util.Collections;
  * To change this template use File | Settings | File Templates.
  */
 public class ModelActions {
+  public static final String DONT_SUBSTITUTE_BY_DEFAULT = "dontSubstituteByDefault";
+  public static final String ABSTRACT = "abstract";
+
   public static List<INodeSubstituteAction> createChildNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, final IScope scope) {
 
     final ConceptDeclaration targetConcept = linkDeclaration.getTarget();
@@ -29,7 +32,7 @@ public class ModelActions {
     // "default" substitute actions
     List<ConceptDeclaration> targetConcepts = SModelUtil.allConceptDeclarations(sourceNode.getModel(), scope, new Condition<ConceptDeclaration>() {
       public boolean met(ConceptDeclaration node) {
-        if (!SModelUtil.hasConceptProperty(node, "abstract", scope)) {
+        if (!SModelUtil.hasConceptProperty(node, ABSTRACT, scope) && !SModelUtil.hasConceptProperty(node, DONT_SUBSTITUTE_BY_DEFAULT, scope)) {
           return SModelUtil.isAssignableType(targetConcept, node);
         }
         return false;
