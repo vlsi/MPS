@@ -537,6 +537,16 @@ public class TemplateGenUtil {
         return nodeBuilder;
       }
     }
+
+    // test - reduce here
+    {
+    INodeBuilder nodeBuilder = ((AbstractTemplateModelGenerator)generator).getNodeBuilderManager().tryReduceByReductionRule(sourceNode);
+      if(nodeBuilder != null) {
+        nodeBuilder.setRoleInParent(sourceNode.getRole_());
+        return nodeBuilder;
+      }
+    }
+
     INodeBuilder nodeBuilder = createDefaultNodeBuilder(sourceNode, sourceNode, null, generator);
     List<SNode> children = sourceNode.getChildren();
     for (SNode child : children) {
