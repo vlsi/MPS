@@ -156,9 +156,9 @@ public class GenerationSession implements ModelOwner {
       SModelDescriptor currentSourceModel = currentTargetModel;
       SModelDescriptor transientModel = createTransientModel(iterationCount, sourceModel, generatorContext.getModule());
       int numReductions = generator.prepareReduction(currentSourceModel.getSModel(), transientModel.getSModel());
-      while (numReductions == 0 && generator.hasPendingReductions()) {
-        numReductions = generator.preparePendingReduction();
-      }
+//      while (numReductions == 0 && generator.hasPendingReductions()) {
+//        numReductions = generator.preparePendingReduction();
+//      }
 
       generator.getProgressMonitor().addText("found reductions : " + numReductions);
       if (numReductions == 0) {

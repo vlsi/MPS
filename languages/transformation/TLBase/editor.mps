@@ -886,16 +886,6 @@
               <link role="linkDeclaration" targetNodeId="1.1114456501997" />
             </node>
           </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1121381338577">
-            <property name="drawBorder" value="false" />
-            <property name="name" value="separator" />
-            <property name="selectable" value="false" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1121461471684">
-            <property name="drawBorder" value="false" />
-            <property name="nullText" value="&lt;no pending reductions&gt;" />
-            <link role="linkDeclaration" targetNodeId="1.1121381256013" />
-          </node>
         </node>
       </node>
     </node>
@@ -1280,58 +1270,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1121191859679">
         <property name="drawBorder" value="false" />
         <property name="cellProviderId" value="templateWeavingReductionCommand_Context_CellProvider" />
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1121461254581">
-    <link role="conceptDeclaration" targetNodeId="1.1121461070170" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1121461254582">
-      <property name="drawBorder" value="false" />
-      <property name="vertical" value="true" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1121461257614">
-        <property name="drawBorder" value="false" />
-        <property name="vertical" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1121461257615">
-          <property name="text" value="pending reduction rules:" />
-          <property name="drawBorder" value="false" />
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1121461257617">
-        <property name="drawBorder" value="false" />
-        <property name="name" value="separator" />
-        <property name="selectable" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1121461257618">
-        <property name="drawBorder" value="false" />
-        <property name="vertical" value="false" />
-        <property name="selectable" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1121461257619">
-          <property name="text" value="    " />
-          <property name="drawBorder" value="false" />
-          <property name="name" value="indent" />
-          <property name="selectable" value="false" />
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1121461257620">
-          <property name="drawBorder" value="false" />
-          <property name="vertical" value="true" />
-          <property name="selectable" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1121461434322">
-            <property name="drawBorder" value="false" />
-            <property name="vertical" value="true" />
-            <property name="gridLayout" value="true" />
-            <link role="linkDeclaration" targetNodeId="1.1114456501997" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1121461257630">
-            <property name="drawBorder" value="false" />
-            <property name="name" value="separator" />
-            <property name="selectable" value="false" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1121461443464">
-            <property name="drawBorder" value="false" />
-            <property name="nullText" value="&lt;no next level pending reductions&gt;" />
-            <link role="linkDeclaration" targetNodeId="1.1121381256013" />
-          </node>
-        </node>
       </node>
     </node>
   </node>

@@ -35,9 +35,9 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   int prepareReduction(SModel sourceModel, SModel targetModel);
 
-  boolean hasPendingReductions();
-
-  int preparePendingReduction();
+//  boolean hasPendingReductions();
+//
+//  int preparePendingReduction();
 
   void doReduction();
 
