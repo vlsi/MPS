@@ -9,6 +9,7 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.DiagnosticUtil;
 import jetbrains.mps.util.NameUtil;

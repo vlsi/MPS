@@ -1,5 +1,7 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.util.NameUtil;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -64,6 +66,10 @@ public class SModelUID implements Comparable {
 
   public String getLongName() {
     return myLongName;
+  }
+
+  public String getNamespace() {
+    return NameUtil.namespaceFromLongName(getLongName());
   }
 
   public String getShortName() {
