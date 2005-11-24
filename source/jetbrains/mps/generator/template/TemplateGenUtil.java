@@ -231,15 +231,15 @@ public class TemplateGenUtil {
     }
   }
 
-  public static void applyWeaveTemplateReductionCommand(SNode sourceNode, ReductionCommand_WeaveTemplate command, INodeBuilder defaultContextBuilder, ITemplateGenerator generator) {
-    TemplateDeclaration templateDeclaration = command.getTemplateDeclaration();
-    INodeBuilder contextBuilder = getContextNodeBuilderForWeaveReductionCommand(sourceNode, command, defaultContextBuilder, generator);
-    if (contextBuilder == null) {
-      generator.showErrorMessage(sourceNode, command, "Couldn't create context node builder");
-      return;
-    }
-    weaveTemplateDeclaration(sourceNode, templateDeclaration, contextBuilder, generator, command);
-  }
+//  public static void applyWeaveTemplateReductionCommand(SNode sourceNode, ReductionCommand_WeaveTemplate command, INodeBuilder defaultContextBuilder, ITemplateGenerator generator) {
+//    TemplateDeclaration templateDeclaration = command.getTemplateDeclaration();
+//    INodeBuilder contextBuilder = getContextNodeBuilderForWeaveReductionCommand(sourceNode, command, defaultContextBuilder, generator);
+//    if (contextBuilder == null) {
+//      generator.showErrorMessage(sourceNode, command, "Couldn't create context node builder");
+//      return;
+//    }
+//    weaveTemplateDeclaration(sourceNode, templateDeclaration, contextBuilder, generator, command);
+//  }
 
   public static boolean isContextlessFragment(TemplateDeclaration templateDeclaration) {
     List<TemplateFragment> templateFragments = getTemplateFragments(templateDeclaration);
@@ -310,16 +310,16 @@ public class TemplateGenUtil {
     return nodeBuilder;
   }
 
-  private static INodeBuilder getContextNodeBuilderForWeaveReductionCommand(SNode sourceNode, ReductionCommand_WeaveTemplate command, INodeBuilder defaultContextBuilder, ITemplateGenerator generator) {
-    String aspectId = command.getContextProviderAspectId();
-    if (aspectId == null) {
-      return defaultContextBuilder;
-    }
-    String methodName = "templateWeavingRule_Context_" + aspectId;
-    Object[] args = new Object[]{sourceNode, generator};
-    INodeBuilder nodeBuilder = (INodeBuilder) QueryMethod.invoke(methodName, args, command.getModel());
-    return nodeBuilder;
-  }
+//  private static INodeBuilder getContextNodeBuilderForWeaveReductionCommand(SNode sourceNode, ReductionCommand_WeaveTemplate command, INodeBuilder defaultContextBuilder, ITemplateGenerator generator) {
+//    String aspectId = command.getContextProviderAspectId();
+//    if (aspectId == null) {
+//      return defaultContextBuilder;
+//    }
+//    String methodName = "templateWeavingRule_Context_" + aspectId;
+//    Object[] args = new Object[]{sourceNode, generator};
+//    INodeBuilder nodeBuilder = (INodeBuilder) QueryMethod.invoke(methodName, args, command.getModel());
+//    return nodeBuilder;
+//  }
 
 
   public static List<INodeBuilder> createNodeBuildersForTemplateNode(SNode parentSourceNode, SNode templateNode, String mappingName, ITemplateGenerator generator) {
@@ -335,13 +335,10 @@ public class TemplateGenUtil {
 
   public static boolean isTemplateLanguageElement(SNode templateNode) {
     String role = templateNode.getRole_();
-    if (role.equals(ITemplateGenerator.ROLE_NODE_MAKRO) ||
+    return role.equals(ITemplateGenerator.ROLE_NODE_MAKRO) ||
             role.equals(ITemplateGenerator.ROLE_TEMPLATE_FRAGMENT) ||
             role.startsWith(ITemplateGenerator.ROLE_PREFIX_PROPERTY_MAKRO) ||
-            role.startsWith(ITemplateGenerator.ROLE_PREFIX_REFEENCE_MAKRO)) {
-      return true;
-    }
-    return false;
+            role.startsWith(ITemplateGenerator.ROLE_PREFIX_REFEENCE_MAKRO);
   }
 
   private static void createChildBuilders(INodeBuilder parentNodeBuilder) {

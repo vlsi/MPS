@@ -504,7 +504,7 @@
         <property name="gridLayout" value="true" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1095676812694">
           <property name="drawBorder" value="false" />
-          <property name="nullText" value="&lt;no target template&gt;" />
+          <property name="nullText" value="&lt;no template&gt;" />
           <link role="linkDeclaration" targetNodeId="1.1095418098242" />
           <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1095676812695">
             <link role="conceptDeclaration" targetNodeId="1.1092059087312" />
@@ -947,13 +947,12 @@
         <property name="cellProviderId" value="reductionRuleCondition_AspectId" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1114461360777">
-        <property name="text" value="-&gt; commands:" />
+        <property name="text" value="--&gt;" />
         <property name="drawBorder" value="false" />
         <property name="selectable" value="false" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1114461411465">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1132874734575">
         <property name="drawBorder" value="false" />
-        <property name="vertical" value="true" />
         <link role="linkDeclaration" targetNodeId="1.1114461325523" />
       </node>
     </node>
@@ -978,7 +977,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1114474278439">
         <property name="drawBorder" value="false" />
-        <property name="cellProviderId" value="reductionCommand_CallAspect_AspectId" />
+        <property name="cellProviderId" value="reductionCommand_CustomBuilder_AspectId" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1114474278440">
         <property name="textFgColor" value="DARK_BLUE" />
@@ -1248,54 +1247,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1118786597053">
         <property name="drawBorder" value="false" />
         <property name="selectable" value="false" />
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1121121744227">
-    <link role="conceptDeclaration" targetNodeId="1.1121121600714" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1121121753744">
-      <property name="editable" value="true" />
-      <property name="textFgColor" value="DARK_BLUE" />
-      <property name="text" value="remove current" />
-      <property name="fontStyle" value="BOLD_ITALIC" />
-      <property name="drawBorder" value="false" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1121190999059">
-    <link role="conceptDeclaration" targetNodeId="1.1121190886242" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1121190999107">
-      <property name="drawBorder" value="false" />
-      <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1121191838362">
-        <property name="textFgColor" value="DARK_BLUE" />
-        <property name="text" value="weave template (" />
-        <property name="fontStyle" value="BOLD_ITALIC" />
-        <property name="drawBorder" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1121191838363">
-        <property name="drawBorder" value="false" />
-        <property name="nullText" value="choose template" />
-        <link role="linkDeclaration" targetNodeId="1.1121190886291" />
-        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1121191838364">
-          <link role="conceptDeclaration" targetNodeId="1.1092059087312" />
-          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1121191838365">
-            <property name="defaultText" value="&lt;no name&gt;" />
-            <property name="drawBorder" value="false" />
-            <property name="readOnly" value="true" />
-            <link role="propertyDeclaration" targetNodeId="4.1078489098626" />
-          </node>
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1121191838366">
-        <property name="textFgColor" value="DARK_BLUE" />
-        <property name="text" value=") context:" />
-        <property name="fontStyle" value="BOLD_ITALIC" />
-        <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1121191859679">
-        <property name="drawBorder" value="false" />
-        <property name="cellProviderId" value="templateWeavingReductionCommand_Context_CellProvider" />
       </node>
     </node>
   </node>

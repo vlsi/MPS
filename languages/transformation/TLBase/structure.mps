@@ -224,7 +224,7 @@
     <property name="name" value="ReductionRule" />
     <link role="extends" targetNodeId="2.1078489098625" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1114461325523">
-      <property name="sourceCardinality" value="0..n" />
+      <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="1" />
       <property name="role" value="reductionCommand" />
       <property name="metaClass" value="aggregation" />
@@ -336,32 +336,6 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1118786554309">
       <property name="value" value="loop macro" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1107214812281" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1121121600714">
-    <property name="name" value="ReductionCommand_RemoveCurrent" />
-    <link role="extends" targetNodeId="1114456602485" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1121121638841">
-      <property name="value" value="remove current" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1121190886242">
-    <property name="name" value="ReductionCommand_WeaveTemplate" />
-    <link role="extends" targetNodeId="1114456602485" />
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1121190949089">
-      <property name="name" value="contextProviderAspectId" />
-      <link role="dataType" targetNodeId="2.1082983041843" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1121190886290">
-      <property name="value" value="weave template" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1121190886291">
-      <property name="sourceCardinality" value="1" />
-      <property name="targetCardinality" value="0..n" />
-      <property name="role" value="templateDeclaration" />
-      <link role="target" targetNodeId="1092059087312" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1131073187192">
