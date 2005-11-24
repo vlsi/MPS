@@ -4,6 +4,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.event.SModelEvent;
 
 import java.awt.*;
@@ -18,14 +19,14 @@ public class EditorContext {
   private static final Logger LOG = Logger.getLogger(EditorContext.class);
 
   private AbstractEditorComponent myNodeEditorComponent;
-  private SModel myModel;
+  private SModelDescriptor myModelDescriptor;
   private IOperationContext myOperationContext;
   private EditorCell myContextCell;
   private java.util.List<SModelEvent> mySModelEvents = null;
 
   public EditorContext(AbstractEditorComponent editorComponent, SModel model, IOperationContext operationContext) {
     myNodeEditorComponent = editorComponent;
-    myModel = model;
+    myModelDescriptor = model == null ? null : model.getModelDescriptor();
     myOperationContext = operationContext;
   }
 
@@ -34,7 +35,7 @@ public class EditorContext {
   }
 
   public SModel getModel() {
-    return myModel;
+    return myModelDescriptor.getSModel();
   }
 
   public IOperationContext getOperationContext() {

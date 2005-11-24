@@ -24,9 +24,7 @@ import org.jdom.Element;
 
 import javax.swing.*;
 import java.io.File;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 
 /**
@@ -210,7 +208,11 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     });
   }
 
-  public void generateModels(List<SModel> sourceModels, Language targetLanguage, IOperationContext invocationContext, boolean generateText, IProgressMonitor progress) {
+  public void generateModels(List<SModel> _sourceModels, Language targetLanguage, IOperationContext invocationContext, boolean generateText, IProgressMonitor progress) {
+    List<SModelDescriptor> sourceModels = new ArrayList<SModelDescriptor>();
+    for (SModel model : _sourceModels) {
+      sourceModels.add(model.getModelDescriptor());
+    }
     clearMessages();
     addMessage(MessageKind.INFORMATION, "generating " + (generateText ? "text" : "files"));
     addMessage(MessageKind.INFORMATION, "    target language: \"" + targetLanguage.getNamespace() + "\"");
@@ -246,7 +248,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         progress.advance(AMOUNT_PER_COMPILATION / 4);
       }
 
-      // re-load classes anyway (to be sure that java_stab are up-to-date)
+      // re-load classes anyway (to be sure that java_stub are up-to-date)
       progress.addText("reloading MPS classes...");
       ReloadUtils.reloadAll();
       progress.advance(AMOUNT_PER_COMPILATION / 2);
@@ -254,7 +256,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       GenerationSession generationSession = new GenerationSession(targetLanguage, invocationContext, progress);
       generationSession.setSaveTransientModels(isSaveTransientModels());
       GenerationStatus status = null;
-      for (SModel sourceModel : sourceModels) {
+      for (SModelDescriptor sourceModelDescriptor : sourceModels) {
+        SModel sourceModel = sourceModelDescriptor.getSModel();
         status = generationSession.generateModel(sourceModel);
         if (status.getOutputModel() != null) {
           if (generateText) {

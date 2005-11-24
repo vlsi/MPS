@@ -4,6 +4,7 @@ import jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.PropertySupport;
+import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.annotations.Hack;
 
 /**
@@ -11,14 +12,14 @@ import jetbrains.mps.annotations.Hack;
  * Date: Jan 16, 2004
  */
 public class PropertyAccessor implements ModelAccessor {
-  private SNode myNode;
+  private SNodeProxy myNodeProxy;
   private String myPropertyName;
   private boolean myReadOnly;
   private boolean myAllowEmptyText;
   private PropertyDeclaration myPropertyDeclaration;
 
   public PropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, EditorContext editorContext) {
-    myNode = node;
+    myNodeProxy = new SNodeProxy(node);
     myPropertyName = propertyName;
     myReadOnly = readOnly || node.getModel().isNotEditable() || editorContext.getNodeEditorComponent().isReadOnly();
     myAllowEmptyText = allowEmptyText;
@@ -30,7 +31,7 @@ public class PropertyAccessor implements ModelAccessor {
   }
 
   public String getText() {
-    String value = myNode.getProperty(myPropertyName);
+    String value = myNodeProxy.getNode().getProperty(myPropertyName);
     return fromInternal(value);
   }
 
@@ -41,7 +42,7 @@ public class PropertyAccessor implements ModelAccessor {
       }
       if (isValidText_internal(text)) {
         String propertyValue = toInternal(text);
-        myNode.setProperty(myPropertyName, propertyValue);
+        myNodeProxy.getNode().setProperty(myPropertyName, propertyValue);
       }
     }
   }
@@ -53,7 +54,7 @@ public class PropertyAccessor implements ModelAccessor {
 
   private boolean isValidText_internal(String text) {
     if (myReadOnly) {
-      String propertyValue = myNode.getProperty(myPropertyName);
+      String propertyValue = myNodeProxy.getNode().getProperty(myPropertyName);
       return (text == null && propertyValue == null) || (text != null && text.equals(propertyValue));
     }
 

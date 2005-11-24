@@ -32,18 +32,6 @@ public class ClassLoaderManager {
     updateClassPath();
   }
 
-  public void reloadAll() {
-    IClassPathItem item = null;
-    if (myClassLoader instanceof MPSClassLoader) {
-      item = ((MPSClassLoader) myClassLoader).getClassPathItem();
-    }
-    myClassLoader = null;
-
-    if (item != null) {
-      myClassLoader = new MPSClassLoader(item);
-    }
-  }
-
   public void setUseSystemClassLoader(boolean useSystemClassLoader) {
     myUseSystemClassLoader = useSystemClassLoader;
   }
@@ -61,6 +49,7 @@ public class ClassLoaderManager {
 
     return myClassLoader;
   }
+
 
   public void updateClassPath() {
     if (myUseSystemClassLoader) return;

@@ -73,6 +73,7 @@ public class SModelRepository extends SModelAdapter {
     if (owners == null) {
       owners = new HashSet<ModelOwner>();
       myModelToOwnerMap.put(modelDescriptor, owners);
+      myUIDToModelDescriptorMap.put(modelDescriptor.getModelUID(), modelDescriptor);
     }
     owners.add(owner);
     fireRepositoryChanged();

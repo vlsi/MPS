@@ -1,7 +1,7 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.ProjectFrame;
-import jetbrains.mps.ide.command.CommandProcessor;
+//import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
@@ -24,7 +24,6 @@ import java.util.List;
  */
 class SModelTreeNode extends MPSTreeNodeEx {
   private SModelDescriptor myModelDescriptor;
-  private SModel myModel;
   private String myLabel;
   private boolean isInitialized = false;
   private MyModelListener myModelListener = new MyModelListener();
@@ -87,16 +86,17 @@ class SModelTreeNode extends MPSTreeNodeEx {
 
   public void init() {
     removeAllChildren();
-    CommandProcessor.instance().executeCommand(new Runnable() {
-      public void run() {
-        myModel = myModelDescriptor.getSModel();
-      }
-    }, "loading model in project pane");
+    SModel model;
+  /*  CommandProcessor.instance().executeCommand(new Runnable() {
+      public void run() {*/
+        model = myModelDescriptor.getSModel();
+  /*    }
+    }, "loading model in project pane");*/
 
-    if (!myModel.hasSModelCommandListener(myModelListener)) {
-      myModel.addSModelCommandListener(myModelListener);
+    if (!model.hasSModelCommandListener(myModelListener)) {
+      model.addSModelCommandListener(myModelListener);
     }
-    List<SNode> sortedRoots = SortUtil.sortNodes(myModel.getRoots());
+    List<SNode> sortedRoots = SortUtil.sortNodes(model.getRoots());
     for (SNode sortedRoot : sortedRoots) {
       MPSTreeNodeEx treeNode = new SNodeTreeNode(sortedRoot, getOperationContext());
       add(treeNode);
