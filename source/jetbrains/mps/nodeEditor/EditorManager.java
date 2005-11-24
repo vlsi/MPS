@@ -128,6 +128,7 @@ public class EditorManager {
       }
     }
 
+    nodeEditorComponent.clearNodesCellDependsOn(oldCell);
     EditorCell editorCell = createEditorCell_internal(context, node, myCreatingInspectedCell);
 
     return editorCell;

@@ -1,6 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.WeakSet;
 
 import java.util.HashSet;
 import java.util.Set;

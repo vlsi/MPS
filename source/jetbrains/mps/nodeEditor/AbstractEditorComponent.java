@@ -424,6 +424,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       SModel semanticModel = semanticNode.getModel();
       semanticModel.removeSModelCommandListener(myModelListener);
     }
+    clearCaches();
+  }
+
+  public void clearCaches() {
+    myCellsToNodesToDependOnMap.clear();
+    myNodesToBigCellsMap.clear();
   }
 
   private void setRootCell(EditorCell rootCell) {
