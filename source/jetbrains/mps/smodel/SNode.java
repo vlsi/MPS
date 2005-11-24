@@ -620,10 +620,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   private void delete_internal() {
 
-    if (getModel().isRoot(this)) {
-      getModel().fireBeforeRootDeletedEvent(this);
-    }
-
     // delete all children
     myModel.removeNodeId(getId());
     List<SNode> children = new LinkedList<SNode>(getChildren());
