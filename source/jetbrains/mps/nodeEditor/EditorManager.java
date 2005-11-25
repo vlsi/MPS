@@ -110,14 +110,16 @@ public class EditorManager {
         if (myMap.containsKey(node)) {
           EditorCell editorCell = myMap.get(node);
           final Set<SNode> nodesOldCellDependsOn = nodeEditorComponent.getCopyOfNodesCellDependsOn(editorCell);
-          //voodoo for editor incremental rebuild support:
-          // add listen-nothing listener, fill it up,
-          // remove listener to report recorded nodes to parent listener
-          CellBuildNodeAccessListener listensNothingListener = new CellBuildNodeAccessListener(nodeEditorComponent);
-          NodeReadAccessCaster.setNodeReadAccessListener(listensNothingListener);
-          listensNothingListener.addNodesToDependOn(nodesOldCellDependsOn);
-          NodeReadAccessCaster.removeNodeAccessListener();
-          //--voodoo
+          if (nodesOldCellDependsOn != null) {
+            //voodoo for editor incremental rebuild support:
+            // add listen-nothing listener, fill it up,
+            // remove listener to report recorded nodes to parent listener
+            CellBuildNodeAccessListener listensNothingListener = new CellBuildNodeAccessListener(nodeEditorComponent);
+            NodeReadAccessCaster.setNodeReadAccessListener(listensNothingListener);
+            listensNothingListener.addNodesToDependOn(nodesOldCellDependsOn);
+            NodeReadAccessCaster.removeNodeAccessListener();
+            //--voodoo
+          }
           if (propertyChanged && !(editorCell instanceof EditorCell_Collection)) {
             editorCell.synchronizeViewWithModel();
           }
