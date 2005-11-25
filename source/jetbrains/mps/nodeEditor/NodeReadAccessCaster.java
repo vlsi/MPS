@@ -56,6 +56,14 @@ public class NodeReadAccessCaster {
     if (myReadAccessListener != null) myReadAccessListener.readAccess(node);
   }
 
+  public static void firePropertyReadAccessed(SNode node, String propertyName) {
+    ensureNoConcurrentAccess();
+    if (myReadAccessListener != null) {
+      myReadAccessListener.propertyReadAccess(node, propertyName);
+      myReadAccessListener.readAccess(node);
+    }
+  }
+
   public static void fireReferenceTargetReadAccessed(SReference reference) {
     ensureNoConcurrentAccess();
     if (myReadAccessListener != null) myReadAccessListener.readAccess(reference);

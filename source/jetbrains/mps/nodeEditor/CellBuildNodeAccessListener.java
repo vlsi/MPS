@@ -3,7 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SNodeProxy;
-import jetbrains.mps.util.WeakSet;
+import jetbrains.mps.util.Pair;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -22,6 +22,7 @@ public class CellBuildNodeAccessListener {
 
   protected HashSet<SNode> myNodesToDependOn = new HashSet<SNode>();
   protected HashSet<SNodeProxy> myReferentTargetsToDependOn = new HashSet<SNodeProxy>();
+  protected HashSet<Pair<SNode,String>> myReadAccessedProperties = new HashSet<Pair<SNode, String>>();
 
   public CellBuildNodeAccessListener(AbstractEditorComponent editor) {
     myEditor = editor;
@@ -29,6 +30,9 @@ public class CellBuildNodeAccessListener {
 
   public void recordingFinishedForCell(EditorCell cell) {
     myEditor.putCellAndNodesToDependOn(cell, myNodesToDependOn, myReferentTargetsToDependOn);
+    for (Pair<SNode, String> pair : myReadAccessedProperties) {
+      myEditor.addNodePropertyAndDependentCell(cell, pair);
+    }
   }
 
   public Set<SNode> getNodesToDependOn() {
@@ -53,5 +57,9 @@ public class CellBuildNodeAccessListener {
 
   public void readAccess(SReference reference) {
     myReferentTargetsToDependOn.add(new SNodeProxy(reference));
+  }
+
+  public void propertyReadAccess(SNode node, String propertyName) {
+   // myReadAccessedProperties.add(new Pair<SNode, String>(node, propertyName));    //todo
   }
 }

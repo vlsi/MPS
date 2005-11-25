@@ -175,7 +175,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public String getName() {
-    NodeReadAccessCaster.fireNodeReadAccessed(this);
     return getProperty(NAME);
   }
 
@@ -228,7 +227,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public String getProperty(String propertyName) {
-    NodeReadAccessCaster.fireNodeReadAccessed(this);
+    NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName);
     return myProperties.get(propertyName);
   }
 
