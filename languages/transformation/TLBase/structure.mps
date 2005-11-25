@@ -205,13 +205,6 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1114458327664" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1114456501997">
-      <property name="sourceCardinality" value="0..n" />
-      <property name="targetCardinality" value="1" />
-      <property name="role" value="reductionRule" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1114456532170" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1132711947978">
       <property name="sourceCardinality" value="0..n" />
       <property name="targetCardinality" value="1" />
