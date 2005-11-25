@@ -208,25 +208,6 @@
       <link role="target" targetNodeId="1112730859144" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1114456200744">
-    <property name="rootable" value="true" />
-    <property name="name" value="ReductionConfiguration" />
-    <link role="extends" targetNodeId="2.1078489098625" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1114456350559">
-      <property name="sourceCardinality" value="0..n" />
-      <property name="targetCardinality" value="1" />
-      <property name="role" value="reduceableRootConcept" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1114458327664" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1132711947978">
-      <property name="sourceCardinality" value="0..n" />
-      <property name="targetCardinality" value="1" />
-      <property name="role" value="new_reductionRule_test" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1114456532170" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1114456532170">
     <property name="name" value="ReductionRule" />
     <link role="extends" targetNodeId="2.1078489098625" />
@@ -258,10 +239,10 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1114473802710">
-    <property name="name" value="ReductionCommand_RewriteManually" />
+    <property name="name" value="ReductionCommand_CustomBuilder" />
     <link role="extends" targetNodeId="1114456602485" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1114473991404">
-      <property name="value" value="rewrite manually" />
+      <property name="value" value="custom builder" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1114473834054">
@@ -270,10 +251,10 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1114473886493">
-    <property name="name" value="ReductionCommand_RewriteWithTemplate" />
+    <property name="name" value="ReductionCommand_Template" />
     <link role="extends" targetNodeId="1114456602485" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1114473970746">
-      <property name="value" value="rewrite with template" />
+      <property name="value" value="template" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1114473942994">

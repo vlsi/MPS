@@ -88,7 +88,8 @@ public class TemplateGenUtil {
 //        }
 //        continue;
 
-        if (checkResolvedReference(nodeBuilder.getSourceNode(), targetNode, templateNode, templateReference.getRole(), targetReferentNode, generator))        {
+        if (checkResolvedReference(nodeBuilder.getSourceNode(), targetNode, templateNode, templateReference.getRole(), targetReferentNode, generator))
+        {
           targetNode.addReferent(templateReference.getRole(), targetReferentNode);
         }
         continue;
@@ -165,9 +166,8 @@ public class TemplateGenUtil {
       Constructor[] constructors = builderClass.getDeclaredConstructors();
       // should be 1 constructor with parameters:
       // SNode sourceNode, SNode templateNode, ITemplateGenerator generator
-      INodeBuilder nodeBuilder = (INodeBuilder) constructors[0].newInstance(new Object[]{sourceNode, templateNode,
+      return (INodeBuilder) constructors[0].newInstance(new Object[]{sourceNode, templateNode,
               mappingName, generator});
-      return nodeBuilder;
     } catch (ClassNotFoundException e) {
       // ok
     } catch (IllegalAccessException e) {
@@ -231,16 +231,6 @@ public class TemplateGenUtil {
     }
   }
 
-//  public static void applyWeaveTemplateReductionCommand(SNode sourceNode, ReductionCommand_WeaveTemplate command, INodeBuilder defaultContextBuilder, ITemplateGenerator generator) {
-//    TemplateDeclaration templateDeclaration = command.getTemplateDeclaration();
-//    INodeBuilder contextBuilder = getContextNodeBuilderForWeaveReductionCommand(sourceNode, command, defaultContextBuilder, generator);
-//    if (contextBuilder == null) {
-//      generator.showErrorMessage(sourceNode, command, "Couldn't create context node builder");
-//      return;
-//    }
-//    weaveTemplateDeclaration(sourceNode, templateDeclaration, contextBuilder, generator, command);
-//  }
-
   public static boolean isContextlessFragment(TemplateDeclaration templateDeclaration) {
     List<TemplateFragment> templateFragments = getTemplateFragments(templateDeclaration);
     if (templateFragments.size() == 1) {
@@ -294,8 +284,7 @@ public class TemplateGenUtil {
     if (aspectId != null) {
       String methodName = "templateFragment_Context_" + aspectId;
       Object[] args = new Object[]{templateFragmentNode, ruleContextBuilder, generator};
-      INodeBuilder nodeBuilder = (INodeBuilder) QueryMethod.invoke(methodName, args, fragment.getModel());
-      return nodeBuilder;
+      return (INodeBuilder) QueryMethod.invoke(methodName, args, fragment.getModel());
     }
 
     // ok, rule context builder by default
@@ -306,21 +295,8 @@ public class TemplateGenUtil {
     String aspectId = rule.getContextProviderAspectId();
     String methodName = "templateWeavingRule_Context_" + aspectId;
     Object[] args = new Object[]{sourceNode, generator};
-    INodeBuilder nodeBuilder = (INodeBuilder) QueryMethod.invoke(methodName, args, rule.getModel());
-    return nodeBuilder;
+    return (INodeBuilder) QueryMethod.invoke(methodName, args, rule.getModel());
   }
-
-//  private static INodeBuilder getContextNodeBuilderForWeaveReductionCommand(SNode sourceNode, ReductionCommand_WeaveTemplate command, INodeBuilder defaultContextBuilder, ITemplateGenerator generator) {
-//    String aspectId = command.getContextProviderAspectId();
-//    if (aspectId == null) {
-//      return defaultContextBuilder;
-//    }
-//    String methodName = "templateWeavingRule_Context_" + aspectId;
-//    Object[] args = new Object[]{sourceNode, generator};
-//    INodeBuilder nodeBuilder = (INodeBuilder) QueryMethod.invoke(methodName, args, command.getModel());
-//    return nodeBuilder;
-//  }
-
 
   public static List<INodeBuilder> createNodeBuildersForTemplateNode(SNode parentSourceNode, SNode templateNode, String mappingName, ITemplateGenerator generator) {
     List<INodeBuilder> builders = new LinkedList<INodeBuilder>();
@@ -477,11 +453,10 @@ public class TemplateGenUtil {
         }
 
       } else if (nodeMacro instanceof CopySrcNodeMacro) {
-        TemplateSwitch templateSwitch = ((CopySrcNodeMacro) nodeMacro).getTemplateSwitch();
-        builder = TemplateGenUtil.createCopyingNodeBuilder(sourceNode, templateNode.getRole_(), templateSwitch, generator);
+        builder = TemplateGenUtil.createCopyingNodeBuilder(sourceNode, templateNode.getRole_(), generator);
         needCreateChildBuilders = false;
       } else if (nodeMacro instanceof CopySrcListMacro) {
-        builder = TemplateGenUtil.createCopyingNodeBuilder(sourceNode, templateNode.getRole_(), null, generator);
+        builder = TemplateGenUtil.createCopyingNodeBuilder(sourceNode, templateNode.getRole_(), generator);
         needCreateChildBuilders = false;
       } else if (nodeMacro instanceof MapSrcNodeMacro) {
         MapSrcNodeMacro mapSrcNodeMacro = (MapSrcNodeMacro) nodeMacro;
@@ -520,34 +495,25 @@ public class TemplateGenUtil {
     return new DefaultNodeBuilder(sourceNode, templateNode, mappingName, generator);
   }
 
-  public static INodeBuilder createCopyingNodeBuilder(SNode sourceNode, String roleInParent, TemplateSwitch templateSwitch, ITemplateGenerator generator) {
-    INodeBuilder nodeBuilder = createCopyingNodeBuilder(sourceNode, templateSwitch, generator);
+  public static INodeBuilder createCopyingNodeBuilder(SNode sourceNode, String roleInParent, ITemplateGenerator generator) {
+    INodeBuilder nodeBuilder = createCopyingNodeBuilder(sourceNode, generator);
     nodeBuilder.setRoleInParent(roleInParent);
     return nodeBuilder;
   }
 
-  public static INodeBuilder createCopyingNodeBuilder(SNode sourceNode, TemplateSwitch templateSwitch, ITemplateGenerator generator) {
-    if (templateSwitch != null) {
-      INodeBuilder nodeBuilder = createNodeBuilderForSwitch(sourceNode, templateSwitch, null, generator);
-      if (nodeBuilder != null) {
-        nodeBuilder.setRoleInParent(sourceNode.getRole_());
-        return nodeBuilder;
-      }
+  public static INodeBuilder createCopyingNodeBuilder(SNode sourceNode, ITemplateGenerator generator) {
+    // try to reduce source while copying
+    // todo: get rid of casting to AbstractTemplateModelGenerator
+    INodeBuilder nodeBuilder = ((AbstractTemplateModelGenerator) generator).getNodeBuilderManager().tryReduceByReductionRule(sourceNode);
+    if (nodeBuilder != null) {
+      nodeBuilder.setRoleInParent(sourceNode.getRole_());
+      return nodeBuilder;
     }
 
-    // test - reduce here
-    {
-    INodeBuilder nodeBuilder = ((AbstractTemplateModelGenerator)generator).getNodeBuilderManager().tryReduceByReductionRule(sourceNode);
-      if(nodeBuilder != null) {
-        nodeBuilder.setRoleInParent(sourceNode.getRole_());
-        return nodeBuilder;
-      }
-    }
-
-    INodeBuilder nodeBuilder = createDefaultNodeBuilder(sourceNode, sourceNode, null, generator);
+    nodeBuilder = createDefaultNodeBuilder(sourceNode, sourceNode, null, generator);
     List<SNode> children = sourceNode.getChildren();
     for (SNode child : children) {
-      INodeBuilder childBuilder = createCopyingNodeBuilder(child, templateSwitch, generator);
+      INodeBuilder childBuilder = createCopyingNodeBuilder(child, generator);
       nodeBuilder.addChildBuilder(childBuilder);
     }
     return nodeBuilder;
