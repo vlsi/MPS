@@ -110,13 +110,15 @@ public class EditorManager {
         if (myMap.containsKey(node)) {
           EditorCell editorCell = myMap.get(node);
           final Set<SNode> nodesOldCellDependsOn = nodeEditorComponent.getCopyOfNodesCellDependsOn(editorCell);
-          if (nodesOldCellDependsOn != null) {
+          final Set<SNodeProxy> refTargetsOldCellDependsOn = nodeEditorComponent.getCopyOfRefTargetsCellDependsOn(editorCell);
+          if (nodesOldCellDependsOn != null || refTargetsOldCellDependsOn != null) {
             //voodoo for editor incremental rebuild support:
             // add listen-nothing listener, fill it up,
             // remove listener to report recorded nodes to parent listener
             CellBuildNodeAccessListener listensNothingListener = new CellBuildNodeAccessListener(nodeEditorComponent);
             NodeReadAccessCaster.setNodeReadAccessListener(listensNothingListener);
-            listensNothingListener.addNodesToDependOn(nodesOldCellDependsOn);
+            if (nodesOldCellDependsOn != null) listensNothingListener.addNodesToDependOn(nodesOldCellDependsOn);
+            if (refTargetsOldCellDependsOn != null) listensNothingListener.addRefTargetsToDependOn(refTargetsOldCellDependsOn);
             NodeReadAccessCaster.removeNodeAccessListener();
             //--voodoo
           }

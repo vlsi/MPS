@@ -2,6 +2,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.externalResolve.ExternalResolver;
+import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 
 /**
  * User: Sergey Dmitriev
@@ -146,7 +147,12 @@ public abstract class SReference {
     return null;
   }
 
-  public abstract SNode getTargetNode();
+  public SNode getTargetNode() {
+    NodeReadAccessCaster.fireReferenceTargetReadAccessed(this);
+    return getTargetNode_impl();
+  }
+
+  protected abstract SNode getTargetNode_impl();
 
   public abstract boolean isTargetNode(SNode node);
 

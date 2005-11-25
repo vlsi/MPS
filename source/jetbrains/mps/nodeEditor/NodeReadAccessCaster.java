@@ -2,6 +2,8 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SNodeProxy;
 
 import java.util.Set;
 import java.util.Stack;
@@ -42,14 +44,21 @@ public class NodeReadAccessCaster {
       }
     } else {
       Set<SNode> nodesWhichChildCellDependsOn = myReadAccessListener.getNodesToDependOn();
+      Set<SNodeProxy> refTargetsWhichCellDependsOn = myReadAccessListener.getRefTargetsToDependOn();
       myReadAccessListener = myReadAccessListenerStack.pop();
       myReadAccessListener.addNodesToDependOn(nodesWhichChildCellDependsOn);
+      myReadAccessListener.addRefTargetsToDependOn(refTargetsWhichCellDependsOn);
     }
   }
 
   public static void fireNodeReadAccessed(SNode node) {
     ensureNoConcurrentAccess();
     if (myReadAccessListener != null) myReadAccessListener.readAccess(node);
+  }
+
+  public static void fireReferenceTargetReadAccessed(SReference reference) {
+    ensureNoConcurrentAccess();
+    if (myReadAccessListener != null) myReadAccessListener.readAccess(reference);
   }
 
   private static void ensureNoConcurrentAccess() {

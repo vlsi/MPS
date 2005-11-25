@@ -21,7 +21,7 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
   public InspectorEditorComponent() {
     super(null);
 
-    myNodeProxy = new SNodeProxy(null);
+    myNodeProxy = new SNodeProxy((SNode) null);
     reinitEditor();
     rebuildEditorContent();
   }

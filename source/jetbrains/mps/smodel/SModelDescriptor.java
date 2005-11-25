@@ -57,4 +57,6 @@ public interface SModelDescriptor {
   void delete();
 
   boolean isNotEditable();
+
+  boolean hasSModelCommandListener(SModelCommandListener listener);
 }

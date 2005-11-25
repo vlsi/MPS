@@ -39,6 +39,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private WeakHashMap<EditorCell, Set<SNode>> myCellsToNodesToDependOnMap = new WeakHashMap<EditorCell, Set<SNode>>();
   private WeakHashMap<SNode, EditorCell> myNodesToBigCellsMap = new WeakHashMap<SNode, EditorCell>();
+  private HashMap<EditorCell, Set<SNodeProxy>> myCellsToRefTargetsToDependOnMap = new HashMap<EditorCell, Set<SNodeProxy>>();
 
   private boolean myHasLastCaretX = false;
   private int myLastCaretX;
@@ -71,6 +72,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private MessagesGutter myMessagesGutter = new MessagesGutter(this);
   private boolean myIsDirtyLayout = false;
+
 
   public AbstractEditorComponent(IOperationContext operationContext) {
     this(operationContext, false);
@@ -429,6 +431,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public void clearCaches() {
     myCellsToNodesToDependOnMap.clear();
+    myCellsToRefTargetsToDependOnMap.clear();
     myNodesToBigCellsMap.clear();
   }
 
@@ -447,7 +450,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myRootCell.relayout();
 
     Set<SNode> nodesWhichEditorDependsOn = myCellsToNodesToDependOnMap.get(myRootCell);
-
     if (nodesWhichEditorDependsOn != null) {
       for (SNode node : nodesWhichEditorDependsOn) {
         SModel model = node.getModel();
@@ -456,6 +458,17 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
       }
     }
+
+    Set<SNodeProxy> refTargetsWhichEditorDependsOn = myCellsToRefTargetsToDependOnMap.get(myRootCell);
+     if (refTargetsWhichEditorDependsOn != null) {
+      for (SNodeProxy nodeProxy : refTargetsWhichEditorDependsOn) {
+        SModelDescriptor model = nodeProxy.getModel();
+        if (!model.hasSModelCommandListener(myModelListener)) {
+          model.addSModelCommandListener(myModelListener);
+        }
+      }
+    }
+
 
     revalidate();
     repaint();
@@ -1192,14 +1205,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myHasLastCaretX = true;
   }
 
-  public void putCellAndNodesToDependOn(EditorCell cell, Set<SNode> nodes) {
+  public void putCellAndNodesToDependOn(EditorCell cell, Set<SNode> nodes, Set<SNodeProxy> refTargets) {
     myCellsToNodesToDependOnMap.put(cell, nodes);
-  }
-
-  /*package*/ void addNodesToDependOnForCell(EditorCell cell, Set<SNode> nodes) {
-    Set<SNode> yetRegisteredNodes = myCellsToNodesToDependOnMap.get(cell);
-    if (yetRegisteredNodes == null) myCellsToNodesToDependOnMap.put(cell, nodes);
-    else yetRegisteredNodes.addAll(nodes);
+    myCellsToRefTargetsToDependOnMap.put(cell, refTargets);
   }
 
   public Set<SNode> getCopyOfNodesCellDependsOn(EditorCell cell) {
@@ -1208,13 +1216,21 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return new HashSet<SNode>(nodes);
   }
 
+  public Set<SNodeProxy> getCopyOfRefTargetsCellDependsOn(EditorCell cell) {
+    Set<SNodeProxy> nodeProxies = myCellsToRefTargetsToDependOnMap.get(cell);
+    if (nodeProxies == null) return null;
+    return new HashSet<SNodeProxy>(nodeProxies);
+  }
+
   public boolean doesCellDependOnNode(EditorCell cell, SNode node) {
     Set<SNode> sNodes = myCellsToNodesToDependOnMap.get(cell);
-    return (sNodes != null) && (sNodes.contains(node));
+    Set<SNodeProxy> nodeProxies = myCellsToRefTargetsToDependOnMap.get(cell);
+    return ((sNodes != null) && (sNodes.contains(node))) || ((nodeProxies != null && nodeProxies.contains(new SNodeProxy(node))));
   }
 
   public void clearNodesCellDependsOn(EditorCell cell) {
     myCellsToNodesToDependOnMap.remove(cell);
+    myCellsToRefTargetsToDependOnMap.remove(cell);
   }
 
   void registerAsBigCell(EditorCell cell) {
