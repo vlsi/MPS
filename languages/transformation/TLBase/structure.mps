@@ -74,6 +74,13 @@
     <property name="rootable" value="true" />
     <property name="name" value="MappingConfiguration" />
     <link role="extends" targetNodeId="2.1078489098625" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1132881767512">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="targetCardinality" value="1" />
+      <property name="role" value="outputRootConcept" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1114458327664" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1095416692159">
       <property name="sourceCardinality" value="0..n" />
       <property name="targetCardinality" value="1" />
@@ -87,6 +94,13 @@
       <property name="role" value="weavingRule" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1095416624611" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1132881836530">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="targetCardinality" value="1" />
+      <property name="role" value="reductionRule" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1114456532170" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1095416572297">
@@ -272,12 +286,6 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1114706874351">
     <property name="name" value="CopySrcNodeMacro" />
     <link role="extends" targetNodeId="1087833466690" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1131506685130">
-      <property name="sourceCardinality" value="0..1" />
-      <property name="targetCardinality" value="0..n" />
-      <property name="role" value="templateSwitch" />
-      <link role="target" targetNodeId="1112730859144" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1114707257324">
       <property name="value" value="$COPY_SRC$" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
