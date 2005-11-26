@@ -243,13 +243,13 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public @Hack String getProperty(String propertyName, PropertyAccessor propertyAccessor) {
-    if (propertyAccessor == null /*|| !propertyAccessor.hasPropertyCell()*/) {  //if access is not from cell
+    if (propertyAccessor == null) {  //if access is not from cell
       NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName);
     }
     return myProperties.get(propertyName);
   }
 
-  public void setProperty(final String propertyName, String propertyValue) {  //todo refine events
+  public void setProperty(final String propertyName, String propertyValue) {
     final String oldValue = myProperties.get(propertyName);
     if (propertyValue == null) {
       myProperties.remove(propertyName);

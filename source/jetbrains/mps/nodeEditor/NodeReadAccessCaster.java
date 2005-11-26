@@ -23,7 +23,7 @@ public class NodeReadAccessCaster {
   private static Thread myThread;
 
   private static final Object READ_LOCK = new Object();
-  private static boolean myCanFirePropertyReadAccessedEvent;
+  private static boolean myCanFirePropertyReadAccessedEvent = true;
 
   public static void setNodeReadAccessListener(CellBuildNodeAccessListener listener) {
     ensureNoConcurrentAccess();
