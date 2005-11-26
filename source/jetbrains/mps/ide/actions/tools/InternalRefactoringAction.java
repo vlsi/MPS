@@ -7,8 +7,7 @@ import jetbrains.mps.smodel.MPSFileModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * serves as template: just loads all models from MPSFileModelDescriptor and "process" them.
@@ -54,8 +53,8 @@ public class InternalRefactoringAction extends MPSAction {
    * perform "refactoring"
    */
   private void processModel(SModel model) {
-//    Collection<? extends SNode> allNodesWithIds = model.getAllNodesWithIds();
-//    for (SNode node : allNodesWithIds) {
+//    Collection<? extends SNode> allNodes = SModelUtil.allNodes(model);
+//    for (SNode node : allNodes) {
 //      if (node instanceof StaticFieldReference) {
 //        StaticFieldReference staticFieldReference = (StaticFieldReference) node;
 //        ClassifierType classifierType = staticFieldReference.getClassType();

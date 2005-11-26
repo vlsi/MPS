@@ -52,7 +52,7 @@ public class GenerationSession implements ModelOwner {
   }
 
   public GenerationStatus generateModel(SModel sourceModel) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-    addProgressMessage(MessageKind.INFORMATION, "generating model \"" + sourceModel.getUID() + "\"...");
+    addProgressMessage(MessageKind.INFORMATION, "generating model \"" + sourceModel.getUID() + "\"");
     Class<? extends IModelGenerator> defaultGeneratorClass = getDefaultGeneratorClass();
     addMessage(MessageKind.INFORMATION, "    default generator class: " + (defaultGeneratorClass != null ? defaultGeneratorClass.getName() : "<n/a>"));
 
@@ -147,17 +147,17 @@ public class GenerationSession implements ModelOwner {
     GeneratorSessionContext generatorContext = generator.getGeneratorSessionContext();
     SModelDescriptor currentOutputModel = createTransientModel(0, inputModel, generatorContext.getModule());
 
-    // initial mapping
-    if (!generator.doInitialMapping(inputModel, currentOutputModel.getSModel())) {
+    // primary mapping
+    if (!generator.doPrimaryMapping(inputModel, currentOutputModel.getSModel())) {
       return currentOutputModel.getSModel();
     }
 
-    // repeated mapping
+    // secondary mapping
     int repeatCount = 1;
     while (true) {
       SModelDescriptor currentInputModel = currentOutputModel;
       SModelDescriptor transientModel = createTransientModel(repeatCount, inputModel, generatorContext.getModule());
-      if (!generator.doRepeatedMapping(currentInputModel.getSModel(), transientModel.getSModel(), repeatCount)) {
+      if (!generator.doSecondaryMapping(currentInputModel.getSModel(), transientModel.getSModel(), repeatCount)) {
         SModelRepository.getInstance().unRegisterModelDescriptor(transientModel, generatorContext.getModule());
         break;
       }

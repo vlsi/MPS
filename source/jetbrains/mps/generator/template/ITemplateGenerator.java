@@ -30,9 +30,9 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   IProgressMonitor getProgressMonitor();
 
-  boolean doInitialMapping(SModel inputModel, SModel outputModel) throws GenerationFailedException;
+  boolean doPrimaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailedException;
 
-  boolean doRepeatedMapping(SModel inputModel, SModel outputModel, int repeatNum) throws GenerationFailedException;
+  boolean doSecondaryMapping(SModel inputModel, SModel outputModel, int repeatNum) throws GenerationFailedException;
 
   void processPropertyMacros(SNode sourceNode, SNode templateNode, SNode targetNode);
 
