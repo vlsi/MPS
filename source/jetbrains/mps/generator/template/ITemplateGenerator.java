@@ -14,13 +14,12 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.transformation.ITemplateLanguageConstants;
-import jetbrains.mps.transformation.TLBase.TemplateDeclaration;
-import jetbrains.mps.transformation.TLBase.TemplateSwitch;
 import jetbrains.mps.transformation.TLBase.ConditionalTemplate;
+import jetbrains.mps.transformation.TLBase.TemplateSwitch;
 import jetbrains.mps.typesystem.ITypeChecker;
 import jetbrains.mps.util.Condition;
 
-import java.util.Map;
+import java.util.*;
 
 public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageConstants {
   void setStartState();
@@ -31,15 +30,9 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   IProgressMonitor getProgressMonitor();
 
-  void doMapping(SModel sourceModel, SModel targetModel) throws GenerationFailedException;
+  boolean doInitialMapping(SModel inputModel, SModel outputModel) throws GenerationFailedException;
 
-  int prepareReduction(SModel sourceModel, SModel targetModel);
-
-//  boolean hasPendingReductions();
-//
-//  int preparePendingReduction();
-
-  void doReduction();
+  boolean doRepeatedMapping(SModel inputModel, SModel outputModel, int repeatNum) throws GenerationFailedException;
 
   void processPropertyMacros(SNode sourceNode, SNode templateNode, SNode targetNode);
 

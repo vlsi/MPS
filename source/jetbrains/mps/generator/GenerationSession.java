@@ -143,40 +143,38 @@ public class GenerationSession implements ModelOwner {
     return status;
   }
 
-  private SModel doGenerateModel(SModel sourceModel, ITemplateGenerator generator) {
+  private SModel doGenerateModel(SModel inputModel, ITemplateGenerator generator) {
     GeneratorSessionContext generatorContext = generator.getGeneratorSessionContext();
-    SModelDescriptor currentTargetModel = createTransientModel(0, sourceModel, generatorContext.getModule());
-    int iterationCount = 1;
+    SModelDescriptor currentOutputModel = createTransientModel(0, inputModel, generatorContext.getModule());
 
-    // mapping
-    generator.doMapping(sourceModel, currentTargetModel.getSModel());
+    // initial mapping
+    if (!generator.doInitialMapping(inputModel, currentOutputModel.getSModel())) {
+      return currentOutputModel.getSModel();
+    }
 
-    // reductions...
+    // repeated mapping
+    int repeatCount = 1;
     while (true) {
-      SModelDescriptor currentSourceModel = currentTargetModel;
-      SModelDescriptor transientModel = createTransientModel(iterationCount, sourceModel, generatorContext.getModule());
-      int numReductions = generator.prepareReduction(currentSourceModel.getSModel(), transientModel.getSModel());
-      generator.getProgressMonitor().addText("found reductions : " + numReductions);
-      if (numReductions == 0) {
+      SModelDescriptor currentInputModel = currentOutputModel;
+      SModelDescriptor transientModel = createTransientModel(repeatCount, inputModel, generatorContext.getModule());
+      if (!generator.doRepeatedMapping(currentInputModel.getSModel(), transientModel.getSModel(), repeatCount)) {
         SModelRepository.getInstance().unRegisterModelDescriptor(transientModel, generatorContext.getModule());
         break;
       }
 
-      currentTargetModel = transientModel;
-      generator.doReduction();
-
       // next iteration ...
-      if (++iterationCount > 10) {
-        generator.showErrorMessage(null, "Failed to reduce model after 10 iterations");
-        throw new GenerationFailedException("Failed to reduce model after 10 iterations");
+      currentOutputModel = transientModel;
+      if (++repeatCount > 10) {
+        generator.showErrorMessage(null, "Failed to generate output after 10 repeated mappings");
+        throw new GenerationFailedException("Failed to generate output after 10 repeated mappings");
       }
     }
 
-    return currentTargetModel.getSModel();
+    return currentOutputModel.getSModel();
   }
 
-  private SModelDescriptor createTransientModel(int iterationCount, SModel sourceModel, ModelOwner modelOwner) {
-    SModelUID modelUID = new SModelUID(sourceModel.getLongName(), "" + iterationCount + "_" + getSessionId());
+  private SModelDescriptor createTransientModel(int modelIndex, SModel sourceModel, ModelOwner modelOwner) {
+    SModelUID modelUID = new SModelUID(sourceModel.getLongName(), "" + modelIndex + "_" + getSessionId());
     return new TransientModelDescriptor(modelUID, modelOwner);
   }
 
