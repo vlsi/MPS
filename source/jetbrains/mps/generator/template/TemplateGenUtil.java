@@ -352,7 +352,6 @@ public class TemplateGenUtil {
 
   private static List<SNode> createSourceNodeListForTemplateNode(SNode parentSourceNode, SNode templateNode, ITemplateGenerator generator) {
     try {
-
       NodeMacro nodeMacro = (NodeMacro) templateNode.getChild(ITemplateGenerator.ROLE_NODE_MAKRO);
 
       List<SNode> result = new LinkedList<SNode>();
@@ -401,6 +400,10 @@ public class TemplateGenUtil {
           }
           return sourceNodes;
         }
+      } else if(nodeMacro instanceof LoopMacro ||
+              nodeMacro instanceof CopySrcListMacro ||
+              nodeMacro instanceof MapSrcListMacro) {
+        // produce source list the same way as for NodeMacro...
       }
 
       if (nodeMacro != null) {
@@ -465,6 +468,15 @@ public class TemplateGenUtil {
           generator.showErrorMessage(nodeMacro, "Source mapper is not defined");
         } else {
           builder = new QueryMethodMapperNodeBuilder(sourceNode, templateNode, mapSrcNodeMacro, generator);
+        }
+        needCreateChildBuilders = false;
+      } else if (nodeMacro instanceof MapSrcListMacro) {
+        MapSrcListMacro mapSrcListMacro = (MapSrcListMacro) nodeMacro;
+        String sourceNodeMapperId = mapSrcListMacro.getSourceNodeMapperId();
+        if (sourceNodeMapperId == null) {
+          generator.showErrorMessage(nodeMacro, "Source mapper is not defined");
+        } else {
+          builder = new QueryMethodMapperNodeBuilder(sourceNode, templateNode, mapSrcListMacro, generator);
         }
         needCreateChildBuilders = false;
       } else {

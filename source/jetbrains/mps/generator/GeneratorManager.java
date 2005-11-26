@@ -258,6 +258,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       GenerationStatus status = null;
       for (SModelDescriptor sourceModelDescriptor : sourceModels) {
         SModel sourceModel = sourceModelDescriptor.getSModel();
+        progress.addText("");
         status = generationSession.generateModel(sourceModel);
         if (status.getOutputModel() != null) {
           if (generateText) {
@@ -279,8 +280,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         myProject.addProjectSolution(sessionDescriptorFile);
       }
 
+      progress.addText("");
       if (status.isOk()) {
-        if (compile) {
+        if (compile && !generateText) {
           // -- compile after generation
           progress.addText("compiling in IntelliJ IDEA...");
           MPSPlugin.getInstance().refreshFS();

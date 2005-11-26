@@ -307,5 +307,21 @@
       <link role="dataType" targetNodeId="2.1082983041843" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1133037731736">
+    <property name="name" value="MapSrcListMacro" />
+    <link role="extends" targetNodeId="1087833466690" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1133037820495">
+      <property name="value" value="$MAP_SRCL$" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1133037820496">
+      <property name="value" value="map nodes form source list macro" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1107214812281" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1133037795224">
+      <property name="name" value="sourceNodeMapperId" />
+      <link role="dataType" targetNodeId="2.1082983041843" />
+    </node>
+  </node>
 </model>
 
