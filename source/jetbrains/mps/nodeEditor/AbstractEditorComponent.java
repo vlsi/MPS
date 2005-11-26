@@ -436,6 +436,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myCellsToNodesToDependOnMap.clear();
     myCellsToRefTargetsToDependOnMap.clear();
     myNodesToBigCellsMap.clear();
+    myNodePropertiesAccessedCleanlyToDependentCellsMap.clear();
+    myNodePropertiesAccessedDirtilyToDependentCellsMap.clear();
   }
 
   private void setRootCell(EditorCell rootCell) {
@@ -610,12 +612,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void relayout() {
-    if (myIsDirtyLayout) {
+ /*   if (myIsDirtyLayout) {*/
       myRootCell.relayout();
       revalidate();
       repaint();
-      myIsDirtyLayout = false;
-    }
+ /*     myIsDirtyLayout = false;
+    }*/
   }
 
   public void selectNode(final SNode node) {
@@ -1030,7 +1032,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
 
   public void processKeyPressed(final KeyEvent keyEvent) {
-    myIsDirtyLayout = true;
+    //myIsDirtyLayout = true;
 
     // hardcoded undo/redo action
     if (keyEvent.getKeyCode() == KeyEvent.VK_Z && keyEvent.isControlDown()) {

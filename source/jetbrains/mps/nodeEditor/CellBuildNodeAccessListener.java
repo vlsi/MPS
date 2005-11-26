@@ -52,7 +52,9 @@ public class CellBuildNodeAccessListener {
   }
 
   public void propertyReadAccess(SNode node, String propertyName) {
+    NodeReadAccessCaster.switchOffFiringPropertyReadAccessedEvent();
     myReadAccessedProperties.add(new Pair<SNodeProxy, String>(new SNodeProxy(node), propertyName));
+    NodeReadAccessCaster.switchOnFiringPropertyReadAccessedEvent();
   }
 
   public void readAccess(SNode node) {

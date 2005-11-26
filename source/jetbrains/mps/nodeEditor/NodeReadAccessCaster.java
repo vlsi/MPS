@@ -58,11 +58,11 @@ public class NodeReadAccessCaster {
     if (myReadAccessListener != null) myReadAccessListener.readAccess(node);
   }
 
-  public @Hack static void switchOffFiringPropertyReadAccessedEvent() {
+  @Hack static void switchOffFiringPropertyReadAccessedEvent() {
     myCanFirePropertyReadAccessedEvent = false;
   }
 
-  public @Hack static void switchOnFiringPropertyReadAccessedEvent() {
+  @Hack static void switchOnFiringPropertyReadAccessedEvent() {
     myCanFirePropertyReadAccessedEvent = true;
   }
 

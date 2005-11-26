@@ -232,6 +232,16 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return getProperty(propertyName, null);
   }
 
+  private boolean isEmptyPropertyValue(String s) {
+    return s == null || s.equals("");
+  }
+
+  public boolean hasNonEmptyProperty(String propertyName) {
+    NodeReadAccessCaster.fireNodeReadAccessed(this);
+    String propertyValue = myProperties.get(propertyName);
+    return !isEmptyPropertyValue(propertyValue);
+  }
+
   public @Hack String getProperty(String propertyName, PropertyAccessor propertyAccessor) {
     if (propertyAccessor == null /*|| !propertyAccessor.hasPropertyCell()*/) {  //if access is not from cell
       NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName);
@@ -239,7 +249,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return myProperties.get(propertyName);
   }
 
-  public void setProperty(final String propertyName, String propertyValue) {
+  public void setProperty(final String propertyName, String propertyValue) {  //todo refine events
     final String oldValue = myProperties.get(propertyName);
     if (propertyValue == null) {
       myProperties.remove(propertyName);
@@ -253,7 +263,17 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
         }
       });
     }
-    getModel().firePropertyChangedEvent(this, propertyName, oldValue, propertyValue);
+    boolean addedOrRemoved = false;
+    boolean isRemoved = false;
+    if (isEmptyPropertyValue(oldValue)) {
+      addedOrRemoved = true;
+      isRemoved = false;
+    }
+    if (isEmptyPropertyValue(propertyValue)) {
+      addedOrRemoved = true;
+      isRemoved = true;
+    }
+    getModel().firePropertyChangedEvent(this, propertyName, oldValue, propertyValue, addedOrRemoved, isRemoved);
   }
 
 

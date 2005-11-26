@@ -17,6 +17,7 @@ public class EventUtil {
 
   public static boolean isPropertyChange(List<SModelEvent> events) {
     if (events.size() != 1) return false;
+    if (events.get(0) instanceof  SModelPropertyAddedOrRemovedEvent) return false;
     return events.get(0) instanceof SModelPropertyEvent;
   }
 }
