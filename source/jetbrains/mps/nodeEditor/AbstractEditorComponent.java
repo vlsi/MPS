@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.typesystem.TypeCheckerAccess;
 
 import javax.swing.*;
@@ -42,7 +41,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private WeakHashMap<EditorCell, Set<SNode>> myCellsToNodesToDependOnMap = new WeakHashMap<EditorCell, Set<SNode>>();
   private WeakHashMap<SNode, EditorCell> myNodesToBigCellsMap = new WeakHashMap<SNode, EditorCell>();
   private HashMap<EditorCell, Set<SNodeProxy>> myCellsToRefTargetsToDependOnMap = new HashMap<EditorCell, Set<SNodeProxy>>();
-  private HashMap<Pair<SNode, String>, WeakSet<EditorCell>> myNodesPropertiesToDependentCellsMap = new HashMap<Pair<SNode, String>, WeakSet<EditorCell>>();
+  private HashMap<Pair<SNodeProxy,String>, Set<EditorCell_Property>> myNodePropertiesAccessedCleanlyToDependentCellsMap = new HashMap<Pair<SNodeProxy, String>, Set<EditorCell_Property>>();
+  private HashMap<Pair<SNodeProxy,String>, Set<EditorCell>> myNodePropertiesAccessedDirtilyToDependentCellsMap = new HashMap<Pair<SNodeProxy, String>, Set<EditorCell>>();
 
   private boolean myHasLastCaretX = false;
   private int myLastCaretX;
@@ -435,7 +435,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public void clearCaches() {
     myCellsToNodesToDependOnMap.clear();
     myCellsToRefTargetsToDependOnMap.clear();
-    myNodesPropertiesToDependentCellsMap.clear();
     myNodesToBigCellsMap.clear();
   }
 
@@ -1191,16 +1190,20 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myHasLastCaretX = true;
   }
 
-  public void addNodePropertyAndDependentCell(EditorCell cell, SNode node, String propertyName) {
-    Pair<SNode,String> pair = new Pair<SNode, String>(node, propertyName);
-    addNodePropertyAndDependentCell(cell, pair);
+  public void addCellDependentOnNodeProperty(EditorCell_Property cell, Pair<SNodeProxy,String> pair) {
+    Set<EditorCell_Property> dependentCells = myNodePropertiesAccessedCleanlyToDependentCellsMap.get(pair);
+    if (dependentCells == null) {
+      dependentCells = new HashSet<EditorCell_Property>();
+      myNodePropertiesAccessedCleanlyToDependentCellsMap.put(pair, dependentCells);
+    }
+    dependentCells.add(cell);
   }
 
-  public void addNodePropertyAndDependentCell(EditorCell cell, Pair<SNode, String> pair) {
-    WeakSet<EditorCell> dependentCells = myNodesPropertiesToDependentCellsMap.get(pair);
+  public void addCellDependentOnNodePropertyWhichWasAccessedDirtily(EditorCell cell, Pair<SNodeProxy,String> pair) {
+    Set<EditorCell> dependentCells = myNodePropertiesAccessedDirtilyToDependentCellsMap.get(pair);
     if (dependentCells == null) {
-      dependentCells = new WeakSet<EditorCell>();
-      myNodesPropertiesToDependentCellsMap.put(pair, dependentCells);
+      dependentCells = new HashSet<EditorCell>();
+      myNodePropertiesAccessedDirtilyToDependentCellsMap.put(pair, dependentCells);
     }
     dependentCells.add(cell);
   }
@@ -1342,53 +1345,25 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private class MyModelListener implements SModelCommandListener {
     public void modelChangedInCommand(List<SModelEvent> events) {
       if (!EventUtil.isDramaticalChange(events)) {
-      /*  //voodooey optimization for the special but very frequent case of typing properties
-        if (events.size() == 1 && events.get(0) instanceof SModelPropertyEvent) {
-          SModelPropertyEvent event = (SModelPropertyEvent) events.get(0);
-          SNode eventNode = event.getNode();
-          String propertyName = event.getPropertyName();
-          Set<EditorCell> cells_ = myNodesPropertiesToDependentCellsMap.get(new Pair<SNode, String>(eventNode, propertyName));
-          if (cells_ == null) {
+        if (EventUtil.isPropertyChange(events)) {
+          String propertyName = ((SModelPropertyEvent)events.get(0)).getPropertyName();
+          SNodeProxy nodeProxy = new SNodeProxy(((SModelPropertyEvent)events.get(0)).getNode());
+          Pair<SNodeProxy,String> pair = new Pair<SNodeProxy, String>(nodeProxy, propertyName);
+          Set<EditorCell_Property> editorCell_properties = myNodePropertiesAccessedCleanlyToDependentCellsMap.get(pair);
+          Set<EditorCell> editorCells = myNodePropertiesAccessedDirtilyToDependentCellsMap.get(pair);
+          if (editorCells != null) {
+            System.err.println("dirtily accessed property changed");
+            rebuildEditorContent(events);
+          }
+          if (editorCell_properties != null) {
+            for (EditorCell_Property cell : editorCell_properties) {
+              cell.synchronizeViewWithModel();
+            }
             relayout();
-            return;
           }
-          Set<EditorCell> cells = new HashSet<EditorCell>(cells_);
-          String oldPropertyValue = event.getOldPropertyValue();
-          for (final EditorCell cell : cells) {
-            boolean allRight = false;
-            if (cell instanceof EditorCell_Property) {
-              EditorCell_Property editorCell_property = (EditorCell_Property) cell;
-              String cellText = editorCell_property.getRenderedText();
-              if (oldPropertyValue == null) {
-                if (cellText == null) {
-                  cell.synchronizeViewWithModel();
-                  allRight = true;
-                }
-              } else if (oldPropertyValue.equals(cellText)) {
-                cell.synchronizeViewWithModel();
-                allRight = true;
-              }
-            }
-            if (!allRight) {
-              SNode node = cell.getSNode();
-              final EditorCell newCell = getEditorContext().createNodeCell(node, events);
-              if (cell.getParent() == null) {
-                continue;
-              }
-
-              runSwapCellsActions(new Runnable() {
-                public void run() {
-                  cell.getParent().replaceChild(cell, newCell);
-                }
-              });
-
-            }
-          }
-          relayout();
-          return;
-        }*/
-        rebuildEditorContent(events);
-
+        } else {
+          rebuildEditorContent(events);
+        }
       } else {
         String cellRole = null;
         EditorCell selectedCell = AbstractEditorComponent.this.getSelectedCell();

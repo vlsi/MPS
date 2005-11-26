@@ -17,6 +17,7 @@ public class PropertyAccessor implements ModelAccessor {
   private boolean myReadOnly;
   private boolean myAllowEmptyText;
   private PropertyDeclaration myPropertyDeclaration;
+  private EditorCell_Property myCell;
 
   public PropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, EditorContext editorContext) {
     myNodeProxy = new SNodeProxy(node);
@@ -26,12 +27,28 @@ public class PropertyAccessor implements ModelAccessor {
     myPropertyDeclaration = SModelUtil.getPropertyDeclaration(node, propertyName, editorContext.getOperationContext().getScope());
   }
 
+  public SNodeProxy getNodeProxy() {
+    return myNodeProxy;
+  }
+
+//  /*package*/ void setPropertyCell(EditorCell_Property cell) {
+//    myCell = cell;
+//  }
+//
+//  public EditorCell_Property getPropertyCell() {
+//    return myCell;
+//  }
+//
+//  public boolean hasPropertyCell() {
+//    return myCell != null;
+//  }
+
   public String getPropertyName() {
     return myPropertyName;
   }
 
   public String getText() {
-    String value = myNodeProxy.getNode().getProperty(myPropertyName);
+    String value = myNodeProxy.getNode().getProperty(myPropertyName, this);
     return fromInternal(value);
   }
 
@@ -54,7 +71,7 @@ public class PropertyAccessor implements ModelAccessor {
 
   private boolean isValidText_internal(String text) {
     if (myReadOnly) {
-      String propertyValue = myNodeProxy.getNode().getProperty(myPropertyName);
+      String propertyValue = myNodeProxy.getNode().getProperty(myPropertyName, this);
       return (text == null && propertyValue == null) || (text != null && text.equals(propertyValue));
     }
 

@@ -4,6 +4,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SNodeProxy;
+import jetbrains.mps.annotations.Hack;
 
 import java.util.Set;
 import java.util.Stack;
@@ -22,6 +23,7 @@ public class NodeReadAccessCaster {
   private static Thread myThread;
 
   private static final Object READ_LOCK = new Object();
+  private static boolean myCanFirePropertyReadAccessedEvent;
 
   public static void setNodeReadAccessListener(CellBuildNodeAccessListener listener) {
     ensureNoConcurrentAccess();
@@ -56,7 +58,16 @@ public class NodeReadAccessCaster {
     if (myReadAccessListener != null) myReadAccessListener.readAccess(node);
   }
 
+  public @Hack static void switchOffFiringPropertyReadAccessedEvent() {
+    myCanFirePropertyReadAccessedEvent = false;
+  }
+
+  public @Hack static void switchOnFiringPropertyReadAccessedEvent() {
+    myCanFirePropertyReadAccessedEvent = true;
+  }
+
   public static void firePropertyReadAccessed(SNode node, String propertyName) {
+    if (!myCanFirePropertyReadAccessedEvent) return;
     ensureNoConcurrentAccess();
     if (myReadAccessListener != null) {
       myReadAccessListener.propertyReadAccess(node, propertyName);

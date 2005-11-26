@@ -8,6 +8,8 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.nodeEditor.PropertyAccessor;
+import jetbrains.mps.annotations.Hack;
 
 
 import java.util.*;
@@ -227,7 +229,13 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public String getProperty(String propertyName) {
-    NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName);
+    return getProperty(propertyName, null);
+  }
+
+  public @Hack String getProperty(String propertyName, PropertyAccessor propertyAccessor) {
+    if (propertyAccessor == null /*|| !propertyAccessor.hasPropertyCell()*/) {  //if access is not from cell
+      NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName);
+    }
     return myProperties.get(propertyName);
   }
 

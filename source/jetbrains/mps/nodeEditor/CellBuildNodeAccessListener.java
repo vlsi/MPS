@@ -22,7 +22,7 @@ public class CellBuildNodeAccessListener {
 
   protected HashSet<SNode> myNodesToDependOn = new HashSet<SNode>();
   protected HashSet<SNodeProxy> myReferentTargetsToDependOn = new HashSet<SNodeProxy>();
-  protected HashSet<Pair<SNode,String>> myReadAccessedProperties = new HashSet<Pair<SNode, String>>();
+  protected HashSet<Pair<SNodeProxy,String>> myReadAccessedProperties = new HashSet<Pair<SNodeProxy, String>>();
 
   public CellBuildNodeAccessListener(AbstractEditorComponent editor) {
     myEditor = editor;
@@ -30,8 +30,8 @@ public class CellBuildNodeAccessListener {
 
   public void recordingFinishedForCell(EditorCell cell) {
     myEditor.putCellAndNodesToDependOn(cell, myNodesToDependOn, myReferentTargetsToDependOn);
-    for (Pair<SNode, String> pair : myReadAccessedProperties) {
-      myEditor.addNodePropertyAndDependentCell(cell, pair);
+    for (Pair<SNodeProxy, String> pair : myReadAccessedProperties) {
+      myEditor.addCellDependentOnNodePropertyWhichWasAccessedDirtily(cell, pair);
     }
   }
 
@@ -51,6 +51,10 @@ public class CellBuildNodeAccessListener {
     myReferentTargetsToDependOn.addAll(nodeProxies);
   }
 
+  public void propertyReadAccess(SNode node, String propertyName) {
+    myReadAccessedProperties.add(new Pair<SNodeProxy, String>(new SNodeProxy(node), propertyName));
+  }
+
   public void readAccess(SNode node) {
     myNodesToDependOn.add(node);
   }
@@ -59,7 +63,4 @@ public class CellBuildNodeAccessListener {
     myReferentTargetsToDependOn.add(new SNodeProxy(reference));
   }
 
-  public void propertyReadAccess(SNode node, String propertyName) {
-   // myReadAccessedProperties.add(new Pair<SNode, String>(node, propertyName));    //todo
-  }
 }
