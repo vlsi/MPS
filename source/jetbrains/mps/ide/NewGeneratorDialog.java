@@ -1,0 +1,209 @@
+package jetbrains.mps.ide;
+
+import jetbrains.mps.ide.ui.SmartFileChooser;
+import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.projectLanguage.*;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.DirectoryUtil;
+import jetbrains.mps.transformation.TLBase.MappingConfiguration;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
+import java.util.List;
+
+public class NewGeneratorDialog extends BaseDialog {
+  private static final Logger LOG = Logger.getLogger(NewGeneratorDialog.class);
+  private static final DialogDimensionsSettings.DialogDimensions ourDefaultDimensionSettings = new DialogDimensionsSettings.DialogDimensions(200, 200, 400, 500);
+
+  private JPanel myContenetPane = new JPanel();
+  private JScrollPane myMainComponentPane = new JScrollPane(myContenetPane);
+  private JComboBox myTargetLanguageName;
+  private JTextField myTemplateModelsDir;
+  private Language mySourceLanguage;
+  private Frame myFrame;
+
+  public NewGeneratorDialog(Frame mainFrame, Language sourceLanguage) throws HeadlessException {
+    super(mainFrame, "New Generator");
+    mySourceLanguage = sourceLanguage;
+    myFrame = mainFrame;
+    initContentPane();
+  }
+
+  public void setVisible(boolean b) {
+    if(b) {
+      pack();
+    }
+    super.setVisible(b);
+  }
+
+  public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
+    return ourDefaultDimensionSettings;
+  }
+
+  protected JComponent getMainComponent() {
+    return myMainComponentPane;
+  }
+
+  private void initContentPane() {
+    JPanel internalPanel = new JPanel(new GridLayout(0, 1));
+    internalPanel.setBackground(Color.WHITE);
+    internalPanel.setBorder(BorderFactory.createEmptyBorder(0, 4, 10, 4));
+    myContenetPane.setBackground(Color.WHITE);
+    myContenetPane.setLayout(new BorderLayout());
+    myContenetPane.add(internalPanel, BorderLayout.NORTH);
+
+    internalPanel.add(new JLabel("Target language :"));
+
+    List<Language> visibleLanguages = GlobalScope.getInstance().getVisibleLanguages();
+    Object[] items = new Object[visibleLanguages.size()];
+    int count = 0;
+    for (Language language : visibleLanguages) {
+      items[count++] = language.getNamespace();
+    }
+    Arrays.sort(items);
+    myTargetLanguageName = new JComboBox(items);
+    internalPanel.add(myTargetLanguageName);
+    internalPanel.add(new JLabel("Template models root :"));
+    myTargetLanguageName.addItemListener(new ItemListener() {
+      public void itemStateChanged(ItemEvent e) {
+        updateTemplateModelsDir();
+      }
+    });
+
+    myTemplateModelsDir = new JTextField();
+    updateTemplateModelsDir();
+
+    JPanel rootChooser = new JPanel(new BorderLayout());
+
+    JButton chooseButton = new JButton(new AbstractAction("...") {
+      public void actionPerformed(ActionEvent e) {
+        String oldPath = myTemplateModelsDir.getText();
+        SmartFileChooser chooser = new SmartFileChooser();
+        if (oldPath != null && oldPath.length() != 0) {
+          chooser.setSelectedFile(new File(oldPath));
+        }
+        chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+          myTemplateModelsDir.setText(chooser.getSelectedFile().getAbsolutePath());
+        }
+      }
+    });
+    rootChooser.add(myTemplateModelsDir, BorderLayout.CENTER);
+    rootChooser.add(chooseButton, BorderLayout.EAST);
+    internalPanel.add(rootChooser);
+  }
+
+  private void updateTemplateModelsDir() {
+    String targetLanguageName = (String) myTargetLanguageName.getSelectedItem();
+    try {
+      String path = mySourceLanguage.getDescriptorFile().getParentFile().getCanonicalPath();
+      String modelsDir = path +
+              File.separatorChar + "generators" +
+              File.separatorChar + NameUtil.shortNameFromLongName(targetLanguageName) +
+              File.separatorChar + "templates";
+
+      myTemplateModelsDir.setText(modelsDir);
+    } catch (IOException e) {
+      LOG.error(e);
+    }
+  }
+
+  @Button(position = 0, name = "OK", defaultButton = true)
+  public void buttonOK() {
+    String templateModelsPath = myTemplateModelsDir.getText();
+    if (templateModelsPath.length() == 0) {
+      setErrorText("No template models root");
+      return;
+    }
+
+    final File dir = new File(templateModelsPath);
+    if (!dir.isAbsolute()) {
+      setErrorText("Path should be absolute");
+      return;
+    }
+    if (!dir.exists()) {
+      if (!DirectoryUtil.askToCreateNewDirectory(myFrame, dir)) {
+        setErrorText("Enter correct path");
+        return;
+      }
+    }
+
+    dispose();
+    String targetLanguageName = (String) myTargetLanguageName.getSelectedItem();
+    final Language targetLanguage = GlobalScope.getInstance().getLanguage(targetLanguageName);
+
+    CommandProcessor.instance().executeCommand(new Runnable() {
+      public void run() {
+        createNewGenerator(mySourceLanguage, targetLanguage, dir);
+      }
+    }, "create new generator");
+  }
+
+  @Button(position = 1, name = "Cancel")
+  public void buttonCancel() {
+    dispose();
+  }
+
+  protected void createNewGenerator(Language sourceLanguage, Language targetLanguage, File templateModelsDir ) {
+    LanguageDescriptor languageDescriptor = sourceLanguage.getLanguageDescriptor();
+    SModel model = languageDescriptor.getModel();
+    model.setLoading(true);
+
+    GeneratorDescriptor generatorDescriptor = new GeneratorDescriptor(model);
+    generatorDescriptor.setGeneratorUID(Generator.generateGeneratorUID(sourceLanguage));
+
+    // set target language
+    jetbrains.mps.projectLanguage.Language _targetLanguage = new jetbrains.mps.projectLanguage.Language(model);
+    _targetLanguage.setName(targetLanguage.getNamespace());
+    generatorDescriptor.setTargetLanguage(_targetLanguage);
+
+    // add "template models" model root
+    String templateModelNamePrefix = sourceLanguage.getNamespace() +
+            ".generator." +
+            NameUtil.shortNameFromLongName(targetLanguage.getNamespace()) +
+            ".template";
+    ModelRoot templateModelsRoot = new ModelRoot(model);
+    templateModelsRoot.setPrefix(templateModelNamePrefix);
+
+    templateModelsRoot.setPath(templateModelsDir.getAbsolutePath());
+    generatorDescriptor.addModelRoot(templateModelsRoot);
+
+    // add target language module to module roots
+    Root targetLanguageModuleRoot = new Root(model);
+    targetLanguageModuleRoot.setPath(targetLanguage.getDescriptorFile().getParentFile().getAbsolutePath());
+    generatorDescriptor.addModuleRoot(targetLanguageModuleRoot);
+
+    // add new generator to language
+    languageDescriptor.addGenerator(generatorDescriptor);
+    sourceLanguage.setLanguageDescriptor(languageDescriptor);
+    sourceLanguage.save();
+
+    // add <default> templates model
+    List<Generator> generators = sourceLanguage.getGenerators();
+    Generator newGenerator = generators.get(generators.size() - 1);
+    SModelDescriptor templateModelDescriptor = newGenerator.createModel(
+            new SModelUID(templateModelNamePrefix, "main", SModelStereotype.TEMPLATES),
+            templateModelsRoot.getPath(),
+            templateModelsRoot.getPrefix());
+
+    SModel templateModel = templateModelDescriptor.getSModel();
+    templateModel.addLanguage(BootstrapLanguages.getInstance().getTLBase());
+    templateModel.addLanguage(targetLanguage);
+
+    MappingConfiguration mappingConfiguration = new MappingConfiguration(templateModel);
+    mappingConfiguration.setName("main");
+    templateModel.addRoot(mappingConfiguration);
+    templateModelDescriptor.save();
+  }
+}

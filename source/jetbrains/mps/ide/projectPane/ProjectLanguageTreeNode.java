@@ -114,7 +114,7 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
     }
 
     // language myGeneratorsTreeNode
-    myGeneratorsTreeNode = new TextTreeNode("Generators", operationContext) {
+    myGeneratorsTreeNode = new TextTreeNode("generators", operationContext) {
       public Icon getIcon(boolean expanded) {
         return Icons.GENERATORS_ICON;
       }

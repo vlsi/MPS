@@ -3,7 +3,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.GeneratorDescriptor;
-import jetbrains.mps.projectLanguage.Model;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
 
 import java.util.*;
@@ -69,11 +68,11 @@ public class Generator extends AbstractModule {
     return null;
   }
 
-  public SModelUID getTemplatesModelUID() {
-    Model templatesModel = myGeneratorDescriptor.getTemplatesModel();
-    if (templatesModel == null || templatesModel.getName() == null) return null;
-    return SModelUID.fromString(templatesModel.getName());
-  }
+//  public SModelUID getTemplatesModelUID() {
+//    Model templatesModel = myGeneratorDescriptor.getTemplatesModel();
+//    if (templatesModel == null || templatesModel.getName() == null) return null;
+//    return SModelUID.fromString(templatesModel.getName());
+//  }
 
   public String getGeneratorClass() {
     return myGeneratorDescriptor.getGeneratorClass();

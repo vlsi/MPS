@@ -451,7 +451,7 @@ public class Language extends AbstractModule {
           if (languageAspectStatus.isAccessoryModel()) accessoryStatus = languageAspectStatus;
         }
         if (modelOwner instanceof Generator) {
-          LanguageAspectStatus languageAspectStatus = getLanguageAspectStatus(((Generator)modelOwner).getSourceLanguage(), modelDescriptor);
+          LanguageAspectStatus languageAspectStatus = getLanguageAspectStatus(((Generator) modelOwner).getSourceLanguage(), modelDescriptor);
           if (languageAspectStatus.isLanguageAspect()) return languageAspectStatus;
           if (languageAspectStatus.isAccessoryModel()) accessoryStatus = languageAspectStatus;
         }
@@ -482,19 +482,12 @@ public class Language extends AbstractModule {
       return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.EDITOR);
     }
 
-    List<Generator> generators = language.getGenerators();
-    for (Generator generator : generators) {
-      SModelUID templatesModelUID = generator.getTemplatesModelUID();
-      if (modelDescriptor.getModelUID().equals(templatesModelUID)) {
-        return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.GENERATOR_TEMPLATES);
-      }
-    }
     return new LanguageAspectStatus(null, LanguageAspectStatus.AspectKind.NONE);
   }
 
   public static class LanguageAspectStatus implements IStatus {
     public static enum AspectKind {
-      STRUCTURE,EDITOR,ACTIONS,TYPESYSTEM,GENERATOR_TEMPLATES,ACCESSORY,NONE
+      STRUCTURE,EDITOR,ACTIONS,TYPESYSTEM,ACCESSORY,NONE
     }
 
     private Language myLanguage;
@@ -549,10 +542,6 @@ public class Language extends AbstractModule {
       return myAspectKind == LanguageAspectStatus.AspectKind.ACTIONS;
     }
 
-    public boolean isGeneratorTemplates() {
-      return myAspectKind == LanguageAspectStatus.AspectKind.GENERATOR_TEMPLATES;
-    }
-
     public boolean isAccessoryModel() {
       return myAspectKind == LanguageAspectStatus.AspectKind.ACCESSORY;
     }
@@ -580,15 +569,6 @@ public class Language extends AbstractModule {
           languageDescriptor.removeChild(languageDescriptor.getTypeSystem());
         } else if (status.isActions()) {
           languageDescriptor.removeChild(languageDescriptor.getActionsModel());
-        } else if (status.isGeneratorTemplates()) {
-          Iterator<jetbrains.mps.projectLanguage.GeneratorDescriptor> iterator = languageDescriptor.generators();
-          while (iterator.hasNext()) {
-            jetbrains.mps.projectLanguage.GeneratorDescriptor generatorDescriptor = iterator.next();
-            if (generatorDescriptor.getTemplatesModel().getName().equals(modelDescriptor.getModelUID().toString())) {
-              languageDescriptor.removeChild(generatorDescriptor);
-              break;
-            }
-          }
         }
       }
     }

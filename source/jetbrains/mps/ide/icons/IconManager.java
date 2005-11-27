@@ -112,8 +112,6 @@ public class IconManager {
             return Icons.EDITOR_MODEL_ICON;
           } else if (languageAspectStatus.isStructure()) {
             return Icons.STRUCTURE_MODEL_ICON;
-          } else if (languageAspectStatus.isGeneratorTemplates()) {
-            return Icons.TEMPLATES_MODEL_ICON;
           } else if (languageAspectStatus.isActions()) {
             return Icons.ACTIONS_MODEL_ICON;
           } else if (languageAspectStatus.isTypesystem()) {
