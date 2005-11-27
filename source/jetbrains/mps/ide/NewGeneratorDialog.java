@@ -1,22 +1,22 @@
 package jetbrains.mps.ide;
 
-import jetbrains.mps.ide.ui.SmartFileChooser;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.ui.SmartFileChooser;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.projectLanguage.*;
+import jetbrains.mps.projectLanguage.GeneratorDescriptor;
+import jetbrains.mps.projectLanguage.LanguageDescriptor;
+import jetbrains.mps.projectLanguage.ModelRoot;
+import jetbrains.mps.projectLanguage.Root;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.DirectoryUtil;
 import jetbrains.mps.transformation.TLBase.MappingConfiguration;
+import jetbrains.mps.util.NameUtil;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
@@ -31,17 +31,15 @@ public class NewGeneratorDialog extends BaseDialog {
   private JComboBox myTargetLanguageName;
   private JTextField myTemplateModelsDir;
   private Language mySourceLanguage;
-  private Frame myFrame;
 
   public NewGeneratorDialog(Frame mainFrame, Language sourceLanguage) throws HeadlessException {
     super(mainFrame, "New Generator");
     mySourceLanguage = sourceLanguage;
-    myFrame = mainFrame;
     initContentPane();
   }
 
   public void setVisible(boolean b) {
-    if(b) {
+    if (b) {
       pack();
     }
     super.setVisible(b);
@@ -133,13 +131,11 @@ public class NewGeneratorDialog extends BaseDialog {
       return;
     }
     if (!dir.exists()) {
-      if (!DirectoryUtil.askToCreateNewDirectory(myFrame, dir)) {
-        setErrorText("Enter correct path");
-        return;
-      }
+      dir.mkdirs();
     }
 
     dispose();
+
     String targetLanguageName = (String) myTargetLanguageName.getSelectedItem();
     final Language targetLanguage = GlobalScope.getInstance().getLanguage(targetLanguageName);
 
@@ -155,7 +151,7 @@ public class NewGeneratorDialog extends BaseDialog {
     dispose();
   }
 
-  protected void createNewGenerator(Language sourceLanguage, Language targetLanguage, File templateModelsDir ) {
+  protected void createNewGenerator(Language sourceLanguage, Language targetLanguage, File templateModelsDir) {
     LanguageDescriptor languageDescriptor = sourceLanguage.getLanguageDescriptor();
     SModel model = languageDescriptor.getModel();
     model.setLoading(true);
@@ -189,21 +185,30 @@ public class NewGeneratorDialog extends BaseDialog {
     sourceLanguage.setLanguageDescriptor(languageDescriptor);
     sourceLanguage.save();
 
-    // add <default> templates model
+    // add <default> templates model (if root is empty)
     List<Generator> generators = sourceLanguage.getGenerators();
     Generator newGenerator = generators.get(generators.size() - 1);
-    SModelDescriptor templateModelDescriptor = newGenerator.createModel(
-            new SModelUID(templateModelNamePrefix, "main", SModelStereotype.TEMPLATES),
-            templateModelsRoot.getPath(),
-            templateModelsRoot.getPrefix());
+    boolean alreadyOwnsTemplateModel = false;
+    for (SModelDescriptor modelDescriptor : newGenerator.getOwnModelDescriptors()) {
+      if (SModelStereotype.TEMPLATES.equals(modelDescriptor.getStereotype())) {
+        alreadyOwnsTemplateModel = true;
+        break;
+      }
+    }
+    if (!alreadyOwnsTemplateModel) {
+      SModelDescriptor templateModelDescriptor = newGenerator.createModel(
+              new SModelUID(templateModelNamePrefix, "main", SModelStereotype.TEMPLATES),
+              templateModelsRoot.getPath(),
+              templateModelsRoot.getPrefix());
 
-    SModel templateModel = templateModelDescriptor.getSModel();
-    templateModel.addLanguage(BootstrapLanguages.getInstance().getTLBase());
-    templateModel.addLanguage(targetLanguage);
+      SModel templateModel = templateModelDescriptor.getSModel();
+      templateModel.addLanguage(BootstrapLanguages.getInstance().getTLBase());
+      templateModel.addLanguage(targetLanguage);
 
-    MappingConfiguration mappingConfiguration = new MappingConfiguration(templateModel);
-    mappingConfiguration.setName("main");
-    templateModel.addRoot(mappingConfiguration);
-    templateModelDescriptor.save();
+      MappingConfiguration mappingConfiguration = new MappingConfiguration(templateModel);
+      mappingConfiguration.setName("main");
+      templateModel.addRoot(mappingConfiguration);
+      templateModelDescriptor.save();
+    }
   }
 }
