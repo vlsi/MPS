@@ -400,7 +400,7 @@ public class TemplateGenUtil {
           }
           return sourceNodes;
         }
-      } else if(nodeMacro instanceof LoopMacro ||
+      } else if (nodeMacro instanceof LoopMacro ||
               nodeMacro instanceof CopySrcListMacro ||
               nodeMacro instanceof MapSrcListMacro) {
         // produce source list the same way as for NodeMacro...
@@ -456,10 +456,12 @@ public class TemplateGenUtil {
         }
 
       } else if (nodeMacro instanceof CopySrcNodeMacro) {
-        builder = TemplateGenUtil.createCopyingNodeBuilder(sourceNode, templateNode.getRole_(), generator);
+//        builder = TemplateGenUtil.createCopyingNodeBuilder(sourceNode, templateNode.getRole_(), generator);
+        builder = generator.createCopyingNodeBuilder(sourceNode, templateNode.getRole_());
         needCreateChildBuilders = false;
       } else if (nodeMacro instanceof CopySrcListMacro) {
-        builder = TemplateGenUtil.createCopyingNodeBuilder(sourceNode, templateNode.getRole_(), generator);
+//        builder = TemplateGenUtil.createCopyingNodeBuilder(sourceNode, templateNode.getRole_(), generator);
+        builder = generator.createCopyingNodeBuilder(sourceNode, templateNode.getRole_());
         needCreateChildBuilders = false;
       } else if (nodeMacro instanceof MapSrcNodeMacro) {
         MapSrcNodeMacro mapSrcNodeMacro = (MapSrcNodeMacro) nodeMacro;
@@ -507,30 +509,6 @@ public class TemplateGenUtil {
     return new DefaultNodeBuilder(sourceNode, templateNode, mappingName, generator);
   }
 
-  public static INodeBuilder createCopyingNodeBuilder(SNode sourceNode, String roleInParent, ITemplateGenerator generator) {
-    INodeBuilder nodeBuilder = createCopyingNodeBuilder(sourceNode, generator);
-    nodeBuilder.setRoleInParent(roleInParent);
-    return nodeBuilder;
-  }
-
-  public static INodeBuilder createCopyingNodeBuilder(SNode sourceNode, ITemplateGenerator generator) {
-    // try to reduce source while copying
-    // todo: get rid of casting to AbstractTemplateModelGenerator
-    INodeBuilder nodeBuilder = ((AbstractTemplateModelGenerator) generator).getNodeBuilderManager().tryReduceByReductionRule(sourceNode);
-    if (nodeBuilder != null) {
-      nodeBuilder.setRoleInParent(sourceNode.getRole_());
-      return nodeBuilder;
-    }
-
-    nodeBuilder = createDefaultNodeBuilder(sourceNode, sourceNode, null, generator);
-    List<SNode> children = sourceNode.getChildren();
-    for (SNode child : children) {
-      INodeBuilder childBuilder = createCopyingNodeBuilder(child, generator);
-      nodeBuilder.addChildBuilder(childBuilder);
-    }
-    return nodeBuilder;
-  }
-
   private static INodeBuilder createNodeBuilderForSwitch(SNode sourceNode, TemplateSwitch templateSwitch, String mappingName, ITemplateGenerator generator) {
     ConditionalTemplate templateSwitchCase = generator.getTemplateSwitchCase(sourceNode, templateSwitch);
     if (templateSwitchCase == null) return null;
@@ -554,31 +532,8 @@ public class TemplateGenUtil {
     TemplateFragment templateFragment = templateFragments.get(0);
     SNode templateNodeForCase = templateFragment.getParent();
 
-//    SNode templateNodeForCase = getTemplateNodeFromSwitch(sourceNode, templateSwitch, generator);
-//    if (templateNodeForCase == null) {
-//      return null;
-//    }
     return createNodeBuilder(sourceNode, templateNodeForCase, mappingName, generator);
   }
-
-//  private static SNode getTemplateNodeFromSwitch(SNode sourceNode, TemplateSwitch templateSwitch, ITemplateGenerator generator) {
-//    TemplateDeclaration templateForSwitch = generator.getTemplateSwitchCase(sourceNode, templateSwitch);
-//    if (templateForSwitch != null) {
-//      List<TemplateFragment> templateFragments = getTemplateFragments(templateForSwitch);
-//      if (templateFragments.isEmpty()) {
-//        LOG.error("WARN: no template fragments found in " + templateForSwitch.getDebugText());
-//        return null;
-//      }
-//      if (templateFragments.size() > 1) {
-//        LOG.error("WARN: more when one fragments found in " + templateForSwitch.getDebugText());
-//        return null;
-//      }
-//
-//      TemplateFragment templateFragment = templateFragments.get(0);
-//      return templateFragment.getParent();
-//    }
-//    return null;
-//  }
 
   public static void printBuildersTree(INodeBuilder builder, int depth) {
     char[] indent = new char[depth * 3];

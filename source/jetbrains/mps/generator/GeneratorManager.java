@@ -209,6 +209,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   }
 
   public void generateModels(List<SModel> _sourceModels, Language targetLanguage, IOperationContext invocationContext, boolean generateText, IProgressMonitor progress) {
+    invocationContext.getProject().saveModels();
     List<SModelDescriptor> sourceModels = new ArrayList<SModelDescriptor>();
     for (SModel model : _sourceModels) {
       sourceModels.add(model.getModelDescriptor());

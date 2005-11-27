@@ -69,4 +69,6 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
   IScope getScope();
 
   int getErrorCount();
+
+  INodeBuilder createCopyingNodeBuilder(SNode sourceNode, String roleInParent);
 }
