@@ -53,7 +53,7 @@ public class IdeMain {
     SplashScreen.getInstance().showSplashScreen();
     initFonts();
 
-    if (new Date(105, 11, 1).compareTo(new Date()) == -1) {
+    if (new Date(106, 3, 1).compareTo(new Date()) == -1) {
       JOptionPane.showMessageDialog(SplashScreen.getInstance(), "Program is expired. You can download latest version from www.jetbrains.com");
       System.exit(0);
     }
