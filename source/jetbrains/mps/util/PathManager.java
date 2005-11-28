@@ -56,8 +56,6 @@ public class PathManager {
   }
 
   public static void setHomePath(String newHomePath) {
-    System.err.println("Home is " + newHomePath);
-    new Throwable().printStackTrace();
     ourHomePath = newHomePath;
   }
 
