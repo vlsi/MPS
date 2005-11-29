@@ -4,13 +4,9 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
-import jetbrains.mps.nodeEditor.PropertyAccessor;
-import jetbrains.mps.annotations.Hack;
-
+import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
 
@@ -229,7 +225,11 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public String getProperty(String propertyName) {
-    return getProperty(propertyName, null);
+//    return getProperty(propertyName, null);
+    // disable editor optimzation - constructor names are not shown
+    
+    NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName);
+    return myProperties.get(propertyName);
   }
 
   private boolean isEmptyPropertyValue(String s) {
@@ -242,12 +242,12 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return !isEmptyPropertyValue(propertyValue);
   }
 
-  public @Hack String getProperty(String propertyName, PropertyAccessor propertyAccessor) {
-    if (propertyAccessor == null) {  //if access is not from cell
-      NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName);
-    }
-    return myProperties.get(propertyName);
-  }
+//  public @Hack String getProperty(String propertyName, PropertyAccessor propertyAccessor) {
+//    if (propertyAccessor == null) {  //if access is not from cell
+//      NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName);
+//    }
+//    return myProperties.get(propertyName);
+//  }
 
   public void setProperty(final String propertyName, String propertyValue) {
     final String oldValue = myProperties.get(propertyName);
@@ -767,19 +767,19 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return getConceptName();
   }
 
-  public boolean hasConceptProperty(String propertyName) {
-    return false;
-  }
-
-  public String getConceptProperty(String propertyName) {
-    return null;
-  }
-
-  public int getIntegerConceptProperty(String propertyName) {
-    return 0;
-  }
-
-  public boolean getBooleanConceptProperty(String propertyName) {
-    return false;
-  }
+//  public boolean hasConceptProperty(String propertyName) {
+//    return false;
+//  }
+//
+//  public String getConceptProperty(String propertyName) {
+//    return null;
+//  }
+//
+//  public int getIntegerConceptProperty(String propertyName) {
+//    return 0;
+//  }
+//
+//  public boolean getBooleanConceptProperty(String propertyName) {
+//    return false;
+//  }
 }
