@@ -13,6 +13,9 @@ import java.io.File;
  */
 public interface SModelDescriptor {
 
+  Set<RootDescriptor> getRoots();
+  Set<RootDescriptor> getRoots(String concept);
+
   /**
    * After model loading call SModelRepostiory.fireModelRepositoryChanged
    */
