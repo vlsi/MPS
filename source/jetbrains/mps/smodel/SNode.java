@@ -6,9 +6,7 @@ import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
-import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.annotations.Hack;
 
 import java.util.*;
 
@@ -45,7 +43,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   public void changeModel(SModel newModel) {
 
-    LOG.assertLog (myParent == null || myParent.myModel == newModel, "CHANGE MODEL: parent must be NULL or must have the same model as your destination model");
+    LOG.assertLog(myParent == null || myParent.myModel == newModel, "CHANGE MODEL: parent must be NULL or must have the same model as your destination model");
 
     myModel.removeNodeId(myId);
     myModel = newModel;
@@ -67,7 +65,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
       newNode.myParent = null;
       newNode.myReferences = new ArrayList<SReference>();
-      newNode.myChildren =  new ArrayList<SNode>();
+      newNode.myChildren = new ArrayList<SNode>();
       newNode.myUserObjects = new HashMap();
       newNode.myProperties = new HashMap<String, String>();
       newNode.myProperties.putAll(this.myProperties);
@@ -268,7 +266,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     getModel().firePropertyChangedEvent(this, propertyName, oldValue, propertyValue, addedOrRemoved, isRemoved);
   }
 
-
   // ---------------------------------
   // children
   // ---------------------------------
@@ -409,7 +406,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     getModel().fireChildAddedEvent(this, role, child, index);
   }
 
-
   // ---------------------------------
   //    references
   // ---------------------------------
@@ -421,12 +417,12 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   public List<SReference> getReferences(String role) {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
-    if(role == null) {
+    if (role == null) {
       return getReferences();
     }
     List<SReference> refs = new ArrayList<SReference>();
-    for(SReference ref: myReferences) {
-      if(role.equals(ref.getRole())) {
+    for (SReference ref : myReferences) {
+      if (role.equals(ref.getRole())) {
         refs.add(ref);
       }
     }
@@ -509,7 +505,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
 
-  public<N extends SNode> N getParent(Class<N> cls) {
+  public <N extends SNode> N getParent(Class<N> cls) {
     if (cls.isInstance(this)) return (N) this;
     if (getParent() == null) return null;
     return getParent().getParent(cls);
@@ -595,7 +591,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     getModel().fireReferenceRemovedEvent(reference);
   }
 
-
   //
   // ----------------------------------
   //
@@ -627,7 +622,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       insertReferenceAt(index, SReference.newInstance(role, this, insertNode));
     }
   }
-
 
   //
   // ----------------------------------
@@ -683,7 +677,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     }
   }
 
-
   //
   // -----------------------
   //
@@ -706,7 +699,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       //e.printStackTrace();
       nameText = "<??name??>";
     }
-    return roleText + " " + getConceptName() + " " + nameText + " in " + getModel().getUID();
+    return roleText + " " + NameUtil.shortNameFromLongName(getClass().getName()) + " " + nameText + " in " + myModel.getUID();
   }
 
   public String getId() {
@@ -731,7 +724,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   public void setId(String id) {
     if (id == null) {
-     if (myId != null) {
+      if (myId != null) {
         myModel.removeNodeId(myId);
       }
     } else {
@@ -774,4 +767,12 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 //  public boolean getBooleanConceptProperty(String propertyName) {
 //    return false;
 //  }
+
+  public boolean isDisposed() {
+    // tmp : don't check nodes in $internal$ models
+    if ("$internal$".equals(myModel.getStereotype())) {
+       return false;
+    }
+    return myModel.isDisposed();
+  }
 }

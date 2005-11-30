@@ -1,13 +1,10 @@
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.transformation.TLBase.TemplateSwitch;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -19,9 +16,9 @@ import java.util.Map;
 public class TemplateSwitchGraph {
   private Map<TemplateSwitch, TemplateSwitchGraphNode> myTemplateSwitchToGraphNodeMap = new HashMap<TemplateSwitch, TemplateSwitchGraphNode>();
 
-  public TemplateSwitchGraph(List<SModel> templateModels) {
-    for (SModel templateModel : templateModels) {
-      for (SNode root : templateModel.getRoots()) {
+  public TemplateSwitchGraph(List<SModelDescriptor> templateModels) {
+    for (SModelDescriptor templateModel : templateModels) {
+      for (SNode root : templateModel.getSModel().getRoots()) {
         if (root instanceof TemplateSwitch) {
           if (myTemplateSwitchToGraphNodeMap.get(root) == null) {
             addSwitch((TemplateSwitch) root);

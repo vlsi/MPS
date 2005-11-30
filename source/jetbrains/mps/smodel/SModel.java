@@ -28,7 +28,8 @@ public class SModel implements Iterable<SNode> {
   private List<SNode> myRoots = new ArrayList<SNode>();
   private SModelUID myUID = new SModelUID("unnamed", "");
 
-  private boolean isLoading = false;
+  private boolean myDisposed;
+  private boolean isLoading;
 
   private int myMaxImportIndex;
   private List<String> myLanguages = new ArrayList<String>();
@@ -585,6 +586,18 @@ public class SModel implements Iterable<SNode> {
     for (SNode root : roots) {
       root.delete();
     }
+  }
+
+  public void dispose() {
+//    System.out.println("dispose : " + getUID());
+//    if(getUID().getShortName().equals("structure")) {
+//      System.out.println("structure");
+//    }
+    myDisposed = true;
+  }
+
+  public boolean isDisposed() {
+    return myDisposed;
   }
 
   /*package*/

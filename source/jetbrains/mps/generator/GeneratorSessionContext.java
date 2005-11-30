@@ -25,7 +25,7 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
   private static final Logger LOG = Logger.getLogger(GeneratorSessionContext.class);
 
   private List<Generator> myGeneratorModules;
-  private List<SModel> myTemplateModels;
+  private List<SModelDescriptor> myTemplateModels;
   private IOperationContext myInvocationContext;
   private TransientModule myTransientModule;
   private Language myTargetLanguage;
@@ -36,13 +36,13 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
     myInvocationContext = invocationContext;
     myTransientModule = new TransientModule(invocationContext.getModule());
 
-    myTemplateModels = new LinkedList<SModel>();
+    myTemplateModels = new LinkedList<SModelDescriptor>();
     for (Generator generatorModule : generatorModules) {
       List<SModelDescriptor> ownModelDescriptors = generatorModule.getOwnModelDescriptors();
       for (SModelDescriptor modelDescriptor : ownModelDescriptors) {
         if (SModelStereotype.TEMPLATES.equals(modelDescriptor.getStereotype())) {
-          if (!myTemplateModels.contains(modelDescriptor.getSModel())) {
-            myTemplateModels.add(modelDescriptor.getSModel());
+          if (!myTemplateModels.contains(modelDescriptor)) {
+            myTemplateModels.add(modelDescriptor);
           }
         }
       }
@@ -69,7 +69,7 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
     return myGeneratorModules;
   }
 
-  public List<SModel> getTemplateModels() {
+  public List<SModelDescriptor> getTemplateModels() {
     return myTemplateModels;
   }
 

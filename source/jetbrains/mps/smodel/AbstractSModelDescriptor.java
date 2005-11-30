@@ -261,13 +261,16 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   }
 
   public void refresh() {
-   // LanguageRepository.getInstance().invalidateLanguagesCaches();
     if (isInitialized()) {
       LOG.debug("Refreshing " + mySModel.getUID());
       List<SModelListener> listeners = getSModel().getListeners();
       List<SModelCommandListener> commandListeners = getSModel().getCommandListeners();
       try {
-        mySModel = ModelPersistence.refreshModel(mySModel);
+        SModel newModel = ModelPersistence.refreshModel(mySModel);
+        if(mySModel != newModel) {
+          mySModel.dispose();
+          mySModel = newModel;
+        }
         for (SModelListener l : listeners) {
           mySModel.addSModelListener(l);
         }

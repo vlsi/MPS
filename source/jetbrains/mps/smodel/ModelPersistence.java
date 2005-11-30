@@ -1,12 +1,11 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.baseLanguage.ClassifierType;
+import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.baseLanguage.ClassifierType;
-import jetbrains.mps.annotations.Hack;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;

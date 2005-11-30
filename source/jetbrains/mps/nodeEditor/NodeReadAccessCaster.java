@@ -1,13 +1,12 @@
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.annotations.Hack;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SNodeProxy;
-import jetbrains.mps.annotations.Hack;
+import jetbrains.mps.smodel.SReference;
 
-import java.util.Set;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -81,19 +80,23 @@ public class NodeReadAccessCaster {
 
   public static void fireNodeReadAccessed(SNode node) {
     ensureNoConcurrentAccess();
+    ensureNotDisposed(node);
     if (myReadAccessListener != null) myReadAccessListener.readAccess(node);
   }
 
-  @Hack static void switchOffFiringPropertyReadAccessedEvent() {
+  @Hack
+  static void switchOffFiringPropertyReadAccessedEvent() {
     myCanFirePropertyReadAccessedEvent = false;
   }
 
-  @Hack static void switchOnFiringPropertyReadAccessedEvent() {
+  @Hack
+  static void switchOnFiringPropertyReadAccessedEvent() {
     myCanFirePropertyReadAccessedEvent = true;
   }
 
   public static void firePropertyReadAccessed(SNode node, String propertyName) {
     ensureNoConcurrentAccess();
+    ensureNotDisposed(node);
     if (!myCanFirePropertyReadAccessedEvent) return;
     if (myPropertyAccessor != null) {
       if (myPropertyCellCreationAccessListener != null) {
@@ -111,6 +114,7 @@ public class NodeReadAccessCaster {
 
   public static void fireReferenceTargetReadAccessed(SReference reference) {
     ensureNoConcurrentAccess();
+    ensureNotDisposed(reference.getSourceNode());
     if (myReadAccessListener != null) myReadAccessListener.readAccess(reference);
   }
 
@@ -128,6 +132,12 @@ public class NodeReadAccessCaster {
       } catch (InterruptedException e) {
         throw new RuntimeException(e);
       }
+    }
+  }
+
+  private static void ensureNotDisposed(SNode node) {
+    if (node.isDisposed()) {
+      throw new RuntimeException("Try to access node from disposed model: " + node.getDebugText());
     }
   }
 }
