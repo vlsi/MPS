@@ -148,9 +148,15 @@ public abstract class BaseDialog extends JDialog {
     List<JButton> result = new ArrayList<JButton>();
     for (int i = 0; i < buttonMethods.keySet().size(); i++) {
       if (!buttonMethods.containsKey(i)) throw new RuntimeException("BaseDialog doesn't contain button with index " + i);
-      Button b = buttonMethods.get(i).getAnnotation(Button.class);
+      final Button b = buttonMethods.get(i).getAnnotation(Button.class);
       final Method m = buttonMethods.get(i);
       JButton button = new JButton(new AbstractAction(b.name()) {
+        {
+          if (b.shortcut().length() > 0) {
+            putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke(b.shortcut()));
+          }
+        }
+
         public void actionPerformed(ActionEvent e) {
           try {
             m.invoke(BaseDialog.this);
@@ -178,6 +184,7 @@ public abstract class BaseDialog extends JDialog {
   public @interface Button {
     int position();
     String name();
+    String shortcut() default "";
     boolean defaultButton() default false;
   }
 }
