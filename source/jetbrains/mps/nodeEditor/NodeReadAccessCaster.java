@@ -71,7 +71,9 @@ public class NodeReadAccessCaster {
     String propertyName = accessor.getPropertyName();
     SNodeProxy nodeProxy = accessor.getNodeProxy();
     try {
-      return nodeProxy.getNode().getProperty(propertyName);
+      SNode node = nodeProxy.getNode();
+      if (node == null) return null;
+      return node.getProperty(propertyName);
     } finally {
       myPropertyAccessor = null;
     }
