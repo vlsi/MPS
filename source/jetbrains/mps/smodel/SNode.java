@@ -6,7 +6,9 @@ import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.nodeEditor.PropertyAccessor;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.annotations.Hack;
 
 import java.util.*;
 
@@ -58,7 +60,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return getModel().getRoots().contains(this);
   }
 
-  public SNode clone() {//doesn't copy children, references and back references
+  public SNode cloneProperties() {//doesn't copy children, references and back references
     SNode newNode = null;
     try {
       newNode = (SNode) super.clone();
@@ -225,9 +227,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public String getProperty(String propertyName) {
-//    return getProperty(propertyName, null);
-    // disable editor optimzation - constructor names are not shown
-    
     NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName);
     return myProperties.get(propertyName);
   }
@@ -241,13 +240,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     String propertyValue = myProperties.get(propertyName);
     return !isEmptyPropertyValue(propertyValue);
   }
-
-//  public @Hack String getProperty(String propertyName, PropertyAccessor propertyAccessor) {
-//    if (propertyAccessor == null) {  //if access is not from cell
-//      NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName);
-//    }
-//    return myProperties.get(propertyName);
-//  }
 
   public void setProperty(final String propertyName, String propertyValue) {
     final String oldValue = myProperties.get(propertyName);
@@ -440,7 +432,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     }
     return refs;
   }
-  
+
 
   public void removeReference(SReference ref) {
     myReferences.remove(ref);
@@ -458,7 +450,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       }
     }
     return list;
-  }    
+  }
 
   public SReference setReferent(String role, SNode target) {
     // remove old references

@@ -15,22 +15,20 @@ import java.util.Set;
  * Time: 19:17:53
  * To change this template use File | Settings | File Templates.
  */
-public class CellBuildNodeAccessListener {
+public class CellBuildNodeAccessListener extends AbstractNodeReadAccessListener {
 
-
-  protected AbstractEditorComponent myEditor;
 
   protected HashSet<SNode> myNodesToDependOn = new HashSet<SNode>();
   protected HashSet<SNodeProxy> myReferentTargetsToDependOn = new HashSet<SNodeProxy>();
-  protected HashSet<Pair<SNodeProxy,String>> myReadAccessedProperties = new HashSet<Pair<SNodeProxy, String>>();
+  protected HashSet<Pair<SNodeProxy,String>> myDirtilyReadAccessedProperties = new HashSet<Pair<SNodeProxy, String>>();
 
   public CellBuildNodeAccessListener(AbstractEditorComponent editor) {
-    myEditor = editor;
+    super(editor);
   }
 
   public void recordingFinishedForCell(EditorCell cell) {
     myEditor.putCellAndNodesToDependOn(cell, myNodesToDependOn, myReferentTargetsToDependOn);
-    for (Pair<SNodeProxy, String> pair : myReadAccessedProperties) {
+    for (Pair<SNodeProxy, String> pair : myDirtilyReadAccessedProperties) {
       myEditor.addCellDependentOnNodePropertyWhichWasAccessedDirtily(cell, pair);
     }
   }
@@ -51,9 +49,9 @@ public class CellBuildNodeAccessListener {
     myReferentTargetsToDependOn.addAll(nodeProxies);
   }
 
-  public void propertyReadAccess(SNode node, String propertyName) {
+  public void propertyDirtyReadAccess(SNode node, String propertyName) {
     NodeReadAccessCaster.switchOffFiringPropertyReadAccessedEvent();
-    myReadAccessedProperties.add(new Pair<SNodeProxy, String>(new SNodeProxy(node), propertyName));
+    myDirtilyReadAccessedProperties.add(new Pair<SNodeProxy, String>(new SNodeProxy(node), propertyName));
     NodeReadAccessCaster.switchOnFiringPropertyReadAccessedEvent();
   }
 

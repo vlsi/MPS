@@ -1354,7 +1354,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           Set<EditorCell_Property> editorCell_properties = myNodePropertiesAccessedCleanlyToDependentCellsMap.get(pair);
           Set<EditorCell> editorCells = myNodePropertiesAccessedDirtilyToDependentCellsMap.get(pair);
           if (editorCells != null) {
-//            System.err.println("dirtily accessed property changed");
             rebuildEditorContent(events);
           }
           if (editorCell_properties != null) {

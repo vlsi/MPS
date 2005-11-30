@@ -19,6 +19,8 @@ import java.util.Stack;
 public class NodeReadAccessCaster {
   private static Stack<CellBuildNodeAccessListener> myReadAccessListenerStack = new Stack<CellBuildNodeAccessListener>();
   private static CellBuildNodeAccessListener myReadAccessListener;
+  private static PropertyCellCreationNodeReadAccessListener myPropertyCellCreationAccessListener;
+  private static PropertyAccessor myPropertyAccessor;
   private static Logger LOG = Logger.getLogger(NodeReadAccessCaster.class);
   private static Thread myThread;
 
@@ -53,6 +55,28 @@ public class NodeReadAccessCaster {
     }
   }
 
+  public static void beforeCreatingPropertyCell(PropertyCellCreationNodeReadAccessListener listener) {
+    myPropertyCellCreationAccessListener = listener;
+  }
+
+  public static void propertyCellCreatingFinished(EditorCell_Property cell) {
+    if (myPropertyCellCreationAccessListener != null) {
+      myPropertyCellCreationAccessListener.recordingFinishedForCell(cell);
+      myPropertyCellCreationAccessListener = null;
+    }
+  }
+
+  public static String runEditorCellPropertyAccessAction(PropertyAccessor accessor) {
+    myPropertyAccessor = accessor;
+    String propertyName = accessor.getPropertyName();
+    SNodeProxy nodeProxy = accessor.getNodeProxy();
+    try {
+      return nodeProxy.getNode().getProperty(propertyName);
+    } finally {
+      myPropertyAccessor = null;
+    }
+  }
+
   public static void fireNodeReadAccessed(SNode node) {
     ensureNoConcurrentAccess();
     if (myReadAccessListener != null) myReadAccessListener.readAccess(node);
@@ -67,10 +91,18 @@ public class NodeReadAccessCaster {
   }
 
   public static void firePropertyReadAccessed(SNode node, String propertyName) {
-    if (!myCanFirePropertyReadAccessedEvent) return;
     ensureNoConcurrentAccess();
+    if (!myCanFirePropertyReadAccessedEvent) return;
+    if (myPropertyAccessor != null) {
+      if (myPropertyCellCreationAccessListener != null) {
+        switchOffFiringPropertyReadAccessedEvent();
+        myPropertyCellCreationAccessListener.propertyCleanReadAccess(new SNodeProxy(node), propertyName);
+        switchOnFiringPropertyReadAccessedEvent();
+      }
+      return;
+    }
     if (myReadAccessListener != null) {
-      myReadAccessListener.propertyReadAccess(node, propertyName);
+      myReadAccessListener.propertyDirtyReadAccess(node, propertyName);
       myReadAccessListener.readAccess(node);
     }
   }
