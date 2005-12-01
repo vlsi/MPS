@@ -43,7 +43,9 @@ public class FileClassPathItem implements IClassPathItem {
 
   public URL getResource(String name) {
     try {
-      return new File(myClassPath + File.separator + name.replace('/', File.separatorChar)).toURL();
+      File file = new File(myClassPath + File.separator + name.replace('/', File.separatorChar));
+      if (!file.exists()) return null;
+      return file.toURL();
     } catch (MalformedURLException e) {
       return null;
     }

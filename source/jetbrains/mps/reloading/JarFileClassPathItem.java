@@ -74,6 +74,7 @@ public class JarFileClassPathItem implements IClassPathItem {
 
   public URL getResource(String name) {
     try {
+      if (myZipFile.getEntry(myPrefix) == null) return null;
       return new URL(myPrefix + name);
     } catch (MalformedURLException e) {
       return null;
