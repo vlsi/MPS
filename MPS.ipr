@@ -230,6 +230,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BugSqueezer/BugSqueezer.iml" filepath="$PROJECT_DIR$/BugSqueezer/BugSqueezer.iml" group="DataLanguages" />
+      <module fileurl="file://$PROJECT_DIR$/BugSqueezer/BugSqueezer_WebApp/BugSqueezerWebApp.iml" filepath="$PROJECT_DIR$/BugSqueezer/BugSqueezer_WebApp/BugSqueezerWebApp.iml" group="DataLanguages" />
       <module fileurl="file://$PROJECT_DIR$/projects/Epigram/Epigram.iml" filepath="$PROJECT_DIR$/projects/Epigram/Epigram.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/KeyMapTutorial/KeyMapTutorial.iml" filepath="$PROJECT_DIR$/projects/KeyMapTutorial/KeyMapTutorial.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/MPS.iml" filepath="$PROJECT_DIR$/MPS.iml" />
