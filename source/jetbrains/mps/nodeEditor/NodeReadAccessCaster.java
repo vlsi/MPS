@@ -80,7 +80,7 @@ public class NodeReadAccessCaster {
 
   public static void fireNodeReadAccessed(SNode node) {
     ensureNoConcurrentAccess();
-    ensureNotDisposed(node);
+  //  ensureNotDisposed(node);
     if (myReadAccessListener != null) myReadAccessListener.readAccess(node);
   }
 
@@ -96,7 +96,7 @@ public class NodeReadAccessCaster {
 
   public static void firePropertyReadAccessed(SNode node, String propertyName) {
     ensureNoConcurrentAccess();
-    ensureNotDisposed(node);
+  //  ensureNotDisposed(node);
     if (!myCanFirePropertyReadAccessedEvent) return;
     if (myPropertyAccessor != null) {
       if (myPropertyCellCreationAccessListener != null) {
@@ -114,7 +114,7 @@ public class NodeReadAccessCaster {
 
   public static void fireReferenceTargetReadAccessed(SReference reference) {
     ensureNoConcurrentAccess();
-    ensureNotDisposed(reference.getSourceNode());
+  //  ensureNotDisposed(reference.getSourceNode());
     if (myReadAccessListener != null) myReadAccessListener.readAccess(reference);
   }
 
