@@ -31,7 +31,7 @@ class ProjectTreeNode extends MPSTreeNode {
     return Icons.PROJECT_ICON;
   }
 
-  protected String getNodeIdentifier() {
+  public String getNodeIdentifier() {
     return "Project";
   }
 

@@ -58,7 +58,7 @@ class GeneratorTreeNode extends MPSTreeNode {
     return "generator -> " + generator.getTargetLanguageName();
   }
 
-  protected String getNodeIdentifier() {
+  public String getNodeIdentifier() {
     // return toString();
     Generator generator = getGenerator();
     if (generator == null) return "null";

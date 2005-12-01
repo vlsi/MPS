@@ -28,7 +28,7 @@ class ProjectSolutionTreeNode extends MPSTreeNode {
     return mySolution;
   }
 
-  protected String getNodeIdentifier() {
+  public String getNodeIdentifier() {
     return mySolution.getDescriptorFile().getAbsolutePath();
   }
 

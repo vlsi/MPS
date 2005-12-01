@@ -29,7 +29,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     return myOperationContext;
   }
 
-  protected abstract String getNodeIdentifier();
+  public abstract String getNodeIdentifier();
 
   public Iterator<MPSTreeNode> iterator() {
     List<MPSTreeNode> result = new ArrayList<MPSTreeNode>();

@@ -54,7 +54,7 @@ class SModelTreeNode extends MPSTreeNodeEx {
     return myModelDescriptor;
   }
 
-  protected String getNodeIdentifier() {
+  public String getNodeIdentifier() {
     return myModelDescriptor.getModelUID().toString();
   }
 

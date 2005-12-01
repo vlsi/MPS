@@ -13,7 +13,7 @@ public class TextMPSTreeNode extends MPSTreeNode {
     myText = text;
   }
 
-  protected String getNodeIdentifier() {
+  public String getNodeIdentifier() {
     return myText;
   }
 }

@@ -211,7 +211,7 @@ public class CellExplorerView extends DefaultTool {
       return result;
     }
 
-    protected String getNodeIdentifier() {
+    public String getNodeIdentifier() {
       String result = myCell.getClass().getName();
       if (myCell.getSNode() != null) result += "[" + myCell.getSNode().getId() + "]";
       if (myCell.getUserObject(EditorCell.CELL_ID) != null) result += "[" + myCell.getUserObject(EditorCell.CELL_ID).toString() + "]";
@@ -230,7 +230,7 @@ public class CellExplorerView extends DefaultTool {
       }
     }
 
-    protected String getNodeIdentifier() {
+    public String getNodeIdentifier() {
       return "Actions";
     }
   }
@@ -261,7 +261,7 @@ public class CellExplorerView extends DefaultTool {
       return Icons.CELL_KEY_MAP_ICON;
     }
 
-    protected String getNodeIdentifier() {
+    public String getNodeIdentifier() {
       return "Keymap";
     }
   }

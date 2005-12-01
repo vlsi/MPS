@@ -54,7 +54,7 @@ class SNodeTreeNode extends MPSTreeNodeEx {
     return myNodeProxy.getNode();
   }
 
-  protected String getNodeIdentifier() {
+  public String getNodeIdentifier() {
     if (getSNode() == null) return "null";
     return getSNode().getId();
   }

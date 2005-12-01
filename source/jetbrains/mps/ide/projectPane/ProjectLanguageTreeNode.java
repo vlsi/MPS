@@ -45,7 +45,7 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
     return myLanguage;
   }
 
-  protected String getNodeIdentifier() {
+  public String getNodeIdentifier() {
     return myLanguage.getModuleUID();
   }
 

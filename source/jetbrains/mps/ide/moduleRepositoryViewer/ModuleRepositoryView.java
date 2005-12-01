@@ -111,7 +111,7 @@ public class ModuleRepositoryView extends DefaultTool {
         return getOwnersIcon(myModule);
       }
 
-      protected String getNodeIdentifier() {
+      public String getNodeIdentifier() {
         return myModule.toString();
       }
     }
@@ -128,7 +128,7 @@ public class ModuleRepositoryView extends DefaultTool {
         return true;
       }
 
-      protected String getNodeIdentifier() {
+      public String getNodeIdentifier() {
         return myOwner.toString();
       }
 

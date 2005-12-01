@@ -100,7 +100,7 @@ public class ModelRepositoryView extends DefaultTool {
         return "<html>" + colorString + getNodeIdentifier() + (myModelDescriptor.isInitialized() ? " <b>(initialized)</b>" : " <i>(not initialized)</i>");
       }
 
-      protected String getNodeIdentifier() {
+      public String getNodeIdentifier() {
         return myModelDescriptor.getModelUID().toString();
       }
     }
@@ -133,7 +133,7 @@ public class ModelRepositoryView extends DefaultTool {
         return true;
       }
 
-      protected String getNodeIdentifier() {
+      public String getNodeIdentifier() {
         return myOwner.toString();
       }
     }

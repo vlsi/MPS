@@ -189,7 +189,7 @@ public class HierarchyView extends DefaultTool {
       return (ConceptDeclaration) myNodeProxy.getNode();
     }
 
-    protected String getNodeIdentifier() {
+    public String getNodeIdentifier() {
       if (getConceptDeclaration() == null) return "null";
       Language language = SModelUtil.getDeclaringLanguage(getConceptDeclaration(), GlobalScope.getInstance());
       String namespace;

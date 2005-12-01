@@ -21,7 +21,7 @@ public class TextTreeNode extends MPSTreeNode {
     myText = text;
   }
 
-  protected String getNodeIdentifier() {
+  public String getNodeIdentifier() {
     return myText.replaceAll(MPSTree.TREE_PATH_SEPARATOR, " ");
   }
 
