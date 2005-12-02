@@ -91,6 +91,12 @@ public class CellLayout_Vertical extends AbstractCellLayout {
     editorCells.setHeight(height);
   }
 
+  public int getRightInternalInset(EditorCell_Collection editorCell_collection) {
+    EditorCell editorCell = editorCell_collection.firstCell();
+    if (editorCell == null) return 0;
+    return editorCell.getRightInternalInset();
+  }
+
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {
     TextBuilder result = TextBuilder.getEmptyTextBuilder();
     for (EditorCell editorCell : editorCells) {

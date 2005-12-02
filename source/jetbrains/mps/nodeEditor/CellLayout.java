@@ -18,4 +18,7 @@ public interface CellLayout {
   public EditorCell findCell(EditorCell_Collection editorCells, int x, int y);
 
   void paintSelection(Graphics g, EditorCell_Collection editorCells, Color c);
+
+  public int getRightInternalInset(EditorCell_Collection editorCell_collection);
+  public int getLeftInternalInset(EditorCell_Collection editorCell_collection);
 }

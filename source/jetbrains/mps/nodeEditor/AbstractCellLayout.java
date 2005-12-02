@@ -34,4 +34,16 @@ public abstract class AbstractCellLayout implements CellLayout {
   public TextBuilder doLayoutText(EditorCell_Collection editorCells) {
     return TextBuilder.getEmptyTextBuilder();
   }
+
+  public int getRightInternalInset(EditorCell_Collection editorCell_collection) {
+    EditorCell editorCell = editorCell_collection.lastCell();
+    if (editorCell == null) return 0;
+    return editorCell.getRightInternalInset();
+  }
+
+  public int getLeftInternalInset(EditorCell_Collection editorCell_collection) {
+    EditorCell editorCell = editorCell_collection.firstCell();
+    if (editorCell == null) return 0;
+    return editorCell.getLeftInternalInset();
+  }
 }

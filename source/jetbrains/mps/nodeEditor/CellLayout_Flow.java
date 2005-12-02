@@ -107,6 +107,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
     private int y;
     private int maxRightX;
     private EditorCell_Collection editorCells;
+    private boolean myNextIsPunctuation;
 
     public FlowLayouter(EditorCell_Collection editorCells) {
       this.editorCells = editorCells;
@@ -120,7 +121,20 @@ public class CellLayout_Flow extends AbstractCellLayout {
         getCurrentLine().clear();
         getCurrentLineLayouts().clear();
       }
+
+      Iterator<EditorCell> lookAhead = editorCells.iterator();
+      if (lookAhead.hasNext()) lookAhead.next();
+
       for (EditorCell cell : editorCells) {
+        //testing the next cell
+        myNextIsPunctuation = false;
+        if (lookAhead.hasNext()) {
+          EditorCell nextCell = lookAhead.next();
+          if (nextCell instanceof EditorCell_Punctuation) {
+            myNextIsPunctuation = true;
+          }
+        }
+
         //if no flow
         if (NOFLOW.equals(cell.getLayoutConstraint())) {
           if (!getCurrentLine().isEmpty()) {
@@ -212,6 +226,9 @@ public class CellLayout_Flow extends AbstractCellLayout {
       cell.setX(x);
       cell.relayout();
       x+=cell.getWidth();
+      if (myNextIsPunctuation) {
+        x-=cell.getRightInternalInset();
+      }
       setMaxAscent(Math.max(maxAscent, cell.getAscent()));
       setMaxDescent(Math.max(maxDescent, cell.getDescent()));
       CellLayout_Flow.this.getCurrentLine().add(cell);

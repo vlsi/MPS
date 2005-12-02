@@ -18,11 +18,21 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
     if (editorCells.isDrawBrackets()) {
       width += EditorCell_Collection.BRACKET_WIDTH * 2;
     }
+    Iterator<EditorCell> lookAhead = editorCells.iterator();
+    if (lookAhead.hasNext()) lookAhead.next();
     for (EditorCell editorCell : editorCells) {
       editorCell.setX(x + width);
       editorCell.relayout();
       int cellWidth = editorCell.getWidth();
       width += cellWidth;
+      //++ punctuation support
+      if (lookAhead.hasNext()) {
+        EditorCell nextCell = lookAhead.next();
+        if (nextCell instanceof EditorCell_Punctuation) {
+          width -= editorCell.getRightInternalInset();
+        }
+      }
+      //-- punctuation support
       ascent = Math.max(ascent, editorCell.getAscent());
       descent = Math.max(descent, editorCell.getDescent());
     }
