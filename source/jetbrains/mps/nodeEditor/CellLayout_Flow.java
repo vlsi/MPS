@@ -127,9 +127,10 @@ public class CellLayout_Flow extends AbstractCellLayout {
 
       for (EditorCell cell : editorCells) {
         //testing the next cell
+        EditorCell nextCell = null;
         myNextIsPunctuation = false;
         if (lookAhead.hasNext()) {
-          EditorCell nextCell = lookAhead.next();
+          nextCell = lookAhead.next();
           if (nextCell instanceof EditorCell_Punctuation) {
             myNextIsPunctuation = true;
           }
@@ -180,15 +181,21 @@ public class CellLayout_Flow extends AbstractCellLayout {
               x += cell.getWidth();
             }
 
-          } else
+          } else {
+            //punctuation must be at the same line as previous cell
+            int allocatedWidth = cell.getWidth();
+            if (myNextIsPunctuation) {
+              allocatedWidth += nextCell.getWidth();
+            }
             //if end-of-line
-            if (cell.getWidth() + x >= getMaxX()) {
+            if (allocatedWidth + x >= getMaxX()) {
               alignLine();
               nextLine();
               addCell(cell);
             } else {//default
               addCell(cell);
             }
+          }
       }
       boolean currentLineIsEmpty = CellLayout_Flow.this.getCurrentLine().isEmpty();
       if (!currentLineIsEmpty) alignLine();
