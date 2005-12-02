@@ -67,7 +67,6 @@ public class EditorManager {
     AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
     EditorCell oldCell = nodeEditorComponent.getBigCellForNode(node);
     if (events != null) {
-      boolean propertyChanged = false;
       boolean nodeChanged = false;
       for (SModelEvent event : events) {
         SNode eventNode;
@@ -75,31 +74,9 @@ public class EditorManager {
           eventNode = ((SModelChildEvent)event).getParent();
         } else if (event instanceof SModelReferenceEvent) {
           eventNode = ((SModelReferenceEvent)event).getReference().getSourceNode();
-        } else {
-          if (event instanceof SModelPropertyEvent) {//++if some property had changed
-            SModelPropertyEvent propertyEvent = ((SModelPropertyEvent) event);
-            eventNode = propertyEvent.getNode();
-            if (nodeEditorComponent.doesCellDependOnNode(oldCell, eventNode)) {
-              propertyChanged = true;
-              nodeChanged = true;
-              if (eventNode == oldCell.getSNode() && oldCell instanceof EditorCell_Property) { //checking if cell node is changed by typing property
-                EditorCell_Property cellProperty = (EditorCell_Property) oldCell;
-                String oldPropertyValue = propertyEvent.getOldPropertyValue();
-                String renderedText = cellProperty.getRenderedText();
-                boolean propertyTyped = false;
-                if (oldPropertyValue == null) {
-                  propertyTyped = renderedText == null;
-                }
-                else {
-                  propertyTyped = oldPropertyValue.equals(renderedText);
-                }
-                nodeChanged = !propertyTyped;
-                //( ^ node isn't changed if property is changed by typing)
-              }
-            }
-          }//--if some property had changed
-          continue;
-        }
+        } else if (event instanceof SModelPropertyEvent) {
+          eventNode = ((SModelPropertyEvent) event).getNode();
+        } else continue;
         if (nodeEditorComponent.doesCellDependOnNode(oldCell, eventNode)) {
           nodeChanged = true;
           break;
@@ -121,9 +98,6 @@ public class EditorManager {
             if (refTargetsOldCellDependsOn != null) listensNothingListener.addRefTargetsToDependOn(refTargetsOldCellDependsOn);
             NodeReadAccessCaster.removeNodeAccessListener();
             //--voodoo
-          }
-          if (propertyChanged && !(editorCell instanceof EditorCell_Collection)) {
-            editorCell.synchronizeViewWithModel();
           }
           return editorCell;
         }

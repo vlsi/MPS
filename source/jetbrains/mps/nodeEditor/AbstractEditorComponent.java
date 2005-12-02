@@ -1355,7 +1355,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           Set<EditorCell> editorCells = myNodePropertiesAccessedDirtilyToDependentCellsMap.get(pair);
           if (editorCells != null) {
             rebuildEditorContent(events);
-          }
+          } else
           if (editorCell_properties != null) {
             for (EditorCell_Property cell : editorCell_properties) {
               cell.synchronizeViewWithModel();
