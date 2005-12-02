@@ -37,10 +37,20 @@ public class NodeEditorActions {
     }
 
     public void execute(EditorContext context) {
-      context.getNodeEditorComponent().clearSelectionStack();
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
+      AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
+      nodeEditorComponent.clearSelectionStack();
+      EditorCell selection = nodeEditorComponent.getSelectedCell();
       EditorCell target = findTarget(selection);
-      context.getNodeEditorComponent().changeSelection(target);
+      nodeEditorComponent.changeSelection(target);
+      if (selection instanceof EditorCell_Punctuation && target instanceof EditorCell_Label) {
+        TextLine textLine = ((EditorCell_Label) target).getTextLine();
+        int textLength = textLine.getText().length();
+        if (textLength > 0) {
+          textLine.setCaretPosition(textLength -1);
+        } else {
+          if (this.canExecute(context)) this.execute(context);
+        }
+      } else
       if (target instanceof EditorCell_Label) {
         TextLine textLine = ((EditorCell_Label) target).getTextLine();
         textLine.setCaretPositionToLast();
@@ -190,6 +200,9 @@ public class NodeEditorActions {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
       EditorCell target = findTarget(selection);
       context.getNodeEditorComponent().changeSelection(target);
+      if (target instanceof  EditorCell_Punctuation) {
+        ((EditorCell_Label)target).getTextLine().setCaretPosition(1);
+      } else
       if (target instanceof EditorCell_Label) {
         ((EditorCell_Label)target).getTextLine().setCaretPosition(0);
       }
