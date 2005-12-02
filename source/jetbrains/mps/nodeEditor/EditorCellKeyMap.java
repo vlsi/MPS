@@ -33,6 +33,7 @@ public class EditorCellKeyMap {
   public static final String KEY_CODE_LETTER = "letter";
   public static final String KEY_CODE_LETTER_OR_DIGIT = "letter or digit";
   public static final String KEY_CODE_SPACE = "space char";
+  public static final String KEY_CODE_CHAR = "non-space char";
 
   private static HashMap<Integer, String> ourJavaKeycodesMap = new HashMap<Integer, String>();
   private static List<String> ourVirtualKeycodes;
@@ -193,6 +194,10 @@ public class EditorCellKeyMap {
     char keyChar = event.getKeyChar();
     if (keyChar != KeyEvent.CHAR_UNDEFINED) {
       keyCodes.add("" + keyChar);
+
+      if (!Character.isSpaceChar(keyChar)) {
+        keyCodes.add(KEY_CODE_CHAR);
+      }
 
       if (Character.isDigit(keyChar)) {
         keyCodes.add(KEY_CODE_DIGIT);
