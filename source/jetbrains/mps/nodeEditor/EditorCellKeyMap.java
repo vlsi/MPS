@@ -180,6 +180,8 @@ public class EditorCellKeyMap {
       return keyCodes;
     }
 
+    keyCodes.add("");
+
     if (keyCode != KeyEvent.VK_CONTROL &&
             keyCode != KeyEvent.VK_ALT &&
             keyCode != KeyEvent.VK_SHIFT) {
@@ -266,7 +268,7 @@ public class EditorCellKeyMap {
 
   public static boolean isValidKeycode(String keycode) {
     if (keycode == null || keycode.length() == 0) {
-      return false;
+      return true;
     }
     if (keycode.length() == 1) {
       return true;
