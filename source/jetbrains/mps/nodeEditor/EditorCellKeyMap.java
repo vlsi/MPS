@@ -194,8 +194,10 @@ public class EditorCellKeyMap {
 
       if (Character.isDigit(keyChar)) {
         keyCodes.add(KEY_CODE_DIGIT);
+        keyCodes.add(KEY_CODE_LETTER_OR_DIGIT);
       } else if (Character.isLetter(keyChar)) {
         keyCodes.add(KEY_CODE_LETTER);
+        keyCodes.add(KEY_CODE_LETTER_OR_DIGIT);
       } else if (Character.isLetterOrDigit(keyChar)) {
         keyCodes.add(KEY_CODE_LETTER_OR_DIGIT);
       } else if (Character.isSpaceChar(keyChar) || Character.isWhitespace(keyChar)) {
