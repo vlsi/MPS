@@ -364,6 +364,20 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return result;
   }
 
+  public SNode getNextChild(SNode child) {
+    List<SNode> children = getChildren(child.getRole_());
+    int index = children.indexOf(child);
+    if (index < 0 || index >= children.size()-1) return null;
+    return children.get(index+1);
+  }
+
+  public SNode getPrevChild(SNode child) {
+    List<SNode> children = getChildren(child.getRole_());
+    int index = children.indexOf(child);
+    if (index <= 0) return null;
+    return children.get(index-1);
+  }
+
   private void removeChildAt(final int index) {
     final SNode wasChild = myChildren.get(index);
     final String wasId = myChildren.get(index).getId();
