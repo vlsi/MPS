@@ -42,13 +42,18 @@ public class TextBuilder {
   }
 
   public TextBuilder appendToTheRight(TextBuilder builder) {
+    return appendToTheRight(builder, true);
+  }
+
+  public TextBuilder appendToTheRight(TextBuilder builder, boolean insertSpace) {
     if (builder == ourEmptyTextBuilder) return this;
     if (this == ourEmptyTextBuilder) return builder;
     TextBuilder result = new TextBuilder();
+    String delim = insertSpace ? " " : "";
     result.myX = this.myX;
     result.myY = this.myY;
     result.myWidth = this.myWidth + builder.myWidth + 1;
-    result.myFirstLine = new StringBuffer(this.myFirstLine + " " + builder.myFirstLine);
+    result.myFirstLine = new StringBuffer(this.myFirstLine + delim + builder.myFirstLine);
     int height = Math.max(this.getHeight(), builder.getHeight());
     for (int i=0; i < height-1; i++) {
        if (i >= this.myLines.size()) {

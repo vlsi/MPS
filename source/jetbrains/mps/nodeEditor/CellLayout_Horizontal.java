@@ -52,7 +52,7 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {
     TextBuilder result = TextBuilder.getEmptyTextBuilder();
     for (EditorCell editorCell : editorCells) {
-      result = result.appendToTheRight(editorCell.renderText());
+      result = result.appendToTheRight(editorCell.renderText(), !(editorCell instanceof EditorCell_Punctuation));
     }
     return result;
   }

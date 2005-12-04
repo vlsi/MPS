@@ -297,7 +297,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
       if (NOFLOW.equals(editorCell.getLayoutConstraint())) {
         return result.appendToTheBottom(editorCell.renderText());
       }
-      result = result.appendToTheRight(editorCell.renderText());
+      result = result.appendToTheRight(editorCell.renderText(), !(editorCell instanceof EditorCell_Punctuation));
     }
     return result;
   }
