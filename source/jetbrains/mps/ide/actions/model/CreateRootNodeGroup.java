@@ -11,6 +11,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.action.NodeFactoryManager;
 
 import javax.swing.*;
 import java.util.List;
@@ -72,7 +73,7 @@ public class CreateRootNodeGroup extends ActionGroup {
 
                 CommandProcessor.instance().executeCommand(new Runnable() {
                   public void run() {
-                    node[0] = SModelUtil.instantiateConceptDeclaration(conceptDeclaration, modelDescriptor.getSModel());
+                    node[0] = NodeFactoryManager.initializeNode(conceptDeclaration, modelDescriptor.getSModel());
                     node[0].getModel().addRoot(node[0]);
                   }
                 });
