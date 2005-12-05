@@ -50,14 +50,15 @@ public class TextBuilder {
     if (this == ourEmptyTextBuilder) return builder;
     TextBuilder result = new TextBuilder();
     String delim = insertSpace ? " " : "";
+    int delimWidth = delim.length();
     result.myX = this.myX;
     result.myY = this.myY;
-    result.myWidth = this.myWidth + builder.myWidth + 1;
+    result.myWidth = this.myWidth + builder.myWidth + delimWidth;
     result.myFirstLine = new StringBuffer(this.myFirstLine + delim + builder.myFirstLine);
     int height = Math.max(this.getHeight(), builder.getHeight());
     for (int i=0; i < height-1; i++) {
        if (i >= this.myLines.size()) {
-         result.myLines.add(makeWhitespaceStringBuffer(this.myWidth + 1));
+         result.myLines.add(makeWhitespaceStringBuffer(this.myWidth + delimWidth));
        } else {
          result.myLines.add(new StringBuffer(this.myLines.get(i)));
        }
