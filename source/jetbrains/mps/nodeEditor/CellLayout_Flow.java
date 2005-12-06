@@ -235,6 +235,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
       x+=cell.getWidth();
       if (myNextIsPunctuation) {
         x-=cell.getRightInternalInset();
+        cell.setNextIsPunctuation();
       }
       setMaxAscent(Math.max(maxAscent, cell.getAscent()));
       setMaxDescent(Math.max(maxDescent, cell.getDescent()));

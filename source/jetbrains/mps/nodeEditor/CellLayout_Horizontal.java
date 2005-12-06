@@ -30,6 +30,7 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
         EditorCell nextCell = lookAhead.next();
         if (nextCell instanceof EditorCell_Punctuation) {
           width -= editorCell.getRightInternalInset();
+          editorCell.setNextIsPunctuation();
         }
       }
       //-- punctuation support
