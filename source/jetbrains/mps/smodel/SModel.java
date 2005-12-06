@@ -156,7 +156,11 @@ public class SModel implements Iterable<SNode> {
 
 
   public SModelDescriptor getModelDescriptor() {
-    return SModelRepository.getInstance().getModelDescriptor(this);
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(this);
+    if (modelDescriptor == null) {
+      LOG.warning("model " + getUID() + " is not registered in model repository. Failed to found model's descriptor");
+    }
+    return modelDescriptor;
   }
 
   private boolean canFireEvent() {
@@ -574,10 +578,14 @@ public class SModel implements Iterable<SNode> {
   }
 
   public boolean isExternallyResolvable() {
-    return getModelDescriptor().isExternallyResolvable();
+    SModelDescriptor modelDescriptor = getModelDescriptor();
+    if (modelDescriptor == null) return false;
+    return modelDescriptor.isExternallyResolvable();
   }
 
   public boolean isNotEditable() {
+    SModelDescriptor modelDescriptor = getModelDescriptor();
+    if (modelDescriptor == null) return false;
     return getModelDescriptor().isNotEditable();
   }
 
