@@ -227,6 +227,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     if (mySModel != null) {
       return mySModel.hasSModelCommandListener(listener);
     } else {
+      if (myCommandListeners == null) return false;
       return myCommandListeners.contains(listener);
     }
   }
