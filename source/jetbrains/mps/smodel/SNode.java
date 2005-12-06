@@ -24,13 +24,14 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public static final Object BAD_REFERENT_STATUS = new Object();
 
   public static final String NAME = "name";
-
-  private List<SReference> myReferences = new ArrayList<SReference>();
+  public static final String ATTRIBUTED_NODE = "attributedNode";
 
   private String myRoleInParent;
   private SNode myParent;
-  private List<SNode> myChildren = new ArrayList<SNode>();
+  private SReference myAttributedNodeReference;
 
+  private List<SNode> myChildren = new ArrayList<SNode>();
+  private List<SReference> myReferences = new ArrayList<SReference>();
   private HashMap<String, String> myProperties = new HashMap<String, String>();
 
   private SModel myModel;
@@ -189,6 +190,48 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       if (result != null) return result;
     }
     return null;
+  }
+
+  //
+  // ----- attributed node ----
+  //
+
+
+  public void setAttributedNode(SNode node) {
+    setAttributedNodeReference(SReference.newInstance(ATTRIBUTED_NODE, this, node));
+  }
+
+  public void setAttributedNodeReference(SReference reference) {
+    final SReference oldReference = myAttributedNodeReference;
+    if (reference == null) {
+      myAttributedNodeReference = null;
+    } else {
+      myAttributedNodeReference = SReference.newInstance(ATTRIBUTED_NODE ,this, reference);
+    }
+    if (!getModel().isLoading()) {
+      UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
+        public void undo() throws UnexpectedUndoException {
+          setAttributedNodeReference(oldReference);
+        }
+      });
+    }
+    if (oldReference != null) {
+      getModel().fireReferenceRemovedEvent(oldReference);
+    }
+    if (reference != null) {
+      getModel().fireReferenceAddedEvent(reference);
+    }
+  }
+
+  public boolean hasAttributedNode() {
+    NodeReadAccessCaster.fireNodeReadAccessed(this);
+    return myAttributedNodeReference != null && myAttributedNodeReference.getTargetNode() != null;
+  }
+
+  public SNode getAttributedNode() {
+    NodeReadAccessCaster.fireNodeReadAccessed(this);
+    if (myAttributedNodeReference == null) return null;
+    return myAttributedNodeReference.getTargetNode();
   }
 
   //
