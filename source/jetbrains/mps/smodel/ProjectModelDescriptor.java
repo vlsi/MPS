@@ -1,5 +1,7 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.annotations.ForDebug;
+
 import java.io.File;
 
 /**
@@ -7,6 +9,8 @@ import java.io.File;
  */
 public class ProjectModelDescriptor extends AbstractSModelDescriptor {
   private static long ourProjectModelDescriptorCount = 0;
+
+  private @ForDebug Throwable myStackTrace;
 
   public static SModelDescriptor createDescriptorFor(ModelOwner owner) {
     ProjectModelDescriptor result = new ProjectModelDescriptor();
@@ -20,6 +24,7 @@ public class ProjectModelDescriptor extends AbstractSModelDescriptor {
 
   private ProjectModelDescriptor() {
     super(new SModelUID("projectModel" + ourProjectModelDescriptorCount++, "$internal$"));
+//    myStackTrace = new Throwable();
   }
 
   public void reloadFromDisk() {
@@ -31,6 +36,7 @@ public class ProjectModelDescriptor extends AbstractSModelDescriptor {
   protected SModel loadModel() {
     SModel result = new SModel(getModelUID());
     result.addLanguage("jetbrains.mps.projectLanguage");
+    result.fillInStackTrace(myStackTrace);
     return result;
   }
 

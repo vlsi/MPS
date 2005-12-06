@@ -12,6 +12,7 @@ import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.annotations.ForDebug;
 
 import java.util.*;
 
@@ -27,6 +28,7 @@ public class SModel implements Iterable<SNode> {
 
   private List<SNode> myRoots = new ArrayList<SNode>();
   private SModelUID myUID = new SModelUID("unnamed", "");
+  private @ForDebug Throwable myStackTrace;
 
   private boolean myDisposed;
   private boolean isLoading;
@@ -154,11 +156,22 @@ public class SModel implements Iterable<SNode> {
     return isLoading;
   }
 
+  public @ForDebug Throwable getCreationStackTrace() {
+    return myStackTrace;
+  }
+
+  public @ForDebug void fillInStackTrace(Throwable t) {
+    myStackTrace = t;
+  }
+
 
   public SModelDescriptor getModelDescriptor() {
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(this);
     if (modelDescriptor == null) {
       LOG.warning("model " + getUID() + " is not registered in model repository. Failed to found model's descriptor");
+      if (myStackTrace != null) {
+        LOG.warning("descriptor creation stack trace is: ", myStackTrace);
+      }
     }
     return modelDescriptor;
   }

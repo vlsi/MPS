@@ -466,12 +466,18 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     Set<SNodeProxy> refTargetsWhichEditorDependsOn = myCellsToRefTargetsToDependOnMap.get(myRootCell);
      if (refTargetsWhichEditorDependsOn != null) {
+       Set<SNodeProxy> nodeProxiesToDelete = new HashSet<SNodeProxy>();
       for (SNodeProxy nodeProxy : refTargetsWhichEditorDependsOn) {
         SModelDescriptor model = nodeProxy.getModel();
+        if (model == null) {
+          nodeProxiesToDelete.add(nodeProxy);
+          continue;
+        }
         if (!model.hasSModelCommandListener(myModelListener)) {
           model.addSModelCommandListener(myModelListener);
         }
       }
+      refTargetsWhichEditorDependsOn.removeAll(nodeProxiesToDelete); 
     }
 
 
