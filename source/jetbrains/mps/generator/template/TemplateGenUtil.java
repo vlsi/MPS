@@ -456,11 +456,9 @@ public class TemplateGenUtil {
         }
 
       } else if (nodeMacro instanceof CopySrcNodeMacro) {
-//        builder = TemplateGenUtil.createCopyingNodeBuilder(sourceNode, templateNode.getRole_(), generator);
         builder = generator.createCopyingNodeBuilder(sourceNode, templateNode.getRole_());
         needCreateChildBuilders = false;
       } else if (nodeMacro instanceof CopySrcListMacro) {
-//        builder = TemplateGenUtil.createCopyingNodeBuilder(sourceNode, templateNode.getRole_(), generator);
         builder = generator.createCopyingNodeBuilder(sourceNode, templateNode.getRole_());
         needCreateChildBuilders = false;
       } else if (nodeMacro instanceof MapSrcNodeMacro) {
