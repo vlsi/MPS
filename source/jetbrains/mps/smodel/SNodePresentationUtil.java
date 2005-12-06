@@ -16,14 +16,18 @@ import java.util.Iterator;
  * Todo: refactor this utility
  */
 public class SNodePresentationUtil {
-  public static String matchingText(SNode node, SNode referenceContext, IScope scope) {
+  public static String matchingText(SNode node, SNode referenceNode, IScope scope) {
+    return matchingText(node, referenceNode, null, scope);
+  }
+
+  public static String matchingText(SNode node, SNode referenceNode, String referenceRole, IScope scope) {
     String result = null;
     if (node instanceof BaseMethodDeclaration) {
-      result = matchingText_BaseMethodDeclaration((BaseMethodDeclaration) node, referenceContext);
+      result = matchingText_BaseMethodDeclaration((BaseMethodDeclaration) node, referenceNode, referenceRole);
     } else if (node instanceof Type) {
       result = matchingText_Type((Type) node);
     } else if (node instanceof VariableDeclaration) {
-      result = matchingText_VariableDeclaration((VariableDeclaration) node, referenceContext);
+      result = matchingText_VariableDeclaration((VariableDeclaration) node, referenceNode);
     }
 
     if (result != null) {
@@ -34,7 +38,6 @@ public class SNodePresentationUtil {
     if (node instanceof LinkDeclaration) {
       return ((LinkDeclaration) node).getRole();
     }
-
 
     // todo: alias or name ????
     if (!isNamedElement(node)) {
@@ -83,15 +86,16 @@ public class SNodePresentationUtil {
     return "";
   }
 
-  private static String matchingText_BaseMethodDeclaration(BaseMethodDeclaration method, SNode referenceContext) {
+  private static String matchingText_BaseMethodDeclaration(BaseMethodDeclaration method, SNode referenceNode, String referenceRole) {
     String result = matchingText_BaseMethodDeclaration_raw(method);
-    if (referenceContext instanceof BaseMethodCall) {
+    if (referenceNode instanceof BaseMethodCall &&
+            (referenceRole == null || BaseMethodCall.BASE_METHOD_DECLARATION.equals(referenceRole))) {
       return result;
     }
 
     if (method instanceof StaticMethodDeclaration) {
       Classifier parent = SModelUtil.findParent(method, Classifier.class);
-      if (!isReferenceContext(parent, referenceContext)) {
+      if (!isReferenceContext(parent, referenceNode)) {
         result = parent.getName() + '.' + result;
       }
     }
@@ -218,7 +222,7 @@ public class SNodePresentationUtil {
 
   private static String getAliasOrConceptName(SNode node, IScope scope) {
     String alias = SModelUtil.getConceptProperty(node, "alias", scope);
-    if(alias != null) {
+    if (alias != null) {
       return alias;
     }
     return NameUtil.shortNameFromLongName(node.getClass().getName());
