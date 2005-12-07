@@ -63,7 +63,7 @@
       <property name="targetCardinality" value="1" />
       <property name="role" value="contentNode" />
       <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="2.1078489098625" />
+      <link role="target" targetNodeId="2.1133920641626" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107223377516">
       <property name="value" value="template declaration" />
