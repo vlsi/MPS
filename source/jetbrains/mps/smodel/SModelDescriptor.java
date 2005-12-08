@@ -32,8 +32,6 @@ public interface SModelDescriptor {
   void addSModelListener(SModelListener listener);
   void removeSModelListener(SModelListener listener);
 
-  void addSModelCommandListenerToImportedModels(SModelCommandListener listener);
-
   void addSModelCommandListener(SModelCommandListener listener);
   void removeSModelCommandListener(SModelCommandListener listener);
 
@@ -41,6 +39,7 @@ public interface SModelDescriptor {
 
   void reloadFromDisk();
   void refresh();
+  void dispose();
 
   File getModelFile();
 

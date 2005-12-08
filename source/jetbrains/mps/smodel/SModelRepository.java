@@ -6,7 +6,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.reloading.ClassLoaderManager;
 
-import java.io.File;
 import java.util.*;
 
 /**
@@ -31,7 +30,7 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public void refreshModels() {
-    for (SModelDescriptor m : new HashSet<SModelDescriptor>(myUIDToModelDescriptorMap.values())) {
+    for (SModelDescriptor m : new LinkedList<SModelDescriptor>(myUIDToModelDescriptorMap.values())) {
       m.refresh();
     }
   }
@@ -124,16 +123,13 @@ public class SModelRepository extends SModelAdapter {
     fireRepositoryChanged();
   }
 
-  public void deleteModelDescriptor(SModelDescriptor modelDescriptor) {
-    removeModelDescriptor(modelDescriptor);
-  }
-
-  private void removeModelDescriptor(SModelDescriptor modelDescriptor) {
+  public void removeModelDescriptor(SModelDescriptor modelDescriptor) {
     myModelDescriptors.remove(modelDescriptor);
     myUIDToModelDescriptorMap.remove(modelDescriptor.getModelUID());
     myChangedModels.remove(modelDescriptor);
     myModelToOwnerMap.remove(modelDescriptor);
-    modelDescriptor.removeSModelListener(this);
+//    modelDescriptor.removeSModelListener(this);
+    modelDescriptor.dispose();
   }
 
   public void removeUnusedDescriptors() {
@@ -150,8 +146,6 @@ public class SModelRepository extends SModelAdapter {
       for (SModelDescriptor descriptor : descriptorsToRemove) {
         if (myChangedModels.containsKey(descriptor)) changedModelsToDelete.add(descriptor);
       }
-/*      ConfirmSaveDialog dialog = new ConfirmSaveDialog(null, changedModelsToDelete);
-      dialog.showDialog();*/
       for (SModelDescriptor descriptor : descriptorsToRemove) {
         removeModelDescriptor(descriptor);
       }
@@ -250,7 +244,7 @@ public class SModelRepository extends SModelAdapter {
   }
 
 
-  public<T extends MPSModuleOwner & ModelOwner> List<SModelDescriptor> getChangedModelsReleasedWhenReleasingOwner(T owner) {
+  public <T extends MPSModuleOwner & ModelOwner> List<SModelDescriptor> getChangedModelsReleasedWhenReleasingOwner(T owner) {
     Set<SModelDescriptor> changedModels = getChangedModels();
 
     //copying modelToOwnerMap
@@ -319,12 +313,12 @@ public class SModelRepository extends SModelAdapter {
       ModelRoot modelRoot = modelRoots.next();
 //      File dir = new File(modelRoot.getPath());
 //      if (dir.exists()) {
-        IModelRootManager manager = getManagerFor(modelRoot);
-        try {
-          list.addAll(manager.read(modelRoot, owner));
-        } catch (Exception e) {
-          LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + owner, e);
-        }
+      IModelRootManager manager = getManagerFor(modelRoot);
+      try {
+        list.addAll(manager.read(modelRoot, owner));
+      } catch (Exception e) {
+        LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + owner, e);
+      }
 //      } else {
 //        String error = "Couldn't load modelDescriptors from \"" + dir.getAbsolutePath() + "\" : directory doesn't exist. Requested by: " + owner;
 //        LOG.error(error);
@@ -344,6 +338,11 @@ public class SModelRepository extends SModelAdapter {
       LOG.error(e);
       return null;
     }
+  }
+
+  public boolean hasOwners(SModelDescriptor modelDescriptor) {
+    HashSet<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
+    return owners.size() > 0;
   }
 
   public Set<ModelOwner> getOwners(SModelDescriptor modelDescriptor) {

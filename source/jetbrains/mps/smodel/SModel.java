@@ -615,6 +615,8 @@ public class SModel implements Iterable<SNode> {
 //      System.out.println("structure");
 //    }
     myDisposed = true;
+    myCommandListeners.clear();
+    myListeners.clear();
   }
 
   public boolean isDisposed() {

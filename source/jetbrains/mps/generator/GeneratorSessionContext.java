@@ -137,7 +137,7 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
       for (SModelDescriptor descriptor : ownModelDescriptors) {
         SModelRepository.getInstance().unRegisterModelDescriptor(descriptor, this);
         if (descriptor instanceof TransientModelDescriptor) {
-          SModelRepository.getInstance().deleteModelDescriptor(descriptor);
+          SModelRepository.getInstance().removeModelDescriptor(descriptor);
         }
       }
     }

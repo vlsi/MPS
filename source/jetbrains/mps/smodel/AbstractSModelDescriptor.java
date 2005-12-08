@@ -1,13 +1,12 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.externalResolve.ExternalResolver;
-import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.io.File;
 import java.util.*;
@@ -23,9 +22,8 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
   protected SModel mySModel = null;
   private SModelUID myModelUID = new SModelUID("", "");
-  private List<SModelListener> myModelListeners;
-  private List<SModelCommandListener> myModelCommandListenersForImportedModels;
-  private List<SModelCommandListener> myCommandListeners;
+  private List<SModelListener> myModelListeners = new LinkedList<SModelListener>();
+  private List<SModelCommandListener> myModelCommandListeners = new LinkedList<SModelCommandListener>();
   private long myLastStructuralChange = System.currentTimeMillis();
   private long myLastChange = System.currentTimeMillis();
 
@@ -66,16 +64,15 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   }
 
 
-
   public Set<RootDescriptor> getRoots(String concept) {
-    Set<RootDescriptor> result = new  HashSet<RootDescriptor>();
+    Set<RootDescriptor> result = new HashSet<RootDescriptor>();
     try {
-        Class<? extends SNode> cls = (Class<? extends SNode>) Class.forName(concept, true, ClassLoaderManager.getInstance().getClassLoader());
-        for (SNode root : getSModel().getRoots(cls)) {
-          result.add(new RootDescriptor(root.getId(), root.getName()));
-        }
+      Class<? extends SNode> cls = (Class<? extends SNode>) Class.forName(concept, true, ClassLoaderManager.getInstance().getClassLoader());
+      for (SNode root : getSModel().getRoots(cls)) {
+        result.add(new RootDescriptor(root.getId(), root.getName()));
+      }
     } catch (ClassNotFoundException e) {
-      LOG.warning("concept class " + concept + " not found" );
+      LOG.warning("concept class " + concept + " not found");
     }
     return result;
   }
@@ -129,47 +126,24 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
   public SModel getSModel() {
     if (mySModel == null) {
-
       mySModel = loadModel();
-
       updateModelAfterLoad();
-
       SModelsMulticaster.getInstance().fireModelLoadedEvent(this);
 
       LOG.assertLog(mySModel != null, "Couldn't load model \"" + getModelUID() + "\"");
-      if (myModelListeners != null) {
-        for (SModelListener listener : myModelListeners) {
-          if (!mySModel.hasSModelListener(listener)) {
-            mySModel.addSModelListener(listener);
-          }
+      for (SModelListener listener : myModelListeners) {
+        if (!mySModel.hasSModelListener(listener)) {
+          mySModel.addSModelListener(listener);
         }
-        myModelListeners.clear();
-        myModelListeners = null;
       }
+      myModelListeners.clear();
 
-      // todo: when remove listener?
-      if (myCommandListeners != null) {
-        for (SModelCommandListener listener : myCommandListeners) {
-          if (!mySModel.hasSModelCommandListener(listener)) {
-            mySModel.addSModelCommandListener(listener);
-          }
+      for (SModelCommandListener listener : myModelCommandListeners) {
+        if (!mySModel.hasSModelCommandListener(listener)) {
+          mySModel.addSModelCommandListener(listener);
         }
-        myCommandListeners.clear();
-        myCommandListeners = null;
       }
-
-      // todo: when remove listener?
-      if (myModelCommandListenersForImportedModels != null) {
-        Iterator<SModelDescriptor> iterator = mySModel.importedModels(GlobalScope.getInstance());
-        while (iterator.hasNext()) {
-          SModelDescriptor imported = iterator.next();
-          for (SModelCommandListener listener : myModelCommandListenersForImportedModels) {
-            imported.addSModelCommandListener(listener);
-          }
-        }
-        myModelCommandListenersForImportedModels.clear();
-        myModelCommandListenersForImportedModels = null;
-      }
+      myModelCommandListeners.clear();
     }
     return mySModel;
   }
@@ -197,7 +171,6 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
         mySModel.addSModelListener(listener);
       }
     } else {
-      if (myModelListeners == null) myModelListeners = new ArrayList<SModelListener>();
       myModelListeners.add(listener);
     }
   }
@@ -205,21 +178,8 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   public void removeSModelListener(SModelListener listener) {
     if (mySModel != null) {
       mySModel.removeSModelListener(listener);
-    } else if (myModelListeners != null) {
-      myModelListeners.remove(listener);
-    }
-  }
-
-  public void addSModelCommandListenerToImportedModels(SModelCommandListener listener) {
-    if (mySModel != null) {
-      Iterator<SModelDescriptor> iterator = mySModel.importedModels(GlobalScope.getInstance());
-      while (iterator.hasNext()) {
-        SModelDescriptor imported = iterator.next();
-        imported.addSModelCommandListener(listener);
-      }
     } else {
-      if (myModelCommandListenersForImportedModels == null) myModelCommandListenersForImportedModels = new ArrayList<SModelCommandListener>();
-      myModelCommandListenersForImportedModels.add(listener);
+      myModelListeners.remove(listener);
     }
   }
 
@@ -227,8 +187,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     if (mySModel != null) {
       return mySModel.hasSModelCommandListener(listener);
     } else {
-      if (myCommandListeners == null) return false;
-      return myCommandListeners.contains(listener);
+      return myModelCommandListeners.contains(listener);
     }
   }
 
@@ -238,16 +197,15 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
         mySModel.addSModelCommandListener(listener);
       }
     } else {
-      if (myCommandListeners == null) myCommandListeners = new ArrayList<SModelCommandListener>();
-      myCommandListeners.add(listener);
+      myModelCommandListeners.add(listener);
     }
   }
 
   public void removeSModelCommandListener(SModelCommandListener listener) {
     if (mySModel != null) {
       mySModel.removeSModelCommandListener(listener);
-    } else if (myCommandListeners != null) {
-      myCommandListeners.remove(listener);
+    } else {
+      myModelCommandListeners.remove(listener);
     }
   }
 
@@ -264,23 +222,35 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   public void refresh() {
     if (isInitialized()) {
       LOG.debug("Refreshing " + mySModel.getUID());
-      List<SModelListener> listeners = getSModel().getListeners();
-      List<SModelCommandListener> commandListeners = getSModel().getCommandListeners();
-      try {
-        SModel newModel = ModelPersistence.refreshModel(mySModel);
-        if(mySModel != newModel) {
-          mySModel.dispose();
-          mySModel = newModel;
-        }
-        for (SModelListener l : listeners) {
-          mySModel.addSModelListener(l);
-        }
-        for (SModelCommandListener l : commandListeners) {
-          mySModel.addSModelCommandListener(l);
-        }
-      } catch (Exception e) {
-        LOG.error("Model refresh failed", e);
-      }
+//      List<SModelListener> listeners = getSModel().getListeners();
+//      List<SModelCommandListener> commandListeners = getSModel().getCommandListeners();
+//      try {
+//        SModel newModel = ModelPersistence.refreshModel(mySModel);
+//        if (mySModel != newModel) {
+//          mySModel.dispose();
+//          mySModel = newModel;
+//        }
+//        for (SModelListener l : listeners) {
+//          mySModel.addSModelListener(l);
+//        }
+//        for (SModelCommandListener l : commandListeners) {
+//          mySModel.addSModelCommandListener(l);
+//        }
+//      } catch (Exception e) {
+//        LOG.error("Model refresh failed", e);
+//      }
+      myModelListeners.addAll(mySModel.getListeners());
+      myModelCommandListeners.addAll(mySModel.getCommandListeners());
+      mySModel.dispose();
+      mySModel = null;
+    }
+  }
+
+  public void dispose() {
+    myModelCommandListeners.clear();
+    myModelListeners.clear();
+    if (mySModel != null) {
+      mySModel.dispose();
     }
   }
 
@@ -331,7 +301,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
   public final void delete() {
     SModelsMulticaster.getInstance().fireModelWillBeDeletedEvent(this);
-    SModelRepository.getInstance().deleteModelDescriptor(this);
+    SModelRepository.getInstance().removeModelDescriptor(this);
     File modelFile = getModelFile();
     if (modelFile != null && modelFile.exists()) {
       modelFile.delete();
