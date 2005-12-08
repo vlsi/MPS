@@ -206,7 +206,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     if (reference == null) {
       myAttributedNodeReference = null;
     } else {
-      myAttributedNodeReference = SReference.newInstance(ATTRIBUTED_NODE ,this, reference);
+      myAttributedNodeReference = SReference.newInstance(ATTRIBUTED_NODE, this, reference);
     }
     if (!getModel().isLoading()) {
       UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
@@ -410,15 +410,15 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public SNode getNextChild(SNode child) {
     List<SNode> children = getChildren(child.getRole_());
     int index = children.indexOf(child);
-    if (index < 0 || index >= children.size()-1) return null;
-    return children.get(index+1);
+    if (index < 0 || index >= children.size() - 1) return null;
+    return children.get(index + 1);
   }
 
   public SNode getPrevChild(SNode child) {
     List<SNode> children = getChildren(child.getRole_());
     int index = children.indexOf(child);
     if (index <= 0) return null;
-    return children.get(index-1);
+    return children.get(index - 1);
   }
 
   private void removeChildAt(final int index) {
@@ -597,6 +597,11 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
         break;
       }
     }
+  }
+
+  public int getReferentCount() {
+    NodeReadAccessCaster.fireNodeReadAccessed(this);
+    return myReferences.size();
   }
 
   public int getReferentCount(String role) {
@@ -833,7 +838,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public boolean isDisposed() {
     // tmp : don't check nodes in $internal$ models
     if ("$internal$".equals(myModel.getStereotype())) {
-       return false;
+      return false;
     }
     return myModel.isDisposed();
   }
