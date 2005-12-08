@@ -221,24 +221,6 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
   public void refresh() {
     if (isInitialized()) {
-      LOG.debug("Refreshing " + mySModel.getUID());
-//      List<SModelListener> listeners = getSModel().getListeners();
-//      List<SModelCommandListener> commandListeners = getSModel().getCommandListeners();
-//      try {
-//        SModel newModel = ModelPersistence.refreshModel(mySModel);
-//        if (mySModel != newModel) {
-//          mySModel.dispose();
-//          mySModel = newModel;
-//        }
-//        for (SModelListener l : listeners) {
-//          mySModel.addSModelListener(l);
-//        }
-//        for (SModelCommandListener l : commandListeners) {
-//          mySModel.addSModelCommandListener(l);
-//        }
-//      } catch (Exception e) {
-//        LOG.error("Model refresh failed", e);
-//      }
       myModelListeners.addAll(mySModel.getListeners());
       myModelCommandListeners.addAll(mySModel.getCommandListeners());
       mySModel.dispose();
