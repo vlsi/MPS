@@ -194,6 +194,15 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1133954660098">
     <property name="name" value="StringConstant" />
+    <link role="extends" targetNodeId="1111784519527" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1134034283785">
+      <property name="value" value="&quot;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1106346943066" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1134034283786">
+      <property name="value" value="string constant" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1107214812281" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1133954700480">
       <property name="name" value="value" />
       <link role="dataType" targetNodeId="2.1082983041843" />
@@ -221,6 +230,35 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1133955960725">
       <property name="value" value="or operation" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1107214812281" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1134035290224">
+    <property name="name" value="EqualsOperation" />
+    <link role="extends" targetNodeId="1111784562907" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1134035420460">
+      <property name="value" value="==" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1106346943066" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1134035420461">
+      <property name="value" value="equals operation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1107214812281" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1134036005562">
+    <property name="name" value="ParenthisizedExpression" />
+    <link role="extends" targetNodeId="1111784312737" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1134036366346">
+      <property name="value" value="(" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1106346943066" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1134036366347">
+      <property name="value" value="(expr)" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1107214812281" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1134036114963">
+      <property name="role" value="expression" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1111784312737" />
     </node>
   </node>
 </model>

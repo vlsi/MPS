@@ -282,12 +282,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           if (rootCell instanceof EditorCell_Collection) {
             EditorCell firstSelectableLeaf = ((EditorCell_Collection) rootCell).findFirstSelectableLeaf();
             if (firstSelectableLeaf != null) {
-              changeSelection(firstSelectableLeaf);
+              setSelection(firstSelectableLeaf);
               return;
             }
           }
           if (rootCell != null && rootCell.isSelectable()) {
-            changeSelection(rootCell);
+            setSelection(rootCell);
           }
         }
       }
@@ -410,7 +410,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private void selectComponentCell(Component component) {
     EditorCell_Component cell = findCellForComponent(component, myRootCell);
     if (cell == null) return;
-    changeSelection(cell);
+    setSelection(cell);
   }
 
   public JComponent getExternalComponent() {
@@ -627,7 +627,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void selectNode(final SNode node) {
-    changeSelection(findNodeCell(node));
+    setSelection(findNodeCell(node));
   }
 
 
@@ -639,16 +639,16 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       cell = findNodeCellWithRole(sourceNode, role);
       if (cell == null) cell = findNodeCell(sourceNode);
     }
-    changeSelection(cell);
+    setSelection(cell);
   }
 
   public void selectFirstEditableCellOf(final SNode node) {
     EditorCell cell = findNodeCell(node);
     EditorCell editable = findEditableCell(cell);
     if (editable == null) {
-      changeSelection(cell);
+      setSelection(cell);
     } else {
-      changeSelection(editable);
+      setSelection(editable);
     }
   }
 
@@ -862,7 +862,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     EditorCell newSelectedCell = myRootCell.findNearestCell(mouseEvent.getX(), mouseEvent.getY(), isPrevious);
     if (mouseEvent.getButton() != MouseEvent.BUTTON1) return;
     if (newSelectedCell != null) {
-      changeSelection(newSelectedCell);
+      setSelection(newSelectedCell);
       mySelectedCell.processMousePressed(mouseEvent);
     }
   }
@@ -894,7 +894,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return (Stack<EditorCell>) mySelectedStack.clone();
   }
 
-  public void changeSelection(EditorCell newSelectedCell) {
+  public void setSelection(EditorCell newSelectedCell) {
     changeSelection(newSelectedCell, true);
   }
 
@@ -1326,7 +1326,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (selectedCell != null) {
         EditorCell nodeCell = newEditor.findNodeCell(selectedCell.getSNode(), (String) selectedCell.getUserObject(EditorCell.CELL_ID));
         if (nodeCell == null) nodeCell = newEditor.findNodeCell(selectedCell.getSNode());
-        if (nodeCell != null) newEditor.changeSelection(nodeCell);
+        if (nodeCell != null) newEditor.setSelection(nodeCell);
     }
     newEditor.setSelectedStackFromHistory(selectedStack);
     return newEditor;
@@ -1404,7 +1404,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             if (error == null) {
               selectNode(ce.getChild());
             } else {
-              changeSelection(error);
+              setSelection(error);
               if (error instanceof EditorCell_Label && !error.isErrorState()) {
                 ((EditorCell_Label) error).getTextLine().end();
               }
@@ -1448,7 +1448,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             if (nullCell == null) {
               selectNode(parent);
             } else {
-              changeSelection(nullCell);
+              setSelection(nullCell);
             }
 
             return;
@@ -1463,7 +1463,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             if (nullCell == null) {
               selectNode(sourceNode);
             } else {
-              changeSelection(nullCell);
+              setSelection(nullCell);
             }
           }
         }
@@ -1486,12 +1486,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     if (nodeProxy != null && id != null) {
       EditorCell newSelectedCell = findNodeCell(nodeProxy.getNode(), id);
-      changeSelection(newSelectedCell);
+      setSelection(newSelectedCell);
       if (newSelectedCell instanceof EditorCell_Label) {
         ((EditorCell_Label)newSelectedCell).getTextLine().setCaretPosition(caretPosition);
       }
     } else {
-      changeSelection(null);
+      setSelection(null);
     }
   }
 

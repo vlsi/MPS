@@ -293,19 +293,19 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1133956007437">
         <property name="drawBorder" value="false" />
         <link role="linkDeclaration" targetNodeId="1.1111784613299" />
-        <link role="keyMap" targetNodeId="2.1113422674388" />
+        <link role="keyMap" targetNodeId="1113422674388" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1133956007438">
         <property name="editable" value="true" />
         <property name="text" value="&amp;&amp;" />
         <property name="drawBorder" value="false" />
-        <link role="keyMap" targetNodeId="2.1113424702419" />
-        <link role="actionSet" targetNodeId="2.1113345437098" />
+        <link role="keyMap" targetNodeId="1113424702419" />
+        <link role="actionSet" targetNodeId="1113345437098" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1133956007439">
         <property name="drawBorder" value="false" />
         <link role="linkDeclaration" targetNodeId="1.1111784647019" />
-        <link role="keyMap" targetNodeId="2.1113422674388" />
+        <link role="keyMap" targetNodeId="1113422674388" />
       </node>
     </node>
   </node>
@@ -317,19 +317,58 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1133956020434">
         <property name="drawBorder" value="false" />
         <link role="linkDeclaration" targetNodeId="1.1111784613299" />
-        <link role="keyMap" targetNodeId="2.1113422674388" />
+        <link role="keyMap" targetNodeId="1113422674388" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1133956020435">
         <property name="editable" value="true" />
         <property name="text" value="||" />
         <property name="drawBorder" value="false" />
-        <link role="keyMap" targetNodeId="2.1113424702419" />
-        <link role="actionSet" targetNodeId="2.1113345437098" />
+        <link role="keyMap" targetNodeId="1113424702419" />
+        <link role="actionSet" targetNodeId="1113345437098" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1133956020436">
         <property name="drawBorder" value="false" />
         <link role="linkDeclaration" targetNodeId="1.1111784647019" />
-        <link role="keyMap" targetNodeId="2.1113422674388" />
+        <link role="keyMap" targetNodeId="1113422674388" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1134035392491">
+    <link role="conceptDeclaration" targetNodeId="1.1134035290224" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1134035401245">
+      <property name="drawBorder" value="false" />
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1134035401246">
+        <property name="drawBorder" value="false" />
+        <link role="linkDeclaration" targetNodeId="1.1111784613299" />
+        <link role="keyMap" targetNodeId="1113422674388" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1134035401247">
+        <property name="editable" value="true" />
+        <property name="text" value="==" />
+        <property name="drawBorder" value="false" />
+        <link role="keyMap" targetNodeId="1113424702419" />
+        <link role="actionSet" targetNodeId="1113345437098" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1134035401248">
+        <property name="drawBorder" value="false" />
+        <link role="linkDeclaration" targetNodeId="1.1111784647019" />
+        <link role="keyMap" targetNodeId="1113422674388" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1134036128378">
+    <link role="conceptDeclaration" targetNodeId="1.1134036005562" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1134036133277">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1134036137412">
+        <property name="text" value="(" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1134036140924">
+        <link role="linkDeclaration" targetNodeId="1.1134036114963" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1134036144700">
+        <property name="text" value=")" />
       </node>
     </node>
   </node>
