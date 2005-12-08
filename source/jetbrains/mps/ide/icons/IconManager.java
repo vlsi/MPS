@@ -38,16 +38,16 @@ public class IconManager {
       try {
         Class icons = Class.forName(iconsClass, true, ClassLoaderManager.getInstance().getClassLoader());
         try {
-          Icon icon = (Icon) icons.getMethod("getIconFor" + className).invoke(null);
-          if (icon != null) {
-            ourIcons.put(cls, icon);
-            return icon;
-          }
+          Icon icon = (Icon) icons.getMethod("getIconFor" + className, SNode.class).invoke(null, node);
+          return icon;
         }
         catch (Exception e) {
           try {
-            Icon icon = (Icon) icons.getMethod("getIconFor" + className, SNode.class).invoke(null, node);
-            return icon;
+            Icon icon = (Icon) icons.getMethod("getIconFor" + className).invoke(null);
+            if (icon != null) {
+              ourIcons.put(cls, icon);
+              return icon;
+            }
           } catch (Exception ex) {}
         }
 
@@ -59,6 +59,17 @@ public class IconManager {
 
     ourIcons.put(cls, Icons.DEFAULT_ICON);
     return Icons.DEFAULT_ICON;
+  }
+
+  public static Icon getIconForConceptFQName(String conceptFQName) {
+    Class cls;
+    try {
+      cls = Class.forName(conceptFQName);
+    } catch (ClassNotFoundException e) {
+      return Icons.DEFAULT_ICON;
+    }
+    if (!SNode.class.isAssignableFrom(cls)) return Icons.DEFAULT_ICON;
+    return getIconFor(cls);
   }
 
   public static Icon getIconFor(Class<? extends SNode> nodeClass) {
