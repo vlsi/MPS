@@ -58,7 +58,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     Set<RootDescriptor> result = new HashSet<RootDescriptor>();
 
     for (SNode root : getSModel()) {
-      result.add(new RootDescriptor(root.getId(), root.getName()));
+      result.add(new RootDescriptor(root));
     }
     return result;
   }
@@ -69,7 +69,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     try {
       Class<? extends SNode> cls = (Class<? extends SNode>) Class.forName(concept, true, ClassLoaderManager.getInstance().getClassLoader());
       for (SNode root : getSModel().getRoots(cls)) {
-        result.add(new RootDescriptor(root.getId(), root.getName()));
+        result.add(new RootDescriptor(root));
       }
     } catch (ClassNotFoundException e) {
       LOG.warning("concept class " + concept + " not found");

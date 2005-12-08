@@ -800,6 +800,11 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return getClass().getName().substring(getClass().getName().lastIndexOf('.') + 1);
   }
 
+  public String getConceptFQName() {
+    NodeReadAccessCaster.fireNodeReadAccessed(this);
+    return getClass().getName();
+  }
+
   public String toString() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
     String name = getName();
