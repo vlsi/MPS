@@ -26,8 +26,6 @@ public class Resolver {
 
   public static void setResolveInfo(SReference reference) {
 
-    if (reference instanceof ExternalReference) return;
-
     String role = reference.getRole();
     Class sourceClass = reference.getSourceNode().getClass();
 
@@ -75,8 +73,6 @@ public class Resolver {
 
 
   public static void resolve(final SReference reference, final IOperationContext operationContext){
-
-    if (reference instanceof ExternalReference) return;
 
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {

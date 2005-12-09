@@ -3,11 +3,9 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SNodePresentationUtil;
-import jetbrains.mps.smodel.ExternalReference;
 import jetbrains.mps.util.WindowsUtil;
 
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -80,8 +78,8 @@ public class NodeInformationDialog extends JDialog {
         result.append("Node = ").append(SNodePresentationUtil.getPathToRoot(target)).append("\n");
         result.append("ID  = ").append(target.getId()).append("\n");
 
-        if (ref instanceof ExternalReference && ((ExternalReference) ref).getExtResolveInfo() != null) {
-          result.append("External resolve info = ").append(((ExternalReference) ref).getExtResolveInfo()).append("\n");
+        if (ref.getExtResolveInfo() != null) {
+          result.append("External resolve info = ").append(ref.getExtResolveInfo()).append("\n");
         }
       }
 

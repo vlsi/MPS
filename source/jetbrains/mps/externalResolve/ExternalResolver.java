@@ -1,17 +1,12 @@
 package jetbrains.mps.externalResolve;
 
 
-
-
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.ExternalReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.baseLanguage.*;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.externalResolve.ExternalResolveInfoParser;
-import jetbrains.mps.externalResolve.ExternalResolveInfoProvider;
 
 import java.util.Collection;
 import java.util.Set;
@@ -38,9 +33,7 @@ public class ExternalResolver {
 
 
   public static String createExternalResolveInfo(SReference reference) {
-    LOG.assertLog(reference instanceof ExternalReference, "reference to resolve externally is not external");
-    ExternalReference externalReference = (ExternalReference) reference;
-    if (!isEmptyExtResolveInfo(externalReference.getExtResolveInfo())) return externalReference.getExtResolveInfo();
+    if (!isEmptyExtResolveInfo(reference.getExtResolveInfo())) return reference.getExtResolveInfo();
     SNode targetNode = reference.getTargetNode();
     if (targetNode == null) return null;
     return getExternalResolveInfoFromTarget(targetNode);
@@ -61,9 +54,7 @@ public class ExternalResolver {
 
 
   public static void setExternalResolveInfo(SReference reference) {
-    if (!(reference instanceof ExternalReference)) return;
-    ExternalReference externalReference = (ExternalReference) reference;
-    externalReference.setExtResolveInfo(createExternalResolveInfo(reference));
+    reference.setExtResolveInfo(createExternalResolveInfo(reference));
   }
 
 

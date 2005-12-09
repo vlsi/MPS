@@ -74,8 +74,8 @@ public class CopyPasteUtil {
       necessaryLanguages.add(languageNamespace);
     }
     for (SReference ref : ourReferences) {
-      if (ref instanceof ExternalReference) {
-        ExternalReference extRef = (ExternalReference) ref;
+      if (ref.isExternal()) {
+        SReference extRef = ref;
           SModelUID targetModelUID = extRef.getTargetModelUID();
           necessaryImports.add(targetModelUID);
       }
@@ -166,7 +166,7 @@ public class CopyPasteUtil {
       SNode oldSourceNode = sourceReference.getSourceNode();
       SNode newSourceNode = ourSourceNodesToNewNodes.get(oldSourceNode);
 
-      if (sourceReference instanceof InternalReference) {
+      if (!sourceReference.isExternal()) {
         SNode oldTargetNode = sourceReference.getTargetNode();
         SNode newTargetNode = ourSourceNodesToNewNodes.get(oldTargetNode);
 
@@ -189,9 +189,9 @@ public class CopyPasteUtil {
                 extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(newReference.getTargetNode());
               }
               if (extResolveInfo != null) {
-                newReference = new ExternalReference(newReference.getRole(), newReference.getSourceNode(), null, extResolveInfo, newReference.getTargetModelUID());
+                newReference = new SReference(newReference.getRole(), newReference.getSourceNode(), null, extResolveInfo, newReference.getTargetModelUID());
               } else {
-                newReference = new ExternalReference(newReference.getRole(), newReference.getSourceNode(), newReference.getTargetNodeId(), null, newReference.getTargetModelUID());
+                newReference = new SReference(newReference.getRole(), newReference.getSourceNode(), newReference.getTargetNodeId(), null, newReference.getTargetModelUID());
               }
             }
 
@@ -200,9 +200,8 @@ public class CopyPasteUtil {
 
         }
 
-      } else if (sourceReference instanceof ExternalReference) {
+      } else  {
         SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, sourceReference);
-
         newSourceNode.addSemanticReference(newReference);
       }
 
@@ -215,7 +214,7 @@ public class CopyPasteUtil {
       SNode oldSourceNode = sourceReference.getSourceNode();
       SNode newSourceNode = ourSourceNodesToNewNodes.get(oldSourceNode);
 
-      if (sourceReference instanceof InternalReference) {
+      if (!sourceReference.isExternal()) {
         SNode oldTargetNode = sourceReference.getTargetNode();
         SNode newTargetNode = ourSourceNodesToNewNodes.get(oldTargetNode);
          if (newTargetNode != null) {//if our reference points inside our node's subtree
@@ -229,7 +228,7 @@ public class CopyPasteUtil {
           ourPointingOutReferences.add(newReference);
         }
 
-      } else if (sourceReference instanceof ExternalReference) {
+      } else {
         SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, sourceReference);
         newSourceNode.addSemanticReference(newReference);
       }

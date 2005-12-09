@@ -369,8 +369,8 @@ public class ModelPersistence {
       List<SReference> references = node.getReferences();
       for (SReference reference : references) {
         if (reference.isExternal()) {
-          ExternalReference externalReference = (ExternalReference) reference;
-          SModelUID targetModelUID = externalReference.getTargetModelUID();
+          SReference sReference = reference;
+          SModelUID targetModelUID = sReference.getTargetModelUID();
           if (!importedModels.contains(targetModelUID)) {
             sourceModel.addImportedModel(targetModelUID);
             importedModels.add(targetModelUID);

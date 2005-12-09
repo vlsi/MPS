@@ -95,7 +95,7 @@ public class DefaultReferencePersister implements IReferencePersister {
 
   // -- create reference
   public void createReferenceInModel(SModel model) {
-      SModelUID importedModelUID = model.getUID();
+    SModelUID importedModelUID = model.getUID();
     if (getImportIndex() > -1) {
       importedModelUID = model.getImportedModelUID(getImportIndex());
       if (importedModelUID == null) {
@@ -148,18 +148,18 @@ public class DefaultReferencePersister implements IReferencePersister {
     linkElement.setAttribute(ModelPersistence.ROLE, reference.getRole());
 
     if (reference.isExternal()) {//external reference
-      ExternalReference externalReference = (ExternalReference) reference;
-      SModelUID targetModelUID = externalReference.getTargetModelUID();
+      SReference sReference = reference;
+      SModelUID targetModelUID = sReference.getTargetModelUID();
       SModel.ImportElement importElement = node.getModel().getImportElement(targetModelUID);
       int importIndex = -1;
       if (importElement != null) {
         importIndex = importElement.getReferenceID();
       } else {
-        LOG.error("Couldn't save reference \"" + externalReference.getRole() + "\" in " + node.getDebugText() +
+        LOG.error("Couldn't save reference \"" + sReference.getRole() + "\" in " + node.getDebugText() +
                 "\n -- importz element for model \"" + targetModelUID + "\" not found");
       }
 
-      String extResolveInfo = externalReference.getExtResolveInfo();
+      String extResolveInfo = sReference.getExtResolveInfo();
       if (ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
         // no external info - save target node id
         linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, importIndex + "." + reference.getTargetNodeId());
