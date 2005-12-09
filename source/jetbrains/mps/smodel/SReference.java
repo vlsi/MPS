@@ -192,7 +192,8 @@ public class SReference {
   // --- new instance
   //
 
-   public static SReference newInstance(String role, SNode sourceNode, SNode targetNode) {
+  //reference created by target node
+  public static SReference newInstance(String role, SNode sourceNode, SNode targetNode) {
     SModel sourceModel = sourceNode.getModel();
     SModel targetModel = targetNode == null ? null : targetNode.getModel();
     if (sourceModel == targetModel || targetModel == null) {
@@ -209,7 +210,7 @@ public class SReference {
     }
   }
 
-
+  //reference created by template reference
   public static SReference newInstance(String role, SNode sourceNode, SReference templateRef) {
     return newInstance(role, sourceNode,
             templateRef.getTargetNodeId(),
@@ -219,7 +220,7 @@ public class SReference {
             templateRef.getTargetClassResolveInfo());
   }
 
-
+  //reference created by specifying all info
   public static SReference newInstance(String role, SNode sourceNode, String targetNodeId, String extResolveInfo,
                                        SModelUID targetModelUID, String resolveInfo, String targetClassResolveInfo) {
     if(targetNodeId != null || extResolveInfo != null) {
