@@ -28,7 +28,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   private String myRoleInParent;
   private SNode myParent;
-  private SReference myAttributedNodeReference;
 
   private List<SNode> myChildren = new ArrayList<SNode>();
   private List<SReference> myReferences = new ArrayList<SReference>();
@@ -190,48 +189,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       if (result != null) return result;
     }
     return null;
-  }
-
-  //
-  // ----- attributed node ----
-  //
-
-
-  public void setAttributedNode(SNode node) {
-    setAttributedNodeReference(SReference.newInstance(ATTRIBUTED_NODE, this, node));
-  }
-
-  public void setAttributedNodeReference(SReference reference) {
-    final SReference oldReference = myAttributedNodeReference;
-    if (reference == null) {
-      myAttributedNodeReference = null;
-    } else {
-      myAttributedNodeReference = SReference.newInstance(ATTRIBUTED_NODE, this, reference);
-    }
-    if (!getModel().isLoading()) {
-      UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
-        public void undo() throws UnexpectedUndoException {
-          setAttributedNodeReference(oldReference);
-        }
-      });
-    }
-    if (oldReference != null) {
-      getModel().fireReferenceRemovedEvent(oldReference);
-    }
-    if (reference != null) {
-      getModel().fireReferenceAddedEvent(reference);
-    }
-  }
-
-  public boolean hasAttributedNode() {
-    NodeReadAccessCaster.fireNodeReadAccessed(this);
-    return myAttributedNodeReference != null && myAttributedNodeReference.getTargetNode() != null;
-  }
-
-  public SNode getAttributedNode() {
-    NodeReadAccessCaster.fireNodeReadAccessed(this);
-    if (myAttributedNodeReference == null) return null;
-    return myAttributedNodeReference.getTargetNode();
   }
 
   //

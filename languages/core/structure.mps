@@ -30,5 +30,13 @@
       <link role="conceptPropertyDeclaration" targetNodeId="24.1107214854626" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1134126910973">
+    <property name="name" value="AttributeConcept" />
+    <link role="extends" targetNodeId="1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1134126952687">
+      <property name="role" value="attributedNode" />
+      <link role="target" targetNodeId="1133920641626" />
+    </node>
+  </node>
 </model>
 
