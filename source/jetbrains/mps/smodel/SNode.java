@@ -1,14 +1,13 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.core.AttributeConcept;
 import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.core.AttributeConcept;
-import jetbrains.mps.xml.Attribute;
 
 import java.util.*;
 
@@ -19,7 +18,7 @@ import java.util.*;
 public abstract class SNode implements Cloneable, Iterable<SNode> {
   private static final Logger LOG = Logger.getLogger(SNode.class);
 
-  public static final Object TYPE_OBJECT = new Object();
+//  public static final Object TYPE_OBJECT = new Object();
   public static final Object STATUS = new Object();
   public static final Object LAST_UPDATE = new Object();
   public static final Object ERROR_STATUS = new Object();
