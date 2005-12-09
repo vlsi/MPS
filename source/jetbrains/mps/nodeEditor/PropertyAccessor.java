@@ -1,10 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration;
-import jetbrains.mps.smodel.SModelUtil;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.PropertySupport;
-import jetbrains.mps.smodel.SNodeProxy;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.annotations.Hack;
 
 /**
@@ -24,6 +21,14 @@ public class PropertyAccessor implements ModelAccessor {
     myReadOnly = readOnly || node.getModel().isNotEditable() || editorContext.getNodeEditorComponent().isReadOnly();
     myAllowEmptyText = allowEmptyText;
     myPropertyDeclaration = SModelUtil.getPropertyDeclaration(node, propertyName, editorContext.getOperationContext().getScope());
+  }
+
+   public PropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, IOperationContext context) {
+    myNodeProxy = new SNodeProxy(node);
+    myPropertyName = propertyName;
+    myReadOnly = readOnly || node.getModel().isNotEditable();
+    myAllowEmptyText = allowEmptyText;
+    myPropertyDeclaration = SModelUtil.getPropertyDeclaration(node, propertyName, context.getScope());
   }
 
   public SNodeProxy getNodeProxy() {

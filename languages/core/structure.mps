@@ -38,5 +38,21 @@
       <link role="target" targetNodeId="1133920641626" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1134146192723">
+    <property name="name" value="PropertyAttributeConcept" />
+    <link role="extends" targetNodeId="1134126910973" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1134146235156">
+      <property name="name" value="propertyName" />
+      <link role="dataType" targetNodeId="1082983041843" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1134146253281">
+    <property name="name" value="LinkAttributeConcept" />
+    <link role="extends" targetNodeId="1134126910973" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1134146276060">
+      <property name="name" value="linkRole" />
+      <link role="dataType" targetNodeId="1082983041843" />
+    </node>
+  </node>
 </model>
 

@@ -108,18 +108,19 @@ public class SReference {
 
   protected SNode getTargetNode_impl() {
     myIsResolved = false;
+    SModel model = null;
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(myTargetModelUID);
     if (modelDescriptor == null) {
       logGetTargetNodeErrors(GetTargetNodeErrorState.NO_MODEL_DESCRIPTOR);
-      return null;
+      model = mySourceNode.getModel();
+    } else {
+   model = modelDescriptor.getSModel();
     }
-    SModel model = modelDescriptor.getSModel();
     SModel sourceModel = mySourceNode.getModel();
     if (model == null) {
       logGetTargetNodeErrors(GetTargetNodeErrorState.NO_MODEL);
       return null;
     }
-
     if (ExternalResolver.isEmptyExtResolveInfo(myExtResolveInfo)) {
       SNode nodeById = model.getNodeById(myTargetNodeId);
       if (nodeById == null) {
@@ -253,28 +254,6 @@ public class SReference {
       LOG.error("The target model " + myTargetModelUID + " doesn't contain node with ERI=" + myExtResolveInfo);
     }
   }
-
-
- /* public static class ReferentInfo {
-    private String myTargetNodeId;
-    private String myExtResolveInfo;
-    private String myResolveInfo;
-    private String myTargetClassResolveInfo;
-
-    public ReferentInfo(String targetNodeId, String extResolveInfo, String resolveInfo, String targetClassResolveInfo) {
-      myTargetNodeId = targetNodeId;
-      myExtResolveInfo = extResolveInfo;
-      myResolveInfo = resolveInfo;
-      myTargetClassResolveInfo = targetClassResolveInfo;
-    }
-
-    public boolean equalsInfo(ReferentInfo info) {
-      return  EqualUtil.equals(myTargetNodeId, info.myTargetNodeId) &&
-              EqualUtil.equals(myExtResolveInfo, info.myExtResolveInfo) &&
-              EqualUtil.equals(myResolveInfo, info.myResolveInfo) &&
-              EqualUtil.equals(myTargetClassResolveInfo, info.myTargetClassResolveInfo);
-    }
-  }*/
 
   protected enum GetTargetNodeErrorState {
     OK,
