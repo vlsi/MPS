@@ -7,6 +7,8 @@ import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.core.AttributeConcept;
+import jetbrains.mps.xml.Attribute;
 
 import java.util.*;
 
@@ -24,10 +26,10 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public static final Object BAD_REFERENT_STATUS = new Object();
 
   public static final String NAME = "name";
-  public static final String ATTRIBUTED_NODE = "attributedNode";
 
   private String myRoleInParent;
   private SNode myParent;
+  private SReference myAttribute;
 
   private List<SNode> myChildren = new ArrayList<SNode>();
   private List<SReference> myReferences = new ArrayList<SReference>();
@@ -188,6 +190,29 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       SNode result = child.getChildById(id);
       if (result != null) return result;
     }
+    return null;
+  }
+
+  //
+  //----- attributes
+  //
+
+  public void setAttribute(AttributeConcept attributeConcept) {
+    //todo fire property accessed event
+    attributeConcept.setReferent(AttributeConcept.ATTRIBUTED_NODE, this);
+  }
+
+  public boolean hasAttribute() {
+    //todo fire accessed event
+    if (myAttribute == null) return false;
+    return myAttribute.getTargetNode() instanceof AttributeConcept;
+  }
+
+  public AttributeConcept getAttribute() {
+    //todo fire accessed event
+    if (myAttribute == null) return null;
+    SNode targetNode = myAttribute.getTargetNode();
+    if (targetNode instanceof AttributeConcept) return (AttributeConcept) targetNode;
     return null;
   }
 
@@ -529,6 +554,9 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public SReference addReferent(String role, SNode target) {
     SReference reference = SReference.newInstance(role, this, target);
     insertReferenceAt(myReferences.size(), reference);
+    if (role.equals(AttributeConcept.ATTRIBUTED_NODE) && this instanceof AttributeConcept) {
+      target.myAttribute = reference;
+    }
     return reference;
   }
 
