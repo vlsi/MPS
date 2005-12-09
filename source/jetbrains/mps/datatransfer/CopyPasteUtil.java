@@ -30,9 +30,6 @@ public class CopyPasteUtil {
 
   private static final ModelOwner ourModelOwner = new ModelOwner() {};
 
-  private static HashMap<SNode, SNode> ourSourceNodesToNewNodes = new HashMap<SNode, SNode>();
-  private static HashSet<SReference> ourReferences = new HashSet<SReference>();
-  private static HashSet<SReference> ourPointingOutReferences = new HashSet<SReference>();
 
   static ModelOwner getCopyPasteOwner() {
     return ourModelOwner;
@@ -42,22 +39,22 @@ public class CopyPasteUtil {
   public static SNode copyNodeIn(SNode sourceNode) {
     SModel model = sourceNode.getModel();
     model.setLoading(true);
-    ourSourceNodesToNewNodes.clear();
-    ourReferences.clear();
-    SNode targetNode = copyNode_internal(sourceNode);
-    processReferencesIn();
+    Map<SNode, SNode> sourceNodesToNewNodes = new HashMap<SNode, SNode>();
+    Set<SReference> allReferences = new HashSet<SReference>();
+    SNode targetNode = copyNode_internal(sourceNode, sourceNodesToNewNodes, allReferences);
+    processReferencesIn(sourceNodesToNewNodes, allReferences);
     model.setLoading(false);
     return targetNode;
   }
 
   public static SNode copyNodeOut(SNode node, SModel model) {
     model.setLoading(true);
-    ourSourceNodesToNewNodes.clear();
-    ourReferences.clear();
+    Map<SNode, SNode> sourceNodesToNewNodes = new HashMap<SNode, SNode>();
+    Set<SReference> allReferences = new HashSet<SReference>();
     SModel fakeModel = node.getModel();
     fakeModel.setLoading(true);
-    SNode nodeToPaste = copyNode_internal(node);
-    processReferencesOut();
+    SNode nodeToPaste = copyNode_internal(node, sourceNodesToNewNodes, allReferences);
+    processReferencesOut(sourceNodesToNewNodes, allReferences, new HashSet<SReference>());
     nodeToPaste.changeModel(model);
     model.setLoading(false);
     fakeModel.setLoading(false);
@@ -65,15 +62,15 @@ public class CopyPasteUtil {
   }
 
 
-  private static void processImportsAndLanguages(HashSet<SModelUID> necessaryImports, HashSet<String> necessaryLanguages) {
+  private static void processImportsAndLanguages(HashSet<SModelUID> necessaryImports, HashSet<String> necessaryLanguages, Set<SNode> sourceNodes, Set<SReference> allReferences) {
     necessaryImports.clear();
     necessaryLanguages.clear();
-    SModel sourceModel = ourSourceNodesToNewNodes.keySet().iterator().next().getModel();
-    for (SNode node : ourSourceNodesToNewNodes.keySet()) {
+    SModel sourceModel = sourceNodes.iterator().next().getModel();
+    for (SNode node : sourceNodes) {
       String languageNamespace = NameUtil.namespaceFromConceptFQName(NameUtil.nodeConceptFQName(node));
       necessaryLanguages.add(languageNamespace);
     }
-    for (SReference ref : ourReferences) {
+    for (SReference ref : allReferences) {
       if (ref.isExternal()) {
         SReference extRef = ref;
           SModelUID targetModelUID = extRef.getTargetModelUID();
@@ -91,17 +88,17 @@ public class CopyPasteUtil {
 
     List<SNode> result = new ArrayList<SNode>();
     model.setLoading(true);
-    ourSourceNodesToNewNodes.clear();
-    ourReferences.clear();
+    Map<SNode, SNode> sourceNodesToNewNodes = new HashMap<SNode, SNode>();
+    Set<SReference> allReferences = new HashSet<SReference>();
     for (SNode sourceNode : sourceNodes) {
       assert sourceNode.getModel() == model;
-      SNode targetNode = copyNode_internal(sourceNode);
+      SNode targetNode = copyNode_internal(sourceNode, sourceNodesToNewNodes, allReferences);
       result.add(targetNode);
     }
     HashSet<SModelUID> necessaryImports = new HashSet<SModelUID>();
     HashSet<String> necessaryLanguages = new HashSet<String>();
-    processImportsAndLanguages(necessaryImports, necessaryLanguages);
-    processReferencesIn();
+    processImportsAndLanguages(necessaryImports, necessaryLanguages, sourceNodesToNewNodes.keySet(), allReferences);
+    processReferencesIn(sourceNodesToNewNodes, allReferences);
     SModel fakeModel = copyModelProperties(model);
     for (SNode copiedNode : result) {
       copiedNode.changeModel(fakeModel);
@@ -114,14 +111,14 @@ public class CopyPasteUtil {
     if (sourceNodes.isEmpty()) return new PasteNodeData(new ArrayList<SNode>(), null, null, null, null);
     List<SNode> result = new ArrayList<SNode>();
     model.setLoading(true);
-    ourPointingOutReferences.clear();
-    ourSourceNodesToNewNodes.clear();
-    ourReferences.clear();
+    Set<SReference> pointingOutReferences = new HashSet<SReference>();
+    Map<SNode, SNode> sourceNodesToNewNodes = new HashMap<SNode, SNode>();
+    Set<SReference> allReferences = new HashSet<SReference>();
     SModel originalModel = sourceNodes.get(0).getModel();
     originalModel.setLoading(true);
     for (SNode sourceNode : sourceNodes) {
       assert sourceNode.getModel() == originalModel;
-      SNode nodeToPaste = copyNode_internal(sourceNode);
+      SNode nodeToPaste = copyNode_internal(sourceNode, sourceNodesToNewNodes, allReferences);
       result.add(nodeToPaste);
     }
     SNode firstNodeToPaste = result.get(0);
@@ -130,45 +127,44 @@ public class CopyPasteUtil {
     for (SNode nodeToPaste : result) {
       nodeToPaste.changeModel(model);
     }
-    processReferencesOut();
+    processReferencesOut(sourceNodesToNewNodes, allReferences, pointingOutReferences);
     for (SNode nodeToPaste : result) {
       nodeToPaste.changeModel(model);
     }
     model.setLoading(false);
     originalModel.setLoading(false);
     fakeModel.setLoading(false);
-    return new PasteNodeData(result, new HashSet<SReference>(ourPointingOutReferences), modelProperties, necessaryLanguages, necessaryImports);
+    return new PasteNodeData(result, pointingOutReferences, modelProperties, necessaryLanguages, necessaryImports);
   }
 
-  private static SNode copyNode_internal(SNode sourceNode) {
-
+  private static SNode copyNode_internal(SNode sourceNode, Map<SNode,SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
     SNode targetNode = sourceNode.cloneProperties();
-    targetNode.setId(targetNode.generateUniqueId());
+    targetNode.setId(SNode.generateUniqueId());
 
-    ourSourceNodesToNewNodes.put(sourceNode, targetNode);
+    sourceNodesToNewNodes.put(sourceNode, targetNode);
 
     List<SReference> references = sourceNode.getReferences();
     for (SReference reference : references) {
-      ourReferences.add(reference);
+      allReferences.add(reference);
     }
 
     List<SNode> children = sourceNode.getChildren();
     for(SNode sourceChild : children) {
-      SNode targetChild = copyNode_internal(sourceChild);
+      SNode targetChild = copyNode_internal(sourceChild, sourceNodesToNewNodes, allReferences);
       targetNode.addChild(sourceChild.getRole_(), targetChild);
     }
 
     return targetNode;
   }
 
-  private static void processReferencesIn () {
-    for (SReference sourceReference : ourReferences) {
+  private static void processReferencesIn (Map<SNode,SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
+    for (SReference sourceReference : allReferences) {
       SNode oldSourceNode = sourceReference.getSourceNode();
-      SNode newSourceNode = ourSourceNodesToNewNodes.get(oldSourceNode);
+      SNode newSourceNode = sourceNodesToNewNodes.get(oldSourceNode);
 
       if (!sourceReference.isExternal()) {
         SNode oldTargetNode = sourceReference.getTargetNode();
-        SNode newTargetNode = ourSourceNodesToNewNodes.get(oldTargetNode);
+        SNode newTargetNode = sourceNodesToNewNodes.get(oldTargetNode);
 
         if (newTargetNode != null) {//if our reference points inside our node's subtree
 
@@ -209,14 +205,14 @@ public class CopyPasteUtil {
   }
 
 
-  private static void processReferencesOut() {
-    for (SReference sourceReference : ourReferences) {
+  private static void processReferencesOut(Map<SNode,SNode> sourceNodesToNewNodes, Set<SReference> allReferences, Set<SReference> pointingOutReferences) {
+    for (SReference sourceReference : allReferences) {
       SNode oldSourceNode = sourceReference.getSourceNode();
-      SNode newSourceNode = ourSourceNodesToNewNodes.get(oldSourceNode);
+      SNode newSourceNode = sourceNodesToNewNodes.get(oldSourceNode);
 
       if (!sourceReference.isExternal()) {
         SNode oldTargetNode = sourceReference.getTargetNode();
-        SNode newTargetNode = ourSourceNodesToNewNodes.get(oldTargetNode);
+        SNode newTargetNode = sourceNodesToNewNodes.get(oldTargetNode);
          if (newTargetNode != null) {//if our reference points inside our node's subtree
           newSourceNode.addSemanticReference(SReference.newInstance(sourceReference.getRole(), newSourceNode, newTargetNode));
         } else {//otherwise it points out of our node's subtree
@@ -225,7 +221,7 @@ public class CopyPasteUtil {
           String oldTargetNodeId = sourceReference.getTargetNodeId();
           SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, oldTargetNodeId, null, newSourceNode.getModel().getUID() ,sourceReference.getResolveInfo(), sourceReference.getTargetClassResolveInfo());
           newSourceNode.addSemanticReference(newReference);
-          ourPointingOutReferences.add(newReference);
+          pointingOutReferences.add(newReference);
         }
 
       } else {
@@ -235,6 +231,7 @@ public class CopyPasteUtil {
 
     }
   }
+
 
   public static SModel copyModelProperties(SModel model) {
     SModelUID modelUID = model.getUID();
