@@ -199,13 +199,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
 
   public List<String> getClassPath() {
     List<String> classpath = new LinkedList<String>();
-//    String clspath = myProjectDescriptor.getProjectClassesPath();
-//    if (clspath == null) {
-//      File file = new File(myProjectFile.getParent(), "classes");
-//      classpath.add(FileUtil.getCanonicalPath(file));
-//    } else {
-//      classpath.add(clspath);
-//    }
 
     File file = new File(myProjectFile.getParent(), "classes");
     if (file.exists()) {
