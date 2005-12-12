@@ -88,6 +88,22 @@ public class CollectionUtil {
     }
     return result;
   }
+
+  public static<T> Vector<T> asVector(T... ts) {
+    Vector<T> result = new Vector<T>();
+    for (T t : ts) {
+      result.add(t);
+    }
+    return result;
+  }
+
+  public static<R,P> Set<R> map(Set<P> set, Mapper<P, R> mapper) {
+    Set<R> result = new HashSet<R>();
+    for (P p : set) {
+      result.add(mapper.map(p));
+    }
+    return result;    
+  }
   
   public static<Node extends SNode> Node getByName(Class<Node> cls, Iterable<? extends SNode> collection, String name) {
     for (SNode node : collection) {
