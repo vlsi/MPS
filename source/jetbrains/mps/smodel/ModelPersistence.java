@@ -171,15 +171,15 @@ public class ModelPersistence {
       importedUIDtoIndex.put(importIndex, importedModelUID);
     }
 
-    ArrayList<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();
+    ArrayList<ReferencePersister> referenceDescriptors = new ArrayList<ReferencePersister>();
     List children = rootElement.getChildren(NODE);
     for (Iterator iterator = children.iterator(); iterator.hasNext();) {
       Element element = (Element) iterator.next();
-      SNode semanticNode = readNode(element, model, referenceDescriptors);
+      SNode semanticNode = readNode(element, model, referenceDescriptors, false);
       model.addRoot(semanticNode);
     }
 
-    for (IReferencePersister referencePersister : referenceDescriptors) {
+    for (ReferencePersister referencePersister : referenceDescriptors) {
       referencePersister.createReferenceInModel(model);
     }
 
@@ -188,9 +188,13 @@ public class ModelPersistence {
   }
 
   public static SNode readNode(Element nodeElement, SModel model) {
-    List<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();
-    SNode result = readNode(nodeElement, model, referenceDescriptors);
-    for (IReferencePersister referencePersister : referenceDescriptors) {
+    return readNode(nodeElement, model, false);
+  }
+
+  public static SNode readNode(Element nodeElement, SModel model, boolean useUIDs) {
+    List<ReferencePersister> referenceDescriptors = new ArrayList<ReferencePersister>();
+    SNode result = readNode(nodeElement, model, referenceDescriptors, useUIDs);
+    for (ReferencePersister referencePersister : referenceDescriptors) {
       referencePersister.createReferenceInModel(model);
     }
     return result;
@@ -199,7 +203,7 @@ public class ModelPersistence {
 
 
   private static SNode readNode(Element nodeElement,
-                                SModel model, List<IReferencePersister> referenceDescriptors
+                                SModel model, List<ReferencePersister> referenceDescriptors, boolean useUIDs
   ) {
     String type = nodeElement.getAttributeValue(TYPE);
     SNode node = createNodeInstance(type, model);
@@ -232,14 +236,14 @@ public class ModelPersistence {
     List links = nodeElement.getChildren(LINK);
     for (Iterator iterator = links.iterator(); iterator.hasNext();) {
       Element linkElement = (Element) iterator.next();
-      referenceDescriptors.add(ReferencePersistersManager.readReferenceDescriptor(linkElement, node));
+      referenceDescriptors.add(ReferencePersister.readReferencePersister(linkElement, node, useUIDs));
     }
 
     List childNodes = nodeElement.getChildren(NODE);
     for (Iterator iterator = childNodes.iterator(); iterator.hasNext();) {
       Element childNodeElement = (Element) iterator.next();
       String role = childNodeElement.getAttributeValue(ROLE);
-      SNode childNode = readNode(childNodeElement, model, referenceDescriptors);
+      SNode childNode = readNode(childNodeElement, model, referenceDescriptors, useUIDs);
       if (childNode != null) {
         node.addChild(role, childNode);
       } else {
@@ -374,6 +378,10 @@ public class ModelPersistence {
   }
 
   public static void saveNode(Element parentElement, SNode node) {
+    saveNode(parentElement, node, false);
+  }
+
+  public static void saveNode(Element parentElement, SNode node, boolean useUIDs) {
     Element element = new Element(NODE);
     setNotNullAttribute(element, ROLE, node.getRole_());
     element.setAttribute(TYPE, node.getClass().getName());
@@ -405,7 +413,7 @@ public class ModelPersistence {
     List<SReference> references = node.getReferences();
     for (Iterator<SReference> iterator = references.iterator(); iterator.hasNext();) {
       SReference reference = iterator.next();
-      Element linkElement = ReferencePersistersManager.saveReference(element, reference);
+      Element linkElement = ReferencePersister.saveReference(element, reference, useUIDs);
     }
 
     // children ...

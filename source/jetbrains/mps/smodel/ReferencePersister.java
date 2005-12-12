@@ -11,9 +11,9 @@ import org.jdom.Element;
  * Time: 20:54:31
  * To change this template use File | Settings | File Templates.
  */
-public class DefaultReferencePersister implements IReferencePersister {
+public class ReferencePersister {
 
-  private static Logger LOG = Logger.getLogger(DefaultReferencePersister.class);
+  private static Logger LOG = Logger.getLogger(ReferenceDescriptor.class);
 
   protected SNode sourceNode;
   protected String role;
@@ -22,26 +22,27 @@ public class DefaultReferencePersister implements IReferencePersister {
   protected String targetClassResolveInfo;
   protected String extResolveInfo;
   protected String importedModelInfo = "-1";
+  protected boolean isUseUIDs;
 
 
-  public DefaultReferencePersister() {
+  public ReferencePersister() {
   }
 
-  protected DefaultReferencePersister(ReferenceDescriptor rd) {
-    this(rd.sourceNode, rd.role, rd.attTargetNodeId, rd.attExtResolveInfo, rd.resolveInfo, rd.targetClassResolveInfo);
+  protected ReferencePersister(ReferenceDescriptor rd, boolean useUIDs) {
+    this(rd.sourceNode, rd.role, rd.attTargetNodeId, rd.attExtResolveInfo, rd.resolveInfo, rd.targetClassResolveInfo, useUIDs);
   }
 
-  protected DefaultReferencePersister(SNode sourceNode, String role, String attTargetNodeId, String attExtResolveInfo, String resolveInfo, String targetClassResolveInfo) {
+  protected ReferencePersister(SNode sourceNode, String role, String attTargetNodeId, String attExtResolveInfo, String resolveInfo, String targetClassResolveInfo, boolean useUIDs) {
+    this.isUseUIDs = useUIDs;
     this.sourceNode = sourceNode;
     this.role = role;
     if (attTargetNodeId != null) {
-      ReferenceTargetDescriptor targetDescriptor = parseAttTargetNodeId(attTargetNodeId);
+      ReferenceTargetDescriptor targetDescriptor = parseAttTargetNodeId(attTargetNodeId, useUIDs);
       this.targetId = targetDescriptor.targetInfo;
       this.importedModelInfo = targetDescriptor.importedModelInfo;
     }
-
     if (attExtResolveInfo != null) {
-      ReferenceTargetDescriptor targetDescriptor = parseAttExtResolveInfo(attExtResolveInfo);
+      ReferenceTargetDescriptor targetDescriptor = parseAttExtResolveInfo(attExtResolveInfo, useUIDs);
       this.extResolveInfo = targetDescriptor.targetInfo;
       this.importedModelInfo = targetDescriptor.importedModelInfo;
     }
@@ -50,13 +51,18 @@ public class DefaultReferencePersister implements IReferencePersister {
   }
 
 
-  protected ReferenceTargetDescriptor parseAttExtResolveInfo(String attExtResolveInfo) {
-    return parseAttTargetNodeId(attExtResolveInfo); // same format of string
+  protected ReferenceTargetDescriptor parseAttExtResolveInfo(String attExtResolveInfo, boolean useUIDs) {
+    return parseAttTargetNodeId(attExtResolveInfo, useUIDs); // same format of string
   }
 
-  protected ReferenceTargetDescriptor parseAttTargetNodeId(String attTargetNodeId) {
+  protected ReferenceTargetDescriptor parseAttTargetNodeId(String attTargetNodeId, boolean useUIDs) {
     ReferenceTargetDescriptor referenceTargetDescriptor = new ReferenceTargetDescriptor();
-    int i = attTargetNodeId.indexOf('.');
+    int i;
+    if (useUIDs) {
+      i = attTargetNodeId.indexOf('#');
+    } else {
+      i = attTargetNodeId.indexOf('.');
+    }
     if (i > 0) {
       referenceTargetDescriptor.importedModelInfo = attTargetNodeId.substring(0, i);
       referenceTargetDescriptor.targetInfo = attTargetNodeId.substring(i + 1);
@@ -96,7 +102,11 @@ public class DefaultReferencePersister implements IReferencePersister {
   // -- create reference
   public void createReferenceInModel(SModel model) {
     SModelUID importedModelUID = model.getUID();
-    if (getImportIndex() > -1) {
+    if (isUseUIDs) {
+      if (!importedModelInfo.equals("-1")) {
+        importedModelUID = SModelUID.fromString(importedModelInfo);
+      }
+    } else if (getImportIndex() > -1) {
       importedModelUID = model.getImportedModelUID(getImportIndex());
       if (importedModelUID == null) {
         LOG.error("Couldn't create reference from " + this.getSourceNode().getDebugText() + " : import for index [" + getImportIndex() + "] not found");
@@ -122,12 +132,12 @@ public class DefaultReferencePersister implements IReferencePersister {
   //-----
 
   // -- create descriptor
-  public IReferencePersister readReferencePersister(Element linkElement, SNode sourceNode) {
+  public static ReferencePersister readReferencePersister(Element linkElement, SNode sourceNode, boolean useUIDs) {
     ReferenceDescriptor rd = readReferenceDescriptor(linkElement, sourceNode);
-    return new DefaultReferencePersister(rd);
+    return new ReferencePersister(rd, useUIDs);
   }
 
-  protected ReferenceDescriptor readReferenceDescriptor(Element linkElement, SNode sourceNode) {
+  private static ReferenceDescriptor readReferenceDescriptor(Element linkElement, SNode sourceNode) {
     ReferenceDescriptor rd = new ReferenceDescriptor();
     rd.sourceNode = sourceNode;
     rd.role = linkElement.getAttributeValue(ModelPersistence.ROLE);
@@ -141,7 +151,7 @@ public class DefaultReferencePersister implements IReferencePersister {
 
 
   //-- save reference
-  public Element saveReference(Element parentElement, SReference reference) {
+  public static Element saveReference(Element parentElement, SReference reference, boolean useUIDs) {
     SNode node = reference.getSourceNode(); 
     Element linkElement = new Element(ModelPersistence.LINK);
     parentElement.addContent(linkElement);
@@ -150,21 +160,26 @@ public class DefaultReferencePersister implements IReferencePersister {
     if (reference.isExternal()) {//external reference
       SReference sReference = reference;
       SModelUID targetModelUID = sReference.getTargetModelUID();
-      SModel.ImportElement importElement = node.getModel().getImportElement(targetModelUID);
-      int importIndex = -1;
-      if (importElement != null) {
-        importIndex = importElement.getReferenceID();
+      String targetModelInfo = "";
+      if (useUIDs) {
+        SModel.ImportElement importElement = node.getModel().getImportElement(targetModelUID);
+        int importIndex = -1;
+        if (importElement != null) {
+          importIndex = importElement.getReferenceID();
+          targetModelInfo = importIndex + ".";
+        } else {
+          LOG.error("Couldn't save reference \"" + sReference.getRole() + "\" in " + node.getDebugText() +
+                  "\n -- importz element for model \"" + targetModelUID + "\" not found");
+        }
       } else {
-        LOG.error("Couldn't save reference \"" + sReference.getRole() + "\" in " + node.getDebugText() +
-                "\n -- importz element for model \"" + targetModelUID + "\" not found");
+        targetModelInfo = targetModelUID.toString() + "#";
       }
-
       String extResolveInfo = sReference.getExtResolveInfo();
       if (ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
         // no external info - save target node id
-        linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, importIndex + "." + reference.getTargetNodeId());
+        linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, targetModelInfo + reference.getTargetNodeId());
       } else {
-        linkElement.setAttribute(ModelPersistence.EXT_RESOLVE_INFO, importIndex + "." + extResolveInfo);
+        linkElement.setAttribute(ModelPersistence.EXT_RESOLVE_INFO, targetModelInfo + extResolveInfo);
       }
 
     } else {//internal reference
