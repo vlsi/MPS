@@ -165,6 +165,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myActionMap.put(EditorCellAction.PASTE_AFTER, new CellAction_PasteNodeRelative(false));
     // ----
     myActionMap.put(EditorCellAction.RENDER_TEXT, new CellAction_RenderText());
+    // ----
+    myActionMap.put(EditorCellAction.MK_PROPERTY_ATTRIBUTE, new NodeEditorActions.MK_PROPERTY_ATTRIBUTE());
 
     registerNodeAction(new ShowNodeTypeAction());
     registerNodeAction(new FindUsagesNodeAction());
@@ -562,6 +564,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     // ---
+
+    if (keyEvent.getKeyCode() == KeyEvent.VK_F2 && keyEvent.isControlDown()) {
+      return EditorCellAction.MK_PROPERTY_ATTRIBUTE;
+    }
+
+    // ---
     if (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.getModifiers() == 0) {
       EditorCell selectedCell = editorContext.getNodeEditorComponent().getSelectedCell();
       if (!(selectedCell instanceof EditorCell_Label)) {
@@ -895,10 +903,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void setSelection(EditorCell newSelectedCell) {
-    changeSelection(newSelectedCell, true);
+    setSelection(newSelectedCell, true);
   }
 
-  void changeSelection(EditorCell newSelectedCell, boolean resetLastCaretX) {
+  void setSelection(EditorCell newSelectedCell, boolean resetLastCaretX) {
     if (resetLastCaretX) {
       resetLastCaretX();
     }

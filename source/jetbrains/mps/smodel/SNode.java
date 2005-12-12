@@ -2,6 +2,8 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.core.AttributeConcept;
+import jetbrains.mps.core.PropertyAttributeConcept;
+import jetbrains.mps.core.LinkAttributeConcept;
 import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
@@ -28,11 +30,15 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   private String myRoleInParent;
   private SNode myParent;
-  private SReference myAttribute;
+
 
   private List<SNode> myChildren = new ArrayList<SNode>();
   private List<SReference> myReferences = new ArrayList<SReference>();
   private HashMap<String, String> myProperties = new HashMap<String, String>();
+
+  private SReference myAttribute;
+  private WeakHashMap<String, SReference> myPropertyAttributes = new WeakHashMap<String, SReference>();
+  private WeakHashMap<String, SReference> myLinkAttributes = new WeakHashMap<String, SReference>();
 
   private SModel myModel;
   private String myId;
@@ -197,22 +203,54 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   //
 
   public void setAttribute(AttributeConcept attributeConcept) {
-    //todo fire property accessed event
+    //todo fire event
     attributeConcept.setReferent(AttributeConcept.ATTRIBUTED_NODE, this);
+    SReference reference = attributeConcept.getReference(AttributeConcept.ATTRIBUTED_NODE);
+    myAttribute = reference;
   }
 
   public boolean hasAttribute() {
     //todo fire accessed event
     if (myAttribute == null) return false;
-    return myAttribute.getTargetNode() instanceof AttributeConcept;
+    return myAttribute.getSourceNode() instanceof AttributeConcept;
   }
 
   public AttributeConcept getAttribute() {
     //todo fire accessed event
     if (myAttribute == null) return null;
-    SNode targetNode = myAttribute.getTargetNode();
-    if (targetNode instanceof AttributeConcept) return (AttributeConcept) targetNode;
+    SNode sourceNode = myAttribute.getSourceNode();
+    if (sourceNode instanceof AttributeConcept) return (AttributeConcept) sourceNode;
     return null;
+  }
+
+  public void setPropertyAttribute(String propertyName, PropertyAttributeConcept propertyAttribute) {
+    //todo fire event
+    propertyAttribute.setReferent(AttributeConcept.ATTRIBUTED_NODE, this);
+    propertyAttribute.setPropertyName(propertyName);
+    SReference reference = propertyAttribute.getReference(AttributeConcept.ATTRIBUTED_NODE);
+    this.myPropertyAttributes.put(propertyName, reference);
+  }
+
+  public PropertyAttributeConcept getPropertyAttribute(String propertyName) {
+    //todo fire accessed event
+    SReference reference = this.myPropertyAttributes.get(propertyName);
+    if (reference == null) return null;
+    return (PropertyAttributeConcept) reference.getSourceNode();
+  }
+
+  public void setLinkAttribute(String role, LinkAttributeConcept linkAttribute) {
+    //todo fire event
+    linkAttribute.setReferent(AttributeConcept.ATTRIBUTED_NODE, this);
+    linkAttribute.setLinkRole(role);
+    SReference reference = linkAttribute.getReference(AttributeConcept.ATTRIBUTED_NODE);
+    this.myLinkAttributes.put(role, reference);
+  }
+
+  public LinkAttributeConcept getLinkAttribute(String role) {
+    //todo fire accessed event
+    SReference reference = myLinkAttributes.get(role);
+    if (reference == null) return null;
+    return (LinkAttributeConcept) reference.getSourceNode();
   }
 
   //
@@ -553,9 +591,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public SReference addReferent(String role, SNode target) {
     SReference reference = SReference.newInstance(role, this, target);
     insertReferenceAt(myReferences.size(), reference);
-    if (role.equals(AttributeConcept.ATTRIBUTED_NODE) && this instanceof AttributeConcept) {
-      target.myAttribute = reference;
-    }
     return reference;
   }
 
@@ -679,18 +714,29 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   private void delete_internal() {
 
-    // delete all children
+    // remove node id
     myModel.removeNodeId(getId());
+
+    // clear attributes
+    myAttribute = null;
+    myLinkAttributes.clear();
+    myPropertyAttributes.clear();
+
+    //delete all children
     List<SNode> children = new LinkedList<SNode>(getChildren());
     for (SNode child : children) {
       child.delete_internal();
     }
+
     removeAllReferences();
+
+    //remove from parent
     SNode parent = getParent();
     if (parent != null) {
       parent.removeChild(this);
     }
 
+    //remove from roots
     if (getModel().isRoot(this)) {
       getModel().deleteRoot(this);
     }

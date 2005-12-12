@@ -37,6 +37,10 @@ public abstract class EditorCellAction {
   //--
   public static final String RENDER_TEXT = "RENDER_TEXT";
 
+  //--
+  public static final String MK_PROPERTY_ATTRIBUTE = "MK_PROPERTY_ATTRIBUTE";
+
+
   public abstract boolean canExecute(EditorContext context);
 
   public abstract void execute(EditorContext context);

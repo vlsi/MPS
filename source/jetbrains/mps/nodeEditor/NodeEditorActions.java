@@ -1,5 +1,10 @@
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.core.PropertyAttributeConcept;
+import jetbrains.mps.ide.command.CommandProcessor;
+
 import java.awt.*;
 
 
@@ -256,7 +261,7 @@ public class NodeEditorActions {
         context.getNodeEditorComponent().saveLastCaretX(caretX);
         EditorCell target = findTarget(selection, caretX);
         target.setCaretX(caretX);
-        context.getNodeEditorComponent().changeSelection(target, false);
+        context.getNodeEditorComponent().setSelection(target, false);
       }
 
       private EditorCell findTarget(EditorCell cell, int caretX) {
@@ -278,7 +283,7 @@ public class NodeEditorActions {
       context.getNodeEditorComponent().saveLastCaretX(caretX);
       EditorCell target = findTarget(selection, caretX);
       target.setCaretX(caretX);
-      context.getNodeEditorComponent().changeSelection(target, false);
+      context.getNodeEditorComponent().setSelection(target, false);
     }
 
     private EditorCell findTarget(EditorCell cell, int caretX) {
@@ -408,6 +413,35 @@ public class NodeEditorActions {
 
     public void execute(EditorContext context) {
       context.getNodeEditorComponent().setSelection(context.getNodeEditorComponent().popSelection());
+    }
+  }
+
+  //
+  // --- maybe temporary actions to test attribute editors
+  //
+
+  public static class MK_PROPERTY_ATTRIBUTE extends EditorCellAction { //Ctrl-F2
+    public boolean canExecute(EditorContext context) {
+      EditorCell cell = context.getNodeEditorComponent().getSelectedCell();
+      if (!(cell instanceof EditorCell_Property)) return false;
+      return cell.getSNode() != null;
+    }
+
+    public void execute(EditorContext context) {
+      final AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
+      final EditorCell_Property cell = (EditorCell_Property) nodeEditorComponent.getSelectedCell();
+      final SNode node = cell.getSNode();
+      String propertyName = ((PropertyAccessor)cell.getModelAccessor()).getPropertyName();
+      SModel model = node.getModel();
+      PropertyAttributeConcept propertyAttribute = new PropertyAttributeConcept(model);
+      model.addRoot(propertyAttribute);
+      node.setPropertyAttribute(propertyName, propertyAttribute);
+      CommandProcessor.instance().invokeLater(new Runnable() {
+        public void run() {
+          EditorCell cellToSelect = nodeEditorComponent.findNodeCell(node, (String) cell.getUserObject(EditorCell.CELL_ID));
+          nodeEditorComponent.setSelection(cellToSelect);
+        }
+      });
     }
   }
 }
