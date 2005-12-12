@@ -175,7 +175,7 @@ public class ModelPersistence {
     List children = rootElement.getChildren(NODE);
     for (Iterator iterator = children.iterator(); iterator.hasNext();) {
       Element element = (Element) iterator.next();
-      SNode semanticNode = readNode(element, model, referenceDescriptors, null);
+      SNode semanticNode = readNode(element, model, referenceDescriptors);
       model.addRoot(semanticNode);
     }
 
@@ -188,12 +188,8 @@ public class ModelPersistence {
   }
 
   public static SNode readNode(Element nodeElement, SModel model) {
-    return readNode(nodeElement, model, (String) null);
-  }
-
-  public static SNode readNode(Element nodeElement, SModel model, String referencePersisterClassName) {
     List<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();
-    SNode result = readNode(nodeElement, model, referenceDescriptors, referencePersisterClassName);
+    SNode result = readNode(nodeElement, model, referenceDescriptors);
     for (IReferencePersister referencePersister : referenceDescriptors) {
       referencePersister.createReferenceInModel(model);
     }
@@ -203,8 +199,8 @@ public class ModelPersistence {
 
 
   private static SNode readNode(Element nodeElement,
-                                SModel model, List<IReferencePersister> referenceDescriptors,
-                                String referencePersisterClassName) {
+                                SModel model, List<IReferencePersister> referenceDescriptors
+  ) {
     String type = nodeElement.getAttributeValue(TYPE);
     SNode node = createNodeInstance(type, model);
     if (node == null) {
@@ -236,18 +232,14 @@ public class ModelPersistence {
     List links = nodeElement.getChildren(LINK);
     for (Iterator iterator = links.iterator(); iterator.hasNext();) {
       Element linkElement = (Element) iterator.next();
-      String rdc_name =
-              referencePersisterClassName == null
-                      ? linkElement.getAttributeValue(REFERENCE_DESCRIPTOR_CLASS)
-                      : referencePersisterClassName;
-      referenceDescriptors.add(ReferencePersistersManager.readReferenceDescriptor(linkElement, node, rdc_name));
+      referenceDescriptors.add(ReferencePersistersManager.readReferenceDescriptor(linkElement, node));
     }
 
     List childNodes = nodeElement.getChildren(NODE);
     for (Iterator iterator = childNodes.iterator(); iterator.hasNext();) {
       Element childNodeElement = (Element) iterator.next();
       String role = childNodeElement.getAttributeValue(ROLE);
-      SNode childNode = readNode(childNodeElement, model, referenceDescriptors, referencePersisterClassName);
+      SNode childNode = readNode(childNodeElement, model, referenceDescriptors);
       if (childNode != null) {
         node.addChild(role, childNode);
       } else {
@@ -349,7 +341,7 @@ public class ModelPersistence {
     Iterator<SNode> iterator = sourceModel.roots();
     while (iterator.hasNext()) {
       SNode semanticNode = iterator.next();
-      saveNode(rootElement, semanticNode, null);
+      saveNode(rootElement, semanticNode);
     }
 
     return document;
@@ -381,7 +373,7 @@ public class ModelPersistence {
     importedModels.clear();
   }
 
-  public static void saveNode(Element parentElement, SNode node, String referenceDescriptorClassName) {
+  public static void saveNode(Element parentElement, SNode node) {
     Element element = new Element(NODE);
     setNotNullAttribute(element, ROLE, node.getRole_());
     element.setAttribute(TYPE, node.getClass().getName());
@@ -413,14 +405,13 @@ public class ModelPersistence {
     List<SReference> references = node.getReferences();
     for (Iterator<SReference> iterator = references.iterator(); iterator.hasNext();) {
       SReference reference = iterator.next();
-      Element linkElement = ReferencePersistersManager.saveReference(element, reference, referenceDescriptorClassName);
-      setNotNullAttribute(linkElement, REFERENCE_DESCRIPTOR_CLASS, referenceDescriptorClassName);
+      Element linkElement = ReferencePersistersManager.saveReference(element, reference);
     }
 
     // children ...
     List<SNode> children = node.getChildren();
     for (SNode childNode : children) {
-      saveNode(element, childNode, referenceDescriptorClassName);
+      saveNode(element, childNode);
     }
 
     parentElement.addContent(element);
