@@ -107,6 +107,17 @@ public abstract class MPSTree extends JTree {
         }
       }
     });
+
+    AbstractAction openNodeAction = new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        TreePath selPath = getSelectionPath();
+        if (selPath == null) return;
+        MPSTreeNode selNode = (MPSTreeNode) selPath.getLastPathComponent();
+        selNode.doubleClick();
+      }
+    };
+    registerKeyboardAction(openNodeAction, KeyStroke.getKeyStroke("ENTER"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    registerKeyboardAction(openNodeAction, KeyStroke.getKeyStroke("F4"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
   }
 
   void myMouseClicked(MouseEvent e) {
