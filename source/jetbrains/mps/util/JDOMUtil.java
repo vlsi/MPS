@@ -40,6 +40,13 @@ public class JDOMUtil {
     return saxBuilder.build(reader);
   }
 
+  public static String asString(Document doc) throws IOException {
+    StringWriter writer = new StringWriter();
+
+    writeDocument(doc, writer);
+    return writer.toString();
+  }
+
   public static void writeDocument(Document document, String filePath) throws IOException {
     OutputStream stream = new BufferedOutputStream(new FileOutputStream(filePath));
     try {
