@@ -161,7 +161,7 @@ public class ReferencePersister {
       SReference sReference = reference;
       SModelUID targetModelUID = sReference.getTargetModelUID();
       String targetModelInfo = "";
-      if (useUIDs) {
+      if (!useUIDs) {
         SModel.ImportElement importElement = node.getModel().getImportElement(targetModelUID);
         int importIndex = -1;
         if (importElement != null) {
