@@ -419,7 +419,7 @@ public class ModelPersistence {
     // children ...
     List<SNode> children = node.getChildren();
     for (SNode childNode : children) {
-      saveNode(element, childNode);
+      saveNode(element, childNode, useUIDs);
     }
 
     parentElement.addContent(element);
