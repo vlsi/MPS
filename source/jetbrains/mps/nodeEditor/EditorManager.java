@@ -27,7 +27,9 @@ public class EditorManager {
   private HashMap<SNode, EditorCell> myMap = new HashMap<SNode, EditorCell>();
   private boolean myCreatingInspectedCell = false;
 
-
+  public static EditorManager getInstanceFromContext(IOperationContext operationContext) {
+    return operationContext.getComponent(EditorManager.class);
+  }
 
   public EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events) {
     return createRootCell(context, node, events, false);
