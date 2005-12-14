@@ -25,6 +25,26 @@ public class CollectionUtil {
     return  result;
   }
 
+  public static<T> List<T> filter(List<T> ts, Condition<T> f) {
+    List<T> result = new ArrayList<T>();
+    for (T t : ts) {
+      if (f.met(t)) {
+        result.add(t);
+      }
+    }
+    return result;
+  }
+
+  public static<T> Set<T> filter(Set<T> ts, Condition<T> f) {
+    Set<T> result = new HashSet<T>();
+    for (T t : ts) {
+      if (f.met(t)) {
+        result.add(t);
+      }
+    }
+    return result;
+  }
+
   public static <T> List<T> iteratorAsList(Iterator<T> i) {
     List<T> result = new ArrayList<T>();
     while (i.hasNext()) {
