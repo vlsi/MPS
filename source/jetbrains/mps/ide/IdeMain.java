@@ -11,6 +11,7 @@ import jetbrains.mps.ide.action.MPSIdeActions;
 public class IdeMain {
   private static boolean ourTestMode = false;
 
+  private static int ourFramesCount = 0;
 
   public static void initFonts() {
     UIDefaults defaults = UIManager.getDefaults();
