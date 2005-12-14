@@ -90,6 +90,9 @@
             <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1127098721978">
               <link role="variableDeclaration" targetNodeId="1126142422092" />
             </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1134570268619">
+              <link role="variableDeclaration" targetNodeId="1126142422092" />
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1128642323287">
