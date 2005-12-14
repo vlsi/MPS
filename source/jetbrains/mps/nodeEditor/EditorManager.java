@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.annotations.ThinkTwice;
 
 import java.util.*;
 
@@ -64,7 +65,7 @@ public class EditorManager {
 
 
 
-  /*package*/ EditorCell createEditorCell(EditorContext context, SNode node, List<SModelEvent> events) {
+  public @ThinkTwice EditorCell createEditorCell(EditorContext context, SNode node, List<SModelEvent> events) {
 
     AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
     EditorCell oldCell = nodeEditorComponent.getBigCellForNode(node);
