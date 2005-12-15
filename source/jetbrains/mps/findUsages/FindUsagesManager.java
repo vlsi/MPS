@@ -1,12 +1,13 @@
 package jetbrains.mps.findUsages;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.ide.progress.IProgressMonitor;
+import jetbrains.mps.ide.progress.*;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 
 import java.util.*;
+import java.awt.Frame;
 
 public class FindUsagesManager {
 
@@ -61,24 +62,27 @@ public class FindUsagesManager {
     return result;
   }
 
-  public Set<SReference> findUsages(SNode node, IScope scope, IProgressMonitor progress) {
-    Set<SReference> result = new HashSet<SReference>();
-    try {
-      if (progress == null) progress = IProgressMonitor.NULL_PROGRESS_MONITOR;
-      List<SModelDescriptor> models = scope.getModelDescriptors();
-      progress.start("Find Usages...", models.size());
-      progress.addText("Finding usages...");
-      for (SModelDescriptor model : new ArrayList<SModelDescriptor>(models)) {
-        result.addAll(model.findUsages(node));
-        if (progress.isCanceled()) {
-          return result;
+  public Set<SReference> findUsages(final SNode node, IScope scope, boolean requiresMonitoring, Frame frame) {
+    final Set<SReference> result = new HashSet<SReference>();
+
+    List<SModelDescriptor> models = scope.getModelDescriptors();
+    ComplexMonitorableTask mainTask = new ComplexMonitorableTask("findUsages", "Finding usages...", "done.");
+    for (final SModelDescriptor model : new ArrayList<SModelDescriptor>(models)) {
+      mainTask.addSubTask(new AtomicMonitorableTask("findUsagesIn"+model.getModelUID().toString(), "findUsagesIn") {
+        public void run() {
+          result.addAll(model.findUsages(node));
         }
-        progress.advance(1);
-      }
-      return result;
-    } finally {
-      progress.finish();
+      });
     }
+
+    if (requiresMonitoring) {
+      AdaptiveProgressMonitor monitor = new AdaptiveProgressMonitor("Find Usages...", frame, mainTask);
+      monitor.setCloseOnExit(true);
+      monitor.runMainTask();
+    } else {
+      mainTask.runTask();
+    }
+    return result;
   }
 
   public Set<SNode> findInstances(ConceptDeclaration concept, IScope scope, IProgressMonitor progress) {
@@ -100,8 +104,8 @@ public class FindUsagesManager {
     }
   }
 
-  public Set<SReference> findUsages(SNode node, IProgressMonitor progress) {
-    return findUsages(node, globalScope(), progress);
+  public Set<SReference> findUsages(SNode node, boolean requiresMonitoring, Frame frame) {
+    return findUsages(node, globalScope(), requiresMonitoring, frame);
   }
 
   public Set<SNode> findInstances(ConceptDeclaration concept, IProgressMonitor progress){
@@ -140,7 +144,7 @@ public class FindUsagesManager {
       protected boolean accept(SModelDescriptor descriptor) {
         return descriptor.getModelUID().getShortName().equals("structure");
       }
-    }, null);
+    }, false, null);
 
     for (SReference ref : usages) {
       if (ref.getRole().equals(ConceptDeclaration.EXTENDS)) {
