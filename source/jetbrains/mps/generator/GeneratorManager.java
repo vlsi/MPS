@@ -245,7 +245,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         progress.addText("compiling in IntelliJ IDEA...");
         MPSPlugin.getInstance().refreshFS();
         progress.advance(AMOUNT_PER_COMPILATION / 4);
-        MPSPlugin.getInstance().buildProject();
+        MPSPlugin.getInstance().buildModule(outputFolder);
         progress.advance(AMOUNT_PER_COMPILATION / 4);
       }
 
@@ -288,7 +288,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           progress.addText("compiling in IntelliJ IDEA...");
           MPSPlugin.getInstance().refreshFS();
           progress.advance(AMOUNT_PER_COMPILATION / 4);
-          MPSPlugin.getInstance().buildProject();
+          MPSPlugin.getInstance().buildModule(outputFolder);
           progress.advance(AMOUNT_PER_COMPILATION / 4);
           progress.addText("reloading MPS classes...");
           ReloadUtils.reloadAll();

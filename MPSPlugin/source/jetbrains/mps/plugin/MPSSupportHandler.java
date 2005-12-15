@@ -253,14 +253,16 @@ public class MPSSupportHandler implements ProjectComponent {
     return "OK";
   }
 
-  public String buildProject() {
+  public String buildModule(final String path) {
     final Object lock = new Object() { };
     synchronized(lock) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
             ApplicationManager.getApplication().runWriteAction(new Runnable() {
               public void run() {
-                myProject.getComponent(CompilerManager.class).make(new CompileStatusNotification() {
+                Module module = findModule(path);
+                if (module == null) return;
+                myProject.getComponent(CompilerManager.class).make(module, new CompileStatusNotification() {
                   public void finished(boolean aborted, int errors, int warnings) {
                     synchronized(lock) {
                       lock.notifyAll();
@@ -461,6 +463,7 @@ public class MPSSupportHandler implements ProjectComponent {
         }
         PsiDirectory rootDir = psiManager.findDirectory(sourceDir);
         try {
+          activateProjectWindow();
           createPackagesForNamespace(rootDir, namespace).createClass("Queries");
         } catch (IncorrectOperationException e) {
           e.printStackTrace();

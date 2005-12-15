@@ -55,9 +55,6 @@ public class MPSPlugin {
 
 
   public void createAspectMethod(String path, String namespace, String name, String returnType, String parms) throws IOException, XmlRpcException {
-    System.out.println("Path " + path);
-
-
     Vector<String> params = new Vector<String>();
     params.add(path);
     params.add(namespace);
@@ -125,8 +122,10 @@ public class MPSPlugin {
     myClient.execute("MPSSupport.refreshFS", new Vector());
   }
 
-  public void buildProject() throws IOException, XmlRpcException {
-    myClient.execute("MPSSupport.buildProject", new Vector());
+  public void buildModule(String path) throws IOException, XmlRpcException {    
+    Vector params = new Vector();
+    params.add(path);
+    myClient.execute("MPSSupport.buildModule", params);
   }
   
     public void closeProjects() throws IOException, XmlRpcException {
