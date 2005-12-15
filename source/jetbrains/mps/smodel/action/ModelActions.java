@@ -33,7 +33,7 @@ public class ModelActions {
     List<ConceptDeclaration> targetConcepts = SModelUtil.allConceptDeclarations(sourceNode.getModel(), scope, new Condition<ConceptDeclaration>() {
       public boolean met(ConceptDeclaration node) {
         if (!SModelUtil.hasConceptProperty(node, ABSTRACT, scope) && !SModelUtil.hasConceptProperty(node, DONT_SUBSTITUTE_BY_DEFAULT, scope)) {
-          return SModelUtil.isAssignableType(targetConcept, node);
+          return SModelUtil.isAssignableConcept(targetConcept, node);
         }
         return false;
       }
@@ -64,7 +64,7 @@ public class ModelActions {
               NodeSubstituteActionsBuilder substituteActionsBuilder = iterator.next();
               // is applicable ?
               if (substituteActionsBuilder.getApplicableLinkMetaclass() == LinkMetaclass.aggregation &&
-                      SModelUtil.isAssignableType(targetConcept, substituteActionsBuilder.getApplicableConcept())) {
+                      SModelUtil.isAssignableConcept(targetConcept, substituteActionsBuilder.getApplicableConcept())) {
                 substituteActionsBuilders.add(substituteActionsBuilder);
               }
             }

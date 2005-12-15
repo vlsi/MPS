@@ -212,7 +212,7 @@ public class PasteNodeUtil {
     Iterator<LinkDeclaration> metalinks = sourceMetatype.linkDeclarations();
     while (metalinks.hasNext()) {
       LinkDeclaration metalink = metalinks.next();
-      if (SModelUtil.isAssignableType(metalink.getTarget(), targetMetatype)) {
+      if (SModelUtil.isAssignableConcept(metalink.getTarget(), targetMetatype)) {
   //      Cardinality sourceCardinality = metalink.getSourceCardinality();
  //       if (sourceCardinality == Cardinality._0_n || sourceCardinality == Cardinality._1_n) {
           return metalink;
@@ -231,7 +231,7 @@ public class PasteNodeUtil {
     Iterator<LinkDeclaration> metalinks = sourceMetatype.linkDeclarations();
     while (metalinks.hasNext()) {
       LinkDeclaration metalink = metalinks.next();
-      if (SModelUtil.isAssignableType(metalink.getTarget(), targetMetatype) && metalink.getRole().equals(role)) {
+      if (SModelUtil.isAssignableConcept(metalink.getTarget(), targetMetatype) && metalink.getRole().equals(role)) {
         return metalink;
       }
     }

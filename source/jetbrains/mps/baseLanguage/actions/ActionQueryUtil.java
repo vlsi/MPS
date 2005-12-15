@@ -22,11 +22,11 @@ public class ActionQueryUtil {
 
     // is "sourcenode" inside instance of parent concept?
     ConceptDeclaration conceptOfSourceNode = SModelUtil.getConceptDeclaration(sourceNode, scope);
-    boolean ok = SModelUtil.isAssignableType(expectedConceptOfParent, conceptOfSourceNode) ||
+    boolean ok = SModelUtil.isAssignableConcept(expectedConceptOfParent, conceptOfSourceNode) ||
             SModelUtil.findParent(sourceNode, new Condition<SNode>() {
               public boolean met(SNode object) {
                 ConceptDeclaration conceptOfParent = SModelUtil.getConceptDeclaration(object, scope);
-                return SModelUtil.isAssignableType(expectedConceptOfParent, conceptOfParent);
+                return SModelUtil.isAssignableConcept(expectedConceptOfParent, conceptOfParent);
               }
             }) != null;
 
