@@ -138,7 +138,9 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
         if (id == null) return null;
         try {
           MPSPlugin plugin = MPSPlugin.getInstance();
-          plugin.createAspectMethod(getNamespace(), getQueryMethodPrefix() + id, getQueryMethodReturnType(), getQueryMethodParameterList());
+
+          String modelPath = getSNode().getModel().getModelDescriptor().getModelFile().getAbsolutePath();
+          plugin.createAspectMethod(modelPath, getNamespace(), getQueryMethodPrefix() + id, getQueryMethodReturnType(), getQueryMethodParameterList());
           for (Class cls : getImportedClasses()) {
             plugin.addImport(getNamespace(), cls.getName());
           }

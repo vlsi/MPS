@@ -204,22 +204,6 @@ public class MPSSupportHandler implements ProjectComponent {
     return "OK";
   }
 
-
-  //todo checkout works only in CVS
-  public String checkout(final String path) {
-    executeWriteAction(new Runnable() {
-      public void run() {
-        VirtualFile file = LocalFileSystem.getInstance().findFileByIoFile(new File(path));
-        FilePath path = new FilePathImpl(file);
-        
-
-
-
-      }
-    });
-    return "OK";
-  }
-
   public byte[] getContentsForRevision(final String path, final String revision) {
     final byte[][] result = new byte[1][];
     executeWriteAction(new Runnable() {
@@ -358,7 +342,7 @@ public class MPSSupportHandler implements ProjectComponent {
   }
 
   public String addImport(final String namespace, final String fqName) {
-    if (!isQueriesClassExist(namespace)) createAspectClass(namespace);
+    if (!isQueriesClassExist(namespace)) return "";
     executeWriteAction(new Runnable() {
       public void run() {
         PsiManager manager = PsiManager.getInstance(myProject);
@@ -378,7 +362,7 @@ public class MPSSupportHandler implements ProjectComponent {
   }
 
   public String openMethod(final String namespace, final String name) {
-    if (!isQueriesClassExist(namespace)) createAspectClass(namespace);
+    if (!isQueriesClassExist(namespace)) return "";
     executeWriteAction(new Runnable() {
       public void run() {
         PsiClass aspects = getQueriesClass(namespace);
@@ -396,9 +380,8 @@ public class MPSSupportHandler implements ProjectComponent {
     return "OK";
   }
 
-
-  public String createAspectMethod(final String namespace, final String name, final String returnType, final String params) {
-    if (!isQueriesClassExist(namespace)) createAspectClass(namespace);
+  public String createAspectMethod(final String path, final String namespace, final String name, final String returnType, final String params) {
+    if (!isQueriesClassExist(namespace)) createAspectClass(path, namespace);
 
     executeWriteAction(new Runnable() {
       public void run() {
@@ -450,22 +433,14 @@ public class MPSSupportHandler implements ProjectComponent {
     return "OK";
   }
 
-  public String createAspectClass(final String namespace) {
+  public String createAspectClass(final String path, final String namespace) {
     executeWriteAction(new Runnable() {
       public void run() {
         final PsiManager psiManager = PsiManager.getInstance(myProject);
         VirtualFile sourceDir = null;
         ModuleManager manager = ModuleManager.getInstance(myProject);
 
-        Module module = null;
-        Module[] allModules = manager.getModules();
-        for (int i = 0; i < allModules.length; i++) {
-          if (allModules[i].getModuleType() == ModuleType.JAVA) {
-            module = allModules[i];
-            break;
-          }
-        }
-
+        Module module = findModule(path);
         if (module == null) {
           System.err.println("I can't find suitable module");
           return;
@@ -539,6 +514,39 @@ public class MPSSupportHandler implements ProjectComponent {
       }
     }, ModalityState.NON_MMODAL);
   }
+
+  private Module findModule(final String path) {
+    VirtualFile file = LocalFileSystem.getInstance().findFileByIoFile(new File(path));
+    if (file == null) return null;
+
+    int bestDistance = Integer.MAX_VALUE;
+    Module bestModule = null;
+
+    for (Module module : myProject.getComponent(ModuleManager.class).getModules()) {
+      ModuleRootManager rootManager = ModuleRootManager.getInstance(module);
+      for (VirtualFile contentRoot : rootManager.getContentRoots()) {
+        int distance = getDistance(contentRoot, file);        
+        if (distance != -1 && distance < bestDistance) {
+          bestDistance = distance;
+          bestModule = module;
+        }
+      }
+    }
+
+    return bestModule;
+  }
+
+  public static int getDistance(VirtualFile ancestor, VirtualFile descendant) {
+    if (ancestor == descendant) return 0;
+    if (descendant.getParent() == null) return -1;
+
+    int distance = getDistance(ancestor, descendant.getParent());
+    if (distance == -1) return -1;
+
+    return distance + 1;
+  }
+
+
 
   private PsiElementFactory getPsiElementFactory() {
     return PsiManager.getInstance(myProject).getElementFactory();

@@ -54,13 +54,23 @@ public class MPSPlugin {
   }
 
 
-  public void createAspectMethod(String namespace, String name, String returnType, String parms) throws IOException, XmlRpcException {
+  public void createAspectMethod(String path, String namespace, String name, String returnType, String parms) throws IOException, XmlRpcException {
+    System.out.println("Path " + path);
+
+
     Vector<String> params = new Vector<String>();
+    params.add(path);
     params.add(namespace);
     params.add(name);
     params.add(returnType);
     params.add(parms);
     myClient.execute("MPSSupport.createAspectMethod", params);
+  }
+
+  public void findModule(String path) throws IOException, XmlRpcException {
+    Vector<String> params = new Vector<String>();
+    params.add(path);
+    myClient.execute("MPSSupport.findModule", params);
   }
 
   public List<String> findInheritors(Class cls) throws IOException, XmlRpcException {
@@ -118,10 +128,10 @@ public class MPSPlugin {
   public void buildProject() throws IOException, XmlRpcException {
     myClient.execute("MPSSupport.buildProject", new Vector());
   }
-
-  public void closeProjects() throws IOException, XmlRpcException {
-    myClient.execute("ProjectCreator.closeAllProjects", new Vector());
-  }
+  
+    public void closeProjects() throws IOException, XmlRpcException {
+      myClient.execute("ProjectCreator.closeAllProjects", new Vector());
+    }
 
   public void addSource(String path) throws IOException, XmlRpcException {
     Vector<String> params = new Vector<String>();
