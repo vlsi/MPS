@@ -1080,7 +1080,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     // hardcoded "updateTypesystem" action
     if (keyEvent.getKeyCode() == KeyEvent.VK_F5) {
-      TypeCheckerAccess.getTypeChecker().checkNodeType(getRootCell().getSNode());
+      TypeCheckerAccess.getTypeChecker().checkNodeType(getRootCell().getSNode(), true);
       rebuildEditorContent();
       keyEvent.consume();
       return;
