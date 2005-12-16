@@ -1130,7 +1130,6 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107134345596">
     <property name="name" value="CodeBlock" />
-    <link role="extends" targetNodeId="4.1078489098625" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1107134797946">
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="1" />

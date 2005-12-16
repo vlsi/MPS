@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.annotations.ThinkTwice;
 
 import java.util.*;
@@ -41,7 +40,7 @@ public class EditorManager {
     AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
     EditorCell rootCell = nodeEditorComponent.getRootCell();
     myMap.clear();
-    myMap.put(node,rootCell);
+    myMap.put(node, rootCell);
     myCreatingInspectedCell = isInspectorCell;
     EditorCell newRootCell = createEditorCell(context, node, events);
     return newRootCell;
@@ -51,7 +50,7 @@ public class EditorManager {
   private static Map<SNode, EditorCell> findBigDescendantCellsAndTheirNodes(EditorCell cell) {
     Map<SNode, EditorCell> result = new HashMap<SNode, EditorCell>();
     if (cell instanceof EditorCell_Collection) {
-      for (EditorCell childCell : ((EditorCell_Collection)cell)) {
+      for (EditorCell childCell : ((EditorCell_Collection) cell)) {
         Object isBigCell = childCell.getUserObject(IS_BIG_CELL);
         if (isBigCell != null && (Boolean) childCell.getUserObject(IS_BIG_CELL)) {
           result.put(childCell.getSNode(), childCell);
@@ -64,8 +63,9 @@ public class EditorManager {
   }
 
 
-
-  public @ThinkTwice EditorCell createEditorCell(EditorContext context, SNode node, List<SModelEvent> events) {
+  public
+  @ThinkTwice
+  EditorCell createEditorCell(EditorContext context, SNode node, List<SModelEvent> events) {
 
     AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
     EditorCell oldCell = nodeEditorComponent.getBigCellForNode(node);
@@ -74,9 +74,9 @@ public class EditorManager {
       for (SModelEvent event : events) {
         SNode eventNode;
         if (event instanceof SModelChildEvent) {
-          eventNode = ((SModelChildEvent)event).getParent();
+          eventNode = ((SModelChildEvent) event).getParent();
         } else if (event instanceof SModelReferenceEvent) {
-          eventNode = ((SModelReferenceEvent)event).getReference().getSourceNode();
+          eventNode = ((SModelReferenceEvent) event).getReference().getSourceNode();
         } else if (event instanceof SModelPropertyEvent) {
           eventNode = ((SModelPropertyEvent) event).getNode();
         } else continue;
@@ -98,7 +98,8 @@ public class EditorManager {
             CellBuildNodeAccessListener listensNothingListener = new CellBuildNodeAccessListener(nodeEditorComponent);
             NodeReadAccessCaster.setNodeReadAccessListener(listensNothingListener);
             if (nodesOldCellDependsOn != null) listensNothingListener.addNodesToDependOn(nodesOldCellDependsOn);
-            if (refTargetsOldCellDependsOn != null) listensNothingListener.addRefTargetsToDependOn(refTargetsOldCellDependsOn);
+            if (refTargetsOldCellDependsOn != null)
+              listensNothingListener.addRefTargetsToDependOn(refTargetsOldCellDependsOn);
             NodeReadAccessCaster.removeNodeAccessListener();
             //--voodoo
           }
@@ -157,7 +158,7 @@ public class EditorManager {
     return createRootCell(context, node, events, true);
   }
 
-  
+
   private INodeEditor getEditor(EditorContext context, SNode node) {
     INodeEditor editor = (INodeEditor) node.getUserObject(this.getClass());
 
@@ -177,8 +178,6 @@ public class EditorManager {
 
     editor = loadEditor(context, node);
     if (editor == null) {
-      //test
-      editor = loadEditor(context, node);
       editor = new DefaultNodeEditor();
     }
     node.putUserObject(this.getClass(), editor);
@@ -186,55 +185,51 @@ public class EditorManager {
   }
 
   private INodeEditor loadEditor(EditorContext context, SNode node) {
-    Language language = SModelUtil.getLanguage(node, context.getOperationContext().getScope());
-    if (language == null) {
+    IScope scope = context.getOperationContext().getScope();
+    ConceptDeclaration nodeConcept = SModelUtil.getConceptDeclaration(node, scope);
+    if (nodeConcept == null) {
       LOG.errorWithTrace("Error loading editor for node \"" + node.getDebugText() + "\".\n" +
-              "Couldn't find language for namespace: \"" + NameUtil.namespaceFromConceptFQName(node.getClass().getName()) + "\"\n" +
-              "In scope " + context.getOperationContext().getScope());
-      SModelUtil.getLanguage(node, context.getOperationContext().getScope());
+              "Couldn't find node concept in scope: " + scope);
       return null;
     }
+
     String stereotype = node.getModel().getStereotype();
-    String languageEditorFQName = language.getEditorUID(stereotype);
-    if (languageEditorFQName == null) {
-      languageEditorFQName = language.getEditorUID();
-      if (languageEditorFQName == null) {
-        LOG.errorWithTrace("Error loading editor for node \"" + node.getDebugText() + "\" <<" + stereotype + ">> : no editor model.");
+    while (nodeConcept != null) {
+      INodeEditor nodeEditor = loadEditor(nodeConcept, stereotype, scope);
+      if (nodeEditor != null) {
+        return nodeEditor;
+      }
+      nodeConcept = nodeConcept.getExtends();
+    }
+    LOG.error("Couldn't load editor for node " + node.getDebugText());
+    return null;
+  }
+
+  private INodeEditor loadEditor(ConceptDeclaration nodeConcept, String stereotype, IScope scope) {
+    Language language = SModelUtil.getDeclaringLanguage(nodeConcept, scope);
+    String editorUID = language.getEditorUID(stereotype);
+    if (editorUID == null) {
+      editorUID = language.getEditorUID();
+      if (editorUID == null) {
+        LOG.errorWithTrace("Error loading editor for language \"" + language.getNamespace() + "\" <<" + stereotype + ">> : no editor model.");
         return null;
       }
     }
 
-
-    String conceptName = NameUtil.shortNameFromLongName(NameUtil.nodeConceptFQName(node));
-    ConceptDeclaration conceptDeclaration = language.findConceptDeclaration(conceptName);
-    if (conceptDeclaration == null) {
-      LOG.error("couldn't find concept " + conceptName + " in language " + language.getModuleUID());
-      return null;
+    try {
+      String editorClassName = editorUID + "." + nodeConcept.getName() + "_Editor";
+      Class editorClass = Class.forName(editorClassName, true, ClassLoaderManager.getInstance().getClassLoader());
+      return (INodeEditor) editorClass.newInstance();
+    } catch (ClassNotFoundException e) {
+      // ok
+    } catch (InstantiationException e) {
+      LOG.error(e);
+    } catch (IllegalAccessException e) {
+      LOG.error(e);
+    } catch (Exception e) {
+      LOG.error(e);
     }
 
-    //    String editorClassName = "jetbrains.mps." + languageEditorFQName + "." + nodeConcept.getName() + "_Editor";
-    String editorClassName = "";
-    while (conceptDeclaration != null) {
-      try {
-        editorClassName = languageEditorFQName + "." + conceptDeclaration.getName() + "_Editor";
-        Class editorClass = Class.forName(editorClassName, true, ClassLoaderManager.getInstance().getClassLoader());
-        return (INodeEditor) editorClass.newInstance();
-      } catch (ClassNotFoundException e) {
-        // ok
-        conceptDeclaration = conceptDeclaration.getExtends();
-      } catch (InstantiationException e) {
-        LOG.error(e);
-        return null;
-      } catch (IllegalAccessException e) {
-        LOG.error(e);
-        return null;
-      } catch (Exception e) {
-        LOG.error(e);
-        return null;
-      } 
-    }
-
-    LOG.warning("Couldn't load editor " + editorClassName + " : Class Not Found!");
     return null;
   }
 }
