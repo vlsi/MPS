@@ -66,6 +66,7 @@
     <option name="CLEAR_OUTPUT_DIRECTORY" value="true" />
     <option name="DEPLOY_AFTER_MAKE" value="2" />
     <excludeFromCompile>
+      <directory url="file://$PROJECT_DIR$/MPSPlugin/source" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/source_gen/jetbrains/mps/transformation/baseLanguage" includeSubdirectories="false" />
       <directory url="file://$PROJECT_DIR$/source_gen/jetbrains/mps/transformation" includeSubdirectories="false" />
     </excludeFromCompile>
@@ -91,7 +92,127 @@
   </component>
   <component name="DependencyValidationManager" />
   <component name="EntryPointsManager">
-    <entry_points />
+    <entry_points>
+      <entry_point TYPE="method" FQNAME="String jetbrains.mps.bootstrap.editorLanguage.generator.baseLanguage.Queries.propertyMacro_CellModel_RefNodeList_SeparatorText(SNode sourceNode, SNode templateNode, PropertyDeclaration property, ITemplateGenerator generator)" />
+      <entry_point TYPE="method" FQNAME="String jetbrains.mps.bootstrap.editorLanguage.generator.baseLanguage.Queries.propertyMacro_CellModel_RefNodeList_NodeListHandler_Field_Name(SNode sourceNode, SNode templateNode, PropertyDeclaration property, ITemplateGenerator generator)" />
+      <entry_point TYPE="method" FQNAME="String jetbrains.mps.bootstrap.editorLanguage.generator.baseLanguage.Queries.propertyMacro_CellModel_RefNode_NullText(SNode sourceNode, SNode templateNode, PropertyDeclaration property, ITemplateGenerator generator)" />
+      <entry_point TYPE="method" FQNAME="String jetbrains.mps.bootstrap.editorLanguage.generator.baseLanguage.Queries.propertyMacro_CellModel_RefNode_GenuineLinkRole(SNode sourceNode, SNode templateNode, PropertyDeclaration property, ITemplateGenerator generator)" />
+      <entry_point TYPE="method" FQNAME="String jetbrains.mps.bootstrap.editorLanguage.generator.baseLanguage.Queries.propertyMacro_CellModel_RefNode_LinkRole(SNode sourceNode, SNode templateNode, PropertyDeclaration property, ITemplateGenerator generator)" />
+      <entry_point TYPE="method" FQNAME="String jetbrains.mps.bootstrap.editorLanguage.generator.baseLanguage.Queries.propertyMacro_CellModel_Selectable_BooleanString(SNode sourceNode, SNode templateNode, PropertyDeclaration property, ITemplateGenerator generator)" />
+      <entry_point TYPE="method" FQNAME="String jetbrains.mps.bootstrap.editorLanguage.generator.baseLanguage.Queries.propertyMacro_CellModel_RefNodeList_ListHandlerAdapter_Name(SNode sourceNode, SNode templateNode, PropertyDeclaration property, ITemplateGenerator generator)" />
+      <entry_point TYPE="method" FQNAME="String jetbrains.mps.bootstrap.editorLanguage.generator.baseLanguage.Queries.propertyMacro_ConceptDeclarationEditorDeclaration_JavaClass_Name(SNode sourceNode, SNode templateNode, PropertyDeclaration property, ITemplateGenerator generator)" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.ArrayType_Editor" />
+      <entry_point TYPE="method" FQNAME="SNode jetbrains.mps.baseLanguage.editor.Queries.substituteItemHandler_CreateClassType(SNode sourceNode, Object itemObject, String pattern)" />
+      <entry_point TYPE="method" FQNAME="SNode jetbrains.mps.baseLanguage.editor.Queries.substituteNodeActionHandler_InstanceOfExpressionTypeAcceptor(SNode sourceNode, Object object)" />
+      <entry_point TYPE="method" FQNAME="SNode jetbrains.mps.baseLanguage.editor.Queries.substituteNodeActionHandler_StaticMethodInstanceAcceptor(SNode sourceNode, Object object)" />
+      <entry_point TYPE="method" FQNAME="List jetbrains.mps.baseLanguage.editor.Queries.semanticModelQuery_AllClasses(SNode sourceNode, IOperationContext operationContext)" />
+      <entry_point TYPE="method" FQNAME="String jetbrains.mps.baseLanguage.editor.Queries.substituteItemTextProvider_SemanticNode_Name(SNode sourceNode, Object itemObject)" />
+      <entry_point TYPE="method" FQNAME="Object jetbrains.mps.baseLanguage.editor.Queries.substituteItemHandler_JavaVariableReferenceFactory(SNode sourceNode, Object itemObject, String pattern)" />
+      <entry_point TYPE="method" FQNAME="IOperationContext jetbrains.mps.baseLanguage.editor.__Expression_ActionSet_SimpleItem.getOperationContext()" />
+      <entry_point TYPE="field" FQNAME="jetbrains.mps.baseLanguage.editor._CodeBlockEndingStatement_Component_ExpressionCellActions_SubstituteInfo.myNode" />
+      <entry_point TYPE="field" FQNAME="jetbrains.mps.baseLanguage.editor._BaseMethodCallArgListEditor_ArgumentActions_SubstituteInfo.myNode" />
+      <entry_point TYPE="field" FQNAME="jetbrains.mps.baseLanguage.editor.InstanceOfExpression_LeftExpressionsActions_SubstituteInfo.myNode" />
+      <entry_point TYPE="field" FQNAME="jetbrains.mps.baseLanguage.editor.AssignmentExpression_RightExpressionActions_SubstituteInfo.myNode" />
+      <entry_point TYPE="field" FQNAME="jetbrains.mps.baseLanguage.editor.AssignmentExpression_LeftExpressionActions_SubstituteInfo.myNode" />
+      <entry_point TYPE="field" FQNAME="jetbrains.mps.baseLanguage.editor.SuperConstructorInvocation_ArgumentActions_SubstituteInfo.myNode" />
+      <entry_point TYPE="field" FQNAME="jetbrains.mps.baseLanguage.editor.ParenthesizedExpression_ExpressionActions_SubstituteInfo.myNode" />
+      <entry_point TYPE="field" FQNAME="jetbrains.mps.baseLanguage.editor._BinaryOperation_Right_Component_Actions_SubstituteInfo.myNode" />
+      <entry_point TYPE="field" FQNAME="jetbrains.mps.baseLanguage.editor.EnumConstantDeclaration_ArgumentActions_SubstituteInfo.myNode" />
+      <entry_point TYPE="field" FQNAME="jetbrains.mps.baseLanguage.editor._BinaryOperation_Left_Component_Actions_SubstituteInfo.myNode" />
+      <entry_point TYPE="field" FQNAME="jetbrains.mps.baseLanguage.editor.InstanceMethodCall_InstanceCellActions_SubstituteInfo.myNode" />
+      <entry_point TYPE="field" FQNAME="jetbrains.mps.baseLanguage.editor.ReturnStatement_ExpressionCellActions_SubstituteInfo.myNode" />
+      <entry_point TYPE="field" FQNAME="jetbrains.mps.baseLanguage.editor.CastExpression_CastExpressionActions_SubstituteInfo.myNode" />
+      <entry_point TYPE="field" FQNAME="jetbrains.mps.baseLanguage.editor.WhileStatement_ConditionCellActions_SubstituteInfo.myNode" />
+      <entry_point TYPE="field" FQNAME="jetbrains.mps.baseLanguage.editor.FieldReference_InstanceCellActions_SubstituteInfo.myNode" />
+      <entry_point TYPE="field" FQNAME="jetbrains.mps.baseLanguage.editor.NotExpression_NotExpressionActions_SubstituteInfo.myNode" />
+      <entry_point TYPE="field" FQNAME="jetbrains.mps.baseLanguage.editor.IfStatement_ConditionCellActions_SubstituteInfo.myNode" />
+      <entry_point TYPE="field" FQNAME="jetbrains.mps.baseLanguage.editor.__VariableInitializer_ActionSet_SubstituteInfo.myNode" />
+      <entry_point TYPE="method" FQNAME="jetbrains.mps.baseLanguage.editor._Variable_KeyMap._Variable_KeyMap()" />
+      <entry_point TYPE="method" FQNAME="jetbrains.mps.baseLanguage.editor._Number_KeyMap._Number_KeyMap()" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.SuperMethodCall_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.KeyMapAction_BinaryOperation_Delete" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.StringLiteral_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.KeyMapAction_ExtendExpressionToBinaryExpression" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.InstanceMethodDeclaration_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.EnumConstantDeclaration_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.IfStatement_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.ClassConcept_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.KeyMapAction_SplitNumber" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.IntegerType_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.DivExpression_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.LocalVariableDeclaration_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.TypeVariableDeclaration_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.ThisExpression_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.ClassifierType_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.FieldDeclaration_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.ParameterReference_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.NewExpression_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.FloatingPointConstant_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.BlockStatement_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.StaticMethodCall_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.EnumConstantReference_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.BooleanType_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.BinaryOperation_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.InstanceMethodCall_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.MethodCall_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.NullLiteral_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.FeatureConstructor_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.ParenthesizedExpression_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.CodeBlockBreak_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.BooleanConstant_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.ReturnStatement_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.VariableReference_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.NotEqualsExpression_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.IntegerConstant_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.LocalVariableReference_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.StaticFieldDeclaration_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.ClassifierClassExpression_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.AssignmentExpression_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.ParameterDeclaration_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.ShortType_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.WhileStatement_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.StaticFieldReference_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.MethodDeclaration_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.OrExpression_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.ContinueStatement_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.GreaterThanExpression_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.ConstructorCall_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.CharType_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.VariableType_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.CastExpression_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.ExpressionStatement_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.CodeBlockReturn_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.StaticMethodDeclaration_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.ByteType_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.AndExpression_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.StringType_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.MulExpression_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.EnumClass_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.SuperConstructorInvocation_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.ConstructorDeclaration_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.TypeVariableReference_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.EqualsExpression_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.LongType_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.MinusExpression_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.LocalVariableDeclarationStatement_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.LessThanExpression_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.Statement_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.FloatType_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.BreakStatement_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.StatementList_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.CodeBlockContinue_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.DoubleType_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.Interface_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.NotExpression_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.CodeBlockYield_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.FieldReference_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.InstanceOfExpression_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.UndefinedOperator_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.Expression_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.VoidType_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.PlusExpression_Editor" />
+      <entry_point TYPE="class" FQNAME="jetbrains.mps.baseLanguage.editor.Type_Editor" />
+    </entry_points>
   </component>
   <component name="ExportToHTMLSettings">
     <option name="PRINT_LINE_NUMBERS" value="false" />

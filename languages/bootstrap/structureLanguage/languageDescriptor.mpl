@@ -14,7 +14,6 @@
   <module />
   <accessoryModels>
     <model modelUID="jetbrains.mps.core.structure" />
-    <model modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
     <model modelUID="jetbrains.mps.bootstrap.structureLanguage.library" />
   </accessoryModels>
   <generators>
