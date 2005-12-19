@@ -16,18 +16,21 @@ import java.util.Iterator;
  * Todo: refactor this utility
  */
 public class SNodePresentationUtil {
-  public static String matchingText(SNode node, SNode referenceNode, IScope scope) {
-    return matchingText(node, referenceNode, null, scope);
+  public static String matchingText(SNode node, SNode referenceContext, IScope scope) {
+    return matchingText(node, referenceContext, null, scope);
   }
 
-  public static String matchingText(SNode node, SNode referenceNode, String referenceRole, IScope scope) {
+  public static String matchingText(SNode node, SNode referenceContext, String referenceRole, IScope scope) {
+    if(node == null) {
+      return "<none>";
+    }
     String result = null;
     if (node instanceof BaseMethodDeclaration) {
-      result = matchingText_BaseMethodDeclaration((BaseMethodDeclaration) node, referenceNode, referenceRole);
+      result = matchingText_BaseMethodDeclaration((BaseMethodDeclaration) node, referenceContext, referenceRole);
     } else if (node instanceof Type) {
       result = matchingText_Type((Type) node);
     } else if (node instanceof VariableDeclaration) {
-      result = matchingText_VariableDeclaration((VariableDeclaration) node, referenceNode);
+      result = matchingText_VariableDeclaration((VariableDeclaration) node, referenceContext);
     }
 
     if (result != null) {
@@ -54,14 +57,13 @@ public class SNodePresentationUtil {
   }
 
   public static boolean isNamedElement(SNode node) {
-    if (node instanceof Classifier ||
-            node instanceof VariableDeclaration) {
-      return true;
-    }
-    return false;
+    return node instanceof Classifier || node instanceof VariableDeclaration;
   }
 
   public static String descriptionText(SNode node, SNode referenceContext, IScope scope) {
+    if(node == null) {
+      return "";
+    }
     String result = null;
     if (node instanceof BaseMethodDeclaration) {
       result = descriptionText_BaseMethodDeclaration((BaseMethodDeclaration) node, referenceContext, scope);
