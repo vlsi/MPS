@@ -116,6 +116,9 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     return myModelUID.getLongName();
   }
 
+  /**
+   * @return never NULL
+   */
   public String getStereotype() {
     return myModelUID.getStereotype();
   }
