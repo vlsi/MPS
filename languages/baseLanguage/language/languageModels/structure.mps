@@ -1380,5 +1380,23 @@
       <link role="target" targetNodeId="1107461130800" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1135139255290">
+    <property name="name" value="FeatureCompositionNewExpression" />
+    <link role="extends" targetNodeId="1068499141036" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1135139311125">
+      <property name="sourceCardinality" value="1" />
+      <property name="targetCardinality" value="0..n" />
+      <property name="role" value="constructorDeclaration" />
+      <link role="target" targetNodeId="1068580123140" />
+      <link role="specializedLink" targetNodeId="1068499141037" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1135139616594">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="targetCardinality" value="1" />
+      <property name="role" value="featureConstructor" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1106250402230" />
+    </node>
+  </node>
 </model>
 
