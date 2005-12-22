@@ -34,7 +34,7 @@ public class IdeMain {
     defaults.put("Menu.font", font.deriveFont(Font.BOLD));
     defaults.put("PopupMenu.font", font.deriveFont(Font.BOLD));
     defaults.put("OptionPane.font", font);
-    defaults.put("Panel.font", font);
+    defaults.put("Panel.font", font); 
     defaults.put("ProgressBar.font", font);
     defaults.put("ScrollPane.font", font);
     defaults.put("Viewport.font", font);
@@ -47,8 +47,6 @@ public class IdeMain {
     defaults.put("ToolTip.font", font);
     defaults.put("Tree.font", font);
   }
-
-
 
   public static void main(String[] args) {
     SplashScreen.getInstance().showSplashScreen();
