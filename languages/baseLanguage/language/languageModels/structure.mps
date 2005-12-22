@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.structure">
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
-  <maxImportIndex value="36" />
+  <maxImportIndex value="37" />
   <import index="4" modelUID="jetbrains.mps.core.structure" />
   <import index="34" modelUID="jetbrains.mps.bootstrap.structureLanguage.library" />
   <import index="36" modelUID="jetbrains.mps.baseLanguage.structure" />
+  <import index="37" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068498886294">
     <property name="name" value="AssignmentExpression" />
     <link role="extends" targetNodeId="1068431790191" />
@@ -1081,6 +1082,13 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1106155080112">
     <property name="name" value="FeatureCompositionDeclaration" />
     <link role="extends" targetNodeId="1068390468198" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1135277262793">
+      <link role="conceptLinkDeclaration" targetNodeId="34.1105994381173" />
+      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLinkDeclaration" id="1135277563615">
+        <property name="name" value="DefaultFeatureLink" />
+        <link role="targetType" targetNodeId="37.1071489090640" />
+      </node>
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1106178123235">
       <property name="sourceCardinality" value="0..n" />
       <property name="targetCardinality" value="1" />
