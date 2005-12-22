@@ -262,7 +262,11 @@ public class MPSSupportHandler implements ProjectComponent {
               public void run() {
                 Module module = findModule(path);
                 if (module == null) return;
-                myProject.getComponent(CompilerManager.class).make(module, new CompileStatusNotification() {
+
+                CompilerManager compilerManager = myProject.getComponent(CompilerManager.class);
+//todo this code doesn't work for some reason need to be fixed
+//                compilerManager.make(module, new CompileStatusNotification() {
+                compilerManager.make(new CompileStatusNotification() {
                   public void finished(boolean aborted, int errors, int warnings) {
                     synchronized(lock) {
                       lock.notifyAll();
@@ -519,7 +523,7 @@ public class MPSSupportHandler implements ProjectComponent {
   }
 
   private Module findModule(final String path) {
-    VirtualFile file = LocalFileSystem.getInstance().findFileByIoFile(new File(path));
+    VirtualFile file = LocalFileSystem.getInstance().refreshAndFindFileByIoFile(new File(path));
     if (file == null) return null;
 
     int bestDistance = Integer.MAX_VALUE;
