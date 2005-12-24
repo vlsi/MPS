@@ -47,7 +47,6 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068431790191">
     <property name="name" value="Expression" />
-    <link role="extends" targetNodeId="4.1078489098625" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1107216504832">
       <link role="conceptPropertyDeclaration" targetNodeId="34.1107214854626" />
     </node>
@@ -482,10 +481,14 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068581242872">
     <property name="name" value="NewExpression" />
-    <link role="extends" targetNodeId="1068431790191" />
+    <link role="extends" targetNodeId="1068499141036" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107217304393">
       <property name="value" value="new" />
       <link role="conceptPropertyDeclaration" targetNodeId="34.1106346943066" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1135374467247">
+      <property name="value" value="class instantiation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="34.1107214812281" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1068581242873">
       <property name="sourceCardinality" value="1" />
@@ -493,6 +496,18 @@
       <property name="role" value="constructorCall" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1068580123139" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1135374435992">
+      <property name="role" value="constructorDeclaration" />
+      <link role="target" targetNodeId="1068580123140" />
+      <link role="specializedLink" targetNodeId="1068499141037" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1135374457323">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="targetCardinality" value="1" />
+      <property name="role" value="typeParameter" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1068431790189" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068581242874">
