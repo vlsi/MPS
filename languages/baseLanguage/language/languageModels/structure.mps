@@ -240,26 +240,6 @@
       <link role="dataType" targetNodeId="4.1082983657063" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068580123139">
-    <property name="name" value="ConstructorCall" />
-    <link role="extends" targetNodeId="1068499141036" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107216113376">
-      <property name="value" value="class constructor invocation" />
-      <link role="conceptPropertyDeclaration" targetNodeId="34.1107214812281" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1070567750949">
-      <property name="role" value="constructorDeclaration" />
-      <link role="specializedLink" targetNodeId="1068499141037" />
-      <link role="target" targetNodeId="1068580123140" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1076339062843">
-      <property name="sourceCardinality" value="0..n" />
-      <property name="targetCardinality" value="1" />
-      <property name="role" value="typeParameter" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1068431790189" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068580123140">
     <property name="name" value="ConstructorDeclaration" />
     <link role="extends" targetNodeId="1068580123132" />
@@ -489,13 +469,6 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1135374467247">
       <property name="value" value="class instantiation" />
       <link role="conceptPropertyDeclaration" targetNodeId="34.1107214812281" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1068581242873">
-      <property name="sourceCardinality" value="1" />
-      <property name="targetCardinality" value="1" />
-      <property name="role" value="constructorCall" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1068580123139" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1135374435992">
       <property name="role" value="constructorDeclaration" />
