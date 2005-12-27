@@ -2,10 +2,9 @@ package jetbrains.mps.ide.actions.tools;
 
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
+import jetbrains.mps.modelQueryLanguage.ModelQueryExpression;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.MPSFileModelDescriptor;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.*;
 
 import java.util.*;
 
@@ -14,7 +13,7 @@ import java.util.*;
  */
 public class InternalRefactoringAction extends MPSAction {
   public InternalRefactoringAction() {
-    super("... new expression ...");
+    super("... ModelQueryExpression : remove scope ...");
   }
 
   public void execute(ActionContext context) {
@@ -58,34 +57,15 @@ public class InternalRefactoringAction extends MPSAction {
    * perform "refactoring"
    */
   private void processModel(SModel model) {
-//    Collection<? extends SNode> allNodes = SModelUtil.allNodes(model);
-//    for (SNode node : allNodes) {
-//      if (node instanceof NewExpression ) {
-//        NewExpression newExpression = (NewExpression) node;
-//        ConstructorCall constructorCall = newExpression.getConstructorCall();
-//
-//        if(constructorCall != null) {
-//          System.out.println("-- do replace");
-//
-//          newExpression.removeChild(constructorCall);
-//
-//          // constructor declaration
-//          ConstructorDeclaration constructorDeclaration = constructorCall.getConstructorDeclaration();
-//          if (constructorDeclaration == null) {
-//            System.out.println("-- constructorDeclaration in NULL !!! " + newExpression.getDebugText());
-//          } else {
-//            newExpression.setConstructorDeclaration(constructorDeclaration);
-//          }
-//
-//          // all children of constructor call
-//          List<SNode> children = new LinkedList<SNode>(constructorCall.getChildren());
-//          for (SNode child : children) {
-//             String role = child.getRole_();
-//            constructorCall.removeChild(child);
-//            newExpression.addChild(role, child);
-//          }
-//        }
-//      }
-//    }
+    Collection<? extends SNode> allNodes = SModelUtil.allNodes(model);
+    for (SNode node : allNodes) {
+      if (node instanceof ModelQueryExpression) {
+        ModelQueryExpression modelQueryExpression = (ModelQueryExpression) node;
+        if (modelQueryExpression.getScope() != null) {
+          System.out.println("-- do clear scope");
+          modelQueryExpression.setScope(null);
+        }
+      }
+    }
   }
 }
