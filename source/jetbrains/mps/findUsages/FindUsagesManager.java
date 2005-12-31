@@ -1,7 +1,8 @@
 package jetbrains.mps.findUsages;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.ide.progress.IProgressMonitor;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
@@ -61,50 +62,65 @@ public class FindUsagesManager {
     return result;
   }
 
-  public Set<SReference> findUsages(SNode node, IScope scope, IProgressMonitor progress) {
+  public Set<SReference> findUsages(SNode node, IScope scope, IAdaptiveProgressMonitor progress) {
     Set<SReference> result = new HashSet<SReference>();
     try {
-      if (progress == null) progress = IProgressMonitor.NULL_PROGRESS_MONITOR;
+      if (progress == null) progress = IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR;
       List<SModelDescriptor> models = scope.getModelDescriptors();
-      progress.start("Find Usages...", models.size());
+      long estimatedTime = ModelsProgressUtil.estimateFindUsagesTimeMillis(models);
+
+      progress.start("Find Usages...", estimatedTime);
       progress.addText("Finding usages...");
+
+      progress.startTask(ModelsProgressUtil.TASK_KIND_FIND_USAGES, estimatedTime);
+
       for (SModelDescriptor model : new ArrayList<SModelDescriptor>(models)) {
+        String taskName = ModelsProgressUtil.findUsagesModelTaskName(model);
+        progress.startTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_USAGES);
         result.addAll(model.findUsages(node));
         if (progress.isCanceled()) {
           return result;
         }
-        progress.advance(1);
+        progress.finishTask(taskName);
       }
+      progress.finishTask(ModelsProgressUtil.TASK_KIND_FIND_USAGES);
       return result;
     } finally {
       progress.finish();
     }
   }
 
-  public Set<SNode> findInstances(ConceptDeclaration concept, IScope scope, IProgressMonitor progress) {
+  public Set<SNode> findInstances(ConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress) {
     Set<SNode> result = new HashSet<SNode>();
     try {
-      if (progress == null) progress = IProgressMonitor.NULL_PROGRESS_MONITOR;
+      if (progress == null) progress = IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR;
       List<SModelDescriptor> models = scope.getModelDescriptors();
-      progress.start("Finding Instances...", models.size());
+      long estimatedTime = ModelsProgressUtil.estimateFindInstancesTimeMillis(models);
+
+      progress.start("Finding Instances...", estimatedTime);
+      progress.startTask(ModelsProgressUtil.TASK_KIND_FIND_INSTANCES, estimatedTime);
+
       for (SModelDescriptor model : models) {
+        String taskName = ModelsProgressUtil.findInstancesModelTaskName(model);
+        progress.startTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_INSTANCES);
         result.addAll(model.findInstances(concept, GlobalScope.getInstance()));
         if (progress.isCanceled()) {
           return result;
         }
-        progress.advance(1);
+        progress.finishTask(taskName);
       }
+      progress.finishTask(ModelsProgressUtil.TASK_KIND_FIND_INSTANCES);
       return result;
     } finally {
       progress.finish();
     }
   }
 
-  public Set<SReference> findUsages(SNode node, IProgressMonitor progress) {
+  public Set<SReference> findUsages(SNode node, IAdaptiveProgressMonitor progress) {
     return findUsages(node, globalScope(), progress);
   }
 
-  public Set<SNode> findInstances(ConceptDeclaration concept, IProgressMonitor progress){
+  public Set<SNode> findInstances(ConceptDeclaration concept, IAdaptiveProgressMonitor progress){
     return findInstances(concept, globalScope(), progress);
   }
 
