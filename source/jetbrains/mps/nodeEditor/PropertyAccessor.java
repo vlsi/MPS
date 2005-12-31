@@ -2,7 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.annotations.Hack;
+import jetbrains.mps.util.annotation.Hack;
 
 /**
  * User: Dmitriev.

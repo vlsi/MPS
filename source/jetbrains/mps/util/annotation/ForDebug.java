@@ -1,4 +1,4 @@
-package jetbrains.mps.annotations;
+package jetbrains.mps.util.annotation;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

@@ -1,15 +1,15 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.core.AttributeConcept;
-import jetbrains.mps.core.PropertyAttributeConcept;
-import jetbrains.mps.core.LinkAttributeConcept;
+import jetbrains.mps.annotations.AttributeConcept;
 import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.annotations.PropertyAttributeConcept;
+import jetbrains.mps.annotations.LinkAttributeConcept;
 
 import java.util.*;
 

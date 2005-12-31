@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.PropertyAccessor;
-import jetbrains.mps.core.PropertyAttributeConcept;
+import jetbrains.mps.annotations.PropertyAttributeConcept;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.EditorCell_Property;

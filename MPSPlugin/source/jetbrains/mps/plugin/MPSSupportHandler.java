@@ -261,12 +261,15 @@ public class MPSSupportHandler implements ProjectComponent {
             ApplicationManager.getApplication().runWriteAction(new Runnable() {
               public void run() {
                 Module module = findModule(path);
-                if (module == null) return;
+                if (module == null) {
+                  synchronized(lock) {
+                    lock.notifyAll();
+                  }
+                  return;
+                }
 
                 CompilerManager compilerManager = myProject.getComponent(CompilerManager.class);
-//todo this code doesn't work for some reason need to be fixed
-//                compilerManager.make(module, new CompileStatusNotification() {
-                compilerManager.make(new CompileStatusNotification() {
+                compilerManager.make(module, new CompileStatusNotification() {
                   public void finished(boolean aborted, int errors, int warnings) {
                     synchronized(lock) {
                       lock.notifyAll();
@@ -538,7 +541,7 @@ public class MPSSupportHandler implements ProjectComponent {
           bestModule = module;
         }
       }
-    }
+    }            
 
     return bestModule;
   }

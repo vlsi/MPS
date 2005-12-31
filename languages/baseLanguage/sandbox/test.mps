@@ -61,6 +61,35 @@
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1115766310400">
     <property name="name" value="AClass" />
     <link role="extendedClass" targetNodeId="1115766267843" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1136027151595">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1136027212036" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1136027151611">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1136027167330">
+          <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1136027208535">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1136027199546">
+              <node role="lValue" type="jetbrains.mps.baseLanguage.FieldReference" id="1136027196762">
+                <link role="variableDeclaration" targetNodeId="1127094836077" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1136027196763" />
+              </node>
+              <node role="rValue" type="jetbrains.mps.baseLanguage.ParameterReference" id="1136027204954">
+                <link role="variableDeclaration" targetNodeId="1136027173099" />
+              </node>
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1136027188933">
+              <link role="variableDeclaration" targetNodeId="1136027175492" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1136027173099">
+        <property name="name" value="f" />
+        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1136027173100" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1136027175492">
+        <property name="name" value="g" />
+        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1136027177055" />
+      </node>
+    </node>
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1127094836077">
       <property name="name" value="aaa" />
       <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1127094838614" />

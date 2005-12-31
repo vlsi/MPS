@@ -11,8 +11,6 @@ import java.util.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.annotations.Hack;
-import jetbrains.mps.nodeEditor.text.Parser;
 
 /**
  * Created by IntelliJ IDEA.

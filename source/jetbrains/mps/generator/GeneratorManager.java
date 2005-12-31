@@ -218,6 +218,17 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     addMessage(MessageKind.INFORMATION, "generating " + (generateText ? "text" : "files"));
     addMessage(MessageKind.INFORMATION, "    target language: \"" + targetLanguage.getNamespace() + "\"");
     String outputFolder = invocationContext.getModule().getGeneratorOutputPath();
+
+    if (!new File(outputFolder).exists()) {
+      new File(outputFolder).mkdirs();
+
+      try {
+        MPSPlugin.getInstance().addSource(outputFolder);
+      } catch (Exception e) {
+        addMessage(MessageKind.WARNING, "Can't add output folder to IDEA as sources");
+      }
+    }
+
     if (!generateText) {
       addMessage(MessageKind.INFORMATION, "    target root folder: \"" + outputFolder + "\"");
     }

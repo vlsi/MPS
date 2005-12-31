@@ -2,7 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.core.PropertyAttributeConcept;
+import jetbrains.mps.annotations.PropertyAttributeConcept;
 import jetbrains.mps.ide.command.CommandProcessor;
 
 import java.awt.*;

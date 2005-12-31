@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
-import jetbrains.mps.annotations.ThinkTwice;
+import jetbrains.mps.util.annotation.ThinkTwice;
 
 import java.util.*;
 

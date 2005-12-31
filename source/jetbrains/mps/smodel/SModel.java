@@ -12,7 +12,7 @@ import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.annotations.ForDebug;
+import jetbrains.mps.util.annotation.ForDebug;
 
 import java.util.*;
 

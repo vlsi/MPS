@@ -1,6 +1,6 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.annotations.ForDebug;
+import jetbrains.mps.util.annotation.ForDebug;
 
 import java.io.File;
 

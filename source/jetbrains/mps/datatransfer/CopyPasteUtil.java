@@ -6,7 +6,7 @@ import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.AddRequiredModelImportsDialog;
-import jetbrains.mps.annotations.Hack;
+import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.nodeEditor.text.Parser;
 
 import java.awt.*;
