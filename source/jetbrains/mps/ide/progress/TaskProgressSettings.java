@@ -31,8 +31,10 @@ public class TaskProgressSettings extends DefaultExternalizableComponent {
 
   private boolean myMeasurementInProgress = false;
 
+  private static TaskProgressSettings ourInstance = new TaskProgressSettings();
+
   public static TaskProgressSettings getInstance() {
-    return ApplicationComponents.getInstance().getComponent(TaskProgressSettings.class);
+    return ourInstance;
   }
 
   public void startTaskProgressAndMeasurement() {
@@ -82,7 +84,7 @@ public class TaskProgressSettings extends DefaultExternalizableComponent {
       LOG.error("task measurement is not in progress. Can't add any measurement results");
       return;
     }
-    
+
     String taskKind = myTasksToTaskKinds.get(taskName);
 
     long newTime = estimatedTimeMillis;
