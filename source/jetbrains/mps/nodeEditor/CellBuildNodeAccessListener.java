@@ -4,6 +4,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.logging.Logger;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -21,6 +22,7 @@ public class CellBuildNodeAccessListener extends AbstractNodeReadAccessListener 
   protected HashSet<SNode> myNodesToDependOn = new HashSet<SNode>();
   protected HashSet<SNodeProxy> myReferentTargetsToDependOn = new HashSet<SNodeProxy>();
   protected HashSet<Pair<SNodeProxy,String>> myDirtilyReadAccessedProperties = new HashSet<Pair<SNodeProxy, String>>();
+  private static final Logger LOG = Logger.getLogger(CellBuildNodeAccessListener.class);
 
   public CellBuildNodeAccessListener(AbstractEditorComponent editor) {
     super(editor);
@@ -42,6 +44,10 @@ public class CellBuildNodeAccessListener extends AbstractNodeReadAccessListener 
   }
 
   public void addNodesToDependOn(Set<SNode> nodes) {
+    if (nodes == null) {
+      LOG.error("passing null nodes collection to depend on");
+      return;
+    }
     myNodesToDependOn.addAll(nodes);
   }
 
