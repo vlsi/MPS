@@ -1,7 +1,9 @@
 package jetbrains.mps.ide.progress.util;
 
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.ide.progress.TaskProgressSettings;
+import jetbrains.mps.generator.GeneratorManager;
 
 import java.util.*;
 
@@ -21,6 +23,9 @@ public class ModelsProgressUtil {
   public static final String TASK_KIND_GENERATION = "tk_generation";
   public static final String TASK_KIND_FIND_USAGES = "tk_findUsages";
   public static final String TASK_KIND_FIND_INSTANCES = "tk_findInstances";
+  public static final String TASK_NAME_COMPILE_ON_GENERATION = "tn_compileOnGeneration";
+  public static final String TASK_NAME_RELOAD_ALL = "tn_reloadAll";
+  public static final String TASK_NAME_REFRESH_FS = "tn_refreshFs";
 
   //generic utilities:
 
@@ -77,4 +82,48 @@ public class ModelsProgressUtil {
     return getInstance().getModelsProgressHelper(TASK_KIND_FIND_INSTANCES).estimateModelsTaskTimeMillis(models);
   }
 
+  public static long estimateTotalGenerationJobMillis(boolean compile, boolean generateText, Collection<SModelDescriptor> models) {
+    long generationTime = estimateGenerationTimeMillis(models);
+    long compilationTime = estimateCompileOnGenerationTimeMillis();
+    long reloadingTime = estimateReloadAllTimeMillis();
+    long refreshingFSTime = estimateRefreshIDEAFileSystemTimeMillis();
+    long totalCompilationTime = compilationTime + refreshingFSTime + reloadingTime;
+    if (compile) {
+      if (generateText) {
+        generationTime = generationTime + totalCompilationTime;
+      } else {
+        generationTime = generationTime + totalCompilationTime + totalCompilationTime;
+      }
+    } else {
+      generationTime = generationTime + reloadingTime; // only re-load classes
+    }
+    return generationTime;
+  }
+
+  public static long estimateCompileOnGenerationTimeMillis() {
+    TaskProgressSettings settings = TaskProgressSettings.getInstance();
+    return settings.getEstimatedTimeMillis(TASK_NAME_COMPILE_ON_GENERATION);
+  }
+
+  public static long estimateReloadAllTimeMillis() {
+    TaskProgressSettings settings = TaskProgressSettings.getInstance();
+    return settings.getEstimatedTimeMillis(TASK_NAME_RELOAD_ALL);
+  }
+
+  public static long estimateRefreshIDEAFileSystemTimeMillis() {
+    TaskProgressSettings settings = TaskProgressSettings.getInstance();
+    return settings.getEstimatedTimeMillis(TASK_NAME_REFRESH_FS);
+  }
+
+  public static long estimateNodeBuildingTimeMillis(SModel model, int iterations, boolean isPrimaryMapping) {
+    long modelTimeMillis = estimateModelGenerationTimeMillis(model, isPrimaryMapping);
+    return (long) ((double) modelTimeMillis / (double) iterations);
+  }
+
+  public static long estimateModelGenerationTimeMillis(SModel model, boolean isPrimaryMapping) {
+    String taskName = getInstance().getModelsProgressHelper(TASK_KIND_GENERATION).modelTaskName(model.getUID());
+    double koef = isPrimaryMapping ? 1/3 : 2/3;
+    long modelTimeMillis = TaskProgressSettings.getInstance().getEstimatedTimeMillis(taskName);
+    return (long) (((double) modelTimeMillis) * koef);
+  }
 }

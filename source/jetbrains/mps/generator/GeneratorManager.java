@@ -11,8 +11,9 @@ import jetbrains.mps.ide.messages.MessageView;
 import jetbrains.mps.ide.output.OutputView;
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
-import jetbrains.mps.ide.progress.IProgressMonitor;
-import jetbrains.mps.ide.progress.ProgressWindowProgressMonitor;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.ide.progress.AdaptiveProgressMonitor;
+import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.MPSProject;
@@ -87,7 +88,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     myProject.getComponent(MessageView.class).add(new Message(kind, text));
   }
 
-  private void addProgressMessage(final MessageKind kind, final String text, final IProgressMonitor progress) {
+  private void addProgressMessage(final MessageKind kind, final String text, final IAdaptiveProgressMonitor progress) {
     progress.addText(text);
     myProject.getComponent(MessageView.class).add(new Message(kind, text));
   }
@@ -191,7 +192,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   public void generateModelsWithProgressWindow(final List<SModel> sourceModels, final Language targetLanguage, final IOperationContext invocationContext, final boolean generateText) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        final IProgressMonitor progress = new ProgressWindowProgressMonitor(invocationContext.getComponent(ProjectFrame.class), false);
+        final IAdaptiveProgressMonitor progress = new AdaptiveProgressMonitor(invocationContext.getComponent(ProjectFrame.class), false);
         Thread generationThread = new Thread("Generation") {
           public void run() {
             CommandProcessor.instance().executeCommand(new Runnable() {
@@ -208,7 +209,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     });
   }
 
-  public void generateModels(List<SModel> _sourceModels, Language targetLanguage, IOperationContext invocationContext, boolean generateText, IProgressMonitor progress) {
+  public void generateModels(List<SModel> _sourceModels, Language targetLanguage, IOperationContext invocationContext, boolean generateText, IAdaptiveProgressMonitor progress) {
     invocationContext.getProject().saveModels();
     List<SModelDescriptor> sourceModels = new ArrayList<SModelDescriptor>();
     for (SModel model : _sourceModels) {
@@ -233,45 +234,47 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       addMessage(MessageKind.INFORMATION, "    target root folder: \"" + outputFolder + "\"");
     }
 
-    double totalJob = sourceModels.size() * AMOUNT_PER_MODEL;
-    boolean compile = myCompileOnGeneration && MPSPlugin.getInstance().isIDEAPresent();
-    if (compile) {
-      if (generateText) {
-        totalJob = totalJob + AMOUNT_PER_COMPILATION;
-      } else {
-        totalJob = totalJob + AMOUNT_PER_COMPILATION + AMOUNT_PER_COMPILATION;
-      }
-    } else {
-      totalJob = totalJob + AMOUNT_PER_COMPILATION / 2; // only re-load classes
-    }
+    boolean ideaPresent = MPSPlugin.getInstance().isIDEAPresent();
+    boolean compile = myCompileOnGeneration && ideaPresent;
+    long totalJob = ModelsProgressUtil.estimateTotalGenerationJobMillis(compile, generateText, sourceModels);
+
     progress.start("generating", totalJob);
 
     try {
       if (!myCompileOnGeneration) {
         progress.addText("compilation in IntelliJ IDEA on generation is turned off");
-      } else if (!compile) {
+      } else if (!ideaPresent) {
         progress.addText("IntelliJ IDEA with installed MPS is not present");
       } else {
         // -- compile sources before generation
         progress.addText("compiling in IntelliJ IDEA...");
+
+        progress.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
         MPSPlugin.getInstance().refreshFS();
-        progress.advance(AMOUNT_PER_COMPILATION / 4);
+        progress.finishTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
+
+        progress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
         MPSPlugin.getInstance().buildModule(outputFolder);
-        progress.advance(AMOUNT_PER_COMPILATION / 4);
+        progress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
       }
 
       // re-load classes anyway (to be sure that java_stub are up-to-date)
       progress.addText("reloading MPS classes...");
+      progress.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
       ReloadUtils.reloadAll();
-      progress.advance(AMOUNT_PER_COMPILATION / 2);
+      progress.finishTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
 
+      //++ generation
       GenerationSession generationSession = new GenerationSession(targetLanguage, invocationContext, progress);
       generationSession.setSaveTransientModels(isSaveTransientModels());
       GenerationStatus status = null;
       for (SModelDescriptor sourceModelDescriptor : sourceModels) {
         SModel sourceModel = sourceModelDescriptor.getSModel();
         progress.addText("");
-        status = generationSession.generateModel(sourceModel);
+        String taskName = ModelsProgressUtil.generationModelTaskName(sourceModelDescriptor);
+        progress.startLeafTask(taskName, ModelsProgressUtil.generationModelTaskKind());
+
+        status = generationSession.generateModel(sourceModelDescriptor);
         if (status.getOutputModel() != null) {
           if (generateText) {
             progress.addText("generate text to Output view");
@@ -281,10 +284,13 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
             generateFile(outputFolder, sourceModel, status.getOutputModel());
           }
         }
+
+        progress.finishTask(taskName);
         if (!status.isOk()) {
           break;
         }
       }
+      //-- generation
 
       if (isSaveTransientModels()) {
         addProgressMessage(MessageKind.INFORMATION, "adding module \"" + generationSession.getSessionModuleName() + "\"", progress);
@@ -297,13 +303,19 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         if (compile && !generateText) {
           // -- compile after generation
           progress.addText("compiling in IntelliJ IDEA...");
+
+          progress.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
           MPSPlugin.getInstance().refreshFS();
-          progress.advance(AMOUNT_PER_COMPILATION / 4);
+          progress.finishTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
+
+          progress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
           MPSPlugin.getInstance().buildModule(outputFolder);
-          progress.advance(AMOUNT_PER_COMPILATION / 4);
+          progress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
+
           progress.addText("reloading MPS classes...");
+          progress.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
           ReloadUtils.reloadAll();
-          progress.advance(AMOUNT_PER_COMPILATION / 2);
+          progress.finishTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
         }
         addProgressMessage(MessageKind.INFORMATION, "generation completed successfully", progress);
       } else if (status.isError()) {
@@ -319,4 +331,5 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       progress.finish();
     }
   }
+
 }

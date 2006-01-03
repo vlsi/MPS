@@ -3,6 +3,7 @@ package jetbrains.mps.ide.progress;
 import jetbrains.mps.components.DefaultExternalizableComponent;
 import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.logging.Logger;
 
 import java.util.*;
 
@@ -15,6 +16,8 @@ import java.util.*;
  */
 public class TaskProgressSettings extends DefaultExternalizableComponent {
 
+  private static Logger LOG = Logger.getLogger(TaskProgressSettings.class);
+
   private long myDefaultTaskTime = 150;
 
   private @Externalizable Map<String , Long> myTasksToEstimatedTime = new HashMap<String, Long>();
@@ -23,8 +26,35 @@ public class TaskProgressSettings extends DefaultExternalizableComponent {
 
   private @Externalizable Map<String, Long> myTaskKindsToEstimatedTime = new HashMap<String, Long>();
 
+  private Map<String, Long> myTransientTasksToEstimatedTime = new HashMap<String, Long>();
+  private Map<String, Long> myTransientTaskKindsToEstimatedTime = new HashMap<String, Long>();
+
+  private boolean myMeasurementInProgress = false;
+
   public static TaskProgressSettings getInstance() {
     return ApplicationComponents.getInstance().getComponent(TaskProgressSettings.class);
+  }
+
+  public void startTaskProgressAndMeasurement() {
+    if (myMeasurementInProgress) {
+      LOG.warning("trying to start task progress measurement started already");
+      return;
+    }
+    myTransientTaskKindsToEstimatedTime.clear();
+    myTransientTasksToEstimatedTime.clear();
+    myMeasurementInProgress = true;
+  }
+
+  public void finishTaskProgressAndCommitMeasurements() {
+    if (!myMeasurementInProgress) {
+      LOG.warning("trying to finish task progress measurement which hasn't been started yet or has been already finished");
+      return;
+    }
+    myTasksToEstimatedTime.putAll(myTransientTasksToEstimatedTime);
+    myTaskKindsToEstimatedTime.putAll(myTransientTaskKindsToEstimatedTime);
+    myTransientTaskKindsToEstimatedTime.clear();
+    myTransientTasksToEstimatedTime.clear();
+    myMeasurementInProgress = false;
   }
 
   public long getEstimatedTimeMillis(String taskName) {
@@ -48,18 +78,23 @@ public class TaskProgressSettings extends DefaultExternalizableComponent {
 
 
   public void addEstimatedTimeMillis(String taskName, long estimatedTimeMillis) {
+    if (!myMeasurementInProgress) {
+      LOG.error("task measurement is not in progress. Can't add any measurement results");
+      return;
+    }
+    
     String taskKind = myTasksToTaskKinds.get(taskName);
 
     long newTime = estimatedTimeMillis;
     Long time = myTasksToEstimatedTime.get(taskName);
     if (time != null) newTime = (time + newTime) / 2;
-    myTasksToEstimatedTime.put(taskName, newTime);
+    myTransientTasksToEstimatedTime.put(taskName, newTime);
 
     if (taskKind != null) {
       long newKindTime = newTime;
       Long kindTime = myTaskKindsToEstimatedTime.get(taskKind);
       if (kindTime != null) newKindTime = (kindTime + newKindTime) / 2;
-      myTaskKindsToEstimatedTime.put(taskKind, newKindTime);
+      myTransientTaskKindsToEstimatedTime.put(taskKind, newKindTime);
     }
   }
 }

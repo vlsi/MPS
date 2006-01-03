@@ -4,7 +4,8 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessageView;
-import jetbrains.mps.ide.progress.IProgressMonitor;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.*;
@@ -30,13 +31,13 @@ public class GenerationSession implements ModelOwner {
 
   private Language myTargetLanguage;
   private IOperationContext myInvocationContext;
-  private IProgressMonitor myProgressMonitor;
+  private IAdaptiveProgressMonitor myProgressMonitor;
   private boolean mySaveTransientModels;
 
   private String mySessionId;
   private File mySessionDescriptorFile;
 
-  public GenerationSession(Language targetLanguage, IOperationContext invocationContext, IProgressMonitor progressMonitor) {
+  public GenerationSession(Language targetLanguage, IOperationContext invocationContext, IAdaptiveProgressMonitor progressMonitor) {
     myTargetLanguage = targetLanguage;
     myInvocationContext = invocationContext;
     myProgressMonitor = progressMonitor;
@@ -51,7 +52,8 @@ public class GenerationSession implements ModelOwner {
     return mySessionId;
   }
 
-  public GenerationStatus generateModel(SModel sourceModel) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+  public GenerationStatus generateModel(SModelDescriptor sourceModelDescriptor) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+    SModel sourceModel = sourceModelDescriptor.getSModel();
     addProgressMessage(MessageKind.INFORMATION, "generating model \"" + sourceModel.getUID() + "\"");
     Class<? extends IModelGenerator> defaultGeneratorClass = getDefaultGeneratorClass();
     addMessage(MessageKind.INFORMATION, "    default generator class: " + (defaultGeneratorClass != null ? defaultGeneratorClass.getName() : "<n/a>"));
@@ -96,15 +98,13 @@ public class GenerationSession implements ModelOwner {
     if (!ITemplateGenerator.class.isAssignableFrom(currentGeneratorClass)) {
       // hand-coded - not much to do ... just instantiate and invoke
       IModelGenerator handCodedGenerator = currentGeneratorClass.getConstructor(IOperationContext.class).newInstance(generatorContext);
-      IProgressMonitor childMonitor = myProgressMonitor.startSubTask(GeneratorManager.AMOUNT_PER_MODEL);
       SModel targetModel = JavaGenUtil.createTargetJavaModel(sourceModel, JavaNameUtil.packageNameForModelUID(sourceModel.getUID()), generatorContext);
-      handCodedGenerator.generate(sourceModel, targetModel, childMonitor);
-      childMonitor.finish();
+      handCodedGenerator.generate(sourceModel, targetModel);
       return new GenerationStatus.OK(targetModel);
     }
 
     // templates generator
-    ITemplateGenerator generator = (ITemplateGenerator) currentGeneratorClass.getConstructor(GeneratorSessionContext.class, IProgressMonitor.class).newInstance(generatorContext, myProgressMonitor);
+    ITemplateGenerator generator = (ITemplateGenerator) currentGeneratorClass.getConstructor(GeneratorSessionContext.class, IAdaptiveProgressMonitor.class).newInstance(generatorContext, myProgressMonitor);
     GenerationStatus status;
     try {
       SModel outputModel = doGenerateModel(sourceModel, generator);

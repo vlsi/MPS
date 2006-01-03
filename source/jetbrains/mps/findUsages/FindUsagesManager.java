@@ -76,9 +76,10 @@ public class FindUsagesManager {
 
       for (SModelDescriptor model : new ArrayList<SModelDescriptor>(models)) {
         String taskName = ModelsProgressUtil.findUsagesModelTaskName(model);
-        progress.startTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_USAGES);
+        progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_USAGES);
         result.addAll(model.findUsages(node));
         if (progress.isCanceled()) {
+          progress.finishTask(taskName);
           return result;
         }
         progress.finishTask(taskName);
@@ -102,9 +103,10 @@ public class FindUsagesManager {
 
       for (SModelDescriptor model : models) {
         String taskName = ModelsProgressUtil.findInstancesModelTaskName(model);
-        progress.startTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_INSTANCES);
+        progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_INSTANCES);
         result.addAll(model.findInstances(concept, GlobalScope.getInstance()));
         if (progress.isCanceled()) {
+          progress.finishTask(taskName);
           return result;
         }
         progress.finishTask(taskName);
