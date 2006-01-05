@@ -9,6 +9,9 @@ import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.util.annotation.ThinkTwice;
+import jetbrains.mps.annotations.PropertyAttributeConcept;
+import jetbrains.mps.annotations.LinkAttributeConcept;
+import jetbrains.mps.annotations.AttributeConcept;
 
 import java.util.*;
 
@@ -37,6 +40,11 @@ public class EditorManager {
 
 
   private EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events, boolean isInspectorCell) {
+    AttributeConcept attribute = node.getAttribute();
+    //if the whole node has attribute
+    if (attribute != null && !(attribute instanceof PropertyAttributeConcept) && !(attribute instanceof LinkAttributeConcept)) {
+      return createRootCell(context, attribute, events, isInspectorCell);
+    }
     AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
     EditorCell rootCell = nodeEditorComponent.getRootCell();
     myMap.clear();
