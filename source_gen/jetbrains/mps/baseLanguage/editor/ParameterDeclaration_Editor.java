@@ -48,7 +48,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     if(propertyAttributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      EditorCell cell = manager.createEditorCell(context, propertyAttributeConcept, null);
+      EditorCell cell = manager.createPropertyAttributeEditorCell(context, propertyAttributeConcept, null);
       return cell;
     }
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, node);
