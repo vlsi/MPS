@@ -83,6 +83,10 @@ public class EditorManager {
     return result;
   }
 
+  public EditorCell getCurrentAttributedPropertyCell() {
+    return myAttributedPropertyCell;
+  }
+
   /*package*/ EditorCell createEditorCell(EditorContext context, SNode node, List<SModelEvent> events) {
     AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
     EditorCell oldCell = nodeEditorComponent.getBigCellForNode(node);
