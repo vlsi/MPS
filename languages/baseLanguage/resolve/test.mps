@@ -1,18 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.resolve.test">
   <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.comments" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.resolve@java_stub" />
   <import index="2" modelUID="java.lang@java_stub" />
-  <import index="3" modelUID="jetbrains.mps.baseLanguage.refactoring.test" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1121166935562">
     <property name="name" value="New" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1121172586148">
       <property name="name" value="method" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1121172586150">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1136557137601">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1136557137600">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1136557137618" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.PlusExpression" id="1136557143483">
+              <attribute>
+                <link role="attribute" targetNodeId="1136558206868" />
+              </attribute>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1136557145782">
+                <property name="value" value="50" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1136557153705">
+                <property name="value" value="3" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1121172602904">
+          <attribute>
+            <link role="attribute" targetNodeId="1136557518639" />
+          </attribute>
           <node role="expression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1121172606578">
             <property name="value" value="5" />
+            <attribute>
+              <link role="attribute" targetNodeId="1136559219369" />
+            </attribute>
           </node>
         </node>
       </node>
@@ -31,6 +54,9 @@
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1121172709123" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1121172718766">
               <property name="value" value="6" />
+              <propertyAttribute name="value">
+                <link role="attribute" targetNodeId="1136560232293" />
+              </propertyAttribute>
             </node>
           </node>
         </node>
@@ -706,6 +732,23 @@
         <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1124801204472" />
       </node>
     </node>
+  </node>
+  <node type="jetbrains.mps.comments.Comment" id="1136557518639">
+    <property name="text" value="fff" />
+    <link role="attributedNode" targetNodeId="1121172602904" />
+  </node>
+  <node type="jetbrains.mps.comments.Comment" id="1136558206868">
+    <property name="text" value="ghghgghghghgh" />
+    <link role="attributedNode" targetNodeId="1136557143483" />
+  </node>
+  <node type="jetbrains.mps.comments.Comment" id="1136559219369">
+    <property name="text" value="dd" />
+    <link role="attributedNode" targetNodeId="1121172606578" />
+  </node>
+  <node type="jetbrains.mps.comments.PropertyComment" id="1136560232293">
+    <property name="text" value="property comment" />
+    <property name="propertyName" value="value" />
+    <link role="attributedNode" targetNodeId="1121172718766" />
   </node>
 </model>
 

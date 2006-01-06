@@ -46,7 +46,7 @@ public abstract class AbstractModule implements IModule {
     Set<IModule> processedModules = new HashSet<IModule>(modulesToSkip);
     language = getLanguage_internal(languageNamespace, processedModules, this);
     if (language == null) {
-      LOG.error("Couldn't find language: \"" + languageNamespace + "\" in scope: " + this);
+      LOG.errorWithTrace("Couldn't find language: \"" + languageNamespace + "\" in scope: " + this);
     }
     return language;
   }

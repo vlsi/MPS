@@ -26,6 +26,7 @@ public class EditorManager {
   private HashMap<SNode, EditorCell> myMap = new HashMap<SNode, EditorCell>();
   private boolean myCreatingInspectedCell = false;
   private EditorCell myAttributedPropertyCell = null;
+  private Stack<AttributeConcept> myAttributesStack = new Stack<AttributeConcept>();
 
   public static EditorManager getInstanceFromContext(IOperationContext operationContext) {
     return operationContext.getComponent(EditorManager.class);
@@ -37,11 +38,6 @@ public class EditorManager {
 
 
   private EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events, boolean isInspectorCell) {
-    AttributeConcept attribute = node.getAttribute();
-    //if the whole node has attribute
-    if (attribute != null && !(attribute instanceof PropertyAttributeConcept) && !(attribute instanceof LinkAttributeConcept)) {
-      return createRootCell(context, attribute, events, isInspectorCell);
-    }
     AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
     EditorCell rootCell = nodeEditorComponent.getRootCell();
     myMap.clear();
@@ -84,7 +80,23 @@ public class EditorManager {
     return myAttributedPropertyCell;
   }
 
+
+  
   /*package*/ EditorCell createEditorCell(EditorContext context, SNode node, List<SModelEvent> events) {
+    AttributeConcept attribute = node.getAttribute();
+
+    //if the whole node has attribute
+    if (attribute != null && !(attribute instanceof PropertyAttributeConcept) && !(attribute instanceof LinkAttributeConcept)) {
+      //if creating this cell for this attribute for the first time
+      if (myAttributesStack.isEmpty() || (myAttributesStack.peek() != attribute)) {
+        myAttributesStack.push(attribute);
+        EditorCell result = createEditorCell(context, attribute, events);
+        AttributeConcept poppedAttribute = myAttributesStack.pop();
+        LOG.assertLog(poppedAttribute == attribute);
+        return result;
+      }
+    }
+
     AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
     EditorCell oldCell = nodeEditorComponent.getBigCellForNode(node);
     if (events != null) {

@@ -5,6 +5,8 @@
     <modelRoot path="${mps_home}\models" namespacePrefix="" />
     <modelRoot path="${mps_home}\models\java" namespacePrefix="java" />
   </models>
-  <languages />
+  <module>
+    <moduleRoot path="${mps_home}\languages\annotations\languages" />
+  </module>
 </solution>
 
