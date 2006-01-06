@@ -25,7 +25,7 @@ public class EditorManager {
 
   private HashMap<SNode, EditorCell> myMap = new HashMap<SNode, EditorCell>();
   private boolean myCreatingInspectedCell = false;
-  private EditorCell myAttributedPropertyCell = null;
+  private Stack<EditorCell> myAttributedPropertyCellsStack = new Stack<EditorCell>();
   private Stack<AttributeConcept> myAttributesStack = new Stack<AttributeConcept>();
 
   public static EditorManager getInstanceFromContext(IOperationContext operationContext) {
@@ -70,23 +70,24 @@ public class EditorManager {
 
   //creating a cell for attributed property
   public EditorCell createPropertyAttributeCell(EditorContext context, PropertyAttributeConcept propertyAttribute, EditorCell propertyCell) {
-    myAttributedPropertyCell = propertyCell;
+    myAttributedPropertyCellsStack.push(propertyCell);
     EditorCell result = createEditorCell(context, propertyAttribute, null);
-    myAttributedPropertyCell = null;
+    EditorCell propertyCellPopped = myAttributedPropertyCellsStack.pop();
+    LOG.assertLog(propertyCellPopped == propertyCell);
     return result;
   }
 
   public EditorCell getCurrentAttributedPropertyCell() {
-    return myAttributedPropertyCell;
+    return myAttributedPropertyCellsStack.empty() ? null : myAttributedPropertyCellsStack.peek();
   }
 
 
-  
+
   /*package*/ EditorCell createEditorCell(EditorContext context, SNode node, List<SModelEvent> events) {
     AttributeConcept attribute = node.getAttribute();
 
     //if the whole node has attribute
-    if (attribute != null && !(attribute instanceof PropertyAttributeConcept) && !(attribute instanceof LinkAttributeConcept)) {
+    if (attribute != null) {
       //if creating this cell for this attribute for the first time
       if (myAttributesStack.isEmpty() || (myAttributesStack.peek() != attribute)) {
         myAttributesStack.push(attribute);
