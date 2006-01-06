@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.annotations.AttributeConcept;
 import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
@@ -876,7 +877,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public String getConceptFQName() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
     return getClass().getName();
-  }
+  } 
 
   public String toString() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
