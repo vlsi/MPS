@@ -1247,6 +1247,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public boolean doesCellDependOnNode(EditorCell cell, SNode node) {
+    if ((cell == null) && node != null) return true;
     Set<SNode> sNodes = myCellsToNodesToDependOnMap.get(cell);
     Set<SNodeProxy> nodeProxies = myCellsToRefTargetsToDependOnMap.get(cell);
     return ((sNodes != null) && (sNodes.contains(node))) || ((nodeProxies != null && nodeProxies.contains(new SNodeProxy(node))));

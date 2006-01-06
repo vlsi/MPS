@@ -4,10 +4,7 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.smodel.event.SModelChildEvent;
-import jetbrains.mps.smodel.event.SModelReferenceEvent;
-import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.annotations.PropertyAttributeConcept;
 import jetbrains.mps.annotations.LinkAttributeConcept;
 import jetbrains.mps.annotations.AttributeConcept;
@@ -100,6 +97,8 @@ public class EditorManager {
           eventNode = ((SModelReferenceEvent) event).getReference().getSourceNode();
         } else if (event instanceof SModelPropertyEvent) {
           eventNode = ((SModelPropertyEvent) event).getNode();
+        } else if (event instanceof SModelAttributeEvent) {
+          eventNode = ((SModelAttributeEvent)event).getAttributedNode();
         } else continue;
         if (nodeEditorComponent.doesCellDependOnNode(oldCell, eventNode)) {
           nodeChanged = true;
