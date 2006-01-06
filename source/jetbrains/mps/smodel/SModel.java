@@ -271,6 +271,13 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
+  void fireAttributeRemovedEvent(SNode attributedNode) {
+    if (!canFireEvent()) return;
+    for (SModelListener sModelListener : copyListeners()) {
+      sModelListener.attributeRemoved(new SModelAttributeEvent(this, attributedNode, null));
+    }
+  }
+
   private void fireSModelChangedInCommandEvent(List<SModelEvent> events, EditorContext editorContext) {
     for (SModelCommandListener l : copyCommandListeners()) {
       l.modelChangedInCommand(events);
@@ -730,6 +737,10 @@ public class SModel implements Iterable<SNode> {
     }
 
     public void attributeAdded(SModelAttributeEvent event) {
+      myEvents.add(event);
+    }
+
+    public void attributeRemoved(SModelAttributeEvent event) {
       myEvents.add(event);
     }
 

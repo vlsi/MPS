@@ -97,10 +97,16 @@
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1121172827478" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1121172827479">
               <property name="value" value="6" />
+              <propertyAttribute name="value">
+                <link role="attribute" targetNodeId="1136562675102" />
+              </propertyAttribute>
             </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1127826357147">
+          <attribute>
+            <link role="attribute" targetNodeId="1136562682166" />
+          </attribute>
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1127826357148">
             <property name="name" value="a" />
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1127826357149" />
@@ -749,6 +755,15 @@
     <property name="text" value="property comment" />
     <property name="propertyName" value="value" />
     <link role="attributedNode" targetNodeId="1121172718766" />
+  </node>
+  <node type="jetbrains.mps.comments.PropertyComment" id="1136562675102">
+    <property name="text" value="sdsdsd" />
+    <property name="propertyName" value="value" />
+    <link role="attributedNode" targetNodeId="1121172827479" />
+  </node>
+  <node type="jetbrains.mps.comments.Comment" id="1136562682166">
+    <property name="text" value="blah-blah-blah" />
+    <link role="attributedNode" targetNodeId="1127826357147" />
   </node>
 </model>
 
