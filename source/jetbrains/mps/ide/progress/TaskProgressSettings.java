@@ -37,6 +37,10 @@ public class TaskProgressSettings extends DefaultExternalizableComponent {
     return ourInstance;
   }
 
+  private TaskProgressSettings() {
+
+  }
+
   public void startTaskProgressAndMeasurement() {
     if (myMeasurementInProgress) {
       LOG.warning("trying to start task progress measurement started already");
