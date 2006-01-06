@@ -141,6 +141,9 @@ class SModelTreeNode extends MPSTreeNodeEx {
 
             public void visitReferenceEvent(SModelReferenceEvent event) {
             }
+
+            public void visitAttributeEvent(SModelAttributeEvent event) {
+            }
           };
           for (SModelEvent event : events) {
             event.accept(visitor);

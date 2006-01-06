@@ -6,6 +6,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.annotations.PropertyAttributeConcept;
+import jetbrains.mps.annotations.LinkAttributeConcept;
+import jetbrains.mps.annotations.AttributeConcept;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -49,6 +52,9 @@ public class ModelPersistence {
   public static final String STEREOTYPE = "stereotype";
   public static final String MODEL_UID = "modelUID";
   public static final String REFERENCE_DESCRIPTOR_CLASS = "referenceDescriptorClass";
+  public static final String ATTRIBUTE = "attribute";
+  public static final String PROPERTY_ATTRIBUTE = "propertyAttribute";
+  public static final String LINK_ATTRIBUTE = "linkAttribute";
 
 
   private static Document loadModelDocument(File file) {
@@ -233,6 +239,34 @@ public class ModelPersistence {
       }
     }
 
+    Element attributeElement = nodeElement.getChild(ATTRIBUTE);
+    if (attributeElement != null) {
+      Element linkElement = attributeElement.getChild(LINK);
+      ReferencePersister rp = ReferencePersister.readReferencePersister(linkElement, node, useUIDs);
+      SReference attributeReference = rp.createReferenceInModelDoNotAddToSourceNode(model);
+      node.setAttributeReference(attributeReference);
+    }
+
+    List propertyAttributes = nodeElement.getChildren(PROPERTY_ATTRIBUTE);
+    for (Object o : propertyAttributes) {
+      Element propertyAttributeElement = (Element) o;
+      String propertyName = propertyAttributeElement.getAttributeValue(NAME);
+      Element linkElement = propertyAttributeElement.getChild(LINK);
+      ReferencePersister rp = ReferencePersister.readReferencePersister(linkElement, node, useUIDs);
+      SReference propertyAttributeReference = rp.createReferenceInModelDoNotAddToSourceNode(model);
+      node.putPropertyAtribute(propertyName, propertyAttributeReference);
+    }
+
+    List linkAttributes = nodeElement.getChildren(LINK_ATTRIBUTE);
+    for (Object o : linkAttributes) {
+      Element linkAttributeElement = (Element) o;
+      String role = linkAttributeElement.getAttributeValue(ROLE);
+      Element linkElement = linkAttributeElement.getChild(LINK);
+      ReferencePersister rp = ReferencePersister.readReferencePersister(linkElement, node, useUIDs);
+      SReference linkAttributeReference = rp.createReferenceInModelDoNotAddToSourceNode(model);
+      node.putLinkReference(role, linkAttributeReference);
+    }
+
     List links = nodeElement.getChildren(LINK);
     for (Iterator iterator = links.iterator(); iterator.hasNext();) {
       Element linkElement = (Element) iterator.next();
@@ -414,6 +448,32 @@ public class ModelPersistence {
     for (Iterator<SReference> iterator = references.iterator(); iterator.hasNext();) {
       SReference reference = iterator.next();
       Element linkElement = ReferencePersister.saveReference(element, reference, useUIDs);
+    }
+
+    //attributes...
+    SReference attributeReference = node.getAttributeReference();
+    if (attributeReference != null) {
+      Element attributeElement = new Element(ATTRIBUTE);
+      element.addContent(attributeElement);
+      Element linkElement = ReferencePersister.saveReference(attributeElement, attributeReference, useUIDs);
+    }
+
+    Map<String, SReference> propertyAttributes = node.getPropertyAttributes();
+    for (String propertyName : propertyAttributes.keySet()) {
+      SReference propertyAttributeReference = propertyAttributes.get(propertyName);
+      Element propertyAtributeElement = new Element(PROPERTY_ATTRIBUTE);
+      element.addContent(propertyAtributeElement);
+      propertyAtributeElement.setAttribute(NAME, propertyName);
+      Element linkElement = ReferencePersister.saveReference(propertyAtributeElement, propertyAttributeReference, useUIDs);
+    }
+
+    Map<String, SReference> linkAttributes = node.getLinkAttributes();
+    for (String role : linkAttributes.keySet()) {
+      SReference linkAttributeReference = linkAttributes.get(role);
+      Element linkAtributeElement = new Element(LINK_ATTRIBUTE);
+      element.addContent(linkAtributeElement);
+      linkAtributeElement.setAttribute(ROLE, role);
+      Element linkElement = ReferencePersister.saveReference(linkAtributeElement, linkAttributeReference, useUIDs);
     }
 
     // children ...

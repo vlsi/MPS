@@ -4,6 +4,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.annotations.PropertyAttributeConcept;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.comments.PropertyComment;
+import jetbrains.mps.comments.Comment;
 
 import java.awt.*;
 
@@ -420,7 +422,8 @@ public class NodeEditorActions {
   // --- maybe temporary actions to test attribute editors
   //
 
-  public static class MK_PROPERTY_ATTRIBUTE extends EditorCellAction { //Ctrl-F2
+  public static class MK_PROPERTY_COMMENT extends EditorCellAction { //Ctrl-F2
+
     public boolean canExecute(EditorContext context) {
       EditorCell cell = context.getNodeEditorComponent().getSelectedCell();
       if (!(cell instanceof EditorCell_Property)) return false;
@@ -428,20 +431,25 @@ public class NodeEditorActions {
     }
 
     public void execute(EditorContext context) {
-      final AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
-      final EditorCell_Property cell = (EditorCell_Property) nodeEditorComponent.getSelectedCell();
-      final SNode node = cell.getSNode();
+      AbstractEditorComponent editor = context.getNodeEditorComponent();
+      EditorCell_Property cell = (EditorCell_Property) editor.getSelectedCell();
+      SNode node = cell.getSNode();
       String propertyName = ((PropertyAccessor)cell.getModelAccessor()).getPropertyName();
-      SModel model = node.getModel();
-      PropertyAttributeConcept propertyAttribute = new PropertyAttributeConcept(model);
-      model.addRoot(propertyAttribute);
-      node.setPropertyAttribute(propertyName, propertyAttribute);
-      CommandProcessor.instance().invokeLater(new Runnable() {
-        public void run() {
-          EditorCell cellToSelect = nodeEditorComponent.findNodeCell(node, (String) cell.getUserObject(EditorCell.CELL_ID));
-          nodeEditorComponent.setSelection(cellToSelect);
-        }
-      });
+      node.setPropertyAttribute(propertyName, new PropertyComment(node.getModel()));
+    }
+  }
+
+  public static class MK_COMMENT extends EditorCellAction { //Ctrl-F3
+
+    public boolean canExecute(EditorContext context) {
+      EditorCell cell = context.getNodeEditorComponent().getSelectedCell();
+      return cell.getSNode() != null;
+    }
+
+    public void execute(EditorContext context) {
+      EditorCell cell = context.getNodeEditorComponent().getSelectedCell();
+      SNode node = cell.getSNode();
+      node.setAttribute(new Comment(node.getModel()));
     }
   }
 }

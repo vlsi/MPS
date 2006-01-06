@@ -100,7 +100,7 @@ public class ReferencePersister {
 
 
   // -- create reference
-  public void createReferenceInModel(SModel model) {
+  SReference createReferenceInModelDoNotAddToSourceNode(SModel model) {
     SModelUID importedModelUID = model.getUID();
     if (isUseUIDs) {
       if (!importedModelInfo.equals("-1")) {
@@ -110,18 +110,23 @@ public class ReferencePersister {
       importedModelUID = model.getImportedModelUID(getImportIndex());
       if (importedModelUID == null) {
         LOG.error("Couldn't create reference from " + this.getSourceNode().getDebugText() + " : import for index [" + getImportIndex() + "] not found");
-        return;
+        return null;
       }
     }
-      SReference reference = SReference.newInstance(this.getRole(),
-              this.getSourceNode(),
-              this.getTargetId(),
-              this.getExtResolveInfo(),
-              importedModelUID,
-              this.getResolveInfo(),
-              this.getTargetClassResolveInfo()
-      );
-      if (reference != null) this.getSourceNode().addSemanticReference(reference);
+    SReference reference = SReference.newInstance(this.getRole(),
+            this.getSourceNode(),
+            this.getTargetId(),
+            this.getExtResolveInfo(),
+            importedModelUID,
+            this.getResolveInfo(),
+            this.getTargetClassResolveInfo()
+    );
+    return reference;
+  }
+
+  public void createReferenceInModel(SModel model) {
+    SReference reference = createReferenceInModelDoNotAddToSourceNode(model);
+    if (reference != null) this.getSourceNode().addSemanticReference(reference);
   }
   //--
 

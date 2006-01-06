@@ -28,6 +28,8 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   public static final String NAME = "name";
 
+  private static final String ATTRIBUTE = "attribute";
+
   private String myRoleInParent;
   private SNode myParent;
 
@@ -37,8 +39,8 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   private HashMap<String, String> myProperties = new HashMap<String, String>();
 
   private SReference myAttribute;
-  private WeakHashMap<String, SReference> myPropertyAttributes = new WeakHashMap<String, SReference>();
-  private WeakHashMap<String, SReference> myLinkAttributes = new WeakHashMap<String, SReference>();
+  private HashMap<String, SReference> myPropertyAttributes = new HashMap<String, SReference>();
+  private HashMap<String, SReference> myLinkAttributes = new HashMap<String, SReference>();
 
   private SModel myModel;
   private String myId;
@@ -202,55 +204,91 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   //----- attributes
   //
 
-  public void setAttribute(AttributeConcept attributeConcept) {
-    //todo fire event
-    attributeConcept.setReferent(AttributeConcept.ATTRIBUTED_NODE, this);
-    SReference reference = attributeConcept.getReference(AttributeConcept.ATTRIBUTED_NODE);
+  Map<String, SReference> getPropertyAttributes() {
+    NodeReadAccessCaster.fireNodeReadAccessed(this);
+    return new HashMap<String, SReference>(myPropertyAttributes);
+  }
+
+  Map<String, SReference> getLinkAttributes() {
+    NodeReadAccessCaster.fireNodeReadAccessed(this);
+    return new HashMap<String, SReference>(myLinkAttributes);
+  }
+
+  SReference getAttributeReference() {
+    NodeReadAccessCaster.fireNodeReadAccessed(this);
+    return myAttribute;
+  }
+
+  void setAttributeReference(SReference reference) {
     myAttribute = reference;
+  }
+
+  void putPropertyAtribute(String name, SReference reference) {
+    myPropertyAttributes.put(name, reference);
+  }
+
+  void putLinkReference(String role, SReference reference) {
+    myLinkAttributes.put(role, reference);
+  }
+
+  private void checkAttributeIsReachable(AttributeConcept attributeConcept) {
+    SModel attributeModel = attributeConcept.getModel();
+    if (!attributeConcept.isReachable()) {
+      attributeModel.addRoot(attributeConcept);
+    }
+  }
+
+  public void setAttribute(AttributeConcept attributeConcept) {
+    checkAttributeIsReachable(attributeConcept);
+    attributeConcept.setReferent(AttributeConcept.ATTRIBUTED_NODE, this);
+    myAttribute = SReference.newInstance(ATTRIBUTE, this, attributeConcept);
+    getModel().fireAttributeAddedEvent(this, attributeConcept);
   }
 
   public boolean hasAttribute() {
     //todo fire accessed event
     if (myAttribute == null) return false;
-    return myAttribute.getSourceNode() instanceof AttributeConcept;
+    return myAttribute.getTargetNode() instanceof AttributeConcept;
   }
 
   public AttributeConcept getAttribute() {
     //todo fire accessed event
     if (myAttribute == null) return null;
-    SNode sourceNode = myAttribute.getSourceNode();
-    if (sourceNode instanceof AttributeConcept) return (AttributeConcept) sourceNode;
+    SNode targetNode = myAttribute.getTargetNode();
+    if (targetNode instanceof AttributeConcept) return (AttributeConcept) targetNode;
     return null;
   }
 
   public void setPropertyAttribute(String propertyName, PropertyAttributeConcept propertyAttribute) {
-    //todo fire event
+    checkAttributeIsReachable(propertyAttribute);
     propertyAttribute.setReferent(AttributeConcept.ATTRIBUTED_NODE, this);
     propertyAttribute.setPropertyName(propertyName);
-    SReference reference = propertyAttribute.getReference(AttributeConcept.ATTRIBUTED_NODE);
+    SReference reference = SReference.newInstance(ATTRIBUTE, this, propertyAttribute);
     this.myPropertyAttributes.put(propertyName, reference);
+    getModel().fireAttributeAddedEvent(this, propertyAttribute);
   }
 
   public PropertyAttributeConcept getPropertyAttribute(String propertyName) {
     //todo fire accessed event
     SReference reference = this.myPropertyAttributes.get(propertyName);
     if (reference == null) return null;
-    return (PropertyAttributeConcept) reference.getSourceNode();
+    return (PropertyAttributeConcept) reference.getTargetNode();
   }
 
   public void setLinkAttribute(String role, LinkAttributeConcept linkAttribute) {
-    //todo fire event
+    checkAttributeIsReachable(linkAttribute);
     linkAttribute.setReferent(AttributeConcept.ATTRIBUTED_NODE, this);
     linkAttribute.setLinkRole(role);
-    SReference reference = linkAttribute.getReference(AttributeConcept.ATTRIBUTED_NODE);
+    SReference reference = SReference.newInstance(ATTRIBUTE, this, linkAttribute);
     this.myLinkAttributes.put(role, reference);
+    getModel().fireAttributeAddedEvent(this, linkAttribute);
   }
 
   public LinkAttributeConcept getLinkAttribute(String role) {
     //todo fire accessed event
     SReference reference = myLinkAttributes.get(role);
     if (reference == null) return null;
-    return (LinkAttributeConcept) reference.getSourceNode();
+    return (LinkAttributeConcept) reference.getTargetNode();
   }
 
   //
@@ -871,5 +909,15 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       return false;
     }
     return myModel.isDisposed();
+  }
+
+  public boolean isReachable() {
+    SNode prevParent = this;
+    SNode parent = this.getParent();
+    while (parent != null) {
+      prevParent = parent;
+      parent = parent.getParent();
+    }
+    return prevParent.getModel() != null && prevParent.getModel().isRoot(prevParent);
   }
 }

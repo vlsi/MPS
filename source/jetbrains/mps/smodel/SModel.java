@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.annotation.ForDebug;
+import jetbrains.mps.annotations.AttributeConcept;
 
 import java.util.*;
 
@@ -260,6 +261,13 @@ public class SModel implements Iterable<SNode> {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
       sModelListener.referenceRemoved(new SModelReferenceEvent(this, reference, false));
+    }
+  }
+
+  void fireAttributeAddedEvent(SNode attributedNode, AttributeConcept attributeConcept) {
+    if (!canFireEvent()) return;
+    for (SModelListener sModelListener : copyListeners()) {
+      sModelListener.attributeAdded(new SModelAttributeEvent(this, attributedNode, attributeConcept));
     }
   }
 
@@ -718,6 +726,10 @@ public class SModel implements Iterable<SNode> {
     }
 
     public void referenceRemoved(SModelReferenceEvent event) {
+      myEvents.add(event);
+    }
+
+    public void attributeAdded(SModelAttributeEvent event) {
       myEvents.add(event);
     }
 
