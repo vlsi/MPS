@@ -1,7 +1,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.annotations.AttributeConcept;
 import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
@@ -815,6 +814,11 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       child.delete_internal();
     }
 
+    //process attributes and attributed nodes
+    removeFromAttributedNodes();
+    removeFromAttributes();
+
+    //remove all references
     removeAllReferences();
 
     //remove from parent
@@ -826,6 +830,45 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     //remove from roots
     if (getModel().isRoot(this)) {
       getModel().deleteRoot(this);
+    }
+  }
+
+  private void removeFromAttributedNodes() {
+    if (this instanceof AttributeConcept) {
+      AttributeConcept attributeConcept = (AttributeConcept) this;
+      SNode node = attributeConcept.getAttributedNode();
+      if (node != null) {
+        if (this instanceof PropertyAttributeConcept) {
+          PropertyAttributeConcept propertyAttribute = (PropertyAttributeConcept) this;
+          node.setPropertyAttribute(propertyAttribute.getPropertyName(), null);
+        } else if (this instanceof LinkAttributeConcept) {
+          LinkAttributeConcept linkAttribute = (LinkAttributeConcept) this;
+          node.setLinkAttribute(linkAttribute.getLinkRole(), null);
+        } else {
+          node.setAttribute(null);
+        }
+      }
+    }
+  }
+
+  private void removeFromAttributes() {
+    AttributeConcept attribute = getAttribute();
+    if (attribute != null) {
+      attribute.setAttributedNode(null);
+    }
+    for (SReference reference : myPropertyAttributes.values()) {
+      SNode targetNode = reference.getTargetNode();
+      if (targetNode instanceof PropertyAttributeConcept) {
+        PropertyAttributeConcept propertyAttribute = (PropertyAttributeConcept) targetNode;
+        propertyAttribute.setAttributedNode(null);
+      }
+    }
+    for (SReference reference : myLinkAttributes.values()) {
+      SNode targetNode = reference.getTargetNode();
+      if (targetNode instanceof LinkAttributeConcept) {
+        LinkAttributeConcept linkAttribute = (LinkAttributeConcept) targetNode;
+        linkAttribute.setAttributedNode(null);
+      }
     }
   }
 

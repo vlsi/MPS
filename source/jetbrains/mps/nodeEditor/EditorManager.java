@@ -26,6 +26,7 @@ public class EditorManager {
   private HashMap<SNode, EditorCell> myMap = new HashMap<SNode, EditorCell>();
   private boolean myCreatingInspectedCell = false;
   private Stack<EditorCell> myAttributedPropertyCellsStack = new Stack<EditorCell>();
+  private Stack<EditorCell> myAttributedLinkCellsStack = new Stack<EditorCell>();
   private Stack<AttributeConcept> myAttributesStack = new Stack<AttributeConcept>();
 
   public static EditorManager getInstanceFromContext(IOperationContext operationContext) {
@@ -77,11 +78,22 @@ public class EditorManager {
     return result;
   }
 
+  //creating a cell for attributed link
+  public EditorCell createLinkAttributeCell(EditorContext context, LinkAttributeConcept linkAttribute, EditorCell refCell) {
+    myAttributedLinkCellsStack.push(refCell);
+    EditorCell result = createEditorCell(context, linkAttribute, null);
+    EditorCell refCellPopped = myAttributedLinkCellsStack.pop();
+    LOG.assertLog(refCellPopped == refCell);
+    return result;
+  }
+
   public EditorCell getCurrentAttributedPropertyCell() {
     return myAttributedPropertyCellsStack.empty() ? null : myAttributedPropertyCellsStack.peek();
   }
 
-
+  public EditorCell getCurrentAttributedLinkCell() {
+    return myAttributedLinkCellsStack.empty() ? null : myAttributedLinkCellsStack.peek();
+  }
 
   /*package*/ EditorCell createEditorCell(EditorContext context, SNode node, List<SModelEvent> events) {
     AttributeConcept attribute = node.getAttribute();
