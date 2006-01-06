@@ -168,6 +168,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     // ----
     myActionMap.put(EditorCellAction.MK_PROPERTY_COMMENT, new NodeEditorActions.MK_PROPERTY_COMMENT());
     myActionMap.put(EditorCellAction.MK_COMMENT, new NodeEditorActions.MK_COMMENT());
+    myActionMap.put(EditorCellAction.MK_LINK_COMMENT, new NodeEditorActions.MK_LINK_COMMENT());
 
     registerNodeAction(new ShowNodeTypeAction());
     registerNodeAction(new FindUsagesNodeAction());
@@ -572,6 +573,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     if (keyEvent.getKeyCode() == KeyEvent.VK_F3 && keyEvent.isControlDown()) {
       return EditorCellAction.MK_COMMENT;
+    }
+    
+    if (keyEvent.getKeyCode() == KeyEvent.VK_F4 && keyEvent.isControlDown()) {
+      return EditorCellAction.MK_LINK_COMMENT;
     }
 
     // ---

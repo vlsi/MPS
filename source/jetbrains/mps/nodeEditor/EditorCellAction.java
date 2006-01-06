@@ -40,6 +40,7 @@ public abstract class EditorCellAction {
   //--
   public static final String MK_PROPERTY_COMMENT = "MK_PROPERTY_COMMENT";
   public static final String MK_COMMENT = "MK_COMMENT";
+  public static final String MK_LINK_COMMENT = "MK_LINK_COMMENT";
 
 
   public abstract boolean canExecute(EditorContext context);

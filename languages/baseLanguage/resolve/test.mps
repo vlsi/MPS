@@ -69,6 +69,9 @@
               <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1121438925080" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1121438925081">
                 <link role="variableDeclaration" targetNodeId="1121172709122" />
+                <linkAttribute role="variableDeclaration">
+                  <link role="attribute" targetNodeId="1136570488350" />
+                </linkAttribute>
               </node>
             </node>
           </node>
@@ -78,7 +81,26 @@
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1121438897509">
       <property name="name" value="method" />
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1121438897513" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1121438897513">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1136570573762">
+          <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1136570576311">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.ParameterReference" id="1136570573761">
+              <link role="variableDeclaration" targetNodeId="1121438897511" />
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.PlusExpression" id="1136570579629">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1136570581412">
+                <property name="value" value="1" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1136570578891">
+                <link role="variableDeclaration" targetNodeId="1121438897511" />
+                <linkAttribute role="variableDeclaration">
+                  <link role="attribute" targetNodeId="1136570618386" />
+                </linkAttribute>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1121438897510" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1121438897511">
         <property name="name" value="k" />
@@ -764,6 +786,16 @@
   <node type="jetbrains.mps.comments.Comment" id="1136562682166">
     <property name="text" value="blah-blah-blah" />
     <link role="attributedNode" targetNodeId="1127826357147" />
+  </node>
+  <node type="jetbrains.mps.comments.LinkComment" id="1136570488350">
+    <property name="text" value="dsdsdsdsd" />
+    <property name="linkRole" value="variableDeclaration" />
+    <link role="attributedNode" targetNodeId="1121438925081" />
+  </node>
+  <node type="jetbrains.mps.comments.LinkComment" id="1136570618386">
+    <property name="text" value="link comment" />
+    <property name="linkRole" value="variableDeclaration" />
+    <link role="attributedNode" targetNodeId="1136570578891" />
   </node>
 </model>
 

@@ -2,10 +2,14 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.annotations.PropertyAttributeConcept;
+import jetbrains.mps.annotations.LinkAttributeConcept;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.comments.PropertyComment;
 import jetbrains.mps.comments.Comment;
+import jetbrains.mps.comments.LinkComment;
+import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 
 import java.awt.*;
 
@@ -439,13 +443,21 @@ public class NodeEditorActions {
     }
   }
 
-  public static class MK_LINK_COMMENT extends EditorCellAction {
+  public static class MK_LINK_COMMENT extends EditorCellAction { //Ctrl-F4
     public boolean canExecute(EditorContext context) {
-      return false;  //To change body of implemented methods use File | Settings | File Templates.
+      EditorCell cell = context.getNodeEditorComponent().getSelectedCell();
+      return cell.getSNode() != null;
     }
 
     public void execute(EditorContext context) {
-      //To change body of implemented methods use File | Settings | File Templates.
+      EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
+      LinkDeclaration linkDeclaration = (LinkDeclaration) selectedCell.getUserObject(EditorCell.METAINFO_LINK_DECLARATION);
+      if (linkDeclaration != null) {
+        SNode node = selectedCell.getSNode();
+        linkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
+        String role = linkDeclaration.getRole();
+        node.setLinkAttribute(role, new LinkComment(node.getModel()));
+      }
     }
   }
 
