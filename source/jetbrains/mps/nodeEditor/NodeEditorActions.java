@@ -439,6 +439,16 @@ public class NodeEditorActions {
     }
   }
 
+  public static class MK_LINK_COMMENT extends EditorCellAction {
+    public boolean canExecute(EditorContext context) {
+      return false;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    public void execute(EditorContext context) {
+      //To change body of implemented methods use File | Settings | File Templates.
+    }
+  }
+
   public static class MK_COMMENT extends EditorCellAction { //Ctrl-F3
 
     public boolean canExecute(EditorContext context) {
