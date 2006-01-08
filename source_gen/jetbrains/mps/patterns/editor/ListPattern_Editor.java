@@ -22,7 +22,7 @@ import jetbrains.mps.annotations.LinkAttributeConcept;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class AsPattern_Editor extends DefaultNodeEditor {
+public class ListPattern_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
@@ -34,9 +34,9 @@ public class AsPattern_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "@"));
+    editorCell.addEditorCell(this.createConstantCell(context, node, "*"));
     editorCell.addEditorCell(this.createAttributedNodeCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1136720096745");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1136727263715");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -48,7 +48,7 @@ public class AsPattern_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1136720096746");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1136727263716");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -66,7 +66,7 @@ public class AsPattern_Editor extends DefaultNodeEditor {
       noRefCell.setDrawBrackets(true);
       noRefCell.setBracketsColor(Color.black);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-      noRefCell.putUserObject(EditorCell.CELL_ID, "1136720096747");
+      noRefCell.putUserObject(EditorCell.CELL_ID, "1136727263717");
       noRefCell.setLayoutConstraint("");
       noRefCell.putUserObject(EditorCell.ROLE, "attributedNode");
       return noRefCell;
@@ -81,7 +81,7 @@ public class AsPattern_Editor extends DefaultNodeEditor {
         noRefCell.setDrawBrackets(true);
         noRefCell.setBracketsColor(Color.black);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-        noRefCell.putUserObject(EditorCell.CELL_ID, "1136720096747");
+        noRefCell.putUserObject(EditorCell.CELL_ID, "1136727263717");
         noRefCell.setLayoutConstraint("");
         noRefCell.putUserObject(EditorCell.ROLE, "attributedNode");
         return noRefCell;
