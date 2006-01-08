@@ -231,25 +231,33 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     }
   }
 
-  void putPropertyAtribute(final String name, SReference reference) {
+  void putPropertyAtributeReference(final String name, SReference reference) {
     final SReference oldPropertyAttribute = myPropertyAttributes.get(name);
-    myPropertyAttributes.put(name, reference);
+    if (reference != null) {
+      myPropertyAttributes.put(name, reference);
+    } else {
+      myPropertyAttributes.remove(name);
+    }
     if (!getModel().isLoading()) {
       UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
         public void undo() throws UnexpectedUndoException {
-          putPropertyAtribute(name, oldPropertyAttribute);
+          putPropertyAtributeReference(name, oldPropertyAttribute);
         }
       });
     }
   }
 
-  void putLinkReference(final String role, SReference reference) {
+  void putLinkAttributeReference(final String role, SReference reference) {
     final SReference oldLinkAttribute = myLinkAttributes.get(role);
-    myLinkAttributes.put(role, reference);
+    if (reference != null) {
+      myLinkAttributes.put(role, reference);
+    } else {
+      myLinkAttributes.remove(role);
+    }
     if (!getModel().isLoading()) {
       UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
         public void undo() throws UnexpectedUndoException {
-          putLinkReference(role, oldLinkAttribute);
+          putLinkAttributeReference(role, oldLinkAttribute);
         }
       });
     }
@@ -264,12 +272,13 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public void setAttribute(AttributeConcept attributeConcept) {
-    if (attributeConcept == null) {
-      if (myAttribute != null) {
-        getModel().fireAttributeRemovedEvent(this);
-        setAttributeReference(null);
-      }
-    } else {
+    if (myAttribute != null && myAttribute.getTargetNode() instanceof AttributeConcept) {
+      AttributeConcept oldAttributeConcept = (AttributeConcept) myAttribute.getTargetNode();
+      oldAttributeConcept.delete();
+      getModel().fireAttributeRemovedEvent(this);
+      setAttributeReference(null);
+    }
+    if (attributeConcept != null) {
       checkAttributeIsReachable(attributeConcept);
       attributeConcept.setReferent(AttributeConcept.ATTRIBUTED_NODE, this);
       setAttributeReference(SReference.newInstance(ATTRIBUTE, this, attributeConcept));
@@ -292,19 +301,23 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public void setPropertyAttribute(String propertyName, PropertyAttributeConcept propertyAttribute) {
+    SReference oldPropertyAttributeRef = this.myPropertyAttributes.get(propertyName);
+     if (oldPropertyAttributeRef != null) {
+      SNode oldNode = oldPropertyAttributeRef.getTargetNode();
+      if (oldNode instanceof PropertyAttributeConcept) {
+        PropertyAttributeConcept oldPropertyAttributeConcept = (PropertyAttributeConcept) oldNode;
+        oldPropertyAttributeConcept.delete();
+        putPropertyAtributeReference(propertyName, null);
+        getModel().fireAttributeRemovedEvent(this);
+      }
+    }
     if (propertyAttribute != null) {
       checkAttributeIsReachable(propertyAttribute);
       propertyAttribute.setReferent(AttributeConcept.ATTRIBUTED_NODE, this);
       propertyAttribute.setPropertyName(propertyName);
       SReference reference = SReference.newInstance(ATTRIBUTE, this, propertyAttribute);
-      putPropertyAtribute(propertyName, reference);
+      putPropertyAtributeReference(propertyName, reference);
       getModel().fireAttributeAddedEvent(this, propertyAttribute);
-    } else {
-      SReference oldPropertyAttribute = this.myPropertyAttributes.get(propertyName);
-      if (oldPropertyAttribute != null) {
-        putPropertyAtribute(propertyName, null);
-        getModel().fireAttributeRemovedEvent(this);
-      }
     }
   }
 
@@ -316,19 +329,23 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public void setLinkAttribute(String role, LinkAttributeConcept linkAttribute) {
+    SReference oldLinkAttributeRef = myLinkAttributes.get(role);
+    if (oldLinkAttributeRef != null) {
+      SNode oldNode = oldLinkAttributeRef.getTargetNode();
+      if (oldNode instanceof LinkAttributeConcept) {
+        LinkAttributeConcept oldLinkAttributeConcept = (LinkAttributeConcept) oldNode;
+        oldLinkAttributeConcept.delete();
+        putLinkAttributeReference(role, null);
+        getModel().fireAttributeRemovedEvent(this);
+      }
+    }
     if (linkAttribute != null) {
       checkAttributeIsReachable(linkAttribute);
       linkAttribute.setReferent(AttributeConcept.ATTRIBUTED_NODE, this);
       linkAttribute.setLinkRole(role);
       SReference reference = SReference.newInstance(ATTRIBUTE, this, linkAttribute);
-      putLinkReference(role, reference);
+      putLinkAttributeReference(role, reference);
       getModel().fireAttributeAddedEvent(this, linkAttribute);
-    } else {
-      SReference oldLinkAttribute = myLinkAttributes.get(role);
-      if (oldLinkAttribute != null) {
-        putLinkReference(role, null);
-        getModel().fireAttributeRemovedEvent(this);
-      }
     }
   }
 
@@ -803,19 +820,13 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     // remove node id
     myModel.removeNodeId(getId());
 
-    // clear attributes
-    myAttribute = null;
-    myLinkAttributes.clear();
-    myPropertyAttributes.clear();
-
     //delete all children
     List<SNode> children = new LinkedList<SNode>(getChildren());
     for (SNode child : children) {
       child.delete_internal();
     }
 
-    //process attributes and attributed nodes
-    removeFromAttributedNodes();
+    //process attributes
     removeFromAttributes();
 
     //remove all references
@@ -833,43 +844,28 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     }
   }
 
-  private void removeFromAttributedNodes() {
-    if (this instanceof AttributeConcept) {
-      AttributeConcept attributeConcept = (AttributeConcept) this;
-      SNode node = attributeConcept.getAttributedNode();
-      if (node != null) {
-        if (this instanceof PropertyAttributeConcept) {
-          PropertyAttributeConcept propertyAttribute = (PropertyAttributeConcept) this;
-          node.setPropertyAttribute(propertyAttribute.getPropertyName(), null);
-        } else if (this instanceof LinkAttributeConcept) {
-          LinkAttributeConcept linkAttribute = (LinkAttributeConcept) this;
-          node.setLinkAttribute(linkAttribute.getLinkRole(), null);
-        } else {
-          node.setAttribute(null);
-        }
-      }
-    }
-  }
-
   private void removeFromAttributes() {
     AttributeConcept attribute = getAttribute();
     if (attribute != null) {
-      attribute.setAttributedNode(null);
+      attribute.delete();
     }
     for (SReference reference : myPropertyAttributes.values()) {
       SNode targetNode = reference.getTargetNode();
       if (targetNode instanceof PropertyAttributeConcept) {
         PropertyAttributeConcept propertyAttribute = (PropertyAttributeConcept) targetNode;
-        propertyAttribute.setAttributedNode(null);
+        propertyAttribute.delete();
       }
     }
     for (SReference reference : myLinkAttributes.values()) {
       SNode targetNode = reference.getTargetNode();
       if (targetNode instanceof LinkAttributeConcept) {
         LinkAttributeConcept linkAttribute = (LinkAttributeConcept) targetNode;
-        linkAttribute.setAttributedNode(null);
+        linkAttribute.delete();
       }
     }
+    myAttribute = null;
+    myLinkAttributes.clear();
+    myPropertyAttributes.clear();
   }
 
   private void removeAllReferences() {

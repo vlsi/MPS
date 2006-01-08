@@ -6,9 +6,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.annotations.PropertyAttributeConcept;
-import jetbrains.mps.annotations.LinkAttributeConcept;
-import jetbrains.mps.annotations.AttributeConcept;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -254,7 +251,7 @@ public class ModelPersistence {
       Element linkElement = propertyAttributeElement.getChild(LINK);
       ReferencePersister rp = ReferencePersister.readReferencePersister(linkElement, node, useUIDs);
       SReference propertyAttributeReference = rp.createReferenceInModelDoNotAddToSourceNode(model);
-      node.putPropertyAtribute(propertyName, propertyAttributeReference);
+      node.putPropertyAtributeReference(propertyName, propertyAttributeReference);
     }
 
     List linkAttributes = nodeElement.getChildren(LINK_ATTRIBUTE);
@@ -264,7 +261,7 @@ public class ModelPersistence {
       Element linkElement = linkAttributeElement.getChild(LINK);
       ReferencePersister rp = ReferencePersister.readReferencePersister(linkElement, node, useUIDs);
       SReference linkAttributeReference = rp.createReferenceInModelDoNotAddToSourceNode(model);
-      node.putLinkReference(role, linkAttributeReference);
+      node.putLinkAttributeReference(role, linkAttributeReference);
     }
 
     List links = nodeElement.getChildren(LINK);
@@ -461,6 +458,7 @@ public class ModelPersistence {
     Map<String, SReference> propertyAttributes = node.getPropertyAttributes();
     for (String propertyName : propertyAttributes.keySet()) {
       SReference propertyAttributeReference = propertyAttributes.get(propertyName);
+      if (propertyAttributeReference == null) continue;
       Element propertyAtributeElement = new Element(PROPERTY_ATTRIBUTE);
       element.addContent(propertyAtributeElement);
       propertyAtributeElement.setAttribute(NAME, propertyName);
@@ -470,6 +468,7 @@ public class ModelPersistence {
     Map<String, SReference> linkAttributes = node.getLinkAttributes();
     for (String role : linkAttributes.keySet()) {
       SReference linkAttributeReference = linkAttributes.get(role);
+      if (linkAttributeReference == null) continue;
       Element linkAtributeElement = new Element(LINK_ATTRIBUTE);
       element.addContent(linkAtributeElement);
       linkAtributeElement.setAttribute(ROLE, role);
