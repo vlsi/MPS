@@ -4,6 +4,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.patterns.*;
 import jetbrains.mps.annotations.*;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.EqualUtil;
 
 import java.util.*;
 
@@ -34,8 +35,11 @@ public class MatchingUtil {//todo in progress
     }
   }
 
+
+
   private static boolean matchNodes(SNode node, SNode patternNode, Substitution substitution) {
 
+    //-- whole node bindings
     AttributeConcept patternAttribute = patternNode.getAttribute();
     if (patternAttribute instanceof WildcardPattern) {
       return true;
@@ -48,10 +52,27 @@ public class MatchingUtil {//todo in progress
       bindNodeWithVar(substitution, (PatternVariableDeclaration) patternAttribute, node);
       return true;
     }
-    if (node.getClass() != patternNode.getClass()) return false;
-    Set<String> childRoles = node.getChildRoles();
 
-    //matching children
+    //-- matching class
+    if (node.getClass() != patternNode.getClass()) return false;
+
+    //-- matching properties
+    Map<String, String> properties = node.getProperties();
+    Map<String, String> patternProperties = patternNode.getProperties();
+    for (String propertyName : patternProperties.keySet()) {
+      if (!properties.containsKey(propertyName)) return false;
+      //if property pattern var
+      PropertyAttributeConcept propertyAttribute = patternNode.getPropertyAttribute(propertyName);
+      if (propertyAttribute instanceof PropertyPatternVariableDeclaration) {
+        String propertyValue = node.getProperty(propertyName);
+        bindPropertyWithVar(substitution, (PropertyPatternVariableDeclaration) propertyAttribute, propertyValue);
+      } else {//else match values
+        if (!EqualUtil.equals(patternNode.getProperty(propertyName), node.getProperty(propertyName))) return false;
+      }
+    }
+
+    //-- matching children
+    Set<String> childRoles = patternNode.getChildRoles();
     for (String role : childRoles) {
       List<SNode> children = node.getChildren(role);
       List<SNode> patternChildren = patternNode.getChildren(role);
@@ -68,7 +89,7 @@ public class MatchingUtil {//todo in progress
         if (!matchListOfNodes(children, listPatternChild, substitution)) return false;
       } else {
 
-        //else just matching children
+        //else just match children
         Iterator<SNode> childrenIterator = children.iterator();
         for (SNode patternChild : patternChildren) {
           if (!childrenIterator.hasNext()) return false;
@@ -77,6 +98,9 @@ public class MatchingUtil {//todo in progress
         }
       }
     }
+
+    //-- todo match references
+
     return true;
   }
 
@@ -100,6 +124,14 @@ public class MatchingUtil {//todo in progress
       substitution.bindNodeWithVar(patternVar, node);
     } else {
       substitution.addNodeToListBindedWithVar(patternVar, node);
+    }
+  }
+
+  private static void bindPropertyWithVar(Substitution substitution, PropertyPatternVariableDeclaration propertyPatternVar, String propertyValue) {
+    if (getCurrentListPattern() == null) {
+      substitution.bindPropertyWithVar(propertyPatternVar, propertyValue);
+    } else {
+      substitution.addPropertyToListBindedWithVar(propertyPatternVar, propertyValue);
     }
   }
 }
