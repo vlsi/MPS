@@ -13,6 +13,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.awt.*;
+import java.net.MalformedURLException;
 
 /**
  * Created by IntelliJ IDEA.
@@ -26,38 +27,9 @@ public class HelpUtil {
   private static Logger LOG = Logger.getLogger(HelpUtil.class);
 
   static void showInBrowserWindow(String helpPath) {
-    JFrame helpFrame = new JFrame("JetBrains MPS Help");
-    helpFrame.setSize(800, 600);
-    helpFrame.setLocation(50, 50);
-
-    File helpFile = new File(helpPath);
     try {
-      BufferedReader fileReader = new BufferedReader(new FileReader(helpFile));
-      StringBuffer buffer = new StringBuffer();
-      while (fileReader.ready()) {
-        buffer.append((char) fileReader.read());
-      }
-      JEditorPane browser = new JEditorPane();
-      browser.setBorder(null);
-      browser.setEditable(false);
-      browser.setEditorKit(new HTMLEditorKit());
-      browser.setBackground(Color.white);
-      browser.setBorder(new EtchedBorder(1));
-      browser.setPage(helpFile.toURL());
-
-      browser.addHyperlinkListener(new HyperlinkListener() {
-        public void hyperlinkUpdate(HyperlinkEvent e) {
-          if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
-            BrowserUtil.launchBrowser(e.getURL().toString());
-          }
-        }
-      });
-
-      Container contentPane = helpFrame.getContentPane();
-      contentPane.setLayout(new BorderLayout());
-      contentPane.add(new JScrollPane(browser), BorderLayout.CENTER);
-      helpFrame.setVisible(true);
-    } catch (IOException e) {
+      BrowserUtil.launchBrowser(new File(helpPath).toURL().toString());
+    } catch (MalformedURLException e) {
       LOG.error(e);
     }
   }
