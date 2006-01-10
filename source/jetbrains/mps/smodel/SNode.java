@@ -365,7 +365,12 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   public Map<String, String> getProperties() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
-    return myProperties;
+    return new HashMap<String, String>(myProperties);
+  }
+
+  public Set<String> getPropertyNames() {
+    NodeReadAccessCaster.fireNodeReadAccessed(this);
+    return new HashSet<String>(myProperties.keySet());
   }
 
   public boolean getBooleanProperty(String propertyName) {
