@@ -74,7 +74,7 @@ public class Substitution {
     return myPropVarsToProperties.get(var);
   }
 
-  public List<String> getNodesListBindedWithVar(PropertyPatternVariableDeclaration var) {
+  public List<String> getPropertiesListBindedWithVar(PropertyPatternVariableDeclaration var) {
     List<String> properties = myListPropVarsToProperties.get(var);
     if (properties == null) {
       return new ArrayList<String>();
