@@ -10,10 +10,8 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.logging.Logger;
 
 import java.awt.event.KeyEvent;
-import java.util.*;
 import java.lang.reflect.Field;
-import java.io.File;
-import java.io.IOException;
+import java.util.*;
 
 public class EditorCellKeyMap {
   private static final Logger LOG = Logger.getLogger(EditorCellKeyMap.class);

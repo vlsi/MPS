@@ -1149,6 +1149,13 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107135704075">
     <property name="name" value="CodeBlockParameter" />
     <link role="extends" targetNodeId="1068431790191" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1136921691939">
+      <link role="conceptLinkDeclaration" targetNodeId="34.1105994381173" />
+      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLinkDeclaration" id="1136921691940">
+        <property name="name" value="CodeBlockParameterTypeLink" />
+        <link role="targetType" targetNodeId="1068431790189" />
+      </node>
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1121268908095">
       <link role="conceptPropertyDeclaration" targetNodeId="34.1107214854626" />
     </node>
