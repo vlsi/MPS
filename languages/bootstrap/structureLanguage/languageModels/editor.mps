@@ -206,8 +206,8 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1083175577171">
         <property name="drawBorder" value="false" />
         <property name="vertical" value="true" />
-        <property name="gridLayout" value="true" />
         <property name="selectable" value="false" />
+        <property name="gridLayout" value="true" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1083175632064">
           <property name="drawBorder" value="false" />
           <property name="vertical" value="false" />
@@ -428,10 +428,6 @@
           <property name="name" value="conceptPropertyDeclaration" />
           <property name="queryId" value="ConceptPropertyDeclarations" />
         </node>
-        <node role="substituteQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1119979591235">
-          <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1119979591236" />
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1119979591237" />
-        </node>
       </node>
     </node>
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1119980075004">
@@ -441,10 +437,6 @@
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1119980075006">
           <property name="name" value="conceptLinkDeclaration" />
           <property name="queryId" value="ConceptLinkDeclarations" />
-        </node>
-        <node role="substituteQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1119980075007">
-          <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1119980075008" />
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1119980075009" />
         </node>
       </node>
     </node>
@@ -534,8 +526,8 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1105739255644">
             <property name="vertical" value="true" />
-            <property name="selectable" value="false" />
             <property name="gridLayout" value="true" />
+            <property name="selectable" value="false" />
             <link role="linkDeclaration" targetNodeId="1.1071489727084" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1105739255645">
@@ -549,8 +541,8 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1105726767734">
             <property name="vertical" value="true" />
-            <property name="gridLayout" value="true" />
             <property name="selectable" value="false" />
+            <property name="gridLayout" value="true" />
             <link role="linkDeclaration" targetNodeId="1.1071489727083" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1105726767735">
@@ -566,8 +558,8 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1105726873349">
             <property name="drawBorder" value="false" />
             <property name="vertical" value="true" />
-            <property name="selectable" value="false" />
             <property name="gridLayout" value="true" />
+            <property name="selectable" value="false" />
             <link role="linkDeclaration" targetNodeId="1.1105725339613" />
             <link role="elementActionSet" targetNodeId="1119979591232" />
             <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1119979772535">
@@ -589,8 +581,8 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1105739239079">
             <property name="drawBorder" value="false" />
             <property name="vertical" value="true" />
-            <property name="gridLayout" value="true" />
             <property name="selectable" value="false" />
+            <property name="gridLayout" value="true" />
             <link role="linkDeclaration" targetNodeId="1.1105736949336" />
             <link role="elementActionSet" targetNodeId="1119980075004" />
             <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1119980098182">
@@ -662,10 +654,6 @@
           <property name="queryId" value="IntegerConceptPropertyDeclarations" />
           <property name="textProviderId" value="Name" />
         </node>
-        <node role="substituteQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1105734363618">
-          <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1105734363619" />
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1105734363620" />
-        </node>
       </node>
     </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1105727243426">
@@ -713,10 +701,6 @@
           <property name="queryId" value="BooleanConceptPropertyDeclarations" />
           <property name="textProviderId" value="Name" />
         </node>
-        <node role="substituteQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1105734307940">
-          <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1105734307941" />
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1105734307942" />
-        </node>
       </node>
     </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1105727453183">
@@ -752,10 +736,6 @@
           <property name="name" value="stringConceptPropertyDeclaration" />
           <property name="queryId" value="StringConceptPropertyDeclarations" />
           <property name="textProviderId" value="Name" />
-        </node>
-        <node role="substituteQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1105733336520">
-          <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1105733336521" />
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1105733336522" />
         </node>
       </node>
     </node>
@@ -860,10 +840,6 @@
           <property name="queryId" value="ReferenceConceptLinkDeclarations" />
           <property name="textProviderId" value="Name" />
         </node>
-        <node role="substituteQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1105751427403">
-          <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1105751427404" />
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1105751427405" />
-        </node>
       </node>
     </node>
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1105982553830">
@@ -874,10 +850,6 @@
           <property name="name" value="linkTarget" />
           <property name="queryId" value="ReferenceConceptLinkTargets" />
           <property name="textProviderId" value="Name" />
-        </node>
-        <node role="substituteQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1105982621382">
-          <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1105982621383" />
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1105982621384" />
         </node>
       </node>
     </node>
@@ -931,10 +903,6 @@
           <property name="name" value="linkDeclaration" />
           <property name="queryId" value="AggregationConceptLinkDeclarations" />
         </node>
-        <node role="substituteQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1105751369051">
-          <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1105751369052" />
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1105751369053" />
-        </node>
       </node>
     </node>
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1105986630674">
@@ -945,10 +913,6 @@
           <property name="handlerId" value="AggregationConceptLink_InstantiateLinkTarget" />
           <property name="name" value="linkTarget" />
           <property name="queryId" value="AggregationConceptLinkTargets" />
-        </node>
-        <node role="substituteQueryMethod" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1105986697101">
-          <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1105986697102" />
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1105986697103" />
         </node>
       </node>
     </node>
