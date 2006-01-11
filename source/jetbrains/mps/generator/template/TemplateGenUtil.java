@@ -292,10 +292,15 @@ public class TemplateGenUtil {
   }
 
   private static INodeBuilder getContextNodeBuilderForWeavingingRule(SNode sourceNode, WeavingRule rule, ITemplateGenerator generator) {
-    String aspectId = rule.getContextProviderAspectId();
-    String methodName = "templateWeavingRule_Context_" + aspectId;
-    Object[] args = new Object[]{sourceNode, generator};
-    return (INodeBuilder) QueryMethod.invoke(methodName, args, rule.getModel());
+    try {
+      String aspectId = rule.getContextProviderAspectId();
+      String methodName = "templateWeavingRule_Context_" + aspectId;
+      Object[] args = new Object[]{sourceNode, generator};
+      return (INodeBuilder) QueryMethod.invoke(methodName, args, rule.getModel());
+    } catch (Throwable t) {
+      generator.showErrorMessage(sourceNode, null, rule, t.getClass().getName());
+      throw new RuntimeException(t);
+    }
   }
 
   public static List<INodeBuilder> createNodeBuildersForTemplateNode(SNode parentSourceNode, SNode templateNode, String mappingName, ITemplateGenerator generator) {
