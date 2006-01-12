@@ -1126,13 +1126,6 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107134345596">
     <property name="name" value="CodeBlock" />
     <link role="extends" targetNodeId="1137021947720" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1107134797946">
-      <property name="sourceCardinality" value="1" />
-      <property name="targetCardinality" value="1" />
-      <property name="role" value="statement" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1068580123157" />
-    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1107390221649">
       <link role="conceptLinkDeclaration" targetNodeId="34.1105994358094" />
       <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptPropertyDeclaration" id="1107390231158">

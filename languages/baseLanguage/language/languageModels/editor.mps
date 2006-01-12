@@ -3120,29 +3120,15 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1134761046781">
-    <link role="conceptDeclaration" targetNodeId="1.1107134345596" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1137017749166">
-      <property name="drawBorder" value="false" />
-      <property name="vertical" value="false" />
-      <property name="selectable" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1137017749167">
-        <property name="drawBorder" value="false" />
-        <property name="nullText" value="&lt;no statement&gt;" />
-        <link role="linkDeclaration" targetNodeId="1.1107134797946" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1137022751011">
-        <property name="text" value="or new body:" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1137022763779">
-        <link role="linkDeclaration" targetNodeId="1.1137022507850" />
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1137022694554">
     <link role="conceptDeclaration" targetNodeId="1.1137021947720" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1137022703759">
-      <link role="linkDeclaration" targetNodeId="1.1137022507850" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1137096602628">
+      <property name="drawBorder" value="false" />
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1137096604522">
+        <property name="drawBorder" value="false" />
+        <link role="linkDeclaration" targetNodeId="1.1137022507850" />
+      </node>
     </node>
   </node>
 </model>
