@@ -1141,12 +1141,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107135704075">
-    <property name="name" value="CodeBlockParameter" />
+    <property name="name" value="ConceptFunctionParameter" />
     <link role="extends" targetNodeId="1068431790191" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1136921691939">
       <link role="conceptLinkDeclaration" targetNodeId="34.1105994381173" />
       <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLinkDeclaration" id="1136921691940">
-        <property name="name" value="CodeBlockParameterTypeLink" />
+        <property name="name" value="ConceptFunctionParameterType" />
         <link role="targetType" targetNodeId="1068431790189" />
       </node>
     </node>
