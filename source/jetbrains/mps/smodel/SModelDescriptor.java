@@ -61,4 +61,6 @@ public interface SModelDescriptor {
   boolean isNotEditable();
 
   boolean hasSModelCommandListener(SModelCommandListener listener);
+
+  boolean isRemote();
 }

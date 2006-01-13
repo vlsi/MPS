@@ -356,4 +356,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     return myModelUID.hashCode();
   }
 
+  public boolean isRemote() {
+    return false;
+  }
 }
