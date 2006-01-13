@@ -2,8 +2,8 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.ide.ProjectFrame;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -14,8 +14,6 @@ import java.awt.*;
  * @author Kostik
  */
 public class UIEditorComponent extends AbstractEditorComponent {
-  private EditorContext myEditorContext;
-  private SNode mySemanticNode;
   private InspectorEditorComponent myInspector;
 
   public UIEditorComponent(IOperationContext operationContext, InspectorEditorComponent inspector) {
@@ -36,25 +34,19 @@ public class UIEditorComponent extends AbstractEditorComponent {
   }
 
   public void editNode(SNode semanticNode) {
-    mySemanticNode = semanticNode;
-    myEditorContext = new EditorContext(this, semanticNode.getModel(), getOperationContext());
-    rebuildEditorContent();
-  }
-
-  public EditorContext getEditorContext() {
-    return myEditorContext;
+    super.editNode(semanticNode);
   }
 
   public EditorCell createRootCell(List<SModelEvent> events) {
-    if (mySemanticNode == null) {
+    if (getNode() == null) {
       return EditorCell_Constant.create(new EditorContext(this, null, null), null, "<NO NODE>", true);
     }
 
 
-//    if (mySemanticNode.isDeleted()) {
-//      return EditorCell_Constant.create(getEditorContext(), mySemanticNode, "<no editor info>", true);
+//    if (mySNode.isDeleted()) {
+//      return EditorCell_Constant.create(getEditorContext(), mySNode, "<no editor info>", true);
 //    }
-    return myEditorContext.createRootCell(mySemanticNode, events);
+    return myEditorContext.createRootCell(getNode(), events);
   }
 
   public EditorCell createRootCell() {
@@ -64,4 +56,5 @@ public class UIEditorComponent extends AbstractEditorComponent {
   public InspectorEditorComponent getInspector() {
     return myInspector;
   }
+
 }

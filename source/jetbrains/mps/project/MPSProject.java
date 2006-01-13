@@ -34,8 +34,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   private File myProjectFile;
   private ProjectDescriptor myProjectDescriptor;
 
-  private List<Solution> mySolutions;
-  private List<Language> myLanguages;
+  private List<Solution> mySolutions = new ArrayList<Solution>();
+  private List<Language> myLanguages = new ArrayList<Language>();
 
   private File myWorkspaceFile;
 

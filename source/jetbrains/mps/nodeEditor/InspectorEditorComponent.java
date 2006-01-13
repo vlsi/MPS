@@ -15,8 +15,6 @@ import jetbrains.mps.ide.ProjectFrame;
 import java.util.List;
 
 public class InspectorEditorComponent extends AbstractEditorComponent {
-  private EditorContext myEditorContext;
-  private SNodeProxy myNodeProxy;
 
   public InspectorEditorComponent() {
     super(null);
@@ -24,13 +22,6 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
     myNodeProxy = new SNodeProxy((SNode) null);
     reinitEditor();
     rebuildEditorContent();
-  }
-
-  public SNode getNode() {
-    if (myNodeProxy != null) {
-      return myNodeProxy.getNode();
-    }
-    return null;
   }
 
   private void reinitEditor() {
@@ -44,6 +35,9 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
   protected void updateCellExplorerIfNeeded() {
   }
 
+  public void editNode(SNode semanticNode, IOperationContext operationContext) {
+    inspectNode(semanticNode, operationContext);
+  }
 
   public void inspectNode(SNode node, IOperationContext context) {
     if (getNode() == node) {
@@ -60,10 +54,6 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
     reinitEditor();
     rebuildEditorContent();
     repaint();
-  }
-
-  public EditorContext getEditorContext() {
-    return myEditorContext;
   }
 
   public EditorCell createRootCell(List<SModelEvent> events) {

@@ -74,7 +74,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private IOperationContext myOperationContext;
 
   private MessagesGutter myMessagesGutter = new MessagesGutter(this);
-  private boolean myIsDirtyLayout = false;
+  protected SNodeProxy myNodeProxy;
+  protected EditorContext myEditorContext;
 
 
   public AbstractEditorComponent(IOperationContext operationContext) {
@@ -307,6 +308,33 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     ToolTipManager.sharedInstance().registerComponent(this);
   }
 
+  public SNode getNode() {
+     if (myNodeProxy != null) {
+       return myNodeProxy.getNode();
+     }
+     return null;
+   }
+
+   public SNodeProxy getSNodeProxy() {
+     return myNodeProxy;
+   }
+
+  public void editNode(SNode semanticNode, IOperationContext operationContext) {
+    if (operationContext == null) {
+      LOG.errorWithTrace("Opening editor with null context");
+    }
+    setOperationContext(operationContext);
+    editNode(semanticNode);
+  }
+
+  protected void editNode(SNode semanticNode) {
+    IOperationContext operationContext = getOperationContext();
+    myNodeProxy = new SNodeProxy(semanticNode);
+    myEditorContext = new EditorContext(this, semanticNode.getModel(), operationContext);
+    rebuildEditorContent();
+  }
+
+
   public MessagesGutter getMessagesGutter() {
     return myMessagesGutter;
   }
@@ -421,7 +449,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return myContainer;
   }
 
-  public abstract EditorContext getEditorContext();
+  public EditorContext getEditorContext() {
+    return myEditorContext;
+  }
 
   public abstract EditorCell createRootCell();
 
