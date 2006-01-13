@@ -30,14 +30,7 @@ public class ModelActions {
     final ConceptDeclaration targetConcept = linkDeclaration.getTarget();
 
     // "default" substitute actions
-    List<ConceptDeclaration> targetConcepts = SModelUtil.allConceptDeclarations(sourceNode.getModel(), scope, new Condition<ConceptDeclaration>() {
-      public boolean met(ConceptDeclaration node) {
-        if (!SModelUtil.hasConceptProperty(node, ABSTRACT, scope) && !SModelUtil.hasConceptProperty(node, DONT_SUBSTITUTE_BY_DEFAULT, scope)) {
-          return SModelUtil.isAssignableConcept(targetConcept, node);
-        }
-        return false;
-      }
-    });
+    List<ConceptDeclaration> targetConcepts = getDefaultSubstitutableConcepts(sourceNode, scope, targetConcept);
 
     List<INodeSubstituteAction> defaultActions = new LinkedList<INodeSubstituteAction>();
     for (ConceptDeclaration conceptDeclaration : targetConcepts) {
@@ -89,6 +82,17 @@ public class ModelActions {
       resultActions.addAll(addActions);
     }
     return resultActions;
+  }
+
+  public static List<ConceptDeclaration> getDefaultSubstitutableConcepts(SNode sourceNode, final IScope scope, final ConceptDeclaration targetConcept) {
+    return SModelUtil.allConceptDeclarations(sourceNode.getModel(), scope, new Condition<ConceptDeclaration>() {
+      public boolean met(ConceptDeclaration node) {
+        if (!SModelUtil.hasConceptProperty(node, ABSTRACT, scope) && !SModelUtil.hasConceptProperty(node, DONT_SUBSTITUTE_BY_DEFAULT, scope)) {
+          return SModelUtil.isAssignableConcept(targetConcept, node);
+        }
+        return false;
+      }
+    });
   }
 
   private static List<INodeSubstituteAction> filterActions(List<INodeSubstituteAction> actions, List<NodeSubstituteActionsBuilder> substituteActionsBuilders, NodeSubstituteActionsBuilder excludeBuilder, IScope scope) {

@@ -104,8 +104,14 @@ public class NameUtil {
 
 
   public static String nodeConceptFQName(SNode node) {
-    String conceptName = NameUtil.shortNameFromLongName(node.getClass().getName());
-    String languageNamespace = NameUtil.namespaceFromLongName(node.getClass().getName());
+    Class<? extends SNode> cls = node.getClass();
+    return conceptFQNameByClass(cls);
+  }
+
+  public static String conceptFQNameByClass(Class<? extends SNode> cls) {
+    String className = cls.getName();
+    String conceptName = NameUtil.shortNameFromLongName(className);
+    String languageNamespace = NameUtil.namespaceFromLongName(className);
     return languageNamespace + ".structure." + conceptName;
   }
 }
