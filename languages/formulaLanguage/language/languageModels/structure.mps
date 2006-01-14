@@ -152,14 +152,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1112037354393">
-    <property name="name" value="LessThenOperation" />
+    <property name="name" value="LessThanOperation" />
     <link role="extends" targetNodeId="1111784562907" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1112037395239">
       <property name="value" value="&lt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1106346943066" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1112037402538">
-      <property name="value" value="less then operation" />
+      <property name="value" value="less than operation" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1107214812281" />
     </node>
   </node>
@@ -176,14 +176,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1112406908640">
-    <property name="name" value="GreaterThenOperation" />
+    <property name="name" value="GreaterThanOperation" />
     <link role="extends" targetNodeId="1111784562907" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1112406920845">
       <property name="value" value="&gt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1106346943066" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1112406916657">
-      <property name="value" value="greater then operation" />
+      <property name="value" value="greater than operation" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1107214812281" />
     </node>
   </node>

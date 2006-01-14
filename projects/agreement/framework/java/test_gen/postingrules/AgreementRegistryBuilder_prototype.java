@@ -50,7 +50,7 @@ public class AgreementRegistryBuilder_prototype {
     result.setValue("CAP", new Quantity(50, Unit.KWH), MfDate.PAST);
     result.setValue("CAP", new Quantity(60, Unit.KWH), new MfDate(1999, 12, 1));
     result.addPostingRule(EventType.USAGE,
-            new PostingRule_Formula(AccountType.BASE_USAGE, true, new IfFunction<Money>(new QuantityGreaterThenOperation(new UsageQuantity(), new ValueQuantity("CAP")), new MoneyAdapter(new MultiplyOperation(new ValueDouble("BASE_RATE"), new UsageDouble()), Currency.USD), new MoneyAdapter(new MultiplyOperation(new ValueDouble("REDUCED_RATE"), new UsageDouble()), Currency.USD))),
+            new PostingRule_Formula(AccountType.BASE_USAGE, true, new IfFunction<Money>(new QuantityGreaterThanOperation(new UsageQuantity(), new ValueQuantity("CAP")), new MoneyAdapter(new MultiplyOperation(new ValueDouble("BASE_RATE"), new UsageDouble()), Currency.USD), new MoneyAdapter(new MultiplyOperation(new ValueDouble("REDUCED_RATE"), new UsageDouble()), Currency.USD))),
             new MfDate(1999, 10, 1));
     result.addPostingRule(EventType.SERVICE_CALL,
             new PostingRule_Formula(AccountType.SERVICE, true, new MoneyConstant(10.0, Currency.USD)),

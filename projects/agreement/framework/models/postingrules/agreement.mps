@@ -159,7 +159,7 @@
                 <link role="eventVariable" targetNodeId="1.1112316685513" />
               </node>
             </node>
-            <node role="logicalTest" type="jetbrains.mps.formulaLanguage.GreaterThenOperation" id="1112717731865">
+            <node role="logicalTest" type="jetbrains.mps.formulaLanguage.GreaterThanOperation" id="1112717731865">
               <node role="leftOperand" type="agreementLanguage.EventVariableReference" id="1112717731270">
                 <link role="eventVariable" targetNodeId="1.1112316685513" />
               </node>

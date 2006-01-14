@@ -10,11 +10,11 @@ import mf.Quantity;
  * Time: 8:45:17 PM
  * To change this template use File | Settings | File Templates.
  */
-public class QuantityGreaterThenOperation <T extends Quantity> implements Function <Boolean> {
+public class QuantityGreaterThanOperation <T extends Quantity> implements Function <Boolean> {
   private Function<T> myLeftOperand;
   private Function<T> myRightOperand;
 
-  public QuantityGreaterThenOperation(Function<T> leftOperand, Function<T> rightOperand) {
+  public QuantityGreaterThanOperation(Function<T> leftOperand, Function<T> rightOperand) {
     myLeftOperand = leftOperand;
     myRightOperand = rightOperand;
   }
