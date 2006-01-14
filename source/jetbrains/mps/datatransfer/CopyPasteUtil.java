@@ -1,7 +1,6 @@
 package jetbrains.mps.datatransfer;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
@@ -163,45 +162,21 @@ public class CopyPasteUtil {
       SNode oldSourceNode = sourceReference.getSourceNode();
       SNode newSourceNode = sourceNodesToNewNodes.get(oldSourceNode);
 
-      if (!sourceReference.isExternal()) {
-        SNode oldTargetNode = sourceReference.getTargetNode();
-        SNode newTargetNode = sourceNodesToNewNodes.get(oldTargetNode);
+      SNode oldTargetNode = sourceReference.getTargetNode();
+      SNode newTargetNode = sourceNodesToNewNodes.get(oldTargetNode);
 
-        if (newTargetNode != null) {//if our reference points inside our node's subtree
-
-          newSourceNode.addSemanticReference(SReference.newInstance(sourceReference.getRole(), newSourceNode, newTargetNode));
-
-        } else {//otherwise it points out of our node's subtree
-
-          SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, oldTargetNode);
-          if (oldTargetNode == null) {//if we copy a reference which is not resolved yet
-            newReference.setResolveInfo(sourceReference.getResolveInfo());
-            newReference.setTargetClassResolveInfo(sourceReference.getTargetClassResolveInfo());
-          } else {//we copy resolved reference
-            Resolver.setResolveInfo(newReference);
-
-            if (newReference.getResolveInfo() == null) {//reference is not resolvable
-              String extResolveInfo = null;
-              if (newReference.getSourceNode().getModel().isExternallyResolvable()) {
-                extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(newReference.getTargetNode());
-              }
-              if (extResolveInfo != null) {
-                newReference = new SReference(newReference.getRole(), newReference.getSourceNode(), null, extResolveInfo, newReference.getTargetModelUID());
-              } else {
-                newReference = new SReference(newReference.getRole(), newReference.getSourceNode(), newReference.getTargetNodeId(), null, newReference.getTargetModelUID());
-              }
-            }
-
-          }
-          newSourceNode.addSemanticReference(newReference);
-
+      if (newTargetNode != null) {//if our reference points inside our node's subtree
+        newSourceNode.addSemanticReference(SReference.newInstance(sourceReference.getRole(), newSourceNode, newTargetNode));
+      } else {//otherwise it points out of our node's subtree
+        SReference newReference;
+        if (!sourceReference.isExternal()) {
+          newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, oldTargetNode);
+          SReference.setResolveInfoByOldReference(sourceReference, newReference);
+        }  else  {
+          newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, sourceReference);
         }
-
-      } else  {
-        SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, sourceReference);
         newSourceNode.addSemanticReference(newReference);
       }
-
     }
   }
 
@@ -216,7 +191,6 @@ public class CopyPasteUtil {
       if (newTargetNode != null) {//if our reference points inside our node's subtree
         newSourceNode.addSemanticReference(SReference.newInstance(sourceReference.getRole(), newSourceNode, newTargetNode));
       } else {//otherwise it points out of our node's subtree
-
         //internal resolve info has a higher priority than target node id here
         SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, sourceReference, true);
 
@@ -224,7 +198,6 @@ public class CopyPasteUtil {
           referencesRequireResolve.add(newReference);
         }
         newSourceNode.addSemanticReference(newReference);
-
       }
 
     }

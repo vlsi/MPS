@@ -4,6 +4,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.resolve.Resolver;
 
 /**
  * User: Sergey Dmitriev
@@ -258,6 +259,15 @@ public class SReference {
     } else if (errorState == GetTargetNodeErrorState.CANT_RESOLVE_BY_ERI) {
       LOG.error("\nCouldn't resolve reference " + myExtResolveInfo + " from " + getSourceNode().getDebugText());
       LOG.error("The target model " + myTargetModelUID + " doesn't contain node with ERI=" + myExtResolveInfo);
+    }
+  }
+
+  public static void setResolveInfoByOldReference(SReference sourceReference, SReference newReference) {
+    if (sourceReference.getTargetNode() == null) {//if we copy a reference which is not resolved yet
+      newReference.setResolveInfo(sourceReference.getResolveInfo());
+      newReference.setTargetClassResolveInfo(sourceReference.getTargetClassResolveInfo());
+    } else {//we copy resolved reference
+      Resolver.setResolveInfo(newReference);
     }
   }
 
