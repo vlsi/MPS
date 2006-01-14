@@ -213,13 +213,19 @@ public class SReference {
 
   //reference created by template reference
   public static SReference newInstance(String role, SNode sourceNode, SReference templateRef) {
+    return newInstance(role, sourceNode, templateRef, false);
+  }
+
+  public static SReference newInstance(String role, SNode sourceNode, SReference templateRef, boolean preferResolveInfo) {
     return newInstance(role, sourceNode,
-            templateRef.getTargetNodeId(),
+            preferResolveInfo ? null : templateRef.getTargetNodeId(),
             templateRef.getExtResolveInfo(),
             templateRef.getTargetModelUID(),
             templateRef.getResolveInfo(),
             templateRef.getTargetClassResolveInfo());
   }
+
+
 
   //reference created by specifying all info
   public static SReference newInstance(String role, SNode sourceNode, String targetNodeId, String extResolveInfo,

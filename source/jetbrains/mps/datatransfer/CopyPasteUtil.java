@@ -97,12 +97,13 @@ public class CopyPasteUtil {
     }
     HashSet<SModelUID> necessaryImports = new HashSet<SModelUID>();
     HashSet<String> necessaryLanguages = new HashSet<String>();
-    processImportsAndLanguages(necessaryImports, necessaryLanguages, sourceNodesToNewNodes.keySet(), allReferences);
-    processReferencesIn(sourceNodesToNewNodes, allReferences);
     SModel fakeModel = copyModelProperties(model);
+    processImportsAndLanguages(necessaryImports, necessaryLanguages, sourceNodesToNewNodes.keySet(), allReferences);
     for (SNode copiedNode : result) {
       copiedNode.changeModel(fakeModel);
     }
+    processReferencesIn(sourceNodesToNewNodes, allReferences);
+
     model.setLoading(false);
     return new PasteNodeData(result, null, fakeModel, necessaryLanguages, necessaryImports);
   }
@@ -111,7 +112,7 @@ public class CopyPasteUtil {
     if (sourceNodes.isEmpty()) return new PasteNodeData(new ArrayList<SNode>(), null, null, null, null);
     List<SNode> result = new ArrayList<SNode>();
     model.setLoading(true);
-    Set<SReference> pointingOutReferences = new HashSet<SReference>();
+    Set<SReference> referencesRequireResolve = new HashSet<SReference>();
     Map<SNode, SNode> sourceNodesToNewNodes = new HashMap<SNode, SNode>();
     Set<SReference> allReferences = new HashSet<SReference>();
     SModel originalModel = sourceNodes.get(0).getModel();
@@ -127,14 +128,14 @@ public class CopyPasteUtil {
     for (SNode nodeToPaste : result) {
       nodeToPaste.changeModel(model);
     }
-    processReferencesOut(sourceNodesToNewNodes, allReferences, pointingOutReferences);
+    processReferencesOut(sourceNodesToNewNodes, allReferences, referencesRequireResolve);
     for (SNode nodeToPaste : result) {
       nodeToPaste.changeModel(model);
     }
     model.setLoading(false);
     originalModel.setLoading(false);
     fakeModel.setLoading(false);
-    return new PasteNodeData(result, pointingOutReferences, modelProperties, necessaryLanguages, necessaryImports);
+    return new PasteNodeData(result, referencesRequireResolve, modelProperties, necessaryLanguages, necessaryImports);
   }
 
   private static SNode copyNode_internal(SNode sourceNode, Map<SNode,SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
@@ -205,28 +206,25 @@ public class CopyPasteUtil {
   }
 
 
-  private static void processReferencesOut(Map<SNode,SNode> sourceNodesToNewNodes, Set<SReference> allReferences, Set<SReference> pointingOutReferences) {
+  private static void processReferencesOut(Map<SNode,SNode> sourceNodesToNewNodes, Set<SReference> allReferences, Set<SReference> referencesRequireResolve) {
     for (SReference sourceReference : allReferences) {
       SNode oldSourceNode = sourceReference.getSourceNode();
       SNode newSourceNode = sourceNodesToNewNodes.get(oldSourceNode);
 
-      if (!sourceReference.isExternal()) {
-        SNode oldTargetNode = sourceReference.getTargetNode();
-        SNode newTargetNode = sourceNodesToNewNodes.get(oldTargetNode);
-         if (newTargetNode != null) {//if our reference points inside our node's subtree
-          newSourceNode.addSemanticReference(SReference.newInstance(sourceReference.getRole(), newSourceNode, newTargetNode));
-        } else {//otherwise it points out of our node's subtree
-           //the difference between In and Out is here!
+      SNode oldTargetNode = sourceReference.getTargetNode();
+      SNode newTargetNode = sourceNodesToNewNodes.get(oldTargetNode);
+      if (newTargetNode != null) {//if our reference points inside our node's subtree
+        newSourceNode.addSemanticReference(SReference.newInstance(sourceReference.getRole(), newSourceNode, newTargetNode));
+      } else {//otherwise it points out of our node's subtree
 
-          String oldTargetNodeId = sourceReference.getTargetNodeId();
-          SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, oldTargetNodeId, null, newSourceNode.getModel().getUID() ,sourceReference.getResolveInfo(), sourceReference.getTargetClassResolveInfo());
-          newSourceNode.addSemanticReference(newReference);
-          pointingOutReferences.add(newReference);
+        //internal resolve info has a higher priority than target node id here
+        SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, sourceReference, true);
+
+        if (newReference.getResolveInfo() != null) {
+          referencesRequireResolve.add(newReference);
         }
-
-      } else {
-        SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, sourceReference);
         newSourceNode.addSemanticReference(newReference);
+
       }
 
     }

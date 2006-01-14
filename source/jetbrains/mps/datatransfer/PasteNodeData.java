@@ -19,14 +19,14 @@ import java.util.HashSet;
  */
 public class PasteNodeData {
   private List<SNode> nodes;
-  private Set<SReference> outgoingReferences;
+  private Set<SReference> myRequireResolveReferences;
   private Set<String> myNecessaryLanguages;
   private Set<SModelUID> myNecessaryImports;
   private SModel myModelProperties;
 
   public PasteNodeData(List<SNode> nodes, Set<SReference> references, SModel modelProperties, Set<String> necessaryLanguages, Set<SModelUID> necessaryImports) {
     this.nodes = nodes;
-    this.outgoingReferences = references;
+    this.myRequireResolveReferences = references;
     myNecessaryLanguages = necessaryLanguages;
     myNecessaryImports = necessaryImports;
     myModelProperties = modelProperties;
@@ -36,8 +36,8 @@ public class PasteNodeData {
     return nodes;
   }
 
-  public Set<SReference> getOutgoingReferences() {
-    return outgoingReferences;
+  public Set<SReference> getRequireResolveReferences() {
+    return myRequireResolveReferences;
   }
 
   public Set<String> getNecessaryLanguages() {

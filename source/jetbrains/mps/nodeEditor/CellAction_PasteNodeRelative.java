@@ -55,7 +55,7 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
 
     PasteNodeData pasteNodeData = CopyPasteUtil.getPasteNodeDataFromClipboard(anchorNode.getModel());
     List<SNode> pasteNodes = pasteNodeData.getNodes();
-    Set<SReference> outgoingReferences = pasteNodeData.getOutgoingReferences();
+    Set<SReference> requireResolveReferences = pasteNodeData.getRequireResolveReferences();
 
 
     PasteNodeUtil.pasteRelative(anchorNode, pasteNodes.get(0), myPasteBefore, operationContext);
@@ -66,6 +66,6 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
       anchorNode = node;
     }
 
-    Resolver.resolveReferences(outgoingReferences, operationContext);
+    Resolver.resolveReferences(requireResolveReferences, operationContext);
   }
 }

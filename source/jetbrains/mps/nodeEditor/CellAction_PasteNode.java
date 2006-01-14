@@ -52,7 +52,7 @@ public class CellAction_PasteNode extends EditorCellAction {
     if (!CopyPasteUtil.addImportsAndLanguagesToModel(model, modelProperties, necessaryLanguages, necessaryImports, context.getOperationContext())) return;
 
     List<SNode> pasteNodes = pasteNodeData.getNodes();
-    Set<SReference> outgoingReferences = pasteNodeData.getOutgoingReferences();
+    Set<SReference> requireResolveReferences = pasteNodeData.getRequireResolveReferences();
 
     SNode anchor = pasteNodes.get(0);
     IOperationContext operationContext = context.getOperationContext();
@@ -64,6 +64,6 @@ public class CellAction_PasteNode extends EditorCellAction {
       anchor = node;
     }
 
-    Resolver.resolveReferences(outgoingReferences, operationContext);
+    Resolver.resolveReferences(requireResolveReferences, operationContext);
   }
 }
