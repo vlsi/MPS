@@ -22,7 +22,7 @@ public class SReference {
   protected String myResolveInfo;
   protected String myTargetClassResolveInfo;
 
-  public SReference(String role, SNode sourceNode, String targetNodeId, String extResolveInfo, SModelUID targetModelUID) {
+  private SReference(String role, SNode sourceNode, String targetNodeId, String extResolveInfo, SModelUID targetModelUID) {
     this(role, sourceNode, targetModelUID, extResolveInfo);
     myTargetNodeId = targetNodeId;
     myResolveInfo = null;
@@ -33,7 +33,7 @@ public class SReference {
     }
   }
 
-  protected SReference(String role, SNode sourceNode, String resolveInfo, String targetClassResolveInfo, String extResolveInfo, SModelUID targetModelUID) {
+  private SReference(String role, SNode sourceNode, String resolveInfo, String targetClassResolveInfo, String extResolveInfo, SModelUID targetModelUID) {
     this(role, sourceNode, targetModelUID, extResolveInfo);
     myResolveInfo = resolveInfo;
     myTargetClassResolveInfo = targetClassResolveInfo;
