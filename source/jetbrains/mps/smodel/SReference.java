@@ -218,11 +218,13 @@ public class SReference {
   }
 
   public static SReference newInstance(String role, SNode sourceNode, SReference templateRef, boolean preferResolveInfo) {
+    String resolveInfo = templateRef.getResolveInfo();
+    boolean willNotPassTargetId = resolveInfo != null && preferResolveInfo;
     return newInstance(role, sourceNode,
-            preferResolveInfo ? null : templateRef.getTargetNodeId(),
+            willNotPassTargetId ? null : templateRef.getTargetNodeId(),
             templateRef.getExtResolveInfo(),
             templateRef.getTargetModelUID(),
-            templateRef.getResolveInfo(),
+            resolveInfo,
             templateRef.getTargetClassResolveInfo());
   }
 
