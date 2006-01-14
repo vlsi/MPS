@@ -169,14 +169,13 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     return targetLanguages;
   }
 
-  public static List<Language> getPossibleTargetLanguages(SModel sourceModel, IScope scope) {
+  public static List<Language> getPossibleTargetLanguages(SModel sourceModel, IScope sourceScope) {
     List<Language> targetLanguages = new LinkedList<Language>();
-    List<Language> languages = sourceModel.getLanguages(scope);
+    List<Language> languages = sourceModel.getLanguages(sourceScope);
     for (Language language : languages) {
       List<Generator> generators = language.getGenerators();
       for (Generator generator : generators) {
-        String targetLanguageName = generator.getTargetLanguageName();
-        Language targetLanguage = scope.getLanguage(targetLanguageName);
+        Language targetLanguage = generator.getTargetLanguage();
         if (targetLanguage != null && !targetLanguages.contains(targetLanguage)) {
           targetLanguages.add(targetLanguage);
         }

@@ -68,12 +68,6 @@ public class Generator extends AbstractModule {
     return null;
   }
 
-//  public SModelUID getTemplatesModelUID() {
-//    Model templatesModel = myGeneratorDescriptor.getTemplatesModel();
-//    if (templatesModel == null || templatesModel.getName() == null) return null;
-//    return SModelUID.fromString(templatesModel.getName());
-//  }
-
   public String getGeneratorClass() {
     return myGeneratorDescriptor.getGeneratorClass();
   }
