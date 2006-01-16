@@ -99,7 +99,20 @@ public class MatchingUtil {//todo in progress
       }
     }
 
-    //-- todo match references
+    //-- matching references
+    Set<String> referenceRoles = patternNode.getReferenceRoles();
+    for (String role : referenceRoles) {
+      SNode target = node.getReferent(role);
+
+      //if this role has a link pattern var
+      LinkAttributeConcept linkAttribute = patternNode.getLinkAttribute(role);
+      if (linkAttribute instanceof LinkPatternVariableDeclaration) {
+        bindReferenceTargetWithVar(substitution, (LinkPatternVariableDeclaration) linkAttribute, target);
+      } else {//if role has just a link
+        SNode patternTarget = patternNode.getReferent(role);
+        if (patternTarget != target) return false;
+      }
+    }
 
     return true;
   }
@@ -132,6 +145,14 @@ public class MatchingUtil {//todo in progress
       substitution.bindPropertyWithVar(propertyPatternVar, propertyValue);
     } else {
       substitution.addPropertyToListBindedWithVar(propertyPatternVar, propertyValue);
+    }
+  }
+
+  private static void bindReferenceTargetWithVar(Substitution substitution, LinkPatternVariableDeclaration linkPatternVariableDeclaration, SNode target) {
+    if (getCurrentListPattern() == null) {
+      substitution.bindLinkTargetWithVar(linkPatternVariableDeclaration, target);
+    } else {
+      substitution.addLinkTargetToListBindedWithVar(linkPatternVariableDeclaration, target);
     }
   }
 }

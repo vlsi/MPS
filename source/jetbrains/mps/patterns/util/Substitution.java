@@ -21,6 +21,8 @@ public class Substitution {
   private Map<PatternVariableDeclaration, List<SNode>> myListVarsToNodes = new HashMap<PatternVariableDeclaration, List<SNode>>();
   private Map<PropertyPatternVariableDeclaration, String> myPropVarsToProperties = new HashMap<PropertyPatternVariableDeclaration, String>();
   private Map<PropertyPatternVariableDeclaration, List<String>> myListPropVarsToProperties = new HashMap<PropertyPatternVariableDeclaration, List<String>>();
+  private Map<LinkPatternVariableDeclaration, SNode> myLinkVarsToNodes = new HashMap<LinkPatternVariableDeclaration, SNode>();
+  private Map<LinkPatternVariableDeclaration, List<SNode>> myListLinkVarsToNodes = new HashMap<LinkPatternVariableDeclaration, List<SNode>>();
 
 
   public void bindNodeWithVar(PatternVariableDeclaration var, SNode node) {
@@ -80,6 +82,38 @@ public class Substitution {
       return new ArrayList<String>();
     } else {
       return new ArrayList<String>(properties);
+    }
+  }
+
+   //--------- links
+
+   public void bindLinkTargetWithVar(LinkPatternVariableDeclaration var, SNode linkTarget) {
+    SNode oldLinkTarget = myLinkVarsToNodes.get(var);
+    if (oldLinkTarget != null) {
+      LOG.warning("a link target value binded with this pattern var exists already: " + oldLinkTarget);
+    }
+    myLinkVarsToNodes.put(var, linkTarget);
+  }
+
+  public void addLinkTargetToListBindedWithVar(LinkPatternVariableDeclaration var, SNode linkTarget) {
+    List<SNode> linkTargets = myListLinkVarsToNodes.get(var);
+    if (linkTargets == null) {
+      linkTargets = new ArrayList<SNode>();
+      myListLinkVarsToNodes.put(var, linkTargets);
+    }
+    linkTargets.add(linkTarget);
+  }
+
+  public SNode getLinkTargetBindedWithVar(LinkPatternVariableDeclaration var) {
+    return myLinkVarsToNodes.get(var);
+  }
+
+  public List<SNode> getLinkTargetsListBindedWithVar(LinkPatternVariableDeclaration var) {
+    List<SNode> linkTargets = myListLinkVarsToNodes.get(var);
+    if (linkTargets == null) {
+      return new ArrayList<SNode>();
+    } else {
+      return new ArrayList<SNode>(linkTargets);
     }
   }
 
