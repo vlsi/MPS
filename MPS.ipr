@@ -265,81 +265,115 @@
   <component name="libraryTable">
     <library name="XMLRPC">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/xmlrpc-1.2-b1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/xmlrpc/xmlrpc-1.2-b1.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/xmlrpc-1.2-b1-src.zip.zip!/" />
+        <root url="jar://$PROJECT_DIR$/lib/xmlrpc/xmlrpc-1.2-b1-src.zip.zip!/" />
       </SOURCES>
     </library>
     <library name="XStream">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/xstream.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/xstream/xstream.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/xstream-src.zip!/" />
+        <root url="jar://$PROJECT_DIR$/lib/xstream/xstream-src.zip!/" />
       </SOURCES>
     </library>
     <library name="JUnit">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/junit.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/junit/junit.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/junit-src.zip!/" />
+        <root url="jar://$PROJECT_DIR$/lib/junit/junit-src.zip!/" />
       </SOURCES>
     </library>
     <library name="ASM">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/asm.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/asm/asm.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/asm-src.zip!/" />
+        <root url="jar://$PROJECT_DIR$/lib/asm/asm-src.zip!/" />
       </SOURCES>
     </library>
     <library name="JDOM">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/jdom-1.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jdom/jdom-1.0.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/jdom-1.0-src.zip!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jdom/jdom-1.0-src.zip!/" />
       </SOURCES>
     </library>
     <library name="JavaSVN">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/javasvn.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/jsch.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/javasvn/javasvn.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/javasvn/jsch.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/javasvnsrc.zip!/" />
+        <root url="jar://$PROJECT_DIR$/lib/javasvn/javasvnsrc.zip!/" />
       </SOURCES>
     </library>
     <library name="Log4j">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/log4j-1.2.9.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/log4j/log4j-1.2.9.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/log4j-1.2.9-src.zip!/" />
+        <root url="jar://$PROJECT_DIR$/lib/log4j/log4j-1.2.9-src.zip!/" />
       </SOURCES>
     </library>
     <library name="Commons-Email">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/activation.jar!/" />
-        <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/commons-email.jar!/" />
-        <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/imap.jar!/" />
-        <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/mail.jar!/" />
-        <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/mailapi.jar!/" />
-        <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/pop3.jar!/" />
-        <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/smtp.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/commons-email/smtp.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/commons-email/mailapi.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/commons-email/activation.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/commons-email/mail.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/commons-email/imap.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/commons-email/pop3.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/commons-email/commons-email.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="jar://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/lib/commons-email.zip!/" />
+        <root url="jar://$PROJECT_DIR$/lib/commons-email/commons-email.zip!/" />
+      </SOURCES>
+    </library>
+    <library name="Servlet-API">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/servlet-api/servlet-api.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="MyFaces">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/myfaces/commons-beanutils.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/myfaces/commons-codec.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/myfaces/commons-collections.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/myfaces/commons-digester.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/myfaces/commons-el.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/myfaces/commons-fileupload.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/myfaces/commons-lang.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/myfaces/commons-logging.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/myfaces/commons-validator.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/myfaces/jakarta-oro.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/myfaces/jstl.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/myfaces/myfaces-all.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Sitemesh">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/sitemesh/sitemesh.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/sitemesh/sitemesh-src.zip!/" />
       </SOURCES>
     </library>
   </component>
