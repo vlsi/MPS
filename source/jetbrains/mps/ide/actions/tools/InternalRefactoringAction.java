@@ -4,6 +4,10 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptPropertyDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptProperty;
+import jetbrains.mps.logging.Logger;
 
 import java.util.*;
 
@@ -13,8 +17,10 @@ import java.util.*;
 public class InternalRefactoringAction extends MPSAction {
   public static boolean SHOW = false;
 
+  private static final Logger LOG = Logger.getLogger(InternalRefactoringAction.class);
+
   public InternalRefactoringAction() {
-    super("... code block - move statements to concept function body ...");
+    super("... replace property declarations to BaseConcept ...");
   }
 
   public void execute(ActionContext context) {
@@ -58,30 +64,39 @@ public class InternalRefactoringAction extends MPSAction {
    * perform "refactoring"
    */
   private void processModel(SModel model) {
+//    String propertyName = "abstract";
+//    String propertyName = "alias";
+//    String propertyName = "short_description";
+    String propertyName = "dontSubstituteByDefault";
+    ConceptPropertyDeclaration newPropertyDeclaration = null;
+  ConceptDeclaration baseConcept = SModelUtil.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept", GlobalScope.getInstance());
+    Iterator<ConceptPropertyDeclaration> iterator = baseConcept.conceptPropertyDeclarations();
+    while (iterator.hasNext()) {
+      ConceptPropertyDeclaration conceptPropertyDeclaration = iterator.next();
+      if(conceptPropertyDeclaration.getName().equals(propertyName)) {
+        newPropertyDeclaration = conceptPropertyDeclaration;
+        break;
+      }
+    }
+
+    if(newPropertyDeclaration == null) {
+      throw new RuntimeException("Couldn't find new property declaration" + propertyName);
+    }
+    ConceptPropertyDeclaration oldPropertyDeclaration = SModelUtil.findNodeByFQName("jetbrains.mps.bootstrap.structureLanguage.library." + propertyName, ConceptPropertyDeclaration.class, GlobalScope.getInstance());
+    if(oldPropertyDeclaration == null) {
+      throw new RuntimeException("Couldn't find old property declaration" + propertyName);
+    }
+
     Collection<? extends SNode> allNodes = SModelUtil.allNodes(model);
     for (SNode node : allNodes) {
-//      if (node instanceof CodeBlock) {
-//        CodeBlock codeBlock = (CodeBlock) node;
-//        Statement statement = codeBlock.getStatement();
-//        if (statement != null) {
-//          if (statement instanceof BlockStatement) {
-//            System.out.println("--- move statements : replace body with statements");
-//            StatementList statements = ((BlockStatement) statement).getStatements();
-//            statement.removeChild(statements);
-//            statement.delete();
-//            codeBlock.setBody(statements);
-//          } else {
-//            System.out.println("--- move statements : move one statement to body");
-//            StatementList body = codeBlock.getBody();
-//            if (body == null) {
-//              body = new StatementList(codeBlock.getModel());
-//              codeBlock.setBody(body);
-//            }
-//            codeBlock.removeChild(statement);
-//            body.addStatement(statement);
-//          }
-//        }
-//      }
+      if(node instanceof ConceptProperty) {
+                         ConceptProperty conceptProperty = (ConceptProperty) node;
+        ConceptPropertyDeclaration conceptPropertyDeclaration = conceptProperty.getConceptPropertyDeclaration();
+        if(conceptPropertyDeclaration == oldPropertyDeclaration) {
+          conceptProperty.setConceptPropertyDeclaration(newPropertyDeclaration);
+          System.out.println("-- replace in " + SModelUtil.getRootParent(node).getDebugText());
+        }
+      }
     }
   }
 }

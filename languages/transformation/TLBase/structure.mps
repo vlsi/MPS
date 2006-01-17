@@ -25,11 +25,11 @@
     <link role="extends" targetNodeId="2.1078489098625" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1131073118435">
       <property name="value" value="$$" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1131073130984">
       <property name="value" value="node macro" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1107214812281" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1090493180053">
       <property name="name" value="sourceQueryAspectMethodName" />
@@ -67,7 +67,7 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107223377516">
       <property name="value" value="template declaration" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1095416546421">
@@ -153,7 +153,7 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1112731491355">
       <property name="value" value="template switch" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1112731464728">
       <property name="sourceCardinality" value="0..n" />
@@ -174,7 +174,7 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1112731289399">
       <property name="value" value="conditional template" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1112731143975">
       <property name="name" value="conditionAspectId" />
@@ -186,11 +186,11 @@
     <link role="extends" targetNodeId="1087833466690" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1112731678471">
       <property name="value" value="$SWITCH$" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1112731684129">
       <property name="value" value="template switch macro" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1107214812281" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1112731629154">
       <property name="sourceCardinality" value="1" />
@@ -236,11 +236,11 @@
     <link role="extends" targetNodeId="1087833466690" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1114707257324">
       <property name="value" value="$COPY_SRC$" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1114707276513">
       <property name="value" value="copy source node macro" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1107214812281" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1114706920383">
       <property name="name" value="sourceNodeQueryId" />
@@ -252,11 +252,11 @@
     <link role="extends" targetNodeId="1087833466690" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1114729423554">
       <property name="value" value="$COPY_SRCL$" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1114729449322">
       <property name="value" value="copy list of nodes from source" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1107214812281" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1118773211870">
@@ -264,11 +264,11 @@
     <link role="extends" targetNodeId="1087833466690" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1118773211871">
       <property name="value" value="$IF$" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1118773211872">
       <property name="value" value="conditional macro" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1107214812281" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1118773281249">
       <property name="name" value="conditionAspectId" />
@@ -280,11 +280,11 @@
     <link role="extends" targetNodeId="1087833466690" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1118786554308">
       <property name="value" value="$LOOP$" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1118786554309">
       <property name="value" value="loop macro" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1107214812281" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1131073187192">
@@ -292,11 +292,11 @@
     <link role="extends" targetNodeId="1087833466690" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1131073187193">
       <property name="value" value="$MAP_SRC$" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1131073187194">
       <property name="value" value="map source node macro" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1107214812281" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1131073187195">
       <property name="name" value="sourceNodeQueryId" />
@@ -312,11 +312,11 @@
     <link role="extends" targetNodeId="1087833466690" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1133037820495">
       <property name="value" value="$MAP_SRCL$" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1106346943066" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1133037820496">
       <property name="value" value="map nodes form source list macro" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1107214812281" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1133037795224">
       <property name="name" value="sourceNodeMapperId" />

@@ -12,7 +12,7 @@
       <link role="dataType" targetNodeId="1082983041843" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1133922301475">
-      <link role="conceptPropertyDeclaration" targetNodeId="24.1107214854626" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1137473854053" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.PrimitiveDataTypeDeclaration" id="1082983041843">
@@ -26,8 +26,20 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1133920641626">
     <property name="name" value="BaseConcept" />
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptPropertyDeclaration" id="1137473854053">
+      <property name="name" value="abstract" />
+    </node>
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptPropertyDeclaration" id="1137473891462">
+      <property name="name" value="alias" />
+    </node>
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptPropertyDeclaration" id="1137473914776">
+      <property name="name" value="short_description" />
+    </node>
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptPropertyDeclaration" id="1137473994950">
+      <property name="name" value="dontSubstituteByDefault" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1133922314101">
-      <link role="conceptPropertyDeclaration" targetNodeId="24.1107214854626" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1137473854053" />
     </node>
   </node>
 </model>

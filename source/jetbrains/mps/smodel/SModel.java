@@ -107,12 +107,12 @@ public class SModel implements Iterable<SNode> {
     fireRootAddedEvent(rootNode);
   }
 
-  public void deleteRoot(SNode semanticNode) {
-    if (myRoots.contains(semanticNode)) {
-      String id = semanticNode.getId();
-      myRoots.remove(semanticNode);
-      if (!isLoading()) UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(semanticNode, id, true));
-      fireRootDeletedEvent(semanticNode);
+  public void deleteRoot(SNode node) {
+    if (myRoots.contains(node)) {
+      String id = node.getId();
+      myRoots.remove(node);
+      if (!isLoading()) UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(node, id, true));
+      fireRootDeletedEvent(node);
     }
   }
 

@@ -77,7 +77,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1111792355423">
     <property name="name" value="TemporalProperty" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1111792502243">
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1107214854626" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1111792372299">
       <property name="sourceCardinality" value="1" />
@@ -98,11 +98,11 @@
     <property name="name" value="Date" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1116446059360">
       <property name="value" value="date" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1106346943066" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1116446067362">
       <property name="value" value="exect date" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1107214812281" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1111792409129">
       <property name="name" value="year" />
@@ -267,11 +267,11 @@
     <link role="extends" targetNodeId="1111792389581" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1116445771455">
       <property name="value" value="PAST" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1106346943066" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1116445797582">
       <property name="value" value="past time" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1107214812281" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1116445809270">
@@ -279,11 +279,11 @@
     <link role="extends" targetNodeId="1111792389581" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1116445829319">
       <property name="value" value="FUTURE" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1106346943066" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1116445835337">
       <property name="value" value="future time" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1107214812281" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
   </node>
 </model>

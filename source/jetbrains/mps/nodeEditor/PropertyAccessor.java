@@ -14,7 +14,7 @@ public class PropertyAccessor implements ModelAccessor {
   private boolean myReadOnly;
   private boolean myAllowEmptyText;
   private PropertyDeclaration myPropertyDeclaration;
- 
+
   public PropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, EditorContext editorContext) {
     myNodeProxy = new SNodeProxy(node);
     myPropertyName = propertyName;
@@ -23,7 +23,7 @@ public class PropertyAccessor implements ModelAccessor {
     myPropertyDeclaration = SModelUtil.getPropertyDeclaration(node, propertyName, editorContext.getOperationContext().getScope());
   }
 
-   public PropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, IOperationContext context) {
+  public PropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, IOperationContext context) {
     myNodeProxy = new SNodeProxy(node);
     myPropertyName = propertyName;
     myReadOnly = readOnly || node.getModel().isNotEditable();
@@ -80,7 +80,7 @@ public class PropertyAccessor implements ModelAccessor {
 
   @Hack
   private boolean isInvalidEmptyText(String text) {
-    return !myAllowEmptyText && text == null;
+    return !myAllowEmptyText && (text == null || text.length() == 0);
   }
 
   private String fromInternal(String value) {
