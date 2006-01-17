@@ -16,6 +16,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1111784312737">
     <property name="name" value="Expression" />
+    <link role="extends" targetNodeId="2.1133920641626" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1111784356367">
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473854053" />
     </node>

@@ -28,9 +28,6 @@ public class SReference {
     myResolveInfo = null;
     myTargetClassResolveInfo = null;
     LOG.assertLog(targetModelUID != null, "targetModelUID is NULL");
-    if (sourceNode != SNodeProxy.getOurSourceNode() && targetNodeId == null && ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)){
-      LOG.errorWithTrace("reference is empty! role: \"" + role + "\" in " + sourceNode.getDebugText());
-    }
   }
 
   private SReference(String role, SNode sourceNode, String resolveInfo, String targetClassResolveInfo, String extResolveInfo, SModelUID targetModelUID) {
@@ -39,9 +36,6 @@ public class SReference {
     myTargetClassResolveInfo = targetClassResolveInfo;
     myTargetNodeId = null;
     LOG.assertLog(targetModelUID != null, "targetModelUID is NULL");
-    if (sourceNode != SNodeProxy.getOurSourceNode() && resolveInfo == null && ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)){
-      LOG.errorWithTrace("reference is empty! role: \"" + role + "\" in " + sourceNode.getDebugText());
-    }
   }
 
   private SReference(String role, SNode sourceNode, SModelUID targetModelUID, String extResolveInfo) {

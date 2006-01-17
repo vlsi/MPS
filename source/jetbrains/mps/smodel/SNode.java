@@ -117,6 +117,9 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     for (SReference ref : getReferences()) {
       result.add(ref.getRole());
     }
+    for (String role : myLinkAttributes.keySet()) {
+      result.add(role);
+    }
     return result;
   }
 
@@ -370,7 +373,9 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   public Set<String> getPropertyNames() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
-    return new HashSet<String>(myProperties.keySet());
+    Set<String> result = new HashSet<String>(myProperties.keySet());
+    result.addAll(myPropertyAttributes.keySet());
+    return result;
   }
 
   public boolean getBooleanProperty(String propertyName) {

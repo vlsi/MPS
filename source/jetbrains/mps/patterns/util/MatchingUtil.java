@@ -57,10 +57,9 @@ public class MatchingUtil {//todo in progress
     if (node.getClass() != patternNode.getClass()) return false;
 
     //-- matching properties
-    Map<String, String> properties = node.getProperties();
-    Map<String, String> patternProperties = patternNode.getProperties();
-    for (String propertyName : patternProperties.keySet()) {
-      if (!properties.containsKey(propertyName)) return false;
+    Set<String> propertyNames = node.getPropertyNames();
+    for (String propertyName : patternNode.getPropertyNames()) {
+      if (!propertyNames.contains(propertyName)) return false;
       //if property pattern var
       PropertyAttributeConcept propertyAttribute = patternNode.getPropertyAttribute(propertyName);
       if (propertyAttribute instanceof PropertyPatternVariableDeclaration) {
@@ -126,6 +125,7 @@ public class MatchingUtil {//todo in progress
       boolean matchesNow = matchNodes(node, patternNode, substitution);
       stillMatches = stillMatches && matchesNow;
       if (!stillMatches) break;
+      substitution.addNodeToListBindedWithVar(currentListPattern, node);
     }
     ListPattern poppedListPattern = ourCurrentListPatterns.pop();
     LOG.assertLog(poppedListPattern == currentListPattern);
