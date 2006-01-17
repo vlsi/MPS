@@ -19,7 +19,7 @@ import jetbrains.mps.annotations.PropertyAttributeConcept;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class PropertyPatternVariableDeclaration_Editor extends DefaultNodeEditor {
+public class LinkPatternVariableDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
@@ -32,7 +32,7 @@ public class PropertyPatternVariableDeclaration_Editor extends DefaultNodeEditor
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.addEditorCell(this.createVarNameCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1136720096759");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1137418661903");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -46,10 +46,10 @@ public class PropertyPatternVariableDeclaration_Editor extends DefaultNodeEditor
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.setFontType(MPSFonts.BOLD_ITALIC);
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.setFontType(MPSFonts.BOLD);
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
     editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, "varName"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1136720096760");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1137418665045");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
