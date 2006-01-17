@@ -1126,6 +1126,9 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107134345596">
     <property name="name" value="CodeBlock" />
     <link role="extends" targetNodeId="1137021947720" />
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptPropertyDeclaration" id="1137530462369">
+      <property name="name" value="recurrent" />
+    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1107390221649">
       <link role="conceptLinkDeclaration" targetNodeId="34.1105994358094" />
       <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptPropertyDeclaration" id="1107390231158">
