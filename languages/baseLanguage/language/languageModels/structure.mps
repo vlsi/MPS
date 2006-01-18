@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.structure">
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
+  <language namespace="jetbrains.mps.core" />
   <maxImportIndex value="37" />
   <import index="4" modelUID="jetbrains.mps.core.structure" />
   <import index="34" modelUID="jetbrains.mps.bootstrap.structureLanguage.library" />
@@ -1070,12 +1071,9 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1106155080112">
     <property name="name" value="FeatureCompositionDeclaration" />
     <link role="extends" targetNodeId="1068390468198" />
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1135277262793">
-      <link role="conceptLinkDeclaration" targetNodeId="34.1105994381173" />
-      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLinkDeclaration" id="1135277563615">
-        <property name="name" value="DefaultFeatureLink" />
-        <link role="targetType" targetNodeId="37.1071489090640" />
-      </node>
+    <node role="conceptLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLinkDeclaration" id="1137543155214">
+      <property name="name" value="defaultFeature" />
+      <link role="targetType" targetNodeId="4.1078489098625" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1106178123235">
       <property name="sourceCardinality" value="0..n" />
@@ -1087,12 +1085,13 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1106176536146">
     <property name="name" value="Feature" />
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1107800091059">
-      <link role="conceptLinkDeclaration" targetNodeId="34.1105994381173" />
-      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLinkDeclaration" id="1107800097919">
-        <property name="name" value="FeatureInterfaceLink" />
-        <link role="targetType" targetNodeId="1107796713796" />
-      </node>
+    <node role="conceptLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLinkDeclaration" id="1137544910793">
+      <property name="name" value="featureInterface" />
+      <link role="targetType" targetNodeId="1107796713796" />
+    </node>
+    <node role="conceptLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLinkDeclaration" id="1137547655928">
+      <property name="name" value="featureConstructor" />
+      <link role="targetType" targetNodeId="37.1071489090640" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1106250402230">
@@ -1129,25 +1128,16 @@
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptPropertyDeclaration" id="1137530462369">
       <property name="name" value="recurrent" />
     </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1107390221649">
-      <link role="conceptLinkDeclaration" targetNodeId="34.1105994358094" />
-      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptPropertyDeclaration" id="1107390231158">
-        <property name="name" value="recurrent" />
-      </node>
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107135704075">
     <property name="name" value="ConceptFunctionParameter" />
     <link role="extends" targetNodeId="1068431790191" />
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1136921691939">
-      <link role="conceptLinkDeclaration" targetNodeId="34.1105994381173" />
-      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLinkDeclaration" id="1136921691940">
-        <property name="name" value="ConceptFunctionParameterType" />
-        <link role="targetType" targetNodeId="1068431790189" />
-      </node>
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1121268908095">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
+    </node>
+    <node role="conceptLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLinkDeclaration" id="1137545963098">
+      <property name="name" value="conceptFunctionParameterType" />
+      <link role="targetType" targetNodeId="1068431790189" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107382435476">
@@ -1378,13 +1368,6 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1137021947720">
     <property name="name" value="ConceptFunction" />
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1137024022382">
-      <link role="conceptLinkDeclaration" targetNodeId="34.1105994381173" />
-      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLinkDeclaration" id="1137024022383">
-        <property name="name" value="ConceptFunctionReturnType" />
-        <link role="targetType" targetNodeId="1068431790189" />
-      </node>
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1137022507850">
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="1" />
@@ -1394,6 +1377,14 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1137024031337">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
+    </node>
+    <node role="conceptLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLinkDeclaration" id="1137546998352">
+      <property name="name" value="conceptFunctionParameter" />
+      <link role="targetType" targetNodeId="37.1071489090640" />
+    </node>
+    <node role="conceptLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLinkDeclaration" id="1137545148427">
+      <property name="name" value="conceptFunctionReturnType" />
+      <link role="targetType" targetNodeId="1068431790189" />
     </node>
   </node>
 </model>

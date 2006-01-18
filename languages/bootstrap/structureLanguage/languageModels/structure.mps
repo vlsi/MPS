@@ -53,6 +53,13 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1105725006687" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1137532086877">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="targetCardinality" value="1" />
+      <property name="role" value="conceptLinkDeclaration" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1105736576531" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1071489288298">
     <property name="name" value="LinkDeclaration" />
@@ -290,6 +297,9 @@
     <property name="rootable" value="false" />
     <property name="name" value="ConceptLinkDeclaration" />
     <link role="extends" targetNodeId="1.1078489098625" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1137532397763">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1105736621938">
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
@@ -341,18 +351,26 @@
       <property name="targetCardinality" value="1" />
       <property name="role" value="target" />
       <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1.1078489098625" />
+      <link role="target" targetNodeId="1.1133920641626" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1105741535888">
     <property name="rootable" value="false" />
     <property name="name" value="AggregationConceptLinkDeclaration" />
     <link role="extends" targetNodeId="1105736576531" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1137532980164">
+      <property name="value" value="aggregation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1105741578420">
     <property name="rootable" value="false" />
     <property name="name" value="ReferenceConceptLinkDeclaration" />
     <link role="extends" targetNodeId="1105736576531" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1137533021041">
+      <property name="value" value="reference" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
   </node>
 </model>
 
