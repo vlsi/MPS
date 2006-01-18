@@ -84,7 +84,7 @@ public class EditorContext {
           CellInfo cellInfo = memento.cellInfo;
           EditorCell cellToSelect = myNodeEditorComponent.findNodeCell(cellInfo.getSNode(), cellInfo.cellId, cellInfo.cellNumber);
           if (cellToSelect == null) cellToSelect = myNodeEditorComponent.findNodeCell(cellInfo.getSNode(), cellInfo.cellId);
-          myNodeEditorComponent.setSelection(cellToSelect);
+          myNodeEditorComponent.changeSelection(cellToSelect);
           if (cellToSelect != null) {
             cellToSelect.setCaretX(memento.caretX.intValue());
           } else {

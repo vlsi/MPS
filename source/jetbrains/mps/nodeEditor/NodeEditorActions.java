@@ -1,11 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil;
-import jetbrains.mps.annotations.PropertyAttributeConcept;
-import jetbrains.mps.annotations.LinkAttributeConcept;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.comments.PropertyComment;
 import jetbrains.mps.comments.Comment;
 import jetbrains.mps.comments.LinkComment;
@@ -52,7 +48,7 @@ public class NodeEditorActions {
       nodeEditorComponent.clearSelectionStack();
       EditorCell selection = nodeEditorComponent.getSelectedCell();
       EditorCell target = findTarget(selection);
-      nodeEditorComponent.setSelection(target);
+      nodeEditorComponent.changeSelection(target);
       if (selection instanceof EditorCell_Punctuation && target instanceof EditorCell_Label) {
         TextLine textLine = ((EditorCell_Label) target).getTextLine();
         int textLength = textLine.getText().length();
@@ -111,7 +107,7 @@ public class NodeEditorActions {
     public void execute(EditorContext context) {
       context.getNodeEditorComponent().clearSelectionStack();
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      context.getNodeEditorComponent().setSelection(findTarget(selection));
+      context.getNodeEditorComponent().changeSelection(findTarget(selection));
     }
 
     private EditorCell findTarget(EditorCell cell) {
@@ -135,7 +131,7 @@ public class NodeEditorActions {
     public void execute(EditorContext context) {
       context.getNodeEditorComponent().clearSelectionStack();
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      context.getNodeEditorComponent().setSelection(findTarget(selection));
+      context.getNodeEditorComponent().changeSelection(findTarget(selection));
     }
 
     private EditorCell findTarget(EditorCell cell) {
@@ -165,7 +161,7 @@ public class NodeEditorActions {
         textLine.moveCaret(0 - textLine.getCaretPosition(), false);
         context.getNodeEditorComponent().resetLastCaretX();
       }
-      context.getNodeEditorComponent().setSelection(target);
+      context.getNodeEditorComponent().changeSelection(target);
     }
 
     private EditorCell findTarget(EditorCell cell) {
@@ -190,7 +186,7 @@ public class NodeEditorActions {
         textLine.moveCaret(textLine.getText().length() - textLine.getCaretPosition(), false);
         context.getNodeEditorComponent().resetLastCaretX();
       }
-      context.getNodeEditorComponent().setSelection(target);
+      context.getNodeEditorComponent().changeSelection(target);
     }
 
     private EditorCell findTarget(EditorCell cell) {
@@ -210,7 +206,7 @@ public class NodeEditorActions {
       context.getNodeEditorComponent().clearSelectionStack();
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
       EditorCell target = findTarget(selection);
-      context.getNodeEditorComponent().setSelection(target);
+      context.getNodeEditorComponent().changeSelection(target);
       if (target instanceof  EditorCell_Punctuation) {
         ((EditorCell_Label)target).getTextLine().setCaretPosition(1);
       } else
@@ -267,7 +263,7 @@ public class NodeEditorActions {
         context.getNodeEditorComponent().saveLastCaretX(caretX);
         EditorCell target = findTarget(selection, caretX);
         target.setCaretX(caretX);
-        context.getNodeEditorComponent().setSelection(target, false);
+        context.getNodeEditorComponent().changeSelection(target, false);
       }
 
       private EditorCell findTarget(EditorCell cell, int caretX) {
@@ -289,7 +285,7 @@ public class NodeEditorActions {
       context.getNodeEditorComponent().saveLastCaretX(caretX);
       EditorCell target = findTarget(selection, caretX);
       target.setCaretX(caretX);
-      context.getNodeEditorComponent().setSelection(target, false);
+      context.getNodeEditorComponent().changeSelection(target, false);
     }
 
     private EditorCell findTarget(EditorCell cell, int caretX) {
@@ -326,7 +322,7 @@ public class NodeEditorActions {
     public void execute(EditorContext context) {
       context.getNodeEditorComponent().clearSelectionStack();
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      context.getNodeEditorComponent().setSelection(context.getNodeEditorComponent().findNextSelectableCell(selection));
+      context.getNodeEditorComponent().changeSelection(context.getNodeEditorComponent().findNextSelectableCell(selection));
     }
   }
 
@@ -339,7 +335,7 @@ public class NodeEditorActions {
     public void execute(EditorContext context) {
       context.getNodeEditorComponent().clearSelectionStack();
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      context.getNodeEditorComponent().setSelection(context.getNodeEditorComponent().findPrevSelectableCell(selection));
+      context.getNodeEditorComponent().changeSelection(context.getNodeEditorComponent().findPrevSelectableCell(selection));
     }
   }
 
@@ -358,10 +354,10 @@ public class NodeEditorActions {
     EditorCell target = editor.findNearestCell(caretX, newY);
     if (target == null) {
       target = isDown ? editor.findLastSelectableCell() : editor.findFirstSelectableCell();
-      editor.setSelection(target);
+      editor.changeSelection(target);
     } else {
       target.setCaretX(caretX);
-      editor.setSelection(target);
+      editor.changeSelection(target);
     }
   }
 
@@ -397,7 +393,7 @@ public class NodeEditorActions {
       context.getNodeEditorComponent().pushSelection(selection);
       EditorCell target = findTarget(selection);
       target.setCaretX(caretX);
-      context.getNodeEditorComponent().setSelection(target);
+      context.getNodeEditorComponent().setSelection(target, true);
     }
 
     private EditorCell findTarget(EditorCell cell) {
@@ -418,7 +414,7 @@ public class NodeEditorActions {
     }
 
     public void execute(EditorContext context) {
-      context.getNodeEditorComponent().setSelection(context.getNodeEditorComponent().popSelection());
+      context.getNodeEditorComponent().setSelection(context.getNodeEditorComponent().popSelection(), true);
     }
   }
 

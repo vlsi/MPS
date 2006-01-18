@@ -137,7 +137,7 @@ public class CellExplorerView extends DefaultTool {
     }
 
     private void showCell() {
-      myIde.getEditorsPane().getCurrentEditor().setSelection(myCell);
+      myIde.getEditorsPane().getCurrentEditor().changeSelection(myCell);
     }
 
     public void doubleClick() {
