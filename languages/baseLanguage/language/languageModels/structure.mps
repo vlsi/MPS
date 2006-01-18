@@ -48,6 +48,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068431790191">
     <property name="name" value="Expression" />
+    <link role="extends" targetNodeId="4.1133920641626" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1107216504832">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
     </node>
@@ -1368,6 +1369,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1137021947720">
     <property name="name" value="ConceptFunction" />
+    <link role="extends" targetNodeId="4.1133920641626" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1137022507850">
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="1" />
