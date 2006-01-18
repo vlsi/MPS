@@ -288,6 +288,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             EditorCell firstSelectableLeaf = ((EditorCell_Collection) rootCell).findFirstSelectableLeaf();
             if (firstSelectableLeaf != null) {
               setSelection(firstSelectableLeaf);
+              repaint();
               return;
             }
           }
@@ -295,9 +296,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             setSelection(rootCell);
           }
         }
+        repaint();
       }
 
       public void focusLost(FocusEvent e) {
+        repaint();
         if (myNodeSubstituteChooser.getWindow() != null &&
                 (myNodeSubstituteChooser.getWindow().isAncestorOf(e.getOppositeComponent()) || myNodeSubstituteChooser.getWindow() == e.getOppositeComponent()))
           return;

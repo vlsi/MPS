@@ -27,8 +27,7 @@ public abstract class AbstractCellLayout implements CellLayout {
   }
 
   public void paintSelection(Graphics g, EditorCell_Collection editorCells, Color c) {
-     g.setColor(c);
-     g.fillRect(editorCells.getX() - 1, editorCells.getY() - 1, editorCells.getWidth() + 2, editorCells.getHeight() + 2);
+    editorCells.paintSelectionAsIfNotCollection(g, c);
   }
 
   public TextBuilder doLayoutText(EditorCell_Collection editorCells) {
