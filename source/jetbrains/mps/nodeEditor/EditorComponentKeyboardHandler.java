@@ -9,6 +9,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.smodel.SNodeProxy;
 
 import java.awt.event.KeyEvent;
 import java.util.List;
@@ -22,7 +23,9 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
   public boolean processKeyPressed(final EditorContext editorContext, final KeyEvent keyEvent) {
     AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
-    if (editorContext.getNodeEditorComponent().isReadOnly() || editor.getRootCell().getSNodeProxy().getModel().isNotEditable()) return false;
+    SNodeProxy sNodeProxy = editor.getRootCell().getSNodeProxy();
+    boolean notEditable = sNodeProxy != null && sNodeProxy.getModel().isNotEditable();
+    if (editorContext.getNodeEditorComponent().isReadOnly() || notEditable) return false;
     EditorCell selectedCell = editor.getSelectedCell();
     // process cell keymaps first
 

@@ -76,6 +76,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private MessagesGutter myMessagesGutter = new MessagesGutter(this);
   protected SNodeProxy myNodeProxy;
   protected EditorContext myEditorContext;
+//  private Color myBackground = Color.white;
 
 
   public AbstractEditorComponent(IOperationContext operationContext) {
@@ -84,6 +85,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public AbstractEditorComponent(IOperationContext operationContext, boolean showErrorsGutter) {
     myOperationContext = operationContext;
+
+    setBackground(Color.white);
 
     setFocusTraversalPolicyProvider(true);
     setFocusCycleRoot(true);
@@ -309,6 +312,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     });
 
     ToolTipManager.sharedInstance().registerComponent(this);
+    CaretBlinker.getInstance().registerEditor(this);
   }
 
   public SNode getNode() {
@@ -1006,7 +1010,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 
 
-    g.setColor(Color.white);
+    g.setColor(getBackground());
     Rectangle bounds = g.getClipBounds();
 
 

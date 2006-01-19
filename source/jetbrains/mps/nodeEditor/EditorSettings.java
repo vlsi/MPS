@@ -7,10 +7,15 @@ import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.SNode;
 
 import javax.swing.*;
+import javax.swing.Timer;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import java.util.*;
 import java.util.List;
 
@@ -48,10 +53,14 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
   }
 
   private class MyPreferencesPage implements IPreferencesPage {
+    private final int SLIDER_RATIO = 10000;
     private JPanel myEditorSettingsPanel = new JPanel(new BorderLayout());
     private JComboBox myFontsComboBox = createFontsComboBox();
     private JComboBox myFontSizesComboBox = createSizeComboBox();
     private JComboBox myTextWidthComboBox = createTextWidthComboBox();
+    private JSlider myBlinkingRateSlider = createBlinkingRateSlider();
+    private final AbstractEditorComponent myBlinkingDemo = createBlinkingDemo();
+    Timer myTimer;
 
     public MyPreferencesPage() {
       JPanel panel = new JPanel(new GridLayout(0, 1));
@@ -62,8 +71,23 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
       panel.add(myFontSizesComboBox);
       panel.add(new JLabel("Text Width : "));
       panel.add(myTextWidthComboBox);
+      panel.add(new JLabel(" "));
+      panel.add(new JLabel("Cursor Blinking Rate : "));
+      panel.add(myBlinkingRateSlider);
+      panel.add(myBlinkingDemo);
+      myBlinkingDemo.setBackground(panel.getBackground());
+
+      ActionListener listener = new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+          myBlinkingDemo.getRootCell().switchCaretVisible();
+          myBlinkingDemo.repaint();
+          myTimer.setDelay(getBlinkingPeriod());
+        }
+      };
+      myTimer = new Timer(CaretBlinker.getInstance().getCaretBlinkingRateTimeMillis(), listener);
 
       myEditorSettingsPanel.add(panel, BorderLayout.NORTH);
+      myTimer.start();
     }
 
     private JComboBox createTextWidthComboBox() {
@@ -108,6 +132,33 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
       return result;
     }
 
+    private JSlider createBlinkingRateSlider() {
+      long value = CaretBlinker.getInstance().getCaretBlinkingRateTimeMillis();
+      int intMin = (int) (SLIDER_RATIO / CaretBlinker.MAX_BLINKING_PERIOD);
+      int intMax = (int) (SLIDER_RATIO / CaretBlinker.MIN_BLINKING_PERIOD);
+      int intValue = (int) (SLIDER_RATIO / value);
+      JSlider slider = new JSlider(intMin, intMax, intValue);
+      return slider;
+    }
+
+    private AbstractEditorComponent createBlinkingDemo() {
+      AbstractEditorComponent result = new AbstractEditorComponent(null) {
+        {
+          myEditorContext = new EditorContext(this, null, null);
+          CaretBlinker.getInstance().unregisterEditor(this);
+          rebuildEditorContent();
+        }
+        public EditorCell createRootCell() {
+          return new EditorCell_Demo(getEditorContext(), "blinking");
+        }
+
+        public EditorCell createRootCell(List<SModelEvent> events) {
+          return createRootCell();
+        }
+      };
+      return result;
+    }
+
     public String getName() {
       return "Editor Settings";
     }
@@ -133,7 +184,46 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
 
       setTextWidth(Integer.parseInt(myTextWidthComboBox.getSelectedItem().toString()));
 
+      int blinkingPeriod = getBlinkingPeriod();
+      CaretBlinker.getInstance().setCaretBlinkingRateTimeMillis(blinkingPeriod);
+
       ReloadUtils.rebuildAllEditors();
+    }
+
+    private int getBlinkingPeriod() {
+      int sliderValue = myBlinkingRateSlider.getValue();
+      int blinkingPeriod = SLIDER_RATIO / sliderValue;
+      return blinkingPeriod;
+    }
+  }
+
+  private class EditorCell_Demo extends EditorCell_Constant {
+    public EditorCell_Demo(EditorContext editorContext, String text) {
+      super(editorContext, null, text, true);
+      this.getRenderedTextLine().setCaretPosition(3);
+      this.setDrawBorder(false);
+    }
+
+    protected void changeText(String text) {
+    }
+
+    public boolean isEditable() {
+      return true;
+    }
+
+    public boolean isSelectable() {
+      return true;
+    }
+
+    public void paintSelection(Graphics g, Color c) {
+      
+    }
+
+    public void paintContent(Graphics g) {
+      TextLine textLine = getRenderedTextLine();
+      textLine.setCaretEnabled(true);
+      boolean toShowCaret = myCaretIsVisible;
+      textLine.paint(g, myX, myY, myWidth, myHeight, isSelected(), toShowCaret);
     }
   }
 }
