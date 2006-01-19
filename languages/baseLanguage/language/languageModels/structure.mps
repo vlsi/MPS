@@ -1086,6 +1086,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1106176536146">
     <property name="name" value="Feature" />
+    <link role="extends" targetNodeId="4.1133920641626" />
     <node role="conceptLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLinkDeclaration" id="1137544910793">
       <property name="name" value="featureInterface" />
       <link role="targetType" targetNodeId="1107796713796" />
