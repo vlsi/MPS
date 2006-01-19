@@ -376,6 +376,15 @@
         <root url="jar://$PROJECT_DIR$/lib/sitemesh/sitemesh-src.zip!/" />
       </SOURCES>
     </library>
+    <library name="JSTL">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/jstl/jsp-api.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jstl/jstl.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jstl/standard.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
   </component>
   <component name="org.tmatesoft.tmate.projectComponent" />
   <component name="uidesigner-configuration">

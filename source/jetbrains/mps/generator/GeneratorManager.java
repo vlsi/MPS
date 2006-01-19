@@ -328,6 +328,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       addProgressMessage(MessageKind.ERROR, t.toString(), progress);
     } finally {
       progress.finish();
+      System.gc();
     }
   }
 
