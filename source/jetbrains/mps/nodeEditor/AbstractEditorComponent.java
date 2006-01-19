@@ -170,9 +170,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     // ----
     myActionMap.put(EditorCellAction.RENDER_TEXT, new CellAction_RenderText());
     // ----
-    myActionMap.put(EditorCellAction.MK_PROPERTY_COMMENT, new NodeEditorActions.MK_PROPERTY_COMMENT());
+/*    myActionMap.put(EditorCellAction.MK_PROPERTY_COMMENT, new NodeEditorActions.MK_PROPERTY_COMMENT());
     myActionMap.put(EditorCellAction.MK_COMMENT, new NodeEditorActions.MK_COMMENT());
-    myActionMap.put(EditorCellAction.MK_LINK_COMMENT, new NodeEditorActions.MK_LINK_COMMENT());
+    myActionMap.put(EditorCellAction.MK_LINK_COMMENT, new NodeEditorActions.MK_LINK_COMMENT());*/
 
     registerNodeAction(new ShowNodeTypeAction());
     registerNodeAction(new FindUsagesNodeAction());
@@ -604,7 +604,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     // ---
 
-    if (keyEvent.getKeyCode() == KeyEvent.VK_F2 && keyEvent.isControlDown()) {
+ /*   if (keyEvent.getKeyCode() == KeyEvent.VK_F2 && keyEvent.isControlDown()) {
       return EditorCellAction.MK_PROPERTY_COMMENT;
     }
 
@@ -614,7 +614,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     
     if (keyEvent.getKeyCode() == KeyEvent.VK_F4 && keyEvent.isControlDown()) {
       return EditorCellAction.MK_LINK_COMMENT;
-    }
+    }*/
 
     // ---
     if (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.getModifiers() == 0) {
@@ -1016,9 +1016,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
     myRootCell.paint(g);
- /*   if (mySelectedCell != null) {
-      mySelectedCell.paint(g);
-    }*/
   }
 
   public Dimension getPreferredSize() {
