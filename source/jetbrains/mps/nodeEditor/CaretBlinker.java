@@ -1,9 +1,12 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.EditorsPane;
-import jetbrains.mps.ide.ProjectFrame;
-import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.components.DefaultExternalizableComponent;
+import jetbrains.mps.components.Externalizable;
+import jetbrains.mps.util.WeakSet;
+
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -12,16 +15,22 @@ import jetbrains.mps.smodel.IOperationContext;
  * Time: 19:01:05
  * To change this template use File | Settings | File Templates.
  */
-public class CaretBlinker {
+public class CaretBlinker extends DefaultExternalizableComponent {
+
+  public static final int MIN_BLINKING_PERIOD = 100; //millis
+  public static final int MAX_BLINKING_PERIOD = 1000;
+  public static final int DEFAULT_BLINKING_PERIOD = 500;
 
   private Thread myThread;
   private IOperationContext myOperationContext;
   private boolean myStarted = false;
-  private int myCursorBlinkingRateMillis = 500;
+  private @Externalizable int myCaretBlinkingRateMillis = -1;
+
+  private final Object REGISTRATION_LOCK = new Object();
+
+  private WeakSet<AbstractEditorComponent> myEditors = new WeakSet<AbstractEditorComponent>();
 
   private static CaretBlinker ourInstance = new CaretBlinker();
-  public static final int MAX_BLINKING_PERIOD = 2000;
-  public static final int MIN_BLINKING_PERIOD = 100;
 
   private CaretBlinker() {
 
@@ -46,34 +55,43 @@ public class CaretBlinker {
   }
 
   public int getCaretBlinkingRateTimeMillis() {
-    return myCursorBlinkingRateMillis;
+    return myCaretBlinkingRateMillis == -1 ? DEFAULT_BLINKING_PERIOD : myCaretBlinkingRateMillis;
   }
 
-  public void setCaretBlinkingRateTimeMillis(int blinkingPeriod) {
-    myCursorBlinkingRateMillis = blinkingPeriod;
+  public void setCaretBlinkingRateTimeMillis(int timeMillis) {
+    myCaretBlinkingRateMillis = timeMillis;
   }
 
-  public void registerEditor(AbstractEditorComponent abstractEditorComponent) {
+  public void registerEditor(AbstractEditorComponent editorComponent) {
+    synchronized(REGISTRATION_LOCK) {
+      myEditors.add(editorComponent);
+    }
   }
 
-  public void unregisterEditor(AbstractEditorComponent abstractEditorComponent) {
+  public void unregisterEditor(AbstractEditorComponent editorComponent) {
+    synchronized(REGISTRATION_LOCK) {
+      myEditors.remove(editorComponent);
+    }
   }
+
 
   private class MyRunnable implements Runnable {
     public void run() {
       while (true) {
-        if (myOperationContext == null) continue;
-        EditorsPane editorsPane = myOperationContext.getComponent(EditorsPane.class);
-        if (editorsPane == null) continue;
-        AbstractEditorComponent editor = editorsPane.getCurrentEditor();
-        if (editor == null || !editor.hasFocus()) continue;
-        EditorCell selectedCell = editor.getSelectedCell();
-        if (selectedCell == null) continue;
-        selectedCell.switchCaretVisible();
-        editor.repaint();
+        synchronized(REGISTRATION_LOCK) {
+          for (AbstractEditorComponent editor : myEditors) {
+            if (editor.hasFocus()) {
+              EditorCell selectedCell = editor.getSelectedCell();
+              if (selectedCell == null) continue;
+              selectedCell.switchCaretVisible();
+              editor.repaint();
+              break;
+            }
+          }
+        }
         try {
           synchronized(this) {
-            wait(myCursorBlinkingRateMillis);
+            wait(getCaretBlinkingRateTimeMillis());
           }
         } catch (InterruptedException e) {}
       }
