@@ -272,7 +272,6 @@
         <property name="drawBorder" value="false" />
         <property name="nullText" value="&lt;no member&gt;" />
         <link role="linkDeclaration" targetNodeId="1.1068581517664" />
-        <link role="actionSet" targetNodeId="1080140075203" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1088425851837">
           <link role="conceptDeclaration" targetNodeId="1.1068431474542" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1088425851838">

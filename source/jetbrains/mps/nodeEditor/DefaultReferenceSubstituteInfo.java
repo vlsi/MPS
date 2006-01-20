@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.DiagnosticUtil;
 import jetbrains.mps.util.NameUtil;
@@ -20,64 +21,70 @@ import java.util.List;
 public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
   private SNode mySourceNode;
   private LinkDeclaration myLinkDeclaration;
-  private LinkDeclaration myGenuineLinkDeclaration;
+  private SNode myCurrentTargetNode;
 
   public DefaultReferenceSubstituteInfo(SNode sourceNode, LinkDeclaration linkDeclaration, EditorContext editorContext) {
     super(editorContext);
-    mySourceNode = sourceNode;
-    myLinkDeclaration = linkDeclaration;
-    myGenuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
-    if (myGenuineLinkDeclaration.getMetaClass() == LinkMetaclass.aggregation) {
+    LinkDeclaration genuineLink = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
+    if (genuineLink.getMetaClass() != LinkMetaclass.reference) {
       throw new RuntimeException("Only reference links are allowed here.");
     }
-    Cardinality sourceCardinality = myGenuineLinkDeclaration.getSourceCardinality();
+    Cardinality sourceCardinality = genuineLink.getSourceCardinality();
     if (!(sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._0_1)) {
       throw new RuntimeException("Only cardinalities 1 or 0..1 are allowed here.");
     }
+
+    mySourceNode = sourceNode;
+    myLinkDeclaration = linkDeclaration;
+    myCurrentTargetNode = sourceNode.getChild(SModelUtil.getGenuineLinkRole(linkDeclaration));
   }
 
   public List<INodeSubstituteItem> createActions() {
-    List<INodeSubstituteItem> list = new LinkedList<INodeSubstituteItem>();
+    List<INodeSubstituteAction> actions = ModelActions.createReferentNodeSubstituteActions(mySourceNode, myCurrentTargetNode, myLinkDeclaration, getOperationContext().getScope());
+    return (List<INodeSubstituteItem>) ((List) actions);
 
-    List<SNode> targetSemanticNodes = createTargetNodesList();
-    for (final SNode targetNode : targetSemanticNodes) {
-      list.add(new AbstractNodeSubstituteItem() {
-        public String getMatchingText(String pattern) {
-          if (targetNode instanceof LinkDeclaration) {
-            return ((LinkDeclaration) targetNode).getRole();
-          }
-          return targetNode.getName();
-        }
+//    List<INodeSubstituteItem> list = new LinkedList<INodeSubstituteItem>();
 
-        public String getDescriptionText(String pattern) {
-          if (targetNode instanceof LinkDeclaration) {
-            SNode containingRoot = targetNode.getContainingRoot();
-            return containingRoot.getName() + " (" + containingRoot.getModel().getUID() + ")";
-          }
-          return targetNode.getModel().getUID().toString();
-        }
+//    List<SNode> targetSemanticNodes = createTargetNodesList();
 
-        public SNode doSubstitute(String pattern) {
-          mySourceNode.setReferent(myGenuineLinkDeclaration.getRole(), targetNode);
-          return null;
-        }
-      });
-    }
+//    for (final SNode targetNode : targetSemanticNodes) {
+//      list.add(new AbstractNodeSubstituteItem() {
+//        public String getMatchingText(String pattern) {
+//          if (targetNode instanceof LinkDeclaration) {
+//            return ((LinkDeclaration) targetNode).getRole();
+//          }
+//          return targetNode.getName();
+//        }
+//
+//        public String getDescriptionText(String pattern) {
+//          if (targetNode instanceof LinkDeclaration) {
+//            SNode containingRoot = targetNode.getContainingRoot();
+//            return containingRoot.getName() + " (" + containingRoot.getModel().getUID() + ")";
+//          }
+//          return targetNode.getModel().getUID().toString();
+//        }
+//
+//        public SNode doSubstitute(String pattern) {
+//          mySourceNode.setReferent(myGenuineLinkDeclaration.getRole(), targetNode);
+//          return null;
+//        }
+//      });
+//    }
 
-    return list;
+//    return list;
   }
 
-  private List<SNode> createTargetNodesList() {
-    final ConceptDeclaration targetConcept = myLinkDeclaration.getTarget();
-    final IScope scope = getEditorContext().getOperationContext().getScope();
-    DiagnosticUtil.assertNodeValid(targetConcept, scope);
-    final boolean searchLinks = NameUtil.nodeFQName(targetConcept).equals("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration");
-    return SModelUtil.allNodesIncludingImported(mySourceNode.getModel(), scope, new Condition<SNode>() {
-      public boolean met(SNode node) {
-        DiagnosticUtil.assertNodeValid(node, scope);
-        if (searchLinks && (node instanceof LinkDeclaration)) return true;
-        return node.getName() != null && SModelUtil.isInstanceOfConcept(node, targetConcept, scope);
-      }
-    });
-  }
+//  private List<SNode> createTargetNodesList() {
+//    final ConceptDeclaration targetConcept = myLinkDeclaration.getTarget();
+//    final IScope scope = getEditorContext().getOperationContext().getScope();
+//    DiagnosticUtil.assertNodeValid(targetConcept, scope);
+//    final boolean searchLinks = NameUtil.nodeFQName(targetConcept).equals("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration");
+//    return SModelUtil.allNodesIncludingImported(mySourceNode.getModel(), scope, new Condition<SNode>() {
+//      public boolean met(SNode node) {
+//        DiagnosticUtil.assertNodeValid(node, scope);
+//        if (searchLinks && (node instanceof LinkDeclaration)) return true;
+//        return node.getName() != null && SModelUtil.isInstanceOfConcept(node, targetConcept, scope);
+//      }
+//    });
+//  }
 }

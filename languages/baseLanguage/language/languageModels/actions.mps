@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.actions">
-  <maxReferenceID value="1" />
   <language namespace="jetbrains.mps.bootstrap.actionsLanguage" />
-  <import referenceID="1" modelUID="jetbrains.mps.baseLanguage.structure" />
+  <maxImportIndex value="1" />
+  <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1115842744505">
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1115842748115">
       <property name="actionsFactoryAspectId" value="Expression" />
@@ -26,6 +26,10 @@
       <property name="actionsFactoryAspectId" value="ParameterDeclaration" />
       <property name="applicableLinkMetaclass" value="aggregation" />
       <link role="applicableConcept" targetNodeId="1.1068498886292" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1137732482036">
+      <property name="actionsFactoryAspectId" value="ClassMember" />
+      <link role="applicableConcept" targetNodeId="1.1068390468200" />
     </node>
   </node>
 </model>
