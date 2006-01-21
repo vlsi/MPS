@@ -13,4 +13,8 @@ import java.util.*;
  */
 public interface ISearchScope {
   List<SNode> getNodes(Condition<SNode> condition);
+
+  List<SNode> getNodes();
+
+  void append(ISearchScope scope);
 }

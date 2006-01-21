@@ -39,6 +39,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1115766267843">
     <property name="name" value="BaseClass" />
+    <link role="extendedClass" extResolveInfo="1.[Classifier]Object" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1115766285313">
       <property name="name" value="baseInterfaceMethod" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1115766285315" />
@@ -76,8 +77,8 @@
               </node>
             </node>
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1137736473149">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.FieldReference" id="1137736450082">
-                <link role="variableDeclaration" targetNodeId="1137736415066" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.FieldReference" id="1137813078871">
+                <link role="variableDeclaration" targetNodeId="1127094836077" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1137736450083" />
               </node>
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.FieldReference" id="1137736510144">

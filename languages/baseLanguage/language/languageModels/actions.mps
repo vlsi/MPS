@@ -31,6 +31,10 @@
       <property name="actionsFactoryAspectId" value="ClassMember" />
       <link role="applicableConcept" targetNodeId="1.1068390468200" />
     </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1137787481349">
+      <property name="actionsFactoryAspectId" value="ClassMember" />
+      <link role="applicableConcept" targetNodeId="1.1068580123165" />
+    </node>
   </node>
 </model>
 
