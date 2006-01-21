@@ -62,6 +62,14 @@
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1115766310400">
     <property name="name" value="AClass" />
     <link role="extendedClass" targetNodeId="1115766267843" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1137820838257">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1137820900216" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1137820838258" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1137820843009">
+        <property name="name" value="ffff" />
+        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1137820843010" />
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1136027151595">
       <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1136027212036" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1136027151611">
@@ -130,6 +138,12 @@
             <property name="name" value="aClass" />
             <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1126142422093">
               <link role="classifier" targetNodeId="1115766310400" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.NewExpression" id="1137820870855">
+              <link role="baseMethodDeclaration" targetNodeId="1137820838257" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1137820997312">
+                <property name="value" value="10" />
+              </node>
             </node>
           </node>
         </node>
@@ -244,6 +258,19 @@
               <node role="classType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1130270744653">
                 <link role="classifier" targetNodeId="1130270238222" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1137817063935">
+          <node role="expression" type="jetbrains.mps.baseLanguage.MethodCall" id="1137817063934">
+            <link role="baseMethodDeclaration" targetNodeId="1137817086064" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1137816820174">
+          <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1137816822865">
+            <link role="baseMethodDeclaration" extResolveInfo="1.static method ([Classifier]Enum).([StaticMethodDeclaration]valueOf((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Class]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object]))" />
+            <node role="classType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1137816822864">
+              <link role="classifier" targetNodeId="1137816471209" />
             </node>
           </node>
         </node>
@@ -426,6 +453,32 @@
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1130270248257" />
     </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.EnumClass" id="1137816471209">
+    <property name="name" value="EnumClass" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1137816490149">
+      <property name="name" value="get" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1137816496918">
+        <link role="classifier" targetNodeId="1137816471209" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1137816490182" />
+    </node>
+    <node role="enumConstant" type="jetbrains.mps.baseLanguage.EnumConstantDeclaration" id="1137816482507">
+      <property name="name" value="aaa" />
+    </node>
+    <node role="enumConstant" type="jetbrains.mps.baseLanguage.EnumConstantDeclaration" id="1137816485867">
+      <property name="name" value="bbb" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.MethodDeclaration" id="1137817029273">
+    <property name="name" value="freeStandingMethod" />
+    <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1137817032307" />
+    <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1137817029478" />
+  </node>
+  <node type="jetbrains.mps.baseLanguage.MethodDeclaration" id="1137817086064">
+    <property name="name" value="freeStandingMethod1" />
+    <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1137817086065" />
+    <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1137817086066" />
   </node>
 </model>
 

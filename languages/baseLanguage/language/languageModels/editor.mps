@@ -1559,11 +1559,10 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1088426839520">
         <property name="drawBorder" value="false" />
         <property name="nullText" value="&lt;no method&gt;" />
-        <link role="actionSet" targetNodeId="1076940714064" />
-        <link role="linkDeclaration" targetNodeId="1.1068499141037" />
         <link role="keyMap" targetNodeId="1081427357000" />
+        <link role="linkDeclaration" targetNodeId="1.1070568331956" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1088426839521">
-          <link role="conceptDeclaration" targetNodeId="1.1068580123132" />
+          <link role="conceptDeclaration" targetNodeId="1.1068390468204" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1088426839522">
             <property name="drawBorder" value="false" />
             <property name="readOnly" value="true" />

@@ -35,6 +35,14 @@
       <property name="actionsFactoryAspectId" value="ClassMember" />
       <link role="applicableConcept" targetNodeId="1.1068580123165" />
     </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1137817247162">
+      <property name="actionsFactoryAspectId" value="FreestandingMethod" />
+      <link role="applicableConcept" targetNodeId="1.1068390468204" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1137819184584">
+      <property name="actionsFactoryAspectId" value="ClassConstructor" />
+      <link role="applicableConcept" targetNodeId="1.1068580123140" />
+    </node>
   </node>
 </model>
 

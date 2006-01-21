@@ -84,7 +84,7 @@ public class ModelActions {
     List<NodeSubstituteActionsBuilder> substituteActionsBuilders = getNodeSubstituteActionBuilders(LinkMetaclass.reference, targetConcept, sourceNode.getModel(), scope);
     if (substituteActionsBuilders.size() == 0) {
       // no substitue actions are specified - create default substitute actions
-      ISearchScope searchScope = GenericSearchScopeFactory.createModelAndImportedModelsScope(sourceNode.getModel(), scope);
+      ISearchScope searchScope = ModelSearchScopeFactory.createModelAndImportedModelsScope(sourceNode.getModel(), scope);
       List<SNode> nodes = searchScope.getNodes(new Condition<SNode>() {
         public boolean met(SNode node) {
           return SModelUtil.isInstanceOfConcept(node, targetConcept, scope);

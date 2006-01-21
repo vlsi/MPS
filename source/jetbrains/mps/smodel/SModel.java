@@ -12,6 +12,7 @@ import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.annotation.ForDebug;
 import jetbrains.mps.annotations.AttributeConcept;
 
@@ -29,7 +30,9 @@ public class SModel implements Iterable<SNode> {
 
   private List<SNode> myRoots = new ArrayList<SNode>();
   private SModelUID myUID = new SModelUID("unnamed", "");
-  private @ForDebug Throwable myStackTrace;
+  private
+  @ForDebug
+  Throwable myStackTrace;
 
   private boolean myDisposed;
   private boolean isLoading;
@@ -95,7 +98,15 @@ public class SModel implements Iterable<SNode> {
     return new ArrayList<SNode>(myRoots);
   }
 
-  public<N extends SNode> List<N> getRoots(Class<N> cls) {
+  public List<SNode> getRoots(Condition<SNode> condition) {
+    List<SNode> list = new LinkedList<SNode>();
+    for (SNode node : myRoots) {
+      if (condition.met(node)) list.add(node);
+    }
+    return list;
+  }
+
+  public <N extends SNode> List<N> getRoots(Class<N> cls) {
     return CollectionUtil.filter(cls, getRoots());
   }
 
@@ -157,11 +168,15 @@ public class SModel implements Iterable<SNode> {
     return isLoading;
   }
 
-  public @ForDebug Throwable getCreationStackTrace() {
+  public
+  @ForDebug
+  Throwable getCreationStackTrace() {
     return myStackTrace;
   }
 
-  public @ForDebug void fillInStackTrace(Throwable t) {
+  public
+  @ForDebug
+  void fillInStackTrace(Throwable t) {
     myStackTrace = t;
   }
 
