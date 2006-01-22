@@ -55,19 +55,10 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteI
   }
 
   public String getMatchingText(String pattern) {
-//    if (myParameterNode instanceof LinkDeclaration) {
-//      return ((LinkDeclaration) myParameterNode).getRole();
-//    }
-//    return myParameterNode.getName();
-    return SNodePresentationUtil.matchingText(myParameterNode, mySourceNode, myLinkDeclaration.getRole(), getScope());
+    return SNodePresentationUtil.matchingText(myParameterNode, mySourceNode, myLinkDeclaration, getScope());
   }
 
   public String getDescriptionText(String pattern) {
-//    if (myParameterNode instanceof LinkDeclaration) {
-//      SNode containingRoot = myParameterNode.getContainingRoot();
-//      return containingRoot.getName() + " (" + containingRoot.getModel().getUID() + ")";
-//    }
-//    return myParameterNode.getModel().getUID().toString();
     return SNodePresentationUtil.descriptionText(myParameterNode, mySourceNode, getScope());
   }
 

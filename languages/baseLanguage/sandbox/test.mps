@@ -93,6 +93,11 @@
             <link role="baseMethodDeclaration" targetNodeId="1115766326104" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1137908251832">
+          <node role="expression" type="jetbrains.mps.baseLanguage.SuperMethodCall" id="1137908251848">
+            <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]Object).([InstanceMethodDeclaration]clone() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object]))" />
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1137820843009">
         <property name="name" value="ffff" />

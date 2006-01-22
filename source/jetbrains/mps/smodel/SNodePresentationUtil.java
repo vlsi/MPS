@@ -2,6 +2,8 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.baseLanguage.*;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.core.NamedConcept;
 import jetbrains.mps.util.NameUtil;
 
@@ -19,40 +21,38 @@ public class SNodePresentationUtil {
     return matchingText(node, referenceContext, null, scope);
   }
 
-  public static String matchingText(SNode node, SNode referenceContext, String referenceRole, IScope scope) {
+  public static String matchingText(SNode node, SNode referenceContext, LinkDeclaration link, IScope scope) {
     if (node == null) {
       return "<none>";
     }
-    String result = null;
-    if (node instanceof BaseMethodDeclaration) {
-      result = matchingText_BaseMethodDeclaration((BaseMethodDeclaration) node, referenceContext, referenceRole);
-    } else if (node instanceof Type) {
-      result = matchingText_Type((Type) node);
-    } else if (node instanceof VariableDeclaration) {
-      result = matchingText_VariableDeclaration((VariableDeclaration) node, referenceContext);
+    if (node instanceof ConceptDeclaration) {
+      if (link != null && link.getMetaClass() == LinkMetaclass.aggregation) {
+        // most likely we are going to create instance of the concept
+        return getAliasOrConceptName(node, scope);
+      }
+      return node.getName();
     }
-
-    if (result != null) {
-      return result;
-    }
-
-    // default
     if (node instanceof LinkDeclaration) {
       return ((LinkDeclaration) node).getRole();
     }
 
+    if (node instanceof BaseMethodDeclaration) {
+      return matchingText_BaseMethodDeclaration((BaseMethodDeclaration) node, referenceContext, link.getRole());
+    } else if (node instanceof Type) {
+      return matchingText_Type((Type) node);
+    } else if (node instanceof VariableDeclaration) {
+      return matchingText_VariableDeclaration((VariableDeclaration) node, referenceContext);
+    }
+
+    // default
     if (node instanceof NamedConcept) {
       String name = node.getName();
       if (name != null) {
         return name;
       }
-    } else {
-      String alias = SModelUtil.getConceptProperty(node, "alias", scope);
-      if (alias != null) {
-        return alias;
-      }
     }
-    return NameUtil.shortNameFromLongName(node.getClass().getName());
+
+    return getAliasOrConceptName(node, scope);
   }
 
   public static String descriptionText(SNode node, SNode referenceContext, IScope scope) {
@@ -93,6 +93,9 @@ public class SNodePresentationUtil {
     String description = SModelUtil.getConceptProperty(node, "short_description", scope);
     if (description != null) {
       return description;
+    }
+    if (node instanceof ConceptDeclaration) {
+      return "";
     }
 
     if (node.isRoot()) {
