@@ -12,8 +12,6 @@ import java.util.*;
  * User: Igoor
  * Date: Jun 28, 2005
  * Time: 5:35:18 PM
- * <p/>
- * <p/>
  * Todo: refactor this utility
  */
 public class SNodePresentationUtil {
@@ -98,9 +96,9 @@ public class SNodePresentationUtil {
     }
 
     if (node.isRoot()) {
-      return getAliasOrConceptName(node, scope) + " in " + node.getModel().getUID();
+      return NameUtil.shortNameFromLongName(node.getClass().getName()) + " in " + node.getModel().getUID();
     }
-    return getAliasOrConceptName(node, scope) + " in " + NameUtil.nodeFQName(SModelUtil.getRootParent(node));
+    return NameUtil.shortNameFromLongName(node.getClass().getName()) + " in " + NameUtil.nodeFQName(SModelUtil.getRootParent(node));
   }
 
   private static String matchingText_BaseMethodDeclaration(BaseMethodDeclaration method, SNode referenceNode, String referenceRole) {

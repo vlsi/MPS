@@ -87,7 +87,13 @@
     <link role="extendedClass" targetNodeId="1115766267843" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1137820838257">
       <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1137820900216" />
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1137820838258" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1137820838258">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1137904439079">
+          <node role="expression" type="jetbrains.mps.baseLanguage.SuperMethodCall" id="1137905243674">
+            <link role="baseMethodDeclaration" targetNodeId="1115766326104" />
+          </node>
+        </node>
+      </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1137820843009">
         <property name="name" value="ffff" />
         <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1137820843010" />
@@ -108,8 +114,8 @@
               </node>
             </node>
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1137736473149">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.FieldReference" id="1137813078871">
-                <link role="variableDeclaration" targetNodeId="1127094836077" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.FieldReference" id="1137905742851">
+                <link role="variableDeclaration" targetNodeId="1137736415066" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1137736450083" />
               </node>
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.FieldReference" id="1137736510144">
@@ -137,8 +143,8 @@
               <node role="lValue" type="jetbrains.mps.baseLanguage.ParameterReference" id="1137714259018">
                 <link role="variableDeclaration" targetNodeId="1136027173099" />
               </node>
-              <node role="rValue" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1137896335851">
-                <link role="enumConstantDeclaration" targetNodeId="1137892355071" />
+              <node role="rValue" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1137905753649">
+                <link role="baseMethodDeclaration" targetNodeId="1137892377201" />
                 <node role="classType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1137892793438">
                   <link role="classifier" targetNodeId="1137816471209" />
                 </node>
