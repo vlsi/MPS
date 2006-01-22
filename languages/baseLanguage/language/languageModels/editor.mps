@@ -704,10 +704,9 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1088427863670">
         <property name="drawBorder" value="false" />
         <property name="nullText" value="&lt;no method&gt;" />
-        <link role="actionSet" targetNodeId="1081149733740" />
-        <link role="linkDeclaration" targetNodeId="1.1068499141037" />
+        <link role="linkDeclaration" targetNodeId="1.1081236769987" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1088427863671">
-          <link role="conceptDeclaration" targetNodeId="1.1068580123132" />
+          <link role="conceptDeclaration" targetNodeId="1.1081236700938" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1088427863672">
             <property name="fontStyle" value="ITALIC" />
             <property name="drawBorder" value="false" />
@@ -1954,7 +1953,6 @@
         <property name="drawBorder" value="false" />
         <property name="nullText" value="&lt;no field&gt;" />
         <link role="linkDeclaration" targetNodeId="1.1068581517664" />
-        <link role="actionSet" targetNodeId="1082742081259" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1088427644684">
           <link role="conceptDeclaration" targetNodeId="1.1068431474542" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1088427644685">
@@ -2217,7 +2215,6 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1090928601379">
         <property name="drawBorder" value="false" />
-        <link role="actionSet" targetNodeId="1090928601294" />
         <link role="linkDeclaration" targetNodeId="1.1083260308426" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1090928601380">
           <link role="conceptDeclaration" targetNodeId="1.1083245299891" />

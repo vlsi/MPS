@@ -993,10 +993,6 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1083245299891">
     <property name="name" value="EnumConstantDeclaration" />
     <link role="extends" targetNodeId="4.1078489098625" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107216347886">
-      <property name="value" value="enumeration constant declaration" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
-    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1095257688468">
       <property name="name" value="name" />
       <link role="dataType" targetNodeId="1083065718921" />
