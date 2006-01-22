@@ -542,5 +542,36 @@
     <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1137817086065" />
     <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1137817086066" />
   </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1137951629318">
+    <property name="name" value="GenaricClass" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1137951651024">
+      <property name="name" value="aaa" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1137951657808" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1137951651073" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1137951727089">
+        <property name="name" value="t" />
+        <node role="type" type="jetbrains.mps.baseLanguage.ArrayType" id="1137951790656">
+          <node role="componentType" type="jetbrains.mps.baseLanguage.TypeVariableReference" id="1137951796078">
+            <link role="typeVariableDeclaration" targetNodeId="1137951638585" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1137951638585">
+      <property name="name" value="T1" />
+    </node>
+    <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1137951644445">
+      <property name="name" value="T2" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1137951701097">
+    <property name="name" value="GenaricClass2" />
+    <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1137951701101">
+      <property name="name" value="T1_2" />
+    </node>
+    <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1137951701102">
+      <property name="name" value="T2_2" />
+    </node>
+  </node>
 </model>
 
