@@ -2,9 +2,10 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.baseLanguage.*;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.core.NamedConcept;
 import jetbrains.mps.util.NameUtil;
 
-import java.util.Iterator;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -21,7 +22,7 @@ public class SNodePresentationUtil {
   }
 
   public static String matchingText(SNode node, SNode referenceContext, String referenceRole, IScope scope) {
-    if(node == null) {
+    if (node == null) {
       return "<none>";
     }
     String result = null;
@@ -42,38 +43,48 @@ public class SNodePresentationUtil {
       return ((LinkDeclaration) node).getRole();
     }
 
-    // todo: alias or name ????
-    if (!isNamedElement(node)) {
+    if (node instanceof NamedConcept) {
+      String name = node.getName();
+      if (name != null) {
+        return name;
+      }
+    } else {
       String alias = SModelUtil.getConceptProperty(node, "alias", scope);
       if (alias != null) {
         return alias;
       }
     }
-    String name = node.getName();
-    if (name != null) {
-      return name;
-    }
     return NameUtil.shortNameFromLongName(node.getClass().getName());
   }
 
-  public static boolean isNamedElement(SNode node) {
-    return node instanceof Classifier || node instanceof VariableDeclaration;
-  }
-
   public static String descriptionText(SNode node, SNode referenceContext, IScope scope) {
-    if(node == null) {
+    if (node == null) {
       return "";
     }
-    String result = null;
-    if (node instanceof BaseMethodDeclaration) {
-      result = descriptionText_BaseMethodDeclaration((BaseMethodDeclaration) node, referenceContext, scope);
-    } else if (node instanceof VariableDeclaration) {
-      result = descriptionText_VariableDeclaration((VariableDeclaration) node, referenceContext, scope);
+
+    if (node instanceof ParameterDeclaration) {
+      return "parameter";
+
+    } else if (node instanceof LocalVariableDeclaration) {
+      return "local variable";
+
+    } else if (node instanceof MethodDeclaration) {
+      return getAliasOrConceptName(node, scope) + " in " + node.getModel().getUID().getLongName();
+
+    } else if (node instanceof BaseMethodDeclaration ||
+            node instanceof VariableDeclaration ||
+            node instanceof EnumConstantDeclaration) {
+      String prefix = getAliasOrConceptName(node, scope) + " in ";
+      Classifier parent = SModelUtil.findParent(node, Classifier.class);
+      if (parent == null) {
+        return prefix + "?declaring classifer?";
+      } else if (isReferenceContext(parent, referenceContext)) {
+        return prefix + "this " + parent.getName();
+      }
+      return prefix + NameUtil.nodeFQName(parent);
+
     } else if (node instanceof Classifier) {
-      result = descriptionText_Classifier((Classifier) node, scope);
-    }
-    if (result != null) {
-      return result;
+      return getAliasOrConceptName(node, scope) + " in " + node.getModel().getUID();
     }
 
     // default
@@ -85,7 +96,11 @@ public class SNodePresentationUtil {
     if (description != null) {
       return description;
     }
-    return "";
+
+    if (node.isRoot()) {
+      return getAliasOrConceptName(node, scope) + " in " + node.getModel().getUID();
+    }
+    return getAliasOrConceptName(node, scope) + " in " + NameUtil.nodeFQName(SModelUtil.getRootParent(node));
   }
 
   private static String matchingText_BaseMethodDeclaration(BaseMethodDeclaration method, SNode referenceNode, String referenceRole) {
@@ -145,11 +160,8 @@ public class SNodePresentationUtil {
     if (referenceContext == null) {
       return false;
     }
-    if (declaringClassifier == referenceContext ||
-            declaringClassifier == SModelUtil.findParent(referenceContext, Classifier.class)) {
-      return true;
-    }
-    return false;
+    return declaringClassifier == referenceContext ||
+            declaringClassifier == SModelUtil.findParent(referenceContext, Classifier.class);
   }
 
   private static String matchingText_Type(Type type) {
@@ -174,52 +186,6 @@ public class SNodePresentationUtil {
       return NameUtil.shortNameFromLongName(type.getName()) + parmsSB.toString();
     }
     return type.getName();
-  }
-
-  private static String descriptionText_BaseMethodDeclaration(BaseMethodDeclaration method, SNode referenceContext, IScope scope) {
-    String prefix = getAliasOrConceptName(method, scope) + " in ";
-    if (method instanceof MethodDeclaration) {
-      // freestanding method: model fqname
-      return prefix + method.getModel().getUID().getLongName();
-    }
-
-    Classifier parent = SModelUtil.findParent(method, Classifier.class);
-    if (parent == null) {
-      return prefix + "?declaring classifer?";
-    }
-    if (isReferenceContext(parent, referenceContext)) {
-      return prefix + "this " + parent.getName();
-    }
-    return prefix + NameUtil.nodeFQName(parent);
-  }
-
-  private static String descriptionText_VariableDeclaration(VariableDeclaration variable, SNode referenceContext, IScope scope) {
-    if (variable instanceof ParameterDeclaration) {
-      return "parameter";
-    }
-    if (variable instanceof LocalVariableDeclaration) {
-      return "local variable";
-    }
-
-    String prefix = getAliasOrConceptName(variable, scope) + " in ";
-    if (variable instanceof FieldDeclaration ||
-            variable instanceof StaticFieldDeclaration) {
-      Classifier parent = SModelUtil.findParent(variable, Classifier.class);
-      if (parent == null) {
-        return prefix + "?declaring classifer?";
-      }
-      if (isReferenceContext(parent, referenceContext)) {
-        return prefix + "this " + parent.getName();
-      }
-
-      return prefix + NameUtil.nodeFQName(parent);
-    }
-
-    return null;
-  }
-
-  private static String descriptionText_Classifier(Classifier classifier, IScope scope) {
-    return getAliasOrConceptName(classifier, scope) + " in " + classifier.getModel().getUID();
   }
 
   private static String getAliasOrConceptName(SNode node, IScope scope) {
