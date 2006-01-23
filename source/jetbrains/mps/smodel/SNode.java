@@ -1018,8 +1018,8 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     for (SNode child : myChildren) {
       if (condition.met(child)) {
         list.add((E) child);
-        child.collectSubnodes(condition, list);
       }
+      child.collectSubnodes(condition, list);
     }
   }
 }

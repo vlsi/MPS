@@ -113,7 +113,9 @@
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1137995798928">
               <link role="variableDeclaration" targetNodeId="1137820843009" />
             </node>
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.Expression" id="1137996250883" />
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1138041356552">
+              <property name="value" value="10" />
+            </node>
           </node>
         </node>
       </node>
