@@ -125,6 +125,10 @@ public class PathManager {
     return ourTutorialPath;
   }
 
+  public static String getAcknowledgementsPath() {
+    return getHomePath() + File.separator + "help" + File.separator + "acknowledgements.html";
+  }
+
 
   private static String getAbsolutePath(String path) {
     if (path.startsWith("~/") || path.startsWith("~\\")) {
