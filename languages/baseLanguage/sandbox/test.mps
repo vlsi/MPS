@@ -118,6 +118,23 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1138060178103">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1138060178102">
+            <property name="name" value="aaa" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1138060218806" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.PlusExpression" id="1138060192077">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1138060196002">
+                <link role="variableDeclaration" extResolveInfo="1.static field ([Classifier]Byte).([StaticFieldDeclaration]MAX_VALUE : (jetbrains.mps.baseLanguage.types.byte/jetbrains.mps.baseLanguage.types.byte))" />
+                <node role="classifierType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1138060196001">
+                  <link role="classifier" extResolveInfo="1.[Classifier]Byte" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1138060189777">
+                <property name="value" value="10" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1137820843009">
         <property name="name" value="ffff" />
