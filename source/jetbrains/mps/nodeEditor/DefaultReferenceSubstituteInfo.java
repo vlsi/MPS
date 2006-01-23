@@ -34,7 +34,7 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
   }
 
   public List<INodeSubstituteItem> createActions() {
-    List<INodeSubstituteAction> actions = ModelActions.createReferentNodeSubstituteActions(mySourceNode, myCurrentTargetNode, myLinkDeclaration, getOperationContext().getScope());
+    List<INodeSubstituteAction> actions = ModelActions.createNodeSubstituteActions(mySourceNode, myCurrentTargetNode, myLinkDeclaration, getOperationContext().getScope());
     return (List) actions;
   }
 }

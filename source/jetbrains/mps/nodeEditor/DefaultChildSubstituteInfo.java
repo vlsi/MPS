@@ -51,7 +51,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
   }
 
   public List<INodeSubstituteItem> createActions() {
-    List<INodeSubstituteAction> actions = ModelActions.createChildNodeSubstituteActions(mySourceNode, myCurrentTargetNode, myLinkDeclaration, getOperationContext().getScope());
+    List<INodeSubstituteAction> actions = ModelActions.createNodeSubstituteActions(mySourceNode, myCurrentTargetNode, myLinkDeclaration, getOperationContext().getScope());
     return (List<INodeSubstituteItem>) ((List) actions);
   }
 

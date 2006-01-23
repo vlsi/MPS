@@ -9,6 +9,7 @@ import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
@@ -305,7 +306,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   public void setPropertyAttribute(String propertyName, PropertyAttributeConcept propertyAttribute) {
     SReference oldPropertyAttributeRef = this.myPropertyAttributes.get(propertyName);
-     if (oldPropertyAttributeRef != null) {
+    if (oldPropertyAttributeRef != null) {
       SNode oldNode = oldPropertyAttributeRef.getTargetNode();
       if (oldNode instanceof PropertyAttributeConcept) {
         PropertyAttributeConcept oldPropertyAttributeConcept = (PropertyAttributeConcept) oldNode;
@@ -1005,5 +1006,20 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       parent = parent.getParent();
     }
     return prevParent.getModel() != null && prevParent.getModel().isRoot(prevParent);
+  }
+
+  public <E extends SNode> List<E> getSubnodes(Condition<SNode> condition) {
+    List<E> list = new LinkedList<E>();
+    collectSubnodes(condition, list);
+    return list;
+  }
+
+  private <E extends SNode> void collectSubnodes(Condition<SNode> condition, List<E> list) {
+    for (SNode child : myChildren) {
+      if (condition.met(child)) {
+        list.add((E) child);
+        child.collectSubnodes(condition, list);
+      }
+    }
   }
 }

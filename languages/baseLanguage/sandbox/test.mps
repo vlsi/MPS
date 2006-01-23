@@ -85,17 +85,35 @@
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1115766310400">
     <property name="name" value="AClass" />
     <link role="extendedClass" targetNodeId="1115766267843" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1137989368509">
+      <property name="name" value="myStaticMethod" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1137989388935" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1137989368574" />
+    </node>
     <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1137820838257">
       <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1137820900216" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1137820838258">
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1137904439079">
           <node role="expression" type="jetbrains.mps.baseLanguage.SuperMethodCall" id="1137905243674">
-            <link role="baseMethodDeclaration" targetNodeId="1115766326104" />
+            <link role="baseMethodDeclaration" targetNodeId="1115766295021" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1137908251832">
           <node role="expression" type="jetbrains.mps.baseLanguage.SuperMethodCall" id="1137908251848">
             <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]Object).([InstanceMethodDeclaration]clone() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object]))" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.CodeBlockReturn" id="1137995011489">
+          <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1137995016522">
+            <link role="baseMethodDeclaration" extResolveInfo="1.constructor [Classifier]Terminator[ConstructorDeclaration] ()" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.CodeBlockReturn" id="1137995790192">
+          <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1137996271795">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1137995798928">
+              <link role="variableDeclaration" targetNodeId="1137820843009" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.Expression" id="1137996250883" />
           </node>
         </node>
       </node>
@@ -110,7 +128,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1136027167330">
           <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1136027208535">
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1136027199546">
-              <node role="lValue" type="jetbrains.mps.baseLanguage.FieldReference" id="1137714473959">
+              <node role="lValue" type="jetbrains.mps.baseLanguage.FieldReference" id="1137962301255">
                 <link role="variableDeclaration" targetNodeId="1137736415066" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1136027196763" />
               </node>
@@ -119,9 +137,8 @@
               </node>
             </node>
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1137736473149">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.FieldReference" id="1137905742851">
-                <link role="variableDeclaration" targetNodeId="1137736415066" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1137736450083" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1137989716648">
+                <link role="variableDeclaration" targetNodeId="1136027175492" />
               </node>
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.FieldReference" id="1137736510144">
                 <link role="variableDeclaration" targetNodeId="1127094836077" />
@@ -138,7 +155,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1137714185730">
           <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1137896350182">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1137896419188">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1137995142342">
               <link role="baseMethodDeclaration" targetNodeId="1137896398465" />
               <node role="classType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1137896376088">
                 <link role="classifier" targetNodeId="1115766267843" />
@@ -148,8 +165,8 @@
               <node role="lValue" type="jetbrains.mps.baseLanguage.ParameterReference" id="1137714259018">
                 <link role="variableDeclaration" targetNodeId="1136027173099" />
               </node>
-              <node role="rValue" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1137905753649">
-                <link role="baseMethodDeclaration" targetNodeId="1137892377201" />
+              <node role="rValue" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1137962309116">
+                <link role="baseMethodDeclaration" targetNodeId="1137892365869" />
                 <node role="classType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1137892793438">
                   <link role="classifier" targetNodeId="1137816471209" />
                 </node>
@@ -174,6 +191,16 @@
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1137736415066">
       <property name="name" value="bbb" />
       <node role="type" type="jetbrains.mps.baseLanguage.FloatType" id="1137736417990" />
+    </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1137994194082">
+      <property name="name" value="ccc" />
+      <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1137994208443" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1137994232291">
+        <link role="variableDeclaration" extResolveInfo="1.static field ([Classifier]Integer).([StaticFieldDeclaration]MAX_VALUE : (jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int))" />
+        <node role="classifierType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1137994232290">
+          <link role="classifier" extResolveInfo="1.[Classifier]Integer" />
+        </node>
+      </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1115766338748">
       <property name="name" value="aClassMethod" />
@@ -317,6 +344,8 @@
             <node role="classType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1137816822864">
               <link role="classifier" targetNodeId="1137816471209" />
             </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.NullLiteral" id="1137962416020" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.NullLiteral" id="1137962419257" />
           </node>
         </node>
       </node>
