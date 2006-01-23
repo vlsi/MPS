@@ -25,6 +25,26 @@ public class ModelActions {
   public static final String DONT_SUBSTITUTE_BY_DEFAULT = "dontSubstituteByDefault";
   public static final String ABSTRACT = "abstract";
 
+  public static final Condition<SNode> TRUE_CONDITION = new Condition<SNode>() {
+    public boolean met(SNode object) {
+      return true;
+    }
+  };
+
+  /**
+   * helper method
+   */
+  public static List<INodeSubstituteAction> createPrimaryNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, final ConceptDeclaration targetConcept, Condition<SNode> filter, final IScope scope) {
+    if (SModelUtil.getGenuineLinkMetaclass(linkDeclaration) == LinkMetaclass.reference) {
+      return createDefaultReferentNodeSubstituteActions(sourceNode, currentTargetNode, linkDeclaration, targetConcept, filter, scope);
+    }
+    return createDefaultChildNodeSubstituteActions(sourceNode, currentTargetNode, linkDeclaration, targetConcept, filter, scope);
+  }
+
+
+  /**
+   * @deprecated
+   */
   public static List<ConceptDeclaration> getDefaultSubstitutableConcepts(SModel sourceModel, final ConceptDeclaration targetConcept, final IScope scope) {
     return SModelUtil.conceptsFromModelLanguages(sourceModel, new Condition<ConceptDeclaration>() {
       public boolean met(ConceptDeclaration node) {
@@ -53,16 +73,12 @@ public class ModelActions {
       return resultActions;
     }
 
-    // add actions from 'main' language
+    // add actions from 'primary' language
     LinkMetaclass linkMetaclass = SModelUtil.getGenuineLinkMetaclass(linkDeclaration);
     List<NodeSubstituteActionsBuilder> mainSubstituteActionsBuilders = getNodeSubstituteActionBuilders(mainLanguage, linkMetaclass, targetConcept, sourceNode.getModel(), scope);
     if (mainSubstituteActionsBuilders.isEmpty()) {
-      // if 'main' language hasn't defined actions for that target - create 'default' actions
-      if (linkMetaclass == LinkMetaclass.reference) {
-        resultActions = createDefaultReferentNodeSubstituteActions(sourceNode, currentTargetNode, linkDeclaration, targetConcept, scope);
-      } else {
-        resultActions = createDefaultChildNodeSubstituteActions(sourceNode, currentTargetNode, linkDeclaration, targetConcept, scope);
-      }
+      // if 'primary' language hasn't defined actions for that target - create 'default' actions
+      resultActions = createPrimaryNodeSubstituteActions(sourceNode, currentTargetNode, linkDeclaration, targetConcept, TRUE_CONDITION, scope);
     } else {
       for (NodeSubstituteActionsBuilder builder : mainSubstituteActionsBuilders) {
         resultActions.addAll(createActions(builder, sourceNode, currentTargetNode, linkDeclaration, scope));
@@ -97,13 +113,15 @@ public class ModelActions {
     return actions;
   }
 
-  public static List<INodeSubstituteAction> createDefaultReferentNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, final ConceptDeclaration targetConcept, final IScope scope) {
+  private static List<INodeSubstituteAction> createDefaultReferentNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, final ConceptDeclaration targetConcept, final Condition<SNode> filterCondition, final IScope scope) {
     ISearchScope searchScope = ModelSearchScopeFactory.createModelAndImportedModelsScope(sourceNode.getModel(), scope);
     List<SNode> nodes = searchScope.getNodes(new Condition<SNode>() {
       public boolean met(SNode node) {
-        return SModelUtil.isInstanceOfConcept(node, targetConcept, scope);
+        return SModelUtil.isInstanceOfConcept(node, targetConcept, scope) &&
+                filterCondition.met(node);
       }
     });
+
     List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
     for (SNode node : nodes) {
       actions.add(new DefaultReferentNodeSubstituteAction(node, sourceNode, currentTargetNode, linkDeclaration, scope));
@@ -111,8 +129,14 @@ public class ModelActions {
     return actions;
   }
 
-  public static List<INodeSubstituteAction> createDefaultChildNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, final ConceptDeclaration targetConcept, final IScope scope) {
-    List<ConceptDeclaration> nodes = getDefaultSubstitutableConcepts(sourceNode.getModel(), targetConcept, scope);
+  private static List<INodeSubstituteAction> createDefaultChildNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, final ConceptDeclaration targetConcept, final Condition<SNode> filterCondition, final IScope scope) {
+    List<ConceptDeclaration> nodes = SModelUtil.conceptsFromModelLanguages(sourceNode.getModel(), new Condition<ConceptDeclaration>() {
+      public boolean met(ConceptDeclaration node) {
+        return isDefaultSubstitutableConcept(node, targetConcept, scope) &&
+                filterCondition.met(node);
+      }
+    }, scope);
+
     List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
     for (SNode node : nodes) {
       actions.add(new DefaultChildNodeSubstituteAction(node, sourceNode, currentTargetNode, linkDeclaration, scope));
