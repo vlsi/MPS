@@ -26,8 +26,7 @@ public class ModelActions {
   public static final String ABSTRACT = "abstract";
 
   public static List<ConceptDeclaration> getDefaultSubstitutableConcepts(SModel sourceModel, final ConceptDeclaration targetConcept, final IScope scope) {
-    // by default - roots only concepts
-    return SModelUtil.conceptsFromModelLanguages(sourceModel, true, new Condition<ConceptDeclaration>() {
+    return SModelUtil.conceptsFromModelLanguages(sourceModel, new Condition<ConceptDeclaration>() {
       public boolean met(ConceptDeclaration node) {
         return isDefaultSubstitutableConcept(node, targetConcept, scope);
       }
@@ -98,7 +97,7 @@ public class ModelActions {
     return actions;
   }
 
-  private static List<INodeSubstituteAction> createDefaultReferentNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, final ConceptDeclaration targetConcept, final IScope scope) {
+  public static List<INodeSubstituteAction> createDefaultReferentNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, final ConceptDeclaration targetConcept, final IScope scope) {
     ISearchScope searchScope = ModelSearchScopeFactory.createModelAndImportedModelsScope(sourceNode.getModel(), scope);
     List<SNode> nodes = searchScope.getNodes(new Condition<SNode>() {
       public boolean met(SNode node) {
@@ -112,7 +111,7 @@ public class ModelActions {
     return actions;
   }
 
-  private static List<INodeSubstituteAction> createDefaultChildNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, final ConceptDeclaration targetConcept, final IScope scope) {
+  public static List<INodeSubstituteAction> createDefaultChildNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, final ConceptDeclaration targetConcept, final IScope scope) {
     List<ConceptDeclaration> nodes = getDefaultSubstitutableConcepts(sourceNode.getModel(), targetConcept, scope);
     List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
     for (SNode node : nodes) {
