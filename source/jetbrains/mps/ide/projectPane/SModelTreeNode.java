@@ -9,11 +9,14 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.annotations.AttributeConcept;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -96,7 +99,12 @@ class SModelTreeNode extends MPSTreeNodeEx {
     if (!model.hasSModelCommandListener(myModelListener)) {
       model.addSModelCommandListener(myModelListener);
     }
-    List<SNode> sortedRoots = SortUtil.sortNodes(model.getRoots());
+    List<SNode> filteredRoots = CollectionUtil.filter(model.getRoots(), new Condition<SNode>() {
+      public boolean met(SNode object) {
+        return !(object instanceof AttributeConcept);
+      }
+    });
+    List<SNode> sortedRoots = SortUtil.sortNodes(filteredRoots);
     for (SNode sortedRoot : sortedRoots) {
       MPSTreeNodeEx treeNode = new SNodeTreeNode(sortedRoot, getOperationContext());
       add(treeNode);

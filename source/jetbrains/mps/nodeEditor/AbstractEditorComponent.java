@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.typesystem.TypeCheckerAccess;
+import jetbrains.mps.annotations.AttributeConcept;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
