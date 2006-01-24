@@ -180,6 +180,9 @@ public class SNodePresentationUtil {
     if (alias != null) {
       return alias;
     }
+    if (node instanceof ConceptDeclaration && node.getName() != null) {
+      return node.getName();
+    }
     return NameUtil.shortNameFromLongName(node.getClass().getName());
   }
 
