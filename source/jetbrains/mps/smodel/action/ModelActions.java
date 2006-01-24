@@ -1,5 +1,6 @@
 package jetbrains.mps.smodel.action;
 
+import jetbrains.mps.baseLanguage.LocalVariableReference;
 import jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions;
 import jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
@@ -202,4 +203,16 @@ public class ModelActions {
     return result;
   }
 
+  //-------------------
+  // node transform
+  //-------------------
+
+  public static boolean hasEastTransformHintSubstituteActions(SNode node, IScope scope) {
+//    return node instanceof LocalVariableReference;
+    return false;
+  }
+
+  public static List<INodeSubstituteAction> createEastTransformHintSubstituteActions(final SNode node, IScope scope) {
+    return null;
+  }
 }

@@ -27,6 +27,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public static final Object BAD_REFERENT_STATUS = new Object();
 
   public static final String NAME = "name";
+  public static final String EAST_TRANSFORM_HINT = "east_node_transfrom_hint";
 
   private static final String ATTRIBUTE = "attribute";
 
@@ -385,7 +386,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public void setBooleanProperty(String propertyName, boolean value) {
-    setProperty(propertyName, "" + value);
+    setProperty(propertyName, value ? "" + value : (String) null);
   }
 
   public int getIntegerProperty(String propertyName) {
@@ -1021,5 +1022,9 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       }
       child.collectSubnodes(condition, list);
     }
+  }
+
+  public void setEastTransformHint(String hint) {
+    setProperty(EAST_TRANSFORM_HINT, hint);
   }
 }

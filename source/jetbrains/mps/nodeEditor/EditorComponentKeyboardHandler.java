@@ -8,11 +8,11 @@ package jetbrains.mps.nodeEditor;
 
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.smodel.SNodeProxy;
+import jetbrains.mps.smodel.action.ModelActions;
 
 import java.awt.event.KeyEvent;
-import java.util.List;
+import java.util.*;
 
 public class EditorComponentKeyboardHandler implements IKeyboardHandler {
   private static final Logger LOG = Logger.getLogger(EditorComponentKeyboardHandler.class);
@@ -42,7 +42,6 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
         }
       }
     }
-
 
 
     String actionType = editor.getActionType(keyEvent, editorContext);
@@ -123,7 +122,8 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
       if (!keyEvent.isConsumed()) {
         // auto-completion (AKA node substitution)
         if ((keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown() && !(keyEvent.isAltDown() || keyEvent.isShiftDown())) ||
-                (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && keyEvent.isAltDown() && !(keyEvent.isControlDown() || keyEvent.isShiftDown()))) {
+                (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && keyEvent.isAltDown() && !(keyEvent.isControlDown() || keyEvent.isShiftDown())))
+        {
           if (editor.activateNodeSubstituteChooser(selectedCell, keyEvent.getKeyCode() == KeyEvent.VK_ENTER)) {
             LOG.debug("SUBSTITUTE");
             return true;
@@ -152,6 +152,18 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
           }
           return true;
         }
+
+        //test
+        if ((keyEvent.getKeyCode() == KeyEvent.VK_SPACE &&
+                keyEvent.isAltDown() &&
+                keyEvent.isControlDown() &&
+                !keyEvent.isShiftDown()) &&
+                ModelActions.hasEastTransformHintSubstituteActions(
+                        selectedCell.getSNode(), editorContext.getOperationContext().getScope())) {
+          keyEvent.consume();
+          selectedCell.getSNode().setEastTransformHint("");
+        }
+        //test
       } // if (!keyEvent.isConsumed())
     } // if (selectedCell != null)
 

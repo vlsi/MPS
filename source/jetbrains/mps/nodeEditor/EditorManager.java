@@ -1,13 +1,14 @@
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.annotations.AttributeConcept;
+import jetbrains.mps.annotations.LinkAttributeConcept;
+import jetbrains.mps.annotations.PropertyAttributeConcept;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.annotations.PropertyAttributeConcept;
-import jetbrains.mps.annotations.LinkAttributeConcept;
-import jetbrains.mps.annotations.AttributeConcept;
 
 import java.util.*;
 
@@ -124,7 +125,7 @@ public class EditorManager {
         } else if (event instanceof SModelPropertyEvent) {
           eventNode = ((SModelPropertyEvent) event).getNode();
         } else if (event instanceof SModelAttributeEvent) {
-          eventNode = ((SModelAttributeEvent)event).getAttributedNode();
+          eventNode = ((SModelAttributeEvent) event).getAttributedNode();
         } else continue;
         if (nodeEditorComponent.doesCellDependOnNode(oldCell, eventNode)) {
           nodeChanged = true;
@@ -163,7 +164,7 @@ public class EditorManager {
   }
 
 
-  private EditorCell createEditorCell_internal(EditorContext context, SNode node, boolean isInspectorCell) {
+  private EditorCell createEditorCell_internal(final EditorContext context, final SNode node, boolean isInspectorCell) {
     //reset creating inspected cell : we don't create not-root inspected cells
     myCreatingInspectedCell = false;
 
@@ -187,16 +188,36 @@ public class EditorManager {
       }
       NodeReadAccessCaster.removeNodeAccessListener();
     }
-    if (node.getChildCount(NODE_TO_PLACE_AFTER) == 0) {
-      return nodeCell;
+
+    if (node.getProperty(SNode.EAST_TRANSFORM_HINT) != null) {
+      EditorCell_Collection rowWrapper = EditorCell_Collection.createHorizontal(context, node);
+      rowWrapper.setSelectable(false);
+      rowWrapper.addEditorCell(nodeCell);
+      String eastHint = node.getProperty(SNode.EAST_TRANSFORM_HINT);
+      EditorCell_Constant eastTransformHintCell = EditorCell_Constant.create(context, node, eastHint, true);
+      eastTransformHintCell.putUserObject(EditorCell.CELL_ID, node.getId());
+      eastTransformHintCell.setEditable(true);
+      eastTransformHintCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, SNode.EAST_TRANSFORM_HINT));
+      eastTransformHintCell.setSubstituteInfo(new AbstractNodeSubstituteInfo(context) {
+        protected List<INodeSubstituteItem> createActions() {
+          return (List)ModelActions.createEastTransformHintSubstituteActions(node, context.getOperationContext().getScope());
+        }
+      });
+      rowWrapper.addEditorCell(eastTransformHintCell);
+      return rowWrapper;
     }
 
-    EditorCell_Collection rowWrapper = EditorCell_Collection.createHorizontal(context, node);
-    rowWrapper.setSelectable(false);
-    rowWrapper.addEditorCell(nodeCell);
-    SNode afterNode = node.getChild(NODE_TO_PLACE_AFTER);
-    rowWrapper.addEditorCell(getEditor(context, afterNode).createEditorCell(context, afterNode));
-    return rowWrapper;
+
+    if (node.getChildCount(NODE_TO_PLACE_AFTER) > 0) {
+      EditorCell_Collection rowWrapper = EditorCell_Collection.createHorizontal(context, node);
+      rowWrapper.setSelectable(false);
+      rowWrapper.addEditorCell(nodeCell);
+      SNode afterNode = node.getChild(NODE_TO_PLACE_AFTER);
+      rowWrapper.addEditorCell(getEditor(context, afterNode).createEditorCell(context, afterNode));
+      return rowWrapper;
+    }
+
+    return nodeCell;
   }
 
 
