@@ -811,113 +811,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311148296">
-    <property name="name" value="BooleanType_Editor" />
-    <link role="conceptDeclaration" targetNodeId="1.1070534644030" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075311148297">
-      <property name="editable" value="true" />
-      <property name="textFgColor" value="DARK_BLUE" />
-      <property name="text" value="boolean" />
-      <property name="drawBorder" value="false" />
-      <property name="selectable" value="true" />
-      <link role="keyMap" targetNodeId="1119265790350" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311184611">
-    <property name="name" value="ByteType_Editor" />
-    <link role="conceptDeclaration" targetNodeId="1.1070534604311" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075311184612">
-      <property name="editable" value="true" />
-      <property name="textFgColor" value="DARK_BLUE" />
-      <property name="text" value="byte" />
-      <property name="drawBorder" value="false" />
-      <property name="selectable" value="true" />
-      <link role="keyMap" targetNodeId="1119265790350" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311208800">
-    <property name="name" value="CharType_Editor" />
-    <link role="conceptDeclaration" targetNodeId="1.1070534555686" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075311208801">
-      <property name="editable" value="true" />
-      <property name="textFgColor" value="DARK_BLUE" />
-      <property name="text" value="char" />
-      <property name="drawBorder" value="false" />
-      <property name="selectable" value="true" />
-      <link role="keyMap" targetNodeId="1119265790350" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311246068">
-    <property name="name" value="FloatType_Editor" />
-    <link role="conceptDeclaration" targetNodeId="1.1070534436861" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075311246069">
-      <property name="editable" value="true" />
-      <property name="textFgColor" value="DARK_BLUE" />
-      <property name="text" value="float" />
-      <property name="drawBorder" value="false" />
-      <property name="selectable" value="true" />
-      <link role="keyMap" targetNodeId="1119265790350" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311278508">
-    <property name="name" value="IntegerType_Editor" />
-    <link role="conceptDeclaration" targetNodeId="1.1070534370425" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075311278509">
-      <property name="editable" value="true" />
-      <property name="textFgColor" value="DARK_BLUE" />
-      <property name="text" value="int" />
-      <property name="drawBorder" value="false" />
-      <property name="selectable" value="true" />
-      <link role="keyMap" targetNodeId="1119265790350" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311329197">
-    <property name="name" value="LongType_Editor" />
-    <link role="conceptDeclaration" targetNodeId="1.1068581242867" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075311329198">
-      <property name="editable" value="true" />
-      <property name="textFgColor" value="DARK_BLUE" />
-      <property name="text" value="long" />
-      <property name="drawBorder" value="false" />
-      <property name="selectable" value="true" />
-      <link role="keyMap" targetNodeId="1119265790350" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311365246">
-    <property name="name" value="ShortType_Editor" />
-    <link role="conceptDeclaration" targetNodeId="1.1070533982221" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075311365247">
-      <property name="editable" value="true" />
-      <property name="text" value="short" />
-      <property name="drawBorder" value="false" />
-      <property name="selectable" value="true" />
-      <link role="keyMap" targetNodeId="1119265790350" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311403842">
-    <property name="name" value="VoidType_Editor" />
-    <link role="conceptDeclaration" targetNodeId="1.1068581517677" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075311403843">
-      <property name="editable" value="true" />
-      <property name="textFgColor" value="DARK_BLUE" />
-      <property name="text" value="void" />
-      <property name="drawBorder" value="false" />
-      <property name="selectable" value="true" />
-      <link role="keyMap" targetNodeId="1119265790350" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075311808095">
-    <property name="name" value="DoubleType_Editor" />
-    <link role="conceptDeclaration" targetNodeId="1.1070534513062" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075311808096">
-      <property name="editable" value="true" />
-      <property name="textFgColor" value="DARK_BLUE" />
-      <property name="text" value="double" />
-      <property name="drawBorder" value="false" />
-      <property name="selectable" value="true" />
-      <link role="keyMap" targetNodeId="1119265790350" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075374082688">
     <property name="name" value="IntegerConstant_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1068580320020" />
@@ -1266,17 +1159,6 @@
       <property name="text" value=" " />
       <property name="drawBorder" value="false" />
       <link role="actionSet" targetNodeId="1079116733033" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1079354856500">
-    <property name="name" value="StringType_Editor" />
-    <link role="conceptDeclaration" targetNodeId="1.1079352774609" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1079354856501">
-      <property name="textFgColor" value="DARK_BLUE" />
-      <property name="text" value="String" />
-      <property name="drawBorder" value="false" />
-      <property name="selectable" value="true" />
-      <link role="keyMap" targetNodeId="1119265790350" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1079605217732">
@@ -2015,9 +1897,17 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1081942381484">
     <property name="name" value="Type_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1068431790189" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1081942381485">
-      <property name="text" value="&lt;type&gt;" />
-      <property name="drawBorder" value="false" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Alternation" id="1138060380694">
+      <property name="alternationConditionAspectMethodId" value="IsAbstractConcept" />
+      <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1138060384542">
+        <property name="text" value="&lt;type&gt;" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ConceptProperty" id="1138060501183">
+        <property name="textFgColor" value="DARK_BLUE" />
+        <link role="propertyDeclaration" targetNodeId="2.1137473891462" />
+        <link role="keyMap" targetNodeId="1119265790350" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1082114095844">
@@ -2564,17 +2454,6 @@
         <property name="text" value=";" />
         <property name="drawBorder" value="false" />
       </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1107460489241">
-    <link role="conceptDeclaration" targetNodeId="1.1107460423361" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1107460527820">
-      <property name="editable" value="true" />
-      <property name="textFgColor" value="DARK_BLUE" />
-      <property name="text" value="var" />
-      <property name="drawBorder" value="false" />
-      <property name="selectable" value="true" />
-      <link role="keyMap" targetNodeId="1119265790350" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1107796847143">

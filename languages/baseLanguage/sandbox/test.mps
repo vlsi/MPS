@@ -202,6 +202,9 @@
         <property name="name" value="g" />
         <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1136027177055" />
       </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1138061156632">
+        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1138061178325" />
+      </node>
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1127094836077">
       <property name="name" value="aaa" />
