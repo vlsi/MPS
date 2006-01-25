@@ -12,12 +12,12 @@ import jetbrains.mps.smodel.SNodePresentationUtil;
  * Time: 2:06:58 PM
  * To change this template use File | Settings | File Templates.
  */
-public abstract class AbstractTransformHintSubstituteAction extends AbstractNodeSubstituteItem implements INodeSubstituteAction {
+public abstract class AbstractRTransformHintSubstituteAction extends AbstractNodeSubstituteItem implements INodeSubstituteAction {
   private SNode myParameterNode;
   private SNode mySourceNode;
   private IScope myScope;
 
-  public AbstractTransformHintSubstituteAction(SNode parameterNode, SNode sourceNode, IScope scope) {
+  public AbstractRTransformHintSubstituteAction(SNode parameterNode, SNode sourceNode, IScope scope) {
     mySourceNode = sourceNode;
     myParameterNode = parameterNode;
     myScope = scope;
@@ -44,9 +44,9 @@ public abstract class AbstractTransformHintSubstituteAction extends AbstractNode
   }
 
   public SNode doSubstitute(String pattern) {
-    getSourceNode().setProperty(SNode.EAST_TRANSFORM_HINT, null);
-    return doSubstituteTransformHint();
+    getSourceNode().setProperty(SNode.RIGHT_TRANSFORM_HINT, null);
+    return doSubstituteRTransformHint();
   }
 
-  protected abstract SNode doSubstituteTransformHint();
+  protected abstract SNode doSubstituteRTransformHint();
 }

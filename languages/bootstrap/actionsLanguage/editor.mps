@@ -116,7 +116,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1138079331375">
         <property name="drawBorder" value="false" />
-        <property name="cellProviderId" value="TransformHintActionsBuilder_ActionsFilter" />
+        <property name="cellProviderId" value="RightTransformHintActionsBuilder_ActionsFilter" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1138079331376">
         <property name="text" value="actions factory:" />
@@ -124,7 +124,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1138079331377">
         <property name="drawBorder" value="false" />
-        <property name="cellProviderId" value="TransformHintActionsBuilder_ActionsFactory" />
+        <property name="cellProviderId" value="RightTransformHintActionsBuilder_ActionsFactory" />
       </node>
     </node>
   </node>

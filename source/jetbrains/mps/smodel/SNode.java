@@ -27,7 +27,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public static final Object BAD_REFERENT_STATUS = new Object();
 
   public static final String NAME = "name";
-  public static final String EAST_TRANSFORM_HINT = "east_node_transfrom_hint";
+  public static final String RIGHT_TRANSFORM_HINT = "right_transfrom_hint";
 
   private static final String ATTRIBUTE = "attribute";
 
@@ -1024,7 +1024,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     }
   }
 
-  public void setEastTransformHint(String hint) {
-    setProperty(EAST_TRANSFORM_HINT, hint);
+  public void addRightTransformHint() {
+    setProperty(RIGHT_TRANSFORM_HINT, "");
   }
 }

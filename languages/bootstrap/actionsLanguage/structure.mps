@@ -37,7 +37,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1138079221458">
-    <property name="name" value="TransformHintActionsBuilder" />
+    <property name="name" value="RightTransformHintActionsBuilder" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1138079221460">
       <property name="name" value="actionsFactoryAspectId" />
       <link role="dataType" targetNodeId="1.1082983041843" />
@@ -55,7 +55,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1138079416598">
     <property name="rootable" value="true" />
-    <property name="name" value="TransformHintActions" />
+    <property name="name" value="RightTransformHintActions" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1138079416599">
       <property name="sourceCardinality" value="0..n" />
       <property name="targetCardinality" value="1" />

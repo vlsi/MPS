@@ -189,21 +189,21 @@ public class EditorManager {
       NodeReadAccessCaster.removeNodeAccessListener();
     }
 
-    if (node.getProperty(SNode.EAST_TRANSFORM_HINT) != null) {
+    if (node.getProperty(SNode.RIGHT_TRANSFORM_HINT) != null) {
       EditorCell_Collection rowWrapper = EditorCell_Collection.createHorizontal(context, node);
       rowWrapper.setSelectable(false);
       rowWrapper.addEditorCell(nodeCell);
-      String eastHint = node.getProperty(SNode.EAST_TRANSFORM_HINT);
-      EditorCell_Constant eastTransformHintCell = EditorCell_Constant.create(context, node, eastHint, true);
-      eastTransformHintCell.putUserObject(EditorCell.CELL_ID, node.getId());
-      eastTransformHintCell.setEditable(true);
-      eastTransformHintCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, SNode.EAST_TRANSFORM_HINT));
-      eastTransformHintCell.setSubstituteInfo(new AbstractNodeSubstituteInfo(context) {
+      String rightHint = node.getProperty(SNode.RIGHT_TRANSFORM_HINT);
+      EditorCell_Constant rightTransformHintCell = EditorCell_Constant.create(context, node, rightHint, true);
+      rightTransformHintCell.putUserObject(EditorCell.CELL_ID, node.getId());
+      rightTransformHintCell.setEditable(true);
+      rightTransformHintCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, SNode.RIGHT_TRANSFORM_HINT));
+      rightTransformHintCell.setSubstituteInfo(new AbstractNodeSubstituteInfo(context) {
         protected List<INodeSubstituteItem> createActions() {
-          return (List)ModelActions.createEastTransformHintSubstituteActions(node, context.getOperationContext().getScope());
+          return (List)ModelActions.createRightTransformHintSubstituteActions(node, context.getOperationContext().getScope());
         }
       });
-      rowWrapper.addEditorCell(eastTransformHintCell);
+      rowWrapper.addEditorCell(rightTransformHintCell);
       return rowWrapper;
     }
 
