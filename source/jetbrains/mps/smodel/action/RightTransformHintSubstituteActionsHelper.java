@@ -43,7 +43,7 @@ import java.util.*;
     List<Language> languages = sourceNode.getModel().getLanguages(scope);
     for (Language language : languages) {
       SModelDescriptor actionsModel = language.getActionsModelDescriptor();
-      if (actionsModel.getSModel() != null) {
+      if (actionsModel != null && actionsModel.getSModel() != null) {
         List<SNode> list = SModelUtil.allNodes(actionsModel.getSModel(), new Condition<SNode>() {
           public boolean met(SNode node) {
             if (node instanceof RightTransformHintActionsBuilder) {
