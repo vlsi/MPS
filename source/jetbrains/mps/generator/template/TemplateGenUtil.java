@@ -528,7 +528,7 @@ public class TemplateGenUtil {
       return null;
     }
     if (templateFragments.size() > 1) {
-      LOG.error("WARN: more when one fragments found in " + templateDeclarationForCase.getDebugText());
+      LOG.error("WARN: more than one fragments found in " + templateDeclarationForCase.getDebugText());
       return null;
     }
 
