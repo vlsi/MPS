@@ -9,6 +9,7 @@ import java.awt.*;
  * Date: Jan 19, 2005
  */
 public interface CellLayout {
+
   public void doLayout(EditorCell_Collection editorCells);
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells);
   public int getAscent(EditorCell_Collection editorCells);

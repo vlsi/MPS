@@ -14,7 +14,6 @@ import java.awt.*;
  * Date: Jan 19, 2005
  */
 public class CellLayout_Flow extends AbstractCellLayout {
-  public static final String NOFLOW = "noflow";
 
   private static Logger LOG = Logger.getLogger(CellLayout_Flow.class);
 
@@ -131,13 +130,13 @@ public class CellLayout_Flow extends AbstractCellLayout {
         myNextIsPunctuation = false;
         if (lookAhead.hasNext()) {
           nextCell = lookAhead.next();
-          if (nextCell instanceof EditorCell_Punctuation) {
+          if (nextCell.isPunctuationLayout()) {
             myNextIsPunctuation = true;
           }
         }
 
         //if no flow
-        if (NOFLOW.equals(cell.getLayoutConstraint())) {
+        if (LayoutConstraints.NOFLOW_LAYOUT_CONSTRAINT.equals(cell.getLayoutConstraint())) {
           if (!getCurrentLine().isEmpty()) {
             alignLine();
             nextLine();
@@ -295,10 +294,10 @@ public class CellLayout_Flow extends AbstractCellLayout {
     TextBuilder result = TextBuilder.getEmptyTextBuilder();
     for (;it.hasNext();) {
       EditorCell editorCell = it.next();
-      if (NOFLOW.equals(editorCell.getLayoutConstraint())) {
+      if (LayoutConstraints.NOFLOW_LAYOUT_CONSTRAINT.equals(editorCell.getLayoutConstraint())) {
         return result.appendToTheBottom(editorCell.renderText());
       }
-      result = result.appendToTheRight(editorCell.renderText(), !(editorCell instanceof EditorCell_Punctuation));
+      result = result.appendToTheRight(editorCell.renderText(), !(editorCell.isPunctuationLayout()));
     }
     return result;
   }

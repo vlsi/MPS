@@ -49,7 +49,7 @@ public class NodeEditorActions {
       EditorCell selection = nodeEditorComponent.getSelectedCell();
       EditorCell target = findTarget(selection);
       nodeEditorComponent.changeSelection(target);
-      if (selection instanceof EditorCell_Punctuation && target instanceof EditorCell_Label) {
+      if (selection.isPunctuationLayout() && target instanceof EditorCell_Label) {
         TextLine textLine = ((EditorCell_Label) target).getTextLine();
         int textLength = textLine.getText().length();
         if (textLength > 0) {
@@ -207,7 +207,7 @@ public class NodeEditorActions {
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
       EditorCell target = findTarget(selection);
       context.getNodeEditorComponent().changeSelection(target);
-      if (target instanceof  EditorCell_Punctuation) {
+      if (target.isPunctuationLayout()) {
         ((EditorCell_Label)target).getTextLine().setCaretPosition(1);
       } else
       if (target instanceof EditorCell_Label) {

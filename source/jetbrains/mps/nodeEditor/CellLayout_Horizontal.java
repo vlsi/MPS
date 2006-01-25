@@ -28,7 +28,7 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
       //++ punctuation support
       if (lookAhead.hasNext()) {
         EditorCell nextCell = lookAhead.next();
-        if (nextCell instanceof EditorCell_Punctuation) {
+        if (nextCell.isPunctuationLayout()) {
           width -= editorCell.getRightInternalInset();
           editorCell.setNextIsPunctuation();
         }
@@ -53,7 +53,7 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {
     TextBuilder result = TextBuilder.getEmptyTextBuilder();
     for (EditorCell editorCell : editorCells) {
-      result = result.appendToTheRight(editorCell.renderText(), !(editorCell instanceof EditorCell_Punctuation));
+      result = result.appendToTheRight(editorCell.renderText(), !(editorCell.isPunctuationLayout()));
     }
     return result;
   }
