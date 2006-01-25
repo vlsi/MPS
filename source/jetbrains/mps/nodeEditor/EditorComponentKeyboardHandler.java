@@ -158,6 +158,8 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
                 keyEvent.isAltDown() &&
                 keyEvent.isControlDown() &&
                 !keyEvent.isShiftDown()) &&
+                !selectedCell.getSNode().hasRightTransformHint() &&
+                !selectedCell.isInspectorCell() &&
                 ModelActions.canCreateRightTransformHintSubstituteActions(
                         selectedCell.getSNode(), editorContext.getOperationContext().getScope())) {
           keyEvent.consume();

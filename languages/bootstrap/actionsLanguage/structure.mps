@@ -46,6 +46,10 @@
       <property name="name" value="actionsFilterAspectId" />
       <link role="dataType" targetNodeId="1.1082983041843" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1138161064310">
+      <property name="name" value="preconditionAspectId" />
+      <link role="dataType" targetNodeId="1.1082983041843" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1138079221462">
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />

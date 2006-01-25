@@ -1,10 +1,8 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.ide.*;
-import jetbrains.mps.ide.ui.JMultiLineToolTip;
-import jetbrains.mps.ide.navigation.EditorsHistory;
-import jetbrains.mps.ide.navigation.RecentEditorsMenu;
+import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.action.*;
 import jetbrains.mps.ide.actions.nodes.*;
 import jetbrains.mps.ide.actions.refactorings.InlineVariableAction;
@@ -12,14 +10,16 @@ import jetbrains.mps.ide.actions.refactorings.IntroduceVariableAction;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
+import jetbrains.mps.ide.navigation.EditorsHistory;
+import jetbrains.mps.ide.navigation.RecentEditorsMenu;
+import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.text.CellAction_RenderText;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.typesystem.TypeCheckerAccess;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.typesystem.TypeCheckerAccess;
-import jetbrains.mps.annotations.AttributeConcept;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;

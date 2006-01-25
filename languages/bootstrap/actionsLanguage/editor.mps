@@ -110,6 +110,14 @@
           </node>
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1138161099235">
+        <property name="text" value="condition:" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1138161141644">
+        <property name="drawBorder" value="false" />
+        <property name="cellProviderId" value="RightTransformHintActionsBuilder_Precondition" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1138079331374">
         <property name="text" value="actions filter:" />
         <property name="drawBorder" value="false" />

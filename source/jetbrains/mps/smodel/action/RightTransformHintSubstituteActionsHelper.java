@@ -18,8 +18,7 @@ import java.util.*;
 /*package*/ class RightTransformHintSubstituteActionsHelper {
 
   public static boolean canCreateActions(SNode sourceNode, IScope scope) {
-    List<RightTransformHintActionsBuilder> actionsBuilders = getActionBuilders(sourceNode, scope);
-    return actionsBuilders.size() > 0;
+    return getActionBuilders(sourceNode, scope).size() > 0;
   }
 
   public static List<INodeSubstituteAction> createActions(SNode sourceNode, IScope scope) {
@@ -35,7 +34,7 @@ import java.util.*;
     return resultActions;
   }
 
-  private static List<RightTransformHintActionsBuilder> getActionBuilders(SNode sourceNode, IScope scope) {
+  private static List<RightTransformHintActionsBuilder> getActionBuilders(final SNode sourceNode, final IScope scope) {
     List<RightTransformHintActionsBuilder> actionsBuilders = new LinkedList<RightTransformHintActionsBuilder>();
     final ConceptDeclaration sourceConcept = SModelUtil.getConceptDeclaration(sourceNode, scope);
     if (sourceConcept == null) {
@@ -50,7 +49,8 @@ import java.util.*;
             if (node instanceof RightTransformHintActionsBuilder) {
               RightTransformHintActionsBuilder actionsBuilder = (RightTransformHintActionsBuilder) node;
               // is applicable ?
-              return SModelUtil.isAssignableConcept(actionsBuilder.getApplicableConcept(), sourceConcept);
+              return SModelUtil.isAssignableConcept(actionsBuilder.getApplicableConcept(), sourceConcept) &&
+                      satisfiesPrecondition(actionsBuilder, sourceNode, scope);
             }
             return false;
           }
@@ -73,6 +73,19 @@ import java.util.*;
   // --------------------------------
   // Query methods invocation...
   // --------------------------------
+
+  private static boolean satisfiesPrecondition(RightTransformHintActionsBuilder substituteActionsBuilder, SNode sourceNode, IScope scope) {
+    String preconditionQueryMethodId = substituteActionsBuilder.getPreconditionAspectId();
+    // precondition is optional
+    if (preconditionQueryMethodId == null) {
+      return true;
+    }
+
+    Object[] args = new Object[]{sourceNode, scope};
+    String methodName = "rightTransformHintSubstituteActionsBuilder_Precondition_" + preconditionQueryMethodId;
+    SModel model = substituteActionsBuilder.getModel();
+    return (Boolean) QueryMethod.invoke(methodName, args, model);
+  }
 
   private static List<INodeSubstituteAction> applyActionFilter(RightTransformHintActionsBuilder substituteActionsBuilder, List<INodeSubstituteAction> actions, IScope scope) {
     String filterQueryMethodId = substituteActionsBuilder.getActionsFilterAspectId();

@@ -25,6 +25,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public static final Object LAST_UPDATE = new Object();
   public static final Object ERROR_STATUS = new Object();
   public static final Object BAD_REFERENT_STATUS = new Object();
+  public static final Object RIGHT_TRANSFORM_HINT_JUST_ADDED = new Object();
 
   public static final String NAME = "name";
   public static final String RIGHT_TRANSFORM_HINT = "right_transfrom_hint";
@@ -45,7 +46,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   private SModel myModel;
   private String myId;
-  private HashMap myUserObjects = new HashMap();
+  private HashMap<Object, Object> myUserObjects = new HashMap<Object, Object>();
 
   protected SNode(SModel model) {
     myModel = model;
@@ -175,6 +176,10 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   public void putUserObject(Object key, Object value) {
     myUserObjects.put(key, value);
+  }
+
+  public void removeUserObject(Object key) {
+    myUserObjects.remove(key);
   }
 
   public void removeAllUserObjects() {
@@ -1026,5 +1031,10 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   public void addRightTransformHint() {
     setProperty(RIGHT_TRANSFORM_HINT, "");
+    putUserObject(RIGHT_TRANSFORM_HINT_JUST_ADDED, RIGHT_TRANSFORM_HINT_JUST_ADDED);
+  }
+
+  public boolean hasRightTransformHint() {
+    return getProperty(RIGHT_TRANSFORM_HINT) != null;
   }
 }

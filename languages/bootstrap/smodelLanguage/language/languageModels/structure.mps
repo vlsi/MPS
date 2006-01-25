@@ -30,6 +30,9 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1138056022639">
     <property name="name" value="SPropertyAccess" />
     <link role="extends" targetNodeId="1138055978872" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1138162277586">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1138056395725">
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
@@ -40,6 +43,9 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1138056143562">
     <property name="name" value="SLinkTargetAccess" />
     <link role="extends" targetNodeId="1138055978872" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1138162255707">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1138056516764">
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
@@ -50,6 +56,9 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1138056282393">
     <property name="name" value="SLinkTargetCollectionAccess" />
     <link role="extends" targetNodeId="1138055978872" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1138162261287">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1138056546658">
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />

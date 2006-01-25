@@ -9,6 +9,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.ide.command.CommandProcessor;
 
 import java.util.*;
 
@@ -45,8 +46,7 @@ public class EditorManager {
     myMap.clear();
     myMap.put(node, rootCell);
     myCreatingInspectedCell = isInspectorCell;
-    EditorCell newRootCell = createEditorCell(context, node, events);
-    return newRootCell;
+    return createEditorCell(context, node, events);
   }
 
 
@@ -158,9 +158,8 @@ public class EditorManager {
     }
 
     nodeEditorComponent.clearNodesCellDependsOn(oldCell);
-    EditorCell editorCell = createEditorCell_internal(context, node, myCreatingInspectedCell);
 
-    return editorCell;
+    return createEditorCell_internal(context, node, myCreatingInspectedCell);
   }
 
 
@@ -189,21 +188,29 @@ public class EditorManager {
       NodeReadAccessCaster.removeNodeAccessListener();
     }
 
-    if (node.getProperty(SNode.RIGHT_TRANSFORM_HINT) != null) {
+    if (node.hasRightTransformHint()) {
       EditorCell_Collection rowWrapper = EditorCell_Collection.createHorizontal(context, node);
       rowWrapper.setSelectable(false);
       rowWrapper.addEditorCell(nodeCell);
-      String rightHint = node.getProperty(SNode.RIGHT_TRANSFORM_HINT);
-      EditorCell_Constant rightTransformHintCell = EditorCell_Constant.create(context, node, rightHint, true);
+      final EditorCell_Constant rightTransformHintCell = EditorCell_Constant.create(context, node, "", true);
       rightTransformHintCell.putUserObject(EditorCell.CELL_ID, node.getId());
       rightTransformHintCell.setEditable(true);
       rightTransformHintCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, SNode.RIGHT_TRANSFORM_HINT));
       rightTransformHintCell.setSubstituteInfo(new AbstractNodeSubstituteInfo(context) {
         protected List<INodeSubstituteItem> createActions() {
-          return (List)ModelActions.createRightTransformHintSubstituteActions(node, context.getOperationContext().getScope());
+          return (List) ModelActions.createRightTransformHintSubstituteActions(node, context.getOperationContext().getScope());
         }
       });
       rowWrapper.addEditorCell(rightTransformHintCell);
+
+      if (node.getUserObject(SNode.RIGHT_TRANSFORM_HINT_JUST_ADDED) != null) {
+        node.removeUserObject(SNode.RIGHT_TRANSFORM_HINT_JUST_ADDED);
+        CommandProcessor.instance().invokeLater(new Runnable() {
+          public void run() {
+            context.getNodeEditorComponent().changeSelection(rightTransformHintCell);
+          }
+        });
+      }
       return rowWrapper;
     }
 
@@ -217,6 +224,7 @@ public class EditorManager {
       return rowWrapper;
     }
 
+      nodeCell.setInspectorCell(isInspectorCell);
     return nodeCell;
   }
 
