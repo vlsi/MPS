@@ -9,7 +9,6 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNodeProxy;
-import jetbrains.mps.smodel.action.ModelActions;
 
 import java.awt.event.KeyEvent;
 import java.util.*;
@@ -153,19 +152,19 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
           return true;
         }
 
-        //test
-        if ((keyEvent.getKeyCode() == KeyEvent.VK_SPACE &&
-                keyEvent.isAltDown() &&
-                keyEvent.isControlDown() &&
-                !keyEvent.isShiftDown()) &&
-                !selectedCell.getSNode().hasRightTransformHint() &&
-                !selectedCell.isInspectorCell() &&
-                ModelActions.canCreateRightTransformHintSubstituteActions(
-                        selectedCell.getSNode(), editorContext.getOperationContext().getScope())) {
-          keyEvent.consume();
-          selectedCell.getSNode().addRightTransformHint();
-        }
-        //test
+//        //test
+//        if ((keyEvent.getKeyCode() == KeyEvent.VK_SPACE &&
+//                keyEvent.isAltDown() &&
+//                keyEvent.isControlDown() &&
+//                !keyEvent.isShiftDown()) &&
+//                !selectedCell.getSNode().hasRightTransformHint() &&
+//                !selectedCell.isInspectorCell() &&
+//                ModelActions.canCreateRightTransformHintSubstituteActions(
+//                        selectedCell.getSNode(), editorContext.getOperationContext().getScope())) {
+//          keyEvent.consume();
+//          selectedCell.getSNode().addRightTransformHint();
+//        }
+//        //test
       } // if (!keyEvent.isConsumed())
     } // if (selectedCell != null)
 

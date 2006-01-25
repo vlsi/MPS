@@ -53,5 +53,24 @@
       <link role="applicableConcept" targetNodeId="1.1083245299891" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.actionsLanguage.RightTransformHintActions" id="1138168268784">
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RightTransformHintActionsBuilder" id="1138168280988">
+      <property name="actionsFactoryAspectId" value="InstanceMemberAccess" />
+      <property name="preconditionAspectId" value="Classifier_type" />
+      <link role="applicableConcept" targetNodeId="1.1068431790191" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RightTransformHintActionsBuilder" id="1138168906052">
+      <property name="actionsFactoryAspectId" value="BinaryOperation" />
+      <link role="applicableConcept" targetNodeId="1.1068431790191" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RightTransformHintActionsBuilder" id="1138169534740">
+      <property name="actionsFactoryAspectId" value="AssignmentExpression" />
+      <link role="applicableConcept" targetNodeId="1.1068431790191" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RightTransformHintActionsBuilder" id="1138169661398">
+      <property name="actionsFactoryAspectId" value="InstanceOfExpression" />
+      <link role="applicableConcept" targetNodeId="1.1068431790191" />
+    </node>
+  </node>
 </model>
 

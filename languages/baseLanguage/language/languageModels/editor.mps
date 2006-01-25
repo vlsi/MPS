@@ -2352,9 +2352,6 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1107375429415">
     <property name="name" value="_Expression_RTransform_ActionSet" />
-    <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_RightTransform" id="1107375490807">
-      <property name="actionProviderId" value="Expression" />
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1107385143309">
     <link role="conceptDeclaration" targetNodeId="1.1107382435476" />
@@ -2905,6 +2902,12 @@
         <property name="drawBorder" value="false" />
         <link role="linkDeclaration" targetNodeId="1.1137022507850" />
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1138166593970">
+    <property name="name" value="_Expression_RTransform_ActionSet_saved" />
+    <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_RightTransform" id="1138166593971">
+      <property name="actionProviderId" value="Expression" />
     </node>
   </node>
 </model>
