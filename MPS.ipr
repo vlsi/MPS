@@ -271,6 +271,7 @@
       <module fileurl="file://$PROJECT_DIR$/projects/TheSimplestLanguage/TheSimplestLanguage.iml" filepath="$PROJECT_DIR$/projects/TheSimplestLanguage/TheSimplestLanguage.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/TypeTest/TypeTest.iml" filepath="$PROJECT_DIR$/projects/TypeTest/TypeTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/agreement/agreement.iml" filepath="$PROJECT_DIR$/projects/agreement/agreement.iml" group="Projects" />
+      <module fileurl="file://$PROJECT_DIR$/SemanticWeb/core/core.iml" filepath="$PROJECT_DIR$/SemanticWeb/core/core.iml" group="SemanticWeb" />
       <module fileurl="file://$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/log4j/log4j.iml" filepath="$PROJECT_DIR$/projects/log4j/log4j.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/log4j2/log4j2.iml" filepath="$PROJECT_DIR$/projects/log4j2/log4j2.iml" group="Projects" />
