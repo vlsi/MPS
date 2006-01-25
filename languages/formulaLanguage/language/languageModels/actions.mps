@@ -9,7 +9,6 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1113331449032">
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1113331454611">
       <property name="actionsFactoryAspectId" value="Expression" />
-      <property name="actionsFilterAspectId" value="Expression" />
       <property name="applicableLinkMetaclass" value="aggregation" />
       <link role="applicableConcept" targetNodeId="1.1111784312737" />
     </node>
