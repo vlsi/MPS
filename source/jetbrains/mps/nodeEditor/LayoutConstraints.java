@@ -1,5 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.bootstrap.editorLanguage._Layout_Constraints_Enum;
+
 import java.util.*;
 
 /**
@@ -11,13 +13,7 @@ import java.util.*;
  */
 public class LayoutConstraints {
 
-  public static final String NOFLOW_LAYOUT_CONSTRAINT = "noflow";
-  public static final String PUNCTUATION_LAYOUT_CONSTRAINT = "punctuation";
+  public static final String NOFLOW_LAYOUT_CONSTRAINT = _Layout_Constraints_Enum.noflow.getValue();
+  public static final String PUNCTUATION_LAYOUT_CONSTRAINT = _Layout_Constraints_Enum.punctuation.getValue();
 
-  public static List<String> getAllLayoutConstraints() {
-    List<String> result = new ArrayList<String>();
-    result.add(NOFLOW_LAYOUT_CONSTRAINT);
-    result.add(PUNCTUATION_LAYOUT_CONSTRAINT);
-    return result;
-  }
 }
