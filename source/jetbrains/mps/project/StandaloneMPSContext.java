@@ -2,6 +2,8 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.ProjectFrame;
+import jetbrains.mps.security.IModelSecurityChecker;
+import jetbrains.mps.security.UnsecureModelChecker;
 
 import java.awt.*;
 
