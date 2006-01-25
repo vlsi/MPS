@@ -63,6 +63,12 @@ public class TaskProgressSettings extends DefaultExternalizableComponent {
     myMeasurementInProgress = false;
   }
 
+  public void finishTaskProgressAndDropMeasurements() {
+    myTransientTaskKindsToEstimatedTime.clear();
+    myTransientTasksToEstimatedTime.clear();
+    myMeasurementInProgress = false;
+  }
+
   public long getEstimatedTimeMillis(String taskName) {
     Long time = myTasksToEstimatedTime.get(taskName);
     if (time != null) {

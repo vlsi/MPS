@@ -317,17 +317,20 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           progress.finishTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
         }
         addProgressMessage(MessageKind.INFORMATION, "generation completed successfully", progress);
+        progress.finish();
       } else if (status.isError()) {
         addProgressMessage(MessageKind.WARNING, "generation finished with errors", progress);
+        progress.finishWithError();
       } else if (status.isCanceled()) {
         addProgressMessage(MessageKind.WARNING, "generation canceled", progress);
+        progress.finishWithError();
       }
       showMessageView();
     } catch (Throwable t) {
       LOG.error(t);
       addProgressMessage(MessageKind.ERROR, t.toString(), progress);
     } finally {
-      progress.finish();
+      progress.ensureJobIsFinished();
       System.gc();
     }
   }

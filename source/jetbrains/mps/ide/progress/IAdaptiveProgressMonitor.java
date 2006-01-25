@@ -13,6 +13,10 @@ public interface IAdaptiveProgressMonitor {
 
   void finish();
 
+  void finishWithError();
+
+  void ensureJobIsFinished();
+
   void finishTask();
 
   void finishTask(String taskName);
