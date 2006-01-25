@@ -208,6 +208,10 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     });
   }
 
+  private void checkMonitorCanceled(IAdaptiveProgressMonitor progressMonitor) {
+    if (progressMonitor.isCanceled()) throw new GenerationCanceledException();
+  }
+
   public void generateModels(List<SModel> _sourceModels, Language targetLanguage, IOperationContext invocationContext, boolean generateText, IAdaptiveProgressMonitor progress) {
     invocationContext.getProject().saveModels();
     List<SModelDescriptor> sourceModels = new ArrayList<SModelDescriptor>();
@@ -246,15 +250,18 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         progress.addText("IntelliJ IDEA with installed MPS is not present");
       } else {
         // -- compile sources before generation
+        checkMonitorCanceled(progress);
         progress.addText("compiling in IntelliJ IDEA...");
 
         progress.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
         MPSPlugin.getInstance().refreshFS();
         progress.finishTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
+        checkMonitorCanceled(progress);
 
         progress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
         MPSPlugin.getInstance().buildModule(outputFolder);
         progress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
+        checkMonitorCanceled(progress);
       }
 
       // re-load classes anyway (to be sure that java_stub are up-to-date)
@@ -262,6 +269,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       progress.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
       ReloadUtils.reloadAll();
       progress.finishTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
+      checkMonitorCanceled(progress);
 
       //++ generation
       GenerationSession generationSession = new GenerationSession(targetLanguage, invocationContext, progress);
@@ -274,6 +282,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         progress.startLeafTask(taskName, ModelsProgressUtil.generationModelTaskKind());
 
         status = generationSession.generateModel(sourceModelDescriptor);
+        checkMonitorCanceled(progress);
         if (status.getOutputModel() != null) {
           if (generateText) {
             progress.addText("generate text to Output view");
@@ -297,6 +306,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         myProject.addProjectSolution(sessionDescriptorFile);
       }
 
+      checkMonitorCanceled(progress);
       progress.addText("");
       if (status.isOk()) {
         if (compile && !generateText) {
@@ -306,31 +316,35 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           progress.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
           MPSPlugin.getInstance().refreshFS();
           progress.finishTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
+          checkMonitorCanceled(progress);
 
           progress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
           MPSPlugin.getInstance().buildModule(outputFolder);
           progress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
+          checkMonitorCanceled(progress);
 
           progress.addText("reloading MPS classes...");
           progress.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
           ReloadUtils.reloadAll();
           progress.finishTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
+          checkMonitorCanceled(progress);
         }
         addProgressMessage(MessageKind.INFORMATION, "generation completed successfully", progress);
         progress.finish();
       } else if (status.isError()) {
         addProgressMessage(MessageKind.WARNING, "generation finished with errors", progress);
-        progress.finishWithError();
-      } else if (status.isCanceled()) {
-        addProgressMessage(MessageKind.WARNING, "generation canceled", progress);
-        progress.finishWithError();
+        progress.finishAnyway();
       }
+      showMessageView();
+    } catch(GenerationCanceledException gce) {
+      addProgressMessage(MessageKind.WARNING, "generation canceled", progress);
+      progress.finishAnyway();
       showMessageView();
     } catch (Throwable t) {
       LOG.error(t);
       addProgressMessage(MessageKind.ERROR, t.toString(), progress);
     } finally {
-      progress.ensureJobIsFinished();
+      progress.finishAnyway();
       System.gc();
     }
   }

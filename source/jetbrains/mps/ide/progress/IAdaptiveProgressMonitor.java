@@ -13,9 +13,7 @@ public interface IAdaptiveProgressMonitor {
 
   void finish();
 
-  void finishWithError();
-
-  void ensureJobIsFinished();
+  void finishAnyway();
 
   void finishTask();
 

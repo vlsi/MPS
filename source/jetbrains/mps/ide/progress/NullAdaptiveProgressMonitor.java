@@ -24,12 +24,8 @@ public class NullAdaptiveProgressMonitor  implements IAdaptiveProgressMonitor {
 
   }
 
-  public void finishWithError() {
+  public void finishAnyway() {
 
-  }
-
-  public void ensureJobIsFinished() {
-    
   }
 
   public void startTask(String taskName, String taskKind, long estimatedTime) {
