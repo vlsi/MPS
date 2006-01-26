@@ -11,6 +11,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.security.NodeSecurityManager;
 
 import java.util.*;
 
@@ -410,6 +411,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   public String getProperty(String propertyName) {
     NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName);
+    NodeSecurityManager.getInstance().checkPropertyAvailable(this, propertyName, false);
     return myProperties.get(propertyName);
   }
 
@@ -424,6 +426,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public void setProperty(final String propertyName, String propertyValue) {
+    NodeSecurityManager.getInstance().checkPropertyAvailable(this, propertyName, true);
     final String oldValue = myProperties.get(propertyName);
     if (propertyValue == null) {
       myProperties.remove(propertyName);

@@ -1,9 +1,7 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.security.IModelSecurityChecker;
 
 import java.util.List;
 import java.awt.*;
