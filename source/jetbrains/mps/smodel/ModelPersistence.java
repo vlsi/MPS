@@ -301,7 +301,8 @@ public class ModelPersistence {
       return new SNode(model) {
       }; //this hack is required to make diff work correctly event if no such class
     } catch (NoSuchMethodException e) {
-      LOG.error(e);
+
+      LOG.error("Couldn't find method newInstance for node type " + type + " in model " + model.getUID(), e);
     } catch (SecurityException e) {
       LOG.error(e);
     } catch (IllegalAccessException e) {
