@@ -1,6 +1,6 @@
 package jetbrains.mps.ide.actions.tools;
 
-import jetbrains.mps.bootstrap.editorLanguage.EditorCellModel;
+import jetbrains.mps.bootstrap.editorLanguage.*;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.logging.Logger;
@@ -14,7 +14,7 @@ import java.util.*;
  * serves as template: just loads all models from MPSFileModelDescriptor and "process" them.
  */
 public class InternalRefactoringAction extends MPSAction {
-  public static boolean SHOW = false;
+  public static boolean SHOW = true;
 
   private static final Logger LOG = Logger.getLogger(InternalRefactoringAction.class);
 
@@ -68,9 +68,39 @@ public class InternalRefactoringAction extends MPSAction {
         if (object instanceof EditorCellModel) {
           EditorCellModel cellModel = (EditorCellModel) object;
           if (cellModel.getActionSet() == null) {
-            System.out.println("  --- clear action set");
             cellModel.setActionSet(null);
           }
+
+          if (object instanceof CellModel_RefNode) {
+            CellModel_RefNode cellModel_refNode = (CellModel_RefNode) object;
+            if (cellModel_refNode.getErrorActionSet() == null) {
+              cellModel_refNode.setErrorActionSet(null);
+            } else {
+              System.out.println("!!!!!!!!!!!! not null ErrorActionSet");
+            }
+          }
+          if (object instanceof CellModel_RefCell) {
+            CellModel_RefCell cellModel_refCell = (CellModel_RefCell) object;
+            if (cellModel_refCell.getNullActionSet() == null) {
+//              cellModel_refCell.setNullActionSet(null);
+            } else {
+              System.out.println("!!!!!!!!!!!! not null NullActionSet");
+            }
+          }
+
+          if (object instanceof CellModel_RefNodeList) {
+            CellModel_RefNodeList cellModel_refNodeList = (CellModel_RefNodeList) object;
+            if (cellModel_refNodeList.getElementActionSet() == null) {
+              cellModel_refNodeList.setElementActionSet(null);
+            }
+          }
+
+        } else if (object instanceof CellActionSetDeclaration) {
+          CellActionSetDeclaration cellActionSet = (CellActionSetDeclaration) object;
+          if (cellActionSet.getSpecializes() == null) {
+            cellActionSet.setSpecializes(null);
+          }
+
         }
         return false;
       }
