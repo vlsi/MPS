@@ -63,7 +63,7 @@ public class MatchingUtil {//todo in progress
       //if property pattern var
       PropertyAttributeConcept propertyAttribute = patternNode.getPropertyAttribute(propertyName);
       if (propertyAttribute instanceof PropertyPatternVariableDeclaration) {
-        String propertyValue = node.getProperty(propertyName);
+        LazyPropertyValue propertyValue = new LazyPropertyValue(node, propertyName);
         bindPropertyWithVar(substitution, (PropertyPatternVariableDeclaration) propertyAttribute, propertyValue);
       } else {//else match values
         if (!EqualUtil.equals(patternNode.getProperty(propertyName), node.getProperty(propertyName))) return false;
@@ -140,7 +140,7 @@ public class MatchingUtil {//todo in progress
     }
   }
 
-  private static void bindPropertyWithVar(Substitution substitution, PropertyPatternVariableDeclaration propertyPatternVar, String propertyValue) {
+  private static void bindPropertyWithVar(Substitution substitution, PropertyPatternVariableDeclaration propertyPatternVar, LazyPropertyValue propertyValue) {
     if (getCurrentListPattern() == null) {
       substitution.bindPropertyWithVar(propertyPatternVar, propertyValue);
     } else {

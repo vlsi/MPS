@@ -19,8 +19,8 @@ public class Substitution {
 
   private Map<PatternVariableDeclaration, SNode> myVarsToNodes = new HashMap<PatternVariableDeclaration, SNode>();
   private Map<PatternVariableDeclaration, List<SNode>> myListVarsToNodes = new HashMap<PatternVariableDeclaration, List<SNode>>();
-  private Map<PropertyPatternVariableDeclaration, String> myPropVarsToProperties = new HashMap<PropertyPatternVariableDeclaration, String>();
-  private Map<PropertyPatternVariableDeclaration, List<String>> myListPropVarsToProperties = new HashMap<PropertyPatternVariableDeclaration, List<String>>();
+  private Map<PropertyPatternVariableDeclaration, LazyPropertyValue> myPropVarsToProperties = new HashMap<PropertyPatternVariableDeclaration, LazyPropertyValue>();
+  private Map<PropertyPatternVariableDeclaration, List<LazyPropertyValue>> myListPropVarsToProperties = new HashMap<PropertyPatternVariableDeclaration, List<LazyPropertyValue>>();
   private Map<LinkPatternVariableDeclaration, SNode> myLinkVarsToNodes = new HashMap<LinkPatternVariableDeclaration, SNode>();
   private Map<LinkPatternVariableDeclaration, List<SNode>> myListLinkVarsToNodes = new HashMap<LinkPatternVariableDeclaration, List<SNode>>();
 
@@ -55,34 +55,38 @@ public class Substitution {
     }
   }
 
-   public void bindPropertyWithVar(PropertyPatternVariableDeclaration var, String propertyValue) {
-    String oldPropertyValue = myPropVarsToProperties.get(var);
+   public void bindPropertyWithVar(PropertyPatternVariableDeclaration var, LazyPropertyValue propertyValue) {
+    LazyPropertyValue oldPropertyValue = myPropVarsToProperties.get(var);
     if (oldPropertyValue != null) {
       LOG.warning("a property value binded with this pattern var exists already: " + oldPropertyValue);
     }
     myPropVarsToProperties.put(var, propertyValue);
   }
 
-  public void addPropertyToListBindedWithVar(PropertyPatternVariableDeclaration var, String propertyValue) {
-    List<String> properties = myListPropVarsToProperties.get(var);
+  public void addPropertyToListBindedWithVar(PropertyPatternVariableDeclaration var, LazyPropertyValue propertyValue) {
+    List<LazyPropertyValue> properties = myListPropVarsToProperties.get(var);
     if (properties == null) {
-      properties = new ArrayList<String>();
+      properties = new ArrayList<LazyPropertyValue>();
       myListPropVarsToProperties.put(var, properties);
     }
     properties.add(propertyValue);
   }
 
   public String getPropertyBindedWithVar(PropertyPatternVariableDeclaration var) {
-    return myPropVarsToProperties.get(var);
+    LazyPropertyValue lazyPropertyValue = myPropVarsToProperties.get(var);
+    if (lazyPropertyValue == null) return null;
+    return lazyPropertyValue.getValue();
   }
 
   public List<String> getPropertiesListBindedWithVar(PropertyPatternVariableDeclaration var) {
-    List<String> properties = myListPropVarsToProperties.get(var);
-    if (properties == null) {
-      return new ArrayList<String>();
-    } else {
-      return new ArrayList<String>(properties);
+    List<LazyPropertyValue> properties = myListPropVarsToProperties.get(var);
+    List<String> result = new ArrayList<String>();
+    if (properties != null) {
+      for (LazyPropertyValue propertyValue : properties) {
+        result.add(propertyValue.getValue());
+      }
     }
+    return result;
   }
 
    //--------- links
