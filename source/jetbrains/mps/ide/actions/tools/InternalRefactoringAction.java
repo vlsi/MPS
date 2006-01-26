@@ -14,7 +14,7 @@ import java.util.*;
  * serves as template: just loads all models from MPSFileModelDescriptor and "process" them.
  */
 public class InternalRefactoringAction extends MPSAction {
-  public static boolean SHOW = true;
+  public static boolean SHOW = false;
 
   private static final Logger LOG = Logger.getLogger(InternalRefactoringAction.class);
 

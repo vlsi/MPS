@@ -768,10 +768,6 @@
       <link role="target" targetNodeId="1068580123136" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1079115200860">
-    <property name="name" value="UndefinedOperator" />
-    <link role="extends" targetNodeId="4.1078489098625" />
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1079359253375">
     <property name="name" value="ParenthesizedExpression" />
     <link role="extends" targetNodeId="1068431790191" />

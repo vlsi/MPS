@@ -1060,38 +1060,6 @@
       <property name="name" value="nodeBox" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1079116706078">
-    <property name="name" value="UndefinedOperator_Editor" />
-    <link role="conceptDeclaration" targetNodeId="1.1079115200860" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1079116733033">
-      <property name="name" value="Actions" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_DeleteNode" id="1128705035800" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_RightTransform" id="1079202659546">
-        <property name="disabled" value="true" />
-      </node>
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1079117057848">
-        <property name="substituteHandlerId" value="UndefinedOperatorExpressionAcceptor" />
-        <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1082380741937">
-          <property name="handlerId" value="InstantiateConcept" />
-          <property name="name" value="binaryExpressions" />
-          <property name="queryId" value="BinaryOperationTypes" />
-        </node>
-        <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_Simple" id="1079117057851">
-          <property name="text" value="=" />
-          <property name="handlerId" value="AssignmentExpressionFactory" />
-        </node>
-        <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_Simple" id="1082648392046">
-          <property name="text" value="instanceof" />
-          <property name="handlerId" value="New_InstanceOfExpression" />
-        </node>
-      </node>
-    </node>
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1079116706079">
-      <property name="text" value=" " />
-      <property name="drawBorder" value="false" />
-      <link role="actionSet" targetNodeId="1079116733033" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1079605217732">
     <property name="name" value="NotEqualsExpression_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1073239437375" />
@@ -1230,7 +1198,6 @@
       <property name="separatorText" value="," />
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <link role="elementActionSet" targetNodeId="1095167443093" />
       <link role="linkDeclaration" targetNodeId="1.1068499141038" />
       <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1080128409627">
         <property name="editable" value="true" />
@@ -1524,7 +1491,6 @@
         <property name="separatorText" value="," />
         <property name="drawBorder" value="false" />
         <property name="vertical" value="false" />
-        <link role="elementActionSet" targetNodeId="1095254423832" />
         <link role="linkDeclaration" targetNodeId="1.1070475587104" />
         <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1085475861769">
           <property name="editable" value="true" />
@@ -2042,7 +2008,6 @@
         <property name="separatorText" value="," />
         <property name="drawBorder" value="false" />
         <property name="vertical" value="false" />
-        <link role="elementActionSet" targetNodeId="1095257479496" />
         <link role="linkDeclaration" targetNodeId="1.1083245396909" />
         <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1095257566423">
           <property name="editable" value="true" />
