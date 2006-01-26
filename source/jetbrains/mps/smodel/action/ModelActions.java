@@ -58,10 +58,10 @@ public class ModelActions {
   //-------------------
 
   public static boolean canCreateRightTransformHintSubstituteActions(SNode sourceNode, IScope scope) {
-    return RightTransformHintSubstituteActionsHelper.canCreateActions(sourceNode, scope);
+    return RTransformHintSubstituteActionsHelper.canCreateActions(sourceNode, scope);
   }
 
   public static List<INodeSubstituteAction> createRightTransformHintSubstituteActions(SNode sourceNode, IScope scope) {
-    return RightTransformHintSubstituteActionsHelper.createActions(sourceNode, scope);
+    return RTransformHintSubstituteActionsHelper.createActions(sourceNode, scope);
   }
 }
