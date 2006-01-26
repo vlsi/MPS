@@ -1,13 +1,12 @@
 package jetbrains.mps.ide.actions.tools;
 
+import jetbrains.mps.bootstrap.editorLanguage.EditorCellModel;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptPropertyDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptProperty;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.Condition;
 
 import java.util.*;
 
@@ -20,7 +19,7 @@ public class InternalRefactoringAction extends MPSAction {
   private static final Logger LOG = Logger.getLogger(InternalRefactoringAction.class);
 
   public InternalRefactoringAction() {
-    super("... replace property declarations to BaseConcept ...");
+    super("... cell model -> null action set ...");
   }
 
   public void execute(ActionContext context) {
@@ -64,39 +63,17 @@ public class InternalRefactoringAction extends MPSAction {
    * perform "refactoring"
    */
   private void processModel(SModel model) {
-//    String propertyName = "abstract";
-//    String propertyName = "alias";
-//    String propertyName = "short_description";
-    String propertyName = "dontSubstituteByDefault";
-    ConceptPropertyDeclaration newPropertyDeclaration = null;
-  ConceptDeclaration baseConcept = SModelUtil.findConceptDeclaration("jetbrains.mps.core.structure.BaseConcept", GlobalScope.getInstance());
-    Iterator<ConceptPropertyDeclaration> iterator = baseConcept.conceptPropertyDeclarations();
-    while (iterator.hasNext()) {
-      ConceptPropertyDeclaration conceptPropertyDeclaration = iterator.next();
-      if(conceptPropertyDeclaration.getName().equals(propertyName)) {
-        newPropertyDeclaration = conceptPropertyDeclaration;
-        break;
-      }
-    }
-
-    if(newPropertyDeclaration == null) {
-      throw new RuntimeException("Couldn't find new property declaration" + propertyName);
-    }
-    ConceptPropertyDeclaration oldPropertyDeclaration = SModelUtil.findNodeByFQName("jetbrains.mps.bootstrap.structureLanguage.library." + propertyName, ConceptPropertyDeclaration.class, GlobalScope.getInstance());
-    if(oldPropertyDeclaration == null) {
-      throw new RuntimeException("Couldn't find old property declaration" + propertyName);
-    }
-
-    Collection<? extends SNode> allNodes = SModelUtil.allNodes(model);
-    for (SNode node : allNodes) {
-      if(node instanceof ConceptProperty) {
-                         ConceptProperty conceptProperty = (ConceptProperty) node;
-        ConceptPropertyDeclaration conceptPropertyDeclaration = conceptProperty.getConceptPropertyDeclaration();
-        if(conceptPropertyDeclaration == oldPropertyDeclaration) {
-          conceptProperty.setConceptPropertyDeclaration(newPropertyDeclaration);
-          System.out.println("-- replace in " + SModelUtil.getRootParent(node).getDebugText());
+    SModelUtil.allNodes(model, new Condition<SNode>() {
+      public boolean met(SNode object) {
+        if (object instanceof EditorCellModel) {
+          EditorCellModel cellModel = (EditorCellModel) object;
+          if (cellModel.getActionSet() == null) {
+            System.out.println("  --- clear action set");
+            cellModel.setActionSet(null);
+          }
         }
+        return false;
       }
-    }
+    });
   }
 }

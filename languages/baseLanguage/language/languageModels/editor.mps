@@ -234,7 +234,6 @@
       <property name="modelAccessorId" value="VariableReferenceName" />
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <link role="actionSet" targetNodeId="1107375429415" />
       <link role="keyMap" targetNodeId="1081427357000" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1080138264330">
         <property name="drawBorder" value="false" />
@@ -498,7 +497,6 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075290268533">
           <property name="drawBorder" value="false" />
           <link role="linkDeclaration" targetNodeId="1.1068431790190" />
-          <link role="actionSet" targetNodeId="1077124145703" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075289999925">
@@ -576,7 +574,6 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075303160506">
           <property name="drawBorder" value="false" />
           <link role="linkDeclaration" targetNodeId="1.1068431790190" />
-          <link role="actionSet" targetNodeId="1077124145703" />
         </node>
       </node>
     </node>
@@ -589,7 +586,6 @@
       <property name="name" value="expressionBox" />
       <property name="vertical" value="false" />
       <link role="keyMap" targetNodeId="1081427357000" />
-      <link role="actionSet" targetNodeId="1107375429415" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075308068515">
         <property name="drawBorder" value="false" />
         <link role="linkDeclaration" targetNodeId="1.1068580123164" />
@@ -625,7 +621,6 @@
         <property name="text" value=")" />
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
-        <link role="actionSet" targetNodeId="1082463574819" />
       </node>
     </node>
   </node>
@@ -635,7 +630,6 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1081149310028">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <link role="actionSet" targetNodeId="1107375429415" />
       <link role="keyMap" targetNodeId="1081427357000" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081149310029">
         <property name="drawBorder" value="false" />
@@ -673,7 +667,6 @@
         <property name="text" value=")" />
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
-        <link role="actionSet" targetNodeId="1082463574819" />
       </node>
     </node>
   </node>
@@ -687,7 +680,6 @@
       <property name="vertical" value="false" />
       <property name="gridLayout" value="true" />
       <property name="selectable" value="true" />
-      <link role="actionSet" targetNodeId="1107375429415" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1081777074470">
         <property name="drawBorder" value="false" />
         <link role="editorComponent" targetNodeId="1081776311281" />
@@ -708,20 +700,6 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075310480281">
     <property name="name" value="AssignmentExpression_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1068498886294" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1076587264182">
-      <property name="name" value="LeftExpressionActions" />
-      <link role="specializes" targetNodeId="1082130590765" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1076587907859">
-        <property name="substituteHandlerId" value="LeftHandExpressionAcceptor" />
-      </node>
-    </node>
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1076699801734">
-      <property name="name" value="RightExpressionActions" />
-      <link role="specializes" targetNodeId="1082130590765" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1076699801735">
-        <property name="substituteHandlerId" value="RightHandExpressionAcceptor" />
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1075310480282">
       <property name="drawBorder" value="false" />
       <property name="actionSet" value="RightTransform" />
@@ -729,14 +707,12 @@
       <property name="vertical" value="false" />
       <property name="selectable" value="true" />
       <property name="gridLayout" value="true" />
-      <link role="actionSet" targetNodeId="1107375429415" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075310480284">
         <property name="drawBorder" value="false" />
         <property name="actionSet" value="LeftExpression" />
         <property name="selectable" value="true" />
         <link role="errorActionSet" targetNodeId="1077284637890" />
         <link role="linkDeclaration" targetNodeId="1.1068498886295" />
-        <link role="actionSet" targetNodeId="1076587264182" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075310480285">
         <property name="text" value="=" />
@@ -748,7 +724,6 @@
         <property name="actionSet" value="RightExpression" />
         <property name="selectable" value="true" />
         <link role="linkDeclaration" targetNodeId="1.1068498886297" />
-        <link role="actionSet" targetNodeId="1076699801734" />
         <link role="errorActionSet" targetNodeId="1077284637890" />
       </node>
     </node>
@@ -763,7 +738,6 @@
       <property name="vertical" value="false" />
       <property name="selectable" value="true" />
       <property name="gridLayout" value="true" />
-      <link role="actionSet" targetNodeId="1107375429415" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1081777125800">
         <property name="drawBorder" value="false" />
         <link role="editorComponent" targetNodeId="1081776311281" />
@@ -792,7 +766,6 @@
       <property name="vertical" value="false" />
       <property name="gridLayout" value="true" />
       <property name="selectable" value="true" />
-      <link role="actionSet" targetNodeId="1107375429415" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1081776530461">
         <property name="drawBorder" value="false" />
         <link role="editorComponent" targetNodeId="1081776311281" />
@@ -818,7 +791,6 @@
       <property name="textFgColor" value="blue" />
       <property name="defaultText" value="&lt;int constant&gt;" />
       <property name="drawBorder" value="false" />
-      <link role="actionSet" targetNodeId="1107375429415" />
       <link role="keyMap" targetNodeId="1081427357000" />
       <link role="propertyDeclaration" targetNodeId="1.1068580320021" />
     </node>
@@ -832,7 +804,6 @@
       <property name="drawBorder" value="false" />
       <link role="propertyDeclaration" targetNodeId="1.1068580123138" />
       <link role="keyMap" targetNodeId="1081427357000" />
-      <link role="actionSet" targetNodeId="1107375429415" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075374365333">
@@ -845,7 +816,6 @@
       <property name="drawBorder" value="false" />
       <property name="selectable" value="true" />
       <link role="keyMap" targetNodeId="1081427357000" />
-      <link role="actionSet" targetNodeId="1107375429415" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075374525819">
@@ -967,13 +937,6 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075379419312">
     <property name="name" value="IfStatement_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1068580123159" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1076934492296">
-      <property name="name" value="ConditionCellActions" />
-      <link role="specializes" targetNodeId="1082130590765" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1076934492297">
-        <property name="substituteHandlerId" value="IfStatementConditionAcceptor" />
-      </node>
-    </node>
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1082467477265">
       <property name="name" value="IfClosingBracketActions" />
       <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_RightTransform" id="1082467477266">
@@ -1001,7 +964,6 @@
           <property name="drawBorder" value="false" />
           <link role="linkDeclaration" targetNodeId="1.1068580123160" />
           <link role="errorActionSet" targetNodeId="1077284637890" />
-          <link role="actionSet" targetNodeId="1076934492296" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075379740164">
           <property name="text" value=") {" />
@@ -1075,13 +1037,6 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075380723765">
     <property name="name" value="ReturnStatement_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1068581242878" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1076951358050">
-      <property name="name" value="ExpressionCellActions" />
-      <link role="specializes" targetNodeId="1082130590765" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1076951358051">
-        <property name="substituteHandlerId" value="ReturnStatementExpressionAcceptor" />
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1075380723766">
       <property name="drawBorder" value="false" />
       <property name="name" value="statementBox" />
@@ -1094,7 +1049,6 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1075380723767">
         <property name="drawBorder" value="false" />
-        <link role="actionSet" targetNodeId="1076951358050" />
         <link role="linkDeclaration" targetNodeId="1.1068581517676" />
         <link role="errorActionSet" targetNodeId="1077284637890" />
       </node>
@@ -1111,13 +1065,6 @@
       <property name="text" value="&lt;statement&gt;" />
       <property name="drawBorder" value="false" />
       <property name="name" value="nodeBox" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1077124145703">
-    <property name="name" value="_VariableInitializer_ActionSet" />
-    <link role="specializes" targetNodeId="1082130590765" />
-    <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1077124145704">
-      <property name="substituteHandlerId" value="VariableDeclarationInitializerAcceptor" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1077284637890">
@@ -1167,7 +1114,6 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1079605716537">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <link role="actionSet" targetNodeId="1107375429415" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1081777156131">
         <property name="drawBorder" value="false" />
         <link role="editorComponent" targetNodeId="1081776311281" />
@@ -1195,7 +1141,6 @@
       <property name="drawBorder" value="false" />
       <property name="selectable" value="true" />
       <link role="keyMap" targetNodeId="1081427357000" />
-      <link role="actionSet" targetNodeId="1107375429415" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1079622224907">
@@ -1227,7 +1172,6 @@
         <property name="fontStyle" value="BOLD" />
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
-        <link role="actionSet" targetNodeId="1082463574819" />
       </node>
     </node>
   </node>
@@ -1254,7 +1198,6 @@
       <property name="name" value="expressionBox" />
       <property name="vertical" value="false" />
       <property name="selectable" value="true" />
-      <link role="actionSet" targetNodeId="1107375429415" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1081777006156">
         <property name="drawBorder" value="false" />
         <link role="editorComponent" targetNodeId="1081776311281" />
@@ -1279,7 +1222,6 @@
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
       <property name="selectable" value="true" />
-      <link role="actionSet" targetNodeId="1107375429415" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1081777186554">
         <property name="drawBorder" value="false" />
         <link role="editorComponent" targetNodeId="1081776311281" />
@@ -1300,20 +1242,6 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.EditorComponentDeclaration" id="1080128409625">
     <property name="name" value="_BaseMethodCallArgListEditor" />
     <link role="conceptDeclaration" targetNodeId="1.1068499141036" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1080128762409">
-      <property name="name" value="NoArgumentsActions" />
-      <link role="specializes" targetNodeId="1095167443093" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_DeleteNode" id="1080128762410">
-        <property name="disabled" value="true" />
-      </node>
-    </node>
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1095167443093">
-      <property name="name" value="ArgumentActions" />
-      <link role="specializes" targetNodeId="1082130590765" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1095167470540">
-        <property name="substituteHandlerId" value="BaseMethodCall_InsertArgument" />
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1080128409626">
       <property name="separatorText" value="," />
       <property name="drawBorder" value="false" />
@@ -1324,24 +1252,15 @@
         <property name="editable" value="true" />
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
-        <link role="actionSet" targetNodeId="1080128762409" />
       </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1080902646656">
     <property name="name" value="CastExpression_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1070534934090" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1080903734783">
-      <property name="name" value="CastExpressionActions" />
-      <link role="specializes" targetNodeId="1082130590765" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1080903734785">
-        <property name="substituteHandlerId" value="RightHandExpressionAcceptor" />
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1080902646660">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <link role="actionSet" targetNodeId="1107375429415" />
       <link role="keyMap" targetNodeId="1081427357000" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1080902646661">
         <property name="text" value="(" />
@@ -1359,7 +1278,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1080902646664">
         <property name="drawBorder" value="false" />
         <link role="errorActionSet" targetNodeId="1077284637890" />
-        <link role="actionSet" targetNodeId="1080903734783" />
         <link role="linkDeclaration" targetNodeId="1.1070534934092" />
       </node>
     </node>
@@ -1399,7 +1317,6 @@
         <property name="text" value=")" />
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
-        <link role="actionSet" targetNodeId="1082463574819" />
       </node>
     </node>
   </node>
@@ -1471,13 +1388,6 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1081257049503">
     <property name="name" value="InstanceOfExpression_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1081256982272" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1081257125113">
-      <property name="name" value="LeftExpressionsActions" />
-      <link role="specializes" targetNodeId="1082130590765" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1081257125114">
-        <property name="substituteHandlerId" value="LeftHandExpressionAcceptor" />
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1081257073129">
       <property name="drawBorder" value="false" />
       <property name="name" value="expressionBox" />
@@ -1485,7 +1395,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081257097746">
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
-        <link role="actionSet" targetNodeId="1081257125113" />
         <link role="linkDeclaration" targetNodeId="1.1081256993304" />
         <link role="errorActionSet" targetNodeId="1077284637890" />
       </node>
@@ -1610,16 +1519,8 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.EditorComponentDeclaration" id="1081776311281">
     <property name="name" value="_BinaryOperation_Left_Component" />
     <link role="conceptDeclaration" targetNodeId="1.1081773326031" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1081776374361">
-      <property name="name" value="Actions" />
-      <link role="specializes" targetNodeId="1082130590765" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1081776374362">
-        <property name="substituteHandlerId" value="LeftHandExpressionAcceptor" />
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081776360032">
       <property name="drawBorder" value="false" />
-      <link role="actionSet" targetNodeId="1081776374361" />
       <link role="linkDeclaration" targetNodeId="1.1081773367580" />
       <link role="errorActionSet" targetNodeId="1077284637890" />
     </node>
@@ -1627,18 +1528,10 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.EditorComponentDeclaration" id="1081776482707">
     <property name="name" value="_BinaryOperation_Right_Component" />
     <link role="conceptDeclaration" targetNodeId="1.1081773326031" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1081776482708">
-      <property name="name" value="Actions" />
-      <link role="specializes" targetNodeId="1082130590765" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1081776482709">
-        <property name="substituteHandlerId" value="RightHandExpressionAcceptor" />
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081776482710">
       <property name="drawBorder" value="false" />
       <link role="linkDeclaration" targetNodeId="1.1081773367579" />
       <link role="errorActionSet" targetNodeId="1077284637890" />
-      <link role="actionSet" targetNodeId="1081776482708" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1081790432906">
@@ -1649,13 +1542,6 @@
       <link role="specializes" targetNodeId="1095254423832" />
       <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_DeleteNode" id="1085475861766">
         <property name="disabled" value="true" />
-      </node>
-    </node>
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1095254423832">
-      <property name="name" value="ArgumentActions" />
-      <link role="specializes" targetNodeId="1082130590765" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1095254471168">
-        <property name="substituteHandlerId" value="SuperConstructorInvocation_InsertArgument" />
       </node>
     </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1085059533049">
@@ -1724,7 +1610,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1091709481305">
         <property name="text" value=")" />
         <property name="drawBorder" value="false" />
-        <link role="actionSet" targetNodeId="1082463574819" />
       </node>
     </node>
   </node>
@@ -1734,7 +1619,6 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1082740154392">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <link role="actionSet" targetNodeId="1107375429415" />
       <link role="keyMap" targetNodeId="1081427357000" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1082740154393">
         <property name="drawBorder" value="false" />
@@ -1764,28 +1648,18 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1081880010406">
     <property name="name" value="ParenthesizedExpression_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1079359253375" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1082386043671">
-      <property name="name" value="ExpressionActions" />
-      <link role="specializes" targetNodeId="1082130590765" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1082386043672">
-        <property name="substituteHandlerId" value="ParenthesizedExpression_ExpressionAcceptor" />
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1081880010409">
       <property name="drawBorder" value="false" />
       <property name="name" value="nodeBox" />
       <property name="vertical" value="false" />
       <link role="keyMap" targetNodeId="1081427357000" />
-      <link role="actionSet" targetNodeId="1107375429415" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1081880010410">
         <property name="text" value="(" />
         <property name="drawBorder" value="false" />
         <link role="keyMap" targetNodeId="1107347527745" />
-        <link role="actionSet" targetNodeId="1082386043671" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081880010411">
         <property name="drawBorder" value="false" />
-        <link role="actionSet" targetNodeId="1082386043671" />
         <link role="linkDeclaration" targetNodeId="1.1079359253376" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1081880010412">
@@ -1793,7 +1667,6 @@
         <property name="text" value=")" />
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
-        <link role="actionSet" targetNodeId="1082463574819" />
         <link role="keyMap" targetNodeId="1107347562215" />
       </node>
     </node>
@@ -1801,17 +1674,9 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1081929659485">
     <property name="name" value="NotExpression_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1081516740877" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1081931088319">
-      <property name="name" value="NotExpressionActions" />
-      <link role="specializes" targetNodeId="1082130590765" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1081931088321">
-        <property name="substituteHandlerId" value="RightHandExpressionAcceptor" />
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1081929706295">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <link role="actionSet" targetNodeId="1107375429415" />
       <link role="keyMap" targetNodeId="1081427357000" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1081930071608">
         <property name="text" value="!(" />
@@ -1819,7 +1684,6 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081930071609">
         <property name="drawBorder" value="false" />
-        <link role="actionSet" targetNodeId="1081931088319" />
         <link role="linkDeclaration" targetNodeId="1.1081516765348" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1081930071610">
@@ -1835,7 +1699,6 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1081930071612">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <link role="actionSet" targetNodeId="1107375429415" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1081930083677">
         <property name="drawBorder" value="false" />
         <link role="editorComponent" targetNodeId="1081776311281" />
@@ -1859,7 +1722,6 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1081930114469">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <link role="actionSet" targetNodeId="1107375429415" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1081930125362">
         <property name="drawBorder" value="false" />
         <link role="editorComponent" targetNodeId="1081776311281" />
@@ -1945,15 +1807,6 @@
       <property name="drawBorder" value="false" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1082463574819">
-    <property name="name" value="_ExpressionClosingParethesis_ActionSet" />
-    <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_DeleteNode" id="1082463574820">
-      <property name="disabled" value="true" />
-    </node>
-    <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_RightTransform" id="1082463574821">
-      <property name="actionProviderId" value="Expression" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1082485734863">
     <property name="name" value="Block_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1082485599095" />
@@ -1997,7 +1850,6 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1090928601376">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <link role="actionSet" targetNodeId="1107375429415" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1090928601377">
         <property name="drawBorder" value="false" />
         <link role="linkDeclaration" targetNodeId="1.1083260308425" />
@@ -2064,7 +1916,6 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1084188979618">
           <property name="drawBorder" value="false" />
-          <link role="actionSet" targetNodeId="1077124145703" />
           <link role="keyMap" targetNodeId="1081427357000" />
           <link role="linkDeclaration" targetNodeId="1.1068431790190" />
         </node>
@@ -2219,13 +2070,6 @@
         <property name="disabled" value="true" />
       </node>
     </node>
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1095257479496">
-      <property name="name" value="ArgumentActions" />
-      <link role="specializes" targetNodeId="1082130590765" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1095257566411">
-        <property name="substituteHandlerId" value="EnumConstant_InsertArgument" />
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1085485112428">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
@@ -2263,7 +2107,6 @@
       <property name="drawBorder" value="false" />
       <link role="linkDeclaration" targetNodeId="1.1068581517664" />
       <link role="keyMap" targetNodeId="1081427357000" />
-      <link role="actionSet" targetNodeId="1107375429415" />
       <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1134569731484">
         <link role="conceptDeclaration" targetNodeId="1.1068431474542" />
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1134569731485">
@@ -2281,7 +2124,6 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1092120339525">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <link role="actionSet" targetNodeId="1107375429415" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1092120339526">
         <property name="drawBorder" value="false" />
         <link role="editorComponent" targetNodeId="1081776311281" />
@@ -2304,7 +2146,6 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1095950575407">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <link role="actionSet" targetNodeId="1107375429415" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1095950663111">
         <property name="drawBorder" value="false" />
         <link role="editorComponent" targetNodeId="1081776311281" />
@@ -2350,9 +2191,6 @@
       <property name="actionProviderId" value="DeleteParens" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1107375429415">
-    <property name="name" value="_Expression_RTransform_ActionSet" />
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1107385143309">
     <link role="conceptDeclaration" targetNodeId="1.1107382435476" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1132279202833">
@@ -2393,13 +2231,6 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1107385201823">
     <link role="conceptDeclaration" targetNodeId="1.1107382924189" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1132278970278">
-      <property name="name" value="ExpressionCellActions" />
-      <link role="specializes" targetNodeId="1082130590765" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1132278970279">
-        <property name="substituteHandlerId" value="CodeBlockAbstractReturn_SetExpression" />
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1132278673140">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
@@ -2413,7 +2244,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1132278783847">
         <property name="drawBorder" value="false" />
         <link role="linkDeclaration" targetNodeId="1.1107383540437" />
-        <link role="actionSet" targetNodeId="1132278970278" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1132278793646">
         <property name="editable" value="false" />
@@ -2424,13 +2254,6 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1107385225328">
     <link role="conceptDeclaration" targetNodeId="1.1107382634457" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1132279042520">
-      <property name="name" value="ExpressionCellActions" />
-      <link role="specializes" targetNodeId="1082130590765" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1132279042521">
-        <property name="substituteHandlerId" value="CodeBlockAbstractReturn_SetExpression" />
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1132279071499">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
@@ -2444,7 +2267,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1132279071501">
         <property name="drawBorder" value="false" />
         <link role="linkDeclaration" targetNodeId="1.1107383540437" />
-        <link role="actionSet" targetNodeId="1132279042520" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1132279071502">
         <property name="editable" value="false" />
@@ -2902,12 +2724,6 @@
         <property name="drawBorder" value="false" />
         <link role="linkDeclaration" targetNodeId="1.1137022507850" />
       </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1138166593970">
-    <property name="name" value="_Expression_RTransform_ActionSet_saved" />
-    <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_RightTransform" id="1138166593971">
-      <property name="actionProviderId" value="Expression" />
     </node>
   </node>
 </model>
