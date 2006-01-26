@@ -96,8 +96,8 @@ public class InternalRefactoringAction extends MPSAction {
 
         if (object instanceof CellModel_RefNodeList) {
           CellModel_RefNodeList cellModel = (CellModel_RefNodeList) object;
-          if (cellModel.getElementActionSet() != null) {
-            System.out.println("(!)ElementActionSet:" + cellModel.getDebugText() + " in " + SModelUtil.getRootParent(cellModel));
+          if (cellModel.getNodeFactoryId() != null) {
+            System.out.println("(!)NodeFactoryId:" + cellModel.getDebugText() + " in " + SModelUtil.getRootParent(cellModel));
           }
         }
 

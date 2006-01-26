@@ -121,9 +121,6 @@
     <link role="conceptDeclaration" targetNodeId="1.1083171877298" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1083240246895">
       <property name="name" value="IsDefaultActions" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_DeleteNode" id="1083240246896">
-        <property name="disabled" value="true" />
-      </node>
       <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1083240246897">
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_Simple" id="1083240246898">
           <property name="text" value="*" />
@@ -305,7 +302,6 @@
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1083243818252">
         <property name="name" value="dataTypes" />
         <property name="queryId" value="AllPrimitiveDataTypeDeclarations" />
-        <property name="textProviderId" value="Name" />
       </node>
     </node>
   </node>
@@ -354,12 +350,6 @@
         </node>
       </node>
     </node>
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1084197079392">
-      <property name="name" value="DisableDelete_Actions" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_DeleteNode" id="1084197079393">
-        <property name="disabled" value="true" />
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1084189569970">
       <property name="drawBorder" value="true" />
       <property name="vertical" value="false" />
@@ -388,7 +378,6 @@
         <property name="modelAccessorId" value="LinkDeclaration_SpecializedMetaclass" />
         <property name="drawBorder" value="true" />
         <property name="conditionId" value="LinkDeclaration_Specializes" />
-        <link role="actionSet" targetNodeId="1084197079392" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ModelAccess" id="1084205682785">
         <property name="editable" value="false" />
@@ -396,7 +385,6 @@
         <property name="modelAccessorId" value="LinkDeclaration_SpecializedSourceCardinality" />
         <property name="drawBorder" value="true" />
         <property name="conditionId" value="LinkDeclaration_Specializes" />
-        <link role="actionSet" targetNodeId="1084197079392" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ModelAccess" id="1084205682786">
         <property name="editable" value="false" />
@@ -404,7 +392,6 @@
         <property name="modelAccessorId" value="LinkDeclaration_SpecializedTargetCardinality" />
         <property name="drawBorder" value="true" />
         <property name="conditionId" value="LinkDeclaration_Specializes" />
-        <link role="actionSet" targetNodeId="1084197079392" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1084192678902">
         <property name="text" value="target:" />
