@@ -14,12 +14,12 @@ import java.util.*;
  * serves as template: just loads all models from MPSFileModelDescriptor and "process" them.
  */
 public class InternalRefactoringAction extends MPSAction {
-  public static boolean SHOW = false;
+  public static boolean SHOW = true;
 
   private static final Logger LOG = Logger.getLogger(InternalRefactoringAction.class);
 
   public InternalRefactoringAction() {
-    super("... cell model -> null action set ...");
+    super("... cell action : enable/disable ...");
   }
 
   public void execute(ActionContext context) {
@@ -63,6 +63,58 @@ public class InternalRefactoringAction extends MPSAction {
    * perform "refactoring"
    */
   private void processModel(SModel model) {
+    _checkUsageOfSomeDeprecatedFeatures(model);
+    _clearSomeUnresolvedReferences(model);
+  }
+
+  private void _checkUsageOfSomeDeprecatedFeatures(SModel model) {
+    SModelUtil.allNodes(model, new Condition<SNode>() {
+      public boolean met(SNode object) {
+        // SURROUND WITH ..
+      if (object instanceof CellActionSetDeclaration) {
+        CellActionSetDeclaration cellActionSet = (CellActionSetDeclaration) object;
+        Iterator<CellActionModel> iterator = cellActionSet.actionDeclarations();
+        for (SNode actionModel : cellActionSet) {
+          if(actionModel instanceof ActionModel_SurroundNodeWith) {
+            System.out.println("(!)SURROUND WITH ...: " + actionModel.getDebugText() + " in " + SModelUtil.getRootParent(actionModel));
+          }
+        }
+      }
+
+        if (object instanceof CellModel_RefNode) {
+          CellModel_RefNode cellModel = (CellModel_RefNode) object;
+          if (cellModel.getErrorActionSet() != null) {
+            System.out.println("(!)ErrorActionSet:" + cellModel.getDebugText() + " in " + SModelUtil.getRootParent(cellModel));
+          }
+        }
+        if (object instanceof CellModel_RefCell) {
+          CellModel_RefCell cellModel = (CellModel_RefCell) object;
+          if (cellModel.getNullActionSet() != null) {
+            System.out.println("(!)NullActionSet:" + cellModel.getDebugText() + " in " + SModelUtil.getRootParent(cellModel));
+          }
+        }
+
+        if (object instanceof CellModel_RefNodeList) {
+          CellModel_RefNodeList cellModel = (CellModel_RefNodeList) object;
+          if (cellModel.getElementActionSet() != null) {
+            System.out.println("(!)ElementActionSet:" + cellModel.getDebugText() + " in " + SModelUtil.getRootParent(cellModel));
+          }
+        }
+
+
+        // DISABLE action
+        if (object instanceof CellActionModel) {
+          CellActionModel action = (CellActionModel) object;
+          if (action.getDisabled()) {
+            System.out.println("(!)action DIASBLED: " + action.getDebugText() + " in " + SModelUtil.getRootParent(action));
+          }
+        }
+        return false;
+      }
+    });
+  }
+
+  private void _clearSomeUnresolvedReferences(SModel model) {
     SModelUtil.allNodes(model, new Condition<SNode>() {
       public boolean met(SNode object) {
         if (object instanceof EditorCellModel) {
@@ -75,16 +127,12 @@ public class InternalRefactoringAction extends MPSAction {
             CellModel_RefNode cellModel_refNode = (CellModel_RefNode) object;
             if (cellModel_refNode.getErrorActionSet() == null) {
               cellModel_refNode.setErrorActionSet(null);
-            } else {
-              System.out.println("!!!!!!!!!!!! not null ErrorActionSet");
             }
           }
           if (object instanceof CellModel_RefCell) {
             CellModel_RefCell cellModel_refCell = (CellModel_RefCell) object;
             if (cellModel_refCell.getNullActionSet() == null) {
-//              cellModel_refCell.setNullActionSet(null);
-            } else {
-              System.out.println("!!!!!!!!!!!! not null NullActionSet");
+              cellModel_refCell.setNullActionSet(null);
             }
           }
 
@@ -100,7 +148,6 @@ public class InternalRefactoringAction extends MPSAction {
           if (cellActionSet.getSpecializes() == null) {
             cellActionSet.setSpecializes(null);
           }
-
         }
         return false;
       }

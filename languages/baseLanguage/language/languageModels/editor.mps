@@ -107,7 +107,7 @@
           <property name="vertical" value="true" />
           <link role="linkDeclaration" targetNodeId="1.1128555889557" />
           <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1128555992209">
-            <property name="text" value=" &lt;&lt; static fields&gt;&gt;" />
+            <property name="text" value=" &lt;&lt; static fields &gt;&gt;" />
             <property name="drawBorder" value="false" />
             <property name="selectable" value="true" />
           </node>
@@ -893,17 +893,10 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075376169046">
     <property name="name" value="Expression_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1068431790191" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1076780136970">
-      <property name="name" value="NodeBoxActions" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_RightTransform" id="1079526533375">
-        <property name="disabled" value="true" />
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1075376431437">
       <property name="text" value="&lt;expression&gt;" />
       <property name="drawBorder" value="false" />
       <link role="keyMap" targetNodeId="1081427357000" />
-      <link role="actionSet" targetNodeId="1076780136970" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075379141234">
@@ -1473,12 +1466,6 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1081790432906">
     <property name="name" value="SuperConstructorInvocation_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1070475587102" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1085475861765">
-      <property name="name" value="NoArgumentsActions" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_DeleteNode" id="1085475861766">
-        <property name="disabled" value="true" />
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1085059533049">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
@@ -1496,7 +1483,6 @@
           <property name="editable" value="true" />
           <property name="drawBorder" value="false" />
           <property name="selectable" value="true" />
-          <link role="actionSet" targetNodeId="1085475861765" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1085140612097">
@@ -1853,12 +1839,6 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1085483277582">
     <property name="name" value="EnumClass_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1083245097125" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1085483457768">
-      <property name="name" value="EmptyListActions" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_DeleteNode" id="1085483457769">
-        <property name="disabled" value="true" />
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1085483277583">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="true" />
@@ -1897,9 +1877,12 @@
             <property name="text" value="&lt;&lt; enum constants &gt;&gt;" />
             <property name="drawBorder" value="false" />
             <property name="selectable" value="true" />
-            <link role="actionSet" targetNodeId="1085483457768" />
           </node>
         </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1138307589269">
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1085483273078">
         <property name="drawBorder" value="false" />
@@ -1916,9 +1899,12 @@
             <property name="text" value="&lt;&lt; fields &gt;&gt;" />
             <property name="drawBorder" value="false" />
             <property name="selectable" value="true" />
-            <link role="actionSet" targetNodeId="1085483457768" />
           </node>
         </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1138307592880">
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1085483457770">
         <property name="drawBorder" value="false" />
@@ -1935,9 +1921,12 @@
             <property name="text" value="&lt;&lt; constructors &gt;&gt;" />
             <property name="drawBorder" value="false" />
             <property name="selectable" value="true" />
-            <link role="actionSet" targetNodeId="1085483457768" />
           </node>
         </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1138307596445">
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1085483457774">
         <property name="drawBorder" value="false" />
@@ -1954,9 +1943,12 @@
             <property name="text" value="&lt;&lt; methods &gt;&gt;" />
             <property name="drawBorder" value="false" />
             <property name="selectable" value="true" />
-            <link role="actionSet" targetNodeId="1085483457768" />
           </node>
         </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1138307599041">
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1085483457778">
         <property name="drawBorder" value="false" />
@@ -1973,7 +1965,6 @@
             <property name="text" value="&lt;&lt; static methods &gt;&gt;" />
             <property name="drawBorder" value="false" />
             <property name="selectable" value="true" />
-            <link role="actionSet" targetNodeId="1085483457768" />
           </node>
         </node>
       </node>
@@ -1987,12 +1978,6 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1085485112422">
     <property name="name" value="EnumConstantDeclaration_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1083245299891" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1085485112425">
-      <property name="name" value="NoArgumentsActions" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_DeleteNode" id="1085485112426">
-        <property name="disabled" value="true" />
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1085485112428">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
@@ -2013,7 +1998,6 @@
           <property name="editable" value="true" />
           <property name="drawBorder" value="false" />
           <property name="selectable" value="true" />
-          <link role="actionSet" targetNodeId="1085485112425" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1085485112432">
