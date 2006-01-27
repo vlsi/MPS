@@ -130,13 +130,6 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
           LOG.debug("NO SUBSTITUTE");
         }
 
-        // surround with substitution
-        if ((keyEvent.getKeyCode() == KeyEvent.VK_T && keyEvent.isControlDown() && keyEvent.isAltDown())) {
-          if (editor.activateSurroundWithSubstituteChooser(selectedCell, true)) {
-            return true;
-          }
-        }
-
         if (editor.getNodeRangeSelection().isSelectionKeystroke(keyEvent)) {
           if (editor.getNodeRangeSelection().activate(keyEvent)) {
             return true;
@@ -151,20 +144,6 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
           }
           return true;
         }
-
-//        //test
-//        if ((keyEvent.getKeyCode() == KeyEvent.VK_SPACE &&
-//                keyEvent.isAltDown() &&
-//                keyEvent.isControlDown() &&
-//                !keyEvent.isShiftDown()) &&
-//                !selectedCell.getSNode().hasRightTransformHint() &&
-//                !selectedCell.isInspectorCell() &&
-//                ModelActions.canCreateRightTransformHintSubstituteActions(
-//                        selectedCell.getSNode(), editorContext.getOperationContext().getScope())) {
-//          keyEvent.consume();
-//          selectedCell.getSNode().addRightTransformHint();
-//        }
-//        //test
       } // if (!keyEvent.isConsumed())
     } // if (selectedCell != null)
 

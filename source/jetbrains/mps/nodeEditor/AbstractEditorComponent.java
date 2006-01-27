@@ -1180,20 +1180,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return activateNodeSubstituteChooser(editorCell, substituteInfo, resetPattern);
   }
 
-  boolean activateSurroundWithSubstituteChooser(EditorCell editorCell, boolean resetPattern) {
-    if (myNodeSubstituteChooser.isVisible()) {
-      return true;
-    }
-
-    // try to obtain substitute info
-    INodeSubstituteInfo substituteInfo = null;
-    if (editorCell != null) {
-      substituteInfo = editorCell.getSurroundWithSubstituteInfo();
-    }
-
-    return activateNodeSubstituteChooser(editorCell, substituteInfo, resetPattern);
-  }
-
   public boolean activateNodeSubstituteChooser(EditorCell editorCell, INodeSubstituteInfo substituteInfo, boolean resetPattern) {
     if (substituteInfo == null) {
       return false;

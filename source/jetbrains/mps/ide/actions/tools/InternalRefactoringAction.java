@@ -1,6 +1,8 @@
 package jetbrains.mps.ide.actions.tools;
 
-import jetbrains.mps.bootstrap.editorLanguage.*;
+import jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration;
+import jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList;
+import jetbrains.mps.bootstrap.editorLanguage.EditorCellModel;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.logging.Logger;
@@ -14,7 +16,7 @@ import java.util.*;
  * serves as template: just loads all models from MPSFileModelDescriptor and "process" them.
  */
 public class InternalRefactoringAction extends MPSAction {
-  public static boolean SHOW = true;
+  public static boolean SHOW = false;
 
   private static final Logger LOG = Logger.getLogger(InternalRefactoringAction.class);
 
@@ -71,44 +73,36 @@ public class InternalRefactoringAction extends MPSAction {
     SModelUtil.allNodes(model, new Condition<SNode>() {
       public boolean met(SNode object) {
         // SURROUND WITH ..
-      if (object instanceof CellActionSetDeclaration) {
-        CellActionSetDeclaration cellActionSet = (CellActionSetDeclaration) object;
-        Iterator<CellActionModel> iterator = cellActionSet.actionDeclarations();
-        for (SNode actionModel : cellActionSet) {
-          if(actionModel instanceof ActionModel_SurroundNodeWith) {
-            System.out.println("(!)SURROUND WITH ...: " + actionModel.getDebugText() + " in " + SModelUtil.getRootParent(actionModel));
-          }
-        }
-      }
+//        if (object instanceof CellActionSetDeclaration) {
+//          CellActionSetDeclaration cellActionSet = (CellActionSetDeclaration) object;
+//          Iterator<CellActionModel> iterator = cellActionSet.actionDeclarations();
+//          for (SNode actionModel : cellActionSet) {
+//            if (actionModel instanceof ActionModel_SurroundNodeWith) {
+//              System.out.println("(!)SURROUND WITH ...: " + actionModel.getDebugText() + " in " + SModelUtil.getRootParent(actionModel));
+//            }
+//          }
+//        }
 
-        if (object instanceof CellModel_RefNode) {
-          CellModel_RefNode cellModel = (CellModel_RefNode) object;
-          if (cellModel.getErrorActionSet() != null) {
-            System.out.println("(!)ErrorActionSet:" + cellModel.getDebugText() + " in " + SModelUtil.getRootParent(cellModel));
-          }
-        }
-        if (object instanceof CellModel_RefCell) {
-          CellModel_RefCell cellModel = (CellModel_RefCell) object;
-          if (cellModel.getNullActionSet() != null) {
-            System.out.println("(!)NullActionSet:" + cellModel.getDebugText() + " in " + SModelUtil.getRootParent(cellModel));
-          }
-        }
-
-        if (object instanceof CellModel_RefNodeList) {
-          CellModel_RefNodeList cellModel = (CellModel_RefNodeList) object;
-          if (cellModel.getNodeFactoryId() != null) {
-            System.out.println("(!)NodeFactoryId:" + cellModel.getDebugText() + " in " + SModelUtil.getRootParent(cellModel));
-          }
-        }
-
+//        if (object instanceof CellModel_RefNode) {
+//          CellModel_RefNode cellModel = (CellModel_RefNode) object;
+//          if (cellModel.getErrorActionSet() != null) {
+//            System.out.println("(!)ErrorActionSet:" + cellModel.getDebugText() + " in " + SModelUtil.getRootParent(cellModel));
+//          }
+//        }
+//        if (object instanceof CellModel_RefCell) {
+//          CellModel_RefCell cellModel = (CellModel_RefCell) object;
+//          if (cellModel.getNullActionSet() != null) {
+//            System.out.println("(!)NullActionSet:" + cellModel.getDebugText() + " in " + SModelUtil.getRootParent(cellModel));
+//          }
+//        }
 
         // DISABLE action
-        if (object instanceof CellActionModel) {
-          CellActionModel action = (CellActionModel) object;
-          if (action.getDisabled()) {
-            System.out.println("(!)action DIASBLED: " + action.getDebugText() + " in " + SModelUtil.getRootParent(action));
-          }
-        }
+//        if (object instanceof CellActionModel) {
+//          CellActionModel action = (CellActionModel) object;
+//          if (action.getDisabled()) {
+//            System.out.println("(!)action DIASBLED: " + action.getDebugText() + " in " + SModelUtil.getRootParent(action));
+//          }
+//        }
         return false;
       }
     });
@@ -123,18 +117,18 @@ public class InternalRefactoringAction extends MPSAction {
             cellModel.setActionSet(null);
           }
 
-          if (object instanceof CellModel_RefNode) {
-            CellModel_RefNode cellModel_refNode = (CellModel_RefNode) object;
-            if (cellModel_refNode.getErrorActionSet() == null) {
-              cellModel_refNode.setErrorActionSet(null);
-            }
-          }
-          if (object instanceof CellModel_RefCell) {
-            CellModel_RefCell cellModel_refCell = (CellModel_RefCell) object;
-            if (cellModel_refCell.getNullActionSet() == null) {
-              cellModel_refCell.setNullActionSet(null);
-            }
-          }
+//          if (object instanceof CellModel_RefNode) {
+//            CellModel_RefNode cellModel_refNode = (CellModel_RefNode) object;
+//            if (cellModel_refNode.getErrorActionSet() == null) {
+//              cellModel_refNode.setErrorActionSet(null);
+//            }
+//          }
+//          if (object instanceof CellModel_RefCell) {
+//            CellModel_RefCell cellModel_refCell = (CellModel_RefCell) object;
+//            if (cellModel_refCell.getNullActionSet() == null) {
+//              cellModel_refCell.setNullActionSet(null);
+//            }
+//          }
 
           if (object instanceof CellModel_RefNodeList) {
             CellModel_RefNodeList cellModel_refNodeList = (CellModel_RefNodeList) object;
