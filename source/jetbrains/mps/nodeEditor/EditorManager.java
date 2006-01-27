@@ -4,12 +4,12 @@ import jetbrains.mps.annotations.AttributeConcept;
 import jetbrains.mps.annotations.LinkAttributeConcept;
 import jetbrains.mps.annotations.PropertyAttributeConcept;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.ide.command.CommandProcessor;
 
 import java.util.*;
 
@@ -20,8 +20,6 @@ import java.util.*;
  */
 public class EditorManager {
   private static final Logger LOG = Logger.getLogger(EditorManager.class);
-
-  public static String NODE_TO_PLACE_AFTER = "nodeToPlaceAfter";
 
   public static final Object IS_BIG_CELL = new Object();
 
@@ -214,17 +212,7 @@ public class EditorManager {
       return rowWrapper;
     }
 
-
-    if (node.getChildCount(NODE_TO_PLACE_AFTER) > 0) {
-      EditorCell_Collection rowWrapper = EditorCell_Collection.createHorizontal(context, node);
-      rowWrapper.setSelectable(false);
-      rowWrapper.addEditorCell(nodeCell);
-      SNode afterNode = node.getChild(NODE_TO_PLACE_AFTER);
-      rowWrapper.addEditorCell(getEditor(context, afterNode).createEditorCell(context, afterNode));
-      return rowWrapper;
-    }
-
-      nodeCell.setInspectorCell(isInspectorCell);
+    nodeCell.setInspectorCell(isInspectorCell);
     return nodeCell;
   }
 
