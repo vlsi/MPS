@@ -917,6 +917,10 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1107215441161">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1138336963501">
+      <property name="value" value="&lt;?&gt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1081773367579">
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="1" />

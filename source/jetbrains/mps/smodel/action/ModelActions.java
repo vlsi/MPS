@@ -39,7 +39,7 @@ public class ModelActions {
 
 
   /**
-   * @deprecated
+   * helper method
    */
   public static List<ConceptDeclaration> getDefaultSubstitutableConcepts(SModel sourceModel, final ConceptDeclaration targetConcept, final IScope scope) {
     return SModelUtil.conceptsFromModelLanguages(sourceModel, new Condition<ConceptDeclaration>() {
