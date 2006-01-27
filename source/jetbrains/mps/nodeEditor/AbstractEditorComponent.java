@@ -42,8 +42,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private WeakHashMap<EditorCell, Set<SNode>> myCellsToNodesToDependOnMap = new WeakHashMap<EditorCell, Set<SNode>>();
   private WeakHashMap<SNode, EditorCell> myNodesToBigCellsMap = new WeakHashMap<SNode, EditorCell>();
   private HashMap<EditorCell, Set<SNodeProxy>> myCellsToRefTargetsToDependOnMap = new HashMap<EditorCell, Set<SNodeProxy>>();
-  private HashMap<Pair<SNodeProxy,String>, Set<EditorCell_Property>> myNodePropertiesAccessedCleanlyToDependentCellsMap = new HashMap<Pair<SNodeProxy, String>, Set<EditorCell_Property>>();
-  private HashMap<Pair<SNodeProxy,String>, Set<EditorCell>> myNodePropertiesAccessedDirtilyToDependentCellsMap = new HashMap<Pair<SNodeProxy, String>, Set<EditorCell>>();
+  private HashMap<Pair<SNodeProxy, String>, Set<EditorCell_Property>> myNodePropertiesAccessedCleanlyToDependentCellsMap = new HashMap<Pair<SNodeProxy, String>, Set<EditorCell_Property>>();
+  private HashMap<Pair<SNodeProxy, String>, Set<EditorCell>> myNodePropertiesAccessedDirtilyToDependentCellsMap = new HashMap<Pair<SNodeProxy, String>, Set<EditorCell>>();
 
   private boolean myHasLastCaretX = false;
   private int myLastCaretX;
@@ -137,7 +137,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     myNodeSubstituteChooser = new NodeSubstituteChooser(this);
     myNodeRangeSelection = new NodeRangeSelection(this);
-
 
     // --- keyboard handling ---
     myKbdHandlersStack = new Stack<IKeyboardHandler>();
@@ -317,15 +316,15 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public SNode getNode() {
-     if (myNodeProxy != null) {
-       return myNodeProxy.getNode();
-     }
-     return null;
-   }
+    if (myNodeProxy != null) {
+      return myNodeProxy.getNode();
+    }
+    return null;
+  }
 
-   public SNodeProxy getSNodeProxy() {
-     return myNodeProxy;
-   }
+  public SNodeProxy getSNodeProxy() {
+    return myNodeProxy;
+  }
 
   public void editNode(SNode semanticNode, IOperationContext operationContext) {
     if (operationContext == null) {
@@ -507,8 +506,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     Set<SNodeProxy> refTargetsWhichEditorDependsOn = myCellsToRefTargetsToDependOnMap.get(myRootCell);
-     if (refTargetsWhichEditorDependsOn != null) {
-       Set<SNodeProxy> nodeProxiesToDelete = new HashSet<SNodeProxy>();
+    if (refTargetsWhichEditorDependsOn != null) {
+      Set<SNodeProxy> nodeProxiesToDelete = new HashSet<SNodeProxy>();
       for (SNodeProxy nodeProxy : refTargetsWhichEditorDependsOn) {
         SModelDescriptor model = nodeProxy.getModel();
         if (model == null) {
@@ -519,7 +518,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           model.addSModelCommandListener(myModelListener);
         }
       }
-      refTargetsWhichEditorDependsOn.removeAll(nodeProxiesToDelete); 
+      refTargetsWhichEditorDependsOn.removeAll(nodeProxiesToDelete);
     }
 
 
@@ -605,14 +604,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     // ---
 
- /*   if (keyEvent.getKeyCode() == KeyEvent.VK_F2 && keyEvent.isControlDown()) {
+    /*   if (keyEvent.getKeyCode() == KeyEvent.VK_F2 && keyEvent.isControlDown()) {
       return EditorCellAction.MK_PROPERTY_COMMENT;
     }
 
     if (keyEvent.getKeyCode() == KeyEvent.VK_F3 && keyEvent.isControlDown()) {
       return EditorCellAction.MK_COMMENT;
     }
-    
+
     if (keyEvent.getKeyCode() == KeyEvent.VK_F4 && keyEvent.isControlDown()) {
       return EditorCellAction.MK_LINK_COMMENT;
     }*/
@@ -640,6 +639,17 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     if (keyEvent.getKeyCode() == KeyEvent.VK_DELETE && keyEvent.isControlDown()) {
       return EditorCellAction.DELETE;
+    }
+
+    if ((keyEvent.getKeyCode() == KeyEvent.VK_DELETE || keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE)
+            && keyEvent.getModifiers() == 0) {
+      // editable label and no text
+      EditorCell selectedCell = editorContext.getNodeEditorComponent().getSelectedCell();
+      if (selectedCell instanceof EditorCell_Label) {
+        if (((EditorCell_Label) selectedCell).getText().length() == 0) {
+          return EditorCellAction.DELETE;
+        }
+      }
     }
 
     // ---
@@ -674,11 +684,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void relayout() {
- /*   if (myIsDirtyLayout) {*/
-      myRootCell.relayout();
-      revalidate();
-      repaint();
- /*     myIsDirtyLayout = false;
+    /*   if (myIsDirtyLayout) {*/
+    myRootCell.relayout();
+    revalidate();
+    repaint();
+    /*     myIsDirtyLayout = false;
     }*/
   }
 
@@ -709,7 +719,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public EditorCell findNodeCell(final SNode node) {
-    if(myRootCell == null) return null;
+    if (myRootCell == null) return null;
     if (myRootCell.getSNode() == node) {
       return myRootCell;
     }
@@ -781,7 +791,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private EditorCell findCellWithIdAndNumber(final EditorCell root, String id, int number) {
     if (id == null) return null;
-    if (id.equals(root.getUserObject(EditorCell.CELL_ID)) && ((Integer)number).equals(root.getUserObject(EditorCell.NUMBER))) return root;
+    if (id.equals(root.getUserObject(EditorCell.CELL_ID)) && ((Integer) number).equals(root.getUserObject(EditorCell.NUMBER)))
+      return root;
     if (root instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) root;
       for (EditorCell child : collection) {
@@ -860,7 +871,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return condition.getFoundCell();
   }
 
-  public void rebuildEditorContent() {        
+  public void rebuildEditorContent() {
     rebuildEditorContent(null);
   }
 
@@ -1242,7 +1253,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myHasLastCaretX = true;
   }
 
-  public void addCellDependentOnNodeProperty(EditorCell_Property cell, Pair<SNodeProxy,String> pair) {
+  public void addCellDependentOnNodeProperty(EditorCell_Property cell, Pair<SNodeProxy, String> pair) {
     Set<EditorCell_Property> dependentCells = myNodePropertiesAccessedCleanlyToDependentCellsMap.get(pair);
     if (dependentCells == null) {
       dependentCells = new HashSet<EditorCell_Property>();
@@ -1251,7 +1262,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     dependentCells.add(cell);
   }
 
-  public void addCellDependentOnNodePropertyWhichWasAccessedDirtily(EditorCell cell, Pair<SNodeProxy,String> pair) {
+  public void addCellDependentOnNodePropertyWhichWasAccessedDirtily(EditorCell cell, Pair<SNodeProxy, String> pair) {
     Set<EditorCell> dependentCells = myNodePropertiesAccessedDirtilyToDependentCellsMap.get(pair);
     if (dependentCells == null) {
       dependentCells = new HashSet<EditorCell>();
@@ -1369,9 +1380,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     Stack<EditorCell> selectedStack = historyItem.selectedStack;
     AbstractEditorComponent newEditor = editorsPane.openEditor(nodeEditor.getRootCell().getSNode(), nodeEditor.getOperationContext(), true);
     if (selectedCell != null) {
-        EditorCell nodeCell = newEditor.findNodeCell(selectedCell.getSNode(), (String) selectedCell.getUserObject(EditorCell.CELL_ID));
-        if (nodeCell == null) nodeCell = newEditor.findNodeCell(selectedCell.getSNode());
-        if (nodeCell != null) newEditor.changeSelection(nodeCell);
+      EditorCell nodeCell = newEditor.findNodeCell(selectedCell.getSNode(), (String) selectedCell.getUserObject(EditorCell.CELL_ID));
+      if (nodeCell == null) nodeCell = newEditor.findNodeCell(selectedCell.getSNode());
+      if (nodeCell != null) newEditor.changeSelection(nodeCell);
     }
     newEditor.setSelectedStackFromHistory(selectedStack);
     return newEditor;
@@ -1381,15 +1392,15 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     mySelectedStack.clear();
     Stack<EditorCell> temp = new Stack<EditorCell>();
 
-    for (int i = historySelectedStack.size()-1; i >= 0; i--) {
+    for (int i = historySelectedStack.size() - 1; i >= 0; i--) {
       EditorCell historyCell = historySelectedStack.get(i);
-      String cellId  = (String) historyCell.getUserObject(EditorCell.CELL_ID);
+      String cellId = (String) historyCell.getUserObject(EditorCell.CELL_ID);
       SNode cellNode = historyCell.getSNode();
       EditorCell newCell = findNodeCell(cellNode, cellId);
       temp.push(newCell);
       if (newCell == null) break;
     }
-    while (temp.size() >  0) {
+    while (temp.size() > 0) {
       mySelectedStack.push(temp.pop());
     }
   }
@@ -1399,15 +1410,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     public void modelChangedInCommand(List<SModelEvent> events) {
       if (!EventUtil.isDramaticalChange(events)) {
         if (EventUtil.isPropertyChange(events)) {
-          String propertyName = ((SModelPropertyEvent)events.get(0)).getPropertyName();
-          SNodeProxy nodeProxy = new SNodeProxy(((SModelPropertyEvent)events.get(0)).getNode());
-          Pair<SNodeProxy,String> pair = new Pair<SNodeProxy, String>(nodeProxy, propertyName);
+          String propertyName = ((SModelPropertyEvent) events.get(0)).getPropertyName();
+          SNodeProxy nodeProxy = new SNodeProxy(((SModelPropertyEvent) events.get(0)).getNode());
+          Pair<SNodeProxy, String> pair = new Pair<SNodeProxy, String>(nodeProxy, propertyName);
           Set<EditorCell_Property> editorCell_properties = myNodePropertiesAccessedCleanlyToDependentCellsMap.get(pair);
           Set<EditorCell> editorCells = myNodePropertiesAccessedDirtilyToDependentCellsMap.get(pair);
           if (editorCells != null) {
             rebuildEditorContent(events);
-          } else
-          if (editorCell_properties != null) {
+          } else if (editorCell_properties != null) {
             for (EditorCell_Property cell : editorCell_properties) {
               cell.synchronizeViewWithModel();
             }
@@ -1420,7 +1430,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         String cellRole = null;
         EditorCell selectedCell = AbstractEditorComponent.this.getSelectedCell();
         if (selectedCell != null) {
-          cellRole = EditorUtil.getCellRole(selectedCell);
+          cellRole = (String) selectedCell.getUserObject(EditorCell.ROLE);
         }
         rebuildEditorContent(events);
 
@@ -1519,7 +1529,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private void runSwapCellsActions(Runnable action) {
     EditorCell selectedCell = getSelectedCell();
     int caretPosition = selectedCell instanceof EditorCell_Label ?
-            ((EditorCell_Label)selectedCell).getTextLine().getCaretPosition() : 0;
+            ((EditorCell_Label) selectedCell).getTextLine().getCaretPosition() : 0;
     String id = "";
     SNodeProxy nodeProxy = null;
     if (selectedCell != null) {
@@ -1533,7 +1543,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       EditorCell newSelectedCell = findNodeCell(nodeProxy.getNode(), id);
       changeSelection(newSelectedCell);
       if (newSelectedCell instanceof EditorCell_Label) {
-        ((EditorCell_Label)newSelectedCell).getTextLine().setCaretPosition(caretPosition);
+        ((EditorCell_Label) newSelectedCell).getTextLine().setCaretPosition(caretPosition);
       }
     } else {
       changeSelection(null);
@@ -1550,7 +1560,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public <T> T get(Class<T> cls) {
     if (cls == SNode.class) return (T) getRootCell().getSNode();
-    if (cls == SModelDescriptor.class && get(SNode.class) != null) return (T) get(SNode.class).getModel().getModelDescriptor();
+    if (cls == SModelDescriptor.class && get(SNode.class) != null)
+      return (T) get(SNode.class).getModel().getModelDescriptor();
     if (cls == IOperationContext.class) return (T) getOperationContext();
     if (cls == AbstractEditorComponent.class) return (T) this;
     return null;
