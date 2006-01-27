@@ -133,9 +133,28 @@ import java.util.*;
           while (iterator.hasNext()) {
             NodeSubstituteActionsBuilder substituteActionsBuilder = iterator.next();
             // is applicable ?
+            ConceptDeclaration applicableConcept = substituteActionsBuilder.getApplicableConcept();
             if (substituteActionsBuilder.getApplicableLinkMetaclass() == linkMetaclass &&
-                    SModelUtil.isAssignableConcept(targetConcept, substituteActionsBuilder.getApplicableConcept())) {
-              substituteActionsBuilders.add(substituteActionsBuilder);
+                    SModelUtil.isAssignableConcept(targetConcept, applicableConcept)) {
+
+              // do not duplicate if two builders if they applicable concepts are assignable to each other
+              boolean skipBuilder = false;
+              Iterator<NodeSubstituteActionsBuilder> otherBuilders = substituteActionsBuilders.iterator();
+              while (otherBuilders.hasNext()) {
+                NodeSubstituteActionsBuilder builder = otherBuilders.next();
+                ConceptDeclaration otherApplicableConcept = builder.getApplicableConcept();
+                if (SModelUtil.isAssignableConcept(otherApplicableConcept, applicableConcept)) {
+                  skipBuilder = true;
+                  break;
+                } else if (SModelUtil.isAssignableConcept(applicableConcept, otherApplicableConcept)) {
+                  otherBuilders.remove();
+                  break;
+                }
+              }
+
+              if (!skipBuilder) {
+                substituteActionsBuilders.add(substituteActionsBuilder);
+              }
             }
           }
         }

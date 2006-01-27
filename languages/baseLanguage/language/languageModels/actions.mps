@@ -19,6 +19,11 @@
       <property name="applicableLinkMetaclass" value="aggregation" />
       <link role="applicableConcept" targetNodeId="1.1068431790189" />
     </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1138398453506">
+      <property name="actionsFactoryAspectId" value="ClassifierType" />
+      <property name="applicableLinkMetaclass" value="aggregation" />
+      <link role="applicableConcept" targetNodeId="1.1107535904670" />
+    </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1127762018548">
       <property name="actionsFactoryAspectId" value="ParameterDeclaration" />
       <property name="applicableLinkMetaclass" value="aggregation" />
