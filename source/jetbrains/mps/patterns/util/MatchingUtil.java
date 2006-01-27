@@ -15,7 +15,7 @@ import java.util.*;
  * Time: 16:46:12
  * To change this template use File | Settings | File Templates.
  */
-public class MatchingUtil {//todo in progress
+public class MatchingUtil {
 
   private static Logger LOG = Logger.getLogger(MatchingUtil.class);
 
@@ -59,7 +59,6 @@ public class MatchingUtil {//todo in progress
     //-- matching properties
     Set<String> propertyNames = node.getPropertyNames();
     for (String propertyName : patternNode.getPropertyNames()) {
-      if (!propertyNames.contains(propertyName)) return false;
       //if property pattern var
       PropertyAttributeConcept propertyAttribute = patternNode.getPropertyAttribute(propertyName);
       if (propertyAttribute instanceof PropertyPatternVariableDeclaration) {
@@ -91,8 +90,7 @@ public class MatchingUtil {//todo in progress
         //else just match children
         Iterator<SNode> childrenIterator = children.iterator();
         for (SNode patternChild : patternChildren) {
-          if (!childrenIterator.hasNext()) return false;
-          SNode child = childrenIterator.next();
+          SNode child = childrenIterator.hasNext() ? childrenIterator.next() : null;
           if (!matchNodes(child, patternChild, substitution)) return false;
         }
       }
