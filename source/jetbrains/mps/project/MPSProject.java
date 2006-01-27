@@ -57,7 +57,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
         MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
         projects.addProject(MPSProject.this);
 
-        ReloadUtils.reloadAll();
+        //ReloadUtils.reloadAll(); //if not commented then unsaved models are disposed
 
         LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
         revalidateContent(projectFile, model);
