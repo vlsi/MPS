@@ -10,6 +10,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SReference;
@@ -20,13 +22,12 @@ import jetbrains.mps.nodeEditor.CellAction_Empty;
 import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.EditorUtil;
+import jetbrains.mps.nodeEditor.CellAction_DeleteReferenceToNode;
 import jetbrains.mps.annotations.LinkAttributeConcept;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
-import jetbrains.mps.nodeEditor.CellAction_DeleteSmart;
 
-public class SLinkTargetCollectionAccess_Editor extends DefaultNodeEditor {
+public class SNodeType_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
@@ -38,14 +39,29 @@ public class SLinkTargetCollectionAccess_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.addEditorCell(this.createSnodeExpressionCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell(context, node, "."));
-    editorCell.addEditorCell(this.createLinkReferenceCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1138063888530");
+    editorCell.addEditorCell(this.createConstantCell(context, node, "snode"));
+    editorCell.addEditorCell(this.createConstantCell1(context, node, "<"));
+    editorCell.addEditorCell(this.createConceptReferenceCell(context, node));
+    editorCell.addEditorCell(this.createConstantCell2(context, node, ">"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1138405907970");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(true);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.setFontType(MPSFonts.BOLD);
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1138405916830");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -53,15 +69,27 @@ public class SLinkTargetCollectionAccess_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1138063888532");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1138406005691");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createLinkReferenceCellinternal(EditorContext context, SNode node) {
+  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1138406102625");
+    editorCell.setLayoutConstraint("");
+    return editorCell;
+  }
+  public EditorCell createConceptReferenceCellinternal(EditorContext context, SNode node) {
     SNode effectiveNode = null;
-    effectiveNode = node.getReferent("link");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "link", context.getOperationContext().getScope());
-    SReference reference = node.getReference("link");
+    effectiveNode = node.getReferent("concept");
+    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "concept", context.getOperationContext().getScope());
+    SReference reference = node.getReference("concept");
     if(reference != null && !(reference.isResolved())) {
       EditorCell_Error noRefCell = EditorCell_Error.create(context, node, null);
       noRefCell.setText(BadReferenceTextProvider.getBadReferenceText(reference));
@@ -72,13 +100,14 @@ public class SLinkTargetCollectionAccess_Editor extends DefaultNodeEditor {
       noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
       noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
       noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration, context));
-      noRefCell.putUserObject(EditorCell.CELL_ID, "1138063888533");
-      noRefCell.putUserObject(EditorCell.ROLE, "link");
+      noRefCell.putUserObject(EditorCell.CELL_ID, "1138406014241");
+      noRefCell.putUserObject(EditorCell.ROLE, "concept");
       return noRefCell;
     }
     if(effectiveNode == null) {
       {
-        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
+        EditorCell_Constant noRefCell = EditorCell_Constant.create(context, node, null, true);
+        noRefCell.setDefaultText("BaseConcept");
         noRefCell.setEditable(true);
         noRefCell.setDrawBrackets(false);
         noRefCell.setBracketsColor(Color.black);
@@ -86,13 +115,13 @@ public class SLinkTargetCollectionAccess_Editor extends DefaultNodeEditor {
         noRefCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
         noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
         noRefCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration, context));
-        noRefCell.putUserObject(EditorCell.CELL_ID, "1138063888533");
+        noRefCell.putUserObject(EditorCell.CELL_ID, "1138406014241");
         noRefCell.setLayoutConstraint("");
-        noRefCell.putUserObject(EditorCell.ROLE, "link");
+        noRefCell.putUserObject(EditorCell.ROLE, "concept");
         return noRefCell;
       }
     }
-    AbstractCellProvider inlineComponent = new SLinkTargetCollectionAccess_Editor_link_InlineComponent(effectiveNode);
+    AbstractCellProvider inlineComponent = new SNodeType_Editor_concept_InlineComponent(effectiveNode);
     EditorCell editorCell = inlineComponent.createEditorCell(context);
     EditorUtil.setSemanticNodeToCells(editorCell, node);
     editorCell.setLayoutConstraint("");
@@ -102,58 +131,14 @@ public class SLinkTargetCollectionAccess_Editor extends DefaultNodeEditor {
     editorCell.setBracketsColor(Color.black);
     editorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
     editorCell.putUserObject(EditorCell.METAINFO_SOURCE_NODE, node);
-    editorCell.putUserObject(EditorCell.ROLE, "link");
-    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+    editorCell.putUserObject(EditorCell.ROLE, "concept");
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteReferenceToNode(node, "concept", effectiveNode));
     editorCell.setSubstituteInfo(new DefaultReferenceSubstituteInfo(node, linkDeclaration, context));
     return editorCell;
   }
-  public EditorCell createLinkReferenceCell(EditorContext context, SNode node) {
-    String linkRole = "link";
-    EditorCell refCell = this.createLinkReferenceCellinternal(context, node);
-    LinkAttributeConcept linkAttributeConcept = node.getLinkAttribute(linkRole);
-    if(linkAttributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createLinkAttributeCell(context, linkAttributeConcept, refCell);
-    } else 
-    return refCell;
-  }
-  public EditorCell createSnodeExpressionCellinternal(EditorContext context, SNode node) {
-    SNode referencedNode = null;
-    referencedNode = node.getChild("snodeExpression");
-    LinkDeclaration linkDeclaration = SModelUtil.getLinkDeclaration(node, "snodeExpression", context.getOperationContext().getScope());
-    if(referencedNode == null) {
-      {
-        EditorCell_Error noRefCell = EditorCell_Error.create(context, node, "");
-        noRefCell.setEditable(true);
-        noRefCell.setSelectable(true);
-        noRefCell.setDrawBorder(false);
-        noRefCell.setDrawBrackets(false);
-        noRefCell.setBracketsColor(Color.black);
-        noRefCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-        noRefCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
-        noRefCell.putUserObject(EditorCell.CELL_ID, "1138063888531");
-        noRefCell.setLayoutConstraint("");
-        noRefCell.putUserObject(EditorCell.ROLE, "snodeExpression");
-        noRefCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
-        return noRefCell;
-      }
-    }
-    EditorCell editorCell = context.createNodeCell(referencedNode);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setDrawBrackets(false);
-    editorCell.putUserObject(EditorCell.ROLE, "snodeExpression");
-    editorCell.putUserObject(EditorCell.METAINFO_LINK_DECLARATION, linkDeclaration);
-    editorCell.setLayoutConstraint("");
-    editorCell.setBracketsColor(Color.black);
-    editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, linkDeclaration, referencedNode));
-    editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(node, linkDeclaration, context));
-    return editorCell;
-  }
-  public EditorCell createSnodeExpressionCell(EditorContext context, SNode node) {
-    String linkRole = "snodeExpression";
-    EditorCell refCell = this.createSnodeExpressionCellinternal(context, node);
+  public EditorCell createConceptReferenceCell(EditorContext context, SNode node) {
+    String linkRole = "concept";
+    EditorCell refCell = this.createConceptReferenceCellinternal(context, node);
     LinkAttributeConcept linkAttributeConcept = node.getLinkAttribute(linkRole);
     if(linkAttributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();

@@ -8,6 +8,11 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1138055754698">
     <property name="name" value="SNodeType" />
     <link role="extends" targetNodeId="2.1068431790189" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1138405853777">
+      <property name="targetCardinality" value="0..n" />
+      <property name="role" value="concept" />
+      <link role="target" targetNodeId="3.1071489090640" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1138055932762">
       <property name="value" value="snode" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
