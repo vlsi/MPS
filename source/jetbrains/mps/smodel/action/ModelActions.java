@@ -19,6 +19,12 @@ import java.util.*;
  */
 public class ModelActions {
 
+  public static final Condition<SNode> TRUE_CONDITION = new Condition<SNode>() {
+    public boolean met(SNode object) {
+      return true;
+    }
+  };
+
   //-------------------
   // node substitute
   //-------------------
@@ -26,8 +32,8 @@ public class ModelActions {
   /**
    * helper method
    */
-  public static List<INodeSubstituteAction> createPrimaryNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, ConceptDeclaration targetConcept, Condition<SNode> filter, IScope scope) {
-    return NodeSubstituteActionsHelper.createPrimaryNodeSubstituteActions(sourceNode, currentTargetNode, linkDeclaration, targetConcept, filter, scope);
+  public static List<INodeSubstituteAction> createPrimaryNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, Condition<SNode> filter, IScope scope) {
+    return NodeSubstituteActionsHelper.createPrimaryNodeSubstituteActions(sourceNode, currentTargetNode, linkDeclaration, filter, scope);
   }
 
   /**
