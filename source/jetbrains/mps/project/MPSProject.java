@@ -17,6 +17,7 @@ import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.VersionControlManager;
 import jetbrains.mps.vcs.model.IVersionControl;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -57,7 +58,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
         MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
         projects.addProject(MPSProject.this);
 
-        //ReloadUtils.reloadAll(); //if not commented then unsaved models are disposed
+        ClassLoaderManager.getInstance().updateClassPath();
 
         LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
         revalidateContent(projectFile, model);
