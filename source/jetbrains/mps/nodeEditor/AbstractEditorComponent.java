@@ -12,6 +12,7 @@ import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.navigation.EditorsHistory;
 import jetbrains.mps.ide.navigation.RecentEditorsMenu;
+import jetbrains.mps.ide.navigation.FocusPolicy;
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.text.CellAction_RenderText;
@@ -288,9 +289,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         if (selectedCell == null) {
           EditorCell rootCell = getRootCell();
           if (rootCell instanceof EditorCell_Collection) {
-            EditorCell firstSelectableLeaf = ((EditorCell_Collection) rootCell).findFirstSelectableLeaf();
-            if (firstSelectableLeaf != null) {
-              changeSelection(firstSelectableLeaf);
+            EditorCell cellToSelect = FocusPolicy.findCellToSelectDueToFocusPolicy(rootCell);
+            if (cellToSelect != null) {
+              changeSelection(cellToSelect);
               repaint();
               return;
             }
@@ -1028,6 +1029,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
     myRootCell.paint(g);
+  }
+
+  protected void paintChildren(Graphics g) {
+    super.paintChildren(g);
+    if (mySelectedCell instanceof EditorCell_Component) ((EditorCell_Component)mySelectedCell).paintSelection(g);
   }
 
   public Dimension getPreferredSize() {

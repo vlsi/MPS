@@ -1,6 +1,7 @@
 package jetbrains.mps.util;
 
 import java.awt.Color;
+import java.awt.BasicStroke;
 
 /**
  * Created by IntelliJ IDEA.
@@ -9,7 +10,7 @@ import java.awt.Color;
  * Time: 16:10:52
  * To change this template use File | Settings | File Templates.
  */
-public class ColorUtil {
+public class ColorAndGraphicsUtil {
   public static Color saturateColor(Color c, float factor) {
     float[] hsb = new float[3];
     Color.RGBtoHSB(c.getRed(), c.getGreen(), c.getBlue(), hsb);
@@ -30,5 +31,11 @@ public class ColorUtil {
     hsb[2] = brightness;
     int rgb = Color.HSBtoRGB(hsb[0], hsb[1], hsb[2]);
     return new Color(rgb);
+  }
+
+  public static BasicStroke dashedStroke() {
+    float[] dash = new float[]{3.0f};
+    BasicStroke stroke = new BasicStroke(1.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER, 1.0f, dash, 0.0f);
+    return stroke;
   }
 }
