@@ -1131,19 +1131,19 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     //ctrl-alt-arrows
-    if (keyEvent.isControlDown() && keyEvent.isAltDown()) {
-      if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT) {
-        getOperationContext().getComponent(EditorsPane.class).openPrevEditorInHistory();
-        keyEvent.consume();
-        return;
-      }
+      if (keyEvent.isControlDown() && keyEvent.isAltDown()) {
+        if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT) {
+          getOperationContext().getComponent(EditorsPane.class).openPrevEditorInHistory();
+          keyEvent.consume();
+          return;
+        }
 
-      if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT) {
-        getOperationContext().getComponent(EditorsPane.class).openNextEditorInHistory();
-        keyEvent.consume();
-        return;
+        if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT) {
+          getOperationContext().getComponent(EditorsPane.class).openNextEditorInHistory();
+          keyEvent.consume();
+          return;
+        }
       }
-    }
 
     // hardcoded "updateTypesystem" action
     if (keyEvent.getKeyCode() == KeyEvent.VK_F5) {

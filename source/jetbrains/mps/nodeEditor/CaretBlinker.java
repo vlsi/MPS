@@ -42,7 +42,7 @@ public class CaretBlinker extends DefaultExternalizableComponent {
 
   public void launch() {
     if (myStarted) return;
-    Thread t = new Thread(new MyRunnable(), "cursor blinker");
+    Thread t = new Thread(new MyRunnable(), "caret blinker daemon");
     t.setDaemon(true);
     t.setPriority(3);
     t.start();

@@ -8,7 +8,7 @@ import jetbrains.mps.ide.ProjectFrame;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.navigation.EditorNavigationRunnable;
+import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
@@ -134,21 +134,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
   private void navigateToEditorDeclaration(final SNode editorDeclaration, final IOperationContext operationContext, final AbstractEditorComponent currentEditor, final ProjectFrame ide) {
     operationContext.getComponent(ProjectPane.class).selectNode(editorDeclaration, operationContext);
 
-    NavigationActionProcessor.executeNavigationAction(new EditorNavigationRunnable() {
-      public AbstractEditorComponent run(AbstractEditorComponent sourceEditor) {
-        AbstractEditorComponent editor = ide.getEditorsPane().openEditor(editorDeclaration, operationContext);
-        editor.selectNode(editorDeclaration);
-        return editor;
-      }
-
-      public AbstractEditorComponent getSourceEditor() {
-        return currentEditor;
-      }
-
-      public EditorsPane getEditorsPane() {
-        return ide.getEditorsPane();
-      }
-    });
+    NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(editorDeclaration, currentEditor, ide.getEditorsPane()), operationContext);
   }
 
   private ConceptEditorDeclaration createEditorDeclaration(ConceptDeclaration conceptDeclaration, SModelDescriptor editorModelDescriptor, IScope scope) {

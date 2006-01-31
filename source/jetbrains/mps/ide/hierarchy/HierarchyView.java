@@ -4,7 +4,7 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.icons.Icons;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.*;
-import jetbrains.mps.ide.navigation.EditorNavigationRunnable;
+import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -214,19 +214,7 @@ public class HierarchyView extends DefaultTool {
       final EditorsPane editorsPane = myIde.getEditorsPane();
       final AbstractEditorComponent currentEditor = editorsPane.getCurrentEditor();
 
-      NavigationActionProcessor.executeNavigationAction(new EditorNavigationRunnable() {
-        public AbstractEditorComponent run(AbstractEditorComponent sourceEditor) {
-          return editorsPane.openEditor(node, getOperationContext());
-        }
-
-        public AbstractEditorComponent getSourceEditor() {
-          return currentEditor;
-        }
-
-        public EditorsPane getEditorsPane() {
-          return editorsPane;
-        }
-      });
+      NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(node, currentEditor, editorsPane), getOperationContext());
 
     }
 
