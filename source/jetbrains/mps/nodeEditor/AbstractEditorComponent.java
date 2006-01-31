@@ -1133,13 +1133,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     //ctrl-alt-arrows
       if (keyEvent.isControlDown() && keyEvent.isAltDown()) {
         if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT) {
-          getOperationContext().getComponent(EditorsPane.class).openPrevEditorInHistory();
+          getEditorOpener().openPrevEditorInHistory();
           keyEvent.consume();
           return;
         }
 
         if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT) {
-          getOperationContext().getComponent(EditorsPane.class).openNextEditorInHistory();
+          getEditorOpener().openNextEditorInHistory();
           keyEvent.consume();
           return;
         }
@@ -1380,11 +1380,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return new EditorsHistory.HistoryItem(editor, editor.mySelectedCell, (Stack<EditorCell>) editor.mySelectedStack.clone());
   }
 
-  public static AbstractEditorComponent getEditorFromHistoryItem(EditorsHistory.HistoryItem historyItem, EditorsPane editorsPane) {
+  public static AbstractEditorComponent getEditorFromHistoryItem(EditorsHistory.HistoryItem historyItem, IEditorOpener editorOpener) {
     AbstractEditorComponent nodeEditor = historyItem.editor;
     EditorCell selectedCell = historyItem.selectedCell;
     Stack<EditorCell> selectedStack = historyItem.selectedStack;
-    AbstractEditorComponent newEditor = editorsPane.openEditor(nodeEditor.getRootCell().getSNode(), nodeEditor.getOperationContext(), true);
+    AbstractEditorComponent newEditor = editorOpener.openEditor(nodeEditor.getRootCell().getSNode(), nodeEditor.getOperationContext());
     if (selectedCell != null) {
       EditorCell nodeCell = newEditor.findNodeCell(selectedCell.getSNode(), (String) selectedCell.getUserObject(EditorCell.CELL_ID));
       if (nodeCell == null) nodeCell = newEditor.findNodeCell(selectedCell.getSNode());
@@ -1571,6 +1571,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (cls == IOperationContext.class) return (T) getOperationContext();
     if (cls == AbstractEditorComponent.class) return (T) this;
     return null;
+  }
+
+  public IEditorOpener getEditorOpener() {
+    return getOperationContext().getComponent(EditorsPane.class);
   }
 
 }
