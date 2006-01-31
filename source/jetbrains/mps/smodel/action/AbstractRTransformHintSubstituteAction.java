@@ -44,7 +44,6 @@ public abstract class AbstractRTransformHintSubstituteAction extends AbstractNod
   }
 
   public SNode doSubstitute(String pattern) {
-    getSourceNode().setProperty(SNode.RIGHT_TRANSFORM_HINT, null);
     return doSubstituteRTransformHint();
   }
 

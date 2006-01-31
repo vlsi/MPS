@@ -1040,4 +1040,9 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public boolean hasRightTransformHint() {
     return getProperty(RIGHT_TRANSFORM_HINT) != null;
   }
+
+  public void removeRightTransformHint() {
+    setProperty(RIGHT_TRANSFORM_HINT, null);
+    removeUserObject(RIGHT_TRANSFORM_HINT_JUST_ADDED);
+  }
 }

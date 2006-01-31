@@ -8,7 +8,9 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
+import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import jetbrains.mps.smodel.event.*;
 
 import java.util.*;
@@ -196,7 +198,17 @@ public class EditorManager {
       rightTransformHintCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, SNode.RIGHT_TRANSFORM_HINT));
       rightTransformHintCell.setSubstituteInfo(new AbstractNodeSubstituteInfo(context) {
         protected List<INodeSubstituteItem> createActions() {
-          return (List) ModelActions.createRightTransformHintSubstituteActions(node, context.getOperationContext().getScope());
+          List list = ModelActions.createRightTransformHintSubstituteActions(node, context.getOperationContext().getScope());
+          List wrapperList = new LinkedList();
+          for (Object action : list) {
+            wrapperList.add(new NodeSubstituteActionWrapper((INodeSubstituteAction) action) {
+              public SNode doSubstitute(String pattern) {
+                node.removeRightTransformHint();
+                return super.doSubstitute(pattern);
+              }
+            });
+          }
+          return wrapperList;
         }
       });
       rowWrapper.addEditorCell(rightTransformHintCell);
