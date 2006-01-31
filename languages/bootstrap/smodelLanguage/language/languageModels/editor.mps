@@ -162,5 +162,23 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1138676397914">
+    <link role="conceptDeclaration" targetNodeId="1.1138676077309" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1138676418683">
+      <property name="drawBorder" value="false" />
+      <property name="nullText" value="&lt;no enum member&gt;" />
+      <link role="linkDeclaration" targetNodeId="1.1138676095763" />
+      <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1138676418699">
+        <link role="conceptDeclaration" targetNodeId="3.1083171877298" />
+        <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1138676426764">
+          <property name="textFgColor" value="DARK_MAGENTA" />
+          <property name="defaultText" value="&lt;no ext value&gt;" />
+          <property name="fontStyle" value="BOLD" />
+          <property name="readOnly" value="true" />
+          <link role="propertyDeclaration" targetNodeId="3.1083923523172" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

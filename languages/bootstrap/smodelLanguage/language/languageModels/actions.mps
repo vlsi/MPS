@@ -7,6 +7,11 @@
   <import index="2" modelUID="jetbrains.mps.core.structure" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1138078942005">
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1138676703425">
+      <property name="actionsFactoryAspectId" value="Expression_SetEnumPropOperationParm" />
+      <property name="applicableLinkMetaclass" value="aggregation" />
+      <link role="applicableConcept" targetNodeId="3.1068431790191" />
+    </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1138413233760">
       <property name="actionsFactoryAspectId" value="SNodeOperation" />
       <property name="applicableLinkMetaclass" value="aggregation" />
