@@ -43,9 +43,5 @@ public abstract class AbstractRTransformHintSubstituteAction extends AbstractNod
     return SNodePresentationUtil.descriptionText(myParameterNode, mySourceNode, getScope());
   }
 
-  public SNode doSubstitute(String pattern) {
-    return doSubstituteRTransformHint();
-  }
-
-  protected abstract SNode doSubstituteRTransformHint();
+  public abstract SNode doSubstitute(String pattern);
 }
