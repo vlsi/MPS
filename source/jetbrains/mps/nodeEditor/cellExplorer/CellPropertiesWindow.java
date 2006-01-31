@@ -17,7 +17,7 @@ import java.awt.*;
  */
 public class CellPropertiesWindow extends JFrame {
 
-  public CellPropertiesWindow(EditorCell editorCell, ProjectFrame ide) {
+  public CellPropertiesWindow(EditorCell editorCell, Frame mainFrame) {
     CellProperties cellProperties = new CellProperties(editorCell);
 
     String cellText = cellProperties.getCellText();
@@ -63,8 +63,6 @@ public class CellPropertiesWindow extends JFrame {
     setAlwaysOnTop(true);
     setResizable(false);
     setTitle("Cell Properties");
-
-    Frame mainFrame = ide.getMainFrame();
 
     int x = mainFrame.getX() + mainFrame.getWidth() / 2 - getWidth() / 2;
     int y = mainFrame.getY() + mainFrame.getHeight() / 2 - getHeight() / 2;

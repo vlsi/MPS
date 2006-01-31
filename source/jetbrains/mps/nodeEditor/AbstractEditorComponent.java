@@ -78,6 +78,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private MessagesGutter myMessagesGutter = new MessagesGutter(this);
   protected SNodeProxy myNodeProxy;
   protected EditorContext myEditorContext;
+  private List<RebuildListener> myRebuildListeners = new ArrayList<RebuildListener>();
+  private List<CellSynchronizationWithModelListener> myCellSynchronizationListeners = new ArrayList<CellSynchronizationWithModelListener>();
 //  private Color myBackground = Color.white;
 
 
@@ -888,7 +890,29 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     for (JComponent component : myRootCell.getSwingComponents()) {
       this.add(component);
     }
+
+    for (RebuildListener listener : myRebuildListeners) {
+      listener.editorRebuilt(this);
+    }
   }
+
+
+  public void addRebuildListener(RebuildListener listener) {
+    myRebuildListeners.add(listener);
+  }
+
+  public void removeRebuildListener(RebuildListener listener) {
+    myRebuildListeners.remove(listener);
+  }
+
+  public void addSynchronizationListener(CellSynchronizationWithModelListener listener) {
+    myCellSynchronizationListeners.add(listener);
+  }
+
+  public void removeSynchronizationListener(CellSynchronizationWithModelListener listener) {
+    myCellSynchronizationListeners.remove(listener);
+  }
+
 
   public EditorCell findNearestCell(int x, int y) {
     EditorCell cell = myRootCell.findCell(x, y);
@@ -997,6 +1021,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     fireCellSelectionChanged(oldSelection, newSelectedCell);
   }
+
 
   public void addCellSelectionListener(ICellSelectionListener l) {
     mySelectionListeners.add(l);
@@ -1577,4 +1602,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return getOperationContext().getComponent(EditorsPane.class);
   }
 
+  public static interface RebuildListener {
+    public void editorRebuilt(AbstractEditorComponent editor);
+  }
+
+  public static interface CellSynchronizationWithModelListener {
+    public void cellSynchronizedWithModel(EditorCell cell);
+  }
 }

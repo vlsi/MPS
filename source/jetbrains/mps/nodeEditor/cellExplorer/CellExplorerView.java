@@ -1,8 +1,10 @@
 package jetbrains.mps.nodeEditor.cellExplorer;
 
 import jetbrains.mps.ide.toolsPane.DefaultTool;
+import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.ide.ProjectFrame;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
+import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -29,27 +31,98 @@ public class CellExplorerView extends DefaultTool {
 
   private JPanel myComponent = new JPanel(new BorderLayout());
   private MyTree myTree = new MyTree();
-  private ProjectFrame myIde;
+  private IOperationContext myOperationContext;
+  private AbstractEditorComponent myCurrentEditor;
 
-  public CellExplorerView(ProjectFrame ide) {
-    myIde = ide;
+  private CellTreeNode myCashedPropertyCellTreeNode = null;
+
+  private AbstractEditorComponent.RebuildListener myRebuildListener = new AbstractEditorComponent.RebuildListener() {
+    public void editorRebuilt(AbstractEditorComponent editor) {
+      update();
+    }
+  };
+  private AbstractEditorComponent.CellSynchronizationWithModelListener mySynchronizationListener = new AbstractEditorComponent.CellSynchronizationWithModelListener() {
+    public void cellSynchronizedWithModel(EditorCell cell) {
+      if (cell == null) return;
+      CellTreeNode cellTreeNode;
+      if (myCashedPropertyCellTreeNode != null && cell == myCashedPropertyCellTreeNode.getUserObject()) {
+        cellTreeNode = myCashedPropertyCellTreeNode;
+      } else {
+        cellTreeNode = (CellTreeNode) findCellTreeNode(cell);
+        myCashedPropertyCellTreeNode = cellTreeNode;
+      }
+      if (cellTreeNode == null) return;
+      cellTreeNode.init();
+      myTree.repaint();
+    }
+  };
+
+  public CellExplorerView(IOperationContext operationContext) {
+    myOperationContext = operationContext;
     myTree.setRootVisible(true);
     myComponent.add(new JScrollPane(myTree), BorderLayout.CENTER);
-    myTree.rebuildTree();    
+    update();
+    getEditorsPane().addListener(new EditorsPane.IEditorsPaneListener() {
+      public void editorOpened(AbstractEditorComponent e) {
+        update();
+      }
+      public void editorClosed(AbstractEditorComponent e) {
+        update();
+      }
+      public void editorSelected(AbstractEditorComponent e) {
+        update();
+      }
+    });
   }
 
+  private ToolsPane getToolsPane() {
+    return myOperationContext.getComponent(ToolsPane.class);
+  }
+
+  private EditorsPane getEditorsPane() {
+    return myOperationContext.getComponent(EditorsPane.class);
+  }
+
+
   public void update() {
-    if (!myIde.getToolsPane().isVisible(this)) {
+    if (!getToolsPane().isVisible(this)) {
       return;
     }
+    removeListeners();
+    myCurrentEditor = getEditorsPane().getCurrentEditor();
+    if (myCurrentEditor != null) myCurrentEditor.addRebuildListener(myRebuildListener);
     myTree.rebuildTree();
   }
 
-  public void showCell(EditorCell cell) {
-    if (!myIde.getToolsPane().isVisible(this)) {
-      myIde.getToolsPane().selectTool(this);
+  private void removeListeners() {
+    if (myCurrentEditor != null) {
+      myCurrentEditor.removeRebuildListener(myRebuildListener);
+      myCurrentEditor.removeSynchronizationListener(mySynchronizationListener);
     }
+  }
 
+  public void toolShown() {
+    update();
+  }
+
+  public void toolHidden() {
+    removeListeners();
+  }
+
+  public void showCell(EditorCell cell) {
+    if (!getToolsPane().isVisible(this)) {
+      getToolsPane().selectTool(this);
+    }
+    MPSTreeNode current = findCellTreeNode(cell);
+    if (current == null) {
+      LOG.warning("Can't find cell in tree");
+      return;
+    }
+    myTree.selectNode(current);
+    getToolsPane().selectTool(this);
+  }
+
+  private MPSTreeNode findCellTreeNode(EditorCell cell) {
     List<EditorCell> path = new ArrayList<EditorCell>();
     while (cell != null) {
       path.add(cell);
@@ -62,12 +135,10 @@ public class CellExplorerView extends DefaultTool {
       if (!current.isInitialized()) current.init();
       current = current.findExactChildWith(editorCell);
       if (current == null) {
-        LOG.warning("Can't find cell in tree");
-        return;
+        break;
       }
     }
-    myTree.selectNode(current);
-    myIde.showCellExplorer();
+    return current;
   }
 
   public String getName() {
@@ -84,7 +155,7 @@ public class CellExplorerView extends DefaultTool {
 
   private class MyTree extends MPSTree {
     protected MPSTreeNode rebuild() {
-      AbstractEditorComponent editor = myIde.getEditorsPane().getCurrentEditor();
+      AbstractEditorComponent editor = getEditorsPane().getCurrentEditor();
       if (editor == null) {
         return new TextTreeNode("No editor selected") {
           public Icon getIcon(boolean expanded) {
@@ -130,14 +201,14 @@ public class CellExplorerView extends DefaultTool {
       }).setBorder(null);
       result.add(new AbstractActionWithEmptyIcon("Properties") {
         public void actionPerformed(ActionEvent e) {
-          new CellPropertiesWindow(myCell, myIde);
+          new CellPropertiesWindow(myCell, myOperationContext.getMainFrame());
         }
       }).setBorder(null);
       return result;
     }
 
     private void showCell() {
-      myIde.getEditorsPane().getCurrentEditor().changeSelection(myCell);
+      getEditorsPane().getCurrentEditor().changeSelection(myCell);
     }
 
     public void doubleClick() {
