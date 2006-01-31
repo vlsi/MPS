@@ -84,7 +84,7 @@ public class CaretBlinker extends DefaultExternalizableComponent {
               EditorCell selectedCell = editor.getSelectedCell();
               if (selectedCell == null) continue;
               selectedCell.switchCaretVisible();
-              editor.repaint();
+              editor.repaint(selectedCell.getX(), selectedCell.getY(), selectedCell.getWidth()+1, selectedCell.getHeight()+1);
               break;
             }
           }
