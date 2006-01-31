@@ -19,6 +19,15 @@
       <property name="preconditionAspectId" value="snode_type" />
       <link role="applicableConcept" targetNodeId="3.1068431790191" />
     </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1138659520242">
+      <property name="actionsFactoryAspectId" value="Expression_sproperty" />
+      <property name="preconditionAspectId" value="sproperty_type" />
+      <link role="applicableConcept" targetNodeId="3.1068431790191" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1138669164825">
+      <property name="actionsFactoryAspectId" value="SPropertyAccess" />
+      <link role="applicableConcept" targetNodeId="1.1138056022639" />
+    </node>
   </node>
 </model>
 
