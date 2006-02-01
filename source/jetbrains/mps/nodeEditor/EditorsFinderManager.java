@@ -4,7 +4,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
 
@@ -17,29 +17,26 @@ import java.util.*;
  */
 public class EditorsFinderManager {
 
-  private static Map<Class, IEditorJavaClassesFinder> myGeneralizingEntitiesClassesToEditorFinders = new HashMap<Class, IEditorJavaClassesFinder>();
+  private static Map<String, IGeneralizingEntityEditorFinder> myLanguageNamespacesToGEEditorFinders = new HashMap<String, IGeneralizingEntityEditorFinder>();
 
   public static INodeEditor loadEditor(EditorContext context, SNode node) {
-    Class cls = getGeneralizationEntityClass(context, node);
-    IEditorJavaClassesFinder finder = myGeneralizingEntitiesClassesToEditorFinders.get(cls);
-    if (finder == null) finder = new DefaultEditorJavaClassesFinder();
+    IGeneralizingEntityEditorFinder finder = getGEFinder(node);
+    if (finder == null) finder = new DefaultGeneralizingEntityEditorFinder();
     return finder.findEditor(node, context);
   }
 
-  private static Class getGeneralizationEntityClass(EditorContext context, SNode node) {
-    //todo hardcoded default. create a specially taught manager
-    IScope scope = context.getOperationContext().getScope();
-    ConceptDeclaration nodeConcept = SModelUtil.getConceptDeclaration(node, scope);
-    Class cls = nodeConcept.getClass();
-    return cls;
+  public static IGeneralizingEntityEditorFinder getGEFinder(SNode node) {
+    String languageNamespace = NameUtil.namespaceFromConceptFQName(NameUtil.nodeConceptFQName(node));
+    IGeneralizingEntityEditorFinder finder = myLanguageNamespacesToGEEditorFinders.get(languageNamespace);
+    return finder;
   }
 
-  public static void registerEditorJavaClassesFinder(Class generalizingEntityClass, IEditorJavaClassesFinder finder) {
-    myGeneralizingEntitiesClassesToEditorFinders.put(generalizingEntityClass, finder);
+  public static void registerEditorJavaClassesFinder(String languageNamespace, IGeneralizingEntityEditorFinder finder) {
+    myLanguageNamespacesToGEEditorFinders.put(languageNamespace, finder);
   }
 
-  public static void unregisterEditorJavaClassesFinder(Class generalizingEntityClass) {
-    myGeneralizingEntitiesClassesToEditorFinders.remove(generalizingEntityClass);
+  public static void unregisterEditorJavaClassesFinder(String languageNamespace) {
+    myLanguageNamespacesToGEEditorFinders.remove(languageNamespace);
   }
 
 }
