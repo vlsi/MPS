@@ -19,7 +19,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1138055978872">
-    <property name="name" value="SNodeExpression" />
+    <property name="name" value="SNodeOperationExpression" />
     <link role="extends" targetNodeId="2.1068431790191" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1138056667223">
       <property name="sourceCardinality" value="1" />
@@ -98,7 +98,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1138658932621">
-    <property name="name" value="SPropertyExpression" />
+    <property name="name" value="SPropertyOperationExpression" />
     <link role="extends" targetNodeId="2.1068431790191" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1138659171348">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
@@ -148,6 +148,42 @@
       <property name="targetCardinality" value="1" />
       <property name="role" value="enumMember" />
       <link role="target" targetNodeId="3.1083171877298" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1138757516060">
+    <property name="name" value="SLinkOperation" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1138757527406">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1138757581985">
+    <property name="name" value="SLinkNewOperation" />
+    <link role="extends" targetNodeId="1138757516060" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1138757626129">
+      <property name="value" value="new" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1138759293805">
+    <property name="name" value="SLinkOperationExpression" />
+    <link role="extends" targetNodeId="2.1068431790191" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1138759293806">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1138759293807">
+      <property name="sourceCardinality" value="1" />
+      <property name="targetCardinality" value="1" />
+      <property name="role" value="linkExpression" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="2.1068431790191" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1138759293808">
+      <property name="sourceCardinality" value="1" />
+      <property name="targetCardinality" value="1" />
+      <property name="role" value="linkOperation" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1138757516060" />
     </node>
   </node>
 </model>

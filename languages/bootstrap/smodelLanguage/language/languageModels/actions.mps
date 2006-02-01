@@ -17,6 +17,11 @@
       <property name="applicableLinkMetaclass" value="aggregation" />
       <link role="applicableConcept" targetNodeId="1.1138411891628" />
     </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1138760618535">
+      <property name="actionsFactoryAspectId" value="SLink_and_SNodeOperation" />
+      <property name="applicableLinkMetaclass" value="aggregation" />
+      <link role="applicableConcept" targetNodeId="1.1138757516060" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActions" id="1138079717967">
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1138079721624">
@@ -27,6 +32,11 @@
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1138659520242">
       <property name="actionsFactoryAspectId" value="Expression_sproperty" />
       <property name="preconditionAspectId" value="sproperty_type" />
+      <link role="applicableConcept" targetNodeId="3.1068431790191" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1138759645448">
+      <property name="actionsFactoryAspectId" value="Expression_slink" />
+      <property name="preconditionAspectId" value="slink_type" />
       <link role="applicableConcept" targetNodeId="3.1068431790191" />
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1138669164825">
