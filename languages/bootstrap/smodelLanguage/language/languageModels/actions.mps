@@ -30,8 +30,12 @@
       <link role="applicableConcept" targetNodeId="3.1068431790191" />
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1138669164825">
-      <property name="actionsFactoryAspectId" value="SPropertyAccess" />
+      <property name="actionsFactoryAspectId" value="DelegateToParentExpression" />
       <link role="applicableConcept" targetNodeId="1.1138056022639" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1138750694157">
+      <property name="actionsFactoryAspectId" value="DelegateToParentExpression" />
+      <link role="applicableConcept" targetNodeId="1.1138056143562" />
     </node>
   </node>
 </model>
