@@ -1,11 +1,9 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 
 import java.awt.*;
 import java.util.List;

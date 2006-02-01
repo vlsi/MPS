@@ -3,7 +3,6 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.annotations.AttributeConcept;
 import jetbrains.mps.annotations.LinkAttributeConcept;
 import jetbrains.mps.annotations.PropertyAttributeConcept;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -251,7 +250,7 @@ public class EditorManager {
       return editor;
     }
 
-    editor = loadEditor(context, node);
+    editor = EditorsFinderManager.loadEditor(context, node);
     if (editor == null) {
       editor = new DefaultNodeEditor();
     }
@@ -259,52 +258,4 @@ public class EditorManager {
     return editor;
   }
 
-  private INodeEditor loadEditor(EditorContext context, SNode node) {
-    IScope scope = context.getOperationContext().getScope();
-    ConceptDeclaration nodeConcept = SModelUtil.getConceptDeclaration(node, scope);
-    if (nodeConcept == null) {
-      LOG.errorWithTrace("Error loading editor for node \"" + node.getDebugText() + "\".\n" +
-              "Couldn't find node concept in scope: " + scope);
-      return null;
-    }
-
-    String stereotype = node.getModel().getStereotype();
-    while (nodeConcept != null) {
-      INodeEditor nodeEditor = loadEditor(nodeConcept, stereotype, scope);
-      if (nodeEditor != null) {
-        return nodeEditor;
-      }
-      nodeConcept = nodeConcept.getExtends();
-    }
-    LOG.error("Couldn't load editor for node " + node.getDebugText());
-    return null;
-  }
-
-  private INodeEditor loadEditor(ConceptDeclaration nodeConcept, String stereotype, IScope scope) {
-    Language language = SModelUtil.getDeclaringLanguage(nodeConcept, scope);
-    String editorUID = language.getEditorUID(stereotype);
-    if (editorUID == null) {
-      editorUID = language.getEditorUID();
-      if (editorUID == null) {
-        LOG.errorWithTrace("Error loading editor for language \"" + language.getNamespace() + "\" <<" + stereotype + ">> : no editor model.");
-        return null;
-      }
-    }
-
-    try {
-      String editorClassName = editorUID + "." + nodeConcept.getName() + "_Editor";
-      Class editorClass = Class.forName(editorClassName, true, ClassLoaderManager.getInstance().getClassLoader());
-      return (INodeEditor) editorClass.newInstance();
-    } catch (ClassNotFoundException e) {
-      // ok
-    } catch (InstantiationException e) {
-      LOG.error(e);
-    } catch (IllegalAccessException e) {
-      LOG.error(e);
-    } catch (Exception e) {
-      LOG.error(e);
-    }
-
-    return null;
-  }
 }
