@@ -291,8 +291,12 @@ public class SModelRepository extends SModelAdapter {
 
   public void saveAll() {
     List<SModelDescriptor> descriptors = new LinkedList(myChangedModels.keySet());
-    for (SModelDescriptor modelDescriptor : descriptors) {
-      modelDescriptor.save();
+    for (SModelDescriptor modelDescriptor : descriptors) {      
+      try {
+        modelDescriptor.save();
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
     myChangedModels.clear();
   }
