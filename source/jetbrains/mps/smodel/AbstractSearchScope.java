@@ -31,6 +31,14 @@ public abstract class AbstractSearchScope implements ISearchScope {
     return list;
   }
 
+  public final SNode findNode(Condition<SNode> condition) {
+    List<SNode> list = getOwnNodes(condition);
+    if(list.size() > 0) return list.get(0);
+    List<SNode> nodesFromAppendedScopes = getNodesFromAppendedScopes(condition);
+    if(nodesFromAppendedScopes.size() > 0) return nodesFromAppendedScopes.get(0);
+    return null;
+  }
+
   protected abstract List<SNode> getOwnNodes(Condition<SNode> condition);
 
   public void append(ISearchScope scope) {

@@ -91,6 +91,20 @@ public abstract class PropertySupport {
     return propertySupport;
   }
 
+  public static boolean isString(PrimitiveDataTypeDeclaration datatype) {
+    return datatype.getName().equals(Primitives.STRING_TYPE);
+  }
+
+  public static boolean isInteger(PrimitiveDataTypeDeclaration datatype) {
+    return datatype.getName().equals(Primitives.INTEGER_TYPE);
+  }
+
+  public static boolean isBoolean(PrimitiveDataTypeDeclaration datatype) {
+    return datatype.getName().equals(Primitives.BOOLEAN_TYPE);
+  }
+
+
+
   private static class DefaultPropertySupport extends PropertySupport {
     public boolean canSetValue(String value) {
       return true;
