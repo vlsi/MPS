@@ -24,7 +24,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1138056667223">
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="1" />
-      <property name="role" value="nodeExpression" />
+      <property name="role" value="leftExpression" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
@@ -146,6 +146,17 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1138763471144">
       <link role="conceptPropertyDeclaration" targetNodeId="1138763325919" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1139184414036">
+    <property name="name" value="SLinkListAddNewOperation" />
+    <link role="extends" targetNodeId="1138411891628" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1139184414037">
+      <property name="value" value="new" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1139184414038">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763350436" />
     </node>
   </node>
 </model>

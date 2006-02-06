@@ -32,6 +32,10 @@
       <property name="actionsFactoryAspectId" value="DelegateToParentExpression" />
       <link role="applicableConcept" targetNodeId="1.1138056143562" />
     </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1139185139615">
+      <property name="actionsFactoryAspectId" value="DelegateToParentExpression" />
+      <link role="applicableConcept" targetNodeId="1.1138056282393" />
+    </node>
   </node>
 </model>
 

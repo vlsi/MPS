@@ -162,13 +162,18 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1138757943608">
     <link role="conceptDeclaration" targetNodeId="1.1138757581985" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1138757943609">
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1139184487935">
+      <property name="editable" value="true" />
+      <property name="text" value="new" />
       <property name="drawBorder" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1138757943610">
-        <property name="editable" value="true" />
-        <property name="text" value="new" />
-        <property name="drawBorder" value="false" />
-      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1139184505217">
+    <link role="conceptDeclaration" targetNodeId="1.1139184414036" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1139184507627">
+      <property name="editable" value="true" />
+      <property name="text" value="new" />
+      <property name="drawBorder" value="false" />
     </node>
   </node>
 </model>
