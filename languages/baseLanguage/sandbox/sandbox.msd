@@ -4,6 +4,9 @@
     <modelRoot path="${solution_descriptor}\." namespacePrefix="jetbrains.mps.baseLanguage.sandbox" />
     <modelRoot path="${mps_home}\models" namespacePrefix="" />
   </models>
-  <languages />
+  <module />
+  <languages>
+    <moduleRoot path="${mps_home}\languages\baseLanguage\languageDescriptor.mpl" />
+  </languages>
 </solution>
 

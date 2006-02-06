@@ -5,13 +5,13 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.projectLanguage.PersistenceUtil;
 import jetbrains.mps.projectLanguage.SolutionDescriptor;
+import jetbrains.mps.projectLanguage.Root;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -95,6 +95,7 @@ public class Solution extends AbstractModule {
 
     // read languages and models
     readModulesAndModels();
+    MPSModuleRepository.getInstance().readModuleDescriptors((Iterator<? extends Root>) newDescriptor.languageRoots(), this);
 
     myEventTranslator.solutionChanged();
   }

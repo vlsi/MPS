@@ -58,6 +58,10 @@ public class MPSModuleRepository {
     return new HashSet<String>(myExtensionsToModuleTypes.keySet());
   }
 
+  public String getLanguageExtension() {
+    return LANGUAGE_EXT;
+  }
+
   public void addRepositoryListener(RepositoryListener l) {
     myListeners.add(l);
   }
@@ -223,11 +227,11 @@ public class MPSModuleRepository {
 
   }
 
-  public void readModuleDescriptors(Iterable<Root> roots, MPSModuleOwner owner) {
+  public void readModuleDescriptors(Iterable<? extends Root> roots, MPSModuleOwner owner) {
     readModuleDescriptors(roots.iterator(), owner);
   }
 
-  public void readModuleDescriptors(Iterator<Root> roots, MPSModuleOwner owner) {
+  public void readModuleDescriptors(Iterator<? extends Root> roots, MPSModuleOwner owner) {
     while (roots.hasNext()) {
       Root root = roots.next();
       File moduleRoot = new File(root.getPath());
