@@ -986,6 +986,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return (Stack<EditorCell>) mySelectedStack.clone();
   }
 
+  public boolean selectionStackContains(EditorCell cell) {
+    return mySelectedStack.contains(cell);
+  }
+
   public void changeSelection(EditorCell newSelectedCell) {
     changeSelection(newSelectedCell, true);
   }
@@ -1093,6 +1097,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public boolean getScrollableTracksViewportHeight() {
     return false;
+  }
+
+  public EditorCell getDeepestSelectedCell() {
+    if (mySelectedStack.isEmpty()) return mySelectedCell;
+    return mySelectedStack.get(0);
   }
 
   public EditorCell getSelectedCell() {

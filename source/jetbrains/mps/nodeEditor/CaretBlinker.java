@@ -81,7 +81,7 @@ public class CaretBlinker extends DefaultExternalizableComponent {
         synchronized(REGISTRATION_LOCK) {
           for (AbstractEditorComponent editor : myEditors) {
             if (editor.hasFocus()) {
-              EditorCell selectedCell = editor.getSelectedCell();
+              EditorCell selectedCell = editor.getDeepestSelectedCell();
               if (selectedCell == null) continue;
               selectedCell.switchCaretVisible();
               editor.repaint(selectedCell.getX(), selectedCell.getY(), selectedCell.getWidth()+1, selectedCell.getHeight()+1);

@@ -39,14 +39,14 @@ public class NodeEditorActions {
 
   public static class LEFT extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
+      EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
       return selection != null && findTarget(selection) != null;
     }
 
     public void execute(EditorContext context) {
       AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
+      EditorCell selection = nodeEditorComponent.getDeepestSelectedCell();
       nodeEditorComponent.clearSelectionStack();
-      EditorCell selection = nodeEditorComponent.getSelectedCell();
       EditorCell target = findTarget(selection);
       nodeEditorComponent.changeSelection(target);
       if (selection.isPunctuationLayout() && target instanceof EditorCell_Label) {
@@ -198,13 +198,13 @@ public class NodeEditorActions {
 
   public static class RIGHT extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
+      EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
       return selection != null && findTarget(selection) != null;
     }
 
     public void execute(EditorContext context) {
+      EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
       context.getNodeEditorComponent().clearSelectionStack();
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
       EditorCell target = findTarget(selection);
       context.getNodeEditorComponent().changeSelection(target);
       if (target.isPunctuationLayout()) {
@@ -251,13 +251,13 @@ public class NodeEditorActions {
 
     public static class UP extends EditorCellAction {
       public boolean canExecute(EditorContext context) {
-        EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
+        EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
         return selection != null && selection.getParent() != null && findTarget(selection, selection.getCaretX()) != null;
       }
 
       public void execute(EditorContext context) {
+        EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
         context.getNodeEditorComponent().clearSelectionStack();
-        EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
         int caretX = selection.getCaretX();
         if (context.getNodeEditorComponent().hasLastCaretX()) caretX = context.getNodeEditorComponent().getLastCaretX();
         context.getNodeEditorComponent().saveLastCaretX(caretX);
@@ -273,13 +273,13 @@ public class NodeEditorActions {
 
   public static class DOWN extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
+      EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
       return selection != null /*&& selection.getParent() != null*/ && findTarget(selection, selection.getCaretX()) != null;
     }
 
     public void execute(EditorContext context) {
+      EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
       context.getNodeEditorComponent().clearSelectionStack();
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
       int caretX = selection.getCaretX();
       if (context.getNodeEditorComponent().hasLastCaretX()) caretX = context.getNodeEditorComponent().getLastCaretX();
       context.getNodeEditorComponent().saveLastCaretX(caretX);
@@ -418,56 +418,4 @@ public class NodeEditorActions {
     }
   }
 
-  //
-  // --- maybe temporary actions to test attribute editors
-  //
-
-  public static class MK_PROPERTY_COMMENT extends EditorCellAction { //Ctrl-F2
-
-    public boolean canExecute(EditorContext context) {
-      EditorCell cell = context.getNodeEditorComponent().getSelectedCell();
-      if (!(cell instanceof EditorCell_Property)) return false;
-      return cell.getSNode() != null;
-    }
-
-    public void execute(EditorContext context) {
-      AbstractEditorComponent editor = context.getNodeEditorComponent();
-      EditorCell_Property cell = (EditorCell_Property) editor.getSelectedCell();
-      SNode node = cell.getSNode();
-      String propertyName = ((PropertyAccessor)cell.getModelAccessor()).getPropertyName();
-      node.setPropertyAttribute(propertyName, new PropertyComment(node.getModel()));
-    }
-  }
-
-  public static class MK_LINK_COMMENT extends EditorCellAction { //Ctrl-F4
-    public boolean canExecute(EditorContext context) {
-      EditorCell cell = context.getNodeEditorComponent().getSelectedCell();
-      return cell.getSNode() != null;
-    }
-
-    public void execute(EditorContext context) {
-      EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
-      LinkDeclaration linkDeclaration = (LinkDeclaration) selectedCell.getUserObject(EditorCell.METAINFO_LINK_DECLARATION);
-      if (linkDeclaration != null) {
-        SNode node = selectedCell.getSNode();
-        linkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
-        String role = linkDeclaration.getRole();
-        node.setLinkAttribute(role, new LinkComment(node.getModel()));
-      }
-    }
-  }
-
-  public static class MK_COMMENT extends EditorCellAction { //Ctrl-F3
-
-    public boolean canExecute(EditorContext context) {
-      EditorCell cell = context.getNodeEditorComponent().getSelectedCell();
-      return cell.getSNode() != null;
-    }
-
-    public void execute(EditorContext context) {
-      EditorCell cell = context.getNodeEditorComponent().getSelectedCell();
-      SNode node = cell.getSNode();
-      node.setAttribute(new Comment(node.getModel()));
-    }
-  }
 }
