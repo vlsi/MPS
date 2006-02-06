@@ -5,19 +5,17 @@ import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessageView;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.util.FileUtil;
 
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -32,20 +30,16 @@ public class GenerationSession implements ModelOwner {
   private Language myTargetLanguage;
   private IOperationContext myInvocationContext;
   private IAdaptiveProgressMonitor myProgressMonitor;
-  private boolean mySaveTransientModels;
 
   private String mySessionId;
   private File mySessionDescriptorFile;
+  private GeneratorSessionContext myGeneratorSessionContext;
 
   public GenerationSession(Language targetLanguage, IOperationContext invocationContext, IAdaptiveProgressMonitor progressMonitor) {
     myTargetLanguage = targetLanguage;
     myInvocationContext = invocationContext;
     myProgressMonitor = progressMonitor;
     mySessionId = "" + System.currentTimeMillis();
-  }
-
-  public void setSaveTransientModels(boolean saveTransientModels) {
-    mySaveTransientModels = saveTransientModels;
   }
 
   public String getSessionId() {
@@ -60,6 +54,8 @@ public class GenerationSession implements ModelOwner {
 
     // -- create generators list
     List<Generator> generators = getGeneratorModules(sourceModel);
+    GeneratorSessionContext generatorSessionContext = new GeneratorSessionContext(myTargetLanguage, generators, myInvocationContext);
+    setGeneratorSessionContext(generatorSessionContext);
     if (generators.isEmpty()) {
       addProgressMessage(MessageKind.WARNING, "skip model \"" + sourceModel.getUID() + "\" : no generator avalable");
       return new GenerationStatus.OK(null);
@@ -93,18 +89,17 @@ public class GenerationSession implements ModelOwner {
       currentGeneratorClass = defaultGeneratorClass;
     }
     addMessage(MessageKind.INFORMATION, "    use generator class: \"" + currentGeneratorClass + "\"");
-    GeneratorSessionContext generatorContext = new GeneratorSessionContext(myTargetLanguage, generators, myInvocationContext);
     // templates or hand-coded?
     if (!ITemplateGenerator.class.isAssignableFrom(currentGeneratorClass)) {
       // hand-coded - not much to do ... just instantiate and invoke
-      IModelGenerator handCodedGenerator = currentGeneratorClass.getConstructor(IOperationContext.class).newInstance(generatorContext);
-      SModel targetModel = JavaGenUtil.createTargetJavaModel(sourceModel, JavaNameUtil.packageNameForModelUID(sourceModel.getUID()), generatorContext);
+      IModelGenerator handCodedGenerator = currentGeneratorClass.getConstructor(IOperationContext.class).newInstance(generatorSessionContext);
+      SModel targetModel = JavaGenUtil.createTargetJavaModel(sourceModel, JavaNameUtil.packageNameForModelUID(sourceModel.getUID()), generatorSessionContext);
       handCodedGenerator.generate(sourceModel, targetModel);
       return new GenerationStatus.OK(targetModel);
     }
 
     // templates generator
-    ITemplateGenerator generator = (ITemplateGenerator) currentGeneratorClass.getConstructor(GeneratorSessionContext.class, IAdaptiveProgressMonitor.class).newInstance(generatorContext, myProgressMonitor);
+    ITemplateGenerator generator = (ITemplateGenerator) currentGeneratorClass.getConstructor(GeneratorSessionContext.class, IAdaptiveProgressMonitor.class).newInstance(generatorSessionContext, myProgressMonitor);
     GenerationStatus status;
     try {
       SModel outputModel = doGenerateModel(sourceModel, generator);
@@ -131,16 +126,11 @@ public class GenerationSession implements ModelOwner {
       status = new GenerationStatus.ERROR();
     }
 
-    // save transient models in session module
-    if (mySaveTransientModels) {
-      saveTransientModels(generatorContext);
-      generatorContext.getModule().dispose(); // unregister transient models
-    } else if (!status.isError()) {
-      // if ERROR - keep transient models: we need them to navigate to errors
-      generatorContext.getModule().dispose(); // unregister transient models
-    }
-
     return status;
+  }
+
+  private void setGeneratorSessionContext(GeneratorSessionContext generatorSessionContext) {
+    myGeneratorSessionContext = generatorSessionContext;
   }
 
   private SModel doGenerateModel(SModel inputModel, ITemplateGenerator generator) {
@@ -235,6 +225,10 @@ public class GenerationSession implements ModelOwner {
   }
 
 
+  public void saveTransientModels() {
+    saveTransientModels(myGeneratorSessionContext);
+  }
+
   private void saveTransientModels(GeneratorSessionContext generatorContext) {
     // solution dir
     String projectDir = generatorContext.getProject().getProjectFile().getParentFile().getAbsolutePath();
@@ -251,6 +245,11 @@ public class GenerationSession implements ModelOwner {
         String modelFileName = modelFqName.replace('.', File.separatorChar) + ".mps";
         File modelFile = new File(solutionDir, modelFileName);
         ModelPersistence.saveModel(transientModelDescriptor.getSModel(), modelFile);
+
+        // replace with file-model-descriptor
+        SModelUID modelUID = transientModelDescriptor.getModelUID();
+        SModelRepository.getInstance().removeModelDescriptor(transientModelDescriptor);
+        MPSFileModelDescriptor.getInstance(FileUtil.getCanonicalPath(modelFile), modelUID, transientModule);
       }
     }
 
@@ -339,5 +338,12 @@ public class GenerationSession implements ModelOwner {
 
   public String getSessionModuleName() {
     return "generationSession_" + getSessionId();
+  }
+
+  public void dispose() {
+    if (myGeneratorSessionContext != null) {
+      myGeneratorSessionContext.getModule().dispose(); // unregister transient models
+      myGeneratorSessionContext = null;
+    }
   }
 }

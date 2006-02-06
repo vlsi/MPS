@@ -273,7 +273,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
       //++ generation
       GenerationSession generationSession = new GenerationSession(targetLanguage, invocationContext, progress);
-      generationSession.setSaveTransientModels(isSaveTransientModels());
       GenerationStatus status = null;
       for (SModelDescriptor sourceModelDescriptor : sourceModels) {
         SModel sourceModel = sourceModelDescriptor.getSModel();
@@ -301,9 +300,14 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       //-- generation
 
       if (isSaveTransientModels()) {
+        generationSession.saveTransientModels();
         addProgressMessage(MessageKind.INFORMATION, "adding module \"" + generationSession.getSessionModuleName() + "\"", progress);
         File sessionDescriptorFile = generationSession.getSessionDescriptorFile();
+        generationSession.dispose(); // unregister transient models
         myProject.addProjectSolution(sessionDescriptorFile);
+      } else if (!status.isError()) {
+        // if ERROR - keep transient models: we need them to navigate to from error messages
+        generationSession.dispose(); // unregister transient models
       }
 
       checkMonitorCanceled(progress);
@@ -336,7 +340,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         progress.finishAnyway();
       }
       showMessageView();
-    } catch(GenerationCanceledException gce) {
+    } catch (GenerationCanceledException gce) {
       addProgressMessage(MessageKind.WARNING, "generation canceled", progress);
       progress.finishAnyway();
       showMessageView();
