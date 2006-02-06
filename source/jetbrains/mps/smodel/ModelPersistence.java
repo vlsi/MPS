@@ -324,7 +324,6 @@ public class ModelPersistence {
     LOG.debug("Save model " + sourceModel.getUID() + " to file " + file.getAbsolutePath());
     Document document = saveModel(sourceModel);
 
-
     try {
       JDOMUtil.writeDocument(document, file);
     } catch (IOException e) {
@@ -341,6 +340,7 @@ public class ModelPersistence {
       LOG.error(e);
     }
   }
+
 
   private static Document saveModel(SModel sourceModel) {
     Element rootElement = new Element(MODEL);
