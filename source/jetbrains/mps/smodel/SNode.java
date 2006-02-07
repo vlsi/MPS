@@ -386,7 +386,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public boolean getBooleanProperty(String propertyName) {
-    NodeReadAccessCaster.fireNodeReadAccessed(this);
+//    NodeReadAccessCaster.fireNodeReadAccessed(this);
     String value = getProperty(propertyName);
     return "true".equals(value);
   }
@@ -396,7 +396,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public int getIntegerProperty(String propertyName) {
-    NodeReadAccessCaster.fireNodeReadAccessed(this);
+//    NodeReadAccessCaster.fireNodeReadAccessed(this);
     String value = getProperty(propertyName);
     try {
       return Integer.parseInt(value);
