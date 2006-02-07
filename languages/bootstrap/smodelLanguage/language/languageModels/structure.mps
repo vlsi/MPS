@@ -138,11 +138,15 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1138757581985">
-    <property name="name" value="SLinkNewOperation" />
+    <property name="name" value="SLinkSetNewChildOperation" />
     <link role="extends" targetNodeId="1138411891628" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1138757626129">
       <property name="value" value="new" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1139345750082">
+      <property name="value" value="create new child" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1138763471144">
       <link role="conceptPropertyDeclaration" targetNodeId="1138763325919" />
