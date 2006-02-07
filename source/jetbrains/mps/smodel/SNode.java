@@ -752,12 +752,24 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
     int count = 0;
     for (Iterator<SReference> iterator = myReferences.iterator(); iterator.hasNext();) {
-      SReference semanticReference = iterator.next();
-      if (semanticReference.getRole().equals(role)) {
+      SReference reference = iterator.next();
+      if (reference.getRole().equals(role)) {
         count++;
       }
     }
     return count;
+  }
+
+  public <T extends SNode> List<T> getReferents(String role) {
+    NodeReadAccessCaster.fireNodeReadAccessed(this);
+    List<T> result = new LinkedList<T>();
+    for (SReference reference : myReferences) {
+      if (role.equals(reference.getRole())) {
+        SNode targetNode = reference.getTargetNode();
+        if (targetNode != null) result.add((T) targetNode);
+      }
+    }
+    return result;
   }
 
   public <T extends SNode> Iterator<T> referents(String role) {
