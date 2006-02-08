@@ -995,8 +995,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   void changeSelection(EditorCell newSelectedCell, boolean resetLastCaretX) {
-    setSelection(newSelectedCell, resetLastCaretX);
     clearSelectionStack();
+    setSelection(newSelectedCell, resetLastCaretX);
   }
 
   void setSelection(EditorCell newSelectedCell, boolean resetLastCaretX) {

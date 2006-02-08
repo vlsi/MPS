@@ -2,8 +2,6 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 
-import java.util.Iterator;
-
 /**
  * User: Sergey Dmitriev
  * Date: Jan 19, 2005
@@ -18,12 +16,23 @@ public class CellLayout_Vertical extends AbstractCellLayout {
   public void doLayout(EditorCell_Collection editorCells) {
     int width = 0;
     int height = 0;
-    final int x = editorCells.getX();
+
+    EditorCell closingBrace = editorCells.getClosingBrace();
+    EditorCell openingBrace = editorCells.getOpeningBrace();
+    boolean usesBraces = editorCells.usesBraces();
+    if (usesBraces) {
+      closingBrace.relayout();
+      openingBrace.relayout();
+      openingBrace.setX(editorCells.getX());
+      openingBrace.setY(editorCells.getY());
+    }
+
+    final int x = usesBraces ? editorCells.getX() + openingBrace.getWidth() : editorCells.getX();
     final int y = editorCells.getY();
     if (editorCells.isDrawBrackets()) {
       width += EditorCell_Collection.BRACKET_WIDTH * 2;
     }
-    for (EditorCell editorCell : editorCells) {
+    for (EditorCell editorCell : editorCells.contentCells()) {
       if (editorCells.isDrawBrackets()) {
         editorCell.setX(x + EditorCell_Collection.BRACKET_WIDTH);
       } else {
@@ -44,7 +53,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       int x0 = x;
       for (int i = 0; ; i++) {
         int maxWidth = -1;
-        for (EditorCell editorCell : editorCells) {
+        for (EditorCell editorCell : editorCells.contentCells()) {
           if (editorCell instanceof EditorCell_Collection) {
             EditorCell_Collection editorCellCollection = (EditorCell_Collection) editorCell;
             CellLayout cellLayout = editorCellCollection.getCellLayout();
@@ -54,7 +63,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
             }
           }
         }
-        for (EditorCell editorCell : editorCells) {
+        for (EditorCell editorCell : editorCells.contentCells()) {
           if (editorCell instanceof EditorCell_Collection) {
             EditorCell_Collection editorCellCollection = (EditorCell_Collection) editorCell;
             CellLayout cellLayout = editorCellCollection.getCellLayout();
@@ -71,7 +80,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
         }
         x0 += maxWidth;
       }
-      for (EditorCell editorCell : editorCells) {
+      for (EditorCell editorCell : editorCells.contentCells()) {
         if (editorCell instanceof EditorCell_Collection) {
           EditorCell_Collection editorCellCollection = (EditorCell_Collection) editorCell;
           CellLayout cellLayout = editorCellCollection.getCellLayout();
@@ -86,6 +95,12 @@ public class CellLayout_Vertical extends AbstractCellLayout {
           }
         }
       }
+    }
+    if (usesBraces) {
+      closingBrace.setX(x + width);
+      closingBrace.setY(y + height - closingBrace.getHeight());
+      width += closingBrace.getWidth();
+      width += openingBrace.getWidth();
     }
     editorCells.setWidth(width);
     editorCells.setHeight(height);
