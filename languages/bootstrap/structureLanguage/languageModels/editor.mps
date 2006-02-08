@@ -13,16 +13,6 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1082979388796">
     <property name="name" value="ConstrainedDataTypeDeclaration_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1082978499127" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1083244010082">
-      <property name="name" value="ExtendsCellActions" />
-      <link role="specializes" targetNodeId="1083243818250" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_DeleteReference" id="1083244010083">
-        <link role="linkDeclaration" targetNodeId="1.1083243265939" />
-      </node>
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1083244010084">
-        <property name="substituteHandlerId" value="SimpleDataType_SetExtends" />
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1082979388797">
       <property name="drawBorder" value="false" />
       <property name="name" value="nodeBox" />
@@ -34,7 +24,7 @@
         <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1082979388815">
           <property name="editable" value="false" />
-          <property name="text" value="Simple Data Type" />
+          <property name="text" value="Constrained string datatype" />
           <property name="drawBorder" value="false" />
           <property name="selectable" value="true" />
         </node>
@@ -46,23 +36,7 @@
           <link role="propertyDeclaration" targetNodeId="2.1078489098626" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1082979707911">
-        <property name="drawBorder" value="false" />
-        <property name="vertical" value="false" />
-        <property name="selectable" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1082979707912">
-          <property name="text" value="    extends:" />
-          <property name="drawBorder" value="false" />
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ModelAccess" id="1083243939643">
-          <property name="modelAccessorId" value="SimpleDataType_ExtendedDataTypeName" />
-          <property name="drawBorder" value="false" />
-          <property name="nullText" value="&lt;none&gt;" />
-          <link role="actionSet" targetNodeId="1083244010082" />
-        </node>
-      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1083066231719">
-        <property name="text" value="  " />
         <property name="drawBorder" value="false" />
         <property name="name" value="separator" />
       </node>
@@ -71,11 +45,12 @@
         <property name="vertical" value="false" />
         <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1083066231721">
-          <property name="text" value="    constraint:" />
+          <property name="text" value="    matching regexp:" />
           <property name="drawBorder" value="false" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1083066231722">
           <property name="textBgColor" value="yellow" />
+          <property name="defaultText" value="&lt;no value&gt;" />
           <property name="drawBorder" value="false" />
           <property name="textBgColorSelected" value="cyan" />
           <link role="propertyDeclaration" targetNodeId="1.1083066089218" />
@@ -283,16 +258,6 @@
           <property name="gridLayout" value="true" />
           <link role="linkDeclaration" targetNodeId="1.1083172003582" />
         </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1083172759159">
-    <property name="name" value="_SimpleDataType_ActionSet" />
-    <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1083172759160">
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1083172759161">
-        <property name="name" value="dataTypes" />
-        <property name="queryId" value="AllConstrainedDataTypeDeclarations" />
-        <property name="textProviderId" value="Name" />
       </node>
     </node>
   </node>

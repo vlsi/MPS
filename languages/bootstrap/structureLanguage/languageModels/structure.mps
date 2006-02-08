@@ -139,12 +139,6 @@
     <property name="rootable" value="true" />
     <property name="name" value="ConstrainedDataTypeDeclaration" />
     <link role="extends" targetNodeId="1082978164218" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1083243265939">
-      <property name="sourceCardinality" value="1" />
-      <property name="targetCardinality" value="0..n" />
-      <property name="role" value="extends" />
-      <link role="target" targetNodeId="1083243159079" />
-    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1083066089218">
       <property name="propertyType" value="string" />
       <property name="name" value="constraint" />
