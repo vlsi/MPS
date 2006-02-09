@@ -24,6 +24,10 @@ public class ProjectModelDescriptor extends DefaultSModelDescriptor {
     public void saveModel(SModelDescriptor modelDescriptor) {
 
     }
+
+    public SModel refresh(SModelDescriptor modelDescriptor) {
+      return ModelPersistence.refreshModel(modelDescriptor.getSModel());
+    }
   };
 
   private @ForDebug Throwable myStackTrace;

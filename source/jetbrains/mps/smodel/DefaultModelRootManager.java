@@ -33,6 +33,10 @@ public class DefaultModelRootManager implements IModelRootManager {
     return model;
   }
 
+  public SModel refresh(SModelDescriptor modelDescriptor) {
+    return ModelPersistence.refreshModel(modelDescriptor.getSModel());
+  }
+
 
   public void saveModel(SModelDescriptor modelDescriptor) {
     ModelPersistence.saveModel(modelDescriptor.getSModel(), modelDescriptor.getModelFile());

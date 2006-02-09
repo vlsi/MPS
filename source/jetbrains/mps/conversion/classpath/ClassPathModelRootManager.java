@@ -36,11 +36,13 @@ public class ClassPathModelRootManager implements IModelRootManager  {
     SModel model = new SModel(modelDescriptor.getModelUID());
     model.addLanguage(BootstrapLanguages.getInstance().getBaseLanguage());
     return model;
-
   }
 
   public void saveModel(SModelDescriptor modelDescriptor) {
+  }
 
+  public SModel refresh(SModelDescriptor modelDescriptor) {
+    return null;
   }
 
   private IClassPathItem getClassPathItem() {

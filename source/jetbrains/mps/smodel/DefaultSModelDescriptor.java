@@ -61,7 +61,6 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     return result;
   }
 
-
   public Set<RootDescriptor> getRoots(String concept) {
     Set<RootDescriptor> result = new HashSet<RootDescriptor>();
     try {
@@ -137,7 +136,6 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   }
 
   protected void updateModelAfterLoad() {
-
   }
 
   public SModel getSModel() {
@@ -240,7 +238,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
       myModelListeners.addAll(mySModel.getListeners());
       myModelCommandListeners.addAll(mySModel.getCommandListeners());
       mySModel.dispose();
-      mySModel = null;
+      mySModel = myModelRootManager.refresh(this);
     }
   }
 

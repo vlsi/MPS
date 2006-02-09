@@ -20,10 +20,15 @@ public interface IModelRootManager {
     public void saveModel(SModelDescriptor modelDescriptor) {
       throw new RuntimeException();
     }
+
+    public SModel refresh(SModelDescriptor modelDescriptor) {
+      throw new RuntimeException();
+    }
   };
 
   Set<SModelDescriptor> read(ModelRoot root, ModelOwner owner);
 
   SModel loadModel(SModelDescriptor modelDescriptor);
   void saveModel(SModelDescriptor modelDescriptor);
+  SModel refresh(SModelDescriptor modelDescriptor);
 }
