@@ -30,14 +30,6 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   private IModelRootManager myModelRootManager;
 
 
-  protected AbstractSModelDescriptor(IModelRootManager manager, SModel model) {
-    mySModel = model;
-    myModelUID = model.getUID();
-    myModelRootManager = manager;
-
-    checkModelDuplication();
-  }
-
   protected AbstractSModelDescriptor(IModelRootManager manager, SModelUID modelUID) {
     myModelUID = modelUID;
     myModelRootManager = manager;
