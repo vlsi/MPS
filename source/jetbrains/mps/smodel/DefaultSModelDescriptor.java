@@ -14,8 +14,8 @@ import java.util.*;
 /**
  * @author Kostik
  */
-public abstract class AbstractSModelDescriptor implements SModelDescriptor {
-  private static final Logger LOG = Logger.getLogger(AbstractSModelDescriptor.class);
+public class DefaultSModelDescriptor implements SModelDescriptor {
+  private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
 
   private static volatile long ourStructuralState = 0;
   private static volatile long ourState = 0;
@@ -31,7 +31,7 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   private IModelRootManager myModelRootManager;
 
 
-  protected AbstractSModelDescriptor(IModelRootManager manager, File modelFile, SModelUID modelUID) {
+  public DefaultSModelDescriptor(IModelRootManager manager, File modelFile, SModelUID modelUID) {
     myModelUID = modelUID;
     myModelRootManager = manager;
     myModelFile = modelFile;
@@ -361,8 +361,8 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   }
 
   public boolean equals(Object o) {
-    if (!(o instanceof AbstractSModelDescriptor)) return false;
-    return ((AbstractSModelDescriptor) o).myModelUID.equals(myModelUID);
+    if (!(o instanceof DefaultSModelDescriptor)) return false;
+    return ((DefaultSModelDescriptor) o).myModelUID.equals(myModelUID);
   }
 
   public int hashCode() {

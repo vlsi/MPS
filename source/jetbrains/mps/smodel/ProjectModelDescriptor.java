@@ -3,13 +3,12 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.util.annotation.ForDebug;
 import jetbrains.mps.projectLanguage.ModelRoot;
 
-import java.io.File;
 import java.util.*;
 
 /**
  * @author Kostik
  */
-public class ProjectModelDescriptor extends AbstractSModelDescriptor {
+public class ProjectModelDescriptor extends DefaultSModelDescriptor {
   private static long ourProjectModelDescriptorCount = 0;
   private static final IModelRootManager ourModelRootManager = new IModelRootManager() {
     public Set<SModelDescriptor> read(ModelRoot root, ModelOwner owner) {
