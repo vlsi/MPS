@@ -1445,6 +1445,31 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
   }
 
+  /*package*/ void setSelectedStackFromMemento(Stack<CellInfo> mementoSelectedStack) {
+    mySelectedStack.clear();
+    Stack<EditorCell> temp = new Stack<EditorCell>();
+
+    for (int i = mementoSelectedStack.size() - 1; i >= 0; i--) {
+      CellInfo cellInfo = mementoSelectedStack.get(i);
+      EditorCell cell = cellInfo.findCell(this);
+      if (cell == null) break;
+      temp.push(cell);
+    }
+     while (temp.size() > 0) {
+      mySelectedStack.push(temp.pop());
+    }
+  }
+
+   /*package*/ Stack<CellInfo> getSelectedStackForMemento() {
+     Stack<CellInfo> result = new Stack<CellInfo>();
+     for (EditorCell cell : mySelectedStack) {
+       result.push(cell.getCellInfo());
+     }
+     return result;
+   }
+
+
+
   public void changeSelectionWRTFocusPolicy(EditorCell cell) {
     EditorCell focusPolicyCell = FocusPolicy.findCellToSelectDueToFocusPolicy(cell);
     EditorCell toSelect;

@@ -12,9 +12,9 @@ import jetbrains.mps.smodel.SNode;
  */
 public class CellInfo {
 
-  SNodeProxy nodeProxy;
-  String cellId;
-  int cellNumber;
+  private SNodeProxy nodeProxy;
+  private String cellId;
+  private int cellNumber;
 
   public CellInfo(EditorCell cell) {
     nodeProxy = cell.getSNodeProxy();
@@ -24,12 +24,18 @@ public class CellInfo {
   }
 
 
-  public SNode getSNode() {
+  private SNode getSNode() {
     return nodeProxy.getNode();
   }
 
   public int hashCode() {
     return (nodeProxy == null?0:nodeProxy.hashCode()) + (cellId == null?0:cellId.hashCode()) + cellNumber;
+  }
+
+  public EditorCell findCell(AbstractEditorComponent editorComponent) {
+    EditorCell cellToSelect = editorComponent.findNodeCell(getSNode(), cellId, cellNumber);
+    if (cellToSelect == null) cellToSelect = editorComponent.findNodeCell(getSNode(), cellId);
+    return cellToSelect;
   }
 
   public boolean equals(Object o) {

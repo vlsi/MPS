@@ -3,9 +3,9 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 
 import java.awt.*;
+import java.util.*;
 import java.util.List;
 
 
@@ -79,10 +79,9 @@ public class EditorContext {
       Memento memento = (Memento) o;
       if (myNodeEditorComponent == memento.nodeEditor) {
         if (memento.cellInfo != null) {
-          CellInfo cellInfo = memento.cellInfo;
-          EditorCell cellToSelect = myNodeEditorComponent.findNodeCell(cellInfo.getSNode(), cellInfo.cellId, cellInfo.cellNumber);
-          if (cellToSelect == null) cellToSelect = myNodeEditorComponent.findNodeCell(cellInfo.getSNode(), cellInfo.cellId);
+          EditorCell cellToSelect = memento.cellInfo.findCell(myNodeEditorComponent);
           myNodeEditorComponent.changeSelection(cellToSelect);
+          myNodeEditorComponent.setSelectedStackFromMemento(memento.selectedStack);
           if (cellToSelect != null) {
             cellToSelect.setCaretX(memento.caretX.intValue());
           } else {
@@ -108,6 +107,7 @@ public class EditorContext {
     private AbstractEditorComponent nodeEditor;
     private Point selectionPosition;
     private CellInfo cellInfo;
+    private Stack<CellInfo> selectedStack = new Stack<CellInfo>();
     private Integer caretX;
 
     public Memento(EditorContext context) {
@@ -116,8 +116,9 @@ public class EditorContext {
       if (selectedCell != null) {
         selectionPosition = new Point(selectedCell.getX(), selectedCell.getY());
         caretX = new Integer(selectedCell.getCaretX());
-        cellInfo = new CellInfo(selectedCell);
+        cellInfo = selectedCell.getCellInfo();
       }
+      selectedStack = nodeEditor.getSelectedStackForMemento();
     }
 
     public boolean equals(Object object) {
