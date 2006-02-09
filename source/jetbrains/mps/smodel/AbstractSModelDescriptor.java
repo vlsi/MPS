@@ -38,19 +38,11 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     checkModelDuplication();
   }
 
-  protected AbstractSModelDescriptor(SModel model) {
-    this(IModelRootManager.NULL_MANAGER, model);
-  }
-
   protected AbstractSModelDescriptor(IModelRootManager manager, SModelUID modelUID) {
     myModelUID = modelUID;
     myModelRootManager = manager;
 
     checkModelDuplication();
-  }
-
-  protected AbstractSModelDescriptor(SModelUID modelUID) {
-    this(IModelRootManager.NULL_MANAGER, modelUID);
   }
 
   {
