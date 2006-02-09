@@ -29,6 +29,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
 
     final int x = usesBraces ? editorCells.getX() + openingBrace.getWidth() : editorCells.getX();
     final int y = editorCells.getY();
+    int lastCellWidth = 0;
     if (editorCells.isDrawBrackets()) {
       width += EditorCell_Collection.BRACKET_WIDTH * 2;
     }
@@ -40,9 +41,9 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       }
       editorCell.setY(y + height);
       editorCell.relayout();
-      int cellWidth = editorCell.getWidth();
+      lastCellWidth = editorCell.getWidth();
       int cellHeight = editorCell.getHeight();
-      width = Math.max(width, cellWidth);
+      width = Math.max(width, lastCellWidth);
       height += cellHeight;
     }
     if (editorCells.isDrawBrackets()) {
@@ -97,9 +98,14 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       }
     }
     if (usesBraces) {
-      closingBrace.setX(x + width);
       closingBrace.setY(y + height - closingBrace.getHeight());
-      width += closingBrace.getWidth();
+      if (isGridLayout) {
+        width += closingBrace.getWidth();
+        closingBrace.setX(x + width);
+      } else {
+        width = Math.max(width, lastCellWidth + closingBrace.getWidth());
+        closingBrace.setX(x + lastCellWidth);
+      }
       width += openingBrace.getWidth();
     }
     editorCells.setWidth(width);
