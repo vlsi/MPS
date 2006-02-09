@@ -27,18 +27,28 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   private long myLastStructuralChange = System.currentTimeMillis();
   private long myLastChange = System.currentTimeMillis();
 
+  private IModelRootManager myModelRootManager;
 
-  protected AbstractSModelDescriptor(SModel model) {
+
+  protected AbstractSModelDescriptor(IModelRootManager manager, SModel model) {
     mySModel = model;
     myModelUID = model.getUID();
 
     checkModelDuplication();
   }
 
-  protected AbstractSModelDescriptor(SModelUID modelUID) {
+  protected AbstractSModelDescriptor(SModel model) {
+    this(IModelRootManager.NULL_MANAGER, model);
+  }
+
+  protected AbstractSModelDescriptor(IModelRootManager manager, SModelUID modelUID) {
     myModelUID = modelUID;
 
     checkModelDuplication();
+  }
+
+  protected AbstractSModelDescriptor(SModelUID modelUID) {
+    this(IModelRootManager.NULL_MANAGER, modelUID);
   }
 
   {

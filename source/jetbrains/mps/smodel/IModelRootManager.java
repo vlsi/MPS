@@ -8,5 +8,11 @@ import java.util.Set;
  * @author Kostik
  */
 public interface IModelRootManager {
-  Set<SModelDescriptor> read(ModelRoot root, ModelOwner owner);    
+  public static final IModelRootManager NULL_MANAGER = new IModelRootManager() {
+    public Set<SModelDescriptor> read(ModelRoot root, ModelOwner owner) {
+      throw new RuntimeException();
+    }
+  };
+
+  Set<SModelDescriptor> read(ModelRoot root, ModelOwner owner);
 }
