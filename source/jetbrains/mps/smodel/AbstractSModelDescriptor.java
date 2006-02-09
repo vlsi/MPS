@@ -26,13 +26,15 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
   private List<SModelCommandListener> myModelCommandListeners = new LinkedList<SModelCommandListener>();
   private long myLastStructuralChange = System.currentTimeMillis();
   private long myLastChange = System.currentTimeMillis();
+  private File myModelFile;
 
   private IModelRootManager myModelRootManager;
 
 
-  protected AbstractSModelDescriptor(IModelRootManager manager, SModelUID modelUID) {
+  protected AbstractSModelDescriptor(IModelRootManager manager, File modelFile, SModelUID modelUID) {
     myModelUID = modelUID;
     myModelRootManager = manager;
+    myModelFile = modelFile;
 
     checkModelDuplication();
   }
@@ -103,6 +105,17 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
 
   public boolean isNotEditable() {
     return isExternallyResolvable();
+  }
+
+  public File getModelFile() {
+    return myModelFile;
+  }
+
+  public long timestamp() {
+    if (myModelFile != null) {
+      return myModelFile.lastModified();
+    }
+    return System.currentTimeMillis();
   }
 
   /**

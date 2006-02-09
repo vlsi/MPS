@@ -42,22 +42,10 @@ public class ProjectModelDescriptor extends AbstractSModelDescriptor {
   }
 
   private ProjectModelDescriptor() {
-    super(ourModelRootManager, new SModelUID("projectModel" + ourProjectModelDescriptorCount++, "$internal$"));
+    super(ourModelRootManager, null, new SModelUID("projectModel" + ourProjectModelDescriptorCount++, "$internal$"));
 //    myStackTrace = new Throwable();
   }
 
   public void reloadFromDisk() {
-  }
-
-  public void updateNodeStatuses() {
-  }
-
-
-  public File getModelFile() {
-    return null;
-  }
-
-  public long timestamp() {
-    return System.currentTimeMillis();
   }
 }

@@ -14,7 +14,7 @@ public interface IModelRootManager {
     }
 
     public SModel loadModel(SModelDescriptor modelDescriptor) {
-      throw new RuntimeException();
+      return new SModel(modelDescriptor.getModelUID());
     }
 
     public void saveModel(SModelDescriptor modelDescriptor) {
