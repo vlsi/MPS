@@ -21,7 +21,7 @@ public class ClassPathModelRootManager implements IModelRootManager  {
   public Set<SModelDescriptor> read(ModelRoot root, ModelOwner owner) {
     try {
       myOwner = owner;
-      myConverter = ConverterFactory.createClassPathConverter(myOwner);
+      myConverter = ConverterFactory.createClassPathConverter(this, myOwner);
 
       Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
       addPackageModelDescriptors(result, root.getPrefix());
@@ -45,7 +45,7 @@ public class ClassPathModelRootManager implements IModelRootManager  {
         SModelRepository.getInstance().addOwnerForDescriptor(descriptor, myOwner);
         descriptors.add(descriptor);
       } else {
-        ClassPathModelDescriptor modelDescriptor = new ClassPathModelDescriptor(subpackage, myConverter);
+        ClassPathModelDescriptor modelDescriptor = new ClassPathModelDescriptor(this, subpackage, myConverter);
         SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, myOwner);
         descriptors.add(modelDescriptor);
       }

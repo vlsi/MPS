@@ -9,8 +9,11 @@ import java.io.File;
  */
 public class ProjectModelDescriptor extends AbstractSModelDescriptor {
   private static long ourProjectModelDescriptorCount = 0;
+  private static final IModelRootManager ourModelRootManager = IModelRootManager.NULL_MANAGER;
 
   private @ForDebug Throwable myStackTrace;
+
+
 
   public static SModelDescriptor createDescriptorFor(ModelOwner owner) {
     ProjectModelDescriptor result = new ProjectModelDescriptor();
@@ -23,7 +26,7 @@ public class ProjectModelDescriptor extends AbstractSModelDescriptor {
   }
 
   private ProjectModelDescriptor() {
-    super(new SModelUID("projectModel" + ourProjectModelDescriptorCount++, "$internal$"));
+    super(ourModelRootManager, new SModelUID("projectModel" + ourProjectModelDescriptorCount++, "$internal$"));
 //    myStackTrace = new Throwable();
   }
 

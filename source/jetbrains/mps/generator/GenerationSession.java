@@ -25,6 +25,8 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class GenerationSession implements ModelOwner {
+  private static final IModelRootManager ourModelRootManager = IModelRootManager.NULL_MANAGER;
+
   public static final Logger LOG = Logger.getLogger(GenerationSession.class);
 
   private Language myTargetLanguage;
@@ -165,7 +167,7 @@ public class GenerationSession implements ModelOwner {
 
   private SModelDescriptor createTransientModel(int modelIndex, SModel sourceModel, ModelOwner modelOwner) {
     SModelUID modelUID = new SModelUID(sourceModel.getLongName(), "" + modelIndex + "_" + getSessionId());
-    return new TransientModelDescriptor(modelUID, modelOwner);
+    return new TransientModelDescriptor(ourModelRootManager, modelUID, modelOwner);
   }
 
   private Class<? extends IModelGenerator> getDefaultGeneratorClass() throws ClassNotFoundException {
@@ -249,7 +251,10 @@ public class GenerationSession implements ModelOwner {
         // replace with file-model-descriptor
         SModelUID modelUID = transientModelDescriptor.getModelUID();
         SModelRepository.getInstance().removeModelDescriptor(transientModelDescriptor);
-        MPSFileModelDescriptor.getInstance(FileUtil.getCanonicalPath(modelFile), modelUID, transientModule);
+
+
+// todo custom persistence refactoring
+//        MPSFileModelDescriptor.getInstance(FileUtil.getCanonicalPath(modelFile), modelUID, transientModule);
       }
     }
 
