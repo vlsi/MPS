@@ -12,7 +12,18 @@ public interface IModelRootManager {
     public Set<SModelDescriptor> read(ModelRoot root, ModelOwner owner) {
       throw new RuntimeException();
     }
+
+    public SModel loadModel(SModelDescriptor modelDescriptor) {
+      throw new RuntimeException();
+    }
+
+    public void saveModel(SModelDescriptor modelDescriptor) {
+      throw new RuntimeException();
+    }
   };
 
   Set<SModelDescriptor> read(ModelRoot root, ModelOwner owner);
+
+  SModel loadModel(SModelDescriptor modelDescriptor);
+  void saveModel(SModelDescriptor modelDescriptor);
 }

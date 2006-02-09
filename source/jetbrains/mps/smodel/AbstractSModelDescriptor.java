@@ -93,9 +93,13 @@ public abstract class AbstractSModelDescriptor implements SModelDescriptor {
     LOG.assertLog(SModelRepository.getInstance().getModelDescriptor(myModelUID) == null, "Model Already Register");
   }
 
-  protected abstract SModel loadModel();
+  protected SModel loadModel() {
+    return myModelRootManager.loadModel(this);
+  }
 
-  protected abstract void saveModel(SModel model);
+  private void saveModel(SModel model) {
+    myModelRootManager.saveModel(this);
+  }
 
   public void reloadFromDisk() {
     if (isInitialized()) {

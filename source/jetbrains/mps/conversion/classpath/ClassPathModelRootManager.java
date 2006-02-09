@@ -7,6 +7,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.conversion.classpath.ClassPathModelDescriptor;
 import jetbrains.mps.conversion.IConverter;
 import jetbrains.mps.conversion.ConverterFactory;
+import jetbrains.mps.ide.BootstrapLanguages;
 
 import java.util.Set;
 import java.util.HashSet;
@@ -29,6 +30,17 @@ public class ClassPathModelRootManager implements IModelRootManager  {
     } finally {
       myOwner = null;
     }
+  }
+
+  public SModel loadModel(SModelDescriptor modelDescriptor) {
+    SModel model = new SModel(modelDescriptor.getModelUID());
+    model.addLanguage(BootstrapLanguages.getInstance().getBaseLanguage());
+    return model;
+
+  }
+
+  public void saveModel(SModelDescriptor modelDescriptor) {
+
   }
 
   private IClassPathItem getClassPathItem() {

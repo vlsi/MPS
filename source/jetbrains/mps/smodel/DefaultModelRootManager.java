@@ -21,6 +21,23 @@ public class DefaultModelRootManager implements IModelRootManager {
     return result;
   }
 
+  public SModel loadModel(SModelDescriptor modelDescriptor) {
+    File file = modelDescriptor.getModelFile();
+    SModel model = ModelPersistence.readModel(file);
+    LOG.assertLog(model.getUID().equals(modelDescriptor.getModelUID()),
+            "\nError loading model from file: \"" + file + "\"\n" +
+                    "expected model UID     : \"" + modelDescriptor.getModelUID() + "\"\n" +
+                    "but was UID            : \"" + model.getUID() + "\"\n" +
+                    "the model will not be available.\n" +
+                    "Make sure that all project's roots and/or the model namespace is correct");
+    return model;
+  }
+
+
+  public void saveModel(SModelDescriptor modelDescriptor) {
+    ModelPersistence.saveModel(modelDescriptor.getSModel(), modelDescriptor.getModelFile());
+  }
+
   private void readModelDescriptors(Set<SModelDescriptor> modelDescriptors, File dir, ModelRoot modelRoot, ModelOwner owner) {
     if (!dir.isDirectory()) {
       return;

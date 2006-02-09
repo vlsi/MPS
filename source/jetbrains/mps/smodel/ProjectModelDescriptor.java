@@ -1,15 +1,31 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.annotation.ForDebug;
+import jetbrains.mps.projectLanguage.ModelRoot;
 
 import java.io.File;
+import java.util.*;
 
 /**
  * @author Kostik
  */
 public class ProjectModelDescriptor extends AbstractSModelDescriptor {
   private static long ourProjectModelDescriptorCount = 0;
-  private static final IModelRootManager ourModelRootManager = IModelRootManager.NULL_MANAGER;
+  private static final IModelRootManager ourModelRootManager = new IModelRootManager() {
+    public Set<SModelDescriptor> read(ModelRoot root, ModelOwner owner) {
+      throw new RuntimeException();
+    }
+
+    public SModel loadModel(SModelDescriptor modelDescriptor) {
+      SModel result = new SModel(modelDescriptor.getModelUID());
+      result.addLanguage("jetbrains.mps.projectLanguage");
+      return result;
+    }
+
+    public void saveModel(SModelDescriptor modelDescriptor) {
+
+    }
+  };
 
   private @ForDebug Throwable myStackTrace;
 
@@ -36,15 +52,6 @@ public class ProjectModelDescriptor extends AbstractSModelDescriptor {
   public void updateNodeStatuses() {
   }
 
-  protected SModel loadModel() {
-    SModel result = new SModel(getModelUID());
-    result.addLanguage("jetbrains.mps.projectLanguage");
-    result.fillInStackTrace(myStackTrace);
-    return result;
-  }
-
-  protected void saveModel(SModel model) {
-  }
 
   public File getModelFile() {
     return null;
