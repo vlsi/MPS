@@ -204,7 +204,6 @@ public class ModelPersistence {
   }
 
 
-
   private static SNode readNode(Element nodeElement,
                                 SModel model, List<ReferencePersister> referenceDescriptors, boolean useUIDs
   ) {
@@ -320,22 +319,24 @@ public class ModelPersistence {
     return readModel(saveModel(model), name, model.getStereotype());
   }
 
-  public static void saveModel(SModel sourceModel, File file) {
-    LOG.debug("Save model " + sourceModel.getUID() + " to file " + file.getAbsolutePath());
-    Document document = saveModel(sourceModel);
+  public static void saveModel(SModel model, File file) {
+    LOG.debug("Save model " + model.getUID() + " to file " + file.getAbsolutePath());
+    Document document = saveModel(model);
 
     try {
       JDOMUtil.writeDocument(document, file);
+      SModelRepository.getInstance().markChanged(model, false);
     } catch (IOException e) {
       LOG.error(e);
     }
   }
 
-  public static void saveModel(SModel sourceModel, OutputStream output) {
-    Document document = saveModel(sourceModel);
+  public static void saveModel(SModel model, OutputStream output) {
+    Document document = saveModel(model);
     try {
       JDOMUtil.writeDocument(document, output);
       output.close();
+      SModelRepository.getInstance().markChanged(model, false);
     } catch (IOException e) {
       LOG.error(e);
     }

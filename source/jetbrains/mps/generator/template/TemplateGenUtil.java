@@ -130,7 +130,7 @@ public class TemplateGenUtil {
       return false;
     }
     if (targetReferentNode.getModel() != targetNode.getModel() &&
-            targetReferentNode.getModel().getModelDescriptor() instanceof TransientModels) {
+            targetReferentNode.getModel().getModelDescriptor().isTransient()) {
       // references on transient nodes are not acceptable
       generator.showErrorMessage(sourceNode, templateNode, "unacceptable referent (transient): " + targetReferentNode.getDebugText() + " for role \"" + role + "\" in " + targetNode.getDebugText());
       return false;

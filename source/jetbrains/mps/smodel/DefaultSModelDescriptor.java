@@ -29,6 +29,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   private File myModelFile;
 
   private IModelRootManager myModelRootManager;
+  private boolean myTransient;
 
 
   public DefaultSModelDescriptor(IModelRootManager manager, File modelFile, SModelUID modelUID) {
@@ -351,16 +352,25 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     return getModelUID().toString();
   }
 
-  public boolean equals(Object o) {
-    if (!(o instanceof DefaultSModelDescriptor)) return false;
-    return ((DefaultSModelDescriptor) o).myModelUID.equals(myModelUID);
-  }
-
-  public int hashCode() {
-    return myModelUID.hashCode();
-  }
+  // since only one instance of descriptor per uid per application, it seems we don't need to define equals/hashCode 
+//  public boolean equals(Object o) {
+//    if (!(o instanceof DefaultSModelDescriptor)) return false;
+//    return ((DefaultSModelDescriptor) o).myModelUID.equals(myModelUID);
+//  }
+//
+//  public int hashCode() {
+//    return myModelUID.hashCode();
+//  }
 
   public boolean isRemote() {
     return false;
+  }
+
+  public boolean isTransient() {
+    return myTransient;
+  }
+
+  public void setTransient(boolean b) {
+    myTransient = b;
   }
 }

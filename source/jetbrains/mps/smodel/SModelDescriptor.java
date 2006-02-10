@@ -63,4 +63,6 @@ public interface SModelDescriptor {
   boolean hasSModelCommandListener(SModelCommandListener listener);
 
   boolean isRemote();
+
+  boolean isTransient();
 }
