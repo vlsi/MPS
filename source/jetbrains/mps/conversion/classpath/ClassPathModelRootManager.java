@@ -45,6 +45,14 @@ public class ClassPathModelRootManager implements IModelRootManager  {
     return null;
   }
 
+  public boolean isFindUsagesEnabled() {
+    return false;
+  }
+
+  public boolean containsString(SModelDescriptor modelDescriptor, String string) {
+    return false;
+  }
+
   private IClassPathItem getClassPathItem() {
     ClassLoaderManager manager = ClassLoaderManager.getInstance();
     return manager.getMPSClassLoader().getClassPathItem();

@@ -247,11 +247,9 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     }
   }
 
-  protected boolean containsString(String id) {
-    return true;
-  }
-
   public Set<SReference> findUsages(SNode node) {
+    if (!myModelRootManager.isFindUsagesEnabled()) return new HashSet<SReference>();
+
     if (mySModel == null || !SModelRepository.getInstance().isChanged(mySModel)) {
       String nodeInfo = node.getId();
       if (node.getModel().isExternallyResolvable()) {
@@ -259,7 +257,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
         if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) nodeInfo = extResolveInfo;
       }
 
-      if (!containsString(nodeInfo)) return new HashSet<SReference>();
+      if (!myModelRootManager.containsString(this, nodeInfo)) return new HashSet<SReference>();
     }
     getSModel();
     Set<SReference> result = new HashSet<SReference>();
@@ -272,13 +270,14 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   }
 
   public Set<ConceptDeclaration> findDescendants(ConceptDeclaration node, Set<ConceptDeclaration> descendantsKnownInModel) {
+    if (!myModelRootManager.isFindUsagesEnabled()) return new HashSet<ConceptDeclaration>();
 
     if (mySModel != null && !SModelRepository.getInstance().isChanged(mySModel) && !descendantsKnownInModel.isEmpty()) {
       return descendantsKnownInModel;
     }
 
     if (mySModel == null || !SModelRepository.getInstance().isChanged(mySModel)) {
-      if (!containsString(node.getId())) return descendantsKnownInModel;
+      if (!myModelRootManager.containsString(this, node.getId())) return descendantsKnownInModel;
     }
     getSModel();
     Set<ConceptDeclaration> result = new HashSet<ConceptDeclaration>();
@@ -331,7 +330,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   public Set<SNode> findInstances(ConceptDeclaration concept, IScope scope) {
     String conceptFqName = JavaNameUtil.className(concept);
     if (mySModel == null || !SModelRepository.getInstance().isChanged(mySModel)) {
-      if (!containsString(conceptFqName)) return new HashSet<SNode>();
+      if (!myModelRootManager.containsString(this, conceptFqName)) return new HashSet<SNode>();
     }
     getSModel();
     Set<SNode> result = new HashSet<SNode>();

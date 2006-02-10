@@ -47,7 +47,7 @@ public class InternalRefactoringAction extends MPSAction {
       wasLoaded = false;
       List<SModelDescriptor> modelDescriptors = new LinkedList<SModelDescriptor>(GlobalScope.getInstance().getModelDescriptors());
       for (SModelDescriptor descriptor : modelDescriptors) {
-        if (!(descriptor instanceof MPSFileModelDescriptor)) continue;
+        if (!descriptor.getStereotype().equals("")) continue;
         if (!descriptor.isInitialized()) {
           wasLoaded = true;
           System.out.println("load model: " + descriptor.getModelUID().toString());

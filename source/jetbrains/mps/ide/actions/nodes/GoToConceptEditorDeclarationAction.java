@@ -3,7 +3,6 @@ package jetbrains.mps.ide.actions.nodes;
 import jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.ide.BootstrapLanguages;
-import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.ProjectFrame;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
@@ -148,8 +147,8 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
   }
 
   private SModelDescriptor createLanguageEditorModel(Language language) {
-    MPSFileModelDescriptor fileModelDescriptor = (MPSFileModelDescriptor) language.getStructureModelDescriptor();
-    File languageDir = fileModelDescriptor.getModelFile().getParentFile();
+    SModelDescriptor modelDescriptor =  language.getStructureModelDescriptor();
+    File languageDir = modelDescriptor.getModelFile().getParentFile();
     String path = languageDir.getAbsolutePath();
 
     SModelDescriptor editorModelDescriptor = language.createModel(new SModelUID(language.getModuleUID(), "editor", ""), path, language.getModuleUID());

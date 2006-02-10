@@ -28,6 +28,14 @@ public class ProjectModelDescriptor extends DefaultSModelDescriptor {
     public SModel refresh(SModelDescriptor modelDescriptor) {
       return ModelPersistence.refreshModel(modelDescriptor.getSModel());
     }
+
+    public boolean isFindUsagesEnabled() {
+      return false;
+    }
+
+    public boolean containsString(SModelDescriptor modelDescriptor, String string) {
+      return false;
+    }
   };
 
   private @ForDebug Throwable myStackTrace;

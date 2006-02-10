@@ -11,7 +11,6 @@ import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.util.FileUtil;
 
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
