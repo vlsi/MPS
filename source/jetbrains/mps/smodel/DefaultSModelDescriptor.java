@@ -82,10 +82,6 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     return myModelRootManager.loadModel(this);
   }
 
-  private void saveModel(SModel model) {
-    myModelRootManager.saveModel(this);
-  }
-
   public void reloadFromDisk() {
     if (isInitialized()) {
       mySModel = null;
@@ -227,7 +223,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   public void save() {
     if (mySModel == null) return;
     SModelRepository.getInstance().markChanged(mySModel, false);
-    saveModel(mySModel);
+    myModelRootManager.saveModel(this);
   }
 
   public boolean isInitialized() {

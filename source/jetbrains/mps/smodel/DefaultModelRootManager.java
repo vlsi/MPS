@@ -74,13 +74,13 @@ public class DefaultModelRootManager implements IModelRootManager {
   }
 
   public static SModelDescriptor getInstance(IModelRootManager manager, String fileName, SModelUID modelUID, ModelOwner owner) {
-    MPSFileModelDescriptor.LOG.debug("Getting model " + modelUID + " from " + fileName + " with owner " + owner);
+    LOG.debug("Getting model " + modelUID + " from " + fileName + " with owner " + owner);
 
     SModelRepository modelRepository = SModelRepository.getInstance();
     SModelDescriptor modelDescriptor = modelRepository.getModelDescriptor(modelUID);
     if (modelDescriptor != null) {
       if (!(modelDescriptor instanceof MPSFileModelDescriptor)) {
-        MPSFileModelDescriptor.LOG.error("get descriptor for model \"" + modelUID + "\" : requred MPSFileModelDescriptor but was: " + modelDescriptor.getClass().getName());
+        LOG.error("get descriptor for model \"" + modelUID + "\" : requred MPSFileModelDescriptor but was: " + modelDescriptor.getClass().getName());
       }
       modelRepository.addOwnerForDescriptor(modelDescriptor, owner);
       return modelDescriptor;
@@ -92,11 +92,11 @@ public class DefaultModelRootManager implements IModelRootManager {
   }
 
   public static MPSFileModelDescriptor createModel(IModelRootManager manager, String fileName, SModelUID modelUID, ModelOwner owner) {
-    MPSFileModelDescriptor.LOG.debug("create model uid=\"" + modelUID + "\" file=\"" + fileName + "\" owner: " + owner);
+    LOG.debug("create model uid=\"" + modelUID + "\" file=\"" + fileName + "\" owner: " + owner);
 
     SModelRepository modelRepository = SModelRepository.getInstance();
     if (modelRepository.getModelDescriptor(modelUID) != null) {
-      MPSFileModelDescriptor.LOG.error("Couldn't create new model \"" + modelUID + "\" because such model exists");
+      LOG.error("Couldn't create new model \"" + modelUID + "\" because such model exists");
     }
 
     MPSFileModelDescriptor modelDescriptor = new MPSFileModelDescriptor(manager, fileName, modelUID);
