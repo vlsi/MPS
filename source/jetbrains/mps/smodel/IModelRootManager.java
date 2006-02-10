@@ -25,7 +25,8 @@ public interface IModelRootManager {
     }
 
     public SModel refresh(SModelDescriptor modelDescriptor) {
-      throw new RuntimeException();
+//      throw new RuntimeException();
+      return modelDescriptor.getSModel();
     }
 
     public boolean isFindUsagesEnabled() {
@@ -40,11 +41,14 @@ public interface IModelRootManager {
   Set<SModelDescriptor> read(ModelRoot root, ModelOwner owner);
 
   SModel loadModel(SModelDescriptor modelDescriptor);
-  void updateAfterLoad(SModelDescriptor modelDescriptor);  
+
+  void updateAfterLoad(SModelDescriptor modelDescriptor);
 
   void saveModel(SModelDescriptor modelDescriptor);
+
   SModel refresh(SModelDescriptor modelDescriptor);
 
   boolean isFindUsagesEnabled();
+
   boolean containsString(SModelDescriptor modelDescriptor, String string);
 }

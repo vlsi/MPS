@@ -237,14 +237,20 @@ public class GenerationSession implements ModelOwner {
 
     // save models to solution dir
     IModule transientModule = generatorContext.getModule();
-    List<SModelDescriptor> transientModelDescriptors = transientModule.getOwnModelDescriptors();
-    for (SModelDescriptor descriptor : transientModelDescriptors) {
+    List<SModelDescriptor> descriptors = transientModule.getOwnModelDescriptors();
+    for (SModelDescriptor descriptor : descriptors) {
       if (descriptor.isTransient()) {
-        ((DefaultSModelDescriptor) descriptor).setTransient(false);
         String modelFqName = descriptor.getModelUID().toString();
         String modelFileName = modelFqName.replace('.', File.separatorChar) + ".mps";
         File modelFile = new File(solutionDir, modelFileName);
         ModelPersistence.saveModel(descriptor.getSModel(), modelFile);
+      }
+    }
+    
+    // remove transient descriptors from repository because we need to update they root-managers
+    for (SModelDescriptor descriptor : descriptors) {
+      if (descriptor.isTransient()) {
+        SModelRepository.getInstance().removeModelDescriptor(descriptor);
       }
     }
 

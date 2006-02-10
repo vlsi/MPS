@@ -352,7 +352,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     return getModelUID().toString();
   }
 
-  // since only one instance of descriptor per uid per application, it seems we don't need to define equals/hashCode 
+  // since only one instance of descriptor per uid per application, it seems we don't need to define equals/hashCode
 //  public boolean equals(Object o) {
 //    if (!(o instanceof DefaultSModelDescriptor)) return false;
 //    return ((DefaultSModelDescriptor) o).myModelUID.equals(myModelUID);
