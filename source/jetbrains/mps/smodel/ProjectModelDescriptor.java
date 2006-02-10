@@ -21,6 +21,9 @@ public class ProjectModelDescriptor extends DefaultSModelDescriptor {
       return result;
     }
 
+    public void updateAfterLoad(SModelDescriptor modelDescriptor) {
+    }
+
     public void saveModel(SModelDescriptor modelDescriptor) {
 
     }

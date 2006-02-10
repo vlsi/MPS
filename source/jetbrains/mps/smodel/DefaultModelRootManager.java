@@ -33,6 +33,9 @@ public class DefaultModelRootManager implements IModelRootManager {
     return model;
   }
 
+  public void updateAfterLoad(SModelDescriptor modelDescriptor) {
+  }
+
   public SModel refresh(SModelDescriptor modelDescriptor) {
     return ModelPersistence.refreshModel(modelDescriptor.getSModel());
   }

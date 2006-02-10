@@ -4,7 +4,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.conversion.classpath.ClassPathModelDescriptor;
 import jetbrains.mps.conversion.IConverter;
 import jetbrains.mps.conversion.ConverterFactory;
 import jetbrains.mps.ide.BootstrapLanguages;
@@ -38,6 +37,17 @@ public class ClassPathModelRootManager implements IModelRootManager  {
     return model;
   }
 
+  public void updateAfterLoad(SModelDescriptor modelDescriptor) {
+    SModel model = modelDescriptor.getSModel();
+
+    model.setLoading(true);
+    try {
+      myConverter.updateModel(modelDescriptor.getModelUID().getLongName(), true);
+    } finally {
+      model.setLoading(false);
+    }
+  }
+
   public void saveModel(SModelDescriptor modelDescriptor) {
   }
 
@@ -62,12 +72,13 @@ public class ClassPathModelRootManager implements IModelRootManager  {
     Set<String> subpackages = getClassPathItem().getSubpackages(pack);
 
     for (String subpackage : subpackages) {
-      if (SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(subpackage + "@" + ClassPathModelDescriptor.STEREOTYPE)) != null) {
-        SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(subpackage + "@" + ClassPathModelDescriptor.STEREOTYPE));
+      SModelUID modelUID = SModelUID.fromString(subpackage + "@" + SModelStereotype.JAVA_STUB);
+      if (SModelRepository.getInstance().getModelDescriptor(modelUID) != null) {
+        SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(subpackage + "@" + SModelStereotype.JAVA_STUB));
         SModelRepository.getInstance().addOwnerForDescriptor(descriptor, myOwner);
         descriptors.add(descriptor);
       } else {
-        ClassPathModelDescriptor modelDescriptor = new ClassPathModelDescriptor(this, subpackage, myConverter);
+        SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(this, null, modelUID);
         SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, myOwner);
         descriptors.add(modelDescriptor);
       }

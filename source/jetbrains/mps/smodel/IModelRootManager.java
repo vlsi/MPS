@@ -21,6 +21,9 @@ public interface IModelRootManager {
       throw new RuntimeException();
     }
 
+    public void updateAfterLoad(SModelDescriptor modelDescriptor) {
+    }
+
     public SModel refresh(SModelDescriptor modelDescriptor) {
       throw new RuntimeException();
     }
@@ -37,6 +40,8 @@ public interface IModelRootManager {
   Set<SModelDescriptor> read(ModelRoot root, ModelOwner owner);
 
   SModel loadModel(SModelDescriptor modelDescriptor);
+  void updateAfterLoad(SModelDescriptor modelDescriptor);  
+
   void saveModel(SModelDescriptor modelDescriptor);
   SModel refresh(SModelDescriptor modelDescriptor);
 

@@ -132,13 +132,10 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     return myModelUID.getStereotype();
   }
 
-  protected void updateModelAfterLoad() {
-  }
-
   public SModel getSModel() {
     if (mySModel == null) {
       mySModel = loadModel();
-      updateModelAfterLoad();
+      myModelRootManager.updateAfterLoad(this);
       SModelsMulticaster.getInstance().fireModelLoadedEvent(this);
 
       LOG.assertLog(mySModel != null, "Couldn't load model \"" + getModelUID() + "\"");
