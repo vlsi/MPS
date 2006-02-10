@@ -276,7 +276,7 @@ public abstract class AbstractModule implements IModule {
     File modelFile = new File(path, filenameSuffix.replace('.', File.separatorChar) + ".mps");
     try {
 // todo custom persistence refactoring
-      return MPSFileModelDescriptor.createModel(IModelRootManager.NULL_MANAGER, modelFile.getCanonicalPath(), uid, this);
+      return DefaultModelRootManager.createModel(IModelRootManager.NULL_MANAGER, modelFile.getCanonicalPath(), uid, this);
     } catch (IOException e) {
       throw new RuntimeException("Couldn't create new model \"" + uid + "\"", e);
     }

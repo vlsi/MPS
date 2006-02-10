@@ -3,6 +3,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.event.SModelsMulticaster;
 
 import java.util.Set;
 import java.util.HashSet;
@@ -59,7 +60,7 @@ public class DefaultModelRootManager implements IModelRootManager {
         System.out.println();
       }*/
       SModelUID modelUID = PathManager.getModelUID(file, new File(modelRoot.getPath()), modelRoot.getPrefix());//new SModelUID(modelFQName, stereotype);
-      SModelDescriptor modelDescriptor = MPSFileModelDescriptor.getInstance(this, file.getAbsolutePath(), modelUID, owner);
+      SModelDescriptor modelDescriptor = getInstance(this, file.getAbsolutePath(), modelUID, owner);
       LOG.debug("I've read model descriptor " + modelDescriptor.getModelUID() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
       modelDescriptors.add(modelDescriptor);
     }
@@ -70,5 +71,38 @@ public class DefaultModelRootManager implements IModelRootManager {
         readModelDescriptors(modelDescriptors, childDir, modelRoot, owner);
       }
     }
+  }
+
+  public static SModelDescriptor getInstance(IModelRootManager manager, String fileName, SModelUID modelUID, ModelOwner owner) {
+    MPSFileModelDescriptor.LOG.debug("Getting model " + modelUID + " from " + fileName + " with owner " + owner);
+
+    SModelRepository modelRepository = SModelRepository.getInstance();
+    SModelDescriptor modelDescriptor = modelRepository.getModelDescriptor(modelUID);
+    if (modelDescriptor != null) {
+      if (!(modelDescriptor instanceof MPSFileModelDescriptor)) {
+        MPSFileModelDescriptor.LOG.error("get descriptor for model \"" + modelUID + "\" : requred MPSFileModelDescriptor but was: " + modelDescriptor.getClass().getName());
+      }
+      modelRepository.addOwnerForDescriptor(modelDescriptor, owner);
+      return modelDescriptor;
+    } else {
+      modelDescriptor = new MPSFileModelDescriptor(manager, fileName, modelUID);
+      modelRepository.registerModelDescriptor(modelDescriptor, owner);
+      return modelDescriptor;
+    }
+  }
+
+  public static MPSFileModelDescriptor createModel(IModelRootManager manager, String fileName, SModelUID modelUID, ModelOwner owner) {
+    MPSFileModelDescriptor.LOG.debug("create model uid=\"" + modelUID + "\" file=\"" + fileName + "\" owner: " + owner);
+
+    SModelRepository modelRepository = SModelRepository.getInstance();
+    if (modelRepository.getModelDescriptor(modelUID) != null) {
+      MPSFileModelDescriptor.LOG.error("Couldn't create new model \"" + modelUID + "\" because such model exists");
+    }
+
+    MPSFileModelDescriptor modelDescriptor = new MPSFileModelDescriptor(manager, fileName, modelUID);
+    modelRepository.registerModelDescriptor(modelDescriptor, owner);
+    modelRepository.markChanged(modelDescriptor, true);
+    SModelsMulticaster.getInstance().fireModelCreatedEvent(modelDescriptor);
+    return modelDescriptor;
   }
 }

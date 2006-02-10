@@ -149,7 +149,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
 
   private SModelDescriptor createLanguageEditorModel(Language language) {
     MPSFileModelDescriptor fileModelDescriptor = (MPSFileModelDescriptor) language.getStructureModelDescriptor();
-    File languageDir = (new File(fileModelDescriptor.getFileName())).getParentFile();
+    File languageDir = fileModelDescriptor.getModelFile().getParentFile();
     String path = languageDir.getAbsolutePath();
 
     SModelDescriptor editorModelDescriptor = language.createModel(new SModelUID(language.getModuleUID(), "editor", ""), path, language.getModuleUID());
