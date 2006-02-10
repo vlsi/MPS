@@ -117,6 +117,10 @@ import java.util.*;
     }
     List<ConceptDeclaration> nodes = SModelUtil.conceptsFromModelLanguages(sourceNode.getModel(), new Condition<ConceptDeclaration>() {
       public boolean met(ConceptDeclaration node) {
+        // roots only.
+        // case: concept-function-parameters declared as child-concepts are not added to substitute menue by deault
+        if(!node.isRoot()) return false;
+        
         return ModelActions.isDefaultSubstitutableConcept(node, targetConcept, scope) &&
                 filterCondition.met(node);
       }
