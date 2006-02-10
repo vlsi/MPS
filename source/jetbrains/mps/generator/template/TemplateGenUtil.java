@@ -11,7 +11,7 @@ import jetbrains.mps.core.BaseConcept;
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationFailueInfo;
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.generator.TransientModelDescriptor;
+import jetbrains.mps.generator.TransientModels;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
@@ -130,7 +130,7 @@ public class TemplateGenUtil {
       return false;
     }
     if (targetReferentNode.getModel() != targetNode.getModel() &&
-            targetReferentNode.getModel().getModelDescriptor() instanceof TransientModelDescriptor) {
+            targetReferentNode.getModel().getModelDescriptor() instanceof TransientModels) {
       // references on transient nodes are not acceptable
       generator.showErrorMessage(sourceNode, templateNode, "unacceptable referent (transient): " + targetReferentNode.getDebugText() + " for role \"" + role + "\" in " + targetNode.getDebugText());
       return false;

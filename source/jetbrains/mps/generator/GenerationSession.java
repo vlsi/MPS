@@ -166,7 +166,7 @@ public class GenerationSession implements ModelOwner {
 
   private SModelDescriptor createTransientModel(int modelIndex, SModel sourceModel, ModelOwner modelOwner) {
     SModelUID modelUID = new SModelUID(sourceModel.getLongName(), "" + modelIndex + "_" + getSessionId());
-    return new TransientModelDescriptor(ourModelRootManager, modelUID, modelOwner);
+    return TransientModels.createTransientModel(modelOwner, modelUID);
   }
 
   private Class<? extends IModelGenerator> getDefaultGeneratorClass() throws ClassNotFoundException {
@@ -240,16 +240,15 @@ public class GenerationSession implements ModelOwner {
     IModule transientModule = generatorContext.getModule();
     List<SModelDescriptor> transientModelDescriptors = transientModule.getOwnModelDescriptors();
     for (SModelDescriptor descriptor : transientModelDescriptors) {
-      if (descriptor instanceof TransientModelDescriptor) {
-        TransientModelDescriptor transientModelDescriptor = (TransientModelDescriptor) descriptor;
-        String modelFqName = transientModelDescriptor.getModelUID().toString();
+      if (descriptor instanceof TransientModels) {
+        String modelFqName = descriptor.getModelUID().toString();
         String modelFileName = modelFqName.replace('.', File.separatorChar) + ".mps";
         File modelFile = new File(solutionDir, modelFileName);
-        ModelPersistence.saveModel(transientModelDescriptor.getSModel(), modelFile);
+        ModelPersistence.saveModel(descriptor.getSModel(), modelFile);
 
         // replace with file-model-descriptor
-        SModelUID modelUID = transientModelDescriptor.getModelUID();
-        SModelRepository.getInstance().removeModelDescriptor(transientModelDescriptor);
+        SModelUID modelUID = descriptor.getModelUID();
+        SModelRepository.getInstance().removeModelDescriptor(descriptor);
 
 
 // todo custom persistence refactoring
