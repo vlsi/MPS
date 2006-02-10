@@ -33,7 +33,7 @@ public class Solution extends AbstractModule {
 
     ModelOwner tmpModelOwner = new ModelOwner() {
     };
-    SModel model = ProjectModelDescriptor.createDescriptorFor(tmpModelOwner).getSModel();
+    SModel model = ProjectModels.createDescriptorFor(tmpModelOwner).getSModel();
     SolutionDescriptor solutionDescriptor = PersistenceUtil.loadSolutionDescriptorFormOldMPR(projectFile, model);
 
     if (solutionDescriptor == null ||
@@ -69,7 +69,7 @@ public class Solution extends AbstractModule {
 
   public static Solution newInstance(File descriptorFile, MPSModuleOwner moduleOwner) {
     Solution solution = new Solution();
-    SModel model = ProjectModelDescriptor.createDescriptorFor(solution).getSModel();
+    SModel model = ProjectModels.createDescriptorFor(solution).getSModel();
     SolutionDescriptor solutionDescriptor = PersistenceUtil.loadSolutionDescriptor(descriptorFile, model);
     solution.mySolutionDescriptor = solutionDescriptor;
     solution.myDescriptorFile = descriptorFile;

@@ -259,7 +259,7 @@ public class GenerationSession implements ModelOwner {
 
     // create solution
     SolutionDescriptor sessionDescriptor;
-    SModel sessionDescriptorModel = ProjectModelDescriptor.createDescriptorFor(this).getSModel();
+    SModel sessionDescriptorModel = ProjectModels.createDescriptorFor(this).getSModel();
     if (mySessionDescriptorFile != null) {
       sessionDescriptor = PersistenceUtil.loadSolutionDescriptor(mySessionDescriptorFile, sessionDescriptorModel);
       sessionDescriptorModel.setLoading(true);

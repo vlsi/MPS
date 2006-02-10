@@ -52,7 +52,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         myProjectFile = projectFile;
-        SModel model = ProjectModelDescriptor.createDescriptorFor(MPSProject.this).getSModel();
+        SModel model = ProjectModels.createDescriptorFor(MPSProject.this).getSModel();
         myProjectDescriptor = PersistenceUtil.loadProjectDescriptor(projectFile, model);
 
         MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);

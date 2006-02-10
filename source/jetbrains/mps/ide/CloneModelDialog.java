@@ -41,7 +41,7 @@ public class CloneModelDialog extends BaseNodeDialog {
   public CloneModelDialog(ProjectFrame ide, SModelDescriptor modelDescriptor, IOperationContext operationContext) {
     super(ide, "Clone Model", operationContext);
     myIde = ide;
-    SModelDescriptor workingModel = ProjectModelDescriptor.createDescriptorFor(operationContext.getModule());
+    SModelDescriptor workingModel = ProjectModels.createDescriptorFor(operationContext.getModule());
     myProjectModel = workingModel.getSModel();
     mySModel = modelDescriptor.getSModel();
 

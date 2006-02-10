@@ -54,7 +54,7 @@ public class Language extends AbstractModule {
 
   public static Language newInstance(File descriptorFile, MPSModuleOwner moduleOwner) {
     Language language = new Language();
-    SModel model = ProjectModelDescriptor.createDescriptorFor(language).getSModel();
+    SModel model = ProjectModels.createDescriptorFor(language).getSModel();
     LanguageDescriptor languageDescriptor = PersistenceUtil.loadLanguageDescriptor(descriptorFile, model);
     language.myDescriptorFile = descriptorFile;
     language.myLanguageDescriptor = languageDescriptor;
@@ -65,7 +65,7 @@ public class Language extends AbstractModule {
 
   public static Language createLanguage(String languageNamespace, File descriptorFile, MPSModuleOwner moduleOwner) {
     Language language = new Language();
-    SModel descriptorModel = ProjectModelDescriptor.createDescriptorFor(language).getSModel();
+    SModel descriptorModel = ProjectModels.createDescriptorFor(language).getSModel();
     descriptorModel.setLoading(true);
     LanguageDescriptor languageDescriptor = new LanguageDescriptor(descriptorModel);
     descriptorModel.addRoot(languageDescriptor);

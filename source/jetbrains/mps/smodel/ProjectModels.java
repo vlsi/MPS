@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * @author Kostik
  */
-public class ProjectModelDescriptor extends DefaultSModelDescriptor {
+public class ProjectModels {
   private static long ourProjectModelDescriptorCount = 0;
   private static final IModelRootManager ourModelRootManager = new IModelRootManager() {
     public Set<SModelDescriptor> read(ModelRoot root, ModelOwner owner) {
@@ -41,25 +41,14 @@ public class ProjectModelDescriptor extends DefaultSModelDescriptor {
     }
   };
 
-  private @ForDebug Throwable myStackTrace;
-
-
 
   public static SModelDescriptor createDescriptorFor(ModelOwner owner) {
-    ProjectModelDescriptor result = new ProjectModelDescriptor();
+    SModelDescriptor result = new DefaultSModelDescriptor(ourModelRootManager, null, new SModelUID("projectModel" + ourProjectModelDescriptorCount++, "$internal$"));
     SModelRepository.getInstance().registerModelDescriptor(result, owner);
     return result;
   }
 
   public static boolean isProjectModel(SModelUID uid) {
     return "$internal$".equals(uid.getStereotype());
-  }
-
-  private ProjectModelDescriptor() {
-    super(ourModelRootManager, null, new SModelUID("projectModel" + ourProjectModelDescriptorCount++, "$internal$"));
-//    myStackTrace = new Throwable();
-  }
-
-  public void reloadFromDisk() {
   }
 }

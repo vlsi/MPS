@@ -187,7 +187,7 @@ public abstract class AbstractModule implements IModule {
     Iterator<SModelDescriptor> iterator = modelDescriptors.iterator();
     while (iterator.hasNext()) {
       SModelDescriptor descriptor = iterator.next();
-      if (ProjectModelDescriptor.isProjectModel(descriptor.getModelUID())) {
+      if (ProjectModels.isProjectModel(descriptor.getModelUID())) {
         iterator.remove();
       }
     }
