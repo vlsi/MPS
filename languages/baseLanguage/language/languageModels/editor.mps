@@ -2419,5 +2419,15 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1139533461943">
+    <link role="conceptDeclaration" targetNodeId="1.1107135704075" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ConceptProperty" id="1139533905854">
+      <property name="textFgColor" value="DARK_BLUE" />
+      <property name="defaultText" value="&lt;ConceptFunctionParameter with no alias&gt;" />
+      <property name="fontStyle" value="ITALIC" />
+      <link role="propertyDeclaration" targetNodeId="2.1137473891462" />
+      <link role="keyMap" targetNodeId="1081427357000" />
+    </node>
+  </node>
 </model>
 

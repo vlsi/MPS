@@ -241,6 +241,9 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1139527959893">
+          <node role="expression" type="jetbrains.mps.baseLanguage.Expression" id="1139527959941" />
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1127094882893">
           <node role="expression" type="jetbrains.mps.baseLanguage.FieldReference" id="1127098709768">
             <link role="variableDeclaration" targetNodeId="1127094836077" />
@@ -594,7 +597,7 @@
     <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1137817086066" />
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1137951629318">
-    <property name="name" value="GenaricClass" />
+    <property name="name" value="GenaricClasS" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1137951651024">
       <property name="name" value="aaa" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1137951657808" />
