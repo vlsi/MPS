@@ -278,21 +278,12 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BugSqueezer/BugSqueezer.iml" filepath="$PROJECT_DIR$/BugSqueezer/BugSqueezer.iml" group="DataLanguages" />
       <module fileurl="file://$PROJECT_DIR$/BugSqueezer/BugSqueezer_WebApp/BugSqueezerWebApp.iml" filepath="$PROJECT_DIR$/BugSqueezer/BugSqueezer_WebApp/BugSqueezerWebApp.iml" group="DataLanguages" />
-      <module fileurl="file://$PROJECT_DIR$/projects/Epigram/Epigram.iml" filepath="$PROJECT_DIR$/projects/Epigram/Epigram.iml" group="Projects" />
-      <module fileurl="file://$PROJECT_DIR$/projects/KeyMapTutorial/KeyMapTutorial.iml" filepath="$PROJECT_DIR$/projects/KeyMapTutorial/KeyMapTutorial.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/MPS.iml" filepath="$PROJECT_DIR$/MPS.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPSWiki/MPSWiki.iml" filepath="$PROJECT_DIR$/MPSWiki/MPSWiki.iml" group="DataLanguages" />
       <module fileurl="file://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/MPSWiki_WebApp.iml" filepath="$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/MPSWiki_WebApp.iml" group="DataLanguages" />
       <module fileurl="file://$PROJECT_DIR$/Remoting/Remoting.iml" filepath="$PROJECT_DIR$/Remoting/Remoting.iml" />
-      <module fileurl="file://$PROJECT_DIR$/projects/SubstituteActionTutorial/SubstituteActionTutorial.iml" filepath="$PROJECT_DIR$/projects/SubstituteActionTutorial/SubstituteActionTutorial.iml" group="Projects" />
-      <module fileurl="file://$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" filepath="$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" group="DataLanguages" />
-      <module fileurl="file://$PROJECT_DIR$/projects/TheSimplestLanguage/TheSimplestLanguage.iml" filepath="$PROJECT_DIR$/projects/TheSimplestLanguage/TheSimplestLanguage.iml" group="Projects" />
-      <module fileurl="file://$PROJECT_DIR$/projects/TypeTest/TypeTest.iml" filepath="$PROJECT_DIR$/projects/TypeTest/TypeTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/projects/agreement/agreement.iml" filepath="$PROJECT_DIR$/projects/agreement/agreement.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/SemanticWeb/core/core.iml" filepath="$PROJECT_DIR$/SemanticWeb/core/core.iml" group="SemanticWeb" />
-      <module fileurl="file://$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/log4j/log4j.iml" filepath="$PROJECT_DIR$/projects/log4j/log4j.iml" group="Projects" />
-      <module fileurl="file://$PROJECT_DIR$/projects/log4j2/log4j2.iml" filepath="$PROJECT_DIR$/projects/log4j2/log4j2.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/SemanticWeb/sandbox/sandbox.iml" filepath="$PROJECT_DIR$/SemanticWeb/sandbox/sandbox.iml" group="SemanticWeb" />
     </modules>
   </component>
