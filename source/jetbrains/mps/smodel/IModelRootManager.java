@@ -26,7 +26,7 @@ public interface IModelRootManager {
 
     public SModel refresh(SModelDescriptor modelDescriptor) {
 //      throw new RuntimeException();
-      return modelDescriptor.getSModel();
+      return ModelPersistence.refreshModel(modelDescriptor.getSModel());
     }
 
     public boolean isFindUsagesEnabled() {
