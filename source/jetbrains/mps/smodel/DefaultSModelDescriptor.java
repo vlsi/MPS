@@ -140,21 +140,25 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
       SModelsMulticaster.getInstance().fireModelLoadedEvent(this);
 
       LOG.assertLog(mySModel != null, "Couldn't load model \"" + getModelUID() + "\"");
-      for (SModelListener listener : myModelListeners) {
-        if (!mySModel.hasSModelListener(listener)) {
-          mySModel.addSModelListener(listener);
-        }
-      }
-      myModelListeners.clear();
-
-      for (SModelCommandListener listener : myModelCommandListeners) {
-        if (!mySModel.hasSModelCommandListener(listener)) {
-          mySModel.addSModelCommandListener(listener);
-        }
-      }
-      myModelCommandListeners.clear();
+      addListenersToNewModel();
     }
     return mySModel;
+  }
+
+  private void addListenersToNewModel() {
+    for (SModelListener listener : myModelListeners) {
+      if (!mySModel.hasSModelListener(listener)) {
+        mySModel.addSModelListener(listener);
+      }
+    }
+    myModelListeners.clear();
+
+    for (SModelCommandListener listener : myModelCommandListeners) {
+      if (!mySModel.hasSModelCommandListener(listener)) {
+        mySModel.addSModelCommandListener(listener);
+      }
+    }
+    myModelCommandListeners.clear();
   }
 
   public long lastStructuralChange() {
@@ -233,7 +237,8 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
       myModelListeners.addAll(mySModel.getListeners());
       myModelCommandListeners.addAll(mySModel.getCommandListeners());
       mySModel.dispose();
-      mySModel = myModelRootManager.refresh(this);
+      mySModel = myModelRootManager.refresh(this);      
+      addListenersToNewModel();
     }
   }
 
