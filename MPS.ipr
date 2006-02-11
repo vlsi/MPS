@@ -72,7 +72,6 @@
     <excludeFromCompile>
       <directory url="file://$PROJECT_DIR$/source_gen/jetbrains/mps/transformation/baseLanguage" includeSubdirectories="false" />
       <directory url="file://$PROJECT_DIR$/source_gen/jetbrains/mps/transformation" includeSubdirectories="false" />
-      <directory url="file://$PROJECT_DIR$/source/jetbrains/mps/typesLanguage/inference" includeSubdirectories="true" />
     </excludeFromCompile>
     <resourceExtensions>
       <entry name=".+\.(properties|xml|html|dtd|tld)" />
