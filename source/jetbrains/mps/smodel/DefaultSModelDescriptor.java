@@ -146,6 +146,8 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   }
 
   private void addListenersToNewModel() {
+    if (mySModel == null) return;
+
     for (SModelListener listener : myModelListeners) {
       if (!mySModel.hasSModelListener(listener)) {
         mySModel.addSModelListener(listener);
@@ -237,8 +239,10 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
       myModelListeners.addAll(mySModel.getListeners());
       myModelCommandListeners.addAll(mySModel.getCommandListeners());
       mySModel.dispose();
-      mySModel = myModelRootManager.refresh(this);      
-      addListenersToNewModel();
+      mySModel = myModelRootManager.refresh(this);
+      if (mySModel != null) {
+        addListenersToNewModel();
+      }
     }
   }
 
