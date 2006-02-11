@@ -332,7 +332,7 @@ public class SModelRepository extends SModelAdapter {
     return list;
   }
 
-  private IModelRootManager getManagerFor(ModelRoot modelRoot) {
+  public IModelRootManager getManagerFor(ModelRoot modelRoot) {
     if (modelRoot.getHandlerClass() == null) return new DefaultModelRootManager();
     String fqName = modelRoot.getHandlerClass();
     try {
