@@ -37,6 +37,7 @@
         <property name="selectable" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1138412455559">
+        <property name="attractsFocus" value="1" />
         <property name="drawBorder" value="false" />
         <link role="linkDeclaration" targetNodeId="1.1138411864174" />
       </node>
@@ -154,6 +155,7 @@
           <property name="textFgColor" value="DARK_MAGENTA" />
           <property name="defaultText" value="&lt;no ext value&gt;" />
           <property name="fontStyle" value="BOLD" />
+          <property name="drawBorder" value="false" />
           <property name="readOnly" value="true" />
           <link role="propertyDeclaration" targetNodeId="3.1083923523172" />
         </node>
@@ -173,6 +175,15 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1139184507627">
       <property name="editable" value="true" />
       <property name="text" value="new" />
+      <property name="drawBorder" value="false" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1139616285308">
+    <link role="conceptDeclaration" targetNodeId="1.1139613262185" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1139616289482">
+      <property name="editable" value="true" />
+      <property name="text" value="parent" />
+      <property name="attractsFocus" value="1" />
       <property name="drawBorder" value="false" />
     </node>
   </node>

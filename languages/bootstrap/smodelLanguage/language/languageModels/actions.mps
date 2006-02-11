@@ -26,15 +26,7 @@
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1138669164825">
       <property name="actionsFactoryAspectId" value="DelegateToParentExpression" />
-      <link role="applicableConcept" targetNodeId="1.1138056022639" />
-    </node>
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1138750694157">
-      <property name="actionsFactoryAspectId" value="DelegateToParentExpression" />
-      <link role="applicableConcept" targetNodeId="1.1138056143562" />
-    </node>
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1139185139615">
-      <property name="actionsFactoryAspectId" value="DelegateToParentExpression" />
-      <link role="applicableConcept" targetNodeId="1.1138056282393" />
+      <link role="applicableConcept" targetNodeId="1.1138411891628" />
     </node>
   </node>
 </model>
