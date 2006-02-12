@@ -3,6 +3,7 @@ package jetbrains.mps.util;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.IOperationContext;
 
 import java.io.File;
 import java.io.IOException;
@@ -244,6 +245,16 @@ public class PathManager {
       return null;
     }
     return path;
+  }
+
+  public static String getAbsolutePathByRelational(String relationalPath, IOperationContext operationContext) {
+    File projectFile = operationContext.getProject().getProjectFile();
+    return Macros.projectDescriptor().expandPath(relationalPath, projectFile);
+  }
+
+  public static String getRelationalPathByAbsolute(String absolutePath, IOperationContext operationContext) {
+    File projectFile = operationContext.getProject().getProjectFile();
+    return Macros.projectDescriptor().shrinkPath(absolutePath, projectFile);
   }
 
   public static String getAbsolutePathByRelational(File baseFile, String relationalPath) {

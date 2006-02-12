@@ -2,6 +2,8 @@ package jetbrains.mps.util;
 
 import jetbrains.mps.smodel.SNode;
 
+import java.io.File;
+
 
 /**
  * User: Dmitriev.
@@ -113,5 +115,10 @@ public class NameUtil {
     String conceptName = NameUtil.shortNameFromLongName(className);
     String languageNamespace = NameUtil.namespaceFromLongName(className);
     return languageNamespace + ".structure." + conceptName;
+  }
+
+  public static String convertToMetaString(String s) {
+    String s1 = s.replace('\\', File.separatorChar);
+    return s1.replace("\\", "\\\\");
   }
 }

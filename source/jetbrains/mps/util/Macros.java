@@ -1,7 +1,4 @@
-package jetbrains.mps.projectLanguage;
-
-import jetbrains.mps.util.PathManager;
-import jetbrains.mps.util.FileUtil;
+package jetbrains.mps.util;
 
 import java.io.File;
 
