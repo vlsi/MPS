@@ -1,6 +1,6 @@
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.ide.ProjectFrame;
+import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.actions.model.DeleteModelAction;
 import jetbrains.mps.ide.actions.nodes.DeleteNodeAction;
 import jetbrains.mps.ide.action.ActionContext;
@@ -29,7 +29,7 @@ import java.util.List;
  * Author: Sergey Dmitriev
  * Created Oct 25, 2003
  */
-public class ProjectPane extends JComponent implements IActionDataProvider, ProjectFrame.IProjectPane {
+public class ProjectPane extends JComponent implements IActionDataProvider, IDEProjectFrame.IProjectPane {
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);
 
   public static final String PROJECT_PANE_NODE_ACTIONS = "project-pane-node-actions";
@@ -46,7 +46,7 @@ public class ProjectPane extends JComponent implements IActionDataProvider, Proj
 
   private MyTree myTree = new MyTree();
   private MPSProject myProject;
-  private ProjectFrame myIDE;
+  private IDEProjectFrame myIDE;
   private HeaderWrapper myHeader;
   private boolean myRebuildEnabled = true;
   private IMPSProjectCommandListener myProjectListener = new IMPSProjectCommandListener() {
@@ -58,7 +58,7 @@ public class ProjectPane extends JComponent implements IActionDataProvider, Proj
   private LanguageCommandListener myLanguageListener = new MyLanguageListener();
   private SolutionCommandListener mySolutionListener = new MySolutionListener();
 
-  public ProjectPane(ProjectFrame ide) {
+  public ProjectPane(IDEProjectFrame ide) {
     myIDE = ide;
     SModelsMulticaster.getInstance().addSModelsListener(new SModelsAdapter() {
       public void modelCreated(SModelDescriptor modelDescriptor) {

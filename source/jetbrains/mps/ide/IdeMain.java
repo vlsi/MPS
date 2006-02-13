@@ -61,7 +61,7 @@ public class IdeMain {
 
     ApplicationComponents.getInstance();
     MPSIdeActions.install();
-    ProjectFrame projectWindow = new ProjectFrame();
+    IDEProjectFrame projectWindow = new IDEProjectFrame();
     projectWindow.loadLastProjectIfAny();
     SplashScreen.getInstance().hideSplashScreen();
     projectWindow.show();

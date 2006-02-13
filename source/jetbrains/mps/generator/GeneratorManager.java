@@ -2,7 +2,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.baseLanguage.Classifier;
 import jetbrains.mps.components.IExternalizableComponent;
-import jetbrains.mps.ide.ProjectFrame;
+import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.Message;
@@ -191,7 +191,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   public void generateModelsWithProgressWindow(final List<SModel> sourceModels, final Language targetLanguage, final IOperationContext invocationContext, final boolean generateText) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        final IAdaptiveProgressMonitor progress = new AdaptiveProgressMonitor(invocationContext.getComponent(ProjectFrame.class), false);
+        final IAdaptiveProgressMonitor progress = new AdaptiveProgressMonitor(invocationContext.getComponent(IDEProjectFrame.class), false);
         Thread generationThread = new Thread("Generation") {
           public void run() {
             CommandProcessor.instance().executeCommand(new Runnable() {

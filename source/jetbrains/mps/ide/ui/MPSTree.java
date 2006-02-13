@@ -1,6 +1,6 @@
 package jetbrains.mps.ide.ui;
 
-import jetbrains.mps.ide.ProjectFrame;
+import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.command.CommandProcessor;
@@ -226,7 +226,7 @@ public abstract class MPSTree extends JTree {
   }
 
   protected ActionContext getActionContext(MPSTreeNode node, List<MPSTreeNode> nodes) {
-    ProjectFrame ide = node.getOperationContext().getComponent(ProjectFrame.class);
+    IDEProjectFrame ide = node.getOperationContext().getComponent(IDEProjectFrame.class);
     return new ActionContext(node.getOperationContext());
   }
 

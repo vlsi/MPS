@@ -2,7 +2,6 @@ package jetbrains.mps.nodeEditor.cellExplorer;
 
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.CellProperties;
-import jetbrains.mps.ide.ProjectFrame;
 import jetbrains.mps.ide.icons.IconManager;
 
 import javax.swing.*;

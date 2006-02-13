@@ -39,11 +39,11 @@ public class HierarchyView extends DefaultTool {
   private ConceptHierarchyTree myHierarchyTree = new ConceptHierarchyTree();
   private ConceptHierarchyTreeNode myTreeNode;
   private JPanel myComponent = new JPanel(new BorderLayout());
-  private ProjectFrame myIde;
+  private IDEProjectFrame myIde;
 
 
 
-  public HierarchyView(ProjectFrame ide) {
+  public HierarchyView(IDEProjectFrame ide) {
     myIde = ide;
     myHierarchyTree.setRootVisible(true);
     myComponent.add(new JScrollPane(myHierarchyTree), BorderLayout.CENTER);

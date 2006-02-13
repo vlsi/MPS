@@ -3,7 +3,7 @@ package jetbrains.mps.ide.actions.nodes;
 import jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.ide.BootstrapLanguages;
-import jetbrains.mps.ide.ProjectFrame;
+import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.command.CommandProcessor;
@@ -20,7 +20,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.ModuleContext;
 
 import javax.swing.*;
-import java.io.File;
 import java.util.Iterator;
 
 /**
@@ -53,7 +52,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     final SNode node = context.get(SNode.class);
     if (!(node instanceof ConceptDeclaration)) return;
 
-    final ProjectFrame ide = context.get(ProjectFrame.class);
+    final IDEProjectFrame ide = context.get(IDEProjectFrame.class);
     IOperationContext invocationContext = context.get(IOperationContext.class);
     final IScope scope = invocationContext.getScope();
     final AbstractEditorComponent currentEditor = ide.getEditorsPane().getCurrentEditor();
@@ -131,7 +130,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     return null;
   }
 
-  private void navigateToEditorDeclaration(final SNode editorDeclaration, final IOperationContext operationContext, final AbstractEditorComponent currentEditor, final ProjectFrame ide) {
+  private void navigateToEditorDeclaration(final SNode editorDeclaration, final IOperationContext operationContext, final AbstractEditorComponent currentEditor, final IDEProjectFrame ide) {
     operationContext.getComponent(ProjectPane.class).selectNode(editorDeclaration, operationContext);
 
     NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(editorDeclaration, currentEditor, ide.getEditorsPane()), operationContext);

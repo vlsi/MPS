@@ -2,7 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.ProjectFrame;
+import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
@@ -48,9 +48,9 @@ public abstract class GenericEditorUpdater {
           public void run() {
             MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
             for (MPSProject project : projects.getProjects()) {
-              if (project.getComponent(ProjectFrame.class) == null) continue;
+              if (project.getComponent(IDEProjectFrame.class) == null) continue;
 
-              EditorsPane editorsPane = project.getComponent(ProjectFrame.class).getEditorsPane();
+              EditorsPane editorsPane = project.getComponent(IDEProjectFrame.class).getEditorsPane();
               boolean isUpdated = false;
               for (AbstractEditorComponent editor : editorsPane.getEditors()) {
                 if (updateEditor(editor)) {

@@ -2,7 +2,6 @@ package jetbrains.mps.nodeEditor.cellExplorer;
 
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.toolsPane.ToolsPane;
-import jetbrains.mps.ide.ProjectFrame;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.icons.IconManager;

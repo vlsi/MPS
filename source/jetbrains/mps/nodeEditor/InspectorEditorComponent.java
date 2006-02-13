@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.ide.ProjectFrame;
 
 import java.util.List;
 

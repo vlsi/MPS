@@ -187,7 +187,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
 
   public <T> T getComponent(Class<T> clazz) {
     if (clazz == EditorsPane.class) {
-      ProjectFrame projectFrame = getComponent(ProjectFrame.class);
+      IDEProjectFrame projectFrame = getComponent(IDEProjectFrame.class);
       if (projectFrame != null) return (T) projectFrame.getEditorsPane();
     }
     T result = (T) myComponents.get(clazz);
@@ -390,7 +390,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   }
 
   public IPreferencesPage createPreferencesPage() {
-    return new ProjectPathsDialog(getComponent(ProjectFrame.class), this, new ProjectOperationContext(this)).createPreferencesPage();
+    return new ProjectPathsDialog(getComponent(IDEProjectFrame.class), this, new ProjectOperationContext(this)).createPreferencesPage();
   }
 
   private class ProjectEventTranslator extends CommandEventTranslator {
