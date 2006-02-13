@@ -168,7 +168,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1139613262185">
-    <property name="name" value="SNodeParentOperation" />
+    <property name="name" value="GetParentOperation" />
     <link role="extends" targetNodeId="1138411891628" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1139613319562">
       <property name="value" value="parent" />
@@ -179,7 +179,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1139621453865">
-    <property name="name" value="IsInstanceOf" />
+    <property name="name" value="IsInstanceOfOperation" />
     <link role="extends" targetNodeId="1138411891628" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1139621517231">
       <property name="sourceCardinality" value="1" />
@@ -193,6 +193,23 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1139621550545">
       <link role="conceptPropertyDeclaration" targetNodeId="1138763241883" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1139858892567">
+    <property name="name" value="InsertNewNextSiblingOperation" />
+    <link role="extends" targetNodeId="1138411891628" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1139858989851">
+      <property name="value" value="new next-sibling" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1139859038385">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763241883" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1139858951584">
+      <property name="sourceCardinality" value="1" />
+      <property name="targetCardinality" value="0..n" />
+      <property name="role" value="concept" />
+      <link role="target" targetNodeId="3.1071489090640" />
     </node>
   </node>
 </model>
