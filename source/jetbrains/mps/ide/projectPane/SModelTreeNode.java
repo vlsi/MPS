@@ -121,7 +121,7 @@ class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   private MPSTree getTree() {
-    return getOperationContext().getComponent(IDEProjectFrame.class).getProjectPane().getTree();
+    return ((IDEProjectFrame) getOperationContext().getComponent(AbstractProjectFrame.class)).getProjectPane().getTree();
   }
 
   private class MyModelListener implements SModelCommandListener {
