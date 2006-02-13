@@ -198,8 +198,7 @@ public class NewGeneratorDialog extends BaseDialog {
     if (!alreadyOwnsTemplateModel) {
       SModelDescriptor templateModelDescriptor = newGenerator.createModel(
               new SModelUID(templateModelNamePrefix, "main", SModelStereotype.TEMPLATES),
-              templateModelsRoot.getPath(),
-              templateModelsRoot.getPrefix());
+              templateModelsRoot);
 
       SModel templateModel = templateModelDescriptor.getSModel();
       templateModel.addLanguage(BootstrapLanguages.getInstance().getTLBase());

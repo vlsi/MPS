@@ -13,10 +13,7 @@ import jetbrains.mps.projectLanguage.ModelRoot;
 public class CloneModelUtil {
 
   public static SModel cloneModel(SModel model, IOperationContext operationContext, SModelUID modelUID, ModelRoot modelRoot) {
-
-    String path = modelRoot.getPath();
-    String prefix = modelRoot.getPrefix();
-    SModelDescriptor modelCopyDescriptor = operationContext.getModule().createModel(modelUID, path, prefix);
+    SModelDescriptor modelCopyDescriptor = operationContext.getModule().createModel(modelUID, modelRoot);
     SModel modelCopy = modelCopyDescriptor.getSModel();
 
     return cloneModel(model, modelCopy);

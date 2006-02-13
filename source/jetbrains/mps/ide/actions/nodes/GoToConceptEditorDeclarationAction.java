@@ -14,6 +14,7 @@ import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import jetbrains.mps.projectLanguage.Editor;
 import jetbrains.mps.projectLanguage.LanguageDescriptor;
 import jetbrains.mps.projectLanguage.Model;
+import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.ModuleContext;
@@ -147,11 +148,9 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
   }
 
   private SModelDescriptor createLanguageEditorModel(Language language) {
-    SModelDescriptor modelDescriptor =  language.getStructureModelDescriptor();
-    File languageDir = modelDescriptor.getModelFile().getParentFile();
-    String path = languageDir.getAbsolutePath();
+    ModelRoot modelRoot = language.getModelRoots().get(0);
 
-    SModelDescriptor editorModelDescriptor = language.createModel(new SModelUID(language.getModuleUID(), "editor", ""), path, language.getModuleUID());
+    SModelDescriptor editorModelDescriptor = language.createModel(new SModelUID(language.getModuleUID(), "editor", ""), modelRoot);
     SModel editorModel = editorModelDescriptor.getSModel();
     editorModel.addLanguage(BootstrapLanguages.getInstance().getEditorLanguage());
     editorModelDescriptor.save();

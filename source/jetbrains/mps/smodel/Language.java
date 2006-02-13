@@ -397,8 +397,8 @@ public class Language extends AbstractModule {
   }
 
   @Hack("Created to simplify New Language Dialog")
-  public String getLanguageModelsDir() {
-    return getLanguageDescriptor().modelRoots().next().getPath();
+  public ModelRoot getDefaultModelRoot() {
+    return getLanguageDescriptor().modelRoots().next();
   }
 
   private class LanguageEventTranslator extends CommandEventTranslator {
