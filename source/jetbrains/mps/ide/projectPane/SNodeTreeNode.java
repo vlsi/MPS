@@ -8,6 +8,7 @@ import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.AbstractProjectFrame;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
@@ -78,13 +79,15 @@ class SNodeTreeNode extends MPSTreeNodeEx {
     for (SNode childNode : children) {
       add(new SNodeTreeNode(childNode, childNode.getRole_(), getOperationContext()));
     }
-    DefaultTreeModel treeModel = (DefaultTreeModel)getOperationContext().getComponent(IDEProjectFrame.class).getProjectPane().getTree().getModel();
+    IDEProjectFrame projectFrame = (IDEProjectFrame) getOperationContext().getComponent(AbstractProjectFrame.class);
+    DefaultTreeModel treeModel = (DefaultTreeModel)projectFrame.getProjectPane().getTree().getModel();
     treeModel.nodeStructureChanged(this);
     myInitialized = true;
   }
 
   public void doubleClick() {
-    getOperationContext().getComponent(IDEProjectFrame.class).openNode(myNodeProxy.getNode(), getOperationContext());
+    IDEProjectFrame projectFrame = (IDEProjectFrame) getOperationContext().getComponent(AbstractProjectFrame.class);
+    projectFrame.openNode(myNodeProxy.getNode(), getOperationContext());
   }
 
   public Icon getIcon(boolean expanded) {

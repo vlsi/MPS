@@ -4,6 +4,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.AbstractProjectFrame;
 
 import java.util.Set;
 
@@ -31,8 +32,10 @@ public class ModuleContext extends StandaloneMPSContext {
       component = ApplicationComponents.getInstance().getComponent(clazz);
     }
 
-    if (component == null && getComponent(IDEProjectFrame.class) != null) {
-      IDEProjectFrame projectFrame = getComponent(IDEProjectFrame.class);
+    if (component == null &&
+            clazz != AbstractProjectFrame.class &&
+            getComponent(AbstractProjectFrame.class) != null) {
+      AbstractProjectFrame projectFrame = getComponent(AbstractProjectFrame.class);
 
       if (clazz == EditorsPane.class) return (T) projectFrame.getEditorsPane();
     }

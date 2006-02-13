@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.AbstractProjectFrame;
 //import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.action.ActionContext;
@@ -90,11 +91,11 @@ class SModelTreeNode extends MPSTreeNodeEx {
   public void init() {
     removeAllChildren();
     SModel model;
-  /*  CommandProcessor.instance().executeCommand(new Runnable() {
-      public void run() {*/
-        model = myModelDescriptor.getSModel();
-  /*    }
-    }, "loading model in project pane");*/
+    /*  CommandProcessor.instance().executeCommand(new Runnable() {
+ public void run() {*/
+    model = myModelDescriptor.getSModel();
+    /*    }
+}, "loading model in project pane");*/
 
     if (!model.hasSModelCommandListener(myModelListener)) {
       model.addSModelCommandListener(myModelListener);
@@ -109,7 +110,8 @@ class SModelTreeNode extends MPSTreeNodeEx {
       MPSTreeNodeEx treeNode = new SNodeTreeNode(sortedRoot, getOperationContext());
       add(treeNode);
     }
-    DefaultTreeModel treeModel = (DefaultTreeModel) getOperationContext().getComponent(IDEProjectFrame.class).getProjectPane().getTree().getModel();
+    IDEProjectFrame projectFrame = (IDEProjectFrame) getOperationContext().getComponent(AbstractProjectFrame.class);
+    DefaultTreeModel treeModel = (DefaultTreeModel) projectFrame.getProjectPane().getTree().getModel();
     treeModel.nodeStructureChanged(this);
     isInitialized = true;
   }
