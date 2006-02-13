@@ -51,11 +51,6 @@ public interface IModule extends IScope, ModelOwner, MPSModuleOwner {
 
   SModelDescriptor createModel(SModelUID uid, ModelRoot root);
 
-  /**
-   * @deprecated Use createModel(SModelUID uid, ModelRoot root) instead
-   */
-  SModelDescriptor createModel(SModelUID uid, String path, String pathPrefix);
-
   File getDescriptorFile();
 
   ModuleDescriptor getModuleDescriptor();
