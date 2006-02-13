@@ -92,7 +92,7 @@ public class CloneModelDialog extends BaseNodeDialog {
     if (!myCloneModelProperties.getLongName().startsWith(myCloneModelProperties.getRoot().getPrefix())) return "Incorrect namespace for specified root";
     if (myCloneModelProperties.getLongName().equals(myCloneModelProperties.getRoot().getPrefix())) return "Model fqName is the same as prefix. Can't import";
     if (myCloneModelProperties.getLanguagesCount() < 1) return "Model must have at least one language";
-    return null;
+    return null;                                            
   }
 
   protected void saveChanges() {
