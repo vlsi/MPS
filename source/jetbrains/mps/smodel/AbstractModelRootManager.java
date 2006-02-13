@@ -1,5 +1,7 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.projectLanguage.ModelRoot;
+
 public abstract class AbstractModelRootManager implements IModelRootManager {
   public SModel refresh(SModelDescriptor modelDescriptor) {
     return ModelPersistence.refreshModel(modelDescriptor.getSModel());
@@ -18,5 +20,9 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
 
   public boolean isNewModelsSupported() {
     return false;
+  }
+
+  public SModelDescriptor createNewModel(ModelRoot root, SModelUID modelUID, ModelOwner owner) {
+    throw new RuntimeException();
   }
 }

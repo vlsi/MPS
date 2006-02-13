@@ -262,6 +262,16 @@ public abstract class AbstractModule implements IModule {
     SModelRepository.getInstance().unRegisterModelDescriptor(modelDescriptor, this);
   }
 
+  public SModelDescriptor createModel(SModelUID uid, ModelRoot root) {
+    IModelRootManager manager = SModelRepository.getInstance().getManagerFor(root);
+
+    if (!manager.isNewModelsSupported()) {
+      LOG.error("Trying to create model root manager in root which doesn't support new models");
+    }
+
+    return manager.createNewModel(root, uid, this);
+  }
+
   public SModelDescriptor createModel(SModelUID uid, String path, String pathPrefix) {
     if (pathPrefix == null) pathPrefix = "";
     if (pathPrefix.length() > 0 && !uid.getLongName().startsWith(pathPrefix)) {

@@ -41,4 +41,6 @@ public interface IModelRootManager {
   boolean containsString(SModelDescriptor modelDescriptor, String string);
 
   boolean isNewModelsSupported();
+
+  SModelDescriptor createNewModel(ModelRoot root, SModelUID modelUID, ModelOwner owner);
 }

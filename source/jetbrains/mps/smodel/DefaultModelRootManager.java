@@ -23,6 +23,10 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
   public SModel loadModel(SModelDescriptor modelDescriptor) {
     File file = modelDescriptor.getModelFile();
+    if (!file.exists()) {
+      return new SModel(modelDescriptor.getModelUID());
+    }
+
     SModel model = ModelPersistence.readModel(file);
     LOG.assertLog(model.getUID().equals(modelDescriptor.getModelUID()),
             "\nError loading model from file: \"" + file + "\"\n" +
@@ -85,6 +89,32 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       if (childDir.isDirectory()) {
         readModelDescriptors(modelDescriptors, childDir, modelRoot, owner);
       }
+    }
+  }
+
+  public boolean isNewModelsSupported() {
+    return true;
+  }
+
+  public SModelDescriptor createNewModel(ModelRoot root, SModelUID uid, ModelOwner owner) {
+    String pathPrefix = root.getPrefix();
+    String path = root.getPath();
+
+    if (pathPrefix == null) pathPrefix = "";
+    if (pathPrefix.length() > 0 && !uid.getLongName().startsWith(pathPrefix)) {
+      LOG.error("Model uid \"" + uid + "\" doesn't match name prefix \"" + pathPrefix + "\"");
+    }
+
+    String filenameSuffix = uid.getLongName().substring(pathPrefix.length());
+    if (uid.hasStereotype()) {
+      filenameSuffix = filenameSuffix + '@' + uid.getStereotype();
+    }
+
+    File modelFile = new File(path, filenameSuffix.replace('.', File.separatorChar) + ".mps");
+    try {
+      return DefaultModelRootManager.createModel(this, modelFile.getCanonicalPath(), uid, owner);
+    } catch (IOException e) {
+      throw new RuntimeException("Couldn't create new model \"" + uid + "\"", e);
     }
   }
 
