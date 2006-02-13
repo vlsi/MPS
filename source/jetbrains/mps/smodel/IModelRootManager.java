@@ -8,23 +8,7 @@ import java.util.Set;
  * @author Kostik
  */
 public interface IModelRootManager {
-  public static final IModelRootManager NULL_MANAGER = new AbstractModelRootManager() {
-    public Set<SModelDescriptor> read(ModelRoot root, ModelOwner owner) {
-      throw new RuntimeException();
-    }
-
-    public SModel loadModel(SModelDescriptor modelDescriptor) {
-      return new SModel(modelDescriptor.getModelUID());
-    }
-
-    public void saveModel(SModelDescriptor modelDescriptor) {
-      throw new RuntimeException();
-    }
-
-    public boolean containsString(SModelDescriptor modelDescriptor, String string) {
-      throw new RuntimeException();
-    }
-  };
+  public static final IModelRootManager NULL_MANAGER = new NullModelRootManager();
 
   Set<SModelDescriptor> read(ModelRoot root, ModelOwner owner);
 
