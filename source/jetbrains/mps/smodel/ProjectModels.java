@@ -1,6 +1,5 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.util.annotation.ForDebug;
 import jetbrains.mps.projectLanguage.ModelRoot;
 
 import java.util.*;
@@ -10,7 +9,7 @@ import java.util.*;
  */
 public class ProjectModels {
   private static long ourProjectModelDescriptorCount = 0;
-  private static final IModelRootManager ourModelRootManager = new IModelRootManager() {
+  private static final IModelRootManager ourModelRootManager = new AbstractModelRootManager() {
     public Set<SModelDescriptor> read(ModelRoot root, ModelOwner owner) {
       throw new RuntimeException();
     }
@@ -28,15 +27,7 @@ public class ProjectModels {
 
     }
 
-    public SModel refresh(SModelDescriptor modelDescriptor) {
-      return ModelPersistence.refreshModel(modelDescriptor.getSModel());
-    }
-
-    public boolean isFindUsagesEnabled() {
-      return false;
-    }
-
-    public boolean containsString(SModelDescriptor modelDescriptor, String string) {
+    public boolean isFindUsagesSupported() {
       return false;
     }
   };

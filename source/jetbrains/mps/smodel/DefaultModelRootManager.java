@@ -12,7 +12,7 @@ import java.io.*;
 /**
  * @author Kostik
  */
-public class DefaultModelRootManager implements IModelRootManager {
+public class DefaultModelRootManager extends AbstractModelRootManager {
   private static final Logger LOG = Logger.getLogger(DefaultModelRootManager.class);
 
   public Set<SModelDescriptor> read(ModelRoot root, ModelOwner owner) {
@@ -31,17 +31,6 @@ public class DefaultModelRootManager implements IModelRootManager {
                     "the model will not be available.\n" +
                     "Make sure that all project's roots and/or the model namespace is correct");
     return model;
-  }
-
-  public void updateAfterLoad(SModelDescriptor modelDescriptor) {
-  }
-
-  public SModel refresh(SModelDescriptor modelDescriptor) {
-    return ModelPersistence.refreshModel(modelDescriptor.getSModel());
-  }
-
-  public boolean isFindUsagesEnabled() {
-    return true;
   }
 
   public boolean containsString(SModelDescriptor modelDescriptor, String string) {

@@ -14,7 +14,7 @@ import java.util.HashSet;
 /**
  * @author Kostik
  */
-public class ClassPathModelRootManager implements IModelRootManager  {
+public class ClassPathModelRootManager extends AbstractModelRootManager  {
   private ModelOwner myOwner;
   private IConverter myConverter;
 
@@ -55,11 +55,7 @@ public class ClassPathModelRootManager implements IModelRootManager  {
     return null;
   }
 
-  public boolean isFindUsagesEnabled() {
-    return false;
-  }
-
-  public boolean containsString(SModelDescriptor modelDescriptor, String string) {
+  public boolean isFindUsagesSupported() {
     return false;
   }
 

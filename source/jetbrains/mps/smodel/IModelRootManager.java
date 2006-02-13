@@ -8,7 +8,7 @@ import java.util.Set;
  * @author Kostik
  */
 public interface IModelRootManager {
-  public static final IModelRootManager NULL_MANAGER = new IModelRootManager() {
+  public static final IModelRootManager NULL_MANAGER = new AbstractModelRootManager() {
     public Set<SModelDescriptor> read(ModelRoot root, ModelOwner owner) {
       throw new RuntimeException();
     }
@@ -19,18 +19,6 @@ public interface IModelRootManager {
 
     public void saveModel(SModelDescriptor modelDescriptor) {
       throw new RuntimeException();
-    }
-
-    public void updateAfterLoad(SModelDescriptor modelDescriptor) {
-    }
-
-    public SModel refresh(SModelDescriptor modelDescriptor) {
-//      throw new RuntimeException();
-      return ModelPersistence.refreshModel(modelDescriptor.getSModel());
-    }
-
-    public boolean isFindUsagesEnabled() {
-      return false;
     }
 
     public boolean containsString(SModelDescriptor modelDescriptor, String string) {
@@ -48,7 +36,9 @@ public interface IModelRootManager {
 
   SModel refresh(SModelDescriptor modelDescriptor);
 
-  boolean isFindUsagesEnabled();
+  boolean isFindUsagesSupported();
 
   boolean containsString(SModelDescriptor modelDescriptor, String string);
+
+  boolean isNewModelsSupported();
 }
