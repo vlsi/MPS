@@ -29,7 +29,7 @@ import java.util.List;
  * Author: Sergey Dmitriev
  * Created Oct 25, 2003
  */
-public class ProjectPane extends JComponent implements IActionDataProvider {
+public class ProjectPane extends JComponent implements IActionDataProvider, ProjectFrame.IProjectPane {
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);
 
   public static final String PROJECT_PANE_NODE_ACTIONS = "project-pane-node-actions";
@@ -453,6 +453,10 @@ public class ProjectPane extends JComponent implements IActionDataProvider {
 
   public MPSTree getTree() {
     return myTree;
+  }
+
+  public JComponent getComponent() {
+    return this;
   }
 
   private class MyTree extends MPSTree {
