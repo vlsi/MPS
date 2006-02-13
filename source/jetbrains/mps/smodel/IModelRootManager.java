@@ -42,5 +42,10 @@ public interface IModelRootManager {
 
   boolean isNewModelsSupported();
 
+  /**
+   * If you will implement this method do not forget
+   * 1. Register new model in SModelRepository
+   * 2. Fire new model created event : SModelsMulticaster.getInstance().fireModelCreatedEvent(modelDescriptor);
+   */
   SModelDescriptor createNewModel(ModelRoot root, SModelUID modelUID, ModelOwner owner);
 }
