@@ -5,6 +5,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.projectLanguage.CloneModelProperties;
 import jetbrains.mps.projectLanguage.Model;
 import jetbrains.mps.projectLanguage.RootReference;
+import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.CommandRunnable;
@@ -92,7 +93,7 @@ public class CloneModelDialog extends BaseNodeDialog {
     if (!myCloneModelProperties.getLongName().startsWith(myCloneModelProperties.getRoot().getPrefix())) return "Incorrect namespace for specified root";
     if (myCloneModelProperties.getLongName().equals(myCloneModelProperties.getRoot().getPrefix())) return "Model fqName is the same as prefix. Can't import";
     if (myCloneModelProperties.getLanguagesCount() < 1) return "Model must have at least one language";
-    return null;                                            
+    return null;
   }
 
   protected void saveChanges() {
@@ -100,8 +101,12 @@ public class CloneModelDialog extends BaseNodeDialog {
     String modelName = myCloneModelProperties.getLongName();
     RootReference reference = myCloneModelProperties.getRoot();
 
+    ModelRoot modelRoot = ModelRoot.newInstance(mySModel);
+    modelRoot.setPrefix(reference.getPrefix());
+    modelRoot.setPath(reference.getPath());
+
     IOperationContext operationContext = getOperationContext();
-    SModelDescriptor modelDescriptor = operationContext.getModule().createModel(new SModelUID(modelName, stereotype), reference.getPath(), reference.getPrefix());
+    SModelDescriptor modelDescriptor = operationContext.getModule().createModel(new SModelUID(modelName, stereotype), modelRoot);
 
     SModel SModel = modelDescriptor.getSModel();
     Set<String> modelsInProps = getModelsInProperties();
