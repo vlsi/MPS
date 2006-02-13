@@ -156,7 +156,7 @@
     <property name="name" value="SLinkListAddNewChildOperation" />
     <link role="extends" targetNodeId="1138411891628" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1139184414037">
-      <property name="value" value="new" />
+      <property name="value" value="add new" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1139351292093">
@@ -227,6 +227,28 @@
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="concept" />
       <link role="target" targetNodeId="3.1071489090640" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1139870260207">
+    <property name="name" value="SLinkListAddChildOperation" />
+    <link role="extends" targetNodeId="1138411891628" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1139870362308">
+      <property name="sourceCardinality" value="1" />
+      <property name="targetCardinality" value="1" />
+      <property name="role" value="parameter" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="2.1068431790191" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1139870333258">
+      <property name="value" value="add" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1139870333259">
+      <property name="value" value="add child" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1139870333260">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763350436" />
     </node>
   </node>
 </model>

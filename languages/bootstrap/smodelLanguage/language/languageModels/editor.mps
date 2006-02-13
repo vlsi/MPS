@@ -2,10 +2,11 @@
 <model name="jetbrains.mps.bootstrap.smodelLanguage.editor">
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
-  <maxImportIndex value="3" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
+  <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1138063451695">
     <link role="conceptDeclaration" targetNodeId="1.1138056022639" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1138412409274">
@@ -263,6 +264,25 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1139868035543">
+        <property name="editable" value="true" />
+        <property name="text" value=")" />
+        <property name="drawBorder" value="false" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1139870425549">
+    <link role="conceptDeclaration" targetNodeId="1.1139870260207" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1139870427663">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1139870427664">
+        <property name="text" value="add (" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1139870441857">
+        <property name="drawBorder" value="false" />
+        <link role="linkDeclaration" targetNodeId="1.1139870362308" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1139870427668">
         <property name="editable" value="true" />
         <property name="text" value=")" />
         <property name="drawBorder" value="false" />
