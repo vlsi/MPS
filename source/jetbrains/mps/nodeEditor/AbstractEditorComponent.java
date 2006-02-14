@@ -55,7 +55,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   protected EditorCell myRootCell;
   protected EditorCell mySelectedCell;
-  private int myShiftX = 10;
+  private static final int MIN_SHIFT_X = 10;
+  private int myShiftX = MIN_SHIFT_X;
   private int myShiftY = 10;
 
   private NodeRangeSelection myNodeRangeSelection;
@@ -76,6 +77,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private IOperationContext myOperationContext;
 
   private MessagesGutter myMessagesGutter = new MessagesGutter(this);
+  private LeftEditorHighlighter myLeftHighlighter = new LeftEditorHighlighter(this);
   protected SNodeProxy myNodeProxy;
   protected EditorContext myEditorContext;
   private List<RebuildListener> myRebuildListeners = new ArrayList<RebuildListener>();
@@ -136,7 +138,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (showErrorsGutter) {
       myContainer.add(myMessagesGutter, BorderLayout.EAST);
     }
-
 
     myNodeSubstituteChooser = new NodeSubstituteChooser(this);
     myNodeRangeSelection = new NodeRangeSelection(this);
@@ -349,6 +350,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return myMessagesGutter;
   }
 
+  public LeftEditorHighlighter getLeftEditorHighlighter() {
+    return myLeftHighlighter;
+  }
+
   public JToolTip createToolTip() {
     JMultiLineToolTip toolTip = new JMultiLineToolTip();
     toolTip.setFont(new TextLine("aaa", this).getFont());
@@ -494,9 +499,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     myRootCell = rootCell;
-    myRootCell.setX(myShiftX);
-    myRootCell.setY(myShiftY);
-    myRootCell.relayout();
+    doRelayout();
 
     Set<SNode> nodesWhichEditorDependsOn = myCellsToNodesToDependOnMap.get(myRootCell);
     if (nodesWhichEditorDependsOn != null) {
@@ -606,20 +609,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     // ---
-
-    /*   if (keyEvent.getKeyCode() == KeyEvent.VK_F2 && keyEvent.isControlDown()) {
-      return EditorCellAction.MK_PROPERTY_COMMENT;
-    }
-
-    if (keyEvent.getKeyCode() == KeyEvent.VK_F3 && keyEvent.isControlDown()) {
-      return EditorCellAction.MK_COMMENT;
-    }
-
-    if (keyEvent.getKeyCode() == KeyEvent.VK_F4 && keyEvent.isControlDown()) {
-      return EditorCellAction.MK_LINK_COMMENT;
-    }*/
-
-    // ---
     if (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.getModifiers() == 0) {
       EditorCell selectedCell = editorContext.getNodeEditorComponent().getSelectedCell();
       if (!(selectedCell instanceof EditorCell_Label)) {
@@ -687,12 +676,27 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void relayout() {
-    /*   if (myIsDirtyLayout) {*/
-    myRootCell.relayout();
+    doRelayout();
     revalidate();
     repaint();
-    /*     myIsDirtyLayout = false;
-    }*/
+  }
+
+  private void doRelayout() {
+    myLeftHighlighter.relayoutWidth();
+    myShiftX = Math.max(myLeftHighlighter.getWidth(), MIN_SHIFT_X);
+    myRootCell.setX(myShiftX);
+    myRootCell.setY(myShiftY);
+    myRootCell.relayout();
+    myLeftHighlighter.relayoutHeight();
+  }
+
+
+  public void leftHighlightCell(EditorCell cell) {
+    myLeftHighlighter.highlight(cell, Color.GREEN);
+  }
+
+  public void leftUnhighlightCell(EditorCell cell) {
+    myLeftHighlighter.unHighlight(cell);
   }
 
   public void selectNode(final SNode node) {
@@ -1057,6 +1061,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
 
     g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+    myLeftHighlighter.paint(g);
     myRootCell.paint(g);
   }
 
@@ -1599,27 +1604,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void runSwapCellsActions(Runnable action) {
-    EditorCell selectedCell = getSelectedCell();
-    int caretPosition = selectedCell instanceof EditorCell_Label ?
-            ((EditorCell_Label) selectedCell).getTextLine().getCaretPosition() : 0;
-    String id = "";
-    SNodeProxy nodeProxy = null;
-    if (selectedCell != null) {
-      nodeProxy = selectedCell.getSNodeProxy();
-      id = (String) selectedCell.getUserObject(EditorCell.CELL_ID);
-    }
-
+    Object memento = myEditorContext.createMemento();
     action.run();
-
-    if (nodeProxy != null && id != null) {
-      EditorCell newSelectedCell = findNodeCell(nodeProxy.getNode(), id);
-      changeSelection(newSelectedCell);
-      if (newSelectedCell instanceof EditorCell_Label) {
-        ((EditorCell_Label) newSelectedCell).getTextLine().setCaretPosition(caretPosition);
-      }
-    } else {
-      changeSelection(null);
-    }
+    myEditorContext.setMemento(memento);
   }
 
   public boolean isReadOnly() {
