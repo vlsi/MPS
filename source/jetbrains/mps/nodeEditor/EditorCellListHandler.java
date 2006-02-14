@@ -109,6 +109,7 @@ public abstract class EditorCellListHandler implements IKeyboardHandler {
     emptyCell.setDefaultText("<< ... >>");
     emptyCell.setEditable(true);
     emptyCell.setSubstituteInfo(new DefaultChildSubstituteInfo(getOwner(), null, getLinkDeclaration(), editorContext));
+    emptyCell.putUserObject(EditorCell.ROLE, getChildRole());
     return emptyCell;
   }
 

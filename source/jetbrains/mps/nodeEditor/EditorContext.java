@@ -82,6 +82,11 @@ public class EditorContext {
           EditorCell cellToSelect = memento.cellInfo.findCell(myNodeEditorComponent);
           myNodeEditorComponent.changeSelection(cellToSelect);
           myNodeEditorComponent.setSelectedStackFromMemento(memento.selectedStack);
+          for (CellInfo collectionInfo : memento.collectionsWithEnabledBraces) {
+            EditorCell collection = collectionInfo.findCell(myNodeEditorComponent);
+            if (!(collection instanceof EditorCell_Collection)) continue;
+            ((EditorCell_Collection)collection).enableBraces();
+          }
           if (cellToSelect != null) {
             cellToSelect.setCaretX(memento.caretX.intValue());
           } else {
@@ -108,6 +113,7 @@ public class EditorContext {
     private Point selectionPosition;
     private CellInfo cellInfo;
     private Stack<CellInfo> selectedStack = new Stack<CellInfo>();
+    private List<CellInfo> collectionsWithEnabledBraces = new ArrayList<CellInfo>();
     private Integer caretX;
 
     public Memento(EditorContext context) {
@@ -119,6 +125,15 @@ public class EditorContext {
         cellInfo = selectedCell.getCellInfo();
       }
       selectedStack = nodeEditor.getSelectedStackForMemento();
+      EditorCell rootCell = nodeEditor.getRootCell();
+      if (rootCell instanceof EditorCell_Collection) fillBracesInfo((EditorCell_Collection) rootCell);
+    }
+
+    private void fillBracesInfo(EditorCell_Collection cell) {
+      if (cell.areBracesEnabled()) collectionsWithEnabledBraces.add(cell.getCellInfo());
+      for (EditorCell child : cell) {
+        if (child instanceof EditorCell_Collection) fillBracesInfo((EditorCell_Collection) child);
+      }
     }
 
     public boolean equals(Object object) {

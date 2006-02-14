@@ -16,6 +16,7 @@ public class CellInfo {
   private String cellId;
   private int cellNumber;
 
+  // use only within EditorCell.getCellInfo
   public CellInfo(EditorCell cell) {
     nodeProxy = cell.getSNodeProxy();
     cellId = (String) cell.getUserObject(EditorCell.CELL_ID);
