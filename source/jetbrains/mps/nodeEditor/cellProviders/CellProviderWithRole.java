@@ -29,7 +29,7 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
   public abstract SNode getRoleAttribute();
 
   // gets a kind of attributes possibly hanging on this provider's role.
-  // Be careful - it is by no means an exact class of result of getRoleAttribute().
+  // Be careful - it is by no means an exact class of the result of getRoleAttribute().
   public abstract Class getRoleAttributeClass();
 
 }
