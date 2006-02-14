@@ -79,7 +79,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
         System.out.println();
       }*/
       SModelUID modelUID = PathManager.getModelUID(file, new File(modelRoot.getPath()), modelRoot.getPrefix());//new SModelUID(modelFQName, stereotype);
-      SModelDescriptor modelDescriptor = getInstance(this, file.getAbsolutePath(), modelUID, owner);
+      SModelDescriptor modelDescriptor = getInstance(this, modelRoot, file.getAbsolutePath(), modelUID, owner);
       LOG.debug("I've read model descriptor " + modelDescriptor.getModelUID() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
       modelDescriptors.add(modelDescriptor);
     }
@@ -112,13 +112,13 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
     File modelFile = new File(path, filenameSuffix.replace('.', File.separatorChar) + ".mps");
     try {
-      return DefaultModelRootManager.createModel(this, modelFile.getCanonicalPath(), uid, owner);
+      return DefaultModelRootManager.createModel(this, root, modelFile.getCanonicalPath(), uid, owner);
     } catch (IOException e) {
       throw new RuntimeException("Couldn't create new model \"" + uid + "\"", e);
     }
   }
 
-  public static SModelDescriptor getInstance(IModelRootManager manager, String fileName, SModelUID modelUID, ModelOwner owner) {
+  public static SModelDescriptor getInstance(IModelRootManager manager, ModelRoot root, String fileName, SModelUID modelUID, ModelOwner owner) {
     LOG.debug("Getting model " + modelUID + " from " + fileName + " with owner " + owner);
 
     SModelRepository modelRepository = SModelRepository.getInstance();
@@ -127,13 +127,13 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       modelRepository.addOwnerForDescriptor(modelDescriptor, owner);
       return modelDescriptor;
     } else {
-      modelDescriptor = new DefaultSModelDescriptor(manager, new File(fileName), modelUID);
+      modelDescriptor = new DefaultSModelDescriptor(manager, root, new File(fileName), modelUID);
       modelRepository.registerModelDescriptor(modelDescriptor, owner);
       return modelDescriptor;
     }
   }
 
-  public static SModelDescriptor createModel(IModelRootManager manager, String fileName, SModelUID modelUID, ModelOwner owner) {
+  public static SModelDescriptor createModel(IModelRootManager manager, ModelRoot root, String fileName, SModelUID modelUID, ModelOwner owner) {
     LOG.debug("create model uid=\"" + modelUID + "\" file=\"" + fileName + "\" owner: " + owner);
 
     SModelRepository modelRepository = SModelRepository.getInstance();
@@ -141,7 +141,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       LOG.error("Couldn't create new model \"" + modelUID + "\" because such model exists");
     }
 
-    SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(manager, new File(fileName), modelUID);
+    SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(manager, root, new File(fileName), modelUID);
     modelRepository.registerModelDescriptor(modelDescriptor, owner);
     modelRepository.markChanged(modelDescriptor, true);
     SModelsMulticaster.getInstance().fireModelCreatedEvent(modelDescriptor);

@@ -3,6 +3,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.projectLanguage.ModelRoot;
 
 import java.util.Set;
 import java.io.File;
@@ -12,7 +13,6 @@ import java.io.File;
  * Date: Apr 3, 2005
  */
 public interface SModelDescriptor {
-
   Set<RootDescriptor> getRoots();
   Set<RootDescriptor> getRoots(String concept);
 
@@ -43,6 +43,8 @@ public interface SModelDescriptor {
 
   File getModelFile();
 
+  ModelRoot getModelRoot();
+
   Set<SReference> findUsages(SNode node);
   Set<ConceptDeclaration> findDescendants(ConceptDeclaration node, Set<ConceptDeclaration> descendantsKnownInModel);
   Set<SNode> findInstances(ConceptDeclaration concept, IScope scope);
@@ -50,7 +52,6 @@ public interface SModelDescriptor {
   long timestamp();
   long lastStructuralChange();
   long lastChange();
-
 
   //dramatical event counter
   long structuralState();

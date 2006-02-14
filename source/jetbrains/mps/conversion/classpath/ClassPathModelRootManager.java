@@ -21,10 +21,10 @@ public class ClassPathModelRootManager extends AbstractModelRootManager  {
   public Set<SModelDescriptor> read(ModelRoot root, ModelOwner owner) {
     try {
       myOwner = owner;
-      myConverter = ConverterFactory.createClassPathConverter(this, myOwner);
+      myConverter = ConverterFactory.createClassPathConverter(this, root, myOwner);
 
       Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
-      addPackageModelDescriptors(result, root.getPrefix());
+      addPackageModelDescriptors(result, root, root.getPrefix());
       return result;
     } finally {
       myOwner = null;
@@ -64,7 +64,7 @@ public class ClassPathModelRootManager extends AbstractModelRootManager  {
     return manager.getMPSClassLoader().getClassPathItem();
   }
 
-  private void addPackageModelDescriptors(Set<SModelDescriptor> descriptors, String pack) {
+  private void addPackageModelDescriptors(Set<SModelDescriptor> descriptors, ModelRoot root, String pack) {
     Set<String> subpackages = getClassPathItem().getSubpackages(pack);
 
     for (String subpackage : subpackages) {
@@ -74,12 +74,12 @@ public class ClassPathModelRootManager extends AbstractModelRootManager  {
         SModelRepository.getInstance().addOwnerForDescriptor(descriptor, myOwner);
         descriptors.add(descriptor);
       } else {
-        SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(this, null, modelUID);
+        SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(this, root, null, modelUID);
         SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, myOwner);
         descriptors.add(modelDescriptor);
       }
 
-      addPackageModelDescriptors(descriptors, subpackage);
+      addPackageModelDescriptors(descriptors, root, subpackage);
     }
   }
 }

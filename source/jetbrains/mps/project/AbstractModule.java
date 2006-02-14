@@ -272,28 +272,6 @@ public abstract class AbstractModule implements IModule {
     return manager.createNewModel(root, uid, this);
   }
 
-  /**
-   * @deprecated Use createModel(SModelUID uid, ModelRoot root) instead
-   */
-  public SModelDescriptor createModel(SModelUID uid, String path, String pathPrefix) {
-    if (pathPrefix == null) pathPrefix = "";
-    if (pathPrefix.length() > 0 && !uid.getLongName().startsWith(pathPrefix)) {
-      LOG.error("Model uid \"" + uid + "\" doesn't match name prefix \"" + pathPrefix + "\"");
-    }
-
-    String filenameSuffix = uid.getLongName().substring(pathPrefix.length());
-    if (uid.hasStereotype()) {
-      filenameSuffix = filenameSuffix + '@' + uid.getStereotype();
-    }
-
-    File modelFile = new File(path, filenameSuffix.replace('.', File.separatorChar) + ".mps");
-    try {
-      return DefaultModelRootManager.createModel(new DefaultModelRootManager(), modelFile.getCanonicalPath(), uid, this);
-    } catch (IOException e) {
-      throw new RuntimeException("Couldn't create new model \"" + uid + "\"", e);
-    }
-  }
-
   public List<SModelDescriptor> getModelDescriptors() {
     Set<SModelDescriptor> modelDescriptors = new HashSet<SModelDescriptor>(getOwnModelDescriptors());
     for (IModule module : getAllDependOnModules(IModule.class)) {

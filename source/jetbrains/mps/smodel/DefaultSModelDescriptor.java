@@ -7,6 +7,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.projectLanguage.ModelRoot;
 
 import java.io.File;
 import java.util.*;
@@ -27,12 +28,14 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   private long myLastStructuralChange = System.currentTimeMillis();
   private long myLastChange = System.currentTimeMillis();
   private File myModelFile;
+  private ModelRoot myModelRoot;
 
   private IModelRootManager myModelRootManager;
   private boolean myTransient;
 
 
-  public DefaultSModelDescriptor(IModelRootManager manager, File modelFile, SModelUID modelUID) {
+  public DefaultSModelDescriptor(IModelRootManager manager, ModelRoot root, File modelFile, SModelUID modelUID) {
+    myModelRoot = root;
     myModelUID = modelUID;
     myModelRootManager = manager;
     myModelFile = modelFile;
@@ -106,6 +109,10 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   public File getModelFile() {
     return myModelFile;
+  }
+
+  public ModelRoot getModelRoot() {
+    return myModelRoot;
   }
 
   public long timestamp() {
