@@ -3,6 +3,7 @@ package jetbrains.mps.ide.actions.model;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.action.MPSAction;
