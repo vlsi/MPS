@@ -5,8 +5,10 @@ import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.util.FileUtil;
 
 import java.util.*;
+import java.io.File;
 
 /**
  * Author: Sergey Dmitriev
@@ -33,6 +35,19 @@ public class SModelRepository extends SModelAdapter {
     for (SModelDescriptor m : new LinkedList<SModelDescriptor>(myUIDToModelDescriptorMap.values())) {
       m.refresh();
     }
+  }
+
+  public SModelDescriptor findModel(File modelFile) {
+    String canonicalPath = FileUtil.getCanonicalPath(modelFile);
+
+    for (SModelDescriptor model : getAllModelDescriptors()) {
+      if (model.getModelFile() == null) continue;
+
+      String modelCanonicalPath = FileUtil.getCanonicalPath(model.getModelFile());
+      if (canonicalPath.equals(modelCanonicalPath)) return model;
+    }
+
+    return null;
   }
 
   public void addRepositoryListener(RepositoryListener l) {
@@ -291,7 +306,7 @@ public class SModelRepository extends SModelAdapter {
 
   public void saveAll() {
     List<SModelDescriptor> descriptors = new LinkedList(myChangedModels.keySet());
-    for (SModelDescriptor modelDescriptor : descriptors) {      
+    for (SModelDescriptor modelDescriptor : descriptors) {
       try {
         modelDescriptor.save();
       } catch (Throwable t) {
