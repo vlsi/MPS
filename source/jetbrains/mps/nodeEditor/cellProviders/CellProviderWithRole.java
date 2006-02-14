@@ -17,9 +17,19 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
      super(node);
    }
 
-   public abstract void setRole(Object role);
-
-   public void setNoTargetText(String text) {
+  //sets a text to show in a cell if no target can be obtained by role
+  public void setNoTargetText(String text) {
      myNoTargetText = text;
    }
+
+  //sets a role object for this provider
+  public abstract void setRole(Object role);
+
+  //gets an attribute for this provider's node hanging on this provider's role
+  public abstract SNode getRoleAttribute();
+
+  // gets a kind of attributes possibly hanging on this provider's role.
+  // Be careful - it is by no means an exact class of result of getRoleAttribute().
+  public abstract Class getRoleAttributeClass();
+
 }

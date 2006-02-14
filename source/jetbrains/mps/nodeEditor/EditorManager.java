@@ -26,8 +26,9 @@ public class EditorManager {
 
   private HashMap<SNode, EditorCell> myMap = new HashMap<SNode, EditorCell>();
   private boolean myCreatingInspectedCell = false;
-  private Stack<EditorCell> myAttributedPropertyCellsStack = new Stack<EditorCell>();
-  private Stack<EditorCell> myAttributedLinkCellsStack = new Stack<EditorCell>();
+
+  private Map<Class, Stack<EditorCell>> myAttributedClassesToAttributedCellStacksMap = new HashMap<Class, Stack<EditorCell>>();
+
   private Stack<AttributeConcept> myAttributesStack = new Stack<AttributeConcept>();
 
   public static EditorManager getInstanceFromContext(IOperationContext operationContext) {
@@ -72,29 +73,46 @@ public class EditorManager {
 
   //creating a cell for attributed property
   public EditorCell createPropertyAttributeCell(EditorContext context, PropertyAttributeConcept propertyAttribute, EditorCell propertyCell) {
-    myAttributedPropertyCellsStack.push(propertyCell);
-    EditorCell result = createEditorCell(context, propertyAttribute, null);
-    EditorCell propertyCellPopped = myAttributedPropertyCellsStack.pop();
-    LOG.assertLog(propertyCellPopped == propertyCell);
-    return result;
+    return createRoleAttributeCell(context, propertyAttribute, PropertyAttributeConcept.class, propertyCell);
   }
 
   //creating a cell for attributed link
   public EditorCell createLinkAttributeCell(EditorContext context, LinkAttributeConcept linkAttribute, EditorCell refCell) {
-    myAttributedLinkCellsStack.push(refCell);
-    EditorCell result = createEditorCell(context, linkAttribute, null);
-    EditorCell refCellPopped = myAttributedLinkCellsStack.pop();
-    LOG.assertLog(refCellPopped == refCell);
-    return result;
+    return createRoleAttributeCell(context, linkAttribute, LinkAttributeConcept.class, refCell);
   }
 
   public EditorCell getCurrentAttributedPropertyCell() {
-    return myAttributedPropertyCellsStack.empty() ? null : myAttributedPropertyCellsStack.peek();
+    return getCurrentAttributedCellWithRole(PropertyAttributeConcept.class);
   }
 
   public EditorCell getCurrentAttributedLinkCell() {
-    return myAttributedLinkCellsStack.empty() ? null : myAttributedLinkCellsStack.peek();
+    return getCurrentAttributedCellWithRole(LinkAttributeConcept.class);
   }
+
+  // use parameter attributeClass carefully, it is a "kind" of an attribute rather than an exact class of an attribute
+  public EditorCell createRoleAttributeCell(EditorContext context, SNode roleAttribute, Class attributeClass, EditorCell cellWithRole) {
+    Stack<EditorCell> stack = myAttributedClassesToAttributedCellStacksMap.get(attributeClass);
+    if (stack == null) {
+      stack = new Stack<EditorCell>();
+      myAttributedClassesToAttributedCellStacksMap.put(attributeClass, stack);
+    }
+    stack.push(cellWithRole);
+    EditorCell result = createEditorCell(context, roleAttribute, null);
+    EditorCell cellWithRolePopped = stack.pop();
+    LOG.assertLog(cellWithRolePopped == cellWithRole);
+    return result;
+  }
+
+
+  public EditorCell getCurrentAttributedCellWithRole(Class attributeClass) {
+    Stack<EditorCell> stack = myAttributedClassesToAttributedCellStacksMap.get(attributeClass);
+    if (stack == null) {
+      stack = new Stack<EditorCell>();
+      myAttributedClassesToAttributedCellStacksMap.put(attributeClass, stack);
+    }
+    return stack.isEmpty() ? null : stack.peek();
+  }
+
 
   /*package*/ EditorCell createEditorCell(EditorContext context, SNode node, List<SModelEvent> events) {
     AttributeConcept attribute = node.getAttribute();
