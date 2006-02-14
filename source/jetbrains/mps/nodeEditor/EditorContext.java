@@ -87,8 +87,9 @@ public class EditorContext {
             if (!(collection instanceof EditorCell_Collection)) continue;
             ((EditorCell_Collection)collection).enableBraces();
           }
-          if (cellToSelect != null) {
-            cellToSelect.setCaretX(memento.caretX.intValue());
+          EditorCell deepestSelectedCell = myNodeEditorComponent.getDeepestSelectedCell();
+          if (deepestSelectedCell != null) {
+            deepestSelectedCell.setCaretX(memento.caretX.intValue());
           } else {
             LOG.error("ERROR EditorContext: coudn't find cell at: " + memento.selectionPosition);
           }
@@ -119,14 +120,15 @@ public class EditorContext {
     public Memento(EditorContext context) {
       nodeEditor = context.getNodeEditorComponent();
       EditorCell selectedCell = nodeEditor.getSelectedCell();
+      EditorCell deepestSelectedCell = nodeEditor.getDeepestSelectedCell();
       if (selectedCell != null) {
         selectionPosition = new Point(selectedCell.getX(), selectedCell.getY());
-        caretX = new Integer(selectedCell.getCaretX());
+        caretX = new Integer(deepestSelectedCell.getCaretX());
         cellInfo = selectedCell.getCellInfo();
+        selectedStack = nodeEditor.getSelectedStackForMemento();
+        EditorCell rootCell = nodeEditor.getRootCell();
+        if (rootCell instanceof EditorCell_Collection) fillBracesInfo((EditorCell_Collection) rootCell);
       }
-      selectedStack = nodeEditor.getSelectedStackForMemento();
-      EditorCell rootCell = nodeEditor.getRootCell();
-      if (rootCell instanceof EditorCell_Collection) fillBracesInfo((EditorCell_Collection) rootCell);
     }
 
     private void fillBracesInfo(EditorCell_Collection cell) {
