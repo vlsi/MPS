@@ -2,6 +2,7 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.AbstractProjectFrame;
 
 import java.awt.*;
 
@@ -14,6 +15,6 @@ import java.awt.*;
  */
 public abstract class StandaloneMPSContext implements IOperationContext {
   public Frame getMainFrame() {
-    return getComponent(IDEProjectFrame.class).getMainFrame();
+    return getComponent(AbstractProjectFrame.class).getMainFrame();
   }
 }
