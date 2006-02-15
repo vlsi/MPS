@@ -930,7 +930,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private void processMousePressed(MouseEvent mouseEvent) {
     requestFocus();
-    processCoordSelection(mouseEvent, true);
+    processCoordSelection(mouseEvent);
 
     if (mouseEvent.isControlDown()) {
       if (getSelectedCell() != null) {
@@ -953,12 +953,16 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
   }
 
-  private void processCoordSelection(MouseEvent mouseEvent, boolean isPrevious) {
-    EditorCell newSelectedCell = myRootCell.findNearestCell(mouseEvent.getX(), mouseEvent.getY(), isPrevious);
+  private void processCoordSelection(MouseEvent mouseEvent) {
     if (mouseEvent.getButton() != MouseEvent.BUTTON1) return;
-    if (newSelectedCell != null) {
+    EditorCell newSelectedCell = myRootCell.findCell(mouseEvent.getX(), mouseEvent.getY());
+    if (newSelectedCell == null || !newSelectedCell.isSelectable()) {
+      newSelectedCell = myRootCell.findNearestCell(mouseEvent.getX(), mouseEvent.getY(), true);   //todo: is it necessary?
+    }
+    if (newSelectedCell != null && newSelectedCell.isSelectable()) {
       changeSelection(newSelectedCell);
       mySelectedCell.processMousePressed(mouseEvent);
+      relayout();
     }
   }
 

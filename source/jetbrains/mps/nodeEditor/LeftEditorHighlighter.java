@@ -21,11 +21,12 @@ public class LeftEditorHighlighter {
   private AbstractEditorComponent myEditorComponent;
   private int myWidth = 10;
 
-  private WeakHashMap<CellInfo, HighlighterBracket> myBrackets = new WeakHashMap<CellInfo, HighlighterBracket>();
+  private HashMap<CellInfo, HighlighterBracket> myBrackets = new HashMap<CellInfo, HighlighterBracket>();
 
   private List<BracketEdge> myBracketEdges = new ArrayList<BracketEdge>();
   private Stack<HighlighterBracket> myBracketsLayoutStack = new Stack<HighlighterBracket>();
   private int myCurrentBracketsWidth = BRACKETS_WIDTH;
+  private Set<HighlighterBracket> myUnresolvedBrackets = new HashSet<HighlighterBracket>();
 
 
   public LeftEditorHighlighter(AbstractEditorComponent abstractEditorComponent) {
@@ -58,6 +59,7 @@ public class LeftEditorHighlighter {
       bracket.relayout();
        bracket.setX(myWidth);
     }
+    deleteUnresolvedBrackets(); 
     myBracketEdges.clear();
     myBracketsLayoutStack.clear();
     // from top to bottom
@@ -110,6 +112,16 @@ public class LeftEditorHighlighter {
     return Math.min(BRACKETS_WIDTH, myCurrentBracketsWidth);
   }
 
+  private void deleteUnresolvedBrackets() {
+    for (HighlighterBracket bracket : myUnresolvedBrackets) {
+      myBrackets.remove(bracket.myEditorCellInfo);
+    }
+    myUnresolvedBrackets.clear();
+  }
+
+
+
+
   private class HighlighterBracket {
 
     private BracketEdge myEdge1 = new BracketEdge(0, true, this);
@@ -147,6 +159,8 @@ public class LeftEditorHighlighter {
       if (cell != null) {
         setY1(cell.getY());
         setY2(cell.getY() + cell.getHeight());
+      } else {
+        LeftEditorHighlighter.this.myUnresolvedBrackets.add(this);
       }
     }
 
