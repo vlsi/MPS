@@ -103,8 +103,12 @@ public class CellLayout_Vertical extends AbstractCellLayout {
         width += closingBrace.getWidth();
         closingBrace.setX(x + width);
       } else {
-        width = Math.max(width, lastCellWidth + closingBrace.getWidth());
-        closingBrace.setX(x + lastCellWidth);
+        EditorCell lastCell = editorCells.lastContentCell();
+        while (lastCell instanceof EditorCell_Collection) {
+          lastCell = ((EditorCell_Collection)lastCell).lastCell();
+        }
+        closingBrace.setX(lastCell.getX() + lastCell.getWidth()/*x + lastCellWidth*/);
+        width = Math.max(width, closingBrace.getX() + closingBrace.getWidth());
       }
       width += openingBrace.getWidth();
     }

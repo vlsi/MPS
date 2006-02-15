@@ -682,17 +682,16 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void doRelayout() {
-    myLeftHighlighter.relayoutWidth();
-    myShiftX = Math.max(myLeftHighlighter.getWidth(), MIN_SHIFT_X);
     myRootCell.setX(myShiftX);
     myRootCell.setY(myShiftY);
     myRootCell.relayout();
-    myLeftHighlighter.relayoutHeight();
+    myLeftHighlighter.setWidth(myShiftX);
+    myLeftHighlighter.relayout();
   }
 
 
-  public void leftHighlightCell(EditorCell cell) {
-    myLeftHighlighter.highlight(cell, Color.GREEN);
+  public void leftHighlightCell(EditorCell cell, Color c) {
+    myLeftHighlighter.highlight(cell, c);
   }
 
   public void leftUnhighlightCell(EditorCell cell) {
