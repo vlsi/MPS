@@ -43,6 +43,10 @@ public abstract class EditorCellAction {
   public static final String MK_LINK_COMMENT = "MK_LINK_COMMENT";
 
 
+  public String getDescriptionText() {
+    return "no description : " + this.getClass().getName();
+  }
+
   public abstract boolean canExecute(EditorContext context);
 
   public abstract void execute(EditorContext context);

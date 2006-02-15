@@ -121,4 +121,21 @@ public class NameUtil {
     String s1 = s.replace('\\', File.separatorChar);
     return s1.replace("\\", "\\\\");
   }
+
+  public static String toValidIdentifier(String s) {
+    if (s.matches("[a-zA-Z[_]][a-zA-Z0-9[_]]*")) return s;
+    StringBuffer sb = new StringBuffer();
+    for (int i = 0; i < s.length(); i++) {
+      char c = s.charAt(i);
+      if (i == 0 && Character.isDigit(c)) {
+        sb.append('_');
+      }
+      if (c == '_' || Character.isLetterOrDigit(c)) {
+        sb.append(c);
+      } else {
+        sb.append('_');
+      }
+    }
+    return sb.toString();
+  }
 }
