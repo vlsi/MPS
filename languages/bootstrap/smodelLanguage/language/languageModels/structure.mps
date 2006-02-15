@@ -261,5 +261,27 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1138763350436" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1140029532506">
+    <property name="name" value="SLinkListInsertChildFirstOperation" />
+    <link role="extends" targetNodeId="1138411891628" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1140029532507">
+      <property name="sourceCardinality" value="1" />
+      <property name="targetCardinality" value="1" />
+      <property name="role" value="parameter" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="2.1068431790191" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1140029532508">
+      <property name="value" value="insert first" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1140029532509">
+      <property name="value" value="insert child at first position" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1140029532510">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763350436" />
+    </node>
+  </node>
 </model>
 

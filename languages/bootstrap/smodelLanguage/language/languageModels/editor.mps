@@ -327,5 +327,24 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1140029629081">
+    <link role="conceptDeclaration" targetNodeId="1.1140029532506" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1140029629082">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1140029629083">
+        <property name="text" value="insert first (" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1140029629084">
+        <property name="drawBorder" value="false" />
+        <link role="linkDeclaration" targetNodeId="1.1139870362308" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1140029629085">
+        <property name="editable" value="true" />
+        <property name="text" value=")" />
+        <property name="drawBorder" value="false" />
+      </node>
+    </node>
+  </node>
 </model>
 
