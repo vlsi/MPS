@@ -390,7 +390,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   }
 
   public IPreferencesPage createPreferencesPage() {
-    return new ProjectPathsDialog(getComponent(IDEProjectFrame.class), this, new ProjectOperationContext(this)).createPreferencesPage();
+    return new ProjectPathsDialog(getComponent(AbstractProjectFrame.class), this, new ProjectOperationContext(this)).createPreferencesPage();
   }
 
   private class ProjectEventTranslator extends CommandEventTranslator {
