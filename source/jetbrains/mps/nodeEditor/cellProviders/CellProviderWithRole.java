@@ -1,6 +1,8 @@
 package jetbrains.mps.nodeEditor.cellProviders;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.INodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 
 /**
@@ -11,11 +13,16 @@ import jetbrains.mps.smodel.SNode;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class CellProviderWithRole extends AbstractCellProvider {
-   protected String myNoTargetText;
+  protected String myNoTargetText;
+  protected EditorContext myEditorContext;
 
-   public CellProviderWithRole(SNode node) {
-     super(node);
-   }
+  // if the cell to provide is read-only
+  protected boolean myReadOnly = false;
+
+  public CellProviderWithRole(SNode node, EditorContext context) {
+    super(node);
+    myEditorContext = context;
+  }
 
   //sets a text to show in a cell if no target can be obtained by role
   public void setNoTargetText(String text) {
@@ -32,4 +39,14 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
   // Be careful - it is by no means an exact class of the result of getRoleAttribute().
   public abstract Class getRoleAttributeClass();
 
+
+  public void setReadOnly(boolean readOnly) {
+    myReadOnly = readOnly;
+  }
+
+  public boolean isReadOnly() {
+    return myReadOnly;
+  }
+
+  public abstract INodeSubstituteInfo createDefaultSubstituteInfo();
 }
