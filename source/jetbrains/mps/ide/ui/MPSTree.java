@@ -230,10 +230,13 @@ public abstract class MPSTree extends JTree {
     return new ActionContext(node.getOperationContext());
   }
 
+  protected JPopupMenu createDefaultPopupMenu() {
+    return null;
+  }
+
   private void showPopup(MouseEvent e) {
     TreePath path = getPathForLocation(e.getX(), e.getY());
-    if (path == null) return;
-    if (path.getLastPathComponent() instanceof MPSTreeNode) {
+    if (path != null && path.getLastPathComponent() instanceof MPSTreeNode) {
       MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
       JPopupMenu menu = node.getPopupMenu();
       if (menu == null) return;
@@ -241,7 +244,12 @@ public abstract class MPSTree extends JTree {
         setSelectionPath(path);
       }
       menu.show(this, e.getX(), e.getY());
+      return;
     }
+
+    JPopupMenu defaultMenu = createDefaultPopupMenu();
+    if (defaultMenu == null) return;
+    defaultMenu.show(this, e.getX(), e.getY());
   }
 
   protected abstract MPSTreeNode rebuild();

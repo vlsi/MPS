@@ -70,7 +70,12 @@ public class Solution extends AbstractModule {
   public static Solution newInstance(File descriptorFile, MPSModuleOwner moduleOwner) {
     Solution solution = new Solution();
     SModel model = ProjectModels.createDescriptorFor(solution).getSModel();
-    SolutionDescriptor solutionDescriptor = PersistenceUtil.loadSolutionDescriptor(descriptorFile, model);
+    SolutionDescriptor solutionDescriptor;
+    if (descriptorFile.exists()) {
+      solutionDescriptor = PersistenceUtil.loadSolutionDescriptor(descriptorFile, model);
+    } else {
+      solutionDescriptor = SolutionDescriptor.newInstance(model);
+    }
     solution.mySolutionDescriptor = solutionDescriptor;
     solution.myDescriptorFile = descriptorFile;
     MPSModuleRepository.getInstance().addModule(solution, moduleOwner);
