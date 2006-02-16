@@ -17,6 +17,14 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
   protected String myNoTargetText;
   protected EditorContext myEditorContext;
 
+  // if the cell to provide "allows" "empty" target of its relation.
+  // The exact meaning of what is "empty" and what is "to allow"
+  // may differ among different inheritors of this class.
+  //
+  // Default value is false.
+  protected boolean myAllowsEmptyTarget = false;
+
+
   // if the cell to provide is read-only
   protected boolean myReadOnly = false;
 
@@ -27,21 +35,27 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
     myEditorContext = context;
   }
 
-  //sets a text to show in a cell if no target can be obtained by role
-  public void setNoTargetText(String text) {
-     myNoTargetText = text;
-   }
-
   //sets a role object for this provider
   public abstract void setRole(Object role);
 
-  //gets an attribute for this provider's node hanging on this provider's role
+//gets an attribute for this provider's node hanging on this provider's role
+
   public abstract SNode getRoleAttribute();
 
-  // gets a kind of attributes possibly hanging on this provider's role.
-  // Be careful - it is by no means an exact class of the result of getRoleAttribute().
+// gets a kind of attributes possibly hanging on this provider's role.
+
+// Be careful - it is by no means an exact class of the result of getRoleAttribute().
+
   public abstract Class getRoleAttributeClass();
 
+
+  public abstract INodeSubstituteInfo createDefaultSubstituteInfo();
+
+
+  //sets a text to show in a cell if no target can be obtained by role
+  public void setNoTargetText(String text) {
+    myNoTargetText = text;
+  }
 
   public void setReadOnly(boolean readOnly) {
     myReadOnly = readOnly;
@@ -51,10 +65,18 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
     return myReadOnly;
   }
 
-  public abstract INodeSubstituteInfo createDefaultSubstituteInfo();
+  public boolean allowsEmptyTarget() {
+    return myAllowsEmptyTarget;
+  }
+
+  public void setAllowsEmptyTarget(boolean allowsEmptyTarget) {
+    myAllowsEmptyTarget = allowsEmptyTarget;
+  }
 
   // important: create such a method in every descendant of this class, it will be invoked via reflection
   public static String getRoleByRelationDeclaration(BaseConcept relationDeclaration) {
     return null;
   }
+
+
 }
