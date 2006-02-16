@@ -21,7 +21,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1116535104470">
           <property name="defaultText" value="&lt;no name&gt;" />
           <property name="drawBorder" value="false" />
-          <link role="propertyDeclaration" targetNodeId="2.1078489098626" />
+          <link role="relationDeclaration" targetNodeId="2.1078489098626" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1116535127706">
@@ -67,12 +67,12 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1116535431541">
           <property name="defaultText" value="&lt;no code&gt;" />
           <property name="drawBorder" value="false" />
-          <link role="propertyDeclaration" targetNodeId="1.1116534988614" />
+          <link role="relationDeclaration" targetNodeId="1.1116534988614" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1116535474183">
           <property name="defaultText" value="&lt;no target class&gt;" />
           <property name="drawBorder" value="false" />
-          <link role="propertyDeclaration" targetNodeId="1.1116534997224" />
+          <link role="relationDeclaration" targetNodeId="1.1116534997224" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1116535566607">
@@ -107,7 +107,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1116535854212">
         <property name="defaultText" value="?start?" />
         <property name="drawBorder" value="false" />
-        <link role="propertyDeclaration" targetNodeId="1.1116535027491" />
+        <link role="relationDeclaration" targetNodeId="1.1116535027491" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1116535874417">
         <property name="text" value="-" />
@@ -117,7 +117,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1116535883950">
         <property name="defaultText" value="?end?" />
         <property name="drawBorder" value="false" />
-        <link role="propertyDeclaration" targetNodeId="1.1116535032695" />
+        <link role="relationDeclaration" targetNodeId="1.1116535032695" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1116535914749">
         <property name="text" value=":" />
@@ -127,7 +127,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1116535940767">
         <property name="defaultText" value="&lt;no name&gt;" />
         <property name="drawBorder" value="false" />
-        <link role="propertyDeclaration" targetNodeId="2.1078489098626" />
+        <link role="relationDeclaration" targetNodeId="2.1078489098626" />
       </node>
     </node>
   </node>

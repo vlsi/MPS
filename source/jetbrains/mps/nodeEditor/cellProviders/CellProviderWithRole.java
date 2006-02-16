@@ -4,6 +4,7 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.core.BaseConcept;
 
 /**
  * Created by IntelliJ IDEA.
@@ -19,6 +20,8 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
   // if the cell to provide is read-only
   protected boolean myReadOnly = false;
 
+
+  //it is important for descendants to have a unique constructor and with the same parameters as this one 
   public CellProviderWithRole(SNode node, EditorContext context) {
     super(node);
     myEditorContext = context;
@@ -49,4 +52,9 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
   }
 
   public abstract INodeSubstituteInfo createDefaultSubstituteInfo();
+
+  // important: create such a method in every descendant of this class, it will be invoked via reflection
+  public static String getRoleByRelationDeclaration(BaseConcept relationDeclaration) {
+    return null;
+  }
 }

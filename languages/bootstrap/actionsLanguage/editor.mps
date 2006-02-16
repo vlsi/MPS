@@ -18,7 +18,7 @@
         <property name="textFgColor" value="DARK_MAGENTA" />
         <property name="fontStyle" value="BOLD" />
         <property name="drawBorder" value="false" />
-        <link role="propertyDeclaration" targetNodeId="1.1112058233058" />
+        <link role="relationDeclaration" targetNodeId="1.1112058233058" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1112058427769">
         <property name="text" value="-&gt;" />
@@ -34,7 +34,7 @@
             <property name="defaultText" value="&lt;no name&gt;" />
             <property name="drawBorder" value="false" />
             <property name="readOnly" value="true" />
-            <link role="propertyDeclaration" targetNodeId="3.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="3.1078489098626" />
           </node>
         </node>
       </node>
@@ -106,7 +106,7 @@
             <property name="defaultText" value="&lt;no name&gt;" />
             <property name="drawBorder" value="false" />
             <property name="readOnly" value="true" />
-            <link role="propertyDeclaration" targetNodeId="3.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="3.1078489098626" />
           </node>
         </node>
       </node>

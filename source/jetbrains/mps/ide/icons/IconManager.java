@@ -64,7 +64,7 @@ public class IconManager {
   public static Icon getIconForConceptFQName(String conceptFQName) {
     Class cls;
     try {
-      cls = Class.forName(conceptFQName);
+      cls = Class.forName(conceptFQName, true, ClassLoaderManager.getInstance().getClassLoader());
     } catch (ClassNotFoundException e) {
       return Icons.DEFAULT_ICON;
     }

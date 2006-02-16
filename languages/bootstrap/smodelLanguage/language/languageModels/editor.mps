@@ -18,7 +18,7 @@
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1138412409276">
           <property name="drawBorder" value="false" />
           <property name="readOnly" value="true" />
-          <link role="propertyDeclaration" targetNodeId="2.1078489098626" />
+          <link role="relationDeclaration" targetNodeId="2.1078489098626" />
         </node>
       </node>
     </node>
@@ -55,7 +55,7 @@
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1138412329758">
           <property name="drawBorder" value="false" />
           <property name="readOnly" value="true" />
-          <link role="propertyDeclaration" targetNodeId="3.1071599776563" />
+          <link role="relationDeclaration" targetNodeId="3.1071599776563" />
         </node>
       </node>
     </node>
@@ -71,7 +71,7 @@
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1138412361314">
           <property name="drawBorder" value="false" />
           <property name="readOnly" value="true" />
-          <link role="propertyDeclaration" targetNodeId="3.1071599776563" />
+          <link role="relationDeclaration" targetNodeId="3.1071599776563" />
         </node>
       </node>
     </node>
@@ -101,7 +101,7 @@
             <property name="defaultText" value="&lt;no name&gt;" />
             <property name="drawBorder" value="false" />
             <property name="readOnly" value="true" />
-            <link role="propertyDeclaration" targetNodeId="2.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
           </node>
         </node>
       </node>
@@ -158,7 +158,7 @@
           <property name="fontStyle" value="BOLD" />
           <property name="drawBorder" value="false" />
           <property name="readOnly" value="true" />
-          <link role="propertyDeclaration" targetNodeId="3.1083923523172" />
+          <link role="relationDeclaration" targetNodeId="3.1083923523172" />
         </node>
       </node>
     </node>
@@ -179,7 +179,7 @@
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1139880110906">
           <link role="conceptDeclaration" targetNodeId="3.1071489090640" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1139880110907">
-            <link role="propertyDeclaration" targetNodeId="2.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
           </node>
         </node>
       </node>
@@ -206,7 +206,7 @@
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1139877775153">
           <link role="conceptDeclaration" targetNodeId="3.1071489090640" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1139877785578">
-            <link role="propertyDeclaration" targetNodeId="2.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
           </node>
         </node>
       </node>
@@ -243,7 +243,7 @@
           <link role="conceptDeclaration" targetNodeId="3.1071489090640" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1139621618369">
             <property name="readOnly" value="true" />
-            <link role="propertyDeclaration" targetNodeId="2.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
           </node>
         </node>
       </node>
@@ -270,7 +270,7 @@
           <link role="conceptDeclaration" targetNodeId="3.1071489090640" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1139859127630">
             <property name="readOnly" value="true" />
-            <link role="propertyDeclaration" targetNodeId="2.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
           </node>
         </node>
       </node>
@@ -297,7 +297,7 @@
           <link role="conceptDeclaration" targetNodeId="3.1071489090640" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1139868035542">
             <property name="readOnly" value="true" />
-            <link role="propertyDeclaration" targetNodeId="2.1078489098626" />
+            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
           </node>
         </node>
       </node>
