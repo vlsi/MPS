@@ -35,6 +35,10 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
     myEditorContext = context;
   }
 
+  public EditorContext getEditorContext() {
+    return myEditorContext;
+  }
+
   //sets a role object for this provider
   public abstract void setRole(Object role);
 

@@ -509,7 +509,7 @@
             <property name="name" value="as" />
             <node role="type" type="jetbrains.mps.baseLanguage.ArrayType" id="1127759103490">
               <node role="componentType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1127759103491">
-                <link role="classifier" extResolveInfo="1.[ClassConcept]Boolean" />
+                <link role="classifier" extResolveInfo="1.[Classifier]Boolean" />
               </node>
             </node>
           </node>

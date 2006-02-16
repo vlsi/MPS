@@ -346,5 +346,18 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapDeclaration" id="1140123519849">
+    <property name="name" value="SNodeOperationExpression_Operation_ActionMap" />
+    <link role="applicableConcept" targetNodeId="1.1138055978872" />
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapItem" id="1140123561975">
+      <property name="actionId" value="delete_action_id" />
+      <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_IsApplicableFunction" id="1140123561976">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1140123562103" />
+      </node>
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_ExecuteFunction" id="1140123561977">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1140123562104" />
+      </node>
+    </node>
+  </node>
 </model>
 
