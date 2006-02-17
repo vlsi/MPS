@@ -1503,7 +1503,6 @@
       </node>
       <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ConceptProperty" id="1138060501183">
         <property name="textFgColor" value="DARK_BLUE" />
-        <link role="relationDeclaration" targetNodeId="2.1137473891462" />
         <link role="keyMap" targetNodeId="1119265790350" />
         <link role="propertyDeclaration" targetNodeId="2.1137473891462" />
       </node>
@@ -1549,7 +1548,6 @@
         <property name="editable" value="true" />
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
-        <link role="relationDeclaration" targetNodeId="2.1137473891462" />
         <link role="actionSet" targetNodeId="1138336380216" />
         <link role="keyMap" targetNodeId="1126277582598" />
         <link role="propertyDeclaration" targetNodeId="2.1137473891462" />
@@ -2427,7 +2425,6 @@
       <property name="textFgColor" value="DARK_BLUE" />
       <property name="defaultText" value="&lt;ConceptFunctionParameter with no alias&gt;" />
       <property name="fontStyle" value="ITALIC" />
-      <link role="relationDeclaration" targetNodeId="2.1137473891462" />
       <link role="keyMap" targetNodeId="1081427357000" />
       <link role="propertyDeclaration" targetNodeId="2.1137473891462" />
     </node>
