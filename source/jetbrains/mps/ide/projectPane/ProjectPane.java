@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.IProjectPane;
 import jetbrains.mps.ide.actions.model.DeleteModelAction;
 import jetbrains.mps.ide.actions.nodes.DeleteNodeAction;
 import jetbrains.mps.ide.action.ActionContext;
@@ -29,7 +30,7 @@ import java.util.List;
  * Author: Sergey Dmitriev
  * Created Oct 25, 2003
  */
-public class ProjectPane extends JComponent implements IActionDataProvider, IDEProjectFrame.IProjectPane {
+public class ProjectPane extends JComponent implements IActionDataProvider, IProjectPane {
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);
 
   public static final String PROJECT_PANE_NODE_ACTIONS = "project-pane-node-actions";
@@ -47,7 +48,6 @@ public class ProjectPane extends JComponent implements IActionDataProvider, IDEP
   private MyTree myTree = new MyTree();
   private MPSProject myProject;
   private IDEProjectFrame myIDE;
-  private HeaderWrapper myHeader;
   private boolean myRebuildEnabled = true;
   private IMPSProjectCommandListener myProjectListener = new IMPSProjectCommandListener() {
     public void projectChangedInCommand(MPSProject project) {
@@ -80,8 +80,7 @@ public class ProjectPane extends JComponent implements IActionDataProvider, IDEP
 
     JScrollPane scroller = new JScrollPane(myTree);
     scroller.setBorder(null);
-    myHeader = new HeaderWrapper("Project", scroller);
-    add(myHeader, BorderLayout.CENTER);
+    add(scroller, BorderLayout.CENTER);
     myTree.addKeyListener(new KeyAdapter() {
       public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_F4 && e.getModifiers() == 0) {
@@ -110,7 +109,6 @@ public class ProjectPane extends JComponent implements IActionDataProvider, IDEP
       removeListeners(myProject);
     }
     myProject = project;
-    myHeader.setText("Project - " + FileUtil.getCanonicalPath(myProject.getProjectFile()));
     rebuildTree();
     updateListeners();
   }

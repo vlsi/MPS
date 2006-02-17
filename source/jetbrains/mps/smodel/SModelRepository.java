@@ -26,7 +26,6 @@ public class SModelRepository extends SModelAdapter {
   public SModelRepository() {
   }
 
-
   public static SModelRepository getInstance() {
     return ApplicationComponents.getInstance().getComponent(SModelRepository.class);
   }
@@ -37,8 +36,13 @@ public class SModelRepository extends SModelAdapter {
     }
   }
 
+  public boolean containsModelWithFile(File modelFile) {
+    return findModel(modelFile) != null;
+  }
+
   public SModelDescriptor findModel(File modelFile) {
     String canonicalPath = FileUtil.getCanonicalPath(modelFile);
+
 
     for (SModelDescriptor model : getAllModelDescriptors()) {
       if (model.getModelFile() == null) continue;
