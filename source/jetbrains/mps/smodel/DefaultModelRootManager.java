@@ -145,6 +145,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     modelRepository.registerModelDescriptor(modelDescriptor, owner);
     modelRepository.markChanged(modelDescriptor, true);
     SModelsMulticaster.getInstance().fireModelCreatedEvent(modelDescriptor);
+    modelDescriptor.getSModel();
     return modelDescriptor;
   }
 }
