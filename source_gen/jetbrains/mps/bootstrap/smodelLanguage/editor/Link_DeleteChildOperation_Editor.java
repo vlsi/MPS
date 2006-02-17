@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import java.awt.Color;
 
-public class Node_DeleteOperation_Editor extends DefaultNodeEditor {
+public class Link_DeleteChildOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createConstantCell(context, node, "delete");
@@ -23,7 +23,7 @@ public class Node_DeleteOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1140133705634");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1140129710123");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
