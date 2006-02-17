@@ -3,6 +3,8 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.logging.Logger;
+
 
 /**
  * Created by IntelliJ IDEA.
@@ -12,6 +14,7 @@ import jetbrains.mps.util.EqualUtil;
  * To change this template use File | Settings | File Templates.
  */
 public class CellInfo {
+  public static final Logger LOG = Logger.getLogger(CellInfo.class);
 
   private SNodeProxy myNodeProxy;
   private String myCellId;
@@ -37,6 +40,9 @@ public class CellInfo {
 
 
   private SNode getSNode() {
+    if (myNodeProxy == null) {
+      return null;
+    }
     return myNodeProxy.getNode();
   }
 
