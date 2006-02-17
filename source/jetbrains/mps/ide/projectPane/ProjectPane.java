@@ -2,6 +2,7 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.IProjectPane;
+import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.ide.actions.model.DeleteModelAction;
 import jetbrains.mps.ide.actions.nodes.DeleteNodeAction;
 import jetbrains.mps.ide.action.ActionContext;
@@ -14,6 +15,7 @@ import jetbrains.mps.smodel.event.SModelsAdapter;
 import jetbrains.mps.smodel.event.SModelsMulticaster;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.components.IExternalizableComponent;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -26,11 +28,13 @@ import java.awt.event.KeyEvent;
 import java.util.*;
 import java.util.List;
 
+import org.jdom.Element;
+
 /**
  * Author: Sergey Dmitriev
  * Created Oct 25, 2003
  */
-public class ProjectPane extends JComponent implements IActionDataProvider, IProjectPane {
+public class ProjectPane extends JComponent implements IActionDataProvider, IProjectPane, IExternalizableComponent {
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);
 
   public static final String PROJECT_PANE_NODE_ACTIONS = "project-pane-node-actions";
@@ -455,6 +459,17 @@ public class ProjectPane extends JComponent implements IActionDataProvider, IPro
 
   public JComponent getComponent() {
     return this;
+  }
+
+  //externalization
+  public void read(Element element, MPSProject project) {
+    getTree().fromXML(element.getChild(MPSTree.MPS_TREE));
+    getTree().scrollRectToVisible(ComponentsUtil.elementToRectangle(element.getChild(ComponentsUtil.RECTANGLE)));
+  }
+
+  public void write(Element element, MPSProject project) {
+    element.addContent(getTree().toXML());
+    element.addContent(ComponentsUtil.rectangleToElement(getTree().getVisibleRect()));
   }
 
   private class MyTree extends MPSTree {
