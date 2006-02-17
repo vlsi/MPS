@@ -369,7 +369,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1140143244848">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1140143247163">
               <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_FunctionParm_selectedNode" id="1140143244849" />
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.ReplaceWithAnotherOperation" id="1140143253429">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ReplaceWithAnotherOperation" id="1140143253429">
                 <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1140143258604">
                   <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_FunctionParm_selectedNode" id="1140143256963" />
                   <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1140143262730">
@@ -382,7 +382,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1140143268170">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1140143270828">
               <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_FunctionParm_selectedNode" id="1140143268171" />
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.DeleteNodeOperation" id="1140143275001" />
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_DeleteOperation" id="1140143275001" />
             </node>
           </node>
         </node>
@@ -473,7 +473,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1140139883561">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1140139885751">
               <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_FunctionParm_selectedNode" id="1140139883562" />
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.ReplaceWithAnotherOperation" id="1140139898486">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ReplaceWithAnotherOperation" id="1140139898486">
                 <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1140139907020">
                   <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_FunctionParm_selectedNode" id="1140139905394" />
                   <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1140139909459">
@@ -486,7 +486,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1140139914789">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1140139916322">
               <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_FunctionParm_selectedNode" id="1140139916729" />
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.DeleteNodeOperation" id="1140139922730" />
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_DeleteOperation" id="1140139922730" />
             </node>
           </node>
         </node>

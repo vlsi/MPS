@@ -110,7 +110,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1138661924179">
-    <property name="name" value="SPropertySetOperation" />
+    <property name="name" value="Property_SetOperation" />
     <link role="extends" targetNodeId="1138411891628" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1138662048170">
       <property name="sourceCardinality" value="1" />
@@ -138,7 +138,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1138757581985">
-    <property name="name" value="SLinkSetNewChildOperation" />
+    <property name="name" value="Link_SetNewChildOperation" />
     <link role="extends" targetNodeId="1138411891628" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1139880128956">
       <property name="targetCardinality" value="0..n" />
@@ -158,7 +158,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1139184414036">
-    <property name="name" value="SLinkListAddNewChildOperation" />
+    <property name="name" value="LinkList_AddNewChildOperation" />
     <link role="extends" targetNodeId="1138411891628" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1139877738879">
       <property name="targetCardinality" value="0..n" />
@@ -178,7 +178,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1139613262185">
-    <property name="name" value="GetParentOperation" />
+    <property name="name" value="Node_GetParentOperation" />
     <link role="extends" targetNodeId="1138411891628" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1139613319562">
       <property name="value" value="parent" />
@@ -189,7 +189,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1139621453865">
-    <property name="name" value="IsInstanceOfOperation" />
+    <property name="name" value="Node_IsInstanceOfOperation" />
     <link role="extends" targetNodeId="1138411891628" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1139621517231">
       <property name="sourceCardinality" value="1" />
@@ -206,7 +206,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1139858892567">
-    <property name="name" value="InsertNewNextSiblingOperation" />
+    <property name="name" value="Node_InsertNewNextSiblingOperation" />
     <link role="extends" targetNodeId="1138411891628" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1139858989851">
       <property name="value" value="new next-sibling" />
@@ -223,7 +223,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1139867745658">
-    <property name="name" value="ReplaceWithNewOperation" />
+    <property name="name" value="Node_ReplaceWithNewOperation" />
     <link role="extends" targetNodeId="1138411891628" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1139867979117">
       <property name="value" value="replace with new" />
@@ -240,7 +240,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1139870260207">
-    <property name="name" value="SLinkListAddChildOperation" />
+    <property name="name" value="LinkList_AddChildOperation" />
     <link role="extends" targetNodeId="1138411891628" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1139870362308">
       <property name="sourceCardinality" value="1" />
@@ -262,7 +262,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1140029532506">
-    <property name="name" value="SLinkListInsertChildFirstOperation" />
+    <property name="name" value="LinkList_InsertChildFirstOperation" />
     <link role="extends" targetNodeId="1138411891628" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1140029532507">
       <property name="sourceCardinality" value="1" />
@@ -284,7 +284,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1140129518788">
-    <property name="name" value="DeleteChildOperation" />
+    <property name="name" value="Link_DeleteChildOperation" />
     <link role="extends" targetNodeId="1138411891628" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1140129518790">
       <property name="value" value="delete" />
@@ -299,7 +299,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1140131837776">
-    <property name="name" value="ReplaceWithAnotherOperation" />
+    <property name="name" value="Node_ReplaceWithAnotherOperation" />
     <link role="extends" targetNodeId="1138411891628" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1140131837777">
       <property name="value" value="replace with" />
@@ -317,7 +317,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1140133623887">
-    <property name="name" value="DeleteNodeOperation" />
+    <property name="name" value="Node_DeleteOperation" />
     <link role="extends" targetNodeId="1138411891628" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1140133646408">
       <property name="value" value="delete" />
