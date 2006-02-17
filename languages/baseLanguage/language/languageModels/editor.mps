@@ -1505,6 +1505,7 @@
         <property name="textFgColor" value="DARK_BLUE" />
         <link role="relationDeclaration" targetNodeId="2.1137473891462" />
         <link role="keyMap" targetNodeId="1119265790350" />
+        <link role="propertyDeclaration" targetNodeId="2.1137473891462" />
       </node>
     </node>
   </node>
@@ -1551,6 +1552,7 @@
         <link role="relationDeclaration" targetNodeId="2.1137473891462" />
         <link role="actionSet" targetNodeId="1138336380216" />
         <link role="keyMap" targetNodeId="1126277582598" />
+        <link role="propertyDeclaration" targetNodeId="2.1137473891462" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1138336287361">
         <property name="drawBorder" value="false" />
@@ -2427,6 +2429,7 @@
       <property name="fontStyle" value="ITALIC" />
       <link role="relationDeclaration" targetNodeId="2.1137473891462" />
       <link role="keyMap" targetNodeId="1081427357000" />
+      <link role="propertyDeclaration" targetNodeId="2.1137473891462" />
     </node>
   </node>
 </model>
