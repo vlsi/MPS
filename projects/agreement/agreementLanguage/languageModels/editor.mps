@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model namespace="agreementLanguage">
-  <maxReferenceID value="4" />
+<model name="agreementLanguage.editor">
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
-  <import referenceID="1" name="structure" namespace="agreementLanguage" />
-  <import referenceID="2" name="structure" namespace="jetbrains.mps.core" />
-  <import referenceID="3" name="structure" namespace="jetbrains.mps.formulaLanguage" />
-  <import referenceID="4" name="editor" namespace="jetbrains.mps.formulaLanguage" />
+  <maxImportIndex value="4" />
+  <import index="1" modelUID="agreementLanguage.structure" />
+  <import index="2" modelUID="jetbrains.mps.core.structure" />
+  <import index="3" modelUID="jetbrains.mps.formulaLanguage.structure" />
+  <import index="4" modelUID="jetbrains.mps.formulaLanguage.editor" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1111795517363">
     <link role="conceptDeclaration" targetNodeId="1.1111790951422" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1111795558631">
@@ -204,7 +204,7 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1112030934056">
         <property name="drawBorder" value="false" />
-        <link role="linkDeclaration" targetNodeId="1.1111792372299" />
+        <link role="relationDeclaration" targetNodeId="1.1111792372299" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1112030934057">
         <property name="text" value=": " />
@@ -213,7 +213,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1112030934058">
         <property name="drawBorder" value="false" />
-        <link role="linkDeclaration" targetNodeId="1.1111792541964" />
+        <link role="relationDeclaration" targetNodeId="1.1111792541964" />
       </node>
     </node>
   </node>
@@ -268,7 +268,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1112031160193">
         <property name="drawBorder" value="false" />
-        <link role="linkDeclaration" targetNodeId="1.1111793363741" />
+        <link role="relationDeclaration" targetNodeId="1.1111793363741" />
         <link role="actionSet" targetNodeId="4.1113343547468" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1112031160194">
@@ -345,7 +345,7 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1112033307260">
         <property name="drawBorder" value="false" />
-        <link role="linkDeclaration" targetNodeId="1.1111792372299" />
+        <link role="relationDeclaration" targetNodeId="1.1111792372299" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1112033307261">
         <property name="text" value=": " />
@@ -354,7 +354,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1112033307262">
         <property name="drawBorder" value="false" />
-        <link role="linkDeclaration" targetNodeId="1.1111794782624" />
+        <link role="relationDeclaration" targetNodeId="1.1111794782624" />
       </node>
     </node>
   </node>
@@ -375,7 +375,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1112033531857">
           <property name="drawBorder" value="false" />
-          <link role="linkDeclaration" targetNodeId="3.1111784226798" />
+          <link role="relationDeclaration" targetNodeId="3.1111784226798" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1112033467104">

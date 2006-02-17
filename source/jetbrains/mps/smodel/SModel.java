@@ -111,6 +111,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void addRoot(SNode rootNode) {
+    if (rootNode == null) return;
     LOG.assertLog(rootNode.getModel() == this, "Incorrect node model");
     if (myRoots.contains(rootNode)) return;
     myRoots.add(rootNode);
