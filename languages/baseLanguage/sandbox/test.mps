@@ -242,7 +242,9 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1139527959893">
-          <node role="expression" type="jetbrains.mps.baseLanguage.Expression" id="1139527959941" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1140209018278">
+            <link role="variableDeclaration" targetNodeId="1126142422092" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1127094882893">
           <node role="expression" type="jetbrains.mps.baseLanguage.FieldReference" id="1127098709768">
