@@ -88,6 +88,9 @@ public class SReference {
     myIsResolved = true;
   }
 
+  /*package*/ @Deprecated void setRole(String role) {
+    myRole = role;
+  }
 
 
   public static SReference getUnresolvedExternalReference(String role, SNode sourceNode, SModelDescriptor modelDescriptor, String extResolveInfo) {
