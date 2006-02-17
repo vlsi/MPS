@@ -13,5 +13,11 @@
       <link role="applicableConcept" targetNodeId="1.1111784312737" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActions" id="1140215639502">
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1140215644909">
+      <property name="actionsFactoryAspectId" value="BinaryOperation" />
+      <link role="applicableConcept" targetNodeId="1.1111784312737" />
+    </node>
+  </node>
 </model>
 

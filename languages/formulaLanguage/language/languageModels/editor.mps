@@ -16,7 +16,6 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1111785363258">
       <property name="text" value="?expression?" />
       <property name="drawBorder" value="false" />
-      <link role="actionSet" targetNodeId="1113343547468" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1111785374806">
@@ -47,7 +46,6 @@
       <property name="defaultText" value="?.?" />
       <property name="drawBorder" value="false" />
       <link role="relationDeclaration" targetNodeId="1.1113257000626" />
-      <link role="actionSet" targetNodeId="1113343547468" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1111785637458">
@@ -94,7 +92,6 @@
       <property name="defaultText" value="0" />
       <property name="drawBorder" value="false" />
       <link role="relationDeclaration" targetNodeId="1.1111784874587" />
-      <link role="actionSet" targetNodeId="1113343547468" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1111785846484">
@@ -120,7 +117,6 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1111786358212">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <link role="actionSet" targetNodeId="1113343547468" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1111786394057">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1111784613299" />
@@ -145,7 +141,6 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1111786434640">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <link role="actionSet" targetNodeId="1113343547468" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1111786434641">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1111784613299" />
@@ -170,7 +165,6 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1112037709376">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <link role="actionSet" targetNodeId="1113343547468" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1112037733643">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1111784613299" />
@@ -195,7 +189,6 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1112384339545">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <link role="actionSet" targetNodeId="1113343547468" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1112384339546">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1111784613299" />
@@ -220,7 +213,6 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1112406947629">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <link role="actionSet" targetNodeId="1113343547468" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1112406947630">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1111784613299" />
@@ -238,12 +230,6 @@
         <link role="relationDeclaration" targetNodeId="1.1111784647019" />
         <link role="keyMap" targetNodeId="1113422674388" />
       </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1113343547468">
-    <property name="name" value="_ExpressionRTranformAction" />
-    <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_RightTransform" id="1113343577533">
-      <property name="actionProviderId" value="CreateOperation" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1113345437098">
@@ -299,7 +285,6 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1133956007436">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <link role="actionSet" targetNodeId="1113343547468" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1133956007437">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1111784613299" />
@@ -324,7 +309,6 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1133956020433">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <link role="actionSet" targetNodeId="1113343547468" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1133956020434">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1111784613299" />
@@ -349,7 +333,6 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1134035401245">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <link role="actionSet" targetNodeId="1113343547468" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1134035401246">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1111784613299" />

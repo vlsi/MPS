@@ -269,7 +269,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1112031160193">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1111793363741" />
-        <link role="actionSet" targetNodeId="4.1113343547468" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1112031160194">
         <property name="textFgColor" value="DARK_MAGENTA" />
@@ -277,7 +276,6 @@
         <property name="drawBorder" value="false" />
         <property name="conditionId" value="Quantity_IsNotDollars" />
         <link role="relationDeclaration" targetNodeId="1.1111793358083" />
-        <link role="actionSet" targetNodeId="4.1113343547468" />
       </node>
     </node>
   </node>
@@ -422,7 +420,6 @@
       <property name="drawBorder" value="false" />
       <property name="nullText" value="&lt;no variable&gt;" />
       <link role="linkDeclaration" targetNodeId="1.1112036516483" />
-      <link role="actionSet" targetNodeId="4.1113343547468" />
       <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1112205469227">
         <link role="conceptDeclaration" targetNodeId="1.1111793755198" />
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1112205680401">
@@ -441,7 +438,6 @@
       <property name="drawBorder" value="false" />
       <property name="nullText" value="&lt;no value&gt;" />
       <link role="linkDeclaration" targetNodeId="1.1112038462507" />
-      <link role="actionSet" targetNodeId="4.1113343547468" />
       <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1112205752980">
         <link role="conceptDeclaration" targetNodeId="1.1111791020814" />
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1112205781748">
