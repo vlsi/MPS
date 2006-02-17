@@ -1068,7 +1068,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1105987989392">
         <property name="drawBorder" value="false" />
         <link role="actionSet" targetNodeId="1105986630674" />
-        <link role="linkDeclaration" targetNodeId="1.1105736901241" />
+        <link role="relationDeclaration" targetNodeId="1.1105736901241" />
       </node>
     </node>
   </node>

@@ -16,7 +16,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1136027532771">
         <property name="drawBorder" value="false" />
-        <link role="linkDeclaration" targetNodeId="1.1136027476088" />
+        <link role="relationDeclaration" targetNodeId="1.1136027476088" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1136027532772">
         <property name="text" value=")$" />
