@@ -157,16 +157,6 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1083172476027">
     <property name="name" value="EnumerationDataTypeDeclaration_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1082978164219" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1083173219365">
-      <property name="name" value="MemberDataTypeActions" />
-      <link role="specializes" targetNodeId="1083243818250" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_DeleteReference" id="1083173219366">
-        <link role="linkDeclaration" targetNodeId="1.1083171729157" />
-      </node>
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1083173219367">
-        <property name="substituteHandlerId" value="EnumDataType_SetMemberDataType" />
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1083172476028">
       <property name="drawBorder" value="false" />
       <property name="name" value="nodeBox" />
@@ -208,11 +198,17 @@
             <property name="text" value="member type:" />
             <property name="drawBorder" value="false" />
           </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ModelAccess" id="1083175632066">
-            <property name="modelAccessorId" value="EnumDataType_MemberDataTypeName" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1140221199055">
             <property name="drawBorder" value="false" />
-            <property name="nullText" value="&lt;no data type&gt;" />
-            <link role="actionSet" targetNodeId="1083173219365" />
+            <property name="nullText" value="&lt;no type&gt;" />
+            <link role="linkDeclaration" targetNodeId="1.1083171729157" />
+            <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1140221199054">
+              <link role="conceptDeclaration" targetNodeId="1.1083243159079" />
+              <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1140221206917">
+                <property name="readOnly" value="true" />
+                <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+              </node>
+            </node>
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1083175791950">
@@ -303,9 +299,6 @@
     <link role="conceptDeclaration" targetNodeId="1.1071489288298" />
     <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1084195486320">
       <property name="name" value="SpecializedLink_Actions" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_DeleteReference" id="1084197079391">
-        <link role="linkDeclaration" targetNodeId="1.1071599698500" />
-      </node>
       <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1084195486321">
         <property name="substituteHandlerId" value="LinkDeclaration_SetSpecializedLink" />
         <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1084195486322">
@@ -316,24 +309,24 @@
       </node>
     </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1084189569970">
-      <property name="drawBorder" value="true" />
+      <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1084189569972">
-        <property name="drawBorder" value="true" />
+        <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1071599776563" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1084205682781">
-        <property name="drawBorder" value="true" />
+        <property name="drawBorder" value="false" />
         <property name="conditionId" value="LinkDeclaration_NotSpecializes" />
         <link role="relationDeclaration" targetNodeId="1.1071599937831" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1084205682782">
-        <property name="drawBorder" value="true" />
+        <property name="drawBorder" value="false" />
         <property name="conditionId" value="LinkDeclaration_NotSpecializes" />
         <link role="relationDeclaration" targetNodeId="1.1071599893252" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1084205682783">
-        <property name="drawBorder" value="true" />
+        <property name="drawBorder" value="false" />
         <property name="conditionId" value="LinkDeclaration_NotSpecializes" />
         <link role="relationDeclaration" targetNodeId="1.1071599937832" />
       </node>
@@ -341,29 +334,29 @@
         <property name="editable" value="false" />
         <property name="textBgColor" value="lightGray" />
         <property name="modelAccessorId" value="LinkDeclaration_SpecializedMetaclass" />
-        <property name="drawBorder" value="true" />
+        <property name="drawBorder" value="false" />
         <property name="conditionId" value="LinkDeclaration_Specializes" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ModelAccess" id="1084205682785">
         <property name="editable" value="false" />
         <property name="textBgColor" value="lightGray" />
         <property name="modelAccessorId" value="LinkDeclaration_SpecializedSourceCardinality" />
-        <property name="drawBorder" value="true" />
+        <property name="drawBorder" value="false" />
         <property name="conditionId" value="LinkDeclaration_Specializes" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ModelAccess" id="1084205682786">
         <property name="editable" value="false" />
         <property name="textBgColor" value="lightGray" />
         <property name="modelAccessorId" value="LinkDeclaration_SpecializedTargetCardinality" />
-        <property name="drawBorder" value="true" />
+        <property name="drawBorder" value="false" />
         <property name="conditionId" value="LinkDeclaration_Specializes" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1084192678902">
         <property name="text" value="target:" />
-        <property name="drawBorder" value="true" />
+        <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1096455263454">
-        <property name="drawBorder" value="true" />
+        <property name="drawBorder" value="false" />
         <property name="nullText" value="&lt;no target&gt;" />
         <link role="linkDeclaration" targetNodeId="1.1071599976176" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1096455220328">
@@ -378,13 +371,20 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1084189693806">
         <property name="text" value="specializes:" />
-        <property name="drawBorder" value="true" />
+        <property name="drawBorder" value="false" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ModelAccess" id="1084189693807">
-        <property name="modelAccessorId" value="LinkDeclaration_SpecializedLinkRole" />
-        <property name="drawBorder" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1140221320825">
+        <property name="drawBorder" value="false" />
         <property name="nullText" value="&lt;none&gt;" />
+        <link role="linkDeclaration" targetNodeId="1.1071599698500" />
         <link role="actionSet" targetNodeId="1084195486320" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1140221320824">
+          <link role="conceptDeclaration" targetNodeId="1.1071489288298" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1140221334015">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="1.1071599776563" />
+          </node>
+        </node>
       </node>
     </node>
   </node>
