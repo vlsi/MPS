@@ -5,6 +5,7 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.core.BaseConcept;
 
 import java.awt.event.KeyEvent;
 import java.util.Iterator;

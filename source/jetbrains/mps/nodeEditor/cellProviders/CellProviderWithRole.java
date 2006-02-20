@@ -42,14 +42,11 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
   //sets a role object for this provider
   public abstract void setRole(Object role);
 
-//gets an attribute for this provider's node hanging on this provider's role
-
+  //gets an attribute for this provider's node hanging on this provider's role
   public abstract SNode getRoleAttribute();
 
-// gets a kind of attributes possibly hanging on this provider's role.
-
-// Be careful - it is by no means an exact class of the result of getRoleAttribute().
-
+  // gets a kind of attributes possibly hanging on this provider's role.
+  // Be careful - it is by no means an exact class of the result of getRoleAttribute().
   public abstract Class getRoleAttributeClass();
 
 
