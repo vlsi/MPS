@@ -1502,7 +1502,7 @@
       <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ConceptProperty" id="1138060501183">
         <property name="textFgColor" value="DARK_BLUE" />
         <link role="keyMap" targetNodeId="1119265790350" />
-        <link role="propertyDeclaration" targetNodeId="2.1137473891462" />
+        <link role="relationDeclaration" targetNodeId="2.1137473891462" />
       </node>
     </node>
   </node>
@@ -1548,7 +1548,7 @@
         <property name="selectable" value="true" />
         <link role="actionSet" targetNodeId="1138336380216" />
         <link role="keyMap" targetNodeId="1126277582598" />
-        <link role="propertyDeclaration" targetNodeId="2.1137473891462" />
+        <link role="relationDeclaration" targetNodeId="2.1137473891462" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1138336287361">
         <property name="drawBorder" value="false" />
@@ -2424,7 +2424,7 @@
       <property name="defaultText" value="&lt;ConceptFunctionParameter with no alias&gt;" />
       <property name="fontStyle" value="ITALIC" />
       <link role="keyMap" targetNodeId="1081427357000" />
-      <link role="propertyDeclaration" targetNodeId="2.1137473891462" />
+      <link role="relationDeclaration" targetNodeId="2.1137473891462" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapDeclaration" id="1140226376803">
