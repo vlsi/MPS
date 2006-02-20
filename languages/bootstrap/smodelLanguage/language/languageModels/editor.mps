@@ -13,7 +13,7 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1138412409274">
       <property name="drawBorder" value="false" />
       <property name="nullText" value="&lt;no property&gt;" />
-      <link role="linkDeclaration" targetNodeId="1.1138056395725" />
+      <link role="relationDeclaration" targetNodeId="1.1138056395725" />
       <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1138412409275">
         <link role="conceptDeclaration" targetNodeId="3.1071489288299" />
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1138412409276">
@@ -51,7 +51,7 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1138412329756">
       <property name="drawBorder" value="false" />
       <property name="nullText" value="&lt;no link&gt;" />
-      <link role="linkDeclaration" targetNodeId="1.1138056516764" />
+      <link role="relationDeclaration" targetNodeId="1.1138056516764" />
       <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1138412329757">
         <link role="conceptDeclaration" targetNodeId="3.1071489288298" />
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1138412329758">
@@ -67,7 +67,7 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1138412361312">
       <property name="drawBorder" value="false" />
       <property name="nullText" value="&lt;no link&gt;" />
-      <link role="linkDeclaration" targetNodeId="1.1138056546658" />
+      <link role="relationDeclaration" targetNodeId="1.1138056546658" />
       <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1138412361313">
         <link role="conceptDeclaration" targetNodeId="3.1071489288298" />
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1138412361314">
@@ -96,7 +96,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1138406014241">
         <property name="drawBorder" value="false" />
-        <link role="linkDeclaration" targetNodeId="1.1138405853777" />
+        <link role="relationDeclaration" targetNodeId="1.1138405853777" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1138406014240">
           <link role="conceptDeclaration" targetNodeId="3.1071489090640" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1138406019759">
@@ -147,7 +147,7 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1138676418683">
       <property name="drawBorder" value="false" />
       <property name="nullText" value="&lt;no enum member&gt;" />
-      <link role="linkDeclaration" targetNodeId="1.1138676095763" />
+      <link role="relationDeclaration" targetNodeId="1.1138676095763" />
       <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1138676418699">
         <link role="conceptDeclaration" targetNodeId="3.1083171877298" />
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1138676426764">
@@ -173,7 +173,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1139880110905">
         <property name="drawBorder" value="false" />
         <property name="nullText" value="def" />
-        <link role="linkDeclaration" targetNodeId="1.1139880128956" />
+        <link role="relationDeclaration" targetNodeId="1.1139880128956" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1139880110906">
           <link role="conceptDeclaration" targetNodeId="3.1071489090640" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1139880110907">
@@ -200,7 +200,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1139877775154">
         <property name="drawBorder" value="false" />
         <property name="nullText" value="def" />
-        <link role="linkDeclaration" targetNodeId="1.1139877738879" />
+        <link role="relationDeclaration" targetNodeId="1.1139877738879" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1139877775153">
           <link role="conceptDeclaration" targetNodeId="3.1071489090640" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1139877785578">
@@ -237,7 +237,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1139621610101">
         <property name="drawBorder" value="false" />
         <property name="nullText" value="&lt;no concept&gt;" />
-        <link role="linkDeclaration" targetNodeId="1.1139621517231" />
+        <link role="relationDeclaration" targetNodeId="1.1139621517231" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1139621610100">
           <link role="conceptDeclaration" targetNodeId="3.1071489090640" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1139621618369">
@@ -265,7 +265,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1139859121222">
         <property name="drawBorder" value="false" />
         <property name="nullText" value="&lt;no concept&gt;" />
-        <link role="linkDeclaration" targetNodeId="1.1139858951584" />
+        <link role="relationDeclaration" targetNodeId="1.1139858951584" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1139859121221">
           <link role="conceptDeclaration" targetNodeId="3.1071489090640" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1139859127630">
@@ -293,7 +293,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1139868035540">
         <property name="drawBorder" value="false" />
         <property name="nullText" value="&lt;no concept&gt;" />
-        <link role="linkDeclaration" targetNodeId="1.1139867957129" />
+        <link role="relationDeclaration" targetNodeId="1.1139867957129" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1139868035541">
           <link role="conceptDeclaration" targetNodeId="3.1071489090640" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1139868035542">
@@ -441,7 +441,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1140138237889">
         <property name="drawBorder" value="false" />
         <property name="nullText" value="&lt;no concept&gt;" />
-        <link role="linkDeclaration" targetNodeId="1.1140138128738" />
+        <link role="relationDeclaration" targetNodeId="1.1140138128738" />
         <link role="actionMap" targetNodeId="1140139667693" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1140138237888">
           <link role="conceptDeclaration" targetNodeId="3.1071489090640" />
