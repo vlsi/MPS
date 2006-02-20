@@ -161,10 +161,6 @@ public class SModelRepository extends SModelAdapter {
     }
 
     if (descriptorsToRemove.size() > 0) {
-      List<SModelDescriptor> changedModelsToDelete = new ArrayList<SModelDescriptor>();
-      for (SModelDescriptor descriptor : descriptorsToRemove) {
-        if (myChangedModels.containsKey(descriptor)) changedModelsToDelete.add(descriptor);
-      }
       for (SModelDescriptor descriptor : descriptorsToRemove) {
         removeModelDescriptor(descriptor);
       }
@@ -234,6 +230,8 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public void markChanged(SModelDescriptor descriptor, boolean b) {
+    LOG.assertLog(myModelDescriptors.contains(descriptor));
+
     if (b) {
       myChangedModels.put(descriptor, System.currentTimeMillis());
     } else {
