@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.projectPane;
+package jetbrains.mps.ide.ui.smodel;
 
 import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.smodel.SNode;
@@ -9,6 +9,8 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.AbstractProjectFrame;
+import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
@@ -21,7 +23,7 @@ import java.util.List;
  * Time: 5:20:04 PM
  * To change this template use File | Settings | File Templates.
  */
-class SNodeTreeNode extends MPSTreeNodeEx {
+public class SNodeTreeNode extends MPSTreeNodeEx {
   private boolean myInitialized = false;
   private SNodeProxy myNodeProxy;
   private String myRole;
@@ -38,7 +40,9 @@ class SNodeTreeNode extends MPSTreeNodeEx {
 
   public JPopupMenu getPopupMenu() {
     JPopupMenu result = new JPopupMenu();
-    List<SNode> selection = getOperationContext().getComponent(ProjectPane.class).getNormalizedSelectedNodes();
+    ProjectPane pane = getOperationContext().getComponent(ProjectPane.class);
+    if (pane == null) return null;
+    List<SNode> selection = pane.getNormalizedSelectedNodes();
     ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_NODE_ACTIONS).add(result, new ActionContext(getOperationContext(), getSNode(), selection));
     return result;
   }

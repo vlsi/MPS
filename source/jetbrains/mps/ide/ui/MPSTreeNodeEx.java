@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.projectPane;
+package jetbrains.mps.ide.ui;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SNode;
  * Time: 5:22:56 PM
  * To change this template use File | Settings | File Templates.
  */
-abstract class MPSTreeNodeEx extends MPSTreeNode {
+public abstract class MPSTreeNodeEx extends MPSTreeNode {
   protected MPSTreeNodeEx(IOperationContext operationContext) {
     super(operationContext);
   }

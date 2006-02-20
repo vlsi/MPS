@@ -1,13 +1,15 @@
-package jetbrains.mps.ide.projectPane;
+package jetbrains.mps.ide.ui.smodel;
 
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.AbstractProjectFrame;
+import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.ide.projectPane.SortUtil;
 //import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.MPSTree;
+import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
@@ -26,7 +28,7 @@ import java.util.*;
  * Time: 5:19:27 PM
  * To change this template use File | Settings | File Templates.
  */
-class SModelTreeNode extends MPSTreeNodeEx {
+public class SModelTreeNode extends MPSTreeNodeEx {
   private SModelDescriptor myModelDescriptor;
   private String myLabel;
   private boolean isInitialized = false;
@@ -45,7 +47,9 @@ class SModelTreeNode extends MPSTreeNodeEx {
   public JPopupMenu getPopupMenu() {
     JPopupMenu result = new JPopupMenu();
     SModelDescriptor model = getSModelDescriptor();
-    List<SModelDescriptor> models = getOperationContext().getComponent(ProjectPane.class).getSelectedModels();
+    ProjectPane pane = getOperationContext().getComponent(ProjectPane.class);
+    if (pane == null) return null;
+    List<SModelDescriptor> models = pane.getSelectedModels();
 
     ActionContext context = new ActionContext(getOperationContext());
     context.put(SModelDescriptor.class, model);
@@ -120,17 +124,12 @@ class SModelTreeNode extends MPSTreeNodeEx {
     myModelDescriptor.getSModel().removeSModelCommandListener(myModelListener);
   }
 
-  private MPSTree getTree() {
-    return ((IDEProjectFrame) getOperationContext().getComponent(AbstractProjectFrame.class)).getProjectPane().getTree();
-  }
-
   private class MyModelListener implements SModelCommandListener {
     public MyModelListener() {
     }
 
     public void modelChangedInCommand(final List<SModelEvent> events) {
-      ProjectPane projectPane = getOperationContext().getComponent(ProjectPane.class);
-      projectPane.rebuildTree(new Runnable() {
+      getTree().rebuildTree(new Runnable() {
         public void run() {
           SModelEventVisitor visitor = new SModelEventVisitor() {
             public void visitRootEvent(SModelRootEvent event) {

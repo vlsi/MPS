@@ -8,13 +8,14 @@ import jetbrains.mps.ide.actions.nodes.DeleteNodeAction;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.ide.ui.*;
+import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelsAdapter;
 import jetbrains.mps.smodel.event.SModelsMulticaster;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.components.IExternalizableComponent;
 
 import javax.swing.*;
@@ -184,14 +185,6 @@ public class ProjectPane extends JComponent implements IActionDataProvider, IPro
   public void rebuildTree() {
     if (!myRebuildEnabled) return;
     myTree.rebuildTree();
-    invalidate();
-    validate();
-    repaint();
-  }
-
-  public void rebuildTree(Runnable rebuildAction, boolean saveExpansion) {
-    if (!myRebuildEnabled) return;
-    myTree.runRebuildAction(rebuildAction, saveExpansion);
     invalidate();
     validate();
     repaint();
@@ -406,7 +399,7 @@ public class ProjectPane extends JComponent implements IActionDataProvider, IPro
     return ((SModelTreeNode) selectedTreeNode).getSModelDescriptor();
   }
 
-  List<SModelDescriptor> getSelectedModels() {
+  public List<SModelDescriptor> getSelectedModels() {
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     TreePath[] paths = myTree.getSelectionPaths();
     if (paths == null) return result;
@@ -436,7 +429,7 @@ public class ProjectPane extends JComponent implements IActionDataProvider, IPro
   }
 
 
-  List<SNode> getNormalizedSelectedNodes() {
+  public List<SNode> getNormalizedSelectedNodes() {
     List<SNode> selectedNodes = new ArrayList<SNode>(getSelectedNodes());
     HashSet<SNode> unselectedNodes = new HashSet<SNode>();
 

@@ -15,6 +15,7 @@ import java.util.List;
  */
 public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPSTreeNode> {
   private IOperationContext myOperationContext;
+  private MPSTree myTree;
 
   public MPSTreeNode(IOperationContext operationContext) {
     myOperationContext = operationContext;
@@ -37,6 +38,17 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
       result.add((MPSTreeNode) getChildAt(i));
     }
     return result.iterator();
+  }
+
+  public MPSTree getTree() {
+    if (myTree == null && getParent() != null) {
+      return ((MPSTreeNode) getParent()).getTree();
+    }
+    return myTree;
+  }
+
+  public void setTree(MPSTree tree) {
+    myTree = tree;
   }
 
   public boolean isInitialized() {

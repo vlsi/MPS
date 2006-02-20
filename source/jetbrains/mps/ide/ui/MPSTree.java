@@ -287,13 +287,22 @@ public abstract class MPSTree extends JTree {
     }
   }
 
+  public void rebuildTree(Runnable rebuildAction, boolean saveExpansion) {
+    runRebuildAction(rebuildAction, saveExpansion);
+    invalidate();
+    validate();
+    repaint();
+  }
+
   public void rebuildTree() {
     runRebuildAction(new Runnable() {
       public void run() {
         if (getModel().getRoot() instanceof MPSTreeNode) {
           (getRootNode()).disposeThisAndChildren();
         }
-        DefaultTreeModel model = new DefaultTreeModel(rebuild());
+        MPSTreeNode root = rebuild();
+        root.setTree(MPSTree.this);
+        DefaultTreeModel model = new DefaultTreeModel(root);
         setModel(model);
       }
     }, true);

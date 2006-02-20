@@ -2,6 +2,7 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.smodel.IOperationContext;
