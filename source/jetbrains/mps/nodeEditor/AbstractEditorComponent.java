@@ -1607,9 +1607,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void runSwapCellsActions(Runnable action) {
-    Object memento = myEditorContext.createMemento();
+    Object memento = null;
+    if (myEditorContext != null) {
+      memento = myEditorContext.createMemento();
+    }
     action.run();
-    myEditorContext.setMemento(memento);
+    if (myEditorContext != null) {
+      myEditorContext.setMemento(memento);
+    }
   }
 
   public boolean isReadOnly() {
