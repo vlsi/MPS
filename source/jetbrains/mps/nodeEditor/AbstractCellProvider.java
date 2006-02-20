@@ -15,6 +15,14 @@ public abstract class AbstractCellProvider {
     myNode = node;
   }
 
+  public AbstractCellProvider() {
+
+  }
+
+  public void setSNode(SNode node) {
+    myNode = node;
+  }
+
   public SNode getSNode() {
     return myNode;
   }

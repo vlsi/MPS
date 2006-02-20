@@ -17,6 +17,9 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
   protected String myNoTargetText;
   protected EditorContext myEditorContext;
 
+  // auxiliary cell provider, which may help to create some parts of resulting cell (used in inheritors)
+  protected AbstractCellProvider myAuxiliaryCellProvider;
+
   // if the cell to provide "allows" "empty" target of its relation.
   // The exact meaning of what is "empty" and what is "to allow"
   // may differ among different inheritors of this class.
@@ -72,6 +75,14 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
 
   public void setAllowsEmptyTarget(boolean allowsEmptyTarget) {
     myAllowsEmptyTarget = allowsEmptyTarget;
+  }
+
+  public void setAuxiliaryCellProvider(AbstractCellProvider provider) {
+    myAuxiliaryCellProvider = provider;
+  }
+
+  public AbstractCellProvider getAuxiliaryCellProvider() {
+    return myAuxiliaryCellProvider;
   }
 
   // important: create such a method in every descendant of this class, it will be invoked via reflection
