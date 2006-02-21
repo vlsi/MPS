@@ -26,14 +26,14 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1112058427770">
         <property name="drawBorder" value="false" />
-        <property name="nullText" value="&lt;choose concept&gt;" />
+        <property name="noTargetText" value="&lt;choose concept&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1112058088712" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1112058417407">
           <link role="conceptDeclaration" targetNodeId="2.1071489090640" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1112058427771">
-            <property name="defaultText" value="&lt;no name&gt;" />
             <property name="drawBorder" value="false" />
             <property name="readOnly" value="true" />
+            <property name="noTargetText" value="&lt;no name&gt;" />
             <link role="relationDeclaration" targetNodeId="3.1078489098626" />
           </node>
         </node>
@@ -98,14 +98,14 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1138079331371">
         <property name="drawBorder" value="false" />
-        <property name="nullText" value="&lt;choose concept&gt;" />
+        <property name="noTargetText" value="&lt;choose concept&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1138079221462" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1138079331372">
           <link role="conceptDeclaration" targetNodeId="2.1071489090640" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1138079331373">
-            <property name="defaultText" value="&lt;no name&gt;" />
             <property name="drawBorder" value="false" />
             <property name="readOnly" value="true" />
+            <property name="noTargetText" value="&lt;no name&gt;" />
             <link role="relationDeclaration" targetNodeId="3.1078489098626" />
           </node>
         </node>

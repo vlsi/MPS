@@ -30,8 +30,8 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1082979388816">
           <property name="textBgColor" value="yellow" />
-          <property name="defaultText" value="&lt;no name&gt;" />
           <property name="drawBorder" value="false" />
+          <property name="noTargetText" value="&lt;no name&gt;" />
           <property name="textBgColorSelected" value="cyan" />
           <link role="relationDeclaration" targetNodeId="2.1078489098626" />
         </node>
@@ -50,8 +50,8 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1083066231722">
           <property name="textBgColor" value="yellow" />
-          <property name="defaultText" value="&lt;no value&gt;" />
           <property name="drawBorder" value="false" />
+          <property name="noTargetText" value="&lt;no value&gt;" />
           <property name="textBgColorSelected" value="cyan" />
           <link role="relationDeclaration" targetNodeId="1.1083066089218" />
         </node>
@@ -66,9 +66,9 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1082985570614">
         <property name="textFgColor" value="DARK_MAGENTA" />
-        <property name="defaultText" value="&lt;no name&gt;" />
         <property name="fontStyle" value="BOLD" />
         <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;no name&gt;" />
         <link role="relationDeclaration" targetNodeId="2.1078489098626" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1082987076546">
@@ -77,14 +77,14 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1106002077142">
         <property name="drawBorder" value="false" />
-        <property name="nullText" value="&lt;no data type&gt;" />
+        <property name="noTargetText" value="&lt;no data type&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1082985295845" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1106001907860">
           <link role="conceptDeclaration" targetNodeId="1.1082978164218" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1106002077143">
-            <property name="defaultText" value="&lt;no name&gt;" />
             <property name="drawBorder" value="false" />
             <property name="readOnly" value="true" />
+            <property name="noTargetText" value="&lt;no name&gt;" />
             <link role="relationDeclaration" targetNodeId="2.1078489098626" />
           </node>
         </node>
@@ -113,8 +113,8 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1083925414252">
         <property name="textBgColor" value="yellow" />
-        <property name="defaultText" value="&lt;no name&gt;" />
         <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;no name&gt;" />
         <property name="textBgColorSelected" value="cyan" />
         <link role="relationDeclaration" targetNodeId="2.1078489098626" />
       </node>
@@ -124,8 +124,8 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1083925414254">
         <property name="textBgColor" value="cyan" />
-        <property name="defaultText" value="&lt;no external value&gt;" />
         <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;no external value&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1083923523172" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1083925414255">
@@ -134,8 +134,8 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1083925414256">
         <property name="textBgColor" value="yellow" />
-        <property name="defaultText" value="NULL" />
         <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="NULL" />
         <property name="textBgColorSelected" value="cyan" />
         <link role="relationDeclaration" targetNodeId="1.1083923523171" />
       </node>
@@ -173,8 +173,8 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1083172476031">
           <property name="textBgColor" value="yellow" />
-          <property name="defaultText" value="&lt;no name&gt;" />
           <property name="drawBorder" value="false" />
+          <property name="noTargetText" value="&lt;no name&gt;" />
           <property name="textBgColorSelected" value="cyan" />
           <link role="relationDeclaration" targetNodeId="2.1078489098626" />
         </node>
@@ -200,7 +200,7 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1140221199055">
             <property name="drawBorder" value="false" />
-            <property name="nullText" value="&lt;no type&gt;" />
+            <property name="noTargetText" value="&lt;no type&gt;" />
             <link role="relationDeclaration" targetNodeId="1.1083171729157" />
             <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1140221199054">
               <link role="conceptDeclaration" targetNodeId="1.1083243159079" />
@@ -286,8 +286,8 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1083244251722">
           <property name="textBgColor" value="yellow" />
-          <property name="defaultText" value="&lt;no name&gt;" />
           <property name="drawBorder" value="false" />
+          <property name="noTargetText" value="&lt;no name&gt;" />
           <property name="textBgColorSelected" value="cyan" />
           <link role="relationDeclaration" targetNodeId="2.1078489098626" />
         </node>
@@ -357,14 +357,14 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1096455263454">
         <property name="drawBorder" value="false" />
-        <property name="nullText" value="&lt;no target&gt;" />
+        <property name="noTargetText" value="&lt;no target&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1071599976176" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1096455220328">
           <link role="conceptDeclaration" targetNodeId="1.1071489090640" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1096455263455">
-            <property name="defaultText" value="&lt;no name&gt;" />
             <property name="drawBorder" value="false" />
             <property name="readOnly" value="true" />
+            <property name="noTargetText" value="&lt;no name&gt;" />
             <link role="relationDeclaration" targetNodeId="2.1078489098626" />
           </node>
         </node>
@@ -375,7 +375,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1140221320825">
         <property name="drawBorder" value="false" />
-        <property name="nullText" value="&lt;none&gt;" />
+        <property name="noTargetText" value="&lt;none&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1071599698500" />
         <link role="actionSet" targetNodeId="1084195486320" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1140221320824">
@@ -441,8 +441,8 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1087215312707">
           <property name="textBgColor" value="yellow" />
-          <property name="defaultText" value="&lt;no name&gt;" />
           <property name="drawBorder" value="false" />
+          <property name="noTargetText" value="&lt;no name&gt;" />
           <property name="textBgColorSelected" value="cyan" />
           <link role="relationDeclaration" targetNodeId="2.1078489098626" />
         </node>
@@ -477,15 +477,15 @@
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1105726767725">
               <property name="drawBorder" value="false" />
-              <property name="nullText" value="&lt;default&gt;" />
+              <property name="noTargetText" value="&lt;default&gt;" />
               <link role="relationDeclaration" targetNodeId="1.1071489389519" />
               <link role="actionSet" targetNodeId="1114602306043" />
               <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1105726767726">
                 <link role="conceptDeclaration" targetNodeId="1.1071489090640" />
                 <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1105726767727">
-                  <property name="defaultText" value="&lt;no name&gt;" />
                   <property name="drawBorder" value="false" />
                   <property name="readOnly" value="true" />
+                  <property name="noTargetText" value="&lt;no name&gt;" />
                   <link role="relationDeclaration" targetNodeId="2.1078489098626" />
                 </node>
               </node>
@@ -642,8 +642,8 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1105727076103">
         <property name="textFgColor" value="DARK_GREEN" />
-        <property name="defaultText" value="&lt;no name&gt;" />
         <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;no name&gt;" />
         <link role="relationDeclaration" targetNodeId="2.1078489098626" />
       </node>
     </node>
@@ -663,8 +663,8 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1105727123123">
         <property name="textFgColor" value="DARK_GREEN" />
-        <property name="defaultText" value="&lt;no name&gt;" />
         <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;no name&gt;" />
         <link role="relationDeclaration" targetNodeId="2.1078489098626" />
       </node>
     </node>
@@ -684,8 +684,8 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1105727152861">
         <property name="textFgColor" value="DARK_GREEN" />
-        <property name="defaultText" value="&lt;no name&gt;" />
         <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;no name&gt;" />
         <link role="relationDeclaration" targetNodeId="2.1078489098626" />
       </node>
     </node>
@@ -716,7 +716,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1105727338100">
         <property name="drawBorder" value="false" />
-        <property name="nullText" value="&lt;no property&gt;" />
+        <property name="noTargetText" value="&lt;no property&gt;" />
         <link role="actionSet" targetNodeId="1105734324974" />
         <link role="relationDeclaration" targetNodeId="1.1105725439818" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1105727274599">
@@ -737,8 +737,8 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1105727402759">
         <property name="textFgColor" value="DARK_BLUE" />
-        <property name="defaultText" value="&lt;no value&gt;" />
         <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;no value&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1105725713309" />
       </node>
     </node>
@@ -769,7 +769,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1105727610547">
         <property name="drawBorder" value="false" />
-        <property name="nullText" value="&lt;no property&gt;" />
+        <property name="noTargetText" value="&lt;no property&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1105725439818" />
         <link role="actionSet" targetNodeId="1105734268062" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1105727460856">
@@ -811,7 +811,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1105727610549">
         <property name="drawBorder" value="false" />
-        <property name="nullText" value="&lt;no property&gt;" />
+        <property name="noTargetText" value="&lt;no property&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1105725439818" />
         <link role="actionSet" targetNodeId="1105733241703" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1105727537781">
@@ -832,9 +832,9 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1105731706157">
         <property name="textFgColor" value="DARK_GREEN" />
-        <property name="defaultText" value="&lt;no value&gt;" />
         <property name="fontStyle" value="BOLD" />
         <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;no value&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1105725733873" />
       </node>
     </node>
@@ -861,8 +861,8 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1137532689746">
         <property name="textFgColor" value="DARK_GREEN" />
-        <property name="defaultText" value="&lt;no name&gt;" />
         <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;no name&gt;" />
         <link role="relationDeclaration" targetNodeId="2.1078489098626" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1137532689747">
@@ -873,14 +873,14 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1137532689748">
         <property name="drawBorder" value="false" />
-        <property name="nullText" value="&lt;no target type&gt;" />
+        <property name="noTargetText" value="&lt;no target type&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1105736621938" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1137532689749">
           <link role="conceptDeclaration" targetNodeId="1.1071489090640" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1137532689750">
-            <property name="defaultText" value="&lt;no name&gt;" />
             <property name="drawBorder" value="false" />
             <property name="readOnly" value="true" />
+            <property name="noTargetText" value="&lt;no name&gt;" />
             <link role="relationDeclaration" targetNodeId="2.1078489098626" />
           </node>
         </node>
@@ -952,7 +952,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1105739062907">
         <property name="drawBorder" value="false" />
-        <property name="nullText" value="&lt;no link&gt;" />
+        <property name="noTargetText" value="&lt;no link&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1105736734721" />
         <link role="actionSet" targetNodeId="1105751377804" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1105738886421">
@@ -972,14 +972,14 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1105739062910">
         <property name="drawBorder" value="false" />
-        <property name="nullText" value="&lt;no target&gt;" />
+        <property name="noTargetText" value="&lt;no target&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1105736807942" />
         <link role="actionSet" targetNodeId="1105982553830" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1105739001781">
           <link role="conceptDeclaration" targetNodeId="2.1078489098625" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1105739062911">
-            <property name="defaultText" value="&lt;no name&gt;" />
             <property name="drawBorder" value="false" />
+            <property name="noTargetText" value="&lt;no name&gt;" />
             <link role="relationDeclaration" targetNodeId="2.1078489098626" />
           </node>
         </node>
@@ -1046,17 +1046,17 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1105739124744">
         <property name="drawBorder" value="false" />
-        <property name="nullText" value="&lt;no link&gt;" />
+        <property name="noTargetText" value="&lt;no link&gt;" />
         <link role="actionSet" targetNodeId="1105751283375" />
         <link role="relationDeclaration" targetNodeId="1.1105736734721" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1105739101929">
           <link role="conceptDeclaration" targetNodeId="1.1105736576531" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1105739124745">
             <property name="textFgColor" value="DARK_MAGENTA" />
-            <property name="defaultText" value="&lt;no name&gt;" />
             <property name="fontStyle" value="BOLD" />
             <property name="drawBorder" value="false" />
             <property name="readOnly" value="true" />
+            <property name="noTargetText" value="&lt;no name&gt;" />
             <link role="relationDeclaration" targetNodeId="2.1078489098626" />
           </node>
         </node>
@@ -1094,8 +1094,8 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1137532662975">
         <property name="textFgColor" value="DARK_GREEN" />
-        <property name="defaultText" value="&lt;no name&gt;" />
         <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;no name&gt;" />
         <link role="relationDeclaration" targetNodeId="2.1078489098626" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1137532662976">
@@ -1106,14 +1106,14 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1137532662977">
         <property name="drawBorder" value="false" />
-        <property name="nullText" value="&lt;no target type&gt;" />
+        <property name="noTargetText" value="&lt;no target type&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1105736621938" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1137532662978">
           <link role="conceptDeclaration" targetNodeId="1.1071489090640" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1137545446126">
-            <property name="defaultText" value="&lt;no name&gt;" />
             <property name="drawBorder" value="false" />
             <property name="readOnly" value="true" />
+            <property name="noTargetText" value="&lt;no name&gt;" />
             <link role="relationDeclaration" targetNodeId="2.1078489098626" />
           </node>
         </node>
