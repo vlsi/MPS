@@ -22,8 +22,7 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
   private LinkDeclaration myLinkDeclaration;
 
   public EditorCellListHandler(SNode ownerNode, String childRole, EditorContext editorContext) {
-    myOwnerNode = ownerNode;
-    myEditorContext = editorContext;
+    super(ownerNode, childRole, editorContext);
     myLinkDeclaration = SModelUtil.getLinkDeclaration(ownerNode, childRole, editorContext.getOperationContext().getScope());
     myChildConcept = myLinkDeclaration.getTarget();
     LinkDeclaration genuineLink = SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration);

@@ -20,6 +20,12 @@ public abstract class AbstractCellListHandler implements IKeyboardHandler {
   protected SNode myInsertedNode;
   protected String myElementRole;
 
+  public AbstractCellListHandler(SNode ownerNode, String elementRole, EditorContext editorContext) {
+    myOwnerNode = ownerNode;
+    myElementRole = elementRole;
+    myEditorContext = editorContext;
+  }
+
   public EditorContext getEditorContext() {
     return myEditorContext;
   }
