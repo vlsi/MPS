@@ -40,7 +40,7 @@
           <property name="drawBorder" value="false" />
           <property name="vertical" value="true" />
           <property name="gridLayout" value="true" />
-          <link role="linkDeclaration" targetNodeId="1.1116535202619" />
+          <link role="relationDeclaration" targetNodeId="1.1116535202619" />
           <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1116535342282">
             <property name="textFgColor" value="blue" />
             <property name="text" value="press &lt;Ctrl&gt;-&lt;Enter&gt; to add mapping" />
@@ -88,7 +88,7 @@
           <property name="drawBorder" value="false" />
           <property name="vertical" value="true" />
           <property name="gridLayout" value="true" />
-          <link role="linkDeclaration" targetNodeId="1.1116535614925" />
+          <link role="relationDeclaration" targetNodeId="1.1116535614925" />
           <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1116535661191">
             <property name="textFgColor" value="blue" />
             <property name="text" value="press &lt;Ctrl&gt;-&lt;Enter&gt; to add field" />

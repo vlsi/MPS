@@ -44,7 +44,7 @@
           <property name="drawBorder" value="false" />
           <property name="vertical" value="true" />
           <property name="selectable" value="false" />
-          <link role="linkDeclaration" targetNodeId="1.1111791064925" />
+          <link role="relationDeclaration" targetNodeId="1.1111791064925" />
           <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1111795657808">
             <property name="textFgColor" value="blue" />
             <property name="text" value="press &lt;Ctrl&gt;+&lt;Enter&gt; to add Value" />
@@ -70,7 +70,7 @@
           <property name="drawBorder" value="false" />
           <property name="vertical" value="true" />
           <property name="selectable" value="false" />
-          <link role="linkDeclaration" targetNodeId="1.1111791084333" />
+          <link role="relationDeclaration" targetNodeId="1.1111791084333" />
           <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1111795670564">
             <property name="textFgColor" value="blue" />
             <property name="text" value="press &lt;Ctrl&gt;+&lt;Enter&gt; to add Event" />
@@ -136,7 +136,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1111795870495">
           <property name="drawBorder" value="false" />
           <property name="vertical" value="true" />
-          <link role="linkDeclaration" targetNodeId="1.1111794644919" />
+          <link role="relationDeclaration" targetNodeId="1.1111794644919" />
           <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1111795870496">
             <property name="textFgColor" value="blue" />
             <property name="text" value="press &lt;Ctrl&gt;+&lt;Enter&gt; to add Posting Rule" />
@@ -186,7 +186,7 @@
           <property name="drawBorder" value="false" />
           <property name="vertical" value="true" />
           <property name="selectable" value="false" />
-          <link role="linkDeclaration" targetNodeId="1.1111791826558" />
+          <link role="relationDeclaration" targetNodeId="1.1111791826558" />
           <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1111796106788">
             <property name="textFgColor" value="blue" />
             <property name="text" value="press &lt;Ctrl&gt;+&lt;Enter&gt; to add Quantity" />
@@ -301,7 +301,7 @@
         <property name="separatorText" value="," />
         <property name="drawBorder" value="false" />
         <property name="vertical" value="false" />
-        <link role="linkDeclaration" targetNodeId="1.1111793732478" />
+        <link role="relationDeclaration" targetNodeId="1.1111793732478" />
         <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1112317028033">
           <property name="textFgColor" value="blue" />
           <property name="text" value="press &lt;Ctrl&gt;+&lt;Enter&gt; to declare variable" />
@@ -476,7 +476,7 @@
           <property name="drawBorder" value="false" />
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
-          <link role="linkDeclaration" targetNodeId="1.1112311143032" />
+          <link role="relationDeclaration" targetNodeId="1.1112311143032" />
           <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1112315699834">
             <property name="textFgColor" value="blue" />
             <property name="text" value="press &lt;Ctrl&gt;+&lt;Enter&gt; to add account type" />
@@ -507,7 +507,7 @@
           <property name="vertical" value="true" />
           <property name="selectable" value="false" />
           <property name="gridLayout" value="true" />
-          <link role="linkDeclaration" targetNodeId="1.1112311033671" />
+          <link role="relationDeclaration" targetNodeId="1.1112311033671" />
           <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1112315840638">
             <property name="textFgColor" value="blue" />
             <property name="text" value="press &lt;Ctrl&gt;+&lt;Enter&gt; to add event type" />

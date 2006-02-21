@@ -82,7 +82,7 @@
           <property name="drawBorder" value="false" />
           <property name="vertical" value="true" />
           <property name="gridLayout" value="true" />
-          <link role="linkDeclaration" targetNodeId="1.1112058057696" />
+          <link role="relationDeclaration" targetNodeId="1.1112058057696" />
         </node>
       </node>
     </node>
@@ -162,7 +162,7 @@
           <property name="drawBorder" value="false" />
           <property name="vertical" value="true" />
           <property name="gridLayout" value="true" />
-          <link role="linkDeclaration" targetNodeId="1.1138079416599" />
+          <link role="relationDeclaration" targetNodeId="1.1138079416599" />
         </node>
       </node>
     </node>

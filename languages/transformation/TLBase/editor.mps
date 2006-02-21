@@ -315,7 +315,7 @@
               <property name="drawBorder" value="false" />
               <property name="vertical" value="true" />
               <property name="gridLayout" value="true" />
-              <link role="linkDeclaration" targetNodeId="1.1095416692159" />
+              <link role="relationDeclaration" targetNodeId="1.1095416692159" />
             </node>
           </node>
         </node>
@@ -357,7 +357,7 @@
               <property name="drawBorder" value="false" />
               <property name="vertical" value="true" />
               <property name="gridLayout" value="true" />
-              <link role="linkDeclaration" targetNodeId="1.1095416692160" />
+              <link role="relationDeclaration" targetNodeId="1.1095416692160" />
             </node>
           </node>
         </node>
@@ -399,7 +399,7 @@
               <property name="drawBorder" value="false" />
               <property name="vertical" value="true" />
               <property name="gridLayout" value="true" />
-              <link role="linkDeclaration" targetNodeId="1.1132881836530" />
+              <link role="relationDeclaration" targetNodeId="1.1132881836530" />
             </node>
           </node>
         </node>
@@ -441,7 +441,7 @@
               <property name="drawBorder" value="false" />
               <property name="vertical" value="true" />
               <property name="gridLayout" value="true" />
-              <link role="linkDeclaration" targetNodeId="1.1132881767512" />
+              <link role="relationDeclaration" targetNodeId="1.1132881767512" />
             </node>
           </node>
         </node>
@@ -800,7 +800,7 @@
           <property name="vertical" value="true" />
           <property name="gridLayout" value="true" />
           <property name="selectable" value="false" />
-          <link role="linkDeclaration" targetNodeId="1.1112731464728" />
+          <link role="relationDeclaration" targetNodeId="1.1112731464728" />
         </node>
       </node>
     </node>
