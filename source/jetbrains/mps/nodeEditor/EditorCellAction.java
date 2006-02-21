@@ -13,7 +13,7 @@ public abstract class EditorCellAction {
   public static final String PASTE = "PASTE";
   public static final String PASTE_BEFORE = "PASTE_BEFORE";
   public static final String PASTE_AFTER = "PASTE_AFTER";
-  
+
   // -- navigation
   public static final String LEFT = "LEFT";
   public static final String RIGHT = "RIGHT";
@@ -47,7 +47,9 @@ public abstract class EditorCellAction {
     return "no description : " + this.getClass().getName();
   }
 
-  public abstract boolean canExecute(EditorContext context);
+  public boolean canExecute(EditorContext context) {
+    return true;
+  }
 
   public abstract void execute(EditorContext context);
 }

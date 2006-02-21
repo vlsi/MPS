@@ -7,7 +7,9 @@ import java.awt.event.KeyEvent;
  * Created Nov 4, 2003
  */
 public abstract class EditorCellKeyMapAction {
-  public abstract boolean canExecute(KeyEvent keyEvent, EditorContext context);
+  public boolean canExecute(KeyEvent keyEvent, EditorContext context) {
+    return true;
+  }
 
   public abstract void execute(KeyEvent keyEvent, EditorContext context);
 

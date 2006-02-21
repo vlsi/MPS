@@ -6,12 +6,16 @@ import jetbrains.mps.annotations.PropertyAttributeConcept;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import jetbrains.mps.smodel.event.*;
 
+import java.awt.Color;
+import java.awt.event.KeyEvent;
 import java.util.*;
 
 
@@ -223,24 +227,29 @@ public class EditorManager {
     rightTransformHintCell.putUserObject(EditorCell.CELL_ID, node.getId());
     rightTransformHintCell.setEditable(true);
     rightTransformHintCell.setDrawBorder(false);
+    rightTransformHintCell.setCellBackgroundColor(Color.YELLOW);
+    // delete the hint when pressed ctrl-delete, delete or backspace
     rightTransformHintCell.setAction(EditorCellAction.DELETE, new EditorCellAction() {
-      public boolean canExecute(EditorContext context) {
-        return true;
-      }
-
       public void execute(EditorContext context) {
         node.removeRightTransformHint();
       }
     });
+    // delete the hint when double press 'space'
     rightTransformHintCell.setAction(EditorCellAction.RIGHT_TRANSFORM, new EditorCellAction() {
-      public boolean canExecute(EditorContext context) {
-        return true;
-      }
-
       public void execute(EditorContext context) {
         node.removeRightTransformHint();
       }
     });
+    // delete the hint when double press 'esc'
+    EditorCellKeyMap keyMap = new EditorCellKeyMap();
+    keyMap.putAction(EditorCellKeyMap.KEY_MODIFIERS_NONE, "VK_ESCAPE", new EditorCellKeyMapAction() {
+      public void execute(KeyEvent keyEvent, EditorContext context) {
+        node.removeRightTransformHint();
+      }
+    });
+    rightTransformHintCell.addKeyMap(keyMap);
+
+    // create the hint's auto-completion menu
     rightTransformHintCell.setSubstituteInfo(new AbstractNodeSubstituteInfo(context) {
       protected List<INodeSubstituteItem> createActions() {
         List list = ModelActions.createRightTransformHintSubstituteActions(node, context.getOperationContext().getScope());
@@ -272,7 +281,7 @@ public class EditorManager {
       rowWrapper.setDrawBorder(false);
       rowWrapper.addEditorCell(nodeCell);
       rowWrapper.addEditorCell(rightTransformHintCell);
-      resultCell = nodeCell;
+      resultCell = rowWrapper;
     }
 
     // set focus

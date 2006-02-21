@@ -994,22 +994,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return getConceptName();
   }
 
-//  public boolean hasConceptProperty(String propertyName) {
-//    return false;
-//  }
-//
-//  public String getConceptProperty(String propertyName) {
-//    return null;
-//  }
-//
-//  public int getIntegerConceptProperty(String propertyName) {
-//    return 0;
-//  }
-//
-//  public boolean getBooleanConceptProperty(String propertyName) {
-//    return false;
-//  }
-
   public boolean isDisposed() {
     // tmp : don't check nodes in $internal$ models
     if ("$internal$".equals(myModel.getStereotype())) {
@@ -1045,21 +1029,24 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   public void addRightTransformHint() {
     // we dont need 'Undo'
-    boolean wasLoading = getModel().setLoading(true);
-    setProperty(RIGHT_TRANSFORM_HINT, "");
-    getModel().setLoading(wasLoading);
+//    boolean wasLoading = getModel().setLoading(true);
+//    setProperty(RIGHT_TRANSFORM_HINT, "");
+//    getModel().setLoading(wasLoading);
+    putUserObject(RIGHT_TRANSFORM_HINT, RIGHT_TRANSFORM_HINT);
     getModel().firePropertyChangedEvent(this, RIGHT_TRANSFORM_HINT, null, "", true, false);
   }
 
   public boolean hasRightTransformHint() {
-    return getProperty(RIGHT_TRANSFORM_HINT) != null;
+    getProperty(RIGHT_TRANSFORM_HINT); // register access
+    return getUserObject(RIGHT_TRANSFORM_HINT) != null;
   }
 
   public void removeRightTransformHint() {
     // we dont need 'Undo'
-    boolean wasLoading = getModel().setLoading(true);
-    setProperty(RIGHT_TRANSFORM_HINT, null);
-    getModel().setLoading(wasLoading);
+//    boolean wasLoading = getModel().setLoading(true);
+//    setProperty(RIGHT_TRANSFORM_HINT, null);
+//    getModel().setLoading(wasLoading);
+    removeUserObject(RIGHT_TRANSFORM_HINT);
     getModel().firePropertyChangedEvent(this, RIGHT_TRANSFORM_HINT, "", null, true, true);
   }
 }
