@@ -496,6 +496,7 @@
         <property name="defaultValue" value="?" />
         <property name="fontStyle" value="BOLD" />
         <property name="drawBorder" value="false" />
+        <property name="defaultRTransformAnchor" value="true" />
         <property name="noTargetText" value="&lt;no name&gt;" />
         <link role="relationDeclaration" targetNodeId="2.1078489098626" />
       </node>
