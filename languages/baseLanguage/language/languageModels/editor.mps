@@ -480,12 +480,6 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075289941062">
     <property name="name" value="FieldDeclaration_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1068390468200" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1076781056865">
-      <property name="name" value="NameCellActions" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_RightTransform" id="1076781056866">
-        <property name="actionProviderId" value="AddInitializer" />
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1075289941063">
       <property name="drawBorder" value="false" />
       <property name="name" value="declarationBox" />
@@ -503,7 +497,6 @@
         <property name="defaultValue" value="?" />
         <property name="fontStyle" value="BOLD" />
         <property name="drawBorder" value="false" />
-        <link role="actionSet" targetNodeId="1076781056865" />
         <link role="relationDeclaration" targetNodeId="2.1078489098626" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1075290206265">
@@ -559,12 +552,6 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1075303160500">
     <property name="name" value="LocalVariableDeclaration_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1068581242863" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1076938982020">
-      <property name="name" value="NameCellActions" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_RightTransform" id="1076938982021">
-        <property name="actionProviderId" value="AddInitializer" />
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1075303160501">
       <property name="drawBorder" value="false" />
       <property name="name" value="declarationBox" />
@@ -579,8 +566,6 @@
         <property name="defaultText" value="&lt;no name&gt;" />
         <property name="defaultValue" value="?" />
         <property name="drawBorder" value="false" />
-        <link role="actionSet" targetNodeId="1076938982020" />
-        <link role="keyMap" targetNodeId="1107341785237" />
         <link role="relationDeclaration" targetNodeId="2.1078489098626" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1075303160504">
@@ -1851,21 +1836,6 @@
           <link role="relationDeclaration" targetNodeId="1.1083152972671" />
         </node>
       </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1107341785237">
-    <property name="name" value="_LocalVariableName_KeyMap" />
-    <node role="entry" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1107341794192">
-      <property name="keycode" value="=" />
-      <property name="actionProviderId" value="LocalVariable_AddInitializez" />
-    </node>
-    <node role="entry" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1126191995914">
-      <property name="keycode" value="[" />
-      <property name="actionProviderId" value="LocalVariable_ConvertToArray" />
-    </node>
-    <node role="entry" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1126260002190">
-      <property name="keycode" value="]" />
-      <property name="actionProviderId" value="LocalVariable_SmartConvertToArray" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1107347527745">

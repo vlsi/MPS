@@ -26,7 +26,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public static final Object LAST_UPDATE = new Object();
   public static final Object ERROR_STATUS = new Object();
   public static final Object BAD_REFERENT_STATUS = new Object();
-  public static final Object RIGHT_TRANSFORM_HINT_JUST_ADDED = new Object();
 
   public static final String NAME = "name";
   public static final String RIGHT_TRANSFORM_HINT = "right_transfrom_hint";
@@ -1045,8 +1044,11 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public void addRightTransformHint() {
+    // we dont need 'Undo'
+    boolean wasLoading = getModel().setLoading(true);
     setProperty(RIGHT_TRANSFORM_HINT, "");
-    putUserObject(RIGHT_TRANSFORM_HINT_JUST_ADDED, RIGHT_TRANSFORM_HINT_JUST_ADDED);
+    getModel().setLoading(wasLoading);
+    getModel().firePropertyChangedEvent(this, RIGHT_TRANSFORM_HINT, null, "", true, false);
   }
 
   public boolean hasRightTransformHint() {
@@ -1054,7 +1056,10 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public void removeRightTransformHint() {
+    // we dont need 'Undo'
+    boolean wasLoading = getModel().setLoading(true);
     setProperty(RIGHT_TRANSFORM_HINT, null);
-    removeUserObject(RIGHT_TRANSFORM_HINT_JUST_ADDED);
+    getModel().setLoading(wasLoading);
+    getModel().firePropertyChangedEvent(this, RIGHT_TRANSFORM_HINT, "", null, true, true);
   }
 }

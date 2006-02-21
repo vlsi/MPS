@@ -93,6 +93,12 @@
     <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1137820838257">
       <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1137820900216" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1137820838258">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1140484304846">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1140484304845">
+            <property name="name" value="aaa" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1140484304862" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1137904439079">
           <node role="expression" type="jetbrains.mps.baseLanguage.SuperMethodCall" id="1137905243674">
             <link role="baseMethodDeclaration" targetNodeId="1115766295021" />

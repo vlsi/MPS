@@ -24,6 +24,9 @@ public class EditorManager {
 
   public static final Object IS_BIG_CELL = new Object();
 
+  public static final Object RIGHT_TRANSFORM_HINT_JUST_ADDED = new Object();
+  public static final Object RIGHT_TRANSFORM_HINT_ANCHOR_ID = new Object();
+
   private HashMap<SNode, EditorCell> myMap = new HashMap<SNode, EditorCell>();
   private boolean myCreatingInspectedCell = false;
 
@@ -206,45 +209,83 @@ public class EditorManager {
     }
 
     if (node.hasRightTransformHint()) {
-      EditorCell_Collection rowWrapper = EditorCell_Collection.createHorizontal(context, node);
-      rowWrapper.setSelectable(false);
-      rowWrapper.addEditorCell(nodeCell);
-      final EditorCell_Constant rightTransformHintCell = EditorCell_Constant.create(context, node, "", true);
-      rightTransformHintCell.putUserObject(EditorCell.CELL_ID, node.getId());
-      rightTransformHintCell.setEditable(true);
-      rightTransformHintCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteProperty(node, SNode.RIGHT_TRANSFORM_HINT));
-      rightTransformHintCell.setSubstituteInfo(new AbstractNodeSubstituteInfo(context) {
-        protected List<INodeSubstituteItem> createActions() {
-          List list = ModelActions.createRightTransformHintSubstituteActions(node, context.getOperationContext().getScope());
-          List wrapperList = new LinkedList();
-          for (Object action : list) {
-            wrapperList.add(new NodeSubstituteActionWrapper((INodeSubstituteAction) action) {
-              public SNode doSubstitute(String pattern) {
-                node.removeRightTransformHint();
-                return super.doSubstitute(pattern);
-              }
-            });
-          }
-          return wrapperList;
-        }
-      });
-      rowWrapper.addEditorCell(rightTransformHintCell);
-
-      if (node.getUserObject(SNode.RIGHT_TRANSFORM_HINT_JUST_ADDED) != null) {
-        node.removeUserObject(SNode.RIGHT_TRANSFORM_HINT_JUST_ADDED);
-        CommandProcessor.instance().invokeLater(new Runnable() {
-          public void run() {
-            context.getNodeEditorComponent().changeSelection(rightTransformHintCell);
-          }
-        });
-      }
-      return rowWrapper;
+      nodeCell = addRightTransformHintCell(node, nodeCell, context);
+      return nodeCell;
     }
 
     nodeCell.setInspectorCell(isInspectorCell);
     return nodeCell;
   }
 
+  private EditorCell addRightTransformHintCell(final SNode node, EditorCell nodeCell, final EditorContext context) {
+    // create the hint cell
+    final EditorCell_Constant rightTransformHintCell = EditorCell_Constant.create(context, node, "", true);
+    rightTransformHintCell.putUserObject(EditorCell.CELL_ID, node.getId());
+    rightTransformHintCell.setEditable(true);
+    rightTransformHintCell.setDrawBorder(false);
+    rightTransformHintCell.setAction(EditorCellAction.DELETE, new EditorCellAction() {
+      public boolean canExecute(EditorContext context) {
+        return true;
+      }
+
+      public void execute(EditorContext context) {
+        node.removeRightTransformHint();
+      }
+    });
+    rightTransformHintCell.setAction(EditorCellAction.RIGHT_TRANSFORM, new EditorCellAction() {
+      public boolean canExecute(EditorContext context) {
+        return true;
+      }
+
+      public void execute(EditorContext context) {
+        node.removeRightTransformHint();
+      }
+    });
+    rightTransformHintCell.setSubstituteInfo(new AbstractNodeSubstituteInfo(context) {
+      protected List<INodeSubstituteItem> createActions() {
+        List list = ModelActions.createRightTransformHintSubstituteActions(node, context.getOperationContext().getScope());
+        List wrapperList = new LinkedList();
+        for (Object action : list) {
+          wrapperList.add(new NodeSubstituteActionWrapper((INodeSubstituteAction) action) {
+            public SNode doSubstitute(String pattern) {
+              node.removeRightTransformHint();
+              return super.doSubstitute(pattern);
+            }
+          });
+        }
+        return wrapperList;
+      }
+    });
+
+    // decide position of the hint cell
+    EditorCell resultCell;
+    Object anchorId = node.getUserObject(RIGHT_TRANSFORM_HINT_ANCHOR_ID);
+    EditorCell anchorCell = context.getNodeEditorComponent().findCellWithId(nodeCell, anchorId.toString());
+    if (anchorCell != null && anchorCell != nodeCell) {
+      EditorCell_Collection cellCollection = anchorCell.getParent();
+      cellCollection.addCellAt(cellCollection.indexOf(anchorCell) + 1, rightTransformHintCell);
+      resultCell = nodeCell;
+    } else {
+      // couldn't insert hint cell - create wrapper collection and put hint to last position
+      EditorCell_Collection rowWrapper = EditorCell_Collection.createHorizontal(context, node);
+      rowWrapper.setSelectable(false);
+      rowWrapper.setDrawBorder(false);
+      rowWrapper.addEditorCell(nodeCell);
+      rowWrapper.addEditorCell(rightTransformHintCell);
+      resultCell = nodeCell;
+    }
+
+    // set focus
+    if (node.getUserObject(RIGHT_TRANSFORM_HINT_JUST_ADDED) != null) {
+      node.removeUserObject(RIGHT_TRANSFORM_HINT_JUST_ADDED);
+      CommandProcessor.instance().invokeLater(new Runnable() {
+        public void run() {
+          context.getNodeEditorComponent().changeSelection(rightTransformHintCell);
+        }
+      });
+    }
+    return resultCell;
+  }
 
   public EditorCell createInspectedCell(EditorContext context, SNode node, List<SModelEvent> events) {
     return createRootCell(context, node, events, true);
