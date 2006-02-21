@@ -88,7 +88,13 @@
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1137989368509">
       <property name="name" value="myStaticMethod" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1137989388935" />
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1137989368574" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1137989368574">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1140562454496">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1140562454495">
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1140562454513" />
+          </node>
+        </node>
+      </node>
     </node>
     <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1137820838257">
       <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1137820900216" />

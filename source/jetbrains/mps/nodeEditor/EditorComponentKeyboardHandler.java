@@ -51,6 +51,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
       boolean endEditKeystroke = isEndEditKeystroke(keyEvent);
       boolean deleteKeystroke = isDeleteKeystroke(keyEvent, selectedCell);
+      boolean backspaceKeystroke = isBackspaceKeystroke(keyEvent, selectedCell);
 
       boolean strictMatching = endEditKeystroke || actionType == EditorCellAction.RIGHT_TRANSFORM;
 
@@ -81,6 +82,14 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
       if (deleteKeystroke) {
         if (!(selectedCell instanceof EditorCell_Label &&
                 ((EditorCell_Label) selectedCell).isEditable())) {
+          actionType = EditorCellAction.DELETE;
+          keyEvent.consume();
+        }
+
+      } else if (backspaceKeystroke) {
+        if (selectedCell instanceof EditorCell_Constant &&
+                !((EditorCell_Label) selectedCell).isEditable() &&
+                !((EditorCell_Label) selectedCell).getTextLine().isFirstCaretPosition()) {
           actionType = EditorCellAction.DELETE;
           keyEvent.consume();
         }
@@ -177,6 +186,10 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
   private boolean isDeleteKeystroke(final KeyEvent keyEvent, EditorCell cell) {
     return (keyEvent.getKeyCode() == KeyEvent.VK_DELETE && !(keyEvent.isControlDown() || keyEvent.isAltDown() || keyEvent.isShiftDown()));
+  }
+
+  private boolean isBackspaceKeystroke(final KeyEvent keyEvent, EditorCell cell) {
+    return (keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE && !(keyEvent.isControlDown() || keyEvent.isAltDown() || keyEvent.isShiftDown()));
   }
 
   private boolean isEndEditKeystroke(final KeyEvent keyEvent) {
