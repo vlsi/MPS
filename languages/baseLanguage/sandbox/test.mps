@@ -91,6 +91,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1137989368574">
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1140562454496">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1140562454495">
+            <property name="name" value="i" />
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1140562454513" />
           </node>
         </node>
@@ -99,8 +100,16 @@
             <property name="name" value="aa" />
             <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1140570831756">
               <link role="classifier" targetNodeId="1115766310400" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.IntegerType" id="1140571726287" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.IntegerType" id="1140575434613" />
             </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1140575569883">
+        <property name="name" value="parm" />
+        <node role="type" type="jetbrains.mps.baseLanguage.ArrayType" id="1140575573244">
+          <node role="componentType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1140575569882">
+            <link role="classifier" extResolveInfo="1.[Classifier]String" />
           </node>
         </node>
       </node>
@@ -134,7 +143,7 @@
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1137995798928">
               <link role="variableDeclaration" targetNodeId="1137820843009" />
             </node>
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1138041356552">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1140575496888">
               <property name="value" value="10" />
             </node>
           </node>
@@ -162,6 +171,7 @@
         <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1137820843010" />
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1140566439956">
+        <property name="name" value="ii" />
         <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1140566443865" />
       </node>
     </node>
@@ -227,7 +237,10 @@
         <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1136027177055" />
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1138061156632">
-        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1138061178325" />
+        <property name="name" value="ii" />
+        <node role="type" type="jetbrains.mps.baseLanguage.ArrayType" id="1140575559256">
+          <node role="componentType" type="jetbrains.mps.baseLanguage.IntegerType" id="1138061178325" />
+        </node>
       </node>
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1127094836077">
