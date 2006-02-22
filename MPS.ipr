@@ -281,6 +281,7 @@
       <module fileurl="file://$PROJECT_DIR$/MPS.iml" filepath="$PROJECT_DIR$/MPS.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPSWiki/MPSWiki.iml" filepath="$PROJECT_DIR$/MPSWiki/MPSWiki.iml" group="DataLanguages" />
       <module fileurl="file://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/MPSWiki_WebApp.iml" filepath="$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/MPSWiki_WebApp.iml" group="DataLanguages" />
+      <module fileurl="file://$PROJECT_DIR$/SemanticWeb/editor/OWLEditor.iml" filepath="$PROJECT_DIR$/SemanticWeb/editor/OWLEditor.iml" group="SemanticWeb" />
       <module fileurl="file://$PROJECT_DIR$/Remoting/Remoting.iml" filepath="$PROJECT_DIR$/Remoting/Remoting.iml" />
       <module fileurl="file://$PROJECT_DIR$/SemanticWeb/SemanticWebIDE/SemanticWebIDE.iml" filepath="$PROJECT_DIR$/SemanticWeb/SemanticWebIDE/SemanticWebIDE.iml" group="SemanticWeb" />
       <module fileurl="file://$PROJECT_DIR$/projects/SubstituteActionTutorial/SubstituteActionTutorial.iml" filepath="$PROJECT_DIR$/projects/SubstituteActionTutorial/SubstituteActionTutorial.iml" group="Projects" />
