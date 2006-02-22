@@ -94,6 +94,13 @@
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1140562454513" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1140566659636">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1140566659635">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1140566659634">
+              <link role="classifier" targetNodeId="1115766310400" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1137820838257">
@@ -102,7 +109,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1140484304846">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1140484304845">
             <property name="name" value="aaa" />
-            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1140484304862" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1140566518425" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1137904439079">
@@ -151,6 +158,9 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1137820843009">
         <property name="name" value="ffff" />
         <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1137820843010" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1140566439956">
+        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1140566443865" />
       </node>
     </node>
     <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1136027151595">

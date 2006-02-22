@@ -81,6 +81,10 @@
       <property name="preconditionAspectId" value="FieldOrLocalVar" />
       <link role="applicableConcept" targetNodeId="1.1068431474542" />
     </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1140565409777">
+      <property name="actionsFactoryAspectId" value="TypeRightTransform" />
+      <link role="applicableConcept" targetNodeId="1.1068431790189" />
+    </node>
   </node>
 </model>
 

@@ -1487,7 +1487,6 @@
       </node>
       <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ConceptProperty" id="1138060501183">
         <property name="textFgColor" value="DARK_BLUE" />
-        <link role="keyMap" targetNodeId="1119265790350" />
         <link role="relationDeclaration" targetNodeId="2.1137473891462" />
       </node>
     </node>
@@ -2212,7 +2211,6 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1113208366980">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <link role="keyMap" targetNodeId="1119265790350" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1113208455587">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1070534760952" />
@@ -2251,17 +2249,6 @@
         <property name="fontStyle" value="ITALIC" />
         <property name="drawBorder" value="false" />
       </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1119265790350">
-    <property name="name" value="_TypeKeyMap" />
-    <node role="entry" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1119265795851">
-      <property name="keycode" value="[" />
-      <property name="actionProviderId" value="TransformToArrayType" />
-    </node>
-    <node role="entry" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1126262780722">
-      <property name="keycode" value="]" />
-      <property name="actionProviderId" value="Consume" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1123756988005">
@@ -2333,12 +2320,10 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1128164132329">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <link role="keyMap" targetNodeId="1119265790350" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1128164132330">
         <property name="drawBorder" value="false" />
         <property name="noTargetText" value="&lt;no classifier&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1107535924139" />
-        <link role="keyMap" targetNodeId="1119265790350" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1128164132331">
           <link role="conceptDeclaration" targetNodeId="1.1107461130800" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1128164132332">
