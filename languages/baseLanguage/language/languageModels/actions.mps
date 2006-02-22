@@ -90,6 +90,11 @@
       <property name="preconditionAspectId" value="ClassifierType_noTypeParameters" />
       <link role="applicableConcept" targetNodeId="1.1107535904670" />
     </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1140573012027">
+      <property name="actionsFactoryAspectId" value="GenericDeclaration_addTypeVariable" />
+      <property name="preconditionAspectId" value="GenericDeclaration_noTypeVariables" />
+      <link role="applicableConcept" targetNodeId="1.1109279851642" />
+    </node>
   </node>
 </model>
 
