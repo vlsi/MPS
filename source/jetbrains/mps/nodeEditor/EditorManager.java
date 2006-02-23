@@ -326,4 +326,5 @@ public class EditorManager {
     return editor;
   }
 
+  public static class NoAttribute {}
 }
