@@ -351,5 +351,27 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1140725362528">
+    <property name="name" value="Link_SetTargetOperation" />
+    <link role="extends" targetNodeId="1138411891628" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1140725362529">
+      <property name="sourceCardinality" value="1" />
+      <property name="targetCardinality" value="1" />
+      <property name="role" value="parameter" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="2.1068431790191" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1140725362530">
+      <property name="value" value="set" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1140725362531">
+      <property name="value" value="set child or referent" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1140725362532">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763325919" />
+    </node>
+  </node>
 </model>
 

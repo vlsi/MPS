@@ -272,7 +272,7 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.NewExpression" id="1137820870855">
               <link role="baseMethodDeclaration" targetNodeId="1137820838257" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1137820997312">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1140732377588">
                 <property name="value" value="10" />
               </node>
             </node>
@@ -306,13 +306,12 @@
                 <property name="value" value="0" />
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1128646349362">
-                <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1128646363648">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.FieldReference" id="1128646366854">
-                    <link role="variableDeclaration" targetNodeId="1127094836077" />
-                    <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1128646366870" />
-                  </node>
+                <node role="expression" type="jetbrains.mps.baseLanguage.MinusExpression" id="1140722172948">
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1128646357333">
                     <property name="value" value="1" />
+                  </node>
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1140731586791">
+                    <property name="value" value="1000" />
                   </node>
                 </node>
               </node>
