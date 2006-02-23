@@ -1310,10 +1310,6 @@
         </node>
       </node>
     </node>
-    <node role="entry" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1107520051989">
-      <property name="keycode" value=")" />
-      <property name="actionProviderId" value="Expression_Finish_Parens" />
-    </node>
     <node role="entry" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1108717230420">
       <property name="keycode" value="VK_COMMA" />
       <property name="actionProviderId" value="Expression_AddParameter" />
