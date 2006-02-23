@@ -100,9 +100,13 @@ public class Solution extends AbstractModule {
 
     // read languages and models
     readModulesAndModels();
-    MPSModuleRepository.getInstance().readModuleDescriptors((Iterator<? extends Root>) newDescriptor.languageRoots(), this);
 
     myEventTranslator.solutionChanged();
+  }
+
+  protected void readModulesAndModels() {
+    super.readModulesAndModels();
+    MPSModuleRepository.getInstance().readModuleDescriptors((Iterator<? extends Root>) getSolutionDescriptor().languageRoots(), this);
   }
 
   public void dispose() {
