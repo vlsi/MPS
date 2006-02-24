@@ -15,6 +15,8 @@ import java.awt.event.KeyEvent;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class AbstractCellListHandler implements IKeyboardHandler {
+  public static Object ELEMENT_CELL_ACTIONS_SET = new Object();
+
   protected SNode myOwnerNode;
   protected EditorContext myEditorContext;
   protected EditorCell_Collection myListEditorCell_Collection;
