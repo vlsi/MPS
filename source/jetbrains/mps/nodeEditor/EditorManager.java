@@ -29,7 +29,8 @@ public class EditorManager {
   public static final Object IS_BIG_CELL = new Object();
 
   public static final Object RIGHT_TRANSFORM_HINT_JUST_ADDED = new Object();
-  public static final Object RIGHT_TRANSFORM_HINT_ANCHOR_ID = new Object();
+  public static final Object RIGHT_TRANSFORM_HINT_ANCHOR_CELL_ID = new Object();
+  public static final Object RIGHT_TRANSFORM_HINT_ANCHOR_TAG = new Object();
 
   private HashMap<SNode, EditorCell> myMap = new HashMap<SNode, EditorCell>();
   private boolean myCreatingInspectedCell = false;
@@ -250,9 +251,10 @@ public class EditorManager {
     rightTransformHintCell.addKeyMap(keyMap);
 
     // create the hint's auto-completion menu
+    final String transformTag = (String) node.getUserObject(RIGHT_TRANSFORM_HINT_ANCHOR_TAG);
     rightTransformHintCell.setSubstituteInfo(new AbstractNodeSubstituteInfo(context) {
       protected List<INodeSubstituteItem> createActions() {
-        List list = ModelActions.createRightTransformHintSubstituteActions(node, context.getOperationContext().getScope());
+        List list = ModelActions.createRightTransformHintSubstituteActions(node, transformTag, context.getOperationContext().getScope());
         List wrapperList = new LinkedList();
         for (Object action : list) {
           wrapperList.add(new NodeSubstituteActionWrapper((INodeSubstituteAction) action) {
@@ -268,7 +270,7 @@ public class EditorManager {
 
     // decide position of the hint cell
     EditorCell resultCell;
-    Object anchorId = node.getUserObject(RIGHT_TRANSFORM_HINT_ANCHOR_ID);
+    Object anchorId = node.getUserObject(RIGHT_TRANSFORM_HINT_ANCHOR_CELL_ID);
     EditorCell anchorCell = context.getNodeEditorComponent().findCellWithId(nodeCell, anchorId.toString());
     if (anchorCell != null && anchorCell != nodeCell) {
       EditorCell_Collection cellCollection = anchorCell.getParent();
@@ -326,5 +328,6 @@ public class EditorManager {
     return editor;
   }
 
-  public static class NoAttribute {}
+  public static class NoAttribute {
+  }
 }

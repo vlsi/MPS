@@ -46,9 +46,9 @@
           <property name="writable" value="true" />
           <property name="defaultValue" value="&lt;no name&gt;" />
           <property name="drawBorder" value="false" />
-          <property name="defaultRTransformAnchor" value="true" />
           <property name="noTargetText" value="&lt;no name&gt;" />
           <property name="selectable" value="true" />
+          <property name="rightTransformAnchorTag" value="default_RTransformAnchor" />
           <link role="relationDeclaration" targetNodeId="2.1078489098626" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1109281144581">
@@ -497,8 +497,8 @@
         <property name="defaultValue" value="?" />
         <property name="fontStyle" value="BOLD" />
         <property name="drawBorder" value="false" />
-        <property name="defaultRTransformAnchor" value="true" />
         <property name="noTargetText" value="&lt;no name&gt;" />
+        <property name="rightTransformAnchorTag" value="default_RTransformAnchor" />
         <link role="relationDeclaration" targetNodeId="2.1078489098626" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1075290206265">
@@ -1949,9 +1949,9 @@
           <property name="writable" value="true" />
           <property name="defaultValue" value="&lt;no name&gt;" />
           <property name="drawBorder" value="false" />
-          <property name="defaultRTransformAnchor" value="true" />
           <property name="noTargetText" value="&lt;no name&gt;" />
           <property name="selectable" value="true" />
+          <property name="rightTransformAnchorTag" value="default_RTransformAnchor" />
           <link role="relationDeclaration" targetNodeId="2.1078489098626" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1109281106345">

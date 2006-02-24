@@ -63,11 +63,11 @@ public class ModelActions {
   // right-transform hint substiture
   //-------------------
 
-  public static boolean canCreateRightTransformHintSubstituteActions(SNode sourceNode, IScope scope) {
-    return RTransformHintSubstituteActionsHelper.canCreateActions(sourceNode, scope);
+  public static boolean canCreateRightTransformHintSubstituteActions(SNode sourceNode, String transformTag, IScope scope) {
+    return RTransformHintSubstituteActionsHelper.canCreateActions(sourceNode, transformTag, scope);
   }
 
-  public static List<INodeSubstituteAction> createRightTransformHintSubstituteActions(SNode sourceNode, IScope scope) {
-    return RTransformHintSubstituteActionsHelper.createActions(sourceNode, scope);
+  public static List<INodeSubstituteAction> createRightTransformHintSubstituteActions(SNode sourceNode, String transformTag, IScope scope) {
+    return RTransformHintSubstituteActionsHelper.createActions(sourceNode, transformTag, scope);
   }
 }

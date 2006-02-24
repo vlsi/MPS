@@ -17,13 +17,13 @@ import java.util.*;
  */
 /*package*/ class RTransformHintSubstituteActionsHelper {
 
-  public static boolean canCreateActions(SNode sourceNode, IScope scope) {
-    return getActionBuilders(sourceNode, scope).size() > 0;
+  public static boolean canCreateActions(SNode sourceNode, String transformTag, IScope scope) {
+    return getActionBuilders(sourceNode, transformTag, scope).size() > 0;
   }
 
-  public static List<INodeSubstituteAction> createActions(SNode sourceNode, IScope scope) {
+  public static List<INodeSubstituteAction> createActions(SNode sourceNode, String transformTag, IScope scope) {
     List<INodeSubstituteAction> resultActions = new LinkedList<INodeSubstituteAction>();
-    List<RTransformHintSubstituteActionsBuilder> actionsBuilders = getActionBuilders(sourceNode, scope);
+    List<RTransformHintSubstituteActionsBuilder> actionsBuilders = getActionBuilders(sourceNode, transformTag, scope);
 
     // for each builder create actions and apply all filters
     for (RTransformHintSubstituteActionsBuilder builder : actionsBuilders) {
@@ -34,7 +34,7 @@ import java.util.*;
     return resultActions;
   }
 
-  private static List<RTransformHintSubstituteActionsBuilder> getActionBuilders(final SNode sourceNode, final IScope scope) {
+  private static List<RTransformHintSubstituteActionsBuilder> getActionBuilders(final SNode sourceNode, String transformTag, final IScope scope) {
     List<RTransformHintSubstituteActionsBuilder> actionsBuilders = new LinkedList<RTransformHintSubstituteActionsBuilder>();
     final ConceptDeclaration sourceConcept = SModelUtil.getConceptDeclaration(sourceNode, scope);
     if (sourceConcept == null) {
@@ -108,7 +108,9 @@ import java.util.*;
       return Collections.EMPTY_LIST;
     }
 
-    Object[] args = new Object[]{sourceNode,
+    Object[] args = new Object[]{
+            sourceNode,
+            null,                  // todo: tag from builder description
             scope};
     String methodName = "rightTransformHintSubstituteActionsBuilder_ActionsFactory_" + factoryQueryMethodId;
     SModel model = substituteActionsBuilder.getModel();
