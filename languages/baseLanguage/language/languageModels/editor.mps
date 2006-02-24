@@ -2166,13 +2166,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1126280191419">
-    <property name="name" value="_Number_KeyMap" />
-    <node role="entry" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapEntry" id="1126280305052">
-      <property name="keycode" value="+" />
-      <property name="actionProviderId" value="SplitNumber" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1128163980260">
     <link role="conceptDeclaration" targetNodeId="1.1107535904670" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Alternation" id="1140569118323">
