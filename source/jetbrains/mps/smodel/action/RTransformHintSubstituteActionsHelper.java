@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder;
+import jetbrains.mps.bootstrap.actionsLanguage.RTransformTag;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
@@ -40,6 +41,9 @@ import java.util.*;
     if (sourceConcept == null) {
       return actionsBuilders;
     }
+
+    final RTransformTag tag = RTransformTag.parseValue(transformTag);
+
     List<Language> languages = sourceNode.getModel().getLanguages(scope);
     for (Language language : languages) {
       SModelDescriptor actionsModel = language.getActionsModelDescriptor();
@@ -48,6 +52,10 @@ import java.util.*;
           public boolean met(SNode node) {
             if (node instanceof RTransformHintSubstituteActionsBuilder) {
               RTransformHintSubstituteActionsBuilder actionsBuilder = (RTransformHintSubstituteActionsBuilder) node;
+              // same tag?
+              if (actionsBuilder.getTransformTag() != tag) {
+                return false;
+              }
               // is applicable ?
               return SModelUtil.isAssignableConcept(actionsBuilder.getApplicableConcept(), sourceConcept) &&
                       satisfiesPrecondition(actionsBuilder, sourceNode, scope);

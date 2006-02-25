@@ -93,7 +93,7 @@
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1138079331368">
-        <property name="text" value="applicable for:" />
+        <property name="text" value="concept:" />
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1138079331371">
@@ -109,6 +109,15 @@
             <link role="relationDeclaration" targetNodeId="3.1078489098626" />
           </node>
         </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1140831236671">
+        <property name="text" value="tag:" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1140831293610">
+        <property name="textFgColor" value="DARK_MAGENTA" />
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="1.1140829165817" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1138161099235">
         <property name="text" value="condition:" />

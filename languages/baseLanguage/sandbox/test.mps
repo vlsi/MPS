@@ -102,6 +102,18 @@
               <link role="classifier" targetNodeId="1115766310400" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.IntegerType" id="1140575434613" />
             </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1140832851506">
+              <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1140832744945">
+                <link role="baseMethodDeclaration" targetNodeId="1137820838257" />
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.IntegerType" id="1140832793436" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1140832796031">
+                  <property name="value" value="10" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1140832798220">
+                  <property name="value" value="10" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
@@ -274,6 +286,9 @@
               <link role="baseMethodDeclaration" targetNodeId="1137820838257" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1140732377588">
                 <property name="value" value="10" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1140833730446">
+                <property name="value" value="100" />
               </node>
             </node>
           </node>

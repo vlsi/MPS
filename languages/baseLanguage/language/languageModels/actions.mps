@@ -95,6 +95,12 @@
       <property name="preconditionAspectId" value="GenericDeclaration_noTypeVariables" />
       <link role="applicableConcept" targetNodeId="1.1109279851642" />
     </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1140831852602">
+      <property name="transformTag" value="ext_1_RTransform" />
+      <property name="actionsFactoryAspectId" value="NewExpression_addTypeParameter" />
+      <property name="preconditionAspectId" value="NewExpression_noTypeParameters" />
+      <link role="applicableConcept" targetNodeId="1.1068581242872" />
+    </node>
   </node>
 </model>
 
