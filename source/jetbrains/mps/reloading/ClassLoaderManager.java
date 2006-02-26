@@ -41,7 +41,7 @@ public class ClassLoaderManager {
   }
 
   public ClassLoader getClassLoader() {
-    if (myUseSystemClassLoader) return ClassLoader.getSystemClassLoader();
+    if (myUseSystemClassLoader) return getClass().getClassLoader();
 
     if (myClassLoader == null) {
       return ClassLoader.getSystemClassLoader();

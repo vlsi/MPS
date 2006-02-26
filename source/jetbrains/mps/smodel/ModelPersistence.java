@@ -292,6 +292,8 @@ public class ModelPersistence {
       Method method = nodeClass.getMethod("newInstance", new Class[]{SModel.class});
       return (SNode) method.invoke(nodeClass, new Object[]{model});
     } catch (ClassNotFoundException e) {
+      System.out.println("can't find class " + type);
+
       LOG.warning("Couldn't find class for node type " + type + " in model " + model.getUID());
       if (type.endsWith(".ClassType") || type.endsWith(".InterfaceType")) { // these classes have been removed
         SModelRepository.getInstance().markChanged(model, true);
