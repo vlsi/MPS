@@ -118,8 +118,8 @@ public class NameUtil {
   }
 
   public static String convertToMetaString(String s) {
-    String s1 = s.replace('\\', File.separatorChar);
-    return s1.replace("\\", "\\\\");
+    if (s == null) return null;
+    return s.replace("\\", "\\\\").replace("\"", "\\\"");
   }
 
   public static String toValidIdentifier(String s) {
