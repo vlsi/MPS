@@ -85,6 +85,13 @@
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1115766310400">
     <property name="name" value="AClass" />
     <link role="extendedClass" targetNodeId="1115766267843" />
+    <node role="staticField" type="jetbrains.mps.baseLanguage.StaticFieldDeclaration" id="1141080210673">
+      <property name="name" value="iiii" />
+      <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1141080214379" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1141080350995">
+        <property name="value" value="10" />
+      </node>
+    </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1137989368509">
       <property name="name" value="myStaticMethod" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1137989388935" />
@@ -115,6 +122,12 @@
               </node>
             </node>
           </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1141079511195">
+          <node role="condition" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1141080371324">
+            <property name="value" value="true" />
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1141079511213" />
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1140575569883">
@@ -258,6 +271,9 @@
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1127094836077">
       <property name="name" value="aaa" />
       <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1127094838614" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1141079734437">
+        <property name="value" value="10" />
+      </node>
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1137736415066">
       <property name="name" value="bbb" />
