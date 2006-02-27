@@ -120,5 +120,15 @@ public class Substitution {
       return new ArrayList<SNode>(linkTargets);
     }
   }
+  
+
+  public void add(Substitution substitution) {
+    this.myLinkVarsToNodes.putAll(substitution.myLinkVarsToNodes);
+    this.myListLinkVarsToNodes.putAll(substitution.myListLinkVarsToNodes);
+    this.myListPropVarsToProperties.putAll(substitution.myListPropVarsToProperties);
+    this.myListVarsToNodes.putAll(substitution.myListVarsToNodes);
+    this.myPropVarsToProperties.putAll(substitution.myPropVarsToProperties);
+    this.myVarsToNodes.putAll(substitution.myVarsToNodes);
+  }
 
 }
