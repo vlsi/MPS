@@ -1521,6 +1521,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
         rebuildEditorContent(events);
 
+        if (!hasFocus()) return;
+
         SModelEvent lastAdd = null;
         SModelEvent lastRemove = null;
 
