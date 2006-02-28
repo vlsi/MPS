@@ -23,11 +23,6 @@ public abstract class EditorCellKeyMapAction {
     return "no description : " + this.getClass().getName();
   }
 
-  public KeyMapActionType getSelectionCondition() {
-    // we generally relay on actions registered on parent cells
-    return KeyMapActionType.WHEN_ANCESTOR_OF_SELECTED;
-  }
-
   public int getCaretPolicy() {
     return myCaretPolicy;
   }
