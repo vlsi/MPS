@@ -293,12 +293,17 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         if (selectedCell == null) {
           EditorCell rootCell = getRootCell();
           if (rootCell instanceof EditorCell_Collection) {
-            EditorCell cellToSelect = FocusPolicy.findCellToSelectDueToFocusPolicy(rootCell);
-            if (cellToSelect != null) {
-              changeSelection(cellToSelect);
-              repaint();
-              return;
+            EditorCell focusPolicyCell = FocusPolicy.findCellToSelectDueToFocusPolicy(rootCell);
+            EditorCell toSelect;
+            if (focusPolicyCell == null || (focusPolicyCell == rootCell && focusPolicyCell.getUserObject(EditorCell.ATTRACTS_FOCUS_POLICY) == null)) {
+              toSelect = EditorUtil.findFirstEditableCell(rootCell);
+            } else {
+              toSelect = focusPolicyCell;
             }
+            if (toSelect == null) toSelect = rootCell;
+            changeSelection(toSelect);
+            repaint();
+            return;
           }
           if (rootCell != null && rootCell.isSelectable()) {
             changeSelection(rootCell);
