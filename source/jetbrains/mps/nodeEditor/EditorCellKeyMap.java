@@ -8,6 +8,7 @@ package jetbrains.mps.nodeEditor;
 
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.Pair;
 
 import java.awt.event.KeyEvent;
 import java.lang.reflect.Field;
@@ -60,6 +61,7 @@ public class EditorCellKeyMap {
   } // static init
 
   private HashMap<ActionKey, EditorCellKeyMapAction> myActionMap;
+  private List<Pair<ActionKey, EditorCellKeyMapAction>> myDuplicatedActionList;
   private List<EditorCellKeyMap> myChildKeyMaps;
 
   public EditorCellKeyMap() {
@@ -74,18 +76,43 @@ public class EditorCellKeyMap {
   }
 
   public void putAction(String modifiers, String keyCode, EditorCellKeyMapAction action) {
-    myActionMap.put(new ActionKey(modifiers, keyCode), action);
+    ActionKey key = new ActionKey(modifiers, keyCode);
+    if (!myActionMap.containsKey(key)) {
+      myActionMap.put(key, action);
+    } else {
+      addToDuplicatedActions(key, action);
+    }
+  }
+
+  private void addToDuplicatedActions(ActionKey key, EditorCellKeyMapAction action) {
+    if (myDuplicatedActionList == null) {
+      myDuplicatedActionList = new LinkedList<Pair<ActionKey, EditorCellKeyMapAction>>();
+    }
+    myDuplicatedActionList.add(new Pair<ActionKey, EditorCellKeyMapAction>(key, action));
+  }
+
+  private static List<EditorCellKeyMapAction> lookupDuplicatedActions(ActionKey key, List<Pair<ActionKey, EditorCellKeyMapAction>> actions) {
+    if (actions == null) return Collections.emptyList();
+    List<EditorCellKeyMapAction> result = null;
+    for (Pair<ActionKey, EditorCellKeyMapAction> pair : actions) {
+      if (pair.o1.equals(key)) {
+        if (result == null) result = new LinkedList<EditorCellKeyMapAction>();
+        result.add(pair.o2);
+      }
+    }
+    if (result == null) return Collections.emptyList();
+    return result;
   }
 
   public boolean hasActions(KeyEvent event) {
-    if (findAction(this, event) != null) {
+    if (findActions(this, event).size() > 0) {
       return true;
     }
     if (myChildKeyMaps != null) {
       Iterator<EditorCellKeyMap> iterator = myChildKeyMaps.iterator();
       while (iterator.hasNext()) {
         EditorCellKeyMap childKeyMap = iterator.next();
-        if (findAction(childKeyMap, event) != null) {
+        if (findActions(childKeyMap, event).size() > 0) {
           return true;
         }
       }
@@ -94,39 +121,50 @@ public class EditorCellKeyMap {
   }
 
   public List<EditorCellKeyMapAction> getActions(KeyEvent event) {
-    List<EditorCellKeyMapAction> list = new LinkedList<EditorCellKeyMapAction>();
-    EditorCellKeyMapAction keyMapAction = findAction(this, event);
-    if (keyMapAction != null) {
-      list.add(keyMapAction);
+    List<EditorCellKeyMapAction> result = null;
+    List<EditorCellKeyMapAction> actions = findActions(this, event);
+    if (actions.size() > 0) {
+      if (result == null) result = new LinkedList<EditorCellKeyMapAction>();
+      result.addAll(actions);
     }
     if (myChildKeyMaps != null) {
-      Iterator<EditorCellKeyMap> iterator = myChildKeyMaps.iterator();
-      while (iterator.hasNext()) {
-        EditorCellKeyMap childKeyMap = iterator.next();
-        keyMapAction = findAction(childKeyMap, event);
-        if (keyMapAction != null) {
-          list.add(keyMapAction);
+      for (EditorCellKeyMap childKeyMap : myChildKeyMaps) {
+        actions = findActions(childKeyMap, event);
+        if (actions.size() > 0) {
+          if (result == null) result = new LinkedList<EditorCellKeyMapAction>();
+          result.addAll(actions);
         }
       }
     }
-    return list;
+    if (result == null) return Collections.emptyList();
+    return result;
   }
 
   public List<ActionKey> getActionKeys() {
     return new ArrayList<ActionKey>(myActionMap.keySet());
   }
 
-  private static EditorCellKeyMapAction findAction(EditorCellKeyMap keyMap, KeyEvent event) {
+  private static List<EditorCellKeyMapAction> findActions(EditorCellKeyMap keyMap, KeyEvent event) {
+    List<EditorCellKeyMapAction> result = null;
     List<ActionKey> actionKeies = keyEvent2ActionKey(event);
-    for (int i = 0; i < actionKeies.size(); i++) {
-      ActionKey actionKey = actionKeies.get(i);
-      EditorCellKeyMapAction editorCellAction = keyMap.myActionMap.get(actionKey);
-      if (editorCellAction != null) {
-        LOG.debug("keymap action found for key: " + actionKey);
-        return editorCellAction;
+    for (ActionKey actionKey : actionKeies) {
+      EditorCellKeyMapAction action = keyMap.myActionMap.get(actionKey);
+      if (action != null) {
+        if (result == null) result = new LinkedList<EditorCellKeyMapAction>();
+        LOG.debug("keymap action " + (result.isEmpty() ? "" : "[" + result.size() + "]") + " found for key: " + actionKey);
+        result.add(action);
+      }
+
+      List<EditorCellKeyMapAction> extraActions = lookupDuplicatedActions(actionKey, keyMap.myDuplicatedActionList);
+      if (extraActions.size() > 0) {
+        LOG.debug("keymap action found [" + extraActions.size() + "] extra actions for key: " + actionKey);
+        if (result == null) result = new LinkedList<EditorCellKeyMapAction>();
+        result.addAll(extraActions);
       }
     }
-    return null;
+
+    if (result == null) return Collections.emptyList();
+    return result;
   }
 
   private static List<ActionKey> keyEvent2ActionKey(KeyEvent event) {
