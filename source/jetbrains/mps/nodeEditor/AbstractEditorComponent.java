@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.TypeCheckerAccess;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.NodesParetoFrontier;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -703,8 +704,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
 
-  public void selectRefCell(SReference reference, String role) {
+  public void selectRefCell(SReference reference) {
     SNode sourceNode = reference.getSourceNode();
+    String role = reference.getRole();
     EditorCell cell;
     if (role == null) cell = findNodeCell(sourceNode);
     else {
@@ -1520,93 +1522,103 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           cellRole = (String) selectedCell.getUserObject(EditorCell.ROLE);
         }
         rebuildEditorContent(events);
-
         if (!hasFocus()) return;
 
-        SModelEvent lastAdd = null;
-        SModelEvent lastRemove = null;
+        updateSelection(events, cellRole);
+      }
+    }
 
-        for (SModelEvent e : events) {
-          if (e instanceof SModelChildEvent) {
-            SModelChildEvent ce = (SModelChildEvent) e;
-            if (ce.isAdded()) lastAdd = ce;
-            if (ce.isRemoved()) lastRemove = ce;
-          }
 
-          if (e instanceof SModelReferenceEvent) {
-            SModelReferenceEvent re = (SModelReferenceEvent) e;
-            if (re.isAdded()) lastAdd = re;
-            if (re.isRemoved()) lastRemove = re;
+    private void updateSelection(List<SModelEvent> events, String cellRole) {
+
+      SModelEvent lastAdd = null;
+      SModelEvent lastRemove = null;
+
+      List<SNode> childAddedEventNodes = new ArrayList<SNode>();
+
+      for (SModelEvent e : events) {
+        if (e instanceof SModelChildEvent) {
+          SModelChildEvent ce = (SModelChildEvent) e;
+          if (ce.isAdded()) {
+            lastAdd = ce;
+            childAddedEventNodes.add(ce.getChild());
           }
+          if (ce.isRemoved()) lastRemove = ce;
         }
 
-        if (lastAdd != null) {
-          if (lastAdd instanceof SModelChildEvent) {
-            SModelChildEvent ce = (SModelChildEvent) lastAdd;
+        if (e instanceof SModelReferenceEvent) {
+          SModelReferenceEvent re = (SModelReferenceEvent) e;
+          if (re.isAdded()) lastAdd = re;
+          if (re.isRemoved()) lastRemove = re;
+        }
+      }
 
-            EditorCell cell = findNodeCell(ce.getChild());
-            changeSelectionWRTFocusPolicy(cell);
-            return;
+      if (lastAdd != null) {
+        if (lastAdd instanceof SModelChildEvent) {
+          List<NodesParetoFrontier.NodeBox> frontier = NodesParetoFrontier.findParetoFrontier(childAddedEventNodes);
+          SNode addedChild = frontier.get(frontier.size() - 1).getNode();
+          EditorCell cell = findNodeCell(addedChild);
+          changeSelectionWRTFocusPolicy(cell);
+          return;
+        }
+        if (lastAdd instanceof SModelReferenceEvent) {
+          SModelReferenceEvent re = (SModelReferenceEvent) lastAdd;
+          selectRefCell(re.getReference());
+          return;
+        }
+      }
+
+      if (lastRemove != null) {
+        if (lastRemove instanceof SModelChildEvent) {
+          SModelChildEvent ce = (SModelChildEvent) lastRemove;
+          int index = ce.getChildIndex();
+          String role = ce.getChildRole();
+          SNode parent = ce.getParent();
+
+          if (parent.getChildCount() > index) {
+            SNode child = parent.getChildAt(index);
+            if (child.getRole_().equals(role)) {
+              changeSelectionWRTFocusPolicy(findNodeCell(child));
+              return;
+            }
+          }
+
+          if (index != 0) {
+            SNode child = parent.getChildAt(index - 1);
+            if (child.getRole_().equals(role)) {
+              changeSelectionWRTFocusPolicy(findNodeCell(child));
+              return;
+            }
           }
 
 
-          if (lastAdd instanceof SModelReferenceEvent) {
-            SModelReferenceEvent re = (SModelReferenceEvent) lastAdd;
-            selectRefCell(re.getReference(), cellRole);
-            return;
+          EditorCell nullCell = findNodeCellWithRole(parent, role);
+          if (nullCell == null) {
+            changeSelectionWRTFocusPolicy(findNodeCell(parent));
+          } else {
+            changeSelectionWRTFocusPolicy(nullCell);
           }
+
+          return;
         }
 
-        if (lastRemove != null) {
-          if (lastRemove instanceof SModelChildEvent) {
-            SModelChildEvent ce = (SModelChildEvent) lastRemove;
-            int index = ce.getChildIndex();
-            String role = ce.getChildRole();
-            SNode parent = ce.getParent();
-
-            if (parent.getChildCount() > index) {
-              SNode child = parent.getChildAt(index);
-              if (child.getRole_().equals(role)) {
-                changeSelectionWRTFocusPolicy(findNodeCell(child));
-                return;
-              }
-            }
-
-            if (index != 0) {
-              SNode child = parent.getChildAt(index - 1);
-              if (child.getRole_().equals(role)) {
-                changeSelectionWRTFocusPolicy(findNodeCell(child));
-                return;
-              }
-            }
-
-
-            EditorCell nullCell = findNodeCellWithRole(parent, role);
-            if (nullCell == null) {
-              changeSelectionWRTFocusPolicy(findNodeCell(parent));
-            } else {
-              changeSelectionWRTFocusPolicy(nullCell);
-            }
-
-            return;
-          }
-
-          if (lastRemove instanceof SModelReferenceEvent) {
-            SModelReferenceEvent re = (SModelReferenceEvent) lastRemove;
-            SReference ref = re.getReference();
-            SNode sourceNode = ref.getSourceNode();
-            String role = ref.getRole();
-            EditorCell nullCell = findNodeCellWithRole(sourceNode, role);
-            if (nullCell == null) {
-              changeSelectionWRTFocusPolicy(findNodeCell(sourceNode));
-            } else {
-              changeSelectionWRTFocusPolicy(nullCell);
-            }
+        if (lastRemove instanceof SModelReferenceEvent) {
+          SModelReferenceEvent re = (SModelReferenceEvent) lastRemove;
+          SReference ref = re.getReference();
+          SNode sourceNode = ref.getSourceNode();
+          String role = ref.getRole();
+          EditorCell nullCell = findNodeCellWithRole(sourceNode, role);
+          if (nullCell == null) {
+            changeSelectionWRTFocusPolicy(findNodeCell(sourceNode));
+          } else {
+            changeSelectionWRTFocusPolicy(nullCell);
           }
         }
       }
     }
   }
+
+
 
   private void runSwapCellsActions(Runnable action) {
     Object memento = null;

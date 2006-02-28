@@ -231,6 +231,15 @@
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1124810796151" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1141117531113">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1141117531112">
+            <property name="name" value="s" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1141117531145" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1141117542257">
+          <node role="expression" type="jetbrains.mps.baseLanguage.ThisExpression" id="1141117543274" />
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1124810808950">
           <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1124810811173">
             <node role="lValue" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1124810810140">

@@ -14,7 +14,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Collection;
 public class FocusPolicy {
   public static EditorCell findCellToSelectDueToFocusPolicy(EditorCell cell) {
     EditorCell _selectedCell = findFocusedCell(cell);
-    if (_selectedCell == null) return cell;
+    if (_selectedCell == null || _selectedCell == cell) return cell;
     if (_selectedCell.getUserObject(EditorCell.ATTRACTS_FOCUS_POLICY) == null) {
       EditorCell firstEditableCell = EditorUtil.findFirstEditableCell(_selectedCell);
       if (firstEditableCell != null) _selectedCell = firstEditableCell;

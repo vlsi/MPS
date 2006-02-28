@@ -93,8 +93,8 @@ public class NodesParetoFrontier {
       SNode parent = node.getParent();
       NodeBox currentNodeBox = nodeBox;
       while (parent != null) {
-        if (initialMap.containsKey(node)) {
-          NodeBox newNodeBox = initialMap.get(node);
+        if (initialMap.containsKey(parent)) {
+          NodeBox newNodeBox = initialMap.get(parent);
           newNodeBox.last().setNext(currentNodeBox);
           initialMap.remove(currentNodeBox.getNode());
           currentNodeBox = newNodeBox;
