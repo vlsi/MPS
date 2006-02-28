@@ -81,17 +81,14 @@ public class LeftEditorHighlighter {
           myBracketsLayoutStack.push(bracket);
         } else {
           HighlighterBracket poppedBracket = myBracketsLayoutStack.pop();
-          if (poppedBracket == bracket) {
-            int wasDepth = myBracketsLayoutStack.size() + 1;
-            maxDepth = Math.max(wasDepth, maxDepth);
-            bracket.myDepth = wasDepth;
-          } else {//error
-            while (poppedBracket != bracket) {
-              myBracketEdges.remove(poppedBracket.getEndingEdge());
-              myBrackets.remove(poppedBracket.myEditorCellInfo);
-              poppedBracket = myBracketsLayoutStack.pop();
-            }
+          while (poppedBracket != bracket) { // i.e. error
+            myBracketEdges.remove(poppedBracket.getEndingEdge());
+            myBrackets.remove(poppedBracket.myEditorCellInfo);
+            poppedBracket = myBracketsLayoutStack.pop();
           }
+          int wasDepth = myBracketsLayoutStack.size() + 1;
+          maxDepth = Math.max(wasDepth, maxDepth);
+          bracket.myDepth = wasDepth;
         }
       }
 

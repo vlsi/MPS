@@ -687,6 +687,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     repaint();
   }
 
+  public void revalidateAndRepaint() {
+    myLeftHighlighter.relayout();
+    revalidate();
+    repaint();
+  }
+
   private void doRelayout() {
     myRootCell.setX(myShiftX);
     myRootCell.setY(myShiftY);
@@ -969,7 +975,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (newSelectedCell != null && newSelectedCell.isSelectable()) {
       changeSelection(newSelectedCell);
       mySelectedCell.processMousePressed(mouseEvent);
-      relayout();
+      revalidateAndRepaint();
     }
   }
 
@@ -1155,15 +1161,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public void processKeyReleased(KeyEvent keyEvent) {
     peekKeyboardHandler().processKeyReleased(getEditorContext(), keyEvent);
-    if (keyEvent.getKeyCode() != KeyEvent.VK_F5 && keyEvent.getKeyCode() != KeyEvent.VK_F6) {
-      relayout();
-    }
+    revalidateAndRepaint();
   }
 
 
   public void processKeyPressed(final KeyEvent keyEvent) {
-    //myIsDirtyLayout = true;
-
     // hardcoded undo/redo action
     if (keyEvent.getKeyCode() == KeyEvent.VK_Z && keyEvent.isControlDown()) {
       if (keyEvent.isShiftDown()) {
@@ -1229,7 +1231,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
       }
     });
-    relayout();
+    revalidateAndRepaint();
   }
 
   boolean activateNodeSubstituteChooser(EditorCell editorCell, boolean resetPattern) {
