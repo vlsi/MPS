@@ -49,6 +49,19 @@ public class CellLayout_Vertical extends AbstractCellLayout {
     if (editorCells.isDrawBrackets()) {
       width += EditorCell_Collection.BRACKET_WIDTH * 2;
     }
+    int braceIndent = 0;
+    for (EditorCell editorCell : editorCells.contentCells()) {
+      int indent = EditorUtil.getBracesIndent(editorCell);
+      braceIndent = Math.max(indent, braceIndent);
+    }
+    editorCells.setArtificialBracesIndent(braceIndent);
+    for (EditorCell editorCell : editorCells.contentCells()) {
+      int cellX = editorCell.getX();
+      int cellY = editorCell.getY();
+      int indent = EditorUtil.getBracesIndent(editorCell);
+      int newCellX = cellX - indent + braceIndent;
+      if (newCellX != cellX) editorCell.moveTo(newCellX, cellY);
+    }
 
     if (isGridLayout) {
       int x0 = x;
