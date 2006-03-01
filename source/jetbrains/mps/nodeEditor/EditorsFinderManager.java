@@ -1,10 +1,8 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelUtil;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.util.*;
 
@@ -17,7 +15,7 @@ import java.util.*;
  */
 public class EditorsFinderManager {
 
-  private static Map<String, IGeneralizingEntityEditorFinder> myLanguageNamespacesToGEEditorFinders = new HashMap<String, IGeneralizingEntityEditorFinder>();
+  private static Map<String, IGeneralizingEntityEditorFinder> ourLanguageNamespacesToGEEditorFinders = new HashMap<String, IGeneralizingEntityEditorFinder>();
 
   public static INodeEditor loadEditor(EditorContext context, SNode node) {
     IGeneralizingEntityEditorFinder finder = getGEFinder(node);
@@ -27,16 +25,25 @@ public class EditorsFinderManager {
 
   public static IGeneralizingEntityEditorFinder getGEFinder(SNode node) {
     String languageNamespace = NameUtil.namespaceFromConceptFQName(NameUtil.nodeConceptFQName(node));
-    IGeneralizingEntityEditorFinder finder = myLanguageNamespacesToGEEditorFinders.get(languageNamespace);
+    IGeneralizingEntityEditorFinder finder = ourLanguageNamespacesToGEEditorFinders.get(languageNamespace);
     return finder;
   }
 
   public static void registerEditorJavaClassesFinder(String languageNamespace, IGeneralizingEntityEditorFinder finder) {
-    myLanguageNamespacesToGEEditorFinders.put(languageNamespace, finder);
+    ourLanguageNamespacesToGEEditorFinders.put(languageNamespace, finder);
   }
 
   public static void unregisterEditorJavaClassesFinder(String languageNamespace) {
-    myLanguageNamespacesToGEEditorFinders.remove(languageNamespace);
+    ourLanguageNamespacesToGEEditorFinders.remove(languageNamespace);
+  }
+
+  static {
+    try {
+      Class cls = Class.forName("jetbrains.semanticweb.editorLanguage.OWLInstanceGEFinder", true, ClassLoaderManager.getInstance().getMPSClassLoader());
+      registerEditorJavaClassesFinder("jetbrains.semanticweb.core", (IGeneralizingEntityEditorFinder) cls.newInstance());
+    } catch (Throwable t) {
+      t.printStackTrace();
+    }
   }
 
 }
