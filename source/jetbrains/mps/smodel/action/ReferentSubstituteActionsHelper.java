@@ -96,14 +96,17 @@ import java.util.*;
     return substituteActionsBuilders;
   }
 
+  /**
+   * @return TRUE if builder src concept
+   */
   private static boolean isActionBuilderApplicable(ReferentSubstituteActionsBuilder builder, ConceptDeclaration sourceConcept, ConceptDeclaration referentConcept) {
     ConceptDeclaration applicableSourceConcept = builder.getApplicableSourceConcept();
     ConceptDeclaration applicableReferentConcept = builder.getApplicableReferentConcept();
     if (applicableSourceConcept == null || applicableReferentConcept == null) {
       return false;
     }
-    return SModelUtil.isAssignableConcept(sourceConcept, applicableSourceConcept) &&
-            SModelUtil.isAssignableConcept(referentConcept, applicableReferentConcept);
+    return SModelUtil.isAssignableConcept(applicableSourceConcept, sourceConcept) &&
+            SModelUtil.isAssignableConcept(applicableReferentConcept, referentConcept);
   }
 
   private static List<INodeSubstituteAction> createPrimaryReferentSubstituteActions(SNode sourceNode, SNode currentReferent, LinkDeclaration linkDeclaration, final Condition<SNode> filterCondition, final IScope scope) {

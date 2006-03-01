@@ -85,7 +85,7 @@ import java.util.*;
   public static boolean isDefaultSubstitutableConcept(ConceptDeclaration concept, ConceptDeclaration expectedConcept, IScope scope) {
     if (!SModelUtil.hasConceptProperty(concept, ABSTRACT, scope) &&
             !SModelUtil.hasConceptProperty(concept, DONT_SUBSTITUTE_BY_DEFAULT, scope)) {
-      return SModelUtil.isAssignableConcept(expectedConcept, concept);
+      return SModelUtil.isAssignableConcept(concept, expectedConcept);
     }
     return false;
   }
@@ -147,7 +147,7 @@ import java.util.*;
             // is applicable ?
             ConceptDeclaration applicableConcept = substituteActionsBuilder.getApplicableConcept();
             if (substituteActionsBuilder.getApplicableLinkMetaclass() == linkMetaclass &&
-                    SModelUtil.isAssignableConcept(targetConcept, applicableConcept)) {
+                    SModelUtil.isAssignableConcept(applicableConcept, targetConcept)) {
 
               // do not duplicate if two builders if they applicable concepts are assignable to each other
               boolean skipBuilder = false;
@@ -155,10 +155,10 @@ import java.util.*;
               while (otherBuilders.hasNext()) {
                 NodeSubstituteActionsBuilder builder = otherBuilders.next();
                 ConceptDeclaration otherApplicableConcept = builder.getApplicableConcept();
-                if (SModelUtil.isAssignableConcept(otherApplicableConcept, applicableConcept)) {
+                if (SModelUtil.isAssignableConcept(applicableConcept, otherApplicableConcept)) {
                   skipBuilder = true;
                   break;
-                } else if (SModelUtil.isAssignableConcept(applicableConcept, otherApplicableConcept)) {
+                } else if (SModelUtil.isAssignableConcept(otherApplicableConcept, applicableConcept)) {
                   otherBuilders.remove();
                   break;
                 }

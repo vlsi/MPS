@@ -108,6 +108,9 @@
       <link role="applicableSourceConcept" targetNodeId="1.1068581242872" />
       <link role="applicableReferentConcept" targetNodeId="1.1068580123140" />
     </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141240547025">
+      <link role="applicableSourceConcept" targetNodeId="1.1068580123158" />
+    </node>
   </node>
 </model>
 

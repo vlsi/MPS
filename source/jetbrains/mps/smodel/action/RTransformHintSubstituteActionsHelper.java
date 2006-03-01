@@ -57,7 +57,7 @@ import java.util.*;
                 return false;
               }
               // is applicable ?
-              return SModelUtil.isAssignableConcept(actionsBuilder.getApplicableConcept(), sourceConcept) &&
+              return SModelUtil.isAssignableConcept(sourceConcept, actionsBuilder.getApplicableConcept()) &&
                       satisfiesPrecondition(actionsBuilder, sourceNode, scope);
             }
             return false;
