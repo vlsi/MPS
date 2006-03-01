@@ -2,6 +2,7 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil;
@@ -56,6 +57,11 @@ public class ModelActions {
   }
 
   public static List<INodeSubstituteAction> createNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, final IScope scope) {
+//    // test
+//    if(linkDeclaration.getMetaClass() == LinkMetaclass.reference) {
+//      return ReferentSubstituteActionsHelper.createActions(sourceNode, currentTargetNode, linkDeclaration, scope);
+//    }
+//    // test
     return NodeSubstituteActionsHelper.createActions(sourceNode, currentTargetNode, linkDeclaration, scope);
   }
 

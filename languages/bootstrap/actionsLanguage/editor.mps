@@ -176,5 +176,103 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1141170570668">
+    <link role="conceptDeclaration" targetNodeId="1.1141170172936" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1141170570669">
+      <property name="drawBorder" value="false" />
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1141170570670">
+        <property name="text" value="referent substitute actions:" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1141170570671">
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1141170570672">
+        <property name="drawBorder" value="false" />
+        <property name="vertical" value="false" />
+        <property name="selectable" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1141170570673">
+          <property name="text" value="    " />
+          <property name="drawBorder" value="false" />
+          <property name="selectable" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1141170570674">
+          <property name="drawBorder" value="false" />
+          <property name="vertical" value="true" />
+          <property name="gridLayout" value="true" />
+          <link role="relationDeclaration" targetNodeId="1.1141170233405" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1141170622280">
+    <link role="conceptDeclaration" targetNodeId="1.1141170287031" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1141170622281">
+      <property name="drawBorder" value="false" />
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1141170622282">
+        <property name="text" value="src concept:" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1141170622285">
+        <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;choose concept&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1141170413907" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1141170622286">
+          <link role="conceptDeclaration" targetNodeId="2.1071489090640" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1141170622287">
+            <property name="drawBorder" value="false" />
+            <property name="readOnly" value="true" />
+            <property name="noTargetText" value="&lt;no name&gt;" />
+            <link role="relationDeclaration" targetNodeId="3.1078489098626" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1141170699918">
+        <property name="text" value="ref concept:" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1141170699919">
+        <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;choose concept&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1141170426691" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1141170699920">
+          <link role="conceptDeclaration" targetNodeId="2.1071489090640" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1141170699921">
+            <property name="drawBorder" value="false" />
+            <property name="readOnly" value="true" />
+            <property name="noTargetText" value="&lt;no name&gt;" />
+            <link role="relationDeclaration" targetNodeId="3.1078489098626" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1141170723174">
+        <property name="text" value="search scope:" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1141170747679">
+        <property name="drawBorder" value="false" />
+        <property name="cellProviderId" value="ReferentSubstituteActionsBuilder_SearchScope" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1141170622288">
+        <property name="text" value="actions filter:" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1141170622289">
+        <property name="drawBorder" value="false" />
+        <property name="cellProviderId" value="ReferentSubstituteActionsBuilder_ActionsFilter" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1141170622290">
+        <property name="text" value="actions factory:" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1141170622291">
+        <property name="drawBorder" value="false" />
+        <property name="cellProviderId" value="ReferentSubstituteActionsBuilder_ActionsFactory" />
+      </node>
+    </node>
+  </node>
 </model>
 

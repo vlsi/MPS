@@ -473,6 +473,23 @@
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1115766375256" />
     </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1141169035607">
+      <property name="name" value="mmm1" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1141169038313" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1141169035672">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1141169045410">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1141169045409">
+            <property name="name" value="c1" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1141169045408">
+              <link role="classifier" targetNodeId="1115766310400" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.NewExpression" id="1141169055678">
+              <link role="baseMethodDeclaration" targetNodeId="1137820838257" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1119992601482">
     <property name="name" value="TestInt" />
