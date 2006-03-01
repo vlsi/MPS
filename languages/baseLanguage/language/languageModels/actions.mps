@@ -102,5 +102,12 @@
       <link role="applicableConcept" targetNodeId="1.1068581242872" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActions" id="1141180990973">
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141180994006">
+      <property name="searchScopeProviderAspectId" value="NewExpression_Constructors" />
+      <link role="applicableSourceConcept" targetNodeId="1.1068581242872" />
+      <link role="applicableReferentConcept" targetNodeId="1.1068580123140" />
+    </node>
+  </node>
 </model>
 

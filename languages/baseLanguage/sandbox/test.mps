@@ -463,7 +463,7 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1115766395168">
-          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1115766399358">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1141181490823">
             <link role="baseMethodDeclaration" targetNodeId="1115766338748" />
             <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1115766395169">
               <link role="variableDeclaration" targetNodeId="1115766387883" />
@@ -485,6 +485,12 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.NewExpression" id="1141169055678">
               <link role="baseMethodDeclaration" targetNodeId="1137820838257" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1141181305421">
+                <property name="value" value="0" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1141181316532">
+                <property name="value" value="0" />
+              </node>
             </node>
           </node>
         </node>
