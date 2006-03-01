@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.logging.Logger;
 
 import java.util.*;
 
@@ -14,6 +15,7 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class EditorsFinderManager {
+  private static final Logger LOG = Logger.getLogger(EditorsFinderManager.class);
 
   private static Map<String, IGeneralizingEntityEditorFinder> ourLanguageNamespacesToGEEditorFinders = new HashMap<String, IGeneralizingEntityEditorFinder>();
 
@@ -41,6 +43,8 @@ public class EditorsFinderManager {
     try {
       Class cls = Class.forName("jetbrains.semanticweb.editorLanguage.OWLInstanceGEFinder", true, ClassLoaderManager.getInstance().getMPSClassLoader());
       registerEditorJavaClassesFinder("jetbrains.semanticweb.core", (IGeneralizingEntityEditorFinder) cls.newInstance());
+    } catch (ClassNotFoundException cnfe) {
+      LOG.error(cnfe.getMessage());
     } catch (Throwable t) {
       t.printStackTrace();
     }

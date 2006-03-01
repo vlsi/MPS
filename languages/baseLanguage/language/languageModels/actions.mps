@@ -109,7 +109,20 @@
       <link role="applicableReferentConcept" targetNodeId="1.1068580123140" />
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141240547025">
+      <property name="searchScopeProviderAspectId" value="FieldReference_ClassifierHierarchy_InstanceFields" />
       <link role="applicableSourceConcept" targetNodeId="1.1068580123158" />
+      <link role="applicableReferentConcept" targetNodeId="1.1068390468200" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141251527116">
+      <property name="searchScopeProviderAspectId" value="FieldReference_ClassifierHierarchy_InstanceMethods" />
+      <property name="actionsFactoryAspectId" value="FieldReference_to_InstanceMethodCall" />
+      <link role="applicableSourceConcept" targetNodeId="1.1068580123158" />
+      <link role="applicableReferentConcept" targetNodeId="1.1068390468200" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141253828926">
+      <property name="searchScopeProviderAspectId" value="SuperMethodCall_ClassifierHierarchy_InstanceMethods" />
+      <link role="applicableSourceConcept" targetNodeId="1.1073063089578" />
+      <link role="applicableReferentConcept" targetNodeId="1.1068580123165" />
     </node>
   </node>
 </model>

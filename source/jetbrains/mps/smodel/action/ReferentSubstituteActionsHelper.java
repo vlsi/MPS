@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder;
@@ -97,16 +98,17 @@ import java.util.*;
   }
 
   /**
-   * @return TRUE if builder src concept
+   * @return TRUE if the src concept assignable to the builder's 'applicable src concept' and
+   *         referent concept is exactly 'applicable referent concept'
    */
   private static boolean isActionBuilderApplicable(ReferentSubstituteActionsBuilder builder, ConceptDeclaration sourceConcept, ConceptDeclaration referentConcept) {
     ConceptDeclaration applicableSourceConcept = builder.getApplicableSourceConcept();
     ConceptDeclaration applicableReferentConcept = builder.getApplicableReferentConcept();
-    if (applicableSourceConcept == null || applicableReferentConcept == null) {
+    if (applicableReferentConcept == null) {
       return false;
     }
-    return SModelUtil.isAssignableConcept(applicableSourceConcept, sourceConcept) &&
-            SModelUtil.isAssignableConcept(applicableReferentConcept, referentConcept);
+    return referentConcept == applicableReferentConcept &&
+            (applicableSourceConcept == null || SModelUtil.isAssignableConcept(sourceConcept, applicableSourceConcept));
   }
 
   private static List<INodeSubstituteAction> createPrimaryReferentSubstituteActions(SNode sourceNode, SNode currentReferent, LinkDeclaration linkDeclaration, final Condition<SNode> filterCondition, final IScope scope) {
@@ -141,6 +143,9 @@ import java.util.*;
 
   private static List<INodeSubstituteAction> invokeActionBulder(ReferentSubstituteActionsBuilder builder, SNode sourceNode, SNode currentReferent, LinkDeclaration linkDeclaration, IScope scope) {
     ISearchScope searchScope = invokeSearchScopeProvider(builder, sourceNode, scope);
+    if (searchScope == null) {
+      return Collections.emptyList();
+    }
     return invokeActionFactory(builder, sourceNode, currentReferent, linkDeclaration, searchScope, scope);
   }
 

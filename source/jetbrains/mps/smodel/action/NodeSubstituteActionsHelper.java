@@ -7,6 +7,7 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethod;
 

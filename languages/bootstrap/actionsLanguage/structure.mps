@@ -124,7 +124,7 @@
     <property name="name" value="ReferentSubstituteActionsBuilder" />
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1141170413907">
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="applicableSourceConcept" />
       <link role="target" targetNodeId="2.1071489090640" />

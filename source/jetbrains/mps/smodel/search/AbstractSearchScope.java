@@ -1,8 +1,9 @@
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel.search;
 
 import static java.util.Collections.*;
 
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.smodel.SNode;
 
 import java.util.*;
 

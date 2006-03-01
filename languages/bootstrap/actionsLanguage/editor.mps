@@ -218,7 +218,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1141170622285">
         <property name="drawBorder" value="false" />
-        <property name="noTargetText" value="&lt;choose concept&gt;" />
+        <property name="noTargetText" value="&lt;any&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1141170413907" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1141170622286">
           <link role="conceptDeclaration" targetNodeId="2.1071489090640" />

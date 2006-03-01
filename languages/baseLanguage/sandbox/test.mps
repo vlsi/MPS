@@ -40,6 +40,14 @@
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1115766267843">
     <property name="name" value="BaseClass" />
     <link role="extendedClass" extResolveInfo="1.[Classifier]Object" />
+    <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1141251347107">
+      <property name="name" value="int_field_base1" />
+      <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1141251350859" />
+    </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1141251368255">
+      <property name="name" value="int_field_base2" />
+      <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1141251368256" />
+    </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1137896398465">
       <property name="name" value="STM1" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1137896405234" />
@@ -450,6 +458,15 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1115766355096">
     <property name="name" value="TESTMethodCalls" />
+    <link role="extendedClass" targetNodeId="1115766267843" />
+    <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1141251199520">
+      <property name="name" value="int_field1" />
+      <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1141251204725" />
+    </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1141251214746">
+      <property name="name" value="int_field2" />
+      <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1141251214747" />
+    </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1115766367394">
       <property name="name" value="mmm" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1115766367412">
@@ -470,6 +487,11 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1141254382021">
+          <node role="expression" type="jetbrains.mps.baseLanguage.SuperMethodCall" id="1141254382163">
+            <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]Object).([InstanceMethodDeclaration]toString() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+          </node>
+        </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1115766375256" />
     </node>
@@ -480,16 +502,28 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1141169045410">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1141169045409">
             <property name="name" value="c1" />
-            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1141169045408">
-              <link role="classifier" targetNodeId="1115766310400" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1141251235654">
+              <link role="classifier" targetNodeId="1115766355096" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.NewExpression" id="1141169055678">
-              <link role="baseMethodDeclaration" targetNodeId="1137820838257" />
+              <link role="baseMethodDeclaration" targetNodeId="1127521381925" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1141181305421">
                 <property name="value" value="0" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1141181316532">
                 <property name="value" value="0" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1141251317898">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1141251317897">
+            <property name="name" value="iii" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1141251317915" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.FieldReference" id="1141251335544">
+              <link role="variableDeclaration" targetNodeId="1141251199520" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1141251334262">
+                <link role="variableDeclaration" targetNodeId="1141169045409" />
               </node>
             </node>
           </node>

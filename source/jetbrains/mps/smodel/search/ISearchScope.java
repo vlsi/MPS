@@ -1,6 +1,7 @@
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel.search;
 
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.smodel.SNode;
 
 import java.util.*;
 
