@@ -29,34 +29,6 @@
       <property name="applicableLinkMetaclass" value="aggregation" />
       <link role="applicableConcept" targetNodeId="1.1068498886292" />
     </node>
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1137732482036">
-      <property name="actionsFactoryAspectId" value="InstanceMember" />
-      <link role="applicableConcept" targetNodeId="1.1068390468200" />
-    </node>
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1137787481349">
-      <property name="actionsFactoryAspectId" value="InstanceMember" />
-      <link role="applicableConcept" targetNodeId="1.1068580123165" />
-    </node>
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1137817247162">
-      <property name="actionsFactoryAspectId" value="FreestandingMethod" />
-      <link role="applicableConcept" targetNodeId="1.1068390468204" />
-    </node>
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1137819184584">
-      <property name="actionsFactoryAspectId" value="ClassConstructor" />
-      <link role="applicableConcept" targetNodeId="1.1068580123140" />
-    </node>
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1137889661568">
-      <property name="actionsFactoryAspectId" value="StaticMember" />
-      <link role="applicableConcept" targetNodeId="1.1070462154015" />
-    </node>
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1137892274475">
-      <property name="actionsFactoryAspectId" value="StaticMember" />
-      <link role="applicableConcept" targetNodeId="1.1081236700938" />
-    </node>
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1137892291836">
-      <property name="actionsFactoryAspectId" value="StaticMember" />
-      <link role="applicableConcept" targetNodeId="1.1083245299891" />
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActions" id="1138168268784">
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1138168280988">
@@ -106,23 +78,85 @@
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141180994006">
       <property name="searchScopeProviderAspectId" value="NewExpression_Constructors" />
       <link role="applicableSourceConcept" targetNodeId="1.1068581242872" />
-      <link role="applicableReferentConcept" targetNodeId="1.1068580123140" />
+      <link role="applicableLink" targetNodeId="1.1135374435992" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141259669044">
+      <property name="searchScopeProviderAspectId" value="SuperMethodCall_ClassifierHierarchy_InstanceMethods" />
+      <link role="applicableLink" targetNodeId="1.1073063089579" />
+      <link role="applicableSourceConcept" targetNodeId="1.1073063089578" />
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141240547025">
       <property name="searchScopeProviderAspectId" value="FieldReference_ClassifierHierarchy_InstanceFields" />
       <link role="applicableSourceConcept" targetNodeId="1.1068580123158" />
-      <link role="applicableReferentConcept" targetNodeId="1.1068390468200" />
+      <link role="applicableLink" targetNodeId="1.1070568237987" />
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141251527116">
       <property name="searchScopeProviderAspectId" value="FieldReference_ClassifierHierarchy_InstanceMethods" />
       <property name="actionsFactoryAspectId" value="FieldReference_to_InstanceMethodCall" />
       <link role="applicableSourceConcept" targetNodeId="1.1068580123158" />
-      <link role="applicableReferentConcept" targetNodeId="1.1068390468200" />
+      <link role="applicableLink" targetNodeId="1.1070568237987" />
     </node>
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141253828926">
-      <property name="searchScopeProviderAspectId" value="SuperMethodCall_ClassifierHierarchy_InstanceMethods" />
-      <link role="applicableSourceConcept" targetNodeId="1.1073063089578" />
-      <link role="applicableReferentConcept" targetNodeId="1.1068580123165" />
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141261656527">
+      <property name="searchScopeProviderAspectId" value="InstanceMethodCall_ClassifierHierarchy_InstanceFields" />
+      <property name="actionsFactoryAspectId" value="InstanceMethodCall_to_FieldReference" />
+      <link role="applicableLink" targetNodeId="1.1070568044740" />
+      <link role="applicableSourceConcept" targetNodeId="1.1068580123163" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141259836193">
+      <property name="searchScopeProviderAspectId" value="InstanceMethodCall_ClassifierHierarchy_InstanceMethods" />
+      <link role="applicableSourceConcept" targetNodeId="1.1068580123163" />
+      <link role="applicableLink" targetNodeId="1.1070568044740" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141261297316">
+      <property name="searchScopeProviderAspectId" value="StaticFieldReference_ClassifierHierarchy_StaticFields" />
+      <link role="applicableSourceConcept" targetNodeId="1.1070533707846" />
+      <link role="applicableLink" targetNodeId="1.1070568178160" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141261668233">
+      <property name="searchScopeProviderAspectId" value="StaticFieldReference_ClassifierHierarchy_StaticMethods" />
+      <property name="actionsFactoryAspectId" value="StaticFieldReference_to_StaticMethodCall" />
+      <link role="applicableLink" targetNodeId="1.1070568178160" />
+      <link role="applicableSourceConcept" targetNodeId="1.1070533707846" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141262036861">
+      <property name="searchScopeProviderAspectId" value="StaticFieldReference_ClassifierHierarchy_EnumConstants" />
+      <property name="actionsFactoryAspectId" value="StaticFieldReference_to_EnumConstantReference" />
+      <link role="applicableSourceConcept" targetNodeId="1.1070533707846" />
+      <link role="applicableLink" targetNodeId="1.1070568178160" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141262055243">
+      <property name="searchScopeProviderAspectId" value="StaticMethodCall_ClassifierHierarchy_StaticFields" />
+      <property name="actionsFactoryAspectId" value="StaticMethodCall_to_StaticFieldReference" />
+      <link role="applicableSourceConcept" targetNodeId="1.1081236700937" />
+      <link role="applicableLink" targetNodeId="1.1081236769987" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141262055244">
+      <property name="searchScopeProviderAspectId" value="StaticMethodCall_ClassifierHierarchy_StaticMethods" />
+      <link role="applicableSourceConcept" targetNodeId="1.1081236700937" />
+      <link role="applicableLink" targetNodeId="1.1081236769987" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141262055245">
+      <property name="searchScopeProviderAspectId" value="StaticMethodCall_ClassifierHierarchy_EnumConstants" />
+      <property name="actionsFactoryAspectId" value="StaticMethodCall_to_EnumConstantReference" />
+      <link role="applicableSourceConcept" targetNodeId="1.1081236700937" />
+      <link role="applicableLink" targetNodeId="1.1081236769987" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141262170371">
+      <property name="searchScopeProviderAspectId" value="EnumConstantReference_ClassifierHierarchy_StaticFields" />
+      <property name="actionsFactoryAspectId" value="EnumConstantReference_to_StaticFieldReference" />
+      <link role="applicableSourceConcept" targetNodeId="1.1083260308424" />
+      <link role="applicableLink" targetNodeId="1.1083260308426" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141262198061">
+      <property name="searchScopeProviderAspectId" value="EnumConstantReference_ClassifierHierarchy_StaticMethods" />
+      <property name="actionsFactoryAspectId" value="EnumConstantReference_to_StaticMethodCall" />
+      <link role="applicableLink" targetNodeId="1.1083260308426" />
+      <link role="applicableSourceConcept" targetNodeId="1.1083260308424" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141262198360">
+      <property name="searchScopeProviderAspectId" value="EnumConstantReference_ClassifierHierarchy_EnumConstants" />
+      <link role="applicableLink" targetNodeId="1.1083260308426" />
+      <link role="applicableSourceConcept" targetNodeId="1.1083260308424" />
     </node>
   </node>
 </model>

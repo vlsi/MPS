@@ -2,6 +2,7 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder;
@@ -30,6 +31,7 @@ import java.util.*;
 
   public static List<INodeSubstituteAction> createActions(SNode sourceNode, SNode currentReferent, LinkDeclaration linkDeclaration, IScope scope) {
     List<INodeSubstituteAction> resultActions = new LinkedList<INodeSubstituteAction>();
+    String referenceRole = linkDeclaration.getRole();
     final ConceptDeclaration referentConcept = linkDeclaration.getTarget();
     if (referentConcept == null) {
       return resultActions;
@@ -46,7 +48,7 @@ import java.util.*;
     }
 
     // add actions from 'primary' language
-    List<ReferentSubstituteActionsBuilder> primarySubstituteActionsBuilders = getActionBuilders(primaryLanguage, sourceConcept, referentConcept);
+    List<ReferentSubstituteActionsBuilder> primarySubstituteActionsBuilders = getActionBuilders(primaryLanguage, sourceConcept, referenceRole);
     if (primarySubstituteActionsBuilders.isEmpty()) {
       // if 'primary' language hasn't defined actions for that target - create 'default' actions
       resultActions = createPrimaryReferentSubstituteActions(sourceNode, currentReferent, linkDeclaration, TRUE_CONDITION, scope);
@@ -63,7 +65,7 @@ import java.util.*;
       if (language == primaryLanguage) {
         continue;
       }
-      extendedBuilders.addAll(getActionBuilders(language, sourceConcept, referentConcept));
+      extendedBuilders.addAll(getActionBuilders(language, sourceConcept, referenceRole));
     }
 
     // for each builder create actions and apply all filters
@@ -75,7 +77,7 @@ import java.util.*;
     return resultActions;
   }
 
-  private static List<ReferentSubstituteActionsBuilder> getActionBuilders(Language language, ConceptDeclaration sourceConcept, ConceptDeclaration referentConcept) {
+  private static List<ReferentSubstituteActionsBuilder> getActionBuilders(Language language, ConceptDeclaration sourceConcept, String referenceRole) {
     List<ReferentSubstituteActionsBuilder> substituteActionsBuilders = new LinkedList<ReferentSubstituteActionsBuilder>();
     SModelDescriptor actionsModelDescr = language.getActionsModelDescriptor();
     if (actionsModelDescr != null) {
@@ -87,7 +89,7 @@ import java.util.*;
           while (iterator.hasNext()) {
             ReferentSubstituteActionsBuilder substituteActionsBuilder = iterator.next();
             // is applicable ?
-            if (isActionBuilderApplicable(substituteActionsBuilder, sourceConcept, referentConcept)) {
+            if (isActionBuilderApplicable(substituteActionsBuilder, sourceConcept, referenceRole)) {
               substituteActionsBuilders.add(substituteActionsBuilder);
             }
           }
@@ -99,15 +101,15 @@ import java.util.*;
 
   /**
    * @return TRUE if the src concept assignable to the builder's 'applicable src concept' and
-   *         referent concept is exactly 'applicable referent concept'
+   *         reference role is exactly 'applicable link role'
    */
-  private static boolean isActionBuilderApplicable(ReferentSubstituteActionsBuilder builder, ConceptDeclaration sourceConcept, ConceptDeclaration referentConcept) {
+  private static boolean isActionBuilderApplicable(ReferentSubstituteActionsBuilder builder, ConceptDeclaration sourceConcept, String referenceRole) {
     ConceptDeclaration applicableSourceConcept = builder.getApplicableSourceConcept();
-    ConceptDeclaration applicableReferentConcept = builder.getApplicableReferentConcept();
-    if (applicableReferentConcept == null) {
+    LinkDeclaration applicableLink = builder.getApplicableLink();
+    if (applicableLink == null) {
       return false;
     }
-    return referentConcept == applicableReferentConcept &&
+    return referenceRole.equals(applicableLink.getRole()) &&
             (applicableSourceConcept == null || SModelUtil.isAssignableConcept(sourceConcept, applicableSourceConcept));
   }
 

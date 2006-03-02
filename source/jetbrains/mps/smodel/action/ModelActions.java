@@ -57,11 +57,11 @@ public class ModelActions {
   }
 
   public static List<INodeSubstituteAction> createNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, final IScope scope) {
-//    // test
-//    if(linkDeclaration.getMetaClass() == LinkMetaclass.reference) {
-//      return ReferentSubstituteActionsHelper.createActions(sourceNode, currentTargetNode, linkDeclaration, scope);
-//    }
-//    // test
+    // test
+    if(linkDeclaration.getMetaClass() == LinkMetaclass.reference) {
+      return ReferentSubstituteActionsHelper.createActions(sourceNode, currentTargetNode, linkDeclaration, scope);
+    }
+    // test
     return NodeSubstituteActionsHelper.createActions(sourceNode, currentTargetNode, linkDeclaration, scope);
   }
 

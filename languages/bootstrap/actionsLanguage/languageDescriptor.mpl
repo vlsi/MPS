@@ -3,13 +3,17 @@
   <structure>
     <model modelUID="jetbrains.mps.bootstrap.actionsLanguage.structure" />
   </structure>
+  <actions>
+    <model modelUID="jetbrains.mps.bootstrap.actionsLanguage.actions" />
+  </actions>
   <editor>
     <model modelUID="jetbrains.mps.bootstrap.actionsLanguage.editor" />
   </editor>
   <models>
     <modelRoot path="${language_descriptor}\." namespacePrefix="jetbrains.mps.bootstrap.actionsLanguage" />
   </models>
-  <library />
+  <module />
+  <accessoryModels />
   <generators />
 </language>
 

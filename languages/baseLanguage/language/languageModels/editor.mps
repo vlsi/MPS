@@ -1384,10 +1384,10 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1088427644683">
         <property name="drawBorder" value="false" />
-        <property name="noTargetText" value="&lt;no field&gt;" />
-        <link role="relationDeclaration" targetNodeId="1.1068581517664" />
+        <property name="noTargetText" value="&lt;no static member&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1070568178160" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1088427644684">
-          <link role="conceptDeclaration" targetNodeId="1.1068431474542" />
+          <link role="conceptDeclaration" targetNodeId="1.1070462154015" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1088427644685">
             <property name="textFgColor" value="DARK_MAGENTA" />
             <property name="fontStyle" value="BOLD_ITALIC" />

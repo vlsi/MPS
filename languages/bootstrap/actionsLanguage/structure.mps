@@ -124,16 +124,16 @@
     <property name="name" value="ReferentSubstituteActionsBuilder" />
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1141170413907">
-      <property name="sourceCardinality" value="0..1" />
+      <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="applicableSourceConcept" />
       <link role="target" targetNodeId="2.1071489090640" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1141170426691">
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1141256287231">
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
-      <property name="role" value="applicableReferentConcept" />
-      <link role="target" targetNodeId="2.1071489090640" />
+      <property name="role" value="applicableLink" />
+      <link role="target" targetNodeId="2.1071489288298" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1141170329792">
       <property name="name" value="searchScopeProviderAspectId" />
