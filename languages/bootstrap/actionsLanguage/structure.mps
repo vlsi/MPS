@@ -18,10 +18,6 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1112058030570">
     <property name="name" value="NodeSubstituteActionsBuilder" />
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1112058233058">
-      <property name="name" value="applicableLinkMetaclass" />
-      <link role="dataType" targetNodeId="2.1084199179703" />
-    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1112058288857">
       <property name="name" value="actionsFactoryAspectId" />
       <link role="dataType" targetNodeId="1.1082983041843" />

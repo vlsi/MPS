@@ -148,7 +148,7 @@ import java.util.*;
             NodeSubstituteActionsBuilder substituteActionsBuilder = iterator.next();
             // is applicable ?
             ConceptDeclaration applicableConcept = substituteActionsBuilder.getApplicableConcept();
-            if (substituteActionsBuilder.getApplicableLinkMetaclass() == linkMetaclass &&
+            if (/*substituteActionsBuilder.getApplicableLinkMetaclass() == linkMetaclass &&*/
                     SModelUtil.isAssignableConcept(applicableConcept, targetConcept)) {
 
               // do not duplicate if two builders if they applicable concepts are assignable to each other

@@ -548,9 +548,9 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1141261392399">
-          <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1141267047460">
-            <link role="baseMethodDeclaration" targetNodeId="1115766367394" />
-            <node role="classType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1141261392397">
+          <node role="expression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1141270148123">
+            <link role="variableDeclaration" targetNodeId="1137892410631" />
+            <node role="classifierType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1141261392397">
               <link role="classifier" targetNodeId="1115766355096" />
             </node>
           </node>
@@ -560,6 +560,19 @@
             <link role="variableDeclaration" targetNodeId="1137892424556" />
             <node role="classifierType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1141267060837">
               <link role="classifier" targetNodeId="1115766355096" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1141270193661">
+          <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1141270199009">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1141270201808" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1141270196992">
+              <property name="value" value="true" />
+            </node>
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1141270193678">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1141270204684">
+              <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1141270206827" />
             </node>
           </node>
         </node>

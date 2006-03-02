@@ -11,17 +11,7 @@
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1112058427767">
-        <property name="text" value="applicable for:" />
-        <property name="drawBorder" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1112058427768">
-        <property name="textFgColor" value="DARK_MAGENTA" />
-        <property name="fontStyle" value="BOLD" />
-        <property name="drawBorder" value="false" />
-        <link role="relationDeclaration" targetNodeId="1.1112058233058" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1112058427769">
-        <property name="text" value="-&gt;" />
+        <property name="text" value="node concept:" />
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1112058427770">
@@ -31,6 +21,7 @@
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1112058417407">
           <link role="conceptDeclaration" targetNodeId="2.1071489090640" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1112058427771">
+            <property name="textFgColor" value="DARK_MAGENTA" />
             <property name="drawBorder" value="false" />
             <property name="readOnly" value="true" />
             <property name="noTargetText" value="&lt;no name&gt;" />
