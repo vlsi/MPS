@@ -437,18 +437,22 @@ public abstract class MPSTree extends JTree {
 
   public void fromXML(Element element) {
     Element selectionElement = element.getChild(SELECTION);
-    List<String> selectionPaths = new ArrayList<String>();
-    for (Element path : (List<Element>) selectionElement.getChildren(PATH)) {
-      selectionPaths.add(path.getText());
+    if (selectionElement != null) {
+      List<String> selectionPaths = new ArrayList<String>();
+      for (Element path : (List<Element>) selectionElement.getChildren(PATH)) {
+        selectionPaths.add(path.getText());
+      }
+      selectPaths(selectionPaths);
     }
-    selectPaths(selectionPaths);
 
     Element expansionElement = element.getChild(EXPANSION);
-    List<String> expansionPaths = new ArrayList<String>();
-    for (Element path : (List<Element>) expansionElement.getChildren(PATH)) {
-      expansionPaths.add(path.getText());
+    if (expansionElement != null) {
+      List<String> expansionPaths = new ArrayList<String>();
+      for (Element path : (List<Element>) expansionElement.getChildren(PATH)) {
+        expansionPaths.add(path.getText());
+      }
+      expandPaths(expansionPaths);
     }
-    expandPaths(expansionPaths);
   }
 
   public void setExpandedState(TreePath path, boolean state) {
