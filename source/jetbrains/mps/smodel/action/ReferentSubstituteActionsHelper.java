@@ -118,7 +118,9 @@ import java.util.*;
     if (referentConcept == null) {
       return Collections.emptyList();
     }
-    ISearchScope searchScope = SModelSearchUtil.createModelAndImportedModelsScope(sourceNode.getModel(), true, scope);
+
+    //todo i changed roots only to false because OWL and MSP4Web depends on this behaviour (kostik)
+    ISearchScope searchScope = SModelSearchUtil.createModelAndImportedModelsScope(sourceNode.getModel(), false, scope);
     return createDefaultReferentSubstituteActions(sourceNode, currentReferent, linkDeclaration, searchScope, filterCondition, scope);
   }
 
