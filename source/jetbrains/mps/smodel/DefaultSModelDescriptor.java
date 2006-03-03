@@ -29,6 +29,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   private long myLastChange = System.currentTimeMillis();
   private File myModelFile;
   private ModelRoot myModelRoot;
+  private FastNodeFinder myFastNodeFinder;
 
   private IModelRootManager myModelRootManager;
   private boolean myTransient;
@@ -243,6 +244,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   public void refresh() {
     if (isInitialized()) {
+      myFastNodeFinder = null;
       myModelListeners.addAll(mySModel.getListeners());
       myModelCommandListeners.addAll(mySModel.getCommandListeners());
       mySModel.dispose();
@@ -355,6 +357,13 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
       }
     }
     return result;
+  }
+
+  public FastNodeFinder getFastNodeFinder() {
+    if (myFastNodeFinder == null || myFastNodeFinder.getStructuralState() < structuralState()) {
+      myFastNodeFinder = new FastNodeFinder(this);
+    }    
+    return myFastNodeFinder;
   }
 
   private void addInstances(SNode current, ConceptDeclaration concept, Set<SNode> result, IScope scope) {

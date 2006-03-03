@@ -49,6 +49,9 @@ public interface SModelDescriptor {
   Set<ConceptDeclaration> findDescendants(ConceptDeclaration node, Set<ConceptDeclaration> descendantsKnownInModel);
   Set<SNode> findInstances(ConceptDeclaration concept, IScope scope);
 
+
+  FastNodeFinder getFastNodeFinder();
+
   long timestamp();
   long lastStructuralChange();
   long lastChange();
