@@ -48,6 +48,8 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   INodeBuilder findNodeBuilderForSource(SNode sourceNode);
 
+  INodeBuilder findNodeBuilderForSourceAndTemplate(SNode source, SNode template);
+
   INodeBuilder findNodeBuilder(Condition<INodeBuilder> condition);
 
   INodeBuilder findNodeBuilder(INodeBuilder fromBuilder, Condition<INodeBuilder> condition);
