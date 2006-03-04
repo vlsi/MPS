@@ -9,9 +9,9 @@ import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.security.NodeSecurityManager;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.security.NodeSecurityManager;
 
 import java.util.*;
 
@@ -44,8 +44,10 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   private HashMap<String, SReference> myPropertyAttributes = new HashMap<String, SReference>();
   private HashMap<String, SReference> myLinkAttributes = new HashMap<String, SReference>();
 
+  private boolean myRegisteredInModelFlag;
   private SModel myModel;
   private String myId;
+
   private HashMap<Object, Object> myUserObjects = new HashMap<Object, Object>();
 
   protected SNode(SModel model) {
@@ -70,14 +72,14 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public SNode cloneProperties() {//doesn't copy children, references and back references
-    SNode newNode = null;
+    SNode newNode;
     try {
       newNode = (SNode) super.clone();
 
       newNode.myParent = null;
       newNode.myReferences = new ArrayList<SReference>();
       newNode.myChildren = new ArrayList<SNode>();
-      newNode.myUserObjects = new HashMap();
+      newNode.myUserObjects = new HashMap<Object, Object>();
       newNode.myProperties = new HashMap<String, String>();
       newNode.myProperties.putAll(this.myProperties);
     } catch (Exception e) {
@@ -571,6 +573,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     myChildren.remove(wasChild);
     wasChild.myParent = null;
     wasChild.myRoleInParent = null;
+    wasChild.unRegisterFormModel();
 
     if (!getModel().isLoading()) {
       UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
@@ -596,6 +599,10 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     child.myRoleInParent = role;
     child.myParent = this;
 
+    if (myRegisteredInModelFlag) {
+      child.registerInModel(getModel());
+    }
+
     if (!getModel().isLoading()) {
       UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
         public void undo() throws UnexpectedUndoException {
@@ -604,6 +611,28 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       });
     }
     getModel().fireChildAddedEvent(this, role, child, index);
+  }
+
+  /*package*/ void unRegisterFormModel() {
+    if (!myRegisteredInModelFlag) return;
+    myRegisteredInModelFlag = false;
+    myModel.removeNodeId(getId());
+    for (SNode child : myChildren) {
+      child.unRegisterFormModel();
+    }
+  }
+
+  /*package*/ void registerInModel(SModel model) {
+    if (myRegisteredInModelFlag) return;
+    myRegisteredInModelFlag = true;
+    if (model != myModel) {
+      changeModel(model);
+    } else {
+      myModel.setNodeId(getId(), this);
+      for (SNode child : myChildren) {
+        child.registerInModel(model);
+      }
+    }
   }
 
   // ---------------------------------
@@ -849,10 +878,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   private void delete_internal() {
-
-    // remove node id
-    myModel.removeNodeId(getId());
-
     //delete all children
     List<SNode> children = new LinkedList<SNode>(getChildren());
     for (SNode child : children) {
@@ -869,11 +894,8 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     SNode parent = getParent();
     if (parent != null) {
       parent.removeChild(this);
-    }
-
-    //remove from roots
-    if (getModel().isRoot(this)) {
-      getModel().deleteRoot(this);
+    } else if (getModel().isRoot(this)) {
+      getModel().removeRoot(this);
     }
   }
 

@@ -1,5 +1,7 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.annotations.AttributeConcept;
+import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.ICommandListener;
@@ -8,13 +10,11 @@ import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.ForDebug;
-import jetbrains.mps.annotations.AttributeConcept;
 
 import java.util.*;
 
@@ -110,34 +110,45 @@ public class SModel implements Iterable<SNode> {
     return CollectionUtil.filter(cls, getRoots());
   }
 
-  public void addRoot(SNode rootNode) {
-    if (rootNode == null) return;
-    LOG.assertLog(rootNode.getModel() == this, "Incorrect node model");
-    if (myRoots.contains(rootNode)) return;
-    myRoots.add(rootNode);
-    if (!isLoading()) UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(rootNode, null, false));
-    fireRootAddedEvent(rootNode);
+  public void addRoot(SNode node) {
+    if (node == null) return;
+    if (myRoots.contains(node)) return;
+    if (node.getModel() != this && node.getModel().isRoot(node)) {
+      node.getModel().removeRoot(node);
+    } else if (node.getParent() != null) {
+      node.getParent().removeChild(node);
+    }
+
+    myRoots.add(node);
+    node.registerInModel(this);
+    if (!isLoading()) UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(node, null, false));
+    fireRootAddedEvent(node);
   }
 
-  public void deleteRoot(SNode node) {
+  public void removeRoot(SNode node) {
     if (myRoots.contains(node)) {
       String id = node.getId();
       myRoots.remove(node);
+      node.unRegisterFormModel();
       if (!isLoading()) UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(node, id, true));
-      fireRootDeletedEvent(node);
+      fireRootRemovedEvent(node);
     }
   }
 
   public void deleteAllRoots() {
     if (isLoading()) {
+      for (SNode root : myRoots) {
+        root.unRegisterFormModel();
+      }
       myRoots.clear();
     } else {
       List<SNode> roots = new ArrayList<SNode>(myRoots);
       for (SNode root : roots) {
         myRoots.remove(root);
+        root.unRegisterFormModel();
         String id = root.getId();
         UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(root, id, true));
-        fireRootDeletedEvent(root);
+        fireRootRemovedEvent(root);
       }
     }
   }
@@ -232,7 +243,7 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  void fireRootDeletedEvent(SNode root) {
+  void fireRootRemovedEvent(SNode root) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
       sModelListener.rootRemoved(new SModelRootEvent(this, root, false));
@@ -691,7 +702,7 @@ public class SModel implements Iterable<SNode> {
         semanticModel.addRoot(myRoot);
         myRoot.setId(myId);
       } else {
-        semanticModel.deleteRoot(myRoot);
+        semanticModel.removeRoot(myRoot);
       }
       UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(myRoot, null, !myAdd));
     }
