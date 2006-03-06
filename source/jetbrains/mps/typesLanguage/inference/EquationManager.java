@@ -25,10 +25,10 @@ public class EquationManager implements SubstitutionAcceptor {
     return ourInstance;
   }
 
-  private Map<String, Set<Equation>> myEquationSets = new HashMap<String, Set<Equation>>();
+  private Map<String, Set<RuntimeEquation>> myEquationSets = new HashMap<String, Set<RuntimeEquation>>();
 
-  public Set<Set<Equation>> allEquationSets() {
-    return new HashSet<Set<Equation>>(myEquationSets.values());
+  public Set<Set<RuntimeEquation>> allEquationSets() {
+    return new HashSet<Set<RuntimeEquation>>(myEquationSets.values());
   }
 
   public void registerNewEquationSet(String name) {
@@ -36,18 +36,18 @@ public class EquationManager implements SubstitutionAcceptor {
     if (oldEquationSet != null) {
       LOG.error("failed to register new equation set: equationSet with the same name already exists");
     }
-    myEquationSets.put(name, new HashSet<Equation>());
+    myEquationSets.put(name, new HashSet<RuntimeEquation>());
   }
 
-  public Set<Equation> getEquationSetByName(String name) {
+  public Set<RuntimeEquation> getEquationSetByName(String name) {
     return myEquationSets.get(name);
   }
 
   public void applySubstitution(TypeSubstitution substitution) {
-    Set<Set<Equation>> allEquationSets = allEquationSets();
-    for (Set<Equation> equationSet : allEquationSets) {
-      for (Equation equation : equationSet) {
-        equation.applySubstitution(substitution);
+    Set<Set<RuntimeEquation>> allEquationSets = allEquationSets();
+    for (Set<RuntimeEquation> runtimeEquationSet : allEquationSets) {
+      for (RuntimeEquation runtimeEquation : runtimeEquationSet) {
+        runtimeEquation.applySubstitution(substitution);
       }
     }
   }
