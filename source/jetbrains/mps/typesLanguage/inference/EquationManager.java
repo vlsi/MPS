@@ -56,4 +56,25 @@ public class EquationManager implements SubstitutionAcceptor {
     myEquationSets.clear();
   }
 
+  public void solveAllEquations() {
+    Map<String, Set<RuntimeEquation>> equationSets = new HashMap<String, Set<RuntimeEquation>>(myEquationSets);
+    for (Set<RuntimeEquation> equationSet : equationSets.values()) {
+      try {
+        solveEquationsInSet(equationSet);
+      } catch(TypeErrorException e) {
+        LOG.warning("Type error: invalid type is "+e.getErrorType());
+      }
+    }
+  }
+
+  public void solveEquationsInSet(Set<RuntimeEquation> equationSet) throws TypeErrorException {
+    while(!equationSet.isEmpty()) {
+      Set<RuntimeEquation> iteratedEquationSet = new HashSet<RuntimeEquation>(equationSet);
+      for (RuntimeEquation equation : iteratedEquationSet) {
+        Set<RuntimeEquation> newEquations = EquationUtil.processEquation(equation);
+        equationSet.remove(equation);
+        equationSet.addAll(newEquations);
+      }
+    }
+  }
 }

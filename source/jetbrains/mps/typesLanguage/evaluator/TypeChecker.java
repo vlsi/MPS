@@ -11,6 +11,7 @@ import jetbrains.mps.typesLanguage.EquationSetDeclaration;
 import jetbrains.mps.typesLanguage.Rule;
 import jetbrains.mps.typesLanguage.inference.ContextsManager;
 import jetbrains.mps.typesLanguage.inference.EquationManager;
+import jetbrains.mps.typesLanguage.inference.EquationUtil;
 
 import java.util.*;
 
@@ -64,6 +65,9 @@ public class TypeChecker {
       frontier = newFrontier;
       newFrontier = new ArrayList<SNode>();
     }
+
+    //solving equations
+    EquationManager.getInstance().solveAllEquations();
 
     // main context
     Set<Set<Pair<SNode, SNode>>> allContexts = ContextsManager.getInstance().getAllContexts();
