@@ -52,5 +52,8 @@ public class EquationManager implements SubstitutionAcceptor {
     }
   }
 
+  public void clear() {
+    myEquationSets.clear();
+  }
 
 }

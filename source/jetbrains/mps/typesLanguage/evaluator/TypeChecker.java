@@ -25,7 +25,16 @@ public class TypeChecker {
 
   public static final Object TYPE_OF_TERM = new Object();
 
+  public static void clearForTypesModel(SModel typesModel) {
+    ContextsManager.getInstance().clear();
+    EquationManager.getInstance().clear();
+    Interpretator.clearForTypesModel(typesModel);
+  }
+
   public static void checkTypes(SNode root, SModel typesModel) {
+    //clear
+    clearForTypesModel(typesModel);
+
     //register contexts
     for (ContextDeclaration contextDeclaration : typesModel.getRoots(ContextDeclaration.class)) {
       ContextsManager.getInstance().registerNewContext(contextDeclaration.getName());
