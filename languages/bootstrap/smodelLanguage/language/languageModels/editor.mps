@@ -172,7 +172,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1139880110905">
         <property name="drawBorder" value="false" />
-        <property name="noTargetText" value="def" />
+        <property name="noTargetText" value="&lt;default&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1139880128956" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1139880110906">
           <link role="conceptDeclaration" targetNodeId="3.1071489090640" />
@@ -199,7 +199,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1139877775154">
         <property name="drawBorder" value="false" />
-        <property name="noTargetText" value="def" />
+        <property name="noTargetText" value="&lt;default&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1139877738879" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1139877775153">
           <link role="conceptDeclaration" targetNodeId="3.1071489090640" />
