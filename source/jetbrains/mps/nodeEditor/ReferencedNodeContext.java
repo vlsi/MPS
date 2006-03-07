@@ -10,17 +10,28 @@ import jetbrains.mps.util.EqualUtil;
  * Time: 20:33:59
  * To change this template use File | Settings | File Templates.
  */
-public class ReferenceContext {
-  private SNode mySourceNode;
-  private SNode myTargetNode;
-  private String myRole;
+public class ReferencedNodeContext {
+  private SNode mySourceNode = null;
+  private SNode myTargetNode = null;
+  private String myRole = null;
 
-  public ReferenceContext(SNode sourceNode, SNode targetNode, String role) {
+  private ReferencedNodeContext(SNode sourceNode, SNode targetNode, String role) {
     myRole = role;
     mySourceNode = sourceNode;
     myTargetNode = targetNode;
   }
 
+  private ReferencedNodeContext(SNode node) {
+    myTargetNode = node;
+  }
+
+  public static ReferencedNodeContext createReferenceContext(SNode sourceNode, SNode targetNode, String role) {
+    return new ReferencedNodeContext(sourceNode, targetNode, role);
+  }
+
+  public static ReferencedNodeContext createNodeContext(SNode node) {
+    return new ReferencedNodeContext(node);
+  }
 
   public SNode getSourceNode() {
     return mySourceNode;
@@ -42,8 +53,8 @@ public class ReferenceContext {
 
   public boolean equals(Object obj) {
     if (obj == this) return true;
-    if (obj instanceof ReferenceContext) {
-      ReferenceContext o = (ReferenceContext) obj;
+    if (obj instanceof ReferencedNodeContext) {
+      ReferencedNodeContext o = (ReferencedNodeContext) obj;
       return EqualUtil.equals(myRole, o.myRole)
               && EqualUtil.equals(mySourceNode, o.mySourceNode)
               && EqualUtil.equals(myTargetNode, o.myTargetNode);

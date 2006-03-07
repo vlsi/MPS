@@ -54,7 +54,7 @@ public class EditorManager {
     myMap.clear();
     myMap.put(node, rootCell);
     myCreatingInspectedCell = isInspectorCell;
-    return createEditorCell(context, node, events);
+    return createEditorCell(context, events, ReferencedNodeContext.createNodeContext(node));
   }
 
 
@@ -105,7 +105,7 @@ public class EditorManager {
       myAttributedClassesToAttributedCellStacksMap.put(attributeClass, stack);
     }
     stack.push(cellWithRole);
-    EditorCell result = createEditorCell(context, roleAttribute, null);
+    EditorCell result = createEditorCell(context, null, ReferencedNodeContext.createNodeContext(roleAttribute));
     EditorCell cellWithRolePopped = stack.pop();
     LOG.assertLog(cellWithRolePopped == cellWithRole);
     return result;
@@ -122,7 +122,8 @@ public class EditorManager {
   }
 
 
-  /*package*/ EditorCell createEditorCell(EditorContext context, SNode node, List<SModelEvent> events) {
+  /*package*/ EditorCell createEditorCell(EditorContext context, List<SModelEvent> events, ReferencedNodeContext refContext) {
+    SNode node = refContext.getTargetNode();
     AttributeConcept attribute = node.getAttribute();
 
     //if the whole node has attribute
@@ -130,7 +131,7 @@ public class EditorManager {
       //if creating this cell for this attribute for the first time
       if (myAttributesStack.isEmpty() || (myAttributesStack.peek() != attribute)) {
         myAttributesStack.push(attribute);
-        EditorCell result = createEditorCell(context, attribute, events);
+        EditorCell result = createEditorCell(context, events, ReferencedNodeContext.createNodeContext(attribute));
         AttributeConcept poppedAttribute = myAttributesStack.pop();
         LOG.assertLog(poppedAttribute == attribute);
         return result;
@@ -184,11 +185,13 @@ public class EditorManager {
 
     nodeEditorComponent.clearNodesCellDependsOn(oldCell);
 
-    return createEditorCell_internal(context, node, myCreatingInspectedCell);
+    return createEditorCell_internal(context, myCreatingInspectedCell, refContext);
   }
 
 
-  private EditorCell createEditorCell_internal(final EditorContext context, final SNode node, boolean isInspectorCell) {
+  private EditorCell createEditorCell_internal(final EditorContext context, boolean isInspectorCell, ReferencedNodeContext refContext) {
+    final SNode node = refContext.getTargetNode();
+
     //reset creating inspected cell : we don't create not-root inspected cells
     myCreatingInspectedCell = false;
 
