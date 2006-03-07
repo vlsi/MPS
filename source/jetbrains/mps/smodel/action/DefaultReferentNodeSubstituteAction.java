@@ -16,38 +16,29 @@ import jetbrains.mps.smodel.presentation.NodePresentationUtil;
  * To change this template use File | Settings | File Templates.
  */
 public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteItem implements INodeSubstituteAction {
-  private SNode myParameterNode;
-  private LinkDeclaration myLinkDeclaration;
   private SNode mySourceNode;
-  private SNode myCurrentTargetNode;
+  private SNode myCurrentReferent;
   private IScope myScope;
+  private IReferentSetter mySetter;
 
-  public DefaultReferentNodeSubstituteAction(SNode parameterNode, SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, IScope scope) {
+  public interface IReferentSetter {
+    public void execute(SNode newReferent, IScope scope);
+  }
+
+  public DefaultReferentNodeSubstituteAction(SNode parameterNode, SNode sourceNode, SNode currentReferent, LinkDeclaration linkDeclaration, IScope scope) {
+    this(parameterNode, sourceNode, currentReferent, new SimpleSetter(sourceNode, linkDeclaration), scope);
+  }
+
+  public DefaultReferentNodeSubstituteAction(SNode parameterNode, SNode sourceNode, SNode currentReferent, IReferentSetter setter, IScope scope) {
+    super(parameterNode);
     mySourceNode = sourceNode;
-    myParameterNode = parameterNode;
-    myLinkDeclaration = linkDeclaration;
-    myCurrentTargetNode = currentTargetNode;
+    myCurrentReferent = currentReferent;
     myScope = scope;
-
-    if (SModelUtil.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.reference) {
-      throw new RuntimeException("Only reference links are allowed here.");
-    }
+    mySetter = setter;
   }
 
   public SNode getSourceNode() {
     return mySourceNode;
-  }
-
-  public SNode getParameterNode() {
-    return myParameterNode;
-  }
-
-  public SNode getCurrentTargetNode() {
-    return myCurrentTargetNode;
-  }
-
-  public LinkDeclaration getLinkDeclaration() {
-    return myLinkDeclaration;
   }
 
   public IScope getScope() {
@@ -55,18 +46,38 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteI
   }
 
   public String getMatchingText(String pattern) {
-    return NodePresentationUtil.matchingText(myParameterNode, mySourceNode, NodePresentationUtil.REFERENT_PRESENTATION, getScope());
+    return NodePresentationUtil.matchingText(getParameterNode(), mySourceNode, NodePresentationUtil.REFERENT_PRESENTATION, getScope());
   }
 
   public String getDescriptionText(String pattern) {
-    return NodePresentationUtil.descriptionText(myParameterNode, mySourceNode, getScope());
+    return NodePresentationUtil.descriptionText(getParameterNode(), mySourceNode, getScope());
   }
 
   public SNode doSubstitute(String pattern) {
-    if(!SModelUtil.isAcceptableReferent(myLinkDeclaration, myParameterNode, myScope)){
-      throw new RuntimeException("Couldn't set referent node. Parameter node: " + myParameterNode.getDebugText());
+    if (myCurrentReferent != getParameterNode()) {
+      mySetter.execute(getParameterNode(), myScope);
     }
-    mySourceNode.setReferent(SModelUtil.getGenuineLinkRole(myLinkDeclaration), myParameterNode);
     return null;
+  }
+
+  public static class SimpleSetter implements IReferentSetter {
+    SNode mySourceNode;
+    LinkDeclaration myLinkDeclaration;
+
+    public SimpleSetter(SNode sourceNode, LinkDeclaration linkDeclaration) {
+      mySourceNode = sourceNode;
+      myLinkDeclaration = linkDeclaration;
+
+      if (SModelUtil.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.reference) {
+        throw new RuntimeException("Only reference links are allowed here.");
+      }
+    }
+
+    public void execute(SNode newReferent, IScope scope) {
+      if (!SModelUtil.isAcceptableReferent(myLinkDeclaration, newReferent, scope)) {
+        throw new RuntimeException("Couldn't set referent node: " + newReferent.getDebugText());
+      }
+      mySourceNode.setReferent(SModelUtil.getGenuineLinkRole(myLinkDeclaration), newReferent);
+    }
   }
 }

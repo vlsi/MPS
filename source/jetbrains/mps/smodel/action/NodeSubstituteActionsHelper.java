@@ -7,8 +7,6 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethod;
 
@@ -78,9 +76,9 @@ import java.util.*;
   }
 
   public static List<INodeSubstituteAction> createPrimaryNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, Condition<SNode> filter, final IScope scope) {
-    if (SModelUtil.getGenuineLinkMetaclass(linkDeclaration) == LinkMetaclass.reference) {
-      return NodeSubstituteActionsHelper.createDefaultReferentNodeSubstituteActions(sourceNode, currentTargetNode, linkDeclaration, filter, scope);
-    }
+//    if (SModelUtil.getGenuineLinkMetaclass(linkDeclaration) == LinkMetaclass.reference) {
+//      return NodeSubstituteActionsHelper.createDefaultReferentNodeSubstituteActions(sourceNode, currentTargetNode, linkDeclaration, filter, scope);
+//    }
     return NodeSubstituteActionsHelper.createDefaultChildNodeSubstituteActions(sourceNode, currentTargetNode, linkDeclaration, filter, scope);
   }
 
@@ -92,25 +90,25 @@ import java.util.*;
     return false;
   }
 
-  public static List<INodeSubstituteAction> createDefaultReferentNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, final Condition<SNode> filterCondition, final IScope scope) {
-    final ConceptDeclaration targetConcept = linkDeclaration.getTarget();
-    if (targetConcept == null) {
-      return Collections.emptyList();
-    }
-    ISearchScope searchScope = SModelSearchUtil.createModelAndImportedModelsScope(sourceNode.getModel(), scope);
-    List<SNode> nodes = searchScope.getNodes(new Condition<SNode>() {
-      public boolean met(SNode node) {
-        return SModelUtil.isInstanceOfConcept(node, targetConcept, scope) &&
-                filterCondition.met(node);
-      }
-    });
-
-    List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
-    for (SNode node : nodes) {
-      actions.add(new DefaultReferentNodeSubstituteAction(node, sourceNode, currentTargetNode, linkDeclaration, scope));
-    }
-    return actions;
-  }
+//  public static List<INodeSubstituteAction> createDefaultReferentNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, final Condition<SNode> filterCondition, final IScope scope) {
+//    final ConceptDeclaration targetConcept = linkDeclaration.getTarget();
+//    if (targetConcept == null) {
+//      return Collections.emptyList();
+//    }
+//    ISearchScope searchScope = SModelSearchUtil.createModelAndImportedModelsScope(sourceNode.getModel(), scope);
+//    List<SNode> nodes = searchScope.getNodes(new Condition<SNode>() {
+//      public boolean met(SNode node) {
+//        return SModelUtil.isInstanceOfConcept(node, targetConcept, scope) &&
+//                filterCondition.met(node);
+//      }
+//    });
+//
+//    List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
+//    for (SNode node : nodes) {
+//      actions.add(new DefaultReferentNodeSubstituteAction(node, sourceNode, currentTargetNode, linkDeclaration, scope));
+//    }
+//    return actions;
+//  }
 
   public static List<INodeSubstituteAction> createDefaultChildNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, final Condition<SNode> filterCondition, final IScope scope) {
     final ConceptDeclaration targetConcept = linkDeclaration.getTarget();

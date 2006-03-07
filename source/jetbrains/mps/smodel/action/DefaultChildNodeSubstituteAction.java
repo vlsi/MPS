@@ -15,38 +15,30 @@ import jetbrains.mps.smodel.presentation.NodePresentationUtil;
  * To change this template use File | Settings | File Templates.
  */
 public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteItem implements INodeSubstituteAction {
-  private SNode myParameterNode;
-  private LinkDeclaration myLinkDeclaration;
   private SNode mySourceNode;
-  private SNode myCurrentTargetNode;
+  private SNode myCurrentChild;
   private IScope myScope;
+  private IChildSetter mySetter;
 
-  public DefaultChildNodeSubstituteAction(SNode parameterNode, SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, IScope scope) {
+
+  public interface IChildSetter {
+    public void execute(SNode oldChild, SNode newChild, IScope scope);
+  }
+
+  public DefaultChildNodeSubstituteAction(SNode parameterNode, SNode sourceNode, SNode currentChild, LinkDeclaration linkDeclaration, IScope scope) {
+    this(parameterNode, sourceNode, currentChild, new SimpleSetter(sourceNode, linkDeclaration), scope);
+  }
+
+  public DefaultChildNodeSubstituteAction(SNode parameterNode, SNode sourceNode, SNode currentChild, IChildSetter setter, IScope scope) {
+    super(parameterNode);
     mySourceNode = sourceNode;
-    myParameterNode = parameterNode;
-    myLinkDeclaration = linkDeclaration;
-    myCurrentTargetNode = currentTargetNode;
+    myCurrentChild = currentChild;
     myScope = scope;
-
-    if (SModelUtil.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.aggregation) {
-      throw new RuntimeException("Only aggregation links are allowed here.");
-    }
+    mySetter = setter;
   }
 
   public SNode getSourceNode() {
     return mySourceNode;
-  }
-
-  public SNode getParameterNode() {
-    return myParameterNode;
-  }
-
-  public SNode getCurrentTargetNode() {
-    return myCurrentTargetNode;
-  }
-
-  public LinkDeclaration getLinkDeclaration() {
-    return myLinkDeclaration;
   }
 
   public IScope getScope() {
@@ -54,22 +46,16 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteItem
   }
 
   public String getMatchingText(String pattern) {
-    return NodePresentationUtil.matchingText(myParameterNode, mySourceNode, NodePresentationUtil.CHILD_PRESENTATION, getScope());
+    return NodePresentationUtil.matchingText(getParameterNode(), mySourceNode, NodePresentationUtil.CHILD_PRESENTATION, getScope());
   }
 
   public String getDescriptionText(String pattern) {
-    return NodePresentationUtil.descriptionText(myParameterNode, mySourceNode, getScope());
+    return NodePresentationUtil.descriptionText(getParameterNode(), mySourceNode, getScope());
   }
 
   public SNode doSubstitute(String pattern) {
-    SNode newChild = createChildNode(myParameterNode, mySourceNode.getModel(), pattern);
-    String role = SModelUtil.getGenuineLinkRole(myLinkDeclaration);
-    if (myCurrentTargetNode == null) {
-      mySourceNode.setChild(role, newChild);
-    } else {
-      mySourceNode.insertChild(myCurrentTargetNode, role, newChild);
-      myCurrentTargetNode.delete();
-    }
+    SNode newChild = createChildNode(getParameterNode(), mySourceNode.getModel(), pattern);
+    mySetter.execute(myCurrentChild, newChild, getScope());
     return newChild;
   }
 
@@ -78,5 +64,30 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteItem
       return NodeFactoryManager.initializeNode((ConceptDeclaration) parameterNode, model);
     }
     throw new RuntimeException("Couldn't create child node. Parameter node: " + parameterNode.getDebugText());
+  }
+
+
+  public static class SimpleSetter implements IChildSetter {
+    SNode mySourceNode;
+    LinkDeclaration myLinkDeclaration;
+
+    public SimpleSetter(SNode sourceNode, LinkDeclaration linkDeclaration) {
+      mySourceNode = sourceNode;
+      myLinkDeclaration = linkDeclaration;
+
+      if (SModelUtil.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.aggregation) {
+        throw new RuntimeException("Only aggregation links are allowed here.");
+      }
+    }
+
+    public void execute(SNode oldChild, SNode newChild, IScope scope) {
+      String role = SModelUtil.getGenuineLinkRole(myLinkDeclaration);
+      if (oldChild == null) {
+        mySourceNode.setChild(role, newChild);
+      } else {
+        mySourceNode.insertChild(oldChild, role, newChild);
+        oldChild.delete();
+      }
+    }
   }
 }

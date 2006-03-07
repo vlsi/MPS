@@ -13,13 +13,12 @@ import jetbrains.mps.smodel.presentation.NodePresentationUtil;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class AbstractRTransformHintSubstituteAction extends AbstractNodeSubstituteItem implements INodeSubstituteAction {
-  private SNode myParameterNode;
   private SNode mySourceNode;
   private IScope myScope;
 
   public AbstractRTransformHintSubstituteAction(SNode parameterNode, SNode sourceNode, IScope scope) {
+    super(parameterNode);
     mySourceNode = sourceNode;
-    myParameterNode = parameterNode;
     myScope = scope;
   }
 
@@ -27,20 +26,16 @@ public abstract class AbstractRTransformHintSubstituteAction extends AbstractNod
     return mySourceNode;
   }
 
-  public SNode getParameterNode() {
-    return myParameterNode;
-  }
-
   public IScope getScope() {
     return myScope;
   }
 
   public String getMatchingText(String pattern) {
-    return NodePresentationUtil.matchingText(myParameterNode, mySourceNode, NodePresentationUtil.CHILD_PRESENTATION, getScope());
+    return NodePresentationUtil.matchingText(getParameterNode(), mySourceNode, NodePresentationUtil.CHILD_PRESENTATION, getScope());
   }
 
   public String getDescriptionText(String pattern) {
-    return NodePresentationUtil.descriptionText(myParameterNode, mySourceNode, getScope());
+    return NodePresentationUtil.descriptionText(getParameterNode(), mySourceNode, getScope());
   }
 
   public abstract SNode doSubstitute(String pattern);
