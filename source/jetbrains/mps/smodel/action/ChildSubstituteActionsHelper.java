@@ -178,7 +178,9 @@ import java.util.*;
 
     Object[] args = new Object[]{parentNode,
             currentChild,
-            linkDeclaration_tmp,
+//            linkDeclaration_tmp,
+            childConcept,
+            childSetter,
             scope};
     String methodName = "nodeSubstituteActionsBuilder_ActionsFactory_" + factoryQueryMethodId;
     SModel model = builder.getModel();

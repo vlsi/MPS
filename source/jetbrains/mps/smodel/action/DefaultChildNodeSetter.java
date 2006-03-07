@@ -26,6 +26,10 @@ public class DefaultChildNodeSetter implements IChildNodeSetter {
     }
   }
 
+  public LinkDeclaration getLinkDeclaration() {
+    return myLinkDeclaration;
+  }
+
   public void execute(SNode oldChild, SNode newChild, IScope scope) {
     String role = SModelUtil.getGenuineLinkRole(myLinkDeclaration);
     if (oldChild == null) {
