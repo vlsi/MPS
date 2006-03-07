@@ -299,8 +299,7 @@ public class ModelPersistence {
         SModelRepository.getInstance().markChanged(model, true);
         return new ClassifierType(model);
       }
-      return new SNode(model) {
-      }; //this hack is required to make diff work correctly event if no such class
+      return new UnknownSNode(model); //this hack is required to make diff work correctly event if no such class
     } catch (NoSuchMethodException e) {
 
       LOG.error("Couldn't find method newInstance for node type " + type + " in model " + model.getUID(), e);
@@ -515,4 +514,9 @@ public class ModelPersistence {
     void onError();
   }
 
+  public static class UnknownSNode extends SNode {
+    public UnknownSNode(SModel model) {
+      super(model);
+    }
+  }
 }
