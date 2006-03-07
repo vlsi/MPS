@@ -48,8 +48,12 @@ public class EditorContext {
     mySModelEvents = modelEvents;
   }
 
-  public EditorCell createNodeCell(SNode node, java.util.List<SModelEvent> events) {
+  public EditorCell createNodeCell(SNode node, java.util.List<SModelEvent> events, ReferenceContext refContext) {
     return myOperationContext.getComponent(EditorManager.class).createEditorCell(this, node, events);
+  }
+
+  public EditorCell createNodeCell(SNode node, java.util.List<SModelEvent> events) {
+    return createNodeCell(node, events, null);
   }
 
   public EditorCell createRootCell(SNode node, java.util.List<SModelEvent> events) {
@@ -61,6 +65,10 @@ public class EditorContext {
 
   public EditorCell createNodeCell(SNode node) {
     return createNodeCell(node, mySModelEvents);
+  }
+
+  public EditorCell createReferentCell(SNode sourceNode, SNode targetNode, String role) {
+    return createNodeCell(targetNode, mySModelEvents, new ReferenceContext(sourceNode, targetNode, role));
   }
 
   public Object createMemento() {
