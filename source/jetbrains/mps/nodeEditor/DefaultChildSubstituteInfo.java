@@ -9,12 +9,13 @@ import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
+import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 
 import java.util.List;
 
 public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
-  private SNode mySourceNode;
-  private SNode myCurrentTargetNode;
+  private SNode myParentNode;
+  private SNode myCurrentChild;
   private LinkDeclaration myLinkDeclaration;
 
 
@@ -28,9 +29,9 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
       throw new RuntimeException("Only cardinalities 1 or 0..1 are allowed here.");
     }
 
-    mySourceNode = sourceNode;
+    myParentNode = sourceNode;
     myLinkDeclaration = linkDeclaration;
-    myCurrentTargetNode = sourceNode.getChild(SModelUtil.getGenuineLinkRole(linkDeclaration));
+    myCurrentChild = sourceNode.getChild(SModelUtil.getGenuineLinkRole(linkDeclaration));
   }
 
   public DefaultChildSubstituteInfo(SNode parentNode, SNode currChildNode, LinkDeclaration linkDeclaration, EditorContext editorContext) {
@@ -41,13 +42,17 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     if (SModelUtil.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.aggregation) {
       throw new RuntimeException("Only aggregation links are allowed here.");
     }
-    mySourceNode = parentNode;
+    myParentNode = parentNode;
     myLinkDeclaration = linkDeclaration;
-    myCurrentTargetNode = currChildNode;
+    myCurrentChild = currChildNode;
   }
 
   public List<INodeSubstituteItem> createActions() {
-    List<INodeSubstituteAction> actions = ModelActions.createChildSubstituteActions(mySourceNode, myCurrentTargetNode, myLinkDeclaration, getOperationContext().getScope());
+    List<INodeSubstituteAction> actions = ModelActions.createChildSubstituteActions(myParentNode, myCurrentChild,
+            myLinkDeclaration.getTarget(),
+            new DefaultChildNodeSetter(myParentNode, myLinkDeclaration),
+            getOperationContext().getScope(),
+            myLinkDeclaration);
     return (List<INodeSubstituteItem>) ((List) actions);
   }
 

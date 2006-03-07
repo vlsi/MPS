@@ -15,7 +15,7 @@ import java.util.*;
 public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
   private SNode mySourceNode;
   private LinkDeclaration myLinkDeclaration;
-  private SNode myCurrentTargetNode;
+  private SNode myCurrentReferent;
 
   public DefaultReferenceSubstituteInfo(SNode sourceNode, LinkDeclaration linkDeclaration, EditorContext editorContext) {
     super(editorContext);
@@ -30,11 +30,11 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
 
     mySourceNode = sourceNode;
     myLinkDeclaration = linkDeclaration;
-    myCurrentTargetNode = sourceNode.getChild(SModelUtil.getGenuineLinkRole(linkDeclaration));
+    myCurrentReferent = sourceNode.getReferent(SModelUtil.getGenuineLinkRole(linkDeclaration));
   }
 
   public List<INodeSubstituteItem> createActions() {
-    List<INodeSubstituteAction> actions = ModelActions.createReferenceSubstituteActions(mySourceNode, myCurrentTargetNode, myLinkDeclaration, getOperationContext().getScope());
+    List<INodeSubstituteAction> actions = ModelActions.createReferenceSubstituteActions(mySourceNode, myCurrentReferent, myLinkDeclaration, getOperationContext().getScope());
     return (List) actions;
   }
 }
