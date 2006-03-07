@@ -355,15 +355,6 @@
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapItem" id="1140123561975">
       <property name="description" value="replace operation expression with left expression" />
       <property name="actionId" value="delete_action_id" />
-      <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_IsApplicableFunction" id="1140123561976">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1140123562103">
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1140125586895">
-            <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1140125589522">
-              <property name="value" value="true" />
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_ExecuteFunction" id="1140123561977">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1140123562104">
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1140143244848">
@@ -377,12 +368,6 @@
                   </node>
                 </node>
               </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1140143268170">
-            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1140143270828">
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_FunctionParm_selectedNode" id="1140143268171" />
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_DeleteOperation" id="1140143275001" />
             </node>
           </node>
         </node>
@@ -459,15 +444,6 @@
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapItem" id="1140139769225">
       <property name="description" value="replace type case with left expression" />
       <property name="actionId" value="delete_action_id" />
-      <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_IsApplicableFunction" id="1140139769226">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1140139769244">
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1140139858996">
-            <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1140139861044">
-              <property name="value" value="true" />
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_ExecuteFunction" id="1140139769227">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1140139769245">
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1140139883561">
@@ -481,12 +457,6 @@
                   </node>
                 </node>
               </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1140139914789">
-            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1140139916322">
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_FunctionParm_selectedNode" id="1140139916729" />
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_DeleteOperation" id="1140139922730" />
             </node>
           </node>
         </node>

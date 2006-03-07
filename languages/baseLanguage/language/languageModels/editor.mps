@@ -2209,15 +2209,6 @@
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapItem" id="1140226437070">
       <property name="description" value="delete whole statement" />
       <property name="actionId" value="delete_action_id" />
-      <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_IsApplicableFunction" id="1140226437071">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1140226437136">
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1140226520099">
-            <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1140226522617">
-              <property name="value" value="true" />
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_ExecuteFunction" id="1140226437072">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1140226437137">
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1140226528509">
@@ -2236,15 +2227,6 @@
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapItem" id="1140562601804">
       <property name="description" value="replace with array component type" />
       <property name="actionId" value="delete_action_id" />
-      <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_IsApplicableFunction" id="1140562601820">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1140562601822">
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1140562627278">
-            <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1140562629436">
-              <property name="value" value="true" />
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_ExecuteFunction" id="1140562601821">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1140562601823">
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1140562636421">
@@ -2270,15 +2252,6 @@
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapItem" id="1140722318748">
       <property name="description" value="disable delete" />
       <property name="actionId" value="delete_action_id" />
-      <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_IsApplicableFunction" id="1140722318747">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1140722318986">
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1140722343066">
-            <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1140722344958">
-              <property name="value" value="true" />
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_ExecuteFunction" id="1140722318749">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1140722318987" />
       </node>
@@ -2290,15 +2263,6 @@
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapItem" id="1140733217028">
       <property name="description" value="remove parenthesis" />
       <property name="actionId" value="delete_action_id" />
-      <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_IsApplicableFunction" id="1140733217045">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1140733217125">
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1140733253908">
-            <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1140733255785">
-              <property name="value" value="true" />
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_ExecuteFunction" id="1140733217046">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1140733217126">
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1140733960321">
@@ -2324,15 +2288,6 @@
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapItem" id="1140734304237">
       <property name="description" value="replace binary operation with one of arguments" />
       <property name="actionId" value="delete_action_id" />
-      <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_IsApplicableFunction" id="1140734304238">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1140734304239">
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1140734304240">
-            <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1140734304241">
-              <property name="value" value="true" />
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_ExecuteFunction" id="1140734304242">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1140734304243">
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1140734654521">
@@ -2358,15 +2313,6 @@
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapItem" id="1140734681123">
       <property name="description" value="replace binary operation with one of arguments" />
       <property name="actionId" value="delete_action_id" />
-      <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_IsApplicableFunction" id="1140734681124">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1140734681125">
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1140734681126">
-            <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1140734681127">
-              <property name="value" value="true" />
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_ExecuteFunction" id="1140734681128">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1140734681129">
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1140734681130">
@@ -2391,15 +2337,6 @@
     <link role="applicableConcept" targetNodeId="1.1068498886292" />
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapItem" id="1140748044079">
       <property name="description" value="add next parameter" />
-      <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_IsApplicableFunction" id="1140748044080">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1140748044191">
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1140748057553">
-            <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1140748059508">
-              <property name="value" value="true" />
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_ExecuteFunction" id="1140748044081">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1140748044192">
           <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1140748074212">
@@ -2441,15 +2378,6 @@
     <link role="applicableConcept" targetNodeId="1.1068580123159" />
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapItem" id="1141078941917">
       <property name="description" value="add false branch" />
-      <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_IsApplicableFunction" id="1141078941918">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1141078941920">
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1141078974672">
-            <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1141078976533">
-              <property name="value" value="true" />
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_ExecuteFunction" id="1141078941919">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1141078941921">
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1141079034145">
