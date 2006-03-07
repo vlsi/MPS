@@ -2,7 +2,6 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil;
@@ -32,16 +31,28 @@ public class ModelActions {
 
   /**
    * helper method
+   *
+   * @deprecated
    */
-  public static List<INodeSubstituteAction> createPrimaryNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, Condition<SNode> filter, IScope scope) {
-    return NodeSubstituteActionsHelper.createPrimaryNodeSubstituteActions(sourceNode, currentTargetNode, linkDeclaration, filter, scope);
+  public static List<INodeSubstituteAction> createPrimaryNodeSubstituteActions(SNode parentNode, SNode currentChild, LinkDeclaration linkDeclaration, Condition<SNode> filter, IScope scope) {
+    return ChildSubstituteActionsHelper.createPrimaryChildSubstituteActions(parentNode, currentChild,
+            linkDeclaration.getTarget(),
+            new DefaultChildNodeSetter(parentNode, linkDeclaration),
+            filter, scope);
+  }
+
+  /**
+   * helper method
+   */
+  public static List<INodeSubstituteAction> createPrimaryNodeSubstituteActions(SNode parentNode, SNode currentChild, ConceptDeclaration childConcept, IChildNodeSetter childSetter, Condition<SNode> filter, IScope scope) {
+    return ChildSubstituteActionsHelper.createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, filter, scope);
   }
 
   /**
    * helper method
    */
   public static boolean isDefaultSubstitutableConcept(ConceptDeclaration concept, ConceptDeclaration expectedConcept, IScope scope) {
-    return NodeSubstituteActionsHelper.isDefaultSubstitutableConcept(concept, expectedConcept, scope);
+    return ChildSubstituteActionsHelper.isDefaultSubstitutableConcept(concept, expectedConcept, scope);
   }
 
 
@@ -56,23 +67,30 @@ public class ModelActions {
     }, scope);
   }
 
+  //-------------------
+  // child substitute
+  //-------------------
 
+  /**
+   * @deprecated
+   */
+  public static List<INodeSubstituteAction> createChildSubstituteActions(SNode parentNode, SNode currentChild, LinkDeclaration linkDeclaration, final IScope scope) {
+    return ChildSubstituteActionsHelper.createActions(parentNode, currentChild,
+            linkDeclaration.getTarget(),
+            new DefaultChildNodeSetter(parentNode, linkDeclaration),
+            scope, linkDeclaration);
+  }
 
-  public static List<INodeSubstituteAction> createNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, final IScope scope) {
-//    // test
-//    if(linkDeclaration.getMetaClass() == LinkMetaclass.reference) {
-//      return ReferentSubstituteActionsHelper.createActions(sourceNode, currentTargetNode, linkDeclaration, scope);
-//    }
-//    // test
-    return NodeSubstituteActionsHelper.createActions(sourceNode, currentTargetNode, linkDeclaration, scope);
+  public static List<INodeSubstituteAction> createChildSubstituteActions(SNode parentNode, SNode currentChild, ConceptDeclaration childConcept, IChildNodeSetter childSetter, IScope scope, LinkDeclaration linkDeclaration_tmp) {
+    return ChildSubstituteActionsHelper.createActions(parentNode, currentChild, childConcept, childSetter, scope, linkDeclaration_tmp);
   }
 
   //-------------------
-  // reference substitute
+  // referent substitute
   //-------------------
 
   public static List<INodeSubstituteAction> createReferenceSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, final IScope scope) {
-      return ReferentSubstituteActionsHelper.createActions(sourceNode, currentTargetNode, linkDeclaration, scope);
+    return ReferentSubstituteActionsHelper.createActions(sourceNode, currentTargetNode, linkDeclaration, scope);
   }
 
   //-------------------

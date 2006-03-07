@@ -2,7 +2,6 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.nodeEditor.AbstractNodeSubstituteItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -18,18 +17,17 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteItem
   private SNode mySourceNode;
   private SNode myCurrentChild;
   private IScope myScope;
-  private IChildSetter mySetter;
+  private IChildNodeSetter mySetter;
 
 
-  public interface IChildSetter {
-    public void execute(SNode oldChild, SNode newChild, IScope scope);
-  }
-
+  /**
+   * @deprecated
+   */
   public DefaultChildNodeSubstituteAction(SNode parameterNode, SNode sourceNode, SNode currentChild, LinkDeclaration linkDeclaration, IScope scope) {
-    this(parameterNode, sourceNode, currentChild, new SimpleSetter(sourceNode, linkDeclaration), scope);
+    this(parameterNode, sourceNode, currentChild, new DefaultChildNodeSetter(sourceNode, linkDeclaration), scope);
   }
 
-  public DefaultChildNodeSubstituteAction(SNode parameterNode, SNode sourceNode, SNode currentChild, IChildSetter setter, IScope scope) {
+  public DefaultChildNodeSubstituteAction(SNode parameterNode, SNode sourceNode, SNode currentChild, IChildNodeSetter setter, IScope scope) {
     super(parameterNode);
     mySourceNode = sourceNode;
     myCurrentChild = currentChild;
@@ -64,30 +62,5 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteItem
       return NodeFactoryManager.initializeNode((ConceptDeclaration) parameterNode, model);
     }
     throw new RuntimeException("Couldn't create child node. Parameter node: " + parameterNode.getDebugText());
-  }
-
-
-  public static class SimpleSetter implements IChildSetter {
-    SNode mySourceNode;
-    LinkDeclaration myLinkDeclaration;
-
-    public SimpleSetter(SNode sourceNode, LinkDeclaration linkDeclaration) {
-      mySourceNode = sourceNode;
-      myLinkDeclaration = linkDeclaration;
-
-      if (SModelUtil.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.aggregation) {
-        throw new RuntimeException("Only aggregation links are allowed here.");
-      }
-    }
-
-    public void execute(SNode oldChild, SNode newChild, IScope scope) {
-      String role = SModelUtil.getGenuineLinkRole(myLinkDeclaration);
-      if (oldChild == null) {
-        mySourceNode.setChild(role, newChild);
-      } else {
-        mySourceNode.insertChild(oldChild, role, newChild);
-        oldChild.delete();
-      }
-    }
   }
 }
