@@ -19,22 +19,21 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteI
   private SNode mySourceNode;
   private SNode myCurrentReferent;
   private IScope myScope;
-  private IReferentSetter mySetter;
+  private LinkDeclaration myLinkDeclaration;
 
   public interface IReferentSetter {
     public void execute(SNode newReferent, IScope scope);
   }
 
   public DefaultReferentNodeSubstituteAction(SNode parameterNode, SNode sourceNode, SNode currentReferent, LinkDeclaration linkDeclaration, IScope scope) {
-    this(parameterNode, sourceNode, currentReferent, new SimpleSetter(sourceNode, linkDeclaration), scope);
-  }
-
-  public DefaultReferentNodeSubstituteAction(SNode parameterNode, SNode sourceNode, SNode currentReferent, IReferentSetter setter, IScope scope) {
     super(parameterNode);
     mySourceNode = sourceNode;
     myCurrentReferent = currentReferent;
     myScope = scope;
-    mySetter = setter;
+    myLinkDeclaration = linkDeclaration;
+    if (SModelUtil.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.reference) {
+      throw new RuntimeException("Only reference links are allowed here.");
+    }
   }
 
   public SNode getSourceNode() {
@@ -55,29 +54,11 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteI
 
   public SNode doSubstitute(String pattern) {
     if (myCurrentReferent != getParameterNode()) {
-      mySetter.execute(getParameterNode(), myScope);
+      if (!SModelUtil.isAcceptableReferent(myLinkDeclaration, getParameterNode(), myScope)) {
+        throw new RuntimeException("Couldn't set referent node: " + getParameterNode().getDebugText());
+      }
+      mySourceNode.setReferent(SModelUtil.getGenuineLinkRole(myLinkDeclaration), getParameterNode());
     }
     return null;
-  }
-
-  public static class SimpleSetter implements IReferentSetter {
-    SNode mySourceNode;
-    LinkDeclaration myLinkDeclaration;
-
-    public SimpleSetter(SNode sourceNode, LinkDeclaration linkDeclaration) {
-      mySourceNode = sourceNode;
-      myLinkDeclaration = linkDeclaration;
-
-      if (SModelUtil.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.reference) {
-        throw new RuntimeException("Only reference links are allowed here.");
-      }
-    }
-
-    public void execute(SNode newReferent, IScope scope) {
-      if (!SModelUtil.isAcceptableReferent(myLinkDeclaration, newReferent, scope)) {
-        throw new RuntimeException("Couldn't set referent node: " + newReferent.getDebugText());
-      }
-      mySourceNode.setReferent(SModelUtil.getGenuineLinkRole(myLinkDeclaration), newReferent);
-    }
   }
 }
