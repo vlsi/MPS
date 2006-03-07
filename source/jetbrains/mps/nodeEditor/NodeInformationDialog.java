@@ -2,7 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SNodePresentationUtil;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.WindowsUtil;
 
 import javax.swing.*;
@@ -75,7 +75,7 @@ public class NodeInformationDialog extends JDialog {
 
       } else {
         result.append("Model = ").append(target.getModel().getUID()).append("\n");
-        result.append("Node = ").append(SNodePresentationUtil.getPathToRoot(target)).append("\n");
+        result.append("Node = ").append(NodePresentationUtil.getPathToRoot(target)).append("\n");
         result.append("ID  = ").append(target.getId()).append("\n");
 
         if (ref.getExtResolveInfo() != null) {

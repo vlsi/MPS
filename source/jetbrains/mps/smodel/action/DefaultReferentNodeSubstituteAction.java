@@ -6,7 +6,7 @@ import jetbrains.mps.nodeEditor.AbstractNodeSubstituteItem;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePresentationUtil;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 
 /**
  * Created by IntelliJ IDEA.
@@ -55,11 +55,11 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteI
   }
 
   public String getMatchingText(String pattern) {
-    return SNodePresentationUtil.matchingText(myParameterNode, mySourceNode, myLinkDeclaration, getScope());
+    return NodePresentationUtil.matchingText(myParameterNode, mySourceNode, NodePresentationUtil.REFERENT_PRESENTATION, getScope());
   }
 
   public String getDescriptionText(String pattern) {
-    return SNodePresentationUtil.descriptionText(myParameterNode, mySourceNode, getScope());
+    return NodePresentationUtil.descriptionText(myParameterNode, mySourceNode, getScope());
   }
 
   public SNode doSubstitute(String pattern) {

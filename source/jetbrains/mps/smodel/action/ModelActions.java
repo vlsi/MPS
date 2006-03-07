@@ -56,17 +56,27 @@ public class ModelActions {
     }, scope);
   }
 
+
+
   public static List<INodeSubstituteAction> createNodeSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, final IScope scope) {
-    // test
-    if(linkDeclaration.getMetaClass() == LinkMetaclass.reference) {
-      return ReferentSubstituteActionsHelper.createActions(sourceNode, currentTargetNode, linkDeclaration, scope);
-    }
-    // test
+//    // test
+//    if(linkDeclaration.getMetaClass() == LinkMetaclass.reference) {
+//      return ReferentSubstituteActionsHelper.createActions(sourceNode, currentTargetNode, linkDeclaration, scope);
+//    }
+//    // test
     return NodeSubstituteActionsHelper.createActions(sourceNode, currentTargetNode, linkDeclaration, scope);
   }
 
   //-------------------
-  // right-transform hint substiture
+  // reference substitute
+  //-------------------
+
+  public static List<INodeSubstituteAction> createReferenceSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, final IScope scope) {
+      return ReferentSubstituteActionsHelper.createActions(sourceNode, currentTargetNode, linkDeclaration, scope);
+  }
+
+  //-------------------
+  // right-transform hint substitute
   //-------------------
 
   public static boolean canCreateRightTransformHintSubstituteActions(SNode sourceNode, String transformTag, IScope scope) {

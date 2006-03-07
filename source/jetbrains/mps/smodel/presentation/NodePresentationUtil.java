@@ -1,10 +1,12 @@
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel.presentation;
 
 import jetbrains.mps.baseLanguage.*;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.core.NamedConcept;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
@@ -16,18 +18,29 @@ import java.util.*;
  * Time: 5:35:18 PM
  * Todo: refactor this utility
  */
-public class SNodePresentationUtil {
+public class NodePresentationUtil {
+  public static INodePresentationPreferences CHILD_PRESENTATION = new INodePresentationPreferences() {
+    public boolean matchConceptByAlias() {
+      // most likely we are going to create instance of concept
+      return true;
+    }
+  };
+  public static INodePresentationPreferences REFERENT_PRESENTATION = new INodePresentationPreferences() {
+    public boolean matchConceptByAlias() {
+      return false;
+    }
+  };
+
   public static String matchingText(SNode node, SNode referenceContext, IScope scope) {
-    return matchingText(node, referenceContext, null, scope);
+    return matchingText(node, referenceContext, CHILD_PRESENTATION, scope);
   }
 
-  public static String matchingText(SNode node, SNode referenceContext, LinkDeclaration link, IScope scope) {
+  public static String matchingText(SNode node, SNode referenceContext, INodePresentationPreferences preferences, IScope scope) {
     if (node == null) {
       return "<none>";
     }
     if (node instanceof ConceptDeclaration) {
-      if (link == null || link.getMetaClass() == LinkMetaclass.aggregation) {
-        // most likely we are going to create instance of the concept
+      if (preferences.matchConceptByAlias()) {
         return getAliasOrConceptName(node, scope);
       }
       return node.getName();
@@ -127,21 +140,6 @@ public class SNodePresentationUtil {
 
     return method.getName() + sb.toString();
   }
-
-//  private static String matchingText_VariableDeclaration(VariableDeclaration variable, SNode referenceContext) {
-//    String result = variable.getName();
-//    if (referenceContext instanceof VariableReference) {
-//      return result;
-//    }
-//
-//    if (variable instanceof StaticFieldDeclaration) {
-//      Classifier parent = SModelUtil.findParent(variable, Classifier.class);
-//      if (!isReferenceContext(parent, referenceContext)) {
-//        result = parent.getName() + '.' + result;
-//      }
-//    }
-//    return result;
-//  }
 
   private static boolean isReferenceContext(Classifier declaringClassifier, SNode referenceContext) {
     if (referenceContext == null) {

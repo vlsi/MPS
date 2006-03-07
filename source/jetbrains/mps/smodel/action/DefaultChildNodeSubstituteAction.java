@@ -5,6 +5,7 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
 import jetbrains.mps.nodeEditor.AbstractNodeSubstituteItem;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 
 /**
  * Created by IntelliJ IDEA.
@@ -53,11 +54,11 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteItem
   }
 
   public String getMatchingText(String pattern) {
-    return SNodePresentationUtil.matchingText(myParameterNode, mySourceNode, myLinkDeclaration, getScope());
+    return NodePresentationUtil.matchingText(myParameterNode, mySourceNode, NodePresentationUtil.CHILD_PRESENTATION, getScope());
   }
 
   public String getDescriptionText(String pattern) {
-    return SNodePresentationUtil.descriptionText(myParameterNode, mySourceNode, getScope());
+    return NodePresentationUtil.descriptionText(myParameterNode, mySourceNode, getScope());
   }
 
   public SNode doSubstitute(String pattern) {
@@ -70,11 +71,11 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteItem
       myCurrentTargetNode.delete();
     }
     return newChild;
-  }                        
+  }
 
   public SNode createChildNode(SNode parameterNode, SModel model, String pattern) {
     if (parameterNode instanceof ConceptDeclaration) {
-      return NodeFactoryManager.initializeNode((ConceptDeclaration)parameterNode, model);
+      return NodeFactoryManager.initializeNode((ConceptDeclaration) parameterNode, model);
     }
     throw new RuntimeException("Couldn't create child node. Parameter node: " + parameterNode.getDebugText());
   }
