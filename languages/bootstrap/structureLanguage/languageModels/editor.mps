@@ -971,6 +971,7 @@
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1105739062910">
+        <property name="substituteActionsFactoryId" value="AAA" />
         <property name="drawBorder" value="false" />
         <property name="noTargetText" value="&lt;no target&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1105736807942" />
