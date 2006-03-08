@@ -3,7 +3,6 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions;
 import jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
@@ -31,7 +30,7 @@ import java.util.*;
   };
 
 
-  public static List<INodeSubstituteAction> createActions(SNode parentNode, SNode currentChild, ConceptDeclaration childConcept, IChildNodeSetter childSetter, final IScope scope, LinkDeclaration linkDeclaration_tmp) {
+  public static List<INodeSubstituteAction> createActions(SNode parentNode, SNode currentChild, ConceptDeclaration childConcept, IChildNodeSetter childSetter, IScope scope) {
     List<INodeSubstituteAction> resultActions = new LinkedList<INodeSubstituteAction>();
     if (childConcept == null) {
       return resultActions;
@@ -49,7 +48,7 @@ import java.util.*;
       resultActions = createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, TRUE_CONDITION, scope);
     } else {
       for (NodeSubstituteActionsBuilder builder : mainSubstituteActionsBuilders) {
-        resultActions.addAll(invokeActionFactory(builder, parentNode, currentChild, childConcept, childSetter, scope, linkDeclaration_tmp));
+        resultActions.addAll(invokeActionFactory(builder, parentNode, currentChild, childConcept, childSetter, scope));
       }
     }
 
@@ -65,7 +64,7 @@ import java.util.*;
 
     // for each builder create actions and apply all filters
     for (NodeSubstituteActionsBuilder builder : extendedSubstituteActionsBuilders) {
-      List<INodeSubstituteAction> addActions = invokeActionFactory(builder, parentNode, currentChild, childConcept, childSetter, scope, linkDeclaration_tmp);
+      List<INodeSubstituteAction> addActions = invokeActionFactory(builder, parentNode, currentChild, childConcept, childSetter, scope);
       addActions = applyActionFilters(addActions, extendedSubstituteActionsBuilders, builder, scope);
       resultActions.addAll(addActions);
     }
@@ -169,7 +168,7 @@ import java.util.*;
     return (List<INodeSubstituteAction>) QueryMethod.invoke(methodName, args, model);
   }
 
-  private static List<INodeSubstituteAction> invokeActionFactory(NodeSubstituteActionsBuilder builder, SNode parentNode, SNode currentChild, ConceptDeclaration childConcept, IChildNodeSetter childSetter, IScope scope, LinkDeclaration linkDeclaration_tmp) {
+  private static List<INodeSubstituteAction> invokeActionFactory(NodeSubstituteActionsBuilder builder, SNode parentNode, SNode currentChild, ConceptDeclaration childConcept, IChildNodeSetter childSetter, IScope scope) {
     String factoryQueryMethodId = builder.getActionsFactoryAspectId();
     // factory is optional
     if (factoryQueryMethodId == null) {
@@ -178,7 +177,6 @@ import java.util.*;
 
     Object[] args = new Object[]{parentNode,
             currentChild,
-//            linkDeclaration_tmp,
             childConcept,
             childSetter,
             scope};

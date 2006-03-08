@@ -31,20 +31,8 @@ public class ModelActions {
 
   /**
    * helper method
-   *
-   * @deprecated
    */
-  public static List<INodeSubstituteAction> createPrimaryNodeSubstituteActions(SNode parentNode, SNode currentChild, LinkDeclaration linkDeclaration, Condition<SNode> filter, IScope scope) {
-    return ChildSubstituteActionsHelper.createPrimaryChildSubstituteActions(parentNode, currentChild,
-            linkDeclaration.getTarget(),
-            new DefaultChildNodeSetter(parentNode, linkDeclaration),
-            filter, scope);
-  }
-
-  /**
-   * helper method
-   */
-  public static List<INodeSubstituteAction> createPrimaryNodeSubstituteActions(SNode parentNode, SNode currentChild, ConceptDeclaration childConcept, IChildNodeSetter childSetter, Condition<SNode> filter, IScope scope) {
+  public static List<INodeSubstituteAction> createPrimaryChildSubstituteActions(SNode parentNode, SNode currentChild, ConceptDeclaration childConcept, IChildNodeSetter childSetter, Condition<SNode> filter, IScope scope) {
     return ChildSubstituteActionsHelper.createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, filter, scope);
   }
 
@@ -71,18 +59,8 @@ public class ModelActions {
   // child substitute
   //-------------------
 
-  /**
-   * @deprecated
-   */
-  public static List<INodeSubstituteAction> createChildSubstituteActions(SNode parentNode, SNode currentChild, LinkDeclaration linkDeclaration, final IScope scope) {
-    return ChildSubstituteActionsHelper.createActions(parentNode, currentChild,
-            linkDeclaration.getTarget(),
-            new DefaultChildNodeSetter(parentNode, linkDeclaration),
-            scope, linkDeclaration);
-  }
-
-  public static List<INodeSubstituteAction> createChildSubstituteActions(SNode parentNode, SNode currentChild, ConceptDeclaration childConcept, IChildNodeSetter childSetter, IScope scope, LinkDeclaration linkDeclaration_tmp) {
-    return ChildSubstituteActionsHelper.createActions(parentNode, currentChild, childConcept, childSetter, scope, linkDeclaration_tmp);
+  public static List<INodeSubstituteAction> createChildSubstituteActions(SNode parentNode, SNode currentChild, ConceptDeclaration childConcept, IChildNodeSetter childSetter, IScope scope) {
+    return ChildSubstituteActionsHelper.createActions(parentNode, currentChild, childConcept, childSetter, scope);
   }
 
   //-------------------

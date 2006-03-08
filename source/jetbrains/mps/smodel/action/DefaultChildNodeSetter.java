@@ -14,11 +14,9 @@ import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
  * To change this template use File | Settings | File Templates.
  */
 public class DefaultChildNodeSetter implements IChildNodeSetter {
-  SNode myParentNode;
   LinkDeclaration myLinkDeclaration;
 
-  public DefaultChildNodeSetter(SNode parentNode, LinkDeclaration linkDeclaration) {
-    myParentNode = parentNode;
+  public DefaultChildNodeSetter(LinkDeclaration linkDeclaration) {
     myLinkDeclaration = linkDeclaration;
 
     if (SModelUtil.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.aggregation) {
@@ -30,12 +28,12 @@ public class DefaultChildNodeSetter implements IChildNodeSetter {
     return myLinkDeclaration;
   }
 
-  public void execute(SNode oldChild, SNode newChild, IScope scope) {
+  public void execute(SNode parenNode, SNode oldChild, SNode newChild, IScope scope) {
     String role = SModelUtil.getGenuineLinkRole(myLinkDeclaration);
     if (oldChild == null) {
-      myParentNode.setChild(role, newChild);
+      parenNode.setChild(role, newChild);
     } else {
-      myParentNode.insertChild(oldChild, role, newChild);
+      parenNode.insertChild(oldChild, role, newChild);
       oldChild.delete();
     }
   }
