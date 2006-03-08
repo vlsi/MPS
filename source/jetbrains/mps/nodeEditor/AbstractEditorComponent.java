@@ -42,7 +42,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public static final String EDITOR_POPUP_MENU_ACTIONS = "editor-popup-menu-actions";
 
   private WeakHashMap<EditorCell, Set<SNode>> myCellsToNodesToDependOnMap = new WeakHashMap<EditorCell, Set<SNode>>();
+
   private WeakHashMap<SNode, EditorCell> myNodesToBigCellsMap = new WeakHashMap<SNode, EditorCell>();
+  private WeakHashMap<ReferencedNodeContext, EditorCell> myRefNodeContextsToBigCellsMap = new WeakHashMap<ReferencedNodeContext, EditorCell>();
+
   private HashMap<EditorCell, Set<SNodeProxy>> myCellsToRefTargetsToDependOnMap = new HashMap<EditorCell, Set<SNodeProxy>>();
   private HashMap<Pair<SNodeProxy, String>, Set<EditorCell_Property>> myNodePropertiesAccessedCleanlyToDependentCellsMap = new HashMap<Pair<SNodeProxy, String>, Set<EditorCell_Property>>();
   private HashMap<Pair<SNodeProxy, String>, Set<EditorCell>> myNodePropertiesAccessedDirtilyToDependentCellsMap = new HashMap<Pair<SNodeProxy, String>, Set<EditorCell>>();
@@ -491,6 +494,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myCellsToNodesToDependOnMap.clear();
     myCellsToRefTargetsToDependOnMap.clear();
     myNodesToBigCellsMap.clear();
+    myRefNodeContextsToBigCellsMap.clear();
     myNodePropertiesAccessedCleanlyToDependentCellsMap.clear();
     myNodePropertiesAccessedDirtilyToDependentCellsMap.clear();
   }
@@ -970,7 +974,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (mouseEvent.getButton() != MouseEvent.BUTTON1) return;
     EditorCell newSelectedCell = myRootCell.findCell(mouseEvent.getX(), mouseEvent.getY());
     if (newSelectedCell == null || !newSelectedCell.isSelectable()) {
-      newSelectedCell = myRootCell.findNearestCell(mouseEvent.getX(), mouseEvent.getY(), true);   //todo: is it necessary?
+      newSelectedCell = myRootCell.findNearestCell(mouseEvent.getX(), mouseEvent.getY(), true);
     }
     if (newSelectedCell != null && newSelectedCell.isSelectable()) {
       changeSelection(newSelectedCell);
@@ -1357,10 +1361,15 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myCellsToRefTargetsToDependOnMap.remove(cell);
   }
 
-  void registerAsBigCell(EditorCell cell) {
+  void registerAsBigCell(EditorCell cell, ReferencedNodeContext refContext) {
+    myRefNodeContextsToBigCellsMap.put(refContext, cell);
     myNodesToBigCellsMap.put(cell.getSNode(), cell);
   }
 
+  EditorCell getBigCellForRefContext(ReferencedNodeContext refContext) {
+    return myRefNodeContextsToBigCellsMap.get(refContext);
+  }
+  
   EditorCell getBigCellForNode(SNode node) {
     return myNodesToBigCellsMap.get(node);
   }

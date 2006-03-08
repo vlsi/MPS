@@ -26,13 +26,13 @@ import java.util.*;
 public class EditorManager {
   private static final Logger LOG = Logger.getLogger(EditorManager.class);
 
-  public static final Object IS_BIG_CELL = new Object();
+  public static final Object BIG_CELL_CONTEXT = new Object();
 
   public static final Object RIGHT_TRANSFORM_HINT_JUST_ADDED = new Object();
   public static final Object RIGHT_TRANSFORM_HINT_ANCHOR_CELL_ID = new Object();
   public static final Object RIGHT_TRANSFORM_HINT_ANCHOR_TAG = new Object();
 
-  private HashMap<SNode, EditorCell> myMap = new HashMap<SNode, EditorCell>();
+  private HashMap<ReferencedNodeContext, EditorCell> myMap = new HashMap<ReferencedNodeContext, EditorCell>();
   private boolean myCreatingInspectedCell = false;
 
   private Map<Class, Stack<EditorCell>> myAttributedClassesToAttributedCellStacksMap = new HashMap<Class, Stack<EditorCell>>();
@@ -51,20 +51,22 @@ public class EditorManager {
   private EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events, boolean isInspectorCell) {
     AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
     EditorCell rootCell = nodeEditorComponent.getRootCell();
+    ReferencedNodeContext refContext = ReferencedNodeContext.createNodeContext(node);
     myMap.clear();
-    myMap.put(node, rootCell);
+    myMap.put(refContext, rootCell);
     myCreatingInspectedCell = isInspectorCell;
-    return createEditorCell(context, events, ReferencedNodeContext.createNodeContext(node));
+    return createEditorCell(context, events, refContext);
   }
 
 
-  private static Map<SNode, EditorCell> findBigDescendantCellsAndTheirNodes(EditorCell cell) {
-    Map<SNode, EditorCell> result = new HashMap<SNode, EditorCell>();
+  private static Map<ReferencedNodeContext, EditorCell> findBigDescendantCellsAndTheirNodes(EditorCell cell) {
+    Map<ReferencedNodeContext, EditorCell> result = new HashMap<ReferencedNodeContext, EditorCell>();
     if (cell instanceof EditorCell_Collection) {
       for (EditorCell childCell : ((EditorCell_Collection) cell)) {
-        Object isBigCell = childCell.getUserObject(IS_BIG_CELL);
-        if (isBigCell != null && (Boolean) childCell.getUserObject(IS_BIG_CELL)) {
-          result.put(childCell.getSNode(), childCell);
+        Object bigCellContext = childCell.getUserObject(BIG_CELL_CONTEXT);
+        if (bigCellContext instanceof ReferencedNodeContext) {
+          ReferencedNodeContext refContext = (ReferencedNodeContext) bigCellContext;
+          result.put(refContext, childCell);
         } else {
           result.putAll(findBigDescendantCellsAndTheirNodes(childCell));
         }
@@ -123,7 +125,7 @@ public class EditorManager {
 
 
   /*package*/ EditorCell createEditorCell(EditorContext context, List<SModelEvent> events, ReferencedNodeContext refContext) {
-    SNode node = refContext.getTargetNode();
+    SNode node = refContext.getNode();
     AttributeConcept attribute = node.getAttribute();
 
     //if the whole node has attribute
@@ -139,7 +141,7 @@ public class EditorManager {
     }
 
     AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
-    EditorCell oldCell = nodeEditorComponent.getBigCellForNode(node);
+    EditorCell oldCell = nodeEditorComponent.getBigCellForRefContext(refContext);
     if (events != null) {
       boolean nodeChanged = false;
       for (SModelEvent event : events) {
@@ -160,8 +162,8 @@ public class EditorManager {
       }
 
       if (!nodeChanged) {
-        if (myMap.containsKey(node)) {
-          EditorCell editorCell = myMap.get(node);
+        if (myMap.containsKey(refContext)) {
+          EditorCell editorCell = myMap.get(refContext);
           final Set<SNode> nodesOldCellDependsOn = nodeEditorComponent.getCopyOfNodesCellDependsOn(editorCell);
           final Set<SNodeProxy> refTargetsOldCellDependsOn = nodeEditorComponent.getCopyOfRefTargetsCellDependsOn(editorCell);
           if (nodesOldCellDependsOn != null || refTargetsOldCellDependsOn != null) {
@@ -190,7 +192,7 @@ public class EditorManager {
 
 
   private EditorCell createEditorCell_internal(final EditorContext context, boolean isInspectorCell, ReferencedNodeContext refContext) {
-    final SNode node = refContext.getTargetNode();
+    final SNode node = refContext.getNode();
 
     //reset creating inspected cell : we don't create not-root inspected cells
     myCreatingInspectedCell = false;
@@ -209,8 +211,8 @@ public class EditorManager {
       nodeCell = EditorCell_Error.create(context, node, "!exception!:" + node.getDebugText());
     } finally {
       if (nodeCell != null) {
-        nodeCell.putUserObject(IS_BIG_CELL, true);
-        abstractEditorComponent.registerAsBigCell(nodeCell);
+        nodeCell.putUserObject(BIG_CELL_CONTEXT, refContext);
+        abstractEditorComponent.registerAsBigCell(nodeCell, refContext);
         nodeAccessListener.recordingFinishedForCell(nodeCell);
       }
       NodeReadAccessCaster.removeNodeAccessListener();

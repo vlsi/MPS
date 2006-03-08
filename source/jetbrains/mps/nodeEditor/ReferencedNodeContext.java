@@ -11,18 +11,19 @@ import jetbrains.mps.util.EqualUtil;
  * To change this template use File | Settings | File Templates.
  */
 public class ReferencedNodeContext {
-  private SNode mySourceNode = null;
-  private SNode myTargetNode = null;
+  private SNode myRefererNode = null;
+  private SNode myNode = null;
   private String myRole = null;
 
   private ReferencedNodeContext(SNode sourceNode, SNode targetNode, String role) {
+    this(targetNode);
     myRole = role;
-    mySourceNode = sourceNode;
-    myTargetNode = targetNode;
+    myRefererNode = sourceNode;
   }
 
   private ReferencedNodeContext(SNode node) {
-    myTargetNode = node;
+    myNode = node;
+    node.putUserObject(this, this); //context must be collected only after its target node is collected
   }
 
   public static ReferencedNodeContext createReferenceContext(SNode sourceNode, SNode targetNode, String role) {
@@ -33,12 +34,12 @@ public class ReferencedNodeContext {
     return new ReferencedNodeContext(node);
   }
 
-  public SNode getSourceNode() {
-    return mySourceNode;
+  public SNode getRefererNode() {
+    return myRefererNode;
   }
 
-  public SNode getTargetNode() {
-    return myTargetNode;
+  public SNode getNode() {
+    return myNode;
   }
 
   public String getRole() {
@@ -47,7 +48,7 @@ public class ReferencedNodeContext {
 
 
   public int hashCode() {
-    return EqualUtil.hashCode(mySourceNode) + EqualUtil.hashCode(myTargetNode) + EqualUtil.hashCode(myRole);
+    return EqualUtil.hashCode(myRefererNode) + EqualUtil.hashCode(myNode) + EqualUtil.hashCode(myRole);
   }
 
 
@@ -56,8 +57,8 @@ public class ReferencedNodeContext {
     if (obj instanceof ReferencedNodeContext) {
       ReferencedNodeContext o = (ReferencedNodeContext) obj;
       return EqualUtil.equals(myRole, o.myRole)
-              && EqualUtil.equals(mySourceNode, o.mySourceNode)
-              && EqualUtil.equals(myTargetNode, o.myTargetNode);
+              && EqualUtil.equals(myRefererNode, o.myRefererNode)
+              && EqualUtil.equals(myNode, o.myNode);
     } else {
       return false;
     }
