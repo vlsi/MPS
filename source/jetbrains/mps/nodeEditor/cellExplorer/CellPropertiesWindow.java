@@ -22,6 +22,7 @@ public class CellPropertiesWindow extends JFrame {
     String cellText = cellProperties.getCellText();
 
     String cellKind = cellProperties.getCellKind();
+    String hashCode = " @ "+editorCell.hashCode();
     String cellWidth = cellProperties.getCellWidth();
     String cellHeight = cellProperties.getCellHeight();
     String cellEffectiveWidth = cellProperties.getCellEffectiveWidth();
@@ -42,7 +43,7 @@ public class CellPropertiesWindow extends JFrame {
     Font f = panel.getFont();
     Font bold = new Font(f.getName(), Font.BOLD, f.getSize());
     Font italic = new Font(f.getName(), Font.ITALIC, f.getSize());
-    panel.add(new JLabel("Cell:")).setFont(bold); panel.add(new JLabel(cellKind)).setFont(bold);
+    panel.add(new JLabel("Cell:")).setFont(bold); panel.add(new JLabel(cellKind + hashCode)).setFont(bold);
     panel.add(new JLabel("ID:")).setFont(bold); panel.add(new JLabel(cellID));
     panel.add(new JLabel("Role:")).setFont(bold);panel.add(new JLabel(cellRole));
     panel.add(new JLabel("Text:")).setFont(bold); panel.add(new JLabel(cellText)).setFont(italic);

@@ -85,7 +85,11 @@ public class EditorContext {
       LOG.warning("ref context not initialized");
       initializeRefContext(node);
     }
-    return createNodeCell(mySModelEvents, myCurrentRefNodeContext.sameContextButAnotherNode(node));
+    ReferencedNodeContext oldNodeContext = myCurrentRefNodeContext;
+    myCurrentRefNodeContext = myCurrentRefNodeContext.sameContextButAnotherNode(node);
+    EditorCell nodeCell = createNodeCell(mySModelEvents, myCurrentRefNodeContext);
+    myCurrentRefNodeContext = oldNodeContext;
+    return nodeCell;
   }
 
   public EditorCell createReferentCell(SNode sourceNode, SNode targetNode, String role) {
@@ -93,7 +97,11 @@ public class EditorContext {
       initializeRefContext(targetNode);
       LOG.warning("ref context not initialized");
     }
-    return createNodeCell(mySModelEvents, myCurrentRefNodeContext.contextWithOneMoreReference(targetNode, sourceNode, role));
+    ReferencedNodeContext oldNodeContext = myCurrentRefNodeContext;
+    myCurrentRefNodeContext = myCurrentRefNodeContext.contextWithOneMoreReference(targetNode, sourceNode, role);
+    EditorCell nodeCell = createNodeCell(mySModelEvents, myCurrentRefNodeContext);
+    myCurrentRefNodeContext = oldNodeContext;
+    return nodeCell;
   }
 
   public Object createMemento() {
