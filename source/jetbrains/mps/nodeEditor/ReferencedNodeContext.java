@@ -11,14 +11,14 @@ import jetbrains.mps.util.EqualUtil;
  * To change this template use File | Settings | File Templates.
  */
 public class ReferencedNodeContext {
-  private SNode myRefererNode = null;
+  private SNode myContextRefererNode = null;
   private SNode myNode = null;
-  private String myRole = null;
+  private String myContextRole = null;
 
   private ReferencedNodeContext(SNode sourceNode, SNode targetNode, String role) {
     this(targetNode);
-    myRole = role;
-    myRefererNode = sourceNode;
+    myContextRole = role;
+    myContextRefererNode = sourceNode;
   }
 
   private ReferencedNodeContext(SNode node) {
@@ -34,21 +34,21 @@ public class ReferencedNodeContext {
     return new ReferencedNodeContext(node);
   }
 
-  public SNode getRefererNode() {
-    return myRefererNode;
+  public SNode getContextRefererNode() {
+    return myContextRefererNode;
   }
 
   public SNode getNode() {
     return myNode;
   }
 
-  public String getRole() {
-    return myRole;
+  public String getContextRole() {
+    return myContextRole;
   }
 
 
   public int hashCode() {
-    return EqualUtil.hashCode(myRefererNode) + EqualUtil.hashCode(myNode) + EqualUtil.hashCode(myRole);
+    return EqualUtil.hashCode(myContextRefererNode) + EqualUtil.hashCode(myNode) + EqualUtil.hashCode(myContextRole);
   }
 
 
@@ -56,8 +56,8 @@ public class ReferencedNodeContext {
     if (obj == this) return true;
     if (obj instanceof ReferencedNodeContext) {
       ReferencedNodeContext o = (ReferencedNodeContext) obj;
-      return EqualUtil.equals(myRole, o.myRole)
-              && EqualUtil.equals(myRefererNode, o.myRefererNode)
+      return EqualUtil.equals(myContextRole, o.myContextRole)
+              && EqualUtil.equals(myContextRefererNode, o.myContextRefererNode)
               && EqualUtil.equals(myNode, o.myNode);
     } else {
       return false;
