@@ -63,6 +63,15 @@ public class EditorContext {
     return result;
   }
 
+  public EditorCell createInspectedCell(SNode node, java.util.List<SModelEvent> events) {
+    mySModelEvents = events;
+    initializeRefContext(node);
+    EditorCell result = myOperationContext.getComponent(EditorManager.class).createInspectedCell(this, node, events);
+    resetCurrentRefContext();
+    mySModelEvents = null;
+    return result;
+  }
+
   private void initializeRefContext(SNode rootNode) {
     myCurrentRefNodeContext = ReferencedNodeContext.createNodeContext(rootNode);
   }

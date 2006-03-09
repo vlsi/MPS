@@ -43,7 +43,7 @@ public class EditorManager {
     return operationContext.getComponent(EditorManager.class);
   }
 
-  public EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events) {
+  /*package*/ EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events) {
     return createRootCell(context, node, events, false);
   }
 
@@ -303,7 +303,7 @@ public class EditorManager {
     return resultCell;
   }
 
-  public EditorCell createInspectedCell(EditorContext context, SNode node, List<SModelEvent> events) {
+  /*package*/ EditorCell createInspectedCell(EditorContext context, SNode node, List<SModelEvent> events) {
     return createRootCell(context, node, events, true);
   }
 
