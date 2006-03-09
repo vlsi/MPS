@@ -997,7 +997,7 @@
       <link role="keyMap" targetNodeId="1081427357000" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1079623722229">
         <property name="textFgColor" value="DARK_GREEN" />
-        <property name="text" value="\&quot;" />
+        <property name="text" value="&quot;" />
         <property name="fontStyle" value="BOLD" />
         <property name="drawBorder" value="false" />
       </node>
@@ -1013,7 +1013,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1079623722231">
         <property name="textFgColor" value="DARK_GREEN" />
-        <property name="text" value="\&quot;" />
+        <property name="text" value="&quot;" />
         <property name="fontStyle" value="BOLD" />
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
