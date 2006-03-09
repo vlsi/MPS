@@ -1069,7 +1069,7 @@
     <link role="extends" targetNodeId="1068390468198" />
     <node role="conceptLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLinkDeclaration" id="1137543155214">
       <property name="name" value="defaultFeature" />
-      <link role="targetType" targetNodeId="4.1078489098625" />
+      <link role="targetType" targetNodeId="37.1071489090640" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1106178123235">
       <property name="sourceCardinality" value="0..n" />

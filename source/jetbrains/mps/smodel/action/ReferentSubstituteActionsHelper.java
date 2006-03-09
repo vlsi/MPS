@@ -31,11 +31,6 @@ import java.util.*;
 
   public static List<INodeSubstituteAction> createActions(SNode sourceNode, SNode currentReferent, LinkDeclaration linkDeclaration, IScope scope) {
     List<INodeSubstituteAction> resultActions = new LinkedList<INodeSubstituteAction>();
-    String referenceRole = linkDeclaration.getRole();
-    final ConceptDeclaration referentConcept = linkDeclaration.getTarget();
-    if (referentConcept == null) {
-      return resultActions;
-    }
     ConceptDeclaration sourceConcept = SModelUtil.getConceptDeclaration(sourceNode, scope);
     if (sourceConcept == null) {
       LOG.error("Couldn't build actions : couldn't get concept for source node" + sourceNode.getDebugText());
@@ -43,11 +38,12 @@ import java.util.*;
     }
     Language primaryLanguage = SModelUtil.getDeclaringLanguage(sourceConcept, scope);
     if (primaryLanguage == null) {
-      LOG.error("Couldn't build actions : couldn't get declaring language for concept " + referentConcept.getDebugText());
+      LOG.error("Couldn't build actions : couldn't get declaring language for concept " + sourceConcept.getDebugText());
       return resultActions;
     }
 
     // add actions from 'primary' language
+    String referenceRole = linkDeclaration.getRole();
     List<ReferentSubstituteActionsBuilder> primarySubstituteActionsBuilders = getActionBuilders(primaryLanguage, sourceConcept, referenceRole);
     if (primarySubstituteActionsBuilders.isEmpty()) {
       // if 'primary' language hasn't defined actions for that target - create 'default' actions
