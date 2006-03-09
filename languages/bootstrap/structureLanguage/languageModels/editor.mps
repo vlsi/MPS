@@ -325,11 +325,6 @@
         <property name="conditionId" value="LinkDeclaration_NotSpecializes" />
         <link role="relationDeclaration" targetNodeId="1.1071599893252" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1084205682783">
-        <property name="drawBorder" value="true" />
-        <property name="conditionId" value="LinkDeclaration_NotSpecializes" />
-        <link role="relationDeclaration" targetNodeId="1.1071599937832" />
-      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ModelAccess" id="1084205682784">
         <property name="editable" value="false" />
         <property name="textBgColor" value="lightGray" />
@@ -341,13 +336,6 @@
         <property name="editable" value="false" />
         <property name="textBgColor" value="lightGray" />
         <property name="modelAccessorId" value="LinkDeclaration_SpecializedSourceCardinality" />
-        <property name="drawBorder" value="true" />
-        <property name="conditionId" value="LinkDeclaration_Specializes" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ModelAccess" id="1084205682786">
-        <property name="editable" value="false" />
-        <property name="textBgColor" value="lightGray" />
-        <property name="modelAccessorId" value="LinkDeclaration_SpecializedTargetCardinality" />
         <property name="drawBorder" value="true" />
         <property name="conditionId" value="LinkDeclaration_Specializes" />
       </node>
