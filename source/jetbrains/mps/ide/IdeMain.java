@@ -52,7 +52,7 @@ public class IdeMain {
     SplashScreen.getInstance().showSplashScreen();
     initFonts();
 
-    if (new Date(106, 3, 1).compareTo(new Date()) == -1) {
+    if (expirationDate().compareTo(new Date()) == -1) {
       JOptionPane.showMessageDialog(SplashScreen.getInstance(), "Program is expired. You can download latest version from www.jetbrains.com");
       System.exit(0);
     }
@@ -65,6 +65,10 @@ public class IdeMain {
     projectWindow.loadLastProjectIfAny();
     SplashScreen.getInstance().hideSplashScreen();
     projectWindow.show();
+  }
+
+  public static Date expirationDate() {
+    return new Date(106, 3, 1);
   }
 
   public static boolean isTestMode() {
