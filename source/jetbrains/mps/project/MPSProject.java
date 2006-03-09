@@ -3,6 +3,7 @@ package jetbrains.mps.project;
 import jetbrains.mps.components.IContainer;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.*;
+import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
