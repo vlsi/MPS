@@ -3,6 +3,9 @@
   <structure>
     <model modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   </structure>
+  <actions>
+    <model modelUID="jetbrains.mps.bootstrap.structureLanguage.actions" />
+  </actions>
   <editor>
     <model modelUID="jetbrains.mps.bootstrap.structureLanguage.editor" />
   </editor>
@@ -17,7 +20,7 @@
     <model modelUID="jetbrains.mps.bootstrap.structureLanguage.library" />
   </accessoryModels>
   <generators>
-    <generator name="structure generator" generatorUID="jetbrains.mps.bootstrap.structureLanguage#1129914001820" templatesModel="jetbrains.mps.bootstrap.structureLanguage.generator.baseLanguage@templates" targetLanguage="jetbrains.mps.baseLanguage">
+    <generator name="structure generator" generatorUID="jetbrains.mps.bootstrap.structureLanguage#1129914001820" targetLanguage="jetbrains.mps.baseLanguage">
       <models>
         <modelRoot path="${language_descriptor}\generator" namespacePrefix="jetbrains.mps.bootstrap.structureLanguage.generator" />
         <modelRoot path="${mps_home}\models\java" namespacePrefix="java" />

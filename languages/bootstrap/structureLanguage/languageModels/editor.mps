@@ -931,9 +931,9 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1137539767526">
           <property name="name" value="linkNameInErrorMessage" />
           <property name="selectable" value="false" />
-          <link role="relationDeclaration" targetNodeId="1.1105736734721" />
+          <link role="relationDeclaration" targetNodeId="1.1105742372452" />
           <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1137539767527">
-            <link role="conceptDeclaration" targetNodeId="1.1105736576531" />
+            <link role="conceptDeclaration" targetNodeId="1.1105741578420" />
             <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1137539767528">
               <property name="editable" value="false" />
               <property name="textBgColor" value="pink" />
@@ -953,10 +953,10 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1105739062907">
         <property name="drawBorder" value="false" />
         <property name="noTargetText" value="&lt;no link&gt;" />
-        <link role="relationDeclaration" targetNodeId="1.1105736734721" />
         <link role="actionSet" targetNodeId="1105751377804" />
+        <link role="relationDeclaration" targetNodeId="1.1105742372452" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1105738886421">
-          <link role="conceptDeclaration" targetNodeId="1.1105736576531" />
+          <link role="conceptDeclaration" targetNodeId="1.1105741578420" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1105739062908">
             <property name="textFgColor" value="DARK_MAGENTA" />
             <property name="fontStyle" value="BOLD" />
@@ -971,7 +971,6 @@
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1105739062910">
-        <property name="substituteActionsFactoryId" value="AAA" />
         <property name="drawBorder" value="false" />
         <property name="noTargetText" value="&lt;no target&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1105736807942" />
@@ -990,28 +989,6 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1105739078475">
     <property name="name" value="AggregationConceptLink_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1105736889287" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1105751283375">
-      <property name="name" value="ConceptLinks_Menu" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1105751317548">
-        <property name="substituteHandlerId" value="AggregationConceptLink_SetLinkDeclaration" />
-        <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1105751369050">
-          <property name="name" value="linkDeclaration" />
-          <property name="queryId" value="AggregationConceptLinkDeclarations" />
-          <property name="textProviderId" value="Name" />
-        </node>
-      </node>
-    </node>
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1105986630674">
-      <property name="name" value="ConceptLinkTargets_Menu" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1105986664739">
-        <property name="substituteHandlerId" value="AggregationConceptLink_SetTarget" />
-        <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1105986697100">
-          <property name="handlerId" value="AggregationConceptLink_InstantiateLinkTarget" />
-          <property name="name" value="linkTarget" />
-          <property name="queryId" value="AggregationConceptLinkTargets" />
-        </node>
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1105739124743">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
@@ -1026,9 +1003,9 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1137539592946">
           <property name="name" value="linkNameInErrorMessage" />
           <property name="selectable" value="false" />
-          <link role="relationDeclaration" targetNodeId="1.1105736734721" />
+          <link role="relationDeclaration" targetNodeId="1.1105742417828" />
           <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1137539592945">
-            <link role="conceptDeclaration" targetNodeId="1.1105736576531" />
+            <link role="conceptDeclaration" targetNodeId="1.1105741535888" />
             <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1137539607229">
               <property name="editable" value="false" />
               <property name="textBgColor" value="pink" />
@@ -1048,10 +1025,9 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1105739124744">
         <property name="drawBorder" value="false" />
         <property name="noTargetText" value="&lt;no link&gt;" />
-        <link role="actionSet" targetNodeId="1105751283375" />
-        <link role="relationDeclaration" targetNodeId="1.1105736734721" />
+        <link role="relationDeclaration" targetNodeId="1.1105742417828" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1105739101929">
-          <link role="conceptDeclaration" targetNodeId="1.1105736576531" />
+          <link role="conceptDeclaration" targetNodeId="1.1105741535888" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1105739124745">
             <property name="textFgColor" value="DARK_MAGENTA" />
             <property name="fontStyle" value="BOLD" />
@@ -1067,8 +1043,8 @@
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1105987989392">
+        <property name="substituteActionsFactoryId" value="AggregationConceptLink_Target" />
         <property name="drawBorder" value="false" />
-        <link role="actionSet" targetNodeId="1105986630674" />
         <link role="relationDeclaration" targetNodeId="1.1105736901241" />
       </node>
     </node>
