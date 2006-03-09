@@ -3,6 +3,8 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.EqualUtil;
 
+import java.util.*;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -11,44 +13,39 @@ import jetbrains.mps.util.EqualUtil;
  * To change this template use File | Settings | File Templates.
  */
 public class ReferencedNodeContext {
-  private SNode myContextRefererNode = null;
+  private Stack<SNode> myContextRefererNodes = new Stack<SNode>();
   private SNode myNode = null;
-  private String myContextRole = null;
-
-  private ReferencedNodeContext(SNode sourceNode, SNode targetNode, String role) {
-    this(targetNode);
-    myContextRole = role;
-    myContextRefererNode = sourceNode;
-  }
+  private Stack<String> myContextRoles = new Stack<String>();
 
   private ReferencedNodeContext(SNode node) {
     myNode = node;
     node.putUserObject(this, this); //context must be collected only after its target node is collected
   }
 
-  public static ReferencedNodeContext createReferenceContext(SNode sourceNode, SNode targetNode, String role) {
-    return new ReferencedNodeContext(sourceNode, targetNode, role);
-  }
-
   public static ReferencedNodeContext createNodeContext(SNode node) {
     return new ReferencedNodeContext(node);
   }
 
-  public SNode getContextRefererNode() {
-    return myContextRefererNode;
+  public ReferencedNodeContext sameContextButAnotherNode(SNode newNode) {
+    ReferencedNodeContext result = new ReferencedNodeContext(newNode);
+    result.myContextRoles.addAll(myContextRoles);
+    result.myContextRefererNodes.addAll(myContextRefererNodes);
+    return result;
+  }
+
+  public ReferencedNodeContext contextWithOneMoreReference(SNode node, SNode contextRefererNode, String contextRole) {
+    ReferencedNodeContext result = sameContextButAnotherNode(node);
+    result.myContextRoles.push(contextRole);
+    result.myContextRefererNodes.push(contextRefererNode);
+    return result;
   }
 
   public SNode getNode() {
     return myNode;
   }
 
-  public String getContextRole() {
-    return myContextRole;
-  }
-
-
   public int hashCode() {
-    return EqualUtil.hashCode(myContextRefererNode) + EqualUtil.hashCode(myNode) + EqualUtil.hashCode(myContextRole);
+    return EqualUtil.hashCode(myContextRefererNodes) + EqualUtil.hashCode(myNode) + EqualUtil.hashCode(myContextRoles);
   }
 
 
@@ -56,8 +53,8 @@ public class ReferencedNodeContext {
     if (obj == this) return true;
     if (obj instanceof ReferencedNodeContext) {
       ReferencedNodeContext o = (ReferencedNodeContext) obj;
-      return EqualUtil.equals(myContextRole, o.myContextRole)
-              && EqualUtil.equals(myContextRefererNode, o.myContextRefererNode)
+      return EqualUtil.equals(myContextRoles, o.myContextRoles)
+              && EqualUtil.equals(myContextRefererNodes, o.myContextRefererNodes)
               && EqualUtil.equals(myNode, o.myNode);
     } else {
       return false;

@@ -22,6 +22,8 @@ public class EditorContext {
   private EditorCell myContextCell;
   private java.util.List<SModelEvent> mySModelEvents = null;
 
+  private ReferencedNodeContext myCurrentRefNodeContext;
+
   public EditorContext(AbstractEditorComponent editorComponent, SModel model, IOperationContext operationContext) {
     myNodeEditorComponent = editorComponent;
     myModelDescriptor = model == null ? null : model.getModelDescriptor();
@@ -48,23 +50,41 @@ public class EditorContext {
     mySModelEvents = modelEvents;
   }
 
-  public EditorCell createNodeCell(java.util.List<SModelEvent> events, ReferencedNodeContext refContext) {
+  private EditorCell createNodeCell(java.util.List<SModelEvent> events, ReferencedNodeContext refContext) {
     return myOperationContext.getComponent(EditorManager.class).createEditorCell(this, events, refContext);
   }
 
   public EditorCell createRootCell(SNode node, java.util.List<SModelEvent> events) {
     mySModelEvents = events;
+    initializeRefContext(node);
     EditorCell result = myOperationContext.getComponent(EditorManager.class).createRootCell(this, node, events);
+    resetCurrentRefContext();
     mySModelEvents = null;
     return result;
   }
 
+  private void initializeRefContext(SNode rootNode) {
+    myCurrentRefNodeContext = ReferencedNodeContext.createNodeContext(rootNode);
+  }
+
+  private void resetCurrentRefContext() {
+    myCurrentRefNodeContext = null;
+  }
+
   public EditorCell createNodeCell(SNode node) {
-    return createNodeCell(mySModelEvents, ReferencedNodeContext.createNodeContext(node));
+    if (myCurrentRefNodeContext == null) {
+      LOG.warning("ref context not initialized");
+      initializeRefContext(node);
+    }
+    return createNodeCell(mySModelEvents, myCurrentRefNodeContext.sameContextButAnotherNode(node));
   }
 
   public EditorCell createReferentCell(SNode sourceNode, SNode targetNode, String role) {
-    return createNodeCell(mySModelEvents, ReferencedNodeContext.createReferenceContext(sourceNode, targetNode, role));
+    if (myCurrentRefNodeContext == null) {
+      initializeRefContext(targetNode);
+      LOG.warning("ref context not initialized");
+    }
+    return createNodeCell(mySModelEvents, myCurrentRefNodeContext.contextWithOneMoreReference(targetNode, sourceNode, role));
   }
 
   public Object createMemento() {
