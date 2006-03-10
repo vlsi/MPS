@@ -1072,8 +1072,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   protected void paintComponent(Graphics gg) {
     Graphics2D g = (Graphics2D) gg;
 
-    g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
-            RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+    if (EditorSettings.getInstance().isUseAntialiasing()) {
+      g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
+              RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+    }
 
 
     g.setColor(getBackground());

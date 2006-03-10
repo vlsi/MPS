@@ -8,7 +8,6 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.smodel.SNode;
 
 import javax.swing.*;
 import javax.swing.Timer;
@@ -28,8 +27,8 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
   }
 
   private @Externalizable Font myFont = new Font("Monospaced", Font.PLAIN, 12);
-
   private @Externalizable int myTextWidth = 500;
+  private @Externalizable boolean myUseAntialiasing = true;
 
   public Font getDefaultEditorFont() {
     return myFont;
@@ -38,6 +37,15 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
   public void setDefaultEditorFont(Font newFont) {
     myFont = newFont;
     ReloadUtils.rebuildAllEditors();
+  }
+
+
+  public boolean isUseAntialiasing() {
+    return myUseAntialiasing;
+  }
+
+  public void setUseAntialiasing(boolean useAntialiasing) {
+    myUseAntialiasing = useAntialiasing;
   }
 
   public int getTextWidth() {
@@ -52,12 +60,14 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     return new MyPreferencesPage();
   }
 
+
   private class MyPreferencesPage implements IPreferencesPage {
     private final int SLIDER_RATIO = 10000;
     private JPanel myEditorSettingsPanel = new JPanel(new BorderLayout());
     private JComboBox myFontsComboBox = createFontsComboBox();
     private JComboBox myFontSizesComboBox = createSizeComboBox();
     private JComboBox myTextWidthComboBox = createTextWidthComboBox();
+    private JCheckBox myAntialiasingCheckBox = createAntialiasinbCheckBox();
     private JSlider myBlinkingRateSlider = createBlinkingRateSlider();
     private final AbstractEditorComponent myBlinkingDemo = createBlinkingDemo();
     Timer myTimer;
@@ -71,6 +81,12 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
       panel.add(myFontSizesComboBox);
       panel.add(new JLabel("Text Width : "));
       panel.add(myTextWidthComboBox);
+
+      JPanel antialiasingPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+      antialiasingPanel.add(myAntialiasingCheckBox);
+      antialiasingPanel.add(new JLabel("Use Antialiasing"));
+
+      panel.add(antialiasingPanel);
       panel.add(new JLabel(" "));
       panel.add(new JLabel("Cursor Blinking Rate : "));
       panel.add(myBlinkingRateSlider);
@@ -99,6 +115,12 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
 
       JComboBox result = new JComboBox(sizes.toArray());
       result.setSelectedItem("" + getTextWidth());
+      return result;
+    }
+
+    private JCheckBox createAntialiasinbCheckBox() {
+      JCheckBox result = new JCheckBox();
+      result.setSelected(isUseAntialiasing());
       return result;
     }
 
@@ -186,6 +208,8 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
 
       int blinkingPeriod = getBlinkingPeriod();
       CaretBlinker.getInstance().setCaretBlinkingRateTimeMillis(blinkingPeriod);
+
+      setUseAntialiasing(myAntialiasingCheckBox.isSelected());
 
       ReloadUtils.rebuildAllEditors();
     }
