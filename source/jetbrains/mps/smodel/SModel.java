@@ -137,7 +137,6 @@ public class SModel implements Iterable<SNode> {
 
   /*package*/ @Deprecated void removeRootDontUnregister(SNode node) {  //for model refactoring scripts
     if (myRoots.contains(node)) {
-      String id = node.getId();
       myRoots.remove(node);
       fireRootRemovedEvent(node);
     }

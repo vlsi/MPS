@@ -235,34 +235,6 @@ public class ModelPersistence {
       }
     }
 
-    Element attributeElement = nodeElement.getChild(ATTRIBUTE);
-    if (attributeElement != null) {
-      Element linkElement = attributeElement.getChild(LINK);
-      ReferencePersister rp = ReferencePersister.readReferencePersister(linkElement, node, useUIDs);
-      SReference attributeReference = rp.createReferenceInModelDoNotAddToSourceNode(model);
-      node.setAttributeReference(attributeReference);
-    }
-
-    List propertyAttributes = nodeElement.getChildren(PROPERTY_ATTRIBUTE);
-    for (Object o : propertyAttributes) {
-      Element propertyAttributeElement = (Element) o;
-      String propertyName = propertyAttributeElement.getAttributeValue(NAME);
-      Element linkElement = propertyAttributeElement.getChild(LINK);
-      ReferencePersister rp = ReferencePersister.readReferencePersister(linkElement, node, useUIDs);
-      SReference propertyAttributeReference = rp.createReferenceInModelDoNotAddToSourceNode(model);
-      node.putPropertyAtributeReference(propertyName, propertyAttributeReference);
-    }
-
-    List linkAttributes = nodeElement.getChildren(LINK_ATTRIBUTE);
-    for (Object o : linkAttributes) {
-      Element linkAttributeElement = (Element) o;
-      String role = linkAttributeElement.getAttributeValue(ROLE);
-      Element linkElement = linkAttributeElement.getChild(LINK);
-      ReferencePersister rp = ReferencePersister.readReferencePersister(linkElement, node, useUIDs);
-      SReference linkAttributeReference = rp.createReferenceInModelDoNotAddToSourceNode(model);
-      node.putLinkAttributeReference(role, linkAttributeReference);
-    }
-
     List links = nodeElement.getChildren(LINK);
     for (Iterator iterator = links.iterator(); iterator.hasNext();) {
       Element linkElement = (Element) iterator.next();
@@ -450,33 +422,6 @@ public class ModelPersistence {
       Element linkElement = ReferencePersister.saveReference(element, reference, useUIDs);
     }
 
-    //attributes...
-    SReference attributeReference = node.getAttributeReference();
-    if (attributeReference != null) {
-      Element attributeElement = new Element(ATTRIBUTE);
-      element.addContent(attributeElement);
-      Element linkElement = ReferencePersister.saveReference(attributeElement, attributeReference, useUIDs);
-    }
-
-    Map<String, SReference> propertyAttributes = node.getPropertyAttributes();
-    for (String propertyName : propertyAttributes.keySet()) {
-      SReference propertyAttributeReference = propertyAttributes.get(propertyName);
-      if (propertyAttributeReference == null) continue;
-      Element propertyAtributeElement = new Element(PROPERTY_ATTRIBUTE);
-      element.addContent(propertyAtributeElement);
-      propertyAtributeElement.setAttribute(NAME, propertyName);
-      Element linkElement = ReferencePersister.saveReference(propertyAtributeElement, propertyAttributeReference, useUIDs);
-    }
-
-    Map<String, SReference> linkAttributes = node.getLinkAttributes();
-    for (String role : linkAttributes.keySet()) {
-      SReference linkAttributeReference = linkAttributes.get(role);
-      if (linkAttributeReference == null) continue;
-      Element linkAtributeElement = new Element(LINK_ATTRIBUTE);
-      element.addContent(linkAtributeElement);
-      linkAtributeElement.setAttribute(ROLE, role);
-      Element linkElement = ReferencePersister.saveReference(linkAtributeElement, linkAttributeReference, useUIDs);
-    }
 
     // children ...
     List<SNode> children = node.getChildren();
