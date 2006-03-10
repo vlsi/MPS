@@ -32,6 +32,11 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   private static final String ATTRIBUTE = "attribute";
 
+  public static final String STEREOTYPE_DELIM = "$";
+  public static final String ATTRIBUTE_STEREOTYPE = "attribute";
+  public static final String PROPERTY_ATTRIBUTE_STEREOTYPE = "property_attribute";
+  public static final String LINK_ATTRIBUTE_STEREOTYPE = "link_attribute";
+
   private String myRoleInParent;
   private SNode myParent;
 
@@ -124,6 +129,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     for (String role : myLinkAttributes.keySet()) {
       result.add(role);
     }
+    result.addAll(getLinkNamesFromAttributes());
     return result;
   }
 
@@ -304,12 +310,32 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return myAttribute.getTargetNode() instanceof AttributeConcept;
   }
 
+  public void setAttribute_new(AttributeConcept attributeConcept) {
+    setChild(STEREOTYPE_DELIM + ATTRIBUTE_STEREOTYPE, attributeConcept);
+  }
+
+  public boolean hasAttribute_new() {
+    return getChild(STEREOTYPE_DELIM + ATTRIBUTE_STEREOTYPE) != null;
+  }
+
+  public AttributeConcept getAttribute_new() {
+    return (AttributeConcept) getChild(STEREOTYPE_DELIM + ATTRIBUTE_STEREOTYPE);
+  }
+
   public AttributeConcept getAttribute() {
     //todo fire accessed event
     if (myAttribute == null) return null;
     SNode targetNode = myAttribute.getTargetNode();
     if (targetNode instanceof AttributeConcept) return (AttributeConcept) targetNode;
     return null;
+  }
+
+  public void setPropertyAttribute_new(String propertyName, PropertyAttributeConcept propertyAttribute) {
+    setChild(propertyName + STEREOTYPE_DELIM + PROPERTY_ATTRIBUTE_STEREOTYPE, propertyAttribute);
+  }
+
+  public PropertyAttributeConcept getPropertyAttribute_new(String propertyName) {
+    return (PropertyAttributeConcept) getChild(propertyName + STEREOTYPE_DELIM + PROPERTY_ATTRIBUTE_STEREOTYPE);
   }
 
   public void setPropertyAttribute(String propertyName, PropertyAttributeConcept propertyAttribute) {
@@ -339,6 +365,14 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     SReference reference = this.myPropertyAttributes.get(propertyName);
     if (reference == null) return null;
     return (PropertyAttributeConcept) reference.getTargetNode();
+  }
+
+  public void setLinkAttribute_new(String role, LinkAttributeConcept linkAttribute) {
+    setChild(role + STEREOTYPE_DELIM + LINK_ATTRIBUTE_STEREOTYPE, linkAttribute);
+  }
+
+  public LinkAttributeConcept getLinkAttribute_new(String role) {
+    return (LinkAttributeConcept) getChild(role + STEREOTYPE_DELIM + LINK_ATTRIBUTE_STEREOTYPE);
   }
 
   public void setLinkAttribute(String role, LinkAttributeConcept linkAttribute) {
@@ -383,6 +417,31 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
     Set<String> result = new HashSet<String>(myProperties.keySet());
     result.addAll(myPropertyAttributes.keySet());
+    result.addAll(getPropertyNamesFromAttributes());
+    return result;
+  }
+
+  //new
+  protected Set<String> getPropertyNamesFromAttributes() {
+    Set<String> result = new HashSet<String>();
+    for (String role : getChildRoles()) {
+      String suffix = STEREOTYPE_DELIM + PROPERTY_ATTRIBUTE_STEREOTYPE;
+      if (role.endsWith(suffix)) {
+        result.add(role.substring(0, role.length() - suffix.length()));
+      }
+    }
+    return result;
+  }
+
+  //new
+  protected Set<String> getLinkNamesFromAttributes() {
+    Set<String> result = new HashSet<String>();
+    for (String role : getChildRoles()) {
+      String suffix = STEREOTYPE_DELIM + LINK_ATTRIBUTE_STEREOTYPE;
+      if (role.endsWith(suffix)) {
+        result.add(role.substring(0, role.length() - suffix.length()));
+      }
+    }
     return result;
   }
 
