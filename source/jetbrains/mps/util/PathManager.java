@@ -126,6 +126,14 @@ public class PathManager {
     return ourTutorialPath;
   }
 
+  public static String getHelpIndexPath() {
+    if (ourTutorialPath != null) {
+      return ourTutorialPath;
+    }
+    ourTutorialPath = getHomePath() + File.separator + "help" + File.separator + "index.html";
+    return ourTutorialPath;
+  }
+
   public static String getAcknowledgementsPath() {
     return getHomePath() + File.separator + "help" + File.separator + "acknowledgements.html";
   }
