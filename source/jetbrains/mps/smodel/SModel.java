@@ -129,8 +129,16 @@ public class SModel implements Iterable<SNode> {
     if (myRoots.contains(node)) {
       String id = node.getId();
       myRoots.remove(node);
-      node.unRegisterFormModel();
+      node.unRegisterFromModel();
       if (!isLoading()) UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(node, id, true));
+      fireRootRemovedEvent(node);
+    }
+  }
+
+  /*package*/ @Deprecated void removeRootDontUnregister(SNode node) {  //for model refactoring scripts
+    if (myRoots.contains(node)) {
+      String id = node.getId();
+      myRoots.remove(node);
       fireRootRemovedEvent(node);
     }
   }
@@ -138,14 +146,14 @@ public class SModel implements Iterable<SNode> {
   public void deleteAllRoots() {
     if (isLoading()) {
       for (SNode root : myRoots) {
-        root.unRegisterFormModel();
+        root.unRegisterFromModel();
       }
       myRoots.clear();
     } else {
       List<SNode> roots = new ArrayList<SNode>(myRoots);
       for (SNode root : roots) {
         myRoots.remove(root);
-        root.unRegisterFormModel();
+        root.unRegisterFromModel();
         String id = root.getId();
         UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(root, id, true));
         fireRootRemovedEvent(root);
