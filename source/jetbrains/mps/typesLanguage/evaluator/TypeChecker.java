@@ -12,6 +12,7 @@ import jetbrains.mps.typesLanguage.Rule;
 import jetbrains.mps.typesLanguage.inference.ContextsManager;
 import jetbrains.mps.typesLanguage.inference.EquationManager;
 import jetbrains.mps.typesLanguage.inference.EquationUtil;
+import jetbrains.mps.typesLanguage.inference.TypeVariablesManager;
 
 import java.util.*;
 
@@ -29,6 +30,7 @@ public class TypeChecker {
   public static void clearForTypesModel(SModel typesModel) {
     ContextsManager.getInstance().clear();
     EquationManager.getInstance().clear();
+    TypeVariablesManager.getInstance().clearVariables();
     Interpretator.clearForTypesModel(typesModel);
   }
 
