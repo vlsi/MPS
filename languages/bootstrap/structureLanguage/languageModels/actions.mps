@@ -21,5 +21,11 @@
       <link role="applicableLink" targetNodeId="1.1105736807942" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1142040373858">
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1142040375687">
+      <property name="actionsFactoryAspectId" value="ConceptLinks" />
+      <link role="applicableConcept" targetNodeId="1.1105736674127" />
+    </node>
+  </node>
 </model>
 

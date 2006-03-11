@@ -402,18 +402,6 @@
         </node>
       </node>
     </node>
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1119980075004">
-      <property name="name" value="ConceptLinks_Menu" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1119980075005">
-        <property name="substituteHandlerId" value="ConceptLink_SetLinkDeclaration" />
-        <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1119980075006">
-          <property name="name" value="conceptLinkDeclaration" />
-          <property name="queryId" value="ConceptLinkDeclarations" />
-          <property name="descriptionProviderId" value="ConceptLinkDeclaration_type" />
-          <property name="textProviderId" value="Name" />
-        </node>
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1087215312704">
       <property name="drawBorder" value="false" />
       <property name="name" value="nodeBox" />
@@ -565,11 +553,9 @@
             <property name="selectable" value="false" />
             <property name="gridLayout" value="true" />
             <link role="relationDeclaration" targetNodeId="1.1105736949336" />
-            <link role="elementActionSet" targetNodeId="1119980075004" />
             <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1119980098182">
               <property name="drawBorder" value="false" />
               <property name="nullText" value=" ..." />
-              <link role="actionSet" targetNodeId="1119980075004" />
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1137467292180">
