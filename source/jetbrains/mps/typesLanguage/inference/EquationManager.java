@@ -1,6 +1,7 @@
 package jetbrains.mps.typesLanguage.inference;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.typesLanguage.lambdaTypes.PresentationUtil;
 
 import java.util.*;
 
@@ -62,12 +63,13 @@ public class EquationManager implements SubstitutionAcceptor {
       try {
         solveEquationsInSet(equationSet);
       } catch(TypeErrorException e) {
-        LOG.warning("Type error: invalid type is "+e.getErrorType());
+        LOG.warning("Type error: invalid type is "+e.getErrorType() + (e.getMessage() == null ? "" : " : " + e.getMessage()));
       }
     }
   }
 
   public void solveEquationsInSet(Set<RuntimeEquation> equationSet) throws TypeErrorException {
+   // printEquationSet(equationSet);//debug info
     while(!equationSet.isEmpty()) {
       Set<RuntimeEquation> iteratedEquationSet = new HashSet<RuntimeEquation>(equationSet);
       for (RuntimeEquation equation : iteratedEquationSet) {
@@ -75,6 +77,14 @@ public class EquationManager implements SubstitutionAcceptor {
         equationSet.remove(equation);
         equationSet.addAll(newEquations);
       }
+    }
+  }
+
+  private void printEquationSet(Set<RuntimeEquation> equationSet) {
+    for (RuntimeEquation equation : equationSet) {
+      System.err.println(
+              PresentationUtil.toString(equation.getNode1())
+                      + " == " + PresentationUtil.toString(equation.getNode2()));
     }
   }
 }
