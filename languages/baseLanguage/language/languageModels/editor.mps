@@ -250,6 +250,7 @@
         <property name="drawBorder" value="false" />
         <property name="noTargetText" value="&lt;no member&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1070568237987" />
+        <link role="actionMap" targetNodeId="1142045237802" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1088425851837">
           <link role="conceptDeclaration" targetNodeId="1.1068390468200" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1088425851838">
@@ -600,6 +601,7 @@
         <property name="drawBorder" value="false" />
         <property name="noTargetText" value="&lt;no member&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1070568044740" />
+        <link role="actionMap" targetNodeId="1142045498909" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1088426063980">
           <link role="conceptDeclaration" targetNodeId="1.1068580123165" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1088426063981">
@@ -1500,16 +1502,6 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1082381396722">
     <property name="name" value="BinaryOperation_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1081773326031" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1138336380216">
-      <property name="name" value="Operation_Menu" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1138336380217">
-        <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1138336380218">
-          <property name="handlerId" value="BinaryOperationReplacementFactory" />
-          <property name="name" value="binaryOperation" />
-          <property name="queryId" value="AllBinaryOperations" />
-        </node>
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1138336181461">
       <property name="drawBorder" value="false" />
       <link role="keyMap" targetNodeId="1081427357000" />
@@ -1520,9 +1512,9 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ConceptProperty" id="1138336218561">
         <property name="editable" value="true" />
+        <property name="substituteActionsFactoryId" value="BinaryOperation_Symbol" />
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
-        <link role="actionSet" targetNodeId="1138336380216" />
         <link role="relationDeclaration" targetNodeId="2.1137473891462" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1138336287361">
@@ -2389,6 +2381,56 @@
                 </node>
               </node>
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Link_SetNewChildOperation" id="1141079065431" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapDeclaration" id="1142045237802">
+    <property name="name" value="FieldReference_FieldName_Actions" />
+    <link role="applicableConcept" targetNodeId="1.1068580123158" />
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapItem" id="1142045287538">
+      <property name="description" value="replace field reference with expression before period" />
+      <property name="actionId" value="delete_action_id" />
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_ExecuteFunction" id="1142045287539">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1142045287540">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1142045412353">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1142045414527">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_FunctionParm_selectedNode" id="1142045412354" />
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ReplaceWithAnotherOperation" id="1142045420997">
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1142045426907">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_FunctionParm_selectedNode" id="1142045426187" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1142045437768">
+                    <link role="link" targetNodeId="1.1080137532343" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapDeclaration" id="1142045498909">
+    <property name="name" value="InstanceMethodCall_MethodName_Actions" />
+    <link role="applicableConcept" targetNodeId="1.1068580123163" />
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapItem" id="1142045514676">
+      <property name="description" value="replace method call with expression before period" />
+      <property name="actionId" value="delete_action_id" />
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_ExecuteFunction" id="1142045514677">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1142045514678">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1142045544523">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1142045545790">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_FunctionParm_selectedNode" id="1142045544524" />
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ReplaceWithAnotherOperation" id="1142045548494">
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1142045558716">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_FunctionParm_selectedNode" id="1142045555340" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1142045567123">
+                    <link role="link" targetNodeId="1.1068580123164" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>

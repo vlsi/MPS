@@ -200,15 +200,15 @@
             <property name="name" value="aaa" />
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1138060218806" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1141436898157">
-              <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1138060192077">
+              <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1142048271962">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1138060189777">
+                  <property name="value" value="10" />
+                </node>
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1138060196002">
                   <link role="variableDeclaration" extResolveInfo="1.static field ([Classifier]Byte).([StaticFieldDeclaration]MAX_VALUE : (jetbrains.mps.baseLanguage.types.byte/jetbrains.mps.baseLanguage.types.byte))" />
                   <node role="classifierType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1138060196001">
                     <link role="classifier" extResolveInfo="1.[Classifier]Byte" />
                   </node>
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1138060189777">
-                  <property name="value" value="10" />
                 </node>
               </node>
             </node>
