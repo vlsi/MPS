@@ -70,6 +70,7 @@ public class HierarchyView extends DefaultTool {
       public void actionPerformed(ActionEvent e) {
         java.util.List<SNode> nodes = new ArrayList<SNode>();
         for (SModelDescriptor modelDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
+          if (modelDescriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
           for (SNode node : modelDescriptor.getSModel().getRoots()) {
             if (node instanceof ConceptDeclaration) nodes.add(node);
           }

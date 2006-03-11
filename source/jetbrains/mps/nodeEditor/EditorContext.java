@@ -131,9 +131,9 @@ public class EditorContext {
           EditorCell deepestSelectedCell = myNodeEditorComponent.getDeepestSelectedCell();
           if (deepestSelectedCell != null) {
             deepestSelectedCell.setCaretX(memento.caretX.intValue());
-          } else {
+          } /*else {
             LOG.error("ERROR EditorContext: coudn't find cell at: " + memento.selectionPosition);
-          }
+          }*/
         }
         return true;
       }
@@ -152,7 +152,7 @@ public class EditorContext {
 
   private static class Memento {
     private AbstractEditorComponent nodeEditor;
-    private Point selectionPosition;
+   // private Point selectionPosition;
     private CellInfo cellInfo;
     private Stack<CellInfo> selectedStack = new Stack<CellInfo>();
     private List<CellInfo> collectionsWithEnabledBraces = new ArrayList<CellInfo>();
@@ -163,7 +163,7 @@ public class EditorContext {
       EditorCell selectedCell = nodeEditor.getSelectedCell();
       EditorCell deepestSelectedCell = nodeEditor.getDeepestSelectedCell();
       if (selectedCell != null) {
-        selectionPosition = new Point(selectedCell.getX(), selectedCell.getY());
+    //    selectionPosition = new Point(selectedCell.getX(), selectedCell.getY());
         caretX = new Integer(deepestSelectedCell.getCaretX());
         cellInfo = selectedCell.getCellInfo();
         selectedStack = nodeEditor.getSelectedStackForMemento();
