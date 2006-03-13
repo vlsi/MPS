@@ -114,26 +114,8 @@ import java.util.*;
             NodeSubstituteActionsBuilder substituteActionsBuilder = iterator.next();
             // is applicable ?
             ConceptDeclaration applicableConcept = substituteActionsBuilder.getApplicableConcept();
-            if (SModelUtil.isAssignableConcept(applicableConcept, childConcept)) {
-
-              // do not duplicate if two builders if they applicable concepts are assignable to each other
-              boolean skipBuilder = false;
-              Iterator<NodeSubstituteActionsBuilder> otherBuilders = substituteActionsBuilders.iterator();
-              while (otherBuilders.hasNext()) {
-                NodeSubstituteActionsBuilder builder = otherBuilders.next();
-                ConceptDeclaration otherApplicableConcept = builder.getApplicableConcept();
-                if (SModelUtil.isAssignableConcept(applicableConcept, otherApplicableConcept)) {
-                  skipBuilder = true;
-                  break;
-                } else if (SModelUtil.isAssignableConcept(otherApplicableConcept, applicableConcept)) {
-                  otherBuilders.remove();
-                  break;
-                }
-              }
-
-              if (!skipBuilder) {
-                substituteActionsBuilders.add(substituteActionsBuilder);
-              }
+            if (SModelUtil.isAssignableConcept(childConcept, applicableConcept)) {
+              substituteActionsBuilders.add(substituteActionsBuilder);
             }
           }
         }

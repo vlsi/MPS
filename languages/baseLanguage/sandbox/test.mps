@@ -156,6 +156,11 @@
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1140566518425" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1142293108367">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1142293108368">
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1142293144700" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1137904439079">
           <node role="expression" type="jetbrains.mps.baseLanguage.SuperMethodCall" id="1137905243674">
             <link role="baseMethodDeclaration" targetNodeId="1115766295021" />
@@ -301,7 +306,7 @@
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1137736415066">
       <property name="name" value="bbb" />
-      <node role="type" type="jetbrains.mps.baseLanguage.FloatType" id="1137736417990" />
+      <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1142293069419" />
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1137994194082">
       <property name="name" value="ccc" />
