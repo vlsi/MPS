@@ -62,7 +62,6 @@ public class NewGeneratorDialog extends BaseDialog {
     myContenetPane.add(internalPanel, BorderLayout.NORTH);
 
     internalPanel.add(new JLabel("Target language :"));
-
     List<Language> visibleLanguages = GlobalScope.getInstance().getVisibleLanguages();
     Object[] items = new Object[visibleLanguages.size()];
     int count = 0;
@@ -71,6 +70,8 @@ public class NewGeneratorDialog extends BaseDialog {
     }
     Arrays.sort(items);
     myTargetLanguageName = new JComboBox(items);
+    myTargetLanguageName.setSelectedItem("jetbrains.mps.baseLanguage");
+
     internalPanel.add(myTargetLanguageName);
     internalPanel.add(new JLabel("Template models root :"));
     myTargetLanguageName.addItemListener(new ItemListener() {
