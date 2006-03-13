@@ -295,6 +295,7 @@ public abstract class MPSTree extends JTree {
   }
 
   public void rebuildTree() {
+
     runRebuildAction(new Runnable() {
       public void run() {
         if (getModel().getRoot() instanceof MPSTreeNode) {

@@ -35,7 +35,7 @@ import org.jdom.Element;
  * Author: Sergey Dmitriev
  * Created Oct 25, 2003
  */
-public class ProjectPane extends JComponent implements IActionDataProvider, IProjectPane, IExternalizableComponent {
+public class ProjectPane extends AbstractProjectTreeView implements IActionDataProvider  {
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);
 
   public static final String PROJECT_PANE_NODE_ACTIONS = "project-pane-node-actions";
@@ -51,28 +51,17 @@ public class ProjectPane extends JComponent implements IActionDataProvider, IPro
   public static final String PROJECT_PANE_GENERIC_MODULE_ACTIONS = "project-pane-generic-module-actions";
 
   private MyTree myTree = new MyTree();
-  private MPSProject myProject;
   private IDEProjectFrame myIDE;
   private boolean myRebuildEnabled = true;
-  private IMPSProjectCommandListener myProjectListener = new IMPSProjectCommandListener() {
-    public void projectChangedInCommand(MPSProject project) {
-      updateListeners();
-      rebuildTree();
-    }
-  };
-  private LanguageCommandListener myLanguageListener = new MyLanguageListener();
-  private SolutionCommandListener mySolutionListener = new MySolutionListener();
 
   public ProjectPane(IDEProjectFrame ide) {
     myIDE = ide;
     SModelsMulticaster.getInstance().addSModelsListener(new SModelsAdapter() {
       public void modelCreated(SModelDescriptor modelDescriptor) {
-        rebuildTree();
         selectModel(modelDescriptor);
       }
 
       public void modelDeleted(SModelDescriptor modelDescriptor) {
-        rebuildTree();
       }
 
       public void modelWillBeDeleted(SModelDescriptor modelDescriptor) {
@@ -109,14 +98,6 @@ public class ProjectPane extends JComponent implements IActionDataProvider, IPro
     myIDE.openNode(selectedTreeNode.getSNode(), selectedTreeNode.getOperationContext());
   }
 
-  public void setProject(MPSProject project) {
-    if (myProject != null) {
-      removeListeners(myProject);
-    }
-    myProject = project;
-    rebuildTree();
-    updateListeners();
-  }
 
   public <T> T get(Class<T> cls) {
     if (cls == SNode.class) return (T) getSelectedNode();
@@ -147,32 +128,6 @@ public class ProjectPane extends JComponent implements IActionDataProvider, IPro
     return null;
   }
 
-  private void removeListeners(MPSProject project) {
-    project.removeMPSProjectCommandListener(myProjectListener);
-    for (Language language : project.getProjectLanguages()) {
-      language.removeLanguageCommandListener(myLanguageListener);
-    }
-    for (Solution solution : project.getProjectSolutions()) {
-      solution.removeSolutionCommandListener(mySolutionListener);
-    }
-  }
-
-  private void updateListeners() {
-    if (myProject == null) return;
-
-    myProject.removeMPSProjectCommandListener(myProjectListener);
-    myProject.addMPSProjectCommandListener(myProjectListener);
-
-    for (Language language : myProject.getProjectLanguages()) {
-      language.removeLanguageCommandListener(myLanguageListener);
-      language.addLanguageCommandListener(myLanguageListener);
-    }
-    for (Solution solution : myProject.getProjectSolutions()) {
-      solution.removeSolutionCommandListener(mySolutionListener);
-      solution.addSolutionCommandListener(mySolutionListener);
-    }
-  }
-
   public void enableRebuild() {
     myRebuildEnabled = true;
     rebuildTree();
@@ -184,7 +139,7 @@ public class ProjectPane extends JComponent implements IActionDataProvider, IPro
 
   public void rebuildTree() {
     if (!myRebuildEnabled) return;
-    myTree.rebuildTree();
+    getTree().rebuildTree();
     invalidate();
     validate();
     repaint();
@@ -362,11 +317,6 @@ public class ProjectPane extends JComponent implements IActionDataProvider, IPro
     return null;
   }
 
-  public void emptyAll() {
-    myTree.setModel(new DefaultTreeModel(new TextTreeNode("Empty")));
-    myTree.validate();
-  }
-
   public void selectModel(SModelDescriptor modelDescriptor) {
     DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
     MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
@@ -497,39 +447,28 @@ public class ProjectPane extends JComponent implements IActionDataProvider, IPro
     }
 
     protected MPSTreeNode rebuild() {
-      if (myProject == null) {
+      if (getProject() == null) {
         return new TextTreeNode("Empty");
       }
-      ProjectTreeNode root = new ProjectTreeNode(myProject);
+      ProjectTreeNode root = new ProjectTreeNode(getProject());
 
-      List<Solution> solutions = myProject.getProjectSolutions();
+      List<Solution> solutions = getProject().getProjectSolutions();
       for (Solution solution : solutions) {
-        ProjectSolutionTreeNode solutionTreeNode = new ProjectSolutionTreeNode(solution, myProject);
+        ProjectSolutionTreeNode solutionTreeNode = new ProjectSolutionTreeNode(solution, getProject());
         root.add(solutionTreeNode);
       }
 
-      List<Language> languages = myProject.getProjectLanguages();
+      List<Language> languages = getProject().getProjectLanguages();
       for (Language language : languages) {
-        ProjectLanguageTreeNode node = new ProjectLanguageTreeNode(language, myProject);
+        ProjectLanguageTreeNode node = new ProjectLanguageTreeNode(language, getProject());
         root.add(node);
       }
 
       if (languages.size() + solutions.size() > 0) {
-        root.add(new ProjectModulesPoolTreeNode(myProject));
+        root.add(new ProjectModulesPoolTreeNode(getProject()));
       }
       return root;
     }
   } // private class MyTree
 
-  private class MyLanguageListener implements LanguageCommandListener {
-    public void languageChangedInCommand(Language language) {
-      rebuildTree();
-    }
-  }
-
-  private class MySolutionListener implements SolutionCommandListener {
-    public void solutionChangedInCommand(Solution solution) {
-      rebuildTree();
-    }
-  }
 }

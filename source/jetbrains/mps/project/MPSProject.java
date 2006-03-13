@@ -385,7 +385,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   }
 
   void fireMPSProjectChangedInCommand() {
-    for (IMPSProjectCommandListener listener : myProjectCommandListeners) {
+    for (IMPSProjectCommandListener listener : new ArrayList<IMPSProjectCommandListener>(myProjectCommandListeners)) {
       listener.projectChangedInCommand(this);
     }
   }
