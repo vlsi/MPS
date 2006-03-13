@@ -5,6 +5,7 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.compiler.CompileStatusNotification;
 import com.intellij.openapi.compiler.CompilerManager;
+import com.intellij.openapi.compiler.CompileContext;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
@@ -270,7 +271,7 @@ public class MPSSupportHandler implements ProjectComponent {
 
                 CompilerManager compilerManager = myProject.getComponent(CompilerManager.class);
                 compilerManager.make(module, new CompileStatusNotification() {
-                  public void finished(boolean aborted, int errors, int warnings) {
+                  public void finished(boolean b, int i, int i1, CompileContext compileContext) {
                     synchronized(lock) {
                       lock.notifyAll();
                     }
