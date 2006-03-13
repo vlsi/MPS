@@ -17,6 +17,8 @@ import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textPresentation.TextPresentationManager;
@@ -268,6 +270,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       progress.addText("reloading MPS classes...");
       progress.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
       ReloadUtils.reloadAll();
+
       progress.finishTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
       checkMonitorCanceled(progress);
 
@@ -298,6 +301,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         }
       }
       //-- generation
+
+      //update generated sources timestamp
+      updateLanguagesGenerationRequiredStatus(invocationContext);
 
       if (isSaveTransientModels()) {
         generationSession.saveTransientModels();
@@ -350,6 +356,14 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     } finally {
       progress.finishAnyway();
       System.gc();
+    }
+  }
+
+  private void updateLanguagesGenerationRequiredStatus(IOperationContext context) {
+    IModule module = context.getModule();
+    if (module instanceof Language) {
+      Language language = (Language) module;
+      language.updateLastGenerationTime();
     }
   }
 
