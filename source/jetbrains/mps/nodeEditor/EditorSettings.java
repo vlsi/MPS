@@ -228,7 +228,7 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
       this.setDrawBorder(false);
     }
 
-    protected void changeText(String text) {
+    public void changeText(String text) {
     }
 
     public boolean isEditable() {
