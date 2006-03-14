@@ -59,7 +59,7 @@ public class CellInfo {
     if (myIsInList || myCellId == null) {
       return collection.getCellAt(myCellNumber);
     } else {
-      return editorComponent.findCellWithId(collection, myCellId);
+      return editorComponent.findCellWithIdInCollection(collection, myCellId);
     }
   }
 

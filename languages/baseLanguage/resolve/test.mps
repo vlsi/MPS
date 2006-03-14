@@ -250,8 +250,11 @@
               <link role="variableDeclaration" targetNodeId="1124810796150" />
             </node>
             <node role="rValue" type="jetbrains.mps.baseLanguage.PlusExpression" id="1124810814849">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1124810818648">
-                <property name="value" value="42" />
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1142343172312">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.Expression" id="1142343172313" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1142343156139">
+                  <property name="value" value="42" />
+                </node>
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1124810813205">
                 <link role="variableDeclaration" targetNodeId="1124810796150" />
