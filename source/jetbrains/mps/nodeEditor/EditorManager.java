@@ -230,11 +230,12 @@ public class EditorManager {
   private EditorCell addRightTransformHintCell(final SNode node, EditorCell nodeCell, final EditorContext context) {
     // create the hint cell
     final EditorCell_RTHint rightTransformHintCell = EditorCell_RTHint.create(context, node);
+    final CellInfo nodeCellInfo = context.getNodeEditorComponent().getRecentlySelectedCellInfo();
 
     // delete the hint when pressed ctrl-delete, delete or backspace
     rightTransformHintCell.setAction(EditorCellAction.DELETE, new EditorCellAction() {
-      public void execute(EditorContext context) {
-        node.removeRightTransformHint();
+      public void execute(final EditorContext context) {
+        removeRTHintAndChangeSelection(context, node, nodeCellInfo);
       }
     });
     // delete the hint when double press 'space'
@@ -246,8 +247,8 @@ public class EditorManager {
     // delete the hint when double press 'esc'
     EditorCellKeyMap keyMap = new EditorCellKeyMap();
     keyMap.putAction(EditorCellKeyMap.KEY_MODIFIERS_NONE, "VK_ESCAPE", new EditorCellKeyMapAction() {
-      public void execute(KeyEvent keyEvent, EditorContext context) {
-        node.removeRightTransformHint();
+      public void execute(KeyEvent keyEvent, final EditorContext context) {
+        removeRTHintAndChangeSelection(context, node, nodeCellInfo);
       }
     });
     rightTransformHintCell.addKeyMap(keyMap);
@@ -301,6 +302,19 @@ public class EditorManager {
       });
     }
     return resultCell;
+  }
+
+  private void removeRTHintAndChangeSelection(final EditorContext context, SNode node, final CellInfo cellInfoToSelect) {
+    node.removeRightTransformHint();
+    CommandProcessor.instance().invokeLater(new Runnable() {
+      public void run() {
+        EditorCell newlySelectedCell = cellInfoToSelect.findCell(context.getNodeEditorComponent());
+        context.getNodeEditorComponent().changeSelection(newlySelectedCell);
+        if (newlySelectedCell instanceof EditorCell_Label) {
+          ((EditorCell_Label)newlySelectedCell).getRenderedTextLine().setCaretPositionToLast();
+        }
+      }
+    });
   }
 
 

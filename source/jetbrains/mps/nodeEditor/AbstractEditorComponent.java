@@ -86,6 +86,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   protected EditorContext myEditorContext;
   private List<RebuildListener> myRebuildListeners = new ArrayList<RebuildListener>();
   private List<CellSynchronizationWithModelListener> myCellSynchronizationListeners = new ArrayList<CellSynchronizationWithModelListener>();
+  private CellInfo myRecentlySelectedCellInfo = null;
 //  private Color myBackground = Color.white;
 
 
@@ -1645,6 +1646,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
 
   private void runSwapCellsActions(Runnable action) {
+    if (mySelectedCell != null) myRecentlySelectedCellInfo = mySelectedCell.getCellInfo();
     Object memento = null;
     if (myEditorContext != null) {
       memento = myEditorContext.createMemento();
@@ -1653,6 +1655,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (myEditorContext != null) {
       myEditorContext.setMemento(memento);
     }
+    myRecentlySelectedCellInfo = null;
+  }
+
+  //to access selected cell info during rebuild
+  /*package*/ CellInfo getRecentlySelectedCellInfo() {
+    return myRecentlySelectedCellInfo;
   }
 
   public boolean isReadOnly() {
