@@ -130,17 +130,15 @@ public class EditorContext {
           }
           EditorCell deepestSelectedCell = myNodeEditorComponent.getDeepestSelectedCell();
           if (deepestSelectedCell != null) {
+//            if (deepestSelectedCell instanceof EditorCell_Label && memento.errorCellText != null) {
+//              String oldText = ((EditorCell_Label)deepestSelectedCell).getRenderedText();
+//              if (!memento.errorCellText.equals(oldText)) {
+//                ((EditorCell_Label)deepestSelectedCell).changeText(memento.errorCellText);
+//                myNodeEditorComponent.relayout();
+//              }
+//            }
             deepestSelectedCell.setCaretX(memento.caretX.intValue());
-            if (deepestSelectedCell instanceof EditorCell_Label && memento.errorCellText != null) {
-              String oldText = ((EditorCell_Label)deepestSelectedCell).getRenderedText();
-              if (!memento.errorCellText.equals(oldText)) {
-                ((EditorCell_Label)deepestSelectedCell).changeText(memento.errorCellText);
-                myNodeEditorComponent.relayout();
-              }
-            }
-          } /*else {
-            LOG.error("ERROR EditorContext: coudn't find cell at: " + memento.selectionPosition);
-          }*/
+          } 
         }
         return true;
       }

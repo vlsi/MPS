@@ -30,8 +30,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public static final String NAME = "name";
   public static final String RIGHT_TRANSFORM_HINT = "right_transfrom_hint";
 
-  private static final String ATTRIBUTE = "attribute";
-
   public static final String STEREOTYPE_DELIM = "$";
   public static final String ATTRIBUTE_STEREOTYPE = "attribute";
   public static final String PROPERTY_ATTRIBUTE_STEREOTYPE = "property_attribute";
