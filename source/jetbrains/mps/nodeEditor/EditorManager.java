@@ -229,11 +229,8 @@ public class EditorManager {
 
   private EditorCell addRightTransformHintCell(final SNode node, EditorCell nodeCell, final EditorContext context) {
     // create the hint cell
-    final EditorCell_Constant rightTransformHintCell = EditorCell_Constant.create(context, node, "", true);
-    rightTransformHintCell.putUserObject(EditorCell.CELL_ID, node.getId());
-    rightTransformHintCell.setEditable(true);
-    rightTransformHintCell.setDrawBorder(false);
-    rightTransformHintCell.setCellBackgroundColor(Color.YELLOW);
+    final EditorCell_RTHint rightTransformHintCell = EditorCell_RTHint.create(context, node);
+
     // delete the hint when pressed ctrl-delete, delete or backspace
     rightTransformHintCell.setAction(EditorCellAction.DELETE, new EditorCellAction() {
       public void execute(EditorContext context) {
@@ -275,12 +272,14 @@ public class EditorManager {
 
     // decide position of the hint cell
     EditorCell resultCell;
+    CellInfo rtHintCellInfo;
     Object anchorId = node.getUserObject(RIGHT_TRANSFORM_HINT_ANCHOR_CELL_ID);
     EditorCell anchorCell = context.getNodeEditorComponent().findCellWithId(nodeCell, anchorId.toString());
     if (anchorCell != null && anchorCell != nodeCell) {
       EditorCell_Collection cellCollection = anchorCell.getParent();
       cellCollection.addCellAt(cellCollection.indexOf(anchorCell) + 1, rightTransformHintCell);
       resultCell = nodeCell;
+      rightTransformHintCell.setAnchor(anchorCell);
     } else {
       // couldn't insert hint cell - create wrapper collection and put hint to last position
       EditorCell_Collection rowWrapper = EditorCell_Collection.createHorizontal(context, node);
@@ -289,6 +288,7 @@ public class EditorManager {
       rowWrapper.addEditorCell(nodeCell);
       rowWrapper.addEditorCell(rightTransformHintCell);
       resultCell = rowWrapper;
+      rightTransformHintCell.setAnchor(nodeCell);
     }
 
     // set focus
@@ -302,6 +302,36 @@ public class EditorManager {
     }
     return resultCell;
   }
+
+
+  private static class EditorCell_RTHint extends EditorCell_Constant {
+
+    private EditorCell myAnchorCell;
+
+    protected EditorCell_RTHint(EditorContext editorContext, SNode node) {
+      super(editorContext, node, "", true);
+      putUserObject(EditorCell.CELL_ID, node.getId());
+      setEditable(true);
+      setDrawBorder(false);
+      setCellBackgroundColor(Color.YELLOW);
+    }
+
+    private void setAnchor(EditorCell anchorCell) {
+      myAnchorCell = anchorCell;
+    }
+
+    public static EditorCell_RTHint create(EditorContext editorContext, SNode node) {
+      return new EditorCell_RTHint(editorContext, node);
+    }
+
+
+    public CellInfo getCellInfo() {
+      return new RTHintCellInfo(this, myAnchorCell);
+    }
+  }
+
+
+
 
   /*package*/ EditorCell createInspectedCell(EditorContext context, SNode node, List<SModelEvent> events) {
     return createRootCell(context, node, events, true);
@@ -333,6 +363,24 @@ public class EditorManager {
     return editor;
   }
 
+
   public static class NoAttribute {
+  }
+
+
+  private static class RTHintCellInfo extends CellInfo {
+    CellInfo myAnchorCellInfo;
+
+    public RTHintCellInfo(EditorCell_Constant rightTransformHintCell, EditorCell anchorCell) {
+      super(rightTransformHintCell);
+      myAnchorCellInfo = anchorCell.getCellInfo();
+    }
+
+    public EditorCell findCell(AbstractEditorComponent editorComponent) {
+      EditorCell anchorCell = myAnchorCellInfo.findCell(editorComponent);
+      if (anchorCell == null) return super.findCell(editorComponent);
+      EditorCell_Collection parent = anchorCell.getParent();
+      return parent.getCellAt(parent.indexOf(anchorCell) + 1);
+    }
   }
 }

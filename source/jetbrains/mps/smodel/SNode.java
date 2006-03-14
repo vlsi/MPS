@@ -948,12 +948,15 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public void addRightTransformHint() {
-    // we dont need 'Undo'
-//    boolean wasLoading = getModel().setLoading(true);
-//    setProperty(RIGHT_TRANSFORM_HINT, "");
-//    getModel().setLoading(wasLoading);
     putUserObject(RIGHT_TRANSFORM_HINT, RIGHT_TRANSFORM_HINT);
     getModel().firePropertyChangedEvent(this, RIGHT_TRANSFORM_HINT, null, "", true, false);
+    if (!getModel().isLoading()) {
+      UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
+        public void undo() throws UnexpectedUndoException {
+          removeRightTransformHint();
+        }
+      });
+    }
   }
 
   public boolean hasRightTransformHint() {
@@ -962,11 +965,14 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public void removeRightTransformHint() {
-    // we dont need 'Undo'
-//    boolean wasLoading = getModel().setLoading(true);
-//    setProperty(RIGHT_TRANSFORM_HINT, null);
-//    getModel().setLoading(wasLoading);
     removeUserObject(RIGHT_TRANSFORM_HINT);
     getModel().firePropertyChangedEvent(this, RIGHT_TRANSFORM_HINT, "", null, true, true);
+    if (!getModel().isLoading()) {
+      UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
+        public void undo() throws UnexpectedUndoException {
+          addRightTransformHint();
+        }
+      });
+    }
   }
 }
