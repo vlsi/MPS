@@ -274,5 +274,17 @@
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1142529677703">
+    <property name="name" value="NotOperation" />
+    <link role="extends" targetNodeId="1111784562907" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1142529708471">
+      <property name="value" value="!" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1142529719051">
+      <property name="value" value="not operation (formula language)" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" />
+    </node>
+  </node>
 </model>
 

@@ -389,6 +389,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1142519958889">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1111784613299" />
+        <link role="keyMap" targetNodeId="1113422674388" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1142519963734">
         <property name="text" value="." />
@@ -399,6 +400,31 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1142520164008">
         <property name="textFgColor" value="DARK_MAGENTA" />
         <property name="text" value="isNull" />
+        <property name="drawBorder" value="false" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1142529738959">
+    <link role="conceptDeclaration" targetNodeId="1.1142529677703" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1142529742054">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1142529745321">
+        <property name="text" value="!" />
+        <property name="substituteActionsFactoryId" value="replaceOperation" />
+        <property name="drawBorder" value="false" />
+        <link role="keyMap" targetNodeId="1113424702419" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1142531449904">
+        <property name="text" value="(" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1142529760323">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="1.1111784613299" />
+        <link role="keyMap" targetNodeId="1113422674388" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1142531443964">
+        <property name="text" value=")" />
         <property name="drawBorder" value="false" />
       </node>
     </node>
