@@ -371,5 +371,37 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1142518758832">
+    <link role="conceptDeclaration" targetNodeId="1.1142518741440" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1142518763991">
+      <property name="editable" value="false" />
+      <property name="textFgColor" value="DARK_BLUE" />
+      <property name="text" value="null" />
+      <property name="fontStyle" value="BOLD" />
+      <property name="drawBorder" value="false" />
+      <property name="selectable" value="true" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1142519843962">
+    <link role="conceptDeclaration" targetNodeId="1.1142519786507" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1142519951528">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1142519958889">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="1.1111784613299" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1142519963734">
+        <property name="text" value="." />
+        <property name="substituteActionsFactoryId" value="replaceOperation" />
+        <property name="drawBorder" value="false" />
+        <link role="keyMap" targetNodeId="1113424702419" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1142520164008">
+        <property name="textFgColor" value="DARK_MAGENTA" />
+        <property name="text" value="isNull" />
+        <property name="drawBorder" value="false" />
+      </node>
+    </node>
+  </node>
 </model>
 

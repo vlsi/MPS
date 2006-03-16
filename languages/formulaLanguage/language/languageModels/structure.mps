@@ -262,5 +262,17 @@
       <link role="target" targetNodeId="1111784312737" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1142518741440">
+    <property name="name" value="NullConstant" />
+    <link role="extends" targetNodeId="1111784312737" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1142519786507">
+    <property name="name" value="IsNullOperation" />
+    <link role="extends" targetNodeId="1111784562907" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1142519980205">
+      <property name="value" value=".isNull" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
+    </node>
+  </node>
 </model>
 
