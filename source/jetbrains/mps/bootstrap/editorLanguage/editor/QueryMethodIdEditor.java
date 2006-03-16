@@ -172,7 +172,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
     ClassConcept queriesClass = getQueriesClass();
 
     String queryMetodPrefix = getQueryMethodPrefix();
-    if (queriesClass != null) {
+    while (queriesClass != null) {
       Iterator<StaticMethodDeclaration> iterator = queriesClass.staticMethods();
       while (iterator.hasNext()) {
         StaticMethodDeclaration methodDeclaration = iterator.next();
@@ -181,6 +181,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
           availableIds.add(name.substring(queryMetodPrefix.length()));
         }
       }
+      queriesClass = queriesClass.getExtendedClass();
     }
     return availableIds;
   }
