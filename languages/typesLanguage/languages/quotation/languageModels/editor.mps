@@ -25,6 +25,12 @@
         <property name="noTargetText" value="&lt;expr&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1141044749211" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1142538426700">
+        <property name="textFgColorQueryId" value="brown" />
+        <property name="textFgColor" value="query" />
+        <property name="text" value="%" />
+        <property name="drawBorder" value="false" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1141044977163">
