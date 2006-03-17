@@ -297,7 +297,7 @@ public class MPSSupportHandler implements ProjectComponent {
         final PsiManager psiManager = PsiManager.getInstance(myProject);
         if (!isQueriesClassExist(namespace)) return;
         PsiClass aspects = psiManager.findClass(namespace + ".Queries", GlobalSearchScope.projectScope(myProject));
-        PsiMethod[] methods = aspects.getMethods();
+        PsiMethod[] methods = aspects.getAllMethods();
         for (int i = 0; i < methods.length; i++) {
           PsiMethod method = methods[i];
           if (!method.hasModifierProperty(PsiModifier.STATIC)) continue;
@@ -376,7 +376,7 @@ public class MPSSupportHandler implements ProjectComponent {
     executeWriteAction(new Runnable() {
       public void run() {
         PsiClass aspects = getQueriesClass(namespace);
-        PsiMethod[] methods = aspects.getMethods();
+        PsiMethod[] methods = aspects.getAllMethods();
         for (int i = 0; i < methods.length; i++) {
           PsiMethod method = methods[i];
           if (method.getName().equals(name)) {
