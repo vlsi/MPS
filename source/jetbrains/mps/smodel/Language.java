@@ -9,12 +9,14 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.generator.ContextUtil;
 
 import java.io.File;
 import java.util.*;
@@ -63,6 +65,19 @@ public class Language extends AbstractModule {
     language.init();
     return language;
   }
+
+  public static Language newInstance(LanguageDescriptor languageDescriptor, MPSModuleOwner owner) {
+    Language language = new Language();
+    SModel model = ProjectModels.createDescriptorFor(language).getSModel();
+    model.setLoading(true);
+    language.myDescriptorFile = null;
+    language.myLanguageDescriptor = ContextUtil.copyNode(languageDescriptor, model, GlobalScope.getInstance());
+    MPSModuleRepository.getInstance().addModule(language, owner);
+    language.init();
+    return language;
+  }
+
+
 
   public static Language createLanguage(String languageNamespace, File descriptorFile, MPSModuleOwner moduleOwner) {
     Language language = new Language();
