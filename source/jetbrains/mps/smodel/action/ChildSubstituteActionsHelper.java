@@ -114,7 +114,9 @@ import java.util.*;
             NodeSubstituteActionsBuilder substituteActionsBuilder = iterator.next();
             // is applicable ?
             ConceptDeclaration applicableConcept = substituteActionsBuilder.getApplicableConcept();
-            if (SModelUtil.isAssignableConcept(childConcept, applicableConcept)) {
+
+            //and think better about of the order of arguments of "isAssignableConcept" - this is correct: 
+            if (SModelUtil.isAssignableConcept(applicableConcept, childConcept)) {
               substituteActionsBuilders.add(substituteActionsBuilder);
             }
           }
