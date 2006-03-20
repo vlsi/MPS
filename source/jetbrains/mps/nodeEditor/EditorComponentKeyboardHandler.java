@@ -24,8 +24,12 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
     SNodeProxy sNodeProxy = editor.getRootCell().getSNodeProxy();
     boolean notEditable = sNodeProxy != null && sNodeProxy.getModel().isNotEditable();
-    if (editorContext.getNodeEditorComponent().isReadOnly() || notEditable) return false;
+    notEditable = (editorContext.getNodeEditorComponent().isReadOnly() || notEditable);
+
+    if (notEditable) return false;
+
     EditorCell selectedCell = editor.getSelectedCell();
+
     // process cell keymaps first
 
     if (selectedCell != null) {
