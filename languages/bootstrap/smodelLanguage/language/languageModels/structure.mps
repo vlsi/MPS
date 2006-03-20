@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.bootstrap.smodelLanguage.structure">
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
-  <maxImportIndex value="3" />
+  <language namespace="jetbrains.mps.baseLanguage" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="jetbrains.mps.core.structure" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
+  <import index="4" modelUID="jetbrains.mps.smodel@java_stub" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1138055754698">
     <property name="name" value="SNodeType" />
     <link role="extends" targetNodeId="2.1068431790189" />
@@ -371,6 +373,13 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1140725362532">
       <link role="conceptPropertyDeclaration" targetNodeId="1138763325919" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1142885169755">
+    <property name="name" value="BaseQueryFunction" />
+    <link role="extends" targetNodeId="2.1137021947720" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1142885262305">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
     </node>
   </node>
 </model>
