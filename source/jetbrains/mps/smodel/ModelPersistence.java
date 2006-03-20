@@ -10,10 +10,7 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
@@ -313,6 +310,16 @@ public class ModelPersistence {
     } catch (IOException e) {
       LOG.error(e);
     }
+  }
+
+  public static byte[] saveModelToBytes(SModel model) {
+    ByteArrayOutputStream output = new ByteArrayOutputStream();
+    saveModel(model, output);
+    return output.toByteArray();
+  }
+
+  public static SModel modelFromBytes(byte[] bytes) {
+    return readModel(bytes);
   }
 
 
