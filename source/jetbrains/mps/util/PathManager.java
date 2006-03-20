@@ -80,10 +80,22 @@ public class PathManager {
       }
       root = root.getAbsoluteFile();
 
-      ourHomePath = root.getParentFile().getAbsolutePath();    // one step back to getCollectionClass rid of "lib" or "classes" folder
+      while (true) {
+        if (isMpsDir(root)) break;
+        if (root.getParentFile() == null) break;
+
+        root = root.getParentFile();
+      }
+
+      ourHomePath = root.getAbsolutePath();    // one step back to getCollectionClass rid of "lib" or "classes" folder
     }
 
     return ourHomePath;
+  }
+
+  private static boolean isMpsDir(File file) {
+    return new File(file, "build.number").exists();
+
   }
 
   public static String getConfigPath() {
