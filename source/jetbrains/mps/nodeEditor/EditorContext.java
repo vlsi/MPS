@@ -170,7 +170,7 @@ public class EditorContext {
       EditorCell deepestSelectedCell = nodeEditor.getDeepestSelectedCell();
       if (selectedCell != null) {
     //    selectionPosition = new Point(selectedCell.getX(), selectedCell.getY());
-        caretX = new Integer(deepestSelectedCell.getCaretX());
+        if (deepestSelectedCell != null) caretX = new Integer(deepestSelectedCell.getCaretX());
         if (deepestSelectedCell instanceof EditorCell_Label && deepestSelectedCell.isErrorState()) {
           errorCellText = ((EditorCell_Label)deepestSelectedCell).getRenderedText();
         }
