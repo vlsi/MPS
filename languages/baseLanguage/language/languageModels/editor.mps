@@ -917,6 +917,21 @@
           <property name="drawBorder" value="false" />
           <link role="relationDeclaration" targetNodeId="1.1082485599094" />
         </node>
+        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1142980323700">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1142980323701">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1142980343499">
+              <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1142980623862">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1142980586637">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1142980363939" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1142980598513">
+                    <link role="link" targetNodeId="1.1082485599094" />
+                  </node>
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1142980617767" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075379580458">
         <property name="editable" value="true" />
