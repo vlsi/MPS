@@ -543,8 +543,6 @@ public class MPSSupportHandler extends UnicastRemoteObject implements ProjectCom
     return distance + 1;
   }
 
-
-
   private PsiElementFactory getPsiElementFactory() {
     return PsiManager.getInstance(myProject).getElementFactory();
   }

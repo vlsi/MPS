@@ -18,4 +18,14 @@
       <implementation-class>jetbrains.mps.plugin.MPSSupportHandler</implementation-class>
     </component>
   </project-components>
+
+  <actions>
+    <action class="jetbrains.mps.plugin.FindAspectMethodUsages" text="Find Query Method Usages" id="MPSPlugin.findAspectMethodUsages" />
+
+    <group>
+      <separator />
+      <reference id="MPSPlugin.findAspectMethodUsages" />
+      <add-to-group anchor="last" group-id="EditorPopupMenu" />
+    </group>
+  </actions>
 </idea-plugin>

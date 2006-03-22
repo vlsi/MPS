@@ -7,6 +7,7 @@ import java.awt.*;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.logging.LoggerUtil;
 import jetbrains.mps.ide.action.MPSIdeActions;
+import jetbrains.mps.plugin.MPSPlugin;
 
 public class IdeMain {
   private static boolean ourTestMode = false;
@@ -34,7 +35,7 @@ public class IdeMain {
     defaults.put("Menu.font", font.deriveFont(Font.BOLD));
     defaults.put("PopupMenu.font", font.deriveFont(Font.BOLD));
     defaults.put("OptionPane.font", font);
-    defaults.put("Panel.font", font); 
+    defaults.put("Panel.font", font);
     defaults.put("ProgressBar.font", font);
     defaults.put("ScrollPane.font", font);
     defaults.put("Viewport.font", font);
@@ -50,6 +51,8 @@ public class IdeMain {
 
   public static void main(String[] args) {
     SplashScreen.getInstance().showSplashScreen();
+    MPSPlugin.getInstance();
+
     initFonts();
 
     if (expirationDate().compareTo(new Date()) == -1) {
