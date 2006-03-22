@@ -260,7 +260,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         checkMonitorCanceled(progress);
 
         progress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
-        MPSPlugin.getInstance().buildModule(outputFolder);
+        progress.addText(MPSPlugin.getInstance().buildModule(outputFolder));
         progress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
         checkMonitorCanceled(progress);
       }
@@ -328,7 +328,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           checkMonitorCanceled(progress);
 
           progress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
-          MPSPlugin.getInstance().buildModule(outputFolder);
+          progress.addText(MPSPlugin.getInstance().buildModule(outputFolder));
           progress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
           checkMonitorCanceled(progress);
 

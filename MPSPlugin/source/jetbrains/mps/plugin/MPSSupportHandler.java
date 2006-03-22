@@ -251,8 +251,9 @@ public class MPSSupportHandler extends UnicastRemoteObject implements ProjectCom
     }
   }
 
-  public void buildModule(final String path) {
+  public String buildModule(final String path) {
     final Object lock = new Object() { };
+    final StringBuilder result = new StringBuilder();
     synchronized(lock) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
@@ -268,14 +269,23 @@ public class MPSSupportHandler extends UnicastRemoteObject implements ProjectCom
 
                 CompilerManager compilerManager = myProject.getComponent(CompilerManager.class);
                 compilerManager.make(module, new CompileStatusNotification() {
-                  public void finished(boolean b, int i, int i1) {
-                    synchronized(lock) {
-                      lock.notifyAll();
-                    }
+                  public void finished(boolean aborted, int errors, int warnings) {
+                    compilationFinished(aborted, errors, warnings);
                   }
 
-                  public void finished(boolean b, int i, int i1, CompileContext compileContext) {
+                  public void finished(boolean aborted, int errors, int warnings, CompileContext compileContext) {
+                    compilationFinished(aborted, errors, warnings);
+                  }
+
+                  private void compilationFinished(boolean aborted, int errorsNumber, int warningsNumber) {
                     synchronized(lock) {
+                      if (aborted) {
+                        result.append("Compilation aborted");
+                      } else {
+                        result.append("Compilation finished : ");
+                        result.append(errorsNumber).append(" errors ");
+                        result.append(warningsNumber).append(" warnings");
+                      }                      
                       lock.notifyAll();
                     }
                   }
@@ -290,6 +300,7 @@ public class MPSSupportHandler extends UnicastRemoteObject implements ProjectCom
         e.printStackTrace();
       }
     }
+    return result.toString();
   }
 
   public List<String> getAspectMethodIds(final String namespace, final String prefix) {

@@ -14,7 +14,7 @@ public interface IMPSSupportHandler extends Remote {
   String commit(final String path, final String comment) throws RemoteException;
   byte[] getContentsForRevision(final String path, final String revision) throws RemoteException;
   void refreshFS() throws RemoteException;
-  void buildModule(final String path) throws RemoteException;
+  String buildModule(final String path) throws RemoteException;
   List<String> getAspectMethodIds(final String namespace, final String prefix) throws RemoteException;
   List<String> findInheritors(final String fqName) throws RemoteException;
   void openClass(final String fqName) throws RemoteException;

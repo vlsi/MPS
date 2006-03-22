@@ -112,8 +112,8 @@ public class MPSPlugin {
     getMPSupportHandler().refreshFS();
   }
 
-  public void buildModule(String path) throws RemoteException {
-    getMPSupportHandler().buildModule(path);
+  public String buildModule(String path) throws RemoteException {
+    return getMPSupportHandler().buildModule(path);
   }
 
   public void addSource(String path) throws RemoteException{
