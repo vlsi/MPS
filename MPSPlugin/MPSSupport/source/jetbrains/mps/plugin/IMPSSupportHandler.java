@@ -24,14 +24,4 @@ public interface IMPSSupportHandler extends Remote {
   void createLanguageModule(String namespace, final String path) throws RemoteException;
   void addLanguageRoot(String path) throws RemoteException;
   void createAspectClass(final String path, final String namespace) throws RemoteException;
-
-
-
-
-
-
-
-
-
-
 }
