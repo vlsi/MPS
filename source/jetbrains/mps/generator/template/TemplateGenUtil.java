@@ -11,7 +11,6 @@ import jetbrains.mps.core.BaseConcept;
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationFailueInfo;
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.generator.TransientModels;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
@@ -524,18 +523,27 @@ public class TemplateGenUtil {
 
     List<TemplateFragment> templateFragments = getTemplateFragments(templateDeclarationForCase);
     if (templateFragments.isEmpty()) {
-      LOG.error("WARN: no template fragments found in " + templateDeclarationForCase.getDebugText());
+      generator.showErrorMessage(sourceNode, templateDeclarationForCase, templateSwitch, "Couldn't create builder for switch: no template fragments found");
       return null;
     }
     if (templateFragments.size() > 1) {
-      LOG.error("WARN: more than one fragments found in " + templateDeclarationForCase.getDebugText());
+      generator.showErrorMessage(sourceNode, templateDeclarationForCase, templateSwitch, "Couldn't create builder for switch: more than one (" + templateFragments.size() + ") fragments found");
       return null;
     }
 
     TemplateFragment templateFragment = templateFragments.get(0);
     SNode templateNodeForCase = templateFragment.getParent();
 
-    return createNodeBuilder(sourceNode, templateNodeForCase, mappingName, generator);
+    List<SNode> sourceNodes2 = createSourceNodeListForTemplateNode(sourceNode, templateNodeForCase, generator);
+    if (sourceNodes2.size() > 1) {
+      generator.showErrorMessage(sourceNode, templateDeclarationForCase, templateSwitch, "Couldn't create builder for switch case: more than one (" + sourceNodes2.size() + ") source nodes are returned by query");
+      return null;
+    }
+    if (sourceNodes2.isEmpty()) {
+      return null;
+    }
+
+    return createNodeBuilder(sourceNodes2.get(0), templateNodeForCase, mappingName, generator);
   }
 
   public static void printBuildersTree(INodeBuilder builder, int depth) {
