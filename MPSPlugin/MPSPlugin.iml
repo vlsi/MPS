@@ -9,9 +9,10 @@
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../cyclicInheritance/languages/izyg/source_gen" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="IDEA 5181" />
+    <orderEntry type="jdk" jdkName="IDEA 4155" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="XMLRPC" level="project" />
+    <orderEntry type="module" module-name="MPSSupport" />
     <orderEntryProperties />
   </component>
   <component name="org.mevenide.idea.module.ModuleSettings">

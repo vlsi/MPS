@@ -26,18 +26,21 @@ import com.intellij.ide.impl.ProjectUtil;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.rmi.server.UnicastRemoteObject;
+import java.rmi.RemoteException;
+import java.rmi.AlreadyBoundException;
+import java.rmi.AccessException;
 
 /**
  * @author Kostik
  */
-public class ProjectCreator implements ApplicationComponent {
+public class ProjectCreator extends UnicastRemoteObject implements ApplicationComponent, IProjectCreator{
   public static final String PROJECT_CREATOR_NAME = "ProjectCreator";
 
-  private XMLRPCServer myServer;
   private ProjectManagerEx myProjectManager;
 
-  public ProjectCreator(XMLRPCServer server, ProjectManagerEx projectManager) {
-    myServer = server;
+  public ProjectCreator(ProjectManagerEx projectManager) throws RemoteException {
+    super();
     myProjectManager = projectManager;
   }
 
@@ -45,7 +48,7 @@ public class ProjectCreator implements ApplicationComponent {
     return "Project Creator";
   }
 
-  public String closeAllProjects() {
+  public void closeAllProjects() {
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
@@ -57,13 +60,10 @@ public class ProjectCreator implements ApplicationComponent {
         });
       }
     }, ModalityState.NON_MMODAL);
-    return "OK";
   }
 
-  public String ping() {
-    return "OK";
+  public void ping() {
   }
-
 
   public String createNewProject(final String path, final String name) {
     final String[] result = { "OK" };
@@ -106,7 +106,7 @@ public class ProjectCreator implements ApplicationComponent {
               e.printStackTrace();
             }
             rootModel.commit();
-            
+
             myProjectManager.openProject(project);
           }
         });
@@ -124,10 +124,15 @@ public class ProjectCreator implements ApplicationComponent {
   }
 
   public void initComponent() {
-    myServer.addHandler(PROJECT_CREATOR_NAME, this);
+    try {
+      MyRMIRegistry.getOurRegistry().rebind(PROJECT_CREATOR_NAME, this);
+    } catch (AccessException e) {
+      e.printStackTrace();
+    } catch (RemoteException e) {
+      e.printStackTrace();
+    }
   }
 
   public void disposeComponent() {
-    myServer.removeHandler(PROJECT_CREATOR_NAME);
   }
 }

@@ -34,29 +34,36 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
+import java.rmi.server.UnicastRemoteObject;
+import java.rmi.RemoteException;
 
 /**
  * @author Kostik
  */
-public class MPSSupportHandler implements ProjectComponent {
+public class MPSSupportHandler extends UnicastRemoteObject implements ProjectComponent, IMPSSupportHandler {
+
+
+  public static final int REGISTRY_PORT = 2390;
 
   public final String MPS_SUPPORT_HANDLER_NAME = "MPSSupport";
 
   private Project myProject;
-  private XMLRPCServer myServer;
 
-  public MPSSupportHandler(Project project, XMLRPCServer server) {
+  public MPSSupportHandler(Project project) throws RemoteException {
+    super();
     myProject = project;
-    myServer = server;
   }
 
 
   public void projectOpened() {
-    myServer.addHandler(MPS_SUPPORT_HANDLER_NAME, this);
+    try {
+      MyRMIRegistry.getOurRegistry().rebind(MPS_SUPPORT_HANDLER_NAME, this);
+    } catch (RemoteException e) {
+      e.printStackTrace();
+    }
   }
 
   public void projectClosed() {
-    myServer.removeHandler(MPS_SUPPORT_HANDLER_NAME);
   }
 
   public String getComponentName() {
@@ -69,7 +76,7 @@ public class MPSSupportHandler implements ProjectComponent {
   public void disposeComponent() {
   }
 
-  public String addSourceRoot(final String path) {
+  public void addSourceRoot(final String path) {
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
@@ -77,17 +84,16 @@ public class MPSSupportHandler implements ProjectComponent {
             Module module = myProject.getComponent(ModuleManager.class).getModules()[0];
             ModifiableRootModel model = module.getComponent(ModuleRootManager.class).getModifiableModel();
             ContentEntry entry = model.getContentEntries()[0];
-            LocalFileSystem lfs = LocalFileSystem.getInstance();            
+            LocalFileSystem lfs = LocalFileSystem.getInstance();
             entry.addSourceFolder(lfs.refreshAndFindFileByIoFile(new File(path)), false);
             model.commit();
           }
         });
       }
     }, ModalityState.NON_MMODAL);
-    return "OK";
   }
 
-  public String addMPSJar(final String mpsHome) {
+  public void addMPSJar(final String mpsHome) {
     executeWriteAction(new Runnable() {
       public void run() {
         Module module = myProject.getComponent(ModuleManager.class).getModules()[0];
@@ -109,7 +115,6 @@ public class MPSSupportHandler implements ProjectComponent {
         }
       }
     });
-    return "OK";
   }
 
   public boolean isVCSSupported(final String path) {
@@ -151,11 +156,11 @@ public class MPSSupportHandler implements ProjectComponent {
     return result;
   }
 
-  public boolean isFileChanges(final String path) {
+  public boolean isFileChanged(final String path) {
     final boolean[] result = new boolean[1];
     executeWriteAction(new Runnable() {
       public void run() {
-        VirtualFile file = LocalFileSystem.getInstance().findFileByIoFile(new File(path));        
+        VirtualFile file = LocalFileSystem.getInstance().findFileByIoFile(new File(path));
         FileStatusManager fsm = FileStatusManager.getInstance(myProject);
         if (fsm.getStatus(file) == FileStatus.NOT_CHANGED) {
           result[0] = false;
@@ -194,7 +199,7 @@ public class MPSSupportHandler implements ProjectComponent {
           AbstractVcs vcs = manager.getVcsFor(file);
 
           Object ta = comment;
-          vcs.getTransactionProvider().startTransaction(ta);          
+          vcs.getTransactionProvider().startTransaction(ta);
           vcs.getStandardOperationsProvider().checkinFile(path, null, null);
           vcs.getTransactionProvider().commitTransaction(ta);
         } catch (VcsException e) {
@@ -231,7 +236,7 @@ public class MPSSupportHandler implements ProjectComponent {
   }
 
 
-  public String refreshFS() {
+  public void refreshFS() {
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
         public void run() {
@@ -251,10 +256,9 @@ public class MPSSupportHandler implements ProjectComponent {
     } catch (InvocationTargetException e) {
       e.printStackTrace();
     }
-    return "OK";
   }
 
-  public String buildModule(final String path) {
+  public void buildModule(final String path) {
     final Object lock = new Object() { };
     synchronized(lock) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
@@ -271,6 +275,12 @@ public class MPSSupportHandler implements ProjectComponent {
 
                 CompilerManager compilerManager = myProject.getComponent(CompilerManager.class);
                 compilerManager.make(module, new CompileStatusNotification() {
+                  public void finished(boolean b, int i, int i1) {
+                    synchronized(lock) {
+                      lock.notifyAll();
+                    }
+                  }
+
                   public void finished(boolean b, int i, int i1, CompileContext compileContext) {
                     synchronized(lock) {
                       lock.notifyAll();
@@ -287,11 +297,10 @@ public class MPSSupportHandler implements ProjectComponent {
         e.printStackTrace();
       }
     }
-    return "OK";
   }
 
-  public String getAspectMethodIds(final String namespace, final String prefix) {
-    final List list = new ArrayList();
+  public List<String> getAspectMethodIds(final String namespace, final String prefix) {
+    final List<String> list = new ArrayList<String>();
     ApplicationManager.getApplication().runReadAction(new Runnable() {
       public void run() {
         final PsiManager psiManager = PsiManager.getInstance(myProject);
@@ -306,15 +315,11 @@ public class MPSSupportHandler implements ProjectComponent {
         }
       }
     });
-    String result = "";
-    for (int i = 0; i < list.size(); i++) {
-      result += list.get(i).toString() + ";";
-    }
-    return result;
+    return list;
   }
 
-  public String findInheritors(final String fqName) {
-    final List list = new ArrayList();
+  public List<String> findInheritors(final String fqName) {
+    final List<String> list = new ArrayList<String>();
     ApplicationManager.getApplication().runReadAction(new Runnable() {
       public void run() {
         PsiManager manager = PsiManager.getInstance(myProject);
@@ -330,15 +335,10 @@ public class MPSSupportHandler implements ProjectComponent {
       }
     });
 
-    StringBuffer result = new StringBuffer();
-    for (int i = 0; i < list.size(); i++) {
-      result.append(list.get(i).toString());
-      if (i != list.size() - 1) result.append(";");
-    }
-    return result.toString();
+    return list;
   }
 
-  public String openClass(final String fqName) {
+  public void openClass(final String fqName) {
     executeWriteAction(new Runnable() {
       public void run() {
         PsiManager manager = PsiManager.getInstance(myProject);
@@ -348,11 +348,10 @@ public class MPSSupportHandler implements ProjectComponent {
         activateProjectWindow();
       }
     });
-    return "OK";
   }
 
-  public String addImport(final String namespace, final String fqName) {
-    if (!isQueriesClassExist(namespace)) return "";
+  public void addImport(final String namespace, final String fqName) {
+    if (!isQueriesClassExist(namespace)) return;
     executeWriteAction(new Runnable() {
       public void run() {
         PsiManager manager = PsiManager.getInstance(myProject);
@@ -368,11 +367,10 @@ public class MPSSupportHandler implements ProjectComponent {
         }
       }
     });
-    return "OK";
   }
 
-  public String openMethod(final String namespace, final String name) {
-    if (!isQueriesClassExist(namespace)) return "";
+  public void openMethod(final String namespace, final String name) {
+    if (!isQueriesClassExist(namespace)) return;
     executeWriteAction(new Runnable() {
       public void run() {
         PsiClass aspects = getQueriesClass(namespace);
@@ -387,10 +385,9 @@ public class MPSSupportHandler implements ProjectComponent {
         }
       }
     });
-    return "OK";
   }
 
-  public String createAspectMethod(final String path, final String namespace, final String name, final String returnType, final String params) {
+  public void createAspectMethod(final String path, final String namespace, final String name, final String returnType, final String params) {
     if (!isQueriesClassExist(namespace)) createAspectClass(path, namespace);
 
     executeWriteAction(new Runnable() {
@@ -406,7 +403,6 @@ public class MPSSupportHandler implements ProjectComponent {
         }
       }
     });
-    return "OK";
   }
 
   private void activateProjectWindow() {
@@ -418,7 +414,7 @@ public class MPSSupportHandler implements ProjectComponent {
   }
 
 
-  public String createLanguageModule(String namespace, final String path) {
+  public void createLanguageModule(String namespace, final String path) {
     executeWriteAction(new Runnable() {
       public void run() {
         ModuleManager manager = ModuleManager.getInstance(myProject);
@@ -431,19 +427,17 @@ public class MPSSupportHandler implements ProjectComponent {
         rootManager.getModifiableModel().addContentEntry(localFileSystem.findFileByIoFile(new File(path, "source_gen")));
       }
     });
-    return "OK";
   }
 
-  public String addLanguageRoot(String path) {
+  public void addLanguageRoot(String path) {
     executeWriteAction(new Runnable() {
       public void run() {
-        ModuleManager manager = ModuleManager.getInstance(myProject);        
+        ModuleManager manager = ModuleManager.getInstance(myProject);
       }
     });
-    return "OK";
   }
 
-  public String createAspectClass(final String path, final String namespace) {
+  public void createAspectClass(final String path, final String namespace) {
     executeWriteAction(new Runnable() {
       public void run() {
         final PsiManager psiManager = PsiManager.getInstance(myProject);
@@ -478,7 +472,6 @@ public class MPSSupportHandler implements ProjectComponent {
         }
       }
     });
-    return "OK";
   }
 
   private PsiDirectory createPackagesForNamespace(PsiDirectory dir, String namespace) {
@@ -536,13 +529,13 @@ public class MPSSupportHandler implements ProjectComponent {
     for (Module module : myProject.getComponent(ModuleManager.class).getModules()) {
       ModuleRootManager rootManager = ModuleRootManager.getInstance(module);
       for (VirtualFile contentRoot : rootManager.getContentRoots()) {
-        int distance = getDistance(contentRoot, file);        
+        int distance = getDistance(contentRoot, file);
         if (distance != -1 && distance < bestDistance) {
           bestDistance = distance;
           bestModule = module;
         }
       }
-    }            
+    }
 
     return bestModule;
   }

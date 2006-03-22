@@ -98,7 +98,6 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
             try {
               MPSPlugin.getInstance().openMethod(getNamespace(), getQueryMethodPrefix() + getQueryMethodId());
             } catch (IOException e) {
-            } catch (XmlRpcException e) {
             }
           }
         });
@@ -162,8 +161,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
     try {
       result = plugin.getAspectMethodIds(getNamespace(), getQueryMethodPrefix());
     } catch (IOException e) {
-    } catch (XmlRpcException e) {
-    }
+    } 
     return result;
   }
 

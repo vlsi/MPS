@@ -8,37 +8,14 @@
 
   <application-components>
     <component>
-      <interface-class>jetbrains.mps.plugin.XMLRPCServer</interface-class>
-      <implementation-class>jetbrains.mps.plugin.XMLRPCServer</implementation-class>
-    </component>
-    <component>
       <interface-class>jetbrains.mps.plugin.ProjectCreator</interface-class>
       <implementation-class>jetbrains.mps.plugin.ProjectCreator</implementation-class>
     </component>
   </application-components>
-
   <project-components>
-    <component>
-      <interface-class>jetbrains.mps.plugin.MPSRenamer</interface-class>
-      <implementation-class>jetbrains.mps.plugin.MPSRenamer</implementation-class>
-    </component>
-    <component>
-      <interface-class>jetbrains.mps.plugin.BuildHandler</interface-class>
-      <implementation-class>jetbrains.mps.plugin.BuildHandler</implementation-class>
-    </component>
     <component>
       <interface-class>jetbrains.mps.plugin.MPSSupportHandler</interface-class>
       <implementation-class>jetbrains.mps.plugin.MPSSupportHandler</implementation-class>
     </component>
   </project-components>
-
-  <actions>
-    <action class="jetbrains.mps.plugin.FindAspectMethodUsages" text="Find Query Method Usages" id="MPSPlugin.findAspectMethodUsages" />
-
-    <group>
-      <separator />
-      <reference id="MPSPlugin.findAspectMethodUsages" />
-      <add-to-group anchor="last" group-id="EditorPopupMenu" />
-    </group>
-  </actions>
 </idea-plugin>

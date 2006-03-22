@@ -4,11 +4,14 @@ package jetbrains.mps.plugin;
 import org.apache.xmlrpc.XmlRpcClient;
 import org.apache.xmlrpc.XmlRpcException;
 
-import java.net.MalformedURLException;
 import java.util.Vector;
 import java.util.List;
 import java.util.ArrayList;
 import java.io.IOException;
+import java.rmi.Naming;
+import java.rmi.RemoteException;
+import java.rmi.NotBoundException;
+import java.net.MalformedURLException;
 
 import jetbrains.mps.generator.IModelGenerator;
 import jetbrains.mps.vcs.model.Revision;
@@ -28,190 +31,120 @@ public class MPSPlugin {
 
   public static final int PORT = 23239;
 
-  private XmlRpcClient myClient;
+  private IProjectCreator myProjectCreator;
+  private IMPSSupportHandler myMPSPlugin;
 
   private MPSPlugin() {
     try {
-      myClient = new XmlRpcClient("localhost", PORT);
-    } catch (MalformedURLException e) {
+      myProjectCreator = (IProjectCreator) Naming.lookup("//localhost:2390/ProjectCreator");
+    } catch (Exception e) {
       e.printStackTrace();
     }
   }
 
-  public List<String> getAspectMethodIds(String namespace, String  prefix) throws IOException, XmlRpcException {
-    Vector<String> params = new Vector<String>();
-    params.add(namespace);
-    params.add(prefix);
+  public IProjectCreator getProjectCreator() {
+    return myProjectCreator;
+  }
 
-    String resultString = (String) myClient.execute("MPSSupport.getAspectMethodIds", params);
-
-    List<String> result = new ArrayList<String>();
-    String[] strings = resultString.split(";");
-    for (int i = 0; i < strings.length; i++) {
-      result.add(strings[i]);
+  public IMPSSupportHandler getMPSupportHandler() {
+    try {
+      return myMPSPlugin = (IMPSSupportHandler) Naming.lookup("//localhost:2390/MPSSupport");
+    } catch (NotBoundException e) {
+      e.printStackTrace();
+    } catch (MalformedURLException e) {
+      e.printStackTrace();
+    } catch (RemoteException e) {
+      e.printStackTrace();
     }
-    return result;
+    return null;
+  }
+
+  public List<String> getAspectMethodIds(String namespace, String  prefix) throws RemoteException {
+    return getMPSupportHandler().getAspectMethodIds(namespace, prefix);
   }
 
 
-  public void createAspectMethod(String path, String namespace, String name, String returnType, String parms) throws IOException, XmlRpcException {
-    Vector<String> params = new Vector<String>();
-    params.add(path);
-    params.add(namespace);
-    params.add(name);
-    params.add(returnType);
-    params.add(parms);
-    myClient.execute("MPSSupport.createAspectMethod", params);
+  public void createAspectMethod(String path, String namespace, String name, String returnType, String parms) throws RemoteException {
+    getMPSupportHandler().createAspectMethod(path, namespace, name, returnType, parms);
   }
 
-  public void findModule(String path) throws IOException, XmlRpcException {
-    Vector<String> params = new Vector<String>();
-    params.add(path);
-    myClient.execute("MPSSupport.findModule", params);
-  }
-
-  public List<String> findInheritors(Class cls) throws IOException, XmlRpcException {
+  public List<String> findInheritors(Class cls) throws RemoteException {
     return findInheritors(cls.getName());
   }
 
-  public List<String> findInheritors(String fqName) throws IOException, XmlRpcException {
-    Vector params = new Vector();
-    params.add(fqName);
-    String[] names =  myClient.execute("MPSSupport.findInheritors", params).toString().split(";");
-    List<String> result = new ArrayList<String>();
-    for (String s : names) {
-      result.add(s);
-    }
-    return result;
+  public List<String> findInheritors(String fqName) throws RemoteException {
+    return getMPSupportHandler().findInheritors(fqName);
   }
 
-  public void addMPSJars(String mpsHome) throws IOException, XmlRpcException {
-    Vector<String> params = new Vector<String>();
-    params.add(mpsHome);
-    myClient.execute("MPSSupport.addMPSJar", params);
+  public void addMPSJars(String mpsHome) throws RemoteException {
+    getMPSupportHandler().addMPSJar(mpsHome);
   }
 
-  public void openMethod(String namespace, String name) throws IOException, XmlRpcException {
-    Vector<String> params = new Vector<String>();
-    params.add(namespace);
-    params.add(name);
-
-    myClient.execute("MPSSupport.openMethod", params);
+  public void openMethod(String namespace, String name) throws RemoteException {
+    getMPSupportHandler().openMethod(namespace, name);
   }
 
-  public void openClass(String fqName) throws IOException, XmlRpcException {
-    Vector params = new Vector();
-    params.add(fqName);
-
-    myClient.execute("MPSSupport.openClass", params);
+  public void openClass(String fqName) throws RemoteException {
+    getMPSupportHandler().openClass(fqName);
   }
 
-  public void openClass(Class cls) throws IOException, XmlRpcException {
+  public void openClass(Class cls) throws RemoteException {
     openClass(cls.getName());
   }
 
-  public void addImport(String namespace, String fqName) throws IOException, XmlRpcException {
-    Vector<String> params = new Vector<String>();
-    params.add(namespace);
-    params.add(fqName);
-
-    myClient.execute("MPSSupport.addImport", params);
+  public void addImport(String namespace, String fqName) throws RemoteException {
+    getMPSupportHandler().addImport(namespace, fqName);
   }
 
-  public void refreshFS() throws IOException, XmlRpcException {
-    myClient.execute("MPSSupport.refreshFS", new Vector());
+  public void refreshFS() throws RemoteException {
+    getMPSupportHandler().refreshFS();
   }
 
-  public void buildModule(String path) throws IOException, XmlRpcException {    
-    Vector params = new Vector();
-    params.add(path);
-    myClient.execute("MPSSupport.buildModule", params);
-  }
-  
-    public void closeProjects() throws IOException, XmlRpcException {
-      myClient.execute("ProjectCreator.closeAllProjects", new Vector());
-    }
-
-  public void addSource(String path) throws IOException, XmlRpcException {
-    Vector<String> params = new Vector<String>();
-    params.add(path);
-    myClient.execute("MPSSupport.addSourceRoot", params);
+  public void buildModule(String path) throws RemoteException {
+    getMPSupportHandler().buildModule(path);
   }
 
-  public void commit(String path, String comment) throws IOException, XmlRpcException {
-    Vector<String> params = new Vector<String>();
-    params.add(path);
-    params.add(comment);
-    myClient.execute("MPSSupport.commit", params);
+  public void addSource(String path) throws RemoteException{
+    getMPSupportHandler().addSourceRoot(path);
   }
 
-  public void checkout(String path) throws IOException, XmlRpcException {
-    Vector<String> params = new Vector<String>();
-    params.add(path);
-    myClient.execute("MPSSupport.checkout", params);
+  public void commit(String path, String comment) throws RemoteException {
+    getMPSupportHandler().commit(path, comment);
   }
 
-  public boolean isFileChanged(String path) throws IOException, XmlRpcException {
-    Vector<String> params = new Vector<String>();
-    params.add(path);
-    return (Boolean) myClient.execute("MPSSupport.isFileChanged", params);
+  public boolean isFileChanged(String path) throws RemoteException {
+    return getMPSupportHandler().isFileChanged(path);
   }
 
 
-  public String createNewProject(String path, String name) throws IOException, XmlRpcException {
-    Vector<String> params = new Vector<String>();
-    params.add(path);
-    params.add(name);
-    return (String) myClient.execute("ProjectCreator.createNewProject", params);
+  public boolean isVersionControlPresent(String path) throws RemoteException {
+    return getMPSupportHandler().isVCSSupported(path);
   }
 
-  public boolean isVersionControlPresent(String path) throws IOException, XmlRpcException {
-    Vector params = new Vector();
-    params.add(path);
-    return (Boolean) myClient.execute("MPSSupport.isVCSSupported", params);
+  public String getCurrentRevisionFor(String path) throws RemoteException {
+    return getMPSupportHandler().getCurrentRevisionFor(path);
   }
 
-  public String getCurrentRevisionFor(String path) throws IOException, XmlRpcException {
-    Vector params = new Vector();
-     params.add(path);
-    return (String) myClient.execute("MPSSupport.getCurrentRevisionFor", params);
-  }
-
-  public List<Revision> getRevisionsFor(String path) throws IOException, XmlRpcException {
-    Vector params = new Vector();
-    params.add(path);
-    Vector<String> vector =  (Vector) myClient.execute("MPSSupport.getVersionsFor", params);
+  public List<Revision> getRevisionsFor(String path) throws RemoteException {
+    Vector<String> vector =  getMPSupportHandler().getVersionsFor(path);
     List<Revision> result = new ArrayList<Revision>();
     for (int i = 0; i < vector.size() / 3; i++) {
       int offset = i * 3;
       result.add(new Revision(vector.get(offset), vector.get(offset + 1), vector.get(offset + 2)));
     }
-
     return result;
   }
 
-  public byte[] getContentsFor(String path, String revision) throws IOException, XmlRpcException {
-    Vector params = new Vector();
-    params.add(path);
-    params.add(revision);
-    return (byte[]) myClient.execute("MPSSupport.getContentsForRevision", params);
+  public byte[] getContentsFor(String path, String revision) throws RemoteException {
+    return getMPSupportHandler().getContentsForRevision(path, revision);
   }
 
   public boolean isIDEAPresent() {
     try {
-      myClient.execute("ProjectCreator.ping", new Vector());
+      getProjectCreator().ping();
       return true;
     } catch (Exception e) {
       return false;
     }
   }
-
-  public static void main(String[] args) throws Exception {
-    MPSPlugin client = new MPSPlugin();
-    for (String s : client.findInheritors(IModelGenerator.class)) {
-      System.out.println(s);
-    }
-
-  }
-
 }
