@@ -5,31 +5,22 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.module.ModuleType;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.ModifiableRootModel;
-import com.intellij.openapi.roots.ContentEntry;
-import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.roots.ex.ProjectRootManagerEx;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.projectRoots.ProjectJdk;
 import com.intellij.openapi.projectRoots.ProjectJdkTable;
-import com.intellij.psi.impl.file.impl.RootManager;
 import com.intellij.pom.java.LanguageLevel;
-import com.intellij.ide.impl.ProjectUtil;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
-import java.rmi.AlreadyBoundException;
-import java.rmi.AccessException;
 
 /**
  * @author Kostik
@@ -64,6 +55,8 @@ public class ProjectCreator extends UnicastRemoteObject implements ApplicationCo
 
   public void ping() {
   }
+
+
 
   public String createNewProject(final String path, final String name) {
     final String[] result = { "OK" };
@@ -124,13 +117,7 @@ public class ProjectCreator extends UnicastRemoteObject implements ApplicationCo
   }
 
   public void initComponent() {
-    try {
-      MyRMIRegistry.getOurRegistry().rebind(PROJECT_CREATOR_NAME, this);
-    } catch (AccessException e) {
-      e.printStackTrace();
-    } catch (RemoteException e) {
-      e.printStackTrace();
-    }
+    RMIHandler.setOurProjectCreator(this);
   }
 
   public void disposeComponent() {

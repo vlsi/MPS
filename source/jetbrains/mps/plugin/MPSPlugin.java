@@ -31,28 +31,28 @@ public class MPSPlugin {
 
   public static final int PORT = 23239;
 
-  private IProjectCreator myProjectCreator;
-  private IMPSSupportHandler myMPSPlugin;
+  private IMPSPlugin myPlugin;
 
   private MPSPlugin() {
     try {
-      myProjectCreator = (IProjectCreator) Naming.lookup("//localhost:2390/ProjectCreator");
+      myPlugin = (IMPSPlugin) Naming.lookup("//localhost:2390/MPSPlugin");
     } catch (Exception e) {
       e.printStackTrace();
     }
   }
 
   public IProjectCreator getProjectCreator() {
-    return myProjectCreator;
+    try {
+      return myPlugin.getProjectCreator();
+    } catch (RemoteException e) {
+      e.printStackTrace();
+    }
+    return null;
   }
 
   public IMPSSupportHandler getMPSupportHandler() {
     try {
-      return myMPSPlugin = (IMPSSupportHandler) Naming.lookup("//localhost:2390/MPSSupport");
-    } catch (NotBoundException e) {
-      e.printStackTrace();
-    } catch (MalformedURLException e) {
-      e.printStackTrace();
+      return myPlugin.getSupportHandler();
     } catch (RemoteException e) {
       e.printStackTrace();
     }

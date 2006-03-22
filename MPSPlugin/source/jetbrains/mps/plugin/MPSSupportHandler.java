@@ -41,8 +41,6 @@ import java.rmi.RemoteException;
  * @author Kostik
  */
 public class MPSSupportHandler extends UnicastRemoteObject implements ProjectComponent, IMPSSupportHandler {
-
-
   public static final int REGISTRY_PORT = 2390;
 
   public final String MPS_SUPPORT_HANDLER_NAME = "MPSSupport";
@@ -54,13 +52,8 @@ public class MPSSupportHandler extends UnicastRemoteObject implements ProjectCom
     myProject = project;
   }
 
-
   public void projectOpened() {
-    try {
-      MyRMIRegistry.getOurRegistry().rebind(MPS_SUPPORT_HANDLER_NAME, this);
-    } catch (RemoteException e) {
-      e.printStackTrace();
-    }
+    RMIHandler.setOurHandler(this);
   }
 
   public void projectClosed() {
