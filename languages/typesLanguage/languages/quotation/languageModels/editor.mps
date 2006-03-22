@@ -17,7 +17,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1141045252204">
         <property name="textFgColorQueryId" value="brown" />
         <property name="textFgColor" value="query" />
-        <property name="text" value="%" />
+        <property name="text" value="%(" />
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1141044874953">
@@ -28,7 +28,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1142538426700">
         <property name="textFgColorQueryId" value="brown" />
         <property name="textFgColor" value="query" />
-        <property name="text" value="%" />
+        <property name="text" value=")%" />
         <property name="drawBorder" value="false" />
       </node>
     </node>
@@ -45,7 +45,7 @@
         <property name="selectable" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1141045005529">
-        <property name="drawBorder" value="false" />
+        <property name="drawBorder" value="true" />
         <link role="relationDeclaration" targetNodeId="1.1141044957162" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1141045009187">
