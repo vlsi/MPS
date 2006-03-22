@@ -25,7 +25,11 @@ import java.rmi.RemoteException;
 /**
  * @author Kostik
  */
-public class ProjectCreator extends UnicastRemoteObject implements ApplicationComponent, IProjectCreator{
+public class ProjectCreator extends UnicastRemoteObject implements ApplicationComponent, IProjectCreator{  
+  static {
+    RMIHandler.class.getClassLoader();
+  }
+
   public static final String PROJECT_CREATOR_NAME = "ProjectCreator";
 
   private ProjectManagerEx myProjectManager;

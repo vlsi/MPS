@@ -11,8 +11,8 @@ public class RMIHandler {
   public static final int REGISTRY_PORT = 2390;
 
   private static Registry ourRegistry;
-  private static IMPSSupportHandler ourHandler;
-  private static IProjectCreator ourProjectCreator;
+  private static volatile IMPSSupportHandler ourHandler;
+  private static volatile IProjectCreator ourProjectCreator;
 
   public static void setOurHandler(IMPSSupportHandler ourHandler) {
     RMIHandler.ourHandler = ourHandler;
