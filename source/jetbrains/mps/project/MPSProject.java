@@ -122,7 +122,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   }
 
   public IVersionControl getVCSFor(SModelDescriptor model) {
-    return getComponent(VersionControlManager.class).createVCSFor(model);
+    return getComponent(VersionControlManager.class).createVCSFor(model, this);
   }
 
   public void setProjectDescriptor(final ProjectDescriptor newDescriptor) {
