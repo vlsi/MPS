@@ -19,6 +19,8 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.VersionControlManager;
 import jetbrains.mps.vcs.model.IVersionControl;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.plugin.IProjectHandler;
+import jetbrains.mps.plugin.MPSPlugin;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -166,6 +168,29 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
 
   public File getProjectFile() {
     return myProjectFile;
+  }
+
+  public IProjectHandler getProjectHandler() {
+    String projectPath = getIDEAProjectFile().getAbsolutePath();
+    return MPSPlugin.getInstance().getProjectHandler(projectPath);
+  }
+
+  public File getIDEAProjectFile() {
+    return findIDEAProject(getProjectFile().getParentFile());
+  }
+
+  private File findIDEAProject(File directory) {
+    for (File file : directory.listFiles()) {
+      if (file.isFile() && file.getName().endsWith(".ipr")) {
+        return file;
+      }
+    }
+
+    if (directory.getParent() != null) {
+      return findIDEAProject(directory.getParentFile());
+    }
+
+    return null;
   }
 
   public ProjectDescriptor getProjectDescriptor() {

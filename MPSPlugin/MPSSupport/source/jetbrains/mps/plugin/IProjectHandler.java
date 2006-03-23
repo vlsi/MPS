@@ -4,7 +4,7 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.*;
 
-public interface IMPSSupportHandler extends Remote {
+public interface IProjectHandler extends Remote {
   void addSourceRoot(final String path) throws RemoteException;
   void addMPSJar(final String mpsHome) throws RemoteException;
   boolean isVCSSupported(final String path) throws RemoteException;

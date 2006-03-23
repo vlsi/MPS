@@ -1,15 +1,12 @@
 
 package jetbrains.mps.plugin;
 
-import java.util.Vector;
 import java.util.List;
-import java.util.ArrayList;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.awt.Frame;
 
-import jetbrains.mps.plugin.Revision;
 import jetbrains.mps.ide.usageView.UsagesModel_AspectMethods;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -46,7 +43,7 @@ public class MPSPlugin {
     }
   }
 
-  public IProjectCreator getProjectCreator() {
+  public IIDEAHandler getProjectCreator() {
     try {
       return myPlugin.getProjectCreator();
     } catch (RemoteException e) {
@@ -55,9 +52,18 @@ public class MPSPlugin {
     return null;
   }
 
-  public IMPSSupportHandler getMPSupportHandler() {
+  public IProjectHandler getProjectHandler() {
     try {
-      return myPlugin.getSupportHandler();
+      return myPlugin.getProjectHandler();
+    } catch (RemoteException e) {
+      e.printStackTrace();
+    }
+    return null;
+  }
+
+  public IProjectHandler getProjectHandler(String projectPath) {
+    try {
+      return myPlugin.getProjectHandlerFor(projectPath);
     } catch (RemoteException e) {
       e.printStackTrace();
     }

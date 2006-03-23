@@ -5,6 +5,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.module.ModuleType;
@@ -21,20 +22,21 @@ import java.io.File;
 import java.io.IOException;
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
+import java.util.*;
 
 /**
  * @author Kostik
  */
-public class ProjectCreator extends UnicastRemoteObject implements ApplicationComponent, IProjectCreator{  
+public class IDEAHandler extends UnicastRemoteObject implements ApplicationComponent, IIDEAHandler {
   static {
     RMIHandler.class.getClassLoader();
   }
 
-  public static final String PROJECT_CREATOR_NAME = "ProjectCreator";
+  public static final String PROJECT_CREATOR_NAME = "IDEAHandler";
 
   private ProjectManagerEx myProjectManager;
 
-  public ProjectCreator(ProjectManagerEx projectManager) throws RemoteException {
+  public IDEAHandler(ProjectManagerEx projectManager) throws RemoteException {
     super();
     myProjectManager = projectManager;
   }
@@ -105,12 +107,23 @@ public class ProjectCreator extends UnicastRemoteObject implements ApplicationCo
             rootModel.commit();
 
             myProjectManager.openProject(project);
+
+            project.save();
+
           }
         });
       }
     }, ModalityState.NON_MMODAL);
 
     return result[0];
+  }
+
+  public List<String> getOpenProjects() throws RemoteException {
+    List<String> result = new ArrayList<String>();
+    for (Project p : ProjectManager.getInstance().getOpenProjects()) {
+      result.add(new File(p.getProjectFilePath()).getAbsolutePath());
+    }
+    return result;
   }
 
   private ProjectJdk findSuitableJDK() {
@@ -121,7 +134,7 @@ public class ProjectCreator extends UnicastRemoteObject implements ApplicationCo
   }
 
   public void initComponent() {
-    RMIHandler.setOurProjectCreator(this);
+    RMIHandler.setProjectCreator(this);
   }
 
   public void disposeComponent() {

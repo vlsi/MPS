@@ -1,26 +1,25 @@
 package jetbrains.mps.plugin;
 
+import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.project.Project;
+
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.rmi.server.ServerNotActiveException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.net.InetAddress;
 import java.util.*;
+import java.io.File;
+
+import jetbrains.mps.util.FileUtil;
 
 public class RMIHandler {
   public static final int REGISTRY_PORT = 2390;
 
-  private static Registry ourRegistry;
-  private static volatile MPSSupportHandler ourHandler;
-  private static volatile ProjectCreator ourProjectCreator;
-  private static volatile MyMPSPlugin ourPlugin;
+  private static IDEAHandler ourProjectCreator;
+  private static MyMPSPlugin ourPlugin;
 
-  public static void setOurHandler(MPSSupportHandler ourHandler) {
-    RMIHandler.ourHandler = ourHandler;
-  }
-
-  public static void setOurProjectCreator(ProjectCreator ourProjectCreator) {
+  public static synchronized void setProjectCreator(IDEAHandler ourProjectCreator) {
     RMIHandler.ourProjectCreator = ourProjectCreator;
   }
 
@@ -30,17 +29,16 @@ public class RMIHandler {
 
   static {
     try {
-      ourRegistry = LocateRegistry.createRegistry(REGISTRY_PORT);
+      Registry registry = LocateRegistry.createRegistry(REGISTRY_PORT);
       ourPlugin = new MyMPSPlugin();
-      ourRegistry.rebind("MPSPlugin", ourPlugin);
+      registry.rebind("MPSPlugin", ourPlugin);
     } catch (RemoteException e) {
       e.printStackTrace();
-      ourRegistry = null;
     }
   }
 
   private static class MyMPSPlugin extends UnicastRemoteObject implements IMPSPlugin {
-    private List<IMPSIDEHandler> myHandlers = new ArrayList<IMPSIDEHandler>();
+    private List<IMPSIDEHandler> myIDEHandlers = new ArrayList<IMPSIDEHandler>();
 
     public MyMPSPlugin() throws RemoteException {
     }
@@ -61,12 +59,29 @@ public class RMIHandler {
       throw new RuntimeException("Access Denied");
     }
 
-    public IMPSSupportHandler getSupportHandler() throws RemoteException {
+    public IProjectHandler getProjectHandler() throws RemoteException {
       checkAccess();
-      return ourHandler;
+
+      ProjectManager projectManager = ProjectManager.getInstance();
+      if (projectManager.getOpenProjects().length == 0) return null;
+      return projectManager.getOpenProjects()[0].getComponent(ProjectHandler.class);
     }
 
-    public IProjectCreator getProjectCreator() throws RemoteException {
+    public IProjectHandler getProjectHandlerFor(String projectPath) throws RemoteException {
+      checkAccess();
+
+      String canonicalProjectPath = FileUtil.getCanonicalPath(projectPath);
+      ProjectManager projectManager = ProjectManager.getInstance();
+      for (Project p : projectManager.getOpenProjects()) {
+        ProjectHandler handler = p.getComponent(ProjectHandler.class);
+        String currentCanonicalProjectPath = FileUtil.getCanonicalPath(handler.getProjectPath());
+        if (canonicalProjectPath.equals(currentCanonicalProjectPath)) return handler;
+      }
+
+      return null;
+    }
+
+    public IIDEAHandler getProjectCreator() throws RemoteException {
       checkAccess();
       return ourProjectCreator;
     }
@@ -74,11 +89,11 @@ public class RMIHandler {
 
     public void addIdeHandler(IMPSIDEHandler handler) throws RemoteException {
       checkAccess();
-      myHandlers.add(handler);
+      myIDEHandlers.add(handler);
     }
 
     void fireFindAspectMethodUsages(String namepace, String name) {
-      for (IMPSIDEHandler h : myHandlers) {
+      for (IMPSIDEHandler h : myIDEHandlers) {
         try {
           h.findAspectMethodUsages(namepace, name);
         } catch (RemoteException e) {

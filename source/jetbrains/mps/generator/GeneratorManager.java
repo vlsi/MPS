@@ -228,7 +228,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       new File(outputFolder).mkdirs();
 
       try {
-        MPSPlugin.getInstance().getMPSupportHandler().addSourceRoot(outputFolder);
+
+        myProject.getProjectHandler().addSourceRoot(outputFolder);
       } catch (Exception e) {
         addMessage(MessageKind.WARNING, "Can't add output folder to IDEA as sources");
       }
@@ -255,12 +256,12 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         progress.addText("compiling in IntelliJ IDEA...");
 
         progress.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
-        MPSPlugin.getInstance().getMPSupportHandler().refreshFS();
+        myProject.getProjectHandler().refreshFS();
         progress.finishTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
         checkMonitorCanceled(progress);
 
         progress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
-        progress.addText(MPSPlugin.getInstance().getMPSupportHandler().buildModule(outputFolder));
+        progress.addText(myProject.getProjectHandler().buildModule(outputFolder));
         progress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
         checkMonitorCanceled(progress);
       }
@@ -323,12 +324,12 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           progress.addText("compiling in IntelliJ IDEA...");
 
           progress.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
-          MPSPlugin.getInstance().getMPSupportHandler().refreshFS();
+          myProject.getProjectHandler().refreshFS();
           progress.finishTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
           checkMonitorCanceled(progress);
 
           progress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
-          progress.addText(MPSPlugin.getInstance().getMPSupportHandler().buildModule(outputFolder));
+          progress.addText(myProject.getProjectHandler().buildModule(outputFolder));
           progress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
           checkMonitorCanceled(progress);
 

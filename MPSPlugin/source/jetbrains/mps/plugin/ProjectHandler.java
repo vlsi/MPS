@@ -33,27 +33,25 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
 
 /**
  * @author Kostik
  */
-public class MPSSupportHandler extends UnicastRemoteObject implements ProjectComponent, IMPSSupportHandler {
+public class ProjectHandler extends UnicastRemoteObject implements ProjectComponent, IProjectHandler {
   public static final int REGISTRY_PORT = 2390;
 
   public final String MPS_SUPPORT_HANDLER_NAME = "MPSSupport";
 
   private Project myProject;
 
-  public MPSSupportHandler(Project project) throws RemoteException {
+  public ProjectHandler(Project project) throws RemoteException {
     super();
     myProject = project;
   }
 
   public void projectOpened() {
-    RMIHandler.setOurHandler(this);
   }
 
   public void projectClosed() {
@@ -67,6 +65,10 @@ public class MPSSupportHandler extends UnicastRemoteObject implements ProjectCom
   }
 
   public void disposeComponent() {
+  }
+
+  String getProjectPath() {
+    return new File(myProject.getProjectFilePath()).getAbsolutePath();
   }
 
   public void addSourceRoot(final String path) {
@@ -278,9 +280,9 @@ public class MPSSupportHandler extends UnicastRemoteObject implements ProjectCom
                   private void compilationFinished(boolean aborted, int errorsNumber, int warningsNumber) {
                     synchronized(lock) {
                       if (aborted) {
-                        result.append("Compilation aborted");
+                        result.append("compilation aborted");
                       } else {
-                        result.append("Compilation finished : ");
+                        result.append("compilation finished : ");
                         result.append(errorsNumber).append(" errors ");
                         result.append(warningsNumber).append(" warnings");
                       }                      

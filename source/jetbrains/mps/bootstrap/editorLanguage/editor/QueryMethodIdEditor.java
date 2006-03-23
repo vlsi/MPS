@@ -95,7 +95,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
 
           public void execute(KeyEvent keyEvent, EditorContext context) {
             try {
-              MPSPlugin.getInstance().getMPSupportHandler().openMethod(getNamespace(), getQueryMethodPrefix() + getQueryMethodId());
+              MPSPlugin.getInstance().getProjectHandler().openMethod(getNamespace(), getQueryMethodPrefix() + getQueryMethodId());
             } catch (IOException e) {
             }
           }
@@ -138,9 +138,9 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
           MPSPlugin plugin = MPSPlugin.getInstance();
 
           String modelPath = getSNode().getModel().getModelDescriptor().getModelFile().getAbsolutePath();
-          plugin.getMPSupportHandler().createAspectMethod(modelPath, getNamespace(), getQueryMethodPrefix() + id, getQueryMethodReturnType(), getQueryMethodParameterList());
+          plugin.getProjectHandler().createAspectMethod(modelPath, getNamespace(), getQueryMethodPrefix() + id, getQueryMethodReturnType(), getQueryMethodParameterList());
           for (Class cls : getImportedClasses()) {
-            plugin.getMPSupportHandler().addImport(getNamespace(), cls.getName());
+            plugin.getProjectHandler().addImport(getNamespace(), cls.getName());
           }
         } catch (Exception e) {
           JOptionPane.showMessageDialog(null, "Can't create query method. \n Try to install MPS plugin.");
@@ -158,7 +158,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
     MPSPlugin plugin = MPSPlugin.getInstance();
     List<String> result = null;
     try {
-      result = plugin.getMPSupportHandler().getAspectMethodIds(getNamespace(), getQueryMethodPrefix());
+      result = plugin.getProjectHandler().getAspectMethodIds(getNamespace(), getQueryMethodPrefix());
     } catch (IOException e) {
     } 
     return result;

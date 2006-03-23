@@ -8,14 +8,14 @@
 
   <application-components>
     <component>
-      <interface-class>jetbrains.mps.plugin.ProjectCreator</interface-class>
-      <implementation-class>jetbrains.mps.plugin.ProjectCreator</implementation-class>
+      <interface-class>jetbrains.mps.plugin.IDEAHandler</interface-class>
+      <implementation-class>jetbrains.mps.plugin.IDEAHandler</implementation-class>
     </component>
   </application-components>
   <project-components>
     <component>
-      <interface-class>jetbrains.mps.plugin.MPSSupportHandler</interface-class>
-      <implementation-class>jetbrains.mps.plugin.MPSSupportHandler</implementation-class>
+      <interface-class>jetbrains.mps.plugin.ProjectHandler</interface-class>
+      <implementation-class>jetbrains.mps.plugin.ProjectHandler</implementation-class>
     </component>
   </project-components>
 
