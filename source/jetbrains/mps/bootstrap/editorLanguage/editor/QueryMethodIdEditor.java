@@ -6,7 +6,9 @@ import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.plugin.MPSPlugin;
+import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
@@ -51,7 +53,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
 
   protected abstract String getQueryMethodParameterList();
 
-  public EditorCell createEditorCell(EditorContext editorContext) {
+  public EditorCell createEditorCell(final EditorContext editorContext) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return getQueryMethodId();
@@ -73,7 +75,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
 
     editorCell.setSubstituteInfo(new AbstractNodeSubstituteInfo(editorContext) {
       protected List<INodeSubstituteItem> createActions() {
-        return QueryMethodIdEditor.this.createActions();
+        return QueryMethodIdEditor.this.createActions(editorContext);
       }
     });
     editorCell.setDefaultText(getIdNotSetString());
@@ -95,8 +97,10 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
 
           public void execute(KeyEvent keyEvent, EditorContext context) {
             try {
-              MPSPlugin.getInstance().getProjectHandler().openMethod(getNamespace(), getQueryMethodPrefix() + getQueryMethodId());
+              IProjectHandler handler = context.getOperationContext().getProject().getProjectHandler();
+              handler.openMethod(getNamespace(), getQueryMethodPrefix() + getQueryMethodId());
             } catch (IOException e) {
+              e.printStackTrace();
             }
           }
         });
@@ -105,9 +109,11 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
     return editorCell;
   }
 
-  protected List<INodeSubstituteItem> createActions() {
+  protected List<INodeSubstituteItem> createActions(EditorContext context) {
     List<INodeSubstituteItem> actions = new ArrayList<INodeSubstituteItem>();
-    List<String> conditionsList = getAvailableIdsUsingPlugin();
+    List<String> conditionsList = getAvailableIdsUsingPlugin(context);
+    final MPSProject project = context.getOperationContext().getProject();
+
     if (conditionsList == null) {
       LOG.debug("Plugin isn't present using reflection");
       conditionsList = getAvailableIdsUsingReflection();
@@ -135,12 +141,11 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
         String id = JOptionPane.showInputDialog(null, "Enter query method ID :", "Create New Query Method", JOptionPane.QUESTION_MESSAGE);
         if (id == null) return null;
         try {
-          MPSPlugin plugin = MPSPlugin.getInstance();
-
+          IProjectHandler projectHandler = project.getProjectHandler();
           String modelPath = getSNode().getModel().getModelDescriptor().getModelFile().getAbsolutePath();
-          plugin.getProjectHandler().createAspectMethod(modelPath, getNamespace(), getQueryMethodPrefix() + id, getQueryMethodReturnType(), getQueryMethodParameterList());
+          projectHandler.createAspectMethod(modelPath, getNamespace(), getQueryMethodPrefix() + id, getQueryMethodReturnType(), getQueryMethodParameterList());
           for (Class cls : getImportedClasses()) {
-            plugin.getProjectHandler().addImport(getNamespace(), cls.getName());
+            projectHandler.addImport(getNamespace(), cls.getName());
           }
         } catch (Exception e) {
           JOptionPane.showMessageDialog(null, "Can't create query method. \n Try to install MPS plugin.");
@@ -154,11 +159,11 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
     return actions;
   }
 
-  private List<String> getAvailableIdsUsingPlugin() {
-    MPSPlugin plugin = MPSPlugin.getInstance();
+  private List<String> getAvailableIdsUsingPlugin(EditorContext context) {
+    IProjectHandler handler = context.getOperationContext().getProject().getProjectHandler();
     List<String> result = null;
     try {
-      result = plugin.getProjectHandler().getAspectMethodIds(getNamespace(), getQueryMethodPrefix());
+      result = handler.getAspectMethodIds(getNamespace(), getQueryMethodPrefix());
     } catch (IOException e) {
     } 
     return result;
