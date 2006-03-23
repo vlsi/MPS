@@ -30,7 +30,9 @@ public class EquationManager {
   }
 
   public void addEquation(IType rhs, IType lhs) {
-
+    IType rhsRepresntator = rhs.getRepresentator();
+    IType lhsRepresentator = lhs.getRepresentator();
+    
   }
 
   public void clear() {
