@@ -79,12 +79,25 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
 
   protected List<INodeSubstituteItem> items() {
     if (myCachedItemList == null) {
+      ourCurrentOperationContext = getOperationContext();
       myCachedItemList = createActions();
+      ourCurrentOperationContext = null;
     }
     return Collections.unmodifiableList(myCachedItemList);
   }
 
   public SNode handleSubstituteAction(SNode node, Object substituteObject) {
     return null;
+  }
+
+
+  //todo warning this is a dirty hack. We need this because some query methods
+  //todo need to find some things throught plugin interface and plugin requires
+  //todo project and we have no other way to understand what is our current
+  //todo project
+  private static IOperationContext ourCurrentOperationContext = null;
+
+  public static IOperationContext getCurrentOperationContext() {
+    return ourCurrentOperationContext;
   }
 }

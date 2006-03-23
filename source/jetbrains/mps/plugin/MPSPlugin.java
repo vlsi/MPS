@@ -43,18 +43,9 @@ public class MPSPlugin {
     }
   }
 
-  public IIDEAHandler getProjectCreator() {
+  public IIDEAHandler getIDEAHandler() {
     try {
       return myPlugin.getProjectCreator();
-    } catch (RemoteException e) {
-      e.printStackTrace();
-    }
-    return null;
-  }
-
-  public IProjectHandler getProjectHandler() {
-    try {
-      return myPlugin.getProjectHandler();
     } catch (RemoteException e) {
       e.printStackTrace();
     }
@@ -73,7 +64,7 @@ public class MPSPlugin {
 
   public boolean isIDEAPresent() {
     try {
-      getProjectCreator().ping();
+      getIDEAHandler().ping();
       return true;
     } catch (Exception e) {
       return false;
