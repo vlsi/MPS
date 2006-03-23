@@ -170,6 +170,10 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     return myProjectFile;
   }
 
+  public boolean hasIDEAProject() {
+    return getProjectHandler() != null;
+  }
+
   public IProjectHandler getProjectHandler() {
     String projectPath = getIDEAProjectFile().getAbsolutePath();
     return MPSPlugin.getInstance().getProjectHandler(projectPath);
