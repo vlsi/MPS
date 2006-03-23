@@ -1,18 +1,15 @@
 package jetbrains.mps.typesLanguage.evaluator;
 
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.typesLanguage.ContextDeclaration;
 import jetbrains.mps.typesLanguage.EquationSetDeclaration;
 import jetbrains.mps.typesLanguage.Rule;
 import jetbrains.mps.typesLanguage.inference.ContextsManager;
-import jetbrains.mps.typesLanguage.inference.EquationManager;
-import jetbrains.mps.typesLanguage.inference.EquationUtil;
-import jetbrains.mps.typesLanguage.inference.TypeVariablesManager;
+import jetbrains.mps.typesLanguage.equation.EquationManager;
+import jetbrains.mps.typesLanguage.equation.TypeVariablesManager;
+import jetbrains.mps.typesLanguage.equation.IType;
 
 import java.util.*;
 
@@ -43,9 +40,9 @@ public class TypeChecker {
       ContextsManager.getInstance().registerNewContext(contextDeclaration.getName());
     }
 
-    //register equations
+    //register equations (not supported)
     for (EquationSetDeclaration equationSet : typesModel.getRoots(EquationSetDeclaration.class)) {
-      EquationManager.getInstance().registerNewEquationSet(equationSet.getName());
+ //     EquationManager.getInstance().registerNewEquationSet(equationSet.getName());
     }
 
     List<Rule> rules = new ArrayList<Rule>();
@@ -68,18 +65,15 @@ public class TypeChecker {
       newFrontier = new ArrayList<SNode>();
     }
 
-    //solving equations
-    EquationManager.getInstance().solveAllEquations();
-
     // main context
-    Set<Set<Pair<SNode, SNode>>> allContexts = ContextsManager.getInstance().getAllContexts();
+    Set<Set<Pair<SNode, IType>>> allContexts = ContextsManager.getInstance().getAllContexts();
     if (allContexts.isEmpty()) return;
-    Set<Pair<SNode, SNode>> mainContext = allContexts.iterator().next();// (todo find main context)
+    Set<Pair<SNode, IType>> mainContext = allContexts.iterator().next();// (todo find main context)
 
     // setting types to nodes
-    for (Pair<SNode, SNode> contextEntry : mainContext) {
+    for (Pair<SNode, IType> contextEntry : mainContext) {
       SNode term = contextEntry.o1;
-      term.putUserObject(TYPE_OF_TERM, contextEntry.o2);
+      term.putUserObject(TYPE_OF_TERM, contextEntry.o2); //todo put something else (expand IType)
     }
 
   }
