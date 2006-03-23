@@ -73,6 +73,7 @@ public class RMIHandler {
 
 
     public void addIdeHandler(IMPSIDEHandler handler) throws RemoteException {
+      checkAccess();
       myHandlers.add(handler);
     }
 

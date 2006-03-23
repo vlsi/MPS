@@ -8,7 +8,7 @@ public interface IMPSSupportHandler extends Remote {
   void addSourceRoot(final String path) throws RemoteException;
   void addMPSJar(final String mpsHome) throws RemoteException;
   boolean isVCSSupported(final String path) throws RemoteException;
-  Vector getVersionsFor(final String path) throws RemoteException;
+  List<Revision> getVersionsFor(final String path) throws RemoteException;
   boolean isFileChanged(final String path) throws RemoteException;
   String getCurrentRevisionFor(final String path) throws RemoteException;
   String commit(final String path, final String comment) throws RemoteException;

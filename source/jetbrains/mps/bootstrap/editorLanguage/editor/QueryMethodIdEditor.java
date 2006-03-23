@@ -10,7 +10,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
-import org.apache.xmlrpc.XmlRpcException;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;
@@ -96,7 +95,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
 
           public void execute(KeyEvent keyEvent, EditorContext context) {
             try {
-              MPSPlugin.getInstance().openMethod(getNamespace(), getQueryMethodPrefix() + getQueryMethodId());
+              MPSPlugin.getInstance().getMPSupportHandler().openMethod(getNamespace(), getQueryMethodPrefix() + getQueryMethodId());
             } catch (IOException e) {
             }
           }
@@ -139,9 +138,9 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
           MPSPlugin plugin = MPSPlugin.getInstance();
 
           String modelPath = getSNode().getModel().getModelDescriptor().getModelFile().getAbsolutePath();
-          plugin.createAspectMethod(modelPath, getNamespace(), getQueryMethodPrefix() + id, getQueryMethodReturnType(), getQueryMethodParameterList());
+          plugin.getMPSupportHandler().createAspectMethod(modelPath, getNamespace(), getQueryMethodPrefix() + id, getQueryMethodReturnType(), getQueryMethodParameterList());
           for (Class cls : getImportedClasses()) {
-            plugin.addImport(getNamespace(), cls.getName());
+            plugin.getMPSupportHandler().addImport(getNamespace(), cls.getName());
           }
         } catch (Exception e) {
           JOptionPane.showMessageDialog(null, "Can't create query method. \n Try to install MPS plugin.");
@@ -159,7 +158,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
     MPSPlugin plugin = MPSPlugin.getInstance();
     List<String> result = null;
     try {
-      result = plugin.getAspectMethodIds(getNamespace(), getQueryMethodPrefix());
+      result = plugin.getMPSupportHandler().getAspectMethodIds(getNamespace(), getQueryMethodPrefix());
     } catch (IOException e) {
     } 
     return result;

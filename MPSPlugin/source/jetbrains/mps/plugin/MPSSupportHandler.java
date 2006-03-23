@@ -126,8 +126,8 @@ public class MPSSupportHandler extends UnicastRemoteObject implements ProjectCom
     return result[0];
   }
 
-  public Vector getVersionsFor(final String path) {
-    final Vector result = new Vector();
+  public List<Revision> getVersionsFor(final String path) {
+    final List<Revision> result = new ArrayList<Revision>();
     executeWriteAction(new Runnable() {
       public void run() {
         try {
@@ -137,9 +137,7 @@ public class MPSSupportHandler extends UnicastRemoteObject implements ProjectCom
           VcsHistorySession session = vcs.getVcsHistoryProvider().createSessionFor(new FilePathImpl(file));
           List<VcsFileRevision> revisions = session.getRevisionList();
           for (VcsFileRevision r : revisions) {
-            result.add(r.getRevisionNumber().asString());
-            result.add(r.getAuthor());
-            result.add(r.getCommitMessage());
+            result.add(new Revision(r.getRevisionNumber().asString(), r.getAuthor(), r.getCommitMessage()));
           }
         } catch (VcsException e) {
           e.printStackTrace();
