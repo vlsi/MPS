@@ -11,7 +11,7 @@ public class IntegerValueDocumentFilter extends DocumentFilter {
   public void remove(FilterBypass fb, int offset, int length) throws BadLocationException {
     StringBuilder text = getDocumentText(fb);
     text.delete(offset, offset + length);
-    if (isInt(text.toString())) {
+    if (isValidText(text.toString())) {
       super.remove(fb, offset, length);
     }
   }
@@ -19,7 +19,7 @@ public class IntegerValueDocumentFilter extends DocumentFilter {
   public void insertString(FilterBypass fb, int offset, String string, AttributeSet attr) throws BadLocationException {
     StringBuilder text = getDocumentText(fb);
     text.insert(offset, string);
-    if (isInt(text.toString())) {
+    if (isValidText(text.toString())) {
       super.insertString(fb, offset, string, attr);
     }
   }
@@ -27,7 +27,7 @@ public class IntegerValueDocumentFilter extends DocumentFilter {
   public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
     StringBuilder documentText = getDocumentText(fb);
     documentText.replace(offset, offset + length, text);
-    if (isInt(documentText.toString())) {
+    if (isValidText(documentText.toString())) {
       super.replace(fb, offset, length, text, attrs);
     }
   }
@@ -36,7 +36,7 @@ public class IntegerValueDocumentFilter extends DocumentFilter {
     return new StringBuilder(fb.getDocument().getText(0, fb.getDocument().getLength()));
   }
 
-  private boolean isInt(String text) {
+  protected boolean isValidText(String text) {
     try {
       Integer i = Integer.parseInt(text);
       return true;

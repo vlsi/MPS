@@ -8,9 +8,12 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.util.IntegerValueDocumentFilter;
+import jetbrains.mps.util.ColorComponentValueDocumentFilter;
 
 import javax.swing.*;
 import javax.swing.Timer;
+import javax.swing.text.AbstractDocument;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -29,6 +32,8 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
   private @Externalizable Font myFont = new Font("Monospaced", Font.PLAIN, 12);
   private @Externalizable int myTextWidth = 500;
   private @Externalizable boolean myUseAntialiasing = true;
+  private @Externalizable Color mySelectionColor = new Color(0, 200, 255, 35);
+  private @Externalizable Color myRangeSelectionColor = new Color(255, 0, 255, 35);
 
   public Font getDefaultEditorFont() {
     return myFont;
@@ -56,8 +61,79 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     myTextWidth = textWidth;
   }
 
+  public Color getSelectionColor() {
+    return mySelectionColor;
+  }
+
+  public Color getRangeSelectionColor() {
+    return myRangeSelectionColor;
+  }
+
   public IPreferencesPage createPreferencesPage() {
     return new MyPreferencesPage();
+  }
+
+  private static class MyColorComponent extends JPanel {
+    private JTextField myRedTextField = new JTextField();
+    private JTextField myGreenTextField = new JTextField();
+    private JTextField myBlueTextField = new JTextField();
+    private JTextField myAlphaTextField = new JTextField();
+    private JButton myChooseButton = new JButton(new AbstractAction("Choose") {
+      public void actionPerformed(ActionEvent e) {
+        chooseColor();
+      }
+    });
+
+    private JLabel myLabel = new JLabel("Sample Text") {
+      public void paint(Graphics g) {
+        super.paint(g);
+        g.setColor(getColor());
+        g.fillRect(0,0,getWidth(), getHeight());
+      }
+    };
+
+    MyColorComponent(Color c) {
+      prepareColorPartField(myRedTextField);
+      prepareColorPartField(myBlueTextField);
+      prepareColorPartField(myAlphaTextField);
+      prepareColorPartField(myGreenTextField);
+      setColor(c);
+      myAlphaTextField.setText(c.getAlpha()+"");
+      myLabel.setSize(40, 20);
+      myLabel.setBackground(Color.white);
+      setLayout(new FlowLayout(FlowLayout.LEFT));
+      add(myLabel);
+      add(myRedTextField);
+      add(myGreenTextField);
+      add(myBlueTextField);
+      add(myAlphaTextField);
+      add(myChooseButton);
+    }
+
+    private void prepareColorPartField(JTextField field) {
+      ((AbstractDocument) field.getDocument()).setDocumentFilter(new ColorComponentValueDocumentFilter());
+    }
+
+    private void setColor(Color c) {
+      myRedTextField.setText(c.getRed()+"");
+      myGreenTextField.setText(c.getGreen()+"");
+      myBlueTextField.setText(c.getBlue()+"");
+    }
+
+    public Color getColor() {
+      int r = Integer.parseInt(myRedTextField.getText());
+      int g = Integer.parseInt(myGreenTextField.getText());
+      int b = Integer.parseInt(myBlueTextField.getText());
+      int a = Integer.parseInt(myAlphaTextField.getText());
+      return new Color(r, g, b, a);
+    }
+
+    private void chooseColor() {
+      Color c = JColorChooser.showDialog(this, "Choose color", getColor());
+      setColor(c);
+      myLabel.repaint();
+    }
+
   }
 
 
@@ -67,6 +143,8 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     private JComboBox myFontsComboBox = createFontsComboBox();
     private JComboBox myFontSizesComboBox = createSizeComboBox();
     private JComboBox myTextWidthComboBox = createTextWidthComboBox();
+    private MyColorComponent mySelectedColorComponent = new MyColorComponent(mySelectionColor);
+    private MyColorComponent myRangeSelColorComponent = new MyColorComponent(myRangeSelectionColor);
     private JCheckBox myAntialiasingCheckBox = createAntialiasinbCheckBox();
     private JSlider myBlinkingRateSlider = createBlinkingRateSlider();
     private final AbstractEditorComponent myBlinkingDemo = createBlinkingDemo();
@@ -87,6 +165,13 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
       antialiasingPanel.add(new JLabel("Use Antialiasing"));
 
       panel.add(antialiasingPanel);
+
+      panel.add(new JLabel("Selection Color : "));
+      panel.add(mySelectedColorComponent);
+
+      panel.add(new JLabel("Range Selection Color : "));
+      panel.add(myRangeSelColorComponent);
+
       panel.add(new JLabel(" "));
       panel.add(new JLabel("Cursor Blinking Rate : "));
       panel.add(myBlinkingRateSlider);
@@ -210,6 +295,9 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
       CaretBlinker.getInstance().setCaretBlinkingRateTimeMillis(blinkingPeriod);
 
       setUseAntialiasing(myAntialiasingCheckBox.isSelected());
+
+      mySelectionColor = mySelectedColorComponent.getColor();
+      myRangeSelectionColor = myRangeSelColorComponent.getColor();
 
       ReloadUtils.rebuildAllEditors();
     }
