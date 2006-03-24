@@ -435,5 +435,13 @@
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1143226024141">
+    <property name="name" value="SModelType" />
+    <link role="extends" targetNodeId="2.1068431790189" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1143226106435">
+      <property name="value" value="smodel" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
 </model>
 

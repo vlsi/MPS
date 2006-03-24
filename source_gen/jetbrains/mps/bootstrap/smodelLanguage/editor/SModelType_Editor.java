@@ -9,11 +9,13 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.MPSColors;
 
-public class Link_DeleteChildOperation_Editor extends DefaultNodeEditor {
+public class SModelType_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstantCell(context, node, "delete");
+    return this.createConstantCell(context, node, "smodel");
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
@@ -23,7 +25,9 @@ public class Link_DeleteChildOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1140129710123");
+    editorCell.setFontType(MPSFonts.BOLD);
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1143226143282");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }

@@ -517,7 +517,7 @@
       <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1143224155412">
         <property name="editable" value="true" />
-        <property name="text" value="insert next-sibling (" />
+        <property name="text" value="add next-sibling (" />
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1143224155413">
@@ -537,7 +537,7 @@
       <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1143224196792">
         <property name="editable" value="true" />
-        <property name="text" value="insert prev-sibling (" />
+        <property name="text" value="add prev-sibling (" />
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1143224196793">
@@ -549,6 +549,16 @@
         <property name="text" value=")" />
         <property name="drawBorder" value="false" />
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1143226136623">
+    <link role="conceptDeclaration" targetNodeId="1.1143226024141" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1143226143282">
+      <property name="editable" value="true" />
+      <property name="textFgColor" value="DARK_BLUE" />
+      <property name="text" value="smodel" />
+      <property name="fontStyle" value="BOLD" />
+      <property name="drawBorder" value="false" />
     </node>
   </node>
 </model>
