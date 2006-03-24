@@ -13,6 +13,7 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1073416106126">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="true" />
+      <property name="selectable" value="false" />
       <link role="relationDeclaration" targetNodeId="1.1068581517665" />
       <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1079958242049">
         <property name="editable" value="true" />
