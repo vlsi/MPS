@@ -95,6 +95,9 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1138411891628">
     <property name="name" value="SNodeOperation" />
     <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptPropertyDeclaration" id="1143235288634">
+      <property name="name" value="applicable_to_model" />
+    </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptPropertyDeclaration" id="1138763241883">
       <property name="name" value="applicable_to_node" />
     </node>
@@ -441,6 +444,33 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1143226106435">
       <property name="value" value="smodel" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1143234257716">
+    <property name="name" value="Node_GetModelOperation" />
+    <link role="extends" targetNodeId="1138411891628" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1143234257717">
+      <property name="value" value="model" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1143234257718">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763241883" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1143235216708">
+    <property name="name" value="Model_CreateNewNodeOperation" />
+    <link role="extends" targetNodeId="1138411891628" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1143235391024">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="concept" />
+      <link role="target" targetNodeId="3.1071489090640" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1143235216709">
+      <property name="value" value="new node" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1143235216710">
+      <link role="conceptPropertyDeclaration" targetNodeId="1143235288634" />
     </node>
   </node>
 </model>
