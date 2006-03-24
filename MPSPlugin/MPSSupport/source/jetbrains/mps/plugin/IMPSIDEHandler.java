@@ -5,4 +5,5 @@ import java.rmi.RemoteException;
 
 public interface IMPSIDEHandler extends Remote {
   void findAspectMethodUsages(String namespace, String name) throws RemoteException ;
+  void showConceptNode(String fqName) throws RemoteException;
 }

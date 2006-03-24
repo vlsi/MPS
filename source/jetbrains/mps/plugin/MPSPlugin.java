@@ -12,10 +12,10 @@ import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.util.FrameUtil;
-import jetbrains.mps.project.MPSProjects;
-import jetbrains.mps.project.ApplicationComponents;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.*;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 
 /**
  * @author Kostik
@@ -101,6 +101,13 @@ public class MPSPlugin {
           t.printStackTrace();
         }
       }
+    }
+
+    public void showConceptNode(String fqName) throws RemoteException {
+      ConceptDeclaration concept = SModelUtil.findConceptDeclaration(fqName, GlobalScope.getInstance());
+      IDEProjectFrame projectWindow = getFirstProjectWindow();
+      projectWindow.getEditorsPane().openEditor(concept, new ProjectOperationContext(projectWindow.getProject()));
+      FrameUtil.activateFrame(getFirstMainFrame());
     }
   }
 }

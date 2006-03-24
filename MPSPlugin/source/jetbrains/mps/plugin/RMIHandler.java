@@ -27,6 +27,10 @@ public class RMIHandler {
     ourPlugin.fireFindAspectMethodUsages(namespace, name);
   }
 
+  public static void showConceptDeclaration(String fqName) {
+    ourPlugin.fireShowConceptDeclaration(fqName);
+  }
+
   static {
     try {
       Registry registry = LocateRegistry.createRegistry(REGISTRY_PORT);
@@ -96,6 +100,16 @@ public class RMIHandler {
       for (IMPSIDEHandler h : myIDEHandlers) {
         try {
           h.findAspectMethodUsages(namepace, name);
+        } catch (RemoteException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+
+    void fireShowConceptDeclaration(String fqName) {
+      for (IMPSIDEHandler h : myIDEHandlers) {
+        try {
+          h.showConceptNode(fqName);
         } catch (RemoteException e) {
           e.printStackTrace();
         }

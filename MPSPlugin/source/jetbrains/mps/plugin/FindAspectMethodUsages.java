@@ -9,7 +9,6 @@ import com.intellij.psi.*;
 
 import java.util.*;
 
-import org.apache.xmlrpc.XmlRpcClient;
 
 public class FindAspectMethodUsages extends AnAction {
 
