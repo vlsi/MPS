@@ -12,11 +12,11 @@ import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class LinkList_AddChildOperation_Editor extends DefaultNodeEditor {
+public class Node_InsertNewPrevSiblingOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
@@ -29,10 +29,10 @@ public class LinkList_AddChildOperation_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "add ("));
-    editorCell.addEditorCell(this.createParameterCell(context, node));
+    editorCell.addEditorCell(this.createConstantCell(context, node, "new prev-sibling ("));
+    editorCell.addEditorCell(this.createConceptReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ")"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1139870427663");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1143221124296");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -44,7 +44,7 @@ public class LinkList_AddChildOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1139870427664");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1143221124297");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -56,13 +56,13 @@ public class LinkList_AddChildOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1139870427668");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1143221124301");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createParameterCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createConceptReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
+    provider.setAuxiliaryCellProvider(new Node_InsertNewPrevSiblingOperation_Editor_concept_InlineComponent());
     EditorCell editorCell = provider.createEditorCell(context);
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
@@ -72,17 +72,17 @@ public class LinkList_AddChildOperation_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1139870441857");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1143221124298");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
-  public EditorCell createParameterCell(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("parameter");
-    provider.setNoTargetText("");
+  public EditorCell createConceptReferenceCell(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, context);
+    provider.setRole("concept");
+    provider.setNoTargetText("<no concept>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createParameterCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.createConceptReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {

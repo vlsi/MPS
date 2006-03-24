@@ -382,5 +382,22 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1143221076066">
+    <property name="name" value="Node_InsertNewPrevSiblingOperation" />
+    <link role="extends" targetNodeId="1138411891628" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1143221076067">
+      <property name="value" value="new prev-sibling" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1143221076068">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763241883" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1143221076069">
+      <property name="sourceCardinality" value="1" />
+      <property name="targetCardinality" value="0..n" />
+      <property name="role" value="concept" />
+      <link role="target" targetNodeId="3.1071489090640" />
+    </node>
+  </node>
 </model>
 
