@@ -5,6 +5,9 @@ import jetbrains.mps.patterns.*;
 import jetbrains.mps.annotations.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.typesLanguage.evaluator.NodeWrapper;
+import jetbrains.mps.typesLanguage.equation.IType;
+import jetbrains.mps.typesLanguage.equation.NodeWrapperType;
 
 import java.util.*;
 
@@ -36,8 +39,25 @@ public class MatchingUtil {
   }
 
 
+  public static Substitution matchNodeWithPattern(IType type, PatternExpression patternExpression) {
+    SNode patternNode = patternExpression.getPatternNode();
+    Substitution currentSubstitution = new Substitution();
+
+    if (type instanceof NodeWrapperType) {
+      NodeWrapperType nodeWrapperType = (NodeWrapperType) type;
+        if (matchNodes(nodeWrapperType.getNodeWrapper(), patternNode, currentSubstitution)) {
+      return currentSubstitution;
+    } else {
+      return null;
+    }
+    }
+
+    return null;
+  }
+
 
   private static boolean matchNodes(SNode node, SNode patternNode, Substitution substitution) {
+    //todo do smth with Type Vars  
 
     //-- whole node bindings
     AttributeConcept patternAttribute = patternNode.getAttribute();
@@ -113,6 +133,101 @@ public class MatchingUtil {
 
     return true;
   }
+
+
+  private static boolean matchNodes(NodeWrapper node, SNode patternNode, Substitution substitution) {
+
+      //-- whole node bindings
+      AttributeConcept patternAttribute = patternNode.getAttribute();
+      if (patternAttribute instanceof WildcardPattern) {
+        return true;
+      }
+      if (patternAttribute instanceof ListPattern) {
+        //simply go on
+      } else if (patternAttribute instanceof AsPattern) {
+        bindNodeWithVar(substitution, (PatternVariableDeclaration) patternAttribute, node.getNode());
+      } else if (patternAttribute instanceof PatternVariableDeclaration) {
+        bindNodeWithVar(substitution, (PatternVariableDeclaration) patternAttribute, node.getNode());
+        return true;
+      }
+
+      //-- matching class
+      if (node.getNodeClass() != patternNode.getClass()) return false;
+
+      //-- matching properties
+      Set<String> propertyNames = node.getPropertyNames();
+      for (String propertyName : patternNode.getPropertyNames()) {
+        //if property pattern var
+        PropertyAttributeConcept propertyAttribute = patternNode.getPropertyAttribute(propertyName);
+        if (propertyAttribute instanceof PropertyPatternVariableDeclaration) {
+          LazyPropertyValue propertyValue = new LazyPropertyValue(node.getNode(), propertyName);
+          bindPropertyWithVar(substitution, (PropertyPatternVariableDeclaration) propertyAttribute, propertyValue);
+        } else {//else match values
+          if (!EqualUtil.equals(patternNode.getProperty(propertyName), node.getProperty(propertyName))) return false;
+        }
+      }
+
+      //-- matching children
+      Set<String> childRoles = patternNode.getChildRoles();
+      for (String role : childRoles) {
+        List<NodeWrapper> children = node.getChildren(role);
+        List<SNode> patternChildren = patternNode.getChildren(role);
+
+        //if list pattern
+        SNode listPatternChild = null;
+        for (SNode patternChild : patternChildren) {
+          if (patternChild.getAttribute() instanceof ListPattern) {
+            listPatternChild = patternChild;
+            break;
+          }
+        }
+        if (listPatternChild != null) {
+          if (!matchListOfNodeWrappers(children, listPatternChild, substitution)) return false;
+        } else {
+
+          //else just match children
+          Iterator<NodeWrapper> childrenIterator = children.iterator();
+          for (SNode patternChild : patternChildren) {
+            NodeWrapper child = childrenIterator.hasNext() ? childrenIterator.next() : null;
+            if (!matchNodes(child, patternChild, substitution)) return false;
+          }
+        }
+      }
+
+      //-- matching references
+      Set<String> referenceRoles = patternNode.getReferenceRoles();
+      for (String role : referenceRoles) {
+        SNode target = node.getReferent(role);
+
+        //if this role has a link pattern var
+        LinkAttributeConcept linkAttribute = patternNode.getLinkAttribute(role);
+        if (linkAttribute instanceof LinkPatternVariableDeclaration) {
+          bindReferenceTargetWithVar(substitution, (LinkPatternVariableDeclaration) linkAttribute, target);
+        } else {//if role has just a link
+          SNode patternTarget = patternNode.getReferent(role);
+          if (patternTarget != target) return false;
+        }
+      }
+
+      return true;
+    }
+
+
+  private static boolean matchListOfNodeWrappers(List<NodeWrapper> nodes, SNode patternNode, Substitution substitution) {
+    ListPattern currentListPattern = (ListPattern) patternNode.getAttribute();
+    ourCurrentListPatterns.push(currentListPattern);
+    boolean stillMatches = true;
+    for (NodeWrapper nodeWrapper : nodes) {
+      boolean matchesNow = matchNodes(nodeWrapper, patternNode, substitution);
+      stillMatches = stillMatches && matchesNow;
+      if (!stillMatches) break;
+      substitution.addNodeToListBindedWithVar(currentListPattern, nodeWrapper.getNode());
+    }
+    ListPattern poppedListPattern = ourCurrentListPatterns.pop();
+    LOG.assertLog(poppedListPattern == currentListPattern);
+    return stillMatches;
+  }
+
 
 
   private static boolean matchListOfNodes(List<SNode> nodes, SNode patternNode, Substitution substitution) {
