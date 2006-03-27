@@ -9,7 +9,6 @@ import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.IntegerValueDocumentFilter;
-import jetbrains.mps.util.ColorComponentValueDocumentFilter;
 
 import javax.swing.*;
 import javax.swing.Timer;
@@ -111,7 +110,18 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     }
 
     private void prepareColorPartField(JTextField field) {
-      ((AbstractDocument) field.getDocument()).setDocumentFilter(new ColorComponentValueDocumentFilter());
+      ((AbstractDocument) field.getDocument()).setDocumentFilter(new IntegerValueDocumentFilter() {
+
+        protected boolean isValidText(String text) {
+          if (!(super.isValidText(text))) return false;
+          int i = Integer.parseInt(text);
+          return 0 <= i && i <= 255;
+        }
+
+        protected void textChanged() {
+          myLabel.repaint();
+        }
+      });
     }
 
     private void setColor(Color c) {
