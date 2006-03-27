@@ -2120,8 +2120,6 @@
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1116615277651">
           <link role="conceptDeclaration" targetNodeId="1.1107461130800" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1116615309371">
-            <property name="textFgColor" value="DARK_BLUE" />
-            <property name="fontStyle" value="ITALIC" />
             <property name="drawBorder" value="false" />
             <property name="readOnly" value="true" />
             <property name="noTargetText" value="&lt;no name&gt;" />
@@ -2132,7 +2130,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1116615336905">
         <property name="textFgColor" value="DARK_BLUE" />
         <property name="text" value=".class" />
-        <property name="fontStyle" value="ITALIC" />
         <property name="drawBorder" value="false" />
       </node>
     </node>
