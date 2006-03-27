@@ -14,7 +14,7 @@ class NullModelRootManager extends AbstractModelRootManager {
   }
 
   public void saveModel(SModelDescriptor modelDescriptor) {
-    throw new RuntimeException();
+    throw new RuntimeException("saving model "+modelDescriptor+" using null model root manager");
   }
 
   public boolean containsString(SModelDescriptor modelDescriptor, String string) {

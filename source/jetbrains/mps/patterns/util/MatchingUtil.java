@@ -39,25 +39,18 @@ public class MatchingUtil {
   }
 
 
-  public static Substitution matchNodeWithPattern(IType type, PatternExpression patternExpression) {
+  public static Substitution matchNodeWithPattern(NodeWrapper type, PatternExpression patternExpression) {
     SNode patternNode = patternExpression.getPatternNode();
     Substitution currentSubstitution = new Substitution();
-
-    if (type instanceof NodeWrapperType) {
-      NodeWrapperType nodeWrapperType = (NodeWrapperType) type;
-        if (matchNodes(nodeWrapperType.getNodeWrapper(), patternNode, currentSubstitution)) {
+    if (matchNodes(type, patternNode, currentSubstitution)) {
       return currentSubstitution;
     } else {
       return null;
     }
-    }
-
-    return null;
   }
 
 
   private static boolean matchNodes(SNode node, SNode patternNode, Substitution substitution) {
-    //todo do smth with Type Vars  
 
     //-- whole node bindings
     AttributeConcept patternAttribute = patternNode.getAttribute();
@@ -145,9 +138,9 @@ public class MatchingUtil {
       if (patternAttribute instanceof ListPattern) {
         //simply go on
       } else if (patternAttribute instanceof AsPattern) {
-        bindNodeWithVar(substitution, (PatternVariableDeclaration) patternAttribute, node.getNode());
+        bindNodeWrapperWithVar(substitution, (PatternVariableDeclaration) patternAttribute, node);
       } else if (patternAttribute instanceof PatternVariableDeclaration) {
-        bindNodeWithVar(substitution, (PatternVariableDeclaration) patternAttribute, node.getNode());
+        bindNodeWrapperWithVar(substitution, (PatternVariableDeclaration) patternAttribute, node);
         return true;
       }
 
@@ -250,6 +243,14 @@ public class MatchingUtil {
       substitution.bindNodeWithVar(patternVar, node);
     } else {
       substitution.addNodeToListBindedWithVar(patternVar, node);
+    }
+  }
+
+   private static void bindNodeWrapperWithVar(Substitution substitution, PatternVariableDeclaration patternVar, NodeWrapper node) {
+    if (getCurrentListPattern() == null) {
+      substitution.bindNodeWrapperWithVar(patternVar, node);
+    } else {
+      substitution.addNodeWrapperToListBindedWithVar(patternVar, node);
     }
   }
 

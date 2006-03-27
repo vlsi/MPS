@@ -2,6 +2,7 @@ package jetbrains.mps.typesLanguage.equation;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.typesLanguage.evaluator.NodeWrapper;
+import jetbrains.mps.typesLanguage.RuntimeTypeVariable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.Pair;
@@ -37,14 +38,14 @@ public class EquationManager {
     if (rhsRepresntator == lhsRepresentator) return;
 
     // add var to type's multieq
-    TypeVariableType varRhs = AbstractType.getTypeVar(rhsRepresntator);
-    TypeVariableType varLhs = AbstractType.getTypeVar(lhsRepresentator);
+    RuntimeTypeVariable varRhs = NodeWrapperType.getTypeVar(rhsRepresntator);
+    RuntimeTypeVariable varLhs = NodeWrapperType.getTypeVar(lhsRepresentator);
     if (varRhs != null) {
-      processEquation(varRhs, lhsRepresentator);
+      processEquation(rhsRepresntator, lhsRepresentator);
       return;
     } else {
       if (varLhs != null) {
-        processEquation(varLhs, rhsRepresntator);
+        processEquation(lhsRepresentator, rhsRepresntator);
         return;
       }
     }
@@ -63,7 +64,7 @@ public class EquationManager {
     }
   }
 
-  private void processEquation(TypeVariableType var, IType type) {
+  private void processEquation(IType var, IType type) {
     var.setParent(type);
   }
 
@@ -109,11 +110,11 @@ public class EquationManager {
      Iterator<NodeWrapper> childrenIterator2 = childrenInNode2.iterator();
      for (NodeWrapper child1 : childrenInNode1) {
        NodeWrapper child2 = childrenIterator2.hasNext() ? childrenIterator2.next() : null;
-       result.add(new Pair<IType, IType>(AbstractType.getIType(child1), AbstractType.getIType(child2)));
+       result.add(new Pair<IType, IType>(NodeWrapperType.getIType(child1), NodeWrapperType.getIType(child2)));
      }
      for (;childrenIterator2.hasNext();) {
        NodeWrapper child2 = childrenIterator2.next();
-       result.add(new Pair<IType, IType>(null, AbstractType.getIType(child2)));
+       result.add(new Pair<IType, IType>(null, NodeWrapperType.getIType(child2)));
      }
    }
    return result;

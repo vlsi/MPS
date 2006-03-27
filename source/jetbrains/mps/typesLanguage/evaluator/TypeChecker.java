@@ -73,7 +73,7 @@ public class TypeChecker {
     // setting types to nodes
     for (Pair<SNode, IType> contextEntry : mainContext) {
       SNode term = contextEntry.o1;
-      term.putUserObject(TYPE_OF_TERM, contextEntry.o2); //todo put something else (expand IType)
+      term.putUserObject(TYPE_OF_TERM, contextEntry.o2); 
     }
 
   }

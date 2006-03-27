@@ -3,6 +3,7 @@ package jetbrains.mps.patterns.util;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.patterns.*;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.typesLanguage.evaluator.NodeWrapper;
 
 import java.util.*;
 
@@ -23,7 +24,8 @@ public class Substitution {
   private Map<PropertyPatternVariableDeclaration, List<LazyPropertyValue>> myListPropVarsToProperties = new HashMap<PropertyPatternVariableDeclaration, List<LazyPropertyValue>>();
   private Map<LinkPatternVariableDeclaration, SNode> myLinkVarsToNodes = new HashMap<LinkPatternVariableDeclaration, SNode>();
   private Map<LinkPatternVariableDeclaration, List<SNode>> myListLinkVarsToNodes = new HashMap<LinkPatternVariableDeclaration, List<SNode>>();
-
+  private Map<PatternVariableDeclaration, NodeWrapper> myVarsToNodeWrappers = new HashMap<PatternVariableDeclaration, NodeWrapper>();
+  private Map<PatternVariableDeclaration, List<NodeWrapper>> myListVarsToNodeWrappers = new HashMap<PatternVariableDeclaration, List<NodeWrapper>>();
 
   public void bindNodeWithVar(PatternVariableDeclaration var, SNode node) {
     SNode oldNode = myVarsToNodes.get(var);
@@ -54,6 +56,38 @@ public class Substitution {
       return new ArrayList<SNode>(nodes);
     }
   }
+
+
+  public void bindNodeWrapperWithVar(PatternVariableDeclaration var, NodeWrapper node) {
+    NodeWrapper oldNode = myVarsToNodeWrappers.get(var);
+    if (oldNode != null) {
+      LOG.warning("a node wrapper binded with this pattern var exists already: " + oldNode);
+    }
+    myVarsToNodeWrappers.put(var, node);
+  }
+
+  public void addNodeWrapperToListBindedWithVar(PatternVariableDeclaration var, NodeWrapper node) {
+    List<NodeWrapper> nodes = myListVarsToNodeWrappers.get(var);
+    if (nodes == null) {
+      nodes = new ArrayList<NodeWrapper>();
+      myListVarsToNodeWrappers.put(var, nodes);
+    }
+    nodes.add(node);
+  }
+
+  public NodeWrapper getNodeWrapperBindedWithVar(PatternVariableDeclaration var) {
+    return myVarsToNodeWrappers.get(var);
+  }
+
+  public List<NodeWrapper> getNodeWrappersListBindedWithVar(PatternVariableDeclaration var) {
+    List<NodeWrapper> nodes = myListVarsToNodeWrappers.get(var);
+    if (nodes == null) {
+      return new ArrayList<NodeWrapper>();
+    } else {
+      return new ArrayList<NodeWrapper>(nodes);
+    }
+  }
+
 
    public void bindPropertyWithVar(PropertyPatternVariableDeclaration var, LazyPropertyValue propertyValue) {
     LazyPropertyValue oldPropertyValue = myPropVarsToProperties.get(var);
@@ -129,6 +163,8 @@ public class Substitution {
     this.myListVarsToNodes.putAll(substitution.myListVarsToNodes);
     this.myPropVarsToProperties.putAll(substitution.myPropVarsToProperties);
     this.myVarsToNodes.putAll(substitution.myVarsToNodes);
+    this.myVarsToNodeWrappers.putAll(substitution.myVarsToNodeWrappers);
+    this.myListVarsToNodeWrappers.putAll(substitution.myListVarsToNodeWrappers);
   }
 
 }
