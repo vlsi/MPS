@@ -474,16 +474,13 @@ public abstract class MPSTree extends JTree {
     public Component getTreeCellRendererComponent(JTree tree, Object value, boolean sel, boolean expanded, boolean leaf, int row, boolean hasFocus) {
       String text = value.toString();
       if (value instanceof MPSTreeNode) {
-        text = ((MPSTreeNode) value).toString();
+        text = value.toString();
       }
-      if (text.startsWith("<html>")) {
-        text = text.substring("<html>".length());
-      }
-      
       super.getTreeCellRendererComponent(tree, text, sel, expanded, leaf, row, hasFocus);
       if (value instanceof MPSTreeNode) {
         MPSTreeNode node = (MPSTreeNode) value;
         setIcon(node.getIcon(expanded));
+        setForeground(node.getColor());
       }
       return this;
     }

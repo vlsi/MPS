@@ -254,10 +254,14 @@ public class HierarchyView extends DefaultTool {
       super(declaration, operationContext);
     }
 
+    public Color getColor() {
+      return new Color(0x40, 0x00, 0x90);
+    }
+
     public String toString() {
       String name = super.toString();
       if (this == myTreeNode) {
-        name = "<html><font color=\"#400090\"><b>" + TreeTextUtil.toHtml(name) + "</b></font>";
+        name = TreeTextUtil.toHtml(name);
       }
       return name;
     }

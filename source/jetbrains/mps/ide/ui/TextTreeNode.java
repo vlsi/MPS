@@ -26,6 +26,6 @@ public class TextTreeNode extends MPSTreeNode {
   }
 
   public String toString() {
-    return /*"<html>" + */myText;
+    return myText;
   }
 }

@@ -103,10 +103,10 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   }
 
   public String toString() {
-    StringBuffer output = new StringBuffer("<html>");
+    StringBuffer output = new StringBuffer();
 
     if (myRole != null) {
-      output.append("<b>").append(myRole).append("</b> : ");
+      output.append(myRole).append(" : ");
     }
 
     if (getSNode() != null) {

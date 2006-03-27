@@ -61,9 +61,9 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
 
   public String toString() {
     if (myLanguage.isUpToDate()) {
-      return "<html>" + myLanguage.getModuleUID() + "  <b>(up-to-date)</b>";
+      return myLanguage.getModuleUID() + "  (up-to-date)";
     } else {
-      return "<html>" + myLanguage.getModuleUID() + "  <b>(generation required)</b>";
+      return myLanguage.getModuleUID() + "  (generation required)";
     }
   }
 

@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import java.awt.event.KeyEvent;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -121,6 +122,10 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     } else {
       return Icons.CLOSED_FOLDER;
     }
+  }
+
+  public Color getColor() {
+    return Color.BLACK;
   }
 
   public String toString() {

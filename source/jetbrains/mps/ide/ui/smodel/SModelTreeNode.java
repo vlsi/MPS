@@ -20,6 +20,7 @@ import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import java.util.*;
+import java.awt.Color;
 
 /**
  * Created by IntelliJ IDEA.
@@ -73,14 +74,18 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   public String toString() {
     String fqName = myModelDescriptor.getModelUID().toString();
 
+    if (myLabel != null) {
+      return myLabel + " : " + fqName;
+    }
+    return fqName;
+  }
+
+  public Color getColor() {
     if (myModelDescriptor.isInitialized() && SModelRepository.getInstance().isChanged(myModelDescriptor)) {
-      fqName = "<font color=\"#000090\">" + fqName + "</font>";
+      return new Color(0x00, 0x00, 0x90);
     }
 
-    if (myLabel != null) {
-      return "<html><b>" + myLabel + "</b> : " + fqName;
-    }
-    return "<html>" + fqName;
+    return Color.BLACK;
   }
 
   public boolean isInitialized() {

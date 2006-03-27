@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.event.SModelsMulticaster;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 /**
  * @author Kostik
@@ -95,9 +96,14 @@ public class ModelRepositoryView extends DefaultTool {
       }
 
       public String toString() {
-        String colorString = "";
-        if (SModelRepository.getInstance().isChanged(myModelDescriptor)) colorString = "<font color=\"#000090\">";
-        return "<html>" + colorString + getNodeIdentifier() + (myModelDescriptor.isInitialized() ? " <b>(initialized)</b>" : " <i>(not initialized)</i>");
+        return getNodeIdentifier() + (myModelDescriptor.isInitialized() ? " (initialized)" : " (not initialized)");
+      }
+
+      public Color getColor() {
+        if (SModelRepository.getInstance().isChanged(myModelDescriptor)) {
+          return new Color(0x00, 0x00, 0x90);
+        }
+        return Color.BLACK;
       }
 
       public String getNodeIdentifier() {

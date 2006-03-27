@@ -267,16 +267,16 @@ public class CellExplorerView extends DefaultTool {
 
 
     public String toString() {
-      String result = "<html>" + NameUtil.shortNameFromLongName(myCell.getClass().getName());
+      String result = NameUtil.shortNameFromLongName(myCell.getClass().getName());
       if (myCell instanceof EditorCell_Label) {
         String text = ((EditorCell_Label) myCell).getText();
         if (text == null || text.length() == 0) {
           text = ((EditorCell_Label) myCell).getNullText();
         }
-        result += " <b>text</b> = <i>\"" + TreeTextUtil.toHtml(text) + "\"</i>";
+        result += " text = \"" + TreeTextUtil.toHtml(text) + "\"";
       }
       if (myCell.isErrorState() ) {
-        result += " <b>(error state)</b>";
+        result += " (error state)";
       }
       return result;
     }
