@@ -273,15 +273,12 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1143459591345">
-            <node role="expression" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1143459593613">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.ClassifierClassExpression" id="1143459597366">
-                <link role="classifier" extResolveInfo="3.[Classifier]Expression" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.InstanceOfExpression" id="1143461148151">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1143461179963">
+                <link role="variableDeclaration" targetNodeId="1143459650447" />
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1143459708537">
-                <link role="baseMethodDeclaration" extResolveInfo="6.method ([Classifier]Object).([InstanceMethodDeclaration]getClass() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Class, &lt;jetbrains.mps.baseLanguage.types.classifier [Object]&gt;]))" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1143459677489">
-                  <link role="variableDeclaration" targetNodeId="1143459650447" />
-                </node>
+              <node role="classType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1143461177275">
+                <link role="classifier" extResolveInfo="3.[Classifier]Expression" />
               </node>
             </node>
           </node>
@@ -397,8 +394,8 @@
               <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1143460269816">
                 <link role="variableDeclaration" targetNodeId="1143460146099" />
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1143460286742">
-                <link role="variableDeclaration" targetNodeId="1143460125809" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1143461674972">
+                <link role="variableDeclaration" targetNodeId="1143460181642" />
               </node>
             </node>
           </node>
