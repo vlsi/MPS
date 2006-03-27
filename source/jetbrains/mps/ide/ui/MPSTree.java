@@ -472,7 +472,15 @@ public abstract class MPSTree extends JTree {
 
   private static class MPSTreeCellRenderer extends DefaultTreeCellRenderer {
     public Component getTreeCellRendererComponent(JTree tree, Object value, boolean sel, boolean expanded, boolean leaf, int row, boolean hasFocus) {
-      super.getTreeCellRendererComponent(tree, value, sel, expanded, leaf, row, hasFocus);
+      String text = value.toString();
+      if (value instanceof MPSTreeNode) {
+        text = ((MPSTreeNode) value).toString();
+      }
+      if (text.startsWith("<html>")) {
+        text = text.substring("<html>".length());
+      }
+      
+      super.getTreeCellRendererComponent(tree, text, sel, expanded, leaf, row, hasFocus);
       if (value instanceof MPSTreeNode) {
         MPSTreeNode node = (MPSTreeNode) value;
         setIcon(node.getIcon(expanded));
