@@ -7,6 +7,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.WindowsUtil;
 
 import javax.swing.*;
+import javax.swing.event.ListDataListener;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
@@ -391,14 +392,24 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
       Point newLocation = location;
 
-      DefaultListModel model = (DefaultListModel) myList.getModel();
       int oldIndex = getSelectionIndex();
 
-      model.removeAllElements();
+      final String[] strings = getStrings();
+      myList.setModel(new ListModel() {
+        public int getSize() {
+          return strings.length;
+        }
 
-      for (String value : getStrings()) {
-        model.addElement(value);
-      }
+        public Object getElementAt(int index) {
+          return strings[index];
+        }
+
+        public void addListDataListener(ListDataListener l) {
+        }
+
+        public void removeListDataListener(ListDataListener l) {
+        }
+      });
 
       setSelectionIndex(oldIndex);
       myList.ensureIndexIsVisible(getSelectionIndex());
