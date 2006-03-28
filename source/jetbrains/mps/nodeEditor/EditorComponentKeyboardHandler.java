@@ -35,19 +35,25 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     if (selectedCell != null) {
       List<EditorCellKeyMapAction> actions = EditorUtil.getKeyMapActionsForEvent(selectedCell, keyEvent, editorContext);
       if (actions != null) {
-        if (actions.size() == 1) {
-          if (actions.get(0).canExecute(keyEvent, editorContext)) {
-            actions.get(0).execute(keyEvent, editorContext);
-            return true;
+        // filter actions
+        Iterator<EditorCellKeyMapAction> iterator = actions.iterator();
+        while (iterator.hasNext()) {
+          EditorCellKeyMapAction action = iterator.next();
+          if (!action.canExecute(keyEvent, editorContext)) {
+            iterator.remove();
           }
-        } else {
+        }
+
+        if (actions.size() == 1) {
+          actions.get(0).execute(keyEvent, editorContext);
+          return true;
+        } else if (actions.size() > 1) {
           // show menu
           EditorUtil.showActionsMenu(actions, keyEvent, editorContext, selectedCell);
           return true;
         }
       }
     }
-
 
     String actionType = editor.getActionType(keyEvent, editorContext);
 

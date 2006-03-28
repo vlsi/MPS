@@ -10,6 +10,7 @@ public abstract class EditorCellKeyMapAction {
   public static final int CARET_AT_ANY_POSITION = 0;
   public static final int CARET_AT_FIRST_POSITION = 1;
   public static final int CARET_AT_LAST_POSITION = 2;
+  public static final int CARET_AT_INTERMEDIATE_POSITION = 3;
 
   private int myCaretPolicy;
 
