@@ -24,11 +24,14 @@ public class TypeChecker {
 
   public static final Object TYPE_OF_TERM = new Object();
 
+  private static List<Rule> ourRules = new ArrayList<Rule>();
+
   public static void clearForTypesModel(SModel typesModel) {
     ContextsManager.getInstance().clear();
     EquationManager.getInstance().clear();
     TypeVariablesManager.getInstance().clearVariables();
     Interpretator.clearForTypesModel(typesModel);
+    ourRules.clear();
   }
 
   public static void checkTypes(SNode root, SModel typesModel) {
@@ -45,25 +48,13 @@ public class TypeChecker {
  //     EquationManager.getInstance().registerNewEquationSet(equationSet.getName());
     }
 
-    List<Rule> rules = new ArrayList<Rule>();
+    // load rules
+    ourRules = new ArrayList<Rule>();
     for (Rule rule : typesModel.getRoots(Rule.class)) {
-      rules.add(rule);
+      ourRules.add(rule);
     }
 
-    // bfs from root
-    List<SNode> frontier = new ArrayList<SNode>();
-    List<SNode> newFrontier = new ArrayList<SNode>();
-    frontier.add(root);
-    while (!(frontier.isEmpty())) {
-      for (SNode node : frontier) {
-        newFrontier.addAll(node.getChildren());
-        for (Rule rule : rules) {
-          Interpretator.interpretate(node, rule);
-        }
-      }
-      frontier = newFrontier;
-      newFrontier = new ArrayList<SNode>();
-    }
+    doCheckTypes(root);
 
     // main context
     Set<Set<Pair<SNode, IType>>> allContexts = ContextsManager.getInstance().getAllContexts();
@@ -78,6 +69,22 @@ public class TypeChecker {
 
   }
 
+  public static void doCheckTypes(SNode root) {
+    // bfs from root
+    List<SNode> frontier = new ArrayList<SNode>();
+    List<SNode> newFrontier = new ArrayList<SNode>();
+    frontier.add(root);
+    while (!(frontier.isEmpty())) {
+      for (SNode node : frontier) {
+        newFrontier.addAll(node.getChildren());
+        for (Rule rule : ourRules) {
+          Interpretator.interpretate(node, rule);
+        }
+      }
+      frontier = newFrontier;
+      newFrontier = new ArrayList<SNode>();
+    }
+  }
 
 
 }
