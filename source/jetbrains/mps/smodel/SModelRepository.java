@@ -21,6 +21,7 @@ public class SModelRepository extends SModelAdapter {
   private Map<SModelDescriptor, Long> myChangedModels = new HashMap<SModelDescriptor, Long>();
   private Map<SModelUID, SModelDescriptor> myUIDToModelDescriptorMap = new HashMap<SModelUID, SModelDescriptor>();
   private Map<SModelDescriptor, HashSet<ModelOwner>> myModelToOwnerMap = new HashMap<SModelDescriptor, HashSet<ModelOwner>>();
+  private Set<SModelDescriptor> myModelsWithNoOwners = new HashSet<SModelDescriptor>();
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
 
   public SModelRepository() {
@@ -93,6 +94,7 @@ public class SModelRepository extends SModelAdapter {
       myModelToOwnerMap.put(modelDescriptor, owners);
       myUIDToModelDescriptorMap.put(modelDescriptor.getModelUID(), modelDescriptor);
     }
+    myModelsWithNoOwners.remove(modelDescriptor);
     owners.add(owner);
     fireRepositoryChanged();
   }
@@ -112,6 +114,7 @@ public class SModelRepository extends SModelAdapter {
       owners = new HashSet<ModelOwner>();
       myModelToOwnerMap.put(modelDescriptor, owners);
     }
+    myModelsWithNoOwners.remove(modelDescriptor);
     owners.add(owner);
     modelDescriptor.addSModelListener(this);
     fireRepositoryChanged();
@@ -121,6 +124,10 @@ public class SModelRepository extends SModelAdapter {
     HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(modelDescriptor);
     if (modelOwners != null && modelOwners.contains(owner)) {
       modelOwners.remove(owner);
+      if (modelOwners.isEmpty()) {
+        myModelsWithNoOwners.add(modelDescriptor);
+      }
+
       // DO NOT REMOVE MODEL FROM REPOSITORY EVEN IF NO MORE OWNERS
       // THE REPOSITORY IS CLEANED UP AFTER COMMAND IS COMPLETED
     }
@@ -134,6 +141,10 @@ public class SModelRepository extends SModelAdapter {
       HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(modelDescriptor);
       if (modelOwners != null) {
         modelOwners.remove(owner);
+
+        if (modelOwners.isEmpty()) {
+          myModelsWithNoOwners.add(modelDescriptor);
+        }
         // DO NOT REMOVE MODEL FROM REPOSITORY EVEN IF NO MORE OWNERS
         // THE REPOSITORY IS CLEANED UP AFTER COMMAND IS COMPLETED
       }
@@ -147,13 +158,14 @@ public class SModelRepository extends SModelAdapter {
     myUIDToModelDescriptorMap.remove(modelDescriptor.getModelUID());
     myChangedModels.remove(modelDescriptor);
     myModelToOwnerMap.remove(modelDescriptor);
+    myModelsWithNoOwners.remove(modelDescriptor);
 //    modelDescriptor.removeSModelListener(this);
     modelDescriptor.dispose();
   }
 
   public void removeUnusedDescriptors() {
     List<SModelDescriptor> descriptorsToRemove = new LinkedList<SModelDescriptor>();
-    for (SModelDescriptor descriptor : myModelDescriptors) {
+    for (SModelDescriptor descriptor : myModelsWithNoOwners) {
       HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(descriptor);
       if (modelOwners == null || modelOwners.isEmpty()) {
         descriptorsToRemove.add(descriptor);
