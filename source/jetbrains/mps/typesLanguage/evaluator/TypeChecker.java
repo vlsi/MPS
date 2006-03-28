@@ -3,6 +3,7 @@ package jetbrains.mps.typesLanguage.evaluator;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.typesLanguage.ContextDeclaration;
 import jetbrains.mps.typesLanguage.EquationSetDeclaration;
 import jetbrains.mps.typesLanguage.Rule;
@@ -25,6 +26,7 @@ public class TypeChecker {
   public static final Object TYPE_OF_TERM = new Object();
 
   private static List<Rule> ourRules = new ArrayList<Rule>();
+  private static Set<SNode> ourCheckedNodes = new HashSet<SNode>();
 
   public static void clearForTypesModel(SModel typesModel) {
     ContextsManager.getInstance().clear();
@@ -32,6 +34,7 @@ public class TypeChecker {
     TypeVariablesManager.getInstance().clearVariables();
     Interpretator.clearForTypesModel(typesModel);
     ourRules.clear();
+    ourCheckedNodes.clear();
   }
 
   public static void checkTypes(SNode root, SModel typesModel) {
@@ -64,18 +67,19 @@ public class TypeChecker {
     // setting types to nodes
     for (Pair<SNode, IType> contextEntry : mainContext) {
       SNode term = contextEntry.o1;
-      term.putUserObject(TYPE_OF_TERM, contextEntry.o2); 
+      term.putUserObject(TYPE_OF_TERM, contextEntry.o2);
     }
 
   }
 
-  public static void doCheckTypes(SNode root) {
+  private static void doCheckTypes(SNode root) {
     // bfs from root
     List<SNode> frontier = new ArrayList<SNode>();
     List<SNode> newFrontier = new ArrayList<SNode>();
     frontier.add(root);
     while (!(frontier.isEmpty())) {
       for (SNode node : frontier) {
+        if (ourCheckedNodes.contains(node)) continue;
         newFrontier.addAll(node.getChildren());
         for (Rule rule : ourRules) {
           Interpretator.interpretate(node, rule);
@@ -84,6 +88,11 @@ public class TypeChecker {
       frontier = newFrontier;
       newFrontier = new ArrayList<SNode>();
     }
+  }
+
+  public static void checkTypesForNode(SNode node) {
+    doCheckTypes(node);
+    ourCheckedNodes.add(node); // for not to check it again
   }
 
 
