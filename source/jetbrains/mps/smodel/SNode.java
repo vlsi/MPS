@@ -44,8 +44,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   private HashMap<String, String> myProperties = new HashMap<String, String>();
 
   private SReference myAttribute;
-  private HashMap<String, SReference> myPropertyAttributes = new HashMap<String, SReference>();
-  private HashMap<String, SReference> myLinkAttributes = new HashMap<String, SReference>();
 
   private boolean myRegisteredInModelFlag;
   private SModel myModel;
@@ -123,9 +121,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     Set<String> result = new HashSet<String>();
     for (SReference ref : getReferences()) {
       result.add(ref.getRole());
-    }
-    for (String role : myLinkAttributes.keySet()) {
-      result.add(role);
     }
     result.addAll(getLinkNamesFromAttributes());
     return result;
@@ -264,7 +259,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public Set<String> getPropertyNames() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
     Set<String> result = new HashSet<String>(myProperties.keySet());
-    result.addAll(myPropertyAttributes.keySet());
     result.addAll(getPropertyNamesFromAttributes());
     return result;
   }
