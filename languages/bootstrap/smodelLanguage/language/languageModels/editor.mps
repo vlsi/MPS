@@ -598,5 +598,21 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1143512939910">
+    <link role="conceptDeclaration" targetNodeId="1.1143511969223" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1143512939911">
+      <property name="editable" value="true" />
+      <property name="text" value="prev-sibling" />
+      <property name="drawBorder" value="false" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1143512964459">
+    <link role="conceptDeclaration" targetNodeId="1.1143512015885" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1143512964460">
+      <property name="editable" value="true" />
+      <property name="text" value="next-sibling" />
+      <property name="drawBorder" value="false" />
+    </node>
+  </node>
 </model>
 

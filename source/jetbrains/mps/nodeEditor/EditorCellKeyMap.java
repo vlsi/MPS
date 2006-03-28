@@ -152,14 +152,21 @@ public class EditorCellKeyMap {
       if (action != null) {
         if (result == null) result = new LinkedList<EditorCellKeyMapAction>();
         LOG.debug("keymap action " + (result.isEmpty() ? "" : "[" + result.size() + "]") + " found for key: " + actionKey);
-        result.add(action);
+        if (!result.contains(action)) {
+          result.add(action);
+        }
       }
 
       List<EditorCellKeyMapAction> extraActions = lookupDuplicatedActions(actionKey, keyMap.myDuplicatedActionList);
       if (extraActions.size() > 0) {
         LOG.debug("keymap action found [" + extraActions.size() + "] extra actions for key: " + actionKey);
         if (result == null) result = new LinkedList<EditorCellKeyMapAction>();
-        result.addAll(extraActions);
+        // only add actions which are different
+        for (EditorCellKeyMapAction extraAction : extraActions) {
+          if (!result.contains(extraAction)) {
+            result.add(extraAction);
+          }
+        }
       }
     }
 
@@ -227,26 +234,39 @@ public class EditorCellKeyMap {
       keyCodes.add(keyCodeName);
     }
 
-    char keyChar = event.getKeyChar();
-    if (keyChar != KeyEvent.CHAR_UNDEFINED) {
-      keyCodes.add("" + keyChar);
-
-      if (!Character.isSpaceChar(keyChar)) {
-        keyCodes.add(KEY_CODE_CHAR);
-      }
-
-      if (Character.isDigit(keyChar)) {
-        keyCodes.add(KEY_CODE_DIGIT);
-        keyCodes.add(KEY_CODE_LETTER_OR_DIGIT);
-      } else if (Character.isLetter(keyChar)) {
-        keyCodes.add(KEY_CODE_LETTER);
-        keyCodes.add(KEY_CODE_LETTER_OR_DIGIT);
-      } else if (Character.isLetterOrDigit(keyChar)) {
-        keyCodes.add(KEY_CODE_LETTER_OR_DIGIT);
-      } else if (Character.isSpaceChar(keyChar) || Character.isWhitespace(keyChar)) {
-        keyCodes.add(KEY_CODE_SPACE);
-      }
+    // todo: the "keychar" testing in the "key pressed" event is not very reliable
+    // todo: the "key typed" event should be handled instead
+    if (event.isControlDown() || event.isAltDown()) {
+      // ignore keychar
+      return keyCodes;
     }
+
+    char keyChar = event.getKeyChar();
+    if (keyChar == KeyEvent.CHAR_UNDEFINED) {
+      return keyCodes;
+    }
+
+    keyCodes.add("" + keyChar);
+
+    if (!Character.isSpaceChar(keyChar) && !Character.isWhitespace(keyChar) &&
+            keyChar != KeyEvent.VK_DELETE &&
+            keyChar != KeyEvent.VK_ESCAPE &&
+            keyChar != KeyEvent.VK_BACK_SPACE) {
+      keyCodes.add(KEY_CODE_CHAR);
+    }
+
+    if (Character.isDigit(keyChar)) {
+      keyCodes.add(KEY_CODE_DIGIT);
+      keyCodes.add(KEY_CODE_LETTER_OR_DIGIT);
+    } else if (Character.isLetter(keyChar)) {
+      keyCodes.add(KEY_CODE_LETTER);
+      keyCodes.add(KEY_CODE_LETTER_OR_DIGIT);
+    } else if (Character.isLetterOrDigit(keyChar)) {
+      keyCodes.add(KEY_CODE_LETTER_OR_DIGIT);
+    } else if (Character.isSpaceChar(keyChar) || Character.isWhitespace(keyChar)) {
+      keyCodes.add(KEY_CODE_SPACE);
+    }
+
     return keyCodes;
   }
 
