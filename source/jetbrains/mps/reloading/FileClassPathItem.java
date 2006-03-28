@@ -22,18 +22,21 @@ public class FileClassPathItem implements IClassPathItem {
 
   public byte[] getClass(String name) {
     String path = myClassPath + File.separatorChar + name.replace('.', File.separatorChar) + ".class";
+    File file = new File(path);
     try {
-      List<Byte> list = new ArrayList<Byte>();
-      FileInputStream inp = new FileInputStream(path);
+      byte[] result = new byte[(int) file.length()];
+      int current = 0;
+      FileInputStream inp = new FileInputStream(file);
       while (true) {
         int b = inp.read();
         if (b == -1) break;
-        list.add((byte) b);
+        result[current++] = (byte) b;
       }
-      byte[] result = new byte[list.size()];
-      for (int i = 0; i < list.size(); i++) {
-        result[i] = list.get(i);
+
+      if (current != result.length) {
+        throw new RuntimeException("This can't happen");
       }
+      
       inp.close();
       return result;
     } catch (IOException e) {

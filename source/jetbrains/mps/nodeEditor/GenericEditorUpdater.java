@@ -25,7 +25,9 @@ public abstract class GenericEditorUpdater {
         CommandProcessor commandProcessor = CommandProcessor.instance();
         try {
           while (true) {
-            while (commandProcessor.isInsideCommand()) Thread.sleep(222);
+            while (commandProcessor.isInsideCommand()) {
+              Thread.sleep(200);
+            }
             doUpdate();
             Thread.sleep(300);
           }
