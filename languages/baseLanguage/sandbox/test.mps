@@ -856,6 +856,19 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1143601191740">
+          <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1143601193289">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1143601226106">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1143601229921" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1143601195073">
+                <property name="value" value="1" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1143601191741">
+              <property name="value" value="1" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
