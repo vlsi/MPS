@@ -2172,16 +2172,18 @@
           <property name="selectable" value="true" />
         </node>
       </node>
-      <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1140569196763">
-        <property name="drawBorder" value="false" />
-        <property name="noTargetText" value="&lt;no classifier&gt;" />
-        <link role="relationDeclaration" targetNodeId="1.1107535924139" />
-        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1140569196764">
-          <link role="conceptDeclaration" targetNodeId="1.1107461130800" />
-          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1140569196765">
-            <property name="readOnly" value="true" />
-            <property name="noTargetText" value="&lt;no name&gt;" />
-            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+      <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1143712151997">
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1143712152507">
+          <property name="drawBorder" value="false" />
+          <property name="noTargetText" value="&lt;no classifier&gt;" />
+          <link role="relationDeclaration" targetNodeId="1.1107535924139" />
+          <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1143712152508">
+            <link role="conceptDeclaration" targetNodeId="1.1107461130800" />
+            <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1143712152525">
+              <property name="readOnly" value="true" />
+              <property name="noTargetText" value="&lt;no name&gt;" />
+              <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+            </node>
           </node>
         </node>
       </node>
