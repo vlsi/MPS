@@ -127,7 +127,10 @@ public class CollectionUtil {
   
   public static<Node extends SNode> Node getByName(Class<Node> cls, Iterable<? extends SNode> collection, String name) {
     for (SNode node : collection) {
-      if (name.equals(node.getName()) && cls.isInstance(node)) return (Node) node;
+      if(cls.isInstance(node)) {
+        if (name.equals(node.getName()))
+          return (Node) node;
+      }
     }
     return null;
   }
