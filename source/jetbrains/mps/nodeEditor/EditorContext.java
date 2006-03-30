@@ -179,7 +179,7 @@ public class EditorContext {
         EditorCell rootCell = nodeEditor.getRootCell();
         if (rootCell instanceof EditorCell_Collection) fillBracesInfo((EditorCell_Collection) rootCell);
       }
-    }
+    }          
 
     private void fillBracesInfo(EditorCell_Collection cell) {
       if (cell.areBracesEnabled()) collectionsWithEnabledBraces.add(cell.getCellInfo());
