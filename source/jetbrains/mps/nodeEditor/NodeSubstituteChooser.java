@@ -33,10 +33,9 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   private AbstractEditorComponent myEditorComponent;
   private NodeSubstitutePatternEditor myPatternEditor;
   private INodeSubstituteInfo myNodeSubstituteInfo;
-  private List<INodeSubstituteItem> myMenuSubstituteEntries;
+  private List<INodeSubstituteItem> mySubstituteItems = new ArrayList<INodeSubstituteItem>();
   private boolean myMenuEmpty;
-  private String[] myStrings = new String[0];
-  private String[] myMatchingStrings;
+  private int myIndent = 2;
 
   public NodeSubstituteChooser(AbstractEditorComponent editorComponent) {
     myEditorComponent = editorComponent;
@@ -133,10 +132,10 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     } catch (Exception e) {
       LOG.error(e);
     }
-    myMenuSubstituteEntries = new LinkedList<INodeSubstituteItem>(matchingActions);
-    if (myMenuSubstituteEntries.size() == 0) {
+    mySubstituteItems = matchingActions;
+    if (mySubstituteItems.size() == 0) {
       myMenuEmpty = true;
-      myMenuSubstituteEntries.add(new AbstractNodeSubstituteItem() {
+      mySubstituteItems.add(new AbstractNodeSubstituteItem() {
         public String getMatchingText(String pattern) {
           return "No variants for \"" + getPatternEditor().getPattern() + "\"";
         }
@@ -147,47 +146,34 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       });
     }
 
-    // cache strings
-    myStrings = new String[myMenuSubstituteEntries.size()];
-    myMatchingStrings = new String[myMenuSubstituteEntries.size()];
-    String[] descriptionStrings = new String[myMenuSubstituteEntries.size()];
-    int descriptionIndent = 2;
-    for (int i = 0; i < myMenuSubstituteEntries.size(); i++) {
-      INodeSubstituteItem entry = myMenuSubstituteEntries.get(i);
-      try {
-        myMatchingStrings[i] = entry.getMatchingText(null);
-      } catch (Exception e) {
-        LOG.error(e);
-      }
-      if (myMatchingStrings[i] != null) {
-        descriptionIndent = Math.max(descriptionIndent, myMatchingStrings[i].length() + 2);
-      }
-      descriptionStrings[i] = entry.getDescriptionText(null);
-    }
-
-    for (int i = 0; i < myMenuSubstituteEntries.size(); i++) {
-      StringBuffer sb = new StringBuffer();
-      int indentSize = descriptionIndent;
-      if (myMatchingStrings[i] != null) {
-        sb.append(myMatchingStrings[i]);
-        indentSize = descriptionIndent - myMatchingStrings[i].length();
-      }
-      if (descriptionStrings[i] != null) {
-        char[] indent = new char[indentSize];
-        Arrays.fill(indent, ' ');
-        sb.append(indent);
-        sb.append(descriptionStrings[i]);
-      }
-      myStrings[i] = sb.toString();
+    myIndent = 2;
+    for (INodeSubstituteItem item : mySubstituteItems) {
+      myIndent = Math.max(getIndent(item), myIndent);
     }
   }
 
-  protected String[] getStrings() {
-    return myStrings;
+  private String getMatchingText(INodeSubstituteItem item) {
+    return item.getMatchingText(null);
   }
 
-  protected String[] getMatchingStrings() {
-    return myMatchingStrings;
+  private String getPresentation(INodeSubstituteItem item) {
+    StringBuilder result = new StringBuilder();
+
+    String text = item.getMatchingText(null);
+    int indentSize = Math.max(0, myIndent - text.length());
+
+    char[] indentChars = new char[indentSize];
+    Arrays.fill(indentChars, ' ');
+    result.append(text);
+    result.append(indentChars);
+    result.append(item.getDescriptionText(null));
+
+
+    return result.toString();
+  }
+
+  private int getIndent(INodeSubstituteItem item) {
+    return item.getDescriptionText(null).length() + 2;
   }
 
   public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
@@ -220,7 +206,14 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
   private boolean doSubstitute() {
     String pattern = getPatternEditor().getPattern();
-    List<INodeSubstituteItem> matchingActions = myNodeSubstituteInfo.getMatchingItems(pattern, false);
+
+    List<INodeSubstituteItem> matchingActions = new ArrayList<INodeSubstituteItem>();
+    for (INodeSubstituteItem item : mySubstituteItems) {
+      if (item.canSubstitute(pattern)) {
+        matchingActions.add(item);
+      }
+    }
+
     if (matchingActions.size() == 1) {
       setVisible(false);
       CommandUtil.substituteNode(matchingActions.get(0), pattern, myNodeSubstituteInfo, myEditorComponent.getEditorContext());
@@ -229,44 +222,41 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   }
 
   private boolean menu_processKeyPressed(KeyEvent keyEvent) {
-    String[] strings = getStrings();
-    if (strings.length > 0) {
-      if (keyEvent.getKeyCode() == KeyEvent.VK_UP) {
-        getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() - 1);
-        repaintPopupMenu();
-        updatePatternEditor();
-        return true;
-      }
-      if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN) {
-        getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() + 1);
-        repaintPopupMenu();
-        updatePatternEditor();
-        return true;
-      }
-      if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_UP) {
-        getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() - MAX_MENU_LEN);
-        repaintPopupMenu();
-        updatePatternEditor();
-        return true;
-      }
-      if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_DOWN) {
-        getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() + MAX_MENU_LEN);
-        repaintPopupMenu();
-        updatePatternEditor();
-        return true;
-      }
-      if (keyEvent.getKeyCode() == KeyEvent.VK_HOME) {
-        getPopupWindow().setSelectionIndex(0);
-        repaintPopupMenu();
-        updatePatternEditor();
-        return true;
-      }
-      if (keyEvent.getKeyCode() == KeyEvent.VK_END) {
-        getPopupWindow().setSelectionIndex(strings.length - 1);
-        repaintPopupMenu();
-        updatePatternEditor();
-        return true;
-      }
+    if (keyEvent.getKeyCode() == KeyEvent.VK_UP) {
+      getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() - 1);
+      repaintPopupMenu();
+      updatePatternEditor();
+      return true;
+    }
+    if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN) {
+      getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() + 1);
+      repaintPopupMenu();
+      updatePatternEditor();
+      return true;
+    }
+    if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_UP) {
+      getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() - MAX_MENU_LEN);
+      repaintPopupMenu();
+      updatePatternEditor();
+      return true;
+    }
+    if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_DOWN) {
+      getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() + MAX_MENU_LEN);
+      repaintPopupMenu();
+      updatePatternEditor();
+      return true;
+    }
+    if (keyEvent.getKeyCode() == KeyEvent.VK_HOME) {
+      getPopupWindow().setSelectionIndex(0);
+      repaintPopupMenu();
+      updatePatternEditor();
+      return true;
+    }
+    if (keyEvent.getKeyCode() == KeyEvent.VK_END) {
+      getPopupWindow().setSelectionIndex(mySubstituteItems.size() - 1);
+      repaintPopupMenu();
+      updatePatternEditor();
+      return true;
     }
 
     if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER || (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown())) {
@@ -275,12 +265,12 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       }
       return true;
     }
-    return false;
+    return true;
   }
 
   private void doSubstituteSelection() {
     String pattern = getPatternEditor().getPattern();
-    INodeSubstituteItem entry = myMenuSubstituteEntries.get(myPopupWindow.getSelectionIndex());
+    INodeSubstituteItem entry = mySubstituteItems.get(myPopupWindow.getSelectionIndex());
     setVisible(false);
     CommandUtil.substituteNode(entry, pattern, myNodeSubstituteInfo, myEditorComponent.getEditorContext());
   }
@@ -311,7 +301,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
     private JList myList = new JList(new DefaultListModel());
     private PopupWindowPosition myPosition = PopupWindowPosition.BOTTOM;
-    private JScrollPane myScroller = new JScrollPane(myList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);;
+    private JScrollPane myScroller = new JScrollPane(myList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     private EditorCell myRelativeCell;
 
     public PopupWindow(final Window owner) {
@@ -369,9 +359,8 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     }
 
     public String getSelectedText() {
-      String[] matchingStrings = getMatchingStrings();
-      if (getSelectionIndex() != -1 && matchingStrings[getSelectionIndex()] != null) {
-        return matchingStrings[getSelectionIndex()];
+      if (getSelectionIndex() != -1) {
+        return getMatchingText(mySubstituteItems.get(getSelectionIndex()));
       }
       return "";
     }
@@ -394,14 +383,13 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
       int oldIndex = getSelectionIndex();
 
-      final String[] strings = getStrings();
       myList.setModel(new ListModel() {
         public int getSize() {
-          return strings.length;
+          return mySubstituteItems.size();
         }
 
         public Object getElementAt(int index) {
-          return strings[index];
+          return getPresentation(mySubstituteItems.get(index));
         }
 
         public void addListDataListener(ListDataListener l) {
