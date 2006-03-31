@@ -9,7 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../cyclicInheritance/languages/izyg/source_gen" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="IDEA 4155" />
+    <orderEntry type="jdk" jdkName="IDEA 3461" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPSSupport" />
     <orderEntryProperties />
