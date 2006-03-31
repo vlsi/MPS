@@ -505,10 +505,10 @@ public class TemplateGenUtil {
 
   public static INodeBuilder createDefaultNodeBuilder(SNode sourceNode, SNode templateNode, String mappingName, ITemplateGenerator generator) {
     INodeBuilder builder = loadNodeBuilder(sourceNode, templateNode, mappingName, generator);
-    if (builder != null) {
-      return builder;
+    if (builder == null) {
+      builder = new DefaultNodeBuilder(sourceNode, templateNode, mappingName, generator);
     }
-    return new DefaultNodeBuilder(sourceNode, templateNode, mappingName, generator);
+    return builder;
   }
 
   private static INodeBuilder createNodeBuilderForSwitch(SNode sourceNode, TemplateSwitch templateSwitch, String mappingName, ITemplateGenerator generator) {

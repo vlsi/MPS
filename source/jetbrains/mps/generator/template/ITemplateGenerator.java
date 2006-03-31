@@ -75,4 +75,7 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
   INodeBuilder createCopyingNodeBuilder(SNode sourceNode, String roleInParent);
 
   INodeBuilder findNodeBuilderWithClassConceptTemplateForSource(SNode source);
+
+  void registerBuilder(INodeBuilder builder);
+
 }
