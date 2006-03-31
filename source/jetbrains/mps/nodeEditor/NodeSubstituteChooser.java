@@ -166,14 +166,17 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     Arrays.fill(indentChars, ' ');
     result.append(text);
     result.append(indentChars);
-    result.append(item.getDescriptionText(null));
-
-
+    String descriptionText = item.getDescriptionText(null);
+    if(descriptionText != null) {
+      result.append(descriptionText);
+    }
     return result.toString();
   }
 
   private int getIndent(INodeSubstituteItem item) {
-    return item.getDescriptionText(null).length() + 2;
+    String descriptionText = item.getDescriptionText(null);
+    if(descriptionText == null) return 2;
+    return descriptionText.length() + 2;
   }
 
   public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
