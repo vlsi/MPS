@@ -373,12 +373,12 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     });
   }
 
-  public void openMethod(final String namespace, final String name) {
+  public void openQueryMethod(final String namespace, final String name) {
     if (!isQueriesClassExist(namespace)) return;
     executeWriteAction(new Runnable() {
       public void run() {
-        PsiClass aspects = getQueriesClass(namespace);
-        PsiMethod[] methods = aspects.getAllMethods();
+        PsiClass queries = getQueriesClass(namespace);
+        PsiMethod[] methods = queries.getAllMethods();
         for (int i = 0; i < methods.length; i++) {
           PsiMethod method = methods[i];
           if (method.getName().equals(name)) {
@@ -386,6 +386,64 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
             activateProjectWindow();
             return;
           }
+        }
+      }
+    });
+  }
+
+  public void openMethod(final String className, final String name, final int parameterCount) {
+    if (findClass(className) == null) return;
+    executeWriteAction(new Runnable() {
+      public void run() {
+        PsiClass cls = findClass(className);
+        PsiMethod[] methods = cls.getAllMethods();
+        for (int i = 0; i < methods.length; i++) {
+          PsiMethod method = methods[i];
+          if (method.getName().equals(name)) {
+            if (parameterCount != -1 && method.getParameterList().getParameters().length != parameterCount) {
+              continue;
+            }
+            method.navigate(true);
+            activateProjectWindow();
+            return;
+          }
+        }
+      }
+    });
+  }
+
+  public void openField(final String className, final String name) {
+    if (findClass(className) == null) return;
+    executeWriteAction(new Runnable() {
+      public void run() {
+        PsiClass cls = findClass(className);
+        PsiField[] fields = cls.getAllFields();
+        for (int i = 0; i < fields.length; i++) {
+          PsiField field = fields[i];
+          if (field.getName().equals(name)) {
+            field.navigate(true);
+            activateProjectWindow();
+            return;
+          }
+        }
+      }
+    });
+  }
+
+  public void openConstructor(final String className, final int parameterCount) throws RemoteException {
+    if (findClass(className) == null) return;
+    executeWriteAction(new Runnable() {
+      public void run() {
+        PsiClass cls = findClass(className);
+        PsiMethod[] methods = cls.getConstructors();
+        for (int i = 0; i < methods.length; i++) {
+          PsiMethod method = methods[i];
+          if (parameterCount != -1 && method.getParameterList().getParameters().length != parameterCount) {
+            continue;
+          }
+          method.navigate(true);
+          activateProjectWindow();
+          return;
         }
       }
     });
@@ -497,14 +555,18 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   }
 
   private PsiClass getQueriesClass(final String namespace) {
-    final PsiClass[] aspects = new PsiClass[1];
+    return findClass(namespace + ".Queries");
+  }
+
+  private PsiClass findClass(final String className) {
+    final PsiClass[] cls = new PsiClass[1];
     ApplicationManager.getApplication().runReadAction(new Runnable() {
       public void run() {
         final PsiManager psiManager = PsiManager.getInstance(myProject);
-        aspects[0] = psiManager.findClass(namespace + ".Queries", GlobalSearchScope.projectScope(myProject));
+        cls[0] = psiManager.findClass(className, GlobalSearchScope.allScope(myProject));
       }
     });
-    return aspects[0];
+    return cls[0];
   }
 
   public boolean isQueriesClassExist(final String namespace) {

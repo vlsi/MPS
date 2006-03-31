@@ -5,7 +5,6 @@ import jetbrains.mps.baseLanguage.StaticMethodDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
@@ -98,7 +97,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
           public void execute(KeyEvent keyEvent, EditorContext context) {
             try {
               IProjectHandler handler = context.getOperationContext().getProject().getProjectHandler();
-              handler.openMethod(getNamespace(), getQueryMethodPrefix() + getQueryMethodId());
+              handler.openQueryMethod(getNamespace(), getQueryMethodPrefix() + getQueryMethodId());
             } catch (IOException e) {
               e.printStackTrace();
             }
