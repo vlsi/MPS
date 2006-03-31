@@ -77,6 +77,4 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
   INodeBuilder findNodeBuilderWithClassConceptTemplateForSource(SNode source);
 
   void notifyBuilderCreated(INodeBuilder builder);
-
-  void notifyTargetNodeCreated(INodeBuilder builder);
 }
