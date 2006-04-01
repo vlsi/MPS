@@ -1187,6 +1187,7 @@
       <property name="drawBorder" value="false" />
       <property name="name" value="expressionBox" />
       <property name="vertical" value="false" />
+      <link role="keyMap" targetNodeId="1081427357000" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081257097746">
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />

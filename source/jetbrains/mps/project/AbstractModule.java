@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.*;
 
 /**
