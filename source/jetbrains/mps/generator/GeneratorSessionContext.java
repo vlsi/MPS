@@ -30,14 +30,17 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
   private TransientModule myTransientModule;
   private Language myTargetLanguage;
 
-  public GeneratorSessionContext(Language targetLanguage, List<Generator> generatorModules, IOperationContext invocationContext) {
-    myGeneratorModules = generatorModules;
+  public GeneratorSessionContext(Language targetLanguage, SModel sourceModel, IOperationContext invocationContext) {
     myTargetLanguage = targetLanguage;
     myInvocationContext = invocationContext;
+    myGeneratorModules = getGeneratorModules(sourceModel);
     myTransientModule = new TransientModule(invocationContext.getModule());
+    initTemplateModels();
+  }
 
+  private void initTemplateModels() {
     myTemplateModels = new LinkedList<SModelDescriptor>();
-    for (Generator generatorModule : generatorModules) {
+    for (Generator generatorModule : myGeneratorModules) {
       List<SModelDescriptor> ownModelDescriptors = generatorModule.getOwnModelDescriptors();
       for (SModelDescriptor modelDescriptor : ownModelDescriptors) {
         if (SModelStereotype.TEMPLATES.equals(modelDescriptor.getStereotype())) {
@@ -81,6 +84,37 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
     return getClass().getName() + "-> " + myTargetLanguage.getNamespace() + "\ninvoked from: " + myInvocationContext;
   }
 
+  public void replaceInputModel(SModelDescriptor inputModel) {
+    myGeneratorModules = getGeneratorModules(inputModel.getSModel());
+    myTransientModule.addGeneratorModules(myGeneratorModules);
+    initTemplateModels();
+  }
+
+  private List<Generator> getGeneratorModules(SModel sourceModel) {
+    // -- create generators list
+    List<Generator> generators = new LinkedList<Generator>();
+    List<Language> sourceLanguages = sourceModel.getLanguages(myInvocationContext.getScope());
+    for (Language sourceLanguage : sourceLanguages) {
+      List<Generator> sourceLanguageGenerators = sourceLanguage.getGenerators();
+      for (Generator sourceLanguageGenerator : sourceLanguageGenerators) {
+        if (myTargetLanguage.getNamespace().equals(sourceLanguageGenerator.getTargetLanguageName())) {
+          generators.add(sourceLanguageGenerator);
+        }
+      }
+    }
+    // the target language may have "reduction" generator
+    List<Generator> reductionGenerators = myTargetLanguage.getGenerators();
+    for (Generator generator : reductionGenerators) {
+      if (myTargetLanguage.getNamespace().equals(generator.getTargetLanguageName())) {
+        if (!generators.contains(generator)) {
+          generators.add(generator);
+        }
+      }
+    }
+    return generators;
+  }
+
+
 
   private class TransientModule extends AbstractModule {
     private List<IModule> myDependOnModules = new LinkedList<IModule>();
@@ -92,6 +126,14 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
       myInvocationModule = invocationModule;
       myDependOnModules.addAll(GeneratorSessionContext.this.getGeneratorModules());
       myDependOnModules.add(invocationModule);
+    }
+
+    public void addGeneratorModules(List<Generator> generatorModules) {
+      for (IModule module : generatorModules) {
+        if(!myDependOnModules.contains(module)) {
+          myDependOnModules.add(module);
+        }
+      }
     }
 
     protected List<ModelRoot> getModelRootsImpl() {

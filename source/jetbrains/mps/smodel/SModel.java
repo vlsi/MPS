@@ -672,6 +672,32 @@ public class SModel implements Iterable<SNode> {
     return myDisposed;
   }
 
+  public void validateLanguagesAndImports() {
+    Set<String> usedLanguages = new HashSet<String>(myLanguages);
+    Set<SModelUID> importedModels = new HashSet<SModelUID>(getImportedModelUIDs());
+    List<? extends SNode> nodes = SModelUtil.allNodes(this);
+    for (SNode node : nodes) {
+      String languageNamespace = SModelUtil.getLanguageNamespace(node);
+      if (!usedLanguages.contains(languageNamespace)) {
+        usedLanguages.add(languageNamespace);
+        addLanguage(languageNamespace);
+      }
+
+      List<SReference> references = node.getReferences();
+      for (SReference reference : references) {
+        if (reference.isExternal()) {
+          SModelUID targetModelUID = reference.getTargetModelUID();
+          if (!importedModels.contains(targetModelUID)) {
+            addImportedModel(targetModelUID);
+            importedModels.add(targetModelUID);
+          }
+        }
+      }
+    }
+    importedModels.clear();
+  }
+
+
   /*package*/
   static class ImportElement {
     private SModelUID myModelDescriptor;

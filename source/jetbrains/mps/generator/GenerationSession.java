@@ -54,9 +54,9 @@ public class GenerationSession implements ModelOwner {
     addMessage(MessageKind.INFORMATION, "    default generator class: " + (defaultGeneratorClass != null ? defaultGeneratorClass.getName() : "<n/a>"));
 
     // -- create generators list
-    List<Generator> generators = getGeneratorModules(sourceModel);
-    GeneratorSessionContext generatorSessionContext = new GeneratorSessionContext(myTargetLanguage, generators, myInvocationContext);
+    GeneratorSessionContext generatorSessionContext = new GeneratorSessionContext(myTargetLanguage, sourceModel, myInvocationContext);
     setGeneratorSessionContext(generatorSessionContext);
+    List<Generator> generators = generatorSessionContext.getGeneratorModules();
     if (generators.isEmpty()) {
       addProgressMessage(MessageKind.WARNING, "skip model \"" + sourceModel.getUID() + "\" : no generator avalable");
       return new GenerationStatus.OK(null);
@@ -140,7 +140,9 @@ public class GenerationSession implements ModelOwner {
 
     // primary mapping
     if (!generator.doPrimaryMapping(inputModel, currentOutputModel.getSModel())) {
-      return currentOutputModel.getSModel();
+      SModel model = currentOutputModel.getSModel();
+      model.validateLanguagesAndImports();
+      return model;
     }
 
     // secondary mapping
@@ -148,6 +150,8 @@ public class GenerationSession implements ModelOwner {
     while (true) {
       SModelDescriptor currentInputModel = currentOutputModel;
       SModelDescriptor transientModel = createTransientModel(repeatCount, inputModel, generatorContext.getModule());
+      currentInputModel.getSModel().validateLanguagesAndImports();
+      myGeneratorSessionContext.replaceInputModel(currentInputModel);
       if (!generator.doSecondaryMapping(currentInputModel.getSModel(), transientModel.getSModel(), repeatCount)) {
         SModelRepository.getInstance().unRegisterModelDescriptor(transientModel, generatorContext.getModule());
         break;
@@ -185,30 +189,6 @@ public class GenerationSession implements ModelOwner {
       return (Class<? extends IModelGenerator>) Class.forName(generatorClassName, true, ClassLoaderManager.getInstance().getClassLoader());
     }
     return null;
-  }
-
-  private List<Generator> getGeneratorModules(SModel sourceModel) {
-    // -- create generators list
-    List<Generator> generators = new LinkedList<Generator>();
-    List<Language> sourceLanguages = sourceModel.getLanguages(myInvocationContext.getScope());
-    for (Language sourceLanguage : sourceLanguages) {
-      List<Generator> sourceLanguageGenerators = sourceLanguage.getGenerators();
-      for (Generator sourceLanguageGenerator : sourceLanguageGenerators) {
-        if (myTargetLanguage.getNamespace().equals(sourceLanguageGenerator.getTargetLanguageName())) {
-          generators.add(sourceLanguageGenerator);
-        }
-      }
-    }
-    // the target language may have "reduction" generator
-    List<Generator> reductionGenerators = myTargetLanguage.getGenerators();
-    for (Generator generator : reductionGenerators) {
-      if (myTargetLanguage.getNamespace().equals(generator.getTargetLanguageName())) {
-        if (!generators.contains(generator)) {
-          generators.add(generator);
-        }
-      }
-    }
-    return generators;
   }
 
   private void addMessage(final Message message) {
