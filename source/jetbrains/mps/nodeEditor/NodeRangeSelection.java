@@ -10,6 +10,7 @@ import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Pair;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -36,9 +37,9 @@ public class NodeRangeSelection implements IKeyboardHandler {
     // multiple selection...
     boolean selectionKeystroke = keyEvent.isShiftDown() && keyEvent.isControlDown() && !(keyEvent.isAltDown()) &&
             (keyEvent.getKeyCode() == KeyEvent.VK_UP ||
-            keyEvent.getKeyCode() == KeyEvent.VK_DOWN ||
-            keyEvent.getKeyCode() == KeyEvent.VK_LEFT ||
-            keyEvent.getKeyCode() == KeyEvent.VK_RIGHT);
+                    keyEvent.getKeyCode() == KeyEvent.VK_DOWN ||
+                    keyEvent.getKeyCode() == KeyEvent.VK_LEFT ||
+                    keyEvent.getKeyCode() == KeyEvent.VK_RIGHT);
 //    System.out.println("isSelectionKeystroke: " + selectionKeystroke);
     return selectionKeystroke;
   }
@@ -117,19 +118,20 @@ public class NodeRangeSelection implements IKeyboardHandler {
       AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
       SNode node = getNodes().get(0);
       EditorCell cell = editor.findNodeCell(node);
-      List<EditorCellKeyMapAction> actions = EditorUtil.getKeyMapActionsForEvent(cell, keyEvent, editorContext);
-      if (actions != null) {
+      Pair<EditorCell, List<EditorCellKeyMapAction>> actionsInfo = EditorUtil.getKeyMapActionsForEvent(cell, keyEvent, editorContext);
+      if (actionsInfo != null) {
+        EditorCell contextCell = actionsInfo.o1;
+        List<EditorCellKeyMapAction> actions = actionsInfo.o2;
         if (actions.size() == 1) {
-          actions.get(0).execute(keyEvent, editorContext);
+          EditorUtil.executeKeyMapAction(actions.get(0), keyEvent, contextCell, editorContext);
           return true;
         } else {
           // show menu
-          EditorUtil.showActionsMenu(actions, keyEvent, editorContext, cell);
+          EditorUtil.showActionsMenu(actions, keyEvent, contextCell, editorContext, cell);
           return true;
         }
       }
     }
-
 
 
     String actionType = myEditorComponent.getActionType(keyEvent, editorContext);

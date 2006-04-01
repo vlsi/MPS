@@ -9,6 +9,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNodeProxy;
+import jetbrains.mps.util.Pair;
 
 import java.awt.event.KeyEvent;
 import java.util.*;
@@ -33,23 +34,16 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     // process cell keymaps first
 
     if (selectedCell != null) {
-      List<EditorCellKeyMapAction> actions = EditorUtil.getKeyMapActionsForEvent(selectedCell, keyEvent, editorContext);
-      if (actions != null) {
-        // filter actions
-        Iterator<EditorCellKeyMapAction> iterator = actions.iterator();
-        while (iterator.hasNext()) {
-          EditorCellKeyMapAction action = iterator.next();
-          if (!action.canExecute(keyEvent, editorContext)) {
-            iterator.remove();
-          }
-        }
-
+      Pair<EditorCell, List<EditorCellKeyMapAction>> actionsInfo = EditorUtil.getKeyMapActionsForEvent(selectedCell, keyEvent, editorContext);
+      if (actionsInfo != null) {
+        EditorCell contextCell = actionsInfo.o1;
+        List<EditorCellKeyMapAction> actions = actionsInfo.o2;
         if (actions.size() == 1) {
-          actions.get(0).execute(keyEvent, editorContext);
+          EditorUtil.executeKeyMapAction(actions.get(0), keyEvent, contextCell, editorContext);
           return true;
         } else if (actions.size() > 1) {
           // show menu
-          EditorUtil.showActionsMenu(actions, keyEvent, editorContext, selectedCell);
+          EditorUtil.showActionsMenu(actions, keyEvent, contextCell, editorContext, selectedCell);
           return true;
         }
       }

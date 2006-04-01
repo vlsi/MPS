@@ -355,6 +355,9 @@
                 <link role="variableDeclaration" targetNodeId="1126142422092" />
               </node>
             </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1143859016220">
+              <property name="value" value="1000" />
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1127098721977">
