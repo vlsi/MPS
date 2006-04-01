@@ -146,17 +146,20 @@ public class GenerationSession implements ModelOwner {
     }
 
     // secondary mapping
+    SModelDescriptor transientModel;
     int repeatCount = 1;
     while (true) {
       SModelDescriptor currentInputModel = currentOutputModel;
-      SModelDescriptor transientModel = createTransientModel(repeatCount, inputModel, generatorContext.getModule());
+      transientModel = createTransientModel(repeatCount, inputModel, generatorContext.getModule());
       currentInputModel.getSModel().validateLanguagesAndImports();
-      myGeneratorSessionContext.replaceInputModel(currentInputModel);
-      if (!generator.doSecondaryMapping(currentInputModel.getSModel(), transientModel.getSModel(), repeatCount)) {
-        SModelRepository.getInstance().unRegisterModelDescriptor(transientModel, generatorContext.getModule());
+      List<String> languageNamespaces = currentInputModel.getSModel().getLanguageNamespaces();
+      if(languageNamespaces.size() == 1 && languageNamespaces.get(0).equals(myTargetLanguage.getNamespace())) {
         break;
       }
-
+      myGeneratorSessionContext.replaceInputModel(currentInputModel);
+      if (!generator.doSecondaryMapping(currentInputModel.getSModel(), transientModel.getSModel(), repeatCount)) {
+        break;
+      }
       // next iteration ...
       currentOutputModel = transientModel;
       if (++repeatCount > 10) {
@@ -164,7 +167,7 @@ public class GenerationSession implements ModelOwner {
         throw new GenerationFailedException("Failed to generate output after 10 repeated mappings");
       }
     }
-
+    SModelRepository.getInstance().unRegisterModelDescriptor(transientModel, generatorContext.getModule());
     return currentOutputModel.getSModel();
   }
 
