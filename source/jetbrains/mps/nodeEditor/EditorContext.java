@@ -34,12 +34,12 @@ public class EditorContext {
     return myNodeEditorComponent;
   }
 
-  public EditorCell getSelelectedCell() {
+  public EditorCell getSelectedCell() {
     return myNodeEditorComponent.getSelectedCell();
   }
 
   public SNode getSelectedNode() {
-    return getSelelectedCell().getSNode();
+    return getSelectedCell().getSNode();
   }
 
   public SModel getModel() {
