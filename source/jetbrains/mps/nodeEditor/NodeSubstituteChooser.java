@@ -114,7 +114,10 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   private void rebuildMenuEntries() {
     myMenuEmpty = false;
     String pattern = getPatternEditor().getPattern();
+
+    long start = System.currentTimeMillis();
     List<INodeSubstituteItem> matchingActions = myNodeSubstituteInfo.getMatchingItems(pattern, false);
+    System.out.println((System.currentTimeMillis() - start) + " ms");
 
     try {
       Collections.sort(matchingActions, new Comparator<INodeSubstituteItem>() {
