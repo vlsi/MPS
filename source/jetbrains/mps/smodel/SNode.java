@@ -12,6 +12,7 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.security.NodeSecurityManager;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
 
@@ -437,6 +438,10 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public List<SNode> getChildren() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
     return new ArrayList<SNode>(myChildren);
+  }
+
+  public<N extends SNode> List<N> getChildren(Class<N> cls) {
+    return CollectionUtil.filter(cls, getChildren());
   }
 
   public int getChildCount() {

@@ -9,7 +9,6 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.net.InetAddress;
 import java.util.*;
-import java.io.File;
 
 import jetbrains.mps.util.FileUtil;
 
@@ -23,12 +22,20 @@ public class RMIHandler {
     RMIHandler.ourProjectCreator = ourProjectCreator;
   }
 
-  public static void showFindAspectMethodUsages(String namespace, String name) {
-    ourPlugin.fireFindAspectMethodUsages(namespace, name);
+  public static void showAspectMethodUsages(String namespace, String name) {
+    ourPlugin.showAspectMethodUsages(namespace, name);
   }
 
   public static void showConceptDeclaration(String fqName) {
-    ourPlugin.fireShowConceptDeclaration(fqName);
+    ourPlugin.showConceptDeclaration(fqName);
+  }
+
+  public static void showClassUsages(String fqName) {
+    ourPlugin.showClassUsages(fqName);
+  }
+
+  public static void showMethodUsages(String classFqName, String name, int parameterCount) {
+    ourPlugin.showMethodUsages(classFqName, name, parameterCount);
   }
 
   static {
@@ -54,7 +61,7 @@ public class RMIHandler {
 
         if (client.equals(localhost)) return;
 
-        System.out.println("localhostt is " + localhost);
+        System.out.println("localhost is " + localhost);
         System.out.println("client is " + client);
         System.out.println("access denied");
       } catch (Exception e) {
@@ -96,20 +103,40 @@ public class RMIHandler {
       myIDEHandlers.add(handler);
     }
 
-    void fireFindAspectMethodUsages(String namepace, String name) {
+    void showAspectMethodUsages(String namepace, String name) {
       for (IMPSIDEHandler h : myIDEHandlers) {
         try {
-          h.findAspectMethodUsages(namepace, name);
+          h.showAspectMethodUsages(namepace, name);
         } catch (RemoteException e) {
           e.printStackTrace();
         }
       }
     }
 
-    void fireShowConceptDeclaration(String fqName) {
+    void showConceptDeclaration(String fqName) {
       for (IMPSIDEHandler h : myIDEHandlers) {
         try {
           h.showConceptNode(fqName);
+        } catch (RemoteException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+
+    void showClassUsages(String fqName) {
+      for (IMPSIDEHandler h : myIDEHandlers) {
+        try {
+          h.showClassUsages(fqName);
+        } catch (RemoteException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+
+    void showMethodUsages(String classFqName, String methodName, int parameterCount) {
+      for (IMPSIDEHandler h : myIDEHandlers) {
+        try {
+          h.showMethodUsages(classFqName, methodName, parameterCount);
         } catch (RemoteException e) {
           e.printStackTrace();
         }

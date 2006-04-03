@@ -7,8 +7,6 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.psi.*;
 
-import java.util.*;
-
 
 public class FindAspectMethodUsages extends AnAction {
 
@@ -44,6 +42,6 @@ public class FindAspectMethodUsages extends AnAction {
   }
 
   private void callFindUsage(String namespace, String name) {
-    RMIHandler.showFindAspectMethodUsages(namespace,  name);
+    RMIHandler.showAspectMethodUsages(namespace,  name);
   }
 }

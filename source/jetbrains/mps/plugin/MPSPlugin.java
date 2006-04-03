@@ -14,8 +14,12 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.util.FrameUtil;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.project.*;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.baseLanguage.Classifier;
+import jetbrains.mps.baseLanguage.BaseMethodDeclaration;
+import jetbrains.mps.generator.JavaModelUtil;
 
 /**
  * @author Kostik
@@ -86,7 +90,7 @@ public class MPSPlugin {
       return getFirstProjectWindow().getMainFrame();
     }
 
-    public void findAspectMethodUsages(String namespace, String name) throws RemoteException {
+    public void showAspectMethodUsages(String namespace, String name) throws RemoteException {
       List<SModelDescriptor> modelDescriptors = SModelRepository.getInstance().getModelDescriptorsByModelName(namespace);
       for (SModelDescriptor descriptor : modelDescriptors) {
         if (descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
@@ -108,6 +112,27 @@ public class MPSPlugin {
       IDEProjectFrame projectWindow = getFirstProjectWindow();
       projectWindow.getEditorsPane().openEditor(concept, new ProjectOperationContext(projectWindow.getProject()));
       FrameUtil.activateFrame(getFirstMainFrame());
+    }
+
+    public void showClassUsages(String fqName) throws RemoteException {
+      Classifier cls = SModelUtil.findNodeByFQName(fqName, Classifier.class, GlobalScope.getInstance());
+      if (cls == null) return;
+      FrameUtil.activateFrame(getFirstMainFrame());
+      getFirstProjectWindow().findUsages(cls);
+    }
+
+    public void showMethodUsages(String classFqName, String methodName, int parameterCount) throws RemoteException {
+      Classifier cls = SModelUtil.findNodeByFQName(classFqName, Classifier.class, GlobalScope.getInstance());
+      BaseMethodDeclaration m = null;
+      for (BaseMethodDeclaration method : cls.getChildren(BaseMethodDeclaration.class)) {
+        if (methodName.equals(method.getName()) && method.getParametersCount() == parameterCount) {
+          m = method;
+          break;
+        }
+      }
+      if (m == null) return;
+      FrameUtil.activateFrame(getFirstMainFrame());
+      getFirstProjectWindow().findUsages(m);
     }
   }
 }

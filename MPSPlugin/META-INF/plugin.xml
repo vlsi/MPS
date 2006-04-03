@@ -22,11 +22,15 @@
   <actions>
     <action class="jetbrains.mps.plugin.FindAspectMethodUsages" text="Find Query Method Usages" id="MPSPlugin.findAspectMethodUsages" />
     <action class="jetbrains.mps.plugin.GoToConceptDeclaration" text="Go To Concept Declaration" id="MPSPlugin.goToConceptDeclaration" />
+    <action class="jetbrains.mps.plugin.FindClassUsagesInMPS" text="Find Class Usages In MPS" id="MPSPlugin.findClassUsages" />
+    <action class="jetbrains.mps.plugin.FindMethodUsagesInMPS" text="Find Method Usages In MPS" id="MPSPlugin.findMethodUsages" />
 
     <group>
       <separator />
+      <reference id="MPSPlugin.findClassUsages" />
       <reference id="MPSPlugin.findAspectMethodUsages" />
       <reference id="MPSPlugin.goToConceptDeclaration" />
+      <reference id="MPSPlugin.findMethodUsages" />
       <add-to-group anchor="last" group-id="EditorPopupMenu" />
     </group>
   </actions>
