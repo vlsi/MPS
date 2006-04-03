@@ -77,7 +77,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     SModelDescriptor languageEditor = language.getEditorModelDescriptor();
     ConceptEditorDeclaration editorDeclaration;
     if (languageEditor != null) {
-      editorDeclaration = findEditorDeclaration(languageEditor.getSModel(), (ConceptDeclaration) node);
+      editorDeclaration = SModelUtil.findEditorDeclaration(languageEditor.getSModel(), (ConceptDeclaration) node);
       if (editorDeclaration != null) {
         navigateToEditorDeclaration(editorDeclaration, languageContext, currentEditor, ide);
         return;
@@ -113,21 +113,8 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
       }
     });
 
-    editorDeclaration = findEditorDeclaration(language.getEditorModelDescriptor().getSModel(), (ConceptDeclaration) node);
+    editorDeclaration = SModelUtil.findEditorDeclaration(language.getEditorModelDescriptor().getSModel(), (ConceptDeclaration) node);
     navigateToEditorDeclaration(editorDeclaration, languageContext, currentEditor, ide);
-  }
-
-  private ConceptEditorDeclaration findEditorDeclaration(SModel editorModel, ConceptDeclaration conceptDeclaration) {
-    Iterator<SNode> iterator = editorModel.roots();
-    while (iterator.hasNext()) {
-      SNode root = iterator.next();
-      if (root instanceof ConceptEditorDeclaration) {
-        if (conceptDeclaration == ((ConceptEditorDeclaration) root).getConceptDeclaration()) {
-          return (ConceptEditorDeclaration) root;
-        }
-      }
-    }
-    return null;
   }
 
   private void navigateToEditorDeclaration(final SNode editorDeclaration, final IOperationContext operationContext, final AbstractEditorComponent currentEditor, final IDEProjectFrame ide) {
