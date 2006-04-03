@@ -2,7 +2,7 @@
 <model name="jetbrains.mps.baseLanguage.resolve.test">
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.comments" />
-  <maxImportIndex value="3" />
+  <maxImportIndex value="231" />
   <import index="1" modelUID="jetbrains.mps.resolve@java_stub" />
   <import index="2" modelUID="java.lang@java_stub" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1121166935562">
@@ -58,6 +58,16 @@
                 <property name="text" value="property comment" />
                 <property name="propertyName" value="value" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1144073578625">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1144073578626">
+            <link role="baseMethodDeclaration" targetNodeId="1121172586148" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1144073578627" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1144073580722">
+              <node role="expression" type="jetbrains.mps.baseLanguage.Expression" id="1144073580724" />
+              <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1144073884454" />
             </node>
           </node>
         </node>
