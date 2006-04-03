@@ -146,28 +146,32 @@ public class GenerationSession implements ModelOwner {
     }
 
     // secondary mapping
-    SModelDescriptor transientModel;
     int repeatCount = 1;
     while (true) {
-      SModelDescriptor currentInputModel = currentOutputModel;
-      transientModel = createTransientModel(repeatCount, inputModel, generatorContext.getModule());
-      currentInputModel.getSModel().validateLanguagesAndImports();
-      List<String> languageNamespaces = currentInputModel.getSModel().getLanguageNamespaces();
+      currentOutputModel.getSModel().validateLanguagesAndImports();
+      // check exit condition (only the 'target language' is used in the output model)
+      List<String> languageNamespaces = currentOutputModel.getSModel().getLanguageNamespaces();
       if(languageNamespaces.size() == 1 && languageNamespaces.get(0).equals(myTargetLanguage.getNamespace())) {
         break;
       }
-      myGeneratorSessionContext.replaceInputModel(currentInputModel);
+
+      // apply mapping to the output model
+      myGeneratorSessionContext.replaceInputModel(currentOutputModel);
+      SModelDescriptor currentInputModel = currentOutputModel;
+      SModelDescriptor transientModel = createTransientModel(repeatCount, inputModel, generatorContext.getModule());
       if (!generator.doSecondaryMapping(currentInputModel.getSModel(), transientModel.getSModel(), repeatCount)) {
+        SModelRepository.getInstance().unRegisterModelDescriptor(transientModel, generatorContext.getModule());
         break;
       }
-      // next iteration ...
-      currentOutputModel = transientModel;
+
       if (++repeatCount > 10) {
         generator.showErrorMessage(null, "Failed to generate output after 10 repeated mappings");
         throw new GenerationFailedException("Failed to generate output after 10 repeated mappings");
       }
+
+      // next iteration ...
+      currentOutputModel = transientModel;
     }
-    SModelRepository.getInstance().unRegisterModelDescriptor(transientModel, generatorContext.getModule());
     return currentOutputModel.getSModel();
   }
 
