@@ -2700,7 +2700,10 @@
     </node>
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1144072782500">
       <property name="description" value="fills cast expression in method call" />
-      <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1144072782501" />
+      <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1144072782501">
+        <property name="modifiers" value="ctrl+shift" />
+        <property name="keycode" value="VK_SPACE" />
+      </node>
       <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_IsApplicableFunction" id="1144072782502">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1144072782503">
           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1144072811709">
