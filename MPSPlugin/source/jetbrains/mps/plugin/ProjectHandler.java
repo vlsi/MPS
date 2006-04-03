@@ -251,9 +251,9 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     }
   }
 
-  public String buildModule(final String path) {
+  public CompilationResult buildModule(final String path) {
     final Object lock = new Object() { };
-    final StringBuilder result = new StringBuilder();
+    final CompilationResult[] result = new CompilationResult[1];
     synchronized(lock) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
@@ -279,13 +279,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
 
                   private void compilationFinished(boolean aborted, int errorsNumber, int warningsNumber) {
                     synchronized(lock) {
-                      if (aborted) {
-                        result.append("compilation aborted");
-                      } else {
-                        result.append("compilation finished : ");
-                        result.append(errorsNumber).append(" errors ");
-                        result.append(warningsNumber).append(" warnings");
-                      }                      
+                      result[0] = new CompilationResult(errorsNumber, warningsNumber, aborted);
                       lock.notifyAll();
                     }
                   }
@@ -300,7 +294,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
         e.printStackTrace();
       }
     }
-    return result.toString();
+    return result[0];
   }
 
   public List<String> getAspectMethodIds(final String namespace, final String prefix) {

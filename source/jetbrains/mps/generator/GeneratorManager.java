@@ -16,6 +16,7 @@ import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.MPSPlugin;
+import jetbrains.mps.plugin.CompilationResult;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
@@ -246,6 +247,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     progress.start("generating", totalJob);
 
     try {
+
+      boolean reloadClasses = true;
+
       if (!myCompileOnGeneration) {
         progress.addText("compilation in IntelliJ IDEA on generation is turned off");
       } else if (!ideaPresent) {
@@ -261,18 +265,23 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         checkMonitorCanceled(progress);
 
         progress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
-        progress.addText(myProject.getProjectHandler().buildModule(outputFolder));
+        CompilationResult compilationResult = myProject.getProjectHandler().buildModule(outputFolder);
+        progress.addText("" + compilationResult);
+        if (!compilationResult.isOk()) {
+          reloadClasses = false;
+        }
         progress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
         checkMonitorCanceled(progress);
       }
 
       // re-load classes anyway (to be sure that java_stub are up-to-date)
-      progress.addText("reloading MPS classes...");
-      progress.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
-      ReloadUtils.reloadAll();
-
-      progress.finishTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
-      checkMonitorCanceled(progress);
+      if (reloadClasses) {
+        progress.addText("reloading MPS classes...");
+        progress.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
+        ReloadUtils.reloadAll();
+        progress.finishTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
+        checkMonitorCanceled(progress);
+      }
 
       //++ generation
       GenerationSession generationSession = new GenerationSession(targetLanguage, invocationContext, progress);
@@ -327,17 +336,20 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           myProject.getProjectHandler().refreshFS();
           progress.finishTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
           checkMonitorCanceled(progress);
-
           progress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
-          progress.addText(myProject.getProjectHandler().buildModule(outputFolder));
+          CompilationResult compilationResult = myProject.getProjectHandler().buildModule(outputFolder);
+          progress.addText("" + compilationResult);
           progress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
           checkMonitorCanceled(progress);
 
-          progress.addText("reloading MPS classes...");
-          progress.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
-          ReloadUtils.reloadAll();
-          progress.finishTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
-          checkMonitorCanceled(progress);
+
+          if (compilationResult.isOk()) {
+            progress.addText("reloading MPS classes...");
+            progress.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
+            ReloadUtils.reloadAll();
+            progress.finishTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
+            checkMonitorCanceled(progress);
+          }
         }
         addProgressMessage(MessageKind.INFORMATION, "generation completed successfully", progress);
         progress.finish();
