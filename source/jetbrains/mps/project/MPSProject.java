@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.IDisposable;
 import jetbrains.mps.vcs.VersionControlManager;
 import jetbrains.mps.vcs.model.IVersionControl;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -309,6 +310,13 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   public void dispose() {
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
+
+        for (Object pc : getComponents()) {
+          if (pc instanceof IDisposable) {
+            ((IDisposable) pc).dispose();
+          }
+        }
+
         CommandProcessor.instance().removeCommandListener(myEventTranslator);
         SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
         MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);

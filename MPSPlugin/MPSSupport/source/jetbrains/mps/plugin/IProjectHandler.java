@@ -29,4 +29,7 @@ public interface IProjectHandler extends Remote {
   void createLanguageModule(String namespace, final String path) throws RemoteException;
   void addLanguageRoot(String path) throws RemoteException;
   void createAspectClass(final String path, final String namespace) throws RemoteException;
+
+  void addIdeHandler(IMPSIDEHandler handler) throws RemoteException;
+  void removeIdeHandler(IMPSIDEHandler handler) throws RemoteException;
 }

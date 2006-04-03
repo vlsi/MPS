@@ -22,6 +22,10 @@ public class RMIHandler {
     RMIHandler.ourProjectCreator = ourProjectCreator;
   }
 
+  public static MyMPSPlugin getOurPlugin() {
+    return ourPlugin;
+  }
+
   public static void showAspectMethodUsages(String namespace, String name) {
     ourPlugin.showAspectMethodUsages(namespace, name);
   }
@@ -48,7 +52,7 @@ public class RMIHandler {
     }
   }
 
-  private static class MyMPSPlugin extends UnicastRemoteObject implements IMPSPlugin {
+  static class MyMPSPlugin extends UnicastRemoteObject implements IMPSPlugin {
     private List<IMPSIDEHandler> myIDEHandlers = new ArrayList<IMPSIDEHandler>();
 
     public MyMPSPlugin() throws RemoteException {
@@ -101,6 +105,11 @@ public class RMIHandler {
     public void addIdeHandler(IMPSIDEHandler handler) throws RemoteException {
       checkAccess();
       myIDEHandlers.add(handler);
+    }
+
+    public void removeIdeHandler(IMPSIDEHandler handler) throws RemoteException {
+      checkAccess();
+      myIDEHandlers.remove(handler);
     }
 
     void showAspectMethodUsages(String namepace, String name) {

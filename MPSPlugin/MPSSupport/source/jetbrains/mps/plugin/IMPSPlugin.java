@@ -8,6 +8,4 @@ public interface IMPSPlugin extends Remote {
   IProjectHandler getProjectHandlerFor(String projectPath) throws RemoteException;
 
   IIDEAHandler getProjectCreator() throws RemoteException;
-
-  void addIdeHandler(IMPSIDEHandler handler) throws RemoteException;  
 }

@@ -530,6 +530,15 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     });
   }
 
+  public void addIdeHandler(IMPSIDEHandler handler) throws RemoteException {
+    RMIHandler.getOurPlugin().addIdeHandler(handler);
+  }
+
+  public void removeIdeHandler(IMPSIDEHandler handler) throws RemoteException {
+    RMIHandler.getOurPlugin().removeIdeHandler(handler);
+
+  }
+
   private PsiDirectory createPackagesForNamespace(PsiDirectory dir, String namespace) {
     PsiDirectory current = dir;
     try {
