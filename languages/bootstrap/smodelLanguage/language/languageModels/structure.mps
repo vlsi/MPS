@@ -564,8 +564,15 @@
       <property name="value" value="copy" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1144152536095">
+      <property name="value" value="creates copy of this node" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1144146329360">
       <link role="conceptPropertyDeclaration" targetNodeId="1138763241883" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1144152651654">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763325919" />
     </node>
   </node>
 </model>
