@@ -82,7 +82,6 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
 
   public void dispose() {
     try {
-      System.out.println("dispose");
       myProject.getProjectHandler().removeIdeHandler(this);      
     } catch (RemoteException e) {
       e.printStackTrace();

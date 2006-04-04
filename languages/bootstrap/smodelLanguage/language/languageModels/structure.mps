@@ -557,5 +557,16 @@
       <link role="target" targetNodeId="3.1071489090640" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1144146199828">
+    <property name="name" value="Node_CopyOperation" />
+    <link role="extends" targetNodeId="1138411891628" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1144146320702">
+      <property name="value" value="copy" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1144146329360">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763241883" />
+    </node>
+  </node>
 </model>
 

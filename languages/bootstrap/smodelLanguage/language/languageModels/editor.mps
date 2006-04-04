@@ -696,5 +696,12 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1144146335908">
+    <link role="conceptDeclaration" targetNodeId="1.1144146199828" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1144146355879">
+      <property name="text" value="copy" />
+      <property name="attractsFocus" value="1" />
+    </node>
+  </node>
 </model>
 
