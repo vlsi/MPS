@@ -329,9 +329,10 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075139395584">
+        <property name="editable" value="true" />
         <property name="text" value="}" />
         <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
+        <property name="selectable" value="true" />
       </node>
     </node>
   </node>
@@ -401,9 +402,10 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075233459449">
+        <property name="editable" value="true" />
         <property name="text" value="}" />
         <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
+        <property name="selectable" value="true" />
       </node>
     </node>
   </node>
@@ -479,9 +481,10 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075287750864">
+        <property name="editable" value="true" />
         <property name="text" value="}" />
         <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
+        <property name="selectable" value="true" />
       </node>
     </node>
   </node>
@@ -1183,9 +1186,10 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1075287750855">
+        <property name="editable" value="true" />
         <property name="text" value="}" />
         <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
+        <property name="selectable" value="true" />
       </node>
     </node>
   </node>
