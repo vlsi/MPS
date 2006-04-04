@@ -35,7 +35,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   private INodeSubstituteInfo myNodeSubstituteInfo;
   private List<INodeSubstituteItem> mySubstituteItems = new ArrayList<INodeSubstituteItem>();
   private boolean myMenuEmpty;
-  private int myIndent = 2;
+  private int myLength = 2;
 
   public NodeSubstituteChooser(AbstractEditorComponent editorComponent) {
     myEditorComponent = editorComponent;
@@ -147,10 +147,16 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       });
     }
 
-    myIndent = 2;
+    myLength = 2;
+
+    int textLength = 0;
+    int descriptionLength = 0;
     for (INodeSubstituteItem item : mySubstituteItems) {
-      myIndent = Math.max(getIndent(item), myIndent);
+      textLength = Math.max(textLength, getTextLength(item));
+      descriptionLength = Math.max(descriptionLength, getDescriptionLength(item));
     }
+
+    myLength = 2 + textLength + descriptionLength;
   }
 
   private String getMatchingText(INodeSubstituteItem item) {
@@ -161,23 +167,39 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     StringBuilder result = new StringBuilder();
 
     String text = item.getMatchingText(null);
-    int indentSize = Math.max(0, myIndent - text.length());
+    String descriptionText = item.getDescriptionText(null);
+    if (descriptionText == null) {
+      descriptionText = "";
+    }
+    if (text == null) {
+      text = "";
+    }
+
+    int indentSize = Math.max(0, myLength - text.length() - descriptionText.length());
 
     char[] indentChars = new char[indentSize];
     Arrays.fill(indentChars, ' ');
     result.append(text);
     result.append(indentChars);
-    String descriptionText = item.getDescriptionText(null);
-    if(descriptionText != null) {
-      result.append(descriptionText);
-    }
+    result.append(descriptionText);
+
     return result.toString();
   }
 
-  private int getIndent(INodeSubstituteItem item) {
+  private int getDescriptionLength(INodeSubstituteItem item) {
     String descriptionText = item.getDescriptionText(null);
-    if(descriptionText == null) return 2;
-    return descriptionText.length() + 2;
+    if (descriptionText == null) {
+      descriptionText = "";
+    }
+    return descriptionText.length();
+  }
+
+  private int getTextLength(INodeSubstituteItem item) {
+    String text = item.getMatchingText(null);
+    if (text == null) {
+      text = "";
+    }
+    return text.length();
   }
 
   public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
@@ -408,8 +430,8 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
 
       setSize(
-              Math.max(PREFERRED_WIDTH, myList.getPreferredSize().width + 50),
-              Math.min(PREFERRED_HEIGHT, myList.getPreferredSize().height) + getVerticalScrollerHeight());
+              Math.max(PREFERRED_WIDTH, myList.getPreferredSize().width + 23),
+              Math.min(PREFERRED_HEIGHT, myList.getPreferredSize().height + getVerticalScrollerHeight()));
 
       if (getPosition() == PopupWindowPosition.TOP) {
         newLocation = new Point(newLocation.x, newLocation.y - getHeight() - myRelativeCell.getHeight());
@@ -441,6 +463,8 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       Insets insets = myScroller.getBorder().getBorderInsets(myScroller);
       return insets.top + insets.bottom + 1;
     }
+
+
 
     public PopupWindowPosition getPosition() {
       return myPosition;
