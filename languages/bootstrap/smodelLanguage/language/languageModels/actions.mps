@@ -28,6 +28,11 @@
       <property name="actionsFactoryAspectId" value="DelegateToParentExpression" />
       <link role="applicableConcept" targetNodeId="1.1138411891628" />
     </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1144103719164">
+      <property name="actionsFactoryAspectId" value="AddOperationParm" />
+      <property name="preconditionAspectId" value="may_need_parms" />
+      <link role="applicableConcept" targetNodeId="1.1138411891628" />
+    </node>
   </node>
 </model>
 
