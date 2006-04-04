@@ -45,6 +45,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   public final String MPS_SUPPORT_HANDLER_NAME = "MPSSupport";
 
   private Project myProject;
+  private List<IMPSIDEHandler> myIDEHandlers = new ArrayList<IMPSIDEHandler>();
 
   public ProjectHandler(Project project) throws RemoteException {
     super();
@@ -530,13 +531,13 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     });
   }
 
+
   public void addIdeHandler(IMPSIDEHandler handler) throws RemoteException {
-    RMIHandler.getOurPlugin().addIdeHandler(handler);
+    myIDEHandlers.add(handler);
   }
 
   public void removeIdeHandler(IMPSIDEHandler handler) throws RemoteException {
-    RMIHandler.getOurPlugin().removeIdeHandler(handler);
-
+    myIDEHandlers.remove(handler);
   }
 
   private PsiDirectory createPackagesForNamespace(PsiDirectory dir, String namespace) {
@@ -607,6 +608,47 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     }
 
     return bestModule;
+  }
+
+
+  void showAspectMethodUsages(String namepace, String name) {
+    for (IMPSIDEHandler h : myIDEHandlers) {
+      try {
+        h.showAspectMethodUsages(namepace, name);
+      } catch (RemoteException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+
+  void showConceptDeclaration(String fqName) {
+    for (IMPSIDEHandler h : myIDEHandlers) {
+      try {
+        h.showConceptNode(fqName);
+      } catch (RemoteException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+
+  void showClassUsages(String fqName) {
+    for (IMPSIDEHandler h : myIDEHandlers) {
+      try {
+        h.showClassUsages(fqName);
+      } catch (RemoteException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+
+  void showMethodUsages(String classFqName, String methodName, int parameterCount) {
+    for (IMPSIDEHandler h : myIDEHandlers) {
+      try {
+        h.showMethodUsages(classFqName, methodName, parameterCount);
+      } catch (RemoteException e) {
+        e.printStackTrace();
+      }
+    }
   }
 
   public static int getDistance(VirtualFile ancestor, VirtualFile descendant) {

@@ -26,22 +26,6 @@ public class RMIHandler {
     return ourPlugin;
   }
 
-  public static void showAspectMethodUsages(String namespace, String name) {
-    ourPlugin.showAspectMethodUsages(namespace, name);
-  }
-
-  public static void showConceptDeclaration(String fqName) {
-    ourPlugin.showConceptDeclaration(fqName);
-  }
-
-  public static void showClassUsages(String fqName) {
-    ourPlugin.showClassUsages(fqName);
-  }
-
-  public static void showMethodUsages(String classFqName, String name, int parameterCount) {
-    ourPlugin.showMethodUsages(classFqName, name, parameterCount);
-  }
-
   static {
     try {
       Registry registry = LocateRegistry.createRegistry(REGISTRY_PORT);
@@ -53,7 +37,6 @@ public class RMIHandler {
   }
 
   static class MyMPSPlugin extends UnicastRemoteObject implements IMPSPlugin {
-    private List<IMPSIDEHandler> myIDEHandlers = new ArrayList<IMPSIDEHandler>();
 
     public MyMPSPlugin() throws RemoteException {
     }
@@ -101,55 +84,5 @@ public class RMIHandler {
       return ourProjectCreator;
     }
 
-
-    public void addIdeHandler(IMPSIDEHandler handler) throws RemoteException {
-      checkAccess();
-      myIDEHandlers.add(handler);
-    }
-
-    public void removeIdeHandler(IMPSIDEHandler handler) throws RemoteException {
-      checkAccess();
-      myIDEHandlers.remove(handler);
-    }
-
-    void showAspectMethodUsages(String namepace, String name) {
-      for (IMPSIDEHandler h : myIDEHandlers) {
-        try {
-          h.showAspectMethodUsages(namepace, name);
-        } catch (RemoteException e) {
-          e.printStackTrace();
-        }
-      }
-    }
-
-    void showConceptDeclaration(String fqName) {
-      for (IMPSIDEHandler h : myIDEHandlers) {
-        try {
-          h.showConceptNode(fqName);
-        } catch (RemoteException e) {
-          e.printStackTrace();
-        }
-      }
-    }
-
-    void showClassUsages(String fqName) {
-      for (IMPSIDEHandler h : myIDEHandlers) {
-        try {
-          h.showClassUsages(fqName);
-        } catch (RemoteException e) {
-          e.printStackTrace();
-        }
-      }
-    }
-
-    void showMethodUsages(String classFqName, String methodName, int parameterCount) {
-      for (IMPSIDEHandler h : myIDEHandlers) {
-        try {
-          h.showMethodUsages(classFqName, methodName, parameterCount);
-        } catch (RemoteException e) {
-          e.printStackTrace();
-        }
-      }
-    }
   }
 }

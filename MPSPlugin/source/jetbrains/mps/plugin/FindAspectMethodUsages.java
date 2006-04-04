@@ -38,10 +38,11 @@ public class FindAspectMethodUsages extends AnAction {
     PsiMethod method = getMethod(element);
     String prefixedName = method.getName();
     PsiJavaFile javaFile = (PsiJavaFile) file;
-    callFindUsage(javaFile.getPackageName(), prefixedName);
+    callFindUsage(project, javaFile.getPackageName(), prefixedName);
   }
 
-  private void callFindUsage(String namespace, String name) {
-    RMIHandler.showAspectMethodUsages(namespace,  name);
+  private void callFindUsage(Project project, String namespace, String name) {
+    ProjectHandler projectHandler = project.getComponent(ProjectHandler.class);
+    projectHandler.showAspectMethodUsages(namespace, name);
   }
 }
