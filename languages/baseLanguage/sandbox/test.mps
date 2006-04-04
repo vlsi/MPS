@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.sandbox.test">
   <language namespace="jetbrains.mps.baseLanguage" />
-  <maxImportIndex value="2" />
+  <maxImportIndex value="3" />
   <import index="1" modelUID="java.lang@java_stub" />
   <node type="jetbrains.mps.baseLanguage.Interface" id="1115766127296">
     <property name="name" value="IBaseInterface" />
@@ -157,6 +157,22 @@
         <node role="type" type="jetbrains.mps.baseLanguage.ArrayType" id="1140575573244">
           <node role="componentType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1140575569882">
             <link role="classifier" extResolveInfo="1.[Classifier]String" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1144185153675">
+      <property name="name" value="testCastOp" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1144185159835">
+        <link role="classifier" targetNodeId="1115766310400" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1144185153677">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1144185181789">
+          <node role="expression" type="jetbrains.mps.baseLanguage.CastExpression" id="1144185185775">
+            <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1144185192606" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1144185195468">
+              <link role="classifier" targetNodeId="1115766310400" />
+            </node>
           </node>
         </node>
       </node>
