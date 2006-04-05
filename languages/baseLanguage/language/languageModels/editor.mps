@@ -2671,7 +2671,7 @@
       </node>
     </node>
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1144201862447">
-      <property name="description" value="fills cast expression in method call (new)" />
+      <property name="description" value="fills cast expression in method call" />
       <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1144201862448">
         <property name="modifiers" value="ctrl+shift" />
         <property name="keycode" value="VK_SPACE" />
