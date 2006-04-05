@@ -241,7 +241,7 @@ public class EditorManager {
     // delete the hint when double press 'space'
     rightTransformHintCell.setAction(EditorCellAction.RIGHT_TRANSFORM, new EditorCellAction() {
       public void execute(EditorContext context) {
-        node.removeRightTransformHint();
+        removeRTHintAndChangeSelection(context, node, nodeCellInfo);
       }
     });
     // delete the hint when double press 'esc'
