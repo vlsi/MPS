@@ -703,5 +703,50 @@
       <property name="attractsFocus" value="1" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1144195442138">
+    <link role="conceptDeclaration" targetNodeId="1.1144195091934" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1144195449093">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1144195458203">
+        <property name="text" value="hasRole(" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1144195585868">
+        <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;concept of parent&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1144195362400" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1144195585869">
+          <link role="conceptDeclaration" targetNodeId="3.1071489090640" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1144195593746">
+            <property name="textFgColor" value="DARK_MAGENTA" />
+            <property name="noTargetText" value="&lt;concept has no name&gt;" />
+            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1144198123372">
+        <property name="text" value=":" />
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1144198126876">
+        <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;role&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1144195396777" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1144198126877">
+          <link role="conceptDeclaration" targetNodeId="3.1071489288298" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1144198126878">
+            <property name="textFgColor" value="DARK_MAGENTA" />
+            <property name="noTargetText" value="&lt;link has no role&gt;" />
+            <link role="relationDeclaration" targetNodeId="3.1071599776563" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1144195656233">
+        <property name="text" value=")" />
+        <property name="drawBorder" value="false" />
+      </node>
+    </node>
+  </node>
 </model>
 

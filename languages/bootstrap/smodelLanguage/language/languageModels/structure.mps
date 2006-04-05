@@ -575,5 +575,30 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1138763325919" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1144195091934">
+    <property name="name" value="Node_IsRoleOperation" />
+    <link role="extends" targetNodeId="1138411891628" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1144195362400">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="conceptOfParent" />
+      <link role="target" targetNodeId="3.1071489090640" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1144195396777">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="linkInParent" />
+      <link role="target" targetNodeId="3.1071489288298" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1144195091935">
+      <property name="value" value="isRole" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1144195091936">
+      <property name="value" value="test role of the node" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1144195091937">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763241883" />
+    </node>
+  </node>
 </model>
 

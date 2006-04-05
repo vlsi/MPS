@@ -34,5 +34,12 @@
       <link role="applicableConcept" targetNodeId="1.1138411891628" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActions" id="1144199649146">
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1144199651913">
+      <property name="searchScopeProviderAspectId" value="IsRoleOperation_LinkDeclarationsFromConcept" />
+      <link role="applicableSourceConcept" targetNodeId="1.1144195091934" />
+      <link role="applicableLink" targetNodeId="1.1144195396777" />
+    </node>
+  </node>
 </model>
 
