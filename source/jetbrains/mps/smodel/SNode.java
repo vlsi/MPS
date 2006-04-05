@@ -44,8 +44,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   private List<SReference> myReferences = new ArrayList<SReference>();
   private HashMap<String, String> myProperties = new HashMap<String, String>();
 
-  private SReference myAttribute;
-
   private boolean myRegisteredInModelFlag;
   private SModel myModel;
   private String myId;

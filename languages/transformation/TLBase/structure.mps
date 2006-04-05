@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.transformation.TLBase.structure">
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
-  <maxImportIndex value="5" />
+  <language namespace="jetbrains.mps.annotations" />
+  <maxImportIndex value="6" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <import index="4" modelUID="jetbrains.mps.bootstrap.structureLanguage.library" />
   <import index="5" modelUID="jetbrains.mps.transformation.TLBase.structure" />
+  <import index="6" modelUID="jetbrains.mps.annotations.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1087833241328">
     <property name="name" value="PropertyMacro" />
-    <link role="extends" targetNodeId="2.1078489098625" />
+    <link role="extends" targetNodeId="6.1136027498485" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1087833392642">
       <property name="name" value="aspectMethodName" />
+      <link role="dataType" targetNodeId="2.1082983041843" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1144223109418">
+      <property name="name" value="name" />
       <link role="dataType" targetNodeId="2.1082983041843" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1087833315485">
@@ -22,7 +28,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1087833466690">
     <property name="name" value="NodeMacro" />
-    <link role="extends" targetNodeId="2.1078489098625" />
+    <link role="extends" targetNodeId="6.1136027476087" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1131073118435">
       <property name="value" value="$$" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
@@ -39,12 +45,20 @@
       <property name="name" value="targetBuilderAspectMethodName" />
       <link role="dataType" targetNodeId="2.1082983041843" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1144223196186">
+      <property name="name" value="name" />
+      <link role="dataType" targetNodeId="2.1082983041843" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1088761943574">
     <property name="name" value="ReferenceMacro" />
-    <link role="extends" targetNodeId="2.1078489098625" />
+    <link role="extends" targetNodeId="6.1136027498483" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1088761950280">
       <property name="name" value="aspectMethodName" />
+      <link role="dataType" targetNodeId="2.1082983041843" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1144223184357">
+      <property name="name" value="name" />
       <link role="dataType" targetNodeId="2.1082983041843" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1088761943575">
@@ -136,9 +150,13 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1095672379244">
     <property name="name" value="TemplateFragment" />
-    <link role="extends" targetNodeId="2.1078489098625" />
+    <link role="extends" targetNodeId="6.1136027476087" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1095757900618">
       <property name="name" value="contextProviderAspectId" />
+      <link role="dataType" targetNodeId="2.1082983041843" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1144223280538">
+      <property name="name" value="name" />
       <link role="dataType" targetNodeId="2.1082983041843" />
     </node>
   </node>
