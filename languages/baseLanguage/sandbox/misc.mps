@@ -17,6 +17,23 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ForStatement" id="1144232269361">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1144232269366">
+            <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1144233020056">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1144233020057">
+                <property name="name" value="z" />
+                <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1144233020058" />
+                <node role="initializer" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1144233022466">
+                  <link role="variableDeclaration" targetNodeId="1144232916286" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1144232916286">
+            <property name="name" value="b" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1144232917725" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1144230443712">
           <node role="variable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1144230443713">
             <property name="name" value="it" />
