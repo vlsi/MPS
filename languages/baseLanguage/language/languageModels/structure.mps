@@ -1396,5 +1396,35 @@
       <link role="targetType" targetNodeId="1068431790189" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1144226303539">
+    <property name="name" value="ForeachStatement" />
+    <link role="extends" targetNodeId="1068580123157" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1144226391574">
+      <property name="value" value="foreach" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1144226396076">
+      <property name="value" value="for (type name : expression)" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1144226347821">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="variable" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1068581242863" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1144226360166">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="iterable" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1068431790191" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1144226319086">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="body" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1068580123136" />
+    </node>
+  </node>
 </model>
 
