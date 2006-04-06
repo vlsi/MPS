@@ -283,7 +283,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       }
 
       //++ generation
-      GenerationSession generationSession = new GenerationSession(targetLanguage, invocationContext, progress);
+      GenerationSession generationSession = new GenerationSession(targetLanguage, invocationContext, isSaveTransientModels(), progress);
       GenerationStatus status = null;
       for (SModelDescriptor sourceModelDescriptor : sourceModels) {
         SModel sourceModel = sourceModelDescriptor.getSModel();
@@ -302,29 +302,23 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
             generateFile(outputFolder, sourceModel, status.getOutputModel());
           }
         }
-                
-        if (isSaveTransientModels()) {
-          generationSession.saveTransientModels();
-          addProgressMessage(MessageKind.INFORMATION, "adding module \"" + generationSession.getSessionModuleName() + "\"", progress);
-          File sessionDescriptorFile = generationSession.getSessionDescriptorFile();
-          generationSession.dispose(); // unregister transient models
-          myProject.addProjectSolution(sessionDescriptorFile);
-        } else if (!status.isError()) {
-          // if ERROR - keep transient models: we need them to navigate to from error messages
-          generationSession.dispose(); // unregister transient models
-        }
-
+        generationSession.discardTransients();
         progress.finishTask(taskName);
-
         if (!status.isOk()) {
           break;
         }
       }
       //-- generation
 
+
+      if (isSaveTransientModels()) {
+        File solutionDescriptorFile = generationSession.saveTransientModels();
+        addProgressMessage(MessageKind.INFORMATION, "adding module \"" + generationSession.getSessionModuleName() + "\"", progress);
+        myProject.addProjectSolution(solutionDescriptorFile);
+      }
+
       //update generated sources timestamp
       updateLanguagesGenerationRequiredStatus(invocationContext);
-
 
       checkMonitorCanceled(progress);
       progress.addText("");

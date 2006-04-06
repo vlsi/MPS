@@ -7,7 +7,7 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.GenerationFailedException;
-import jetbrains.mps.generator.GeneratorSessionContext;
+import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.IModelGenerator;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.IScope;
@@ -66,7 +66,7 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   ITypeChecker getTypeChecker();
 
-  GeneratorSessionContext getGeneratorSessionContext();
+  GenerationSessionContext getGeneratorSessionContext();
 
   IScope getScope();
 
@@ -75,4 +75,6 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
   INodeBuilder createCopyingNodeBuilder(SNode sourceNode, String roleInParent);
 
   void notifyBuilderCreated(INodeBuilder builder);
+
+  void reset();
 }

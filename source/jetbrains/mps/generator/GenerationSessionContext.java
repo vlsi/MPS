@@ -21,8 +21,8 @@ import java.util.List;
  * Time: 7:20:19 PM
  * To change this template use File | Settings | File Templates.
  */
-public class GeneratorSessionContext extends StandaloneMPSContext {
-  private static final Logger LOG = Logger.getLogger(GeneratorSessionContext.class);
+public class GenerationSessionContext extends StandaloneMPSContext {
+  private static final Logger LOG = Logger.getLogger(GenerationSessionContext.class);
 
   private List<Generator> myGeneratorModules;
   private List<SModelDescriptor> myTemplateModels;
@@ -30,7 +30,7 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
   private TransientModule myTransientModule;
   private Language myTargetLanguage;
 
-  public GeneratorSessionContext(Language targetLanguage, SModel sourceModel, IOperationContext invocationContext) {
+  public GenerationSessionContext(Language targetLanguage, SModel sourceModel, IOperationContext invocationContext) {
     myTargetLanguage = targetLanguage;
     myInvocationContext = invocationContext;
     myGeneratorModules = getGeneratorModules(sourceModel);
@@ -124,7 +124,7 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
 
     TransientModule(IModule invocationModule) {
       myInvocationModule = invocationModule;
-      myDependOnModules.addAll(GeneratorSessionContext.this.getGeneratorModules());
+      myDependOnModules.addAll(GenerationSessionContext.this.getGeneratorModules());
       myDependOnModules.add(invocationModule);
     }
 
@@ -157,7 +157,7 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
 
       Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, BootstrapLanguages.getInstance());
       if (language == null) {
-        for (Generator generator : GeneratorSessionContext.this.getGeneratorModules()) {
+        for (Generator generator : GenerationSessionContext.this.getGeneratorModules()) {
           language = MPSModuleRepository.getInstance().getLanguage(languageNamespace, generator);
           if (language != null) return language;
         }
@@ -186,7 +186,7 @@ public class GeneratorSessionContext extends StandaloneMPSContext {
 
     public String toString() {
       String generatorsString = "/";
-      for (Generator generator : GeneratorSessionContext.this.getGeneratorModules()) {
+      for (Generator generator : GenerationSessionContext.this.getGeneratorModules()) {
         generatorsString += generator.getModuleUID();
         generatorsString += "/";
       }

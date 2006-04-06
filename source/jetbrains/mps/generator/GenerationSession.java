@@ -6,6 +6,7 @@ import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessageView;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -23,22 +24,22 @@ import java.util.*;
  * Time: 5:15:15 PM
  * To change this template use File | Settings | File Templates.
  */
-public class GenerationSession implements ModelOwner {
-  private static final IModelRootManager ourModelRootManager = IModelRootManager.NULL_MANAGER;
-
+public class GenerationSession {
   public static final Logger LOG = Logger.getLogger(GenerationSession.class);
 
   private Language myTargetLanguage;
   private IOperationContext myInvocationContext;
+  private boolean mySaveTransientModels;
   private IAdaptiveProgressMonitor myProgressMonitor;
 
   private String mySessionId;
-  private File mySessionDescriptorFile;
-  private GeneratorSessionContext myGeneratorSessionContext;
+  private GenerationSessionContext myCurrentContext;
+  private List<GenerationSessionContext> mySavedContexts = new LinkedList<GenerationSessionContext>();
 
-  public GenerationSession(Language targetLanguage, IOperationContext invocationContext, IAdaptiveProgressMonitor progressMonitor) {
+  public GenerationSession(Language targetLanguage, IOperationContext invocationContext, boolean saveTransientModels, IAdaptiveProgressMonitor progressMonitor) {
     myTargetLanguage = targetLanguage;
     myInvocationContext = invocationContext;
+    mySaveTransientModels = saveTransientModels;
     myProgressMonitor = progressMonitor;
     mySessionId = "" + System.currentTimeMillis();
   }
@@ -47,20 +48,39 @@ public class GenerationSession implements ModelOwner {
     return mySessionId;
   }
 
-  public GenerationStatus generateModel(SModelDescriptor sourceModelDescriptor) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+  public void discardTransients() {
+    if (myCurrentContext != null) {
+      myCurrentContext.getModule().dispose(); // unregister transient models and module
+    }
+    myCurrentContext = null;
+  }
+
+  public GenerationStatus generateModel(SModelDescriptor sourceModel) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+    GenerationStatus status = generateModel_internal(sourceModel);
+    if (mySaveTransientModels ||
+            status.isError()) { // if ERROR - keep transient models: we need them to navigate to from error messages
+      if (myCurrentContext != null) {
+        mySavedContexts.add(myCurrentContext);
+        myCurrentContext = null;
+      }
+    } // else - keep current context to discard it later: after files/text is generated
+    return status;
+  }
+
+  private GenerationStatus generateModel_internal(SModelDescriptor sourceModelDescriptor) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
     SModel sourceModel = sourceModelDescriptor.getSModel();
     addProgressMessage(MessageKind.INFORMATION, "generating model \"" + sourceModel.getUID() + "\"");
     Class<? extends IModelGenerator> defaultGeneratorClass = getDefaultGeneratorClass();
     addMessage(MessageKind.INFORMATION, "    default generator class: " + (defaultGeneratorClass != null ? defaultGeneratorClass.getName() : "<n/a>"));
 
-    // -- create generators list
-    GeneratorSessionContext generatorSessionContext = new GeneratorSessionContext(myTargetLanguage, sourceModel, myInvocationContext);
-    setGeneratorSessionContext(generatorSessionContext);
-    List<Generator> generators = generatorSessionContext.getGeneratorModules();
+    // -- replace context and create generators list
+    GenerationSessionContext context = new GenerationSessionContext(myTargetLanguage, sourceModel, myInvocationContext);
+    List<Generator> generators = context.getGeneratorModules();
     if (generators.isEmpty()) {
       addProgressMessage(MessageKind.WARNING, "skip model \"" + sourceModel.getUID() + "\" : no generator avalable");
       return new GenerationStatus.OK(null);
     }
+    myCurrentContext = context;
 
     // -- choose generator class
     Class<? extends IModelGenerator> currentGeneratorClass = null;
@@ -93,20 +113,21 @@ public class GenerationSession implements ModelOwner {
     // templates or hand-coded?
     if (!ITemplateGenerator.class.isAssignableFrom(currentGeneratorClass)) {
       // hand-coded - not much to do ... just instantiate and invoke
-      IModelGenerator handCodedGenerator = currentGeneratorClass.getConstructor(IOperationContext.class).newInstance(generatorSessionContext);
-      SModel targetModel = JavaGenUtil.createTargetJavaModel(sourceModel, JavaNameUtil.packageNameForModelUID(sourceModel.getUID()), generatorSessionContext);
-      handCodedGenerator.generate(sourceModel, targetModel);
-      return new GenerationStatus.OK(targetModel);
+      IModelGenerator handCodedGenerator = currentGeneratorClass.getConstructor(IOperationContext.class).newInstance(context);
+      SModelDescriptor outputModel = createTransientModel(0, sourceModel, context.getModule());
+      handCodedGenerator.generate(sourceModel, outputModel.getSModel());
+      return new GenerationStatus.OK(outputModel.getSModel());
     }
 
     // templates generator
-    ITemplateGenerator generator = (ITemplateGenerator) currentGeneratorClass.getConstructor(GeneratorSessionContext.class, IAdaptiveProgressMonitor.class).newInstance(generatorSessionContext, myProgressMonitor);
+    ITemplateGenerator generator = (ITemplateGenerator) currentGeneratorClass.getConstructor(GenerationSessionContext.class, IAdaptiveProgressMonitor.class).newInstance(context, myProgressMonitor);
     GenerationStatus status;
     try {
-      SModel outputModel = doGenerateModel(sourceModel, generator);
+      SModel outputModel = generateModel(sourceModel, generator);
       boolean wasErrors = generator.getErrorCount() > 0;
-      addMessage(wasErrors ? MessageKind.WARNING : MessageKind.INFORMATION, "model \"" + sourceModel.getUID() + "\" has been generated " + (wasErrors ? "with errors" : "successfully"));
       status = new GenerationStatus(outputModel, wasErrors, false);
+      addMessage(status.isError() ? MessageKind.WARNING : MessageKind.INFORMATION, "model \"" + sourceModel.getUID() + "\" has been generated " + (status.isError() ? "with errors" : "successfully"));
+      generator.reset();
     } catch (GenerationCanceledException gce) {
       throw gce;//rethrow it for not to be caught in the last catch block
     } catch (GenerationFailedException gfe) {
@@ -130,13 +151,9 @@ public class GenerationSession implements ModelOwner {
     return status;
   }
 
-  private void setGeneratorSessionContext(GeneratorSessionContext generatorSessionContext) {
-    myGeneratorSessionContext = generatorSessionContext;
-  }
-
-  private SModel doGenerateModel(SModel inputModel, ITemplateGenerator generator) {
-    GeneratorSessionContext generatorContext = generator.getGeneratorSessionContext();
-    SModelDescriptor currentOutputModel = createTransientModel(0, inputModel, generatorContext.getModule());
+  private SModel generateModel(SModel inputModel, ITemplateGenerator generator) {
+    GenerationSessionContext generationContext = generator.getGeneratorSessionContext();
+    SModelDescriptor currentOutputModel = createTransientModel(0, inputModel, generationContext.getModule());
 
     // primary mapping
     if (!generator.doPrimaryMapping(inputModel, currentOutputModel.getSModel())) {
@@ -151,16 +168,16 @@ public class GenerationSession implements ModelOwner {
       currentOutputModel.getSModel().validateLanguagesAndImports();
       // check exit condition (only the 'target language' is used in the output model)
       List<String> languageNamespaces = currentOutputModel.getSModel().getLanguageNamespaces();
-      if(languageNamespaces.size() == 1 && languageNamespaces.get(0).equals(myTargetLanguage.getNamespace())) {
+      if (languageNamespaces.size() == 1 && languageNamespaces.get(0).equals(myTargetLanguage.getNamespace())) {
         break;
       }
 
       // apply mapping to the output model
-      myGeneratorSessionContext.replaceInputModel(currentOutputModel);
+      myCurrentContext.replaceInputModel(currentOutputModel);
       SModelDescriptor currentInputModel = currentOutputModel;
-      SModelDescriptor transientModel = createTransientModel(repeatCount, inputModel, generatorContext.getModule());
+      SModelDescriptor transientModel = createTransientModel(repeatCount, inputModel, generationContext.getModule());
       if (!generator.doSecondaryMapping(currentInputModel.getSModel(), transientModel.getSModel(), repeatCount)) {
-        SModelRepository.getInstance().unRegisterModelDescriptor(transientModel, generatorContext.getModule());
+        SModelRepository.getInstance().unRegisterModelDescriptor(transientModel, generationContext.getModule());
         break;
       }
 
@@ -176,7 +193,9 @@ public class GenerationSession implements ModelOwner {
   }
 
   private SModelDescriptor createTransientModel(int modelIndex, SModel sourceModel, ModelOwner modelOwner) {
-    return TransientModels.createTransientModel(modelOwner, sourceModel.getLongName(), "" + modelIndex + "_" + getSessionId());
+    SModelDescriptor transientModel = TransientModels.createTransientModel(modelOwner, sourceModel.getLongName(), "" + modelIndex + "_" + getSessionId());
+    transientModel.getSModel().setLoading(true); // we dont need any events to be casted
+    return transientModel;
   }
 
   private Class<? extends IModelGenerator> getDefaultGeneratorClass() throws ClassNotFoundException {
@@ -212,85 +231,95 @@ public class GenerationSession implements ModelOwner {
   }
 
 
-  public void saveTransientModels() {
-    saveTransientModels(myGeneratorSessionContext);
-  }
-
-  private void saveTransientModels(GeneratorSessionContext generatorContext) {
-    // solution dir
-    String projectDir = generatorContext.getProject().getProjectFile().getParentFile().getAbsolutePath();
+  /**
+   * creates new solution in current project and saves all transient models there.
+   *
+   * @return descriptor file for just created solution module
+   */
+  public File saveTransientModels() {
+    // define solution dir
+    String projectDir = myInvocationContext.getProject().getProjectFile().getParentFile().getAbsolutePath();
     String solutionDir = projectDir + File.separatorChar + "outputModels" + File.separatorChar + getSessionId();
     addProgressMessage(MessageKind.INFORMATION, "saving transient models to \"" + solutionDir + "\"");
 
-    // save models to solution dir
-    IModule transientModule = generatorContext.getModule();
-    List<SModelDescriptor> descriptors = transientModule.getOwnModelDescriptors();
-    for (SModelDescriptor descriptor : descriptors) {
-      if (descriptor.isTransient()) {
-        String modelFqName = descriptor.getModelUID().toString();
-        String modelFileName = modelFqName.replace('.', File.separatorChar) + ".mps";
-        File modelFile = new File(solutionDir, modelFileName);
-        ModelPersistence.saveModel(descriptor.getSModel(), modelFile);
-      }
-    }
-    
-    // remove transient descriptors from repository because we need to update they root-managers
-    for (SModelDescriptor descriptor : descriptors) {
-      if (descriptor.isTransient()) {
-        SModelRepository.getInstance().removeModelDescriptor(descriptor);
-      }
+    List<IModule> transientModules = new LinkedList<IModule>();
+    for (GenerationSessionContext context : mySavedContexts) {
+      transientModules.add(context.getModule());
     }
 
-    // create solution
-    SolutionDescriptor sessionDescriptor;
-    SModel sessionDescriptorModel = ProjectModels.createDescriptorFor(this).getSModel();
-    if (mySessionDescriptorFile != null) {
-      sessionDescriptor = PersistenceUtil.loadSolutionDescriptor(mySessionDescriptorFile, sessionDescriptorModel);
-      sessionDescriptorModel.setLoading(true);
-    } else {
-      sessionDescriptor = new SolutionDescriptor(sessionDescriptorModel);
-      sessionDescriptorModel.setLoading(true);
-      sessionDescriptor.setName(getSessionModuleName());
-      // add root where transient models were saved
-      addModelRoot("", solutionDir, sessionDescriptor);
-    }
-
-    // add model/language roots from generator modules
-    {
-      List<Generator> generatorModules = generatorContext.getGeneratorModules();
-      for (Generator generatorModule : generatorModules) {
-        List<ModelRoot> modelRoots = generatorModule.getNonDefaultModelRoots();
-        for (ModelRoot modelRoot : modelRoots) {
-          addModelRoot(modelRoot.getPrefix(), modelRoot.getPath(), sessionDescriptor);
-        }
-
-        List<Language> languages = generatorModule.getOwnLanguages();
-        for (Language language : languages) {
-          addModuleRoot(language.getDescriptorFile().getParentFile().getAbsolutePath(), sessionDescriptor);
+    // collect all transient models
+    List<SModelDescriptor> transientModels = new LinkedList<SModelDescriptor>();
+    for (IModule module : transientModules) {
+      List<SModelDescriptor> descriptors = module.getOwnModelDescriptors();
+      for (SModelDescriptor descriptor : descriptors) {
+        if (descriptor.isTransient()) {
+          transientModels.add(descriptor);
         }
       }
     }
 
-    // add model/language roots from invocation module
-    {
-      IModule invocationModule = generatorContext.getInvocationContext().getModule();
-      List<ModelRoot> modelRoots = invocationModule.getNonDefaultModelRoots();
-      for (ModelRoot modelRoot : modelRoots) {
-        addModelRoot(modelRoot.getPrefix(), modelRoot.getPath(), sessionDescriptor);
-      }
+    // save all model files in the solution dir
+    for (SModelDescriptor descriptor : transientModels) {
+      String modelFqName = descriptor.getModelUID().toString();
+      String modelFileName = modelFqName.replace('.', File.separatorChar) + ".mps";
+      File modelFile = new File(solutionDir, modelFileName);
+      ModelPersistence.saveModel(descriptor.getSModel(), modelFile);
+    }
 
-      List<Language> languages = invocationModule.getOwnLanguages();
+    // create the solution descriptor
+    ModelOwner tmpOwner = new ModelOwner() {
+    };
+    SModel solutionDescriptorModel = ProjectModels.createDescriptorFor(tmpOwner).getSModel();
+    SolutionDescriptor solutionDescriptor = new SolutionDescriptor(solutionDescriptorModel);
+    solutionDescriptorModel.setLoading(true);
+    solutionDescriptor.setName(getSessionModuleName());
+    // add root where transient models were saved
+    addModelRoot("", solutionDir, solutionDescriptor);
+
+    // for all languages that really used add the LanguageRoot to the solution descriptor
+    Set<Language> usedLang = new HashSet<Language>();
+    for (SModelDescriptor descriptor : transientModels) {
+      List<Language> languages = descriptor.getSModel().getLanguages(GlobalScope.getInstance());
       for (Language language : languages) {
-        addModuleRoot(language.getDescriptorFile().getParentFile().getAbsolutePath(), sessionDescriptor);
+        if (!usedLang.contains(language)) {
+          usedLang.add(language);
+          LanguageRoot languageRoot = new LanguageRoot(solutionDescriptor.getModel());
+          languageRoot.setPath(language.getDescriptorFile().getParentFile().getAbsolutePath());
+          solutionDescriptor.addLanguageRoot(languageRoot);
+        }
       }
+    }
+
+    // add models accessible from used generators should be accessible from our solution - add all model roots
+    for (GenerationSessionContext context : mySavedContexts) {
+      List<Generator> generatorModules = context.getGeneratorModules();
+      for (Generator generator : generatorModules) {
+        List<ModelRoot> modelRoots = generator.getNonDefaultModelRoots();
+        for (ModelRoot modelRoot : modelRoots) {
+          addModelRoot(modelRoot.getPrefix(), modelRoot.getPath(), solutionDescriptor);
+        }
+      }
+    }
+
+    // add models accessible from the invokation contextshould be accessible from our solution - add all model roots
+    IModule invocationModule = myInvocationContext.getModule();
+    List<ModelRoot> modelRoots = invocationModule.getNonDefaultModelRoots();
+    for (ModelRoot modelRoot : modelRoots) {
+      addModelRoot(modelRoot.getPrefix(), modelRoot.getPath(), solutionDescriptor);
+    }
+
+    // discard all transient modules (and models)
+    // we have to remove transient models from repository because we need to update they root-managers
+    for (IModule module : transientModules) {
+      module.dispose();
     }
 
     // save, add to project and reload all
-    if (mySessionDescriptorFile == null) {
-      mySessionDescriptorFile = new File(solutionDir, getSessionModuleName() + ".msd");
-    }
-    PersistenceUtil.saveSolutionDescriptor(mySessionDescriptorFile, sessionDescriptor);
-    SModelRepository.getInstance().unRegisterModelDescriptor(sessionDescriptorModel.getModelDescriptor(), this);
+    File solutionDescriptorFile = new File(solutionDir, getSessionModuleName() + ".msd");
+    PersistenceUtil.saveSolutionDescriptor(solutionDescriptorFile, solutionDescriptor);
+    SModelRepository.getInstance().unRegisterModelDescriptor(solutionDescriptorModel.getModelDescriptor(), tmpOwner);
+
+    return solutionDescriptorFile;
   }
 
   private void addModelRoot(String prefix, String path, SolutionDescriptor descriptor) {
@@ -307,31 +336,7 @@ public class GenerationSession implements ModelOwner {
     descriptor.addModelRoot(modelRoot);
   }
 
-  private void addModuleRoot(String path, SolutionDescriptor descriptor) {
-    Iterator<Root> iterator = descriptor.moduleRoots();
-    while (iterator.hasNext()) {
-      Root root = iterator.next();
-      if (path.equals(root.getPath())) {
-        return;
-      }
-    }
-    Root root = new Root(descriptor.getModel());
-    root.setPath(path);
-    descriptor.addModuleRoot(root);
-  }
-
-  public File getSessionDescriptorFile() {
-    return mySessionDescriptorFile;
-  }
-
   public String getSessionModuleName() {
     return "generationSession_" + getSessionId();
-  }
-
-  public void dispose() {
-    if (myGeneratorSessionContext != null) {
-      myGeneratorSessionContext.getModule().dispose(); // unregister transient models
-      myGeneratorSessionContext = null;
-    }
   }
 }
