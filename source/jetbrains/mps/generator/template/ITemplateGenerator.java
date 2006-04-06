@@ -18,7 +18,6 @@ import jetbrains.mps.transformation.TLBase.ConditionalTemplate;
 import jetbrains.mps.transformation.TLBase.TemplateSwitch;
 import jetbrains.mps.typesystem.ITypeChecker;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.baseLanguage.builder._Classifier_NodeBuilder;
 
 import java.util.*;
 
@@ -76,8 +75,4 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
   INodeBuilder createCopyingNodeBuilder(SNode sourceNode, String roleInParent);
 
   void notifyBuilderCreated(INodeBuilder builder);
-
-  void putToQuickSearchMap(SNode sourceNode, INodeBuilder builder);
-
-  INodeBuilder getFormQuickSearchMap(SNode sourceNode);
 }
