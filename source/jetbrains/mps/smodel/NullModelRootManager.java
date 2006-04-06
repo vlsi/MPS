@@ -14,10 +14,14 @@ class NullModelRootManager extends AbstractModelRootManager {
   }
 
   public void saveModel(SModelDescriptor modelDescriptor) {
-    throw new RuntimeException("saving model "+modelDescriptor+" using null model root manager");
+    String message = "saving model " + modelDescriptor + " using null model root manager \n";
+    message += "this model is owned by " + SModelRepository.getInstance().getOwners(modelDescriptor);
+    throw new RuntimeException(message);
   }
 
   public boolean containsString(SModelDescriptor modelDescriptor, String string) {
-    throw new RuntimeException();
+    String message = "trying to find usages in " + modelDescriptor + " , model with NullModelRootManager\n";
+    message += "this model is owned by " + SModelRepository.getInstance().getOwners(modelDescriptor);
+    throw new RuntimeException(message);
   }
 }

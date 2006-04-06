@@ -229,7 +229,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       new File(outputFolder).mkdirs();
 
       try {
-
         myProject.getProjectHandler().addSourceRoot(outputFolder);
       } catch (Exception e) {
         addMessage(MessageKind.WARNING, "Can't add output folder to IDEA as sources");
@@ -303,8 +302,20 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
             generateFile(outputFolder, sourceModel, status.getOutputModel());
           }
         }
+                
+        if (isSaveTransientModels()) {
+          generationSession.saveTransientModels();
+          addProgressMessage(MessageKind.INFORMATION, "adding module \"" + generationSession.getSessionModuleName() + "\"", progress);
+          File sessionDescriptorFile = generationSession.getSessionDescriptorFile();
+          generationSession.dispose(); // unregister transient models
+          myProject.addProjectSolution(sessionDescriptorFile);
+        } else if (!status.isError()) {
+          // if ERROR - keep transient models: we need them to navigate to from error messages
+          generationSession.dispose(); // unregister transient models
+        }
 
         progress.finishTask(taskName);
+
         if (!status.isOk()) {
           break;
         }
@@ -314,16 +325,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       //update generated sources timestamp
       updateLanguagesGenerationRequiredStatus(invocationContext);
 
-      if (isSaveTransientModels()) {
-        generationSession.saveTransientModels();
-        addProgressMessage(MessageKind.INFORMATION, "adding module \"" + generationSession.getSessionModuleName() + "\"", progress);
-        File sessionDescriptorFile = generationSession.getSessionDescriptorFile();
-        generationSession.dispose(); // unregister transient models
-        myProject.addProjectSolution(sessionDescriptorFile);
-      } else if (!status.isError()) {
-        // if ERROR - keep transient models: we need them to navigate to from error messages
-        generationSession.dispose(); // unregister transient models
-      }
 
       checkMonitorCanceled(progress);
       progress.addText("");
