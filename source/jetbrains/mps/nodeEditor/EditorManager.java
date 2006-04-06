@@ -308,10 +308,19 @@ public class EditorManager {
     node.removeRightTransformHint();
     CommandProcessor.instance().invokeLater(new Runnable() {
       public void run() {
-        EditorCell newlySelectedCell = cellInfoToSelect.findCell(context.getNodeEditorComponent());
-        context.getNodeEditorComponent().changeSelection(newlySelectedCell);
-        if (newlySelectedCell instanceof EditorCell_Label) {
-          ((EditorCell_Label)newlySelectedCell).getRenderedTextLine().setCaretPositionToLast();
+        AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
+        EditorCell newlySelectedCell = cellInfoToSelect.findCell(nodeEditorComponent);
+        EditorCell nextSelectableCell = nodeEditorComponent.findNextSelectableCell(newlySelectedCell);
+        if (nextSelectableCell != null) {
+          context.getNodeEditorComponent().changeSelection(nextSelectableCell);
+          if (nextSelectableCell instanceof EditorCell_Label) {
+            ((EditorCell_Label) nextSelectableCell).getRenderedTextLine().setCaretPosition(0);
+          }
+        } else {
+          context.getNodeEditorComponent().changeSelection(newlySelectedCell);
+          if (newlySelectedCell instanceof EditorCell_Label) {
+            ((EditorCell_Label) newlySelectedCell).getRenderedTextLine().setCaretPositionToLast();
+          }
         }
       }
     });
@@ -343,8 +352,6 @@ public class EditorManager {
       return new RTHintCellInfo(this, myAnchorCell);
     }
   }
-
-
 
 
   /*package*/ EditorCell createInspectedCell(EditorContext context, SNode node, List<SModelEvent> events) {

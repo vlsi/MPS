@@ -11,7 +11,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../languages/baseLanguage/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../languages/bootstrap/smodelLanguage/solutions/sandbox/source_gen" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="IDEA 4155" />
+    <orderEntry type="jdk" jdkName="IDEA 3461" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPSSupport" />
     <orderEntryProperties />

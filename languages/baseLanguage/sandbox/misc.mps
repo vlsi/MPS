@@ -21,9 +21,6 @@
           <node role="variable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1144230443713">
             <property name="name" value="it" />
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1144230446389" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1144270524375">
-              <property name="value" value="100" />
-            </node>
           </node>
           <node role="iterable" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1144230453733">
             <link role="variableDeclaration" targetNodeId="1144230437428" />
