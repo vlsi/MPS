@@ -2601,6 +2601,34 @@
               </node>
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1144271519172">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1144271519173">
+              <property name="name" value="test" />
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1144271519174">
+                <link role="classifier" extResolveInfo="8.[Classifier]List" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1144271549351">
+            <node role="iterable" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1144271604905">
+              <link role="variableDeclaration" targetNodeId="1144271519173" />
+            </node>
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1144271549353">
+              <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1144271609484">
+                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1144271609485">
+                  <property name="name" value="ii" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1144271609486" />
+                  <node role="initializer" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1144271614707">
+                    <link role="variableDeclaration" targetNodeId="1144271556402" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="variable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1144271556402">
+              <property name="name" value="i" />
+              <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1144271592904" />
+            </node>
+          </node>
         </node>
       </node>
     </node>
