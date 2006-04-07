@@ -1050,7 +1050,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       mySelectedCell.setSelected(true);
     }
     if (mySelectedCell != null) {
-      scrollRectToVisible(new Rectangle(newSelectedCell.getX(), newSelectedCell.getY(), newSelectedCell.getWidth(), newSelectedCell.getHeight()));
+      Rectangle selectionRect = new Rectangle(newSelectedCell.getX(), newSelectedCell.getY(), newSelectedCell.getWidth()+30, newSelectedCell.getHeight());
+      Rectangle fakeRect = new Rectangle(0, newSelectedCell.getY(), newSelectedCell.getWidth(), newSelectedCell.getHeight());
+      scrollRectToVisible(fakeRect);
+      scrollRectToVisible(selectionRect);
     }
     repaint();
 
