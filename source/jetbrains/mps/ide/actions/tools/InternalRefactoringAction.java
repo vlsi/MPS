@@ -1,13 +1,14 @@
 package jetbrains.mps.ide.actions.tools;
 
-import jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration;
-import jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList;
-import jetbrains.mps.bootstrap.editorLanguage.EditorCellModel;
+import jetbrains.mps.baseLanguage.*;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 
 import java.util.*;
@@ -16,12 +17,12 @@ import java.util.*;
  * serves as template: just loads all models from MPSFileModelDescriptor and "process" them.
  */
 public class InternalRefactoringAction extends MPSAction {
-  public static boolean SHOW = false;
+  public static boolean SHOW = true;
 
   private static final Logger LOG = Logger.getLogger(InternalRefactoringAction.class);
 
   public InternalRefactoringAction() {
-    super("... cell action : enable/disable ...");
+    super("... refactor static members ...");
   }
 
   public void execute(ActionContext context) {
@@ -47,7 +48,7 @@ public class InternalRefactoringAction extends MPSAction {
       wasLoaded = false;
       List<SModelDescriptor> modelDescriptors = new LinkedList<SModelDescriptor>(GlobalScope.getInstance().getModelDescriptors());
       for (SModelDescriptor descriptor : modelDescriptors) {
-        if (!descriptor.getStereotype().equals("")) continue;
+        if (descriptor.getStereotype().equals("java_stub")) continue;
         if (!descriptor.isInitialized()) {
           wasLoaded = true;
           System.out.println("load model: " + descriptor.getModelUID().toString());
@@ -65,9 +66,91 @@ public class InternalRefactoringAction extends MPSAction {
    * perform "refactoring"
    */
   private void processModel(SModel model) {
-    _checkUsageOfSomeDeprecatedFeatures(model);
-    _clearSomeUnresolvedReferences(model);
+//    _checkUsageOfSomeDeprecatedFeatures(model);
+    _refactorStaticMemberReferences(model);
   }
+
+
+  private void _refactorStaticMemberReferences(SModel model) {
+    // ---- static field ref.
+    List<SNode> staticFieldReferences = SModelUtil.allNodes(model, new Condition<SNode>() {
+      public boolean met(SNode object) {
+        return object instanceof StaticFieldReference;
+      }
+    });
+    System.out.println("// ---- static field ref.:" + staticFieldReferences.size());
+    for (SNode node : staticFieldReferences) {
+      StaticFieldReference staticFieldReference = (StaticFieldReference) node;
+      ClassifierType classifierType = staticFieldReference.getClassifierType();
+      if (classifierType != null) {
+        if (classifierType.getChildCount() > 0) {
+          System.out.println("   !!!! do not replace !!! in " + SModelUtil.getRootParent(classifierType).getDebugText());
+          staticFieldReference.setClassifier(classifierType.getClassifier());
+        } else {
+          System.out.println("    *** replace ***");
+          staticFieldReference.setClassifierType(null);
+          staticFieldReference.setClassifier(classifierType.getClassifier());
+        }
+      }
+    }
+
+    // ---- static method call.
+    List<SNode> staticMethodCalls = SModelUtil.allNodes(model, new Condition<SNode>() {
+      public boolean met(SNode object) {
+        return object instanceof StaticMethodCall;
+      }
+    });
+    System.out.println("// ---- static method call:" + staticMethodCalls.size());
+    for (SNode node : staticMethodCalls) {
+      StaticMethodCall staticMethodCall = (StaticMethodCall) node;
+      ClassifierType classifierType = staticMethodCall.getClassType();
+      if (classifierType != null) {
+        if (classifierType.getChildCount() > 0) {
+          System.out.println("   !!!! do not replace !!! in " + SModelUtil.getRootParent(classifierType).getDebugText());
+          Classifier classifier = classifierType.getClassifier();
+          if (classifier instanceof ClassConcept) {
+            staticMethodCall.setClassConcept((ClassConcept) classifier);
+          }
+        } else {
+          System.out.println("    *** replace ***");
+          staticMethodCall.setClassType(null);
+          Classifier classifier = classifierType.getClassifier();
+          if (classifier instanceof ClassConcept) {
+            staticMethodCall.setClassConcept((ClassConcept) classifier);
+          }
+        }
+      }
+    }
+
+    // ---- enum const ref.
+    List<SNode> enumConstantRefs = SModelUtil.allNodes(model, new Condition<SNode>() {
+      public boolean met(SNode object) {
+        return object instanceof EnumConstantReference;
+      }
+    });
+    System.out.println("// ---- enum const ref:" + enumConstantRefs.size());
+    for (SNode node : enumConstantRefs) {
+      EnumConstantReference enumConstantReference = (EnumConstantReference) node;
+      ClassifierType classifierType = enumConstantReference.getClassType();
+      if (classifierType != null) {
+        if (classifierType.getChildCount() > 0) {
+          System.out.println("   !!!! do not replace !!! in " + SModelUtil.getRootParent(classifierType).getDebugText());
+          Classifier classifier = classifierType.getClassifier();
+          if (classifier instanceof EnumClass) {
+            enumConstantReference.setEnumClass((EnumClass) classifier);
+          }
+        } else {
+          System.out.println("    *** replace ***");
+          enumConstantReference.setClassType(null);
+          Classifier classifier = classifierType.getClassifier();
+          if (classifier instanceof EnumClass) {
+            enumConstantReference.setEnumClass((EnumClass) classifier);
+          }
+        }
+      }
+    }
+  }
+
 
   private void _checkUsageOfSomeDeprecatedFeatures(SModel model) {
     SModelUtil.allNodes(model, new Condition<SNode>() {
@@ -103,46 +186,6 @@ public class InternalRefactoringAction extends MPSAction {
 //            System.out.println("(!)action DIASBLED: " + action.getDebugText() + " in " + SModelUtil.getRootParent(action));
 //          }
 //        }
-        return false;
-      }
-    });
-  }
-
-  private void _clearSomeUnresolvedReferences(SModel model) {
-    SModelUtil.allNodes(model, new Condition<SNode>() {
-      public boolean met(SNode object) {
-        if (object instanceof EditorCellModel) {
-          EditorCellModel cellModel = (EditorCellModel) object;
-          if (cellModel.getActionSet() == null) {
-            cellModel.setActionSet(null);
-          }
-
-//          if (object instanceof CellModel_RefNode) {
-//            CellModel_RefNode cellModel_refNode = (CellModel_RefNode) object;
-//            if (cellModel_refNode.getErrorActionSet() == null) {
-//              cellModel_refNode.setErrorActionSet(null);
-//            }
-//          }
-//          if (object instanceof CellModel_RefCell) {
-//            CellModel_RefCell cellModel_refCell = (CellModel_RefCell) object;
-//            if (cellModel_refCell.getNullActionSet() == null) {
-//              cellModel_refCell.setNullActionSet(null);
-//            }
-//          }
-
-          if (object instanceof CellModel_RefNodeList) {
-            CellModel_RefNodeList cellModel_refNodeList = (CellModel_RefNodeList) object;
-            if (cellModel_refNodeList.getElementActionSet() == null) {
-              cellModel_refNodeList.setElementActionSet(null);
-            }
-          }
-
-        } else if (object instanceof CellActionSetDeclaration) {
-          CellActionSetDeclaration cellActionSet = (CellActionSetDeclaration) object;
-          if (cellActionSet.getSpecializes() == null) {
-            cellActionSet.setSpecializes(null);
-          }
-        }
         return false;
       }
     });
