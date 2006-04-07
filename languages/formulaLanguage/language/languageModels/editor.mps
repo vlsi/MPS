@@ -347,9 +347,7 @@
               <link role="baseMethodDeclaration" extResolveInfo="6.method ([Classifier]String).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
               <node role="instance" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1143460221907">
                 <link role="variableDeclaration" extResolveInfo="3.static field ([Classifier]Operation).([StaticFieldDeclaration]LEFT_OPERAND : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
-                <node role="classifierType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1143460221908">
-                  <link role="classifier" extResolveInfo="3.[Classifier]Operation" />
-                </node>
+                <link role="classifier" extResolveInfo="3.[Classifier]Operation" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1143460237625">
                 <link role="variableDeclaration" targetNodeId="1143460196538" />

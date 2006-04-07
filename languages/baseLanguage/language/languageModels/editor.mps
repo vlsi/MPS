@@ -661,6 +661,7 @@
       <link role="keyMap" targetNodeId="1081427357000" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1144433223660">
         <property name="drawBorder" value="false" />
+        <property name="conditionId" value="StaticAccess_HasObsoleteClassType" />
         <property name="vertical" value="true" />
         <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1144433231056">
@@ -673,21 +674,6 @@
           <property name="text" value="deprecated!" />
           <property name="drawBorder" value="false" />
           <property name="selectable" value="false" />
-        </node>
-        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1144433755459">
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1144433755460">
-            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1144433756557">
-              <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1144433756558">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1144433756559" />
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1144433756560">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1144433756561" />
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1144433762110">
-                    <link role="link" targetNodeId="1.1081236769986" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1144433246063">
@@ -1515,6 +1501,7 @@
       <link role="keyMap" targetNodeId="1081427357000" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1144433104029">
         <property name="drawBorder" value="false" />
+        <property name="conditionId" value="StaticAccess_HasObsoleteClassType" />
         <property name="vertical" value="true" />
         <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1144433113206">
@@ -1526,21 +1513,6 @@
           <property name="text" value="deprecated!" />
           <property name="drawBorder" value="false" />
           <property name="selectable" value="false" />
-        </node>
-        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1144433728401">
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1144433728402">
-            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1144433729765">
-              <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1144433729766">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1144433729767" />
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1144433729768">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1144433729769" />
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1144433744302">
-                    <link role="link" targetNodeId="1.1130267662831" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1144433124322">
@@ -1743,6 +1715,7 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1144432925459">
         <property name="drawBorder" value="false" />
+        <property name="conditionId" value="StaticAccess_HasObsoleteClassType" />
         <property name="vertical" value="true" />
         <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1144432934027">
@@ -1754,21 +1727,6 @@
           <property name="text" value="deprecated!" />
           <property name="drawBorder" value="false" />
           <property name="selectable" value="false" />
-        </node>
-        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1144433671909">
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1144433671910">
-            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1144433675208">
-              <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1144433692682">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1144433698122" />
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1144433683805">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1144433681616" />
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1144433689540">
-                    <link role="link" targetNodeId="1.1083260308425" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1144432986234">
@@ -3396,9 +3354,7 @@
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1144411191816">
                 <link role="baseMethodDeclaration" extResolveInfo="11.static method ([Classifier]TypeCheckerAccess).([StaticMethodDeclaration]getTypeChecker() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ITypeChecker]))" />
-                <node role="classType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1144411190049">
-                  <link role="classifier" extResolveInfo="11.[Classifier]TypeCheckerAccess" />
-                </node>
+                <link role="classConcept" extResolveInfo="11.[Classifier]TypeCheckerAccess" />
               </node>
             </node>
           </node>
@@ -3465,15 +3421,13 @@
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1144411917518">
                 <link role="baseMethodDeclaration" extResolveInfo="14.static method ([Classifier]JOptionPane).([StaticMethodDeclaration]showInputDialog((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Component]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                <link role="classConcept" extResolveInfo="14.[Classifier]JOptionPane" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1144411943006">
                   <link role="baseMethodDeclaration" extResolveInfo="10.method ([Classifier]EditorContext).([InstanceMethodDeclaration]getNodeEditorComponent() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [AbstractEditorComponent]))" />
                   <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_editorContext" id="1144411935957" />
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1144411948337">
                   <property name="value" value="Enter variable name" />
-                </node>
-                <node role="classType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1144411868120">
-                  <link role="classifier" extResolveInfo="14.[Classifier]JOptionPane" />
                 </node>
               </node>
             </node>

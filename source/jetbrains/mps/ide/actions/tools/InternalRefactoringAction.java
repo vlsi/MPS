@@ -85,7 +85,7 @@ public class InternalRefactoringAction extends MPSAction {
       if (classifierType != null) {
         if (classifierType.getChildCount() > 0) {
           System.out.println("   !!!! do not replace !!! in " + SModelUtil.getRootParent(classifierType).getDebugText());
-          staticFieldReference.setClassifier(classifierType.getClassifier());
+//          staticFieldReference.setClassifier(classifierType.getClassifier());
         } else {
           System.out.println("    *** replace ***");
           staticFieldReference.setClassifierType(null);
@@ -107,10 +107,10 @@ public class InternalRefactoringAction extends MPSAction {
       if (classifierType != null) {
         if (classifierType.getChildCount() > 0) {
           System.out.println("   !!!! do not replace !!! in " + SModelUtil.getRootParent(classifierType).getDebugText());
-          Classifier classifier = classifierType.getClassifier();
-          if (classifier instanceof ClassConcept) {
-            staticMethodCall.setClassConcept((ClassConcept) classifier);
-          }
+//          Classifier classifier = classifierType.getClassifier();
+//          if (classifier instanceof ClassConcept) {
+//            staticMethodCall.setClassConcept((ClassConcept) classifier);
+//          }
         } else {
           System.out.println("    *** replace ***");
           staticMethodCall.setClassType(null);
@@ -135,10 +135,10 @@ public class InternalRefactoringAction extends MPSAction {
       if (classifierType != null) {
         if (classifierType.getChildCount() > 0) {
           System.out.println("   !!!! do not replace !!! in " + SModelUtil.getRootParent(classifierType).getDebugText());
-          Classifier classifier = classifierType.getClassifier();
-          if (classifier instanceof EnumClass) {
-            enumConstantReference.setEnumClass((EnumClass) classifier);
-          }
+//          Classifier classifier = classifierType.getClassifier();
+//          if (classifier instanceof EnumClass) {
+//            enumConstantReference.setEnumClass((EnumClass) classifier);
+//          }
         } else {
           System.out.println("    *** replace ***");
           enumConstantReference.setClassType(null);
