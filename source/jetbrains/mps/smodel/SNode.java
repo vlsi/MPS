@@ -40,6 +40,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   private SNode myParent;
 
 
+  private Map<String, Integer> myChildInRoleCount = new HashMap<String, Integer>();
   private List<SNode> myChildren = new ArrayList<SNode>();
   private List<SReference> myReferences = new ArrayList<SReference>();
   private HashMap<String, String> myProperties = new HashMap<String, String>();
@@ -410,13 +411,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public int getChildCount(String role) {
-    int count = 0;
-    for (SNode child : myChildren) {
-      if (child.getRole_().equals(role)) {
-        count++;
-      }
-    }
-    return count;
+    return getChildInRoleCount(role);
   }
 
   public <T extends SNode> Iterator<T> children(String role) {
@@ -479,6 +474,9 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     wasChild.myRoleInParent = null;
     wasChild.unRegisterFromModel();
 
+
+    decrementChildInRoleCount(wasRole);
+
     if (!getModel().isLoading()) {
       UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
         public void undo() {
@@ -502,6 +500,8 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     myChildren.add(index, child);
     child.myRoleInParent = role;
     child.myParent = this;
+
+    incrementChildInRoleCount(role);
 
     if (myRegisteredInModelFlag) {
       child.registerInModel(getModel());
@@ -968,6 +968,32 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
           addRightTransformHint();
         }
       });
+    }
+  }
+
+  private int getChildInRoleCount(String role) {
+    if (myChildInRoleCount.get(role) == null) return 0;
+    return myChildInRoleCount.get(role);
+  }
+
+  private void incrementChildInRoleCount(String role) {
+    if (!myChildInRoleCount.containsKey(role)) {
+      myChildInRoleCount.put(role, 0);
+    }
+    Integer childCount = myChildInRoleCount.get(role);
+    myChildInRoleCount.put(role, childCount + 1);
+  }
+
+  private void decrementChildInRoleCount(String role) {
+    if (!myChildInRoleCount.containsKey(role)) {
+      LOG.error("This can't happen");
+    }
+
+    Integer childCount = myChildInRoleCount.get(role);
+    if (childCount == 1) {
+      myChildInRoleCount.remove(role);
+    } else {
+      myChildInRoleCount.put(role, childCount + 1);
     }
   }
 }
