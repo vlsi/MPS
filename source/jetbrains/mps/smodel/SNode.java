@@ -377,7 +377,10 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     // tmp check
     int count = getChildCount(role);
     if (count > 1) {
-      LOG.errorWithTrace("ERROR: " + count + " children for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getId() + "] " + getModel().getUID());
+      String errorMessage = "ERROR: " + count + " children for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getId() + "] " + getModel().getUID() + "\n";
+      errorMessage += "they are : " + getChildren(role);            
+      LOG.errorWithTrace(errorMessage);
+
     }
     // tmp check
 
