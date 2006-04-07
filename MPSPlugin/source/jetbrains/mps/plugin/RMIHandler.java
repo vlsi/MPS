@@ -28,7 +28,7 @@ public class RMIHandler {
 
   static {
     try {
-      Registry registry = LocateRegistry.createRegistry(REGISTRY_PORT);
+      Registry registry = LocateRegistry.createRegistry(REGISTRY_PORT);      
       ourPlugin = new MyMPSPlugin();
       registry.rebind("MPSPlugin", ourPlugin);
     } catch (RemoteException e) {

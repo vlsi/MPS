@@ -140,12 +140,12 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
 
     private void chooseColor() {
       Color c = JColorChooser.showDialog(this, "Choose color", getColor());
-      setColor(c);
+      if (c != null) {
+        setColor(c);
+      }
       myLabel.repaint();
     }
-
   }
-
 
   private class MyPreferencesPage implements IPreferencesPage {
     private final int SLIDER_RATIO = 10000;
@@ -161,14 +161,20 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     Timer myTimer;
 
     public MyPreferencesPage() {
-      JPanel panel = new JPanel(new GridLayout(0, 1));
-      panel.setBorder(new EmptyBorder(5, 5, 5, 5));
-      panel.add(new JLabel("Font Name : "));
-      panel.add(myFontsComboBox);
-      panel.add(new JLabel("Font Size : "));
-      panel.add(myFontSizesComboBox);
-      panel.add(new JLabel("Text Width : "));
-      panel.add(myTextWidthComboBox);
+
+      JPanel panel = new JPanel();
+      panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+
+      JPanel fontPropertiesPanel = new JPanel(new GridLayout(0, 1));
+      fontPropertiesPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+      fontPropertiesPanel.add(new JLabel("Font Name : "));
+      fontPropertiesPanel.add(myFontsComboBox);
+      fontPropertiesPanel.add(new JLabel("Font Size : "));
+      fontPropertiesPanel.add(myFontSizesComboBox);
+      fontPropertiesPanel.add(new JLabel("Text Width : "));
+      fontPropertiesPanel.add(myTextWidthComboBox);
+
+      panel.add(fontPropertiesPanel);
 
       JPanel antialiasingPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
       antialiasingPanel.add(myAntialiasingCheckBox);
@@ -176,17 +182,22 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
 
       panel.add(antialiasingPanel);
 
-      panel.add(new JLabel("Selection Color : "));
-      panel.add(mySelectedColorComponent);
 
-      panel.add(new JLabel("Range Selection Color : "));
-      panel.add(myRangeSelColorComponent);
+      JPanel colorSettingsPanel = new JPanel(new GridLayout(0, 1));
+      colorSettingsPanel.add(new JLabel("Selection Color : "));
+      colorSettingsPanel.add(mySelectedColorComponent);
 
-      panel.add(new JLabel(" "));
-      panel.add(new JLabel("Cursor Blinking Rate : "));
-      panel.add(myBlinkingRateSlider);
-      panel.add(myBlinkingDemo);
-      myBlinkingDemo.setBackground(panel.getBackground());
+      colorSettingsPanel.add(new JLabel("Range Selection Color : "));
+      colorSettingsPanel.add(myRangeSelColorComponent);
+
+      colorSettingsPanel.add(new JLabel(" "));
+      colorSettingsPanel.add(new JLabel("Cursor Blinking Rate : "));
+      colorSettingsPanel.add(myBlinkingRateSlider);
+      colorSettingsPanel.add(myBlinkingDemo);
+
+      panel.add(colorSettingsPanel);
+
+      myBlinkingDemo.setBackground(fontPropertiesPanel.getBackground());
 
       ActionListener listener = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
