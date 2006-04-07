@@ -25,18 +25,10 @@ public class FileClassPathItem implements IClassPathItem {
     File file = new File(path);
     try {
       byte[] result = new byte[(int) file.length()];
-      int current = 0;
       FileInputStream inp = new FileInputStream(file);
-      while (true) {
-        int b = inp.read();
-        if (b == -1) break;
-        result[current++] = (byte) b;
-      }
 
-      if (current != result.length) {
-        throw new RuntimeException("This can't happen");
-      }
-      
+      ReadUtil.read(result, inp);
+
       inp.close();
       return result;
     } catch (IOException e) {

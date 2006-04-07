@@ -48,19 +48,9 @@ public class JarFileClassPathItem implements IClassPathItem {
     if (entry == null) return null;
     try {
       InputStream inp = myZipFile.getInputStream(entry);
-
       byte[] result = new byte[(int) entry.getSize()];
-      int current = 0;
 
-      while (true) {
-        int b = inp.read();
-        if (b == -1) break;
-        result[current++] = (byte) b;
-      }
-
-      if (current != result.length) {
-        throw new RuntimeException("this can't happen");
-      }
+      ReadUtil.read(result, inp);
 
       inp.close();
       return result;
