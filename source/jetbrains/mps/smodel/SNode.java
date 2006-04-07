@@ -68,6 +68,18 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     }
   }
 
+  public SNode getChildWhichIsAncestorOf(SNode node) {
+    while (true) {
+      if (node == null) {
+        return null;
+      }
+      if (getChildren().contains(node)) {
+        return node;
+      }
+      node = node.getParent();
+    }
+  }
+
   public boolean isRoot() {
     return getModel().getRoots().contains(this);
   }
@@ -476,7 +488,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     wasChild.myParent = null;
     wasChild.myRoleInParent = null;
     wasChild.unRegisterFromModel();
-
 
     decrementChildInRoleCount(wasRole);
 
