@@ -117,10 +117,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   }
 
   public long timestamp() {
-    if (myModelFile != null) {
-      return myModelFile.lastModified();
-    }
-    return System.currentTimeMillis();
+    return myModelRootManager.timestamp(this);
   }
 
   /**

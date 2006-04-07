@@ -46,8 +46,7 @@ public class SModel implements Iterable<SNode> {
 
   private SModelEventTranslator myEventTranslator = new SModelEventTranslator();
 
-  private Set<SModelUID> myDescriptorNotFoundReportedModelUIDs = new HashSet<SModelUID>();
-
+  private Set<SModelUID> myDescriptorNotFoundReportedModelUIDs = new HashSet<SModelUID>();  
 
   public SModel(SModelUID modelUID) {
     this();

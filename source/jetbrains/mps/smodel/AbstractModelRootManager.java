@@ -22,6 +22,13 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
     return false;
   }
 
+  public long timestamp(SModelDescriptor modelDescriptor) {
+    if (modelDescriptor.getModelFile() != null) {
+      return modelDescriptor.getModelFile().lastModified();
+    }
+    return System.currentTimeMillis();
+  }
+
   public SModelDescriptor createNewModel(ModelRoot root, SModelUID modelUID, ModelOwner owner) {
     throw new RuntimeException();
   }

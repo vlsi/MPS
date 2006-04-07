@@ -8,13 +8,14 @@ import jetbrains.mps.conversion.IConverter;
 import jetbrains.mps.conversion.ConverterFactory;
 import jetbrains.mps.ide.BootstrapLanguages;
 
-import java.util.Set;
-import java.util.HashSet;
+import java.util.*;
 
 /**
  * @author Kostik
  */
 public class ClassPathModelRootManager extends AbstractModelRootManager  {
+  private static WeakHashMap<SModelUID, Long> ourTimestamps = new WeakHashMap<SModelUID, Long>();
+
   private ModelOwner myOwner;
   private IConverter myConverter;
 
@@ -33,13 +34,13 @@ public class ClassPathModelRootManager extends AbstractModelRootManager  {
 
   public SModel loadModel(SModelDescriptor modelDescriptor) {
     SModel model = new SModel(modelDescriptor.getModelUID());
+    ourTimestamps.put(model.getUID(), timestamp(modelDescriptor));
     model.addLanguage(BootstrapLanguages.getInstance().getBaseLanguage());
     return model;
   }
 
   public void updateAfterLoad(SModelDescriptor modelDescriptor) {
     SModel model = modelDescriptor.getSModel();
-
     model.setLoading(true);
     try {
       myConverter.updateModel(modelDescriptor.getModelUID().getLongName(), true);
@@ -48,10 +49,24 @@ public class ClassPathModelRootManager extends AbstractModelRootManager  {
     }
   }
 
+  public long timestamp(SModelDescriptor modelDescriptor) {
+    return getClassPathItem().getClassesTimestamp(modelDescriptor.getModelUID().getLongName());
+  }
+
+
   public void saveModel(SModelDescriptor modelDescriptor) {
   }
 
   public SModel refresh(SModelDescriptor modelDescriptor) {
+    SModel smodel = modelDescriptor.getSModel();
+    if (smodel != null) {
+      long timestamp = timestamp(modelDescriptor);
+      long modelTimestamp = ourTimestamps.get(smodel.getUID());
+      if (modelTimestamp == timestamp) {
+        return super.refresh(modelDescriptor);
+      }
+    }
+
     return null;
   }
 
