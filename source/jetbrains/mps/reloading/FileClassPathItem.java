@@ -72,7 +72,7 @@ public class FileClassPathItem implements IClassPathItem {
     File dir = getModelDir(namespace);
     if (dir.exists()) {
       for (File file : dir.listFiles()) {
-        if (file.isDirectory()) {
+        if (!file.getName().endsWith(".class") && file.isDirectory()) { //isDirectory is quite expensive operation
           if (namespace.length() > 0) {
             result.add(namespace + "." + file.getName());
           } else {
