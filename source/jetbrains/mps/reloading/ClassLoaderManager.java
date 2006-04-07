@@ -19,6 +19,7 @@ public class ClassLoaderManager {
   private static Logger LOG = Logger.getLogger(ClassLoaderManager.class);
 
   private static ClassLoaderManager ourInstance;
+  private CompositeClassPathItem myItems;
 
   public static ClassLoaderManager getInstance() {
     if (ourInstance == null) ourInstance = new ClassLoaderManager();
@@ -54,16 +55,16 @@ public class ClassLoaderManager {
   public void updateClassPath() {
     if (myUseSystemClassLoader) return;
 
-    CompositeClassPathItem items = new CompositeClassPathItem();
+    myItems = new CompositeClassPathItem();
 
 
     IClassPathItem rtJar = getRTJar();
     if (rtJar != null) {
-      items.add(rtJar);
+      myItems.add(rtJar);
     }
     IClassPathItem mpsPath = getMPSPath();
     if (mpsPath != null) {
-      items.add(mpsPath);
+      myItems.add(mpsPath);
     }
 
     if (ApplicationComponents.getInstance().getComponent(MPSProjects.class) != null) {
@@ -74,15 +75,19 @@ public class ClassLoaderManager {
             continue;
           }
           if (new File(s).isDirectory()) {
-            items.add(new FileClassPathItem(s));
+            myItems.add(new FileClassPathItem(s));
           } else {
-            items.add(new JarFileClassPathItem(s));
+            myItems.add(new JarFileClassPathItem(s));
           }
         }
       }
     }
 
-    myClassLoader = new MPSClassLoader(items);
+    myClassLoader = new MPSClassLoader(myItems);
+  }
+
+  public IClassPathItem getClassPathItem() {
+    return myItems;
   }
 
   public MPSClassLoader getMPSClassLoader() {
