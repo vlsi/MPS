@@ -3299,7 +3299,9 @@
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1144411225938">
                   <link role="variableDeclaration" targetNodeId="1144409728866" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1144411228175" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1144411228175">
+                  <property name="value" value="true" />
+                </node>
               </node>
             </node>
           </node>
