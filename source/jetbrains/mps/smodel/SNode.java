@@ -95,6 +95,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       newNode.myUserObjects = new HashMap<Object, Object>();
       newNode.myProperties = new HashMap<String, String>();
       newNode.myProperties.putAll(this.myProperties);
+      newNode.myChildInRoleCount.clear();
     } catch (Exception e) {
       e.printStackTrace();
       return null;
