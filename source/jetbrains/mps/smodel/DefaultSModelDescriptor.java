@@ -80,7 +80,15 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   }
 
   private void checkModelDuplication() {
-    LOG.assertLog(SModelRepository.getInstance().getModelDescriptor(myModelUID) == null, "Model Already Register");
+
+    SModelDescriptor anotherModel = SModelRepository.getInstance().getModelDescriptor(myModelUID);
+    if (anotherModel != null) {
+      String message = "Model Already Register : " + myModelUID + "\n";
+      message += "file = " + myModelFile + "\n";
+      message += "another model's file = " + anotherModel.getModelFile();
+
+      LOG.error(message);
+    }
   }
 
   protected SModel loadModel() {

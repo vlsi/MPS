@@ -296,7 +296,6 @@
       <module fileurl="file://$PROJECT_DIR$/projects/Epigram/Epigram.iml" filepath="$PROJECT_DIR$/projects/Epigram/Epigram.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPS.iml" filepath="$PROJECT_DIR$/MPS.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPSForWeb/MPS4WebTest/MPS4WebTest.iml" filepath="$PROJECT_DIR$/MPSForWeb/MPS4WebTest/MPS4WebTest.iml" group="MPSForWeb" />
-      <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSPlugin.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSPlugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPSForWeb/MPSServerPages/MPSServerPages.iml" filepath="$PROJECT_DIR$/MPSForWeb/MPSServerPages/MPSServerPages.iml" group="MPSForWeb" />
       <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPSWiki/MPSWiki.iml" filepath="$PROJECT_DIR$/MPSWiki/MPSWiki.iml" group="DataLanguages" />
