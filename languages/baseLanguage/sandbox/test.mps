@@ -337,7 +337,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1144458338335">
           <node role="expression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1144458418386">
             <link role="variableDeclaration" targetNodeId="1141080210673" />
-            <link role="classifier" extResolveInfo="1.[Classifier]AbstractMethodError" />
+            <link role="classifier" targetNodeId="1115766310400" />
           </node>
         </node>
       </node>
@@ -514,10 +514,9 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1137816820174">
           <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1137816822865">
-            <link role="baseMethodDeclaration" extResolveInfo="1.static method ([Classifier]Enum).([StaticMethodDeclaration]valueOf((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Class]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object]))" />
-            <link role="classConcept" targetNodeId="1137816471209" />
+            <link role="classConcept" extResolveInfo="1.[Classifier]String" />
+            <link role="baseMethodDeclaration" extResolveInfo="1.static method ([Classifier]String).([StaticMethodDeclaration]valueOf((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.NullLiteral" id="1140571422560" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.NullLiteral" id="1137962419257" />
           </node>
         </node>
       </node>
