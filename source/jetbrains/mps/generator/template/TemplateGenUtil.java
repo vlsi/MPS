@@ -35,9 +35,7 @@ public class TemplateGenUtil {
 
   public static void buildTargetNodeReferences(SNode templateNode, SNode targetNode, INodeBuilder nodeBuilder) {
     ITemplateGenerator generator = nodeBuilder.getGenerator();
-    Iterator<SReference> iterator = templateNode.getReferences().iterator();
-    while (iterator.hasNext()) {
-      SReference templateReference = iterator.next();
+    for (SReference templateReference : nodeBuilder.getTemplateReferencesToResolve()) {
       SNode templateReferentNode = templateReference.getTargetNode();
       if (templateReferentNode == null) {
         generator.showErrorMessage(templateNode, "Invalid reference \"" + templateReference.getRole() + "\" in templates model " + templateNode.getModel().getUID());
@@ -79,16 +77,8 @@ public class TemplateGenUtil {
       IReferenceResolver referenceResolver = createReferenceResolver(templateNode, scope);
       SNode targetReferentNode = referenceResolver.resolveTarget(templateReference, nodeBuilder);
       if (targetReferentNode != null) {
-//        if (SModelUtil.isAcceptableReferent(targetNode, templateReference.getRole(), targetReferentNode, scope)) {
-//          targetNode.addReferent(templateReference.getRole(), targetReferentNode);
-//        } else {
-//          // if reference is not acceptable, then temporarily keep original reference
-//          targetNode.addReferent(templateReference.getRole(), templateReferentNode);
-//        }
-//        continue;
-
-        if (checkResolvedReference(nodeBuilder.getSourceNode(), targetNode, templateNode, templateReference.getRole(), targetReferentNode, generator))
-        {
+        if (checkResolvedReference(nodeBuilder.getSourceNode(), targetNode,
+                templateNode, templateReference.getRole(), targetReferentNode, generator)) {
           targetNode.addReferent(templateReference.getRole(), targetReferentNode);
         }
         continue;
@@ -103,23 +93,6 @@ public class TemplateGenUtil {
       LOG.error("uhhh! error. set breakpoint here, referenceResolver:" + referenceResolver);
       referenceResolver.resolveTarget(templateReference, nodeBuilder);
       //test
-
-//      // dump builders info
-//      StringBuffer buildersStack = new StringBuffer("    builders stack:");
-//      String indent = "\n        ";
-//      INodeBuilder currBuilder = nodeBuilder;
-//      while (currBuilder != null) {
-//        buildersStack.append(indent);
-//        buildersStack.append(currBuilder.getTemplateNode().getDebugText());
-//        buildersStack.append(" (builder:" + currBuilder.getClass().getName() + ")");
-//        indent += "    ";
-//        currBuilder = currBuilder.getParent();
-//      }
-//
-//      LOG.warning("WARN! Couldn't resolve template reference! " + generator.getState().toString() +
-//              "\n    template       : " + templateReference.getSourceNode().getDebugText() + " --[" + templateReference.getRole() + "]--> " + templateReference.getTargetNode().getDebugText() +
-//              "\n    template target: " + targetNode.getDebugText() +
-//              "\n" + buildersStack);
     } // while (iterator.hasNext())
   }
 

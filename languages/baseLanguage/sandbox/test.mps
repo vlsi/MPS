@@ -327,11 +327,17 @@
               <node role="lValue" type="jetbrains.mps.baseLanguage.ParameterReference" id="1137714259018">
                 <link role="variableDeclaration" targetNodeId="1136027173099" />
               </node>
-              <node role="rValue" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1137962309116">
+              <node role="rValue" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1144458301411">
                 <link role="baseMethodDeclaration" targetNodeId="1137892365869" />
                 <link role="classConcept" targetNodeId="1137816471209" />
               </node>
             </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1144458338335">
+          <node role="expression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1144458418386">
+            <link role="variableDeclaration" targetNodeId="1141080210673" />
+            <link role="classifier" extResolveInfo="1.[Classifier]AbstractMethodError" />
           </node>
         </node>
       </node>
