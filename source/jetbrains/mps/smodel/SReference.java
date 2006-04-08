@@ -245,6 +245,10 @@ public class SReference {
 
 
   protected void logGetTargetNodeErrors(GetTargetNodeErrorState errorState) {
+    //skip errors in java stubs because they can have reference to classes that doesn't present
+    //in class path
+    if (mySourceNode.getModel().getStereotype().endsWith(SModelStereotype.JAVA_STUB)) return;
+
     if (SNodeProxy.getOurSourceNode() == mySourceNode) return;
     if (errorState == GetTargetNodeErrorState.NO_MODEL_DESCRIPTOR) {
       LOG.error("\nCouldn't resolve reference " + (myExtResolveInfo != null ? myExtResolveInfo : myTargetNodeId) + " from " + getSourceNode().getDebugText());
