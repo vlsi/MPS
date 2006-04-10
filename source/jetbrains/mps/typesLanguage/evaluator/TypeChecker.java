@@ -7,6 +7,7 @@ import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.typesLanguage.ContextDeclaration;
 import jetbrains.mps.typesLanguage.EquationSetDeclaration;
 import jetbrains.mps.typesLanguage.Rule;
+import jetbrains.mps.typesLanguage.VariableSetDeclaration;
 import jetbrains.mps.typesLanguage.inference.ContextsManager;
 import jetbrains.mps.typesLanguage.equation.EquationManager;
 import jetbrains.mps.typesLanguage.equation.TypeVariablesManager;
@@ -44,6 +45,11 @@ public class TypeChecker {
     //register contexts
     for (ContextDeclaration contextDeclaration : typesModel.getRoots(ContextDeclaration.class)) {
       ContextsManager.getInstance().registerNewContext(contextDeclaration.getName());
+    }
+
+    //register global varsets
+    for (VariableSetDeclaration varset : typesModel.getRoots(VariableSetDeclaration.class)) {
+      TypeVariablesManager.getInstance().registerNewVarset(varset);
     }
 
     //register equations (not supported)
