@@ -315,7 +315,6 @@
       <module fileurl="file://$PROJECT_DIR$/projects/TheSimplestLanguage/TheSimplestLanguage.iml" filepath="$PROJECT_DIR$/projects/TheSimplestLanguage/TheSimplestLanguage.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/agreement/agreement.iml" filepath="$PROJECT_DIR$/projects/agreement/agreement.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/SemanticWeb/core/core.iml" filepath="$PROJECT_DIR$/SemanticWeb/core/core.iml" group="SemanticWeb" />
-      <module fileurl="file://$PROJECT_DIR$/projects/log4j/log4j.iml" filepath="$PROJECT_DIR$/projects/log4j/log4j.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/SemanticWeb/sandbox/sandbox.iml" filepath="$PROJECT_DIR$/SemanticWeb/sandbox/sandbox.iml" group="SemanticWeb" />
     </modules>
   </component>
