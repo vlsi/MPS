@@ -2401,7 +2401,7 @@
     <property name="name" value="ArrayType_Brackets_Actions" />
     <link role="applicableConcept" targetNodeId="1.1070534760951" />
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapItem" id="1140562601804">
-      <property name="description" value="replace with array component type" />
+      <property name="description" value="replace array type with array's component type" />
       <property name="actionId" value="delete_action_id" />
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_ExecuteFunction" id="1140562601821">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1140562601823">
@@ -2462,7 +2462,7 @@
     <property name="name" value="BinaryOperation_LeftArgument_Actions" />
     <link role="applicableConcept" targetNodeId="1.1081773326031" />
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapItem" id="1140734304237">
-      <property name="description" value="replace binary operation with one of arguments" />
+      <property name="description" value="replace binary operation with right operand" />
       <property name="actionId" value="delete_action_id" />
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_ExecuteFunction" id="1140734304242">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1140734304243">
@@ -2487,7 +2487,7 @@
     <property name="name" value="BinaryOperation_RightArgument_Actions" />
     <link role="applicableConcept" targetNodeId="1.1081773326031" />
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapItem" id="1140734681123">
-      <property name="description" value="replace binary operation with one of arguments" />
+      <property name="description" value="replace binary operation with left operand" />
       <property name="actionId" value="delete_action_id" />
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_ExecuteFunction" id="1140734681128">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1140734681129">
