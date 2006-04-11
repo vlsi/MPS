@@ -50,8 +50,8 @@ public class NodeEditor implements IEditor {
   }
 
   public SNode getSNode() {
-    if (getSelectedCell() == null) return null;
-    return getSelectedCell().getSNode();
+    if (getRootCell() == null) return null;
+    return getRootCell().getSNode();
   }
 
   public SNodeProxy getSNodeProxy() {
