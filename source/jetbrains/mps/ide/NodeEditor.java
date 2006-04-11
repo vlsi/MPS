@@ -28,6 +28,14 @@ public class NodeEditor implements IEditor {
     myEditorComponent.relayout();
   }
 
+  public void addCellSelectionListener(ICellSelectionListener listener) {
+    myEditorComponent.addCellSelectionListener(listener);
+  }
+
+  public void removeCellSelectionListener(ICellSelectionListener listener) {
+    myEditorComponent.removeCellSelectionListener(listener);
+  }
+
   public IOperationContext getOperationContext() {
     return myEditorComponent.getOperationContext();
   }

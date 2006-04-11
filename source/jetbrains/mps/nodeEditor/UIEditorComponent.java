@@ -115,6 +115,14 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
       UIEditorComponent.this.relayout();
     }
 
+    public void addCellSelectionListener(ICellSelectionListener listener) {
+      UIEditorComponent.this.addCellSelectionListener(listener);
+    }
+
+    public void removeCellSelectionListener(ICellSelectionListener listener) {
+      UIEditorComponent.this.removeCellSelectionListener(listener);
+    }
+
     public IOperationContext getOperationContext() {
       return UIEditorComponent.this.getOperationContext();
     }

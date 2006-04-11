@@ -5,6 +5,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.ICellSelectionListener;
 
 import javax.swing.*;
 
@@ -13,6 +14,9 @@ public interface IEditor {
 
   void rebuildEditorContent();
   void relayout();
+
+  void addCellSelectionListener(ICellSelectionListener listener);
+  void removeCellSelectionListener(ICellSelectionListener listener);
 
   IOperationContext getOperationContext();
 
