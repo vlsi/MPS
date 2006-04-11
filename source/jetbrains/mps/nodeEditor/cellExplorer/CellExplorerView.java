@@ -4,6 +4,8 @@ import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.NodeEditor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -62,13 +64,13 @@ public class CellExplorerView extends DefaultTool {
     myComponent.add(new JScrollPane(myTree), BorderLayout.CENTER);
     update();
     getEditorsPane().addListener(new EditorsPane.IEditorsPaneListener() {
-      public void editorOpened(AbstractEditorComponent e) {
+      public void editorOpened(IEditor e) {
         update();
       }
-      public void editorClosed(AbstractEditorComponent e) {
+      public void editorClosed(IEditor e) {
         update();
       }
-      public void editorSelected(AbstractEditorComponent e) {
+      public void editorSelected(IEditor e) {
         update();
       }
     });
@@ -88,7 +90,12 @@ public class CellExplorerView extends DefaultTool {
       return;
     }
     removeListeners();
-    myCurrentEditor = getEditorsPane().getCurrentEditor();
+
+    if (!(getEditorsPane().getCurrentEditor() instanceof NodeEditor)) {
+      return;
+    }
+
+    myCurrentEditor = ((NodeEditor) getEditorsPane().getCurrentEditor()).getEditorComponent();
     if (myCurrentEditor != null) myCurrentEditor.addRebuildListener(myRebuildListener);
     myTree.rebuildTree();
   }
@@ -154,7 +161,7 @@ public class CellExplorerView extends DefaultTool {
 
   private class MyTree extends MPSTree {
     protected MPSTreeNode rebuild() {
-      AbstractEditorComponent editor = getEditorsPane().getCurrentEditor();
+      AbstractEditorComponent editor = getEditorsPane().getCurrentEditorComponent();
       if (editor == null) {
         return new TextTreeNode("No editor selected") {
           public Icon getIcon(boolean expanded) {
@@ -207,7 +214,7 @@ public class CellExplorerView extends DefaultTool {
     }
 
     private void showCell() {
-      getEditorsPane().getCurrentEditor().changeSelection(myCell);
+      getEditorsPane().getCurrentEditorComponent().changeSelection(myCell);
     }
 
     public void doubleClick() {

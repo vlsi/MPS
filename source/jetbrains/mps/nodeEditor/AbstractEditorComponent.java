@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IStatus;
+import jetbrains.mps.ide.NodeEditor;
 import jetbrains.mps.ide.action.*;
 import jetbrains.mps.ide.actions.nodes.*;
 import jetbrains.mps.ide.actions.refactorings.InlineVariableAction;
@@ -491,7 +492,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     clearCaches();
   }
 
-  public void clearCaches() {
+  private void clearCaches() {
     myCellsToNodesToDependOnMap.clear();
     myCellsToRefTargetsToDependOnMap.clear();
     myNodesToBigCellsMap.clear();
@@ -902,6 +903,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void rebuildEditorContent() {
+    clearCaches();
     rebuildEditorContent(null);
   }
 

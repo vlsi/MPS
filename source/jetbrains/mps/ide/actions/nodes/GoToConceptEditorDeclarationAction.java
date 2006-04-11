@@ -55,7 +55,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     final IDEProjectFrame ide = context.get(IDEProjectFrame.class);
     IOperationContext invocationContext = context.get(IOperationContext.class);
     final IScope scope = invocationContext.getScope();
-    final AbstractEditorComponent currentEditor = ide.getEditorsPane().getCurrentEditor();
+    final AbstractEditorComponent currentEditor = ide.getEditorsPane().getCurrentEditorComponent();
 
     Language language = null;
     if (invocationContext.getModule() instanceof Language) {
