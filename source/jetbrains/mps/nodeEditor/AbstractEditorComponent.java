@@ -4,6 +4,7 @@ import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.NodeEditor;
+import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.action.*;
 import jetbrains.mps.ide.actions.nodes.*;
 import jetbrains.mps.ide.actions.refactorings.InlineVariableAction;
@@ -1458,14 +1459,25 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     AbstractEditorComponent nodeEditor = historyItem.editor;
     EditorCell selectedCell = historyItem.selectedCell;
     Stack<EditorCell> selectedStack = historyItem.selectedStack;
-    AbstractEditorComponent newEditor = editorOpener.openEditor(nodeEditor.getRootCell().getSNode(), nodeEditor.getOperationContext());
-    if (selectedCell != null) {
-      EditorCell nodeCell = newEditor.findNodeCell(selectedCell.getSNode(), (String) selectedCell.getUserObject(EditorCell.CELL_ID));
-      if (nodeCell == null) nodeCell = newEditor.findNodeCell(selectedCell.getSNode());
-      if (nodeCell != null) newEditor.changeSelection(nodeCell);
+    IEditor newEditor = editorOpener.openEditor(nodeEditor.getRootCell().getSNode(), nodeEditor.getOperationContext());
+    if (selectedCell != null && newEditor instanceof NodeEditor) {
+      AbstractEditorComponent aec = ((NodeEditor) newEditor).getEditorComponent();
+
+      EditorCell nodeCell = aec.findNodeCell(selectedCell.getSNode(), (String) selectedCell.getUserObject(EditorCell.CELL_ID));
+      if (nodeCell == null) nodeCell = aec.findNodeCell(selectedCell.getSNode());
+      if (nodeCell != null) aec.changeSelection(nodeCell);
     }
-    newEditor.setSelectedStackFromHistory(selectedStack);
-    return newEditor;
+
+    if (newEditor instanceof NodeEditor) {
+      AbstractEditorComponent aec = ((NodeEditor) newEditor).getEditorComponent();
+
+      aec.setSelectedStackFromHistory(selectedStack);
+      return aec;
+    }
+
+
+
+    return null;
   }
 
   private void setSelectedStackFromHistory(Stack<EditorCell> historySelectedStack) {

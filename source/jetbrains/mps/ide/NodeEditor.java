@@ -1,9 +1,6 @@
 package jetbrains.mps.ide;
 
-import jetbrains.mps.nodeEditor.INodeEditor;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
-import jetbrains.mps.nodeEditor.NodeEditorComponent;
-import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
@@ -59,6 +56,10 @@ public class NodeEditor implements IEditor {
 
   public void clear() {
     myEditorComponent.clear();
+  }
+
+  public EditorContext getEditorContext() {
+    return myEditorComponent.getEditorContext();
   }
 
   public AbstractEditorComponent getEditorComponent() {

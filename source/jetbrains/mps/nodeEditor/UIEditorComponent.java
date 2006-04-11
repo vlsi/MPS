@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.ide.navigation.EditorsHistory;
 import jetbrains.mps.ide.navigation.EditorsNavigationMulticaster;
 import jetbrains.mps.ide.navigation.EditorsNavigationAdapter;
+import jetbrains.mps.ide.IEditor;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -77,8 +78,8 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
     return myInspector;
   }
 
-  public AbstractEditorComponent openEditor(SNode semanticNode, IOperationContext operationContext) {
-    return this;
+  public IEditor openEditor(SNode semanticNode, IOperationContext operationContext) {
+    return new MyEditor();
   }
 
   public void openPrevEditorInHistory() {
@@ -99,5 +100,52 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
 
   public IEditorOpener getEditorOpener() {
     return this;
+  }
+
+  private class MyEditor implements IEditor {
+    public JComponent getComponent() {
+      return UIEditorComponent.this.getExternalComponent();
+    }
+
+    public void rebuildEditorContent() {
+      UIEditorComponent.this.rebuildEditorContent();
+    }
+
+    public void relayout() {
+      UIEditorComponent.this.relayout();
+    }
+
+    public IOperationContext getOperationContext() {
+      return UIEditorComponent.this.getOperationContext();
+    }
+
+    public EditorContext getEditorContext() {
+      return UIEditorComponent.this.getEditorContext();
+    }
+
+    public EditorCell getSelectedCell() {
+      return UIEditorComponent.this.getSelectedCell();
+    }
+
+    public EditorCell getRootCell() {
+      return UIEditorComponent.this.getRootCell();
+    }
+
+    public SNode getSNode() {
+      return UIEditorComponent.this.getNode();
+    }
+
+    public SNodeProxy getSNodeProxy() {
+      return UIEditorComponent.this.getSNodeProxy();
+    }
+
+    public void selectNode(SNode node) {
+      UIEditorComponent.this.selectNode(node);
+    }
+
+    public void clear() {
+      UIEditorComponent.this.clear();
+    }
+
   }
 }
