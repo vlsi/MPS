@@ -95,7 +95,7 @@ public class CellExplorerView extends DefaultTool {
       return;
     }
 
-    myCurrentEditor = ((NodeEditor) getEditorsPane().getCurrentEditor()).getEditorComponent();
+    myCurrentEditor = getEditorsPane().getCurrentEditor().getCurrentEditorComponent();
     if (myCurrentEditor != null) myCurrentEditor.addRebuildListener(myRebuildListener);
     myTree.rebuildTree();
   }
@@ -214,10 +214,7 @@ public class CellExplorerView extends DefaultTool {
     }
 
     private void showCell() {
-      if (getEditorsPane().getCurrentEditor() instanceof NodeEditor) {
-        NodeEditor nodeEditor = (NodeEditor) getEditorsPane().getCurrentEditor();
-        nodeEditor.getEditorComponent().changeSelection(myCell);
-      }
+      getEditorsPane().getCurrentEditor().getCurrentEditorComponent().changeSelection(myCell);
     }
 
     public void doubleClick() {

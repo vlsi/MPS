@@ -32,9 +32,11 @@ public interface IEditor {
 
   void selectNode(SNode node);
 
-  public IHistoryItem getHistoryItemFromEditor();
+  IHistoryItem getHistoryItemFromEditor();
 
-  public AbstractEditorComponent getEditorComponent();
+  void requestFocus();
 
   void clear();
+
+  AbstractEditorComponent getCurrentEditorComponent();
 }

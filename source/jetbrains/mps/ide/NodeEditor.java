@@ -12,6 +12,7 @@ public class NodeEditor implements IEditor {
 
   private AbstractEditorComponent myEditorComponent;
 
+
   public NodeEditor(IOperationContext context, SNode node) {
     myEditorComponent = new NodeEditorComponent(context);
     myEditorComponent.editNode(node, context);
@@ -67,16 +68,20 @@ public class NodeEditor implements IEditor {
     myEditorComponent.clear();
   }
 
+  public AbstractEditorComponent getCurrentEditorComponent() {
+    return myEditorComponent;
+  }
+
   public EditorContext getEditorContext() {
     return myEditorComponent.getEditorContext();
   }
 
-  public AbstractEditorComponent getEditorComponent() {
-    return myEditorComponent;
-  }
-
   public IHistoryItem getHistoryItemFromEditor() {
     return myEditorComponent.getHistoryItemFromEditor();
+  }
+
+  public void requestFocus() {
+    myEditorComponent.requestFocus();
   }
 
 
