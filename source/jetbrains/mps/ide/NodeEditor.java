@@ -39,6 +39,10 @@ public class NodeEditor implements IEditor {
     return myEditorComponent.getSelectedCell();
   }
 
+  public EditorCell getRootCell() {
+    return myEditorComponent.getRootCell();
+  }
+
   public SNode getSNode() {
     if (getSelectedCell() == null) return null;
     return getSelectedCell().getSNode();

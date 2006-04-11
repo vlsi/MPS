@@ -161,7 +161,7 @@ public class CellExplorerView extends DefaultTool {
 
   private class MyTree extends MPSTree {
     protected MPSTreeNode rebuild() {
-      AbstractEditorComponent editor = getEditorsPane().getCurrentEditorComponent();
+      IEditor editor = getEditorsPane().getCurrentEditor();
       if (editor == null) {
         return new TextTreeNode("No editor selected") {
           public Icon getIcon(boolean expanded) {
@@ -214,7 +214,10 @@ public class CellExplorerView extends DefaultTool {
     }
 
     private void showCell() {
-      getEditorsPane().getCurrentEditorComponent().changeSelection(myCell);
+      if (getEditorsPane().getCurrentEditor() instanceof NodeEditor) {
+        NodeEditor nodeEditor = (NodeEditor) getEditorsPane().getCurrentEditor();
+        nodeEditor.getEditorComponent().changeSelection(myCell);
+      }
     }
 
     public void doubleClick() {
