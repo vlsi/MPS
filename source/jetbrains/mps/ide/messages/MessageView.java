@@ -118,9 +118,11 @@ public class MessageView extends DefaultTool {
     if (node == null) return;
     IOperationContext context = selectedMessage.getContext();
     if (context == null) return;
-    AbstractEditorComponent editor = context.getComponent(EditorsPane.class).openEditor(node, context);
-    if (node.isRoot()) editor.selectFirstEditableCellOf(node);
-    else editor.selectNode(node);
+    AbstractEditorComponent editor = context.getComponent(EditorsPane.class).openEditor(node, context).getEditorComponent();
+    if (editor != null) {
+      if (node.isRoot()) editor.selectFirstEditableCellOf(node);
+      else editor.selectNode(node);
+    }
   }
 
 

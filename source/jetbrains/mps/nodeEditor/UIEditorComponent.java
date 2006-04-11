@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.ide.navigation.EditorsHistory;
 import jetbrains.mps.ide.navigation.EditorsNavigationMulticaster;
 import jetbrains.mps.ide.navigation.EditorsNavigationAdapter;
+import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.ide.IEditor;
 
 import javax.swing.*;
@@ -40,15 +41,15 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
     myEditorsHistory = new EditorsHistory(this);
 
     EditorsNavigationMulticaster.getInstance().addEditorsNavigationsListener(new EditorsNavigationAdapter() {
-      public void editorNavigated(AbstractEditorComponent editor) {
+      public void editorNavigated(IEditor editor) {
         myEditorsHistory.editorNavigated(editor);
       }
 
-      public void beforeEditorLeft(AbstractEditorComponent editor) {
+      public void beforeEditorLeft(IEditor editor) {
         myEditorsHistory.editorNavigated(editor);
       }
 
-      public void editorOpened(AbstractEditorComponent editor) {
+      public void editorOpened(IEditor editor) {
         myEditorsHistory.editorNavigated(editor);
       }
     });
@@ -79,6 +80,10 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
   }
 
   public IEditor openEditor(SNode semanticNode, IOperationContext operationContext) {
+    return new MyEditor();
+  }
+
+  public IEditor getEditor() {
     return new MyEditor();
   }
 
@@ -155,5 +160,12 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
       UIEditorComponent.this.clear();
     }
 
+    public IHistoryItem getHistoryItemFromEditor() {
+      return UIEditorComponent.this.getHistoryItemFromEditor();
+    }
+
+    public AbstractEditorComponent getEditorComponent() {
+      return UIEditorComponent.this;
+    }
   }
 }

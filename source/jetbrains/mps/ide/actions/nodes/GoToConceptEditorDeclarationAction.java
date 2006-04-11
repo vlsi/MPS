@@ -4,6 +4,7 @@ import jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.command.CommandProcessor;
@@ -55,7 +56,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     final IDEProjectFrame ide = context.get(IDEProjectFrame.class);
     IOperationContext invocationContext = context.get(IOperationContext.class);
     final IScope scope = invocationContext.getScope();
-    final AbstractEditorComponent currentEditor = ide.getEditorsPane().getCurrentEditorComponent();
+    final IEditor currentEditor = ide.getEditorsPane().getCurrentEditor();
 
     Language language = null;
     if (invocationContext.getModule() instanceof Language) {
@@ -117,7 +118,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     navigateToEditorDeclaration(editorDeclaration, languageContext, currentEditor, ide);
   }
 
-  private void navigateToEditorDeclaration(final SNode editorDeclaration, final IOperationContext operationContext, final AbstractEditorComponent currentEditor, final IDEProjectFrame ide) {
+  private void navigateToEditorDeclaration(final SNode editorDeclaration, final IOperationContext operationContext, final IEditor currentEditor, final IDEProjectFrame ide) {
     operationContext.getComponent(ProjectPane.class).selectNode(editorDeclaration, operationContext);
 
     NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(editorDeclaration, currentEditor, ide.getEditorsPane()), operationContext);

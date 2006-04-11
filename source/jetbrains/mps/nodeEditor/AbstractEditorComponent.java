@@ -12,9 +12,7 @@ import jetbrains.mps.ide.actions.refactorings.IntroduceVariableAction;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
-import jetbrains.mps.ide.navigation.EditorsHistory;
-import jetbrains.mps.ide.navigation.RecentEditorsMenu;
-import jetbrains.mps.ide.navigation.FocusPolicy;
+import jetbrains.mps.ide.navigation.*;
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.text.CellAction_RenderText;
@@ -1384,7 +1382,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   EditorCell getBigCellForRefContext(ReferencedNodeContext refContext) {
     return myRefNodeContextsToBigCellsMap.get(refContext);
   }
-  
+
   EditorCell getBigCellForNode(SNode node) {
     return myNodesToBigCellsMap.get(node);
   }
@@ -1451,36 +1449,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
 
-  public static EditorsHistory.HistoryItem getHistoryItemFromEditor(AbstractEditorComponent editor) {
-    return new EditorsHistory.HistoryItem(editor, editor.mySelectedCell, (Stack<EditorCell>) editor.mySelectedStack.clone());
+  public IHistoryItem getHistoryItemFromEditor() {
+    return new HistoryItem(this, this.mySelectedCell, (Stack<EditorCell>) this.mySelectedStack.clone());
   }
 
-  public static AbstractEditorComponent getEditorFromHistoryItem(EditorsHistory.HistoryItem historyItem, IEditorOpener editorOpener) {
-    AbstractEditorComponent nodeEditor = historyItem.editor;
-    EditorCell selectedCell = historyItem.selectedCell;
-    Stack<EditorCell> selectedStack = historyItem.selectedStack;
-    IEditor newEditor = editorOpener.openEditor(nodeEditor.getRootCell().getSNode(), nodeEditor.getOperationContext());
-    if (selectedCell != null && newEditor instanceof NodeEditor) {
-      AbstractEditorComponent aec = ((NodeEditor) newEditor).getEditorComponent();
-
-      EditorCell nodeCell = aec.findNodeCell(selectedCell.getSNode(), (String) selectedCell.getUserObject(EditorCell.CELL_ID));
-      if (nodeCell == null) nodeCell = aec.findNodeCell(selectedCell.getSNode());
-      if (nodeCell != null) aec.changeSelection(nodeCell);
-    }
-
-    if (newEditor instanceof NodeEditor) {
-      AbstractEditorComponent aec = ((NodeEditor) newEditor).getEditorComponent();
-
-      aec.setSelectedStackFromHistory(selectedStack);
-      return aec;
-    }
-
-
-
-    return null;
-  }
-
-  private void setSelectedStackFromHistory(Stack<EditorCell> historySelectedStack) {
+  public void setSelectedStackFromHistory(Stack<EditorCell> historySelectedStack) {
     mySelectedStack.clear();
     Stack<EditorCell> temp = new Stack<EditorCell>();
 

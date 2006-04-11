@@ -213,7 +213,7 @@ public class HierarchyView extends DefaultTool {
       final SNode node = myNodeProxy.getNode();
 
       final EditorsPane editorsPane = myIde.getEditorsPane();
-      final AbstractEditorComponent currentEditor = editorsPane.getCurrentEditorComponent();
+      final IEditor currentEditor = editorsPane.getCurrentEditor();
 
       NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(node, currentEditor, editorsPane), getOperationContext());
 

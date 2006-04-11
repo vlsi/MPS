@@ -4,6 +4,7 @@ import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
+import jetbrains.mps.ide.navigation.IHistoryItem;
 
 import javax.swing.*;
 
@@ -73,4 +74,10 @@ public class NodeEditor implements IEditor {
   public AbstractEditorComponent getEditorComponent() {
     return myEditorComponent;
   }
+
+  public IHistoryItem getHistoryItemFromEditor() {
+    return myEditorComponent.getHistoryItemFromEditor();
+  }
+
+
 }
