@@ -124,7 +124,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(editorDeclaration, currentEditor, ide.getEditorsPane()), operationContext);
   }
 
-  private ConceptEditorDeclaration createEditorDeclaration(ConceptDeclaration conceptDeclaration, SModelDescriptor editorModelDescriptor, IScope scope) {
+  public static ConceptEditorDeclaration createEditorDeclaration(ConceptDeclaration conceptDeclaration, SModelDescriptor editorModelDescriptor, IScope scope) {
     SModel editorModel = editorModelDescriptor.getSModel();
     ConceptEditorDeclaration editorDeclaration = (ConceptEditorDeclaration) SModelUtil.instantiateConceptDeclaration("jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration", editorModel, scope);
     editorDeclaration.setConceptDeclaration(conceptDeclaration);
@@ -134,7 +134,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     return editorDeclaration;
   }
 
-  private SModelDescriptor createLanguageEditorModel(Language language) {
+  public static SModelDescriptor createLanguageEditorModel(Language language) {
     ModelRoot modelRoot = language.getModelRoots().get(0);
 
     SModelDescriptor editorModelDescriptor = language.createModel(new SModelUID(language.getModuleUID(), "editor", ""), modelRoot);

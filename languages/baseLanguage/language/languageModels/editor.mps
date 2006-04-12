@@ -3708,5 +3708,9 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1144829257133">
+    <link role="conceptDeclaration" targetNodeId="1.1080120340718" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.EditorCellModel" id="1144829257134" />
+  </node>
 </model>
 
