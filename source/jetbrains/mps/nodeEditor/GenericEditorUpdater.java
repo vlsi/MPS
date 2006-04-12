@@ -53,7 +53,7 @@ public abstract class GenericEditorUpdater {
               EditorsPane editorsPane = project.getComponent(AbstractProjectFrame.class).getEditorsPane();
               boolean isUpdated = false;
               for (IEditor editor : editorsPane.getEditors()) {
-                if (updateEditor(editor.getCurrentEditorComponent())) {
+                if (editor.getCurrentEditorComponent() != null && updateEditor(editor.getCurrentEditorComponent())) {
                   isUpdated = true;
                 }
               }
