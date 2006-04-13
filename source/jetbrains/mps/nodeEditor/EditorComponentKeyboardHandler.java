@@ -10,6 +10,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.nodeEditor.parser.Parsing;
 
 import java.awt.event.KeyEvent;
 import java.util.*;
@@ -30,6 +31,9 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     if (notEditable) return false;
 
     EditorCell selectedCell = editor.getSelectedCell();
+
+    // process parsing if any
+    if (Parsing.getInstance().handleKeyPress(selectedCell, keyEvent)) return true;
 
     // process cell keymaps first
 
