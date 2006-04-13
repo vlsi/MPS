@@ -32,9 +32,6 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
     EditorCell selectedCell = editor.getSelectedCell();
 
-    // process parsing if any
-    if (Parsing.getInstance().handleKeyPress(selectedCell, keyEvent)) return true;
-
     // process cell keymaps first
 
     if (selectedCell != null) {
@@ -154,6 +151,10 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
             return true;
           }
         }
+
+
+        // process parsing if any
+        if (Parsing.getInstance().handleKeyPress(selectedCell, keyEvent)) return true;
 
         // allow selected cell to process event.
         if (allowCellToProcessEvent(selectedCell, keyEvent, editorContext)) return true;
