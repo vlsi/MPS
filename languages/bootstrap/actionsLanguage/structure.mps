@@ -7,7 +7,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1112056943463">
     <property name="rootable" value="true" />
     <property name="name" value="NodeSubstituteActions" />
-    <link role="extends" targetNodeId="1.1133920641626" />
+    <link role="extends" targetNodeId="1.1078489098625" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1112058057696">
       <property name="sourceCardinality" value="0..n" />
       <property name="targetCardinality" value="1" />
@@ -24,6 +24,10 @@
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1112060455033">
       <property name="name" value="actionsFilterAspectId" />
+      <link role="dataType" targetNodeId="1.1082983041843" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1144963878167">
+      <property name="name" value="preconditionAspectId" />
       <link role="dataType" targetNodeId="1.1082983041843" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1112058088712">
@@ -61,6 +65,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1138079416598">
     <property name="rootable" value="true" />
     <property name="name" value="RTransformHintSubstituteActions" />
+    <link role="extends" targetNodeId="1.1078489098625" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1138079416599">
       <property name="sourceCardinality" value="0..n" />
       <property name="targetCardinality" value="1" />
@@ -107,7 +112,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1141170172936">
     <property name="rootable" value="true" />
     <property name="name" value="ReferentSubstituteActions" />
-    <link role="extends" targetNodeId="1.1133920641626" />
+    <link role="extends" targetNodeId="1.1078489098625" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1141170233405">
       <property name="sourceCardinality" value="0..n" />
       <property name="targetCardinality" value="1" />
@@ -141,6 +146,10 @@
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1141170324057">
       <property name="name" value="actionsFilterAspectId" />
+      <link role="dataType" targetNodeId="1.1082983041843" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1144963886325">
+      <property name="name" value="preconditionAspectId" />
       <link role="dataType" targetNodeId="1.1082983041843" />
     </node>
   </node>

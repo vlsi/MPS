@@ -44,7 +44,7 @@ import java.util.*;
 
     // add actions from 'primary' language
     String referenceRole = linkDeclaration.getRole();
-    List<ReferentSubstituteActionsBuilder> primaryBuilders = getActionBuilders(primaryLanguage, sourceConcept, referenceRole);
+    List<ReferentSubstituteActionsBuilder> primaryBuilders = getActionBuilders(sourceNode, primaryLanguage, sourceConcept, referenceRole, scope);
     if (primaryBuilders.isEmpty()) {
       // if 'primary' language hasn't defined actions for that target - create 'default' actions
       resultActions = createPrimaryReferentSubstituteActions(sourceNode, currentReferent, linkDeclaration, TRUE_CONDITION, scope);
@@ -61,7 +61,7 @@ import java.util.*;
       if (language == primaryLanguage) {
         continue;
       }
-      extendedBuilders.addAll(getActionBuilders(language, sourceConcept, referenceRole));
+      extendedBuilders.addAll(getActionBuilders(sourceNode, language, sourceConcept, referenceRole, scope));
     }
 
     // for each builder create actions and apply all filters
@@ -79,8 +79,8 @@ import java.util.*;
     return resultActions;
   }
 
-  private static List<ReferentSubstituteActionsBuilder> getActionBuilders(Language language, ConceptDeclaration sourceConcept, String referenceRole) {
-    List<ReferentSubstituteActionsBuilder> substituteActionsBuilders = new LinkedList<ReferentSubstituteActionsBuilder>();
+  private static List<ReferentSubstituteActionsBuilder> getActionBuilders(SNode sourceNode, Language language, ConceptDeclaration sourceConcept, String referenceRole, IScope scope) {
+    List<ReferentSubstituteActionsBuilder> actionsBuilders = new LinkedList<ReferentSubstituteActionsBuilder>();
     SModelDescriptor actionsModelDescr = language.getActionsModelDescriptor();
     if (actionsModelDescr != null) {
       // find appropriate actions builder
@@ -89,16 +89,17 @@ import java.util.*;
         if (root instanceof ReferentSubstituteActions) {
           Iterator<ReferentSubstituteActionsBuilder> iterator = ((ReferentSubstituteActions) root).actionsBuilders();
           while (iterator.hasNext()) {
-            ReferentSubstituteActionsBuilder substituteActionsBuilder = iterator.next();
+            ReferentSubstituteActionsBuilder actionsBuilder = iterator.next();
             // is applicable ?
-            if (isActionBuilderApplicable(substituteActionsBuilder, sourceConcept, referenceRole)) {
-              substituteActionsBuilders.add(substituteActionsBuilder);
+            if (isActionBuilderApplicable(actionsBuilder, sourceConcept, referenceRole) &&
+                    satisfiesPrecondition(actionsBuilder, sourceNode, scope)) {
+              actionsBuilders.add(actionsBuilder);
             }
           }
         }
       }
     }
-    return substituteActionsBuilders;
+    return actionsBuilders;
   }
 
   /**
@@ -159,6 +160,18 @@ import java.util.*;
   // Query methods invocation...
   // --------------------------------
 
+  private static boolean satisfiesPrecondition(ReferentSubstituteActionsBuilder actionsBuilder, SNode sourceNode, IScope scope) {
+    String preconditionQueryMethodId = actionsBuilder.getPreconditionAspectId();
+    // precondition is optional
+    if (preconditionQueryMethodId == null) {
+      return true;
+    }
+
+    Object[] args = new Object[]{sourceNode, scope};
+    String methodName = "referentSubstituteActionsBuilder_Precondition_" + preconditionQueryMethodId;
+    SModel model = actionsBuilder.getModel();
+    return (Boolean) QueryMethod.invoke(methodName, args, model);
+  }
 
   private static ISearchScope invokeSearchScopeProvider(ReferentSubstituteActionsBuilder builder, SNode sourceNode, IScope scope) {
     String searchScopeQueryMethodId = builder.getSearchScopeProviderAspectId();

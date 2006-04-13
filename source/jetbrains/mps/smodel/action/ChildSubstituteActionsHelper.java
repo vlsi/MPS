@@ -42,7 +42,7 @@ import java.util.*;
     }
 
     // add actions from 'primary' language
-    List<NodeSubstituteActionsBuilder> primaryBuilders = getActionBuilders(primaryLanguage, childConcept);
+    List<NodeSubstituteActionsBuilder> primaryBuilders = getActionBuilders(parentNode, primaryLanguage, childConcept, scope);
     if (primaryBuilders.isEmpty()) {
       // if 'primary' language hasn't defined actions for that target - create 'default' actions
       resultActions = createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, TRUE_CONDITION, scope);
@@ -59,13 +59,12 @@ import java.util.*;
       if (language == primaryLanguage) {
         continue;
       }
-      extendedBuilders.addAll(getActionBuilders(language, childConcept));
+      extendedBuilders.addAll(getActionBuilders(parentNode, language, childConcept, scope));
     }
 
     // for each builder create actions and apply all filters
     for (NodeSubstituteActionsBuilder builder : extendedBuilders) {
       List<INodeSubstituteAction> addActions = invokeActionFactory(builder, parentNode, currentChild, childConcept, childSetter, scope);
-//      addActions = applyActionFilters(addActions, extendedBuilders, builder, scope);
       resultActions.addAll(addActions);
     }
 
@@ -108,8 +107,8 @@ import java.util.*;
     return false;
   }
 
-  private static List<NodeSubstituteActionsBuilder> getActionBuilders(Language language, ConceptDeclaration childConcept) {
-    List<NodeSubstituteActionsBuilder> substituteActionsBuilders = new LinkedList<NodeSubstituteActionsBuilder>();
+  private static List<NodeSubstituteActionsBuilder> getActionBuilders(SNode sourceNode, Language language, ConceptDeclaration childConcept, IScope scope) {
+    List<NodeSubstituteActionsBuilder> actionsBuilders = new LinkedList<NodeSubstituteActionsBuilder>();
     SModelDescriptor actionsModelDescr = language.getActionsModelDescriptor();
     if (actionsModelDescr != null) {
       // find appropriate actions builder
@@ -118,33 +117,39 @@ import java.util.*;
         if (root instanceof NodeSubstituteActions) {
           Iterator<NodeSubstituteActionsBuilder> iterator = ((NodeSubstituteActions) root).actionsBuilders();
           while (iterator.hasNext()) {
-            NodeSubstituteActionsBuilder substituteActionsBuilder = iterator.next();
+            NodeSubstituteActionsBuilder actionsBuilder = iterator.next();
             // is applicable ?
-            ConceptDeclaration applicableConcept = substituteActionsBuilder.getApplicableConcept();
+            ConceptDeclaration applicableConcept = actionsBuilder.getApplicableConcept();
 
             //and think better about of the order of arguments of "isAssignableConcept" - this is correct: 
-            if (SModelUtil.isAssignableConcept(applicableConcept, childConcept)) {
-              substituteActionsBuilders.add(substituteActionsBuilder);
+            if (SModelUtil.isAssignableConcept(applicableConcept, childConcept) &&
+                    satisfiesPrecondition(actionsBuilder, sourceNode, scope)) {
+              actionsBuilders.add(actionsBuilder);
             }
           }
         }
       }
     }
-    return substituteActionsBuilders;
+    return actionsBuilders;
   }
-
-//  private static List<INodeSubstituteAction> applyActionFilters(List<INodeSubstituteAction> actions, List<NodeSubstituteActionsBuilder> substituteActionsBuilders, NodeSubstituteActionsBuilder excludeBuilder, IScope scope) {
-//    for (NodeSubstituteActionsBuilder substituteActionsBuilder : substituteActionsBuilders) {
-//      if (substituteActionsBuilder != excludeBuilder) {
-//        actions = applyActionFilter(substituteActionsBuilder, actions, scope);
-//      }
-//    }
-//    return actions;
-//  }
 
   // --------------------------------
   // Query methods invocation...
   // --------------------------------
+
+  private static boolean satisfiesPrecondition(NodeSubstituteActionsBuilder actionsBuilder, SNode sourceNode, IScope scope) {
+    String preconditionQueryMethodId = actionsBuilder.getPreconditionAspectId();
+    // precondition is optional
+    if (preconditionQueryMethodId == null) {
+      return true;
+    }
+
+    Object[] args = new Object[]{sourceNode, scope};
+    String methodName = "nodeSubstituteActionsBuilder_Precondition_" + preconditionQueryMethodId;
+    SModel model = actionsBuilder.getModel();
+    return (Boolean) QueryMethod.invoke(methodName, args, model);
+  }
+
 
   private static List<INodeSubstituteAction> applyActionFilter(NodeSubstituteActionsBuilder substituteActionsBuilder, List<INodeSubstituteAction> actions, IScope scope) {
     String filterQueryMethodId = substituteActionsBuilder.getActionsFilterAspectId();
