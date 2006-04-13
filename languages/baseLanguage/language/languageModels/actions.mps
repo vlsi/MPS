@@ -153,6 +153,24 @@
       <link role="applicableLink" targetNodeId="1.1083260308426" />
       <link role="applicableSourceConcept" targetNodeId="1.1083260308424" />
     </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1144890124239">
+      <property name="searchScopeProviderAspectId" value="Empty" />
+      <property name="actionsFilterAspectId" value="InternalMembers" />
+      <link role="applicableSourceConcept" targetNodeId="1.1073063089578" />
+      <link role="applicableLink" targetNodeId="1.1073063089579" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1144890124241">
+      <property name="searchScopeProviderAspectId" value="Empty" />
+      <property name="actionsFilterAspectId" value="InternalMembers" />
+      <link role="applicableLink" targetNodeId="1.1070568237987" />
+      <link role="applicableSourceConcept" targetNodeId="1.1068580123158" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1144890124243">
+      <property name="searchScopeProviderAspectId" value="Empty" />
+      <property name="actionsFilterAspectId" value="InternalMembers" />
+      <link role="applicableSourceConcept" targetNodeId="1.1068580123163" />
+      <link role="applicableLink" targetNodeId="1.1070568044740" />
+    </node>
   </node>
 </model>
 

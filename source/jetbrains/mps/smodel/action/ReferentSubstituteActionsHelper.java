@@ -44,12 +44,12 @@ import java.util.*;
 
     // add actions from 'primary' language
     String referenceRole = linkDeclaration.getRole();
-    List<ReferentSubstituteActionsBuilder> primarySubstituteActionsBuilders = getActionBuilders(primaryLanguage, sourceConcept, referenceRole);
-    if (primarySubstituteActionsBuilders.isEmpty()) {
+    List<ReferentSubstituteActionsBuilder> primaryBuilders = getActionBuilders(primaryLanguage, sourceConcept, referenceRole);
+    if (primaryBuilders.isEmpty()) {
       // if 'primary' language hasn't defined actions for that target - create 'default' actions
       resultActions = createPrimaryReferentSubstituteActions(sourceNode, currentReferent, linkDeclaration, TRUE_CONDITION, scope);
     } else {
-      for (ReferentSubstituteActionsBuilder builder : primarySubstituteActionsBuilders) {
+      for (ReferentSubstituteActionsBuilder builder : primaryBuilders) {
         resultActions.addAll(invokeActionBulder(builder, sourceNode, currentReferent, linkDeclaration, scope));
       }
     }
@@ -67,9 +67,16 @@ import java.util.*;
     // for each builder create actions and apply all filters
     for (ReferentSubstituteActionsBuilder builder : extendedBuilders) {
       List<INodeSubstituteAction> addActions = invokeActionBulder(builder, sourceNode, currentReferent, linkDeclaration, scope);
-      addActions = applyActionFilters(addActions, extendedBuilders, builder, scope);
+//      addActions = applyActionFilters(addActions, extendedBuilders, builder, scope);
       resultActions.addAll(addActions);
     }
+
+    // apply all filters 
+    primaryBuilders.addAll(extendedBuilders);
+    for (ReferentSubstituteActionsBuilder builder : primaryBuilders) {
+      resultActions = applyActionFilter(builder, resultActions, scope);
+    }
+
     return resultActions;
   }
 
@@ -149,14 +156,14 @@ import java.util.*;
     return invokeActionFactory(builder, sourceNode, currentReferent, linkDeclaration, searchScope, scope);
   }
 
-  private static List<INodeSubstituteAction> applyActionFilters(List<INodeSubstituteAction> actions, List<ReferentSubstituteActionsBuilder> builders, ReferentSubstituteActionsBuilder excludeBuilder, IScope scope) {
-    for (ReferentSubstituteActionsBuilder builder : builders) {
-      if (builder != excludeBuilder) {
-        actions = applyActionFilter(builder, actions, scope);
-      }
-    }
-    return actions;
-  }
+//  private static List<INodeSubstituteAction> applyActionFilters(List<INodeSubstituteAction> actions, List<ReferentSubstituteActionsBuilder> builders, ReferentSubstituteActionsBuilder excludeBuilder, IScope scope) {
+//    for (ReferentSubstituteActionsBuilder builder : builders) {
+//      if (builder != excludeBuilder) {
+//        actions = applyActionFilter(builder, actions, scope);
+//      }
+//    }
+//    return actions;
+//  }
 
   // --------------------------------
   // Query methods invocation...

@@ -3708,5 +3708,25 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1144886773799">
+    <link role="conceptDeclaration" targetNodeId="1.1144886658041" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1144886786051">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1144886786052">
+        <property name="textFgColor" value="DARK_BLUE" />
+        <property name="text" value="iterator&lt;" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1144886786053">
+        <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;element type&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1144886754532" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1144886786054">
+        <property name="text" value="&gt;" />
+        <property name="drawBorder" value="false" />
+      </node>
+    </node>
+  </node>
 </model>
 
