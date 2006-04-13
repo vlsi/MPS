@@ -3728,5 +3728,21 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1144891753015">
+    <link role="conceptDeclaration" targetNodeId="1.1144891708747" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1144893208966">
+      <property name="drawBorder" value="false" />
+      <link role="keyMap" targetNodeId="1081427357000" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1144893213826">
+        <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;no object&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1144893051745" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1144893230828">
+        <property name="text" value=".iterator" />
+        <property name="drawBorder" value="false" />
+      </node>
+    </node>
+  </node>
 </model>
 

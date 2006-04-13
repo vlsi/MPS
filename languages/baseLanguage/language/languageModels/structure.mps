@@ -1514,5 +1514,19 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1144891708747">
+    <property name="name" value="SequenceIteratorOperation" />
+    <link role="extends" targetNodeId="1068431790191" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1144893051745">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="instance" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1068431790191" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1144891738936">
+      <property name="value" value="iterator" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+  </node>
 </model>
 

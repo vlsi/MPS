@@ -35,39 +35,46 @@ import java.util.*;
     if (childConcept == null) {
       return resultActions;
     }
-    Language mainLanguage = SModelUtil.getDeclaringLanguage(childConcept, scope);
-    if (mainLanguage == null) {
+    Language primaryLanguage = SModelUtil.getDeclaringLanguage(childConcept, scope);
+    if (primaryLanguage == null) {
       LOG.error("Couldn't build actions : couldn't get declaring language for concept " + childConcept.getDebugText());
       return resultActions;
     }
 
     // add actions from 'primary' language
-    List<NodeSubstituteActionsBuilder> mainSubstituteActionsBuilders = getActionBuilders(mainLanguage, childConcept);
-    if (mainSubstituteActionsBuilders.isEmpty()) {
+    List<NodeSubstituteActionsBuilder> primaryBuilders = getActionBuilders(primaryLanguage, childConcept);
+    if (primaryBuilders.isEmpty()) {
       // if 'primary' language hasn't defined actions for that target - create 'default' actions
       resultActions = createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, TRUE_CONDITION, scope);
     } else {
-      for (NodeSubstituteActionsBuilder builder : mainSubstituteActionsBuilders) {
+      for (NodeSubstituteActionsBuilder builder : primaryBuilders) {
         resultActions.addAll(invokeActionFactory(builder, parentNode, currentChild, childConcept, childSetter, scope));
       }
     }
 
     // search 'extending' builders
-    List<NodeSubstituteActionsBuilder> extendedSubstituteActionsBuilders = new LinkedList<NodeSubstituteActionsBuilder>();
+    List<NodeSubstituteActionsBuilder> extendedBuilders = new LinkedList<NodeSubstituteActionsBuilder>();
     List<Language> languages = parentNode.getModel().getLanguages(scope);
     for (Language language : languages) {
-      if (language == mainLanguage) {
+      if (language == primaryLanguage) {
         continue;
       }
-      extendedSubstituteActionsBuilders.addAll(getActionBuilders(language, childConcept));
+      extendedBuilders.addAll(getActionBuilders(language, childConcept));
     }
 
     // for each builder create actions and apply all filters
-    for (NodeSubstituteActionsBuilder builder : extendedSubstituteActionsBuilders) {
+    for (NodeSubstituteActionsBuilder builder : extendedBuilders) {
       List<INodeSubstituteAction> addActions = invokeActionFactory(builder, parentNode, currentChild, childConcept, childSetter, scope);
-      addActions = applyActionFilters(addActions, extendedSubstituteActionsBuilders, builder, scope);
+//      addActions = applyActionFilters(addActions, extendedBuilders, builder, scope);
       resultActions.addAll(addActions);
     }
+
+    // apply all filters
+    primaryBuilders.addAll(extendedBuilders);
+    for (NodeSubstituteActionsBuilder builder : primaryBuilders) {
+      resultActions = applyActionFilter(builder, resultActions, scope);
+    }
+
     return resultActions;
   }
 
@@ -126,14 +133,14 @@ import java.util.*;
     return substituteActionsBuilders;
   }
 
-  private static List<INodeSubstituteAction> applyActionFilters(List<INodeSubstituteAction> actions, List<NodeSubstituteActionsBuilder> substituteActionsBuilders, NodeSubstituteActionsBuilder excludeBuilder, IScope scope) {
-    for (NodeSubstituteActionsBuilder substituteActionsBuilder : substituteActionsBuilders) {
-      if (substituteActionsBuilder != excludeBuilder) {
-        actions = applyActionFilter(substituteActionsBuilder, actions, scope);
-      }
-    }
-    return actions;
-  }
+//  private static List<INodeSubstituteAction> applyActionFilters(List<INodeSubstituteAction> actions, List<NodeSubstituteActionsBuilder> substituteActionsBuilders, NodeSubstituteActionsBuilder excludeBuilder, IScope scope) {
+//    for (NodeSubstituteActionsBuilder substituteActionsBuilder : substituteActionsBuilders) {
+//      if (substituteActionsBuilder != excludeBuilder) {
+//        actions = applyActionFilter(substituteActionsBuilder, actions, scope);
+//      }
+//    }
+//    return actions;
+//  }
 
   // --------------------------------
   // Query methods invocation...
