@@ -43,11 +43,6 @@
       <property name="actionsFactoryAspectId" value="InstanceOfExpression" />
       <link role="applicableConcept" targetNodeId="1.1068431790191" />
     </node>
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1144892562181">
-      <property name="actionsFactoryAspectId" value="SequenceOperations" />
-      <property name="preconditionAspectId" value="Sequence_type" />
-      <link role="applicableConcept" targetNodeId="1.1068431790191" />
-    </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1140462494826">
       <property name="actionsFactoryAspectId" value="AddInitializer" />
       <property name="preconditionAspectId" value="FieldOrLocalVar" />
@@ -93,6 +88,12 @@
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141251527116">
       <property name="searchScopeProviderAspectId" value="FieldReference_ClassifierHierarchy_InstanceMethods" />
       <property name="actionsFactoryAspectId" value="FieldReference_to_InstanceMethodCall" />
+      <link role="applicableSourceConcept" targetNodeId="1.1068580123158" />
+      <link role="applicableLink" targetNodeId="1.1070568237987" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1144948360108">
+      <property name="searchScopeProviderAspectId" value="Empty" />
+      <property name="actionsFactoryAspectId" value="FieldReference_to_SequenceOperationExpression" />
       <link role="applicableSourceConcept" targetNodeId="1.1068580123158" />
       <link role="applicableLink" targetNodeId="1.1070568237987" />
     </node>

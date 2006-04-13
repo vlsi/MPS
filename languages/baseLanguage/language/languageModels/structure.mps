@@ -1515,17 +1515,37 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1144891708747">
-    <property name="name" value="SequenceIteratorOperation" />
+    <property name="name" value="SequenceOperation_getIterator" />
+    <link role="extends" targetNodeId="1144946981158" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1144891738936">
+      <property name="value" value="iterator" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1144946829451">
+    <property name="name" value="SequenceOperationExpression" />
     <link role="extends" targetNodeId="1068431790191" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1144893051745">
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1144946888564">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1144946860296">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="instance" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1068431790191" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1144891738936">
-      <property name="value" value="iterator" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1144947034286">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="operation" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1144946981158" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1144946981158">
+    <property name="name" value="SequenceOperation" />
+    <link role="extends" targetNodeId="4.1133920641626" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1144947009082">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
     </node>
   </node>
 </model>
