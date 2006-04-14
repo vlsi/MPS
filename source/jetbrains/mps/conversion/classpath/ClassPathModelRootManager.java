@@ -58,14 +58,14 @@ public class ClassPathModelRootManager extends AbstractModelRootManager  {
   }
 
   public SModel refresh(SModelDescriptor modelDescriptor) {
-    SModel smodel = modelDescriptor.getSModel();
-    if (smodel != null) {
-      long timestamp = timestamp(modelDescriptor);
-      long modelTimestamp = ourTimestamps.get(smodel.getUID());
-      if (modelTimestamp == timestamp) {
-        return super.refresh(modelDescriptor);
-      }
-    }
+//    SModel smodel = modelDescriptor.getSModel();
+//    if (smodel != null) {
+//      long timestamp = timestamp(modelDescriptor);
+//      long modelTimestamp = ourTimestamps.get(smodel.getUID());
+//      if (modelTimestamp == timestamp) {
+//        return super.refresh(modelDescriptor);
+//      }
+//    }
 
     return null;
   }
