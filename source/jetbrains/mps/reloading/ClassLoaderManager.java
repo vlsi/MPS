@@ -52,6 +52,17 @@ public class ClassLoaderManager {
   }
 
 
+  public void updateClassPathIfTimestampChanged() {
+    if (myUseSystemClassLoader) return;
+
+    long currentTimestamp = ((MPSClassLoader) myClassLoader).getClassPathItem().getTimestamp();
+    long oldTimestamp = ((MPSClassLoader) myClassLoader).getTimestamp();
+
+    if (currentTimestamp > oldTimestamp) {
+      updateClassPath();
+    } 
+  }
+
   public void updateClassPath() {
     if (myUseSystemClassLoader) return;
 

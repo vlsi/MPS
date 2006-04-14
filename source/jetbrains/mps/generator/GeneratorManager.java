@@ -277,7 +277,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       if (reloadClasses) {
         progress.addText("reloading MPS classes...");
         progress.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
-        ReloadUtils.reloadAll();
+        ReloadUtils.reloadAll(false);
         progress.finishTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
         checkMonitorCanceled(progress);
       }
@@ -341,7 +341,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           if (compilationResult.isOk()) {
             progress.addText("reloading MPS classes...");
             progress.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
-            ReloadUtils.reloadAll();
+            ReloadUtils.reloadAll(false);
             progress.finishTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
             checkMonitorCanceled(progress);
           }

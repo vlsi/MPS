@@ -14,7 +14,7 @@ import java.util.zip.ZipFile;
 /**
  * @author Kostik
  */
-public class JarFileClassPathItem implements IClassPathItem {
+public class JarFileClassPathItem extends AbstractClassPathItem {
   private ZipFile myZipFile;
   private String myPrefix;
   private File myFile;
@@ -118,11 +118,15 @@ public class JarFileClassPathItem implements IClassPathItem {
         buildPackageCaches(pack);
       } else {
         String name = entry.getName();
+
+        if (!name.endsWith(".class")) continue;
+
         int packEnd = name.lastIndexOf('/');
         String pack = packEnd > 0 ? name.substring(0, packEnd).replace('/', '.') : name;
         buildPackageCaches(pack);
 
         String className = name.substring(packEnd + 1, name.length() - ".class".length());
+
         getClassesSetFor(pack).add(className);
 
         if (pack.length() > 0) {

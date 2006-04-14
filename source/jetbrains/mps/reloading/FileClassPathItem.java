@@ -13,7 +13,7 @@ import java.net.MalformedURLException;
 /**
  * @author Kostik
  */
-public class FileClassPathItem implements IClassPathItem {
+public class FileClassPathItem extends AbstractClassPathItem{
   private String myClassPath;
 
   public FileClassPathItem(String classPath) {

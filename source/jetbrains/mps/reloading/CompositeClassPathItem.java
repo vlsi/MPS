@@ -66,6 +66,14 @@ public class CompositeClassPathItem implements IClassPathItem {
     return result;
   }
 
+  public long getTimestamp() {
+    long result = 0;
+    for (IClassPathItem item : myChildren) {
+      result = Math.max(result, item.getTimestamp());
+    }
+    return result;
+  }
+
   public List<IClassPathItem> getChildren() {
     return new ArrayList<IClassPathItem>(myChildren);
   }

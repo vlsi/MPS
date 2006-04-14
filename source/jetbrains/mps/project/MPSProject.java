@@ -3,7 +3,6 @@ package jetbrains.mps.project;
 import jetbrains.mps.components.IContainer;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.*;
-import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
@@ -19,7 +18,6 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IDisposable;
 import jetbrains.mps.vcs.VersionControlManager;
 import jetbrains.mps.vcs.model.IVersionControl;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.plugin.MPSPlugin;
 import org.jdom.Document;
@@ -63,7 +61,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
         MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
         projects.addProject(MPSProject.this);
 
-        ReloadUtils.reloadAll();
+        ReloadUtils.reloadAll(true);
 
         LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
         revalidateContent(projectFile, model);
@@ -134,7 +132,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, MPSProject.this);
 
     myProjectDescriptor = newDescriptor;
-    ReloadUtils.reloadAll();
+    ReloadUtils.reloadAll(true);
 
     LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
     revalidateContent(myProjectFile, newDescriptor.getModel());
