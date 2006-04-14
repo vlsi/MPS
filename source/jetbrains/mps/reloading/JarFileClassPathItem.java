@@ -139,6 +139,10 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
     }
   }
 
+  public long getTimestamp() {
+    return myFile.lastModified();
+  }
+
   private void buildPackageCaches(String namespace) {
     String parent = getParentPackage(namespace);
     if (parent.equals(namespace)) return;
