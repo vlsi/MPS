@@ -83,15 +83,18 @@ public class ClassPathModelRootManager extends AbstractModelRootManager  {
     Set<String> subpackages = getClassPathItem().getSubpackages(pack);
 
     for (String subpackage : subpackages) {
-      SModelUID modelUID = SModelUID.fromString(subpackage + "@" + SModelStereotype.JAVA_STUB);
-      if (SModelRepository.getInstance().getModelDescriptor(modelUID) != null) {
-        SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(subpackage + "@" + SModelStereotype.JAVA_STUB));
-        SModelRepository.getInstance().addOwnerForDescriptor(descriptor, myOwner);
-        descriptors.add(descriptor);
-      } else {
-        SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(this, root, null, modelUID);
-        SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, myOwner);
-        descriptors.add(modelDescriptor);
+
+      if (!getClassPathItem().getAvailableClasses(subpackage).isEmpty()) {
+        SModelUID modelUID = SModelUID.fromString(subpackage + "@" + SModelStereotype.JAVA_STUB);
+        if (SModelRepository.getInstance().getModelDescriptor(modelUID) != null) {
+          SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(subpackage + "@" + SModelStereotype.JAVA_STUB));
+          SModelRepository.getInstance().addOwnerForDescriptor(descriptor, myOwner);
+          descriptors.add(descriptor);
+        } else {
+          SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(this, root, null, modelUID);
+          SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, myOwner);
+          descriptors.add(modelDescriptor);
+        }
       }
 
       addPackageModelDescriptors(descriptors, root, subpackage);
