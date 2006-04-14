@@ -107,7 +107,7 @@ import java.util.*;
     return false;
   }
 
-  private static List<NodeSubstituteActionsBuilder> getActionBuilders(SNode sourceNode, Language language, ConceptDeclaration childConcept, IScope scope) {
+  private static List<NodeSubstituteActionsBuilder> getActionBuilders(SNode parentNode, Language language, ConceptDeclaration childConcept, IScope scope) {
     List<NodeSubstituteActionsBuilder> actionsBuilders = new LinkedList<NodeSubstituteActionsBuilder>();
     SModelDescriptor actionsModelDescr = language.getActionsModelDescriptor();
     if (actionsModelDescr != null) {
@@ -123,7 +123,7 @@ import java.util.*;
 
             //and think better about of the order of arguments of "isAssignableConcept" - this is correct: 
             if (SModelUtil.isAssignableConcept(applicableConcept, childConcept) &&
-                    satisfiesPrecondition(actionsBuilder, sourceNode, scope)) {
+                    satisfiesPrecondition(actionsBuilder, parentNode, scope)) {
               actionsBuilders.add(actionsBuilder);
             }
           }
@@ -137,14 +137,14 @@ import java.util.*;
   // Query methods invocation...
   // --------------------------------
 
-  private static boolean satisfiesPrecondition(NodeSubstituteActionsBuilder actionsBuilder, SNode sourceNode, IScope scope) {
+  private static boolean satisfiesPrecondition(NodeSubstituteActionsBuilder actionsBuilder, SNode parentNode, IScope scope) {
     String preconditionQueryMethodId = actionsBuilder.getPreconditionAspectId();
     // precondition is optional
     if (preconditionQueryMethodId == null) {
       return true;
     }
 
-    Object[] args = new Object[]{sourceNode, scope};
+    Object[] args = new Object[]{parentNode, scope};
     String methodName = "nodeSubstituteActionsBuilder_Precondition_" + preconditionQueryMethodId;
     SModel model = actionsBuilder.getModel();
     return (Boolean) QueryMethod.invoke(methodName, args, model);

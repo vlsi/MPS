@@ -136,7 +136,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActions" id="1144964668383">
-    <property name="name" value="BL_ref_substitute_instance.reference" />
+    <property name="name" value="BL_ref_substitute: instance.reference" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1144964865873">
       <property name="searchScopeProviderAspectId" value="FieldReference_ClassifierHierarchy_InstanceFields" />
       <link role="applicableLink" targetNodeId="1.1070568237987" />
@@ -176,13 +176,19 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1144966858480">
-    <property name="name" value="BL_node_substitute_instance.operation" />
+    <property name="name" value="BL_node_substitute: instance.operation" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1144966887903">
       <property name="actionsFactoryAspectId" value="SequenceOperation_default" />
       <link role="applicableConcept" targetNodeId="1.1144946981158" />
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1144967069029">
+      <property name="actionsFactoryAspectId" value="SequenceOperation_to_InstanceMethodCall" />
+      <property name="preconditionAspectId" value="Parent_is_SequenceOperationExpression" />
+      <link role="applicableConcept" targetNodeId="1.1144946981158" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1144972176420">
       <property name="actionsFactoryAspectId" value="SequenceOperation_to_FieldReference" />
+      <property name="preconditionAspectId" value="Parent_is_SequenceOperationExpression" />
       <link role="applicableConcept" targetNodeId="1.1144946981158" />
     </node>
   </node>
