@@ -8,6 +8,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
+import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -29,8 +30,10 @@ public class ModelRepositoryView extends DefaultTool {
   private JScrollPane myComponent = new JScrollPane(myTree);
   private DeferringEventHandler myDeferringEventHandler = new DeferringEventHandler();
 
-  public ModelRepositoryView() {
-    myTree.rebuildTree();
+  public ModelRepositoryView(ToolsPane pane) {
+    if (pane.isVisible(this)) {
+      myTree.rebuildTree();
+    }
   }
 
   public void toolShown() {
