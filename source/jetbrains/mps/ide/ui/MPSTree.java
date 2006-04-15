@@ -343,7 +343,11 @@ public abstract class MPSTree extends JTree {
     List<Object> path = new ArrayList<Object>();
     MPSTreeNode current = getRootNode();
     path.add(current);
-    for (String component : components) {
+
+    //we don't have to initialize last component
+    for (int j = 0; j < components.length - 1; j++) {
+      String component = components[j];
+
       if (component == null || component.length() == 0) continue;
       boolean found = false;
       for (int i = 0; i < current.getChildCount(); i++) {

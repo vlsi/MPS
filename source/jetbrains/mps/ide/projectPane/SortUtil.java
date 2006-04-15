@@ -4,10 +4,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.IModule;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -19,13 +16,13 @@ import java.util.Comparator;
 public class SortUtil {
   public static List<SModelDescriptor> sortModels(List<SModelDescriptor> modelDescriptors) {
     List<SModelDescriptor> sortedModels = new ArrayList<SModelDescriptor>(modelDescriptors);
-    Collections.sort(sortedModels, new Comparator() {
-      public int compare(Object o, Object o1) {
+    Collections.sort(sortedModels, new Comparator<SModelDescriptor>() {
+      public int compare(SModelDescriptor o, SModelDescriptor o1) {
         if (o == o1) {
           return 0;
         }
-        String name1 = ((SModelDescriptor) o).getModelUID().toString();
-        String name2 = ((SModelDescriptor) o1).getModelUID().toString();
+        String name1 = o.getModelUID().toString();
+        String name2 = o1.getModelUID().toString();
         if (name1 == null) name1 = "";
         if (name2 == null) name2 = "";
         return name1.compareTo(name2);

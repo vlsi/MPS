@@ -28,7 +28,7 @@ class SModelsSubtree {
     list.add(new ModelsGroupTreeNode("<.>", operationContext)); // default
 
     Map<String, List<SModelDescriptor>> stereotypes = new HashMap<String, List<SModelDescriptor>>();
-    for (SModelDescriptor modelDescriptor : SortUtil.sortModels(operationContext.getModule().getOwnModelDescriptors())) {
+    for (SModelDescriptor modelDescriptor : operationContext.getModule().getOwnModelDescriptors()) {
       String stereotype = modelDescriptor.getStereotype();
       if (stereotype == null || stereotype.length() == 0) {
         list.get(0).add(new SModelTreeNode(modelDescriptor, null, operationContext));
@@ -46,11 +46,9 @@ class SModelsSubtree {
     Set<String> sortedStereotypes = new TreeSet<String>(stereotypes.keySet());
     for (String stereotype : sortedStereotypes) {
       List<SModelDescriptor> modelDescriptors = stereotypes.get(stereotype);
-      TextTreeNode stereotypedModelsNode = new ModelsGroupTreeNode("<" + stereotype + ">", operationContext);
+      ModelsGroupTreeNode stereotypedModelsNode = new ModelsGroupTreeNode("<" + stereotype + ">", operationContext);
       list.add(stereotypedModelsNode);
-      for (SModelDescriptor modelDescriptor : modelDescriptors) {
-        stereotypedModelsNode.add(new SModelTreeNode(modelDescriptor, null, operationContext));
-      }
+      stereotypedModelsNode.addAll(modelDescriptors);
     }
 
     for (MPSTreeNode treeNode : list) {
@@ -58,13 +56,36 @@ class SModelsSubtree {
     }
   }
 
+
   private static class ModelsGroupTreeNode extends TextTreeNode {
+
+    private List<SModelDescriptor> myDescriptors = new ArrayList<SModelDescriptor>();
+    private boolean myInitialized = false;
+
     public ModelsGroupTreeNode(String text, IOperationContext context) {
       super(text, context);
     }
 
     public Icon getIcon(boolean expanded) {
       return Icons.PROJECT_MODELS_ICON;
+    }
+
+    public void addAll(List<SModelDescriptor> modelDescriptor) {
+      myDescriptors.addAll(modelDescriptor);
+    }
+
+    public boolean isInitialized() {
+      return myInitialized;
+    }
+
+    public void init() {
+      if (myInitialized) return;
+
+      for (SModelDescriptor md : SortUtil.sortModels(myDescriptors)) {
+        add(new SModelTreeNode(md, null, getOperationContext()));
+      }
+
+      myInitialized = true;
     }
 
     public JPopupMenu getPopupMenu() {
