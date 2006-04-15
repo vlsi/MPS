@@ -49,8 +49,9 @@ public class FileClassPathItem extends AbstractClassPathItem{
   public Set<String> getAvailableClasses(String namespace) {
     Set<String> result = new HashSet<String>();
     File dir = getModelDir(namespace);
-    if (dir.exists()) {
-      for (String path : dir.list()) {
+    String[] paths = dir.list();
+    if (paths != null) {
+      for (String path : paths) {
         if (path.endsWith(".class") && !path.contains("$")) {
           result.add(path.substring(0, path.length() - ".class".length()));
         }
@@ -62,8 +63,10 @@ public class FileClassPathItem extends AbstractClassPathItem{
   public Set<String> getSubpackages(String namespace) {
     Set<String> result = new HashSet<String>();
     File dir = getModelDir(namespace);
-    if (dir.exists()) {
-      for (File file : dir.listFiles()) {
+
+    File[] files = dir.listFiles();
+    if (files != null) {
+      for (File file : files) {
         if (!file.getName().endsWith(".class") && file.isDirectory()) { //isDirectory is quite expensive operation
           if (namespace.length() > 0) {
             result.add(namespace + "." + file.getName());
