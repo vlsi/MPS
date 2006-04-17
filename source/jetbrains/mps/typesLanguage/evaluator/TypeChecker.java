@@ -65,9 +65,7 @@ public class TypeChecker {
     doCheckTypes(root);
 
     // main context
-    Set<Set<Pair<SNode, NodeWrapperType>>> allContexts = ContextsManager.getInstance().getAllContexts();
-    if (allContexts.isEmpty()) return;
-    Set<Pair<SNode, NodeWrapperType>> mainContext = allContexts.iterator().next();// (todo find main context)
+    Set<Pair<SNode, NodeWrapperType>> mainContext = ContextsManager.getInstance().getMainContext();
 
     // setting types to nodes
     for (Pair<SNode, NodeWrapperType> contextEntry : mainContext) {
