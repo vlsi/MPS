@@ -28,6 +28,7 @@ public class ClassLoaderManager {
 
   private ClassLoader myClassLoader = null;
   private boolean myUseSystemClassLoader;
+  private IClassPathItem myRTJar = null;
 
   private ClassLoaderManager() {
     updateClassPath();
@@ -106,14 +107,21 @@ public class ClassLoaderManager {
     return null;
   }
 
-  public IClassPathItem getRTJar() {
+  public IClassPathItem getRTJar() {    
+    if (myRTJar != null) {
+      return myRTJar;
+    }
+
     for (URL url : Launcher.getBootstrapClassPath().getURLs()) {
       try {
         File file = new File(url.toURI());
 
         if (!file.exists()) continue;
 
-        if (file.getPath().endsWith("rt.jar")) return new JarFileClassPathItem(file);
+        if (file.getPath().endsWith("rt.jar")) {
+          myRTJar = new JarFileClassPathItem(file);
+          return myRTJar;
+        }
       } catch (URISyntaxException e) {
         LOG.error(e);
       }
