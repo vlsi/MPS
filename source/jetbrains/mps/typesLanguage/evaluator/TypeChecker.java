@@ -43,7 +43,11 @@ public class TypeChecker {
 
     //register contexts
     for (ContextDeclaration contextDeclaration : typesModel.getRoots(ContextDeclaration.class)) {
-      ContextsManager.getInstance().registerNewContext(contextDeclaration.getName());
+      if (contextDeclaration.getMain()) {
+        ContextsManager.getInstance().registerMainContext(contextDeclaration.getName());
+      } else {
+        ContextsManager.getInstance().registerNewContext(contextDeclaration.getName());
+      }
     }
 
     //register global varsets
