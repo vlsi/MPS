@@ -344,8 +344,7 @@ public abstract class MPSTree extends JTree {
     MPSTreeNode current = getRootNode();
     path.add(current);
 
-    //we don't have to initialize last component
-    for (int j = 0; j < components.length - 1; j++) {
+    for (int j = 0; j < components.length; j++) {
       String component = components[j];
 
       if (component == null || component.length() == 0) continue;
@@ -355,7 +354,9 @@ public abstract class MPSTree extends JTree {
         if (node.getNodeIdentifier().equals(component)) {
           current = node;
           path.add(current);
-          if (!current.isInitialized()) current.init();
+          if (!current.isInitialized() && j != component.length() - 1) {
+            current.init();
+          }
           found = true;
           break;
         }

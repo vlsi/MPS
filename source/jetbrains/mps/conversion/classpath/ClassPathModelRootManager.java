@@ -14,7 +14,7 @@ import java.util.*;
  * @author Kostik
  */
 public class ClassPathModelRootManager extends AbstractModelRootManager  {
-  private static WeakHashMap<SModelUID, Long> ourTimestamps = new WeakHashMap<SModelUID, Long>();
+  private static Map<SModelUID, Long> ourTimestamps = new HashMap<SModelUID, Long>();
 
   private ModelOwner myOwner;
   private IConverter myConverter;
@@ -58,14 +58,14 @@ public class ClassPathModelRootManager extends AbstractModelRootManager  {
   }
 
   public SModel refresh(SModelDescriptor modelDescriptor) {
-//    SModel smodel = modelDescriptor.getSModel();
-//    if (smodel != null) {
-//      long timestamp = timestamp(modelDescriptor);
-//      long modelTimestamp = ourTimestamps.get(smodel.getUID());
-//      if (modelTimestamp == timestamp) {
-//        return super.refresh(modelDescriptor);
-//      }
-//    }
+    SModel smodel = modelDescriptor.getSModel();
+    if (smodel != null) {
+      long timestamp = timestamp(modelDescriptor);
+      long modelTimestamp = ourTimestamps.get(smodel.getUID());
+      if (modelTimestamp == timestamp) {
+        return smodel;
+      }
+    }
 
     return null;
   }
