@@ -30,9 +30,9 @@ public class EquationManager {
     return ourInstance;
   }
 
-  public void addEquation(IType rhs, IType lhs) {
-    IType rhsRepresntator = rhs.getRepresentator();
-    IType lhsRepresentator = lhs.getRepresentator();
+  public void addEquation(NodeWrapperType rhs, NodeWrapperType lhs) {
+    NodeWrapperType rhsRepresntator = rhs.getRepresentator();
+    NodeWrapperType lhsRepresentator = lhs.getRepresentator();
 
     // no equation needed
     if (rhsRepresntator == lhsRepresentator) return;
@@ -58,14 +58,15 @@ public class EquationManager {
       LOG.errorWithTrace("equation solving error");
       return;
     }
-    Set<Pair<IType, IType>> childEQs = createChildEquations(rhsType.getNodeWrapper(), lhsType.getNodeWrapper());
-    for (Pair<IType, IType> eq : childEQs) {
+    Set<Pair<NodeWrapperType, NodeWrapperType>> childEQs = createChildEquations(rhsType.getNodeWrapper(), lhsType.getNodeWrapper());
+    for (Pair<NodeWrapperType, NodeWrapperType> eq : childEQs) {
       addEquation(eq.o1, eq.o2);
     }
   }
 
-  private void processEquation(IType var, IType type) {
+  private void processEquation(NodeWrapperType var, NodeWrapperType type) {
     var.setParent(type);
+    type.addAllVarSetsOfSourceAndRemoveSourceFromThem(var);
   }
 
   public void clear() {
@@ -96,8 +97,8 @@ public class EquationManager {
     return true;
   }
 
-  public static Set<Pair<IType, IType>> createChildEquations(NodeWrapper node1, NodeWrapper node2) {
-   Set<Pair<IType, IType>> result = new HashSet<Pair<IType, IType>>();
+  public static Set<Pair<NodeWrapperType, NodeWrapperType>> createChildEquations(NodeWrapper node1, NodeWrapper node2) {
+   Set<Pair<NodeWrapperType, NodeWrapperType>> result = new HashSet<Pair<NodeWrapperType, NodeWrapperType>>();
    Set<String> childRoles1 = node1.getChildRoles();
    Set<String> childRoles2 = node2.getChildRoles();
 
@@ -110,11 +111,11 @@ public class EquationManager {
      Iterator<NodeWrapper> childrenIterator2 = childrenInNode2.iterator();
      for (NodeWrapper child1 : childrenInNode1) {
        NodeWrapper child2 = childrenIterator2.hasNext() ? childrenIterator2.next() : null;
-       result.add(new Pair<IType, IType>(NodeWrapperType.getIType(child1), NodeWrapperType.getIType(child2)));
+       result.add(new Pair<NodeWrapperType, NodeWrapperType>(NodeWrapperType.getIType(child1), NodeWrapperType.getIType(child2)));
      }
      for (;childrenIterator2.hasNext();) {
        NodeWrapper child2 = childrenIterator2.next();
-       result.add(new Pair<IType, IType>(null, NodeWrapperType.getIType(child2)));
+       result.add(new Pair<NodeWrapperType, NodeWrapperType>(null, NodeWrapperType.getIType(child2)));
      }
    }
    return result;

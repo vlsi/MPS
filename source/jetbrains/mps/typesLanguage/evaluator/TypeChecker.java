@@ -3,7 +3,6 @@ package jetbrains.mps.typesLanguage.evaluator;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.typesLanguage.ContextDeclaration;
 import jetbrains.mps.typesLanguage.EquationSetDeclaration;
 import jetbrains.mps.typesLanguage.Rule;
@@ -11,7 +10,7 @@ import jetbrains.mps.typesLanguage.VariableSetDeclaration;
 import jetbrains.mps.typesLanguage.inference.ContextsManager;
 import jetbrains.mps.typesLanguage.equation.EquationManager;
 import jetbrains.mps.typesLanguage.equation.TypeVariablesManager;
-import jetbrains.mps.typesLanguage.equation.IType;
+import jetbrains.mps.typesLanguage.equation.NodeWrapperType;
 
 import java.util.*;
 
@@ -66,12 +65,12 @@ public class TypeChecker {
     doCheckTypes(root);
 
     // main context
-    Set<Set<Pair<SNode, IType>>> allContexts = ContextsManager.getInstance().getAllContexts();
+    Set<Set<Pair<SNode, NodeWrapperType>>> allContexts = ContextsManager.getInstance().getAllContexts();
     if (allContexts.isEmpty()) return;
-    Set<Pair<SNode, IType>> mainContext = allContexts.iterator().next();// (todo find main context)
+    Set<Pair<SNode, NodeWrapperType>> mainContext = allContexts.iterator().next();// (todo find main context)
 
     // setting types to nodes
-    for (Pair<SNode, IType> contextEntry : mainContext) {
+    for (Pair<SNode, NodeWrapperType> contextEntry : mainContext) {
       SNode term = contextEntry.o1;
       term.putUserObject(TYPE_OF_TERM, contextEntry.o2);
     }

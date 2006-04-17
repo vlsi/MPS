@@ -6,8 +6,6 @@ import jetbrains.mps.annotations.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.typesLanguage.evaluator.NodeWrapper;
-import jetbrains.mps.typesLanguage.equation.IType;
-import jetbrains.mps.typesLanguage.equation.NodeWrapperType;
 
 import java.util.*;
 
