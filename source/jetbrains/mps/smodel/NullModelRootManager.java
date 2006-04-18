@@ -24,4 +24,8 @@ class NullModelRootManager extends AbstractModelRootManager {
     message += "this model is owned by " + SModelRepository.getInstance().getOwners(modelDescriptor);
     throw new RuntimeException(message);
   }
+
+  public boolean isFindUsagesSupported() {
+    return false;
+  }
 }

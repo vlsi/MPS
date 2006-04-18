@@ -12,13 +12,14 @@ import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
+public class SNodeListType_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
@@ -31,23 +32,11 @@ public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "isInstanceOf("));
-    editorCell.addEditorCell(this.createConceptReferenceCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell1(context, node, ")"));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1139621567253");
-    editorCell.setLayoutConstraint("");
-    ((EditorCell_Basic)editorCell).setParseable(false);
-    return editorCell;
-  }
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
-    editorCell.setEditable(true);
-    editorCell.setDefaultText("");
-    editorCell.setDrawBrackets(false);
-    editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1139621663918");
+    editorCell.addEditorCell(this.createConstantCell(context, node, "snodes"));
+    editorCell.addEditorCell(this.createConstantCell1(context, node, "<"));
+    editorCell.addEditorCell(this.createElementConceptReferenceCell(context, node));
+    editorCell.addEditorCell(this.createConstantCell2(context, node, ">"));
+    editorCell.putUserObject(EditorCell.CELL_ID, "1145383245679");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
@@ -60,15 +49,42 @@ public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.setFontType(MPSFonts.PLAIN);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1139621579911");
+    editorCell.setFontType(MPSFonts.BOLD);
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1145383245680");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
-  public EditorCell createConceptReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1145383245681");
+    editorCell.setLayoutConstraint("");
+    ((EditorCell_Basic)editorCell).setParseable(false);
+    return editorCell;
+  }
+  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
+    editorCell.setSelectable(false);
+    editorCell.setDrawBorder(false);
+    editorCell.setEditable(false);
+    editorCell.setDefaultText("");
+    editorCell.setDrawBrackets(false);
+    editorCell.setBracketsColor(Color.black);
+    editorCell.putUserObject(EditorCell.CELL_ID, "1145383245687");
+    editorCell.setLayoutConstraint("");
+    ((EditorCell_Basic)editorCell).setParseable(false);
+    return editorCell;
+  }
+  public EditorCell createElementConceptReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new Node_IsInstanceOfOperation_Editor_concept_InlineComponent());
+    provider.setAuxiliaryCellProvider(new SNodeListType_Editor_elementConcept_InlineComponent());
     EditorCell editorCell = provider.createEditorCell(context);
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
@@ -78,18 +94,18 @@ public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1139621610101");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1145383273157");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
-  public EditorCell createConceptReferenceCell(EditorContext context, SNode node) {
+  public EditorCell createElementConceptReferenceCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
-    provider.setRole("concept");
-    provider.setNoTargetText("<no concept>");
+    provider.setRole("elementConcept");
+    provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createConceptReferenceCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.createElementConceptReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {

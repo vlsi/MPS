@@ -756,43 +756,35 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1145316575381">
-    <link role="conceptDeclaration" targetNodeId="1.1145314797309" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1145316666107">
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1145383231438">
+    <link role="conceptDeclaration" targetNodeId="1.1145383075378" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1145383245679">
       <property name="drawBorder" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145316666108">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145383245680">
         <property name="editable" value="true" />
         <property name="textFgColor" value="DARK_BLUE" />
         <property name="text" value="snodes" />
         <property name="fontStyle" value="BOLD" />
         <property name="drawBorder" value="false" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145316666109">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145383245681">
         <property name="text" value="&lt;" />
         <property name="drawBorder" value="false" />
         <property name="selectable" value="false" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1145316678254">
-        <property name="substituteActionsFactoryId" value="SNodeSequence_elementNodeType_Concept" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1145383273157">
         <property name="drawBorder" value="false" />
-        <link role="relationDeclaration" targetNodeId="1.1145314827443" />
-        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1145316678255">
-          <link role="conceptDeclaration" targetNodeId="1.1138055754698" />
-          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1145316688742">
-            <link role="relationDeclaration" targetNodeId="1.1138405853777" />
-            <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1145316688743">
-              <link role="conceptDeclaration" targetNodeId="3.1071489090640" />
-              <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1145316705341">
-                <property name="textFgColor" value="DARK_MAGENTA" />
-                <property name="readOnly" value="true" />
-                <property name="noTargetText" value="&lt;no name&gt;" />
-                <link role="relationDeclaration" targetNodeId="2.1078489098626" />
-              </node>
-            </node>
+        <link role="relationDeclaration" targetNodeId="1.1145383142433" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1145383273158">
+          <link role="conceptDeclaration" targetNodeId="3.1071489090640" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1145383277050">
+            <property name="textFgColor" value="DARK_MAGENTA" />
+            <property name="noTargetText" value="&lt;no name&gt;" />
+            <link role="relationDeclaration" targetNodeId="2.1078489098626" />
           </node>
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145316666113">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145383245687">
         <property name="text" value="&gt;" />
         <property name="drawBorder" value="false" />
         <property name="selectable" value="false" />

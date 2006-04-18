@@ -600,24 +600,21 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1138763241883" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1145314797309">
-    <property name="name" value="SNodeSequenceType" />
-    <link role="extends" targetNodeId="2.1144781790140" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1145316642659">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1145383075378">
+    <property name="name" value="SNodeListType" />
+    <link role="extends" targetNodeId="2.1068431790189" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1145383176232">
       <property name="value" value="snodes" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1145316652395">
-      <property name="value" value="sequence of snodes" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1145383185202">
+      <property name="value" value="list of snodes" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1145320207983">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1145314827443">
-      <property name="role" value="elementNodeType" />
-      <link role="target" targetNodeId="1138055754698" />
-      <link role="specializedLink" targetNodeId="2.1144781842489" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1145383142433">
+      <property name="sourceCardinality" value="0..1" />
+      <property name="role" value="elementConcept" />
+      <link role="target" targetNodeId="3.1071489090640" />
     </node>
   </node>
 </model>
