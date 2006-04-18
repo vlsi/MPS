@@ -450,6 +450,7 @@
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1140138237888">
           <link role="conceptDeclaration" targetNodeId="3.1071489090640" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1140138242844">
+            <property name="textFgColor" value="DARK_MAGENTA" />
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1078489098626" />
           </node>
