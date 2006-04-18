@@ -617,5 +617,23 @@
       <link role="target" targetNodeId="3.1071489090640" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1145393200918">
+    <property name="name" value="NewSNodeListExpression" />
+    <link role="extends" targetNodeId="2.1068431790191" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1145393412048">
+      <property name="value" value="new snodes" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1145393423019">
+      <property name="value" value="create list of snodes" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1145393356108">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="createdType" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1145383075378" />
+    </node>
+  </node>
 </model>
 

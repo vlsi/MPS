@@ -791,5 +791,20 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1145393464179">
+    <link role="conceptDeclaration" targetNodeId="1.1145393200918" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1145393466096">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145393466097">
+        <property name="textFgColor" value="DARK_BLUE" />
+        <property name="text" value="new" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1145393466098">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="1.1145393356108" />
+      </node>
+    </node>
+  </node>
 </model>
 
