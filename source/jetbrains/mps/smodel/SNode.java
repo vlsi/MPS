@@ -440,6 +440,17 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return list.iterator();
   }
 
+  public <T extends SNode> Iterator<T> reverseChildren(String role) {
+    List<T> list = new LinkedList<T>();
+    for (SNode child : myChildren) {
+      if (child.getRole_().equals(role)) {
+        list.add((T) child);
+      }
+    }
+    Collections.reverse(list);
+    return list.iterator();
+  }
+
   public Iterator<SNode> iterator() {
     return getChildren().iterator();
   }
