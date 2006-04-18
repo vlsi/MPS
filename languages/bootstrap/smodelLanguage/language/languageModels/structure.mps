@@ -600,5 +600,25 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1138763241883" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1145314797309">
+    <property name="name" value="SNodeSequenceType" />
+    <link role="extends" targetNodeId="2.1144781790140" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1145316642659">
+      <property name="value" value="snodes" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1145316652395">
+      <property name="value" value="sequence of snodes" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1145320207983">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1145314827443">
+      <property name="role" value="elementNodeType" />
+      <link role="target" targetNodeId="1138055754698" />
+      <link role="specializedLink" targetNodeId="2.1144781842489" />
+    </node>
+  </node>
 </model>
 
