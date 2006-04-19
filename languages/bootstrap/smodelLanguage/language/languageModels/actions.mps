@@ -31,7 +31,7 @@
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1145406048784">
       <property name="actionsFactoryAspectId" value="Expression_SemanticDowncast" />
-      <property name="preconditionAspectId" value="Expression_SnodeOrSlinkOrSlinklist_type" />
+      <property name="preconditionAspectId" value="Expression_SmodelOrSnodeOrSlinkOrSlinklist_type" />
       <link role="applicableConcept" targetNodeId="3.1068431790191" />
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1138669164825">
