@@ -17,6 +17,8 @@
       <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1138412409275">
         <link role="conceptDeclaration" targetNodeId="3.1071489288299" />
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1138412409276">
+          <property name="textFgColor" value="darkGray" />
+          <property name="fontStyle" value="ITALIC" />
           <property name="drawBorder" value="false" />
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="2.1078489098626" />
@@ -55,6 +57,8 @@
       <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1138412329757">
         <link role="conceptDeclaration" targetNodeId="3.1071489288298" />
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1138412329758">
+          <property name="textFgColor" value="darkGray" />
+          <property name="fontStyle" value="ITALIC" />
           <property name="drawBorder" value="false" />
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="3.1071599776563" />
@@ -71,6 +75,8 @@
       <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1138412361313">
         <link role="conceptDeclaration" targetNodeId="3.1071489288298" />
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1138412361314">
+          <property name="textFgColor" value="darkGray" />
+          <property name="fontStyle" value="ITALIC" />
           <property name="drawBorder" value="false" />
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="3.1071599776563" />
@@ -745,7 +751,8 @@
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1144198126877">
           <link role="conceptDeclaration" targetNodeId="3.1071489288298" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1144198126878">
-            <property name="textFgColor" value="DARK_MAGENTA" />
+            <property name="textFgColor" value="darkGray" />
+            <property name="fontStyle" value="ITALIC" />
             <property name="noTargetText" value="&lt;link has no role&gt;" />
             <link role="relationDeclaration" targetNodeId="3.1071599776563" />
           </node>
@@ -804,6 +811,47 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1145393466098">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1145393356108" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1145404650449">
+    <link role="conceptDeclaration" targetNodeId="1.1145404486709" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1145404664303">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1145404664304">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="1.1140138123956" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145404664305">
+        <property name="text" value="/" />
+        <property name="drawBorder" value="false" />
+        <property name="selectable" value="true" />
+        <link role="actionMap" targetNodeId="1145407825538" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapDeclaration" id="1145407825538">
+    <property name="name" value="TypeDowncastExpression_Symbol_Actions" />
+    <link role="applicableConcept" targetNodeId="1.1145404486709" />
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapItem" id="1145407863898">
+      <property name="description" value="remove dowmcast symbol" />
+      <property name="actionId" value="delete_action_id" />
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_ExecuteFunction" id="1145407863899">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1145407863900">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1145407914432">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1145407915778">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_FunctionParm_selectedNode" id="1145407914433" />
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ReplaceWithAnotherOperation" id="1145407919732">
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1145407926048">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_FunctionParm_selectedNode" id="1145407924265" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1145407933627">
+                    <link role="link" targetNodeId="1.1145404616321" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
