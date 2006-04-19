@@ -3268,6 +3268,7 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1144409617352">
     <property name="name" value="StatementList_KeyMap" />
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1144409642106">
+      <property name="description" value="introduce variable" />
       <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1144409642107">
         <property name="modifiers" value="ctrl+alt" />
         <property name="keycode" value="VK_V" />

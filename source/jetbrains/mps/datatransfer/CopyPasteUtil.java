@@ -266,7 +266,7 @@ public class CopyPasteUtil {
       return new PasteNodeData(nodes, new HashSet<SReference>(), model, new HashSet<String>(), new HashSet<SModelUID>());
     }
 
-    return null;
+    return PasteNodeData.emptyPasteNodeData(model);
   }
 
 
