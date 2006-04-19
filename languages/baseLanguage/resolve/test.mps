@@ -2,11 +2,18 @@
 <model name="jetbrains.mps.baseLanguage.resolve.test">
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.comments" />
-  <maxImportIndex value="232" />
+  <maxImportIndex value="233" />
   <import index="1" modelUID="jetbrains.mps.resolve@java_stub" />
   <import index="2" modelUID="java.lang@java_stub" />
+  <import index="233" modelUID="java.util@java_stub" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1121166935562">
     <property name="name" value="New" />
+    <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1145454091021">
+      <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1145454115975">
+        <link role="classifier" extResolveInfo="233.[Classifier]HashMap" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.Type" id="1145455617337" />
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1121172586148">
       <property name="name" value="method" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1121172586150">
@@ -257,6 +264,13 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1145454150553">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1145454150554">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1145454150555">
+              <link role="classifier" extResolveInfo="233.[Classifier]HashMap" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1127826564092">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1127826564093">
             <property name="name" value="g" />
@@ -342,7 +356,22 @@
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1121253849301">
       <property name="name" value="method" />
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1121253849319" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1121253849319">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1145453171309">
+          <node role="expression" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1145453171310">
+            <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1145453177938">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1145453181238">
+                <node role="expression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1145453186864">
+                  <link role="variableDeclaration" targetNodeId="1121253857102" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1145453175250">
+                <link role="variableDeclaration" targetNodeId="1121253857102" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1121253852508" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1121253857102">
         <property name="name" value="k" />
