@@ -855,5 +855,13 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1145468780047">
+    <link role="conceptDeclaration" targetNodeId="1.1145468686058" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145468793690">
+      <property name="editable" value="true" />
+      <property name="text" value="count" />
+      <property name="drawBorder" value="false" />
+    </node>
+  </node>
 </model>
 

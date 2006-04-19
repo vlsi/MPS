@@ -11,10 +11,10 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Basic;
 
-public class Node_DeleteOperation_Editor extends DefaultNodeEditor {
+public class LinkList_GetCountOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstantCell(context, node, "delete");
+    return this.createConstantCell(context, node, "count");
   }
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = EditorCell_Constant.create(context, node, text, false);
@@ -24,7 +24,7 @@ public class Node_DeleteOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1140133705634");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1145468793690");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
