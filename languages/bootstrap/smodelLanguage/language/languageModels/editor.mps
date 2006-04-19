@@ -831,10 +831,10 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapDeclaration" id="1145407825538">
-    <property name="name" value="TypeDowncastExpression_Symbol_Actions" />
+    <property name="name" value="SemanticDowncastExpression_Symbol_Actions" />
     <link role="applicableConcept" targetNodeId="1.1145404486709" />
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapItem" id="1145407863898">
-      <property name="description" value="remove dowmcast symbol" />
+      <property name="description" value="remove semantic downcast" />
       <property name="actionId" value="delete_action_id" />
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_ExecuteFunction" id="1145407863899">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1145407863900">
