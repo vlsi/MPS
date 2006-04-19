@@ -8,7 +8,7 @@ package jetbrains.mps.util;
  * To change this template use File | Settings | File Templates.
  */
 public class HtmlCharsUtil {
-  public static String asHtml(String s) {
+  public static String asHtml(String s, boolean xml) {
     StringBuilder builder = new StringBuilder(s);
     int i=0;
     while (i<builder.length()) {
@@ -21,15 +21,15 @@ public class HtmlCharsUtil {
         builder.replace(i,i+1,"&lt;");
         i+=3;
       }
-      if (c == '\n') {
+      if (!xml && c == '\n') {
         builder.replace(i,i+1,"<br/>");
         i+=4;
       }
-      if (c == '\r' && i+1<builder.length() && builder.charAt(i+1) == '\n') {
+      if (!xml && c == '\r' && i+1<builder.length() && builder.charAt(i+1) == '\n') {
         builder.replace(i,i+2,"<br/>");
         i+=4;
       }
-      if (c == ' ') {
+      if (!xml && c == ' ') {
         builder.replace(i,i+1,"&nbsp;");
         i+=5;
       }
@@ -39,6 +39,6 @@ public class HtmlCharsUtil {
   }
 
   public static void main(String[] args) {
-    System.err.print(asHtml("<node type = \"Classifier\">\r\nwww\n</node>"));
+    System.err.print(asHtml("<node> type", true));
   }
 }
