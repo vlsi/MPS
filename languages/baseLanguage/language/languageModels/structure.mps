@@ -1490,20 +1490,6 @@
       <link role="target" targetNodeId="1068431790189" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1144787439080">
-    <property name="name" value="NewSequenceExpression" />
-    <link role="extends" targetNodeId="1068431790191" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1144787494353">
-      <property name="value" value="new sequence" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1145299316860">
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="createdType" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1144781790140" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1144886658041">
     <property name="name" value="SequenceIteratorType" />
     <link role="extends" targetNodeId="1068431790189" />

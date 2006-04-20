@@ -3582,24 +3582,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1144787510010">
-    <link role="conceptDeclaration" targetNodeId="17.1144787439080" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1144787515559">
-      <property name="drawBorder" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1145553377345">
-        <property name="text" value="deprecated" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145299386753">
-        <property name="textFgColor" value="DARK_BLUE" />
-        <property name="text" value="new" />
-        <property name="drawBorder" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1145299396615">
-        <property name="drawBorder" value="false" />
-        <link role="relationDeclaration" targetNodeId="17.1145299316860" />
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1144886773799">
     <link role="conceptDeclaration" targetNodeId="17.1144886658041" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1144886786051">
