@@ -1552,5 +1552,44 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1145552809883">
+    <property name="name" value="AbstractCreator" />
+    <link role="extends" targetNodeId="4.1133920641626" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1145552905433">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1145552977093">
+    <property name="name" value="GenericNewExpression" />
+    <link role="extends" targetNodeId="1068431790191" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1145553041283">
+      <property name="value" value="new" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1145553082100">
+      <property name="value" value="generic creation expression" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1145553007750">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="creator" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1145552809883" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1145553400580">
+    <property name="name" value="SequenceCreator" />
+    <link role="extends" targetNodeId="1145552809883" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1145553558552">
+      <property name="value" value="sequence" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1145553418425">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="createdType" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1144781790140" />
+    </node>
+  </node>
 </model>
 
