@@ -855,5 +855,71 @@
       <link role="relationDeclaration" targetNodeId="1.1145567471833" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1145570883802">
+    <link role="conceptDeclaration" targetNodeId="1.1145570846907" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Alternation" id="1145571027556">
+      <property name="alternationConditionAspectMethodId" value="SNodeOperation_noParameters" />
+      <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145571027557">
+        <property name="editable" value="true" />
+        <property name="text" value="next-siblings" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1145571027558">
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145571027559">
+          <property name="editable" value="true" />
+          <property name="text" value="next-siblings" />
+          <property name="drawBorder" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1145571027560">
+          <property name="drawBorder" value="false" />
+          <link role="editorComponent" targetNodeId="1144105329976" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1145572859518">
+    <link role="conceptDeclaration" targetNodeId="1.1145572800087" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Alternation" id="1145572861644">
+      <property name="alternationConditionAspectMethodId" value="SNodeOperation_noParameters" />
+      <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145572861645">
+        <property name="editable" value="true" />
+        <property name="text" value="prev-siblings" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1145572861646">
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145572861647">
+          <property name="editable" value="true" />
+          <property name="text" value="prev-siblings" />
+          <property name="drawBorder" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1145572861648">
+          <property name="drawBorder" value="false" />
+          <link role="editorComponent" targetNodeId="1144105329976" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1145573389679">
+    <link role="conceptDeclaration" targetNodeId="1.1145573345940" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Alternation" id="1145573795271">
+      <property name="alternationConditionAspectMethodId" value="SNodeOperation_noParameters" />
+      <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145573795272">
+        <property name="editable" value="true" />
+        <property name="text" value="siblings" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1145573795273">
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145573795274">
+          <property name="editable" value="true" />
+          <property name="text" value="siblings" />
+          <property name="drawBorder" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1145573795275">
+          <property name="drawBorder" value="false" />
+          <link role="editorComponent" targetNodeId="1144105329976" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

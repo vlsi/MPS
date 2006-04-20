@@ -204,8 +204,8 @@
       <link role="target" targetNodeId="1144100932627" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1144102712287">
-      <link role="target" targetNodeId="1144101972840" />
       <link role="conceptLinkDeclaration" targetNodeId="1144102537873" />
+      <link role="target" targetNodeId="1144101597970" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1139613319562">
       <property name="value" value="parent" />
@@ -670,6 +670,51 @@
       <property name="role" value="createdType" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1145383075378" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1145570846907">
+    <property name="name" value="Node_GetNextSiblingsOperation" />
+    <link role="extends" targetNodeId="1138411891628" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1145570991951">
+      <link role="target" targetNodeId="1144100932627" />
+      <link role="conceptLinkDeclaration" targetNodeId="1144102537873" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1145570846908">
+      <property name="value" value="next-siblings" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1145570846909">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763241883" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1145572800087">
+    <property name="name" value="Node_GetPrevSiblingsOperation" />
+    <link role="extends" targetNodeId="1138411891628" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1145572800088">
+      <link role="conceptLinkDeclaration" targetNodeId="1144102537873" />
+      <link role="target" targetNodeId="1144100932627" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1145572800089">
+      <property name="value" value="prev-siblings" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1145572800090">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763241883" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1145573345940">
+    <property name="name" value="Node_GetAllSiblingsOperation" />
+    <link role="extends" targetNodeId="1138411891628" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1145573345941">
+      <link role="conceptLinkDeclaration" targetNodeId="1144102537873" />
+      <link role="target" targetNodeId="1144100932627" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1145573345942">
+      <property name="value" value="siblings" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1145573345943">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763241883" />
     </node>
   </node>
 </model>

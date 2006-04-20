@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 
-public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
+public class Node_GetNextSiblingsOperation_Editor extends DefaultNodeEditor {
 
   public AbstractCellProvider myOperationParameters_Component;
 
@@ -24,14 +24,14 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
     boolean alternationCondition = Queries.semanticNodeCondition_SNodeOperation_noParameters(node, context.getOperationContext());
     EditorCell editorCell = null;
     if(alternationCondition) {
-      editorCell = this.createConstantCell(context, node, "parent");
+      editorCell = this.createConstantCell(context, node, "next-siblings");
     } else 
     {
       editorCell = this.createRowCell(context, node);
     }
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1144105522780");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1145571027556");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
@@ -44,9 +44,9 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
     editorCell.setUsesBraces(false);
-    editorCell.addEditorCell(this.createConstantCell1(context, node, "parent"));
+    editorCell.addEditorCell(this.createConstantCell1(context, node, "next-siblings"));
     editorCell.addEditorCell(this.createOperationParameters_ComponentCell(context, node));
-    editorCell.putUserObject(EditorCell.CELL_ID, "1144105628958");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1145571027558");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
@@ -60,7 +60,7 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1144105636839");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1145571027560");
     editorCell.setLayoutConstraint("");
     return editorCell;
   }
@@ -72,7 +72,7 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1144105535520");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1145571027557");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
@@ -85,7 +85,7 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setDrawBrackets(false);
     editorCell.setBracketsColor(Color.black);
-    editorCell.putUserObject(EditorCell.CELL_ID, "1144105631509");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1145571027559");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
