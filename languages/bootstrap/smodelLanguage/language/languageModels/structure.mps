@@ -617,24 +617,6 @@
       <link role="target" targetNodeId="3.1071489090640" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1145393200918">
-    <property name="name" value="NewSNodeListExpression" />
-    <link role="extends" targetNodeId="2.1068431790191" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1145393412048">
-      <property name="value" value="new snodes" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1145393423019">
-      <property name="value" value="create list of snodes" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1145393356108">
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="createdType" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1145383075378" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1145404486709">
     <property name="name" value="SemanticDowncastExpression" />
     <link role="extends" targetNodeId="2.1068431790191" />
@@ -670,6 +652,24 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1145468686062">
       <link role="conceptPropertyDeclaration" targetNodeId="1138763350436" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1145567426890">
+    <property name="name" value="SNodeListCreator" />
+    <link role="extends" targetNodeId="2.1145552809883" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1145567483100">
+      <property name="value" value="snodes" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1145567500180">
+      <property name="value" value="list of snodes" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1145567471833">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="createdType" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1145383075378" />
     </node>
   </node>
 </model>
