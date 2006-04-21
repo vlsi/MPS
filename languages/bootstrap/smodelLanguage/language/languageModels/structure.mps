@@ -400,13 +400,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1138763325919" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1142885169755">
-    <property name="name" value="BaseQueryFunction" />
-    <link role="extends" targetNodeId="2.1137021947720" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1142885262305">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1143221076066">
     <property name="name" value="Node_InsertNewPrevSiblingOperation" />
     <link role="extends" targetNodeId="1138411891628" />
