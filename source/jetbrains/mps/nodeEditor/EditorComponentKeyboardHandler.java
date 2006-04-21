@@ -128,7 +128,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
     if (selectedCell != null) {
 
-      if (actionType != null) {
+      if (actionType != null && actionType != EditorCellAction.DELETE) {
         if (EditorUtil.executeCellAction(selectedCell, actionType, editorContext)) {
           return true;
         }
@@ -158,6 +158,12 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
         // allow selected cell to process event.
         if (allowCellToProcessEvent(selectedCell, keyEvent, editorContext)) return true;
+
+        if (actionType == EditorCellAction.DELETE) {
+          if (EditorUtil.executeCellAction(selectedCell, actionType, editorContext)) {
+            return true;
+          }
+        }
 
         //allow deepest selected cell to process event.
         EditorCell deepestSelectedCell = editor.getDeepestSelectedCell();
