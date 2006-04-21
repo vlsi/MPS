@@ -158,13 +158,15 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
         // allow selected cell to process event.
         if (allowCellToProcessEvent(selectedCell, keyEvent, editorContext)) return true;
+      }// if (!keyEvent.isConsumed())
 
-        if (actionType == EditorCellAction.DELETE) {
-          if (EditorUtil.executeCellAction(selectedCell, actionType, editorContext)) {
-            return true;
-          }
+      if (actionType == EditorCellAction.DELETE) {
+        if (EditorUtil.executeCellAction(selectedCell, actionType, editorContext)) {
+          return true;
         }
+      }
 
+      if (!keyEvent.isConsumed()) {
         //allow deepest selected cell to process event.
         EditorCell deepestSelectedCell = editor.getDeepestSelectedCell();
         if (allowCellToProcessEvent(deepestSelectedCell, keyEvent, editorContext)) {
