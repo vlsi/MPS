@@ -185,6 +185,7 @@
           <link role="conceptDeclaration" targetNodeId="3.1071489090640" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1139880110907">
             <property name="textFgColor" value="DARK_MAGENTA" />
+            <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1078489098626" />
           </node>
         </node>
@@ -213,6 +214,7 @@
           <link role="conceptDeclaration" targetNodeId="3.1071489090640" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1139877785578">
             <property name="textFgColor" value="DARK_MAGENTA" />
+            <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1078489098626" />
           </node>
         </node>
@@ -734,6 +736,7 @@
           <link role="conceptDeclaration" targetNodeId="3.1071489090640" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1144195593746">
             <property name="textFgColor" value="DARK_MAGENTA" />
+            <property name="readOnly" value="true" />
             <property name="noTargetText" value="&lt;concept has no name&gt;" />
             <link role="relationDeclaration" targetNodeId="2.1078489098626" />
           </node>
@@ -753,6 +756,7 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1144198126878">
             <property name="textFgColor" value="darkGray" />
             <property name="fontStyle" value="ITALIC" />
+            <property name="readOnly" value="true" />
             <property name="noTargetText" value="&lt;link has no role&gt;" />
             <link role="relationDeclaration" targetNodeId="3.1071599776563" />
           </node>
@@ -787,6 +791,7 @@
           <link role="conceptDeclaration" targetNodeId="3.1071489090640" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1145383277050">
             <property name="textFgColor" value="DARK_MAGENTA" />
+            <property name="readOnly" value="true" />
             <property name="noTargetText" value="&lt;no name&gt;" />
             <link role="relationDeclaration" targetNodeId="2.1078489098626" />
           </node>
@@ -808,6 +813,7 @@
         <link role="relationDeclaration" targetNodeId="1.1140138123956" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145404664305">
+        <property name="textFgColor" value="DARK_MAGENTA" />
         <property name="text" value="/" />
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
