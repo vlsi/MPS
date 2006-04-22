@@ -960,14 +960,14 @@
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1143135658648">
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1143135658649">
             <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1143135662009">
-              <node role="expression" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1143135679108">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1143135688095" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1145666586334">
                 <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1143135667028">
                   <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1143135664527" />
                   <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1143135673248">
                     <link role="link" targetNodeId="17.1082485599094" />
                   </node>
                 </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1143135688095" />
               </node>
             </node>
           </node>
@@ -991,14 +991,14 @@
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1144223927084">
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1144223927085">
             <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1144223927086">
-              <node role="expression" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1144223927087">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1144223927088" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1145666601585">
                 <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1144223927089">
                   <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1144223927090" />
                   <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1144223927091">
                     <link role="link" targetNodeId="17.1082485599094" />
                   </node>
                 </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1144223927088" />
               </node>
             </node>
           </node>
@@ -1018,14 +1018,14 @@
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1144224391504">
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1144224391505">
             <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1144224391506">
-              <node role="expression" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1144224391507">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1144224391508" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1145666614696">
                 <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1144224391509">
                   <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1144224391510" />
                   <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1144224391511">
                     <link role="link" targetNodeId="17.1082485599094" />
                   </node>
                 </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1144224391508" />
               </node>
             </node>
           </node>

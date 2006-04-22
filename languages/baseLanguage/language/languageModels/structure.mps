@@ -1406,6 +1406,10 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1137024031337">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1145665740509">
+      <property name="value" value="embedded block of code" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
+    </node>
     <node role="conceptLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLinkDeclaration" id="1137546998352">
       <property name="name" value="conceptFunctionParameter" />
       <link role="targetType" targetNodeId="37.1071489090640" />
