@@ -231,6 +231,9 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1139621550545">
       <link role="conceptPropertyDeclaration" targetNodeId="1138763241883" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1145915035426">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763325919" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1139858892567">
     <property name="name" value="Node_InsertNewNextSiblingOperation" />
@@ -471,6 +474,9 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1143234257718">
       <link role="conceptPropertyDeclaration" targetNodeId="1138763241883" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1145915496910">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763325919" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1143235216708">
     <property name="name" value="Model_CreateNewNodeOperation" />
@@ -591,6 +597,9 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1144195091937">
       <link role="conceptPropertyDeclaration" targetNodeId="1138763241883" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1145915044490">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763325919" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1145383075378">
