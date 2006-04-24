@@ -938,7 +938,6 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1075379536707">
         <property name="drawBorder" value="false" />
-        <property name="conditionId" value="IfStatement_HasIfFalseStatement" />
         <property name="name" value="ifFalseBranch" />
         <property name="vertical" value="false" />
         <property name="selectable" value="false" />
@@ -975,7 +974,6 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1144223927080">
         <property name="drawBorder" value="false" />
-        <property name="conditionId" value="IfStatement_HasIfFalseStatement" />
         <property name="name" value="ifFalseBranch" />
         <property name="vertical" value="false" />
         <property name="selectable" value="false" />
@@ -1006,7 +1004,6 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1144224391501">
         <property name="drawBorder" value="false" />
-        <property name="conditionId" value="IfStatement_HasIfFalseStatement" />
         <property name="name" value="ifFalseBranch" />
         <property name="vertical" value="false" />
         <property name="selectable" value="false" />
