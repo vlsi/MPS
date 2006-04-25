@@ -95,13 +95,19 @@ public class NameUtil {
 
   public static String nodeFQName(SNode node) {
     String name = node.getName();
-    // TRICK: NativeClassProvider creates Classifiers with FQ name.
-    // if we have FQ name here - do not concatenate it with model long name
-    if (name != null && name.indexOf('.') >= 0) {
-      return name;
-    }
+//    // TRICK: NativeClassProvider creates Classifiers with FQ name.
+//    // if we have FQ name here - do not concatenate it with model long name
+//    if (name != null && name.indexOf('.') >= 0) {
+//      return name;
+//    }
 
     return node.getModel().getLongName() + "." + name;
+
+// type system stop working if 'fq name' includes parent name (see: BasicTypes)    
+//    if (node.isRoot()) {
+//      return node.getModel().getLongName() + "." + name;
+//    }
+//    return nodeFQName(node.getParent()) + "." + name;
   }
 
 

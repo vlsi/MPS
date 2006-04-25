@@ -13,8 +13,14 @@
       <link role="applicableConcept" targetNodeId="3.1068431790191" />
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1138413233760">
-      <property name="actionsFactoryAspectId" value="SNodeOperation" />
+      <property name="actionsFactoryAspectId" value="PrimaryOperations_for_LeftExpression_type" />
+      <property name="preconditionAspectId" value="SNodeOperation_LeftExpression_any_smodelLang_type" />
       <property name="applicableLinkMetaclass" value="aggregation" />
+      <link role="applicableConcept" targetNodeId="1.1138411891628" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1145998608648">
+      <property name="actionsFactoryAspectId" value="Property_and_LinkAccess_for_LeftExpression_type" />
+      <property name="preconditionAspectId" value="SNodeOperation_LeftExpression_snode_or_slink_type" />
       <link role="applicableConcept" targetNodeId="1.1138411891628" />
     </node>
   </node>
