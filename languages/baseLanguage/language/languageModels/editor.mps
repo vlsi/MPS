@@ -1027,6 +1027,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1145913930430">
+        <property name="drawBorder" value="false" />
         <property name="vertical" value="true" />
         <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1145913989016">
@@ -2460,7 +2461,6 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1128163980260">
     <link role="conceptDeclaration" targetNodeId="17.1107535904670" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Alternation" id="1140569118323">
-      <property name="alternationConditionAspectMethodId" value="ClassifierType_HasParameters" />
       <property name="drawBorder" value="false" />
       <property name="vertical" value="true" />
       <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1140569207250">
@@ -2507,6 +2507,26 @@
             <property name="readOnly" value="true" />
             <property name="noTargetText" value="&lt;no name&gt;" />
             <link role="relationDeclaration" targetNodeId="18.1078489098626" />
+          </node>
+        </node>
+      </node>
+      <node role="alternationCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1145920376960">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1145920376961">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1145920380913">
+            <node role="expression" type="jetbrains.mps.baseLanguage.GreaterThanExpression" id="1145920404483">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1145920409767">
+                <property name="value" value="0" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1145920399324">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1145920389932">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1145920387884" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkListAccess" id="1145920394870">
+                    <link role="link" targetNodeId="17.1109201940907" />
+                  </node>
+                </node>
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.LinkList_GetCountOperation" id="1145920401825" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
