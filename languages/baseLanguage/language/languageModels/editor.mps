@@ -1701,7 +1701,6 @@
     <property name="name" value="Type_Editor" />
     <link role="conceptDeclaration" targetNodeId="17.1068431790189" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Alternation" id="1138060380694">
-      <property name="alternationConditionAspectMethodId" value="IsAbstractConcept" />
       <property name="drawBorder" value="false" />
       <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1138060384542">
         <property name="text" value="&lt;type&gt;" />
@@ -1710,7 +1709,20 @@
       <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ConceptProperty" id="1138060501183">
         <property name="textFgColor" value="DARK_BLUE" />
         <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;type has no alias&gt;" />
         <link role="relationDeclaration" targetNodeId="18.1137473891462" />
+      </node>
+      <node role="alternationCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1146070379313">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1146070379314">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1146070422323">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1146070429201">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1146070426825" />
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SConceptPropertyAccess" id="1146070431436">
+                <link role="conceptProperty" targetNodeId="18.1137473854053" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
