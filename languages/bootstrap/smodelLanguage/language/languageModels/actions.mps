@@ -27,7 +27,7 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActions" id="1138079717967">
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1138079721624">
       <property name="actionsFactoryAspectId" value="Expression_to_SmodelLangOperation" />
-      <property name="preconditionAspectId" value="Expression_AnySmodelLang_type" />
+      <property name="preconditionAspectId" value="Expression_any_SmodelLang_type" />
       <link role="applicableConcept" targetNodeId="3.1068431790191" />
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1145405559673">
@@ -37,7 +37,7 @@
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1145406048784">
       <property name="actionsFactoryAspectId" value="Expression_SemanticDowncast" />
-      <property name="preconditionAspectId" value="Expression_SmodelOrSnodeOrSlinkOrSlinklist_type" />
+      <property name="preconditionAspectId" value="Expression_any_SmodelLang_type" />
       <link role="applicableConcept" targetNodeId="3.1068431790191" />
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1138669164825">
