@@ -3,6 +3,7 @@ package jetbrains.mps.smodel.presentation;
 import jetbrains.mps.baseLanguage.*;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration;
 import jetbrains.mps.core.NamedConcept;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelUtil;
@@ -49,12 +50,16 @@ public class NodePresentationUtil {
       return ((LinkDeclaration) node).getRole();
     }
 
+    if (node instanceof EnumerationMemberDeclaration) {
+      return ((EnumerationMemberDeclaration) node).getExternalValue();
+    }
+
     if (node instanceof BaseMethodDeclaration) {
       return matchingText_BaseMethodDeclaration((BaseMethodDeclaration) node);
     } else if (node instanceof Type) {
       return matchingText_Type((Type) node);
     } else if (node instanceof VariableDeclaration) {
-      return ((VariableDeclaration) node).getName();
+      return node.getName();
     }
 
     // default

@@ -152,20 +152,35 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1138676397914">
     <link role="conceptDeclaration" targetNodeId="1.1138676077309" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1138676418683">
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1146158256146">
       <property name="drawBorder" value="false" />
-      <property name="noTargetText" value="&lt;no enum member&gt;" />
-      <link role="relationDeclaration" targetNodeId="1.1138676095763" />
-      <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1138676418699">
-        <link role="conceptDeclaration" targetNodeId="3.1083171877298" />
-        <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1138676426764">
-          <property name="textFgColor" value="DARK_MAGENTA" />
-          <property name="fontStyle" value="BOLD" />
-          <property name="drawBorder" value="false" />
-          <property name="readOnly" value="true" />
-          <property name="noTargetText" value="&lt;no ext value&gt;" />
-          <link role="relationDeclaration" targetNodeId="3.1083923523172" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1146158270588">
+        <property name="textFgColor" value="DARK_MAGENTA" />
+        <property name="text" value="&lt;" />
+        <property name="fontStyle" value="BOLD" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1146158258594">
+        <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="default" />
+        <link role="relationDeclaration" targetNodeId="1.1138676095763" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1146158258595">
+          <link role="conceptDeclaration" targetNodeId="3.1083171877298" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1146158258596">
+            <property name="textFgColor" value="DARK_MAGENTA" />
+            <property name="fontStyle" value="BOLD" />
+            <property name="drawBorder" value="false" />
+            <property name="readOnly" value="true" />
+            <property name="noTargetText" value="&lt;no ext value&gt;" />
+            <link role="relationDeclaration" targetNodeId="3.1083923523172" />
+          </node>
         </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1146158355984">
+        <property name="textFgColor" value="DARK_MAGENTA" />
+        <property name="text" value="&gt;" />
+        <property name="fontStyle" value="BOLD" />
+        <property name="drawBorder" value="false" />
       </node>
     </node>
   </node>

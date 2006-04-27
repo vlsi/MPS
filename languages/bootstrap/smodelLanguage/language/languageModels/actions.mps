@@ -8,7 +8,7 @@
   <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1138078942005">
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1138676703425">
-      <property name="actionsFactoryAspectId" value="Expression_SetEnumPropOperationParm" />
+      <property name="actionsFactoryAspectId" value="EnumMemberReference_ifApplicable" />
       <property name="applicableLinkMetaclass" value="aggregation" />
       <link role="applicableConcept" targetNodeId="3.1068431790191" />
     </node>
@@ -55,6 +55,12 @@
       <property name="searchScopeProviderAspectId" value="IsRoleOperation_LinkDeclarationsFromConcept" />
       <link role="applicableSourceConcept" targetNodeId="1.1144195091934" />
       <link role="applicableLink" targetNodeId="1.1144195396777" />
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1146162069656">
+      <property name="searchScopeProviderAspectId" value="EnumDatatype_fromUsage" />
+      <property name="preconditionAspectId" value="CanCompute_EnumDatatype_fromUsage" />
+      <link role="applicableSourceConcept" targetNodeId="1.1138676077309" />
+      <link role="applicableLink" targetNodeId="1.1138676095763" />
     </node>
   </node>
 </model>
