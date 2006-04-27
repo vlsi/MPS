@@ -162,7 +162,6 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1146158258594">
         <property name="drawBorder" value="false" />
-        <property name="noTargetText" value="default" />
         <link role="relationDeclaration" targetNodeId="1.1138676095763" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1146158258595">
           <link role="conceptDeclaration" targetNodeId="3.1083171877298" />

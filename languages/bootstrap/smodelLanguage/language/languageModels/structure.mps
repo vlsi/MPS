@@ -152,7 +152,7 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1138676095763">
-      <property name="sourceCardinality" value="0..1" />
+      <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="1" />
       <property name="role" value="enumMember" />
       <link role="target" targetNodeId="3.1083171877298" />

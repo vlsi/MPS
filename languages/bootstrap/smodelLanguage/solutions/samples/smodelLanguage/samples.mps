@@ -1845,7 +1845,9 @@
               </node>
             </node>
             <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_SetOperation" id="1146165323391">
-              <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.EnumMemberReference" id="1146166113313" />
+              <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.EnumMemberReference" id="1146166113313">
+                <link role="enumMember" targetNodeId="9.1084197782723" />
+              </node>
             </node>
           </node>
         </node>
