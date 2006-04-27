@@ -31,6 +31,7 @@ public class TypeChecker {
   public static void clearForTypesModel(SModel typesModel) {
     ContextsManager.getInstance().clear();
     EquationManager.getInstance().clear();
+    SubtypingManager.getInstance().clear();
     TypeVariablesManager.getInstance().clearVariables();
     Interpretator.clearForTypesModel(typesModel);
     ourRules.clear();

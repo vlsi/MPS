@@ -2,6 +2,7 @@ package jetbrains.mps.typesLanguage.equation;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.typesLanguage.evaluator.NodeWrapper;
+import jetbrains.mps.typesLanguage.evaluator.SubtypingManager;
 import jetbrains.mps.typesLanguage.RuntimeTypeVariable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.EqualUtil;
@@ -67,6 +68,7 @@ public class EquationManager {
   private void processEquation(NodeWrapperType var, NodeWrapperType type) {
     var.setParent(type);
     type.addAllVarSetsOfSourceAndRemoveSourceFromThem(var);
+    SubtypingManager.getInstance().processRepresentatorChange(var, type);
   }
 
   public void clear() {
