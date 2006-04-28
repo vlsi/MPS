@@ -112,7 +112,7 @@
       <property name="name" value="applicable_to_node" />
     </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptPropertyDeclaration" id="1138763303089">
-      <property name="name" value="applicable_to_property" />
+      <property name="name" value="applicable_to_simple_property" />
     </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptPropertyDeclaration" id="1146171845591">
       <property name="name" value="applicable_to_enum_property" />
@@ -768,6 +768,28 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1146171873374">
       <link role="conceptPropertyDeclaration" targetNodeId="1146171845591" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1146253292180">
+    <property name="name" value="Property_HasValue_Simple" />
+    <link role="extends" targetNodeId="1138411891628" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1146253292181">
+      <property name="sourceCardinality" value="1" />
+      <property name="targetCardinality" value="1" />
+      <property name="role" value="value" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="2.1068431790191" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1146253292182">
+      <property name="value" value="is" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1146253292183">
+      <property name="value" value="check value of property" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1146253292184">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763303089" />
     </node>
   </node>
 </model>
