@@ -292,7 +292,6 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   public Set<ConceptDeclaration> findDescendants(ConceptDeclaration node, Set<ConceptDeclaration> descendantsKnownInModel) {
     if (!myModelRootManager.isFindUsagesSupported()) return new HashSet<ConceptDeclaration>();
-
     if (mySModel != null && !SModelRepository.getInstance().isChanged(mySModel) && !descendantsKnownInModel.isEmpty()) {
       return descendantsKnownInModel;
     }

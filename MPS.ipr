@@ -109,6 +109,7 @@
       <entry name="?*.jpg" />
     </wildcardResourcePatterns>
   </component>
+  <component name="CoverageDataManager" />
   <component name="DataSourceManagerImpl" />
   <component name="DependenciesAnalyzeManager">
     <option name="myForwardDirection" value="false" />
