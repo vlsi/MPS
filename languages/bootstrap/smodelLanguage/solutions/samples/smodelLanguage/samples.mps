@@ -1631,8 +1631,13 @@
               </node>
             </node>
             <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_SetOperation" id="1146255913684">
-              <node role="value" type="jetbrains.mps.baseLanguage.StringLiteral" id="1146255913685">
-                <property name="value" value="Sample" />
+              <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1146526327540">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1146526289461">
+                  <link role="variableDeclaration" targetNodeId="1146255845133" />
+                </node>
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1146526333401">
+                  <link role="property" targetNodeId="1.1075300953595" />
+                </node>
               </node>
             </node>
           </node>
@@ -1907,7 +1912,7 @@
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1146156976573">
                 <link role="variableDeclaration" targetNodeId="1146086404917" />
               </node>
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1146161817538">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1146526928684">
                 <link role="property" targetNodeId="9.1071599893252" />
               </node>
             </node>
