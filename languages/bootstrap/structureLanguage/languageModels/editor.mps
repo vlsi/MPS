@@ -739,12 +739,6 @@
       <property name="drawBorder" value="false" />
       <property name="name" value="nodeBox" />
       <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1137475672177">
-        <property name="text" value="deprecated property declaration used, please replace (choose same name)" />
-        <property name="drawBorder" value="false" />
-        <property name="conditionId" value="ConceptProperty_PropertyDeclaredNotInConceptPropertiesSection" />
-        <property name="selectable" value="false" />
-      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1105727338100">
         <property name="drawBorder" value="false" />
         <property name="noTargetText" value="&lt;no property&gt;" />
@@ -792,12 +786,6 @@
       <property name="drawBorder" value="false" />
       <property name="name" value="nodeBox" />
       <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1137475425752">
-        <property name="text" value="deprecated property declaration used, please replace (choose same name)" />
-        <property name="drawBorder" value="false" />
-        <property name="conditionId" value="ConceptProperty_PropertyDeclaredNotInConceptPropertiesSection" />
-        <property name="selectable" value="false" />
-      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1105727610547">
         <property name="drawBorder" value="false" />
         <property name="noTargetText" value="&lt;no property&gt;" />
@@ -834,12 +822,6 @@
       <property name="drawBorder" value="false" />
       <property name="name" value="nodeBox" />
       <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1137475702335">
-        <property name="text" value="deprecated property declaration used, please replace (choose same name)" />
-        <property name="drawBorder" value="false" />
-        <property name="conditionId" value="ConceptProperty_PropertyDeclaredNotInConceptPropertiesSection" />
-        <property name="selectable" value="false" />
-      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1105727610549">
         <property name="drawBorder" value="false" />
         <property name="noTargetText" value="&lt;no property&gt;" />
