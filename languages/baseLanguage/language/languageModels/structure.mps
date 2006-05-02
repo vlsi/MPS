@@ -52,6 +52,9 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068431790191">
     <property name="name" value="Expression" />
     <link role="extends" targetNodeId="4.1133920641626" />
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptPropertyDeclaration" id="1146528679895">
+      <property name="name" value="lvalue" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1107216504832">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
     </node>
@@ -294,6 +297,9 @@
       <property name="value" value="instance field reference" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1146528767789">
+      <link role="conceptPropertyDeclaration" targetNodeId="1146528679895" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1080137532343">
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="1" />
@@ -423,6 +429,9 @@
       <property name="value" value="reference to local variable declaration" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1146528791791">
+      <link role="conceptPropertyDeclaration" targetNodeId="1146528679895" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1070568296581">
       <property name="role" value="localVariableDeclaration" />
       <link role="specializedLink" targetNodeId="1068581517664" />
@@ -498,6 +507,9 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107217390234">
       <property name="value" value="reference to method parameter" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1146528757412">
+      <link role="conceptPropertyDeclaration" targetNodeId="1146528679895" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1070567982819">
       <property name="role" value="parameterDeclaration" />
@@ -604,6 +616,9 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107217588486">
       <property name="value" value="reference to static field declaration" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1146529570867">
+      <link role="conceptPropertyDeclaration" targetNodeId="1146528679895" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1130267662831">
       <property name="sourceCardinality" value="1" />
