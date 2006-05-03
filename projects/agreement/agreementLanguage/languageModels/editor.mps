@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="agreementLanguage.editor">
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <language namespace="jetbrains.mps.baseLanguage" />
   <maxImportIndex value="4" />
   <import index="1" modelUID="agreementLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
@@ -263,8 +265,26 @@
         <property name="textFgColor" value="DARK_MAGENTA" />
         <property name="fontStyle" value="BOLD" />
         <property name="drawBorder" value="false" />
-        <property name="conditionId" value="Quantity_IsDollars" />
         <link role="relationDeclaration" targetNodeId="1.1111793358083" />
+        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1146682482217">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1146682482218">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1146682507484">
+              <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1146682522410">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1146682512705">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1146682510861" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1146682520034">
+                    <link role="property" targetNodeId="1.1111793358083" />
+                  </node>
+                </node>
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_HasValue_Enum" id="1146682525286">
+                  <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.EnumMemberReference" id="1146682525287">
+                    <link role="enumMember" targetNodeId="1.1111793298691" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1112031160193">
         <property name="drawBorder" value="false" />
@@ -274,8 +294,28 @@
         <property name="textFgColor" value="DARK_MAGENTA" />
         <property name="fontStyle" value="BOLD" />
         <property name="drawBorder" value="false" />
-        <property name="conditionId" value="Quantity_IsNotDollars" />
         <link role="relationDeclaration" targetNodeId="1.1111793358083" />
+        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1146682771382">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1146682771383">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1146682772915">
+              <node role="expression" type="jetbrains.mps.baseLanguage.NotExpression" id="1146682800371">
+                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1146682808766">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1146682803624">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1146682802060" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1146682806968">
+                      <link role="property" targetNodeId="1.1111793358083" />
+                    </node>
+                  </node>
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_HasValue_Enum" id="1146682810767">
+                    <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.EnumMemberReference" id="1146682810768">
+                      <link role="enumMember" targetNodeId="1.1111793298691" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
