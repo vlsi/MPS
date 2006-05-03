@@ -47,18 +47,23 @@ public class TextGenManager {
   }
 
   private SNodeTextGen loadNodeTextGen(SNode node) {
-    String className = node.getClass().getName();
-    className = className.substring(className.lastIndexOf('.') + 1);
-    String packageName = node.getClass().getPackage().getName();
-    String textgenClassname = packageName + ".textGen." + className + "_TextGen";
+    Class<? extends SNode> aClass = node.getClass();
 
-    try {
-      Class textgenClass = Class.forName(textgenClassname, true, ClassLoaderManager.getInstance().getClassLoader());
-      SNodeTextGen textGenerator = (SNodeTextGen) textgenClass.newInstance();
-      return textGenerator;
-    } catch (ClassNotFoundException e) {
-    } catch (InstantiationException e) {
-    } catch (IllegalAccessException e) {
+    while (aClass != null) {
+      String className = aClass.getName();
+      className = className.substring(className.lastIndexOf('.') + 1);
+      String packageName = node.getClass().getPackage().getName();
+      String textgenClassname = packageName + ".textGen." + className + "_TextGen";
+
+      try {
+        Class textgenClass = Class.forName(textgenClassname, true, ClassLoaderManager.getInstance().getClassLoader());
+        SNodeTextGen textGenerator = (SNodeTextGen) textgenClass.newInstance();
+        return textGenerator;
+      } catch (ClassNotFoundException e) {
+      } catch (InstantiationException e) {
+      } catch (IllegalAccessException e) {
+      }
+      aClass = (Class<? extends SNode>) aClass.getSuperclass();
     }
     return new DefaultTextGen();
   }

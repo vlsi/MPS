@@ -43,6 +43,11 @@
         <property name="name" value="headerRow" />
         <property name="vertical" value="false" />
         <property name="selectable" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1146646520730">
+          <property name="drawBorder" value="false" />
+          <property name="noTargetText" value="/*package*/" />
+          <link role="relationDeclaration" targetNodeId="17.1146646494462" />
+        </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1074794604362">
           <property name="textFgColor" value="DARK_BLUE" />
           <property name="text" value="class" />
@@ -3854,6 +3859,33 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1145553584570">
       <property name="drawBorder" value="false" />
       <link role="relationDeclaration" targetNodeId="17.1145553418425" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1146644925113">
+    <link role="conceptDeclaration" targetNodeId="17.1146644602865" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1146644928271">
+      <property name="textFgColor" value="DARK_BLUE" />
+      <property name="text" value="public" />
+      <property name="fontStyle" value="BOLD" />
+      <property name="drawBorder" value="false" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1146644985742">
+    <link role="conceptDeclaration" targetNodeId="17.1146644623116" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1146644988135">
+      <property name="textFgColor" value="DARK_BLUE" />
+      <property name="text" value="private" />
+      <property name="fontStyle" value="BOLD" />
+      <property name="drawBorder" value="false" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1146645052825">
+    <link role="conceptDeclaration" targetNodeId="17.1146644641414" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1146645055811">
+      <property name="textFgColor" value="DARK_BLUE" />
+      <property name="text" value="protected" />
+      <property name="fontStyle" value="BOLD" />
+      <property name="drawBorder" value="false" />
     </node>
   </node>
 </model>

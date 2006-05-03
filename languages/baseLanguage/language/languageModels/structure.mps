@@ -75,11 +75,6 @@
       <property name="value" value="class declaration" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1075300953593">
-      <property name="propertyType" value="string" />
-      <property name="name" value="visibility" />
-      <link role="dataType" targetNodeId="1084374412312" />
-    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1075300953594">
       <property name="propertyType" value="boolean" />
       <property name="name" value="abstractClass" />
@@ -123,6 +118,11 @@
       <property name="role" value="implementedInterface" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1107535904670" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1146646494462">
+      <property name="role" value="visibility" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1146644584814" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068390468204">
@@ -196,11 +196,6 @@
       <property name="propertyType" value="string" />
       <property name="name" value="name" />
       <link role="dataType" targetNodeId="1083065718921" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1084374553753">
-      <property name="propertyType" value="string" />
-      <property name="name" value="visibility" />
-      <link role="dataType" targetNodeId="1084374412312" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1068580123133">
       <property name="sourceCardinality" value="1" />
@@ -1067,21 +1062,6 @@
       <link role="target" targetNodeId="1083245299891" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration" id="1084374412312">
-    <property name="name" value="Visibility" />
-    <link role="defaultMember" targetNodeId="1084374412313" />
-    <link role="memberDataType" targetNodeId="4.1082983041843" />
-    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1084374412313">
-      <property name="externalValue" value="public" />
-      <property name="internalValue" value="public" />
-      <property name="name" value="pub" />
-    </node>
-    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1084374412314">
-      <property name="externalValue" value="private" />
-      <property name="internalValue" value="private" />
-      <property name="name" value="priv" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1092119917967">
     <property name="name" value="MulExpression" />
     <link role="extends" targetNodeId="1081773326031" />
@@ -1598,6 +1578,37 @@
       <property name="role" value="createdType" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1144781790140" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1146644584814">
+    <property name="name" value="Visibility" />
+    <link role="extends" targetNodeId="4.1133920641626" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1146644597145">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1146644602865">
+    <property name="name" value="PublicVisibility" />
+    <link role="extends" targetNodeId="1146644584814" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1146645164085">
+      <property name="value" value="public" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1146644623116">
+    <property name="name" value="PrivateVisibility" />
+    <link role="extends" targetNodeId="1146644584814" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1146645140955">
+      <property name="value" value="private" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1146644641414">
+    <property name="name" value="ProtectedVisibility" />
+    <link role="extends" targetNodeId="1146644584814" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1146645176275">
+      <property name="value" value="protected" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
   </node>
 </model>
