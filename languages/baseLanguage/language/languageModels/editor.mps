@@ -708,7 +708,6 @@
       <link role="keyMap" targetNodeId="1081427357000" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1144433223660">
         <property name="drawBorder" value="false" />
-        <property name="conditionId" value="StaticAccess_HasObsoleteClassType" />
         <property name="vertical" value="true" />
         <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1144433231056">
@@ -721,6 +720,21 @@
           <property name="text" value="deprecated!" />
           <property name="drawBorder" value="false" />
           <property name="selectable" value="false" />
+        </node>
+        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1146678190954">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1146678190955">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1146678282085">
+              <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1146678283102">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1146678283103" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1146678283104">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1146678283105" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1146678283106">
+                    <link role="link" targetNodeId="17.1081236769986" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1144433246063">
@@ -1588,7 +1602,6 @@
       <link role="keyMap" targetNodeId="1081427357000" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1144433104029">
         <property name="drawBorder" value="false" />
-        <property name="conditionId" value="StaticAccess_HasObsoleteClassType" />
         <property name="vertical" value="true" />
         <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1144433113206">
@@ -1600,6 +1613,21 @@
           <property name="text" value="deprecated!" />
           <property name="drawBorder" value="false" />
           <property name="selectable" value="false" />
+        </node>
+        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1146678303279">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1146678303280">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1146678305656">
+              <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1146678316442">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1146678322429" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1146678310018">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1146678308642" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1146678313925">
+                    <link role="link" targetNodeId="17.1130267662831" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1144433124322">
@@ -1857,7 +1885,6 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1144432925459">
         <property name="drawBorder" value="false" />
-        <property name="conditionId" value="StaticAccess_HasObsoleteClassType" />
         <property name="vertical" value="true" />
         <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1144432934027">
@@ -1869,6 +1896,21 @@
           <property name="text" value="deprecated!" />
           <property name="drawBorder" value="false" />
           <property name="selectable" value="false" />
+        </node>
+        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1146678371276">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1146678371277">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1146678377387">
+              <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1146678408330">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1146678412942" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1146678402953">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1146678401358" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1146678404735">
+                    <link role="link" targetNodeId="17.1083260308425" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1144432986234">
