@@ -135,8 +135,9 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1083925414256">
         <property name="textBgColor" value="yellow" />
+        <property name="allowEmptyText" value="true" />
         <property name="drawBorder" value="false" />
-        <property name="noTargetText" value="NULL" />
+        <property name="noTargetText" value="&lt;NULL&gt;" />
         <property name="textBgColorSelected" value="cyan" />
         <link role="relationDeclaration" targetNodeId="1.1083923523171" />
       </node>
@@ -898,11 +899,6 @@
           </node>
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1137541140023">
-        <property name="text" value="(!)deprecated: please, declare link in the section below" />
-        <property name="conditionId" value="ConceptLinkDeclaration_DeclaredNotInConceptLinksSection" />
-        <property name="selectable" value="false" />
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1105737366950">
@@ -911,38 +907,6 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1105738878701">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1137539767524">
-        <property name="drawBorder" value="false" />
-        <property name="conditionId" value="ConceptLink_LinkDeclaredNotInConceptLinksSection" />
-        <property name="vertical" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1137539767525">
-          <property name="text" value="link" />
-          <property name="drawBorder" value="false" />
-          <property name="selectable" value="false" />
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1137539767526">
-          <property name="drawBorder" value="false" />
-          <property name="name" value="linkNameInErrorMessage" />
-          <property name="selectable" value="false" />
-          <link role="relationDeclaration" targetNodeId="1.1105742372452" />
-          <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1137539767527">
-            <link role="conceptDeclaration" targetNodeId="1.1105741578420" />
-            <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1137539767528">
-              <property name="editable" value="false" />
-              <property name="textBgColor" value="pink" />
-              <property name="textFgColor" value="red" />
-              <property name="readOnly" value="true" />
-              <property name="selectable" value="false" />
-              <link role="relationDeclaration" targetNodeId="2.1078489098626" />
-            </node>
-          </node>
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1137539767529">
-          <property name="text" value="is declared in obsolete way" />
-          <property name="drawBorder" value="false" />
-          <property name="selectable" value="false" />
-        </node>
-      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1105739062907">
         <property name="drawBorder" value="false" />
         <property name="noTargetText" value="&lt;no link&gt;" />
@@ -980,36 +944,6 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1105739124743">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1137539511592">
-        <property name="conditionId" value="ConceptLink_LinkDeclaredNotInConceptLinksSection" />
-        <property name="vertical" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1137539537612">
-          <property name="text" value="link" />
-          <property name="drawBorder" value="false" />
-          <property name="selectable" value="false" />
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1137539592946">
-          <property name="name" value="linkNameInErrorMessage" />
-          <property name="selectable" value="false" />
-          <link role="relationDeclaration" targetNodeId="1.1105742417828" />
-          <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1137539592945">
-            <link role="conceptDeclaration" targetNodeId="1.1105741535888" />
-            <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1137539607229">
-              <property name="editable" value="false" />
-              <property name="textBgColor" value="pink" />
-              <property name="textFgColor" value="red" />
-              <property name="readOnly" value="true" />
-              <property name="selectable" value="false" />
-              <link role="relationDeclaration" targetNodeId="2.1078489098626" />
-            </node>
-          </node>
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1137539555474">
-          <property name="text" value="is declared in obsolete way" />
-          <property name="drawBorder" value="false" />
-          <property name="selectable" value="false" />
-        </node>
-      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1105739124744">
         <property name="drawBorder" value="false" />
         <property name="noTargetText" value="&lt;no link&gt;" />
@@ -1082,11 +1016,6 @@
             <link role="relationDeclaration" targetNodeId="2.1078489098626" />
           </node>
         </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1137545198867">
-        <property name="text" value="(!)deprecated: please, declare link in the section below" />
-        <property name="conditionId" value="ConceptLinkDeclaration_DeclaredNotInConceptLinksSection" />
-        <property name="selectable" value="false" />
       </node>
     </node>
   </node>

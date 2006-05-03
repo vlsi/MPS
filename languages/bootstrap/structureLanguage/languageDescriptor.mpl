@@ -17,7 +17,6 @@
   <module />
   <accessoryModels>
     <model modelUID="jetbrains.mps.core.structure" />
-    <model modelUID="jetbrains.mps.bootstrap.structureLanguage.library" />
   </accessoryModels>
   <generators>
     <generator name="structure generator" generatorUID="jetbrains.mps.bootstrap.structureLanguage#1129914001820" targetLanguage="jetbrains.mps.baseLanguage">
