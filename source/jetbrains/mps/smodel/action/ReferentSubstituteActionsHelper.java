@@ -1,13 +1,13 @@
 package jetbrains.mps.smodel.action;
 
+import jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActions;
+import jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder;
-import jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActions;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethod;
 
@@ -29,8 +29,9 @@ import java.util.*;
     }
   };
 
-  public static List<INodeSubstituteAction> createActions(SNode sourceNode, SNode currentReferent, LinkDeclaration linkDeclaration, IScope scope) {
+  public static List<INodeSubstituteAction> createActions(SNode sourceNode, SNode currentReferent, LinkDeclaration linkDeclaration, IOperationContext context) {
     List<INodeSubstituteAction> resultActions = new LinkedList<INodeSubstituteAction>();
+    IScope scope = context.getScope();
     ConceptDeclaration sourceConcept = SModelUtil.getConceptDeclaration(sourceNode, scope);
     if (sourceConcept == null) {
       LOG.error("Couldn't build actions : couldn't get concept for source node" + sourceNode.getDebugText());
@@ -44,13 +45,13 @@ import java.util.*;
 
     // add actions from 'primary' language
     String referenceRole = linkDeclaration.getRole();
-    List<ReferentSubstituteActionsBuilder> primaryBuilders = getActionBuilders(sourceNode, primaryLanguage, sourceConcept, referenceRole, scope);
+    List<ReferentSubstituteActionsBuilder> primaryBuilders = getActionBuilders(sourceNode, primaryLanguage, sourceConcept, referenceRole, context);
     if (primaryBuilders.isEmpty()) {
       // if 'primary' language hasn't defined actions for that target - create 'default' actions
       resultActions = createPrimaryReferentSubstituteActions(sourceNode, currentReferent, linkDeclaration, TRUE_CONDITION, scope);
     } else {
       for (ReferentSubstituteActionsBuilder builder : primaryBuilders) {
-        resultActions.addAll(invokeActionBulder(builder, sourceNode, currentReferent, linkDeclaration, scope));
+        resultActions.addAll(invokeActionBulder(builder, sourceNode, currentReferent, linkDeclaration, context));
       }
     }
 
@@ -61,25 +62,25 @@ import java.util.*;
       if (language == primaryLanguage) {
         continue;
       }
-      extendedBuilders.addAll(getActionBuilders(sourceNode, language, sourceConcept, referenceRole, scope));
+      extendedBuilders.addAll(getActionBuilders(sourceNode, language, sourceConcept, referenceRole, context));
     }
 
     // for each builder create actions and apply all filters
     for (ReferentSubstituteActionsBuilder builder : extendedBuilders) {
-      List<INodeSubstituteAction> addActions = invokeActionBulder(builder, sourceNode, currentReferent, linkDeclaration, scope);
+      List<INodeSubstituteAction> addActions = invokeActionBulder(builder, sourceNode, currentReferent, linkDeclaration, context);
       resultActions.addAll(addActions);
     }
 
     // apply all filters
     primaryBuilders.addAll(extendedBuilders);
     for (ReferentSubstituteActionsBuilder builder : primaryBuilders) {
-      resultActions = applyActionFilter(builder, resultActions, scope);
+      resultActions = applyActionFilter(builder, resultActions, context);
     }
 
     return resultActions;
   }
 
-  private static List<ReferentSubstituteActionsBuilder> getActionBuilders(SNode sourceNode, Language language, ConceptDeclaration sourceConcept, String referenceRole, IScope scope) {
+  private static List<ReferentSubstituteActionsBuilder> getActionBuilders(SNode sourceNode, Language language, ConceptDeclaration sourceConcept, String referenceRole, IOperationContext context) {
     List<ReferentSubstituteActionsBuilder> actionsBuilders = new LinkedList<ReferentSubstituteActionsBuilder>();
     SModelDescriptor actionsModelDescr = language.getActionsModelDescriptor();
     if (actionsModelDescr != null) {
@@ -92,7 +93,7 @@ import java.util.*;
             ReferentSubstituteActionsBuilder actionsBuilder = iterator.next();
             // is applicable ?
             if (isActionBuilderApplicable(actionsBuilder, sourceConcept, referenceRole) &&
-                    satisfiesPrecondition(actionsBuilder, sourceNode, scope)) {
+                    satisfiesPrecondition(actionsBuilder, sourceNode, context)) {
               actionsBuilders.add(actionsBuilder);
             }
           }
@@ -148,68 +149,72 @@ import java.util.*;
 
   // ----------------------------------
 
-  private static List<INodeSubstituteAction> invokeActionBulder(ReferentSubstituteActionsBuilder builder, SNode sourceNode, SNode currentReferent, LinkDeclaration linkDeclaration, IScope scope) {
-    ISearchScope searchScope = invokeSearchScopeProvider(builder, sourceNode, scope);
+  private static List<INodeSubstituteAction> invokeActionBulder(ReferentSubstituteActionsBuilder builder, SNode sourceNode, SNode currentReferent, LinkDeclaration linkDeclaration, IOperationContext context) {
+    ISearchScope searchScope = invokeSearchScopeProvider(builder, sourceNode, context);
     if (searchScope == null) {
       return Collections.emptyList();
     }
-    return invokeActionFactory(builder, sourceNode, currentReferent, linkDeclaration, searchScope, scope);
+    return invokeActionFactory(builder, sourceNode, currentReferent, linkDeclaration, searchScope, context);
   }
 
   // --------------------------------
   // Query methods invocation...
   // --------------------------------
 
-  private static boolean satisfiesPrecondition(ReferentSubstituteActionsBuilder actionsBuilder, SNode sourceNode, IScope scope) {
+  private static boolean satisfiesPrecondition(ReferentSubstituteActionsBuilder actionsBuilder, SNode sourceNode, IOperationContext context) {
     String preconditionQueryMethodId = actionsBuilder.getPreconditionAspectId();
     // precondition is optional
     if (preconditionQueryMethodId == null) {
       return true;
     }
 
-    Object[] args = new Object[]{sourceNode, scope};
+    Object[] args1 = new Object[]{sourceNode, context};
+    Object[] args2 = new Object[]{sourceNode, context.getScope()};
     String methodName = "referentSubstituteActionsBuilder_Precondition_" + preconditionQueryMethodId;
     SModel model = actionsBuilder.getModel();
-    return (Boolean) QueryMethod.invoke(methodName, args, model);
+    return (Boolean) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
   }
 
-  private static ISearchScope invokeSearchScopeProvider(ReferentSubstituteActionsBuilder builder, SNode sourceNode, IScope scope) {
+  private static ISearchScope invokeSearchScopeProvider(ReferentSubstituteActionsBuilder builder, SNode sourceNode, IOperationContext context) {
     String searchScopeQueryMethodId = builder.getSearchScopeProviderAspectId();
     // search scope is optional
     if (searchScopeQueryMethodId == null) {
-      return SModelSearchUtil.createModelAndImportedModelsScope(sourceNode.getModel(), true, scope);
+      return SModelSearchUtil.createModelAndImportedModelsScope(sourceNode.getModel(), true, context.getScope());
     }
 
-    Object[] args = new Object[]{sourceNode, scope};
+    Object[] args1 = new Object[]{sourceNode, context};
+    Object[] args2 = new Object[]{sourceNode, context.getScope()};
     String methodName = "referentSubstituteActionsBuilder_SearchScope_" + searchScopeQueryMethodId;
     SModel model = builder.getModel();
-    return (ISearchScope) QueryMethod.invoke(methodName, args, model);
+    return (ISearchScope) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
   }
 
 
-  private static List<INodeSubstituteAction> applyActionFilter(ReferentSubstituteActionsBuilder builder, List<INodeSubstituteAction> actions, IScope scope) {
+  private static List<INodeSubstituteAction> applyActionFilter(ReferentSubstituteActionsBuilder builder, List<INodeSubstituteAction> actions, IOperationContext context) {
     String filterQueryMethodId = builder.getActionsFilterAspectId();
     // filter is optional
     if (filterQueryMethodId == null) {
       return actions;
     }
 
-    Object[] args = new Object[]{actions, scope};
+    Object[] args1 = new Object[]{actions, context};
+    Object[] args2 = new Object[]{actions, context.getScope()};
     String methodName = "referentSubstituteActionsBuilder_ActionsFilter_" + filterQueryMethodId;
     SModel model = builder.getModel();
-    return (List<INodeSubstituteAction>) QueryMethod.invoke(methodName, args, model);
+    return (List<INodeSubstituteAction>) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
   }
 
-  private static List<INodeSubstituteAction> invokeActionFactory(ReferentSubstituteActionsBuilder builder, SNode sourceNode, SNode currentReferent, LinkDeclaration linkDeclaration, ISearchScope searchScope, IScope scope) {
+  private static List<INodeSubstituteAction> invokeActionFactory(ReferentSubstituteActionsBuilder builder, SNode sourceNode, SNode currentReferent, LinkDeclaration linkDeclaration, ISearchScope searchScope, IOperationContext context) {
     String factoryQueryMethodId = builder.getActionsFactoryAspectId();
     // factory is optional
     if (factoryQueryMethodId == null) {
-      return createDefaultReferentSubstituteActions(sourceNode, currentReferent, linkDeclaration, searchScope, TRUE_CONDITION, scope);
+      return createDefaultReferentSubstituteActions(sourceNode, currentReferent, linkDeclaration, searchScope, TRUE_CONDITION, context.getScope());
     }
 
-    Object[] args = new Object[]{sourceNode, currentReferent, linkDeclaration, searchScope, scope};
+    Object[] args1 = new Object[]{sourceNode, currentReferent, linkDeclaration, searchScope, context};
+    Object[] args2 = new Object[]{sourceNode, currentReferent, linkDeclaration, searchScope, context.getScope()};
     String methodName = "referentSubstituteActionsBuilder_ActionsFactory_" + factoryQueryMethodId;
     SModel model = builder.getModel();
-    return (List<INodeSubstituteAction>) QueryMethod.invoke(methodName, args, model);
+    return (List<INodeSubstituteAction>) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
   }
 }

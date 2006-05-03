@@ -18,25 +18,26 @@ import java.util.*;
  */
 /*package*/ class RTransformHintSubstituteActionsHelper {
 
-  public static boolean canCreateActions(SNode sourceNode, String transformTag, IScope scope) {
-    return getActionBuilders(sourceNode, transformTag, scope).size() > 0;
+  public static boolean canCreateActions(SNode sourceNode, String transformTag, IOperationContext context) {
+    return getActionBuilders(sourceNode, transformTag, context).size() > 0;
   }
 
-  public static List<INodeSubstituteAction> createActions(SNode sourceNode, String transformTag, IScope scope) {
+  public static List<INodeSubstituteAction> createActions(SNode sourceNode, String transformTag, IOperationContext context) {
     List<INodeSubstituteAction> resultActions = new LinkedList<INodeSubstituteAction>();
-    List<RTransformHintSubstituteActionsBuilder> actionsBuilders = getActionBuilders(sourceNode, transformTag, scope);
+    List<RTransformHintSubstituteActionsBuilder> actionsBuilders = getActionBuilders(sourceNode, transformTag, context);
 
     // for each builder create actions and apply all filters
     for (RTransformHintSubstituteActionsBuilder builder : actionsBuilders) {
-      List<INodeSubstituteAction> addActions = invokeActionFactory(builder, sourceNode, scope);
-      addActions = applyActionFilters(addActions, actionsBuilders, builder, scope);
+      List<INodeSubstituteAction> addActions = invokeActionFactory(builder, sourceNode, context);
+      addActions = applyActionFilters(addActions, actionsBuilders, builder, context);
       resultActions.addAll(addActions);
     }
     return resultActions;
   }
 
-  private static List<RTransformHintSubstituteActionsBuilder> getActionBuilders(final SNode sourceNode, String transformTag, final IScope scope) {
+  private static List<RTransformHintSubstituteActionsBuilder> getActionBuilders(final SNode sourceNode, String transformTag, final IOperationContext context) {
     List<RTransformHintSubstituteActionsBuilder> actionsBuilders = new LinkedList<RTransformHintSubstituteActionsBuilder>();
+    IScope scope = context.getScope();
     final ConceptDeclaration sourceConcept = SModelUtil.getConceptDeclaration(sourceNode, scope);
     if (sourceConcept == null) {
       return actionsBuilders;
@@ -58,7 +59,7 @@ import java.util.*;
               }
               // is applicable ?
               return SModelUtil.isAssignableConcept(sourceConcept, actionsBuilder.getApplicableConcept()) &&
-                      satisfiesPrecondition(actionsBuilder, sourceNode, scope);
+                      satisfiesPrecondition(actionsBuilder, sourceNode, context);
             }
             return false;
           }
@@ -69,10 +70,10 @@ import java.util.*;
     return actionsBuilders;
   }
 
-  private static List<INodeSubstituteAction> applyActionFilters(List<INodeSubstituteAction> actions, List<RTransformHintSubstituteActionsBuilder> substituteActionsBuilders, RTransformHintSubstituteActionsBuilder excludeBuilder, IScope scope) {
+  private static List<INodeSubstituteAction> applyActionFilters(List<INodeSubstituteAction> actions, List<RTransformHintSubstituteActionsBuilder> substituteActionsBuilders, RTransformHintSubstituteActionsBuilder excludeBuilder, IOperationContext context) {
     for (RTransformHintSubstituteActionsBuilder substituteActionsBuilder : substituteActionsBuilders) {
       if (substituteActionsBuilder != excludeBuilder) {
-        actions = applyActionFilter(substituteActionsBuilder, actions, scope);
+        actions = applyActionFilter(substituteActionsBuilder, actions, context);
       }
     }
     return actions;
@@ -82,47 +83,51 @@ import java.util.*;
   // Query methods invocation...
   // --------------------------------
 
-  private static boolean satisfiesPrecondition(RTransformHintSubstituteActionsBuilder substituteActionsBuilder, SNode sourceNode, IScope scope) {
+  private static boolean satisfiesPrecondition(RTransformHintSubstituteActionsBuilder substituteActionsBuilder, SNode sourceNode, IOperationContext context) {
     String preconditionQueryMethodId = substituteActionsBuilder.getPreconditionAspectId();
     // precondition is optional
     if (preconditionQueryMethodId == null) {
       return true;
     }
 
-    Object[] args = new Object[]{sourceNode, scope};
+    Object[] args1 = new Object[]{sourceNode, context};
+    Object[] args2 = new Object[]{sourceNode, context.getScope()};
     String methodName = "rightTransformHintSubstituteActionsBuilder_Precondition_" + preconditionQueryMethodId;
     SModel model = substituteActionsBuilder.getModel();
-    return (Boolean) QueryMethod.invoke(methodName, args, model);
+    return (Boolean) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
   }
 
-  private static List<INodeSubstituteAction> applyActionFilter(RTransformHintSubstituteActionsBuilder substituteActionsBuilder, List<INodeSubstituteAction> actions, IScope scope) {
+  private static List<INodeSubstituteAction> applyActionFilter(RTransformHintSubstituteActionsBuilder substituteActionsBuilder, List<INodeSubstituteAction> actions, IOperationContext context) {
     String filterQueryMethodId = substituteActionsBuilder.getActionsFilterAspectId();
     // filter is optional
     if (filterQueryMethodId == null) {
       return actions;
     }
 
-    Object[] args = new Object[]{actions, scope};
+    Object[] args1 = new Object[]{actions, context};
+    Object[] args2 = new Object[]{actions, context.getScope()};
     String methodName = "rightTransformHintSubstituteActionsBuilder_ActionsFilter_" + filterQueryMethodId;
     SModel model = substituteActionsBuilder.getModel();
-    List<INodeSubstituteAction> result = (List<INodeSubstituteAction>) QueryMethod.invoke(methodName, args, model);
-    return result;
+    return (List<INodeSubstituteAction>) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
   }
 
-  private static List<INodeSubstituteAction> invokeActionFactory(RTransformHintSubstituteActionsBuilder substituteActionsBuilder, SNode sourceNode, IScope scope) {
+  private static List<INodeSubstituteAction> invokeActionFactory(RTransformHintSubstituteActionsBuilder substituteActionsBuilder, SNode sourceNode, IOperationContext context) {
     String factoryQueryMethodId = substituteActionsBuilder.getActionsFactoryAspectId();
     // factory is optional
     if (factoryQueryMethodId == null) {
       return Collections.EMPTY_LIST;
     }
 
-    Object[] args = new Object[]{
+    Object[] args1 = new Object[]{
             sourceNode,
             null,                  // todo: tag from builder description
-            scope};
+            context};
+    Object[] args2 = new Object[]{
+            sourceNode,
+            null,                  // todo: tag from builder description
+            context.getScope()};
     String methodName = "rightTransformHintSubstituteActionsBuilder_ActionsFactory_" + factoryQueryMethodId;
     SModel model = substituteActionsBuilder.getModel();
-    List<INodeSubstituteAction> result = (List<INodeSubstituteAction>) QueryMethod.invoke(methodName, args, model);
-    return result;
+    return (List<INodeSubstituteAction>) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
   }
 }

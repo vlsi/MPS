@@ -2,10 +2,7 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 
 import java.util.*;
@@ -32,8 +29,8 @@ public class ModelActions {
   /**
    * helper method
    */
-  public static List<INodeSubstituteAction> createPrimaryChildSubstituteActions(SNode parentNode, SNode currentChild, ConceptDeclaration childConcept, IChildNodeSetter childSetter, Condition<SNode> filter, IScope scope) {
-    return ChildSubstituteActionsHelper.createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, filter, scope);
+  public static List<INodeSubstituteAction> createPrimaryChildSubstituteActions(SNode parentNode, SNode currentChild, ConceptDeclaration childConcept, IChildNodeSetter childSetter, Condition<SNode> filter, IOperationContext context) {
+    return ChildSubstituteActionsHelper.createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, filter, context);
   }
 
   /**
@@ -59,27 +56,27 @@ public class ModelActions {
   // child substitute
   //-------------------
 
-  public static List<INodeSubstituteAction> createChildSubstituteActions(SNode parentNode, SNode currentChild, ConceptDeclaration childConcept, IChildNodeSetter childSetter, IScope scope) {
-    return ChildSubstituteActionsHelper.createActions(parentNode, currentChild, childConcept, childSetter, scope);
+  public static List<INodeSubstituteAction> createChildSubstituteActions(SNode parentNode, SNode currentChild, ConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
+    return ChildSubstituteActionsHelper.createActions(parentNode, currentChild, childConcept, childSetter, context);
   }
 
   //-------------------
   // referent substitute
   //-------------------
 
-  public static List<INodeSubstituteAction> createReferenceSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, final IScope scope) {
-    return ReferentSubstituteActionsHelper.createActions(sourceNode, currentTargetNode, linkDeclaration, scope);
+  public static List<INodeSubstituteAction> createReferenceSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, IOperationContext context) {
+    return ReferentSubstituteActionsHelper.createActions(sourceNode, currentTargetNode, linkDeclaration, context);
   }
 
   //-------------------
   // right-transform hint substitute
   //-------------------
 
-  public static boolean canCreateRightTransformHintSubstituteActions(SNode sourceNode, String transformTag, IScope scope) {
-    return RTransformHintSubstituteActionsHelper.canCreateActions(sourceNode, transformTag, scope);
+  public static boolean canCreateRightTransformHintSubstituteActions(SNode sourceNode, String transformTag, IOperationContext context) {
+    return RTransformHintSubstituteActionsHelper.canCreateActions(sourceNode, transformTag, context);
   }
 
-  public static List<INodeSubstituteAction> createRightTransformHintSubstituteActions(SNode sourceNode, String transformTag, IScope scope) {
-    return RTransformHintSubstituteActionsHelper.createActions(sourceNode, transformTag, scope);
+  public static List<INodeSubstituteAction> createRightTransformHintSubstituteActions(SNode sourceNode, String transformTag, IOperationContext context) {
+    return RTransformHintSubstituteActionsHelper.createActions(sourceNode, transformTag, context);
   }
 }
