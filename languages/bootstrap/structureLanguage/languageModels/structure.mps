@@ -3,7 +3,6 @@
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.core.structure" />
-  <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.library" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1071489090640">
     <property name="rootable" value="true" />
     <property name="name" value="ConceptDeclaration" />
