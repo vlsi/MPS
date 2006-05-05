@@ -35,13 +35,13 @@ public class SubtypingManager {
     Set<NodeWrapperType> ancestors = myTypesToAncestorsMap.get(subType.getRepresentator());
     if (ancestors == null) {
       ancestors = new HashSet<NodeWrapperType>();
-      myTypesToAncestorsMap.put(subType, ancestors);
+      myTypesToAncestorsMap.put(subType.getRepresentator(), ancestors);
     }
     ancestors.add(superType.getRepresentator());
     Set<NodeWrapperType> descendants = myTypesToDescendantsMap.get(superType.getRepresentator());
     if (descendants == null) {
       descendants = new HashSet<NodeWrapperType>();
-      myTypesToDescendantsMap.put(superType, descendants);
+      myTypesToDescendantsMap.put(superType.getRepresentator(), descendants);
     }
     descendants.add(subType.getRepresentator());
   }
@@ -88,6 +88,9 @@ public class SubtypingManager {
   }
 
 
-  
-
+  public boolean isSubtype(NodeWrapperType subtype, NodeWrapperType supertype) {
+    Set<NodeWrapperType> ancestors = myTypesToAncestorsMap.get(subtype.getRepresentator());
+    if (ancestors == null) return false;
+    return ancestors.contains(supertype.getRepresentator());
+  }
 }
