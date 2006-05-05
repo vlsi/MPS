@@ -2,13 +2,14 @@
 <model name="smodelLanguage.samples">
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
-  <maxImportIndex value="9" />
+  <maxImportIndex value="11" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="3" modelUID="java.lang@java_stub" />
   <import index="4" modelUID="jetbrains.mps.smodel@java_stub" />
   <import index="5" modelUID="java.util@java_stub" />
   <import index="6" modelUID="jetbrains.mps.core.structure" />
   <import index="9" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
+  <import index="11" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1145576838780">
     <property name="name" value="SemanticDowncast" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1145576838781">
@@ -1868,7 +1869,7 @@
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1146086375054">
-      <property name="name" value="enumProperty" />
+      <property name="name" value="enumProperty_string" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1146086384448" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1146086375056">
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1146086546631">
@@ -1953,7 +1954,7 @@
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1146250911625">
-      <property name="name" value="enumProperty2" />
+      <property name="name" value="enumProperty2_string" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1146250914019" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1146250911627">
         <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1146250966728">
@@ -2075,6 +2076,54 @@
         <property name="name" value="link2" />
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1146250943899">
           <link role="concept" targetNodeId="9.1071489288298" />
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1146854597219">
+      <property name="name" value="enumProperty3_integer" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1146854599691" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1146854597221">
+        <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1146854709495">
+          <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1146854729735">
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1146854717671">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1146854715904">
+                <link role="variableDeclaration" targetNodeId="1146854625161" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1146854727016">
+                <link role="property" targetNodeId="11.1130859485024" />
+              </node>
+            </node>
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_HasValue_Enum" id="1146854732877">
+              <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.EnumMemberReference" id="1146854732878">
+                <link role="enumMember" targetNodeId="11.1130926557292" />
+              </node>
+            </node>
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1146854709497">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1146854741629">
+              <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1146854749649">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1146854743350">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1146854741630">
+                    <link role="variableDeclaration" targetNodeId="1146854625161" />
+                  </node>
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1146854746257">
+                    <link role="property" targetNodeId="11.1130859485024" />
+                  </node>
+                </node>
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_SetOperation" id="1146854752337">
+                  <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.EnumMemberReference" id="1146854761011">
+                    <link role="enumMember" targetNodeId="11.1130926603060" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1146854625161">
+        <property name="name" value="cellModel" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1146854625162">
+          <link role="concept" targetNodeId="11.1073389214265" />
         </node>
       </node>
     </node>
