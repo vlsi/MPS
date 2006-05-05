@@ -46,14 +46,16 @@ public class SubtypingManager {
     descendants.add(subType.getRepresentator());
   }
 
+
   public void processRepresentatorChange(NodeWrapperType oldRepresentator, NodeWrapperType newRepresentator) {
     Set<NodeWrapperType> ancestors = myTypesToAncestorsMap.get(oldRepresentator);
     Set<NodeWrapperType> newAncestors = myTypesToAncestorsMap.get(newRepresentator);
-    if (newAncestors == null) {
-      newAncestors = new HashSet<NodeWrapperType>();
-      myTypesToAncestorsMap.put(newRepresentator, newAncestors);
-    }
+
     if (ancestors != null) {
+      if (newAncestors == null) {
+        newAncestors = new HashSet<NodeWrapperType>();
+        myTypesToAncestorsMap.put(newRepresentator, newAncestors);
+      }
       for (NodeWrapperType ancestor : ancestors) {
         Set<NodeWrapperType> ancestorDescendants = myTypesToDescendantsMap.get(ancestor);
         if (ancestorDescendants != null && ancestorDescendants.contains(oldRepresentator)) {
@@ -67,11 +69,12 @@ public class SubtypingManager {
 
     Set<NodeWrapperType> descendants = myTypesToDescendantsMap.get(oldRepresentator);
     Set<NodeWrapperType> newDescendants = myTypesToDescendantsMap.get(newRepresentator);
-    if (newDescendants == null) {
-      newDescendants = new HashSet<NodeWrapperType>();
-      myTypesToDescendantsMap.put(newRepresentator, newDescendants);
-    }
+
     if (descendants != null) {
+      if (newDescendants == null) {
+        newDescendants = new HashSet<NodeWrapperType>();
+        myTypesToDescendantsMap.put(newRepresentator, newDescendants);
+      }
       for (NodeWrapperType descendant : descendants) {
         Set<NodeWrapperType> descendantAncestors = myTypesToAncestorsMap.get(descendant);
         if (descendantAncestors != null && descendantAncestors.contains(oldRepresentator)) {
@@ -83,5 +86,8 @@ public class SubtypingManager {
       myTypesToDescendantsMap.remove(oldRepresentator);
     }
   }
+
+
+  
 
 }
