@@ -120,13 +120,20 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return "<no role>";
   }
 
-  public Set<String> getChildRoles() {
+  public Set<String> getChildRoles(boolean includeAttributeRoles) {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
     Set<String> result = new HashSet<String>();
     for (SNode child : getChildren()) {
-      result.add(getRoleOf(child));
+      String roleOf = getRoleOf(child);
+      if (includeAttributeRoles || !(roleOf.contains(STEREOTYPE_DELIM))) {
+        result.add(roleOf);
+      }
     }
     return result;
+  }
+
+  public Set<String> getChildRoles() {
+    return getChildRoles(false);
   }
 
   public Set<String> getReferenceRoles() {
@@ -279,7 +286,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   //new
   protected Set<String> getPropertyNamesFromAttributes() {
     Set<String> result = new HashSet<String>();
-    for (String role : getChildRoles()) {
+    for (String role : getChildRoles(true)) {
       String suffix = STEREOTYPE_DELIM + PROPERTY_ATTRIBUTE_STEREOTYPE;
       if (role.endsWith(suffix)) {
         result.add(role.substring(0, role.length() - suffix.length()));
@@ -291,7 +298,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   //new
   protected Set<String> getLinkNamesFromAttributes() {
     Set<String> result = new HashSet<String>();
-    for (String role : getChildRoles()) {
+    for (String role : getChildRoles(true)) {
       String suffix = STEREOTYPE_DELIM + LINK_ATTRIBUTE_STEREOTYPE;
       if (role.endsWith(suffix)) {
         result.add(role.substring(0, role.length() - suffix.length()));
