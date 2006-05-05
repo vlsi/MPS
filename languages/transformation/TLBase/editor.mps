@@ -499,18 +499,6 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1092060948911">
     <property name="name" value="TemplateDeclaration_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1092059087312" />
-    <node role="actionSetDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.CellActionSetDeclaration" id="1092137340906">
-      <property name="name" value="ContentNodeActions" />
-      <node role="actionDeclaration" type="jetbrains.mps.bootstrap.editorLanguage.ActionModel_SubstituteNode" id="1092137340907">
-        <property name="substituteHandlerId" value="TemplateDeclaration_SetContentNode" />
-        <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SubstituteItem_ItemGroup" id="1092137340908">
-          <property name="name" value="languageNode" />
-          <property name="queryId" value="Language_ConceptDeclarations" />
-          <property name="descriptionProviderId" value="Namespace" />
-          <property name="textProviderId" value="Name" />
-        </node>
-      </node>
-    </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1092060948912">
       <property name="drawBorder" value="false" />
       <property name="name" value="nodeBox" />
@@ -521,7 +509,7 @@
         <property name="vertical" value="false" />
         <property name="selectable" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1092060948914">
-          <property name="text" value="template" />
+          <property name="text" value="template:" />
           <property name="drawBorder" value="false" />
           <property name="selectable" value="true" />
         </node>
@@ -585,10 +573,10 @@
         <property name="selectable" value="true" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1092135992437">
+        <property name="substituteActionsFactoryId" value="TemplateDeclaration_ContentNode" />
         <property name="drawBorder" value="false" />
         <property name="noTargetText" value="&lt;no content node&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1092060348987" />
-        <link role="actionSet" targetNodeId="1092137340906" />
       </node>
     </node>
   </node>
