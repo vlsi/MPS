@@ -363,7 +363,7 @@ public class SModelRepository extends SModelAdapter {
       return (IModelRootManager) cls.newInstance();
     } catch (Exception e) {
       LOG.error(e);
-      return null;
+      return IModelRootManager.NULL_MANAGER;
     }
   }
 
