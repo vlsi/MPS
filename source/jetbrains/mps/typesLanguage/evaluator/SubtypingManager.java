@@ -89,8 +89,13 @@ public class SubtypingManager {
 
 
   public boolean isSubtype(NodeWrapperType subtype, NodeWrapperType supertype) {
-    Set<NodeWrapperType> ancestors = myTypesToAncestorsMap.get(subtype.getRepresentator());
+    NodeWrapperType subRepresentator = subtype.getRepresentator();
+    NodeWrapperType superRepresentator = supertype.getRepresentator();
+
+    if (subRepresentator == superRepresentator) return true; //reflexivity
+
+    Set<NodeWrapperType> ancestors = myTypesToAncestorsMap.get(subRepresentator);
     if (ancestors == null) return false;
-    return ancestors.contains(supertype.getRepresentator());
+    return ancestors.contains(superRepresentator);
   }
 }

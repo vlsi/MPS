@@ -584,6 +584,7 @@
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1143224155413">
+        <property name="attractsFocus" value="1" />
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1143224066849" />
       </node>
@@ -604,6 +605,7 @@
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1143224196793">
+        <property name="attractsFocus" value="1" />
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1143224127716" />
       </node>
