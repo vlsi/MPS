@@ -126,6 +126,47 @@ public class MatchingUtil {
   }
 
 
+  public static boolean matchWrappers(NodeWrapper node1, NodeWrapper node2) { //exact matching w/o any vars
+    if (node1 == null && node2 == null) return true;
+    if (node1 == null) return false;
+    if (node2 == null) return false;
+    if (node1.getNodeClass() != node2.getNodeClass()) return false;
+
+    //properties
+    Set<String> propertyNames = node1.getPropertyNames();
+    propertyNames.addAll(node2.getPropertyNames());
+    for (String propertyName : propertyNames) {
+       if (!EqualUtil.equals(node1.getProperty(propertyName), node2.getProperty(propertyName))) return false;
+    }
+
+    // children
+    Set<String> childRoles = node1.getChildRoles();
+    childRoles.addAll(node2.getChildRoles());
+    for (String role : childRoles) {
+      List<NodeWrapper> children1 = node1.getChildren(role);
+      List<NodeWrapper> children2 = node2.getChildren(role);
+
+      Iterator<NodeWrapper> childrenIterator = children1.iterator();
+      for (NodeWrapper child2 : children2) {
+        NodeWrapper child1 = childrenIterator.hasNext() ? childrenIterator.next() : null;
+        if (!matchWrappers(child1, child2)) return false;
+      }
+      if (childrenIterator.hasNext() && childrenIterator.next() != null) return false; //the first has more children
+    }
+
+    //-- matching references
+    Set<String> referenceRoles = node1.getReferenceRoles();
+    referenceRoles.addAll(node2.getReferenceRoles());
+    for (String role : referenceRoles) {
+      SNode target1 = node1.getReferent(role);
+      SNode target2 = node2.getReferent(role);
+      if (target2 != target1) return false;
+    }
+
+    return true;
+  }
+
+
   private static boolean matchNodes(NodeWrapper node, SNode patternNode, Substitution substitution) {
 
       //-- whole node bindings

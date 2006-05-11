@@ -4,7 +4,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.typesLanguage.evaluator.NodeWrapper;
 import jetbrains.mps.typesLanguage.evaluator.SubtypingManager;
 import jetbrains.mps.typesLanguage.RuntimeTypeVariable;
+import jetbrains.mps.typesLanguage.RuntimeErrorType;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.Pair;
 
@@ -32,34 +34,35 @@ public class EquationManager {
   }
 
   public void addEquation(NodeWrapperType rhs, NodeWrapperType lhs) {
-    NodeWrapperType rhsRepresntator = rhs.getRepresentator();
+    NodeWrapperType rhsRepresentator = rhs.getRepresentator();
     NodeWrapperType lhsRepresentator = lhs.getRepresentator();
 
     // no equation needed
-    if (rhsRepresntator == lhsRepresentator) return;
+    if (rhsRepresentator == lhsRepresentator) return;
 
     // add var to type's multieq
-    RuntimeTypeVariable varRhs = NodeWrapperType.getTypeVar(rhsRepresntator);
+    RuntimeTypeVariable varRhs = NodeWrapperType.getTypeVar(rhsRepresentator);
     RuntimeTypeVariable varLhs = NodeWrapperType.getTypeVar(lhsRepresentator);
     if (varRhs != null) {
-      processEquation(rhsRepresntator, lhsRepresentator);
+      processEquation(rhsRepresentator, lhsRepresentator);
       return;
     } else {
       if (varLhs != null) {
-        processEquation(lhsRepresentator, rhsRepresntator);
+        processEquation(lhsRepresentator, rhsRepresentator);
         return;
       }
     }
 
     // solve equation
-    NodeWrapperType rhsType = (NodeWrapperType) rhsRepresntator;
-    NodeWrapperType lhsType = (NodeWrapperType) lhsRepresentator;
-    if (!compareNodes(rhsType.getNodeWrapper(), lhsType.getNodeWrapper())) {
-      //todo error
-      LOG.errorWithTrace("equation solving error");
+    if (!compareNodes(rhsRepresentator.getNodeWrapper(), lhsRepresentator.getNodeWrapper())) {
+      String error = "incompatible types: " + rhsRepresentator + " and " + lhsRepresentator; //todo more friendly error representation
+      SModel typesModel = rhsRepresentator.getSNode().getModel(); // todo make sure it's the model we need or it's harmless to use it
+      addEquation(rhs, NodeWrapperType.getType(TypeVariablesManager.getInstance().createRuntimeErrorType(typesModel, error)));
+      addEquation(lhs, NodeWrapperType.getType(TypeVariablesManager.getInstance().createRuntimeErrorType(typesModel, error)));
+      //it's not very good anyway :(
       return;
     }
-    Set<Pair<NodeWrapperType, NodeWrapperType>> childEQs = createChildEquations(rhsType.getNodeWrapper(), lhsType.getNodeWrapper());
+    Set<Pair<NodeWrapperType, NodeWrapperType>> childEQs = createChildEquations(rhsRepresentator.getNodeWrapper(), lhsRepresentator.getNodeWrapper());
     for (Pair<NodeWrapperType, NodeWrapperType> eq : childEQs) {
       addEquation(eq.o1, eq.o2);
     }
@@ -113,11 +116,11 @@ public class EquationManager {
      Iterator<NodeWrapper> childrenIterator2 = childrenInNode2.iterator();
      for (NodeWrapper child1 : childrenInNode1) {
        NodeWrapper child2 = childrenIterator2.hasNext() ? childrenIterator2.next() : null;
-       result.add(new Pair<NodeWrapperType, NodeWrapperType>(NodeWrapperType.getIType(child1), NodeWrapperType.getIType(child2)));
+       result.add(new Pair<NodeWrapperType, NodeWrapperType>(NodeWrapperType.getType(child1), NodeWrapperType.getType(child2)));
      }
      for (;childrenIterator2.hasNext();) {
        NodeWrapper child2 = childrenIterator2.next();
-       result.add(new Pair<NodeWrapperType, NodeWrapperType>(null, NodeWrapperType.getIType(child2)));
+       result.add(new Pair<NodeWrapperType, NodeWrapperType>(null, NodeWrapperType.getType(child2)));
      }
    }
    return result;

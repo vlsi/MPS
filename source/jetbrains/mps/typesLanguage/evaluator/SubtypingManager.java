@@ -1,6 +1,7 @@
 package jetbrains.mps.typesLanguage.evaluator;
 
 import jetbrains.mps.typesLanguage.equation.NodeWrapperType;
+import jetbrains.mps.patterns.util.MatchingUtil;
 
 import java.util.*;
 
@@ -92,8 +93,10 @@ public class SubtypingManager {
     NodeWrapperType subRepresentator = subtype.getRepresentator();
     NodeWrapperType superRepresentator = supertype.getRepresentator();
 
-    if (subRepresentator == superRepresentator) return true; //reflexivity
+    //reflexivity: structural equivalence
+    if (MatchingUtil.matchWrappers(subtype.getNodeWrapper(), supertype.getNodeWrapper())) return true;
 
+    // transitivity: nominal equivalence
     Set<NodeWrapperType> ancestors = myTypesToAncestorsMap.get(subRepresentator);
     if (ancestors == null) return false;
     return ancestors.contains(superRepresentator);
