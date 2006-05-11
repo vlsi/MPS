@@ -94,7 +94,16 @@ public class SubtypingManager {
     NodeWrapperType superRepresentator = supertype.getRepresentator();
 
     //reflexivity: structural equivalence
-    if (MatchingUtil.matchWrappers(subtype.getNodeWrapper(), supertype.getNodeWrapper())) return true;
+    if (MatchingUtil.matchWrappers(subRepresentator.getNodeWrapper(), superRepresentator.getNodeWrapper())) return true;
+
+    // transitivity: nominal equivalence
+    return isStrictSubtype(subtype, supertype);
+  }
+
+
+  public boolean isStrictSubtype(NodeWrapperType subtype, NodeWrapperType supertype) {
+    NodeWrapperType subRepresentator = subtype.getRepresentator();
+    NodeWrapperType superRepresentator = supertype.getRepresentator();
 
     // transitivity: nominal equivalence
     Set<NodeWrapperType> ancestors = myTypesToAncestorsMap.get(subRepresentator);
