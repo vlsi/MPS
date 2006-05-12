@@ -78,7 +78,6 @@ public class Language extends AbstractModule {
   }
 
 
-
   public static Language createLanguage(String languageNamespace, File descriptorFile, MPSModuleOwner moduleOwner) {
     Language language = new Language();
     SModel descriptorModel = ProjectModels.createDescriptorFor(language).getSModel();
@@ -249,6 +248,7 @@ public class Language extends AbstractModule {
     result = Math.max(result, repository.getLastChangeTime(getStructureModelDescriptor()));
     result = Math.max(result, repository.getLastChangeTime(getEditorModelDescriptor()));
     result = Math.max(result, repository.getLastChangeTime(getActionsModelDescriptor()));
+    result = Math.max(result, repository.getLastChangeTime(getConstraintsModelDescriptor()));
     result = Math.max(result, repository.getLastChangeTime(getTypesystemModelDescriptor()));
     return result;
   }
@@ -293,6 +293,14 @@ public class Language extends AbstractModule {
     return null;
   }
 
+  public SModelDescriptor getConstraintsModelDescriptor() {
+    if (getLanguageDescriptor().getConstraintsModel() != null) {
+      SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getConstraintsModel().getName());
+      return SModelRepository.getInstance().getModelDescriptor(modelUID, this);
+    }
+    return null;
+  }
+
   public SModelDescriptor getEditorModelDescriptor() {
     return getEditorModelDescriptor(null);
   }
@@ -329,6 +337,8 @@ public class Language extends AbstractModule {
     if (typesystemModelDescriptor != null) result.add(typesystemModelDescriptor);
     SModelDescriptor actionsModelDescriptor = getActionsModelDescriptor();
     if (actionsModelDescriptor != null) result.add(actionsModelDescriptor);
+    SModelDescriptor constraintsModelDescriptor = getConstraintsModelDescriptor();
+    if (constraintsModelDescriptor != null) result.add(constraintsModelDescriptor);
     return result;
   }
 
@@ -489,6 +499,9 @@ public class Language extends AbstractModule {
     if (modelDescriptor == language.getActionsModelDescriptor()) {
       return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.ACTIONS);
     }
+    if (modelDescriptor == language.getConstraintsModelDescriptor()) {
+      return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.CONSTRAINTS);
+    }
     List<SModelDescriptor> acccessoryModels = language.getAccessoryModels();
     if (acccessoryModels.contains(modelDescriptor)) {
       return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.ACCESSORY);
@@ -503,7 +516,7 @@ public class Language extends AbstractModule {
 
   public static class LanguageAspectStatus implements IStatus {
     public static enum AspectKind {
-      STRUCTURE,EDITOR,ACTIONS,TYPESYSTEM,ACCESSORY,NONE
+      STRUCTURE,EDITOR,ACTIONS,CONSTRAINTS,TYPESYSTEM,ACCESSORY,NONE
     }
 
     private Language myLanguage;
@@ -558,6 +571,10 @@ public class Language extends AbstractModule {
       return myAspectKind == LanguageAspectStatus.AspectKind.ACTIONS;
     }
 
+    public boolean isConstraintsModel() {
+      return myAspectKind == LanguageAspectStatus.AspectKind.CONSTRAINTS;
+    }
+
     public boolean isAccessoryModel() {
       return myAspectKind == LanguageAspectStatus.AspectKind.ACCESSORY;
     }
@@ -585,6 +602,8 @@ public class Language extends AbstractModule {
           languageDescriptor.removeChild(languageDescriptor.getTypeSystem());
         } else if (status.isActions()) {
           languageDescriptor.removeChild(languageDescriptor.getActionsModel());
+        } else if (status.isConstraintsModel()) {
+          languageDescriptor.removeChild(languageDescriptor.getConstraintsModel());
         }
       }
     }

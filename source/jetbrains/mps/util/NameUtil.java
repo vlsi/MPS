@@ -2,8 +2,6 @@ package jetbrains.mps.util;
 
 import jetbrains.mps.smodel.SNode;
 
-import java.io.File;
-
 
 /**
  * User: Dmitriev.
@@ -95,19 +93,7 @@ public class NameUtil {
 
   public static String nodeFQName(SNode node) {
     String name = node.getName();
-//    // TRICK: NativeClassProvider creates Classifiers with FQ name.
-//    // if we have FQ name here - do not concatenate it with model long name
-//    if (name != null && name.indexOf('.') >= 0) {
-//      return name;
-//    }
-
     return node.getModel().getLongName() + "." + name;
-
-// type system stop working if 'fq name' includes parent name (see: BasicTypes)    
-//    if (node.isRoot()) {
-//      return node.getModel().getLongName() + "." + name;
-//    }
-//    return nodeFQName(node.getParent()) + "." + name;
   }
 
 
@@ -121,6 +107,11 @@ public class NameUtil {
     String conceptName = NameUtil.shortNameFromLongName(className);
     String languageNamespace = NameUtil.namespaceFromLongName(className);
     return languageNamespace + ".structure." + conceptName;
+  }
+
+  public static String nodeLanguageNamespace(SNode node) {
+    String className = node.getClass().getName();
+    return NameUtil.namespaceFromLongName(className);
   }
 
   public static String convertToMetaString(String s) {

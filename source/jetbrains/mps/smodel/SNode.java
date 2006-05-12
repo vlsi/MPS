@@ -3,6 +3,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.annotations.AttributeConcept;
 import jetbrains.mps.annotations.LinkAttributeConcept;
 import jetbrains.mps.annotations.PropertyAttributeConcept;
+import jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
@@ -10,9 +11,11 @@ import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.security.NodeSecurityManager;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.smodel.constraints.INodePropertyGetter;
+import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 import java.util.*;
 
@@ -235,7 +238,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   //
 
 
-
   public void setAttribute(AttributeConcept attributeConcept) {
     setChild(STEREOTYPE_DELIM + ATTRIBUTE_STEREOTYPE, attributeConcept);
   }
@@ -265,7 +267,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public LinkAttributeConcept getLinkAttribute(String role) {
     return (LinkAttributeConcept) getChild(role + STEREOTYPE_DELIM + LINK_ATTRIBUTE_STEREOTYPE);
   }
-
 
   //
   // ----- properties -----
@@ -308,7 +309,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public boolean getBooleanProperty(String propertyName) {
-//    NodeReadAccessCaster.fireNodeReadAccessed(this);
     String value = getProperty(propertyName);
     return "true".equals(value);
   }
@@ -318,7 +318,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public int getIntegerProperty(String propertyName) {
-//    NodeReadAccessCaster.fireNodeReadAccessed(this);
     String value = getProperty(propertyName);
     try {
       return Integer.parseInt(value);
@@ -331,9 +330,34 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     setProperty(propertyName, "" + value);
   }
 
+  // todo: final
   public String getProperty(String propertyName) {
     NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName);
     NodeSecurityManager.getInstance().checkPropertyAvailable(this, propertyName, false);
+
+    {
+      INodePropertyGetter getter = ModelConstraintsManager.getInstance().getNodePropertyGetter(this, propertyName);
+      if (getter != null) {
+        return getter.execPropertyGet(this, propertyName);
+      }
+      return myProperties.get(propertyName);
+    }
+
+    // *** if ModelConstraintsManager doesn't work, then comment block above and uncomment line below ***
+
+//    return _getProperty_troubleshooting(propertyName);
+  }
+
+  /**
+   * tmp, dont delete pls
+   */
+  private String _getProperty_troubleshooting(String propertyName) {
+    if (this instanceof ConceptEditorDeclaration) {
+      SNode conceptDeclaration = this.getReferent("conceptDeclaration");
+      if (conceptDeclaration != null) {
+        return conceptDeclaration.getName() + "_Editor";
+      }
+    }
     return myProperties.get(propertyName);
   }
 
@@ -467,7 +491,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return new ArrayList<SNode>(myChildren);
   }
 
-  public<N extends SNode> List<N> getChildren(Class<N> cls) {
+  public <N extends SNode> List<N> getChildren(Class<N> cls) {
     return CollectionUtil.filter(cls, getChildren());
   }
 
@@ -820,7 +844,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     for (SNode child : children) {
       child.delete_internal();
     }
-
 
     //remove all references
     removeAllReferences();

@@ -24,6 +24,8 @@ public class MPSModuleRepository {
   private Map<String, IModule> myFileToModuleMap = new HashMap<String, IModule>();
   private Map<String, IModule> myUIDToModuleMap = new HashMap<String, IModule>();
   private Map<IModule, Set<MPSModuleOwner>> myModuleToOwnersMap = new HashMap<IModule, Set<MPSModuleOwner>>();
+
+  private List<ModuleRepositoryListener> myModuleListeners = new ArrayList<ModuleRepositoryListener>();
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
   private CommandAdapter myListenerToRemoveUnusedModules;
 
@@ -73,6 +75,26 @@ public class MPSModuleRepository {
   private void fireRepositoryChanged() {
     for (RepositoryListener l : myListeners) {
       l.repositoryChanged();
+    }
+  }
+
+  public void addModuleRepositoryListener(ModuleRepositoryListener l) {
+    myModuleListeners.add(l);
+  }
+
+  public void removeModuleRepositoryListener(ModuleRepositoryListener l) {
+    myModuleListeners.remove(l);
+  }
+
+  private void fireModuleAdded(IModule module) {
+    for (ModuleRepositoryListener l : myModuleListeners) {
+      l.moduleAdded(module);
+    }
+  }
+
+  private void fireModuleRemoved(IModule module) {
+    for (ModuleRepositoryListener l : myModuleListeners) {
+      l.moduleRemoved(module);
     }
   }
 
@@ -140,6 +162,7 @@ public class MPSModuleRepository {
       if (owners == null) owners = new HashSet<MPSModuleOwner>();
       owners.add(owner);
       myModuleToOwnersMap.put(module, owners);
+      fireModuleAdded(module);
     } catch (IOException e) {
       throw new RuntimeException("Failed to add module \"" + module.getModuleUID() + "\"", e);
     }
@@ -220,6 +243,7 @@ public class MPSModuleRepository {
     if (descriptorFile != null) {
       try {
         myFileToModuleMap.remove(descriptorFile.getCanonicalPath());
+        fireModuleRemoved(module);
       } catch (IOException e) {
         e.printStackTrace();
       }

@@ -126,6 +126,7 @@
           <property name="drawBorder" value="false" />
           <property name="vertical" value="true" />
           <property name="gridLayout" value="true" />
+          <property name="selectable" value="false" />
           <link role="relationDeclaration" targetNodeId="1.1112058057696" />
         </node>
       </node>
@@ -260,6 +261,7 @@
           <property name="drawBorder" value="false" />
           <property name="vertical" value="true" />
           <property name="gridLayout" value="true" />
+          <property name="selectable" value="false" />
           <link role="relationDeclaration" targetNodeId="1.1138079416599" />
         </node>
       </node>
@@ -302,6 +304,7 @@
           <property name="drawBorder" value="false" />
           <property name="vertical" value="true" />
           <property name="gridLayout" value="true" />
+          <property name="selectable" value="false" />
           <link role="relationDeclaration" targetNodeId="1.1141170233405" />
         </node>
       </node>

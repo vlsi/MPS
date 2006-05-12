@@ -98,6 +98,11 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
       this.add(new SModelTreeNode(actionsModelDescriptor, "actions", operationContext));
     }
 
+    SModelDescriptor constraintsModelDescriptor = myLanguage.getConstraintsModelDescriptor();
+    if (constraintsModelDescriptor != null) {
+      this.add(new SModelTreeNode(constraintsModelDescriptor, "constraints", operationContext));
+    }
+
     // language accessory models
 
     if (myLanguage.getAccessoryModels().size() > 0) {
