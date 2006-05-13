@@ -16,6 +16,9 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.constraints.INodePropertyGetter;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.baseLanguage.ConstructorDeclaration;
+import jetbrains.mps.baseLanguage.ClassifierType;
+import jetbrains.mps.baseLanguage.Classifier;
 
 import java.util.*;
 
@@ -330,8 +333,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     setProperty(propertyName, "" + value);
   }
 
-  // todo: final
-  public String getProperty(String propertyName) {
+  public final String getProperty(String propertyName) {
     NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName);
     NodeSecurityManager.getInstance().checkPropertyAvailable(this, propertyName, false);
 
@@ -353,11 +355,24 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
    */
   private String _getProperty_troubleshooting(String propertyName) {
     if (this instanceof ConceptEditorDeclaration) {
-      SNode conceptDeclaration = this.getReferent("conceptDeclaration");
+      SNode conceptDeclaration = ((ConceptEditorDeclaration) this).getConceptDeclaration();
       if (conceptDeclaration != null) {
         return conceptDeclaration.getName() + "_Editor";
       }
+    } else if (this instanceof ConstructorDeclaration) {
+      SNode parent = this.getParent();
+      if (parent != null) {
+        return parent.getName();
+      }
+      return null;
+    } else if (this instanceof ClassifierType) {
+      Classifier classifier = ((ClassifierType) this).getClassifier();
+      if (classifier != null) {
+        return NameUtil.nodeFQName(classifier);
+      }
+      return null;
     }
+
     return myProperties.get(propertyName);
   }
 

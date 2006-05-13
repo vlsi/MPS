@@ -180,6 +180,10 @@ public class TemplateGenUtil {
     List<INodeBuilder> builders = new LinkedList<INodeBuilder>();
     String ruleName = mappingRule.getName();
     BaseConcept templateNode = mappingRule.getTemplateNode();
+    if(templateNode == null) {
+      generator.showErrorMessage(null, null, mappingRule, "mapping rule has to template");
+      return builders;
+    }
     List<SNode> sourceNodes = createSourceNodeListForMappingRule(mappingRule, generator);
     for (SNode sourceNode : sourceNodes) {
       INodeBuilder nodeBuilder = createNodeBuilder(sourceNode, templateNode, ruleName, generator);
