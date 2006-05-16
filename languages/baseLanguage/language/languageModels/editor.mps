@@ -953,7 +953,7 @@
     <property name="name" value="Expression_Editor" />
     <link role="conceptDeclaration" targetNodeId="17.1068431790191" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1075376431437">
-      <property name="text" value="&lt;expression&gt;" />
+      <property name="text" value="expression" />
       <property name="drawBorder" value="false" />
       <link role="keyMap" targetNodeId="1081427357000" />
     </node>
