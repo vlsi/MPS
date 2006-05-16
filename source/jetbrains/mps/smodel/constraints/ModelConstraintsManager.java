@@ -86,7 +86,7 @@ public class ModelConstraintsManager {
   }
 
   private void processLanguageAdded(Language language) {
-    System.out.println("processLanguageAdded: " + language.getNamespace());
+    //System.out.println("processLanguageAdded: " + language.getNamespace());
     String namespace = language.getNamespace();
     if (myAddedLanguageNamespaces.containsKey(namespace)) {
       return;
@@ -121,7 +121,7 @@ public class ModelConstraintsManager {
   }
 
   private void processLanguageRemoved(Language language) {
-    System.out.println("processLanguageRemoved: " + language.getNamespace());
+    //System.out.println("processLanguageRemoved: " + language.getNamespace());
     String namespace = language.getNamespace();
     List<IModelConstraints> loadedConstraints = myAddedLanguageNamespaces.get(namespace);
     if (loadedConstraints != null) {

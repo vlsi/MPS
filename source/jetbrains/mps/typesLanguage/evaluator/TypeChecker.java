@@ -3,10 +3,7 @@ package jetbrains.mps.typesLanguage.evaluator;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.typesLanguage.ContextDeclaration;
-import jetbrains.mps.typesLanguage.EquationSetDeclaration;
-import jetbrains.mps.typesLanguage.Rule;
-import jetbrains.mps.typesLanguage.VariableSetDeclaration;
+import jetbrains.mps.typesLanguage.*;
 import jetbrains.mps.typesLanguage.inference.ContextsManager;
 import jetbrains.mps.typesLanguage.equation.EquationManager;
 import jetbrains.mps.typesLanguage.equation.TypeVariablesManager;
@@ -75,10 +72,63 @@ public class TypeChecker {
     // setting types to nodes
     for (Pair<SNode, NodeWrapperType> contextEntry : mainContext) {
       SNode term = contextEntry.o1;
-      term.putUserObject(TYPE_OF_TERM, contextEntry.o2);
+      NodeWrapperType wrapperType = expandType(contextEntry.o2);
+      term.putUserObject(TYPE_OF_TERM, wrapperType);
     }
 
   }
+
+  private static NodeWrapperType expandType(NodeWrapperType nodeWrapperType) {
+    NodeWrapperType representator = nodeWrapperType.getRepresentator();
+    NodeWrapper nodeWrapper = representator.getNodeWrapper();
+    NodeWrapper newNodeWrapper = expandWrapper(nodeWrapper, representator, 0, new HashSet<RuntimeTypeVariable>());
+    representator = new NodeWrapperType(newNodeWrapper);
+    return representator;
+  }
+
+  private static NodeWrapper expandWrapper(NodeWrapper nodeWrapper, NodeWrapperType representator, int depth, Set<RuntimeTypeVariable> variablesMet) {
+    if (nodeWrapper == null) return null;
+    if (nodeWrapper.getNode() instanceof RuntimeTypeVariable) {
+      RuntimeTypeVariable var = (RuntimeTypeVariable) nodeWrapper.getNode();
+      NodeWrapperType wrapperType = nodeWrapper.getIType();
+      if (wrapperType == null) {
+        return nodeWrapper;
+      }
+      NodeWrapperType type = wrapperType.getRepresentator();
+      if (type != representator || depth > 0) {
+
+        if (variablesMet.contains(var)) {
+          //recursion!!
+          nodeWrapper = new NodeWrapper();
+          RuntimeErrorType error = new RuntimeErrorType(var.getModel());
+          error.setErrorText("recursion types not allowed");
+          nodeWrapper.setNode(error);
+          return nodeWrapper;
+        }
+        variablesMet.add(var);
+        nodeWrapper = expandWrapper(type.getNodeWrapper(), type, 0, variablesMet);
+        variablesMet.remove(var);
+      }
+      return nodeWrapper;
+    }
+    Map<NodeWrapper, NodeWrapper> childrenReplacement = new HashMap<NodeWrapper, NodeWrapper>();
+    for (NodeWrapper child : nodeWrapper.getChildren()) {
+      NodeWrapper newChild = expandWrapper(child, representator, depth+1, variablesMet);
+      if (newChild != child) {
+        childrenReplacement.put(child, newChild);
+      }
+    }
+    for (NodeWrapper child : childrenReplacement.keySet()) {
+      if (child.getParents().isEmpty()) {
+        System.err.println("debug");
+      }
+      NodeWrapper parent = child.getParents().get(0);
+      parent.removeChild(child);
+      parent.addChild(childrenReplacement.get(child), child.getRoleInParent());
+    }
+    return nodeWrapper;
+  }
+
 
   private static void doCheckTypes(SNode root) {
     // bfs from root
