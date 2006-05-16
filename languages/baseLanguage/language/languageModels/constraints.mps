@@ -3,9 +3,10 @@
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <maxImportIndex value="2" />
+  <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
+  <import index="3" modelUID="jetbrains.mps.util@java_stub" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraintsSet" id="1147487178789">
     <property name="name" value="BL_NodePropertyConstraints" />
     <node role="nodePropertyConstraints" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraints" id="1147487185915">
@@ -36,12 +37,11 @@
             </node>
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1147487253820">
               <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1147487266669">
-                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1147487275219">
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1147487270187">
+                <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1147781729622">
+                  <link role="classConcept" extResolveInfo="3.[Classifier]NameUtil" />
+                  <link role="baseMethodDeclaration" extResolveInfo="3.static method ([Classifier]NameUtil).([StaticMethodDeclaration]nodeFQName((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1147781882217">
                     <link role="variableDeclaration" targetNodeId="1147487243251" />
-                  </node>
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1147487277001">
-                    <link role="property" targetNodeId="2.1078489098626" />
                   </node>
                 </node>
               </node>

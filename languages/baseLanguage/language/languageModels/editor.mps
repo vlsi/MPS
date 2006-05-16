@@ -1776,33 +1776,8 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1082381396722">
-    <property name="name" value="BinaryOperation_Editor" />
-    <link role="conceptDeclaration" targetNodeId="17.1081773326031" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1138336181461">
-      <property name="drawBorder" value="false" />
-      <link role="keyMap" targetNodeId="1081427357000" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1138336191840">
-        <property name="drawBorder" value="false" />
-        <link role="relationDeclaration" targetNodeId="17.1081773367580" />
-        <link role="actionMap" targetNodeId="1140734304236" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ConceptProperty" id="1138336218561">
-        <property name="editable" value="true" />
-        <property name="substituteActionsFactoryId" value="BinaryOperation_Symbol" />
-        <property name="drawBorder" value="false" />
-        <property name="selectable" value="true" />
-        <link role="relationDeclaration" targetNodeId="18.1137473891462" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1138336287361">
-        <property name="drawBorder" value="false" />
-        <link role="relationDeclaration" targetNodeId="17.1081773367579" />
-        <link role="actionMap" targetNodeId="1140734681122" />
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1082485734863">
-    <property name="name" value="Block_Editor" />
+    <property name="name" value="BlockStatement_Editor" />
     <link role="conceptDeclaration" targetNodeId="17.1082485599095" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1119291654779">
       <property name="drawBorder" value="false" />
@@ -2279,7 +2254,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1107796847143">
-    <property name="name" value="ClassConcept_Editor" />
+    <property name="name" value="Interface_Editor" />
     <link role="conceptDeclaration" targetNodeId="17.1107796713796" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1107796852505">
       <property name="drawBorder" value="false" />
@@ -3928,6 +3903,226 @@
       <property name="text" value="protected" />
       <property name="fontStyle" value="BOLD" />
       <property name="drawBorder" value="false" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1147776472921">
+    <link role="conceptDeclaration" targetNodeId="17.1095950406618" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1147776484549">
+      <property name="drawBorder" value="false" />
+      <link role="keyMap" targetNodeId="1081427357000" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776484550">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1081773367580" />
+        <link role="actionMap" targetNodeId="1140734304236" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1147776507225">
+        <property name="text" value="/" />
+        <property name="substituteActionsFactoryId" value="BinaryOperation_Symbol" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776484552">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1081773367579" />
+        <link role="actionMap" targetNodeId="1140734681122" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1147776527726">
+    <link role="conceptDeclaration" targetNodeId="17.1068581242875" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1147776530755">
+      <property name="drawBorder" value="false" />
+      <link role="keyMap" targetNodeId="1081427357000" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776530756">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1081773367580" />
+        <link role="actionMap" targetNodeId="1140734304236" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1147776540978">
+        <property name="text" value="+" />
+        <property name="substituteActionsFactoryId" value="BinaryOperation_Symbol" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776530758">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1081773367579" />
+        <link role="actionMap" targetNodeId="1140734681122" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1147776557952">
+    <link role="conceptDeclaration" targetNodeId="17.1068580123152" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1147776559872">
+      <property name="drawBorder" value="false" />
+      <link role="keyMap" targetNodeId="1081427357000" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776559873">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1081773367580" />
+        <link role="actionMap" targetNodeId="1140734304236" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1147776559874">
+        <property name="substituteActionsFactoryId" value="BinaryOperation_Symbol" />
+        <property name="text" value="==" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776559875">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1081773367579" />
+        <link role="actionMap" targetNodeId="1140734681122" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1147776583599">
+    <link role="conceptDeclaration" targetNodeId="17.1080120340718" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1147776585550">
+      <property name="drawBorder" value="false" />
+      <link role="keyMap" targetNodeId="1081427357000" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776585551">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1081773367580" />
+        <link role="actionMap" targetNodeId="1140734304236" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1147776585552">
+        <property name="substituteActionsFactoryId" value="BinaryOperation_Symbol" />
+        <property name="text" value="&amp;&amp;" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776585553">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1081773367579" />
+        <link role="actionMap" targetNodeId="1140734681122" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1147776602992">
+    <link role="conceptDeclaration" targetNodeId="17.1068581242869" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1147776604975">
+      <property name="drawBorder" value="false" />
+      <link role="keyMap" targetNodeId="1081427357000" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776604976">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1081773367580" />
+        <link role="actionMap" targetNodeId="1140734304236" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1147776604977">
+        <property name="substituteActionsFactoryId" value="BinaryOperation_Symbol" />
+        <property name="text" value="-" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776604978">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1081773367579" />
+        <link role="actionMap" targetNodeId="1140734681122" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1147776614760">
+    <link role="conceptDeclaration" targetNodeId="17.1092119917967" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1147776616602">
+      <property name="drawBorder" value="false" />
+      <link role="keyMap" targetNodeId="1081427357000" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776616603">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1081773367580" />
+        <link role="actionMap" targetNodeId="1140734304236" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1147776616604">
+        <property name="substituteActionsFactoryId" value="BinaryOperation_Symbol" />
+        <property name="text" value="*" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776616605">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1081773367579" />
+        <link role="actionMap" targetNodeId="1140734681122" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1147776638434">
+    <link role="conceptDeclaration" targetNodeId="17.1081506762703" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1147776640245">
+      <property name="drawBorder" value="false" />
+      <link role="keyMap" targetNodeId="1081427357000" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776640246">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1081773367580" />
+        <link role="actionMap" targetNodeId="1140734304236" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1147776640247">
+        <property name="substituteActionsFactoryId" value="BinaryOperation_Symbol" />
+        <property name="text" value="&gt;" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776640248">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1081773367579" />
+        <link role="actionMap" targetNodeId="1140734681122" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1147776651718">
+    <link role="conceptDeclaration" targetNodeId="17.1080223426719" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1147776654091">
+      <property name="drawBorder" value="false" />
+      <link role="keyMap" targetNodeId="1081427357000" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776654092">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1081773367580" />
+        <link role="actionMap" targetNodeId="1140734304236" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1147776654093">
+        <property name="substituteActionsFactoryId" value="BinaryOperation_Symbol" />
+        <property name="text" value="||" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776654094">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1081773367579" />
+        <link role="actionMap" targetNodeId="1140734681122" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1147776662626">
+    <link role="conceptDeclaration" targetNodeId="17.1081506773034" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1147776665359">
+      <property name="drawBorder" value="false" />
+      <link role="keyMap" targetNodeId="1081427357000" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776665360">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1081773367580" />
+        <link role="actionMap" targetNodeId="1140734304236" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1147776665361">
+        <property name="substituteActionsFactoryId" value="BinaryOperation_Symbol" />
+        <property name="text" value="&lt;" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776665362">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1081773367579" />
+        <link role="actionMap" targetNodeId="1140734681122" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1147776674379">
+    <link role="conceptDeclaration" targetNodeId="17.1073239437375" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1147776676174">
+      <property name="drawBorder" value="false" />
+      <link role="keyMap" targetNodeId="1081427357000" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776676175">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1081773367580" />
+        <link role="actionMap" targetNodeId="1140734304236" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1147776676176">
+        <property name="substituteActionsFactoryId" value="BinaryOperation_Symbol" />
+        <property name="text" value="!=" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776676177">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1081773367579" />
+        <link role="actionMap" targetNodeId="1140734681122" />
+      </node>
     </node>
   </node>
 </model>
