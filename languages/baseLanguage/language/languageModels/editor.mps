@@ -1666,6 +1666,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1081880010406">
+    <property name="parseable" value="true" />
     <property name="name" value="ParenthesizedExpression_Editor" />
     <link role="conceptDeclaration" targetNodeId="17.1079359253375" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1081880010409">
@@ -1677,6 +1678,7 @@
         <property name="text" value="(" />
         <property name="drawBorder" value="false" />
         <link role="actionMap" targetNodeId="1140733182387" />
+        <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.ParenthesisCellToken" id="1147787092590" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081880010411">
         <property name="drawBorder" value="false" />
@@ -1688,6 +1690,9 @@
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
         <link role="actionMap" targetNodeId="1140733182387" />
+        <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.ParenthesisCellToken" id="1147787100294">
+          <property name="parethesisKind" value="false" />
+        </node>
       </node>
     </node>
   </node>
@@ -3906,6 +3911,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1147776472921">
+    <property name="parseable" value="true" />
     <link role="conceptDeclaration" targetNodeId="17.1095950406618" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1147776484549">
       <property name="drawBorder" value="false" />
@@ -3919,6 +3925,9 @@
         <property name="text" value="/" />
         <property name="substituteActionsFactoryId" value="BinaryOperation_Symbol" />
         <property name="drawBorder" value="false" />
+        <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.OperationCellToken" id="1147787301503">
+          <property name="priority" value="2" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776484552">
         <property name="drawBorder" value="false" />
@@ -3928,6 +3937,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1147776527726">
+    <property name="parseable" value="true" />
     <link role="conceptDeclaration" targetNodeId="17.1068581242875" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1147776530755">
       <property name="drawBorder" value="false" />
@@ -3941,6 +3951,9 @@
         <property name="text" value="+" />
         <property name="substituteActionsFactoryId" value="BinaryOperation_Symbol" />
         <property name="drawBorder" value="false" />
+        <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.OperationCellToken" id="1147787286392">
+          <property name="priority" value="1" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776530758">
         <property name="drawBorder" value="false" />
@@ -3950,6 +3963,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1147776557952">
+    <property name="parseable" value="true" />
     <link role="conceptDeclaration" targetNodeId="17.1068580123152" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1147776559872">
       <property name="drawBorder" value="false" />
@@ -3963,6 +3977,9 @@
         <property name="substituteActionsFactoryId" value="BinaryOperation_Symbol" />
         <property name="text" value="==" />
         <property name="drawBorder" value="false" />
+        <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.OperationCellToken" id="1147787359241">
+          <property name="priority" value="0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776559875">
         <property name="drawBorder" value="false" />
@@ -3972,6 +3989,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1147776583599">
+    <property name="parseable" value="true" />
     <link role="conceptDeclaration" targetNodeId="17.1080120340718" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1147776585550">
       <property name="drawBorder" value="false" />
@@ -3985,6 +4003,9 @@
         <property name="substituteActionsFactoryId" value="BinaryOperation_Symbol" />
         <property name="text" value="&amp;&amp;" />
         <property name="drawBorder" value="false" />
+        <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.OperationCellToken" id="1147787336145">
+          <property name="priority" value="2" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776585553">
         <property name="drawBorder" value="false" />
@@ -3994,6 +4015,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1147776602992">
+    <property name="parseable" value="true" />
     <link role="conceptDeclaration" targetNodeId="17.1068581242869" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1147776604975">
       <property name="drawBorder" value="false" />
@@ -4007,6 +4029,9 @@
         <property name="substituteActionsFactoryId" value="BinaryOperation_Symbol" />
         <property name="text" value="-" />
         <property name="drawBorder" value="false" />
+        <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.OperationCellToken" id="1147787344724">
+          <property name="priority" value="1" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776604978">
         <property name="drawBorder" value="false" />
@@ -4016,6 +4041,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1147776614760">
+    <property name="parseable" value="true" />
     <link role="conceptDeclaration" targetNodeId="17.1092119917967" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1147776616602">
       <property name="drawBorder" value="false" />
@@ -4029,6 +4055,9 @@
         <property name="substituteActionsFactoryId" value="BinaryOperation_Symbol" />
         <property name="text" value="*" />
         <property name="drawBorder" value="false" />
+        <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.OperationCellToken" id="1147787147936">
+          <property name="priority" value="2" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776616605">
         <property name="drawBorder" value="false" />
@@ -4038,6 +4067,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1147776638434">
+    <property name="parseable" value="true" />
     <link role="conceptDeclaration" targetNodeId="17.1081506762703" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1147776640245">
       <property name="drawBorder" value="false" />
@@ -4051,6 +4081,9 @@
         <property name="substituteActionsFactoryId" value="BinaryOperation_Symbol" />
         <property name="text" value="&gt;" />
         <property name="drawBorder" value="false" />
+        <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.OperationCellToken" id="1147787184719">
+          <property name="priority" value="0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776640248">
         <property name="drawBorder" value="false" />
@@ -4060,6 +4093,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1147776651718">
+    <property name="parseable" value="true" />
     <link role="conceptDeclaration" targetNodeId="17.1080223426719" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1147776654091">
       <property name="drawBorder" value="false" />
@@ -4073,6 +4107,9 @@
         <property name="substituteActionsFactoryId" value="BinaryOperation_Symbol" />
         <property name="text" value="||" />
         <property name="drawBorder" value="false" />
+        <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.OperationCellToken" id="1147787326441">
+          <property name="priority" value="1" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776654094">
         <property name="drawBorder" value="false" />
@@ -4082,6 +4119,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1147776662626">
+    <property name="parseable" value="true" />
     <link role="conceptDeclaration" targetNodeId="17.1081506773034" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1147776665359">
       <property name="drawBorder" value="false" />
@@ -4095,6 +4133,9 @@
         <property name="substituteActionsFactoryId" value="BinaryOperation_Symbol" />
         <property name="text" value="&lt;" />
         <property name="drawBorder" value="false" />
+        <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.OperationCellToken" id="1147787170296">
+          <property name="priority" value="0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776665362">
         <property name="drawBorder" value="false" />
@@ -4104,6 +4145,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1147776674379">
+    <property name="parseable" value="true" />
     <link role="conceptDeclaration" targetNodeId="17.1073239437375" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1147776676174">
       <property name="drawBorder" value="false" />
@@ -4117,6 +4159,9 @@
         <property name="substituteActionsFactoryId" value="BinaryOperation_Symbol" />
         <property name="text" value="!=" />
         <property name="drawBorder" value="false" />
+        <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.OperationCellToken" id="1147787373992">
+          <property name="priority" value="0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776676177">
         <property name="drawBorder" value="false" />

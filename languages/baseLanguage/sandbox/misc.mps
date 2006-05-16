@@ -53,8 +53,16 @@
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1144270434772">
                 <property name="name" value="ii" />
                 <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1144270434773" />
-                <node role="initializer" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1144270439697">
-                  <link role="variableDeclaration" targetNodeId="1144230443713" />
+                <node role="initializer" type="jetbrains.mps.baseLanguage.MinusExpression" id="1147788730561">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.Expression" id="1147788730562" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1147788730563">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1147788707578">
+                      <link role="variableDeclaration" targetNodeId="1144230437428" />
+                    </node>
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1147788728979">
+                      <link role="variableDeclaration" targetNodeId="1144367841673" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
