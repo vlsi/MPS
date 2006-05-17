@@ -25,6 +25,7 @@ import org.jdom.Element;
 
 import java.io.File;
 import java.util.*;
+import java.rmi.RemoteException;
 
 /**
  * Author: Sergey Dmitriev
