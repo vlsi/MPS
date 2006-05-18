@@ -10,10 +10,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.ide.IEditor;
 
+import javax.swing.*;
 import java.util.List;
 
-public class InspectorEditorComponent extends AbstractEditorComponent {
+public class InspectorEditorComponent extends AbstractEditorComponent implements IEditor {
 
   public InspectorEditorComponent() {
     super(null);
@@ -68,5 +70,28 @@ public class InspectorEditorComponent extends AbstractEditorComponent {
 
   public SNode getInspectedNode() {
     return getNode();
+  }
+
+
+  public AbstractEditorComponent getCurrentEditorComponent() {
+    return this;
+  }
+
+  public JComponent getComponent() {
+    return this;
+  }
+
+  public SNode getSNode() {
+    return getNode();
+  }
+
+
+  public <T> T get(Class<T> cls) {
+    T result =  super.get(cls);
+    if (result != null) return result;
+    if (cls == IEditor.class) {
+      return (T) this;
+    }
+    return null;
   }
 }
