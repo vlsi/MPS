@@ -620,7 +620,7 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1146864220741" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1130267662831">
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <property name="targetCardinality" value="1" />
       <property name="role" value="classifierType" />
       <property name="metaClass" value="aggregation" />
