@@ -1,6 +1,6 @@
-package jetbrains.mps.typesLanguage.evaluator;
+package jetbrains.mps.helgins.evaluator;
 
-import jetbrains.mps.typesLanguage.equation.NodeWrapperType;
+import jetbrains.mps.helgins.equation.NodeWrapperType;
 import jetbrains.mps.patterns.util.MatchingUtil;
 import jetbrains.mps.smodel.SNode;
 

@@ -1,13 +1,13 @@
-package jetbrains.mps.typesLanguage.evaluator;
+package jetbrains.mps.helgins.evaluator;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.typesLanguage.*;
-import jetbrains.mps.typesLanguage.inference.ContextsManager;
-import jetbrains.mps.typesLanguage.equation.EquationManager;
-import jetbrains.mps.typesLanguage.equation.TypeVariablesManager;
-import jetbrains.mps.typesLanguage.equation.NodeWrapperType;
+import jetbrains.mps.helgins.*;
+import jetbrains.mps.helgins.inference.ContextsManager;
+import jetbrains.mps.helgins.equation.EquationManager;
+import jetbrains.mps.helgins.equation.TypeVariablesManager;
+import jetbrains.mps.helgins.equation.NodeWrapperType;
 
 import java.util.*;
 

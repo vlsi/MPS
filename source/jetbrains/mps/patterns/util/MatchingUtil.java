@@ -5,7 +5,7 @@ import jetbrains.mps.patterns.*;
 import jetbrains.mps.annotations.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.typesLanguage.evaluator.NodeWrapper;
+import jetbrains.mps.helgins.evaluator.NodeWrapper;
 
 import java.util.*;
 

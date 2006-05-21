@@ -1,9 +1,8 @@
-package jetbrains.mps.typesLanguage.equation;
+package jetbrains.mps.helgins.equation;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.typesLanguage.evaluator.NodeWrapper;
-import jetbrains.mps.typesLanguage.evaluator.SubtypingManager;
-import jetbrains.mps.typesLanguage.RuntimeTypeVariable;
+import jetbrains.mps.helgins.evaluator.NodeWrapper;
+import jetbrains.mps.helgins.RuntimeTypeVariable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.EqualUtil;
