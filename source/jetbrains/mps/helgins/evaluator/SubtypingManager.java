@@ -1,8 +1,20 @@
 package jetbrains.mps.helgins.evaluator;
 
 import jetbrains.mps.helgins.equation.NodeWrapperType;
+import jetbrains.mps.helgins.equation.TypeVariablesManager;
+import jetbrains.mps.helgins.SubtypingRule;
+import jetbrains.mps.helgins.Rule;
+import jetbrains.mps.helgins.AnalyzedTermDeclaration;
+import jetbrains.mps.helgins.StatementList;
 import jetbrains.mps.patterns.util.MatchingUtil;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.formulaLanguage.evaluator.ExpressionContext;
+import jetbrains.mps.formulaLanguage.evaluator.ExpressionEvaluatorManager;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mpswiki.queryLanguage.VariableCondition;
+import jetbrains.mpswiki.queryLanguage.evaluator.ConditionMatcher;
+import jetbrains.mpswiki.queryLanguage.evaluator.InvalidConditionException;
 
 import java.util.*;
 
@@ -14,8 +26,9 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class SubtypingManager {
-  private Map<SNode, Set<SNode>> myTypesToAncestorsMap = new HashMap<SNode, Set<SNode>>();
-  private Map<SNode, Set<SNode>> myTypesToDescendantsMap = new HashMap<SNode, Set<SNode>>();
+  private static final Logger LOG = Logger.getLogger(SubtypingManager.class);
+
+  Set<SubtypingRule> myRules = new HashSet<SubtypingRule>();
 
   private static SubtypingManager ourInstance = new SubtypingManager();
 
@@ -27,27 +40,15 @@ public class SubtypingManager {
     return ourInstance;
   }
 
+  public void initiate(SModel typesModel) {
+    for (SubtypingRule rule : typesModel.getRoots(SubtypingRule.class)) {
+      myRules.add(rule);
+    }
+  }
+
   public void clear() {
-    myTypesToAncestorsMap.clear();
-    myTypesToDescendantsMap.clear();
+    myRules.clear();
   }
-
-
-  public void addAncestor(SNode subType, SNode superType) {
-    Set<SNode> ancestors = myTypesToAncestorsMap.get(subType);
-    if (ancestors == null) {
-      ancestors = new HashSet<SNode>();
-      myTypesToAncestorsMap.put(subType, ancestors);
-    }
-    ancestors.add(superType);
-    Set<SNode> descendants = myTypesToDescendantsMap.get(superType);
-    if (descendants == null) {
-      descendants = new HashSet<SNode>();
-      myTypesToDescendantsMap.put(superType, descendants);
-    }
-    descendants.add(subType);
-  }
-
 
   public boolean isSubtype(NodeWrapperType subtype, NodeWrapperType supertype) {
     NodeWrapperType subRepresentator = subtype.getRepresentator();
@@ -72,7 +73,7 @@ public class SubtypingManager {
     SNode superNode = superRepresentator.getSNode();
     while (!frontier.isEmpty()) {
       for (SNode node : frontier) {
-        Set<SNode> ancestors = myTypesToAncestorsMap.get(node);
+        Set<SNode> ancestors = collectSupertypes(node);
         if (ancestors == null) continue;
         if (ancestors.contains(superNode)) return true;
         newFrontier.addAll(ancestors);
@@ -81,5 +82,55 @@ public class SubtypingManager {
       newFrontier = new ArrayList<SNode>();
     }
     return false;
+  }
+
+
+
+  public Set<SNode> collectSupertypes(SNode term) {
+    Set<SNode> result = new HashSet<SNode>();
+    for (SubtypingRule rule : myRules) {
+      SNode supertype = getSupertype(term, rule);
+      if (supertype != null) {
+        result.add(supertype);
+      }
+    }
+    return result;
+  }
+
+  public SNode getSupertype(SNode term, SubtypingRule rule) {
+
+    /*
+    matching
+    */
+
+    if (rule.getApplicableNode() == null) return null;
+    AnalyzedTermDeclaration analyzedTermDeclaration =  rule.getApplicableNode();
+    VariableCondition termCondition = analyzedTermDeclaration.getCondition();
+    ConditionMatcher conditionMatcher;
+    try {
+      conditionMatcher = new ConditionMatcher(termCondition);
+    } catch(InvalidConditionException ex) {
+      error("invalid condition", ex);
+      return null;
+    }
+    ExpressionContext expressionContext = new ExpressionContext();
+
+    // fills the expression context if matches
+    if (!(conditionMatcher.matchesCondition(term, expressionContext))) return null;
+
+    //puts term variable into the expression context
+    expressionContext.putNode(analyzedTermDeclaration, term);
+
+    Object supertypeO = ExpressionEvaluatorManager.evaluate(expressionContext, rule.getSupertype());
+    if (supertypeO instanceof SNode) return (SNode) supertypeO;
+    return null;
+  }
+
+  private static void error(String s, Throwable t) {
+    if (t != null) {
+      LOG.error(s,t);
+    } else {
+      LOG.error(s);
+    }
   }
 }

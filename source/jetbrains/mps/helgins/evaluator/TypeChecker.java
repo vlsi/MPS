@@ -31,6 +31,7 @@ public class TypeChecker {
     SubtypingManager.getInstance().clear();
     TypeVariablesManager.getInstance().clearVariables();
     Interpretator.clearForTypesModel(typesModel);
+    SubtypingManager.getInstance().clear();
     ourRules.clear();
     ourCheckedNodes.clear();
   }
@@ -64,6 +65,10 @@ public class TypeChecker {
       ourRules.add(rule);
     }
 
+    // load subtyping rules
+    SubtypingManager.getInstance().initiate(typesModel);
+
+    // check types
     doCheckTypes(root);
 
     // main context
