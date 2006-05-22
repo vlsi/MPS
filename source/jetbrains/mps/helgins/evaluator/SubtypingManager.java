@@ -66,8 +66,20 @@ public class SubtypingManager {
     NodeWrapperType superRepresentator = supertype.getRepresentator();
 
     // transitivity: nominal equivalence
-    Set<SNode> ancestors = myTypesToAncestorsMap.get(subRepresentator.getSNode());
-    if (ancestors == null) return false;
-    return ancestors.contains(superRepresentator.getSNode());
+    List<SNode> frontier = new ArrayList<SNode>();
+    List<SNode> newFrontier = new ArrayList<SNode>();
+    frontier.add(subRepresentator.getSNode());
+    SNode superNode = superRepresentator.getSNode();
+    while (!frontier.isEmpty()) {
+      for (SNode node : frontier) {
+        Set<SNode> ancestors = myTypesToAncestorsMap.get(node);
+        if (ancestors == null) continue;
+        if (ancestors.contains(superNode)) return true;
+        newFrontier.addAll(ancestors);
+      }
+      frontier = newFrontier;
+      newFrontier = new ArrayList<SNode>();
+    }
+    return false;
   }
 }
