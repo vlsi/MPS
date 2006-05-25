@@ -113,8 +113,8 @@ public class CellLayout_Vertical extends AbstractCellLayout {
     if (usesBraces) {
       closingBrace.setY(y + height - closingBrace.getHeight());
       if (isGridLayout) {
-        width += closingBrace.getWidth();
         closingBrace.setX(x + width);
+        width += closingBrace.getWidth();
       } else {
         EditorCell lastCell = editorCells.lastContentCell();
         while (lastCell instanceof EditorCell_Collection) {
