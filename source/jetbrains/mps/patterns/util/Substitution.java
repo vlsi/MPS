@@ -1,9 +1,13 @@
 package jetbrains.mps.patterns.util;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.patterns.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.helgins.evaluator.NodeWrapper;
+import jetbrains.mps.annotations.AttributeConcept;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.Pair;
 
 import java.util.*;
 
@@ -27,6 +31,40 @@ public class Substitution {
   private Map<PatternVariableDeclaration, NodeWrapper> myVarsToNodeWrappers = new HashMap<PatternVariableDeclaration, NodeWrapper>();
   private Map<PatternVariableDeclaration, List<NodeWrapper>> myListVarsToNodeWrappers = new HashMap<PatternVariableDeclaration, List<NodeWrapper>>();
 
+  private Stack<Pair<Set, Integer>> myIsUsedInsideListIterating = new Stack<Pair<Set, Integer>>();
+
+  public void goInsideList(AttributeConcept listDecl) {
+    HashSet loopVarSet = new HashSet();
+    myIsUsedInsideListIterating.push(new Pair<Set, Integer>(loopVarSet, 0));
+    SNode attributedNode = listDecl.getAttributedNode();
+    for (AttributeConcept patternVar : (List<AttributeConcept>) (List) SModelUtil.allChildren(attributedNode, new Condition<SNode>() {
+      public boolean met(SNode object) {
+        return object instanceof PatternVariableDeclaration || object instanceof LinkPatternVariableDeclaration || object instanceof PropertyPatternVariableDeclaration;
+      }
+    })) {
+      loopVarSet.add(patternVar);
+    }
+  }
+
+  public void goOutsideList() {
+    myIsUsedInsideListIterating.pop();
+  }
+
+  private Set getCurrentLoopVarSet() {
+    if (myIsUsedInsideListIterating.isEmpty()) return null;
+    return myIsUsedInsideListIterating.peek().o1;
+  }
+
+  private int getCurrentLoopIndex() {
+    return myIsUsedInsideListIterating.peek().o2.intValue();
+  }
+
+  public void increaseCurrentLoopIndex() {
+    if (myIsUsedInsideListIterating.isEmpty()) return;
+    Pair<Set, Integer> pair = myIsUsedInsideListIterating.peek();
+    pair.o2 = pair.o2 + 1;
+  }
+
   public void bindNodeWithVar(PatternVariableDeclaration var, SNode node) {
     SNode oldNode = myVarsToNodes.get(var);
     if (oldNode != null) {
@@ -45,7 +83,19 @@ public class Substitution {
   }
 
   public SNode getNodeBindedWithVar(PatternVariableDeclaration var) {
-    return myVarsToNodes.get(var);
+    SNode result = myVarsToNodes.get(var);
+    if (result == null) {
+      Set loopVarSet = getCurrentLoopVarSet();
+      if (loopVarSet == null) return null;
+      if (loopVarSet.contains(var)) {
+        List<SNode> values = myListVarsToNodes.get(var);
+        int index = getCurrentLoopIndex();
+        if (values.size() <= index) return null;
+        return values.get(index);
+      }
+      return null;
+    }
+    return result;
   }
 
   public List<SNode> getNodesListBindedWithVar(PatternVariableDeclaration var) {
@@ -108,7 +158,17 @@ public class Substitution {
 
   public String getPropertyBindedWithVar(PropertyPatternVariableDeclaration var) {
     LazyPropertyValue lazyPropertyValue = myPropVarsToProperties.get(var);
-    if (lazyPropertyValue == null) return null;
+    if (lazyPropertyValue == null) {
+      Set loopVarSet = getCurrentLoopVarSet();
+      if (loopVarSet == null) return null;
+      if (loopVarSet.contains(var)) {
+        List<LazyPropertyValue> values = myListPropVarsToProperties.get(var);
+        int index = getCurrentLoopIndex();
+        if (values.size() <= index) return null;
+        return values.get(index).getValue();
+      }
+      return null;
+    }
     return lazyPropertyValue.getValue();
   }
 
@@ -143,7 +203,19 @@ public class Substitution {
   }
 
   public SNode getLinkTargetBindedWithVar(LinkPatternVariableDeclaration var) {
-    return myLinkVarsToNodes.get(var);
+    SNode linkTarget = myLinkVarsToNodes.get(var);
+    if (linkTarget == null) {
+      Set loopVarSet = getCurrentLoopVarSet();
+      if (loopVarSet == null) return null;
+      if (loopVarSet.contains(var)) {
+        List<SNode> values = myListLinkVarsToNodes.get(var);
+        int index = getCurrentLoopIndex();
+        if (values.size() <= index) return null;
+        return values.get(index);
+      }
+      return null;
+    }
+    return linkTarget;
   }
 
   public List<SNode> getLinkTargetsListBindedWithVar(LinkPatternVariableDeclaration var) {
