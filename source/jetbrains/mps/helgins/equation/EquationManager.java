@@ -2,6 +2,7 @@ package jetbrains.mps.helgins.equation;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.helgins.evaluator.NodeWrapper;
+import jetbrains.mps.helgins.evaluator.SubtypingManager;
 import jetbrains.mps.helgins.RuntimeTypeVariable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
@@ -51,6 +52,15 @@ public class EquationManager {
       }
     }
 
+    // process nominal subtyping
+    if (SubtypingManager.getInstance().isStrictSubtype(rhsRepresentator, lhsRepresentator)) {
+      processSubtyping(rhsRepresentator, lhsRepresentator);
+      return;
+    } else if (SubtypingManager.getInstance().isStrictSubtype(lhsRepresentator, rhsRepresentator)) {
+      processSubtyping(lhsRepresentator, rhsRepresentator);
+      return;
+    }
+
     // solve equation
     if (!compareNodes(rhsRepresentator.getNodeWrapper(), lhsRepresentator.getNodeWrapper())) {
       String error = "incompatible types: " + rhsRepresentator + " and " + lhsRepresentator; //todo more friendly error representation
@@ -64,6 +74,11 @@ public class EquationManager {
     for (Pair<NodeWrapperType, NodeWrapperType> eq : childEQs) {
       addEquation(eq.o1, eq.o2);
     }
+  }
+
+  private void processSubtyping(NodeWrapperType subType, NodeWrapperType superType) {
+    superType.setParent(subType); // hmm... is it correct?
+    subType.addAllVarSetsOfSourceAndRemoveSourceFromThem(superType);
   }
 
   private void processEquation(NodeWrapperType var, NodeWrapperType type) {
