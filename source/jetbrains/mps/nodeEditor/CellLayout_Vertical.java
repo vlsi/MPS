@@ -30,6 +30,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
     final int x = usesBraces ? editorCells.getX() + openingBrace.getWidth() : editorCells.getX();
     final int y = editorCells.getY();
     int lastCellWidth = 0;
+    int braceIndent = 0;
     if (editorCells.isDrawBrackets()) {
       width += EditorCell_Collection.BRACKET_WIDTH * 2;
     }
@@ -41,18 +42,19 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       }
       editorCell.setY(y + height);
       editorCell.relayout();
-      lastCellWidth = editorCell.getWidth();
       int cellHeight = editorCell.getHeight();
-      width = Math.max(width, lastCellWidth);
+      int indent = EditorUtil.getBracesIndent(editorCell);
+      braceIndent = Math.max(indent, braceIndent);
       height += cellHeight;
+    }
+    for (EditorCell editorCell : editorCells.contentCells()) {
+       lastCellWidth = editorCell.getWidth();
+       int indent = EditorUtil.getBracesIndent(editorCell);
+       int delta = braceIndent - indent;
+       width = Math.max(width, lastCellWidth + delta);
     }
     if (editorCells.isDrawBrackets()) {
       width += EditorCell_Collection.BRACKET_WIDTH * 2;
-    }
-    int braceIndent = 0;
-    for (EditorCell editorCell : editorCells.contentCells()) {
-      int indent = EditorUtil.getBracesIndent(editorCell);
-      braceIndent = Math.max(indent, braceIndent);
     }
     editorCells.setArtificialBracesIndent(braceIndent);
     for (EditorCell editorCell : editorCells.contentCells()) {
