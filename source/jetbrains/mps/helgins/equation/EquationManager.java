@@ -5,7 +5,6 @@ import jetbrains.mps.helgins.evaluator.NodeWrapper;
 import jetbrains.mps.helgins.evaluator.SubtypingManager;
 import jetbrains.mps.helgins.RuntimeTypeVariable;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.Pair;
 
@@ -32,7 +31,7 @@ public class EquationManager {
     return ourInstance;
   }
 
-  public void addEquation(NodeWrapperType rhs, NodeWrapperType lhs) {
+  public void addEquation(NodeWrapperType lhs, NodeWrapperType rhs) {
     NodeWrapperType rhsRepresentator = rhs.getRepresentator();
     NodeWrapperType lhsRepresentator = lhs.getRepresentator();
 
@@ -64,15 +63,12 @@ public class EquationManager {
     // solve equation
     if (!compareNodes(rhsRepresentator.getNodeWrapper(), lhsRepresentator.getNodeWrapper())) {
       String error = "incompatible types: " + rhsRepresentator + " and " + lhsRepresentator; //todo more friendly error representation
-      SModel typesModel = rhsRepresentator.getSNode().getModel(); // todo make sure it's the model we need or it's harmless to use it
-      addEquation(rhs, NodeWrapperType.getType(TypeVariablesManager.getInstance().createRuntimeErrorType(typesModel, error)));
-      addEquation(lhs, NodeWrapperType.getType(TypeVariablesManager.getInstance().createRuntimeErrorType(typesModel, error)));
-      //it's not very good anyway :(
+      processErrorEquation(lhsRepresentator, rhsRepresentator, error);
       return;
     }
     Set<Pair<NodeWrapperType, NodeWrapperType>> childEQs = createChildEquations(rhsRepresentator.getNodeWrapper(), lhsRepresentator.getNodeWrapper());
     for (Pair<NodeWrapperType, NodeWrapperType> eq : childEQs) {
-      addEquation(eq.o1, eq.o2);
+      addEquation(eq.o2, eq.o1);
     }
   }
 
@@ -84,6 +80,12 @@ public class EquationManager {
   private void processEquation(NodeWrapperType var, NodeWrapperType type) {
     var.setParent(type);
     type.addAllVarSetsOfSourceAndRemoveSourceFromThem(var);
+  }
+
+  private void processErrorEquation(NodeWrapperType type, NodeWrapperType error, String errorText) {
+    error.setParent(type); //type
+    error.setErrorString(errorText);
+    type.addAllVarSetsOfSourceAndRemoveSourceFromThem(error); // todo report error
   }
 
   public void clear() {
