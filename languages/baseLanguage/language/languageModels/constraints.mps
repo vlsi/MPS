@@ -7,9 +7,9 @@
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
   <import index="3" modelUID="jetbrains.mps.util@java_stub" />
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraintsSet" id="1147487178789">
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraintSet" id="1147487178789">
     <property name="name" value="BL_NodePropertyConstraints" />
-    <node role="nodePropertyConstraints" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraints" id="1147487185915">
+    <node role="nodePropertyConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint" id="1147487185915">
       <link role="applicableConcept" targetNodeId="1.1107535904670" />
       <link role="applicableProperty" targetNodeId="2.1078489098626" />
       <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_PropertyGetter" id="1147487199103">
@@ -53,7 +53,7 @@
         </node>
       </node>
     </node>
-    <node role="nodePropertyConstraints" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraints" id="1147487410154">
+    <node role="nodePropertyConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint" id="1147487410154">
       <link role="applicableConcept" targetNodeId="1.1068580123140" />
       <link role="applicableProperty" targetNodeId="1.1083152972672" />
       <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_PropertyGetter" id="1147487421436">

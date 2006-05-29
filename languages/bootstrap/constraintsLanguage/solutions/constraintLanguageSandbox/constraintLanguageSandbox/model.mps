@@ -4,9 +4,9 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="jetbrains.mps.smodel.constraints@java_stub" />
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraintsSet" id="1147469608525">
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraintSet" id="1147469608525">
     <property name="name" value="aaa" />
-    <node role="nodePropertyConstraints" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraints" id="1147469612213" />
+    <node role="nodePropertyConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint" id="1147469612213" />
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1147477438646">
     <property name="name" value="AAA" />

@@ -24,6 +24,7 @@ public class ModelConstraintsManager {
 
   private Map<String, List<IModelConstraints>> myAddedLanguageNamespaces = new HashMap<String, List<IModelConstraints>>();
   private Map<String, INodePropertyGetter> myNodePropertyGettersMap = new HashMap<String, INodePropertyGetter>();
+  private Map<String, INodeReferentSearchScopeProvider> myNodeReferentSearchScopeProvidersMap = new HashMap<String, INodeReferentSearchScopeProvider>();
 
   public ModelConstraintsManager() {
     MPSModuleRepository.getInstance().addModuleRepositoryListener(new ModuleRepositoryListener() {
@@ -58,6 +59,19 @@ public class ModelConstraintsManager {
     myNodePropertyGettersMap.remove(conceptFqName + "#" + propertyName);
   }
 
+  public void registerNodeReferentSearchScopeProvider(String conceptFqName, String referenceRole, INodeReferentSearchScopeProvider provider) {
+    String key = conceptFqName + "#" + referenceRole;
+    if (!myNodeReferentSearchScopeProvidersMap.containsKey(key)) {
+      myNodeReferentSearchScopeProvidersMap.put(key, provider);
+    } else {
+      throw new RuntimeException("search scope provider is alredy registered for key '" + key + "' : " + myNodeReferentSearchScopeProvidersMap.get(key));
+    }
+  }
+
+  public void unRegisterNodeReferentSearchScopeProvider(String conceptFqName, String referenceRole) {
+    myNodeReferentSearchScopeProvidersMap.remove(conceptFqName + "#" + referenceRole);
+  }
+
   public INodePropertyGetter getNodePropertyGetter(SNode node, String propertyName) {
     String namespace = NameUtil.nodeLanguageNamespace(node);
     // 'bootstrap' properties
@@ -81,6 +95,16 @@ public class ModelConstraintsManager {
       INodePropertyGetter getter = myNodePropertyGettersMap.get(conceptFqName + "#" + propertyName);
       if (getter != null) return getter;
       concept = concept.getExtends();
+    }
+    return null;
+  }
+
+  public INodeReferentSearchScopeProvider getNodeReferentSearchScopeProvider(ConceptDeclaration nodeConcept, String referentRole) {
+    while (nodeConcept != null) {
+      String conceptFqName = NameUtil.nodeFQName(nodeConcept);
+      INodeReferentSearchScopeProvider provider = myNodeReferentSearchScopeProvidersMap.get(conceptFqName + "#" + referentRole);
+      if (provider != null) return provider;
+      nodeConcept = nodeConcept.getExtends();
     }
     return null;
   }
