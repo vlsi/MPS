@@ -4,15 +4,13 @@ import jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActions;
 import jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
+import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethod;
-import jetbrains.mps.ide.IStatus;
 
 import java.util.*;
 
@@ -47,8 +45,8 @@ import java.util.*;
     }
 
     // add actions from 'primary' language
-    String referenceRole = linkDeclaration.getRole();
-    List<ReferentSubstituteActionsBuilder> primaryBuilders = getActionBuilders(sourceNode, primaryLanguage, sourceConcept, referenceRole, context);
+    String genuineReferenceRole = SModelUtil.getGenuineLinkRole(linkDeclaration);
+    List<ReferentSubstituteActionsBuilder> primaryBuilders = getActionBuilders(sourceNode, primaryLanguage, sourceConcept, genuineReferenceRole, context);
     if (primaryBuilders.isEmpty()) {
       // if 'primary' language hasn't defined actions for that target - create 'default' actions
       resultActions = createPrimaryReferentSubstituteActions(sourceNode, currentReferent, linkDeclaration, TRUE_CONDITION, scope);
@@ -65,7 +63,7 @@ import java.util.*;
       if (language == primaryLanguage) {
         continue;
       }
-      extendedBuilders.addAll(getActionBuilders(sourceNode, language, sourceConcept, referenceRole, context));
+      extendedBuilders.addAll(getActionBuilders(sourceNode, language, sourceConcept, genuineReferenceRole, context));
     }
 
     // for each builder create actions and apply all filters
@@ -116,7 +114,8 @@ import java.util.*;
     if (applicableLink == null) {
       return false;
     }
-    return referenceRole.equals(applicableLink.getRole()) &&
+    String applicableRole = SModelUtil.getGenuineLinkRole(applicableLink);
+    return referenceRole.equals(applicableRole) &&
             (applicableSourceConcept == null || SModelUtil.isAssignableConcept(sourceConcept, applicableSourceConcept));
   }
 
@@ -126,21 +125,13 @@ import java.util.*;
       return Collections.emptyList();
     }
 
-    // test
-    {
-      ConceptDeclaration referenceNodeConcept = SModelUtil.getConceptDeclaration(sourceNode, scope);
-      INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsManager.getInstance().getNodeReferentSearchScopeProvider(referenceNodeConcept, linkDeclaration.getRole());
-      if (scopeProvider != null) {
-        String errorDescr = scopeProvider.canCreateNodeReferentSearchScope(sourceNode.getModel(), sourceNode.getParent(), sourceNode, referenceNodeConcept, linkDeclaration.getRole(), scope);
-        if (errorDescr != null) return Collections.emptyList();
-
-        ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(sourceNode.getModel(), sourceNode.getParent(), sourceNode, referenceNodeConcept, linkDeclaration.getRole(), scope);
-        return createDefaultReferentSubstituteActions(sourceNode, currentReferent, linkDeclaration, searchScope, filterCondition, scope);
-      }
+    ConceptDeclaration referenceNodeConcept = SModelUtil.getConceptDeclaration(sourceNode, scope);
+    IStatus status = ModelConstraintsUtil.getReferentSearchScope(sourceNode.getParent(), sourceNode, referenceNodeConcept, linkDeclaration, scope);
+    if (status.isError()) {
+      LOG.error("Couldn't create search scope : " + status.getMessage());
+      return Collections.emptyList();
     }
-
-    //todo i changed roots only to false because OWL and MSP4Web depends on this behaviour (kostik)
-    ISearchScope searchScope = SModelSearchUtil.createModelAndImportedModelsScope(sourceNode.getModel(), false, scope);
+    ISearchScope searchScope = (ISearchScope) status.getUserObject();
     return createDefaultReferentSubstituteActions(sourceNode, currentReferent, linkDeclaration, searchScope, filterCondition, scope);
   }
 
@@ -166,7 +157,21 @@ import java.util.*;
   // ----------------------------------
 
   private static List<INodeSubstituteAction> invokeActionBulder(ReferentSubstituteActionsBuilder builder, SNode sourceNode, SNode currentReferent, LinkDeclaration linkDeclaration, IOperationContext context) {
-    ISearchScope searchScope = invokeSearchScopeProvider(builder, sourceNode, context);
+    ISearchScope searchScope = null;
+    // try optional search scope provider
+    if (builder.getSearchScopeProviderAspectId() != null) {
+      searchScope = invokeSearchScopeProvider(builder, sourceNode, context);
+    } else {
+      // default scope
+      ConceptDeclaration referenceNodeConcept = SModelUtil.getConceptDeclaration(sourceNode, context.getScope());
+      IStatus status = ModelConstraintsUtil.getReferentSearchScope(sourceNode.getParent(), sourceNode, referenceNodeConcept, linkDeclaration, context.getScope());
+      if (status.isError()) {
+        LOG.error("Couldn't create search scope : " + status.getMessage());
+        return Collections.emptyList();
+      }
+      searchScope = (ISearchScope) status.getUserObject();
+    }
+
     if (searchScope == null) {
       return Collections.emptyList();
     }
@@ -193,11 +198,6 @@ import java.util.*;
 
   private static ISearchScope invokeSearchScopeProvider(ReferentSubstituteActionsBuilder builder, SNode sourceNode, IOperationContext context) {
     String searchScopeQueryMethodId = builder.getSearchScopeProviderAspectId();
-    // search scope is optional
-    if (searchScopeQueryMethodId == null) {
-      return SModelSearchUtil.createModelAndImportedModelsScope(sourceNode.getModel(), true, context.getScope());
-    }
-
     Object[] args1 = new Object[]{sourceNode, context};
     Object[] args2 = new Object[]{sourceNode, context.getScope()};
     String methodName = "referentSubstituteActionsBuilder_SearchScope_" + searchScopeQueryMethodId;
