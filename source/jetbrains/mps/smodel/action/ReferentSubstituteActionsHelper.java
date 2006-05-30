@@ -6,10 +6,13 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethod;
+import jetbrains.mps.ide.IStatus;
 
 import java.util.*;
 
@@ -121,6 +124,19 @@ import java.util.*;
     final ConceptDeclaration referentConcept = linkDeclaration.getTarget();
     if (referentConcept == null) {
       return Collections.emptyList();
+    }
+
+    // test
+    {
+      ConceptDeclaration referenceNodeConcept = SModelUtil.getConceptDeclaration(sourceNode, scope);
+      INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsManager.getInstance().getNodeReferentSearchScopeProvider(referenceNodeConcept, linkDeclaration.getRole());
+      if (scopeProvider != null) {
+        IStatus status = scopeProvider.canCreateNodeReferentSearchScope(sourceNode.getModel(), sourceNode.getParent(), sourceNode, referenceNodeConcept, linkDeclaration.getRole(), scope);
+        if (status.isError()) return Collections.emptyList();
+
+        ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(sourceNode.getModel(), sourceNode.getParent(), sourceNode, referenceNodeConcept, linkDeclaration.getRole(), scope);
+        return createDefaultReferentSubstituteActions(sourceNode, currentReferent, linkDeclaration, searchScope, filterCondition, scope);
+      }
     }
 
     //todo i changed roots only to false because OWL and MSP4Web depends on this behaviour (kostik)
