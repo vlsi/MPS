@@ -59,9 +59,15 @@
               <property name="name" value="referenceLinks" />
               <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1148949202993">
                 <link role="classifier" extResolveInfo="6.[Classifier]List" />
+                <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1149008378731">
+                  <link role="classifier" extResolveInfo="9.[Classifier]SNode" />
+                </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.NewExpression" id="1148949215089">
                 <link role="baseMethodDeclaration" extResolveInfo="6.constructor [Classifier]LinkedList[ConstructorDeclaration] ()" />
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1149008388186">
+                  <link role="classifier" extResolveInfo="9.[Classifier]SNode" />
+                </node>
               </node>
             </node>
           </node>
@@ -141,16 +147,8 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1148949042986">
             <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1148949051381">
               <link role="baseMethodDeclaration" extResolveInfo="7.constructor [Classifier]SimpleSearchScope[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [SNode]&gt;]))" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1148949109233">
-                <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1148949113283">
-                  <link role="classifier" extResolveInfo="6.[Classifier]List" />
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1148949138582">
-                    <link role="classifier" extResolveInfo="9.[Classifier]SNode" />
-                  </node>
-                </node>
-                <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1148949836527">
-                  <link role="variableDeclaration" targetNodeId="1148949202992" />
-                </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1148949836527">
+                <link role="variableDeclaration" targetNodeId="1148949202992" />
               </node>
             </node>
           </node>
