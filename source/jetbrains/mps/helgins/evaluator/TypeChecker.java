@@ -54,11 +54,6 @@ public class TypeChecker {
       TypeVariablesManager.getInstance().registerNewVarset(varset);
     }
 
-    //register equations (not supported)
-    for (EquationSetDeclaration equationSet : typesModel.getRoots(EquationSetDeclaration.class)) {
- //     EquationManager.getInstance().registerNewEquationSet(equationSet.getName());
-    }
-
     // load rules
     ourRules = new ArrayList<Rule>();
     for (Rule rule : typesModel.getRoots(Rule.class)) {
