@@ -6,6 +6,9 @@
   <actions>
     <model modelUID="jetbrains.mps.bootstrap.actionsLanguage.actions" />
   </actions>
+  <constraints>
+    <model modelUID="jetbrains.mps.bootstrap.actionsLanguage.constraints" />
+  </constraints>
   <editor>
     <model modelUID="jetbrains.mps.bootstrap.actionsLanguage.editor" />
   </editor>

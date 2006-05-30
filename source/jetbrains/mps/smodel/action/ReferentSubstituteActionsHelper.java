@@ -131,8 +131,8 @@ import java.util.*;
       ConceptDeclaration referenceNodeConcept = SModelUtil.getConceptDeclaration(sourceNode, scope);
       INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsManager.getInstance().getNodeReferentSearchScopeProvider(referenceNodeConcept, linkDeclaration.getRole());
       if (scopeProvider != null) {
-        IStatus status = scopeProvider.canCreateNodeReferentSearchScope(sourceNode.getModel(), sourceNode.getParent(), sourceNode, referenceNodeConcept, linkDeclaration.getRole(), scope);
-        if (status.isError()) return Collections.emptyList();
+        String errorDescr = scopeProvider.canCreateNodeReferentSearchScope(sourceNode.getModel(), sourceNode.getParent(), sourceNode, referenceNodeConcept, linkDeclaration.getRole(), scope);
+        if (errorDescr != null) return Collections.emptyList();
 
         ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(sourceNode.getModel(), sourceNode.getParent(), sourceNode, referenceNodeConcept, linkDeclaration.getRole(), scope);
         return createDefaultReferentSubstituteActions(sourceNode, currentReferent, linkDeclaration, searchScope, filterCondition, scope);

@@ -141,8 +141,8 @@
     <link role="extends" targetNodeId="1148934493876" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1148934343084">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" />
-      <node role="target" type="jetbrains.mps.baseLanguage.ClassifierType" id="1148934929957">
-        <link role="classifier" extResolveInfo="10.[Classifier]IStatus" />
+      <node role="target" type="jetbrains.mps.baseLanguage.ClassifierType" id="1149012430482">
+        <link role="classifier" extResolveInfo="5.[Classifier]String" />
       </node>
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1148934343108">
