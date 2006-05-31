@@ -531,6 +531,10 @@
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1115766355096">
     <property name="name" value="TESTMethodCalls" />
     <link role="extendedClass" targetNodeId="1115766267843" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1149095908682">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1149095908683" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1149095908684" />
+    </node>
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1141251199520">
       <property name="name" value="int_field1" />
       <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1141251204725" />
