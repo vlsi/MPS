@@ -275,7 +275,7 @@ public class EditorManager {
     EditorCell resultCell;
     CellInfo rtHintCellInfo;
     Object anchorId = node.getUserObject(RIGHT_TRANSFORM_HINT_ANCHOR_CELL_ID);
-    EditorCell anchorCell = context.getNodeEditorComponent().findCellWithId(nodeCell, anchorId.toString());
+    EditorCell anchorCell = anchorId == null ? null : context.getNodeEditorComponent().findCellWithId(nodeCell, anchorId.toString());
     if (anchorCell != null && anchorCell != nodeCell) {
       EditorCell_Collection cellCollection = anchorCell.getParent();
       cellCollection.addCellAt(cellCollection.indexOf(anchorCell) + 1, rightTransformHintCell);
@@ -309,6 +309,7 @@ public class EditorManager {
     CommandProcessor.instance().invokeLater(new Runnable() {
       public void run() {
         AbstractEditorComponent nodeEditorComponent = context.getNodeEditorComponent();
+        if (cellInfoToSelect == null) return;
         EditorCell newlySelectedCell = cellInfoToSelect.findCell(nodeEditorComponent);
         EditorCell nextSelectableCell = nodeEditorComponent.findNextSelectableCell(newlySelectedCell);
         if (nextSelectableCell != null) {
@@ -327,7 +328,7 @@ public class EditorManager {
   }
 
 
-  private static class EditorCell_RTHint extends EditorCell_Constant {
+  /*package*/ static class EditorCell_RTHint extends EditorCell_Constant {
 
     private EditorCell myAnchorCell;
 

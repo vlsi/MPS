@@ -371,6 +371,24 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1149080449740">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1149080449741">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1149080449742" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1149087339164">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1149087339165">
+            <property name="name" value="e" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ArrayType" id="1149087345325">
+              <node role="componentType" type="jetbrains.mps.baseLanguage.IntegerType" id="1149087339166" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1149087416656">
+              <link role="classifier" extResolveInfo="2.[Classifier]System" />
+              <link role="variableDeclaration" extResolveInfo="2.static field ([Classifier]System).([StaticFieldDeclaration]out : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [PrintStream]))" />
+            </node>
+          </node>
+        </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1121253852508" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1121253857102">

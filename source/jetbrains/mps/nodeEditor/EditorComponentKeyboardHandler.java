@@ -195,6 +195,12 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     boolean keyEventProcessed = false;
     if (selectedCell.processKeyPressed(keyEvent)) {
       keyEventProcessed = true;
+      if (!EditorUtil.isValidCell(selectedCell)) {
+        String pattern = ((EditorCell_Label)selectedCell).getRenderedText();
+        if (selectedCell instanceof EditorCell_Label) {
+          IntelligentInputUtil.processCell((EditorCell_Label) selectedCell, editorContext, pattern);
+        }
+      }
     }
     return keyEventProcessed;
   }
