@@ -16,16 +16,6 @@
       <link role="applicableSourceConcept" targetNodeId="1.1071489288298" />
       <link role="applicableLink" targetNodeId="1.1071599698500" />
     </node>
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1146703376974">
-      <property name="searchScopeProviderAspectId" value="ParentConceptDeclaration_Hierarchy" />
-      <link role="applicableSourceConcept" targetNodeId="1.1105725498741" />
-      <link role="applicableLink" targetNodeId="1.1105725523273" />
-    </node>
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1146703759413">
-      <property name="searchScopeProviderAspectId" value="ParentConceptDeclaration_Hierarchy" />
-      <link role="applicableSourceConcept" targetNodeId="1.1105725638761" />
-      <link role="applicableLink" targetNodeId="1.1105725659058" />
-    </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141871391304">
       <property name="searchScopeProviderAspectId" value="ParentConceptDeclaration_Hierarchy" />
       <link role="applicableSourceConcept" targetNodeId="1.1105736889287" />

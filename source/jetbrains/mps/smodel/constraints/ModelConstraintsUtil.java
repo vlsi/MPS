@@ -36,12 +36,12 @@ public class ModelConstraintsUtil {
     String genuineReferenceRole = SModelUtil.getGenuineLinkRole(referenceLinkDeclaration);
     INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsManager.getInstance().getNodeReferentSearchScopeProvider(referenceNodeConcept, genuineReferenceRole);
     if (scopeProvider != null) {
-      String errorDescr = scopeProvider.canCreateNodeReferentSearchScope(model, enclosingNode, referenceNode, referenceNodeConcept, genuineReferenceRole, scope);
+      String errorDescr = scopeProvider.canCreateNodeReferentSearchScope(model, enclosingNode, referenceNode, scope);
       if (errorDescr != null) {
         return new Status.ERROR(errorDescr);
       }
 
-      searchScope = scopeProvider.createNodeReferentSearchScope(model, enclosingNode, referenceNode, referenceNodeConcept, genuineReferenceRole, scope);
+      searchScope = scopeProvider.createNodeReferentSearchScope(model, enclosingNode, referenceNode, scope);
     } else {
       // default search scope
       searchScope = SModelSearchUtil.createModelAndImportedModelsScope(model, false, scope);
