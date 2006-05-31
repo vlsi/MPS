@@ -462,6 +462,15 @@
         <root url="jar://$PROJECT_DIR$/lib/jena/jena-src.zip!/" />
       </SOURCES>
     </library>
+    <library name="Eclipse-compiler">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/eclipse-compiler/ecj.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/eclipse-compiler/ecjsrc.zip!/" />
+      </SOURCES>
+    </library>
   </component>
   <component name="org.tmatesoft.tmate.projectComponent" />
   <component name="uidesigner-configuration">
