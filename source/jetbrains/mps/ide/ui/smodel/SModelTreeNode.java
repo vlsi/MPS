@@ -19,6 +19,7 @@ import jetbrains.mps.annotations.AttributeConcept;
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
+import javax.swing.tree.DefaultMutableTreeNode;
 import java.util.*;
 import java.awt.Color;
 
@@ -129,6 +130,25 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myModelDescriptor.getSModel().removeSModelCommandListener(myModelListener);
   }
 
+  private boolean needChangeRootNodePosition(SModelPropertyEvent e) {
+    MPSTreeNode rootNode = findExactChildWith(e.getNode());
+    String newName = rootNode.toString();
+    if (newName == null) return true;
+    boolean result = false;
+    DefaultMutableTreeNode parent = this; //(DefaultMutableTreeNode) rootNode.getParent();
+    MPSTreeNode prevNode = (MPSTreeNode) parent.getChildBefore(rootNode);
+    MPSTreeNode nextNode = (MPSTreeNode) parent.getChildAfter(rootNode);
+    String prevName = prevNode == null ? null : prevNode.toString();
+    String nextName = nextNode == null ? null : nextNode.toString();
+    if (prevName != null) {
+      result = prevName.compareTo(newName) > 0;
+    }
+    if (nextName != null) {
+      result = result || nextName.compareTo(newName) < 0;
+    }
+    return result;
+  }
+
   private class MyModelListener implements SModelCommandListener {
     public MyModelListener() {
     }
@@ -147,7 +167,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
             }
 
             public void visitPropertyEvent(SModelPropertyEvent event) {
-              if (event.getNode().isRoot()) {
+              if (event.getNode().isRoot() && needChangeRootNodePosition(event)) {
                 SModelTreeNode.this.update();
                 updateTreeWithRoot(event.getNode());
                 return;
@@ -169,7 +189,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
           }
 
         }
-      }, EventUtil.isDramaticalChange(events));
+      }, EventUtil.isDramaticalChange(events) || EventUtil.isRootNameChange(events));
     }
 
     private void updateTreeWithRoot(SNode node) {
@@ -180,6 +200,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
       treeModel.nodeStructureChanged((TreeNode) treeModel.getRoot());
     }
+
+
   }
 
 }

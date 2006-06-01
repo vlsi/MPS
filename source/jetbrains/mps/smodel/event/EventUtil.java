@@ -8,14 +8,17 @@ import java.util.List;
 public class EventUtil {
   public static boolean isDramaticalChange(List<SModelEvent> events) {
     for (SModelEvent e : events) {
-      if (e instanceof SModelChildEvent) return true;
-      if (e instanceof SModelRootEvent) return true;
-      if (e instanceof SModelReferenceEvent) return true;
-      if (e instanceof SModelAttributeEvent) return true;
-      if (e instanceof SModelPropertyEvent) {
-        SModelPropertyEvent event = (SModelPropertyEvent) e;
-        if (event.getNode().isRoot()) return true;
-      }
+       if (e instanceof SModelChildEvent) return true;
+       if (e instanceof SModelRootEvent) return true;
+       if (e instanceof SModelReferenceEvent) return true;
+       if (e instanceof SModelAttributeEvent) return true;
+     }
+    return false;
+  }
+
+  public static boolean isRootNameChange(List<SModelEvent> events) {
+    for (SModelEvent e : events) {
+      if (e instanceof SModelPropertyEvent && ((SModelPropertyEvent)e).getNode().isRoot()) return true;
     }
     return false;
   }
