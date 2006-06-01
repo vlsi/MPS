@@ -6,6 +6,9 @@
   <actions>
     <model modelUID="jetbrains.mps.transformation.TLBase.actions" />
   </actions>
+  <constraints>
+    <model modelUID="jetbrains.mps.transformation.TLBase.constraints" />
+  </constraints>
   <editor>
     <model modelUID="jetbrains.mps.transformation.TLBase.editor" />
   </editor>
