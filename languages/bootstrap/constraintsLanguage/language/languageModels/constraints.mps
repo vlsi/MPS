@@ -14,7 +14,7 @@
   <import index="9" modelUID="jetbrains.mps.smodel@java_stub" />
   <import index="10" modelUID="java.lang@java_stub" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraintSet" id="1148948177828">
-    <property name="name" value="CSTRL_NodeReferentConstraints" />
+    <property name="name" value="CSTRL_reference" />
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1149009760360">
       <link role="applicableConcept" targetNodeId="1.1147467115080" />
       <link role="applicableLink" targetNodeId="1.1147467295099" />

@@ -8,7 +8,7 @@
   <import index="2" modelUID="jetbrains.mps.smodel.search@java_stub" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage@java_stub" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraintSet" id="1149032510735">
-    <property name="name" value="STRL_NodeReferentConstraints" />
+    <property name="name" value="STRL_reference" />
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1149109145749">
       <link role="applicableConcept" targetNodeId="1.1071489288298" />
       <link role="applicableLink" targetNodeId="1.1071599698500" />

@@ -12,7 +12,7 @@
   <import index="7" modelUID="jetbrains.mps.bootstrap.structureLanguage@java_stub" />
   <import index="8" modelUID="jetbrains.mps.smodel@java_stub" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraintSet" id="1149011699843">
-    <property name="name" value="ACTNL_NodeReferentConstraints" />
+    <property name="name" value="ACTL_reference" />
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1149011735501">
       <link role="applicableConcept" targetNodeId="1.1141170287031" />
       <link role="applicableLink" targetNodeId="1.1141256287231" />

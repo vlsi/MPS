@@ -7,7 +7,7 @@
   <import index="1" modelUID="jetbrains.mps.transformation.TLBase.structure" />
   <import index="2" modelUID="jetbrains.mps.transformation.TLBase.constraints@java_stub" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraintSet" id="1149121320241">
-    <property name="name" value="TL_ReferentConstraints" />
+    <property name="name" value="TL_reference" />
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1149121363367">
       <link role="applicableConcept" targetNodeId="1.1095416572297" />
       <link role="applicableLink" targetNodeId="1.1095417265990" />
