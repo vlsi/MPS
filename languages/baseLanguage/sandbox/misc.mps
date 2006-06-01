@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.sandbox.misc">
   <language namespace="jetbrains.mps.baseLanguage" />
-  <maxImportIndex value="1" />
+  <maxImportIndex value="2" />
   <import index="1" modelUID="java.lang@java_stub" />
+  <import index="2" modelUID="java.io@java_stub" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1144230421203">
     <property name="name" value="Test" />
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1144367869245">
@@ -40,22 +41,33 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1144230443712">
-          <node role="variable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1144230443713">
-            <property name="name" value="it" />
-            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1144230446389" />
-          </node>
-          <node role="iterable" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1144230453733">
-            <link role="variableDeclaration" targetNodeId="1144230437428" />
-          </node>
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1144230443716">
-            <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1144270434771">
-              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1144270434772">
-                <property name="name" value="ii" />
-                <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1144270434773" />
-                <node role="initializer" type="jetbrains.mps.baseLanguage.Expression" id="1147793161626" />
-              </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1149153108889">
+    <property name="name" value="Main" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1149153116375">
+      <property name="name" value="main" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1149153118378" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1149153116377">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1149153140523">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1149153155965">
+            <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]PrintStream).([InstanceMethodDeclaration]println((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1149153140524">
+              <link role="classifier" extResolveInfo="1.[Classifier]System" />
+              <link role="variableDeclaration" extResolveInfo="1.static field ([Classifier]System).([StaticFieldDeclaration]out : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [PrintStream]))" />
             </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1149153157123">
+              <property name="value" value="42" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1149153129176">
+        <property name="name" value="args" />
+        <node role="type" type="jetbrains.mps.baseLanguage.ArrayType" id="1149153134694">
+          <node role="componentType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1149153129177">
+            <link role="classifier" extResolveInfo="1.[Classifier]String" />
           </node>
         </node>
       </node>

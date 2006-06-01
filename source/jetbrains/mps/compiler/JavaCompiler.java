@@ -6,6 +6,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.util.*;
 import java.io.PrintWriter;
+import java.io.File;
 
 import org.eclipse.jdt.internal.compiler.batch.CompilationUnit;
 import org.eclipse.jdt.internal.compiler.*;
@@ -18,9 +19,8 @@ import org.eclipse.jdt.internal.compiler.env.INameEnvironment;
 import org.eclipse.jdt.internal.compiler.env.NameEnvironmentAnswer;
 
 public class JavaCompiler {
-
   private MapClassLoader myClassLoader = new MapClassLoader();
-  private Set<CompilationUnit> myCompilationUnits = new HashSet<CompilationUnit>();
+  private Map<String, CompilationUnit> myCompilationUnits = new HashMap<String, CompilationUnit>();
   private IClassPathItem myClassPathItem;
 
   public JavaCompiler() {
@@ -31,77 +31,14 @@ public class JavaCompiler {
     myClassPathItem = item;
   }
 
-
-  public void addSource(String text, String fileName) {
-    myCompilationUnits.add(new CompilationUnit(text.toCharArray(), fileName, "UTF-8"));
+  public void addSource(String text, String classFqName) {
+    CompilationUnit compilationUnit = new CompilationUnit(text.toCharArray(), classFqName.replace(".", File.separator) + ".java", "UTF-8");
+    myCompilationUnits.put(classFqName, compilationUnit);
   }
 
   public void compile() {
-    org.eclipse.jdt.internal.compiler.Compiler c = new Compiler(new INameEnvironment() {
-      public NameEnvironmentAnswer findType(char[][] compoundTypeName) {
-        StringBuilder fqName = new StringBuilder();
-        for (int i = 0; i < compoundTypeName.length; i++) {
-          char[] part = compoundTypeName[i];
-          fqName.append(new String(part));
-          if (i != compoundTypeName.length - 1) {
-            fqName.append(".");
-          }
-        }
-        return findType(fqName.toString());
-      }
-
-      public NameEnvironmentAnswer findType(char[] typeName, char[][] packageName) {
-        StringBuilder fqName = new StringBuilder();
-        for (char[] packName : packageName) {
-          fqName.append(new String(packName)).append(".");
-        }
-        fqName.append(typeName);
-        return findType(fqName.toString());
-      }
-
-      public boolean isPackage(char[][] parentPackageName, char[] packageName) {
-        return true;
-      }
-
-      public void cleanup() {
-      }
-
-      private NameEnvironmentAnswer findType(String fqName) {
-
-        try {
-          byte[] aClass = myClassPathItem.getClass(fqName);
-          if (aClass == null) return null;
-          return new NameEnvironmentAnswer(new ClassFileReader(aClass, fqName.toCharArray()),  null);
-        } catch (ClassFormatException e) {
-          System.out.println("error in " + fqName);
-          return null;
-        }
-      }
-    }, new IErrorHandlingPolicy() {
-      public boolean proceedOnErrors() {
-        return true;
-      }
-
-      public boolean stopOnFirstError() {
-        return false;
-      }
-    }, new CompilerOptions(), new ICompilerRequestor() {
-      public void acceptResult(CompilationResult result) {
-        for (ClassFile file : result.getClassFiles()) {
-          String name = "";
-          for (int i = 0; i < file.getCompoundName().length; i++) {
-            name += new String(file.getCompoundName()[i]);
-            if (i != file.getCompoundName().length - 1) {
-              name += ".";
-            }
-          }
-          myClassLoader.put(name, file.getBytes());
-        }
-      }
-    }, new DefaultProblemFactory(), new PrintWriter(System.out));
-
-
-    c.compile(myCompilationUnits.toArray(new CompilationUnit[0]));        
+    org.eclipse.jdt.internal.compiler.Compiler c = new Compiler(new MyNameEnvironment(), new MyErrorHandlingPolicy(), new CompilerOptions(), new MyCompilerRequestor(), new DefaultProblemFactory(), new PrintWriter(System.out));
+    c.compile(myCompilationUnits.values().toArray(new CompilationUnit[0]));
   }
 
   public ClassLoader getClassLoader() {
@@ -116,6 +53,8 @@ public class JavaCompiler {
     }
 
     public void put(String name, byte[] bytes) {
+      System.out.println("put " + name);
+
       myClasses.put(name, bytes);
     }
 
@@ -128,4 +67,82 @@ public class JavaCompiler {
     }
   }
 
+  private class MyNameEnvironment implements INameEnvironment {
+    public NameEnvironmentAnswer findType(char[][] compoundTypeName) {
+      StringBuilder fqName = new StringBuilder();
+      for (int i = 0; i < compoundTypeName.length; i++) {
+        char[] part = compoundTypeName[i];
+        fqName.append(new String(part));
+        if (i != compoundTypeName.length - 1) {
+          fqName.append(".");
+        }
+      }
+      return findType(fqName.toString());
+    }
+
+    public NameEnvironmentAnswer findType(char[] typeName, char[][] packageName) {
+      StringBuilder fqName = new StringBuilder();
+      for (char[] packName : packageName) {
+        fqName.append(new String(packName)).append(".");
+      }
+      fqName.append(typeName);
+      return findType(fqName.toString());
+    }
+
+    public boolean isPackage(char[][] parentPackageName, char[] packageName) {
+      String pname = "";
+      if (parentPackageName != null) {
+        for (char[] part : parentPackageName) {
+          pname += new String(part) + ".";
+        }
+      }
+      pname += new String(packageName);
+
+      return myClassPathItem.getAvailableClasses(pname).size() != 0 || myClassPathItem.getSubpackages(pname).size() != 0;
+    }
+
+    public void cleanup() {
+    }
+
+    private NameEnvironmentAnswer findType(String fqName) {
+      if (myCompilationUnits.containsKey(fqName)) {
+        return new NameEnvironmentAnswer(myCompilationUnits.get(fqName), null);
+      }
+
+      try {
+        byte[] aClass = myClassPathItem.getClass(fqName);
+        if (aClass == null) return null;
+        return new NameEnvironmentAnswer(new ClassFileReader(aClass, fqName.toCharArray()),  null);
+      } catch (ClassFormatException e) {
+        return null;
+      }
+    }
+  }
+
+  private static class MyErrorHandlingPolicy implements IErrorHandlingPolicy {
+    public boolean proceedOnErrors() {
+      return true;
+    }
+
+    public boolean stopOnFirstError() {
+      return false;
+    }
+  }
+
+  private class MyCompilerRequestor implements ICompilerRequestor {
+    public void acceptResult(CompilationResult result) {
+      System.out.println("accept result : " + result);
+
+      for (ClassFile file : result.getClassFiles()) {
+        String name = "";
+        for (int i = 0; i < file.getCompoundName().length; i++) {
+          name += new String(file.getCompoundName()[i]);
+          if (i != file.getCompoundName().length - 1) {
+            name += ".";
+          }
+        }
+        myClassLoader.put(name, file.getBytes());
+      }
+    }
+  }
 }

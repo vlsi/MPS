@@ -9,12 +9,12 @@ public class CompilerSandbox {
 
     JavaCompiler jc = new JavaCompiler(ClassLoaderManager.getInstance().getRTJar());
 
-    jc.addSource("public class A { B b; public static void a() { System.out.println(239); } } ", "A.java");
-    jc.addSource("public class B { A a; }", "B.java");
+    jc.addSource("package x.y.z; public class A { B b; public static void a() { System.out.println(239); } } ", "x.y.z.A");
+    jc.addSource("package x.y.z; public class B { A a; }", "x.y.z.B");
 
     jc.compile();
 
 
-    System.out.println(jc.getClassLoader().loadClass("A").getMethod("a").invoke(null));
+    jc.getClassLoader().loadClass("x.y.z.A").getMethod("a").invoke(null);
   }
 }
