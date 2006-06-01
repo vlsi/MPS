@@ -77,11 +77,6 @@
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActions" id="1141180990973">
     <property name="name" value="BL_ref_substitute" />
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141261297316">
-      <property name="searchScopeProviderAspectId" value="StaticFieldReference_ClassifierHierarchy_StaticFields" />
-      <link role="applicableSourceConcept" targetNodeId="1.1070533707846" />
-      <link role="applicableLink" targetNodeId="1.1070568178160" />
-    </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141261668233">
       <property name="searchScopeProviderAspectId" value="StaticFieldReference_ClassifierHierarchy_StaticMethods" />
       <property name="actionsFactoryAspectId" value="StaticFieldReference_to_StaticMethodCall" />
@@ -100,11 +95,6 @@
       <link role="applicableSourceConcept" targetNodeId="1.1081236700937" />
       <link role="applicableLink" targetNodeId="1.1081236769987" />
     </node>
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141262055244">
-      <property name="searchScopeProviderAspectId" value="StaticMethodCall_ClassifierHierarchy_StaticMethods" />
-      <link role="applicableSourceConcept" targetNodeId="1.1081236700937" />
-      <link role="applicableLink" targetNodeId="1.1081236769987" />
-    </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141262055245">
       <property name="searchScopeProviderAspectId" value="StaticMethodCall_ClassifierHierarchy_EnumConstants" />
       <property name="actionsFactoryAspectId" value="StaticMethodCall_to_EnumConstantReference" />
@@ -120,11 +110,6 @@
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141262198061">
       <property name="searchScopeProviderAspectId" value="EnumConstantReference_ClassifierHierarchy_StaticMethods" />
       <property name="actionsFactoryAspectId" value="EnumConstantReference_to_StaticMethodCall" />
-      <link role="applicableLink" targetNodeId="1.1083260308426" />
-      <link role="applicableSourceConcept" targetNodeId="1.1083260308424" />
-    </node>
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141262198360">
-      <property name="searchScopeProviderAspectId" value="EnumConstantReference_ClassifierHierarchy_EnumConstants" />
       <link role="applicableLink" targetNodeId="1.1083260308426" />
       <link role="applicableSourceConcept" targetNodeId="1.1083260308424" />
     </node>

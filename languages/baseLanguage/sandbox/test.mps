@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.sandbox.test">
   <language namespace="jetbrains.mps.baseLanguage" />
-  <maxImportIndex value="22" />
+  <maxImportIndex value="25" />
   <import index="1" modelUID="java.lang@java_stub" />
   <node type="jetbrains.mps.baseLanguage.Interface" id="1115766127296">
     <property name="name" value="IBaseInterface" />
@@ -174,7 +174,9 @@
               <link role="classifier" targetNodeId="1115766310400" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1144188584106">
-              <node role="type" type="jetbrains.mps.baseLanguage.Type" id="1144188584107" />
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1149184403605">
+                <link role="classifier" targetNodeId="1115766310400" />
+              </node>
               <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1144188587937" />
             </node>
           </node>
@@ -186,27 +188,35 @@
               <link role="variableDeclaration" targetNodeId="1144188577118" />
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.CastExpression" id="1144190327479">
-              <node role="type" type="jetbrains.mps.baseLanguage.Type" id="1144190327480" />
               <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1144190331404" />
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1149184411170">
+                <link role="classifier" targetNodeId="1115766310400" />
+              </node>
             </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1144185181789">
           <node role="expression" type="jetbrains.mps.baseLanguage.CastExpression" id="1144187975222">
-            <node role="type" type="jetbrains.mps.baseLanguage.Type" id="1144187975223" />
             <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1144187982585" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1149184414375">
+              <link role="classifier" targetNodeId="1115766310400" />
+            </node>
           </node>
         </node>
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1144188002436">
       <property name="name" value="testCastOp2" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1144188002437" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1149184424704">
+        <link role="classifier" targetNodeId="1115766310400" />
+      </node>
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1144188002438">
         <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1144188011643">
           <node role="expression" type="jetbrains.mps.baseLanguage.CastExpression" id="1144188015270">
             <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1144188018944" />
-            <node role="type" type="jetbrains.mps.baseLanguage.Type" id="1144203919474" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1149184426878">
+              <link role="classifier" targetNodeId="1115766310400" />
+            </node>
           </node>
         </node>
       </node>
@@ -327,7 +337,7 @@
               <node role="lValue" type="jetbrains.mps.baseLanguage.ParameterReference" id="1137714259018">
                 <link role="variableDeclaration" targetNodeId="1136027173099" />
               </node>
-              <node role="rValue" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1144458301411">
+              <node role="rValue" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1149184858811">
                 <link role="baseMethodDeclaration" targetNodeId="1137892365869" />
                 <link role="classConcept" targetNodeId="1137816471209" />
               </node>
@@ -497,7 +507,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1130270344612">
           <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1130270730196">
-            <node role="lValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1130270344691">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1149184443880">
               <link role="variableDeclaration" targetNodeId="1130270307248" />
               <link role="classifier" targetNodeId="1130270238222" />
             </node>

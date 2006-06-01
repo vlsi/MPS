@@ -31,8 +31,11 @@ import java.util.*;
   };
 
   public static List<INodeSubstituteAction> createActions(SNode sourceNode, SNode currentReferent, LinkDeclaration linkDeclaration, IOperationContext context) {
-    List<INodeSubstituteAction> resultActions = new LinkedList<INodeSubstituteAction>();
     IScope scope = context.getScope();
+//    List<INodeSubstituteAction> resultActions = new LinkedList<INodeSubstituteAction>();
+    List<INodeSubstituteAction> resultActions = createPrimaryReferentSubstituteActions(sourceNode, currentReferent, linkDeclaration, TRUE_CONDITION, scope);
+
+    // proceed with custom builders
     ConceptDeclaration sourceConcept = SModelUtil.getConceptDeclaration(sourceNode, scope);
     if (sourceConcept == null) {
       LOG.error("Couldn't build actions : couldn't get concept for source node" + sourceNode.getDebugText());
@@ -47,13 +50,16 @@ import java.util.*;
     // add actions from 'primary' language
     String genuineReferenceRole = SModelUtil.getGenuineLinkRole(linkDeclaration);
     List<ReferentSubstituteActionsBuilder> primaryBuilders = getActionBuilders(sourceNode, primaryLanguage, sourceConcept, genuineReferenceRole, context);
-    if (primaryBuilders.isEmpty()) {
-      // if 'primary' language hasn't defined actions for that target - create 'default' actions
-      resultActions = createPrimaryReferentSubstituteActions(sourceNode, currentReferent, linkDeclaration, TRUE_CONDITION, scope);
-    } else {
-      for (ReferentSubstituteActionsBuilder builder : primaryBuilders) {
-        resultActions.addAll(invokeActionBulder(builder, sourceNode, currentReferent, linkDeclaration, context));
-      }
+//    if (primaryBuilders.isEmpty()) {
+//      // if 'primary' language hasn't defined actions for that target - create 'default' actions
+//      resultActions = createPrimaryReferentSubstituteActions(sourceNode, currentReferent, linkDeclaration, TRUE_CONDITION, scope);
+//    } else {
+//      for (ReferentSubstituteActionsBuilder builder : primaryBuilders) {
+//        resultActions.addAll(invokeActionBulder(builder, sourceNode, currentReferent, linkDeclaration, context));
+//      }
+//    }
+    for (ReferentSubstituteActionsBuilder builder : primaryBuilders) {
+      resultActions.addAll(invokeActionBulder(builder, sourceNode, currentReferent, linkDeclaration, context));
     }
 
     // search 'extending' builders
