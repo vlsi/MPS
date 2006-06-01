@@ -3,7 +3,9 @@ package jetbrains.mps.helgins.equation;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.helgins.evaluator.NodeWrapper;
 import jetbrains.mps.helgins.evaluator.SubtypingManager;
+import jetbrains.mps.helgins.evaluator.TypeChecker;
 import jetbrains.mps.helgins.RuntimeTypeVariable;
+import jetbrains.mps.helgins.RuntimeErrorType;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.Pair;
@@ -80,12 +82,16 @@ public class EquationManager {
   private void processEquation(NodeWrapperType var, NodeWrapperType type) {
     var.setParent(type);
     type.addAllVarSetsOfSourceAndRemoveSourceFromThem(var);
+    if (NodeWrapperType.getTypeVar(var) instanceof RuntimeErrorType) {
+      TypeChecker.reportTypeError(var, var.getNodeToReportErrors());
+    }
   }
 
   private void processErrorEquation(NodeWrapperType type, NodeWrapperType error, String errorText) {
     error.setParent(type); //type
     error.setErrorString(errorText);
-    type.addAllVarSetsOfSourceAndRemoveSourceFromThem(error); // todo report error
+    type.addAllVarSetsOfSourceAndRemoveSourceFromThem(error);
+    TypeChecker.reportTypeError(error, error.getNodeToReportErrors());
   }
 
   public void clear() {

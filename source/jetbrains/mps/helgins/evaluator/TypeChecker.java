@@ -8,6 +8,7 @@ import jetbrains.mps.helgins.inference.ContextsManager;
 import jetbrains.mps.helgins.equation.EquationManager;
 import jetbrains.mps.helgins.equation.TypeVariablesManager;
 import jetbrains.mps.helgins.equation.NodeWrapperType;
+import jetbrains.mps.logging.Logger;
 
 import java.util.*;
 
@@ -19,11 +20,13 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class TypeChecker {
+  private static final Logger LOG = Logger.getLogger(TypeChecker.class);
 
   public static final Object TYPE_OF_TERM = new Object();
 
   private static List<Rule> ourRules = new ArrayList<Rule>();
   private static Set<SNode> ourCheckedNodes = new HashSet<SNode>();
+  private static WeakHashMap<SNode, NodeWrapperType> ourNodesWithErrors = new WeakHashMap<SNode, NodeWrapperType>();
 
   public static void clearForTypesModel(SModel typesModel) {
     ContextsManager.getInstance().clear();
@@ -34,6 +37,7 @@ public class TypeChecker {
     SubtypingManager.getInstance().clear();
     ourRules.clear();
     ourCheckedNodes.clear();
+    ourNodesWithErrors.clear();
   }
 
   public static void checkTypes(SNode root, SModel typesModel) {
@@ -76,6 +80,19 @@ public class TypeChecker {
       term.putUserObject(TYPE_OF_TERM, wrapperType);
     }
 
+    // setting errors
+    for (SNode node : ourNodesWithErrors.keySet()) {
+      NodeWrapperType errorType = ourNodesWithErrors.get(node);
+      node.putUserObject(TYPE_OF_TERM, errorType);
+    }
+  }
+
+  public static void reportTypeError(NodeWrapperType errorType, SNode nodeWithError) {
+    if (nodeWithError != null) {
+      ourNodesWithErrors.put(nodeWithError, errorType);
+    } else {
+      LOG.warning("can't report error: error has no related node");
+    }
   }
 
   private static NodeWrapperType expandType(NodeWrapperType nodeWrapperType) {
