@@ -77,16 +77,6 @@
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActions" id="1141180990973">
     <property name="name" value="BL_ref_substitute" />
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141180994006">
-      <property name="searchScopeProviderAspectId" value="NewExpression_Constructors" />
-      <link role="applicableSourceConcept" targetNodeId="1.1068581242872" />
-      <link role="applicableLink" targetNodeId="1.1135374435992" />
-    </node>
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141259669044">
-      <property name="searchScopeProviderAspectId" value="SuperMethodCall_ClassifierHierarchy_InstanceMethods" />
-      <link role="applicableLink" targetNodeId="1.1073063089579" />
-      <link role="applicableSourceConcept" targetNodeId="1.1073063089578" />
-    </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141261297316">
       <property name="searchScopeProviderAspectId" value="StaticFieldReference_ClassifierHierarchy_StaticFields" />
       <link role="applicableSourceConcept" targetNodeId="1.1070533707846" />
