@@ -175,7 +175,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
               DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
               //i tried to use nodeChange but it didn't work
-              treeModel.nodeStructureChanged(findAncestorWith(event.getNode()));
+              treeModel.nodeStructureChanged(findDescendantWith(event.getNode()));
             }
 
             public void visitReferenceEvent(SModelReferenceEvent event) {
@@ -193,7 +193,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     }
 
     private void updateTreeWithRoot(SNode node) {
-      MPSTreeNode treeNode = findAncestorWith(node);
+      MPSTreeNode treeNode = findDescendantWith(node);
       if (treeNode != null) {
         treeNode.update();
       }
