@@ -337,9 +337,9 @@
               <node role="lValue" type="jetbrains.mps.baseLanguage.ParameterReference" id="1137714259018">
                 <link role="variableDeclaration" targetNodeId="1136027173099" />
               </node>
-              <node role="rValue" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1149271499970">
-                <link role="baseMethodDeclaration" targetNodeId="1137892365869" />
-                <link role="classConcept" targetNodeId="1137816471209" />
+              <node role="rValue" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1149273478331">
+                <link role="enumConstantDeclaration" targetNodeId="1137892355071" />
+                <link role="enumClass" targetNodeId="1137816471209" />
               </node>
             </node>
           </node>

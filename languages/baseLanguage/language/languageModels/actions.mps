@@ -90,16 +90,10 @@
       <link role="applicableLink" targetNodeId="1.1081236769987" />
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141262170371">
-      <property name="searchScopeProviderAspectId" value="EnumConstantReference_ClassifierHierarchy_StaticFields" />
-      <property name="actionsFactoryAspectId" value="EnumConstantReference_to_StaticFieldReference" />
+      <property name="searchScopeProviderAspectId" value="Empty" />
+      <property name="actionsFactoryAspectId" value="EnumConstantReference_default_and_extra" />
       <link role="applicableSourceConcept" targetNodeId="1.1083260308424" />
       <link role="applicableLink" targetNodeId="1.1083260308426" />
-    </node>
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141262198061">
-      <property name="searchScopeProviderAspectId" value="EnumConstantReference_ClassifierHierarchy_StaticMethods" />
-      <property name="actionsFactoryAspectId" value="EnumConstantReference_to_StaticMethodCall" />
-      <link role="applicableLink" targetNodeId="1.1083260308426" />
-      <link role="applicableSourceConcept" targetNodeId="1.1083260308424" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActions" id="1144964668383">
