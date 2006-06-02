@@ -76,7 +76,7 @@ public class TypeChecker {
     // setting types to nodes
     for (Pair<SNode, NodeWrapperType> contextEntry : mainContext) {
       SNode term = contextEntry.o1;
-      NodeWrapperType wrapperType = expandType(contextEntry.o2);
+      NodeWrapperType wrapperType = expandType(contextEntry.o2, typesModel);
       term.putUserObject(TYPE_OF_TERM, wrapperType);
     }
 
@@ -95,15 +95,15 @@ public class TypeChecker {
     }
   }
 
-  private static NodeWrapperType expandType(NodeWrapperType nodeWrapperType) {
+  private static NodeWrapperType expandType(NodeWrapperType nodeWrapperType, SModel typesModel) {
     NodeWrapperType representator = nodeWrapperType.getRepresentator();
     NodeWrapper nodeWrapper = representator.getNodeWrapper();
-    NodeWrapper newNodeWrapper = expandWrapper(nodeWrapper, representator, 0, new HashSet<RuntimeTypeVariable>());
+    NodeWrapper newNodeWrapper = expandWrapper(nodeWrapper, representator, 0, new HashSet<RuntimeTypeVariable>(), typesModel);
     representator = new NodeWrapperType(newNodeWrapper);
     return representator;
   }
 
-  private static NodeWrapper expandWrapper(NodeWrapper nodeWrapper, NodeWrapperType representator, int depth, Set<RuntimeTypeVariable> variablesMet) {
+  private static NodeWrapper expandWrapper(NodeWrapper nodeWrapper, NodeWrapperType representator, int depth, Set<RuntimeTypeVariable> variablesMet, SModel typesModel) {
     if (nodeWrapper == null) return null;
     if (nodeWrapper.getNode() instanceof RuntimeTypeVariable) {
       RuntimeTypeVariable var = (RuntimeTypeVariable) nodeWrapper.getNode();
@@ -117,20 +117,20 @@ public class TypeChecker {
         if (variablesMet.contains(var)) {
           //recursion!!
           nodeWrapper = new NodeWrapper();
-          RuntimeErrorType error = new RuntimeErrorType(var.getModel());
+          RuntimeErrorType error = new RuntimeErrorType(typesModel);
           error.setErrorText("recursion types not allowed");
           nodeWrapper.setNode(error);
           return nodeWrapper;
         }
         variablesMet.add(var);
-        nodeWrapper = expandWrapper(type.getNodeWrapper(), type, 0, variablesMet);
+        nodeWrapper = expandWrapper(type.getNodeWrapper(), type, 0, variablesMet, typesModel);
         variablesMet.remove(var);
       }
       return nodeWrapper;
     }
     Map<NodeWrapper, NodeWrapper> childrenReplacement = new HashMap<NodeWrapper, NodeWrapper>();
     for (NodeWrapper child : nodeWrapper.getChildren()) {
-      NodeWrapper newChild = expandWrapper(child, representator, depth+1, variablesMet);
+      NodeWrapper newChild = expandWrapper(child, representator, depth+1, variablesMet, typesModel);
       if (newChild != child) {
         childrenReplacement.put(child, newChild);
       }
@@ -138,6 +138,11 @@ public class TypeChecker {
     for (NodeWrapper child : childrenReplacement.keySet()) {
       if (child.getParents().isEmpty()) {
         System.err.println("debug");
+        nodeWrapper = new NodeWrapper();
+        RuntimeErrorType error = new RuntimeErrorType(typesModel);
+        error.setErrorText("recursion types not allowed");
+        nodeWrapper.setNode(error);
+        return nodeWrapper;
       }
       NodeWrapper parent = child.getParents().get(0);
       parent.removeChild(child);
