@@ -99,17 +99,17 @@ public class NodePresentationUtil {
       } else {
         where = NameUtil.nodeFQName(parent);
       }
-      return getAliasOrConceptName(node, scope) + " (" + where + ")";
+      return getRoleInParentOrConceptName(node) + " (" + where + ")";
     }
     if (node instanceof Classifier) {
       return getAliasOrConceptName(node, scope) + " (" + node.getModel().getUID() + ")";
     }
 
     // default
-    if (node instanceof LinkDeclaration) {
-      SNode containingRoot = node.getContainingRoot();
-      return containingRoot.getName() + " (" + containingRoot.getModel().getUID() + ")";
-    }
+//    if (node instanceof LinkDeclaration) {
+//      SNode containingRoot = node.getContainingRoot();
+//      return containingRoot.getName() + " (" + containingRoot.getModel().getUID() + ")";
+//    }
     String description = SModelUtil.getConceptProperty(node, "short_description", scope);
     if (description != null) {
       return description;
@@ -121,7 +121,8 @@ public class NodePresentationUtil {
     if (node.isRoot()) {
       return NameUtil.shortNameFromLongName(node.getClass().getName()) + " (" + node.getModel().getUID() + ")";
     }
-    return NameUtil.shortNameFromLongName(node.getClass().getName()) + " (" + NameUtil.nodeFQName(SModelUtil.getRootParent(node)) + ")";
+//    return NameUtil.shortNameFromLongName(node.getClass().getName()) + " (" + NameUtil.nodeFQName(SModelUtil.getRootParent(node)) + ")";
+    return node.getRole_() + " (" + NameUtil.nodeFQName(SModelUtil.getRootParent(node)) + ")";
   }
 
   private static String matchingText_BaseMethodDeclaration(BaseMethodDeclaration method) {
@@ -182,6 +183,17 @@ public class NodePresentationUtil {
     String alias = SModelUtil.getConceptProperty(node, "alias", scope);
     if (alias != null) {
       return alias;
+    }
+    if (node instanceof ConceptDeclaration && node.getName() != null) {
+      return node.getName();
+    }
+    return NameUtil.shortNameFromLongName(node.getClass().getName());
+  }
+
+  private static String getRoleInParentOrConceptName(SNode node) {
+    String role = node.getRole_();
+    if (role != null) {
+      return role;
     }
     if (node instanceof ConceptDeclaration && node.getName() != null) {
       return node.getName();
