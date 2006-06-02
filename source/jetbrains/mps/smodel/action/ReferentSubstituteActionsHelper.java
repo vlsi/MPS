@@ -59,7 +59,7 @@ import java.util.*;
     List<ReferentSubstituteActionsBuilder> primaryBuilders = getActionBuilders(referenceNode, primaryLanguage, referenceNodeConcept, genuineReferenceRole, context);
     if (primaryBuilders.isEmpty()) {
       // if 'primary' language hasn't defined actions for that target - create 'default' actions
-      resultActions = createPrimaryReferentSubstituteActions(referenceNode, currentReferent, linkDeclaration, TRUE_CONDITION, scope);
+      resultActions = createPrimaryReferentSubstituteActions(referenceNode, currentReferent, linkDeclaration, defaultSearchScope, scope);
     } else {
       for (ReferentSubstituteActionsBuilder builder : primaryBuilders) {
         resultActions.addAll(invokeActionFactory(builder, referenceNode, currentReferent, linkDeclaration, defaultSearchScope, context));
@@ -130,37 +130,24 @@ import java.util.*;
   }
 
   /*package*/
-  static List<INodeSubstituteAction> createPrimaryReferentSubstituteActions(SNode sourceNode, SNode currentReferent, LinkDeclaration linkDeclaration, final Condition<SNode> filterCondition, final IScope scope) {
-    final ConceptDeclaration referentConcept = linkDeclaration.getTarget();
-    if (referentConcept == null) {
-      return Collections.emptyList();
-    }
-
-    ConceptDeclaration referenceNodeConcept = SModelUtil.getConceptDeclaration(sourceNode, scope);
-    IStatus status = ModelConstraintsUtil.getReferentSearchScope(sourceNode.getParent(), sourceNode, referenceNodeConcept, linkDeclaration, scope);
-    if (status.isError()) {
-      LOG.error("Couldn't create search scope : " + status.getMessage());
-      return Collections.emptyList();
-    }
-    ISearchScope searchScope = (ISearchScope) status.getUserObject();
-    return createDefaultReferentSubstituteActions(sourceNode, currentReferent, linkDeclaration, searchScope, filterCondition, scope);
+  static List<INodeSubstituteAction> createPrimaryReferentSubstituteActions(SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration, ISearchScope searchScope, IScope scope) {
+    return createDefaultReferentSubstituteActions(referenceNode, currentReferent, linkDeclaration, searchScope, scope);
   }
 
-  private static List<INodeSubstituteAction> createDefaultReferentSubstituteActions(SNode sourceNode, SNode currentReferent, LinkDeclaration linkDeclaration, ISearchScope searchScope, final Condition<SNode> filterCondition, final IScope scope) {
+  private static List<INodeSubstituteAction> createDefaultReferentSubstituteActions(SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration, ISearchScope searchScope, final IScope scope) {
     final ConceptDeclaration referentConcept = linkDeclaration.getTarget();
     if (referentConcept == null) {
       return Collections.emptyList();
     }
     List<SNode> nodes = searchScope.getNodes(new Condition<SNode>() {
       public boolean met(SNode node) {
-        return SModelUtil.isInstanceOfConcept(node, referentConcept, scope) &&
-                filterCondition.met(node);
+        return SModelUtil.isInstanceOfConcept(node, referentConcept, scope);
       }
     });
 
     List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
     for (SNode node : nodes) {
-      actions.add(new DefaultReferentNodeSubstituteAction(node, sourceNode, currentReferent, linkDeclaration, scope));
+      actions.add(new DefaultReferentNodeSubstituteAction(node, referenceNode, currentReferent, linkDeclaration, scope));
     }
     return actions;
   }

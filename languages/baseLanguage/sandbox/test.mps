@@ -337,7 +337,7 @@
               <node role="lValue" type="jetbrains.mps.baseLanguage.ParameterReference" id="1137714259018">
                 <link role="variableDeclaration" targetNodeId="1136027173099" />
               </node>
-              <node role="rValue" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1149276165711">
+              <node role="rValue" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1149278860101">
                 <link role="enumConstantDeclaration" targetNodeId="1137816485867" />
                 <link role="enumClass" targetNodeId="1137816471209" />
               </node>

@@ -3,6 +3,7 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.util.Condition;
 
 import java.util.*;
@@ -67,8 +68,8 @@ public class ModelActions {
   /**
    * helper method
    */
-  public static List<INodeSubstituteAction> createPrimaryReferentSubstituteActions(SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration, Condition<SNode> filter, IOperationContext context) {
-    return ReferentSubstituteActionsHelper.createPrimaryReferentSubstituteActions(referenceNode, currentReferent, linkDeclaration, filter, context.getScope());
+  public static List<INodeSubstituteAction> createPrimaryReferentSubstituteActions(SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration, ISearchScope searchScope, IOperationContext context) {
+    return ReferentSubstituteActionsHelper.createPrimaryReferentSubstituteActions(referenceNode, currentReferent, linkDeclaration, searchScope, context.getScope());
   }
 
   //-------------------
