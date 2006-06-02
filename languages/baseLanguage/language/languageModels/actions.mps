@@ -76,7 +76,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActions" id="1141180990973">
-    <property name="name" value="BL_ref_substitute" />
+    <property name="name" value="BL_static_member_reference" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141261668233">
       <property name="searchScopeProviderAspectId" value="StaticFieldReference_ClassifierHierarchy_StaticMethods" />
       <property name="actionsFactoryAspectId" value="StaticFieldReference_to_StaticMethodCall" />
@@ -115,12 +115,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActions" id="1144964668383">
-    <property name="name" value="BL_ref_substitute: instance.reference" />
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1144964865873">
-      <property name="searchScopeProviderAspectId" value="FieldReference_ClassifierHierarchy_InstanceFields" />
-      <link role="applicableLink" targetNodeId="1.1070568237987" />
-      <link role="applicableSourceConcept" targetNodeId="1.1068580123158" />
-    </node>
+    <property name="name" value="BL_instance_member_reference" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1144964865874">
       <property name="searchScopeProviderAspectId" value="FieldReference_ClassifierHierarchy_InstanceMethods" />
       <property name="actionsFactoryAspectId" value="FieldReference_to_InstanceMethodCall" />
@@ -141,11 +136,6 @@
       <link role="applicableSourceConcept" targetNodeId="1.1068580123163" />
       <link role="applicableLink" targetNodeId="1.1070568044740" />
     </node>
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1144964865877">
-      <property name="searchScopeProviderAspectId" value="InstanceMethodCall_ClassifierHierarchy_InstanceMethods" />
-      <link role="applicableSourceConcept" targetNodeId="1.1068580123163" />
-      <link role="applicableLink" targetNodeId="1.1070568044740" />
-    </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1144966351191">
       <property name="actionsFactoryAspectId" value="InstanceMethodCall_to_SequenceOperationExpression" />
       <property name="actionsFilterAspectId" value="InternalMembers" />
@@ -155,7 +145,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1144966858480">
-    <property name="name" value="BL_node_substitute: instance.operation" />
+    <property name="name" value="BL_sequence_operation_substitute" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1144966887903">
       <property name="actionsFactoryAspectId" value="SequenceOperation_default" />
       <link role="applicableConcept" targetNodeId="1.1144946981158" />

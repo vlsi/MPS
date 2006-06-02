@@ -118,9 +118,56 @@ public class ModelConstraintsManager {
 
     LinkedList<IModelConstraints> loadedConstraints = new LinkedList<IModelConstraints>();
     myAddedLanguageNamespaces.put(namespace, loadedConstraints);
+    loadConstraints(namespace, loadedConstraints);
+//    // load constraints
+//    String packageName = namespace + ".constraints";
+//    IClassPathItem classPathItem = ClassLoaderManager.getInstance().getClassPathItem();
+//    Set<String> availableClasses = classPathItem.getAvailableClasses(packageName);
+//    for (String shortClassName : availableClasses) {
+//      try {
+//        ClassLoader classLoader = ClassLoaderManager.getInstance().getClassLoader();
+//        Class constraintsClass = Class.forName(packageName + "." + shortClassName, true, classLoader);
+//        if (IModelConstraints.class.isAssignableFrom(constraintsClass)) {
+//          IModelConstraints constraints = (IModelConstraints) constraintsClass.newInstance();
+//          constraints.registerSelf(this);
+//          loadedConstraints.add(constraints);
+//        }
+//      } catch (ClassNotFoundException e) {
+//        LOG.error(e);
+//      } catch (InstantiationException e) {
+//        LOG.error(e);
+//      } catch (IllegalAccessException e) {
+//        LOG.error(e);
+//      } catch (Throwable t) {
+//        LOG.error(t);
+//      }
+//    }
+  }
 
+  private void processLanguageRemoved(Language language) {
+    //System.out.println("processLanguageRemoved: " + language.getNamespace());
+    String namespace = language.getNamespace();
+    List<IModelConstraints> loadedConstraints = myAddedLanguageNamespaces.get(namespace);
+    for (IModelConstraints constraints : loadedConstraints) {
+      constraints.unRegisterSelf(this);
+    }
+    myAddedLanguageNamespaces.remove(namespace);
+  }
+
+  public void reloadAll() {
+    myNodePropertyGettersMap.clear();
+    myNodeReferentSearchScopeProvidersMap.clear();
+
+    for (String languageNamespace : myAddedLanguageNamespaces.keySet()) {
+      List<IModelConstraints> constraints = myAddedLanguageNamespaces.get(languageNamespace);
+      constraints.clear();
+      loadConstraints(languageNamespace, constraints);
+    }
+  }
+
+  private void loadConstraints(String languageNamespace, List<IModelConstraints> loadedConstraints) {
     // load constraints
-    String packageName = namespace + ".constraints";
+    String packageName = languageNamespace + ".constraints";
     IClassPathItem classPathItem = ClassLoaderManager.getInstance().getClassPathItem();
     Set<String> availableClasses = classPathItem.getAvailableClasses(packageName);
     for (String shortClassName : availableClasses) {
@@ -143,17 +190,4 @@ public class ModelConstraintsManager {
       }
     }
   }
-
-  private void processLanguageRemoved(Language language) {
-    //System.out.println("processLanguageRemoved: " + language.getNamespace());
-    String namespace = language.getNamespace();
-    List<IModelConstraints> loadedConstraints = myAddedLanguageNamespaces.get(namespace);
-    if (loadedConstraints != null) {
-      for (IModelConstraints constraints : loadedConstraints) {
-        constraints.unRegisterSelf(this);
-      }
-    }
-    myAddedLanguageNamespaces.remove(namespace);
-  }
-
 }

@@ -314,7 +314,7 @@
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1137989716648">
                 <link role="variableDeclaration" targetNodeId="1136027175492" />
               </node>
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.FieldReference" id="1137736510144">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.FieldReference" id="1149207584431">
                 <link role="variableDeclaration" targetNodeId="1127094836077" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1137736492593" />
               </node>
