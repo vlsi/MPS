@@ -50,18 +50,5 @@
       <link role="applicableConcept" targetNodeId="1.1138411891628" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActions" id="1144199649146">
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1144199651913">
-      <property name="searchScopeProviderAspectId" value="IsRoleOperation_LinkDeclarationsFromConcept" />
-      <link role="applicableSourceConcept" targetNodeId="1.1144195091934" />
-      <link role="applicableLink" targetNodeId="1.1144195396777" />
-    </node>
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1146162069656">
-      <property name="searchScopeProviderAspectId" value="EnumDatatype_fromUsage" />
-      <property name="preconditionAspectId" value="CanCompute_EnumDatatype_fromUsage" />
-      <link role="applicableSourceConcept" targetNodeId="1.1138676077309" />
-      <link role="applicableLink" targetNodeId="1.1138676095763" />
-    </node>
-  </node>
 </model>
 
