@@ -278,7 +278,7 @@
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1138060189777">
                   <property name="value" value="10" />
                 </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1138060196002">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1149276146474">
                   <link role="variableDeclaration" extResolveInfo="1.static field ([Classifier]Byte).([StaticFieldDeclaration]MAX_VALUE : (jetbrains.mps.baseLanguage.types.byte/jetbrains.mps.baseLanguage.types.byte))" />
                   <link role="classifier" extResolveInfo="1.[Classifier]Byte" />
                 </node>
@@ -314,7 +314,7 @@
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1137989716648">
                 <link role="variableDeclaration" targetNodeId="1136027175492" />
               </node>
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.FieldReference" id="1149269361800">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.FieldReference" id="1149276136988">
                 <link role="variableDeclaration" targetNodeId="1127094836077" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1137736492593" />
               </node>
@@ -337,8 +337,8 @@
               <node role="lValue" type="jetbrains.mps.baseLanguage.ParameterReference" id="1137714259018">
                 <link role="variableDeclaration" targetNodeId="1136027173099" />
               </node>
-              <node role="rValue" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1149273478331">
-                <link role="enumConstantDeclaration" targetNodeId="1137892355071" />
+              <node role="rValue" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1149276165711">
+                <link role="enumConstantDeclaration" targetNodeId="1137816485867" />
                 <link role="enumClass" targetNodeId="1137816471209" />
               </node>
             </node>
