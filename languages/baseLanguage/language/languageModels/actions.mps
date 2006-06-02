@@ -78,26 +78,14 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActions" id="1141180990973">
     <property name="name" value="BL_static_member_reference" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141261668233">
-      <property name="searchScopeProviderAspectId" value="StaticFieldReference_ClassifierHierarchy_StaticMethods" />
-      <property name="actionsFactoryAspectId" value="StaticFieldReference_to_StaticMethodCall" />
+      <property name="searchScopeProviderAspectId" value="Empty" />
+      <property name="actionsFactoryAspectId" value="StaticFieldReference_default_and_extra" />
       <link role="applicableLink" targetNodeId="1.1070568178160" />
       <link role="applicableSourceConcept" targetNodeId="1.1070533707846" />
-    </node>
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141262036861">
-      <property name="searchScopeProviderAspectId" value="StaticFieldReference_ClassifierHierarchy_EnumConstants" />
-      <property name="actionsFactoryAspectId" value="StaticFieldReference_to_EnumConstantReference" />
-      <link role="applicableSourceConcept" targetNodeId="1.1070533707846" />
-      <link role="applicableLink" targetNodeId="1.1070568178160" />
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141262055243">
-      <property name="searchScopeProviderAspectId" value="StaticMethodCall_ClassifierHierarchy_StaticFields" />
-      <property name="actionsFactoryAspectId" value="StaticMethodCall_to_StaticFieldReference" />
-      <link role="applicableSourceConcept" targetNodeId="1.1081236700937" />
-      <link role="applicableLink" targetNodeId="1.1081236769987" />
-    </node>
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1141262055245">
-      <property name="searchScopeProviderAspectId" value="StaticMethodCall_ClassifierHierarchy_EnumConstants" />
-      <property name="actionsFactoryAspectId" value="StaticMethodCall_to_EnumConstantReference" />
+      <property name="searchScopeProviderAspectId" value="Empty" />
+      <property name="actionsFactoryAspectId" value="StaticMethodCall_default_and_extra" />
       <link role="applicableSourceConcept" targetNodeId="1.1081236700937" />
       <link role="applicableLink" targetNodeId="1.1081236769987" />
     </node>
@@ -117,8 +105,8 @@
   <node type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActions" id="1144964668383">
     <property name="name" value="BL_instance_member_reference" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1144964865874">
-      <property name="searchScopeProviderAspectId" value="FieldReference_ClassifierHierarchy_InstanceMethods" />
-      <property name="actionsFactoryAspectId" value="FieldReference_to_InstanceMethodCall" />
+      <property name="searchScopeProviderAspectId" value="Empty" />
+      <property name="actionsFactoryAspectId" value="FieldReference_default_and_extra" />
       <link role="applicableLink" targetNodeId="1.1070568237987" />
       <link role="applicableSourceConcept" targetNodeId="1.1068580123158" />
     </node>
@@ -131,8 +119,8 @@
       <link role="applicableSourceConcept" targetNodeId="1.1068580123158" />
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder" id="1144964865876">
-      <property name="searchScopeProviderAspectId" value="InstanceMethodCall_ClassifierHierarchy_InstanceFields" />
-      <property name="actionsFactoryAspectId" value="InstanceMethodCall_to_FieldReference" />
+      <property name="searchScopeProviderAspectId" value="Empty" />
+      <property name="actionsFactoryAspectId" value="InstanceMethodCall_default_and_extra" />
       <link role="applicableSourceConcept" targetNodeId="1.1068580123163" />
       <link role="applicableLink" targetNodeId="1.1070568044740" />
     </node>

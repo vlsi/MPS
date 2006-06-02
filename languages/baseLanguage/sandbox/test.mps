@@ -314,7 +314,7 @@
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1137989716648">
                 <link role="variableDeclaration" targetNodeId="1136027175492" />
               </node>
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.FieldReference" id="1149207584431">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.FieldReference" id="1149269361800">
                 <link role="variableDeclaration" targetNodeId="1127094836077" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1137736492593" />
               </node>
@@ -337,7 +337,7 @@
               <node role="lValue" type="jetbrains.mps.baseLanguage.ParameterReference" id="1137714259018">
                 <link role="variableDeclaration" targetNodeId="1136027173099" />
               </node>
-              <node role="rValue" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1149184858811">
+              <node role="rValue" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1149271499970">
                 <link role="baseMethodDeclaration" targetNodeId="1137892365869" />
                 <link role="classConcept" targetNodeId="1137816471209" />
               </node>
@@ -380,7 +380,7 @@
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1137994194082">
       <property name="name" value="ccc" />
       <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1137994208443" />
-      <node role="initializer" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1137994232291">
+      <node role="initializer" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1149271022534">
         <link role="variableDeclaration" extResolveInfo="1.static field ([Classifier]Integer).([StaticFieldDeclaration]MAX_VALUE : (jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int))" />
         <link role="classifier" extResolveInfo="1.[Classifier]Integer" />
       </node>

@@ -23,8 +23,12 @@ public class ModelActions {
   };
 
   //-------------------
-  // node substitute
+  // child substitute
   //-------------------
+
+  public static List<INodeSubstituteAction> createChildSubstituteActions(SNode parentNode, SNode currentChild, ConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
+    return ChildSubstituteActionsHelper.createActions(parentNode, currentChild, childConcept, childSetter, context);
+  }
 
   /**
    * helper method
@@ -53,19 +57,18 @@ public class ModelActions {
   }
 
   //-------------------
-  // child substitute
-  //-------------------
-
-  public static List<INodeSubstituteAction> createChildSubstituteActions(SNode parentNode, SNode currentChild, ConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
-    return ChildSubstituteActionsHelper.createActions(parentNode, currentChild, childConcept, childSetter, context);
-  }
-
-  //-------------------
   // referent substitute
   //-------------------
 
-  public static List<INodeSubstituteAction> createReferenceSubstituteActions(SNode sourceNode, SNode currentTargetNode, LinkDeclaration linkDeclaration, IOperationContext context) {
-    return ReferentSubstituteActionsHelper.createActions(sourceNode, currentTargetNode, linkDeclaration, context);
+  public static List<INodeSubstituteAction> createReferentSubstituteActions(SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration, IOperationContext context) {
+    return ReferentSubstituteActionsHelper.createActions(referenceNode, currentReferent, linkDeclaration, context);
+  }
+
+  /**
+   * helper method
+   */
+  public static List<INodeSubstituteAction> createPrimaryReferentSubstituteActions(SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration, Condition<SNode> filter, IOperationContext context) {
+    return ReferentSubstituteActionsHelper.createPrimaryReferentSubstituteActions(referenceNode, currentReferent, linkDeclaration, filter, context.getScope());
   }
 
   //-------------------
