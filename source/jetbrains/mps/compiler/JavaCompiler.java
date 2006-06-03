@@ -55,7 +55,6 @@ public class JavaCompiler {
     }
 
     public void put(String name, byte[] bytes) {
-      System.out.println("put " + name);
 
       myClasses.put(name, bytes);
     }

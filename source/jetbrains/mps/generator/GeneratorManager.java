@@ -149,6 +149,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
   private void generateTextAndExecute(SModel targetModel, IAdaptiveProgressMonitor progress) {
     JavaCompiler compiler = new JavaCompiler();
+
     for (SNode root : targetModel.getRoots()) {
       compiler.addSource(JavaFileGenerator.generateHeader(targetModel.getUID().getLongName()) +
               generateText(root), targetModel.getUID().getLongName() + "." + root.getName());
@@ -159,12 +160,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
     try {
       String mainClassName = targetModel.getUID().getLongName() + ".Main";
-      System.out.println("Main class is : " + mainClassName);
       Class mainClass = Class.forName(mainClassName, true, compiler.getClassLoader());
       Method mainMethod = mainClass.getMethod("main", String[].class);
-
-      System.out.println(Arrays.asList(mainMethod.getParameterTypes()));
-
       mainMethod.invoke(null, new Object[] { new String[0] });
     } catch (ClassNotFoundException e) {
       progress.addText("Can't find main class");
@@ -247,8 +244,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   }
 
   public void generateModels(List<SModel> _sourceModels, Language targetLanguage, IOperationContext invocationContext, GenerationType generationType, IAdaptiveProgressMonitor progress) {
-    boolean generateText = (generationType == GenerationType.GENERATE_TEXT);
-
     invocationContext.getProject().saveModels();
     List<SModelDescriptor> sourceModels = new ArrayList<SModelDescriptor>();
     for (SModel model : _sourceModels) {
@@ -354,7 +349,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
               break;
             case GENERATE_AND_EXECUTE:
               progress.addText("compiling generated code in memory...");
-              generateTextAndExecute(sourceModel, progress);
+              generateTextAndExecute(status.getOutputModel(), progress);
               break;
           }
         }
