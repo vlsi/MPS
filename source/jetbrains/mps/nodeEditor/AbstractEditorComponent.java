@@ -1461,7 +1461,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return null;
   }
 
-  private EditorCell findErrorOrEditableCell(EditorCell root) {
+  /*package*/ EditorCell findErrorOrEditableCell(EditorCell root) {
     EditorCell result = findErrorCell(root);
     if (result != null) return result;
     return findLastEditableCell(root);

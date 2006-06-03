@@ -38,8 +38,8 @@ public class IntelligentInputUtil {
 
     EditorCell cellForNewNode;
     SNode newNode;
-    if (cell.isValidText(smallPattern)) {
-       newNode = cell.getSNode();
+    if (cell.isValidText(smallPattern) && !"".equals(smallPattern)) {
+      newNode = cell.getSNode();
       cellForNewNode = cell;
     } else if (uniqueAction(substituteInfo, smallPattern, tail)) {
       INodeSubstituteItem item = matchingActions.get(0);
@@ -72,8 +72,10 @@ public class IntelligentInputUtil {
       final SNode yetNewNode = rtItem.doSubstitute(smallPattern);
       CommandProcessor.instance().invokeLater(new Runnable() {
         public void run() {
-          EditorCell yetNewNodeCell = editorContext.getNodeEditorComponent().findNodeCell(yetNewNode);
-          editorContext.getNodeEditorComponent().changeSelectionWRTFocusPolicy(yetNewNodeCell);
+          AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
+          EditorCell yetNewNodeCell = editor.findNodeCell(yetNewNode);
+          EditorCell errorOrEditableCell = editor.findErrorOrEditableCell(yetNewNodeCell);  
+          editor.changeSelectionWRTFocusPolicy(errorOrEditableCell);
         }
       });
     } else {
