@@ -3,8 +3,6 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IStatus;
-import jetbrains.mps.ide.NodeEditor;
-import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.action.*;
 import jetbrains.mps.ide.actions.nodes.*;
 import jetbrains.mps.ide.actions.refactorings.InlineVariableAction;
@@ -1447,22 +1445,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return null;
   }
 
-  private EditorCell findErrorCell(EditorCell root) {
-    if (root != null && (root instanceof EditorCell_Error || root.isErrorState())) {
-      return root;
-    }
-    if (root instanceof EditorCell_Collection) {
-      EditorCell_Collection collection = (EditorCell_Collection) root;
-      for (EditorCell child : collection) {
-        EditorCell result = findErrorCell(child);
-        if (result != null) return result;
-      }
-    }
-    return null;
-  }
-
   /*package*/ EditorCell findErrorOrEditableCell(EditorCell root) {
-    EditorCell result = findErrorCell(root);
+    EditorCell result = EditorUtil.findErrorCell(root);
     if (result != null) return result;
     return findLastEditableCell(root);
   }
