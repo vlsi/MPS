@@ -15,6 +15,7 @@ import org.eclipse.jdt.internal.compiler.problem.DefaultProblemFactory;
 import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 import org.eclipse.jdt.internal.compiler.classfmt.ClassFileReader;
 import org.eclipse.jdt.internal.compiler.classfmt.ClassFormatException;
+import org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants;
 import org.eclipse.jdt.internal.compiler.env.INameEnvironment;
 import org.eclipse.jdt.internal.compiler.env.NameEnvironmentAnswer;
 
@@ -38,6 +39,7 @@ public class JavaCompiler {
 
   public void compile() {
     org.eclipse.jdt.internal.compiler.Compiler c = new Compiler(new MyNameEnvironment(), new MyErrorHandlingPolicy(), new CompilerOptions(), new MyCompilerRequestor(), new DefaultProblemFactory(), new PrintWriter(System.out));
+    c.options.sourceLevel = ClassFileConstants.JDK1_6;
     c.compile(myCompilationUnits.values().toArray(new CompilationUnit[0]));
   }
 
@@ -49,7 +51,7 @@ public class JavaCompiler {
     private Map<String, byte[]> myClasses = new HashMap<String, byte[]>();
 
     public MapClassLoader() {
-      super(JavaCompiler.class.getClassLoader());
+      super(ClassLoaderManager.getInstance().getClassLoader());
     }
 
     public void put(String name, byte[] bytes) {
@@ -131,8 +133,6 @@ public class JavaCompiler {
 
   private class MyCompilerRequestor implements ICompilerRequestor {
     public void acceptResult(CompilationResult result) {
-      System.out.println("accept result : " + result);
-
       for (ClassFile file : result.getClassFiles()) {
         String name = "";
         for (int i = 0; i < file.getCompoundName().length; i++) {
