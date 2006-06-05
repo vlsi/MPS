@@ -138,7 +138,7 @@ public class MessageView extends DefaultTool {
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         myModel.addElement(message);
-        show();
+        show(false);
       }
     });
   }
@@ -147,13 +147,15 @@ public class MessageView extends DefaultTool {
     return myComponent;
   }
 
-  public void show() {
+  public void show(final boolean activate) {
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         if (myModel.size() > 0) {
           myList.setSelectedValue(myModel.getElementAt(myModel.size() - 1), true);
         }
-        myToolsPane.selectTool(MessageView.this);
+        if (activate) {
+          myToolsPane.selectTool(MessageView.this);
+        }
       }
     });
   }

@@ -103,7 +103,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   }
 
   private void showMessageView() {
-    myProject.getComponent(MessageView.class).show();
+    myProject.getComponent(MessageView.class).show(true);
   }
 
   private String getOutputFolderPath(String outputRootPath, SModel sourceModel) {
@@ -147,7 +147,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     view.activate();
   }
 
-  private void generateTextAndExecute(SModel targetModel, IAdaptiveProgressMonitor progress) {
+  private void generateTextAndExecute(SModel targetModel, IOperationContext context, IAdaptiveProgressMonitor progress) {
     JavaCompiler compiler = new JavaCompiler();
 
     for (SNode root : targetModel.getRoots()) {
@@ -161,8 +161,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     try {
       String mainClassName = targetModel.getUID().getLongName() + ".Main";
       Class mainClass = Class.forName(mainClassName, true, compiler.getClassLoader());
-      Method mainMethod = mainClass.getMethod("main", String[].class);
-      mainMethod.invoke(null, new Object[] { new String[0] });
+      Method mainMethod = mainClass.getMethod("main", IOperationContext.class);
+      mainMethod.invoke(null, context);
     } catch (ClassNotFoundException e) {
       progress.addText("Can't find main class");
       addMessage(MessageKind.ERROR, "Can't find main class");
@@ -174,7 +174,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     } catch (InvocationTargetException e) {
       progress.addText("Invocation target exception");
     }
-
   }
 
   private String generateText(SNode node) {
@@ -244,6 +243,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   }
 
   public void generateModels(List<SModel> _sourceModels, Language targetLanguage, IOperationContext invocationContext, GenerationType generationType, IAdaptiveProgressMonitor progress) {
+
+    showMessageView();
+
     invocationContext.getProject().saveModels();
     List<SModelDescriptor> sourceModels = new ArrayList<SModelDescriptor>();
     for (SModel model : _sourceModels) {
@@ -349,7 +351,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
               break;
             case GENERATE_AND_EXECUTE:
               progress.addText("compiling generated code in memory...");
-              generateTextAndExecute(status.getOutputModel(), progress);
+              generateTextAndExecute(status.getOutputModel(), invocationContext, progress);
               break;
           }
         }
@@ -403,7 +405,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         addProgressMessage(MessageKind.WARNING, "generation finished with errors", progress);
         progress.finishAnyway();
       }
-      showMessageView();
     } catch (GenerationCanceledException gce) {
       addProgressMessage(MessageKind.WARNING, "generation canceled", progress);
       progress.finishAnyway();
