@@ -581,7 +581,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1095419078589">
-    <property name="name" value="TemplateMappingConfiguration_Editor" />
+    <property name="name" value="MappingConfiguration_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1095416546421" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1095419078590">
       <property name="drawBorder" value="false" />
@@ -775,7 +775,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1095419606578">
-    <property name="name" value="TemplateMappingRule_Editor" />
+    <property name="name" value="MappingRule_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1095416572297" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1095419606579">
       <property name="drawBorder" value="false" />
@@ -844,7 +844,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1095420477103">
-    <property name="name" value="TemplateWeavingRule_Editor" />
+    <property name="name" value="WeavingRule_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1095416624611" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1095420477104">
       <property name="drawBorder" value="false" />
@@ -1187,6 +1187,7 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1114458549484">
     <link role="conceptDeclaration" targetNodeId="1.1114458327664" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1114458600627">
+      <property name="substituteActionsFactoryId" value="ConceptDeclarationReference_ConceptDeclaration" />
       <property name="drawBorder" value="false" />
       <property name="noTargetText" value="&lt;choose concept declaration&gt;" />
       <link role="relationDeclaration" targetNodeId="1.1114458346385" />
