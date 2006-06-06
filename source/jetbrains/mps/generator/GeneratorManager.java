@@ -199,9 +199,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     return targetLanguages;
   }
 
-  public static List<Language> getPossibleTargetLanguages(SModel sourceModel, IScope sourceScope) {
+  public static List<Language> getPossibleTargetLanguages(SModel sourceModel, IScope scope) {
     List<Language> targetLanguages = new LinkedList<Language>();
-    List<Language> languages = sourceModel.getLanguages(sourceScope);
+    List<Language> languages = sourceModel.getLanguages(scope);
     for (Language language : languages) {
       List<Generator> generators = language.getGenerators();
       for (Generator generator : generators) {
@@ -212,6 +212,17 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       }
     }
     return targetLanguages;
+  }
+
+  public static boolean isPossibleTargetLanguage(Language language, IScope scope) {
+    List<Generator> generators = language.getGenerators();
+    for (Generator generator : generators) {
+      Language targetLanguage = generator.getTargetLanguage();
+      if (targetLanguage == language) {
+        return true;
+      }
+    }
+    return false;
   }
 
   protected Object clone() throws CloneNotSupportedException {
@@ -254,7 +265,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     clearMessages();
 
 
-    switch(generationType) {
+    switch (generationType) {
       case GENERATE_AND_EXECUTE:
         addMessage(MessageKind.INFORMATION, "generating and executing");
         break;
@@ -340,7 +351,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         status = generationSession.generateModel(sourceModelDescriptor);
         checkMonitorCanceled(progress);
         if (status.getOutputModel() != null) {
-          switch(generationType) {
+          switch (generationType) {
             case GENERATE_TEXT:
               progress.addText("generate text to Output view");
               generateText(status.getOutputModel(), invocationContext);

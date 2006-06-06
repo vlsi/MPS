@@ -36,6 +36,8 @@ public class GenerationSession {
   private GenerationSessionContext myCurrentContext;
   private List<GenerationSessionContext> mySavedContexts = new LinkedList<GenerationSessionContext>();
 
+  private int myTransientModelsCount = 0;
+
   public GenerationSession(Language targetLanguage, IOperationContext invocationContext, boolean saveTransientModels, IAdaptiveProgressMonitor progressMonitor) {
     myTargetLanguage = targetLanguage;
     myInvocationContext = invocationContext;
@@ -49,6 +51,9 @@ public class GenerationSession {
   }
 
   public void discardTransients() {
+    // myCurrentContext is null if saveTransientModels flag is TRUE.
+    // In this case transient models are not disposed here and
+    // the former 'current context' is stored in the mySavedContexts list
     if (myCurrentContext != null) {
       myCurrentContext.getModule().dispose(); // unregister transient models and module
     }
@@ -56,7 +61,28 @@ public class GenerationSession {
   }
 
   public GenerationStatus generateModel(SModelDescriptor sourceModel) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-    GenerationStatus status = generateModel_internal(sourceModel);
+    GenerationStatus status = null;
+
+    // need to re-write model ?
+    List<Language> sourceModelLanguages = sourceModel.getSModel().getLanguages(myInvocationContext.getScope());
+    for (Language language : sourceModelLanguages) {
+      if (language == myTargetLanguage) continue;
+      if (GeneratorManager.isPossibleTargetLanguage(language, myInvocationContext.getScope())) {
+        // do re-write model
+        status = generateModel_internal(sourceModel, language, true);
+        if (status.isError()) {
+          break;
+        }
+
+        // replace source model with re-written model
+        sourceModel = status.getOutputModel().getModelDescriptor();
+      }
+    }
+
+    // do model mapping
+    if (status == null || status.isOk()) {
+      status = generateModel_internal(sourceModel, myTargetLanguage, false);
+    }
     if (mySaveTransientModels ||
             status.isError()) { // if ERROR - keep transient models: we need them to navigate to from error messages
       if (myCurrentContext != null) {
@@ -67,14 +93,14 @@ public class GenerationSession {
     return status;
   }
 
-  private GenerationStatus generateModel_internal(SModelDescriptor sourceModelDescriptor) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+  private GenerationStatus generateModel_internal(SModelDescriptor sourceModelDescriptor, Language targetLanguage, boolean primaryMappingOnly) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
     SModel sourceModel = sourceModelDescriptor.getSModel();
     addProgressMessage(MessageKind.INFORMATION, "generating model \"" + sourceModel.getUID() + "\"");
-    Class<? extends IModelGenerator> defaultGeneratorClass = getDefaultGeneratorClass();
+    Class<? extends IModelGenerator> defaultGeneratorClass = getDefaultGeneratorClass(targetLanguage);
     addMessage(MessageKind.INFORMATION, "    default generator class: " + (defaultGeneratorClass != null ? defaultGeneratorClass.getName() : "<n/a>"));
 
     // -- replace context and create generators list
-    GenerationSessionContext context = new GenerationSessionContext(myTargetLanguage, sourceModel, myInvocationContext);
+    GenerationSessionContext context = new GenerationSessionContext(targetLanguage, sourceModel, myInvocationContext);
     List<Generator> generators = context.getGeneratorModules();
     if (generators.isEmpty()) {
       addProgressMessage(MessageKind.WARNING, "skip model \"" + sourceModel.getUID() + "\" : no generator avalable");
@@ -114,7 +140,7 @@ public class GenerationSession {
     if (!ITemplateGenerator.class.isAssignableFrom(currentGeneratorClass)) {
       // hand-coded - not much to do ... just instantiate and invoke
       IModelGenerator handCodedGenerator = currentGeneratorClass.getConstructor(IOperationContext.class).newInstance(context);
-      SModelDescriptor outputModel = createTransientModel(0, sourceModel, context.getModule());
+      SModelDescriptor outputModel = createTransientModel(sourceModel, context.getModule());
       handCodedGenerator.generate(sourceModel, outputModel.getSModel());
       return new GenerationStatus.OK(outputModel.getSModel());
     }
@@ -123,7 +149,7 @@ public class GenerationSession {
     ITemplateGenerator generator = (ITemplateGenerator) currentGeneratorClass.getConstructor(GenerationSessionContext.class, IAdaptiveProgressMonitor.class).newInstance(context, myProgressMonitor);
     GenerationStatus status;
     try {
-      SModel outputModel = generateModel(sourceModel, generator);
+      SModel outputModel = generateModel(sourceModel, targetLanguage, generator, primaryMappingOnly);
       boolean wasErrors = generator.getErrorCount() > 0;
       status = new GenerationStatus(outputModel, wasErrors, false);
       addMessage(status.isError() ? MessageKind.WARNING : MessageKind.INFORMATION, "model \"" + sourceModel.getUID() + "\" has been generated " + (status.isError() ? "with errors" : "successfully"));
@@ -151,31 +177,32 @@ public class GenerationSession {
     return status;
   }
 
-  private SModel generateModel(SModel inputModel, ITemplateGenerator generator) {
+  private SModel generateModel(SModel inputModel, Language targetLanguage, ITemplateGenerator generator, boolean primaryMappingOnly) {
     GenerationSessionContext generationContext = generator.getGeneratorSessionContext();
-    SModelDescriptor currentOutputModel = createTransientModel(0, inputModel, generationContext.getModule());
+    SModelDescriptor currentOutputModel = createTransientModel(inputModel, generationContext.getModule());
 
     // primary mapping
-    if (!generator.doPrimaryMapping(inputModel, currentOutputModel.getSModel())) {
+    boolean somethingHasBeenGenerated = generator.doPrimaryMapping(inputModel, currentOutputModel.getSModel());
+    if (!somethingHasBeenGenerated || primaryMappingOnly) {
       SModel model = currentOutputModel.getSModel();
       model.validateLanguagesAndImports();
       return model;
     }
 
-    // secondary mapping
+    // secondary mapping (infinite cycle untill 'exit condition' is true)
     int repeatCount = 1;
     while (true) {
       currentOutputModel.getSModel().validateLanguagesAndImports();
       // check exit condition (only the 'target language' is used in the output model)
       List<String> languageNamespaces = currentOutputModel.getSModel().getLanguageNamespaces();
-      if (languageNamespaces.size() == 1 && languageNamespaces.get(0).equals(myTargetLanguage.getNamespace())) {
+      if (languageNamespaces.size() == 1 && languageNamespaces.get(0).equals(targetLanguage.getNamespace())) {
         break;
       }
 
       // apply mapping to the output model
       myCurrentContext.replaceInputModel(currentOutputModel);
       SModelDescriptor currentInputModel = currentOutputModel;
-      SModelDescriptor transientModel = createTransientModel(repeatCount, inputModel, generationContext.getModule());
+      SModelDescriptor transientModel = createTransientModel(inputModel, generationContext.getModule());
       if (!generator.doSecondaryMapping(currentInputModel.getSModel(), transientModel.getSModel(), repeatCount)) {
         SModelRepository.getInstance().unRegisterModelDescriptor(transientModel, generationContext.getModule());
         break;
@@ -192,14 +219,15 @@ public class GenerationSession {
     return currentOutputModel.getSModel();
   }
 
-  private SModelDescriptor createTransientModel(int modelIndex, SModel sourceModel, ModelOwner modelOwner) {
-    SModelDescriptor transientModel = TransientModels.createTransientModel(modelOwner, sourceModel.getLongName(), "" + modelIndex + "_" + getSessionId());
+  private SModelDescriptor createTransientModel(SModel sourceModel, ModelOwner modelOwner) {
+    SModelDescriptor transientModel = TransientModels.createTransientModel(modelOwner, sourceModel.getLongName(), "" + myTransientModelsCount + "_" + getSessionId());
+    myTransientModelsCount++;
     transientModel.getSModel().setLoading(true); // we dont need any events to be casted
     return transientModel;
   }
 
-  private Class<? extends IModelGenerator> getDefaultGeneratorClass() throws ClassNotFoundException {
-    TargetOfGenerator targetOfGenerator = myTargetLanguage.getLanguageDescriptor().getTargetOfGenerator();
+  private Class<? extends IModelGenerator> getDefaultGeneratorClass(Language targetLanguage) throws ClassNotFoundException {
+    TargetOfGenerator targetOfGenerator = targetLanguage.getLanguageDescriptor().getTargetOfGenerator();
     if (targetOfGenerator != null) {
       String generatorClassName = targetOfGenerator.getGeneratorClass();
       if (generatorClassName != null) {
