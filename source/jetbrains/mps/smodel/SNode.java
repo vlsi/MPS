@@ -476,6 +476,19 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return getChildInRoleCount(role);
   }
 
+  public int getIndexOfChild(SNode child_) {
+    String role_ = child_.getRole_();
+    if (role_ == null) return -1;
+    int count = 0;
+    for (SNode child : myChildren) {
+      if (child == child_) return count;
+      if (child.getRole_().equals(role_)) {
+        count++;
+      }
+    }
+    return -1;
+  }
+
   public <T extends SNode> Iterator<T> children(String role) {
     List<T> list = new LinkedList<T>();
     for (SNode child : myChildren) {
