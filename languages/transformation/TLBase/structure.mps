@@ -326,5 +326,21 @@
       <link role="dataType" targetNodeId="2.1082983041843" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration" id="1149694466802">
+    <property name="stereotype" value="property" />
+    <property name="role" value="propertyMacro" />
+    <link role="source" targetNodeId="2.1133920641626" />
+    <link role="target" targetNodeId="1087833241328" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration" id="1149694500506">
+    <property name="role" value="nodeMacro" />
+    <link role="source" targetNodeId="2.1133920641626" />
+    <link role="target" targetNodeId="1087833466690" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration" id="1149694518242">
+    <property name="role" value="referenceMacro" />
+    <link role="source" targetNodeId="2.1133920641626" />
+    <link role="target" targetNodeId="1088761943574" />
+  </node>
 </model>
 
