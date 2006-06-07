@@ -9,7 +9,6 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
-import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
@@ -127,17 +126,18 @@ public class EditorManager {
 
   /*package*/ EditorCell createEditorCell(EditorContext context, List<SModelEvent> events, ReferencedNodeContext refContext) {
     SNode node = refContext.getNode();
-    AttributeConcept attribute = node.getAttribute();
 
-    //if the whole node has attribute
-    if (attribute != null) {
-      //if creating this cell for this attribute for the first time
-      if (myAttributesStack.isEmpty() || (myAttributesStack.peek() != attribute)) {
-        myAttributesStack.push(attribute);
-        EditorCell result = createEditorCell(context, events, ReferencedNodeContext.createNodeContext(attribute));
-        AttributeConcept poppedAttribute = myAttributesStack.pop();
-        LOG.assertLog(poppedAttribute == attribute);
-        return result;
+    for (AttributeConcept attribute : node.getNodeAttributes()) {
+      //if the whole node has attribute
+      if (attribute != null) {
+        //if creating this cell for this attribute for the first time
+        if (!myAttributesStack.contains(attribute)) {
+          myAttributesStack.push(attribute);
+          EditorCell result = createEditorCell(context, events, ReferencedNodeContext.createNodeContext(attribute));
+          AttributeConcept poppedAttribute = myAttributesStack.pop();
+          LOG.assertLog(poppedAttribute == attribute);
+          return result;
+        }
       }
     }
 

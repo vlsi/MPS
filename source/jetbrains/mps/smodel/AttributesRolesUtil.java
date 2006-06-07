@@ -40,4 +40,29 @@ public class AttributesRolesUtil {
     return attributeRole;
   }
 
+  public static boolean isNodeAttributeRole(String role) {
+    return role.endsWith(STEREOTYPE_DELIM + ATTRIBUTE_STEREOTYPE);
+  }
+
+  public static String getLinkRoleFromLinkAttributeRole(String attributeRole) {
+    int index = attributeRole.indexOf(STEREOTYPE_DELIM);
+    if (index < 0) return null;
+    String tail = attributeRole.substring(index+1);
+    if (tail.startsWith(LINK_ATTRIBUTE_STEREOTYPE)) {
+      return tail.substring((STEREOTYPE_DELIM + LINK_ATTRIBUTE_STEREOTYPE).length());
+    } else {
+      return null;
+    }
+  }
+
+  public static String getPropertyNameFromPropertyAttributeRole(String attributeRole) {
+    int index = attributeRole.indexOf(STEREOTYPE_DELIM);
+    if (index < 0) return null;
+    String tail = attributeRole.substring(index+1);
+    if (tail.startsWith(PROPERTY_ATTRIBUTE_STEREOTYPE)) {
+      return tail.substring((STEREOTYPE_DELIM + PROPERTY_ATTRIBUTE_STEREOTYPE).length());
+    } else {
+      return null;
+    }
+  }
 }

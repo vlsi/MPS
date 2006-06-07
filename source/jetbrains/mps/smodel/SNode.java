@@ -258,6 +258,16 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return children(attributeRole);
   }
 
+  public List<AttributeConcept> getNodeAttributes() {
+    List<AttributeConcept> attributes = new ArrayList<AttributeConcept>();
+    for (SNode child : myChildren) {
+      if (AttributesRolesUtil.isNodeAttributeRole(child.getRole_())) {
+        attributes.add((AttributeConcept) child);
+      }
+    }
+    return attributes;
+  }
+
   public AttributeConcept getAttribute_new(String role) {
     String attributeRole = AttributesRolesUtil.childRoleFromAttributeRole(role);
     return (AttributeConcept) getChild(attributeRole);
@@ -399,10 +409,8 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   protected Set<String> getPropertyNamesFromAttributes() {
     Set<String> result = new HashSet<String>();
     for (String role : getChildRoles(true)) {
-      String suffix = AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.PROPERTY_ATTRIBUTE_STEREOTYPE;
-      if (role.endsWith(suffix)) {
-        result.add(role.substring(0, role.length() - suffix.length()));
-      }
+      String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(role);
+      if (propertyName != null) result.add(propertyName);
     }
     return result;
   }
@@ -411,10 +419,8 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   protected Set<String> getLinkNamesFromAttributes() {
     Set<String> result = new HashSet<String>();
     for (String role : getChildRoles(true)) {
-      String suffix = AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.LINK_ATTRIBUTE_STEREOTYPE;
-      if (role.endsWith(suffix)) {
-        result.add(role.substring(0, role.length() - suffix.length()));
-      }
+      String linkRole = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(role);
+      if (linkRole != null) result.add(linkRole);
     }
     return result;
   }
