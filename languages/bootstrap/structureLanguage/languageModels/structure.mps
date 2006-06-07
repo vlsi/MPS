@@ -62,7 +62,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1071489288298">
     <property name="name" value="LinkDeclaration" />
-    <link role="extends" targetNodeId="1.1133920641626" />
+    <link role="extends" targetNodeId="1.1078489098625" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1071599776563">
       <property name="propertyType" value="string" />
       <property name="name" value="role" />
@@ -372,6 +372,40 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1137533021041">
       <property name="value" value="reference" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1149608206811">
+    <property name="rootable" value="true" />
+    <property name="name" value="AnnotationLinkDeclaration" />
+    <link role="extends" targetNodeId="1071489288298" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1149608445162">
+      <property name="name" value="stereotype" />
+      <link role="dataType" targetNodeId="1149608316235" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1149608246500">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="source" />
+      <link role="target" targetNodeId="1071489090640" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration" id="1149608316235">
+    <property name="name" value="AnnotationLinkStereotype" />
+    <link role="memberDataType" targetNodeId="1.1082983041843" />
+    <link role="defaultMember" targetNodeId="1149608364144" />
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1149608364144">
+      <property name="externalValue" value="node" />
+      <property name="internalValue" value="node" />
+      <property name="name" value="node" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1149608316236">
+      <property name="externalValue" value="link" />
+      <property name="internalValue" value="link" />
+      <property name="name" value="link" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration" id="1149608344284">
+      <property name="externalValue" value="property" />
+      <property name="internalValue" value="property" />
+      <property name="name" value="property" />
     </node>
   </node>
 </model>
