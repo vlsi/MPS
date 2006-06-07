@@ -1,6 +1,7 @@
 package jetbrains.mps.patterns.util;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.patterns.*;
 import jetbrains.mps.annotations.*;
 import jetbrains.mps.logging.Logger;

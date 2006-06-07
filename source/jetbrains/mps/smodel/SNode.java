@@ -37,11 +37,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   public static final String NAME = "name";
   public static final String RIGHT_TRANSFORM_HINT = "right_transfrom_hint";
 
-  public static final String STEREOTYPE_DELIM = "$";
-  public static final String ATTRIBUTE_STEREOTYPE = "attribute";
-  public static final String PROPERTY_ATTRIBUTE_STEREOTYPE = "property_attribute";
-  public static final String LINK_ATTRIBUTE_STEREOTYPE = "link_attribute";
-
   private String myRoleInParent;
   private SNode myParent;
 
@@ -131,7 +126,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     Set<String> result = new HashSet<String>();
     for (SNode child : getChildren()) {
       String roleOf = getRoleOf(child);
-      if (includeAttributeRoles || !(roleOf.contains(STEREOTYPE_DELIM))) {
+      if (includeAttributeRoles || !(roleOf.contains(AttributesRolesUtil.STEREOTYPE_DELIM))) {
         result.add(roleOf);
       }
     }
@@ -240,35 +235,145 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   //----- attributes
   //
 
+  //node attributes
 
-  public void setAttribute(AttributeConcept attributeConcept) {
-    setChild(STEREOTYPE_DELIM + ATTRIBUTE_STEREOTYPE, attributeConcept);
+  private void setAttribute_internal(AttributeConcept attributeConcept) {
+    setChild(AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.ATTRIBUTE_STEREOTYPE, attributeConcept);
   }
 
-  public boolean hasAttribute() {
-    return getChild(STEREOTYPE_DELIM + ATTRIBUTE_STEREOTYPE) != null;
+  private AttributeConcept getAttribute_internal() {
+    return (AttributeConcept) getChild(AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.ATTRIBUTE_STEREOTYPE);
   }
-
   public AttributeConcept getAttribute() {
-    return (AttributeConcept) getChild(STEREOTYPE_DELIM + ATTRIBUTE_STEREOTYPE);
+    AttributeConcept result =  getAttribute_new();
+    if (result == null) result = getAttribute_internal();
+    return result;
+  }
+  public void setAttribute(AttributeConcept attributeConcept) {
+    setAttribute_internal(attributeConcept);
+  }
+  //--new
+  public Iterator<AttributeConcept> attributes_new(String role) {
+    String attributeRole = AttributesRolesUtil.childRoleFromAttributeRole(role);
+    return children(attributeRole);
   }
 
+  public AttributeConcept getAttribute_new(String role) {
+    String attributeRole = AttributesRolesUtil.childRoleFromAttributeRole(role);
+    return (AttributeConcept) getChild(attributeRole);
+  }
+
+  public AttributeConcept getAttribute_new() {
+    return getAttribute_new(null);
+  }
+
+  public void setAttribute_new(AttributeConcept attributeConcept) {
+    setAttribute_new(null, attributeConcept);
+  }
+
+  public void setAttribute_new(String role, AttributeConcept attributeConcept) {
+    setChild(AttributesRolesUtil.childRoleFromAttributeRole(role), attributeConcept);
+  }
+
+  ///--property attributes
+
+  private void setPropertyAttribute_internal(String propertyName, PropertyAttributeConcept propertyAttribute) {
+    setChild(propertyName + AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.PROPERTY_ATTRIBUTE_STEREOTYPE, propertyAttribute);
+  }
+
+  private PropertyAttributeConcept getPropertyAttribute_internal(String propertyName) {
+    return (PropertyAttributeConcept) getChild(propertyName + AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.PROPERTY_ATTRIBUTE_STEREOTYPE);
+  }
 
   public void setPropertyAttribute(String propertyName, PropertyAttributeConcept propertyAttribute) {
-    setChild(propertyName + STEREOTYPE_DELIM + PROPERTY_ATTRIBUTE_STEREOTYPE, propertyAttribute);
+    setPropertyAttribute_internal(propertyName, propertyAttribute);
   }
 
   public PropertyAttributeConcept getPropertyAttribute(String propertyName) {
-    return (PropertyAttributeConcept) getChild(propertyName + STEREOTYPE_DELIM + PROPERTY_ATTRIBUTE_STEREOTYPE);
+    PropertyAttributeConcept result = getPropertyAttribute_new(propertyName);
+    if (result != null) result = getPropertyAttribute_internal(propertyName);
+    return result;
+  }
+
+  //--new
+
+  public void setPropertyAttribute_new(String propertyName, PropertyAttributeConcept propertyAttribute) {
+    setPropertyAttribute_new(null, propertyName, propertyAttribute);
+  }
+
+  public void setPropertyAttribute_new(String role, String propertyName, PropertyAttributeConcept propertyAttribute) {
+    setChild(AttributesRolesUtil.childRoleFromPropertyAttributeRole(role, propertyName), propertyAttribute);
+  }
+
+  public PropertyAttributeConcept getPropertyAttribute_new(String role, String propertyName) {
+    return (PropertyAttributeConcept) getChild(AttributesRolesUtil.childRoleFromPropertyAttributeRole(role, propertyName));
+  }
+
+  public PropertyAttributeConcept getPropertyAttribute_new(String propertyName) {
+    return getPropertyAttribute_new(null, propertyName);
   }
 
 
+  ///-- link attributes
+
+  private void setLinkAttribute_internal(String role, LinkAttributeConcept linkAttribute) {
+    setChild(role + AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.LINK_ATTRIBUTE_STEREOTYPE, linkAttribute);
+  }
+
+  private LinkAttributeConcept getLinkAttribute_internal(String role) {
+    return (LinkAttributeConcept) getChild(role + AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.LINK_ATTRIBUTE_STEREOTYPE);
+  }
+
   public void setLinkAttribute(String role, LinkAttributeConcept linkAttribute) {
-    setChild(role + STEREOTYPE_DELIM + LINK_ATTRIBUTE_STEREOTYPE, linkAttribute);
+    setLinkAttribute_internal(role, linkAttribute);
   }
 
   public LinkAttributeConcept getLinkAttribute(String role) {
-    return (LinkAttributeConcept) getChild(role + STEREOTYPE_DELIM + LINK_ATTRIBUTE_STEREOTYPE);
+    LinkAttributeConcept result = getLinkAttribute_new(role);
+    if (result == null) result = getLinkAttribute_internal(role);
+    return result;
+  }
+
+  //new
+  public void setLinkAttribute_new(String linkRole, LinkAttributeConcept linkAttribute) {
+    setLinkAttribute_new(null, linkRole, linkAttribute);
+  }
+
+  public void setLinkAttribute_new(String role, String linkRole, LinkAttributeConcept linkAttribute) {
+    setChild(AttributesRolesUtil.childRoleFromLinkAttributeRole(role, linkRole), linkAttribute);
+  }
+
+  public LinkAttributeConcept getLinkAttribute_new(String role, String linkRole) {
+    return (LinkAttributeConcept) getChild(AttributesRolesUtil.childRoleFromLinkAttributeRole(role, linkRole));
+  }
+
+  public LinkAttributeConcept getLinkAttribute_new(String linkRole) {
+    return getLinkAttribute_new(null, linkRole);
+  }
+
+   //-- for node refactoring
+  public boolean refactorAttributes() {
+    boolean changed = false;
+    AttributeConcept attribute = getAttribute_internal();
+    if (attribute != null) {
+      changed = true;
+      setAttribute_new(attribute);
+    }
+    for (String propertyName : getPropertyNames()) {
+      PropertyAttributeConcept propertyAttribute = getPropertyAttribute_internal(propertyName);
+      if (propertyAttribute != null) {
+        changed = true;
+        setPropertyAttribute_new(propertyName, propertyAttribute);
+      }
+    }
+    for (String linkRole : getReferenceRoles()) {
+      LinkAttributeConcept linkAttribute = getLinkAttribute(linkRole);
+      if (linkAttribute != null) {
+        changed = true;
+        setLinkAttribute_new(linkRole, linkAttribute);
+      }
+    }
+    return changed;
   }
 
   //
@@ -291,7 +396,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   protected Set<String> getPropertyNamesFromAttributes() {
     Set<String> result = new HashSet<String>();
     for (String role : getChildRoles(true)) {
-      String suffix = STEREOTYPE_DELIM + PROPERTY_ATTRIBUTE_STEREOTYPE;
+      String suffix = AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.PROPERTY_ATTRIBUTE_STEREOTYPE;
       if (role.endsWith(suffix)) {
         result.add(role.substring(0, role.length() - suffix.length()));
       }
@@ -303,7 +408,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   protected Set<String> getLinkNamesFromAttributes() {
     Set<String> result = new HashSet<String>();
     for (String role : getChildRoles(true)) {
-      String suffix = STEREOTYPE_DELIM + LINK_ATTRIBUTE_STEREOTYPE;
+      String suffix = AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.LINK_ATTRIBUTE_STEREOTYPE;
       if (role.endsWith(suffix)) {
         result.add(role.substring(0, role.length() - suffix.length()));
       }
