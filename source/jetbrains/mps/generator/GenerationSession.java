@@ -29,7 +29,7 @@ public class GenerationSession {
 
   private Language myTargetLanguage;
   private IOperationContext myInvocationContext;
-  private boolean mySaveTransientModels;
+  private boolean myDiscardTransients;
   private IAdaptiveProgressMonitor myProgressMonitor;
 
   private String mySessionId;
@@ -41,7 +41,7 @@ public class GenerationSession {
   public GenerationSession(Language targetLanguage, IOperationContext invocationContext, boolean saveTransientModels, IAdaptiveProgressMonitor progressMonitor) {
     myTargetLanguage = targetLanguage;
     myInvocationContext = invocationContext;
-    mySaveTransientModels = saveTransientModels;
+    myDiscardTransients = !saveTransientModels;
     myProgressMonitor = progressMonitor;
     mySessionId = "" + System.currentTimeMillis();
   }
@@ -51,13 +51,20 @@ public class GenerationSession {
   }
 
   public void discardTransients() {
-    // myCurrentContext is null if saveTransientModels flag is TRUE.
-    // In this case transient models are not disposed here and
-    // the former 'current context' is stored in the mySavedContexts list
-    if (myCurrentContext != null) {
-      myCurrentContext.getModule().dispose(); // unregister transient models and module
+    setGenerationSessionContext(null);
+    if (myDiscardTransients) {
+      for (GenerationSessionContext savedContext : mySavedContexts) {
+        savedContext.getModule().dispose(); // unregister transient models and module
+      }
+      mySavedContexts.clear();
     }
-    myCurrentContext = null;
+  }
+
+  private void setGenerationSessionContext(GenerationSessionContext context) {
+    if (myCurrentContext != null) {
+      mySavedContexts.add(myCurrentContext);
+    }
+    myCurrentContext = context;
   }
 
   public GenerationStatus generateModel(SModelDescriptor sourceModel) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
@@ -83,13 +90,11 @@ public class GenerationSession {
     if (status == null || status.isOk()) {
       status = generateModel_internal(sourceModel, myTargetLanguage, false);
     }
-    if (mySaveTransientModels ||
-            status.isError()) { // if ERROR - keep transient models: we need them to navigate to from error messages
-      if (myCurrentContext != null) {
-        mySavedContexts.add(myCurrentContext);
-        myCurrentContext = null;
-      }
-    } // else - keep current context to discard it later: after files/text is generated
+
+    if (status.isError()) {
+      // if ERROR - keep transient models: we need them to navigate to from error messages
+      myDiscardTransients = false;
+    }
     return status;
   }
 
@@ -106,7 +111,7 @@ public class GenerationSession {
       addProgressMessage(MessageKind.WARNING, "skip model \"" + sourceModel.getUID() + "\" : no generator avalable");
       return new GenerationStatus.OK(null);
     }
-    myCurrentContext = context;
+    setGenerationSessionContext(context);
 
     // -- choose generator class
     Class<? extends IModelGenerator> currentGeneratorClass = null;
