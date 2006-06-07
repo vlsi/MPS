@@ -56,7 +56,9 @@ public class NodeEditor implements IEditor {
   }
 
   public SNodeProxy getSNodeProxy() {
-    if (getSelectedCell() == null) return null;
+    if (getSelectedCell() == null) {
+      return getRootCell().getSNodeProxy();
+    }
     return getSelectedCell().getSNodeProxy();
   }
 
