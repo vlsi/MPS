@@ -158,6 +158,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     progress.addText("Compilation finished.");
     progress.addText("Executing...");
 
+    OutputView view = context.getComponent(OutputView.class);
+    view.clear();
+
     try {
       String mainClassName = targetModel.getUID().getLongName() + ".Main";
       Class mainClass = Class.forName(mainClassName, true, compiler.getClassLoader());
