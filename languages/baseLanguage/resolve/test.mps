@@ -29,7 +29,7 @@
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1136557153705">
                 <property name="value" value="3" />
               </node>
-              <node role="$attribute" type="jetbrains.mps.comments.Comment" id="1136558206868">
+              <node role="_attr_$attribute" type="jetbrains.mps.comments.Comment" id="1136558206868">
                 <property name="text" value="ghghgghghghgh" />
               </node>
             </node>
@@ -38,11 +38,11 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1121172602904">
           <node role="expression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1121172606578">
             <property name="value" value="5" />
-            <node role="$attribute" type="jetbrains.mps.comments.Comment" id="1136559219369">
+            <node role="_attr_$attribute" type="jetbrains.mps.comments.Comment" id="1136559219369">
               <property name="text" value="dd" />
             </node>
           </node>
-          <node role="$attribute" type="jetbrains.mps.comments.Comment" id="1136557518639">
+          <node role="_attr_$attribute" type="jetbrains.mps.comments.Comment" id="1136557518639">
             <property name="text" value="fff" />
           </node>
         </node>
@@ -62,7 +62,7 @@
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1121172709123" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1121172718766">
               <property name="value" value="6" />
-              <node role="value$property_attribute" type="jetbrains.mps.comments.PropertyComment" id="1136560232293">
+              <node role="_attr_$property_attribute$value" type="jetbrains.mps.comments.PropertyComment" id="1136560232293">
                 <property name="text" value="property comment" />
                 <property name="propertyName" value="value" />
               </node>
@@ -88,7 +88,7 @@
               <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1121438925080" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1121438925081">
                 <link role="variableDeclaration" targetNodeId="1121172709122" />
-                <node role="variableDeclaration$link_attribute" type="jetbrains.mps.comments.LinkComment" id="1136570488350">
+                <node role="_attr_$link_attribute$variableDeclaration" type="jetbrains.mps.comments.LinkComment" id="1136570488350">
                   <property name="text" value="dsdsdsdsd" />
                   <property name="linkRole" value="variableDeclaration" />
                 </node>
@@ -113,7 +113,7 @@
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1136570578891">
                 <link role="variableDeclaration" targetNodeId="1121438897511" />
-                <node role="variableDeclaration$link_attribute" type="jetbrains.mps.comments.LinkComment" id="1136570618386">
+                <node role="_attr_$link_attribute$variableDeclaration" type="jetbrains.mps.comments.LinkComment" id="1136570618386">
                   <property name="text" value="link comment" />
                   <property name="linkRole" value="variableDeclaration" />
                 </node>
@@ -191,7 +191,7 @@
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1121172827478" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1121172827479">
               <property name="value" value="6" />
-              <node role="value$property_attribute" type="jetbrains.mps.comments.PropertyComment" id="1136562675102">
+              <node role="_attr_$property_attribute$value" type="jetbrains.mps.comments.PropertyComment" id="1136562675102">
                 <property name="text" value="sdsdsd" />
                 <property name="propertyName" value="value" />
               </node>
@@ -206,7 +206,7 @@
               <property name="value" value="45" />
             </node>
           </node>
-          <node role="$attribute" type="jetbrains.mps.comments.Comment" id="1136562682166">
+          <node role="_attr_$attribute" type="jetbrains.mps.comments.Comment" id="1136562682166">
             <property name="text" value="blah-blah-blah" />
           </node>
         </node>

@@ -250,7 +250,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return result;
   }
   public void setAttribute(AttributeConcept attributeConcept) {
-    setAttribute_internal(attributeConcept);
+    setAttribute_new(attributeConcept);
   }
   //--new
   public Iterator<AttributeConcept> attributes_new(String role) {
@@ -286,7 +286,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public void setPropertyAttribute(String propertyName, PropertyAttributeConcept propertyAttribute) {
-    setPropertyAttribute_internal(propertyName, propertyAttribute);
+    setPropertyAttribute_new(propertyName, propertyAttribute);
   }
 
   public PropertyAttributeConcept getPropertyAttribute(String propertyName) {
@@ -325,7 +325,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public void setLinkAttribute(String role, LinkAttributeConcept linkAttribute) {
-    setLinkAttribute_internal(role, linkAttribute);
+    setLinkAttribute_new(role, linkAttribute);
   }
 
   public LinkAttributeConcept getLinkAttribute(String role) {
@@ -357,19 +357,22 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     AttributeConcept attribute = getAttribute_internal();
     if (attribute != null) {
       changed = true;
+      setAttribute_internal(null);
       setAttribute_new(attribute);
     }
     for (String propertyName : getPropertyNames()) {
       PropertyAttributeConcept propertyAttribute = getPropertyAttribute_internal(propertyName);
       if (propertyAttribute != null) {
         changed = true;
+        setPropertyAttribute_internal(propertyName, null);
         setPropertyAttribute_new(propertyName, propertyAttribute);
       }
     }
     for (String linkRole : getReferenceRoles()) {
-      LinkAttributeConcept linkAttribute = getLinkAttribute(linkRole);
+      LinkAttributeConcept linkAttribute = getLinkAttribute_internal(linkRole);
       if (linkAttribute != null) {
         changed = true;
+        setLinkAttribute_internal(linkRole, null);
         setLinkAttribute_new(linkRole, linkAttribute);
       }
     }
