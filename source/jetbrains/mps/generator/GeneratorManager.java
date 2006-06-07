@@ -173,6 +173,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       progress.addText("Illegal access exception");
     } catch (InvocationTargetException e) {
       progress.addText("Invocation target exception");
+      e.printStackTrace();
     }
   }
 
