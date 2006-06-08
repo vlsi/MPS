@@ -74,6 +74,10 @@ public class NodePresentationUtil {
   }
 
   public static String descriptionText(SNode node, SNode referenceContext, IScope scope) {
+    return descriptionText(node, referenceContext, CHILD_PRESENTATION, scope);
+  }
+
+  public static String descriptionText(SNode node, SNode referenceContext, INodePresentationPreferences preferences, IScope scope) {
     if (node == null) {
       return "";
     }
@@ -106,22 +110,17 @@ public class NodePresentationUtil {
     }
 
     // default
-//    if (node instanceof LinkDeclaration) {
-//      SNode containingRoot = node.getContainingRoot();
-//      return containingRoot.getName() + " (" + containingRoot.getModel().getUID() + ")";
-//    }
-    String description = SModelUtil.getConceptProperty(node, "short_description", scope);
-    if (description != null) {
-      return description;
-    }
-    if (node instanceof ConceptDeclaration) {
+    if (preferences.matchConceptByAlias()) {
+      String description = SModelUtil.getConceptProperty(node, "short_description", scope);
+      if (description != null) {
+        return description;
+      }
       return "";
     }
 
     if (node.isRoot()) {
       return NameUtil.shortNameFromLongName(node.getClass().getName()) + " (" + node.getModel().getUID() + ")";
     }
-//    return NameUtil.shortNameFromLongName(node.getClass().getName()) + " (" + NameUtil.nodeFQName(SModelUtil.getRootParent(node)) + ")";
     return node.getRole_() + " (" + NameUtil.nodeFQName(SModelUtil.getRootParent(node)) + ")";
   }
 

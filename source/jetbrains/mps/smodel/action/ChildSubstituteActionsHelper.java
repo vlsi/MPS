@@ -3,10 +3,17 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions;
 import jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethod;
+import jetbrains.mps.ide.IStatus;
 
 import java.util.*;
 
@@ -84,13 +91,13 @@ import java.util.*;
     }
     final IScope scope = context.getScope();
     List<ConceptDeclaration> nodes = SModelUtil.conceptsFromModelLanguages(parentNode.getModel(), new Condition<ConceptDeclaration>() {
-      public boolean met(ConceptDeclaration node) {
+      public boolean met(ConceptDeclaration concept) {
         // roots only.
-        // case: concept-function-parameters declared as child-concepts are not added to substitute menue by deault
-        if (!node.isRoot()) return false;
+        // case: concept-function-parameters declared as child-concepts are not added to substitute menue by default
+        if (!concept.isRoot()) return false;
 
-        return isDefaultSubstitutableConcept(node, childConcept, scope) &&
-                filter.met(node);
+        return isDefaultSubstitutableConcept(concept, childConcept, scope) &&
+                filter.met(concept);
       }
     }, scope);
 
@@ -98,6 +105,64 @@ import java.util.*;
     for (SNode node : nodes) {
       actions.add(new DefaultChildNodeSubstituteAction(node, parentNode, currentChild, childSetter, scope));
     }
+
+//    // test ++
+//    // add smart actions
+//    List<ConceptDeclaration> nodes1 = SModelUtil.conceptsFromModelLanguages(parentNode.getModel(), new Condition<ConceptDeclaration>() {
+//      public boolean met(ConceptDeclaration concept) {
+//        if (!SModelUtil.hasConceptProperty(concept, ABSTRACT, scope)) {
+//          return SModelUtil.isAssignableConcept(concept, childConcept) && filter.met(concept);
+//        }
+//        return false;
+//      }
+//    }, scope);
+//
+//    for (final ConceptDeclaration concept : nodes1) {
+//      // trick : should be no custom 'matching text'
+//      String matchingText = NodePresentationUtil.matchingText(concept, null, NodePresentationUtil.CHILD_PRESENTATION, scope);
+//      if (!(matchingText == null || matchingText.equals(concept.getName()))) {
+//        // todo: handle matching text of form xxx {referenceRole} yyyy
+//        continue;
+//      }
+//
+//      // if concept has only one REQUIRED reference link...
+//      List<LinkDeclaration> links = SModelSearchUtil.getReferenceLinkDeclarationsExcludingOverridden(concept);
+//      if (links.size() != 1) continue;
+//      final LinkDeclaration link = links.get(0);
+//      if (SModelUtil.getGenuineLinkSourceCardinality(link) != Cardinality._1) continue;
+//
+//      // try to create referent-search-scope
+//      IStatus status = ModelConstraintsUtil.getReferentSearchScope(parentNode, null, concept, link, scope);
+//      if (status.isError()) continue;
+//
+//      ISearchScope searchScope = (ISearchScope) status.getUserObject();
+//      ConceptDeclaration targetConcept = link.getTarget();
+//      List<SNode> referentNodes = searchScope.getNodes();
+//      for (SNode referentNode : referentNodes) {
+//        if (SModelUtil.isInstanceOfConcept(referentNode, targetConcept, scope)) {
+//          actions.add(new DefaultChildNodeSubstituteAction(referentNode, parentNode, currentChild, childSetter, scope) {
+//            public String getMatchingText(String pattern) {
+//              String suffix = " (smart action:" + concept.getName() + ")";
+//              return NodePresentationUtil.matchingText(getParameterNode(), null, NodePresentationUtil.REFERENT_PRESENTATION, getScope()) + suffix;
+//            }
+//
+//            public String getDescriptionText(String pattern) {
+//              return NodePresentationUtil.descriptionText(getParameterNode(), null, NodePresentationUtil.REFERENT_PRESENTATION, getScope());
+//            }
+//
+//            public SNode createChildNode(SNode parameterNode, SModel model, String pattern) {
+//              SNode childNode = super.createChildNode(parameterNode, model, pattern);
+//              String referentRole = SModelUtil.getGenuineLinkRole(link);
+//              childNode.setReferent(referentRole, parameterNode);
+//              return childNode;
+//            }
+//          });
+//        }
+//      }
+//    }
+//    // test --
+
+
     return actions;
   }
 

@@ -230,6 +230,42 @@
         </node>
       </node>
     </node>
+    <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1149728431669">
+      <link role="applicableConcept" targetNodeId="1.1140137987495" />
+      <link role="applicableLink" targetNodeId="1.1140138128738" />
+      <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1149728431670">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1149728431671">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1149728551657">
+            <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1149728580598">
+              <link role="baseMethodDeclaration" extResolveInfo="4.static method ([Classifier]SModelSearchUtil).([StaticMethodDeclaration]createModelAndImportedModelsScope((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SModel]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ISearchScope]))" />
+              <link role="classConcept" extResolveInfo="4.[Classifier]SModelSearchUtil" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptParameter_ReferentSearchScope_model" id="1149728583833" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptParameter_ReferentSearchScope_scope" id="1149728587523" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="searchScopePrecondition" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Precondition" id="1149728449437">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1149728449438">
+          <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1149728460002">
+            <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1149728498646">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1149728503149" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptParameter_ReferentSearchScope_referenceNode" id="1149728488536" />
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1149728460004">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1149728505760">
+                <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1149728508199">
+                  <property name="value" value="no type cast expression" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1149728539561">
+            <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1149728541453" />
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
