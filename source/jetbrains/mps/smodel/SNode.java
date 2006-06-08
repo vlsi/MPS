@@ -244,44 +244,44 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   private AttributeConcept getAttribute_internal() {
     return (AttributeConcept) getChild(AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.ATTRIBUTE_STEREOTYPE);
   }
-  public AttributeConcept getAttribute() {
-    AttributeConcept result =  getAttribute_new();
+  public SNode getAttribute() {
+    SNode result =  getAttribute_new();
     if (result == null) result = getAttribute_internal();
     return result;
   }
-  public void setAttribute(AttributeConcept attributeConcept) {
+  public void setAttribute(SNode attributeConcept) {
     setAttribute_new(attributeConcept);
   }
   //--new
-  public Iterator<AttributeConcept> attributes_new(String role) {
+  public Iterator<SNode> attributes_new(String role) {
     String attributeRole = AttributesRolesUtil.childRoleFromAttributeRole(role);
     return children(attributeRole);
   }
 
-  public List<AttributeConcept> getNodeAttributes() {
-    List<AttributeConcept> attributes = new ArrayList<AttributeConcept>();
+  public List<SNode> getNodeAttributes() {
+    List<SNode> attributes = new ArrayList<SNode>();
     for (SNode child : myChildren) {
       if (AttributesRolesUtil.isNodeAttributeRole(child.getRole_())) {
-        attributes.add((AttributeConcept) child);
+        attributes.add(child);
       }
     }
     return attributes;
   }
 
-  public AttributeConcept getAttribute_new(String role) {
+  public SNode getAttribute(String role) {
     String attributeRole = AttributesRolesUtil.childRoleFromAttributeRole(role);
     return (AttributeConcept) getChild(attributeRole);
   }
 
-  public AttributeConcept getAttribute_new() {
-    return getAttribute_new(null);
+  public SNode getAttribute_new() {
+    return getAttribute(null);
   }
 
-  public void setAttribute_new(AttributeConcept attributeConcept) {
-    setAttribute_new(null, attributeConcept);
+  public void setAttribute_new(SNode attributeConcept) {
+    setAttribute(null, attributeConcept);
   }
 
-  public void setAttribute_new(String role, AttributeConcept attributeConcept) {
+  public void setAttribute(String role, SNode attributeConcept) {
     setChild(AttributesRolesUtil.childRoleFromAttributeRole(role), attributeConcept);
   }
 
@@ -295,32 +295,32 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return (PropertyAttributeConcept) getChild(propertyName + AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.PROPERTY_ATTRIBUTE_STEREOTYPE);
   }
 
-  public void setPropertyAttribute(String propertyName, PropertyAttributeConcept propertyAttribute) {
+  public void setPropertyAttribute(String propertyName, SNode propertyAttribute) {
     setPropertyAttribute_new(propertyName, propertyAttribute);
   }
 
-  public PropertyAttributeConcept getPropertyAttribute(String propertyName) {
-    PropertyAttributeConcept result = getPropertyAttribute_new(propertyName);
+  public SNode getPropertyAttribute(String propertyName) {
+    SNode result = getPropertyAttribute_new(propertyName);
     if (result != null) result = getPropertyAttribute_internal(propertyName);
     return result;
   }
 
   //--new
 
-  public void setPropertyAttribute_new(String propertyName, PropertyAttributeConcept propertyAttribute) {
-    setPropertyAttribute_new(null, propertyName, propertyAttribute);
+  public void setPropertyAttribute_new(String propertyName, SNode propertyAttribute) {
+    setPropertyAttribute(null, propertyName, propertyAttribute);
   }
 
-  public void setPropertyAttribute_new(String role, String propertyName, PropertyAttributeConcept propertyAttribute) {
+  public void setPropertyAttribute(String role, String propertyName, SNode propertyAttribute) {
     setChild(AttributesRolesUtil.childRoleFromPropertyAttributeRole(role, propertyName), propertyAttribute);
   }
 
-  public PropertyAttributeConcept getPropertyAttribute_new(String role, String propertyName) {
-    return (PropertyAttributeConcept) getChild(AttributesRolesUtil.childRoleFromPropertyAttributeRole(role, propertyName));
+  public SNode getPropertyAttribute(String role, String propertyName) {
+    return getChild(AttributesRolesUtil.childRoleFromPropertyAttributeRole(role, propertyName));
   }
 
-  public PropertyAttributeConcept getPropertyAttribute_new(String propertyName) {
-    return getPropertyAttribute_new(null, propertyName);
+  public SNode getPropertyAttribute_new(String propertyName) {
+    return getPropertyAttribute(null, propertyName);
   }
 
 
@@ -334,31 +334,31 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return (LinkAttributeConcept) getChild(role + AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.LINK_ATTRIBUTE_STEREOTYPE);
   }
 
-  public void setLinkAttribute(String role, LinkAttributeConcept linkAttribute) {
+  public void setLinkAttribute(String role, SNode linkAttribute) {
     setLinkAttribute_new(role, linkAttribute);
   }
 
-  public LinkAttributeConcept getLinkAttribute(String role) {
-    LinkAttributeConcept result = getLinkAttribute_new(role);
+  public SNode getLinkAttribute(String role) {
+    SNode result = getLinkAttribute_new(role);
     if (result == null) result = getLinkAttribute_internal(role);
     return result;
   }
 
   //new
-  public void setLinkAttribute_new(String linkRole, LinkAttributeConcept linkAttribute) {
-    setLinkAttribute_new(null, linkRole, linkAttribute);
+  public void setLinkAttribute_new(String linkRole, SNode linkAttribute) {
+    setLinkAttribute(null, linkRole, linkAttribute);
   }
 
-  public void setLinkAttribute_new(String role, String linkRole, LinkAttributeConcept linkAttribute) {
+  public void setLinkAttribute(String role, String linkRole, SNode linkAttribute) {
     setChild(AttributesRolesUtil.childRoleFromLinkAttributeRole(role, linkRole), linkAttribute);
   }
 
-  public LinkAttributeConcept getLinkAttribute_new(String role, String linkRole) {
-    return (LinkAttributeConcept) getChild(AttributesRolesUtil.childRoleFromLinkAttributeRole(role, linkRole));
+  public SNode getLinkAttribute(String role, String linkRole) {
+    return getChild(AttributesRolesUtil.childRoleFromLinkAttributeRole(role, linkRole));
   }
 
-  public LinkAttributeConcept getLinkAttribute_new(String linkRole) {
-    return getLinkAttribute_new(null, linkRole);
+  public SNode getLinkAttribute_new(String linkRole) {
+    return getLinkAttribute(null, linkRole);
   }
 
    //-- for node refactoring

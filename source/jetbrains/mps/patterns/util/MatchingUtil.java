@@ -52,7 +52,7 @@ public class MatchingUtil {
   private static boolean matchNodes(SNode node, SNode patternNode, Substitution substitution) {
 
     //-- whole node bindings
-    AttributeConcept patternAttribute = patternNode.getAttribute();
+    SNode patternAttribute = patternNode.getAttribute();
     if (patternAttribute instanceof WildcardPattern) {
       return true;
     }
@@ -72,7 +72,7 @@ public class MatchingUtil {
     Set<String> propertyNames = node.getPropertyNames();
     for (String propertyName : patternNode.getPropertyNames()) {
       //if property pattern var
-      PropertyAttributeConcept propertyAttribute = patternNode.getPropertyAttribute(propertyName);
+      SNode propertyAttribute = patternNode.getPropertyAttribute(propertyName);
       if (propertyAttribute instanceof PropertyPatternVariableDeclaration) {
         LazyPropertyValue propertyValue = new LazyPropertyValue(node, propertyName);
         bindPropertyWithVar(substitution, (PropertyPatternVariableDeclaration) propertyAttribute, propertyValue);
@@ -114,7 +114,7 @@ public class MatchingUtil {
       SNode target = node.getReferent(role);
 
       //if this role has a link pattern var
-      LinkAttributeConcept linkAttribute = patternNode.getLinkAttribute(role);
+      SNode linkAttribute = patternNode.getLinkAttribute(role);
       if (linkAttribute instanceof LinkPatternVariableDeclaration) {
         bindReferenceTargetWithVar(substitution, (LinkPatternVariableDeclaration) linkAttribute, target);
       } else {//if role has just a link
@@ -171,7 +171,7 @@ public class MatchingUtil {
   private static boolean matchNodes(NodeWrapper node, SNode patternNode, Substitution substitution) {
 
       //-- whole node bindings
-      AttributeConcept patternAttribute = patternNode.getAttribute();
+      SNode patternAttribute = patternNode.getAttribute();
       if (patternAttribute instanceof WildcardPattern) {
         return true;
       }
@@ -191,7 +191,7 @@ public class MatchingUtil {
       Set<String> propertyNames = node.getPropertyNames();
       for (String propertyName : patternNode.getPropertyNames()) {
         //if property pattern var
-        PropertyAttributeConcept propertyAttribute = patternNode.getPropertyAttribute(propertyName);
+        SNode propertyAttribute = patternNode.getPropertyAttribute(propertyName);
         if (propertyAttribute instanceof PropertyPatternVariableDeclaration) {
           LazyPropertyValue propertyValue = new LazyPropertyValue(node.getNode(), propertyName);
           bindPropertyWithVar(substitution, (PropertyPatternVariableDeclaration) propertyAttribute, propertyValue);
@@ -233,7 +233,7 @@ public class MatchingUtil {
         SNode target = node.getReferent(role);
 
         //if this role has a link pattern var
-        LinkAttributeConcept linkAttribute = patternNode.getLinkAttribute(role);
+        SNode linkAttribute = patternNode.getLinkAttribute(role);
         if (linkAttribute instanceof LinkPatternVariableDeclaration) {
           bindReferenceTargetWithVar(substitution, (LinkPatternVariableDeclaration) linkAttribute, target);
         } else {//if role has just a link
