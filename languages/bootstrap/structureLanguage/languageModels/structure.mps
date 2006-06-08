@@ -62,7 +62,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1071489288298">
     <property name="name" value="LinkDeclaration" />
-    <link role="extends" targetNodeId="1.1078489098625" />
+    <link role="extends" targetNodeId="1.1133920641626" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1071599776563">
       <property name="propertyType" value="string" />
       <property name="name" value="role" />
