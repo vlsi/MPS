@@ -1263,7 +1263,7 @@
     <property name="name" value="ClassifierType" />
     <link role="extends" targetNodeId="1068431790189" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107553263363">
-      <property name="value" value="&lt;classifier&gt;" />
+      <property name="value" value="&lt;{classifier}&gt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107553270693">

@@ -36,6 +36,13 @@ import java.util.*;
     }
   };
 
+  public static boolean isDefaultSubstitutableConcept(ConceptDeclaration concept, ConceptDeclaration expectedConcept, IScope scope) {
+    if (!SModelUtil.hasConceptProperty(concept, ABSTRACT, scope) &&
+            !SModelUtil.hasConceptProperty(concept, DONT_SUBSTITUTE_BY_DEFAULT, scope)) {
+      return SModelUtil.isAssignableConcept(concept, expectedConcept);
+    }
+    return false;
+  }
 
   public static List<INodeSubstituteAction> createActions(SNode parentNode, SNode currentChild, ConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
     List<INodeSubstituteAction> resultActions = new LinkedList<INodeSubstituteAction>();
@@ -90,74 +97,36 @@ import java.util.*;
       return Collections.emptyList();
     }
     final IScope scope = context.getScope();
-    List<ConceptDeclaration> nodes = SModelUtil.conceptsFromModelLanguages(parentNode.getModel(), new Condition<ConceptDeclaration>() {
-      public boolean met(ConceptDeclaration concept) {
-        // roots only.
-        // case: concept-function-parameters declared as child-concepts are not added to substitute menue by default
-        if (!concept.isRoot()) return false;
 
-        return isDefaultSubstitutableConcept(concept, childConcept, scope) &&
-                filter.met(concept);
+    // create search scope that only includes root concepts.
+    // case: concept-function-parameters declared as child-concepts are not added to substitute menue by default
+    ISearchScope conceptsSearchScope = SModelSearchUtil.createConceptsFromModelLanguagesScope(parentNode.getModel(), true, scope);
+    List<SNode> applicableConcepts = conceptsSearchScope.getNodes(new Condition<SNode>() {
+      public boolean met(SNode object) {
+        return isDefaultSubstitutableConcept((ConceptDeclaration) object, childConcept, scope) &&
+                filter.met(object);
       }
-    }, scope);
+    });
 
     List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
-    for (SNode node : nodes) {
-      actions.add(new DefaultChildNodeSubstituteAction(node, parentNode, currentChild, childSetter, scope));
+    for (SNode applicableConcept : applicableConcepts) {
+      actions.add(new DefaultChildNodeSubstituteAction(applicableConcept, parentNode, currentChild, childSetter, scope));
     }
 
 //    // test ++
 //    // add smart actions
-//    List<ConceptDeclaration> nodes1 = SModelUtil.conceptsFromModelLanguages(parentNode.getModel(), new Condition<ConceptDeclaration>() {
-//      public boolean met(ConceptDeclaration concept) {
-//        if (!SModelUtil.hasConceptProperty(concept, ABSTRACT, scope)) {
-//          return SModelUtil.isAssignableConcept(concept, childConcept) && filter.met(concept);
+//    List<SNode> applicableConcepts1 = conceptsSearchScope.getNodes(new Condition<SNode>() {
+//      public boolean met(SNode object) {
+//        if (!SModelUtil.hasConceptProperty(object, ABSTRACT, scope)) {
+//          return SModelUtil.isAssignableConcept((ConceptDeclaration) object, childConcept) && filter.met(object);
 //        }
 //        return false;
 //      }
-//    }, scope);
-//
-//    for (final ConceptDeclaration concept : nodes1) {
-//      // trick : should be no custom 'matching text'
-//      String matchingText = NodePresentationUtil.matchingText(concept, null, NodePresentationUtil.CHILD_PRESENTATION, scope);
-//      if (!(matchingText == null || matchingText.equals(concept.getName()))) {
-//        // todo: handle matching text of form xxx {referenceRole} yyyy
-//        continue;
-//      }
-//
-//      // if concept has only one REQUIRED reference link...
-//      List<LinkDeclaration> links = SModelSearchUtil.getReferenceLinkDeclarationsExcludingOverridden(concept);
-//      if (links.size() != 1) continue;
-//      final LinkDeclaration link = links.get(0);
-//      if (SModelUtil.getGenuineLinkSourceCardinality(link) != Cardinality._1) continue;
-//
-//      // try to create referent-search-scope
-//      IStatus status = ModelConstraintsUtil.getReferentSearchScope(parentNode, null, concept, link, scope);
-//      if (status.isError()) continue;
-//
-//      ISearchScope searchScope = (ISearchScope) status.getUserObject();
-//      ConceptDeclaration targetConcept = link.getTarget();
-//      List<SNode> referentNodes = searchScope.getNodes();
-//      for (SNode referentNode : referentNodes) {
-//        if (SModelUtil.isInstanceOfConcept(referentNode, targetConcept, scope)) {
-//          actions.add(new DefaultChildNodeSubstituteAction(referentNode, parentNode, currentChild, childSetter, scope) {
-//            public String getMatchingText(String pattern) {
-//              String suffix = " (smart action:" + concept.getName() + ")";
-//              return NodePresentationUtil.matchingText(getParameterNode(), null, NodePresentationUtil.REFERENT_PRESENTATION, getScope()) + suffix;
-//            }
-//
-//            public String getDescriptionText(String pattern) {
-//              return NodePresentationUtil.descriptionText(getParameterNode(), null, NodePresentationUtil.REFERENT_PRESENTATION, getScope());
-//            }
-//
-//            public SNode createChildNode(SNode parameterNode, SModel model, String pattern) {
-//              SNode childNode = super.createChildNode(parameterNode, model, pattern);
-//              String referentRole = SModelUtil.getGenuineLinkRole(link);
-//              childNode.setReferent(referentRole, parameterNode);
-//              return childNode;
-//            }
-//          });
-//        }
+//    });
+//    for (SNode applicableConcept1 : applicableConcepts1) {
+//      List<INodeSubstituteAction> smartActions = createSmartReferenceActions((ConceptDeclaration) applicableConcept1, parentNode, currentChild, childSetter, scope);
+//      if (smartActions != null) {
+//        actions.addAll(smartActions);
 //      }
 //    }
 //    // test --
@@ -166,13 +135,85 @@ import java.util.*;
     return actions;
   }
 
-  public static boolean isDefaultSubstitutableConcept(ConceptDeclaration concept, ConceptDeclaration expectedConcept, IScope scope) {
-    if (!SModelUtil.hasConceptProperty(concept, ABSTRACT, scope) &&
-            !SModelUtil.hasConceptProperty(concept, DONT_SUBSTITUTE_BY_DEFAULT, scope)) {
-      return SModelUtil.isAssignableConcept(concept, expectedConcept);
+  private static List<INodeSubstituteAction> createSmartReferenceActions(final ConceptDeclaration referenceDeclaringConcept, SNode parentNode, SNode currentChild, IChildNodeSetter childSetter, IScope scope) {
+    LinkDeclaration referenceLink = getSmartReference(referenceDeclaringConcept, scope);
+    if (referenceLink == null) return null;
+
+    // try to create referent-search-scope
+    IStatus status = ModelConstraintsUtil.getReferentSearchScope(parentNode, null, referenceDeclaringConcept, referenceLink, scope);
+    if (status.isError()) return null;
+
+    // create smart actions
+    List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
+    final LinkDeclaration referenceLink_final = referenceLink;
+    ISearchScope searchScope = (ISearchScope) status.getUserObject();
+    ConceptDeclaration targetConcept = referenceLink.getTarget();
+    List<SNode> referentNodes = searchScope.getNodes();
+    for (SNode referentNode : referentNodes) {
+      if (SModelUtil.isInstanceOfConcept(referentNode, targetConcept, scope)) {
+        actions.add(new DefaultChildNodeSubstituteAction(referentNode, parentNode, currentChild, childSetter, scope) {
+          public String getMatchingText(String pattern) {
+            return NodePresentationUtil.matchingText(getParameterNode(), null, NodePresentationUtil.REFERENT_PRESENTATION, getScope());
+          }
+
+          public String getDescriptionText(String pattern) {
+            String prefix = "(smart ref:" + referenceDeclaringConcept.getName() + ") ";
+            return prefix + NodePresentationUtil.descriptionText(getParameterNode(), null, NodePresentationUtil.REFERENT_PRESENTATION, getScope());
+          }
+
+          public SNode createChildNode(SNode parameterNode, SModel model, String pattern) {
+            SNode childNode = super.createChildNode(referenceDeclaringConcept, model, pattern);
+            String referentRole = SModelUtil.getGenuineLinkRole(referenceLink_final);
+            childNode.setReferent(referentRole, parameterNode);
+            return childNode;
+          }
+        });
+      }
     }
-    return false;
+
+    return actions;
   }
+
+  /**
+   * @return reference link declaration which is used to populate auto-completion menu with possible referent nodes.
+   *         Smart actions are no applicable if:
+   *         1. matching text is customized (except case when pattern '<{_referent_role_}>' is used).
+   *         2. pattern '<{_referent_role_}>' is used but no ref.link with this role is declared.
+   *         3. no ref.links with cardinality '1' is declared (no patten, no customized matching text)
+   *         4. several ref.links with cardinality '1' is declared (no patten, no customized matching text)
+   */
+  private static LinkDeclaration getSmartReference(ConceptDeclaration referenceDeclaringConcept, IScope scope) {
+    // trick : should be no custom 'matching text'
+    String expectedReferentRole = null;
+    String matchingText = NodePresentationUtil.matchingText(referenceDeclaringConcept, null, NodePresentationUtil.CHILD_PRESENTATION, scope);
+    if (!(matchingText == null || matchingText.equals(referenceDeclaringConcept.getName()))) {
+      // handle pattern <{_referent_role_}>
+      if (!matchingText.matches("<\\{.+\\}>")) {
+        return null;
+      }
+      String[] matches = matchingText.split("<\\{|\\}>");
+      expectedReferentRole = matches[1];
+    }
+
+    List<LinkDeclaration> links = SModelSearchUtil.getReferenceLinkDeclarationsExcludingOverridden(referenceDeclaringConcept);
+    if (expectedReferentRole != null) {
+      for (LinkDeclaration linkDeclaration : links) {
+        if (expectedReferentRole.equals(linkDeclaration.getRole())) {
+          return linkDeclaration;
+        }
+      }
+      LOG.warning("The '" + matchingText + "' doesn't match any link in " + referenceDeclaringConcept.getDebugText());
+    } else {
+      // if concept has only one REQUIRED reference link...
+      if (links.size() == 1) {
+        if (SModelUtil.getGenuineLinkSourceCardinality(links.get(0)) == Cardinality._1) {
+          return links.get(0);
+        }
+      }
+    }
+    return null;
+  }
+
 
   private static List<NodeSubstituteActionsBuilder> getActionBuilders(SNode parentNode, Language language, ConceptDeclaration childConcept, IOperationContext context) {
     List<NodeSubstituteActionsBuilder> actionsBuilders = new LinkedList<NodeSubstituteActionsBuilder>();
