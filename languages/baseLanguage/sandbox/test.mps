@@ -860,7 +860,24 @@
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1137951651024">
       <property name="name" value="aaa" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1137951657808" />
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1137951651073" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1137951651073">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1149800298201">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1149800298202">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.baseLanguage.TypeVariableReference" id="1149801094579">
+              <link role="typeVariableDeclaration" targetNodeId="1137951644445" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1149801249224">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1149801249225">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.baseLanguage.TypeVariableReference" id="1149801249226">
+              <link role="typeVariableDeclaration" targetNodeId="1137951644445" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1137951727089">
         <property name="name" value="t" />
         <node role="type" type="jetbrains.mps.baseLanguage.ArrayType" id="1137951790656">

@@ -113,23 +113,23 @@ import java.util.*;
       actions.add(new DefaultChildNodeSubstituteAction(applicableConcept, parentNode, currentChild, childSetter, scope));
     }
 
-//    // test ++
-//    // add smart actions
-//    List<SNode> applicableConcepts1 = conceptsSearchScope.getNodes(new Condition<SNode>() {
-//      public boolean met(SNode object) {
-//        if (!SModelUtil.hasConceptProperty(object, ABSTRACT, scope)) {
-//          return SModelUtil.isAssignableConcept((ConceptDeclaration) object, childConcept) && filter.met(object);
-//        }
-//        return false;
-//      }
-//    });
-//    for (SNode applicableConcept1 : applicableConcepts1) {
-//      List<INodeSubstituteAction> smartActions = createSmartReferenceActions((ConceptDeclaration) applicableConcept1, parentNode, currentChild, childSetter, scope);
-//      if (smartActions != null) {
-//        actions.addAll(smartActions);
-//      }
-//    }
-//    // test --
+    // test ++
+    // add smart actions
+    List<SNode> applicableConcepts1 = conceptsSearchScope.getNodes(new Condition<SNode>() {
+      public boolean met(SNode object) {
+        if (!SModelUtil.hasConceptProperty(object, ABSTRACT, scope)) {
+          return SModelUtil.isAssignableConcept((ConceptDeclaration) object, childConcept) && filter.met(object);
+        }
+        return false;
+      }
+    });
+    for (SNode applicableConcept1 : applicableConcepts1) {
+      List<INodeSubstituteAction> smartActions = createSmartReferenceActions((ConceptDeclaration) applicableConcept1, parentNode, currentChild, childSetter, scope);
+      if (smartActions != null) {
+        actions.addAll(smartActions);
+      }
+    }
+    // test --
 
 
     return actions;

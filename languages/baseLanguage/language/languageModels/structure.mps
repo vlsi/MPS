@@ -704,6 +704,9 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1070534760951">
     <property name="name" value="ArrayType" />
     <link role="extends" targetNodeId="1068431790189" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1149801518221">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1070534760952">
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..1" />
@@ -816,6 +819,9 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107217742357">
       <property name="value" value="string type" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1149801539364">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1080120340718">
@@ -1340,7 +1346,7 @@
       <link role="target" targetNodeId="1109279763828" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1109283512728">
-      <property name="value" value="&lt;type var&gt;" />
+      <property name="value" value="&lt;{typeVariableDeclaration}&gt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1109283528840">
