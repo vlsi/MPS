@@ -927,6 +927,20 @@
         </node>
       </node>
     </node>
+    <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1149804506480">
+      <link role="applicableConcept" targetNodeId="1.1068581242866" />
+      <link role="applicableLink" targetNodeId="1.1070568296581" />
+      <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1149804506481">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1149804506482">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1149804519013">
+            <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1149804528812">
+              <link role="baseMethodDeclaration" extResolveInfo="10.constructor [Classifier]LocalVariablesScope[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptParameter_ReferentSearchScope_enclosingNode" id="1149804703732" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
