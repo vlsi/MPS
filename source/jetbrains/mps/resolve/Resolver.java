@@ -59,6 +59,7 @@ public class Resolver {
           Class resolveClass = Class.forName(packageName+".resolve.Resolver", true, ClassLoaderManager.getInstance().getClassLoader());
           Method m = resolveClass.getMethod(methodName, cls2);
           String resolveInfo = (String) m.invoke(null, reference.getTargetNode());
+          if (resolveInfo == null) return;
           reference.setResolveInfo(resolveInfo);
           reference.setTargetClassResolveInfo(targetClass);
           return;
