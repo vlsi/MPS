@@ -127,7 +127,8 @@ public class EditorManager {
       stack = new Stack<EditorCell>();
       myAttributedClassesToAttributedCellStacksMap.put(attributeClass, stack);
     }
-    return stack.isEmpty() ? null : stack.peek();
+    EditorCell editorCell = stack.isEmpty() ? null : stack.peek();  // todo don't return null
+    return editorCell;
   }
 
 

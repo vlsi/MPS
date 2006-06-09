@@ -270,7 +270,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   public SNode getAttribute(String role) {
     String attributeRole = AttributesRolesUtil.childRoleFromAttributeRole(role);
-    return (AttributeConcept) getChild(attributeRole);
+    return getChild(attributeRole);
   }
 
   public SNode getAttribute_new() {
@@ -301,7 +301,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   public SNode getPropertyAttribute(String propertyName) {
     SNode result = getPropertyAttribute_new(propertyName);
-    if (result != null) result = getPropertyAttribute_internal(propertyName);
+    if (result == null) result = getPropertyAttribute_internal(propertyName);
     return result;
   }
 
@@ -320,7 +320,16 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public SNode getPropertyAttribute_new(String propertyName) {
-    return getPropertyAttribute(null, propertyName);
+    SNode propertyAttribute = getPropertyAttribute(null, propertyName);
+    if (propertyAttribute == null) {
+      for (SNode child : myChildren) {
+        if (AttributesRolesUtil.isChildRoleOfPropertyAttributeForPropertyName(propertyName, child.getRole_())) {
+          propertyAttribute = child;
+          break;
+        }
+      }
+    }
+    return propertyAttribute;
   }
 
 
@@ -358,7 +367,16 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public SNode getLinkAttribute_new(String linkRole) {
-    return getLinkAttribute(null, linkRole);
+    SNode linkAttribute = getLinkAttribute(null, linkRole);
+    if (linkAttribute == null) {
+      for (SNode child : myChildren) {
+        if (AttributesRolesUtil.isChildRoleOfLinkAttributeForLinkRole(linkRole, child.getRole_())) {
+          linkAttribute = child;
+          break;
+        }
+      }
+    }
+    return linkAttribute;
   }
 
    //-- for node refactoring

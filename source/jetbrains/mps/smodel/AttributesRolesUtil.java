@@ -1,9 +1,5 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.annotations.AttributeConcept;
-import jetbrains.mps.annotations.PropertyAttributeConcept;
-import jetbrains.mps.annotations.LinkAttributeConcept;
-
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -28,9 +24,27 @@ public class AttributesRolesUtil {
     return attrRole + STEREOTYPE_DELIM + PROPERTY_ATTRIBUTE_STEREOTYPE + STEREOTYPE_DELIM + propertyName;
   }
 
+  public static boolean isChildRoleOfPropertyAttributeRole(String propertyAttributeRole, String childRole) {
+    String attrRole = ensureNotEmpty(propertyAttributeRole);
+    return childRole.startsWith(attrRole + STEREOTYPE_DELIM + PROPERTY_ATTRIBUTE_STEREOTYPE + STEREOTYPE_DELIM);
+  }
+
+  public static boolean isChildRoleOfPropertyAttributeForPropertyName(String propertyName, String childRole) {
+    return childRole.endsWith(STEREOTYPE_DELIM + PROPERTY_ATTRIBUTE_STEREOTYPE + STEREOTYPE_DELIM + propertyName);
+  }
+
+  public static boolean isChildRoleOfLinkAttributeForLinkRole(String linkRole, String childRole) {
+    return childRole.endsWith(STEREOTYPE_DELIM + LINK_ATTRIBUTE_STEREOTYPE + STEREOTYPE_DELIM + linkRole);
+  }
+
   public static String childRoleFromLinkAttributeRole(String linkAttributeRole, String linkRole) {
     String attrRole = ensureNotEmpty(linkAttributeRole);
     return attrRole + STEREOTYPE_DELIM + LINK_ATTRIBUTE_STEREOTYPE + STEREOTYPE_DELIM + linkRole;
+  }
+
+  public static boolean isChildRoleOfLinkAttributeRole(String linkAttributeRole, String childRole) {
+    String attrRole = ensureNotEmpty(linkAttributeRole);
+    return childRole.startsWith(attrRole + STEREOTYPE_DELIM + LINK_ATTRIBUTE_STEREOTYPE + STEREOTYPE_DELIM);
   }
 
   private static String ensureNotEmpty(String attributeRole) {

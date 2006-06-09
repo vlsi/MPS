@@ -48,8 +48,11 @@ public class TemplateGenUtil {
       }
 
       // the reference MACRO exists?
-      String macroReferenceRole = ITemplateGenerator.ROLE_PREFIX_REFEENCE_MAKRO + templateReference.getRole();
+    /*  String macroReferenceRole = ITemplateGenerator.ROLE_PREFIX_REFEENCE_MAKRO + templateReference.getRole();
       if (templateNode.getChild(macroReferenceRole) != null) {
+        continue;
+      }*/
+      if (ReferenceMacro_AnnotationLink.getReferenceMacro((BaseConcept) templateNode, templateReference.getRole()) != null) {
         continue;
       }
 
@@ -253,7 +256,8 @@ public class TemplateGenUtil {
   }
 
   private static INodeBuilder getContextBuilderForTemplateFragment(SNode templateFragmentNode, INodeBuilder ruleContextBuilder, ITemplateGenerator generator) {
-    TemplateFragment fragment = (TemplateFragment) templateFragmentNode.getChild(ITemplateLanguageConstants.ROLE_TEMPLATE_FRAGMENT);
+    TemplateFragment fragment = TemplateFragment_AnnotationLink.getTemplateFragment((BaseConcept) templateFragmentNode);
+    //(TemplateFragment) templateFragmentNode.getChild(ITemplateLanguageConstants.ROLE_TEMPLATE_FRAGMENT);
 
     // has custom context builder provider?
     String aspectId = fragment.getContextProviderAspectId();
@@ -292,10 +296,14 @@ public class TemplateGenUtil {
 
   public static boolean isTemplateLanguageElement(SNode templateNode) {
     String role = templateNode.getRole_();
-    return role.equals(ITemplateGenerator.ROLE_NODE_MAKRO) ||
+   /* return role.equals(ITemplateGenerator.ROLE_NODE_MAKRO) ||
             role.equals(ITemplateGenerator.ROLE_TEMPLATE_FRAGMENT) ||
             role.startsWith(ITemplateGenerator.ROLE_PREFIX_PROPERTY_MAKRO) ||
-            role.startsWith(ITemplateGenerator.ROLE_PREFIX_REFEENCE_MAKRO);
+            role.startsWith(ITemplateGenerator.ROLE_PREFIX_REFEENCE_MAKRO);*/
+    return role.equals(AttributesRolesUtil.childRoleFromAttributeRole(NodeMacro_AnnotationLink.NODE_MACRO)) ||
+            role.equals(AttributesRolesUtil.childRoleFromAttributeRole(TemplateFragment_AnnotationLink.TEMPLATE_FRAGMENT)) ||
+            AttributesRolesUtil.isChildRoleOfLinkAttributeRole(ReferenceMacro_AnnotationLink.REFERENCE_MACRO, role) ||
+            AttributesRolesUtil.isChildRoleOfPropertyAttributeRole(PropertyMacro_AnnotationLink.PROPERTY_MACRO, role);
   }
 
   private static void createChildBuilders(INodeBuilder parentNodeBuilder) {
@@ -333,7 +341,7 @@ public class TemplateGenUtil {
 
   private static List<SNode> createSourceNodeListForTemplateNode(SNode parentSourceNode, SNode templateNode, ITemplateGenerator generator) {
     try {
-      NodeMacro nodeMacro = (NodeMacro) templateNode.getChild(ITemplateGenerator.ROLE_NODE_MAKRO);
+      NodeMacro nodeMacro = NodeMacro_AnnotationLink.getNodeMacro((BaseConcept) templateNode); //(NodeMacro) templateNode.getChild(ITemplateGenerator.ROLE_NODE_MAKRO);
 
       List<SNode> result = new LinkedList<SNode>();
       if (nodeMacro instanceof CopySrcNodeMacro) {
@@ -426,7 +434,7 @@ public class TemplateGenUtil {
   private static INodeBuilder createNodeBuilder(SNode sourceNode, SNode templateNode, String mappingName, ITemplateGenerator generator) {
     INodeBuilder builder = null;
     boolean needCreateChildBuilders = true;
-    NodeMacro nodeMacro = (NodeMacro) templateNode.getChild(ITemplateGenerator.ROLE_NODE_MAKRO);
+    NodeMacro nodeMacro = NodeMacro_AnnotationLink.getNodeMacro((BaseConcept) templateNode);// (NodeMacro) templateNode.getChild(ITemplateGenerator.ROLE_NODE_MAKRO);
     if (nodeMacro != null) {
       if (nodeMacro instanceof SwitchMacro) {
         TemplateSwitch templateSwitch = ((SwitchMacro) nodeMacro).getTemplateSwitch();
