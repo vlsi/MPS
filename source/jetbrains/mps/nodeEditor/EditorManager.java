@@ -2,6 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.annotations.LinkAttributeConcept;
 import jetbrains.mps.annotations.PropertyAttributeConcept;
+import jetbrains.mps.annotations.AttributeConcept;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -98,6 +99,10 @@ public class EditorManager {
     return getCurrentAttributedCellWithRole(LinkAttributeConcept.class);
   }
 
+  public EditorCell getCurrentAttributedNodeCell() {
+    return getCurrentAttributedCellWithRole(AttributeConcept.class);
+  }
+
   // use parameter attributeClass carefully, it is a "kind" of an attribute rather than an exact class of an attribute
   public EditorCell createRoleAttributeCell(EditorContext context, SNode roleAttribute, Class attributeClass, EditorCell cellWithRole) {
     Stack<EditorCell> stack = myAttributedClassesToAttributedCellStacksMap.get(attributeClass);
@@ -112,6 +117,9 @@ public class EditorManager {
     return result;
   }
 
+  public EditorCell createNodeAttributeCell(EditorContext context, SNode attribute, EditorCell nodeCell) {
+    return createRoleAttributeCell(context, attribute, AttributeConcept.class, nodeCell);
+  }
 
   public EditorCell getCurrentAttributedCellWithRole(Class attributeClass) {
     Stack<EditorCell> stack = myAttributedClassesToAttributedCellStacksMap.get(attributeClass);
@@ -132,7 +140,8 @@ public class EditorManager {
         //if creating this cell for this attribute for the first time
         if (!myAttributesStack.contains(attribute)) {
           myAttributesStack.push(attribute);
-          EditorCell result = createEditorCell(context, events, ReferencedNodeContext.createNodeContext(attribute));
+          EditorCell nodeCell = createEditorCell(context, events, refContext);
+          EditorCell result = createNodeAttributeCell(context, attribute, nodeCell);
           SNode poppedAttribute = myAttributesStack.pop();
           LOG.assertLog(poppedAttribute == attribute);
           return result;
