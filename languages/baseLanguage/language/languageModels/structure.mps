@@ -496,7 +496,7 @@
     <property name="name" value="ParameterReference" />
     <link role="extends" targetNodeId="1068498886296" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107217381435">
-      <property name="value" value="&lt;parm&gt;" />
+      <property name="value" value="&lt;{parameterDeclaration}&gt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107217390234">
