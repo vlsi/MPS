@@ -16,6 +16,7 @@ public class ReferencedNodeContext {
   private Stack<SNode> myContextRefererNodes = new Stack<SNode>();
   private SNode myNode = null;
   private Stack<String> myContextRoles = new Stack<String>();
+  private Stack<SNode> myAttributesStack = new Stack<SNode>();
 
   private ReferencedNodeContext(SNode node) {
     myNode = node;
@@ -40,12 +41,21 @@ public class ReferencedNodeContext {
     return result;
   }
 
+  public ReferencedNodeContext contextWithOneMoreAttribute(SNode attribute) {
+    ReferencedNodeContext result = sameContextButAnotherNode(myNode);
+    result.myAttributesStack.push(attribute);
+    return result;
+  }
+
   public SNode getNode() {
     return myNode;
   }
 
   public int hashCode() {
-    return EqualUtil.hashCode(myContextRefererNodes) + EqualUtil.hashCode(myNode) + EqualUtil.hashCode(myContextRoles);
+    return EqualUtil.hashCode(myContextRefererNodes)
+            + EqualUtil.hashCode(myNode)
+            + EqualUtil.hashCode(myContextRoles)
+            + EqualUtil.hashCode(myAttributesStack);
   }
 
 
@@ -55,6 +65,7 @@ public class ReferencedNodeContext {
       ReferencedNodeContext o = (ReferencedNodeContext) obj;
       return EqualUtil.equals(myContextRoles, o.myContextRoles)
               && EqualUtil.equals(myContextRefererNodes, o.myContextRefererNodes)
+              && EqualUtil.equals(myAttributesStack, o.myAttributesStack)
               && EqualUtil.equals(myNode, o.myNode);
     } else {
       return false;

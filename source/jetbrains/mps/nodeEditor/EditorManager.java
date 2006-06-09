@@ -140,7 +140,7 @@ public class EditorManager {
         //if creating this cell for this attribute for the first time
         if (!myAttributesStack.contains(attribute)) {
           myAttributesStack.push(attribute);
-          EditorCell nodeCell = createEditorCell(context, events, refContext);
+          EditorCell nodeCell = createEditorCell(context, events, refContext.contextWithOneMoreAttribute(attribute));
           EditorCell result = createNodeAttributeCell(context, attribute, nodeCell);
           SNode poppedAttribute = myAttributesStack.pop();
           LOG.assertLog(poppedAttribute == attribute);
