@@ -17,6 +17,7 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.generator.ContextUtil;
+import jetbrains.mps.nodeEditor.StereotypesKeymapManager;
 
 import java.io.File;
 import java.util.*;
@@ -114,6 +115,7 @@ public class Language extends AbstractModule {
     CommandProcessor.instance().addCommandListener(myEventTranslator);
     SModelsMulticaster.getInstance().addSModelsListener(myModelsListener);
     registerAspectListener();
+    StereotypesKeymapManager.getInstance().registerStereotypeKeyMaps(this);
   }
 
   private void revalidateGenerators() {
@@ -128,8 +130,8 @@ public class Language extends AbstractModule {
   }
 
   public void dispose() {
+    StereotypesKeymapManager.getInstance().unregisterStereotypeKeyMaps(this);
     LOG.assertLog(!MPSModuleRepository.getInstance().hasOwners(this));
-
     CommandProcessor.instance().removeCommandListener(myEventTranslator);
     SModelsMulticaster.getInstance().removeSModelsListener(myModelsListener);
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
@@ -140,6 +142,7 @@ public class Language extends AbstractModule {
       }
       myGenerators.clear();
     }
+
   }
 
   public void setLanguageDescriptor(final LanguageDescriptor newDescriptor) {

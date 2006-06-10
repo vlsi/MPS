@@ -527,7 +527,6 @@
       <property name="drawBorder" value="false" />
       <property name="name" value="nodeBox" />
       <property name="vertical" value="true" />
-      <link role="keyMap" targetNodeId="1149868357716" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1092060948913">
         <property name="drawBorder" value="false" />
         <property name="name" value="headerRow" />
@@ -1583,6 +1582,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1149868357716">
+    <property name="stereotype" value="templates" />
+    <property name="everyModel" value="true" />
     <property name="name" value="_MacrosSwitch_KeyMap" />
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1149868396494">
       <property name="description" value="convert to/from 'template fragmet'" />
