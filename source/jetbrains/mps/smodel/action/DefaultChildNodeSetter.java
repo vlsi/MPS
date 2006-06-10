@@ -4,7 +4,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
+import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 /**
  * Created by IntelliJ IDEA.
@@ -19,7 +19,7 @@ public class DefaultChildNodeSetter implements IChildNodeSetter {
   public DefaultChildNodeSetter(LinkDeclaration linkDeclaration) {
     myLinkDeclaration = linkDeclaration;
 
-    if (SModelUtil.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.aggregation) {
+    if (DefaultChildSubstituteInfo.isNotAggregation(linkDeclaration)) {
       throw new RuntimeException("Only aggregation links are allowed here.");
     }
   }
@@ -37,4 +37,5 @@ public class DefaultChildNodeSetter implements IChildNodeSetter {
       oldChild.delete();
     }
   }
+
 }

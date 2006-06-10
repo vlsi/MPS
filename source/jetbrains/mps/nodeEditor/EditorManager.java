@@ -9,10 +9,13 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeProxy;
+import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration;
 
 import java.awt.Color;
 import java.awt.event.KeyEvent;
@@ -114,6 +117,21 @@ public class EditorManager {
     EditorCell result = createEditorCell(context, null, ReferencedNodeContext.createNodeContext(roleAttribute));
     EditorCell cellWithRolePopped = stack.pop();
     LOG.assertLog(cellWithRolePopped == cellWithRole);
+    //setting substitute info
+    AnnotationLinkDeclaration linkDeclaration = SModelUtil.findAnnotationLinkDeclaration(roleAttribute, context.getOperationContext().getScope());
+    if (linkDeclaration != null) {
+      DefaultAttributeSubstituteInfo substituteInfo = new DefaultAttributeSubstituteInfo(cellWithRole.getSNode(), roleAttribute, linkDeclaration, context);
+      result.setSubstituteInfo(substituteInfo);
+      if (result instanceof EditorCell_Collection) {
+        if (((EditorCell_Collection)result).containsCell(cellWithRole)) {
+          for (EditorCell cell : ((EditorCell_Collection)result).contentCells()) {
+            if (cell != cellWithRole && cell.getSubstituteInfo() == null) {
+              cell.setSubstituteInfo(substituteInfo);
+            }
+          }
+        }
+      }
+    }
     return result;
   }
 

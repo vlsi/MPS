@@ -5,6 +5,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkMetaclass;
+import jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
@@ -21,7 +22,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   public DefaultChildSubstituteInfo(SNode sourceNode, LinkDeclaration linkDeclaration, EditorContext editorContext) {
     super(editorContext);
-    if (SModelUtil.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.aggregation) {
+    if (isNotAggregation(linkDeclaration)) {
       throw new RuntimeException("Only aggregation links are allowed here.");
     }
     Cardinality sourceCardinality = SModelUtil.getGenuineLinkSourceCardinality(linkDeclaration);
@@ -39,7 +40,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     if (linkDeclaration == null) {
       throw new IllegalArgumentException("link declaration is null");
     }
-    if (SModelUtil.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.aggregation) {
+    if (isNotAggregation(linkDeclaration)) {
       throw new RuntimeException("Only aggregation links are allowed here.");
     }
     myParentNode = parentNode;
@@ -50,9 +51,21 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
   public List<INodeSubstituteItem> createActions() {
     List<INodeSubstituteAction> actions = ModelActions.createChildSubstituteActions(myParentNode, myCurrentChild,
             myLinkDeclaration.getTarget(),
-            new DefaultChildNodeSetter(myLinkDeclaration),
+            createDefaultNodeSetter(),
             getOperationContext());
     return (List<INodeSubstituteItem>) ((List) actions);
+  }
+
+  protected DefaultChildNodeSetter createDefaultNodeSetter() {
+    return new DefaultChildNodeSetter(myLinkDeclaration);
+  }
+
+  protected LinkDeclaration getLinkDeclaration() {
+    return myLinkDeclaration;
+  }
+
+  public static boolean isNotAggregation(LinkDeclaration linkDeclaration) {
+    return !(linkDeclaration instanceof AnnotationLinkDeclaration) && SModelUtil.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.aggregation;
   }
 
 }
