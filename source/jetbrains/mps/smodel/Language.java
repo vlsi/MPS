@@ -1,23 +1,22 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.findUsages.FindUsagesManager;
+import jetbrains.mps.generator.ContextUtil;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.generator.ContextUtil;
-import jetbrains.mps.nodeEditor.LanguagesKeymapManager;
+import jetbrains.mps.util.annotation.Hack;
 
 import java.io.File;
 import java.util.*;

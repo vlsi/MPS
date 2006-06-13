@@ -113,8 +113,7 @@ import java.util.*;
       actions.add(new DefaultChildNodeSubstituteAction(applicableConcept, parentNode, currentChild, childSetter, scope));
     }
 
-    // test ++
-    // add smart actions
+    // ++ add smart actions
     List<SNode> applicableConcepts1 = conceptsSearchScope.getNodes(new Condition<SNode>() {
       public boolean met(SNode object) {
         if (!SModelUtil.hasConceptProperty(object, ABSTRACT, scope)) {
@@ -129,8 +128,6 @@ import java.util.*;
         actions.addAll(smartActions);
       }
     }
-    // test --
-
 
     return actions;
   }
@@ -153,7 +150,7 @@ import java.util.*;
       if (SModelUtil.isInstanceOfConcept(referentNode, targetConcept, scope)) {
         actions.add(new DefaultChildNodeSubstituteAction(referentNode, parentNode, currentChild, childSetter, scope) {
           public String getMatchingText(String pattern) {
-            return NodePresentationUtil.matchingText(getParameterNode(), null, NodePresentationUtil.REFERENT_PRESENTATION, getScope());
+            return getSmartMatchingText(referenceDeclaringConcept, getParameterNode(), getScope());
           }
 
           public String getDescriptionText(String pattern) {
@@ -187,8 +184,8 @@ import java.util.*;
     String expectedReferentRole = null;
     String matchingText = NodePresentationUtil.matchingText(referenceDeclaringConcept, null, NodePresentationUtil.CHILD_PRESENTATION, scope);
     if (!(matchingText == null || matchingText.equals(referenceDeclaringConcept.getName()))) {
-      // handle pattern <{_referent_role_}>
-      if (!matchingText.matches("<\\{.+\\}>")) {
+      // handle pattern 'xxx <{_referent_role_}> yyy'
+      if (!matchingText.matches(".*<\\{.+\\}>.*")) {
         return null;
       }
       String[] matches = matchingText.split("<\\{|\\}>");
@@ -214,6 +211,21 @@ import java.util.*;
     return null;
   }
 
+  private static String getSmartMatchingText(ConceptDeclaration referenceNodeConcept, SNode referentNode, IScope scope) {
+    String referentMatchingText = NodePresentationUtil.matchingText(referentNode, null, NodePresentationUtil.REFERENT_PRESENTATION, scope);
+    String referenceMatchingText = NodePresentationUtil.matchingText(referenceNodeConcept, null, NodePresentationUtil.CHILD_PRESENTATION, scope);
+    // handle pattern 'xxx <{_referent_role_}> yyy'
+    if (!referenceMatchingText.matches(".*<\\{.+\\}>.*")) {
+      return referentMatchingText;
+    }
+    String[] matches = referenceMatchingText.split("<\\{|\\}>");
+    matches[1] = referentMatchingText;
+    StringBuffer sb = new StringBuffer();
+    for (int i = 0; i < matches.length; i++) {
+      sb.append(matches[i]);
+    }
+    return sb.toString();
+  }
 
   private static List<NodeSubstituteActionsBuilder> getActionBuilders(SNode parentNode, Language language, ConceptDeclaration childConcept, IOperationContext context) {
     List<NodeSubstituteActionsBuilder> actionsBuilders = new LinkedList<NodeSubstituteActionsBuilder>();

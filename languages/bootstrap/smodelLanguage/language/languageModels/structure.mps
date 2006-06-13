@@ -154,8 +154,9 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1138676077309">
     <property name="name" value="EnumMemberReference" />
     <link role="extends" targetNodeId="2.1068431790191" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1146164095591">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1150219721031">
+      <property name="value" value="&lt;&lt;{enumMember}&gt;&gt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1138676095763">
       <property name="sourceCardinality" value="1" />
