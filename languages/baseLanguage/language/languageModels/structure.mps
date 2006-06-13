@@ -445,7 +445,7 @@
     <property name="name" value="MethodCall" />
     <link role="extends" targetNodeId="1068499141036" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107217192964">
-      <property name="value" value="&lt;method&gt;" />
+      <property name="value" value="&lt;{methodDeclaration}&gt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107217203825">
