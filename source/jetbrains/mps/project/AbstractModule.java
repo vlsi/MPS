@@ -287,4 +287,8 @@ public abstract class AbstractModule implements IModule {
     MPSModuleRepository.getInstance().readModuleDescriptors(getModuleDescriptor().moduleRoots(), this);
     SModelRepository.getInstance().readModelDescriptors(getModelRoots(), this);
   }
+
+  protected void fireModuleInitialized() {
+    MPSModuleRepository.getInstance().fireModuleInitialized(this);
+  }
 }

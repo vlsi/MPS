@@ -8,6 +8,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.Root;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.nodeEditor.LanguagesKeymapManager;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -49,6 +50,7 @@ public class MPSModuleRepository {
       }
     };
     CommandProcessor.instance().addCommandListener(myListenerToRemoveUnusedModules);
+    LanguagesKeymapManager.getInstance().addMyListener(this);
   }
 
   private void initializeExtensionsToModuleTypesMap() {
@@ -95,6 +97,13 @@ public class MPSModuleRepository {
   private void fireModuleRemoved(IModule module) {
     for (ModuleRepositoryListener l : myModuleListeners) {
       l.moduleRemoved(module);
+    }
+  }
+
+
+  public void fireModuleInitialized(IModule module) {
+    for (ModuleRepositoryListener l : myModuleListeners) {
+      l.moduleInitialized(module);
     }
   }
 
@@ -150,7 +159,7 @@ public class MPSModuleRepository {
 
   public void addModule(IModule module, MPSModuleOwner owner) {
     if (existsModule(module, owner)) {
-      throw new RuntimeException("Couldn't add module \"" + module.getModuleUID() + "\" : this module is already registered with very this owner: " + owner);
+      throw new RuntimeException("Couldn't add module \"" + module.getModuleUID() + "\" : this module is already registered with this very owner: " + owner);
     }
     try {
       File descriptorFile = module.getDescriptorFile();
@@ -369,4 +378,5 @@ public class MPSModuleRepository {
   public List<IModule> getAllModules() {
     return getAllModules(IModule.class);
   }
+
 }

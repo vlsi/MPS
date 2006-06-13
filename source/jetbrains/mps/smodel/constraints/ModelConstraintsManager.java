@@ -39,6 +39,10 @@ public class ModelConstraintsManager {
           processLanguageRemoved((Language) module);
         }
       }
+
+      public void moduleInitialized(IModule module) {
+
+      }
     });
   }
 

@@ -19,6 +19,7 @@ public class Generator extends AbstractModule {
     myGeneratorDescriptor = generatorDescriptor;
     // read modules and models
     readModulesAndModels();
+    fireModuleInitialized();
   }
 
   public void dispose() {

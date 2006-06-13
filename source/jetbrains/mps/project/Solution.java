@@ -88,6 +88,7 @@ public class Solution extends AbstractModule {
     // read languages and models
     readModulesAndModels();
     CommandProcessor.instance().addCommandListener(myEventTranslator);
+    fireModuleInitialized();
   }
 
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor) {
