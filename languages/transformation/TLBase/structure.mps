@@ -4,7 +4,6 @@
   <maxImportIndex value="5" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
-  <import index="4" modelUID="jetbrains.mps.bootstrap.structureLanguage.library" />
   <import index="5" modelUID="jetbrains.mps.transformation.TLBase.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1087833241328">
     <property name="name" value="PropertyMacro" />

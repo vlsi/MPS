@@ -127,6 +127,8 @@ public class IconManager {
             return Icons.ACTIONS_MODEL_ICON;
           } else if (languageAspectStatus.isTypesystem()) {
             return Icons.TYPESYSTEM_MODEL_ICON;
+          } else if (languageAspectStatus.isConstraintsModel()) {
+            return Icons.CONSTRAINTS_MODEL_ICON;
           }
         } else if (modelDescriptor.getStereotype() != null &&
                 modelDescriptor.getStereotype().equals(SModelStereotype.TEMPLATES)) {

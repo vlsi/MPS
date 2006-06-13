@@ -42,6 +42,7 @@ public class Icons {
   public static final Icon ACTIONS_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/actionsModel.png"));
   public static final Icon TEMPLATES_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/templatesModel.png"));
   public static final Icon TYPESYSTEM_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/typesystemModel.png"));
+  public static final Icon CONSTRAINTS_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/constraintsModel.png"));
   public static final Icon ACCESSORY_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/accessoryModel.png"));
 
   public static final Icon OPENED_FOLDER = new ImageIcon(Icons.class.getResource("other/openedFolder.png"));
