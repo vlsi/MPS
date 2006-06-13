@@ -64,7 +64,6 @@ public class EditorCellKeyMap {
   private List<Pair<ActionKey, EditorCellKeyMapAction>> myDuplicatedActionList;
   private List<EditorCellKeyMap> myChildKeyMaps;
   private boolean myApplicableToEveryModel = false;
-  private String myStereotype = null;
 
   public EditorCellKeyMap() {
     myActionMap = new HashMap<ActionKey, EditorCellKeyMapAction>();
@@ -346,17 +345,10 @@ public class EditorCellKeyMap {
     return myApplicableToEveryModel;
   }
 
-  public String getStereotype() {
-    return myStereotype;
-  }
-
   public void setApplicableToEveryModel(boolean isApplicable) {
     myApplicableToEveryModel = isApplicable;
   }
 
-  public void setStereotype(String stereotype) {
-    myStereotype = stereotype;
-  }
 
   public static class ActionKey {
     private String myModifiers;

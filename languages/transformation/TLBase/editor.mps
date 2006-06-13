@@ -1582,7 +1582,6 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapDeclaration" id="1149868357716">
-    <property name="stereotype" value="templates" />
     <property name="everyModel" value="true" />
     <property name="name" value="_MacrosSwitch_KeyMap" />
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1149868396494">
