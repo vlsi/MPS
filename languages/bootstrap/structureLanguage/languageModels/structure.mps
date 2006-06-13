@@ -237,7 +237,10 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1105725413739">
     <property name="name" value="ConceptProperty" />
-    <link role="extends" targetNodeId="1.1078489098625" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1150227364245">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1105725439818">
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
@@ -302,7 +305,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1105736674127">
     <property name="name" value="ConceptLink" />
-    <link role="extends" targetNodeId="1.1078489098625" />
+    <link role="extends" targetNodeId="1.1133920641626" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1142040108511">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
     </node>
@@ -317,8 +320,9 @@
     <property name="rootable" value="false" />
     <property name="name" value="ReferenceConceptLink" />
     <link role="extends" targetNodeId="1105736674127" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1142040289027">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1150228875552">
+      <property name="value" value="&lt;{referenceConceptLinkDeclaration}&gt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1105742372452">
       <property name="sourceCardinality" value="1" />
@@ -338,9 +342,6 @@
     <property name="rootable" value="false" />
     <property name="name" value="AggregationConceptLink" />
     <link role="extends" targetNodeId="1105736674127" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1142040310154">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1105742417828">
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />

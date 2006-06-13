@@ -21,6 +21,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActions" id="1138079717967">
+    <property name="name" value="SModelLang_rtransform" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1138079721624">
       <property name="actionsFactoryAspectId" value="Expression_to_SmodelLangOperation" />
       <property name="preconditionAspectId" value="Expression_any_SmodelLang_type" />
