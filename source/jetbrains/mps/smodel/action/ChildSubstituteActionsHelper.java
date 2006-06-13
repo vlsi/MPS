@@ -2,18 +2,18 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions;
 import jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder;
+import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
+import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethod;
-import jetbrains.mps.ide.IStatus;
 
 import java.util.*;
 
@@ -110,56 +110,47 @@ import java.util.*;
 
     List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
     for (SNode applicableConcept : applicableConcepts) {
-      actions.add(new DefaultChildNodeSubstituteAction(applicableConcept, parentNode, currentChild, childSetter, scope));
-    }
-
-    // ++ add smart actions
-    List<SNode> applicableConcepts1 = conceptsSearchScope.getNodes(new Condition<SNode>() {
-      public boolean met(SNode object) {
-        if (!SModelUtil.hasConceptProperty(object, ABSTRACT, scope)) {
-          return SModelUtil.isAssignableConcept((ConceptDeclaration) object, childConcept) && filter.met(object);
+      // first try to create 'smart reference' actions for this concept
+      LinkDeclaration smartReference = getSmartReference((ConceptDeclaration) applicableConcept, scope);
+      if (smartReference != null) {
+        List<INodeSubstituteAction> smartActions = createSmartReferenceActions((ConceptDeclaration) applicableConcept, smartReference, parentNode, currentChild, childSetter, scope);
+        if (smartActions != null) {
+          actions.addAll(smartActions);
         }
-        return false;
-      }
-    });
-    for (SNode applicableConcept1 : applicableConcepts1) {
-      List<INodeSubstituteAction> smartActions = createSmartReferenceActions((ConceptDeclaration) applicableConcept1, parentNode, currentChild, childSetter, scope);
-      if (smartActions != null) {
-        actions.addAll(smartActions);
+      } else {
+        // apply default 'child substitute'
+        actions.add(new DefaultChildNodeSubstituteAction(applicableConcept, parentNode, currentChild, childSetter, scope));
       }
     }
 
     return actions;
   }
 
-  private static List<INodeSubstituteAction> createSmartReferenceActions(final ConceptDeclaration referenceDeclaringConcept, SNode parentNode, SNode currentChild, IChildNodeSetter childSetter, IScope scope) {
-    LinkDeclaration referenceLink = getSmartReference(referenceDeclaringConcept, scope);
-    if (referenceLink == null) return null;
-
+  private static List<INodeSubstituteAction> createSmartReferenceActions(final ConceptDeclaration referenceNodeConcept, LinkDeclaration smartReference, SNode parentNode, SNode currentChild, IChildNodeSetter childSetter, IScope scope) {
     // try to create referent-search-scope
-    IStatus status = ModelConstraintsUtil.getReferentSearchScope(parentNode, null, referenceDeclaringConcept, referenceLink, scope);
+    IStatus status = ModelConstraintsUtil.getReferentSearchScope(parentNode, null, referenceNodeConcept, smartReference, scope);
     if (status.isError()) return null;
 
     // create smart actions
     List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
-    final LinkDeclaration referenceLink_final = referenceLink;
+    final LinkDeclaration referenceLink_final = smartReference;
     ISearchScope searchScope = (ISearchScope) status.getUserObject();
-    ConceptDeclaration targetConcept = referenceLink.getTarget();
+    ConceptDeclaration targetConcept = smartReference.getTarget();
     List<SNode> referentNodes = searchScope.getNodes();
     for (SNode referentNode : referentNodes) {
       if (SModelUtil.isInstanceOfConcept(referentNode, targetConcept, scope)) {
         actions.add(new DefaultChildNodeSubstituteAction(referentNode, parentNode, currentChild, childSetter, scope) {
           public String getMatchingText(String pattern) {
-            return getSmartMatchingText(referenceDeclaringConcept, getParameterNode(), getScope());
+            return getSmartMatchingText(referenceNodeConcept, getParameterNode(), getScope());
           }
 
           public String getDescriptionText(String pattern) {
-            String prefix = "(smart ref:" + referenceDeclaringConcept.getName() + ") ";
+            String prefix = "(smart ref:" + referenceNodeConcept.getName() + ") ";
             return prefix + NodePresentationUtil.descriptionText(getParameterNode(), null, NodePresentationUtil.REFERENT_PRESENTATION, getScope());
           }
 
           public SNode createChildNode(SNode parameterNode, SModel model, String pattern) {
-            SNode childNode = super.createChildNode(referenceDeclaringConcept, model, pattern);
+            SNode childNode = super.createChildNode(referenceNodeConcept, model, pattern);
             String referentRole = SModelUtil.getGenuineLinkRole(referenceLink_final);
             childNode.setReferent(referentRole, parameterNode);
             return childNode;
@@ -221,8 +212,8 @@ import java.util.*;
     String[] matches = referenceMatchingText.split("<\\{|\\}>");
     matches[1] = referentMatchingText;
     StringBuffer sb = new StringBuffer();
-    for (int i = 0; i < matches.length; i++) {
-      sb.append(matches[i]);
+    for (String segment : matches) {
+      sb.append(segment);
     }
     return sb.toString();
   }

@@ -7,11 +7,7 @@
   <import index="2" modelUID="jetbrains.mps.core.structure" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1138078942005">
-    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1138676703425">
-      <property name="actionsFactoryAspectId" value="EnumMemberReference_ifApplicable" />
-      <property name="applicableLinkMetaclass" value="aggregation" />
-      <link role="applicableConcept" targetNodeId="3.1068431790191" />
-    </node>
+    <property name="name" value="SModelLang_node_substitute" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1138413233760">
       <property name="actionsFactoryAspectId" value="PrimaryOperations_for_LeftExpression_type" />
       <property name="preconditionAspectId" value="SNodeOperation_LeftExpression_any_smodelLang_type" />
