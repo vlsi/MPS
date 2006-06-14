@@ -13,6 +13,7 @@ import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.ConditionalTemplate;
 import jetbrains.mps.transformation.TLBase.TemplateSwitch;
@@ -77,4 +78,6 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
   void notifyBuilderCreated(INodeBuilder builder);
 
   void reset();
+
+  Language getTargetLanguage();
 }

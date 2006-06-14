@@ -48,11 +48,12 @@ public class TemplateGenUtil {
       }
 
       // the reference MACRO exists?
-    /*  String macroReferenceRole = ITemplateGenerator.ROLE_PREFIX_REFEENCE_MAKRO + templateReference.getRole();
+      /*  String macroReferenceRole = ITemplateGenerator.ROLE_PREFIX_REFEENCE_MAKRO + templateReference.getRole();
       if (templateNode.getChild(macroReferenceRole) != null) {
         continue;
       }*/
-      if (ReferenceMacro_AnnotationLink.getReferenceMacro((BaseConcept) templateNode, templateReference.getRole()) != null) {
+      if (ReferenceMacro_AnnotationLink.getReferenceMacro((BaseConcept) templateNode, templateReference.getRole()) != null)
+      {
         continue;
       }
 
@@ -132,10 +133,15 @@ public class TemplateGenUtil {
   }
 
   private static INodeBuilder loadNodeBuilder(SNode sourceNode, SNode templateNode, String mappingName, ITemplateGenerator generator) {
-    ConceptDeclaration typeDeclaration = SModelUtil.getConceptDeclaration(templateNode, generator.getScope());
-    String modelPackageName = JavaNameUtil.packageNameForModelUID(typeDeclaration.getModel().getUID());
-    String buildersPackageName = modelPackageName + ".builder";
-    String builderClassName = buildersPackageName + "." + typeDeclaration.getName() + "_NodeBuilder";
+//    ConceptDeclaration typeDeclaration = SModelUtil.getConceptDeclaration(templateNode, generator.getScope());
+//    String modelPackageName = JavaNameUtil.packageNameForModelUID(typeDeclaration.getModel().getUID());
+//    String buildersPackageName = modelPackageName + ".builder";
+//    String builderClassName = buildersPackageName + "." + typeDeclaration.getName() + "_NodeBuilder";
+    // custom builders are only available for target language
+    Language targetLanguage = generator.getTargetLanguage();
+    String buildersPackageName = targetLanguage.getNamespace() + ".builder";
+    String conceptName = templateNode.getConceptName();
+    String builderClassName = buildersPackageName + "." + conceptName + "_NodeBuilder";
     try {
       Class builderClass = Class.forName(builderClassName, true, ClassLoaderManager.getInstance().getClassLoader());
       Constructor[] constructors = builderClass.getDeclaredConstructors();
@@ -183,7 +189,7 @@ public class TemplateGenUtil {
     List<INodeBuilder> builders = new LinkedList<INodeBuilder>();
     String ruleName = mappingRule.getName();
     BaseConcept templateNode = mappingRule.getTemplateNode();
-    if(templateNode == null) {
+    if (templateNode == null) {
       generator.showErrorMessage(null, null, mappingRule, "mapping rule has to template");
       return builders;
     }
@@ -296,10 +302,10 @@ public class TemplateGenUtil {
 
   public static boolean isTemplateLanguageElement(SNode templateNode) {
     String role = templateNode.getRole_();
-   /* return role.equals(ITemplateGenerator.ROLE_NODE_MAKRO) ||
-            role.equals(ITemplateGenerator.ROLE_TEMPLATE_FRAGMENT) ||
-            role.startsWith(ITemplateGenerator.ROLE_PREFIX_PROPERTY_MAKRO) ||
-            role.startsWith(ITemplateGenerator.ROLE_PREFIX_REFEENCE_MAKRO);*/
+    /* return role.equals(ITemplateGenerator.ROLE_NODE_MAKRO) ||
+    role.equals(ITemplateGenerator.ROLE_TEMPLATE_FRAGMENT) ||
+    role.startsWith(ITemplateGenerator.ROLE_PREFIX_PROPERTY_MAKRO) ||
+    role.startsWith(ITemplateGenerator.ROLE_PREFIX_REFEENCE_MAKRO);*/
     return role.equals(AttributesRolesUtil.childRoleFromAttributeRole(NodeMacro_AnnotationLink.NODE_MACRO)) ||
             role.equals(AttributesRolesUtil.childRoleFromAttributeRole(TemplateFragment_AnnotationLink.TEMPLATE_FRAGMENT)) ||
             AttributesRolesUtil.isChildRoleOfLinkAttributeRole(ReferenceMacro_AnnotationLink.REFERENCE_MACRO, role) ||

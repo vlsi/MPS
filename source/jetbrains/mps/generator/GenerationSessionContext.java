@@ -80,6 +80,10 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return myInvocationContext;
   }
 
+  public Language getTargetLanguage() {
+    return myTargetLanguage;
+  }
+
   public String toString() {
     return getClass().getName() + "-> " + myTargetLanguage.getNamespace() + "\ninvoked from: " + myInvocationContext;
   }
