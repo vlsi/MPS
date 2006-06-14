@@ -96,7 +96,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       newNode.myUserObjects = new HashMap<Object, Object>();
       newNode.myProperties = new HashMap<String, String>();
       newNode.myProperties.putAll(this.myProperties);
-      newNode.myChildInRoleCount.clear();
+      newNode.myChildInRoleCount = new HashMap<String, Integer>();
     } catch (Exception e) {
       e.printStackTrace();
       return null;
@@ -1202,7 +1202,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   private void decrementChildInRoleCount(String role) {
     if (!myChildInRoleCount.containsKey(role)) {
-      LOG.error("This can't happen");
+      LOG.error("This can't happen: role = " + role + " node = "+this);
     }
 
     Integer childCount = myChildInRoleCount.get(role);
