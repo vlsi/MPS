@@ -3,8 +3,7 @@
   <models>
     <modelRoot path="${solution_descriptor}\." namespacePrefix="" />
   </models>
-  <module>
-    <moduleRoot path="${mps_home}\languages\bootstrap\smodelLanguage\unittest\input\language" />
-  </module>
+  <module />
+  <languages />
 </solution>
 
