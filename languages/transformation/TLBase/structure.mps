@@ -7,7 +7,7 @@
   <import index="5" modelUID="jetbrains.mps.transformation.TLBase.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1087833241328">
     <property name="name" value="PropertyMacro" />
-    <link role="extends" targetNodeId="2.1078489098625" />
+    <link role="extends" targetNodeId="2.1133920641626" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1087833392642">
       <property name="name" value="aspectMethodName" />
       <link role="dataType" targetNodeId="2.1082983041843" />
@@ -21,7 +21,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1087833466690">
     <property name="name" value="NodeMacro" />
-    <link role="extends" targetNodeId="2.1078489098625" />
+    <link role="extends" targetNodeId="2.1133920641626" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1131073118435">
       <property name="value" value="$$" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
@@ -41,7 +41,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1088761943574">
     <property name="name" value="ReferenceMacro" />
-    <link role="extends" targetNodeId="2.1078489098625" />
+    <link role="extends" targetNodeId="2.1133920641626" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1088761950280">
       <property name="name" value="aspectMethodName" />
       <link role="dataType" targetNodeId="2.1082983041843" />
