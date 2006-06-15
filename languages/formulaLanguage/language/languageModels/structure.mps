@@ -66,10 +66,6 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1111784858617">
     <property name="name" value="IntegerConstant" />
     <link role="extends" targetNodeId="1111784519527" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1112037510583">
-      <property name="value" value="&lt;i&gt;" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1112037519288">
       <property name="value" value="integer constant" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" />
@@ -85,10 +81,6 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1113257000626">
       <property name="name" value="value" />
       <link role="dataType" targetNodeId="1113256863281" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1112037571216">
-      <property name="value" value="&lt;i.i&gt;" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1112037579702">
       <property name="value" value="floating point constant" />
@@ -265,6 +257,14 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1142518741440">
     <property name="name" value="NullConstant" />
     <link role="extends" targetNodeId="1111784312737" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1150401098138">
+      <property name="value" value="null" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1150401104030">
+      <property name="value" value="null expression" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1142519786507">
     <property name="name" value="IsNullOperation" />

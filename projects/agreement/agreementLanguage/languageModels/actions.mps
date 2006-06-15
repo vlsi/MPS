@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model namespace="agreementLanguage">
-  <maxReferenceID value="2" />
+<model name="agreementLanguage.actions">
   <language namespace="jetbrains.mps.bootstrap.actionsLanguage" />
-  <import referenceID="1" name="structure" namespace="agreementLanguage" />
-  <import referenceID="2" name="structure" namespace="jetbrains.mps.formulaLanguage" />
+  <maxImportIndex value="2" />
+  <import index="1" modelUID="agreementLanguage.structure" />
+  <import index="2" modelUID="jetbrains.mps.formulaLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1112119676621">
+    <property name="name" value="AGRL_node_substitute" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1112119679872">
       <property name="actionsFactoryAspectId" value="Expression" />
       <property name="actionsFilterAspectId" value="Expression" />

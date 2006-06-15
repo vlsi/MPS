@@ -6,6 +6,9 @@
   <actions>
     <model modelUID="agreementLanguage.actions" />
   </actions>
+  <constraints>
+    <model modelUID="agreementLanguage.constraints" />
+  </constraints>
   <editor>
     <model modelUID="agreementLanguage.editor" />
   </editor>

@@ -12,18 +12,14 @@ import java.util.*;
  * Time: 12:04:49 PM
  * To change this template use File | Settings | File Templates.
  */
-public class SNodeSearchScope extends AbstractSearchScope {
-  private SNode myNode;
+public class SubnodesSearchScope extends AbstractSearchScope {
+  private SNode myEnclosingNode;
 
-  public SNodeSearchScope(SNode node) {
-    myNode = node;
+  public SubnodesSearchScope(SNode enclosingNode) {
+    myEnclosingNode = enclosingNode;
   }
 
   protected List<SNode> getOwnNodes(Condition<SNode> condition) {
-    List<SNode> nodes = myNode.getSubnodes(condition);
-    if (condition.met(myNode)) {
-      nodes.add(0, myNode);
-    }
-    return nodes;
+    return myEnclosingNode.getSubnodes(condition);
   }
 }
