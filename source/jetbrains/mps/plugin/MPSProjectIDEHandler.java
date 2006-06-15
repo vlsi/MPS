@@ -23,7 +23,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
 
   public MPSProjectIDEHandler(MPSProject project) throws RemoteException {
     myProject = project;
-     myProject.getProjectHandler().addIdeHandler(this);
+    myProject.getProjectHandler().addIdeHandler(this);
   }
 
   private IDEProjectFrame getProjectWindow() {

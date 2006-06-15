@@ -186,7 +186,9 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   private File findIDEAProject(File directory) {
     for (File file : directory.listFiles()) {
       if (file.isFile() && file.getName().endsWith(".ipr")) {
-        return file;
+        if (MPSPlugin.getInstance().getProjectHandler(file.getAbsolutePath()) != null) {
+          return file;
+        }
       }
     }
 
