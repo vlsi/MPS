@@ -41,6 +41,10 @@ public class ReferencedNodeContext {
     return result;
   }
 
+  public boolean hasRoles() {
+    return !myContextRoles.isEmpty();
+  }
+
   public ReferencedNodeContext contextWithOneMoreAttribute(SNode attribute) {
     ReferencedNodeContext result = sameContextButAnotherNode(myNode);
     result.myAttributesStack.push(attribute);

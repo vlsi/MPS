@@ -108,6 +108,10 @@ public class EditorManager {
 
   // use parameter attributeClass carefully, it is a "kind" of an attribute rather than an exact class of an attribute
   public EditorCell createRoleAttributeCell(EditorContext context, SNode roleAttribute, Class attributeClass, EditorCell cellWithRole) {
+    return context.createRoleAttributeCell(attributeClass, cellWithRole, roleAttribute);
+  }
+
+  /*package*/ EditorCell doCreateRoleAttributeCell(Class attributeClass, EditorCell cellWithRole, EditorContext context, SNode roleAttribute) {
     Stack<EditorCell> stack = myAttributedClassesToAttributedCellStacksMap.get(attributeClass);
     if (stack == null) {
       stack = new Stack<EditorCell>();

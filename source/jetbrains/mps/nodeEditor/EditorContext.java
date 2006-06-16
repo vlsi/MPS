@@ -112,6 +112,18 @@ public class EditorContext {
     return nodeCell;
   }
 
+  public EditorCell createReferentCell(AbstractCellProvider inlineComponent, SNode sourceNode, SNode targetNode, String role) {
+    if (myCurrentRefNodeContext == null) {
+      initializeRefContext(targetNode);
+      LOG.warning("ref context not initialized");
+    }
+    ReferencedNodeContext oldNodeContext = myCurrentRefNodeContext;
+    myCurrentRefNodeContext = myCurrentRefNodeContext.contextWithOneMoreReference(targetNode, sourceNode, role);
+    EditorCell nodeCell = inlineComponent.createEditorCell(this);
+    myCurrentRefNodeContext = oldNodeContext;
+    return nodeCell;
+  }
+
   public Object createMemento() {
     return new Memento(this);
   }
@@ -163,6 +175,13 @@ public class EditorContext {
     return myContextCell;
   }
 
+  public EditorCell createRoleAttributeCell(Class attributeClass, EditorCell cellWithRole, SNode roleAttribute) {
+    if (myCurrentRefNodeContext != null)  {
+      if (myCurrentRefNodeContext.hasRoles()) return cellWithRole;
+    }
+    return myOperationContext.getComponent(EditorManager.class).doCreateRoleAttributeCell(attributeClass, cellWithRole, this, roleAttribute);
+  }
+
   private static class Memento {
     private AbstractEditorComponent nodeEditor;
    // private Point selectionPosition;
@@ -187,7 +206,7 @@ public class EditorContext {
         EditorCell rootCell = nodeEditor.getRootCell();
         if (rootCell instanceof EditorCell_Collection) fillBracesInfo((EditorCell_Collection) rootCell);
       }
-    }          
+    }
 
     private void fillBracesInfo(EditorCell_Collection cell) {
       if (cell.areBracesEnabled()) collectionsWithEnabledBraces.add(cell.getCellInfo());
