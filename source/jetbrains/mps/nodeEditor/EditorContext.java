@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.annotations.LinkAttributeConcept;
 
 import java.awt.*;
 import java.util.*;
@@ -177,7 +178,7 @@ public class EditorContext {
 
   public EditorCell createRoleAttributeCell(Class attributeClass, EditorCell cellWithRole, SNode roleAttribute) {
     if (myCurrentRefNodeContext != null)  {
-      if (myCurrentRefNodeContext.hasRoles()) return cellWithRole;
+      if (attributeClass != LinkAttributeConcept.class && myCurrentRefNodeContext.hasRoles()) return cellWithRole;
     }
     return myOperationContext.getComponent(EditorManager.class).doCreateRoleAttributeCell(attributeClass, cellWithRole, this, roleAttribute);
   }
