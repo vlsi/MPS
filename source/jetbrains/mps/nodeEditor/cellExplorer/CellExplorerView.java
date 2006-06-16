@@ -2,10 +2,7 @@ package jetbrains.mps.nodeEditor.cellExplorer;
 
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.toolsPane.ToolsPane;
-import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
-import jetbrains.mps.ide.EditorsPane;
-import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.NodeEditor;
+import jetbrains.mps.ide.*;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -30,9 +27,10 @@ import java.util.List;
 public class CellExplorerView extends DefaultTool {
   public static final Logger LOG = Logger.getLogger(CellExplorerView.class);
 
+  private AbstractProjectFrame myAbstractProjectFrame;
+
   private JPanel myComponent = new JPanel(new BorderLayout());
   private MyTree myTree = new MyTree();
-  private IOperationContext myOperationContext;
   private AbstractEditorComponent myCurrentEditor;
 
   private CellTreeNode myCashedPropertyCellTreeNode = null;
@@ -58,8 +56,8 @@ public class CellExplorerView extends DefaultTool {
     }
   };
 
-  public CellExplorerView(IOperationContext operationContext) {
-    myOperationContext = operationContext;
+  public CellExplorerView(AbstractProjectFrame projectFrame) {
+    myAbstractProjectFrame = projectFrame;
     myTree.setRootVisible(true);
     myComponent.add(new JScrollPane(myTree), BorderLayout.CENTER);
     update();
@@ -77,11 +75,11 @@ public class CellExplorerView extends DefaultTool {
   }
 
   private ToolsPane getToolsPane() {
-    return myOperationContext.getComponent(ToolsPane.class);
+    return myAbstractProjectFrame.getToolsPane();
   }
 
   private EditorsPane getEditorsPane() {
-    return myOperationContext.getComponent(EditorsPane.class);
+    return myAbstractProjectFrame.getEditorsPane();
   }
 
 
@@ -207,7 +205,7 @@ public class CellExplorerView extends DefaultTool {
       }).setBorder(null);
       result.add(new AbstractActionWithEmptyIcon("Properties") {
         public void actionPerformed(ActionEvent e) {
-          new CellPropertiesWindow(myCell, myOperationContext.getMainFrame());
+          new CellPropertiesWindow(myCell, myAbstractProjectFrame.getMainFrame());
         }
       }).setBorder(null);
       return result;
