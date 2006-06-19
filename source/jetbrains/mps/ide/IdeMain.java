@@ -71,7 +71,7 @@ public class IdeMain {
   }
 
   public static Date expirationDate() {
-    return new Date(106, 6, 1);
+    return new Date(106, 9, 1);
   }
 
   public static boolean isTestMode() {
