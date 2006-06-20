@@ -298,7 +298,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       addMessage(MessageKind.INFORMATION, "    target root folder: \"" + outputFolder + "\"");
     }
 
-    boolean ideaPresent = MPSPlugin.getInstance().isIDEAPresent();
+    boolean ideaPresent = myProject.getProjectHandler() != null;
     boolean compile = myCompileOnGeneration && ideaPresent;
 
     //todo accomodate 3 types of generation in estimation
@@ -317,7 +317,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       } else {
         // -- compile sources before generation
         checkMonitorCanceled(progress);
-        progress.addText("compiling in IntelliJ IDEA...");
 
         progress.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
         myProject.getProjectHandler().refreshFS();
