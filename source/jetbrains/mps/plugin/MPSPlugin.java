@@ -40,6 +40,7 @@ public class MPSPlugin {
 
   public IProjectHandler getProjectHandler(String projectPath) {
     try {
+      if (myPlugin == null) return null;
       return myPlugin.getProjectHandlerFor(projectPath);
     } catch (RemoteException e) {
       System.err.println("Can't connect to IDEA : " + e.getMessage());
