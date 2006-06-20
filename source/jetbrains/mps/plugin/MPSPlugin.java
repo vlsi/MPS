@@ -42,7 +42,7 @@ public class MPSPlugin {
     try {
       return myPlugin.getProjectHandlerFor(projectPath);
     } catch (RemoteException e) {
-      e.printStackTrace();
+      System.err.println("Can't connect to IDEA : " + e.getMessage());
     }
     return null;
   }
