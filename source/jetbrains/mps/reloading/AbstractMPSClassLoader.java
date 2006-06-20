@@ -20,9 +20,9 @@ public abstract class AbstractMPSClassLoader extends ClassLoader {
     if (c == null) {
       byte[] bytes = findClassBytes(name);
 
-//      if (bytes != null && name.startsWith("jetbrains.knowledge")) {
-//        System.out.println("class " + name + " was loaded");
-//      }
+      if (bytes != null && name.startsWith("jetbrains.chemistry.")) {
+        System.out.println("class " + name + " was loaded");
+      }
 
       if (bytes == null || isExcluded(name)) {
         c = getParent().loadClass(name);
