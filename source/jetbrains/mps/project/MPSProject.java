@@ -185,7 +185,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   }
 
   private File findIDEAProject(File directory) {
-    if (directory.listFiles() != null) return null;
+    if (directory.listFiles() == null) return null;
 
     for (File file : directory.listFiles()) {
       if (file.isFile() && file.getName().endsWith(".ipr")) {
