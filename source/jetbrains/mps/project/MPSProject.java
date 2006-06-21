@@ -195,7 +195,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
       }
     }
 
-    if (directory.getParent() != null) {
+    if (directory.getParentFile() != null) {
       return findIDEAProject(directory.getParentFile());
     }
 
