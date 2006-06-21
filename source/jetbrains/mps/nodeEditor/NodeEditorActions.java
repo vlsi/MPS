@@ -1,12 +1,5 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelUtil;
-import jetbrains.mps.comments.PropertyComment;
-import jetbrains.mps.comments.Comment;
-import jetbrains.mps.comments.LinkComment;
-import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-
 import java.awt.*;
 
 
@@ -165,7 +158,7 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell) {
-      return EditorUtil.findRightmostOrLeftmostCell(cell, true);
+      return EditorUtil.findRightmostOrLeftmostSelectableCell(cell, true);
     }
 
   }
@@ -190,7 +183,7 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell) {
-      return EditorUtil.findRightmostOrLeftmostCell(cell, false);
+      return EditorUtil.findRightmostOrLeftmostSelectableCell(cell, false);
     }
 
   }
