@@ -25,5 +25,15 @@
       <link role="target" targetNodeId="1.1133920641626" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1150896580228">
+    <property name="name" value="ListAntiquotation" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1150896603373">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="expression" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="3.1111784312737" />
+    </node>
+  </node>
 </model>
 
