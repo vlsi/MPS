@@ -44,6 +44,6 @@ public abstract class AbstractMPSClassLoader extends ClassLoader {
       definePackage(pack, null, null, null, null, null, null, null);
     }
   }
-
+                                
 
 }
