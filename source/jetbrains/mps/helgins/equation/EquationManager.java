@@ -33,7 +33,15 @@ public class EquationManager {
     return ourInstance;
   }
 
+  public static enum EquationType {
+    NORMAL, LESS, GREATER
+  }
+
   public void addEquation(NodeWrapperType lhs, NodeWrapperType rhs) {
+    addEquation(lhs, rhs, EquationType.NORMAL);
+  }
+
+  public void addEquation(NodeWrapperType lhs, NodeWrapperType rhs, EquationType eqType) {
     NodeWrapperType rhsRepresentator = rhs.getRepresentator();
     NodeWrapperType lhsRepresentator = lhs.getRepresentator();
 
@@ -53,13 +61,33 @@ public class EquationManager {
       }
     }
 
+
+
     // process nominal subtyping
-    if (SubtypingManager.getInstance().isStrictSubtype(rhsRepresentator, lhsRepresentator)) {
-      processSubtyping(rhsRepresentator, lhsRepresentator);
-      return;
-    } else if (SubtypingManager.getInstance().isStrictSubtype(lhsRepresentator, rhsRepresentator)) {
-      processSubtyping(lhsRepresentator, rhsRepresentator);
-      return;
+    switch(eqType) {
+      case GREATER: {
+        if (SubtypingManager.getInstance().isStrictSubtype(lhsRepresentator, rhsRepresentator)) {
+          processSubtyping(lhsRepresentator, rhsRepresentator);
+          return;
+        }
+        break;
+      }
+      case LESS: {
+        if (SubtypingManager.getInstance().isStrictSubtype(rhsRepresentator, lhsRepresentator)) {
+          processSubtyping(rhsRepresentator, lhsRepresentator);
+          return;
+        }
+        break;
+      }
+      case NORMAL: {
+        if (SubtypingManager.getInstance().isStrictSubtype(rhsRepresentator, lhsRepresentator)) {
+          processSubtyping(rhsRepresentator, lhsRepresentator);
+          return;
+        } else if (SubtypingManager.getInstance().isStrictSubtype(lhsRepresentator, rhsRepresentator)) {
+          processSubtyping(lhsRepresentator, rhsRepresentator);
+          return;
+        }
+      }
     }
 
     // solve equation
