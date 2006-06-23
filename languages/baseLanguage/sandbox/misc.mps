@@ -26,7 +26,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1144230427847">
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1144367841672">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1144367841673">
-            <property name="name" value="iii" />
+            <property name="name" value="i" />
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1144367841674" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1144367846958">
               <property name="value" value="0" />
