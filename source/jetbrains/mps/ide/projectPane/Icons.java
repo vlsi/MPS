@@ -61,6 +61,8 @@ public class Icons {
   public static final Icon CELL_TREE_ICON = new ImageIcon(Icons.class.getResource("nodes/cellTree.png"));
 
   public static final Icon DERIVATION_NODE_ICON = new ImageIcon(Icons.class.getResource("nodes/gadget.png"));
+  public static final Icon INFER_FOUND_ICON = new ImageIcon(Icons.class.getResource("nodes/inferFound.png"));
+  public static final Icon INFER_FAILED_ICON = new ImageIcon(Icons.class.getResource("nodes/inferFailed.png"));
 
   public static final Icon INSPECTOR_ICON = new ImageIcon(Icons.class.getResource("inspector.png"));
 
