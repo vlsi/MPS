@@ -325,6 +325,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     ToolTipManager.sharedInstance().registerComponent(this);
     CaretBlinker.getInstance().registerEditor(this);
+    addRebuildListener(UndoManager.instance().rebuildListener());
   }
 
   public SNode getNode() {
