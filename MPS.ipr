@@ -286,6 +286,7 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/projects/BLFeatures/BLFeatures.iml" filepath="$PROJECT_DIR$/projects/BLFeatures/BLFeatures.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/BugExterminator/BugExterminator.iml" filepath="$PROJECT_DIR$/BugExterminator/BugExterminator.iml" group="SemanticWeb" />
       <module fileurl="file://$PROJECT_DIR$/BugExterminator/BugExterminatorWebApp/BugExterminatorWebApp.iml" filepath="$PROJECT_DIR$/BugExterminator/BugExterminatorWebApp/BugExterminatorWebApp.iml" group="SemanticWeb" />
       <module fileurl="file://$PROJECT_DIR$/BugSqueezer/BugSqueezer.iml" filepath="$PROJECT_DIR$/BugSqueezer/BugSqueezer.iml" group="DataLanguages" />
