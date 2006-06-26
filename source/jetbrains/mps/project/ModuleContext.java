@@ -5,6 +5,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.AbstractProjectFrame;
+import jetbrains.mps.ide.toolsPane.ToolsPane;
+import jetbrains.mps.ide.toolsPane.ITool;
 
 import java.util.Set;
 
@@ -38,6 +40,15 @@ public class ModuleContext extends StandaloneMPSContext {
       AbstractProjectFrame projectFrame = getComponent(AbstractProjectFrame.class);
 
       if (clazz == EditorsPane.class) return (T) projectFrame.getEditorsPane();
+    }
+
+    if (component == null && clazz != ToolsPane.class && getComponent(ToolsPane.class) != null) {
+      ToolsPane toolsPane = getComponent(ToolsPane.class);
+
+      if (toolsPane.getTool((Class<? extends ITool>) clazz) != null) {
+        return (T) toolsPane.getTool((Class<? extends ITool>) clazz);
+      }
+
     }
 
     return component;
