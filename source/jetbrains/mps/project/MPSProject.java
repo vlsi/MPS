@@ -20,6 +20,7 @@ import jetbrains.mps.vcs.VersionControlManager;
 import jetbrains.mps.vcs.model.IVersionControl;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.plugin.MPSPlugin;
+import jetbrains.mps.plugins.PluginManager;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -50,6 +51,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   private Map<Class, Object> myComponents = new HashMap<Class, Object>();
   private List<IMPSProjectCommandListener> myProjectCommandListeners = new ArrayList<IMPSProjectCommandListener>();
   private ProjectEventTranslator myEventTranslator;
+  private PluginManager myPluginManager = new PluginManager(this);
 
   public MPSProject(final File projectFile) {
     CommandProcessor.instance().executeCommand(new Runnable() {
@@ -67,14 +69,24 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
         LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
         revalidateContent(projectFile, model);
         model.setLoading(false);
-
       }
     }, "MPS Project init");
+
+
+    loadPlugins();
 
     myEventTranslator = new ProjectEventTranslator();
     CommandProcessor.instance().addCommandListener(myEventTranslator);
   }
 
+
+  private void loadPlugins() {
+    myPluginManager.initPlugins();
+  }
+
+  public void reloadPlugins() {
+    myPluginManager.reloadPlugins();
+  }
 
   public List<SModelDescriptor> getModelDescriptors() {
     return SModelRepository.getInstance().getAllModelDescriptors();
