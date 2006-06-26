@@ -73,14 +73,12 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     }, "MPS Project init");
 
 
-    loadPlugins();
-
     myEventTranslator = new ProjectEventTranslator();
     CommandProcessor.instance().addCommandListener(myEventTranslator);
   }
 
 
-  private void loadPlugins() {
+  public void loadPlugins() {
     myPluginManager.reloadPlugins();
   }
 
