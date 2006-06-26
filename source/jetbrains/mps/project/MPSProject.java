@@ -81,7 +81,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
 
 
   private void loadPlugins() {
-    myPluginManager.initPlugins();
+    myPluginManager.reloadPlugins();
   }
 
   public void reloadPlugins() {
@@ -326,6 +326,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   public void dispose() {
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
+        myPluginManager.disposePlugins();
 
         for (Object pc : getComponents()) {
           if (pc instanceof IDisposable) {

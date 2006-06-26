@@ -184,6 +184,10 @@ public class Language extends AbstractModule {
     return myLanguageDescriptor;
   }
 
+  public String getLanguagePluginClass() {
+    return getLanguageDescriptor().getLanguagePluginClass(); 
+  }
+
   public List<IModule> getExplicitlyDependOnModules() {
     // depends of other languages and solutions, but not on generators
     List<IModule> result = new LinkedList<IModule>();
