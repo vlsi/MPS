@@ -6,6 +6,7 @@ import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
 
@@ -63,6 +64,10 @@ public class FindUsagesManager {
   }
 
   public Set<SReference> findUsages(SNode node, IScope scope, IAdaptiveProgressMonitor progress) {
+    return findUsages(CollectionUtil.asSet(node), scope, progress);
+  }
+
+  public Set<SReference> findUsages(Set<SNode> nodes, IScope scope, IAdaptiveProgressMonitor progress) {
     Set<SReference> result = new HashSet<SReference>();
     try {
       if (progress == null) progress = IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR;
@@ -77,7 +82,7 @@ public class FindUsagesManager {
       for (SModelDescriptor model : new ArrayList<SModelDescriptor>(models)) {
         String taskName = ModelsProgressUtil.findUsagesModelTaskName(model);
         progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_USAGES);
-        result.addAll(model.findUsages(node));
+        result.addAll(model.findUsages(nodes));
         if (progress.isCanceled()) {
           progress.finishTask(taskName);
           return result;

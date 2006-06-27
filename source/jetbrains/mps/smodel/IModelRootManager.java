@@ -22,6 +22,8 @@ public interface IModelRootManager {
 
   boolean isFindUsagesSupported();
 
+  boolean containsSomeString(SModelDescriptor modelDescriptor, Set<String> strings);
+
   boolean containsString(SModelDescriptor modelDescriptor, String string);
 
   boolean isNewModelsSupported();

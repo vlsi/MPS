@@ -2,11 +2,11 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.event.SModelsMulticaster;
 
-import java.util.Set;
-import java.util.HashSet;
+import java.util.*;
 import java.io.*;
 
 /**
@@ -37,16 +37,19 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     return model;
   }
 
-  public boolean containsString(SModelDescriptor modelDescriptor, String string) {
+
+  public boolean containsSomeString(SModelDescriptor modelDescriptor, Set<String> strings) {
     if (modelDescriptor.getModelFile() == null || !modelDescriptor.getModelFile().exists()) return true;
     try {
       BufferedReader r = new BufferedReader(new FileReader(modelDescriptor.getModelFile()));
       String line;
       boolean result = false;
       while ((line = r.readLine()) != null) {
-        if (line.contains(string)) {
-          result = true;
-          break;
+        for (String s : strings) {
+          if (line.contains(s)) {
+            result = true;
+            break;
+          }
         }
       }
       r.close();
@@ -55,6 +58,11 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       LOG.error(e);
     }
     return true;
+
+  }
+
+  public boolean containsString(SModelDescriptor modelDescriptor, String string) {
+    return containsSomeString(modelDescriptor, CollectionUtil.asSet(string));
   }
 
 

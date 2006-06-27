@@ -7,6 +7,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.projectLanguage.ModelRoot;
 
 import java.io.File;
@@ -268,26 +269,36 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     }
   }
 
-  public Set<SReference> findUsages(SNode node) {
+  public Set<SReference> findUsages(Set<SNode> nodes) {
     if (!myModelRootManager.isFindUsagesSupported()) return new HashSet<SReference>();
 
-    if (mySModel == null || !SModelRepository.getInstance().isChanged(mySModel)) {
-      String nodeInfo = node.getId();
-      if (node.getModel().isExternallyResolvable()) {
-        String extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(node);
-        if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) nodeInfo = extResolveInfo;
-      }
 
-      if (!myModelRootManager.containsString(this, nodeInfo)) return new HashSet<SReference>();
+    Set<String> strings = new HashSet<String>();
+
+    for (SNode node : nodes) {
+      if (mySModel == null || !SModelRepository.getInstance().isChanged(mySModel)) {
+        String nodeInfo = node.getId();
+        if (node.getModel().isExternallyResolvable()) {
+          String extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(node);
+          if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) nodeInfo = extResolveInfo;
+        }
+        strings.add(nodeInfo);
+      }
     }
+
+    if (!myModelRootManager.containsSomeString(this, strings)) return new HashSet<SReference>();
     getSModel();
     Set<SReference> result = new HashSet<SReference>();
     if (mySModel != null) {
       for (SNode root : mySModel.getRoots()) {
-        addUsages(root, node, result);
+        addUsages(root, nodes, result);
       }
     }
     return result;
+  }
+
+  public Set<SReference> findUsages(SNode node) {
+    return findUsages(CollectionUtil.asSet(node));
   }
 
   public Set<ConceptDeclaration> findDescendants(ConceptDeclaration node, Set<ConceptDeclaration> descendantsKnownInModel) {
@@ -321,14 +332,14 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     SModelsMulticaster.getInstance().fireModelDeletedEvent(this);
   }
 
-  private void addUsages(SNode current, SNode node, Set<SReference> result) {
+  private void addUsages(SNode current, Set<SNode> nodes, Set<SReference> result) {
     for (SReference ref : current.getReferences()) {
-      if (ref.getTargetNode() == node) {
+      if (nodes.contains(ref.getTargetNode())) {
         result.add(ref);
       }
     }
     for (SNode child : current.getChildren()) {
-      addUsages(child, node, result);
+      addUsages(child, nodes, result);
     }
   }
 

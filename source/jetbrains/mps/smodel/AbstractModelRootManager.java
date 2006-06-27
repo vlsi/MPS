@@ -2,6 +2,8 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.projectLanguage.ModelRoot;
 
+import java.util.*;
+
 public abstract class AbstractModelRootManager implements IModelRootManager {
   public SModel refresh(SModelDescriptor modelDescriptor) {
     return ModelPersistence.refreshModel(modelDescriptor.getSModel());
@@ -16,6 +18,13 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
 
   public boolean containsString(SModelDescriptor modelDescriptor, String string) {
     return true;
+  }
+
+  public boolean containsSomeString(SModelDescriptor modelDescriptor, Set<String> strings) {
+    for (String identifier : strings) {
+      if (containsString(modelDescriptor, identifier)) return true;
+    }
+    return false;
   }
 
   public boolean isNewModelsSupported() {
