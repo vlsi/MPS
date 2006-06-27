@@ -261,6 +261,18 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }, KeyStroke.getKeyStroke("control E"), WHEN_FOCUSED);
 
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        moveCurrentUp();
+      }
+    }, KeyStroke.getKeyStroke("alt UP"), WHEN_FOCUSED);
+
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        moveCurrentDown();
+      }
+    }, KeyStroke.getKeyStroke("alt DOWN"), WHEN_FOCUSED);
+
 
     addMouseListener(new MouseAdapter() {
       public void mousePressed(final MouseEvent e) {
@@ -326,6 +338,51 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     ToolTipManager.sharedInstance().registerComponent(this);
     CaretBlinker.getInstance().registerEditor(this);
     addRebuildListener(UndoManager.instance().rebuildListener());
+  }
+
+  private void moveCurrentUp() {
+    final SNode current = getSelectedCell().getSNode();
+    if (current == null) return;
+    if (current.getParent() == null) return;
+
+    final SNode parent = current.getParent();
+    final String role = current.getRole_();
+    int index = parent.getChildren(role).indexOf(current);
+    if (index == 0) return;
+
+    final SNode prevChild = parent.getPrevChild(current);
+
+    CommandProcessor.instance().executeCommand(new Runnable() {
+      public void run() {
+        parent.removeChild(current);
+        parent.insertChild(prevChild, role, current, true);
+      }
+    });
+
+    selectNode(current);
+  }
+
+  private void moveCurrentDown() {
+    final SNode current = getSelectedCell().getSNode();
+    if (current == null) return;
+    if (current.getParent() == null) return;
+
+    final SNode parent = current.getParent();
+    final String role = current.getRole_();
+    List<SNode> siblings = parent.getChildren(role);
+    int index = siblings.indexOf(current);
+    if (index == siblings.size() - 1) return;
+
+    final SNode nextChild = parent.getNextChild(current);
+
+    CommandProcessor.instance().executeCommand(new Runnable() {
+      public void run() {
+        parent.removeChild(current);
+        parent.insertChild(nextChild, role, current);
+      }
+    });
+
+    selectNode(current);
   }
 
   public SNode getNode() {
