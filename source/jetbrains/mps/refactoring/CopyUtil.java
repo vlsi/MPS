@@ -9,8 +9,11 @@ import java.util.*;
 public class CopyUtil {
 
 
-  public static SNode copy(SNode node, SModel targetModel, Map<SNode, SNode> mapping) {
+  public static<SN extends SNode> SN copy(SN node, SModel targetModel) {
+    return (SN) copy(node, targetModel, new HashMap<SNode, SNode>());
+  }
 
+  public static SNode copy(SNode node, SModel targetModel, Map<SNode, SNode> mapping) {
     SNode result = clone(node, targetModel, mapping);
     fixReferences(result, mapping);
 

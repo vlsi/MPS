@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.baseLanguage.ConstructorDeclaration;
 import jetbrains.mps.baseLanguage.ClassifierType;
 import jetbrains.mps.baseLanguage.Classifier;
+import jetbrains.mps.modelQueryLanguage.generator.library.impl.ModelQueryFunctions;
 
 import java.util.*;
 
@@ -103,6 +104,15 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     }
 
     return newNode;
+  }
+
+
+  public void addNextSibling(SNode newSibling) {
+    getParent().insertChild(this, getRole_(), newSibling);
+  }
+
+  public void addPrevSibling(SNode newSibling) {
+    getParent().insertChild(this, getRole_(), this, true);
   }
 
   public SModel getModel() {
