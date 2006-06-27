@@ -272,7 +272,6 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   public Set<SReference> findUsages(Set<SNode> nodes) {
     if (!myModelRootManager.isFindUsagesSupported()) return new HashSet<SReference>();
 
-
     Set<String> strings = new HashSet<String>();
 
     for (SNode node : nodes) {

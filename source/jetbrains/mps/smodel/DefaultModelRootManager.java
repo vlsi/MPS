@@ -38,7 +38,8 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
   }
 
 
-  public boolean containsSomeString(SModelDescriptor modelDescriptor, Set<String> strings) {
+  public boolean containsSomeString(SModelDescriptor modelDescriptor, Set<String> strings) {    
+    if (SModelRepository.getInstance().isChanged(modelDescriptor)) return true;
     if (modelDescriptor.getModelFile() == null || !modelDescriptor.getModelFile().exists()) return true;
     try {
       BufferedReader r = new BufferedReader(new FileReader(modelDescriptor.getModelFile()));
