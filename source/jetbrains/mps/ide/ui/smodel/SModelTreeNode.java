@@ -132,6 +132,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
   private boolean needChangeRootNodePosition(SModelPropertyEvent e) {
     MPSTreeNode rootNode = findExactChildWith(e.getNode());
+    if (rootNode == null) return false;
     String newName = rootNode.toString();
     if (newName == null) return true;
     boolean result = false;
