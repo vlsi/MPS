@@ -79,6 +79,9 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
   public void init() {
     this.removeAllChildren();
+
+    if (getSNode() == null) return;
+
     List<SNode> children = getSNode().getChildren();
     for (SNode childNode : children) {
       add(new SNodeTreeNode(childNode, childNode.getRole_(), getOperationContext()));

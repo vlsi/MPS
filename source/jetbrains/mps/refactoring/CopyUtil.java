@@ -1,9 +1,7 @@
 package jetbrains.mps.refactoring;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.ModelPersistence;
-import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.project.GlobalScope;
 
 import java.util.*;
 
@@ -24,6 +22,8 @@ public class CopyUtil {
   private static SNode clone(SNode node, SModel targetModel, Map<SNode, SNode> mapping) {
     SNode result = ModelPersistence.createNodeInstance(node.getClass().getName(), targetModel);
     mapping.put(node, result);
+
+    targetModel.addLanguage(SModelUtil.getLanguage(node, GlobalScope.getInstance()));
 
     for (String property : node.getProperties().keySet()) {
       result.setProperty(property, node.getProperty(property));
