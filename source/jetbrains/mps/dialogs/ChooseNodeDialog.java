@@ -27,7 +27,11 @@ public class ChooseNodeDialog extends BaseDialog {
   private Object myResult;
 
   public ChooseNodeDialog(IOperationContext context, Frame mainFrame, Set<SModelDescriptor> models) throws HeadlessException {
-    super(mainFrame, "Choose Node");
+    this("Choose Node", context, mainFrame, models);  
+  }
+
+  public ChooseNodeDialog(String text, IOperationContext context, Frame mainFrame, Set<SModelDescriptor> models) throws HeadlessException {
+    super(mainFrame, text);
 
     myContext = context;
 
