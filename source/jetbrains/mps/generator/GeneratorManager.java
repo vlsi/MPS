@@ -154,6 +154,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       compiler.addSource(JavaFileGenerator.generateHeader(targetModel.getUID().getLongName()) +
               generateText(root), targetModel.getUID().getLongName() + "." + root.getName());
     }
+    progress.addText("Compiling...");
     compiler.compile();
     progress.addText("Compilation finished.");
     progress.addText("Executing...");
@@ -318,12 +319,14 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         // -- compile sources before generation
         checkMonitorCanceled(progress);
 
+
         progress.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
         myProject.getProjectHandler().refreshFS();
         progress.finishTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
         checkMonitorCanceled(progress);
 
         progress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
+        progress.addText("compiling...");
         CompilationResult compilationResult = myProject.getProjectHandler().buildModule(outputFolder);
         progress.addText("" + compilationResult);
         if (!compilationResult.isOk()) {
