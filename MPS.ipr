@@ -473,6 +473,13 @@
         <root url="jar://$PROJECT_DIR$/lib/eclipse-compiler/ecjsrc.zip!/" />
       </SOURCES>
     </library>
+    <library name="Java Web Start">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/javaws/javaws.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
   </component>
   <component name="org.tmatesoft.tmate.projectComponent" />
   <component name="uidesigner-configuration">
