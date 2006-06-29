@@ -9,7 +9,9 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.ToStringComparator;
+import jetbrains.mps.project.IModule;
 
 import javax.swing.*;
 import javax.swing.tree.TreePath;
@@ -26,11 +28,30 @@ public class ChooseNodeDialog extends BaseDialog {
   private IOperationContext myContext;
   private Object myResult;
 
-  public ChooseNodeDialog(IOperationContext context, Frame mainFrame, Set<SModelDescriptor> models) throws HeadlessException {
+  public ChooseNodeDialog(IOperationContext context, Frame mainFrame) {
+    this(context, mainFrame, getModelsFrom(context));
+  }
+
+  public ChooseNodeDialog(String text, IOperationContext context, Frame mainFrame) {
+    this(text, context, mainFrame, getModelsFrom(context));
+  }
+
+  private static Set<SModelDescriptor> getModelsFrom(IOperationContext context) {
+    Set<SModelDescriptor> models = new HashSet<SModelDescriptor>(context.getModule().getOwnModelDescriptors());
+    for (SModelDescriptor model : new ArrayList<SModelDescriptor>(models)) {
+      if (model.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
+        models.remove(model);
+      }
+    }
+    return models;
+  }
+
+
+  public ChooseNodeDialog(IOperationContext context, Frame mainFrame, Set<SModelDescriptor> models) {
     this("Choose Node", context, mainFrame, models);  
   }
 
-  public ChooseNodeDialog(String text, IOperationContext context, Frame mainFrame, Set<SModelDescriptor> models) throws HeadlessException {
+  public ChooseNodeDialog(String text, IOperationContext context, Frame mainFrame, Set<SModelDescriptor> models) {
     super(mainFrame, text);
 
     myContext = context;
