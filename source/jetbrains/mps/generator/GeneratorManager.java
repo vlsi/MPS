@@ -170,7 +170,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     }
   }
 
-  private void execute(String modelNamespace, ClassLoader classLoader, IOperationContext context) {
+  private static void execute(String modelNamespace, ClassLoader classLoader, IOperationContext context) {
     OutputView view = context.getComponent(OutputView.class);
     view.clear();
     try {
