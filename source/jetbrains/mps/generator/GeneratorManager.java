@@ -15,7 +15,6 @@ import jetbrains.mps.ide.progress.AdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.plugin.CompilationResult;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -24,13 +23,16 @@ import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textPresentation.TextPresentationManager;
 import jetbrains.mps.xml.Document;
 import jetbrains.mps.compiler.JavaCompiler;
+import jetbrains.mps.execution.ExecutionManager;
 import org.jdom.Element;
 
 import javax.swing.*;
 import java.io.File;
 import java.util.*;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.lang.ClassLoader;
+
+import com.sun.org.apache.bcel.internal.util.*;
 
 
 /**
@@ -147,7 +149,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     view.activate();
   }
 
-  private void generateTextAndExecute(SModel targetModel, IOperationContext context, IAdaptiveProgressMonitor progress) {
+  private void generateTextAndExecute(SModel sourceModel, SModel targetModel, IOperationContext context, IAdaptiveProgressMonitor progress) {
     JavaCompiler compiler = new JavaCompiler();
 
     for (SNode root : targetModel.getRoots()) {
@@ -159,24 +161,23 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     progress.addText("Compilation finished.");
     progress.addText("Executing...");
 
-    OutputView view = context.getComponent(OutputView.class);
-    view.clear();
+    ClassLoader classLoader = compiler.getClassLoader();
+    String modelNamespace = targetModel.getUID().getLongName();
 
+    ExecutionManager.getExecutionManager().put(sourceModel.getModelDescriptor(), compiler.getClassLoader());
+
+    execute(modelNamespace, classLoader, context);
+  }
+
+  private void execute(String modelNamespace, ClassLoader classLoader, IOperationContext context) {
+    OutputView view = context.getComponent(OutputView.class);   
+    view.clear();
     try {
-      String mainClassName = targetModel.getUID().getLongName() + ".Main";
-      Class mainClass = Class.forName(mainClassName, true, compiler.getClassLoader());
+      String mainClassName = modelNamespace + ".Main";
+      Class mainClass = Class.forName(mainClassName, true, classLoader);
       Method mainMethod = mainClass.getMethod("main", IOperationContext.class);
       mainMethod.invoke(null, context);
-    } catch (ClassNotFoundException e) {
-      progress.addText("Can't find main class");
-      addMessage(MessageKind.ERROR, "Can't find main class");
-    } catch (NoSuchMethodException e) {
-      progress.addText("Can't find main method in main class");
-      addMessage(MessageKind.ERROR, "Can't find main class main method");
-    } catch (IllegalAccessException e) {
-      progress.addText("Illegal access exception");
-    } catch (InvocationTargetException e) {
-      progress.addText("Invocation target exception");
+    } catch (Exception e) {
       e.printStackTrace();
     }
   }
@@ -309,6 +310,17 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
     try {
 
+      if (_sourceModels.size() == 1 && generationType == GenerationType.GENERATE_AND_EXECUTE) {
+        SModelDescriptor source = _sourceModels.get(0).getModelDescriptor();
+
+        ClassLoader cachedClassLoader = ExecutionManager.getExecutionManager().get(source);
+        if (cachedClassLoader != null) {
+          execute(source.getLongName(), cachedClassLoader, invocationContext);
+          return;
+        }
+      }
+
+
       boolean reloadClasses = true;
 
       if (!myCompileOnGeneration) {
@@ -368,7 +380,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
               break;
             case GENERATE_AND_EXECUTE:
               progress.addText("compiling generated code in memory...");
-              generateTextAndExecute(status.getOutputModel(), invocationContext, progress);
+              generateTextAndExecute(sourceModel, status.getOutputModel(), invocationContext, progress);
               break;
           }
         }
