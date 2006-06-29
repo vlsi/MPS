@@ -3,6 +3,7 @@ package jetbrains.mps.generator;
 import jetbrains.mps.baseLanguage.Classifier;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.Message;
@@ -31,8 +32,6 @@ import java.io.File;
 import java.util.*;
 import java.lang.reflect.Method;
 import java.lang.ClassLoader;
-
-import com.sun.org.apache.bcel.internal.util.*;
 
 
 /**
@@ -149,7 +148,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     view.activate();
   }
 
-  private void generateTextAndExecute(SModel sourceModel, SModel targetModel, IOperationContext context, IAdaptiveProgressMonitor progress) {
+  private void generateTextAndExecute(SModel sourceModel, SModel targetModel, IOperationContext context, IAdaptiveProgressMonitor progress, boolean execute) {
     JavaCompiler compiler = new JavaCompiler();
 
     for (SNode root : targetModel.getRoots()) {
@@ -159,18 +158,20 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     progress.addText("Compiling...");
     compiler.compile();
     progress.addText("Compilation finished.");
-    progress.addText("Executing...");
 
     ClassLoader classLoader = compiler.getClassLoader();
     String modelNamespace = targetModel.getUID().getLongName();
 
     ExecutionManager.getExecutionManager().put(sourceModel.getModelDescriptor(), compiler.getClassLoader());
 
-    execute(modelNamespace, classLoader, context);
+    if (execute) {
+      progress.addText("Executing...");
+      execute(modelNamespace, classLoader, context);
+    }
   }
 
   private void execute(String modelNamespace, ClassLoader classLoader, IOperationContext context) {
-    OutputView view = context.getComponent(OutputView.class);   
+    OutputView view = context.getComponent(OutputView.class);
     view.clear();
     try {
       String mainClassName = modelNamespace + ".Main";
@@ -235,24 +236,29 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     return super.clone();
   }
 
+
   public void generateModelsWithProgressWindow(final List<SModel> sourceModels, final Language targetLanguage, final IOperationContext invocationContext, final GenerationType generationType) {
-    SwingUtilities.invokeLater(new Runnable() {
+    generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, new Runnable() {
       public void run() {
-        final IAdaptiveProgressMonitor progress = new AdaptiveProgressMonitor(invocationContext.getComponent(IDEProjectFrame.class), false);
-        Thread generationThread = new Thread("Generation") {
-          public void run() {
-            CommandProcessor.instance().executeCommand(new Runnable() {
-              public void run() {
-                generateModels(sourceModels, targetLanguage, invocationContext, generationType, progress);
-              }
-            });
-          }
-        };
-        // we are in event dispatch thread
-        generationThread.setPriority(Thread.currentThread().getPriority() - 1);
-        generationThread.start();
       }
     });
+  }
+
+  public void generateModelsWithProgressWindow(final List<SModel> sourceModels, final Language targetLanguage, final IOperationContext invocationContext, final GenerationType generationType, final Runnable continuation) {
+    final IAdaptiveProgressMonitor progress = new AdaptiveProgressMonitor(invocationContext.getComponent(IDEProjectFrame.class), false);
+    Thread generationThread = new Thread("Generation") {
+      public void run() {
+        CommandProcessor.instance().executeCommand(new Runnable() {
+          public void run() {
+            generateModels(sourceModels, targetLanguage, invocationContext, generationType, progress);
+            ThreadUtils.runInUIThreadNoWait(continuation);
+          }
+        });
+      }
+    };
+    // we are in event dispatch thread
+    generationThread.setPriority(Thread.currentThread().getPriority() - 1);
+    generationThread.start();
   }
 
   private void checkMonitorCanceled(IAdaptiveProgressMonitor progressMonitor) {
@@ -274,6 +280,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     switch (generationType) {
       case GENERATE_AND_EXECUTE:
         addMessage(MessageKind.INFORMATION, "generating and executing");
+        break;
+      case GENERATE_IN_MEMORY:
+        addMessage(MessageKind.INFORMATION, "generating in memory");
         break;
       case GENERATE_FILES:
         addMessage(MessageKind.INFORMATION, "generating files");
@@ -379,8 +388,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
               generateFile(outputFolder, sourceModel, status.getOutputModel());
               break;
             case GENERATE_AND_EXECUTE:
+            case GENERATE_IN_MEMORY:
               progress.addText("compiling generated code in memory...");
-              generateTextAndExecute(sourceModel, status.getOutputModel(), invocationContext, progress);
+              generateTextAndExecute(sourceModel, status.getOutputModel(), invocationContext, progress, generationType == GenerationType.GENERATE_AND_EXECUTE);
               break;
           }
         }
