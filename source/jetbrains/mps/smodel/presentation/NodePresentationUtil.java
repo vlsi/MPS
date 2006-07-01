@@ -110,12 +110,20 @@ public class NodePresentationUtil {
     }
 
     // default
-    if (preferences.matchConceptByAlias()) {
-      String description = SModelUtil.getConceptProperty(node, "short_description", scope);
-      if (description != null) {
-        return description;
+    if (node instanceof ConceptDeclaration) {
+      if (preferences.matchConceptByAlias()) {
+        String description = SModelUtil.getConceptProperty(node, "short_description", scope);
+        if (description != null) {
+          return description;
+        }
+
+        ConceptDeclaration anExtends = ((ConceptDeclaration) node).getExtends();
+        if (anExtends != null) {
+          String namespace = NameUtil.namespaceFromConcept((ConceptDeclaration) node);
+          return "(" + anExtends.getName() + " in " + namespace + ")";
+        }
+        return "";
       }
-      return "";
     }
 
     if (node.isRoot()) {

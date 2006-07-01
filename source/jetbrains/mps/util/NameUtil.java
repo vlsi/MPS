@@ -1,6 +1,7 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 
 
 /**
@@ -66,6 +67,10 @@ public class NameUtil {
       return "";
     }
     return fqName.substring(0, offset);
+  }
+
+  public static String namespaceFromConcept(ConceptDeclaration concept) {
+    return namespaceFromConceptFQName(nodeFQName(concept));
   }
 
   public static String namespaceFromConceptFQName(String fqName) {

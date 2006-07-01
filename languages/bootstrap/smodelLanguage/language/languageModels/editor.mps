@@ -842,10 +842,10 @@
         <link role="relationDeclaration" targetNodeId="1.1140138123956" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1145404664305">
+        <property name="editable" value="false" />
         <property name="textFgColor" value="DARK_MAGENTA" />
         <property name="text" value="/" />
         <property name="drawBorder" value="false" />
-        <property name="selectable" value="true" />
         <link role="actionMap" targetNodeId="1145407825538" />
       </node>
     </node>
