@@ -2,7 +2,6 @@
 <model name="jetbrains.mps.core.structure">
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <maxImportIndex value="24" />
-  <import index="24" modelUID="jetbrains.mps.bootstrap.structureLanguage.library" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1078489098625">
     <property name="name" value="NamedConcept" />
     <link role="extends" targetNodeId="1133920641626" />

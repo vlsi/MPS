@@ -1098,61 +1098,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1106155080112">
-    <property name="name" value="FeatureCompositionDeclaration" />
-    <link role="extends" targetNodeId="1068390468198" />
-    <node role="conceptLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLinkDeclaration" id="1137543155214">
-      <property name="name" value="defaultFeature" />
-      <link role="targetType" targetNodeId="37.1071489090640" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1106178123235">
-      <property name="sourceCardinality" value="0..n" />
-      <property name="targetCardinality" value="1" />
-      <property name="role" value="featureConstructor" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1106250402230" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1106176536146">
-    <property name="name" value="Feature" />
-    <link role="extends" targetNodeId="4.1133920641626" />
-    <node role="conceptLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLinkDeclaration" id="1137544910793">
-      <property name="name" value="featureInterface" />
-      <link role="targetType" targetNodeId="1107796713796" />
-    </node>
-    <node role="conceptLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLinkDeclaration" id="1137547655928">
-      <property name="name" value="featureConstructor" />
-      <link role="targetType" targetNodeId="37.1071489090640" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1106250402230">
-    <property name="name" value="FeatureConstructor" />
-    <link role="extends" targetNodeId="4.1078489098625" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1109196998598">
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1106353916888">
-    <property name="name" value="FeatureCompositionType" />
-    <link role="extends" targetNodeId="1107535904670" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1107553204937">
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1106353969077">
-      <property name="sourceCardinality" value="1" />
-      <property name="targetCardinality" value="0..n" />
-      <property name="role" value="featureCompositionDeclaration" />
-      <link role="target" targetNodeId="1106155080112" />
-      <link role="specializedLink" targetNodeId="1107535924139" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1106354127000">
-      <property name="sourceCardinality" value="0..n" />
-      <property name="targetCardinality" value="1" />
-      <property name="role" value="feature" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1106176536146" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107135704075">
     <property name="name" value="ConceptFunctionParameter" />
     <link role="extends" targetNodeId="1068431790191" />
@@ -1316,27 +1261,6 @@
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="classifier" />
       <link role="target" targetNodeId="1107461130800" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1135139255290">
-    <property name="name" value="FeatureCompositionNewExpression" />
-    <link role="extends" targetNodeId="1068499141036" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1137987310305">
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1135139311125">
-      <property name="sourceCardinality" value="1" />
-      <property name="targetCardinality" value="0..n" />
-      <property name="role" value="constructorDeclaration" />
-      <link role="target" targetNodeId="1068580123140" />
-      <link role="specializedLink" targetNodeId="1068499141037" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1135139616594">
-      <property name="sourceCardinality" value="0..n" />
-      <property name="targetCardinality" value="1" />
-      <property name="role" value="featureConstructor" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1106250402230" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1137021947720">

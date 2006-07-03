@@ -2304,13 +2304,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1109197034694">
-    <link role="conceptDeclaration" targetNodeId="17.1106250402230" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1109197079664">
-      <property name="text" value="&lt;choose feature constructor&gt;" />
-      <property name="drawBorder" value="false" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.EditorComponentDeclaration" id="1109280020740">
     <property name="name" value="_GenericDeclaration_TypeVariables_Component" />
     <link role="conceptDeclaration" targetNodeId="17.1109279851642" />

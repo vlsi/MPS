@@ -240,35 +240,6 @@
             <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]Object).([InstanceMethodDeclaration]clone() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object]))" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.CodeBlockReturn" id="1137995011489">
-          <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1141436905175">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.DivExpression" id="1141436916711">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1141436924199">
-                <property name="value" value="2" />
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1141436913773">
-                <property name="value" value="10000" />
-              </node>
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1141436734935">
-              <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1137995016522">
-                <link role="baseMethodDeclaration" extResolveInfo="1.constructor [Classifier]Terminator[ConstructorDeclaration] ()" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.CodeBlockReturn" id="1137995790192">
-          <node role="expression" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1141436817343">
-            <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1137996271795">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1137995798928">
-                <link role="variableDeclaration" targetNodeId="1137820843009" />
-              </node>
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1140575496888">
-                <property name="value" value="10" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1138060178103">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1138060178102">
             <property name="name" value="aaa" />
