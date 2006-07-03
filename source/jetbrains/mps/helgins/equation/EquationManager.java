@@ -29,19 +29,41 @@ public class EquationManager {
 
   }
 
+  private Map<NodeWrapperType, NodeWrapperType> mySubtypesToSupertypesMap = new HashMap<NodeWrapperType, NodeWrapperType>();
+  private Map<NodeWrapperType, NodeWrapperType> mySupertypesToSubtypesMap = new HashMap<NodeWrapperType, NodeWrapperType>();
+
   public static EquationManager getInstance() {
     return ourInstance;
   }
 
-  public static enum EquationType {
-    NORMAL, LESS, GREATER
+  public void addInequation(NodeWrapperType subType, NodeWrapperType supertype) {
+    NodeWrapperType subtypeRepresentator = subType.getRepresentator();
+    NodeWrapperType supertypeRepresentator = supertype.getRepresentator();
+
+    // no equation needed
+    if (subtypeRepresentator == supertypeRepresentator) return;
+
+    // if one of them is a var
+    RuntimeTypeVariable varSubtype = NodeWrapperType.getTypeVar(subtypeRepresentator);
+    RuntimeTypeVariable varSupertype = NodeWrapperType.getTypeVar(supertypeRepresentator);
+    if (varSubtype != null || varSupertype != null) {
+      mySubtypesToSupertypesMap.put(subtypeRepresentator, supertypeRepresentator);
+      mySupertypesToSubtypesMap.put(supertypeRepresentator, subtypeRepresentator);
+      return;
+    }
+
+    // if strict subtyping
+    if (SubtypingManager.getInstance().isStrictSubtype(subtypeRepresentator, supertypeRepresentator)) {
+      processSubtyping(subtypeRepresentator, supertypeRepresentator);
+      return;
+    }
+
+    subtypeRepresentator.setErrorString("type "+ subtypeRepresentator+" should be a subtype of "+supertypeRepresentator);
+    TypeChecker.reportTypeError(subtypeRepresentator, subtypeRepresentator.getNodeToReportErrors());
   }
+
 
   public void addEquation(NodeWrapperType lhs, NodeWrapperType rhs) {
-    addEquation(lhs, rhs, EquationType.NORMAL);
-  }
-
-  public void addEquation(NodeWrapperType lhs, NodeWrapperType rhs, EquationType eqType) {
     NodeWrapperType rhsRepresentator = rhs.getRepresentator();
     NodeWrapperType lhsRepresentator = lhs.getRepresentator();
 
@@ -64,30 +86,12 @@ public class EquationManager {
 
 
     // process nominal subtyping
-    switch(eqType) {
-      case GREATER: {
-        if (SubtypingManager.getInstance().isStrictSubtype(lhsRepresentator, rhsRepresentator)) {
-          processSubtyping(lhsRepresentator, rhsRepresentator);
-          return;
-        }
-        break;
-      }
-      case LESS: {
-        if (SubtypingManager.getInstance().isStrictSubtype(rhsRepresentator, lhsRepresentator)) {
-          processSubtyping(rhsRepresentator, lhsRepresentator);
-          return;
-        }
-        break;
-      }
-      case NORMAL: {
-        if (SubtypingManager.getInstance().isStrictSubtype(rhsRepresentator, lhsRepresentator)) {
-          processSubtyping(rhsRepresentator, lhsRepresentator);
-          return;
-        } else if (SubtypingManager.getInstance().isStrictSubtype(lhsRepresentator, rhsRepresentator)) {
-          processSubtyping(lhsRepresentator, rhsRepresentator);
-          return;
-        }
-      }
+    if (SubtypingManager.getInstance().isStrictSubtype(rhsRepresentator, lhsRepresentator)) {
+      processSubtyping(rhsRepresentator, lhsRepresentator);
+      return;
+    } else if (SubtypingManager.getInstance().isStrictSubtype(lhsRepresentator, rhsRepresentator)) {
+      processSubtyping(lhsRepresentator, rhsRepresentator);
+      return;
     }
 
     // solve equation
@@ -109,9 +113,25 @@ public class EquationManager {
 
   private void processEquation(NodeWrapperType var, NodeWrapperType type) {
     var.setParent(type);
+    keepInequation(var, type);
     type.addAllVarSetsOfSourceAndRemoveSourceFromThem(var);
     if (NodeWrapperType.getTypeVar(var) instanceof RuntimeErrorType) {
       TypeChecker.reportTypeError(var, var.getNodeToReportErrors());
+    }
+  }
+
+  private void keepInequation(NodeWrapperType var, NodeWrapperType type) {
+    if (mySubtypesToSupertypesMap.containsKey(var)) {
+      NodeWrapperType supertype = mySubtypesToSupertypesMap.get(var);
+      mySubtypesToSupertypesMap.remove(var);
+      mySupertypesToSubtypesMap.remove(supertype);
+      addInequation(type, supertype);
+    }
+    if (mySupertypesToSubtypesMap.containsKey(var)) {
+      NodeWrapperType subtype = mySupertypesToSubtypesMap.get(var);
+      mySupertypesToSubtypesMap.remove(var);
+      mySubtypesToSupertypesMap.remove(subtype);
+      addInequation(subtype, type);
     }
   }
 
