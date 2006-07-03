@@ -143,7 +143,8 @@ public class EquationManager {
   }
 
   public void clear() {
-
+    mySubtypesToSupertypesMap.clear();
+    mySupertypesToSubtypesMap.clear();
   }
 
   public static boolean compareNodes(NodeWrapper node1, NodeWrapper node2) {
