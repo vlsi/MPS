@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.structure">
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
-  <language namespace="jetbrains.mps.core" />
   <maxImportIndex value="37" />
   <import index="4" modelUID="jetbrains.mps.core.structure" />
-  <import index="34" modelUID="jetbrains.mps.bootstrap.structureLanguage.library" />
   <import index="36" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="37" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068498886294">
@@ -1155,13 +1153,6 @@
       <link role="target" targetNodeId="1106176536146" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107134345596">
-    <property name="name" value="CodeBlock" />
-    <link role="extends" targetNodeId="1137021947720" />
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptPropertyDeclaration" id="1137530462369">
-      <property name="name" value="recurrent" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107135704075">
     <property name="name" value="ConceptFunctionParameter" />
     <link role="extends" targetNodeId="1068431790191" />
@@ -1171,68 +1162,6 @@
     <node role="conceptLinkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLinkDeclaration" id="1137545963098">
       <property name="name" value="conceptFunctionParameterType" />
       <link role="targetType" targetNodeId="1068431790189" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107382435476">
-    <property name="name" value="CodeBlockBreak" />
-    <link role="extends" targetNodeId="1068580123157" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107382525629">
-      <property name="value" value="break" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107382539798">
-      <property name="value" value="code block break statement" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107382563459">
-    <property name="name" value="CodeBlockContinue" />
-    <link role="extends" targetNodeId="1068580123157" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107382585749">
-      <property name="value" value="continue" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107382592156">
-      <property name="value" value="code block continue statement" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107382634457">
-    <property name="name" value="CodeBlockYield" />
-    <link role="extends" targetNodeId="1107383054539" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107382655516">
-      <property name="value" value="yield" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107382655641">
-      <property name="value" value="code block yield statement" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107382924189">
-    <property name="name" value="CodeBlockReturn" />
-    <link role="extends" targetNodeId="1107383054539" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107382969531">
-      <property name="value" value="return" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107382978993">
-      <property name="value" value="code block return statement" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107383054539">
-    <property name="name" value="CodeBlockAbstractReturn" />
-    <link role="extends" targetNodeId="1068580123157" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1107383540437">
-      <property name="sourceCardinality" value="1" />
-      <property name="targetCardinality" value="1" />
-      <property name="role" value="expression" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1068431790191" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1107383150332">
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107460423361">
