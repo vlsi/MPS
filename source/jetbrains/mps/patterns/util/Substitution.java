@@ -37,6 +37,19 @@ public class Substitution {
     HashSet loopVarSet = new HashSet();
     myIsUsedInsideListIterating.push(new Pair<Set, Integer>(loopVarSet, 0));
     SNode attributedNode = listDecl.getAttributedNode();
+    goInsideList_internal(attributedNode, loopVarSet);
+  }
+
+  public void goInsideList(List<? extends AttributeConcept> listDecls) {
+    HashSet loopVarSet = new HashSet();
+    myIsUsedInsideListIterating.push(new Pair<Set, Integer>(loopVarSet, 0));
+    for (AttributeConcept listDecl : listDecls) {
+      SNode attributedNode = listDecl.getAttributedNode();
+      goInsideList_internal(attributedNode, loopVarSet);
+    }
+  }
+
+  private void goInsideList_internal(SNode attributedNode, HashSet loopVarSet) {
     for (AttributeConcept patternVar : (List<AttributeConcept>) (List) SModelUtil.allChildren(attributedNode, new Condition<SNode>() {
       public boolean met(SNode object) {
         return object instanceof PatternVariableDeclaration || object instanceof LinkPatternVariableDeclaration || object instanceof PropertyPatternVariableDeclaration;
