@@ -44,6 +44,9 @@ public class IntelligentInputUtil {
     } else if (uniqueAction(substituteInfo, smallPattern, tail)) {
       INodeSubstituteItem item = matchingActions.get(0);
       newNode = item.doSubstitute(smallPattern);
+      if (newNode == null) {
+        System.err.println("substituted node is null");
+      }
       cellForNewNode = editorContext.createNodeCell(newNode);
     } else {
       return;
