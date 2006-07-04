@@ -7,6 +7,7 @@ import jetbrains.mps.annotations.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.helgins.evaluator.NodeWrapper;
+import jetbrains.mps.core.BaseConcept;
 
 import java.util.*;
 
@@ -53,14 +54,16 @@ public class MatchingUtil {
 
     //-- whole node bindings
     SNode patternAttribute = patternNode.getAttribute();
+    SNode asPattern = AsPattern_AnnotationLink.getAsPattern((BaseConcept) patternNode);
     if (patternAttribute instanceof WildcardPattern) {
       return true;
     }
-    if (patternAttribute instanceof ListPattern) {
+    if (patternAttribute instanceof ListPattern || asPattern instanceof ListPattern) {
       //simply go on
-    } else if (patternAttribute instanceof AsPattern) {
+    } else if (patternAttribute instanceof AsPattern || asPattern != null) {
       bindNodeWithVar(substitution, (PatternVariableDeclaration) patternAttribute, node);
-    } else if (patternAttribute instanceof PatternVariableDeclaration) {
+    }
+    if (patternAttribute instanceof PatternVariableDeclaration) {
       bindNodeWithVar(substitution, (PatternVariableDeclaration) patternAttribute, node);
       return true;
     }
@@ -90,7 +93,7 @@ public class MatchingUtil {
       //if list pattern
       SNode listPatternChild = null;
       for (SNode patternChild : patternChildren) {
-        if (patternChild.getAttribute() instanceof ListPattern) {
+        if (AsPattern_AnnotationLink.getAsPattern((BaseConcept) patternChild) instanceof ListPattern|| patternChild.getAttribute() instanceof ListPattern) {
           listPatternChild = patternChild;
           break;
         }
@@ -172,14 +175,16 @@ public class MatchingUtil {
 
       //-- whole node bindings
       SNode patternAttribute = patternNode.getAttribute();
+      SNode asPattern = AsPattern_AnnotationLink.getAsPattern((BaseConcept) patternNode);
       if (patternAttribute instanceof WildcardPattern) {
         return true;
       }
-      if (patternAttribute instanceof ListPattern) {
+      if (asPattern instanceof ListPattern || patternAttribute instanceof ListPattern) {
         //simply go on
-      } else if (patternAttribute instanceof AsPattern) {
+      } else if (asPattern != null || patternAttribute instanceof AsPattern) {
         bindNodeWrapperWithVar(substitution, (PatternVariableDeclaration) patternAttribute, node);
-      } else if (patternAttribute instanceof PatternVariableDeclaration) {
+      }
+      if (patternAttribute instanceof PatternVariableDeclaration) {
         bindNodeWrapperWithVar(substitution, (PatternVariableDeclaration) patternAttribute, node);
         return true;
       }
@@ -209,7 +214,7 @@ public class MatchingUtil {
         //if list pattern
         SNode listPatternChild = null;
         for (SNode patternChild : patternChildren) {
-          if (patternChild.getAttribute() instanceof ListPattern) {
+          if (AsPattern_AnnotationLink.getAsPattern((BaseConcept) patternChild) instanceof ListPattern || patternChild.getAttribute() instanceof ListPattern) {
             listPatternChild = patternChild;
             break;
           }
@@ -247,7 +252,8 @@ public class MatchingUtil {
 
 
   private static boolean matchListOfNodeWrappers(List<NodeWrapper> nodes, SNode patternNode, Substitution substitution) {
-    ListPattern currentListPattern = (ListPattern) patternNode.getAttribute();
+    AsPattern asPattern = AsPattern_AnnotationLink.getAsPattern((BaseConcept) patternNode);
+    ListPattern currentListPattern = asPattern instanceof ListPattern ? (ListPattern) asPattern : (ListPattern) patternNode.getAttribute();
     ourCurrentListPatterns.push(currentListPattern);
     boolean stillMatches = true;
     for (NodeWrapper nodeWrapper : nodes) {
@@ -264,7 +270,8 @@ public class MatchingUtil {
 
 
   private static boolean matchListOfNodes(List<SNode> nodes, SNode patternNode, Substitution substitution) {
-    ListPattern currentListPattern = (ListPattern) patternNode.getAttribute();
+    AsPattern asPattern = AsPattern_AnnotationLink.getAsPattern((BaseConcept) patternNode);
+    ListPattern currentListPattern = asPattern instanceof ListPattern ? (ListPattern) asPattern : (ListPattern) patternNode.getAttribute();
     ourCurrentListPatterns.push(currentListPattern);
     boolean stillMatches = true;
     for (SNode node : nodes) {
