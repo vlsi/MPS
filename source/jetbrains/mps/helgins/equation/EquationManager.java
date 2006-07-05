@@ -53,7 +53,7 @@ public class EquationManager {
     }
 
     // if strict subtyping
-    if (SubtypingManager.getInstance().isStrictSubtype(subtypeRepresentator, supertypeRepresentator)) {
+    if (SubtypingManager.getInstance().isSubtype(subtypeRepresentator, supertypeRepresentator)) {
       processSubtyping(subtypeRepresentator, supertypeRepresentator);
       return;
     }
