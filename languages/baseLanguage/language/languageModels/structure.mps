@@ -1350,68 +1350,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1144781790140">
-    <property name="name" value="SequenceType" />
-    <link role="extends" targetNodeId="1068431790189" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1144781920977">
-      <property name="value" value="sequence" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1144781842489">
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="elementType" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1068431790189" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1144886658041">
-    <property name="name" value="SequenceIteratorType" />
-    <link role="extends" targetNodeId="1068431790189" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1144886754532">
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="elementType" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1068431790189" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1144886701574">
-      <property name="value" value="iterator" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1144891708747">
-    <property name="name" value="SequenceOperation_getIterator" />
-    <link role="extends" targetNodeId="1144946981158" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1144891738936">
-      <property name="value" value="iterator" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1144946829451">
-    <property name="name" value="SequenceOperationExpression" />
-    <link role="extends" targetNodeId="1068431790191" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1144946888564">
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1144946860296">
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="instance" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1068431790191" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1144947034286">
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="operation" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1144946981158" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1144946981158">
-    <property name="name" value="SequenceOperation" />
-    <link role="extends" targetNodeId="4.1133920641626" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1144947009082">
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1145552809883">
     <property name="name" value="AbstractCreator" />
     <link role="extends" targetNodeId="4.1133920641626" />
@@ -1435,20 +1373,6 @@
       <property name="role" value="creator" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1145552809883" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1145553400580">
-    <property name="name" value="SequenceCreator" />
-    <link role="extends" targetNodeId="1145552809883" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1145553558552">
-      <property name="value" value="sequence" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1145553418425">
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="createdType" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1144781790140" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1146644584814">
