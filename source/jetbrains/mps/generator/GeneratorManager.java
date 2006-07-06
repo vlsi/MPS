@@ -257,7 +257,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       }
     };
     // we are in event dispatch thread
-    generationThread.setPriority(Thread.currentThread().getPriority() - 1);
+    //do not change priority! With other priority it's impossible to listen to music
+    generationThread.setPriority(Thread.MIN_PRIORITY);
     generationThread.start();
   }
 
