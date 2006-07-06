@@ -175,7 +175,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     view.clear();
     try {
       String mainClassName = modelNamespace + ".Main";
-      Class mainClass = Class.forName(mainClassName, true, classLoader);
+      Class mainClass = Class.forName(mainClassName, false, classLoader);
       Method mainMethod = mainClass.getMethod("main", IOperationContext.class);
       mainMethod.invoke(null, context);
     } catch (Exception e) {
