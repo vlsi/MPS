@@ -21,7 +21,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.ModuleContext;
 
 import javax.swing.*;
-import java.util.Iterator;
+import java.util.*;
 
 /**
  * @author Kostik
@@ -135,7 +135,15 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
   }
 
   public static SModelDescriptor createLanguageEditorModel(Language language) {
-    ModelRoot modelRoot = language.getModelRoots().get(0);
+    ModelRoot modelRoot = null;
+    List<ModelRoot> modelRoots = language.getModelRoots();
+    for (ModelRoot mRoot : modelRoots) {
+      IModelRootManager rootManager = SModelRepository.getInstance().getManagerFor(mRoot);
+      if (rootManager instanceof DefaultModelRootManager) {
+        modelRoot = mRoot;
+        break;
+      }
+    }
 
     SModelDescriptor editorModelDescriptor = language.createModel(new SModelUID(language.getModuleUID(), "editor", ""), modelRoot);
     SModel editorModel = editorModelDescriptor.getSModel();
