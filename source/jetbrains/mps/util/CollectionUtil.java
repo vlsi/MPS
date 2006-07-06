@@ -155,6 +155,42 @@ public class CollectionUtil {
     }
   }
 
+  public static<T> Iterator<T> concatenate(final Iterator<? extends T> it1, final Iterator<? extends T> it2) {
+    return new Iterator<T>() {
+      public boolean isFirstActive = true;
+
+      public boolean hasNext() {
+        if (isFirstActive) {
+          if (it1.hasNext()) {
+            return true;
+          } else {
+            isFirstActive = false;
+            return it2.hasNext();
+          }
+        } else {
+          return it2.hasNext();
+        }
+      }
+
+      public T next() {
+        if (isFirstActive) {
+          if (it1.hasNext()) {
+            return it1.next();
+          } else {
+            isFirstActive = false;
+            return it2.next();
+          }
+        } else {
+          return it2.next();
+        }
+      }
+
+      public void remove() {
+        throw new UnsupportedOperationException();
+      }
+    };
+  }
+
   public interface CollectionBlock<E> {
     void run(E e);
   }
