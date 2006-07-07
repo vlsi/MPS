@@ -31,12 +31,18 @@ public class Graph implements IGraph {
   public void connect(IVertex vertex1, IVertex vertex2) {
     if (!myVertices.contains(vertex1)) return;
     if (!myVertices.contains(vertex2)) return;
-    IEdge connectingEdge = myVerticesToConnectingEdges.get(new Pair<IVertex, IVertex>(vertex1, vertex2));
-    if (connectingEdge != null) return;
+    boolean connected = isConnected(vertex1, vertex2);
+    IEdge connectingEdge;
+    if (connected) return;
     connectingEdge = new Edge(vertex1, vertex2);
     myEdges.add(connectingEdge);
     myVerticesToConnectingEdges.put(new Pair<IVertex, IVertex>(vertex1, vertex2), connectingEdge);
     myVerticesToConnectingEdges.put(new Pair<IVertex, IVertex>(vertex2, vertex1), connectingEdge);
+  }
+
+  public boolean isConnected(IVertex vertex1, IVertex vertex2) {
+    IEdge connectingEdge = myVerticesToConnectingEdges.get(new Pair<IVertex, IVertex>(vertex1, vertex2));
+    return connectingEdge != null;
   }
 
 

@@ -14,5 +14,6 @@ public interface IVertex {
   double getY();
   Set<IEdge> getStar();
   void addEdge(IEdge e);
+  void setCoords(double newx, double newy);
   String getName();
 }

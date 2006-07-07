@@ -49,5 +49,8 @@ public class Vertex implements IVertex {
     myStar.add(e);
   }
 
-
+  public void setCoords(double newx, double newy) {
+    myX = newx;
+    myY = newy;
+  }
 }

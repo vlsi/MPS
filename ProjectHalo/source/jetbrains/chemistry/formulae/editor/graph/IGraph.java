@@ -16,5 +16,6 @@ public interface IGraph {
   Set<IVertex> getVertices();
   void addVertex(IVertex vertex);
   void connect(IVertex vertex1, IVertex vertex2);
+  boolean isConnected(IVertex vertex1, IVertex vertex2);
   Pair<Integer,Integer> getBaricenter();
 }
