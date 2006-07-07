@@ -18,7 +18,7 @@ public class Main extends JFrame {
   public Main() throws HeadlessException {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setSize(400,400);
-    IGraph graph = GraphSamples.getBensol();
+    IGraph graph = GraphSamples.getBensol2();
     getContentPane().add(new MyJComponent(graph));
     GraphLayouter.relayout(graph, 120, 120);
     setVisible(true);
