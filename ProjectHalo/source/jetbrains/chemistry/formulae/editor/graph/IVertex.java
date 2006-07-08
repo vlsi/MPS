@@ -13,6 +13,7 @@ public interface IVertex {
   double getX();
   double getY();
   Set<IEdge> getStar();
+  int getStarSize();
   void addEdge(IEdge e);
   void setCoords(double newx, double newy);
   String getName();

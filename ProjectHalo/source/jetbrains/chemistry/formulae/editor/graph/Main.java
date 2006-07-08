@@ -15,7 +15,8 @@ import java.awt.event.MouseEvent;
  * To change this template use File | Settings | File Templates.
  */
 public class Main extends JFrame {
-   public static final int CENTER = 300;
+  public static final int CENTER = 300;
+  public static final double FORCE_CONST = 0.3;
 
   public Main(IGraph graph) throws HeadlessException {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -24,7 +25,10 @@ public class Main extends JFrame {
     GraphLayouter.preliminaryLayout(graph, CENTER, CENTER);
     int iterationsCount = GraphLayouter.calculateIterationsCount(graph);
     for (int i = 1; i<= iterationsCount; i++) {
-      GraphLayouter.relayoutPhysically(graph, CENTER, CENTER, 0.5);
+      GraphLayouter.relayoutPhysically(graph, CENTER, CENTER, FORCE_CONST);
+    }
+    for (int i = 1; i<= iterationsCount/2; i++) {
+      GraphLayouter.relayoutPhysically(graph, CENTER,  CENTER,  FORCE_CONST, true);
     }
     setVisible(true);
   }
@@ -37,7 +41,7 @@ public class Main extends JFrame {
   }
 
   public static void main(String[] args) {
-    new Main(GraphSamples.getBensol3(),0.5);
+    new Main(GraphSamples.getBensol()/*,FORCE_CONST*/);
   }
 
   private class MyJComponent1 extends MyJComponent {

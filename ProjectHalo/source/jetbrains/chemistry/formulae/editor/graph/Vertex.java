@@ -45,6 +45,10 @@ public class Vertex implements IVertex {
     return new HashSet<IEdge>(myStar);
   }
 
+  public int getStarSize() {
+    return myStar.size();
+  }
+
   public void addEdge(IEdge e) {
     myStar.add(e);
   }
