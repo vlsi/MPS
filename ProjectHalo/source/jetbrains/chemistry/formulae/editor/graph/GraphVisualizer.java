@@ -40,7 +40,6 @@ public class GraphVisualizer implements IGraphVisualizer {
     Integer xb = baricenter.o1;
     Integer yb = baricenter.o2;
     g.fillOval(xb -2, yb -2, 4, 4);
-    g.drawString(GraphLayouter.energy(graph)+"", xb+5, yb);
   }
 
 }

@@ -57,4 +57,18 @@ public class Graph implements IGraph {
     int bcy = (int) y / myVertices.size();
     return new Pair<Integer, Integer>(bcx,bcy);
   }
+
+  public void moveRelatively(double deltax, double deltay) {
+    for (IVertex vertex : myVertices) {
+      vertex.setCoords(vertex.getX()+deltax, vertex.getY() + deltay);
+    }
+  }
+
+  public int getVerticesCount() {
+    return myVertices.size();
+  }
+
+  public int getEdgesCount() {
+    return myEdges.size();
+  }
 }
