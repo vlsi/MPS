@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.baseLanguage.ConstructorDeclaration;
 import jetbrains.mps.baseLanguage.ClassifierType;
 import jetbrains.mps.baseLanguage.Classifier;
-import jetbrains.mps.modelQueryLanguage.generator.library.impl.ModelQueryFunctions;
 
 import java.util.*;
 
