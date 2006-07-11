@@ -16,20 +16,12 @@ import java.awt.event.MouseEvent;
  */
 public class Main extends JFrame {
   public static final int CENTER = 300;
-  public static final double FORCE_CONST = 0.3;
 
   public Main(IGraph graph) throws HeadlessException {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setSize(600,600);
     getContentPane().add(new MyJComponent(graph));
-    GraphLayouter.preliminaryLayout(graph, CENTER, CENTER);
-    int iterationsCount = GraphLayouter.calculateIterationsCount(graph);
-    for (int i = 1; i<= iterationsCount; i++) {
-      GraphLayouter.relayoutPhysically(graph, CENTER, CENTER, FORCE_CONST);
-    }
-    for (int i = 1; i<= iterationsCount/2; i++) {
-      GraphLayouter.relayoutPhysically(graph, CENTER,  CENTER,  FORCE_CONST, true);
-    }
+    GraphLayouter.relayoutPhysicallyCompletely(graph, CENTER, CENTER);
     setVisible(true);
   }
 
@@ -41,7 +33,7 @@ public class Main extends JFrame {
   }
 
   public static void main(String[] args) {
-    new Main(GraphSamples.getBensol()/*,FORCE_CONST*/);
+    new Main(GraphSamples.getPropan()/*,FORCE_CONST*/);
   }
 
   private class MyJComponent1 extends MyJComponent {
