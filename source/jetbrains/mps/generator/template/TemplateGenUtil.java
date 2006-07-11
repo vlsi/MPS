@@ -14,7 +14,6 @@ import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.transformation.ITemplateLanguageConstants;
 import jetbrains.mps.transformation.TLBase.*;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.QueryMethod;
@@ -52,21 +51,9 @@ public class TemplateGenUtil {
       if (templateNode.getChild(macroReferenceRole) != null) {
         continue;
       }*/
-      if (ReferenceMacro_AnnotationLink.getReferenceMacro((BaseConcept) templateNode, templateReference.getRole()) != null)
-      {
+      if (ReferenceMacro_AnnotationLink.
+              getReferenceMacro((BaseConcept) templateNode, templateReference.getRole()) != null) {
         continue;
-      }
-
-      // give builder an opportunity to resolve reference
-      {
-        SNode targetReferentNode = nodeBuilder.resolveReference(templateReference);
-        if (targetReferentNode != null) {
-          if (checkResolvedReference(nodeBuilder.getSourceNode(), targetNode, templateNode, templateReference.getRole(), targetReferentNode, generator))
-          {
-            targetNode.addReferent(templateReference.getRole(), targetReferentNode);
-          }
-          continue;
-        }
       }
 
       // external reference (but not to node from source model)?
@@ -95,7 +82,7 @@ public class TemplateGenUtil {
               "Couldn't resolve template reference \"" + templateReference.getRole() + "\"");
       //test
       LOG.error("uhhh! error. set breakpoint here, referenceResolver:" + referenceResolver);
-      referenceResolver.resolveTarget(templateReference, nodeBuilder);
+//      referenceResolver.resolveTarget(templateReference, nodeBuilder);
       //test
     } // while (iterator.hasNext())
   }
@@ -132,11 +119,7 @@ public class TemplateGenUtil {
     return referenceResolver;
   }
 
-  private static INodeBuilder loadNodeBuilder(SNode sourceNode, SNode templateNode, String mappingName, ITemplateGenerator generator) {
-//    ConceptDeclaration typeDeclaration = SModelUtil.getConceptDeclaration(templateNode, generator.getScope());
-//    String modelPackageName = JavaNameUtil.packageNameForModelUID(typeDeclaration.getModel().getUID());
-//    String buildersPackageName = modelPackageName + ".builder";
-//    String builderClassName = buildersPackageName + "." + typeDeclaration.getName() + "_NodeBuilder";
+  private static INodeBuilder loadNodeBuilder(SNode sourceNode, SNode templateNode, String mappingName, boolean isCopying, ITemplateGenerator generator) {
     // custom builders are only available for target language
     Language targetLanguage = generator.getTargetLanguage();
     String buildersPackageName = targetLanguage.getNamespace() + ".builder";
@@ -146,17 +129,25 @@ public class TemplateGenUtil {
       Class builderClass = Class.forName(builderClassName, true, ClassLoaderManager.getInstance().getClassLoader());
       Constructor[] constructors = builderClass.getDeclaredConstructors();
       // should be 1 constructor with parameters:
-      // SNode sourceNode, SNode templateNode, ITemplateGenerator generator
-      return (INodeBuilder) constructors[0].newInstance(new Object[]{sourceNode, templateNode,
-              mappingName, generator});
+      // SNode sourceNode, SNode templateNode, String mappingName, boolean isCopying, ITemplateGenerator generator
+      return (INodeBuilder) constructors[0].newInstance(sourceNode, templateNode, mappingName, isCopying, generator);
     } catch (ClassNotFoundException e) {
       // ok
     } catch (IllegalAccessException e) {
+      LOG.error(builderClassName);
       throw new RuntimeException(e);
     } catch (InvocationTargetException e) {
+      LOG.error(builderClassName);
       throw new RuntimeException(e);
     } catch (InstantiationException e) {
+      LOG.error(builderClassName);
       throw new RuntimeException(e);
+    } catch (Error e) {
+      LOG.error(builderClassName);
+      throw e;
+    } catch (RuntimeException e) {
+      LOG.error(builderClassName);
+      throw e;
     }
 
     return null;
@@ -451,10 +442,10 @@ public class TemplateGenUtil {
         }
 
       } else if (nodeMacro instanceof CopySrcNodeMacro) {
-        builder = generator.createCopyingNodeBuilder(sourceNode, templateNode.getRole_());
+        builder = generator.createCopyingNodeBuilder(sourceNode, templateNode);
         needCreateChildBuilders = false;
       } else if (nodeMacro instanceof CopySrcListMacro) {
-        builder = generator.createCopyingNodeBuilder(sourceNode, templateNode.getRole_());
+        builder = generator.createCopyingNodeBuilder(sourceNode, templateNode);
         needCreateChildBuilders = false;
       } else if (nodeMacro instanceof MapSrcNodeMacro) {
         MapSrcNodeMacro mapSrcNodeMacro = (MapSrcNodeMacro) nodeMacro;
@@ -486,7 +477,7 @@ public class TemplateGenUtil {
     }
 
     if (builder == null) {
-      builder = createDefaultNodeBuilder(sourceNode, templateNode, mappingName, generator);
+      builder = createDefaultNodeBuilder(sourceNode, templateNode, mappingName, false, generator);
     }
     if (needCreateChildBuilders) {
       createChildBuilders(builder);
@@ -494,10 +485,10 @@ public class TemplateGenUtil {
     return builder;
   }
 
-  public static INodeBuilder createDefaultNodeBuilder(SNode sourceNode, SNode templateNode, String mappingName, ITemplateGenerator generator) {
-    INodeBuilder builder = loadNodeBuilder(sourceNode, templateNode, mappingName, generator);
+  public static INodeBuilder createDefaultNodeBuilder(SNode sourceNode, SNode templateNode, String mappingName, boolean isCopying, ITemplateGenerator generator) {
+    INodeBuilder builder = loadNodeBuilder(sourceNode, templateNode, mappingName, isCopying, generator);
     if (builder == null) {
-      builder = new DefaultNodeBuilder(sourceNode, templateNode, mappingName, generator);
+      builder = new DefaultNodeBuilder(sourceNode, templateNode, mappingName, isCopying, generator);
     }
     return builder;
   }

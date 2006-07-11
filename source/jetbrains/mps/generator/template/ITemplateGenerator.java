@@ -75,7 +75,7 @@ public interface ITemplateGenerator extends IModelGenerator, ITemplateLanguageCo
 
   int getErrorCount();
 
-  INodeBuilder createCopyingNodeBuilder(SNode sourceNode, String roleInParent);
+  INodeBuilder createCopyingNodeBuilder(SNode sourceNode, SNode templateNode);
 
   void notifyBuilderCreated(INodeBuilder builder);
 

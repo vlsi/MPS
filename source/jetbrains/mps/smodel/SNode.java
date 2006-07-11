@@ -253,14 +253,17 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   private AttributeConcept getAttribute_internal() {
     return (AttributeConcept) getChild(AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.ATTRIBUTE_STEREOTYPE);
   }
+
   public SNode getAttribute() {
-    SNode result =  getAttribute_new();
+    SNode result = getAttribute_new();
     if (result == null) result = getAttribute_internal();
     return result;
   }
+
   public void setAttribute(SNode attributeConcept) {
     setAttribute_new(attributeConcept);
   }
+
   //--new
   public Iterator<SNode> attributes_new(String role) {
     String attributeRole = AttributesRolesUtil.childRoleFromAttributeRole(role);
@@ -341,7 +344,6 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return propertyAttribute;
   }
 
-
   ///-- link attributes
 
   private void setLinkAttribute_internal(String role, LinkAttributeConcept linkAttribute) {
@@ -388,7 +390,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     return linkAttribute;
   }
 
-   //-- for node refactoring
+  //-- for node refactoring
   public boolean refactorAttributes() {
     boolean changed = false;
     AttributeConcept attribute = getAttribute_internal();
@@ -1211,7 +1213,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   private void decrementChildInRoleCount(String role) {
     if (!myChildInRoleCount.containsKey(role)) {
-      LOG.error("This can't happen: role = " + role + " node = "+this);
+      LOG.error("This can't happen: role = " + role + " node = " + this);
     }
 
     Integer childCount = myChildInRoleCount.get(role);
