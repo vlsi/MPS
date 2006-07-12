@@ -38,6 +38,10 @@
       <property name="name" value="targetBuilderAspectMethodName" />
       <link role="dataType" targetNodeId="2.1082983041843" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1152722085357">
+      <property name="name" value="mappingId" />
+      <link role="dataType" targetNodeId="2.1082983041843" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1088761943574">
     <property name="name" value="ReferenceMacro" />

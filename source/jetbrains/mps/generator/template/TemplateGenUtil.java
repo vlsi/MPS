@@ -433,6 +433,9 @@ public class TemplateGenUtil {
     boolean needCreateChildBuilders = true;
     NodeMacro nodeMacro = NodeMacro_AnnotationLink.getNodeMacro((BaseConcept) templateNode);// (NodeMacro) templateNode.getChild(ITemplateGenerator.ROLE_NODE_MAKRO);
     if (nodeMacro != null) {
+      if (nodeMacro.getMappingId() != null) {
+        mappingName = nodeMacro.getMappingId();
+      }
       if (nodeMacro instanceof SwitchMacro) {
         TemplateSwitch templateSwitch = ((SwitchMacro) nodeMacro).getTemplateSwitch();
         builder = createNodeBuilderForSwitch(sourceNode, templateSwitch, mappingName, generator);
