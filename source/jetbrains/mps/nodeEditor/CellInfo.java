@@ -21,7 +21,7 @@ public class CellInfo {
   private int myCellNumber;
   private boolean myIsInList = false;
 
-  private CellInfo myParentInfo;
+  protected CellInfo myParentInfo;
 
   // use only within EditorCell.getCellInfo
   public CellInfo(EditorCell cell) {

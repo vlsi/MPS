@@ -370,6 +370,11 @@ public class EditorManager {
       setEditable(true);
       setDrawBorder(false);
       setCellBackgroundColor(Color.YELLOW);
+      setCellInfoProvider(new ICellInfoProvider() {
+        public CellInfo getCellInfo(EditorCell cell) {
+          return new RTHintCellInfo(EditorCell_RTHint.this, myAnchorCell);
+        }
+      });
     }
 
     private void setAnchor(EditorCell anchorCell) {
@@ -380,10 +385,6 @@ public class EditorManager {
       return new EditorCell_RTHint(editorContext, node);
     }
 
-
-    public CellInfo getCellInfo() {
-      return new RTHintCellInfo(this, myAnchorCell);
-    }
   }
 
 
