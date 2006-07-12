@@ -450,21 +450,17 @@ public class TemplateGenUtil {
       } else if (nodeMacro instanceof MapSrcNodeMacro) {
         MapSrcNodeMacro mapSrcNodeMacro = (MapSrcNodeMacro) nodeMacro;
         String sourceNodeMapperId = mapSrcNodeMacro.getSourceNodeMapperId();
-        if (sourceNodeMapperId == null) {
-          generator.showErrorMessage(nodeMacro, "Source mapper is not defined");
-        } else {
+        if (sourceNodeMapperId != null) {
           builder = new QueryMethodMapperNodeBuilder(sourceNode, templateNode, mapSrcNodeMacro, generator);
+          needCreateChildBuilders = false;
         }
-        needCreateChildBuilders = false;
       } else if (nodeMacro instanceof MapSrcListMacro) {
         MapSrcListMacro mapSrcListMacro = (MapSrcListMacro) nodeMacro;
         String sourceNodeMapperId = mapSrcListMacro.getSourceNodeMapperId();
-        if (sourceNodeMapperId == null) {
-          generator.showErrorMessage(nodeMacro, "Source mapper is not defined");
-        } else {
+        if (sourceNodeMapperId != null) {
           builder = new QueryMethodMapperNodeBuilder(sourceNode, templateNode, mapSrcListMacro, generator);
+          needCreateChildBuilders = false;
         }
-        needCreateChildBuilders = false;
       } else {
         // use user-defined node builder ?
         String targetBuilderAspectMethodName = nodeMacro.getTargetBuilderAspectMethodName();

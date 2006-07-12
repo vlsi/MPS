@@ -10,9 +10,7 @@ import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
 
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -30,6 +28,8 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private TransientModule myTransientModule;
   private Language myTargetLanguage;
 
+  private Map<Object, Object> myUserObjects = new HashMap<Object, Object>();
+
   public GenerationSessionContext(Language targetLanguage, SModel sourceModel, IOperationContext invocationContext) {
     myTargetLanguage = targetLanguage;
     myInvocationContext = invocationContext;
@@ -37,6 +37,14 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myTransientModule = new TransientModule(invocationContext.getModule());
     initTemplateModels();
   }
+
+  public void replaceInputModel(SModelDescriptor inputModel) {
+    myUserObjects.clear();
+    myGeneratorModules = getGeneratorModules(inputModel.getSModel());
+    myTransientModule.addGeneratorModules(myGeneratorModules);
+    initTemplateModels();
+  }
+
 
   private void initTemplateModels() {
     myTemplateModels = new LinkedList<SModelDescriptor>();
@@ -88,12 +96,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return getClass().getName() + "-> " + myTargetLanguage.getNamespace() + "\ninvoked from: " + myInvocationContext;
   }
 
-  public void replaceInputModel(SModelDescriptor inputModel) {
-    myGeneratorModules = getGeneratorModules(inputModel.getSModel());
-    myTransientModule.addGeneratorModules(myGeneratorModules);
-    initTemplateModels();
-  }
-
   private List<Generator> getGeneratorModules(SModel sourceModel) {
     // -- create generators list
     List<Generator> generators = new LinkedList<Generator>();
@@ -117,6 +119,16 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     }
     return generators;
   }
+
+  public void putUserObject(Object key, Object o) {
+    myUserObjects.put(key, o);
+  }
+
+  public Object getUserObject(Object key) {
+    return myUserObjects.get(key);
+  }
+
+
 
 
 
@@ -201,5 +213,5 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     public String getGeneratorOutputPath() {
       return myInvocationModule.getGeneratorOutputPath();
     }
-  }
+  } // private class TransientModule
 }
