@@ -188,7 +188,7 @@ public class GenerationSession {
 
     // primary mapping
     boolean somethingHasBeenGenerated = generator.doPrimaryMapping(inputModel, currentOutputModel.getSModel());
-    if (!somethingHasBeenGenerated || primaryMappingOnly) {
+    if (!somethingHasBeenGenerated /*|| primaryMappingOnly*/) {
       SModel model = currentOutputModel.getSModel();
       model.validateLanguagesAndImports();
       return model;
@@ -198,10 +198,14 @@ public class GenerationSession {
     int repeatCount = 1;
     while (true) {
       currentOutputModel.getSModel().validateLanguagesAndImports();
-      // check exit condition (only the 'target language' is used in the output model)
-      List<String> languageNamespaces = currentOutputModel.getSModel().getLanguageNamespaces();
-      if (languageNamespaces.size() == 1 && languageNamespaces.get(0).equals(targetLanguage.getNamespace())) {
-        break;
+      // optimization trick:
+      // exit if target language is 'baseLanguage' and
+      // output model doesn't contain other languages
+      if (targetLanguage.getNamespace().equals("jetbrains.mps.baseLanguage")) {
+        List<String> languageNamespaces = currentOutputModel.getSModel().getLanguageNamespaces();
+        if (languageNamespaces.size() == 1 && languageNamespaces.get(0).equals(targetLanguage.getNamespace())) {
+          break;
+        }
       }
 
       // apply mapping to the output model
