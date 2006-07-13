@@ -5,9 +5,11 @@ package jetbrains.mps.baseLanguage.generator.java.closures;
  * Jul 12, 2006
  */
 public interface ClosuresMappingId {
-  static String CLOSURE__ADAPTER_CLASS = "value_supplier_adapter";
-  static String METHOD__LOCAL_CONTEXT__VARIABLE_DECL_STMT = "method_localContext_variable";
-  static String VARIABLE__CLOSURE_CONTEXT__FIELD = "variable_methodLocalContext_field";
+  static String CLOSURE__ADAPTER_CLASS = "closure_adapterClass";
+  static String METHOD__CLOSURE_CONTEXT__CLASS = "method_closureContext_class";
+  static String METHOD__CLOSURE_CONTEXT__VARIABLE_DECL_STMT = "method_closureContext_variable";
+  static String VARIABLE__CLOSURE_CONTEXT__CLASS_FIELD = "variable_closureContext_classField";
 
+  static String NAME__CLOSURE_ADAPTER__ENCLOSING_CLASS_FIELD = "_enclosingClass";
   static String NAME__CLOSURE_ADAPTER__CLOSURE_CONTEXT_FIELD = "_closureContext";
 }
