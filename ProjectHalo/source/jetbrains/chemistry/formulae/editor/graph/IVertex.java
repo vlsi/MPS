@@ -17,4 +17,6 @@ public interface IVertex {
   void addEdge(IEdge e);
   void setCoords(double newx, double newy);
   String getName();
+  Object getUserObject(Object key);
+  void putUserObject(Object key, Object value);
 }

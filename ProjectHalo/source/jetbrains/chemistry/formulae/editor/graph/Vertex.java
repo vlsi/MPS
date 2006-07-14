@@ -14,6 +14,7 @@ public class Vertex implements IVertex {
   private double myY;
   private Set<IEdge> myStar = new HashSet<IEdge>();
   private String myName;
+  private Map myUserObjects = new HashMap();
 
   public Vertex(int x, int y, String name) {
     myX = x;
@@ -56,5 +57,13 @@ public class Vertex implements IVertex {
   public void setCoords(double newx, double newy) {
     myX = newx;
     myY = newy;
+  }
+
+  public Object getUserObject(Object key) {
+    return myUserObjects.get(key);
+  }
+
+  public void putUserObject(Object key, Object value) {
+    myUserObjects.put(key, value);
   }
 }

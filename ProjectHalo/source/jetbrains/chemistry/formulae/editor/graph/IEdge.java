@@ -10,4 +10,6 @@ package jetbrains.chemistry.formulae.editor.graph;
 public interface IEdge {
   IVertex getFirst();
   IVertex getSecond();
+  Object getUserObject(Object key);
+  void putUserObject(Object key, Object value);
 }

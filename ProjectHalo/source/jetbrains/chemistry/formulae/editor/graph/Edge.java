@@ -1,5 +1,7 @@
 package jetbrains.chemistry.formulae.editor.graph;
 
+import java.util.*;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -10,6 +12,7 @@ package jetbrains.chemistry.formulae.editor.graph;
 public class Edge implements IEdge {
   IVertex myFirst;
   IVertex mySecond;
+  private Map myUserObjects = new HashMap();
 
   public Edge(IVertex first, IVertex second) {
     myFirst = first;
@@ -24,5 +27,13 @@ public class Edge implements IEdge {
 
   public IVertex getSecond() {
     return mySecond;
+  }
+
+  public Object getUserObject(Object key) {
+    return myUserObjects.get(key);
+  }
+
+  public void putUserObject(Object key, Object value) {
+    myUserObjects.put(key, value);
   }
 }
