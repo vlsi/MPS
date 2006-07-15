@@ -16,6 +16,7 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.constraints.INodePropertyGetter;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.constraints.INodePropertySetter;
 import jetbrains.mps.baseLanguage.ConstructorDeclaration;
 import jetbrains.mps.baseLanguage.ClassifierType;
 import jetbrains.mps.baseLanguage.Classifier;
@@ -51,6 +52,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   private String myId;
 
   private HashMap<Object, Object> myUserObjects = new HashMap<Object, Object>();
+  private boolean myPropertySetterInProgress = false;
 
   protected SNode(SModel model) {
     myModel = model;
@@ -530,6 +532,15 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public void setProperty(final String propertyName, String propertyValue) {
+    if (!myPropertySetterInProgress) {
+      INodePropertySetter setter = ModelConstraintsManager.getInstance().getNodePropertySetter(this, propertyName);
+      if (setter != null) {
+        myPropertySetterInProgress = true;
+        setter.execPropertySet(this, propertyName,propertyValue);
+        myPropertySetterInProgress = false;
+        return;
+      }
+    }
     NodeSecurityManager.getInstance().checkPropertyAvailable(this, propertyName, true);
     final String oldValue = myProperties.get(propertyName);
     if (propertyValue == null) {

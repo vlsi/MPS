@@ -24,6 +24,7 @@ public class ModelConstraintsManager {
 
   private Map<String, List<IModelConstraints>> myAddedLanguageNamespaces = new HashMap<String, List<IModelConstraints>>();
   private Map<String, INodePropertyGetter> myNodePropertyGettersMap = new HashMap<String, INodePropertyGetter>();
+  private Map<String, INodePropertySetter> myNodePropertySettersMap = new HashMap<String, INodePropertySetter>();
   private Map<String, INodeReferentSearchScopeProvider> myNodeReferentSearchScopeProvidersMap = new HashMap<String, INodeReferentSearchScopeProvider>();
 
   public ModelConstraintsManager() {
@@ -63,6 +64,20 @@ public class ModelConstraintsManager {
     myNodePropertyGettersMap.remove(conceptFqName + "#" + propertyName);
   }
 
+  public void registerNodePropertySetter(String conceptFqName, String propertyName, INodePropertySetter setter) {
+    String key = conceptFqName + "#" + propertyName;
+    if (!myNodePropertySettersMap.containsKey(key)) {
+      myNodePropertySettersMap.put(key, setter);
+    } else {
+      throw new RuntimeException("property setter is alredy registered for key '" + key + "' : " + myNodePropertySettersMap.get(key));
+    }
+  }
+
+  public void unRegisterNodePropertySetter(String conceptFqName, String propertyName) {
+    myNodePropertySettersMap.remove(conceptFqName + "#" + propertyName);
+  }
+
+
   public void registerNodeReferentSearchScopeProvider(String conceptFqName, String referenceRole, INodeReferentSearchScopeProvider provider) {
     String key = conceptFqName + "#" + referenceRole;
     if (!myNodeReferentSearchScopeProvidersMap.containsKey(key)) {
@@ -77,6 +92,14 @@ public class ModelConstraintsManager {
   }
 
   public INodePropertyGetter getNodePropertyGetter(SNode node, String propertyName) {
+    return (INodePropertyGetter) getNodePropertyGetterOrSetter(node, propertyName, false);
+  }
+
+  public INodePropertySetter getNodePropertySetter(SNode node, String propertyName) {
+    return (INodePropertySetter) getNodePropertyGetterOrSetter(node, propertyName, true);
+  }
+
+  public IModelConstraints getNodePropertyGetterOrSetter(SNode node, String propertyName, boolean isSetter) {
     String namespace = NameUtil.nodeLanguageNamespace(node);
     // 'bootstrap' properties
     if (namespace.equals("jetbrains.mps.bootstrap.structureLanguage")) {
@@ -96,8 +119,14 @@ public class ModelConstraintsManager {
     ConceptDeclaration concept = SModelUtil.getConceptDeclaration(node, GlobalScope.getInstance());
     while (concept != null) {
       String conceptFqName = NameUtil.nodeFQName(concept);
-      INodePropertyGetter getter = myNodePropertyGettersMap.get(conceptFqName + "#" + propertyName);
-      if (getter != null) return getter;
+      IModelConstraints result = null;
+      if (isSetter) {
+        result = myNodePropertySettersMap.get(conceptFqName + "#" + propertyName);
+      } else {
+        result = myNodePropertyGettersMap.get(conceptFqName + "#" + propertyName);
+      }
+      if (result != null) return result;
+
       concept = concept.getExtends();
     }
     return null;

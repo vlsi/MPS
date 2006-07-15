@@ -174,10 +174,10 @@
               <property name="drawBorder" value="false" />
               <property name="selectable" value="false" />
             </node>
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1149010905593">
-              <property name="textFgColor" value="gray" />
-              <property name="text" value="-not implemented-" />
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1152963133859">
               <property name="drawBorder" value="false" />
+              <property name="noTargetText" value="&lt;default&gt;" />
+              <link role="relationDeclaration" targetNodeId="1.1152963095733" />
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1149010905594">

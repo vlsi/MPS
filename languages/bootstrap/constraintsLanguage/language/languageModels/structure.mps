@@ -29,6 +29,11 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1147467790433" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1152963095733">
+      <property name="role" value="propertySetter" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1152959968041" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1147467351491">
     <property name="rootable" value="true" />
@@ -233,6 +238,37 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1148934569050">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1152959968041">
+    <property name="name" value="ConstraintFunction_PropertySetter" />
+    <link role="extends" targetNodeId="1147468248771" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1152960038436">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1137546998352" />
+      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1152960164975">
+        <property name="name" value="PropertySetter_FunctionParm_node" />
+        <link role="extends" targetNodeId="3.1107135704075" />
+        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1152960189265">
+          <property name="value" value="node" />
+          <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+        </node>
+        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1152960189266">
+          <property name="value" value="function parameter" />
+          <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+        </node>
+      </node>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1152960040908">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" />
+      <node role="target" type="jetbrains.mps.baseLanguage.VoidType" id="1152960114677" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1152960028074">
+      <property name="value" value="setter" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1152960028075">
+      <property name="value" value="embedded block of code" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
   </node>
 </model>

@@ -28,16 +28,17 @@ public class Graph implements IGraph {
     myVertices.add(vertex);
   }
 
-  public void connect(IVertex vertex1, IVertex vertex2) {
-    if (!myVertices.contains(vertex1)) return;
-    if (!myVertices.contains(vertex2)) return;
+  public boolean connect(IVertex vertex1, IVertex vertex2) {
+    if (!myVertices.contains(vertex1)) return false;
+    if (!myVertices.contains(vertex2)) return false;
     boolean connected = isConnected(vertex1, vertex2);
     IEdge connectingEdge;
-    if (connected) return;
+    if (connected) return false;
     connectingEdge = new Edge(vertex1, vertex2);
     myEdges.add(connectingEdge);
     myVerticesToConnectingEdges.put(new Pair<IVertex, IVertex>(vertex1, vertex2), connectingEdge);
     myVerticesToConnectingEdges.put(new Pair<IVertex, IVertex>(vertex2, vertex1), connectingEdge);
+    return true;
   }
 
   public boolean isConnected(IVertex vertex1, IVertex vertex2) {
