@@ -4055,5 +4055,21 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1153169300771">
+    <link role="conceptDeclaration" targetNodeId="17.1153169269488" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1153169309134">
+      <property name="drawBorder" value="false" />
+      <property name="noTargetText" value="&lt;no closure parameter&gt;" />
+      <link role="relationDeclaration" targetNodeId="17.1153169284473" />
+      <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1153169309135">
+        <link role="conceptDeclaration" targetNodeId="17.1153169193079" />
+        <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1153169313574">
+          <property name="textFgColor" value="DARK_BLUE" />
+          <property name="fontStyle" value="ITALIC" />
+          <link role="relationDeclaration" targetNodeId="18.1078489098626" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

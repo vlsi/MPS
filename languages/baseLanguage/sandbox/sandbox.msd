@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="sandbox">
+<solution name="sandbox" generatorOutputPath="${mps_home}\source_gen">
   <models>
     <modelRoot path="${solution_descriptor}\." namespacePrefix="jetbrains.mps.baseLanguage.sandbox" />
   </models>

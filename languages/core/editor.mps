@@ -5,11 +5,9 @@
   <import index="1" modelUID="jetbrains.mps.core.structure" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1117830771316">
     <link role="conceptDeclaration" targetNodeId="1.1078489098625" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1133922284504">
-      <property name="editable" value="true" />
-      <property name="textFgColor" value="lightGray" />
-      <property name="drawBorder" value="false" />
-      <property name="nullText" value="&lt;abstract named concept&gt;" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1152908253258">
+      <property name="noTargetText" value="&lt;no name&gt;" />
+      <link role="relationDeclaration" targetNodeId="1.1078489098626" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1133921100033">
