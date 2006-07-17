@@ -258,6 +258,21 @@
         </node>
       </node>
     </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1153138549097">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1137546998352" />
+      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1153138554286">
+        <property name="name" value="PropertySetter_FunctionParm_propertyValue" />
+        <link role="extends" targetNodeId="3.1107135704075" />
+        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1153138579851">
+          <property name="value" value="propertyValue" />
+          <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+        </node>
+        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1153138586884">
+          <property name="value" value="function parameter" />
+          <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+        </node>
+      </node>
+    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1152960040908">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" />
       <node role="target" type="jetbrains.mps.baseLanguage.VoidType" id="1152960114677" />
