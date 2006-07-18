@@ -1413,21 +1413,17 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1153169193079">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1153179527848">
     <property name="name" value="ClosureParameter" />
     <link role="extends" targetNodeId="4.1078489098625" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1153169241628">
-      <property name="value" value="closure parameter" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
-    </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1153169269488">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1153179560115">
     <property name="name" value="ClosureParameterReference" />
-    <link role="extends" targetNodeId="4.1133920641626" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1153169284473">
+    <link role="extends" targetNodeId="1068431790191" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1153179615652">
       <property name="sourceCardinality" value="1" />
-      <property name="role" value="parameter" />
-      <link role="target" targetNodeId="1153169193079" />
+      <property name="role" value="closureParameter" />
+      <link role="target" targetNodeId="1153179527848" />
     </node>
   </node>
 </model>
