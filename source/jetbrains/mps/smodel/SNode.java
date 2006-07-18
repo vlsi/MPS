@@ -532,7 +532,11 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public void setProperty(final String propertyName, String propertyValue) {
-    if (!myPropertySetterInProgress && !myModel.isLoading()) {
+    setProperty(propertyName, propertyValue, true);
+  }
+
+  public void setProperty(final String propertyName, String propertyValue, boolean usePropertySetter) {
+    if (!myPropertySetterInProgress && !myModel.isLoading() && usePropertySetter) {
       INodePropertySetter setter = ModelConstraintsManager.getInstance().getNodePropertySetter(this, propertyName);
       if (setter != null) {
         myPropertySetterInProgress = true;

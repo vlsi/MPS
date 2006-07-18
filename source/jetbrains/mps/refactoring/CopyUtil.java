@@ -29,7 +29,7 @@ public class CopyUtil {
     targetModel.addLanguage(SModelUtil.getLanguage(node, GlobalScope.getInstance()));
 
     for (String property : node.getProperties().keySet()) {
-      result.setProperty(property, node.getProperty(property));
+      result.setProperty(property, node.getProperty(property), false);
     }
 
     for (SReference reference : node.getReferences()) {
