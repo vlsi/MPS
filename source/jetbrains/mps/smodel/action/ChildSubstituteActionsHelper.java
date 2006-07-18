@@ -24,7 +24,7 @@ import java.util.*;
  * Time: 8:30:20 PM
  * To change this template use File | Settings | File Templates.
  */
-/*package*/ class ChildSubstituteActionsHelper {
+public class ChildSubstituteActionsHelper {
   private static final Logger LOG = Logger.getLogger(ChildSubstituteActionsHelper.class);
 
   public static final String DONT_SUBSTITUTE_BY_DEFAULT = "dontSubstituteByDefault";
