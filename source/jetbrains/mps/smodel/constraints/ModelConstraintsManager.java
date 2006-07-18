@@ -189,6 +189,7 @@ public class ModelConstraintsManager {
 
   public void reloadAll() {
     myNodePropertyGettersMap.clear();
+    myNodePropertySettersMap.clear();
     myNodeReferentSearchScopeProvidersMap.clear();
 
     for (String languageNamespace : myAddedLanguageNamespaces.keySet()) {
