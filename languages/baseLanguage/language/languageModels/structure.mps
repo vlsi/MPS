@@ -1416,6 +1416,9 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1153179527848">
     <property name="name" value="ClosureParameter" />
     <link role="extends" targetNodeId="4.1078489098625" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1153248228121">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1153179560115">
     <property name="name" value="ClosureParameterReference" />
