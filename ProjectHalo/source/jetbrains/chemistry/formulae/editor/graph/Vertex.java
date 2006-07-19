@@ -12,7 +12,7 @@ import java.util.*;
 public class Vertex implements IVertex {
   private double myX;
   private double myY;
-  private Set<IEdge> myStar = new HashSet<IEdge>();
+  private List<IEdge> myStar = new ArrayList<IEdge>();
   private String myName;
   private Map myUserObjects = new HashMap();
 
@@ -42,8 +42,8 @@ public class Vertex implements IVertex {
     return myName + "("+myX+","+myY+")";
   }
 
-  public Set<IEdge> getStar() {
-    return new HashSet<IEdge>(myStar);
+  public List<IEdge> getStar() {
+    return new ArrayList<IEdge>(myStar);
   }
 
   public int getStarSize() {

@@ -135,4 +135,33 @@ public class GraphSamples {
     return result;
   }
 
+   public static IGraph getStuff() {
+    Graph result = new Graph();
+    IVertex c1 = new Vertex(200,200,"C");
+    IVertex c2 = new Vertex(200,200,"C");
+    IVertex c3 = new Vertex(200,200,"C");
+    IVertex c4 = new Vertex(200,200,"C");
+    IVertex c5 = new Vertex(200,200,"C");
+    IVertex c6 = new Vertex(200,200,"C");
+
+    result.addVertex(c1);
+    result.addVertex(c2);
+    result.addVertex(c3);
+    result.addVertex(c4);
+    result.addVertex(c5);
+    result.addVertex(c6);
+
+
+    result.connect(c6,c1);
+    result.connect(c1,c2);
+    result.connect(c2,c3);
+    result.connect(c3,c4);
+    result.connect(c4,c5);
+    result.connect(c5,c6);
+
+    result.connect(c2,c5);
+
+    return result;
+  }
+
 }
