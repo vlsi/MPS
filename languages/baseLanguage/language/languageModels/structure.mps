@@ -1429,5 +1429,13 @@
       <link role="target" targetNodeId="1153179527848" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1153417849900">
+    <property name="name" value="GreaterThanOrEqualsExpression" />
+    <link role="extends" targetNodeId="1081773326031" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1153417849901">
+      <property name="value" value="&gt;=" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+  </node>
 </model>
 
