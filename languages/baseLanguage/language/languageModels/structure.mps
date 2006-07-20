@@ -252,6 +252,10 @@
       <property name="value" value="==" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1153422715290">
+      <property name="value" value="equals operation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068580123155">
     <property name="name" value="ExpressionStatement" />
@@ -465,6 +469,10 @@
       <property name="value" value="-" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1153422833486">
+      <property name="value" value="minus operation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068581242872">
     <property name="name" value="NewExpression" />
@@ -516,6 +524,10 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107217497349">
       <property name="value" value="+" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1153422567547">
+      <property name="value" value="plus operation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068581242878">
@@ -765,6 +777,10 @@
       <property name="value" value="!=" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1153422759341">
+      <property name="value" value="not equals operation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1076505808687">
     <property name="name" value="WhileStatement" />
@@ -829,6 +845,10 @@
       <property name="value" value="&amp;&amp;" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1153422737855">
+      <property name="value" value="conditional-and operation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1080223426719">
     <property name="name" value="OrExpression" />
@@ -836,6 +856,10 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107217357058">
       <property name="value" value="||" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1153422654444">
+      <property name="value" value="conditional-or operation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1081236700937">
@@ -905,6 +929,10 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107216644516">
       <property name="value" value="&gt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1153422586346">
+      <property name="value" value="greater than operation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1081506773034">
@@ -1084,6 +1112,10 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107217265407">
       <property name="value" value="*" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1153422789952">
+      <property name="value" value="multiplication operation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1095950406618">
@@ -1435,6 +1467,34 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1153417849901">
       <property name="value" value="&gt;=" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1153422604489">
+      <property name="value" value="greater than or equals operation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1153422105332">
+    <property name="name" value="RemExpression" />
+    <link role="extends" targetNodeId="1081773326031" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1153422105333">
+      <property name="value" value="%" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1153422105334">
+      <property name="value" value="reminder operation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1153422305557">
+    <property name="name" value="LessThanOrEqualsExpression" />
+    <link role="extends" targetNodeId="1081773326031" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1153422305558">
+      <property name="value" value="&lt;=" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1153422305559">
+      <property name="value" value="less then or equals operation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
   </node>
 </model>
