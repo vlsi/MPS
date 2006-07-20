@@ -66,4 +66,8 @@ public class Vertex implements IVertex {
   public void putUserObject(Object key, Object value) {
     myUserObjects.put(key, value);
   }
+
+  public void removeUserObject(Object key) {
+    myUserObjects.remove(key);
+  }
 }

@@ -19,4 +19,5 @@ public interface IVertex {
   String getName();
   Object getUserObject(Object key);
   void putUserObject(Object key, Object value);
+  void removeUserObject(Object key);
 }

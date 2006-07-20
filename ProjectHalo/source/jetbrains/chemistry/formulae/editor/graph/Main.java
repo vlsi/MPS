@@ -26,31 +26,8 @@ public class Main extends JFrame {
     setVisible(true);
   }
 
-  public Main(IGraph graph, double forceConst) {
-    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    setSize(600,600);
-    getContentPane().add(new MyJComponent1(graph, forceConst));
-    setVisible(true);
-  }
-
   public static void main(String[] args) {
     new Main(GraphSamples.getEtan());
-  }
-
-  private class MyJComponent1 extends MyJComponent {
-    double myForceConst;
-
-    public MyJComponent1(IGraph graph, double forceConst) {
-      super(graph);
-      myForceConst = forceConst;
-      GraphLayouter.preliminaryLayout(graph, CENTER, CENTER);
-      addMouseListener(new MouseAdapter() {
-        public void mouseClicked(MouseEvent e) {
-          GraphLayouter.relayoutPhysically(myGraph, CENTER, CENTER, myForceConst);
-          repaint();
-        }
-      });
-    }
   }
 
   private class MyJComponent extends JComponent {
