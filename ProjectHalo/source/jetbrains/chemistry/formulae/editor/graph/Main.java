@@ -22,7 +22,7 @@ public class Main extends JFrame {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setSize(600,600);
     getContentPane().add(new MyJComponent(graph));
-    GraphLayouter.relayoutHierarchycally(graph, CENTER, CENTER);
+    PhysicalGraphLayouter.relayoutPhysicallyCompletely(graph, CENTER, CENTER);
     setVisible(true);
   }
 
@@ -40,25 +40,11 @@ public class Main extends JFrame {
       myVisualizer = new GraphVisualizer();
     }
 
-    private Color[] myColors = {Color.red, Color.green, Color.blue, Color.cyan, Color.magenta, Color.ORANGE,
-            Color.PINK, Color.BLACK, Color.GRAY, Color.LIGHT_GRAY};
 
     public void paint(Graphics g) {
       g.setColor(Color.white);
       g.fillRect(0,0,getWidth(),getHeight());
       myVisualizer.paint(myGraph, g);
-      Set<List<IVertex>> circuits = GraphUtil.findCircuits(myGraph);
-      int i = 0;
-      for (List<IVertex> circuit : circuits) {
-
-        Color c = myColors[i];
-        g.setColor(c);
-        for (IVertex vertex : circuit) {
-          g.drawOval((int) Math.round(vertex.getX()), (int) Math.round(vertex.getY()), 20, 20);
-        }
-        i++;
-        if (i >= 10) break;
-      }
     }
   }
 }

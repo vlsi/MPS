@@ -1,6 +1,7 @@
 package jetbrains.chemistry.formulae.editor.graph;
 
 import jetbrains.mps.util.Pair;
+import jetbrains.chemistry.formulae.editor.AtomVertex;
 
 import java.util.*;
 
@@ -11,7 +12,7 @@ import java.util.*;
  * Time: 17:37:37
  * To change this template use File | Settings | File Templates.
  */
-public class GraphLayouter1 {
+public class PhysicalGraphLayouter {
   public static final double BIG_TENSION_CONSTANT = 1;
 
   public static final double CULON_CONSTANT = 10000;
@@ -27,15 +28,15 @@ public class GraphLayouter1 {
     for (IVertex vertex : graph.getVertices()) {
       double x = vertex.getX();
       double y = vertex.getY();
-      vertex.setCoords(x+deltax,y+deltay);
+      vertex.trySetCoords(x+deltax,y+deltay);
     }
   }
 
-  public static void relayoutPhysically(IGraph graph, int baricenterx, int baricentery) {
+  private static void relayoutPhysically(IGraph graph, int baricenterx, int baricentery) {
     relayoutPhysically(graph, baricenterx, baricentery, false);
   }
 
-  public static void relayoutPhysically(IGraph graph, int baricenterx, int baricentery, boolean isSmallElectricity) {
+  private static void relayoutPhysically(IGraph graph, int baricenterx, int baricentery, boolean isSmallElectricity) {
     Map<IVertex,Pair<Double,Double>> forces = new HashMap<IVertex, Pair<Double, Double>>();
     Set<IVertex> vertices = graph.getVertices();
     final double ELECTRICITY_CONST = CULON_CONSTANT;
@@ -86,7 +87,7 @@ public class GraphLayouter1 {
       Pair<Double,Double> force = forces.get(vertex);
       double deltax = force.o1 * FORCE;
       double deltay = force.o2 * FORCE;
-      vertex.setCoords(x+deltax,y+deltay);
+      vertex.trySetCoords(x+deltax,y+deltay);
     }
 
     //reposition
@@ -113,7 +114,7 @@ public class GraphLayouter1 {
     for (IVertex vertex : vertices) {
       double x = baricenterx + Math.cos(currentAngle) * radius;
       double y = baricentery + Math.sin(currentAngle) * radius;
-      vertex.setCoords(x,y);
+      vertex.trySetCoords(x,y);
       currentAngle = currentAngle + angle;
     }
   }
@@ -130,6 +131,9 @@ public class GraphLayouter1 {
     }
     for (int i = 1; i<= iterationsCount*2; i++) {
       relayoutPhysically(graph, baricenterx,  baricentery, true);
+    }
+    for (IVertex vertex : graph.getVertices()) {
+      vertex.confirmCoords();
     }
   }
 }

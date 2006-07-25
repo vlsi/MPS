@@ -18,7 +18,6 @@ public interface IGraph {
   boolean connect(IVertex vertex1, IVertex vertex2);
   boolean isConnected(IVertex vertex1, IVertex vertex2);
   Pair<Integer,Integer> getBaricenter();
-  void moveRelatively(double deltax, double deltay);
   int getVerticesCount();
   int getEdgesCount();
 }

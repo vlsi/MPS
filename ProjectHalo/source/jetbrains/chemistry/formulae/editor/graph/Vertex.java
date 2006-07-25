@@ -54,9 +54,18 @@ public class Vertex implements IVertex {
     myStar.add(e);
   }
 
-  public void setCoords(double newx, double newy) {
+  public void trySetCoords(double newx, double newy) {
     myX = newx;
     myY = newy;
+  }
+
+  public void setCoords(double newx, double newy) {
+    trySetCoords(newx, newy);
+    confirmCoords();
+  }
+
+  public void confirmCoords() {
+
   }
 
   public Object getUserObject(Object key) {

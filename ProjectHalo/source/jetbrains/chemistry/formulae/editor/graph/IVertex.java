@@ -16,6 +16,8 @@ public interface IVertex {
   int getStarSize();
   void addEdge(IEdge e);
   void setCoords(double newx, double newy);
+  void trySetCoords(double newx, double newy);
+  void confirmCoords();
   String getName();
   Object getUserObject(Object key);
   void putUserObject(Object key, Object value);
