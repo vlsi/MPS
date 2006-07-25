@@ -17,7 +17,7 @@ public class PhysicalGraphLayouter {
 
   public static final double CULON_CONSTANT = 10000;
 
-  public static final double IDLE_LENGTH = 50;
+  public static final double IDLE_LENGTH = 40;
 
   public static final double FORCE_CONST_1 = 0.3 / BIG_TENSION_CONSTANT;
 
@@ -52,7 +52,8 @@ public class PhysicalGraphLayouter {
       IVertex vertex1 = edge.getFirst();
       IVertex vertex2 = edge.getSecond();
       double dist = distance(vertex1, vertex2);
-      double tension = (dist - IDLE_CONST)*TENSION;
+      double rawTension = (dist - IDLE_CONST) * TENSION;
+      double tension = isSmallElectricity ? rawTension : rawTension / 3;
       double forcex = ((vertex2.getX() - vertex1.getX())/dist)*tension;
       double forcey = ((vertex2.getY() - vertex1.getY())/dist)*tension;
       Pair<Double, Double> force1 = forces.get(vertex1);
@@ -68,7 +69,7 @@ public class PhysicalGraphLayouter {
         IVertex vertex1 = verticesList.get(i);
         IVertex vertex2 = verticesList.get(j);
         double dist = distance(vertex1, vertex2);
-        double culon = isSmallElectricity ? ELECTRICITY_CONST/(dist*dist) : 10;
+        double culon = isSmallElectricity ? ELECTRICITY_CONST/(dist*dist) : 30;
         double forcex = ((vertex2.getX() - vertex1.getX())/dist)*culon;
         double forcey = ((vertex2.getY() - vertex1.getY())/dist)*culon;
         Pair<Double, Double> force1 = forces.get(vertex1);
