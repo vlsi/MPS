@@ -1097,7 +1097,7 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1153180468685">
             <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1153180480843">
-              <property name="value" value="couldn't find enclosing closure node" />
+              <property name="value" value="couldn't find enclosing closure" />
             </node>
           </node>
         </node>

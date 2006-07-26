@@ -1329,7 +1329,7 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1144226396076">
-      <property name="value" value="for (type name : expression)" />
+      <property name="value" value="for (type name : iterable)" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1144226360166">
@@ -1378,7 +1378,7 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1144231342812">
-      <property name="value" value="for statement" />
+      <property name="value" value="for( type name = init; condition; update )" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
   </node>
