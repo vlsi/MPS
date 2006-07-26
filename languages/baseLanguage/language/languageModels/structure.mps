@@ -1497,5 +1497,25 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1153952380246">
+    <property name="name" value="TryStatement" />
+    <link role="extends" targetNodeId="1068580123157" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1153952416686">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="body" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1068580123136" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1153952429843">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="finallyBody" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1068580123136" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1153952400404">
+      <property name="value" value="try" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+  </node>
 </model>
 

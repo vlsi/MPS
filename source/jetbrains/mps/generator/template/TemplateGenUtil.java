@@ -122,8 +122,12 @@ public class TemplateGenUtil {
   private static INodeBuilder loadNodeBuilder(SNode sourceNode, SNode templateNode, String mappingName, boolean isCopying, ITemplateGenerator generator) {
     // custom builders are only available for target language
     Language targetLanguage = generator.getTargetLanguage();
-    String buildersPackageName = targetLanguage.getNamespace() + ".builder";
     String conceptName = templateNode.getConceptName();
+    if (targetLanguage.findConceptDeclaration(conceptName) == null) {
+      // concept is not declared in 'target language'
+      return null;
+    }
+    String buildersPackageName = targetLanguage.getNamespace() + ".builder";
     String builderClassName = buildersPackageName + "." + conceptName + "_NodeBuilder";
     try {
       Class builderClass = Class.forName(builderClassName, true, ClassLoaderManager.getInstance().getClassLoader());
