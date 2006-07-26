@@ -13,10 +13,10 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class SimpleSearchScope extends AbstractSearchScope {
-  private List<? extends SNode> myNodes;
+  private List<SNode> myNodes;
 
   public SimpleSearchScope(List<? extends SNode> nodes) {
-    myNodes = nodes;
+    myNodes = (List) nodes;
   }
 
   public SimpleSearchScope(Iterator<? extends SNode> nodes) {
@@ -25,6 +25,13 @@ public class SimpleSearchScope extends AbstractSearchScope {
       list.add(nodes.next());
     }
     myNodes = list;
+  }
+
+  public SimpleSearchScope(SNode node) {
+    myNodes = new LinkedList<SNode>();
+    if (node != null) {
+      myNodes.add(node);
+    }
   }
 
   protected List<SNode> getOwnNodes(Condition<SNode> condition) {
