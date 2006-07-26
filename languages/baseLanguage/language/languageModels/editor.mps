@@ -1262,10 +1262,11 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1080902646660">
       <property name="drawBorder" value="false" />
       <property name="vertical" value="false" />
-      <link role="keyMap" targetNodeId="1143884473873" />
+      <link role="keyMap" targetNodeId="1081427357000" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1144186748520">
         <property name="drawBorder" value="false" />
         <link role="actionMap" targetNodeId="1144185359094" />
+        <link role="keyMap" targetNodeId="1143884473873" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1144186756096">
           <property name="text" value="(" />
           <property name="drawBorder" value="false" />
