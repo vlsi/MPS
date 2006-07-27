@@ -1,7 +1,5 @@
 package jetbrains.mps.util;
 
-import jetbrains.mps.smodel.SNode;
-
 /**
  * Author: Sergey Dmitriev.
  * Time: Nov 24, 2003 1:27:18 PM

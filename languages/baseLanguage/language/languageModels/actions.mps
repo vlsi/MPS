@@ -15,6 +15,11 @@
       <property name="applicableLinkMetaclass" value="aggregation" />
       <link role="applicableConcept" targetNodeId="1.1068580123157" />
     </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1154033305516">
+      <property name="actionsFactoryAspectId" value="Continue_Break_statements" />
+      <property name="preconditionAspectId" value="Inside_AbstractLoopStatement" />
+      <link role="applicableConcept" targetNodeId="1.1068580123157" />
+    </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1127762018548">
       <property name="actionsFactoryAspectId" value="ParameterDeclaration" />
       <property name="applicableLinkMetaclass" value="aggregation" />
