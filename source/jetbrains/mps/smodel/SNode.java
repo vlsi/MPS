@@ -53,6 +53,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   private HashMap<Object, Object> myUserObjects = new HashMap<Object, Object>();
   private boolean myPropertySetterInProgress = false;
+  private boolean myPropertyGetterInProgress = false;
 
   protected SNode(SModel model) {
     myModel = model;
@@ -482,13 +483,17 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName);
     NodeSecurityManager.getInstance().checkPropertyAvailable(this, propertyName, false);
 
-    {
+    if (!myPropertyGetterInProgress) {
       INodePropertyGetter getter = ModelConstraintsManager.getInstance().getNodePropertyGetter(this, propertyName);
       if (getter != null) {
-        return getter.execPropertyGet(this, propertyName);
+        myPropertyGetterInProgress = true;
+        String propertyValue = getter.execPropertyGet(this, propertyName);
+        myPropertyGetterInProgress = false;
+        return propertyValue;
       }
-      return myProperties.get(propertyName);
     }
+    return myProperties.get(propertyName);
+
 
     // *** if ModelConstraintsManager doesn't work, then comment block above and uncomment line below ***
 
