@@ -177,19 +177,15 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     // ----
     myActionMap.put(EditorCellAction.RENDER_TEXT, new CellAction_RenderText());
     // ----
-/*    myActionMap.put(EditorCellAction.MK_PROPERTY_COMMENT, new NodeEditorActions.MK_PROPERTY_COMMENT());
-    myActionMap.put(EditorCellAction.MK_COMMENT, new NodeEditorActions.MK_COMMENT());
-    myActionMap.put(EditorCellAction.MK_LINK_COMMENT, new NodeEditorActions.MK_LINK_COMMENT());*/
-
-    registerNodeAction(new ShowNodeTypeAction());
-    registerNodeAction(new FindUsagesNodeAction());
-    registerNodeAction(new ShowInProjectAction());
-    registerNodeAction(new GoByFirstReferenceAction());
-    registerNodeAction(new GoToConceptDeclarationAction());
-    registerNodeAction(new GoToEditorDeclarationAction());
-    registerNodeAction(new GoToConceptEditorDeclarationAction());
-    registerNodeAction(new InlineVariableAction());
-    registerNodeAction(new IntroduceVariableAction());
+    
+    ActionGroup group = ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS);
+    if (group != null) {
+      for (ActionGroupElement e : group.getElements()) {
+        if (e instanceof MPSAction) {
+          registerNodeAction((MPSAction) e);
+        }
+      }
+    }
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
