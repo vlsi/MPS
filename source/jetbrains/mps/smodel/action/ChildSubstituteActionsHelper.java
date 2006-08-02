@@ -2,6 +2,7 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions;
 import jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder;
+import jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunction;
 import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
@@ -14,6 +15,7 @@ import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethod;
+import jetbrains.mps.util.QueryMethodGenerated;
 
 import java.util.*;
 
@@ -249,6 +251,21 @@ public class ChildSubstituteActionsHelper {
   // --------------------------------
 
   private static boolean satisfiesPrecondition(NodeSubstituteActionsBuilder actionsBuilder, SNode parentNode, IOperationContext context) {
+    // try generatred query method
+    NodeSubstitutePreconditionFunction precondition = actionsBuilder.getPrecondition();
+    // precondition is optional
+    if (precondition != null) {
+      String methodName = ActionQueryMethodName.nodeSubstituteActionsBuilder_Precondition(actionsBuilder);
+      Object[] args = new Object[]{parentNode, context};
+      SModel model = actionsBuilder.getModel();
+      try {
+        return (Boolean) QueryMethodGenerated.invoke(methodName, args, model, true);
+      } catch (Exception e) {
+        return false;
+      }
+    }
+
+    // try old query method
     String preconditionQueryMethodId = actionsBuilder.getPreconditionAspectId();
     // precondition is optional
     if (preconditionQueryMethodId == null) {

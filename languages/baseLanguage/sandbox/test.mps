@@ -257,6 +257,15 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.WhileStatement" id="1154536494177">
+          <node role="condition" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1154536496837">
+            <property name="value" value="true" />
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1154536494179">
+            <node role="statement" type="jetbrains.mps.baseLanguage.BreakStatement" id="1154540178627" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.ContinueStatement" id="1154540194208" />
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1137820843009">
         <property name="name" value="ffff" />

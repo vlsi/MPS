@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.actions">
   <language namespace="jetbrains.mps.bootstrap.actionsLanguage" />
-  <maxImportIndex value="1" />
+  <language namespace="jetbrains.mps.baseLanguage" />
+  <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" />
+  <import index="2" modelUID="jetbrains.mps.smodel@java_stub" />
+  <import index="3" modelUID="jetbrains.mps.baseLanguage.actions@java_stub" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1115842744505">
     <property name="name" value="BL_node_substitute" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1115842748115">
@@ -17,8 +20,18 @@
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1154033305516">
       <property name="actionsFactoryAspectId" value="Continue_Break_statements" />
-      <property name="preconditionAspectId" value="Inside_AbstractLoopStatement" />
       <link role="applicableConcept" targetNodeId="1.1068580123157" />
+      <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunction" id="1154539862600">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1154539862601">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1154539941645">
+            <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1154539947981">
+              <link role="baseMethodDeclaration" extResolveInfo="3.static method ([Classifier]CanAddBreakOrContinueStatement).([StaticMethodDeclaration]check((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
+              <link role="classConcept" extResolveInfo="3.[Classifier]CanAddBreakOrContinueStatement" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionParm_parentNode" id="1154539947982" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1127762018548">
       <property name="actionsFactoryAspectId" value="ParameterDeclaration" />
