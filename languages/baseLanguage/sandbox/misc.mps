@@ -73,5 +73,40 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1154543408784">
+    <property name="name" value="Arraysss" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1154543420692">
+      <property name="name" value="newArray" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1154543422788" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1154543420694">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1154543432617">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1154543432618">
+            <property name="name" value="ints" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ArrayType" id="1154543437136">
+              <node role="componentType" type="jetbrains.mps.baseLanguage.IntegerType" id="1154543432619" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1154543686468">
+              <node role="creator" type="jetbrains.mps.baseLanguage.ArrayCreatorWithInitializer" id="1154543689017">
+                <node role="componentType" type="jetbrains.mps.baseLanguage.IntegerType" id="1154543693675" />
+                <node role="initValue" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1154543790458">
+                  <property name="value" value="10" />
+                </node>
+                <node role="initValue" type="jetbrains.mps.baseLanguage.ParameterReference" id="1154544756285">
+                  <link role="variableDeclaration" targetNodeId="1154544745892" />
+                </node>
+                <node role="initValue" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1154543801869">
+                  <property name="value" value="30" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1154544745892">
+        <property name="name" value="val" />
+        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1154544745893" />
+      </node>
+    </node>
+  </node>
 </model>
 

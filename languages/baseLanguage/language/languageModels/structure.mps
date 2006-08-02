@@ -1518,5 +1518,26 @@
       <link role="target" targetNodeId="1068580123136" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1154542696413">
+    <property name="name" value="ArrayCreatorWithInitializer" />
+    <link role="extends" targetNodeId="1145552809883" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1154542793668">
+      <property name="sourceCardinality" value="1" />
+      <property name="targetCardinality" value="0..1" />
+      <property name="role" value="componentType" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1068431790189" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1154542803372">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="initValue" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1068431790191" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1154542735633">
+      <property name="value" value="array with initializer" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+  </node>
 </model>
 
