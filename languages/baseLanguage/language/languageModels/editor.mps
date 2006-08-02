@@ -4182,6 +4182,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1154543050632">
         <property name="separatorText" value="," />
         <property name="drawBorder" value="false" />
+        <property name="selectable" value="false" />
         <link role="relationDeclaration" targetNodeId="17.1154542803372" />
         <node role="emptyCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1154543473706">
           <property name="editable" value="true" />

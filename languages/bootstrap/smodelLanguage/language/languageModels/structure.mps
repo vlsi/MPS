@@ -212,6 +212,10 @@
       <link role="conceptLinkDeclaration" targetNodeId="1144102537873" />
       <link role="target" targetNodeId="1144101972840" />
     </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1154547378160">
+      <link role="conceptLinkDeclaration" targetNodeId="1144102537873" />
+      <link role="target" targetNodeId="1154546920561" />
+    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1144102712066">
       <link role="conceptLinkDeclaration" targetNodeId="1144102537873" />
       <link role="target" targetNodeId="1144100932627" />
@@ -791,6 +795,29 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1146253292184">
       <link role="conceptPropertyDeclaration" targetNodeId="1138763303089" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1154546920561">
+    <property name="name" value="OperationParm_ConceptList" />
+    <link role="extends" targetNodeId="1144100743722" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1154546920562">
+      <property name="value" value="concept in" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1154546920563">
+      <property name="sourceCardinality" value="1..n" />
+      <property name="role" value="concept" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1154546950173" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1154546950173">
+    <property name="name" value="ConceptReference" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1154546997487">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="concept" />
+      <link role="target" targetNodeId="3.1071489090640" />
     </node>
   </node>
 </model>

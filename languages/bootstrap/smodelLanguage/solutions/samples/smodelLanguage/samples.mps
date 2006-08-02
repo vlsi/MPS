@@ -658,6 +658,39 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1154554569772">
+      <property name="name" value="accessToParentNode_3" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1154554569773">
+        <property name="name" value="expression" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1154554569774">
+          <link role="concept" targetNodeId="1.1068431790191" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1154554569775" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1154554569776">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1154554569777">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1154554569778">
+            <property name="name" value="parent_If_or_WhileStatement" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1154554569779" />
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1154554569780">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1154554569781">
+                <link role="variableDeclaration" targetNodeId="1154554569773" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1154554569782">
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_ConceptList" id="1154554584737">
+                  <node role="concept" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptReference" id="1154554587926">
+                    <link role="concept" targetNodeId="1.1068580123159" />
+                  </node>
+                  <node role="concept" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptReference" id="1154554591272">
+                    <link role="concept" targetNodeId="1.1076505808687" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1145579089043">
     <property name="name" value="TypeCast" />

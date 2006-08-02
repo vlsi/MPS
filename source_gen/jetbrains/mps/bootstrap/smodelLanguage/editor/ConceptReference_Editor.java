@@ -15,14 +15,14 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class SConceptPropertyAccess_Editor extends DefaultNodeEditor {
+public class ConceptReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConceptPropertyReferenceCell(context, node);
+    return this.createConceptReferenceCell(context, node);
   }
-  public EditorCell createConceptPropertyReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+  public EditorCell createConceptReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new SConceptPropertyAccess_Editor_conceptProperty_InlineComponent());
+    provider.setAuxiliaryCellProvider(new ConceptReference_Editor_concept_InlineComponent());
     EditorCell editorCell = provider.createEditorCell(context);
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(false);
@@ -32,18 +32,18 @@ public class SConceptPropertyAccess_Editor extends DefaultNodeEditor {
       editorCellLabel.setEditable(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.putUserObject(EditorCell.CELL_ID, "1145994913699");
+    editorCell.putUserObject(EditorCell.CELL_ID, "1154547037209");
     editorCell.setLayoutConstraint("");
     ((EditorCell_Basic)editorCell).setParseable(false);
     return editorCell;
   }
-  public EditorCell createConceptPropertyReferenceCell(EditorContext context, SNode node) {
+  public EditorCell createConceptReferenceCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
-    provider.setRole("conceptProperty");
-    provider.setNoTargetText("<no concept property>");
+    provider.setRole("concept");
+    provider.setNoTargetText("<choose concept>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
-    EditorCell cellWithRole = this.createConceptPropertyReferenceCellinternal(context, node, provider);
+    EditorCell cellWithRole = this.createConceptReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {
