@@ -47,9 +47,17 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1154465102724" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1154621882785">
+      <property name="value" value="'preconditionAspectId' property is replaced with 'precondition block'" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1154621836409" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1138079221458">
     <property name="name" value="RTransformHintSubstituteActionsBuilder" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1154622781911">
+      <property name="value" value="'preconditionAspectId' property is replaced with 'precondition block'" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1154621836409" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1140829165817">
       <property name="name" value="transformTag" />
       <link role="dataType" targetNodeId="1140829206022" />
@@ -71,6 +79,12 @@
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="applicableConcept" />
       <link role="target" targetNodeId="2.1071489090640" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1154622757656">
+      <property name="sourceCardinality" value="0..1" />
+      <property name="role" value="precondition" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1154622616118" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1138079416598">
@@ -174,7 +188,7 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1154464847014">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137546998352" />
       <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1154464849297">
-        <property name="name" value="ActionBlockParm_operationContext" />
+        <property name="name" value="BaseActionFunctionParm_operationContext" />
         <link role="extends" targetNodeId="3.1107135704075" />
         <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1154465012361">
           <property name="value" value="operationContext" />
@@ -215,6 +229,33 @@
       </node>
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1154537040310">
+      <property name="value" value="precondition block" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1154622616118">
+    <property name="name" value="RTransformHintSubstitutePreconditionFunction" />
+    <link role="extends" targetNodeId="1154464638507" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1154622616119">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" />
+      <node role="target" type="jetbrains.mps.baseLanguage.BooleanType" id="1154622616120" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1154622616121">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1137546998352" />
+      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1154622616122">
+        <property name="name" value="RTransformHintSubstitutePreconditionParm_sourceNode" />
+        <link role="extends" targetNodeId="3.1107135704075" />
+        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1154622616123">
+          <property name="value" value="sourceNode" />
+          <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+        </node>
+        <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1154622616124">
+          <link role="conceptLinkDeclaration" targetNodeId="3.1137545963098" />
+          <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1154622616125" />
+        </node>
+      </node>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1154622616126">
       <property name="value" value="precondition block" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>

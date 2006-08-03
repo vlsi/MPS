@@ -3,6 +3,9 @@
   <structure>
     <model modelUID="jetbrains.mps.bootstrap.actionsLanguage.structure" />
   </structure>
+  <typeSystem>
+    <model modelUID="jetbrains.mps.bootstrap.actionsLanguage.types" />
+  </typeSystem>
   <actions>
     <model modelUID="jetbrains.mps.bootstrap.actionsLanguage.actions" />
   </actions>

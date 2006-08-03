@@ -1,11 +1,13 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder;
+import jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction;
 import jetbrains.mps.bootstrap.actionsLanguage.RTransformTag;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethod;
+import jetbrains.mps.util.QueryMethodGenerated;
 
 import java.util.*;
 
@@ -83,8 +85,23 @@ import java.util.*;
   // Query methods invocation...
   // --------------------------------
 
-  private static boolean satisfiesPrecondition(RTransformHintSubstituteActionsBuilder substituteActionsBuilder, SNode sourceNode, IOperationContext context) {
-    String preconditionQueryMethodId = substituteActionsBuilder.getPreconditionAspectId();
+  private static boolean satisfiesPrecondition(RTransformHintSubstituteActionsBuilder actionsBuilder, SNode sourceNode, IOperationContext context) {
+    // try generatred query method
+    RTransformHintSubstitutePreconditionFunction precondition = actionsBuilder.getPrecondition();
+    // precondition is optional
+    if (precondition != null) {
+      String methodName = ActionQueryMethodName.rTransformHintSubstituteActionsBuilder_Precondition(actionsBuilder);
+      Object[] args = new Object[]{sourceNode, context};
+      SModel model = actionsBuilder.getModel();
+      try {
+        return (Boolean) QueryMethodGenerated.invoke(methodName, args, model, true);
+      } catch (Exception e) {
+        return false;
+      }
+    }
+
+    // try old query method
+    String preconditionQueryMethodId = actionsBuilder.getPreconditionAspectId();
     // precondition is optional
     if (preconditionQueryMethodId == null) {
       return true;
@@ -93,7 +110,7 @@ import java.util.*;
     Object[] args1 = new Object[]{sourceNode, context};
     Object[] args2 = new Object[]{sourceNode, context.getScope()};
     String methodName = "rightTransformHintSubstituteActionsBuilder_Precondition_" + preconditionQueryMethodId;
-    SModel model = substituteActionsBuilder.getModel();
+    SModel model = actionsBuilder.getModel();
     return (Boolean) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
   }
 
