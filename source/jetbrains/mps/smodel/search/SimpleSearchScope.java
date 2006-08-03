@@ -34,7 +34,7 @@ public class SimpleSearchScope extends AbstractSearchScope {
     }
   }
 
-  protected List<SNode> getOwnNodes(Condition<SNode> condition) {
+  public List<SNode> getOwnNodes(Condition<SNode> condition) {
     List<SNode> result = null;
     for (SNode node : myNodes) {
       if (condition.met(node)) {

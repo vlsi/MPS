@@ -13,7 +13,7 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class EmptySearchScope extends AbstractSearchScope {
-  protected List<SNode> getOwnNodes(Condition<SNode> condition) {
+  public List<SNode> getOwnNodes(Condition<SNode> condition) {
     return Collections.emptyList();
   }
 }

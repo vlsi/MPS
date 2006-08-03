@@ -19,7 +19,7 @@ public class SubnodesSearchScope extends AbstractSearchScope {
     myEnclosingNode = enclosingNode;
   }
 
-  protected List<SNode> getOwnNodes(Condition<SNode> condition) {
+  public List<SNode> getOwnNodes(Condition<SNode> condition) {
     return myEnclosingNode.getSubnodes(condition);
   }
 }

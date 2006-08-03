@@ -40,7 +40,7 @@ public abstract class AbstractSearchScope implements ISearchScope {
     return null;
   }
 
-  protected abstract List<SNode> getOwnNodes(Condition<SNode> condition);
+  public abstract List<SNode> getOwnNodes(Condition<SNode> condition);
 
   public void append(ISearchScope scope) {
     if (myAppendedScopes == null) {
