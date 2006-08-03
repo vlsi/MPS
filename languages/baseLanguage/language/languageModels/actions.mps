@@ -2,10 +2,12 @@
 <model name="jetbrains.mps.baseLanguage.actions">
   <language namespace="jetbrains.mps.bootstrap.actionsLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
-  <maxImportIndex value="3" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.smodel@java_stub" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.actions@java_stub" />
+  <import index="4" modelUID="jetbrains.mps.core.structure" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1115842744505">
     <property name="name" value="BL_node_substitute" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActionsBuilder" id="1115842748115">
@@ -23,11 +25,33 @@
       <link role="applicableConcept" targetNodeId="1.1068580123157" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunction" id="1154539862600">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1154539862601">
+          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1154567871793">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1154567871794">
+              <property name="name" value="parent" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1154567871796" />
+              <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1154567797129">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionParm_parentNode" id="1154567765933" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1154567799302">
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_ConceptList" id="1154567826726">
+                    <node role="concept" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptReference" id="1154567844056">
+                      <link role="concept" targetNodeId="1.1154032098014" />
+                    </node>
+                    <node role="concept" type="jetbrains.mps.bootstrap.smodelLanguage.ConceptReference" id="1154567849120">
+                      <link role="concept" targetNodeId="1.1152728232947" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1154539941645">
-            <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1154539947981">
-              <link role="baseMethodDeclaration" extResolveInfo="3.static method ([Classifier]CanAddBreakOrContinueStatement).([StaticMethodDeclaration]check((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
-              <link role="classConcept" extResolveInfo="3.[Classifier]CanAddBreakOrContinueStatement" />
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionParm_parentNode" id="1154539947982" />
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1154567893299">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1154567890767">
+                <link role="variableDeclaration" targetNodeId="1154567871794" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1154567900144">
+                <link role="concept" targetNodeId="1.1154032098014" />
+              </node>
             </node>
           </node>
         </node>
