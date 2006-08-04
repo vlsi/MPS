@@ -124,6 +124,14 @@ public class CollectionUtil {
     }
     return result;    
   }
+
+  public static<R,P> List<R> map(List<P> list, Mapper<P,R> mapper) {
+    List<R> result = new ArrayList<R>();
+    for (P p : list) {
+      result.add(mapper.map(p));
+    }
+    return result;
+  }
   
   public static<Node extends SNode> Node getByName(Class<Node> cls, Iterable<? extends SNode> collection, String name) {
     for (SNode node : collection) {
