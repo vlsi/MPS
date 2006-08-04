@@ -296,11 +296,11 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1154652188162">
-          <node role="expression" type="jetbrains.mps.baseLanguage.AndExpression" id="1154652846378">
+          <node role="expression" type="jetbrains.mps.baseLanguage.OrExpression" id="1154723908373">
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1154652400609">
               <link role="variableDeclaration" targetNodeId="1154652093234" />
             </node>
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.AndExpression" id="1154652850989">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.OrExpression" id="1154723912593">
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1154652418176">
                 <link role="variableDeclaration" targetNodeId="1154652102379" />
               </node>

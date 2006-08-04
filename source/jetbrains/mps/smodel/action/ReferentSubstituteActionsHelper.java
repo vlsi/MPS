@@ -2,6 +2,7 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActions;
 import jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActionsBuilder;
+import jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstitutePreconditionFunction;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.ide.IStatus;
@@ -11,6 +12,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethod;
+import jetbrains.mps.util.QueryMethodGenerated;
 
 import java.util.*;
 
@@ -157,6 +159,21 @@ import java.util.*;
   // --------------------------------
 
   private static boolean satisfiesPrecondition(ReferentSubstituteActionsBuilder actionsBuilder, SNode sourceNode, IOperationContext context) {
+    // try generatred query method
+    ReferentSubstitutePreconditionFunction precondition = actionsBuilder.getPrecondition();
+    // precondition is optional
+    if (precondition != null) {
+      String methodName = ActionQueryMethodName.referentSubstituteActionsBuilder_Precondition(actionsBuilder);
+      Object[] args = new Object[]{sourceNode, context};
+      SModel model = actionsBuilder.getModel();
+      try {
+        return (Boolean) QueryMethodGenerated.invoke(methodName, args, model, true);
+      } catch (Exception e) {
+        return false;
+      }
+    }
+
+    // try old query method
     String preconditionQueryMethodId = actionsBuilder.getPreconditionAspectId();
     // precondition is optional
     if (preconditionQueryMethodId == null) {
@@ -169,16 +186,6 @@ import java.util.*;
     SModel model = actionsBuilder.getModel();
     return (Boolean) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
   }
-
-//  private static ISearchScope invokeSearchScopeProvider(ReferentSubstituteActionsBuilder builder, SNode sourceNode, IOperationContext context) {
-//    String searchScopeQueryMethodId = builder.getSearchScopeProviderAspectId();
-//    Object[] args1 = new Object[]{sourceNode, context};
-//    Object[] args2 = new Object[]{sourceNode, context.getScope()};
-//    String methodName = "referentSubstituteActionsBuilder_SearchScope_" + searchScopeQueryMethodId;
-//    SModel model = builder.getModel();
-//    return (ISearchScope) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
-//  }
-
 
   private static List<INodeSubstituteAction> applyActionFilter(ReferentSubstituteActionsBuilder builder, List<INodeSubstituteAction> actions, IOperationContext context) {
     String filterQueryMethodId = builder.getActionsFilterAspectId();

@@ -12,7 +12,6 @@
     <link role="conceptDeclaration" targetNodeId="1.1112058030570" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1112058369172">
       <property name="drawBorder" value="false" />
-      <property name="usesBraces" value="true" />
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1112058427767">
         <property name="text" value="node concept:" />
@@ -122,6 +121,10 @@
             <property name="drawBorder" value="false" />
             <property name="cellProviderId" value="NodeSubstituteActionsBuilder_ActionsFilter" />
           </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1154723611001">
+          <property name="drawBorder" value="false" />
+          <link role="actionMap" targetNodeId="1154641926095" />
         </node>
       </node>
     </node>
@@ -378,7 +381,6 @@
     <link role="conceptDeclaration" targetNodeId="1.1141170287031" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1141170622281">
       <property name="drawBorder" value="false" />
-      <property name="usesBraces" value="true" />
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1144963593261">
         <property name="drawBorder" value="false" />
@@ -450,8 +452,9 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1144963272092">
           <property name="drawBorder" value="false" />
           <property name="selectable" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1144963272093">
-            <property name="text" value="condition" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1154723757472">
+            <property name="textFgColor" value="red" />
+            <property name="text" value="condition (old)" />
             <property name="drawBorder" value="false" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1144963272094">
@@ -462,6 +465,21 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Custom" id="1144964172524">
             <property name="drawBorder" value="false" />
             <property name="cellProviderId" value="ReferentSubstituteActionsBuilder_Precondition" />
+          </node>
+          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1154723674535">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1154723674536">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1154723676631">
+                <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1154724005058">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1154723976006">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.NodeCondition_FunctionParm_node" id="1154723683742" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1154723991835">
+                      <link role="property" targetNodeId="1.1144963886325" />
+                    </node>
+                  </node>
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1154724014168" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1144963298353">
@@ -494,6 +512,24 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1154724066943">
+          <property name="drawBorder" value="false" />
+          <property name="selectable" value="false" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1154724066944">
+            <property name="text" value="condition" />
+            <property name="drawBorder" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1154724066945">
+            <property name="text" value=":" />
+            <property name="drawBorder" value="false" />
+            <property name="selectable" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1154724066946">
+            <property name="drawBorder" value="false" />
+            <property name="noTargetText" value="&lt;none&gt;" />
+            <link role="relationDeclaration" targetNodeId="1.1154722801297" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1144963272096">
@@ -529,6 +565,10 @@
             <property name="drawBorder" value="false" />
             <property name="cellProviderId" value="ReferentSubstituteActionsBuilder_ActionsFilter" />
           </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1154723632300">
+          <property name="drawBorder" value="false" />
+          <link role="actionMap" targetNodeId="1154641926095" />
         </node>
       </node>
     </node>
