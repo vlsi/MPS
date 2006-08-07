@@ -83,6 +83,9 @@ public class TypeChecker {
     for (Pair<SNode, NodeWrapperType> contextEntry : mainContext) {
       SNode term = contextEntry.o1;
       NodeWrapperType wrapperType = expandType(contextEntry.o2, typesModel);
+      if (wrapperType.getSNode() instanceof RuntimeErrorType) {
+        reportTypeError(wrapperType, term);
+      }
       term.putUserObject(TYPE_OF_TERM, wrapperType);
     }
 
