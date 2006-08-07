@@ -2,6 +2,7 @@ package jetbrains.mps.helgins.evaluator;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.helgins.*;
 import jetbrains.mps.helgins.inference.ContextsManager;
@@ -27,6 +28,11 @@ public class TypeChecker {
   private static List<Rule> ourRules = new ArrayList<Rule>();
   private static Set<SNode> ourCheckedNodes = new HashSet<SNode>();
   private static WeakHashMap<SNode, NodeWrapperType> ourNodesWithErrors = new WeakHashMap<SNode, NodeWrapperType>();
+
+  public static final String TYPESYSYTEM_MODEL_PREFIX = "jetbrains.mps.helgins.typeSystems.";
+  public static final String JETBRAINS_MPS_TYPES_LANGUAGE = "jetbrains.mps.helgins.";
+  public static final String JETBRAINS_MPS = "jetbrains.mps.";
+  public static final String JETBRAINS = "jetbrains.";
 
   public static void clearForTypesModel(SModel typesModel) {
     ContextsManager.getInstance().clear();
@@ -85,6 +91,10 @@ public class TypeChecker {
       NodeWrapperType errorType = ourNodesWithErrors.get(node);
       node.putUserObject(TYPE_OF_TERM, errorType);
     }
+  }
+
+  public static Set<SNode> getNodesWithErrors() {
+    return Collections.unmodifiableSet(ourNodesWithErrors.keySet());
   }
 
   public static void reportTypeError(NodeWrapperType errorType, SNode nodeWithError) {
@@ -176,4 +186,18 @@ public class TypeChecker {
   }
 
 
+  public static String getTypesModelUID(SNode node) {
+    String namespace = SModelUtil.getLanguageNamespace(node);
+    String postfix = namespace;
+
+    if (namespace.startsWith(JETBRAINS_MPS_TYPES_LANGUAGE)) {
+      postfix = namespace.substring(JETBRAINS_MPS_TYPES_LANGUAGE.length());
+    } else if (namespace.startsWith(JETBRAINS_MPS)) {
+      postfix = namespace.substring(JETBRAINS_MPS.length());
+    } else if (namespace.startsWith(JETBRAINS)) {
+      postfix = namespace.substring(JETBRAINS.length());
+    }
+
+    return TYPESYSYTEM_MODEL_PREFIX + postfix;
+  }
 }

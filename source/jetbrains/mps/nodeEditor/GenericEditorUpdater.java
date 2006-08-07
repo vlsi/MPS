@@ -10,6 +10,8 @@ import jetbrains.mps.util.NameUtil;
 import javax.swing.*;
 
 public abstract class GenericEditorUpdater {
+  private boolean myStopThread = false;
+
   public GenericEditorUpdater() {
     new Thread() {
       {
@@ -26,6 +28,9 @@ public abstract class GenericEditorUpdater {
               Thread.sleep(200);
             }
             doUpdate();
+            if (myStopThread) {
+              break;
+            }
             Thread.sleep(300);
           }
         } catch (Exception e) {
@@ -34,6 +39,10 @@ public abstract class GenericEditorUpdater {
       }
 
     }.start();
+  }
+
+  public void stopUpdater() {
+    myStopThread = true;
   }
 
   protected void doUpdate() {
