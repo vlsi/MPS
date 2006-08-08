@@ -1702,7 +1702,7 @@
         <link role="relationDeclaration" targetNodeId="17.1079359253376" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1081880010412">
-        <property name="editable" value="false" />
+        <property name="editable" value="true" />
         <property name="text" value=")" />
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
