@@ -388,6 +388,19 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1155029772493">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1155029772495" />
+          <node role="condition" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1155030134494">
+            <node role="expression" type="jetbrains.mps.baseLanguage.InstanceOfExpression" id="1155030134495">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1155029777421">
+                <link role="variableDeclaration" targetNodeId="1127826357148" />
+              </node>
+              <node role="classType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1155029785719">
+                <link role="classifier" extResolveInfo="2.[Classifier]String" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1127826564092">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1127826564093">
             <property name="name" value="g" />

@@ -1405,6 +1405,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1081257049503">
+    <property name="parseable" value="true" />
     <property name="name" value="InstanceOfExpression_Editor" />
     <link role="conceptDeclaration" targetNodeId="17.1081256982272" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1081257073129">
@@ -1421,6 +1422,9 @@
         <property name="textFgColor" value="DARK_BLUE" />
         <property name="text" value="instanceof" />
         <property name="drawBorder" value="false" />
+        <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.OperationCellToken" id="1155029841975">
+          <property name="priority" value="0" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081257097748">
         <property name="drawBorder" value="false" />
