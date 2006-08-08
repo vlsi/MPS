@@ -935,5 +935,30 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1154983906165">
+    <property name="name" value="BClass" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1154983913134">
+      <property name="name" value="a" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1154984176523">
+        <link role="classifier" targetNodeId="1115766310400" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1154983913136">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1154983993574">
+          <node role="expression" type="jetbrains.mps.baseLanguage.FieldReference" id="1154984278606">
+            <link role="variableDeclaration" targetNodeId="1127094836077" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.ParameterReference" id="1154984276980">
+              <link role="variableDeclaration" targetNodeId="1154984147638" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1154984147638">
+        <property name="name" value="c" />
+        <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1154984147639">
+          <link role="classifier" targetNodeId="1115766310400" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
