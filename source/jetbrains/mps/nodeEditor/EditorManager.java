@@ -350,6 +350,7 @@ public class EditorManager {
             ((EditorCell_Label) nextSelectableCell).getRenderedTextLine().setCaretPosition(0);
           }
         } else {
+          if (newlySelectedCell == null) return;
           context.getNodeEditorComponent().changeSelection(newlySelectedCell);
           if (newlySelectedCell instanceof EditorCell_Label) {
             ((EditorCell_Label) newlySelectedCell).getRenderedTextLine().setCaretPositionToLast();
