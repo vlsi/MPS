@@ -389,7 +389,13 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1155029772493">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1155029772495" />
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1155029772495">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1155030884182">
+              <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1155030889575">
+                <link role="variableDeclaration" targetNodeId="1127826357148" />
+              </node>
+            </node>
+          </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1155030134494">
             <node role="expression" type="jetbrains.mps.baseLanguage.InstanceOfExpression" id="1155030134495">
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1155029777421">
