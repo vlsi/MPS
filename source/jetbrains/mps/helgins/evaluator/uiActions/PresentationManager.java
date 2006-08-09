@@ -26,14 +26,13 @@ public class PresentationManager {
   }
 
   public static String toString_1(SNode type) {
-    SNode node = type;
-    if (node instanceof RuntimeErrorType) {
-      return "ERROR(" + ((RuntimeErrorType)node).getErrorText() + ")";
+    if (type instanceof RuntimeErrorType) {
+      return "ERROR(" + ((RuntimeErrorType)type).getErrorText() + ")";
     }
-    if (node instanceof RuntimeTypeVariable) {
+    if (type instanceof RuntimeTypeVariable) {
       return toString(type);
     }
-    String packageName = node.getClass().getPackage().getName();
+    String packageName = type.getClass().getPackage().getName();
     String presentationUtilName = packageName + ".PresentationUtil";
     try {
       Class presentationUtil = Class.forName(presentationUtilName, true, ClassLoaderManager.getInstance().getClassLoader());

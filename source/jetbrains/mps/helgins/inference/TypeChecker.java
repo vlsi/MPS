@@ -4,6 +4,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.helgins.*;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.refactoring.CopyUtil;
 
 import java.util.*;
 
@@ -109,15 +110,15 @@ public class TypeChecker {
 
   private static SNode expandType(SNode node, SModel typesModel) {
     SNode representator = EquationManager.getInstance().getRepresentator(node);
-    SNode newNode = expandWrapper(representator, representator, 0, new HashSet<RuntimeTypeVariable>(), typesModel);
+    SNode newNode = expandNode(representator, representator, 0, new HashSet<RuntimeTypeVariable>(), typesModel);
     return newNode;
   }
 
-  private static SNode expandWrapper(SNode nodeWrapper, SNode representator, int depth, Set<RuntimeTypeVariable> variablesMet, SModel typesModel) {
-    if (nodeWrapper == null) return null;
-    if (nodeWrapper instanceof RuntimeTypeVariable) {
-      RuntimeTypeVariable var = (RuntimeTypeVariable) nodeWrapper;
-      SNode type = EquationManager.getInstance().getRepresentator(nodeWrapper);
+  private static SNode expandNode(SNode node, SNode representator, int depth, Set<RuntimeTypeVariable> variablesMet, SModel typesModel) {
+    if (node == null) return null;
+    if (node instanceof RuntimeTypeVariable) {
+      RuntimeTypeVariable var = (RuntimeTypeVariable) node;
+      SNode type = EquationManager.getInstance().getRepresentator(node);
       if (type != representator || depth > 0) {
 
         if (variablesMet.contains(var)) {
@@ -127,14 +128,14 @@ public class TypeChecker {
           return error;
         }
         variablesMet.add(var);
-        nodeWrapper = expandWrapper(type, type, 0, variablesMet, typesModel);
+        node = expandNode(type, type, 0, variablesMet, typesModel);
         variablesMet.remove(var);
       }
-      return nodeWrapper;
+      return node;
     }
     Map<SNode, SNode> childrenReplacement = new HashMap<SNode, SNode>();
-    for (SNode child : nodeWrapper.getChildren()) {
-      SNode newChild = expandWrapper(child, representator, depth+1, variablesMet, typesModel);
+    for (SNode child : node.getChildren()) {
+      SNode newChild = expandNode(child, representator, depth+1, variablesMet, typesModel);
       if (newChild != child) {
         childrenReplacement.put(child, newChild);
       }
@@ -147,10 +148,16 @@ public class TypeChecker {
         return error;
       }
       SNode parent = child.getParent();
+      String roleInParent = child.getRole_();
       parent.removeChild(child);
-      parent.addChild(child.getRole_(), childrenReplacement.get(child));
+      SNode childReplacement = childrenReplacement.get(child);
+      if (childReplacement.getParent() != null) { // detach (or copy?)
+       // childReplacement.getParent().removeChild(childReplacement);
+        childReplacement = CopyUtil.copy(childReplacement, typesModel);
+      }
+      parent.addChild(roleInParent, childReplacement);
     }
-    return nodeWrapper;
+    return node;
   }
 
 
