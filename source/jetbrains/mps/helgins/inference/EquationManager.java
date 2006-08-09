@@ -1,9 +1,6 @@
-package jetbrains.mps.helgins.equation;
+package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.helgins.evaluator.NodeWrapper;
-import jetbrains.mps.helgins.evaluator.SubtypingManager;
-import jetbrains.mps.helgins.evaluator.TypeChecker;
 import jetbrains.mps.helgins.RuntimeTypeVariable;
 import jetbrains.mps.helgins.RuntimeErrorType;
 import jetbrains.mps.smodel.SNode;
@@ -29,23 +26,50 @@ public class EquationManager {
 
   }
 
-  private Map<NodeWrapperType, NodeWrapperType> mySubtypesToSupertypesMap = new HashMap<NodeWrapperType, NodeWrapperType>();
-  private Map<NodeWrapperType, NodeWrapperType> mySupertypesToSubtypesMap = new HashMap<NodeWrapperType, NodeWrapperType>();
+  private Map<SNode, SNode> mySubtypesToSupertypesMap = new HashMap<SNode, SNode>();
+  private Map<SNode, SNode> mySupertypesToSubtypesMap = new HashMap<SNode, SNode>();
+  private Map<SNode, SNode> myEquations = new HashMap<SNode, SNode>();
 
   public static EquationManager getInstance() {
     return ourInstance;
   }
 
-  public void addInequation(NodeWrapperType subType, NodeWrapperType supertype) {
-    NodeWrapperType subtypeRepresentator = subType.getRepresentator();
-    NodeWrapperType supertypeRepresentator = supertype.getRepresentator();
+  public SNode getParent(SNode type) {
+    return myEquations.get(type);
+  }
+
+  public void setParent(SNode type, SNode parent) {
+    myEquations.put(type, parent);
+  }
+
+  public SNode getRepresentator(SNode type_) {
+    List<SNode> path = new LinkedList<SNode>();
+    int pathLength = 0;
+    SNode type= type_;
+    while (getParent(type) != null) {
+      path.add(type);
+      pathLength++;
+      type = getParent(type);
+    }
+    // shortening the paths
+    if (pathLength > 1) {
+      for (SNode typeOnPath : path) {
+        setParent(typeOnPath, type);
+      }
+    }
+    return type;
+  }
+
+  public void addInequation(SNode subType, SNode supertype) {
+    SNode subtypeRepresentator = getRepresentator(subType);
+    SNode supertypeRepresentator = getRepresentator(supertype);
 
     // no equation needed
     if (subtypeRepresentator == supertypeRepresentator) return;
 
     // if one of them is a var
-    RuntimeTypeVariable varSubtype = NodeWrapperType.getTypeVar(subtypeRepresentator);
-    RuntimeTypeVariable varSupertype = NodeWrapperType.getTypeVar(supertypeRepresentator);
+    RuntimeTypeVariable varSubtype = TypeVariablesManager.getTypeVar(subtypeRepresentator);
+    RuntimeTypeVariable varSupertype = TypeVariablesManager.getTypeVar(supertypeRepresentator);
     if (varSubtype != null || varSupertype != null) {
       mySubtypesToSupertypesMap.put(subtypeRepresentator, supertypeRepresentator);
       mySupertypesToSubtypesMap.put(supertypeRepresentator, subtypeRepresentator);
@@ -58,21 +82,21 @@ public class EquationManager {
       return;
     }
 
-    subtypeRepresentator.setErrorString("type "+ subtypeRepresentator+" should be a subtype of "+supertypeRepresentator);
-    TypeChecker.reportTypeError(subtypeRepresentator, subtypeRepresentator.getNodeToReportErrors());
+    ErrorReporter.getInstance().setErrorString(subtypeRepresentator, "type "+ subtypeRepresentator+" should be a subtype of "+supertypeRepresentator);
+    TypeChecker.reportTypeError(subtypeRepresentator);
   }
 
 
-  public void addEquation(NodeWrapperType lhs, NodeWrapperType rhs) {
-    NodeWrapperType rhsRepresentator = rhs.getRepresentator();
-    NodeWrapperType lhsRepresentator = lhs.getRepresentator();
+  public void addEquation(SNode lhs, SNode rhs) {
+    SNode rhsRepresentator = getRepresentator(lhs);
+    SNode lhsRepresentator = getRepresentator(rhs);
 
     // no equation needed
     if (rhsRepresentator == lhsRepresentator) return;
 
     // add var to type's multieq
-    RuntimeTypeVariable varRhs = NodeWrapperType.getTypeVar(rhsRepresentator);
-    RuntimeTypeVariable varLhs = NodeWrapperType.getTypeVar(lhsRepresentator);
+    RuntimeTypeVariable varRhs = TypeVariablesManager.getTypeVar(rhsRepresentator);
+    RuntimeTypeVariable varLhs = TypeVariablesManager.getTypeVar(lhsRepresentator);
     if (varRhs != null) {
       processEquation(rhsRepresentator, lhsRepresentator);
       return;
@@ -95,60 +119,61 @@ public class EquationManager {
     }
 
     // solve equation
-    if (!compareNodes(rhsRepresentator.getNodeWrapper(), lhsRepresentator.getNodeWrapper())) {
+    if (!compareNodes(rhsRepresentator, lhsRepresentator)) {
       String error = "incompatible types: " + rhsRepresentator + " and " + lhsRepresentator; //todo more friendly error representation
       processErrorEquation(lhsRepresentator, rhsRepresentator, error);
       return;
     }
-    Set<Pair<NodeWrapperType, NodeWrapperType>> childEQs = createChildEquations(rhsRepresentator.getNodeWrapper(), lhsRepresentator.getNodeWrapper());
-    for (Pair<NodeWrapperType, NodeWrapperType> eq : childEQs) {
+    Set<Pair<SNode, SNode>> childEQs = createChildEquations(rhsRepresentator, lhsRepresentator);
+    for (Pair<SNode, SNode> eq : childEQs) {
       addEquation(eq.o2, eq.o1);
     }
   }
 
-  private void processSubtyping(NodeWrapperType subType, NodeWrapperType superType) {
-    superType.setParent(subType); // hmm... is it correct?
-    subType.addAllVarSetsOfSourceAndRemoveSourceFromThem(superType);
+  private void processSubtyping(SNode subType, SNode superType) {
+    setParent(superType, subType); // hmm... is it correct?
+    TypeVariablesManager.getInstance().addAllVarSetsOfSourceAndRemoveSourceFromThem(subType, superType);
   }
 
-  private void processEquation(NodeWrapperType var, NodeWrapperType type) {
-    var.setParent(type);
+  private void processEquation(SNode var, SNode type) {
+    setParent(var, type);
     keepInequation(var, type);
-    type.addAllVarSetsOfSourceAndRemoveSourceFromThem(var);
-    if (NodeWrapperType.getTypeVar(var) instanceof RuntimeErrorType) {
-      TypeChecker.reportTypeError(var, var.getNodeToReportErrors());
+    TypeVariablesManager.getInstance().addAllVarSetsOfSourceAndRemoveSourceFromThem(type, var);
+    if (TypeVariablesManager.getTypeVar(var) instanceof RuntimeErrorType) {
+      TypeChecker.reportTypeError(var);
     }
   }
 
-  private void keepInequation(NodeWrapperType var, NodeWrapperType type) {
+  private void keepInequation(SNode var, SNode type) {
     if (mySubtypesToSupertypesMap.containsKey(var)) {
-      NodeWrapperType supertype = mySubtypesToSupertypesMap.get(var);
+      SNode supertype = mySubtypesToSupertypesMap.get(var);
       mySubtypesToSupertypesMap.remove(var);
       mySupertypesToSubtypesMap.remove(supertype);
       addInequation(type, supertype);
     }
     if (mySupertypesToSubtypesMap.containsKey(var)) {
-      NodeWrapperType subtype = mySupertypesToSubtypesMap.get(var);
+      SNode subtype = mySupertypesToSubtypesMap.get(var);
       mySupertypesToSubtypesMap.remove(var);
       mySubtypesToSupertypesMap.remove(subtype);
       addInequation(subtype, type);
     }
   }
 
-  private void processErrorEquation(NodeWrapperType type, NodeWrapperType error, String errorText) {
-    error.setParent(type); //type
-    error.setErrorString(errorText);
-    type.addAllVarSetsOfSourceAndRemoveSourceFromThem(error);
-    TypeChecker.reportTypeError(error, error.getNodeToReportErrors());
+  private void processErrorEquation(SNode type, SNode error, String errorText) {
+    setParent(error, type); //type
+    ErrorReporter.getInstance().setErrorString(error, errorText);
+    TypeVariablesManager.getInstance().addAllVarSetsOfSourceAndRemoveSourceFromThem(type, error);
+    TypeChecker.reportTypeError(error);
   }
 
   public void clear() {
     mySubtypesToSupertypesMap.clear();
     mySupertypesToSubtypesMap.clear();
+    myEquations.clear();
   }
 
-  public static boolean compareNodes(NodeWrapper node1, NodeWrapper node2) {
-    if (node1.getNodeClass() != node2.getNodeClass()) return false;
+  public static boolean compareNodes(SNode node1, SNode node2) {
+    if (node1.getClass() != node2.getClass()) return false;
 
     Set<String> node1PropertyNames = node1.getPropertyNames();
     Set<String> node2PropertyNames = node2.getPropertyNames();
@@ -171,8 +196,8 @@ public class EquationManager {
     return true;
   }
 
-  public static Set<Pair<NodeWrapperType, NodeWrapperType>> createChildEquations(NodeWrapper node1, NodeWrapper node2) {
-   Set<Pair<NodeWrapperType, NodeWrapperType>> result = new HashSet<Pair<NodeWrapperType, NodeWrapperType>>();
+  public static Set<Pair<SNode, SNode>> createChildEquations(SNode node1, SNode node2) {
+   Set<Pair<SNode, SNode>> result = new HashSet<Pair<SNode, SNode>>();
    Set<String> childRoles1 = node1.getChildRoles();
    Set<String> childRoles2 = node2.getChildRoles();
 
@@ -180,16 +205,16 @@ public class EquationManager {
    allChildRoles.addAll(childRoles2);
 
    for (String childRole : allChildRoles) {
-     List<NodeWrapper> childrenInNode1 = node1.getChildren(childRole);
-     List<NodeWrapper> childrenInNode2 = node2.getChildren(childRole);
-     Iterator<NodeWrapper> childrenIterator2 = childrenInNode2.iterator();
-     for (NodeWrapper child1 : childrenInNode1) {
-       NodeWrapper child2 = childrenIterator2.hasNext() ? childrenIterator2.next() : null;
-       result.add(new Pair<NodeWrapperType, NodeWrapperType>(NodeWrapperType.getType(child1), NodeWrapperType.getType(child2)));
+     List<SNode> childrenInNode1 = node1.getChildren(childRole);
+     List<SNode> childrenInNode2 = node2.getChildren(childRole);
+     Iterator<SNode> childrenIterator2 = childrenInNode2.iterator();
+     for (SNode child1 : childrenInNode1) {
+       SNode child2 = childrenIterator2.hasNext() ? childrenIterator2.next() : null;
+       result.add(new Pair<SNode, SNode>(child1, child2));
      }
      for (;childrenIterator2.hasNext();) {
-       NodeWrapper child2 = childrenIterator2.next();
-       result.add(new Pair<NodeWrapperType, NodeWrapperType>(null, NodeWrapperType.getType(child2)));
+       SNode child2 = childrenIterator2.next();
+       result.add(new Pair<SNode, SNode>(null, child2));
      }
    }
    return result;

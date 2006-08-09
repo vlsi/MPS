@@ -1,12 +1,9 @@
 package jetbrains.mps.patterns.util;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.patterns.*;
-import jetbrains.mps.annotations.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.helgins.evaluator.NodeWrapper;
 import jetbrains.mps.core.BaseConcept;
 
 import java.util.*;
@@ -37,18 +34,6 @@ public class MatchingUtil {
       return null;
     }
   }
-
-
-  public static Substitution matchNodeWithPattern(NodeWrapper type, PatternExpression patternExpression) {
-    SNode patternNode = patternExpression.getPatternNode();
-    Substitution currentSubstitution = new Substitution();
-    if (matchNodes(type, patternNode, currentSubstitution)) {
-      return currentSubstitution;
-    } else {
-      return null;
-    }
-  }
-
 
   private static boolean matchNodes(SNode node, SNode patternNode, Substitution substitution) {
     if (node == null) return false;
@@ -130,12 +115,11 @@ public class MatchingUtil {
     return true;
   }
 
-
-  public static boolean matchWrappers(NodeWrapper node1, NodeWrapper node2) { //exact matching w/o any vars
+  public static boolean matchNodes(SNode node1, SNode node2) { //exact matching w/o any vars
     if (node1 == null && node2 == null) return true;
     if (node1 == null) return false;
     if (node2 == null) return false;
-    if (node1.getNodeClass() != node2.getNodeClass()) return false;
+    if (node1.getClass() != node2.getClass()) return false;
 
     //properties
     Set<String> propertyNames = node1.getPropertyNames();
@@ -148,13 +132,13 @@ public class MatchingUtil {
     Set<String> childRoles = node1.getChildRoles();
     childRoles.addAll(node2.getChildRoles());
     for (String role : childRoles) {
-      List<NodeWrapper> children1 = node1.getChildren(role);
-      List<NodeWrapper> children2 = node2.getChildren(role);
+      List<SNode> children1 = node1.getChildren(role);
+      List<SNode> children2 = node2.getChildren(role);
 
-      Iterator<NodeWrapper> childrenIterator = children1.iterator();
-      for (NodeWrapper child2 : children2) {
-        NodeWrapper child1 = childrenIterator.hasNext() ? childrenIterator.next() : null;
-        if (!matchWrappers(child1, child2)) return false;
+      Iterator<SNode> childrenIterator = children1.iterator();
+      for (SNode child2 : children2) {
+        SNode child1 = childrenIterator.hasNext() ? childrenIterator.next() : null;
+        if (!matchNodes(child1, child2)) return false;
       }
       if (childrenIterator.hasNext() && childrenIterator.next() != null) return false; //the first has more children
     }
@@ -170,106 +154,6 @@ public class MatchingUtil {
 
     return true;
   }
-
-
-  private static boolean matchNodes(NodeWrapper node, SNode patternNode, Substitution substitution) {
-      if (node == null) return false;
-
-      //-- whole node bindings
-      SNode patternAttribute = patternNode.getAttribute();
-      SNode asPattern = AsPattern_AnnotationLink.getAsPattern((BaseConcept) patternNode);
-      if (patternAttribute instanceof WildcardPattern) {
-        return true;
-      }
-      if (asPattern instanceof ListPattern || patternAttribute instanceof ListPattern) {
-        //simply go on
-      } else if (asPattern != null || patternAttribute instanceof AsPattern) {
-        bindNodeWrapperWithVar(substitution, (PatternVariableDeclaration) patternAttribute, node);
-      }
-      if (patternAttribute instanceof PatternVariableDeclaration) {
-        bindNodeWrapperWithVar(substitution, (PatternVariableDeclaration) patternAttribute, node);
-        return true;
-      }
-
-      //-- matching class
-      if (node.getNodeClass() != patternNode.getClass()) return false;
-
-      //-- matching properties
-      Set<String> propertyNames = node.getPropertyNames();
-      for (String propertyName : patternNode.getPropertyNames()) {
-        //if property pattern var
-        SNode propertyAttribute = patternNode.getPropertyAttribute(propertyName);
-        if (propertyAttribute instanceof PropertyPatternVariableDeclaration) {
-          LazyPropertyValue propertyValue = new LazyPropertyValue(node.getNode(), propertyName);
-          bindPropertyWithVar(substitution, (PropertyPatternVariableDeclaration) propertyAttribute, propertyValue);
-        } else {//else match values
-          if (!EqualUtil.equals(patternNode.getProperty(propertyName), node.getProperty(propertyName))) return false;
-        }
-      }
-
-      //-- matching children
-      Set<String> childRoles = patternNode.getChildRoles();
-      for (String role : childRoles) {
-        List<NodeWrapper> children = node.getChildren(role);
-        List<SNode> patternChildren = patternNode.getChildren(role);
-
-        //if list pattern
-        SNode listPatternChild = null;
-        for (SNode patternChild : patternChildren) {
-          if (AsPattern_AnnotationLink.getAsPattern((BaseConcept) patternChild) instanceof ListPattern || patternChild.getAttribute() instanceof ListPattern) {
-            listPatternChild = patternChild;
-            break;
-          }
-        }
-        if (listPatternChild != null) {
-          if (!matchListOfNodeWrappers(children, listPatternChild, substitution)) return false;
-        } else {
-
-          //else just match children
-          Iterator<NodeWrapper> childrenIterator = children.iterator();
-          for (SNode patternChild : patternChildren) {
-            NodeWrapper child = childrenIterator.hasNext() ? childrenIterator.next() : null;
-            if (!matchNodes(child, patternChild, substitution)) return false;
-          }
-        }
-      }
-
-      //-- matching references
-      Set<String> referenceRoles = patternNode.getReferenceRoles();
-      for (String role : referenceRoles) {
-        SNode target = node.getReferent(role);
-
-        //if this role has a link pattern var
-        SNode linkAttribute = patternNode.getLinkAttribute(role);
-        if (linkAttribute instanceof LinkPatternVariableDeclaration) {
-          bindReferenceTargetWithVar(substitution, (LinkPatternVariableDeclaration) linkAttribute, target);
-        } else {//if role has just a link
-          SNode patternTarget = patternNode.getReferent(role);
-          if (patternTarget != target) return false;
-        }
-      }
-
-      return true;
-    }
-
-
-  private static boolean matchListOfNodeWrappers(List<NodeWrapper> nodes, SNode patternNode, Substitution substitution) {
-    AsPattern asPattern = AsPattern_AnnotationLink.getAsPattern((BaseConcept) patternNode);
-    ListPattern currentListPattern = asPattern instanceof ListPattern ? (ListPattern) asPattern : (ListPattern) patternNode.getAttribute();
-    ourCurrentListPatterns.push(currentListPattern);
-    boolean stillMatches = true;
-    for (NodeWrapper nodeWrapper : nodes) {
-      boolean matchesNow = matchNodes(nodeWrapper, patternNode, substitution);
-      stillMatches = stillMatches && matchesNow;
-      if (!stillMatches) break;
-      substitution.addNodeToListBindedWithVar(currentListPattern, nodeWrapper.getNode());
-    }
-    ListPattern poppedListPattern = ourCurrentListPatterns.pop();
-    LOG.assertLog(poppedListPattern == currentListPattern);
-    return stillMatches;
-  }
-
-
 
   private static boolean matchListOfNodes(List<SNode> nodes, SNode patternNode, Substitution substitution) {
     AsPattern asPattern = AsPattern_AnnotationLink.getAsPattern((BaseConcept) patternNode);
@@ -292,14 +176,6 @@ public class MatchingUtil {
       substitution.bindNodeWithVar(patternVar, node);
     } else {
       substitution.addNodeToListBindedWithVar(patternVar, node);
-    }
-  }
-
-   private static void bindNodeWrapperWithVar(Substitution substitution, PatternVariableDeclaration patternVar, NodeWrapper node) {
-    if (getCurrentListPattern() == null) {
-      substitution.bindNodeWrapperWithVar(patternVar, node);
-    } else {
-      substitution.addNodeWrapperToListBindedWithVar(patternVar, node);
     }
   }
 

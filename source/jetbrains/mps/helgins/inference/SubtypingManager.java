@@ -1,11 +1,8 @@
-package jetbrains.mps.helgins.evaluator;
+package jetbrains.mps.helgins.inference;
 
-import jetbrains.mps.helgins.equation.NodeWrapperType;
-import jetbrains.mps.helgins.equation.TypeVariablesManager;
+import jetbrains.mps.helgins.inference.EquationManager;
 import jetbrains.mps.helgins.SubtypingRule;
-import jetbrains.mps.helgins.Rule;
 import jetbrains.mps.helgins.AnalyzedTermDeclaration;
-import jetbrains.mps.helgins.StatementList;
 import jetbrains.mps.patterns.util.MatchingUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
@@ -50,27 +47,27 @@ public class SubtypingManager {
     myRules.clear();
   }
 
-  public boolean isSubtype(NodeWrapperType subtype, NodeWrapperType supertype) {
-    NodeWrapperType subRepresentator = subtype.getRepresentator();
-    NodeWrapperType superRepresentator = supertype.getRepresentator();
+  public boolean isSubtype(SNode subtype, SNode supertype) {
+    SNode subRepresentator = EquationManager.getInstance().getRepresentator(subtype);
+    SNode superRepresentator = EquationManager.getInstance().getRepresentator(supertype);
 
     //reflexivity: structural equivalence
-    if (MatchingUtil.matchWrappers(subRepresentator.getNodeWrapper(), superRepresentator.getNodeWrapper())) return true;
+    if (MatchingUtil.matchNodes(subRepresentator, superRepresentator)) return true;
 
     // transitivity: nominal equivalence
     return isStrictSubtype(subtype, supertype);
   }
 
 
-  public boolean isStrictSubtype(NodeWrapperType subtype, NodeWrapperType supertype) {
-    NodeWrapperType subRepresentator = subtype.getRepresentator();
-    NodeWrapperType superRepresentator = supertype.getRepresentator();
+  public boolean isStrictSubtype(SNode subtype, SNode supertype) {
+    SNode subRepresentator = EquationManager.getInstance().getRepresentator(subtype);
+    SNode superRepresentator = EquationManager.getInstance().getRepresentator(supertype);
 
     // transitivity: nominal equivalence
     List<SNode> frontier = new ArrayList<SNode>();
     List<SNode> newFrontier = new ArrayList<SNode>();
-    frontier.add(subRepresentator.getSNode());
-    SNode superNode = superRepresentator.getSNode();
+    frontier.add(subRepresentator);
+    SNode superNode = superRepresentator;
     while (!frontier.isEmpty()) {
       for (SNode node : frontier) {
         Set<SNode> ancestors = collectSupertypes(node);
@@ -89,15 +86,15 @@ public class SubtypingManager {
   public Set<SNode> collectSupertypes(SNode term) {
     Set<SNode> result = new HashSet<SNode>();
     for (SubtypingRule rule : myRules) {
-      SNode supertype = getSupertype(term, rule);
-      if (supertype != null) {
-        result.add(supertype);
+      List<SNode> supertypes = getSupertypes(term, rule);
+      if (supertypes != null) {
+        result.addAll(supertypes);
       }
     }
     return result;
   }
 
-  public SNode getSupertype(SNode term, SubtypingRule rule) {
+  public List<SNode> getSupertypes(SNode term, SubtypingRule rule) {
 
     /*
     matching
@@ -122,7 +119,21 @@ public class SubtypingManager {
     expressionContext.putNode(analyzedTermDeclaration, term);
 
     Object supertypeO = ExpressionEvaluatorManager.evaluate(expressionContext, rule.getSupertype());
-    if (supertypeO instanceof SNode) return (SNode) supertypeO;
+    if (supertypeO instanceof SNode) {
+      List<SNode> result = new ArrayList<SNode>();
+      result.add((SNode) supertypeO);
+      return result;
+    }
+    if (supertypeO instanceof List) {
+      boolean isCorrect = true;
+      for (Object o : (List)supertypeO) {
+        if (!(o instanceof SNode)) {
+          isCorrect = false;
+          break;
+        }
+      }
+      if (isCorrect) return (List<SNode>) supertypeO;
+    }
     return null;
   }
 

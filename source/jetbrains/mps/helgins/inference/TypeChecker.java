@@ -1,14 +1,8 @@
-package jetbrains.mps.helgins.evaluator;
+package jetbrains.mps.helgins.inference;
 
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.helgins.*;
-import jetbrains.mps.helgins.inference.ContextsManager;
-import jetbrains.mps.helgins.equation.EquationManager;
-import jetbrains.mps.helgins.equation.TypeVariablesManager;
-import jetbrains.mps.helgins.equation.NodeWrapperType;
 import jetbrains.mps.logging.Logger;
 
 import java.util.*;
@@ -27,7 +21,7 @@ public class TypeChecker {
 
   private static List<Rule> ourRules = new ArrayList<Rule>();
   private static Set<SNode> ourCheckedNodes = new HashSet<SNode>();
-  private static WeakHashMap<SNode, NodeWrapperType> ourNodesWithErrors = new WeakHashMap<SNode, NodeWrapperType>();
+  private static WeakHashMap<SNode, SNode> ourNodesWithErrors = new WeakHashMap<SNode, SNode>();
 
   public static final String TYPESYSYTEM_MODEL_PREFIX = "jetbrains.mps.helgins.typeSystems.";
   public static final String JETBRAINS_MPS_TYPES_LANGUAGE = "jetbrains.mps.helgins.";
@@ -41,6 +35,7 @@ public class TypeChecker {
     TypeVariablesManager.getInstance().clearVariables();
     Interpretator.clearForTypesModel(typesModel);
     SubtypingManager.getInstance().clear();
+    ErrorReporter.getInstance().clear();
     ourRules.clear();
     ourCheckedNodes.clear();
     ourNodesWithErrors.clear();
@@ -77,21 +72,21 @@ public class TypeChecker {
     doCheckTypes(root);
 
     // main context
-    Set<Pair<SNode, NodeWrapperType>> mainContext = ContextsManager.getInstance().getMainContext();
+    Set<Pair<SNode, SNode>> mainContext = ContextsManager.getInstance().getMainContext();
 
     // setting types to nodes
-    for (Pair<SNode, NodeWrapperType> contextEntry : mainContext) {
+    for (Pair<SNode, SNode> contextEntry : mainContext) {
       SNode term = contextEntry.o1;
-      NodeWrapperType wrapperType = expandType(contextEntry.o2, typesModel);
-      if (wrapperType.getSNode() instanceof RuntimeErrorType) {
-        reportTypeError(wrapperType, term);
+      SNode type = expandType(contextEntry.o2, typesModel);
+      if (type instanceof RuntimeErrorType) {
+        reportTypeError(type, term);
       }
-      term.putUserObject(TYPE_OF_TERM, wrapperType);
+      term.putUserObject(TYPE_OF_TERM, type);
     }
 
     // setting errors
     for (SNode node : ourNodesWithErrors.keySet()) {
-      NodeWrapperType errorType = ourNodesWithErrors.get(node);
+      SNode errorType = ourNodesWithErrors.get(node);
       node.putUserObject(TYPE_OF_TERM, errorType);
     }
   }
@@ -100,7 +95,11 @@ public class TypeChecker {
     return Collections.unmodifiableSet(ourNodesWithErrors.keySet());
   }
 
-  public static void reportTypeError(NodeWrapperType errorType, SNode nodeWithError) {
+  public static void reportTypeError(SNode errorType) {
+    reportTypeError(errorType, ErrorReporter.getInstance().getNodeToReportErrors(errorType));
+  }
+
+  public static void reportTypeError(SNode errorType, SNode nodeWithError) {
     if (nodeWithError != null) {
       ourNodesWithErrors.put(nodeWithError, errorType);
     } else {
@@ -108,58 +107,48 @@ public class TypeChecker {
     }
   }
 
-  private static NodeWrapperType expandType(NodeWrapperType nodeWrapperType, SModel typesModel) {
-    NodeWrapperType representator = nodeWrapperType.getRepresentator();
-    NodeWrapper nodeWrapper = representator.getNodeWrapper();
-    NodeWrapper newNodeWrapper = expandWrapper(nodeWrapper, representator, 0, new HashSet<RuntimeTypeVariable>(), typesModel);
-    representator = new NodeWrapperType(newNodeWrapper);
-    return representator;
+  private static SNode expandType(SNode node, SModel typesModel) {
+    SNode representator = EquationManager.getInstance().getRepresentator(node);
+    SNode newNode = expandWrapper(representator, representator, 0, new HashSet<RuntimeTypeVariable>(), typesModel);
+    return newNode;
   }
 
-  private static NodeWrapper expandWrapper(NodeWrapper nodeWrapper, NodeWrapperType representator, int depth, Set<RuntimeTypeVariable> variablesMet, SModel typesModel) {
+  private static SNode expandWrapper(SNode nodeWrapper, SNode representator, int depth, Set<RuntimeTypeVariable> variablesMet, SModel typesModel) {
     if (nodeWrapper == null) return null;
-    if (nodeWrapper.getNode() instanceof RuntimeTypeVariable) {
-      RuntimeTypeVariable var = (RuntimeTypeVariable) nodeWrapper.getNode();
-      NodeWrapperType wrapperType = nodeWrapper.getIType();
-      if (wrapperType == null) {
-        return nodeWrapper;
-      }
-      NodeWrapperType type = wrapperType.getRepresentator();
+    if (nodeWrapper instanceof RuntimeTypeVariable) {
+      RuntimeTypeVariable var = (RuntimeTypeVariable) nodeWrapper;
+      SNode type = EquationManager.getInstance().getRepresentator(nodeWrapper);
       if (type != representator || depth > 0) {
 
         if (variablesMet.contains(var)) {
           //recursion!!
-          nodeWrapper = new NodeWrapper();
           RuntimeErrorType error = new RuntimeErrorType(typesModel);
           error.setErrorText("recursion types not allowed");
-          nodeWrapper.setNode(error);
-          return nodeWrapper;
+          return error;
         }
         variablesMet.add(var);
-        nodeWrapper = expandWrapper(type.getNodeWrapper(), type, 0, variablesMet, typesModel);
+        nodeWrapper = expandWrapper(type, type, 0, variablesMet, typesModel);
         variablesMet.remove(var);
       }
       return nodeWrapper;
     }
-    Map<NodeWrapper, NodeWrapper> childrenReplacement = new HashMap<NodeWrapper, NodeWrapper>();
-    for (NodeWrapper child : nodeWrapper.getChildren()) {
-      NodeWrapper newChild = expandWrapper(child, representator, depth+1, variablesMet, typesModel);
+    Map<SNode, SNode> childrenReplacement = new HashMap<SNode, SNode>();
+    for (SNode child : nodeWrapper.getChildren()) {
+      SNode newChild = expandWrapper(child, representator, depth+1, variablesMet, typesModel);
       if (newChild != child) {
         childrenReplacement.put(child, newChild);
       }
     }
-    for (NodeWrapper child : childrenReplacement.keySet()) {
-      if (child.getParents().isEmpty()) {
+    for (SNode child : childrenReplacement.keySet()) {
+      if (child.getParent() == null) {
         System.err.println("debug");
-        nodeWrapper = new NodeWrapper();
         RuntimeErrorType error = new RuntimeErrorType(typesModel);
         error.setErrorText("recursion types not allowed");
-        nodeWrapper.setNode(error);
-        return nodeWrapper;
+        return error;
       }
-      NodeWrapper parent = child.getParents().get(0);
+      SNode parent = child.getParent();
       parent.removeChild(child);
-      parent.addChild(childrenReplacement.get(child), child.getRoleInParent());
+      parent.addChild(child.getRole_(), childrenReplacement.get(child));
     }
     return nodeWrapper;
   }
@@ -188,6 +177,13 @@ public class TypeChecker {
     ourCheckedNodes.add(node); // for not to check it again
   }
 
+  public static SNode getType(Object o) {
+    if (o instanceof SNode) {
+      return (SNode) o;
+    }
+    return null;
+  }
+
 
   public static String getTypesModelUID(SNode node) {
     String namespace = SModelUtil.getLanguageNamespace(node);
@@ -202,5 +198,13 @@ public class TypeChecker {
     }
 
     return TYPESYSYTEM_MODEL_PREFIX + postfix;
+  }
+
+  public static void checkNode(SNode node) {
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().
+            getModelDescriptor(SModelUID.fromString(getTypesModelUID(node)));
+    if (modelDescriptor == null) return;
+    SModel typesModel = modelDescriptor.getSModel();
+    checkTypes(node, typesModel);
   }
 }
