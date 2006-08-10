@@ -26,8 +26,8 @@ public class EquationManager {
 
   }
 
-  private Map<SNode, SNode> mySubtypesToSupertypesMap = new HashMap<SNode, SNode>();
-  private Map<SNode, SNode> mySupertypesToSubtypesMap = new HashMap<SNode, SNode>();
+  private Map<SNode, Set<SNode>> mySubtypesToSupertypesMap = new HashMap<SNode, Set<SNode>>();
+  private Map<SNode, Set<SNode>> mySupertypesToSubtypesMap = new HashMap<SNode, Set<SNode>>();
   private Map<SNode, SNode> myEquations = new HashMap<SNode, SNode>();
 
   public static EquationManager getInstance() {
@@ -71,14 +71,12 @@ public class EquationManager {
     RuntimeTypeVariable varSubtype = TypeVariablesManager.getTypeVar(subtypeRepresentator);
     RuntimeTypeVariable varSupertype = TypeVariablesManager.getTypeVar(supertypeRepresentator);
     if (varSubtype != null || varSupertype != null) {
-      mySubtypesToSupertypesMap.put(subtypeRepresentator, supertypeRepresentator);
-      mySupertypesToSubtypesMap.put(supertypeRepresentator, subtypeRepresentator);
+      addSubtyping(subtypeRepresentator, supertypeRepresentator);
       return;
     }
 
     // if strict subtyping
     if (SubtypingManager.getInstance().isSubtype(subtypeRepresentator, supertypeRepresentator)) {
-      processSubtyping(subtypeRepresentator, supertypeRepresentator);
       return;
     }
 
@@ -107,17 +105,6 @@ public class EquationManager {
       }
     }
 
-
-
-    // process nominal subtyping
-    if (SubtypingManager.getInstance().isStrictSubtype(rhsRepresentator, lhsRepresentator)) {
-      processSubtyping(rhsRepresentator, lhsRepresentator);
-      return;
-    } else if (SubtypingManager.getInstance().isStrictSubtype(lhsRepresentator, rhsRepresentator)) {
-      processSubtyping(lhsRepresentator, rhsRepresentator);
-      return;
-    }
-
     // solve equation
     if (!compareNodes(rhsRepresentator, lhsRepresentator)) {
       String error = "incompatible types: " + rhsRepresentator + " and " + lhsRepresentator; //todo more friendly error representation
@@ -128,11 +115,6 @@ public class EquationManager {
     for (Pair<SNode, SNode> eq : childEQs) {
       addEquation(eq.o2, eq.o1);
     }
-  }
-
-  private void processSubtyping(SNode subType, SNode superType) {
-    setParent(superType, subType); // hmm... is it correct?
-    TypeVariablesManager.getInstance().addAllVarSetsOfSourceAndRemoveSourceFromThem(subType, superType);
   }
 
   private void processEquation(SNode var, SNode type) {
@@ -146,16 +128,24 @@ public class EquationManager {
 
   private void keepInequation(SNode var, SNode type) {
     if (mySubtypesToSupertypesMap.containsKey(var)) {
-      SNode supertype = mySubtypesToSupertypesMap.get(var);
+      Set<SNode> supertypes = mySubtypesToSupertypesMap.get(var);
       mySubtypesToSupertypesMap.remove(var);
-      mySupertypesToSubtypesMap.remove(supertype);
-      addInequation(type, supertype);
+      for (SNode supertype : supertypes) {
+        mySupertypesToSubtypesMap.remove(supertype);
+      }
+      for (SNode supertype : supertypes) {
+        addInequation(type, supertype);
+      }
     }
     if (mySupertypesToSubtypesMap.containsKey(var)) {
-      SNode subtype = mySupertypesToSubtypesMap.get(var);
+      Set<SNode> subtypes = mySupertypesToSubtypesMap.get(var);
       mySupertypesToSubtypesMap.remove(var);
-      mySubtypesToSupertypesMap.remove(subtype);
-      addInequation(subtype, type);
+      for (SNode subtype : subtypes) {
+        mySubtypesToSupertypesMap.remove(subtype);
+      }
+      for (SNode subtype : subtypes) {
+        addInequation(subtype, type);
+      }
     }
   }
 
@@ -218,5 +208,48 @@ public class EquationManager {
      }
    }
    return result;
+  }
+
+  private void addSubtyping(SNode subtype, SNode supertype) {
+    Set<SNode> supertypes = mySubtypesToSupertypesMap.get(subtype);
+    if (supertypes == null) {
+      supertypes = new HashSet<SNode>();
+      mySubtypesToSupertypesMap.put(subtype, supertypes);
+    }
+    supertypes.add(supertype);
+
+    Set<SNode> subtypes = mySupertypesToSubtypesMap.get(supertype);
+    if (subtypes == null) {
+      subtypes = new HashSet<SNode>();
+      mySubtypesToSupertypesMap.put(supertype, subtypes);
+    }
+    subtypes.add(subtype);
+  }
+
+  private void removeSubtyping(SNode subtype, SNode supertype) {
+     Set<SNode> supertypes = mySubtypesToSupertypesMap.get(subtype);
+    if (supertypes != null) {
+      supertypes.remove(supertype);
+    }
+
+    Set<SNode> subtypes = mySupertypesToSubtypesMap.get(supertype);
+    if (subtypes != null) {
+      subtypes.remove(subtype);
+    }
+  }
+
+
+  public void solveInequations() {
+    for (SNode subtype : mySubtypesToSupertypesMap.keySet()) {
+      if (subtype instanceof RuntimeTypeVariable) {
+        Set<SNode> subsubtypes = mySupertypesToSubtypesMap.get(subtype);
+        Set<SNode> supertypes = mySubtypesToSupertypesMap.get(subtype);
+     //   SNode supersupertype = mySupertypesToSubtypesMap.get(supertype);
+
+
+      } else { // todo
+
+      }
+    }
   }
 }

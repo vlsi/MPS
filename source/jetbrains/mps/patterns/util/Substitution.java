@@ -99,6 +99,7 @@ public class Substitution {
       if (loopVarSet == null) return null;
       if (loopVarSet.contains(var)) {
         List<SNode> values = myListVarsToNodes.get(var);
+        if (values == null) return null;
         int index = getCurrentLoopIndex();
         if (values.size() <= index) return null;
         return values.get(index);
@@ -142,6 +143,7 @@ public class Substitution {
       if (loopVarSet == null) return null;
       if (loopVarSet.contains(var)) {
         List<LazyPropertyValue> values = myListPropVarsToProperties.get(var);
+        if (values == null) return null;
         int index = getCurrentLoopIndex();
         if (values.size() <= index) return null;
         return values.get(index).getValue();
@@ -188,6 +190,7 @@ public class Substitution {
       if (loopVarSet == null) return null;
       if (loopVarSet.contains(var)) {
         List<SNode> values = myListLinkVarsToNodes.get(var);
+        if (values == null) return null;
         int index = getCurrentLoopIndex();
         if (values.size() <= index) return null;
         return values.get(index);

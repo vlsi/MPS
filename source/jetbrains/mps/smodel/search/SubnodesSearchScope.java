@@ -20,6 +20,7 @@ public class SubnodesSearchScope extends AbstractSearchScope {
   }
 
   public List<SNode> getOwnNodes(Condition<SNode> condition) {
+    if (myEnclosingNode == null) return new ArrayList<SNode>();
     return myEnclosingNode.getSubnodes(condition);
   }
 }

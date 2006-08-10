@@ -14,6 +14,7 @@ import java.util.*;
  */
 public class EmptySearchScope extends AbstractSearchScope {
   public List<SNode> getOwnNodes(Condition<SNode> condition) {
-    return Collections.emptyList();
+    return new ArrayList<SNode>(); // do not use Collections.emptyList(),
+    //  otherwise you can't successfully attach another scopes to this one
   }
 }
