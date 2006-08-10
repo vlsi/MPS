@@ -78,7 +78,7 @@ public class TypeChecker {
     // setting types to nodes
     for (Pair<SNode, SNode> contextEntry : mainContext) {
       SNode term = contextEntry.o1;
-      SNode type = expandType(contextEntry.o2, typesModel);
+      SNode type = expandType(contextEntry.o2, Interpretator.getRuntimeTypesModel(typesModel));
       if (type instanceof RuntimeErrorType) {
         reportTypeError(type, term);
       }
@@ -151,10 +151,7 @@ public class TypeChecker {
       String roleInParent = child.getRole_();
       parent.removeChild(child);
       SNode childReplacement = childrenReplacement.get(child);
-      if (childReplacement.getParent() != null) { // detach (or copy?)
-       // childReplacement.getParent().removeChild(childReplacement);
-        childReplacement = CopyUtil.copy(childReplacement, typesModel);
-      }
+      childReplacement = CopyUtil.copy(childReplacement, parent.getModel());
       parent.addChild(roleInParent, childReplacement);
     }
     return node;
