@@ -144,4 +144,87 @@ public class SubtypingManager {
       LOG.error(s);
     }
   }
+
+  public static <T> Set<T> lowestCommonSupertypes(Set<T> types, SupertypesCollector<T> supertypesCollector) {
+
+    Set<T> allTypes = new HashSet<T>(types);
+    Map<T, Set<T>> subTypesToSuperTypes = new HashMap<T, Set<T>>();
+
+    Set<T> frontier = new HashSet<T>(types);
+    Set<T> newFrontier = new HashSet<T>();
+    while (!(frontier.isEmpty())) {
+      for (T type : frontier) {
+        Set<T> superTypes = supertypesCollector.collectSupertypes(type);
+        newFrontier.addAll(superTypes);
+        allTypes.addAll(superTypes);
+        subTypesToSuperTypes.put(type, superTypes);
+      }
+      frontier = newFrontier;
+      newFrontier = new HashSet<T>();
+    }
+
+    for (T node1 : allTypes) { // transitive closure
+      for (T node2 : allTypes) {
+        for (T node3 : allTypes) {
+          if (node1 == node2 || node2 == node3 || node1 == node3) continue;
+          Set<T> supertypes1 = subTypesToSuperTypes.get(node1);
+          if (supertypes1 == null) continue;
+          Set<T> supertypes2 = subTypesToSuperTypes.get(node2);
+          if (supertypes2 == null) continue;
+          if (supertypes1.contains(node2) && supertypes2.contains(node3)) {
+            supertypes1.add(node3);
+          }
+        }
+      }
+    }
+
+
+    Set<T> commonSupertypes = new HashSet<T>();
+    T first = types.iterator().next();
+    Set<T> candidates = subTypesToSuperTypes.get(first);
+    if (candidates == null) {
+      candidates = new HashSet<T>();
+    } else {
+      candidates = new HashSet<T>(candidates);
+    }
+    candidates.add(first);
+    for (T node : candidates) {
+      boolean good = true;
+      for (T type : types) {
+        if (type == node) continue;
+        Set<T> supertypes = subTypesToSuperTypes.get(type);
+        if (supertypes == null || !supertypes.contains(node)) {
+          good = false;
+          break;
+        }
+      }
+      if (good) { // if all sets contain it
+        commonSupertypes.add(node);
+      }
+    }
+
+    for (T node : new HashSet<T>(commonSupertypes)) { // retaining only lowest common supertypes
+      Set<T> supertypes = subTypesToSuperTypes.get(node);
+      if (supertypes == null) continue;
+      for (T supertype : supertypes) {
+        if (commonSupertypes.contains(supertype)) {
+          commonSupertypes.remove(supertype);
+        }
+      }
+    }
+
+    return commonSupertypes;
+  }
+
+
+  public static interface SupertypesCollector<T> {
+    Set<T> collectSupertypes(T subtype);
+  }
+
+
+  public static class NodeSupertypesCollector implements SupertypesCollector<SNode> {
+    public Set<SNode> collectSupertypes(SNode subtype) {
+      return getInstance().collectSupertypes(subtype);
+    }
+  }
 }

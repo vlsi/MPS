@@ -6,6 +6,8 @@ import jetbrains.mps.helgins.RuntimeErrorType;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Condition;
 
 import java.util.*;
 
@@ -240,16 +242,38 @@ public class EquationManager {
 
 
   public void solveInequations() {
-    for (SNode subtype : mySubtypesToSupertypesMap.keySet()) {
+    Set<SNode> nodes = new HashSet<SNode>(mySubtypesToSupertypesMap.keySet());
+    for (SNode subtype : nodes) {
       if (subtype instanceof RuntimeTypeVariable) {
-        Set<SNode> subsubtypes = mySupertypesToSubtypesMap.get(subtype);
-        Set<SNode> supertypes = mySubtypesToSupertypesMap.get(subtype);
-     //   SNode supersupertype = mySupertypesToSubtypesMap.get(supertype);
+        Set<SNode> subsubtypes = getSubtypes(subtype);
+        Set<SNode> supertypes = getSupertypes(subtype);
+        for (SNode supertype : supertypes) {
+          if (supertype instanceof RuntimeTypeVariable) { // remove inner var
+            removeSubtyping(subtype, supertype);
+            for (SNode supersupertype : getSupertypes(supertype)) {
+              removeSubtyping(supertype, supersupertype);
+              addSubtyping(subtype, supersupertype);
+            }
+          }
+        }
+        if (supertypes.isEmpty()) {
+
+        }
 
 
       } else { // todo
 
       }
     }
+  }
+
+  private Set<SNode> getSubtypes(SNode superType) {
+    Set<SNode> subtypes = mySupertypesToSubtypesMap.get(superType);
+    return subtypes == null ? new HashSet<SNode>() : new HashSet<SNode>(subtypes);
+  }
+
+   private Set<SNode> getSupertypes(SNode subType) {
+    Set<SNode> superTypes = mySubtypesToSupertypesMap.get(subType);
+    return superTypes == null ? new HashSet<SNode>() : new HashSet<SNode>(superTypes);
   }
 }
