@@ -18,20 +18,12 @@ public class SReference {
   protected String myTargetNodeId;
   protected String myExtResolveInfo = "";
   protected SModelUID myTargetModelUID;
-  protected boolean myIsResolved = true;
   protected String myResolveInfo;
 
-  private SReference(String role, SNode sourceNode, String targetNodeId, String extResolveInfo, SModelUID targetModelUID, boolean resolved) {
+  private SReference(String role, SNode sourceNode, String targetNodeId, String resolveInfo, String extResolveInfo, SModelUID targetModelUID, boolean resolved) {
     this(role, sourceNode, targetModelUID, extResolveInfo);
     myTargetNodeId = targetNodeId;
-    myResolveInfo = null;
-    LOG.assertLog(targetModelUID != null, "targetModelUID is NULL");
-  }
-
-  private SReference(String role, SNode sourceNode, String resolveInfo, String extResolveInfo, SModelUID targetModelUID) {
-    this(role, sourceNode, targetModelUID, extResolveInfo);
     myResolveInfo = resolveInfo;
-    myTargetNodeId = null;
     LOG.assertLog(targetModelUID != null, "targetModelUID is NULL");
   }
 
@@ -68,10 +60,6 @@ public class SReference {
     return mySourceNode;
   }
 
-  public void setResolved() {
-    myIsResolved = true;
-  }
-
   /*package*/ @Deprecated void setRole(String role) {
     myRole = role;
   }
@@ -79,7 +67,7 @@ public class SReference {
 
   public static SReference getUnresolvedExternalReference(String role, SNode sourceNode, SModelDescriptor modelDescriptor, String extResolveInfo) {
     LOG.assertLog(sourceNode.getModel().getModelDescriptor() != modelDescriptor);
-    return new SReference(role, sourceNode, null, extResolveInfo, modelDescriptor.getModelUID(), false);
+    return new SReference(role, sourceNode, null, null, extResolveInfo, modelDescriptor.getModelUID(), false);
   }
 
 
@@ -89,7 +77,6 @@ public class SReference {
   }
 
   protected SNode getTargetNode_impl() {
-    myIsResolved = false;
     SModel model = null;
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(myTargetModelUID);
     if (modelDescriptor == null) {
@@ -108,7 +95,6 @@ public class SReference {
       if (nodeById == null) {
         logGetTargetNodeErrors(GetTargetNodeErrorState.CANT_RESOLVE_BY_ID);
       } else {
-        myIsResolved = true;
         if (model.isExternallyResolvable() && model != sourceModel) {
           String extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(nodeById);
           if (extResolveInfo != null) {//then resolve this reference by ext resolve info
@@ -127,8 +113,6 @@ public class SReference {
       SNode nodeByExtResolveInfo = model.getNodeByExtResolveInfo(myExtResolveInfo);
       if (nodeByExtResolveInfo == null) {
         logGetTargetNodeErrors(GetTargetNodeErrorState.CANT_RESOLVE_BY_ERI);
-      } else {
-        myIsResolved = true;
       }
       return nodeByExtResolveInfo;
     }
@@ -151,15 +135,12 @@ public class SReference {
     return myTargetNodeId;
   }
 
-  public void setUnresolved() {
-    myIsResolved = false;
-    myTargetNodeId = null;
-  }
-
   public boolean isResolved() {
-   if (myTargetNodeId != null) return true;
-   if (myIsResolved) return true;
-   return (ExternalResolver.isEmptyExtResolveInfo(myResolveInfo) && ExternalResolver.isEmptyExtResolveInfo(myExtResolveInfo));
+    if (getTargetNode() != null) return true;
+    if (ExternalResolver.isEmptyExtResolveInfo(myExtResolveInfo)) {
+      return (ExternalResolver.isEmptyExtResolveInfo(myResolveInfo));
+    }
+    return false;
   }
 
   public String getExtResolveInfo() {
@@ -177,11 +158,14 @@ public class SReference {
 
   //reference created by target node
   public static SReference newInstance(String role, SNode sourceNode, SNode targetNode) {
+    String resolveInfo = targetNode == null ? null : targetNode.getName();
     SModel sourceModel = sourceNode.getModel();
     SModel targetModel = targetNode == null ? null : targetNode.getModel();
     if (sourceModel == targetModel || targetModel == null) {
       String id = targetNode == null ? null : targetNode.getId();
-      return new SReference(role, sourceNode, id, null, sourceModel.getUID(), false);
+      SReference sReference = new SReference(role, sourceNode, id, null, null, sourceModel.getUID(), false);
+      sReference.setResolveInfo(resolveInfo);
+      return sReference;
     } else {
       SModelUID targetModelUID = targetModel.getUID();
       sourceModel.addImportElement(targetModelUID);
@@ -189,7 +173,9 @@ public class SReference {
       if (targetModel.isExternallyResolvable()) {
         extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(targetNode);
       }
-      return new SReference(role, sourceNode, targetNode.getId(), extResolveInfo, targetModel.getUID(), false);
+      SReference sReference = new SReference(role, sourceNode, targetNode.getId(), null, extResolveInfo, targetModel.getUID(), false);
+      sReference.setResolveInfo(resolveInfo);
+      return sReference;
     }
   }
 
@@ -214,11 +200,8 @@ public class SReference {
   //reference created by specifying all info
   public static SReference newInstance(String role, SNode sourceNode, String targetNodeId, String extResolveInfo,
                                        SModelUID targetModelUID, String resolveInfo) {
-    if(targetNodeId != null || extResolveInfo != null) {
-      return new SReference(role, sourceNode, targetNodeId, extResolveInfo, targetModelUID, false);
-    }   else {
-      return new SReference(role, sourceNode, resolveInfo, extResolveInfo, targetModelUID);
-    }
+    return new SReference(role, sourceNode, targetNodeId, resolveInfo, extResolveInfo, targetModelUID, false);
+
   }
 
 

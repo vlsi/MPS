@@ -187,9 +187,10 @@ public class ReferencePersister {
       }
 
     } else {//internal reference
-      if (reference.isResolved()) linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, reference.getTargetNodeId());
+      String targetNodeId = reference.getTargetNodeId();
+      if (targetNodeId != null) linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, targetNodeId);
       String resolveInfo = reference.getResolveInfo();
-      if (!reference.isResolved() && resolveInfo != null) linkElement.setAttribute(ModelPersistence.RESOLVE_INFO, resolveInfo);
+      if (resolveInfo != null) linkElement.setAttribute(ModelPersistence.RESOLVE_INFO, resolveInfo);
     }
 
     return linkElement;

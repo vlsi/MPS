@@ -21,10 +21,6 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteI
   private IScope myScope;
   private LinkDeclaration myLinkDeclaration;
 
-  public interface IReferentSetter {
-    public void execute(SNode newReferent, IScope scope);
-  }
-
   public DefaultReferentNodeSubstituteAction(SNode parameterNode, SNode sourceNode, SNode currentReferent, LinkDeclaration linkDeclaration, IScope scope) {
     super(parameterNode);
     mySourceNode = sourceNode;
