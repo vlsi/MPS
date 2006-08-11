@@ -118,8 +118,7 @@ public class ReferencePersister {
             this.getTargetId(),
             this.getExtResolveInfo(),
             importedModelUID,
-            this.getResolveInfo(),
-            this.getTargetClassResolveInfo()
+            this.getResolveInfo()
     );
     return reference;
   }
@@ -191,8 +190,6 @@ public class ReferencePersister {
       if (reference.isResolved()) linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, reference.getTargetNodeId());
       String resolveInfo = reference.getResolveInfo();
       if (!reference.isResolved() && resolveInfo != null) linkElement.setAttribute(ModelPersistence.RESOLVE_INFO, resolveInfo);
-      String targetClassResolveInfo = reference.getTargetClassResolveInfo();
-      if (!reference.isResolved() && targetClassResolveInfo != null) linkElement.setAttribute(ModelPersistence.TARGET_CLASS_RESOLVE_INFO, targetClassResolveInfo);
     }
 
     return linkElement;

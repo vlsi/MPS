@@ -1,8 +1,15 @@
 package jetbrains.mps.resolve;
 
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.action.ModelActions;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 
 import java.util.*;
 import java.lang.reflect.Method;
@@ -18,104 +25,46 @@ public class Resolver {
 
 
   public static void resolveReferences(Set<SReference> references, IOperationContext operationContext) {
-     for (SReference reference : references) {
+    for (SReference reference : references) {
       resolve(reference, operationContext);
     }
   }
 
-
   public static void setResolveInfo(SReference reference) {
-
-    String role = reference.getRole();
-    Class sourceClass = reference.getSourceNode().getClass();
-
     SNode targetNode = reference.getTargetNode();
-    Class targetClass  = null;
-
-    if (targetNode != null) targetClass  = reference.getTargetNode().getClass();
-    else try {
-      targetClass = Class.forName(reference.getTargetClassResolveInfo());
-    } catch (Exception e) {
-      return;
-    }
-
-    String packageName = sourceClass.getPackage().getName();
-
-
-    Class cls1 = sourceClass;
-
-
-    while (cls1 != SNode.class) {
-      String sourceClassName = cls1.getName();
-      sourceClassName = sourceClassName.substring(sourceClassName.lastIndexOf('.') + 1);
-      Class cls2 = targetClass;
-
-      while (cls2 != SNode.class) {
-        String targetClassName = cls2.getName();
-        targetClassName = targetClassName.substring(targetClassName.lastIndexOf('.') +1);
-
-        String methodName = "getResolveInfoOf" + targetClassName + "ForRole" + role + "In" + sourceClassName;
-        try {
-          Class resolveClass = Class.forName(packageName+".resolve.Resolver", true, ClassLoaderManager.getInstance().getClassLoader());
-          Method m = resolveClass.getMethod(methodName, cls2);
-          String resolveInfo = (String) m.invoke(null, reference.getTargetNode());
-          if (resolveInfo == null) return;
-          reference.setResolveInfo(resolveInfo);
-          reference.setTargetClassResolveInfo(targetClass);
-          return;
-        } catch (Exception e) {
-
-        }
-        cls2 = cls2.getSuperclass();
-      }
-      cls1 = cls1.getSuperclass();
-    }
+    if (targetNode == null) return;
+    String name = targetNode.getName();
+    reference.setResolveInfo(name);
   }
-
 
   public static void resolve(final SReference reference, final IOperationContext operationContext){
 
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
 
+        String resolveInfo = reference.getResolveInfo();
         String role  = reference.getRole();
-
         SNode sourceNode = reference.getSourceNode();
 
-        SModel model = sourceNode.getModel();
+        ConceptDeclaration sourceConcept = SModelUtil.getConceptDeclaration(sourceNode, operationContext.getScope());
+        LinkDeclaration referenceLinkDeclaration = SModelUtil.findLinkDeclaration(sourceConcept, role);
+        List<INodeSubstituteAction> actions = ModelActions.createReferentSubstituteActions(sourceNode, reference.getTargetNode(), referenceLinkDeclaration, operationContext);
 
-        String packageName = sourceNode.getClass().getPackage().getName();
-        Class cls = sourceNode.getClass();
-
-        SNode oldTarget = reference.getTargetNode();
-
-        while (cls != SNode.class) {
-          try {
-            String className = cls.getName();
-            className = className.substring(className.lastIndexOf('.') + 1);
-            //if method exists but can't resolve we'll mark our reference as a bad one
-            Class resolveClass = Class.forName(packageName+".resolve.Resolver", true, ClassLoaderManager.getInstance().getClassLoader());
-
-            Method m = resolveClass.getMethod("resolveForRole"+role+"In"+className, SReference.class, Class.class, IOperationContext.class);
-
-
-            boolean success = (Boolean)m.invoke(null, reference, cls, operationContext);
-
-            if (success) {
-              sourceNode.removeReference(reference);
-            } else {
-              reference.setUnresolved();
-            }
-            return;
-          } catch (NullPointerException e) {
-            return;
-          } catch (Exception e) {
+        boolean success = false;
+        for (INodeSubstituteAction action : actions) {
+          if (action.canSubstitute(resolveInfo)) {
+            action.doSubstitute(resolveInfo);
+            success = true;
+            break;
           }
-          cls = cls.getSuperclass();
-
         }
-        reference.setResolved();
-        reference.setResolveInfo(null);
+
+        if (success) {
+          reference.setResolved();
+          reference.setResolveInfo(null);
+        } else {
+          reference.setUnresolved();
+        }
 
       }
     } , "resolve" );
