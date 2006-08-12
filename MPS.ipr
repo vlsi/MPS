@@ -343,6 +343,7 @@
       <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPSWiki/MPSWiki.iml" filepath="$PROJECT_DIR$/MPSWiki/MPSWiki.iml" group="DataLanguages" />
       <module fileurl="file://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/MPSWiki_WebApp.iml" filepath="$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/MPSWiki_WebApp.iml" group="DataLanguages" />
+      <module fileurl="file://$PROJECT_DIR$/NaturalLanguage/NaturalLanguage.iml" filepath="$PROJECT_DIR$/NaturalLanguage/NaturalLanguage.iml" />
       <module fileurl="file://$PROJECT_DIR$/SemanticWeb/editor/OWLEditor.iml" filepath="$PROJECT_DIR$/SemanticWeb/editor/OWLEditor.iml" group="SemanticWeb" />
       <module fileurl="file://$PROJECT_DIR$/ProjectHalo/ProjectHalo.iml" filepath="$PROJECT_DIR$/ProjectHalo/ProjectHalo.iml" />
       <module fileurl="file://$PROJECT_DIR$/Remoting/Remoting.iml" filepath="$PROJECT_DIR$/Remoting/Remoting.iml" />
