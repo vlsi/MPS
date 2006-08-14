@@ -39,6 +39,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private static final Logger LOG = Logger.getLogger(AbstractEditorComponent.class);
   public static final String EDITOR_POPUP_MENU_ACTIONS = "editor-popup-menu-actions";
 
+  private Set<MPSAction> myMPSActionsWithShortcuts = new HashSet<MPSAction>();
   private WeakHashMap<EditorCell, Set<SNode>> myCellsToNodesToDependOnMap = new WeakHashMap<EditorCell, Set<SNode>>();
 
   private WeakHashMap<SNode, EditorCell> myNodesToBigCellsMap = new WeakHashMap<SNode, EditorCell>();
@@ -177,15 +178,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     // ----
     myActionMap.put(EditorCellAction.RENDER_TEXT, new CellAction_RenderText());
     // ----
-    
-    ActionGroup group = ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS);
-    if (group != null) {
-      for (ActionGroupElement e : group.getElements()) {
-        if (e instanceof MPSAction) {
-          registerNodeAction((MPSAction) e);
-        }
-      }
-    }
+
+    updateMPSActionsWithKeyStrokes();
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
@@ -336,6 +330,25 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     addRebuildListener(UndoManager.instance().rebuildListener());
   }
 
+  private void updateMPSActionsWithKeyStrokes() {
+    for (MPSAction a : myMPSActionsWithShortcuts) {
+      unregisterKeyboardAction(KeyStroke.getKeyStroke(a.getKeyStroke()));
+    }
+    myMPSActionsWithShortcuts.clear();
+    ActionGroup group = ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS);
+    if (group != null) {
+      for (ActionGroupElement e : group.getElements()) {
+        if (e instanceof MPSAction) {
+          MPSAction action = (MPSAction) e;
+          if (action.hasKeystroke()) {
+            registerNodeAction(action, action.getKeyStroke());
+            myMPSActionsWithShortcuts.add(action);
+          }
+        }
+      }
+    }
+  }
+
   private void moveCurrentUp() {
     final SNode current = getSelectedCell().getSNode();
     if (current == null) return;
@@ -453,12 +466,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     super.removeNotify();
   }
 
-  protected void registerNodeAction(MPSAction action) {
-    registerNodeAction(action, action.getKeyStroke());
+  protected AbstractAction registerNodeAction(MPSAction action) {
+    return registerNodeAction(action, action.getKeyStroke());
   }
 
-  protected void registerNodeAction(final MPSAction action, String keyStroke) {
-    registerKeyboardAction(new AbstractAction(action.getName()) {
+  protected AbstractAction registerNodeAction(final MPSAction action, String keyStroke) {
+    AbstractAction result;
+    registerKeyboardAction(result = new AbstractAction(action.getName()) {
       public void actionPerformed(ActionEvent e) {
         if (mySelectedCell != null && mySelectedCell.getSNode() != null) {
           final ActionContext context = new ActionContext(getEditorContext().getOperationContext(), mySelectedCell.getSNode());
@@ -474,6 +488,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
       }
     }, KeyStroke.getKeyStroke(keyStroke), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    return result;
   }
 
   private EditorCell_Component findCellForComponent(Component component, EditorCell root) {
@@ -974,6 +989,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public void rebuildEditorContent() {
     clearCaches();
+    updateMPSActionsWithKeyStrokes();
     rebuildEditorContent(null);
   }
 
