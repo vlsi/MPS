@@ -90,9 +90,24 @@ public abstract class AbstractCellListHandler implements IKeyboardHandler {
     return createCells(editorContext, new CellLayout_Horizontal());
   }
 
+  public EditorCell_Collection createCells(EditorContext editorContext, CellLayout cellLayout, boolean selectable) {
+    EditorCell_Collection cellsCollection = createCells(editorContext, cellLayout);
+    if(!selectable) {
+      return cellsCollection;
+    }
+
+    // if the list compartment is selectable - create wropping cell collection around it so
+    // that actions intended to work for the list element do not work for the list owner.
+    EditorCell_Collection wrapperCell = EditorCell_Collection.create(editorContext, myOwnerNode, new CellLayout_Horizontal(), null);
+    wrapperCell.setSelectable(true);
+    wrapperCell.addEditorCell(cellsCollection);
+    return wrapperCell;
+  }
+
   public EditorCell_Collection createCells(EditorContext editorContext, CellLayout cellLayout) {
     myListEditorCell_Collection = EditorCell_Collection.create(editorContext, myOwnerNode, cellLayout, this);
     myListEditorCell_Collection.setSelectable(false);
+    myListEditorCell_Collection.setDrawBorder(false);
 
     Iterator<SNode> listNodes = getNodesForList();
     if (!listNodes.hasNext()) {
@@ -105,17 +120,21 @@ public abstract class AbstractCellListHandler implements IKeyboardHandler {
         myListEditorCell_Collection.addEditorCell(createNodeCell(editorContext, node));
       }
     }
-    setDefaultCellListActions(myListEditorCell_Collection);
+
+    // add insert/insert-before actions
+    myListEditorCell_Collection.setAction(EditorCellAction.INSERT, new CellAction_Insert(this, false));
+    myListEditorCell_Collection.setAction(EditorCellAction.INSERT_BEFORE, new CellAction_Insert(this, true));
+
     return myListEditorCell_Collection;
   }
 
   protected abstract Iterator<SNode> getNodesForList();
 
-  protected void setDefaultCellListActions(EditorCell_Collection cellList) {
-    cellList.setAction(EditorCellAction.INSERT, new CellAction_Insert(this, false));
-    cellList.setAction(EditorCellAction.INSERT_BEFORE, new CellAction_Insert(this, true));
-    cellList.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-  }
+//  protected void setDefaultCellListActions(EditorCell_Collection cellList) {
+//    cellList.setAction(EditorCellAction.INSERT, new CellAction_Insert(this, false));
+//    cellList.setAction(EditorCellAction.INSERT_BEFORE, new CellAction_Insert(this, true));
+////    cellList.setAction(EditorCellAction.DELETE, new CellAction_Empty());
+//  }
 
   protected EditorCell addSeparatorCell(EditorContext editorContext, EditorCell separatorCell) {
     if (separatorCell != null) {
