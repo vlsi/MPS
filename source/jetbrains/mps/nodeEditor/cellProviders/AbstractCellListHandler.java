@@ -130,12 +130,6 @@ public abstract class AbstractCellListHandler implements IKeyboardHandler {
 
   protected abstract Iterator<SNode> getNodesForList();
 
-//  protected void setDefaultCellListActions(EditorCell_Collection cellList) {
-//    cellList.setAction(EditorCellAction.INSERT, new CellAction_Insert(this, false));
-//    cellList.setAction(EditorCellAction.INSERT_BEFORE, new CellAction_Insert(this, true));
-////    cellList.setAction(EditorCellAction.DELETE, new CellAction_Empty());
-//  }
-
   protected EditorCell addSeparatorCell(EditorContext editorContext, EditorCell separatorCell) {
     if (separatorCell != null) {
       myListEditorCell_Collection.addEditorCell(separatorCell);
