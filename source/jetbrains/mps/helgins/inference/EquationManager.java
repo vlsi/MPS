@@ -300,7 +300,7 @@ public class EquationManager {
         Set<SNode> concreteSubtypes = new HashSet<SNode>();
         for (SNode subtype : new HashSet<SNode>(subtypes)) {
           if (subtype instanceof RuntimeTypeVariable) {
-            continue outer;
+            continue; // outer;
           }
           concreteSubtypes.add(subtype);
           subtypes.remove(subtype);
