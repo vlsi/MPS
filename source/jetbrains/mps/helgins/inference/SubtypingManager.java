@@ -145,6 +145,10 @@ public class SubtypingManager {
     }
   }
 
+  public static Set<SNode> lowestCommonSupertypes(Set<SNode> types) {
+    return lowestCommonSupertypes(types, new NodeSupertypesCollector());
+  }
+
   public static <T> Set<T> lowestCommonSupertypes(Set<T> types, SupertypesCollector<T> supertypesCollector) {
 
     Set<T> allTypes = new HashSet<T>(types);

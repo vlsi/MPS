@@ -72,6 +72,9 @@ public class TypeChecker {
     // check types
     doCheckTypes(root);
 
+    // solve residual inequations
+    EquationManager.getInstance().solveInequations();
+
     // main context
     Set<Pair<SNode, SNode>> mainContext = ContextsManager.getInstance().getMainContext();
 
