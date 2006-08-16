@@ -277,7 +277,22 @@ public class EquationManager {
       }
     }
 
-    //3. {}->c->{S} => c = lcs({S})
+    //3. a->b, b->a => a = b
+    for (SNode node : subtypingGraphVertices()) {
+      Set<SNode> supertypes = mySubtypesToSupertypesMap.get(node);
+      if (supertypes == null) continue;
+      for (SNode supertype : new HashSet<SNode>(supertypes)) {
+        Set<SNode> supertypesSupertypes = mySubtypesToSupertypesMap.get(supertype);
+        if (supertypesSupertypes == null) continue;
+        for (SNode supertypesSubtype : supertypesSupertypes) {
+          if (supertypesSubtype == node) {
+            addEquation(node, supertype);
+          }
+        }
+      }
+    }
+
+    //4. {}->c->{S} => c = lcs({S})
     outer: for (SNode node : subtypingGraphVertices()) {
       if (node instanceof RuntimeTypeVariable) {
         Set<SNode> subtypes = mySupertypesToSubtypesMap.get(node);
@@ -301,7 +316,7 @@ public class EquationManager {
       }
     }
 
-    //4. T->c->{} => c = T
+    //5. T->c->{} => c = T
     for (SNode node : subtypingGraphVertices()) {
       if (node instanceof RuntimeTypeVariable) {
         Set<SNode> supertypes = mySubtypesToSupertypesMap.get(node);
