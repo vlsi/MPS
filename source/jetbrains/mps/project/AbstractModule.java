@@ -151,17 +151,13 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
-  //returns all modules which this explicitly depends on (recursively),
-  // i.e. without bootstrap languages, if such a dependency is not explicitly set in module roots
-  public <T extends IModule> Set<T> getAllExplicitlyDependOnModules(Class<T> cls) {
+  //returns all modules which this depends on (recursively)
+  private <T extends IModule> Set<T> getAllDependOnModules(Class<T> cls) {
+    //collect all modules which this explicitly depends on (recursively),
+    // i.e. without bootstrap languages, if such a dependency is not explicitly set in module roots
     Set<T> dependOnModules = new HashSet<T>();
     collectAllExplicitlyDependOnModules(this, dependOnModules, cls);
-    return dependOnModules;
-  }
 
-  //returns all modules which this depends on (recursively)
-  public <T extends IModule> Set<T> getAllDependOnModules(Class<T> cls) {
-    Set<T> dependOnModules = getAllExplicitlyDependOnModules(cls);
     //add bootstrapLanguages
     for (IModule module : MPSModuleRepository.getInstance().getModules(BootstrapLanguages.getInstance())) {
       if (cls.isInstance(module)) {

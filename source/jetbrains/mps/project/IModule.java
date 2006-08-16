@@ -24,13 +24,6 @@ public interface IModule extends IScope, ModelOwner, MPSModuleOwner {
 
   List<IModule> getOwnModules();
 
-  //returns all modules which this explicitly depends on (recursively),
-  // i.e. without bootstrap languages, if such a dependency is not explicitly set in module roots
-  <T extends IModule> Set<T> getAllExplicitlyDependOnModules(Class<T> cls);
-
-  //returns all modules which this depends on (recursively)
-  <T extends IModule> Set<T> getAllDependOnModules(Class<T> cls);
-
   List<SModelDescriptor> getOwnModelDescriptors();
 
   List<ModelRoot> getModelRoots();
@@ -47,7 +40,6 @@ public interface IModule extends IScope, ModelOwner, MPSModuleOwner {
   void registerModelDescriptor(SModelDescriptor modelDescriptor);
 
   void unRegisterModelDescriptor(SModelDescriptor modelDescriptor);
-
 
   SModelDescriptor createModel(SModelUID uid, ModelRoot root);
 
