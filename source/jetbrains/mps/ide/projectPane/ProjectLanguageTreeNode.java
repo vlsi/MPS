@@ -93,6 +93,11 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
       this.add(new SModelTreeNode(typesystemModelDescriptor, "typesystem", operationContext));
     }
 
+    SModelDescriptor helginsModelDescriptor = myLanguage.getHelginsTypesystemModelDescriptor();
+    if (helginsModelDescriptor != null) {
+      this.add(new SModelTreeNode(helginsModelDescriptor, "helgins typesystem", operationContext));
+    }
+
     SModelDescriptor actionsModelDescriptor = myLanguage.getActionsModelDescriptor();
     if (actionsModelDescriptor != null) {
       this.add(new SModelTreeNode(actionsModelDescriptor, "actions", operationContext));
@@ -102,6 +107,8 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
     if (constraintsModelDescriptor != null) {
       this.add(new SModelTreeNode(constraintsModelDescriptor, "constraints", operationContext));
     }
+
+
 
     // language accessory models
 

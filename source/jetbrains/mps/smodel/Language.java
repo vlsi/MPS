@@ -111,6 +111,11 @@ public class Language extends AbstractModule {
     readModulesAndModels();
     revalidateGenerators();
 
+    List<SModelDescriptor> accessoryModels = getAccessoryModels();
+    for (SModelDescriptor accessoryModel : accessoryModels) {
+      SModelRepository.getInstance().addOwnerForDescriptor(accessoryModel, this);
+    }
+
     CommandProcessor.instance().addCommandListener(myEventTranslator);
     SModelsMulticaster.getInstance().addSModelsListener(myModelsListener);
     registerAspectListener();
@@ -285,6 +290,14 @@ public class Language extends AbstractModule {
   public SModelDescriptor getTypesystemModelDescriptor() {
     if (getLanguageDescriptor().getTypeSystem() != null) {
       SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getTypeSystem().getName());
+      return SModelRepository.getInstance().getModelDescriptor(modelUID, this);
+    }
+    return null;
+  }
+
+  public SModelDescriptor getHelginsTypesystemModelDescriptor() {
+    if (getLanguageDescriptor().getHelginsTypesystemModel() != null) {
+      SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getHelginsTypesystemModel().getName());
       return SModelRepository.getInstance().getModelDescriptor(modelUID, this);
     }
     return null;
@@ -501,6 +514,9 @@ public class Language extends AbstractModule {
     if (modelDescriptor == language.getTypesystemModelDescriptor()) {
       return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.TYPESYSTEM);
     }
+    if (modelDescriptor == language.getHelginsTypesystemModelDescriptor()) {
+      return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.HELGINS_TYPESYSTEM);
+    }
     if (modelDescriptor == language.getActionsModelDescriptor()) {
       return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.ACTIONS);
     }
@@ -521,7 +537,7 @@ public class Language extends AbstractModule {
 
   public static class LanguageAspectStatus implements IStatus {
     public static enum AspectKind {
-      STRUCTURE,EDITOR,ACTIONS,CONSTRAINTS,TYPESYSTEM,ACCESSORY,NONE
+      STRUCTURE,EDITOR,ACTIONS,CONSTRAINTS,TYPESYSTEM,HELGINS_TYPESYSTEM,ACCESSORY,NONE
     }
 
     private Language myLanguage;
@@ -560,6 +576,10 @@ public class Language extends AbstractModule {
       return myAspectKind != LanguageAspectStatus.AspectKind.NONE && myAspectKind != LanguageAspectStatus.AspectKind.ACCESSORY;
     }
 
+    public boolean isNone() {
+        return myAspectKind == AspectKind.NONE;
+    }
+
     public boolean isStructure() {
       return myAspectKind == LanguageAspectStatus.AspectKind.STRUCTURE;
     }
@@ -572,6 +592,10 @@ public class Language extends AbstractModule {
       return myAspectKind == LanguageAspectStatus.AspectKind.TYPESYSTEM;
     }
 
+    public boolean isHelginsTypesystem() {
+      return myAspectKind == LanguageAspectStatus.AspectKind.HELGINS_TYPESYSTEM;
+    }
+
     public boolean isActions() {
       return myAspectKind == LanguageAspectStatus.AspectKind.ACTIONS;
     }
@@ -582,6 +606,10 @@ public class Language extends AbstractModule {
 
     public boolean isAccessoryModel() {
       return myAspectKind == LanguageAspectStatus.AspectKind.ACCESSORY;
+    }
+
+    public String name() {
+      return myAspectKind.name();
     }
   }
 
@@ -605,6 +633,8 @@ public class Language extends AbstractModule {
           }
         } else if (status.isTypesystem()) {
           languageDescriptor.removeChild(languageDescriptor.getTypeSystem());
+        } else if (status.isHelginsTypesystem()) {
+          languageDescriptor.removeChild(languageDescriptor.getHelginsTypesystemModel());
         } else if (status.isActions()) {
           languageDescriptor.removeChild(languageDescriptor.getActionsModel());
         } else if (status.isConstraintsModel()) {

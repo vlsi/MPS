@@ -5,6 +5,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.helgins.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.CopyUtil;
+import jetbrains.mps.project.GlobalScope;
 
 import java.util.*;
 
@@ -192,24 +193,13 @@ public class TypeChecker {
   }
 
 
-  public static String getTypesModelUID(SNode node) {
-    String namespace = SModelUtil.getLanguageNamespace(node);
-    String postfix = namespace;
-
-    if (namespace.startsWith(JETBRAINS_MPS_TYPES_LANGUAGE)) {
-      postfix = namespace.substring(JETBRAINS_MPS_TYPES_LANGUAGE.length());
-    } else if (namespace.startsWith(JETBRAINS_MPS)) {
-      postfix = namespace.substring(JETBRAINS_MPS.length());
-    } else if (namespace.startsWith(JETBRAINS)) {
-      postfix = namespace.substring(JETBRAINS.length());
-    }
-
-    return TYPESYSYTEM_MODEL_PREFIX + postfix;
+  public static SModelDescriptor getTypesModel(SNode node) {
+    Language language = SModelUtil.getLanguage(node, GlobalScope.getInstance());
+    return language.getHelginsTypesystemModelDescriptor();
   }
 
   public static void checkNode(SNode node) {
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().
-            getModelDescriptor(SModelUID.fromString(getTypesModelUID(node)));
+    SModelDescriptor modelDescriptor = getTypesModel(node);
     if (modelDescriptor == null) return;
     SModel typesModel = modelDescriptor.getSModel();
     checkTypes(node, typesModel);
