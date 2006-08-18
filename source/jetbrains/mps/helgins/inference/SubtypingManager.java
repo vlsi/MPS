@@ -159,6 +159,7 @@ public class SubtypingManager {
     while (!(frontier.isEmpty())) {
       for (T type : frontier) {
         Set<T> superTypes = supertypesCollector.collectSupertypes(type);
+        superTypes.remove(type);
         newFrontier.addAll(superTypes);
         allTypes.addAll(superTypes);
         subTypesToSuperTypes.put(type, superTypes);

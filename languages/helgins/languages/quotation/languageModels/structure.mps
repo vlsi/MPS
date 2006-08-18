@@ -35,5 +35,21 @@
       <link role="target" targetNodeId="3.1111784312737" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1155904190472">
+    <property name="name" value="ReferenceAntiquotation" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1155904255360">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="expression" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="3.1111784312737" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration" id="1155904635870">
+    <property name="stereotype" value="link" />
+    <property name="role" value="referenceAntiquotation" />
+    <link role="source" targetNodeId="1.1133920641626" />
+    <link role="target" targetNodeId="1155904190472" resolveInfo="ReferenceAntiquotation" />
+  </node>
 </model>
 
