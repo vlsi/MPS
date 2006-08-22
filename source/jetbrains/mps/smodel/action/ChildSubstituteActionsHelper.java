@@ -150,10 +150,10 @@ public class ChildSubstituteActionsHelper {
           public String getDescriptionText(String pattern) {
             BaseConcept pn = (BaseConcept) getParameterNode();
             if (pn.getShortDescription() == null) {
-              return "(smart ref:" + referenceNodeConcept.getName() + ") " + NodePresentationUtil.descriptionText(getParameterNode(), null, NodePresentationUtil.REFERENT_PRESENTATION, getScope());
+              return "(smart ref:" + referenceNodeConcept.getName() + ") " + NodePresentationUtil.descriptionText(getParameterNode(), NodePresentationUtil.REFERENT_PRESENTATION, getScope());
             }
 
-            return "(smart ref:" + NodePresentationUtil.descriptionText(getParameterNode(), null, NodePresentationUtil.REFERENT_PRESENTATION, getScope()) + ")";
+            return "(smart ref:" + NodePresentationUtil.descriptionText(getParameterNode(), NodePresentationUtil.REFERENT_PRESENTATION, getScope()) + ")";
           }
 
           public SNode createChildNode(SNode parameterNode, SModel model, String pattern) {
@@ -180,7 +180,7 @@ public class ChildSubstituteActionsHelper {
   private static LinkDeclaration getSmartReference(ConceptDeclaration referenceDeclaringConcept, IScope scope) {
     // trick : should be no custom 'matching text'
     String expectedReferentRole = null;
-    String matchingText = NodePresentationUtil.matchingText(referenceDeclaringConcept, null, NodePresentationUtil.CHILD_PRESENTATION, scope);
+    String matchingText = NodePresentationUtil.matchingText(referenceDeclaringConcept, NodePresentationUtil.CHILD_PRESENTATION, scope);
     if (!(matchingText == null || matchingText.equals(referenceDeclaringConcept.getName()))) {
       // handle pattern 'xxx <{_referent_role_}> yyy'
       if (!matchingText.matches(".*<\\{.+\\}>.*")) {
@@ -210,8 +210,8 @@ public class ChildSubstituteActionsHelper {
   }
 
   private static String getSmartMatchingText(ConceptDeclaration referenceNodeConcept, SNode referentNode, IScope scope) {
-    String referentMatchingText = NodePresentationUtil.matchingText(referentNode, null, NodePresentationUtil.REFERENT_PRESENTATION, scope);
-    String referenceMatchingText = NodePresentationUtil.matchingText(referenceNodeConcept, null, NodePresentationUtil.CHILD_PRESENTATION, scope);
+    String referentMatchingText = NodePresentationUtil.matchingText(referentNode, NodePresentationUtil.REFERENT_PRESENTATION, scope);
+    String referenceMatchingText = NodePresentationUtil.matchingText(referenceNodeConcept, NodePresentationUtil.CHILD_PRESENTATION, scope);
     // handle pattern 'xxx <{_referent_role_}> yyy'
     if (!referenceMatchingText.matches(".*<\\{.+\\}>.*")) {
       return referentMatchingText;

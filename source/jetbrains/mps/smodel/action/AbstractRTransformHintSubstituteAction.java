@@ -31,7 +31,7 @@ public abstract class AbstractRTransformHintSubstituteAction extends AbstractNod
   }
 
   public String getMatchingText(String pattern) {
-    return NodePresentationUtil.matchingText(getParameterNode(), mySourceNode, NodePresentationUtil.CHILD_PRESENTATION, getScope());
+    return NodePresentationUtil.matchingText(getParameterNode(), NodePresentationUtil.CHILD_PRESENTATION, getScope());
   }
 
   public String getDescriptionText(String pattern) {

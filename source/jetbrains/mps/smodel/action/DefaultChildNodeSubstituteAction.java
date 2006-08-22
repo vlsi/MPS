@@ -37,7 +37,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteItem
   }
 
   public String getMatchingText(String pattern) {
-    return NodePresentationUtil.matchingText(getParameterNode(), myParentNode, NodePresentationUtil.CHILD_PRESENTATION, getScope());
+    return NodePresentationUtil.matchingText(getParameterNode(), NodePresentationUtil.CHILD_PRESENTATION, getScope());
   }
 
   public String getDescriptionText(String pattern) {

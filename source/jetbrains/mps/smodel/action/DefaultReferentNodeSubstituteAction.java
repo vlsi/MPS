@@ -41,7 +41,7 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteI
   }
 
   public String getMatchingText(String pattern) {
-    return NodePresentationUtil.matchingText(getParameterNode(), mySourceNode, NodePresentationUtil.REFERENT_PRESENTATION, getScope());
+    return NodePresentationUtil.matchingText(getParameterNode(), NodePresentationUtil.REFERENT_PRESENTATION, getScope());
   }
 
   public String getDescriptionText(String pattern) {
