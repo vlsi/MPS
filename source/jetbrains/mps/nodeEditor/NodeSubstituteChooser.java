@@ -23,6 +23,9 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   static final int MAX_MENU_LEN = 30;
   static final int SCROLLER_WIDTH = 7;
 
+  public static final int PREFERRED_WIDTH = 300;
+  public static final int PREFERRED_HEIGHT = 200;
+
   private PopupWindow myPopupWindow = null;
   private boolean isChooserActivated = false;
   private boolean isPopupActivated;
@@ -156,7 +159,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       descriptionLength = Math.max(descriptionLength, getDescriptionLength(item));
     }
 
-    myLength = 2 + textLength + descriptionLength;
+    myLength = Math.max(2 + textLength + descriptionLength, PREFERRED_WIDTH / getPopupWindow().getFontWidth());
   }
 
   private String getMatchingText(INodeSubstituteItem item) {
@@ -322,9 +325,6 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   }
 
   private class PopupWindow extends JWindow {
-    public static final int PREFERRED_WIDTH = 300;
-    public static final int PREFERRED_HEIGHT = 200;
-
     private JList myList = new JList(new DefaultListModel());
     private PopupWindowPosition myPosition = PopupWindowPosition.BOTTOM;
     private JScrollPane myScroller = new JScrollPane(myList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -366,6 +366,10 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       setSize(PREFERRED_WIDTH, PREFERRED_HEIGHT);
     }
 
+    public int getFontWidth() {
+      return getFontMetrics(myList.getFont()).stringWidth("x");
+    }
+
     public void setRelativeCell(EditorCell cell) {
       myRelativeCell = cell;
     }
@@ -399,7 +403,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
       Rectangle deviceBounds = WindowsUtil.findDeviceBoundsAt(location);
 
-      if (location.getY() + PopupWindow.PREFERRED_HEIGHT > deviceBounds.height + deviceBounds.y - 150) {
+      if (location.getY() + PREFERRED_HEIGHT > deviceBounds.height + deviceBounds.y - 150) {
         getPopupWindow().setPosition(PopupWindowPosition.TOP);
       } else {
         getPopupWindow().setPosition(PopupWindowPosition.BOTTOM);
@@ -430,7 +434,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
 
       setSize(
-              Math.max(PREFERRED_WIDTH, myList.getPreferredSize().width + 23),
+              Math.max(PREFERRED_WIDTH, myList.getPreferredSize().width + 21),
               Math.min(PREFERRED_HEIGHT, myList.getPreferredSize().height + getVerticalScrollerHeight()));
 
       if (getPosition() == PopupWindowPosition.TOP) {
