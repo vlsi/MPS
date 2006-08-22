@@ -64,10 +64,14 @@ public class NodePresentationUtil {
     }
 
     // default
-    if (node instanceof NamedConcept) {
-      String name = node.getName();
-      if (name != null) {
-        return name;
+    if (node instanceof BaseConcept) {
+      String customAlias = ((BaseConcept)node).getAlias();
+      if (customAlias != null) return customAlias;
+      if (node instanceof NamedConcept) {
+        String name = node.getName();
+        if (name != null) {
+          return name;
+        }
       }
     }
 
@@ -124,6 +128,14 @@ public class NodePresentationUtil {
           return "(" + anExtends.getName() + " in " + namespace + ")";
         }
         return "";
+      }
+    }
+
+    if (node instanceof BaseConcept) {
+      BaseConcept bc = (BaseConcept) node;
+      String shortDescription = bc.getShortDescription();
+      if (shortDescription != null) {
+        return shortDescription;
       }
     }
 
@@ -187,24 +199,18 @@ public class NodePresentationUtil {
     return type.getName();
   }
 
-  private static String getAliasOrConceptName(SNode node, IScope scope) {
-    String alias = null;    
-    if (node instanceof BaseConcept) {
-      BaseConcept concept = (BaseConcept) node;
-      alias = concept.getAlias();
-    }
-
+  public static String getAliasOrConceptName(SNode node, IScope scope) {
+    String alias = SModelUtil.getConceptProperty(node, "alias", scope);
     if (alias != null) {
       return alias;
     }
-
     if (node instanceof ConceptDeclaration && node.getName() != null) {
       return node.getName();
     }
     return NameUtil.shortNameFromLongName(node.getClass().getName());
   }
 
-  private static String getRoleInParentOrConceptName(SNode node) {
+  public static String getRoleInParentOrConceptName(SNode node) {
     String role = node.getRole_();
     if (role != null) {
       return role;

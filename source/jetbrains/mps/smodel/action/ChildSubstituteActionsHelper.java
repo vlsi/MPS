@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
+import jetbrains.mps.core.BaseConcept;
 
 import java.util.*;
 
@@ -128,7 +129,7 @@ public class ChildSubstituteActionsHelper {
     return actions;
   }
 
-  private static List<INodeSubstituteAction> createSmartReferenceActions(final ConceptDeclaration referenceNodeConcept, LinkDeclaration smartReference, SNode parentNode, SNode currentChild, IChildNodeSetter childSetter, IScope scope) {
+  private static List<INodeSubstituteAction> createSmartReferenceActions(final ConceptDeclaration referenceNodeConcept, LinkDeclaration smartReference, SNode parentNode, SNode currentChild, IChildNodeSetter childSetter, final IScope scope) {
     // try to create referent-search-scope
     IStatus status = ModelConstraintsUtil.getReferentSearchScope(parentNode, null, referenceNodeConcept, smartReference, scope);
     if (status.isError()) return null;
@@ -137,9 +138,9 @@ public class ChildSubstituteActionsHelper {
     List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
     final LinkDeclaration referenceLink_final = smartReference;
     ISearchScope searchScope = (ISearchScope) status.getUserObject();
-    ConceptDeclaration targetConcept = smartReference.getTarget();
+    final ConceptDeclaration targetConcept = smartReference.getTarget();
     List<SNode> referentNodes = searchScope.getNodes();
-    for (SNode referentNode : referentNodes) {
+    for (final SNode referentNode : referentNodes) {
       if (SModelUtil.isInstanceOfConcept(referentNode, targetConcept, scope)) {
         actions.add(new DefaultChildNodeSubstituteAction(referentNode, parentNode, currentChild, childSetter, scope) {
           public String getMatchingText(String pattern) {
@@ -147,8 +148,12 @@ public class ChildSubstituteActionsHelper {
           }
 
           public String getDescriptionText(String pattern) {
-            String prefix = "(smart ref:" + referenceNodeConcept.getName() + ") ";
-            return prefix + NodePresentationUtil.descriptionText(getParameterNode(), null, NodePresentationUtil.REFERENT_PRESENTATION, getScope());
+            BaseConcept pn = (BaseConcept) getParameterNode();
+            if (pn.getShortDescription() == null) {
+              return "(smart ref:" + referenceNodeConcept.getName() + ") " + NodePresentationUtil.descriptionText(getParameterNode(), null, NodePresentationUtil.REFERENT_PRESENTATION, getScope());
+            }
+
+            return "(smart ref:" + NodePresentationUtil.descriptionText(getParameterNode(), null, NodePresentationUtil.REFERENT_PRESENTATION, getScope()) + ")";
           }
 
           public SNode createChildNode(SNode parameterNode, SModel model, String pattern) {

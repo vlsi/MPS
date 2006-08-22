@@ -70,6 +70,27 @@
         </node>
       </node>
     </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1156242644616">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1137546998352" />
+      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1156242647930">
+        <property name="name" value="PropertyGetter_FunctionParm_scope" />
+        <link role="extends" targetNodeId="3.1107135704075" />
+        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1156242744579">
+          <property name="value" value="scope" />
+          <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+        </node>
+        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1156242749456">
+          <property name="value" value="function parameter" />
+          <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+        </node>
+        <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1156242761363">
+          <link role="conceptLinkDeclaration" targetNodeId="3.1137545963098" />
+          <node role="target" type="jetbrains.mps.baseLanguage.ClassifierType" id="1156242811800">
+            <link role="classifier" extResolveInfo="6.[Classifier]IScope" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1147468034457">
       <property name="value" value="getter" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
