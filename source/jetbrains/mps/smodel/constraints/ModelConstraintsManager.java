@@ -115,7 +115,7 @@ public class ModelConstraintsManager {
       return null;
     }
 
-    System.out.println("find getter for <" + propertyName + "> in " + node.getDebugText());
+//    System.out.println("find getter for <" + propertyName + "> in " + node.getDebugText());
 
     ConceptDeclaration concept = SModelUtil.getConceptDeclaration(node, GlobalScope.getInstance());
     while (concept != null) {
