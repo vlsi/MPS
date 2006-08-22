@@ -9,6 +9,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.core.BaseConcept;
 
 import java.util.*;
 
@@ -102,19 +103,19 @@ public class ModelConstraintsManager {
   public IModelConstraints getNodePropertyGetterOrSetter(SNode node, String propertyName, boolean isSetter) {
     String namespace = NameUtil.nodeLanguageNamespace(node);
     // 'bootstrap' properties
-    if (namespace.equals("jetbrains.mps.bootstrap.structureLanguage")) {
+    if (namespace.equals("jetbrains.mps.bootstrap.structureLanguage") && propertyName.equals(BaseConcept.NAME)) {
       return null;
     }
     if (namespace.equals("jetbrains.mps.projectLanguage")) {
       return null;
     }
 
-    // language is not loaded yet (bootstrap)?
+    //language is not loaded yet (bootstrap)?
     if (!myAddedLanguageNamespaces.containsKey(namespace)) {
       return null;
     }
 
-//    System.out.println("find getter for <" + propertyName + "> in " + node.getDebugText());
+    System.out.println("find getter for <" + propertyName + "> in " + node.getDebugText());
 
     ConceptDeclaration concept = SModelUtil.getConceptDeclaration(node, GlobalScope.getInstance());
     while (concept != null) {

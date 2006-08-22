@@ -25,6 +25,14 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1133920641626">
     <property name="name" value="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1156234966388">
+      <property name="name" value="shortDescription" />
+      <link role="dataType" targetNodeId="1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1156235010670">
+      <property name="name" value="alias" />
+      <link role="dataType" targetNodeId="1082983041843" resolveInfo="string" />
+    </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptPropertyDeclaration" id="1137473854053">
       <property name="name" value="abstract" />
     </node>

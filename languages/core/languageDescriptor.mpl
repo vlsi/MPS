@@ -3,13 +3,17 @@
   <structure>
     <model modelUID="jetbrains.mps.core.structure" />
   </structure>
+  <constraints>
+    <model modelUID="jetbrains.mps.core.constraints" />
+  </constraints>
   <editor>
     <model modelUID="jetbrains.mps.core.editor" />
   </editor>
   <models>
     <modelRoot path="${language_descriptor}\." namespacePrefix="jetbrains.mps.core" />
   </models>
-  <library />
+  <module />
+  <accessoryModels />
   <generators />
 </language>
 

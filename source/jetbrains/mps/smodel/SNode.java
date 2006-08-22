@@ -484,9 +484,9 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     NodeSecurityManager.getInstance().checkPropertyAvailable(this, propertyName, false);
 
     if (!myPropertyGetterInProgress) {
+      myPropertyGetterInProgress = true;
       INodePropertyGetter getter = ModelConstraintsManager.getInstance().getNodePropertyGetter(this, propertyName);
       if (getter != null) {
-        myPropertyGetterInProgress = true;
         String propertyValue = getter.execPropertyGet(this, propertyName);
         myPropertyGetterInProgress = false;
         return propertyValue;

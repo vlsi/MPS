@@ -5,6 +5,7 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration;
 import jetbrains.mps.core.NamedConcept;
+import jetbrains.mps.core.BaseConcept;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
@@ -187,10 +188,16 @@ public class NodePresentationUtil {
   }
 
   private static String getAliasOrConceptName(SNode node, IScope scope) {
-    String alias = SModelUtil.getConceptProperty(node, "alias", scope);
+    String alias = null;    
+    if (node instanceof BaseConcept) {
+      BaseConcept concept = (BaseConcept) node;
+      alias = concept.getAlias();
+    }
+
     if (alias != null) {
       return alias;
     }
+
     if (node instanceof ConceptDeclaration && node.getName() != null) {
       return node.getName();
     }
