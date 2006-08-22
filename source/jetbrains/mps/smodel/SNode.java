@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.constraints.INodePropertySetter;
 import jetbrains.mps.baseLanguage.ConstructorDeclaration;
 import jetbrains.mps.baseLanguage.ClassifierType;
 import jetbrains.mps.baseLanguage.Classifier;
+import jetbrains.mps.project.GlobalScope;
 
 import java.util.*;
 
@@ -487,7 +488,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       INodePropertyGetter getter = ModelConstraintsManager.getInstance().getNodePropertyGetter(this, propertyName);
       if (getter != null) {
         myPropertyGetterInProgress = true;
-        String propertyValue = getter.execPropertyGet(this, propertyName);
+        String propertyValue = getter.execPropertyGet(this, propertyName, GlobalScope.getInstance());
         myPropertyGetterInProgress = false;
         return propertyValue;
       }
@@ -545,7 +546,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       INodePropertySetter setter = ModelConstraintsManager.getInstance().getNodePropertySetter(this, propertyName);
       if (setter != null) {
         myPropertySetterInProgress = true;
-        setter.execPropertySet(this, propertyName,propertyValue);
+        setter.execPropertySet(this, propertyName, propertyValue, GlobalScope.getInstance());
         myPropertySetterInProgress = false;
         return;
       }

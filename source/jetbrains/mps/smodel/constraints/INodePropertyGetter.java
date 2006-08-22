@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.IScope;
 
 /**
  * Created by IntelliJ IDEA.
@@ -10,5 +11,5 @@ import jetbrains.mps.smodel.SNode;
  * To change this template use File | Settings | File Templates.
  */
 public interface INodePropertyGetter extends IModelConstraints {
-  String execPropertyGet(SNode node, String propertyName);
+  String execPropertyGet(SNode node, String propertyName, IScope scope);
 }
