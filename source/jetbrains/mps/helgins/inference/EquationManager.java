@@ -4,8 +4,12 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.helgins.RuntimeTypeVariable;
 import jetbrains.mps.helgins.RuntimeErrorType;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.project.GlobalScope;
 
 import java.util.*;
 
@@ -29,6 +33,9 @@ public class EquationManager {
   private Map<SNode, Set<SNode>> mySubtypesToSupertypesMap = new HashMap<SNode, Set<SNode>>();
   private Map<SNode, Set<SNode>> mySupertypesToSubtypesMap = new HashMap<SNode, Set<SNode>>();
   private Map<SNode, SNode> myEquations = new HashMap<SNode, SNode>();
+
+  private Map<SNode, SNode> myTypesToSmartTypes = new HashMap<SNode, SNode>();
+  private Map<ConceptDeclaration, LinkDeclaration> myConceptsToSmartLinks = new HashMap<ConceptDeclaration, LinkDeclaration>();
 
   public static EquationManager getInstance() {
     return ourInstance;
@@ -57,7 +64,7 @@ public class EquationManager {
         setParent(typeOnPath, type);
       }
     }
-    return type;
+    return getSmartType(type);
   }
 
   public void addInequation(SNode subType, SNode supertype) {
@@ -160,9 +167,18 @@ public class EquationManager {
     mySubtypesToSupertypesMap.clear();
     mySupertypesToSubtypesMap.clear();
     myEquations.clear();
+    myConceptsToSmartLinks.clear();
+    myTypesToSmartTypes.clear();
   }
 
   public static boolean compareNodes(SNode node1, SNode node2) {
+    if (node1 == node2) return true;
+    if (node1 == null) {
+      return false;
+    }
+    if (node2 == null) {
+      return false;
+    }
     if (node1.getClass() != node2.getClass()) return false;
 
     Set<String> node1PropertyNames = node1.getPropertyNames();
@@ -187,27 +203,27 @@ public class EquationManager {
   }
 
   public static Set<Pair<SNode, SNode>> createChildEquations(SNode node1, SNode node2) {
-   Set<Pair<SNode, SNode>> result = new HashSet<Pair<SNode, SNode>>();
-   Set<String> childRoles1 = node1.getChildRoles();
-   Set<String> childRoles2 = node2.getChildRoles();
+    Set<Pair<SNode, SNode>> result = new HashSet<Pair<SNode, SNode>>();
+    Set<String> childRoles1 = node1.getChildRoles();
+    Set<String> childRoles2 = node2.getChildRoles();
 
-   Set<String> allChildRoles = new HashSet<String>(childRoles1);
-   allChildRoles.addAll(childRoles2);
+    Set<String> allChildRoles = new HashSet<String>(childRoles1);
+    allChildRoles.addAll(childRoles2);
 
-   for (String childRole : allChildRoles) {
-     List<SNode> childrenInNode1 = node1.getChildren(childRole);
-     List<SNode> childrenInNode2 = node2.getChildren(childRole);
-     Iterator<SNode> childrenIterator2 = childrenInNode2.iterator();
-     for (SNode child1 : childrenInNode1) {
-       SNode child2 = childrenIterator2.hasNext() ? childrenIterator2.next() : null;
-       result.add(new Pair<SNode, SNode>(child1, child2));
-     }
-     for (;childrenIterator2.hasNext();) {
-       SNode child2 = childrenIterator2.next();
-       result.add(new Pair<SNode, SNode>(null, child2));
-     }
-   }
-   return result;
+    for (String childRole : allChildRoles) {
+      List<SNode> childrenInNode1 = node1.getChildren(childRole);
+      List<SNode> childrenInNode2 = node2.getChildren(childRole);
+      Iterator<SNode> childrenIterator2 = childrenInNode2.iterator();
+      for (SNode child1 : childrenInNode1) {
+        SNode child2 = childrenIterator2.hasNext() ? childrenIterator2.next() : null;
+        result.add(new Pair<SNode, SNode>(child1, child2));
+      }
+      for (;childrenIterator2.hasNext();) {
+        SNode child2 = childrenIterator2.next();
+        result.add(new Pair<SNode, SNode>(null, child2));
+      }
+    }
+    return result;
   }
 
   private void addSubtyping(SNode subtype, SNode supertype) {
@@ -227,7 +243,7 @@ public class EquationManager {
   }
 
   private void removeSubtyping(SNode subtype, SNode supertype) {
-     Set<SNode> supertypes = mySubtypesToSupertypesMap.get(subtype);
+    Set<SNode> supertypes = mySubtypesToSupertypesMap.get(subtype);
     if (supertypes != null) {
       supertypes.remove(supertype);
     }
@@ -251,7 +267,7 @@ public class EquationManager {
     for (SNode node1 : nodes) {
       for (SNode node2 : nodes) {
         for (SNode node3 : nodes) {
-           if (node1 == node2 || node2 == node3 || node1 == node3) continue;
+          if (node1 == node2 || node2 == node3 || node1 == node3) continue;
           Set<SNode> supertypes1 = mySubtypesToSupertypesMap.get(node1);
           if (supertypes1 == null) continue;
           Set<SNode> supertypes2 = mySubtypesToSupertypesMap.get(node2);
@@ -339,8 +355,30 @@ public class EquationManager {
     return subtypes == null ? new HashSet<SNode>() : new HashSet<SNode>(subtypes);
   }
 
-   private Set<SNode> getSupertypes(SNode subType) {
+  private Set<SNode> getSupertypes(SNode subType) {
     Set<SNode> superTypes = mySubtypesToSupertypesMap.get(subType);
     return superTypes == null ? new HashSet<SNode>() : new HashSet<SNode>(superTypes);
+  }
+
+  public SNode getSmartType(SNode type) {
+    SNode smartType = myTypesToSmartTypes.get(type);
+    if (smartType != null) return smartType;
+    ConceptDeclaration concept = SModelUtil.getConceptDeclaration(type, GlobalScope.getInstance());
+    if (concept == null) {
+      smartType = type;
+    } else {
+      LinkDeclaration smartLink = myConceptsToSmartLinks.get(concept);
+      if (smartLink == null) {
+        smartLink = SModelUtil.getSmartReferenceLinkDeclaration(concept);
+        myConceptsToSmartLinks.put(concept, smartLink);
+      }
+      if (smartLink == null) {
+        smartType = type;
+      } else {
+        smartType = type.getReferent(smartLink.getRole());
+      }
+    }
+    myTypesToSmartTypes.put(type, smartType);
+    return smartType;
   }
 }

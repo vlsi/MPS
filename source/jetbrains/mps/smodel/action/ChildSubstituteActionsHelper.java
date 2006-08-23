@@ -6,6 +6,7 @@ import jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunctio
 import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;

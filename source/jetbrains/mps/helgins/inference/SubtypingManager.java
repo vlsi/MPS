@@ -152,6 +152,7 @@ public class SubtypingManager {
   public static <T> Set<T> lowestCommonSupertypes(Set<T> types, SupertypesCollector<T> supertypesCollector) {
 
     Set<T> allTypes = new HashSet<T>(types);
+    if (types.isEmpty()) return allTypes;
     Map<T, Set<T>> subTypesToSuperTypes = new HashMap<T, Set<T>>();
 
     Set<T> frontier = new HashSet<T>(types);
