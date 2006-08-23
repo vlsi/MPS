@@ -55,6 +55,9 @@ public class SubtypingManager {
     if (MatchingUtil.matchNodes(subRepresentator, superRepresentator)) return true;
 
     // transitivity: nominal equivalence
+    if("Cclass".equals(subtype.toString()) && "Dclass".equals(supertype.toString())) {
+      System.err.println("");
+    }
     return isStrictSubtype(subtype, supertype);
   }
 
@@ -64,19 +67,19 @@ public class SubtypingManager {
     SNode superRepresentator = EquationManager.getInstance().getRepresentator(supertype);
 
     // transitivity: nominal equivalence
-    List<SNode> frontier = new ArrayList<SNode>();
-    List<SNode> newFrontier = new ArrayList<SNode>();
+    Set<SNode> frontier = new HashSet<SNode>();
+    Set<SNode> newFrontier = new HashSet<SNode>();
     frontier.add(subRepresentator);
-    SNode superNode = superRepresentator;
     while (!frontier.isEmpty()) {
       for (SNode node : frontier) {
         Set<SNode> ancestors = collectSupertypes(node);
         if (ancestors == null) continue;
-        if (ancestors.contains(superNode)) return true;
+        ancestors.remove(node);
+        if (ancestors.contains(superRepresentator)) return true;
         newFrontier.addAll(ancestors);
       }
       frontier = newFrontier;
-      newFrontier = new ArrayList<SNode>();
+      newFrontier = new HashSet<SNode>();
     }
     return false;
   }
