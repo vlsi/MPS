@@ -71,6 +71,10 @@ public class CellExplorerView extends DefaultTool {
       public void editorSelected(IEditor e) {
         update();
       }
+
+      public void editorStateChanged(IEditor e) {
+        update();
+      }
     });
   }
 
@@ -89,11 +93,12 @@ public class CellExplorerView extends DefaultTool {
     }
     removeListeners();
 
-    if (!(getEditorsPane().getCurrentEditor() instanceof NodeEditor)) {
+    IEditor currentEditor = getEditorsPane().getCurrentEditor();
+    if (!(currentEditor instanceof NodeEditor || currentEditor instanceof ConceptDeclarationEditor)) {
       return;
     }
 
-    myCurrentEditor = getEditorsPane().getCurrentEditor().getCurrentEditorComponent();
+    myCurrentEditor = currentEditor.getCurrentEditorComponent();
     if (myCurrentEditor != null) myCurrentEditor.addRebuildListener(myRebuildListener);
     myTree.rebuildTree();
   }

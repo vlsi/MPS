@@ -11,6 +11,7 @@ import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.ide.IEditor;
 
 import javax.swing.*;
+import javax.swing.event.ChangeListener;
 import javax.swing.border.LineBorder;
 import java.util.List;
 import java.awt.*;
@@ -108,6 +109,12 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
   }
 
   private class MyEditor implements IEditor {
+    public void addChangeListener(ChangeListener listener) {
+    }
+
+    public void removeChangeListener(ChangeListener listener) {
+    }
+
     public JComponent getComponent() {
       return UIEditorComponent.this.getExternalComponent();
     }

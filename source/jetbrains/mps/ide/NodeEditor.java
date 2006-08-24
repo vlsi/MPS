@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.ide.navigation.IHistoryItem;
 
 import javax.swing.*;
+import javax.swing.event.ChangeListener;
 
 public class NodeEditor implements IEditor {
 
@@ -28,6 +29,12 @@ public class NodeEditor implements IEditor {
 
   public void relayout() {
     myEditorComponent.relayout();
+  }
+
+  public void addChangeListener(ChangeListener listener) {
+  }
+
+  public void removeChangeListener(ChangeListener listener) {
   }
 
   public void addCellSelectionListener(ICellSelectionListener listener) {

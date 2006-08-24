@@ -10,6 +10,7 @@ import jetbrains.mps.nodeEditor.ICellSelectionListener;
 import jetbrains.mps.ide.navigation.IHistoryItem;
 
 import javax.swing.*;
+import javax.swing.event.ChangeListener;
 
 public interface IEditor {
   JComponent getComponent();
@@ -19,6 +20,9 @@ public interface IEditor {
 
   void addCellSelectionListener(ICellSelectionListener listener);
   void removeCellSelectionListener(ICellSelectionListener listener);
+
+  void addChangeListener(ChangeListener listener);
+  void removeChangeListener(ChangeListener listener);
 
   IOperationContext getOperationContext();
 
