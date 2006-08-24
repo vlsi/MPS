@@ -138,13 +138,15 @@ public class TypeChecker {
       return node;
     }
     Map<SNode, SNode> childrenReplacement = new HashMap<SNode, SNode>();
-    for (SNode child : node.getChildren()) {
+    List<SNode> children = node.getChildren();
+    for (SNode child : children) {
       SNode newChild = expandNode(child, representator, depth+1, variablesMet, typesModel);
       if (newChild != child) {
         childrenReplacement.put(child, newChild);
       }
     }
-    for (SNode child : childrenReplacement.keySet()) {
+    for (SNode child : children) {
+      if (!childrenReplacement.keySet().contains(child)) continue;
       if (child.getParent() == null) {
         System.err.println("debug");
         RuntimeErrorType error = new RuntimeErrorType(typesModel);

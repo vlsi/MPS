@@ -350,16 +350,6 @@ public class EquationManager {
     }
   }
 
-  private Set<SNode> getSubtypes(SNode superType) {
-    Set<SNode> subtypes = mySupertypesToSubtypesMap.get(superType);
-    return subtypes == null ? new HashSet<SNode>() : new HashSet<SNode>(subtypes);
-  }
-
-  private Set<SNode> getSupertypes(SNode subType) {
-    Set<SNode> superTypes = mySubtypesToSupertypesMap.get(subType);
-    return superTypes == null ? new HashSet<SNode>() : new HashSet<SNode>(superTypes);
-  }
-
   public SNode getSmartType(SNode type) {
     SNode smartType = myTypesToSmartTypes.get(type);
     if (smartType != null) return smartType;
