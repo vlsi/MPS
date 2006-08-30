@@ -30,11 +30,15 @@ public interface IModule extends IScope, ModelOwner, MPSModuleOwner {
 
   List<ModelRoot> getNonDefaultModelRoots();
 
-  //returns all modules which this explicitly and immediately depends on,
-  // i.e. without bootstrap languages, if such a dependency is not explicitly set in module roots
+  /**
+   * returns all modules which this explicitly and immediately depends on,
+   * i.e. without bootstrap languages, if such a dependency is not explicitly set in module roots
+   */
   List<IModule> getExplicitlyDependOnModules();
 
-  //returns all modules which this immediately depends on, bootstrap languages in their number.
+  /**
+   * returns all modules which this immediately depends on + bootstrap languages.
+   */
   List<IModule> getDependOnModules();
 
   void registerModelDescriptor(SModelDescriptor modelDescriptor);

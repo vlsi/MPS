@@ -129,9 +129,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
 
-
-
-
   private class TransientModule extends AbstractModule {
     private List<IModule> myDependOnModules = new LinkedList<IModule>();
     private IModule myInvocationModule;
@@ -146,7 +143,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
     public void addGeneratorModules(List<Generator> generatorModules) {
       for (IModule module : generatorModules) {
-        if(!myDependOnModules.contains(module)) {
+        if (!myDependOnModules.contains(module)) {
           myDependOnModules.add(module);
         }
       }
@@ -212,6 +209,10 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
     public String getGeneratorOutputPath() {
       return myInvocationModule.getGeneratorOutputPath();
+    }
+
+    public List<IModule> getExplicitlyDependOnModules() {
+      return new LinkedList<IModule>(myDependOnModules);
     }
   } // private class TransientModule
 }

@@ -169,4 +169,9 @@ public class Solution extends AbstractModule {
     }
     return generatorOutputPath;
   }
+
+  public List<IModule> getExplicitlyDependOnModules() {
+    // no explicit dependencies
+    return new LinkedList<IModule>();
+  }
 }

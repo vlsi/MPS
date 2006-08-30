@@ -226,15 +226,9 @@ public abstract class AbstractModule implements IModule {
   }
 
 
-  //returns all modules which this explicitly and immediately depends on,
-  // i.e. without bootstrap languages, if such a dependency is not explicitly set in module roots
-  public List<IModule> getExplicitlyDependOnModules() {
-    List<IModule> result = new LinkedList<IModule>(getOwnModules());
-    return result;
-  }
-
-
-  //returns all modules which this immediately depends on, bootstrap languages in their number.
+  /**
+   * returns all modules which this immediately depends on, bootstrap languages in their number.
+   */
   public List<IModule> getDependOnModules() {
     return appendBootstrapLanguages(getExplicitlyDependOnModules());
   }

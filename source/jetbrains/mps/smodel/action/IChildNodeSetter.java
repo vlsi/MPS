@@ -11,5 +11,5 @@ import jetbrains.mps.smodel.IScope;
  * To change this template use File | Settings | File Templates.
  */
 public interface IChildNodeSetter {
-  public void execute(SNode parenNode, SNode oldChild, SNode newChild, IScope scope);
+  public void execute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope);
 }
