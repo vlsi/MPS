@@ -36,7 +36,7 @@ public class Generator extends AbstractModule {
   }
 
   public String getModuleUID() {
-   // return mySourceLanguage.getNamespace() + "->" + getTargetLanguageName();//this wannabe key is mutable!!!
+    // return mySourceLanguage.getNamespace() + "->" + getTargetLanguageName();//this wannabe key is mutable!!!
     String namespace = myGeneratorDescriptor.getGeneratorUID();
     if (namespace == null) {
       myGeneratorDescriptor.setGeneratorUID(generateGeneratorUID(mySourceLanguage));
@@ -103,25 +103,6 @@ public class Generator extends AbstractModule {
     if (targetLanguage != null && !result.contains(targetLanguage)) {
       result.add(targetLanguage);
     }
-
-    // try not to do the following staff - required model roots can be added to access other generators models when necessary
-    //   it is not clear why else we need it.
-    // todo: configure generator dependencies ...
-
-//    //do not append bootstrap languages to the result directly...
-//    // however, they may be necessary in the next loop, hence we have:
-//    List<IModule> resultAndBootstrapLanguages = appendBootstrapLanguages(new ArrayList<IModule>(result));
-//
-//    // todo: configure generator dependencies ...
-//    // ... from all languages in "resultAndBootstrapLanguages" collect generators and add to dependency list
-//    List<Generator> generators = new LinkedList<Generator>();
-//    for (IModule module : resultAndBootstrapLanguages) {
-//      if (module instanceof Language && module != mySourceLanguage) {
-//        generators.addAll(((Language) module).getGenerators());
-//      }
-//    }
-//
-//    result.addAll(generators);
     return result;
   }
 

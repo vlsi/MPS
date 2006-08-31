@@ -92,7 +92,7 @@ public abstract class AbstractModule implements IModule {
       return modelDescriptor;
     }
 
-      LOG.warning("Couldn't find model descriptor for uid: \"" + modelUID + "\" in scope: " + this);
+    LOG.warning("Couldn't find model descriptor for uid: \"" + modelUID + "\" in scope: " + this);
 
     return null;
   }
@@ -220,11 +220,18 @@ public abstract class AbstractModule implements IModule {
 
     return result;
   }
-                                                      
+
   public final List<ModelRoot> getNonDefaultModelRoots() {
     return getModelRootsImpl();
   }
 
+  /**
+   * returns all modules which this explicitly and immediately depends on,
+   * i.e. without bootstrap languages, if such a dependency is not explicitly set in module roots
+   */
+  public List<IModule> getExplicitlyDependOnModules() {
+    return new LinkedList<IModule>(getOwnModules());
+  }
 
   /**
    * returns all modules which this immediately depends on, bootstrap languages in their number.

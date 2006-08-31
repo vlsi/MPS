@@ -108,7 +108,7 @@ public class Solution extends AbstractModule {
 
   protected void readModulesAndModels() {
     super.readModulesAndModels();
-    MPSModuleRepository.getInstance().readModuleDescriptors((Iterator<? extends Root>) getSolutionDescriptor().languageRoots(), this);
+    MPSModuleRepository.getInstance().readModuleDescriptors(getSolutionDescriptor().languageRoots(), this);
   }
 
   public void dispose() {
@@ -168,10 +168,5 @@ public class Solution extends AbstractModule {
       generatorOutputPath = FileUtil.getCanonicalPath(myDescriptorFile.getParentFile()) + File.separatorChar + "source_gen";
     }
     return generatorOutputPath;
-  }
-
-  public List<IModule> getExplicitlyDependOnModules() {
-    // no explicit dependencies
-    return new LinkedList<IModule>();
   }
 }
