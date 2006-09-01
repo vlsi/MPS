@@ -4260,5 +4260,13 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1157103825466">
+    <link role="conceptDeclaration" targetNodeId="17.1157103807699" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1157103836672">
+      <property name="textFgColor" value="DARK_BLUE" />
+      <property name="text" value="number" />
+      <property name="drawBorder" value="false" />
+    </node>
+  </node>
 </model>
 

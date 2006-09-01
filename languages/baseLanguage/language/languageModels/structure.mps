@@ -1539,5 +1539,9 @@
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1157103807699">
+    <property name="name" value="Number" />
+    <link role="extends" targetNodeId="4.1133920641626" />
+  </node>
 </model>
 
