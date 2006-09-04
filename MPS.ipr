@@ -343,9 +343,9 @@
       <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPSWiki/MPSWiki.iml" filepath="$PROJECT_DIR$/MPSWiki/MPSWiki.iml" group="DataLanguages" />
       <module fileurl="file://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/MPSWiki_WebApp.iml" filepath="$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/MPSWiki_WebApp.iml" group="DataLanguages" />
-      <module fileurl="file://$PROJECT_DIR$/NaturalLanguage/NaturalLanguage.iml" filepath="$PROJECT_DIR$/NaturalLanguage/NaturalLanguage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/projects/NaturalLanguage/NaturalLanguage.iml" filepath="$PROJECT_DIR$/projects/NaturalLanguage/NaturalLanguage.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/SemanticWeb/editor/OWLEditor.iml" filepath="$PROJECT_DIR$/SemanticWeb/editor/OWLEditor.iml" group="SemanticWeb" />
-      <module fileurl="file://$PROJECT_DIR$/projects/ProjectHalo/ProjectHalo.iml" filepath="$PROJECT_DIR$/projects/ProjectHalo/ProjectHalo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/projects/ProjectHalo/ProjectHalo.iml" filepath="$PROJECT_DIR$/projects/ProjectHalo/ProjectHalo.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/Remoting/Remoting.iml" filepath="$PROJECT_DIR$/Remoting/Remoting.iml" />
       <module fileurl="file://$PROJECT_DIR$/SemanticFunctions/SemanticFunctions.iml" filepath="$PROJECT_DIR$/SemanticFunctions/SemanticFunctions.iml" />
       <module fileurl="file://$PROJECT_DIR$/SemanticWeb/SemanticWebIDE/SemanticWebIDE.iml" filepath="$PROJECT_DIR$/SemanticWeb/SemanticWebIDE/SemanticWebIDE.iml" group="SemanticWeb" />
