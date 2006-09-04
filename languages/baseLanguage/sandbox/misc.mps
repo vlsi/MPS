@@ -62,6 +62,22 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1157375662618">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1157375662619">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1157375662620" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.ThisExpression" id="1157375667231" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1157375949599">
+          <node role="expression" type="jetbrains.mps.baseLanguage.ThisExpression" id="1157375949600" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.WhileStatement" id="1157376292539">
+          <node role="condition" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1157376295558">
+            <property name="value" value="3" />
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1157376292541" />
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1149153129176">
         <property name="name" value="args" />
