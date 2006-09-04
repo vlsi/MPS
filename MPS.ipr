@@ -134,7 +134,7 @@
     <option name="USE_PROJECT_LEVEL_SETTINGS" value="false" />
     <scopes />
     <profiles>
-      <profile version="1.0" is_locked="false">
+      <profile version="1.0">
         <option name="myName" value="Project Default" />
         <option name="myLocal" value="false" />
         <used_levels>
@@ -165,11 +165,6 @@
           <option name="METHOD" value="true" />
           <option name="CLASS" value="true" />
           <option name="PARAMETER" value="true" />
-          <option name="INJECTION_ANNOS">
-            <value>
-              <list size="0" />
-            </value>
-          </option>
         </inspection_tool>
         <inspection_tool class="FieldCanBeLocal" level="WARNING" enabled="false" />
       </profile>
@@ -350,7 +345,7 @@
       <module fileurl="file://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/MPSWiki_WebApp.iml" filepath="$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/MPSWiki_WebApp.iml" group="DataLanguages" />
       <module fileurl="file://$PROJECT_DIR$/NaturalLanguage/NaturalLanguage.iml" filepath="$PROJECT_DIR$/NaturalLanguage/NaturalLanguage.iml" />
       <module fileurl="file://$PROJECT_DIR$/SemanticWeb/editor/OWLEditor.iml" filepath="$PROJECT_DIR$/SemanticWeb/editor/OWLEditor.iml" group="SemanticWeb" />
-      <module fileurl="file://$PROJECT_DIR$/ProjectHalo/ProjectHalo.iml" filepath="$PROJECT_DIR$/ProjectHalo/ProjectHalo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/projects/ProjectHalo/ProjectHalo.iml" filepath="$PROJECT_DIR$/projects/ProjectHalo/ProjectHalo.iml" />
       <module fileurl="file://$PROJECT_DIR$/Remoting/Remoting.iml" filepath="$PROJECT_DIR$/Remoting/Remoting.iml" />
       <module fileurl="file://$PROJECT_DIR$/SemanticFunctions/SemanticFunctions.iml" filepath="$PROJECT_DIR$/SemanticFunctions/SemanticFunctions.iml" />
       <module fileurl="file://$PROJECT_DIR$/SemanticWeb/SemanticWebIDE/SemanticWebIDE.iml" filepath="$PROJECT_DIR$/SemanticWeb/SemanticWebIDE/SemanticWebIDE.iml" group="SemanticWeb" />
