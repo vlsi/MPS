@@ -1543,5 +1543,25 @@
     <property name="name" value="Number" />
     <link role="extends" targetNodeId="4.1133920641626" />
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1157377797493">
+    <property name="name" value="FunctionType" />
+    <link role="extends" targetNodeId="4.1133920641626" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1157377857904">
+      <property name="value" value="FUNCTION" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1157377811338">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="result" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="4.1133920641626" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1157377816198">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="param" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="4.1133920641626" />
+    </node>
+  </node>
 </model>
 
