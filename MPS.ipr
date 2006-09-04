@@ -2,8 +2,40 @@
 <project version="4" relativePaths="true">
   <component name="AntConfiguration">
     <defaultAnt bundledAnt="true" />
+    <buildFile url="file://$PROJECT_DIR$/distrib-build.xml">
+      <additionalClassPath>
+        <entry path="file://$PROJECT_DIR$/build/commons-net-1.4.0.jar" />
+      </additionalClassPath>
+      <antReference projectDefault="true" />
+      <customJdkName value="" />
+      <maximumHeapSize value="128" />
+      <properties />
+    </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/build.xml">
+      <additionalClassPath />
+      <antReference projectDefault="true" />
+      <customJdkName value="" />
+      <maximumHeapSize value="128" />
+      <properties />
+    </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/BugSqueezer/BugSqueezer_WebApp/build.xml">
+      <additionalClassPath />
+      <antReference projectDefault="true" />
+      <customJdkName value="" />
+      <maximumHeapSize value="128" />
+      <properties />
+    </buildFile>
     <buildFile url="file://$PROJECT_DIR$/mps.xml">
       <additionalClassPath />
+      <antReference projectDefault="true" />
+      <customJdkName value="" />
+      <maximumHeapSize value="128" />
+      <properties />
+    </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/tests.xml">
+      <additionalClassPath>
+        <entry path="file://$PROJECT_DIR$/lib/junit/junit.jar" />
+      </additionalClassPath>
       <antReference projectDefault="true" />
       <customJdkName value="" />
       <maximumHeapSize value="128" />
