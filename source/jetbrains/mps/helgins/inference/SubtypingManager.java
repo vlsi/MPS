@@ -55,9 +55,6 @@ public class SubtypingManager {
     if (MatchingUtil.matchNodes(subRepresentator, superRepresentator)) return true;
 
     // transitivity: nominal equivalence
-    if("Cclass".equals(subtype.toString()) && "Dclass".equals(supertype.toString())) {
-      System.err.println("");
-    }
     return isStrictSubtype(subtype, supertype);
   }
 
