@@ -18,13 +18,6 @@
       <maximumHeapSize value="128" />
       <properties />
     </buildFile>
-    <buildFile url="file://$PROJECT_DIR$/BugSqueezer/BugSqueezer_WebApp/build.xml">
-      <additionalClassPath />
-      <antReference projectDefault="true" />
-      <customJdkName value="" />
-      <maximumHeapSize value="128" />
-      <properties />
-    </buildFile>
     <buildFile url="file://$PROJECT_DIR$/mps.xml">
       <additionalClassPath />
       <antReference projectDefault="true" />
@@ -331,9 +324,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/projects/BLFeatures/BLFeatures.iml" filepath="$PROJECT_DIR$/projects/BLFeatures/BLFeatures.iml" group="Projects" />
-      <module fileurl="file://$PROJECT_DIR$/BugSqueezer/BugSqueezer.iml" filepath="$PROJECT_DIR$/BugSqueezer/BugSqueezer.iml" group="DataLanguages" />
-      <module fileurl="file://$PROJECT_DIR$/BugSqueezer/BugSqueezer_WebApp/BugSqueezerWebApp.iml" filepath="$PROJECT_DIR$/BugSqueezer/BugSqueezer_WebApp/BugSqueezerWebApp.iml" group="DataLanguages" />
-      <module fileurl="file://$PROJECT_DIR$/BugSqueezer/BugSqueezerWebApp2/BugSqueezerWebApp2.iml" filepath="$PROJECT_DIR$/BugSqueezer/BugSqueezerWebApp2/BugSqueezerWebApp2.iml" group="DataLanguages" />
       <module fileurl="file://$PROJECT_DIR$/projects/Epigram/Epigram.iml" filepath="$PROJECT_DIR$/projects/Epigram/Epigram.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPS.iml" filepath="$PROJECT_DIR$/MPS.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPSForWeb/MPS4WebTest/MPS4WebTest.iml" filepath="$PROJECT_DIR$/MPSForWeb/MPS4WebTest/MPS4WebTest.iml" group="MPSForWeb" />
