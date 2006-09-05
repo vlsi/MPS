@@ -322,7 +322,6 @@
       <module fileurl="file://$PROJECT_DIR$/projects/MPSForWeb/MPS4WebTest/MPS4WebTest.iml" filepath="$PROJECT_DIR$/projects/MPSForWeb/MPS4WebTest/MPS4WebTest.iml" group="MPSForWeb" />
       <module fileurl="file://$PROJECT_DIR$/projects/MPSForWeb/MPSServerPages/MPSServerPages.iml" filepath="$PROJECT_DIR$/projects/MPSForWeb/MPSServerPages/MPSServerPages.iml" group="MPSForWeb" />
       <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" />
-      <module fileurl="file://$PROJECT_DIR$/projects/MPSWiki/MPSWiki.iml" filepath="$PROJECT_DIR$/projects/MPSWiki/MPSWiki.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/NaturalLanguage/NaturalLanguage.iml" filepath="$PROJECT_DIR$/projects/NaturalLanguage/NaturalLanguage.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/SemanticWeb/editor/OWLEditor.iml" filepath="$PROJECT_DIR$/projects/SemanticWeb/editor/OWLEditor.iml" group="SemanticWeb" />
       <module fileurl="file://$PROJECT_DIR$/projects/ProjectHalo/ProjectHalo.iml" filepath="$PROJECT_DIR$/projects/ProjectHalo/ProjectHalo.iml" group="Projects" />
