@@ -4299,5 +4299,46 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1157458320892">
+    <link role="conceptDeclaration" targetNodeId="17.1157458290000" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1157458326301">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1157458328520">
+        <property name="text" value="Primitive" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1157458338694">
+        <property name="fontStyle" value="ITALIC" />
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="18.1078489098626" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1157458515143">
+        <property name="text" value="extends" />
+        <property name="drawBorder" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1157458545193">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1157458550272" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1157458393837">
+    <link role="conceptDeclaration" targetNodeId="17.1157458307266" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1157458397433">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1157458428231">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1157458369398" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1157458428232">
+          <link role="conceptDeclaration" targetNodeId="17.1157458290000" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1157458431030">
+            <property name="fontStyle" value="ITALIC" />
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="18.1078489098626" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

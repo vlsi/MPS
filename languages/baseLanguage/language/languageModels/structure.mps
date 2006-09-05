@@ -1563,5 +1563,24 @@
       <link role="target" targetNodeId="4.1133920641626" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1157458290000">
+    <property name="rootable" value="true" />
+    <property name="name" value="PrimitiveTypeDescriptor" />
+    <link role="extends" targetNodeId="4.1078489098625" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1157458550272">
+      <property name="role" value="extends" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1157458307266" resolveInfo="PrimitiveTypeRef" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1157458307266">
+    <property name="name" value="PrimitiveTypeRef" />
+    <link role="extends" targetNodeId="4.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1157458369398">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="descriptor" />
+      <link role="target" targetNodeId="1157458290000" resolveInfo="PrimitiveTypeDescriptor" />
+    </node>
+  </node>
 </model>
 

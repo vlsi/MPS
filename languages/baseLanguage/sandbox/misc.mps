@@ -73,8 +73,13 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.ThisExpression" id="1157375949600" />
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.WhileStatement" id="1157376292539">
-          <node role="condition" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1157376295558">
-            <property name="value" value="3" />
+          <node role="condition" type="jetbrains.mps.baseLanguage.LessThanExpression" id="1157467768248">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1157467769485">
+              <property name="value" value="2" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1157376295558">
+              <property name="value" value="3" />
+            </node>
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1157376292541" />
         </node>
