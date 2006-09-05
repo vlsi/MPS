@@ -342,17 +342,17 @@
       <module fileurl="file://$PROJECT_DIR$/MPSWiki/MPSWiki.iml" filepath="$PROJECT_DIR$/MPSWiki/MPSWiki.iml" group="DataLanguages" />
       <module fileurl="file://$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/MPSWiki_WebApp.iml" filepath="$PROJECT_DIR$/MPSWiki/MPSWiki_WebApp/MPSWiki_WebApp.iml" group="DataLanguages" />
       <module fileurl="file://$PROJECT_DIR$/projects/NaturalLanguage/NaturalLanguage.iml" filepath="$PROJECT_DIR$/projects/NaturalLanguage/NaturalLanguage.iml" group="Projects" />
-      <module fileurl="file://$PROJECT_DIR$/SemanticWeb/editor/OWLEditor.iml" filepath="$PROJECT_DIR$/SemanticWeb/editor/OWLEditor.iml" group="SemanticWeb" />
+      <module fileurl="file://$PROJECT_DIR$/projects/SemanticWeb/editor/OWLEditor.iml" filepath="$PROJECT_DIR$/projects/SemanticWeb/editor/OWLEditor.iml" group="SemanticWeb" />
       <module fileurl="file://$PROJECT_DIR$/projects/ProjectHalo/ProjectHalo.iml" filepath="$PROJECT_DIR$/projects/ProjectHalo/ProjectHalo.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/Remoting/Remoting.iml" filepath="$PROJECT_DIR$/Remoting/Remoting.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/SemanticFunctions/SemanticFunctions.iml" filepath="$PROJECT_DIR$/projects/SemanticFunctions/SemanticFunctions.iml" group="Projects" />
-      <module fileurl="file://$PROJECT_DIR$/SemanticWeb/SemanticWebIDE/SemanticWebIDE.iml" filepath="$PROJECT_DIR$/SemanticWeb/SemanticWebIDE/SemanticWebIDE.iml" group="SemanticWeb" />
+      <module fileurl="file://$PROJECT_DIR$/projects/SemanticWeb/SemanticWebIDE/SemanticWebIDE.iml" filepath="$PROJECT_DIR$/projects/SemanticWeb/SemanticWebIDE/SemanticWebIDE.iml" group="SemanticWeb" />
       <module fileurl="file://$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" filepath="$PROJECT_DIR$/projects/textLanguage/TextLanguage.iml" group="DataLanguages" />
       <module fileurl="file://$PROJECT_DIR$/projects/TheSimplestLanguage/TheSimplestLanguage.iml" filepath="$PROJECT_DIR$/projects/TheSimplestLanguage/TheSimplestLanguage.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/agreement/agreement.iml" filepath="$PROJECT_DIR$/projects/agreement/agreement.iml" group="Projects" />
-      <module fileurl="file://$PROJECT_DIR$/SemanticWeb/core/core.iml" filepath="$PROJECT_DIR$/SemanticWeb/core/core.iml" group="SemanticWeb" />
+      <module fileurl="file://$PROJECT_DIR$/projects/SemanticWeb/core/core.iml" filepath="$PROJECT_DIR$/projects/SemanticWeb/core/core.iml" group="SemanticWeb" />
       <module fileurl="file://$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" group="Projects" />
-      <module fileurl="file://$PROJECT_DIR$/SemanticWeb/sandbox/sandbox.iml" filepath="$PROJECT_DIR$/SemanticWeb/sandbox/sandbox.iml" group="SemanticWeb" />
+      <module fileurl="file://$PROJECT_DIR$/projects/SemanticWeb/sandbox/sandbox.iml" filepath="$PROJECT_DIR$/projects/SemanticWeb/sandbox/sandbox.iml" group="SemanticWeb" />
       <module fileurl="file://$PROJECT_DIR$/projects/teamSys/teamSys.iml" filepath="$PROJECT_DIR$/projects/teamSys/teamSys.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/teamSys/teamSysWebApp/teamSysWebApp.iml" filepath="$PROJECT_DIR$/projects/teamSys/teamSysWebApp/teamSysWebApp.iml" group="Projects" />
     </modules>
