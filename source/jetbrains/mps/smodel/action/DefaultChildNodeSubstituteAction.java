@@ -1,7 +1,6 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.nodeEditor.AbstractNodeSubstituteItem;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -14,22 +13,16 @@ import jetbrains.mps.smodel.presentation.NodePresentationUtil;
  * Time: 2:06:58 PM
  * To change this template use File | Settings | File Templates.
  */
-public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteItem implements INodeSubstituteAction {
-  private SNode myParentNode;
+public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteAction {
   private SNode myCurrentChild;
   private IScope myScope;
   private IChildNodeSetter mySetter;
 
   public DefaultChildNodeSubstituteAction(SNode parameterNode, SNode parentNode, SNode currentChild, IChildNodeSetter setter, IScope scope) {
-    super(parameterNode);
-    myParentNode = parentNode;
+    super(parameterNode, parentNode);
     myCurrentChild = currentChild;
     myScope = scope;
     mySetter = setter;
-  }
-
-  public SNode getSourceNode() {
-    return myParentNode;
   }
 
   public IScope getScope() {
@@ -41,12 +34,13 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteItem
   }
 
   public String getDescriptionText(String pattern) {
-    return NodePresentationUtil.descriptionText(getParameterNode(), myParentNode, getScope());
+    return NodePresentationUtil.descriptionText(getParameterNode(), getSourceNode(), getScope());
   }
 
   public SNode doSubstitute(String pattern) {
-    SNode newChild = createChildNode(getParameterNode(), myParentNode.getModel(), pattern);
-    mySetter.execute(myParentNode, myCurrentChild, newChild, getScope());
+    SNode parentNode = getSourceNode();
+    SNode newChild = createChildNode(getParameterNode(), parentNode.getModel(), pattern);
+    mySetter.execute(parentNode, myCurrentChild, newChild, getScope());
     return newChild;
   }
 

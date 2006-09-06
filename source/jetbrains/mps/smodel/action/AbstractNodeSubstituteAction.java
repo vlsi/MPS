@@ -12,13 +12,18 @@ import jetbrains.mps.smodel.SNode;
  */
 public abstract class AbstractNodeSubstituteAction extends AbstractNodeSubstituteItem implements INodeSubstituteAction {
   private SNode mySourceNode;
+  private SNode myParameterNode;
 
-  protected AbstractNodeSubstituteAction(SNode sourceNode) {
-    super(null);
+  protected AbstractNodeSubstituteAction(SNode parameterNode, SNode sourceNode) {
     mySourceNode = sourceNode;
+    myParameterNode = parameterNode;
   }
 
   public SNode getSourceNode() {
     return mySourceNode;
+  }
+
+  public SNode getParameterNode() {
+    return myParameterNode;
   }
 }

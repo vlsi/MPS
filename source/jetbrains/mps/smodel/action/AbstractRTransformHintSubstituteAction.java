@@ -1,6 +1,5 @@
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.nodeEditor.AbstractNodeSubstituteItem;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -12,18 +11,12 @@ import jetbrains.mps.smodel.presentation.NodePresentationUtil;
  * Time: 2:06:58 PM
  * To change this template use File | Settings | File Templates.
  */
-public abstract class AbstractRTransformHintSubstituteAction extends AbstractNodeSubstituteItem implements INodeSubstituteAction {
-  private SNode mySourceNode;
+public abstract class AbstractRTransformHintSubstituteAction extends AbstractNodeSubstituteAction {
   private IScope myScope;
 
   public AbstractRTransformHintSubstituteAction(SNode parameterNode, SNode sourceNode, IScope scope) {
-    super(parameterNode);
-    mySourceNode = sourceNode;
+    super(parameterNode, sourceNode);
     myScope = scope;
-  }
-
-  public SNode getSourceNode() {
-    return mySourceNode;
   }
 
   public IScope getScope() {
@@ -35,7 +28,7 @@ public abstract class AbstractRTransformHintSubstituteAction extends AbstractNod
   }
 
   public String getDescriptionText(String pattern) {
-    return NodePresentationUtil.descriptionText(getParameterNode(), mySourceNode, getScope());
+    return NodePresentationUtil.descriptionText(getParameterNode(), getSourceNode(), getScope());
   }
 
   public abstract SNode doSubstitute(String pattern);
