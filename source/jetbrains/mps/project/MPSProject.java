@@ -77,6 +77,9 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     CommandProcessor.instance().addCommandListener(myEventTranslator);
   }
 
+  public void update() {
+    setProjectDescriptor(getProjectDescriptor());
+  }
 
   public void loadPlugins() {
     myPluginManager.reloadPlugins();
@@ -210,6 +213,12 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     }
 
     return null;
+  }
+
+  public void addLanguageRoot(String languagePath) {
+    LanguagePath path = LanguagePath.newInstance(getProjectDescriptor().getModel());
+    path.setPath(languagePath);
+    getProjectDescriptor().addProjectLanguage(path);        
   }
 
   public ProjectDescriptor getProjectDescriptor() {
