@@ -90,6 +90,11 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   }
 
 
+  public String getTitle() {
+    return "Logical View";
+  }
+
+
   public void openEditor() {
     TreePath selectionPath = myTree.getSelectionPath();
     if (selectionPath == null) return;
