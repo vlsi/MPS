@@ -19,6 +19,11 @@ public abstract class AbstractNodeSubstituteAction extends AbstractNodeSubstitut
     myParameterNode = parameterNode;
   }
 
+  protected AbstractNodeSubstituteAction(SNode sourceNode) {
+    mySourceNode = sourceNode;
+    myParameterNode = null;
+  }
+
   public SNode getSourceNode() {
     return mySourceNode;
   }
