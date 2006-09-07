@@ -58,9 +58,6 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
 
   public ProjectPane(IDEProjectFrame ide) {
 
-    System.out.println("new project pane + 1");
-    new Throwable().printStackTrace();
-
     myIDE = ide;
     SModelsMulticaster.getInstance().addSModelsListener(new SModelsAdapter() {
       public void modelCreated(SModelDescriptor modelDescriptor) {
