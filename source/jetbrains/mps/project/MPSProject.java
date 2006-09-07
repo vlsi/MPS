@@ -164,7 +164,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     myEventTranslator.projectChanged();
   }
 
-  public void addProjectSolution(File solutionDescriptionFile) {
+  public Solution addProjectSolution(File solutionDescriptionFile) {
     ProjectDescriptor projectDescriptor = getProjectDescriptor();
     SModel model = projectDescriptor.getModel();
     model.setLoading(true);
@@ -173,6 +173,15 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     projectDescriptor.addProjectSolution(solutionPath);
     setProjectDescriptor(projectDescriptor);
     myEventTranslator.projectChanged();
+
+
+    for (Solution s : getProjectSolutions()) {
+      if (s.getDescriptorFile().getAbsolutePath().equals(solutionDescriptionFile.getAbsolutePath())) {
+        return s;
+      }
+    }
+
+    return null;
   }
 
   public String toString() {

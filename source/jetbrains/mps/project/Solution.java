@@ -125,6 +125,7 @@ public class Solution extends AbstractModule {
     return mySolutionDescriptor;
   }
 
+
   public ModuleDescriptor getModuleDescriptor() {
     return mySolutionDescriptor;
   }
