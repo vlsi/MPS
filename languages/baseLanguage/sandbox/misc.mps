@@ -80,6 +80,27 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1157633713693">
+              <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1157633713727">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1157633716761">
+                  <property name="value" value="true" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1157633713694">
+                  <property name="value" value="2" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1157633784186">
+              <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1157633785282">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1157633787004">
+                  <link role="baseMethodDeclaration" targetNodeId="1157626500598" resolveInfo="foo" />
+                  <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1157633787005" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1157633784187">
+                  <property name="value" value="2" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
