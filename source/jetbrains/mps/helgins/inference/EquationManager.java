@@ -87,9 +87,6 @@ public class EquationManager {
       return;
     }
 
-    if ("int".equals(subtypeRepresentator.toString())) {
-      System.err.println("");
-    }
     ErrorReporter.getInstance().setErrorString(subtypeRepresentator, "type "+ subtypeRepresentator+" should be a subtype of "+supertypeRepresentator);
     TypeChecker.reportTypeError(subtypeRepresentator);
   }
