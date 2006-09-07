@@ -19,6 +19,8 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.components.IExternalizableComponent;
 
 import javax.swing.*;
+import javax.swing.event.TreeSelectionListener;
+import javax.swing.event.TreeSelectionEvent;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
@@ -55,6 +57,10 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   private boolean myRebuildEnabled = true;
 
   public ProjectPane(IDEProjectFrame ide) {
+
+    System.out.println("new project pane + 1");
+    new Throwable().printStackTrace();
+
     myIDE = ide;
     SModelsMulticaster.getInstance().addSModelsListener(new SModelsAdapter() {
       public void modelCreated(SModelDescriptor modelDescriptor) {
