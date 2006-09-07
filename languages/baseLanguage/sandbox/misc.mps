@@ -59,7 +59,28 @@
               <property name="value" value="3" />
             </node>
           </node>
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1157626515032" />
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1157626515032">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1157630304932">
+              <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1157630305075">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1157630307453">
+                  <property name="value" value="3" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1157630304933">
+                  <property name="value" value="2" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1157631134999">
+              <node role="expression" type="jetbrains.mps.baseLanguage.MinusExpression" id="1157631136048">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.FloatingPointConstant" id="1157631138817">
+                  <property name="value" value="3.3" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1157631135000">
+                  <property name="value" value="2" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
