@@ -33,18 +33,6 @@ public class Queries {
       return runtimeErrorType;
     }
     SNode type = lowestCommonSupertypes.iterator().next();
-    if (type instanceof PrimitiveTypeDescriptor) {
-      PrimitiveTypeDescriptor primitiveTypeDescriptor = (PrimitiveTypeDescriptor) type;
-      if ("Integral".equals(primitiveTypeDescriptor.getName())) {
-        return new IntegerType(runtimeTypesModel);
-      }
-      if ("FloatingPoint".equals(primitiveTypeDescriptor.getName())) {
-        return new FloatType(runtimeTypesModel);
-      }
-      if ("Numeric".equals(primitiveTypeDescriptor.getName())) {
-        return new DoubleType(runtimeTypesModel);
-      }
-    }
     return type;
   }
 }
