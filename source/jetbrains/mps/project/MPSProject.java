@@ -234,6 +234,17 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     return myProjectDescriptor;
   }
 
+  public void addClassPathItem(String path) {
+    for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(myProjectDescriptor.classPathEntriess())) {      
+      if (path.equals(entry.getPath())) return;
+    }
+
+    SModel model = myProjectDescriptor.getModel();
+    ClassPathEntry entry = ClassPathEntry.newInstance(model);
+    entry.setPath(path);
+    myProjectDescriptor.addClassPathEntries(entry);
+  }
+
   public List<Language> getProjectLanguages() {
     return Collections.unmodifiableList(myLanguages);
   }
