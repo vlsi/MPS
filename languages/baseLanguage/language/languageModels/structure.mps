@@ -1568,6 +1568,7 @@
     <property name="name" value="PrimitiveTypeDescriptor" />
     <link role="extends" targetNodeId="4.1078489098625" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1157458550272">
+      <property name="sourceCardinality" value="0..n" />
       <property name="role" value="extends" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1157458307266" resolveInfo="PrimitiveTypeRef" />

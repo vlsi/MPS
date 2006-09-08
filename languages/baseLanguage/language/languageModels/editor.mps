@@ -4316,7 +4316,8 @@
         <property name="text" value="extends" />
         <property name="drawBorder" value="false" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1157458545193">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1157714689651">
+        <property name="separatorText" value="," />
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="17.1157458550272" />
       </node>

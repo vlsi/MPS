@@ -33,10 +33,10 @@ public class TypeChecker {
   public static void clearForTypesModel(SModel typesModel) {
     ContextsManager.getInstance().clear();
     EquationManager.getInstance().clear();
-    SubtypingManager.getInstance().clear();
     TypeVariablesManager.getInstance().clearVariables();
     Interpretator.clearForTypesModel(typesModel);
     SubtypingManager.getInstance().clear();
+    AdaptationManager.getInstance().clear();
     ErrorReporter.getInstance().clear();
     ourRules.clear();
     ourCheckedNodes.clear();
@@ -69,6 +69,9 @@ public class TypeChecker {
 
     // load subtyping rules
     SubtypingManager.getInstance().initiate(typesModel);
+
+    // load adaptation rules
+    AdaptationManager.getInstance().initiate(typesModel);
 
     // check types
     doCheckTypes(root);

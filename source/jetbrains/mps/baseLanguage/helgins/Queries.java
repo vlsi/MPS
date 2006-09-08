@@ -2,6 +2,8 @@ package jetbrains.mps.baseLanguage.helgins;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.helgins.inference.Interpretator;
 import jetbrains.mps.helgins.inference.SubtypingManager;
 import jetbrains.mps.helgins.RuntimeErrorType;
@@ -21,7 +23,8 @@ public class Queries {
   public static Object CustomExpression_getBinaryOperationType(Object... args)  {
     SNode leftType = (SNode) args[0];
     SNode rightType = (SNode) args[1];
-    SModel runtimeTypesModel = leftType.getModel();
+    SModel typesModel = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.baseLanguage.helgins")).getSModel();
+    SModel runtimeTypesModel = Interpretator.getRuntimeTypesModel(typesModel);
     Set<? extends SNode> types = CollectionUtil.asSet(leftType, rightType);
     Set<SNode> lowestCommonSupertypes = SubtypingManager.lowestCommonSupertypes(types);
     if (lowestCommonSupertypes.isEmpty()) {
