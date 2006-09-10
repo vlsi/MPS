@@ -274,12 +274,20 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     myComponents.put(interfaceClass, instance);
   }
 
+  public File getClassGenPath() {
+    return new File(myProjectFile.getParentFile(), "classes_gen");
+  }
+
   public List<String> getClassPath() {
     List<String> classpath = new LinkedList<String>();
 
     File file = new File(myProjectFile.getParent(), "classes");
     if (file.exists()) {
       classpath.add(FileUtil.getCanonicalPath(file));
+    }
+
+    if (getClassGenPath().exists()) {
+      classpath.add(FileUtil.getCanonicalPath(getClassGenPath()));
     }
 
     for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(myProjectDescriptor.classPathEntriess())) {

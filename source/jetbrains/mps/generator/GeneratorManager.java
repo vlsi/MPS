@@ -27,7 +27,6 @@ import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.execution.ExecutionManager;
 import org.jdom.Element;
 
-import javax.swing.*;
 import java.io.File;
 import java.util.*;
 import java.lang.reflect.Method;
@@ -112,7 +111,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     return outputRootPath + File.separator + packageName.replace('.', File.separatorChar);
   }
 
-  private void generateFile(String outputPath, SModel sourceModel, SModel targetModel) {
+  private void generateFiles(String outputPath, SModel sourceModel, SModel targetModel) {
     if (outputPath == null) throw new RuntimeException("Unspecified output path. Please specify one.");
     File outputPathFile = new File(getOutputFolderPath(outputPath, sourceModel));
 
@@ -149,15 +148,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   }
 
   private void generateTextAndExecute(SModel sourceModel, SModel targetModel, IOperationContext context, IAdaptiveProgressMonitor progress, boolean execute) {
-    JavaCompiler compiler = new JavaCompiler();
-
-    for (SNode root : targetModel.getRoots()) {
-      compiler.addSource(JavaFileGenerator.generateHeader(targetModel.getUID().getLongName()) +
-              generateText(root), targetModel.getUID().getLongName() + "." + root.getName());
-    }
-    progress.addText("Compiling...");
-    compiler.compile();
-    progress.addText("Compilation finished.");
+    JavaCompiler compiler = compile(targetModel, progress);
 
     ClassLoader classLoader = compiler.getClassLoader();
     String modelNamespace = targetModel.getUID().getLongName();
@@ -168,6 +159,30 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       progress.addText("Executing...");
       execute(modelNamespace, classLoader, context);
     }
+  }
+
+  private JavaCompiler compile(SModel targetModel, IAdaptiveProgressMonitor progress) {
+    JavaCompiler compiler = new JavaCompiler();
+
+    for (SNode root : targetModel.getRoots()) {
+      compiler.addSource(JavaFileGenerator.generateHeader(JavaNameUtil.packageNameForModelUID(targetModel.getUID())) +
+              generateText(root), JavaNameUtil.packageNameForModelUID(targetModel.getUID()) + "." + root.getName());
+    }
+    progress.addText("Compiling...");
+    compiler.compile();
+    progress.addText("Compilation finished.");
+    return compiler;
+  }
+
+  private void generateAndCompile(SModel sourceModel, SModel targetModel, IOperationContext context, IAdaptiveProgressMonitor progress) {
+    JavaCompiler compiler = compile(targetModel, progress);
+    String namespace = JavaNameUtil.packageNameForModelUID(sourceModel.getUID());
+    compiler.putResultToDir(namespace, context.getProject().getClassGenPath());
+
+    progress.addText("reloading MPS classes...");
+    progress.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
+    ReloadUtils.reloadAll(false);
+    progress.finishTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
   }
 
   private static void execute(String modelNamespace, ClassLoader classLoader, IOperationContext context) {
@@ -291,6 +306,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       case GENERATE_TEXT:
         addMessage(MessageKind.INFORMATION, "generating text");
         break;
+      case GENERATE_CLASSES:
+        addMessage(MessageKind.INFORMATION, "generating classes");
+        break;
     }
 
     addMessage(MessageKind.INFORMATION, "    target language: \"" + targetLanguage.getNamespace() + "\"");
@@ -386,12 +404,16 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
               break;
             case GENERATE_FILES:
               addProgressMessage(MessageKind.INFORMATION, "generate files to folder: \"" + getOutputFolderPath(outputFolder, sourceModel) + "\"", progress);
-              generateFile(outputFolder, sourceModel, status.getOutputModel());
+              generateFiles(outputFolder, sourceModel, status.getOutputModel());
               break;
             case GENERATE_AND_EXECUTE:
             case GENERATE_IN_MEMORY:
               progress.addText("compiling generated code in memory...");
               generateTextAndExecute(sourceModel, status.getOutputModel(), invocationContext, progress, generationType == GenerationType.GENERATE_AND_EXECUTE);
+              break;
+            case GENERATE_CLASSES:
+              progress.addText("compiling classes...");
+              generateAndCompile(sourceModel, status.getOutputModel(), invocationContext, progress);
               break;
           }
         }

@@ -7,6 +7,8 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import java.util.*;
 import java.io.PrintWriter;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 import org.eclipse.jdt.internal.compiler.batch.CompilationUnit;
 import org.eclipse.jdt.internal.compiler.*;
@@ -47,6 +49,49 @@ public class JavaCompiler {
     return myClassLoader;
   }
 
+
+  public void putResultToDir(String packName, File baseClassesDir) {
+    String packPath = packName.replace('.', File.separatorChar);
+    File outputDir = new File(baseClassesDir.getAbsolutePath() + File.separator + packPath);
+
+    if (outputDir.exists()) {
+      for (File file : outputDir.listFiles()) {
+        if (file.isFile()) {
+          file.delete();
+        }
+      }
+    } else {
+      outputDir.mkdirs();
+    }
+
+    for (String clsName : getCompiledClasses()) {
+      if (clsName.startsWith(packName)) {
+        String name = clsName.substring(packName.length() + 1);
+        File outputFile = new File(outputDir, name + ".class");
+        try {
+          FileOutputStream output = new FileOutputStream(outputFile);
+          output.write(getClass(clsName));
+          output.close();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+     } else {
+        System.err.println("WARNING : Class to be put has a wron package");
+      }
+    }
+  }
+
+  private Set<String> getCompiledClasses() {
+    return new HashSet<String>(myClassLoader.myClasses.keySet());
+  }
+
+  private byte[] getClass(String name) {
+    byte[] bytes = myClassLoader.myClasses.get(name);
+    byte[] result = new byte[bytes.length];
+    System.arraycopy(bytes, 0, result, 0, bytes.length);
+    return bytes;
+  }
+
   private static class MapClassLoader extends AbstractMPSClassLoader {
     private Map<String, byte[]> myClasses = new HashMap<String, byte[]>();
 
@@ -55,7 +100,6 @@ public class JavaCompiler {
     }
 
     public void put(String name, byte[] bytes) {
-
       myClasses.put(name, bytes);
     }
 
