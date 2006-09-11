@@ -18,7 +18,7 @@ public class NodePresentationUtil {
   public static String matchingText(SNode node, boolean referent_presentation) {
     // concept declaration : return either 'alias' or 'name'
     if (node instanceof ConceptDeclaration) {
-      if (referent_presentation) {
+      if (!referent_presentation) {
         String alias = SModelUtil.getConceptProperty(node, "alias", GlobalScope.getInstance());
         if (alias != null) {
           return alias;

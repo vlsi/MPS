@@ -51,9 +51,14 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1157626504992" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1157626500600">
         <node role="statement" type="jetbrains.mps.baseLanguage.WhileStatement" id="1157626515028">
-          <node role="condition" type="jetbrains.mps.baseLanguage.LessThanExpression" id="1157626515029">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1157626515030">
-              <property name="value" value="2" />
+          <node role="condition" type="jetbrains.mps.baseLanguage.MulExpression" id="1158015319469">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1158015366995">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158015321847">
+                <property name="value" value="5" />
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158015327914">
+                <property name="value" value="15" />
+              </node>
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1157626515031">
               <property name="value" value="3" />
