@@ -180,9 +180,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     compiler.putResultToDir(namespace, context.getProject().getClassGenPath());
 
     progress.addText("reloading MPS classes...");
-    progress.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
     ReloadUtils.reloadAll(false);
-    progress.finishTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
   }
 
   private static void execute(String modelNamespace, ClassLoader classLoader, IOperationContext context) {
