@@ -2,7 +2,6 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 
 /**
  * Created by IntelliJ IDEA.
@@ -21,14 +20,6 @@ public abstract class AbstractRTransformHintSubstituteAction extends AbstractNod
 
   public IScope getScope() {
     return myScope;
-  }
-
-  public String getMatchingText(String pattern) {
-    return NodePresentationUtil.matchingText(getParameterNode(), NodePresentationUtil.CHILD_PRESENTATION, getScope());
-  }
-
-  public String getDescriptionText(String pattern) {
-    return NodePresentationUtil.descriptionText(getParameterNode(), getSourceNode(), getScope());
   }
 
   public abstract SNode doSubstitute(String pattern);

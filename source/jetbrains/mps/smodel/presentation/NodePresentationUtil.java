@@ -1,50 +1,41 @@
 package jetbrains.mps.smodel.presentation;
 
-import jetbrains.mps.baseLanguage.*;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration;
-import jetbrains.mps.core.NamedConcept;
+import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.core.BaseConcept;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.core.NamedConcept;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Jun 28, 2005
- * Time: 5:35:18 PM
- * Todo: refactor this utility
- */
 public class NodePresentationUtil {
-  public static INodePresentationPreferences CHILD_PRESENTATION = new INodePresentationPreferences() {
-    public boolean matchConceptByAlias() {
-      // most likely we are going to create instance of concept
-      return true;
-    }
-  };
-  public static INodePresentationPreferences REFERENT_PRESENTATION = new INodePresentationPreferences() {
-    public boolean matchConceptByAlias() {
-      return false;
-    }
-  };
-
-  public static String matchingText(SNode node, SNode referenceContext, IScope scope) {
-    return matchingText(node, CHILD_PRESENTATION, scope);
+  public static String matchingText(SNode node) {
+    return matchingText(node, false);
   }
 
-  public static String matchingText(SNode node, INodePresentationPreferences preferences, IScope scope) {
-    if (node == null) {
-      return "<none>";
-    }
+  public static String matchingText(SNode node, boolean referent_presentation) {
+    // concept declaration : return either 'alias' or 'name'
     if (node instanceof ConceptDeclaration) {
-      if (preferences.matchConceptByAlias()) {
-        return getAliasOrConceptName(node, scope);
+      if (referent_presentation) {
+        String alias = SModelUtil.getConceptProperty(node, "alias", GlobalScope.getInstance());
+        if (alias != null) {
+          return alias;
+        }
       }
       return node.getName();
     }
+
+    // all other nodes (not a concept declarations)
+    return matchingText_internal(node);
+  }
+
+  private static String matchingText_internal(SNode node) {
+    if (node == null) {
+      return "<none>";
+    }
+
     if (node instanceof LinkDeclaration) {
       return ((LinkDeclaration) node).getRole();
     }
@@ -53,9 +44,8 @@ public class NodePresentationUtil {
       return ((EnumerationMemberDeclaration) node).getExternalValue();
     }
 
-    // default
     if (node instanceof BaseConcept) {
-      String customAlias = ((BaseConcept)node).getAlias();
+      String customAlias = ((BaseConcept) node).getAlias();
       if (customAlias != null) return customAlias;
       if (node instanceof NamedConcept) {
         String name = node.getName();
@@ -65,33 +55,35 @@ public class NodePresentationUtil {
       }
     }
 
-    return getAliasOrConceptName(node, scope);
+    return getAliasOrConceptName(node);
   }
 
-  public static String descriptionText(SNode node, SNode referenceContext, IScope scope) {
-    return descriptionText(node, CHILD_PRESENTATION, scope);
+  public static String descriptionText(SNode node) {
+    return descriptionText(node, false);
   }
 
-  public static String descriptionText(SNode node, INodePresentationPreferences preferences, IScope scope) {
-    if (node == null) {
+  public static String descriptionText(SNode node, boolean referent_presentation) {
+    if (node instanceof ConceptDeclaration &&
+            !referent_presentation) {
+      String description = SModelUtil.getConceptProperty(node, "short_description", GlobalScope.getInstance());
+      if (description != null) {
+        return description;
+      }
+
+      ConceptDeclaration anExtends = ((ConceptDeclaration) node).getExtends();
+      if (anExtends != null) {
+        String namespace = NameUtil.namespaceFromConcept((ConceptDeclaration) node);
+        return "(" + anExtends.getName() + " in " + namespace + ")";
+      }
       return "";
     }
 
-    // default
-    if (node instanceof ConceptDeclaration) {
-      if (preferences.matchConceptByAlias()) {
-        String description = SModelUtil.getConceptProperty(node, "short_description", scope);
-        if (description != null) {
-          return description;
-        }
+    return descriptionText_internal(node);
+  }
 
-        ConceptDeclaration anExtends = ((ConceptDeclaration) node).getExtends();
-        if (anExtends != null) {
-          String namespace = NameUtil.namespaceFromConcept((ConceptDeclaration) node);
-          return "(" + anExtends.getName() + " in " + namespace + ")";
-        }
-        return "";
-      }
+  private static String descriptionText_internal(SNode node) {
+    if (node == null) {
+      return "";
     }
 
     if (node instanceof BaseConcept) {
@@ -108,23 +100,12 @@ public class NodePresentationUtil {
     return node.getRole_() + " (" + NameUtil.nodeFQName(SModelUtil.getRootParent(node)) + ")";
   }
 
-  public static boolean isReferenceContext(Classifier declaringClassifier, SNode referenceContext) {
-    if (referenceContext == null) {
-      return false;
-    }
-    return declaringClassifier == referenceContext ||
-            declaringClassifier == SModelUtil.findParent(referenceContext, Classifier.class);
-  }
-
-  public static String getAliasOrConceptName(SNode node, IScope scope) {
-    String alias = SModelUtil.getConceptProperty(node, "alias", scope);
+  public static String getAliasOrConceptName(SNode node) {
+    String alias = SModelUtil.getConceptProperty(node, "alias", GlobalScope.getInstance());
     if (alias != null) {
       return alias;
     }
-    if (node instanceof ConceptDeclaration && node.getName() != null) {
-      return node.getName();
-    }
-    return NameUtil.shortNameFromLongName(node.getClass().getName());
+    return NameUtil.nodeConceptName(node);
   }
 
   public static String getRoleInParentOrConceptName(SNode node) {

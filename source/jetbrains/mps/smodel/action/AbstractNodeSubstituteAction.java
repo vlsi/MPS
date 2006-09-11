@@ -2,6 +2,7 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.nodeEditor.AbstractNodeSubstituteItem;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 
 /**
  * Created by IntelliJ IDEA.
@@ -30,5 +31,13 @@ public abstract class AbstractNodeSubstituteAction extends AbstractNodeSubstitut
 
   public SNode getParameterNode() {
     return myParameterNode;
+  }
+
+  public String getMatchingText(String pattern) {
+    return NodePresentationUtil.matchingText(getParameterNode());
+  }
+
+  public String getDescriptionText(String pattern) {
+    return NodePresentationUtil.descriptionText(getParameterNode());
   }
 }

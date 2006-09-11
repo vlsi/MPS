@@ -29,14 +29,6 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
     return myScope;
   }
 
-  public String getMatchingText(String pattern) {
-    return NodePresentationUtil.matchingText(getParameterNode(), NodePresentationUtil.CHILD_PRESENTATION, getScope());
-  }
-
-  public String getDescriptionText(String pattern) {
-    return NodePresentationUtil.descriptionText(getParameterNode(), getSourceNode(), getScope());
-  }
-
   public SNode doSubstitute(String pattern) {
     SNode parentNode = getSourceNode();
     SNode newChild = createChildNode(getParameterNode(), parentNode.getModel(), pattern);

@@ -34,11 +34,11 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
   }
 
   public String getMatchingText(String pattern) {
-    return NodePresentationUtil.matchingText(getParameterNode(), NodePresentationUtil.REFERENT_PRESENTATION, getScope());
+    return NodePresentationUtil.matchingText(getParameterNode(), true);
   }
 
   public String getDescriptionText(String pattern) {
-    return NodePresentationUtil.descriptionText(getParameterNode(), getSourceNode(), getScope());
+    return NodePresentationUtil.descriptionText(getParameterNode(), true);
   }
 
   public SNode doSubstitute(String pattern) {

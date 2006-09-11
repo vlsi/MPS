@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunctio
 import jetbrains.mps.bootstrap.structureLanguage.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration;
+import jetbrains.mps.core.BaseConcept;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
-import jetbrains.mps.core.BaseConcept;
 
 import java.util.*;
 
@@ -151,10 +150,10 @@ public class ChildSubstituteActionsHelper {
           public String getDescriptionText(String pattern) {
             BaseConcept pn = (BaseConcept) getParameterNode();
             if (pn.getShortDescription() == null) {
-              return "(smart ref:" + referenceNodeConcept.getName() + ") " + NodePresentationUtil.descriptionText(getParameterNode(), NodePresentationUtil.REFERENT_PRESENTATION, getScope());
+              return "(smart ref:" + referenceNodeConcept.getName() + ") " + NodePresentationUtil.descriptionText(getParameterNode(), true);
             }
 
-            return "(smart ref:" + NodePresentationUtil.descriptionText(getParameterNode(), NodePresentationUtil.REFERENT_PRESENTATION, getScope()) + ")";
+            return "(smart ref:" + NodePresentationUtil.descriptionText(getParameterNode(), true) + ")";
           }
 
           public SNode createChildNode(SNode parameterNode, SModel model, String pattern) {
@@ -181,7 +180,7 @@ public class ChildSubstituteActionsHelper {
   private static LinkDeclaration getSmartReference(ConceptDeclaration referenceDeclaringConcept, IScope scope) {
     // trick : should be no custom 'matching text'
     String expectedReferentRole = null;
-    String matchingText = NodePresentationUtil.matchingText(referenceDeclaringConcept, NodePresentationUtil.CHILD_PRESENTATION, scope);
+    String matchingText = NodePresentationUtil.matchingText(referenceDeclaringConcept);
     if (!(matchingText == null || matchingText.equals(referenceDeclaringConcept.getName()))) {
       // handle pattern 'xxx <{_referent_role_}> yyy'
       if (!matchingText.matches(".*<\\{.+\\}>.*")) {
@@ -211,8 +210,8 @@ public class ChildSubstituteActionsHelper {
   }
 
   private static String getSmartMatchingText(ConceptDeclaration referenceNodeConcept, SNode referentNode, IScope scope) {
-    String referentMatchingText = NodePresentationUtil.matchingText(referentNode, NodePresentationUtil.REFERENT_PRESENTATION, scope);
-    String referenceMatchingText = NodePresentationUtil.matchingText(referenceNodeConcept, NodePresentationUtil.CHILD_PRESENTATION, scope);
+    String referentMatchingText = NodePresentationUtil.matchingText(referentNode, true);
+    String referenceMatchingText = NodePresentationUtil.matchingText(referenceNodeConcept);
     // handle pattern 'xxx <{_referent_role_}> yyy'
     if (!referenceMatchingText.matches(".*<\\{.+\\}>.*")) {
       return referentMatchingText;
