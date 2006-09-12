@@ -145,6 +145,11 @@
         <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1154544745893" />
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1158098418869">
+      <property name="name" value="aa" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1158098418870" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1158098418871" />
+    </node>
   </node>
 </model>
 

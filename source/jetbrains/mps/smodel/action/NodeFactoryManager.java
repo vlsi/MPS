@@ -1,11 +1,12 @@
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelUtil;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.NameUtil;
 
 import java.lang.reflect.Method;
 
@@ -21,13 +22,18 @@ public class NodeFactoryManager {
   public static final String CLASS_NAME = "Factory";
   public static final String METHOD_PREFIX = "instantiate";
 
+  public static SNode initializeNode(String conceptFqName, SModel model, IScope scope) {
+    ConceptDeclaration conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName, scope);
+    return initializeNode(conceptDeclaration, model);
+  }
+
   public static SNode initializeNode(ConceptDeclaration conceptDeclaration, SModel model) {
     SNode node = SModelUtil.instantiateConceptDeclaration(conceptDeclaration, model);
     String languageNamespace = NameUtil.namespaceFromLongName(node.getClass().getName());
 
     Class cls;
     try {
-      cls = Class.forName(languageNamespace+'.'+CLASS_NAME, true, ClassLoaderManager.getInstance().getClassLoader());
+      cls = Class.forName(languageNamespace + '.' + CLASS_NAME, true, ClassLoaderManager.getInstance().getClassLoader());
     } catch (Exception e) {
       return node;
     }
@@ -48,7 +54,7 @@ public class NodeFactoryManager {
 
     try {
       method.invoke(null, node);
-    } catch(Exception e) {
+    } catch (Exception e) {
 
     }
 

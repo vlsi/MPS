@@ -1297,7 +1297,6 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1114458549484">
     <link role="conceptDeclaration" targetNodeId="1.1114458327664" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1114458600627">
-      <property name="substituteActionsFactoryId" value="ConceptDeclarationReference_ConceptDeclaration" />
       <property name="drawBorder" value="false" />
       <property name="noTargetText" value="&lt;choose concept declaration&gt;" />
       <link role="relationDeclaration" targetNodeId="1.1114458346385" />

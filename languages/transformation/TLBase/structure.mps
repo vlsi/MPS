@@ -227,9 +227,6 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1114458327664">
     <property name="name" value="ConceptDeclarationReference" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1149543163347">
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473994950" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1114458346385">
       <property name="sourceCardinality" value="1" />
       <property name="targetCardinality" value="0..n" />
