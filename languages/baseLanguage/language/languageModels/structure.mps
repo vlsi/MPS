@@ -1583,5 +1583,22 @@
       <link role="target" targetNodeId="1157458290000" resolveInfo="PrimitiveTypeDescriptor" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1158159469921">
+    <property name="name" value="HelginsArrayType" />
+    <link role="extends" targetNodeId="4.1078489098625" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1158160489406">
+      <property name="value" value="array" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1158159625483">
+      <property name="value" value="internal array type" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1158159477829">
+      <property name="sourceCardinality" value="0..1" />
+      <property name="role" value="componentType" />
+      <link role="target" targetNodeId="4.1078489098625" />
+    </node>
+  </node>
 </model>
 

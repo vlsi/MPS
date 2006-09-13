@@ -62,6 +62,29 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1158161023706">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1158161023707">
+                <property name="name" value="intArray" />
+                <node role="type" type="jetbrains.mps.baseLanguage.ArrayType" id="1158161027006">
+                  <node role="componentType" type="jetbrains.mps.baseLanguage.IntegerType" id="1158161023708" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1158161066431">
+              <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1158161068808">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1158161113273">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158161116901">
+                    <property name="value" value="2" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1158161102459">
+                    <property name="value" value="aaa" />
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1158161066432">
+                  <link role="variableDeclaration" targetNodeId="1158161023707" resolveInfo="intArray" />
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1157631134999">
               <node role="expression" type="jetbrains.mps.baseLanguage.MinusExpression" id="1157631136048">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.FloatingPointConstant" id="1157631138817">
@@ -93,8 +116,11 @@
                     <link role="baseMethodDeclaration" extResolveInfo="1.constructor [Classifier]Object[ConstructorDeclaration] ()" />
                   </node>
                 </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158152589638">
-                  <property name="value" value="3" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1158154709544">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1158154711719" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158152589638">
+                    <property name="value" value="3" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -104,8 +130,8 @@
               </node>
             </node>
           </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1158151840832">
-            <property name="value" value="true" />
+          <node role="condition" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158159142820">
+            <property name="value" value="3" />
           </node>
         </node>
       </node>

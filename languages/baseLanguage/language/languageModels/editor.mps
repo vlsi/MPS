@@ -4341,5 +4341,26 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1158159558253">
+    <link role="conceptDeclaration" targetNodeId="17.1158159469921" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1158159565646">
+      <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1158159579647">
+        <property name="drawBorder" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.1158159477829" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1158159579648">
+          <link role="conceptDeclaration" targetNodeId="18.1078489098625" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1158159583400">
+            <link role="relationDeclaration" targetNodeId="18.1078489098626" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1158159588059">
+        <property name="textFgColor" value="DARK_BLUE" />
+        <property name="text" value="[]" />
+        <property name="drawBorder" value="false" />
+      </node>
+    </node>
+  </node>
 </model>
 

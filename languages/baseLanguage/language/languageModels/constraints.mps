@@ -336,6 +336,32 @@
         </node>
       </node>
     </node>
+    <node role="nodePropertyConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint" id="1158160784512">
+      <link role="applicableConcept" targetNodeId="1.1158159469921" />
+      <link role="applicableProperty" targetNodeId="2.1078489098626" />
+      <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_PropertyGetter" id="1158160890041">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1158160890042">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1158160901356">
+            <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1158160914144">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1158160927257">
+                <property name="value" value="[]" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1158160911376">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1158160908077">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.PropertyGetter_FunctionParm_node" id="1158160907905" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1158160910235">
+                    <link role="link" targetNodeId="1.1158159477829" />
+                  </node>
+                </node>
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1158160912659">
+                  <link role="property" targetNodeId="2.1078489098626" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraintSet" id="1149122036826">
     <property name="name" value="BL_reference" />
