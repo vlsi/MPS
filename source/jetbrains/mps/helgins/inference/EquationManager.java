@@ -10,6 +10,9 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.baseLanguage.PrimitiveTypeDescriptor;
+import jetbrains.mps.baseLanguage.BooleanType;
+import jetbrains.mps.baseLanguage.ClassConcept;
 
 import java.util.*;
 
@@ -88,6 +91,15 @@ public class EquationManager {
     }
 
     ErrorReporter.getInstance().setErrorString(subtypeRepresentator, "type "+ subtypeRepresentator+" should be a subtype of "+supertypeRepresentator);
+
+    //--- for debug
+    if (subtypeRepresentator instanceof ClassConcept && subtypeRepresentator.getName().equals("String")) {
+      if (supertypeRepresentator instanceof PrimitiveTypeDescriptor && supertypeRepresentator.getName().equals("Plusable")) {
+        SubtypingManager.getInstance().isSubtype(subtypeRepresentator, supertypeRepresentator);
+      }
+    }
+    //~~~ for debug
+
     TypeChecker.reportTypeError(subtypeRepresentator);
   }
 

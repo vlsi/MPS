@@ -51,19 +51,6 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1157626504992" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1157626500600">
         <node role="statement" type="jetbrains.mps.baseLanguage.WhileStatement" id="1157626515028">
-          <node role="condition" type="jetbrains.mps.baseLanguage.MulExpression" id="1158015319469">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1158015366995">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158015321847">
-                <property name="value" value="5" />
-              </node>
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158015327914">
-                <property name="value" value="15" />
-              </node>
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1157626515031">
-              <property name="value" value="3" />
-            </node>
-          </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1157626515032">
             <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1157630304932">
               <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1157630305075">
@@ -85,16 +72,6 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1157633713693">
-              <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1157633713727">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1157633716761">
-                  <property name="value" value="true" />
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1157633713694">
-                  <property name="value" value="2" />
-                </node>
-              </node>
-            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1157633784186">
               <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1157633785282">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1157633787004">
@@ -106,6 +83,29 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1158146800775">
+              <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1158153168235">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1158153168236">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1158153174634">
+                    <property name="value" value="aaa" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.NewExpression" id="1158153170758">
+                    <link role="baseMethodDeclaration" extResolveInfo="1.constructor [Classifier]Object[ConstructorDeclaration] ()" />
+                  </node>
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158152589638">
+                  <property name="value" value="3" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1158146991461">
+              <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1158146991462">
+                <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1158151840832">
+            <property name="value" value="true" />
           </node>
         </node>
       </node>

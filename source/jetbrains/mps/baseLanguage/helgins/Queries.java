@@ -23,16 +23,28 @@ public class Queries {
   public static Object CustomExpression_getBinaryOperationType(Object... args)  {
     SNode leftType = (SNode) args[0];
     SNode rightType = (SNode) args[1];
+    boolean mayBeString = false;
+    if (args.length >= 3) {
+      mayBeString = (Boolean) args[2];
+    }
     SModel typesModel = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("jetbrains.mps.baseLanguage.helgins")).getSModel();
     SModel runtimeTypesModel = Interpretator.getRuntimeTypesModel(typesModel);
     Set<? extends SNode> types = CollectionUtil.asSet(leftType, rightType);
     Set<SNode> lowestCommonSupertypes = SubtypingManager.lowestCommonSupertypes(types);
+
+    if (mayBeString) {
+      SModel javaLang = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("java.lang@java_stub")).getSModel();
+      SNode stringClass = javaLang.getRootByName("String");
+      if (leftType == stringClass || rightType == stringClass) {
+        return stringClass;
+      }
+    }
+
     if (lowestCommonSupertypes.isEmpty()) {
       RuntimeErrorType runtimeErrorType = new RuntimeErrorType(runtimeTypesModel);
       runtimeErrorType.setErrorText("incompatible types");
       return runtimeErrorType;
     }
-    SNode type = lowestCommonSupertypes.iterator().next();
-    return type;
+    return lowestCommonSupertypes.iterator().next();
   }
 }

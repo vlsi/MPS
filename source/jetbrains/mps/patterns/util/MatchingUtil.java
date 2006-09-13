@@ -36,7 +36,6 @@ public class MatchingUtil {
   }
 
   private static boolean matchNodes(SNode node, SNode patternNode, Substitution substitution) {
-    if (node == null) return false;
 
     //-- whole node bindings
     SNode patternAttribute = patternNode.getAttribute();
@@ -53,6 +52,8 @@ public class MatchingUtil {
       bindNodeWithVar(substitution, (PatternVariableDeclaration) patternAttribute, node);
       return true;
     }
+
+    if (node == null) return false;
 
     //-- matching class
     if (node.getClass() != patternNode.getClass()) return false;

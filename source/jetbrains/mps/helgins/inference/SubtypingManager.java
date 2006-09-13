@@ -169,8 +169,8 @@ public class SubtypingManager {
       newFrontier = new HashSet<T>();
     }
 
-    for (T node1 : allTypes) { // transitive closure
-      for (T node2 : allTypes) {
+    for (T node2 : allTypes) { // transitive closure
+      for (T node1 : allTypes) {
         for (T node3 : allTypes) {
           if (node1 == node2 || node2 == node3 || node1 == node3) continue;
           Set<T> supertypes1 = subTypesToSuperTypes.get(node1);
