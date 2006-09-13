@@ -70,21 +70,23 @@ public class GenerationSession {
   public GenerationStatus generateModel(SModelDescriptor sourceModel) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
     GenerationStatus status = null;
 
-    // need to re-write model ?
-    List<Language> sourceModelLanguages = sourceModel.getSModel().getLanguages(myInvocationContext.getScope());
-    for (Language language : sourceModelLanguages) {
-      if (language == myTargetLanguage) continue;
-      if (GeneratorManager.isPossibleTargetLanguage(language, myInvocationContext.getScope())) {
-        // do re-write model
-        status = generateModel_internal(sourceModel, language, true);
-        if (status.isError()) {
-          break;
-        }
-
-        // replace source model with re-written model
-        sourceModel = status.getOutputModel().getModelDescriptor();
-      }
-    }
+    // todo: temporarily disable preliminary re-writing
+    // todo: where are problems with generation of multy-language models.
+//    // need to re-write model ?
+//    List<Language> sourceModelLanguages = sourceModel.getSModel().getLanguages(myInvocationContext.getScope());
+//    for (Language language : sourceModelLanguages) {
+//      if (language == myTargetLanguage) continue;
+//      if (GeneratorManager.isPossibleTargetLanguage(language, myInvocationContext.getScope())) {
+//        // do re-write model
+//        status = generateModel_internal(sourceModel, language, true);
+//        if (status.isError()) {
+//          break;
+//        }
+//
+//        // replace source model with re-written model
+//        sourceModel = status.getOutputModel().getModelDescriptor();
+//      }
+//    }
 
     // do model mapping
     if (status == null || status.isOk()) {
