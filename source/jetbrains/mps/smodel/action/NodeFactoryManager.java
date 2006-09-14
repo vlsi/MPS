@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 
 import java.lang.reflect.Method;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * Created by IntelliJ IDEA.
@@ -19,8 +20,47 @@ import java.lang.reflect.Method;
  */
 public class NodeFactoryManager {
 
-  public static final String CLASS_NAME = "Factory";
-  public static final String METHOD_PREFIX = "instantiate";
+//  public static final String CLASS_NAME = "Factory";
+//  public static final String METHOD_PREFIX_OLD = "instantiate";
+
+  public static SNode createNode(String conceptFqName, SNode sample, SModel model, IScope scope) {
+    ConceptDeclaration conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName, scope);
+    return createNode(conceptDeclaration, sample, model);
+  }
+
+  public static SNode createNode(ConceptDeclaration concept, SNode sample, SModel model) {
+    SNode node = SModelUtil.instantiateConceptDeclaration(concept, model);
+    Class factoryClass = getFactoryClass(concept);
+    if (factoryClass == null) {
+      return node;
+    }
+
+    // try new 'setup method'
+    Method method = getSetupMethod_new(factoryClass, node);
+    if (method != null) {
+      try {
+        method.invoke(null, node, sample);
+      } catch (IllegalAccessException e) {
+        e.printStackTrace();
+      } catch (InvocationTargetException e) {
+        e.printStackTrace();
+      }
+      return node;
+    }
+
+    // try old 'instantiate method'
+    method = getSetupMethod_old(factoryClass, node);
+    if (method != null) {
+      try {
+        method.invoke(null, node);
+      } catch (IllegalAccessException e) {
+        e.printStackTrace();
+      } catch (InvocationTargetException e) {
+        e.printStackTrace();
+      }
+    }
+    return node;
+  }
 
   public static SNode initializeNode(String conceptFqName, SModel model, IScope scope) {
     ConceptDeclaration conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName, scope);
@@ -28,36 +68,55 @@ public class NodeFactoryManager {
   }
 
   public static SNode initializeNode(ConceptDeclaration conceptDeclaration, SModel model) {
-    SNode node = SModelUtil.instantiateConceptDeclaration(conceptDeclaration, model);
-    String languageNamespace = NameUtil.namespaceFromLongName(node.getClass().getName());
+    return createNode(conceptDeclaration, null, model);
+  }
 
-    Class cls;
+
+  private static Class getFactoryClass(ConceptDeclaration conceptDeclaration) {
+    String languageNamespace = NameUtil.namespaceFromConcept(conceptDeclaration);
     try {
-      cls = Class.forName(languageNamespace + '.' + CLASS_NAME, true, ClassLoaderManager.getInstance().getClassLoader());
-    } catch (Exception e) {
-      return node;
+      return Class.forName(languageNamespace + ".Factory", true, ClassLoaderManager.getInstance().getClassLoader());
+    } catch (ClassNotFoundException e) {
+      // ok
     }
+    return null;
+  }
 
-    Method method = null;
-    Class nodeType = node.getClass();
-
-    while (nodeType != SNode.class) {
+  private static Method getSetupMethod_new(Class factoryClass, SNode node) {
+    Class newNodeClass = node.getClass();
+    while (newNodeClass != SNode.class) {
+      String methodName = "setup_" + NameUtil.shortNameFromLongName(newNodeClass.getName());
       try {
-        String methodName = METHOD_PREFIX + NameUtil.shortNameFromLongName(nodeType.getName());
-        method = cls.getMethod(methodName, nodeType);
-        break;
-      } catch (Exception e) {
-        nodeType = nodeType.getSuperclass();
+        return factoryClass.getMethod(methodName, newNodeClass, SNode.class);
+      } catch (NoSuchMethodException e) {
+        // ok
       }
+//      //test
+//      Method declaredMethod = factoryClass.getDeclaredMethods()[1];
+//      Class<?>[] parameterTypes = declaredMethod.getParameterTypes();
+//      if(newNodeClass == parameterTypes[0]) {
+//        System.out.println("OK");
+//      }
+//      if(sNodeClass == parameterTypes[1]) {
+//        System.out.println("OK");
+//      }
+//      //test
+      newNodeClass = newNodeClass.getSuperclass();
     }
-    if (method == null) return node;
+    return null;
+  }
 
-    try {
-      method.invoke(null, node);
-    } catch (Exception e) {
-
+  private static Method getSetupMethod_old(Class factoryClass, SNode node) {
+    Class nodeClass = node.getClass();
+    while (nodeClass != SNode.class) {
+      String methodName = "instantiate" + NameUtil.shortNameFromLongName(nodeClass.getName());
+      try {
+        return factoryClass.getMethod(methodName, node.getClass());
+      } catch (NoSuchMethodException e) {
+        // ok
+      }
+      nodeClass = nodeClass.getSuperclass();
     }
-
-    return node;
+    return null;
   }
 }

@@ -4,7 +4,6 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 
 /**
  * Created by IntelliJ IDEA.
@@ -38,7 +37,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
 
   public SNode createChildNode(SNode parameterNode, SModel model, String pattern) {
     if (parameterNode instanceof ConceptDeclaration) {
-      return NodeFactoryManager.initializeNode((ConceptDeclaration) parameterNode, model);
+      return NodeFactoryManager.createNode((ConceptDeclaration) parameterNode, myCurrentChild, model);
     }
     throw new RuntimeException("Couldn't create child node. Parameter node: " + parameterNode.getDebugText());
   }

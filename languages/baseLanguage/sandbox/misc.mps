@@ -254,6 +254,26 @@
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1158098418870" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1158098418871" />
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1158180144526">
+      <property name="name" value="aaa" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1158180144527">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1158180164634">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1158180164635">
+            <property name="name" value="i" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1158180164636" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.PlusExpression" id="1158180227429">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158180230042">
+                <property name="value" value="20" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158180227413">
+                <property name="value" value="10" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1158180144528" />
+    </node>
   </node>
 </model>
 
