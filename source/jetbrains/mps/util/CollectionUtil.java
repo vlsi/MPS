@@ -25,7 +25,7 @@ public class CollectionUtil {
     return  result;
   }
 
-  public static<T> List<T> filter(List<T> ts, Condition<T> f) {
+  public static<T> List<T> filter(List<? extends T> ts, Condition<T> f) {
     List<T> result = new ArrayList<T>();
     for (T t : ts) {
       if (f.met(t)) {
