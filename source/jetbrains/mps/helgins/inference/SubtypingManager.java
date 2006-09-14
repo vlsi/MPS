@@ -72,11 +72,6 @@ public class SubtypingManager {
     SNode subRepresentator = EquationManager.getInstance().getRepresentator(subtype);
     SNode superRepresentator = EquationManager.getInstance().getRepresentator(supertype);
 
-    //----- debug
-    if ("String".equals(subRepresentator.getName()) && "CharSequence".equals(superRepresentator.getName())) {
-      System.err.println("APVS? VA?");
-    }//~~~~~~ debug
-
     //variance:
 
      Set<ConceptDeclaration> superConcepts = new HashSet<ConceptDeclaration>();

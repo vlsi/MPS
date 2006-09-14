@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.quotation.structure">
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
-  <maxImportIndex value="3" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="jetbrains.mps.core.structure" />
   <import index="2" modelUID="jetbrains.mps.annotations.structure" />
   <import index="3" modelUID="jetbrains.mps.formulaLanguage.structure" />
+  <import index="4" modelUID="jetbrains.mps.helgins.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1141044709506">
     <property name="name" value="Antiquotation" />
     <link role="extends" targetNodeId="2.1136027476087" />
@@ -17,7 +18,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1141044949598">
     <property name="name" value="Quotation" />
-    <link role="extends" targetNodeId="1.1133920641626" />
+    <link role="extends" targetNodeId="4.1141058717279" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1141044957162">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="quotedNode" />

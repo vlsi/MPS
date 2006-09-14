@@ -77,11 +77,28 @@
               <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1158229829886">
                 <link role="classifier" extResolveInfo="1.[Classifier]String" />
               </node>
-              <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1158229827447">
-                <link role="classifier" extResolveInfo="1.[Classifier]Object" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1158239941706">
+                <link role="classifier" extResolveInfo="3.[Classifier]Set" />
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1158229851341">
+              <link role="variableDeclaration" targetNodeId="1158229702643" resolveInfo="hmap" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1158240000390">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1158240000391">
+            <property name="name" value="map1" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1158240000392">
+              <link role="classifier" extResolveInfo="3.[Classifier]Map" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1158240000393">
+                <link role="classifier" extResolveInfo="1.[Classifier]String" />
+              </node>
+              <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1158240007225">
+                <link role="classifier" extResolveInfo="1.[Classifier]Object" />
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1158240000395">
               <link role="variableDeclaration" targetNodeId="1158229702643" resolveInfo="hmap" />
             </node>
           </node>
