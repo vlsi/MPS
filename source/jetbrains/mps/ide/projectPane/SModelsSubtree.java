@@ -58,7 +58,6 @@ class SModelsSubtree {
 
 
   private static class ModelsGroupTreeNode extends TextTreeNode {
-
     private List<SModelDescriptor> myDescriptors = new ArrayList<SModelDescriptor>();
     private boolean myInitialized = false;
 

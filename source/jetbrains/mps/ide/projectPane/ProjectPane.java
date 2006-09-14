@@ -309,6 +309,10 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   }
 
   private SModelTreeNode findSModelTreeNode(MPSTreeNode parent, SModelDescriptor modelDescriptor) {
+    if (!(parent instanceof SModelTreeNode) && !parent.isInitialized() && !parent.hasInfiniteSubtree()) {
+      parent.init();
+    }
+
     if (parent instanceof SModelTreeNode) {
       SModelTreeNode parentSModelNode = (SModelTreeNode) parent;
       SModelDescriptor parentModelDescriptor = parentSModelNode.getSModelDescriptor();
