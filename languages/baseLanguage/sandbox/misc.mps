@@ -261,12 +261,12 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1158180164635">
             <property name="name" value="i" />
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1158180164636" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.PlusExpression" id="1158180227429">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158180230042">
-                <property name="value" value="20" />
-              </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.MulExpression" id="1158246764036">
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158180227413">
                 <property name="value" value="10" />
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158180230042">
+                <property name="value" value="20" />
               </node>
             </node>
           </node>

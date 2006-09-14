@@ -20,9 +20,6 @@ import java.lang.reflect.InvocationTargetException;
  */
 public class NodeFactoryManager {
 
-//  public static final String CLASS_NAME = "Factory";
-//  public static final String METHOD_PREFIX_OLD = "instantiate";
-
   public static SNode createNode(String conceptFqName, SNode sample, SModel model, IScope scope) {
     ConceptDeclaration conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName, scope);
     return createNode(conceptDeclaration, sample, model);
@@ -62,11 +59,17 @@ public class NodeFactoryManager {
     return node;
   }
 
+  /**
+   * @deprecated
+   */
   public static SNode initializeNode(String conceptFqName, SModel model, IScope scope) {
     ConceptDeclaration conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName, scope);
     return initializeNode(conceptDeclaration, model);
   }
 
+  /**
+   * @deprecated
+   */
   public static SNode initializeNode(ConceptDeclaration conceptDeclaration, SModel model) {
     return createNode(conceptDeclaration, null, model);
   }
