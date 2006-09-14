@@ -1,14 +1,19 @@
 package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.helgins.inference.EquationManager;
-import jetbrains.mps.helgins.SubtypingRule;
-import jetbrains.mps.helgins.AnalyzedTermDeclaration;
+import jetbrains.mps.helgins.*;
 import jetbrains.mps.patterns.util.MatchingUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.formulaLanguage.evaluator.ExpressionContext;
 import jetbrains.mps.formulaLanguage.evaluator.ExpressionEvaluatorManager;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Mapper;
 import jetbrains.mpswiki.queryLanguage.VariableCondition;
 import jetbrains.mpswiki.queryLanguage.evaluator.ConditionMatcher;
 import jetbrains.mpswiki.queryLanguage.evaluator.InvalidConditionException;
@@ -26,6 +31,7 @@ public class SubtypingManager {
   private static final Logger LOG = Logger.getLogger(SubtypingManager.class);
 
   Set<SubtypingRule> myRules = new HashSet<SubtypingRule>();
+  Map<ConceptDeclaration, SubtypingVarianceRule> myVarianceRules = new HashMap<ConceptDeclaration, SubtypingVarianceRule>();
 
   private static SubtypingManager ourInstance = new SubtypingManager();
 
@@ -40,6 +46,9 @@ public class SubtypingManager {
   public void initiate(SModel typesModel) {
     for (SubtypingRule rule : typesModel.getRoots(SubtypingRule.class)) {
       myRules.add(rule);
+    }
+    for (SubtypingVarianceRule rule : typesModel.getRoots(SubtypingVarianceRule.class)) {
+      myVarianceRules.put(rule.getConceptDeclaration(), rule);
     }
   }
 
@@ -62,6 +71,79 @@ public class SubtypingManager {
   public boolean isStrictSubtype(SNode subtype, SNode supertype) {
     SNode subRepresentator = EquationManager.getInstance().getRepresentator(subtype);
     SNode superRepresentator = EquationManager.getInstance().getRepresentator(supertype);
+
+    //----- debug
+    if ("String".equals(subRepresentator.getName()) && "CharSequence".equals(superRepresentator.getName())) {
+      System.err.println("APVS? VA?");
+    }//~~~~~~ debug
+
+    //variance:
+
+     Set<ConceptDeclaration> superConcepts = new HashSet<ConceptDeclaration>();
+    {
+      Set<ConceptDeclaration> subConcepts = new HashSet<ConceptDeclaration>();
+      ConceptDeclaration subConcept = SModelUtil.getConceptDeclaration(subtype, GlobalScope.getInstance());
+      subConcepts.add(subConcept);
+      while (subConcept.getExtends() != null) {
+        subConcept = subConcept.getExtends();
+        subConcepts.add(subConcept);
+      }
+      ConceptDeclaration superConcept = SModelUtil.getConceptDeclaration(supertype, GlobalScope.getInstance());
+      superConcepts.add(superConcept);
+      while (superConcept.getExtends() != null) {
+        superConcept = superConcept.getExtends();
+        superConcepts.add(superConcept);
+      }
+      superConcepts.retainAll(subConcepts);
+    }
+
+    if (!superConcepts.isEmpty()) {
+      Set<String> roles = new HashSet<String>();
+      Set<String> covariantRoles = new HashSet<String>();
+      Set<String> contraVariantRoles = new HashSet<String>();
+      for (ConceptDeclaration superConcept : superConcepts) {
+        if (myVarianceRules.containsKey(superConcept)) {
+          SubtypingVarianceRule rule = myVarianceRules.get(superConcept);
+
+          for (LinkVariance linkVariance : CollectionUtil.iteratorAsIterable(rule.linkVariances())) {
+            String role = linkVariance.getLinkDeclaration().getRole();
+            if (linkVariance.getVariance() == _Variance_Enum.covariant) {
+              covariantRoles.add(role);
+            } else {
+              contraVariantRoles.add(role);
+            }
+          }
+          roles.addAll(CollectionUtil.map(CollectionUtil.iteratorAsList(superConcept.linkDeclarations()), new Mapper<LinkDeclaration, String>() {
+            public String map(LinkDeclaration p) {
+              return p.getRole();
+            }
+          }));
+        }}
+
+      if (!covariantRoles.isEmpty() || !contraVariantRoles.isEmpty()) {
+        for (String role : roles) {
+          List<SNode> subChildren = subRepresentator.getChildren(role);
+          subChildren.add(subRepresentator.getReferent(role));
+          List<SNode> superChildren = superRepresentator.getChildren(role);
+          superChildren.add(superRepresentator.getReferent(role));
+          if (subChildren.size() != superChildren.size()) return false;
+          Iterator<SNode> subIt = subChildren.iterator();
+          Iterator<SNode> superIt = superChildren.iterator();
+          for (; subIt.hasNext() ;) {
+            SNode subChild = AdaptationManager.getInstance().adaptType(subIt.next());
+            SNode superChild = AdaptationManager.getInstance().adaptType(superIt.next());
+            if (covariantRoles.contains(role)) {
+              if (!isSubtype(subChild, superChild)) return false;
+            } else if (contraVariantRoles.contains(role)) {
+              if (!isSubtype(superChild, subChild)) return false;
+            } else {
+              if (!MatchingUtil.matchNodes(subChild, superChild)) return false;
+            }
+          }
+        }
+        return true;
+      }
+    }
 
     // transitivity: nominal equivalence
     Set<SNode> frontier = new HashSet<SNode>();

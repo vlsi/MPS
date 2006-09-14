@@ -67,7 +67,8 @@ public class EquationManager {
         setParent(typeOnPath, type);
       }
     }
-    return getSmartType(type);
+    return type;
+   // return getSmartType(type);
   }
 
   public void addInequation(SNode subType, SNode supertype) {

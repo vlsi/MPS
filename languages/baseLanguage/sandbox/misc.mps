@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.sandbox.misc">
   <language namespace="jetbrains.mps.baseLanguage" />
-  <maxImportIndex value="2" />
+  <maxImportIndex value="3" />
   <import index="1" modelUID="java.lang@java_stub" />
   <import index="2" modelUID="java.io@java_stub" />
+  <import index="3" modelUID="java.util@java_stub" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1144230421203">
     <property name="name" value="Test" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1158236092784">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1158236092785" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1158236092786" />
+    </node>
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1144367869245">
       <property name="name" value="cc" />
       <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1144367871403" />
@@ -39,6 +44,62 @@
             <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1144230437429">
               <link role="classifier" extResolveInfo="1.[Classifier]Iterable" />
             </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1158229702642">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1158229702643">
+            <property name="name" value="hmap" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1158229702644">
+              <link role="classifier" extResolveInfo="3.[Classifier]HashMap" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1158229719522">
+                <link role="classifier" extResolveInfo="1.[Classifier]String" />
+              </node>
+              <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1158229809487">
+                <link role="classifier" extResolveInfo="1.[Classifier]String" />
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.NewExpression" id="1158229731447">
+              <link role="baseMethodDeclaration" extResolveInfo="3.constructor [Classifier]HashMap[ConstructorDeclaration] ()" />
+              <node role="typeParameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1158229778374">
+                <link role="classifier" extResolveInfo="1.[Classifier]String" />
+              </node>
+              <node role="typeParameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1158229787001">
+                <link role="classifier" extResolveInfo="1.[Classifier]String" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1158229816911">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1158229816912">
+            <property name="name" value="map" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1158229816913">
+              <link role="classifier" extResolveInfo="3.[Classifier]Map" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1158229829886">
+                <link role="classifier" extResolveInfo="1.[Classifier]String" />
+              </node>
+              <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1158229827447">
+                <link role="classifier" extResolveInfo="1.[Classifier]Object" />
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1158229851341">
+              <link role="variableDeclaration" targetNodeId="1158229702643" resolveInfo="hmap" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1158230214070">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1158230214071">
+            <property name="name" value="c" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1158230214072">
+              <link role="classifier" extResolveInfo="1.[Classifier]CharSequence" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.NewExpression" id="1158230219199">
+              <link role="baseMethodDeclaration" extResolveInfo="1.constructor [Classifier]String[ConstructorDeclaration] ()" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1158235208200">
+          <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1158235208201">
+            <link role="baseMethodDeclaration" extResolveInfo="1.constructor [Classifier]String[ConstructorDeclaration] ()" />
           </node>
         </node>
       </node>
