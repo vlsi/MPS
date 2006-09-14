@@ -1,7 +1,8 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.baseLanguage.Classifier;
+import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.components.IExternalizableComponent;
+import jetbrains.mps.execution.ExecutionManager;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
@@ -22,15 +23,12 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textPresentation.TextPresentationManager;
-import jetbrains.mps.xml.Document;
-import jetbrains.mps.compiler.JavaCompiler;
-import jetbrains.mps.execution.ExecutionManager;
 import org.jdom.Element;
 
 import java.io.File;
-import java.util.*;
+import java.io.IOException;
 import java.lang.reflect.Method;
-import java.lang.ClassLoader;
+import java.util.*;
 
 
 /**
@@ -45,6 +43,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   private boolean myCompileOnGeneration = true;
   private boolean mySaveTransientModels;
   private MPSProject myProject;
+  private List<IFileGenerator> myFileGenerators = new LinkedList<IFileGenerator>();
 
   // progress monitor
   public static final int AMOUNT_PER_MODEL = 100;
@@ -53,6 +52,14 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
   public GeneratorManager(MPSProject project) {
     myProject = project;
+  }
+
+  public void addFileGenerator(IFileGenerator fileGenerator) {
+    myFileGenerators.add(fileGenerator);
+  }
+
+  public void removeFileGenerator(IFileGenerator fileGenerator) {
+    myFileGenerators.remove(fileGenerator);
   }
 
   public void read(Element element, MPSProject project) {
@@ -106,30 +113,70 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     myProject.getComponent(MessageView.class).show(true);
   }
 
-  private String getOutputFolderPath(String outputRootPath, SModel sourceModel) {
-    String packageName = JavaNameUtil.packageNameForModelUID(sourceModel.getUID());
-    return outputRootPath + File.separator + packageName.replace('.', File.separatorChar);
-  }
+//  private String getOutputFolderPath(String outputRootPath, SModel sourceModel) {
+//    String packageName = JavaNameUtil.packageNameForModelUID(sourceModel.getUID());
+//    return outputRootPath + File.separator + packageName.replace('.', File.separatorChar);
+//  }
 
-  private void generateFiles(String outputPath, SModel sourceModel, SModel targetModel) {
-    if (outputPath == null) throw new RuntimeException("Unspecified output path. Please specify one.");
-    File outputPathFile = new File(getOutputFolderPath(outputPath, sourceModel));
+  private void generateFiles(String outputRootPath, SModel sourceModel, SModel outputModel, TraceMap traceMap) {
+    if (outputRootPath == null) throw new RuntimeException("Unspecified output path. Please specify one.");
+//    File outputDirectory = new File(getOutputFolderPath(outputPath, sourceModel));
+    File outputRootDirectory = new File(outputRootPath);
 
-    if (!outputPathFile.exists()) {
-      outputPathFile.mkdirs();
-    }
+//    if (!outputRootDirectory.exists()) {
+//      outputRootDirectory.mkdirs();
+//    }
 
-    // todo : refactor it...
-    XmlFileGenerator xmlFileGenerator = new XmlFileGenerator(outputPathFile);
-    JavaFileGenerator javaFileGenerator = new JavaFileGenerator(outputPathFile);
-    for (SNode root : targetModel.getRoots()) {
-      String content = generateText(root);
-      if (root instanceof Classifier) {
-        javaFileGenerator.generateJavaFile((Classifier) root, content);
-      } else if (root instanceof Document) {
-        xmlFileGenerator.generateXmlFile((Document) root, content);
+//    // todo : refactor it...
+//    XmlFileGenerator xmlFileGenerator = new XmlFileGenerator(outputPathFile);
+//    JavaFileGenerator javaFileGenerator = new JavaFileGenerator(outputPathFile);
+//    for (SNode root : targetModel.getRoots()) {
+//      String content = generateText(root);
+//      if (root instanceof Classifier) {
+//        javaFileGenerator.generateJavaFile((Classifier) root, content);
+//      } else if (root instanceof Document) {
+//        xmlFileGenerator.generateXmlFile((Document) root, content);
+//      }
+//    }
+
+    for (SNode outputNode : outputModel.getRoots()) {
+      SNode sourceNode = null;
+      if (traceMap != null) {
+        sourceNode = traceMap.getSourceForOutputNode(outputNode);
+      }
+      IFileGenerator fileGenerator = chooseFileGenerator(outputNode, sourceNode);
+      if (fileGenerator == null) {
+        LOG.error("Couldn't find file generator for output node: " + outputNode.getDebugText());
+        continue;
+      }
+
+      try {
+        String content = generateText(outputNode);
+        fileGenerator.generateFile(outputNode, sourceNode, sourceModel, content, outputRootDirectory);
+      } catch (IOException e) {
+        LOG.error("Error while file generation", e);
+      } finally {
+        // todo: get rid of this.
+        TextGenManager.reset();
       }
     }
+  }
+
+  private IFileGenerator chooseFileGenerator(SNode outputNode, SNode sourceNode) {
+
+    for (IFileGenerator fileGenerator : myFileGenerators) {
+      if (sourceNode != null &&
+              fileGenerator.overridesDefault(outputNode, sourceNode)) {
+        return fileGenerator;
+      }
+    }
+
+    for (IFileGenerator fileGenerator : myFileGenerators) {
+      if (fileGenerator.isDefault(outputNode)) {
+        return fileGenerator;
+      }
+    }
+    return null;
   }
 
   private void generateText(SModel targetModel, IOperationContext operationContext) {
@@ -140,7 +187,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       String nodeText = generateText(root);
       view.append(nodeText);
       view.append("\n");
-      view.append("\r\n-------------------------------------------------------------------------------");
+      view.append("\r\n-------------------------------------------------------------------------------\n");
     }
 
     view.activate();
@@ -400,8 +447,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
               generateText(status.getOutputModel(), invocationContext);
               break;
             case GENERATE_FILES:
-              addProgressMessage(MessageKind.INFORMATION, "generate files to folder: \"" + getOutputFolderPath(outputFolder, sourceModel) + "\"", progress);
-              generateFiles(outputFolder, sourceModel, status.getOutputModel());
+              addProgressMessage(MessageKind.INFORMATION, "generate files to folder: \"" + outputFolder + "\"", progress);
+              generateFiles(outputFolder, sourceModel, status.getOutputModel(), status.getTraceMap());
               break;
             case GENERATE_AND_EXECUTE:
             case GENERATE_IN_MEMORY:

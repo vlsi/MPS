@@ -29,6 +29,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private Language myTargetLanguage;
 
   private Map<Object, Object> myUserObjects = new HashMap<Object, Object>();
+  private TraceMap myTraceMap = new TraceMap();
 
   public GenerationSessionContext(Language targetLanguage, SModel sourceModel, IOperationContext invocationContext) {
     myTargetLanguage = targetLanguage;
@@ -90,6 +91,10 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   public Language getTargetLanguage() {
     return myTargetLanguage;
+  }
+
+  public TraceMap getTraceMap() {
+    return myTraceMap;
   }
 
   public String toString() {

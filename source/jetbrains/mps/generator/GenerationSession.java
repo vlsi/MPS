@@ -38,6 +38,7 @@ public class GenerationSession {
 
   private int myTransientModelsCount = 0;
 
+
   public GenerationSession(Language targetLanguage, IOperationContext invocationContext, boolean saveTransientModels, IAdaptiveProgressMonitor progressMonitor) {
     myTargetLanguage = targetLanguage;
     myInvocationContext = invocationContext;
@@ -76,7 +77,7 @@ public class GenerationSession {
 //    List<Language> sourceModelLanguages = sourceModel.getSModel().getLanguages(myInvocationContext.getScope());
 //    for (Language language : sourceModelLanguages) {
 //      if (language == myTargetLanguage) continue;
-//      if (GeneratorManager.isPossibleTargetLanguage(language, myInvocationContext.getScope())) {
+//      if (GeneratorManager.isPossibleTargetLanguage(language)) {
 //        // do re-write model
 //        status = generateModel_internal(sourceModel, language, true);
 //        if (status.isError()) {
@@ -111,7 +112,7 @@ public class GenerationSession {
     List<Generator> generators = context.getGeneratorModules();
     if (generators.isEmpty()) {
       addProgressMessage(MessageKind.WARNING, "skip model \"" + sourceModel.getUID() + "\" : no generator avalable");
-      return new GenerationStatus.OK(null);
+      return new GenerationStatus(null, null, false, false);
     }
     setGenerationSessionContext(context);
 
@@ -149,7 +150,7 @@ public class GenerationSession {
       IModelGenerator handCodedGenerator = currentGeneratorClass.getConstructor(IOperationContext.class).newInstance(context);
       SModelDescriptor outputModel = createTransientModel(sourceModel, context.getModule());
       handCodedGenerator.generate(sourceModel, outputModel.getSModel());
-      return new GenerationStatus.OK(outputModel.getSModel());
+      return new GenerationStatus(outputModel.getSModel(), null, false, false);
     }
 
     // templates generator
@@ -158,7 +159,7 @@ public class GenerationSession {
     try {
       SModel outputModel = generateModel(sourceModel, targetLanguage, generator, primaryMappingOnly);
       boolean wasErrors = generator.getErrorCount() > 0;
-      status = new GenerationStatus(outputModel, wasErrors, false);
+      status = new GenerationStatus(outputModel, context.getTraceMap(), wasErrors, false);
       addMessage(status.isError() ? MessageKind.WARNING : MessageKind.INFORMATION, "model \"" + sourceModel.getUID() + "\" has been generated " + (status.isError() ? "with errors" : "successfully"));
       generator.reset();
     } catch (GenerationCanceledException gce) {
