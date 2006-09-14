@@ -120,9 +120,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     }
 
     // todo : refactor it...
-    String packageName = JavaNameUtil.packageNameForModelUID(sourceModel.getUID());
     XmlFileGenerator xmlFileGenerator = new XmlFileGenerator(outputPathFile);
-    JavaFileGenerator javaFileGenerator = new JavaFileGenerator(outputPathFile, packageName, false);
+    JavaFileGenerator javaFileGenerator = new JavaFileGenerator(outputPathFile);
     for (SNode root : targetModel.getRoots()) {
       String content = generateText(root);
       if (root instanceof Classifier) {
@@ -234,7 +233,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     return targetLanguages;
   }
 
-  public static boolean isPossibleTargetLanguage(Language language, IScope scope) {
+  public static boolean isPossibleTargetLanguage(Language language) {
     List<Generator> generators = language.getGenerators();
     for (Generator generator : generators) {
       Language targetLanguage = generator.getTargetLanguage();
