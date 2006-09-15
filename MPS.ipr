@@ -53,10 +53,7 @@
         </option>
         <option name="FIELD_NAME_PREFIX" value="my" />
         <option name="PACKAGES_TO_USE_IMPORT_ON_DEMAND">
-          <value>
-            <package name="javax.swing" withSubpackages="false" />
-            <package name="java.util" withSubpackages="true" />
-          </value>
+          <value />
         </option>
       </value>
     </option>
@@ -117,7 +114,7 @@
     <option name="USE_PROJECT_LEVEL_SETTINGS" value="false" />
     <scopes />
     <profiles>
-      <profile version="1.0">
+      <profile version="1.0" is_locked="false">
         <option name="myName" value="Project Default" />
         <option name="myLocal" value="false" />
         <used_levels>
@@ -148,6 +145,11 @@
           <option name="METHOD" value="true" />
           <option name="CLASS" value="true" />
           <option name="PARAMETER" value="true" />
+          <option name="INJECTION_ANNOS">
+            <value>
+              <list size="0" />
+            </value>
+          </option>
         </inspection_tool>
         <inspection_tool class="FieldCanBeLocal" level="WARNING" enabled="false" />
       </profile>
@@ -331,6 +333,7 @@
       <module fileurl="file://$PROJECT_DIR$/projects/SemanticWeb/sandbox/sandbox.iml" filepath="$PROJECT_DIR$/projects/SemanticWeb/sandbox/sandbox.iml" group="SemanticWeb" />
       <module fileurl="file://$PROJECT_DIR$/projects/teamSys/teamSys.iml" filepath="$PROJECT_DIR$/projects/teamSys/teamSys.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/projects/teamSys/teamSysWebApp/teamSysWebApp.iml" filepath="$PROJECT_DIR$/projects/teamSys/teamSysWebApp/teamSysWebApp.iml" group="Projects" />
+      <module fileurl="file://$PROJECT_DIR$/projects/webr/webr.iml" filepath="$PROJECT_DIR$/projects/webr/webr.iml" group="Projects" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="jdk 1.5" />
@@ -344,6 +347,13 @@
   </component>
   <component name="StarteamVcsAdapter" />
   <component name="VssVcs" />
+  <component name="com.intellij.jsf.UserDefinedFacesConfigs">
+    <option name="USER_DEFINED_CONFIGS">
+      <value>
+        <list size="0" />
+      </value>
+    </option>
+  </component>
   <component name="libraryTable">
     <library name="XMLRPC">
       <CLASSES>
