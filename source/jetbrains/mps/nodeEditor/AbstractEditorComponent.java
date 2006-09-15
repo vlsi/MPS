@@ -476,6 +476,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       public void actionPerformed(ActionEvent e) {
         if (mySelectedCell != null && mySelectedCell.getSNode() != null) {
           final ActionContext context = new ActionContext(getEditorContext().getOperationContext(), mySelectedCell.getSNode());
+          action.update(context);
+          if (!action.isVisible() || !action.isEnabled()) {
+            return;
+          }
+          
           if (action.executeInsideCommand()) {
             CommandProcessor.instance().executeCommand(new Runnable() {
               public void run() {
