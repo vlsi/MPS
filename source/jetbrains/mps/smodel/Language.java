@@ -10,6 +10,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
@@ -17,6 +18,7 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.Hack;
+import jetbrains.mps.plugins.PluginManager;
 
 import java.io.File;
 import java.util.*;
@@ -163,6 +165,16 @@ public class Language extends AbstractModule {
     //read modules and models
     readModulesAndModels();
     revalidateGenerators();
+
+
+    //update plugins
+    for (MPSModuleOwner owner : MPSModuleRepository.getInstance().getOwners(this)) {
+      if (owner instanceof MPSProject) {
+        MPSProject project = (MPSProject) owner;
+        project.reloadPlugins();
+      }
+    }
+
 
     registerAspectListener();
     updateLastGenerationTime();
