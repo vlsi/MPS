@@ -1,6 +1,5 @@
 package jetbrains.mps.helgins.evaluator.uiActions;
 
-import jetbrains.mps.helgins.inference.ErrorReporter;
 import jetbrains.mps.helgins.RuntimeTypeVariable;
 import jetbrains.mps.helgins.RuntimeErrorType;
 import jetbrains.mps.smodel.SNode;
@@ -16,13 +15,19 @@ import java.lang.reflect.Method;
  * To change this template use File | Settings | File Templates.
  */
 public class PresentationManager {
-  public static String toString(SNode type) {
+  public static String toString(Object type) {
     if (type == null) return null;
     if (type instanceof RuntimeTypeVariable && !(type instanceof RuntimeErrorType)) {
-      return type.getName();
+      return ((SNode)type).getName();
     }
-    String errorString = ErrorReporter.getInstance().getErrorString(type);
-    return errorString == null ? toString_1(type) : errorString;
+    if (type instanceof String) {
+      String errorString = (String) type;
+      return errorString;
+    }
+    if (type instanceof SNode) {
+      return toString_1((SNode) type);
+    }
+    return null;
   }
 
   public static String toString_1(SNode type) {

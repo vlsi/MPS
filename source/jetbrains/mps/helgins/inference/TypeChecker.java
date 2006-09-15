@@ -23,7 +23,7 @@ public class TypeChecker {
 
   private static List<Rule> ourRules = new ArrayList<Rule>();
   private static Set<SNode> ourCheckedNodes = new HashSet<SNode>();
-  private static WeakHashMap<SNode, SNode> ourNodesWithErrors = new WeakHashMap<SNode, SNode>();
+  private static WeakHashMap<SNode, String> ourNodesWithErrors = new WeakHashMap<SNode, String>();
 
   public static final String TYPESYSYTEM_MODEL_PREFIX = "jetbrains.mps.helgins.typeSystems.";
   public static final String JETBRAINS_MPS_TYPES_LANGUAGE = "jetbrains.mps.helgins.";
@@ -37,7 +37,6 @@ public class TypeChecker {
     Interpretator.clearForTypesModel(typesModel);
     SubtypingManager.getInstance().clear();
     AdaptationManager.getInstance().clear();
-    ErrorReporter.getInstance().clear();
     ourRules.clear();
     ourCheckedNodes.clear();
     ourNodesWithErrors.clear();
@@ -87,15 +86,15 @@ public class TypeChecker {
       SNode term = contextEntry.o1;
       SNode type = expandType(contextEntry.o2, Interpretator.getRuntimeTypesModel(typesModel));
       if (type instanceof RuntimeErrorType) {
-        reportTypeError(type, term);
+        reportTypeError(term, ((RuntimeErrorType)type).getErrorText());
       }
       term.putUserObject(TYPE_OF_TERM, type);
     }
 
     // setting errors
     for (SNode node : ourNodesWithErrors.keySet()) {
-      SNode errorType = ourNodesWithErrors.get(node);
-      node.putUserObject(TYPE_OF_TERM, errorType);
+      String errorString = ourNodesWithErrors.get(node);
+      node.putUserObject(TYPE_OF_TERM, errorString);
     }
   }
 
@@ -103,13 +102,9 @@ public class TypeChecker {
     return Collections.unmodifiableSet(ourNodesWithErrors.keySet());
   }
 
-  public static void reportTypeError(SNode errorType) {
-    reportTypeError(errorType, ErrorReporter.getInstance().getNodeToReportErrors(errorType));
-  }
-
-  public static void reportTypeError(SNode errorType, SNode nodeWithError) {
+  public static void reportTypeError(SNode nodeWithError, String errorString) {
     if (nodeWithError != null) {
-      ourNodesWithErrors.put(nodeWithError, errorType);
+      ourNodesWithErrors.put(nodeWithError, errorString);
     } else {
       LOG.warning("can't report error: error has no related node");
     }
