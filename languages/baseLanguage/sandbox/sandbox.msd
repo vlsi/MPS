@@ -5,7 +5,7 @@
   </models>
   <module />
   <languages>
-    <moduleRoot path="${mps_home}\languages\baseLanguage\languageDescriptor.mpl" />
+    <moduleRoot path="${mps_home}\languages\baseLanguage\language\baseLanguage.mpl" />
   </languages>
 </solution>
 
