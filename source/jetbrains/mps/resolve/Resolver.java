@@ -1,19 +1,17 @@
 package jetbrains.mps.resolve;
 
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.DefaultReferentNodeSubstituteAction;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.EditorsPane;
-import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
+import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
-import java.lang.reflect.Method;
 
 /**
  * Created by IntelliJ IDEA.
@@ -49,25 +47,72 @@ public class Resolver {
   }
 
   public static void resolve(final SReference reference, final IOperationContext operationContext){
-    final List<INodeSubstituteAction> matchingActions = createResolveActions(reference, operationContext);
+    EditorsPane editorsPane = operationContext.getComponent(EditorsPane.class);
+    EditorContext editorContext = editorsPane.getEditorFor(reference.getSourceNode().getContainingRoot()).getEditorContext();
+    final List<INodeSubstituteAction> matchingActions = createResolveActions(reference, operationContext, editorContext);
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         if (!(matchingActions.isEmpty())) {
           String resolveInfo = reference.getResolveInfo();
-          matchingActions.get(0).doSubstitute(resolveInfo);
+          processAction(matchingActions.get(0), resolveInfo, reference);
         }
       }
     } , "resolve" );
   }
 
-  public static List<INodeSubstituteAction> createResolveActions(SReference reference, IOperationContext operationContext) {
+  private static void processAction(INodeSubstituteAction action, String pattern, SReference reference) {
+    if (action instanceof DefaultChildNodeSubstituteAction) {
+      SNode sourceNode = reference.getSourceNode();
+      SModel model = sourceNode.getModel();
+      DefaultChildNodeSubstituteAction childAction = (DefaultChildNodeSubstituteAction) action;
+      try {
+        SNode childNode = childAction.createChildNode(childAction.getParameterNode(), model, pattern);
+        String role = reference.getRole();
+        SNode referent = childNode.getReferent(role);
+        sourceNode.setReferent(role, referent);
+      } catch (Throwable t) {
+        action.doSubstitute(pattern);
+      }
+    }
+    if (action instanceof DefaultReferentNodeSubstituteAction) {
+      action.doSubstitute(pattern);
+    }
+  }
+
+  public static List<INodeSubstituteAction> createResolveActions(SReference reference, IOperationContext operationContext, EditorContext editorContext) {
     String resolveInfo = reference.getResolveInfo();
     String role  = reference.getRole();
     final SNode sourceNode = reference.getSourceNode();
 
     ConceptDeclaration sourceConcept = SModelUtil.getConceptDeclaration(sourceNode, operationContext.getScope());
-    LinkDeclaration referenceLinkDeclaration = SModelUtil.findLinkDeclaration(sourceConcept, role);
-    List<INodeSubstituteAction> actions = ModelActions.createReferentSubstituteActions(sourceNode, null, referenceLinkDeclaration, operationContext);
+    LinkDeclaration refLinkDeclaration = SModelUtil.findLinkDeclaration(sourceConcept, role);
+    LinkDeclaration childLinkDeclaration = SModelUtil.findLinkDeclaration(SModelUtil.getConceptDeclaration(sourceNode.getParent(), operationContext.getScope()), sourceNode.getRole_());
+
+    EditorCell editorCell = sourceNode.getParent() == null ? editorContext.createNodeCell(sourceNode) : editorContext.createNodeCell(sourceNode.getParent());
+
+    Set<EditorCell> frontier = new HashSet<EditorCell>();
+    Set<EditorCell> newFrontier = new HashSet<EditorCell>();
+    frontier.add(editorCell);
+    outer : while (!frontier.isEmpty()) {
+      for (EditorCell cell : frontier) {
+        Object userObject = cell.getUserObject(EditorCell.METAINFO_LINK_DECLARATION);
+        if (userObject == refLinkDeclaration || userObject == childLinkDeclaration) {
+          editorCell = cell;
+          break outer;
+        }
+        if (cell instanceof EditorCell_Collection) {
+          newFrontier.addAll(CollectionUtil.iteratorAsList(((EditorCell_Collection)cell).cells()));
+        }
+      }
+      frontier = newFrontier;
+      newFrontier = new HashSet<EditorCell>();
+    }
+
+    INodeSubstituteInfo substituteInfo = editorCell.getSubstituteInfo();
+    if (substituteInfo == null) substituteInfo = new NullSubstituteInfo();
+
+    List<INodeSubstituteAction> actions = (List<INodeSubstituteAction>) (List) substituteInfo.getMatchingItems(resolveInfo, false);
+            //ModelActions.createReferentSubstituteActions(sourceNode, null, referenceLinkDeclaration, operationContext);
 
 
     List<INodeSubstituteAction> matchingActions = new ArrayList<INodeSubstituteAction>();
