@@ -96,7 +96,7 @@ public class Resolver {
     outer : while (!frontier.isEmpty()) {
       for (EditorCell cell : frontier) {
         Object userObject = cell.getUserObject(EditorCell.METAINFO_LINK_DECLARATION);
-        if (userObject == refLinkDeclaration || userObject == childLinkDeclaration) {
+        if (cell.getSNode() == sourceNode && (userObject == refLinkDeclaration || userObject == childLinkDeclaration)) {
           editorCell = cell;
           break outer;
         }
@@ -117,8 +117,15 @@ public class Resolver {
 
     List<INodeSubstituteAction> matchingActions = new ArrayList<INodeSubstituteAction>();
     for (INodeSubstituteAction action : actions) {
-      if (action.canSubstitute(resolveInfo)) {
+      if (action.canSubstituteStrictly(resolveInfo)) {
         matchingActions.add(action);
+      }
+    }
+    if (matchingActions.isEmpty()) {
+      for (INodeSubstituteAction action : actions) {
+        if (action.canSubstitute(resolveInfo)) {
+          matchingActions.add(action);
+        }
       }
     }
     Collections.sort(matchingActions, new Comparator<INodeSubstituteAction>() {
