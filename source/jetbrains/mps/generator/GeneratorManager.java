@@ -142,7 +142,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     for (SNode outputNode : outputModel.getRoots()) {
       SNode sourceNode = null;
       if (traceMap != null) {
-        sourceNode = traceMap.getSourceForOutputNode(outputNode);
+        sourceNode = traceMap.getSourceNode(outputNode);
       }
       IFileGenerator fileGenerator = chooseFileGenerator(outputNode, sourceNode);
       if (fileGenerator == null) {
