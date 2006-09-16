@@ -26,10 +26,6 @@ public abstract class AbstractModule implements IModule {
   // IScope
   //
 
-  protected List<ModelRoot> getModelRootsImpl() {
-    return CollectionUtil.iteratorAsList(getModuleDescriptor().modelRoots());
-  }
-
   public String getModuleUID() {
     return toString();
   }
@@ -87,37 +83,31 @@ public abstract class AbstractModule implements IModule {
       return modelDescriptor;
     }
 
-    modelDescriptor = getModelDescriptorFromDependOnModules(modelUID, this);
+    modelDescriptor = getModelDescriptorFromDependOnModules(modelUID, this, new HashSet<IModule>());
     if (modelDescriptor != null) {
       return modelDescriptor;
     }
 
     LOG.warning("Couldn't find model descriptor for uid: \"" + modelUID + "\" in scope: " + this);
-
     return null;
   }
 
-  private static SModelDescriptor getModelDescriptorFromDependOnModules(SModelUID modelUID, IModule dependentModule) {
-    Set<IModule> modules = new HashSet<IModule>();
-    modules.add(dependentModule);
-    return getModelDescriptorFromDependOnModules(modelUID, dependentModule, modules);
-  }
+  private static SModelDescriptor getModelDescriptorFromDependOnModules(SModelUID modelUID, IModule dependentModule, Set<IModule> ignoreModules) {
+    ignoreModules.add(dependentModule);
 
-  private static SModelDescriptor getModelDescriptorFromDependOnModules(SModelUID modelUID, IModule dependentModule, Set<IModule> modules) {
     List<IModule> dependOnModules = dependentModule.getDependOnModules();
     List<IModule> justProcessedModules = new LinkedList<IModule>();
     for (IModule dependOnModule : dependOnModules) {
-      if (!modules.contains(dependOnModule)) {
-        modules.add(dependOnModule);
-        justProcessedModules.add(dependOnModule);
+      if (!ignoreModules.contains(dependOnModule)) {
         SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, dependOnModule);
         if (modelDescriptor != null) {
           return modelDescriptor;
         }
+        justProcessedModules.add(dependOnModule);
       }
     }
     for (IModule dependOnModule : justProcessedModules) {
-      SModelDescriptor modelDescriptor = getModelDescriptorFromDependOnModules(modelUID, dependOnModule, modules);
+      SModelDescriptor modelDescriptor = getModelDescriptorFromDependOnModules(modelUID, dependOnModule, ignoreModules);
       if (modelDescriptor != null) {
         return modelDescriptor;
       }
@@ -151,23 +141,27 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
-  //returns all modules which this depends on (recursively)
+  /**
+   * @return all depends-on modules recursively + bootstrap languages
+   */
   private <T extends IModule> Set<T> getAllDependOnModules(Class<T> cls) {
-    //collect all modules which this explicitly depends on (recursively),
-    // i.e. without bootstrap languages, if such a dependency is not explicitly set in module roots
-    Set<T> dependOnModules = new HashSet<T>();
-    collectAllExplicitlyDependOnModules(this, dependOnModules, cls);
+    Set<T> modules = new HashSet<T>();
+    collectAllExplicitlyDependOnModules(this, modules, cls);
 
-    //add bootstrapLanguages
-    for (IModule module : MPSModuleRepository.getInstance().getModules(BootstrapLanguages.getInstance())) {
-      if (cls.isInstance(module)) {
-        dependOnModules.add((T) module);
+    // add bootstrap languages
+    if (Language.class.isAssignableFrom(cls)) {
+      List<Language> languages = BootstrapLanguages.getInstance().getLanguages();
+      for (Language language : languages) {
+        if (!modules.contains(language)) {
+          modules.add((T) language);
+        }
       }
     }
-    return dependOnModules;
+
+    return modules;
   }
 
-  private <T extends IModule> void collectAllExplicitlyDependOnModules(IModule dependentModule, Set<T> modules, Class<T> cls) {
+  private static <T extends IModule> void collectAllExplicitlyDependOnModules(IModule dependentModule, Set<T> modules, Class<T> cls) {
     List<IModule> dependOnModules = dependentModule.getExplicitlyDependOnModules();
     for (IModule dependOnModule : dependOnModules) {
       if (cls.isInstance(dependOnModule) && !modules.contains(dependOnModule)) {
@@ -216,25 +210,25 @@ public abstract class AbstractModule implements IModule {
     List<ModelRoot> result = new ArrayList<ModelRoot>();
 
     result.addAll(getDefaultModelRoots());
-    result.addAll(getModelRootsImpl());
+    result.addAll(getNonDefaultModelRoots());
 
     return result;
   }
 
-  public final List<ModelRoot> getNonDefaultModelRoots() {
-    return getModelRootsImpl();
+  public List<ModelRoot> getNonDefaultModelRoots() {
+    return CollectionUtil.iteratorAsList(getModuleDescriptor().modelRoots());
   }
 
   /**
-   * returns all modules which this explicitly and immediately depends on,
-   * i.e. without bootstrap languages, if such a dependency is not explicitly set in module roots
+   * @return all modules which this explicitly and immediately depends on,
+   *         i.e. without bootstrap languages, if such a dependency is not explicitly set in module roots
    */
   public List<IModule> getExplicitlyDependOnModules() {
     return new LinkedList<IModule>(getOwnModules());
   }
 
   /**
-   * returns all modules which this immediately depends on, bootstrap languages in their number.
+   * @return all modules which this immediately depends on, bootstrap languages in their number.
    */
   public List<IModule> getDependOnModules() {
     return appendBootstrapLanguages(getExplicitlyDependOnModules());

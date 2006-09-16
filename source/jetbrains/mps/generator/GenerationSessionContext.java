@@ -154,8 +154,8 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       }
     }
 
-    protected List<ModelRoot> getModelRootsImpl() {
-      return Collections.EMPTY_LIST;
+    public List<ModelRoot> getNonDefaultModelRoots() {
+      return Collections.emptyList();
     }
 
     public ModuleDescriptor getModuleDescriptor() {
