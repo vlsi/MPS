@@ -134,6 +134,12 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1106270491082" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1158610183998">
+      <property name="sourceCardinality" value="0..1" />
+      <property name="role" value="cellMenu" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1158589789017" resolveInfo="CellMenu_ReplaceNode" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1073389446425">
       <property name="propertyType" value="boolean" />
       <property name="name" value="vertical" />
@@ -161,7 +167,7 @@
     <property name="name" value="CellModel_Constant" />
     <link role="extends" targetNodeId="1079353555532" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1158591300266">
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <property name="role" value="cellMenu" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1158589789017" resolveInfo="CellMenu_ReplaceNode" />
@@ -237,6 +243,12 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1074767920765">
     <property name="name" value="CellModel_ModelAccess" />
     <link role="extends" targetNodeId="1079353555532" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1158611571887">
+      <property name="sourceCardinality" value="0..1" />
+      <property name="role" value="cellMenu" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1158589789017" resolveInfo="CellMenu_ReplaceNode" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1074767920766">
       <property name="propertyType" value="string" />
       <property name="name" value="modelAccessorId" />
@@ -259,6 +271,12 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1075375595203">
     <property name="name" value="CellModel_Error" />
     <link role="extends" targetNodeId="1079353555532" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1158611464354">
+      <property name="sourceCardinality" value="0..1" />
+      <property name="role" value="cellMenu" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1158589789017" resolveInfo="CellMenu_ReplaceNode" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1075375595204">
       <property name="propertyType" value="string" />
       <property name="name" value="text" />
@@ -407,6 +425,12 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1078308402140">
     <property name="name" value="CellModel_Custom" />
     <link role="extends" targetNodeId="1073389214265" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1158609882517">
+      <property name="sourceCardinality" value="0..1" />
+      <property name="role" value="cellMenu" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1158589789017" resolveInfo="CellMenu_ReplaceNode" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1078308402141">
       <property name="propertyType" value="string" />
       <property name="name" value="cellProviderId" />
@@ -985,6 +1009,12 @@
       <link role="target" targetNodeId="1.1105725006687" />
       <link role="specializedLink" targetNodeId="1140103550593" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1158610494889">
+      <property name="sourceCardinality" value="0..1" />
+      <property name="role" value="cellMenu" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1158589789017" resolveInfo="CellMenu_ReplaceNode" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1137553248622">
       <property name="value" value="concept property" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
@@ -1477,6 +1507,10 @@
           <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1158590765479" />
         </node>
       </node>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1158616273814">
+      <property name="value" value="setup new node" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
   </node>
 </model>
