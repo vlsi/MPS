@@ -3867,6 +3867,12 @@
         <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.OperationCellToken" id="1147787286392">
           <property name="priority" value="1" />
         </node>
+        <node role="cellMenu" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceNode" id="1158592246081">
+          <link role="replacementConcept" targetNodeId="17.1081773326031" />
+          <node role="setupFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceNode_SetupFunction" id="1158593391368">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1158593391369" />
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1147776530758">
         <property name="drawBorder" value="false" />
