@@ -1435,7 +1435,7 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1158589865362">
-      <property name="sourceCardinality" value="0..1" />
+      <property name="sourceCardinality" value="1" />
       <property name="role" value="replacementConcept" />
       <link role="target" targetNodeId="1.1071489090640" />
     </node>
@@ -1448,10 +1448,6 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1158590354062">
     <property name="name" value="CellMenu_ReplaceNode_SetupFunction" />
     <link role="extends" targetNodeId="4.1137021947720" />
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1158591015415">
-      <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" />
-      <node role="target" type="jetbrains.mps.baseLanguage.VoidType" id="1158591017917" />
-    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1158590439767">
       <link role="conceptLinkDeclaration" targetNodeId="4.1137546998352" />
       <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1158590441988">

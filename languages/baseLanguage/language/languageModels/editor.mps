@@ -3870,7 +3870,44 @@
         <node role="cellMenu" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceNode" id="1158592246081">
           <link role="replacementConcept" targetNodeId="17.1081773326031" />
           <node role="setupFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceNode_SetupFunction" id="1158593391368">
-            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1158593391369" />
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1158593391369">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1158595239310">
+                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1158596605551">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1158596596268">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceNode_SetupFunction_NewNode" id="1158595239311" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1158596603613">
+                      <link role="link" targetNodeId="17.1081773367580" />
+                    </node>
+                  </node>
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Link_SetTargetOperation" id="1158596607880">
+                    <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1158596618821">
+                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceNode_SetupFunction_OldNode" id="1158596616757" />
+                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1158596622165">
+                        <link role="link" targetNodeId="17.1081773367580" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1158596653292">
+                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1158596659828">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1158596655576">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceNode_SetupFunction_NewNode" id="1158596653293" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1158596658124">
+                      <link role="link" targetNodeId="17.1081773367579" />
+                    </node>
+                  </node>
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Link_SetTargetOperation" id="1158596661376">
+                    <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1158596669707">
+                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellMenu_ReplaceNode_SetupFunction_OldNode" id="1158596668112" />
+                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1158596672442">
+                        <link role="link" targetNodeId="17.1081773367579" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
