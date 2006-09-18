@@ -3,24 +3,20 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.annotations.AttributeConcept;
 import jetbrains.mps.annotations.LinkAttributeConcept;
 import jetbrains.mps.annotations.PropertyAttributeConcept;
-import jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration;
 import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.security.NodeSecurityManager;
+import jetbrains.mps.smodel.constraints.INodePropertyGetter;
+import jetbrains.mps.smodel.constraints.INodePropertySetter;
+import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.constraints.INodePropertyGetter;
-import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.constraints.INodePropertySetter;
-import jetbrains.mps.baseLanguage.ConstructorDeclaration;
-import jetbrains.mps.baseLanguage.ClassifierType;
-import jetbrains.mps.baseLanguage.Classifier;
-import jetbrains.mps.project.GlobalScope;
 
 import java.util.*;
 
@@ -54,7 +50,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   private HashMap<Object, Object> myUserObjects = new HashMap<Object, Object>();
   private boolean myPropertySetterInProgress = false;
-  private boolean myPropertyGetterInProgress = false;
+//  private boolean myPropertyGetterInProgress = false;
 
   protected SNode(SModel model) {
     myModel = model;
@@ -484,44 +480,23 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName);
     NodeSecurityManager.getInstance().checkPropertyAvailable(this, propertyName, false);
 
-    if (!myPropertyGetterInProgress) {
-      INodePropertyGetter getter = ModelConstraintsManager.getInstance().getNodePropertyGetter(this, propertyName);
-      if (getter != null) {
-        myPropertyGetterInProgress = true;
-        String propertyValue = getter.execPropertyGet(this, propertyName, GlobalScope.getInstance());
-        myPropertyGetterInProgress = false;
-        return propertyValue;
-      }
-    }
-    return myProperties.get(propertyName);
-
-
-    // *** if ModelConstraintsManager doesn't work, then comment block above and uncomment line below ***
-
-//    return _getProperty_troubleshooting(propertyName);
-  }
-
-  /**
-   * tmp, dont delete pls
-   */
-  private String _getProperty_troubleshooting(String propertyName) {
-    if (this instanceof ConceptEditorDeclaration) {
-      SNode conceptDeclaration = ((ConceptEditorDeclaration) this).getConceptDeclaration();
-      if (conceptDeclaration != null) {
-        return conceptDeclaration.getName() + "_Editor";
-      }
-    } else if (this instanceof ConstructorDeclaration) {
-      SNode parent = this.getParent();
-      if (parent != null) {
-        return parent.getName();
-      }
-      return null;
-    } else if (this instanceof ClassifierType) {
-      Classifier classifier = ((ClassifierType) this).getClassifier();
-      if (classifier != null) {
-        return NameUtil.nodeFQName(classifier);
-      }
-      return null;
+    // doesn't work for constructors in auto-completion menu: get 'alias'-> get 'name'
+//    if (!myPropertyGetterInProgress) {
+//      INodePropertyGetter getter = ModelConstraintsManager.getInstance().getNodePropertyGetter(this, propertyName);
+//      if (getter != null) {
+//        myPropertyGetterInProgress = true;
+//        String propertyValue;
+//        try {
+//          propertyValue = getter.execPropertyGet(this, propertyName, GlobalScope.getInstance());
+//        } finally {
+//          myPropertyGetterInProgress = false;
+//        }
+//        return propertyValue;
+//      }
+//    }
+    INodePropertyGetter getter = ModelConstraintsManager.getInstance().getNodePropertyGetter(this, propertyName);
+    if (getter != null) {
+      return getter.execPropertyGet(this, propertyName, GlobalScope.getInstance());
     }
 
     return myProperties.get(propertyName);

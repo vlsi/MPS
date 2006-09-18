@@ -1921,7 +1921,7 @@
           <property name="vertical" value="false" />
           <property name="selectable" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1142043271313">
-            <property name="text" value="auto-completion" />
+            <property name="text" value="menu (old)" />
             <property name="drawBorder" value="true" />
             <property name="selectable" value="false" />
           </node>
