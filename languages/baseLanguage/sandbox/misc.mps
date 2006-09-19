@@ -131,12 +131,12 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.WhileStatement" id="1157626515028">
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1157626515032">
             <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1157630304932">
-              <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1157630305075">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1157630307453">
-                  <property name="value" value="3" />
-                </node>
+              <node role="expression" type="jetbrains.mps.baseLanguage.LessThanOrEqualsExpression" id="1158687241697">
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1157630304933">
                   <property name="value" value="2" />
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1157630307453">
+                  <property name="value" value="3" />
                 </node>
               </node>
             </node>

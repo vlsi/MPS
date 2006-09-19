@@ -4439,7 +4439,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1158686491086">
         <property name="editable" value="true" />
-        <property name="text" value="&gt;=" />
+        <property name="text" value="&lt;=" />
         <property name="drawBorder" value="false" />
         <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.OperationCellToken" id="1158686491087">
           <property name="priority" value="0" />
