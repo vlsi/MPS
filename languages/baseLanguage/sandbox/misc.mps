@@ -131,7 +131,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.WhileStatement" id="1157626515028">
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1157626515032">
             <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1157630304932">
-              <node role="expression" type="jetbrains.mps.baseLanguage.LessThanOrEqualsExpression" id="1158687241697">
+              <node role="expression" type="jetbrains.mps.baseLanguage.GreaterThanOrEqualsExpression" id="1158687775729">
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1157630304933">
                   <property name="value" value="2" />
                 </node>
