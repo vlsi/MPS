@@ -273,7 +273,7 @@ public class MPSModuleRepository {
         readModuleDescriptors(moduleRoot, owner, LANGUAGE_EXT);
         readModuleDescriptors(moduleRoot, owner, SOLUTION_EXT);
       } else {
-        String error = "Couldn't load modules from " + moduleRoot.getAbsolutePath() +
+        String error = "Couldn't load modules from " + moduleRoot.getAbsolutePath() + " for owner " + owner +
                 "\nDirectory doesn't exist: ";
         LOG.error(error);
       }
