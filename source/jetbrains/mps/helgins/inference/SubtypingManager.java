@@ -78,6 +78,7 @@ public class SubtypingManager {
     {
       Set<ConceptDeclaration> subConcepts = new HashSet<ConceptDeclaration>();
       ConceptDeclaration subConcept = SModelUtil.getConceptDeclaration(subtype, GlobalScope.getInstance());
+      if (subConcept == null) return false;
       subConcepts.add(subConcept);
       while (subConcept.getExtends() != null) {
         subConcept = subConcept.getExtends();
