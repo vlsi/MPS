@@ -109,6 +109,7 @@
         <property name="drawBorder" value="false" />
         <property name="noTargetText" value="&lt;expression&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1111784613299" />
+        <link role="actionMap" targetNodeId="1154452994236" resolveInfo="Operation_leftOperand_Actions" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1113344932645">
         <property name="text" value=" " />

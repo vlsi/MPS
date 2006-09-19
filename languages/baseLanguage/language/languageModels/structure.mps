@@ -127,6 +127,10 @@
     <property name="rootable" value="true" />
     <property name="name" value="MethodDeclaration" />
     <link role="extends" targetNodeId="1068580123132" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1158696727750">
+      <property name="value" value="freestanding method" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068498886292">
     <property name="name" value="ParameterDeclaration" />
@@ -1034,6 +1038,10 @@
     <property name="rootable" value="true" />
     <property name="name" value="EnumClass" />
     <link role="extends" targetNodeId="1068390468198" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1158696685452">
+      <property name="value" value="enum class" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107216325416">
       <property name="value" value="enumeration class declaration" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
