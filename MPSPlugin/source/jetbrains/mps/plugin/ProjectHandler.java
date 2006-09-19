@@ -579,12 +579,13 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
 
   private void executeWriteAction(final Runnable runnable) {
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      public void run() {
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+      public void run() {        
+        CommandProcessor.getInstance().executeCommand(myProject, new Runnable() {
           public void run() {
-            CommandProcessor.getInstance().executeCommand(myProject, runnable, "command", "MPSPlugin");
+            ApplicationManager.getApplication().runWriteAction(runnable);
           }
-        });
+        }, "command", "MPSPlugin");
+
       }
     }, ModalityState.NON_MMODAL);
   }
