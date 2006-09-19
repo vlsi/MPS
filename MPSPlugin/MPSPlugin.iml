@@ -2,16 +2,10 @@
 <module version="4" relativePaths="true" type="PLUGIN_MODULE">
   <component name="DevKit.ModuleBuildProperties" url="file://$MODULE_DIR$/META-INF/plugin.xml" />
   <component name="ModuleRootManager" />
-  <component name="NewModuleRootManager" inherit-compiler-output="false">
+  <component name="NewModuleRootManager">
     <output url="file://$MODULE_DIR$/classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../cyclicInheritance/languages/izyg/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../languages/baseLanguage/sandbox/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../languages/bootstrap/smodelLanguage/solutions/sandbox/source_gen" isTestSource="false" />
-    </content>
-    <orderEntry type="jdk" jdkName="IDEA 5707" jdkType="IDEA JDK" />
+    <orderEntry type="jdk" jdkName="jdk 1.5" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPSSupport" />
     <orderEntryProperties />
