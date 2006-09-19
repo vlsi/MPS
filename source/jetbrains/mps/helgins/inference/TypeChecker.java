@@ -84,6 +84,7 @@ public class TypeChecker {
     // setting types to nodes
     for (Pair<SNode, SNode> contextEntry : mainContext) {
       SNode term = contextEntry.o1;
+      if (term == null) continue;
       SNode type = expandType(contextEntry.o2, Interpretator.getRuntimeTypesModel(typesModel));
       if (type instanceof RuntimeErrorType) {
         reportTypeError(term, ((RuntimeErrorType)type).getErrorText());

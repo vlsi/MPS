@@ -88,6 +88,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private CellInfo myRecentlySelectedCellInfo = null;
 //  private Color myBackground = Color.white;
 
+  private final IGutterMessageOwner myOwner = new IGutterMessageOwner() {
+  };
 
   public AbstractEditorComponent(IOperationContext operationContext) {
     this(operationContext, false);
@@ -183,7 +185,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        getHighlightManager().clear();
+        getHighlightManager().clearForOwner(myOwner);
       }
     }, KeyStroke.getKeyStroke("ESCAPE"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     registerKeyboardAction(new AbstractAction() {
@@ -196,14 +198,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
           Set<SReference> usages = node.getModel().getModelDescriptor().findUsages(node);
           if (usages.size() > 0) {
-            getHighlightManager().mark(node, NODE_COLOR, "source node");
+            getHighlightManager().mark(node, NODE_COLOR, "source node", myOwner);
           }
 
           if (usages.size() == 0) {
             for (SReference ref : node.getReferences()) {
               usages = node.getModel().getModelDescriptor().findUsages(ref.getTargetNode());
               if (usages.size() > 0) {
-                getHighlightManager().mark(ref.getTargetNode(), NODE_COLOR, "source node");
+                getHighlightManager().mark(ref.getTargetNode(), NODE_COLOR, "source node", myOwner);
                 break;
               }
             }
@@ -211,7 +213,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
           for (SReference ref : usages) {
             if (ref.getSourceNode().getContainingRoot() == getRootCell().getSNode()) {
-              getHighlightManager().mark(ref.getSourceNode(), USAGE_COLOR, "usage");
+              getHighlightManager().mark(ref.getSourceNode(), USAGE_COLOR, "usage", myOwner);
             }
           }
         }

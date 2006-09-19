@@ -16,4 +16,6 @@ public interface IGutterMessage {
   boolean isValid();
 
   Color getColor();
+
+  void paint(Graphics g, EditorCell cell);
 }

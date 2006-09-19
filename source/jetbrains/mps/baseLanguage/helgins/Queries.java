@@ -9,6 +9,7 @@ import jetbrains.mps.helgins.inference.SubtypingManager;
 import jetbrains.mps.helgins.RuntimeErrorType;
 import jetbrains.mps.baseLanguage.*;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.formulaLanguage.evaluator.Omega;
 
 import java.util.*;
 
@@ -21,6 +22,11 @@ import java.util.*;
  */
 public class Queries {
   public static Object CustomExpression_getBinaryOperationType(Object... args)  {
+    for (int i = 0; i <= 1; i++) {
+      if (args[i] instanceof Omega) {
+        return args[1-i];
+      }
+    }
     SNode leftType = (SNode) args[0];
     SNode rightType = (SNode) args[1];
     boolean mayBeString = false;
@@ -35,8 +41,11 @@ public class Queries {
     if (mayBeString) {
       SModel javaLang = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString("java.lang@java_stub")).getSModel();
       SNode stringClass = javaLang.getRootByName("String");
-      if (leftType == stringClass || rightType == stringClass) {
-        return stringClass;
+      if (leftType instanceof ClassifierType && ((ClassifierType)leftType).getClassifier() == stringClass
+              || rightType instanceof ClassifierType && ((ClassifierType)rightType).getClassifier() == stringClass) {
+        ClassifierType classifierType = new ClassifierType(runtimeTypesModel);
+        classifierType.setClassifier((Classifier) stringClass);
+        return classifierType;
       }
     }
 
