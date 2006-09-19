@@ -41,7 +41,12 @@ public class ExternalResolveInfoParser {
   }
 
   public static String getMembersClassifierResolveInfo(String resolveInfo, String memberType) {
-    return resolveInfo.substring(memberType.length()+1,resolveInfo.indexOf('.')-1);
+    try {
+      return resolveInfo.substring(memberType.length()+1,resolveInfo.indexOf('.')-1);
+    } catch(StringIndexOutOfBoundsException ex) {
+      System.err.println("");
+      return null;
+    }
   }
 
   public static String getConstructorOwnResolveInfo(String resolveInfo) {
