@@ -765,7 +765,8 @@
               <property name="drawBorder" value="false" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1158702718998">
-              <property name="text" value="not always available." />
+              <property name="text" value="(optional)" />
+              <property name="fontStyle" value="PLAIN" />
               <property name="drawBorder" value="false" />
             </node>
           </node>

@@ -532,6 +532,15 @@ public class Language extends AbstractModule {
   // language - related utilities
   // ----------------------------
 
+  public static Language getLanguageForLanguageAspect(SModelDescriptor modelDescriptor) {
+    LanguageAspectStatus status = getLanguageAspectStatus(modelDescriptor);
+    if (status.isError()) {
+      LOG.errorWithTrace("getLanguageForLanguageAspect failed. model was: " + modelDescriptor);
+      return null;
+    }
+    return status.getLanguage();
+  }
+
   public static LanguageAspectStatus getLanguageAspectStatus(SModelDescriptor modelDescriptor) {
     Set<ModelOwner> owners = SModelRepository.getInstance().getOwners(modelDescriptor);
     LanguageAspectStatus accessoryStatus = null;
