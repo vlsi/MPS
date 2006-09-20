@@ -2,6 +2,8 @@ package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Mapper;
 import jetbrains.mps.helgins.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.CopyUtil;
@@ -99,8 +101,12 @@ public class TypeChecker {
     }
   }
 
-  public static Set<SNode> getNodesWithErrors() {
-    return Collections.unmodifiableSet(ourNodesWithErrors.keySet());
+  public static Set<Pair<SNode, String>> getNodesWithErrors() {
+    return CollectionUtil.map(ourNodesWithErrors.keySet(), new Mapper<SNode, Pair<SNode, String>>() {
+      public Pair<SNode, String> map(SNode p) {
+        return new Pair<SNode, String>(p, ourNodesWithErrors.get(p));
+      }
+    });
   }
 
   public static void reportTypeError(SNode nodeWithError, String errorString) {
