@@ -282,12 +282,11 @@ public abstract class AbstractModule implements IModule {
   public void readModels() {
     if (!myModelsRead) {
       myModelsRead = true;
-
+      SModelRepository.getInstance().readModelDescriptors(getModelRoots(), this);
       for (IModule im : MPSModuleRepository.getInstance().getModules(this)) {
         im.readModels();
       }
-
-      SModelRepository.getInstance().readModelDescriptors(getModelRoots(), this);
+//      SModelRepository.getInstance().readModelDescriptors(getModelRoots(), this);
     }
   }
 
