@@ -491,6 +491,15 @@ public class Language extends AbstractModule {
     }
     return super.getLanguage(languageNamespace);
   }
+
+  public List<String> getClassPathItems() {
+    List<String> result = new ArrayList<String>();
+    for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(myLanguageDescriptor.classPathEntrys())) {
+      result.add(entry.getPath());           
+    }
+    return result;
+  }
+
   // ----------------------------
   // language - related utilities
   // ----------------------------
