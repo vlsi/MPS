@@ -63,7 +63,7 @@ public class Language extends AbstractModule {
     language.myDescriptorFile = descriptorFile;
     language.myLanguageDescriptor = languageDescriptor;
     MPSModuleRepository.getInstance().addModule(language, moduleOwner);
-    language.init();
+    language.updateDependenciesAndGenerators();
     return language;
   }
 
@@ -74,7 +74,7 @@ public class Language extends AbstractModule {
     language.myDescriptorFile = null;
     language.myLanguageDescriptor = ContextUtil.copyNode(languageDescriptor, model, GlobalScope.getInstance());
     MPSModuleRepository.getInstance().addModule(language, owner);
-    language.init();
+    language.updateDependenciesAndGenerators();
     return language;
   }
 
@@ -100,32 +100,36 @@ public class Language extends AbstractModule {
     language.myDescriptorFile = descriptorFile;
     language.myLanguageDescriptor = languageDescriptor;
     MPSModuleRepository.getInstance().addModule(language, moduleOwner);
-    language.init();
+    language.updateDependenciesAndGenerators();
     return language;
   }
 
   private Language() {
   }
 
-  private void init() {
+  private void updateDependenciesAndGenerators() {
     // read modules and models
-    readModules();
+    readDependOnModules();
     revalidateGenerators();
   }
 
   public void readModels() {
-    super.readModels();
+    if (!isInitialized()) {
+      super.readModels();
 
-    List<SModelDescriptor> accessoryModels = getAccessoryModels();
-    for (SModelDescriptor accessoryModel : accessoryModels) {
-      SModelRepository.getInstance().addOwnerForDescriptor(accessoryModel, this);
+      if (isInitialized()) {
+        List<SModelDescriptor> accessoryModels = getAccessoryModels();
+        for (SModelDescriptor accessoryModel : accessoryModels) {
+          SModelRepository.getInstance().addOwnerForDescriptor(accessoryModel, this);
+        }
+
+        CommandProcessor.instance().addCommandListener(myEventTranslator);
+        SModelsMulticaster.getInstance().addSModelsListener(myModelsListener);
+        registerAspectListener();
+
+        fireModuleInitialized();
+      }
     }
-
-    CommandProcessor.instance().addCommandListener(myEventTranslator);
-    SModelsMulticaster.getInstance().addSModelsListener(myModelsListener);
-    registerAspectListener();
-
-    fireModuleInitialized();
   }
 
   private void revalidateGenerators() {
@@ -144,6 +148,7 @@ public class Language extends AbstractModule {
     CommandProcessor.instance().removeCommandListener(myEventTranslator);
     SModelsMulticaster.getInstance().removeSModelsListener(myModelsListener);
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
+    unRegisterAspectListener();
     MPSModuleRepository.getInstance().unRegisterModules(this);
     if (myGenerators != null) {
       for (Generator generator : myGenerators) {
@@ -156,7 +161,7 @@ public class Language extends AbstractModule {
 
   public void setLanguageDescriptor(final LanguageDescriptor newDescriptor) {
     // release modules and models (except descriptor model)
-    unregisterAspectListener();
+    unRegisterAspectListener();
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(newDescriptor.getModel().getUID(), Language.this);
     MPSModuleRepository.getInstance().unRegisterModules(Language.this);
     SModelRepository.getInstance().unRegisterModelDescriptors(Language.this);
@@ -167,7 +172,7 @@ public class Language extends AbstractModule {
 
     myLanguageDescriptor = newDescriptor;
     //read modules and models
-    readModules();
+    readDependOnModules();
     revalidateGenerators();
 
     //update plugins
@@ -190,7 +195,7 @@ public class Language extends AbstractModule {
     }
   }
 
-  private void unregisterAspectListener() {
+  private void unRegisterAspectListener() {
     for (SModelDescriptor aspectModel : getAspectModelDescriptors()) {
       if (aspectModel != null) aspectModel.removeSModelCommandListener(myAspectModelsListener);
     }

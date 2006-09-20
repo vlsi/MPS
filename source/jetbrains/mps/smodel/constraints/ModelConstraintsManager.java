@@ -153,29 +153,6 @@ public class ModelConstraintsManager {
     LinkedList<IModelConstraints> loadedConstraints = new LinkedList<IModelConstraints>();
     myAddedLanguageNamespaces.put(namespace, loadedConstraints);
     loadConstraints(namespace, loadedConstraints);
-//    // load constraints
-//    String packageName = namespace + ".constraints";
-//    IClassPathItem classPathItem = ClassLoaderManager.getInstance().getClassPathItem();
-//    Set<String> availableClasses = classPathItem.getAvailableClasses(packageName);
-//    for (String shortClassName : availableClasses) {
-//      try {
-//        ClassLoader classLoader = ClassLoaderManager.getInstance().getClassLoader();
-//        Class constraintsClass = Class.forName(packageName + "." + shortClassName, true, classLoader);
-//        if (IModelConstraints.class.isAssignableFrom(constraintsClass)) {
-//          IModelConstraints constraints = (IModelConstraints) constraintsClass.newInstance();
-//          constraints.registerSelf(this);
-//          loadedConstraints.add(constraints);
-//        }
-//      } catch (ClassNotFoundException e) {
-//        LOG.error(e);
-//      } catch (InstantiationException e) {
-//        LOG.error(e);
-//      } catch (IllegalAccessException e) {
-//        LOG.error(e);
-//      } catch (Throwable t) {
-//        LOG.error(t);
-//      }
-//    }
   }
 
   private void processLanguageRemoved(Language language) {

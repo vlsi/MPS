@@ -79,15 +79,26 @@ public class Solution extends AbstractModule {
     solution.mySolutionDescriptor = solutionDescriptor;
     solution.myDescriptorFile = descriptorFile;
     MPSModuleRepository.getInstance().addModule(solution, moduleOwner);
-    solution.init();
+    solution.readDependOnModules();
     return solution;
   }
 
-  private void init() {
-    // read languages and models
-    readModules();
-    CommandProcessor.instance().addCommandListener(myEventTranslator);
-    fireModuleInitialized();
+//  private void init() {
+//    // read languages and models
+//    readDependOnModules();
+////    CommandProcessor.instance().addCommandListener(myEventTranslator);
+////    fireModuleInitialized();
+//  }
+
+  public void readModels() {
+    if (!isInitialized()) {
+      super.readModels();
+
+      if (isInitialized()) {
+        CommandProcessor.instance().addCommandListener(myEventTranslator);
+        fireModuleInitialized();
+      }
+    }
   }
 
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor) {
@@ -100,13 +111,13 @@ public class Solution extends AbstractModule {
     mySolutionDescriptor = newDescriptor;
 
     // read languages and models
-    readModules();
+    readDependOnModules();
 
     myEventTranslator.solutionChanged();
   }
 
-  protected void readModules() {
-    super.readModules();    
+  protected void readDependOnModules() {
+    super.readDependOnModules();
     MPSModuleRepository.getInstance().readModuleDescriptors(getSolutionDescriptor().languageRoots(), this);
   }
 

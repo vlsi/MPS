@@ -18,8 +18,16 @@ public class Generator extends AbstractModule {
     mySourceLanguage = sourceLanguage;
     myGeneratorDescriptor = generatorDescriptor;
     // read modules and models
-    readModules();
-    fireModuleInitialized();
+    readDependOnModules();
+  }
+
+  public void readModels() {
+    if (!isInitialized()) {
+      super.readModels();
+      if (isInitialized()) {
+        fireModuleInitialized();
+      }
+    }
   }
 
   public void dispose() {

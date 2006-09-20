@@ -21,6 +21,7 @@ public abstract class AbstractModule implements IModule {
 
   private ModelRoot myClassPathModelRoot;
   private boolean myModelsRead = false;
+  private boolean myInitialized = false;
   protected File myDescriptorFile;
 
   //
@@ -275,7 +276,7 @@ public abstract class AbstractModule implements IModule {
     return myDescriptorFile;
   }
 
-  protected void readModules() {
+  protected void readDependOnModules() {
     MPSModuleRepository.getInstance().readModuleDescriptors(getModuleDescriptor().moduleRoots(), this);
   }
 
@@ -286,7 +287,12 @@ public abstract class AbstractModule implements IModule {
         im.readModels();
       }
       SModelRepository.getInstance().readModelDescriptors(getModelRoots(), this);
+      myInitialized = true;
     }
+  }
+
+  protected boolean isInitialized() {
+    return myInitialized;
   }
 
   protected void fireModuleInitialized() {
