@@ -5,7 +5,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.io.File;
 import java.util.*;
@@ -21,6 +20,7 @@ public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
   private ModelRoot myClassPathModelRoot;
+  private boolean myModelsRead = false;
   protected File myDescriptorFile;
 
   //
@@ -275,9 +275,20 @@ public abstract class AbstractModule implements IModule {
     return myDescriptorFile;
   }
 
-  protected void readModulesAndModels() {
+  protected void readModules() {
     MPSModuleRepository.getInstance().readModuleDescriptors(getModuleDescriptor().moduleRoots(), this);
-    SModelRepository.getInstance().readModelDescriptors(getModelRoots(), this);
+  }
+
+  public void readModels() {
+    if (!myModelsRead) {
+      myModelsRead = true;
+
+      for (IModule im : MPSModuleRepository.getInstance().getModules(this)) {
+        im.readModels();
+      }
+
+      SModelRepository.getInstance().readModelDescriptors(getModelRoots(), this);
+    }
   }
 
   protected void fireModuleInitialized() {

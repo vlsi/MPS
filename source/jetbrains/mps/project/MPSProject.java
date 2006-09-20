@@ -26,7 +26,6 @@ import org.jdom.Element;
 
 import java.io.File;
 import java.util.*;
-import java.rmi.RemoteException;
 
 /**
  * Author: Sergey Dmitriev
@@ -64,10 +63,12 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
         MPSProjects projects = ApplicationComponents.getInstance().getComponent(MPSProjects.class);
         projects.addProject(MPSProject.this);
 
-        ReloadUtils.reloadAll(true);
-
         LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
-        revalidateContent(projectFile, model);
+
+        readModules(projectFile, model);
+        ReloadUtils.reloadAll(true, false);
+        readModelsFromModules();
+
         model.setLoading(false);
       }
     }, "MPS Project init");
@@ -93,7 +94,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     return SModelRepository.getInstance().getAllModelDescriptors();
   }
 
-  private void revalidateContent(File projectFile, final SModel projectModel) {
+  private void readModules(File projectFile, final SModel projectModel) {
     // convert legacy project to new solution
     final File solutionDescriptorFile = Solution.createSolutionDescriptorFromLegacyProjectFile(projectFile);
     if (solutionDescriptorFile != null) {
@@ -134,6 +135,19 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     }
   }
 
+  public List<IModule> getModules() {
+    List<IModule> result = new ArrayList<IModule>();
+    result.addAll(myLanguages);
+    result.addAll(mySolutions);
+    return result;
+  }
+
+  private void readModelsFromModules() {
+    for (IModule m : getModules()) {
+      m.readModels();
+    }
+  }
+
   public IVersionControl getVCSFor(SModelDescriptor model) {
     return getComponent(VersionControlManager.class).createVCSFor(model, this);
   }
@@ -146,10 +160,13 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
     SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, MPSProject.this);
 
     myProjectDescriptor = newDescriptor;
-    ReloadUtils.reloadAll(true);
 
     LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
-    revalidateContent(myProjectFile, newDescriptor.getModel());
+
+    readModules(myProjectFile, newDescriptor.getModel());
+    ReloadUtils.reloadAll(true);
+    readModelsFromModules();
+
     myEventTranslator.projectChanged();
   }
 
@@ -227,7 +244,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   public void addLanguageRoot(String languagePath) {
     LanguagePath path = LanguagePath.newInstance(getProjectDescriptor().getModel());
     path.setPath(languagePath);
-    getProjectDescriptor().addProjectLanguage(path);        
+    getProjectDescriptor().addProjectLanguage(path);
   }
 
   public ProjectDescriptor getProjectDescriptor() {
@@ -235,7 +252,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IScope, IContaine
   }
 
   public void addClassPathItem(String path) {
-    for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(myProjectDescriptor.classPathEntriess())) {      
+    for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(myProjectDescriptor.classPathEntriess())) {
       if (path.equals(entry.getPath())) return;
     }
 

@@ -97,4 +97,8 @@ public class FileClassPathItem extends AbstractClassPathItem{
     return new File(myClassPath + File.separatorChar + namespace.replace('.', File.separatorChar));
   }
 
+
+  public String toString() {
+    return "file class path item " + myClassPath;
+  }
 }

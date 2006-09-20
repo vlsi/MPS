@@ -156,6 +156,10 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
     return pack.substring(0, lastDot);
   }
 
+  public String toString() {
+    return "jar file class path item : " + myFile;
+  }
+
   public static void main(String[] args) {
     JarFileClassPathItem item = new JarFileClassPathItem(new File("lib/junit.jar"));
 

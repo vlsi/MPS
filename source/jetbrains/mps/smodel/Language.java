@@ -18,7 +18,6 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.Hack;
-import jetbrains.mps.plugins.PluginManager;
 
 import java.io.File;
 import java.util.*;
@@ -110,8 +109,12 @@ public class Language extends AbstractModule {
 
   private void init() {
     // read modules and models
-    readModulesAndModels();
+    readModules();
     revalidateGenerators();
+  }
+
+  public void readModels() {
+    super.readModels();
 
     List<SModelDescriptor> accessoryModels = getAccessoryModels();
     for (SModelDescriptor accessoryModel : accessoryModels) {
@@ -121,6 +124,7 @@ public class Language extends AbstractModule {
     CommandProcessor.instance().addCommandListener(myEventTranslator);
     SModelsMulticaster.getInstance().addSModelsListener(myModelsListener);
     registerAspectListener();
+    
     fireModuleInitialized();
   }
 
@@ -163,7 +167,7 @@ public class Language extends AbstractModule {
 
     myLanguageDescriptor = newDescriptor;
     //read modules and models
-    readModulesAndModels();
+    readModules();
     revalidateGenerators();
 
 

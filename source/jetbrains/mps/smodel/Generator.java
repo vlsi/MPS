@@ -18,7 +18,7 @@ public class Generator extends AbstractModule {
     mySourceLanguage = sourceLanguage;
     myGeneratorDescriptor = generatorDescriptor;
     // read modules and models
-    readModulesAndModels();
+    readModules();
     fireModuleInitialized();
   }
 

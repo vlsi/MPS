@@ -47,4 +47,6 @@ public interface IModule extends IScope, ModelOwner, MPSModuleOwner {
   String getGeneratorOutputPath();
 
   void dispose();
+
+  void readModels();
 }

@@ -5,7 +5,6 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.projectLanguage.ModuleDescriptor;
 import jetbrains.mps.projectLanguage.PersistenceUtil;
 import jetbrains.mps.projectLanguage.SolutionDescriptor;
-import jetbrains.mps.projectLanguage.Root;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
 
@@ -86,7 +85,7 @@ public class Solution extends AbstractModule {
 
   private void init() {
     // read languages and models
-    readModulesAndModels();
+    readModules();
     CommandProcessor.instance().addCommandListener(myEventTranslator);
     fireModuleInitialized();
   }
@@ -101,13 +100,13 @@ public class Solution extends AbstractModule {
     mySolutionDescriptor = newDescriptor;
 
     // read languages and models
-    readModulesAndModels();
+    readModules();
 
     myEventTranslator.solutionChanged();
   }
 
-  protected void readModulesAndModels() {
-    super.readModulesAndModels();    
+  protected void readModules() {
+    super.readModules();    
     MPSModuleRepository.getInstance().readModuleDescriptors(getSolutionDescriptor().languageRoots(), this);
   }
 
