@@ -100,7 +100,7 @@ public class ClassLoaderManager {
 
   private void addClassPathItem(String s) {
     if (!new File(s).exists()) {
-      LOG.warning("Class path item doesn't exists " + s);
+      LOG.warning("Class path item doesn't exist " + s);
     } else {
       if (new File(s).isDirectory()) {
         myItems.add(new FileClassPathItem(s));
