@@ -5,6 +5,8 @@ import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjects;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.Language;
 
 import java.io.File;
 import java.net.URL;
@@ -82,20 +84,30 @@ public class ClassLoaderManager {
     if (ApplicationComponents.getInstance().getComponent(MPSProjects.class) != null) {
       for (MPSProject project : ApplicationComponents.getInstance().getComponent(MPSProjects.class).getProjects()) {
         for (String s : project.getClassPath()) {
-          if (!new File(s).exists()) {
-            LOG.warning("Class path item doesn't exists " + s);
-            continue;
-          }
-          if (new File(s).isDirectory()) {
-            myItems.add(new FileClassPathItem(s));
-          } else {
-            myItems.add(new JarFileClassPathItem(s));
-          }
+          addClassPathItem(s);
         }
       }
     }
 
+    for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
+      for (String s : l.getClassPathItems()) {
+        addClassPathItem(s);
+      }
+    }
+
     myClassLoader = new MPSClassLoader(myItems);
+  }
+
+  private void addClassPathItem(String s) {
+    if (!new File(s).exists()) {
+      LOG.warning("Class path item doesn't exists " + s);
+    } else {
+      if (new File(s).isDirectory()) {
+        myItems.add(new FileClassPathItem(s));
+      } else {
+        myItems.add(new JarFileClassPathItem(s));
+      }
+    }
   }
 
   public IClassPathItem getClassPathItem() {
