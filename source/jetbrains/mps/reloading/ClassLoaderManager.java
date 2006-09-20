@@ -89,11 +89,11 @@ public class ClassLoaderManager {
       }
     }
 
-    for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
-      for (String s : l.getClassPathItems()) {
-        addClassPathItem(s);
-      }
-    }
+//    for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
+//      for (String s : l.getClassPathItems()) {
+//        addClassPathItem(s);
+//      }
+//    }
 
     myClassLoader = new MPSClassLoader(myItems);
   }

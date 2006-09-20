@@ -5,6 +5,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.io.File;
 import java.util.*;
