@@ -124,7 +124,7 @@ public class Language extends AbstractModule {
     CommandProcessor.instance().addCommandListener(myEventTranslator);
     SModelsMulticaster.getInstance().addSModelsListener(myModelsListener);
     registerAspectListener();
-    
+
     fireModuleInitialized();
   }
 
@@ -170,7 +170,6 @@ public class Language extends AbstractModule {
     readModules();
     revalidateGenerators();
 
-
     //update plugins
     for (MPSModuleOwner owner : MPSModuleRepository.getInstance().getOwners(this)) {
       if (owner instanceof MPSProject) {
@@ -206,7 +205,7 @@ public class Language extends AbstractModule {
   }
 
   public String getLanguagePluginClass() {
-    return getLanguageDescriptor().getLanguagePluginClass(); 
+    return getLanguageDescriptor().getLanguagePluginClass();
   }
 
   public List<IModule> getExplicitlyDependOnModules() {
@@ -292,7 +291,7 @@ public class Language extends AbstractModule {
       SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getStructureModel().getName());
       SModelDescriptor structureModelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
       if (structureModelDescriptor == null) {
-        LOG.errorWithTrace("Couldn't get structure model \"" + modelUID + "\"");
+        LOG.error("Couldn't get structure model \"" + modelUID + "\"");
       } else if (!myRegisteredInFindUsagesManager) {
         myRegisteredInFindUsagesManager = true;
         //register cache invalidation
@@ -306,7 +305,11 @@ public class Language extends AbstractModule {
   public SModelDescriptor getTypesystemModelDescriptor() {
     if (getLanguageDescriptor().getTypeSystem() != null) {
       SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getTypeSystem().getName());
-      return SModelRepository.getInstance().getModelDescriptor(modelUID, this);
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
+      if (modelDescriptor == null) {
+        LOG.errorWithTrace("Couldn't get typesystem model \"" + modelUID + "\"");
+      }
+      return modelDescriptor;
     }
     return null;
   }
@@ -314,7 +317,11 @@ public class Language extends AbstractModule {
   public SModelDescriptor getHelginsTypesystemModelDescriptor() {
     if (getLanguageDescriptor().getHelginsTypesystemModel() != null) {
       SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getHelginsTypesystemModel().getName());
-      return SModelRepository.getInstance().getModelDescriptor(modelUID, this);
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
+      if (modelDescriptor == null) {
+        LOG.error("Couldn't get helgins-typesystem model \"" + modelUID + "\"");
+      }
+      return modelDescriptor;
     }
     return null;
   }
@@ -322,7 +329,11 @@ public class Language extends AbstractModule {
   public SModelDescriptor getActionsModelDescriptor() {
     if (getLanguageDescriptor().getActionsModel() != null) {
       SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getActionsModel().getName());
-      return SModelRepository.getInstance().getModelDescriptor(modelUID, this);
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
+      if (modelDescriptor == null) {
+        LOG.error("Couldn't get actions model \"" + modelUID + "\"");
+      }
+      return modelDescriptor;
     }
     return null;
   }
@@ -330,7 +341,11 @@ public class Language extends AbstractModule {
   public SModelDescriptor getConstraintsModelDescriptor() {
     if (getLanguageDescriptor().getConstraintsModel() != null) {
       SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getConstraintsModel().getName());
-      return SModelRepository.getInstance().getModelDescriptor(modelUID, this);
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
+      if (modelDescriptor == null) {
+        LOG.error("Couldn't get constraints model \"" + modelUID + "\"");
+      }
+      return modelDescriptor;
     }
     return null;
   }
@@ -349,7 +364,11 @@ public class Language extends AbstractModule {
     if (editorUID == null) {
       return null;
     }
-    return SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(editorUID), this);
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(editorUID), this);
+    if (modelDescriptor == null) {
+      LOG.error("Couldn't get editor model \"" + editorUID + "\"");
+    }
+    return modelDescriptor;
   }
 
   public Set<SModelDescriptor> getEditorDescriptors() {
@@ -499,7 +518,7 @@ public class Language extends AbstractModule {
   public List<String> getClassPathItems() {
     List<String> result = new ArrayList<String>();
     for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(myLanguageDescriptor.classPathEntrys())) {
-      result.add(entry.getPath());           
+      result.add(entry.getPath());
     }
     return result;
   }
@@ -602,7 +621,7 @@ public class Language extends AbstractModule {
     }
 
     public boolean isNone() {
-        return myAspectKind == AspectKind.NONE;
+      return myAspectKind == AspectKind.NONE;
     }
 
     public boolean isStructure() {
