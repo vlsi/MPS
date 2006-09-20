@@ -95,11 +95,6 @@ public class ClassLoaderManager {
       }
     }
 
-    System.out.println("class path items : ");
-    for (IClassPathItem item : myItems.getChildren()) {
-      System.out.println(item);
-    }
-
     myClassLoader = new MPSClassLoader(myItems);
   }
 
