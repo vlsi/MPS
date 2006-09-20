@@ -86,6 +86,7 @@ public class SubtypingManager {
       }
       ConceptDeclaration superConcept = SModelUtil.getConceptDeclaration(supertype, GlobalScope.getInstance());
       superConcepts.add(superConcept);
+      if (superConcept == null) return false;
       while (superConcept.getExtends() != null) {
         superConcept = superConcept.getExtends();
         superConcepts.add(superConcept);
