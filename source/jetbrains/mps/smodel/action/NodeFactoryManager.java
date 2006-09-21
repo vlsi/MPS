@@ -68,7 +68,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     if (setupFunction == null) return;
 
     String methodName = ActionQueryMethodName.nodeFactory_NodeSetupFunction(factory);
-    Object[] args = new Object[]{newNode, sampleNode};
+    Object[] args = new Object[]{newNode, sampleNode, enclosingNode, model};
     QueryMethodGenerated.invoke(methodName, args, factory.getModel(), true);
   }
 }
