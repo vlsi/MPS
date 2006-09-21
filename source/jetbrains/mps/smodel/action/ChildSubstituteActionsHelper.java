@@ -18,7 +18,10 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -180,13 +183,13 @@ public class ChildSubstituteActionsHelper {
   private static LinkDeclaration getSmartReference(ConceptDeclaration referenceDeclaringConcept, IScope scope) {
     // trick : should be no custom 'matching text'
     String expectedReferentRole = null;
-    String matchingText = NodePresentationUtil.matchingText(referenceDeclaringConcept);
-    if (!(matchingText == null || matchingText.equals(referenceDeclaringConcept.getName()))) {
+    String alias = SModelUtil.getConceptProperty(referenceDeclaringConcept, "alias", scope);
+    if (alias != null) {
       // handle pattern 'xxx <{_referent_role_}> yyy'
-      if (!matchingText.matches(".*<\\{.+\\}>.*")) {
+      if (!alias.matches(".*<\\{.+\\}>.*")) {
         return null;
       }
-      String[] matches = matchingText.split("<\\{|\\}>");
+      String[] matches = alias.split("<\\{|\\}>");
       expectedReferentRole = matches[1];
     }
 
@@ -197,7 +200,7 @@ public class ChildSubstituteActionsHelper {
           return linkDeclaration;
         }
       }
-      LOG.warning("The '" + matchingText + "' doesn't match any link in " + referenceDeclaringConcept.getDebugText());
+      LOG.warning("The '" + alias + "' doesn't match any link in " + referenceDeclaringConcept.getDebugText());
     } else {
       // if concept has only one REQUIRED reference link...
       if (links.size() == 1) {
@@ -211,12 +214,12 @@ public class ChildSubstituteActionsHelper {
 
   private static String getSmartMatchingText(ConceptDeclaration referenceNodeConcept, SNode referentNode, IScope scope) {
     String referentMatchingText = NodePresentationUtil.matchingText(referentNode, true);
-    String referenceMatchingText = NodePresentationUtil.matchingText(referenceNodeConcept);
+    String referenceAlias = SModelUtil.getConceptProperty(referenceNodeConcept, "alias", scope);
     // handle pattern 'xxx <{_referent_role_}> yyy'
-    if (!referenceMatchingText.matches(".*<\\{.+\\}>.*")) {
+    if (!referenceAlias.matches(".*<\\{.+\\}>.*")) {
       return referentMatchingText;
     }
-    String[] matches = referenceMatchingText.split("<\\{|\\}>");
+    String[] matches = referenceAlias.split("<\\{|\\}>");
     matches[1] = referentMatchingText;
     StringBuffer sb = new StringBuffer();
     for (String segment : matches) {
