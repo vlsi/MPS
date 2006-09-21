@@ -10,8 +10,8 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 
 import javax.swing.Icon;
 import java.util.List;
@@ -82,7 +82,7 @@ public class CreateRootNodeGroup extends ActionGroup {
 
         CommandProcessor.instance().executeCommand(new Runnable() {
           public void run() {
-            node[0] = NodeFactoryManager.createNode(nodeConcept, null, model);
+            node[0] = NodeFactoryManager.createNode(nodeConcept, null, null, model);
             model.addRoot(node[0]);
           }
         });

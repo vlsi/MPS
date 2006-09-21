@@ -20,10 +20,6 @@ import java.util.LinkedList;
  */
 public class NodeFactoryManager extends NodeFactoryManager_deprecated {
 
-  public static SNode createNode(ConceptDeclaration concept, SNode sampleNode, SModel model) {
-    return createNode(concept, sampleNode, null, model);
-  }
-
   public static SNode createNode(String conceptFqName, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
     ConceptDeclaration conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName, scope);
     return createNode(conceptDeclaration, sampleNode, enclosingNode, model);
