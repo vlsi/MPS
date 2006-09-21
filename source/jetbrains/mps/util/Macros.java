@@ -49,7 +49,7 @@ public abstract class Macros {
 
   protected String shrinkPath_internal(String absolutePath, File anchorFile) {
     String fileName;
-    if (absolutePath.startsWith(PathManager.getHomePath())) {
+    if (pathStartsWith(absolutePath, PathManager.getHomePath())) {
       String relationalPath = PathManager.getRelationalPathByAbsolute(new File(PathManager.getHomePath()), absolutePath);
       fileName = "${mps_home}" + relationalPath;
     } else {
@@ -74,7 +74,7 @@ public abstract class Macros {
     }
 
     protected String shrinkPath_internal(String absolutePath, File languageDescriptor) {
-      if (absolutePath.startsWith(languageDescriptor.getParent())) {
+      if (pathStartsWith(absolutePath, languageDescriptor.getParent())) {
         String relationalPath = PathManager.getRelationalPathByAbsolute(languageDescriptor, absolutePath);
         return "${language_descriptor}" + relationalPath;
       }
@@ -92,7 +92,7 @@ public abstract class Macros {
     }
 
     protected String shrinkPath_internal(String absolutePath, File solutionDescriptor) {
-      if (absolutePath.startsWith(solutionDescriptor.getParent())) {
+      if (pathStartsWith(absolutePath, solutionDescriptor.getParent())) {
         String relationalPath = PathManager.getRelationalPathByAbsolute(solutionDescriptor, absolutePath);
         return "${solution_descriptor}" + relationalPath;
       }
@@ -110,11 +110,16 @@ public abstract class Macros {
     }
 
     protected String shrinkPath_internal(String absolutePath, File projectDescriptor) {
-      if (absolutePath.startsWith(projectDescriptor.getParent())) {
+      if (pathStartsWith(absolutePath, projectDescriptor.getParent())) {
         String relationalPath = PathManager.getRelationalPathByAbsolute(projectDescriptor, absolutePath);
         return "${project}" + relationalPath;
       }
       return super.shrinkPath_internal(absolutePath, projectDescriptor);
     }
+  }
+
+  private static boolean pathStartsWith(String path, String with) {
+    if (path.equals(with)) return true;
+    return path.startsWith(with + File.separator);
   }
 }
