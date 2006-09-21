@@ -4,6 +4,7 @@ import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.generator.ContextUtil;
 import jetbrains.mps.ide.IStatus;
+import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
@@ -173,16 +174,11 @@ public class Language extends AbstractModule {
     myLanguageDescriptor = newDescriptor;
     //read modules and models
     readDependOnModules();
+
+    ReloadUtils.reloadAll(true);
+
+    rereadModels();
     revalidateGenerators();
-
-    //update plugins
-    for (MPSModuleOwner owner : MPSModuleRepository.getInstance().getOwners(this)) {
-      if (owner instanceof MPSProject) {
-        MPSProject project = (MPSProject) owner;
-        project.reloadPlugins();
-      }
-    }
-
 
     registerAspectListener();
     updateLastGenerationTime();

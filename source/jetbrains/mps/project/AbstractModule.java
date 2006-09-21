@@ -291,6 +291,12 @@ public abstract class AbstractModule implements IModule {
     }
   }
 
+  protected void rereadModels() {
+    myModelsRead = false;
+    myInitialized = false;
+    readModels();
+  }
+
   protected boolean isInitialized() {
     return myInitialized;
   }
