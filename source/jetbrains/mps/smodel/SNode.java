@@ -477,6 +477,10 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public final String getProperty(String propertyName) {
+    return getProperty(propertyName, true);
+  }
+
+  public final String getProperty(String propertyName, boolean useGetter) {
     NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName);
     NodeSecurityManager.getInstance().checkPropertyAvailable(this, propertyName, false);
 
@@ -495,7 +499,7 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 //      }
 //    }
     INodePropertyGetter getter = ModelConstraintsManager.getInstance().getNodePropertyGetter(this, propertyName);
-    if (getter != null) {
+    if (getter != null && useGetter) {
       return getter.execPropertyGet(this, propertyName, GlobalScope.getInstance());
     }
 
