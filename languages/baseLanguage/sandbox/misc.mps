@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.sandbox.misc">
   <language namespace="jetbrains.mps.baseLanguage" />
-  <maxImportIndex value="26" />
+  <maxImportIndex value="41" />
   <import index="1" modelUID="java.lang@java_stub" />
   <import index="2" modelUID="java.io@java_stub" />
   <import index="3" modelUID="java.util@java_stub" />
@@ -488,8 +488,43 @@
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1158864527778" />
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1158874525578">
+      <property name="name" value="test1" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1158874525579">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1158874525580">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1158874525581">
+            <property name="name" value="i" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1158874525582" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1158876062177">
+              <node role="expression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158876062178">
+                <property name="value" value="0" />
+              </node>
+              <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1158876062179" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1158874525586">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1158874525587">
+            <link role="baseMethodDeclaration" targetNodeId="1158866045988" resolveInfo="methos" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1158874525588" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158876049857">
+              <property name="value" value="0" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1158874525592">
+          <node role="expression" type="jetbrains.mps.baseLanguage.CastExpression" id="1158876070293">
+            <node role="expression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158876070294">
+              <property name="value" value="0" />
+            </node>
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1158876070295" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1158874525597" />
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1158866045988">
-      <property name="name" value="methos" />
+      <property name="name" value="method" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1158866045989" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1158866045990" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1158866062565">
