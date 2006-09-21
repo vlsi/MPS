@@ -4,9 +4,6 @@ import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.action.*;
-import jetbrains.mps.ide.actions.nodes.*;
-import jetbrains.mps.ide.actions.refactorings.InlineVariableAction;
-import jetbrains.mps.ide.actions.refactorings.IntroduceVariableAction;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandUtil;
 import jetbrains.mps.ide.command.undo.UndoManager;
@@ -20,6 +17,7 @@ import jetbrains.mps.typesystem.TypeCheckerAccess;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.NodesParetoFrontier;
+import jetbrains.mps.util.annotation.ThinkTwice;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -1122,10 +1120,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   void changeSelection(EditorCell newSelectedCell, boolean resetLastCaretX) {
     clearSelectionStack();
-    setSelection(newSelectedCell, resetLastCaretX);
+    setSelectionDontClearStack(newSelectedCell, resetLastCaretX);
   }
 
-  void setSelection(EditorCell newSelectedCell, boolean resetLastCaretX) {
+  @ThinkTwice
+  public void setSelectionDontClearStack(EditorCell newSelectedCell, boolean resetLastCaretX) {
     if (resetLastCaretX) {
       resetLastCaretX();
     }
@@ -1578,7 +1577,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
 
 
-  public void changeSelectionWRTFocusPolicy(EditorCell cell) {
+  public EditorCell changeSelectionWRTFocusPolicy(EditorCell cell) {
     EditorCell focusPolicyCell = FocusPolicy.findCellToSelectDueToFocusPolicy(cell);
     EditorCell toSelect;
     if (focusPolicyCell == null || (focusPolicyCell == cell && focusPolicyCell.getUserObject(EditorCell.ATTRACTS_FOCUS_POLICY) == null)) {
@@ -1594,6 +1593,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (toSelect instanceof EditorCell_Label && !toSelect.isErrorState()) {
       ((EditorCell_Label) toSelect).getTextLine().end();
     }
+    return toSelect;
   }
 
   private class MyModelListener implements SModelCommandListener {

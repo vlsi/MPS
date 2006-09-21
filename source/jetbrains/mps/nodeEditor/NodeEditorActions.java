@@ -386,7 +386,7 @@ public class NodeEditorActions {
       context.getNodeEditorComponent().pushSelection(selection);
       EditorCell target = findTarget(selection);
       target.setCaretX(caretX);
-      context.getNodeEditorComponent().setSelection(target, true);
+      context.getNodeEditorComponent().setSelectionDontClearStack(target, true);
     }
 
     private EditorCell findTarget(EditorCell cell) {
@@ -407,7 +407,7 @@ public class NodeEditorActions {
     }
 
     public void execute(EditorContext context) {
-      context.getNodeEditorComponent().setSelection(context.getNodeEditorComponent().popSelection(), true);
+      context.getNodeEditorComponent().setSelectionDontClearStack(context.getNodeEditorComponent().popSelection(), true);
     }
   }
 
