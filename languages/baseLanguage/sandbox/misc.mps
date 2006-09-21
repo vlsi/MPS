@@ -233,11 +233,11 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1158797036330">
             <property name="name" value="i" />
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1158797036331" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.MinusExpression" id="1158797060018">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158797044505">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.PlusExpression" id="1158797624476">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158797595313">
                 <property name="value" value="10" />
               </node>
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158797049180">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158797597564">
                 <property name="value" value="20" />
               </node>
             </node>
