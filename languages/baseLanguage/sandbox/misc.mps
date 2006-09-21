@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.sandbox.misc">
   <language namespace="jetbrains.mps.baseLanguage" />
-  <maxImportIndex value="25" />
+  <maxImportIndex value="26" />
   <import index="1" modelUID="java.lang@java_stub" />
   <import index="2" modelUID="java.io@java_stub" />
   <import index="3" modelUID="java.util@java_stub" />
@@ -233,13 +233,8 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1158797036330">
             <property name="name" value="i" />
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1158797036331" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.PlusExpression" id="1158797624476">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158797595313">
-                <property name="value" value="10" />
-              </node>
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158797597564">
-                <property name="value" value="20" />
-              </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158871602381">
+              <property name="value" value="10" />
             </node>
           </node>
         </node>
