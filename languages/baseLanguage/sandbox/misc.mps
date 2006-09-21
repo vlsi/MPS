@@ -226,6 +226,26 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1158797002605">
+      <property name="name" value="aaa" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1158797002606">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1158797036329">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1158797036330">
+            <property name="name" value="i" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1158797036331" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.MinusExpression" id="1158797060018">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158797044505">
+                <property name="value" value="10" />
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158797049180">
+                <property name="value" value="20" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1158797002607" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1154543408784">
     <property name="name" value="Arraysss" />
