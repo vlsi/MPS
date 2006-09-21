@@ -34,21 +34,6 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     return node;
   }
 
-  /**
-   * @deprecated
-   */
-  public static SNode initializeNode(String conceptFqName, SModel model, IScope scope) {
-    ConceptDeclaration conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName, scope);
-    return createNode(conceptDeclaration, null, model);
-  }
-
-  /**
-   * @deprecated
-   */
-  public static SNode initializeNode(ConceptDeclaration conceptDeclaration, SModel model) {
-    return createNode(conceptDeclaration, null, model);
-  }
-
   private static boolean setupNode(ConceptDeclaration nodeConcept, SNode newNode, SNode sampleNode) {
 
     // find node factory
