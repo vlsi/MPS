@@ -1006,10 +1006,18 @@
       <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" />
       <node role="target" type="jetbrains.mps.baseLanguage.BooleanType" id="1141871296431" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1158958783311">
+      <property name="value" value="is applicable block" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1136917288805">
     <property name="name" value="CellKeyMap_ExecuteFunction" />
     <link role="extends" targetNodeId="1136917155755" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1158958837093">
+      <property name="value" value="execute block" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1137553248617">
     <property name="name" value="CellModel_ConceptProperty" />
@@ -1144,6 +1152,10 @@
           <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" />
         </node>
       </node>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1158959403408">
+      <property name="value" value="execute block" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration" id="1139744471051">
