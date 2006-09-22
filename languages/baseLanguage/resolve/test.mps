@@ -177,6 +177,21 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1158936076226">
+          <node role="iterable" type="jetbrains.mps.baseLanguage.NewExpression" id="1158936093029">
+            <link role="baseMethodDeclaration" extResolveInfo="233.constructor [Classifier]ArrayList[ConstructorDeclaration] ()" />
+            <node role="typeParameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1158936643573">
+              <link role="classifier" extResolveInfo="2.[Classifier]String" />
+            </node>
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1158936076228">
+            <property name="name" value="z" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1158936085497">
+              <link role="classifier" extResolveInfo="2.[Classifier]String" />
+            </node>
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1158936076230" />
+        </node>
       </node>
     </node>
   </node>
@@ -569,6 +584,35 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1158940878568">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1158940878569">
+            <property name="name" value="cs" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1158940878570">
+              <link role="classifier" extResolveInfo="2.[Classifier]CharSequence" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1158940852953">
+          <node role="expression" type="jetbrains.mps.baseLanguage.CastExpression" id="1158940852954">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1158940864472">
+              <link role="classifier" extResolveInfo="2.[Classifier]String" />
+            </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1158940886228">
+              <link role="variableDeclaration" targetNodeId="1158940878569" resolveInfo="cs" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1158940894199">
+          <node role="expression" type="jetbrains.mps.baseLanguage.CastExpression" id="1158940894200">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1158940897609">
+              <link role="classifier" extResolveInfo="2.[Classifier]Exception" />
+            </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1158940900719">
+              <link role="variableDeclaration" targetNodeId="1158940878569" resolveInfo="cs" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.Statement" id="1158941295135" />
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1121253852508" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1121253857102">
