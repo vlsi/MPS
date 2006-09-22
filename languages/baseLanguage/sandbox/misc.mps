@@ -175,7 +175,7 @@
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1157633784186">
               <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1157633785282">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1157633787004">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1158968204934">
                   <link role="baseMethodDeclaration" targetNodeId="1157626500598" resolveInfo="foo" />
                   <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1157633787005" />
                 </node>

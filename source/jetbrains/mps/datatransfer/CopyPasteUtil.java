@@ -1,20 +1,18 @@
 package jetbrains.mps.datatransfer;
 
+import jetbrains.mps.ide.AddRequiredModelImportsDialog;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.externalResolve.ExternalResolver;
+import jetbrains.mps.nodeEditor.text.Parser;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.ide.AddRequiredModelImportsDialog;
 import jetbrains.mps.util.annotation.Hack;
-import jetbrains.mps.nodeEditor.text.Parser;
 
-import java.awt.*;
+import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 import java.util.*;
-import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.

@@ -62,7 +62,9 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
     myModel.removeNodeId(myId);
     myModel = newModel;
-    myModel.setNodeId(myId, this);
+    if (myId != null) {
+      myModel.setNodeId(myId, this);
+    }
 
     for (SNode child : myChildren) {
       child.changeModel(newModel);
@@ -718,11 +720,15 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
 
   private void insertChildAt(final int index, String role, SNode child) {
     LOG.assertLog(child != null, "Child is null");
-    LOG.assertLog(child.getModel() == getModel(), "Can't add child with different model");
+//    LOG.assertLog(child.getModel() == getModel(), "Can't add child with different model");
 
     if (child.getParent() != null) {
       throw new RuntimeException(child.getDebugText() + " already has parent: " + child.getParent().getDebugText() + "\n" +
               "Couldn't add it to: " + this.getDebugText());
+    }
+
+    if (child.getModel() != getModel()) {
+      child.changeModel(getModel());
     }
 
     myChildren.add(index, child);
