@@ -101,7 +101,7 @@ public class CloneModelDialog extends BaseNodeDialog {
     String modelName = myCloneModelProperties.getLongName();
     RootReference reference = myCloneModelProperties.getRoot();
 
-    ModelRoot modelRoot = ModelRoot.newInstance(mySModel);
+    ModelRoot modelRoot = ModelRoot.newInstance(myProjectModel);
     modelRoot.setPrefix(reference.getPrefix());
     modelRoot.setPath(reference.getPath());
 
