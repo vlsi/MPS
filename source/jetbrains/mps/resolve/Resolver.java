@@ -89,26 +89,17 @@ public class Resolver {
     LinkDeclaration childLinkDeclaration = SModelUtil.findLinkDeclaration(SModelUtil.getConceptDeclaration(sourceNode.getParent(), operationContext.getScope()), sourceNode.getRole_());
 
     EditorCell editorCell = sourceNode.getParent() == null ? editorContext.createNodeCell(sourceNode) : editorContext.createNodeCell(sourceNode.getParent());
+    EditorCell inspectedCell = editorContext.createInspectedCell(sourceNode, null);
 
-    Set<EditorCell> frontier = new HashSet<EditorCell>();
-    Set<EditorCell> newFrontier = new HashSet<EditorCell>();
-    frontier.add(editorCell);
-    outer : while (!frontier.isEmpty()) {
-      for (EditorCell cell : frontier) {
-        Object userObject = cell.getUserObject(EditorCell.METAINFO_LINK_DECLARATION);
-        if (cell.getSNode() == sourceNode && (userObject == refLinkDeclaration || userObject == childLinkDeclaration)) {
-          editorCell = cell;
-          break outer;
-        }
-        if (cell instanceof EditorCell_Collection) {
-          newFrontier.addAll(CollectionUtil.iteratorAsList(((EditorCell_Collection)cell).cells()));
-        }
-      }
-      frontier = newFrontier;
-      newFrontier = new HashSet<EditorCell>();
+    EditorCell refCell = searchForRefCell(editorCell, sourceNode, refLinkDeclaration, childLinkDeclaration);
+    if (refCell == null) {
+      refCell = searchForRefCell(inspectedCell, sourceNode, refLinkDeclaration, childLinkDeclaration);
+    }
+    if (refCell == null) {
+      refCell = editorCell;
     }
 
-    INodeSubstituteInfo substituteInfo = editorCell.getSubstituteInfo();
+    INodeSubstituteInfo substituteInfo = refCell.getSubstituteInfo();
     if (substituteInfo == null) substituteInfo = new NullSubstituteInfo();
 
     List<INodeSubstituteAction> actions = (List<INodeSubstituteAction>) (List) substituteInfo.getMatchingItems(resolveInfo, false);
@@ -142,6 +133,26 @@ public class Resolver {
       }
     });
     return matchingActions;
+  }
+
+  private static EditorCell searchForRefCell(EditorCell editorCell, SNode sourceNode, LinkDeclaration refLinkDeclaration, LinkDeclaration childLinkDeclaration) {
+    Set<EditorCell> frontier = new HashSet<EditorCell>();
+    Set<EditorCell> newFrontier = new HashSet<EditorCell>();
+    frontier.add(editorCell);
+    while (!frontier.isEmpty()) {
+      for (EditorCell cell : frontier) {
+        Object userObject = cell.getUserObject(EditorCell.METAINFO_LINK_DECLARATION);
+        if (cell.getSNode() == sourceNode && (userObject == refLinkDeclaration || userObject == childLinkDeclaration)) {
+          return cell;
+        }
+        if (cell instanceof EditorCell_Collection) {
+          newFrontier.addAll(CollectionUtil.iteratorAsList(((EditorCell_Collection)cell).cells()));
+        }
+      }
+      frontier = newFrontier;
+      newFrontier = new HashSet<EditorCell>();
+    }
+    return null;
   }
 
 }
