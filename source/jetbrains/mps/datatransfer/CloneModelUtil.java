@@ -2,6 +2,7 @@ package jetbrains.mps.datatransfer;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.projectLanguage.ModelRoot;
+import jetbrains.mps.refactoring.CopyUtil;
 
 /**
  * Created by IntelliJ IDEA.
@@ -15,17 +16,13 @@ public class CloneModelUtil {
   public static SModel cloneModel(SModel model, IOperationContext operationContext, SModelUID modelUID, ModelRoot modelRoot) {
     SModelDescriptor modelCopyDescriptor = operationContext.getModule().createModel(modelUID, modelRoot);
     SModel modelCopy = modelCopyDescriptor.getSModel();
-
     return cloneModel(model, modelCopy);
-
   }
 
   public static SModel cloneModel(SModel model, SModel modelCopy) {
-    for (SNode root : model.getRoots()) {
-      SNode root1 = CopyPasteUtil.copyNodeOut(CopyPasteUtil.copyNodeIn(root), modelCopy);
-      modelCopy.addRoot(root1);
+    for (SNode root : CopyUtil.copy(model.getRoots(), modelCopy)) {
+      modelCopy.addRoot(root);
     }
-
     return modelCopy;
   }
 
