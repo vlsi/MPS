@@ -23,6 +23,10 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1073389214265" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1158938128496">
+      <property name="value" value="concept editor" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1073389214265">
     <property name="name" value="EditorCellModel" />
@@ -449,6 +453,10 @@
     <property name="rootable" value="true" />
     <property name="name" value="EditorComponentDeclaration" />
     <link role="extends" targetNodeId="1080736578640" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1158938178950">
+      <property name="value" value="editor component" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1078939183254">
     <property name="name" value="CellModel_Component" />
@@ -560,6 +568,10 @@
       <property name="role" value="item" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1136916919141" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1158938229201">
+      <property name="value" value="cell keymap" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1081293058845">
@@ -1054,6 +1066,10 @@
       <property name="role" value="item" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1139535280617" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1158938242046">
+      <property name="value" value="cell action map" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1139535280617">
