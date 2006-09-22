@@ -27,6 +27,10 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1112058030570">
     <property name="name" value="NodeSubstituteActionsBuilder" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1158952412335">
+      <property name="name" value="description" />
+      <link role="dataType" targetNodeId="1.1082983041843" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1112058288857">
       <property name="name" value="actionsFactoryAspectId" />
       <link role="dataType" targetNodeId="1.1082983041843" />
@@ -61,6 +65,10 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1154622781911">
       <property name="value" value="'preconditionAspectId' property is replaced with 'precondition block'" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1154621836409" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1158952484319">
+      <property name="name" value="description" />
+      <link role="dataType" targetNodeId="1.1082983041843" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1140829165817">
       <property name="name" value="transformTag" />
@@ -187,6 +195,10 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1154722711862" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1158952169349">
+      <property name="name" value="description" />
+      <link role="dataType" targetNodeId="1.1082983041843" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1141170329792">
       <property name="name" value="searchScopeProviderAspectId" />
       <link role="dataType" targetNodeId="1.1082983041843" />
@@ -251,7 +263,7 @@
       </node>
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1154537040310">
-      <property name="value" value="precondition block" />
+      <property name="value" value="precondition" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
@@ -278,7 +290,7 @@
       </node>
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1154622616126">
-      <property name="value" value="precondition block" />
+      <property name="value" value="precondition" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
@@ -305,7 +317,7 @@
       </node>
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1154722711870">
-      <property name="value" value="precondition block" />
+      <property name="value" value="precondition" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
@@ -326,6 +338,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1158700725281">
     <property name="name" value="NodeFactory" />
     <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1158952310477">
+      <property name="name" value="description" />
+      <link role="dataType" targetNodeId="1.1082983041843" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1158700943156">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="applicableConcept" />
