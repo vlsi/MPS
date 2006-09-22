@@ -139,6 +139,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1148687176410">
     <property name="name" value="NodeReferentConstraint" />
     <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1158954327242">
+      <property name="name" value="description" />
+      <link role="dataType" targetNodeId="1.1082983041843" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1148687201775">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="applicableConcept" />
@@ -160,6 +164,10 @@
       <property name="role" value="searchScopeFactory" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1148684180339" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1158954542247">
+      <property name="value" value="node referent constraints" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1148934343083">
