@@ -20,6 +20,10 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1112058030570" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1158947211015">
+      <property name="value" value="node substitute actions" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1112058030570">
     <property name="name" value="NodeSubstituteActionsBuilder" />
@@ -98,6 +102,10 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1138079221458" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1158947338814">
+      <property name="value" value="r-tramsform hint menu actions" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration" id="1140829206022">
     <property name="name" value="RTransformTag" />
@@ -144,6 +152,10 @@
       <property name="role" value="actionsBuilder" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1141170287031" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1158947304047">
+      <property name="value" value="referent substitute actions" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1141170287031">
