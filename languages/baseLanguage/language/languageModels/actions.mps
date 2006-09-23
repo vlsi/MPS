@@ -72,6 +72,7 @@
     <property name="name" value="BL_rt_transform" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1138168280988">
       <property name="actionsFactoryAspectId" value="InstanceMemberAccess" />
+      <property name="description" value="transform expression of classifier-type into member-access-expression" />
       <link role="applicableConcept" targetNodeId="1.1068431790191" />
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction" id="1158965431412">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1158965431413">
@@ -110,20 +111,118 @@
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1138168906052">
       <property name="actionsFactoryAspectId" value="BinaryOperation" />
+      <property name="description" value="transform expression into left operand of binary operation" />
       <link role="applicableConcept" targetNodeId="1.1068431790191" />
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1138169534740">
       <property name="actionsFactoryAspectId" value="AssignmentExpression" />
+      <property name="description" value="transform expression into Lvalue of assignment" />
       <link role="applicableConcept" targetNodeId="1.1068431790191" />
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1138169661398">
       <property name="actionsFactoryAspectId" value="InstanceOfExpression" />
+      <property name="description" value="transform expression into left operand of 'instanceof'" />
       <link role="applicableConcept" targetNodeId="1.1068431790191" />
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1140462494826">
       <property name="actionsFactoryAspectId" value="AddInitializer" />
-      <property name="preconditionAspectId" value="FieldOrLocalVar" />
+      <property name="description" value="add initializer to variable declaration" />
       <link role="applicableConcept" targetNodeId="1.1068431474542" />
+      <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction" id="1158969943216">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1158969943217">
+          <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1158969989271">
+            <node role="condition" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1158970016315">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1158969999009">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1158969996571" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1158970002479">
+                  <link role="link" targetNodeId="1.1068431790190" />
+                </node>
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1158970008920" />
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1158969989273">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1158970012390">
+                <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1158970032989" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1158970057257">
+            <node role="condition" type="jetbrains.mps.baseLanguage.OrExpression" id="1158970083591">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1158970066167">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1158970061416" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1158970068543">
+                  <link role="concept" targetNodeId="1.1068390468200" />
+                </node>
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1158970089559">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1158970089560" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1158970089561">
+                  <link role="concept" targetNodeId="1.1070462154015" />
+                </node>
+              </node>
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1158970057259">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1158970103999">
+                <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1158970106079">
+                  <property name="value" value="true" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1158970200542">
+            <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1158970204171">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1158970202701" />
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1158970207031">
+                <link role="concept" targetNodeId="1.1068581242863" />
+              </node>
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1158970200544">
+              <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1158970285543">
+                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1158970285544">
+                  <property name="name" value="parent" />
+                  <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1158970285546">
+                    <link role="concept" targetNodeId="4.1133920641626" />
+                  </node>
+                  <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1158970226567">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1158970225097" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1158970228678" />
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1158970222938">
+                <node role="condition" type="jetbrains.mps.baseLanguage.OrExpression" id="1158970255852">
+                  <node role="rightExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1158970299080">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1158970297907">
+                      <link role="variableDeclaration" targetNodeId="1158970285544" resolveInfo="parent" />
+                    </node>
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1158970302019">
+                      <link role="concept" targetNodeId="1.1144231330558" />
+                    </node>
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1158970230663">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1158970285563">
+                      <link role="variableDeclaration" targetNodeId="1158970285544" resolveInfo="parent" />
+                    </node>
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1158970233086">
+                      <link role="concept" targetNodeId="1.1068581242864" />
+                    </node>
+                  </node>
+                </node>
+                <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1158970222940">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1158970328738">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1158970331475">
+                      <property name="value" value="true" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1158970113694">
+            <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1158970117774" />
+          </node>
+        </node>
+      </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1140565409777">
       <property name="actionsFactoryAspectId" value="Type_addArrayBrackets" />

@@ -124,6 +124,14 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1149153108889">
     <property name="name" value="Main" />
+    <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1158970624940">
+      <property name="name" value="myI" />
+      <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1158970626786" />
+    </node>
+    <node role="staticField" type="jetbrains.mps.baseLanguage.StaticFieldDeclaration" id="1158970578480">
+      <property name="name" value="ourI" />
+      <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1158970604766" />
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1157626500598">
       <property name="name" value="foo" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1157626504992" />
@@ -233,10 +241,28 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1158797036330">
             <property name="name" value="i" />
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1158797036331" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158871602381">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158971045608">
               <property name="value" value="10" />
             </node>
           </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ForStatement" id="1158971051657">
+          <node role="variable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1158971051658">
+            <property name="name" value="i" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1158971054364" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158971059976">
+              <property name="value" value="10" />
+            </node>
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1158971051660" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1158971073826">
+          <node role="iterable" type="jetbrains.mps.baseLanguage.Expression" id="1158971073827" />
+          <node role="variable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1158971073828">
+            <property name="name" value="i" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1158971076222" />
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1158971073830" />
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1158797002607" />
