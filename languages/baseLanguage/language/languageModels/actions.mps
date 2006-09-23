@@ -226,12 +226,33 @@
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1140565409777">
       <property name="actionsFactoryAspectId" value="Type_addArrayBrackets" />
+      <property name="description" value="tranform type into array type" />
       <link role="applicableConcept" targetNodeId="1.1068431790189" />
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1140569338029">
       <property name="actionsFactoryAspectId" value="ClassifierType_addParameter" />
-      <property name="preconditionAspectId" value="ClassifierType_noTypeParameters" />
+      <property name="description" value="add generic parameters to classifier type" />
       <link role="applicableConcept" targetNodeId="1.1107535904670" />
+      <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction" id="1158972050511">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1158972050512">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1158972082566">
+            <node role="expression" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1158972097901">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158972102544">
+                <property name="value" value="0" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1158972092977">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1158972086678">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1158972085005" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkListAccess" id="1158972091257">
+                    <link role="link" targetNodeId="1.1109201940907" />
+                  </node>
+                </node>
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.LinkList_GetCountOperation" id="1158972095275" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1140573012027">
       <property name="actionsFactoryAspectId" value="GenericDeclaration_addTypeVariable" />

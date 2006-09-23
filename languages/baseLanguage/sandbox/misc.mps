@@ -124,6 +124,34 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1149153108889">
     <property name="name" value="Main" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1158972312230">
+      <property name="name" value="aaaaaa" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1158972338720" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1158972312232">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1158972349377">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1158972349378">
+            <property name="name" value="aaa" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1158972349379">
+              <link role="classifier" targetNodeId="1149153108889" resolveInfo="Main" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1158972363803">
+                <link role="classifier" extResolveInfo="3.[Classifier]AbstractList" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1158972369555">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1158972369556">
+            <property name="name" value="bbb" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1158972369557">
+              <link role="classifier" targetNodeId="1149153108889" resolveInfo="Main" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1158972389918">
+                <link role="classifier" extResolveInfo="1.[Classifier]Object" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1158970624940">
       <property name="name" value="myI" />
       <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1158970626786" />
