@@ -25,6 +25,8 @@ import com.intellij.psi.*;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.PsiSearchHelper;
 import com.intellij.util.IncorrectOperationException;
+import com.intellij.refactoring.RefactoringFactory;
+import com.intellij.refactoring.MoveClassesOrPackagesRefactoring;
 
 import javax.swing.*;
 import java.awt.*;
@@ -660,6 +662,15 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     if (distance == -1) return -1;
 
     return distance + 1;
+  }
+
+  public void moveClass(String classFQName, String targetPackageNamespace, File targetSourceRoot) throws RemoteException {
+    RefactoringFactory refactoringFactory = RefactoringFactory.getInstance(myProject);
+    VirtualFile targetRoot = LocalFileSystem.getInstance().findFileByIoFile(targetSourceRoot);
+    PsiClass psiClass = PsiManager.getInstance(myProject).findClass(classFQName, GlobalSearchScope.allScope(myProject));
+    MoveClassesOrPackagesRefactoring refactoring = refactoringFactory.createMoveClassesOrPackages(new PsiElement[]{psiClass},
+            refactoringFactory.createSourceRootMoveDestination(targetPackageNamespace, targetRoot));
+    refactoring.run();
   }
 
   private PsiElementFactory getPsiElementFactory() {

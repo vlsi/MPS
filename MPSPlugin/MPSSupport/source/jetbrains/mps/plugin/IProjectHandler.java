@@ -3,6 +3,7 @@ package jetbrains.mps.plugin;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.*;
+import java.io.File;
 
 public interface IProjectHandler extends Remote {
   void addSourceRoot(final String path) throws RemoteException;
@@ -29,6 +30,8 @@ public interface IProjectHandler extends Remote {
   void createLanguageModule(String namespace, final String path) throws RemoteException;
   void addLanguageRoot(String path) throws RemoteException;
   void createAspectClass(final String path, final String namespace) throws RemoteException;
+
+  void moveClass(String classFQName, String targetPackageNamespace, File targetSourceRoot) throws RemoteException;
 
   void addIdeHandler(IMPSIDEHandler handler) throws RemoteException;
   void removeIdeHandler(IMPSIDEHandler handler) throws RemoteException;
