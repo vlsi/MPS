@@ -159,6 +159,11 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1148934343083" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1159205716971">
+      <property name="role" value="searchScopeCanCreate" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1159205453623" resolveInfo="ConstraintFunction_ReferentSearchScope_CanCreate" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1148687345559">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="searchScopeFactory" />
@@ -186,6 +191,10 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1148934343109">
       <property name="value" value="embedded block of code" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1159205542225">
+      <property name="value" value="the precondition now returns 'boolean' instead of 'String'" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1154621836409" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1148934493876">
@@ -334,6 +343,18 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1152960028075">
       <property name="value" value="embedded block of code" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1159205453623">
+    <property name="name" value="ConstraintFunction_ReferentSearchScope_CanCreate" />
+    <link role="extends" targetNodeId="1148934493876" resolveInfo="ConstraintFunction_ReferentSearchScope_AbstractBase" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1159205453624">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" />
+      <node role="target" type="jetbrains.mps.baseLanguage.BooleanType" id="1159205523283" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1159205453626">
+      <property name="value" value="search scope precondition" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
 </model>

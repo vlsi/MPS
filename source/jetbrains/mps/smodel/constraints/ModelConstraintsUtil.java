@@ -32,21 +32,18 @@ public class ModelConstraintsUtil {
   }
 
   public static IStatus getReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, ConceptDeclaration referenceNodeConcept, LinkDeclaration referenceLinkDeclaration, IScope scope) {
-    ISearchScope searchScope = null;
     String genuineReferenceRole = SModelUtil.getGenuineLinkRole(referenceLinkDeclaration);
     INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsManager.getInstance().getNodeReferentSearchScopeProvider(referenceNodeConcept, genuineReferenceRole);
     if (scopeProvider != null) {
-      String errorDescr = scopeProvider.canCreateNodeReferentSearchScope(model, enclosingNode, referenceNode, scope);
-      if (errorDescr != null) {
-        return new Status.ERROR(errorDescr);
+      if (scopeProvider.canCreateNodeReferentSearchScope(model, enclosingNode, referenceNode, scope)) {
+        ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(model, enclosingNode, referenceNode, scope);
+        return new Status.OK(searchScope);
       }
-
-      searchScope = scopeProvider.createNodeReferentSearchScope(model, enclosingNode, referenceNode, scope);
-    } else {
-      // default search scope
-      searchScope = SModelSearchUtil.createModelAndImportedModelsScope(model, false, scope);
+      return new Status.ERROR("can't create search scope: " + scopeProvider.getNodeReferentSearchScopeDescription());
     }
 
+    // default search scope
+    ISearchScope searchScope = SModelSearchUtil.createModelAndImportedModelsScope(model, false, scope);
     return new Status.OK(searchScope);
   }
 }
