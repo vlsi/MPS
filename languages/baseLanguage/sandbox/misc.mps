@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.sandbox.misc">
   <language namespace="jetbrains.mps.baseLanguage" />
-  <maxImportIndex value="56" />
+  <maxImportIndex value="62" />
   <import index="1" modelUID="java.lang@java_stub" />
   <import index="2" modelUID="java.io@java_stub" />
   <import index="3" modelUID="java.util@java_stub" />
@@ -9,7 +9,20 @@
     <property name="name" value="Test" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1158236092784">
       <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1158236092785" />
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1158236092786" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1158236092786">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1159219038131">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1159219038132">
+            <property name="name" value="b" />
+            <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1159219038133" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.OrExpression" id="1159219681097">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1159219681098">
+                <property name="value" value="true" />
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1159219681099" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1144367869245">
       <property name="name" value="cc" />

@@ -1679,7 +1679,6 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1081880010410">
         <property name="text" value="(" />
         <property name="drawBorder" value="false" />
-        <link role="actionMap" targetNodeId="1140733182387" />
         <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.ParenthesisCellToken" id="1147787092590" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081880010411">
@@ -1691,7 +1690,6 @@
         <property name="text" value=")" />
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
-        <link role="actionMap" targetNodeId="1140733182387" />
         <node role="tokenKind" type="jetbrains.mps.bootstrap.editorLanguage.ParenthesisCellToken" id="1147787100294">
           <property name="parethesisKind" value="false" />
         </node>
@@ -1708,6 +1706,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1081930071608">
         <property name="text" value="!(" />
         <property name="drawBorder" value="false" />
+        <link role="actionMap" targetNodeId="1140733182387" resolveInfo="NotExpression_Parens_Actions" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1081930071609">
         <property name="drawBorder" value="false" />
@@ -1717,6 +1716,7 @@
         <property name="text" value=")" />
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
+        <link role="actionMap" targetNodeId="1140733182387" resolveInfo="NotExpression_Parens_Actions" />
       </node>
     </node>
   </node>
@@ -2559,10 +2559,10 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapDeclaration" id="1140733182387">
-    <property name="name" value="ParenthesizedExpression_Parens_Actions" />
-    <link role="applicableConcept" targetNodeId="17.1079359253375" />
+    <property name="name" value="NotExpression_Parens_Actions" />
+    <link role="applicableConcept" targetNodeId="17.1081516740877" />
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMapItem" id="1140733217028">
-      <property name="description" value="remove parenthesis" />
+      <property name="description" value="remove not-expression" />
       <property name="actionId" value="delete_action_id" />
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_ExecuteFunction" id="1140733217046">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1140733217126">
@@ -2572,8 +2572,8 @@
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ReplaceWithAnotherOperation" id="1140733967996">
                 <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1140733973561">
                   <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellActionMap_FunctionParm_selectedNode" id="1140733971560" />
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1140733977468">
-                    <link role="link" targetNodeId="17.1079359253376" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1159219278148">
+                    <link role="link" targetNodeId="17.1081516765348" />
                   </node>
                 </node>
               </node>

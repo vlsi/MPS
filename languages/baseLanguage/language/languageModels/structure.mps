@@ -733,7 +733,7 @@
     <property name="name" value="CastExpression" />
     <link role="extends" targetNodeId="1068431790191" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107215844612">
-      <property name="value" value="(type)" />
+      <property name="value" value="(type)exp" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107215852349">
@@ -805,7 +805,7 @@
     <property name="name" value="ParenthesizedExpression" />
     <link role="extends" targetNodeId="1068431790191" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107217433298">
-      <property name="value" value="(" />
+      <property name="value" value="(expr)" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107217473894">
@@ -948,8 +948,12 @@
     <property name="name" value="NotExpression" />
     <link role="extends" targetNodeId="1068431790191" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107217334085">
-      <property name="value" value="!" />
+      <property name="value" value="!(expr)" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1159218509866">
+      <property name="value" value="not-expression" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1081516765348">
       <property name="sourceCardinality" value="1" />

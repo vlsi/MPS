@@ -6,9 +6,9 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 
-public class ArrayType_Brackets_Actions {
+public class NotExpression_Parens_Actions {
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction("DELETE", new ArrayType_Brackets_Actions_DELETE(node));
+    editorCell.setAction("DELETE", new NotExpression_Parens_Actions_DELETE(node));
   }
 }
