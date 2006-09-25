@@ -72,6 +72,7 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraintSet" id="1148925938735">
     <property name="name" value="EDTL_reference" />
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1148937952591">
+      <property name="description" value="relations (links,properties etc.) declared in hierarchy of edited concept" />
       <link role="applicableConcept" targetNodeId="1.1139848536355" />
       <link role="applicableLink" targetNodeId="1.1140103550593" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1148937952592">
@@ -125,41 +126,32 @@
           </node>
         </node>
       </node>
-      <node role="searchScopePrecondition" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Precondition" id="1148938831838">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1148938831839">
-          <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1148938838997">
-            <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1148938899491">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1148938907025" />
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1148939697054">
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1148938864126">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptParameter_ReferentSearchScope_enclosingNode" id="1148938861750" />
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1148938865455">
-                    <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Inclusion" id="1148938877222" />
-                    <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept" id="1148938886474">
+      <node role="searchScopeCanCreate" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_CanCreate" id="1159221096147">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1159221096148">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1159221100696">
+            <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1159221110526">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1159221106954">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1159221106955">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptParameter_ReferentSearchScope_enclosingNode" id="1159221106956" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1159221106957">
+                    <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Inclusion" id="1159221106958" />
+                    <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept" id="1159221106959">
                       <link role="concept" targetNodeId="1.1080736578640" />
                     </node>
                   </node>
                 </node>
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1148939707758">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1159221106960">
                   <link role="link" targetNodeId="1.1080736633876" />
                 </node>
               </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1159221106953" />
             </node>
-            <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1148938838999">
-              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1148938910854">
-                <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1149030129600">
-                  <property name="value" value="couldn't obtain edited concept" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1148939720166">
-            <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1149030137226" />
           </node>
         </node>
       </node>
     </node>
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1158689838067">
+      <property name="description" value="super- and sub-concepts of the edited concept" />
       <link role="applicableConcept" targetNodeId="1.1158589789017" />
       <link role="applicableLink" targetNodeId="1.1158589865362" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1158689838068">
@@ -212,36 +204,26 @@
           </node>
         </node>
       </node>
-      <node role="searchScopePrecondition" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Precondition" id="1158689912367">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1158689912368">
-          <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1158689922866">
-            <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1158689922867">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1158689922868" />
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1158689922869">
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1158689922870">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptParameter_ReferentSearchScope_enclosingNode" id="1158689922871" />
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1158689922872">
-                    <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Inclusion" id="1158689922873" />
-                    <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept" id="1158689922874">
+      <node role="searchScopeCanCreate" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_CanCreate" id="1159221234990">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1159221234991">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1159221236569">
+            <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1159221236570">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1159221236571">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1159221236572">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptParameter_ReferentSearchScope_enclosingNode" id="1159221236573" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1159221236574">
+                    <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Inclusion" id="1159221236575" />
+                    <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept" id="1159221236576">
                       <link role="concept" targetNodeId="1.1080736578640" />
                     </node>
                   </node>
                 </node>
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1158689922875">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1159221236577">
                   <link role="link" targetNodeId="1.1080736633876" />
                 </node>
               </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1159221236578" />
             </node>
-            <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1158689922876">
-              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1158689922877">
-                <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1158689922878">
-                  <property name="value" value="couldn't obtain edited concept" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1158689922879">
-            <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1158689922880" />
           </node>
         </node>
       </node>

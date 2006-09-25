@@ -9,6 +9,7 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraintSet" id="1150399171884">
     <property name="name" value="AGRL_reference" />
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1150399445227">
+      <property name="description" value="values defined in enclosing 'Plan'" />
       <link role="applicableConcept" targetNodeId="1.1112038445100" />
       <link role="applicableLink" targetNodeId="1.1112038462507" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1150399445228">
@@ -40,36 +41,27 @@
           </node>
         </node>
       </node>
-      <node role="searchScopePrecondition" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Precondition" id="1150399493163">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1150399493164">
-          <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1150399509564">
-            <node role="condition" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1150399563043">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1150399567874" />
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1150399523240">
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptParameter_ReferentSearchScope_enclosingNode" id="1150399516911" />
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1150399524538">
-                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Inclusion" id="1150399531211" />
-                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept" id="1150399535057">
+      <node role="searchScopeCanCreate" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_CanCreate" id="1159222634080">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1159222634081">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1159222636848">
+            <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1159222642222">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1159222642223" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1159222642224">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptParameter_ReferentSearchScope_enclosingNode" id="1159222642225" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1159222642226">
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Inclusion" id="1159222642227" />
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept" id="1159222642228">
                     <link role="concept" targetNodeId="1.1111790951422" />
                   </node>
                 </node>
               </node>
-            </node>
-            <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1150399509566">
-              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1150399570687">
-                <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1150399572627" />
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1150399575066">
-            <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1150399578959">
-              <property name="value" value="couldn't find enclosing Plan" />
             </node>
           </node>
         </node>
       </node>
     </node>
     <node role="nodeReferentConstraint" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeReferentConstraint" id="1150400208986">
+      <property name="description" value="event-vars defined in event-type of the enclosing 'Event'" />
       <link role="applicableConcept" targetNodeId="1.1112036490295" />
       <link role="applicableLink" targetNodeId="1.1112036516483" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1150400208987">
@@ -106,35 +98,25 @@
           </node>
         </node>
       </node>
-      <node role="searchScopePrecondition" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Precondition" id="1150400232205">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1150400232206">
-          <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1150400233559">
-            <node role="condition" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1150400233560">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1150400233561" />
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1150400288697">
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1150400233562">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptParameter_ReferentSearchScope_enclosingNode" id="1150400233563" />
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1150400233564">
-                    <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Inclusion" id="1150400233565" />
-                    <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept" id="1150400233566">
+      <node role="searchScopeCanCreate" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_CanCreate" id="1159222730166">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1159222730167">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1159222735434">
+            <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1159222740909">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1159222740910" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1159222740911">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1159222740912">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptParameter_ReferentSearchScope_enclosingNode" id="1159222740913" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1159222740914">
+                    <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Inclusion" id="1159222740915" />
+                    <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept" id="1159222740916">
                       <link role="concept" targetNodeId="1.1111791038612" />
                     </node>
                   </node>
                 </node>
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1150400293979">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1159222740917">
                   <link role="link" targetNodeId="1.1111793668132" />
                 </node>
               </node>
-            </node>
-            <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1150400233567">
-              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1150400233568">
-                <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1150400233569" />
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1150400233570">
-            <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1150400233571">
-              <property name="value" value="couldn't define EventType for enclosing Event" />
             </node>
           </node>
         </node>
