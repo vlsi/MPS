@@ -40,6 +40,7 @@ public interface SModelDescriptor {
   void reloadFromDisk();
   void refresh();
   void dispose();
+  void replaceModel(SModel newModel);
 
   File getModelFile();
 

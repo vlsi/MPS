@@ -110,7 +110,7 @@ public class ModelPersistence {
     return readModel(saveModel(model), model.getShortName(), model.getStereotype());
   }
 
-  private static SModel readModel(Document document, String modelName, String stereotype) {
+  public static SModel readModel(Document document, String modelName, String stereotype) {
     Element rootElement = document.getRootElement();
 
     String modelLongName = rootElement.getAttributeValue(NAME);
@@ -173,10 +173,10 @@ public class ModelPersistence {
 
     ArrayList<ReferencePersister> referenceDescriptors = new ArrayList<ReferencePersister>();
     List children = rootElement.getChildren(NODE);
-    for (Iterator iterator = children.iterator(); iterator.hasNext();) {
-      Element element = (Element) iterator.next();
-      SNode semanticNode = readNode(element, model, referenceDescriptors, false);
-      model.addRoot(semanticNode);
+    for (Object child : children) {
+      Element element = (Element) child;
+      SNode snode = readNode(element, model, referenceDescriptors, false);
+      model.addRoot(snode);
     }
 
     for (ReferencePersister referencePersister : referenceDescriptors) {
@@ -323,7 +323,7 @@ public class ModelPersistence {
   }
 
 
-  private static Document saveModel(SModel sourceModel) {
+  public static Document saveModel(SModel sourceModel) {
     Element rootElement = new Element(MODEL);
 
     rootElement.setAttribute(NAME, sourceModel.getLongName());

@@ -261,6 +261,21 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     }
   }
 
+  public void replaceModel(SModel newModel) {
+    if (newModel == mySModel) return;
+    if (isInitialized()) {
+      myFastNodeFinder = null;
+      myModelListeners.addAll(mySModel.getListeners());
+      myModelCommandListeners.addAll(mySModel.getCommandListeners());
+      mySModel.dispose();
+    }
+    mySModel = newModel;
+    if (mySModel != null) {
+      addListenersToNewModel();
+    }
+    SModelRepository.getInstance().markChanged(this, true);
+  }
+
   public void dispose() {
     myModelCommandListeners.clear();
     myModelListeners.clear();

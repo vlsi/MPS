@@ -245,9 +245,6 @@ public class SModelRepository extends SModelAdapter {
     LOG.assertLog(myModelDescriptors.contains(descriptor));
 
     if (b) {
-      if ("mode1".equals(descriptor.toString())) {
-        System.err.println("");
-      }
       myChangedModels.put(descriptor, System.currentTimeMillis());
     } else {
       myChangedModels.remove(descriptor);

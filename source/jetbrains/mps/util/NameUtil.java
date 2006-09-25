@@ -1,6 +1,7 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
 
 
