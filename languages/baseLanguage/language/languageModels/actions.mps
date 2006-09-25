@@ -3,7 +3,7 @@
   <language namespace="jetbrains.mps.bootstrap.actionsLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <maxImportIndex value="13" />
+  <maxImportIndex value="14" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.smodel@java_stub" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.actions@java_stub" />
@@ -256,14 +256,54 @@
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1140573012027">
       <property name="actionsFactoryAspectId" value="GenericDeclaration_addTypeVariable" />
-      <property name="preconditionAspectId" value="GenericDeclaration_noTypeVariables" />
+      <property name="description" value="add type variables to class/interface declaration" />
       <link role="applicableConcept" targetNodeId="1.1109279851642" />
+      <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction" id="1159200256287">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1159200256288">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1159200262133">
+            <node role="expression" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1159200285624">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1159200291018">
+                <property name="value" value="0" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1159200281044">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1159200268136">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1159200266260" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkListAccess" id="1159200278449">
+                    <link role="link" targetNodeId="1.1109279881614" />
+                  </node>
+                </node>
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.LinkList_GetCountOperation" id="1159200283701" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1140831852602">
       <property name="transformTag" value="ext_1_RTransform" />
       <property name="actionsFactoryAspectId" value="NewExpression_addTypeParameter" />
-      <property name="preconditionAspectId" value="NewExpression_noTypeParameters" />
+      <property name="description" value="add type parameters to new-expression" />
       <link role="applicableConcept" targetNodeId="1.1068581242872" />
+      <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction" id="1159200493867">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1159200493868">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1159200521776">
+            <node role="expression" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1159200521777">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1159200521778">
+                <property name="value" value="0" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1159200521779">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1159200521780">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionParm_sourceNode" id="1159200521781" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkListAccess" id="1159200521782">
+                    <link role="link" targetNodeId="1.1135374457323" />
+                  </node>
+                </node>
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.LinkList_GetCountOperation" id="1159200521783" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.ReferentSubstituteActions" id="1141180990973">

@@ -124,6 +124,10 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1149153108889">
     <property name="name" value="Main" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1159200669329">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.Type" id="1159200669330" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1159200669331" />
+    </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1158972312230">
       <property name="name" value="aaaaaa" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1158972338720" />
@@ -134,6 +138,12 @@
             <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1158972349379">
               <link role="classifier" targetNodeId="1149153108889" resolveInfo="Main" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1158972363803">
+                <link role="classifier" extResolveInfo="3.[Classifier]AbstractList" />
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.NewExpression" id="1159200647800">
+              <link role="baseMethodDeclaration" targetNodeId="1159200669329" resolveInfo="Main" />
+              <node role="typeParameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1159202661133">
                 <link role="classifier" extResolveInfo="3.[Classifier]AbstractList" />
               </node>
             </node>
@@ -294,6 +304,9 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1158797002607" />
+    </node>
+    <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1159202674978">
+      <property name="name" value="T" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1154543408784">

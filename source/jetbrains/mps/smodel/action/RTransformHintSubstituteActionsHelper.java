@@ -4,12 +4,15 @@ import jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBu
 import jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstitutePreconditionFunction;
 import jetbrains.mps.bootstrap.actionsLanguage.RTransformTag;
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -19,6 +22,8 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 /*package*/ class RTransformHintSubstituteActionsHelper {
+
+  private static Logger LOG = new Logger(RTransformHintSubstituteActionsHelper.class);
 
   public static boolean canCreateActions(SNode sourceNode, String transformTag, IOperationContext context) {
     return getActionBuilders(sourceNode, transformTag, context).size() > 0;
@@ -96,6 +101,7 @@ import java.util.*;
       try {
         return (Boolean) QueryMethodGenerated.invoke(methodName, args, model, true);
       } catch (Exception e) {
+        LOG.error(e);
         return false;
       }
     }
