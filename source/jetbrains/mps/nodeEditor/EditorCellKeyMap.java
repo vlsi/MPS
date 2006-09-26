@@ -110,9 +110,7 @@ public class EditorCellKeyMap {
       return true;
     }
     if (myChildKeyMaps != null) {
-      Iterator<EditorCellKeyMap> iterator = myChildKeyMaps.iterator();
-      while (iterator.hasNext()) {
-        EditorCellKeyMap childKeyMap = iterator.next();
+      for (EditorCellKeyMap childKeyMap : myChildKeyMaps) {
         if (findActions(childKeyMap, event).size() > 0) {
           return true;
         }
@@ -125,7 +123,7 @@ public class EditorCellKeyMap {
     List<EditorCellKeyMapAction> result = null;
     List<EditorCellKeyMapAction> actions = findActions(this, event);
     if (actions.size() > 0) {
-      if (result == null) result = new LinkedList<EditorCellKeyMapAction>();
+      result = new LinkedList<EditorCellKeyMapAction>();
       result.addAll(actions);
     }
     if (myChildKeyMaps != null) {

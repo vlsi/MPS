@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.sandbox.misc">
   <language namespace="jetbrains.mps.baseLanguage" />
-  <maxImportIndex value="62" />
+  <maxImportIndex value="70" />
   <import index="1" modelUID="java.lang@java_stub" />
   <import index="2" modelUID="java.io@java_stub" />
   <import index="3" modelUID="java.util@java_stub" />

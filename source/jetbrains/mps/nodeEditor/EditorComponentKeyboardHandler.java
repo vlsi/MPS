@@ -35,18 +35,16 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     // process cell keymaps first
 
     if (selectedCell != null) {
-      Pair<EditorCell, List<EditorCellKeyMapAction>> actionsInfo = EditorUtil.getKeyMapActionsForEvent(selectedCell, keyEvent, editorContext);
-      if (actionsInfo != null) {
-        EditorCell contextCell = actionsInfo.o1;
-        List<EditorCellKeyMapAction> actions = actionsInfo.o2;
-        if (actions.size() == 1) {
-          EditorUtil.executeKeyMapAction(actions.get(0), keyEvent, contextCell, editorContext);
-          return true;
-        } else if (actions.size() > 1) {
-          // show menu
-          EditorUtil.showActionsMenu(actions, keyEvent, contextCell, editorContext, selectedCell);
-          return true;
-        }
+      List<Pair<EditorCellKeyMapAction, EditorCell>> actionsInfo = EditorUtil.getKeyMapActionsForEvent(selectedCell, keyEvent, editorContext);
+      if (actionsInfo.size() == 1) {
+        EditorCellKeyMapAction action = actionsInfo.get(0).o1;
+        EditorCell contextCell = actionsInfo.get(0).o2;
+        EditorUtil.executeKeyMapAction(action, keyEvent, contextCell, editorContext);
+        return true;
+      } else if (actionsInfo.size() > 1) {
+        // show menu
+        EditorUtil.showActionsMenu(actionsInfo, keyEvent, editorContext, selectedCell);
+        return true;
       }
     }
 
@@ -152,7 +150,6 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
           }
         }
 
-
         // process parsing if any
         if (Parsing.getInstance().handleKeyPress(selectedCell, keyEvent)) return true;
 
@@ -196,7 +193,7 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     if (selectedCell.processKeyPressed(keyEvent)) {
       keyEventProcessed = true;
       if (!EditorUtil.isValidCell(selectedCell)) {
-        String pattern = ((EditorCell_Label)selectedCell).getRenderedText();
+        String pattern = ((EditorCell_Label) selectedCell).getRenderedText();
         if (selectedCell instanceof EditorCell_Label) {
           IntelligentInputUtil.processCell((EditorCell_Label) selectedCell, editorContext, pattern);
         }

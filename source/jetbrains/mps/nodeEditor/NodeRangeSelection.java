@@ -12,12 +12,12 @@ import jetbrains.mps.smodel.SModelUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 
-import java.awt.*;
+import java.awt.Graphics;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.ArrayList;
 
 // ----- range selection ----
 
@@ -118,18 +118,16 @@ public class NodeRangeSelection implements IKeyboardHandler {
       AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
       SNode node = getNodes().get(0);
       EditorCell cell = editor.findNodeCell(node);
-      Pair<EditorCell, List<EditorCellKeyMapAction>> actionsInfo = EditorUtil.getKeyMapActionsForEvent(cell, keyEvent, editorContext);
-      if (actionsInfo != null) {
-        EditorCell contextCell = actionsInfo.o1;
-        List<EditorCellKeyMapAction> actions = actionsInfo.o2;
-        if (actions.size() == 1) {
-          EditorUtil.executeKeyMapAction(actions.get(0), keyEvent, contextCell, editorContext);
-          return true;
-        } else {
-          // show menu
-          EditorUtil.showActionsMenu(actions, keyEvent, contextCell, editorContext, cell);
-          return true;
-        }
+      List<Pair<EditorCellKeyMapAction, EditorCell>> actionsInfo = EditorUtil.getKeyMapActionsForEvent(cell, keyEvent, editorContext);
+      if (actionsInfo.size() == 1) {
+        EditorCellKeyMapAction action = actionsInfo.get(0).o1;
+        EditorCell contextCell = actionsInfo.get(0).o2;
+        EditorUtil.executeKeyMapAction(action, keyEvent, contextCell, editorContext);
+        return true;
+      } else if (actionsInfo.size() > 1) {
+        // show menu
+        EditorUtil.showActionsMenu(actionsInfo, keyEvent, editorContext, cell);
+        return true;
       }
     }
 
