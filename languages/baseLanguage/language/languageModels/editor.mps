@@ -3913,37 +3913,6 @@
       <property name="drawBorder" value="false" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1157377866998">
-    <link role="conceptDeclaration" targetNodeId="17.1157377797493" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1157377871516">
-      <property name="drawBorder" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1157377874173">
-        <property name="text" value="FUNCTION" />
-        <property name="drawBorder" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1157377888785">
-        <property name="text" value="(" />
-        <property name="drawBorder" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1157377892849">
-        <property name="separatorText" value="," />
-        <property name="drawBorder" value="false" />
-        <link role="relationDeclaration" targetNodeId="17.1157377816198" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1157377904742">
-        <property name="text" value=")" />
-        <property name="drawBorder" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1157377913947">
-        <property name="text" value=":" />
-        <property name="drawBorder" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1157377917402">
-        <property name="drawBorder" value="false" />
-        <link role="relationDeclaration" targetNodeId="17.1157377811338" />
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1158684918612">
     <link role="conceptDeclaration" targetNodeId="17.1153417849900" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1158685100503">

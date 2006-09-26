@@ -70,14 +70,13 @@ public class FindUsagesManager {
   public Set<SReference> findUsages(Set<SNode> nodes, IScope scope, IAdaptiveProgressMonitor progress) {
     Set<SReference> result = new HashSet<SReference>();
     try {
+
       if (progress == null) progress = IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR;
       List<SModelDescriptor> models = scope.getModelDescriptors();
       long estimatedTime = ModelsProgressUtil.estimateFindUsagesTimeMillis(models);
 
-      progress.start("Find Usages...", estimatedTime);
+      progress.startTaskAnyway(ModelsProgressUtil.TASK_KIND_FIND_USAGES, null, estimatedTime);
       progress.addText("Finding usages...");
-
-      progress.startTask(ModelsProgressUtil.TASK_KIND_FIND_USAGES, estimatedTime);
 
       for (SModelDescriptor model : new ArrayList<SModelDescriptor>(models)) {
         String taskName = ModelsProgressUtil.findUsagesModelTaskName(model);
@@ -92,7 +91,7 @@ public class FindUsagesManager {
       progress.finishTask(ModelsProgressUtil.TASK_KIND_FIND_USAGES);
       return result;
     } finally {
-      progress.finish();
+      progress.finishSomehow();
     }
   }
 

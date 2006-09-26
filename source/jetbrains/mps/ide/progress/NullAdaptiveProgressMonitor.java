@@ -67,4 +67,11 @@ public class NullAdaptiveProgressMonitor  implements IAdaptiveProgressMonitor {
   public void startLeafTask(String taskName, String taskKind, long userEstimatedTime) {
 
   }
+
+  public void startTaskAnyway(String taskName, String taskKind, long estimatedTime) {
+
+  }
+
+  public void finishSomehow() {
+  }
 }

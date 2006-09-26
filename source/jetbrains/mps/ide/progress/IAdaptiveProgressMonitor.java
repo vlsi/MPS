@@ -43,4 +43,8 @@ public interface IAdaptiveProgressMonitor {
   void startLeafTask(String taskName, long userEstimatedTime);
 
   void startLeafTask(String taskName, String taskKind, long userEstimatedTime);
+
+  void startTaskAnyway(String taskName, String taskKind, long estimatedTime);
+
+  void finishSomehow();
 }

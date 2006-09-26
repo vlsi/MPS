@@ -42,5 +42,25 @@
       <link role="target" targetNodeId="1159268590033" resolveInfo="PrimitiveTypeDescriptor" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1159276917520">
+    <property name="name" value="FunctionType" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1159276917523">
+      <property name="value" value="FUNCTION" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1159276917522">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="result" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1.1133920641626" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1159276917521">
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="param" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1.1133920641626" />
+    </node>
+  </node>
 </model>
 
