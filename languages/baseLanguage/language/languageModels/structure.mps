@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.structure">
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
-  <maxImportIndex value="37" />
+  <maxImportIndex value="38" />
   <import index="4" modelUID="jetbrains.mps.core.structure" />
   <import index="36" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="37" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
+  <import index="38" modelUID="jetbrains.mps.baseLanguage.blTypes.structure" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068498886294">
     <property name="name" value="AssignmentExpression" />
     <link role="extends" targetNodeId="1068431790191" />
@@ -1573,43 +1574,6 @@
       <property name="role" value="param" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="4.1133920641626" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1157458290000">
-    <property name="rootable" value="true" />
-    <property name="name" value="PrimitiveTypeDescriptor" />
-    <link role="extends" targetNodeId="4.1078489098625" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1157458550272">
-      <property name="sourceCardinality" value="0..n" />
-      <property name="role" value="extends" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1157458307266" resolveInfo="PrimitiveTypeRef" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1157458307266">
-    <property name="name" value="PrimitiveTypeRef" />
-    <link role="extends" targetNodeId="4.1133920641626" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1157458369398">
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="descriptor" />
-      <link role="target" targetNodeId="1157458290000" resolveInfo="PrimitiveTypeDescriptor" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1158159469921">
-    <property name="name" value="HelginsArrayType" />
-    <link role="extends" targetNodeId="4.1078489098625" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1158160489406">
-      <property name="value" value="array" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1158159625483">
-      <property name="value" value="internal array type" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1158159477829">
-      <property name="sourceCardinality" value="0..1" />
-      <property name="role" value="componentType" />
-      <link role="target" targetNodeId="4.1078489098625" />
     </node>
   </node>
 </model>

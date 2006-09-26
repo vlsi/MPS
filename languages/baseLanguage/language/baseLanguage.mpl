@@ -27,6 +27,7 @@
     <moduleRoot path="${mps_home}\languages\formulaLanguage\language\formulaLanguage.mpl" />
     <moduleRoot path="${mps_home}\languages\helgins\languages\quotation\quotation.mpl" />
     <moduleRoot path="${mps_home}\languages\helgins\helgins.mpl" />
+    <moduleRoot path="${mps_home}\languages\baseLanguage\languages\blTypes\blTypes.mpl" />
   </module>
   <accessoryModels />
   <targetOfGenerator generatorClass="jetbrains.mps.baseLanguage.generator.target.BaseLanguageGenerator" />
@@ -38,5 +39,6 @@
       <module />
     </generator>
   </generators>
+  <classPath />
 </language>
 

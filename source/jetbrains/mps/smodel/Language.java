@@ -422,7 +422,9 @@ public class Language extends AbstractModule {
 
   public ConceptDeclaration findConceptDeclaration(String conceptName) {
     if (myNameToConceptCache.isEmpty()) {
-      SModel structureModel = getStructureModelDescriptor().getSModel();
+      SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
+      if (structureModelDescriptor == null) return null;
+      SModel structureModel = structureModelDescriptor.getSModel();
       SModelUtil.allNodes(structureModel, new Condition<SNode>() {
         public boolean met(SNode node) {
           if (node instanceof ConceptDeclaration) {
