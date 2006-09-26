@@ -132,7 +132,7 @@
       <link role="target" targetNodeId="1073389214265" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1106270802874">
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <property name="targetCardinality" value="1" />
       <property name="role" value="cellLayout" />
       <property name="metaClass" value="aggregation" />
@@ -1242,7 +1242,7 @@
       <link role="target" targetNodeId="1073389214265" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1140524464360">
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <property name="targetCardinality" value="1" />
       <property name="role" value="cellLayout" />
       <property name="metaClass" value="aggregation" />

@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration;
+import jetbrains.mps.core.BaseConcept;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.GlobalScope;
@@ -9,7 +10,6 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.core.BaseConcept;
 
 import java.util.*;
 
@@ -27,6 +27,7 @@ public class ModelConstraintsManager {
   private Map<String, INodePropertyGetter> myNodePropertyGettersMap = new HashMap<String, INodePropertyGetter>();
   private Map<String, INodePropertySetter> myNodePropertySettersMap = new HashMap<String, INodePropertySetter>();
   private Map<String, INodeReferentSearchScopeProvider> myNodeReferentSearchScopeProvidersMap = new HashMap<String, INodeReferentSearchScopeProvider>();
+  private Map<String, INodeReferentSearchScopeProvider> myNodeDefaultSearchScopeProvidersMap = new HashMap<String, INodeReferentSearchScopeProvider>();
 
   public ModelConstraintsManager() {
     MPSModuleRepository.getInstance().addModuleRepositoryListener(new ModuleRepositoryListener() {
@@ -57,7 +58,7 @@ public class ModelConstraintsManager {
     if (!myNodePropertyGettersMap.containsKey(key)) {
       myNodePropertyGettersMap.put(key, getter);
     } else {
-      throw new RuntimeException("property getter is alredy registered for key '" + key + "' : " + myNodePropertyGettersMap.get(key));
+      LOG.error("property getter is alredy registered for key '" + key + "' : " + myNodePropertyGettersMap.get(key));
     }
   }
 
@@ -70,7 +71,7 @@ public class ModelConstraintsManager {
     if (!myNodePropertySettersMap.containsKey(key)) {
       myNodePropertySettersMap.put(key, setter);
     } else {
-      throw new RuntimeException("property setter is alredy registered for key '" + key + "' : " + myNodePropertySettersMap.get(key));
+      LOG.error("property setter is alredy registered for key '" + key + "' : " + myNodePropertySettersMap.get(key));
     }
   }
 
@@ -84,12 +85,24 @@ public class ModelConstraintsManager {
     if (!myNodeReferentSearchScopeProvidersMap.containsKey(key)) {
       myNodeReferentSearchScopeProvidersMap.put(key, provider);
     } else {
-      throw new RuntimeException("search scope provider is alredy registered for key '" + key + "' : " + myNodeReferentSearchScopeProvidersMap.get(key));
+      LOG.error("search scope provider is alredy registered for key '" + key + "' : " + myNodeReferentSearchScopeProvidersMap.get(key));
     }
   }
 
   public void unRegisterNodeReferentSearchScopeProvider(String conceptFqName, String referenceRole) {
     myNodeReferentSearchScopeProvidersMap.remove(conceptFqName + "#" + referenceRole);
+  }
+
+  public void registerNodeDefaultSearchScopeProvider(String conceptFqName, INodeReferentSearchScopeProvider provider) {
+    if (!myNodeDefaultSearchScopeProvidersMap.containsKey(conceptFqName)) {
+      myNodeDefaultSearchScopeProvidersMap.put(conceptFqName, provider);
+    } else {
+      LOG.error("default search scope provider is alredy registered for concept '" + conceptFqName + "' : " + myNodeDefaultSearchScopeProvidersMap.get(conceptFqName));
+    }
+  }
+
+  public void unRegisterNodeDefaultSearchScopeProvider(String conceptFqName) {
+    myNodeDefaultSearchScopeProvidersMap.remove(conceptFqName);
   }
 
   public INodePropertyGetter getNodePropertyGetter(SNode node, String propertyName) {
@@ -120,7 +133,7 @@ public class ModelConstraintsManager {
     ConceptDeclaration concept = SModelUtil.getConceptDeclaration(node, GlobalScope.getInstance());
     while (concept != null) {
       String conceptFqName = NameUtil.nodeFQName(concept);
-      IModelConstraints result = null;
+      IModelConstraints result;
       if (isSetter) {
         result = myNodePropertySettersMap.get(conceptFqName + "#" + propertyName);
       } else {
@@ -129,6 +142,16 @@ public class ModelConstraintsManager {
       if (result != null) return result;
 
       concept = concept.getExtends();
+    }
+    return null;
+  }
+
+  public INodeReferentSearchScopeProvider getNodeDefaultSearchScopeProvider(ConceptDeclaration referentConcept) {
+    while (referentConcept != null) {
+      String conceptFqName = NameUtil.nodeFQName(referentConcept);
+      INodeReferentSearchScopeProvider provider = myNodeDefaultSearchScopeProvidersMap.get(conceptFqName);
+      if (provider != null) return provider;
+      referentConcept = referentConcept.getExtends();
     }
     return null;
   }
@@ -144,7 +167,7 @@ public class ModelConstraintsManager {
   }
 
   private void processLanguageAdded(Language language) {
-    //System.out.println("processLanguageAdded: " + language.getNamespace());
+//    System.out.println("processLanguageAdded: " + language.getNamespace());
     String namespace = language.getNamespace();
     if (myAddedLanguageNamespaces.containsKey(namespace)) {
       return;
@@ -171,9 +194,12 @@ public class ModelConstraintsManager {
     myNodeReferentSearchScopeProvidersMap.clear();
 
     for (String languageNamespace : myAddedLanguageNamespaces.keySet()) {
-      List<IModelConstraints> constraints = myAddedLanguageNamespaces.get(languageNamespace);
-      constraints.clear();
-      loadConstraints(languageNamespace, constraints);
+      List<IModelConstraints> loadedConstraints = myAddedLanguageNamespaces.get(languageNamespace);
+      for (IModelConstraints constraints : loadedConstraints) {
+        constraints.unRegisterSelf(this);
+      }
+      loadedConstraints.clear();
+      loadConstraints(languageNamespace, loadedConstraints);
     }
   }
 
