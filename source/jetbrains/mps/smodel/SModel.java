@@ -160,6 +160,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void addSModelListener(SModelListener listener) {
+    LOG.assertLog(listener != null, "Listener must be not null");
     LOG.assertLog(!myListeners.contains(listener), "Duplicated listener");
     myListeners.add(listener);
   }
@@ -319,7 +320,11 @@ public class SModel implements Iterable<SNode> {
 
 
   private List<SModelListener> copyListeners() {
-    return new LinkedList<SModelListener>(myListeners);
+    List<SModelListener> result = new ArrayList<SModelListener>();
+    for (SModelListener l : myListeners) {
+      result.add(l);
+    }
+    return result;
   }
 
   private List<SModelCommandListener> copyCommandListeners() {

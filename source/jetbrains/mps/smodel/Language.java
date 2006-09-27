@@ -175,7 +175,7 @@ public class Language extends AbstractModule {
     //read modules and models
     readDependOnModules();
 
-    ReloadUtils.reloadAll(true);
+    ReloadUtils.reloadAll(true, true, false);
 
     rereadModels();
     revalidateGenerators();
