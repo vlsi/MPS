@@ -182,6 +182,10 @@ public class Language extends AbstractModule {
 
     registerAspectListener();
     updateLastGenerationTime();
+
+    ReloadUtils.rebuildAllEditors();
+    ReloadUtils.rebuildProjectPanes();
+
     myEventTranslator.languageChanged();
   }
 

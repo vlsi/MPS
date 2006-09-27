@@ -6,9 +6,6 @@
   <typeSystem>
     <model modelUID="jetbrains.mps.baseLanguage.types" />
   </typeSystem>
-  <helginsTypeSystem>
-    <model modelUID="jetbrains.mps.baseLanguage.helgins" />
-  </helginsTypeSystem>
   <actions>
     <model modelUID="jetbrains.mps.baseLanguage.actions" />
   </actions>
@@ -28,6 +25,8 @@
     <moduleRoot path="${mps_home}\languages\helgins\languages\quotation\quotation.mpl" />
     <moduleRoot path="${mps_home}\languages\helgins\helgins.mpl" />
     <moduleRoot path="${mps_home}\languages\baseLanguage\languages\blTypes\blTypes.mpl" />
+    <moduleRoot path="${mps_home}\languages\date\languageDescriptor.mpl" />
+    <moduleRoot path="${mps_home}\languages\date\languageDescriptor.mpl" />
   </module>
   <accessoryModels />
   <targetOfGenerator generatorClass="jetbrains.mps.baseLanguage.generator.target.BaseLanguageGenerator" />
