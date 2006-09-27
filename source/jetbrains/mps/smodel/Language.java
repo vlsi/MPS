@@ -167,6 +167,8 @@ public class Language extends AbstractModule {
     MPSModuleRepository.getInstance().unRegisterModules(Language.this);
     SModelRepository.getInstance().unRegisterModelDescriptors(Language.this);
     SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, Language.this);
+
+
     for (Generator generator : getGenerators()) {
       generator.dispose();
     }

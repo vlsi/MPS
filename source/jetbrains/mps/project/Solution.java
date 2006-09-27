@@ -90,6 +90,12 @@ public class Solution extends AbstractModule {
 ////    fireModuleInitialized();
 //  }
 
+
+  protected void readDependOnModules() {
+    super.readDependOnModules();
+    MPSModuleRepository.getInstance().readModuleDescriptors(getSolutionDescriptor().languageRoots(), this);
+  }
+
   public void readModels() {
     if (!isInitialized()) {
       super.readModels();
@@ -109,7 +115,6 @@ public class Solution extends AbstractModule {
     SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, Solution.this);
 
     mySolutionDescriptor = newDescriptor;
-
 
 
     // read languages and models

@@ -3,6 +3,7 @@ package jetbrains.mps.project;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.ModelRoot;
+import jetbrains.mps.projectLanguage.SolutionDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 
