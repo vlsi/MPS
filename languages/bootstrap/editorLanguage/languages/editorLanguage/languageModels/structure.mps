@@ -900,7 +900,7 @@
       <link role="target" targetNodeId="1136916976737" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1136917325338">
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <property name="targetCardinality" value="1" />
       <property name="role" value="isApplicableFunction" />
       <property name="metaClass" value="aggregation" />
