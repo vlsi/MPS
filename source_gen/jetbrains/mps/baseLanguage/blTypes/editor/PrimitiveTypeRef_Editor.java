@@ -14,7 +14,6 @@ import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.baseLanguage.editor.PrimitiveTypeRef_Editor_descriptor_InlineComponent;
 
 public class PrimitiveTypeRef_Editor extends DefaultNodeEditor {
 

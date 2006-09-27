@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.sandbox.misc">
   <language namespace="jetbrains.mps.baseLanguage" />
-  <maxImportIndex value="81" />
+  <maxImportIndex value="95" />
   <import index="1" modelUID="java.lang@java_stub" />
   <import index="2" modelUID="java.io@java_stub" />
   <import index="3" modelUID="java.util@java_stub" />
@@ -247,18 +247,18 @@
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1159309367949">
                 <property name="name" value="two2" />
                 <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1159309367951" />
-                <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158667562133">
-                  <property name="value" value="2" />
+                <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1159380585302">
+                  <property name="value" value="1" />
                 </node>
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1158146800775">
-              <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1158153168235">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158152589638">
-                  <property name="value" value="3" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1159379323427">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1159379306168">
+                  <link role="variableDeclaration" targetNodeId="1159309367949" resolveInfo="two2" />
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1159309367952">
-                  <link role="variableDeclaration" targetNodeId="1159309367949" resolveInfo="2" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1159379306167">
+                  <property name="value" value="3" />
                 </node>
               </node>
             </node>
@@ -623,7 +623,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1158874525580">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1158874525581">
             <property name="name" value="i" />
-            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1158874525582" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1159379245770" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.CastExpression" id="1158939128004">
               <node role="expression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1158939128005">
                 <property name="value" value="0" />
