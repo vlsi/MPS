@@ -111,7 +111,7 @@
       <link role="target" targetNodeId="1138079221458" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1158947338814">
-      <property name="value" value="r-tramsform hint menu actions" />
+      <property name="value" value="r-transform hint menu actions" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
