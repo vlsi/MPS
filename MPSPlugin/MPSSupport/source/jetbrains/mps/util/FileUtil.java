@@ -8,36 +8,45 @@ import java.io.*;
  */
 public class FileUtil {
 
-  public static void copy(File what, File to) {
+  public static void copyDir(File what, File to) {
     if (!to.exists()) {
       to.mkdir();
     }
 
     for (File f : what.listFiles()) {
       if (f.isDirectory()) {
+
+        if (".svn".equals(f.getName())) continue;
+
         File fCopy = new File(to, f.getName());
-        fCopy.mkdir();
-        copy(f, fCopy);
+        if (!fCopy.exists()) {
+          fCopy.mkdir();
+        }
+        copyDir(f, fCopy);
       }
 
       if (f.isFile()) {
-        try {
-          byte[] bytes = new byte[(int) f.length()];
-
-          FileInputStream is = new FileInputStream(f);
-          OutputStream os = new FileOutputStream(new File(to, f.getName()));
-
-          ReadUtil.read(bytes, is);
-          os.write(bytes);
-
-          is.close();
-          os.close();
-        } catch (IOException e) {
-          e.printStackTrace();
-        }
+        copyFile(f, to);
       }
     }
 
+  }
+
+  public static void copyFile(File f, File toDir) {
+    try {
+      byte[] bytes = new byte[(int) f.length()];
+
+      FileInputStream is = new FileInputStream(f);
+      OutputStream os = new FileOutputStream(new File(toDir, f.getName()));
+
+      ReadUtil.read(bytes, is);
+      os.write(bytes);
+
+      is.close();
+      os.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 
   public static String getCanonicalPath(File file) {
@@ -81,6 +90,6 @@ public class FileUtil {
 
   public static void main(String[] args) {
 
-    copy(new File("C:/temp"), new File("C:/xxxx"));
+    copyDir(new File("C:/temp"), new File("C:/xxxx"));
   }
 }

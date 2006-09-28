@@ -296,11 +296,30 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   }
 
 
-  public void generateModelsWithProgressWindow(final List<SModel> sourceModels, final Language targetLanguage, final IOperationContext invocationContext, final GenerationType generationType) {
+  public void generateModelsWithProgressWindowAsync(final List<SModel> sourceModels, final Language targetLanguage, final IOperationContext invocationContext, final GenerationType generationType) {
     generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, new Runnable() {
       public void run() {
       }
     });
+  }
+
+  public void generateModelsWithProgressWindow(final List<SModel> sourceModels, final Language targetLanguage, final IOperationContext invocationContext, final GenerationType generationType) {
+    final Object lock = new Object();
+    generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, new Runnable() {
+      public void run() {
+        synchronized(lock) {
+          lock.notifyAll();
+        }
+      }
+    });
+
+    synchronized(lock) {
+      try {
+        lock.wait();
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    }
   }
 
   public void generateModelsWithProgressWindow(final List<SModel> sourceModels, final Language targetLanguage, final IOperationContext invocationContext, final GenerationType generationType, final Runnable continuation) {
@@ -315,6 +334,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         });
       }
     };
+
     // we are in event dispatch thread
     //do not change priority! With other priority it's impossible to listen to music
     generationThread.setPriority(Thread.MIN_PRIORITY);
