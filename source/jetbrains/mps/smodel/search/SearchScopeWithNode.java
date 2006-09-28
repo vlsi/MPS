@@ -1,4 +1,4 @@
-package jetbrains.mps.helgins.search;
+package jetbrains.mps.smodel.search;
 
 import jetbrains.mps.smodel.search.AbstractSearchScope;
 import jetbrains.mps.smodel.SNode;
