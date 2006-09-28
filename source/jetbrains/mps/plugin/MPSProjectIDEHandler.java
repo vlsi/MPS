@@ -66,9 +66,9 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     getProjectWindow().findUsages(cls);
   }
 
-  public void showMethodUsages(String classFqName, String methodName, int parameterCount) throws RemoteException {
     Classifier cls = SModelUtil.findNodeByFQName(classFqName, Classifier.class, GlobalScope.getInstance());
-    BaseMethodDeclaration m = null;
+    BaseMethodDeclaration m = null;  public void showMethodUsages(String classFqName, String methodName, int parameterCount) throws RemoteException {
+
     for (BaseMethodDeclaration method : cls.getChildren(BaseMethodDeclaration.class)) {
       if (methodName.equals(method.getName()) && method.getParametersCount() == parameterCount) {
         m = method;
@@ -81,11 +81,12 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   public void dispose() {
-    try {
-      myProject.getProjectHandler().removeIdeHandler(this);      
-    } catch (RemoteException e) {
-      e.printStackTrace();
+    if (myProject.getProjectHandler() != null) {
+      try {
+        myProject.getProjectHandler().removeIdeHandler(this);
+      } catch (RemoteException e) {
+        e.printStackTrace();
+      }
     }
-
   }
 }
