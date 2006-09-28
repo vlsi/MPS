@@ -27,6 +27,7 @@ import com.intellij.psi.search.PsiSearchHelper;
 import com.intellij.util.IncorrectOperationException;
 import com.intellij.refactoring.RefactoringFactory;
 import com.intellij.refactoring.MoveClassesOrPackagesRefactoring;
+import com.intellij.refactoring.RenameRefactoring;
 
 import javax.swing.*;
 import java.awt.*;
@@ -672,6 +673,16 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
         PsiClass psiClass = PsiManager.getInstance(myProject).findClass(classFQName, GlobalSearchScope.allScope(myProject));
         MoveClassesOrPackagesRefactoring refactoring = refactoringFactory.createMoveClassesOrPackages(new PsiElement[]{psiClass},
                 refactoringFactory.createSourceRootMoveDestination(targetPackageNamespace, targetRoot));
+        refactoring.run();
+      }
+    });
+  }
+
+  public void renameClass(final String oldClassFQName, final String newClassName) {
+    executeWriteAction(new Runnable() {
+      public void run() {
+        PsiClass psiClass = PsiManager.getInstance(myProject).findClass(oldClassFQName, GlobalSearchScope.allScope(myProject));
+        RenameRefactoring refactoring = RefactoringFactory.getInstance(myProject).createRename(psiClass, newClassName);
         refactoring.run();
       }
     });

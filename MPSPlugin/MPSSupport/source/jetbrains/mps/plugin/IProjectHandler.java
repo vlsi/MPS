@@ -32,7 +32,10 @@ public interface IProjectHandler extends Remote {
   void createAspectClass(final String path, final String namespace) throws RemoteException;
 
   void moveClass(String classFQName, String targetPackageNamespace, File targetSourceRoot) throws RemoteException;
+  void renameClass(String oldClassFQName, String newClassName) throws RemoteException;
 
   void addIdeHandler(IMPSIDEHandler handler) throws RemoteException;
+
   void removeIdeHandler(IMPSIDEHandler handler) throws RemoteException;
+
 }
