@@ -49,8 +49,8 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   private String myId;
 
   private HashMap<Object, Object> myUserObjects = new HashMap<Object, Object>();
-  private boolean myPropertySetterInProgress = false;
-//  private boolean myPropertyGetterInProgress = false;
+  private Set<String> myPropertySettersInProgress = new HashSet<String>();
+  private Set<String> myPropertyGettersInProgress = new HashSet<String>();
 
   protected SNode(SModel model) {
     myModel = model;
@@ -486,23 +486,18 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
     NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName);
     NodeSecurityManager.getInstance().checkPropertyAvailable(this, propertyName, false);
 
-    // doesn't work for constructors in auto-completion menu: get 'alias'-> get 'name'
-//    if (!myPropertyGetterInProgress) {
-//      INodePropertyGetter getter = ModelConstraintsManager.getInstance().getNodePropertyGetter(this, propertyName);
-//      if (getter != null) {
-//        myPropertyGetterInProgress = true;
-//        String propertyValue;
-//        try {
-//          propertyValue = getter.execPropertyGet(this, propertyName, GlobalScope.getInstance());
-//        } finally {
-//          myPropertyGetterInProgress = false;
-//        }
-//        return propertyValue;
-//      }
-//    }
-    INodePropertyGetter getter = ModelConstraintsManager.getInstance().getNodePropertyGetter(this, propertyName);
-    if (getter != null && useGetter) {
-      return getter.execPropertyGet(this, propertyName, GlobalScope.getInstance());
+    if (!myPropertyGettersInProgress.contains(propertyName)) {
+      INodePropertyGetter getter = ModelConstraintsManager.getInstance().getNodePropertyGetter(this, propertyName);
+      if (getter != null) {
+        myPropertyGettersInProgress.add(propertyName);
+        String propertyValue;
+        try {
+          propertyValue = getter.execPropertyGet(this, propertyName, GlobalScope.getInstance());
+        } finally {
+          myPropertyGettersInProgress.remove(propertyName);
+        }
+        return propertyValue;
+      }
     }
 
     return myProperties.get(propertyName);
@@ -523,13 +518,16 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public void setProperty(final String propertyName, String propertyValue, boolean usePropertySetter) {
-    if (!myPropertySetterInProgress && !myModel.isLoading() && usePropertySetter) {
+    if (!myPropertySettersInProgress.contains(propertyName) && !myModel.isLoading() && usePropertySetter) {
       INodePropertySetter setter = ModelConstraintsManager.getInstance().getNodePropertySetter(this, propertyName);
       if (setter != null) {
-        myPropertySetterInProgress = true;
-        setter.execPropertySet(this, propertyName, propertyValue, GlobalScope.getInstance());
-        myPropertySetterInProgress = false;
-        return;
+        myPropertySettersInProgress.add(propertyName);
+        try {
+          setter.execPropertySet(this, propertyName, propertyValue, GlobalScope.getInstance());
+        } finally {
+          myPropertySettersInProgress.remove(propertyName);
+          return;
+        }
       }
     }
     NodeSecurityManager.getInstance().checkPropertyAvailable(this, propertyName, true);
