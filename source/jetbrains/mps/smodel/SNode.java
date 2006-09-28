@@ -524,9 +524,9 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
         myPropertySettersInProgress.add(propertyName);
         try {
           setter.execPropertySet(this, propertyName, propertyValue, GlobalScope.getInstance());
+          return;
         } finally {
           myPropertySettersInProgress.remove(propertyName);
-          return;
         }
       }
     }
