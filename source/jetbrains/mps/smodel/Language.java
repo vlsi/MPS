@@ -11,7 +11,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
@@ -199,7 +198,9 @@ public class Language extends AbstractModule {
 
   private void unRegisterAspectListener() {
     for (SModelDescriptor aspectModel : getAspectModelDescriptors()) {
-      if (aspectModel != null) aspectModel.removeSModelCommandListener(myAspectModelsListener);
+      if (aspectModel != null) {
+        aspectModel.removeSModelCommandListener(myAspectModelsListener);
+      }
     }
   }
 
@@ -292,6 +293,7 @@ public class Language extends AbstractModule {
       }
     });
   }
+
 
   public SModelDescriptor getStructureModelDescriptor() {
     if (getLanguageDescriptor().getStructureModel() != null) {
