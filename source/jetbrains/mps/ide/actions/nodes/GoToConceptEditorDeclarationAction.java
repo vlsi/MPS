@@ -11,17 +11,17 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.projectLanguage.Editor;
 import jetbrains.mps.projectLanguage.LanguageDescriptor;
 import jetbrains.mps.projectLanguage.Model;
 import jetbrains.mps.projectLanguage.ModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.project.ModuleContext;
 
-import javax.swing.*;
-import java.util.*;
+import javax.swing.Icon;
+import javax.swing.JOptionPane;
+import java.util.List;
 
 /**
  * @author Kostik

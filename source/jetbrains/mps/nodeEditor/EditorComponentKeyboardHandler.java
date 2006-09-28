@@ -35,11 +35,11 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     // process cell keymaps first
 
     if (selectedCell != null) {
-      List<Pair<EditorCellKeyMapAction, EditorCell>> actionsInfo = EditorUtil.getKeyMapActionsForEvent(selectedCell, keyEvent, editorContext);
+      List<Pair<EditorCellKeyMapAction, EditorCell>> actionsInfo = KeyMapUtil.getKeyMapActionsForEvent(selectedCell, keyEvent, editorContext);
       if (actionsInfo.size() == 1) {
         EditorCellKeyMapAction action = actionsInfo.get(0).o1;
         EditorCell contextCell = actionsInfo.get(0).o2;
-        EditorUtil.executeKeyMapAction(action, keyEvent, contextCell, editorContext);
+        KeyMapUtil.executeKeyMapAction(action, keyEvent, contextCell, editorContext);
         return true;
       } else if (actionsInfo.size() > 1) {
         // show menu

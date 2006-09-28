@@ -118,11 +118,11 @@ public class NodeRangeSelection implements IKeyboardHandler {
       AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
       SNode node = getNodes().get(0);
       EditorCell cell = editor.findNodeCell(node);
-      List<Pair<EditorCellKeyMapAction, EditorCell>> actionsInfo = EditorUtil.getKeyMapActionsForEvent(cell, keyEvent, editorContext);
+      List<Pair<EditorCellKeyMapAction, EditorCell>> actionsInfo = KeyMapUtil.getKeyMapActionsForEvent(cell, keyEvent, editorContext);
       if (actionsInfo.size() == 1) {
         EditorCellKeyMapAction action = actionsInfo.get(0).o1;
         EditorCell contextCell = actionsInfo.get(0).o2;
-        EditorUtil.executeKeyMapAction(action, keyEvent, contextCell, editorContext);
+        KeyMapUtil.executeKeyMapAction(action, keyEvent, contextCell, editorContext);
         return true;
       } else if (actionsInfo.size() > 1) {
         // show menu

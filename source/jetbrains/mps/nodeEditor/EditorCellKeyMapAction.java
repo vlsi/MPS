@@ -1,5 +1,7 @@
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.util.NameUtil;
+
 import java.awt.event.KeyEvent;
 
 /**
@@ -21,7 +23,7 @@ public abstract class EditorCellKeyMapAction {
   public abstract void execute(KeyEvent keyEvent, EditorContext context);
 
   public String getDescriptionText() {
-    return "no description : " + this.getClass().getName();
+    return "no description (" + NameUtil.shortNameFromLongName(this.getClass().getName()) + ")";
   }
 
   public int getCaretPolicy() {
