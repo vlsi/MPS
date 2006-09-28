@@ -1,12 +1,45 @@
 package jetbrains.mps.util;
 
-import java.io.File;
-import java.io.IOException;
+
+import java.io.*;
 
 /**
  * @author Kostik
  */
 public class FileUtil {
+
+  public static void copy(File what, File to) {
+    if (!to.exists()) {
+      to.mkdir();
+    }
+
+    for (File f : what.listFiles()) {
+      if (f.isDirectory()) {
+        File fCopy = new File(to, f.getName());
+        fCopy.mkdir();
+        copy(f, fCopy);
+      }
+
+      if (f.isFile()) {
+        try {
+          byte[] bytes = new byte[(int) f.length()];
+
+          FileInputStream is = new FileInputStream(f);
+          OutputStream os = new FileOutputStream(new File(to, f.getName()));
+
+          ReadUtil.read(bytes, is);
+          os.write(bytes);
+
+          is.close();
+          os.close();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+
+  }
+
   public static String getCanonicalPath(File file) {
     try {
       return file.getCanonicalPath();
@@ -47,6 +80,7 @@ public class FileUtil {
 
 
   public static void main(String[] args) {
-    delete(new File("C:/temp"));
+
+    copy(new File("C:/temp"), new File("C:/xxxx"));
   }
 }

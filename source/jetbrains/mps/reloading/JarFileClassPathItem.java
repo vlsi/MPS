@@ -1,6 +1,7 @@
 package jetbrains.mps.reloading;
 
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.ReadUtil;
 
 import java.io.File;
 import java.io.IOException;
