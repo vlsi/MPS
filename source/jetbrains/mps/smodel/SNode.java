@@ -1227,4 +1227,8 @@ public abstract class SNode implements Cloneable, Iterable<SNode> {
       myChildInRoleCount.put(role, childCount - 1);
     }
   }
+
+  public String getPersistentProperty(String propertyName) {
+    return myProperties.get(propertyName);
+  }
 }

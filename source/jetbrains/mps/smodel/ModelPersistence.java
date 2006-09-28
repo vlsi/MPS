@@ -393,7 +393,7 @@ public class ModelPersistence {
       Element propertyElement = new Element(PROPERTY);
       element.addContent(propertyElement);
       propertyElement.setAttribute(NAME, propertyName);
-      setNotNullAttribute(propertyElement, VALUE, node.getProperty(propertyName));
+      setNotNullAttribute(propertyElement, VALUE, node.getPersistentProperty(propertyName));
     }
 
     // references ...
