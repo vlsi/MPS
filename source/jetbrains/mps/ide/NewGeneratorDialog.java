@@ -4,11 +4,9 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.ui.SmartFileChooser;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.projectLanguage.GeneratorDescriptor;
-import jetbrains.mps.projectLanguage.LanguageDescriptor;
-import jetbrains.mps.projectLanguage.ModelRoot;
-import jetbrains.mps.projectLanguage.Root;
+import jetbrains.mps.projectLanguage.*;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.transformation.TLBase.MappingConfiguration;
 import jetbrains.mps.util.NameUtil;
 
@@ -177,7 +175,7 @@ public class NewGeneratorDialog extends BaseDialog {
     generatorDescriptor.addModelRoot(templateModelsRoot);
 
     // add target language module to module roots
-    Root targetLanguageModuleRoot = new Root(model);
+    ModuleRoot targetLanguageModuleRoot = new ModuleRoot(model);
     targetLanguageModuleRoot.setPath(targetLanguage.getDescriptorFile().getParentFile().getAbsolutePath());
     generatorDescriptor.addModuleRoot(targetLanguageModuleRoot);
 
