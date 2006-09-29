@@ -194,7 +194,7 @@ public abstract class AbstractModule implements IModule {
     return getModuleDescriptor().getModel().getModelDescriptor();
   }
 
-  private List<ModelRoot> getDefaultModelRoots() {
+  public List<ModelRoot> getDefaultModelRoots() {
     List<ModelRoot> result = new ArrayList<ModelRoot>();
     if (myClassPathModelRoot == null) {
 
@@ -290,6 +290,10 @@ public abstract class AbstractModule implements IModule {
       SModelRepository.getInstance().readModelDescriptors(getModelRoots(), this);
       myInitialized = true;
     }
+  }
+
+  public List<String> getClassPathItems() {
+    return new ArrayList<String>();
   }
 
   protected void rereadModels() {

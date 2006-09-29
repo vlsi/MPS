@@ -49,4 +49,6 @@ public interface IModule extends IScope, ModelOwner, MPSModuleOwner {
   void dispose();
 
   void readModels();
+
+  List<String> getClassPathItems();
 }
