@@ -38,7 +38,7 @@ public class KeyMapUtil {
     }
 
     // collect all keymaps available
-    List<Pair<EditorCellKeyMap, EditorCell>> keymapsAndCells = getReisteredKeymaps(selectedCell, editorContext);
+    List<Pair<EditorCellKeyMap, EditorCell>> keymapsAndCells = getRegisteredKeymaps(selectedCell, editorContext);
     if (keymapsAndCells.isEmpty()) {
       return Collections.emptyList();
     }
@@ -49,7 +49,7 @@ public class KeyMapUtil {
   /**
    * @return List of pairs keymap/ownerCell
    */
-  private static List<Pair<EditorCellKeyMap, EditorCell>> getReisteredKeymaps(EditorCell selectedCell, EditorContext editorContext) {
+  private static List<Pair<EditorCellKeyMap, EditorCell>> getRegisteredKeymaps(EditorCell selectedCell, EditorContext editorContext) {
     Set<Class> addedKeymaps = new HashSet<Class>(); // don't duplicate keymaps
     List<Pair<EditorCellKeyMap, EditorCell>> keyMapsAndCells = new ArrayList<Pair<EditorCellKeyMap, EditorCell>>();
 
@@ -163,7 +163,7 @@ public class KeyMapUtil {
 
   public static List<Pair<EditorCellKeyMapAction, ActionKey>> getAllApplicableActionsAndKeys(EditorCell selectedCell, EditorContext editorContext) {
     // collect all keymaps available
-    List<Pair<EditorCellKeyMap, EditorCell>> keymapsAndCells = getReisteredKeymaps(selectedCell, editorContext);
+    List<Pair<EditorCellKeyMap, EditorCell>> keymapsAndCells = getRegisteredKeymaps(selectedCell, editorContext);
     if (keymapsAndCells.isEmpty()) {
       return Collections.emptyList();
     }
