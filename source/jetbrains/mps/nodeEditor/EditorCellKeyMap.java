@@ -347,6 +347,29 @@ public class EditorCellKeyMap {
     myApplicableToEveryModel = isApplicable;
   }
 
+  public List<Pair<EditorCellKeyMapAction, ActionKey>> getAllActionsAndKeys() {
+    List<Pair<EditorCellKeyMapAction, ActionKey>> result = new LinkedList<Pair<EditorCellKeyMapAction, ActionKey>>();
+    if (myActionMap != null) {
+      Set<Map.Entry<ActionKey, EditorCellKeyMapAction>> entries = myActionMap.entrySet();
+      for (Map.Entry<ActionKey, EditorCellKeyMapAction> entry : entries) {
+        Pair<EditorCellKeyMapAction, ActionKey> pair = new Pair<EditorCellKeyMapAction, ActionKey>(entry.getValue(), entry.getKey());
+        result.add(pair);
+      }
+    }
+
+    if (myDuplicatedActionList != null) {
+      for (Pair<ActionKey, EditorCellKeyMapAction> keyAndAction : myDuplicatedActionList) {
+        result.add(new Pair<EditorCellKeyMapAction, ActionKey>(keyAndAction.o2, keyAndAction.o1));
+      }
+    }
+
+    if (myChildKeyMaps != null) {
+      for (EditorCellKeyMap childMap : myChildKeyMaps) {
+        result.addAll(childMap.getAllActionsAndKeys());
+      }
+    }
+    return result;
+  }
 
   public static class ActionKey {
     private String myModifiers;
@@ -369,6 +392,24 @@ public class EditorCellKeyMap {
 
     public String toString() {
       return "action key: " + myModifiers + " + " + myKeyCode;
+    }
+
+    public String presentation() {
+      String modifiers = null;
+      if (myModifiers.equals(KEY_MODIFIERS_ANY)) modifiers = "<any modifiers>";
+      else if (myModifiers.equals(KEY_MODIFIERS_CTRL)) modifiers = "Ctrl";
+      else if (myModifiers.equals(KEY_MODIFIERS_ALT)) modifiers = "Alt";
+      else if (myModifiers.equals(KEY_MODIFIERS_SHIFT)) modifiers = "Shift";
+      else if (myModifiers.equals(KEY_MODIFIERS_CTRL_ALT)) modifiers = "Ctrl+Alt";
+      else if (myModifiers.equals(KEY_MODIFIERS_CTRL_SHIFT)) modifiers = "Ctrl+Shift";
+      else if (myModifiers.equals(KEY_MODIFIERS_CTRL_ALT_SHIFT)) modifiers = "Ctrl+Alt+Shift";
+      else if (myModifiers.equals(KEY_MODIFIERS_ALT_SHIFT)) modifiers = "Alt+Shift";
+
+      String keyCode = myKeyCode;
+      if (keyCode.startsWith("VK_")) keyCode = keyCode.substring(3);
+      else keyCode = "'" + keyCode + "'";
+
+      return (modifiers != null ? (modifiers + "-") : "") + keyCode;
     }
   }
 }

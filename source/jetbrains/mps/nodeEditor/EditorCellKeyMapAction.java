@@ -23,7 +23,7 @@ public abstract class EditorCellKeyMapAction {
   public abstract void execute(KeyEvent keyEvent, EditorContext context);
 
   public String getDescriptionText() {
-    return "no description (" + NameUtil.shortNameFromLongName(this.getClass().getName()) + ")";
+    return null;
   }
 
   public int getCaretPolicy() {
