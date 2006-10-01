@@ -2,11 +2,65 @@ package jetbrains.mps.util;
 
 
 import java.io.*;
+import java.util.jar.JarOutputStream;
+import java.util.jar.Manifest;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 /**
  * @author Kostik
  */
 public class FileUtil {
+
+  public static void jar(File dir, Manifest mf, File to) {
+    try {
+      FileOutputStream fos = new FileOutputStream(to);
+      JarOutputStream out = new JarOutputStream(fos, mf);
+      _zip(dir, "/", out);
+      out.close();
+      fos.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  public static void zip(File dir, File to) {
+    try {
+      FileOutputStream fos = new FileOutputStream(to);
+      ZipOutputStream out = new ZipOutputStream(fos);
+      _zip(dir, "/", out);
+      out.close();
+      fos.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  private static void _zip(File base, String prefix, ZipOutputStream out) throws IOException {
+    File current = new File(base.getPath() + prefix).getAbsoluteFile();
+
+    ZipEntry entry = new ZipEntry(prefix);
+    out.putNextEntry(entry);
+    if (current.isFile()) {
+      byte[] bytes = new byte[(int) current.length()];
+      FileInputStream is = new FileInputStream(current);
+      ReadUtil.read(bytes, is);
+      is.close();
+      out.write(bytes);
+    }
+    out.closeEntry();
+
+    if (current.isDirectory()) {
+      for (File file : current.listFiles()) {
+        if (file.isFile()) {
+          _zip(base, prefix + file.getName(), out);
+        }
+        if (file.isDirectory()) {
+          _zip(base, prefix + file.getName() + "/", out);
+        }
+      }
+    }
+  }
 
   public static void copyDir(File what, File to) {
     if (!to.exists()) {
@@ -89,7 +143,6 @@ public class FileUtil {
 
 
   public static void main(String[] args) {
-
-    copyDir(new File("C:/temp"), new File("C:/xxxx"));
+    jar(new File("C:/temp"), new Manifest(), new File("C:/temp/zzz.jar"));
   }
 }
