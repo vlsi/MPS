@@ -147,8 +147,8 @@ public class Language extends AbstractModule {
     LOG.assertLog(!MPSModuleRepository.getInstance().hasOwners(this));
     CommandProcessor.instance().removeCommandListener(myEventTranslator);
     SModelsMulticaster.getInstance().removeSModelsListener(myModelsListener);
-    SModelRepository.getInstance().unRegisterModelDescriptors(this);
     unRegisterAspectListener();
+    SModelRepository.getInstance().unRegisterModelDescriptors(this);
     MPSModuleRepository.getInstance().unRegisterModules(this);
     if (myGenerators != null) {
       for (Generator generator : myGenerators) {
@@ -293,7 +293,6 @@ public class Language extends AbstractModule {
       }
     });
   }
-
 
   public SModelDescriptor getStructureModelDescriptor() {
     if (getLanguageDescriptor().getStructureModel() != null) {
